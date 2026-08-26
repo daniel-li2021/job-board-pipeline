@@ -42,6 +42,21 @@ def _html_to_text(value: str) -> str:
     return normalize_space(BeautifulSoup(value, "html.parser").get_text(" ", strip=True))
 
 
+def _lever_description(item: Dict[str, Any]) -> str:
+    """Lever puts requirements (including clearance) in ``lists``, not descriptionPlain."""
+    parts = [item.get("descriptionPlain") or _html_to_text(item.get("description") or "")]
+    for block in item.get("lists") or []:
+        heading = block.get("text") or ""
+        body = _html_to_text(block.get("content") or "")
+        chunk = normalize_space(f"{heading} {body}")
+        if chunk:
+            parts.append(chunk)
+    extra = item.get("additionalPlain") or _html_to_text(item.get("additional") or "")
+    if extra:
+        parts.append(extra)
+    return normalize_space(" ".join(parts))
+
+
 def _get_json(session: requests.Session, url: str, params: Dict[str, Any] | None = None) -> Any:
     try:
         resp = session.get(url, params=params, timeout=REQUEST_TIMEOUT)
@@ -98,7 +113,6 @@ def fetch_lever(session: requests.Session, company: str, token: str) -> List[Dic
         location = cats.get("location") or ""
         if location and not is_us_location(location):
             continue
-        desc = item.get("descriptionPlain") or _html_to_text(item.get("description", ""))
         rows.append(
             make_job(
                 source="lever",
@@ -110,7 +124,7 @@ def fetch_lever(session: requests.Session, company: str, token: str) -> List[Dic
                 date_confidence="medium",
                 source_url=item.get("hostedUrl", "") or item.get("applyUrl", ""),
                 official_url=item.get("hostedUrl", "") or item.get("applyUrl", ""),
-                description=desc,
+                description=_lever_description(item),
             )
         )
     return rows

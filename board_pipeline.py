@@ -410,7 +410,6 @@ CITIZEN_PHRASES = [
     "eligible for a security clearance", "eligible to obtain",
     "requires a clearance", "requires security clearance",
     "us persons only", "u.s. persons only", "citizens only",
-    "itar", "export control", "export-controlled",
 ]
 CITIZEN_RES = [
     re.compile(r"\b" + re.escape(p).replace(r"\ ", r"\s+") + r"\b", re.IGNORECASE)
@@ -420,8 +419,9 @@ CITIZEN_RES = [
 CLEARANCE_EXTRA_RES = [
     re.compile(r"\bts\s*/\s*sci\b", re.IGNORECASE),
     re.compile(r"\b(secret|top[- ]secret)\s+(clearance|eligible)\b", re.IGNORECASE),
-    re.compile(r"\b(obtain|obtainable|eligible for)\b.{0,40}\bclearance\b", re.IGNORECASE),
+    re.compile(r"\b(obtain|obtainable|eligible for|willingness to obtain)\b.{0,40}\bclearance\b", re.IGNORECASE),
     re.compile(r"\bclearance\b.{0,40}\b(required|needed|must)\b", re.IGNORECASE),
+    re.compile(r"\b(active|obtain|obtaining|eligibility|eligible|willingness).{0,50}\b(us |u\.s\. )?security clearance\b", re.IGNORECASE),
 ]
 # Title-only gov/defense signal when the JD is too thin to verify constraints.
 GOV_DEFENSE_TITLE_RE = re.compile(
@@ -1160,7 +1160,7 @@ def _stats_lines(stats: Dict[str, Any]) -> List[str]:
         f"- Output sizing: Tier A {out['tier_a']} / Tier B {out['tier_b']} / "
         f"A+B before cap {out['ab_before_cap']} / Shown in latest.md {out['shown']} (cap {MAX_VISIBLE})",
         f"- Recency (kept): <3h {rec['lt3h']} / 3-24h {rec['3to24h']} / "
-        f"newly-disc {rec['newly_discovered']} / 1-3d {rec['1to3d']} / "
+        f"1-3d {rec['1to3d']} / newly-disc {rec['newly_discovered']} / "
         f"3-7d {rec['3to7d']} / >7d {rec['gt7d']}",
     ]
     return lines
@@ -1339,7 +1339,7 @@ ENTRY_DEFAULTS: Dict[str, Any] = {
     "company": "", "title": "", "location": "", "posted_date": "",
     "date_confidence": "unknown", "official_url": "", "source": "", "source_url": "",
     "discovered_via": [], "filter_status": "kept", "drop_reason": "",
-    "company_flag": "",
+    "company_flag": "", "staffing_firm": False, "clearance_risk_company": False,
     "role_family": "", "role_relevance": 0, "tier": "", "recency_bucket": "",
     "cache_key": "", "jd_hash": "", "match_score": None, "resume_profile_used": "",
     "seniority_fit": "", "hard_constraint_status": "", "top_match_reasons": [],
@@ -1375,6 +1375,8 @@ def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
         "filter_status": job.get("filter_status", "kept"),
         "drop_reason": job.get("drop_reason", ""),
         "company_flag": job.get("company_flag", ""),
+        "staffing_firm": bool(job.get("staffing_firm")),
+        "clearance_risk_company": bool(job.get("clearance_risk_company")),
         "role_family": job.get("role_family", ""),
         "role_relevance": int(job.get("role_relevance", 0) or 0),
         "tier": job.get("tier", ""),
@@ -1515,6 +1517,12 @@ def run() -> None:
     tier_b = [j for j in candidates if j["tier"] == "B"]
     ab_before_cap = len(tier_a) + len(tier_b)
     visible = (tier_a + tier_b)[:MAX_VISIBLE]  # already sorted by priority
+    staffing_capped_to_b = sum(
+        1 for j in candidates
+        if j.get("staffing_firm") and j["tier"] == "B"
+        and float(j.get("match_score") or 0) >= TIER_A_MIN
+    )
+    staffing_in_ab = sum(1 for j in visible if j.get("staffing_firm"))
 
     # 9) Rebuild store with deduped canonical jobs only (kept + dropped)
     new_store: Dict[str, Dict[str, Any]] = dict(store)
@@ -1599,6 +1607,10 @@ def run() -> None:
     print(f"Screening: {screen_method}" + (f" ({len(llm_errors)} llm errors)" if llm_errors else ""))
     print(f"Output: Tier A {len(tier_a)} / Tier B {len(tier_b)} / A+B before cap {ab_before_cap} "
           f"/ shown {len(visible)} (cap {MAX_VISIBLE}) | new A/B {len(new_ab)}")
+    print(f"Staffing capped to B (score>={int(TIER_A_MIN)}): {staffing_capped_to_b} "
+          f"| staffing in shown A/B: {staffing_in_ab}")
+    print(f"Gov/clearance removed: citizen_or_clearance={drops.get('citizen_or_clearance', 0)} "
+          f"incomplete_jd_clearance_risk={drops.get('incomplete_jd_clearance_risk', 0)}")
     print("Recency (kept): " + " / ".join(f"{b}={recency_dist[b]}" for b in RECENCY_BUCKETS))
     if drops:
         print("Drops: " + ", ".join(f"{k}={v}" for k, v in sorted(drops.items())))

@@ -27,10 +27,12 @@ JOB_FIELDS = [
     "title",
     "location",
     "posted_date",       # ISO date "YYYY-MM-DD" when known, else ""
+    "updated_date",      # ISO date when the source exposes a last-updated time
     "date_confidence",   # high | medium | low | unknown
     "source_url",        # where we found it
     "official_url",      # canonical company/ATS URL when verified, else ""
     "description",
+    "fetched_at",        # ISO timestamp when this adapter fetched the record
     "first_seen",        # ISO timestamp, set by the orchestrator on first sight
 ]
 
@@ -118,6 +120,8 @@ def to_iso_date(value: Any) -> str:
     text = normalize_space(value)
     if not text:
         return ""
+    # "30+ days ago" -> "30 days ago" so the relative parser can match.
+    text = re.sub(r"(\d+)\+", r"\1 ", text)
     # Numeric-looking epoch in a string.
     if re.fullmatch(r"\d{10,13}", text):
         return to_iso_date(int(text))
@@ -181,10 +185,10 @@ def _parse_iso_timestamp(value: str) -> Optional[datetime]:
 
 
 # Recency bucket ordering (lower rank = fresher = higher priority).
-# `newly_discovered` = low-confidence source found recently: we do NOT know the
-# true posting time, so it ranks BELOW verified sub-day buckets (lt3h/3to24h)
-# and cannot outrank a job actually posted in the last few hours.
-RECENCY_BUCKETS = ["lt3h", "3to24h", "newly_discovered", "1to3d", "3to7d", "gt7d"]
+# Trusted official/ATS posted_date buckets (lt3h / 3to24h / 1to3d) outrank
+# `newly_discovered` (low-confidence first_seen) so a LinkedIn card found
+# today cannot outrank a verified job posted 1–3 days ago.
+RECENCY_BUCKETS = ["lt3h", "3to24h", "1to3d", "newly_discovered", "3to7d", "gt7d"]
 RECENCY_BUCKET_RANK = {b: i for i, b in enumerate(RECENCY_BUCKETS)}
 
 # Buckets treated as "recent enough" for normal Tier A/B consideration (<=3d).
@@ -272,6 +276,7 @@ ATS_URL_MARKERS = [
     "metacareers.com",
     "jobs.careers.microsoft.com",
     "careers.microsoft.com",
+    "apply.careers.microsoft.com",
     "jobs.apple.com",
     "jobs.bytedance.com",
     "joinbytedance.com",
@@ -345,6 +350,20 @@ def normalize_location_key(location: str) -> str:
     return "|".join(sorted(set(norm)))
 
 
+# Keep opening (role) + closing (requirements/eligibility). Hard-filter
+# citizenship/clearance checks need the end of long JDs; a 4k cap was
+# dropping Palantir/Lever "What We Require" sections.
+JD_HEAD_CHARS = 5000
+JD_TAIL_CHARS = 4000
+
+
+def retain_description(description: str) -> str:
+    text = normalize_space(description)
+    if len(text) <= JD_HEAD_CHARS + JD_TAIL_CHARS:
+        return text
+    return f"{text[:JD_HEAD_CHARS]} {text[-JD_TAIL_CHARS:]}"
+
+
 def make_job(
     *,
     source: str,
@@ -353,10 +372,12 @@ def make_job(
     location: str = "",
     job_id: str = "",
     posted_date: Any = "",
+    updated_date: Any = "",
     date_confidence: str = "unknown",
     source_url: str = "",
     official_url: str = "",
     description: str = "",
+    fetched_at: str = "",
 ) -> Dict[str, str]:
     iso = to_iso_date(posted_date)
     if iso and date_confidence == "unknown":
@@ -368,10 +389,12 @@ def make_job(
         "title": normalize_space(title),
         "location": normalize_space(location),
         "posted_date": iso,
+        "updated_date": to_iso_date(updated_date),
         "date_confidence": date_confidence,
         "source_url": normalize_space(source_url),
         "official_url": normalize_space(official_url),
-        "description": normalize_space(description)[:4000],
+        "description": retain_description(description),
+        "fetched_at": normalize_space(fetched_at),
         "first_seen": "",
     }
 
