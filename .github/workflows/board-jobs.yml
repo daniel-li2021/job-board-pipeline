@@ -1,0 +1,97 @@
+name: Board job alert
+
+# Multi-source pipeline (ATS + official career pages + ingested local
+# LinkedIn/Glassdoor snapshots). This workflow is the ONLY writer of
+# output/board/ and output/alerts/board_*. The local launchd job only pushes
+# output/sources/*.json, which triggers the `push` filter below.
+
+on:
+  schedule:
+    # GitHub cron is UTC. ~07:00 and ~19:00 US Pacific.
+    - cron: "0 15 * * *"
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - "output/sources/linkedin.json"
+      - "output/sources/glassdoor.json"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: board-jobs
+  cancel-in-progress: false
+
+jobs:
+  board-scrape-and-alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Run board pipeline (LLM on when secret present, else rule fallback)
+        id: pipeline
+        env:
+          # LLM match runs only on rule-filter survivors. If this secret is
+          # unset or the API errors, the pipeline falls back to rule scoring
+          # and still succeeds (see score_survivors()).
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python3 board_pipeline.py
+
+      - name: Commit board outputs (never sources/*.json)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Only board artifacts + alerts. Local sources are owned by launchd.
+          git add output/board/ output/alerts/ 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "No board changes to commit."
+          else
+            git commit -m "chore: board job alert ${{ steps.pipeline.outputs.stamp }}"
+            # Rebase on any concurrent local source pushes before pushing back.
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Upload alert artifact
+        if: ${{ steps.pipeline.outputs.new_count != '0' && steps.pipeline.outputs.new_count != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: board-job-alert-${{ steps.pipeline.outputs.stamp }}
+          path: |
+            output/alerts/board_${{ steps.pipeline.outputs.stamp }}.csv
+            output/board/latest.md
+          if-no-files-found: ignore
+
+      - name: Open GitHub Issue for new Tier A/B jobs
+        # Only alert on scheduled/manual runs, not on every source push, to
+        # avoid spamming issues each time the local scraper syncs.
+        if: ${{ github.event_name != 'push' && steps.pipeline.outputs.new_count != '0' && steps.pipeline.outputs.new_count != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BODY_PATH="${{ steps.pipeline.outputs.issue_body_path }}"
+          if [ -f "$BODY_PATH" ]; then
+            gh issue create \
+              --title "${{ steps.pipeline.outputs.issue_title }}" \
+              --body-file "$BODY_PATH" \
+              --label "job-alert" || \
+            gh issue create \
+              --title "${{ steps.pipeline.outputs.issue_title }}" \
+              --body-file "$BODY_PATH"
+          else
+            echo "No issue body file; skipping issue creation."
+          fi

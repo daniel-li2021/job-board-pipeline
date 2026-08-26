@@ -1,0 +1,55 @@
+Zeyang Li
+I 805-886-1046 # lizeyang@usc.edu ï zeyang-li30 § daniel-li2021 + Los Angeles, CA
+Summary
+AI Engineer specializing in production LLM applications: agentic RAG, model fine-tuning, and conversation evaluation.
+Shipped deployed AI systems for enterprise knowledge workflows and user/customer-conversation auditing, while reducing
+inference cost with self-hosted fine-tuned models.
+Education
+University of Southern California Aug 2024 — May 2026
+M.S. Computer Science
+University of California, Santa Barbara Sep 2021 — Jun 2024
+B.S. Computer Science & Applied Mathematics
+Publication: Style Transfer of Landscape Paintings via CycleGAN. CONF-SEML 2023, co-first author.
+Work Experience
+Software Engineer Intern, VortexNet, Covina, CA Nove 2025 — Apr 2026
+• Architected a production-grade B2B knowledge agent using LangChain, LangGraph, MCP-based tool calling, and
+memory, integrating retrieval and summarization workflows to reduce repetitive support lookups by ∼40%.
+• Productionized an end-to-end RAG pipeline with offline chunking, embeddings, hybrid retrieval, and cross-encoder
+reranking, improving Recall@10 to ∼90% while reducing hallucinations on noisy enterprise documents.
+• Migrated a high-volume inference workload from frontier APIs to self-hosted LLMs, benchmarking Qwen3, LLaMA3,
+Gemma, and GPT-OSS and fine-tuning with QLoRA, Unsloth, and PEFT to reduce per-query inference cost by ∼60%.
+• Deployed Dockerized FastAPI services on AWS through automated CI/CD pipelines and MLflow-based model registry
+workflows, reducing release cycles from hours to minutes with single-command deployments.
+• Instrumented a production observability and safety layer with LangSmith tracing, PII / prompt-injection safeguards,
+Pydantic validation, and regression tests, improving release reliability across AI applications.
+Software Engineer Intern, Applied AI & Digital Solutions, AptarGroup, Inc. June 2025 — Aug 2025
+• Engineered a Dataiku Agent-powered news intelligence workflow that filtered articles, extracted web content,
+generated LLM-assisted summaries, and automated newsletter outputs for Strategy & Market Intelligence stakeholders.
+• Built a resilient Python ingestion pipeline with requests, Selenium fallback, randomized headers, retries, SQL validation,
+and error handling, processing 10,000+ articles/day at 94% article-parsing reliability.
+• Implemented a KIE evaluation framework for beauty reviews, standardizing JSONL ground truth across a 20-category
+taxonomy, creating train/test splits, and benchmarking endpoint predictions with 80%+ field-level label agreement.
+• Collaborated with Digital Solutions and pharma stakeholders on a Spark/Databricks nitrosamine workflow, applying
+feature engineering and validation across 10+ product lines to support a targeted 20% reduction in low-signal alerts.
+AI Research Engineer, University of Southern California, Los Angeles, CA May 2025 — Feb 2026
+• Delivered CounselReflect, a deployed LLM-powered conversation evaluation platform benchmarking 12 model-trained
+metrics, 69 rubric-based metrics, 8+ public dialogue datasets, and 10,000+ labeled samples.
+• Refactored the FastAPI evaluator registry with typed schemas and OpenAI/Gemini/Claude/Ollama provider abstractions, improving maintainability and standardizing session- and turn-level evaluations.
+• Validated platform effectiveness through an N=26 human study with counseling users and therapists, measuring
+usability, trust, authenticity, and satisfaction to support publication and deployment.
+• Strengthened platform reliability with 90+ unit/integration tests, structured-output validation, caching, and retries,
+incorporating feedback from faculty researchers, PhD students, and therapists.
+AI Platform Engineering Intern, YunXuetang, CN Jun 2023 — Sep 2023
+• Optimized embedding-based query vectorization and Top-10 retrieval for an enterprise RAG chatbot through async
+batching, connection pooling, and vector-search tuning, reducing retrieval latency by 50%.
+• Implemented long-document summarization workflows with segmented chunking, rolling-summary prompts, and
+context-window management, enabling processing of 30K+ token enterprise documents beyond standard LLM limits.
+• Built a lightweight analytics and prediction workflow for internal reporting teams, applying feature analysis and
+baseline modeling while validating retrieval and inference services with Postman/GitLab to improve reporting reliability.
+Technical Skills
+Languages: Python primary, SQL, TypeScript, JavaScript, Bash, Java, C++
+AI / LLM Engineering: RAG, reranking, ReAct agents, tool calling, MCP, LangChain / LangGraph, LLM-as-Judge,
+prompt engineering, OpenAI, Anthropic, Gemini, Ollama, QLoRA / PEFT fine-tuning, vLLM, Hugging Face, PyTorch
+Backend & Serving: FastAPI, REST APIs, Pydantic, Node.js, MLflow Model Serving, Batching, Latency Optimization,
+Observability via LangSmith, Retry / Idempotency patterns
+Data, Cloud & DevOps: Spark, Databricks, PostgreSQL, FAISS, pgvector, AWS, GCP, CI/CD, Docker, Git, Linux

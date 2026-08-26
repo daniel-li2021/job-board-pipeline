@@ -1,0 +1,31 @@
+{
+  "_comment": "Public ATS job-board tokens, probed live before adding. Endpoints: greenhouse=boards-api.greenhouse.io/v1/boards/{token}/jobs, lever=api.lever.co/v0/postings/{token}, ashby=api.ashbyhq.com/posting-api/job-board/{token}. These are anonymous and CI-safe. Companies with Workday-only boards (Adobe/Salesforce/Oracle) are intentionally omitted for v1.",
+  "boards": [
+    {"company": "Databricks", "ats": "greenhouse", "token": "databricks"},
+    {"company": "Airbnb", "ats": "greenhouse", "token": "airbnb"},
+    {"company": "Cloudflare", "ats": "greenhouse", "token": "cloudflare"},
+    {"company": "Instacart", "ats": "greenhouse", "token": "instacart"},
+    {"company": "Roblox", "ats": "greenhouse", "token": "roblox"},
+    {"company": "Stripe", "ats": "greenhouse", "token": "stripe"},
+    {"company": "Coinbase", "ats": "greenhouse", "token": "coinbase"},
+    {"company": "Robinhood", "ats": "greenhouse", "token": "robinhood"},
+    {"company": "Pinterest", "ats": "greenhouse", "token": "pinterest"},
+    {"company": "Anthropic", "ats": "greenhouse", "token": "anthropic"},
+    {"company": "Figma", "ats": "greenhouse", "token": "figma"},
+    {"company": "Dropbox", "ats": "greenhouse", "token": "dropbox"},
+    {"company": "Reddit", "ats": "greenhouse", "token": "reddit"},
+    {"company": "GitLab", "ats": "greenhouse", "token": "gitlab"},
+    {"company": "Discord", "ats": "greenhouse", "token": "discord"},
+    {"company": "Asana", "ats": "greenhouse", "token": "asana"},
+    {"company": "Brex", "ats": "greenhouse", "token": "brex"},
+    {"company": "Samsara", "ats": "greenhouse", "token": "samsara"},
+    {"company": "Lyft", "ats": "greenhouse", "token": "lyft"},
+    {"company": "Palantir Technologies", "ats": "lever", "token": "palantir"},
+    {"company": "Spotify", "ats": "lever", "token": "spotify"},
+    {"company": "OpenAI", "ats": "ashby", "token": "openai"},
+    {"company": "Ramp", "ats": "ashby", "token": "ramp"},
+    {"company": "Notion", "ats": "ashby", "token": "notion"},
+    {"company": "Linear", "ats": "ashby", "token": "linear"},
+    {"company": "Cohere", "ats": "ashby", "token": "cohere"}
+  ]
+}

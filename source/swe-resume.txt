@@ -1,0 +1,54 @@
+Zeyang Li
+I 805-886-1046 # lizeyang@usc.edu ï zeyang-li30 § daniel-li2021 + Los Angeles, CA
+Summary
+Full-Stack Software Engineer with experience developing scalable web applications, backend APIs, and distributed AI/data
+services across React, FastAPI, Node, Java, Python, and cloud deployments. Strong foundation in data structures, API
+design, CI/CD, Docker, and reliability-focused engineering.
+Education
+University of Southern California Aug 2024 — May 2026
+M.S. Computer Science
+University of California, Santa Barbara Sep 2021 — Jun 2024
+B.S. Computer Science & Applied Mathematics
+Work Experience
+Full-Stack Engineer Intern, VortexNet, Covina, CA Nov 2025 — Apr 2026
+• Shipped a full-stack AI assistant with React, TypeScript, Tailwind UI, FastAPI, and Node services, enabling client
+teams to reduce repetitive document lookups by ∼40% through conversational search and retrieval workflows.
+• Engineered scalable backend REST APIs with async processing, Pydantic validation, retries, and idempotency controls,
+integrating hybrid search and vector retrieval, and query-path optimization to deliver sub-second response times.
+• Deployed containerized services on AWS through automated CI/CD pipelines with Docker and MLflow-based model
+versioning, reducing release cycles from hours to minutes through one-command deployments.
+• Built a production evaluation and observability framework with tracing, guardrails, structured-output validation, and
+10+ automated regression checks, improving system reliability and release quality.
+Backend and Data Systems Intern, AptarGroup, Inc., Digital Solutions, Crystal Lake, IL Jun 2025 — Aug 2025
+• Engineered a pharmaceutical news ingestion pipeline using requests, Selenium fallback, and randomized headers,
+processing 10,000+ articles/day with 94% parsing reliability for Strategy & Market Intelligence reporting.
+• Integrated the pipeline into Dataiku and Databricks workflows with retry logic, SQL-style validation, and categorized
+error handling, reducing silent failures and improving daily news processing reliability.
+• Developed a KIE evaluation framework for Aptar Beauty reviews, creating JSONL ground-truth datasets across a
+20-category taxonomy and benchmarking model predictions with 80%+ category-level label agreement.
+• Collaborated with Digital Solutions and pharma stakeholders to enhance a Spark and Databricks nitrosamine
+workflow, applying feature engineering and validation to support a targeted 20% reduction in low-signal alerts across
+10+ product lines.
+Software Engineer Intern, USC Research Program, Los Angeles, CA May 2025 — Feb 2026
+• Delivered CounselReflect, a full-stack LLM evaluation platform developed with faculty, PhD researchers, and clinical therapists, benchmarking 12 model-trained and 69 rubric-based metrics across 8+ public dialogue datasets and
+10,000+ labeled samples.
+• Built and launched three user-facing products from a shared evaluation engine: React, Vite, and Tailwind dashboard,
+a Chrome MV3 extension for ChatGPT, Gemini, and Claude, and a Dockerized FastAPI-powered batch service.
+• Refactored the FastAPI evaluator registry with typed schemas, provider abstractions, and 90+ automated tests,
+standardizing evaluation workflows validated through an N=26 human study and academic publication.
+Backend Engineering Intern, YunXuetang, AI PaaS Platform, Suzhou, China Jun 2023 — Sep 2023
+• Optimized embedding-based query vectorization and Top-10 retrieval for an enterprise RAG chatbot serving
+thousands of internal queries, reducing retrieval latency by 50% through async batching, connection pooling, and
+vector-search tuning.
+• Implemented and validated REST APIs for chatbot retrieval, inference, and reporting workflows using Postman and
+GitLab-based delivery pipelines, improving integration reliability and deployment quality.
+• Designed long-document summarization workflows with segmented chunking, rolling-summary prompting, and
+context-window management, enabling processing of 30K+ token enterprise documents beyond standard context limits.
+Technical Skills
+Languages: Python primary, TypeScript, JavaScript, Java, SQL, Swift, C++, Bash
+Frontend: React, Angular, TypeScript, Vite, TailwindCSS, Next.js, styled-components, Chrome Extension MV3, Highcharts, Firebase Auth, SwiftUI, HTML/CSS
+Backend & Databases: FastAPI, Node.js / Express, Spring Boot, REST APIs, Pydantic, Async APIs, Retry / Idempotency
+patterns, PostgreSQL, MySQL, MongoDB, Query Optimization, Distributed Systems, Vector DBs FAISS and pgvector
+Cloud, DevOps & Applied AI: AWS, GCP, CI/CD with GitHub Actions, Docker, Docker Compose, Git, Linux, Netlify;
+LLM API integration across OpenAI, Anthropic, Gemini, Ollama, RAG, Agents with tool calling, memory, and MCP,
+LLM-as-Judge, QLoRA fine-tuning, PyTorch

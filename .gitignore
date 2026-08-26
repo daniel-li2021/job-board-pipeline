@@ -1,0 +1,39 @@
+# Secrets / env
+.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+
+# Local scraper logs + local-only pipeline output (never pushed)
+output/logs/
+output/board-local/
+
+# Large / derived scrape outputs — do NOT track these.
+output/*.csv
+output/seen_job_ids.json
+output/daily/
+output/by_company/
+output/uber_official/
+output/screened_by_company/
+output/*.md
+output/feasibility_report.md
+
+# ...but DO track the rolling watchlist and the alert deliverables.
+!output/watchlist.json
+!output/alerts/
+!output/alerts/**
+
+# DO track local source snapshots (local scraper -> GHA ingest).
+!output/sources/
+!output/sources/**
+
+# DO track the GHA-owned board pipeline outputs (jobs.json + latest.md).
+!output/board/
+!output/board/**

@@ -1,0 +1,73 @@
+Automated Syncareer job alert — 2026-08-25_0922
+
+63 new matching job(s) after hard filters (senior/US-citizen/non-US removed).
+
+Referral companies in this batch: 26
+
+| Company | Title | Location | Posted | Sponsorship | Referral | Link |
+|---|---|---|---|---|---|---|
+| TikTok | Software Engineer Graduate (Video-on-Demand Algorithm) - 2027 Start | San Jose, California, United States | 2026-08-25 | H-1B Sponsor | YES (ByteDance) | [open](https://lifeattiktok.com/search/7670282906426476853) |
+| Google | Software Engineering Intern, PhD, Summer 2027 | Mountain View, California, United States | 2026-08-25 | H-1B Sponsor | YES (Google) | [open](https://www.google.com/about/careers/applications/jobs/results/91436104816698054-software-engineering-intern-phd-summer-2027) |
+| Apple | Software Engineer, Infrastructure Services (Cloud Network Fault Tolera | California, United States | 2026-08-25 | H-1B Sponsor | YES (Apple) | [open](https://jobs.apple.com/en-us/details/200679765-3401/software-engineer-infrastructure-services-cloud-network-fault-tolerance?team=SFTWR) |
+| Amazon | Software Development Engineer, Security Platform | Seattle, Washington, United States | 2026-08-25 | H-1B Sponsor | YES (Amazon) | [open](https://amazon.jobs/en/jobs/10510816/software-development-engineer-security-platform) |
+| JPMorgan Chase | Agentic AI Full Stack Software Engineer III- Python/React | Jersey City, New Jersey, United States | 2026-08-25 | H-1B Sponsor | YES (J.P. Morgan) | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210773477) |
+| Uber | Software Engineer II | Seattle, Washington, United States | 2026-08-25 | H-1B Sponsor | YES (Uber) | [open](https://jobs.uber.com/en/jobs/301204/) |
+| Google | Software Engineer, Infrastructure, PhD, Early Career, 2027 Start | Sunnyvale, California, United States | 2026-08-25 | H-1B Sponsor | YES (Google) | [open](https://www.google.com/about/careers/applications/jobs/results/84680705375642310-software-engineer-infrastructure-phd-early-career-2027-start) |
+| Amazon | Software Development Engineer, Amazon WorkSpaces | Seattle, Washington, United States | 2026-08-25 | H-1B Sponsor | YES (Amazon) | [open](https://amazon.jobs/en/jobs/10512990/software-development-engineer-amazon-workspaces) |
+| Uber | Software Engineer I | San Francisco, California, United States | 2026-08-25 | H-1B Sponsor | YES (Uber) | [open](https://jobs.uber.com/en/jobs/301203/) |
+| Google | Software Engineer III, Infrastructure, Platforms Infrastructure Engine | Sunnyvale, California, United States | 2026-08-25 | H-1B Sponsor | YES (Google) | [open](https://www.google.com/about/careers/applications/jobs/results/141492603370513094-software-engineer-iii-infrastructure-platforms-infrastructure-engineering) |
+| Amazon | Software Development Engineer, S3 Glacier | Seattle, Washington, United States | 2026-08-25 | H-1B Sponsor | YES (Amazon) | [open](https://amazon.jobs/en/jobs/10512552/software-development-engineer-s3-glacier) |
+| Uber | Software Engineer II | Sunnyvale, California, United States | 2026-08-25 | H-1B Sponsor | YES (Uber) | [open](https://jobs.uber.com/en/jobs/301197/) |
+| Google | Software Engineer, AI/Machine Learning, PhD, Early Career, 2027 Start | Sunnyvale, California, United States | 2026-08-25 | H-1B Sponsor | YES (Google) | [open](https://www.google.com/about/careers/applications/jobs/results/123087196289671878-software-engineer-aimachine-learning-phd-early-career-2027-start) |
+| Uber | Software Engineer II | Seattle, Washington, United States | 2026-08-25 | H-1B Sponsor | YES (Uber) | [open](https://jobs.uber.com/en/jobs/301217/) |
+| Google | Software Engineer, ML Accelerators, DeepMind | Mountain View, California, United States | 2026-08-25 | H-1B Sponsor | YES (Google) | [open](https://www.google.com/about/careers/applications/jobs/results/120715549708559046-software-engineer-ml-accelerators-deepmind) |
+| Google | Software Engineer III, AI/ML, Platforms and Devices | Seattle, Washington, United States | 2026-08-25 | H-1B Sponsor | YES (Google) | [open](https://www.google.com/about/careers/applications/jobs/results/89641152084353734-software-engineer-iii-aiml-platforms-and-devices) |
+| Google | Software Engineer III, Generative AI, Core | San Jose, California, United States | 2026-08-25 | H-1B Sponsor | YES (Google) | [open](https://www.google.com/about/careers/applications/jobs/results/86191709230113478-software-engineer-iii-generative-ai-core) |
+| Google | Software Engineer III, Connectivity, Android microXR | San Jose, California, United States | 2026-08-25 | H-1B Sponsor | YES (Google) | [open](https://www.google.com/about/careers/applications/jobs/results/107920258018222790-software-engineer-iii-connectivity-android-microxr) |
+| Google | Software Engineer III, Infrastructure, Google Cloud Compute | Kirkland, Washington, United States | 2026-08-25 | H-1B Sponsor | YES (Google) | [open](https://www.google.com/about/careers/applications/jobs/results/80567157498225350-software-engineer-iii-infrastructure-google-cloud-compute) |
+| Google | Software Engineer III, Security/Privacy, Google Cloud Security and Pri | Seattle, Washington, United States | 2026-08-25 | H-1B Sponsor | YES (Google) | [open](https://www.google.com/about/careers/applications/jobs/results/128082827370472134-software-engineer-iii-securityprivacy-google-cloud-security-and-privacy) |
+| Google | AI/ML Accelerator Modeling Engineer, Silicon | Mountain View, California, United States | 2026-08-25 | H-1B Sponsor | YES (Google) | [open](https://www.google.com/about/careers/applications/jobs/results/123815554023596742-aiml-accelerator-modeling-engineer-silicon) |
+| Google | Research Scientist, Optical Engineering Neutral Atoms, Quantum AI | Boulder, Colorado, United States | 2026-08-25 | H-1B Sponsor | YES (Google) | [open](https://www.google.com/about/careers/applications/jobs/results/80664283888657094-research-scientist-optical-engineering-neutral-atoms-quantum-ai) |
+| TikTok | Machine Learning Engineer Intern (E-Commerce Governance)- 2027 Start ( | Seattle, Washington, United States | 2026-08-25 | H-1B Sponsor | YES (ByteDance) | [open](https://lifeattiktok.com/search/7674029136531015941) |
+| ByteDance | Machine Learning Engineer Graduate (E-Commerce Risk Control)- 2027 Sta | Seattle, Washington, United States | 2026-08-25 | H-1B Sponsor | YES (ByteDance) | [open](https://joinbytedance.com/search/7675472998912051461) |
+| Google | SoC Test Infrastructure Engineer, Google Cloud | Sunnyvale, California, United States | 2026-08-25 | H-1B Sponsor | YES (Google) | [open](https://www.google.com/about/careers/applications/jobs/results/132981907586458310-soc-test-infrastructure-engineer-google-cloud) |
+| Amazon | Human-Robot Interaction, Applied Scientist , Fauna | New York, New York, United States | 2026-08-25 | H-1B Sponsor | YES (Amazon) | [open](https://amazon.jobs/en/jobs/10513094/human-robot-interaction-applied-scientist-fauna) |
+| Waystar | Software Engineer II | Atlanta, Georgia, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://careers.waystar.com/atlanta-ga/software-engineer-ii/4A8FCD824DA24229A586B1EC81BE19B1/job/) |
+| State Farm | Full Stack Software Engineer | Bloomington, Illinois, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://jobs.statefarm.com/main/jobs/45914?lang=en-us) |
+| Schneider Electric | Engineer I, Software | San Leandro, California, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://careers.se.com/jobs/131322?lang=en-us&previousLocale=en-US) |
+| Mine Safety Appliances | Intern: Software Engineer, Product Development (Summer 2027) | Cranberry Township, Pennsylvania, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://careers.msasafety.com/jobs/9993?lang=en-us&previousLocale=en-US) |
+| PayPal | Software Engineer 3 | San Jose, California, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://paypal.eightfold.ai/careers/job/274922009779?domain=paypal.com&triggerGoButton=false) |
+| Mindrift | Software Engineering Evaluation Specialist | Colorado, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://apply.workable.com/toloka-ai/j/581F0E6D41/) |
+| Atlassian | Full Stack Software Engineer | San Francisco, California, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://www.atlassian.com/company/careers/details/25561) |
+| Chewy | Software Engineer II – Java and AWS | Boston, Massachusetts, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://careers.chewy.com/us/en/job/R30683/Software-Engineer-II-Java-and-AWS) |
+| Phillips 66 | Associate, Workforce Software | Bartlesville, Oklahoma, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://careers.phillips66.com/job/Bartlesville-Associate%2C-Workforce-Software-OK-74004/1422493200/) |
+| Boston Scientific | Software Developer | Maple Grove, Minnesota, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://bostonscientific.eightfold.ai/careers/job/563602813426281?domain=bostonscientific.com&hl=en&triggerGoButton=false) |
+| Intercontinental Exchange | Associate Software Developer | Jacksonville, Florida, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://careers.ice.com/jobs/13511?lang=en-us) |
+| Freddie Mac | Single-Family Software Developer Intern- Summer 2027 | McLean, Virginia, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://careers.freddiemac.com/us/en/job/JR17544/Single-Family-Software-Developer-Intern-Summer-2027) |
+| CGI | Software Developer – Entry Level | Denver, Colorado, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://cgi.njoyn.com/corp/xweb/xweb.asp?NTKN=c&clid=21001&Page=JobDetails&Jobid=J0826-1623&BRID=1327992&lang=1) |
+| Captions | Software Engineer, Backend | New York City, New York, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://jobs.ashbyhq.com/mirage/8d5cc445-ff2b-41ca-8c42-feb690de4bf7) |
+| Mindrift | Software Engineering Evaluation Specialist | New York, New York, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://apply.workable.com/toloka-ai/j/BC04408A2B/) |
+| Boston Scientific | Software Engineer I | Arden Hills, Minnesota, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://bostonscientific.eightfold.ai/careers/job/563602813451526?domain=bostonscientific.com&hl=en&triggerGoButton=false) |
+| Mindrift | Software Engineering Evaluation Specialist | Austin, Texas, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://apply.workable.com/toloka-ai/j/6CBF122CC6/) |
+| Mindrift | Software Engineering Evaluation Specialist | Minnesota, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://apply.workable.com/toloka-ai/j/861A7212E8/) |
+| Mindrift | Software Engineering Evaluation Specialist | North Carolina, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://apply.workable.com/toloka-ai/j/804AEDCC1B/) |
+| BlackRock | Associate, Full Stack Engineer | San Francisco, California, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://careers.blackrock.com/job/san-francisco/associate-full-stack-engineer/45831/99362668224) |
+| Intercontinental Exchange | Full Stack Developer | Jacksonville, Florida, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://careers.ice.com/jobs/13643?lang=en-us) |
+| Coca-Cola Consolidated | IT Engineer I Wireless and AI Operations | Charlotte, North Carolina, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://conaservices.jobs2web.com/consolidated/job/Charlotte-IT-Engineer-I-Wireless-and-AI-Operations-NC-28211/1422276500/) |
+| Kforce | Network / Cloud Infrastructure Engineer | Scottsdale, Arizona, United States | 2026-08-24 | H-1B Sponsor | - | [open](https://www.kforce.com/find-work/search-jobs/#/detail/MTY5Nn5FUUd-MjE4NDI5NVQxfjk5/) |
+| Vercel | Software Engineer, Data Platform | New York City, New York, United States | 2026-08-25 | H-1B Sponsor | - | [open](https://vercel.com/careers/software-engineer-data-platform-6161129004) |
+| Susquehanna International Group | Software Engineer / Python & SQL Development / Experienced Hire | Bala Cynwyd, Pennsylvania, United States | 2026-08-25 | H-1B Sponsor | - | [open](https://careers.sig.com/jobs/10509?lang=en-us) |
+| Garmin | Software Engineer 1 | Olathe, Kansas, United States | 2026-08-25 | H-1B Sponsor | - | [open](https://careers.garmin.com/jobs/19695?lang=en-us&previousLocale=en-US) |
+| Voleon | Software Engineer - University Hire 2027 | Berkeley, California, United States | 2026-08-25 | H-1B Sponsor | - | [open](https://jobs.ashbyhq.com/voleon/d732fd5a-ac98-4985-9e60-d1d59f02a66c) |
+| Brooksource | Software Engineer – Advanced EV | Dearborn, Michigan, United States | 2026-08-25 | H-1B Sponsor | - | [open](https://jobs.brooksource.com/jobs/job/a1wcv000000imjbeau-software-engineer-advanced-ev-dearborn-michigan/) |
+| WEX | Software Development Engineer 1 | United States | 2026-08-25 | H-1B Sponsor | - | [open](https://careers.wexinc.com/us/en/job/R22757/Software-Development-Engineer-1) |
+| Tesla | Internship, Controls & Software Automation Engineer, Cell Manufacturin | Austin, Texas, United States | 2026-08-25 | H-1B Sponsor | - | [open](https://www.tesla.com/careers/search/job/280285) |
+| Garmin | Software Engineer Intern | Olathe, Kansas, United States | 2026-08-25 | H-1B Sponsor | - | [open](https://careers.garmin.com/jobs/19693?lang=en-us&previousLocale=en-US) |
+| Voleon | Software Engineer Intern - (Summer 2027) | Berkeley, California, United States | 2026-08-25 | H-1B Sponsor | - | [open](https://jobs.ashbyhq.com/voleon/57f1b666-2f4b-4bad-aac0-fa42a1c8fdf6) |
+| WEX | Software Development Engineer 1 | United States | 2026-08-25 | H-1B Sponsor | - | [open](https://careers.wexinc.com/us/en/job/R22758/Software-Development-Engineer-1) |
+| Notion Labs | Workflow + Process Designer (AI Enablement) | San Francisco, California, United States | 2026-08-25 | H-1B Sponsor | - | [open](https://jobs.ashbyhq.com/notion/c799f1f0-0e7b-4eac-98ce-44223130f2b0) |
+| Susquehanna International Group | AI Co-op with Drexel University | Bala Cynwyd, Pennsylvania, United States | 2026-08-25 | H-1B Sponsor | - | [open](https://careers.sig.com/jobs/11368?lang=en-us) |
+| WEX | PhD Intern, AI/ML/NLP Engineer | United States | 2026-08-25 | H-1B Sponsor | - | [open](https://careers.wexinc.com/us/en/job/R22834/PhD-Intern-AI-ML-NLP-Engineer) |
+| ProPetro | M365 Platform Engineer | Midland, Texas, United States | 2026-08-25 | H-1B Sponsor | - | [open](https://propetroservices.wd5.myworkdayjobs.com/en-US/ProPetro_Careers/job/Midland-TX/M365-Platform-Engineer_R-101059-1) |
+
+Full CSV/TXT attached in the workflow run artifacts and committed under `output/alerts/`.

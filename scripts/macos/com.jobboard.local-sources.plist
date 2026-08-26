@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  launchd agent: run the local source sync every 3 hours.
+
+  IMPORTANT: edit the two absolute paths below to match your machine before
+  installing. launchd requires absolute paths.
+
+  Install:
+    cp scripts/macos/com.jobboard.local-sources.plist ~/Library/LaunchAgents/
+    launchctl load  ~/Library/LaunchAgents/com.jobboard.local-sources.plist
+  Uninstall:
+    launchctl unload ~/Library/LaunchAgents/com.jobboard.local-sources.plist
+    rm ~/Library/LaunchAgents/com.jobboard.local-sources.plist
+  Run once now (for testing):
+    launchctl start com.jobboard.local-sources
+
+  Notes:
+    - StartInterval is 10800s (3h). Use 7200 for 2h.
+    - launchd does not fire while the Mac is asleep; it runs at the next wake.
+    - stdout/stderr go to output/logs/ (git-ignored).
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.jobboard.local-sources</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/daniel/Desktop/Job/job_scrape_feasibility/scripts/local_source_sync.sh</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/daniel/Desktop/Job/job_scrape_feasibility</string>
+
+    <key>StartInterval</key>
+    <integer>10800</integer>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/daniel/Desktop/Job/job_scrape_feasibility/output/logs/local-sources.out.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/daniel/Desktop/Job/job_scrape_feasibility/output/logs/local-sources.err.log</string>
+</dict>
+</plist>

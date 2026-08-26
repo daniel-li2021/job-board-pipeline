@@ -1,0 +1,18 @@
+{
+  "_comment": "Company-level filtering applied AFTER cross-source dedup and BEFORE LLM scoring. exclude/covered_elsewhere are dropped (no API calls, not user-facing). deprioritize is kept but capped at Tier B. prefer gets a small ranking boost. Match is by normalized alias: whole-token match, or substring match for aliases >= 6 chars. Do not hardcode names in Python.",
+  "exclude": [
+    { "name": "JobRight.ai", "aliases": ["jobright", "jobright.ai", "jobrightai"], "reason": "aggregator/reposter, not a direct employer" }
+  ],
+  "covered_elsewhere": [
+    { "name": "Google", "aliases": ["google", "alphabet"] },
+    { "name": "Amazon", "aliases": ["amazon", "aws", "amazon web services"] },
+    { "name": "TikTok", "aliases": ["tiktok", "bytedance", "lifeattiktok"] },
+    { "name": "NVIDIA", "aliases": ["nvidia"] },
+    { "name": "Meta", "aliases": ["meta", "facebook", "metacareers"] },
+    { "name": "Apple", "aliases": ["apple"] },
+    { "name": "Microsoft", "aliases": ["microsoft"] },
+    { "name": "Netflix", "aliases": ["netflix"] }
+  ],
+  "deprioritize": [],
+  "prefer": []
+}
