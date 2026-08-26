@@ -43,11 +43,11 @@ from sources.schema import (
     RECENCY_BUCKETS,
     classify_location_bucket,
     combined_cache_key,
-    days_since,
     dedup_key,
     jd_hash,
     looks_official,
     normalize_company_key,
+    normalize_location_key,
     normalize_space,
     normalize_title_key,
     read_source_snapshot,
@@ -73,6 +73,16 @@ LEGACY_AI_RESUME_PATH = BASE_DIR / "source" / "aie-resume.txt"
 
 # Bump whenever the LLM prompt schema/policy changes; invalidates cached scores.
 PROMPT_VERSION = "v3-strict-seniority-gaps"
+
+# score_source values. Only llm / cached_llm are reusable cache hits.
+# rule_overflow MUST remain eligible for LLM on a later run.
+SCORE_LLM = "llm"
+SCORE_CACHED_LLM = "cached_llm"
+SCORE_OVERFLOW = "rule_overflow"
+SCORE_FALLBACK = "rule_fallback"
+SCORE_RECENCY = "rule_recency"
+SCORE_RULE = "rule"
+LLM_SCORE_SOURCES = {SCORE_LLM, SCORE_CACHED_LLM}
 
 # Upper bound (NOT a target) for Tier A+B rows shown in latest.md / alerts.
 MAX_VISIBLE = 200
@@ -150,14 +160,12 @@ def load_target_companies() -> List[Dict[str, Any]]:
 
 
 def match_target_company(company_name: str, targets: List[Dict[str, Any]]) -> Optional[str]:
-    key = normalize_company_key(company_name)
-    if not key:
-        return None
-    for target in targets:
-        for alias in target["norm_aliases"]:
-            if alias in key or key in alias:
-                return target["name"]
-    return None
+    """Referral flag: same safe exact/token/alias rules as company_filters.
+
+    Short aliases (sap, meta, apple) only match as a whole token or exact key.
+    Never bidirectional substring — that flagged Sapios as SAP.
+    """
+    return _company_alias_hit(company_name, targets)
 
 
 # --------------------------------------------------------------------------
@@ -333,14 +341,25 @@ def collapse_cross_source(jobs: List[Dict[str, str]]) -> List[Dict[str, str]]:
 # Official verification
 # --------------------------------------------------------------------------
 def verify_official(jobs: List[Dict[str, str]]) -> None:
-    """Fill official_url in place (best-effort). Mutates job dicts."""
-    # Index ATS/official jobs by (company_key, title_key) for cross-source match.
-    index: Dict[Tuple[str, str], str] = {}
+    """Fill official_url in place (best-effort). Mutates job dicts.
+
+    Never match on company+title alone — that would attach one city's
+    requisition URL to a same-title opening in a different city.
+    """
+    by_id: Dict[Tuple[str, str], str] = {}
+    by_ctl: Dict[Tuple[str, str, str], str] = {}
     for job in jobs:
-        if job.get("official_url"):
-            ckey = normalize_company_key(job.get("company", ""))
-            tkey = normalize_title_key(job.get("title", ""))
-            index.setdefault((ckey, tkey), job["official_url"])
+        url = job.get("official_url") or ""
+        if not url:
+            continue
+        ckey = normalize_company_key(job.get("company", ""))
+        tkey = normalize_title_key(job.get("title", ""))
+        lkey = normalize_location_key(job.get("location", ""))
+        jid = (job.get("job_id") or "").strip()
+        if ckey and jid:
+            by_id.setdefault((ckey, jid), url)
+        if ckey and tkey and lkey:
+            by_ctl.setdefault((ckey, tkey, lkey), url)
 
     for job in jobs:
         if job.get("official_url"):
@@ -349,12 +368,21 @@ def verify_official(jobs: List[Dict[str, str]]) -> None:
         if looks_official(job.get("source_url", "")):
             job["official_url"] = job["source_url"]
             continue
-        # 2) Match by company + title against a verified posting.
         ckey = normalize_company_key(job.get("company", ""))
         tkey = normalize_title_key(job.get("title", ""))
-        hit = index.get((ckey, tkey))
-        if hit:
-            job["official_url"] = hit
+        lkey = normalize_location_key(job.get("location", ""))
+        jid = (job.get("job_id") or "").strip()
+        # 2) Same company + job_id (cross-source same requisition).
+        if ckey and jid:
+            hit = by_id.get((ckey, jid))
+            if hit:
+                job["official_url"] = hit
+                continue
+        # 3) Same company + title + location (never title-only).
+        if ckey and tkey and lkey:
+            hit = by_ctl.get((ckey, tkey, lkey))
+            if hit:
+                job["official_url"] = hit
 
 
 # --------------------------------------------------------------------------
@@ -423,36 +451,65 @@ def load_profiles() -> Dict[str, Any]:
 
 
 AI_FAMILY_RE = re.compile(
-    r"\b(ai|a\.i\.|ml|machine learning|deep learning|llm|genai|generative ai|"
-    r"applied ai|applied scientist|nlp|computer vision|cv engineer|rag|retrieval|"
-    r"search engineer|agent|agentic|mlops|ml ?ops|model|inference)\b",
+    r"\b(ai|a\.i\.|artificial intelligence|ml|machine learning|deep learning|"
+    r"llm|genai|generative ai|applied ai|applied scientist|nlp|computer vision|"
+    r"cv engineer|rag|retrieval|search engineer|agent|agentic|mlops|ml ?ops|"
+    r"model|inference)\b",
     re.IGNORECASE,
 )
 SWE_FAMILY_RE = re.compile(
-    r"\b(software|swe|sde|backend|back[- ]?end|full ?stack|front ?end|platform|"
-    r"infrastructure|infra|cloud|distributed systems|devops|site reliability|sre|"
-    r"data platform|data engineer|systems engineer|developer|programmer|api|services)\b",
+    r"\b(software|swe|sde|backend|back[- ]?end|full[- ]?stack|front[- ]?end|"
+    r"platform|infrastructure|infra|cloud|distributed systems|devops|"
+    r"site reliability|sre|data platform|data engineer|systems engineer|"
+    r"developer|programmer|forward[- ]?deployed|\bfde\b|implementation engineer|"
+    r"solutions architect|solution architect|ai solutions architect)\b",
+    re.IGNORECASE,
+)
+# Title must look like an engineering role. Stops JD keywords from rescuing
+# Content Designer / BizOps / asset-management titles.
+TITLE_TECH_RE = re.compile(
+    r"\b(software|swe|sde|backend|full[- ]?stack|frontend|front[- ]?end|"
+    r"platform|infrastructure|data engineer|data platform|machine learning|"
+    r"ml engineer|ai engineer|artificial intelligence|applied ai|llm|genai|"
+    r"developer|programmer|architect|forward[- ]?deployed|\bfde\b|scientist|"
+    r"sre|site reliability|devops|research engineer|systems engineer|agentic)\b",
     re.IGNORECASE,
 )
 NEGATIVE_FAMILY_RE = re.compile(
     r"\b(product manager|program manager|project manager|sales|account executive|"
     r"business development|marketing|growth|finance|accountant|legal|counsel|"
     r"recruit(er|ing)|talent acquisition|human resources|\bhr\b|"
-    r"ux designer|ui designer|graphic designer|product designer|"
+    r"ux designer|ui designer|graphic designer|product designer|content designer|"
+    r"business operations|asset management|"
     r"mechanical engineer|electrical engineer|civil engineer|hardware engineer|"
     r"customer success|support engineer|technical writer|"
     r"nurse|teacher|driver|warehouse|barista|clinical)\b",
     re.IGNORECASE,
 )
+# Sales/presales/quota — used to drop SA/FDE only when clearly commercial.
+SALES_HEAVY_RE = re.compile(
+    r"\b(presales|pre-sales|pre sales|\bquota\b|commission|account executive|"
+    r"go-to-market|\bgtm\b|revenue target)\b",
+    re.IGNORECASE,
+)
+INTERNSHIP_TITLE_RE = re.compile(
+    r"\b(intern|internship|co-op|coop)\b",
+    re.IGNORECASE,
+)
+EARLY_CAREER_TITLE_RE = re.compile(
+    r"\b(new grad|new-grad|early career|early-career|university grad|"
+    r"university graduate|entry[- ]?level|engineer i\b|swe i\b|sde i\b|"
+    r"associate software|associate engineer)\b",
+    re.IGNORECASE,
+)
 
 
 def detect_role_family(job: Dict[str, str]) -> str:
-    """Return 'ai', 'swe', 'ambiguous', or 'negative'."""
+    """Return 'ai', 'swe', 'ambiguous', 'negative', or 'none'."""
     title = (job.get("title") or "")
     text = f"{title} {(job.get('description') or '')[:1200]}"
     # Title dominates for negatives so a passing JD keyword doesn't rescue a PM role.
     if NEGATIVE_FAMILY_RE.search(title) and not SWE_FAMILY_RE.search(title) and not AI_FAMILY_RE.search(title):
-        # Hardware/embedded that is not clearly software -> negative.
         return "negative"
     is_ai = bool(AI_FAMILY_RE.search(text))
     is_swe = bool(SWE_FAMILY_RE.search(text))
@@ -471,12 +528,18 @@ def role_relevance_score(family: str) -> int:
     return {"ai": 2, "swe": 2, "ambiguous": 1}.get(family, 0)
 
 
+def is_sales_heavy(job: Dict[str, str]) -> bool:
+    """True when the TITLE is clearly commercial (presales/quota), not merely customer-facing."""
+    title = job.get("title") or ""
+    return bool(SALES_HEAVY_RE.search(title))
+
+
 def role_seniority_prefilter(job: Dict[str, str]) -> Tuple[bool, str]:
     """Tighten the LLM candidate pool after the hard filter.
 
     Drops negative families, senior/staff/principal/lead titles, explicit high
-    YOE requirements, hardware-first roles, and anything with no positive family.
-    Returns (keep, drop_reason).
+    YOE, hardware-first, sales/presales-heavy titles, and titles that are not
+    recognizably technical. Keeps hands-on SA / FDE / implementation roles.
     """
     title = (job.get("title") or "")
     text = f"{title} {(job.get('description') or '')[:1500]}"
@@ -486,6 +549,8 @@ def role_seniority_prefilter(job: Dict[str, str]) -> Tuple[bool, str]:
 
     if family == "negative":
         return False, "prefilter:negative_family"
+    if is_sales_heavy(job):
+        return False, "prefilter:sales_heavy"
     # Hardware-first title that isn't clearly software/ML.
     if HARDWARE_TITLE_RE.search(title) and not any(
         w in title.lower() for w in ("software", "platform", "systems", "ml", "ai", "backend")
@@ -496,6 +561,10 @@ def role_seniority_prefilter(job: Dict[str, str]) -> Tuple[bool, str]:
     m = YOE_RE.search(text)
     if m and int(m.group(1)) >= 5:
         return False, "prefilter:high_yoe"
+    # Title must look like an engineering role. JD keywords cannot rescue
+    # Content Designer / BizOps / asset-management titles.
+    if not TITLE_TECH_RE.search(title):
+        return False, "prefilter:no_positive_family"
     if family == "none":
         return False, "prefilter:no_positive_family"
     return True, "keep"
@@ -527,13 +596,14 @@ STRONG_HITS = [
     "applied ai", "applied scientist", "llm", "new grad", "early career",
 ]
 MEDIUM_HITS = [
-    "systems engineer", "solutions engineer", "data engineer", "research engineer",
-    "developer", "programmer",
+    "systems engineer", "solutions engineer", "solutions architect",
+    "solution architect", "forward deployed", "data engineer",
+    "research engineer", "developer", "programmer",
 ]
 
 
-def rule_match_score(job: Dict[str, str], is_referral: bool) -> float:
-    """Rule-based fit on a 0-100 scale (fallback + pre-rank before LLM)."""
+def rule_match_score(job: Dict[str, str]) -> float:
+    """Resume/JD keyword fit only (0-100). No referral / recency / official boosts."""
     title = normalize_space(job.get("title", "")).lower()
     text = f"{title} {normalize_space(job.get('description',''))[:1500].lower()}"
     score = 40.0
@@ -548,19 +618,24 @@ def rule_match_score(job: Dict[str, str], is_referral: bool) -> float:
         score -= 15.0
     if HARDWARE_TITLE_RE.search(title) and not any(w in title for w in ["software", "platform", "systems", "ml", "ai"]):
         score -= 20.0
-    if is_referral:
-        score += 8.0
-    if job.get("official_url"):
-        score += 5.0
-    d = days_since(job.get("posted_date", ""))
-    if d is not None and d <= 3:
-        score += 8.0
-    # Config-driven company preference (affects pre-rank + LLM pool selection).
-    if job.get("preferred"):
-        score += 6.0
+    if is_sales_heavy(job):
+        score -= 20.0
     if job.get("deprioritized"):
         score -= 10.0
     return max(1.0, min(100.0, score))
+
+
+def llm_dispatch_priority(job: Dict[str, str]) -> float:
+    """Who gets the LLM first this run. Ranking only — not stored as match_score."""
+    s = float(job.get("rule_score", 0) or 0)
+    if job.get("official_url"):
+        s += 5.0
+    if job.get("referral_name"):
+        s += 4.0
+    if job.get("preferred"):
+        s += 6.0
+    s -= RECENCY_BUCKET_RANK.get(job.get("recency_bucket", "gt7d"), 5) * 2
+    return s
 
 
 # --------------------------------------------------------------------------
@@ -631,6 +706,9 @@ def llm_match_batch(
             "top_match_reasons: 2-4 short strings. main_gaps: 0-3 short strings "
             "naming missing core requirements.",
             "Penalize hardware-first roles.",
+            "Keep hands-on Solutions Architect, AI Solutions Architect, Forward Deployed, "
+            "and implementation-engineering roles when the work is technical. "
+            "Score sales/presales/quota-oriented architect roles well below 60.",
         ],
         "return_schema": {
             "results": [
@@ -697,7 +775,7 @@ def llm_match_batch(
     return out
 
 
-def _apply_rule_result(job: Dict[str, str], method: str, note: str) -> None:
+def _apply_rule_result(job: Dict[str, str], score_source: str, note: str) -> None:
     job["match_score"] = float(job.get("rule_score", 0.0))
     fam = job.get("role_family") or detect_role_family(job)
     job["role_family"] = fam
@@ -707,7 +785,8 @@ def _apply_rule_result(job: Dict[str, str], method: str, note: str) -> None:
     job["top_match_reasons"] = [note]
     job["main_gaps"] = []
     job["recommended_action"] = "apply_if_time"
-    job["screen_method"] = method
+    job["score_source"] = score_source
+    job["screen_method"] = score_source
 
 
 def _apply_cached_result(job: Dict[str, str], entry: Dict[str, Any]) -> None:
@@ -719,7 +798,28 @@ def _apply_cached_result(job: Dict[str, str], entry: Dict[str, Any]) -> None:
     job["top_match_reasons"] = list(entry.get("top_match_reasons") or [])
     job["main_gaps"] = list(entry.get("main_gaps") or [])
     job["recommended_action"] = entry.get("recommended_action", "apply_if_time")
-    job["screen_method"] = "cache"
+    job["score_source"] = SCORE_CACHED_LLM
+    job["screen_method"] = SCORE_CACHED_LLM
+
+
+def _is_reusable_llm_cache(prev: Dict[str, Any], job: Dict[str, str]) -> bool:
+    """Only a completed LLM (or cached-LLM) score may be reused.
+
+    rule_overflow / rule_fallback / rule_recency stay eligible for a later LLM call.
+    """
+    if not prev:
+        return False
+    if prev.get("cache_key") != job.get("cache_key"):
+        return False
+    if prev.get("match_score") is None:
+        return False
+    src = (prev.get("score_source") or "").strip()
+    if src in LLM_SCORE_SOURCES:
+        return True
+    # Legacy store: real LLM results used screen_method=llm and no score_source.
+    if not src and prev.get("screen_method") == "llm":
+        return True
+    return False
 
 
 def score_survivors(
@@ -731,29 +831,26 @@ def score_survivors(
 ) -> Tuple[str, List[str], Dict[str, int]]:
     """Attach match_score + LLM fields to each candidate in place.
 
-    Incremental: reuse cached scores for jobs whose cache_key matches the store;
-    only new/changed jobs go to the LLM. Returns (method, errors, counts).
+    Incremental: reuse cached LLM scores only. Rule-overflow jobs are NOT
+    treated as a completed cache hit. Returns (method, errors, counts).
     """
     errors: List[str] = []
     counts = {
         "reused": 0, "llm": 0, "new_or_changed": 0, "rule": 0, "sent": 0,
-        "api_requests": 0, "recency_skipped": 0,
+        "api_requests": 0, "recency_skipped": 0, "overflow": 0,
     }
     fp = profiles["fingerprint"]
 
-    # Rule score + cache_key for every candidate.
     for job in candidates:
-        key = dedup_key(job)
-        job["rule_score"] = rule_match_score(job, referrals.get(key, False))
+        job["rule_score"] = rule_match_score(job)
         job["cache_key"] = combined_cache_key(job, fp)
         job["jd_hash"] = jd_hash(job)
 
-    # Split into reusable (cache hit) vs new/changed.
     to_llm: List[Dict[str, str]] = []
     for job in candidates:
         key = dedup_key(job)
         prev = store.get(key)
-        if prev and prev.get("cache_key") == job["cache_key"] and prev.get("match_score") is not None:
+        if _is_reusable_llm_cache(prev or {}, job):
             _apply_cached_result(job, prev)
             counts["reused"] += 1
         else:
@@ -761,17 +858,17 @@ def score_survivors(
     counts["new_or_changed"] = len(to_llm)
 
     if not to_llm:
-        # Everything reused from cache; nothing to score this run.
         return ("cache", errors, counts)
 
-    # Recency gate on the LLM: >7d never calls the LLM; 3-7d only when its rule
-    # fit is already exceptionally strong. Skipped jobs get a cheap rule score.
     def llm_recency_eligible(job: Dict[str, str]) -> bool:
         bucket = job.get("recency_bucket") or recency_bucket(job)
         if bucket == "gt7d":
             return False
         if bucket == "3to7d":
-            return float(job.get("rule_score", 0)) >= RULE_EXCEPTIONAL_FOR_LLM
+            if float(job.get("rule_score", 0)) >= RULE_EXCEPTIONAL_FOR_LLM:
+                return True
+            # Explicit early-career titles are worth an LLM look even at 3-7d.
+            return bool(EARLY_CAREER_TITLE_RE.search(job.get("title") or ""))
         return bucket in NORMAL_RECENCY_BUCKETS
 
     eligible: List[Dict[str, str]] = []
@@ -779,7 +876,7 @@ def score_survivors(
         if llm_recency_eligible(job):
             eligible.append(job)
         else:
-            _apply_rule_result(job, "rule", "Rule-based (recency-gated from LLM)")
+            _apply_rule_result(job, SCORE_RECENCY, "Rule-based (recency-gated from LLM)")
             counts["rule"] += 1
             counts["recency_skipped"] += 1
 
@@ -787,7 +884,7 @@ def score_survivors(
     if not use_llm or not api_key:
         note = "Rule-based (LLM disabled)" if not use_llm else "Rule-based (no OPENAI_API_KEY)"
         for job in eligible:
-            _apply_rule_result(job, "rule", note)
+            _apply_rule_result(job, SCORE_RULE, note)
             counts["rule"] += 1
         method = "cache+rule" if counts["reused"] else "rule"
         if use_llm and not api_key:
@@ -795,11 +892,11 @@ def score_survivors(
         return (method, errors, counts)
 
     model = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
-    # Send the strongest eligible jobs first; cap to control cost.
-    eligible_sorted = sorted(eligible, key=lambda j: j["rule_score"], reverse=True)
+    eligible_sorted = sorted(eligible, key=llm_dispatch_priority, reverse=True)
     llm_pool = eligible_sorted[:LLM_MAX_CANDIDATES]
     overflow = eligible_sorted[LLM_MAX_CANDIDATES:]
     counts["sent"] = len(llm_pool)
+    counts["overflow"] = len(overflow)
 
     decisions: Dict[str, Dict[str, Any]] = {}
     llm_ok = False
@@ -817,9 +914,8 @@ def score_survivors(
             errors.append(f"chunk_{i // chunk}: {type(exc).__name__}: {str(exc)[:120]}")
 
     if not llm_ok:
-        # Total LLM failure -> rule fallback for the eligible pool; never fail.
         for job in eligible:
-            _apply_rule_result(job, "rule_fallback", "Rule-based fallback (LLM error)")
+            _apply_rule_result(job, SCORE_FALLBACK, "Rule-based fallback (LLM error)")
             counts["rule"] += 1
         method = "cache+rule_fallback" if counts["reused"] else "rule_fallback"
         return (method, errors, counts)
@@ -835,13 +931,15 @@ def score_survivors(
             job["top_match_reasons"] = d["top_match_reasons"]
             job["main_gaps"] = d["main_gaps"]
             job["recommended_action"] = d["recommended_action"]
-            job["screen_method"] = "llm"
+            job["score_source"] = SCORE_LLM
+            job["screen_method"] = SCORE_LLM
             counts["llm"] += 1
         else:
-            _apply_rule_result(job, "rule", "Rule-based (missing from LLM response)")
+            _apply_rule_result(job, SCORE_FALLBACK, "Rule-based (missing from LLM response)")
             counts["rule"] += 1
     for job in overflow:
-        _apply_rule_result(job, "rule", "Rule-based (over LLM cap)")
+        # Deliberately NOT a cacheable LLM score — next run will retry.
+        _apply_rule_result(job, SCORE_OVERFLOW, "Rule-based (over LLM cap; retry next run)")
         counts["rule"] += 1
 
     method = "cache+llm" if counts["reused"] else "llm"
@@ -863,51 +961,74 @@ def _strong_seniority(job: Dict[str, str]) -> bool:
 def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
     """Recency-gated, quality-gated tiering on the 0-100 match scale.
 
-    Tier A is immediate-apply quality only: strong fit + realistic seniority +
-    at most one core gap + recent. Directionally-relevant-but-average is NOT A.
-
-    - <=3d (lt3h/3to24h/newly_discovered/1to3d): normal A/B.
-    - 3to7d: Tier A only when truly exceptional (>=90 + strong seniority + few
-      gaps); otherwise C. Never Tier B.
-    - >7d: never user-facing -> C (store-only).
+    LLM / cached-LLM strong matches may enter Tier A normally.
+    Rule-only scores (overflow / fallback / recency / rule) generally max at
+    Tier B, except explicit New Grad / Early Career / Engineer I with a
+    clearly strong family match.
     """
+    del is_referral  # ranking/action only; never a match_score or A-gate.
     score = float(job.get("match_score", 0) or 0)
     bucket = job.get("recency_bucket") or recency_bucket(job)
     strong_sen = _strong_seniority(job)
     few_gaps = len(job.get("main_gaps") or []) <= MAX_A_GAPS
     deprioritized = bool(job.get("deprioritized"))
+    src = (job.get("score_source") or "").strip()
+    llm_scored = src in LLM_SCORE_SOURCES
+    rule_only = src in {SCORE_OVERFLOW, SCORE_FALLBACK, SCORE_RECENCY, SCORE_RULE, ""}
+    early = bool(EARLY_CAREER_TITLE_RE.search(job.get("title") or ""))
+    family = (job.get("role_family") or "").lower()
+    strong_family = family in ("swe", "ai", "ambiguous")
 
-    a_quality = strong_sen and few_gaps and not deprioritized
+    intern = bool(INTERNSHIP_TITLE_RE.search(job.get("title") or ""))
+    a_quality = strong_sen and few_gaps and not deprioritized and not intern
 
     if bucket == "gt7d":
         return "C"
     if bucket == "3to7d":
-        if score >= EXCEPTIONAL_A_MIN and a_quality:
+        if score >= EXCEPTIONAL_A_MIN and a_quality and llm_scored:
             return "A"
         return "C"
     # <=3d normal window
     if score >= TIER_A_MIN and a_quality:
-        return "A"
+        if llm_scored:
+            return "A"
+        if rule_only and early and strong_family:
+            return "A"
+        # rule-only otherwise caps at B
     if score >= TIER_B_MIN:
         return "B"
     return "C"
 
 
-def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
-    """Recency dominates, then quality, then verification/relevance.
+def apply_referral_action(job: Dict[str, str]) -> None:
+    """Referral is a ranking/action flag, not a match_score bonus."""
+    if not job.get("referral_name"):
+        return
+    score = float(job.get("match_score", 0) or 0)
+    action = job.get("recommended_action") or "apply_if_time"
+    if job.get("tier") == "A" or score >= TIER_A_MIN:
+        job["recommended_action"] = "referral_now"
+    elif action == "apply_if_time":
+        job["recommended_action"] = "apply_now"
 
-    (bucket_rank, tier_rank, -match_score, seniority_fit_rank,
-     0 if official_verified else 1, -role_relevance)
+
+def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
+    """Recency dominates, then quality, then referral, then verification.
+
+    (bucket_rank, tier_rank, -match_score, 0 if referral else 1,
+     seniority_fit_rank, 0 if official_verified else 1, -role_relevance)
     """
     bucket = job.get("recency_bucket") or recency_bucket(job)
     tier_rank = {"A": 0, "B": 1, "C": 2}.get(job.get("tier", "C"), 2)
     sfit = (job.get("seniority_fit") or "").lower()
     sfit_rank = {"good": 0, "strong": 0, "realistic": 0, "stretch": 1}.get(sfit, 2 if sfit == "mismatch" else 1)
     verified = 0 if job.get("official_url") else 1
+    referral = 0 if job.get("referral_name") else 1
     return (
         RECENCY_BUCKET_RANK.get(bucket, len(RECENCY_BUCKETS)),
         tier_rank,
         -float(job.get("match_score", 0) or 0),
+        referral,
         sfit_rank,
         verified,
         -int(job.get("role_relevance", 0) or 0),
@@ -978,7 +1099,8 @@ def _stats_lines(stats: Dict[str, Any]) -> List[str]:
         f"-> after role+seniority prefilter {fn['after_prefilter']} | dropped {fn['dropped']}",
         f"- LLM usage: jobs scored {llm['scored']} / API requests {llm['api_requests']} / "
         f"cache reused {llm['reused']} / rule fallback+overflow {llm['rule']} "
-        f"(recency-gated {llm['recency_skipped']}, new/changed {llm['new_or_changed']})",
+        f"(recency-gated {llm['recency_skipped']}, overflow {llm.get('overflow', 0)}, "
+        f"new/changed {llm['new_or_changed']})",
         f"- Output sizing: Tier A {out['tier_a']} / Tier B {out['tier_b']} / "
         f"A+B before cap {out['ab_before_cap']} / Shown in latest.md {out['shown']} (cap {MAX_VISIBLE})",
         f"- Recency (kept): <3h {rec['lt3h']} / 3-24h {rec['3to24h']} / "
@@ -1006,8 +1128,8 @@ def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp:
             lines.append("_none_")
             lines.append("")
             continue
-        lines.append("| Score | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Verified | Link |")
-        lines.append("|---|---|---|---|---|---|---|---|---|---|---|")
+        lines.append("| Score | Src | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Verified | Link |")
+        lines.append("|---|---|---|---|---|---|---|---|---|---|---|---|")
         for r in rows:
             link_url = r.get("official_url") or r.get("source_url") or ""
             link = f"[open]({link_url})" if link_url else "-"
@@ -1017,8 +1139,9 @@ def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp:
             company = (r.get("company") or "").replace("|", "/")
             loc = (r.get("location") or "").replace("|", "/")
             resume = (r.get("resume_profile_used") or "").replace("resume_", "")
+            src = r.get("score_source") or "-"
             lines.append(
-                f"| {float(r.get('match_score',0)):.0f} | {company} | {title} | {loc} | "
+                f"| {float(r.get('match_score',0)):.0f} | {src} | {company} | {title} | {loc} | "
                 f"{r.get('posted_date','') or '-'} | {r.get('recency_bucket','')} | "
                 f"{r.get('date_confidence','')} | {resume} | {referral} | {verified} | {link} |"
             )
@@ -1026,9 +1149,9 @@ def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp:
     LATEST_MD_PATH.write_text("\n".join(lines), encoding="utf-8")
 
 
-ALERT_FIELDS = ["tier", "match_score", "company", "title", "location", "posted_date",
-                "recency_bucket", "date_confidence", "resume_profile_used", "referral_name",
-                "recommended_action", "official_url", "source", "source_url"]
+ALERT_FIELDS = ["tier", "match_score", "score_source", "company", "title", "location",
+                "posted_date", "recency_bucket", "date_confidence", "resume_profile_used",
+                "referral_name", "recommended_action", "official_url", "source", "source_url"]
 
 
 def write_alert(new_ab: List[Dict[str, str]], stamp: str) -> Dict[str, Path]:
@@ -1098,7 +1221,7 @@ ENTRY_DEFAULTS: Dict[str, Any] = {
     "role_family": "", "role_relevance": 0, "tier": "", "recency_bucket": "",
     "cache_key": "", "jd_hash": "", "match_score": None, "resume_profile_used": "",
     "seniority_fit": "", "hard_constraint_status": "", "top_match_reasons": [],
-    "main_gaps": [], "recommended_action": "", "screen_method": "",
+    "main_gaps": [], "recommended_action": "", "screen_method": "", "score_source": "",
     "first_seen": "", "last_seen": "",
 }
 
@@ -1145,6 +1268,7 @@ def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
         "main_gaps": list(job.get("main_gaps") or []),
         "recommended_action": job.get("recommended_action", ""),
         "screen_method": job.get("screen_method", ""),
+        "score_source": job.get("score_source", ""),
         # lifecycle
         "first_seen": job.get("first_seen", ""),
         "last_seen": job.get("last_seen", ""),
@@ -1254,6 +1378,7 @@ def run() -> None:
     # 8) Tier + user-facing rank
     for job in candidates:
         job["tier"] = assign_tier(job, referrals.get(dedup_key(job), False))
+        apply_referral_action(job)
     candidates.sort(key=user_facing_sort_key)
 
     tier_a = [j for j in candidates if j["tier"] == "A"]
@@ -1292,6 +1417,7 @@ def run() -> None:
             "reused": score_counts["reused"],
             "rule": score_counts["rule"],
             "recency_skipped": score_counts.get("recency_skipped", 0),
+            "overflow": score_counts.get("overflow", 0),
             "new_or_changed": score_counts["new_or_changed"],
             "sent": score_counts.get("sent", 0),
         },
@@ -1337,7 +1463,8 @@ def run() -> None:
           f"-> prefilter {len(candidates)} | dropped {sum(drops.values())}")
     print(f"LLM usage: scored {score_counts['llm']} / API requests {score_counts.get('api_requests', 0)} "
           f"/ cache reused {score_counts['reused']} / rule fallback+overflow {score_counts['rule']} "
-          f"(recency-gated {score_counts.get('recency_skipped', 0)}, new/changed {score_counts['new_or_changed']})")
+          f"(recency-gated {score_counts.get('recency_skipped', 0)}, "
+          f"overflow {score_counts.get('overflow', 0)}, new/changed {score_counts['new_or_changed']})")
     print(f"Screening: {screen_method}" + (f" ({len(llm_errors)} llm errors)" if llm_errors else ""))
     print(f"Output: Tier A {len(tier_a)} / Tier B {len(tier_b)} / A+B before cap {ab_before_cap} "
           f"/ shown {len(visible)} (cap {MAX_VISIBLE}) | new A/B {len(new_ab)}")

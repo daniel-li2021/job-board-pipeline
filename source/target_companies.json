@@ -1,5 +1,5 @@
 {
-  "_comment": "Companies to flag for potential referral. Matching normalizes both sides (lowercase, strip non-alphanumeric) and does bidirectional substring check. 'aliases' help match how the name may appear on Syncareer.",
+  "_comment": "Companies to flag for potential referral. Matching uses exact company key, whole-token, or substring only for aliases >= 6 chars (same rules as profile/company_filters.json). Short aliases like sap/meta/apple never match as substrings.",
   "companies": [
     {"name": "Amazon", "aliases": ["amazon", "aws", "amazon web services"]},
     {"name": "MathWorks", "aliases": ["mathworks"]},
