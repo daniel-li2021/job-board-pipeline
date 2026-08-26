@@ -872,9 +872,17 @@ def emit_github_output(values: Dict[str, str]) -> None:
         pass
 
 
+# Mention the repo owner so GitHub sends a "mentioned you" notification even when
+# Watch/email for newly opened Issues is off. Prefer Participating-only watching
+# if you already get Issue-opened emails, otherwise this + Watch will duplicate.
+ALERT_MENTION = "@daniel-li2021"
+
+
 def build_issue_body(new_rows: List[Dict[str, Any]], stamp: str, with_tiers: bool) -> str:
     lines: List[str] = []
     lines.append(f"Automated Syncareer job alert — {stamp}")
+    lines.append("")
+    lines.append(f"cc {ALERT_MENTION}")
     lines.append("")
     lines.append(f"{len(new_rows)} new matching job(s) after hard filters (senior/US-citizen/non-US removed).")
     lines.append("")
@@ -908,6 +916,11 @@ def build_issue_body(new_rows: List[Dict[str, Any]], stamp: str, with_tiers: boo
             )
     lines.append("")
     lines.append("Full CSV/TXT attached in the workflow run artifacts and committed under `output/alerts/`.")
+    lines.append("")
+    lines.append(
+        "If you check every 1–2 days: prefer the rolling board "
+        "[`output/board/latest.md`](../board/latest.md) over reading each Issue."
+    )
     return "\n".join(lines)
 
 

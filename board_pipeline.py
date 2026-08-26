@@ -1041,8 +1041,18 @@ def write_alert(new_ab: List[Dict[str, str]], stamp: str) -> Dict[str, Path]:
         for r in new_ab:
             writer.writerow({k: r.get(k, "") for k in ALERT_FIELDS})
 
-    lines = [f"Board job alert - {stamp}", "",
-             f"{len(new_ab)} new Tier A/B job(s) this run.", ""]
+    # Mention the repo owner for a "mentioned you" ping. Prefer Participating-only
+    # watching if Issue-opened emails already work, otherwise Watch + @ will duplicate.
+    lines = [
+        f"Board job alert - {stamp}",
+        "",
+        "cc @daniel-li2021",
+        "",
+        f"{len(new_ab)} new Tier A/B job(s) this run.",
+        "",
+        "For a rolling multi-day view (not just this run), open `output/board/latest.md`.",
+        "",
+    ]
     lines.append("| Tier | Score | Company | Title | Location | Posted | Recency | Referral | Link |")
     lines.append("|---|---|---|---|---|---|---|---|---|")
     for r in new_ab:
