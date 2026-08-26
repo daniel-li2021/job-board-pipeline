@@ -1,17 +1,21 @@
-# Job board - 2026-08-26_0630
+# Job board - 2026-08-26_0940
 
 ## Run stats
 
-- Source raw: ATS 2597 / Official 372 / LinkedIn 456 / Glassdoor 0 / Syncareer N/A
-- Funnel: after dedup 3416 -> after company filter 3015 -> after hard filter 2999 -> after role+seniority prefilter 864 | dropped 2552
-- LLM usage: jobs scored 342 / API requests 26 / cache reused 0 / rule fallback+overflow 522 (recency-gated 487, new/changed 864)
+- Source raw: ATS 2597 / Official 381 / LinkedIn 456 / Glassdoor 0 / Syncareer N/A
+- Funnel: after dedup 3425 -> after company filter 3015 -> after hard filter 2999 -> after role+seniority prefilter 864 | dropped 2561
+- LLM usage: jobs scored 0 / API requests 0 / cache reused 864 / rule fallback+overflow 0 (recency-gated 0, new/changed 0)
 - Output sizing: Tier A 56 / Tier B 285 / A+B before cap 341 / Shown in latest.md 200 (cap 200)
-- Recency (kept): <3h 0 / 3-24h 0 / newly-disc 278 / 1-3d 86 / 3-7d 181 / >7d 319
+- Recency (kept): <3h 0 / 3-24h 16 / newly-disc 278 / 1-3d 70 / 3-7d 181 / >7d 319
 
 ## Tier A - apply now / referral (56)
 
 | Score | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|
+| 90 | Roblox | [2027] Software Engineer, Early Career | San Mateo, CA, United States | 2026-08-26 | 3to24h | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8072244?gh_jid=8072244) |
+| 88 | Roblox | Software Engineer, Communications | San Mateo, CA, United States | 2026-08-26 | 3to24h | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8083944?gh_jid=8083944) |
+| 87 | Roblox | Software Engineer, Creator Business | San Mateo, CA, United States | 2026-08-26 | 3to24h | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8113334?gh_jid=8113334) |
+| 85 | Roblox | Software Engineer, Account Authentication | San Mateo, CA, United States | 2026-08-26 | 3to24h | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8097701?gh_jid=8097701) |
 | 90 | Beacon Hill | 100 % Remote - AI Engineer - Generative AI / Agentic AI | Chicago, IL | 2026-08-26 | newly_discovered | low | ai | - | - | [open](https://www.linkedin.com/jobs/view/100-%25-remote-ai-engineer-generative-ai-agentic-ai-at-beacon-hill-4457659937) |
 | 90 | Optiver | AI Engineer | New York, United States | 2026-08-25 | newly_discovered | low | ai | - | - | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-optiver-4446255334) |
 | 90 | Watershed | Software engineer, full-stack | New York, NY | 2026-08-25 | newly_discovered | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-watershed-4457645042) |
@@ -59,11 +63,7 @@
 | 85 | VOLTO Consulting | Generative AI Engineer | Irving, TX | 2026-08-25 | newly_discovered | low | ai | - | - | [open](https://www.linkedin.com/jobs/view/generative-ai-engineer-at-volto-consulting-4457626183) |
 | 85 | Water Floods Restoration | Full Stack Developer | Boca Raton, FL | 2026-08-25 | newly_discovered | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-water-floods-restoration-4458793528) |
 | 85 | satoriq | Founding Software Engineer, Backend and Platform | New York, NY | 2026-08-25 | newly_discovered | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/founding-software-engineer-backend-and-platform-at-satoriq-4457638682) |
-| 90 | Roblox | [2027] Software Engineer, Early Career | San Mateo, CA, United States | 2026-08-25 | 1to3d | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8072244?gh_jid=8072244) |
-| 88 | Roblox | Software Engineer, Communications | San Mateo, CA, United States | 2026-08-25 | 1to3d | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8083944?gh_jid=8083944) |
-| 87 | Roblox | Software Engineer, Creator Business | San Mateo, CA, United States | 2026-08-25 | 1to3d | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8113334?gh_jid=8113334) |
 | 86 | Roblox | Software Engineer, Creator Studio | San Mateo, CA, United States | 2026-08-25 | 1to3d | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8131689?gh_jid=8131689) |
-| 85 | Roblox | Software Engineer, Account Authentication | San Mateo, CA, United States | 2026-08-25 | 1to3d | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8097701?gh_jid=8097701) |
 | 85 | Roblox | Software Engineer, Data Engineering | San Mateo, CA, United States | 2026-08-25 | 1to3d | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8025021?gh_jid=8025021) |
 | 85 | Stripe | Solutions Architect, Enterprise (Presales) | Chicago, IL or San Francisco, CA OR US Remote | 2026-08-24 | 1to3d | medium | swe | - | yes | [open](https://stripe.com/jobs/search?gh_jid=7827184) |
 | 85 | Robinhood | Machine Learning Engineer | Bellevue, WA | 2026-08-25 | 1to3d | medium | ai | - | yes | [open](https://boards.greenhouse.io/robinhood/jobs/7960680?t=gh_src=&gh_jid=7960680) |
@@ -73,6 +73,12 @@
 
 | Score | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|
+| 80 | Roblox | Software Engineer, Foundation AI | San Mateo, CA, United States | 2026-08-26 | 3to24h | medium | ai | Roblox | yes | [open](https://careers.roblox.com/jobs/8123004?gh_jid=8123004) |
+| 75 | Roblox | [Summer 2027] Software Engineer Intern | San Mateo, CA, United States | 2026-08-26 | 3to24h | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8072713?gh_jid=8072713) |
+| 71 | Roblox | Business Operations Associate | San Mateo, CA, United States | 2026-08-26 | 3to24h | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8120368?gh_jid=8120368) |
+| 71 | Roblox | Content Designer | San Mateo, CA, United States | 2026-08-26 | 3to24h | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8070124?gh_jid=8070124) |
+| 71 | Roblox | Data Center Asset Management Specialist | Goodyear, Arizona, United States | 2026-08-26 | 3to24h | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8047847?gh_jid=8047847) |
+| 71 | Roblox | Data Center Engineer | Goodyear, Arizona, United States | 2026-08-26 | 3to24h | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8047875?gh_jid=8047875) |
 | 83 | Benchling | Software Engineer, Platform (Developer Experience) | San Francisco, CA | 2026-08-25 | newly_discovered | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/software-engineer-platform-developer-experience-at-benchling-4459048634) |
 | 83 | Chenega Professional Services Strategic Business Unit | Full Stack Developer | Atlanta, GA | 2026-08-25 | newly_discovered | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-chenega-professional-services-strategic-business-unit-4459050078) |
 | 83 | ECS | Full Stack Developer | Arlington, VA | 2026-08-25 | newly_discovered | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-ecs-4441236476) |
@@ -211,9 +217,3 @@
 | 70 | Revature | Data Engineer - Databricks | Washington, DC | 2026-08-25 | newly_discovered | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/data-engineer-databricks-at-revature-4457472307) |
 | 70 | Robert Half | Data Engineer | Baltimore, MD | 2026-08-25 | newly_discovered | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/data-engineer-at-robert-half-4457146859) |
 | 70 | Selby Jennings | Data Engineer | New York, NY | 2026-08-25 | newly_discovered | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/data-engineer-at-selby-jennings-4459012871) |
-| 70 | TD | Software Engineer II (US) | Mount Laurel, NJ | 2026-08-25 | newly_discovered | low | swe | Disney | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-us-at-td-4459046111) |
-| 70 | Uber | Software Engineer II | Seattle, WA | 2026-08-25 | newly_discovered | low | swe | Uber | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-uber-4458598844) |
-| 70 | ValueMomentum | AWS Data Engineer | Illinois, United States | 2026-08-25 | newly_discovered | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/aws-data-engineer-at-valuemomentum-4457641213) |
-| 70 | Voyatek | Software Developer | Clifton Park, NY | 2026-08-25 | newly_discovered | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/software-developer-at-voyatek-4448683020) |
-| 70 | Booz Allen Hamilton | AI/ML Software Developer | Fort Meade, MD | 2026-08-25 | newly_discovered | low | ai | - | - | [open](https://www.linkedin.com/jobs/view/ai-ml-software-developer-at-booz-allen-hamilton-4459040337) |
-| 70 | NeerInfo Solutions | Gen AI Developer | Plano, TX | 2026-08-25 | newly_discovered | low | ai | - | - | [open](https://www.linkedin.com/jobs/view/gen-ai-developer-at-neerinfo-solutions-4459034010) |
