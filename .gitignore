@@ -14,6 +14,7 @@ venv/
 # Local scraper logs + local-only pipeline output (never pushed)
 output/logs/
 output/board-local/
+output/official_careers-local/
 
 # Large / derived scrape outputs — do NOT track these.
 output/*.csv
@@ -34,6 +35,10 @@ output/alerts/
 # ATS / LinkedIn / official board pipeline (board_pipeline.py)
 !output/board/
 !output/board/**
+
+# Big Tech Official Careers discovery + shared matching (official_careers.py)
+!output/official_careers/
+!output/official_careers/**
 
 # Local LinkedIn/Glassdoor snapshots for GHA ingest
 !output/sources/

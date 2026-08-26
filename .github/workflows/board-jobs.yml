@@ -2,13 +2,11 @@ name: Board job alert
 
 # Multi-source pipeline (ATS + official career pages + ingested local
 # LinkedIn/Glassdoor snapshots). ONLY writer of output/board/.
-# Syncareer writes output/syncareer/ in a separate workflow.
+# Scheduled morning/evening runs live in scheduled-jobs.yml (board then
+# official, one commit). This file keeps the launchd snapshot push trigger
+# so LinkedIn/Glassdoor ingest still runs board-only.
 
 on:
-  schedule:
-    # GitHub cron is UTC. ~07:00 and ~19:00 US Pacific.
-    - cron: "0 15 * * *"
-    - cron: "0 3 * * *"
   workflow_dispatch:
   push:
     paths:
@@ -48,7 +46,11 @@ jobs:
           # and still succeeds (see score_survivors()).
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python3 board_pipeline.py
+          if [ "${{ github.event_name }}" = "push" ]; then
+            python3 board_pipeline.py --no-digest
+          else
+            python3 board_pipeline.py
+          fi
 
       - name: Commit board outputs (never sources/*.json)
         run: |
@@ -66,7 +68,7 @@ jobs:
           fi
 
       - name: Upload alert artifact
-        if: ${{ steps.pipeline.outputs.new_count != '0' && steps.pipeline.outputs.new_count != '' }}
+        if: ${{ steps.pipeline.outputs.digest_emitted == '1' && steps.pipeline.outputs.new_count != '0' && steps.pipeline.outputs.new_count != '' }}
         uses: actions/upload-artifact@v4
         with:
           name: ats-linkedin-inbox-${{ steps.pipeline.outputs.stamp }}
@@ -78,9 +80,10 @@ jobs:
           if-no-files-found: ignore
 
       - name: Open GitHub Issue for new Tier A/B jobs
-        # Only alert on scheduled/manual runs, not on every source push, to
-        # avoid spamming issues each time the local scraper syncs.
-        if: ${{ github.event_name != 'push' && steps.pipeline.outputs.new_count != '0' && steps.pipeline.outputs.new_count != '' }}
+        # Only alert on manual runs, not on every source push, to avoid
+        # spamming issues each time the local scraper syncs. Push runs use
+        # --no-digest so keys are not marked alerted without an Issue.
+        if: ${{ github.event_name != 'push' && steps.pipeline.outputs.digest_emitted == '1' && steps.pipeline.outputs.new_count != '0' && steps.pipeline.outputs.new_count != '' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

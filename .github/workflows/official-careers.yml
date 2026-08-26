@@ -1,0 +1,96 @@
+name: Official careers
+
+# Component 3 debug/dispatch only. Scheduled morning/evening runs live in
+# scheduled-jobs.yml (board then official, one commit). Keep this file so
+# `--only uber` (and similar) stays a one-click workflow_dispatch.
+
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Optional company id (google, amazon, apple, microsoft, nvidia, uber, …)"
+        required: false
+        default: ""
+      no_llm:
+        description: "Force rule-based scoring"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: official-careers
+  cancel-in-progress: false
+
+jobs:
+  official-careers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Scrape official careers and match
+        id: pipeline
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          ONLY="${{ github.event.inputs.only }}"
+          NO_LLM="${{ github.event.inputs.no_llm }}"
+          ARGS=()
+          if [ -n "$ONLY" ]; then ARGS+=(--only "$ONLY"); fi
+          if [ "$NO_LLM" = "true" ]; then ARGS+=(--no-llm); fi
+          python3 official_careers.py run "${ARGS[@]}"
+
+      - name: Commit official-careers outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/official_careers/ output/alerts/official_* output/alerts/official_issue_body.md 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "No official-careers changes to commit."
+          else
+            git commit -m "chore: official careers ${{ steps.pipeline.outputs.stamp }}"
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Upload digest artifact
+        if: ${{ steps.pipeline.outputs.digest_emitted == '1' && steps.pipeline.outputs.new_count != '0' && steps.pipeline.outputs.new_count != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-careers-${{ steps.pipeline.outputs.stamp }}
+          path: |
+            output/alerts/official_${{ steps.pipeline.outputs.stamp }}.csv
+            output/official_careers/latest.md
+            output/official_careers/scrape_report.md
+          if-no-files-found: ignore
+
+      - name: Open GitHub Issue digest (at most once per day)
+        if: ${{ steps.pipeline.outputs.digest_emitted == '1' && steps.pipeline.outputs.new_count != '0' && steps.pipeline.outputs.new_count != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BODY_PATH="${{ steps.pipeline.outputs.issue_body_path }}"
+          if [ -f "$BODY_PATH" ]; then
+            gh issue create \
+              --title "${{ steps.pipeline.outputs.issue_title }}" \
+              --body-file "$BODY_PATH" \
+              --label "job-alert" || \
+            gh issue create \
+              --title "${{ steps.pipeline.outputs.issue_title }}" \
+              --body-file "$BODY_PATH"
+          else
+            echo "No issue body file; skipping issue creation."
+          fi

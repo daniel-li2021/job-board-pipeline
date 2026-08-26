@@ -34,6 +34,7 @@ from collections import Counter
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -62,7 +63,9 @@ JOBS_STORE_PATH = BOARD_DIR / "jobs.json"
 LATEST_MD_PATH = BOARD_DIR / "latest.md"
 INBOX_MD_PATH = BOARD_DIR / "inbox.md"
 INBOX_CSV_PATH = BOARD_DIR / "inbox.csv"
+DIGEST_STATE_PATH = BOARD_DIR / "digest_state.json"
 RUNS_DIR = BOARD_DIR / "runs"
+PACIFIC = ZoneInfo("America/Los_Angeles")
 RETENTION_DAYS = 7
 INBOX_DAYS = 3
 TARGET_COMPANIES_JSON = BASE_DIR / "source" / "target_companies.json"
@@ -138,12 +141,127 @@ def emit_github_output(values: Dict[str, str]) -> None:
     out_path = os.environ.get("GITHUB_OUTPUT")
     if not out_path:
         return
+    prefix = os.environ.get("GITHUB_OUTPUT_PREFIX", "")
     try:
         with open(out_path, "a", encoding="utf-8") as f:
             for key, value in values.items():
-                f.write(f"{key}={value}\n")
+                f.write(f"{prefix}{key}={value}\n")
     except OSError:
         pass
+
+
+def today_pacific() -> str:
+    return datetime.now(PACIFIC).strftime("%Y-%m-%d")
+
+
+def load_digest_state(path: Path) -> Dict[str, Any]:
+    empty: Dict[str, Any] = {"last_digest_date": "", "alerted_keys": [], "alerted_tier": {}}
+    if not path.exists():
+        return dict(empty)
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return dict(empty)
+    if not isinstance(data, dict):
+        return dict(empty)
+    data.setdefault("last_digest_date", "")
+    data.setdefault("alerted_keys", [])
+    data.setdefault("alerted_tier", {})
+    if not isinstance(data["alerted_tier"], dict):
+        data["alerted_tier"] = {}
+    return data
+
+
+def save_digest_state(path: Path, state: Dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    keys = list(dict.fromkeys(state.get("alerted_keys") or []))[-4000:]
+    key_set = set(keys)
+    raw_tiers = state.get("alerted_tier") or {}
+    tiers = {k: v for k, v in raw_tiers.items() if k in key_set} if isinstance(raw_tiers, dict) else {}
+    path.write_text(
+        json.dumps(
+            {
+                "last_digest_date": state.get("last_digest_date", ""),
+                "alerted_keys": keys,
+                "alerted_tier": tiers,
+            },
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+
+def digest_alert_jobs(visible: List[Dict[str, str]], state: Dict[str, Any]) -> List[Dict[str, str]]:
+    """Visible A/B that are newly discovered, or a B→A promotion.
+
+    Unmigrated ``alerted_keys`` without a stored tier are treated as already
+    alerted at A so score/JD-only changes do not re-fire.
+    """
+    already_keys = set(state.get("alerted_keys") or [])
+    last_tier = state.get("alerted_tier") or {}
+    if not isinstance(last_tier, dict):
+        last_tier = {}
+    out: List[Dict[str, str]] = []
+    for job in visible:
+        tier = job.get("tier")
+        if tier not in ("A", "B"):
+            continue
+        key = dedup_key(job)
+        last = last_tier.get(key)
+        if last is None and key in already_keys:
+            last = "A"
+        if last is None:
+            out.append(job)
+        elif last == "B" and tier == "A":
+            out.append(job)
+    return out
+
+
+def digest_should_emit(
+    state: Dict[str, Any],
+    candidates: List[Dict[str, str]],
+    *,
+    force: bool = False,
+    no_digest: bool = False,
+    today: str = "",
+) -> bool:
+    if no_digest or not candidates:
+        return False
+    if force:
+        return True
+    return state.get("last_digest_date") != (today or today_pacific())
+
+
+def apply_digest_state(
+    state: Dict[str, Any],
+    emitted_jobs: List[Dict[str, str]],
+    today: str,
+) -> Dict[str, Any]:
+    already = list(state.get("alerted_keys") or [])
+    tiers = dict(state.get("alerted_tier") or {}) if isinstance(state.get("alerted_tier"), dict) else {}
+    for job in emitted_jobs:
+        key = dedup_key(job)
+        already.append(key)
+        tiers[key] = job.get("tier") or ""
+    state["last_digest_date"] = today
+    state["alerted_keys"] = already
+    state["alerted_tier"] = tiers
+    return state
+
+
+def decide_digest(
+    visible: List[Dict[str, str]],
+    state: Dict[str, Any],
+    *,
+    force: bool = False,
+    no_digest: bool = False,
+) -> Tuple[List[Dict[str, str]], bool, str]:
+    today = today_pacific()
+    candidates = digest_alert_jobs(visible, state)
+    candidates.sort(key=user_facing_sort_key)
+    emit = digest_should_emit(state, candidates, force=force, no_digest=no_digest, today=today)
+    return candidates, emit, today
 
 
 # --------------------------------------------------------------------------
@@ -398,8 +516,15 @@ SENIOR_TITLE_RE = re.compile(
     re.IGNORECASE,
 )
 HARDWARE_TITLE_RE = re.compile(
-    r"\b(asic|rtl|fpga|verilog|vhdl|analog|rf|pcb|soc design|silicon|hardware|embedded|firmware|mechanical|electrical engineer)\b",
+    r"\b(asic|rtl|fpga|verilog|vhdl|analog|\brf\b|pcb|soc design|silicon|"
+    r"hardware engineer|mechanical engineer|electrical engineer)\b",
     re.IGNORECASE,
+)
+# Title tokens that mean the role is software-adjacent even if "embedded"/"firmware"
+# also appears. Do not drop these from the title alone.
+HARDWARE_SOFT_TITLE_HINTS = (
+    "software", "platform", "systems", "ml", "ai", "backend",
+    "compiler", "gpu", "tooling", "tools", "firmware", "embedded",
 )
 CITIZEN_PHRASES = [
     "us citizen", "u.s. citizen", "united states citizen", "us citizenship",
@@ -507,7 +632,8 @@ SWE_FAMILY_RE = re.compile(
     r"platform|infrastructure|infra|cloud|distributed systems|devops|"
     r"site reliability|sre|data platform|data engineer|systems engineer|"
     r"developer|programmer|forward[- ]?deployed|\bfde\b|implementation engineer|"
-    r"solutions architect|solution architect|ai solutions architect)\b",
+    r"solutions architect|solution architect|ai solutions architect|"
+    r"compiler|gpu|firmware|embedded|tooling)\b",
     re.IGNORECASE,
 )
 # Title must look like an engineering role. Stops JD keywords from rescuing
@@ -517,7 +643,8 @@ TITLE_TECH_RE = re.compile(
     r"platform|infrastructure|data engineer|data platform|machine learning|"
     r"ml engineer|ai engineer|artificial intelligence|applied ai|llm|genai|"
     r"developer|programmer|architect|forward[- ]?deployed|\bfde\b|scientist|"
-    r"sre|site reliability|devops|research engineer|systems engineer|agentic)\b",
+    r"sre|site reliability|devops|research engineer|systems engineer|agentic|"
+    r"compiler|gpu|firmware|embedded|tooling)\b",
     re.IGNORECASE,
 )
 NEGATIVE_FAMILY_RE = re.compile(
@@ -542,7 +669,7 @@ INTERNSHIP_TITLE_RE = re.compile(
     re.IGNORECASE,
 )
 EARLY_CAREER_TITLE_RE = re.compile(
-    r"\b(new grad|new-grad|early career|early-career|university grad|"
+    r"\b(new grad|new-grad|new college grad|early career|early-career|university grad|"
     r"university graduate|university hire|college grad|recent graduate|"
     r"entry[- ]?level|engineer i\b|swe i\b|sde i\b|"
     r"associate software|associate engineer)\b",
@@ -597,9 +724,11 @@ def role_seniority_prefilter(job: Dict[str, str]) -> Tuple[bool, str]:
         return False, "prefilter:negative_family"
     if is_sales_heavy(job):
         return False, "prefilter:sales_heavy"
-    # Hardware-first title that isn't clearly software/ML.
+    # Hardware/electrical-first titles only. Embedded / firmware / GPU / compiler
+    # / tooling stay unless the title is clearly ASIC/RTL/electrical with no
+    # software signal.
     if HARDWARE_TITLE_RE.search(title) and not any(
-        w in title.lower() for w in ("software", "platform", "systems", "ml", "ai", "backend")
+        w in title.lower() for w in HARDWARE_SOFT_TITLE_HINTS
     ):
         return False, "prefilter:hardware"
     if SENIOR_TITLE_RE.search(title):
@@ -662,7 +791,7 @@ def rule_match_score(job: Dict[str, str]) -> float:
     m = YOE_RE.search(text)
     if m and int(m.group(1)) >= 5:
         score -= 15.0
-    if HARDWARE_TITLE_RE.search(title) and not any(w in title for w in ["software", "platform", "systems", "ml", "ai"]):
+    if HARDWARE_TITLE_RE.search(title) and not any(w in title.lower() for w in HARDWARE_SOFT_TITLE_HINTS):
         score -= 20.0
     if is_sales_heavy(job):
         score -= 20.0
@@ -1293,7 +1422,9 @@ def write_alert(new_ab: List[Dict[str, str]], stamp: str) -> Dict[str, Path]:
         "",
         "cc @daniel-li2021",
         "",
-        f"{len(new_ab)} new Tier A/B job(s) this run.",
+        f"{len(new_ab)} new or promoted (B→A) Tier A/B job(s).",
+        "",
+        "At most one digest is sent per Pacific day. Score/JD-only changes are not re-alerted.",
         "",
         f"If you skipped a day, open `output/board/inbox.md` (last {INBOX_DAYS} days). Do not read every Issue.",
         "",
@@ -1404,15 +1535,18 @@ def run() -> None:
     parser.add_argument("--no-llm", action="store_true", help="Force rule-based scoring (local debug)")
     parser.add_argument("--skip-network", action="store_true", help="Ingest local snapshots only (no ATS/official fetch)")
     parser.add_argument("--local-out", action="store_true", help="Write to output/board-local/ (gitignored) for local testing")
+    parser.add_argument("--no-digest", action="store_true", help="Update store/latest.md without a user-facing digest")
+    parser.add_argument("--force-digest", action="store_true", help="Emit a digest even if one already went out today")
     args = parser.parse_args()
 
-    global BOARD_DIR, JOBS_STORE_PATH, LATEST_MD_PATH, INBOX_MD_PATH, INBOX_CSV_PATH, RUNS_DIR
+    global BOARD_DIR, JOBS_STORE_PATH, LATEST_MD_PATH, INBOX_MD_PATH, INBOX_CSV_PATH, RUNS_DIR, DIGEST_STATE_PATH
     if args.local_out:
         BOARD_DIR = OUTPUT_DIR / "board-local"
         JOBS_STORE_PATH = BOARD_DIR / "jobs.json"
         LATEST_MD_PATH = BOARD_DIR / "latest.md"
         INBOX_MD_PATH = BOARD_DIR / "inbox.md"
         INBOX_CSV_PATH = BOARD_DIR / "inbox.csv"
+        DIGEST_STATE_PATH = BOARD_DIR / "digest_state.json"
         RUNS_DIR = BOARD_DIR / "runs"
 
     load_env_file(BASE_DIR / ".env")
@@ -1573,14 +1707,20 @@ def run() -> None:
     # 11) Outputs (Tier A/B only)
     write_latest_md(visible, stats, stamp)
     write_board_inbox(visible, stamp, now)
-    new_ab = [j for j in visible if dedup_key(j) in new_keys]
-    new_ab.sort(key=user_facing_sort_key)
+    digest_state = load_digest_state(DIGEST_STATE_PATH)
+    digest_jobs, emit_digest, digest_day = decide_digest(
+        visible, digest_state, force=args.force_digest, no_digest=args.no_digest
+    )
     alert_paths: Dict[str, Path] = {}
-    if new_ab:
-        alert_paths = write_alert(new_ab, stamp)
+    digest_count = 0
+    if emit_digest:
+        alert_paths = write_alert(digest_jobs, stamp)
+        apply_digest_state(digest_state, digest_jobs, digest_day)
+        digest_count = len(digest_jobs)
+    save_digest_state(DIGEST_STATE_PATH, digest_state)
 
     emit_github_output({
-        "new_count": str(len(new_ab)),
+        "new_count": str(digest_count),
         "stamp": stamp,
         "tier_a": str(len(tier_a)),
         "tier_b": str(len(tier_b)),
@@ -1590,7 +1730,8 @@ def run() -> None:
         "llm_api_requests": str(score_counts.get("api_requests", 0)),
         "llm_reused": str(score_counts["reused"]),
         "llm_rule_fallback": str(score_counts["rule"]),
-        "issue_title": f"ATS/LinkedIn alert {stamp} ({len(new_ab)} new A/B)",
+        "digest_emitted": "1" if emit_digest else "0",
+        "issue_title": f"ATS/LinkedIn alert {stamp} ({digest_count} new/promoted A/B)",
         "issue_body_path": str(alert_paths.get("issue_body", "")),
     })
 
@@ -1606,7 +1747,17 @@ def run() -> None:
           f"overflow {score_counts.get('overflow', 0)}, new/changed {score_counts['new_or_changed']})")
     print(f"Screening: {screen_method}" + (f" ({len(llm_errors)} llm errors)" if llm_errors else ""))
     print(f"Output: Tier A {len(tier_a)} / Tier B {len(tier_b)} / A+B before cap {ab_before_cap} "
-          f"/ shown {len(visible)} (cap {MAX_VISIBLE}) | new A/B {len(new_ab)}")
+          f"/ shown {len(visible)} (cap {MAX_VISIBLE}) | digest A/B {digest_count}")
+    if emit_digest:
+        print(f"Digest emitted: {digest_count} new/promoted A/B -> {alert_paths.get('issue_body')}")
+    else:
+        digest_today = digest_state.get("last_digest_date") == digest_day
+        reason = (
+            "--no-digest" if args.no_digest
+            else "already sent today" if digest_today
+            else "no new or promoted A/B"
+        )
+        print(f"Digest skipped ({reason}). Store updated silently.")
     print(f"Staffing capped to B (score>={int(TIER_A_MIN)}): {staffing_capped_to_b} "
           f"| staffing in shown A/B: {staffing_in_ab}")
     print(f"Gov/clearance removed: citizen_or_clearance={drops.get('citizen_or_clearance', 0)} "

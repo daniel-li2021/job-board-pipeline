@@ -1,15 +1,25 @@
 # Job pipelines
 
-Two **separate** pipelines. Do not mix their folders.
+Three **separate** components. Do not mix their folders.
 
-| Pipeline | Script | When you skipped a day, open this |
-|---|---|---|
-| **Syncareer** | `daily_pipeline.py` | [`output/syncareer/inbox.md`](output/syncareer/inbox.md) (also `inbox.csv`) |
-| **ATS / LinkedIn / official** | `board_pipeline.py` | [`output/board/inbox.md`](output/board/inbox.md) (also `inbox.csv`) |
+| # | Component | Script | When you skipped a day, open this |
+|---|---|---|---|
+| 1 | **Syncareer** | `daily_pipeline.py` | [`output/syncareer/inbox.md`](output/syncareer/inbox.md) |
+| 2 | **ATS / LinkedIn / Glassdoor** | `board_pipeline.py` | [`output/board/inbox.md`](output/board/inbox.md) |
+| 3 | **Big Tech Official Careers** | `official_careers.py` | [`output/official_careers/inbox.md`](output/official_careers/inbox.md) |
 
 Each inbox is the last **3 days** of matching jobs. You do **not** need to read every GitHub Issue.
 
-Per-run snapshots (optional): `output/syncareer/runs/` and `output/board/runs/`.
+**Matching/scoring is shared, not implemented three times.** Components 2 and 3
+use the same `board_pipeline.py` hard filter, role/seniority prefilter,
+resume routing (`resume_swe.md` / `resume_ai.md`), LLM/cache scoring, and
+Tier A/B ranking. Component 3 is discovery-only: it normalizes official career
+jobs into the shared schema, then calls those functions. Component 1
+(Syncareer) keeps its own lighter hard-filter / optional LLM path and does
+**not** go through `board_pipeline.py`.
+
+Per-run snapshots: `output/syncareer/runs/`, `output/board/runs/`,
+`output/official_careers/runs/`.
 
 # Syncareer job pipeline
 
@@ -67,7 +77,6 @@ Filter -> Match (LLM or rules) -> Rank -> jobs.json + latest.md + alert`.
 
 - `board_pipeline.py` — orchestrator. **Only writer** of `output/board/`.
 - `sources/schema.py` — unified job schema, US/recency/date helpers, dedup keys.
-- `sources/schema.py` — unified job schema, US/recency/date helpers, dedup keys.
 - `sources/ats.py` + `source/ats_boards.json` — Greenhouse/Lever/Ashby adapters.
 - `sources/official.py` — Amazon + Google career-page adapters (CI-safe HTTP).
 - `sources/linkedin_local.py`, `sources/glassdoor_local.py` — **local-only**
@@ -82,9 +91,10 @@ Filter -> Match (LLM or rules) -> Rank -> jobs.json + latest.md + alert`.
 ## Division of responsibility (avoids git conflicts)
 
 - **Local machine (launchd):** scrapes LinkedIn/Glassdoor and pushes only
-  `output/sources/*.json`.
-- **GitHub Actions:** fetches ATS + official, ingests the pushed source JSONs,
-  runs the full pipeline, and is the sole committer of `output/board/`.
+  `output/sources/*.json`. GitHub-hosted runners never scrape those sites.
+- **GitHub Actions (`scheduled-jobs.yml`):** runs `board_pipeline.py` then
+  `official_careers.py run`, and is the sole scheduled committer of
+  `output/board/` and `output/official_careers/` (one commit of both trees).
 
 ## Local usage
 
@@ -131,10 +141,130 @@ rule-based scoring for local debugging.
 
 ## GitHub Actions
 
-`.github/workflows/board-jobs.yml` runs twice daily (cron), on manual dispatch,
-and on any push to `output/sources/*.json` (i.e. after the local scraper syncs).
-It runs the pipeline, commits `output/board/`, uploads the **inbox** artifact,
-and opens an `ats-linkedin-alert` Issue for new Tier A/B jobs on scheduled/manual
-runs (source-push runs ingest without opening an issue, to avoid spam).
+Morning + evening schedules live in `.github/workflows/scheduled-jobs.yml`
+(UTC crons `0 15 * * *` and `0 3 * * *`): board pipeline, then official
+careers, then **one** commit of `output/board/` + `output/official_careers/`.
+`workflow_dispatch` can run `both` | `board` | `official` (official `--only`
+still works). Each pipeline keeps its own inbox and digest; the combined
+run may open 0–2 Issues.
+
+`.github/workflows/board-jobs.yml` has **no schedule**. It still runs on
+manual dispatch and on push to `output/sources/linkedin.json` /
+`glassdoor.json` (launchd snapshot sync) — **board only**, no official
+scrape. Source-push runs use `--no-digest` so they do not mark jobs as
+alerted without an Issue.
 
 **What to open:** `output/board/inbox.md` (last 3 days). `latest.md` is the 7-day dump.
+
+At most **one useful digest per Pacific day** per pipeline: newly visible
+Tier A/B, or a B→A promotion. Rescores, JD-only edits, and the evening
+rerun do not re-alert. State: `output/board/digest_state.json`.
+
+`sources/official.py` (Amazon + Google, limited pagination) stays in this
+pipeline as a lightweight CI-safe source. The fuller Big Tech official
+scraper is component 3 and writes only under `output/official_careers/`.
+Google / Amazon / Apple / Microsoft / NVIDIA / Meta / TikTok / Netflix are
+`covered_elsewhere` in `profile/company_filters.json` so LinkedIn/Glassdoor
+dupes of those companies do not appear in the board inbox.
+
+---
+
+# Big Tech Official Careers scraper
+
+Direct discovery from official company career sites. **Discovery only** —
+no second matching implementation. After each scrape, jobs are normalized
+with `sources.schema.make_job` and handed to the existing board matching
+stack (hard filter, prefilter, LLM/cache scoring, Tier A/B).
+
+`posted_date` is the official posting time from the career site.
+`fetched_at` is scrape time. `first_seen` is when *this* store first saw
+the job. Discovery time is never treated as posting time.
+
+## Purpose
+
+Catch new/updated SWE and ML roles on large-company career sites that the
+ATS/LinkedIn pipeline either skips (`covered_elsewhere`) or only samples
+lightly (`sources/official.py`).
+
+## Sources (initial)
+
+| Company | Adapter | Method | Pagination |
+|---|---|---|---|
+| Google | `sources/careers/google.py` | HTML GET + `AF_initDataCallback` ds:1 JSON | `page=1,2,...` |
+| Amazon | `sources/careers/amazon.py` | `search.json` (`country=USA`) | `offset=0,20,40,...` |
+| Apple | `sources/careers/apple.py` | HTML GET + `__staticRouterHydrationData` (`location=united-states-USA`) | `page=1,2,...` |
+| Microsoft | `sources/careers/microsoft.py` | Eightfold PCSX `GET /api/pcsx/search` (`location=United States`) | `start=0,10,20,...` |
+| NVIDIA / Salesforce / Adobe | `sources/careers/workday.py` (one reusable CXS adapter) | `POST /wday/cxs/{tenant}/{site}/jobs` (US facet) | `offset=0,20,40,...` |
+| Uber | `sources/careers/uber.py` | Oracle HCM list+detail (`iaziqy.fa.ocs.oraclecloud.com`, site `CX_1`) | `offset=(page-1)*limit` until `TotalJobsCount` exhausted (do not stop at pages 1–7) |
+
+Registry: `source/official_careers.json`. Source-side US filters are used
+when the API actually honors them. Uber’s HCM finder does not, so rows are
+collected then passed through conservative `keep_us_or_unknown` (keep US /
+Remote-US / multi-office if any US / ambiguous; drop confirmed all-non-US).
+
+Skipped until a working public search API exists: Meta, TikTok, LinkedIn
+(corporate), Walmart.
+
+## Entry point
+
+```bash
+python3 official_careers.py scrape --only google   # discovery
+python3 official_careers.py match --no-llm         # shared matching
+python3 official_careers.py run                    # scrape + match (scheduled)
+```
+
+`--only` takes a company id from the registry. `--max-pages` is a per-query
+safety cap (default 50). `--no-digest` updates the store without a
+user-facing alert. `--force-digest` sends a digest even if one already went
+out today.
+
+## Schedule / workflow
+
+`.github/workflows/scheduled-jobs.yml` ~twice a day (15:00 and 03:00 UTC)
+runs board then official careers and commits both output folders together.
+`.github/workflows/official-careers.yml` is `workflow_dispatch` only (for
+`--only` / debug). LinkedIn/Glassdoor scraping stays on the local launchd
+agent; GHA never hits those sites.
+
+- Every run scrapes, normalizes, and re-runs matching.
+- **At most one user-facing digest per Pacific day per pipeline.** The
+  evening run updates `output/official_careers/` silently if a digest
+  already went out today.
+- Alert only on newly visible Tier A/B or a B→A promotion. Score/JD-only
+  changes are not re-alerted (`digest_state.json` stores last alerted tier).
+
+## Outputs (`output/official_careers/` only)
+
+- `raw.json` — last scrape, normalized JobRecords.
+- `scrape_report.md` — per-company method, pages, counts, sample records.
+- `jobs.json` — 7-day store (`first_seen` / `last_seen` / LLM cache).
+- `latest.md` — 7-day Tier A/B view.
+- `inbox.md` / `inbox.csv` — last 3 days (the file to read).
+- `digest_state.json` — last digest date + already-alerted keys and last alerted tier.
+
+Digest CSV / issue body (when emitted): `output/alerts/official_*`.
+
+## What handles matching
+
+`official_careers.py match` imports `board_pipeline` functions:
+
+hard_filter → role_seniority_prefilter → score_survivors (resume_swe / resume_ai
++ candidate_profile + LLM cache) → assign_tier → user_facing_sort_key.
+
+`covered_elsewhere` is **not** applied here (these companies *are* the
+target). The `exclude` list still is.
+
+## Data flow
+
+```
+Official career sites
+    -> sources/careers/* adapters
+    -> output/official_careers/raw.json   (discovery snapshot)
+    -> board_pipeline matching functions   (shared; not copied)
+    -> output/official_careers/jobs.json + latest.md + inbox.md
+    -> at most one digest/day (new A/B or B→A) -> GitHub Issue
+```
+
+Component 1 (Syncareer) and component 2 (board) are unchanged and keep
+writing to their own folders. Component 3 never writes `output/board/` or
+`output/syncareer/`.

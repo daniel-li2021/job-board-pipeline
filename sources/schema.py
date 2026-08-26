@@ -59,6 +59,17 @@ US_HINTS = [
     "remote, us",
     "remote - us",
     "remote (us",
+    "remote, usa",
+    "remote - usa",
+    "remote (usa",
+    "remote, united states",
+    "united states, remote",
+    "usa, remote",
+    "us, remote",
+    "us remote",
+    "usa remote",
+    "remote us",
+    "san francisco bay area",
 ]
 
 STATE_ABBRS = {
@@ -78,7 +89,8 @@ NON_US_TOKENS = [
     "philippines", "vietnam", "indonesia", "malaysia", "uae",
     "dubai", "london", "toronto", "vancouver", "bangalore",
     "hyderabad", "beijing", "shanghai", "tokyo", "berlin", "paris",
-    "amsterdam", "dublin", "sydney",
+    "amsterdam", "dublin", "sydney", "norway", "denmark", "finland",
+    "belgium", "austria", "oslo", "copenhagen", "helsinki",
 ]
 
 
@@ -270,6 +282,11 @@ ATS_URL_MARKERS = [
     "jobs.ashbyhq.com",
     "ashbyhq.com",
     "myworkdayjobs.com",
+    "myworkdaysite.com",
+    "avature.net",
+    "jobs.sap.com",
+    "careers.cisco.com",
+    "job-boards.greenhouse.io",
     "amazon.jobs",
     "google.com/about/careers",
     "careers.google.com",

@@ -1,0 +1,215 @@
+{
+  "_comment": "Big Tech Official Careers discovery registry. Adapters live in sources/careers/. Matching is NOT done here — official_careers.py hands normalized jobs to board_pipeline scoring/ranking.",
+  "max_pages_default": 50,
+  "companies": [
+    {
+      "id": "google",
+      "name": "Google",
+      "adapter": "google",
+      "enabled": true
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "adapter": "amazon",
+      "enabled": true
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "adapter": "apple",
+      "enabled": true
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "adapter": "microsoft",
+      "enabled": true
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "adapter": "workday",
+      "enabled": true,
+      "workday": {
+        "host": "https://nvidia.wd5.myworkdayjobs.com",
+        "tenant": "nvidia",
+        "site": "NVIDIAExternalCareerSite"
+      }
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "adapter": "workday",
+      "enabled": true,
+      "workday": {
+        "host": "https://salesforce.wd12.myworkdayjobs.com",
+        "tenant": "salesforce",
+        "site": "External_Career_Site"
+      }
+    },
+    {
+      "id": "adobe",
+      "name": "Adobe",
+      "adapter": "workday",
+      "enabled": true,
+      "workday": {
+        "host": "https://adobe.wd5.myworkdayjobs.com",
+        "tenant": "adobe",
+        "site": "external_experienced"
+      }
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "adapter": "skip",
+      "enabled": true,
+      "skip_reason": "metacareers.com returns HTTP 400 for anonymous HTTP (WAF). Need a working search URL/HAR of the jobsearch JSON/GraphQL that a logged-out browser uses: https://www.metacareers.com/jobsearch/?q=software%20engineer&sort_by_new=true&roles[0]=Full%20time%20employment"
+    },
+    {
+      "id": "tiktok",
+      "name": "TikTok",
+      "adapter": "skip",
+      "enabled": true,
+      "skip_reason": "lifeattiktok.com/search is Next.js CSR; public job-list API returns empty/HTML. Need the XHR/fetch URL from DevTools on https://lifeattiktok.com/search?recruitment_id_list=1%2C201&keyword=software+engineer&limit=12&offset=0&location_code_list=CT_100762,CT_247,CT_1103554,CT_94,CT_103,CT_223,CT_243,CT_114,CT_203,CT_75,CT_1103355,CT_130,CT_157,CT_233"
+    },
+    {
+      "id": "uber",
+      "name": "Uber",
+      "adapter": "uber",
+      "enabled": true
+    },
+    {
+      "id": "doordash",
+      "name": "DoorDash",
+      "adapter": "greenhouse",
+      "enabled": true,
+      "greenhouse": {
+        "token": "doordashusa"
+      }
+    },
+    {
+      "id": "snap",
+      "name": "Snap",
+      "adapter": "workday",
+      "enabled": true,
+      "workday": {
+        "host": "https://wd1.myworkdaysite.com",
+        "tenant": "snapchat",
+        "site": "snap",
+        "public_prefix": "recruiting/snapchat/snap"
+      }
+    },
+    {
+      "id": "pinterest",
+      "name": "Pinterest",
+      "adapter": "greenhouse",
+      "enabled": true,
+      "greenhouse": {
+        "token": "pinterest"
+      }
+    },
+    {
+      "id": "snowflake",
+      "name": "Snowflake",
+      "adapter": "ashby",
+      "enabled": true,
+      "ashby": {
+        "token": "snowflake"
+      }
+    },
+    {
+      "id": "servicenow",
+      "name": "ServiceNow",
+      "adapter": "smartrecruiters",
+      "enabled": true,
+      "smartrecruiters": {
+        "slug": "ServiceNow"
+      }
+    },
+    {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "adapter": "skip",
+      "enabled": true,
+      "skip_reason": "careers.linkedin.com has no public job-search API/ATS feed; Workday CXS is 401. Need the official LinkedIn-the-company engineering search URL (not linkedin.com/jobs)."
+    },
+    {
+      "id": "bloomberg",
+      "name": "Bloomberg",
+      "adapter": "avature",
+      "enabled": true,
+      "avature": {
+        "search_url": "https://bloomberg.avature.net/careers/SearchJobs"
+      }
+    },
+    {
+      "id": "jpmorgan",
+      "name": "JPMorgan Chase",
+      "adapter": "oracle_hcm",
+      "enabled": true,
+      "oracle_hcm": {
+        "host": "https://jpmc.fa.oraclecloud.com",
+        "site_number": "CX_1001",
+        "public_job_base": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job"
+      }
+    },
+    {
+      "id": "capitalone",
+      "name": "Capital One",
+      "adapter": "workday",
+      "enabled": true,
+      "workday": {
+        "host": "https://capitalone.wd12.myworkdayjobs.com",
+        "tenant": "capitalone",
+        "site": "Capital_One"
+      }
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "adapter": "oracle_hcm",
+      "enabled": true,
+      "oracle_hcm": {
+        "host": "https://eeho.fa.us2.oraclecloud.com",
+        "site_number": "CX_45001",
+        "public_job_base": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job"
+      }
+    },
+    {
+      "id": "walmart",
+      "name": "Walmart Global Tech",
+      "adapter": "skip",
+      "enabled": true,
+      "skip_reason": "careers.walmart.com is a custom Next.js app; widgets/Workday CXS/JSON endpoints 404 or 422. Need the jobs search XHR URL from DevTools on a US software-engineer search."
+    },
+    {
+      "id": "cisco",
+      "name": "Cisco",
+      "adapter": "workday",
+      "enabled": true,
+      "workday": {
+        "host": "https://cisco.wd5.myworkdayjobs.com",
+        "tenant": "cisco",
+        "site": "Cisco_Careers"
+      }
+    },
+    {
+      "id": "sap",
+      "name": "SAP",
+      "adapter": "sap",
+      "enabled": true
+    },
+    {
+      "id": "hpe",
+      "name": "HPE",
+      "adapter": "workday",
+      "enabled": true,
+      "workday": {
+        "host": "https://hpe.wd5.myworkdayjobs.com",
+        "tenant": "hpe",
+        "site": "Jobsathpe"
+      }
+    }
+  ]
+}
