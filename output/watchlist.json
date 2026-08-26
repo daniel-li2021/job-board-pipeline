@@ -1,8 +1,935 @@
 {
-  "updated_at": "2026-08-25T16:22:29.653007+00:00",
+  "updated_at": "2026-08-26T10:03:52.488309+00:00",
   "retention_days": 7,
-  "count": 70,
+  "count": 173,
   "entries": [
+    {
+      "job_id": "fc02e8ebe02bced7cf6245beb7bb4e66",
+      "title": "Software Development Engineer in Test, Creative Apps",
+      "company": "Apple",
+      "location": "Cupertino, California, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://jobs.apple.com/en-us/details/200679734-0836/software-development-engineer-in-test-creative-apps?team=SFTWR",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "fb43a22d876fd3d21a785ab56250c267",
+      "title": "Infrastructure Coordinator, Facilities & Maintenance",
+      "company": "Tesla",
+      "location": "Orlando, Florida, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://www.tesla.com/careers/search/job/280975",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "f745d72202eaab74fb4f729c9553fb7b",
+      "title": "Software Engineer [Multiple Positions Available]",
+      "company": "JPMorgan Chase",
+      "location": "Jersey City, New Jersey, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210779732",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "f45e33d3ac59b8c1f75f320a839f2f0e",
+      "title": "Infrastructure Engineer",
+      "company": "Brown & Caldwell",
+      "location": "Charlotte, North Carolina, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://recruiting2.ultipro.com/BRO1018BRACA/JobBoard/a06992cf-10e7-4e24-8932-26d607a3049e/OpportunityDetail?opportunityId=8df89195-c011-4445-ad9a-88206c1f1c1a",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "f388393300b0139018d53a330d36f3d7",
+      "title": "IT Infrastructure Specialist",
+      "company": "Chemours",
+      "location": "Newark, Delaware, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://chemours.wd103.myworkdayjobs.com/en-US/chemours/job/US---DE---Newark/IT-Infrastructure-Specialist_JR14959",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "f280ebe470a560cd9ed1c2dc72868b68",
+      "title": "Lead Vulnerability Remediation Engineer-Infrastructure Engineer",
+      "company": "Truist",
+      "location": "Charlotte, North Carolina, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://truist.wd1.myworkdayjobs.com/en-US/Careers/job/Charlotte-NC/Lead-Vulnerability-Remediation-Engineer-Infrastructure-Engineer_R0118327",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "f21250ece7132973e8fc7c922666007e",
+      "title": "Machine Learning Engineer, AI Studio",
+      "company": "Amgen",
+      "location": "United States",
+      "posted_date": "2026-08-24",
+      "url": "https://amgen.wd1.myworkdayjobs.com/en-US/Careers/job/United-States---Remote/Machine-Learning-Engineer--AI-Studio_R-250796?LocationCountry=bc33aa3152ec42d4995f4791a106ed09&LocationCountry=6cb77610a8a543aea2d6bc10457e35d4&LocationCountry=a30a87ed25634629aa6c3958aa2b91ea&LocationCountry=80938777cac5440fab50d729f9634969&LocationCountry=a4e08b475d6a4176853c9d1cb9854e02&LocationCountry=29247e57dbaf46fb855b224e03170bc7&LocationCountry=d4afdeb461d446e4babd204bd102dba8",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "f1d20b15eb426948c7d6cad68077187c",
+      "title": "Intern - Data Engineer",
+      "company": "Hanover Insurance Group",
+      "location": "Worcester, Massachusetts, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://jobs.dayforcehcm.com/en-US/thg/ALLCAREERS/jobs/46778",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "ed41f3aaac2d0730d4ed68f21b69a9ea",
+      "title": "Lead Software Engineer, Back End",
+      "company": "Capital One",
+      "location": "McLean, Virginia, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://www.capitalonecareers.com/job/mclean/lead-software-engineer-back-end/1732/99737384096",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "ebf92cca8c66b9cc0ef6e5824742a1d1",
+      "title": "Software Engineer III: Frontend Developer",
+      "company": "JPMorgan Chase",
+      "location": "New York, New York, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210771108",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "ea1be95d25d573158b5a596c729cb440",
+      "title": "AI Observability Engineer",
+      "company": "NCR Voyix",
+      "location": "Atlanta, Georgia, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://ncr.wd1.myworkdayjobs.com/en-US/ext_us/job/ATLANTA-GA-USA/AI-Observability-Engineer_R0158189-1?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "e826ca86c11dc136959711aa10cacdf6",
+      "title": "Entry Level Software Engineer",
+      "company": "Jacobs",
+      "location": "Nashua, New Hampshire, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://careers.jacobs.com/en_US/careers/JobDetail/Entry-Level-Software-Engineer/44217",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "e7a0af0cfa3eea7446ccaa1d501590ce",
+      "title": "Machine Learning Engineer",
+      "company": "Manulife",
+      "location": "Boston, Massachusetts, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://manulife.wd3.myworkdayjobs.com/en-US/MFCJH_Jobs/job/Boston-Massachusetts/Machine-Learning-Engineer_JR26081375?Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=a4e08b475d6a4176853c9d1cb9854e02",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "e4407aac89ce0f28d4d4f8c86ee43545",
+      "title": "API & Data Engineer II",
+      "company": "LPL Financial",
+      "location": "Fort Mill, South Carolina, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://career.lpl.com/job/R-052484/API-Data-Engineer-II",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "e327568f3e4b6ec04b4c384eb9a5b8b8",
+      "title": "Deepfield Software Engineer Co-op",
+      "company": "Nokia",
+      "location": "Ann Arbor, Michigan, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/39908/?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000480126%253B300000000471544%253B300000000471661",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "e14bffdfe46af1a52b57fe79885034df",
+      "title": "Tech & Data Program Summer 2027 - Data Engineer Intern (Columbus)",
+      "company": "The Hartford",
+      "location": "Columbus, Ohio, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://thehartford.wd5.myworkdayjobs.com/en-US/Careers_External/job/Columbus-OH/Tech---Data-Program-Summer-2027---Data-Engineer-Intern--Columbus-_R2626610?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "df10201ac200c526233db1257f365c75",
+      "title": "AI/ ML Software Engineer II",
+      "company": "JPMorgan Chase",
+      "location": "New York, New York, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210704209",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "d950c18f6f1dade50d7999d3b466fab2",
+      "title": "Tech & Data Program Summer 2027 - Software Engineer Intern (Hartford)",
+      "company": "The Hartford",
+      "location": "Hartford, Connecticut, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://thehartford.wd5.myworkdayjobs.com/en-US/Careers_External/job/Hartford-CT/Tech---Data-Program-Summer-2027---Software-Engineer-Intern--Hartford-_R2626105-1?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "d69a27f9e1ee49307e0cdb8abc16138a",
+      "title": "SRE Software Systems Engineer IV",
+      "company": "Sabre",
+      "location": "Texas, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://sabre.wd1.myworkdayjobs.com/en-US/SabreJobs/job/Dallas-Fort-Worth-Metroplex/SRE-Software-Systems-Engineer-IV_JR108550",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "d465ce2d79a97b16d650516e6f4a956a",
+      "title": "Tech & Data Program Summer 2027 \u2013 Data Engineer Intern (Hartford)",
+      "company": "The Hartford",
+      "location": "Hartford, Connecticut, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://thehartford.wd5.myworkdayjobs.com/en-US/Careers_External/job/Hartford-CT/Tech---Data-Program-Summer-2027---Data-Engineer-Intern--Hartford-_R2626103-1?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "d4487d4b696af140d147b60ebd430f4a",
+      "title": "Glendale System Software Engineering Internship, Spring 2027",
+      "company": "The Walt Disney Company",
+      "location": "Glendale, California, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://jobs.disneycareers.com/job/glendale/glendale-system-software-engineering-internship-spring-2027/391/99655082160",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "d1bff56dd4204fe3e0eb1a55b63d14b3",
+      "title": "Software Engineer II (US)",
+      "company": "TD Bank",
+      "location": "Mount Laurel, New Jersey, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/Software-Engineer-II--US-_R_1506203-1",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "cf517c030cb7cf325ce306d747f12f13",
+      "title": "Software Engineer AI Infra",
+      "company": "Microsoft",
+      "location": "United States",
+      "posted_date": "2026-08-25",
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393556641776",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "ce864d24550bcd3d4d380f4918e8a607",
+      "title": "Software Quality Engineer, Sensing & Connectivity",
+      "company": "Apple",
+      "location": "San Diego, California, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://jobs.apple.com/en-us/details/200679705-3543/software-quality-engineer-sensing-connectivity?team=SFTWR",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "ce3b9901fc9bfb2e8d748429cb050de5",
+      "title": "Associate AI Engineer",
+      "company": "OneStream Software",
+      "location": "Fort Lauderdale, Florida, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://recruiting.ultipro.com/ONE1018ONSO/JobBoard/1955ffa6-bda6-4c95-8412-2c731d693ab2/OpportunityDetail?opportunityId=b20df282-c7f0-4bfe-a503-f94daffbe55a",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "c635a1670ed924b211c461c22f754218",
+      "title": "Associate Software Development Engineer",
+      "company": "Delta Air Lines",
+      "location": "Atlanta, Georgia, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://delta.avature.net/en_US/careers/JobDetail/Associate-Software-Development-Engineer/33856?jobId=33856",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "c1f0e92663a5ae3037f7d4c477982fb0",
+      "title": "Forward Deployed Engineer (Marketing)",
+      "company": "OpenGov",
+      "location": "Chicago, Illinois, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://jobs.ashbyhq.com/opengov/ceffa238-dcfa-403e-bca2-cc3a64293443",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "c14b46adc5e966b2a12ba27413c5dbf4",
+      "title": "Software Engineer II/AI Native Component Engineer",
+      "company": "JPMorgan Chase",
+      "location": "Columbus, Ohio, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210778308",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "c116c796ae0a4acd67232812ec7f98d6",
+      "title": "Software Engineer I",
+      "company": "Zebra Technologies",
+      "location": "Lincolnshire, Illinois, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://zebra.wd501.myworkdayjobs.com/en-US/Zebra_careers/job/Lincolnshire-Illinois/Software-Engineer-I_JR102952",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "c08980e8cae558774bff237456a27f80",
+      "title": "Engineer III, Cloud - Platform (Hybrid, Sunnyvale)",
+      "company": "CrowdStrike",
+      "location": "Sunnyvale, California, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://crowdstrike.wd5.myworkdayjobs.com/en-US/crowdstrikecareers/job/USA---Sunnyvale-CA/Engineer-III--Cloud---Platform--Hybrid--Sunnyvale-_R29884?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "befa76ed3df9b4ba302006ba7f71b62d",
+      "title": "Software Engineering Intern",
+      "company": "Brunswick",
+      "location": "Champaign, Illinois, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://brunswick.wd1.myworkdayjobs.com/en-US/search/job/Champaign-IL/Software-Engineering-Intern_JR-051316?jobFamilyGroup=7fce8e52807a10f92ee14c66817d42bc&jobFamilyGroup=7fce8e52807a10f92ee12644688d42a8&jobFamilyGroup=7fce8e52807a10f92ee1444cf0da42b8&jobFamilyGroup=7fce8e52807a10f92ee135a602e342b0",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "beb994a2433b3aa605d3c874c7699c97",
+      "title": "Datacenter Infrastructure Design Manager",
+      "company": "Microsoft",
+      "location": "Redmond, Washington, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393556957411",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "bbc64ab8510f25582da11c7056b2ba63",
+      "title": "AI Agentic Software Engineer",
+      "company": "Siemens",
+      "location": "Raleigh, North Carolina, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://jobs.siemens.com/en_US/externaljobs/JobDetail/519575",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "bbaa8f3cfcf11694decddf041419f567",
+      "title": "Software Developer, Data Platform Engineering",
+      "company": "Comcast",
+      "location": "West Chester, Pennsylvania, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://jobs.comcast.com/job/west-chester/software-developer-data-platform-engineering/45483/99722493936",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "bb90eaf2db2bc68db4e1e415022c6993",
+      "title": "Platform Software Engineer 1",
+      "company": "Oracle",
+      "location": "Nashville, Tennessee, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://careers.oracle.com/en/sites/jobsearch/job/343770/?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000149325%253B300000000106863",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "ba872fc8ef99b91b3dc889477aaaed45",
+      "title": "AI Safety Operator",
+      "company": "Tesla",
+      "location": "Jacksonville, Florida, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://www.tesla.com/careers/search/job/266088",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "b969200c5c1af73cef57adf10980ec4a",
+      "title": "Legal Operations Financial, Data & AI Analytics Intern",
+      "company": "The Cigna Group",
+      "location": "St. Louis, Missouri, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://cigna.wd5.myworkdayjobs.com/en-US/cignacareers/job/St-Louis-MO/Legal-Operations-Financial--Data---AI-Analytics-Intern_25016386?Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=6cb77610a8a543aea2d6bc10457e35d4",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "b6290e291c0a3607f642e2ef04ba9d2c",
+      "title": "Software Engineer III - AI/ML Engineer",
+      "company": "JPMorgan Chase",
+      "location": "Jersey City, New Jersey, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210768083",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "af7eb849d2e311f5534625b61f00789c",
+      "title": "Infrastructure Solution Engineer Cloud & AI",
+      "company": "Microsoft",
+      "location": "United States",
+      "posted_date": "2026-08-24",
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393556957828",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "aeb75538c4c1420a8aae5249c95534d4",
+      "title": "Scientist Applied Research",
+      "company": "Abbott",
+      "location": "Abbott Park, Illinois, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://abbott.wd5.myworkdayjobs.com/en-US/abbottcareers/job/United-States---Illinois---Abbott-Park/Scientist-Applied-Research_31159710-1?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=55273a1b49934d97ae15342ef51f6b95&Location_Country=a4e08b475d6a4176853c9d1cb9854e02&Location_Country=d4afdeb461d446e4babd204bd102dba8",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "ac67a754f447794cb24ae4f2374c313f",
+      "title": "Software Development Engineer",
+      "company": "Zoom Communications",
+      "location": "San Jose, California, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://zoom.wd5.myworkdayjobs.com/en-US/Zoom/job/San-Jose-CA/Software-Development-Engineer_R19559?locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "ac4329e082346894b64f6f02affb956f",
+      "title": "Power Platform Developer",
+      "company": "Guidehouse",
+      "location": "United States",
+      "posted_date": "2026-08-24",
+      "url": "https://guidehouse.wd1.myworkdayjobs.com/en-US/External/job/US---Remote-Any-location/Power-Platform-Developer_43819",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "a9aede10fe28410a65e78bf2741b901a",
+      "title": "Software Developer Intern \u2013 Summer Internship Program",
+      "company": "CGI",
+      "location": "Denver, Colorado, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://cgi.njoyn.com/corp/xweb/xweb.asp?NTKN=c&clid=21001&Page=JobDetails&Jobid=J0826-1624&BRID=1327994&lang=1",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "a252e07dfd9f04f8c3299bff2082c19d",
+      "title": "Data & AI Engineering Internship",
+      "company": "Procter & Gamble",
+      "location": "Cincinnati, Ohio, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://pg.wd5.myworkdayjobs.com/en-US/1000/job/CINCINNATI-GENERAL-OFFICES/Data---AI-Engineering-Internship_R000157499?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "9f0f55dbdd988c88bc04eaf1ef782627",
+      "title": "Big Data Engineer - Python/Scala, Spark, Hadoop",
+      "company": "Wipro",
+      "location": "Arlington, Texas, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://careers.wipro.com/job/Big-Data-Engineer-PythonScala%2C-Spark%2C-Hadoop/190562-en_US",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "9e4bf1bfd16941d0058ec699d97f2abd",
+      "title": "Software Engineer - Agentic AI (Python/Azure/GCP)",
+      "company": "KeyBank",
+      "location": "Brooklyn, Ohio, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://keybank.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/Brooklyn-OH/Software-Engineer---Agentic-AI--Python-Azure-GCP-_R-41786",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "9dc4bb06b69b8937af2e4d4fd913462f",
+      "title": "Full Stack Software Engineer, Officer",
+      "company": "State Street",
+      "location": "Burlington, Massachusetts, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://statestreet.wd1.myworkdayjobs.com/en-US/Global/job/Burlington-Massachusetts/Full-Stack-Software-Engineer--Officer_R-796507?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=a4e08b475d6a4176853c9d1cb9854e02&Location_Country=d4afdeb461d446e4babd204bd102dba8",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "9c684230e3a733972c9209edde8c38ed",
+      "title": "DAT Feature and Software Engineer",
+      "company": "Ford Motor Company",
+      "location": "Dearborn, Michigan, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/69560/?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000425727%253B300000000425151%253B300000000425265%253B300000000425079",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "96af1dab64d4504249242bed7343082e",
+      "title": "Software Product Security Engineer",
+      "company": "HP",
+      "location": "Spring, Texas, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://apply.hp.com/careers/job/43322342?domain=hp.com",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "94cd38b2f1d19fd2dbc834ac7a105970",
+      "title": "Software Engineer II",
+      "company": "Microsoft",
+      "location": "Redmond, Washington, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393556952487",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "932ed7c12a3cdc2c5b8adbd9c51f834c",
+      "title": "IT Engineering Internship (Software, Platform, & Network)",
+      "company": "Procter & Gamble",
+      "location": "Cincinnati, Ohio, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://pg.wd5.myworkdayjobs.com/en-US/1000/job/CINCINNATI-GENERAL-OFFICES/IT-Engineering-Internship--Software--Platform----Network-_R000157503?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "8b2d15773424631be0bc6231dace1c89",
+      "title": "Business Program Manager - Capacity Automation & Backend Tools",
+      "company": "Microsoft",
+      "location": "Redmond, Washington, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393556978441",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "898014ee7dd5901d66de1fd7f8707d49",
+      "title": "Platform Software Engineer",
+      "company": "Oracle",
+      "location": "Nashville, Tennessee, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://careers.oracle.com/en/sites/jobsearch/job/343771/?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000149325%253B300000000106863",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "879e45a78ff51cbddf3ce9b07e08195e",
+      "title": "Oracle NetSuite - Account Executive - Mid market - Software East",
+      "company": "Oracle",
+      "location": "Burlington, Massachusetts, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://careers.oracle.com/en/sites/jobsearch/job/343827/?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000149325%253B300000000106863",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "86685a2bb7d460d97d5a9412293d3a4b",
+      "title": "Software Engineer",
+      "company": "Brown & Brown",
+      "location": "United States",
+      "posted_date": "2026-08-25",
+      "url": "https://bbinsurance.wd1.myworkdayjobs.com/en-US/Careers/job/Remote---USA/Software-Engineer_R26_0000002843",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "8230764c48763de99c809ecbf11e27c5",
+      "title": "Software Engineering Co-op_Fall 2027",
+      "company": "GE",
+      "location": "Louisville, Kentucky, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://haier.wd3.myworkdayjobs.com/en-US/GE_Appliances/job/USA-Louisville-KY/Software-Engineering-Co-op-Fall-2027_REQ-26592?locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "81838f00854147db32bb46089a9d4b43",
+      "title": "Forward Deployed Engineer",
+      "company": "Hippocratic AI",
+      "location": "United States",
+      "posted_date": "2026-08-23",
+      "url": "https://jobs.ashbyhq.com/Hippocratic%20AI/af528529-1c4b-4cc4-b073-4e4522fd2ab6",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "7c76b10050c4a9a55ddb08165ed99399",
+      "title": "Oracle NetSuite - Account Executive - Mid market - Software East",
+      "company": "Oracle",
+      "location": "New York, New York, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://careers.oracle.com/en/sites/jobsearch/job/343826/?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000149325%253B300000000106863",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "7a5ca68bc9614be6436e86bcb6830369",
+      "title": "Software Engineer",
+      "company": "Microsoft",
+      "location": "Redmond, Washington, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393556978993",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "79aa68a69840b5bd46adfff30129d22a",
+      "title": "(USA) Staff, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, California, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://careers.walmart.com/us/en/jobs/R-2605654",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "78acd2e62c9dbc97b2eb89947064ebe0",
+      "title": "Software Engineer III - React/UI/Python",
+      "company": "JPMorgan Chase",
+      "location": "Plano, Texas, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210763977",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "7698960cc06bd067b381ae7582d94373",
+      "title": "Infrastructure Engineer III",
+      "company": "JPMorgan Chase",
+      "location": "Plano, Texas, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210777497",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "767e782635896144b9f535f268a9d4b6",
+      "title": "Artificial Intelligence/Machine Learning - Summer 2027 Intern",
+      "company": "Honeywell",
+      "location": "United States",
+      "posted_date": "2026-08-25",
+      "url": "https://careers.honeywell.com/en/sites/Honeywell/job/155522/?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000469866",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "75fe365b4f56a7f05bc6b13231a127d7",
+      "title": "AI Developer Intern",
+      "company": "Monolithic Power Systems",
+      "location": "San Jose, California, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://monolithicpower.wd12.myworkdayjobs.com/en-US/MPS_Careers/job/San-Jose---California/AI-Developer-Intern_R-1756",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "6fd6ad52f4b8683256bd61742754ddf6",
+      "title": "EY-Parthenon - Corporate Finance - EY Infrastructure Advisory - Analyst",
+      "company": "EY",
+      "location": "New York, New York, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://careers.ey.com/ey/job/New-York-EY-Parthenon-Corporate-Finance-EY-Infrastructure-Advisory-Analyst-NY-10001-8604/1429387133/",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "6d0febd5ae5aea7930937949cd7331ce",
+      "title": "Data Analytics & AI Co-op",
+      "company": "Nokia",
+      "location": "United States",
+      "posted_date": "2026-08-25",
+      "url": "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/39743/?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000480126%253B300000000471544%253B300000000471661",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "6abcef2af8776166df69e569d124037b",
+      "title": "Associate Software Engineer",
+      "company": "The Walt Disney Company",
+      "location": "Orlando, Florida, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://jobs.disneycareers.com/job/orlando/associate-software-engineer/391/99722447760",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "67a28ba0bb7b860a596b9e9669a83e0c",
+      "title": "Software Engineer I",
+      "company": "OneStream Software",
+      "location": "United States",
+      "posted_date": "2026-08-25",
+      "url": "https://recruiting.ultipro.com/ONE1018ONSO/JobBoard/1955ffa6-bda6-4c95-8412-2c731d693ab2/OpportunityDetail?opportunityId=b417a187-bc11-4096-87e5-5ea3bf8dad46",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "5f5247d4f4c3d1b55ee46797bde3723d",
+      "title": "Software Engineer \u2013 Sensor, SaO (Hybrid)",
+      "company": "CrowdStrike",
+      "location": "Redmond, Washington, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://crowdstrike.wd5.myworkdayjobs.com/en-US/crowdstrikecareers/job/USA---Redmond-WA/Software-Engineer---Sensor--SaO--Hybrid-_R29874?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "5e0897623a78256e24e23b46be479b2a",
+      "title": "DRM Software Engineer",
+      "company": "Apple",
+      "location": "New City, New York, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://jobs.apple.com/en-us/details/200679922-5819/drm-software-engineer?team=SFTWR",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "5d0d14743a90cc650c654d478c83ba57",
+      "title": "Backend Software Engineer - Camera & Photos Tools & AI Team",
+      "company": "Apple",
+      "location": "Cupertino, California, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://jobs.apple.com/en-us/details/200672256-0836/backend-software-engineer-camera-photos-tools-ai-team?team=SFTWR",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "5a9a306dda37ed598c6b9120d0d5a352",
+      "title": "Cloud / AI Developer (Java, GCP)",
+      "company": "Infosys",
+      "location": "United States",
+      "posted_date": "2026-08-24",
+      "url": "https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/152575BR",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "5a7de58d790b2237a952fb97e2c54eba",
+      "title": "Software Development Engineer in Test, Creative Apps",
+      "company": "Apple",
+      "location": "San Diego, California, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://jobs.apple.com/en-us/details/200679734-3543/software-development-engineer-in-test-creative-apps?team=SFTWR",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "59aa736c143e7ba5a8133eb41b5829c2",
+      "title": "Software Engineer [Multiple Positions Available]",
+      "company": "JPMorgan Chase",
+      "location": "Jersey City, New Jersey, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210778826",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "581700fe6409f77ed7137e6880e66763",
+      "title": "Junior Cloud / AI Developer (Java, GCP)",
+      "company": "Infosys",
+      "location": "United States",
+      "posted_date": "2026-08-24",
+      "url": "https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/152579BR",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "55d0bee50a0767926abf5cdf0edb5600",
+      "title": "Data & AI Engineering (2027 Grads)",
+      "company": "Procter & Gamble",
+      "location": "Cincinnati, Ohio, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://pg.wd5.myworkdayjobs.com/en-US/1000/job/CINCINNATI-GENERAL-OFFICES/Data---AI-Engineering--2027-Grads-_R000157913?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "50963119553663bbc218c2c46ceb1f4b",
+      "title": "Enterprise AI Platform Manager",
+      "company": "General Motors",
+      "location": "Austin, Texas, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://search-careers.gm.com/en/jobs/jr-202618138/enterprise-ai-platform-manager/",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "505c1030245ae7f25d7664fbd818cc41",
+      "title": "Member of Technical Staff - AI Data Platform, Frontier Models",
+      "company": "Microsoft",
+      "location": "United States",
+      "posted_date": "2026-08-25",
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393556981193",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "4ad6c0777362a2d9ab1af8792c9ae8cf",
+      "title": "Technical Services, Data Engineer",
+      "company": "LiveRamp",
+      "location": "New York, New York, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://liveramp.wd5.myworkdayjobs.com/en-US/LiveRampCareers/job/New-York/Technical-Services--Data-Engineer_JR162157",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "48b9f32ee4e4a48babcfa94968ec96ae",
+      "title": "System Software Engineer - Performance Verification Infrastructure",
+      "company": "NVIDIA",
+      "location": "Santa Clara, California, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/System-Software-Engineer---Performance-Verification-Infrastructure_JR2021574?locationHierarchy1=2fcb99c455831013ea52df1adb7432a8&locationHierarchy1=2fcb99c455831013ea52f785717432d2&locationHierarchy1=2fcb99c455831013ea52fb338f2932d8&locationHierarchy1=2fcb99c455831013ea52ed162d4932c0&locationHierarchy1=2fcb99c455831013ea52b157d0d6325a&locationHierarchy1=2fcb99c455831013ea529fe151e3323c&locationHierarchy1=2fcb99c455831013ea529c3b93ba3236&locationHierarchy1=2fcb99c455831013ea528dce556b3224",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "4588b0d7c4db31453334a66732bb1b45",
+      "title": "2027 Spring Intern - OpRegen Machine Learning",
+      "company": "Genentech",
+      "location": "South San Francisco, California, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://careers.gene.com/us/en/job/202608-121800/2027-Spring-Intern-OpRegen-Machine-Learning",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "44226337882bdb17002557d356005d6f",
+      "title": "AI Engineering & Methodology Architect",
+      "company": "Qualcomm",
+      "location": "Austin, Texas, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://careers.qualcomm.com/careers/job/446720679354?domain=qualcomm.com&triggerGoButton=false",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "426997d6f9337d83ca5caf7e4d1131b2",
+      "title": "Software Engineer, MPDE",
+      "company": "TE Connectivity",
+      "location": "Webster, New York, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://careers.te.com/job/Software-Engineer%2C-MPDE/158043-en_US",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "3c382f38cfc7ecd52f86a3a3669fb535",
+      "title": "Early Career Consult Program \u2013 Cybersecurity Infrastructure Associate",
+      "company": "Kyndryl",
+      "location": "Frisco, Texas, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://kyndryl.wd5.myworkdayjobs.com/en-US/KyndrylEarlyCareers/job/USDALFRI---Dallas-Frisco-AI-HUB-FRI/Early-Career-Consult-Program---Cybersecurity-Infrastructure-Associate_R-67375-2",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "39c55a1ac0f978f1a0d54be4db9d11d4",
+      "title": "Lead Software Engineer - MLOps",
+      "company": "Capital One",
+      "location": "McLean, Virginia, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://www.capitalonecareers.com/job/mclean/lead-software-engineer-mlops/1732/99720392224",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "327f80ae10274f9cfe5c2875faeeca2e",
+      "title": "Software Engineer, Data Plane Hybrid",
+      "company": "Ribbon Communications",
+      "location": "Westford, Massachusetts, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://vhr-genband.wd1.myworkdayjobs.com/en-US/ribboncareers/job/USA-MA-Westford/Software-Engineer--Data-Plane-Hybrid_REQ-2026-3014",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "2c2215dddfa82dcbfc88db93c5d15c61",
+      "title": "Platform Engineer",
+      "company": "The Hershey Company",
+      "location": "Hershey, Pennsylvania, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://careers.thehersheycompany.com/job/Hershey-Platform-Engineer-PA-17033/1387707200/",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "2b391515d2ad644a5be312e5ea7624cc",
+      "title": "Infrastructure Engineer [Multiple Positions Available]",
+      "company": "JPMorgan Chase",
+      "location": "San Francisco, California, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210777738",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "262505ed684f2cc5f27df3ada859b068",
+      "title": "Machine Learning Engineer",
+      "company": "Apple",
+      "location": "Cupertino, California, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://jobs.apple.com/en-us/details/200679658-0836/machine-learning-engineer?team=SFTWR",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "25b1ad92987075fb465ff41467706908",
+      "title": "Software Development Engineer Advanced",
+      "company": "Siemens",
+      "location": "Orlando, Florida, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://jobs.siemens.com/en_US/externaljobs/JobDetail/519496",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "242f8870cf3d151662ef6033271f4af1",
+      "title": "VIE - AI Engineer (m/f)",
+      "company": "Alstom",
+      "location": "Pittsburgh, Pennsylvania, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://jobsearch.alstom.com/job/Pittsburgh-VIE-AI-Engineer-%28mf%29-PA-15122/1429573533/",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "22dbc43b18a4fcef29fc3300f2cd2532",
+      "title": "Staff, Software Engineer",
+      "company": "Walmart",
+      "location": "Bentonville, Arkansas, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://careers.walmart.com/us/en/jobs/R-2557922",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "1e33c21cc1c7c7aa1ccd72fe780f5786",
+      "title": "Staff Systems Engineer, AI/ML",
+      "company": "GlobalFoundries",
+      "location": "Richardson, Texas, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://globalfoundries.wd1.myworkdayjobs.com/en-US/External/job/Richardson/Staff-Systems-Engineer--AI-ML_JR-2602777",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "1dad67852f587149dbacadc1b04346d4",
+      "title": "Infrastructure Engineer III",
+      "company": "JPMorgan Chase",
+      "location": "Houston, Texas, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210777547",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "1b12da2ab5fb3958406c7a7055c4adef",
+      "title": "Software Engineer, Performance Lab and Tools",
+      "company": "NVIDIA",
+      "location": "Santa Clara, California, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Software-Engineer--Performance-Lab-and-Tools_JR2024097?locationHierarchy1=2fcb99c455831013ea52df1adb7432a8&locationHierarchy1=2fcb99c455831013ea52f785717432d2&locationHierarchy1=2fcb99c455831013ea52fb338f2932d8&locationHierarchy1=2fcb99c455831013ea52ed162d4932c0&locationHierarchy1=2fcb99c455831013ea52b157d0d6325a&locationHierarchy1=2fcb99c455831013ea529fe151e3323c&locationHierarchy1=2fcb99c455831013ea529c3b93ba3236&locationHierarchy1=2fcb99c455831013ea528dce556b3224",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "17f77a250429e3f1b687341b7e008c73",
+      "title": "Data Engineer",
+      "company": "Howmet Aerospace",
+      "location": "Whitehall, Michigan, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://fa-exty-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/119097/?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000225396",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "179e1a0986332a1d3c5ed682bc54ab3d",
+      "title": "Google Cloud Platform Engineer Lead (Remote, US)",
+      "company": "Allstate",
+      "location": "Illinois, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://allstate.wd5.myworkdayjobs.com/en-US/allstate_careers/job/USA---IL-Remote/Google-Cloud-Platform-Engineer-Lead---Remote--US-_R33815-1?Country=bc33aa3152ec42d4995f4791a106ed09&Country=a30a87ed25634629aa6c3958aa2b91ea&Country=29247e57dbaf46fb855b224e03170bc7",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "14b804d42f24d5c28a8b3e7eb64bee5b",
+      "title": "Software Engineer II - CTJ - Poly",
+      "company": "Microsoft",
+      "location": "Reston, Virginia, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393556955702",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "10d149b0e78d29ba1409656a9a7e0b2f",
+      "title": "Engineer/Sr Engineer, IT Platform Security",
+      "company": "American Airlines",
+      "location": "Fort Worth, Texas, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://jobs.aa.com/job/EngineerSr-Engineer%2C-IT-Platform-Security/87495-en_US",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "1028e223277267cec716fa9b8452906e",
+      "title": "Staff AI Engineer (Hybrid)",
+      "company": "Stryker",
+      "location": "Menlo Park, California, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://stryker.wd1.myworkdayjobs.com/en-US/StrykerCareers/job/Menlo-Park-California/Staff-AI-Engineer--Hybrid-_R571006?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=a4e08b475d6a4176853c9d1cb9854e02&Location_Country=55273a1b49934d97ae15342ef51f6b95",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "0c43d1d15e8628524fb3f5ce36885878",
+      "title": "System Software Engineer, UEFI Firmware",
+      "company": "NVIDIA",
+      "location": "Santa Clara, California, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/System-Software-Engineer--UEFI-Firmware_JR2023314?locationHierarchy1=2fcb99c455831013ea52df1adb7432a8&locationHierarchy1=2fcb99c455831013ea52f785717432d2&locationHierarchy1=2fcb99c455831013ea52fb338f2932d8&locationHierarchy1=2fcb99c455831013ea52ed162d4932c0&locationHierarchy1=2fcb99c455831013ea52b157d0d6325a&locationHierarchy1=2fcb99c455831013ea529fe151e3323c&locationHierarchy1=2fcb99c455831013ea529c3b93ba3236&locationHierarchy1=2fcb99c455831013ea528dce556b3224",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "04ac12c1101d9cc6c81e8e8d6053ced7",
+      "title": "Technical Program Manager (Gen AI)",
+      "company": "Visa",
+      "location": "Foster City, California, United States",
+      "posted_date": "2026-08-25",
+      "url": "https://visa.wd5.myworkdayjobs.com/en-US/Visa/job/US---Foster-City-CA/Technical-Program-Manager--Gen-AI-_REF087843W",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
+    {
+      "job_id": "016330e187646798da5be44a35bc3cc5",
+      "title": "Software Engineer II",
+      "company": "Uber",
+      "location": "New York City, New York, United States",
+      "posted_date": "2026-08-24",
+      "url": "https://jobs.uber.com/en/jobs/301141/",
+      "first_seen": "2026-08-26T10:03:10.591530+00:00"
+    },
     {
       "job_id": "fe8afead42713e5b4bb3bf69cef23112",
       "title": "Full Stack Software Engineer",
