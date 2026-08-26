@@ -11,7 +11,8 @@ Sources:
   - Official career pages (Amazon/Google) -> sources.official
   - Local snapshots (LinkedIn/Glassdoor)  -> output/sources/*.json (ingested)
 
-This is the ONLY writer of output/board/jobs.json and output/board/latest.md.
+This is the ONLY writer of output/board/ (jobs.json, inbox.md, latest.md, runs/).
+The Syncareer pipeline writes only under output/syncareer/. Do not mix folders.
 The local launchd job never writes those, avoiding git conflicts.
 
 LLM policy (per plan):
@@ -30,7 +31,7 @@ import os
 import re
 import time
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -57,9 +58,13 @@ from sources.schema import (
 
 BASE_DIR = Path(__file__).resolve().parent
 BOARD_DIR = OUTPUT_DIR / "board"
-ALERTS_DIR = OUTPUT_DIR / "alerts"
 JOBS_STORE_PATH = BOARD_DIR / "jobs.json"
 LATEST_MD_PATH = BOARD_DIR / "latest.md"
+INBOX_MD_PATH = BOARD_DIR / "inbox.md"
+INBOX_CSV_PATH = BOARD_DIR / "inbox.csv"
+RUNS_DIR = BOARD_DIR / "runs"
+RETENTION_DAYS = 7
+INBOX_DAYS = 3
 TARGET_COMPANIES_JSON = BASE_DIR / "source" / "target_companies.json"
 
 # Profile inputs drive matching. Fallback to legacy source/*.txt if missing.
@@ -97,7 +102,6 @@ RULE_EXCEPTIONAL_FOR_LLM = 72.0
 # Seniority-fit labels that count as realistic for an early-career candidate.
 STRONG_SENIORITY_FITS = {"good", "strong", "realistic", "early_career"}
 
-RETENTION_DAYS = 7
 LOCAL_SOURCES = ["linkedin", "glassdoor"]
 
 USER_AGENT = (
@@ -180,7 +184,8 @@ CATEGORY_DROP_REASON = {
 def load_company_filters() -> Dict[str, List[Dict[str, Any]]]:
     """Load profile/company_filters.json into normalized alias lists."""
     out: Dict[str, List[Dict[str, Any]]] = {
-        "exclude": [], "covered_elsewhere": [], "deprioritize": [], "prefer": []
+        "exclude": [], "covered_elsewhere": [], "deprioritize": [],
+        "staffing": [], "prefer": [], "clearance_risk": [],
     }
     if not COMPANY_FILTERS_PATH.exists():
         return out
@@ -222,7 +227,7 @@ def classify_company(company_name: str, filters: Dict[str, List[Dict[str, Any]]]
     """Return (action, matched_name). action in
     {exclude, covered_elsewhere, deprioritize, prefer, keep}. Priority order
     ensures a drop beats a soft flag."""
-    for category in ("exclude", "covered_elsewhere", "deprioritize", "prefer"):
+    for category in ("exclude", "covered_elsewhere", "deprioritize", "staffing", "prefer", "clearance_risk"):
         name = _company_alias_hit(company_name, filters.get(category, []))
         if name:
             return category, name
@@ -399,22 +404,62 @@ HARDWARE_TITLE_RE = re.compile(
 CITIZEN_PHRASES = [
     "us citizen", "u.s. citizen", "united states citizen", "us citizenship",
     "u.s. citizenship", "must be a citizen", "us person", "u.s. person",
-    "security clearance", "active clearance", "ts/sci", "polygraph",
+    "security clearance", "active clearance", "ts/sci", "ts sci", "polygraph",
+    "top secret", "secret clearance", "clearance required", "active secret",
+    "must be able to obtain", "ability to obtain a clearance",
+    "eligible for a security clearance", "eligible to obtain",
+    "requires a clearance", "requires security clearance",
+    "us persons only", "u.s. persons only", "citizens only",
+    "itar", "export control", "export-controlled",
 ]
 CITIZEN_RES = [
     re.compile(r"\b" + re.escape(p).replace(r"\ ", r"\s+") + r"\b", re.IGNORECASE)
     for p in CITIZEN_PHRASES
 ]
+# Extra patterns that are not clean phrases (slashes, optional words).
+CLEARANCE_EXTRA_RES = [
+    re.compile(r"\bts\s*/\s*sci\b", re.IGNORECASE),
+    re.compile(r"\b(secret|top[- ]secret)\s+(clearance|eligible)\b", re.IGNORECASE),
+    re.compile(r"\b(obtain|obtainable|eligible for)\b.{0,40}\bclearance\b", re.IGNORECASE),
+    re.compile(r"\bclearance\b.{0,40}\b(required|needed|must)\b", re.IGNORECASE),
+]
+# Title-only gov/defense signal when the JD is too thin to verify constraints.
+GOV_DEFENSE_TITLE_RE = re.compile(
+    r"\b(us government|u\.s\. government|u\.s\. gov|us gov|"
+    r"department of defense|\bdod\b|defense contractor|"
+    r"intelligence community|\bts/?sci\b|clearance|"
+    r"federal government|national security)\b",
+    re.IGNORECASE,
+)
+THIN_JD_CHARS = 200  # LinkedIn guest cards often have empty descriptions
 YOE_RE = re.compile(r"\b(\d{1,2})\+?\s*(?:years|yrs)\b", re.IGNORECASE)
+
+
+def _full_constraint_text(job: Dict[str, str]) -> str:
+    """Full title + JD for citizenship/clearance checks (no truncation)."""
+    return f"{job.get('title') or ''} {job.get('description') or ''}"
 
 
 def hard_filter(job: Dict[str, str]) -> Tuple[bool, str]:
     if classify_location_bucket(job.get("location", "")) == "non_us":
         return False, "non_us_location"
-    content = f"{job.get('title','')} {job.get('description','')}"
+    content = _full_constraint_text(job)
     for pattern in CITIZEN_RES:
         if pattern.search(content):
             return False, "citizen_or_clearance"
+    for pattern in CLEARANCE_EXTRA_RES:
+        if pattern.search(content):
+            return False, "citizen_or_clearance"
+    # LinkedIn guest cards have no JD. Do not promote gov/defense roles to
+    # A/B when we cannot read citizenship/clearance requirements.
+    desc = (job.get("description") or "").strip()
+    src = (job.get("source") or "").lower()
+    thin = len(desc) < THIN_JD_CHARS
+    low_conf_source = "linkedin" in src or "glassdoor" in src
+    if thin and low_conf_source:
+        title = job.get("title") or ""
+        if GOV_DEFENSE_TITLE_RE.search(title) or job.get("clearance_risk_company"):
+            return False, "incomplete_jd_clearance_risk"
     return True, "keep"
 
 
@@ -498,7 +543,8 @@ INTERNSHIP_TITLE_RE = re.compile(
 )
 EARLY_CAREER_TITLE_RE = re.compile(
     r"\b(new grad|new-grad|early career|early-career|university grad|"
-    r"university graduate|entry[- ]?level|engineer i\b|swe i\b|sde i\b|"
+    r"university graduate|university hire|college grad|recent graduate|"
+    r"entry[- ]?level|engineer i\b|swe i\b|sde i\b|"
     r"associate software|associate engineer)\b",
     re.IGNORECASE,
 )
@@ -861,14 +907,16 @@ def score_survivors(
         return ("cache", errors, counts)
 
     def llm_recency_eligible(job: Dict[str, str]) -> bool:
+        title = job.get("title") or ""
+        # Explicit early-career titles may enter the LLM gate at any age,
+        # including >7d, so we don't miss New Grad / Engineer I postings.
+        if EARLY_CAREER_TITLE_RE.search(title):
+            return True
         bucket = job.get("recency_bucket") or recency_bucket(job)
         if bucket == "gt7d":
             return False
         if bucket == "3to7d":
-            if float(job.get("rule_score", 0)) >= RULE_EXCEPTIONAL_FOR_LLM:
-                return True
-            # Explicit early-career titles are worth an LLM look even at 3-7d.
-            return bool(EARLY_CAREER_TITLE_RE.search(job.get("title") or ""))
+            return float(job.get("rule_score", 0)) >= RULE_EXCEPTIONAL_FOR_LLM
         return bucket in NORMAL_RECENCY_BUCKETS
 
     eligible: List[Dict[str, str]] = []
@@ -980,11 +1028,15 @@ def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
     strong_family = family in ("swe", "ai", "ambiguous")
 
     intern = bool(INTERNSHIP_TITLE_RE.search(job.get("title") or ""))
-    a_quality = strong_sen and few_gaps and not deprioritized and not intern
+    staffing = bool(job.get("staffing_firm"))
+    a_quality = strong_sen and few_gaps and not deprioritized and not intern and not staffing
 
-    if bucket == "gt7d":
+    # Non-early-career: >7d store-only; 3-7d only exceptional LLM Tier A.
+    # Early-career: recency does not auto-assign A, but A/B are allowed at any
+    # age if match_score says so (LLM still decides).
+    if bucket == "gt7d" and not early:
         return "C"
-    if bucket == "3to7d":
+    if bucket == "3to7d" and not early:
         if score >= EXCEPTIONAL_A_MIN and a_quality and llm_scored:
             return "A"
         return "C"
@@ -1024,8 +1076,12 @@ def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
     sfit_rank = {"good": 0, "strong": 0, "realistic": 0, "stretch": 1}.get(sfit, 2 if sfit == "mismatch" else 1)
     verified = 0 if job.get("official_url") else 1
     referral = 0 if job.get("referral_name") else 1
+    conf = {"high": 0, "medium": 1, "low": 2, "unknown": 3}.get(
+        (job.get("date_confidence") or "unknown").lower(), 3
+    )
     return (
         RECENCY_BUCKET_RANK.get(bucket, len(RECENCY_BUCKETS)),
+        conf,
         tier_rank,
         -float(job.get("match_score", 0) or 0),
         referral,
@@ -1111,9 +1167,14 @@ def _stats_lines(stats: Dict[str, Any]) -> List[str]:
 
 
 def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp: str) -> None:
-    """Tier A/B only, capped at MAX_VISIBLE. Tier C stays in jobs.json only."""
+    """7-day Tier A/B view (capped). Prefer inbox.md if you skipped a day."""
     BOARD_DIR.mkdir(parents=True, exist_ok=True)
-    lines: List[str] = [f"# Job board - {stamp}", ""]
+    lines: List[str] = [
+        f"# ATS / LinkedIn board — 7-day view — {stamp}",
+        "",
+        f"If you check every 1–2 days, open **`output/board/inbox.md`** (last {INBOX_DAYS} days) instead of this file.",
+        "",
+    ]
     lines.extend(_stats_lines(stats))
     lines.append("")
 
@@ -1141,12 +1202,72 @@ def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp:
             resume = (r.get("resume_profile_used") or "").replace("resume_", "")
             src = r.get("score_source") or "-"
             lines.append(
-                f"| {float(r.get('match_score',0)):.0f} | {src} | {company} | {title} | {loc} | "
+                f"| {float(r.get('match_score') or 0):.0f} | {src} | {company} | {title} | {loc} | "
                 f"{r.get('posted_date','') or '-'} | {r.get('recency_bucket','')} | "
                 f"{r.get('date_confidence','')} | {resume} | {referral} | {verified} | {link} |"
             )
         lines.append("")
     LATEST_MD_PATH.write_text("\n".join(lines), encoding="utf-8")
+
+
+def _job_inbox_ref(job: Dict[str, Any]) -> Optional[datetime]:
+    for field in ("posted_date", "first_seen"):
+        raw = (job.get(field) or "").strip()
+        if not raw:
+            continue
+        try:
+            parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        except ValueError:
+            try:
+                parsed = datetime.strptime(raw[:10], "%Y-%m-%d")
+            except ValueError:
+                continue
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        return parsed
+    return None
+
+
+def write_board_inbox(visible: List[Dict[str, str]], stamp: str, now: datetime) -> List[Dict[str, str]]:
+    """Last INBOX_DAYS of Tier A/B — the file to open if you skipped a day."""
+    cutoff = now - timedelta(days=INBOX_DAYS)
+    inbox = []
+    for job in visible:
+        ref = _job_inbox_ref(job)
+        if ref is None or ref >= cutoff:
+            inbox.append(job)
+    BOARD_DIR.mkdir(parents=True, exist_ok=True)
+    with INBOX_CSV_PATH.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=ALERT_FIELDS, extrasaction="ignore")
+        writer.writeheader()
+        for r in inbox:
+            writer.writerow({k: r.get(k, "") for k in ALERT_FIELDS})
+
+    lines = [
+        f"# ATS / LinkedIn inbox (last {INBOX_DAYS} days)",
+        "",
+        f"- Updated: {stamp}",
+        f"- Jobs: {len(inbox)} (Tier A/B only)",
+        "",
+        "If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.",
+        "The 7-day dump is `latest.md`.",
+        "",
+        "| Tier | Score | Company | Title | Location | Posted | Recency | Referral | Link |",
+        "|---|---|---|---|---|---|---|---|---|",
+    ]
+    for r in inbox:
+        link_url = r.get("official_url") or r.get("source_url") or ""
+        link = f"[open]({link_url})" if link_url else "-"
+        referral = r.get("referral_name") or "-"
+        title = (r.get("title") or "").replace("|", "/")[:70]
+        lines.append(
+            f"| {r.get('tier')} | {float(r.get('match_score') or 0):.0f} | "
+            f"{(r.get('company') or '').replace('|','/')} | {title} | "
+            f"{(r.get('location') or '').replace('|','/')} | {r.get('posted_date','') or '-'} | "
+            f"{r.get('recency_bucket','')} | {referral} | {link} |"
+        )
+    INBOX_MD_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return inbox
 
 
 ALERT_FIELDS = ["tier", "match_score", "score_source", "company", "title", "location",
@@ -1155,9 +1276,10 @@ ALERT_FIELDS = ["tier", "match_score", "score_source", "company", "title", "loca
 
 
 def write_alert(new_ab: List[Dict[str, str]], stamp: str) -> Dict[str, Path]:
-    ALERTS_DIR.mkdir(parents=True, exist_ok=True)
-    csv_path = ALERTS_DIR / f"board_{stamp}.csv"
-    body_path = ALERTS_DIR / "board_issue_body.md"
+    RUNS_DIR.mkdir(parents=True, exist_ok=True)
+    BOARD_DIR.mkdir(parents=True, exist_ok=True)
+    csv_path = RUNS_DIR / f"{stamp}.csv"
+    body_path = BOARD_DIR / "issue_body.md"
     with csv_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=ALERT_FIELDS, extrasaction="ignore")
         writer.writeheader()
@@ -1167,13 +1289,13 @@ def write_alert(new_ab: List[Dict[str, str]], stamp: str) -> Dict[str, Path]:
     # Mention the repo owner for a "mentioned you" ping. Prefer Participating-only
     # watching if Issue-opened emails already work, otherwise Watch + @ will duplicate.
     lines = [
-        f"Board job alert - {stamp}",
+        f"ATS / LinkedIn alert - {stamp}",
         "",
         "cc @daniel-li2021",
         "",
         f"{len(new_ab)} new Tier A/B job(s) this run.",
         "",
-        "For a rolling multi-day view (not just this run), open `output/board/latest.md`.",
+        f"If you skipped a day, open `output/board/inbox.md` (last {INBOX_DAYS} days). Do not read every Issue.",
         "",
     ]
     lines.append("| Tier | Score | Company | Title | Location | Posted | Recency | Referral | Link |")
@@ -1184,7 +1306,7 @@ def write_alert(new_ab: List[Dict[str, str]], stamp: str) -> Dict[str, Path]:
         referral = r.get("referral_name") or "-"
         title = (r.get("title") or "").replace("|", "/")[:70]
         lines.append(
-            f"| {r.get('tier')} | {float(r.get('match_score',0)):.0f} | "
+            f"| {r.get('tier')} | {float(r.get('match_score') or 0):.0f} | "
             f"{(r.get('company') or '').replace('|','/')} | {title} | "
             f"{(r.get('location') or '').replace('|','/')} | {r.get('posted_date','') or '-'} | "
             f"{r.get('recency_bucket','')} | {referral} | {link} |"
@@ -1282,11 +1404,14 @@ def run() -> None:
     parser.add_argument("--local-out", action="store_true", help="Write to output/board-local/ (gitignored) for local testing")
     args = parser.parse_args()
 
-    global BOARD_DIR, JOBS_STORE_PATH, LATEST_MD_PATH
+    global BOARD_DIR, JOBS_STORE_PATH, LATEST_MD_PATH, INBOX_MD_PATH, INBOX_CSV_PATH, RUNS_DIR
     if args.local_out:
         BOARD_DIR = OUTPUT_DIR / "board-local"
         JOBS_STORE_PATH = BOARD_DIR / "jobs.json"
         LATEST_MD_PATH = BOARD_DIR / "latest.md"
+        INBOX_MD_PATH = BOARD_DIR / "inbox.md"
+        INBOX_CSV_PATH = BOARD_DIR / "inbox.csv"
+        RUNS_DIR = BOARD_DIR / "runs"
 
     load_env_file(BASE_DIR / ".env")
     now = datetime.now(timezone.utc)
@@ -1331,6 +1456,11 @@ def run() -> None:
         job["company_flag"] = "" if action == "keep" else action
         job["deprioritized"] = action == "deprioritize"
         job["preferred"] = action == "prefer"
+        job["staffing_firm"] = action == "staffing"
+        job["clearance_risk_company"] = bool(
+            action == "clearance_risk"
+            or _company_alias_hit(job.get("company", ""), company_filters.get("clearance_risk", []))
+        )
         if action in CATEGORY_DROP_REASON:
             reason = CATEGORY_DROP_REASON[action]
             job["filter_status"] = "dropped"
@@ -1434,6 +1564,7 @@ def run() -> None:
 
     # 11) Outputs (Tier A/B only)
     write_latest_md(visible, stats, stamp)
+    write_board_inbox(visible, stamp, now)
     new_ab = [j for j in visible if dedup_key(j) in new_keys]
     new_ab.sort(key=user_facing_sort_key)
     alert_paths: Dict[str, Path] = {}
@@ -1451,7 +1582,7 @@ def run() -> None:
         "llm_api_requests": str(score_counts.get("api_requests", 0)),
         "llm_reused": str(score_counts["reused"]),
         "llm_rule_fallback": str(score_counts["rule"]),
-        "issue_title": f"Job board alert {stamp} ({len(new_ab)} new A/B)",
+        "issue_title": f"ATS/LinkedIn alert {stamp} ({len(new_ab)} new A/B)",
         "issue_body_path": str(alert_paths.get("issue_body", "")),
     })
 
@@ -1471,7 +1602,7 @@ def run() -> None:
     print("Recency (kept): " + " / ".join(f"{b}={recency_dist[b]}" for b in RECENCY_BUCKETS))
     if drops:
         print("Drops: " + ", ".join(f"{k}={v}" for k, v in sorted(drops.items())))
-    print(f"Wrote {LATEST_MD_PATH}")
+    print(f"Wrote inbox {INBOX_MD_PATH} and {LATEST_MD_PATH}")
     print(f"Store: {JOBS_STORE_PATH} ({len(new_store)} entries)")
 
 

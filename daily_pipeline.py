@@ -36,10 +36,16 @@ from bs4 import BeautifulSoup
 BASE_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = BASE_DIR / "output"
 DAILY_DIR = OUTPUT_DIR / "daily"
-ALERTS_DIR = OUTPUT_DIR / "alerts"
+# Syncareer pipeline owns this folder. The ATS/LinkedIn board pipeline
+# writes only under output/board/ — never mix the two.
+SYNCAREER_DIR = OUTPUT_DIR / "syncareer"
+RUNS_DIR = SYNCAREER_DIR / "runs"
 SEEN_IDS_PATH = OUTPUT_DIR / "seen_job_ids.json"
-WATCHLIST_PATH = OUTPUT_DIR / "watchlist.json"
+WATCHLIST_PATH = SYNCAREER_DIR / "watchlist.json"
+LEGACY_WATCHLIST_PATH = OUTPUT_DIR / "watchlist.json"
 WATCHLIST_RETENTION_DAYS = 7
+# Canonical "I skipped a day" view: kept jobs first_seen/posted in this window.
+INBOX_DAYS = 3
 COMPANY_LINKS_JSON = BASE_DIR / "source" / "company_links.json"
 TARGET_COMPANIES_JSON = BASE_DIR / "source" / "target_companies.json"
 SWE_RESUME_PATH = BASE_DIR / "source" / "swe-resume.txt"
@@ -410,10 +416,11 @@ def _parse_iso_date(value: str) -> Optional[datetime]:
 
 def load_watchlist() -> Dict[str, Dict[str, Any]]:
     """Return {job_id: entry}. Entry keeps title/company/posted/url/first_seen."""
-    if not WATCHLIST_PATH.exists():
+    path = WATCHLIST_PATH if WATCHLIST_PATH.exists() else LEGACY_WATCHLIST_PATH
+    if not path.exists():
         return {}
     try:
-        data = json.loads(WATCHLIST_PATH.read_text(encoding="utf-8"))
+        data = json.loads(path.read_text(encoding="utf-8"))
     except Exception:  # noqa: BLE001
         return {}
     entries = data.get("entries") if isinstance(data, dict) else data
@@ -460,6 +467,106 @@ def save_watchlist(watchlist: Dict[str, Dict[str, Any]]) -> None:
         "entries": entries,
     }
     WATCHLIST_PATH.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+
+
+def _entry_age_ref(entry: Dict[str, Any]) -> Optional[datetime]:
+    return _parse_iso_date(entry.get("posted_date", "")) or _parse_iso_date(entry.get("first_seen", ""))
+
+
+def inbox_entries(
+    watchlist: Dict[str, Dict[str, Any]],
+    now: Optional[datetime] = None,
+    inbox_days: int = INBOX_DAYS,
+) -> List[Dict[str, Any]]:
+    """Kept jobs from the last inbox_days (posted_date, else first_seen)."""
+    now = now or datetime.now(timezone.utc)
+    cutoff = now - timedelta(days=inbox_days)
+    kept: List[Dict[str, Any]] = []
+    for e in watchlist.values():
+        if str(e.get("kept", "")).lower() not in {"yes", "true", "1"}:
+            continue
+        ref = _entry_age_ref(e)
+        if ref is None or ref >= cutoff:
+            kept.append(e)
+    kept.sort(
+        key=lambda e: (
+            0 if e.get("target_company") == "yes" else 1,
+            e.get("posted_date") or e.get("first_seen") or "",
+        ),
+        reverse=True,
+    )
+    return kept
+
+
+def _watchlist_to_alert_row(e: Dict[str, Any]) -> Dict[str, str]:
+    return {
+        "title": e.get("title", ""),
+        "company": e.get("company", ""),
+        "location": e.get("location", ""),
+        "posting_date": e.get("posting_date") or e.get("posted_date") or "",
+        "sponsorship": e.get("sponsorship", ""),
+        "target_company": e.get("target_company", ""),
+        "target_company_match": e.get("target_company_match", ""),
+        "has_grad_req": e.get("has_grad_req", ""),
+        "matched_keywords": e.get("matched_keywords", ""),
+        "salary": e.get("salary", ""),
+        "job_url": e.get("job_url") or e.get("url") or "",
+    }
+
+
+def write_syncareer_inbox(rows: List[Dict[str, Any]], stamp: str, with_tiers: bool) -> None:
+    SYNCAREER_DIR.mkdir(parents=True, exist_ok=True)
+    write_csv(SYNCAREER_DIR / "inbox.csv", rows, ALERT_FIELDS)
+    (SYNCAREER_DIR / "inbox.txt").write_text(
+        build_alert_txt(rows, f"inbox last {INBOX_DAYS}d @ {stamp}", with_tiers),
+        encoding="utf-8",
+    )
+    md_table = _jobs_markdown_table(rows, with_tiers)
+    (SYNCAREER_DIR / "inbox.md").write_text(
+        "\n".join(
+            [
+                f"# Syncareer inbox (last {INBOX_DAYS} days)",
+                "",
+                f"- Updated: {stamp}",
+                f"- Jobs: {len(rows)}",
+                "",
+                "If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.",
+                "",
+                md_table,
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+
+def _jobs_markdown_table(rows: List[Dict[str, Any]], with_tiers: bool) -> str:
+    lines: List[str] = []
+    if with_tiers:
+        lines.append("| Tier | Score | Company | Title | Location | Posted | Sponsorship | Referral | Link |")
+        lines.append("|---|---|---|---|---|---|---|---|---|")
+    else:
+        lines.append("| Company | Title | Location | Posted | Sponsorship | Referral | Link |")
+        lines.append("|---|---|---|---|---|---|---|")
+    for r in rows:
+        title = (r.get("title") or "").replace("|", "/")[:70]
+        company = (r.get("company") or "").replace("|", "/")
+        loc = (r.get("location") or "").replace("|", "/")
+        referral = f"YES ({r['target_company_match']})" if r.get("target_company") == "yes" else "-"
+        url = r.get("job_url") or r.get("url") or ""
+        link = f"[open]({url})" if url else "-"
+        posted = r.get("posting_date") or r.get("posted_date") or ""
+        if with_tiers:
+            lines.append(
+                f"| {r.get('tier','-')} | {r.get('fit_score','-')} | {company} | {title} | "
+                f"{loc} | {posted} | {r.get('sponsorship','')} | {referral} | {link} |"
+            )
+        else:
+            lines.append(
+                f"| {company} | {title} | {loc} | {posted} | "
+                f"{r.get('sponsorship','')} | {referral} | {link} |"
+            )
+    return "\n".join(lines)
 
 
 # --------------------------------------------------------------------------
@@ -872,19 +979,16 @@ def emit_github_output(values: Dict[str, str]) -> None:
         pass
 
 
-# Mention the repo owner so GitHub sends a "mentioned you" notification even when
-# Watch/email for newly opened Issues is off. Prefer Participating-only watching
-# if you already get Issue-opened emails, otherwise this + Watch will duplicate.
-ALERT_MENTION = "@daniel-li2021"
-
-
 def build_issue_body(new_rows: List[Dict[str, Any]], stamp: str, with_tiers: bool) -> str:
     lines: List[str] = []
-    lines.append(f"Automated Syncareer job alert — {stamp}")
+    lines.append(f"Syncareer alert — {stamp}")
     lines.append("")
-    lines.append(f"cc {ALERT_MENTION}")
+    lines.append(f"{len(new_rows)} new matching job(s) this run (hard-filtered).")
     lines.append("")
-    lines.append(f"{len(new_rows)} new matching job(s) after hard filters (senior/US-citizen/non-US removed).")
+    lines.append(
+        f"If you skipped a day, **do not read every Issue**. Open "
+        f"`output/syncareer/inbox.md` in the repo (last {INBOX_DAYS} days, one file)."
+    )
     lines.append("")
     referral_rows = [r for r in new_rows if r.get("target_company") == "yes"]
     if referral_rows:
@@ -915,11 +1019,8 @@ def build_issue_body(new_rows: List[Dict[str, Any]], stamp: str, with_tiers: boo
                 f"{r.get('sponsorship','')} | {referral} | {link} |"
             )
     lines.append("")
-    lines.append("Full CSV/TXT attached in the workflow run artifacts and committed under `output/alerts/`.")
-    lines.append("")
     lines.append(
-        "If you check every 1–2 days: prefer the rolling board "
-        "[`output/board/latest.md`](../board/latest.md) over reading each Issue."
+        f"Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/{stamp}.csv`."
     )
     return "\n".join(lines)
 
@@ -945,20 +1046,18 @@ def build_alert_txt(new_rows: List[Dict[str, Any]], stamp: str, with_tiers: bool
 
 
 def write_alert_outputs(new_rows: List[Dict[str, Any]], stamp: str, with_tiers: bool) -> Dict[str, Path]:
-    ALERTS_DIR.mkdir(parents=True, exist_ok=True)
-    csv_path = ALERTS_DIR / f"{stamp}.csv"
-    txt_path = ALERTS_DIR / f"{stamp}.txt"
-    latest_csv = ALERTS_DIR / "latest.csv"
-    issue_body_path = ALERTS_DIR / "issue_body.md"
+    RUNS_DIR.mkdir(parents=True, exist_ok=True)
+    SYNCAREER_DIR.mkdir(parents=True, exist_ok=True)
+    csv_path = RUNS_DIR / f"{stamp}.csv"
+    txt_path = RUNS_DIR / f"{stamp}.txt"
+    issue_body_path = SYNCAREER_DIR / "issue_body.md"
 
     write_csv(csv_path, new_rows, ALERT_FIELDS)
-    write_csv(latest_csv, new_rows, ALERT_FIELDS)
     txt_path.write_text(build_alert_txt(new_rows, stamp, with_tiers), encoding="utf-8")
     issue_body_path.write_text(build_issue_body(new_rows, stamp, with_tiers), encoding="utf-8")
     return {
         "csv": csv_path,
         "txt": txt_path,
-        "latest_csv": latest_csv,
         "issue_body": issue_body_path,
     }
 
@@ -970,7 +1069,7 @@ def run() -> None:
     parser.add_argument(
         "--alert",
         action="store_true",
-        help="Automation mode: dedup against 7-day rolling watchlist and write output/alerts/ files",
+        help="Automation mode: 7-day watchlist + write output/syncareer/ inbox and run snapshots",
     )
     args = parser.parse_args()
     time_window = args.time
@@ -1117,9 +1216,8 @@ def run() -> None:
     # Alert-mode outputs + rolling watchlist update.
     alert_paths: Dict[str, Path] = {}
     if alert_mode:
-        if kept_rows:
-            alert_paths = write_alert_outputs(alert_rows, stamp, with_tiers=use_llm)
         first_seen_iso = now.astimezone(timezone.utc).isoformat()
+        kept_ids = {row["job_id"] for row in kept_rows}
         for row in kept_rows:
             watchlist[row["job_id"]] = {
                 "job_id": row["job_id"],
@@ -1127,28 +1225,54 @@ def run() -> None:
                 "company": row.get("company", ""),
                 "location": row.get("location", ""),
                 "posted_date": row.get("posting_date", ""),
+                "posting_date": row.get("posting_date", ""),
                 "url": row.get("job_url", ""),
+                "job_url": row.get("job_url", ""),
+                "sponsorship": row.get("sponsorship", ""),
+                "target_company": row.get("target_company", ""),
+                "target_company_match": row.get("target_company_match", ""),
+                "has_grad_req": row.get("has_grad_req", ""),
+                "matched_keywords": row.get("matched_keywords", ""),
+                "salary": row.get("salary", ""),
+                "kept": "yes",
                 "first_seen": first_seen_iso,
             }
-        # Also record dropped/no-longer-matching ids so we don't re-alert them.
         for row in raw_rows:
-            if row["job_id"] not in watchlist:
-                watchlist[row["job_id"]] = {
-                    "job_id": row["job_id"],
-                    "title": row.get("title", ""),
-                    "company": row.get("company", ""),
-                    "location": row.get("location", ""),
-                    "posted_date": row.get("posting_date", ""),
-                    "url": row.get("job_url", ""),
-                    "first_seen": first_seen_iso,
-                }
+            if row["job_id"] in kept_ids:
+                continue
+            watchlist[row["job_id"]] = {
+                "job_id": row["job_id"],
+                "title": row.get("title", ""),
+                "company": row.get("company", ""),
+                "location": row.get("location", ""),
+                "posted_date": row.get("posting_date", ""),
+                "url": row.get("job_url", ""),
+                "kept": "no",
+                "first_seen": first_seen_iso,
+            }
         watchlist = prune_watchlist(watchlist, now=now.astimezone(timezone.utc))
         save_watchlist(watchlist)
+
+        inbox_rows = [_watchlist_to_alert_row(e) for e in inbox_entries(watchlist, now=now.astimezone(timezone.utc))]
+        write_syncareer_inbox(inbox_rows, stamp, with_tiers=use_llm)
+        if kept_rows:
+            alert_paths = write_alert_outputs(alert_rows, stamp, with_tiers=use_llm)
+        else:
+            # Still refresh issue_body so GHA has a path even when 0 new.
+            SYNCAREER_DIR.mkdir(parents=True, exist_ok=True)
+            body = SYNCAREER_DIR / "issue_body.md"
+            body.write_text(
+                f"Syncareer alert — {stamp}\n\n0 new jobs this run.\n\n"
+                f"Open `output/syncareer/inbox.md` for the last {INBOX_DAYS} days.\n",
+                encoding="utf-8",
+            )
+            alert_paths["issue_body"] = body
         emit_github_output(
             {
                 "new_count": str(len(kept_rows)),
+                "inbox_count": str(len(inbox_rows)),
                 "stamp": stamp,
-                "issue_title": f"Job alert {stamp} ({len(kept_rows)} new)",
+                "issue_title": f"Syncareer alert {stamp} ({len(kept_rows)} new)",
                 "issue_body_path": str(alert_paths.get("issue_body", "")),
             }
         )
@@ -1165,12 +1289,13 @@ def run() -> None:
         if llm_errors:
             print(f"LLM errors: {len(llm_errors)} (see report)")
     print(f"Wrote: {jobs_csv}")
-    if alert_mode and alert_paths:
-        print(f"Alert CSV: {alert_paths['csv']}")
-        print(f"Alert TXT: {alert_paths['txt']}")
-        print(f"Issue body: {alert_paths['issue_body']}")
-    elif alert_mode:
-        print("No new jobs this run; no alert files written.")
+    if alert_mode:
+        print(f"Inbox: {SYNCAREER_DIR / 'inbox.csv'} ({len(inbox_rows)} jobs, last {INBOX_DAYS}d)")
+        if alert_paths.get("csv"):
+            print(f"This-run CSV: {alert_paths['csv']}")
+            print(f"Issue body: {alert_paths['issue_body']}")
+        else:
+            print("No new jobs this run; inbox refreshed.")
 
 
 if __name__ == "__main__":

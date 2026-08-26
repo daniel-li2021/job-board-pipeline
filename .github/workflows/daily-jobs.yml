@@ -1,12 +1,9 @@
-name: Daily job alert
+name: Syncareer job alert
 
-# This repo's root is the job_scrape_feasibility folder, so daily_pipeline.py
-# and output/ live at the repo root (no working-directory needed).
+# Writes only under output/syncareer/. Never touches output/board/.
 
 on:
   schedule:
-    # GitHub cron is always UTC. These target ~07:00 and ~19:00 US Pacific
-    # (drifts by 1h across DST, which is fine for a job alert).
     - cron: "0 15 * * *"
     - cron: "0 3 * * *"
   workflow_dispatch:
@@ -22,7 +19,7 @@ permissions:
   issues: write
 
 concurrency:
-  group: daily-jobs
+  group: syncareer-jobs
   cancel-in-progress: false
 
 jobs:
@@ -42,34 +39,36 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4
 
-      - name: Run pipeline (alert mode, hard filters only)
+      - name: Run Syncareer pipeline (alert mode, hard filters only)
         id: pipeline
         run: |
           python3 daily_pipeline.py --alert --no-llm --time "${{ inputs.time_window || 'last3days' }}"
 
-      - name: Commit watchlist and alerts
+      - name: Commit Syncareer inbox and watchlist
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output/watchlist.json output/alerts/ output/daily/ 2>/dev/null || true
+          git add output/syncareer/ 2>/dev/null || true
           if git diff --staged --quiet; then
-            echo "No changes to commit."
+            echo "No Syncareer changes to commit."
           else
-            git commit -m "chore: daily job alert ${{ steps.pipeline.outputs.stamp }}"
+            git commit -m "chore: syncareer alert ${{ steps.pipeline.outputs.stamp }}"
             git push
           fi
 
-      - name: Upload alert artifacts
-        if: ${{ steps.pipeline.outputs.new_count != '0' && steps.pipeline.outputs.new_count != '' }}
+      - name: Upload Syncareer inbox + this-run snapshot
         uses: actions/upload-artifact@v4
         with:
-          name: job-alert-${{ steps.pipeline.outputs.stamp }}
+          name: syncareer-inbox-${{ steps.pipeline.outputs.stamp }}
           path: |
-            output/alerts/${{ steps.pipeline.outputs.stamp }}.csv
-            output/alerts/${{ steps.pipeline.outputs.stamp }}.txt
+            output/syncareer/inbox.csv
+            output/syncareer/inbox.md
+            output/syncareer/inbox.txt
+            output/syncareer/runs/${{ steps.pipeline.outputs.stamp }}.csv
+            output/syncareer/runs/${{ steps.pipeline.outputs.stamp }}.txt
           if-no-files-found: ignore
 
-      - name: Open GitHub Issue with new jobs
+      - name: Open GitHub Issue for this run
         if: ${{ steps.pipeline.outputs.new_count != '0' && steps.pipeline.outputs.new_count != '' }}
         env:
           GH_TOKEN: ${{ github.token }}
@@ -79,10 +78,8 @@ jobs:
             gh issue create \
               --title "${{ steps.pipeline.outputs.issue_title }}" \
               --body-file "$BODY_PATH" \
-              --label "job-alert" || \
+              --label "syncareer-alert" || \
             gh issue create \
               --title "${{ steps.pipeline.outputs.issue_title }}" \
               --body-file "$BODY_PATH"
-          else
-            echo "No issue body file; skipping issue creation."
           fi

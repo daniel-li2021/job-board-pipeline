@@ -1,72 +1,55 @@
 # Job pipelines
 
-Two parallel pipelines live here:
+Two **separate** pipelines. Do not mix their folders.
 
-1. Syncareer pipeline (`daily_pipeline.py`) — documented below.
-2. Multi-source board pipeline (`board_pipeline.py`) — see
-   [the board pipeline section](#multi-source-board-pipeline).
+| Pipeline | Script | When you skipped a day, open this |
+|---|---|---|
+| **Syncareer** | `daily_pipeline.py` | [`output/syncareer/inbox.md`](output/syncareer/inbox.md) (also `inbox.csv`) |
+| **ATS / LinkedIn / official** | `board_pipeline.py` | [`output/board/inbox.md`](output/board/inbox.md) (also `inbox.csv`) |
+
+Each inbox is the last **3 days** of matching jobs. You do **not** need to read every GitHub Issue.
+
+Per-run snapshots (optional): `output/syncareer/runs/` and `output/board/runs/`.
 
 # Syncareer job pipeline
 
-Automated daily job search over [Syncareer](https://syncareer.com): keyword search,
-hard filtering, a rolling 7-day watchlist, and a GitHub Issue alert with downloadable
-CSV/TXT.
+Automated search over [Syncareer](https://syncareer.com): keyword search, hard
+filtering, a rolling 7-day watchlist, and a GitHub Issue for *this run*.
 
 ## Scripts
 
-- `daily_pipeline.py` — keyword search across all companies, dedup, hard filter,
-  optional LLM tiering, outputs.
+- `daily_pipeline.py` — keyword search, dedup, hard filter, optional LLM, outputs.
 - `syncareer_deep_scrape.py` — per-company snapshot scraper (`--snapshot`).
 
-## Daily alert flow (what GitHub Actions runs)
+## Daily alert flow (GitHub Actions)
 
 ```bash
 python3 daily_pipeline.py --alert --no-llm --time last3days
 ```
 
-- `--alert`: dedup against the rolling 7-day watchlist (`output/watchlist.json`)
-  instead of the ever-growing `seen_job_ids.json`, and write alert deliverables.
-- `--no-llm`: skip resume-matching/tiering. Hard filters still run
-  (drops senior/lead/staff, US-citizen/clearance, non-US locations).
-- `--time`: `24hours` | `last3days` | `last7days`.
+- `--alert`: 7-day watchlist at `output/syncareer/watchlist.json` + inbox files.
+- `--no-llm`: skip resume-matching. Hard filters still drop senior / US-citizen / non-US.
 
-### Outputs
+### Outputs (`output/syncareer/` only)
 
-- `output/alerts/<YYYY-MM-DD_HHMM>.csv` — new jobs this run (Excel-friendly).
-- `output/alerts/<YYYY-MM-DD_HHMM>.txt` — same, plain text.
-- `output/alerts/latest.csv` — always the most recent alert.
-- `output/alerts/issue_body.md` — markdown table used as the GitHub Issue body.
-- `output/watchlist.json` — rolling 7-day dedup store (auto-pruned each run).
-- `output/daily/<date>_jobs.csv` — full detail for the run.
+- **`inbox.md` / `inbox.csv` / `inbox.txt`** — last 3 days of kept jobs (the file to read).
+- `runs/<stamp>.csv` — jobs that were *new this run* only.
+- `watchlist.json` — 7-day dedup store (kept + dropped ids).
+- `issue_body.md` — markdown for the GitHub Issue (this run).
 
-When run inside GitHub Actions, the script also writes `new_count`, `stamp`,
-`issue_title`, and `issue_body_path` to `$GITHUB_OUTPUT` so the workflow can decide
-whether to open an Issue.
-
-## Local run with resume matching (optional)
-
-LLM tiering is only for manual, deeper review. Put keys in `.env`
-(`OPENAI_API_KEY` and/or `GROQ_API_KEY`), then:
+## Local LLM tiering (optional)
 
 ```bash
-python3 daily_pipeline.py --time last3days      # LLM on, standard seen_ids store
+python3 daily_pipeline.py --time last3days
 ```
 
-This writes `output/daily/<date>_tier1.csv` and `_tier2.csv`.
+Writes gitignored `output/daily/<date>_tier1.csv` / `_tier2.csv`.
 
 ## GitHub Actions
 
-`.github/workflows/daily-jobs.yml` runs twice a day (cron, UTC) plus manual
-`workflow_dispatch`. It:
-
-1. Runs the alert-mode pipeline (no LLM, no secrets required).
-2. Commits `output/watchlist.json` and `output/alerts/` back to the repo.
-3. Uploads the CSV/TXT as run artifacts.
-4. Opens a GitHub Issue (which emails you per your notification settings) when
-   there is at least one new job.
-
-The repo root is this `job_scrape_feasibility/` folder. Large/derived CSVs are
-git-ignored; only the watchlist and alert files are tracked (see `.gitignore`).
+`.github/workflows/daily-jobs.yml` twice a day + manual run. Commits
+`output/syncareer/`, uploads the inbox as an artifact, opens a
+`syncareer-alert` Issue when this run found new jobs.
 
 ---
 
@@ -82,8 +65,8 @@ Filter -> Match (LLM or rules) -> Rank -> jobs.json + latest.md + alert`.
 
 ## Layout
 
-- `board_pipeline.py` — orchestrator. **Only writer** of `output/board/jobs.json`
-  and `output/board/latest.md`.
+- `board_pipeline.py` — orchestrator. **Only writer** of `output/board/`.
+- `sources/schema.py` — unified job schema, US/recency/date helpers, dedup keys.
 - `sources/schema.py` — unified job schema, US/recency/date helpers, dedup keys.
 - `sources/ats.py` + `source/ats_boards.json` — Greenhouse/Lever/Ashby adapters.
 - `sources/official.py` — Amazon + Google career-page adapters (CI-safe HTTP).
@@ -101,8 +84,7 @@ Filter -> Match (LLM or rules) -> Rank -> jobs.json + latest.md + alert`.
 - **Local machine (launchd):** scrapes LinkedIn/Glassdoor and pushes only
   `output/sources/*.json`.
 - **GitHub Actions:** fetches ATS + official, ingests the pushed source JSONs,
-  runs the full pipeline, and is the sole committer of `output/board/` and
-  `output/alerts/board_*`.
+  runs the full pipeline, and is the sole committer of `output/board/`.
 
 ## Local usage
 
@@ -151,6 +133,8 @@ rule-based scoring for local debugging.
 
 `.github/workflows/board-jobs.yml` runs twice daily (cron), on manual dispatch,
 and on any push to `output/sources/*.json` (i.e. after the local scraper syncs).
-It runs the pipeline, commits `output/board/` + `output/alerts/`, uploads
-artifacts, and opens a GitHub Issue for new Tier A/B jobs on scheduled/manual
+It runs the pipeline, commits `output/board/`, uploads the **inbox** artifact,
+and opens an `ats-linkedin-alert` Issue for new Tier A/B jobs on scheduled/manual
 runs (source-push runs ingest without opening an issue, to avoid spam).
+
+**What to open:** `output/board/inbox.md` (last 3 days). `latest.md` is the 7-day dump.

@@ -24,16 +24,17 @@ output/uber_official/
 output/screened_by_company/
 output/*.md
 output/feasibility_report.md
+output/watchlist.json
+output/alerts/
 
-# ...but DO track the rolling watchlist and the alert deliverables.
-!output/watchlist.json
-!output/alerts/
-!output/alerts/**
+# Syncareer pipeline (daily_pipeline.py) — inbox + watchlist + per-run snapshots
+!output/syncareer/
+!output/syncareer/**
 
-# DO track local source snapshots (local scraper -> GHA ingest).
-!output/sources/
-!output/sources/**
-
-# DO track the GHA-owned board pipeline outputs (jobs.json + latest.md).
+# ATS / LinkedIn / official board pipeline (board_pipeline.py)
 !output/board/
 !output/board/**
+
+# Local LinkedIn/Glassdoor snapshots for GHA ingest
+!output/sources/
+!output/sources/**

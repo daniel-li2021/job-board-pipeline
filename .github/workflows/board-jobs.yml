@@ -1,9 +1,8 @@
 name: Board job alert
 
 # Multi-source pipeline (ATS + official career pages + ingested local
-# LinkedIn/Glassdoor snapshots). This workflow is the ONLY writer of
-# output/board/ and output/alerts/board_*. The local launchd job only pushes
-# output/sources/*.json, which triggers the `push` filter below.
+# LinkedIn/Glassdoor snapshots). ONLY writer of output/board/.
+# Syncareer writes output/syncareer/ in a separate workflow.
 
 on:
   schedule:
@@ -56,7 +55,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Only board artifacts + alerts. Local sources are owned by launchd.
-          git add output/board/ output/alerts/ 2>/dev/null || true
+          git add output/board/ 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "No board changes to commit."
           else
@@ -70,10 +69,12 @@ jobs:
         if: ${{ steps.pipeline.outputs.new_count != '0' && steps.pipeline.outputs.new_count != '' }}
         uses: actions/upload-artifact@v4
         with:
-          name: board-job-alert-${{ steps.pipeline.outputs.stamp }}
+          name: ats-linkedin-inbox-${{ steps.pipeline.outputs.stamp }}
           path: |
-            output/alerts/board_${{ steps.pipeline.outputs.stamp }}.csv
+            output/board/inbox.csv
+            output/board/inbox.md
             output/board/latest.md
+            output/board/runs/${{ steps.pipeline.outputs.stamp }}.csv
           if-no-files-found: ignore
 
       - name: Open GitHub Issue for new Tier A/B jobs
@@ -88,7 +89,7 @@ jobs:
             gh issue create \
               --title "${{ steps.pipeline.outputs.issue_title }}" \
               --body-file "$BODY_PATH" \
-              --label "job-alert" || \
+              --label "ats-linkedin-alert" || \
             gh issue create \
               --title "${{ steps.pipeline.outputs.issue_title }}" \
               --body-file "$BODY_PATH"
