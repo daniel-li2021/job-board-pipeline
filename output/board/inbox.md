@@ -1,30 +1,31 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated: 2026-08-28_0014
-- Jobs: 42 (Tier A/B only)
+- Updated: 2026-08-28_1441
+- Jobs: 43 (Tier A/B only)
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
 
 | Tier | Score | Company | Title | Location | Posted | Recency | Referral | Link |
 |---|---|---|---|---|---|---|---|---|
-| A | 85 | Roblox | [2027] Software Engineer, Early Career | San Mateo, CA, United States | 2026-08-27 | 1to3d | Roblox | [open](https://careers.roblox.com/jobs/8072244?gh_jid=8072244) |
-| A | 85 | Roblox | Software Engineer, Creator | San Mateo, CA, United States | 2026-08-27 | 1to3d | Roblox | [open](https://careers.roblox.com/jobs/8115917?gh_jid=8115917) |
+| A | 85 | Roblox | [2027] Software Engineer, Early Career | San Mateo, CA, United States | 2026-08-28 | 3to24h | Roblox | [open](https://careers.roblox.com/jobs/8072244?gh_jid=8072244) |
+| A | 85 | Roblox | Software Engineer, Creator | San Mateo, CA, United States | 2026-08-28 | 3to24h | Roblox | [open](https://careers.roblox.com/jobs/8115917?gh_jid=8115917) |
 | A | 85 | Reddit | Backend Software Engineer, PDP Experience | Remote - United States | 2026-08-26 | 1to3d | - | [open](https://job-boards.greenhouse.io/reddit/jobs/8148431) |
 | A | 85 | JPMorganChase | Software Engineer [Multiple Positions Available] | Jersey City, NJ | 2026-08-26 | 1to3d | J.P. Morgan | [open](https://www.linkedin.com/jobs/view/software-engineer-multiple-positions-available-at-jpmorganchase-4459104397) |
 | A | 85 | ThunderSoft | Agentic AI Developer | Santa Clara County, CA | 2026-08-26 | 1to3d | - | [open](https://www.linkedin.com/jobs/view/agentic-ai-developer-at-thundersoft-4457645895) |
-| B | 80 | Roblox | Software Engineer, Account Authentication | San Mateo, CA, United States | 2026-08-27 | 1to3d | Roblox | [open](https://careers.roblox.com/jobs/8097701?gh_jid=8097701) |
-| B | 80 | Roblox | Software Engineer, Communications | San Mateo, CA, United States | 2026-08-27 | 1to3d | Roblox | [open](https://careers.roblox.com/jobs/8083944?gh_jid=8083944) |
+| B | 80 | Roblox | Software Engineer, Account Authentication | San Mateo, CA, United States | 2026-08-28 | 3to24h | Roblox | [open](https://careers.roblox.com/jobs/8097701?gh_jid=8097701) |
+| B | 80 | Roblox | Software Engineer, Communications | San Mateo, CA, United States | 2026-08-28 | 3to24h | Roblox | [open](https://careers.roblox.com/jobs/8083944?gh_jid=8083944) |
+| B | 75 | Roblox | Software Engineer, Creator Business | San Mateo, CA, United States | 2026-08-28 | 3to24h | Roblox | [open](https://careers.roblox.com/jobs/8113334?gh_jid=8113334) |
+| B | 75 | Reddit | Machine Learning Engineer, Ads Optimization | Remote - United States | 2026-08-28 | 3to24h | - | [open](https://job-boards.greenhouse.io/reddit/jobs/8029120) |
+| B | 75 | GitLab | Intermediate Backend Engineer, Platform Readiness | Remote, Canada; Remote, United States | 2026-08-28 | 3to24h | - | [open](https://job-boards.greenhouse.io/gitlab/jobs/8644569002) |
+| B | 70 | Roblox | [Summer 2027] Software Engineer Intern | San Mateo, CA, United States | 2026-08-28 | 3to24h | Roblox | [open](https://careers.roblox.com/jobs/8072713?gh_jid=8072713) |
+| B | 70 | Roblox | Software Engineer, Foundation AI | San Mateo, CA, United States | 2026-08-28 | 3to24h | Roblox | [open](https://careers.roblox.com/jobs/8123004?gh_jid=8123004) |
 | B | 80 | Lyft | Software Engineer | San Francisco, CA | 2026-08-26 | 1to3d | - | [open](https://app.careerpuck.com/job-board/lyft/job/8678744002?gh_jid=8678744002) |
 | B | 80 | Lyft | ML Software Engineer, ETA | San Francisco, CA | 2026-08-26 | 1to3d | - | [open](https://app.careerpuck.com/job-board/lyft/job/8639200002?gh_jid=8639200002) |
-| B | 75 | Roblox | Software Engineer, Creator Business | San Mateo, CA, United States | 2026-08-27 | 1to3d | Roblox | [open](https://careers.roblox.com/jobs/8113334?gh_jid=8113334) |
-| B | 75 | Reddit | Machine Learning Engineer, Ads Optimization | Remote - United States | 2026-08-27 | 1to3d | - | [open](https://job-boards.greenhouse.io/reddit/jobs/8029120) |
 | B | 75 | Pinterest | Machine Learning Engineer II, Responsible AI | San Francisco, CA, US; Remote, US | 2026-08-27 | 1to3d | - | [open](https://www.pinterestcareers.com/jobs/?gh_jid=8162046) |
 | B | 75 | Figma | Researcher, Figma Agentic Experiences | San Francisco, CA • New York, NY • United States | 2026-08-26 | 1to3d | - | [open](https://boards.greenhouse.io/figma/jobs/5651744004?gh_jid=5651744004) |
 | B | 75 | Stripe | Specialist Solutions Architect, Data | SF, NY, Remote | 2026-08-26 | 1to3d | - | [open](https://stripe.com/jobs/search?gh_jid=8144262) |
 | B | 75 | Lyft | Software Engineer, Fulfillment Core Services | Seattle, WA | 2026-08-26 | 1to3d | - | [open](https://app.careerpuck.com/job-board/lyft/job/8716222002?gh_jid=8716222002) |
-| B | 70 | Roblox | [Summer 2027] Software Engineer Intern | San Mateo, CA, United States | 2026-08-27 | 1to3d | Roblox | [open](https://careers.roblox.com/jobs/8072713?gh_jid=8072713) |
-| B | 70 | Roblox | Software Engineer, Foundation AI | San Mateo, CA, United States | 2026-08-27 | 1to3d | Roblox | [open](https://careers.roblox.com/jobs/8123004?gh_jid=8123004) |
 | B | 70 | Databricks | Solutions Architect - Communications, Media, Entertainment and Games | Northeast - United States | 2026-08-27 | 1to3d | Databricks | [open](https://databricks.com/company/careers/open-positions/job?gh_jid=8755474002) |
 | B | 70 | Anthropic | Strategy & Operations, Applied AI - AMER | San Francisco, CA / New York City, NY | 2026-08-26 | 1to3d | - | [open](https://job-boards.greenhouse.io/anthropic/jobs/5284500008) |
 | B | 70 | Discord | Oracle ERP Fusion Technical Developer | San Francisco Bay Area or Remote (U.S.) | 2026-08-26 | 1to3d | - | [open](https://job-boards.greenhouse.io/discord/jobs/8627078002) |

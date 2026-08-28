@@ -1,28 +1,28 @@
-# ATS / LinkedIn board — 7-day view — 2026-08-28_0014
+# ATS / LinkedIn board — 7-day view — 2026-08-28_1441
 
 If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) instead of this file.
 
 ## Run stats
 
 - Source raw: ATS 2681 / Official 374 / LinkedIn 456 / Glassdoor 0 / Syncareer N/A
-- Funnel: after dedup 3508 -> after company filter 3104 -> after hard filter 2967 -> after role+seniority prefilter 543 | dropped 2965
-- LLM usage: jobs scored 20 / API requests 2 / cache reused 324 / rule fallback+overflow 199 (recency-gated 199, overflow 0, new/changed 219)
-- Output sizing: Tier A 34 / Tier B 266 / A+B before cap 300 / Shown in latest.md 200 (cap 200)
-- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 302 / newly-disc 0 / 3-7d 34 / >7d 207
+- Funnel: after dedup 3509 -> after company filter 3104 -> after hard filter 2967 -> after role+seniority prefilter 542 | dropped 2967
+- LLM usage: jobs scored 1 / API requests 1 / cache reused 344 / rule fallback+overflow 197 (recency-gated 197, overflow 0, new/changed 198)
+- Output sizing: Tier A 34 / Tier B 267 / A+B before cap 301 / Shown in latest.md 200 (cap 200)
+- Recency (kept): <3h 0 / 3-24h 9 / 1-3d 294 / newly-disc 0 / 3-7d 34 / >7d 205
 
 ## Tier A - apply now / referral (34)
 
 | Score | Src | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 85 | cached_llm | Roblox | [2027] Software Engineer, Early Career | San Mateo, CA, United States | 2026-08-27 | 1to3d | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8072244?gh_jid=8072244) |
-| 85 | cached_llm | Roblox | Software Engineer, Creator | San Mateo, CA, United States | 2026-08-27 | 1to3d | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8115917?gh_jid=8115917) |
+| 85 | cached_llm | Roblox | [2027] Software Engineer, Early Career | San Mateo, CA, United States | 2026-08-28 | 3to24h | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8072244?gh_jid=8072244) |
+| 85 | cached_llm | Roblox | Software Engineer, Creator | San Mateo, CA, United States | 2026-08-28 | 3to24h | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8115917?gh_jid=8115917) |
 | 85 | cached_llm | Reddit | Backend Software Engineer, PDP Experience | Remote - United States | 2026-08-26 | 1to3d | medium | swe | - | yes | [open](https://job-boards.greenhouse.io/reddit/jobs/8148431) |
 | 90 | cached_llm | NIKSUN | Full Stack Developer | Princeton, NJ | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-niksun-4457644177) |
 | 85 | cached_llm | JPMorganChase | Software Engineer [Multiple Positions Available] | Jersey City, NJ | 2026-08-26 | 1to3d | low | swe | J.P. Morgan | - | [open](https://www.linkedin.com/jobs/view/software-engineer-multiple-positions-available-at-jpmorganchase-4459104397) |
 | 85 | cached_llm | Aegis AI Security | AI Engineer - NYC | New York, NY | 2026-08-25 | 1to3d | low | ai | - | - | [open](https://www.linkedin.com/jobs/view/ai-engineer-nyc-at-aegis-ai-security-4459042237) |
 | 85 | cached_llm | Ampstek | Fullstack Engineer(Typescript) | Madison, WI | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/fullstack-engineer-typescript-at-ampstek-4457605840) |
 | 85 | cached_llm | Arcadia | Full Stack Engineer | New York, NY | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-arcadia-4455766604) |
-| 85 | llm | Benchling | Software Engineer, Platform (Developer Experience) | San Francisco, CA | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/software-engineer-platform-developer-experience-at-benchling-4459048634) |
+| 85 | cached_llm | Benchling | Software Engineer, Platform (Developer Experience) | San Francisco, CA | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/software-engineer-platform-developer-experience-at-benchling-4459048634) |
 | 85 | cached_llm | BlackRock | Associate, Full Stack Engineer | San Francisco, CA | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/associate-full-stack-engineer-at-blackrock-4459014481) |
 | 85 | cached_llm | CoreAi Consulting | AI Engineer – Agentic AI | Phoenix, AZ | 2026-08-25 | 1to3d | low | ai | - | - | [open](https://www.linkedin.com/jobs/view/ai-engineer-%E2%80%93-agentic-ai-at-coreai-consulting-4450660768) |
 | 85 | cached_llm | DHL Air (UK) Ltd | Data Engineer I | Whiteland, IN | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/data-engineer-i-at-dhl-air-uk-ltd-4456969149) |
@@ -53,31 +53,32 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 
 | Score | Src | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 80 | cached_llm | Roblox | Software Engineer, Account Authentication | San Mateo, CA, United States | 2026-08-27 | 1to3d | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8097701?gh_jid=8097701) |
-| 80 | cached_llm | Roblox | Software Engineer, Communications | San Mateo, CA, United States | 2026-08-27 | 1to3d | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8083944?gh_jid=8083944) |
+| 80 | cached_llm | Roblox | Software Engineer, Account Authentication | San Mateo, CA, United States | 2026-08-28 | 3to24h | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8097701?gh_jid=8097701) |
+| 80 | cached_llm | Roblox | Software Engineer, Communications | San Mateo, CA, United States | 2026-08-28 | 3to24h | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8083944?gh_jid=8083944) |
+| 75 | cached_llm | Roblox | Software Engineer, Creator Business | San Mateo, CA, United States | 2026-08-28 | 3to24h | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8113334?gh_jid=8113334) |
+| 75 | cached_llm | Reddit | Machine Learning Engineer, Ads Optimization | Remote - United States | 2026-08-28 | 3to24h | medium | ai | - | yes | [open](https://job-boards.greenhouse.io/reddit/jobs/8029120) |
+| 75 | llm | GitLab | Intermediate Backend Engineer, Platform Readiness | Remote, Canada; Remote, United States | 2026-08-28 | 3to24h | medium | swe | - | yes | [open](https://job-boards.greenhouse.io/gitlab/jobs/8644569002) |
+| 70 | cached_llm | Roblox | [Summer 2027] Software Engineer Intern | San Mateo, CA, United States | 2026-08-28 | 3to24h | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8072713?gh_jid=8072713) |
+| 70 | cached_llm | Roblox | Software Engineer, Foundation AI | San Mateo, CA, United States | 2026-08-28 | 3to24h | medium | ai | Roblox | yes | [open](https://careers.roblox.com/jobs/8123004?gh_jid=8123004) |
 | 80 | cached_llm | Lyft | Software Engineer | San Francisco, CA | 2026-08-26 | 1to3d | medium | swe | - | yes | [open](https://app.careerpuck.com/job-board/lyft/job/8678744002?gh_jid=8678744002) |
-| 80 | llm | Lyft | ML Software Engineer, ETA | San Francisco, CA | 2026-08-26 | 1to3d | medium | ai | - | yes | [open](https://app.careerpuck.com/job-board/lyft/job/8639200002?gh_jid=8639200002) |
-| 75 | cached_llm | Roblox | Software Engineer, Creator Business | San Mateo, CA, United States | 2026-08-27 | 1to3d | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8113334?gh_jid=8113334) |
-| 75 | cached_llm | Reddit | Machine Learning Engineer, Ads Optimization | Remote - United States | 2026-08-27 | 1to3d | medium | ai | - | yes | [open](https://job-boards.greenhouse.io/reddit/jobs/8029120) |
-| 75 | llm | Pinterest | Machine Learning Engineer II, Responsible AI | San Francisco, CA, US; Remote, US | 2026-08-27 | 1to3d | medium | ai | - | yes | [open](https://www.pinterestcareers.com/jobs/?gh_jid=8162046) |
+| 80 | cached_llm | Lyft | ML Software Engineer, ETA | San Francisco, CA | 2026-08-26 | 1to3d | medium | ai | - | yes | [open](https://app.careerpuck.com/job-board/lyft/job/8639200002?gh_jid=8639200002) |
+| 75 | cached_llm | Pinterest | Machine Learning Engineer II, Responsible AI | San Francisco, CA, US; Remote, US | 2026-08-27 | 1to3d | medium | ai | - | yes | [open](https://www.pinterestcareers.com/jobs/?gh_jid=8162046) |
 | 75 | cached_llm | Figma | Researcher, Figma Agentic Experiences | San Francisco, CA • New York, NY • United States | 2026-08-26 | 1to3d | medium | ai | - | yes | [open](https://boards.greenhouse.io/figma/jobs/5651744004?gh_jid=5651744004) |
 | 75 | cached_llm | Stripe | Specialist Solutions Architect, Data | SF, NY, Remote | 2026-08-26 | 1to3d | medium | swe | - | yes | [open](https://stripe.com/jobs/search?gh_jid=8144262) |
 | 75 | cached_llm | Lyft | Software Engineer, Fulfillment Core Services | Seattle, WA | 2026-08-26 | 1to3d | medium | swe | - | yes | [open](https://app.careerpuck.com/job-board/lyft/job/8716222002?gh_jid=8716222002) |
-| 70 | cached_llm | Roblox | [Summer 2027] Software Engineer Intern | San Mateo, CA, United States | 2026-08-27 | 1to3d | medium | swe | Roblox | yes | [open](https://careers.roblox.com/jobs/8072713?gh_jid=8072713) |
-| 70 | cached_llm | Roblox | Software Engineer, Foundation AI | San Mateo, CA, United States | 2026-08-27 | 1to3d | medium | ai | Roblox | yes | [open](https://careers.roblox.com/jobs/8123004?gh_jid=8123004) |
-| 70 | llm | Databricks | Solutions Architect - Communications, Media, Entertainment and Games | Northeast - United States | 2026-08-27 | 1to3d | medium | ai | Databricks | yes | [open](https://databricks.com/company/careers/open-positions/job?gh_jid=8755474002) |
-| 70 | llm | Anthropic | Strategy & Operations, Applied AI - AMER | San Francisco, CA / New York City, NY | 2026-08-26 | 1to3d | medium | ai | - | yes | [open](https://job-boards.greenhouse.io/anthropic/jobs/5284500008) |
+| 70 | cached_llm | Databricks | Solutions Architect - Communications, Media, Entertainment and Games | Northeast - United States | 2026-08-27 | 1to3d | medium | ai | Databricks | yes | [open](https://databricks.com/company/careers/open-positions/job?gh_jid=8755474002) |
+| 70 | cached_llm | Anthropic | Strategy & Operations, Applied AI - AMER | San Francisco, CA / New York City, NY | 2026-08-26 | 1to3d | medium | ai | - | yes | [open](https://job-boards.greenhouse.io/anthropic/jobs/5284500008) |
 | 70 | cached_llm | Discord | Oracle ERP Fusion Technical Developer | San Francisco Bay Area or Remote (U.S.) | 2026-08-26 | 1to3d | medium | swe | - | yes | [open](https://job-boards.greenhouse.io/discord/jobs/8627078002) |
 | 70 | cached_llm | Lyft | Applied Scientist- Pricing, Dynamic Pricing & Offer Selection | San Francisco, CA | 2026-08-26 | 1to3d | medium | ai | - | yes | [open](https://app.careerpuck.com/job-board/lyft/job/8402813002?gh_jid=8402813002) |
-| 68 | llm | Databricks | Solutions Architect - Strat Media | West Coast - United States | 2026-08-27 | 1to3d | medium | ai | Databricks | yes | [open](https://databricks.com/company/careers/open-positions/job?gh_jid=8755461002) |
+| 68 | cached_llm | Databricks | Solutions Architect - Strat Media | West Coast - United States | 2026-08-27 | 1to3d | medium | ai | Databricks | yes | [open](https://databricks.com/company/careers/open-positions/job?gh_jid=8755461002) |
 | 65 | cached_llm | Databricks | Specialist Solutions Architect - AI/ML | Central - United States; West Coast - United States | 2026-08-26 | 1to3d | medium | ai | Databricks | yes | [open](https://databricks.com/company/careers/open-positions/job?gh_jid=8697991002) |
-| 65 | llm | Anthropic | Applied AI Architect, Strategic Enterprise Tech | San Francisco, CA / New York City, NY / Seattle, WA | 2026-08-27 | 1to3d | medium | ai | - | yes | [open](https://job-boards.greenhouse.io/anthropic/jobs/5409008008) |
+| 65 | cached_llm | Anthropic | Applied AI Architect, Strategic Enterprise Tech | San Francisco, CA / New York City, NY / Seattle, WA | 2026-08-27 | 1to3d | medium | ai | - | yes | [open](https://job-boards.greenhouse.io/anthropic/jobs/5409008008) |
 | 65 | cached_llm | Stripe | Forward Deployed AI Accelerator, Marketing | Remote in the US, Remote in Canada | 2026-08-26 | 1to3d | medium | ai | - | yes | [open](https://stripe.com/jobs/search?gh_jid=8055930) |
 | 60 | cached_llm | Databricks | Specialist Solutions Architect - Cloud Infrastructure & Platform (AWS) | United States | 2026-08-26 | 1to3d | medium | swe | Databricks | yes | [open](https://databricks.com/company/careers/open-positions/job?gh_jid=8739506002) |
 | 60 | cached_llm | Databricks | Specialist Solutions Architect - Cloud Infrastructure & Platform (Azur | United States | 2026-08-26 | 1to3d | medium | swe | Databricks | yes | [open](https://databricks.com/company/careers/open-positions/job?gh_jid=8739507002) |
-| 60 | llm | Figma | Forward Deployed Engineer | San Francisco, CA • New York, NY • United States | 2026-08-27 | 1to3d | medium | ai | - | yes | [open](https://boards.greenhouse.io/figma/jobs/6158162004?gh_jid=6158162004) |
+| 60 | cached_llm | Figma | Forward Deployed Engineer | San Francisco, CA • New York, NY • United States | 2026-08-27 | 1to3d | medium | ai | - | yes | [open](https://boards.greenhouse.io/figma/jobs/6158162004?gh_jid=6158162004) |
 | 55 | cached_llm | Databricks | Specialist Solutions Architect - Data Engineering & Warehousing | United States | 2026-08-26 | 1to3d | medium | swe | Databricks | yes | [open](https://databricks.com/company/careers/open-positions/job?gh_jid=8692962002) |
-| 55 | llm | Figma | IT Engineer, Internal AI Infrastructure | San Francisco, CA • New York, NY • United States | 2026-08-27 | 1to3d | medium | ai | - | yes | [open](https://boards.greenhouse.io/figma/jobs/6164379004?gh_jid=6164379004) |
+| 55 | cached_llm | Figma | IT Engineer, Internal AI Infrastructure | San Francisco, CA • New York, NY • United States | 2026-08-27 | 1to3d | medium | ai | - | yes | [open](https://boards.greenhouse.io/figma/jobs/6164379004?gh_jid=6164379004) |
 | 85 | cached_llm | Encore Talent Solutions | Software Development Engineer | San Jose, CA | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/software-development-engineer-at-encore-talent-solutions-4458790858) |
 | 85 | cached_llm | Matlen Silver | Full Stack Engineer | Charlotte, NC | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-matlen-silver-4458789108) |
 | 85 | cached_llm | New York Technology Partners | Full Stack Production Software Engineer | Chicago, IL | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/full-stack-production-software-engineer-at-new-york-technology-partners-4459016983) |
@@ -105,7 +106,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 80 | cached_llm | Ditto | AI Engineer | Washington, DC | 2026-08-25 | 1to3d | low | ai | - | - | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-ditto-4457653351) |
 | 80 | cached_llm | Evlo AI | Backend Engineer | San Francisco, CA | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/backend-engineer-at-evlo-ai-4457617400) |
 | 80 | cached_llm | Evlo AI | Machine Learning Engineer | Phoenix, AZ | 2026-08-25 | 1to3d | low | ai | - | - | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-evlo-ai-4457600742) |
-| 80 | llm | FELICIS | Software Engineer, Developer Platform | San Francisco, CA | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/software-engineer-developer-platform-at-felicis-4458709036) |
+| 80 | cached_llm | FELICIS | Software Engineer, Developer Platform | San Francisco, CA | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/software-engineer-developer-platform-at-felicis-4458709036) |
 | 80 | cached_llm | Fanatics | AI Engineer | New York, NY | 2026-08-25 | 1to3d | low | ai | - | - | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-fanatics-4440329518) |
 | 80 | cached_llm | FastTek Global | Software Engineer | Dearborn, MI | 2026-08-26 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/software-engineer-at-fasttek-global-4457679390) |
 | 80 | cached_llm | Freeform | Software Engineer (Full Stack Enterprise) | Los Angeles, CA | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/software-engineer-full-stack-enterprise-at-freeform-4402728408) |
@@ -150,8 +151,8 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 78 | cached_llm | Smart IT Frame LLC | Snowflake Data Engineer | Phoenix, AZ | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/snowflake-data-engineer-at-smart-it-frame-llc-4457607908) |
 | 78 | cached_llm | Strategic Employment Partners (SEP) | Data Engineer | Boston, MA | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/data-engineer-at-strategic-employment-partners-sep-4458792104) |
 | 78 | cached_llm | Veridic Solutions | Data Engineer | McKinney, TX | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/data-engineer-at-veridic-solutions-4457630512) |
-| 75 | llm | Adobe | Software Development Engineer | Seattle, WA | 2026-08-25 | 1to3d | low | swe | Adobe | - | [open](https://www.linkedin.com/jobs/view/software-development-engineer-at-adobe-4446291451) |
-| 75 | llm | JPMorganChase | Software Engineer [Multiple Positions Available] | Jersey City, NJ | 2026-08-26 | 1to3d | low | swe | J.P. Morgan | - | [open](https://www.linkedin.com/jobs/view/software-engineer-multiple-positions-available-at-jpmorganchase-4459100438) |
+| 75 | cached_llm | Adobe | Software Development Engineer | Seattle, WA | 2026-08-25 | 1to3d | low | swe | Adobe | - | [open](https://www.linkedin.com/jobs/view/software-development-engineer-at-adobe-4446291451) |
+| 75 | cached_llm | JPMorganChase | Software Engineer [Multiple Positions Available] | Jersey City, NJ | 2026-08-26 | 1to3d | low | swe | J.P. Morgan | - | [open](https://www.linkedin.com/jobs/view/software-engineer-multiple-positions-available-at-jpmorganchase-4459100438) |
 | 75 | cached_llm | Salesforce | Software Engineering MTS | San Francisco, CA | 2026-08-26 | 1to3d | low | swe | Salesforce | - | [open](https://www.linkedin.com/jobs/view/software-engineering-mts-at-salesforce-4459089565) |
 | 75 | cached_llm | Salesforce | Software Engineering MTS | Bellevue, WA | 2026-08-26 | 1to3d | low | swe | Salesforce | - | [open](https://www.linkedin.com/jobs/view/software-engineering-mts-at-salesforce-4459093284) |
 | 75 | cached_llm | AZX | Software Engineer (Backend-Focused) | Seattle, WA | 2026-08-25 | 1to3d | low | swe | - | - | [open](https://www.linkedin.com/jobs/view/software-engineer-backend-focused-at-azx-4459029406) |
@@ -214,8 +215,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 75 | cached_llm | Value Innovation Labs | AI/ML Engineer | Sunnyvale, CA | 2026-08-25 | 1to3d | low | ai | - | - | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-at-value-innovation-labs-4457606581) |
 | 75 | cached_llm | CoffeeSpace | Backend Software Engineer ($175K–$225K + Equity) Building AI Solutions | New York, United States | 2026-08-25 | 1to3d | low | ai | - | - | [open](https://www.linkedin.com/jobs/view/backend-software-engineer-%24175k%E2%80%93%24225k-%2B-equity-building-ai-solutions-for-construction-at-coffeespace-4457491732) |
 | 75 | cached_llm | Trace3 | Software Engineer / AI & Automation | Dallas, TX | 2026-08-25 | 1to3d | low | ai | - | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ai-automation-at-trace3-4457640945) |
-| 70 | llm | Adobe | Machine Learning Engineer | San Jose, CA | 2026-08-25 | 1to3d | low | ai | Adobe | - | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-adobe-4439806534) |
-| 70 | llm | Adobe | Software Development Engineer, Influencer Management | San Jose, CA | 2026-08-25 | 1to3d | low | swe | Adobe | - | [open](https://www.linkedin.com/jobs/view/software-development-engineer-influencer-management-at-adobe-4390999740) |
+| 70 | cached_llm | Adobe | Machine Learning Engineer | San Jose, CA | 2026-08-25 | 1to3d | low | ai | Adobe | - | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-adobe-4439806534) |
+| 70 | cached_llm | Adobe | Software Development Engineer, Influencer Management | San Jose, CA | 2026-08-25 | 1to3d | low | swe | Adobe | - | [open](https://www.linkedin.com/jobs/view/software-development-engineer-influencer-management-at-adobe-4390999740) |
 | 70 | cached_llm | Uber | Software Engineer II | Seattle, WA | 2026-08-25 | 1to3d | low | swe | Uber | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-uber-4458598844) |
 | 70 | cached_llm | Uber | Software Engineer II | Sunnyvale, CA | 2026-08-25 | 1to3d | low | swe | Uber | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-uber-4458711205) |
-| 70 | cached_llm | Uber | Software Engineer II | Seattle, WA | 2026-08-25 | 1to3d | low | swe | Uber | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-uber-4458718181) |
