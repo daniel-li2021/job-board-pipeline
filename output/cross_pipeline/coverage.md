@@ -1,7 +1,7 @@
 # Cross-pipeline official coverage audit
 
-- Generated: 2026-08-29T18:27:35.837481+00:00
-- Official snapshot: 2026-08-29T00:24:35.875420+00:00
+- Generated: 2026-08-29T18:38:50.513352+00:00
+- Official snapshot: 2026-08-29T18:37:39.833716+00:00
 - Coverage scope: jobs from the last 3 days that pass shared hard + role/seniority prefilters; LLM score is not used.
 - Validation: 100% exact observed coverage is the current review target; final validation is manual.
 
