@@ -1,0 +1,1461 @@
+{
+  "retention_days": 14,
+  "events": [
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-08-28_1436",
+      "emitted_at": "2026-08-28T14:36:00+00:00",
+      "event_kind": "github_issue_backfill",
+      "count": 91,
+      "jobs": [
+        {
+          "tier": "-",
+          "company": "eBay",
+          "title": "Software Engineer 3",
+          "location": "San Jose, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (eBay)",
+          "url": "https://jobs.ebayinc.com/us/en/job/R0076679/Software-Engineer-3",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::ebay::software engineer 3::ca|san jose"
+        },
+        {
+          "tier": "-",
+          "company": "Apple",
+          "title": "Software Engineer, Apple Ads",
+          "location": "Austin, Texas, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Apple)",
+          "url": "https://jobs.apple.com/en-us/details/200680232-0157/software-engineer-apple-ads?team=SFTWR",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::apple::software engineer apple ads::austin|tx"
+        },
+        {
+          "tier": "-",
+          "company": "JPMorgan Chase",
+          "title": "Software Engineer III (React/Java)",
+          "location": "Jersey City, New Jersey, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (J.P. Morgan)",
+          "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210774763",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::jpmorganchase::software engineer iii react java::jersey city|nj"
+        },
+        {
+          "tier": "-",
+          "company": "Oracle",
+          "title": "Software Developer 2",
+          "location": "Seattle, Washington, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Oracle)",
+          "url": "https://careers.oracle.com/en/sites/jobsearch/job/344094/?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000149325%253B300000000106863",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::oracle::software developer 2::seattle|wa"
+        },
+        {
+          "tier": "-",
+          "company": "Microsoft",
+          "title": "Software Engineer",
+          "location": "Redmond, Washington, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Microsoft)",
+          "url": "https://apply.careers.microsoft.com/careers/job/1970393556972217",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::microsoft::software engineer::redmond|wa"
+        },
+        {
+          "tier": "-",
+          "company": "Google",
+          "title": "Software Engineer III, Performance, AI and Infrastructure",
+          "location": "Sunnyvale, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Google)",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/131550590407713478-software-engineer-iii-performance-ai-and-infrastructure",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::google::software engineer iii performance ai and infrastructure::ca|sunnyvale"
+        },
+        {
+          "tier": "-",
+          "company": "Amazon",
+          "title": "Software Engineer I, Memberships",
+          "location": "Seattle, Washington, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Amazon)",
+          "url": "https://amazon.jobs/en/jobs/10515912/software-engineer-i-memberships",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::amazon::software engineer i memberships::seattle|wa"
+        },
+        {
+          "tier": "-",
+          "company": "Apple",
+          "title": "Software Engineer, Apple Ads",
+          "location": "Cupertino, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Apple)",
+          "url": "https://jobs.apple.com/en-us/details/200680232-0836/software-engineer-apple-ads?team=SFTWR",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::apple::software engineer apple ads::ca|cupertino"
+        },
+        {
+          "tier": "-",
+          "company": "JPMorgan Chase",
+          "title": "Software Engineer II- Linux C/C++ systems programming",
+          "location": "Jersey City, New Jersey, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (J.P. Morgan)",
+          "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210752932",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::jpmorganchase::software engineer ii linux c c systems programming::jersey city|nj"
+        },
+        {
+          "tier": "-",
+          "company": "Google",
+          "title": "Software Engineer III, Infrastructure, Search",
+          "location": "Mountain View, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Google)",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/79014275565134534-software-engineer-iii-infrastructure-search",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::google::software engineer iii infrastructure search::ca|mountain view"
+        },
+        {
+          "tier": "-",
+          "company": "Apple",
+          "title": "Software Engineer",
+          "location": "Austin, Texas, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Apple)",
+          "url": "https://jobs.apple.com/en-us/details/200679992-0157/software-engineer?team=SFTWR",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::apple::software engineer::austin|tx"
+        },
+        {
+          "tier": "-",
+          "company": "JPMorgan Chase",
+          "title": "Software Engineer III Fullstack Java/Python / AWS/ SQL",
+          "location": "Plano, Texas, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (J.P. Morgan)",
+          "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210761112",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::jpmorganchase::software engineer iii fullstack java python aws sql::plano|tx"
+        },
+        {
+          "tier": "-",
+          "company": "Google",
+          "title": "Software Engineer III, Generative AI, Workspace Drive",
+          "location": "Boulder, Colorado, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Google)",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/137877730069750470-software-engineer-iii-generative-ai-workspace-drive",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::google::software engineer iii generative ai workspace drive::boulder|co"
+        },
+        {
+          "tier": "-",
+          "company": "Apple",
+          "title": "Software Engineer",
+          "location": "Cupertino, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Apple)",
+          "url": "https://jobs.apple.com/en-us/details/200679992-0836/software-engineer?team=SFTWR",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::apple::software engineer::ca|cupertino"
+        },
+        {
+          "tier": "-",
+          "company": "JPMorgan Chase",
+          "title": "Full-Stack Java React Software Engineer III",
+          "location": "Jersey City, New Jersey, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (J.P. Morgan)",
+          "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210765945",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::jpmorganchase::full stack java react software engineer iii::jersey city|nj"
+        },
+        {
+          "tier": "-",
+          "company": "Google",
+          "title": "Software Engineer, Chrome Networking Security",
+          "location": "Mountain View, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Google)",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/100397577702122182-software-engineer-chrome-networking-security",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::google::software engineer chrome networking security::ca|mountain view"
+        },
+        {
+          "tier": "-",
+          "company": "Apple",
+          "title": "Software Engineer",
+          "location": "New City, New York, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Apple)",
+          "url": "https://jobs.apple.com/en-us/details/200679992-5819/software-engineer?team=SFTWR",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::apple::software engineer::new city|ny"
+        },
+        {
+          "tier": "-",
+          "company": "JPMorgan Chase",
+          "title": "Software Engineer III- Java/Python, SQL, Databricks",
+          "location": "Houston, Texas, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (J.P. Morgan)",
+          "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210783384",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::jpmorganchase::software engineer iii java python sql databricks::houston|tx"
+        },
+        {
+          "tier": "-",
+          "company": "Google",
+          "title": "Software Engineer, Rapid Prototyping New Pixel Software Products",
+          "location": "Cambridge, Massachusetts, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Google)",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/111569715351954118-software-engineer-rapid-prototyping-new-pixel-software-products",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::google::software engineer rapid prototyping new pixel software products::cambridge|ma"
+        },
+        {
+          "tier": "-",
+          "company": "Apple",
+          "title": "Software Development Engineer in Test, Full Stack, Creativity Apps",
+          "location": "San Diego, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Apple)",
+          "url": "https://jobs.apple.com/en-us/details/200680399-3543/software-development-engineer-in-test-full-stack-creativity-apps?team=SFTWR",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::apple::software development engineer in test full stack creativity apps::ca|san diego"
+        },
+        {
+          "tier": "-",
+          "company": "Google",
+          "title": "Software Engineer III, Infrastructure, Infra Bigtable",
+          "location": "New York, New York, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Google)",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/101599343911281350-software-engineer-iii-infrastructure-infra-bigtable",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::google::software engineer iii infrastructure infra bigtable::ny"
+        },
+        {
+          "tier": "-",
+          "company": "Apple",
+          "title": "Software Engineer (Framework Solutions), AI & Data Platforms (AiDP)",
+          "location": "Austin, Texas, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Apple)",
+          "url": "https://jobs.apple.com/en-us/details/200680196-0157/software-engineer-framework-solutions-ai-data-platforms-aidp?team=SFTWR",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::apple::software engineer framework solutions ai data platforms aidp::austin|tx"
+        },
+        {
+          "tier": "-",
+          "company": "NVIDIA",
+          "title": "AI Quality and Agent Operations Analyst - AI Solutions",
+          "location": "Santa Clara, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (NVIDIA)",
+          "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/AI-Quality-and-Agent-Operations-Analyst---AI-Solutions_JR2024193?locationHierarchy1=2fcb99c455831013ea52df1adb7432a8&locationHierarchy1=2fcb99c455831013ea52f785717432d2&locationHierarchy1=2fcb99c455831013ea52fb338f2932d8&locationHierarchy1=2fcb99c455831013ea52ed162d4932c0&locationHierarchy1=2fcb99c455831013ea52b157d0d6325a&locationHierarchy1=2fcb99c455831013ea529fe151e3323c&locationHierarchy1=2fcb99c455831013ea529c3b93ba3236&locationHierarchy1=2fcb99c455831013ea528dce556b3224",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::nvidia::ai quality and agent operations analyst ai solutions::ca|santa clara"
+        },
+        {
+          "tier": "-",
+          "company": "JPMorgan Chase",
+          "title": "2027 Data & AI Program - Full Time - Analyst - United States",
+          "location": "New York, New York, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (J.P. Morgan)",
+          "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210773954",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::jpmorganchase::2027 data ai program full time analyst united states::ny"
+        },
+        {
+          "tier": "-",
+          "company": "NVIDIA",
+          "title": "Applied AI Innovation Engineer — Sales AI Applications",
+          "location": "Santa Clara, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (NVIDIA)",
+          "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Applied-AI-Innovation-Engineer---Sales-AI-Applications_JR2024203-1?locationHierarchy1=2fcb99c455831013ea52df1adb7432a8&locationHierarchy1=2fcb99c455831013ea52f785717432d2&locationHierarchy1=2fcb99c455831013ea52fb338f2932d8&locationHierarchy1=2fcb99c455831013ea52ed162d4932c0&locationHierarchy1=2fcb99c455831013ea52b157d0d6325a&locationHierarchy1=2fcb99c455831013ea529fe151e3323c&locationHierarchy1=2fcb99c455831013ea529c3b93ba3236&locationHierarchy1=2fcb99c455831013ea528dce556b3224",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::nvidia::applied ai innovation engineer sales ai applications::ca|santa clara"
+        },
+        {
+          "tier": "-",
+          "company": "JPMorgan Chase",
+          "title": "Data Engineer III - Python/PySpark/Databricks/AI",
+          "location": "Atlanta, Georgia, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (J.P. Morgan)",
+          "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210758864",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::jpmorganchase::data engineer iii python pyspark databricks ai::atlanta|ga"
+        },
+        {
+          "tier": "-",
+          "company": "Apple",
+          "title": "Software Engineer (Framework Solutions), AI & Data Platforms (AiDP)",
+          "location": "Sunnyvale, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Apple)",
+          "url": "https://jobs.apple.com/en-us/details/200680196-3956/software-engineer-framework-solutions-ai-data-platforms-aidp?team=SFTWR",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::apple::software engineer framework solutions ai data platforms aidp::ca|sunnyvale"
+        },
+        {
+          "tier": "-",
+          "company": "JPMorgan Chase",
+          "title": "Applied AI ML [Multiple Positions Available]",
+          "location": "Palo Alto, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (J.P. Morgan)",
+          "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210779432",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::jpmorganchase::applied ai ml multiple positions available::ca|palo alto"
+        },
+        {
+          "tier": "-",
+          "company": "Google",
+          "title": "Developer Relations Engineer, Android Intelligent Experience AI",
+          "location": "Mountain View, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Google)",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/138757957847261894-developer-relations-engineer-android-intelligent-experience-ai",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::google::developer relations engineer android intelligent experience ai::ca|mountain view"
+        },
+        {
+          "tier": "-",
+          "company": "TikTok",
+          "title": "Machine Learning Engineer Graduate (E-Commerce Supply Chain & Logistic",
+          "location": "Seattle, Washington, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (ByteDance)",
+          "url": "https://lifeattiktok.com/search/7675842865566222597",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tiktok::machine learning engineer graduate e commerce supply chain logistic::seattle|wa"
+        },
+        {
+          "tier": "-",
+          "company": "TikTok",
+          "title": "Machine Learning Engineer Intern (E-Commerce Supply Chain & Logistics-",
+          "location": "San Jose, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (ByteDance)",
+          "url": "https://lifeattiktok.com/search/7675847556668295429",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tiktok::machine learning engineer intern e commerce supply chain logistics::ca|san jose"
+        },
+        {
+          "tier": "-",
+          "company": "Oracle",
+          "title": "Core Infrastructure Engineer 2",
+          "location": "Nashville, Tennessee, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Oracle)",
+          "url": "https://careers.oracle.com/en/sites/jobsearch/job/342848/?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000149325%253B300000000106863",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::oracle::core infrastructure engineer 2::nashville|tn"
+        },
+        {
+          "tier": "-",
+          "company": "NVIDIA",
+          "title": "Compiler Engineer, Backend- New College Grad 2026",
+          "location": "Santa Clara, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (NVIDIA)",
+          "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Compiler-Engineer--Backend--New-College-Grad-2026_JR2017290?locationHierarchy1=2fcb99c455831013ea52df1adb7432a8&locationHierarchy1=2fcb99c455831013ea52f785717432d2&locationHierarchy1=2fcb99c455831013ea52fb338f2932d8&locationHierarchy1=2fcb99c455831013ea52ed162d4932c0&locationHierarchy1=2fcb99c455831013ea52b157d0d6325a&locationHierarchy1=2fcb99c455831013ea529fe151e3323c&locationHierarchy1=2fcb99c455831013ea529c3b93ba3236&locationHierarchy1=2fcb99c455831013ea528dce556b3224",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::nvidia::compiler engineer backend new college grad 2026::ca|santa clara"
+        },
+        {
+          "tier": "-",
+          "company": "TikTok",
+          "title": "Data Engineer Graduate (Data Platform E-commerce) - 2027 Start",
+          "location": "San Jose, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (ByteDance)",
+          "url": "https://lifeattiktok.com/search/7676253726624024837",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tiktok::data engineer graduate data platform e commerce 2027 start::ca|san jose"
+        },
+        {
+          "tier": "-",
+          "company": "TikTok",
+          "title": "Self-Built Engineer Graduate (CDN Platform) - 2027 Start",
+          "location": "Seattle, Washington, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (ByteDance)",
+          "url": "https://lifeattiktok.com/search/7670364202242427189",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tiktok::self built engineer graduate cdn platform 2027 start::seattle|wa"
+        },
+        {
+          "tier": "-",
+          "company": "SAP",
+          "title": "Data and Applied Scientist, Finance and Spend Autonomous Suite, Palo A",
+          "location": "Palo Alto, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (SAP)",
+          "url": "https://jobs.sap.com/job/Palo-Alto-Data-and-Applied-Scientist%2C-Finance-and-Spend-Autonomous-Suite%2C-Palo-Alto-CA-94304/1431263233/",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::sap::data and applied scientist finance and spend autonomous suite palo a::ca|palo alto"
+        },
+        {
+          "tier": "-",
+          "company": "SAP",
+          "title": "Data & Applied Scientist - Ontologies & Semantics",
+          "location": "Palo Alto, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (SAP)",
+          "url": "https://jobs.sap.com/job/Palo-Alto-Data-&-Applied-Scientist-Ontologies-&-Semantics-CA-94304/1431290533/",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::sap::data applied scientist ontologies semantics::ca|palo alto"
+        },
+        {
+          "tier": "-",
+          "company": "TeleTracking",
+          "title": "Software Engineer I",
+          "location": "Pittsburgh, Pennsylvania, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://job-boards.greenhouse.io/teletrackingtechnologiesinc/jobs/5397299008",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::teletracking::software engineer i::pa|pittsburgh"
+        },
+        {
+          "tier": "-",
+          "company": "KION GROUP",
+          "title": "Software Support Engineer",
+          "location": "Grand Rapids, Michigan, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://kiongroup.wd3.myworkdayjobs.com/en-US/KIONGroup/job/Grand-Rapids-MI-United-States/Software-Support-Engineer_JR-0092880-1",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::kiongroup::software support engineer::grand rapids|mi"
+        },
+        {
+          "tier": "-",
+          "company": "OneStream Software",
+          "title": "Associate AI Engineer",
+          "location": "Fort Lauderdale, Florida, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://recruiting.ultipro.com/ONE1018ONSO/JobBoard/1955ffa6-bda6-4c95-8412-2c731d693ab2/OpportunityDetail?opportunityId=69d4f75d-c397-4458-98cc-47038fdb2010",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::onestreamsoftware::associate ai engineer::fl|fort lauderdale"
+        },
+        {
+          "tier": "-",
+          "company": "Manulife",
+          "title": "Summer Intern 2027 - Software Engineering",
+          "location": "Boston, Massachusetts, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://manulife.wd3.myworkdayjobs.com/en-US/MFCJH_Jobs/job/Boston-Massachusetts/Summer-Intern-2027---Software-Engineering_JR26081680?Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=a4e08b475d6a4176853c9d1cb9854e02",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::manulife::summer intern 2027 software engineering::boston|ma"
+        },
+        {
+          "tier": "-",
+          "company": "Microchip Technology",
+          "title": "Engineer II- Software",
+          "location": "Chandler, Arizona, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://wd5.myworkdaysite.com/en-US/recruiting/microchiphr/External/job/AZ---Chandler/Engineer-II--Software_R3011-26?locationCountry=80938777cac5440fab50d729f9634969&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::microchiptechnology::engineer ii software::az|chandler"
+        },
+        {
+          "tier": "-",
+          "company": "Workiva",
+          "title": "Summer 2027 Intern - Software Engineering",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://workiva.wd503.myworkdayjobs.com/en-US/careers/job/USA---Remote/Summer-2027-Intern---Software-Engineering_R12190",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::workiva::summer 2027 intern software engineering::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Siemens",
+          "title": "Software Engineer",
+          "location": "New York, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://jobs.siemens.com/en_US/externaljobs/JobDetail/520116",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::siemens::software engineer::ny"
+        },
+        {
+          "tier": "-",
+          "company": "Ambarella",
+          "title": "Software Development Engineer Intern",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://ambarella.wd108.myworkdayjobs.com/en-US/Ambarella/job/US-Headquarters/Software-Development-Engineer-Intern_JR100366-1",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::ambarella::software development engineer intern::url::"
+        },
+        {
+          "tier": "-",
+          "company": "TE Connectivity",
+          "title": "Software Engineer I (MPDE)",
+          "location": "Webster, New York, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://careers.te.com/job/Software-Engineer-I-%28MPDE%29/158036-en_US",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::teconnectivity::software engineer i mpde::ny|webster"
+        },
+        {
+          "tier": "-",
+          "company": "Varex Imaging",
+          "title": "Software QA Engineer",
+          "location": "Salt Lake City, Utah, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://vareximaging.wd103.myworkdayjobs.com/en-US/External_Career_Site/job/Salt-Lake-City/Software-QA-Engineer_R0006012?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=6cb77610a8a543aea2d6bc10457e35d4",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::vareximaging::software qa engineer::salt lake city|ut"
+        },
+        {
+          "tier": "-",
+          "company": "Travelers",
+          "title": "Software Engineer I - Elixir, Python, AWS",
+          "location": "Hartford, Connecticut, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://travelers.wd5.myworkdayjobs.com/en-US/External/job/CT---Hartford/Software-Engineer-I---Elixir--Python--AWS_R-52134",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::travelers::software engineer i elixir python aws::ct|hartford"
+        },
+        {
+          "tier": "-",
+          "company": "T-Mobile",
+          "title": "Software Engineer",
+          "location": "Bellevue, Washington, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://careers.t-mobile.com/software-engineer/job/AB152035E451EDA6DB1639EB922C0B8D",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tmobile::software engineer::bellevue|wa"
+        },
+        {
+          "tier": "-",
+          "company": "Johnson & Johnson",
+          "title": "Software Engineer, Infrastructure",
+          "location": "Santa Clara, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.careers.jnj.com/en/jobs/r-096093/software-engineer-infrastructure/",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::johnsonjohnson::software engineer infrastructure::ca|santa clara"
+        },
+        {
+          "tier": "-",
+          "company": "Tesla",
+          "title": "Internship, Software Engineer, Maps & Navigation, Robotaxi (Winter/Spr",
+          "location": "Palo Alto, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.tesla.com/careers/search/job/280960",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tesla::internship software engineer maps navigation robotaxi winter spr::ca|palo alto"
+        },
+        {
+          "tier": "-",
+          "company": "Abnormal AI",
+          "title": "Software Engineer II - Dev Accelerator",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://abnormal.ai/careers/jobs/7967606003?gh_jid=7967606003",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::abnormalai::software engineer ii dev accelerator::url::"
+        },
+        {
+          "tier": "-",
+          "company": "OneStream Software",
+          "title": "Associate AI Engineer",
+          "location": "Fort Lauderdale, Florida, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://recruiting.ultipro.com/ONE1018ONSO/JobBoard/1955ffa6-bda6-4c95-8412-2c731d693ab2/OpportunityDetail?opportunityId=bd6385db-0c82-46b2-abe4-191dac390643",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::onestreamsoftware::associate ai engineer::fl|fort lauderdale"
+        },
+        {
+          "tier": "-",
+          "company": "Ambarella",
+          "title": "Software Architecture Engineer Intern",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://ambarella.wd108.myworkdayjobs.com/en-US/Ambarella/job/US-Headquarters/Software-Architecture-Engineer-Intern_JR100365",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::ambarella::software architecture engineer intern::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Tesla",
+          "title": "Internship, Software QA Engineer, Vehicle Software (Winter/Spring 2027",
+          "location": "Palo Alto, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.tesla.com/careers/search/job/281098",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tesla::internship software qa engineer vehicle software winter spring 2027::ca|palo alto"
+        },
+        {
+          "tier": "-",
+          "company": "Abnormal AI",
+          "title": "Software Engineer II - Full Stack",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://abnormal.ai/careers/jobs/7786309003?gh_jid=7786309003",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::abnormalai::software engineer ii full stack::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Ambarella",
+          "title": "Software Engineer Intern",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://ambarella.wd108.myworkdayjobs.com/en-US/Ambarella/job/US-Headquarters/Software-Engineer-Intern_JR100363",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::ambarella::software engineer intern::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Tesla",
+          "title": "Internship, Software Engineer, Maps & Navigation Validation (Winter/Sp",
+          "location": "Palo Alto, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.tesla.com/careers/search/job/281271",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tesla::internship software engineer maps navigation validation winter sp::ca|palo alto"
+        },
+        {
+          "tier": "-",
+          "company": "Abnormal AI",
+          "title": "Software Engineer II, Model Platform",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://abnormal.ai/careers/jobs/7829979003?gh_jid=7829979003",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::abnormalai::software engineer ii model platform::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Tesla",
+          "title": "Internship, Embedded Software Engineer, Firmware Platforms (Winter/Spr",
+          "location": "Palo Alto, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.tesla.com/careers/search/job/281102",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tesla::internship embedded software engineer firmware platforms winter spr::ca|palo alto"
+        },
+        {
+          "tier": "-",
+          "company": "Tesla",
+          "title": "Internship, Fullstack Software Engineer, Fleetnet (Winter/Spring 2027)",
+          "location": "Palo Alto, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.tesla.com/careers/search/job/281099",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tesla::internship fullstack software engineer fleetnet winter spring 2027::ca|palo alto"
+        },
+        {
+          "tier": "-",
+          "company": "Tesla",
+          "title": "Internship, Android Engineer, Mobile Software (Winter/Spring 2027)",
+          "location": "Palo Alto, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.tesla.com/careers/search/job/280605",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tesla::internship android engineer mobile software winter spring 2027::ca|palo alto"
+        },
+        {
+          "tier": "-",
+          "company": "Tesla",
+          "title": "Frontend Software Engineer, Vehicle Test Data Platforms",
+          "location": "Fremont, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.tesla.com/careers/search/job/281249",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tesla::frontend software engineer vehicle test data platforms::ca|fremont"
+        },
+        {
+          "tier": "-",
+          "company": "Bounteous",
+          "title": "Full-Stack AI Engineer — AWS AI",
+          "location": "Scottsdale, Arizona, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.bounteous.com/careers/job/1bd50276-f69e-4669-8c0d-0f0a4676290c",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::bounteous::full stack ai engineer aws ai::az|scottsdale"
+        },
+        {
+          "tier": "-",
+          "company": "Tesla",
+          "title": "Full Stack Software Engineer, DesignX",
+          "location": "Fremont, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.tesla.com/careers/search/job/281305",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tesla::full stack software engineer designx::ca|fremont"
+        },
+        {
+          "tier": "-",
+          "company": "Gusto",
+          "title": "GTM AI Agent Builder",
+          "location": "Atlanta, Georgia, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://job-boards.greenhouse.io/gusto/jobs/8157333",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::gusto::gtm ai agent builder::atlanta|ga"
+        },
+        {
+          "tier": "-",
+          "company": "Chemours",
+          "title": "AI & Data Science Intern",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://chemours.wd103.myworkdayjobs.com/en-US/chemours/job/US---Remote/AI---Data-Science-Intern_JR15013",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::chemours::ai data science intern::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Manulife",
+          "title": "Summer Intern 2027 - AI",
+          "location": "Boston, Massachusetts, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://manulife.wd3.myworkdayjobs.com/en-US/MFCJH_Jobs/job/Boston-Massachusetts/Summer-Intern-2027---AI_JR26081682?Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=a4e08b475d6a4176853c9d1cb9854e02",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::manulife::summer intern 2027 ai::boston|ma"
+        },
+        {
+          "tier": "-",
+          "company": "Daimler Truck North America",
+          "title": "AI Engineer",
+          "location": "Charlotte, North Carolina, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://dtna.wd5.myworkdayjobs.com/en-US/DTNA_external/job/Charlotte-NC-US/AI-Engineer_DT-19392",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::daimlertrucknorthamerica::ai engineer::charlotte|nc"
+        },
+        {
+          "tier": "-",
+          "company": "Allstate",
+          "title": "Product Engineer, Python AI, Consultant - Remote",
+          "location": "Illinois, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://allstate.wd5.myworkdayjobs.com/en-US/allstate_careers/job/USA---IL-Remote/Product-Engineer--Python-AI--Consultant-----Remote_R33883-1?Country=bc33aa3152ec42d4995f4791a106ed09&Country=a30a87ed25634629aa6c3958aa2b91ea&Country=29247e57dbaf46fb855b224e03170bc7",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::allstate::product engineer python ai consultant remote::il"
+        },
+        {
+          "tier": "-",
+          "company": "Diamondback Energy",
+          "title": "AI Developer",
+          "location": "Dallas, Texas, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://diamondbackenergy.wd12.myworkdayjobs.com/en-US/DBE/job/Dallas-TX/AI-Developer_R100894-3",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::diamondbackenergy::ai developer::dallas|tx"
+        },
+        {
+          "tier": "-",
+          "company": "Citi",
+          "title": "Junior Generative AI Application Developer",
+          "location": "Jersey City, New Jersey, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://jobs.citi.com/job/jersey-city/junior-generative-ai-application-developer/287/94846498976",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::citi::junior generative ai application developer::jersey city|nj"
+        },
+        {
+          "tier": "-",
+          "company": "Tesla",
+          "title": "Internship, AI Hardware Physical Design Engineer, AI Hardware (Winter/",
+          "location": "Palo Alto, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.tesla.com/careers/search/job/281233",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tesla::internship ai hardware physical design engineer ai hardware winter::ca|palo alto"
+        },
+        {
+          "tier": "-",
+          "company": "Citi",
+          "title": "Junior Generative AI Application Developer",
+          "location": "New York, New York, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://jobs.citi.com/job/new-york/junior-generative-ai-application-developer/287/94846498960",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::citi::junior generative ai application developer::ny"
+        },
+        {
+          "tier": "-",
+          "company": "Bounteous",
+          "title": "Microsoft AI Platform Administrator",
+          "location": "Scottsdale, Arizona, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.bounteous.com/careers/job/b97a2f71-57cd-434a-a330-0b7cb3d7b973",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::bounteous::microsoft ai platform administrator::az|scottsdale"
+        },
+        {
+          "tier": "-",
+          "company": "Abnormal AI",
+          "title": "L1 Technical Support Engineer",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://abnormal.ai/careers/jobs/7801478003?gh_jid=7801478003",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::abnormalai::l1 technical support engineer::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Abnormal AI",
+          "title": "Sales Operations Analyst",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://abnormal.ai/careers/jobs/7824578003?gh_jid=7824578003",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::abnormalai::sales operations analyst::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Abnormal AI",
+          "title": "Designer, Creative Services",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://abnormal.ai/careers/jobs/7767731003?gh_jid=7767731003",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::abnormalai::designer creative services::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Abnormal AI",
+          "title": "Sales Development Representative - Public Sector",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://abnormal.ai/careers/jobs/7730831003?gh_jid=7730831003",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::abnormalai::sales development representative public sector::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Abnormal AI",
+          "title": "Enterprise Account Executive - Southeast Florida",
+          "location": "Florida, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://abnormal.ai/careers/jobs/7788905003?gh_jid=7788905003",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::abnormalai::enterprise account executive southeast florida::fl"
+        },
+        {
+          "tier": "-",
+          "company": "Abnormal AI",
+          "title": "Mid-Market Account Executive - Cincinnati",
+          "location": "Cincinnati, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://abnormal.ai/careers/jobs/7894340003?gh_jid=7894340003",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::abnormalai::mid market account executive cincinnati::cincinnati"
+        },
+        {
+          "tier": "-",
+          "company": "Abnormal AI",
+          "title": "MidMarket Sales Engineer - Ohio Valley",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://abnormal.ai/careers/jobs/7894691003?gh_jid=7894691003",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::abnormalai::midmarket sales engineer ohio valley::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Abnormal AI",
+          "title": "Enterprise Platform Engineer",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://abnormal.ai/careers/jobs/7833508003?gh_jid=7833508003",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::abnormalai::enterprise platform engineer::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Workiva",
+          "title": "Summer 2027 Intern - Machine Learning Engineering",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://workiva.wd503.myworkdayjobs.com/en-US/careers/job/USA---Remote/Summer-2027-Intern---Machine-Learning-Engineering_R12194-1",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::workiva::summer 2027 intern machine learning engineering::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Unity",
+          "title": "Machine Learning Engineer, New Grad",
+          "location": "Bellevue, Washington, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://unitytech.wd1.myworkdayjobs.com/en-US/Unity/job/Bellevue-WA-USA/Sr-Machine-Learning-Engineer--Infrastructure_JOBREQ-2616023",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::unity::machine learning engineer new grad::bellevue|wa"
+        },
+        {
+          "tier": "-",
+          "company": "Mattr Infrastructure Technologies",
+          "title": "Applications Engineer",
+          "location": "El Dorado, Arkansas, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://careers.mattr.com/job/El-Dorado-Applications-Engineer-AR-71730/1408151300/",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::mattrinfrastructuretechnologies::applications engineer::ar|el dorado"
+        },
+        {
+          "tier": "-",
+          "company": "Verisk",
+          "title": "Devops Engineer II",
+          "location": "Jersey City, New Jersey, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://fa-ewmy-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4567",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::verisk::devops engineer ii::jersey city|nj"
+        },
+        {
+          "tier": "-",
+          "company": "Motorola Solutions",
+          "title": "DevOps Private/Public Cloud Engineer",
+          "location": "Chicago, Illinois, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://motorolasolutions.wd5.myworkdayjobs.com/en-US/Careers/job/Chicago-IL/DevOps-Private-Public-Cloud-Engineer_R68005",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::motorolasolutions::devops private public cloud engineer::chicago|il"
+        },
+        {
+          "tier": "-",
+          "company": "Wells Fargo",
+          "title": "Engineering Associate – Platform Services",
+          "location": "Chandler, Arizona, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.wellsfargojobs.com/en/jobs/r-571573/engineering-associate-platform-services/",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::wellsfargo::engineering associate platform services::az|chandler"
+        },
+        {
+          "tier": "-",
+          "company": "Hitachi",
+          "title": "Data Platform Engineering, Student",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://hitachi.wd1.myworkdayjobs.com/en-US/hitachi/job/Remote---United-States/Data-Platform-Engineering--Student_R0142846",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::hitachi::data platform engineering student::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Aramark",
+          "title": "Marketing Coordinator - Univ. of DE-Admin",
+          "location": "Newark, Delaware, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://aramarkcareers.com/UnitedStates/job/Newark-Marketing-Coordinator-Univ_-of-DE-Admin-DE-19716/1423883900/",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::aramark::marketing coordinator univ of de admin::de|newark"
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-08-28_2349",
+      "emitted_at": "2026-08-28T23:49:00+00:00",
+      "event_kind": "github_issue_backfill",
+      "count": 48,
+      "jobs": [
+        {
+          "tier": "-",
+          "company": "Goldman Sachs",
+          "title": "Software Engineer, Global Banking & Markets, Trading Technology",
+          "location": "Salt Lake City, Utah, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Goldman Sachs)",
+          "url": "https://higher.gs.com/roles/182893",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::goldmansachs::software engineer global banking markets trading technology::salt lake city|ut"
+        },
+        {
+          "tier": "-",
+          "company": "Google",
+          "title": "Software Engineer III, Infrastructure, Infrastructure Storage",
+          "location": "New York, New York, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Google)",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/111982135291585222-software-engineer-iii-infrastructure-infrastructure-storage",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::google::software engineer iii infrastructure infrastructure storage::ny"
+        },
+        {
+          "tier": "-",
+          "company": "Amazon",
+          "title": "Software Development Engineer, AWS Compliance & Security Assurance",
+          "location": "Seattle, Washington, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Amazon)",
+          "url": "https://amazon.jobs/en/jobs/10516800/software-development-engineer-aws-compliance-security-assurance",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::amazon::software development engineer aws compliance security assurance::seattle|wa"
+        },
+        {
+          "tier": "-",
+          "company": "Google",
+          "title": "Software Engineer III, Mobile (Android)",
+          "location": "Boulder, Colorado, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Google)",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/141957021288014534-software-engineer-iii-mobile-android",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::google::software engineer iii mobile android::boulder|co"
+        },
+        {
+          "tier": "-",
+          "company": "Google",
+          "title": "Software Engineer III, Full Stack",
+          "location": "Raleigh, North Carolina, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Google)",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/140223091451011782-software-engineer-iii-full-stack",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::google::software engineer iii full stack::nc|raleigh"
+        },
+        {
+          "tier": "-",
+          "company": "Apple",
+          "title": "Health Software - QA Tools & Automation Engineer",
+          "location": "San Diego, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Apple)",
+          "url": "https://jobs.apple.com/en-us/details/200680523-3543/health-software-qa-tools-automation-engineer?team=SFTWR",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::apple::health software qa tools automation engineer::ca|san diego"
+        },
+        {
+          "tier": "-",
+          "company": "Google",
+          "title": "Software Engineer III, Access Transparency",
+          "location": "Chicago, Illinois, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Google)",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/90936073986679494-software-engineer-iii-access-transparency",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::google::software engineer iii access transparency::chicago|il"
+        },
+        {
+          "tier": "-",
+          "company": "Google",
+          "title": "Systems Yield Engineer, Quantum AI",
+          "location": "Goleta, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Google)",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/107807427079873222-systems-yield-engineer-quantum-ai",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::google::systems yield engineer quantum ai::ca|goleta"
+        },
+        {
+          "tier": "-",
+          "company": "Google",
+          "title": "Business and Marketing Data Scientist, Applied Machine Learning",
+          "location": "New York, New York, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Google)",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/134799200591192774-business-and-marketing-data-scientist-applied-machine-learning",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::google::business and marketing data scientist applied machine learning::ny"
+        },
+        {
+          "tier": "-",
+          "company": "Google",
+          "title": "Reliability Infrastructure Technician, Raxium",
+          "location": "Fremont, California, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Google)",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/113142120058888902-reliability-infrastructure-technician-raxium",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::google::reliability infrastructure technician raxium::ca|fremont"
+        },
+        {
+          "tier": "-",
+          "company": "Google",
+          "title": "Data Center Technician III, Networking Infrastructure",
+          "location": "Council Bluffs, Iowa, United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "YES (Google)",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/92358051759039174-data-center-technician-iii-networking-infrastructure",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::google::data center technician iii networking infrastructure::council bluffs|ia"
+        },
+        {
+          "tier": "-",
+          "company": "Match Group",
+          "title": "Software Engineer, Android",
+          "location": "Palo Alto, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://jobs.lever.co/matchgroup/26725d4e-c597-4434-95d3-e6b86472d8a4",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::matchgroup::software engineer android::ca|palo alto"
+        },
+        {
+          "tier": "-",
+          "company": "Chewy",
+          "title": "Backend Software Engineer II",
+          "location": "Boston, Massachusetts, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://careers.chewy.com/us/en/job/R30681/Backend-Software-Engineer-II",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::chewy::backend software engineer ii::boston|ma"
+        },
+        {
+          "tier": "-",
+          "company": "Constellation Energy",
+          "title": "Associate Software Engineer, AI",
+          "location": "Houston, Texas, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://jobs.constellationenergy.com/careers-home/jobs/138264?lang=en-us",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::constellationenergy::associate software engineer ai::houston|tx"
+        },
+        {
+          "tier": "-",
+          "company": "Micron Technology",
+          "title": "New College Grad - Software Engineer",
+          "location": "Boise, Idaho, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://careers.micron.com/careers/job/44144084?domain=micron.com",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::microntechnology::new college grad software engineer::boise|id"
+        },
+        {
+          "tier": "-",
+          "company": "Deloitte",
+          "title": "Full Stack Developer - PROJECT - Software Engineer III - TS/SCI cleara",
+          "location": "Rosslyn, Virginia, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://apply.deloitte.com/en_US/careers/JobDetail/Full-Stack-Developer-PROJECT-Software-Engineer-III-TS-SCI-clearance/364498",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::deloitte::full stack developer project software engineer iii ts sci cleara::rosslyn|va"
+        },
+        {
+          "tier": "-",
+          "company": "Ericsson",
+          "title": "AI Software Engineer Intern",
+          "location": "Plano, Texas, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://jobs.ericsson.com/careers/job/563121776668074?domain=ericsson.com&triggerGoButton=false",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::ericsson::ai software engineer intern::plano|tx"
+        },
+        {
+          "tier": "-",
+          "company": "Bandwidth",
+          "title": "Software Engineer (Voice)",
+          "location": "Raleigh, North Carolina, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://job-boards.greenhouse.io/bandwidth/jobs/8159576",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::bandwidth::software engineer voice::nc|raleigh"
+        },
+        {
+          "tier": "-",
+          "company": "CGI",
+          "title": "Jr. - Mid Level JEE Software Developer",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://cgi.njoyn.com/corp/xweb/xweb.asp?NTKN=c&clid=21001&Page=JobDetails&Jobid=J0826-1839&BRID=1328978&lang=1",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::cgi::jr mid level jee software developer::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Pendo",
+          "title": "Software Engineer, Full Stack",
+          "location": "Raleigh, North Carolina, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://job-boards.greenhouse.io/pendo/jobs/8728254002",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::pendo::software engineer full stack::nc|raleigh"
+        },
+        {
+          "tier": "-",
+          "company": "Nintendo",
+          "title": "Software Engineer II (NST)",
+          "location": "Redmond, Washington, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://careers.nintendo.com/jobs/4371239009/",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::nintendo::software engineer ii nst::redmond|wa"
+        },
+        {
+          "tier": "-",
+          "company": "Twitch",
+          "title": "Software Engineer I, Memberships",
+          "location": "San Francisco, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://job-boards.greenhouse.io/twitch/jobs/8748320002",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::twitch::software engineer i memberships::ca|san francisco"
+        },
+        {
+          "tier": "-",
+          "company": "Garmin",
+          "title": "Software Engineer 1 - Aviation Backend Web",
+          "location": "Olathe, Kansas, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://careers.garmin.com/jobs/19142?lang=en-us&previousLocale=en-US",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::garmin::software engineer 1 aviation backend web::ks|olathe"
+        },
+        {
+          "tier": "-",
+          "company": "Gordon Food Service",
+          "title": "Intermediate Software Engineer",
+          "location": "Atlanta, Georgia, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://gfs.wd5.myworkdayjobs.com/en-US/usjobs-gen-gfs/job/Atlanta-Georgia/Intermediate-Software-Engineer_R-56330",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::gordonfoodservice::intermediate software engineer::atlanta|ga"
+        },
+        {
+          "tier": "-",
+          "company": "MDU Resources",
+          "title": "Software Developer, Integrations",
+          "location": "Boise, Idaho, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://recruiting2.ultipro.com/MDU1000MDUR/JobBoard/9a734154-c463-428d-8320-c5f4369cebd2/OpportunityDetail?opportunityId=fb76a741-68bd-4f49-88a7-77476bca0387",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::mduresources::software developer integrations::boise|id"
+        },
+        {
+          "tier": "-",
+          "company": "Thryv",
+          "title": "Outside Software Account Representative",
+          "location": "Honolulu, Hawaii, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://recruiting2.ultipro.com/SUP1002SPRM/JobBoard/d7242952-1f26-44c3-bd0e-5dda7e739f73/OpportunityDetail?opportunityId=620e4f1f-dde2-4e77-b4c4-39d1735621d4",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::thryv::outside software account representative::hi|honolulu"
+        },
+        {
+          "tier": "-",
+          "company": "Epitec",
+          "title": "Software/Solution Engineer",
+          "location": "Menlo Park, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://epitec.com/jobs-at-epitec-careerportaldomainroot/software-engineer-iii-106418/",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::epitec::software solution engineer::ca|menlo park"
+        },
+        {
+          "tier": "-",
+          "company": "Deloitte",
+          "title": "Genesys Cloud Software Engineer III",
+          "location": "Morristown, New Jersey, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://apply.deloitte.com/en_US/careers/JobDetail/Genesys-Cloud-Software-Engineer-III/364731",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::deloitte::genesys cloud software engineer iii::morristown|nj"
+        },
+        {
+          "tier": "-",
+          "company": "Twitch",
+          "title": "Software Engineer I, Memberships",
+          "location": "Seattle, Washington, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://job-boards.greenhouse.io/twitch/jobs/8751076002",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::twitch::software engineer i memberships::seattle|wa"
+        },
+        {
+          "tier": "-",
+          "company": "Garmin",
+          "title": "Software Engineer 1 - Aviation Backend Web",
+          "location": "Chanhassen, Minnesota, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://careers.garmin.com/jobs/19732?lang=en-us&previousLocale=en-US",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::garmin::software engineer 1 aviation backend web::chanhassen|mn"
+        },
+        {
+          "tier": "-",
+          "company": "Gordon Food Service",
+          "title": "Intermediate Software Engineer",
+          "location": "Wyoming, Michigan, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://gfs.wd5.myworkdayjobs.com/en-US/usjobs-gen-gfs/job/Wyoming-Michigan/Intermediate-Software-Engineer_R-56072",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::gordonfoodservice::intermediate software engineer::mi|wy"
+        },
+        {
+          "tier": "-",
+          "company": "Twitch",
+          "title": "Software Engineer II, Fintech",
+          "location": "New York City, New York, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://job-boards.greenhouse.io/twitch/jobs/8747652002",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::twitch::software engineer ii fintech::new york city|ny"
+        },
+        {
+          "tier": "-",
+          "company": "Garmin",
+          "title": "Software Engineer 1 - Aviation Backend Web",
+          "location": "Chandler, Arizona, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://careers.garmin.com/jobs/19721?lang=en-us&previousLocale=en-US",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::garmin::software engineer 1 aviation backend web::az|chandler"
+        },
+        {
+          "tier": "-",
+          "company": "Tesla",
+          "title": "Drive Unit Software Product Support Engineer",
+          "location": "Palo Alto, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.tesla.com/careers/search/job/281406",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tesla::drive unit software product support engineer::ca|palo alto"
+        },
+        {
+          "tier": "-",
+          "company": "Mindrift",
+          "title": "Competitive Programming Expert - Freelance AI Trainer",
+          "location": "South Carolina, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://apply.workable.com/toloka-ai/j/01F933DDDF/",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::mindrift::competitive programming expert freelance ai trainer::sc"
+        },
+        {
+          "tier": "-",
+          "company": "Boston Scientific",
+          "title": "Forward Deployment AI Engineer",
+          "location": "Arden Hills, Minnesota, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://bostonscientific.eightfold.ai/careers/job/563602813474934?domain=bostonscientific.com&hl=en&triggerGoButton=false",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::bostonscientific::forward deployment ai engineer::arden hills|mn"
+        },
+        {
+          "tier": "-",
+          "company": "Micron Technology",
+          "title": "Intern - Technical Customer Management, AI",
+          "location": "Longmont, Colorado, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://careers.micron.com/careers/job/44138103?domain=micron.com",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::microntechnology::intern technical customer management ai::co|longmont"
+        },
+        {
+          "tier": "-",
+          "company": "Deloitte",
+          "title": "Consultative Offerings - Summer Scholar - AI Innovation",
+          "location": "McLean, Virginia, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://apply.deloitte.com/en_US/careers/JobDetail/Consultative-Offerings-Summer-Scholar-AI-Innovation/364696",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::deloitte::consultative offerings summer scholar ai innovation::mclean|va"
+        },
+        {
+          "tier": "-",
+          "company": "Pinterest",
+          "title": "Machine Learning Engineer II, Responsible AI",
+          "location": "San Francisco, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.pinterestcareers.com/jobs/8162046/machine-learning-engineer-ii-responsible-ai/?gh_jid=8162046",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::pinterest::machine learning engineer ii responsible ai::ca|san francisco"
+        },
+        {
+          "tier": "-",
+          "company": "Yum! Brands",
+          "title": "AI Backend Engineer II",
+          "location": "Plano, Texas, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://jobs.yum.com/jobs/general/plano-tx-united-states/ai-backend-engineer-ii/5289",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::yumbrands::ai backend engineer ii::plano|tx"
+        },
+        {
+          "tier": "-",
+          "company": "KPMG",
+          "title": "Associate, AI Engineer",
+          "location": "Tampa, Florida, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.kpmguscareers.com/jobdetail/?jobId=137119",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::kpmg::associate ai engineer::fl|tampa"
+        },
+        {
+          "tier": "-",
+          "company": "LangChain",
+          "title": "AI Engineer, Enablement",
+          "location": "New York, New York, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://jobs.ashbyhq.com/langchain/47ad420c-9302-4a4f-a35f-7dd29e1d9d28",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::langchain::ai engineer enablement::ny"
+        },
+        {
+          "tier": "-",
+          "company": "Cresta",
+          "title": "Special Projects, AI Agents Team",
+          "location": "United States",
+          "posted_date": "2026-08-27",
+          "url": "https://job-boards.greenhouse.io/cresta/jobs/5406666008",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::cresta::special projects ai agents team::url::"
+        },
+        {
+          "tier": "-",
+          "company": "Expedia Group",
+          "title": "Enterprise AI Engineer II",
+          "location": "Austin, Texas, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://careers.expediagroup.com/job/enterprise-ai-engineer-ii/austin-tx/R-109164/",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::expediagroup::enterprise ai engineer ii::austin|tx"
+        },
+        {
+          "tier": "-",
+          "company": "BlackRock",
+          "title": "Associate, Financial Platform Engineer",
+          "location": "Wilmington, Delaware, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://careers.blackrock.com/job/wilmington/associate-financial-platform-engineer/45831/95390474816",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::blackrock::associate financial platform engineer::de|wilmington"
+        },
+        {
+          "tier": "-",
+          "company": "Kforce",
+          "title": "GCP Data Engineer",
+          "location": "Emeryville, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://www.kforce.com/find-work/search-jobs/#/detail/MTY5Nn5XUUd-MjE4NjYwNFQxfjk5/",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::kforce::gcp data engineer::ca|emeryville"
+        },
+        {
+          "tier": "-",
+          "company": "Navan",
+          "title": "Data Engineer",
+          "location": "Dallas, Texas, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://navan.com/careers/openings?gh_jid=8141775",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::navan::data engineer::dallas|tx"
+        },
+        {
+          "tier": "-",
+          "company": "Tillys",
+          "title": "Data Engineer",
+          "location": "Irvine, California, United States",
+          "posted_date": "2026-08-27",
+          "url": "https://phe.tbe.taleo.net/phe01/ats/careers/v2/viewRequisition?org=TILLCLOT&cws=74&rid=39270",
+          "source": "syncareer",
+          "canonical_job_key": "ctl::tillys::data engineer::ca|irvine"
+        }
+      ]
+    }
+  ]
+}

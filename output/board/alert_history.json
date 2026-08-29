@@ -1,0 +1,220 @@
+{
+  "retention_days": 14,
+  "events": [
+    {
+      "pipeline": "board",
+      "stamp": "2026-08-28_1441",
+      "emitted_at": "2026-08-28T14:41:00+00:00",
+      "event_kind": "github_issue_backfill",
+      "count": 18,
+      "jobs": [
+        {
+          "tier": "B",
+          "match_score": "75",
+          "company": "GitLab",
+          "title": "Intermediate Backend Engineer, Platform Readiness",
+          "location": "Remote, Canada; Remote, United States",
+          "posted_date": "2026-08-28",
+          "url": "https://job-boards.greenhouse.io/gitlab/jobs/8644569002",
+          "source": "board",
+          "canonical_job_key": "ctl::gitlab::intermediate backend engineer platform readiness::canada|remote"
+        },
+        {
+          "tier": "B",
+          "match_score": "75",
+          "company": "Pinterest",
+          "title": "Machine Learning Engineer II, Responsible AI",
+          "location": "San Francisco, CA, US; Remote, US",
+          "posted_date": "2026-08-27",
+          "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8162046",
+          "source": "board",
+          "canonical_job_key": "ctl::pinterest::machine learning engineer ii responsible ai::ca|remote|san francisco|us"
+        },
+        {
+          "tier": "B",
+          "match_score": "70",
+          "company": "Databricks",
+          "title": "Solutions Architect - Communications, Media, Entertainment and Games",
+          "location": "Northeast - United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "Databricks",
+          "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8755474002",
+          "source": "board",
+          "canonical_job_key": "ctl::databricks::solutions architect communications media entertainment and games::northeast"
+        },
+        {
+          "tier": "B",
+          "match_score": "68",
+          "company": "Databricks",
+          "title": "Solutions Architect - Strat Media",
+          "location": "West Coast - United States",
+          "posted_date": "2026-08-27",
+          "referral_name": "Databricks",
+          "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8755461002",
+          "source": "board",
+          "canonical_job_key": "ctl::databricks::solutions architect strat media::west coast"
+        },
+        {
+          "tier": "B",
+          "match_score": "65",
+          "company": "Anthropic",
+          "title": "Applied AI Architect, Strategic Enterprise Tech",
+          "location": "San Francisco, CA / New York City, NY / Seattle, WA",
+          "posted_date": "2026-08-27",
+          "url": "https://job-boards.greenhouse.io/anthropic/jobs/5409008008",
+          "source": "board",
+          "canonical_job_key": "ctl::anthropic::applied ai architect strategic enterprise tech::ca|new york city|ny|san francisco|seattle|wa"
+        },
+        {
+          "tier": "B",
+          "match_score": "55",
+          "company": "Figma",
+          "title": "IT Engineer, Internal AI Infrastructure",
+          "location": "San Francisco, CA • New York, NY • United States",
+          "posted_date": "2026-08-27",
+          "url": "https://boards.greenhouse.io/figma/jobs/6164379004?gh_jid=6164379004",
+          "source": "board",
+          "canonical_job_key": "ctl::figma::it engineer internal ai infrastructure::ca new york|ny|san francisco"
+        },
+        {
+          "tier": "A",
+          "match_score": "85",
+          "company": "Benchling",
+          "title": "Software Engineer, Platform (Developer Experience)",
+          "location": "San Francisco, CA",
+          "posted_date": "2026-08-25",
+          "url": "https://www.linkedin.com/jobs/view/software-engineer-platform-developer-experience-at-benchling-4459048634",
+          "source": "board",
+          "canonical_job_key": "ctl::benchling::software engineer platform developer experience::ca|san francisco"
+        },
+        {
+          "tier": "B",
+          "match_score": "75",
+          "company": "Adobe",
+          "title": "Software Development Engineer",
+          "location": "Seattle, WA",
+          "posted_date": "2026-08-25",
+          "referral_name": "Adobe",
+          "url": "https://www.linkedin.com/jobs/view/software-development-engineer-at-adobe-4446291451",
+          "source": "board",
+          "canonical_job_key": "ctl::adobe::software development engineer::seattle|wa"
+        },
+        {
+          "tier": "B",
+          "match_score": "75",
+          "company": "JPMorganChase",
+          "title": "Software Engineer [Multiple Positions Available]",
+          "location": "Jersey City, NJ",
+          "posted_date": "2026-08-26",
+          "referral_name": "J.P. Morgan",
+          "url": "https://www.linkedin.com/jobs/view/software-engineer-multiple-positions-available-at-jpmorganchase-4459100438",
+          "source": "board",
+          "canonical_job_key": "ctl::jpmorganchase::software engineer multiple positions available::jersey city|nj"
+        },
+        {
+          "tier": "B",
+          "match_score": "75",
+          "company": "Tata Consultancy Services",
+          "title": "ML Engineer",
+          "location": "Conroe, TX",
+          "posted_date": "2026-08-25",
+          "url": "https://www.linkedin.com/jobs/view/ml-engineer-at-tata-consultancy-services-4457653321",
+          "source": "board",
+          "canonical_job_key": "ctl::tataconsultancyservices::ml engineer::conroe|tx"
+        },
+        {
+          "tier": "B",
+          "match_score": "75",
+          "company": "Tata Consultancy Services",
+          "title": "Machine Learning Engineer",
+          "location": "Sunrise, FL",
+          "posted_date": "2026-08-25",
+          "url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-at-tata-consultancy-services-4439446153",
+          "source": "board",
+          "canonical_job_key": "ctl::tataconsultancyservices::machine learning engineer::fl|sunrise"
+        },
+        {
+          "tier": "B",
+          "match_score": "75",
+          "company": "Value Innovation Labs",
+          "title": "AI/ML Engineer",
+          "location": "Sunnyvale, CA",
+          "posted_date": "2026-08-25",
+          "url": "https://www.linkedin.com/jobs/view/ai-ml-engineer-at-value-innovation-labs-4457606581",
+          "source": "board",
+          "canonical_job_key": "ctl::valueinnovationlabs::ai ml engineer::ca|sunnyvale"
+        },
+        {
+          "tier": "B",
+          "match_score": "75",
+          "company": "CoffeeSpace",
+          "title": "Backend Software Engineer ($175K–$225K + Equity) Building AI Solutions",
+          "location": "New York, United States",
+          "posted_date": "2026-08-25",
+          "url": "https://www.linkedin.com/jobs/view/backend-software-engineer-%24175k%E2%80%93%24225k-%2B-equity-building-ai-solutions-for-construction-at-coffeespace-4457491732",
+          "source": "board",
+          "canonical_job_key": "ctl::coffeespace::backend software engineer 175k 225k equity building ai solutions::ny"
+        },
+        {
+          "tier": "B",
+          "match_score": "75",
+          "company": "Trace3",
+          "title": "Software Engineer / AI & Automation",
+          "location": "Dallas, TX",
+          "posted_date": "2026-08-25",
+          "url": "https://www.linkedin.com/jobs/view/software-engineer-ai-automation-at-trace3-4457640945",
+          "source": "board",
+          "canonical_job_key": "ctl::trace3::software engineer ai automation::dallas|tx"
+        },
+        {
+          "tier": "B",
+          "match_score": "70",
+          "company": "Adobe",
+          "title": "Machine Learning Engineer",
+          "location": "San Jose, CA",
+          "posted_date": "2026-08-25",
+          "referral_name": "Adobe",
+          "url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-at-adobe-4439806534",
+          "source": "board",
+          "canonical_job_key": "ctl::adobe::machine learning engineer::ca|san jose"
+        },
+        {
+          "tier": "B",
+          "match_score": "70",
+          "company": "Adobe",
+          "title": "Software Development Engineer, Influencer Management",
+          "location": "San Jose, CA",
+          "posted_date": "2026-08-25",
+          "referral_name": "Adobe",
+          "url": "https://www.linkedin.com/jobs/view/software-development-engineer-influencer-management-at-adobe-4390999740",
+          "source": "board",
+          "canonical_job_key": "ctl::adobe::software development engineer influencer management::ca|san jose"
+        },
+        {
+          "tier": "B",
+          "match_score": "70",
+          "company": "Uber",
+          "title": "Software Engineer II",
+          "location": "Seattle, WA",
+          "posted_date": "2026-08-25",
+          "referral_name": "Uber",
+          "url": "https://www.linkedin.com/jobs/view/software-engineer-ii-at-uber-4458598844",
+          "source": "board",
+          "canonical_job_key": "ctl::uber::software engineer ii::seattle|wa"
+        },
+        {
+          "tier": "B",
+          "match_score": "70",
+          "company": "Uber",
+          "title": "Software Engineer II",
+          "location": "Sunnyvale, CA",
+          "posted_date": "2026-08-25",
+          "referral_name": "Uber",
+          "url": "https://www.linkedin.com/jobs/view/software-engineer-ii-at-uber-4458711205",
+          "source": "board",
+          "canonical_job_key": "ctl::uber::software engineer ii::ca|sunnyvale"
+        }
+      ]
+    }
+  ]
+}

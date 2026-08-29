@@ -8,6 +8,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 import board_pipeline
+import alert_history
 import coverage_reconcile
 import daily_pipeline
 import dashboard
@@ -73,7 +74,7 @@ class ReferralAliasTests(unittest.TestCase):
 
 
 class DashboardPolicyTests(unittest.TestCase):
-    def test_fresh_and_rolling_follow_first_seen_not_posted_date(self) -> None:
+    def test_discovery_metadata_follows_first_seen_not_posted_date(self) -> None:
         now = datetime(2026, 8, 29, 12, tzinfo=timezone.utc)
         recent_discovery = dashboard.recency(
             {
@@ -147,6 +148,51 @@ class DashboardPolicyTests(unittest.TestCase):
             saved = json.loads(state.read_text(encoding="utf-8"))
             self.assertEqual("completed", saved["jobs"][key]["status"])
             self.assertEqual("applied", saved["jobs"][key]["notes"])
+
+    def test_current_ats_issue_fallback_contains_all_18_alert_rows(self) -> None:
+        event = dashboard.parse_issue_event(ROOT / "output" / "board" / "issue_body.md", "board")
+        self.assertIsNotNone(event)
+        self.assertEqual("2026-08-28_1441", event["stamp"])
+        self.assertEqual(18, len(event["jobs"]))
+
+    def test_alert_history_is_idempotent_and_drives_fresh_even_for_old_job(self) -> None:
+        now = datetime(2026, 8, 29, 12, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as tmp:
+            history = Path(tmp) / "alerts.json"
+            job = official_job("10001", "Software Engineer I", "Seattle, WA")
+            job["tier"] = "A"
+            job["match_score"] = 88
+            job["first_seen"] = (now - timedelta(days=5)).isoformat()
+            alert_history.append_event(
+                history, pipeline="official", stamp="2026-08-29_1100",
+                jobs=[job], event_kind="new_or_promoted_ab", emitted_at=now - timedelta(hours=1),
+            )
+            alert_history.append_event(
+                history, pipeline="official", stamp="2026-08-29_1100",
+                jobs=[job], event_kind="new_or_promoted_ab", emitted_at=now - timedelta(hours=1),
+            )
+            self.assertEqual(1, len(json.loads(history.read_text())["events"]))
+
+            row = {
+                "canonical_job_key": alert_history.job_snapshot(job)["canonical_job_key"],
+                "pipeline": "official", "tier": "A", "score": 88,
+                "company": "Example Tech", "title": job["title"], "location": "Seattle, WA",
+                "url": job["official_url"], "filter_status": "kept", "suppress_alert": False,
+                "review_status": "unreviewed", "freshness": dashboard.recency(job, now),
+            }
+            paths = {"board": Path(tmp) / "none1", "official": history, "syncareer": Path(tmp) / "none2"}
+            bodies = {key: Path(tmp) / f"{key}.md" for key in paths}
+            with patch.object(dashboard, "ALERT_HISTORY_PATHS", paths), patch.object(dashboard, "ISSUE_BODY_PATHS", bodies):
+                fresh, basis = dashboard.alert_fresh_rows([row], now)
+            self.assertEqual(1, len(fresh))
+            self.assertEqual("alert_history_or_issue", basis["official"])
+            self.assertEqual(1, fresh[0]["activity_age_hours"])
+
+    def test_public_template_hides_coverage_and_has_local_status_control(self) -> None:
+        self.assertNotIn("Official coverage", dashboard.HTML_TEMPLATE)
+        self.assertNotIn("<th>Coverage</th>", dashboard.HTML_TEMPLATE)
+        self.assertIn("status-select", dashboard.HTML_TEMPLATE)
+        self.assertIn("Dashboard last updated", dashboard.HTML_TEMPLATE)
 
 
 class CoverageMatchingTests(unittest.TestCase):

@@ -11,10 +11,10 @@ Three **separate** components. Do not mix their folders.
 Each inbox is the last **3 days** of matching jobs. You do **not** need to read every GitHub Issue.
 
 Public rolling dashboard: **https://daniel-li2021.github.io/job-board-pipeline/**
-(deployed by `.github/workflows/reconcile-pages.yml`). It includes 24-hour and
-3-day views for all three pipelines, referrals, 3–7 day review jobs, and the
-official coverage audit. The dashboard is read-only; review decisions are
-committed in `profile/review_state.json`.
+(deployed by `.github/workflows/reconcile-pages.yml`). It includes the last 24
+hours of GitHub alert activity, three-day rolling views, referrals, 3–7 day
+review jobs, and official-search links. Coverage reconciliation remains in the
+repo audit files but is intentionally hidden from the public page.
 
 **Matching/scoring is shared, not implemented three times.** Components 2 and 3
 use the same `board_pipeline.py` hard filter, role/seniority prefilter,
@@ -288,11 +288,18 @@ Outputs:
   `unsupported` company decisions;
 - `profile/review_state.json` — committed per-job review state.
 
-Dashboard windows use pipeline discovery time: **Fresh** is A/B work first
-seen in the last 24 hours, and **Rolling** is work first seen in the last three
-days. Employer `posted_date` remains visible reference metadata but does not
-decide those two windows. Active rows sort Tier A first, then match score and
-discovery time.
+**Fresh** mirrors jobs emitted by GitHub alert Issues during the last 24 hours,
+including B→A promotions whose original `first_seen` is older. Each pipeline
+persists exact events in `output/<pipeline>/alert_history.json`. **Rolling** is
+still work first seen in the last three days. Employer `posted_date` remains
+visible reference metadata but does not decide those windows. Active rows sort
+Tier A first, then match score and activity/discovery time.
+
+The public page's Status menus save a private override in that browser's
+`localStorage`. This is the easiest personal workflow: completed/dismissed jobs
+immediately move out of active sections, but status does not sync across
+devices and does not modify GitHub. Use the command below only when a shared,
+repo-committed status is wanted.
 
 Use the lightweight status command with a canonical key, exact job URL, or
 unique job ID:

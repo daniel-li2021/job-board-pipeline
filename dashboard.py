@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from collections import Counter
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -12,6 +13,7 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 from zoneinfo import ZoneInfo
 
 import coverage_reconcile
+import alert_history
 from sources.company_aliases import load_alias_file, match_company_alias
 from sources.schema import classify_location_bucket
 
@@ -26,6 +28,16 @@ REFERRAL_PATH = BASE_DIR / "source" / "target_companies.json"
 REVIEW_PATH = BASE_DIR / "profile" / "review_state.json"
 OFFICIAL_REGISTRY_PATH = BASE_DIR / "source" / "official_careers.json"
 INACTIVE_STATUSES = {"completed", "dismissed"}
+ALERT_HISTORY_PATHS = {
+    "board": BASE_DIR / "output" / "board" / "alert_history.json",
+    "official": BASE_DIR / "output" / "official_careers" / "alert_history.json",
+    "syncareer": BASE_DIR / "output" / "syncareer" / "alert_history.json",
+}
+ISSUE_BODY_PATHS = {
+    "board": BASE_DIR / "output" / "board" / "issue_body.md",
+    "official": BASE_DIR / "output" / "alerts" / "official_issue_body.md",
+    "syncareer": BASE_DIR / "output" / "syncareer" / "issue_body.md",
+}
 
 STORE_PATHS = {
     "board": BASE_DIR / "output" / "board" / "jobs.json",
@@ -56,6 +68,54 @@ def _load_entries(path: Path) -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
         return {}, []
     entries = payload.get("entries", [])
     return payload, [dict(entry) for entry in entries if isinstance(entry, dict)]
+
+
+def parse_issue_event(path: Path, pipeline: str) -> Optional[Dict[str, Any]]:
+    """Parse the latest tracked Issue body as a migration fallback."""
+    try:
+        lines = path.read_text(encoding="utf-8").splitlines()
+    except OSError:
+        return None
+    stamp_match = re.search(r"(\d{4}-\d{2}-\d{2}_\d{4})", "\n".join(lines[:8]))
+    if not stamp_match:
+        return None
+    stamp = stamp_match.group(1)
+    emitted = alert_history.parse_stamp(stamp)
+    if not emitted:
+        return None
+    header_index = next((i for i, line in enumerate(lines) if line.strip().startswith("|") and "Company" in line), -1)
+    if header_index < 0:
+        return None
+    headers = [cell.strip().lower() for cell in lines[header_index].strip().strip("|").split("|")]
+    jobs: List[Dict[str, Any]] = []
+    for line in lines[header_index + 2:]:
+        if not line.strip().startswith("|"):
+            break
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) != len(headers):
+            continue
+        values = dict(zip(headers, cells))
+        link_cell = values.get("link", "")
+        link_match = re.search(r"\[[^]]*\]\(([^)]+)\)", link_cell)
+        jobs.append({
+            "tier": values.get("tier") or "-",
+            "match_score": values.get("score") or values.get("fit") or "",
+            "company": values.get("company", ""),
+            "title": values.get("title", ""),
+            "location": values.get("location", ""),
+            "posted_date": values.get("posted", ""),
+            "referral_name": "" if values.get("referral", "-") == "-" else values.get("referral", ""),
+            "url": link_match.group(1) if link_match else "",
+            "source": pipeline,
+        })
+    return {
+        "pipeline": pipeline,
+        "stamp": stamp,
+        "emitted_at": emitted.isoformat(),
+        "event_kind": "issue_body_fallback",
+        "count": len(jobs),
+        "jobs": jobs,
+    }
 
 
 def _age_bucket(age_hours: Optional[float]) -> str:
@@ -184,11 +244,93 @@ def _sort_rows(rows: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
         key=lambda row: (
             tier_rank.get(str(row.get("tier") or "-"), 3),
             -float(row.get("score") or 0),
-            row["freshness"]["discovered"]["age_hours"] if row["freshness"]["discovered"]["age_hours"] is not None else 999999,
+            row.get("activity_age_hours") if row.get("activity_age_hours") is not None else (
+                row["freshness"]["discovered"]["age_hours"]
+                if row["freshness"]["discovered"]["age_hours"] is not None else 999999
+            ),
             bucket_rank.get(row["freshness"]["posted"]["bucket"], 9),
             str(row.get("company") or "").lower(),
         ),
     )
+
+
+def alert_fresh_rows(all_rows: List[Dict[str, Any]], now: datetime) -> Tuple[List[Dict[str, Any]], Dict[str, str]]:
+    """Build Fresh from exact alert events, not inferred first_seen values."""
+    by_key = {str(row.get("canonical_job_key") or ""): row for row in all_rows if row.get("canonical_job_key")}
+    by_key_pipeline = {
+        (str(row.get("pipeline") or ""), str(row.get("canonical_job_key") or "")): row
+        for row in all_rows if row.get("canonical_job_key")
+    }
+    by_url = {
+        coverage_reconcile.normalize_url(str(row.get("url") or "")): row
+        for row in all_rows if row.get("url")
+    }
+    by_url_pipeline = {
+        (str(row.get("pipeline") or ""), coverage_reconcile.normalize_url(str(row.get("url") or ""))): row
+        for row in all_rows if row.get("url")
+    }
+    chosen: Dict[str, Dict[str, Any]] = {}
+    basis: Dict[str, str] = {}
+    for pipeline in STORE_PATHS:
+        events = alert_history.recent_events(ALERT_HISTORY_PATHS[pipeline], now, hours=24)
+        fallback = parse_issue_event(ISSUE_BODY_PATHS[pipeline], pipeline)
+        if fallback:
+            fallback_at = parse_dt(fallback.get("emitted_at"))
+            known_stamps = {str(event.get("stamp") or "") for event in events}
+            if fallback_at and (now - fallback_at).total_seconds() <= 24 * 3600 and fallback.get("stamp") not in known_stamps:
+                events.append(fallback)
+        if events:
+            basis[pipeline] = "alert_history_or_issue"
+        else:
+            # One-release migration guard for official, whose prior Issue body
+            # was ignored by git. New runs immediately create alert_history.
+            basis[pipeline] = "first_seen_migration_fallback"
+            for row in all_rows:
+                if row.get("pipeline") == pipeline and row["freshness"]["fresh_activity"]:
+                    event_at = row.get("first_seen")
+                    events.append({
+                        "pipeline": pipeline,
+                        "stamp": "",
+                        "emitted_at": event_at,
+                        "event_kind": "first_seen_migration_fallback",
+                        "jobs": [{"canonical_job_key": row.get("canonical_job_key"), "url": row.get("url")}],
+                    })
+
+        for event in events:
+            emitted_at = parse_dt(event.get("emitted_at")) or alert_history.parse_stamp(str(event.get("stamp") or ""))
+            if not emitted_at:
+                continue
+            activity_age = _age_hours(emitted_at, now)
+            if activity_age is None or activity_age > 24:
+                continue
+            for snapshot in event.get("jobs", []):
+                if not isinstance(snapshot, dict):
+                    continue
+                key = str(snapshot.get("canonical_job_key") or "")
+                url_key = coverage_reconcile.normalize_url(str(snapshot.get("url") or snapshot.get("official_url") or snapshot.get("source_url") or snapshot.get("job_url") or ""))
+                source_row = (
+                    by_key_pipeline.get((pipeline, key))
+                    or by_url_pipeline.get((pipeline, url_key))
+                    or by_key.get(key)
+                    or by_url.get(url_key)
+                )
+                if not source_row:
+                    continue
+                row = dict(source_row)
+                if not visible_candidate(row) or str(row.get("review_status") or "").lower() in INACTIVE_STATUSES:
+                    continue
+                row["alerted_at"] = emitted_at.isoformat()
+                row["alert_stamp"] = event.get("stamp", "")
+                row["alert_kind"] = event.get("event_kind", "")
+                row["activity_age_hours"] = activity_age
+                # Fresh mirrors alert activity. The same canonical job may
+                # legitimately appear in both an ATS Issue and an Official
+                # Issue, so deduplicate within a pipeline, not across them.
+                stable = f"{pipeline}::{row.get('canonical_job_key') or url_key}"
+                previous = chosen.get(stable)
+                if previous is None or float(previous.get("activity_age_hours") or 999999) > activity_age:
+                    chosen[stable] = row
+    return _sort_rows(chosen.values()), basis
 
 
 def official_search_catalog() -> List[Dict[str, Any]]:
@@ -229,7 +371,7 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
     candidates = [row for row in all_rows if visible_candidate(row)]
     current = [row for row in candidates if str(row.get("review_status") or "").lower() not in INACTIVE_STATUSES]
     completed = _sort_rows(row for row in candidates if str(row.get("review_status") or "").lower() in INACTIVE_STATUSES)
-    fresh = _sort_rows(row for row in current if row["freshness"]["fresh_activity"])
+    fresh, fresh_basis = alert_fresh_rows(all_rows, now)
     rolling = _sort_rows(row for row in current if row["freshness"]["rolling_activity"])
     older = _sort_rows(
         row for row in current
@@ -259,6 +401,7 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         "counts_24h": counts(fresh),
         "counts_3d": counts(rolling),
         "fresh_24h": fresh[:500],
+        "fresh_basis": fresh_basis,
         "rolling_3d": rolling[:1000],
         "referrals": referral_rows[:500],
         "older_review": older[:500],
@@ -272,30 +415,37 @@ HTML_TEMPLATE = r'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Daniel's Job Board</title>
 <style>
-:root{--bg:#f4f6f1;--card:#fff;--ink:#152018;--muted:#687269;--line:#dce2da;--green:#176b45;--gold:#ad6c00;--blue:#275fa8;--red:#9d3b31}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:1440px;margin:auto;padding:28px}header{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:20px}h1{font-size:30px;letter-spacing:-.03em;margin:0}h2{font-size:20px;margin:0 0 12px}p{margin:5px 0;color:var(--muted)}a{color:var(--blue)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.card,.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 2px 10px #1b2a1d0a}.card{padding:16px}.card b{display:block;font-size:24px}.panel{padding:18px;margin:16px 0;overflow:hidden}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;cursor:pointer}.tab.on{background:var(--ink);color:#fff}.tablewrap{overflow:auto;max-height:620px}table{border-collapse:collapse;width:100%;min-width:930px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #edf0ec;vertical-align:top}th{position:sticky;top:0;background:#fafbf9;color:#59645c;font-size:12px;text-transform:uppercase;letter-spacing:.04em}.pill{display:inline-block;padding:2px 7px;border-radius:999px;background:#edf2ee;font-size:12px;white-space:nowrap}.confirmed{color:var(--green);background:#e8f4ed}.discovered{color:var(--gold);background:#fff3d8}.gap{color:var(--red);background:#fbeae7}.duplicate{color:var(--green);background:#e8f4ed}.referral{color:#744a00;background:#fff0c8}.empty{padding:24px;color:var(--muted);text-align:center}.small{font-size:12px;color:var(--muted)}details{margin:10px 0;color:var(--muted)}summary{cursor:pointer;color:var(--blue)}.links{display:flex;gap:8px;flex-wrap:wrap}.active{color:var(--green)}.manual{color:var(--gold)}@media(max-width:760px){.wrap{padding:16px}.cards{grid-template-columns:1fr}header{display:block}}
+:root{--bg:#f4f6f1;--card:#fff;--ink:#152018;--muted:#687269;--line:#dce2da;--green:#176b45;--gold:#ad6c00;--blue:#275fa8;--red:#9d3b31}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:1440px;margin:auto;padding:28px}header{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:20px}h1{font-size:30px;letter-spacing:-.03em;margin:0}h2{font-size:20px;margin:0 0 12px}p{margin:5px 0;color:var(--muted)}a{color:var(--blue)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.card,.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 2px 10px #1b2a1d0a}.card{padding:16px}.card b{display:block;font-size:24px}.panel{padding:18px;margin:16px 0;overflow:hidden}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;cursor:pointer}.tab.on{background:var(--ink);color:#fff}.tablewrap{overflow:auto;max-height:620px}table{border-collapse:collapse;width:100%;min-width:880px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #edf0ec;vertical-align:top}th{position:sticky;top:0;background:#fafbf9;color:#59645c;font-size:12px;text-transform:uppercase;letter-spacing:.04em}.pill{display:inline-block;padding:2px 7px;border-radius:999px;background:#edf2ee;font-size:12px;white-space:nowrap}.confirmed{color:var(--green);background:#e8f4ed}.discovered{color:var(--gold);background:#fff3d8}.referral{color:#744a00;background:#fff0c8}.empty{padding:24px;color:var(--muted);text-align:center}.small{font-size:12px;color:var(--muted)}.links{display:flex;gap:8px;flex-wrap:wrap}.active{color:var(--green)}.manual{color:var(--gold)}select{max-width:145px;padding:5px 7px;border:1px solid var(--line);border-radius:8px;background:white;color:var(--ink)}.timestamp{font-weight:600;color:var(--ink)}@media(max-width:760px){.wrap{padding:16px}.cards{grid-template-columns:1fr}header{display:block}}
 </style></head><body><div class="wrap">
-<header><div><h1>Job visibility dashboard</h1><p id="updated"></p></div><div><a id="repo">Repository</a> · <a id="coverageLink">Coverage audit</a></div></header>
+<header><div><h1>Job visibility dashboard</h1><p id="updated" class="timestamp"></p><p id="sourceSnapshots" class="small"></p></div><div><a id="repo">Repository</a></div></header>
 <div class="cards" id="summary"></div>
-<section class="panel"><h2>Fresh — newly found in the last 24 hours</h2><p>A/B jobs first discovered by the latest pipeline runs. Employer posting dates do not control this section.</p><div class="tabs" data-target="fresh"></div><div id="fresh"></div></section>
+<section class="panel"><h2>Fresh — alerted in the last 24 hours</h2><p>Jobs emitted by the latest GitHub alert Issues, including newly found A/B jobs and B→A promotions. This mirrors automation activity rather than posted_date or original first_seen.</p><p id="freshBasis" class="small"></p><div class="tabs" data-target="fresh"></div><div id="fresh"></div></section>
 <section class="panel"><h2>Rolling — newly found in the last 3 days</h2><p>Current A/B (or Syncareer kept) candidates, ranked Tier A first, then score and discovery time.</p><div class="tabs" data-target="rolling"></div><div id="rolling"></div></section>
 <section class="panel"><h2>Referral opportunities</h2><p>Aliases come only from <a id="referralFile">source/target_companies.json</a>.</p><div id="referrals"></div></section>
-<section class="panel"><h2>Older / review later — discovered 3–7 days ago</h2><p>Status is read-only here and is committed in profile/review_state.json.</p><div id="older"></div></section>
-<section class="panel"><h2>Completed / dismissed</h2><p>These jobs are removed from active sections so they do not repeatedly appear.</p><div id="completed"></div></section>
-<section class="panel"><h2>Official coverage</h2><p>Coverage asks whether an ATS/LinkedIn/Syncareer discovery is also present in a dedicated official-company scrape. It is not match quality or application status.</p><details><summary>Coverage labels</summary><p><b>Official source</b>: canonical official listing. <b>Exact match — unvalidated</b>: found in official results, but company coverage still needs manual approval. <b>Official duplicate</b>: exact match for a validated company. <b>Official gap</b>: expected official match is missing. <b>Pending refresh</b>: external discovery is newer than the official snapshot. <b>No dedicated scraper</b>: company is outside the official registry. <b>Unsupported</b>: official adapter is not automated yet.</p></details><div id="coverage"></div></section>
+<section class="panel"><h2>Older / review later — discovered 3–7 days ago</h2><p>Use the Status menu to keep a lightweight personal workflow.</p><div id="older"></div></section>
+<section class="panel"><h2>Completed / dismissed</h2><p>Status changes are saved privately in this browser. Completed/dismissed jobs immediately leave active sections; they do not modify the public repository or sync across devices.</p><div id="completed"></div></section>
 <section class="panel"><h2>Official company search links</h2><p>Quick official searches for manual checks and future adapters. “Automated” entries already have a scraper; “link only” entries are intentionally not reverse-engineered yet.</p><div id="officialSearches"></div></section>
 </div><script id="payload" type="application/json">__PAYLOAD__</script><script>
-const D=JSON.parse(document.getElementById('payload').textContent); document.getElementById('updated').textContent=`Updated ${D.updated_pt} · snapshot ${D.generated_at}`; document.getElementById('repo').href=D.repository;document.getElementById('coverageLink').href=D.coverage_report;document.getElementById('referralFile').href=D.referral_file;
+const D=JSON.parse(document.getElementById('payload').textContent); document.getElementById('updated').textContent=`Dashboard last updated: ${D.updated_pt} · ${D.generated_at}`; document.getElementById('repo').href=D.repository;document.getElementById('referralFile').href=D.referral_file;
 const names={official:'Big Company Official',board:'ATS / LinkedIn',syncareer:'Syncareer'};
+document.getElementById('sourceSnapshots').textContent='Source snapshots: '+Object.keys(names).map(k=>`${names[k]} ${D.snapshots[k]||'unknown'}`).join(' · ');
+document.getElementById('freshBasis').textContent='Fresh source: '+Object.keys(names).map(k=>`${names[k]} ${(D.fresh_basis||{})[k]==='first_seen_migration_fallback'?'temporary migration fallback':'alert history / latest Issue'}`).join(' · ');
 document.getElementById('summary').innerHTML=Object.keys(names).map(k=>`<div class="card"><span>${names[k]}</span><b>${D.counts_24h[k]}</b><p>last 24h · ${D.counts_3d[k]} in 3 days</p><a href="${D.report_links[k]}">open report</a></div>`).join('');
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const coverageNames={official_canonical:'Official source',covered_unvalidated:'Exact match — unvalidated',official_duplicate:'Official duplicate',official_gap:'Official gap',pending_official_refresh:'Pending refresh',not_dedicated:'No dedicated scraper',official_unsupported:'Unsupported',not_reconciled:'Not reconciled'};
 const bucketNames={lt3h:'<3h', '3to24h':'3–24h', '1to3d':'1–3d', '3to7d':'3–7d', gt7d:'>7d', unknown:'unknown'};
-function discoveryText(r){const d=r.freshness.discovered||{};return d.age_hours===null||d.age_hours===undefined?'Discovery unknown':`Found ${bucketNames[d.bucket]||d.bucket} ago`}
+const statusChoices=['unreviewed','in_progress','applied','replied','completed','dismissed']; const inactiveStatuses=new Set(['completed','dismissed']); const statusKey='jobBoardStatusesV1';
+let localStatuses={};try{localStatuses=JSON.parse(localStorage.getItem(statusKey)||'{}')}catch(e){localStatuses={}}
+function statusOf(r){return localStatuses[r.canonical_job_key]||r.review_status||'unreviewed'}
+function setStatus(key,value){if(!statusChoices.includes(value))return;localStatuses[key]=value;try{localStorage.setItem(statusKey,JSON.stringify(localStatuses))}catch(e){}renderAll()}
+function activityText(r){if(r.alerted_at){const h=r.activity_age_hours;const b=h<3?'lt3h':h<24?'3to24h':'1to3d';return `Alerted ${bucketNames[b]} ago`}const d=r.freshness.discovered||{};return d.age_hours===null||d.age_hours===undefined?'Discovery unknown':`Found ${bucketNames[d.bucket]||d.bucket} ago`}
 function postingText(r){const p=r.freshness.posted||{};if(!p.trusted)return r.posted_date?`Posted ${esc(r.posted_date)} · low confidence`:'Posting date unknown';return p.date_only?`Posted ${esc(r.posted_date)} · day precision`:`Posted ${bucketNames[p.bucket]||p.bucket} ago`}
-function jobs(rows){if(!rows.length)return '<div class="empty">No qualifying jobs in this window.</div>';return `<div class="tablewrap"><table><thead><tr><th>Tier</th><th>Company / Title</th><th>Location</th><th>Discovered / Posted</th><th>Referral</th><th>Coverage</th><th>Status</th><th>Source</th></tr></thead><tbody>${rows.map(r=>`<tr><td><b>${esc(r.tier)}</b>${r.score!==''?`<div class="small">${esc(r.score)}</div>`:''}</td><td><b>${esc(r.company)}</b><br><a href="${esc(r.url)}">${esc(r.title)}</a></td><td>${esc(r.location)}</td><td><span class="pill discovered">${discoveryText(r)}</span><div class="small">${postingText(r)}</div></td><td>${r.referral?`<span class="pill referral">${esc(r.referral)}</span>`:'-'}</td><td><span class="pill ${r.coverage_status.includes('gap')?'gap':r.coverage_status.includes('duplicate')||r.coverage_status==='official_canonical'?'duplicate':''}">${esc(coverageNames[r.coverage_status]||r.coverage_status)}</span></td><td>${esc(r.review_status)}</td><td>${esc(names[r.pipeline]||r.pipeline)}</td></tr>`).join('')}</tbody></table></div>`}
-function tabs(elId,rows){const tab=document.querySelector(`[data-target="${elId}"]`);const box=document.getElementById(elId);let active='all';const draw=()=>{tab.innerHTML=['all',...Object.keys(names)].map(k=>`<button class="tab ${k===active?'on':''}" data-k="${k}">${k==='all'?'All':names[k]} (${k==='all'?rows.length:rows.filter(r=>r.pipeline===k).length})</button>`).join('');box.innerHTML=jobs(active==='all'?rows:rows.filter(r=>r.pipeline===active));tab.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.k;draw()})};draw()}
-tabs('fresh',D.fresh_24h);tabs('rolling',D.rolling_3d);document.getElementById('referrals').innerHTML=jobs(D.referrals);document.getElementById('older').innerHTML=jobs(D.older_review);document.getElementById('completed').innerHTML=jobs(D.completed||[]);
-const companies=D.coverage.companies||[];document.getElementById('coverage').innerHTML=`<div class="tablewrap"><table><thead><tr><th>Company</th><th>Manual state</th><th>In scope</th><th>Exact</th><th>Gaps</th><th>Pending</th><th>Coverage</th></tr></thead><tbody>${companies.map(c=>`<tr><td>${esc(c.name)}</td><td>${esc(c.manual_status)}</td><td>${c.in_scope}</td><td>${c.exact_covered}</td><td>${c.official_gaps}</td><td>${c.pending_refresh}</td><td>${c.coverage_ratio===null?'-':Math.round(c.coverage_ratio*100)+'%'}</td></tr>`).join('')}</tbody></table></div>`;
+function jobs(rows){if(!rows.length)return '<div class="empty">No qualifying jobs in this view.</div>';return `<div class="tablewrap"><table><thead><tr><th>Tier</th><th>Company / Title</th><th>Location</th><th>Alert / Posted</th><th>Referral</th><th>Status</th><th>Source</th></tr></thead><tbody>${rows.map(r=>`<tr><td><b>${esc(r.tier)}</b>${r.score!==''?`<div class="small">${esc(r.score)}</div>`:''}</td><td><b>${esc(r.company)}</b><br><a href="${esc(r.url)}">${esc(r.title)}</a></td><td>${esc(r.location)}</td><td><span class="pill discovered">${activityText(r)}</span><div class="small">${postingText(r)}</div></td><td>${r.referral?`<span class="pill referral">${esc(r.referral)}</span>`:'-'}</td><td><select class="status-select" data-key="${esc(r.canonical_job_key)}">${statusChoices.map(s=>`<option value="${s}" ${statusOf(r)===s?'selected':''}>${s.replace('_',' ')}</option>`).join('')}</select></td><td>${esc(names[r.pipeline]||r.pipeline)}</td></tr>`).join('')}</tbody></table></div>`}
+function bindStatus(box){box.querySelectorAll('.status-select').forEach(s=>s.onchange=()=>setStatus(s.dataset.key,s.value))}
+function renderBox(id,rows){const box=document.getElementById(id);box.innerHTML=jobs(rows);bindStatus(box)}
+function tabs(elId,rows){const filtered=rows.filter(r=>!inactiveStatuses.has(statusOf(r)));const tab=document.querySelector(`[data-target="${elId}"]`);const box=document.getElementById(elId);let active='all';const draw=()=>{tab.innerHTML=['all',...Object.keys(names)].map(k=>`<button class="tab ${k===active?'on':''}" data-k="${k}">${k==='all'?'All':names[k]} (${k==='all'?filtered.length:filtered.filter(r=>r.pipeline===k).length})</button>`).join('');box.innerHTML=jobs(active==='all'?filtered:filtered.filter(r=>r.pipeline===active));bindStatus(box);tab.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.k;draw()})};draw()}
+const allRows=[...D.fresh_24h,...D.rolling_3d,...D.referrals,...D.older_review,...(D.completed||[])];const uniqueRows=()=>[...new Map(allRows.map(r=>[r.canonical_job_key,r])).values()];
+function renderAll(){tabs('fresh',D.fresh_24h);tabs('rolling',D.rolling_3d);renderBox('referrals',D.referrals.filter(r=>!inactiveStatuses.has(statusOf(r))));renderBox('older',D.older_review.filter(r=>!inactiveStatuses.has(statusOf(r))));renderBox('completed',uniqueRows().filter(r=>inactiveStatuses.has(statusOf(r))))}
+renderAll();
 document.getElementById('officialSearches').innerHTML=`<div class="tablewrap"><table><thead><tr><th>Company</th><th>Automation</th><th>Official searches</th><th>Note</th></tr></thead><tbody>${(D.official_searches||[]).map(c=>`<tr><td><b>${esc(c.name)}</b></td><td class="${c.automation==='active'?'active':'manual'}">${c.automation==='active'?'Automated':'Link only'}</td><td><div class="links">${c.search_links.length?c.search_links.map(l=>`<a href="${esc(l.url)}">${esc(l.label||'Search')}</a>`).join(''):'-'}</div></td><td class="small">${esc(c.note)}</td></tr>`).join('')}</tbody></table></div>`;
 </script></body></html>'''
 

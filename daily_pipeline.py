@@ -33,6 +33,7 @@ from zoneinfo import ZoneInfo
 import requests
 from bs4 import BeautifulSoup
 
+import alert_history
 import coverage_reconcile
 from sources.company_aliases import load_alias_file, match_company_alias
 
@@ -46,6 +47,7 @@ SYNCAREER_DIR = OUTPUT_DIR / "syncareer"
 RUNS_DIR = SYNCAREER_DIR / "runs"
 SEEN_IDS_PATH = OUTPUT_DIR / "seen_job_ids.json"
 WATCHLIST_PATH = SYNCAREER_DIR / "watchlist.json"
+ALERT_HISTORY_PATH = SYNCAREER_DIR / "alert_history.json"
 LEGACY_WATCHLIST_PATH = OUTPUT_DIR / "watchlist.json"
 WATCHLIST_RETENTION_DAYS = 7
 # Canonical "I skipped a day" view: kept jobs first_seen/posted in this window.
@@ -1338,6 +1340,13 @@ def run() -> None:
         write_syncareer_inbox(inbox_rows, stamp, with_tiers=use_llm)
         if scoring_rows:
             alert_paths = write_alert_outputs(alert_rows, stamp, with_tiers=use_llm)
+            alert_history.append_event(
+                ALERT_HISTORY_PATH,
+                pipeline="syncareer",
+                stamp=stamp,
+                jobs=alert_rows,
+                event_kind="new_matching",
+            )
         else:
             # Still refresh issue_body so GHA has a path even when 0 new.
             SYNCAREER_DIR.mkdir(parents=True, exist_ok=True)

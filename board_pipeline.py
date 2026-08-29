@@ -38,6 +38,7 @@ from zoneinfo import ZoneInfo
 
 import requests
 
+import alert_history
 import coverage_reconcile
 from sources import ats, official
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
@@ -66,6 +67,7 @@ LATEST_MD_PATH = BOARD_DIR / "latest.md"
 INBOX_MD_PATH = BOARD_DIR / "inbox.md"
 INBOX_CSV_PATH = BOARD_DIR / "inbox.csv"
 DIGEST_STATE_PATH = BOARD_DIR / "digest_state.json"
+ALERT_HISTORY_PATH = BOARD_DIR / "alert_history.json"
 RUNS_DIR = BOARD_DIR / "runs"
 PACIFIC = ZoneInfo("America/Los_Angeles")
 RETENTION_DAYS = 7
@@ -1744,6 +1746,13 @@ def run() -> None:
     digest_count = 0
     if emit_digest:
         alert_paths = write_alert(digest_jobs, stamp)
+        alert_history.append_event(
+            ALERT_HISTORY_PATH,
+            pipeline="board",
+            stamp=stamp,
+            jobs=digest_jobs,
+            event_kind="new_or_promoted_ab",
+        )
         apply_digest_state(digest_state, digest_jobs, digest_day)
         digest_count = len(digest_jobs)
     save_digest_state(DIGEST_STATE_PATH, digest_state)

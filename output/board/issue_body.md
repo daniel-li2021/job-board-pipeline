@@ -1,7 +1,5 @@
 ATS / LinkedIn alert - 2026-08-28_1441
 
-cc @daniel-li2021
-
 18 new or promoted (B→A) Tier A/B job(s).
 
 At most one digest is sent per Pacific day. Score/JD-only changes are not re-alerted.

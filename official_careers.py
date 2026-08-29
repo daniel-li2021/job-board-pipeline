@@ -27,6 +27,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+import alert_history
 from sources.careers.http import (
     is_placeholder_location,
     keep_us_or_unknown,
@@ -52,6 +53,7 @@ INBOX_MD_PATH = CAREERS_DIR / "inbox.md"
 INBOX_CSV_PATH = CAREERS_DIR / "inbox.csv"
 REPORT_PATH = CAREERS_DIR / "scrape_report.md"
 DIGEST_STATE_PATH = CAREERS_DIR / "digest_state.json"
+ALERT_HISTORY_PATH = CAREERS_DIR / "alert_history.json"
 RUNS_DIR = CAREERS_DIR / "runs"
 ALERTS_DIR = OUTPUT_DIR / "alerts"
 RETENTION_DAYS = 7
@@ -538,6 +540,13 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
     digest_count = 0
     if emit_digest:
         alert_paths = write_digest(digest_jobs, stamp)
+        alert_history.append_event(
+            ALERT_HISTORY_PATH,
+            pipeline="official",
+            stamp=stamp,
+            jobs=digest_jobs,
+            event_kind="new_or_promoted_ab",
+        )
         board.apply_digest_state(digest_state, digest_jobs, digest_day)
         digest_count = len(digest_jobs)
     board.save_digest_state(DIGEST_STATE_PATH, digest_state)
