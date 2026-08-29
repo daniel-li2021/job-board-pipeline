@@ -1,0 +1,29 @@
+{
+  "_comment": "Manual canonical-source decisions. 100% exact observed in-scope coverage is the current audit target, but the user makes the final validation decision.",
+  "companies": {
+    "google": {"status": "unvalidated", "notes": ""},
+    "amazon": {"status": "unvalidated", "notes": ""},
+    "apple": {"status": "unvalidated", "notes": ""},
+    "microsoft": {"status": "unvalidated", "notes": ""},
+    "nvidia": {"status": "unvalidated", "notes": ""},
+    "salesforce": {"status": "unvalidated", "notes": ""},
+    "adobe": {"status": "unvalidated", "notes": ""},
+    "meta": {"status": "unsupported", "notes": "Official adapter unavailable"},
+    "tiktok": {"status": "unsupported", "notes": "Official adapter unavailable"},
+    "uber": {"status": "unvalidated", "notes": ""},
+    "doordash": {"status": "unvalidated", "notes": ""},
+    "snap": {"status": "unvalidated", "notes": ""},
+    "pinterest": {"status": "unvalidated", "notes": ""},
+    "snowflake": {"status": "unvalidated", "notes": ""},
+    "servicenow": {"status": "unvalidated", "notes": ""},
+    "linkedin": {"status": "unsupported", "notes": "Official adapter unavailable"},
+    "bloomberg": {"status": "unvalidated", "notes": ""},
+    "jpmorgan": {"status": "unvalidated", "notes": ""},
+    "capitalone": {"status": "unvalidated", "notes": ""},
+    "oracle": {"status": "unvalidated", "notes": ""},
+    "walmart": {"status": "unsupported", "notes": "Official adapter unavailable"},
+    "cisco": {"status": "unvalidated", "notes": ""},
+    "sap": {"status": "unvalidated", "notes": ""},
+    "hpe": {"status": "unvalidated", "notes": ""}
+  }
+}

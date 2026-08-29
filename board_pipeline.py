@@ -38,7 +38,9 @@ from zoneinfo import ZoneInfo
 
 import requests
 
+import coverage_reconcile
 from sources import ats, official
+from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
 from sources.schema import (
     OUTPUT_DIR,
     RECENCY_BUCKET_RANK,
@@ -268,17 +270,7 @@ def decide_digest(
 # Target-company (referral) matching
 # --------------------------------------------------------------------------
 def load_target_companies() -> List[Dict[str, Any]]:
-    if not TARGET_COMPANIES_JSON.exists():
-        return []
-    data = json.loads(TARGET_COMPANIES_JSON.read_text(encoding="utf-8"))
-    companies = data.get("companies", []) if isinstance(data, dict) else []
-    out = []
-    for entry in companies:
-        name = entry.get("name", "")
-        aliases = entry.get("aliases", []) or [name]
-        norm = sorted({normalize_company_key(a) for a in aliases if a}, key=len, reverse=True)
-        out.append({"name": name, "norm_aliases": [a for a in norm if len(a) >= 3]})
-    return out
+    return load_alias_file(TARGET_COMPANIES_JSON)
 
 
 def match_target_company(company_name: str, targets: List[Dict[str, Any]]) -> Optional[str]:
@@ -287,7 +279,7 @@ def match_target_company(company_name: str, targets: List[Dict[str, Any]]) -> Op
     Short aliases (sap, meta, apple) only match as a whole token or exact key.
     Never bidirectional substring — that flagged Sapios as SAP.
     """
-    return _company_alias_hit(company_name, targets)
+    return match_company_alias(company_name, targets)
 
 
 # --------------------------------------------------------------------------
@@ -295,7 +287,6 @@ def match_target_company(company_name: str, targets: List[Dict[str, Any]]) -> Op
 # --------------------------------------------------------------------------
 CATEGORY_DROP_REASON = {
     "exclude": "company_excluded",
-    "covered_elsewhere": "company_covered_elsewhere",
 }
 
 
@@ -315,10 +306,7 @@ def load_company_filters() -> Dict[str, List[Dict[str, Any]]]:
         for entry in data.get(category, []) or []:
             if not isinstance(entry, dict):
                 continue
-            name = entry.get("name", "")
-            aliases = entry.get("aliases", []) or [name]
-            norm = sorted({normalize_company_key(a) for a in aliases if a}, key=len, reverse=True)
-            out[category].append({"name": name, "norm_aliases": [a for a in norm if a]})
+            out[category].extend(prepare_alias_entries([entry]))
     return out
 
 
@@ -328,17 +316,7 @@ def _company_alias_hit(company_name: str, entries: List[Dict[str, Any]]) -> Opti
     Whole-token match always counts; substring match only for aliases >= 6 chars
     (so short aliases like "meta"/"apple" don't false-match "metadata" etc.).
     """
-    key = normalize_company_key(company_name)
-    if not key:
-        return None
-    tokens = {t for t in re.split(r"[^a-z0-9]+", (company_name or "").lower()) if t}
-    for entry in entries:
-        for alias in entry["norm_aliases"]:
-            if alias in tokens or key == alias:
-                return entry["name"]
-            if len(alias) >= 6 and alias in key:
-                return entry["name"]
-    return None
+    return match_company_alias(company_name, entries)
 
 
 def classify_company(company_name: str, filters: Dict[str, List[Dict[str, Any]]]) -> Tuple[str, str]:
@@ -1298,8 +1276,14 @@ def _stats_lines(stats: Dict[str, Any]) -> List[str]:
 def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp: str) -> None:
     """7-day Tier A/B view (capped). Prefer inbox.md if you skipped a day."""
     BOARD_DIR.mkdir(parents=True, exist_ok=True)
+    report_now = datetime.now(timezone.utc)
     lines: List[str] = [
         f"# ATS / LinkedIn board — 7-day view — {stamp}",
+        "",
+        f"- Updated (PT): {report_now.astimezone(PACIFIC).strftime('%Y-%m-%d %H:%M %Z')}",
+        f"- Snapshot (UTC): {report_now.isoformat()}",
+        f"- Last 24 hours: {sum(1 for job in visible if (_job_inbox_ref(job) or report_now) >= report_now - timedelta(hours=24))}",
+        f"- Last 3 days: {sum(1 for job in visible if (_job_inbox_ref(job) or report_now) >= report_now - timedelta(days=3))}",
         "",
         f"If you check every 1–2 days, open **`output/board/inbox.md`** (last {INBOX_DAYS} days) instead of this file.",
         "",
@@ -1318,8 +1302,8 @@ def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp:
             lines.append("_none_")
             lines.append("")
             continue
-        lines.append("| Score | Src | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Verified | Link |")
-        lines.append("|---|---|---|---|---|---|---|---|---|---|---|---|")
+        lines.append("| Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |")
+        lines.append("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|")
         for r in rows:
             link_url = r.get("official_url") or r.get("source_url") or ""
             link = f"[open]({link_url})" if link_url else "-"
@@ -1330,17 +1314,20 @@ def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp:
             loc = (r.get("location") or "").replace("|", "/")
             resume = (r.get("resume_profile_used") or "").replace("resume_", "")
             src = r.get("score_source") or "-"
+            coverage = r.get("coverage_status") or "-"
             lines.append(
-                f"| {float(r.get('match_score') or 0):.0f} | {src} | {company} | {title} | {loc} | "
+                f"| {float(r.get('match_score') or 0):.0f} | {src} | {r.get('source') or 'board'} | {company} | {title} | {loc} | "
                 f"{r.get('posted_date','') or '-'} | {r.get('recency_bucket','')} | "
-                f"{r.get('date_confidence','')} | {resume} | {referral} | {verified} | {link} |"
+                f"{r.get('date_confidence','')} | {resume} | {referral} | {r.get('review_status') or 'unreviewed'} | {coverage} | {verified} | {link} |"
             )
         lines.append("")
     LATEST_MD_PATH.write_text("\n".join(lines), encoding="utf-8")
 
 
 def _job_inbox_ref(job: Dict[str, Any]) -> Optional[datetime]:
-    for field in ("posted_date", "first_seen"):
+    confidence = str(job.get("date_confidence") or "unknown").lower()
+    fields = ("posted_date", "first_seen") if confidence in {"high", "medium"} else ("first_seen", "posted_date")
+    for field in fields:
         raw = (job.get(field) or "").strip()
         if not raw:
             continue
@@ -1375,14 +1362,17 @@ def write_board_inbox(visible: List[Dict[str, str]], stamp: str, now: datetime) 
     lines = [
         f"# ATS / LinkedIn inbox (last {INBOX_DAYS} days)",
         "",
-        f"- Updated: {stamp}",
+        f"- Updated (PT): {now.astimezone(PACIFIC).strftime('%Y-%m-%d %H:%M %Z')}",
+        f"- Snapshot (UTC): {now.isoformat()}",
         f"- Jobs: {len(inbox)} (Tier A/B only)",
+        f"- Last 24 hours: {sum(1 for j in inbox if (_job_inbox_ref(j) or now) >= now - timedelta(hours=24))}",
+        f"- Last 3 days: {len(inbox)}",
         "",
         "If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.",
         "The 7-day dump is `latest.md`.",
         "",
-        "| Tier | Score | Company | Title | Location | Posted | Recency | Referral | Link |",
-        "|---|---|---|---|---|---|---|---|---|",
+        "| Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |",
+        "|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for r in inbox:
         link_url = r.get("official_url") or r.get("source_url") or ""
@@ -1390,10 +1380,10 @@ def write_board_inbox(visible: List[Dict[str, str]], stamp: str, now: datetime) 
         referral = r.get("referral_name") or "-"
         title = (r.get("title") or "").replace("|", "/")[:70]
         lines.append(
-            f"| {r.get('tier')} | {float(r.get('match_score') or 0):.0f} | "
+            f"| {r.get('tier')} | {float(r.get('match_score') or 0):.0f} | {r.get('source') or 'board'} | "
             f"{(r.get('company') or '').replace('|','/')} | {title} | "
             f"{(r.get('location') or '').replace('|','/')} | {r.get('posted_date','') or '-'} | "
-            f"{r.get('recency_bucket','')} | {referral} | {link} |"
+            f"{r.get('recency_bucket','')} | {referral} | {r.get('review_status') or 'unreviewed'} | {r.get('coverage_status') or '-'} | {link} |"
         )
     INBOX_MD_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return inbox
@@ -1401,7 +1391,9 @@ def write_board_inbox(visible: List[Dict[str, str]], stamp: str, now: datetime) 
 
 ALERT_FIELDS = ["tier", "match_score", "score_source", "company", "title", "location",
                 "posted_date", "recency_bucket", "date_confidence", "resume_profile_used",
-                "referral_name", "recommended_action", "official_url", "source", "source_url"]
+                "referral_name", "recommended_action", "review_status", "coverage_status", "canonical_source",
+                "canonical_job_key", "duplicate_of", "official_snapshot_at", "source_snapshot_at",
+                "official_url", "source", "source_url"]
 
 
 def write_alert(new_ab: List[Dict[str, str]], stamp: str) -> Dict[str, Path]:
@@ -1415,12 +1407,11 @@ def write_alert(new_ab: List[Dict[str, str]], stamp: str) -> Dict[str, Path]:
         for r in new_ab:
             writer.writerow({k: r.get(k, "") for k in ALERT_FIELDS})
 
-    # Mention the repo owner for a "mentioned you" ping. Prefer Participating-only
-    # watching if Issue-opened emails already work, otherwise Watch + @ will duplicate.
     lines = [
         f"ATS / LinkedIn alert - {stamp}",
         "",
-        "cc @daniel-li2021",
+        f"Updated (PT): {datetime.now(PACIFIC).strftime('%Y-%m-%d %H:%M %Z')}",
+        f"Snapshot (UTC): {datetime.now(timezone.utc).isoformat()}",
         "",
         f"{len(new_ab)} new or promoted (B→A) Tier A/B job(s).",
         "",
@@ -1429,18 +1420,18 @@ def write_alert(new_ab: List[Dict[str, str]], stamp: str) -> Dict[str, Path]:
         f"If you skipped a day, open `output/board/inbox.md` (last {INBOX_DAYS} days). Do not read every Issue.",
         "",
     ]
-    lines.append("| Tier | Score | Company | Title | Location | Posted | Recency | Referral | Link |")
-    lines.append("|---|---|---|---|---|---|---|---|---|")
+    lines.append("| Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |")
+    lines.append("|---|---|---|---|---|---|---|---|---|---|---|---|")
     for r in new_ab:
         link_url = r.get("official_url") or r.get("source_url") or ""
         link = f"[open]({link_url})" if link_url else "-"
         referral = r.get("referral_name") or "-"
         title = (r.get("title") or "").replace("|", "/")[:70]
         lines.append(
-            f"| {r.get('tier')} | {float(r.get('match_score') or 0):.0f} | "
+            f"| {r.get('tier')} | {float(r.get('match_score') or 0):.0f} | {r.get('source') or 'board'} | "
             f"{(r.get('company') or '').replace('|','/')} | {title} | "
             f"{(r.get('location') or '').replace('|','/')} | {r.get('posted_date','') or '-'} | "
-            f"{r.get('recency_bucket','')} | {referral} | {link} |"
+            f"{r.get('recency_bucket','')} | {referral} | {r.get('review_status') or 'unreviewed'} | {r.get('coverage_status') or '-'} | {link} |"
         )
     body_path.write_text("\n".join(lines), encoding="utf-8")
     return {"csv": csv_path, "issue_body": body_path}
@@ -1469,12 +1460,16 @@ def _raw_source_counts(raw_jobs: List[Dict[str, str]]) -> Dict[str, int]:
 ENTRY_DEFAULTS: Dict[str, Any] = {
     "company": "", "title": "", "location": "", "posted_date": "",
     "date_confidence": "unknown", "official_url": "", "source": "", "source_url": "",
-    "discovered_via": [], "filter_status": "kept", "drop_reason": "",
+    "discovered_via": [], "filter_status": "kept", "drop_reason": "", "referral_name": "",
     "company_flag": "", "staffing_firm": False, "clearance_risk_company": False,
     "role_family": "", "role_relevance": 0, "tier": "", "recency_bucket": "",
     "cache_key": "", "jd_hash": "", "match_score": None, "resume_profile_used": "",
     "seniority_fit": "", "hard_constraint_status": "", "top_match_reasons": [],
     "main_gaps": [], "recommended_action": "", "screen_method": "", "score_source": "",
+    "coverage_status": "", "canonical_source": "", "canonical_job_key": "",
+    "duplicate_of": "", "official_snapshot_at": "", "source_snapshot_at": "",
+    "coverage_match_method": "", "official_company_id": "", "suppress_alert": False,
+    "review_status": "unreviewed",
     "first_seen": "", "last_seen": "",
 }
 
@@ -1505,6 +1500,7 @@ def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
         # pipeline status
         "filter_status": job.get("filter_status", "kept"),
         "drop_reason": job.get("drop_reason", ""),
+        "referral_name": job.get("referral_name", ""),
         "company_flag": job.get("company_flag", ""),
         "staffing_firm": bool(job.get("staffing_firm")),
         "clearance_risk_company": bool(job.get("clearance_risk_company")),
@@ -1524,6 +1520,17 @@ def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
         "recommended_action": job.get("recommended_action", ""),
         "screen_method": job.get("screen_method", ""),
         "score_source": job.get("score_source", ""),
+        # cross-pipeline coverage audit
+        "coverage_status": job.get("coverage_status", ""),
+        "canonical_source": job.get("canonical_source", ""),
+        "canonical_job_key": job.get("canonical_job_key", ""),
+        "duplicate_of": job.get("duplicate_of", ""),
+        "official_snapshot_at": job.get("official_snapshot_at", ""),
+        "source_snapshot_at": job.get("source_snapshot_at", ""),
+        "coverage_match_method": job.get("coverage_match_method", ""),
+        "official_company_id": job.get("official_company_id", ""),
+        "suppress_alert": bool(job.get("suppress_alert")),
+        "review_status": job.get("review_status", "unreviewed"),
         # lifecycle
         "first_seen": job.get("first_seen", ""),
         "last_seen": job.get("last_seen", ""),
@@ -1583,8 +1590,9 @@ def run() -> None:
         job["last_seen"] = now_iso
         job["recency_bucket"] = recency_bucket(job, now=now)
 
-    # 5) Company filter (config-driven; applied before hard filter so excluded
-    #    / covered-elsewhere companies never reach the LLM).
+    # 5) Company filter. Only explicit exclusions are dropped here. Companies
+    #    covered by a dedicated official adapter are reconciled exactly below;
+    #    a company-wide flag must never suppress an unmatched requisition.
     drops: Counter = Counter()
     after_company: List[Dict[str, str]] = []
     for job in deduped:
@@ -1629,6 +1637,15 @@ def run() -> None:
             job["drop_reason"] = reason
             drops[reason] += 1
 
+    # 7) Strict official reconciliation happens before scoring. Exact matches
+    # are suppressed only for manually validated companies. All records remain
+    # in jobs.json for provenance and audit.
+    coverage_reconcile.annotate_jobs(candidates, "board")
+    active_candidates = [j for j in candidates if not j.get("suppress_alert")]
+    for job in candidates:
+        if job.get("suppress_alert"):
+            job["tier"] = "ignored"
+
     # Referral flags on the candidate pool
     referrals: Dict[str, bool] = {}
     for job in candidates:
@@ -1636,29 +1653,40 @@ def run() -> None:
         referrals[dedup_key(job)] = bool(name)
         job["referral_name"] = name or ""
 
-    # 7) Score: reuse cache, LLM only on new/changed, rule fallback
+    # Every canonical store record carries an explicit coverage state, even
+    # when it was filtered before reconciliation.
+    for job in deduped:
+        job.setdefault("canonical_job_key", coverage_reconcile.canonical_job_key(job))
+        job.setdefault("canonical_source", "board")
+        job.setdefault("coverage_status", "out_of_scope")
+        job.setdefault("duplicate_of", "")
+        job.setdefault("official_snapshot_at", "")
+        job.setdefault("source_snapshot_at", job.get("last_seen") or now_iso)
+        job.setdefault("review_status", "unreviewed")
+
+    # 8) Score: reuse cache, LLM only on new/changed, rule fallback
     screen_method, llm_errors, score_counts = score_survivors(
-        candidates, referrals, profiles, store, use_llm=not args.no_llm
+        active_candidates, referrals, profiles, store, use_llm=not args.no_llm
     )
 
-    # 8) Tier + user-facing rank
-    for job in candidates:
+    # 9) Tier + user-facing rank
+    for job in active_candidates:
         job["tier"] = assign_tier(job, referrals.get(dedup_key(job), False))
         apply_referral_action(job)
-    candidates.sort(key=user_facing_sort_key)
+    active_candidates.sort(key=user_facing_sort_key)
 
-    tier_a = [j for j in candidates if j["tier"] == "A"]
-    tier_b = [j for j in candidates if j["tier"] == "B"]
+    tier_a = [j for j in active_candidates if j["tier"] == "A"]
+    tier_b = [j for j in active_candidates if j["tier"] == "B"]
     ab_before_cap = len(tier_a) + len(tier_b)
     visible = (tier_a + tier_b)[:MAX_VISIBLE]  # already sorted by priority
     staffing_capped_to_b = sum(
-        1 for j in candidates
+        1 for j in active_candidates
         if j.get("staffing_firm") and j["tier"] == "B"
         and float(j.get("match_score") or 0) >= TIER_A_MIN
     )
     staffing_in_ab = sum(1 for j in visible if j.get("staffing_firm"))
 
-    # 9) Rebuild store with deduped canonical jobs only (kept + dropped)
+    # 10) Rebuild store with deduped canonical jobs only (kept + dropped)
     new_store: Dict[str, Dict[str, Any]] = dict(store)
     for job in deduped:
         key = dedup_key(job)
@@ -1669,9 +1697,9 @@ def run() -> None:
     new_store = prune_store(new_store, now)
     save_store(new_store)
 
-    # 10) Recency distribution over kept (candidate) jobs
+    # 11) Recency distribution over visible candidate jobs
     recency_dist = {b: 0 for b in RECENCY_BUCKETS}
-    for job in candidates:
+    for job in active_candidates:
         recency_dist[job.get("recency_bucket", "gt7d")] += 1
 
     stats = {
@@ -1681,6 +1709,7 @@ def run() -> None:
             "after_company": len(after_company),
             "after_hard_filter": len(after_hard),
             "after_prefilter": len(candidates),
+            "official_duplicates_suppressed": len(candidates) - len(active_candidates),
             "dropped": sum(drops.values()),
         },
         "llm": {
@@ -1704,7 +1733,7 @@ def run() -> None:
         "drops": dict(drops),
     }
 
-    # 11) Outputs (Tier A/B only)
+    # 12) Outputs (Tier A/B only)
     write_latest_md(visible, stats, stamp)
     write_board_inbox(visible, stamp, now)
     digest_state = load_digest_state(DIGEST_STATE_PATH)
