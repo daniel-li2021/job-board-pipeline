@@ -1,6 +1,6 @@
 # Cross-pipeline official coverage audit
 
-- Generated: 2026-08-29T08:26:18.418976+00:00
+- Generated: 2026-08-29T18:27:35.837481+00:00
 - Official snapshot: 2026-08-29T00:24:35.875420+00:00
 - Coverage scope: jobs from the last 3 days that pass shared hard + role/seniority prefilters; LLM score is not used.
 - Validation: 100% exact observed coverage is the current review target; final validation is manual.
@@ -9,11 +9,11 @@
 
 | Company | Manual state | Adapter | In scope | Exact | Gaps | Pending refresh | Coverage |
 |---|---|---|---:|---:|---:|---:|---:|
-| Google | unvalidated | google | 14 | 10 | 4 | 0 | 71% |
+| Amazon | unvalidated | amazon | 31 | 29 | 2 | 0 | 94% |
+| Google | unvalidated | google | 18 | 14 | 4 | 0 | 78% |
 | Apple | unvalidated | apple | 9 | 9 | 0 | 0 | 100% |
 | JPMorgan Chase | unvalidated | oracle_hcm | 7 | 5 | 2 | 0 | 71% |
 | TikTok | unsupported | skip | 4 | 0 | 0 | 0 | - |
-| Amazon | unvalidated | amazon | 2 | 2 | 0 | 0 | 100% |
 | NVIDIA | unvalidated | workday | 2 | 2 | 0 | 0 | 100% |
 | Oracle | unvalidated | oracle_hcm | 2 | 2 | 0 | 0 | 100% |
 | Pinterest | unvalidated | greenhouse | 2 | 2 | 0 | 0 | 100% |
@@ -41,10 +41,12 @@
 | Walmart Global Tech | unsupported | skip | 0 | 0 | 0 | 0 | - |
 | Zoom | unsupported | skip | 0 | 0 | 0 | 0 | - |
 
-## Gaps / pending review (6)
+## Gaps / pending review (8)
 
 | Status | Pipeline | Company | Title | Location | Link |
 |---|---|---|---|---|---|
+| official_gap | board | Amazon | Geospatial Data Engineer , WW Sustainability | Seattle, Washington, USA | [open](https://www.amazon.jobs/en/jobs/10519667/geospatial-data-engineer-ww-sustainability) |
+| official_gap | board | Amazon | Systems Development Engineer, GPU & AI Accelerator Servers, AWS Hardware Engineering | Cupertino, California, USA | [open](https://www.amazon.jobs/en/jobs/10517016/systems-development-engineer-gpu-ai-accelerator-servers-aws-hardware-engineering) |
 | official_gap | syncareer | Google | Reliability Infrastructure Technician, Raxium | Fremont, California, United States | [open](https://www.google.com/about/careers/applications/jobs/results/113142120058888902-reliability-infrastructure-technician-raxium) |
 | official_gap | syncareer | Google | Software Engineer III, Full Stack | Raleigh, North Carolina, United States | [open](https://www.google.com/about/careers/applications/jobs/results/140223091451011782-software-engineer-iii-full-stack) |
 | official_gap | syncareer | Google | Data Center Technician III, Networking Infrastructure | Council Bluffs, Iowa, United States | [open](https://www.google.com/about/careers/applications/jobs/results/92358051759039174-data-center-technician-iii-networking-infrastructure) |
