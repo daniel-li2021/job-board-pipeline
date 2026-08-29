@@ -1,7 +1,7 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated: 2026-08-28_1441
-- Jobs: 43 (Tier A/B only)
+- Updated: 2026-08-28_2351
+- Jobs: 48 (Tier A/B only)
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -10,16 +10,21 @@ The 7-day dump is `latest.md`.
 |---|---|---|---|---|---|---|---|---|
 | A | 85 | Roblox | [2027] Software Engineer, Early Career | San Mateo, CA, United States | 2026-08-28 | 3to24h | Roblox | [open](https://careers.roblox.com/jobs/8072244?gh_jid=8072244) |
 | A | 85 | Roblox | Software Engineer, Creator | San Mateo, CA, United States | 2026-08-28 | 3to24h | Roblox | [open](https://careers.roblox.com/jobs/8115917?gh_jid=8115917) |
+| A | 85 | Roblox | Software Engineer, Economy Platform | San Mateo, CA, United States | 2026-08-28 | 3to24h | Roblox | [open](https://careers.roblox.com/jobs/8060254?gh_jid=8060254) |
 | A | 85 | Reddit | Backend Software Engineer, PDP Experience | Remote - United States | 2026-08-26 | 1to3d | - | [open](https://job-boards.greenhouse.io/reddit/jobs/8148431) |
 | A | 85 | JPMorganChase | Software Engineer [Multiple Positions Available] | Jersey City, NJ | 2026-08-26 | 1to3d | J.P. Morgan | [open](https://www.linkedin.com/jobs/view/software-engineer-multiple-positions-available-at-jpmorganchase-4459104397) |
 | A | 85 | ThunderSoft | Agentic AI Developer | Santa Clara County, CA | 2026-08-26 | 1to3d | - | [open](https://www.linkedin.com/jobs/view/agentic-ai-developer-at-thundersoft-4457645895) |
 | B | 80 | Roblox | Software Engineer, Account Authentication | San Mateo, CA, United States | 2026-08-28 | 3to24h | Roblox | [open](https://careers.roblox.com/jobs/8097701?gh_jid=8097701) |
 | B | 80 | Roblox | Software Engineer, Communications | San Mateo, CA, United States | 2026-08-28 | 3to24h | Roblox | [open](https://careers.roblox.com/jobs/8083944?gh_jid=8083944) |
+| B | 80 | Coinbase | Software Engineer, CDP - Payment Acceptance | Remote - USA | 2026-08-28 | 3to24h | - | [open](https://www.coinbase.com/careers/positions/8164730?gh_jid=8164730) |
 | B | 75 | Roblox | Software Engineer, Creator Business | San Mateo, CA, United States | 2026-08-28 | 3to24h | Roblox | [open](https://careers.roblox.com/jobs/8113334?gh_jid=8113334) |
-| B | 75 | Reddit | Machine Learning Engineer, Ads Optimization | Remote - United States | 2026-08-28 | 3to24h | - | [open](https://job-boards.greenhouse.io/reddit/jobs/8029120) |
 | B | 75 | GitLab | Intermediate Backend Engineer, Platform Readiness | Remote, Canada; Remote, United States | 2026-08-28 | 3to24h | - | [open](https://job-boards.greenhouse.io/gitlab/jobs/8644569002) |
+| B | 75 | Anthropic | Applied AI Architect, Startups | San Francisco, CA / New York City, NY | 2026-08-28 | 3to24h | - | [open](https://job-boards.greenhouse.io/anthropic/jobs/5406982008) |
 | B | 70 | Roblox | [Summer 2027] Software Engineer Intern | San Mateo, CA, United States | 2026-08-28 | 3to24h | Roblox | [open](https://careers.roblox.com/jobs/8072713?gh_jid=8072713) |
 | B | 70 | Roblox | Software Engineer, Foundation AI | San Mateo, CA, United States | 2026-08-28 | 3to24h | Roblox | [open](https://careers.roblox.com/jobs/8123004?gh_jid=8123004) |
+| B | 70 | Samsara | Data Engineer | Remote - US | 2026-08-28 | 3to24h | - | [open](https://www.samsara.com/company/careers/roles/7859702?gh_jid=7859702) |
+| B | 65 | Cohere | Forward Deployed Engineer, Agentic Platform | United States | 2026-08-28 | 3to24h | - | [open](https://jobs.ashbyhq.com/cohere/b0bcef37-1d20-414f-aade-c54942d63df9) |
+| B | 60 | Databricks | Solutions Architect - Real Money Gaming | United States | 2026-08-28 | 3to24h | Databricks | [open](https://databricks.com/company/careers/open-positions/job?gh_jid=8625638002) |
 | B | 80 | Lyft | Software Engineer | San Francisco, CA | 2026-08-26 | 1to3d | - | [open](https://app.careerpuck.com/job-board/lyft/job/8678744002?gh_jid=8678744002) |
 | B | 80 | Lyft | ML Software Engineer, ETA | San Francisco, CA | 2026-08-26 | 1to3d | - | [open](https://app.careerpuck.com/job-board/lyft/job/8639200002?gh_jid=8639200002) |
 | B | 75 | Pinterest | Machine Learning Engineer II, Responsible AI | San Francisco, CA, US; Remote, US | 2026-08-27 | 1to3d | - | [open](https://www.pinterestcareers.com/jobs/?gh_jid=8162046) |
