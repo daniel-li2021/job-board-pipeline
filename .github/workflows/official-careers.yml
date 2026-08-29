@@ -1,10 +1,12 @@
 name: Official careers
 
-# Component 3 debug/dispatch only. Scheduled morning/evening runs live in
-# scheduled-jobs.yml (board then official, one commit). Keep this file so
-# `--only uber` (and similar) stays a one-click workflow_dispatch.
+# Independent Big Company Official pipeline. `--only uber` (and similar)
+# remains available through workflow_dispatch for adapter diagnostics.
 
 on:
+  schedule:
+    - cron: "0 15 * * *"
+    - cron: "0 3 * * *"
   workflow_dispatch:
     inputs:
       only:
@@ -52,6 +54,13 @@ jobs:
           if [ -n "$ONLY" ]; then ARGS+=(--only "$ONLY"); fi
           if [ "$NO_LLM" = "true" ]; then ARGS+=(--no-llm); fi
           python3 official_careers.py run "${ARGS[@]}"
+
+      - name: Verify Issue body has no owner mention
+        run: |
+          if grep -Eiq 'cc[[:space:]]+@daniel-li2021' output/alerts/official_issue_body.md 2>/dev/null; then
+            echo "Owner mention must not be present in Issue body."
+            exit 1
+          fi
 
       - name: Commit official-careers outputs
         run: |

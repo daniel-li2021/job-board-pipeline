@@ -41,6 +41,7 @@ from sources.schema import (
 )
 
 import board_pipeline as board
+import coverage_reconcile
 
 BASE_DIR = Path(__file__).resolve().parent
 CAREERS_DIR = OUTPUT_DIR / "official_careers"
@@ -204,8 +205,14 @@ def save_careers_store(store: Dict[str, Dict[str, Any]]) -> None:
 
 def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp: str) -> None:
     CAREERS_DIR.mkdir(parents=True, exist_ok=True)
+    report_now = datetime.now(timezone.utc)
     lines = [
         f"# Big Tech official careers — 7-day view — {stamp}",
+        "",
+        f"- Updated (PT): {report_now.astimezone(board.PACIFIC).strftime('%Y-%m-%d %H:%M %Z')}",
+        f"- Snapshot (UTC): {report_now.isoformat()}",
+        f"- Last 24 hours: {sum(1 for job in visible if (board._job_inbox_ref(job) or report_now) >= report_now - timedelta(hours=24))}",
+        f"- Last 3 days: {sum(1 for job in visible if (board._job_inbox_ref(job) or report_now) >= report_now - timedelta(days=3))}",
         "",
         "Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scoring/ranking.",
         "",
@@ -233,8 +240,8 @@ def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp:
             lines.append("_none_")
             lines.append("")
             continue
-        lines.append("| Score | Src | Company | Title | Location | Posted | Recency | Conf | Resume | Link |")
-        lines.append("|---|---|---|---|---|---|---|---|---|---|")
+        lines.append("| Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |")
+        lines.append("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|")
         for row in rows:
             link_url = row.get("official_url") or row.get("source_url") or ""
             link = f"[open]({link_url})" if link_url else "-"
@@ -243,10 +250,11 @@ def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp:
             loc = (row.get("location") or "").replace("|", "/")
             resume = (row.get("resume_profile_used") or "").replace("resume_", "")
             src = row.get("score_source") or "-"
+            referral = row.get("referral_name") or "-"
             lines.append(
-                f"| {float(row.get('match_score', 0)):.0f} | {src} | {company} | {title} | {loc} | "
+                f"| {float(row.get('match_score', 0)):.0f} | {src} | official | {company} | {title} | {loc} | "
                 f"{row.get('posted_date', '') or '-'} | {row.get('recency_bucket', '')} | "
-                f"{row.get('date_confidence', '')} | {resume} | {link} |"
+                f"{row.get('date_confidence', '')} | {resume} | {referral} | {row.get('review_status') or 'unreviewed'} | official_canonical | {link} |"
             )
         lines.append("")
     LATEST_MD_PATH.write_text("\n".join(lines), encoding="utf-8")
@@ -283,21 +291,27 @@ def write_inbox(visible: List[Dict[str, str]], stamp: str, now: datetime) -> Non
     lines = [
         f"# Big Tech official careers inbox (last {INBOX_DAYS} days)",
         "",
-        f"- Updated: {stamp}",
+        f"- Updated (PT): {now.astimezone(board.PACIFIC).strftime('%Y-%m-%d %H:%M %Z')}",
+        f"- Snapshot (UTC): {now.isoformat()}",
         f"- Jobs: {len(inbox)} (Tier A/B only)",
+        f"- Last 24 hours: {sum(1 for job in inbox if (board._job_inbox_ref(job) or now) >= now - timedelta(hours=24))}",
+        f"- Last 3 days: {len(inbox)}",
         "",
-        "| Tier | Score | Company | Title | Location | Posted | Recency | Link |",
-        "|---|---|---|---|---|---|---|---|",
+        "Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.",
+        "",
+        "| Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |",
+        "|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for row in inbox:
         link_url = row.get("official_url") or row.get("source_url") or ""
         link = f"[open]({link_url})" if link_url else "-"
         title = (row.get("title") or "").replace("|", "/")[:70]
+        referral = row.get("referral_name") or "-"
         lines.append(
-            f"| {row.get('tier')} | {float(row.get('match_score', 0)):.0f} | "
+            f"| {row.get('tier')} | {float(row.get('match_score', 0)):.0f} | official | "
             f"{(row.get('company') or '').replace('|', '/')} | {title} | "
             f"{(row.get('location') or '').replace('|', '/')} | {row.get('posted_date', '') or '-'} | "
-            f"{row.get('recency_bucket', '')} | {link} |"
+            f"{row.get('recency_bucket', '')} | {referral} | {row.get('review_status') or 'unreviewed'} | official_canonical | {link} |"
         )
     INBOX_MD_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -315,24 +329,26 @@ def write_digest(jobs: List[Dict[str, str]], stamp: str) -> Dict[str, Path]:
     lines = [
         f"Big Tech official careers digest - {stamp}",
         "",
-        "cc @daniel-li2021",
+        f"Updated (PT): {datetime.now(board.PACIFIC).strftime('%Y-%m-%d %H:%M %Z')}",
+        f"Snapshot (UTC): {datetime.now(timezone.utc).isoformat()}",
         "",
         f"{len(jobs)} new or promoted (B→A) Tier A/B job(s).",
         "",
         "At most one digest is sent per Pacific day. Score/JD-only changes are not re-alerted.",
         "",
-        "| Tier | Score | Company | Title | Location | Posted | Recency | Link |",
-        "|---|---|---|---|---|---|---|---|",
+        "| Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |",
+        "|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for row in jobs:
         link_url = row.get("official_url") or row.get("source_url") or ""
         link = f"[open]({link_url})" if link_url else "-"
         title = (row.get("title") or "").replace("|", "/")[:70]
+        referral = row.get("referral_name") or "-"
         lines.append(
-            f"| {row.get('tier')} | {float(row.get('match_score', 0)):.0f} | "
+            f"| {row.get('tier')} | {float(row.get('match_score', 0)):.0f} | official | "
             f"{(row.get('company') or '').replace('|', '/')} | {title} | "
             f"{(row.get('location') or '').replace('|', '/')} | {row.get('posted_date', '') or '-'} | "
-            f"{row.get('recency_bucket', '')} | {link} |"
+            f"{row.get('recency_bucket', '')} | {referral} | {row.get('review_status') or 'unreviewed'} | official_canonical | {link} |"
         )
     body_path.write_text("\n".join(lines), encoding="utf-8")
     return {"csv": csv_path, "issue_body": body_path}
@@ -380,6 +396,7 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
     profiles = board.load_profiles()
     targets = board.load_target_companies()
     company_filters = board.load_company_filters()
+    review_state = coverage_reconcile.load_review_state()
 
     deduped = board.merge_by_key(raw_jobs)
     store = board.prune_store(load_careers_store(), now)
@@ -394,6 +411,16 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
             new_keys.add(key)
         job["last_seen"] = now_iso
         job["recency_bucket"] = recency_bucket(job, now=now)
+        job["source_pipeline"] = "official"
+        job["canonical_job_key"] = coverage_reconcile.canonical_job_key(job)
+        job["canonical_source"] = "official"
+        job["coverage_status"] = "official_canonical"
+        job["duplicate_of"] = ""
+        job["official_snapshot_at"] = now_iso
+        job["source_snapshot_at"] = now_iso
+        job["suppress_alert"] = False
+        review_entry = review_state.get(job["canonical_job_key"], {})
+        job["review_status"] = review_entry.get("status", "unreviewed") if isinstance(review_entry, dict) else "unreviewed"
 
     drops: Counter = Counter()
     after_company: List[Dict[str, str]] = []

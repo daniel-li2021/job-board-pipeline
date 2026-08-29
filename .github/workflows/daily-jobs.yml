@@ -4,8 +4,8 @@ name: Syncareer job alert
 
 on:
   schedule:
-    - cron: "0 15 * * *"
-    - cron: "0 3 * * *"
+    - cron: "20 15 * * *"
+    - cron: "20 3 * * *"
   workflow_dispatch:
     inputs:
       time_window:
@@ -53,7 +53,8 @@ jobs:
             echo "No Syncareer changes to commit."
           else
             git commit -m "chore: syncareer alert ${{ steps.pipeline.outputs.stamp }}"
-            git push
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+            git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
 
       - name: Upload Syncareer inbox + this-run snapshot

@@ -10,13 +10,23 @@ Three **separate** components. Do not mix their folders.
 
 Each inbox is the last **3 days** of matching jobs. You do **not** need to read every GitHub Issue.
 
+Public rolling dashboard: **https://daniel-li2021.github.io/job-board-pipeline/**
+(deployed by `.github/workflows/reconcile-pages.yml`). It includes 24-hour and
+3-day views for all three pipelines, referrals, 3–7 day review jobs, and the
+official coverage audit. The dashboard is read-only; review decisions are
+committed in `profile/review_state.json`.
+
 **Matching/scoring is shared, not implemented three times.** Components 2 and 3
 use the same `board_pipeline.py` hard filter, role/seniority prefilter,
 resume routing (`resume_swe.md` / `resume_ai.md`), LLM/cache scoring, and
 Tier A/B ranking. Component 3 is discovery-only: it normalizes official career
 jobs into the shared schema, then calls those functions. Component 1
-(Syncareer) keeps its own lighter hard-filter / optional LLM path and does
-**not** go through `board_pipeline.py`.
+(Syncareer) keeps its own optional LLM path, but uses the shared hard/role-family
+eligibility gates for coverage and the same canonical referral alias matcher.
+
+Referral companies have one source of truth:
+[`source/target_companies.json`](source/target_companies.json). All three
+pipelines use `sources/company_aliases.py`; do not create a second referral list.
 
 Per-run snapshots: `output/syncareer/runs/`, `output/board/runs/`,
 `output/official_careers/runs/`.
@@ -92,9 +102,11 @@ Filter -> Match (LLM or rules) -> Rank -> jobs.json + latest.md + alert`.
 
 - **Local machine (launchd):** scrapes LinkedIn/Glassdoor and pushes only
   `output/sources/*.json`. GitHub-hosted runners never scrape those sites.
-- **GitHub Actions (`scheduled-jobs.yml`):** runs `board_pipeline.py` then
-  `official_careers.py run`, and is the sole scheduled committer of
-  `output/board/` and `output/official_careers/` (one commit of both trees).
+- **GitHub Actions:** each cloud pipeline runs and commits independently.
+  Board writes only `output/board/`; Official writes only
+  `output/official_careers/` plus its alert; Syncareer writes only
+  `output/syncareer/`. Reconciliation alone writes `output/cross_pipeline/`
+  and `public/`.
 
 ## Local usage
 
@@ -141,18 +153,17 @@ rule-based scoring for local debugging.
 
 ## GitHub Actions
 
-Morning + evening schedules live in `.github/workflows/scheduled-jobs.yml`
-(UTC crons `0 15 * * *` and `0 3 * * *`): board pipeline, then official
-careers, then **one** commit of `output/board/` + `output/official_careers/`.
-`workflow_dispatch` can run `both` | `board` | `official` (official `--only`
-still works). Each pipeline keeps its own inbox and digest; the combined
-run may open 0–2 Issues.
+The pipelines are isolated and staggered twice daily (all cron times UTC):
 
-`.github/workflows/board-jobs.yml` has **no schedule**. It still runs on
-manual dispatch and on push to `output/sources/linkedin.json` /
-`glassdoor.json` (launchd snapshot sync) — **board only**, no official
-scrape. Source-push runs use `--no-digest` so they do not mark jobs as
-alerted without an Issue.
+- Official careers: `03:00` / `15:00`;
+- ATS / LinkedIn board: `03:10` / `15:10`;
+- Syncareer: `03:20` / `15:20`;
+- coverage reconciliation + Pages: `03:30` / `15:30`, plus a successful
+  `workflow_run` trigger after each pipeline.
+
+Each workflow also has an independent manual dispatch. A failure in one source
+does not block the others. Source pushes to `output/sources/linkedin.json` or
+`glassdoor.json` still run board-only with `--no-digest`.
 
 **What to open:** `output/board/inbox.md` (last 3 days). `latest.md` is the 7-day dump.
 
@@ -163,9 +174,11 @@ rerun do not re-alert. State: `output/board/digest_state.json`.
 `sources/official.py` (Amazon + Google, limited pagination) stays in this
 pipeline as a lightweight CI-safe source. The fuller Big Tech official
 scraper is component 3 and writes only under `output/official_careers/`.
-Google / Amazon / Apple / Microsoft / NVIDIA / Meta / TikTok / Netflix are
-`covered_elsewhere` in `profile/company_filters.json` so LinkedIn/Glassdoor
-dupes of those companies do not appear in the board inbox.
+`covered_elsewhere` is a discovery hint, not a company-wide drop. External jobs
+are suppressed only when the company is manually `validated` in
+`profile/official_coverage.json` **and** the record has an exact official URL,
+requisition ID, or company+title+location match. Unmatched jobs remain visible
+as `official_gap` or `pending_official_refresh`.
 
 ---
 
@@ -220,11 +233,9 @@ out today.
 
 ## Schedule / workflow
 
-`.github/workflows/scheduled-jobs.yml` ~twice a day (15:00 and 03:00 UTC)
-runs board then official careers and commits both output folders together.
-`.github/workflows/official-careers.yml` is `workflow_dispatch` only (for
-`--only` / debug). LinkedIn/Glassdoor scraping stays on the local launchd
-agent; GHA never hits those sites.
+`.github/workflows/official-careers.yml` runs independently at 15:00 and 03:00
+UTC and supports manual `--only` debugging. LinkedIn/Glassdoor scraping stays
+on the local launchd agent; GHA never hits those sites.
 
 - Every run scrapes, normalizes, and re-runs matching.
 - **At most one user-facing digest per Pacific day per pipeline.** The
@@ -253,6 +264,35 @@ hard_filter → role_seniority_prefilter → score_survivors (resume_swe / resum
 
 `covered_elsewhere` is **not** applied here (these companies *are* the
 target). The `exclude` list still is.
+
+---
+
+# Coverage, dashboard, and notifications
+
+Run reconciliation and static dashboard generation locally with:
+
+```bash
+python3 coverage_reconcile.py
+python3 dashboard.py --json
+```
+
+Outputs:
+
+- `output/cross_pipeline/coverage.json` / `coverage.md` — exact coverage audit,
+  dynamic gaps, pending refreshes, and manual company states;
+- `public/index.html` / `dashboard.json` — GitHub Pages site;
+- `profile/official_coverage.json` — manual `unvalidated` / `validated` /
+  `unsupported` company decisions;
+- `profile/review_state.json` — committed per-job review state.
+
+Fuzzy title/location matches are suggestions only and never suppress a job.
+100% exact observed coverage is the current manual audit target, not a permanent
+automatic rule. Amazon and every other company stay unvalidated until the
+generated audit is reviewed and manually approved.
+
+Issue bodies do not mention the repository owner. For email notifications, use
+GitHub **Watch → Issues** (or **All Activity**) on the repository. No email API
+or provider is required.
 
 ## Data flow
 

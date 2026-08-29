@@ -28,9 +28,13 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import urlencode
+from zoneinfo import ZoneInfo
 
 import requests
 from bs4 import BeautifulSoup
+
+import coverage_reconcile
+from sources.company_aliases import load_alias_file, match_company_alias
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -50,6 +54,7 @@ COMPANY_LINKS_JSON = BASE_DIR / "source" / "company_links.json"
 TARGET_COMPANIES_JSON = BASE_DIR / "source" / "target_companies.json"
 SWE_RESUME_PATH = BASE_DIR / "source" / "swe-resume.txt"
 AI_RESUME_PATH = BASE_DIR / "source" / "aie-resume.txt"
+PACIFIC = ZoneInfo("America/Los_Angeles")
 
 SEARCH_BASE_URL = "https://syncareer.com/"
 DETAIL_API_URL = "https://syncareer.com/api/job/detail"
@@ -98,6 +103,13 @@ RAW_FIELDS = [
     "target_company_match",
     "has_grad_req",
     "matched_keywords",
+    "first_seen",
+    "coverage_status",
+    "canonical_source",
+    "canonical_job_key",
+    "duplicate_of",
+    "official_snapshot_at",
+    "source_snapshot_at",
     "description",
     "requirements",
     "snippet",
@@ -470,7 +482,11 @@ def save_watchlist(watchlist: Dict[str, Dict[str, Any]]) -> None:
 
 
 def _entry_age_ref(entry: Dict[str, Any]) -> Optional[datetime]:
-    return _parse_iso_date(entry.get("posted_date", "")) or _parse_iso_date(entry.get("first_seen", ""))
+    return (
+        _parse_iso_date(entry.get("posting_date", ""))
+        or _parse_iso_date(entry.get("posted_date", ""))
+        or _parse_iso_date(entry.get("first_seen", ""))
+    )
 
 
 def inbox_entries(
@@ -511,6 +527,18 @@ def _watchlist_to_alert_row(e: Dict[str, Any]) -> Dict[str, str]:
         "matched_keywords": e.get("matched_keywords", ""),
         "salary": e.get("salary", ""),
         "job_url": e.get("job_url") or e.get("url") or "",
+        "first_seen": e.get("first_seen", ""),
+        "tier": e.get("tier", ""),
+        "fit_score": e.get("fit_score", ""),
+        "recommended_resume": e.get("recommended_resume", ""),
+        "review_status": e.get("review_status", "unreviewed"),
+        "coverage_status": e.get("coverage_status", ""),
+        "canonical_source": e.get("canonical_source", ""),
+        "canonical_job_key": e.get("canonical_job_key", ""),
+        "duplicate_of": e.get("duplicate_of", ""),
+        "official_snapshot_at": e.get("official_snapshot_at", ""),
+        "source_snapshot_at": e.get("source_snapshot_at", ""),
+        "source_pipeline": e.get("source_pipeline", "syncareer"),
     }
 
 
@@ -527,8 +555,11 @@ def write_syncareer_inbox(rows: List[Dict[str, Any]], stamp: str, with_tiers: bo
             [
                 f"# Syncareer inbox (last {INBOX_DAYS} days)",
                 "",
-                f"- Updated: {stamp}",
+                f"- Updated (PT): {datetime.now(PACIFIC).strftime('%Y-%m-%d %H:%M %Z')}",
+                f"- Snapshot (UTC): {datetime.now(timezone.utc).isoformat()}",
                 f"- Jobs: {len(rows)}",
+                f"- Last 24 hours: {sum(1 for r in rows if (_entry_age_ref(r) or datetime.now(timezone.utc)) >= datetime.now(timezone.utc) - timedelta(hours=24))}",
+                f"- Last 3 days: {len(rows)}",
                 "",
                 "If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.",
                 "",
@@ -543,11 +574,11 @@ def write_syncareer_inbox(rows: List[Dict[str, Any]], stamp: str, with_tiers: bo
 def _jobs_markdown_table(rows: List[Dict[str, Any]], with_tiers: bool) -> str:
     lines: List[str] = []
     if with_tiers:
-        lines.append("| Tier | Score | Company | Title | Location | Posted | Sponsorship | Referral | Link |")
-        lines.append("|---|---|---|---|---|---|---|---|---|")
+        lines.append("| Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |")
+        lines.append("|---|---|---|---|---|---|---|---|---|---|---|---|")
     else:
-        lines.append("| Company | Title | Location | Posted | Sponsorship | Referral | Link |")
-        lines.append("|---|---|---|---|---|---|---|")
+        lines.append("| Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |")
+        lines.append("|---|---|---|---|---|---|---|---|---|---|")
     for r in rows:
         title = (r.get("title") or "").replace("|", "/")[:70]
         company = (r.get("company") or "").replace("|", "/")
@@ -558,13 +589,13 @@ def _jobs_markdown_table(rows: List[Dict[str, Any]], with_tiers: bool) -> str:
         posted = r.get("posting_date") or r.get("posted_date") or ""
         if with_tiers:
             lines.append(
-                f"| {r.get('tier','-')} | {r.get('fit_score','-')} | {company} | {title} | "
-                f"{loc} | {posted} | {r.get('sponsorship','')} | {referral} | {link} |"
+                f"| {r.get('tier','-')} | {r.get('fit_score','-')} | Syncareer | {company} | {title} | "
+                f"{loc} | {posted} | {r.get('sponsorship','')} | {referral} | {r.get('review_status') or 'unreviewed'} | {r.get('coverage_status') or '-'} | {link} |"
             )
         else:
             lines.append(
-                f"| {company} | {title} | {loc} | {posted} | "
-                f"{r.get('sponsorship','')} | {referral} | {link} |"
+                f"| Syncareer | {company} | {title} | {loc} | {posted} | "
+                f"{r.get('sponsorship','')} | {referral} | {r.get('review_status') or 'unreviewed'} | {r.get('coverage_status') or '-'} | {link} |"
             )
     return "\n".join(lines)
 
@@ -577,31 +608,11 @@ def normalize_company_key(name: str) -> str:
 
 
 def load_target_companies() -> List[Dict[str, Any]]:
-    if not TARGET_COMPANIES_JSON.exists():
-        return []
-    data = json.loads(TARGET_COMPANIES_JSON.read_text(encoding="utf-8"))
-    companies = data.get("companies", []) if isinstance(data, dict) else []
-    out = []
-    for entry in companies:
-        name = entry.get("name", "")
-        aliases = entry.get("aliases", []) or [name]
-        norm_aliases = sorted({normalize_company_key(a) for a in aliases if a}, key=len, reverse=True)
-        out.append({"name": name, "norm_aliases": [a for a in norm_aliases if a]})
-    return out
+    return load_alias_file(TARGET_COMPANIES_JSON)
 
 
 def match_target_company(company_name: str, targets: List[Dict[str, Any]]) -> Optional[str]:
-    key = normalize_company_key(company_name)
-    if not key:
-        return None
-    for target in targets:
-        for alias in target["norm_aliases"]:
-            if len(alias) < 3:
-                continue
-            # Bidirectional containment on normalized forms.
-            if alias in key or key in alias:
-                return target["name"]
-    return None
+    return match_company_alias(company_name, targets)
 
 
 def sponsorship_from_supports(supports: Any) -> str:
@@ -962,6 +973,18 @@ ALERT_FIELDS = [
     "has_grad_req",
     "matched_keywords",
     "salary",
+    "tier",
+    "fit_score",
+    "recommended_resume",
+    "first_seen",
+    "review_status",
+    "coverage_status",
+    "canonical_source",
+    "canonical_job_key",
+    "duplicate_of",
+    "official_snapshot_at",
+    "source_snapshot_at",
+    "source_pipeline",
     "job_url",
 ]
 
@@ -983,6 +1006,9 @@ def build_issue_body(new_rows: List[Dict[str, Any]], stamp: str, with_tiers: boo
     lines: List[str] = []
     lines.append(f"Syncareer alert — {stamp}")
     lines.append("")
+    lines.append(f"Updated (PT): {datetime.now(PACIFIC).strftime('%Y-%m-%d %H:%M %Z')}")
+    lines.append(f"Snapshot (UTC): {datetime.now(timezone.utc).isoformat()}")
+    lines.append("")
     lines.append(f"{len(new_rows)} new matching job(s) this run (hard-filtered).")
     lines.append("")
     lines.append(
@@ -995,11 +1021,11 @@ def build_issue_body(new_rows: List[Dict[str, Any]], stamp: str, with_tiers: boo
         lines.append(f"Referral companies in this batch: {len(referral_rows)}")
         lines.append("")
     if with_tiers:
-        header = "| Tier | Score | Company | Title | Location | Posted | Sponsorship | Referral | Link |"
-        sep = "|---|---|---|---|---|---|---|---|---|"
+        header = "| Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |"
+        sep = "|---|---|---|---|---|---|---|---|---|---|---|---|"
     else:
-        header = "| Company | Title | Location | Posted | Sponsorship | Referral | Link |"
-        sep = "|---|---|---|---|---|---|---|"
+        header = "| Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |"
+        sep = "|---|---|---|---|---|---|---|---|---|---|"
     lines.append(header)
     lines.append(sep)
     for r in new_rows:
@@ -1010,13 +1036,13 @@ def build_issue_body(new_rows: List[Dict[str, Any]], stamp: str, with_tiers: boo
         link = f"[open]({r.get('job_url','')})" if r.get("job_url") else "-"
         if with_tiers:
             lines.append(
-                f"| {r.get('tier','-')} | {r.get('fit_score','-')} | {company} | {title} | "
-                f"{loc} | {r.get('posting_date','')} | {r.get('sponsorship','')} | {referral} | {link} |"
+                f"| {r.get('tier','-')} | {r.get('fit_score','-')} | Syncareer | {company} | {title} | "
+                f"{loc} | {r.get('posting_date','')} | {r.get('sponsorship','')} | {referral} | {r.get('review_status') or 'unreviewed'} | {r.get('coverage_status') or '-'} | {link} |"
             )
         else:
             lines.append(
-                f"| {company} | {title} | {loc} | {r.get('posting_date','')} | "
-                f"{r.get('sponsorship','')} | {referral} | {link} |"
+                f"| Syncareer | {company} | {title} | {loc} | {r.get('posting_date','')} | "
+                f"{r.get('sponsorship','')} | {referral} | {r.get('review_status') or 'unreviewed'} | {r.get('coverage_status') or '-'} | {link} |"
             )
     lines.append("")
     lines.append(
@@ -1121,6 +1147,21 @@ def run() -> None:
         else:
             drop_reasons[reason.split(":")[0]] += 1
 
+    # Shared role/seniority scope and strict official reconciliation happen
+    # before LLM calls. Suppressed official duplicates remain in kept_rows and
+    # the watchlist, but do not consume scoring calls or appear in alerts.
+    first_seen_iso = now.astimezone(timezone.utc).isoformat()
+    scoped_rows: List[Dict[str, str]] = []
+    for row in kept_rows:
+        row["first_seen"] = first_seen_iso
+        if coverage_reconcile.syncareer_job_in_scope(row):
+            scoped_rows.append(row)
+        else:
+            drop_reasons["exclude_role_seniority_prefilter"] += 1
+    kept_rows = scoped_rows
+    coverage_reconcile.annotate_jobs(kept_rows, "syncareer")
+    scoring_rows = [row for row in kept_rows if not row.get("suppress_alert")]
+
     # Phase 6: optional LLM tiering.
     method_counts: Counter = Counter()
     llm_errors: List[str] = []
@@ -1128,8 +1169,8 @@ def run() -> None:
     tier2_rows: List[Dict[str, Any]] = []
     enriched_rows: List[Dict[str, Any]] = []
     if use_llm:
-        decisions, methods, llm_errors = assign_tiers(kept_rows, swe_resume, ai_resume)
-        for row in kept_rows:
+        decisions, methods, llm_errors = assign_tiers(scoring_rows, swe_resume, ai_resume)
+        for row in scoring_rows:
             d = decisions.get(row["job_id"], fallback_tier(row))
             method = methods.get(row["job_id"], "fallback")
             method_counts[method] += 1
@@ -1154,7 +1195,7 @@ def run() -> None:
         tier1_rows.sort(key=lambda x: (-float(x["fit_score"]), 0 if x["target_company"] == "yes" else 1))
         tier2_rows.sort(key=lambda x: (-float(x["fit_score"]), 0 if x["target_company"] == "yes" else 1))
     else:
-        enriched_rows = [dict(r) for r in kept_rows]
+        enriched_rows = [dict(r) for r in scoring_rows]
 
     # Phase 7: write daily outputs.
     DAILY_DIR.mkdir(parents=True, exist_ok=True)
@@ -1189,7 +1230,9 @@ def run() -> None:
     lines.append(f"- Total jobs found (deduped across keywords): {total_found}")
     lines.append(f"- Already-known (skipped): {total_found - len(new_ids)}")
     lines.append(f"- New jobs this run: {len(new_ids)}")
-    lines.append(f"- Passed hard filter (alert count): {len(kept_rows)}")
+    lines.append(f"- Passed shared hard + role/seniority filter: {len(kept_rows)}")
+    lines.append(f"- Exact official duplicates suppressed: {len(kept_rows) - len(scoring_rows)}")
+    lines.append(f"- Alert candidates before tiering: {len(scoring_rows)}")
     if use_llm:
         lines.append(f"- Tier 1 (must-apply): {len(tier1_rows)}")
         lines.append(f"- Tier 2 (backup): {len(tier2_rows)}")
@@ -1216,7 +1259,6 @@ def run() -> None:
     # Alert-mode outputs + rolling watchlist update.
     alert_paths: Dict[str, Path] = {}
     if alert_mode:
-        first_seen_iso = now.astimezone(timezone.utc).isoformat()
         kept_ids = {row["job_id"] for row in kept_rows}
         for row in kept_rows:
             watchlist[row["job_id"]] = {
@@ -1234,12 +1276,32 @@ def run() -> None:
                 "has_grad_req": row.get("has_grad_req", ""),
                 "matched_keywords": row.get("matched_keywords", ""),
                 "salary": row.get("salary", ""),
+                "description": row.get("description", ""),
+                "requirements": row.get("requirements", ""),
+                "snippet": row.get("snippet", ""),
                 "kept": "yes",
                 "first_seen": first_seen_iso,
+                "coverage_status": row.get("coverage_status", ""),
+                "canonical_source": row.get("canonical_source", ""),
+                "canonical_job_key": row.get("canonical_job_key", ""),
+                "duplicate_of": row.get("duplicate_of", ""),
+                "official_snapshot_at": row.get("official_snapshot_at", ""),
+                "source_snapshot_at": row.get("source_snapshot_at", ""),
+                "suppress_alert": bool(row.get("suppress_alert")),
             }
+        for row in enriched_rows:
+            if row["job_id"] in watchlist:
+                watchlist[row["job_id"]].update({
+                    "tier": row.get("tier", ""),
+                    "fit_score": row.get("fit_score", ""),
+                    "recommended_resume": row.get("recommended_resume", ""),
+                })
         for row in raw_rows:
             if row["job_id"] in kept_ids:
                 continue
+            canonical_key = coverage_reconcile.canonical_job_key(
+                coverage_reconcile.normalize_syncareer_job(row)
+            )
             watchlist[row["job_id"]] = {
                 "job_id": row["job_id"],
                 "title": row.get("title", ""),
@@ -1249,13 +1311,32 @@ def run() -> None:
                 "url": row.get("job_url", ""),
                 "kept": "no",
                 "first_seen": first_seen_iso,
+                "coverage_status": "out_of_scope",
+                "canonical_source": "syncareer",
+                "canonical_job_key": canonical_key,
+                "duplicate_of": "",
+                "source_snapshot_at": first_seen_iso,
+                "review_status": "unreviewed",
+                "source_pipeline": "syncareer",
             }
         watchlist = prune_watchlist(watchlist, now=now.astimezone(timezone.utc))
+
+        # Reconcile historical in-scope entries too, so validation changes take
+        # effect without waiting for a job to be rediscovered.
+        historical_rows: List[Dict[str, Any]] = []
+        for entry in watchlist.values():
+            if str(entry.get("kept") or "").lower() in {"yes", "true", "1"} and coverage_reconcile.syncareer_job_in_scope(entry):
+                historical_rows.append(entry)
+        coverage_reconcile.annotate_jobs(historical_rows, "syncareer")
         save_watchlist(watchlist)
 
-        inbox_rows = [_watchlist_to_alert_row(e) for e in inbox_entries(watchlist, now=now.astimezone(timezone.utc))]
+        inbox_rows = [
+            _watchlist_to_alert_row(e)
+            for e in inbox_entries(watchlist, now=now.astimezone(timezone.utc))
+            if not e.get("suppress_alert")
+        ]
         write_syncareer_inbox(inbox_rows, stamp, with_tiers=use_llm)
-        if kept_rows:
+        if scoring_rows:
             alert_paths = write_alert_outputs(alert_rows, stamp, with_tiers=use_llm)
         else:
             # Still refresh issue_body so GHA has a path even when 0 new.
@@ -1269,10 +1350,10 @@ def run() -> None:
             alert_paths["issue_body"] = body
         emit_github_output(
             {
-                "new_count": str(len(kept_rows)),
+                "new_count": str(len(scoring_rows)),
                 "inbox_count": str(len(inbox_rows)),
                 "stamp": stamp,
-                "issue_title": f"Syncareer alert {stamp} ({len(kept_rows)} new)",
+                "issue_title": f"Syncareer alert {stamp} ({len(scoring_rows)} new)",
                 "issue_body_path": str(alert_paths.get("issue_body", "")),
             }
         )
@@ -1282,7 +1363,7 @@ def run() -> None:
 
     # Console summary.
     print(f"Mode: {'alert' if alert_mode else 'standard'} | window: {time_window} | LLM: {'on' if use_llm else 'off'}")
-    print(f"Total found: {total_found} | new: {len(new_ids)} | kept (alert): {len(kept_rows)}")
+    print(f"Total found: {total_found} | new: {len(new_ids)} | kept (store): {len(kept_rows)} | visible: {len(scoring_rows)}")
     if use_llm:
         print(f"Tier 1: {len(tier1_rows)} | Tier 2: {len(tier2_rows)}")
         print(f"Screening: LLM={method_counts.get('llm_decision', 0)}, fallback={method_counts.get('fallback', 0)}")
