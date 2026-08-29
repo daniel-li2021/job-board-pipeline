@@ -13,6 +13,7 @@ from zoneinfo import ZoneInfo
 
 import coverage_reconcile
 from sources.company_aliases import load_alias_file, match_company_alias
+from sources.schema import classify_location_bucket
 
 BASE_DIR = Path(__file__).resolve().parent
 PUBLIC_DIR = BASE_DIR / "public"
@@ -23,6 +24,8 @@ PAGES_URL = "https://daniel-li2021.github.io/job-board-pipeline/"
 PACIFIC = ZoneInfo("America/Los_Angeles")
 REFERRAL_PATH = BASE_DIR / "source" / "target_companies.json"
 REVIEW_PATH = BASE_DIR / "profile" / "review_state.json"
+OFFICIAL_REGISTRY_PATH = BASE_DIR / "source" / "official_careers.json"
+INACTIVE_STATUSES = {"completed", "dismissed"}
 
 STORE_PATHS = {
     "board": BASE_DIR / "output" / "board" / "jobs.json",
@@ -55,31 +58,60 @@ def _load_entries(path: Path) -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
     return payload, [dict(entry) for entry in entries if isinstance(entry, dict)]
 
 
+def _age_bucket(age_hours: Optional[float]) -> str:
+    if age_hours is None:
+        return "unknown"
+    if age_hours < 3:
+        return "lt3h"
+    if age_hours < 24:
+        return "3to24h"
+    if age_hours <= 72:
+        return "1to3d"
+    if age_hours <= 168:
+        return "3to7d"
+    return "gt7d"
+
+
+def _age_hours(value: Optional[datetime], now: datetime) -> Optional[float]:
+    return round(max(0.0, (now - value).total_seconds() / 3600), 2) if value else None
+
+
 def recency(job: Dict[str, Any], now: datetime) -> Dict[str, Any]:
-    """Keep verified posting time distinct from low-confidence discovery time."""
+    """Expose posting recency and discovery activity as separate signals."""
     confidence = str(job.get("date_confidence") or "unknown").lower()
-    posted = parse_dt(job.get("posted_date") or job.get("posting_date"))
+    posted_raw = str(job.get("posted_date") or job.get("posting_date") or "").strip()
+    posted = parse_dt(posted_raw)
     first_seen = parse_dt(job.get("first_seen"))
     trusted = confidence in {"high", "medium"} and posted is not None
-    reference = posted if trusted else first_seen
-    if reference is None:
-        return {"bucket": "unknown", "kind": "unknown", "age_hours": None, "reference_at": ""}
-    age_hours = max(0.0, (now - reference).total_seconds() / 3600)
-    if age_hours < 3:
-        bucket = "lt3h"
-    elif age_hours < 24:
-        bucket = "3to24h"
-    elif age_hours <= 72:
-        bucket = "1to3d"
-    elif age_hours <= 168:
-        bucket = "3to7d"
+    date_only = bool(posted_raw) and len(posted_raw) == 10
+    posted_age = _age_hours(posted, now) if trusted else None
+    discovered_age = _age_hours(first_seen, now)
+    posted_bucket = _age_bucket(posted_age)
+    discovered_bucket = _age_bucket(discovered_age)
+
+    if trusted:
+        bucket = posted_bucket
+        kind = "confirmed_posted_date_only" if date_only else "confirmed_posted"
+        reference_at = posted.isoformat() if posted else ""
+        age_hours = posted_age
+    elif first_seen:
+        bucket = "newly_discovered" if (discovered_age or 0) <= 72 else discovered_bucket
+        kind = "newly_discovered"
+        reference_at = first_seen.isoformat()
+        age_hours = discovered_age
     else:
-        bucket = "gt7d"
+        bucket, kind, reference_at, age_hours = "unknown", "unknown", "", None
     return {
-        "bucket": bucket if trusted else ("newly_discovered" if age_hours <= 72 else bucket),
-        "kind": "confirmed_posted" if trusted else "newly_discovered",
-        "age_hours": round(age_hours, 2),
-        "reference_at": reference.isoformat(),
+        "bucket": bucket,
+        "kind": kind,
+        "age_hours": age_hours,
+        "reference_at": reference_at,
+        "posted": {"bucket": posted_bucket, "age_hours": posted_age, "at": posted.isoformat() if posted and trusted else "", "date_only": date_only, "trusted": trusted},
+        "discovered": {"bucket": discovered_bucket, "age_hours": discovered_age, "at": first_seen.isoformat() if first_seen else ""},
+        # Dashboard windows intentionally follow discovery/Issue activity, not
+        # the employer's posting date. posted_date remains reference metadata.
+        "fresh_activity": discovered_age is not None and discovered_age <= 24,
+        "rolling_activity": discovered_age is not None and discovered_age <= 72,
     }
 
 
@@ -138,6 +170,8 @@ def visible_candidate(row: Dict[str, Any]) -> bool:
         return False
     if row.get("suppress_alert"):
         return False
+    if classify_location_bucket(str(row.get("location") or "")) == "non_us":
+        return False
     tier = str(row.get("tier") or "-")
     return tier in {"A", "B", "1", "2", "-"}
 
@@ -148,13 +182,33 @@ def _sort_rows(rows: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
     return sorted(
         rows,
         key=lambda row: (
-            bucket_rank.get(row["freshness"]["bucket"], 9),
-            0 if row["freshness"]["kind"] == "confirmed_posted" else 1,
             tier_rank.get(str(row.get("tier") or "-"), 3),
             -float(row.get("score") or 0),
+            row["freshness"]["discovered"]["age_hours"] if row["freshness"]["discovered"]["age_hours"] is not None else 999999,
+            bucket_rank.get(row["freshness"]["posted"]["bucket"], 9),
             str(row.get("company") or "").lower(),
         ),
     )
+
+
+def official_search_catalog() -> List[Dict[str, Any]]:
+    registry = read_json(OFFICIAL_REGISTRY_PATH, {})
+    companies: List[Dict[str, Any]] = []
+    for company in registry.get("companies", []) if isinstance(registry, dict) else []:
+        if not isinstance(company, dict) or not company.get("enabled"):
+            continue
+        links = company.get("search_links") or []
+        if isinstance(links, str):
+            links = [{"label": "Official search", "url": links}]
+        companies.append({
+            "id": company.get("id", ""),
+            "name": company.get("name", ""),
+            "adapter": company.get("adapter", ""),
+            "automation": "active" if company.get("adapter") != "skip" else "search_link_only",
+            "search_links": [link for link in links if isinstance(link, dict) and link.get("url")],
+            "note": company.get("skip_reason", "") if company.get("adapter") == "skip" else "",
+        })
+    return sorted(companies, key=lambda item: (item["automation"] != "active", str(item["name"]).lower()))
 
 
 def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
@@ -172,11 +226,22 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         for entry in entries:
             all_rows.append(normalize_row(entry, pipeline, now, referrals, review, coverage_by_key))
 
-    current = [row for row in all_rows if visible_candidate(row)]
-    fresh = _sort_rows(row for row in current if row["freshness"]["age_hours"] is not None and row["freshness"]["age_hours"] <= 24)
-    rolling = _sort_rows(row for row in current if row["freshness"]["age_hours"] is not None and row["freshness"]["age_hours"] <= 72)
-    older = _sort_rows(row for row in current if row["freshness"]["age_hours"] is not None and 72 < row["freshness"]["age_hours"] <= 168)
-    referral_rows = _sort_rows(row for row in current if row.get("referral") and row["freshness"]["age_hours"] is not None and row["freshness"]["age_hours"] <= 168)
+    candidates = [row for row in all_rows if visible_candidate(row)]
+    current = [row for row in candidates if str(row.get("review_status") or "").lower() not in INACTIVE_STATUSES]
+    completed = _sort_rows(row for row in candidates if str(row.get("review_status") or "").lower() in INACTIVE_STATUSES)
+    fresh = _sort_rows(row for row in current if row["freshness"]["fresh_activity"])
+    rolling = _sort_rows(row for row in current if row["freshness"]["rolling_activity"])
+    older = _sort_rows(
+        row for row in current
+        if row["freshness"]["discovered"]["age_hours"] is not None
+        and 72 < row["freshness"]["discovered"]["age_hours"] <= 168
+    )
+    referral_rows = _sort_rows(
+        row for row in current
+        if row.get("referral")
+        and row["freshness"]["discovered"]["age_hours"] is not None
+        and row["freshness"]["discovered"]["age_hours"] <= 168
+    )
 
     def counts(rows: Iterable[Dict[str, Any]]) -> Dict[str, int]:
         result = Counter(row["pipeline"] for row in rows)
@@ -197,7 +262,9 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         "rolling_3d": rolling[:1000],
         "referrals": referral_rows[:500],
         "older_review": older[:500],
+        "completed": completed[:500],
         "coverage": coverage,
+        "official_searches": official_search_catalog(),
     }
 
 
@@ -205,24 +272,31 @@ HTML_TEMPLATE = r'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Daniel's Job Board</title>
 <style>
-:root{--bg:#f4f6f1;--card:#fff;--ink:#152018;--muted:#687269;--line:#dce2da;--green:#176b45;--gold:#ad6c00;--blue:#275fa8;--red:#9d3b31}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:1440px;margin:auto;padding:28px}header{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:20px}h1{font-size:30px;letter-spacing:-.03em;margin:0}h2{font-size:20px;margin:0 0 12px}p{margin:5px 0;color:var(--muted)}a{color:var(--blue)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.card,.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 2px 10px #1b2a1d0a}.card{padding:16px}.card b{display:block;font-size:24px}.panel{padding:18px;margin:16px 0;overflow:hidden}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;cursor:pointer}.tab.on{background:var(--ink);color:#fff}.tablewrap{overflow:auto;max-height:620px}table{border-collapse:collapse;width:100%;min-width:930px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #edf0ec;vertical-align:top}th{position:sticky;top:0;background:#fafbf9;color:#59645c;font-size:12px;text-transform:uppercase;letter-spacing:.04em}.pill{display:inline-block;padding:2px 7px;border-radius:999px;background:#edf2ee;font-size:12px;white-space:nowrap}.confirmed{color:var(--green);background:#e8f4ed}.discovered{color:var(--gold);background:#fff3d8}.gap{color:var(--red);background:#fbeae7}.duplicate{color:var(--green);background:#e8f4ed}.referral{color:#744a00;background:#fff0c8}.empty{padding:24px;color:var(--muted);text-align:center}.small{font-size:12px;color:var(--muted)}@media(max-width:760px){.wrap{padding:16px}.cards{grid-template-columns:1fr}header{display:block}}
+:root{--bg:#f4f6f1;--card:#fff;--ink:#152018;--muted:#687269;--line:#dce2da;--green:#176b45;--gold:#ad6c00;--blue:#275fa8;--red:#9d3b31}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:1440px;margin:auto;padding:28px}header{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:20px}h1{font-size:30px;letter-spacing:-.03em;margin:0}h2{font-size:20px;margin:0 0 12px}p{margin:5px 0;color:var(--muted)}a{color:var(--blue)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.card,.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 2px 10px #1b2a1d0a}.card{padding:16px}.card b{display:block;font-size:24px}.panel{padding:18px;margin:16px 0;overflow:hidden}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;cursor:pointer}.tab.on{background:var(--ink);color:#fff}.tablewrap{overflow:auto;max-height:620px}table{border-collapse:collapse;width:100%;min-width:930px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #edf0ec;vertical-align:top}th{position:sticky;top:0;background:#fafbf9;color:#59645c;font-size:12px;text-transform:uppercase;letter-spacing:.04em}.pill{display:inline-block;padding:2px 7px;border-radius:999px;background:#edf2ee;font-size:12px;white-space:nowrap}.confirmed{color:var(--green);background:#e8f4ed}.discovered{color:var(--gold);background:#fff3d8}.gap{color:var(--red);background:#fbeae7}.duplicate{color:var(--green);background:#e8f4ed}.referral{color:#744a00;background:#fff0c8}.empty{padding:24px;color:var(--muted);text-align:center}.small{font-size:12px;color:var(--muted)}details{margin:10px 0;color:var(--muted)}summary{cursor:pointer;color:var(--blue)}.links{display:flex;gap:8px;flex-wrap:wrap}.active{color:var(--green)}.manual{color:var(--gold)}@media(max-width:760px){.wrap{padding:16px}.cards{grid-template-columns:1fr}header{display:block}}
 </style></head><body><div class="wrap">
 <header><div><h1>Job visibility dashboard</h1><p id="updated"></p></div><div><a id="repo">Repository</a> · <a id="coverageLink">Coverage audit</a></div></header>
 <div class="cards" id="summary"></div>
-<section class="panel"><h2>Fresh — last 24 hours</h2><p>Confirmed posting dates are ranked ahead of low-confidence discovery times.</p><div class="tabs" data-target="fresh"></div><div id="fresh"></div></section>
-<section class="panel"><h2>Rolling — last 3 days</h2><p>Current A/B (or Syncareer kept) candidates across all three pipelines.</p><div class="tabs" data-target="rolling"></div><div id="rolling"></div></section>
+<section class="panel"><h2>Fresh — newly found in the last 24 hours</h2><p>A/B jobs first discovered by the latest pipeline runs. Employer posting dates do not control this section.</p><div class="tabs" data-target="fresh"></div><div id="fresh"></div></section>
+<section class="panel"><h2>Rolling — newly found in the last 3 days</h2><p>Current A/B (or Syncareer kept) candidates, ranked Tier A first, then score and discovery time.</p><div class="tabs" data-target="rolling"></div><div id="rolling"></div></section>
 <section class="panel"><h2>Referral opportunities</h2><p>Aliases come only from <a id="referralFile">source/target_companies.json</a>.</p><div id="referrals"></div></section>
-<section class="panel"><h2>Older / review later — 3–7 days</h2><p>Review state is read-only here and is committed in profile/review_state.json.</p><div id="older"></div></section>
-<section class="panel"><h2>Official coverage</h2><p>Exact matches are audit evidence. Company validation remains a manual decision.</p><div id="coverage"></div></section>
+<section class="panel"><h2>Older / review later — discovered 3–7 days ago</h2><p>Status is read-only here and is committed in profile/review_state.json.</p><div id="older"></div></section>
+<section class="panel"><h2>Completed / dismissed</h2><p>These jobs are removed from active sections so they do not repeatedly appear.</p><div id="completed"></div></section>
+<section class="panel"><h2>Official coverage</h2><p>Coverage asks whether an ATS/LinkedIn/Syncareer discovery is also present in a dedicated official-company scrape. It is not match quality or application status.</p><details><summary>Coverage labels</summary><p><b>Official source</b>: canonical official listing. <b>Exact match — unvalidated</b>: found in official results, but company coverage still needs manual approval. <b>Official duplicate</b>: exact match for a validated company. <b>Official gap</b>: expected official match is missing. <b>Pending refresh</b>: external discovery is newer than the official snapshot. <b>No dedicated scraper</b>: company is outside the official registry. <b>Unsupported</b>: official adapter is not automated yet.</p></details><div id="coverage"></div></section>
+<section class="panel"><h2>Official company search links</h2><p>Quick official searches for manual checks and future adapters. “Automated” entries already have a scraper; “link only” entries are intentionally not reverse-engineered yet.</p><div id="officialSearches"></div></section>
 </div><script id="payload" type="application/json">__PAYLOAD__</script><script>
 const D=JSON.parse(document.getElementById('payload').textContent); document.getElementById('updated').textContent=`Updated ${D.updated_pt} · snapshot ${D.generated_at}`; document.getElementById('repo').href=D.repository;document.getElementById('coverageLink').href=D.coverage_report;document.getElementById('referralFile').href=D.referral_file;
 const names={official:'Big Company Official',board:'ATS / LinkedIn',syncareer:'Syncareer'};
 document.getElementById('summary').innerHTML=Object.keys(names).map(k=>`<div class="card"><span>${names[k]}</span><b>${D.counts_24h[k]}</b><p>last 24h · ${D.counts_3d[k]} in 3 days</p><a href="${D.report_links[k]}">open report</a></div>`).join('');
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function jobs(rows){if(!rows.length)return '<div class="empty">No qualifying jobs in this window.</div>';return `<div class="tablewrap"><table><thead><tr><th>Tier</th><th>Company / Title</th><th>Location</th><th>Freshness</th><th>Referral</th><th>Coverage</th><th>Review</th><th>Source</th></tr></thead><tbody>${rows.map(r=>`<tr><td><b>${esc(r.tier)}</b>${r.score!==''?`<div class="small">${esc(r.score)}</div>`:''}</td><td><b>${esc(r.company)}</b><br><a href="${esc(r.url)}">${esc(r.title)}</a></td><td>${esc(r.location)}</td><td><span class="pill ${r.freshness.kind==='confirmed_posted'?'confirmed':'discovered'}">${esc(r.freshness.bucket)}</span><div class="small">${r.freshness.kind==='confirmed_posted'?'posted '+esc(r.posted_date):'newly discovered · low confidence'}</div></td><td>${r.referral?`<span class="pill referral">${esc(r.referral)}</span>`:'-'}</td><td><span class="pill ${r.coverage_status.includes('gap')?'gap':r.coverage_status.includes('duplicate')||r.coverage_status==='official_canonical'?'duplicate':''}">${esc(r.coverage_status)}</span></td><td>${esc(r.review_status)}</td><td>${esc(names[r.pipeline]||r.pipeline)}</td></tr>`).join('')}</tbody></table></div>`}
+const coverageNames={official_canonical:'Official source',covered_unvalidated:'Exact match — unvalidated',official_duplicate:'Official duplicate',official_gap:'Official gap',pending_official_refresh:'Pending refresh',not_dedicated:'No dedicated scraper',official_unsupported:'Unsupported',not_reconciled:'Not reconciled'};
+const bucketNames={lt3h:'<3h', '3to24h':'3–24h', '1to3d':'1–3d', '3to7d':'3–7d', gt7d:'>7d', unknown:'unknown'};
+function discoveryText(r){const d=r.freshness.discovered||{};return d.age_hours===null||d.age_hours===undefined?'Discovery unknown':`Found ${bucketNames[d.bucket]||d.bucket} ago`}
+function postingText(r){const p=r.freshness.posted||{};if(!p.trusted)return r.posted_date?`Posted ${esc(r.posted_date)} · low confidence`:'Posting date unknown';return p.date_only?`Posted ${esc(r.posted_date)} · day precision`:`Posted ${bucketNames[p.bucket]||p.bucket} ago`}
+function jobs(rows){if(!rows.length)return '<div class="empty">No qualifying jobs in this window.</div>';return `<div class="tablewrap"><table><thead><tr><th>Tier</th><th>Company / Title</th><th>Location</th><th>Discovered / Posted</th><th>Referral</th><th>Coverage</th><th>Status</th><th>Source</th></tr></thead><tbody>${rows.map(r=>`<tr><td><b>${esc(r.tier)}</b>${r.score!==''?`<div class="small">${esc(r.score)}</div>`:''}</td><td><b>${esc(r.company)}</b><br><a href="${esc(r.url)}">${esc(r.title)}</a></td><td>${esc(r.location)}</td><td><span class="pill discovered">${discoveryText(r)}</span><div class="small">${postingText(r)}</div></td><td>${r.referral?`<span class="pill referral">${esc(r.referral)}</span>`:'-'}</td><td><span class="pill ${r.coverage_status.includes('gap')?'gap':r.coverage_status.includes('duplicate')||r.coverage_status==='official_canonical'?'duplicate':''}">${esc(coverageNames[r.coverage_status]||r.coverage_status)}</span></td><td>${esc(r.review_status)}</td><td>${esc(names[r.pipeline]||r.pipeline)}</td></tr>`).join('')}</tbody></table></div>`}
 function tabs(elId,rows){const tab=document.querySelector(`[data-target="${elId}"]`);const box=document.getElementById(elId);let active='all';const draw=()=>{tab.innerHTML=['all',...Object.keys(names)].map(k=>`<button class="tab ${k===active?'on':''}" data-k="${k}">${k==='all'?'All':names[k]} (${k==='all'?rows.length:rows.filter(r=>r.pipeline===k).length})</button>`).join('');box.innerHTML=jobs(active==='all'?rows:rows.filter(r=>r.pipeline===active));tab.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.k;draw()})};draw()}
-tabs('fresh',D.fresh_24h);tabs('rolling',D.rolling_3d);document.getElementById('referrals').innerHTML=jobs(D.referrals);document.getElementById('older').innerHTML=jobs(D.older_review);
+tabs('fresh',D.fresh_24h);tabs('rolling',D.rolling_3d);document.getElementById('referrals').innerHTML=jobs(D.referrals);document.getElementById('older').innerHTML=jobs(D.older_review);document.getElementById('completed').innerHTML=jobs(D.completed||[]);
 const companies=D.coverage.companies||[];document.getElementById('coverage').innerHTML=`<div class="tablewrap"><table><thead><tr><th>Company</th><th>Manual state</th><th>In scope</th><th>Exact</th><th>Gaps</th><th>Pending</th><th>Coverage</th></tr></thead><tbody>${companies.map(c=>`<tr><td>${esc(c.name)}</td><td>${esc(c.manual_status)}</td><td>${c.in_scope}</td><td>${c.exact_covered}</td><td>${c.official_gaps}</td><td>${c.pending_refresh}</td><td>${c.coverage_ratio===null?'-':Math.round(c.coverage_ratio*100)+'%'}</td></tr>`).join('')}</tbody></table></div>`;
+document.getElementById('officialSearches').innerHTML=`<div class="tablewrap"><table><thead><tr><th>Company</th><th>Automation</th><th>Official searches</th><th>Note</th></tr></thead><tbody>${(D.official_searches||[]).map(c=>`<tr><td><b>${esc(c.name)}</b></td><td class="${c.automation==='active'?'active':'manual'}">${c.automation==='active'?'Automated':'Link only'}</td><td><div class="links">${c.search_links.length?c.search_links.map(l=>`<a href="${esc(l.url)}">${esc(l.label||'Search')}</a>`).join(''):'-'}</div></td><td class="small">${esc(c.note)}</td></tr>`).join('')}</tbody></table></div>`;
 </script></body></html>'''
 
 

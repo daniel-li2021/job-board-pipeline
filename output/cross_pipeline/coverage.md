@@ -1,6 +1,6 @@
 # Cross-pipeline official coverage audit
 
-- Generated: 2026-08-29T03:57:39.575060+00:00
+- Generated: 2026-08-29T04:28:14.790876+00:00
 - Official snapshot: 2026-08-29T00:24:35.875420+00:00
 - Coverage scope: jobs from the last 3 days that pass shared hard + role/seniority prefilters; LLM score is not used.
 - Validation: 100% exact observed coverage is the current review target; final validation is manual.
@@ -23,16 +23,23 @@
 | SAP | unvalidated | sap | 2 | 2 | 0 | 0 | 100% |
 | Salesforce | unvalidated | workday | 2 | 0 | 2 | 0 | 0% |
 | Walmart Global Tech | unsupported | skip | 2 | 0 | 0 | 0 | - |
+| Goldman Sachs | unsupported | skip | 1 | 0 | 0 | 0 | - |
 | Microsoft | unvalidated | microsoft | 1 | 1 | 0 | 0 | 100% |
+| eBay | unsupported | skip | 1 | 0 | 0 | 0 | - |
+| AMD | unsupported | skip | 0 | 0 | 0 | 0 | - |
 | Bloomberg | unvalidated | avature | 0 | 0 | 0 | 0 | - |
 | Capital One | unvalidated | workday | 0 | 0 | 0 | 0 | - |
+| Disney | unsupported | skip | 0 | 0 | 0 | 0 | - |
 | DoorDash | unvalidated | greenhouse | 0 | 0 | 0 | 0 | - |
 | HPE | unvalidated | workday | 0 | 0 | 0 | 0 | - |
 | LinkedIn | unsupported | skip | 0 | 0 | 0 | 0 | - |
 | Meta | unsupported | skip | 0 | 0 | 0 | 0 | - |
+| Pure Storage | unsupported | skip | 0 | 0 | 0 | 0 | - |
+| Qualcomm | unsupported | skip | 0 | 0 | 0 | 0 | - |
 | ServiceNow | unvalidated | smartrecruiters | 0 | 0 | 0 | 0 | - |
 | Snap | unvalidated | workday | 0 | 0 | 0 | 0 | - |
 | Snowflake | unvalidated | ashby | 0 | 0 | 0 | 0 | - |
+| Zoom | unsupported | skip | 0 | 0 | 0 | 0 | - |
 
 ## Gaps / pending review (17)
 

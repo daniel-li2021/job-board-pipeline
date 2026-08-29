@@ -15,6 +15,24 @@ from typing import Any, Dict, Iterable, List, Optional
 from .schema import normalize_company_key
 
 
+LEGAL_SUFFIXES = {
+    "co", "company", "corp", "corporation", "inc", "incorporated", "llc",
+    "limited", "ltd", "plc", "group", "holdings", "services", "usa", "us",
+}
+
+
+def _company_forms(company_name: str) -> set[str]:
+    """Return exact normalized forms, optionally without legal suffix tokens."""
+    tokens = [t for t in re.split(r"[^a-z0-9]+", (company_name or "").lower()) if t]
+    forms = {normalize_company_key(company_name)}
+    stripped = list(tokens)
+    while stripped and stripped[-1] in LEGAL_SUFFIXES:
+        stripped.pop()
+    if stripped:
+        forms.add("".join(stripped))
+    return {form for form in forms if form}
+
+
 def prepare_alias_entries(entries: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
     prepared: List[Dict[str, Any]] = []
     for entry in entries:
@@ -45,23 +63,22 @@ def load_alias_file(path: Path, key: str = "companies") -> List[Dict[str, Any]]:
 
 
 def match_company_alias(company_name: str, entries: Iterable[Dict[str, Any]]) -> Optional[str]:
-    """Return the canonical name using safe exact/token/long-alias matching.
+    """Return the canonical name using exact, token, and declared aliases only.
 
-    Short aliases such as ``sap`` or ``meta`` only match an exact normalized
-    company name or a whole token; long aliases (>=6 chars) may match inside a
-    legal company suffix.  Bidirectional substring matching is deliberately
-    avoided (it previously matched ``Sapios`` as ``SAP``).
+    Arbitrary substrings are deliberately forbidden: besides short-alias errors
+    such as SAP/Sapios, they can make eHealth match GE HealthCare. Legal suffixes
+    are handled by comparing a second normalized form with trailing suffix tokens
+    removed.
     """
 
     key = normalize_company_key(company_name)
     if not key:
         return None
+    forms = _company_forms(company_name)
     tokens = {t for t in re.split(r"[^a-z0-9]+", (company_name or "").lower()) if t}
     for entry in entries:
         aliases = entry.get("norm_aliases") or []
         for alias in aliases:
-            if key == alias or alias in tokens:
-                return str(entry.get("name") or "") or None
-            if len(alias) >= 6 and alias in key:
+            if alias in forms or alias in tokens:
                 return str(entry.get("name") or "") or None
     return None

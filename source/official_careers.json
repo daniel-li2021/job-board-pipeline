@@ -6,31 +6,36 @@
       "id": "google",
       "name": "Google",
       "adapter": "google",
-      "enabled": true
+      "enabled": true,
+      "search_links": [{"label": "US software", "url": "https://www.google.com/about/careers/applications/jobs/results/?q=software%20engineer&location=United%20States"}]
     },
     {
       "id": "amazon",
       "name": "Amazon",
       "adapter": "amazon",
-      "enabled": true
+      "enabled": true,
+      "search_links": [{"label": "US software · newest", "url": "https://www.amazon.jobs/en/search?base_query=software%20engineer&country=USA&sort=recent"}]
     },
     {
       "id": "apple",
       "name": "Apple",
       "adapter": "apple",
-      "enabled": true
+      "enabled": true,
+      "search_links": [{"label": "United States", "url": "https://jobs.apple.com/en-us/search?location=united-states-USA"}]
     },
     {
       "id": "microsoft",
       "name": "Microsoft",
       "adapter": "microsoft",
-      "enabled": true
+      "enabled": true,
+      "search_links": [{"label": "US software", "url": "https://jobs.careers.microsoft.com/global/en/search?q=software%20engineer&lc=United%20States"}]
     },
     {
       "id": "nvidia",
       "name": "NVIDIA",
       "adapter": "workday",
       "enabled": true,
+      "search_links": [{"label": "Software search", "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite?q=software%20engineer"}],
       "workday": {
         "host": "https://nvidia.wd5.myworkdayjobs.com",
         "tenant": "nvidia",
@@ -42,6 +47,7 @@
       "name": "Salesforce",
       "adapter": "workday",
       "enabled": true,
+      "search_links": [{"label": "Software search", "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site?q=software%20engineer"}],
       "workday": {
         "host": "https://salesforce.wd12.myworkdayjobs.com",
         "tenant": "salesforce",
@@ -53,6 +59,7 @@
       "name": "Adobe",
       "adapter": "workday",
       "enabled": true,
+      "search_links": [{"label": "Software search", "url": "https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced?q=software%20engineer"}],
       "workday": {
         "host": "https://adobe.wd5.myworkdayjobs.com",
         "tenant": "adobe",
@@ -64,6 +71,7 @@
       "name": "Meta",
       "adapter": "skip",
       "enabled": true,
+      "search_links": [{"label": "Engineering · newest", "url": "https://www.metacareers.com/jobsearch/?q=software%20engineer&sort_by_new=true"}],
       "skip_reason": "metacareers.com returns HTTP 400 for anonymous HTTP (WAF). Need a working search URL/HAR of the jobsearch JSON/GraphQL that a logged-out browser uses: https://www.metacareers.com/jobsearch/?q=software%20engineer&sort_by_new=true&roles[0]=Full%20time%20employment"
     },
     {
@@ -71,19 +79,22 @@
       "name": "TikTok",
       "adapter": "skip",
       "enabled": true,
+      "search_links": [{"label": "Software search", "url": "https://lifeattiktok.com/search?recruitment_id_list=1%2C201&keyword=software+engineer"}],
       "skip_reason": "lifeattiktok.com/search is Next.js CSR; public job-list API returns empty/HTML. Need the XHR/fetch URL from DevTools on https://lifeattiktok.com/search?recruitment_id_list=1%2C201&keyword=software+engineer&limit=12&offset=0&location_code_list=CT_100762,CT_247,CT_1103554,CT_94,CT_103,CT_223,CT_243,CT_114,CT_203,CT_75,CT_1103355,CT_130,CT_157,CT_233"
     },
     {
       "id": "uber",
       "name": "Uber",
       "adapter": "uber",
-      "enabled": true
+      "enabled": true,
+      "search_links": [{"label": "Software search", "url": "https://jobs.uber.com/en/jobs/?search=software%20engineer&page=1&pagesize=10"}]
     },
     {
       "id": "doordash",
       "name": "DoorDash",
       "adapter": "greenhouse",
       "enabled": true,
+      "search_links": [{"label": "All official openings", "url": "https://boards.greenhouse.io/doordashusa"}],
       "greenhouse": {
         "token": "doordashusa"
       }
@@ -93,6 +104,7 @@
       "name": "Snap",
       "adapter": "workday",
       "enabled": true,
+      "search_links": [{"label": "Software search", "url": "https://wd1.myworkdaysite.com/recruiting/snapchat/snap?q=software%20engineer"}],
       "workday": {
         "host": "https://wd1.myworkdaysite.com",
         "tenant": "snapchat",
@@ -105,6 +117,7 @@
       "name": "Pinterest",
       "adapter": "greenhouse",
       "enabled": true,
+      "search_links": [{"label": "All official openings", "url": "https://boards.greenhouse.io/pinterest"}],
       "greenhouse": {
         "token": "pinterest"
       }
@@ -114,6 +127,7 @@
       "name": "Snowflake",
       "adapter": "ashby",
       "enabled": true,
+      "search_links": [{"label": "All official openings", "url": "https://jobs.ashbyhq.com/snowflake"}],
       "ashby": {
         "token": "snowflake"
       }
@@ -123,6 +137,7 @@
       "name": "ServiceNow",
       "adapter": "smartrecruiters",
       "enabled": true,
+      "search_links": [{"label": "All official openings", "url": "https://careers.smartrecruiters.com/ServiceNow"}],
       "smartrecruiters": {
         "slug": "ServiceNow"
       }
@@ -132,6 +147,7 @@
       "name": "LinkedIn",
       "adapter": "skip",
       "enabled": true,
+      "search_links": [],
       "skip_reason": "careers.linkedin.com has no public job-search API/ATS feed; Workday CXS is 401. Need the official LinkedIn-the-company engineering search URL (not linkedin.com/jobs)."
     },
     {
@@ -139,6 +155,7 @@
       "name": "Bloomberg",
       "adapter": "avature",
       "enabled": true,
+      "search_links": [{"label": "Software search", "url": "https://bloomberg.avature.net/careers/SearchJobs?q=software%20engineer"}],
       "avature": {
         "search_url": "https://bloomberg.avature.net/careers/SearchJobs"
       }
@@ -148,6 +165,7 @@
       "name": "JPMorgan Chase",
       "adapter": "oracle_hcm",
       "enabled": true,
+      "search_links": [{"label": "Software search", "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions?keyword=software%20engineer"}],
       "oracle_hcm": {
         "host": "https://jpmc.fa.oraclecloud.com",
         "site_number": "CX_1001",
@@ -159,6 +177,7 @@
       "name": "Capital One",
       "adapter": "workday",
       "enabled": true,
+      "search_links": [{"label": "Software search", "url": "https://capitalone.wd12.myworkdayjobs.com/en-US/Capital_One?q=software%20engineer"}],
       "workday": {
         "host": "https://capitalone.wd12.myworkdayjobs.com",
         "tenant": "capitalone",
@@ -170,6 +189,7 @@
       "name": "Oracle",
       "adapter": "oracle_hcm",
       "enabled": true,
+      "search_links": [{"label": "Software search", "url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/requisitions?keyword=software%20engineer"}],
       "oracle_hcm": {
         "host": "https://eeho.fa.us2.oraclecloud.com",
         "site_number": "CX_45001",
@@ -181,6 +201,7 @@
       "name": "Walmart Global Tech",
       "adapter": "skip",
       "enabled": true,
+      "search_links": [{"label": "US software search", "url": "https://careers.walmart.com/results?q=software%20engineer&jobCity=United%20States"}],
       "skip_reason": "careers.walmart.com is a custom Next.js app; widgets/Workday CXS/JSON endpoints 404 or 422. Need the jobs search XHR URL from DevTools on a US software-engineer search."
     },
     {
@@ -188,6 +209,7 @@
       "name": "Cisco",
       "adapter": "workday",
       "enabled": true,
+      "search_links": [{"label": "Software search", "url": "https://cisco.wd5.myworkdayjobs.com/en-US/Cisco_Careers?q=software%20engineer"}],
       "workday": {
         "host": "https://cisco.wd5.myworkdayjobs.com",
         "tenant": "cisco",
@@ -198,18 +220,76 @@
       "id": "sap",
       "name": "SAP",
       "adapter": "sap",
-      "enabled": true
+      "enabled": true,
+      "search_links": [{"label": "US software", "url": "https://jobs.sap.com/search/?q=software%20engineer&locationsearch=United%20States"}]
     },
     {
       "id": "hpe",
       "name": "HPE",
       "adapter": "workday",
       "enabled": true,
+      "search_links": [{"label": "Software search", "url": "https://hpe.wd5.myworkdayjobs.com/en-US/Jobsathpe?q=software%20engineer"}],
       "workday": {
         "host": "https://hpe.wd5.myworkdayjobs.com",
         "tenant": "hpe",
         "site": "Jobsathpe"
       }
+    },
+    {
+      "id": "disney",
+      "name": "Disney",
+      "adapter": "skip",
+      "enabled": true,
+      "search_links": [{"label": "US software", "url": "https://www.disneycareers.com/en/search-jobs/software%20engineer/United%20States/391/1/2/6252001/39x76/-98x5/100/2"}],
+      "skip_reason": "Verified official filtered search captured; automated adapter deferred."
+    },
+    {
+      "id": "ebay",
+      "name": "eBay",
+      "adapter": "skip",
+      "enabled": true,
+      "search_links": [{"label": "Software search", "url": "https://jobs.ebayinc.com/us/en/search-results?keywords=software%20engineer"}],
+      "skip_reason": "Verified official search captured; automated adapter deferred."
+    },
+    {
+      "id": "qualcomm",
+      "name": "Qualcomm",
+      "adapter": "skip",
+      "enabled": true,
+      "search_links": [{"label": "US software", "url": "https://careers.qualcomm.com/careers?query=software%20engineer&location=United%20States"}],
+      "skip_reason": "Verified official search captured; automated adapter deferred."
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "adapter": "skip",
+      "enabled": true,
+      "search_links": [{"label": "US software", "url": "https://careers.amd.com/careers-home/jobs?keywords=software%20engineer&location=United%20States"}],
+      "skip_reason": "Verified official search captured; automated adapter deferred."
+    },
+    {
+      "id": "zoom",
+      "name": "Zoom",
+      "adapter": "skip",
+      "enabled": true,
+      "search_links": [{"label": "Software search", "url": "https://zoom.wd5.myworkdayjobs.com/en-US/Zoom?q=software%20engineer"}],
+      "skip_reason": "Verified official Workday search captured; adapter configuration deferred."
+    },
+    {
+      "id": "goldman-sachs",
+      "name": "Goldman Sachs",
+      "adapter": "skip",
+      "enabled": true,
+      "search_links": [{"label": "Software search", "url": "https://higher.gs.com/results?SEARCH=software%20engineer"}],
+      "skip_reason": "Verified official search captured; automated adapter deferred."
+    },
+    {
+      "id": "pure-storage",
+      "name": "Pure Storage",
+      "adapter": "skip",
+      "enabled": true,
+      "search_links": [{"label": "All official openings", "url": "https://job-boards.greenhouse.io/purestorage"}],
+      "skip_reason": "Verified official Greenhouse board captured; query-specific adapter deferred."
     }
   ]
 }

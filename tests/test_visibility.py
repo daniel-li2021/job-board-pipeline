@@ -5,12 +5,16 @@ import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from unittest.mock import patch
 
 import board_pipeline
 import coverage_reconcile
 import daily_pipeline
+import dashboard
+import review_state
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
 from sources.schema import make_job
+from sources.schema import classify_location_bucket
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -65,6 +69,84 @@ class ReferralAliasTests(unittest.TestCase):
         targets = load_alias_file(ROOT / "source" / "target_companies.json")
         self.assertIsNone(match_company_alias("Sapios", targets))
         self.assertIsNone(match_company_alias("Metadata Systems", targets))
+        self.assertIsNone(match_company_alias("GE HealthCare", targets))
+
+
+class DashboardPolicyTests(unittest.TestCase):
+    def test_fresh_and_rolling_follow_first_seen_not_posted_date(self) -> None:
+        now = datetime(2026, 8, 29, 12, tzinfo=timezone.utc)
+        recent_discovery = dashboard.recency(
+            {
+                "posted_date": "2026-08-01",
+                "date_confidence": "high",
+                "first_seen": (now - timedelta(hours=2)).isoformat(),
+            },
+            now,
+        )
+        self.assertTrue(recent_discovery["fresh_activity"])
+        self.assertTrue(recent_discovery["rolling_activity"])
+        self.assertEqual("gt7d", recent_discovery["posted"]["bucket"])
+
+        old_discovery = dashboard.recency(
+            {
+                "posted_date": now.isoformat(),
+                "date_confidence": "high",
+                "first_seen": (now - timedelta(days=4)).isoformat(),
+            },
+            now,
+        )
+        self.assertFalse(old_discovery["fresh_activity"])
+        self.assertFalse(old_discovery["rolling_activity"])
+
+    def test_sort_is_tier_then_score_then_discovery(self) -> None:
+        now = datetime(2026, 8, 29, 12, tzinfo=timezone.utc)
+
+        def row(tier: str, score: int, age: int, company: str) -> dict:
+            return {
+                "tier": tier,
+                "score": score,
+                "company": company,
+                "freshness": dashboard.recency(
+                    {"first_seen": (now - timedelta(hours=age)).isoformat()}, now
+                ),
+            }
+
+        ordered = dashboard._sort_rows([
+            row("B", 99, 1, "B Co"),
+            row("A", 85, 5, "A lower"),
+            row("A", 92, 20, "A higher"),
+        ])
+        self.assertEqual(["A higher", "A lower", "B Co"], [item["company"] for item in ordered])
+
+    def test_official_registry_has_search_link_only_targets(self) -> None:
+        catalog = {entry["id"]: entry for entry in dashboard.official_search_catalog()}
+        for company_id in ("disney", "ebay", "qualcomm", "amd", "zoom", "goldman-sachs", "pure-storage"):
+            self.assertEqual("search_link_only", catalog[company_id]["automation"])
+            self.assertTrue(catalog[company_id]["search_links"])
+
+    def test_known_foreign_city_only_locations_are_not_visible(self) -> None:
+        for location in ("Bucharest", "Noida", "Bratislava, Slovakia", "Basel"):
+            self.assertEqual("non_us", classify_location_bucket(location))
+            self.assertFalse(dashboard.visible_candidate({
+                "location": location,
+                "filter_status": "kept",
+                "suppress_alert": False,
+                "tier": "B",
+            }))
+
+    def test_status_command_resolves_url_and_persists_completed(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            store = root / "jobs.json"
+            state = root / "review_state.json"
+            job = official_job("10001", "Software Engineer I", "Seattle, WA")
+            store.write_text(json.dumps({"entries": [job]}), encoding="utf-8")
+            state.write_text(json.dumps({"jobs": {}}), encoding="utf-8")
+            with patch.object(review_state, "STORE_PATHS", (store,)), patch.object(review_state, "STATE_PATH", state):
+                key = review_state.set_status(job["official_url"], "completed", "applied")
+            saved = json.loads(state.read_text(encoding="utf-8"))
+            self.assertEqual("completed", saved["jobs"][key]["status"])
+            self.assertEqual("applied", saved["jobs"][key]["notes"])
 
 
 class CoverageMatchingTests(unittest.TestCase):
@@ -171,6 +253,7 @@ class ReportingWorkflowTests(unittest.TestCase):
         self.assertIn("workflow_dispatch:", syncareer)
         self.assertIn("actions/deploy-pages@v4", pages)
         self.assertIn("concurrency:", pages)
+        self.assertIn('"profile/review_state.json"', pages)
         self.assertFalse((ROOT / ".github/workflows/scheduled-jobs.yml").exists())
 
 

@@ -1,5 +1,5 @@
 {
-  "_comment": "Companies to flag for potential referral. Matching uses exact company key, whole-token, or substring only for aliases >= 6 chars (same rules as profile/company_filters.json). Short aliases like sap/meta/apple never match as substrings.",
+  "_comment": "Single canonical referral-company list. Matching uses exact normalized names, whole tokens, declared aliases, and safe removal of trailing legal suffixes; arbitrary substring matching is not used.",
   "companies": [
     {"name": "Amazon", "aliases": ["amazon", "aws", "amazon web services"]},
     {"name": "MathWorks", "aliases": ["mathworks"]},

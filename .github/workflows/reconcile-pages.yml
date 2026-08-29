@@ -1,6 +1,15 @@
 name: Reconcile and publish dashboard
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "profile/review_state.json"
+      - "profile/official_coverage.json"
+      - "source/official_careers.json"
+      - "source/target_companies.json"
+      - "dashboard.py"
+      - "coverage_reconcile.py"
   workflow_run:
     workflows: ["Official careers", "Board job alert", "Syncareer job alert"]
     types: [completed]

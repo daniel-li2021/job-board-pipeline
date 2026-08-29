@@ -1,4 +1,4 @@
 {
-  "_comment": "Committed dashboard review state keyed by canonical_job_key. Example: {\"jobs\": {\"url::...\": {\"status\": \"reviewed\", \"reviewed_at\": \"...\", \"notes\": \"...\"}}}",
+  "_comment": "Committed dashboard status keyed by canonical_job_key. Allowed: unreviewed, in_progress, applied, replied, completed, dismissed. completed/dismissed jobs move out of active dashboard sections.",
   "jobs": {}
 }

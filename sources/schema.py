@@ -91,6 +91,11 @@ NON_US_TOKENS = [
     "hyderabad", "beijing", "shanghai", "tokyo", "berlin", "paris",
     "amsterdam", "dublin", "sydney", "norway", "denmark", "finland",
     "belgium", "austria", "oslo", "copenhagen", "helsinki",
+    "bucharest", "noida", "bratislava", "slovakia", "belgrade",
+    "serbia", "basel", "hamburg", "heredia", "costa rica",
+    "cape town", "south africa", "colombia", "bogota", "chile",
+    "santiago", "bahrain", "hong kong", "sofia", "bulgaria",
+    "ariana", "tunisia",
 ]
 
 

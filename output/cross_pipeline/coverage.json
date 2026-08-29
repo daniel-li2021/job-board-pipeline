@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-29T03:57:39.575060+00:00",
+  "generated_at": "2026-08-29T04:28:14.790876+00:00",
   "window_days": 3,
   "official_snapshot_at": "2026-08-29T00:24:35.875420+00:00",
   "manual_validation_target": "100% exact observed in-scope coverage; user makes final validation decision",
   "counts": {
-    "not_dedicated": 349,
+    "not_dedicated": 347,
     "covered_unvalidated": 42,
     "official_gap": 17,
-    "official_unsupported": 6
+    "official_unsupported": 8
   },
   "companies": [
     {
@@ -207,6 +207,20 @@
       "syncareer_jobs": 0
     },
     {
+      "id": "goldman-sachs",
+      "name": "Goldman Sachs",
+      "adapter": "skip",
+      "manual_status": "unsupported",
+      "in_scope": 1,
+      "exact_covered": 0,
+      "official_gaps": 0,
+      "pending_refresh": 0,
+      "unsupported": 1,
+      "coverage_ratio": null,
+      "board_jobs": 0,
+      "syncareer_jobs": 1
+    },
+    {
       "id": "microsoft",
       "name": "Microsoft",
       "adapter": "microsoft",
@@ -219,6 +233,34 @@
       "coverage_ratio": 1.0,
       "board_jobs": 0,
       "syncareer_jobs": 1
+    },
+    {
+      "id": "ebay",
+      "name": "eBay",
+      "adapter": "skip",
+      "manual_status": "unsupported",
+      "in_scope": 1,
+      "exact_covered": 0,
+      "official_gaps": 0,
+      "pending_refresh": 0,
+      "unsupported": 1,
+      "coverage_ratio": null,
+      "board_jobs": 0,
+      "syncareer_jobs": 1
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "adapter": "skip",
+      "manual_status": "unsupported",
+      "in_scope": 0,
+      "exact_covered": 0,
+      "official_gaps": 0,
+      "pending_refresh": 0,
+      "unsupported": 0,
+      "coverage_ratio": null,
+      "board_jobs": 0,
+      "syncareer_jobs": 0
     },
     {
       "id": "bloomberg",
@@ -239,6 +281,20 @@
       "name": "Capital One",
       "adapter": "workday",
       "manual_status": "unvalidated",
+      "in_scope": 0,
+      "exact_covered": 0,
+      "official_gaps": 0,
+      "pending_refresh": 0,
+      "unsupported": 0,
+      "coverage_ratio": null,
+      "board_jobs": 0,
+      "syncareer_jobs": 0
+    },
+    {
+      "id": "disney",
+      "name": "Disney",
+      "adapter": "skip",
+      "manual_status": "unsupported",
       "in_scope": 0,
       "exact_covered": 0,
       "official_gaps": 0,
@@ -305,6 +361,34 @@
       "syncareer_jobs": 0
     },
     {
+      "id": "pure-storage",
+      "name": "Pure Storage",
+      "adapter": "skip",
+      "manual_status": "unsupported",
+      "in_scope": 0,
+      "exact_covered": 0,
+      "official_gaps": 0,
+      "pending_refresh": 0,
+      "unsupported": 0,
+      "coverage_ratio": null,
+      "board_jobs": 0,
+      "syncareer_jobs": 0
+    },
+    {
+      "id": "qualcomm",
+      "name": "Qualcomm",
+      "adapter": "skip",
+      "manual_status": "unsupported",
+      "in_scope": 0,
+      "exact_covered": 0,
+      "official_gaps": 0,
+      "pending_refresh": 0,
+      "unsupported": 0,
+      "coverage_ratio": null,
+      "board_jobs": 0,
+      "syncareer_jobs": 0
+    },
+    {
       "id": "servicenow",
       "name": "ServiceNow",
       "adapter": "smartrecruiters",
@@ -337,6 +421,20 @@
       "name": "Snowflake",
       "adapter": "ashby",
       "manual_status": "unvalidated",
+      "in_scope": 0,
+      "exact_covered": 0,
+      "official_gaps": 0,
+      "pending_refresh": 0,
+      "unsupported": 0,
+      "coverage_ratio": null,
+      "board_jobs": 0,
+      "syncareer_jobs": 0
+    },
+    {
+      "id": "zoom",
+      "name": "Zoom",
+      "adapter": "skip",
+      "manual_status": "unsupported",
       "in_scope": 0,
       "exact_covered": 0,
       "official_gaps": 0,
@@ -15550,7 +15648,8 @@
       "duplicate_of": "",
       "suppress_alert": false,
       "coverage_match_method": "",
-      "coverage_status": "not_dedicated",
+      "official_company_id": "goldman-sachs",
+      "coverage_status": "official_unsupported",
       "review_status": "unreviewed"
     },
     {
@@ -18290,7 +18389,8 @@
       "duplicate_of": "",
       "suppress_alert": false,
       "coverage_match_method": "",
-      "coverage_status": "not_dedicated",
+      "official_company_id": "ebay",
+      "coverage_status": "official_unsupported",
       "review_status": "unreviewed"
     },
     {

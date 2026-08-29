@@ -24,6 +24,13 @@
     "walmart": {"status": "unsupported", "notes": "Official adapter unavailable"},
     "cisco": {"status": "unvalidated", "notes": ""},
     "sap": {"status": "unvalidated", "notes": ""},
-    "hpe": {"status": "unvalidated", "notes": ""}
+    "hpe": {"status": "unvalidated", "notes": ""},
+    "disney": {"status": "unsupported", "notes": "Official search link captured; adapter pending"},
+    "ebay": {"status": "unsupported", "notes": "Official search link captured; adapter pending"},
+    "qualcomm": {"status": "unsupported", "notes": "Official search link captured; adapter pending"},
+    "amd": {"status": "unsupported", "notes": "Official search link captured; adapter pending"},
+    "zoom": {"status": "unsupported", "notes": "Official search link captured; adapter pending"},
+    "goldman-sachs": {"status": "unsupported", "notes": "Official search link captured; adapter pending"},
+    "pure-storage": {"status": "unsupported", "notes": "Official search link captured; adapter pending"}
   }
 }

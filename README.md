@@ -216,7 +216,10 @@ collected then passed through conservative `keep_us_or_unknown` (keep US /
 Remote-US / multi-office if any US / ambiguous; drop confirmed all-non-US).
 
 Skipped until a working public search API exists: Meta, TikTok, LinkedIn
-(corporate), Walmart.
+(corporate), Walmart. The same registry also stores verified manual
+`search_links` for adapter-pending referral companies (currently Disney, eBay,
+Qualcomm, AMD, Zoom, Goldman Sachs, and Pure Storage). These links appear on
+the public dashboard and do not pretend that automation is complete.
 
 ## Entry point
 
@@ -284,6 +287,27 @@ Outputs:
 - `profile/official_coverage.json` — manual `unvalidated` / `validated` /
   `unsupported` company decisions;
 - `profile/review_state.json` — committed per-job review state.
+
+Dashboard windows use pipeline discovery time: **Fresh** is A/B work first
+seen in the last 24 hours, and **Rolling** is work first seen in the last three
+days. Employer `posted_date` remains visible reference metadata but does not
+decide those two windows. Active rows sort Tier A first, then match score and
+discovery time.
+
+Use the lightweight status command with a canonical key, exact job URL, or
+unique job ID:
+
+```bash
+python3 review_state.py '<job selector>' in_progress
+python3 review_state.py '<job selector>' completed --notes 'Applied 2026-08-28'
+python3 dashboard.py
+```
+
+Allowed states are `unreviewed`, `in_progress`, `applied`, `replied`,
+`completed`, and `dismissed`. Completed/dismissed jobs are removed from active
+sections and shown in a separate dashboard section. A push that changes the
+review-state file automatically triggers dashboard regeneration and Pages
+deployment.
 
 Fuzzy title/location matches are suggestions only and never suppress a job.
 100% exact observed coverage is the current manual audit target, not a permanent
