@@ -556,6 +556,14 @@ THIN_JD_CHARS = 200  # LinkedIn guest cards often have empty descriptions
 YOE_RE = re.compile(r"\b(\d{1,2})\+?\s*(?:years|yrs)\b", re.IGNORECASE)
 
 
+def is_thin_local_discovery(job: Dict[str, str]) -> bool:
+    """True for low-information LinkedIn/Glassdoor cards without a usable JD."""
+    source = str(job.get("source") or "").lower()
+    return any(name in source for name in LOCAL_SOURCES) and len(
+        str(job.get("description") or "").strip()
+    ) < THIN_JD_CHARS
+
+
 def _full_constraint_text(job: Dict[str, str]) -> str:
     """Full title + JD for citizenship/clearance checks (no truncation)."""
     return f"{job.get('title') or ''} {job.get('description') or ''}"
@@ -1115,7 +1123,7 @@ def score_survivors(
     counts = {
         "reused": 0, "llm": 0, "new_or_changed": 0, "rule": 0, "sent": 0,
         "api_requests": 0, "recency_skipped": 0, "overflow": 0,
-        "peer_reused": 0,
+        "peer_reused": 0, "thin_source_rule": 0,
     }
     fp = profiles["fingerprint"]
 
@@ -1139,6 +1147,13 @@ def score_survivors(
             _apply_peer_result(job, peer[0], peer[1])
             counts["reused"] += 1
             counts["peer_reused"] += 1
+        elif is_thin_local_discovery(job):
+            # A title-only local card is useful discovery evidence but poor LLM
+            # evidence. Do not call the API or reuse a prior title-only LLM
+            # result. An exact Official peer above is still authoritative.
+            _apply_rule_result(job, SCORE_FALLBACK, "Rule-based (thin local discovery card)")
+            counts["rule"] += 1
+            counts["thin_source_rule"] += 1
         elif _is_reusable_llm_cache(prev or {}, job):
             _apply_cached_result(job, prev)
             counts["reused"] += 1
@@ -1432,7 +1447,8 @@ def _stats_lines(stats: Dict[str, Any]) -> List[str]:
         f"- LLM usage: jobs scored {llm['scored']} / API requests {llm['api_requests']} / "
         f"cache reused {llm['reused']} (cross-pipeline {llm.get('peer_reused', 0)}) / "
         f"rule fallback+overflow {llm['rule']} "
-        f"(recency-gated {llm['recency_skipped']}, overflow {llm.get('overflow', 0)}, "
+        f"(thin local cards {llm.get('thin_source_rule', 0)}, "
+        f"recency-gated {llm['recency_skipped']}, overflow {llm.get('overflow', 0)}, "
         f"new/changed {llm['new_or_changed']})",
         f"- Output sizing: Tier A {out['tier_a']} / Tier B {out['tier_b']} / "
         f"A+B actionable {out['ab_before_cap']} / Shown in latest.md {out['shown']} (no hard cap)",
@@ -1917,6 +1933,7 @@ def run() -> None:
             "reused": score_counts["reused"],
             "peer_reused": score_counts.get("peer_reused", 0),
             "rule": score_counts["rule"],
+            "thin_source_rule": score_counts.get("thin_source_rule", 0),
             "recency_skipped": score_counts.get("recency_skipped", 0),
             "overflow": score_counts.get("overflow", 0),
             "new_or_changed": score_counts["new_or_changed"],
@@ -1979,7 +1996,8 @@ def run() -> None:
     print(f"LLM usage: scored {score_counts['llm']} / API requests {score_counts.get('api_requests', 0)} "
           f"/ cache reused {score_counts['reused']} (cross-pipeline {score_counts.get('peer_reused', 0)}) "
           f"/ rule fallback+overflow {score_counts['rule']} "
-          f"(recency-gated {score_counts.get('recency_skipped', 0)}, "
+          f"(thin local cards {score_counts.get('thin_source_rule', 0)}, "
+          f"recency-gated {score_counts.get('recency_skipped', 0)}, "
           f"overflow {score_counts.get('overflow', 0)}, new/changed {score_counts['new_or_changed']})")
     print(f"Screening: {screen_method}" + (f" ({len(llm_errors)} llm errors)" if llm_errors else ""))
     print(f"Output: Tier A {len(tier_a)} / Tier B {len(tier_b)} / A+B actionable {ab_before_cap} "

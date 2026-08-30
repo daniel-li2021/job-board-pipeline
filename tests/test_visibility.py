@@ -434,6 +434,26 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         self.assertEqual(1, counts["rule"])
         self.assertEqual([], errors)
 
+    def test_thin_linkedin_card_uses_rules_not_llm(self) -> None:
+        now = datetime.now(timezone.utc)
+        job = make_job(
+            source="linkedin", company="SmallCo", title="Software Engineer II",
+            location="Austin, TX", job_id="li-1", description="",
+            source_url="https://linkedin.com/jobs/view/li-1",
+        )
+        job["first_seen"] = now.isoformat()
+        board_pipeline.role_seniority_prefilter(job)
+        with patch.dict("os.environ", {"OPENAI_API_KEY": "test-key"}), patch.object(
+            board_pipeline, "llm_match_batch", side_effect=AssertionError("LLM must not run")
+        ):
+            _method, errors, counts = board_pipeline.score_survivors(
+                [job], {}, board_pipeline.load_profiles(), {}, use_llm=True
+            )
+        self.assertEqual(board_pipeline.SCORE_FALLBACK, job["score_source"])
+        self.assertEqual(1, counts["thin_source_rule"])
+        self.assertEqual(0, counts["api_requests"])
+        self.assertEqual([], errors)
+
     def test_local_sync_targets_main_from_an_isolated_worktree(self) -> None:
         script = (ROOT / "scripts/local_source_sync.sh").read_text(encoding="utf-8")
         self.assertIn('TARGET_BRANCH="${TARGET_BRANCH:-main}"', script)
