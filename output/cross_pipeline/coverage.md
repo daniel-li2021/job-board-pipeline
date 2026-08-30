@@ -1,6 +1,6 @@
 # Cross-pipeline official coverage audit
 
-- Generated: 2026-08-30T18:37:51.226131+00:00
+- Generated: 2026-08-30T18:40:33.856020+00:00
 - Official snapshot: 2026-08-30T16:41:19.617752+00:00
 - Coverage scope: jobs from the last 3 days that pass shared hard + role/seniority prefilters; LLM score is not used.
 - Validation: 100% exact observed coverage is the current review target; final validation is manual.
@@ -19,6 +19,7 @@
 | Cisco | unvalidated | workday | 5 | 3 | 2 | 0 | 60% |
 | NVIDIA | unvalidated | workday | 4 | 0 | 4 | 0 | 0% |
 | Qualcomm | unsupported | pcsx | 4 | 0 | 0 | 0 | - |
+| Walmart Global Tech | unsupported | walmart | 4 | 0 | 0 | 0 | - |
 | Adobe | unvalidated | workday | 3 | 0 | 3 | 0 | 0% |
 | ByteDance | unvalidated | skip | 3 | 0 | 0 | 0 | - |
 | Intel | unvalidated | skip | 3 | 0 | 0 | 0 | - |
@@ -85,7 +86,6 @@
 | Two Sigma | unvalidated | skip | 0 | 0 | 0 | 0 | - |
 | Verizon | unvalidated | skip | 0 | 0 | 0 | 0 | - |
 | Visa | unvalidated | skip | 0 | 0 | 0 | 0 | - |
-| Walmart Global Tech | unsupported | walmart | 0 | 0 | 0 | 0 | - |
 | Wayfair | unvalidated | skip | 0 | 0 | 0 | 0 | - |
 | WeRide | unvalidated | lever | 0 | 0 | 0 | 0 | - |
 | Wells Fargo | unvalidated | skip | 0 | 0 | 0 | 0 | - |
