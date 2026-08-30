@@ -232,7 +232,7 @@ python3 official_careers.py run                    # scrape + match (scheduled)
 ```
 
 `--only` takes a company id from the registry. `--max-pages` is a per-query
-safety cap (default 50). `--no-digest` updates the store without a
+safety cap (default 12). `--no-digest` updates the store without a
 user-facing alert. `--force-digest` sends a digest even if one already went
 out today.
 

@@ -1,6 +1,6 @@
 {
   "_comment": "Big Tech Official Careers discovery registry. Adapters live in sources/careers/. Matching is NOT done here — official_careers.py hands normalized jobs to board_pipeline scoring/ranking.",
-  "max_pages_default": 50,
+  "max_pages_default": 12,
   "companies": [
     {
       "id": "google",
