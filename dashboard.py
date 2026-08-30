@@ -25,6 +25,7 @@ REPO_URL = "https://github.com/daniel-li2021/job-board-pipeline"
 PAGES_URL = "https://daniel-li2021.github.io/job-board-pipeline/"
 PACIFIC = ZoneInfo("America/Los_Angeles")
 REFERRAL_PATH = BASE_DIR / "source" / "target_companies.json"
+COMPANY_FILTERS_PATH = BASE_DIR / "profile" / "company_filters.json"
 REVIEW_PATH = BASE_DIR / "profile" / "review_state.json"
 OFFICIAL_REGISTRY_PATH = BASE_DIR / "source" / "official_careers.json"
 MAIN_HIDDEN_STATUSES = {"in_progress", "applied", "deleted"}
@@ -257,7 +258,11 @@ def normalize_row(
     }
 
 
-def visible_candidate(row: Dict[str, Any]) -> bool:
+def visible_candidate(
+    row: Dict[str, Any], hard_excludes: Optional[List[Dict[str, Any]]] = None
+) -> bool:
+    if match_company_alias(str(row.get("company") or ""), hard_excludes or []):
+        return False
     if row.get("filter_status") not in {"kept", ""}:
         return False
     if row.get("suppress_alert"):
@@ -325,6 +330,16 @@ def append_board_c_fallback(
     return result
 
 
+def config_company_match(company: str, title: str, entries: List[Dict[str, Any]]) -> Optional[str]:
+    title_key = str(title or "").lower()
+    eligible = [
+        entry for entry in entries
+        if not entry.get("title_terms")
+        or any(str(term).lower() in title_key for term in entry["title_terms"])
+    ]
+    return match_company_alias(company, eligible)
+
+
 def _sort_rows(rows: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
     bucket_rank = {"lt3h": 0, "3to24h": 1, "1to3d": 2, "newly_discovered": 3, "3to7d": 4, "gt7d": 5, "unknown": 6}
     tier_rank = {"A": 0, "1": 0, "B": 1, "2": 1, "-": 2}
@@ -343,7 +358,10 @@ def _sort_rows(rows: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
     )
 
 
-def alert_fresh_rows(all_rows: List[Dict[str, Any]], now: datetime) -> Tuple[List[Dict[str, Any]], Dict[str, str]]:
+def alert_fresh_rows(
+    all_rows: List[Dict[str, Any]], now: datetime,
+    hard_excludes: Optional[List[Dict[str, Any]]] = None,
+) -> Tuple[List[Dict[str, Any]], Dict[str, str]]:
     """Build Fresh from exact alert events, not inferred first_seen values."""
     by_key = {str(row.get("canonical_job_key") or ""): row for row in all_rows if row.get("canonical_job_key")}
     by_key_pipeline = {
@@ -406,7 +424,7 @@ def alert_fresh_rows(all_rows: List[Dict[str, Any]], now: datetime) -> Tuple[Lis
                 if not source_row:
                     continue
                 row = dict(source_row)
-                if not visible_candidate(row) or row.get("review_status") in MAIN_HIDDEN_STATUSES:
+                if not visible_candidate(row, hard_excludes) or row.get("review_status") in MAIN_HIDDEN_STATUSES:
                     continue
                 row["alerted_at"] = emitted_at.isoformat()
                 row["alert_stamp"] = event.get("stamp", "")
@@ -445,6 +463,8 @@ def official_search_catalog() -> List[Dict[str, Any]]:
 def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
     now = now or datetime.now(timezone.utc)
     referrals = load_alias_file(REFERRAL_PATH)
+    hard_excludes = load_alias_file(COMPANY_FILTERS_PATH, key="exclude")
+    practical_skips = load_alias_file(COMPANY_FILTERS_PATH, key="clearance_risk")
     review = review_map()
     coverage = coverage_reconcile.build_coverage_payload(now)
     coverage_by_key = {record.get("canonical_job_key", ""): record for record in coverage.get("records", [])}
@@ -455,14 +475,23 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         store, entries = _load_entries(path)
         snapshots[pipeline] = str(store.get("updated_at") or store.get("scraped_at") or "")
         for entry in entries:
+            practical = config_company_match(
+                str(entry.get("company") or ""), str(entry.get("title") or ""), practical_skips
+            )
+            if practical and not entry.get("clearance_risk_company"):
+                continue
             all_rows.append(normalize_row(entry, pipeline, now, referrals, review, coverage_by_key))
 
-    candidates = [row for row in all_rows if visible_candidate(row)]
+    eligible_rows = [
+        row for row in all_rows
+        if not match_company_alias(str(row.get("company") or ""), hard_excludes)
+    ]
+    candidates = [row for row in eligible_rows if visible_candidate(row, hard_excludes)]
     current = [row for row in candidates if row.get("review_status") not in MAIN_HIDDEN_STATUSES]
-    fresh, fresh_basis = alert_fresh_rows(all_rows, now)
-    fresh = append_board_c_fallback(fresh, all_rows, minimum_ab=10, target=20, window="fresh")
+    fresh, fresh_basis = alert_fresh_rows(eligible_rows, now, hard_excludes)
+    fresh = append_board_c_fallback(fresh, eligible_rows, minimum_ab=10, target=20, window="fresh")
     rolling = _sort_rows(row for row in current if row["freshness"]["rolling_activity"])
-    rolling = append_board_c_fallback(rolling, all_rows, minimum_ab=30, target=50, window="rolling")
+    rolling = append_board_c_fallback(rolling, eligible_rows, minimum_ab=30, target=50, window="rolling")
     older = _sort_rows(
         row for row in current
         if row["freshness"]["discovered"]["age_hours"] is not None
@@ -511,8 +540,8 @@ HTML_TEMPLATE = r'''<!doctype html>
 </style></head><body><div class="wrap">
 <header><div><h1>Job visibility dashboard</h1><p id="updated" class="timestamp"></p><p id="sourceSnapshots" class="small"></p></div><div><a id="repo">Repository</a></div></header>
 <div class="cards" id="summary"></div>
-<section class="panel"><h2>Fresh — alerted in the last 24 hours</h2><p>Jobs emitted by the latest GitHub alert Issues, including newly found A/B jobs and B→A promotions. This mirrors automation activity rather than posted_date or original first_seen.</p><p id="freshBasis" class="small"></p><div class="tabs" data-target="fresh"></div><div id="fresh"></div></section>
-<section class="panel"><h2>Rolling — newly found in the last 3 days</h2><p>Current A/B (or Syncareer kept) candidates, ranked Tier A first, then discovery time and score.</p><div class="tabs" data-target="rolling"></div><div id="rolling"></div></section>
+<section class="panel"><h2>Fresh — alerted in the last 24 hours</h2><p>Jobs emitted by the latest GitHub alert Issues, including newly found A/B jobs and B→A promotions. This mirrors automation activity rather than posted_date or original first_seen.</p><p id="freshBasis" class="small"></p><div class="tabs" data-target="fresh"></div><div class="small">Big Company Official</div><div class="tabs" data-company-target="fresh"></div><div id="fresh"></div></section>
+<section class="panel"><h2>Rolling — newly found in the last 3 days</h2><p>Current A/B (or Syncareer kept) candidates, ranked Tier A first, then discovery time and score.</p><div class="tabs" data-target="rolling"></div><div class="small">Big Company Official</div><div class="tabs" data-company-target="rolling"></div><div id="rolling"></div></section>
 <section class="panel"><h2>In Progress</h2><p>Jobs you are actively preparing or following up on.</p><div id="inProgress"></div></section>
 <section class="panel"><h2>Applied / Completed</h2><p>Applied jobs leave the active Fresh and Rolling lists.</p><div id="applied"></div></section>
 <section class="panel"><h2>Deleted — last 7 days</h2><p>Deleted jobs stay recoverable in this browser for one week, then disappear.</p><div id="deleted"></div></section>
@@ -541,7 +570,7 @@ function postingText(r){const p=r.freshness.posted||{};if(!p.trusted)return r.po
 function jobs(rows,deleted=false){if(!rows.length)return '<div class="empty">No qualifying jobs in this view.</div>';return `<div class="tablewrap"><table><thead><tr><th>Tier</th><th>Company / Title</th><th>Location</th><th>Alert / Posted</th><th>Sponsorship</th><th>Referral</th><th>Status</th><th>Source</th></tr></thead><tbody>${rows.map(r=>`<tr><td><b>${esc(r.tier)}</b>${r.score!==''?`<div class="small">${esc(r.score)}</div>`:''}</td><td><b>${esc(r.company)}</b><br><a href="${esc(r.url)}">${esc(r.title)}</a></td><td>${esc(r.location)}</td><td><span class="pill discovered">${activityText(r)}</span><div class="small">${postingText(r)}</div></td><td>${esc(r.sponsorship||'Unknown')}</td><td>${r.referral?`<span class="pill referral">${esc(r.referral)}</span>`:'-'}</td><td><div class="workflow">${deleted?`<span class="pill">Deleted</span><button class="restore" data-key="${esc(r.canonical_job_key)}">Restore</button>`:`<select class="status-select" data-key="${esc(r.canonical_job_key)}">${statusChoices.map(s=>`<option value="${s}" ${statusOf(r)===s?'selected':''}>${statusLabels[s]}</option>`).join('')}</select><button class="delete" data-key="${esc(r.canonical_job_key)}" title="Hide for 7 days">Delete</button>`}</div></td><td>${esc(names[r.pipeline]||r.pipeline)}</td></tr>`).join('')}</tbody></table></div>`}
 function bindStatus(box){box.querySelectorAll('.status-select').forEach(s=>s.onchange=()=>setStatus(s.dataset.key,s.value));box.querySelectorAll('.delete').forEach(b=>b.onclick=()=>deleteJob(b.dataset.key));box.querySelectorAll('.restore').forEach(b=>b.onclick=()=>restoreJob(b.dataset.key))}
 function renderBox(id,rows){const box=document.getElementById(id);box.innerHTML=jobs(rows);bindStatus(box)}
-function tabs(elId,rows){const filtered=rows.filter(r=>statusOf(r)==='unreviewed');const tab=document.querySelector(`[data-target="${elId}"]`);const box=document.getElementById(elId);let active='all';const draw=()=>{tab.innerHTML=['all',...Object.keys(names)].map(k=>`<button class="tab ${k===active?'on':''}" data-k="${k}">${k==='all'?'All':names[k]} (${k==='all'?filtered.length:filtered.filter(r=>r.pipeline===k).length})</button>`).join('');box.innerHTML=jobs(active==='all'?filtered:filtered.filter(r=>r.pipeline===active));bindStatus(box);tab.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.k;draw()})};draw()}
+function tabs(elId,rows){const filtered=rows.filter(r=>statusOf(r)==='unreviewed'),tab=document.querySelector(`[data-target="${elId}"]`),companyTab=document.querySelector(`[data-company-target="${elId}"]`),box=document.getElementById(elId);let active='all',company='all';const companyNames=['all','Google','Microsoft','Apple','Amazon'];const companyRows=k=>filtered.filter(r=>r.pipeline==='official'&&(k==='all'||r.company.toLowerCase().includes(k.toLowerCase())));const draw=()=>{tab.innerHTML=['all',...Object.keys(names)].map(k=>`<button class="tab ${k===active?'on':''}" data-k="${k}">${k==='all'?'All':names[k]} (${k==='all'?filtered.length:filtered.filter(r=>r.pipeline===k).length})</button>`).join('');companyTab.innerHTML=companyNames.map(k=>`<button class="tab ${k===company?'on':''}" data-company="${k}">${k} (${companyRows(k).length})</button>`).join('');let shown=active==='all'?filtered:filtered.filter(r=>r.pipeline===active);if(company!=='all')shown=companyRows(company);box.innerHTML=jobs(shown);bindStatus(box);tab.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.k;if(active!=='official')company='all';draw()});companyTab.querySelectorAll('button').forEach(b=>b.onclick=()=>{company=b.dataset.company;active='official';draw()})};draw()}
 const allRows=[...(D.workflow_rows||[]),...D.fresh_24h,...D.rolling_3d,...D.referrals];const uniqueRows=()=>[...new Map(allRows.map(r=>[r.canonical_job_key,r])).values()];
 function isRecentDeleted(r){if(statusOf(r)!=='deleted')return false;const state=localState(r.canonical_job_key);const raw=state?.deleted_at||r.review_updated_at;return !raw||Date.now()-Date.parse(raw)<=deletedRetentionMs}
 function renderAll(){persist();const rows=uniqueRows();tabs('fresh',D.fresh_24h);tabs('rolling',D.rolling_3d);renderBox('referrals',D.referrals.filter(r=>statusOf(r)==='unreviewed'));renderBox('inProgress',rows.filter(r=>statusOf(r)==='in_progress'));renderBox('applied',rows.filter(r=>statusOf(r)==='applied'));const box=document.getElementById('deleted');box.innerHTML=jobs(rows.filter(isRecentDeleted),true);bindStatus(box)}

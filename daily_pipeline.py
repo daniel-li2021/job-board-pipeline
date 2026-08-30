@@ -36,6 +36,7 @@ from bs4 import BeautifulSoup
 import alert_history
 import board_pipeline as board
 import coverage_reconcile
+import board_pipeline as board
 from sources.company_aliases import load_alias_file, match_company_alias
 
 
@@ -644,11 +645,14 @@ def apply_external_company_policy(
     row: Dict[str, Any], company_filters: Dict[str, List[Dict[str, Any]]]
 ) -> bool:
     """Apply shared company flags; return True when externally hidden."""
-    action, _matched = board.classify_company(str(row.get("company") or ""), company_filters)
+    action, _matched = board.classify_company(
+        str(row.get("company") or ""), company_filters, str(row.get("title") or "")
+    )
     row["company_flag"] = "" if action == "keep" else action
     row["deprioritized"] = action == "deprioritize"
     row["preferred"] = action == "prefer"
     row["staffing_firm"] = action == "staffing"
+    row["clearance_risk_company"] = action == "clearance_risk"
     hidden = board.hidden_external_company(str(row.get("company") or ""), company_filters)
     if hidden:
         row["company_flag"] = "hidden_external"
@@ -765,9 +769,20 @@ CITIZEN_ONLY_RES = [
 ]
 
 
-def hard_filter(row: Dict[str, str]) -> Tuple[bool, str]:
+def hard_filter(
+    row: Dict[str, str],
+    company_filters: Optional[Dict[str, List[Dict[str, Any]]]] = None,
+) -> Tuple[bool, str]:
     """Use the Board's shared hard constraints; seniority is the next gate."""
+    if company_filters is not None:
+        action, _matched = board.classify_company(
+            row.get("company", ""), company_filters, row.get("title", "")
+        )
+        if action == "exclude":
+            return False, "company_excluded"
+        row["clearance_risk_company"] = action == "clearance_risk"
     job = coverage_reconcile.normalize_syncareer_job(row)
+    job["clearance_risk_company"] = bool(row.get("clearance_risk_company"))
     keep, reason = board.hard_filter(job)
     return (keep, "keep" if keep else f"exclude_{reason}")
 
@@ -1272,7 +1287,7 @@ def run() -> None:
     kept_rows: List[Dict[str, str]] = []
     drop_reasons: Counter = Counter()
     for row in raw_rows:
-        keep, reason = hard_filter(row)
+        keep, reason = hard_filter(row, company_filters)
         if keep:
             kept_rows.append(row)
         else:
