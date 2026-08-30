@@ -1,6 +1,6 @@
 # Cross-pipeline official coverage audit
 
-- Generated: 2026-08-30T01:06:00.485243+00:00
+- Generated: 2026-08-30T05:48:06.554924+00:00
 - Official snapshot: 2026-08-29T18:37:39.833716+00:00
 - Coverage scope: jobs from the last 3 days that pass shared hard + role/seniority prefilters; LLM score is not used.
 - Validation: 100% exact observed coverage is the current review target; final validation is manual.
@@ -11,18 +11,18 @@
 |---|---|---|---:|---:|---:|---:|---:|
 | Amazon | unvalidated | amazon | 20 | 18 | 1 | 1 | 95% |
 | Google | unvalidated | google | 14 | 12 | 0 | 2 | 100% |
+| TikTok | unsupported | skip | 9 | 0 | 0 | 0 | - |
 | Apple | unvalidated | apple | 8 | 8 | 0 | 0 | 100% |
 | Roblox | unvalidated | greenhouse | 8 | 0 | 8 | 0 | 0% |
+| Disney | unsupported | skip | 5 | 0 | 0 | 0 | - |
 | Microsoft | unvalidated | microsoft | 5 | 5 | 0 | 0 | 100% |
-| Disney | unsupported | skip | 4 | 0 | 0 | 0 | - |
 | JPMorgan Chase | unvalidated | oracle_hcm | 4 | 1 | 0 | 3 | 100% |
-| TikTok | unsupported | skip | 4 | 0 | 0 | 0 | - |
-| Cisco | unvalidated | workday | 2 | 2 | 0 | 0 | 100% |
+| Cisco | unvalidated | workday | 3 | 3 | 0 | 0 | 100% |
+| Qualcomm | unsupported | skip | 3 | 0 | 0 | 0 | - |
+| Meta | unsupported | skip | 2 | 0 | 0 | 0 | - |
 | Oracle | unvalidated | oracle_hcm | 2 | 2 | 0 | 0 | 100% |
 | Uber | unvalidated | uber | 2 | 2 | 0 | 0 | 100% |
 | Databricks | unvalidated | greenhouse | 1 | 0 | 1 | 0 | 0% |
-| Meta | unsupported | skip | 1 | 0 | 0 | 0 | - |
-| Qualcomm | unsupported | skip | 1 | 0 | 0 | 0 | - |
 | AMD | unsupported | skip | 0 | 0 | 0 | 0 | - |
 | Adobe | unvalidated | workday | 0 | 0 | 0 | 0 | - |
 | Bloomberg | unvalidated | avature | 0 | 0 | 0 | 0 | - |
