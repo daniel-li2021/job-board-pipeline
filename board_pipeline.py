@@ -310,21 +310,27 @@ def load_company_filters() -> Dict[str, List[Dict[str, Any]]]:
     return out
 
 
-def _company_alias_hit(company_name: str, entries: List[Dict[str, Any]]) -> Optional[str]:
+def _company_alias_hit(company_name: str, entries: List[Dict[str, Any]], job_title: str = "") -> Optional[str]:
     """Match a company against normalized aliases.
 
     Whole-token match always counts; substring match only for aliases >= 6 chars
     (so short aliases like "meta"/"apple" don't false-match "metadata" etc.).
     """
-    return match_company_alias(company_name, entries)
+    title = normalize_space(job_title).lower()
+    eligible = [
+        entry for entry in entries
+        if not entry.get("title_terms")
+        or any(str(term).lower() in title for term in entry["title_terms"])
+    ]
+    return match_company_alias(company_name, eligible)
 
 
-def classify_company(company_name: str, filters: Dict[str, List[Dict[str, Any]]]) -> Tuple[str, str]:
+def classify_company(company_name: str, filters: Dict[str, List[Dict[str, Any]]], job_title: str = "") -> Tuple[str, str]:
     """Return (action, matched_name). action in
     {exclude, covered_elsewhere, deprioritize, prefer, keep}. Priority order
     ensures a drop beats a soft flag."""
     for category in ("exclude", "covered_elsewhere", "deprioritize", "staffing", "prefer", "clearance_risk"):
-        name = _company_alias_hit(company_name, filters.get(category, []))
+        name = _company_alias_hit(company_name, filters.get(category, []), job_title)
         if name:
             return category, name
     return "keep", ""
@@ -513,6 +519,8 @@ CITIZEN_PHRASES = [
     "eligible for a security clearance", "eligible to obtain",
     "requires a clearance", "requires security clearance",
     "us persons only", "u.s. persons only", "citizens only",
+    "export control", "export-controlled", "export controlled", "itar",
+    "international traffic in arms regulations", "export authorization",
 ]
 CITIZEN_RES = [
     re.compile(r"\b" + re.escape(p).replace(r"\ ", r"\s+") + r"\b", re.IGNORECASE)
@@ -559,7 +567,7 @@ def hard_filter(job: Dict[str, str]) -> Tuple[bool, str]:
     src = (job.get("source") or "").lower()
     thin = len(desc) < THIN_JD_CHARS
     low_conf_source = "linkedin" in src or "glassdoor" in src
-    if thin and low_conf_source:
+    if thin and (low_conf_source or job.get("clearance_risk_company")):
         title = job.get("title") or ""
         if GOV_DEFENSE_TITLE_RE.search(title) or job.get("clearance_risk_company"):
             return False, "incomplete_jd_clearance_risk"
@@ -1596,14 +1604,14 @@ def run() -> None:
     drops: Counter = Counter()
     after_company: List[Dict[str, str]] = []
     for job in deduped:
-        action, matched = classify_company(job.get("company", ""), company_filters)
+        action, matched = classify_company(job.get("company", ""), company_filters, job.get("title", ""))
         job["company_flag"] = "" if action == "keep" else action
         job["deprioritized"] = action == "deprioritize"
         job["preferred"] = action == "prefer"
         job["staffing_firm"] = action == "staffing"
         job["clearance_risk_company"] = bool(
             action == "clearance_risk"
-            or _company_alias_hit(job.get("company", ""), company_filters.get("clearance_risk", []))
+            or _company_alias_hit(job.get("company", ""), company_filters.get("clearance_risk", []), job.get("title", ""))
         )
         if action in CATEGORY_DROP_REASON:
             reason = CATEGORY_DROP_REASON[action]

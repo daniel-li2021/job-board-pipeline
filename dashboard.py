@@ -22,6 +22,7 @@ REPO_URL = "https://github.com/daniel-li2021/job-board-pipeline"
 PAGES_URL = "https://daniel-li2021.github.io/job-board-pipeline/"
 PACIFIC = ZoneInfo("America/Los_Angeles")
 REFERRAL_PATH = BASE_DIR / "source" / "target_companies.json"
+COMPANY_FILTERS_PATH = BASE_DIR / "profile" / "company_filters.json"
 REVIEW_PATH = BASE_DIR / "profile" / "review_state.json"
 
 STORE_PATHS = {
@@ -133,13 +134,25 @@ def normalize_row(
     }
 
 
-def visible_candidate(row: Dict[str, Any]) -> bool:
+def visible_candidate(row: Dict[str, Any], hard_excludes: List[Dict[str, Any]]) -> bool:
+    if match_company_alias(str(row.get("company") or ""), hard_excludes):
+        return False
     if row.get("filter_status") not in {"kept", ""}:
         return False
     if row.get("suppress_alert"):
         return False
     tier = str(row.get("tier") or "-")
     return tier in {"A", "B", "1", "2", "-"}
+
+
+def config_company_match(company: str, title: str, entries: List[Dict[str, Any]]) -> Optional[str]:
+    title_key = str(title or "").lower()
+    eligible = [
+        entry for entry in entries
+        if not entry.get("title_terms")
+        or any(str(term).lower() in title_key for term in entry["title_terms"])
+    ]
+    return match_company_alias(company, eligible)
 
 
 def _sort_rows(rows: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -160,6 +173,8 @@ def _sort_rows(rows: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
 def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
     now = now or datetime.now(timezone.utc)
     referrals = load_alias_file(REFERRAL_PATH)
+    hard_excludes = load_alias_file(COMPANY_FILTERS_PATH, key="exclude")
+    practical_skips = load_alias_file(COMPANY_FILTERS_PATH, key="clearance_risk")
     review = review_map()
     coverage = coverage_reconcile.build_coverage_payload(now)
     coverage_by_key = {record.get("canonical_job_key", ""): record for record in coverage.get("records", [])}
@@ -170,9 +185,14 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         store, entries = _load_entries(path)
         snapshots[pipeline] = str(store.get("updated_at") or store.get("scraped_at") or "")
         for entry in entries:
+            practical = config_company_match(
+                str(entry.get("company") or ""), str(entry.get("title") or ""), practical_skips
+            )
+            if practical and not entry.get("clearance_risk_company"):
+                continue
             all_rows.append(normalize_row(entry, pipeline, now, referrals, review, coverage_by_key))
 
-    current = [row for row in all_rows if visible_candidate(row)]
+    current = [row for row in all_rows if visible_candidate(row, hard_excludes)]
     fresh = _sort_rows(row for row in current if row["freshness"]["age_hours"] is not None and row["freshness"]["age_hours"] <= 24)
     rolling = _sort_rows(row for row in current if row["freshness"]["age_hours"] is not None and row["freshness"]["age_hours"] <= 72)
     older = _sort_rows(row for row in current if row["freshness"]["age_hours"] is not None and 72 < row["freshness"]["age_hours"] <= 168)
@@ -209,8 +229,8 @@ HTML_TEMPLATE = r'''<!doctype html>
 </style></head><body><div class="wrap">
 <header><div><h1>Job visibility dashboard</h1><p id="updated"></p></div><div><a id="repo">Repository</a> · <a id="coverageLink">Coverage audit</a></div></header>
 <div class="cards" id="summary"></div>
-<section class="panel"><h2>Fresh — last 24 hours</h2><p>Confirmed posting dates are ranked ahead of low-confidence discovery times.</p><div class="tabs" data-target="fresh"></div><div id="fresh"></div></section>
-<section class="panel"><h2>Rolling — last 3 days</h2><p>Current A/B (or Syncareer kept) candidates across all three pipelines.</p><div class="tabs" data-target="rolling"></div><div id="rolling"></div></section>
+<section class="panel"><h2>Fresh — last 24 hours</h2><p>Confirmed posting dates are ranked ahead of low-confidence discovery times.</p><div class="tabs" data-target="fresh"></div><div class="small">Big Company Official</div><div class="tabs" data-company-target="fresh"></div><div id="fresh"></div></section>
+<section class="panel"><h2>Rolling — last 3 days</h2><p>Current A/B (or Syncareer kept) candidates across all three pipelines.</p><div class="tabs" data-target="rolling"></div><div class="small">Big Company Official</div><div class="tabs" data-company-target="rolling"></div><div id="rolling"></div></section>
 <section class="panel"><h2>Referral opportunities</h2><p>Aliases come only from <a id="referralFile">source/target_companies.json</a>.</p><div id="referrals"></div></section>
 <section class="panel"><h2>Older / review later — 3–7 days</h2><p>Review state is read-only here and is committed in profile/review_state.json.</p><div id="older"></div></section>
 <section class="panel"><h2>Official coverage</h2><p>Exact matches are audit evidence. Company validation remains a manual decision.</p><div id="coverage"></div></section>
@@ -220,7 +240,7 @@ const names={official:'Big Company Official',board:'ATS / LinkedIn',syncareer:'S
 document.getElementById('summary').innerHTML=Object.keys(names).map(k=>`<div class="card"><span>${names[k]}</span><b>${D.counts_24h[k]}</b><p>last 24h · ${D.counts_3d[k]} in 3 days</p><a href="${D.report_links[k]}">open report</a></div>`).join('');
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function jobs(rows){if(!rows.length)return '<div class="empty">No qualifying jobs in this window.</div>';return `<div class="tablewrap"><table><thead><tr><th>Tier</th><th>Company / Title</th><th>Location</th><th>Freshness</th><th>Referral</th><th>Coverage</th><th>Review</th><th>Source</th></tr></thead><tbody>${rows.map(r=>`<tr><td><b>${esc(r.tier)}</b>${r.score!==''?`<div class="small">${esc(r.score)}</div>`:''}</td><td><b>${esc(r.company)}</b><br><a href="${esc(r.url)}">${esc(r.title)}</a></td><td>${esc(r.location)}</td><td><span class="pill ${r.freshness.kind==='confirmed_posted'?'confirmed':'discovered'}">${esc(r.freshness.bucket)}</span><div class="small">${r.freshness.kind==='confirmed_posted'?'posted '+esc(r.posted_date):'newly discovered · low confidence'}</div></td><td>${r.referral?`<span class="pill referral">${esc(r.referral)}</span>`:'-'}</td><td><span class="pill ${r.coverage_status.includes('gap')?'gap':r.coverage_status.includes('duplicate')||r.coverage_status==='official_canonical'?'duplicate':''}">${esc(r.coverage_status)}</span></td><td>${esc(r.review_status)}</td><td>${esc(names[r.pipeline]||r.pipeline)}</td></tr>`).join('')}</tbody></table></div>`}
-function tabs(elId,rows){const tab=document.querySelector(`[data-target="${elId}"]`);const box=document.getElementById(elId);let active='all';const draw=()=>{tab.innerHTML=['all',...Object.keys(names)].map(k=>`<button class="tab ${k===active?'on':''}" data-k="${k}">${k==='all'?'All':names[k]} (${k==='all'?rows.length:rows.filter(r=>r.pipeline===k).length})</button>`).join('');box.innerHTML=jobs(active==='all'?rows:rows.filter(r=>r.pipeline===active));tab.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.k;draw()})};draw()}
+function tabs(elId,rows){const tab=document.querySelector(`[data-target="${elId}"]`),companyTab=document.querySelector(`[data-company-target="${elId}"]`),box=document.getElementById(elId);let active='all',company='all';const companyNames=['all','Google','Microsoft','Apple','Amazon'];const companyRows=k=>rows.filter(r=>r.pipeline==='official'&&(k==='all'||r.company.toLowerCase().includes(k.toLowerCase())));const draw=()=>{tab.innerHTML=['all',...Object.keys(names)].map(k=>`<button class="tab ${k===active?'on':''}" data-k="${k}">${k==='all'?'All':names[k]} (${k==='all'?rows.length:rows.filter(r=>r.pipeline===k).length})</button>`).join('');companyTab.innerHTML=companyNames.map(k=>`<button class="tab ${k===company?'on':''}" data-company="${k}">${k} (${companyRows(k).length})</button>`).join('');let shown=active==='all'?rows:rows.filter(r=>r.pipeline===active);if(company!=='all')shown=companyRows(company);box.innerHTML=jobs(shown);tab.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.k;if(active!=='official')company='all';draw()});companyTab.querySelectorAll('button').forEach(b=>b.onclick=()=>{company=b.dataset.company;active='official';draw()})};draw()}
 tabs('fresh',D.fresh_24h);tabs('rolling',D.rolling_3d);document.getElementById('referrals').innerHTML=jobs(D.referrals);document.getElementById('older').innerHTML=jobs(D.older_review);
 const companies=D.coverage.companies||[];document.getElementById('coverage').innerHTML=`<div class="tablewrap"><table><thead><tr><th>Company</th><th>Manual state</th><th>In scope</th><th>Exact</th><th>Gaps</th><th>Pending</th><th>Coverage</th></tr></thead><tbody>${companies.map(c=>`<tr><td>${esc(c.name)}</td><td>${esc(c.manual_status)}</td><td>${c.in_scope}</td><td>${c.exact_covered}</td><td>${c.official_gaps}</td><td>${c.pending_refresh}</td><td>${c.coverage_ratio===null?'-':Math.round(c.coverage_ratio*100)+'%'}</td></tr>`).join('')}</tbody></table></div>`;
 </script></body></html>'''

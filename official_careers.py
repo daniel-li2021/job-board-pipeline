@@ -425,13 +425,14 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
     drops: Counter = Counter()
     after_company: List[Dict[str, str]] = []
     for job in deduped:
-        action, _matched = board.classify_company(job.get("company", ""), company_filters)
+        action, _matched = board.classify_company(job.get("company", ""), company_filters, job.get("title", ""))
         # Official-careers IS the coverage for Big Tech, so skip covered_elsewhere drops.
         if action == "covered_elsewhere":
             action = "keep"
         job["company_flag"] = "" if action == "keep" else action
         job["deprioritized"] = action == "deprioritize"
         job["preferred"] = action == "prefer"
+        job["clearance_risk_company"] = action == "clearance_risk"
         if action in board.CATEGORY_DROP_REASON and action != "covered_elsewhere":
             reason = board.CATEGORY_DROP_REASON[action]
             job["filter_status"] = "dropped"

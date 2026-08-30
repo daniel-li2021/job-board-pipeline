@@ -34,6 +34,7 @@ import requests
 from bs4 import BeautifulSoup
 
 import coverage_reconcile
+import board_pipeline as board
 from sources.company_aliases import load_alias_file, match_company_alias
 
 
@@ -721,7 +722,17 @@ CITIZEN_ONLY_RES = [
 ]
 
 
-def hard_filter(row: Dict[str, str]) -> Tuple[bool, str]:
+def hard_filter(row: Dict[str, str], company_filters: Optional[Dict[str, List[Dict[str, Any]]]] = None) -> Tuple[bool, str]:
+    if company_filters is not None:
+        action, _matched = board.classify_company(row.get("company", ""), company_filters, row.get("title", ""))
+        if action == "exclude":
+            return False, "company_excluded"
+        row["clearance_risk_company"] = action == "clearance_risk"
+        constraint_row = dict(row)
+        constraint_row["description"] = f"{row.get('description', '')} {row.get('requirements', '')}"
+        keep, reason = board.hard_filter(constraint_row)
+        if not keep:
+            return False, reason
     title = row.get("title", "")
     # Seniority: title only, never company.
     if SENIOR_TITLE_RE.search(title):
@@ -1107,6 +1118,7 @@ def run() -> None:
     swe_resume = SWE_RESUME_PATH.read_text(encoding="utf-8") if (use_llm and SWE_RESUME_PATH.exists()) else ""
     ai_resume = AI_RESUME_PATH.read_text(encoding="utf-8") if (use_llm and AI_RESUME_PATH.exists()) else ""
     targets = load_target_companies()
+    company_filters = board.load_company_filters()
 
     now = datetime.now()
     today = now.strftime("%Y-%m-%d")
@@ -1141,7 +1153,7 @@ def run() -> None:
     kept_rows: List[Dict[str, str]] = []
     drop_reasons: Counter = Counter()
     for row in raw_rows:
-        keep, reason = hard_filter(row)
+        keep, reason = hard_filter(row, company_filters)
         if keep:
             kept_rows.append(row)
         else:

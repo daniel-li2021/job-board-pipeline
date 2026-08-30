@@ -53,7 +53,7 @@ class ReferralAliasTests(unittest.TestCase):
         samples = {
             "Amazon Web Services, Inc.": "Amazon",
             "JPMorganChase": "J.P. Morgan",
-            "The Walt Disney Company": "Disney",
+            "Dell Technologies Inc.": "Dell",
             "SAP America": "SAP",
         }
         for company, expected in samples.items():
