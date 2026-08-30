@@ -1,7 +1,7 @@
 # Cross-pipeline official coverage audit
 
-- Generated: 2026-08-30T18:41:09.927854+00:00
-- Official snapshot: 2026-08-30T16:41:19.617752+00:00
+- Generated: 2026-08-30T19:08:15.833297+00:00
+- Official snapshot: 2026-08-30T19:03:21.542017+00:00
 - Coverage scope: jobs from the last 3 days that pass shared hard + role/seniority prefilters; LLM score is not used.
 - Validation: 100% exact observed coverage is the current review target; final validation is manual.
 
@@ -11,7 +11,7 @@
 |---|---|---|---:|---:|---:|---:|---:|
 | Google | unvalidated | google | 15 | 10 | 5 | 0 | 67% |
 | Microsoft | unvalidated | microsoft | 10 | 9 | 1 | 0 | 90% |
-| Apple | unvalidated | apple | 8 | 0 | 8 | 0 | 0% |
+| Apple | unvalidated | apple | 8 | 8 | 0 | 0 | 100% |
 | Meta | unsupported | meta | 8 | 0 | 0 | 0 | - |
 | JPMorgan Chase | unvalidated | oracle_hcm | 7 | 3 | 4 | 0 | 43% |
 | TikTok | unsupported | tiktok | 7 | 0 | 0 | 0 | - |
@@ -96,7 +96,7 @@
 | Zscaler | unvalidated | skip | 0 | 0 | 0 | 0 | - |
 | eBay | unsupported | skip | 0 | 0 | 0 | 0 | - |
 
-## Gaps / pending review (37)
+## Gaps / pending review (29)
 
 | Status | Pipeline | Company | Title | Location | Link |
 |---|---|---|---|---|---|
@@ -124,16 +124,8 @@
 | official_gap | board | Adobe | Machine Learning Engineer, Adobe Firefly Services | San Jose, CA | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-adobe-firefly-services-at-adobe-4392118847) |
 | official_gap | board | Google | Software Engineer III, Infrastructure, Google Cloud AI | Kirkland, WA | [open](https://www.linkedin.com/jobs/view/software-engineer-iii-infrastructure-google-cloud-ai-at-google-4365583259) |
 | official_gap | board | Google | Software Engineer III, Infrastructure, Google Cloud AI | Sunnyvale, CA | [open](https://www.linkedin.com/jobs/view/software-engineer-iii-infrastructure-google-cloud-ai-at-google-4365576577) |
-| official_gap | syncareer | Apple | Software Engineer - Early Career (Front-end) | Austin, Texas, United States | [open](https://jobs.apple.com/en-us/details/200680752-0157/software-engineer-early-career-front-end?team=SFTWR) |
 | official_gap | syncareer | JPMorgan Chase | Python AWS Software Engineer III | Jersey City, New Jersey, United States | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210776424) |
-| official_gap | syncareer | Apple | Software Engineer - Early Career (Front-end) | Cupertino, California, United States | [open](https://jobs.apple.com/en-us/details/200680752-0836/software-engineer-early-career-front-end?team=SFTWR) |
-| official_gap | syncareer | Apple | Data Platform SRE, AI & Data Platforms (AiDP) | Austin, Texas, United States | [open](https://jobs.apple.com/en-us/details/200680281-0157/data-platform-sre-ai-data-platforms-aidp?team=SFTWR) |
 | official_gap | syncareer | Google | Associate Commercial Counsel, Cloud Consulting and Forward Deployed Engineers | Seattle, Washington, United States | [open](https://www.google.com/about/careers/applications/jobs/results/133113443107381958-associate-commercial-counsel-cloud-consulting-and-forward-deployed-engineers) |
-| official_gap | syncareer | Apple | Software Engineering Systems | Cupertino, California, United States | [open](https://jobs.apple.com/en-us/details/200680200-0836/software-engineering-systems?team=HRDWR) |
-| official_gap | syncareer | Apple | Software Engineer - UI Rendering, Performance & Power | Cupertino, California, United States | [open](https://jobs.apple.com/en-us/details/200680644-0836/software-engineer-ui-rendering-performance-power?team=SFTWR) |
 | official_gap | syncareer | Google | Device Backend Technician, Quantum AI | Goleta, California, United States | [open](https://www.google.com/about/careers/applications/jobs/results/137844418303402694-device-backend-technician-quantum-ai) |
-| official_gap | syncareer | Apple | Machine Learning Evaluation Engineer | Sunnyvale, California, United States | [open](https://jobs.apple.com/en-us/details/200680655-3956/machine-learning-evaluation-engineer?team=HRDWR) |
 | official_gap | syncareer | JPMorgan Chase | J.P. Morgan Wealth Management - Associate, Investment Product and Platform | New York, United States | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210784833) |
 | official_gap | syncareer | JPMorgan Chase | Java Full Stack Software Engineer III - React | Tampa, Florida, United States | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210785590) |
-| official_gap | syncareer | Apple | Software Engineer (Java Middleware), eBusiness | Sunnyvale, California, United States | [open](https://jobs.apple.com/en-us/details/200678154-3956/software-engineer-java-middleware-ebusiness?team=SFTWR) |
-| official_gap | syncareer | Apple | Full-Stack UI Software Engineer - Wallet, Payments & Commerce (WPC) | Cupertino, California, United States | [open](https://jobs.apple.com/en-us/details/200680683-0836/full-stack-ui-software-engineer-wallet-payments-commerce-wpc?team=SFTWR) |
