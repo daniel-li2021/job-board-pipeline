@@ -1,6 +1,6 @@
 # Cross-pipeline official coverage audit
 
-- Generated: 2026-08-30T16:42:31.103117+00:00
+- Generated: 2026-08-30T18:37:51.226131+00:00
 - Official snapshot: 2026-08-30T16:41:19.617752+00:00
 - Coverage scope: jobs from the last 3 days that pass shared hard + role/seniority prefilters; LLM score is not used.
 - Validation: 100% exact observed coverage is the current review target; final validation is manual.
@@ -13,31 +13,30 @@
 | Microsoft | unvalidated | microsoft | 10 | 9 | 1 | 0 | 90% |
 | Apple | unvalidated | apple | 8 | 0 | 8 | 0 | 0% |
 | Meta | unsupported | meta | 8 | 0 | 0 | 0 | - |
-| Roblox | unvalidated | greenhouse | 8 | 8 | 0 | 0 | 100% |
 | JPMorgan Chase | unvalidated | oracle_hcm | 7 | 3 | 4 | 0 | 43% |
 | TikTok | unsupported | tiktok | 7 | 0 | 0 | 0 | - |
 | Disney | unsupported | disney | 6 | 0 | 0 | 0 | - |
 | Cisco | unvalidated | workday | 5 | 3 | 2 | 0 | 60% |
 | NVIDIA | unvalidated | workday | 4 | 0 | 4 | 0 | 0% |
-| OpenAI | unvalidated | ashby | 4 | 2 | 2 | 0 | 50% |
 | Qualcomm | unsupported | pcsx | 4 | 0 | 0 | 0 | - |
 | Adobe | unvalidated | workday | 3 | 0 | 3 | 0 | 0% |
 | ByteDance | unvalidated | skip | 3 | 0 | 0 | 0 | - |
 | Intel | unvalidated | skip | 3 | 0 | 0 | 0 | - |
 | NetApp | unvalidated | skip | 3 | 0 | 0 | 0 | - |
+| OpenAI | unvalidated | ashby | 3 | 1 | 2 | 0 | 33% |
+| Oracle | unvalidated | oracle_hcm | 3 | 2 | 1 | 0 | 67% |
 | Amazon | unvalidated | amazon | 2 | 2 | 0 | 0 | 100% |
 | Anthropic | unvalidated | greenhouse | 2 | 1 | 1 | 0 | 50% |
-| Oracle | unvalidated | oracle_hcm | 2 | 2 | 0 | 0 | 100% |
 | SAP | unvalidated | sap | 2 | 0 | 2 | 0 | 0% |
 | Salesforce | unvalidated | workday | 2 | 0 | 2 | 0 | 0% |
 | Tesla | unvalidated | skip | 2 | 0 | 0 | 0 | - |
 | Travelers | unvalidated | skip | 2 | 0 | 0 | 0 | - |
 | Uber | unvalidated | uber | 2 | 2 | 0 | 0 | 100% |
 | AMD | unsupported | skip | 1 | 0 | 0 | 0 | - |
-| Databricks | unvalidated | greenhouse | 1 | 1 | 0 | 0 | 100% |
 | Expedia Group | unvalidated | skip | 1 | 0 | 0 | 0 | - |
 | Goldman Sachs | unsupported | skip | 1 | 0 | 0 | 0 | - |
 | Pinterest | unvalidated | greenhouse | 1 | 0 | 1 | 0 | 0% |
+| Roblox | unvalidated | greenhouse | 1 | 1 | 0 | 0 | 100% |
 | Roku | unvalidated | skip | 1 | 0 | 0 | 0 | - |
 | Snap | unvalidated | workday | 1 | 0 | 1 | 0 | 0% |
 | Stryker | unvalidated | skip | 1 | 0 | 0 | 0 | - |
@@ -54,6 +53,7 @@
 | Chewy | unvalidated | skip | 0 | 0 | 0 | 0 | - |
 | Chime | unvalidated | skip | 0 | 0 | 0 | 0 | - |
 | Citadel | unvalidated | skip | 0 | 0 | 0 | 0 | - |
+| Databricks | unvalidated | greenhouse | 0 | 0 | 0 | 0 | - |
 | Dell | unvalidated | skip | 0 | 0 | 0 | 0 | - |
 | DoorDash | unvalidated | greenhouse | 0 | 0 | 0 | 0 | - |
 | Dropbox | unvalidated | greenhouse | 0 | 0 | 0 | 0 | - |
@@ -96,7 +96,7 @@
 | Zscaler | unvalidated | skip | 0 | 0 | 0 | 0 | - |
 | eBay | unsupported | skip | 0 | 0 | 0 | 0 | - |
 
-## Gaps / pending review (36)
+## Gaps / pending review (37)
 
 | Status | Pipeline | Company | Title | Location | Link |
 |---|---|---|---|---|---|
@@ -113,6 +113,7 @@
 | official_gap | board | OpenAI | Systems Generalist, GPT Infrastructure | Seattle, WA | [open](https://www.linkedin.com/jobs/view/systems-generalist-gpt-infrastructure-at-openai-4441356818) |
 | official_gap | board | Adobe | Job Posting Title AI/ DevOps Engineer | San Jose, CA | [open](https://www.linkedin.com/jobs/view/job-posting-title-ai-devops-engineer-at-adobe-4441163122) |
 | official_gap | board | Adobe | Software Development Engineer | San Jose, CA | [open](https://www.linkedin.com/jobs/view/software-development-engineer-at-adobe-4441147794) |
+| official_gap | board | Oracle | Software Developer 4 | Nashville, TN | [open](https://www.linkedin.com/jobs/view/software-developer-4-at-oracle-4438748899) |
 | official_gap | board | SAP | Expert DevOps Engineer | Reston, VA | [open](https://www.linkedin.com/jobs/view/expert-devops-engineer-at-sap-4433255037) |
 | official_gap | board | OpenAI | Full Stack Software Engineer, API Experience | New York, NY | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-api-experience-at-openai-4432902781) |
 | official_gap | board | NVIDIA | Software Engineer, Hardware Tools and Methodology - New College Grad 2026 | Santa Clara, CA | [open](https://www.linkedin.com/jobs/view/software-engineer-hardware-tools-and-methodology-new-college-grad-2026-at-nvidia-4424322453) |
