@@ -7,6 +7,8 @@ decides what is actionable. Keep this list small enough for twice-daily runs.
 ROLE_SEARCH_QUERIES = [
     "ai engineer",
     "machine learning engineer",
+    "data scientist",
+    "solutions architect",
     "data engineer",
     "platform engineer",
     "full stack engineer",

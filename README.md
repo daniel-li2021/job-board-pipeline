@@ -216,18 +216,25 @@ lightly (`sources/official.py`).
 | Microsoft | `sources/careers/microsoft.py` | Eightfold PCSX `GET /api/pcsx/search` (`location=United States`) | `start=0,10,20,...` |
 | NVIDIA / Salesforce / Adobe | `sources/careers/workday.py` (one reusable CXS adapter) | `POST /wday/cxs/{tenant}/{site}/jobs` (US facet) | `offset=0,20,40,...` |
 | Uber | `sources/careers/uber.py` | Oracle HCM list+detail (`iaziqy.fa.ocs.oraclecloud.com`, site `CX_1`) | `offset=(page-1)*limit` until `TotalJobsCount` exhausted (do not stop at pages 1–7) |
+| Meta | `sources/careers/meta.py` | Careers Relay/GraphQL; discovers the current `lsd` and persisted-query `doc_id` from the public page/bundle | one complete result payload per role query |
+| TikTok | `sources/careers/tiktok.py` | LifeAtTikTok public supplier `/search/job/posts` API with US city filters | `offset` + `limit=50` |
+| LinkedIn | `sources/careers/linkedin_company.py` | logged-out guest jobs endpoint pinned to company id `1337` | `start=0,10,...` |
+| Walmart | `sources/careers/walmart.py` | combined hybrid-search POST API | `page=0,1,...`, `size=25` |
+| Disney / Qualcomm | `sources/careers/disney.py`, generic PCSX in `microsoft.py` | server-rendered US results / Eightfold search+detail | bounded per role query |
+| Palantir / WeRide | `sources/careers/lever.py` | public Lever postings API | single JSON payload |
 
 Registry: `source/official_careers.json`. Source-side US filters are used
 when the API actually honors them. Uber’s HCM finder does not, so rows are
 collected then passed through conservative `keep_us_or_unknown` (keep US /
 Remote-US / multi-office if any US / ambiguous; drop confirmed all-non-US).
 
-Skipped until a working public search API exists: Meta, TikTok, LinkedIn
-(corporate), Walmart. The same registry also stores verified manual
-`search_links` for adapter-pending referral companies (currently Disney, eBay,
-Qualcomm, AMD, and Goldman Sachs). These links appear on the public dashboard
-and do not pretend that automation is complete. Zoom, Pure Storage, Databricks,
-and Roblox use existing Workday/Greenhouse adapters.
+The registry now carries A/B/C implementation priority plus official search
+links for 86 companies. Easy existing-adapter wins include Airbnb, Anthropic,
+Dropbox, Instacart, MongoDB, OpenAI, Reddit, Block, and TransUnion. AMD remains
+link-only because anonymous automation receives HTTP 403; eBay's Phenom
+`/widgets` flow and Goldman Sachs' custom GraphQL search remain link-only to
+avoid brittle browser emulation. All links and automation state are rendered
+directly from the registry on the dashboard.
 
 ## Entry point
 

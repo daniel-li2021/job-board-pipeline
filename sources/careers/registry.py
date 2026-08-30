@@ -15,11 +15,18 @@ from .ashby import scrape_ashby
 from .avature import scrape_avature
 from .google import scrape_google
 from .greenhouse import scrape_greenhouse
+from .disney import scrape_disney
+from .lever import scrape_lever
+from .linkedin_company import scrape_linkedin_company
+from .meta import scrape_meta
 from .microsoft import scrape_microsoft
+from .microsoft import scrape_pcsx
 from .oracle_hcm import scrape_oracle_hcm
 from .sap import scrape_sap
 from .smartrecruiters import scrape_smartrecruiters
 from .uber import scrape_uber
+from .tiktok import scrape_tiktok
+from .walmart import scrape_walmart
 from .workday import scrape_workday
 
 REGISTRY_PATH = BASE_DIR / "source" / "official_careers.json"
@@ -50,6 +57,7 @@ def scrape_company(
 ) -> Dict[str, Any]:
     adapter = (company.get("adapter") or "").strip().lower()
     name = company.get("name") or company.get("id") or adapter
+    max_pages = min(max_pages, int(company.get("max_pages") or max_pages))
     if adapter == "skip":
         raise SourceUnavailable(company.get("skip_reason") or f"{name} skipped")
     if adapter == "google":
@@ -60,6 +68,25 @@ def scrape_company(
         return scrape_apple(session, max_pages=max_pages)
     if adapter == "microsoft":
         return scrape_microsoft(session, max_pages=max_pages)
+    if adapter == "pcsx":
+        pc = company.get("pcsx") or {}
+        return scrape_pcsx(
+            session,
+            company=name,
+            portal=pc["portal"],
+            domain=pc["domain"],
+            max_pages=max_pages,
+        )
+    if adapter == "disney":
+        return scrape_disney(session, max_pages=max_pages)
+    if adapter == "linkedin_company":
+        return scrape_linkedin_company(session, max_pages=max_pages)
+    if adapter == "meta":
+        return scrape_meta(session, max_pages=max_pages)
+    if adapter == "tiktok":
+        return scrape_tiktok(session, max_pages=max_pages)
+    if adapter == "walmart":
+        return scrape_walmart(session, max_pages=max_pages)
     if adapter == "workday":
         wd = company.get("workday") or {}
         return scrape_workday(
@@ -77,6 +104,9 @@ def scrape_company(
     if adapter == "ashby":
         ash = company.get("ashby") or {}
         return scrape_ashby(session, company=name, token=ash["token"])
+    if adapter == "lever":
+        lever = company.get("lever") or {}
+        return scrape_lever(session, company=name, token=lever["token"])
     if adapter == "smartrecruiters":
         sr = company.get("smartrecruiters") or {}
         return scrape_smartrecruiters(

@@ -15,6 +15,7 @@ from __future__ import annotations
 import re
 import time
 from typing import Any, Dict, List, Optional
+from urllib.parse import urlsplit
 
 import requests
 
@@ -36,15 +37,15 @@ MAX_DETAILS = 200
 DEFAULT_QUERIES = ROLE_SEARCH_QUERIES
 
 
-def _csrf_headers(session: requests.Session) -> Dict[str, str]:
-    html = http_get(session, PORTAL, label="microsoft portal").text
+def _csrf_headers(session: requests.Session, portal: str, company: str) -> Dict[str, str]:
+    html = http_get(session, portal, label=f"{company} portal").text
     match = re.search(r'name="_csrf" content="([^"]+)"', html)
     if not match:
-        raise SourceUnavailable("Microsoft careers portal missing CSRF token")
+        raise SourceUnavailable(f"{company} careers portal missing CSRF token")
     return {
         "Accept": "application/json",
         "X-CSRFToken": match.group(1),
-        "Referer": PORTAL,
+        "Referer": portal,
     }
 
 
@@ -62,16 +63,23 @@ def _location(item: Dict[str, Any]) -> str:
     return normalize_space(locs)
 
 
-def scrape_microsoft(
+def scrape_pcsx(
     session: requests.Session,
     *,
+    company: str,
+    portal: str,
+    domain: str,
     max_pages: int = 50,
     queries: Optional[List[str]] = None,
     fetch_details: bool = True,
 ) -> Dict[str, Any]:
     fetched_at = now_iso()
     queries = queries or DEFAULT_QUERIES
-    headers = _csrf_headers(session)
+    base = f"{urlsplit(portal).scheme}://{urlsplit(portal).netloc}"
+    search = f"{base}/api/pcsx/search"
+    details = f"{base}/api/pcsx/position_details"
+    source = f"{normalize_space(company).lower().replace(' ', '_')}_official_careers"
+    headers = _csrf_headers(session, portal, company)
     seen: set[str] = set()
     jobs: List[Dict[str, str]] = []
     raw_count = 0
@@ -84,14 +92,14 @@ def scrape_microsoft(
         query_ids: set[str] = set()
         for _page in range(max_pages):
             params = {
-                "domain": DOMAIN,
+                "domain": domain,
                 "query": query,
                 "location": "United States",
                 "sort_by": "timestamp",
                 "start": start,
                 "num": PAGE_SIZE,
             }
-            payload = http_get(session, SEARCH, label="microsoft search", params=params, headers=headers).json()
+            payload = http_get(session, search, label=f"{company} search", params=params, headers=headers).json()
             pages += 1
             data = _unwrap(payload)
             rows = data.get("positions") or []
@@ -122,15 +130,15 @@ def scrape_microsoft(
                 if location and not keep_us_or_unknown(location):
                     continue
                 path = item.get("positionUrl") or f"/careers/job/{pid}"
-                official = "https://apply.careers.microsoft.com" + path
+                official = base + path
                 description = ""
                 if fetch_details and pid and detail_fetches < MAX_DETAILS:
                     try:
                         det = http_get(
                             session,
-                            DETAILS,
-                            label="microsoft details",
-                            params={"domain": DOMAIN, "position_id": pid},
+                            details,
+                            label=f"{company} details",
+                            params={"domain": domain, "position_id": pid},
                             headers=headers,
                         ).json()
                         info = _unwrap(det)
@@ -142,8 +150,8 @@ def scrape_microsoft(
                         errors.append(f"details {pid}: {exc}")
                 jobs.append(
                     make_job(
-                        source=SOURCE,
-                        company=COMPANY,
+                        source=source,
+                        company=company,
                         title=item.get("name") or "",
                         location=location,
                         job_id=jid,
@@ -162,14 +170,14 @@ def scrape_microsoft(
             time.sleep(SLEEP_S)
 
     return {
-        "company": COMPANY,
-        "source": SOURCE,
+        "company": company,
+        "source": source,
         "method": "HTTP GET Eightfold PCSX /api/pcsx/search (+ optional position_details)",
         "search_url": (
-            f"{SEARCH}?domain={DOMAIN}&query=software+engineer"
+            f"{search}?domain={domain}&query=software+engineer"
             "&location=United+States&sort_by=timestamp&start=0&num=10"
         ),
-        "search_urls": [PORTAL, SEARCH],
+        "search_urls": [portal, search],
         "pagination": "start=0,10,20,... ; num=10 (API cap); stop on empty/repeat or count",
         "pages_fetched": pages,
         "raw_jobs": raw_count,
@@ -177,3 +185,21 @@ def scrape_microsoft(
         "errors": errors,
         "detail_fetches": detail_fetches,
     }
+
+
+def scrape_microsoft(
+    session: requests.Session,
+    *,
+    max_pages: int = 50,
+    queries: Optional[List[str]] = None,
+    fetch_details: bool = True,
+) -> Dict[str, Any]:
+    return scrape_pcsx(
+        session,
+        company=COMPANY,
+        portal=PORTAL,
+        domain=DOMAIN,
+        max_pages=max_pages,
+        queries=queries,
+        fetch_details=fetch_details,
+    )

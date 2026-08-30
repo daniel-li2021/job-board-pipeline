@@ -111,30 +111,30 @@
     {
       "id": "meta",
       "name": "Meta",
-      "adapter": "skip",
+      "adapter": "meta",
       "enabled": true,
+      "max_pages": 1,
       "priority_tier": "A",
       "search_links": [
         {
           "label": "Engineering · newest",
           "url": "https://www.metacareers.com/jobsearch/?q=software%20engineer&sort_by_new=true"
         }
-      ],
-      "skip_reason": "Tier A · WAF/browser-only today. Keep official link; investigate browser XHR/HAR later."
+      ]
     },
     {
       "id": "tiktok",
       "name": "TikTok",
-      "adapter": "skip",
+      "adapter": "tiktok",
       "enabled": true,
+      "max_pages": 4,
       "priority_tier": "A",
       "search_links": [
         {
           "label": "Software search",
           "url": "https://lifeattiktok.com/search?recruitment_id_list=1%2C201&keyword=software+engineer"
         }
-      ],
-      "skip_reason": "Tier A · custom CSR/API. Keep official link; investigate XHR later."
+      ]
     },
     {
       "id": "uber",
@@ -235,16 +235,16 @@
     {
       "id": "linkedin",
       "name": "LinkedIn",
-      "adapter": "skip",
+      "adapter": "linkedin_company",
       "enabled": true,
+      "max_pages": 3,
       "priority_tier": "A",
       "search_links": [
         {
           "label": "LinkedIn company jobs",
           "url": "https://www.linkedin.com/company/linkedin/jobs/"
         }
-      ],
-      "skip_reason": "Tier A · official company jobs page captured; scraper/API still unresolved."
+      ]
     },
     {
       "id": "bloomberg",
@@ -319,16 +319,16 @@
     {
       "id": "walmart",
       "name": "Walmart Global Tech",
-      "adapter": "skip",
+      "adapter": "walmart",
       "enabled": true,
+      "max_pages": 4,
       "priority_tier": "A",
       "search_links": [
         {
           "label": "US software search",
           "url": "https://careers.walmart.com/results?q=software%20engineer&jobCity=United%20States"
         }
-      ],
-      "skip_reason": "Tier A · custom Next.js/API. Search link works; XHR reverse-engineering in progress/deferred."
+      ]
     },
     {
       "id": "cisco",
@@ -382,16 +382,16 @@
     {
       "id": "disney",
       "name": "Disney",
-      "adapter": "skip",
+      "adapter": "disney",
       "enabled": true,
+      "max_pages": 3,
       "priority_tier": "B",
       "search_links": [
         {
           "label": "US software",
           "url": "https://www.disneycareers.com/en/search-jobs/software%20engineer/United%20States/391/1/2/6252001/39x76/-98x5/100/2"
         }
-      ],
-      "skip_reason": "Tier B · verified official filtered search captured; adapter deferred."
+      ]
     },
     {
       "id": "ebay",
@@ -405,13 +405,14 @@
           "url": "https://jobs.ebayinc.com/us/en/search-results?keywords=software%20engineer"
         }
       ],
-      "skip_reason": "Tier B · verified official search captured; adapter deferred."
+      "skip_reason": "Tier B · Phenom renders results through a site-specific /widgets payload; keep the verified official link instead of adding brittle browser emulation."
     },
     {
       "id": "qualcomm",
       "name": "Qualcomm",
-      "adapter": "skip",
+      "adapter": "pcsx",
       "enabled": true,
+      "max_pages": 3,
       "priority_tier": "B",
       "search_links": [
         {
@@ -419,7 +420,10 @@
           "url": "https://careers.qualcomm.com/careers?query=software%20engineer&location=United%20States"
         }
       ],
-      "skip_reason": "Tier B · verified official search captured; adapter deferred."
+      "pcsx": {
+        "portal": "https://careers.qualcomm.com/careers",
+        "domain": "qualcomm.com"
+      }
     },
     {
       "id": "amd",
@@ -433,7 +437,7 @@
           "url": "https://careers.amd.com/careers-home/jobs?keywords=software%20engineer&location=United%20States"
         }
       ],
-      "skip_reason": "Tier A · verified official search captured; adapter deferred."
+      "skip_reason": "Tier A · careers.amd.com returns HTTP 403 to anonymous automation; keep the verified official search link."
     },
     {
       "id": "zoom",
@@ -465,7 +469,7 @@
           "url": "https://higher.gs.com/results?SEARCH=software%20engineer"
         }
       ],
-      "skip_reason": "Tier B · verified official search captured; adapter deferred."
+      "skip_reason": "Tier B · higher.gs.com uses a custom GraphQL schema; keep the verified official link until a stable filtered role-search query is available."
     },
     {
       "id": "pure-storage",
@@ -518,7 +522,7 @@
     {
       "id": "airbnb",
       "name": "Airbnb",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -527,12 +531,12 @@
           "url": "https://careers.airbnb.com/positions/"
         }
       ],
-      "skip_reason": "Tier A · High-value; inspect underlying search/XHR. Official searchable job page verified."
+      "greenhouse": {"token": "airbnb"}
     },
     {
       "id": "anthropic",
       "name": "Anthropic",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -541,7 +545,7 @@
           "url": "https://www.anthropic.com/careers/jobs"
         }
       ],
-      "skip_reason": "Tier A · High-value AI employer; inspect jobs page/API. Official searchable roles page verified."
+      "greenhouse": {"token": "anthropic"}
     },
     {
       "id": "applovin",
@@ -616,7 +620,7 @@
     {
       "id": "dropbox",
       "name": "Dropbox",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -625,7 +629,7 @@
           "url": "https://www.dropbox.jobs/en/jobs/"
         }
       ],
-      "skip_reason": "Tier A · High-value software employer; inspect ATS/feed."
+      "greenhouse": {"token": "dropbox"}
     },
     {
       "id": "expedia",
@@ -658,7 +662,7 @@
     {
       "id": "instacart",
       "name": "Instacart",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -667,7 +671,7 @@
           "url": "https://www.instacart.careers/"
         }
       ],
-      "skip_reason": "Tier A · High-value marketplace; identify direct job-board/search endpoint."
+      "greenhouse": {"token": "instacart"}
     },
     {
       "id": "intel",
@@ -700,7 +704,7 @@
     {
       "id": "mongodb",
       "name": "MongoDB",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -709,7 +713,7 @@
           "url": "https://www.mongodb.com/company/careers/see-jobs"
         }
       ],
-      "skip_reason": "Tier A · High-value software/data employer; inspect ATS/feed."
+      "greenhouse": {"token": "mongodb"}
     },
     {
       "id": "morgan-stanley",
@@ -756,7 +760,7 @@
     {
       "id": "openai",
       "name": "OpenAI",
-      "adapter": "skip",
+      "adapter": "ashby",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -765,12 +769,12 @@
           "url": "https://openai.com/careers/search/"
         }
       ],
-      "skip_reason": "Tier A · Highest-value AI employer; official searchable careers page."
+      "ashby": {"token": "openai"}
     },
     {
       "id": "palantir",
       "name": "Palantir",
-      "adapter": "skip",
+      "adapter": "lever",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -779,7 +783,7 @@
           "url": "https://jobs.lever.co/palantir"
         }
       ],
-      "skip_reason": "Tier A · Likely easy Lever integration; implement generic Lever if not already available."
+      "lever": {"token": "palantir"}
     },
     {
       "id": "paypal",
@@ -798,7 +802,7 @@
     {
       "id": "reddit",
       "name": "Reddit",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -807,7 +811,7 @@
           "url": "https://job-boards.greenhouse.io/reddit"
         }
       ],
-      "skip_reason": "Tier A · Easy win: Greenhouse; reuse generic adapter."
+      "greenhouse": {"token": "reddit"}
     },
     {
       "id": "redhat",
@@ -840,7 +844,7 @@
     {
       "id": "block",
       "name": "Block / Square",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -849,7 +853,7 @@
           "url": "https://block.xyz/careers/jobs"
         }
       ],
-      "skip_reason": "Tier A · High-value fintech/software; inspect current jobs backend."
+      "greenhouse": {"token": "block"}
     },
     {
       "id": "tesla",
@@ -910,7 +914,7 @@
     {
       "id": "weride",
       "name": "WeRide",
-      "adapter": "skip",
+      "adapter": "lever",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -919,7 +923,7 @@
           "url": "https://jobs.lever.co/weride"
         }
       ],
-      "skip_reason": "Tier A · Easy win: Lever; reuse generic Lever adapter."
+      "lever": {"token": "weride"}
     },
     {
       "id": "workday",
@@ -1204,7 +1208,7 @@
     {
       "id": "transunion",
       "name": "TransUnion",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "C",
       "search_links": [
@@ -1213,7 +1217,11 @@
           "url": "https://transunion.wd5.myworkdayjobs.com/TransUnion"
         }
       ],
-      "skip_reason": "Tier C · Likely Workday/easy candidate; lower SWE density."
+      "workday": {
+        "host": "https://transunion.wd5.myworkdayjobs.com",
+        "tenant": "transunion",
+        "site": "TransUnion"
+      }
     },
     {
       "id": "travelers",

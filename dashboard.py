@@ -434,12 +434,17 @@ def official_search_catalog() -> List[Dict[str, Any]]:
         companies.append({
             "id": company.get("id", ""),
             "name": company.get("name", ""),
+            "priority_tier": company.get("priority_tier", ""),
             "adapter": company.get("adapter", ""),
             "automation": "active" if company.get("adapter") != "skip" else "search_link_only",
             "search_links": [link for link in links if isinstance(link, dict) and link.get("url")],
             "note": company.get("skip_reason", "") if company.get("adapter") == "skip" else "",
         })
-    return sorted(companies, key=lambda item: (item["automation"] != "active", str(item["name"]).lower()))
+    return sorted(companies, key=lambda item: (
+        {"A": 0, "B": 1, "C": 2}.get(str(item["priority_tier"]), 3),
+        item["automation"] != "active",
+        str(item["name"]).lower(),
+    ))
 
 
 def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
@@ -568,7 +573,7 @@ async function loadSharedStates(){const {data,error}=await supabase.from('job_re
 async function refreshSharedStates(){try{await loadSharedStates()}catch(error){sharedError=`Shared review unavailable: ${error.message}`;renderReviewMessage();renderAll()}}
 async function initializeSupabase(){try{const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');supabase=createClient(D.supabase.url,D.supabase.publishable_key);await refreshSharedStates()}catch(error){sharedError=`Shared review unavailable: ${error.message}`;renderReviewMessage();renderAll()}}
 window.addEventListener('online',refreshSharedStates);renderReviewMessage();renderAll();initializeSupabase();
-document.getElementById('officialSearches').innerHTML=`<div class="tablewrap"><table><thead><tr><th>Company</th><th>Automation</th><th>Official searches</th><th>Note</th></tr></thead><tbody>${(D.official_searches||[]).map(c=>`<tr><td><b>${esc(c.name)}</b></td><td class="${c.automation==='active'?'active':'manual'}">${c.automation==='active'?'Automated':'Link only'}</td><td><div class="links">${c.search_links.length?c.search_links.map(l=>`<a href="${esc(l.url)}">${esc(l.label||'Search')}</a>`).join(''):'-'}</div></td><td class="small">${esc(c.note)}</td></tr>`).join('')}</tbody></table></div>`;
+document.getElementById('officialSearches').innerHTML=`<div class="tablewrap"><table><thead><tr><th>Tier</th><th>Company</th><th>Automation</th><th>Official searches</th><th>Note</th></tr></thead><tbody>${(D.official_searches||[]).map(c=>`<tr><td><b>${esc(c.priority_tier||'-')}</b></td><td><b>${esc(c.name)}</b></td><td class="${c.automation==='active'?'active':'manual'}">${c.automation==='active'?'Automated':'Link only'}</td><td><div class="links">${c.search_links.length?c.search_links.map(l=>`<a href="${esc(l.url)}">${esc(l.label||'Search')}</a>`).join(''):'-'}</div></td><td class="small">${esc(c.note)}</td></tr>`).join('')}</tbody></table></div>`;
 </script></body></html>'''
 
 

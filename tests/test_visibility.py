@@ -176,12 +176,16 @@ class DashboardPolicyTests(unittest.TestCase):
 
     def test_official_registry_has_search_link_only_targets(self) -> None:
         catalog = {entry["id"]: entry for entry in dashboard.official_search_catalog()}
-        for company_id in ("disney", "ebay", "qualcomm", "amd", "goldman-sachs"):
+        for company_id in ("ebay", "amd", "goldman-sachs"):
             self.assertEqual("search_link_only", catalog[company_id]["automation"])
             self.assertTrue(catalog[company_id]["search_links"])
-        for company_id in ("zoom", "pure-storage", "databricks", "roblox"):
+        for company_id in (
+            "disney", "qualcomm", "meta", "tiktok", "linkedin", "walmart",
+            "zoom", "pure-storage", "databricks", "roblox",
+        ):
             self.assertEqual("active", catalog[company_id]["automation"])
             self.assertTrue(catalog[company_id]["search_links"])
+        self.assertEqual("A", catalog["meta"]["priority_tier"])
 
     def test_known_foreign_city_only_locations_are_not_visible(self) -> None:
         for location in ("Bucharest", "Noida", "Bratislava, Slovakia", "Basel"):

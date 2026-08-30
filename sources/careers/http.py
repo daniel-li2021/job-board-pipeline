@@ -61,11 +61,12 @@ def http_post(
     *,
     label: str,
     json_body: Optional[Dict[str, Any]] = None,
+    params: Any = None,
     headers: Optional[Dict[str, str]] = None,
     timeout: int = REQUEST_TIMEOUT,
 ) -> requests.Response:
     try:
-        resp = session.post(url, json=json_body, headers=headers, timeout=timeout)
+        resp = session.post(url, params=params, json=json_body, headers=headers, timeout=timeout)
     except requests.RequestException as exc:
         raise SourceUnavailable(f"{label} network error: {exc}") from exc
     raise_for_status(resp, label)
