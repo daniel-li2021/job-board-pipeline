@@ -40,3 +40,22 @@ with check (true);
 create schema if not exists private;
 drop function if exists private.is_job_review_editor();
 drop table if exists private.job_review_allowlist;
+
+create or replace function private.keep_newest_job_review_status()
+returns trigger
+language plpgsql
+security invoker
+set search_path = ''
+as $$
+begin
+  if old.updated_at > new.updated_at then
+    return old;
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists keep_newest_job_review_status on public.job_review_status;
+create trigger keep_newest_job_review_status
+before update on public.job_review_status
+for each row execute function private.keep_newest_job_review_status();

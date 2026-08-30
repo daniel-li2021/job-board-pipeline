@@ -262,6 +262,12 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertIn("Applied/Complete", dashboard.HTML_TEMPLATE)
         self.assertIn("<h2>Deleted</h2>", dashboard.HTML_TEMPLATE)
         self.assertNotIn("jobBoardStatusesV2", dashboard.HTML_TEMPLATE)
+        self.assertIn("pending:true", dashboard.HTML_TEMPLATE)
+        self.assertIn("Pending sync", dashboard.HTML_TEMPLATE)
+        self.assertIn("window.addEventListener('online',refreshSharedStates)", dashboard.HTML_TEMPLATE)
+        self.assertIn("persist();renderReviewMessage();renderAll();pushState(next)", dashboard.HTML_TEMPLATE)
+        self.assertNotIn("reviewStates[key]=previous", dashboard.HTML_TEMPLATE)
+        self.assertNotIn("delete reviewStates[key]", dashboard.HTML_TEMPLATE)
         self.assertIn("<details class=\"panel\"><summary>Referral opportunities</summary>", dashboard.HTML_TEMPLATE)
         self.assertIn("<th>Sponsorship</th>", dashboard.HTML_TEMPLATE)
 
@@ -582,6 +588,8 @@ class ReportingWorkflowTests(unittest.TestCase):
         self.assertIn('create policy "Public can update job review status"', sql)
         self.assertIn("on table public.job_review_status to anon, authenticated", sql)
         self.assertIn("'unreviewed', 'in_progress', 'applied_complete'", sql)
+        self.assertIn("if old.updated_at > new.updated_at then", sql)
+        self.assertIn("create trigger keep_newest_job_review_status", sql)
         self.assertNotIn("for delete", sql.lower())
 
 

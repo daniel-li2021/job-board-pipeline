@@ -311,6 +311,9 @@ The public page reads `public.job_review_status` directly from Supabase and
 merges rows by `canonical_job_key`. Status updates never touch GitHub, run an
 Action, or rebuild Pages. The browser caches the latest successful shared read
 in `localStorage` only as a temporary fallback; Supabase remains authoritative.
+Edits are saved locally first and marked pending until the shared upsert
+succeeds. Pending edits retry on page load or reconnect, and `updated_at`
+provides simple last-write-wins conflict resolution.
 
 One-time setup:
 
