@@ -2627,6 +2627,45 @@
           "url": "https://recruiting2.ultipro.com/UNI1027UDRT/JobBoard/6ccb8fd4-4950-43e4-9978-4bcc85c6f5e1/OpportunityDetail?opportunityId=642bfd81-5f87-4e0d-9ec1-62920b04946b"
         }
       ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-08-30_1839",
+      "emitted_at": "2026-08-30T18:40:06.307912+00:00",
+      "event_kind": "new_matching",
+      "count": 2,
+      "jobs": [
+        {
+          "canonical_job_key": "id::syncareer::e291a7bd35d084173489640242d84740",
+          "job_id": "e291a7bd35d084173489640242d84740",
+          "tier": "B",
+          "match_score": 80.0,
+          "fit_score": 80.0,
+          "company": "Brooksource",
+          "title": "Software Engineer",
+          "location": "Charlotte, North Carolina, United States",
+          "posting_date": "2026-08-29",
+          "first_seen": "2026-08-30T18:39:24.213179+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://jobs.brooksource.com/jobs/job/a1wcv000000vrafeaa-software-engineer-charlotte-north-carolina/",
+          "url": "https://jobs.brooksource.com/jobs/job/a1wcv000000vrafeaa-software-engineer-charlotte-north-carolina/"
+        },
+        {
+          "canonical_job_key": "id::syncareer::0e4e724864f2931e7358d1985173fcda",
+          "job_id": "0e4e724864f2931e7358d1985173fcda",
+          "tier": "B",
+          "match_score": 80.0,
+          "fit_score": 80.0,
+          "company": "Freeport-McMoRan",
+          "title": "Data and AI Engineer II",
+          "location": "Phoenix, Arizona, United States",
+          "posting_date": "2026-08-29",
+          "first_seen": "2026-08-30T18:39:24.213179+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://talent.fmjobs.com/careers?pid=44209295&domain=fcx.com&sort_by=relevance",
+          "url": "https://talent.fmjobs.com/careers?pid=44209295&domain=fcx.com&sort_by=relevance"
+        }
+      ]
     }
   ]
 }
