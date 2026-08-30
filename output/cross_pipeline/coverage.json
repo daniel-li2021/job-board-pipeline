@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-30T09:38:19.754458+00:00",
+  "generated_at": "2026-08-30T11:03:08.518686+00:00",
   "window_days": 3,
   "official_snapshot_at": "2026-08-30T09:36:03.020151+00:00",
   "manual_validation_target": "100% exact observed in-scope coverage; user makes final validation decision",
   "counts": {
-    "not_dedicated": 412,
-    "official_unsupported": 30,
+    "not_dedicated": 415,
+    "official_unsupported": 27,
     "covered_unvalidated": 40,
     "official_gap": 33
   },
@@ -37,20 +37,6 @@
       "coverage_ratio": 0.9,
       "board_jobs": 5,
       "syncareer_jobs": 5
-    },
-    {
-      "id": "tiktok",
-      "name": "TikTok",
-      "adapter": "skip",
-      "manual_status": "unsupported",
-      "in_scope": 10,
-      "exact_covered": 0,
-      "official_gaps": 0,
-      "pending_refresh": 0,
-      "unsupported": 10,
-      "coverage_ratio": null,
-      "board_jobs": 1,
-      "syncareer_jobs": 9
     },
     {
       "id": "apple",
@@ -107,6 +93,20 @@
       "coverage_ratio": 0.4286,
       "board_jobs": 3,
       "syncareer_jobs": 4
+    },
+    {
+      "id": "tiktok",
+      "name": "TikTok",
+      "adapter": "skip",
+      "manual_status": "unsupported",
+      "in_scope": 7,
+      "exact_covered": 0,
+      "official_gaps": 0,
+      "pending_refresh": 0,
+      "unsupported": 7,
+      "coverage_ratio": null,
+      "board_jobs": 1,
+      "syncareer_jobs": 6
     },
     {
       "id": "disney",
@@ -22978,8 +22978,7 @@
       "duplicate_of": "",
       "suppress_alert": false,
       "coverage_match_method": "",
-      "official_company_id": "tiktok",
-      "coverage_status": "official_unsupported",
+      "coverage_status": "not_dedicated",
       "review_status": "unreviewed"
     },
     {
@@ -23130,8 +23129,7 @@
       "duplicate_of": "",
       "suppress_alert": false,
       "coverage_match_method": "",
-      "official_company_id": "tiktok",
-      "coverage_status": "official_unsupported",
+      "coverage_status": "not_dedicated",
       "review_status": "unreviewed"
     },
     {
@@ -23483,8 +23481,7 @@
       "duplicate_of": "",
       "suppress_alert": false,
       "coverage_match_method": "",
-      "official_company_id": "tiktok",
-      "coverage_status": "official_unsupported",
+      "coverage_status": "not_dedicated",
       "review_status": "unreviewed"
     },
     {

@@ -1,6 +1,6 @@
 # Cross-pipeline official coverage audit
 
-- Generated: 2026-08-30T09:38:19.754458+00:00
+- Generated: 2026-08-30T11:03:08.518686+00:00
 - Official snapshot: 2026-08-30T09:36:03.020151+00:00
 - Coverage scope: jobs from the last 3 days that pass shared hard + role/seniority prefilters; LLM score is not used.
 - Validation: 100% exact observed coverage is the current review target; final validation is manual.
@@ -11,11 +11,11 @@
 |---|---|---|---:|---:|---:|---:|---:|
 | Google | unvalidated | google | 15 | 10 | 5 | 0 | 67% |
 | Microsoft | unvalidated | microsoft | 10 | 9 | 1 | 0 | 90% |
-| TikTok | unsupported | skip | 10 | 0 | 0 | 0 | - |
 | Apple | unvalidated | apple | 8 | 0 | 8 | 0 | 0% |
 | Meta | unsupported | skip | 8 | 0 | 0 | 0 | - |
 | Roblox | unvalidated | greenhouse | 8 | 8 | 0 | 0 | 100% |
 | JPMorgan Chase | unvalidated | oracle_hcm | 7 | 3 | 4 | 0 | 43% |
+| TikTok | unsupported | skip | 7 | 0 | 0 | 0 | - |
 | Disney | unsupported | skip | 6 | 0 | 0 | 0 | - |
 | Cisco | unvalidated | workday | 5 | 3 | 2 | 0 | 60% |
 | NVIDIA | unvalidated | workday | 4 | 0 | 4 | 0 | 0% |
