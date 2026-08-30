@@ -1,7 +1,7 @@
 # Cross-pipeline official coverage audit
 
-- Generated: 2026-08-30T16:34:45.309453+00:00
-- Official snapshot: 2026-08-30T09:36:03.020151+00:00
+- Generated: 2026-08-30T16:42:31.103117+00:00
+- Official snapshot: 2026-08-30T16:41:19.617752+00:00
 - Coverage scope: jobs from the last 3 days that pass shared hard + role/seniority prefilters; LLM score is not used.
 - Validation: 100% exact observed coverage is the current review target; final validation is manual.
 
@@ -19,14 +19,14 @@
 | Disney | unsupported | disney | 6 | 0 | 0 | 0 | - |
 | Cisco | unvalidated | workday | 5 | 3 | 2 | 0 | 60% |
 | NVIDIA | unvalidated | workday | 4 | 0 | 4 | 0 | 0% |
-| OpenAI | unvalidated | ashby | 4 | 0 | 4 | 0 | 0% |
+| OpenAI | unvalidated | ashby | 4 | 2 | 2 | 0 | 50% |
 | Qualcomm | unsupported | pcsx | 4 | 0 | 0 | 0 | - |
 | Adobe | unvalidated | workday | 3 | 0 | 3 | 0 | 0% |
 | ByteDance | unvalidated | skip | 3 | 0 | 0 | 0 | - |
 | Intel | unvalidated | skip | 3 | 0 | 0 | 0 | - |
 | NetApp | unvalidated | skip | 3 | 0 | 0 | 0 | - |
 | Amazon | unvalidated | amazon | 2 | 2 | 0 | 0 | 100% |
-| Anthropic | unvalidated | greenhouse | 2 | 0 | 2 | 0 | 0% |
+| Anthropic | unvalidated | greenhouse | 2 | 1 | 1 | 0 | 50% |
 | Oracle | unvalidated | oracle_hcm | 2 | 2 | 0 | 0 | 100% |
 | SAP | unvalidated | sap | 2 | 0 | 2 | 0 | 0% |
 | Salesforce | unvalidated | workday | 2 | 0 | 2 | 0 | 0% |
@@ -96,7 +96,7 @@
 | Zscaler | unvalidated | skip | 0 | 0 | 0 | 0 | - |
 | eBay | unsupported | skip | 0 | 0 | 0 | 0 | - |
 
-## Gaps / pending review (39)
+## Gaps / pending review (36)
 
 | Status | Pipeline | Company | Title | Location | Link |
 |---|---|---|---|---|---|
@@ -115,7 +115,6 @@
 | official_gap | board | Adobe | Software Development Engineer | San Jose, CA | [open](https://www.linkedin.com/jobs/view/software-development-engineer-at-adobe-4441147794) |
 | official_gap | board | SAP | Expert DevOps Engineer | Reston, VA | [open](https://www.linkedin.com/jobs/view/expert-devops-engineer-at-sap-4433255037) |
 | official_gap | board | OpenAI | Full Stack Software Engineer, API Experience | New York, NY | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-api-experience-at-openai-4432902781) |
-| official_gap | board | OpenAI | Robotics Software Engineer | San Francisco, CA | [open](https://www.linkedin.com/jobs/view/robotics-software-engineer-at-openai-4424561366) |
 | official_gap | board | NVIDIA | Software Engineer, Hardware Tools and Methodology - New College Grad 2026 | Santa Clara, CA | [open](https://www.linkedin.com/jobs/view/software-engineer-hardware-tools-and-methodology-new-college-grad-2026-at-nvidia-4424322453) |
 | official_gap | board | NVIDIA | Applied AI Engineer - VLSI Design | Santa Clara, CA | [open](https://www.linkedin.com/jobs/view/applied-ai-engineer-vlsi-design-at-nvidia-4423995646) |
 | official_gap | board | Pinterest | Software Engineer II, Backend | Seattle, WA | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-at-pinterest-4405454991) |
@@ -124,7 +123,6 @@
 | official_gap | board | Adobe | Machine Learning Engineer, Adobe Firefly Services | San Jose, CA | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-adobe-firefly-services-at-adobe-4392118847) |
 | official_gap | board | Google | Software Engineer III, Infrastructure, Google Cloud AI | Kirkland, WA | [open](https://www.linkedin.com/jobs/view/software-engineer-iii-infrastructure-google-cloud-ai-at-google-4365583259) |
 | official_gap | board | Google | Software Engineer III, Infrastructure, Google Cloud AI | Sunnyvale, CA | [open](https://www.linkedin.com/jobs/view/software-engineer-iii-infrastructure-google-cloud-ai-at-google-4365576577) |
-| official_gap | board | Anthropic | Applied AI Architect, Startups | San Francisco, CA / New York City, NY | [open](https://job-boards.greenhouse.io/anthropic/jobs/5406982008) |
 | official_gap | syncareer | Apple | Software Engineer - Early Career (Front-end) | Austin, Texas, United States | [open](https://jobs.apple.com/en-us/details/200680752-0157/software-engineer-early-career-front-end?team=SFTWR) |
 | official_gap | syncareer | JPMorgan Chase | Python AWS Software Engineer III | Jersey City, New Jersey, United States | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210776424) |
 | official_gap | syncareer | Apple | Software Engineer - Early Career (Front-end) | Cupertino, California, United States | [open](https://jobs.apple.com/en-us/details/200680752-0836/software-engineer-early-career-front-end?team=SFTWR) |
@@ -136,6 +134,5 @@
 | official_gap | syncareer | Apple | Machine Learning Evaluation Engineer | Sunnyvale, California, United States | [open](https://jobs.apple.com/en-us/details/200680655-3956/machine-learning-evaluation-engineer?team=HRDWR) |
 | official_gap | syncareer | JPMorgan Chase | J.P. Morgan Wealth Management - Associate, Investment Product and Platform | New York, United States | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210784833) |
 | official_gap | syncareer | JPMorgan Chase | Java Full Stack Software Engineer III - React | Tampa, Florida, United States | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210785590) |
-| official_gap | syncareer | OpenAI | Software Engineer, Infrastructure | San Francisco, California, United States | [open](https://jobs.ashbyhq.com/openai/984da843-107f-4ff6-ad27-07a06700e338) |
 | official_gap | syncareer | Apple | Software Engineer (Java Middleware), eBusiness | Sunnyvale, California, United States | [open](https://jobs.apple.com/en-us/details/200678154-3956/software-engineer-java-middleware-ebusiness?team=SFTWR) |
 | official_gap | syncareer | Apple | Full-Stack UI Software Engineer - Wallet, Payments & Commerce (WPC) | Cupertino, California, United States | [open](https://jobs.apple.com/en-us/details/200680683-0836/full-stack-ui-software-engineer-wallet-payments-commerce-wpc?team=SFTWR) |
