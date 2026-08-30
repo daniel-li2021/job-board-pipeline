@@ -498,10 +498,11 @@ def save_watchlist(watchlist: Dict[str, Dict[str, Any]]) -> None:
 
 
 def _entry_age_ref(entry: Dict[str, Any]) -> Optional[datetime]:
+    """Discovery activity for inbox/rolling views; posting date is fallback."""
     return (
-        _parse_iso_date(entry.get("posting_date", ""))
+        _parse_iso_date(entry.get("first_seen", ""))
+        or _parse_iso_date(entry.get("posting_date", ""))
         or _parse_iso_date(entry.get("posted_date", ""))
-        or _parse_iso_date(entry.get("first_seen", ""))
     )
 
 

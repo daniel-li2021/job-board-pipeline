@@ -434,6 +434,14 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         self.assertEqual(1, counts["rule"])
         self.assertEqual([], errors)
 
+    def test_syncareer_rolling_activity_prefers_first_seen(self) -> None:
+        now = datetime.now(timezone.utc)
+        entry = {
+            "first_seen": (now - timedelta(hours=2)).isoformat(),
+            "posting_date": (now - timedelta(days=20)).strftime("%Y-%m-%d"),
+        }
+        self.assertGreater(daily_pipeline._entry_age_ref(entry), now - timedelta(days=1))
+
     def test_thin_linkedin_card_uses_rules_not_llm(self) -> None:
         now = datetime.now(timezone.utc)
         job = make_job(
