@@ -1726,6 +1726,28 @@ def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
     }
 
 
+def refresh_retained_entry_policy(
+    entry: Dict[str, Any], company_filters: Dict[str, List[Dict[str, Any]]]
+) -> None:
+    """Apply current visibility/scoring policy to carried-forward history."""
+    ensure_entry_defaults(entry)
+    if "official" in str(entry.get("source") or "").lower():
+        entry["filter_status"] = "hidden"
+        entry["drop_reason"] = "legacy_official_source_removed"
+        entry["suppress_alert"] = True
+        return
+    if hidden_external_company(entry.get("company", ""), company_filters):
+        entry["company_flag"] = "hidden_external"
+        entry["filter_status"] = "hidden"
+        entry["drop_reason"] = "company_hidden_external"
+        entry["suppress_alert"] = True
+        return
+    if is_thin_local_discovery(entry) and entry.get("match_source_pipeline") != "official":
+        entry["rule_score"] = rule_match_score(entry)
+        _apply_rule_result(entry, SCORE_FALLBACK, "Rule-based (thin local discovery card)")
+        entry["tier"] = assign_tier(entry, False)
+
+
 def run() -> None:
     parser = argparse.ArgumentParser(description="Multi-source job board pipeline")
     parser.add_argument("--no-llm", action="store_true", help="Force rule-based scoring (local debug)")
@@ -1897,18 +1919,7 @@ def run() -> None:
         new_store[key] = build_store_entry(job, key)
     # Normalize carried-forward (legacy) entries to the current schema.
     for entry in new_store.values():
-        ensure_entry_defaults(entry)
-        # Do not let retained history from the removed legacy Official fetcher
-        # or newly configured external hides leak back onto the Board dashboard.
-        if "official" in str(entry.get("source") or "").lower():
-            entry["filter_status"] = "hidden"
-            entry["drop_reason"] = "legacy_official_source_removed"
-            entry["suppress_alert"] = True
-        elif hidden_external_company(entry.get("company", ""), company_filters):
-            entry["company_flag"] = "hidden_external"
-            entry["filter_status"] = "hidden"
-            entry["drop_reason"] = "company_hidden_external"
-            entry["suppress_alert"] = True
+        refresh_retained_entry_policy(entry, company_filters)
     new_store = prune_store(new_store, now)
     save_store(new_store)
 

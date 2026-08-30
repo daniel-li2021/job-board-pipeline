@@ -454,6 +454,25 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         self.assertEqual(0, counts["api_requests"])
         self.assertEqual([], errors)
 
+    def test_retained_title_only_llm_score_is_replaced_by_current_rule_policy(self) -> None:
+        now = datetime.now(timezone.utc)
+        entry = make_job(
+            source="linkedin", company="SmallCo", title="Software Engineer II",
+            location="Austin, TX", job_id="li-old", description="",
+            source_url="https://linkedin.com/jobs/view/li-old",
+        )
+        entry.update({
+            "first_seen": now.isoformat(), "recency_bucket": "newly_discovered",
+            "match_score": 94, "tier": "A", "score_source": "llm",
+            "screen_method": "llm", "filter_status": "kept",
+        })
+        board_pipeline.refresh_retained_entry_policy(
+            entry, board_pipeline.load_company_filters()
+        )
+        self.assertEqual(board_pipeline.SCORE_FALLBACK, entry["score_source"])
+        self.assertLess(float(entry["match_score"]), 94)
+        self.assertNotEqual("A", entry["tier"])
+
     def test_local_sync_targets_main_from_an_isolated_worktree(self) -> None:
         script = (ROOT / "scripts/local_source_sync.sh").read_text(encoding="utf-8")
         self.assertIn('TARGET_BRANCH="${TARGET_BRANCH:-main}"', script)
