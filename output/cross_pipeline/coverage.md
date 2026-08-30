@@ -1,6 +1,6 @@
 # Cross-pipeline official coverage audit
 
-- Generated: 2026-08-30T01:04:07.322794+00:00
+- Generated: 2026-08-30T01:06:00.485243+00:00
 - Official snapshot: 2026-08-29T18:37:39.833716+00:00
 - Coverage scope: jobs from the last 3 days that pass shared hard + role/seniority prefilters; LLM score is not used.
 - Validation: 100% exact observed coverage is the current review target; final validation is manual.
@@ -9,8 +9,8 @@
 
 | Company | Manual state | Adapter | In scope | Exact | Gaps | Pending refresh | Coverage |
 |---|---|---|---:|---:|---:|---:|---:|
-| Amazon | unvalidated | amazon | 19 | 18 | 1 | 0 | 95% |
-| Google | unvalidated | google | 16 | 14 | 0 | 2 | 100% |
+| Amazon | unvalidated | amazon | 20 | 18 | 1 | 1 | 95% |
+| Google | unvalidated | google | 14 | 12 | 0 | 2 | 100% |
 | Apple | unvalidated | apple | 8 | 8 | 0 | 0 | 100% |
 | Roblox | unvalidated | greenhouse | 8 | 0 | 8 | 0 | 0% |
 | Microsoft | unvalidated | microsoft | 5 | 5 | 0 | 0 | 100% |
@@ -19,10 +19,10 @@
 | TikTok | unsupported | skip | 4 | 0 | 0 | 0 | - |
 | Cisco | unvalidated | workday | 2 | 2 | 0 | 0 | 100% |
 | Oracle | unvalidated | oracle_hcm | 2 | 2 | 0 | 0 | 100% |
+| Uber | unvalidated | uber | 2 | 2 | 0 | 0 | 100% |
 | Databricks | unvalidated | greenhouse | 1 | 0 | 1 | 0 | 0% |
 | Meta | unsupported | skip | 1 | 0 | 0 | 0 | - |
 | Qualcomm | unsupported | skip | 1 | 0 | 0 | 0 | - |
-| Uber | unvalidated | uber | 1 | 1 | 0 | 0 | 100% |
 | AMD | unsupported | skip | 0 | 0 | 0 | 0 | - |
 | Adobe | unvalidated | workday | 0 | 0 | 0 | 0 | - |
 | Bloomberg | unvalidated | avature | 0 | 0 | 0 | 0 | - |
@@ -43,10 +43,11 @@
 | Zoom | unvalidated | workday | 0 | 0 | 0 | 0 | - |
 | eBay | unsupported | skip | 0 | 0 | 0 | 0 | - |
 
-## Gaps / pending review (15)
+## Gaps / pending review (16)
 
 | Status | Pipeline | Company | Title | Location | Link |
 |---|---|---|---|---|---|
+| pending_official_refresh | board | Amazon | Data Engineer, PXT Central Science | Arlington, Virginia, USA | [open](https://www.amazon.jobs/en/jobs/10521258/data-engineer-pxt-central-science) |
 | official_gap | board | Amazon | Geospatial Data Engineer , WW Sustainability | Seattle, Washington, USA | [open](https://www.amazon.jobs/en/jobs/10519667/geospatial-data-engineer-ww-sustainability) |
 | official_gap | board | Roblox | Software Engineer, Economy Platform | San Mateo, CA, United States | [open](https://careers.roblox.com/jobs/8060254?gh_jid=8060254) |
 | official_gap | board | Roblox | Software Engineer, Creator | San Mateo, CA, United States | [open](https://careers.roblox.com/jobs/8115917?gh_jid=8115917) |
