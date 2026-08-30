@@ -15,7 +15,8 @@ Public rolling dashboard: **https://daniel-li2021.github.io/job-board-pipeline/*
 hours of GitHub alert activity, three-day rolling views, lightweight status
 sections, a collapsible referral view, and official-search links. Coverage
 reconciliation remains in the repo audit files but is intentionally hidden from
-the public page.
+the public page. Review status is shared through Supabase and editable only by
+signed-in, allowlisted users.
 
 **Matching/scoring is shared, not implemented three times.** All three components
 use the same `board_pipeline.py` role-family logic, 0–100 resume/JD matcher,
@@ -293,7 +294,8 @@ Outputs:
 - `public/index.html` / `dashboard.json` — GitHub Pages site;
 - `profile/official_coverage.json` — manual `unvalidated` / `validated` /
   `unsupported` company decisions;
-- `profile/review_state.json` — committed per-job review state.
+- `profile/review_state.json` — legacy CLI/pipeline state; the dashboard does
+  not read or write it.
 
 **Fresh** mirrors jobs emitted by GitHub alert Issues during the last 24 hours,
 including B→A promotions whose original `first_seen` is older. Each pipeline
@@ -305,26 +307,32 @@ only, stored Tier C rows provide a presentation fallback when A/B volume is low:
 Fresh can fill from fewer than 10 A/B to 20 total, and Rolling from fewer than
 30 A/B to 50 total. Fallback C rows never score below 60 and remain labeled C.
 
-The public page's Status menus save a private override in that browser's
-`localStorage`. This is the easiest personal workflow: In Progress and Applied
-jobs immediately move out of active sections. Inline Delete hides a job in a
-recoverable Deleted section for seven days. Browser status does not sync across
-devices or modify GitHub. Use the command below only when a shared,
-repo-committed status is wanted.
+The public page reads `public.job_review_status` directly from Supabase and
+merges rows by `canonical_job_key`. Status updates never touch GitHub, run an
+Action, or rebuild Pages. The browser caches the latest successful shared read
+in `localStorage` only as a temporary fallback; Supabase remains authoritative.
 
-Use the lightweight status command with a canonical key, exact job URL, or
-unique job ID:
+One-time setup:
+
+1. In the Supabase SQL editor, run
+   [`supabase/job_review_setup.sql`](supabase/job_review_setup.sql).
+2. Add lowercase editor emails to `private.job_review_allowlist` using the
+   commented insert at the bottom of that file.
+3. In **Authentication → URL Configuration**, set the Site URL and an allowed
+   redirect URL to `https://daniel-li2021.github.io/job-board-pipeline/`.
+   Leave email sign-in enabled. To prevent non-allowlisted accounts from being
+   created, disable new-user signup and invite the permitted users first.
+
+The supplied project URL and publishable browser key are defaults in
+`dashboard.py`. Publishable keys are safe in public clients when RLS is enabled;
+never put a Supabase secret/service-role key in this repository. To build for a
+different project without editing source:
 
 ```bash
-python3 review_state.py '<job selector>' in_progress
-python3 review_state.py '<job selector>' applied --notes 'Applied 2026-08-28'
-python3 dashboard.py
+SUPABASE_URL=https://PROJECT.supabase.co \
+SUPABASE_PUBLISHABLE_KEY=sb_publishable_REPLACE_ME \
+python3 dashboard.py --json
 ```
-
-Allowed states are `unreviewed`, `in_progress`, and `applied`. In Progress and
-Applied jobs are removed from active sections and shown separately. A push that
-changes the review-state file automatically triggers dashboard regeneration
-and Pages deployment.
 
 Fuzzy title/location matches are suggestions only and never suppress a job.
 100% exact observed coverage is the current manual audit target, not a permanent

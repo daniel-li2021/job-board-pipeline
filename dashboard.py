@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 from collections import Counter
 from datetime import datetime, timedelta, timezone
@@ -26,15 +27,11 @@ PAGES_URL = "https://daniel-li2021.github.io/job-board-pipeline/"
 PACIFIC = ZoneInfo("America/Los_Angeles")
 REFERRAL_PATH = BASE_DIR / "source" / "target_companies.json"
 COMPANY_FILTERS_PATH = BASE_DIR / "profile" / "company_filters.json"
-REVIEW_PATH = BASE_DIR / "profile" / "review_state.json"
 OFFICIAL_REGISTRY_PATH = BASE_DIR / "source" / "official_careers.json"
-MAIN_HIDDEN_STATUSES = {"in_progress", "applied", "deleted"}
-STATUS_ALIASES = {
-    "completed": "applied",
-    "replied": "in_progress",
-    "dismissed": "deleted",
-}
-ALLOWED_STATUSES = {"unreviewed", "in_progress", "applied", "deleted"}
+SUPABASE_URL = os.getenv("SUPABASE_URL", "https://wzriavtjqfpkeafeisfv.supabase.co")
+SUPABASE_PUBLISHABLE_KEY = os.getenv(
+    "SUPABASE_PUBLISHABLE_KEY", "sb_publishable_uYhplHl4QV7h5sKcItb4vg_UP9uiAQF"
+)
 ALERT_HISTORY_PATHS = {
     "board": BASE_DIR / "output" / "board" / "alert_history.json",
     "official": BASE_DIR / "output" / "official_careers" / "alert_history.json",
@@ -182,19 +179,6 @@ def recency(job: Dict[str, Any], now: datetime) -> Dict[str, Any]:
     }
 
 
-def review_map() -> Dict[str, Any]:
-    payload = read_json(REVIEW_PATH, {})
-    jobs = payload.get("jobs", {}) if isinstance(payload, dict) else {}
-    return jobs if isinstance(jobs, dict) else {}
-
-
-def normalize_review_status(value: Any) -> str:
-    """Map legacy workflow values into the small dashboard status model."""
-    status = str(value or "unreviewed").strip().lower()
-    status = STATUS_ALIASES.get(status, status)
-    return status if status in ALLOWED_STATUSES else "unreviewed"
-
-
 def sponsorship_label(entry: Dict[str, Any]) -> str:
     """Map existing source sponsorship data to the dashboard's small vocabulary."""
     raw = str(
@@ -217,7 +201,6 @@ def normalize_row(
     pipeline: str,
     now: datetime,
     referrals: List[Dict[str, Any]],
-    review: Dict[str, Any],
     coverage_by_key: Dict[str, Dict[str, Any]],
 ) -> Dict[str, Any]:
     if pipeline == "syncareer":
@@ -229,7 +212,6 @@ def normalize_row(
         entry.setdefault("tier", entry.get("tier") or "-")
     key = entry.get("canonical_job_key") or coverage_reconcile.canonical_job_key(entry)
     audit = coverage_by_key.get(key, {})
-    state = review.get(key, {}) if isinstance(review.get(key, {}), dict) else {}
     referral = entry.get("referral_name") or entry.get("target_company_match") or match_company_alias(str(entry.get("company") or ""), referrals) or ""
     freshness = recency(entry, now)
     return {
@@ -247,8 +229,8 @@ def normalize_row(
         "score": entry.get("match_score") if entry.get("match_score") is not None else entry.get("fit_score", ""),
         "sponsorship": sponsorship_label(entry),
         "referral": referral,
-        "review_status": normalize_review_status(state.get("status", "unreviewed")),
-        "review_updated_at": state.get("updated_at", ""),
+        "review_status": "unreviewed",
+        "review_updated_at": "",
         "coverage_status": audit.get("coverage_status") or entry.get("coverage_status") or ("official_canonical" if pipeline == "official" else "not_reconciled"),
         "canonical_source": audit.get("canonical_source") or entry.get("canonical_source") or pipeline,
         "duplicate_of": audit.get("duplicate_of") or entry.get("duplicate_of") or "",
@@ -312,7 +294,7 @@ def append_board_c_fallback(
     candidates = []
     for row in all_rows:
         stable = str(row.get("canonical_job_key") or coverage_reconcile.normalize_url(str(row.get("url") or "")))
-        if stable in existing or row.get("review_status") in MAIN_HIDDEN_STATUSES:
+        if stable in existing:
             continue
         if fallback_c_candidate(row) and row.get("freshness", {}).get(activity_flag):
             candidates.append(dict(row, dashboard_fallback=True))
@@ -424,7 +406,7 @@ def alert_fresh_rows(
                 if not source_row:
                     continue
                 row = dict(source_row)
-                if not visible_candidate(row, hard_excludes) or row.get("review_status") in MAIN_HIDDEN_STATUSES:
+                if not visible_candidate(row, hard_excludes):
                     continue
                 row["alerted_at"] = emitted_at.isoformat()
                 row["alert_stamp"] = event.get("stamp", "")
@@ -465,7 +447,6 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
     referrals = load_alias_file(REFERRAL_PATH)
     hard_excludes = load_alias_file(COMPANY_FILTERS_PATH, key="exclude")
     practical_skips = load_alias_file(COMPANY_FILTERS_PATH, key="clearance_risk")
-    review = review_map()
     coverage = coverage_reconcile.build_coverage_payload(now)
     coverage_by_key = {record.get("canonical_job_key", ""): record for record in coverage.get("records", [])}
 
@@ -480,14 +461,14 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
             )
             if practical and not entry.get("clearance_risk_company"):
                 continue
-            all_rows.append(normalize_row(entry, pipeline, now, referrals, review, coverage_by_key))
+            all_rows.append(normalize_row(entry, pipeline, now, referrals, coverage_by_key))
 
     eligible_rows = [
         row for row in all_rows
         if not match_company_alias(str(row.get("company") or ""), hard_excludes)
     ]
     candidates = [row for row in eligible_rows if visible_candidate(row, hard_excludes)]
-    current = [row for row in candidates if row.get("review_status") not in MAIN_HIDDEN_STATUSES]
+    current = candidates
     fresh, fresh_basis = alert_fresh_rows(eligible_rows, now, hard_excludes)
     fresh = append_board_c_fallback(fresh, eligible_rows, minimum_ab=10, target=20, window="fresh")
     rolling = _sort_rows(row for row in current if row["freshness"]["rolling_activity"])
@@ -517,6 +498,7 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         "report_links": {key: f"{REPO_URL}/blob/main/{path}" for key, path in REPORT_PATHS.items()},
         "referral_file": f"{REPO_URL}/blob/main/source/target_companies.json",
         "coverage_report": f"{REPO_URL}/blob/main/output/cross_pipeline/coverage.md",
+        "supabase": {"url": SUPABASE_URL, "publishable_key": SUPABASE_PUBLISHABLE_KEY},
         "counts_24h": counts(fresh),
         "counts_3d": counts(rolling),
         "fresh_24h": fresh[:500],
@@ -524,8 +506,8 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         "rolling_3d": rolling[:1000],
         "referrals": referral_rows[:500],
         "older_review": older[:500],
-        # Browser-local status changes need a complete row pool so a job can
-        # move between sections immediately without a server round trip.
+        # Shared status changes need a complete row pool so a job can move
+        # between sections immediately without regenerating static job data.
         "workflow_rows": _sort_rows(candidates)[:2000],
         "coverage": coverage,
         "official_searches": official_search_catalog(),
@@ -536,15 +518,16 @@ HTML_TEMPLATE = r'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Daniel's Job Board</title>
 <style>
-:root{--bg:#f4f6f1;--card:#fff;--ink:#152018;--muted:#687269;--line:#dce2da;--green:#176b45;--gold:#ad6c00;--blue:#275fa8;--red:#9d3b31}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:1440px;margin:auto;padding:28px}header{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:20px}h1{font-size:30px;letter-spacing:-.03em;margin:0}h2{font-size:20px;margin:0 0 12px}p{margin:5px 0;color:var(--muted)}a{color:var(--blue)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.card,.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 2px 10px #1b2a1d0a}.card{padding:16px}.card b{display:block;font-size:24px}.panel{padding:18px;margin:16px 0;overflow:hidden}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;cursor:pointer}.tab.on{background:var(--ink);color:#fff}.company-tabs{display:none;margin:-3px 0 14px;padding-left:8px;gap:6px}.company-tabs .tab{border-color:#b9cbe3;background:#f3f7fc;color:#234f86;border-radius:8px;padding:5px 10px;font-size:12px}.company-tabs .tab.on{background:#dce9f7;border-color:#7da2cf;color:#173f70}.tablewrap{overflow:auto;max-height:620px}table{border-collapse:collapse;width:100%;min-width:880px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #edf0ec;vertical-align:top}th{position:sticky;top:0;background:#fafbf9;color:#59645c;font-size:12px;text-transform:uppercase;letter-spacing:.04em}.pill{display:inline-block;padding:2px 7px;border-radius:999px;background:#edf2ee;font-size:12px;white-space:nowrap}.confirmed{color:var(--green);background:#e8f4ed}.discovered{color:var(--gold);background:#fff3d8}.referral{color:#744a00;background:#fff0c8}.empty{padding:24px;color:var(--muted);text-align:center}.small{font-size:12px;color:var(--muted)}.links,.workflow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.active{color:var(--green)}.manual{color:var(--gold)}select{max-width:145px;padding:5px 7px;border:1px solid var(--line);border-radius:8px;background:white;color:var(--ink)}button.delete,button.restore{border:1px solid var(--line);border-radius:8px;padding:5px 8px;background:#fff;cursor:pointer}button.delete{color:var(--red)}button.restore{color:var(--green)}details.panel>summary{font-size:20px;font-weight:700;cursor:pointer}.timestamp{font-weight:600;color:var(--ink)}@media(max-width:760px){.wrap{padding:16px}.cards{grid-template-columns:1fr}header{display:block}}
+:root{--bg:#f4f6f1;--card:#fff;--ink:#152018;--muted:#687269;--line:#dce2da;--green:#176b45;--gold:#ad6c00;--blue:#275fa8;--red:#9d3b31}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:1440px;margin:auto;padding:28px}header{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:20px}h1{font-size:30px;letter-spacing:-.03em;margin:0}h2{font-size:20px;margin:0 0 12px}p{margin:5px 0;color:var(--muted)}a{color:var(--blue)}button,input,select{font:inherit}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.card,.panel,.reviewbar{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 2px 10px #1b2a1d0a}.card{padding:16px}.card b{display:block;font-size:24px}.panel{padding:18px;margin:16px 0;overflow:hidden}.reviewbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:12px 16px}.reviewbar input{border:1px solid var(--line);border-radius:8px;padding:6px 8px;min-width:220px}.reviewbar .spacer{flex:1}.auth-action{border:1px solid var(--line);border-radius:8px;padding:6px 9px;background:#fff;cursor:pointer}.review-error{color:var(--red)}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;cursor:pointer}.tab.on{background:var(--ink);color:#fff}.company-tabs{display:none;margin:-3px 0 14px;padding-left:8px;gap:6px}.company-tabs .tab{border-color:#b9cbe3;background:#f3f7fc;color:#234f86;border-radius:8px;padding:5px 10px;font-size:12px}.company-tabs .tab.on{background:#dce9f7;border-color:#7da2cf;color:#173f70}.tablewrap{overflow:auto;max-height:620px}table{border-collapse:collapse;width:100%;min-width:880px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #edf0ec;vertical-align:top}th{position:sticky;top:0;background:#fafbf9;color:#59645c;font-size:12px;text-transform:uppercase;letter-spacing:.04em}.pill{display:inline-block;padding:2px 7px;border-radius:999px;background:#edf2ee;font-size:12px;white-space:nowrap}.confirmed{color:var(--green);background:#e8f4ed}.discovered{color:var(--gold);background:#fff3d8}.referral{color:#744a00;background:#fff0c8}.empty{padding:24px;color:var(--muted);text-align:center}.small{font-size:12px;color:var(--muted)}.links,.workflow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.active{color:var(--green)}.manual{color:var(--gold)}select{max-width:155px;padding:5px 7px;border:1px solid var(--line);border-radius:8px;background:white;color:var(--ink)}button.delete,button.restore{border:1px solid var(--line);border-radius:8px;padding:5px 8px;background:#fff;cursor:pointer}button.delete{color:var(--red)}button.restore{color:var(--green)}button:disabled,select:disabled{cursor:not-allowed;opacity:.5}details.panel>summary{font-size:20px;font-weight:700;cursor:pointer}.timestamp{font-weight:600;color:var(--ink)}@media(max-width:760px){.wrap{padding:16px}.cards{grid-template-columns:1fr}header{display:block}.reviewbar{align-items:stretch}.reviewbar input{min-width:0;flex:1}}
 </style></head><body><div class="wrap">
 <header><div><h1>Job visibility dashboard</h1><p id="updated" class="timestamp"></p><p id="sourceSnapshots" class="small"></p></div><div><a id="repo">Repository</a></div></header>
+<div class="reviewbar"><span id="reviewMessage">Loading shared review status…</span><span class="spacer"></span><input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" aria-label="Email"><button class="auth-action" id="signIn">Email sign-in link</button><button class="auth-action" id="signOut" hidden>Sign out</button></div>
 <div class="cards" id="summary"></div>
 <section class="panel"><h2>Fresh — alerted in the last 24 hours</h2><p>Jobs emitted by the latest GitHub alert Issues, including newly found A/B jobs and B→A promotions. This mirrors automation activity rather than posted_date or original first_seen.</p><p id="freshBasis" class="small"></p><div class="tabs" data-target="fresh"></div><div class="tabs company-tabs" data-company-target="fresh"></div><div id="fresh"></div></section>
 <section class="panel"><h2>Rolling — newly found in the last 3 days</h2><p>Current A/B (or Syncareer kept) candidates, ranked Tier A first, then discovery time and score.</p><div class="tabs" data-target="rolling"></div><div class="tabs company-tabs" data-company-target="rolling"></div><div id="rolling"></div></section>
 <section class="panel"><h2>In Progress</h2><p>Jobs you are actively preparing or following up on.</p><div id="inProgress"></div></section>
 <section class="panel"><h2>Applied / Completed</h2><p>Applied jobs leave the active Fresh and Rolling lists.</p><div id="applied"></div></section>
-<section class="panel"><h2>Deleted — last 7 days</h2><p>Deleted jobs stay recoverable in this browser for one week, then disappear.</p><div id="deleted"></div></section>
+<section class="panel"><h2>Deleted</h2><p>Deleted jobs stay recoverable with Restore while they remain in the rolling job data.</p><div id="deleted"></div></section>
 <details class="panel"><summary>Referral opportunities</summary><p>Optional view. Aliases come only from <a id="referralFile">source/target_companies.json</a>.</p><div id="referrals"></div></details>
 <section class="panel"><h2>Official company search links</h2><p>Quick official searches for manual checks and future adapters. “Automated” entries already have a scraper; “link only” entries are intentionally not reverse-engineered yet.</p><div id="officialSearches"></div></section>
 </div><script id="payload" type="application/json">__PAYLOAD__</script><script>
@@ -555,26 +538,33 @@ document.getElementById('freshBasis').textContent='Fresh source: '+Object.keys(n
 document.getElementById('summary').innerHTML=Object.keys(names).map(k=>`<div class="card"><span>${names[k]}</span><b>${D.counts_24h[k]}</b><p>last 24h · ${D.counts_3d[k]} in 3 days</p><a href="${D.report_links[k]}">open report</a></div>`).join('');
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const bucketNames={lt3h:'<3h', '3to24h':'3–24h', '1to3d':'1–3d', '3to7d':'3–7d', gt7d:'>7d', unknown:'unknown'};
-const statusChoices=['unreviewed','in_progress','applied'];const statusLabels={unreviewed:'Unreviewed',in_progress:'In Progress',applied:'Applied'};const statusKey='jobBoardStatusesV2';const legacyStatusKey='jobBoardStatusesV1';const deletedRetentionMs=7*24*60*60*1000;
-const normalizeStatus=s=>({completed:'applied',replied:'in_progress',dismissed:'deleted'}[s]||(['unreviewed','in_progress','applied','deleted'].includes(s)?s:'unreviewed'));
-let localStatuses={};try{localStatuses=JSON.parse(localStorage.getItem(statusKey)||'{}')}catch(e){localStatuses={}}
-if(!Object.keys(localStatuses).length){try{const old=JSON.parse(localStorage.getItem(legacyStatusKey)||'{}');Object.entries(old).forEach(([k,v])=>{const status=normalizeStatus(typeof v==='string'?v:v.status);localStatuses[k]={status,updated_at:new Date().toISOString(),...(status==='deleted'?{deleted_at:new Date().toISOString()}:{})}})}catch(e){}}
-function localState(key){const raw=localStatuses[key];if(!raw)return null;return typeof raw==='string'?{status:normalizeStatus(raw)}:raw}
-function statusOf(r){return normalizeStatus(localState(r.canonical_job_key)?.status||r.review_status||'unreviewed')}
-function persist(){const now=Date.now();Object.entries(localStatuses).forEach(([k,v])=>{const state=typeof v==='string'?{status:normalizeStatus(v)}:v;if(state.status==='deleted'&&state.deleted_at&&now-Date.parse(state.deleted_at)>deletedRetentionMs)delete localStatuses[k]});try{localStorage.setItem(statusKey,JSON.stringify(localStatuses))}catch(e){}}
-function setStatus(key,value){if(!statusChoices.includes(value))return;localStatuses[key]={status:value,updated_at:new Date().toISOString()};persist();renderAll()}
-function deleteJob(key){const now=new Date().toISOString();localStatuses[key]={status:'deleted',updated_at:now,deleted_at:now};persist();renderAll()}
-function restoreJob(key){setStatus(key,'unreviewed')}
+const statusChoices=['unreviewed','in_progress','applied_complete'];const statusLabels={unreviewed:'Unreviewed',in_progress:'In Progress',applied_complete:'Applied/Complete'};const statusCacheKey='jobReviewSharedCacheV1';const statusAliases={applied:'applied_complete',completed:'applied_complete',replied:'in_progress'};
+const normalizeStatus=s=>statusAliases[s]||(statusChoices.includes(s)?s:'unreviewed');
+let reviewStates={};try{reviewStates=JSON.parse(localStorage.getItem(statusCacheKey)||'{}')}catch(e){reviewStates={}}
+let supabase=null,authUser=null,sharedLoaded=false,sharedError='',reviewNotice='';const pendingKeys=new Set();
+function reviewState(key){const state=reviewStates[key];return state&&typeof state==='object'?state:null}
+function statusOf(r){return normalizeStatus(reviewState(r.canonical_job_key)?.status||'unreviewed')}
+function isDeleted(r){return Boolean(reviewState(r.canonical_job_key)?.deleted)}
+function persist(){try{localStorage.setItem(statusCacheKey,JSON.stringify(reviewStates))}catch(e){}}
+function renderReviewMessage(){const box=document.getElementById('reviewMessage');box.classList.toggle('review-error',Boolean(sharedError));box.textContent=sharedError||reviewNotice||(!sharedLoaded?(Object.keys(reviewStates).length?'Showing cached status while Supabase loads…':'Loading shared review status…'):(authUser?`Shared status loaded · signed in as ${authUser.email} (writes require allowlist access)`:'Shared status loaded · sign in with an allowlisted email to edit'));document.getElementById('authEmail').hidden=Boolean(authUser);document.getElementById('signIn').hidden=Boolean(authUser);document.getElementById('signOut').hidden=!authUser}
+function applySession(session){authUser=session?.user||null;if(authUser)reviewNotice='';renderReviewMessage();renderAll()}
+async function saveState(key,changes){if(!supabase||!authUser||pendingKeys.has(key))return;const existed=Object.hasOwn(reviewStates,key),previous=reviewStates[key];const next={canonical_job_key:key,status:normalizeStatus(previous?.status||'unreviewed'),deleted:Boolean(previous?.deleted),...changes,updated_at:new Date().toISOString()};pendingKeys.add(key);reviewStates[key]=next;renderAll();const {error}=await supabase.from('job_review_status').upsert(next,{onConflict:'canonical_job_key'});pendingKeys.delete(key);if(error){if(existed)reviewStates[key]=previous;else delete reviewStates[key];sharedError=error.code==='42501'?'This signed-in account is not on the review allowlist.':`Could not save review status: ${error.message}`}else{sharedError='';reviewNotice='';persist()}renderReviewMessage();renderAll()}
+function setStatus(key,value){if(statusChoices.includes(value))saveState(key,{status:value,deleted:false})}
+function deleteJob(key){saveState(key,{deleted:true})}
+function restoreJob(key){saveState(key,{deleted:false})}
 function activityText(r){if(r.alerted_at){const h=r.activity_age_hours;const b=h<3?'lt3h':h<24?'3to24h':'1to3d';return `Alerted ${bucketNames[b]} ago`}const d=r.freshness.discovered||{};return d.age_hours===null||d.age_hours===undefined?'Discovery unknown':`Found ${bucketNames[d.bucket]||d.bucket} ago`}
 function postingText(r){const p=r.freshness.posted||{};if(!p.trusted)return r.posted_date?`Posted ${esc(r.posted_date)} · low confidence`:'Posting date unknown';return p.date_only?`Posted ${esc(r.posted_date)} · day precision`:`Posted ${bucketNames[p.bucket]||p.bucket} ago`}
-function jobs(rows,deleted=false){if(!rows.length)return '<div class="empty">No qualifying jobs in this view.</div>';return `<div class="tablewrap"><table><thead><tr><th>Tier</th><th>Company / Title</th><th>Location</th><th>Alert / Posted</th><th>Sponsorship</th><th>Referral</th><th>Status</th><th>Source</th></tr></thead><tbody>${rows.map(r=>`<tr><td><b>${esc(r.tier)}</b>${r.score!==''?`<div class="small">${esc(r.score)}</div>`:''}</td><td><b>${esc(r.company)}</b><br><a href="${esc(r.url)}">${esc(r.title)}</a></td><td>${esc(r.location)}</td><td><span class="pill discovered">${activityText(r)}</span><div class="small">${postingText(r)}</div></td><td>${esc(r.sponsorship||'Unknown')}</td><td>${r.referral?`<span class="pill referral">${esc(r.referral)}</span>`:'-'}</td><td><div class="workflow">${deleted?`<span class="pill">Deleted</span><button class="restore" data-key="${esc(r.canonical_job_key)}">Restore</button>`:`<select class="status-select" data-key="${esc(r.canonical_job_key)}">${statusChoices.map(s=>`<option value="${s}" ${statusOf(r)===s?'selected':''}>${statusLabels[s]}</option>`).join('')}</select><button class="delete" data-key="${esc(r.canonical_job_key)}" title="Hide for 7 days">Delete</button>`}</div></td><td>${esc(names[r.pipeline]||r.pipeline)}</td></tr>`).join('')}</tbody></table></div>`}
+function jobs(rows,deleted=false){if(!rows.length)return '<div class="empty">No qualifying jobs in this view.</div>';return `<div class="tablewrap"><table><thead><tr><th>Tier</th><th>Company / Title</th><th>Location</th><th>Alert / Posted</th><th>Sponsorship</th><th>Referral</th><th>Status</th><th>Source</th></tr></thead><tbody>${rows.map(r=>{const disabled=!authUser||!supabase||pendingKeys.has(r.canonical_job_key)?'disabled':'';return `<tr><td><b>${esc(r.tier)}</b>${r.score!==''?`<div class="small">${esc(r.score)}</div>`:''}</td><td><b>${esc(r.company)}</b><br><a href="${esc(r.url)}">${esc(r.title)}</a></td><td>${esc(r.location)}</td><td><span class="pill discovered">${activityText(r)}</span><div class="small">${postingText(r)}</div></td><td>${esc(r.sponsorship||'Unknown')}</td><td>${r.referral?`<span class="pill referral">${esc(r.referral)}</span>`:'-'}</td><td><div class="workflow">${deleted?`<span class="pill">Deleted</span><button class="restore" data-key="${esc(r.canonical_job_key)}" ${disabled}>Restore</button>`:`<select class="status-select" data-key="${esc(r.canonical_job_key)}" ${disabled}>${statusChoices.map(s=>`<option value="${s}" ${statusOf(r)===s?'selected':''}>${statusLabels[s]}</option>`).join('')}</select><button class="delete" data-key="${esc(r.canonical_job_key)}" ${disabled}>Delete</button>`}</div></td><td>${esc(names[r.pipeline]||r.pipeline)}</td></tr>`}).join('')}</tbody></table></div>`}
 function bindStatus(box){box.querySelectorAll('.status-select').forEach(s=>s.onchange=()=>setStatus(s.dataset.key,s.value));box.querySelectorAll('.delete').forEach(b=>b.onclick=()=>deleteJob(b.dataset.key));box.querySelectorAll('.restore').forEach(b=>b.onclick=()=>restoreJob(b.dataset.key))}
 function renderBox(id,rows){const box=document.getElementById(id);box.innerHTML=jobs(rows);bindStatus(box)}
-function tabs(elId,rows){const filtered=rows.filter(r=>statusOf(r)==='unreviewed'),tab=document.querySelector(`[data-target="${elId}"]`),companyTab=document.querySelector(`[data-company-target="${elId}"]`),box=document.getElementById(elId);let active='all',company='all';const companyNames=['all','Google','Microsoft','Apple','Amazon'];const companyRows=k=>filtered.filter(r=>r.pipeline==='official'&&(k==='all'||r.company.toLowerCase().includes(k.toLowerCase())));const draw=()=>{tab.innerHTML=['all',...Object.keys(names)].map(k=>`<button class="tab ${k===active?'on':''}" data-k="${k}">${k==='all'?'All':names[k]} (${k==='all'?filtered.length:filtered.filter(r=>r.pipeline===k).length})</button>`).join('');companyTab.style.display=active==='official'?'flex':'none';companyTab.innerHTML=active==='official'?companyNames.map(k=>`<button class="tab ${k===company?'on':''}" data-company="${k}">${k} (${companyRows(k).length})</button>`).join(''):'';let shown=active==='all'?filtered:filtered.filter(r=>r.pipeline===active);if(active==='official'&&company!=='all')shown=companyRows(company);box.innerHTML=jobs(shown);bindStatus(box);tab.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.k;if(active!=='official')company='all';draw()});companyTab.querySelectorAll('button').forEach(b=>b.onclick=()=>{company=b.dataset.company;draw()})};draw()}
+function tabs(elId,rows){const filtered=rows.filter(r=>statusOf(r)==='unreviewed'&&!isDeleted(r)),tab=document.querySelector(`[data-target="${elId}"]`),companyTab=document.querySelector(`[data-company-target="${elId}"]`),box=document.getElementById(elId);let active='all',company='all';const companyNames=['all','Google','Microsoft','Apple','Amazon'];const companyRows=k=>filtered.filter(r=>r.pipeline==='official'&&(k==='all'||r.company.toLowerCase().includes(k.toLowerCase())));const draw=()=>{tab.innerHTML=['all',...Object.keys(names)].map(k=>`<button class="tab ${k===active?'on':''}" data-k="${k}">${k==='all'?'All':names[k]} (${k==='all'?filtered.length:filtered.filter(r=>r.pipeline===k).length})</button>`).join('');companyTab.style.display=active==='official'?'flex':'none';companyTab.innerHTML=active==='official'?companyNames.map(k=>`<button class="tab ${k===company?'on':''}" data-company="${k}">${k} (${companyRows(k).length})</button>`).join(''):'';let shown=active==='all'?filtered:filtered.filter(r=>r.pipeline===active);if(active==='official'&&company!=='all')shown=companyRows(company);box.innerHTML=jobs(shown);bindStatus(box);tab.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.k;if(active!=='official')company='all';draw()});companyTab.querySelectorAll('button').forEach(b=>b.onclick=()=>{company=b.dataset.company;draw()})};draw()}
 const allRows=[...(D.workflow_rows||[]),...D.fresh_24h,...D.rolling_3d,...D.referrals];const uniqueRows=()=>[...new Map(allRows.map(r=>[r.canonical_job_key,r])).values()];
-function isRecentDeleted(r){if(statusOf(r)!=='deleted')return false;const state=localState(r.canonical_job_key);const raw=state?.deleted_at||r.review_updated_at;return !raw||Date.now()-Date.parse(raw)<=deletedRetentionMs}
-function renderAll(){persist();const rows=uniqueRows();tabs('fresh',D.fresh_24h);tabs('rolling',D.rolling_3d);renderBox('referrals',D.referrals.filter(r=>statusOf(r)==='unreviewed'));renderBox('inProgress',rows.filter(r=>statusOf(r)==='in_progress'));renderBox('applied',rows.filter(r=>statusOf(r)==='applied'));const box=document.getElementById('deleted');box.innerHTML=jobs(rows.filter(isRecentDeleted),true);bindStatus(box)}
-renderAll();
+function renderAll(){const rows=uniqueRows();tabs('fresh',D.fresh_24h);tabs('rolling',D.rolling_3d);renderBox('referrals',D.referrals.filter(r=>statusOf(r)==='unreviewed'&&!isDeleted(r)));renderBox('inProgress',rows.filter(r=>statusOf(r)==='in_progress'&&!isDeleted(r)));renderBox('applied',rows.filter(r=>statusOf(r)==='applied_complete'&&!isDeleted(r)));const box=document.getElementById('deleted');box.innerHTML=jobs(rows.filter(isDeleted),true);bindStatus(box)}
+async function loadSharedStates(){const {data,error}=await supabase.from('job_review_status').select('canonical_job_key,status,deleted,updated_at');if(error)throw error;reviewStates={};(data||[]).forEach(row=>{if(row.canonical_job_key&&statusChoices.includes(row.status))reviewStates[row.canonical_job_key]=row});persist();sharedLoaded=true;sharedError='';renderReviewMessage();renderAll()}
+async function initializeSupabase(){try{const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');supabase=createClient(D.supabase.url,D.supabase.publishable_key);const {data,error}=await supabase.auth.getSession();if(error)throw error;applySession(data.session);supabase.auth.onAuthStateChange((_event,session)=>setTimeout(()=>applySession(session),0));await loadSharedStates()}catch(error){sharedError=`Shared review unavailable: ${error.message}`;renderReviewMessage();renderAll()}}
+document.getElementById('signIn').onclick=async()=>{const email=document.getElementById('authEmail').value.trim();if(!email||!supabase)return;const redirectTo=`${location.origin}${location.pathname}`;const {error}=await supabase.auth.signInWithOtp({email,options:{emailRedirectTo:redirectTo}});sharedError=error?`Could not send sign-in link: ${error.message}`:'';reviewNotice=error?'':`Sign-in link sent to ${email}.`;renderReviewMessage()};
+document.getElementById('signOut').onclick=()=>supabase?.auth.signOut();
+renderReviewMessage();renderAll();initializeSupabase();
 document.getElementById('officialSearches').innerHTML=`<div class="tablewrap"><table><thead><tr><th>Company</th><th>Automation</th><th>Official searches</th><th>Note</th></tr></thead><tbody>${(D.official_searches||[]).map(c=>`<tr><td><b>${esc(c.name)}</b></td><td class="${c.automation==='active'?'active':'manual'}">${c.automation==='active'?'Automated':'Link only'}</td><td><div class="links">${c.search_links.length?c.search_links.map(l=>`<a href="${esc(l.url)}">${esc(l.label||'Search')}</a>`).join(''):'-'}</div></td><td class="small">${esc(c.note)}</td></tr>`).join('')}</tbody></table></div>`;
 </script></body></html>'''
 

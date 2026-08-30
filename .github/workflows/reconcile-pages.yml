@@ -4,7 +4,6 @@ on:
   push:
     branches: [main]
     paths:
-      - "profile/review_state.json"
       - "profile/official_coverage.json"
       - "source/official_careers.json"
       - "source/target_companies.json"

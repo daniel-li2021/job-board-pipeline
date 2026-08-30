@@ -247,7 +247,7 @@ class DashboardPolicyTests(unittest.TestCase):
             self.assertEqual("alert_history_or_issue", basis["official"])
             self.assertEqual(1, fresh[0]["activity_age_hours"])
 
-    def test_public_template_hides_coverage_and_has_local_status_control(self) -> None:
+    def test_public_template_hides_coverage_and_has_shared_status_control(self) -> None:
         self.assertNotIn("Official coverage", dashboard.HTML_TEMPLATE)
         self.assertNotIn("<th>Coverage</th>", dashboard.HTML_TEMPLATE)
         self.assertIn("status-select", dashboard.HTML_TEMPLATE)
@@ -255,9 +255,12 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertNotIn("Dashboard last updated:", dashboard.HTML_TEMPLATE)
         self.assertIn("companyTab.style.display=active==='official'?'flex':'none'", dashboard.HTML_TEMPLATE)
         self.assertNotIn('<div class="small">Big Company Official</div>', dashboard.HTML_TEMPLATE)
-        self.assertIn("jobBoardStatusesV2", dashboard.HTML_TEMPLATE)
-        self.assertIn("const statusChoices=['unreviewed','in_progress','applied']", dashboard.HTML_TEMPLATE)
-        self.assertIn("Deleted — last 7 days", dashboard.HTML_TEMPLATE)
+        self.assertIn("job_review_status", dashboard.HTML_TEMPLATE)
+        self.assertIn("signInWithOtp", dashboard.HTML_TEMPLATE)
+        self.assertIn("const statusChoices=['unreviewed','in_progress','applied_complete']", dashboard.HTML_TEMPLATE)
+        self.assertIn("Applied/Complete", dashboard.HTML_TEMPLATE)
+        self.assertIn("<h2>Deleted</h2>", dashboard.HTML_TEMPLATE)
+        self.assertNotIn("jobBoardStatusesV2", dashboard.HTML_TEMPLATE)
         self.assertIn("<details class=\"panel\"><summary>Referral opportunities</summary>", dashboard.HTML_TEMPLATE)
         self.assertIn("<th>Sponsorship</th>", dashboard.HTML_TEMPLATE)
 
@@ -568,8 +571,15 @@ class ReportingWorkflowTests(unittest.TestCase):
         self.assertNotIn("--no-llm", syncareer)
         self.assertIn("actions/deploy-pages@v4", pages)
         self.assertIn("concurrency:", pages)
-        self.assertIn('"profile/review_state.json"', pages)
+        self.assertNotIn('"profile/review_state.json"', pages)
         self.assertFalse((ROOT / ".github/workflows/scheduled-jobs.yml").exists())
+
+    def test_supabase_schema_is_public_read_and_allowlisted_write(self) -> None:
+        sql = (ROOT / "supabase" / "job_review_setup.sql").read_text(encoding="utf-8")
+        self.assertIn("to anon, authenticated\nusing (true)", sql)
+        self.assertIn("private.is_job_review_editor()", sql)
+        self.assertIn("'unreviewed', 'in_progress', 'applied_complete'", sql)
+        self.assertNotIn("for delete", sql.lower())
 
 
 if __name__ == "__main__":
