@@ -70,7 +70,9 @@ same 0–100 score and A/B/C policy as the other pipelines.
 
 `.github/workflows/daily-jobs.yml` twice a day + manual run. Commits
 `output/syncareer/`, uploads the inbox as an artifact, opens a
-`syncareer-alert` Issue when this run found new jobs.
+`syncareer-alert` Issue when this run found new A/B jobs. The workflow currently
+uses the shared rule fallback; local runs without `--no-llm` use the shared LLM
+matcher when `OPENAI_API_KEY` is present.
 
 ---
 

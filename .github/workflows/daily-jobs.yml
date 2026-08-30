@@ -39,7 +39,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4
 
-      - name: Run Syncareer pipeline (alert mode, hard filters only)
+      - name: Run Syncareer pipeline (shared 0-100 rule scoring)
         id: pipeline
         run: |
           python3 daily_pipeline.py --alert --no-llm --time "${{ inputs.time_window || 'last3days' }}"
