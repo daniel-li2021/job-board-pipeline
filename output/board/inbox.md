@@ -1,26 +1,29 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-08-29 22:59 PDT
-- Snapshot (UTC): 2026-08-30T05:59:11.012575+00:00
-- Jobs: 30 (Tier A/B only)
-- Last 24 hours: 19
-- Last 3 days: 30
+- Updated (PT): 2026-08-30 02:09 PDT
+- Snapshot (UTC): 2026-08-30T09:09:37.992978+00:00
+- Jobs: 33 (Tier A/B only)
+- Last 24 hours: 28
+- Last 3 days: 33
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 85 | greenhouse | Roblox | [2027] Software Engineer, Early Career | San Mateo, CA, United States | 2026-08-29 | 1to3d | Roblox | unreviewed | official_gap | [open](https://careers.roblox.com/jobs/8072244?gh_jid=8072244) |
-| A | 85 | greenhouse | Roblox | Software Engineer, Creator | San Mateo, CA, United States | 2026-08-29 | 1to3d | Roblox | unreviewed | official_gap | [open](https://careers.roblox.com/jobs/8115917?gh_jid=8115917) |
-| A | 85 | greenhouse | Roblox | Software Engineer, Economy Platform | San Mateo, CA, United States | 2026-08-29 | 1to3d | Roblox | unreviewed | official_gap | [open](https://careers.roblox.com/jobs/8060254?gh_jid=8060254) |
+| A | 85 | greenhouse | Roblox | [2027] Software Engineer, Early Career | San Mateo, CA, United States | 2026-08-30 | 3to24h | Roblox | unreviewed | official_gap | [open](https://careers.roblox.com/jobs/8072244?gh_jid=8072244) |
+| A | 85 | greenhouse | Roblox | Software Engineer, Creator | San Mateo, CA, United States | 2026-08-30 | 3to24h | Roblox | unreviewed | official_gap | [open](https://careers.roblox.com/jobs/8115917?gh_jid=8115917) |
+| A | 85 | greenhouse | Roblox | Software Engineer, Economy Platform | San Mateo, CA, United States | 2026-08-30 | 3to24h | Roblox | unreviewed | official_gap | [open](https://careers.roblox.com/jobs/8060254?gh_jid=8060254) |
+| A | 85 | greenhouse | Robinhood | Software Engineer, Proactive Capabilities | Bellevue, WA; Menlo Park, CA | 2026-08-30 | 3to24h | - | unreviewed | not_dedicated | [open](https://boards.greenhouse.io/robinhood/jobs/8067604?t=gh_src=&gh_jid=8067604) |
 | A | 85 | greenhouse | GitLab | Backend Engineer, AI Engineering: Duo Chat | Remote, Canada; Remote, United States | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/gitlab/jobs/8698314002) |
+| B | 80 | greenhouse | Roblox | Software Engineer, Account Authentication | San Mateo, CA, United States | 2026-08-30 | 3to24h | Roblox | unreviewed | official_gap | [open](https://careers.roblox.com/jobs/8097701?gh_jid=8097701) |
+| B | 80 | greenhouse | Roblox | Software Engineer, Communications | San Mateo, CA, United States | 2026-08-30 | 3to24h | Roblox | unreviewed | official_gap | [open](https://careers.roblox.com/jobs/8083944?gh_jid=8083944) |
+| B | 75 | greenhouse | Roblox | Software Engineer, Creator Business | San Mateo, CA, United States | 2026-08-30 | 3to24h | Roblox | unreviewed | official_gap | [open](https://careers.roblox.com/jobs/8113334?gh_jid=8113334) |
+| B | 70 | greenhouse | Roblox | [Summer 2027] Software Engineer Intern | San Mateo, CA, United States | 2026-08-30 | 3to24h | Roblox | unreviewed | official_gap | [open](https://careers.roblox.com/jobs/8072713?gh_jid=8072713) |
+| B | 70 | greenhouse | Roblox | Software Engineer, Foundation AI | San Mateo, CA, United States | 2026-08-30 | 3to24h | Roblox | unreviewed | official_gap | [open](https://careers.roblox.com/jobs/8123004?gh_jid=8123004) |
 | B | 75 | linkedin | Microsoft | Software Engineer Intune | Redmond, WA | 2026-08-28 | 1to3d | Microsoft | unreviewed | covered_unvalidated | [open](https://www.linkedin.com/jobs/view/software-engineer-intune-at-microsoft-4460815593) |
-| B | 80 | greenhouse | Roblox | Software Engineer, Account Authentication | San Mateo, CA, United States | 2026-08-29 | 1to3d | Roblox | unreviewed | official_gap | [open](https://careers.roblox.com/jobs/8097701?gh_jid=8097701) |
-| B | 80 | greenhouse | Roblox | Software Engineer, Communications | San Mateo, CA, United States | 2026-08-29 | 1to3d | Roblox | unreviewed | official_gap | [open](https://careers.roblox.com/jobs/8083944?gh_jid=8083944) |
 | B | 80 | greenhouse | Coinbase | Software Engineer, CDP - Payment Acceptance | Remote - USA | 2026-08-28 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.coinbase.com/careers/positions/8164730?gh_jid=8164730) |
 | B | 80 | greenhouse | GitLab | Fullstack Engineer (TypeScript), AI Engineering: Duo Client SDK | Remote, Canada; Remote, United States | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/gitlab/jobs/8698330002) |
-| B | 75 | greenhouse | Roblox | Software Engineer, Creator Business | San Mateo, CA, United States | 2026-08-29 | 1to3d | Roblox | unreviewed | official_gap | [open](https://careers.roblox.com/jobs/8113334?gh_jid=8113334) |
 | B | 75 | greenhouse | GitLab | Intermediate Backend Engineer, Platform Readiness | Remote, Canada; Remote, United States | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/gitlab/jobs/8644569002) |
 | B | 75 | linkedin | Accenture Federal Services | Full Stack Developer | Washington, DC | 2026-08-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-accenture-federal-services-4375089393) |
 | B | 75 | linkedin | Corpay | Full Stack Developer | Sacramento, CA | 2026-08-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-corpay-4451026399) |
