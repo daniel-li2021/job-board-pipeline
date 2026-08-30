@@ -15,8 +15,8 @@ Public rolling dashboard: **https://daniel-li2021.github.io/job-board-pipeline/*
 hours of GitHub alert activity, three-day rolling views, lightweight status
 sections, a collapsible referral view, and official-search links. Coverage
 reconciliation remains in the repo audit files but is intentionally hidden from
-the public page. Review status is shared through Supabase and editable only by
-signed-in, allowlisted users.
+the public page. Review status is shared through Supabase and editable by
+anyone who can access the dashboard.
 
 **Matching/scoring is shared, not implemented three times.** All three components
 use the same `board_pipeline.py` role-family logic, 0–100 resume/JD matcher,
@@ -316,17 +316,13 @@ One-time setup:
 
 1. In the Supabase SQL editor, run
    [`supabase/job_review_setup.sql`](supabase/job_review_setup.sql).
-2. Add lowercase editor emails to `private.job_review_allowlist` using the
-   commented insert at the bottom of that file.
-3. In **Authentication → URL Configuration**, set the Site URL and an allowed
-   redirect URL to `https://daniel-li2021.github.io/job-board-pipeline/`.
-   Leave email sign-in enabled. To prevent non-allowlisted accounts from being
-   created, disable new-user signup and invite the permitted users first.
 
 The supplied project URL and publishable browser key are defaults in
 `dashboard.py`. Publishable keys are safe in public clients when RLS is enabled;
-never put a Supabase secret/service-role key in this repository. To build for a
-different project without editing source:
+never put a Supabase secret/service-role key in this repository. This setup
+intentionally permits anonymous inserts and updates, so the dashboard link is
+not a strong security boundary. To build for a different project without
+editing source:
 
 ```bash
 SUPABASE_URL=https://PROJECT.supabase.co \
