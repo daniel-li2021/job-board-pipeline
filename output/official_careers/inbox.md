@@ -1,10 +1,10 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-08-30 02:36 PDT
-- Snapshot (UTC): 2026-08-30T09:36:03.402714+00:00
-- Jobs: 14 (Tier A/B only)
-- Last 24 hours: 2
-- Last 3 days: 14
+- Updated (PT): 2026-08-30 09:41 PDT
+- Snapshot (UTC): 2026-08-30T16:41:20.268578+00:00
+- Jobs: 35 (Tier A/B only)
+- Last 24 hours: 20
+- Last 3 days: 35
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
@@ -12,8 +12,8 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | A | 85 | official | Amazon | Data Engineer, AWS DC Central Operations | Seattle, Washington, USA | 2026-08-28 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10519392/data-engineer-aws-dc-central-operations) |
 | A | 85 | official | Uber | Software Engineer II | Sunnyvale, CA, United States | 2026-08-28 | 1to3d | Uber | unreviewed | official_canonical | [open](https://jobs.uber.com/en/jobs/301386) |
-| A | 85 | official | Roblox | Software Engineer, Economy Platform | San Mateo, CA, United States | 2026-08-28 | 1to3d | Roblox | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8060254?gh_jid=8060254) |
-| B | 90 | official | HPE | Software Engineer Intern | Spring, Texas, United States of America | 2026-08-28 | 1to3d | HPE | unreviewed | official_canonical | [open](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Software-Engineer-Intern_1213625) |
+| A | 85 | official | Roblox | Software Engineer, Economy Platform | San Mateo, CA, United States | 2026-08-28 | 1to3d | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8060254?gh_jid=8060254) |
+| B | 90 | official | HPE | Software Engineer Intern | Spring, Texas, United States of America | 2026-08-28 | 1to3d | - | unreviewed | official_canonical | [open](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Software-Engineer-Intern_1213625) |
 | B | 85 | official | Salesforce | Summer 2027 Intern - Software Engineer | California - San Francisco | 2026-08-28 | 1to3d | Salesforce | unreviewed | official_canonical | [open](https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Summer-2027-Intern---Software-Engineer_JR340771-1) |
 | B | 80 | official | Amazon | Software Development Engineer, AWS Route 53 Global Resolver, AWS Route | Herndon, Virginia, USA | 2026-08-28 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10520075/software-development-engineer-aws-route-53-global-resolver-aws-route-53-global-resolver) |
 | B | 80 | official | Amazon | Software Development Engineer, Route 53 | Herndon, Virginia, USA | 2026-08-28 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10520050/software-development-engineer-route-53) |
@@ -22,5 +22,26 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | B | 75 | official | Amazon | SDE, AWS OpenSearch Service, Opensearch | Austin, Texas, USA | 2026-08-28 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10519714/sde-aws-opensearch-service-opensearch) |
 | B | 75 | official | Microsoft | Software Engineer Intune | United States, Washington, Redmond | 2026-08-28 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556982925) |
 | B | 75 | official | Snap | Software Engineer, Specs C++, Level 5 | Los Angeles, California | 2026-08-28 | 1to3d | - | unreviewed | official_canonical | [open](https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Los-Angeles-California/Software-Engineer--Specs--Level-5_R0046458-1) |
+| B | 75 | official | Walmart Global Tech | Software Engineer III - FULL STACK | BENTONVILLE, AR, US | 2026-08-28 | 1to3d | - | unreviewed | official_canonical | [open](https://careers.walmart.com/job/R-2565184) |
+| B | 75 | official | Walmart Global Tech | Software Engineer III - FULL STACK | BENTONVILLE, AR, US | 2026-08-28 | 1to3d | - | unreviewed | official_canonical | [open](https://careers.walmart.com/job/R-2565175) |
+| B | 75 | official | Anthropic | Applied AI Architect, Startups | San Francisco, CA / New York City, NY; San Francisco, California, United States | 2026-08-28 | 1to3d | - | unreviewed | official_canonical | [open](https://job-boards.greenhouse.io/anthropic/jobs/5406982008) |
 | B | 85 | official | SAP | SAP iXp Intern - AI Engineer | Naperville, IL, US, 60563 | - | newly_discovered | SAP | unreviewed | official_canonical | [open](https://jobs.sap.com/job/Naperville-SAP-iXp-Intern-AI-Engineer-IL-60563/1416934233/) |
 | B | 80 | official | SAP | SAP iXp Intern - Full-Stack AI Developer | Palo Alto, CA, US, 94304 | - | newly_discovered | SAP | unreviewed | official_canonical | [open](https://jobs.sap.com/job/Palo-Alto-SAP-iXp-Intern-Full-Stack-AI-Developer-CA-94304/1425371233/) |
+| B | 75 | official | TikTok | Research Engineer - Ads Integrity | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7523035153305323783) |
+| B | 75 | official | TikTok | Research Engineer - Foundation Models, Ads Integrity | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7523036477492627719) |
+| B | 75 | official | TikTok | Machine Learning Engineer, Multimodal - Intelligent Integrity | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7603315698139744517) |
+| B | 75 | official | TikTok | Research Engineer Graduate (Monetization Technology - Business Integri | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7667769079948347701) |
+| B | 75 | official | TikTok | Operation Research Engineer- TikTok E-commerce Global Supply Chain and | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7112676583475022093) |
+| B | 75 | official | TikTok | Operation Research Engineer- TikTok E-commerce Global Supply Chain and | Seattle, Washington, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7138162560188156191) |
+| B | 75 | official | TikTok | Research Scientist Graduate (Monetization Technology - Business Integr | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7667770207780194613) |
+| B | 75 | official | TikTok | Solution Engineer - Global E-commerce, Seller Business | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7675145117074606389) |
+| B | 75 | official | TikTok | Frontend Infrastructure Engineer (AI Tooling), TikTok Client Arch | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7658191476207339829) |
+| B | 75 | official | TikTok | Solutions Engineer - Partnerships, Ads (Applied AI Focus) | New York, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7654730223138654469) |
+| B | 75 | official | TikTok | AI Engineer Graduate (Client Arch) - 2027 Start | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7664978367107713333) |
+| B | 75 | official | TikTok | Backend Software Engineer, AI Infrastructure for SDLC - Engineering Ef | Seattle, Washington, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7325559906483996978) |
+| B | 75 | official | TikTok | AI Infrastructure Engineer - Recommendation & LLM | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7672821148211530037) |
+| B | 75 | official | TikTok | TikTok R&D Engineer (Open Platform) | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7662556320030378293) |
+| B | 75 | official | TikTok | Software Engineer, Pangle - SIA | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7639632990934960389) |
+| B | 75 | official | TikTok | Machine Learning Engineer, Data Mining (Ads Core) | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7631492502735735045) |
+| B | 75 | official | TikTok | Data Engineer Graduate (Data Platform Global Live) - 2027 Start | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7678120538997098805) |
+| B | 75 | official | TikTok | Data Engineer Graduate (Data Platform - Global Live) - 2027 Start | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7675484418022181173) |
