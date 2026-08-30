@@ -70,9 +70,9 @@ same 0–100 score and A/B/C policy as the other pipelines.
 
 `.github/workflows/daily-jobs.yml` twice a day + manual run. Commits
 `output/syncareer/`, uploads the inbox as an artifact, opens a
-`syncareer-alert` Issue when this run found new A/B jobs. The workflow currently
-uses the shared rule fallback; local runs without `--no-llm` use the shared LLM
-matcher when `OPENAI_API_KEY` is present.
+`syncareer-alert` Issue when this run found new A/B jobs. The workflow injects
+`OPENAI_API_KEY` from the Repository Secret and uses the shared LLM matcher;
+missing-key or API failures automatically fall back to shared rule scoring.
 
 ---
 
@@ -300,7 +300,10 @@ including B→A promotions whose original `first_seen` is older. Each pipeline
 persists exact events in `output/<pipeline>/alert_history.json`. **Rolling** is
 still work first seen in the last three days. Employer `posted_date` remains
 visible reference metadata but does not decide those windows. Active rows sort
-Tier A first, then alert/discovery recency and match score.
+Tier A first, then alert/discovery recency and match score. For ATS/LinkedIn
+only, stored Tier C rows provide a presentation fallback when A/B volume is low:
+Fresh can fill from fewer than 10 A/B to 20 total, and Rolling from fewer than
+30 A/B to 50 total. Fallback C rows never score below 60 and remain labeled C.
 
 The public page's Status menus save a private override in that browser's
 `localStorage`. This is the easiest personal workflow: In Progress and Applied

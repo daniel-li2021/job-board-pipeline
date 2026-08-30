@@ -39,10 +39,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4
 
-      - name: Run Syncareer pipeline (shared 0-100 rule scoring)
+      - name: Run Syncareer pipeline (shared LLM scoring with rule fallback)
         id: pipeline
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python3 daily_pipeline.py --alert --no-llm --time "${{ inputs.time_window || 'last3days' }}"
+          python3 daily_pipeline.py --alert --time "${{ inputs.time_window || 'last3days' }}"
 
       - name: Commit Syncareer inbox and watchlist
         run: |

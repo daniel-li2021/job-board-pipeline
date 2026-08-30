@@ -76,6 +76,59 @@ class ReferralAliasTests(unittest.TestCase):
 
 
 class DashboardPolicyTests(unittest.TestCase):
+    def test_sponsorship_labels_use_existing_source_data(self) -> None:
+        self.assertEqual("Sponsor", dashboard.sponsorship_label({"sponsorship": "H-1B Sponsor"}))
+        self.assertEqual("No sponsor", dashboard.sponsorship_label({"sponsorship": "No H-1B Sponsor"}))
+        self.assertEqual("Unknown", dashboard.sponsorship_label({}))
+
+    def test_board_c_fallback_uses_thresholds_and_existing_scores(self) -> None:
+        now = datetime(2026, 8, 29, 12, tzinfo=timezone.utc)
+
+        def row(tier: str, score: int, age: int, key: str, pipeline: str = "board") -> dict:
+            return {
+                "canonical_job_key": key,
+                "pipeline": pipeline,
+                "tier": tier,
+                "score": score,
+                "company": key,
+                "location": "Seattle, WA",
+                "filter_status": "kept",
+                "suppress_alert": False,
+                "review_status": "unreviewed",
+                "freshness": dashboard.recency(
+                    {"first_seen": (now - timedelta(hours=age)).isoformat()}, now
+                ),
+            }
+
+        base = [row("A", 90, 2, "ab-1")]
+        stored = base + [
+            row("C", 64, 1, "c-64"),
+            row("C", 70, 6, "c-70-old"),
+            row("C", 70, 3, "c-70-new"),
+            row("C", 59, 1, "c-59"),
+            row("C", 99, 1, "other-pipeline", pipeline="official"),
+        ]
+        filled = dashboard.append_board_c_fallback(
+            base, stored, minimum_ab=10, target=20, window="fresh"
+        )
+        self.assertEqual(
+            ["ab-1", "c-70-new", "c-70-old", "c-64"],
+            [item["canonical_job_key"] for item in filled],
+        )
+        self.assertTrue(all(item["score"] >= 60 for item in filled))
+
+    def test_board_c_fallback_does_nothing_at_ab_minimum(self) -> None:
+        base = [
+            {"pipeline": "board", "tier": "B", "canonical_job_key": f"b-{index}"}
+            for index in range(10)
+        ]
+        self.assertEqual(
+            base,
+            dashboard.append_board_c_fallback(
+                base, [], minimum_ab=10, target=20, window="fresh"
+            ),
+        )
+
     def test_discovery_metadata_follows_first_seen_not_posted_date(self) -> None:
         now = datetime(2026, 8, 29, 12, tzinfo=timezone.utc)
         recent_discovery = dashboard.recency(
@@ -203,6 +256,7 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertIn("const statusChoices=['unreviewed','in_progress','applied']", dashboard.HTML_TEMPLATE)
         self.assertIn("Deleted — last 7 days", dashboard.HTML_TEMPLATE)
         self.assertIn("<details class=\"panel\"><summary>Referral opportunities</summary>", dashboard.HTML_TEMPLATE)
+        self.assertIn("<th>Sponsorship</th>", dashboard.HTML_TEMPLATE)
 
 
 class MatchingPolicyTests(unittest.TestCase):
@@ -507,6 +561,8 @@ class ReportingWorkflowTests(unittest.TestCase):
         self.assertIn("workflow_dispatch:", board)
         self.assertIn("workflow_dispatch:", official)
         self.assertIn("workflow_dispatch:", syncareer)
+        self.assertIn("OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}", syncareer)
+        self.assertNotIn("--no-llm", syncareer)
         self.assertIn("actions/deploy-pages@v4", pages)
         self.assertIn("concurrency:", pages)
         self.assertIn('"profile/review_state.json"', pages)
