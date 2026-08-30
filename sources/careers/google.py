@@ -20,6 +20,7 @@ import requests
 
 from ..schema import SourceUnavailable, make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso, slugify
+from .query_terms import ROLE_SEARCH_QUERIES
 
 SOURCE = "google_official_careers"
 COMPANY = "Google"
@@ -30,17 +31,12 @@ SLEEP_S = 0.35
 # User-provided search: quoted SWE + early/mid/intern levels, US, newest first.
 DEFAULT_QUERIES: List[Dict[str, Any]] = [
     {
-        "q": '"Software Engineer"',
+        "q": f'"{query.title()}"',
         "target_levels": ["MID", "EARLY", "INTERN_AND_APPRENTICE"],
         "location": "United States",
         "sort_by": "date",
-    },
-    {
-        "q": '"Machine Learning Engineer"',
-        "target_levels": ["MID", "EARLY", "INTERN_AND_APPRENTICE"],
-        "location": "United States",
-        "sort_by": "date",
-    },
+    }
+    for query in ROLE_SEARCH_QUERIES
 ]
 
 

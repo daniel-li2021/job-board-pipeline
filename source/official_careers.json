@@ -270,10 +270,14 @@
     {
       "id": "zoom",
       "name": "Zoom",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "search_links": [{"label": "Software search", "url": "https://zoom.wd5.myworkdayjobs.com/en-US/Zoom?q=software%20engineer"}],
-      "skip_reason": "Verified official Workday search captured; adapter configuration deferred."
+      "workday": {
+        "host": "https://zoom.wd5.myworkdayjobs.com",
+        "tenant": "zoom",
+        "site": "Zoom"
+      }
     },
     {
       "id": "goldman-sachs",
@@ -286,10 +290,32 @@
     {
       "id": "pure-storage",
       "name": "Pure Storage",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "search_links": [{"label": "All official openings", "url": "https://job-boards.greenhouse.io/purestorage"}],
-      "skip_reason": "Verified official Greenhouse board captured; query-specific adapter deferred."
+      "greenhouse": {
+        "token": "purestorage"
+      }
+    },
+    {
+      "id": "databricks",
+      "name": "Databricks",
+      "adapter": "greenhouse",
+      "enabled": true,
+      "search_links": [{"label": "All official openings", "url": "https://job-boards.greenhouse.io/databricks"}],
+      "greenhouse": {
+        "token": "databricks"
+      }
+    },
+    {
+      "id": "roblox",
+      "name": "Roblox",
+      "adapter": "greenhouse",
+      "enabled": true,
+      "search_links": [{"label": "All official openings", "url": "https://job-boards.greenhouse.io/roblox"}],
+      "greenhouse": {
+        "token": "roblox"
+      }
     }
   ]
 }

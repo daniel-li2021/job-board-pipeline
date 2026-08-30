@@ -14,6 +14,7 @@ import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = BASE_DIR / "output"
@@ -331,6 +332,30 @@ def normalize_title_key(title: str) -> str:
     return re.sub(r"\s+", " ", t).strip()
 
 
+TRACKING_QUERY_KEYS = {
+    "ref", "refid", "trackingid", "trk", "source", "utm_campaign",
+    "utm_content", "utm_medium", "utm_source", "utm_term",
+}
+
+
+def normalize_job_url(value: str) -> str:
+    """Normalize job URLs without removing requisition-bearing query fields."""
+    raw = (value or "").strip()
+    if not raw:
+        return ""
+    try:
+        parts = urlsplit(raw)
+    except ValueError:
+        return raw.lower().rstrip("/")
+    query = [
+        (key, val)
+        for key, val in parse_qsl(parts.query, keep_blank_values=True)
+        if key.lower() not in TRACKING_QUERY_KEYS and not key.lower().startswith("utm_")
+    ]
+    path = re.sub(r"/+$", "", parts.path or "") or "/"
+    return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), path, urlencode(query), ""))
+
+
 # Common US state names -> abbreviations, so "Seattle, Washington" and
 # "Seattle, WA" collapse to the same location key.
 _STATE_NAME_TO_ABBR = {
@@ -429,7 +454,7 @@ def dedup_key(job: Dict[str, str]) -> str:
     location is blank we include the source_url so blank never acts as a
     wildcard that collapses distinct postings.
     """
-    official = (job.get("official_url") or "").strip().lower().rstrip("/")
+    official = normalize_job_url(job.get("official_url") or "")
     if official:
         return f"url::{official}"
     jid = (job.get("job_id") or "").strip()
@@ -441,7 +466,7 @@ def dedup_key(job: Dict[str, str]) -> str:
     lkey = normalize_location_key(job.get("location", ""))
     if not lkey:
         # No location: fall back to the source URL so we don't over-merge.
-        surl = (job.get("source_url") or "").strip().lower().rstrip("/")
+        surl = normalize_job_url(job.get("source_url") or "")
         return f"ctl::{ckey}::{tkey}::url::{surl}"
     return f"ctl::{ckey}::{tkey}::{lkey}"
 
@@ -469,7 +494,12 @@ def combined_cache_key(job: Dict[str, str], profile_fingerprint: str) -> str:
     Changing any resume, the candidate profile, or the prompt version changes
     ``profile_fingerprint`` and thus invalidates all cached scores.
     """
-    return _sha1(f"{jd_hash(job)}::{profile_fingerprint}")
+    return combined_cache_key_from_hash(jd_hash(job), profile_fingerprint)
+
+
+def combined_cache_key_from_hash(jd_digest: str, profile_fingerprint: str) -> str:
+    """Build a cache key when a peer store has only the canonical JD hash."""
+    return _sha1(f"{jd_digest}::{profile_fingerprint}")
 
 
 # --------------------------------------------------------------------------

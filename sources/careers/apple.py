@@ -22,6 +22,7 @@ import requests
 
 from ..schema import SourceUnavailable, make_job, normalize_space
 from .http import keep_us_or_unknown, now_iso
+from .query_terms import ROLE_SEARCH_QUERIES
 
 SOURCE = "apple_official_careers"
 COMPANY = "Apple"
@@ -29,8 +30,9 @@ SEARCH = "https://jobs.apple.com/en-us/search"
 SLEEP_S = 0.35
 
 DEFAULT_SEARCHES: List[Dict[str, str]] = [
-    {"search": "software engineer", "location": "united-states-USA", "sort": "newest"},
-    {"search": "machine learning engineer", "location": "united-states-USA", "sort": "newest"},
+    {"search": query, "location": "united-states-USA", "sort": "newest"}
+    for query in ROLE_SEARCH_QUERIES
+] + [
     {"location": "united-states-USA", "team": "apps-and-frameworks-SFTWR-AF"},
 ]
 

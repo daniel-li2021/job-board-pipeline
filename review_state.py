@@ -18,7 +18,7 @@ STORE_PATHS = (
     BASE_DIR / "output" / "official_careers" / "jobs.json",
     BASE_DIR / "output" / "syncareer" / "watchlist.json",
 )
-STATUSES = {"unreviewed", "in_progress", "applied", "replied", "completed", "dismissed"}
+STATUSES = {"unreviewed", "in_progress", "applied"}
 
 
 def _read(path: Path, default: Any) -> Any:

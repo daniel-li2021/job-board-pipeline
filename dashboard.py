@@ -27,7 +27,13 @@ PACIFIC = ZoneInfo("America/Los_Angeles")
 REFERRAL_PATH = BASE_DIR / "source" / "target_companies.json"
 REVIEW_PATH = BASE_DIR / "profile" / "review_state.json"
 OFFICIAL_REGISTRY_PATH = BASE_DIR / "source" / "official_careers.json"
-INACTIVE_STATUSES = {"completed", "dismissed"}
+MAIN_HIDDEN_STATUSES = {"in_progress", "applied", "deleted"}
+STATUS_ALIASES = {
+    "completed": "applied",
+    "replied": "in_progress",
+    "dismissed": "deleted",
+}
+ALLOWED_STATUSES = {"unreviewed", "in_progress", "applied", "deleted"}
 ALERT_HISTORY_PATHS = {
     "board": BASE_DIR / "output" / "board" / "alert_history.json",
     "official": BASE_DIR / "output" / "official_careers" / "alert_history.json",
@@ -181,6 +187,13 @@ def review_map() -> Dict[str, Any]:
     return jobs if isinstance(jobs, dict) else {}
 
 
+def normalize_review_status(value: Any) -> str:
+    """Map legacy workflow values into the small dashboard status model."""
+    status = str(value or "unreviewed").strip().lower()
+    status = STATUS_ALIASES.get(status, status)
+    return status if status in ALLOWED_STATUSES else "unreviewed"
+
+
 def normalize_row(
     entry: Dict[str, Any],
     pipeline: str,
@@ -215,7 +228,8 @@ def normalize_row(
         "tier": entry.get("tier") or "-",
         "score": entry.get("match_score") if entry.get("match_score") is not None else entry.get("fit_score", ""),
         "referral": referral,
-        "review_status": state.get("status", "unreviewed"),
+        "review_status": normalize_review_status(state.get("status", "unreviewed")),
+        "review_updated_at": state.get("updated_at", ""),
         "coverage_status": audit.get("coverage_status") or entry.get("coverage_status") or ("official_canonical" if pipeline == "official" else "not_reconciled"),
         "canonical_source": audit.get("canonical_source") or entry.get("canonical_source") or pipeline,
         "duplicate_of": audit.get("duplicate_of") or entry.get("duplicate_of") or "",
@@ -243,11 +257,11 @@ def _sort_rows(rows: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
         rows,
         key=lambda row: (
             tier_rank.get(str(row.get("tier") or "-"), 3),
-            -float(row.get("score") or 0),
             row.get("activity_age_hours") if row.get("activity_age_hours") is not None else (
                 row["freshness"]["discovered"]["age_hours"]
                 if row["freshness"]["discovered"]["age_hours"] is not None else 999999
             ),
+            -float(row.get("score") or 0),
             bucket_rank.get(row["freshness"]["posted"]["bucket"], 9),
             str(row.get("company") or "").lower(),
         ),
@@ -317,7 +331,7 @@ def alert_fresh_rows(all_rows: List[Dict[str, Any]], now: datetime) -> Tuple[Lis
                 if not source_row:
                     continue
                 row = dict(source_row)
-                if not visible_candidate(row) or str(row.get("review_status") or "").lower() in INACTIVE_STATUSES:
+                if not visible_candidate(row) or row.get("review_status") in MAIN_HIDDEN_STATUSES:
                     continue
                 row["alerted_at"] = emitted_at.isoformat()
                 row["alert_stamp"] = event.get("stamp", "")
@@ -369,8 +383,7 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
             all_rows.append(normalize_row(entry, pipeline, now, referrals, review, coverage_by_key))
 
     candidates = [row for row in all_rows if visible_candidate(row)]
-    current = [row for row in candidates if str(row.get("review_status") or "").lower() not in INACTIVE_STATUSES]
-    completed = _sort_rows(row for row in candidates if str(row.get("review_status") or "").lower() in INACTIVE_STATUSES)
+    current = [row for row in candidates if row.get("review_status") not in MAIN_HIDDEN_STATUSES]
     fresh, fresh_basis = alert_fresh_rows(all_rows, now)
     rolling = _sort_rows(row for row in current if row["freshness"]["rolling_activity"])
     older = _sort_rows(
@@ -405,7 +418,9 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         "rolling_3d": rolling[:1000],
         "referrals": referral_rows[:500],
         "older_review": older[:500],
-        "completed": completed[:500],
+        # Browser-local status changes need a complete row pool so a job can
+        # move between sections immediately without a server round trip.
+        "workflow_rows": _sort_rows(candidates)[:2000],
         "coverage": coverage,
         "official_searches": official_search_catalog(),
     }
@@ -415,15 +430,16 @@ HTML_TEMPLATE = r'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Daniel's Job Board</title>
 <style>
-:root{--bg:#f4f6f1;--card:#fff;--ink:#152018;--muted:#687269;--line:#dce2da;--green:#176b45;--gold:#ad6c00;--blue:#275fa8;--red:#9d3b31}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:1440px;margin:auto;padding:28px}header{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:20px}h1{font-size:30px;letter-spacing:-.03em;margin:0}h2{font-size:20px;margin:0 0 12px}p{margin:5px 0;color:var(--muted)}a{color:var(--blue)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.card,.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 2px 10px #1b2a1d0a}.card{padding:16px}.card b{display:block;font-size:24px}.panel{padding:18px;margin:16px 0;overflow:hidden}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;cursor:pointer}.tab.on{background:var(--ink);color:#fff}.tablewrap{overflow:auto;max-height:620px}table{border-collapse:collapse;width:100%;min-width:880px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #edf0ec;vertical-align:top}th{position:sticky;top:0;background:#fafbf9;color:#59645c;font-size:12px;text-transform:uppercase;letter-spacing:.04em}.pill{display:inline-block;padding:2px 7px;border-radius:999px;background:#edf2ee;font-size:12px;white-space:nowrap}.confirmed{color:var(--green);background:#e8f4ed}.discovered{color:var(--gold);background:#fff3d8}.referral{color:#744a00;background:#fff0c8}.empty{padding:24px;color:var(--muted);text-align:center}.small{font-size:12px;color:var(--muted)}.links{display:flex;gap:8px;flex-wrap:wrap}.active{color:var(--green)}.manual{color:var(--gold)}select{max-width:145px;padding:5px 7px;border:1px solid var(--line);border-radius:8px;background:white;color:var(--ink)}.timestamp{font-weight:600;color:var(--ink)}@media(max-width:760px){.wrap{padding:16px}.cards{grid-template-columns:1fr}header{display:block}}
+:root{--bg:#f4f6f1;--card:#fff;--ink:#152018;--muted:#687269;--line:#dce2da;--green:#176b45;--gold:#ad6c00;--blue:#275fa8;--red:#9d3b31}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:1440px;margin:auto;padding:28px}header{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:20px}h1{font-size:30px;letter-spacing:-.03em;margin:0}h2{font-size:20px;margin:0 0 12px}p{margin:5px 0;color:var(--muted)}a{color:var(--blue)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.card,.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 2px 10px #1b2a1d0a}.card{padding:16px}.card b{display:block;font-size:24px}.panel{padding:18px;margin:16px 0;overflow:hidden}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;cursor:pointer}.tab.on{background:var(--ink);color:#fff}.tablewrap{overflow:auto;max-height:620px}table{border-collapse:collapse;width:100%;min-width:880px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #edf0ec;vertical-align:top}th{position:sticky;top:0;background:#fafbf9;color:#59645c;font-size:12px;text-transform:uppercase;letter-spacing:.04em}.pill{display:inline-block;padding:2px 7px;border-radius:999px;background:#edf2ee;font-size:12px;white-space:nowrap}.confirmed{color:var(--green);background:#e8f4ed}.discovered{color:var(--gold);background:#fff3d8}.referral{color:#744a00;background:#fff0c8}.empty{padding:24px;color:var(--muted);text-align:center}.small{font-size:12px;color:var(--muted)}.links,.workflow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.active{color:var(--green)}.manual{color:var(--gold)}select{max-width:145px;padding:5px 7px;border:1px solid var(--line);border-radius:8px;background:white;color:var(--ink)}button.delete,button.restore{border:1px solid var(--line);border-radius:8px;padding:5px 8px;background:#fff;cursor:pointer}button.delete{color:var(--red)}button.restore{color:var(--green)}details.panel>summary{font-size:20px;font-weight:700;cursor:pointer}.timestamp{font-weight:600;color:var(--ink)}@media(max-width:760px){.wrap{padding:16px}.cards{grid-template-columns:1fr}header{display:block}}
 </style></head><body><div class="wrap">
 <header><div><h1>Job visibility dashboard</h1><p id="updated" class="timestamp"></p><p id="sourceSnapshots" class="small"></p></div><div><a id="repo">Repository</a></div></header>
 <div class="cards" id="summary"></div>
 <section class="panel"><h2>Fresh — alerted in the last 24 hours</h2><p>Jobs emitted by the latest GitHub alert Issues, including newly found A/B jobs and B→A promotions. This mirrors automation activity rather than posted_date or original first_seen.</p><p id="freshBasis" class="small"></p><div class="tabs" data-target="fresh"></div><div id="fresh"></div></section>
-<section class="panel"><h2>Rolling — newly found in the last 3 days</h2><p>Current A/B (or Syncareer kept) candidates, ranked Tier A first, then score and discovery time.</p><div class="tabs" data-target="rolling"></div><div id="rolling"></div></section>
-<section class="panel"><h2>Referral opportunities</h2><p>Aliases come only from <a id="referralFile">source/target_companies.json</a>.</p><div id="referrals"></div></section>
-<section class="panel"><h2>Older / review later — discovered 3–7 days ago</h2><p>Use the Status menu to keep a lightweight personal workflow.</p><div id="older"></div></section>
-<section class="panel"><h2>Completed / dismissed</h2><p>Status changes are saved privately in this browser. Completed/dismissed jobs immediately leave active sections; they do not modify the public repository or sync across devices.</p><div id="completed"></div></section>
+<section class="panel"><h2>Rolling — newly found in the last 3 days</h2><p>Current A/B (or Syncareer kept) candidates, ranked Tier A first, then discovery time and score.</p><div class="tabs" data-target="rolling"></div><div id="rolling"></div></section>
+<section class="panel"><h2>In Progress</h2><p>Jobs you are actively preparing or following up on.</p><div id="inProgress"></div></section>
+<section class="panel"><h2>Applied / Completed</h2><p>Applied jobs leave the active Fresh and Rolling lists.</p><div id="applied"></div></section>
+<section class="panel"><h2>Deleted — last 7 days</h2><p>Deleted jobs stay recoverable in this browser for one week, then disappear.</p><div id="deleted"></div></section>
+<details class="panel"><summary>Referral opportunities</summary><p>Optional view. Aliases come only from <a id="referralFile">source/target_companies.json</a>.</p><div id="referrals"></div></details>
 <section class="panel"><h2>Official company search links</h2><p>Quick official searches for manual checks and future adapters. “Automated” entries already have a scraper; “link only” entries are intentionally not reverse-engineered yet.</p><div id="officialSearches"></div></section>
 </div><script id="payload" type="application/json">__PAYLOAD__</script><script>
 const D=JSON.parse(document.getElementById('payload').textContent); document.getElementById('updated').textContent=`Dashboard last updated: ${D.updated_pt} · ${D.generated_at}`; document.getElementById('repo').href=D.repository;document.getElementById('referralFile').href=D.referral_file;
@@ -433,18 +449,25 @@ document.getElementById('freshBasis').textContent='Fresh source: '+Object.keys(n
 document.getElementById('summary').innerHTML=Object.keys(names).map(k=>`<div class="card"><span>${names[k]}</span><b>${D.counts_24h[k]}</b><p>last 24h · ${D.counts_3d[k]} in 3 days</p><a href="${D.report_links[k]}">open report</a></div>`).join('');
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const bucketNames={lt3h:'<3h', '3to24h':'3–24h', '1to3d':'1–3d', '3to7d':'3–7d', gt7d:'>7d', unknown:'unknown'};
-const statusChoices=['unreviewed','in_progress','applied','replied','completed','dismissed']; const inactiveStatuses=new Set(['completed','dismissed']); const statusKey='jobBoardStatusesV1';
+const statusChoices=['unreviewed','in_progress','applied'];const statusLabels={unreviewed:'Unreviewed',in_progress:'In Progress',applied:'Applied'};const statusKey='jobBoardStatusesV2';const legacyStatusKey='jobBoardStatusesV1';const deletedRetentionMs=7*24*60*60*1000;
+const normalizeStatus=s=>({completed:'applied',replied:'in_progress',dismissed:'deleted'}[s]||(['unreviewed','in_progress','applied','deleted'].includes(s)?s:'unreviewed'));
 let localStatuses={};try{localStatuses=JSON.parse(localStorage.getItem(statusKey)||'{}')}catch(e){localStatuses={}}
-function statusOf(r){return localStatuses[r.canonical_job_key]||r.review_status||'unreviewed'}
-function setStatus(key,value){if(!statusChoices.includes(value))return;localStatuses[key]=value;try{localStorage.setItem(statusKey,JSON.stringify(localStatuses))}catch(e){}renderAll()}
+if(!Object.keys(localStatuses).length){try{const old=JSON.parse(localStorage.getItem(legacyStatusKey)||'{}');Object.entries(old).forEach(([k,v])=>{const status=normalizeStatus(typeof v==='string'?v:v.status);localStatuses[k]={status,updated_at:new Date().toISOString(),...(status==='deleted'?{deleted_at:new Date().toISOString()}:{})}})}catch(e){}}
+function localState(key){const raw=localStatuses[key];if(!raw)return null;return typeof raw==='string'?{status:normalizeStatus(raw)}:raw}
+function statusOf(r){return normalizeStatus(localState(r.canonical_job_key)?.status||r.review_status||'unreviewed')}
+function persist(){const now=Date.now();Object.entries(localStatuses).forEach(([k,v])=>{const state=typeof v==='string'?{status:normalizeStatus(v)}:v;if(state.status==='deleted'&&state.deleted_at&&now-Date.parse(state.deleted_at)>deletedRetentionMs)delete localStatuses[k]});try{localStorage.setItem(statusKey,JSON.stringify(localStatuses))}catch(e){}}
+function setStatus(key,value){if(!statusChoices.includes(value))return;localStatuses[key]={status:value,updated_at:new Date().toISOString()};persist();renderAll()}
+function deleteJob(key){const now=new Date().toISOString();localStatuses[key]={status:'deleted',updated_at:now,deleted_at:now};persist();renderAll()}
+function restoreJob(key){setStatus(key,'unreviewed')}
 function activityText(r){if(r.alerted_at){const h=r.activity_age_hours;const b=h<3?'lt3h':h<24?'3to24h':'1to3d';return `Alerted ${bucketNames[b]} ago`}const d=r.freshness.discovered||{};return d.age_hours===null||d.age_hours===undefined?'Discovery unknown':`Found ${bucketNames[d.bucket]||d.bucket} ago`}
 function postingText(r){const p=r.freshness.posted||{};if(!p.trusted)return r.posted_date?`Posted ${esc(r.posted_date)} · low confidence`:'Posting date unknown';return p.date_only?`Posted ${esc(r.posted_date)} · day precision`:`Posted ${bucketNames[p.bucket]||p.bucket} ago`}
-function jobs(rows){if(!rows.length)return '<div class="empty">No qualifying jobs in this view.</div>';return `<div class="tablewrap"><table><thead><tr><th>Tier</th><th>Company / Title</th><th>Location</th><th>Alert / Posted</th><th>Referral</th><th>Status</th><th>Source</th></tr></thead><tbody>${rows.map(r=>`<tr><td><b>${esc(r.tier)}</b>${r.score!==''?`<div class="small">${esc(r.score)}</div>`:''}</td><td><b>${esc(r.company)}</b><br><a href="${esc(r.url)}">${esc(r.title)}</a></td><td>${esc(r.location)}</td><td><span class="pill discovered">${activityText(r)}</span><div class="small">${postingText(r)}</div></td><td>${r.referral?`<span class="pill referral">${esc(r.referral)}</span>`:'-'}</td><td><select class="status-select" data-key="${esc(r.canonical_job_key)}">${statusChoices.map(s=>`<option value="${s}" ${statusOf(r)===s?'selected':''}>${s.replace('_',' ')}</option>`).join('')}</select></td><td>${esc(names[r.pipeline]||r.pipeline)}</td></tr>`).join('')}</tbody></table></div>`}
-function bindStatus(box){box.querySelectorAll('.status-select').forEach(s=>s.onchange=()=>setStatus(s.dataset.key,s.value))}
+function jobs(rows,deleted=false){if(!rows.length)return '<div class="empty">No qualifying jobs in this view.</div>';return `<div class="tablewrap"><table><thead><tr><th>Tier</th><th>Company / Title</th><th>Location</th><th>Alert / Posted</th><th>Referral</th><th>Status</th><th>Source</th></tr></thead><tbody>${rows.map(r=>`<tr><td><b>${esc(r.tier)}</b>${r.score!==''?`<div class="small">${esc(r.score)}</div>`:''}</td><td><b>${esc(r.company)}</b><br><a href="${esc(r.url)}">${esc(r.title)}</a></td><td>${esc(r.location)}</td><td><span class="pill discovered">${activityText(r)}</span><div class="small">${postingText(r)}</div></td><td>${r.referral?`<span class="pill referral">${esc(r.referral)}</span>`:'-'}</td><td><div class="workflow">${deleted?`<span class="pill">Deleted</span><button class="restore" data-key="${esc(r.canonical_job_key)}">Restore</button>`:`<select class="status-select" data-key="${esc(r.canonical_job_key)}">${statusChoices.map(s=>`<option value="${s}" ${statusOf(r)===s?'selected':''}>${statusLabels[s]}</option>`).join('')}</select><button class="delete" data-key="${esc(r.canonical_job_key)}" title="Hide for 7 days">Delete</button>`}</div></td><td>${esc(names[r.pipeline]||r.pipeline)}</td></tr>`).join('')}</tbody></table></div>`}
+function bindStatus(box){box.querySelectorAll('.status-select').forEach(s=>s.onchange=()=>setStatus(s.dataset.key,s.value));box.querySelectorAll('.delete').forEach(b=>b.onclick=()=>deleteJob(b.dataset.key));box.querySelectorAll('.restore').forEach(b=>b.onclick=()=>restoreJob(b.dataset.key))}
 function renderBox(id,rows){const box=document.getElementById(id);box.innerHTML=jobs(rows);bindStatus(box)}
-function tabs(elId,rows){const filtered=rows.filter(r=>!inactiveStatuses.has(statusOf(r)));const tab=document.querySelector(`[data-target="${elId}"]`);const box=document.getElementById(elId);let active='all';const draw=()=>{tab.innerHTML=['all',...Object.keys(names)].map(k=>`<button class="tab ${k===active?'on':''}" data-k="${k}">${k==='all'?'All':names[k]} (${k==='all'?filtered.length:filtered.filter(r=>r.pipeline===k).length})</button>`).join('');box.innerHTML=jobs(active==='all'?filtered:filtered.filter(r=>r.pipeline===active));bindStatus(box);tab.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.k;draw()})};draw()}
-const allRows=[...D.fresh_24h,...D.rolling_3d,...D.referrals,...D.older_review,...(D.completed||[])];const uniqueRows=()=>[...new Map(allRows.map(r=>[r.canonical_job_key,r])).values()];
-function renderAll(){tabs('fresh',D.fresh_24h);tabs('rolling',D.rolling_3d);renderBox('referrals',D.referrals.filter(r=>!inactiveStatuses.has(statusOf(r))));renderBox('older',D.older_review.filter(r=>!inactiveStatuses.has(statusOf(r))));renderBox('completed',uniqueRows().filter(r=>inactiveStatuses.has(statusOf(r))))}
+function tabs(elId,rows){const filtered=rows.filter(r=>statusOf(r)==='unreviewed');const tab=document.querySelector(`[data-target="${elId}"]`);const box=document.getElementById(elId);let active='all';const draw=()=>{tab.innerHTML=['all',...Object.keys(names)].map(k=>`<button class="tab ${k===active?'on':''}" data-k="${k}">${k==='all'?'All':names[k]} (${k==='all'?filtered.length:filtered.filter(r=>r.pipeline===k).length})</button>`).join('');box.innerHTML=jobs(active==='all'?filtered:filtered.filter(r=>r.pipeline===active));bindStatus(box);tab.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.k;draw()})};draw()}
+const allRows=[...(D.workflow_rows||[]),...D.fresh_24h,...D.rolling_3d,...D.referrals];const uniqueRows=()=>[...new Map(allRows.map(r=>[r.canonical_job_key,r])).values()];
+function isRecentDeleted(r){if(statusOf(r)!=='deleted')return false;const state=localState(r.canonical_job_key);const raw=state?.deleted_at||r.review_updated_at;return !raw||Date.now()-Date.parse(raw)<=deletedRetentionMs}
+function renderAll(){persist();const rows=uniqueRows();tabs('fresh',D.fresh_24h);tabs('rolling',D.rolling_3d);renderBox('referrals',D.referrals.filter(r=>statusOf(r)==='unreviewed'));renderBox('inProgress',rows.filter(r=>statusOf(r)==='in_progress'));renderBox('applied',rows.filter(r=>statusOf(r)==='applied'));const box=document.getElementById('deleted');box.innerHTML=jobs(rows.filter(isRecentDeleted),true);bindStatus(box)}
 renderAll();
 document.getElementById('officialSearches').innerHTML=`<div class="tablewrap"><table><thead><tr><th>Company</th><th>Automation</th><th>Official searches</th><th>Note</th></tr></thead><tbody>${(D.official_searches||[]).map(c=>`<tr><td><b>${esc(c.name)}</b></td><td class="${c.automation==='active'?'active':'manual'}">${c.automation==='active'?'Automated':'Link only'}</td><td><div class="links">${c.search_links.length?c.search_links.map(l=>`<a href="${esc(l.url)}">${esc(l.label||'Search')}</a>`).join(''):'-'}</div></td><td class="small">${esc(c.note)}</td></tr>`).join('')}</tbody></table></div>`;
 </script></body></html>'''

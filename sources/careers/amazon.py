@@ -17,6 +17,7 @@ import requests
 
 from ..schema import make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
+from .query_terms import ROLE_SEARCH_QUERIES
 
 SOURCE = "amazon_official_careers"
 COMPANY = "Amazon"
@@ -25,11 +26,7 @@ HTML_SEARCH = "https://www.amazon.jobs/en/search"
 SLEEP_S = 0.25
 RESULT_LIMIT = 20
 
-DEFAULT_QUERIES = [
-    "software engineer",
-    "software development engineer",
-    "machine learning engineer",
-]
+DEFAULT_QUERIES = ROLE_SEARCH_QUERIES + ["software development engineer"]
 
 
 def scrape_amazon(

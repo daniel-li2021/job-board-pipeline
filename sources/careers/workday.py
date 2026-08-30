@@ -30,12 +30,13 @@ from .http import (
     location_from_workday_path,
     now_iso,
 )
+from .query_terms import ROLE_SEARCH_QUERIES
 
 PAGE_SIZE = 20
 SLEEP_S = 0.25
 DETAIL_SLEEP_S = 0.12
 MAX_DETAILS = 200
-DEFAULT_QUERIES = ["software engineer", "machine learning engineer"]
+DEFAULT_QUERIES = ROLE_SEARCH_QUERIES
 JSON_HEADERS = {"Accept": "application/json", "Content-Type": "application/json"}
 
 

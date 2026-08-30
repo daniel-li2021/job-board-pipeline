@@ -16,13 +16,14 @@ import requests
 
 from ..schema import make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
+from .query_terms import ROLE_SEARCH_QUERIES
 
 SEARCH = "https://bloomberg.avature.net/careers/SearchJobs"
 SLEEP_S = 0.3
 DETAIL_SLEEP_S = 0.12
 MAX_DETAILS = 200
 PAGE_SIZE = 12
-DEFAULT_QUERIES = ["software engineer", "machine learning engineer"]
+DEFAULT_QUERIES = ROLE_SEARCH_QUERIES
 JOB_RE = re.compile(r"/careers/JobDetail/([^\"/?#]+)/(\d+)")
 
 

@@ -48,6 +48,7 @@ from sources.schema import (
     RECENCY_BUCKETS,
     classify_location_bucket,
     combined_cache_key,
+    combined_cache_key_from_hash,
     dedup_key,
     jd_hash,
     looks_official,
@@ -96,14 +97,14 @@ SCORE_RECENCY = "rule_recency"
 SCORE_RULE = "rule"
 LLM_SCORE_SOURCES = {SCORE_LLM, SCORE_CACHED_LLM}
 
-# Upper bound (NOT a target) for Tier A+B rows shown in latest.md / alerts.
-MAX_VISIBLE = 200
+# Tier thresholds are the size control. Do not truncate genuinely strong jobs.
+MAX_VISIBLE: Optional[int] = None
 
 # Strict Tier A / Tier B / exceptional-A thresholds on the 0-100 match scale.
-TIER_A_MIN = 85.0          # <=3d, strong-fit floor for immediate-apply Tier A
-TIER_B_MIN = 55.0
-EXCEPTIONAL_A_MIN = 90.0   # 3to7d may only reach Tier A when truly exceptional
-MAX_A_GAPS = 1             # Tier A tolerates at most this many core gaps
+TIER_A_MIN = 85.0          # strong fit; deterministic gates make A selective
+TIER_B_MIN = 70.0          # B is worth applying, not merely filter survival
+MAX_A_GAPS = 0             # missing a core requirement prevents Tier A
+MAX_B_GAPS = 2
 # 3to7d jobs only hit the LLM when their rule fit is already exceptionally strong.
 RULE_EXCEPTIONAL_FOR_LLM = 72.0
 # Seniority-fit labels that count as realistic for an early-career candidate.
@@ -389,7 +390,9 @@ def _merge_pair(canonical: Dict[str, str], other: Dict[str, str]) -> Dict[str, s
     merged = dict(canonical)
     if not merged.get("official_url") and other.get("official_url"):
         merged["official_url"] = other["official_url"]
-    if not merged.get("description") and other.get("description"):
+    # Matching should use the richest available JD even when the canonical URL
+    # came from a terse ATS card. Identity/source preference stays unchanged.
+    if len(other.get("description") or "") > len(merged.get("description") or ""):
         merged["description"] = other["description"]
     if not merged.get("posted_date") and other.get("posted_date"):
         merged["posted_date"] = other["posted_date"]
@@ -955,6 +958,9 @@ def _apply_cached_result(job: Dict[str, str], entry: Dict[str, Any]) -> None:
     job["recommended_action"] = entry.get("recommended_action", "apply_if_time")
     job["score_source"] = SCORE_CACHED_LLM
     job["screen_method"] = SCORE_CACHED_LLM
+    job["match_canonical_key"] = entry.get("match_canonical_key") or entry.get("canonical_job_key") or entry.get("key") or ""
+    job["match_source_pipeline"] = entry.get("match_source_pipeline") or entry.get("source_pipeline") or ""
+    job["match_jd_hash"] = entry.get("match_jd_hash") or entry.get("jd_hash") or ""
 
 
 def _is_reusable_llm_cache(prev: Dict[str, Any], job: Dict[str, str]) -> bool:
@@ -977,12 +983,111 @@ def _is_reusable_llm_cache(prev: Dict[str, Any], job: Dict[str, str]) -> bool:
     return False
 
 
+def _canonical_match_keys(job: Dict[str, Any]) -> List[str]:
+    """Stable exact identities used only for cross-pipeline score reuse."""
+    keys: List[str] = []
+    for field in ("duplicate_of", "canonical_job_key", "key"):
+        value = str(job.get(field) or "").strip()
+        if value and value not in keys:
+            keys.append(value)
+    official = coverage_reconcile.normalize_url(str(job.get("official_url") or ""))
+    if official:
+        value = f"url::{official}"
+        if value not in keys:
+            keys.append(value)
+    return keys
+
+
+def _peer_cache_is_current(entry: Dict[str, Any], profile_fingerprint: str) -> bool:
+    """Accept only completed LLM output created with the current profiles/prompt."""
+    if not entry or entry.get("match_score") is None:
+        return False
+    src = str(entry.get("score_source") or "").strip()
+    if src not in LLM_SCORE_SOURCES and not (not src and entry.get("screen_method") == "llm"):
+        return False
+    digest = str(entry.get("jd_hash") or "").strip()
+    cache_key = str(entry.get("cache_key") or "").strip()
+    return bool(digest and cache_key == combined_cache_key_from_hash(digest, profile_fingerprint))
+
+
+def _peer_cache_index(
+    peer_stores: Optional[List[Tuple[str, Dict[str, Dict[str, Any]]]]],
+    profile_fingerprint: str,
+) -> Dict[str, Tuple[str, Dict[str, Any]]]:
+    index: Dict[str, Tuple[str, Dict[str, Any]]] = {}
+    for pipeline, peer_store in peer_stores or []:
+        for entry in peer_store.values():
+            if not _peer_cache_is_current(entry, profile_fingerprint):
+                continue
+            for identity in _canonical_match_keys(entry):
+                index.setdefault(identity, (pipeline, entry))
+    return index
+
+
+def _peer_identity_index(
+    peer_stores: Optional[List[Tuple[str, Dict[str, Dict[str, Any]]]]],
+) -> Dict[str, Tuple[str, Dict[str, Any]]]:
+    """Index every exact peer record, including non-cacheable rule results."""
+    index: Dict[str, Tuple[str, Dict[str, Any]]] = {}
+    for pipeline, peer_store in peer_stores or []:
+        for entry in peer_store.values():
+            for identity in _canonical_match_keys(entry):
+                index.setdefault(identity, (pipeline, entry))
+    return index
+
+
+def _matching_peer(
+    job: Dict[str, Any],
+    peer_index: Dict[str, Tuple[str, Dict[str, Any]]],
+) -> Optional[Tuple[str, Dict[str, Any]]]:
+    for identity in _canonical_match_keys(job):
+        if identity in peer_index:
+            return peer_index[identity]
+    return None
+
+
+def _apply_peer_result(
+    job: Dict[str, Any], pipeline: str, entry: Dict[str, Any]
+) -> None:
+    """Reuse one exact canonical LLM result without changing fit semantics."""
+    current_cache_key = job.get("cache_key", "")
+    _apply_cached_result(job, entry)
+    # The local representation now intentionally adopts the canonical result;
+    # make it stable in this pipeline's cache on the next run.
+    job["cache_key"] = current_cache_key
+    job["match_canonical_key"] = entry.get("canonical_job_key") or entry.get("key") or ""
+    job["match_source_pipeline"] = pipeline
+    job["match_jd_hash"] = entry.get("jd_hash", "")
+    # Official posted_date is the canonical recency signal. Never copy a
+    # low-confidence peer first_seen into another pipeline.
+    if pipeline == "official" and str(entry.get("date_confidence") or "").lower() in {"high", "medium"}:
+        job["posted_date"] = entry.get("posted_date", "")
+        job["date_confidence"] = entry.get("date_confidence", "medium")
+        job["recency_bucket"] = entry.get("recency_bucket") or recency_bucket(job)
+
+
+def _apply_peer_context(job: Dict[str, Any], pipeline: str, entry: Dict[str, Any]) -> None:
+    """Adopt authoritative recency/rule context without creating an LLM hit."""
+    if pipeline != "official":
+        return
+    if str(entry.get("date_confidence") or "").lower() in {"high", "medium"}:
+        job["posted_date"] = entry.get("posted_date", "")
+        job["date_confidence"] = entry.get("date_confidence", "medium")
+        job["recency_bucket"] = entry.get("recency_bucket") or recency_bucket(job)
+    src = str(entry.get("score_source") or "")
+    if src in {SCORE_OVERFLOW, SCORE_FALLBACK, SCORE_RECENCY, SCORE_RULE, ""} and entry.get("match_score") is not None:
+        # Still a rule score: it remains eligible for LLM on a later run.
+        job["_canonical_peer_rule_score"] = float(entry.get("match_score") or 0)
+
+
 def score_survivors(
     candidates: List[Dict[str, str]],
     referrals: Dict[str, bool],
     profiles: Dict[str, Any],
     store: Dict[str, Dict[str, Any]],
     use_llm: bool,
+    peer_stores: Optional[List[Tuple[str, Dict[str, Dict[str, Any]]]]] = None,
+    prefer_peer: bool = False,
 ) -> Tuple[str, List[str], Dict[str, int]]:
     """Attach match_score + LLM fields to each candidate in place.
 
@@ -993,21 +1098,37 @@ def score_survivors(
     counts = {
         "reused": 0, "llm": 0, "new_or_changed": 0, "rule": 0, "sent": 0,
         "api_requests": 0, "recency_skipped": 0, "overflow": 0,
+        "peer_reused": 0,
     }
     fp = profiles["fingerprint"]
 
+    peer_context_index = _peer_identity_index(peer_stores)
     for job in candidates:
-        job["rule_score"] = rule_match_score(job)
+        context_peer = _matching_peer(job, peer_context_index)
+        if prefer_peer and context_peer:
+            _apply_peer_context(job, context_peer[0], context_peer[1])
+        peer_rule = job.get("_canonical_peer_rule_score")
+        job["rule_score"] = float(peer_rule) if peer_rule is not None else rule_match_score(job)
         job["cache_key"] = combined_cache_key(job, fp)
         job["jd_hash"] = jd_hash(job)
 
+    peer_index = _peer_cache_index(peer_stores, fp)
     to_llm: List[Dict[str, str]] = []
     for job in candidates:
         key = dedup_key(job)
         prev = store.get(key)
-        if _is_reusable_llm_cache(prev or {}, job):
+        peer = _matching_peer(job, peer_index)
+        if prefer_peer and peer:
+            _apply_peer_result(job, peer[0], peer[1])
+            counts["reused"] += 1
+            counts["peer_reused"] += 1
+        elif _is_reusable_llm_cache(prev or {}, job):
             _apply_cached_result(job, prev)
             counts["reused"] += 1
+        elif peer:
+            _apply_peer_result(job, peer[0], peer[1])
+            counts["reused"] += 1
+            counts["peer_reused"] += 1
         else:
             to_llm.append(job)
     counts["new_or_changed"] = len(to_llm)
@@ -1090,6 +1211,9 @@ def score_survivors(
             job["recommended_action"] = d["recommended_action"]
             job["score_source"] = SCORE_LLM
             job["screen_method"] = SCORE_LLM
+            job["match_canonical_key"] = job.get("duplicate_of") or job.get("canonical_job_key") or dedup_key(job)
+            job["match_source_pipeline"] = job.get("source_pipeline") or "board"
+            job["match_jd_hash"] = job.get("jd_hash", "")
             counts["llm"] += 1
         else:
             _apply_rule_result(job, SCORE_FALLBACK, "Rule-based (missing from LLM response)")
@@ -1116,7 +1240,7 @@ def _strong_seniority(job: Dict[str, str]) -> bool:
 
 
 def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
-    """Recency-gated, quality-gated tiering on the 0-100 match scale.
+    """Quality-gated tiering with smooth, confidence-aware recency decay.
 
     LLM / cached-LLM strong matches may enter Tier A normally.
     Rule-only scores (overflow / fallback / recency / rule) generally max at
@@ -1140,23 +1264,45 @@ def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
     staffing = bool(job.get("staffing_firm"))
     a_quality = strong_sen and few_gaps and not deprioritized and not intern and not staffing
 
-    # Non-early-career: >7d store-only; 3-7d only exceptional LLM Tier A.
-    # Early-career: recency does not auto-assign A, but A/B are allowed at any
-    # age if match_score says so (LLM still decides).
-    if bucket == "gt7d" and not early:
-        return "C"
-    if bucket == "3to7d" and not early:
-        if score >= EXCEPTIONAL_A_MIN and a_quality and llm_scored:
-            return "A"
-        return "C"
-    # <=3d normal window
-    if score >= TIER_A_MIN and a_quality:
+    # Normal requisitions decay continuously instead of falling off a cliff at
+    # 72 hours. Broad early-career programs decay much more slowly.
+    normal_a_floor = {
+        "lt3h": TIER_A_MIN, "3to24h": TIER_A_MIN, "1to3d": TIER_A_MIN,
+        "newly_discovered": 88.0, "3to7d": 90.0, "gt7d": 96.0,
+    }
+    normal_b_floor = {
+        "lt3h": TIER_B_MIN, "3to24h": TIER_B_MIN, "1to3d": 72.0,
+        "newly_discovered": 74.0, "3to7d": 80.0, "gt7d": 90.0,
+    }
+    early_a_floor = {
+        "lt3h": TIER_A_MIN, "3to24h": TIER_A_MIN, "1to3d": TIER_A_MIN,
+        "newly_discovered": TIER_A_MIN, "3to7d": TIER_A_MIN, "gt7d": 90.0,
+    }
+    early_b_floor = {
+        "lt3h": TIER_B_MIN, "3to24h": TIER_B_MIN, "1to3d": 71.0,
+        "newly_discovered": 72.0, "3to7d": 72.0, "gt7d": 76.0,
+    }
+    a_floor = (early_a_floor if early else normal_a_floor).get(bucket, 97.0)
+    b_floor = (early_b_floor if early else normal_b_floor).get(bucket, 90.0)
+
+    if score >= a_floor and a_quality:
         if llm_scored:
             return "A"
         if rule_only and early and strong_family:
             return "A"
         # rule-only otherwise caps at B
-    if score >= TIER_B_MIN:
+    hard_status = str(job.get("hard_constraint_status") or "ok").lower()
+    gaps = len(job.get("main_gaps") or [])
+    sfit = str(job.get("seniority_fit") or "").lower()
+    if hard_status not in {"", "ok"} or sfit in {"mismatch", "senior", "over"}:
+        return "C"
+    if gaps > MAX_B_GAPS:
+        return "C"
+    # Stretch/mid-level jobs need materially stronger evidence and almost no
+    # missing core requirements to remain actionable.
+    if sfit == "stretch" and (score < max(80.0, b_floor + 8.0) or gaps > 1):
+        return "C"
+    if score >= b_floor:
         return "B"
     return "C"
 
@@ -1174,9 +1320,9 @@ def apply_referral_action(job: Dict[str, str]) -> None:
 
 
 def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
-    """Recency dominates, then quality, then referral, then verification.
+    """Tier first; within a tier recency/confidence dominate, then fit.
 
-    (bucket_rank, tier_rank, -match_score, 0 if referral else 1,
+    (tier_rank, bucket_rank, confidence, -match_score,
      seniority_fit_rank, 0 if official_verified else 1, -role_relevance)
     """
     bucket = job.get("recency_bucket") or recency_bucket(job)
@@ -1189,25 +1335,25 @@ def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
         (job.get("date_confidence") or "unknown").lower(), 3
     )
     return (
+        tier_rank,
         RECENCY_BUCKET_RANK.get(bucket, len(RECENCY_BUCKETS)),
         conf,
-        tier_rank,
         -float(job.get("match_score", 0) or 0),
-        referral,
         sfit_rank,
         verified,
         -int(job.get("role_relevance", 0) or 0),
+        referral,
     )
 
 
 # --------------------------------------------------------------------------
 # jobs.json store (dedup + first_seen, 7-day rolling)
 # --------------------------------------------------------------------------
-def load_store() -> Dict[str, Dict[str, Any]]:
-    if not JOBS_STORE_PATH.exists():
+def load_store_path(path: Path) -> Dict[str, Dict[str, Any]]:
+    if not path.exists():
         return {}
     try:
-        data = json.loads(JOBS_STORE_PATH.read_text(encoding="utf-8"))
+        data = json.loads(path.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError):
         return {}
     entries = data.get("entries", []) if isinstance(data, dict) else data
@@ -1218,6 +1364,10 @@ def load_store() -> Dict[str, Dict[str, Any]]:
             if key:
                 out[key] = e
     return out
+
+
+def load_store() -> Dict[str, Dict[str, Any]]:
+    return load_store_path(JOBS_STORE_PATH)
 
 
 def save_store(store: Dict[str, Dict[str, Any]]) -> None:
@@ -1263,11 +1413,12 @@ def _stats_lines(stats: Dict[str, Any]) -> List[str]:
         f"-> after hard filter {fn['after_hard_filter']} "
         f"-> after role+seniority prefilter {fn['after_prefilter']} | dropped {fn['dropped']}",
         f"- LLM usage: jobs scored {llm['scored']} / API requests {llm['api_requests']} / "
-        f"cache reused {llm['reused']} / rule fallback+overflow {llm['rule']} "
+        f"cache reused {llm['reused']} (cross-pipeline {llm.get('peer_reused', 0)}) / "
+        f"rule fallback+overflow {llm['rule']} "
         f"(recency-gated {llm['recency_skipped']}, overflow {llm.get('overflow', 0)}, "
         f"new/changed {llm['new_or_changed']})",
         f"- Output sizing: Tier A {out['tier_a']} / Tier B {out['tier_b']} / "
-        f"A+B before cap {out['ab_before_cap']} / Shown in latest.md {out['shown']} (cap {MAX_VISIBLE})",
+        f"A+B actionable {out['ab_before_cap']} / Shown in latest.md {out['shown']} (no hard cap)",
         f"- Recency (kept): <3h {rec['lt3h']} / 3-24h {rec['3to24h']} / "
         f"1-3d {rec['1to3d']} / newly-disc {rec['newly_discovered']} / "
         f"3-7d {rec['3to7d']} / >7d {rec['gt7d']}",
@@ -1276,7 +1427,7 @@ def _stats_lines(stats: Dict[str, Any]) -> List[str]:
 
 
 def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp: str) -> None:
-    """7-day Tier A/B view (capped). Prefer inbox.md if you skipped a day."""
+    """7-day actionable Tier A/B view. Prefer inbox.md if you skipped a day."""
     BOARD_DIR.mkdir(parents=True, exist_ok=True)
     report_now = datetime.now(timezone.utc)
     lines: List[str] = [
@@ -1460,7 +1611,7 @@ def _raw_source_counts(raw_jobs: List[Dict[str, str]]) -> Dict[str, int]:
 
 
 ENTRY_DEFAULTS: Dict[str, Any] = {
-    "company": "", "title": "", "location": "", "posted_date": "",
+    "job_id": "", "company": "", "title": "", "location": "", "posted_date": "",
     "date_confidence": "unknown", "official_url": "", "source": "", "source_url": "",
     "discovered_via": [], "filter_status": "kept", "drop_reason": "", "referral_name": "",
     "company_flag": "", "staffing_firm": False, "clearance_risk_company": False,
@@ -1468,6 +1619,7 @@ ENTRY_DEFAULTS: Dict[str, Any] = {
     "cache_key": "", "jd_hash": "", "match_score": None, "resume_profile_used": "",
     "seniority_fit": "", "hard_constraint_status": "", "top_match_reasons": [],
     "main_gaps": [], "recommended_action": "", "screen_method": "", "score_source": "",
+    "match_canonical_key": "", "match_source_pipeline": "", "match_jd_hash": "",
     "coverage_status": "", "canonical_source": "", "canonical_job_key": "",
     "duplicate_of": "", "official_snapshot_at": "", "source_snapshot_at": "",
     "coverage_match_method": "", "official_company_id": "", "suppress_alert": False,
@@ -1489,6 +1641,7 @@ def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
     return {
         # identity + display
         "key": key,
+        "job_id": job.get("job_id", ""),
         "company": job.get("company", ""),
         "title": job.get("title", ""),
         "location": job.get("location", ""),
@@ -1522,6 +1675,9 @@ def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
         "recommended_action": job.get("recommended_action", ""),
         "screen_method": job.get("screen_method", ""),
         "score_source": job.get("score_source", ""),
+        "match_canonical_key": job.get("match_canonical_key", ""),
+        "match_source_pipeline": job.get("match_source_pipeline", ""),
+        "match_jd_hash": job.get("match_jd_hash", ""),
         # cross-pipeline coverage audit
         "coverage_status": job.get("coverage_status", ""),
         "canonical_source": job.get("canonical_source", ""),
@@ -1668,7 +1824,15 @@ def run() -> None:
 
     # 8) Score: reuse cache, LLM only on new/changed, rule fallback
     screen_method, llm_errors, score_counts = score_survivors(
-        active_candidates, referrals, profiles, store, use_llm=not args.no_llm
+        active_candidates,
+        referrals,
+        profiles,
+        store,
+        use_llm=not args.no_llm,
+        peer_stores=[
+            ("official", load_store_path(OUTPUT_DIR / "official_careers" / "jobs.json"))
+        ],
+        prefer_peer=True,
     )
 
     # 9) Tier + user-facing rank
@@ -1680,7 +1844,7 @@ def run() -> None:
     tier_a = [j for j in active_candidates if j["tier"] == "A"]
     tier_b = [j for j in active_candidates if j["tier"] == "B"]
     ab_before_cap = len(tier_a) + len(tier_b)
-    visible = (tier_a + tier_b)[:MAX_VISIBLE]  # already sorted by priority
+    visible = tier_a + tier_b
     staffing_capped_to_b = sum(
         1 for j in active_candidates
         if j.get("staffing_firm") and j["tier"] == "B"
@@ -1718,6 +1882,7 @@ def run() -> None:
             "scored": score_counts["llm"],
             "api_requests": score_counts.get("api_requests", 0),
             "reused": score_counts["reused"],
+            "peer_reused": score_counts.get("peer_reused", 0),
             "rule": score_counts["rule"],
             "recency_skipped": score_counts.get("recency_skipped", 0),
             "overflow": score_counts.get("overflow", 0),
@@ -1780,12 +1945,13 @@ def run() -> None:
     print(f"Funnel: dedup {len(deduped)} -> company {len(after_company)} -> hard {len(after_hard)} "
           f"-> prefilter {len(candidates)} | dropped {sum(drops.values())}")
     print(f"LLM usage: scored {score_counts['llm']} / API requests {score_counts.get('api_requests', 0)} "
-          f"/ cache reused {score_counts['reused']} / rule fallback+overflow {score_counts['rule']} "
+          f"/ cache reused {score_counts['reused']} (cross-pipeline {score_counts.get('peer_reused', 0)}) "
+          f"/ rule fallback+overflow {score_counts['rule']} "
           f"(recency-gated {score_counts.get('recency_skipped', 0)}, "
           f"overflow {score_counts.get('overflow', 0)}, new/changed {score_counts['new_or_changed']})")
     print(f"Screening: {screen_method}" + (f" ({len(llm_errors)} llm errors)" if llm_errors else ""))
-    print(f"Output: Tier A {len(tier_a)} / Tier B {len(tier_b)} / A+B before cap {ab_before_cap} "
-          f"/ shown {len(visible)} (cap {MAX_VISIBLE}) | digest A/B {digest_count}")
+    print(f"Output: Tier A {len(tier_a)} / Tier B {len(tier_b)} / A+B actionable {ab_before_cap} "
+          f"/ shown {len(visible)} (no hard cap) | digest A/B {digest_count}")
     if emit_digest:
         print(f"Digest emitted: {digest_count} new/promoted A/B -> {alert_paths.get('issue_body')}")
     else:

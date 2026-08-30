@@ -1,4 +1,4 @@
 {
-  "_comment": "Committed dashboard status keyed by canonical_job_key. Allowed: unreviewed, in_progress, applied, replied, completed, dismissed. completed/dismissed jobs move out of active dashboard sections.",
+  "_comment": "Committed dashboard status keyed by canonical_job_key. Allowed: unreviewed, in_progress, applied. Browser-local Delete is retained for seven days and is not committed.",
   "jobs": {}
 }

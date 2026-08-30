@@ -17,13 +17,13 @@ from datetime import datetime, timedelta, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
-from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
 from sources.schema import (
     dedup_key,
     make_job,
     normalize_company_key,
+    normalize_job_url,
     normalize_location_key,
     normalize_title_key,
 )
@@ -40,12 +40,6 @@ REVIEW_STATE_PATH = BASE_DIR / "profile" / "review_state.json"
 OUTPUT_DIR = BASE_DIR / "output" / "cross_pipeline"
 COVERAGE_JSON_PATH = OUTPUT_DIR / "coverage.json"
 COVERAGE_MD_PATH = OUTPUT_DIR / "coverage.md"
-
-TRACKING_QUERY_KEYS = {
-    "ref", "refid", "trackingid", "trk", "source", "utm_campaign",
-    "utm_content", "utm_medium", "utm_source", "utm_term",
-}
-
 
 def parse_datetime(value: Any) -> Optional[datetime]:
     raw = str(value or "").strip()
@@ -72,19 +66,8 @@ def snapshot_timestamp(payload: Dict[str, Any]) -> Optional[datetime]:
 
 
 def normalize_url(value: str) -> str:
-    raw = (value or "").strip()
-    if not raw:
-        return ""
-    try:
-        parts = urlsplit(raw)
-    except ValueError:
-        return raw.lower().rstrip("/")
-    query = [
-        (k, v) for k, v in parse_qsl(parts.query, keep_blank_values=True)
-        if k.lower() not in TRACKING_QUERY_KEYS and not k.lower().startswith("utm_")
-    ]
-    path = re.sub(r"/+$", "", parts.path or "") or "/"
-    return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), path, urlencode(query), ""))
+    """Backward-compatible public alias for the shared URL normalizer."""
+    return normalize_job_url(value)
 
 
 def job_ids(job: Dict[str, Any]) -> set[str]:

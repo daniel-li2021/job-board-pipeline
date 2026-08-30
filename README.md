@@ -12,9 +12,10 @@ Each inbox is the last **3 days** of matching jobs. You do **not** need to read 
 
 Public rolling dashboard: **https://daniel-li2021.github.io/job-board-pipeline/**
 (deployed by `.github/workflows/reconcile-pages.yml`). It includes the last 24
-hours of GitHub alert activity, three-day rolling views, referrals, 3–7 day
-review jobs, and official-search links. Coverage reconciliation remains in the
-repo audit files but is intentionally hidden from the public page.
+hours of GitHub alert activity, three-day rolling views, lightweight status
+sections, a collapsible referral view, and official-search links. Coverage
+reconciliation remains in the repo audit files but is intentionally hidden from
+the public page.
 
 **Matching/scoring is shared, not implemented three times.** Components 2 and 3
 use the same `board_pipeline.py` hard filter, role/seniority prefilter,
@@ -218,8 +219,9 @@ Remote-US / multi-office if any US / ambiguous; drop confirmed all-non-US).
 Skipped until a working public search API exists: Meta, TikTok, LinkedIn
 (corporate), Walmart. The same registry also stores verified manual
 `search_links` for adapter-pending referral companies (currently Disney, eBay,
-Qualcomm, AMD, Zoom, Goldman Sachs, and Pure Storage). These links appear on
-the public dashboard and do not pretend that automation is complete.
+Qualcomm, AMD, and Goldman Sachs). These links appear on the public dashboard
+and do not pretend that automation is complete. Zoom, Pure Storage, Databricks,
+and Roblox use existing Workday/Greenhouse adapters.
 
 ## Entry point
 
@@ -293,12 +295,13 @@ including B→A promotions whose original `first_seen` is older. Each pipeline
 persists exact events in `output/<pipeline>/alert_history.json`. **Rolling** is
 still work first seen in the last three days. Employer `posted_date` remains
 visible reference metadata but does not decide those windows. Active rows sort
-Tier A first, then match score and activity/discovery time.
+Tier A first, then alert/discovery recency and match score.
 
 The public page's Status menus save a private override in that browser's
-`localStorage`. This is the easiest personal workflow: completed/dismissed jobs
-immediately move out of active sections, but status does not sync across
-devices and does not modify GitHub. Use the command below only when a shared,
+`localStorage`. This is the easiest personal workflow: In Progress and Applied
+jobs immediately move out of active sections. Inline Delete hides a job in a
+recoverable Deleted section for seven days. Browser status does not sync across
+devices or modify GitHub. Use the command below only when a shared,
 repo-committed status is wanted.
 
 Use the lightweight status command with a canonical key, exact job URL, or
@@ -306,15 +309,14 @@ unique job ID:
 
 ```bash
 python3 review_state.py '<job selector>' in_progress
-python3 review_state.py '<job selector>' completed --notes 'Applied 2026-08-28'
+python3 review_state.py '<job selector>' applied --notes 'Applied 2026-08-28'
 python3 dashboard.py
 ```
 
-Allowed states are `unreviewed`, `in_progress`, `applied`, `replied`,
-`completed`, and `dismissed`. Completed/dismissed jobs are removed from active
-sections and shown in a separate dashboard section. A push that changes the
-review-state file automatically triggers dashboard regeneration and Pages
-deployment.
+Allowed states are `unreviewed`, `in_progress`, and `applied`. In Progress and
+Applied jobs are removed from active sections and shown separately. A push that
+changes the review-state file automatically triggers dashboard regeneration
+and Pages deployment.
 
 Fuzzy title/location matches are suggestions only and never suppress a job.
 100% exact observed coverage is the current manual audit target, not a permanent

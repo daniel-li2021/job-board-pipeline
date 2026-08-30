@@ -14,8 +14,9 @@ import daily_pipeline
 import dashboard
 import review_state
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
-from sources.schema import make_job
+from sources.schema import combined_cache_key_from_hash, dedup_key, make_job, normalize_job_url
 from sources.schema import classify_location_bucket
+from sources.careers.query_terms import ROLE_SEARCH_QUERIES
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -99,7 +100,7 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertFalse(old_discovery["fresh_activity"])
         self.assertFalse(old_discovery["rolling_activity"])
 
-    def test_sort_is_tier_then_score_then_discovery(self) -> None:
+    def test_sort_is_tier_then_discovery_then_score(self) -> None:
         now = datetime(2026, 8, 29, 12, tzinfo=timezone.utc)
 
         def row(tier: str, score: int, age: int, company: str) -> dict:
@@ -117,12 +118,15 @@ class DashboardPolicyTests(unittest.TestCase):
             row("A", 85, 5, "A lower"),
             row("A", 92, 20, "A higher"),
         ])
-        self.assertEqual(["A higher", "A lower", "B Co"], [item["company"] for item in ordered])
+        self.assertEqual(["A lower", "A higher", "B Co"], [item["company"] for item in ordered])
 
     def test_official_registry_has_search_link_only_targets(self) -> None:
         catalog = {entry["id"]: entry for entry in dashboard.official_search_catalog()}
-        for company_id in ("disney", "ebay", "qualcomm", "amd", "zoom", "goldman-sachs", "pure-storage"):
+        for company_id in ("disney", "ebay", "qualcomm", "amd", "goldman-sachs"):
             self.assertEqual("search_link_only", catalog[company_id]["automation"])
+            self.assertTrue(catalog[company_id]["search_links"])
+        for company_id in ("zoom", "pure-storage", "databricks", "roblox"):
+            self.assertEqual("active", catalog[company_id]["automation"])
             self.assertTrue(catalog[company_id]["search_links"])
 
     def test_known_foreign_city_only_locations_are_not_visible(self) -> None:
@@ -135,7 +139,7 @@ class DashboardPolicyTests(unittest.TestCase):
                 "tier": "B",
             }))
 
-    def test_status_command_resolves_url_and_persists_completed(self) -> None:
+    def test_status_command_resolves_url_and_persists_applied(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             store = root / "jobs.json"
@@ -144,16 +148,17 @@ class DashboardPolicyTests(unittest.TestCase):
             store.write_text(json.dumps({"entries": [job]}), encoding="utf-8")
             state.write_text(json.dumps({"jobs": {}}), encoding="utf-8")
             with patch.object(review_state, "STORE_PATHS", (store,)), patch.object(review_state, "STATE_PATH", state):
-                key = review_state.set_status(job["official_url"], "completed", "applied")
+                key = review_state.set_status(job["official_url"], "applied", "Applied 2026-08-29")
             saved = json.loads(state.read_text(encoding="utf-8"))
-            self.assertEqual("completed", saved["jobs"][key]["status"])
-            self.assertEqual("applied", saved["jobs"][key]["notes"])
+            self.assertEqual("applied", saved["jobs"][key]["status"])
+            self.assertEqual("Applied 2026-08-29", saved["jobs"][key]["notes"])
 
-    def test_current_ats_issue_fallback_contains_all_18_alert_rows(self) -> None:
+    def test_current_ats_issue_fallback_parses_current_alert_rows(self) -> None:
         event = dashboard.parse_issue_event(ROOT / "output" / "board" / "issue_body.md", "board")
         self.assertIsNotNone(event)
-        self.assertEqual("2026-08-28_1441", event["stamp"])
-        self.assertEqual(18, len(event["jobs"]))
+        self.assertRegex(event["stamp"], r"^\d{4}-\d{2}-\d{2}_\d{4}$")
+        self.assertEqual(event["count"], len(event["jobs"]))
+        self.assertGreater(len(event["jobs"]), 0)
 
     def test_alert_history_is_idempotent_and_drives_fresh_even_for_old_job(self) -> None:
         now = datetime(2026, 8, 29, 12, tzinfo=timezone.utc)
@@ -193,9 +198,94 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertNotIn("<th>Coverage</th>", dashboard.HTML_TEMPLATE)
         self.assertIn("status-select", dashboard.HTML_TEMPLATE)
         self.assertIn("Dashboard last updated", dashboard.HTML_TEMPLATE)
+        self.assertIn("jobBoardStatusesV2", dashboard.HTML_TEMPLATE)
+        self.assertIn("const statusChoices=['unreviewed','in_progress','applied']", dashboard.HTML_TEMPLATE)
+        self.assertIn("Deleted — last 7 days", dashboard.HTML_TEMPLATE)
+        self.assertIn("<details class=\"panel\"><summary>Referral opportunities</summary>", dashboard.HTML_TEMPLATE)
+
+
+class MatchingPolicyTests(unittest.TestCase):
+    def _job(self, *, score: float, bucket: str, title: str = "Software Engineer", seniority: str = "good", gaps: list[str] | None = None) -> dict:
+        return {
+            "title": title,
+            "company": "Example Tech",
+            "location": "Seattle, WA",
+            "match_score": score,
+            "recency_bucket": bucket,
+            "score_source": board_pipeline.SCORE_CACHED_LLM,
+            "seniority_fit": seniority,
+            "main_gaps": gaps or [],
+            "hard_constraint_status": "ok",
+            "role_family": "swe",
+        }
+
+    def test_tiering_has_smooth_recency_decay_and_tighter_b(self) -> None:
+        self.assertEqual("B", board_pipeline.assign_tier(self._job(score=82, bucket="3to7d"), False))
+        self.assertEqual("C", board_pipeline.assign_tier(self._job(score=70, bucket="1to3d"), False))
+        self.assertEqual("B", board_pipeline.assign_tier(self._job(score=75, bucket="1to3d"), False))
+        self.assertEqual("B", board_pipeline.assign_tier(self._job(score=92, bucket="gt7d"), False))
+
+    def test_early_career_decays_slowly_but_is_not_auto_a(self) -> None:
+        old = self._job(score=80, bucket="gt7d", title="Software Engineer I")
+        self.assertEqual("B", board_pipeline.assign_tier(old, False))
+        self.assertEqual("A", board_pipeline.assign_tier(self._job(score=94, bucket="gt7d", title="New Grad Software Engineer"), False))
+
+    def test_core_gap_and_stretch_block_easy_a_or_b(self) -> None:
+        self.assertEqual("B", board_pipeline.assign_tier(self._job(score=95, bucket="3to24h", gaps=["distributed systems"]), False))
+        self.assertEqual("C", board_pipeline.assign_tier(self._job(score=78, bucket="3to24h", seniority="stretch"), False))
+
+    def test_exact_official_peer_llm_result_is_reused_with_official_recency(self) -> None:
+        profile_fp = "profile-v1"
+        peer_hash = "abc123"
+        url = "https://careers.example.com/jobs/10001?utm_source=linkedin"
+        peer = {
+            "key": "url::https://careers.example.com/jobs/10001",
+            "canonical_job_key": "url::https://careers.example.com/jobs/10001",
+            "official_url": "https://careers.example.com/jobs/10001",
+            "jd_hash": peer_hash,
+            "cache_key": combined_cache_key_from_hash(peer_hash, profile_fp),
+            "match_score": 91,
+            "score_source": "llm",
+            "screen_method": "llm",
+            "role_family": "swe",
+            "resume_profile_used": "resume_swe",
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": ["exact experience"],
+            "main_gaps": [],
+            "recommended_action": "apply_now",
+            "posted_date": "2026-08-29T10:00:00+00:00",
+            "date_confidence": "high",
+            "recency_bucket": "3to24h",
+        }
+        job = make_job(
+            source="linkedin", company="Example Tech", title="Software Engineer",
+            location="Seattle, WA", official_url=url, description="short card",
+        )
+        job["canonical_job_key"] = f"url::{normalize_job_url(url)}"
+        job["first_seen"] = "2026-08-29T18:00:00+00:00"
+        _method, _errors, counts = board_pipeline.score_survivors(
+            [job], {}, {"fingerprint": profile_fp}, {}, use_llm=False,
+            peer_stores=[("official", {peer["key"]: peer})], prefer_peer=True,
+        )
+        self.assertEqual(91, job["match_score"])
+        self.assertEqual("cached_llm", job["score_source"])
+        self.assertEqual("official", job["match_source_pipeline"])
+        self.assertEqual("3to24h", job["recency_bucket"])
+        self.assertEqual(1, counts["peer_reused"])
+
+    def test_shared_official_queries_cover_requested_role_families(self) -> None:
+        for query in ("software engineer", "ai engineer", "data engineer", "platform engineer", "full stack engineer", "forward deployed engineer"):
+            self.assertIn(query, ROLE_SEARCH_QUERIES)
 
 
 class CoverageMatchingTests(unittest.TestCase):
+    def test_tracking_parameters_do_not_split_one_official_requisition(self) -> None:
+        base = official_job("10001", "Software Engineer I", "Seattle, WA")
+        tracked = dict(base)
+        tracked["official_url"] += "?utm_source=linkedin&trackingId=abc"
+        self.assertEqual(dedup_key(base), dedup_key(tracked))
+
     def test_exact_match_order_and_location_safety(self) -> None:
         ctx = context()
         jobs = ctx["by_company"]["example"]

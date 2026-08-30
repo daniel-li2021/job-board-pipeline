@@ -225,7 +225,8 @@ def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp:
         f"-> after hard filter {stats['funnel']['after_hard_filter']} "
         f"-> after role+seniority prefilter {stats['funnel']['after_prefilter']} | dropped {stats['funnel']['dropped']}",
         f"- LLM usage: scored {stats['llm']['scored']} / API requests {stats['llm']['api_requests']} / "
-        f"cache reused {stats['llm']['reused']} / rule fallback {stats['llm']['rule']}",
+        f"cache reused {stats['llm']['reused']} (cross-pipeline {stats['llm'].get('peer_reused', 0)}) / "
+        f"rule fallback {stats['llm']['rule']}",
         f"- Output: Tier A {stats['output']['tier_a']} / Tier B {stats['output']['tier_b']} / shown {stats['output']['shown']}",
         "",
     ]
@@ -481,7 +482,11 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
         job["referral_name"] = name or ""
 
     screen_method, llm_errors, score_counts = board.score_survivors(
-        candidates, referrals, profiles, store, use_llm=not args.no_llm
+        candidates,
+        referrals,
+        profiles,
+        store,
+        use_llm=not args.no_llm,
     )
     for job in candidates:
         job["tier"] = board.assign_tier(job, referrals.get(dedup_key(job), False))
@@ -490,7 +495,7 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
 
     tier_a = [j for j in candidates if j["tier"] == "A"]
     tier_b = [j for j in candidates if j["tier"] == "B"]
-    visible = (tier_a + tier_b)[: board.MAX_VISIBLE]
+    visible = tier_a + tier_b
 
     new_store = dict(store)
     for job in deduped:
@@ -519,6 +524,7 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
             "scored": score_counts["llm"],
             "api_requests": score_counts.get("api_requests", 0),
             "reused": score_counts["reused"],
+            "peer_reused": score_counts.get("peer_reused", 0),
             "rule": score_counts["rule"],
         },
         "output": {

@@ -29,8 +29,10 @@
     "ebay": {"status": "unsupported", "notes": "Official search link captured; adapter pending"},
     "qualcomm": {"status": "unsupported", "notes": "Official search link captured; adapter pending"},
     "amd": {"status": "unsupported", "notes": "Official search link captured; adapter pending"},
-    "zoom": {"status": "unsupported", "notes": "Official search link captured; adapter pending"},
+    "zoom": {"status": "unvalidated", "notes": "Workday adapter enabled; review generated coverage audit"},
     "goldman-sachs": {"status": "unsupported", "notes": "Official search link captured; adapter pending"},
-    "pure-storage": {"status": "unsupported", "notes": "Official search link captured; adapter pending"}
+    "pure-storage": {"status": "unvalidated", "notes": "Greenhouse adapter enabled; review generated coverage audit"},
+    "databricks": {"status": "unvalidated", "notes": "Greenhouse adapter enabled; review generated coverage audit"},
+    "roblox": {"status": "unvalidated", "notes": "Greenhouse adapter enabled; review generated coverage audit"}
   }
 }
