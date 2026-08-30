@@ -2,14 +2,16 @@
 """Multi-source job board pipeline (GitHub-Actions-owned writer).
 
 Flow:
-    Sources -> Normalize -> Dedup(first_seen) -> Official Verify ->
+    Sources -> Normalize -> Dedup(first_seen) -> Official URL Verify ->
     Hard Filter -> Match Score (LLM if OPENAI_API_KEY else rules) ->
     Rank (Tier A/B/C) -> jobs.json + latest.md + alert
 
 Sources:
   - ATS (Greenhouse/Lever/Ashby)         -> sources.ats
-  - Official career pages (Amazon/Google) -> sources.official
   - Local snapshots (LinkedIn/Glassdoor)  -> output/sources/*.json (ingested)
+
+Big-company official discovery is intentionally owned by
+``official_careers.py`` and is not fetched again here.
 
 This is the ONLY writer of output/board/ (jobs.json, inbox.md, latest.md, runs/).
 The Syncareer pipeline writes only under output/syncareer/. Do not mix folders.
@@ -40,7 +42,7 @@ import requests
 
 import alert_history
 import coverage_reconcile
-from sources import ats, official
+from sources import ats
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
 from sources.schema import (
     OUTPUT_DIR,
@@ -313,6 +315,22 @@ def load_company_filters() -> Dict[str, List[Dict[str, Any]]]:
     return out
 
 
+def hidden_external_company(
+    company_name: str, filters: Dict[str, List[Dict[str, Any]]]
+) -> Optional[str]:
+    """Return a configured company hidden from Board/Syncareer surfaces.
+
+    ``hide_external`` lives on entries in the existing company-filter file so
+    the dedicated Official pipeline can continue showing the same employers.
+    Hidden external records stay in stores for coverage/debugging and do not
+    consume an LLM request.
+    """
+    entries: List[Dict[str, Any]] = []
+    for category_entries in filters.values():
+        entries.extend(e for e in category_entries if e.get("hide_external"))
+    return _company_alias_hit(company_name, entries)
+
+
 def _company_alias_hit(company_name: str, entries: List[Dict[str, Any]]) -> Optional[str]:
     """Match a company against normalized aliases.
 
@@ -346,11 +364,6 @@ def collect_sources(session: requests.Session, skip_network: bool = False) -> Tu
         jobs.extend(ats_res["jobs"])
         meta["per_source"].update(ats_res["per_board"])
         meta["errors"].extend(ats_res["errors"])
-
-        off_res = official.fetch_all_official(session)
-        jobs.extend(off_res["jobs"])
-        meta["per_source"].update(off_res["per_source"])
-        meta["errors"].extend(off_res["errors"])
 
     # Ingest local snapshots committed by the launchd job.
     for name in LOCAL_SOURCES:
@@ -616,6 +629,8 @@ SWE_FAMILY_RE = re.compile(
     r"site reliability|sre|data platform|data engineer|systems engineer|"
     r"developer|programmer|forward[- ]?deployed|\bfde\b|implementation engineer|"
     r"solutions architect|solution architect|ai solutions architect|"
+    r"solutions? engineer|integration engineer|implementation engineer|"
+    r"automation engineer|security engineer|product engineer|etl engineer|"
     r"compiler|gpu|firmware|embedded|tooling)\b",
     re.IGNORECASE,
 )
@@ -627,7 +642,9 @@ TITLE_TECH_RE = re.compile(
     r"ml engineer|ai engineer|artificial intelligence|applied ai|llm|genai|"
     r"developer|programmer|architect|forward[- ]?deployed|\bfde\b|scientist|"
     r"sre|site reliability|devops|research engineer|systems engineer|agentic|"
-    r"compiler|gpu|firmware|embedded|tooling)\b",
+    r"compiler|gpu|firmware|embedded|tooling|computer vision|"
+    r"solutions? engineer|integration engineer|implementation engineer|"
+    r"automation engineer|security engineer|product engineer|etl engineer)\b",
     re.IGNORECASE,
 )
 NEGATIVE_FAMILY_RE = re.compile(
@@ -1407,8 +1424,8 @@ def _stats_lines(stats: Dict[str, Any]) -> List[str]:
     lines = [
         "## Run stats",
         "",
-        f"- Source raw: ATS {src['ats']} / Official {src['official']} / "
-        f"LinkedIn {src['linkedin']} / Glassdoor {src['glassdoor']} / Syncareer {src['syncareer']}",
+        f"- Source raw: ATS {src['ats']} / LinkedIn {src['linkedin']} / "
+        f"Glassdoor {src['glassdoor']} (Big Company Official runs separately)",
         f"- Funnel: after dedup {fn['after_dedup']} -> after company filter {fn['after_company']} "
         f"-> after hard filter {fn['after_hard_filter']} "
         f"-> after role+seniority prefilter {fn['after_prefilter']} | dropped {fn['dropped']}",
@@ -1594,15 +1611,13 @@ def write_alert(new_ab: List[Dict[str, str]], stamp: str) -> Dict[str, Path]:
 # Main
 # --------------------------------------------------------------------------
 def _raw_source_counts(raw_jobs: List[Dict[str, str]]) -> Dict[str, int]:
-    counts = {"ats": 0, "official": 0, "linkedin": 0, "glassdoor": 0, "syncareer": "N/A"}
+    counts = {"ats": 0, "linkedin": 0, "glassdoor": 0}
     for job in raw_jobs:
         src = (job.get("source") or "").lower()
         if "linkedin" in src:
             counts["linkedin"] += 1
         elif "glassdoor" in src:
             counts["glassdoor"] += 1
-        elif "official" in src:
-            counts["official"] += 1
         elif any(a in src for a in ("greenhouse", "lever", "ashby")):
             counts["ats"] += 1
         else:
@@ -1698,7 +1713,7 @@ def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
 def run() -> None:
     parser = argparse.ArgumentParser(description="Multi-source job board pipeline")
     parser.add_argument("--no-llm", action="store_true", help="Force rule-based scoring (local debug)")
-    parser.add_argument("--skip-network", action="store_true", help="Ingest local snapshots only (no ATS/official fetch)")
+    parser.add_argument("--skip-network", action="store_true", help="Ingest local LinkedIn/Glassdoor snapshots only (no ATS fetch)")
     parser.add_argument("--local-out", action="store_true", help="Write to output/board-local/ (gitignored) for local testing")
     parser.add_argument("--no-digest", action="store_true", help="Update store/latest.md without a user-facing digest")
     parser.add_argument("--force-digest", action="store_true", help="Emit a digest even if one already went out today")
@@ -1763,7 +1778,14 @@ def run() -> None:
             action == "clearance_risk"
             or _company_alias_hit(job.get("company", ""), company_filters.get("clearance_risk", []))
         )
-        if action in CATEGORY_DROP_REASON:
+        hidden_name = hidden_external_company(job.get("company", ""), company_filters)
+        if hidden_name:
+            job["company_flag"] = "hidden_external"
+            job["filter_status"] = "hidden"
+            job["drop_reason"] = "company_hidden_external"
+            job["suppress_alert"] = True
+            drops["company_hidden_external"] += 1
+        elif action in CATEGORY_DROP_REASON:
             reason = CATEGORY_DROP_REASON[action]
             job["filter_status"] = "dropped"
             job["drop_reason"] = reason
@@ -1860,6 +1882,17 @@ def run() -> None:
     # Normalize carried-forward (legacy) entries to the current schema.
     for entry in new_store.values():
         ensure_entry_defaults(entry)
+        # Do not let retained history from the removed legacy Official fetcher
+        # or newly configured external hides leak back onto the Board dashboard.
+        if "official" in str(entry.get("source") or "").lower():
+            entry["filter_status"] = "hidden"
+            entry["drop_reason"] = "legacy_official_source_removed"
+            entry["suppress_alert"] = True
+        elif hidden_external_company(entry.get("company", ""), company_filters):
+            entry["company_flag"] = "hidden_external"
+            entry["filter_status"] = "hidden"
+            entry["drop_reason"] = "company_hidden_external"
+            entry["suppress_alert"] = True
     new_store = prune_store(new_store, now)
     save_store(new_store)
 
@@ -1939,9 +1972,8 @@ def run() -> None:
     })
 
     # Console summary
-    print(f"Source raw: ATS {source_raw['ats']} / Official {source_raw['official']} / "
-          f"LinkedIn {source_raw['linkedin']} / Glassdoor {source_raw['glassdoor']} / "
-          f"Syncareer {source_raw['syncareer']}")
+    print(f"Source raw: ATS {source_raw['ats']} / LinkedIn {source_raw['linkedin']} / "
+          f"Glassdoor {source_raw['glassdoor']} (Big Company Official separate)")
     print(f"Funnel: dedup {len(deduped)} -> company {len(after_company)} -> hard {len(after_hard)} "
           f"-> prefilter {len(candidates)} | dropped {sum(drops.values())}")
     print(f"LLM usage: scored {score_counts['llm']} / API requests {score_counts.get('api_requests', 0)} "

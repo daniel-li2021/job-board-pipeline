@@ -34,6 +34,7 @@ import requests
 from bs4 import BeautifulSoup
 
 import alert_history
+import board_pipeline as board
 import coverage_reconcile
 from sources.company_aliases import load_alias_file, match_company_alias
 
@@ -115,11 +116,24 @@ RAW_FIELDS = [
     "description",
     "requirements",
     "snippet",
+    "match_score",
+    "tier",
+    "score_source",
+    "screen_method",
+    "resume_profile_used",
+    "role_family",
+    "seniority_fit",
+    "main_gaps",
+    "recommended_action",
+    "cache_key",
+    "jd_hash",
 ]
 
 TIER_FIELDS = [
     "tier",
+    "match_score",
     "fit_score",
+    "score_source",
     "recommended_resume",
     "company",
     "title",
@@ -531,7 +545,15 @@ def _watchlist_to_alert_row(e: Dict[str, Any]) -> Dict[str, str]:
         "job_url": e.get("job_url") or e.get("url") or "",
         "first_seen": e.get("first_seen", ""),
         "tier": e.get("tier", ""),
+        "match_score": e.get("match_score", e.get("fit_score", "")),
         "fit_score": e.get("fit_score", ""),
+        "score_source": e.get("score_source", ""),
+        "screen_method": e.get("screen_method", ""),
+        "resume_profile_used": e.get("resume_profile_used", ""),
+        "role_family": e.get("role_family", ""),
+        "seniority_fit": e.get("seniority_fit", ""),
+        "main_gaps": e.get("main_gaps", []),
+        "recommended_action": e.get("recommended_action", ""),
         "recommended_resume": e.get("recommended_resume", ""),
         "review_status": e.get("review_status", "unreviewed"),
         "coverage_status": e.get("coverage_status", ""),
@@ -591,7 +613,7 @@ def _jobs_markdown_table(rows: List[Dict[str, Any]], with_tiers: bool) -> str:
         posted = r.get("posting_date") or r.get("posted_date") or ""
         if with_tiers:
             lines.append(
-                f"| {r.get('tier','-')} | {r.get('fit_score','-')} | Syncareer | {company} | {title} | "
+                f"| {r.get('tier','-')} | {r.get('match_score', r.get('fit_score','-'))} | Syncareer | {company} | {title} | "
                 f"{loc} | {posted} | {r.get('sponsorship','')} | {referral} | {r.get('review_status') or 'unreviewed'} | {r.get('coverage_status') or '-'} | {link} |"
             )
         else:
@@ -615,6 +637,25 @@ def load_target_companies() -> List[Dict[str, Any]]:
 
 def match_target_company(company_name: str, targets: List[Dict[str, Any]]) -> Optional[str]:
     return match_company_alias(company_name, targets)
+
+
+def apply_external_company_policy(
+    row: Dict[str, Any], company_filters: Dict[str, List[Dict[str, Any]]]
+) -> bool:
+    """Apply shared company flags; return True when externally hidden."""
+    action, _matched = board.classify_company(str(row.get("company") or ""), company_filters)
+    row["company_flag"] = "" if action == "keep" else action
+    row["deprioritized"] = action == "deprioritize"
+    row["preferred"] = action == "prefer"
+    row["staffing_firm"] = action == "staffing"
+    hidden = board.hidden_external_company(str(row.get("company") or ""), company_filters)
+    if hidden:
+        row["company_flag"] = "hidden_external"
+        row["filter_status"] = "hidden"
+        row["drop_reason"] = "company_hidden_external"
+        row["suppress_alert"] = True
+        return True
+    return False
 
 
 def sponsorship_from_supports(supports: Any) -> str:
@@ -724,27 +765,107 @@ CITIZEN_ONLY_RES = [
 
 
 def hard_filter(row: Dict[str, str]) -> Tuple[bool, str]:
-    title = row.get("title", "")
-    # Seniority: title only, never company.
-    if SENIOR_TITLE_RE.search(title):
-        return False, "exclude_senior_title"
-    # Structured experience tag as a secondary signal.
-    if (row.get("experience") or "").lower() in {"senior", "lead", "principal", "staff", "director"}:
-        return False, "exclude_senior_experience"
-    # US-citizen-only / clearance in content (word-boundary matched).
-    content = f"{row.get('description', '')} {row.get('requirements', '')}"
-    for phrase, pattern in CITIZEN_ONLY_RES:
-        if pattern.search(content):
-            return False, f"exclude_restriction:{phrase}"
-    # Non-US location.
-    if classify_location_bucket(row.get("location", "")) == "non_us":
-        return False, "exclude_non_us_location"
-    return True, "keep"
+    """Use the Board's shared hard constraints; seniority is the next gate."""
+    job = coverage_reconcile.normalize_syncareer_job(row)
+    keep, reason = board.hard_filter(job)
+    return (keep, "keep" if keep else f"exclude_{reason}")
 
 
 # --------------------------------------------------------------------------
 # Phase 6: LLM tier assignment
 # --------------------------------------------------------------------------
+SHARED_SCORE_FIELDS = (
+    "match_score", "tier", "score_source", "screen_method",
+    "resume_profile_used", "role_family", "role_relevance",
+    "seniority_fit", "hard_constraint_status", "top_match_reasons",
+    "main_gaps", "recommended_action", "cache_key", "jd_hash",
+    "match_canonical_key", "match_source_pipeline", "match_jd_hash",
+    "recency_bucket",
+)
+
+
+def to_shared_job(row: Dict[str, Any], now_iso: str = "") -> Dict[str, Any]:
+    """Map one Syncareer record into the Board's canonical matching schema."""
+    job = coverage_reconcile.normalize_syncareer_job(row)
+    job["first_seen"] = str(row.get("first_seen") or now_iso)
+    job["last_seen"] = now_iso or str(row.get("last_seen") or "")
+    job["source_pipeline"] = "syncareer"
+    job["referral_name"] = str(
+        row.get("referral_name") or row.get("target_company_match") or ""
+    )
+    for field in (
+        "canonical_job_key", "duplicate_of", "coverage_status",
+        "official_snapshot_at", "source_snapshot_at", "deprioritized",
+        "preferred", "staffing_firm", "company_flag", "referral_name",
+    ):
+        if row.get(field) not in (None, ""):
+            job[field] = row.get(field)
+    keep, _reason = board.role_seniority_prefilter(job)
+    if not keep:
+        # Callers only pass shared-prefilter survivors. Retain the detected
+        # family/seniority fields if a legacy row slips through.
+        job.setdefault("role_family", board.detect_role_family(job))
+    job["recency_bucket"] = board.recency_bucket(job)
+    return job
+
+
+def shared_score_store(watchlist: Dict[str, Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+    """Index persisted Syncareer scoring/cache fields by shared dedup key."""
+    store: Dict[str, Dict[str, Any]] = {}
+    for entry in watchlist.values():
+        job = to_shared_job(entry)
+        key = board.dedup_key(job)
+        cached = dict(entry)
+        cached["key"] = key
+        cached.setdefault("canonical_job_key", job.get("canonical_job_key") or key)
+        store[key] = cached
+    return store
+
+
+def assign_shared_scores(
+    rows: List[Dict[str, Any]],
+    watchlist: Dict[str, Dict[str, Any]],
+    use_llm: bool,
+) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, int], List[str], str]:
+    """Use the shared 0-100 matcher and deterministic A/B/C tier policy."""
+    if not rows:
+        return {}, {"llm": 0, "reused": 0, "rule": 0, "api_requests": 0}, [], "none"
+    now_iso = datetime.now(timezone.utc).isoformat()
+    jobs = [to_shared_job(row, now_iso) for row in rows]
+    referrals: Dict[str, bool] = {}
+    for job in jobs:
+        referrals[board.dedup_key(job)] = bool(job.get("referral_name"))
+    method, errors, counts = board.score_survivors(
+        jobs,
+        referrals,
+        board.load_profiles(),
+        shared_score_store(watchlist),
+        use_llm=use_llm,
+        peer_stores=[
+            ("official", board.load_store_path(OUTPUT_DIR / "official_careers" / "jobs.json"))
+        ],
+        prefer_peer=True,
+    )
+    decisions: Dict[str, Dict[str, Any]] = {}
+    for job in jobs:
+        job["tier"] = board.assign_tier(job, referrals.get(board.dedup_key(job), False))
+        board.apply_referral_action(job)
+        result = {field: job.get(field) for field in SHARED_SCORE_FIELDS}
+        # fit_score remains a compatibility alias, now on the shared 0-100 scale.
+        result["fit_score"] = job.get("match_score", "")
+        result["recommended_resume"] = (
+            "AI-FDE" if job.get("resume_profile_used") == "resume_ai" else "SWE"
+        )
+        result["fit_category"] = job.get("role_family", "")
+        result["reason"] = "; ".join(job.get("top_match_reasons") or [])
+        result["risk"] = "; ".join(job.get("main_gaps") or [])
+        result["sponsorship_concern"] = "yes" if str(
+            next((r.get("sponsorship") for r in rows if str(r.get("job_id")) == str(job.get("job_id"))), "")
+        ) in {"No H-1B Sponsor", "Unknown"} else "no"
+        decisions[str(job.get("job_id") or "")] = result
+    return decisions, counts, errors, method
+
+
 def build_providers() -> List[Dict[str, str]]:
     providers: List[Dict[str, str]] = []
     openai_key = (os.environ.get("OPENAI_API_KEY") or "").strip()
@@ -976,7 +1097,15 @@ ALERT_FIELDS = [
     "matched_keywords",
     "salary",
     "tier",
+    "match_score",
     "fit_score",
+    "score_source",
+    "screen_method",
+    "resume_profile_used",
+    "role_family",
+    "seniority_fit",
+    "main_gaps",
+    "recommended_action",
     "recommended_resume",
     "first_seen",
     "review_status",
@@ -1038,7 +1167,7 @@ def build_issue_body(new_rows: List[Dict[str, Any]], stamp: str, with_tiers: boo
         link = f"[open]({r.get('job_url','')})" if r.get("job_url") else "-"
         if with_tiers:
             lines.append(
-                f"| {r.get('tier','-')} | {r.get('fit_score','-')} | Syncareer | {company} | {title} | "
+                f"| {r.get('tier','-')} | {r.get('match_score', r.get('fit_score','-'))} | Syncareer | {company} | {title} | "
                 f"{loc} | {r.get('posting_date','')} | {r.get('sponsorship','')} | {referral} | {r.get('review_status') or 'unreviewed'} | {r.get('coverage_status') or '-'} | {link} |"
             )
         else:
@@ -1058,7 +1187,7 @@ def build_alert_txt(new_rows: List[Dict[str, Any]], stamp: str, with_tiers: bool
     for i, r in enumerate(new_rows, 1):
         head = f"[{i}] {r.get('company','')} - {r.get('title','')}"
         if with_tiers and r.get("tier"):
-            head += f"  (Tier {r.get('tier')}, score {r.get('fit_score')})"
+            head += f"  (Tier {r.get('tier')}, score {r.get('match_score', r.get('fit_score'))})"
         lines.append(head)
         referral = f" | Referral: {r['target_company_match']}" if r.get("target_company") == "yes" else ""
         lines.append(
@@ -1106,9 +1235,8 @@ def run() -> None:
 
     load_env_file(BASE_DIR / ".env")
     session = make_session()
-    swe_resume = SWE_RESUME_PATH.read_text(encoding="utf-8") if (use_llm and SWE_RESUME_PATH.exists()) else ""
-    ai_resume = AI_RESUME_PATH.read_text(encoding="utf-8") if (use_llm and AI_RESUME_PATH.exists()) else ""
     targets = load_target_companies()
+    company_filters = board.load_company_filters()
 
     now = datetime.now()
     today = now.strftime("%Y-%m-%d")
@@ -1162,63 +1290,71 @@ def run() -> None:
             drop_reasons["exclude_role_seniority_prefilter"] += 1
     kept_rows = scoped_rows
     coverage_reconcile.annotate_jobs(kept_rows, "syncareer")
+    hidden_external_count = 0
+    for row in kept_rows:
+        if apply_external_company_policy(row, company_filters):
+            hidden_external_count += 1
     scoring_rows = [row for row in kept_rows if not row.get("suppress_alert")]
 
-    # Phase 6: optional LLM tiering.
-    method_counts: Counter = Counter()
-    llm_errors: List[str] = []
-    tier1_rows: List[Dict[str, Any]] = []
-    tier2_rows: List[Dict[str, Any]] = []
+    # Phase 6: shared 0-100 scoring always runs. --no-llm selects the Board's
+    # conservative rule fallback rather than leaving Score/Tier blank.
+    historical_to_score: List[Dict[str, Any]] = []
+    if alert_mode:
+        cutoff = now.astimezone(timezone.utc) - timedelta(days=INBOX_DAYS)
+        for entry in watchlist.values():
+            if str(entry.get("kept") or "").lower() not in {"yes", "true", "1"}:
+                continue
+            if entry.get("match_score") not in (None, "") and entry.get("tier") in {"A", "B", "C"}:
+                continue
+            ref = _entry_age_ref(entry)
+            if ref is not None and ref < cutoff:
+                continue
+            if not coverage_reconcile.syncareer_job_in_scope(entry):
+                entry["kept"] = "no"
+                entry["filter_status"] = "dropped"
+                entry["drop_reason"] = "exclude_role_seniority_prefilter"
+                entry["suppress_alert"] = True
+                continue
+            if apply_external_company_policy(entry, company_filters):
+                continue
+            historical = dict(entry)
+            historical.setdefault("posting_date", historical.get("posted_date", ""))
+            historical.setdefault("job_url", historical.get("url", ""))
+            historical_to_score.append(historical)
+
+    score_input = scoring_rows + historical_to_score
+    decisions, score_counts, llm_errors, shared_screen_method = assign_shared_scores(
+        score_input, watchlist, use_llm=use_llm
+    )
     enriched_rows: List[Dict[str, Any]] = []
-    if use_llm:
-        decisions, methods, llm_errors = assign_tiers(scoring_rows, swe_resume, ai_resume)
-        for row in scoring_rows:
-            d = decisions.get(row["job_id"], fallback_tier(row))
-            method = methods.get(row["job_id"], "fallback")
-            method_counts[method] += 1
-            enriched = dict(row)
-            enriched.update(
-                {
-                    "tier": d["tier"],
-                    "fit_score": f"{float(d['fit_score']):.1f}",
-                    "recommended_resume": d["recommended_resume"],
-                    "fit_category": d["fit_category"],
-                    "reason": d["reason"],
-                    "risk": d["risk"],
-                    "sponsorship_concern": d["sponsorship_concern"],
-                    "screen_method": method,
-                }
+    for row in scoring_rows:
+        enriched = dict(row)
+        enriched.update(decisions.get(str(row.get("job_id")), {}))
+        enriched_rows.append(enriched)
+    tier_a_rows = [row for row in enriched_rows if row.get("tier") == "A"]
+    tier_b_rows = [row for row in enriched_rows if row.get("tier") == "B"]
+    tier_c_rows = [row for row in enriched_rows if row.get("tier") == "C"]
+    for group in (tier_a_rows, tier_b_rows, tier_c_rows):
+        group.sort(
+            key=lambda row: (
+                -float(row.get("match_score") or 0),
+                0 if row.get("target_company") == "yes" else 1,
             )
-            enriched_rows.append(enriched)
-            if d["tier"] == "1":
-                tier1_rows.append(enriched)
-            elif d["tier"] == "2":
-                tier2_rows.append(enriched)
-        tier1_rows.sort(key=lambda x: (-float(x["fit_score"]), 0 if x["target_company"] == "yes" else 1))
-        tier2_rows.sort(key=lambda x: (-float(x["fit_score"]), 0 if x["target_company"] == "yes" else 1))
-    else:
-        enriched_rows = [dict(r) for r in scoring_rows]
+        )
+
+    # Persist scores on the daily rows as well as the rolling watchlist.
+    by_job_id = {str(row.get("job_id")): row for row in enriched_rows}
+    kept_rows = [by_job_id.get(str(row.get("job_id")), row) for row in kept_rows]
 
     # Phase 7: write daily outputs.
     DAILY_DIR.mkdir(parents=True, exist_ok=True)
     jobs_csv = DAILY_DIR / f"{today}_jobs.csv"
     write_csv(jobs_csv, kept_rows, RAW_FIELDS)
-    if use_llm:
-        write_csv(DAILY_DIR / f"{today}_tier1.csv", tier1_rows, TIER_FIELDS)
-        write_csv(DAILY_DIR / f"{today}_tier2.csv", tier2_rows, TIER_FIELDS)
+    write_csv(DAILY_DIR / f"{today}_tier_a.csv", tier_a_rows, TIER_FIELDS)
+    write_csv(DAILY_DIR / f"{today}_tier_b.csv", tier_b_rows, TIER_FIELDS)
 
-    # Alert ordering: by fit_score when LLM ran, else referral-first then newest.
-    if use_llm:
-        alert_rows = sorted(
-            enriched_rows,
-            key=lambda x: (-float(x.get("fit_score", 0) or 0), 0 if x.get("target_company") == "yes" else 1),
-        )
-    else:
-        alert_rows = sorted(
-            enriched_rows,
-            key=lambda x: (0 if x.get("target_company") == "yes" else 1, x.get("posting_date", "")),
-            reverse=False,
-        )
+    # Only actionable A/B jobs appear in alerts; C remains in the internal store.
+    alert_rows = tier_a_rows + tier_b_rows
 
     # Report
     lines: List[str] = []
@@ -1227,18 +1363,24 @@ def run() -> None:
     lines.append(f"- Run time (UTC): {datetime.now(timezone.utc).isoformat()}")
     lines.append(f"- Mode: {'alert (rolling 7d watchlist)' if alert_mode else 'standard (seen_ids)'}")
     lines.append(f"- Time window: {time_window}")
-    lines.append(f"- LLM tiering: {'on' if use_llm else 'off'}")
+    lines.append(f"- Shared 0-100 matching: {'LLM + cache/rule fallback' if use_llm else 'rule fallback'}")
     lines.append(f"- Keywords: {', '.join(SEARCH_KEYWORDS)}")
     lines.append(f"- Total jobs found (deduped across keywords): {total_found}")
     lines.append(f"- Already-known (skipped): {total_found - len(new_ids)}")
     lines.append(f"- New jobs this run: {len(new_ids)}")
     lines.append(f"- Passed shared hard + role/seniority filter: {len(kept_rows)}")
-    lines.append(f"- Exact official duplicates suppressed: {len(kept_rows) - len(scoring_rows)}")
-    lines.append(f"- Alert candidates before tiering: {len(scoring_rows)}")
-    if use_llm:
-        lines.append(f"- Tier 1 (must-apply): {len(tier1_rows)}")
-        lines.append(f"- Tier 2 (backup): {len(tier2_rows)}")
-        lines.append(f"- Screening method: LLM={method_counts.get('llm_decision', 0)}, fallback={method_counts.get('fallback', 0)}")
+    lines.append(f"- Amazon/Apple hidden externally: {hidden_external_count}")
+    lines.append(f"- Coverage duplicates/hidden suppressed: {len(kept_rows) - len(scoring_rows)}")
+    lines.append(f"- New alert candidates before tiering: {len(scoring_rows)}")
+    lines.append(f"- Historical rows backfilled: {len(historical_to_score)}")
+    lines.append(f"- Tier A (new): {len(tier_a_rows)}")
+    lines.append(f"- Tier B (new): {len(tier_b_rows)}")
+    lines.append(f"- Tier C/store-only (new): {len(tier_c_rows)}")
+    lines.append(
+        f"- Screening: {shared_screen_method}; LLM={score_counts.get('llm', 0)}, "
+        f"cache={score_counts.get('reused', 0)}, rules={score_counts.get('rule', 0)}, "
+        f"API requests={score_counts.get('api_requests', 0)}"
+    )
     lines.append("")
     lines.append("## Per-keyword counts (this run, pre-dedup)")
     for kw in SEARCH_KEYWORDS:
@@ -1290,14 +1432,16 @@ def run() -> None:
                 "official_snapshot_at": row.get("official_snapshot_at", ""),
                 "source_snapshot_at": row.get("source_snapshot_at", ""),
                 "suppress_alert": bool(row.get("suppress_alert")),
+                "filter_status": row.get("filter_status", "kept"),
+                "drop_reason": row.get("drop_reason", ""),
+                "company_flag": row.get("company_flag", ""),
+                "deprioritized": bool(row.get("deprioritized")),
+                "preferred": bool(row.get("preferred")),
+                "staffing_firm": bool(row.get("staffing_firm")),
             }
-        for row in enriched_rows:
-            if row["job_id"] in watchlist:
-                watchlist[row["job_id"]].update({
-                    "tier": row.get("tier", ""),
-                    "fit_score": row.get("fit_score", ""),
-                    "recommended_resume": row.get("recommended_resume", ""),
-                })
+        for job_id, decision in decisions.items():
+            if job_id in watchlist:
+                watchlist[job_id].update(decision)
         for row in raw_rows:
             if row["job_id"] in kept_ids:
                 continue
@@ -1330,16 +1474,18 @@ def run() -> None:
             if str(entry.get("kept") or "").lower() in {"yes", "true", "1"} and coverage_reconcile.syncareer_job_in_scope(entry):
                 historical_rows.append(entry)
         coverage_reconcile.annotate_jobs(historical_rows, "syncareer")
+        for entry in historical_rows:
+            apply_external_company_policy(entry, company_filters)
         save_watchlist(watchlist)
 
         inbox_rows = [
             _watchlist_to_alert_row(e)
             for e in inbox_entries(watchlist, now=now.astimezone(timezone.utc))
-            if not e.get("suppress_alert")
+            if not e.get("suppress_alert") and e.get("tier") in {"A", "B"}
         ]
-        write_syncareer_inbox(inbox_rows, stamp, with_tiers=use_llm)
-        if scoring_rows:
-            alert_paths = write_alert_outputs(alert_rows, stamp, with_tiers=use_llm)
+        write_syncareer_inbox(inbox_rows, stamp, with_tiers=True)
+        if alert_rows:
+            alert_paths = write_alert_outputs(alert_rows, stamp, with_tiers=True)
             alert_history.append_event(
                 ALERT_HISTORY_PATH,
                 pipeline="syncareer",
@@ -1359,10 +1505,10 @@ def run() -> None:
             alert_paths["issue_body"] = body
         emit_github_output(
             {
-                "new_count": str(len(scoring_rows)),
+                "new_count": str(len(alert_rows)),
                 "inbox_count": str(len(inbox_rows)),
                 "stamp": stamp,
-                "issue_title": f"Syncareer alert {stamp} ({len(scoring_rows)} new)",
+                "issue_title": f"Syncareer alert {stamp} ({len(alert_rows)} new A/B)",
                 "issue_body_path": str(alert_paths.get("issue_body", "")),
             }
         )
@@ -1372,12 +1518,12 @@ def run() -> None:
 
     # Console summary.
     print(f"Mode: {'alert' if alert_mode else 'standard'} | window: {time_window} | LLM: {'on' if use_llm else 'off'}")
-    print(f"Total found: {total_found} | new: {len(new_ids)} | kept (store): {len(kept_rows)} | visible: {len(scoring_rows)}")
-    if use_llm:
-        print(f"Tier 1: {len(tier1_rows)} | Tier 2: {len(tier2_rows)}")
-        print(f"Screening: LLM={method_counts.get('llm_decision', 0)}, fallback={method_counts.get('fallback', 0)}")
-        if llm_errors:
-            print(f"LLM errors: {len(llm_errors)} (see report)")
+    print(f"Total found: {total_found} | new: {len(new_ids)} | kept (store): {len(kept_rows)} | new score candidates: {len(scoring_rows)}")
+    print(f"Tier A: {len(tier_a_rows)} | Tier B: {len(tier_b_rows)} | Tier C: {len(tier_c_rows)}")
+    print(f"Screening: {shared_screen_method}; LLM={score_counts.get('llm', 0)}, cache={score_counts.get('reused', 0)}, rules={score_counts.get('rule', 0)}")
+    print(f"Hidden external companies: {hidden_external_count} new; historical policy refreshed")
+    if llm_errors:
+        print(f"LLM errors: {len(llm_errors)} (see report)")
     print(f"Wrote: {jobs_csv}")
     if alert_mode:
         print(f"Inbox: {SYNCAREER_DIR / 'inbox.csv'} ({len(inbox_rows)} jobs, last {INBOX_DAYS}d)")

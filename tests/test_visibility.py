@@ -16,6 +16,7 @@ import review_state
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
 from sources.schema import combined_cache_key_from_hash, dedup_key, make_job, normalize_job_url
 from sources.schema import classify_location_bucket
+from sources import linkedin_local
 from sources.careers.query_terms import ROLE_SEARCH_QUERIES
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -366,6 +367,78 @@ class CoverageMatchingTests(unittest.TestCase):
         }
         self.assertFalse(coverage_reconcile.syncareer_job_in_scope(senior))
         self.assertTrue(coverage_reconcile.syncareer_job_in_scope(relevant))
+
+
+class ComplementaryDiscoveryTests(unittest.TestCase):
+    def test_board_does_not_collect_legacy_official_source(self) -> None:
+        ats_result = {"jobs": [make_job(source="greenhouse", company="SmallCo", title="Software Engineer I")], "per_board": {}, "errors": []}
+        with patch.object(board_pipeline.ats, "fetch_all_ats", return_value=ats_result), patch.object(
+            board_pipeline, "read_source_snapshot", return_value=[]
+        ):
+            jobs, _meta = board_pipeline.collect_sources(object(), skip_network=False)
+        self.assertEqual(["greenhouse"], [job["source"] for job in jobs])
+        self.assertNotIn("sources.official", (ROOT / "board_pipeline.py").read_text(encoding="utf-8"))
+
+    def test_linkedin_search_covers_entry_and_associate_levels(self) -> None:
+        self.assertEqual("2,3", linkedin_local.EXPERIENCE_LEVEL_FILTER)
+        terms = {term.lower() for term in linkedin_local.DEFAULT_KEYWORDS}
+        self.assertIn("software engineer i", terms)
+        self.assertIn("software engineer ii", terms)
+        self.assertIn("associate software engineer", terms)
+        self.assertIn("forward deployed engineer", terms)
+
+    def test_relevant_engineering_titles_survive_positive_family_gate(self) -> None:
+        for title in (
+            "AI Solutions Engineer",
+            "Computer Vision Engineer",
+            "Solutions Integration Engineer II",
+            "AI Automation Engineer",
+            "Product Engineer",
+            "ETL Engineer",
+        ):
+            job = make_job(source="linkedin", company="SmallCo", title=title, location="Austin, TX")
+            keep, reason = board_pipeline.role_seniority_prefilter(job)
+            self.assertTrue(keep, (title, reason))
+
+    def test_amazon_and_apple_are_hidden_only_on_external_surfaces(self) -> None:
+        filters = board_pipeline.load_company_filters()
+        self.assertEqual("Amazon", board_pipeline.hidden_external_company("Amazon Web Services", filters))
+        self.assertEqual("Apple", board_pipeline.hidden_external_company("Apple Inc.", filters))
+        self.assertIsNone(board_pipeline.hidden_external_company("Pineapple Labs", filters))
+        row = {"company": "Apple", "title": "Software Engineer I"}
+        self.assertTrue(daily_pipeline.apply_external_company_policy(row, filters))
+        self.assertTrue(row["suppress_alert"])
+
+    def test_syncareer_rule_fallback_persists_shared_score_and_tier(self) -> None:
+        now = datetime.now(timezone.utc)
+        row = {
+            "job_id": "sync-1",
+            "company": "SmallCo",
+            "title": "New Grad Data Engineer",
+            "location": "Austin, TX",
+            "posting_date": now.strftime("%Y-%m-%d"),
+            "job_url": "https://small.example/jobs/sync-1",
+            "description": "Build data platforms and backend software.",
+            "requirements": "Bachelor degree and Python.",
+            "first_seen": now.isoformat(),
+            "target_company_match": "",
+        }
+        decisions, counts, errors, _method = daily_pipeline.assign_shared_scores(
+            [row], {}, use_llm=False
+        )
+        decision = decisions["sync-1"]
+        self.assertGreaterEqual(float(decision["match_score"]), 0)
+        self.assertLessEqual(float(decision["match_score"]), 100)
+        self.assertIn(decision["tier"], {"A", "B", "C"})
+        self.assertTrue(decision["score_source"])
+        self.assertEqual(1, counts["rule"])
+        self.assertEqual([], errors)
+
+    def test_local_sync_targets_main_from_an_isolated_worktree(self) -> None:
+        script = (ROOT / "scripts/local_source_sync.sh").read_text(encoding="utf-8")
+        self.assertIn('TARGET_BRANCH="${TARGET_BRANCH:-main}"', script)
+        self.assertIn("git worktree add --detach", script)
+        self.assertIn('push origin "HEAD:${TARGET_BRANCH}"', script)
 
 
 class ReportingWorkflowTests(unittest.TestCase):

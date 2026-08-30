@@ -12,7 +12,7 @@ driven locally by launchd via ``local_sources.py``.
 
 Filters (per plan):
   - f_TPR=r86400  : posted in the last 24h (wide window; pipeline re-sorts)
-  - f_E=2         : entry level
+  - f_E=2,3       : entry + associate (captures realistic ~0-3 YOE / I-II)
   - geoId=103644278 + location=United States
   - keywords      : rotated across several engineering titles
 """
@@ -36,12 +36,19 @@ GUEST_SEARCH_URL = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPosti
 US_GEO_ID = "103644278"
 DEFAULT_KEYWORDS = [
     "software engineer",
+    "software engineer i",
+    "software engineer ii",
+    "associate software engineer",
     "backend engineer",
     "full stack engineer",
+    "platform engineer",
     "ai engineer",
+    "applied ai engineer",
     "machine learning engineer",
     "data engineer",
+    "forward deployed engineer",
 ]
+EXPERIENCE_LEVEL_FILTER = "2,3"
 PAGE_SIZE = 10
 MAX_PAGES_PER_KEYWORD = 10
 REQUEST_TIMEOUT = 25
@@ -123,7 +130,7 @@ def scrape(
                 "location": "United States",
                 "geoId": US_GEO_ID,
                 "f_TPR": "r86400",
-                "f_E": "2",
+                "f_E": EXPERIENCE_LEVEL_FILTER,
                 "start": page * PAGE_SIZE,
             }
             try:

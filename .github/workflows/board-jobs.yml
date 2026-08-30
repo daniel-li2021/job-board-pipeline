@@ -1,7 +1,7 @@
 name: Board job alert
 
-# Multi-source pipeline (ATS + official career pages + ingested local
-# LinkedIn/Glassdoor snapshots). ONLY writer of output/board/.
+# Complementary discovery pipeline (Greenhouse/Lever/Ashby + ingested local
+# LinkedIn/Glassdoor snapshots). Big Company Official runs separately.
 # Runs independently from Official and Syncareer. Local LinkedIn/Glassdoor
 # snapshot pushes still trigger a board-only ingest without an extra digest.
 

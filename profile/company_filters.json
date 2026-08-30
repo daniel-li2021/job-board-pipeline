@@ -1,15 +1,15 @@
 {
-  "_comment": "Company-level filtering applied AFTER cross-source dedup and BEFORE LLM scoring. exclude/covered_elsewhere are dropped (no API calls, not user-facing). deprioritize and staffing are kept but capped at Tier B. prefer gets a small ranking boost. clearance_risk is a flag for thin-JD LinkedIn/Glassdoor rows (cannot verify citizenship/clearance). Match is by normalized alias: whole-token match, or substring match for aliases >= 6 chars. Do not hardcode names in Python.",
+  "_comment": "Company-level filtering applied AFTER cross-source dedup and BEFORE LLM scoring. exclude is dropped. An entry with hide_external=true is silently stored but hidden from ATS/LinkedIn and Syncareer without consuming an LLM call; Official Careers still shows it. deprioritize and staffing are kept but capped at Tier B. prefer gets a small ranking boost. clearance_risk flags thin-JD LinkedIn/Glassdoor rows. Matching uses the shared exact/token/declared-alias matcher. Do not hardcode names in Python.",
   "exclude": [
     { "name": "JobRight.ai", "aliases": ["jobright", "jobright.ai", "jobrightai"], "reason": "aggregator/reposter, not a direct employer" }
   ],
   "covered_elsewhere": [
     { "name": "Google", "aliases": ["google", "alphabet"] },
-    { "name": "Amazon", "aliases": ["amazon", "aws", "amazon web services"] },
+    { "name": "Amazon", "aliases": ["amazon", "aws", "amazon web services"], "hide_external": true },
     { "name": "TikTok", "aliases": ["tiktok", "bytedance", "lifeattiktok"] },
     { "name": "NVIDIA", "aliases": ["nvidia"] },
     { "name": "Meta", "aliases": ["meta", "facebook", "metacareers"] },
-    { "name": "Apple", "aliases": ["apple"] },
+    { "name": "Apple", "aliases": ["apple"], "hide_external": true },
     { "name": "Microsoft", "aliases": ["microsoft"] },
     { "name": "Netflix", "aliases": ["netflix"] }
   ],

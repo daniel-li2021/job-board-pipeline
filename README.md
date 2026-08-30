@@ -17,13 +17,11 @@ sections, a collapsible referral view, and official-search links. Coverage
 reconciliation remains in the repo audit files but is intentionally hidden from
 the public page.
 
-**Matching/scoring is shared, not implemented three times.** Components 2 and 3
-use the same `board_pipeline.py` hard filter, role/seniority prefilter,
+**Matching/scoring is shared, not implemented three times.** All three components
+use the same `board_pipeline.py` role-family logic, 0–100 resume/JD matcher,
 resume routing (`resume_swe.md` / `resume_ai.md`), LLM/cache scoring, and
-Tier A/B ranking. Component 3 is discovery-only: it normalizes official career
-jobs into the shared schema, then calls those functions. Component 1
-(Syncareer) keeps its own optional LLM path, but uses the shared hard/role-family
-eligibility gates for coverage and the same canonical referral alias matcher.
+deterministic Tier A/B/C policy. Components 1 and 3 normalize their jobs into
+the shared schema and persist `match_score`, `tier`, and `score_source`.
 
 Referral companies have one source of truth:
 [`source/target_companies.json`](source/target_companies.json). All three
@@ -49,7 +47,8 @@ python3 daily_pipeline.py --alert --no-llm --time last3days
 ```
 
 - `--alert`: 7-day watchlist at `output/syncareer/watchlist.json` + inbox files.
-- `--no-llm`: skip resume-matching. Hard filters still drop senior / US-citizen / non-US.
+- `--no-llm`: use the shared conservative rule score/tier fallback. Score/Tier
+  are still persisted; hard filters still drop senior / US-citizen / non-US.
 
 ### Outputs (`output/syncareer/` only)
 
@@ -58,13 +57,14 @@ python3 daily_pipeline.py --alert --no-llm --time last3days
 - `watchlist.json` — 7-day dedup store (kept + dropped ids).
 - `issue_body.md` — markdown for the GitHub Issue (this run).
 
-## Local LLM tiering (optional)
+## Local LLM matching (optional)
 
 ```bash
 python3 daily_pipeline.py --time last3days
 ```
 
-Writes gitignored `output/daily/<date>_tier1.csv` / `_tier2.csv`.
+Writes gitignored `output/daily/<date>_tier_a.csv` / `_tier_b.csv` using the
+same 0–100 score and A/B/C policy as the other pipelines.
 
 ## GitHub Actions
 
@@ -76,10 +76,13 @@ Writes gitignored `output/daily/<date>_tier1.csv` / `_tier2.csv`.
 
 # Multi-source board pipeline
 
-Aggregates jobs from public ATS boards (Greenhouse / Lever / Ashby), company
-career pages (Amazon, Google), and locally-scraped LinkedIn + Glassdoor
+Aggregates jobs from public ATS boards (Greenhouse / Lever / Ashby) and
+locally-scraped LinkedIn + Glassdoor
 snapshots, then dedups, verifies official links, hard-filters, scores with an
 LLM (rule fallback), and ranks into Tier A/B/C.
+
+Big-company career discovery is owned exclusively by `official_careers.py`;
+the Board pipeline intentionally does not run the legacy Official source.
 
 Flow: `Sources -> Normalize -> Dedup(first_seen) -> Official Verify -> Hard
 Filter -> Match (LLM or rules) -> Rank -> jobs.json + latest.md + alert`.
@@ -89,14 +92,14 @@ Filter -> Match (LLM or rules) -> Rank -> jobs.json + latest.md + alert`.
 - `board_pipeline.py` — orchestrator. **Only writer** of `output/board/`.
 - `sources/schema.py` — unified job schema, US/recency/date helpers, dedup keys.
 - `sources/ats.py` + `source/ats_boards.json` — Greenhouse/Lever/Ashby adapters.
-- `sources/official.py` — Amazon + Google career-page adapters (CI-safe HTTP).
 - `sources/linkedin_local.py`, `sources/glassdoor_local.py` — **local-only**
   best-effort adapters (guest search / public HTML).
 - `local_sources.py` — runs the two local adapters, writing
   `output/sources/{linkedin,glassdoor}.json`. A source that hits a login wall /
   captcha / 403 / 429 is skipped and its previous snapshot is preserved.
-- `scripts/local_source_sync.sh` — scrape then commit/push **only**
-  `output/sources/*.json` when changed. Never touches `jobs.json` / `latest.md`.
+- `scripts/local_source_sync.sh` — scrape then create an isolated source-only
+  commit against `origin/main`. It works even when the developer checkout is
+  dirty or on a feature branch, and never touches `jobs.json` / `latest.md`.
 - `scripts/macos/com.jobboard.local-sources.plist` — launchd agent (every 3h).
 
 ## Division of responsibility (avoids git conflicts)
@@ -122,7 +125,8 @@ python3 board_pipeline.py --skip-network         # ingest local snapshots only
 
 # The launchd wrapper (scrape + git sync). Test before installing launchd:
 NO_GIT=1 bash scripts/local_source_sync.sh       # scrape only
-SKIP_PUSH=1 bash scripts/local_source_sync.sh    # commit locally, no push
+SKIP_PUSH=1 bash scripts/local_source_sync.sh    # compare with main, no commit/push
+SKIP_SCRAPE=1 bash scripts/local_source_sync.sh  # push the last good snapshots
 bash scripts/local_source_sync.sh                # full: scrape + commit + push
 ```
 
@@ -147,7 +151,7 @@ not fire while the Mac is asleep; it runs at the next wake.
 - GitHub Actions: add a repository secret `OPENAI_API_KEY`; the workflow injects
   it via `${{ secrets.OPENAI_API_KEY }}`.
 
-The LLM runs **only on rule-filter survivors** (top 300 by rule score) to control
+The LLM runs **only on rule-filter survivors** (bounded per run) to control
 cost. If the key is missing or the API errors, the pipeline falls back to
 rule-based scoring and still succeeds — it never fails the run. `--no-llm` forces
 rule-based scoring for local debugging.
@@ -172,9 +176,8 @@ At most **one useful digest per Pacific day** per pipeline: newly visible
 Tier A/B, or a B→A promotion. Rescores, JD-only edits, and the evening
 rerun do not re-alert. State: `output/board/digest_state.json`.
 
-`sources/official.py` (Amazon + Google, limited pagination) stays in this
-pipeline as a lightweight CI-safe source. The fuller Big Tech official
-scraper is component 3 and writes only under `output/official_careers/`.
+Big Tech official discovery is component 3 and writes only under
+`output/official_careers/`.
 `covered_elsewhere` is a discovery hint, not a company-wide drop. External jobs
 are suppressed only when the company is manually `validated` in
 `profile/official_coverage.json` **and** the record has an exact official URL,
