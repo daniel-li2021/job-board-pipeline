@@ -14,8 +14,8 @@ on:
     workflows: ["Official careers", "Board job alert", "Syncareer job alert"]
     types: [completed]
   schedule:
-    - cron: "30 15 * * *"
-    - cron: "30 3 * * *"
+    - cron: "30 16 * * *"
+    - cron: "30 4 * * *"
   workflow_dispatch:
 
 permissions:
