@@ -1,36 +1,29 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-08-31 02:38 PDT
-- Snapshot (UTC): 2026-08-31T09:38:40.293805+00:00
-- Jobs: 23 (Tier A/B only)
-- Last 24 hours: 0
-- Last 3 days: 23
+- Updated (PT): 2026-08-31 15:27 PDT
+- Snapshot (UTC): 2026-08-31T22:27:43.919657+00:00
+- Jobs: 16 (Tier A/B only)
+- Last 24 hours: 16
+- Last 3 days: 16
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 85 | greenhouse | Robinhood | Software Engineer, Proactive Capabilities | Bellevue, WA; Menlo Park, CA | 2026-08-30 | 1to3d | - | unreviewed | pending_official_refresh | [open](https://boards.greenhouse.io/robinhood/jobs/8067604?t=gh_src=&gh_jid=8067604) |
-| A | 85 | greenhouse | GitLab | Backend Engineer, AI Engineering: Duo Chat | Remote, Canada; Remote, United States | 2026-08-29 | 1to3d | - | unreviewed | pending_official_refresh | [open](https://job-boards.greenhouse.io/gitlab/jobs/8698314002) |
-| B | 80 | greenhouse | GitLab | Fullstack Engineer (TypeScript), AI Engineering: Duo Client SDK | Remote, Canada; Remote, United States | 2026-08-29 | 1to3d | - | unreviewed | pending_official_refresh | [open](https://job-boards.greenhouse.io/gitlab/jobs/8698330002) |
-| B | 75 | greenhouse | GitLab | Intermediate Backend Engineer, Platform Readiness | Remote, Canada; Remote, United States | 2026-08-29 | 1to3d | - | unreviewed | pending_official_refresh | [open](https://job-boards.greenhouse.io/gitlab/jobs/8644569002) |
-| B | 80 | linkedin | Meta | Software Engineer, Systems ML | San Francisco, CA | 2026-08-29 | 1to3d | Meta | unreviewed | covered_unvalidated | [open](https://www.linkedin.com/jobs/view/software-engineer-systems-ml-at-meta-4451045075) |
-| B | 75 | linkedin | Accenture Federal Services | Full Stack Developer | Washington, DC | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-accenture-federal-services-4375089393) |
-| B | 75 | linkedin | Corpay | Full Stack Developer | Sacramento, CA | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-corpay-4451026399) |
-| B | 75 | linkedin | DRB Homes | IT Full Stack Developer | Rockville, MD | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/it-full-stack-developer-at-drb-homes-4441627911) |
-| B | 75 | linkedin | Ford Motor Company | Full Stack Data Engineer | Dearborn, MI | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-data-engineer-at-ford-motor-company-4450724548) |
-| B | 75 | linkedin | Foundation Medicine | Software Engineer III (Data Engineering Team) | Boston, MA | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-iii-data-engineering-team-at-foundation-medicine-4394681225) |
-| B | 75 | linkedin | Guidehouse | Full Stack Developer | McLean, VA | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-guidehouse-4433340676) |
-| B | 75 | linkedin | Guidehouse | Full Stack Developer with Cloud and DevOps Experience | Bethesda, MD | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-with-cloud-and-devops-experience-at-guidehouse-4414945916) |
-| B | 75 | linkedin | Infosys | Java Full Stack Developer with React JS | Richardson, TX | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-full-stack-developer-with-react-js-at-infosys-4458805232) |
-| B | 75 | linkedin | Netic | Applied AI Research Engineer | San Francisco, CA | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/applied-ai-research-engineer-at-netic-4354022361) |
-| B | 75 | linkedin | Onlano | Full stack Developer / Software Engineer | Charlotte, NC | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-software-engineer-at-onlano-4458803102) |
-| B | 75 | linkedin | Pave | Software Engineer, Developer Platform | New York, NY | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-developer-platform-at-pave-4432824117) |
-| B | 75 | linkedin | Paychex | Forward Deployed Software Engineer (FDE)- Python | Webster, NY | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-fde-python-at-paychex-4364728877) |
-| B | 75 | linkedin | Paychex | Forward Deployed Software Engineer (FDE)- Python | Phoenix, AZ | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-fde-python-at-paychex-4371936801) |
-| B | 75 | linkedin | Systech Federal | Full Stack Developer | McLean, VA | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-systech-federal-4460596342) |
-| B | 75 | linkedin | Vantor | Full Stack Developer | McLean, VA | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-vantor-4423008485) |
-| B | 75 | linkedin | SAP | Forward Deployed AI Engineer | New York, NY | 2026-08-29 | 1to3d | SAP | unreviewed | covered_unvalidated | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-at-sap-4447648444) |
-| B | 75 | linkedin | Buildertrend | Forward Deployed AI Engineer | Nebraska, United States | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-at-buildertrend-4442189467) |
-| B | 75 | linkedin | Reflection | Forward Deployed Engineer - LLM Post-training | San Francisco, CA | 2026-08-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-engineer-llm-post-training-at-reflection-4404243720) |
+| B | 86 | greenhouse | GitLab | Backend Engineer, AI Engineering: Duo Chat | Remote, Canada; Remote, United States | 2026-08-31 | 3to24h | - | unreviewed | covered_unvalidated | [open](https://job-boards.greenhouse.io/gitlab/jobs/8698314002) |
+| B | 84 | greenhouse | GitLab | Intermediate Backend Engineer, Platform Readiness | Remote, Canada; Remote, United States | 2026-08-31 | 3to24h | - | unreviewed | covered_unvalidated | [open](https://job-boards.greenhouse.io/gitlab/jobs/8644569002) |
+| B | 75 | greenhouse | GitLab | Fullstack Engineer (TypeScript), AI Engineering: Duo Client SDK | Remote, Canada; Remote, United States | 2026-08-31 | 3to24h | - | unreviewed | covered_unvalidated | [open](https://job-boards.greenhouse.io/gitlab/jobs/8698330002) |
+| B | 75 | linkedin | Chalk | Software Engineer, Developer Productivity | New York, NY | 2026-08-31 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-developer-productivity-at-chalk-4450841412) |
+| B | 75 | linkedin | Corus Consulting an Alten Company | Backend Developer – Node.js / Node-RED | Atlanta, GA | 2026-08-31 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-developer-%E2%80%93-node-js-node-red-at-corus-consulting-an-alten-company-4460058782) |
+| B | 75 | linkedin | Elsevier | API Backend Developer | Philadelphia, PA | 2026-08-31 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/api-backend-developer-at-elsevier-4459211565) |
+| B | 75 | linkedin | Foundation Finance Company Careers | Full Stack Developer | Rothschild, WI | 2026-08-31 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-foundation-finance-company-careers-4459229413) |
+| B | 75 | linkedin | Fubo | Software Engineer, Data Engineering | New York, NY | 2026-08-31 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-data-engineering-at-fubo-4433433431) |
+| B | 75 | linkedin | Guidehouse | Full Stack Developer | McLean, VA | 2026-08-31 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-guidehouse-4433888249) |
+| B | 75 | linkedin | MeeBoss | Forward Deployed Software Engineer | New York, United States | 2026-08-31 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-at-meeboss-4459222419) |
+| B | 75 | linkedin | NIKSUN | Full Stack Developer | Princeton, NJ | 2026-08-31 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-niksun-4460065408) |
+| B | 75 | linkedin | Nova Hiring Solutions | Full Stack Developer / US Military | Satellite Beach, FL | 2026-08-31 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-us-military-at-nova-hiring-solutions-4459251354) |
+| B | 75 | linkedin | Spatial Front, Inc | Full Stack Developer | Arlington, VA | 2026-08-31 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-spatial-front-inc-4383247166) |
+| B | 75 | linkedin | Visionary Innovative Technology Solutions LLC | Java Backend Developer | United States | 2026-08-31 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-backend-developer-at-visionary-innovative-technology-solutions-llc-4459247328) |
+| B | 75 | linkedin | Winaxis LLC | Full Stack Developer | Jersey City, NJ | 2026-08-31 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-winaxis-llc-4461095843) |
+| B | 75 | linkedin | Oscar | Machine Learning Engineer / Forward Deployed | California, United States | 2026-08-31 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-forward-deployed-at-oscar-4459250047) |
