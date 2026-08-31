@@ -20,6 +20,7 @@ import requests
 
 from ..schema import SourceUnavailable, make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
+from .incremental import DetailCache, NewestFirstPager, annotate_detail
 
 SOURCE = "microsoft_official_careers"
 COMPANY = "Microsoft"
@@ -70,6 +71,7 @@ def scrape_microsoft(
     max_pages: int = 50,
     queries: Optional[List[str]] = None,
     fetch_details: bool = True,
+    detail_cache: Optional[DetailCache] = None,
 ) -> Dict[str, Any]:
     fetched_at = now_iso()
     queries = queries or DEFAULT_QUERIES
@@ -80,8 +82,11 @@ def scrape_microsoft(
     pages = 0
     errors: List[str] = []
     detail_fetches = 0
+    detail_reused = 0
+    detail_cache = detail_cache or DetailCache([])
 
     for query in queries:
+        pager = NewestFirstPager(detail_cache.seen_ids(COMPANY))
         start = 0
         query_ids: set[str] = set()
         for _page in range(max_pages):
@@ -125,8 +130,18 @@ def scrape_microsoft(
                     continue
                 path = item.get("positionUrl") or f"/careers/job/{pid}"
                 official = "https://apply.careers.microsoft.com" + path
-                description = ""
-                if fetch_details and pid and detail_fetches < MAX_DETAILS:
+                listing_title = item.get("name") or ""
+                listing_posted = item.get("postedTs") or item.get("creationTs") or ""
+                decision = detail_cache.decide(
+                    company=COMPANY, job_id=jid, url=official, title=listing_title,
+                    posted_date=listing_posted,
+                )
+                description = str((decision.cached or {}).get("description") or "")
+                if decision.cached and not decision.should_fetch:
+                    location = str(decision.cached.get("location") or location)
+                    detail_reused += 1
+                detail_fetched = False
+                if fetch_details and decision.should_fetch and pid and detail_fetches < MAX_DETAILS:
                     try:
                         det = http_get(
                             session,
@@ -139,17 +154,17 @@ def scrape_microsoft(
                         description = html_to_text(info.get("jobDescription") or "")
                         location = _location(info) or location
                         detail_fetches += 1
+                        detail_fetched = True
                         time.sleep(DETAIL_SLEEP_S)
                     except SourceUnavailable as exc:
                         errors.append(f"details {pid}: {exc}")
-                jobs.append(
-                    make_job(
+                job = make_job(
                         source=SOURCE,
                         company=COMPANY,
-                        title=item.get("name") or "",
+                        title=listing_title,
                         location=location,
                         job_id=jid,
-                        posted_date=item.get("postedTs") or item.get("creationTs") or "",
+                        posted_date=listing_posted,
                         updated_date="",
                         date_confidence="high" if item.get("postedTs") else "unknown",
                         source_url=official,
@@ -157,7 +172,17 @@ def scrape_microsoft(
                         description=description,
                         fetched_at=fetched_at,
                     )
+                annotate_detail(
+                    job, decision, detail_fetched=detail_fetched,
+                    listing_title=listing_title, listing_posted_date=listing_posted,
                 )
+                jobs.append(job)
+            if pager.should_stop_after(
+                (_page + 1),
+                page_ids,
+                [str(item.get("postedTs") or item.get("creationTs") or "") for item in rows if isinstance(item, dict)],
+            ):
+                break
             start += PAGE_SIZE
             if total and start >= total:
                 break
@@ -172,10 +197,11 @@ def scrape_microsoft(
             "&location=United+States&sort_by=timestamp&start=0&num=10"
         ),
         "search_urls": [PORTAL, SEARCH],
-        "pagination": "start=0,10,20,... ; num=10 (API cap); stop on empty/repeat or count",
+        "pagination": "newest-first; minimum 2 pages, then two seen pages + one overlap page; otherwise count/cap",
         "pages_fetched": pages,
         "raw_jobs": raw_count,
         "jobs": jobs,
         "errors": errors,
         "detail_fetches": detail_fetches,
+        "detail_cache_reused": detail_reused,
     }

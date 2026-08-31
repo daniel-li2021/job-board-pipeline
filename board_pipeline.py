@@ -39,6 +39,7 @@ from zoneinfo import ZoneInfo
 import requests
 
 import coverage_reconcile
+import llm_config
 from sources import ats, official
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
 from sources.schema import (
@@ -82,7 +83,7 @@ LEGACY_SWE_RESUME_PATH = BASE_DIR / "source" / "swe-resume.txt"
 LEGACY_AI_RESUME_PATH = BASE_DIR / "source" / "aie-resume.txt"
 
 # Bump whenever the LLM prompt schema/policy changes; invalidates cached scores.
-PROMPT_VERSION = "v3-strict-seniority-gaps"
+PROMPT_VERSION = "v4-routed-resume-calibrated-context"
 
 # score_source values. Only llm / cached_llm are reusable cache hits.
 # rule_overflow MUST remain eligible for LLM on a later run.
@@ -99,7 +100,7 @@ MAX_VISIBLE = 200
 
 # Strict Tier A / Tier B / exceptional-A thresholds on the 0-100 match scale.
 TIER_A_MIN = 85.0          # <=3d, strong-fit floor for immediate-apply Tier A
-TIER_B_MIN = 55.0
+TIER_B_MIN = 60.0
 EXCEPTIONAL_A_MIN = 90.0   # 3to7d may only reach Tier A when truly exceptional
 MAX_A_GAPS = 1             # Tier A tolerates at most this many core gaps
 # 3to7d jobs only hit the LLM when their rule fit is already exceptionally strong.
@@ -597,7 +598,14 @@ def load_profiles() -> Dict[str, Any]:
     def h(text: str) -> str:
         return hashlib.sha1((text or "").encode("utf-8")).hexdigest()
 
-    fingerprint = h("::".join([h(swe), h(ai), h(candidate), PROMPT_VERSION]))
+    fingerprint = h(
+        "::".join(
+            [
+                h(swe), h(ai), h(candidate), PROMPT_VERSION,
+                llm_config.configured_model(), llm_config.configured_reasoning_effort(),
+            ]
+        )
+    )
     return {
         "candidate": candidate,
         "resume_swe": swe,
@@ -720,7 +728,7 @@ def role_seniority_prefilter(job: Dict[str, str]) -> Tuple[bool, str]:
     if SENIOR_TITLE_RE.search(title):
         return False, "prefilter:senior"
     m = YOE_RE.search(text)
-    if m and int(m.group(1)) >= 5:
+    if m and int(m.group(1)) >= 6:
         return False, "prefilter:high_yoe"
     # Title must look like an engineering role. JD keywords cannot rescue
     # Content Designer / BizOps / asset-management titles.
@@ -742,7 +750,7 @@ def seniority_fit_ok(job: Dict[str, str]) -> bool:
     if SENIOR_TITLE_RE.search(title):
         return False
     m = YOE_RE.search(f"{title} {(job.get('description') or '')[:1200]}")
-    if m and int(m.group(1)) >= 5:
+    if m and int(m.group(1)) >= 6:
         return False
     return True
 
@@ -775,7 +783,7 @@ def rule_match_score(job: Dict[str, str]) -> float:
     if SENIOR_TITLE_RE.search(title):
         score -= 25.0
     m = YOE_RE.search(text)
-    if m and int(m.group(1)) >= 5:
+    if m and int(m.group(1)) >= 6:
         score -= 15.0
     if HARDWARE_TITLE_RE.search(title) and not any(w in title.lower() for w in HARDWARE_SOFT_TITLE_HINTS):
         score -= 20.0
@@ -827,7 +835,8 @@ def llm_match_batch(
     profiles: Dict[str, Any],
     api_key: str,
     model: str,
-) -> Dict[str, Dict[str, Any]]:
+    resume_route: str,
+) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
     """Evidence-based match against JD + routed resume. Keyed by canonical key."""
     jobs_payload = [
         {
@@ -837,7 +846,7 @@ def llm_match_batch(
             "location": j["location"],
             "posted_date": j.get("posted_date", ""),
             "detected_family": j.get("role_family", "none"),
-            "text": (j.get("description") or j["title"])[:1600],
+            "job_description": llm_config.select_jd_context(j.get("description") or j["title"]),
         }
         for j in batch
     ]
@@ -847,25 +856,24 @@ def llm_match_batch(
             "job description AND the resume(s). Do not score on keyword overlap alone."
         ),
         "candidate_profile": profiles.get("candidate", "")[:4000],
-        "resume_swe": profiles.get("resume_swe", "")[:3500],
-        "resume_ai": profiles.get("resume_ai", "")[:3500],
+        "resume_route": resume_route,
         "instructions": [
             "match_score is 0-100 (higher = stronger evidence-based fit).",
-            "Be strict: reserve 85-100 for genuinely strong, immediate-apply fits.",
-            "Seniority mismatch is heavily penalizing: a Senior/Staff/Principal/Lead "
-            "role, or one requiring 5+ years, for an early-career candidate should "
-            "score well below 60 and seniority_fit=mismatch.",
+            "Use responsibilities and required/minimum qualifications as primary evidence; do not use keyword overlap as the scoring method.",
+            "Calibrate broadly: 90-100 exceptional/direct fit; 80-89 strong; 70-79 reasonable; 60-69 weak/stretch; below 60 generally skip.",
+            "Do not automatically reject a strong 3-5 years-of-experience fit. Judge whether the resume evidence covers the actual scope and core requirements.",
+            "Senior/Staff/Principal/Lead scope that is materially beyond the resume should score below 60 and seniority_fit=mismatch.",
             "If the job's core required qualifications are NOT clearly evidenced in "
             "the resume, cap match_score below 80 and list them in main_gaps.",
             "Directional relevance alone (right domain, wrong depth/seniority) is NOT "
             "a high score.",
             "role_family in {swe, ai, ambiguous}.",
-            "resume_profile_used in {resume_swe, resume_ai}; pick the stronger match.",
+            "Use only the routed resume(s) supplied. resume_profile_used must reflect that route.",
             "seniority_fit in {good, stretch, mismatch} for an early-career candidate.",
             "hard_constraint_status in {ok, citizen_or_clearance, non_us, other}.",
             "recommended_action in {referral_now, apply_now, apply_if_time, skip}.",
-            "top_match_reasons: 2-4 short strings. main_gaps: 0-3 short strings "
-            "naming missing core requirements.",
+            "top_match_reasons: 2-4 short strings. main_gaps: 0-3 meaningful missing core requirements only.",
+            "Preferred or nice-to-have qualifications are minor gaps and must not appear in main_gaps unless they are clearly central to the role.",
             "Penalize hardware-first roles.",
             "Keep hands-on Solutions Architect, AI Solutions Architect, Forward Deployed, "
             "and implementation-engineering roles when the work is technical. "
@@ -888,12 +896,16 @@ def llm_match_batch(
         },
         "jobs": jobs_payload,
     }
+    if resume_route in {"resume_swe", "both"}:
+        prompt["resume_swe"] = profiles.get("resume_swe", "")
+    if resume_route in {"resume_ai", "both"}:
+        prompt["resume_ai"] = profiles.get("resume_ai", "")
     resp = requests.post(
-        "https://api.openai.com/v1/chat/completions",
+        llm_config.OPENAI_CHAT_COMPLETIONS_ENDPOINT,
         headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
         json={
             "model": model,
-            "temperature": 0,
+            "reasoning_effort": llm_config.configured_reasoning_effort(),
             "response_format": {"type": "json_object"},
             "messages": [
                 {"role": "system", "content": "You are a precise early-career tech recruiting screener. Return JSON only."},
@@ -903,9 +915,11 @@ def llm_match_batch(
         timeout=90,
     )
     resp.raise_for_status()
-    parsed = parse_json_object(resp.json()["choices"][0]["message"]["content"])
+    response_payload = resp.json()
+    usage = llm_config.usage_from_response(response_payload, model)
+    parsed = parse_json_object(response_payload["choices"][0]["message"]["content"])
     if not parsed:
-        return {}
+        return {}, usage
     out: Dict[str, Dict[str, Any]] = {}
     for item in parsed.get("results", []):
         key = str(item.get("key", "")).strip()
@@ -933,7 +947,9 @@ def llm_match_batch(
             "main_gaps": _as_list(item.get("main_gaps")),
             "recommended_action": str(item.get("recommended_action", "apply_if_time")),
         }
-    return out
+    usage["jobs_scored"] = len(out)
+    usage["estimated_usd"] = llm_config.estimate_cost_usd(usage)
+    return out, usage
 
 
 def _apply_rule_result(job: Dict[str, str], score_source: str, note: str) -> None:
@@ -989,17 +1005,18 @@ def score_survivors(
     profiles: Dict[str, Any],
     store: Dict[str, Dict[str, Any]],
     use_llm: bool,
-) -> Tuple[str, List[str], Dict[str, int]]:
+) -> Tuple[str, List[str], Dict[str, Any]]:
     """Attach match_score + LLM fields to each candidate in place.
 
     Incremental: reuse cached LLM scores only. Rule-overflow jobs are NOT
     treated as a completed cache hit. Returns (method, errors, counts).
     """
     errors: List[str] = []
-    counts = {
+    counts: Dict[str, Any] = {
         "reused": 0, "llm": 0, "new_or_changed": 0, "rule": 0, "sent": 0,
         "api_requests": 0, "recency_skipped": 0, "overflow": 0,
     }
+    counts.update(llm_config.empty_usage())
     fp = profiles["fingerprint"]
 
     for job in candidates:
@@ -1054,7 +1071,8 @@ def score_survivors(
             errors.append("no_openai_key")
         return (method, errors, counts)
 
-    model = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+    model = llm_config.configured_model()
+    counts["model"] = model
     eligible_sorted = sorted(eligible, key=llm_dispatch_priority, reverse=True)
     llm_pool = eligible_sorted[:LLM_MAX_CANDIDATES]
     overflow = eligible_sorted[LLM_MAX_CANDIDATES:]
@@ -1063,18 +1081,26 @@ def score_survivors(
 
     decisions: Dict[str, Dict[str, Any]] = {}
     llm_ok = False
-    chunk = 15
-    for i in range(0, len(llm_pool), chunk):
-        batch = llm_pool[i : i + chunk]
-        counts["api_requests"] += 1
+    chunk = 12
+    routed_batches: List[Tuple[str, List[Dict[str, str]]]] = []
+    for route, families in (
+        ("resume_swe", {"swe"}),
+        ("resume_ai", {"ai"}),
+        ("both", {"ambiguous"}),
+    ):
+        routed = [j for j in llm_pool if (j.get("role_family") or detect_role_family(j)) in families]
+        routed_batches.extend((route, routed[i : i + chunk]) for i in range(0, len(routed), chunk))
+    for batch_index, (route, batch) in enumerate(routed_batches):
         try:
-            result = llm_match_batch(batch, profiles, api_key, model)
+            result, usage = llm_match_batch(batch, profiles, api_key, model, route)
+            llm_config.merge_usage(counts, [usage])
             if result:
                 decisions.update(result)
                 llm_ok = True
             time.sleep(0.2)
         except Exception as exc:  # noqa: BLE001
-            errors.append(f"chunk_{i // chunk}: {type(exc).__name__}: {str(exc)[:120]}")
+            counts["api_requests"] += 1
+            errors.append(f"chunk_{batch_index}: {type(exc).__name__}: {str(exc)[:120]}")
 
     if not llm_ok:
         for job in eligible:
@@ -1106,6 +1132,7 @@ def score_survivors(
         counts["rule"] += 1
 
     method = "cache+llm" if counts["reused"] else "llm"
+    counts["jobs_scored"] = counts["llm"]
     return (method, errors, counts)
 
 
@@ -1196,9 +1223,9 @@ def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
     )
     return (
         RECENCY_BUCKET_RANK.get(bucket, len(RECENCY_BUCKETS)),
-        conf,
         tier_rank,
         -float(job.get("match_score", 0) or 0),
+        conf,
         referral,
         sfit_rank,
         verified,
@@ -1272,6 +1299,7 @@ def _stats_lines(stats: Dict[str, Any]) -> List[str]:
         f"cache reused {llm['reused']} / rule fallback+overflow {llm['rule']} "
         f"(recency-gated {llm['recency_skipped']}, overflow {llm.get('overflow', 0)}, "
         f"new/changed {llm['new_or_changed']})",
+        f"- LLM cost: {llm_config.format_usage(llm)}",
         f"- Output sizing: Tier A {out['tier_a']} / Tier B {out['tier_b']} / "
         f"A+B before cap {out['ab_before_cap']} / Shown in latest.md {out['shown']} (cap {MAX_VISIBLE})",
         f"- Recency (kept): <3h {rec['lt3h']} / 3-24h {rec['3to24h']} / "
@@ -1721,14 +1749,8 @@ def run() -> None:
             "dropped": sum(drops.values()),
         },
         "llm": {
+            **score_counts,
             "scored": score_counts["llm"],
-            "api_requests": score_counts.get("api_requests", 0),
-            "reused": score_counts["reused"],
-            "rule": score_counts["rule"],
-            "recency_skipped": score_counts.get("recency_skipped", 0),
-            "overflow": score_counts.get("overflow", 0),
-            "new_or_changed": score_counts["new_or_changed"],
-            "sent": score_counts.get("sent", 0),
         },
         "output": {
             "tier_a": len(tier_a),
@@ -1740,6 +1762,11 @@ def run() -> None:
         "screen_method": screen_method,
         "drops": dict(drops),
     }
+    RUNS_DIR.mkdir(parents=True, exist_ok=True)
+    (RUNS_DIR / f"{stamp}_stats.json").write_text(
+        json.dumps({"run_at": now_iso, **stats}, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
 
     # 12) Outputs (Tier A/B only)
     write_latest_md(visible, stats, stamp)
@@ -1767,6 +1794,11 @@ def run() -> None:
         "llm_api_requests": str(score_counts.get("api_requests", 0)),
         "llm_reused": str(score_counts["reused"]),
         "llm_rule_fallback": str(score_counts["rule"]),
+        "llm_input_tokens": str(score_counts.get("input_tokens", 0)),
+        "llm_cached_input_tokens": str(score_counts.get("cached_input_tokens", 0)),
+        "llm_output_tokens": str(score_counts.get("output_tokens", 0)),
+        "llm_reasoning_tokens": str(score_counts.get("reasoning_tokens", 0)),
+        "llm_estimated_usd": str(score_counts.get("estimated_usd", 0)),
         "digest_emitted": "1" if emit_digest else "0",
         "issue_title": f"ATS/LinkedIn alert {stamp} ({digest_count} new/promoted A/B)",
         "issue_body_path": str(alert_paths.get("issue_body", "")),
@@ -1782,6 +1814,7 @@ def run() -> None:
           f"/ cache reused {score_counts['reused']} / rule fallback+overflow {score_counts['rule']} "
           f"(recency-gated {score_counts.get('recency_skipped', 0)}, "
           f"overflow {score_counts.get('overflow', 0)}, new/changed {score_counts['new_or_changed']})")
+    print(f"LLM cost: {llm_config.format_usage(score_counts)}")
     print(f"Screening: {screen_method}" + (f" ({len(llm_errors)} llm errors)" if llm_errors else ""))
     print(f"Output: Tier A {len(tier_a)} / Tier B {len(tier_b)} / A+B before cap {ab_before_cap} "
           f"/ shown {len(visible)} (cap {MAX_VISIBLE}) | digest A/B {digest_count}")

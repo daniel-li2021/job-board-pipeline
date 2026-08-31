@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import os
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set
 
@@ -22,6 +24,7 @@ from .sap import scrape_sap
 from .smartrecruiters import scrape_smartrecruiters
 from .uber import scrape_uber
 from .workday import scrape_workday
+from .incremental import DetailCache
 
 REGISTRY_PATH = BASE_DIR / "source" / "official_careers.json"
 ATS_BOARDS_PATH = BASE_DIR / "source" / "ats_boards.json"
@@ -57,6 +60,7 @@ def scrape_company(
     company: Dict[str, Any],
     *,
     max_pages: int,
+    detail_cache: Optional[DetailCache] = None,
 ) -> Dict[str, Any]:
     adapter = (company.get("adapter") or "").strip().lower()
     name = company.get("name") or company.get("id") or adapter
@@ -74,13 +78,13 @@ def scrape_company(
             return scrape_lever(session, company=name, token=token)
         raise SourceUnavailable(f"unsupported ATS adapter {ats!r} for {name}")
     if adapter == "google":
-        return scrape_google(session, max_pages=max_pages)
+        return scrape_google(session, max_pages=max_pages, seen_job_ids=(detail_cache or DetailCache([])).seen_ids(name))
     if adapter == "amazon":
-        return scrape_amazon(session, max_pages=max_pages)
+        return scrape_amazon(session, max_pages=max_pages, seen_job_ids=(detail_cache or DetailCache([])).seen_ids(name))
     if adapter == "apple":
-        return scrape_apple(session, max_pages=max_pages)
+        return scrape_apple(session, max_pages=max_pages, seen_job_ids=(detail_cache or DetailCache([])).seen_ids(name))
     if adapter == "microsoft":
-        return scrape_microsoft(session, max_pages=max_pages)
+        return scrape_microsoft(session, max_pages=max_pages, detail_cache=detail_cache)
     if adapter == "workday":
         wd = company.get("workday") or {}
         return scrape_workday(
@@ -92,6 +96,7 @@ def scrape_company(
             max_pages=max_pages,
             public_prefix=wd.get("public_prefix"),
             extra_queries=wd.get("extra_queries"),
+            detail_cache=detail_cache,
         )
     if adapter == "greenhouse":
         gh = company.get("greenhouse") or {}
@@ -109,6 +114,7 @@ def scrape_company(
             company=name,
             slug=sr["slug"],
             max_pages=max_pages,
+            detail_cache=detail_cache,
         )
     if adapter == "oracle_hcm":
         oc = company.get("oracle_hcm") or {}
@@ -120,9 +126,10 @@ def scrape_company(
             public_job_base=oc["public_job_base"],
             max_pages=max_pages,
             extra_queries=oc.get("extra_queries"),
+            detail_cache=detail_cache,
         )
     if adapter == "sap":
-        return scrape_sap(session, max_pages=max_pages)
+        return scrape_sap(session, max_pages=max_pages, detail_cache=detail_cache)
     if adapter == "avature":
         av = company.get("avature") or {}
         return scrape_avature(
@@ -130,9 +137,10 @@ def scrape_company(
             company=name,
             search_url=av.get("search_url") or "https://bloomberg.avature.net/careers/SearchJobs",
             max_pages=max_pages,
+            detail_cache=detail_cache,
         )
     if adapter == "uber":
-        return scrape_uber(session, max_pages=max_pages)
+        return scrape_uber(session, max_pages=max_pages, detail_cache=detail_cache)
     raise SourceUnavailable(f"unknown adapter {adapter!r} for {name}")
 
 
@@ -157,7 +165,12 @@ def scrape_enabled(
     *,
     only: Optional[str] = None,
     max_pages: int = 50,
+    previous_jobs: Optional[List[Dict[str, Any]]] = None,
+    full_sweep: Optional[bool] = None,
 ) -> List[Dict[str, Any]]:
+    detail_cache = DetailCache(previous_jobs or [])
+    if full_sweep is None:
+        full_sweep = (os.getenv("OFFICIAL_FULL_SWEEP") or "").strip() == "1" or datetime.now(timezone.utc).weekday() == 6
     wanted = _only_ids(only)
     results: List[Dict[str, Any]] = []
     for company in enabled_companies():
@@ -165,8 +178,20 @@ def scrape_enabled(
         if wanted and cid not in wanted:
             continue
         try:
-            result = scrape_company(session, company, max_pages=max_pages)
+            adapter = (company.get("adapter") or "").strip().lower()
+            # Newest-sorted sources use adaptive overlap stopping. Full-board
+            # ATS APIs remain complete. Unsorted sources are shallow daily and
+            # automatically receive a deeper weekly Sunday sweep.
+            bounded_pages = max_pages
+            if not full_sweep and adapter not in {"ats", "greenhouse", "lever", "ashby", "google", "amazon", "apple", "microsoft"}:
+                bounded_pages = min(max_pages, 4)
+            result = scrape_company(
+                session, company, max_pages=bounded_pages, detail_cache=detail_cache,
+            )
             result["company_id"] = cid
+            result["incremental_mode"] = "full_sweep" if full_sweep else "incremental"
+            result["page_cap_applied"] = bounded_pages
+            result["full_listing_coverage"] = adapter in {"ats", "greenhouse", "lever", "ashby"}
             results.append(result)
         except SourceUnavailable as exc:
             results.append(_blocked_result(company, cid, exc, "blocked"))

@@ -17,6 +17,7 @@ import requests
 
 from ..schema import make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
+from .incremental import NewestFirstPager
 
 SOURCE = "amazon_official_careers"
 COMPANY = "Amazon"
@@ -49,6 +50,7 @@ def scrape_amazon(
     *,
     max_pages: int = 50,
     queries: Optional[List[str]] = None,
+    seen_job_ids: Optional[set[str]] = None,
 ) -> Dict[str, Any]:
     fetched_at = now_iso()
     queries = queries or DEFAULT_QUERIES
@@ -59,6 +61,7 @@ def scrape_amazon(
     errors: List[str] = []
 
     for keyword in queries:
+        pager = NewestFirstPager(seen_job_ids or set())
         offset = 0
         query_ids: set[str] = set()
         query_max_pages = min(max_pages, QUERY_PAGE_CAPS.get(keyword, max_pages))
@@ -114,6 +117,10 @@ def scrape_amazon(
                         fetched_at=fetched_at,
                     )
                 )
+            if pager.should_stop_after(
+                (_page + 1), page_ids, [str(item.get("posted_date") or "") for item in rows if isinstance(item, dict)]
+            ):
+                break
             offset += RESULT_LIMIT
             if hits and offset >= hits:
                 break
@@ -125,7 +132,7 @@ def scrape_amazon(
         "method": "HTTP GET search.json",
         "search_url": f"{HTML_SEARCH}?base_query=software+engineer&country=USA&offset=0&result_limit=10&sort=recent",
         "search_urls": [JSON_URL],
-        "pagination": f"offset=0,{RESULT_LIMIT},... ; result_limit={RESULT_LIMIT}; stop on empty/repeat or hits",
+        "pagination": f"newest-first offset by {RESULT_LIMIT}; minimum 2 pages, then two seen pages + one overlap page; otherwise hits/cap",
         "pages_fetched": pages,
         "raw_jobs": raw_count,
         "jobs": jobs,
