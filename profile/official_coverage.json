@@ -21,7 +21,7 @@
     "cisco": {"status": "unvalidated", "notes": ""},
     "sap": {"status": "unvalidated", "notes": ""},
     "hpe": {"status": "unvalidated", "notes": ""},
-    "amd": {"status": "unsupported", "notes": "Official search link captured; adapter pending"},
+    "amd": {"status": "unvalidated", "notes": "Public Jibe/iCIMS JSON adapter enabled; review generated coverage audit"},
     "zoom": {"status": "unvalidated", "notes": "Workday adapter enabled; review generated coverage audit"},
     "goldman-sachs": {"status": "unsupported", "notes": "Official search link captured; adapter pending"},
     "pure-storage": {"status": "unvalidated", "notes": "Greenhouse adapter enabled; review generated coverage audit"},

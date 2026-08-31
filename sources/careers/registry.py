@@ -13,12 +13,16 @@ from .amazon import scrape_amazon
 from .apple import scrape_apple
 from .ashby import scrape_ashby
 from .avature import scrape_avature
+from .eightfold_html import scrape_eightfold_html
 from .google import scrape_google
 from .greenhouse import scrape_greenhouse
+from .happydance import scrape_happydance
+from .jibe import scrape_jibe
 from .disney import scrape_disney
 from .lever import scrape_lever
 from .linkedin_company import scrape_linkedin_company
 from .meta import scrape_meta
+from .mathworks import scrape_mathworks
 from .microsoft import scrape_microsoft
 from .microsoft import scrape_pcsx
 from .oracle_hcm import scrape_oracle_hcm
@@ -98,6 +102,15 @@ def scrape_company(
             domain=pc["domain"],
             max_pages=max_pages,
         )
+    if adapter == "eightfold_html":
+        ef = company.get("eightfold_html") or {}
+        return scrape_eightfold_html(
+            session,
+            company=name,
+            portal=ef["portal"],
+            domain=ef["domain"],
+            queries=ef.get("queries"),
+        )
     if adapter == "disney":
         return scrape_disney(session, max_pages=max_pages)
     if adapter == "linkedin_company":
@@ -147,6 +160,34 @@ def scrape_company(
             company=name,
             search_url=rd["search_url"],
             max_pages=max_pages,
+            queries=rd.get("queries"),
+            query_param=rd.get("query_param", "query"),
+            page_param=rd.get("page_param", "page"),
+            country_param=rd.get("country_param", "country_codes[]"),
+            country_value=rd.get("country_value", "US"),
+            page_size=int(rd.get("page_size") or 30),
+        )
+    if adapter == "mathworks":
+        return scrape_mathworks(session, max_pages=max_pages)
+    if adapter == "happydance":
+        hd = company.get("happydance") or {}
+        return scrape_happydance(
+            session,
+            company=name,
+            base_url=hd["base_url"],
+            max_pages=max_pages,
+            queries=hd.get("queries"),
+            searches=hd.get("searches"),
+        )
+    if adapter == "jibe":
+        jb = company.get("jibe") or {}
+        return scrape_jibe(
+            session,
+            company=name,
+            api_url=jb["api_url"],
+            max_pages=max_pages,
+            queries=jb.get("queries"),
+            country=jb.get("country", "United States"),
         )
     if adapter == "oracle_hcm":
         oc = company.get("oracle_hcm") or {}
@@ -168,6 +209,10 @@ def scrape_company(
             company=name,
             search_url=av.get("search_url") or "https://bloomberg.avature.net/careers/SearchJobs",
             max_pages=max_pages,
+            queries=av.get("queries"),
+            query_param=av.get("query_param", "q"),
+            page_size=int(av.get("page_size") or 12),
+            base_url=av.get("base_url") or "https://bloomberg.avature.net",
         )
     if adapter == "uber":
         return scrape_uber(session, max_pages=max_pages)

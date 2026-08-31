@@ -65,6 +65,9 @@ def scrape_avature(
     max_pages: int = 50,
     queries: Optional[List[str]] = None,
     fetch_details: bool = True,
+    query_param: str = "q",
+    page_size: int = PAGE_SIZE,
+    base_url: str = "https://bloomberg.avature.net",
 ) -> Dict[str, Any]:
     fetched_at = now_iso()
     queries = queries or DEFAULT_QUERIES
@@ -79,14 +82,14 @@ def scrape_avature(
     for query in queries:
         query_ids: set[str] = set()
         for page in range(max_pages):
-            offset = page * PAGE_SIZE
+            offset = page * page_size
             payload = http_get(
                 session,
                 search_url,
                 label=f"{company} avature",
                 params={
-                    "q": query,
-                    "jobRecordsPerPage": PAGE_SIZE,
+                    query_param: query,
+                    "jobRecordsPerPage": page_size,
                     "jobOffset": offset,
                 },
             )
@@ -105,7 +108,7 @@ def scrape_avature(
                 seen.add(jid)
                 if location and not keep_us_or_unknown(location):
                     continue
-                official = urljoin("https://bloomberg.avature.net", href)
+                official = urljoin(base_url, href)
                 description = ""
                 posted = ""
                 if fetch_details and detail_fetches < MAX_DETAILS:
@@ -149,7 +152,7 @@ def scrape_avature(
                         fetched_at=fetched_at,
                     )
                 )
-            if len(cards) < PAGE_SIZE:
+            if len(cards) < page_size:
                 break
             time.sleep(SLEEP_S)
 
@@ -157,9 +160,9 @@ def scrape_avature(
         "company": company,
         "source": source,
         "method": "HTTP GET Avature SearchJobs HTML + JobDetail HTML",
-        "search_url": f"{search_url}?q=software+engineer&jobRecordsPerPage={PAGE_SIZE}&jobOffset=0",
+        "search_url": f"{search_url}?{query_param}=software+engineer&jobRecordsPerPage={page_size}&jobOffset=0",
         "search_urls": [search_url],
-        "pagination": f"jobOffset=0,{PAGE_SIZE},... ; stop on empty/repeat or short page",
+        "pagination": f"jobOffset=0,{page_size},... ; stop on empty/repeat or short page",
         "pages_fetched": pages,
         "raw_jobs": raw_count,
         "jobs": jobs,

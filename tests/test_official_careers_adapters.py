@@ -1,7 +1,13 @@
+import json
 import unittest
 
+from sources.careers.avature import scrape_avature
 from sources.careers.disney import scrape_disney
+from sources.careers.eightfold_html import scrape_eightfold_html
+from sources.careers.happydance import scrape_happydance
+from sources.careers.jibe import scrape_jibe
 from sources.careers.linkedin_company import scrape_linkedin_company
+from sources.careers.mathworks import scrape_mathworks
 from sources.careers.meta import scrape_meta
 from sources.careers.radancy import scrape_radancy
 from sources.careers.tiktok import scrape_bytedance, scrape_tiktok
@@ -102,6 +108,81 @@ class OfficialAdapterTests(unittest.TestCase):
         )
         self.assertEqual(["JR-1"], [job["job_id"] for job in result["jobs"]])
         self.assertEqual("US", session.calls[0][2]["params"]["country_codes[]"])
+
+    def test_radancy_supports_talentbrew_query_and_pagination_parameters(self):
+        html = """<ul id="search-results-list"><li class="search-results-list__list-item">
+          <a class="sr-job-link" href="/job/a/software-engineer/1/42"><h2>Software Engineer</h2></a>
+          <span class="job-location">San Jose, California, United States</span>
+          <span class="jobId">Job ID: 42</span></li></ul>"""
+        session = Session(gets=[Response(text=html)])
+        result = scrape_radancy(
+            session, company="Example", search_url="https://careers.example/search-jobs",
+            max_pages=1, queries=["software"], fetch_details=False,
+            query_param="k", page_param="p", country_param=None, page_size=15,
+        )
+        self.assertEqual(["42"], [job["job_id"] for job in result["jobs"]])
+        self.assertEqual({"k": "software", "p": 1}, session.calls[0][2]["params"])
+
+    def test_eightfold_html_reads_embedded_public_positions(self):
+        payload = {"positions": [{
+            "id": 5, "ats_job_id": "JR5", "posting_name": "Software Engineer",
+            "locations": ["Los Gatos, California, United States of America"],
+            "t_create": 1787702400,
+            "canonicalPositionUrl": "https://jobs.example/careers/job/5",
+        }]}
+        html = f'<code id="smartApplyData">{json.dumps(payload)}</code>'
+        result = scrape_eightfold_html(
+            Session(gets=[Response(text=html)]), company="Example",
+            portal="https://jobs.example/careers", domain="example.com", queries=["software"],
+        )
+        self.assertEqual(["JR5"], [job["job_id"] for job in result["jobs"]])
+
+    def test_jibe_reads_complete_public_job_rows(self):
+        payload = {"jobs": [{"data": {
+            "req_id": "A1", "title": "AI Engineer", "full_location": "Austin, Texas",
+            "canonical_url": "https://careers.example/jobs/A1", "description": "Build AI",
+            "create_date": "2026-08-30T00:00:00+0000",
+        }}], "totalCount": 1, "filter": {"displayLimit": 10}}
+        result = scrape_jibe(
+            Session(gets=[Response(payload=payload)]), company="Example",
+            api_url="https://careers.example/api/jobs", max_pages=1, queries=["AI engineer"],
+        )
+        self.assertEqual(["A1"], [job["job_id"] for job in result["jobs"]])
+
+    def test_mathworks_parses_server_rendered_search(self):
+        html = """<table><tr><td><input class="job_posting_checkbox" value="37333"></td>
+          <td class="search_result_desc"><div class="search_title"><a href="/company/jobs/opportunities/37333-test">Software Engineer</a></div>
+          <span class="add_font_color_green">US-MA-Natick</span></td></tr></table>"""
+        result = scrape_mathworks(
+            Session(gets=[Response(text=html)]), max_pages=1,
+            queries=["software"], fetch_details=False,
+        )
+        self.assertEqual(["37333"], [job["job_id"] for job in result["jobs"]])
+
+    def test_happydance_reads_paginated_public_api(self):
+        payload = {"jobs": [{
+            "Id": "r-1", "OriginalId": "R-1", "Title": "Software Engineer",
+            "Locations": [{"Identifier": "Austin, Texas"}],
+            "Urls": [{"Url": "/jobs/r-1/software-engineer/", "IsDefault": True}],
+        }], "totalPages": 1}
+        result = scrape_happydance(
+            Session(gets=[Response(payload=payload)]), company="Example",
+            base_url="https://careers.example", max_pages=1,
+            queries=["software"], fetch_details=False,
+        )
+        self.assertEqual(["R-1"], [job["job_id"] for job in result["jobs"]])
+
+    def test_avature_supports_alternate_search_parameter(self):
+        html = """<article><a href="/careers/JobDetail/New-York-United-States-Software-Engineer/42">
+          Software Engineer</a><span class="location">United States - NY New York</span></article>"""
+        session = Session(gets=[Response(text=html)])
+        result = scrape_avature(
+            session, company="Example", search_url="https://careers.example/careers/OpenRoles",
+            max_pages=1, queries=["software"], fetch_details=False,
+            query_param="search", page_size=10, base_url="https://careers.example",
+        )
+        self.assertEqual(["42"], [job["job_id"] for job in result["jobs"]])
+        self.assertEqual("software", session.calls[0][2]["params"]["search"])
 
     def test_linkedin_guest_search_only_accepts_linkedin_company(self):
         html = """

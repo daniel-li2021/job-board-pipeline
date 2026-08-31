@@ -221,6 +221,10 @@ lightly (`sources/official.py`).
 | LinkedIn | `sources/careers/linkedin_company.py` | logged-out guest jobs endpoint pinned to company id `1337` | `start=0,10,...` |
 | Walmart | `sources/careers/walmart.py` | combined hybrid-search POST API | `page=0,1,...`, `size=25` |
 | Disney / Qualcomm | `sources/careers/disney.py`, generic PCSX in `microsoft.py` | server-rendered US results / Eightfold search+detail | bounded per role query |
+| CVS Health / Yahoo / Wells Fargo | `sources/careers/workday.py` | public Workday CXS list+detail | bounded `offset=0,20,40,...` per role query |
+| Ansys / NetApp | `sources/careers/radancy.py` | server-rendered Radancy/TalentBrew rows + JobPosting JSON-LD | `p=1,2,...` |
+| Netflix / MathWorks | `sources/careers/eightfold_html.py`, `sources/careers/mathworks.py` | embedded public Eightfold positions / server-rendered search + JSON-LD | focused first-page variants / `page=2,3,...` |
+| AMD / Verizon / Two Sigma | `sources/careers/jibe.py`, `sources/careers/happydance.py`, `sources/careers/avature.py` | anonymous JSON feeds / alternate public Avature HTML | source-reported pages or offsets |
 | Palantir / WeRide | `sources/careers/lever.py` | public Lever postings API | single JSON payload |
 | Greenhouse / Lever / Ashby companies | existing generic ATS adapters via registry `adapter: ats` or direct adapter config | public board APIs from `source/ats_boards.json` or a verified official token | provider pagination |
 

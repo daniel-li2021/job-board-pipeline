@@ -179,12 +179,14 @@ class DashboardPolicyTests(unittest.TestCase):
 
     def test_official_registry_has_search_link_only_targets(self) -> None:
         catalog = {entry["id"]: entry for entry in dashboard.official_search_catalog()}
-        for company_id in ("amd", "goldman-sachs"):
+        for company_id in ("goldman-sachs", "citadel", "tesla", "wayfair"):
             self.assertEqual("search_link_only", catalog[company_id]["automation"])
             self.assertTrue(catalog[company_id]["search_links"])
         for company_id in (
             "disney", "qualcomm", "meta", "tiktok", "linkedin", "walmart",
-            "zoom", "pure-storage", "databricks", "roblox", "ebay",
+            "zoom", "pure-storage", "databricks", "roblox", "ebay", "amd",
+            "mathworks", "netapp", "netflix", "two-sigma", "cvs",
+            "wells-fargo", "yahoo", "ansys", "verizon",
         ):
             self.assertEqual("active", catalog[company_id]["automation"])
             self.assertTrue(catalog[company_id]["search_links"])
@@ -737,6 +739,9 @@ class RegistryCoverageTests(unittest.TestCase):
                 "oracle_hcm": "oracle_hcm",
                 "pcsx": "pcsx",
                 "radancy": "radancy",
+                "eightfold_html": "eightfold_html",
+                "happydance": "happydance",
+                "jibe": "jibe",
             }.get(adapter)
             if config_key:
                 self.assertTrue(company.get(config_key), company["id"])
