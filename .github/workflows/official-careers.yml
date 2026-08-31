@@ -74,8 +74,18 @@ jobs:
             echo "No official-careers changes to commit."
           else
             git commit -m "chore: official careers ${{ steps.pipeline.outputs.stamp }}"
-            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
-            git push origin "HEAD:${GITHUB_REF_NAME}"
+            for attempt in 1 2 3; do
+              git fetch origin "${GITHUB_REF_NAME}"
+              if git rebase "origin/${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+                exit 0
+              fi
+              git rebase --abort || true
+              if [ "$attempt" -eq 3 ]; then
+                echo "Unable to publish after 3 branch-race retries."
+                exit 1
+              fi
+              sleep $((attempt * 5))
+            done
           fi
 
       - name: Upload digest artifact

@@ -688,6 +688,10 @@ class ReportingWorkflowTests(unittest.TestCase):
         self.assertIn("workflow_dispatch:", syncareer)
         self.assertIn("OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}", syncareer)
         self.assertNotIn("--no-llm", syncareer)
+        for workflow in (board, official, syncareer):
+            self.assertIn("for attempt in 1 2 3", workflow)
+            self.assertIn('git rebase "origin/${GITHUB_REF_NAME}"', workflow)
+            self.assertNotIn('git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true', workflow)
         self.assertIn("actions/deploy-pages@v4", pages)
         self.assertIn("concurrency:", pages)
         self.assertIn("contents: read", pages)

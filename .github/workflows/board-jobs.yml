@@ -72,8 +72,18 @@ jobs:
           else
             git commit -m "chore: board job alert ${{ steps.pipeline.outputs.stamp }}"
             # Rebase on any concurrent local source pushes before pushing back.
-            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
-            git push origin "HEAD:${GITHUB_REF_NAME}"
+            for attempt in 1 2 3; do
+              git fetch origin "${GITHUB_REF_NAME}"
+              if git rebase "origin/${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+                exit 0
+              fi
+              git rebase --abort || true
+              if [ "$attempt" -eq 3 ]; then
+                echo "Unable to publish after 3 branch-race retries."
+                exit 1
+              fi
+              sleep $((attempt * 5))
+            done
           fi
 
       - name: Upload alert artifact
