@@ -222,19 +222,18 @@ lightly (`sources/official.py`).
 | Walmart | `sources/careers/walmart.py` | combined hybrid-search POST API | `page=0,1,...`, `size=25` |
 | Disney / Qualcomm | `sources/careers/disney.py`, generic PCSX in `microsoft.py` | server-rendered US results / Eightfold search+detail | bounded per role query |
 | Palantir / WeRide | `sources/careers/lever.py` | public Lever postings API | single JSON payload |
+| Greenhouse / Lever / Ashby companies | existing generic ATS adapters via registry `adapter: ats` or direct adapter config | public board APIs from `source/ats_boards.json` or a verified official token | provider pagination |
 
 Registry: `source/official_careers.json`. Source-side US filters are used
 when the API actually honors them. Uber’s HCM finder does not, so rows are
 collected then passed through conservative `keep_us_or_unknown` (keep US /
 Remote-US / multi-office if any US / ambiguous; drop confirmed all-non-US).
 
-The registry now carries A/B/C implementation priority plus official search
-links for 86 companies. Easy existing-adapter wins include Airbnb, Anthropic,
-Dropbox, Instacart, MongoDB, OpenAI, Reddit, Block, and TransUnion. AMD remains
-link-only because anonymous automation receives HTTP 403; eBay's Phenom
-`/widgets` flow and Goldman Sachs' custom GraphQL search remain link-only to
-avoid brittle browser emulation. All links and automation state are rendered
-directly from the registry on the dashboard.
+Companies without a verified, sufficiently complete low-risk public adapter
+remain link-only registry entries. They make no external scrape call, but keep
+an official search link for manual review and cross-pipeline coverage audits.
+All links and automation state are rendered directly from the registry on the
+dashboard.
 
 ## Entry point
 

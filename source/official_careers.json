@@ -1,5 +1,5 @@
 {
-  "_comment": "Official company careers discovery registry. Adapters live in sources/careers/. priority_tier controls implementation priority only; adapter=skip entries remain link-only and make no external scrape call. Matching is handled downstream by board_pipeline.",
+  "_comment": "Official company careers discovery registry. Adapters live in sources/careers/. priority_tier controls implementation priority; adapter=ats reuses source/ats_boards.json, while adapter=skip remains link-only and makes no external call. Matching is handled downstream by board_pipeline.",
   "max_pages_default": 12,
   "companies": [
     {
@@ -50,7 +50,7 @@
       "search_links": [
         {
           "label": "US software",
-          "url": "https://jobs.careers.microsoft.com/global/en/search?q=software%20engineer&lc=United%20States"
+          "url": "https://apply.careers.microsoft.com/careers?query=software%20engineer&location=United%20States"
         }
       ]
     },
@@ -69,7 +69,10 @@
       "workday": {
         "host": "https://nvidia.wd5.myworkdayjobs.com",
         "tenant": "nvidia",
-        "site": "NVIDIAExternalCareerSite"
+        "site": "NVIDIAExternalCareerSite",
+        "extra_queries": [
+          "infrastructure engineer"
+        ]
       }
     },
     {
@@ -87,7 +90,10 @@
       "workday": {
         "host": "https://salesforce.wd12.myworkdayjobs.com",
         "tenant": "salesforce",
-        "site": "External_Career_Site"
+        "site": "External_Career_Site",
+        "extra_queries": [
+          "software engineering mts"
+        ]
       }
     },
     {
@@ -105,7 +111,10 @@
       "workday": {
         "host": "https://adobe.wd5.myworkdayjobs.com",
         "tenant": "adobe",
-        "site": "external_experienced"
+        "site": "external_experienced",
+        "extra_queries": [
+          "software development engineer"
+        ]
       }
     },
     {
@@ -158,7 +167,7 @@
       "search_links": [
         {
           "label": "All official openings",
-          "url": "https://boards.greenhouse.io/doordashusa"
+          "url": "https://job-boards.greenhouse.io/doordashusa"
         }
       ],
       "greenhouse": {
@@ -193,7 +202,7 @@
       "search_links": [
         {
           "label": "All official openings",
-          "url": "https://boards.greenhouse.io/pinterest"
+          "url": "https://www.pinterestcareers.com/jobs/"
         }
       ],
       "greenhouse": {
@@ -271,13 +280,18 @@
       "search_links": [
         {
           "label": "Software search",
-          "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions?keyword=software%20engineer"
+          "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs?keyword=software%20engineer"
         }
       ],
       "oracle_hcm": {
         "host": "https://jpmc.fa.oraclecloud.com",
         "site_number": "CX_1001",
-        "public_job_base": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job"
+        "public_job_base": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job",
+        "extra_queries": [
+          "full stack",
+          "python react",
+          "agentic ai"
+        ]
       }
     },
     {
@@ -307,13 +321,16 @@
       "search_links": [
         {
           "label": "Software search",
-          "url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/requisitions?keyword=software%20engineer"
+          "url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/jobs?keyword=software%20engineer"
         }
       ],
       "oracle_hcm": {
         "host": "https://eeho.fa.us2.oraclecloud.com",
         "site_number": "CX_45001",
-        "public_job_base": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job"
+        "public_job_base": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job",
+        "extra_queries": [
+          "core infrastructure"
+        ]
       }
     },
     {
@@ -327,6 +344,230 @@
         {
           "label": "US software search",
           "url": "https://careers.walmart.com/results?q=software%20engineer&jobCity=United%20States"
+        }
+      ]
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://www.cloudflare.com/careers/#open-roles"
+        }
+      ]
+    },
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://stripe.com/careers/search"
+        }
+      ]
+    },
+    {
+      "id": "coinbase",
+      "name": "Coinbase",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://www.coinbase.com/careers"
+        }
+      ]
+    },
+    {
+      "id": "robinhood",
+      "name": "Robinhood",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://careers.robinhood.com/"
+        }
+      ]
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://www.figma.com/careers/"
+        }
+      ]
+    },
+    {
+      "id": "gitlab",
+      "name": "GitLab",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://job-boards.greenhouse.io/gitlab"
+        }
+      ]
+    },
+    {
+      "id": "discord",
+      "name": "Discord",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://job-boards.greenhouse.io/discord"
+        }
+      ]
+    },
+    {
+      "id": "asana",
+      "name": "Asana",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://asana.com/jobs"
+        }
+      ]
+    },
+    {
+      "id": "brex",
+      "name": "Brex",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://www.brex.com/careers"
+        }
+      ]
+    },
+    {
+      "id": "samsara",
+      "name": "Samsara",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://www.samsara.com/company/careers/roles"
+        }
+      ]
+    },
+    {
+      "id": "lyft",
+      "name": "Lyft",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://www.lyft.com/careers"
+        }
+      ]
+    },
+    {
+      "id": "spotify",
+      "name": "Spotify",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://jobs.lever.co/spotify"
+        }
+      ]
+    },
+    {
+      "id": "ramp",
+      "name": "Ramp",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://jobs.ashbyhq.com/ramp"
+        }
+      ]
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://jobs.ashbyhq.com/notion"
+        }
+      ]
+    },
+    {
+      "id": "linear",
+      "name": "Linear",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://jobs.ashbyhq.com/linear"
+        }
+      ]
+    },
+    {
+      "id": "cohere",
+      "name": "Cohere",
+      "adapter": "ats",
+      "enabled": true,
+      "priority_tier": "A",
+      "covered_by": "ats",
+      "search_links": [
+        {
+          "label": "All official openings",
+          "url": "https://jobs.ashbyhq.com/cohere"
         }
       ]
     },
@@ -345,7 +586,10 @@
       "workday": {
         "host": "https://cisco.wd5.myworkdayjobs.com",
         "tenant": "cisco",
-        "site": "Cisco_Careers"
+        "site": "Cisco_Careers",
+        "extra_queries": [
+          "full stack backend"
+        ]
       }
     },
     {
@@ -396,7 +640,7 @@
     {
       "id": "ebay",
       "name": "eBay",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "B",
       "search_links": [
@@ -405,7 +649,11 @@
           "url": "https://jobs.ebayinc.com/us/en/search-results?keywords=software%20engineer"
         }
       ],
-      "skip_reason": "Tier B · Phenom renders results through a site-specific /widgets payload; keep the verified official link instead of adding brittle browser emulation."
+      "workday": {
+        "host": "https://ebay.wd5.myworkdayjobs.com",
+        "tenant": "ebay",
+        "site": "apply"
+      }
     },
     {
       "id": "qualcomm",
@@ -496,7 +744,7 @@
       "search_links": [
         {
           "label": "All official openings",
-          "url": "https://job-boards.greenhouse.io/databricks"
+          "url": "https://www.databricks.com/company/careers/open-positions"
         }
       ],
       "greenhouse": {
@@ -512,7 +760,7 @@
       "search_links": [
         {
           "label": "All official openings",
-          "url": "https://job-boards.greenhouse.io/roblox"
+          "url": "https://careers.roblox.com/jobs"
         }
       ],
       "greenhouse": {
@@ -550,7 +798,7 @@
     {
       "id": "applovin",
       "name": "AppLovin",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -559,7 +807,9 @@
           "url": "https://www.applovin.com/en/careers"
         }
       ],
-      "skip_reason": "Tier A · High-value engineering employer; page loads job listings dynamically; inspect XHR."
+      "greenhouse": {
+        "token": "applovin"
+      }
     },
     {
       "id": "bytedance",
@@ -578,7 +828,7 @@
     {
       "id": "chime",
       "name": "Chime",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -587,7 +837,9 @@
           "url": "https://careers.chime.com/jobs/"
         }
       ],
-      "skip_reason": "Tier A · High-value fintech; official search supports keyword/team/location filters."
+      "greenhouse": {
+        "token": "chime"
+      }
     },
     {
       "id": "citadel",
@@ -676,16 +928,20 @@
     {
       "id": "intel",
       "name": "Intel",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
         {
           "label": "Job search",
-          "url": "https://jobs.intel.com/"
+          "url": "https://intel.wd1.myworkdayjobs.com/External"
         }
       ],
-      "skip_reason": "Tier A · Large engineering employer; inspect ATS, filter US software."
+      "workday": {
+        "host": "https://intel.wd1.myworkdayjobs.com",
+        "tenant": "intel",
+        "site": "External"
+      }
     },
     {
       "id": "mathworks",
@@ -713,7 +969,9 @@
           "url": "https://www.mongodb.com/company/careers/see-jobs"
         }
       ],
-      "greenhouse": {"token": "mongodb"}
+      "greenhouse": {
+        "token": "mongodb"
+      }
     },
     {
       "id": "morgan-stanley",
@@ -816,7 +1074,7 @@
     {
       "id": "redhat",
       "name": "Red Hat",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -825,12 +1083,16 @@
           "url": "https://www.redhat.com/en/jobs"
         }
       ],
-      "skip_reason": "Tier A · Strong software/platform employer; inspect underlying ATS."
+      "workday": {
+        "host": "https://redhat.wd5.myworkdayjobs.com",
+        "tenant": "redhat",
+        "site": "jobs"
+      }
     },
     {
       "id": "roku",
       "name": "Roku",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -839,7 +1101,9 @@
           "url": "https://www.weareroku.com/jobs/search/"
         }
       ],
-      "skip_reason": "Tier A · Strong SWE hiring; structured search page, inspect API."
+      "greenhouse": {
+        "token": "roku"
+      }
     },
     {
       "id": "block",
@@ -853,7 +1117,9 @@
           "url": "https://block.xyz/careers/jobs"
         }
       ],
-      "greenhouse": {"token": "block"}
+      "greenhouse": {
+        "token": "block"
+      }
     },
     {
       "id": "tesla",
@@ -886,7 +1152,7 @@
     {
       "id": "verkada",
       "name": "Verkada",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -895,7 +1161,9 @@
           "url": "https://www.verkada.com/careers/"
         }
       ],
-      "skip_reason": "Tier A · Strong SWE/AI/hardware-software employer; inspect job board."
+      "greenhouse": {
+        "token": "verkada"
+      }
     },
     {
       "id": "visa",
@@ -906,7 +1174,7 @@
       "search_links": [
         {
           "label": "Careers",
-          "url": "https://corporate.visa.com/en/careers.html"
+          "url": "https://careers.smartrecruiters.com/Visa"
         }
       ],
       "skip_reason": "Tier A · Large technology org; identify direct search backend."
@@ -923,21 +1191,27 @@
           "url": "https://jobs.lever.co/weride"
         }
       ],
-      "lever": {"token": "weride"}
+      "lever": {
+        "token": "weride"
+      }
     },
     {
       "id": "workday",
       "name": "Workday",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
         {
           "label": "Careers",
-          "url": "https://www.workday.com/en-us/company/careers/overview.html"
+          "url": "https://workday.wd5.myworkdayjobs.com/Workday"
         }
       ],
-      "skip_reason": "Tier A · Strong enterprise SWE employer; identify its external recruiting site."
+      "workday": {
+        "host": "https://workday.wd5.myworkdayjobs.com",
+        "tenant": "workday",
+        "site": "Workday"
+      }
     },
     {
       "id": "zillow",
@@ -956,7 +1230,7 @@
     {
       "id": "zscaler",
       "name": "Zscaler",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
@@ -965,12 +1239,14 @@
           "url": "https://www.zscaler.com/careers/search"
         }
       ],
-      "skip_reason": "Tier A · Strong cloud/security software employer; inspect search backend."
+      "greenhouse": {
+        "token": "zscaler"
+      }
     },
     {
       "id": "chewy",
       "name": "Chewy",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "B",
       "search_links": [
@@ -979,7 +1255,12 @@
           "url": "https://careers.chewy.com/us/en/search-results"
         }
       ],
-      "skip_reason": "Tier B · Worth adding if generic ATS; good SWE volume."
+      "workday": {
+        "host": "https://wd5.myworkdaysite.com",
+        "tenant": "chewy",
+        "site": "External",
+        "public_prefix": "recruiting/chewy/External"
+      }
     },
     {
       "id": "cvs",
@@ -998,7 +1279,7 @@
     {
       "id": "duolingo",
       "name": "Duolingo",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "B",
       "search_links": [
@@ -1007,7 +1288,9 @@
           "url": "https://careers.duolingo.com/"
         }
       ],
-      "skip_reason": "Tier B · High-quality but smaller volume; implement if ATS is easy."
+      "greenhouse": {
+        "token": "duolingo"
+      }
     },
     {
       "id": "equinix",
@@ -1026,21 +1309,25 @@
     {
       "id": "f5",
       "name": "F5",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "B",
       "search_links": [
         {
           "label": "Careers",
-          "url": "https://www.f5.com/company/careers"
+          "url": "https://ffive.wd5.myworkdayjobs.com/f5jobs"
         }
       ],
-      "skip_reason": "Tier B · Good systems/security relevance; implement if generic."
+      "workday": {
+        "host": "https://ffive.wd5.myworkdayjobs.com",
+        "tenant": "ffive",
+        "site": "f5jobs"
+      }
     },
     {
       "id": "ixl",
       "name": "IXL Learning",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "B",
       "search_links": [
@@ -1049,7 +1336,9 @@
           "url": "https://www.ixl.com/company/careers"
         }
       ],
-      "skip_reason": "Tier B · Relevant SWE employer; smaller volume, easy-only."
+      "greenhouse": {
+        "token": "ixllearning"
+      }
     },
     {
       "id": "wayfair",
@@ -1102,7 +1391,7 @@
       "search_links": [
         {
           "label": "Careers",
-          "url": "https://careers.ansys.com/"
+          "url": "https://careers.synopsys.com/search-jobs/ansys"
         }
       ],
       "skip_reason": "Tier C · Technical employer but lower priority; implement only if near-zero incremental cost."
@@ -1124,7 +1413,7 @@
     {
       "id": "flex",
       "name": "Flex",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "C",
       "search_links": [
@@ -1133,12 +1422,16 @@
           "url": "https://flex.com/careers"
         }
       ],
-      "skip_reason": "Tier C · Lower SWE signal; easy-only."
+      "workday": {
+        "host": "https://flextronics.wd1.myworkdayjobs.com",
+        "tenant": "flextronics",
+        "site": "Careers"
+      }
     },
     {
       "id": "iqvia",
       "name": "IQVIA",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "C",
       "search_links": [
@@ -1147,7 +1440,11 @@
           "url": "https://jobs.iqvia.com/"
         }
       ],
-      "skip_reason": "Tier C · Large but mixed roles; easy-only with software filters."
+      "workday": {
+        "host": "https://iqvia.wd1.myworkdayjobs.com",
+        "tenant": "iqvia",
+        "site": "IQVIA"
+      }
     },
     {
       "id": "johnson-johnson",
@@ -1158,7 +1455,7 @@
       "search_links": [
         {
           "label": "Careers",
-          "url": "https://www.careers.jnj.com/"
+          "url": "https://www.careers.jnj.com/en/"
         }
       ],
       "skip_reason": "Tier C · Large mixed-role employer; only if generic and cheap."
@@ -1166,7 +1463,7 @@
     {
       "id": "nasdaq",
       "name": "Nasdaq",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "C",
       "search_links": [
@@ -1175,26 +1472,32 @@
           "url": "https://www.nasdaq.com/about/careers"
         }
       ],
-      "skip_reason": "Tier C · Some strong tech roles but lower volume; easy-only."
+      "workday": {
+        "host": "https://nasdaq.wd1.myworkdayjobs.com",
+        "tenant": "nasdaq",
+        "site": "Global_External_Site"
+      }
     },
     {
       "id": "pointclickcare",
       "name": "PointClickCare",
-      "adapter": "skip",
+      "adapter": "lever",
       "enabled": true,
       "priority_tier": "C",
       "search_links": [
         {
-          "label": "Careers",
-          "url": "https://careers.pointclickcare.com/"
+          "label": "All official openings",
+          "url": "https://jobs.lever.co/pointclickcare"
         }
       ],
-      "skip_reason": "Tier C · Relevant SaaS/healthtech; easy-only."
+      "lever": {
+        "token": "pointclickcare"
+      }
     },
     {
       "id": "stryker",
       "name": "Stryker",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "C",
       "search_links": [
@@ -1203,7 +1506,11 @@
           "url": "https://careers.stryker.com/"
         }
       ],
-      "skip_reason": "Tier C · Mixed hardware/software; lower priority."
+      "workday": {
+        "host": "https://stryker.wd1.myworkdayjobs.com",
+        "tenant": "stryker",
+        "site": "StrykerCareers"
+      }
     },
     {
       "id": "transunion",
@@ -1226,7 +1533,7 @@
     {
       "id": "travelers",
       "name": "Travelers",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "C",
       "search_links": [
@@ -1235,7 +1542,11 @@
           "url": "https://careers.travelers.com/"
         }
       ],
-      "skip_reason": "Tier C · Mixed-role employer; easy-only."
+      "workday": {
+        "host": "https://travelers.wd5.myworkdayjobs.com",
+        "tenant": "travelers",
+        "site": "External"
+      }
     },
     {
       "id": "verizon",
@@ -1254,7 +1565,7 @@
     {
       "id": "yext",
       "name": "Yext",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "C",
       "search_links": [
@@ -1263,7 +1574,9 @@
           "url": "https://www.yext.com/careers"
         }
       ],
-      "skip_reason": "Tier C · Relevant SaaS; smaller hiring volume, easy-only."
+      "greenhouse": {
+        "token": "yext"
+      }
     }
   ]
 }

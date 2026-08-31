@@ -22,7 +22,8 @@ SLEEP_S = 0.3
 DETAIL_SLEEP_S = 0.12
 MAX_DETAILS = 200
 PAGE_SIZE = 25
-DEFAULT_QUERIES = ROLE_SEARCH_QUERIES
+DEFAULT_QUERIES = ROLE_SEARCH_QUERIES + ["cloud developer"]
+QUERY_PAGE_CAPS = {"data scientist": 3, "cloud developer": 3}
 JOB_HREF_RE = re.compile(r'href="(/job/[^"]+/(\d+)/?)"')
 
 
@@ -81,7 +82,8 @@ def scrape_sap(
 
     for query in queries:
         query_ids: set[str] = set()
-        for page in range(max_pages):
+        query_max_pages = min(max_pages, QUERY_PAGE_CAPS.get(query, max_pages))
+        for page in range(query_max_pages):
             startrow = page * PAGE_SIZE
             payload = http_get(
                 session,

@@ -71,8 +71,8 @@ EXPERIENCE_FILTER = "intern|new_grad|junior|mid"
 
 # Keywords validated against Syncareer's search (see analysis in chat).
 # "Software" and "Full Stack" cover core SWE; the AI/ML/Infra terms add
-# largely non-overlapping roles. Data Engineer / Data Scientist are left
-# commented so they can be enabled easily.
+# largely non-overlapping roles. Data Engineer and Site Reliability were
+# retained after bounded tests; broader Data Scientist searches were noisy.
 SEARCH_KEYWORDS = [
     "Software",
     "Full Stack",
@@ -89,6 +89,7 @@ SEARCH_KEYWORDS = [
     "LLM",
     "Applied Scientist",
     "Data Engineer",
+    "Site Reliability",
 ]
 
 RAW_FIELDS = [

@@ -141,6 +141,7 @@ def load_official_context() -> Dict[str, Any]:
     except (OSError, json.JSONDecodeError):
         payload = {}
     jobs = payload.get("jobs", []) if isinstance(payload, dict) else []
+    scraped_company_ids = set(payload.get("scraped_company_ids") or []) if isinstance(payload, dict) else set()
     registry_entries, registry_by_id = load_registry_entries()
     by_company: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
     for job in jobs:
@@ -154,6 +155,7 @@ def load_official_context() -> Dict[str, Any]:
         "registry_entries": registry_entries,
         "registry_by_id": registry_by_id,
         "by_company": by_company,
+        "scraped_company_ids": scraped_company_ids,
         "config": load_coverage_config(),
     }
 
@@ -163,6 +165,7 @@ def exact_match(external: Dict[str, Any], official_jobs: Iterable[Dict[str, Any]
     ext_ids = job_ids(external)
     ext_title = normalize_title_key(str(external.get("title") or ""))
     ext_location = normalize_location_key(str(external.get("location") or ""))
+    title_location_candidates: List[Dict[str, Any]] = []
     for official in official_jobs:
         off_url = normalize_url(str(official.get("official_url") or official.get("source_url") or ""))
         if ext_url and off_url and ext_url == off_url:
@@ -170,9 +173,44 @@ def exact_match(external: Dict[str, Any], official_jobs: Iterable[Dict[str, Any]
         if ext_ids and ext_ids.intersection(job_ids(official)):
             return "job_id", official
         if ext_title and ext_location:
-            if ext_title == normalize_title_key(str(official.get("title") or "")) and ext_location == normalize_location_key(str(official.get("location") or "")):
-                return "title_location", official
+            off_title = normalize_title_key(str(official.get("title") or ""))
+            off_location = normalize_location_key(str(official.get("location") or ""))
+            if ext_title == off_title and locations_compatible(ext_location, off_location):
+                title_location_candidates.append(official)
+    # Title/location is safe only when it identifies one official requisition.
+    # Multiple same-title jobs in one city remain reviewable rather than being
+    # silently attached to an arbitrary requisition.
+    if len(title_location_candidates) == 1:
+        return "title_location", title_location_candidates[0]
     return "", None
+
+
+def locations_compatible(left_key: str, right_key: str) -> bool:
+    """Return true for the same city with compatible state information.
+
+    Handles single-location external rows against multi-location official rows
+    and Workday's ``State - City`` format. Generic remote/state-only tokens do
+    not establish a match by themselves.
+    """
+    if not left_key or not right_key:
+        return False
+    if left_key == right_key:
+        return True
+    left = set(left_key.split("|"))
+    right = set(right_key.split("|"))
+    state_tokens = {
+        "al", "ak", "az", "ar", "ca", "co", "ct", "de", "fl", "ga", "hi", "id",
+        "il", "in", "ia", "ks", "ky", "la", "me", "md", "ma", "mi", "mn", "ms",
+        "mo", "mt", "ne", "nv", "nh", "nj", "nm", "ny", "nc", "nd", "oh", "ok",
+        "or", "pa", "ri", "sc", "sd", "tn", "tx", "ut", "vt", "va", "wa", "wv",
+        "wi", "wy", "dc",
+    }
+    left_states = left & state_tokens
+    right_states = right & state_tokens
+    if left_states and right_states and left_states.isdisjoint(right_states):
+        return False
+    generic = state_tokens | {"remote", "us", "united states"}
+    return bool((left - generic) & (right - generic))
 
 
 def fuzzy_suggestion(external: Dict[str, Any], official_jobs: Iterable[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
@@ -208,6 +246,7 @@ def annotate_jobs(jobs: Iterable[Dict[str, Any]], source_pipeline: str, context:
     config = context.get("config", {})
     registry_entries = context.get("registry_entries", [])
     by_company = context.get("by_company", {})
+    scraped_company_ids = context.get("scraped_company_ids", set())
     annotations: List[Dict[str, Any]] = []
     snapshot_iso = snapshot_at.isoformat() if snapshot_at else ""
     review = load_review_state()
@@ -232,6 +271,11 @@ def annotate_jobs(jobs: Iterable[Dict[str, Any]], source_pipeline: str, context:
             registry = context.get("registry_by_id", {}).get(cid, {})
             if manual_status == "unsupported" or registry.get("adapter") == "skip":
                 job["coverage_status"] = "official_unsupported"
+            elif not by_company.get(cid) and cid not in scraped_company_ids:
+                # A configured adapter with no company records in the merged
+                # official snapshot has not established a comparable baseline
+                # yet. Treat it as awaiting its first refresh, not as a miss.
+                job["coverage_status"] = "pending_official_refresh"
             else:
                 method, official = exact_match(job, by_company.get(cid, []))
                 if official:
@@ -378,12 +422,21 @@ def build_coverage_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
             "syncareer_jobs": counts["source_syncareer"],
         })
     companies.sort(key=lambda c: (c["manual_status"] != "validated", -(c["in_scope"] or 0), c["name"]))
+    adapter_counts = Counter(str(company.get("adapter") or "skip") for company in companies)
+    configured_total = len(companies)
+    link_only = adapter_counts.get("skip", 0)
     return {
         "generated_at": now.isoformat(),
         "window_days": 3,
         "official_snapshot_at": context.get("snapshot_at").isoformat() if context.get("snapshot_at") else "",
         "manual_validation_target": "100% exact observed in-scope coverage; user makes final validation decision",
         "counts": dict(Counter(r.get("coverage_status", "unknown") for r in records)),
+        "registry_counts": {
+            "companies": configured_total,
+            "implemented": configured_total - link_only,
+            "link_only": link_only,
+            "adapters": dict(sorted(adapter_counts.items())),
+        },
         "companies": companies,
         "records": records,
     }
@@ -399,6 +452,9 @@ def write_coverage_outputs(payload: Dict[str, Any]) -> None:
         f"- Official snapshot: {payload.get('official_snapshot_at') or 'missing'}",
         "- Coverage scope: jobs from the last 3 days that pass shared hard + role/seniority prefilters; LLM score is not used.",
         "- Validation: 100% exact observed coverage is the current review target; final validation is manual.",
+        f"- Registry adapters: {payload.get('registry_counts', {}).get('implemented', 0)} implemented / "
+        f"{payload.get('registry_counts', {}).get('companies', 0)} companies; "
+        f"{payload.get('registry_counts', {}).get('link_only', 0)} remain link-only.",
         "",
         "## Company coverage",
         "",

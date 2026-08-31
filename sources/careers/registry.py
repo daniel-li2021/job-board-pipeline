@@ -30,6 +30,7 @@ from .walmart import scrape_walmart
 from .workday import scrape_workday
 
 REGISTRY_PATH = BASE_DIR / "source" / "official_careers.json"
+ATS_BOARDS_PATH = BASE_DIR / "source" / "ats_boards.json"
 
 
 def load_companies(path: Optional[Path] = None) -> Dict[str, Any]:
@@ -41,6 +42,14 @@ def load_companies(path: Optional[Path] = None) -> Dict[str, Any]:
 def enabled_companies(data: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
     payload = data or load_companies()
     return [c for c in payload.get("companies") or [] if c.get("enabled")]
+
+
+def _ats_board(company_id: str) -> Dict[str, str]:
+    payload = json.loads(ATS_BOARDS_PATH.read_text(encoding="utf-8"))
+    for board in payload.get("boards") or []:
+        if str(board.get("token") or "").lower() == company_id.lower():
+            return board
+    raise SourceUnavailable(f"no ATS board configured for {company_id}")
 
 
 def _only_ids(only: Optional[str]) -> Optional[Set[str]]:
@@ -60,6 +69,17 @@ def scrape_company(
     max_pages = min(max_pages, int(company.get("max_pages") or max_pages))
     if adapter == "skip":
         raise SourceUnavailable(company.get("skip_reason") or f"{name} skipped")
+    if adapter == "ats":
+        board = _ats_board(str(company.get("id") or ""))
+        ats = str(board.get("ats") or "").lower()
+        token = str(board.get("token") or "")
+        if ats == "greenhouse":
+            return scrape_greenhouse(session, company=name, token=token)
+        if ats == "ashby":
+            return scrape_ashby(session, company=name, token=token)
+        if ats == "lever":
+            return scrape_lever(session, company=name, token=token)
+        raise SourceUnavailable(f"unsupported ATS adapter {ats!r} for {name}")
     if adapter == "google":
         return scrape_google(session, max_pages=max_pages)
     if adapter == "amazon":
@@ -97,6 +117,7 @@ def scrape_company(
             site=wd["site"],
             max_pages=max_pages,
             public_prefix=wd.get("public_prefix"),
+            extra_queries=wd.get("extra_queries"),
         )
     if adapter == "greenhouse":
         gh = company.get("greenhouse") or {}
@@ -124,6 +145,7 @@ def scrape_company(
             site_number=oc["site_number"],
             public_job_base=oc["public_job_base"],
             max_pages=max_pages,
+            extra_queries=oc.get("extra_queries"),
         )
     if adapter == "sap":
         return scrape_sap(session, max_pages=max_pages)
@@ -142,6 +164,7 @@ def scrape_company(
 
 def _blocked_result(company: Dict[str, Any], cid: str, exc: Exception, status: str) -> Dict[str, Any]:
     return {
+        "company_id": cid,
         "company": company.get("name") or cid,
         "source": cid,
         "method": company.get("adapter"),
@@ -168,7 +191,9 @@ def scrape_enabled(
         if wanted and cid not in wanted:
             continue
         try:
-            results.append(scrape_company(session, company, max_pages=max_pages))
+            result = scrape_company(session, company, max_pages=max_pages)
+            result["company_id"] = cid
+            results.append(result)
         except SourceUnavailable as exc:
             results.append(_blocked_result(company, cid, exc, "blocked"))
         except Exception as exc:  # noqa: BLE001

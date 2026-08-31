@@ -37,6 +37,7 @@ SLEEP_S = 0.25
 DETAIL_SLEEP_S = 0.12
 MAX_DETAILS = 200
 DEFAULT_QUERIES = ROLE_SEARCH_QUERIES
+QUERY_PAGE_CAPS = {"platform engineer": 3}
 JSON_HEADERS = {"Accept": "application/json", "Content-Type": "application/json"}
 
 
@@ -60,6 +61,19 @@ def _public_prefix(host: str, tenant: str, site: str, public_prefix: Optional[st
 def _official_url(host: str, public_prefix: str, external_path: str) -> str:
     path = external_path if external_path.startswith("/") else f"/{external_path}"
     return urljoin(host.rstrip("/") + "/", f"{public_prefix}{path}")
+
+
+def _detail_location(info: Dict[str, Any], fallback: str = "") -> str:
+    parts: List[str] = []
+    values = [info.get("location") or fallback]
+    values.extend(info.get("additionalLocations") or [])
+    for value in values:
+        if isinstance(value, dict):
+            value = value.get("descriptor") or value.get("location") or value.get("name") or ""
+        label = normalize_space(value)
+        if label and not is_placeholder_location(label) and label not in parts:
+            parts.append(label)
+    return "; ".join(parts)
 
 
 def _us_facet(facets: Any) -> Optional[Dict[str, str]]:
@@ -104,11 +118,14 @@ def scrape_workday(
     site: str,
     max_pages: int = 50,
     queries: Optional[List[str]] = None,
+    extra_queries: Optional[List[str]] = None,
     fetch_details: bool = True,
     public_prefix: Optional[str] = None,
 ) -> Dict[str, Any]:
     fetched_at = now_iso()
-    queries = queries or DEFAULT_QUERIES
+    queries = list(queries or DEFAULT_QUERIES)
+    extras = [q for q in (extra_queries or []) if q and q not in queries]
+    queries.extend(extras)
     source = f"{normalize_space(company).lower().replace(' ', '_')}_official_careers"
     jobs_endpoint = _jobs_url(host, tenant, site)
     public_prefix = _public_prefix(host, tenant, site, public_prefix)
@@ -136,7 +153,8 @@ def scrape_workday(
     for query in queries:
         offset = 0
         query_ids: set[str] = set()
-        for _page in range(max_pages):
+        query_max_pages = min(max_pages, QUERY_PAGE_CAPS.get(query, 3 if query in extras else max_pages))
+        for _page in range(query_max_pages):
             body = {
                 "appliedFacets": us_applied,
                 "limit": PAGE_SIZE,
@@ -207,8 +225,8 @@ def scrape_workday(
                         info = det.get("jobPostingInfo") or {}
                         description = html_to_text(info.get("jobDescription") or "")
                         start_date = info.get("startDate") or ""
-                        detail_loc = info.get("location") or ""
-                        if detail_loc and not is_placeholder_location(detail_loc):
+                        detail_loc = _detail_location(info, location)
+                        if detail_loc:
                             location = detail_loc
                         elif path_loc:
                             location = path_loc

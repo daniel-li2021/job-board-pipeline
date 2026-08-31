@@ -35,8 +35,24 @@ DEFAULT_QUERIES: List[Dict[str, Any]] = [
         "target_levels": ["MID", "EARLY", "INTERN_AND_APPRENTICE"],
         "location": "United States",
         "sort_by": "date",
+        **({"max_pages": 3} if query in {"data engineer", "platform engineer"} else {}),
     }
     for query in ROLE_SEARCH_QUERIES
+] + [
+    {
+        "q": '"Infrastructure Engineer"',
+        "target_levels": ["MID", "EARLY", "INTERN_AND_APPRENTICE"],
+        "location": "United States",
+        "sort_by": "date",
+        "max_pages": 3,
+    },
+    {
+        "q": '"DeepMind"',
+        "target_levels": ["MID", "EARLY", "INTERN_AND_APPRENTICE"],
+        "location": "United States",
+        "sort_by": "date",
+        "max_pages": 2,
+    },
 ]
 
 
@@ -159,7 +175,8 @@ def scrape_google(
 
     for query in queries:
         query_ids: set[str] = set()
-        for page in range(1, max_pages + 1):
+        query_max_pages = min(max_pages, int(query.get("max_pages") or max_pages))
+        for page in range(1, query_max_pages + 1):
             html = http_get(
                 session,
                 BASE,

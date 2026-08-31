@@ -1,5 +1,5 @@
 {
-  "_comment": "Manual canonical-source decisions. 100% exact observed in-scope coverage is the current audit target, but the user makes the final validation decision.",
+  "_comment": "Manual canonical-source overrides only. Omitted registry companies default to unvalidated, while adapter=skip remains unsupported; the user makes the final validation decision.",
   "companies": {
     "google": {"status": "unvalidated", "notes": ""},
     "amazon": {"status": "unvalidated", "notes": ""},

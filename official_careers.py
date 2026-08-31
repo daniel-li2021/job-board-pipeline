@@ -157,6 +157,9 @@ def write_scrape_outputs(
         "scraped_at": datetime.now(timezone.utc).isoformat(),
         "stamp": stamp,
         "count": len(all_jobs),
+        "scraped_company_ids": sorted(
+            str(r.get("company_id") or "") for r in results if r.get("company_id")
+        ),
         "per_company": [r.get("summary") for r in results],
         "jobs": all_jobs,
     }
