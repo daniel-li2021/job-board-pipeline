@@ -89,7 +89,7 @@ NON_US_TOKENS = [
     "korea", "taiwan", "israel", "portugal", "romania", "hungary",
     "philippines", "vietnam", "indonesia", "malaysia", "uae",
     "dubai", "london", "toronto", "vancouver", "bangalore",
-    "hyderabad", "beijing", "shanghai", "tokyo", "berlin", "paris",
+    "hyderabad", "bengaluru", "beijing", "shanghai", "tokyo", "berlin", "paris",
     "amsterdam", "dublin", "sydney", "norway", "denmark", "finland",
     "belgium", "austria", "oslo", "copenhagen", "helsinki",
     "bucharest", "noida", "bratislava", "slovakia", "belgrade",

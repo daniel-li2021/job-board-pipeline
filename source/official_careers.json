@@ -685,7 +685,7 @@
           "url": "https://careers.amd.com/careers-home/jobs?keywords=software%20engineer&location=United%20States"
         }
       ],
-      "skip_reason": "Tier A · careers.amd.com returns HTTP 403 to anonymous automation; keep the verified official search link."
+      "skip_reason": "Tier A · the public careers shell loads, but its iCIMS search iframe redirects anonymous requests to AMD enterprise SAML login; no unauthenticated public job API was found."
     },
     {
       "id": "zoom",
@@ -717,7 +717,7 @@
           "url": "https://higher.gs.com/results?SEARCH=software%20engineer"
         }
       ],
-      "skip_reason": "Tier B · higher.gs.com uses a custom GraphQL schema; keep the verified official link until a stable filtered role-search query is available."
+      "skip_reason": "Tier B · higher.gs.com is a custom Apollo/GraphQL app with empty server state and rotating client-bundle query definitions; no stable anonymous filtered endpoint was found."
     },
     {
       "id": "pure-storage",
@@ -814,16 +814,16 @@
     {
       "id": "bytedance",
       "name": "ByteDance",
-      "adapter": "skip",
+      "adapter": "bytedance",
       "enabled": true,
       "priority_tier": "A",
+      "max_pages": 3,
       "search_links": [
         {
-          "label": "Job search",
-          "url": "https://joinbytedance.com/search"
+          "label": "US software search",
+          "url": "https://joinbytedance.com/search?keyword=software%20engineer"
         }
-      ],
-      "skip_reason": "Tier A · High-value; likely shares patterns with TikTok but treat search surface separately until verified."
+      ]
     },
     {
       "id": "chime",
@@ -853,7 +853,7 @@
           "url": "https://www.citadel.com/careers/open-opportunities/"
         }
       ],
-      "skip_reason": "Tier A · High-value SWE/quant; inspect search feed. Some roles may have restrictions but not blanket US-person-only."
+      "skip_reason": "Tier A · the official opportunities page is behind a Cloudflare managed challenge (HTTP 403); bypassing that protection is out of scope and no separate public feed was found."
     },
     {
       "id": "dell",
@@ -891,30 +891,38 @@
     {
       "id": "expedia",
       "name": "Expedia Group",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
         {
-          "label": "Jobs",
-          "url": "https://careers.expediagroup.com/jobs/"
+          "label": "US software search",
+          "url": "https://expedia.wd108.myworkdayjobs.com/en-US/search?q=software%20engineer"
         }
       ],
-      "skip_reason": "Tier A · Large software hiring volume; inspect search API."
+      "max_pages": 3,
+      "workday": {
+        "host": "https://expedia.wd108.myworkdayjobs.com",
+        "tenant": "expedia",
+        "site": "search",
+        "apply_us_facet": false
+      }
     },
     {
       "id": "hubspot",
       "name": "HubSpot",
-      "adapter": "skip",
+      "adapter": "greenhouse",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
         {
           "label": "Jobs",
-          "url": "https://www.hubspot.com/careers/jobs"
+          "url": "https://www.hubspot.com/careers/jobs/all"
         }
       ],
-      "skip_reason": "Tier A · Strong SWE/product employer; inspect ATS/feed."
+      "greenhouse": {
+        "token": "hubspotjobs"
+      }
     },
     {
       "id": "instacart",
@@ -960,7 +968,7 @@
           "url": "https://www.mathworks.com/company/jobs/opportunities/search/"
         }
       ],
-      "skip_reason": "Tier A · Strong technical hiring; official searchable page."
+      "skip_reason": "Tier A · the official search rejects anonymous automation with HTTP 403; the results are JavaScript-managed and no stable public API was exposed."
     },
     {
       "id": "mongodb",
@@ -1005,10 +1013,10 @@
       "search_links": [
         {
           "label": "Job search",
-          "url": "https://careers.netapp.com/en/search-jobs"
+          "url": "https://careers.netapp.com/en/search-jobs?keywords=software%20engineer"
         }
       ],
-      "skip_reason": "Tier A · Strong systems/software employer; inspect ATS."
+      "skip_reason": "Tier A · the Eightfold PCSX endpoint returns HTTP 403 (PCSX disabled), while the fallback SuccessFactors surface has no compatible anonymous adapter/API."
     },
     {
       "id": "netflix",
@@ -1019,10 +1027,10 @@
       "search_links": [
         {
           "label": "Jobs",
-          "url": "https://jobs.netflix.com/"
+          "url": "https://explore.jobs.netflix.net/careers?query=software%20engineer&domain=netflix.com"
         }
       ],
-      "skip_reason": "Tier A · High-value; inspect jobs search API/feed."
+      "skip_reason": "Tier A · Netflix uses an Eightfold search surface, but its public PCSX endpoint returns HTTP 403 (PCSX disabled); no stable anonymous replacement feed was found."
     },
     {
       "id": "openai",
@@ -1055,16 +1063,20 @@
     {
       "id": "paypal",
       "name": "PayPal",
-      "adapter": "skip",
+      "adapter": "pcsx",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
         {
-          "label": "Careers / search jobs",
-          "url": "https://careers.pypl.com/home/"
+          "label": "US software search",
+          "url": "https://paypal.eightfold.ai/careers?query=software%20engineer&location=United%20States"
         }
       ],
-      "skip_reason": "Tier A · Large fintech SWE employer; inspect ATS/search endpoint."
+      "max_pages": 3,
+      "pcsx": {
+        "portal": "https://paypal.eightfold.ai/careers",
+        "domain": "paypal.com"
+      }
     },
     {
       "id": "reddit",
@@ -1139,10 +1151,10 @@
       "search_links": [
         {
           "label": "Career search",
-          "url": "https://www.tesla.com/careers/search/"
+          "url": "https://www.tesla.com/careers/search/?query=software&site=US"
         }
       ],
-      "skip_reason": "Tier A · Large software/AI hiring; filter out export-controlled/restricted roles individually."
+      "skip_reason": "Tier A · the official Tesla search returns HTTP 403 to anonymous automation; keep the filtered official link and do not bypass the protection."
     },
     {
       "id": "two-sigma",
@@ -1156,7 +1168,7 @@
           "url": "https://www.twosigma.com/careers/"
         }
       ],
-      "skip_reason": "Tier A · High-value SWE/quant; identify direct openings/search endpoint."
+      "skip_reason": "Tier A · the Avature landing page exposes only teaser roles; SearchJobs returns 404 and SearchJobsData depends on encrypted form state, so the existing Avature adapter cannot query it reliably."
     },
     {
       "id": "verkada",
@@ -1177,16 +1189,21 @@
     {
       "id": "visa",
       "name": "Visa",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
         {
-          "label": "Careers",
-          "url": "https://careers.smartrecruiters.com/Visa"
+          "label": "US software search",
+          "url": "https://visa.wd5.myworkdayjobs.com/en-US/Visa?q=software%20engineer"
         }
       ],
-      "skip_reason": "Tier A · Large technology org; identify direct search backend."
+      "max_pages": 3,
+      "workday": {
+        "host": "https://visa.wd5.myworkdayjobs.com",
+        "tenant": "visa",
+        "site": "Visa"
+      }
     },
     {
       "id": "weride",
@@ -1225,16 +1242,21 @@
     {
       "id": "zillow",
       "name": "Zillow",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "A",
       "search_links": [
         {
-          "label": "Careers",
-          "url": "https://www.zillow.com/careers/"
+          "label": "US software search",
+          "url": "https://zillow.wd5.myworkdayjobs.com/en-US/Zillow_Group_External?q=software%20engineer"
         }
       ],
-      "skip_reason": "Tier A · Strong product/software hiring; locate direct search feed."
+      "max_pages": 3,
+      "workday": {
+        "host": "https://zillow.wd5.myworkdayjobs.com",
+        "tenant": "zillow",
+        "site": "Zillow_Group_External"
+      }
     },
     {
       "id": "zscaler",
@@ -1280,10 +1302,10 @@
       "search_links": [
         {
           "label": "Search jobs",
-          "url": "https://jobs.cvshealth.com/us/en/"
+          "url": "https://jobs.cvshealth.com/us/en/search-results?keywords=software%20engineer"
         }
       ],
-      "skip_reason": "Tier B · Large employer; lower SWE density, implement only if cheap."
+      "skip_reason": "Tier B · the Phenom search is tenant/session-driven and keyword requests returned inconsistent unfiltered counts; no bounded reusable public endpoint was verified without browser state."
     },
     {
       "id": "duolingo",
@@ -1304,16 +1326,19 @@
     {
       "id": "equinix",
       "name": "Equinix",
-      "adapter": "skip",
+      "adapter": "radancy",
       "enabled": true,
       "priority_tier": "B",
       "search_links": [
         {
-          "label": "Job search",
-          "url": "https://careers.equinix.com/jobs/search"
+          "label": "US software search",
+          "url": "https://careers.equinix.com/jobs/search?query=software&country_codes%5B%5D=US"
         }
       ],
-      "skip_reason": "Tier B · Good infra/software relevance; inspect ATS."
+      "max_pages": 2,
+      "radancy": {
+        "search_url": "https://careers.equinix.com/jobs/search"
+      }
     },
     {
       "id": "f5",
@@ -1361,7 +1386,7 @@
           "url": "https://www.wayfair.com/careers/jobs"
         }
       ],
-      "skip_reason": "Tier B · Good SWE volume; inspect backend."
+      "skip_reason": "Tier B · the official jobs page is protected by a PerimeterX CAPTCHA response; no separate stable public ATS feed was found and the challenge will not be bypassed."
     },
     {
       "id": "wells-fargo",
@@ -1372,10 +1397,10 @@
       "search_links": [
         {
           "label": "Jobs",
-          "url": "https://www.wellsfargojobs.com/en/jobs/"
+          "url": "https://www.wellsfargojobs.com/en/jobs/?search=software"
         }
       ],
-      "skip_reason": "Tier B · Huge feed but low SWE density; only add with strong filters."
+      "skip_reason": "Tier B · the official search is behind a Cloudflare managed challenge (HTTP 403), preventing reliable filtered retrieval without bypassing anti-bot controls."
     },
     {
       "id": "yahoo",
@@ -1389,7 +1414,7 @@
           "url": "https://www.yahooinc.com/careers/search.html"
         }
       ],
-      "skip_reason": "Tier B · Relevant software employer; implement if easy."
+      "skip_reason": "Tier B · Yahoo's custom results flow is a POST guarded by Google reCAPTCHA; automating or bypassing that token is out of scope."
     },
     {
       "id": "ansys",
@@ -1403,7 +1428,7 @@
           "url": "https://careers.synopsys.com/search-jobs/ansys"
         }
       ],
-      "skip_reason": "Tier C · Technical employer but lower priority; implement only if near-zero incremental cost."
+      "skip_reason": "Tier C · the Synopsys Avature search ignores Ansys keyword filters and returns broader Synopsys roles, which would misattribute jobs to Ansys."
     },
     {
       "id": "blizzard",
@@ -1417,7 +1442,7 @@
           "url": "https://careers.blizzard.com/global/en"
         }
       ],
-      "skip_reason": "Tier C · Interesting SWE roles but lower volume; easy-only."
+      "skip_reason": "Tier C · the Activision/Blizzard Eightfold PCSX endpoint returns HTTP 403 (PCSX disabled), and the Phenom surface has no verified reusable anonymous feed."
     },
     {
       "id": "flex",
@@ -1458,16 +1483,21 @@
     {
       "id": "johnson-johnson",
       "name": "Johnson & Johnson",
-      "adapter": "skip",
+      "adapter": "workday",
       "enabled": true,
       "priority_tier": "C",
       "search_links": [
         {
-          "label": "Careers",
-          "url": "https://www.careers.jnj.com/en/"
+          "label": "US software search",
+          "url": "https://jj.wd5.myworkdayjobs.com/en-US/JJ?q=software%20engineer"
         }
       ],
-      "skip_reason": "Tier C · Large mixed-role employer; only if generic and cheap."
+      "max_pages": 3,
+      "workday": {
+        "host": "https://jj.wd5.myworkdayjobs.com",
+        "tenant": "jj",
+        "site": "JJ"
+      }
     },
     {
       "id": "nasdaq",
@@ -1566,10 +1596,10 @@
       "search_links": [
         {
           "label": "Jobs",
-          "url": "https://mycareer.verizon.com/jobs/"
+          "url": "https://mycareer.verizon.com/jobs/?search=software"
         }
       ],
-      "skip_reason": "Tier C · Large tech org but noisy; easy-only."
+      "skip_reason": "Tier C · the official custom/Happydance search rejects anonymous automation with HTTP 403; no stable public filtered API was found."
     },
     {
       "id": "yext",

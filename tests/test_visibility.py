@@ -736,6 +736,7 @@ class RegistryCoverageTests(unittest.TestCase):
                 "avature": "avature",
                 "oracle_hcm": "oracle_hcm",
                 "pcsx": "pcsx",
+                "radancy": "radancy",
             }.get(adapter)
             if config_key:
                 self.assertTrue(company.get(config_key), company["id"])

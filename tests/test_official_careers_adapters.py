@@ -3,8 +3,10 @@ import unittest
 from sources.careers.disney import scrape_disney
 from sources.careers.linkedin_company import scrape_linkedin_company
 from sources.careers.meta import scrape_meta
-from sources.careers.tiktok import scrape_tiktok
+from sources.careers.radancy import scrape_radancy
+from sources.careers.tiktok import scrape_bytedance, scrape_tiktok
 from sources.careers.walmart import scrape_walmart
+from sources.careers.workday import _us_facet
 
 
 class Response:
@@ -61,6 +63,45 @@ class OfficialAdapterTests(unittest.TestCase):
         result = scrape_tiktok(session, max_pages=1, queries=["machine learning engineer"])
         self.assertEqual("https://lifeattiktok.com/search/123", result["jobs"][0]["official_url"])
         self.assertTrue(session.calls[0][2]["json"]["location_code_list"])
+
+    def test_bytedance_uses_shared_supplier_api_with_required_environment_header(self):
+        session = Session(posts=[Response(payload={"code": 0, "data": {
+            "count": 1,
+            "job_post_list": [{
+                "id": "456", "title": "Backend Software Engineer", "description": "Build APIs",
+                "requirement": "Python", "city_info": {"en_name": "San Jose", "parent": {
+                    "en_name": "California", "parent": {"en_name": "United States of America"}
+                }},
+            }],
+        }})])
+        result = scrape_bytedance(session, max_pages=1, queries=["software engineer"])
+        self.assertEqual("https://joinbytedance.com/search/456", result["jobs"][0]["official_url"])
+        call = session.calls[0][2]
+        self.assertEqual("boe_epam_api", call["headers"]["x-tt-env"])
+        self.assertEqual([], call["json"]["recruitment_id_list"])
+
+    def test_workday_collects_modern_us_location_facets(self):
+        facets = [{"facetParameter": "locations", "values": [
+            {"id": "remote-us", "descriptor": "Remote-USA"},
+            {"id": "remote-de", "descriptor": "Remote-Germany"},
+            {"id": "austin", "descriptor": "Austin, Texas, United States of America"},
+        ]}]
+        self.assertEqual({"locations": ["remote-us", "austin"]}, _us_facet(facets))
+
+    def test_radancy_parses_server_rendered_us_table(self):
+        html = """<table data-controller="jobs--table-results"><tbody>
+          <tr data-job-url="https://careers.example/jobs/software-engineer">
+            <td class="job-search-results-title"><a>Software Engineer</a></td>
+            <td class="job-search-results-requisition-identifiers">JR-1</td>
+            <td class="job-search-results-location"><ul><li>Dallas, Texas, United States</li></ul></td>
+          </tr></tbody></table>"""
+        session = Session(gets=[Response(text=html)])
+        result = scrape_radancy(
+            session, company="Example", search_url="https://careers.example/jobs/search",
+            max_pages=1, queries=["software engineer"], fetch_details=False,
+        )
+        self.assertEqual(["JR-1"], [job["job_id"] for job in result["jobs"]])
+        self.assertEqual("US", session.calls[0][2]["params"]["country_codes[]"])
 
     def test_linkedin_guest_search_only_accepts_linkedin_company(self):
         html = """

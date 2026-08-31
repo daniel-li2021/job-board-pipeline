@@ -76,28 +76,36 @@ def _detail_location(info: Dict[str, Any], fallback: str = "") -> str:
     return "; ".join(parts)
 
 
-def _us_facet(facets: Any) -> Optional[Dict[str, str]]:
-    """Return {facetParameter: [id]} for the United States country facet."""
+def _us_facet(facets: Any) -> Optional[Dict[str, List[str]]]:
+    """Return all explicit United States facet ids under one parameter."""
     if not isinstance(facets, list):
         return None
 
-    def search(nodes: List[Any], parent_param: str = "") -> Optional[Dict[str, str]]:
+    found: Dict[str, List[str]] = {}
+
+    def search(nodes: List[Any], parent_param: str = "") -> None:
         for node in nodes:
             if not isinstance(node, dict):
                 continue
             param = str(node.get("facetParameter") or parent_param)
             descriptor = normalize_space(node.get("descriptor") or "")
             node_id = str(node.get("id") or "")
-            if descriptor.lower() == "united states" and node_id and param:
-                return {param: node_id}
+            label = descriptor.lower()
+            is_us = (
+                label == "united states"
+                or "united states of america" in label
+                or label.startswith("usa -")
+                or label.endswith("-usa")
+                or label.endswith(" usa")
+            )
+            if is_us and node_id and param:
+                found.setdefault(param, []).append(node_id)
             nested = node.get("values") or []
             if nested:
-                hit = search(nested if isinstance(nested, list) else [], param)
-                if hit:
-                    return hit
-        return None
+                search(nested if isinstance(nested, list) else [], param)
 
-    return search(facets)
+    search(facets)
+    return found or None
 
 
 def _posted_recent_enough(posted_on: str) -> bool:
@@ -121,6 +129,7 @@ def scrape_workday(
     extra_queries: Optional[List[str]] = None,
     fetch_details: bool = True,
     public_prefix: Optional[str] = None,
+    apply_us_facet: bool = True,
 ) -> Dict[str, Any]:
     fetched_at = now_iso()
     queries = list(queries or DEFAULT_QUERIES)
@@ -137,18 +146,21 @@ def scrape_workday(
     detail_fetches = 0
     us_applied: Dict[str, List[str]] = {}
 
-    # Resolve the United States facet id from an unfiltered first page.
-    probe = http_post(
-        session,
-        jobs_endpoint,
-        label=f"{company} workday probe",
-        json_body={"appliedFacets": {}, "limit": 1, "offset": 0, "searchText": queries[0]},
-        headers=JSON_HEADERS,
-    ).json()
-    us = _us_facet(probe.get("facets"))
+    # Resolve explicit United States facet ids when the tenant labels them
+    # consistently. Some tenants mix US cities with country labels, so they can
+    # opt out and rely on the shared per-row location filter instead.
+    us = None
+    if apply_us_facet:
+        probe = http_post(
+            session,
+            jobs_endpoint,
+            label=f"{company} workday probe",
+            json_body={"appliedFacets": {}, "limit": 1, "offset": 0, "searchText": queries[0]},
+            headers=JSON_HEADERS,
+        ).json()
+        us = _us_facet(probe.get("facets"))
     if us:
-        param, facet_id = next(iter(us.items()))
-        us_applied = {param: [facet_id]}
+        us_applied = us
 
     for query in queries:
         offset = 0

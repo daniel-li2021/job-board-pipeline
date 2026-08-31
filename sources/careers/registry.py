@@ -22,10 +22,11 @@ from .meta import scrape_meta
 from .microsoft import scrape_microsoft
 from .microsoft import scrape_pcsx
 from .oracle_hcm import scrape_oracle_hcm
+from .radancy import scrape_radancy
 from .sap import scrape_sap
 from .smartrecruiters import scrape_smartrecruiters
 from .uber import scrape_uber
-from .tiktok import scrape_tiktok
+from .tiktok import scrape_bytedance, scrape_tiktok
 from .walmart import scrape_walmart
 from .workday import scrape_workday
 
@@ -105,6 +106,8 @@ def scrape_company(
         return scrape_meta(session, max_pages=max_pages)
     if adapter == "tiktok":
         return scrape_tiktok(session, max_pages=max_pages)
+    if adapter == "bytedance":
+        return scrape_bytedance(session, max_pages=max_pages)
     if adapter == "walmart":
         return scrape_walmart(session, max_pages=max_pages)
     if adapter == "workday":
@@ -118,6 +121,7 @@ def scrape_company(
             max_pages=max_pages,
             public_prefix=wd.get("public_prefix"),
             extra_queries=wd.get("extra_queries"),
+            apply_us_facet=bool(wd.get("apply_us_facet", True)),
         )
     if adapter == "greenhouse":
         gh = company.get("greenhouse") or {}
@@ -134,6 +138,14 @@ def scrape_company(
             session,
             company=name,
             slug=sr["slug"],
+            max_pages=max_pages,
+        )
+    if adapter == "radancy":
+        rd = company.get("radancy") or {}
+        return scrape_radancy(
+            session,
+            company=name,
+            search_url=rd["search_url"],
             max_pages=max_pages,
         )
     if adapter == "oracle_hcm":
