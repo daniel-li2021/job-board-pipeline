@@ -7,8 +7,8 @@ name: Board job alert
 
 on:
   schedule:
-    - cron: "0 15 * * *"
-    - cron: "0 3 * * *"
+    - cron: "0 8,20 * * *"
+      timezone: "America/Los_Angeles"
   workflow_dispatch:
   push:
     paths:

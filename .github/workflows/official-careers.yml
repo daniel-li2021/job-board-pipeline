@@ -5,8 +5,8 @@ name: Official careers
 
 on:
   schedule:
-    - cron: "30 15 * * *"
-    - cron: "30 3 * * *"
+    - cron: "30 8,20 * * *"
+      timezone: "America/Los_Angeles"
   workflow_dispatch:
     inputs:
       only:
