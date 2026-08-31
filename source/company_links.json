@@ -1,4 +1,5 @@
 {
+  "_comment": "Syncareer company pages. Added slugs are verified against live search results before inclusion.",
   "default_loc": "United States",
   "companies": [
     {
@@ -149,6 +150,108 @@
       "name": "Uber",
       "slug": "a100092-uber",
       "base_url": "https://syncareer.com/company/a100092-uber/jobs"
+    },
+    {
+      "key": "capitalone",
+      "name": "Capital One",
+      "slug": "a100141-capital-one",
+      "base_url": "https://syncareer.com/company/a100141-capital-one/jobs"
+    },
+    {
+      "key": "jpmorgan",
+      "name": "JPMorgan Chase",
+      "slug": "a100014-jpmorgan-chase",
+      "base_url": "https://syncareer.com/company/a100014-jpmorgan-chase/jobs"
+    },
+    {
+      "key": "oracle",
+      "name": "Oracle",
+      "slug": "a100017-oracle",
+      "base_url": "https://syncareer.com/company/a100017-oracle/jobs"
+    },
+    {
+      "key": "intel",
+      "name": "Intel Corporation",
+      "slug": "a100096-intel-corporation",
+      "base_url": "https://syncareer.com/company/a100096-intel-corporation/jobs"
+    },
+    {
+      "key": "dell",
+      "name": "Dell Technologies",
+      "slug": "a100229-dell-technologies",
+      "base_url": "https://syncareer.com/company/a100229-dell-technologies/jobs"
+    },
+    {
+      "key": "visa",
+      "name": "Visa",
+      "slug": "a100016-visa",
+      "base_url": "https://syncareer.com/company/a100016-visa/jobs"
+    },
+    {
+      "key": "qualcomm",
+      "name": "Qualcomm",
+      "slug": "a100093-qualcomm",
+      "base_url": "https://syncareer.com/company/a100093-qualcomm/jobs"
+    },
+    {
+      "key": "sap",
+      "name": "SAP",
+      "slug": "a100046-sap",
+      "base_url": "https://syncareer.com/company/a100046-sap/jobs"
+    },
+    {
+      "key": "tesla",
+      "name": "Tesla",
+      "slug": "a100010-tesla",
+      "base_url": "https://syncareer.com/company/a100010-tesla/jobs"
+    },
+    {
+      "key": "snap",
+      "name": "Snap",
+      "slug": "a101583-snap",
+      "base_url": "https://syncareer.com/company/a101583-snap/jobs"
+    },
+    {
+      "key": "pinterest",
+      "name": "Pinterest",
+      "slug": "a101249-pinterest",
+      "base_url": "https://syncareer.com/company/a101249-pinterest/jobs"
+    },
+    {
+      "key": "snowflake",
+      "name": "Snowflake",
+      "slug": "a100248-snowflake",
+      "base_url": "https://syncareer.com/company/a100248-snowflake/jobs"
+    },
+    {
+      "key": "servicenow",
+      "name": "ServiceNow",
+      "slug": "a100109-servicenow",
+      "base_url": "https://syncareer.com/company/a100109-servicenow/jobs"
+    },
+    {
+      "key": "workday",
+      "name": "Workday",
+      "slug": "a100398-workday",
+      "base_url": "https://syncareer.com/company/a100398-workday/jobs"
+    },
+    {
+      "key": "paypal",
+      "name": "PayPal",
+      "slug": "a100382-paypal",
+      "base_url": "https://syncareer.com/company/a100382-paypal/jobs"
+    },
+    {
+      "key": "ebay",
+      "name": "eBay",
+      "slug": "a100613-ebay",
+      "base_url": "https://syncareer.com/company/a100613-ebay/jobs"
+    },
+    {
+      "key": "amd",
+      "name": "AMD",
+      "slug": "a100034-amd",
+      "base_url": "https://syncareer.com/company/a100034-amd/jobs"
     }
   ]
 }

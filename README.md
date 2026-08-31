@@ -209,14 +209,16 @@ lightly (`sources/official.py`).
 | Microsoft | `sources/careers/microsoft.py` | Eightfold PCSX `GET /api/pcsx/search` (`location=United States`) | `start=0,10,20,...` |
 | NVIDIA / Salesforce / Adobe | `sources/careers/workday.py` (one reusable CXS adapter) | `POST /wday/cxs/{tenant}/{site}/jobs` (US facet) | `offset=0,20,40,...` |
 | Uber | `sources/careers/uber.py` | Oracle HCM list+detail (`iaziqy.fa.ocs.oraclecloud.com`, site `CX_1`) | `offset=(page-1)*limit` until `TotalJobsCount` exhausted (do not stop at pages 1–7) |
+| Greenhouse / Lever / Ashby companies | existing generic ATS adapters via registry `adapter: ats` or direct adapter config | public board APIs from `source/ats_boards.json` or a verified official token | provider pagination |
 
 Registry: `source/official_careers.json`. Source-side US filters are used
 when the API actually honors them. Uber’s HCM finder does not, so rows are
 collected then passed through conservative `keep_us_or_unknown` (keep US /
 Remote-US / multi-office if any US / ambiguous; drop confirmed all-non-US).
 
-Skipped until a working public search API exists: Meta, TikTok, LinkedIn
-(corporate), Walmart.
+Companies without a verified, sufficiently complete low-risk public adapter
+remain link-only registry entries. They make no external scrape call, but keep
+an official search link for manual review and cross-pipeline coverage audits.
 
 ## Entry point
 
@@ -227,7 +229,7 @@ python3 official_careers.py run                    # scrape + match (scheduled)
 ```
 
 `--only` takes a company id from the registry. `--max-pages` is a per-query
-safety cap (default 50). `--no-digest` updates the store without a
+safety cap (default 12 from the registry). `--no-digest` updates the store without a
 user-facing alert. `--force-digest` sends a digest even if one already went
 out today.
 

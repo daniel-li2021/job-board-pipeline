@@ -20,6 +20,7 @@ SLEEP_S = 0.25
 DETAIL_SLEEP_S = 0.12
 MAX_DETAILS = 200
 DEFAULT_QUERIES = ["software engineer", "machine learning engineer"]
+EXTRA_QUERY_MAX_PAGES = 3
 
 
 def _location(item: Dict[str, Any]) -> str:
@@ -59,10 +60,13 @@ def scrape_oracle_hcm(
     public_job_base: str,
     max_pages: int = 50,
     queries: Optional[List[str]] = None,
+    extra_queries: Optional[List[str]] = None,
     fetch_details: bool = True,
 ) -> Dict[str, Any]:
     fetched_at = now_iso()
-    queries = queries or DEFAULT_QUERIES
+    queries = list(queries or DEFAULT_QUERIES)
+    extras = [q for q in (extra_queries or []) if q and q not in queries]
+    queries.extend(extras)
     source = f"{normalize_space(company).lower().replace(' ', '_')}_official_careers"
     host = host.rstrip("/")
     list_url = f"{host}/hcmRestApi/resources/latest/recruitingCEJobRequisitions"
@@ -77,7 +81,8 @@ def scrape_oracle_hcm(
     for query in queries:
         offset = 0
         query_ids: set[str] = set()
-        for _page in range(max_pages):
+        query_max_pages = min(max_pages, EXTRA_QUERY_MAX_PAGES if query in extras else max_pages)
+        for _page in range(query_max_pages):
             finder = (
                 f"findReqs;siteNumber={site_number},limit={PAGE_SIZE},offset={offset},"
                 f"keyword={query}"

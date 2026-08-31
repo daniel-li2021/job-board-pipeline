@@ -355,7 +355,10 @@ def normalize_location_key(location: str) -> str:
     if not loc:
         return ""
     loc = loc.replace("united states", "").replace("u.s.", "").replace("usa", "")
-    tokens = [t.strip() for t in re.split(r"[,/;|]+", loc) if t.strip()]
+    # Workday commonly emits "State - City" while external boards emit
+    # "City, ST". Treat a spaced dash as a location separator, but preserve
+    # hyphens inside city names.
+    tokens = [t.strip() for t in re.split(r"[,/;|]+|\s+-\s+", loc) if t.strip()]
     norm: List[str] = []
     for tok in tokens:
         tok = re.sub(r"[^a-z0-9 ]", " ", tok).strip()

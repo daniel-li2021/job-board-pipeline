@@ -5,12 +5,14 @@ import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import board_pipeline
 import coverage_reconcile
 import daily_pipeline
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
-from sources.schema import make_job
+from sources.schema import make_job, normalize_location_key
+from sources.careers.workday import _detail_location
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -43,6 +45,7 @@ def context(status: str = "unvalidated", snapshot: datetime | None = None) -> di
         "registry_entries": [registry],
         "registry_by_id": {"example": registry},
         "by_company": {"example": jobs},
+        "scraped_company_ids": {"example"},
         "config": {"example": {"status": status}},
     }
 
@@ -104,6 +107,39 @@ class CoverageMatchingTests(unittest.TestCase):
         self.assertEqual("covered_unvalidated", other["coverage_status"])
         self.assertFalse(other["suppress_alert"])
 
+    def test_location_format_and_multi_location_match_is_safe(self) -> None:
+        official = official_job("20001", "Software Engineering MTS", "Washington - Bellevue; California - San Francisco")
+        method, matched = coverage_reconcile.exact_match(
+            {"title": "Software Engineering MTS", "location": "Bellevue, WA"},
+            [official],
+        )
+        self.assertEqual("title_location", method)
+        self.assertEqual("20001", matched["job_id"])
+        self.assertTrue(coverage_reconcile.locations_compatible(
+            normalize_location_key("San Jose"), normalize_location_key("San Jose, CA")
+        ))
+
+    def test_ambiguous_same_title_location_does_not_attach_arbitrarily(self) -> None:
+        jobs = [
+            official_job("30001", "Software Development Engineer", "San Jose"),
+            official_job("30002", "Software Development Engineer", "San Jose, CA"),
+        ]
+        method, matched = coverage_reconcile.exact_match(
+            {"title": "Software Development Engineer", "location": "San Jose, CA"}, jobs
+        )
+        self.assertEqual("", method)
+        self.assertIsNone(matched)
+
+    def test_workday_detail_keeps_additional_locations(self) -> None:
+        info = {
+            "location": "Washington - Bellevue",
+            "additionalLocations": ["California - San Francisco", "Washington - Bellevue"],
+        }
+        self.assertEqual(
+            "Washington - Bellevue; California - San Francisco",
+            _detail_location(info),
+        )
+
     def test_gap_and_newer_snapshot_guard(self) -> None:
         snapshot = datetime(2026, 8, 28, 12, tzinfo=timezone.utc)
         missing = make_job(
@@ -123,6 +159,27 @@ class CoverageMatchingTests(unittest.TestCase):
         newer["first_seen"] = (snapshot + timedelta(minutes=1)).isoformat()
         coverage_reconcile.annotate_jobs([newer], "syncareer", context("validated", snapshot))
         self.assertEqual("pending_official_refresh", newer["coverage_status"])
+
+    def test_configured_adapter_without_snapshot_rows_is_pending(self) -> None:
+        ctx = context("unvalidated")
+        ctx["by_company"] = {}
+        ctx["scraped_company_ids"] = set()
+        external = make_job(
+            source="linkedin",
+            company="Example Tech",
+            title="Software Engineer I",
+            location="Seattle, WA",
+            job_id="10001",
+            source_url="https://www.linkedin.com/jobs/view/10001",
+        )
+        external["first_seen"] = "2026-08-27T11:00:00+00:00"
+        coverage_reconcile.annotate_jobs([external], "board", ctx)
+        self.assertEqual("pending_official_refresh", external["coverage_status"])
+
+        refreshed = dict(external)
+        ctx["scraped_company_ids"] = {"example"}
+        coverage_reconcile.annotate_jobs([refreshed], "board", ctx)
+        self.assertEqual("official_gap", refreshed["coverage_status"])
 
     def test_fixture_company_remains_unvalidated_with_dynamic_miss(self) -> None:
         ctx = context("unvalidated")
@@ -172,6 +229,74 @@ class ReportingWorkflowTests(unittest.TestCase):
         self.assertIn("actions/deploy-pages@v4", pages)
         self.assertIn("concurrency:", pages)
         self.assertFalse((ROOT / ".github/workflows/scheduled-jobs.yml").exists())
+
+
+class RegistryCoverageTests(unittest.TestCase):
+    def test_official_registry_is_structurally_complete(self) -> None:
+        payload = json.loads((ROOT / "source" / "official_careers.json").read_text(encoding="utf-8"))
+        companies = payload["companies"]
+        ids = [company["id"] for company in companies]
+        names = [company["name"].casefold() for company in companies]
+        urls = []
+        self.assertEqual(len(ids), len(set(ids)))
+        self.assertEqual(len(names), len(set(names)))
+        self.assertEqual(12, payload["max_pages_default"])
+        for company in companies:
+            links = company.get("search_links") or []
+            self.assertTrue(links, company["id"])
+            for link in links:
+                parsed = urlsplit(link.get("url") or "")
+                self.assertEqual("https", parsed.scheme, company["id"])
+                self.assertTrue(parsed.netloc, company["id"])
+                urls.append(link["url"])
+            adapter = company.get("adapter")
+            config_key = {
+                "workday": "workday",
+                "greenhouse": "greenhouse",
+                "ashby": "ashby",
+                "lever": "lever",
+                "smartrecruiters": "smartrecruiters",
+                "avature": "avature",
+                "oracle_hcm": "oracle_hcm",
+            }.get(adapter)
+            if config_key:
+                self.assertTrue(company.get(config_key), company["id"])
+            if company.get("covered_by") == "ats":
+                self.assertEqual("ats", adapter)
+        self.assertEqual(len(urls), len(set(urls)))
+        self.assertGreaterEqual(sum(company.get("adapter") != "skip" for company in companies), 70)
+
+    def test_ats_and_syncareer_have_explicit_official_cross_check_coverage(self) -> None:
+        official = json.loads((ROOT / "source" / "official_careers.json").read_text(encoding="utf-8"))
+        ats = json.loads((ROOT / "source" / "ats_boards.json").read_text(encoding="utf-8"))
+        syncareer = json.loads((ROOT / "source" / "company_links.json").read_text(encoding="utf-8"))
+        official_ids = {company["id"] for company in official["companies"]}
+        ats_ids = {board["token"] for board in ats["boards"]}
+        sync_ids = {company["key"] for company in syncareer["companies"]}
+        self.assertTrue(ats_ids.issubset(official_ids))
+        self.assertGreaterEqual(len(official_ids & sync_ids), 38)
+        self.assertGreaterEqual(len(official_ids & ats_ids & sync_ids), 7)
+        self.assertEqual(len(sync_ids), len(syncareer["companies"]))
+
+    def test_bounded_query_variants_are_kept_in_configuration(self) -> None:
+        self.assertIn("Site Reliability", daily_pipeline.SEARCH_KEYWORDS)
+        from sources.careers.amazon import DEFAULT_QUERIES as amazon_queries, QUERY_PAGE_CAPS as amazon_caps
+        from sources.careers.google import DEFAULT_QUERIES as google_queries
+        from sources.careers.workday import DEFAULT_QUERIES as workday_queries, QUERY_PAGE_CAPS as workday_caps
+
+        self.assertIn("systems development engineer", amazon_queries)
+        self.assertIn("site reliability engineer", amazon_queries)
+        self.assertIn("applied scientist", amazon_queries)
+        self.assertIn("platform engineer", workday_queries)
+        self.assertIn('"Data Engineer"', {query["q"] for query in google_queries})
+        self.assertIn('"Infrastructure Engineer"', {query["q"] for query in google_queries})
+        self.assertIn('"DeepMind"', {query["q"] for query in google_queries})
+        self.assertLessEqual(max(amazon_caps.values()), 3)
+        self.assertLessEqual(max(workday_caps.values()), 3)
+
+        registry = json.loads((ROOT / "source" / "official_careers.json").read_text(encoding="utf-8"))
+        companies = {company["id"]: company for company in registry["companies"]}
+        self.assertIn("core infrastructure", companies["oracle"]["oracle_hcm"]["extra_queries"])
 
 
 if __name__ == "__main__":

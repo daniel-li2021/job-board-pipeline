@@ -29,7 +29,19 @@ DEFAULT_QUERIES = [
     "software engineer",
     "software development engineer",
     "machine learning engineer",
+    "data engineer",
+    "systems development engineer",
+    "site reliability engineer",
+    "applied scientist",
 ]
+# Broader role-family variants are useful but lower-volume. Bound them so the
+# scheduled run does not double the worst-case request count.
+QUERY_PAGE_CAPS = {
+    "data engineer": 3,
+    "systems development engineer": 3,
+    "site reliability engineer": 3,
+    "applied scientist": 2,
+}
 
 
 def scrape_amazon(
@@ -49,7 +61,8 @@ def scrape_amazon(
     for keyword in queries:
         offset = 0
         query_ids: set[str] = set()
-        for _page in range(max_pages):
+        query_max_pages = min(max_pages, QUERY_PAGE_CAPS.get(keyword, max_pages))
+        for _page in range(query_max_pages):
             params = {
                 "base_query": keyword,
                 "country": "USA",
