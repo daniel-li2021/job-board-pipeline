@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - ".github/workflows/reconcile-pages.yml"
       - "profile/official_coverage.json"
       - "source/official_careers.json"
       - "source/target_companies.json"

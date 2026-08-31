@@ -641,6 +641,7 @@ class ReportingWorkflowTests(unittest.TestCase):
         self.assertIn("concurrency:", pages)
         self.assertIn("contents: read", pages)
         self.assertIn("persist-credentials: false", pages)
+        self.assertIn('".github/workflows/reconcile-pages.yml"', pages)
         self.assertNotIn("git commit", pages)
         self.assertNotIn("git push", pages)
         self.assertNotIn('"profile/review_state.json"', pages)
