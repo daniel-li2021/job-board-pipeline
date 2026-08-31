@@ -530,7 +530,8 @@ HTML_TEMPLATE = r'''<!doctype html>
 </div><script id="payload" type="application/json">__PAYLOAD__</script><script>
 const D=JSON.parse(document.getElementById('payload').textContent); document.getElementById('updated').textContent=D.updated_pt; document.getElementById('repo').href=D.repository;document.getElementById('referralFile').href=D.referral_file;
 const names={official:'Big Company Official',board:'ATS / LinkedIn',syncareer:'Syncareer'};
-document.getElementById('sourceSnapshots').textContent='Source snapshots: '+Object.keys(names).map(k=>`${names[k]} ${D.snapshots[k]||'unknown'}`).join(' · ');
+const snapshotTime=v=>{const d=new Date(v);return Number.isNaN(d.getTime())?'unknown':new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',hour12:true}).format(d).replace(',','')+' PT'};
+document.getElementById('sourceSnapshots').textContent='Source snapshots: '+Object.keys(names).map(k=>`${names[k]} · ${snapshotTime(D.snapshots[k])}`).join('   ');
 document.getElementById('freshBasis').textContent='Fresh source: '+Object.keys(names).map(k=>`${names[k]} ${(D.fresh_basis||{})[k]==='first_seen_migration_fallback'?'temporary migration fallback':'alert history / latest Issue'}`).join(' · ');
 document.getElementById('summary').innerHTML=Object.keys(names).map(k=>`<div class="card"><span>${names[k]}</span><div class="countline"><b>${D.counts_24h[k]}</b><span>last 24h</span><i>·</i><b>${D.counts_3d[k]}</b><span>in 3 days</span></div><a href="${D.report_links[k]}">open report</a></div>`).join('');
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
