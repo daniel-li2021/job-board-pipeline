@@ -175,7 +175,8 @@ def exact_match(external: Dict[str, Any], official_jobs: Iterable[Dict[str, Any]
         if ext_title and ext_location:
             off_title = normalize_title_key(str(official.get("title") or ""))
             off_location = normalize_location_key(str(official.get("location") or ""))
-            if ext_title == off_title and locations_compatible(ext_location, off_location):
+            remote_title = bool(re.search(r"\bremote\b\s*\)?\s*$", str(external.get("title") or ""), re.I))
+            if ext_title == off_title and (remote_title or locations_compatible(ext_location, off_location)):
                 title_location_candidates.append(official)
     # Title/location is safe only when it identifies one official requisition.
     # Multiple same-title jobs in one city remain reviewable rather than being
@@ -205,12 +206,24 @@ def locations_compatible(left_key: str, right_key: str) -> bool:
         "or", "pa", "ri", "sc", "sd", "tn", "tx", "ut", "vt", "va", "wa", "wv",
         "wi", "wy", "dc",
     }
+    generic = state_tokens | {"remote", "us"}
+    # Multi-location feeds sometimes omit a state for one city while including
+    # states for other cities. A shared city is stronger evidence than the
+    # aggregate state-set conflict; exact_match still requires one requisition.
+    if (left - generic) & (right - generic):
+        return True
     left_states = left & state_tokens
     right_states = right & state_tokens
     if left_states and right_states and left_states.isdisjoint(right_states):
         return False
-    generic = state_tokens | {"remote", "us", "united states"}
-    return bool((left - generic) & (right - generic))
+    # Exact-title matching remains safe when one source exposes only a US-wide
+    # location and the other provides a US city/state. Uniqueness is enforced
+    # by exact_match before a record can be suppressed.
+    left_us = "us" in left or bool(left_states)
+    right_us = "us" in right or bool(right_states)
+    broad_regions = {"canada", "europe", "european union", "north america", "worldwide"}
+    broad_generic = generic | broad_regions
+    return left_us and right_us and (left <= broad_generic or right <= broad_generic)
 
 
 def fuzzy_suggestion(external: Dict[str, Any], official_jobs: Iterable[Dict[str, Any]]) -> Optional[Dict[str, Any]]:

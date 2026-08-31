@@ -381,21 +381,39 @@ def normalize_location_key(location: str) -> str:
     Returns "" when location is blank. Callers must treat "" as NOT matching
     any other location (blank is never a wildcard).
     """
-    loc = (location or "").lower().strip()
+    loc = (location or "").strip()
     if not loc:
         return ""
-    loc = loc.replace("united states", "").replace("u.s.", "").replace("usa", "")
+    # Workday sometimes emits compact dotted locations such as
+    # ``USA.VA.Reston``. Expand only that structured prefix so names such as
+    # ``St. Louis`` keep their punctuation semantics.
+    loc = re.sub(r"\b(?:USA|US)\.([A-Z]{2})\.", r"US,\1,", loc, flags=re.I)
+    loc = re.sub(r"\((?:hq|headquarters)\)", "", loc, flags=re.I).lower()
+    loc = re.sub(r"\b(?:united states(?: of america)?|u\.s\.a?\.?|usa)\b", "us", loc)
     # Workday commonly emits "State - City" while external boards emit
     # "City, ST". Treat a spaced dash as a location separator, but preserve
     # hyphens inside city names.
-    tokens = [t.strip() for t in re.split(r"[,/;|]+|\s+-\s+", loc) if t.strip()]
+    tokens = [t.strip() for t in re.split(r"[,/;|•·\n]+|\s+-\s+", loc) if t.strip()]
+    state_abbrs = set(_STATE_NAME_TO_ABBR.values())
     norm: List[str] = []
-    for tok in tokens:
+    for index, tok in enumerate(tokens):
         tok = re.sub(r"[^a-z0-9 ]", " ", tok).strip()
         tok = re.sub(r"\s+", " ", tok)
-        if not tok:
+        if not tok or tok.isdigit() or tok in {"location", "locations", "n a"}:
             continue
-        norm.append(_STATE_NAME_TO_ABBR.get(tok, tok))
+        next_tok = ""
+        if index + 1 < len(tokens):
+            next_tok = re.sub(r"[^a-z0-9 ]", " ", tokens[index + 1]).strip()
+            next_tok = _STATE_NAME_TO_ABBR.get(next_tok, next_tok)
+        # New York and Washington can be city names. When a leading state-name
+        # token is followed by a state/DC token, preserve it as the city.
+        if tok in {"new york", "washington"} and next_tok in state_abbrs:
+            normalized = tok
+        else:
+            normalized = _STATE_NAME_TO_ABBR.get(tok, tok)
+        if normalized == "new york city" or normalized.startswith("nyc "):
+            normalized = "new york"
+        norm.append(normalized)
     # Order-independent so "CA, San Francisco" == "San Francisco, CA".
     return "|".join(sorted(set(norm)))
 

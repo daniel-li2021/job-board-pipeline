@@ -858,16 +858,21 @@
     {
       "id": "dell",
       "name": "Dell",
-      "adapter": "skip",
+      "adapter": "oracle_hcm",
       "enabled": true,
+      "max_pages": 3,
       "priority_tier": "A",
       "search_links": [
         {
-          "label": "Job search",
-          "url": "https://jobs.dell.com/en/search-jobs"
+          "label": "Software search",
+          "url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/jobs?keyword=software%20engineer"
         }
       ],
-      "skip_reason": "Tier A · Large SWE employer; inspect ATS before custom work."
+      "oracle_hcm": {
+        "host": "https://enterpriseplatform.dell.com",
+        "site_number": "CX_1001",
+        "public_job_base": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job"
+      }
     },
     {
       "id": "dropbox",
@@ -976,16 +981,20 @@
     {
       "id": "morgan-stanley",
       "name": "Morgan Stanley",
-      "adapter": "skip",
+      "adapter": "pcsx",
       "enabled": true,
+      "max_pages": 3,
       "priority_tier": "A",
       "search_links": [
         {
-          "label": "Career opportunities search",
-          "url": "https://www.morganstanley.com/careers/career-opportunities-search"
+          "label": "US software search",
+          "url": "https://morganstanley.eightfold.ai/careers?query=software%20engineer&location=United%20States"
         }
       ],
-      "skip_reason": "Tier A · Large technology org; filter aggressively to SWE/AI."
+      "pcsx": {
+        "portal": "https://morganstanley.eightfold.ai/careers",
+        "domain": "morganstanley.com"
+      }
     },
     {
       "id": "netapp",

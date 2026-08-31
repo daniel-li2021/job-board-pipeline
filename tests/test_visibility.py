@@ -254,7 +254,7 @@ class DashboardPolicyTests(unittest.TestCase):
             self.assertEqual("alert_history_or_issue", basis["official"])
             self.assertEqual(1, fresh[0]["activity_age_hours"])
 
-    def test_public_template_hides_coverage_and_has_shared_status_control(self) -> None:
+    def test_public_template_has_compact_navigation_and_shared_status_control(self) -> None:
         self.assertNotIn("Official coverage", dashboard.HTML_TEMPLATE)
         self.assertNotIn("<th>Coverage</th>", dashboard.HTML_TEMPLATE)
         self.assertIn("status-select", dashboard.HTML_TEMPLATE)
@@ -264,7 +264,15 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertNotIn('<div class="small">Big Company Official</div>', dashboard.HTML_TEMPLATE)
         self.assertIn("job_review_status", dashboard.HTML_TEMPLATE)
         self.assertNotIn("signInWithOtp", dashboard.HTML_TEMPLATE)
-        self.assertIn("anyone with this page can edit", dashboard.HTML_TEMPLATE)
+        self.assertIn('id="sectionNav"', dashboard.HTML_TEMPLATE)
+        self.assertIn('href="#section-fresh"', dashboard.HTML_TEMPLATE)
+        self.assertIn('href="#section-rolling"', dashboard.HTML_TEMPLATE)
+        self.assertIn('href="#section-in-progress"', dashboard.HTML_TEMPLATE)
+        self.assertIn('href="#section-applied"', dashboard.HTML_TEMPLATE)
+        self.assertIn("requestAnimationFrame(update)", dashboard.HTML_TEMPLATE)
+        self.assertIn("box.textContent='● Synced'", dashboard.HTML_TEMPLATE)
+        self.assertIn("sync-expanded", dashboard.HTML_TEMPLATE)
+        self.assertIn('class="countline"', dashboard.HTML_TEMPLATE)
         self.assertIn("const statusChoices=['unreviewed','in_progress','applied_complete']", dashboard.HTML_TEMPLATE)
         self.assertIn("Applied/Complete", dashboard.HTML_TEMPLATE)
         self.assertIn("<h2>Deleted</h2>", dashboard.HTML_TEMPLATE)
@@ -276,6 +284,9 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertNotIn("reviewStates[key]=previous", dashboard.HTML_TEMPLATE)
         self.assertNotIn("delete reviewStates[key]", dashboard.HTML_TEMPLATE)
         self.assertIn("<details class=\"panel\"><summary>Referral opportunities</summary>", dashboard.HTML_TEMPLATE)
+        self.assertLess(dashboard.HTML_TEMPLATE.index('id="section-applied"'), dashboard.HTML_TEMPLATE.index("<h2>Deleted</h2>"))
+        self.assertLess(dashboard.HTML_TEMPLATE.index("<h2>Deleted</h2>"), dashboard.HTML_TEMPLATE.index("Referral opportunities"))
+        self.assertLess(dashboard.HTML_TEMPLATE.index("Referral opportunities"), dashboard.HTML_TEMPLATE.index("Official company search links"))
         self.assertIn("<th>Sponsorship</th>", dashboard.HTML_TEMPLATE)
 
 
@@ -408,6 +419,37 @@ class CoverageMatchingTests(unittest.TestCase):
         self.assertTrue(coverage_reconcile.locations_compatible(
             normalize_location_key("San Jose"), normalize_location_key("San Jose, CA")
         ))
+        self.assertTrue(coverage_reconcile.locations_compatible(
+            normalize_location_key("New York, NY"),
+            normalize_location_key("San Francisco, CA • New York, NY • United States"),
+        ))
+        self.assertTrue(coverage_reconcile.locations_compatible(
+            normalize_location_key("Reston, VA"), normalize_location_key("USA.VA.Reston")
+        ))
+        self.assertTrue(coverage_reconcile.locations_compatible(
+            normalize_location_key("Seattle, WA"), normalize_location_key("US")
+        ))
+        self.assertTrue(coverage_reconcile.locations_compatible(
+            normalize_location_key("Seattle, WA"),
+            normalize_location_key("San Francisco, CA; Seattle; Remote, United States"),
+        ))
+        self.assertEqual("lausanne|switzerland", normalize_location_key("Lausanne, Switzerland"))
+
+    def test_unique_remote_title_can_match_geo_targeted_external_rows(self) -> None:
+        official = official_job("21001", "Forward Deployed Engineer (Remote)", "Austin, TX, US")
+        method, matched = coverage_reconcile.exact_match(
+            {"title": "Forward Deployed Engineer (Remote)", "location": "Denver, CO"},
+            [official],
+        )
+        self.assertEqual("title_location", method)
+        self.assertEqual("21001", matched["job_id"])
+
+        method, matched = coverage_reconcile.exact_match(
+            {"title": "Remote Sensing Engineer", "location": "Denver, CO"},
+            [official_job("21002", "Remote Sensing Engineer", "Austin, TX")],
+        )
+        self.assertEqual("", method)
+        self.assertIsNone(matched)
 
     def test_ambiguous_same_title_location_does_not_attach_arbitrarily(self) -> None:
         jobs = [
@@ -686,6 +728,7 @@ class RegistryCoverageTests(unittest.TestCase):
                 "smartrecruiters": "smartrecruiters",
                 "avature": "avature",
                 "oracle_hcm": "oracle_hcm",
+                "pcsx": "pcsx",
             }.get(adapter)
             if config_key:
                 self.assertTrue(company.get(config_key), company["id"])
@@ -693,6 +736,17 @@ class RegistryCoverageTests(unittest.TestCase):
                 self.assertEqual("ats", adapter)
         self.assertEqual(len(urls), len(set(urls)))
         self.assertGreaterEqual(sum(company.get("adapter") != "skip" for company in companies), 70)
+
+    def test_manual_unsupported_overrides_do_not_mask_active_adapters(self) -> None:
+        registry = json.loads((ROOT / "source" / "official_careers.json").read_text(encoding="utf-8"))
+        coverage = json.loads((ROOT / "profile" / "official_coverage.json").read_text(encoding="utf-8"))
+        active = {company["id"] for company in registry["companies"] if company.get("adapter") != "skip"}
+        stale = {
+            company_id
+            for company_id, config in coverage["companies"].items()
+            if config.get("status") == "unsupported" and company_id in active
+        }
+        self.assertEqual(set(), stale)
 
     def test_ats_and_syncareer_have_explicit_official_cross_check_coverage(self) -> None:
         official = json.loads((ROOT / "source" / "official_careers.json").read_text(encoding="utf-8"))
