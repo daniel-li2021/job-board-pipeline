@@ -1,15 +1,14 @@
-Syncareer alert — 2026-08-30_1839
+Syncareer alert — 2026-08-31_0954
 
-Updated (PT): 2026-08-30 11:40 PDT
-Snapshot (UTC): 2026-08-30T18:40:06.307792+00:00
+Updated (PT): 2026-08-31 02:55 PDT
+Snapshot (UTC): 2026-08-31T09:55:27.401012+00:00
 
-2 new matching job(s) this run (hard-filtered).
+1 new matching job(s) this run (hard-filtered).
 
 If you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.md` in the repo (last 3 days, one file).
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| B | 80.0 | Syncareer | Brooksource | Software Engineer | Charlotte, North Carolina, United States | 2026-08-29 | H-1B Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.brooksource.com/jobs/job/a1wcv000000vrafeaa-software-engineer-charlotte-north-carolina/) |
-| B | 80.0 | Syncareer | Freeport-McMoRan | Data and AI Engineer II | Phoenix, Arizona, United States | 2026-08-29 | H-1B Sponsor | - | unreviewed | not_dedicated | [open](https://talent.fmjobs.com/careers?pid=44209295&domain=fcx.com&sort_by=relevance) |
+| A | 85.0 | Syncareer | Roblox | Software Engineer, Economy Platform | San Mateo, California, United States | 2026-08-29 | H-1B Sponsor | - | unreviewed | covered_unvalidated | [open](https://careers.roblox.com/jobs/8060254?gh_jid=8060254) |
 
-Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-08-30_1839.csv`.
+Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-08-31_0954.csv`.

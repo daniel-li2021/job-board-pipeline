@@ -1,23 +1,24 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-08-30 11:40 PDT
-- Snapshot (UTC): 2026-08-30T18:40:06.307214+00:00
+- Updated (PT): 2026-08-31 02:55 PDT
+- Snapshot (UTC): 2026-08-31T09:55:27.400743+00:00
 - Jobs: 30
-- Last 24 hours: 11
+- Last 24 hours: 3
 - Last 3 days: 30
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| B | 80.0 | Syncareer | Brooksource | Software Engineer | Charlotte, North Carolina, United States | 2026-08-29 | H-1B Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.brooksource.com/jobs/job/a1wcv000000vrafeaa-software-engineer-charlotte-north-carolina/) |
+| B | 80.0 | Syncareer | Freeport-McMoRan | Data and AI Engineer II | Phoenix, Arizona, United States | 2026-08-29 | H-1B Sponsor | - | unreviewed | not_dedicated | [open](https://talent.fmjobs.com/careers?pid=44209295&domain=fcx.com&sort_by=relevance) |
 | B | 80.0 | Syncareer | Cisco | Software Engineer | Boulder, Colorado, United States | 2026-08-29 | H-1B Sponsor | - | unreviewed | covered_unvalidated | [open](https://careers.cisco.com/global/en/job/2021114/Software-Engineer) |
 | B | 75.0 | Syncareer | Intuitive | Full Stack Engineer | Sunnyvale, California, United States | 2026-08-29 | H-1B Sponsor | - | unreviewed | not_dedicated | [open](https://careers.intuitive.com/en/jobs/744000146230504/JOB217750/full-stack-engineer/) |
 | B | 75.0 | Syncareer | Addison Group | Machine Learning Developer | Dallas, Texas, United States | 2026-08-29 | H-1B Sponsor | - | unreviewed | not_dedicated | [open](https://www.addisongroup.com/jobs/job/machine-learning-developer-information-technology-dallas-metro-area-texas-a1qpl000008birryaw/1ac3c696-a313-11f1-9a51-02420a6c7775) |
 | B | 75.0 | Syncareer | Boston Scientific | Software Engineer I | Arden Hills, Minnesota, United States | 2026-08-29 | H-1B Sponsor | - | unreviewed | not_dedicated | [open](https://bostonscientific.eightfold.ai/careers/job/563602813470082?domain=bostonscientific.com&hl=en&triggerGoButton=false) |
 | B | 75.0 | Syncareer | BlackRock | Associate Data Engineer, Data Management – Data Office | New York, New York, United States | 2026-08-29 | H-1B Sponsor | - | unreviewed | not_dedicated | [open](https://careers.blackrock.com/job/new-york/associate-data-engineer-data-management-data-office/45831/99822170672) |
 | B | 75.0 | Syncareer | Intuitive | Instrument Software Engineer | Sunnyvale, California, United States | 2026-08-29 | H-1B Sponsor | - | unreviewed | not_dedicated | [open](https://careers.intuitive.com/en/jobs/744000146220840/JOB218481/instrument-software-engineer/) |
-| B | 80.0 | Syncareer | Brooksource | Software Engineer | Charlotte, North Carolina, United States | 2026-08-29 | H-1B Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.brooksource.com/jobs/job/a1wcv000000vrafeaa-software-engineer-charlotte-north-carolina/) |
-| B | 80.0 | Syncareer | Freeport-McMoRan | Data and AI Engineer II | Phoenix, Arizona, United States | 2026-08-29 | H-1B Sponsor | - | unreviewed | not_dedicated | [open](https://talent.fmjobs.com/careers?pid=44209295&domain=fcx.com&sort_by=relevance) |
+| A | 85.0 | Syncareer | Roblox | Software Engineer, Economy Platform | San Mateo, California, United States | 2026-08-29 | H-1B Sponsor | - | unreviewed | covered_unvalidated | [open](https://careers.roblox.com/jobs/8060254?gh_jid=8060254) |
 | B | 75.0 | Syncareer | UDR | Data Engineer | Highlands Ranch, Colorado, United States | 2026-08-28 | H-1B Sponsor | - | unreviewed | not_dedicated | [open](https://recruiting2.ultipro.com/UNI1027UDRT/JobBoard/6ccb8fd4-4950-43e4-9978-4bcc85c6f5e1/OpportunityDetail?opportunityId=642bfd81-5f87-4e0d-9ec1-62920b04946b) |
 | B | 75.0 | Syncareer | IBM | Software Developer Intern - OneIT - Rochester, MN - 2027 | Rochester, Minnesota, United States | 2026-08-28 | H-1B Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=130900&source=WEB_Search_NA) |
 | B | 75.0 | Syncareer | Checkr | Software Engineer | Denver, Colorado, United States | 2026-08-28 | H-1B Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/checkr/jobs/6917810) |
@@ -32,11 +33,10 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 75.0 | Syncareer | ByteDance | Research Engineer Graduate (AI Infra Compute) - 2027 Start (PhD) | San Jose, United States | 2026-08-29 | H-1B Sponsor | YES (ByteDance) | unreviewed | official_unsupported | [open](https://joinbytedance.com/search/7667334521286035765) |
 | B | 75.0 | Syncareer | Microsoft | Software Engineer Intune | Redmond, Washington, United States | 2026-08-28 | H-1B Sponsor | YES (Microsoft) | unreviewed | covered_unvalidated | [open](https://apply.careers.microsoft.com/careers/job/1970393556982925) |
 | B | 80.0 | Syncareer | Google | Software Engineer III, AI/ML GenAI, Google Ads | Los Angeles, California, United States | 2026-08-28 | H-1B Sponsor | YES (Google) | unreviewed | covered_unvalidated | [open](https://www.google.com/about/careers/applications/jobs/results/72980190111638214-software-engineer-iii-aiml-genai-google-ads) |
-| B | 75.0 | Syncareer | The Walt Disney Company | Product Software Engineer II (Java/Full Stack/DevOps) | Glendale, California, United States | 2026-08-28 | H-1B Sponsor | YES (Disney) | unreviewed | official_unsupported | [open](https://jobs.disneycareers.com/job/glendale/product-software-engineer-ii-java-full-stack-devops/391/99853016336) |
-| B | 75.0 | Syncareer | The Walt Disney Company | Software Engineer II (Cloud Platform AWS) | Santa Monica, California, United States | 2026-08-28 | H-1B Sponsor | YES (Disney) | unreviewed | official_unsupported | [open](https://jobs.disneycareers.com/job/santa-monica/software-engineer-ii-cloud-platform-aws/391/99853016432) |
+| B | 75.0 | Syncareer | The Walt Disney Company | Product Software Engineer II (Java/Full Stack/DevOps) | Glendale, California, United States | 2026-08-28 | H-1B Sponsor | YES (Disney) | unreviewed | covered_unvalidated | [open](https://jobs.disneycareers.com/job/glendale/product-software-engineer-ii-java-full-stack-devops/391/99853016336) |
+| B | 75.0 | Syncareer | The Walt Disney Company | Software Engineer II (Cloud Platform AWS) | Santa Monica, California, United States | 2026-08-28 | H-1B Sponsor | YES (Disney) | unreviewed | covered_unvalidated | [open](https://jobs.disneycareers.com/job/santa-monica/software-engineer-ii-cloud-platform-aws/391/99853016432) |
 | A | 85.0 | Syncareer | Uber | Software Engineer II | Sunnyvale, California, United States | 2026-08-28 | H-1B Sponsor | YES (Uber) | unreviewed | covered_unvalidated | [open](https://jobs.uber.com/en/jobs/301386/) |
-| B | 75.0 | Syncareer | The Walt Disney Company | Product Software Engineer II (News Front End) | New York, New York, United States | 2026-08-28 | H-1B Sponsor | YES (Disney) | unreviewed | official_unsupported | [open](https://jobs.disneycareers.com/job/new-york/product-software-engineer-ii-news-front-end/391/99856977312) |
-| B | 75.0 | Syncareer | TikTok | Data Engineer Graduate (Data Platform Global Live) - 2027 Start | San Jose, California, United States | 2026-08-28 | H-1B Sponsor | YES (ByteDance) | unreviewed | official_unsupported | [open](https://lifeattiktok.com/search/7678120538997098805) |
-| B | 75.0 | Syncareer | Meta | Software Engineer, Systems & ML Infrastructure - MSL FAIR Foundations | Menlo Park, California, United States | 2026-08-28 | H-1B Sponsor | YES (Meta) | unreviewed | official_unsupported | [open](https://www.metacareers.com/profile/job_details/1061625146845555) |
+| B | 75.0 | Syncareer | The Walt Disney Company | Product Software Engineer II (News Front End) | New York, New York, United States | 2026-08-28 | H-1B Sponsor | YES (Disney) | unreviewed | official_gap | [open](https://jobs.disneycareers.com/job/new-york/product-software-engineer-ii-news-front-end/391/99856977312) |
+| B | 75.0 | Syncareer | TikTok | Data Engineer Graduate (Data Platform Global Live) - 2027 Start | San Jose, California, United States | 2026-08-28 | H-1B Sponsor | YES (ByteDance) | unreviewed | covered_unvalidated | [open](https://lifeattiktok.com/search/7678120538997098805) |
+| B | 75.0 | Syncareer | Meta | Software Engineer, Systems & ML Infrastructure - MSL FAIR Foundations | Menlo Park, California, United States | 2026-08-28 | H-1B Sponsor | YES (Meta) | unreviewed | covered_unvalidated | [open](https://www.metacareers.com/profile/job_details/1061625146845555) |
 | A | 85.0 | Syncareer | JPMorgan Chase | Applied AI ML [Multiple Positions Available] | Palo Alto, California, United States | 2026-08-27 | H-1B Sponsor | YES (J.P. Morgan) | unreviewed | covered_unvalidated | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210779432) |
-| A | 90.0 | Syncareer | Google | Software Engineer, AI/ML, Google Research | Mountain View, California, United States | 2026-08-26 | H-1B Sponsor | YES (Google) | unreviewed | covered_unvalidated | [open](https://www.google.com/about/careers/applications/jobs/results/127944260988084934-software-engineer-aiml-google-research) |

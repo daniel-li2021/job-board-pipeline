@@ -2666,6 +2666,30 @@
           "url": "https://talent.fmjobs.com/careers?pid=44209295&domain=fcx.com&sort_by=relevance"
         }
       ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-08-31_0954",
+      "emitted_at": "2026-08-31T09:55:27.401055+00:00",
+      "event_kind": "new_matching",
+      "count": 1,
+      "jobs": [
+        {
+          "canonical_job_key": "id::syncareer::b63c431047dc65d181cf2743738fd260",
+          "job_id": "b63c431047dc65d181cf2743738fd260",
+          "tier": "A",
+          "match_score": 85.0,
+          "fit_score": 85.0,
+          "company": "Roblox",
+          "title": "Software Engineer, Economy Platform",
+          "location": "San Mateo, California, United States",
+          "posting_date": "2026-08-29",
+          "first_seen": "2026-08-31T09:54:55.045832+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://careers.roblox.com/jobs/8060254?gh_jid=8060254",
+          "url": "https://careers.roblox.com/jobs/8060254?gh_jid=8060254"
+        }
+      ]
     }
   ]
 }
