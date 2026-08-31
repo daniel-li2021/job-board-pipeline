@@ -39,6 +39,7 @@ import coverage_reconcile
 import board_pipeline as board
 import llm_config
 from sources.company_aliases import load_alias_file, match_company_alias
+from sources.schema import normalize_sponsorship
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -667,13 +668,13 @@ def apply_external_company_policy(
 
 
 def sponsorship_from_supports(supports: Any) -> str:
-    if not isinstance(supports, list):
+    if not isinstance(supports, list) or not supports:
         return "Unknown"
     joined = " ".join(str(s).lower() for s in supports)
     if "h1b" in joined or "h-1b" in joined:
-        return "H-1B Sponsor"
+        return "Sponsor"
     # Field present but no H1B token -> employer indicated no sponsorship.
-    return "No H-1B Sponsor"
+    return "No sponsor"
 
 
 GRAD_YEAR_RE = re.compile(r"\b(graduat\w*|class of|degree)\b[^\n]{0,60}\b(202[4-9])\b", re.IGNORECASE)
@@ -722,7 +723,9 @@ def normalize_job_row(
     supports = detail.get("supports")
     if supports is None:
         supports = summary.get("supports")
-    sponsorship = sponsorship_from_supports(supports)
+    sponsorship = normalize_sponsorship(
+        {"sponsorship": sponsorship_from_supports(supports), "description": desc_text}
+    )
     target_match = match_target_company(company, targets)
 
     return {
@@ -880,7 +883,7 @@ def assign_shared_scores(
         result["risk"] = "; ".join(job.get("main_gaps") or [])
         result["sponsorship_concern"] = "yes" if str(
             next((r.get("sponsorship") for r in rows if str(r.get("job_id")) == str(job.get("job_id"))), "")
-        ) in {"No H-1B Sponsor", "Unknown"} else "no"
+        ) in {"No sponsor", "Unknown"} else "no"
         decisions[str(job.get("job_id") or "")] = result
     return decisions, counts, errors, method
 
@@ -957,7 +960,7 @@ def llm_tier_batch(
             "Use responsibilities and required/minimum qualifications, not keyword overlap.",
             "Do not automatically reject strong 3-5 years-of-experience fits; judge demonstrated scope and core skills.",
             "main_gaps contains only meaningful missing core requirements; preferred/nice-to-have gaps are minor.",
-            "Flag sponsorship_concern=yes when sponsorship is 'No H-1B Sponsor' or 'Unknown'.",
+            "Flag sponsorship_concern=yes when sponsorship is 'No sponsor' or 'Unknown'.",
         ],
         "return_schema": {
             "results": [
@@ -1050,7 +1053,7 @@ def fallback_tier(row: Dict[str, str]) -> Dict[str, Any]:
     elif score >= 60:
         tier = "2"
     rec = "AI-FDE" if any(x in text for x in ai_signals) else "SWE"
-    concern = "yes" if row.get("sponsorship") in {"No H-1B Sponsor", "Unknown"} else "no"
+    concern = "yes" if row.get("sponsorship") in {"No sponsor", "Unknown"} else "no"
     return {
         "fit_score": round(score, 1),
         "recommended_resume": rec,

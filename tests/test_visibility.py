@@ -82,7 +82,20 @@ class DashboardPolicyTests(unittest.TestCase):
     def test_sponsorship_labels_use_existing_source_data(self) -> None:
         self.assertEqual("Sponsor", dashboard.sponsorship_label({"sponsorship": "H-1B Sponsor"}))
         self.assertEqual("No sponsor", dashboard.sponsorship_label({"sponsorship": "No H-1B Sponsor"}))
+        self.assertEqual("Sponsor", dashboard.sponsorship_label({"description": "Visa sponsorship is available for this role."}))
+        self.assertEqual("No sponsor", dashboard.sponsorship_label({"description": "We are unable to provide visa sponsorship."}))
+        self.assertEqual("No sponsor", dashboard.sponsorship_label({"description": "Visa sponsorship is not available."}))
+        self.assertEqual("Unknown", dashboard.sponsorship_label({"description": "Applicants may require sponsorship."}))
         self.assertEqual("Unknown", dashboard.sponsorship_label({}))
+        self.assertEqual("Sponsor", daily_pipeline.sponsorship_from_supports(["H-1B"]))
+        self.assertEqual("No sponsor", daily_pipeline.sponsorship_from_supports(["OPT"]))
+        self.assertEqual("Unknown", daily_pipeline.sponsorship_from_supports([]))
+        job = make_job(
+            source="test", company="Example", title="Engineer",
+            description="Visa sponsorship is available for this role.",
+        )
+        self.assertEqual("Sponsor", job["sponsorship"])
+        self.assertEqual("Sponsor", board_pipeline.build_store_entry(job, "test")["sponsorship"])
 
     def test_board_c_fallback_uses_thresholds_and_existing_scores(self) -> None:
         now = datetime(2026, 8, 29, 12, tzinfo=timezone.utc)
@@ -297,6 +310,7 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertLess(dashboard.HTML_TEMPLATE.index("<h2>Deleted</h2>"), dashboard.HTML_TEMPLATE.index("Referral opportunities"))
         self.assertLess(dashboard.HTML_TEMPLATE.index("Referral opportunities"), dashboard.HTML_TEMPLATE.index("Official company search links"))
         self.assertIn("<th>Sponsorship</th>", dashboard.HTML_TEMPLATE)
+        self.assertIn("'Amazon','Meta','TikTok'", dashboard.HTML_TEMPLATE)
 
 
 class MatchingPolicyTests(unittest.TestCase):

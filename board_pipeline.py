@@ -58,6 +58,7 @@ from sources.schema import (
     normalize_company_key,
     normalize_location_key,
     normalize_space,
+    normalize_sponsorship,
     normalize_title_key,
     read_source_snapshot,
     recency_bucket,
@@ -1690,7 +1691,7 @@ ENTRY_DEFAULTS: Dict[str, Any] = {
     "coverage_status": "", "canonical_source": "", "canonical_job_key": "",
     "duplicate_of": "", "official_snapshot_at": "", "source_snapshot_at": "",
     "coverage_match_method": "", "official_company_id": "", "suppress_alert": False,
-    "review_status": "unreviewed",
+    "review_status": "unreviewed", "sponsorship": "Unknown",
     "first_seen": "", "last_seen": "",
 }
 
@@ -1717,6 +1718,7 @@ def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
         "official_url": job.get("official_url", ""),
         "source": job.get("source", ""),
         "source_url": job.get("source_url", ""),
+        "sponsorship": normalize_sponsorship(job),
         # provenance
         "discovered_via": list(job.get("discovered_via") or ([job.get("source", "")] if job.get("source") else [])),
         # pipeline status

@@ -16,7 +16,7 @@ from zoneinfo import ZoneInfo
 import coverage_reconcile
 import alert_history
 from sources.company_aliases import load_alias_file, match_company_alias
-from sources.schema import classify_location_bucket
+from sources.schema import classify_location_bucket, normalize_sponsorship
 
 BASE_DIR = Path(__file__).resolve().parent
 PUBLIC_DIR = BASE_DIR / "public"
@@ -180,20 +180,8 @@ def recency(job: Dict[str, Any], now: datetime) -> Dict[str, Any]:
 
 
 def sponsorship_label(entry: Dict[str, Any]) -> str:
-    """Map existing source sponsorship data to the dashboard's small vocabulary."""
-    raw = str(
-        entry.get("sponsorship")
-        or entry.get("sponsorship_status")
-        or entry.get("visa_sponsorship")
-        or ""
-    ).strip().lower()
-    if not raw or raw == "unknown":
-        return "Unknown"
-    if re.search(r"\b(?:no|not|without|ineligible)\b.*\bsponsor", raw):
-        return "No sponsor"
-    if "sponsor" in raw:
-        return "Sponsor"
-    return "Unknown"
+    """Map source/JD evidence to the dashboard's small vocabulary."""
+    return normalize_sponsorship(entry)
 
 
 def normalize_row(
@@ -569,7 +557,7 @@ function postingText(r){const p=r.freshness.posted||{};if(!p.trusted)return r.po
 function jobs(rows,deleted=false){if(!rows.length)return '<div class="empty">No qualifying jobs in this view.</div>';return `<div class="tablewrap"><table><thead><tr><th>Tier</th><th>Company / Title</th><th>Location</th><th>Alert / Posted</th><th>Sponsorship</th><th>Referral</th><th>Status</th><th>Source</th></tr></thead><tbody>${rows.map(r=>{const state=reviewState(r.canonical_job_key),disabled=pendingKeys.has(r.canonical_job_key)?'disabled':'',pending=state?.pending?'<span class="small">Pending sync</span>':'';return `<tr><td><b>${esc(r.tier)}</b>${r.score!==''?`<div class="small">${esc(r.score)}</div>`:''}</td><td><b>${esc(r.company)}</b><br><a href="${esc(r.url)}">${esc(r.title)}</a></td><td>${esc(r.location)}</td><td><span class="pill discovered">${activityText(r)}</span><div class="small">${postingText(r)}</div></td><td>${esc(r.sponsorship||'Unknown')}</td><td>${r.referral?`<span class="pill referral">${esc(r.referral)}</span>`:'-'}</td><td><div class="workflow">${deleted?`<span class="pill">Deleted</span><button class="restore" data-key="${esc(r.canonical_job_key)}" ${disabled}>Restore</button>`:`<select class="status-select" data-key="${esc(r.canonical_job_key)}" ${disabled}>${statusChoices.map(s=>`<option value="${s}" ${statusOf(r)===s?'selected':''}>${statusLabels[s]}</option>`).join('')}</select><button class="delete" data-key="${esc(r.canonical_job_key)}" ${disabled}>Delete</button>`}${pending}</div></td><td>${esc(names[r.pipeline]||r.pipeline)}</td></tr>`}).join('')}</tbody></table></div>`}
 function bindStatus(box){box.querySelectorAll('.status-select').forEach(s=>s.onchange=()=>setStatus(s.dataset.key,s.value));box.querySelectorAll('.delete').forEach(b=>b.onclick=()=>deleteJob(b.dataset.key));box.querySelectorAll('.restore').forEach(b=>b.onclick=()=>restoreJob(b.dataset.key))}
 function renderBox(id,rows){const box=document.getElementById(id);box.innerHTML=jobs(rows);bindStatus(box)}
-function tabs(elId,rows){const filtered=rows.filter(r=>statusOf(r)==='unreviewed'&&!isDeleted(r)),tab=document.querySelector(`[data-target="${elId}"]`),companyTab=document.querySelector(`[data-company-target="${elId}"]`),box=document.getElementById(elId);let active='all',company='all';const companyNames=['all','Google','Microsoft','Apple','Amazon'];const companyRows=k=>filtered.filter(r=>r.pipeline==='official'&&(k==='all'||r.company.toLowerCase().includes(k.toLowerCase())));const draw=()=>{tab.innerHTML=['all',...Object.keys(names)].map(k=>`<button class="tab ${k===active?'on':''}" data-k="${k}">${k==='all'?'All':names[k]} (${k==='all'?filtered.length:filtered.filter(r=>r.pipeline===k).length})</button>`).join('');companyTab.style.display=active==='official'?'flex':'none';companyTab.innerHTML=active==='official'?companyNames.map(k=>`<button class="tab ${k===company?'on':''}" data-company="${k}">${k} (${companyRows(k).length})</button>`).join(''):'';let shown=active==='all'?filtered:filtered.filter(r=>r.pipeline===active);if(active==='official'&&company!=='all')shown=companyRows(company);box.innerHTML=jobs(shown);bindStatus(box);tab.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.k;if(active!=='official')company='all';draw()});companyTab.querySelectorAll('button').forEach(b=>b.onclick=()=>{company=b.dataset.company;draw()})};draw()}
+function tabs(elId,rows){const filtered=rows.filter(r=>statusOf(r)==='unreviewed'&&!isDeleted(r)),tab=document.querySelector(`[data-target="${elId}"]`),companyTab=document.querySelector(`[data-company-target="${elId}"]`),box=document.getElementById(elId);let active='all',company='all';const companyNames=['all','Google','Microsoft','Apple','Amazon','Meta','TikTok'];const companyRows=k=>filtered.filter(r=>r.pipeline==='official'&&(k==='all'||r.company.toLowerCase().includes(k.toLowerCase())));const draw=()=>{tab.innerHTML=['all',...Object.keys(names)].map(k=>`<button class="tab ${k===active?'on':''}" data-k="${k}">${k==='all'?'All':names[k]} (${k==='all'?filtered.length:filtered.filter(r=>r.pipeline===k).length})</button>`).join('');companyTab.style.display=active==='official'?'flex':'none';companyTab.innerHTML=active==='official'?companyNames.map(k=>`<button class="tab ${k===company?'on':''}" data-company="${k}">${k} (${companyRows(k).length})</button>`).join(''):'';let shown=active==='all'?filtered:filtered.filter(r=>r.pipeline===active);if(active==='official'&&company!=='all')shown=companyRows(company);box.innerHTML=jobs(shown);bindStatus(box);tab.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.k;if(active!=='official')company='all';draw()});companyTab.querySelectorAll('button').forEach(b=>b.onclick=()=>{company=b.dataset.company;draw()})};draw()}
 const allRows=[...(D.workflow_rows||[]),...D.fresh_24h,...D.rolling_3d,...D.referrals];const uniqueRows=()=>[...new Map(allRows.map(r=>[r.canonical_job_key,r])).values()];let activeMainView='fresh';
 function renderMainViewTabs(rows=uniqueRows()){const counts={fresh:D.fresh_24h.filter(r=>statusOf(r)==='unreviewed'&&!isDeleted(r)).length,rolling:D.rolling_3d.filter(r=>statusOf(r)==='unreviewed'&&!isDeleted(r)).length,'in-progress':rows.filter(r=>statusOf(r)==='in_progress'&&!isDeleted(r)).length,applied:rows.filter(r=>statusOf(r)==='applied_complete'&&!isDeleted(r)).length};const labels={fresh:'Fresh',rolling:'Rolling','in-progress':'In Progress',applied:'Applied'};document.querySelectorAll('#mainViewTabs [data-main-view]').forEach(button=>{const on=button.dataset.mainView===activeMainView;button.classList.toggle('on',on);button.setAttribute('aria-selected',String(on));button.tabIndex=on?0:-1;button.textContent=`${labels[button.dataset.mainView]} ${counts[button.dataset.mainView]}`});document.querySelectorAll('[data-main-panel]').forEach(panel=>{panel.hidden=panel.dataset.mainPanel!==activeMainView})}
 function initializeMainViewTabs(){const buttons=[...document.querySelectorAll('#mainViewTabs [data-main-view]')];buttons.forEach((button,index)=>{button.onclick=()=>{activeMainView=button.dataset.mainView;renderMainViewTabs();button.focus({preventScroll:true})};button.onkeydown=event=>{let target;if(event.key==='ArrowRight')target=buttons[(index+1)%buttons.length];else if(event.key==='ArrowLeft')target=buttons[(index-1+buttons.length)%buttons.length];else if(event.key==='Home')target=buttons[0];else if(event.key==='End')target=buttons[buttons.length-1];if(target){event.preventDefault();target.click()}}});renderMainViewTabs()}

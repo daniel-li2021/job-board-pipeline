@@ -33,6 +33,7 @@ JOB_FIELDS = [
     "source_url",        # where we found it
     "official_url",      # canonical company/ATS URL when verified, else ""
     "description",
+    "sponsorship",       # Sponsor | No sponsor | Unknown
     "fetched_at",        # ISO timestamp when this adapter fetched the record
     "first_seen",        # ISO timestamp, set by the orchestrator on first sight
 ]
@@ -424,6 +425,44 @@ def normalize_location_key(location: str) -> str:
 JD_HEAD_CHARS = 5000
 JD_TAIL_CHARS = 4000
 
+SPONSORSHIP_NO_RE = re.compile(
+    r"(?:\b(?:no|without)\b.{0,40}\bsponsor(?:ship)?\b|"
+    r"\b(?:do(?:es)? not|cannot|can't|will not|won't|unable to)\b.{0,40}\bsponsor(?:ship)?\b|"
+    r"\bnot eligible\b.{0,40}\bsponsor(?:ship)?\b|"
+    r"\bsponsor(?:ship)?\b.{0,20}\b(?:not available|not provided|not offered|unavailable)\b)",
+    re.IGNORECASE,
+)
+SPONSORSHIP_YES_RE = re.compile(
+    r"(?:\b(?:visa|immigration|employment|h-?1b) sponsorship\b.{0,20}\b(?:available|provided|offered)\b|"
+    r"\b(?:we|employer|company)\b.{0,20}\b(?:will|can|may) sponsor\b|"
+    r"\bh-?1b sponsor\b)",
+    re.IGNORECASE,
+)
+
+
+def normalize_sponsorship(job: Dict[str, Any]) -> str:
+    """Return a conservative normalized sponsorship value from source/JD evidence."""
+    raw = str(
+        job.get("sponsorship")
+        or job.get("sponsorship_status")
+        or job.get("visa_sponsorship")
+        or ""
+    ).strip()
+    lowered = raw.lower()
+    if lowered in {"no", "false", "no sponsor", "no sponsorship", "no h-1b sponsor"}:
+        return "No sponsor"
+    if lowered in {"yes", "true", "sponsor", "sponsorship available", "h-1b sponsor"}:
+        return "Sponsor"
+    evidence = " ".join(
+        str(value or "")
+        for value in (raw, job.get("description"), job.get("requirements"))
+    )
+    if SPONSORSHIP_NO_RE.search(evidence):
+        return "No sponsor"
+    if SPONSORSHIP_YES_RE.search(evidence):
+        return "Sponsor"
+    return "Unknown"
+
 
 def retain_description(description: str) -> str:
     text = normalize_space(description)
@@ -445,12 +484,13 @@ def make_job(
     source_url: str = "",
     official_url: str = "",
     description: str = "",
+    sponsorship: Any = "",
     fetched_at: str = "",
 ) -> Dict[str, str]:
     iso = to_iso_date(posted_date)
     if iso and date_confidence == "unknown":
         date_confidence = "medium"
-    return {
+    job = {
         "job_id": normalize_space(job_id),
         "source": normalize_space(source),
         "company": normalize_space(company),
@@ -462,9 +502,12 @@ def make_job(
         "source_url": normalize_space(source_url),
         "official_url": normalize_space(official_url),
         "description": retain_description(description),
+        "sponsorship": sponsorship,
         "fetched_at": normalize_space(fetched_at),
         "first_seen": "",
     }
+    job["sponsorship"] = normalize_sponsorship(job)
+    return job
 
 
 def dedup_key(job: Dict[str, str]) -> str:
