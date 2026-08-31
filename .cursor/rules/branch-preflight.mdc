@@ -1,0 +1,16 @@
+---
+description: Require a clean branch based on current origin/main before repository edits
+alwaysApply: true
+---
+
+# Git Branch Preflight
+
+Before editing repository files:
+
+1. Run `git fetch origin`.
+2. Run `git status --short` and `git rev-list --left-right --count HEAD...origin/main`.
+3. Start the task from current `origin/main` on a focused `codex/<task>` branch.
+4. If the existing checkout is dirty, behind, or diverged, leave it untouched and create a clean worktree from `origin/main`.
+5. Immediately before pushing, fetch and compare with `origin/main` again. If automation advanced `main`, integrate the task commit on a clean branch before pushing.
+
+Do not merge, rebase, reset, or clean a dirty checkout just to catch up with automation-generated commits. Preserve user changes and use an isolated worktree instead.

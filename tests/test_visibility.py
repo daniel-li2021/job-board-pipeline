@@ -639,6 +639,10 @@ class ReportingWorkflowTests(unittest.TestCase):
         self.assertNotIn("--no-llm", syncareer)
         self.assertIn("actions/deploy-pages@v4", pages)
         self.assertIn("concurrency:", pages)
+        self.assertIn("contents: read", pages)
+        self.assertIn("persist-credentials: false", pages)
+        self.assertNotIn("git commit", pages)
+        self.assertNotIn("git push", pages)
         self.assertNotIn('"profile/review_state.json"', pages)
         self.assertFalse((ROOT / ".github/workflows/scheduled-jobs.yml").exists())
 
