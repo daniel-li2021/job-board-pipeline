@@ -22,6 +22,7 @@ import requests
 
 from ..schema import SourceUnavailable, make_job, normalize_space
 from .http import keep_us_or_unknown, now_iso
+from .incremental import NewestFirstPager
 from .query_terms import ROLE_SEARCH_QUERIES
 
 SOURCE = "apple_official_careers"
@@ -129,6 +130,7 @@ def scrape_apple(
     *,
     max_pages: int = 50,
     searches: Optional[List[Dict[str, str]]] = None,
+    seen_job_ids: Optional[set[str]] = None,
 ) -> Dict[str, Any]:
     fetched_at = now_iso()
     searches = searches or DEFAULT_SEARCHES
@@ -140,6 +142,7 @@ def scrape_apple(
     search_urls = [search_url(s, 1) for s in searches]
 
     for filters in searches:
+        pager = NewestFirstPager(seen_job_ids or set())
         query_ids: set[str] = set()
         for page in range(1, max_pages + 1):
             html = http_get_apple(session, search_url(filters, page))
@@ -164,6 +167,8 @@ def scrape_apple(
                 if not keep_us_or_unknown(job.get("location", "")):
                     continue
                 jobs.append(job)
+            if pager.should_stop_after(page, page_ids, [job.get("posted_date", "") for job in page_jobs]):
+                break
             if total and page * 20 >= total:
                 break
             time.sleep(SLEEP_S)
@@ -174,7 +179,7 @@ def scrape_apple(
         "method": "HTTP GET HTML + __staticRouterHydrationData JSON",
         "search_url": search_urls[0] if search_urls else SEARCH,
         "search_urls": search_urls,
-        "pagination": "page=1,2,... (20 jobs/page); stop on empty/repeat or totalRecords",
+        "pagination": "newest-first; minimum 2 pages, then two seen pages + one overlap page; otherwise total/cap",
         "pages_fetched": pages,
         "raw_jobs": raw_count,
         "jobs": jobs,

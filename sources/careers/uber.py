@@ -21,6 +21,7 @@ from typing import Any, Dict, List, Optional
 import requests
 
 from .oracle_hcm import scrape_oracle_hcm
+from .incremental import DetailCache
 
 UBER_HOST = "https://iaziqy.fa.ocs.oraclecloud.com"
 UBER_SITE = "CX_1"
@@ -33,6 +34,7 @@ def scrape_uber(
     max_pages: int = 50,
     queries: Optional[List[str]] = None,
     fetch_details: bool = True,
+    detail_cache: DetailCache | None = None,
 ) -> Dict[str, Any]:
     result = scrape_oracle_hcm(
         session,
@@ -43,6 +45,7 @@ def scrape_uber(
         max_pages=max_pages,
         queries=queries,
         fetch_details=fetch_details,
+        detail_cache=detail_cache,
     )
     result["method"] = (
         "HTTP GET Oracle HCM recruitingCEJobRequisitions on iaziqy.fa.ocs.oraclecloud.com "

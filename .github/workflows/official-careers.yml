@@ -67,9 +67,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A -- output/official_careers/
-          for path in output/alerts/official_*; do
-            if [ -e "$path" ]; then git add -- "$path"; fi
-          done
           if git diff --staged --quiet; then
             echo "No official-careers changes to commit."
           else

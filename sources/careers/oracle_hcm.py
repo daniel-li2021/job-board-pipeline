@@ -14,6 +14,7 @@ import requests
 
 from ..schema import make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
+from .incremental import DetailCache, annotate_detail
 from .query_terms import ROLE_SEARCH_QUERIES
 
 PAGE_SIZE = 20
@@ -63,6 +64,7 @@ def scrape_oracle_hcm(
     queries: Optional[List[str]] = None,
     extra_queries: Optional[List[str]] = None,
     fetch_details: bool = True,
+    detail_cache: Optional[DetailCache] = None,
 ) -> Dict[str, Any]:
     fetched_at = now_iso()
     queries = list(queries or DEFAULT_QUERIES)
@@ -78,6 +80,8 @@ def scrape_oracle_hcm(
     pages = 0
     errors: List[str] = []
     detail_fetches = 0
+    detail_reused = 0
+    detail_cache = detail_cache or DetailCache([])
 
     for query in queries:
         offset = 0
@@ -124,8 +128,18 @@ def scrape_oracle_hcm(
                     continue
                 official = urljoin(public_job_base.rstrip("/") + "/", jid)
                 posted = item.get("PostedDate") or ""
-                description = html_to_text(item.get("ShortDescriptionStr") or "")
-                if fetch_details and detail_fetches < MAX_DETAILS:
+                listing_title = item.get("Title") or ""
+                decision = detail_cache.decide(
+                    company=company, job_id=jid, url=official, title=listing_title,
+                    posted_date=posted,
+                )
+                description = str((decision.cached or {}).get("description") or "") or html_to_text(item.get("ShortDescriptionStr") or "")
+                if decision.cached and not decision.should_fetch:
+                    location = str(decision.cached.get("location") or location)
+                    posted = str(decision.cached.get("posted_date") or posted)
+                    detail_reused += 1
+                detail_fetched = False
+                if fetch_details and decision.should_fetch and detail_fetches < MAX_DETAILS:
                     try:
                         det_payload = http_get(
                             session,
@@ -152,14 +166,14 @@ def scrape_oracle_hcm(
                                 continue
                         posted = det.get("ExternalPostedStartDate") or posted
                         detail_fetches += 1
+                        detail_fetched = True
                         time.sleep(DETAIL_SLEEP_S)
                     except Exception as exc:  # noqa: BLE001
                         errors.append(f"detail {jid}: {exc}")
-                jobs.append(
-                    make_job(
+                job = make_job(
                         source=source,
                         company=company,
-                        title=item.get("Title") or "",
+                        title=listing_title,
                         location=location,
                         job_id=jid,
                         posted_date=posted,
@@ -169,7 +183,12 @@ def scrape_oracle_hcm(
                         description=description,
                         fetched_at=fetched_at,
                     )
+                annotate_detail(
+                    job, decision, detail_fetched=detail_fetched,
+                    listing_title=listing_title,
+                    listing_posted_date=item.get("PostedDate") or "",
                 )
+                jobs.append(job)
             offset += PAGE_SIZE
             if total and offset >= total:
                 break
@@ -187,4 +206,5 @@ def scrape_oracle_hcm(
         "jobs": jobs,
         "errors": errors,
         "detail_fetches": detail_fetches,
+        "detail_cache_reused": detail_reused,
     }

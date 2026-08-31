@@ -43,6 +43,7 @@ from sources.schema import (
 
 import board_pipeline as board
 import coverage_reconcile
+import llm_config
 
 BASE_DIR = Path(__file__).resolve().parent
 CAREERS_DIR = OUTPUT_DIR / "official_careers"
@@ -101,11 +102,32 @@ def write_scrape_outputs(
 ) -> List[Dict[str, str]]:
     CAREERS_DIR.mkdir(parents=True, exist_ok=True)
     scraped_companies = {(r.get("company") or "") for r in results}
+    current_jobs = [j for r in results for j in (r.get("jobs") or []) if isinstance(j, dict)]
+    current_keys = {dedup_key(j) for j in current_jobs}
+    result_by_company = {(r.get("company") or ""): r for r in results}
     all_jobs: List[Dict[str, str]] = []
     if merge_previous:
         for job in load_raw_jobs():
-            if (job.get("company") or "") not in scraped_companies:
+            company = job.get("company") or ""
+            result = result_by_company.get(company)
+            if company not in scraped_companies:
                 all_jobs.append(job)
+                continue
+            successful_full_sweep = bool(
+                result
+                and (
+                    result.get("incremental_mode") == "full_sweep"
+                    or result.get("full_listing_coverage")
+                )
+                and not result.get("errors")
+            )
+            # Incremental newest-first/limited-depth runs intentionally do not
+            # revisit the tail. Carry unseen prior live records until the
+            # periodic successful full sweep can remove closed postings.
+            if dedup_key(job) not in current_keys and not successful_full_sweep:
+                carried = dict(job)
+                carried["listing_cache_status"] = "carried_until_full_sweep"
+                all_jobs.append(carried)
     lines = [
         f"# Official careers scrape report — {stamp}",
         "",
@@ -130,6 +152,8 @@ def write_scrape_outputs(
                 f"- Search URL/API: `{result.get('search_url') or '-'}`",
                 f"- Pagination: {result.get('pagination') or '-'}",
                 f"- Pages/requests fetched: {result.get('pages_fetched', 0)}",
+                f"- Incremental mode/page cap: {result.get('incremental_mode', '-')} / {result.get('page_cap_applied', '-')}",
+                f"- Detail pages fetched/cache reused: {result.get('detail_fetches', 0)} / {result.get('detail_cache_reused', 0)}",
                 f"- Raw jobs found: {result.get('raw_jobs', 0)}",
                 f"- After US/location filtering: {len(jobs)}",
                 f"- With trustworthy posted_date: {trustworthy}",
@@ -230,6 +254,7 @@ def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp:
         f"- LLM usage: scored {stats['llm']['scored']} / API requests {stats['llm']['api_requests']} / "
         f"cache reused {stats['llm']['reused']} (cross-pipeline {stats['llm'].get('peer_reused', 0)}) / "
         f"rule fallback {stats['llm']['rule']}",
+        f"- LLM cost: {llm_config.format_usage(stats['llm'])}",
         f"- Output: Tier A {stats['output']['tier_a']} / Tier B {stats['output']['tier_b']} / shown {stats['output']['shown']}",
         "",
     ]
@@ -366,7 +391,13 @@ def cmd_scrape(args: argparse.Namespace) -> List[Dict[str, str]]:
     max_pages = int(args.max_pages or registry.get("max_pages_default") or 50)
     session = make_session()
     print(f"Scraping official careers (only={args.only or 'all'}, max_pages={max_pages})...")
-    results = scrape_enabled(session, only=args.only, max_pages=max_pages)
+    results = scrape_enabled(
+        session,
+        only=args.only,
+        max_pages=max_pages,
+        previous_jobs=load_raw_jobs(),
+        full_sweep=True if getattr(args, "full_sweep", False) else None,
+    )
     jobs = write_scrape_outputs(results, stamp)
     for result in results:
         jobs_n = len(result.get("jobs") or [])
@@ -525,6 +556,7 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
             "dropped": sum(drops.values()),
         },
         "llm": {
+            **score_counts,
             "scored": score_counts["llm"],
             "api_requests": score_counts.get("api_requests", 0),
             "reused": score_counts["reused"],
@@ -539,6 +571,11 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
         "recency": recency_dist,
         "screen_method": screen_method,
     }
+    RUNS_DIR.mkdir(parents=True, exist_ok=True)
+    (RUNS_DIR / f"{stamp}_stats.json").write_text(
+        json.dumps({"run_at": now_iso, **stats}, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
     write_latest_md(visible, stats, stamp)
     write_inbox(visible, stamp, now)
 
@@ -584,6 +621,7 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
         + (f", {len(llm_errors)} llm errors" if llm_errors else "")
         + ")"
     )
+    print(f"LLM cost: {llm_config.format_usage(score_counts)}")
     print(f"Output: Tier A {len(tier_a)} / Tier B {len(tier_b)} / shown {len(visible)}")
     if emit_digest:
         print(f"Digest emitted: {digest_count} new/promoted A/B -> {alert_paths.get('issue_body')}")
@@ -605,6 +643,7 @@ def build_parser() -> argparse.ArgumentParser:
     scrape = sub.add_parser("scrape", help="Discover jobs from official career sites")
     scrape.add_argument("--only", help="Company id(s) from source/official_careers.json, comma-separated")
     scrape.add_argument("--max-pages", type=int, default=0, help="Safety cap per query (default from registry)")
+    scrape.add_argument("--full-sweep", action="store_true", help="Force deep/full pagination instead of the daily incremental depth")
 
     match = sub.add_parser("match", help="Run shared board_pipeline matching on the last scrape")
     match.add_argument("--no-llm", action="store_true")
@@ -614,6 +653,7 @@ def build_parser() -> argparse.ArgumentParser:
     run = sub.add_parser("run", help="Scrape then match (default scheduled entry point)")
     run.add_argument("--only", help="Company id(s) from source/official_careers.json, comma-separated")
     run.add_argument("--max-pages", type=int, default=0)
+    run.add_argument("--full-sweep", action="store_true", help="Force deep/full pagination instead of the daily incremental depth")
     run.add_argument("--no-llm", action="store_true")
     run.add_argument("--no-digest", action="store_true")
     run.add_argument("--force-digest", action="store_true")

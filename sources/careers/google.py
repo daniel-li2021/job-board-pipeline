@@ -20,6 +20,7 @@ import requests
 
 from ..schema import SourceUnavailable, make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso, slugify
+from .incremental import NewestFirstPager
 from .query_terms import ROLE_SEARCH_QUERIES
 
 SOURCE = "google_official_careers"
@@ -163,6 +164,7 @@ def scrape_google(
     *,
     max_pages: int = 50,
     queries: Optional[List[Dict[str, Any]]] = None,
+    seen_job_ids: Optional[set[str]] = None,
 ) -> Dict[str, Any]:
     fetched_at = now_iso()
     queries = queries or DEFAULT_QUERIES
@@ -174,6 +176,7 @@ def scrape_google(
     search_urls = [search_url(q, 1) for q in queries]
 
     for query in queries:
+        pager = NewestFirstPager(seen_job_ids or set())
         query_ids: set[str] = set()
         query_max_pages = min(max_pages, int(query.get("max_pages") or max_pages))
         for page in range(1, query_max_pages + 1):
@@ -205,6 +208,8 @@ def scrape_google(
                 if not keep_us_or_unknown(job.get("location", "")):
                     continue
                 jobs.append(job)
+            if pager.should_stop_after(page, page_ids, [job.get("posted_date", "") for job in page_jobs]):
+                break
             if total and page * max(page_size, 1) >= total:
                 break
             time.sleep(SLEEP_S)
@@ -215,7 +220,7 @@ def scrape_google(
         "method": "HTTP GET HTML + AF_initDataCallback ds:1 JSON",
         "search_url": search_urls[0] if search_urls else BASE,
         "search_urls": search_urls,
-        "pagination": "page=1,2,... (20 jobs/page); stop on empty/repeat or advertised total",
+        "pagination": "newest-first; minimum 2 pages, then two seen pages + one overlap page; otherwise total/cap",
         "pages_fetched": pages,
         "raw_jobs": raw_count,
         "jobs": jobs,

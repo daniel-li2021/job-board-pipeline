@@ -13,6 +13,7 @@ import requests
 
 from ..schema import make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
+from .incremental import DetailCache, annotate_detail
 from .query_terms import ROLE_SEARCH_QUERIES
 
 LIST_URL = "https://api.smartrecruiters.com/v1/companies/{slug}/postings"
@@ -58,6 +59,7 @@ def scrape_smartrecruiters(
     max_pages: int = 50,
     queries: Optional[List[str]] = None,
     fetch_details: bool = True,
+    detail_cache: Optional[DetailCache] = None,
 ) -> Dict[str, Any]:
     fetched_at = now_iso()
     queries = queries or DEFAULT_QUERIES
@@ -69,6 +71,8 @@ def scrape_smartrecruiters(
     pages = 0
     errors: List[str] = []
     detail_fetches = 0
+    detail_reused = 0
+    detail_cache = detail_cache or DetailCache([])
 
     for query in queries:
         offset = 0
@@ -104,8 +108,18 @@ def scrape_smartrecruiters(
                 if location and not keep_us_or_unknown(location):
                     continue
                 official = item.get("postingUrl") or f"https://jobs.smartrecruiters.com/{slug}/{jid}"
-                description = ""
-                if fetch_details and detail_fetches < MAX_DETAILS:
+                listing_title = item.get("name") or ""
+                listing_posted = item.get("releasedDate") or ""
+                decision = detail_cache.decide(
+                    company=company, job_id=str(item.get("refNumber") or jid), url=official,
+                    title=listing_title, posted_date=listing_posted,
+                )
+                description = str((decision.cached or {}).get("description") or "")
+                if decision.cached and not decision.should_fetch:
+                    location = str(decision.cached.get("location") or location)
+                    detail_reused += 1
+                detail_fetched = False
+                if fetch_details and decision.should_fetch and detail_fetches < MAX_DETAILS:
                     try:
                         det = http_get(
                             session,
@@ -118,26 +132,30 @@ def scrape_smartrecruiters(
                         if loc2:
                             location = loc2
                         detail_fetches += 1
+                        detail_fetched = True
                         time.sleep(DETAIL_SLEEP_S)
                     except Exception as exc:  # noqa: BLE001
                         errors.append(f"detail {jid}: {exc}")
                 if location and not keep_us_or_unknown(location):
                     continue
-                jobs.append(
-                    make_job(
+                job = make_job(
                         source=source,
                         company=company,
-                        title=item.get("name") or "",
+                        title=listing_title,
                         location=location,
                         job_id=item.get("refNumber") or jid,
-                        posted_date=item.get("releasedDate") or "",
+                        posted_date=listing_posted,
                         date_confidence="high" if item.get("releasedDate") else "unknown",
                         source_url=official,
                         official_url=official,
                         description=description,
                         fetched_at=fetched_at,
                     )
+                annotate_detail(
+                    job, decision, detail_fetched=detail_fetched,
+                    listing_title=listing_title, listing_posted_date=listing_posted,
                 )
+                jobs.append(job)
             offset += PAGE_SIZE
             if total and offset >= total:
                 break
@@ -155,4 +173,5 @@ def scrape_smartrecruiters(
         "jobs": jobs,
         "errors": errors,
         "detail_fetches": detail_fetches,
+        "detail_cache_reused": detail_reused,
     }

@@ -30,6 +30,7 @@ from .http import (
     location_from_workday_path,
     now_iso,
 )
+from .incremental import DetailCache, annotate_detail
 from .query_terms import ROLE_SEARCH_QUERIES
 
 PAGE_SIZE = 20
@@ -130,6 +131,7 @@ def scrape_workday(
     fetch_details: bool = True,
     public_prefix: Optional[str] = None,
     apply_us_facet: bool = True,
+    detail_cache: Optional[DetailCache] = None,
 ) -> Dict[str, Any]:
     fetched_at = now_iso()
     queries = list(queries or DEFAULT_QUERIES)
@@ -144,6 +146,8 @@ def scrape_workday(
     pages = 0
     errors: List[str] = []
     detail_fetches = 0
+    detail_reused = 0
+    detail_cache = detail_cache or DetailCache([])
     us_applied: Dict[str, List[str]] = {}
 
     # Resolve explicit United States facet ids when the tenant labels them
@@ -215,17 +219,24 @@ def scrape_workday(
                     continue
                 official = _official_url(host, public_prefix, external_path)
                 posted_on = item.get("postedOn") or ""
-                description = ""
+                listing_title = item.get("title") or ""
+                decision = detail_cache.decide(
+                    company=company, job_id=jid, url=official, title=listing_title,
+                    posted_date=posted_on,
+                )
+                description = str((decision.cached or {}).get("description") or "")
                 start_date = ""
+                if decision.cached and not decision.should_fetch:
+                    location = str(decision.cached.get("location") or location)
+                    start_date = str(decision.cached.get("posted_date") or "")
+                    detail_reused += 1
                 need_detail = bool(
                     fetch_details
+                    and decision.should_fetch
                     and external_path
                     and detail_fetches < MAX_DETAILS
-                    and (
-                        _posted_recent_enough(posted_on)
-                        or is_placeholder_location(item.get("locationsText") or "")
-                    )
                 )
+                detail_fetched = False
                 if need_detail:
                     try:
                         det = http_get(
@@ -244,6 +255,7 @@ def scrape_workday(
                             location = path_loc
                         jid = str(info.get("jobReqId") or jid)
                         detail_fetches += 1
+                        detail_fetched = True
                         time.sleep(DETAIL_SLEEP_S)
                     except SourceUnavailable as exc:
                         errors.append(f"detail {jid}: {exc}")
@@ -253,11 +265,10 @@ def scrape_workday(
                     continue
                 posted = start_date or posted_on
                 confidence = "high" if start_date else ("medium" if posted_on else "unknown")
-                jobs.append(
-                    make_job(
+                job = make_job(
                         source=source,
                         company=company,
-                        title=item.get("title") or "",
+                        title=listing_title,
                         location=location,
                         job_id=jid,
                         posted_date=posted,
@@ -267,7 +278,11 @@ def scrape_workday(
                         description=description,
                         fetched_at=fetched_at,
                     )
+                annotate_detail(
+                    job, decision, detail_fetched=detail_fetched,
+                    listing_title=listing_title, listing_posted_date=posted_on,
                 )
+                jobs.append(job)
             offset += PAGE_SIZE
             if total and offset >= total:
                 break
@@ -286,4 +301,5 @@ def scrape_workday(
         "errors": errors,
         "us_facet": us_applied,
         "detail_fetches": detail_fetches,
+        "detail_cache_reused": detail_reused,
     }
