@@ -80,6 +80,22 @@ class ReferralAliasTests(unittest.TestCase):
 
 
 class DashboardPolicyTests(unittest.TestCase):
+    def test_dashboard_company_key_reuses_canonical_referral_alias(self) -> None:
+        referrals = load_alias_file(ROOT / "source" / "target_companies.json")
+        row = dashboard.normalize_row(
+            {
+                "canonical_job_key": "test-job",
+                "company": "Amazon Web Services (AWS)",
+                "title": "Software Engineer",
+            },
+            "board",
+            datetime(2026, 8, 29, 12, tzinfo=timezone.utc),
+            referrals,
+            {},
+        )
+        self.assertEqual("Amazon", row["referral"])
+        self.assertEqual("amazon", row["company_key"])
+
     def test_sponsorship_labels_use_existing_source_data(self) -> None:
         self.assertEqual("Sponsor", dashboard.sponsorship_label({"sponsorship": "H-1B Sponsor"}))
         self.assertEqual("No sponsor", dashboard.sponsorship_label({"sponsorship": "No H-1B Sponsor"}))
@@ -312,6 +328,15 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertLess(dashboard.HTML_TEMPLATE.index("Referral opportunities"), dashboard.HTML_TEMPLATE.index("Official company search links"))
         self.assertIn("<th>Sponsorship</th>", dashboard.HTML_TEMPLATE)
         self.assertIn("'Amazon','Meta','TikTok'", dashboard.HTML_TEMPLATE)
+        self.assertIn("const companyStatePrefix='company::'", dashboard.HTML_TEMPLATE)
+        self.assertIn("const normalRows=rows=>rows.filter(r=>statusOf(r)==='unreviewed'&&!isDeleted(r)&&!isCompanyHidden(r))", dashboard.HTML_TEMPLATE)
+        self.assertIn("renderBox('referrals',normalRows(D.referrals))", dashboard.HTML_TEMPLATE)
+        self.assertIn("renderSummary()", dashboard.HTML_TEMPLATE)
+        self.assertIn("<summary>Hidden companies", dashboard.HTML_TEMPLATE)
+        self.assertIn("Show again", dashboard.HTML_TEMPLATE)
+        self.assertIn("allRows.filter(r=>!isPreferenceKey(r.canonical_job_key))", dashboard.HTML_TEMPLATE)
+        self.assertIn("renderBox('inProgress',rows.filter(r=>statusOf(r)==='in_progress'&&!isDeleted(r)))", dashboard.HTML_TEMPLATE)
+        self.assertIn("renderBox('applied',rows.filter(r=>statusOf(r)==='applied_complete'&&!isDeleted(r)))", dashboard.HTML_TEMPLATE)
 
 
 class MatchingPolicyTests(unittest.TestCase):
