@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import tempfile
 import unittest
+from contextlib import ExitStack
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import patch
@@ -626,6 +627,64 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         self.assertTrue(decision["score_source"])
         self.assertEqual(1, counts["rule"])
         self.assertEqual([], errors)
+
+    def test_syncareer_run_writes_current_stats_schema(self) -> None:
+        row = {
+            "job_id": "sync-1",
+            "company": "SmallCo",
+            "title": "Software Engineer I",
+            "location": "Austin, TX",
+            "posting_date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+            "job_url": "https://small.example/jobs/sync-1",
+        }
+        score_counts = {"llm": 0, "api_requests": 0, "reused": 0, "peer_reused": 0, "rule": 1}
+        decision = {"sync-1": {"match_score": 82, "tier": "A", "score_source": "rule"}}
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            syncareer_dir = root / "syncareer"
+            with ExitStack() as stack:
+                stack.enter_context(patch("sys.argv", ["daily_pipeline.py", "--alert", "--time", "last3days", "--no-llm"]))
+                stack.enter_context(patch.object(daily_pipeline, "DAILY_DIR", root / "daily"))
+                stack.enter_context(patch.object(daily_pipeline, "SYNCAREER_DIR", syncareer_dir))
+                stack.enter_context(patch.object(daily_pipeline, "RUNS_DIR", syncareer_dir / "runs"))
+                stack.enter_context(patch.object(daily_pipeline, "WATCHLIST_PATH", syncareer_dir / "watchlist.json"))
+                stack.enter_context(patch.object(daily_pipeline, "ALERT_HISTORY_PATH", syncareer_dir / "alert_history.json"))
+                stack.enter_context(patch.object(daily_pipeline, "LEGACY_WATCHLIST_PATH", root / "legacy_watchlist.json"))
+                stack.enter_context(patch.object(daily_pipeline, "load_env_file"))
+                stack.enter_context(patch.object(daily_pipeline, "make_session", return_value=object()))
+                stack.enter_context(patch.object(daily_pipeline, "load_target_companies", return_value=[]))
+                stack.enter_context(patch.object(daily_pipeline.board, "load_company_filters", return_value={}))
+                stack.enter_context(patch.object(
+                    daily_pipeline,
+                    "run_search",
+                    return_value=({"sync-1": {}}, {"sync-1": ["software engineer"]}, {"software engineer": 1}),
+                ))
+                stack.enter_context(patch.object(daily_pipeline, "fetch_job_detail", return_value={}))
+                stack.enter_context(patch.object(daily_pipeline, "normalize_job_row", return_value=row))
+                stack.enter_context(patch.object(daily_pipeline, "hard_filter", return_value=(True, "keep")))
+                stack.enter_context(patch.object(daily_pipeline.coverage_reconcile, "syncareer_job_in_scope", return_value=True))
+                stack.enter_context(patch.object(daily_pipeline.coverage_reconcile, "annotate_jobs"))
+                stack.enter_context(patch.object(daily_pipeline, "apply_external_company_policy", return_value=False))
+                stack.enter_context(patch.object(
+                    daily_pipeline,
+                    "assign_shared_scores",
+                    return_value=(decision, score_counts, [], "rule"),
+                ))
+                stack.enter_context(patch.object(daily_pipeline.time, "sleep"))
+                stack.enter_context(patch.object(daily_pipeline, "emit_github_output"))
+                daily_pipeline.run()
+
+            stats_paths = list((syncareer_dir / "runs").glob("*_stats.json"))
+            self.assertEqual(1, len(stats_paths))
+            stats = json.loads(stats_paths[0].read_text(encoding="utf-8"))
+            self.assertEqual({"scoring_candidates": 1}, stats["funnel"])
+            self.assertEqual(1, stats["llm"]["rule"])
+            self.assertEqual(0, stats["llm"]["scored"])
+            self.assertEqual(
+                {"tier_a": 1, "tier_b": 0, "tier_c": 0, "shown": 1},
+                stats["output"],
+            )
+            self.assertEqual("rule", stats["screen_method"])
 
     def test_syncareer_rolling_activity_prefers_first_seen(self) -> None:
         now = datetime.now(timezone.utc)

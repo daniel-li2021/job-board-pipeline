@@ -1457,11 +1457,22 @@ def run() -> None:
         json.dumps(
             {
                 "run_at": datetime.now(timezone.utc).isoformat(),
-                "llm": llm_usage,
-                "screening": dict(method_counts),
-                "jobs_scored": len(scoring_rows),
-                "tier_1": len(tier1_rows),
-                "tier_2": len(tier2_rows),
+                "funnel": {"scoring_candidates": len(scoring_rows)},
+                "llm": {
+                    **score_counts,
+                    "scored": score_counts.get("llm", 0),
+                    "api_requests": score_counts.get("api_requests", 0),
+                    "reused": score_counts.get("reused", 0),
+                    "peer_reused": score_counts.get("peer_reused", 0),
+                    "rule": score_counts.get("rule", 0),
+                },
+                "output": {
+                    "tier_a": len(tier_a_rows),
+                    "tier_b": len(tier_b_rows),
+                    "tier_c": len(tier_c_rows),
+                    "shown": len(alert_rows),
+                },
+                "screen_method": shared_screen_method,
             },
             indent=2,
             ensure_ascii=False,
