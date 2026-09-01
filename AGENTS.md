@@ -12,6 +12,7 @@ Optimize for focused, token-efficient changes and keep Git state easy to reason 
 - Full architecture and pipeline documentation → `README.md`
 
 ## Rules
+- Keep this primary checkout for development. Run routine crawlers and other generated-output work from `/Users/daniel/Projects/job_scrape_feasibility-automation`.
 - Before editing, run `git fetch origin`, inspect `git status --short`, and compare `HEAD...origin/main`.
 - If the current checkout is clean and only behind `origin/main`, fast-forward it with `git pull --ff-only`; do not create a new worktree just because automation advanced `main`.
 - If the checkout is dirty or diverged, preserve it and create a clean `codex/<task>` branch/worktree from current `origin/main`. Never reset, clean, merge, or rebase unknown local changes.

@@ -2,7 +2,7 @@
 <!--
   launchd agent: run the local source sync every 3 hours.
 
-  IMPORTANT: edit the two absolute paths below to match your machine before
+  IMPORTANT: edit the absolute paths below to match your machine before
   installing. launchd requires absolute paths.
 
   Install:
@@ -31,11 +31,11 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/daniel/Desktop/Job/job_scrape_feasibility/scripts/local_source_sync.sh</string>
+        <string>/Users/daniel/Projects/job_scrape_feasibility-automation/scripts/local_source_sync.sh</string>
     </array>
 
     <key>WorkingDirectory</key>
-    <string>/Users/daniel/Desktop/Job/job_scrape_feasibility</string>
+    <string>/Users/daniel/Projects/job_scrape_feasibility-automation</string>
 
     <!-- launchd has a minimal PATH; pin Homebrew python + common bins. -->
     <key>EnvironmentVariables</key>
@@ -53,9 +53,9 @@
     <true/>
 
     <key>StandardOutPath</key>
-    <string>/Users/daniel/Desktop/Job/job_scrape_feasibility/output/logs/local-sources.out.log</string>
+    <string>/Users/daniel/Projects/job_scrape_feasibility-automation/output/logs/local-sources.out.log</string>
 
     <key>StandardErrorPath</key>
-    <string>/Users/daniel/Desktop/Job/job_scrape_feasibility/output/logs/local-sources.err.log</string>
+    <string>/Users/daniel/Projects/job_scrape_feasibility-automation/output/logs/local-sources.err.log</string>
 </dict>
 </plist>

@@ -107,8 +107,10 @@ Filter -> Match (LLM or rules) -> Rank -> jobs.json + latest.md + alert`.
 
 ## Division of responsibility (avoids git conflicts)
 
-- **Local machine (launchd):** scrapes LinkedIn/Glassdoor and pushes only
-  `output/sources/*.json`. GitHub-hosted runners never scrape those sites.
+- **Local machine (launchd):** the dedicated
+  `~/Projects/job_scrape_feasibility-automation` clone scrapes
+  LinkedIn/Glassdoor and pushes only `output/sources/*.json`. GitHub-hosted
+  runners never scrape those sites.
 - **GitHub Actions:** each cloud pipeline runs and commits independently.
   Board writes only `output/board/`; Official writes only
   `output/official_careers/` plus its alert; Syncareer writes only
@@ -118,6 +120,9 @@ Filter -> Match (LLM or rules) -> Rank -> jobs.json + latest.md + alert`.
 ## Local usage
 
 ```bash
+# Run output-producing commands from the dedicated automation clone:
+cd ~/Projects/job_scrape_feasibility-automation
+
 # One-off local scrape of the two local sources:
 python3 local_sources.py
 
