@@ -1,10 +1,10 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-08-31 20:55 PDT
-- Snapshot (UTC): 2026-09-01T03:55:14.776664+00:00
-- Jobs: 30
-- Last 24 hours: 2
-- Last 3 days: 30
+- Updated (PT): 2026-08-31 21:57 PDT
+- Snapshot (UTC): 2026-09-01T04:57:22.300311+00:00
+- Jobs: 32
+- Last 24 hours: 4
+- Last 3 days: 32
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
@@ -30,6 +30,8 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 75.0 | Syncareer | IBM | Software Developer Intern -Tucson, AZ | Tucson, Arizona, United States | 2026-08-28 | H-1B Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=130897&source=WEB_Search_NA) |
 | B | 75.0 | Syncareer | OpenAI | Software Engineer, Infrastructure | San Francisco, California, United States | 2026-08-28 | H-1B Sponsor | - | unreviewed | pending_official_refresh | [open](https://jobs.ashbyhq.com/openai/984da843-107f-4ff6-ad27-07a06700e338) |
 | B | 82.0 | Syncareer | Tesla | Internship, Software Engineer, Automated Diagnostics Intern (Spring 20 | Palo Alto, California, United States | 2026-08-31 | Sponsor | YES (Tesla) | unreviewed | official_unsupported | [open](https://www.tesla.com/careers/search/job/281623) |
+| B | 73.0 | Syncareer | TikTok | Machine Learning Engineer Graduate (E-Commerce Recommendation Video) - | Seattle, United States | 2026-08-31 | Sponsor | YES (TikTok) | unreviewed | pending_official_refresh | [open](https://lifeattiktok.com/search/7678145401619237173) |
+| B | 86.0 | Syncareer | ByteDance | Site Reliability Engineer Intern (Data Infra) - 2027 Fall | Seattle, Washington, United States | 2026-08-31 | Sponsor | YES (ByteDance) | unreviewed | pending_official_refresh | [open](https://joinbytedance.com/search/7672930401614481717) |
 | B | 75.0 | Syncareer | ByteDance | Research Engineer Graduate (AI Training Systems & RL Infrastructure -  | San Jose, California, United States | 2026-08-29 | H-1B Sponsor | YES (ByteDance) | unreviewed | pending_official_refresh | [open](https://joinbytedance.com/search/7671034858089040181) |
 | B | 75.0 | Syncareer | ByteDance | Research Engineer Graduate (AI Infra Compute) - 2027 Start (PhD) | San Jose, United States | 2026-08-29 | H-1B Sponsor | YES (ByteDance) | unreviewed | pending_official_refresh | [open](https://joinbytedance.com/search/7667334521286035765) |
 | B | 75.0 | Syncareer | Microsoft | Software Engineer Intune | Redmond, Washington, United States | 2026-08-28 | H-1B Sponsor | YES (Microsoft) | unreviewed | pending_official_refresh | [open](https://apply.careers.microsoft.com/careers/job/1970393556982925) |

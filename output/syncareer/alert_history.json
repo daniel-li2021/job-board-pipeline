@@ -2715,6 +2715,47 @@
           "url": "https://www.tesla.com/careers/search/job/281623"
         }
       ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-09-01_0456",
+      "emitted_at": "2026-09-01T04:57:22.300967+00:00",
+      "event_kind": "new_matching",
+      "count": 2,
+      "jobs": [
+        {
+          "canonical_job_key": "id::syncareer::76739edc87b5fa1bb85ec7e937d7a85b",
+          "job_id": "76739edc87b5fa1bb85ec7e937d7a85b",
+          "tier": "B",
+          "match_score": 86.0,
+          "fit_score": 86.0,
+          "company": "ByteDance",
+          "title": "Site Reliability Engineer Intern (Data Infra) - 2027 Fall",
+          "location": "Seattle, Washington, United States",
+          "posting_date": "2026-08-31",
+          "first_seen": "2026-09-01T04:56:56.329067+00:00",
+          "target_company_match": "ByteDance",
+          "review_status": "unreviewed",
+          "job_url": "https://joinbytedance.com/search/7672930401614481717",
+          "url": "https://joinbytedance.com/search/7672930401614481717"
+        },
+        {
+          "canonical_job_key": "id::syncareer::48927838d3a80a2ab807719acdbe2487",
+          "job_id": "48927838d3a80a2ab807719acdbe2487",
+          "tier": "B",
+          "match_score": 73.0,
+          "fit_score": 73.0,
+          "company": "TikTok",
+          "title": "Machine Learning Engineer Graduate (E-Commerce Recommendation Video) - 2027 Start",
+          "location": "Seattle, United States",
+          "posting_date": "2026-08-31",
+          "first_seen": "2026-09-01T04:56:56.329067+00:00",
+          "target_company_match": "TikTok",
+          "review_status": "unreviewed",
+          "job_url": "https://lifeattiktok.com/search/7678145401619237173",
+          "url": "https://lifeattiktok.com/search/7678145401619237173"
+        }
+      ]
     }
   ]
 }
