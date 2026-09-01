@@ -1,4 +1,4 @@
-# Official careers scrape report — 2026-08-31_1758
+# Official careers scrape report — 2026-08-31_2313
 
 Discovery only. Matching/ranking is applied afterwards by the shared board pipeline.
 
@@ -6,14 +6,14 @@ Discovery only. Matching/ranking is applied afterwards by the shared board pipel
 
 - Status: ok
 - Scraping method: HTTP GET HTML + AF_initDataCallback ds:1 JSON
-- Search URL/API: `https://www.google.com/about/careers/applications/jobs/results?sort_by=date&q=%22Software+Engineer%22&location=United+States&page=1&target_level=MID&target_level=EARLY&target_level=INTERN_AND_APPRENTICE`
+- Search URL/API: `https://www.google.com/about/careers/applications/jobs/results?sort_by=date&q=%22Ai+Engineer%22&location=United+States&page=1&target_level=MID&target_level=EARLY&target_level=INTERN_AND_APPRENTICE`
 - Pagination: newest-first; minimum 2 pages, then two seen pages + one overlap page; otherwise total/cap
-- Pages/requests fetched: 23
+- Pages/requests fetched: 42
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 433
-- After US/location filtering: 228
-- With trustworthy posted_date: 228
+- Raw jobs found: 796
+- After US/location filtering: 270
+- With trustworthy posted_date: 270
 - Errors/403s: none
 
 Sample normalized records:
@@ -23,67 +23,67 @@ Sample normalized records:
   {
     "company": "Google",
     "source": "google_official_careers",
-    "job_id": "77161400903836358",
-    "title": "Software Engineer, Embedded Systems/Firmware, Platforms and Devices",
+    "job_id": "123343431891067590",
+    "title": "Business Data Scientist, YouTube Transparency and Compliance Metrics",
+    "location": "San Bruno, CA, USA",
+    "official_url": "https://www.google.com/about/careers/applications/jobs/results/123343431891067590-business-data-scientist-youtube-transparency-and-compliance-metrics",
+    "posted_date": "2026-08-31",
+    "updated_date": "2026-08-31",
+    "fetched_at": "2026-08-31T23:13:27.042743+00:00",
+    "date_confidence": "high",
+    "description": "Google's leadership team hand-picks thorny business challenges, and members of BizOps work in small teams to find solutions. As part of this team you fully immerse yourself in data"
+  },
+  {
+    "company": "Google",
+    "source": "google_official_careers",
+    "job_id": "91436104816698054",
+    "title": "Software Engineering Intern, PhD, Summer 2027",
+    "location": "Mountain View, CA, USA; Atlanta, GA, USA; Austin, TX, USA; Boulder, CO, USA; Cambridge, MA, USA; Bellevue, WA, USA; Chicago, IL, USA; Irvine, CA, USA; Kirkland, WA, USA; Los Angeles, CA, USA; Madison, WI, USA; New York, NY, USA; Palo Alto, CA, USA; Portland, OR, USA; Pittsburgh, PA, USA; Raleigh, NC, USA; Durham, NC, USA; Reston, VA, USA; Redmond, WA, USA; Redwood City, CA, USA; San Diego, CA, USA; Goleta, CA, USA; San Bruno, CA, USA; Seattle, WA, USA; San Francisco, CA, USA; San Jose, CA, USA; Santa Cruz, CA, USA; South San Francisco, CA, USA; Sunnyvale, CA, USA; Washington D.C., DC, USA",
+    "official_url": "https://www.google.com/about/careers/applications/jobs/results/91436104816698054-software-engineering-intern-phd-summer-2027",
+    "posted_date": "2026-08-24",
+    "updated_date": "2026-08-31",
+    "fetched_at": "2026-08-31T23:13:27.042743+00:00",
+    "date_confidence": "high",
+    "description": "Join us for a unique 12-14 week paid internship that offers personal and professional development, an executive speaker series, and community-building. The Software Engineering Int"
+  },
+  {
+    "company": "Google",
+    "source": "google_official_careers",
+    "job_id": "135557769125077702",
+    "title": "Software Engineer III, Embedded Systems/Firmware, XR",
+    "location": "Miami, FL, USA; San Jose, CA, USA",
+    "official_url": "https://www.google.com/about/careers/applications/jobs/results/135557769125077702-software-engineer-iii-embedded-systems-firmware-xr",
+    "posted_date": "2026-08-31",
+    "updated_date": "2026-08-31",
+    "fetched_at": "2026-08-31T23:13:27.042743+00:00",
+    "date_confidence": "high",
+    "description": "Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products"
+  },
+  {
+    "company": "Google",
+    "source": "google_official_careers",
+    "job_id": "92863732618535622",
+    "title": "Senior Software Engineer, Android, XR Camera Experiences",
     "location": "San Jose, CA, USA",
-    "official_url": "https://www.google.com/about/careers/applications/jobs/results/77161400903836358-software-engineer-embedded-systems-firmware-platforms-and-devices",
+    "official_url": "https://www.google.com/about/careers/applications/jobs/results/92863732618535622-senior-software-engineer-android-xr-camera-experiences",
     "posted_date": "2026-08-31",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T17:58:57.078495+00:00",
+    "fetched_at": "2026-08-31T23:13:27.042743+00:00",
     "date_confidence": "high",
     "description": "Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products"
   },
   {
     "company": "Google",
     "source": "google_official_careers",
-    "job_id": "96263216413188806",
-    "title": "Senior Software Engineer, Generative AI, Shopping Product Graph, Commerce",
-    "location": "Pittsburgh, PA, USA",
-    "official_url": "https://www.google.com/about/careers/applications/jobs/results/96263216413188806-senior-software-engineer-generative-ai-shopping-product-graph-commerce",
+    "job_id": "100648618540573382",
+    "title": "Software Engineering Intern, BS, Summer 2027",
+    "location": "Mountain View, CA, USA; Austin, TX, USA; Cambridge, MA, USA; Chicago, IL, USA; Houston, TX, USA; Irvine, CA, USA; Kirkland, WA, USA; Portland, OR, USA; Pittsburgh, PA, USA; Raleigh, NC, USA; San Diego, CA, USA; Seattle, WA, USA; South San Francisco, CA, USA; Sunnyvale, CA, USA; Atlanta, GA, USA; Boulder, CO, USA; Bellevue, WA, USA; Los Angeles, CA, USA; Madison, WI, USA; New York, NY, USA; Palo Alto, CA, USA; Reston, VA, USA; Redmond, WA, USA; Redwood City, CA, USA; Goleta, CA, USA; San Bruno, CA, USA; Santa Barbara, CA, USA; Santa Cruz, CA, USA; San Jose, CA, USA; Durham, NC, USA; San Francisco, CA, USA",
+    "official_url": "https://www.google.com/about/careers/applications/jobs/results/100648618540573382-software-engineering-intern-bs-summer-2027",
     "posted_date": "2026-08-31",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T17:58:57.078495+00:00",
+    "fetched_at": "2026-08-31T23:13:27.042743+00:00",
     "date_confidence": "high",
-    "description": "Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products"
-  },
-  {
-    "company": "Google",
-    "source": "google_official_careers",
-    "job_id": "83915700833264326",
-    "title": "Software Engineer",
-    "location": "Pittsburgh, PA, USA",
-    "official_url": "https://www.google.com/about/careers/applications/jobs/results/83915700833264326-software-engineer",
-    "posted_date": "2026-08-31",
-    "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T17:58:57.078495+00:00",
-    "date_confidence": "high",
-    "description": "The US base salary range for this full-time position is $147,000 - $211,000 + 15% bonus target + equity + benefits determined by role, level, and location. Individual pay is determ"
-  },
-  {
-    "company": "Google",
-    "source": "google_official_careers",
-    "job_id": "106684387621249734",
-    "title": "Software Engineer",
-    "location": "Mountain View, CA, USA",
-    "official_url": "https://www.google.com/about/careers/applications/jobs/results/106684387621249734-software-engineer",
-    "posted_date": "2026-08-31",
-    "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T17:58:57.078495+00:00",
-    "date_confidence": "high",
-    "description": "Artificial intelligence will be one of humanity’s most transformative inventions. At Google DeepMind, we are a pioneering AI lab with exceptional interdisciplinary teams focused on"
-  },
-  {
-    "company": "Google",
-    "source": "google_official_careers",
-    "job_id": "140763200768352966",
-    "title": "Software Engineer, Generative AI, Shopping on Gemini",
-    "location": "Pittsburgh, PA, USA; Mountain View, CA, USA",
-    "official_url": "https://www.google.com/about/careers/applications/jobs/results/140763200768352966-software-engineer-generative-ai-shopping-on-gemini",
-    "posted_date": "2026-08-31",
-    "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T17:58:57.078495+00:00",
-    "date_confidence": "high",
-    "description": "Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products"
+    "description": "Join us for a unique 12-14 week paid internship that offers personal and professional development, an executive speaker series, and community-building. The Software Engineering Int"
   }
 ]
 ```
@@ -94,12 +94,12 @@ Sample normalized records:
 - Scraping method: HTTP GET search.json
 - Search URL/API: `https://www.amazon.jobs/en/search?base_query=software+engineer&country=USA&offset=0&result_limit=10&sort=recent`
 - Pagination: newest-first offset by 20; minimum 2 pages, then two seen pages + one overlap page; otherwise hits/cap
-- Pages/requests fetched: 35
+- Pages/requests fetched: 46
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 678
-- After US/location filtering: 464
-- With trustworthy posted_date: 464
+- Raw jobs found: 848
+- After US/location filtering: 744
+- With trustworthy posted_date: 744
 - Errors/403s: none
 
 Sample normalized records:
@@ -109,67 +109,67 @@ Sample normalized records:
   {
     "company": "Amazon",
     "source": "amazon_official_careers",
-    "job_id": "10522267",
-    "title": "Software Development Engineer, AWS OpenSearch Service",
-    "location": "Austin, Texas, USA",
-    "official_url": "https://www.amazon.jobs/en/jobs/10522267/software-development-engineer-aws-opensearch-service",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T17:59:12.358841+00:00",
-    "date_confidence": "high",
-    "description": "Imagine running search and analytics at any scale without thinking about clusters, capacity, or version upgrades. Where your queries return in milliseconds whether you're indexing "
-  },
-  {
-    "company": "Amazon",
-    "source": "amazon_official_careers",
-    "job_id": "10522049",
-    "title": "Software Development Engineer , Cryptography and Identity Management",
+    "job_id": "10522799",
+    "title": "Software Engineer II - AI/ML, AWS Neuron",
     "location": "Seattle, Washington, USA",
-    "official_url": "https://www.amazon.jobs/en/jobs/10522049/software-development-engineer-cryptography-and-identity-management",
+    "official_url": "https://www.amazon.jobs/en/jobs/10522799/software-engineer-ii-ai-ml-aws-neuron",
     "posted_date": "2026-08-31",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T17:59:12.358841+00:00",
+    "fetched_at": "2026-08-31T23:13:54.458137+00:00",
     "date_confidence": "high",
-    "description": "We are currently looking for a Software Development Engineer to join our systems organization. You love to work with internal and external customers to execute projects and resolve"
+    "description": "The Annapurna Labs team at Amazon builds AWS Neuron, the software development kit used to accelerate deep learning and GenAI workloads on Amazon’s custom machine learning accelerat"
   },
   {
     "company": "Amazon",
     "source": "amazon_official_careers",
-    "job_id": "10522051",
-    "title": "Software Dev Engineer II, Atlas Telemetry",
-    "location": "Redmond, Washington, USA",
-    "official_url": "https://www.amazon.jobs/en/jobs/10522051/software-dev-engineer-ii-atlas-telemetry",
+    "job_id": "10522805",
+    "title": "Machine Learning Engineer II , AI Studios",
+    "location": "New York, New York, USA",
+    "official_url": "https://www.amazon.jobs/en/jobs/10522805/machine-learning-engineer-ii-ai-studios",
     "posted_date": "2026-08-31",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T17:59:12.358841+00:00",
+    "fetched_at": "2026-08-31T23:13:54.458137+00:00",
     "date_confidence": "high",
-    "description": "Amazon Leo is Amazon’s low Earth orbit satellite network. Our mission is to deliver fast, reliable internet connectivity to customers beyond the reach of existing networks. From in"
+    "description": "Join the AI Studios Engineering org within Prime Video and Amazon MGM Studios as a Machine Learning Engineer on CreativeFlux, the ML platform powering Nara, our AI-native content c"
   },
   {
     "company": "Amazon",
     "source": "amazon_official_careers",
-    "job_id": "10519775",
-    "title": "Software Development Manager, Amazon Leo Data Platform",
-    "location": "Redmond, Washington, USA",
-    "official_url": "https://www.amazon.jobs/en/jobs/10519775/software-development-manager-amazon-leo-data-platform",
+    "job_id": "10521297",
+    "title": "Cloud Hardware Dev Engineer (AWS Generative AI & ML Servers), AWS Generative AI & ML Servers",
+    "location": "Cupertino, California, USA",
+    "official_url": "https://www.amazon.jobs/en/jobs/10521297/cloud-hardware-dev-engineer-aws-generative-ai-ml-servers-aws-generative-ai-ml-servers",
+    "posted_date": "2026-08-30",
+    "updated_date": "2026-08-31",
+    "fetched_at": "2026-08-31T23:13:54.458137+00:00",
+    "date_confidence": "high",
+    "description": "Do you want to build the backbone of Generative AI cloud at AWS? Do you want to build the future of the cloud for AI training and inference? Want to do industry leading work delive"
+  },
+  {
+    "company": "Amazon",
+    "source": "amazon_official_careers",
+    "job_id": "10517792",
+    "title": "Senior Software Engineer, AWS Applied AI Solutions",
+    "location": "Seattle, Washington, USA",
+    "official_url": "https://www.amazon.jobs/en/jobs/10517792/senior-software-engineer-aws-applied-ai-solutions",
     "posted_date": "2026-08-28",
-    "updated_date": "2026-08-28",
-    "fetched_at": "2026-08-31T17:59:12.358841+00:00",
+    "updated_date": "2026-08-31",
+    "fetched_at": "2026-08-31T23:13:54.458137+00:00",
     "date_confidence": "high",
-    "description": "Amazon Leo is Amazon’s low Earth orbit satellite network. Our mission is to deliver fast, reliable internet connectivity to customers beyond the reach of existing networks. From in"
+    "description": "As part of the AWS Applied AI Solutions organization, we have a vision to provide business applications, leveraging Amazon’s unique experience and expertise, that are used by milli"
   },
   {
     "company": "Amazon",
     "source": "amazon_official_careers",
-    "job_id": "10521254",
-    "title": "Senior Software Development Engineer, Amazon Leo - Developer Productivity, AI, Test and Simulation",
-    "location": "Redmond, Washington, USA",
-    "official_url": "https://www.amazon.jobs/en/jobs/10521254/senior-software-development-engineer-amazon-leo-developer-productivity-ai-test-and-simulation",
-    "posted_date": "2026-08-29",
-    "updated_date": "2026-08-29",
-    "fetched_at": "2026-08-31T17:59:12.358841+00:00",
+    "job_id": "10513639",
+    "title": "Principal Technical Program Manager - Prime Video, PV Personalization and Discovery",
+    "location": "Seattle, Washington, USA",
+    "official_url": "https://www.amazon.jobs/en/jobs/10513639/principal-technical-program-manager-prime-video-pv-personalization-and-discovery",
+    "posted_date": "2026-08-25",
+    "updated_date": "2026-08-25",
+    "fetched_at": "2026-08-31T23:13:54.458137+00:00",
     "date_confidence": "high",
-    "description": "Amazon Leo is Amazon’s low Earth orbit satellite network. Our mission is to deliver fast, reliable internet connectivity to customers beyond the reach of existing networks. From in"
+    "description": "Prime Video is a first-stop entertainment destination offering customers a vast collection of premium programming in one app available across thousands of devices. Prime members ca"
   }
 ]
 ```
@@ -178,14 +178,14 @@ Sample normalized records:
 
 - Status: ok
 - Scraping method: HTTP GET HTML + __staticRouterHydrationData JSON
-- Search URL/API: `https://jobs.apple.com/en-us/search?search=software+engineer&location=united-states-USA&sort=newest&page=1`
+- Search URL/API: `https://jobs.apple.com/en-us/search?search=ai+engineer&location=united-states-USA&sort=newest&page=1`
 - Pagination: newest-first; minimum 2 pages, then two seen pages + one overlap page; otherwise total/cap
-- Pages/requests fetched: 34
+- Pages/requests fetched: 44
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 680
-- After US/location filtering: 397
-- With trustworthy posted_date: 397
+- Raw jobs found: 880
+- After US/location filtering: 237
+- With trustworthy posted_date: 237
 - Errors/403s: none
 
 Sample normalized records:
@@ -195,67 +195,67 @@ Sample normalized records:
   {
     "company": "Apple",
     "source": "apple_official_careers",
-    "job_id": "200641998-0836",
-    "title": "AIML - Machine Learning Researcher, Foundation Models",
+    "job_id": "200681083-0836",
+    "title": "SoC QoS/Fabric Performance Engineer, Platform Architecture",
     "location": "Cupertino, United States of America",
-    "official_url": "https://jobs.apple.com/en-us/details/200641998/aiml-machine-learning-researcher-foundation-models",
+    "official_url": "https://jobs.apple.com/en-us/details/200681083/soc-qos-fabric-performance-engineer-platform-architecture",
     "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T17:59:36.043067+00:00",
+    "fetched_at": "2026-08-31T23:14:24.784499+00:00",
     "date_confidence": "high",
-    "description": "We build frontier foundation models that power intelligent experiences at Apple. Our team works across the full training lifecycle: including pre-training foundation models, and de"
+    "description": "Imagine what you could do here! At Apple, new ideas have a way of becoming extraordinary products, services, and customer experiences very quickly. Bring passion and dedication to "
   },
   {
     "company": "Apple",
     "source": "apple_official_careers",
-    "job_id": "200641998-2459",
-    "title": "AIML - Machine Learning Researcher, Foundation Models",
-    "location": "New York City, United States of America",
-    "official_url": "https://jobs.apple.com/en-us/details/200641998/aiml-machine-learning-researcher-foundation-models",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T17:59:36.043067+00:00",
-    "date_confidence": "high",
-    "description": "We build frontier foundation models that power intelligent experiences at Apple. Our team works across the full training lifecycle: including pre-training foundation models, and de"
-  },
-  {
-    "company": "Apple",
-    "source": "apple_official_careers",
-    "job_id": "200680978-3401",
-    "title": "AIML - Staff ML Infrastructure Engineer, ML Platform & Technology - Pre-training Infrastructure",
-    "location": "San Francisco Bay Area, United States of America",
-    "official_url": "https://jobs.apple.com/en-us/details/200680978/aiml-staff-ml-infrastructure-engineer-ml-platform-technology-pre-training-infrastructure",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T17:59:36.043067+00:00",
-    "date_confidence": "high",
-    "description": "Apple is where individual imaginations gather together, committing to the values that lead to great work. Every new product we build, service we create, or Apple Store experience w"
-  },
-  {
-    "company": "Apple",
-    "source": "apple_official_careers",
-    "job_id": "200680258-0836",
-    "title": "AV Project Manager, SWE Employee Experience",
+    "job_id": "200680928-0836",
+    "title": "WW Business Operations Analytics Manager",
     "location": "Cupertino, United States of America",
-    "official_url": "https://jobs.apple.com/en-us/details/200680258/av-project-manager-swe-employee-experience",
+    "official_url": "https://jobs.apple.com/en-us/details/200680928/ww-business-operations-analytics-manager",
     "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T17:59:36.043067+00:00",
+    "fetched_at": "2026-08-31T23:14:24.784499+00:00",
     "date_confidence": "high",
-    "description": "SWE Employee Experience and Event Operations brings people together, tells impactful stories, and delivers best-in-class experiences across Software Engineering (SWE). Our team pro"
+    "description": "Imagine what you could do here! The people here at Apple don’t just create products — they build the kind of wonder that’s revolutionized entire industries. It’s the diversity of t"
   },
   {
     "company": "Apple",
     "source": "apple_official_careers",
-    "job_id": "200673911-3337",
-    "title": "Service Reliability Engineer (SRE)",
-    "location": "Seattle, United States of America",
-    "official_url": "https://jobs.apple.com/en-us/details/200673911/service-reliability-engineer-sre",
+    "job_id": "200680931-0836",
+    "title": "Employee Engagement Program Manager",
+    "location": "Cupertino, United States of America",
+    "official_url": "https://jobs.apple.com/en-us/details/200680931/employee-engagement-program-manager",
     "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T17:59:36.043067+00:00",
+    "fetched_at": "2026-08-31T23:14:24.784499+00:00",
     "date_confidence": "high",
-    "description": "The Apple Services Engineering team (ASE) is one of the most exciting examples of Apple’s long-held passion for combining art and technology. These are the people who power the App"
+    "description": "Imagine what you could do here! The people here at Apple don’t just create products — they build the kind of wonder that’s revolutionized entire industries. It’s the diversity of t"
+  },
+  {
+    "company": "Apple",
+    "source": "apple_official_careers",
+    "job_id": "200681082-1242",
+    "title": "Manager, Machine Learning, Apple Store Online",
+    "location": "Cambridge, United States of America",
+    "official_url": "https://jobs.apple.com/en-us/details/200681082/manager-machine-learning-apple-store-online",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:14:24.784499+00:00",
+    "date_confidence": "high",
+    "description": "Imagine what you could do here! The people here at Apple don’t just create products — they build the kind of wonder that’s revolutionized entire industries. It’s the diversity of t"
+  },
+  {
+    "company": "Apple",
+    "source": "apple_official_careers",
+    "job_id": "200681082-0157",
+    "title": "Manager, Machine Learning, Apple Store Online",
+    "location": "Austin, United States of America",
+    "official_url": "https://jobs.apple.com/en-us/details/200681082/manager-machine-learning-apple-store-online",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:14:24.784499+00:00",
+    "date_confidence": "high",
+    "description": "Imagine what you could do here! The people here at Apple don’t just create products — they build the kind of wonder that’s revolutionized entire industries. It’s the diversity of t"
   }
 ]
 ```
@@ -266,12 +266,12 @@ Sample normalized records:
 - Scraping method: HTTP GET Eightfold PCSX /api/pcsx/search (+ optional position_details)
 - Search URL/API: `https://apply.careers.microsoft.com/api/pcsx/search?domain=microsoft.com&query=software+engineer&location=United+States&sort_by=timestamp&start=0&num=10`
 - Pagination: newest-first; minimum 2 pages, then two seen pages + one overlap page; otherwise count/cap
-- Pages/requests fetched: 21
+- Pages/requests fetched: 80
 - Incremental mode/page cap: incremental / 12
-- Detail pages fetched/cache reused: 168 / 0
-- Raw jobs found: 210
-- After US/location filtering: 168
-- With trustworthy posted_date: 168
+- Detail pages fetched/cache reused: 200 / 138
+- Raw jobs found: 790
+- After US/location filtering: 388
+- With trustworthy posted_date: 388
 - Errors/403s: none
 
 Sample normalized records:
@@ -281,67 +281,67 @@ Sample normalized records:
   {
     "company": "Microsoft",
     "source": "microsoft_official_careers",
-    "job_id": "200052256",
-    "title": "App Innovation Senior Cloud Solution Architect - CTJ - Top Secret",
-    "location": "United States, District of Columbia, Washington D.C.; United States, Virginia, Reston; United States, Virginia, Arlington",
-    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393556982609",
+    "job_id": "200051447",
+    "title": "Software Engineer II - Data Platform & Database Systems",
+    "location": "United States, Washington, Redmond",
+    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393556981149",
     "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:00:05.551109+00:00",
+    "fetched_at": "2026-08-31T23:14:57.632146+00:00",
+    "date_confidence": "high",
+    "description": "Overview Windows runs on over a billion devices worldwide, and the Windows Data team turns the signal from that ecosystem into the insights that shape the product. We manage, optim"
+  },
+  {
+    "company": "Microsoft",
+    "source": "microsoft_official_careers",
+    "job_id": "200047631",
+    "title": "Senior Software Engineer",
+    "location": "United States, Multiple Locations, Multiple Locations",
+    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393556958701",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:14:57.632146+00:00",
+    "date_confidence": "high",
+    "description": "Overview Have you ever imagined a world with an infinite amount of storage available and accessible to everyone? A place where everyone in the world can easily access their data fr"
+  },
+  {
+    "company": "Microsoft",
+    "source": "microsoft_official_careers",
+    "job_id": "200052301",
+    "title": "Software Engineer II",
+    "location": "United States, Washington, Redmond",
+    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393556982661",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:14:57.632146+00:00",
+    "date_confidence": "high",
+    "description": "Overview Do you want to help shape the future of gaming and bring high-quality XBOX experiences to players wherever they choose to play? The XBOX Cloud Gaming Server team builds an"
+  },
+  {
+    "company": "Microsoft",
+    "source": "microsoft_official_careers",
+    "job_id": "200046510",
+    "title": "Principal Software Engineer",
+    "location": "United States, Multiple Locations, Multiple Locations",
+    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393556953742",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:14:57.632146+00:00",
+    "date_confidence": "high",
+    "description": "Overview The Azure Kubernetes Service team is creating a world-class container management and orchestration services for the cloud and beyond. We are the team working on container "
+  },
+  {
+    "company": "Microsoft",
+    "source": "microsoft_official_careers",
+    "job_id": "200052277",
+    "title": "App Innovation Senior Cloud Solution Architect",
+    "location": "United States, Multiple Locations, Multiple Locations",
+    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393556982611",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:14:57.632146+00:00",
     "date_confidence": "high",
     "description": "Overview We are seeking a App Innovation Senior Cloud Solution Architect (GitHub Engineer) with deep expertise designing, implementing, and operating enterprise-scale GitHub platfo"
-  },
-  {
-    "company": "Microsoft",
-    "source": "microsoft_official_careers",
-    "job_id": "200049773",
-    "title": "Senior Software Engineer (Windows ML MLIR Platform)",
-    "location": "United States, Washington, Redmond",
-    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393556972729",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:00:05.551109+00:00",
-    "date_confidence": "high",
-    "description": "Overview Help define how AI runs on Windows at global scale. The Windows AI Platform & Tools Team is building the foundational software that turns rapidly advancing models and sili"
-  },
-  {
-    "company": "Microsoft",
-    "source": "microsoft_official_careers",
-    "job_id": "200052287",
-    "title": "Principal Software Engineer - CoreAI (Foundry Observability)",
-    "location": "United States, Washington, Redmond",
-    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393556982631",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:00:05.551109+00:00",
-    "date_confidence": "high",
-    "description": "Overview Core AI is at the forefront of Microsoft’s mission to redefine how software is built and experienced. We are responsible for building the foundational platforms, services,"
-  },
-  {
-    "company": "Microsoft",
-    "source": "microsoft_official_careers",
-    "job_id": "200047662",
-    "title": "Principal UX Engineering Lead",
-    "location": "United States, Washington, Redmond; United States, California, San Francisco; United States, Illinois, Chicago; United States, Georgia, Atlanta; United States, New York, New York; United States, California, Los Angeles; United States, North Carolina, Charlotte; United States, Texas, Dallas; United States, Texas, Austin; United States, North Carolina, Raleigh; United States, Massachusetts, Boston",
-    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393556958757",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:00:05.551109+00:00",
-    "date_confidence": "high",
-    "description": "Overview MCAPS-Core accelerates customer outcomes and business growth. By uniting product, engineering, marketing, sales, customer success, and partners around a common customer mi"
-  },
-  {
-    "company": "Microsoft",
-    "source": "microsoft_official_careers",
-    "job_id": "200052206",
-    "title": "Critical Environment Field Service Engineer",
-    "location": "United States, Virginia, Richmond",
-    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393556982498",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:00:05.551109+00:00",
-    "date_confidence": "high",
-    "description": "Overview In alignment with our Microsoft values, we are committed to cultivating an inclusive work environment for all employees to positively impact our culture every day and we n"
   }
 ]
 ```
@@ -352,12 +352,12 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 14
+- Pages/requests fetched: 38
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 200 / 0
-- Raw jobs found: 280
-- After US/location filtering: 264
-- With trustworthy posted_date: 264
+- Detail pages fetched/cache reused: 200 / 192
+- Raw jobs found: 754
+- After US/location filtering: 554
+- With trustworthy posted_date: 553
 - Errors/403s: none
 
 Sample normalized records:
@@ -367,67 +367,67 @@ Sample normalized records:
   {
     "company": "NVIDIA",
     "source": "nvidia_official_careers",
-    "job_id": "JR2020825",
-    "title": "Software Engineer, OpenShell",
-    "location": "US, Remote",
-    "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-Remote/Software-Engineer--OpenShell_JR2020825",
-    "posted_date": "2026-07-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:01:42.277991+00:00",
-    "date_confidence": "high",
-    "description": "Are you ready to translate groundbreaking AI research into secure, production-grade systems? Want to shape the next generation of AI agent infrastructure? Join us! At NVIDIA OpenSh"
-  },
-  {
-    "company": "NVIDIA",
-    "source": "nvidia_official_careers",
-    "job_id": "JR2023825",
-    "title": "Director, Software Engineering",
-    "location": "US, CA, Santa Clara",
-    "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Director--Software-Engineering_JR2023825",
+    "job_id": "JR2018179",
+    "title": "Applied AI Engineer",
+    "location": "US, CA, Remote; US, GA, Remote; US, TX, Remote; US, AZ, Remote; US, FL, Remote; US, CA, Santa Clara",
+    "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Remote/Applied-AI-Engineer_JR2018179-3",
     "posted_date": "2026-08-24",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:01:42.277991+00:00",
+    "fetched_at": "2026-08-31T23:17:18.255871+00:00",
     "date_confidence": "high",
-    "description": "In this role, you will own the enterprise platforms that enable the development, deployment, operation, and scaling of AI agents and GPU-accelerated workloads for NVIDIA employees."
+    "description": "NVIDIA's Silicon Co-Design Group is seeking an Applied AI Engineer to innovate, develop, and integrate innovative AI solutions into the design and automation infrastructure that po"
   },
   {
     "company": "NVIDIA",
     "source": "nvidia_official_careers",
-    "job_id": "JR2024363",
-    "title": "Principal Software Engineer",
-    "location": "US, CA, Santa Clara; US, OR, Hillsboro; US, WA, Redmond",
-    "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Principal-Software-Engineer_JR2024363",
+    "job_id": "JR2018178",
+    "title": "Applied AI Engineer",
+    "location": "US, CA, Remote; US, AZ, Remote; US, FL, Remote; US, CA, Santa Clara",
+    "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Remote/Applied-AI-Engineer_JR2018178-3",
+    "posted_date": "2026-08-24",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:17:18.255871+00:00",
+    "date_confidence": "high",
+    "description": "NVIDIA's Silicon Co-Design Group is seeking an Applied AI Engineer to innovate, develop, and integrate innovative AI solutions into the design and automation infrastructure that po"
+  },
+  {
+    "company": "NVIDIA",
+    "source": "nvidia_official_careers",
+    "job_id": "JR2018181",
+    "title": "Applied AI Engineer",
+    "location": "US, CA, Remote; US, GA, Remote; US, TX, Remote; US, AZ, Remote; US, FL, Remote; US, CA, Santa Clara",
+    "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Remote/Applied-AI-Engineer_JR2018181-1",
+    "posted_date": "2026-08-24",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:17:18.255871+00:00",
+    "date_confidence": "high",
+    "description": "NVIDIA's Silicon Co-Design Group is seeking an Applied AI Engineer to innovate, develop, and integrate innovative AI solutions into the design and automation infrastructure that po"
+  },
+  {
+    "company": "NVIDIA",
+    "source": "nvidia_official_careers",
+    "job_id": "JR2020962",
+    "title": "Senior Platform AI Engineer",
+    "location": "US, CA, Santa Clara; US, CA, Remote",
+    "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Platform-AI-Engineer_JR2020962",
     "posted_date": "2026-08-25",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:01:42.277991+00:00",
+    "fetched_at": "2026-08-31T23:17:18.255871+00:00",
     "date_confidence": "high",
-    "description": "NVIDIA has been transforming computer graphics, PC gaming, and accelerated computing for more than 25 years. It’s a unique legacy of innovation that’s fueled by great technology—an"
+    "description": "For over 25 years, NVIDIA has been revolutionizing computer graphics, PC gaming, and accelerated computing. It’s a unique legacy of innovation that’s fueled by great technology—and"
   },
   {
     "company": "NVIDIA",
     "source": "nvidia_official_careers",
-    "job_id": "JR2015068",
-    "title": "Senior Software Engineer, Networking",
-    "location": "US, CA, Santa Clara",
-    "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Linux-Kernel-Software-Engineer_JR2015068",
-    "posted_date": "2026-08-07",
+    "job_id": "JR2021231",
+    "title": "Senior Applied AI Engineer",
+    "location": "US, CA, Santa Clara; US, TX, Austin; US, OR, Hillsboro; US, NC, Durham; US, WA, Seattle",
+    "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Applied-AI-Engineer_JR2021231-1",
+    "posted_date": "2026-07-17",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:01:42.277991+00:00",
+    "fetched_at": "2026-08-31T23:17:18.255871+00:00",
     "date_confidence": "high",
-    "description": "At NVIDIA, we are redefining the future of technology, and our Senior Software Engineer, Networking role offers a uniquely ambitious opportunity to contribute to world-class innova"
-  },
-  {
-    "company": "NVIDIA",
-    "source": "nvidia_official_careers",
-    "job_id": "JR2018245",
-    "title": "Senior Software Engineer, Security",
-    "location": "US, CA, Santa Clara; US, CA, Remote",
-    "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Security-Architect_JR2018245",
-    "posted_date": "2026-08-30",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:01:42.277991+00:00",
-    "date_confidence": "high",
-    "description": "NVIDIA has been transforming computer graphics, PC gaming, and accelerated computing for more than 25 years. It’s a unique legacy of innovation that’s fueled by great technology—an"
+    "description": "NVIDIA has been transforming accelerated computing with innovation that’s fueled by great technology—and amazing people. As part of Nvidia's applied AI team for chip design, you wi"
   }
 ]
 ```
@@ -438,13 +438,13 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://salesforce.wd12.myworkdayjobs.com/External_Career_Site`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 13
+- Pages/requests fetched: 28
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 65 / 0
-- Raw jobs found: 187
-- After US/location filtering: 66
-- With trustworthy posted_date: 66
-- Errors/403s: ['detail JR353388: Salesforce workday detail HTTP 504']
+- Detail pages fetched/cache reused: 132 / 59
+- Raw jobs found: 482
+- After US/location filtering: 191
+- With trustworthy posted_date: 191
+- Errors/403s: none
 
 Sample normalized records:
 
@@ -453,67 +453,67 @@ Sample normalized records:
   {
     "company": "Salesforce",
     "source": "salesforce_official_careers",
-    "job_id": "JR357997",
-    "title": "Software Engineering AMTS, Office of the CEO",
-    "location": "California - San Francisco; New York - New York",
-    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Software-Engineering-AMTS--Office-of-the-CEO_JR357997-1",
+    "job_id": "JR351324",
+    "title": "Strategic Sales Director, Agentforce Operations",
+    "location": "New York - New York; Maryland - Remote; Florida - Remote; Pennsylvania - Remote; Indiana - Remote; North Carolina - Remote; Idaho - Remote; California - Remote; Kansas - Remote; Delaware - Remote; Maine - Remote; Tennessee - Remote; South Carolina - Remote; Maryland - Washington DC Metro - Remote; Texas - Remote; Mississippi - Remote; Wisconsin - Remote; Ohio - Remote; Kentucky - Remote; Wyoming - Remote; Minnesota - Remote; Georgia - Remote; Oklahoma - Remote; Oregon - Remote; Louisiana - Remote; Nevada - Remote; Massachusetts - Remote; New Mexico - Remote; District of Columbia - Washington; Virginia - Remote; Arkansas - Remote; Missouri - Remote; Colorado - Remote; North Dakota - Remote; South Dakota - Remote; Connecticut - Remote; Nebraska - Remote; Montana - Remote; New York - Remote; Vermont - Remote; Illinois - Chicago; Massachusetts - Boston; New Hampshire - Remote; Iowa - Remote; Illinois - Remote; New Jersey - Remote; West Virginia - Remote; Alabama - Remote; Arizona - Remote; Utah - Remote; Rhode Island - Remote; Washington - Remote; Michigan - Remote",
+    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/New-York---New-York/Strategic-Sales-Director--Agentforce-Operations_JR351324",
     "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:04:10.156747+00:00",
-    "date_confidence": "high",
-    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. About Futureforce University Rec"
-  },
-  {
-    "company": "Salesforce",
-    "source": "salesforce_official_careers",
-    "job_id": "JR352645",
-    "title": "Account Partner - Public Sector NGO/ Non-Profit",
-    "location": "Virginia - Remote; Maryland - Remote; District of Columbia - Washington; Texas - Remote; California - Remote; Illinois - Remote",
-    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Virginia---Remote/Account-Partner---Public-Sector-NGO--Non-Profit_JR352645",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:04:10.156747+00:00",
-    "date_confidence": "high",
-    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Customer Success Jo"
-  },
-  {
-    "company": "Salesforce",
-    "source": "salesforce_official_careers",
-    "job_id": "JR342037",
-    "title": "Senior Technical Support Engineer",
-    "location": "Washington - Seattle",
-    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Washington---Seattle/Sr-Technical-Support-Engineer_JR342037",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:04:10.156747+00:00",
-    "date_confidence": "high",
-    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Customer Success Jo"
-  },
-  {
-    "company": "Salesforce",
-    "source": "salesforce_official_careers",
-    "job_id": "JR346498",
-    "title": "Enterprise Tableau Account Director, State and Local Gov",
-    "location": "Virginia - Mclean",
-    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Virginia---Mclean/Tableau-Account-Director--SLG_JR346498",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:04:10.156747+00:00",
+    "fetched_at": "2026-08-31T23:19:52.890684+00:00",
     "date_confidence": "high",
     "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Sales Job Details A"
   },
   {
     "company": "Salesforce",
     "source": "salesforce_official_careers",
-    "job_id": "JR355248",
-    "title": "Senior Product Manager, Emerging Technology",
-    "location": "New York - New York; Indiana - Indianapolis; California - San Francisco",
-    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/New-York---New-York/Senior-Product-Manager--Emerging-Technology_JR355248",
+    "job_id": "JR358427",
+    "title": "Software Engineering Lead/Principal - AI Tooling & Automation",
+    "location": "California - San Francisco",
+    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Software-Engineering-Lead-Principal---AI-Tooling---Automation_JR358427",
     "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:04:10.156747+00:00",
+    "fetched_at": "2026-08-31T23:19:52.890684+00:00",
     "date_confidence": "high",
-    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Product Job Details"
+    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Software Engineerin"
+  },
+  {
+    "company": "Salesforce",
+    "source": "salesforce_official_careers",
+    "job_id": "JR355005",
+    "title": "AI Software Engineer (MTS) – Digital Success Engineering",
+    "location": "California - San Francisco; Texas - Dallas",
+    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/AI-Software-Engineer--MTS----Digital-Success-Engineering_JR355005",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:19:52.890684+00:00",
+    "date_confidence": "high",
+    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Software Engineerin"
+  },
+  {
+    "company": "Salesforce",
+    "source": "salesforce_official_careers",
+    "job_id": "JR354072",
+    "title": "Senior ML Engineer",
+    "location": "Washington - Bellevue; California - Palo Alto; California - San Francisco",
+    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Washington---Bellevue/Senior-ML-Engineer_JR354072",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:19:52.890684+00:00",
+    "date_confidence": "high",
+    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Software Engineerin"
+  },
+  {
+    "company": "Salesforce",
+    "source": "salesforce_official_careers",
+    "job_id": "JR336646",
+    "title": "Technical Support Engineer - Agentforce & Data 360",
+    "location": "Washington - Seattle; Washington - Bellevue",
+    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Washington---Seattle/Agentforce---Data-360-Support-Engineer_JR336646",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:19:52.890684+00:00",
+    "date_confidence": "high",
+    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Customer Success Jo"
   }
 ]
 ```
@@ -524,12 +524,12 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://adobe.wd5.myworkdayjobs.com/external_experienced`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 14
+- Pages/requests fetched: 38
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 175 / 0
-- Raw jobs found: 280
-- After US/location filtering: 175
-- With trustworthy posted_date: 175
+- Detail pages fetched/cache reused: 116 / 136
+- Raw jobs found: 700
+- After US/location filtering: 252
+- With trustworthy posted_date: 252
 - Errors/403s: none
 
 Sample normalized records:
@@ -539,98 +539,242 @@ Sample normalized records:
   {
     "company": "Adobe",
     "source": "adobe_official_careers",
-    "job_id": "R165261",
-    "title": "Sr. Software Engineer",
+    "job_id": "R168901",
+    "title": "Applied AI Engineer",
     "location": "San Jose",
-    "official_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Sr-Software-Engineer_R165261",
-    "posted_date": "2026-03-16",
+    "official_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Applied-AI-Engineer_R168901",
+    "posted_date": "2026-08-06",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:05:32.313811+00:00",
+    "fetched_at": "2026-08-31T23:21:18.265774+00:00",
     "date_confidence": "high",
-    "description": "Our Team Join the Adobe Journey Optimizer B2B Insights and Analytics team and be at the forefront of transforming how businesses derive insights from customer data. We are pioneeri"
+    "description": "The Opportunity We are looking for a hands-on AI Agent Engineer to develop, build, and maintain intelligent agents that drive automation and business impact across the enterprise. "
   },
   {
     "company": "Adobe",
     "source": "adobe_official_careers",
-    "job_id": "R169956",
-    "title": "Lead Software Engineer",
+    "job_id": "R170895",
+    "title": "Senior Agentic AI Engineer",
     "location": "San Jose",
-    "official_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Sr-Software-Engineer--UI_R169956",
-    "posted_date": "2026-08-04",
+    "official_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Senior-Agentic-AI-Engineer_R170895",
+    "posted_date": "2026-08-02",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:05:32.313811+00:00",
+    "fetched_at": "2026-08-31T23:21:18.265774+00:00",
     "date_confidence": "high",
-    "description": "About the Role We are seeking a highly motivated Lead Software Engineer to join the new Project Graph team at Adobe. Project Graph is a new creative system that lets you combine fi"
+    "description": "The Opportunity Join our world-class team in San Jose, CA, where your engineering skills will flourish! In this role, you’ll help shape the future of Adobe’s next-generation agenti"
   },
   {
     "company": "Adobe",
     "source": "adobe_official_careers",
-    "job_id": "R170402",
-    "title": "Senior Software Engineer",
-    "location": "Basel",
-    "official_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/Basel/Senior-Software-Engineer_R170402",
-    "posted_date": "2026-07-10",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:05:32.313811+00:00",
-    "date_confidence": "high",
-    "description": "THE OPPORTUNITY Are you an AI-native software engineer ready to shape how enterprise brands appear in AI? The Adobe Brand Visibility team builds the systems that determine how ente"
-  },
-  {
-    "company": "Adobe",
-    "source": "adobe_official_careers",
-    "job_id": "R170546",
-    "title": "Senior Software Engineer",
+    "job_id": "R165968",
+    "title": "Senior AI Platform Engineer",
     "location": "San Jose; San Francisco",
-    "official_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Senior-Software-Engineer_R170546-1",
+    "official_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Senior-AI-Platform-Engineer_R165968-1",
+    "posted_date": "2026-06-15",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:21:18.265774+00:00",
+    "date_confidence": "high",
+    "description": "The Opportunity Adobe empowers individuals and organizations to create exceptional content effortlessly. The AI for Engineering team builds a scalable, production-grade AI platform"
+  },
+  {
+    "company": "Adobe",
+    "source": "adobe_official_careers",
+    "job_id": "R168433",
+    "title": "Staff AI VFX Engineer",
+    "location": "Los Angeles; San Francisco; San Jose; Seattle",
+    "official_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/Los-Angeles/Staff-AI-VFX-Engineer_R168433",
+    "posted_date": "2026-05-20",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:21:18.265774+00:00",
+    "date_confidence": "high",
+    "description": "The Opportunity As AI rapidly transforms creative industries, professional production workflows must evolve alongside it. At Firefly Foundry , we’re leading an industry-first initi"
+  },
+  {
+    "company": "Adobe",
+    "source": "adobe_official_careers",
+    "job_id": "R168858",
+    "title": "Senior Applied AI Engineer– Creative Systems & Brand Intelligence, Adobe Express",
+    "location": "San Francisco; San Jose",
+    "official_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Francisco/Senior-Applied-AI-Engineer--Creative-Systems---Brand-Intelligence--Adobe-Express_R168858",
     "posted_date": "2026-07-23",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:05:32.313811+00:00",
+    "fetched_at": "2026-08-31T23:21:18.265774+00:00",
     "date_confidence": "high",
-    "description": "The Opportunity Come join the Adobe Cloud Platform & Collaboration (ACPC) experiences engineering team, one of the most dynamic, fun, and agile teams at Adobe! You'll help build ou"
-  },
-  {
-    "company": "Adobe",
-    "source": "adobe_official_careers",
-    "job_id": "R170582",
-    "title": "Senior Software Engineer",
-    "location": "San Jose",
-    "official_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Senior-Software-Engineer_R170582",
-    "posted_date": "2026-08-04",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:05:32.313811+00:00",
-    "date_confidence": "high",
-    "description": "The Adobe Risk Platform (ARP) is Adobe's centralized fraud prevention and risk-decisioning platform, protecting surfaces like Commerce, Stock, and Firefly with real-time decisions "
+    "description": "The Opportunity Our pillar, Assets and Collaboration, focuses on building foundational capabilities in Adobe Express that help users create, organize, govern, and collaborate on co"
   }
 ]
 ```
 
 ## Meta
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
+- Status: ok
+- Scraping method: HTTP POST Meta Relay GraphQL; dynamic LSD and doc_id discovery
+- Search URL/API: `https://www.metacareers.com/jobsearch/`
+- Pagination: one complete Relay payload per role query
+- Pages/requests fetched: 9
+- Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
+- Raw jobs found: 1677
+- After US/location filtering: 521
 - With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · WAF/browser-only today. Keep official link; investigate browser XHR/HAR later.']
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Meta",
+    "source": "meta_official_careers",
+    "job_id": "1815706149429447",
+    "title": "Principal, AI Cloud Infrastructure Sourcing Manager",
+    "location": "Bellevue, WA; Menlo Park, CA; Seattle, WA; Fremont, CA",
+    "official_url": "https://www.metacareers.com/jobs/1815706149429447",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:23:01.433429+00:00",
+    "date_confidence": "unknown",
+    "description": ""
+  },
+  {
+    "company": "Meta",
+    "source": "meta_official_careers",
+    "job_id": "7868993783158276",
+    "title": "Production Engineering",
+    "location": "Sunnyvale, CA; Bellevue, WA; Menlo Park, CA; New York, NY; Fremont, CA",
+    "official_url": "https://www.metacareers.com/jobs/7868993783158276",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:23:01.433429+00:00",
+    "date_confidence": "unknown",
+    "description": ""
+  },
+  {
+    "company": "Meta",
+    "source": "meta_official_careers",
+    "job_id": "1283568050445825",
+    "title": "Product Quality Engineer, MTIA",
+    "location": "Fremont, CA",
+    "official_url": "https://www.metacareers.com/jobs/1283568050445825",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:23:01.433429+00:00",
+    "date_confidence": "unknown",
+    "description": ""
+  },
+  {
+    "company": "Meta",
+    "source": "meta_official_careers",
+    "job_id": "1823307875501968",
+    "title": "Software Engineer, SystemML - AI Networking",
+    "location": "Menlo Park, CA",
+    "official_url": "https://www.metacareers.com/jobs/1823307875501968",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:23:01.433429+00:00",
+    "date_confidence": "unknown",
+    "description": ""
+  },
+  {
+    "company": "Meta",
+    "source": "meta_official_careers",
+    "job_id": "1343564164433660",
+    "title": "Software Engineer, Data Infrastructure (Technical Leadership)",
+    "location": "Menlo Park, CA",
+    "official_url": "https://www.metacareers.com/jobs/1343564164433660",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:23:01.433429+00:00",
+    "date_confidence": "unknown",
+    "description": ""
+  }
+]
+```
 
 ## TikTok
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
+- Status: ok
+- Scraping method: HTTP POST public supplier /search/job/posts
+- Search URL/API: `https://api.lifeattiktok.com/api/v1/public/supplier/search/job/posts`
+- Pagination: offset=0,50,...; limit=50; US city filter
+- Pages/requests fetched: 31
+- Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
+- Raw jobs found: 1394
+- After US/location filtering: 642
 - With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · custom CSR/API. Keep official link; investigate XHR later.']
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "TikTok",
+    "source": "tiktok_official_careers",
+    "job_id": "7668578318295386373",
+    "title": "Machine Learning Engineer, AI Agent",
+    "location": "San Jose, California, United States of America",
+    "official_url": "https://lifeattiktok.com/search/7668578318295386373",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:23:08.508379+00:00",
+    "date_confidence": "unknown",
+    "description": "Our team focuses on the R&D of algorithm for TikTok international advertising customer growth. We leverage deep learning and large language model technologies to build an algorithm"
+  },
+  {
+    "company": "TikTok",
+    "source": "tiktok_official_careers",
+    "job_id": "7669702699627661573",
+    "title": "Machine Learning Engineer Graduate (Commercial AI-CRM and Transaction) - 2027 Start",
+    "location": "San Jose, California, United States of America",
+    "official_url": "https://lifeattiktok.com/search/7669702699627661573",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:23:08.508379+00:00",
+    "date_confidence": "unknown",
+    "description": "The Commercial AI-CRM and Transaction team focuses on TikTok advertiser growth algorithms. Leveraging deep learning and large language model technologies, the team builds an algori"
+  },
+  {
+    "company": "TikTok",
+    "source": "tiktok_official_careers",
+    "job_id": "7658191476207339829",
+    "title": "Frontend Infrastructure Engineer (AI Tooling), TikTok Client Arch",
+    "location": "San Jose, California, United States of America",
+    "official_url": "https://lifeattiktok.com/search/7658191476207339829",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:23:08.508379+00:00",
+    "date_confidence": "unknown",
+    "description": "TikTok’s Web Architecture team is looking for a visionary Frontend Infrastructure Engineer (AI Tooling) to shape the future of AI-driven frontend engineering. You will work on the "
+  },
+  {
+    "company": "TikTok",
+    "source": "tiktok_official_careers",
+    "job_id": "7678497203258919221",
+    "title": "Tech Lead AI Software Engineer - Creative AI Agents (TikTok)",
+    "location": "San Jose, California, United States of America",
+    "official_url": "https://lifeattiktok.com/search/7678497203258919221",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:23:08.508379+00:00",
+    "date_confidence": "unknown",
+    "description": "The AIGE (AI-Generated Effects) team is building AI-native creative tools that enable TikTok creators to turn natural-language and multimodal ideas into high-quality, interactive e"
+  },
+  {
+    "company": "TikTok",
+    "source": "tiktok_official_careers",
+    "job_id": "7663036952090347829",
+    "title": "Backend Software Engineer Graduate (Emerging Products & AI Safety) - 2027 Start",
+    "location": "San Jose, California, United States of America",
+    "official_url": "https://lifeattiktok.com/search/7663036952090347829",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:23:08.508379+00:00",
+    "date_confidence": "unknown",
+    "description": "The Trust and Safety(TnS) engineering team is responsible for protecting our users from harmful content and abusive behaviors. With the continuous efforts of our trust and safety e"
+  }
+]
+```
 
 ## Uber
 
@@ -638,12 +782,12 @@ Sample normalized records:
 - Scraping method: HTTP GET Oracle HCM recruitingCEJobRequisitions on iaziqy.fa.ocs.oraclecloud.com (offset pagination) + recruitingCEJobRequisitionDetails
 - Search URL/API: `https://jobs.uber.com/en/jobs/?search=software%20engineer&page=1&pagesize=10`
 - Pagination: HCM finder offset=(page-1)*limit ; limit=20; stop on empty/repeat or TotalJobsCount (do not stop at pages 1–7)
-- Pages/requests fetched: 8
+- Pages/requests fetched: 31
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 10 / 105
-- Raw jobs found: 160
-- After US/location filtering: 115
-- With trustworthy posted_date: 115
+- Detail pages fetched/cache reused: 47 / 129
+- Raw jobs found: 611
+- After US/location filtering: 176
+- With trustworthy posted_date: 176
 - Errors/403s: none
 
 Sample normalized records:
@@ -653,67 +797,67 @@ Sample normalized records:
   {
     "company": "Uber",
     "source": "uber_official_careers",
-    "job_id": "301389",
-    "title": "Applications Developer II",
-    "location": "New York City, NY, United States",
-    "official_url": "https://jobs.uber.com/en/jobs/301389",
-    "posted_date": "2026-08-28",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:07:22.711063+00:00",
-    "date_confidence": "high",
-    "description": "About the role and team Working at Uber means solving hard problems in a high-stakes, fast-moving environment. As an Application Developer, you will design, develop, and maintain t"
-  },
-  {
-    "company": "Uber",
-    "source": "uber_official_careers",
-    "job_id": "157628",
-    "title": "Enterprise Applications Developer",
-    "location": "San Francisco, CA, United States",
-    "official_url": "https://jobs.uber.com/en/jobs/157628",
+    "job_id": "152899",
+    "title": "Staff ML Engineer, Generative AI",
+    "location": "Sunnyvale, CA, United States",
+    "official_url": "https://jobs.uber.com/en/jobs/152899",
     "posted_date": "2026-06-19",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:07:22.711063+00:00",
+    "fetched_at": "2026-08-31T23:23:36.408340+00:00",
     "date_confidence": "high",
-    "description": "Uber Engineering is a high-performance culture marked by perseverance and hyperproductivity. We’re looking for team players with natural customer service intuition who can work har"
+    "description": "About the Role Uber’s Customer Obsession team builds the platform and AI that powers world‑class support across mobile, web, and voice at global scale. We are now hiring a Staff ML"
   },
   {
     "company": "Uber",
     "source": "uber_official_careers",
-    "job_id": "300877",
-    "title": "Sr Applications Developer",
-    "location": "Dallas, TX, United States",
-    "official_url": "https://jobs.uber.com/en/jobs/300877",
-    "posted_date": "2026-08-18",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:07:22.711063+00:00",
-    "date_confidence": "high",
-    "description": "About the role and team Working at Uber means solving hard problems in a high-stakes, fast-moving environment. As a Senior Application Developer, you will be a technical leader and"
-  },
-  {
-    "company": "Uber",
-    "source": "uber_official_careers",
-    "job_id": "154758",
-    "title": "Applications Developer II - ServiceNow",
+    "job_id": "145860",
+    "title": "Staff Machine Learning Engineer - Applied AI",
     "location": "San Francisco, CA, United States",
-    "official_url": "https://jobs.uber.com/en/jobs/154758",
+    "official_url": "https://jobs.uber.com/en/jobs/145860",
+    "posted_date": "2026-07-17",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:23:36.408340+00:00",
+    "date_confidence": "high",
+    "description": "About the Team: The Applied AI team collaborates with product teams across Uber to deliver innovative AI solutions for core business problems. We work closely with engineering, pro"
+  },
+  {
+    "company": "Uber",
+    "source": "uber_official_careers",
+    "job_id": "146988",
+    "title": "Sr Staff ML Engineer - Applied AI",
+    "location": "San Francisco, CA, United States",
+    "official_url": "https://jobs.uber.com/en/jobs/146988",
     "posted_date": "2026-06-19",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:07:22.711063+00:00",
+    "fetched_at": "2026-08-31T23:23:36.408340+00:00",
     "date_confidence": "high",
-    "description": "About the Role The Application Developer, ServiceNow Platform is responsible for designing, developing, configuring, and supporting scalable ServiceNow solutions that meet complex "
+    "description": "About the Team The Applied AI team collaborates with product teams across Uber to deliver innovative AI solutions for core business problems. We work closely with engineering, prod"
   },
   {
     "company": "Uber",
     "source": "uber_official_careers",
-    "job_id": "300543",
-    "title": "Senior Integrations Application Developer",
+    "job_id": "300982",
+    "title": "Staff Machine Learning Engineer - Uber AI Solutions",
     "location": "San Francisco, CA, United States",
-    "official_url": "https://jobs.uber.com/en/jobs/300543",
-    "posted_date": "2026-07-31",
+    "official_url": "https://jobs.uber.com/en/jobs/300982",
+    "posted_date": "2026-08-06",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:07:22.711063+00:00",
+    "fetched_at": "2026-08-31T23:23:36.408340+00:00",
     "date_confidence": "high",
-    "description": "About the role and team The FinTech team, part of the CFO’s organization, is responsible for innovating and building the best financial products and systems in the world. We are ob"
+    "description": "Uber AI Solutions (UAIS) is a startup inside Uber, building the data and evaluation infrastructure behind the next generation of AI. The models making headlines are only as good as"
+  },
+  {
+    "company": "Uber",
+    "source": "uber_official_careers",
+    "job_id": "155456",
+    "title": "Senior ML Engineer, Computer Vision - Applied AI",
+    "location": "San Francisco, CA, United States",
+    "official_url": "https://jobs.uber.com/en/jobs/155456",
+    "posted_date": "2026-07-30",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:23:36.408340+00:00",
+    "date_confidence": "high",
+    "description": "About the Role Applied AI at Uber builds intelligent systems that power critical product experiences across the platform. As a Senior Machine Learning Engineer — Computer Vision, y"
   }
 ]
 ```
@@ -727,9 +871,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 469
-- After US/location filtering: 465
-- With trustworthy posted_date: 465
+- Raw jobs found: 472
+- After US/location filtering: 468
+- With trustworthy posted_date: 468
 - Errors/403s: none
 
 Sample normalized records:
@@ -745,7 +889,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/doordashusa/jobs/7858932",
     "posted_date": "2026-04-27",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:07:33.437478+00:00",
+    "fetched_at": "2026-08-31T23:24:25.699684+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><img style=\"display: none; max-width: 100%;\" src=\"https://click.appcast.io/greenhouse-te8/a31.png?ent=34&amp;e=22630&amp;t=1701374353806\" width=\"1px\">"
   },
@@ -758,7 +902,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/doordashusa/jobs/8068432",
     "posted_date": "2026-07-15",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:07:33.437478+00:00",
+    "fetched_at": "2026-08-31T23:24:25.699684+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><img style=\"display: none; max-width: 100%;\" src=\"https://click.appcast.io/greenhouse-te8/a31.png?ent=34&amp;e=22630&amp;t=1701374353806\" width=\"1px\">"
   },
@@ -771,7 +915,20 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/doordashusa/jobs/8160362",
     "posted_date": "2026-08-26",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:07:33.437478+00:00",
+    "fetched_at": "2026-08-31T23:24:25.699684+00:00",
+    "date_confidence": "high",
+    "description": "<div class=\"content-intro\"><p><img style=\"display: none; max-width: 100%;\" src=\"https://click.appcast.io/greenhouse-te8/a31.png?ent=34&amp;e=22630&amp;t=1701374353806\" width=\"1px\">"
+  },
+  {
+    "company": "DoorDash",
+    "source": "doordash_official_careers",
+    "job_id": "7592588",
+    "title": "Account Manager, CPG",
+    "location": "New York, NY; Los Angeles, CA; Atlanta, GA; Chicago, IL; San Francisco, CA; New York",
+    "official_url": "https://job-boards.greenhouse.io/doordashusa/jobs/7592588",
+    "posted_date": "2026-02-06",
+    "updated_date": "2026-08-31",
+    "fetched_at": "2026-08-31T23:24:25.699684+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><img style=\"display: none; max-width: 100%;\" src=\"https://click.appcast.io/greenhouse-te8/a31.png?ent=34&amp;e=22630&amp;t=1701374353806\" width=\"1px\">"
   },
@@ -784,20 +941,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/doordashusa/jobs/7852785",
     "posted_date": "2026-04-27",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:07:33.437478+00:00",
-    "date_confidence": "high",
-    "description": "<div class=\"content-intro\"><p><img style=\"display: none; max-width: 100%;\" src=\"https://click.appcast.io/greenhouse-te8/a31.png?ent=34&amp;e=22630&amp;t=1701374353806\" width=\"1px\">"
-  },
-  {
-    "company": "DoorDash",
-    "source": "doordash_official_careers",
-    "job_id": "8077011",
-    "title": "Account Manager, CPG",
-    "location": "New York, NY; San Francisco, CA; Los Angeles, CA; Chicago, IL; Atlanta, GA; San Francisco",
-    "official_url": "https://job-boards.greenhouse.io/doordashusa/jobs/8077011",
-    "posted_date": "2026-07-22",
-    "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:07:33.437478+00:00",
+    "fetched_at": "2026-08-31T23:24:25.699684+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><img style=\"display: none; max-width: 100%;\" src=\"https://click.appcast.io/greenhouse-te8/a31.png?ent=34&amp;e=22630&amp;t=1701374353806\" width=\"1px\">"
   }
@@ -810,12 +954,12 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://wd1.myworkdaysite.com/recruiting/snapchat/snap`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 10
+- Pages/requests fetched: 24
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 76 / 0
-- Raw jobs found: 149
-- After US/location filtering: 76
-- With trustworthy posted_date: 76
+- Detail pages fetched/cache reused: 14 / 76
+- Raw jobs found: 335
+- After US/location filtering: 90
+- With trustworthy posted_date: 90
 - Errors/403s: none
 
 Sample normalized records:
@@ -825,52 +969,13 @@ Sample normalized records:
   {
     "company": "Snap",
     "source": "snap_official_careers",
-    "job_id": "H226EM8",
-    "title": "Manager, Software Engineering",
-    "location": "Los Angeles, California; New York - 229 W 43rd St; Bellevue - 110 110th Ave NE; Seattle - 2025 1st Avenue; San Francisco - 1160 Battery St; Palo Alto - 395 Page Mill Rd",
-    "official_url": "https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Los-Angeles-California/Manager--Software-Engineering_H226EM8-1",
-    "posted_date": "2026-07-09",
+    "job_id": "R0046467",
+    "title": "Staff Machine Learning Engineer, Generative AI Modeling and Inference",
+    "location": "Los Angeles, California; Seattle, Washington; Palo Alto, California; New York, New York; Bellevue, Washington",
+    "official_url": "https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Los-Angeles-California/Staff-Machine-Learning-Engineer--Generative-AI-Modeling-and-Inference_R0046467",
+    "posted_date": "2026-08-14",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:07:37.845103+00:00",
-    "date_confidence": "high",
-    "description": "Snap Inc is a technology company. We believe the camera presents the greatest opportunity to improve the way people live and communicate. Snap contributes to human progress by empo"
-  },
-  {
-    "company": "Snap",
-    "source": "snap_official_careers",
-    "job_id": "H226PE10",
-    "title": "Principal Software Engineer",
-    "location": "Los Angeles, California; New York - 229 W 43rd St; Bellevue - 110 110th Ave NE; Seattle - 2025 1st Avenue; San Francisco - 1160 Battery St; Palo Alto - 395 Page Mill Rd",
-    "official_url": "https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Los-Angeles-California/Principal-Software-Engineer_H226PE10",
-    "posted_date": "2026-07-21",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:07:37.845103+00:00",
-    "date_confidence": "high",
-    "description": "Snap Inc is a technology company. We believe the camera presents the greatest opportunity to improve the way people live and communicate. Snap contributes to human progress by empo"
-  },
-  {
-    "company": "Snap",
-    "source": "snap_official_careers",
-    "job_id": "R0046369",
-    "title": "Manager, Software Engineering, Maps",
-    "location": "New York, New York; Seattle, Washington; San Francisco, California; Palo Alto, California; Los Angeles, California",
-    "official_url": "https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/New-York-New-York/Manager--Software-Engineering--Maps_R0046369-1",
-    "posted_date": "2026-08-04",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:07:37.845103+00:00",
-    "date_confidence": "high",
-    "description": "Snap Inc is a technology company. We believe the camera presents the greatest opportunity to improve the way people live and communicate. Snap contributes to human progress by empo"
-  },
-  {
-    "company": "Snap",
-    "source": "snap_official_careers",
-    "job_id": "Q326SWE",
-    "title": "Software Engineer, Level 3",
-    "location": "Los Angeles, California; New York - 229 W 43rd St; Seattle - 2025 1st Avenue; San Francisco - 1160 Battery St; Bellevue, Washington; Palo Alto - 395 Page Mill Rd",
-    "official_url": "https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Los-Angeles-California/Software-Engineer--Level-3_Q326SWE-1",
-    "posted_date": "2026-08-18",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:07:37.845103+00:00",
+    "fetched_at": "2026-08-31T23:24:27.327051+00:00",
     "date_confidence": "high",
     "description": "Snap Inc is a technology company. We believe the camera presents the greatest opportunity to improve the way people live and communicate. Snap contributes to human progress by empo"
   },
@@ -883,7 +988,46 @@ Sample normalized records:
     "official_url": "https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Los-Angeles-California/Staff-Software-Engineer--Platform-Engineering_R0045781-1",
     "posted_date": "2026-06-23",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:07:37.845103+00:00",
+    "fetched_at": "2026-08-31T23:24:27.327051+00:00",
+    "date_confidence": "high",
+    "description": "Snap Inc is a technology company. We believe the camera presents the greatest opportunity to improve the way people live and communicate. Snap contributes to human progress by empo"
+  },
+  {
+    "company": "Snap",
+    "source": "snap_official_careers",
+    "job_id": "R0046612",
+    "title": "Privacy Engineer, Level 4",
+    "location": "Los Angeles, California; Palo Alto, California; New York, New York; Bellevue, Washington",
+    "official_url": "https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Los-Angeles-California/Privacy-Engineer--Level-4_R0046612-1",
+    "posted_date": "2026-08-28",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:24:27.327051+00:00",
+    "date_confidence": "high",
+    "description": "Snap Inc is a technology company. We believe the camera presents the greatest opportunity to improve the way people live and communicate. Snap contributes to human progress by empo"
+  },
+  {
+    "company": "Snap",
+    "source": "snap_official_careers",
+    "job_id": "R0046622",
+    "title": "Quality Engineer",
+    "location": "Los Angeles, California",
+    "official_url": "https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Los-Angeles-California/Quality-Engineer_R0046622-1",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:24:27.327051+00:00",
+    "date_confidence": "high",
+    "description": "Snap Inc is a technology company. We believe the camera presents the greatest opportunity to improve the way people live and communicate. Snap contributes to human progress by empo"
+  },
+  {
+    "company": "Snap",
+    "source": "snap_official_careers",
+    "job_id": "R0046161",
+    "title": "Manager, Privacy Engineering",
+    "location": "Los Angeles, California; Bellevue, Washington",
+    "official_url": "https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Los-Angeles-California/Manager--Privacy-Engineering_R0046161-1",
+    "posted_date": "2026-07-14",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:24:27.327051+00:00",
     "date_confidence": "high",
     "description": "Snap Inc is a technology company. We believe the camera presents the greatest opportunity to improve the way people live and communicate. Snap contributes to human progress by empo"
   }
@@ -900,8 +1044,8 @@ Sample normalized records:
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
 - Raw jobs found: 208
-- After US/location filtering: 155
-- With trustworthy posted_date: 155
+- After US/location filtering: 152
+- With trustworthy posted_date: 152
 - Errors/403s: none
 
 Sample normalized records:
@@ -917,7 +1061,7 @@ Sample normalized records:
     "official_url": "https://www.pinterestcareers.com/jobs/?gh_jid=8103612",
     "posted_date": "2026-08-14",
     "updated_date": "2026-08-20",
-    "fetched_at": "2026-08-31T18:08:39.378519+00:00",
+    "fetched_at": "2026-08-31T23:24:56.834426+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>About Pinterest:</strong></p> <p>Millions of people around the world come to our platform to find creative ideas, dream about new possibilitie"
   },
@@ -929,8 +1073,8 @@ Sample normalized records:
     "location": "New York, NY, US",
     "official_url": "https://www.pinterestcareers.com/jobs/?gh_jid=8022863",
     "posted_date": "2026-08-03",
-    "updated_date": "2026-08-20",
-    "fetched_at": "2026-08-31T18:08:39.378519+00:00",
+    "updated_date": "2026-08-31",
+    "fetched_at": "2026-08-31T23:24:56.834426+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>About Pinterest:</strong></p> <p>Millions of people around the world come to our platform to find creative ideas, dream about new possibilitie"
   },
@@ -942,21 +1086,8 @@ Sample normalized records:
     "location": "Buenos Aires, AR; Argentina, AR",
     "official_url": "https://www.pinterestcareers.com/jobs/?gh_jid=8089250",
     "posted_date": "2026-07-28",
-    "updated_date": "2026-08-20",
-    "fetched_at": "2026-08-31T18:08:39.378519+00:00",
-    "date_confidence": "high",
-    "description": "<div class=\"content-intro\"><p><strong>About Pinterest:</strong></p> <p>Millions of people around the world come to our platform to find creative ideas, dream about new possibilitie"
-  },
-  {
-    "company": "Pinterest",
-    "source": "pinterest_official_careers",
-    "job_id": "8081337",
-    "title": "Client Account Manager II",
-    "location": "São Paulo, BR",
-    "official_url": "https://www.pinterestcareers.com/jobs/?gh_jid=8081337",
-    "posted_date": "2026-07-30",
-    "updated_date": "2026-08-20",
-    "fetched_at": "2026-08-31T18:08:39.378519+00:00",
+    "updated_date": "2026-08-31",
+    "fetched_at": "2026-08-31T23:24:56.834426+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>About Pinterest:</strong></p> <p>Millions of people around the world come to our platform to find creative ideas, dream about new possibilitie"
   },
@@ -969,7 +1100,20 @@ Sample normalized records:
     "official_url": "https://www.pinterestcareers.com/jobs/?gh_jid=8055301",
     "posted_date": "2026-07-15",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-08-31T18:08:39.378519+00:00",
+    "fetched_at": "2026-08-31T23:24:56.834426+00:00",
+    "date_confidence": "high",
+    "description": "<div class=\"content-intro\"><p><strong>About Pinterest:</strong></p> <p>Millions of people around the world come to our platform to find creative ideas, dream about new possibilitie"
+  },
+  {
+    "company": "Pinterest",
+    "source": "pinterest_official_careers",
+    "job_id": "8026888",
+    "title": "Client Account Manager II (tvScientific)",
+    "location": "New York, NY, US; Remote, US; San Francisco, CA, US",
+    "official_url": "https://www.pinterestcareers.com/jobs/?gh_jid=8026888",
+    "posted_date": "2026-07-28",
+    "updated_date": "2026-08-20",
+    "fetched_at": "2026-08-31T23:24:56.834426+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>About Pinterest:</strong></p> <p>Millions of people around the world come to our platform to find creative ideas, dream about new possibilitie"
   }
@@ -985,9 +1129,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 386
-- After US/location filtering: 299
-- With trustworthy posted_date: 299
+- Raw jobs found: 384
+- After US/location filtering: 296
+- With trustworthy posted_date: 296
 - Errors/403s: none
 
 Sample normalized records:
@@ -1003,7 +1147,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/snowflake/02b4dbeb-2fef-4838-9d79-922330f08d58",
     "posted_date": "2026-03-20",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:08:39.712949+00:00",
+    "fetched_at": "2026-08-31T23:24:57.325569+00:00",
     "date_confidence": "high",
     "description": "At Snowflake, we are powering the era of the agentic enterprise. To usher in this new era, we seek AI-native thinkers across every function who are energized by the opportunity to "
   },
@@ -1016,7 +1160,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/snowflake/db1375f0-ea5d-404a-b640-259f94dbc995",
     "posted_date": "2026-07-28",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:08:39.712949+00:00",
+    "fetched_at": "2026-08-31T23:24:57.325569+00:00",
     "date_confidence": "high",
     "description": "At Snowflake, we are powering the era of the agentic enterprise. To usher in this new era, we seek AI-native thinkers across every function who are energized by the opportunity to "
   },
@@ -1029,7 +1173,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/snowflake/3eb872af-0ab1-4986-8f72-e7321fcd1538",
     "posted_date": "2026-02-06",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:08:39.712949+00:00",
+    "fetched_at": "2026-08-31T23:24:57.325569+00:00",
     "date_confidence": "high",
     "description": "At Snowflake, we are powering the era of the agentic enterprise. To usher in this new era, we seek AI-native thinkers across every function who are energized by the opportunity to "
   },
@@ -1042,7 +1186,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/snowflake/e2739aab-b0a2-4583-92c1-13bbd4fd9672",
     "posted_date": "2026-03-23",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:08:39.712949+00:00",
+    "fetched_at": "2026-08-31T23:24:57.325569+00:00",
     "date_confidence": "high",
     "description": "At Snowflake, we are powering the era of the agentic enterprise. To usher in this new era, we seek AI-native thinkers across every function who are energized by the opportunity to "
   },
@@ -1055,7 +1199,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/snowflake/97813cac-e55c-4631-94fe-5eda15c7eaed",
     "posted_date": "2026-04-01",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:08:39.712949+00:00",
+    "fetched_at": "2026-08-31T23:24:57.325569+00:00",
     "date_confidence": "high",
     "description": "At Snowflake, we are powering the era of the agentic enterprise. To usher in this new era, we seek AI-native thinkers across every function who are energized by the opportunity to "
   }
@@ -1068,12 +1212,12 @@ Sample normalized records:
 - Scraping method: HTTP GET SmartRecruiters /v1/companies/{slug}/postings (+ posting detail)
 - Search URL/API: `https://careers.smartrecruiters.com/ServiceNow`
 - Pagination: offset=0,100,... ; country=us; stop on empty/repeat or totalFound
-- Pages/requests fetched: 3
+- Pages/requests fetched: 19
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 192 / 0
-- Raw jobs found: 261
-- After US/location filtering: 192
-- With trustworthy posted_date: 192
+- Detail pages fetched/cache reused: 165 / 163
+- Raw jobs found: 1421
+- After US/location filtering: 328
+- With trustworthy posted_date: 328
 - Errors/403s: none
 
 Sample normalized records:
@@ -1083,65 +1227,65 @@ Sample normalized records:
   {
     "company": "ServiceNow",
     "source": "servicenow_official_careers",
-    "job_id": "JB0075020",
-    "title": "Senior Manager - Software Engineering Management - AI Engineering",
+    "job_id": "JB0074206",
+    "title": "Senior AI Agent Engineer | Moveworks - Federal",
+    "location": "San Francisco, California, United States",
+    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000146563519-senior-ai-agent-engineer-moveworks-federal",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:24:57.907346+00:00",
+    "date_confidence": "high",
+    "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
+  },
+  {
+    "company": "ServiceNow",
+    "source": "servicenow_official_careers",
+    "job_id": "JB0074234",
+    "title": "Sr. Program Manager, M&A",
+    "location": "San Diego, California, United States",
+    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000146562949-sr-program-manager-m-a",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:24:57.907346+00:00",
+    "date_confidence": "high",
+    "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
+  },
+  {
+    "company": "ServiceNow",
+    "source": "servicenow_official_careers",
+    "job_id": "JB0075004",
+    "title": "Principal Customer Success Manager ( Armis/Veza)",
+    "location": "San Diego, CALIFORNIA, United States",
+    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000146560108-principal-customer-success-manager-armis-veza-",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:24:57.907346+00:00",
+    "date_confidence": "high",
+    "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
+  },
+  {
+    "company": "ServiceNow",
+    "source": "servicenow_official_careers",
+    "job_id": "JB0074879",
+    "title": "Principal AI Platform Engineer",
     "location": "Santa Clara, California, United States",
-    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000146526999-senior-manager-software-engineering-management-ai-engineering",
+    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000146559474-principal-ai-platform-engineer",
     "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:08:40.227211+00:00",
+    "fetched_at": "2026-08-31T23:24:57.907346+00:00",
     "date_confidence": "high",
     "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
   },
   {
     "company": "ServiceNow",
     "source": "servicenow_official_careers",
-    "job_id": "JB0074763",
-    "title": "Partner Technology Architect",
-    "location": "Austin, Texas , United States",
-    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000146512627-partner-technology-architect-",
+    "job_id": "JB0074972",
+    "title": "Senior Staff Data Platform Engineer - Kafka - Apache Iceberg - Apache Spark",
+    "location": "San Diego, CALIFORNIA, United States",
+    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000146557849-senior-staff-data-platform-engineer-kafka-apache-iceberg-apache-spark",
     "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:08:40.227211+00:00",
-    "date_confidence": "high",
-    "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
-  },
-  {
-    "company": "ServiceNow",
-    "source": "servicenow_official_careers",
-    "job_id": "JB0074963",
-    "title": "Principal Customer Success Executive - Manufacturing Vertical",
-    "location": "Austin, TEXAS, United States",
-    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000146496819-principal-customer-success-executive-manufacturing-vertical-",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:08:40.227211+00:00",
-    "date_confidence": "high",
-    "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
-  },
-  {
-    "company": "ServiceNow",
-    "source": "servicenow_official_careers",
-    "job_id": "JB0074458",
-    "title": "Staff Reliability Engineer",
-    "location": "Santa Clara, CALIFORNIA, United States",
-    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000146495429-staff-reliability-engineer",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:08:40.227211+00:00",
-    "date_confidence": "high",
-    "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
-  },
-  {
-    "company": "ServiceNow",
-    "source": "servicenow_official_careers",
-    "job_id": "JB0074847",
-    "title": "Director, Software Engineering Management",
-    "location": "Santa Clara, California, United States",
-    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000146344019-director-software-engineering-management",
-    "posted_date": "2026-08-30",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:08:40.227211+00:00",
+    "fetched_at": "2026-08-31T23:24:57.907346+00:00",
     "date_confidence": "high",
     "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
   }
@@ -1151,7 +1295,7 @@ Sample normalized records:
 ## LinkedIn
 
 - Status: blocked
-- Scraping method: skip
+- Scraping method: linkedin_company
 - Search URL/API: `-`
 - Pagination: -
 - Pages/requests fetched: 0
@@ -1160,7 +1304,7 @@ Sample normalized records:
 - Raw jobs found: 0
 - After US/location filtering: 0
 - With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · official company jobs page captured; scraper/API still unresolved.']
+- Errors/403s: ['LinkedIn company guest search blocked with HTTP 429']
 
 ## Bloomberg
 
@@ -1168,11 +1312,11 @@ Sample normalized records:
 - Scraping method: HTTP GET Avature SearchJobs HTML + JobDetail HTML
 - Search URL/API: `https://bloomberg.avature.net/careers/SearchJobs?q=software+engineer&jobRecordsPerPage=12&jobOffset=0`
 - Pagination: jobOffset=0,12,... ; stop on empty/repeat or short page
-- Pages/requests fetched: 8
+- Pages/requests fetched: 36
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 13 / 13
-- Raw jobs found: 96
-- After US/location filtering: 26
+- Detail pages fetched/cache reused: 1 / 23
+- Raw jobs found: 432
+- After US/location filtering: 24
 - With trustworthy posted_date: 0
 - Errors/403s: none
 
@@ -1183,15 +1327,15 @@ Sample normalized records:
   {
     "company": "Bloomberg",
     "source": "bloomberg_official_careers",
-    "job_id": "21640",
-    "title": "White House Stringer - Part Time / Contract",
-    "location": "Washington, District of Columbia, United States of America",
-    "official_url": "https://bloomberg.avature.net/careers/JobDetail/White-House-Stringer-Part-Time-Contract/21640",
+    "job_id": "21727",
+    "title": "Booking Producer",
+    "location": "New York, New York, United States of America",
+    "official_url": "https://bloomberg.avature.net/careers/JobDetail/Booking-Producer/21727",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:10:45.886733+00:00",
+    "fetched_at": "2026-08-31T23:26:56.796469+00:00",
     "date_confidence": "unknown",
-    "description": "White House Stringer - Part Time / Contract"
+    "description": "Booking Producer"
   },
   {
     "company": "Bloomberg",
@@ -1202,7 +1346,7 @@ Sample normalized records:
     "official_url": "https://bloomberg.avature.net/careers/JobDetail/TOP-Today-Editor-Los-Angeles/21249",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:10:45.886733+00:00",
+    "fetched_at": "2026-08-31T23:26:56.796469+00:00",
     "date_confidence": "unknown",
     "description": "TOP & Today Editor - Los Angeles"
   },
@@ -1215,35 +1359,35 @@ Sample normalized records:
     "official_url": "https://bloomberg.avature.net/careers/JobDetail/Product-Manager-Terminal-Controls-Compliance-Policy/21651",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:10:45.886733+00:00",
+    "fetched_at": "2026-08-31T23:26:56.796469+00:00",
     "date_confidence": "unknown",
     "description": "Product Manager — Terminal Controls, Compliance & Policy"
   },
   {
     "company": "Bloomberg",
     "source": "bloomberg_official_careers",
-    "job_id": "21667",
-    "title": "Senior Data Management Professional - Data Engineering - Sustainable Fixed Income Data, Hong Kong",
-    "location": "Hong Kong, Hong Kong",
-    "official_url": "https://bloomberg.avature.net/careers/JobDetail/Senior-Data-Management-Professional-Data-Engineering-Sustainable-Fixed-Income-Data-Hong-Kong/21667",
+    "job_id": "21640",
+    "title": "White House Stringer - Part Time / Contract",
+    "location": "Washington, District of Columbia, United States of America",
+    "official_url": "https://bloomberg.avature.net/careers/JobDetail/White-House-Stringer-Part-Time-Contract/21640",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:10:45.886733+00:00",
+    "fetched_at": "2026-08-31T23:26:56.796469+00:00",
     "date_confidence": "unknown",
-    "description": "Senior Data Management Professional - Data Engineering - Sustainable Fixed Income Data, Hong Kong"
+    "description": "White House Stringer - Part Time / Contract"
   },
   {
     "company": "Bloomberg",
     "source": "bloomberg_official_careers",
-    "job_id": "21660",
-    "title": "Senior Financial Analyst, CFO Global Sustainability Office",
-    "location": "New York, New York, United States of America",
-    "official_url": "https://bloomberg.avature.net/careers/JobDetail/Senior-Financial-Analyst-CFO-Global-Sustainability-Office/21660",
+    "job_id": "21638",
+    "title": "Vertical Video Producer/Editor, Bloomberg Opinion – 12 Month Contract",
+    "location": "Washington, District of Columbia, United States of America",
+    "official_url": "https://bloomberg.avature.net/careers/JobDetail/Vertical-Video-Producer-Editor-Bloomberg-Opinion-12-Month-Contract/21638",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:10:45.886733+00:00",
+    "fetched_at": "2026-08-31T23:26:56.796469+00:00",
     "date_confidence": "unknown",
-    "description": "Senior Financial Analyst, CFO Global Sustainability Office"
+    "description": "Vertical Video Producer/Editor, Bloomberg Opinion – 12 Month Contract"
   }
 ]
 ```
@@ -1254,12 +1398,12 @@ Sample normalized records:
 - Scraping method: HTTP GET Oracle Cloud HCM recruitingCEJobRequisitions (+ details)
 - Search URL/API: `https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions?keyword=software+engineer`
 - Pagination: finder offset=0,20,... ; limit=20; stop on empty/repeat or TotalJobsCount
-- Pages/requests fetched: 17
+- Pages/requests fetched: 45
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 34 / 150
-- Raw jobs found: 340
-- After US/location filtering: 184
-- With trustworthy posted_date: 184
+- Detail pages fetched/cache reused: 103 / 298
+- Raw jobs found: 900
+- After US/location filtering: 400
+- With trustworthy posted_date: 400
 - Errors/403s: none
 
 Sample normalized records:
@@ -1269,67 +1413,67 @@ Sample normalized records:
   {
     "company": "JPMorgan Chase",
     "source": "jpmorgan_chase_official_careers",
-    "job_id": "210748454",
-    "title": "FircoSoft Application Developer - Software Engineer III",
-    "location": "Tampa, FL, United States",
-    "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210748454",
-    "posted_date": "2026-08-02",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:11:14.927583+00:00",
-    "date_confidence": "high",
-    "description": "We have an exciting and rewarding opportunity for you to take your software engineering career to the next level. As a FircoSoft Application Developer – Software Engineer III at JP"
-  },
-  {
-    "company": "JPMorgan Chase",
-    "source": "jpmorgan_chase_official_careers",
-    "job_id": "210722255",
-    "title": "Lead Software Engineer-Security/Application Development",
+    "job_id": "210751920",
+    "title": "Sr Lead Software Engineer - Artificial Intelligence",
     "location": "Plano, TX, United States",
-    "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210722255",
-    "posted_date": "2026-07-10",
+    "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210751920",
+    "posted_date": "2026-07-27",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:11:14.927583+00:00",
+    "fetched_at": "2026-08-31T23:27:53.873862+00:00",
     "date_confidence": "high",
-    "description": "We have an opportunity to impact your career and provide an adventure where you can push the limits of what's possible. As a Lead Software Engineer-Security/Application Development"
+    "description": "You will build and operate an agentic AI toolchain that ingests decades of mainframe logic and deliver verified, production-ready modern services at scale."
   },
   {
     "company": "JPMorgan Chase",
     "source": "jpmorgan_chase_official_careers",
-    "job_id": "210760337",
-    "title": "Lead Software Engineer - Full Stack Engineer",
-    "location": "New York, NY, United States",
-    "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210760337",
-    "posted_date": "2026-08-24",
+    "job_id": "210782895",
+    "title": "Lead Software Engineer - Data & AI Platform Engineer",
+    "location": "Jersey City, NJ, United States",
+    "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210782895",
+    "posted_date": "2026-08-26",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:11:14.927583+00:00",
+    "fetched_at": "2026-08-31T23:27:53.873862+00:00",
     "date_confidence": "high",
-    "description": "As a Lead Software Engineer at JPMorgan Chase in Connected Banking - Personal Financial Management, you’ll lead engineering innovation through the architecture, development, and ev"
+    "description": "We have an opportunity to impact your career and provide an adventure where you can push the limits of what's possible. As a Lead Software Engineer at JPMorgan Chase, within the Co"
   },
   {
     "company": "JPMorgan Chase",
     "source": "jpmorgan_chase_official_careers",
-    "job_id": "210760528",
-    "title": "Lead Software Engineer - Full Stack Engineer",
-    "location": "New York, NY, United States",
-    "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210760528",
-    "posted_date": "2026-07-21",
+    "job_id": "210782484",
+    "title": "Lead AI Applied ML Engineer",
+    "location": "Jersey City, NJ, United States",
+    "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210782484",
+    "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:11:14.927583+00:00",
+    "fetched_at": "2026-08-31T23:27:53.873862+00:00",
     "date_confidence": "high",
-    "description": "As a Lead Software Engineer at JPMorgan Chase in Connected Banking - Personal Financial Management, you’ll lead engineering innovation through the architecture, development, and ev"
+    "description": "We have an exciting and rewarding opportunity for you to take your software engineering career to the next level. We are building a next generation, AI-driven Global Financial Crim"
   },
   {
     "company": "JPMorgan Chase",
     "source": "jpmorgan_chase_official_careers",
-    "job_id": "210724892",
-    "title": "Lead Software Engineer - Java Full Stack Engineering",
-    "location": "Chicago, IL, United States",
-    "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210724892",
-    "posted_date": "2026-08-14",
+    "job_id": "210784683",
+    "title": "Sr Lead Software Engineer - AI-Native Component Engineering",
+    "location": "OH, United States",
+    "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210784683",
+    "posted_date": "2026-08-27",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:11:14.927583+00:00",
+    "fetched_at": "2026-08-31T23:27:53.873862+00:00",
     "date_confidence": "high",
-    "description": "We have an opportunity to impact your career and provide an adventure where you can push the limits of what's possible. As a Lead Software Engineer at JPMorganChase within the Corp"
+    "description": "Be an integral part of an agile team that's constantly pushing the envelope to enhance, build, and deliver top-notch technology products. As a Senior Lead Software Engineer at JPMo"
+  },
+  {
+    "company": "JPMorgan Chase",
+    "source": "jpmorgan_chase_official_careers",
+    "job_id": "210775950",
+    "title": "Lead Software Engineer – AI-Native Component Engineering",
+    "location": "Columbus, OH, United States",
+    "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210775950",
+    "posted_date": "2026-08-21",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:27:53.873862+00:00",
+    "date_confidence": "high",
+    "description": "Be the engineer other engineers build on. Ship AI-native components in Java, JavaScript, or Python at enterprise scale."
   }
 ]
 ```
@@ -1340,12 +1484,12 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://capitalone.wd12.myworkdayjobs.com/Capital_One`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 11
+- Pages/requests fetched: 32
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 132 / 0
-- Raw jobs found: 220
-- After US/location filtering: 133
-- With trustworthy posted_date: 132
+- Detail pages fetched/cache reused: 100 / 128
+- Raw jobs found: 628
+- After US/location filtering: 228
+- With trustworthy posted_date: 228
 - Errors/403s: none
 
 Sample normalized records:
@@ -1355,67 +1499,67 @@ Sample normalized records:
   {
     "company": "Capital One",
     "source": "capital_one_official_careers",
+    "job_id": "R246968",
+    "title": "Lead Software Engineer, Full Stack (Risk Tech)",
+    "location": "McLean, VA; Cambridge, MA; Richmond, VA",
+    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Lead-Software-Engineer--Full-Stack--Risk-Tech-_R246968-1",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:29:04.749260+00:00",
+    "date_confidence": "high",
+    "description": "Lead Software Engineer, Full Stack (Risk Tech) Do you love building and pioneering in the technology space? Do you enjoy solving complex business problems in a fast-paced, collabor"
+  },
+  {
+    "company": "Capital One",
+    "source": "capital_one_official_careers",
+    "job_id": "R246837",
+    "title": "Lead Software Engineer, Full Stack",
+    "location": "McLean, VA; Chicago, IL",
+    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Lead-Software-Engineer--Full-Stack--GoLang-_R246837-1",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:29:04.749260+00:00",
+    "date_confidence": "high",
+    "description": "Lead Software Engineer, Full Stack Do you love building and pioneering in the technology space? Do you enjoy solving complex business problems in a fast-paced, collaborative, inclu"
+  },
+  {
+    "company": "Capital One",
+    "source": "capital_one_official_careers",
+    "job_id": "R248562",
+    "title": "Staff Engineer -Developer Insights & AI Telemetry",
+    "location": "New York, NY; McLean, VA; Richmond, VA; Wilmington, DE",
+    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/Distinguished-Engineer--Developer-Insights---AI-Telemetry_R248562",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:29:04.749260+00:00",
+    "date_confidence": "high",
+    "description": "Staff Engineer -Developer Insights & AI Telemetry As a Staff Engineer at Capital One, you will be part of a community of technical experts working to define the future of banking i"
+  },
+  {
+    "company": "Capital One",
+    "source": "capital_one_official_careers",
+    "job_id": "R999528",
+    "title": "Lead Data Engineer (Python, AWS, Spark, Kafka, SQL, Snowflake, Databricks, GenAI)",
+    "location": "McLean, VA; New York, NY; Richmond, VA",
+    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Lead-Data-Engineer--Python--AWS--Spark--Kafka--SQL--Snowflake--Databricks--GenAI-_R999528-1",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:29:04.749260+00:00",
+    "date_confidence": "high",
+    "description": "Lead Data Engineer (Python, AWS, Spark, Kafka, SQL, Snowflake, Databricks, GenAI) Do you love building and pioneering in the technology space? Do you enjoy solving complex business"
+  },
+  {
+    "company": "Capital One",
+    "source": "capital_one_official_careers",
     "job_id": "R248687",
     "title": "Lead Software Engineer, Full Stack (Golang, Python, Java, AWS)",
     "location": "McLean, VA",
     "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Lead-Software-Engineer--Full-Stack--Golang--Python--Java--AWS-_R248687-1",
     "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:11:42.811069+00:00",
+    "fetched_at": "2026-08-31T23:29:04.749260+00:00",
     "date_confidence": "high",
     "description": "Lead Software Engineer, Full Stack (Golang, Python, Java, AWS) Do you love building and pioneering in the technology space? Do you enjoy solving complex business problems in a fast"
-  },
-  {
-    "company": "Capital One",
-    "source": "capital_one_official_careers",
-    "job_id": "R248352",
-    "title": "Lead Software Engineer, Full Stack (Python, Java, PySpark/Spark, AWS)",
-    "location": "Plano, TX",
-    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Lead-Software-Engineer--Full-Stack--Python--Java--PySpark-Spark--AWS-_R248352-1",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:11:42.811069+00:00",
-    "date_confidence": "high",
-    "description": "Lead Software Engineer, Full Stack (Python, Java, PySpark/Spark, AWS) Do you love building and pioneering in the technology space? Do you enjoy solving complex business problems in"
-  },
-  {
-    "company": "Capital One",
-    "source": "capital_one_official_careers",
-    "job_id": "R999400",
-    "title": "Director, Customer Solutions Architecture- Capital One Software, Databolt (Remote)",
-    "location": "Richmond, VA; US Remote",
-    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Director--Customer-Solutions-Architecture--Capital-One-Software--Databolt--Remote-_R999400-2",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:11:42.811069+00:00",
-    "date_confidence": "high",
-    "description": "Director, Customer Solutions Architecture- Capital One Software, Databolt (Remote) Ever since our first credit card customer in 1994, Capital One has recognized that technology and"
-  },
-  {
-    "company": "Capital One",
-    "source": "capital_one_official_careers",
-    "job_id": "R248340",
-    "title": "Business Manager - US Card",
-    "location": "McLean, VA; Richmond, VA; Chicago, IL; New York, NY",
-    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Business-Manager---US-Card_R248340-1",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:11:42.811069+00:00",
-    "date_confidence": "high",
-    "description": "Business Manager - US Card Summary: As a Business Analysis Manager at Capital One, you will apply your strategic and analytical skills to major company challenges. You'll team with"
-  },
-  {
-    "company": "Capital One",
-    "source": "capital_one_official_careers",
-    "job_id": "R999432",
-    "title": "Lead Software Engineer (Python, AWS)",
-    "location": "San Francisco, CA; New York, NY",
-    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/San-Francisco--CA/Lead-Software-Engineer--Python--AWS-_R999432-1",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:11:42.811069+00:00",
-    "date_confidence": "high",
-    "description": "Lead Software Engineer (Python, AWS) Do you love building and pioneering in the technology space? Do you enjoy solving complex business problems in a fast-paced, collaborative, inc"
   }
 ]
 ```
@@ -1426,12 +1570,12 @@ Sample normalized records:
 - Scraping method: HTTP GET Oracle Cloud HCM recruitingCEJobRequisitions (+ details)
 - Search URL/API: `https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_45001/requisitions?keyword=software+engineer`
 - Pagination: finder offset=0,20,... ; limit=20; stop on empty/repeat or TotalJobsCount
-- Pages/requests fetched: 11
+- Pages/requests fetched: 39
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 62 / 111
-- Raw jobs found: 219
-- After US/location filtering: 173
-- With trustworthy posted_date: 173
+- Detail pages fetched/cache reused: 112 / 311
+- Raw jobs found: 760
+- After US/location filtering: 423
+- With trustworthy posted_date: 423
 - Errors/403s: none
 
 Sample normalized records:
@@ -1441,84 +1585,156 @@ Sample normalized records:
   {
     "company": "Oracle",
     "source": "oracle_official_careers",
-    "job_id": "342800",
-    "title": "Principal Platform Software Engineer",
+    "job_id": "343962",
+    "title": "AI Systems Engineer (OCI/AI Infrastructure)",
     "location": "Nashville, TN, United States",
-    "official_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/342800",
-    "posted_date": "2026-08-31",
+    "official_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/343962",
+    "posted_date": "2026-08-26",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:12:42.266759+00:00",
+    "fetched_at": "2026-08-31T23:30:04.755154+00:00",
     "date_confidence": "high",
-    "description": "Join the team building Oracle Cloud Infrastructure's state of the art observability platform, powering visibility and operational intelligence for both OCI's internal cloud service"
+    "description": "Oracle Hardware Platform Development Engineering is seeking a highly driven AI Systems Engineer to evaluate and characterize next-generation GPU and AI accelerator platforms for Or"
   },
   {
     "company": "Oracle",
     "source": "oracle_official_careers",
-    "job_id": "342801",
-    "title": "Lead Principal Platform Software Engineer",
-    "location": "Nashville, TN, United States",
-    "official_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/342801",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:12:42.266759+00:00",
-    "date_confidence": "high",
-    "description": "Join the team building Oracle Cloud Infrastructure's state of the art observability platform, powering visibility and operational intelligence for both OCI's internal cloud service"
-  },
-  {
-    "company": "Oracle",
-    "source": "oracle_official_careers",
-    "job_id": "338844",
-    "title": "Senior Software Development Engineer",
+    "job_id": "341967",
+    "title": "Senior AI Agent Engineer",
     "location": "United States",
-    "official_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/338844",
-    "posted_date": "2026-07-13",
+    "official_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/341967",
+    "posted_date": "2026-08-12",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:12:42.266759+00:00",
+    "fetched_at": "2026-08-31T23:30:04.755154+00:00",
     "date_confidence": "high",
-    "description": "As a Senior Software Development Engineer in the Oracle Cloud Infrastructure (OCI) Security Platform division, you will help build and operate OCI’s Key Management Service (KMS), a"
+    "description": "Build production AI agents that automate analytics, reporting, data engineering, insight generation, and executive narrative workflows across Oracle Health."
   },
   {
     "company": "Oracle",
     "source": "oracle_official_careers",
-    "job_id": "338704",
-    "title": "Senior Software Developer",
-    "location": "Nashville, TN, United States",
-    "official_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/338704",
-    "posted_date": "2026-07-01",
+    "job_id": "336797",
+    "title": "Principal Engineer - AI Networking",
+    "location": "Seattle, WA, United States; United States",
+    "official_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/336797",
+    "posted_date": "2026-06-10",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:12:42.266759+00:00",
+    "fetched_at": "2026-08-31T23:30:04.755154+00:00",
     "date_confidence": "high",
-    "description": "Oracle Cloud Infrastructure (OCI) delivers mission-critical applications for leading enterprises worldwide. Our cloud offers hyper-scale, multi-tenant services deployed across more"
+    "description": "Oracle is seeking a Principal Software Engineer (IC4) to join our AI Networking team and help build the high-performance communication infrastructure that powers large-scale AI and"
   },
   {
     "company": "Oracle",
     "source": "oracle_official_careers",
-    "job_id": "338705",
-    "title": "Senior Software Developer",
-    "location": "Nashville, TN, United States",
-    "official_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/338705",
-    "posted_date": "2026-07-01",
+    "job_id": "339923",
+    "title": "Senior Manager, AI Engineering and Agent Platform",
+    "location": "United States",
+    "official_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/339923",
+    "posted_date": "2026-07-28",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:12:42.266759+00:00",
+    "fetched_at": "2026-08-31T23:30:04.755154+00:00",
     "date_confidence": "high",
-    "description": "Oracle Cloud Infrastructure (OCI) delivers mission-critical applications for leading enterprises worldwide. Our cloud offers hyper-scale, multi-tenant services deployed across more"
+    "description": "Lead a new AI engineering team building production AI agents, semantic intelligence, and agent platforms that accelerate analytics, reporting, data quality, and insight generation "
+  },
+  {
+    "company": "Oracle",
+    "source": "oracle_official_careers",
+    "job_id": "336795",
+    "title": "Senior Principal Engineer - AI Networking",
+    "location": "Seattle, WA, United States; United States",
+    "official_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/336795",
+    "posted_date": "2026-06-10",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:30:04.755154+00:00",
+    "date_confidence": "high",
+    "description": "Oracle is seeking a highly experienced Lead Principal Software Engineer (IC5) to help define and build the next generation of AI networking infrastructure powering large-scale GPU "
   }
 ]
 ```
 
 ## Walmart Global Tech
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
+- Status: ok
+- Scraping method: HTTP POST Walmart combined hybrid-search
+- Search URL/API: `https://careers.walmart.com/api/ai/search-ai/api/v1/combined/hybrid-search`
+- Pagination: page=0,1,...; size=25; bounded per query
+- Pages/requests fetched: 36
+- Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · custom Next.js/API. Search link works; XHR reverse-engineering in progress/deferred.']
+- Raw jobs found: 900
+- After US/location filtering: 217
+- With trustworthy posted_date: 217
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Walmart Global Tech",
+    "source": "walmart_official_careers",
+    "job_id": "R-2096123",
+    "title": "Senior, Software Engineer – Python, Gen AI Developer",
+    "location": "SUNNYVALE, CA, US",
+    "official_url": "https://careers.walmart.com/job/R-2096123",
+    "posted_date": "2025-09-22",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:31:26.993325+00:00",
+    "date_confidence": "high",
+    "description": "Job Posting Title: Senior, Software Engineer – Python, Gen AI Developer Job Posting Description: Position Summary... What you'll do... As part of Walmart's Global Sourcing Backend "
+  },
+  {
+    "company": "Walmart Global Tech",
+    "source": "walmart_official_careers",
+    "job_id": "R-2445762",
+    "title": "Software Engineer III– AI Systems",
+    "location": "BENTONVILLE, AR, US",
+    "official_url": "https://careers.walmart.com/job/R-2445762",
+    "posted_date": "2026-08-26",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:31:26.993325+00:00",
+    "date_confidence": "high",
+    "description": "Job Posting Title: Software Engineer III– AI Systems Job Summary: We’re seeking a Software Engineer to design and build AI-first systems with a focus on agentic AI, high performanc"
+  },
+  {
+    "company": "Walmart Global Tech",
+    "source": "walmart_official_careers",
+    "job_id": "R-2451270",
+    "title": "Distinguished, Software Engineer -AI/ML Engineer – Agentic Systems",
+    "location": "SUNNYVALE, CA, US",
+    "official_url": "https://careers.walmart.com/job/R-2451270",
+    "posted_date": "2026-03-19",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:31:26.993325+00:00",
+    "date_confidence": "high",
+    "description": "Job Posting Title: Distinguished, Software Engineer -AI/ML Engineer – Agentic Systems Job Posting Description: Position Summary... What you'll do... As a Distinguished AI/ML Engine"
+  },
+  {
+    "company": "Walmart Global Tech",
+    "source": "walmart_official_careers",
+    "job_id": "R-2575178",
+    "title": "Quality Engineer III",
+    "location": "BENTONVILLE, AR, US",
+    "official_url": "https://careers.walmart.com/job/R-2575178",
+    "posted_date": "2026-08-27",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:31:26.993325+00:00",
+    "date_confidence": "high",
+    "description": "Job Posting Title: Quality Engineer III Job Posting Description: What you'll do... Position: Quality Engineer III Job Location: 811 Excellence Dr, Bentonville, AR 72716 Duties: Pro"
+  },
+  {
+    "company": "Walmart Global Tech",
+    "source": "walmart_official_careers",
+    "job_id": "R-2590928",
+    "title": "Staff, Software Engineer - Gen AI / Backend",
+    "location": "SUNNYVALE, CA, US",
+    "official_url": "https://careers.walmart.com/job/R-2590928",
+    "posted_date": "2026-08-13",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:31:26.993325+00:00",
+    "date_confidence": "high",
+    "description": "Job Posting Title: Staff, Software Engineer - Gen AI / Backend Job Posting Description: Position Summary... What you'll do... Role summary: The (USA) Staff, Software Engineer plays"
+  }
+]
+```
 
 ## Cloudflare
 
@@ -1547,7 +1763,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/cloudflare/jobs/7695702?gh_jid=7695702",
     "posted_date": "2026-03-09",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:13:15.117647+00:00",
+    "fetched_at": "2026-08-31T23:32:35.271097+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3>About Us</h3> <p>At Cloudflare, we are on a mission to help build a better Internet. Today the company runs one of the world’s largest networks that "
   },
@@ -1560,7 +1776,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/cloudflare/jobs/8097321?gh_jid=8097321",
     "posted_date": "2026-08-10",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:13:15.117647+00:00",
+    "fetched_at": "2026-08-31T23:32:35.271097+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3>About Us</h3> <p>At Cloudflare, we are on a mission to help build a better Internet. Today the company runs one of the world’s largest networks that "
   },
@@ -1573,7 +1789,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/cloudflare/jobs/8144669?gh_jid=8144669",
     "posted_date": "2026-08-21",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:13:15.117647+00:00",
+    "fetched_at": "2026-08-31T23:32:35.271097+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3>About Us</h3> <p>At Cloudflare, we are on a mission to help build a better Internet. Today the company runs one of the world’s largest networks that "
   },
@@ -1586,7 +1802,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/cloudflare/jobs/8152697?gh_jid=8152697",
     "posted_date": "2026-08-25",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:13:15.117647+00:00",
+    "fetched_at": "2026-08-31T23:32:35.271097+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3>About Us</h3> <p>At Cloudflare, we are on a mission to help build a better Internet. Today the company runs one of the world’s largest networks that "
   },
@@ -1599,7 +1815,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/cloudflare/jobs/8084358?gh_jid=8084358",
     "posted_date": "2026-07-28",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:13:15.117647+00:00",
+    "fetched_at": "2026-08-31T23:32:35.271097+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3>About Us</h3> <p>At Cloudflare, we are on a mission to help build a better Internet. Today the company runs one of the world’s largest networks that "
   }
@@ -1615,9 +1831,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 568
-- After US/location filtering: 370
-- With trustworthy posted_date: 370
+- Raw jobs found: 578
+- After US/location filtering: 342
+- With trustworthy posted_date: 342
 - Errors/403s: none
 
 Sample normalized records:
@@ -1633,7 +1849,7 @@ Sample normalized records:
     "official_url": "https://stripe.com/jobs/search?gh_jid=7532733",
     "posted_date": "2026-02-03",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:13:16.287327+00:00",
+    "fetched_at": "2026-08-31T23:32:36.131325+00:00",
     "date_confidence": "high",
     "description": "<h2>Who we are</h2> <h3>About Stripe</h3> <p>Stripe is a financial infrastructure platform for businesses. Millions of companies - from the world’s largest enterprises to the most "
   },
@@ -1646,7 +1862,7 @@ Sample normalized records:
     "official_url": "https://stripe.com/jobs/search?gh_jid=8130725",
     "posted_date": "2026-08-19",
     "updated_date": "2026-08-19",
-    "fetched_at": "2026-08-31T18:13:16.287327+00:00",
+    "fetched_at": "2026-08-31T23:32:36.131325+00:00",
     "date_confidence": "high",
     "description": "<h2>Who we are</h2> <h3>About Stripe</h3> <p><span style=\"font-weight: 400;\">Stripe is a financial infrastructure platform for businesses. Millions of companies—from the world’s la"
   },
@@ -1659,7 +1875,7 @@ Sample normalized records:
     "official_url": "https://stripe.com/jobs/search?gh_jid=8077887",
     "posted_date": "2026-07-22",
     "updated_date": "2026-08-18",
-    "fetched_at": "2026-08-31T18:13:16.287327+00:00",
+    "fetched_at": "2026-08-31T23:32:36.131325+00:00",
     "date_confidence": "high",
     "description": "<h2><strong>Who we are </strong></h2> <h3><strong>About Stripe</strong></h3> <p><span style=\"font-weight: 400;\">Stripe is a financial infrastructure platform for businesses. Millio"
   },
@@ -1672,7 +1888,7 @@ Sample normalized records:
     "official_url": "https://stripe.com/jobs/search?gh_jid=8123027",
     "posted_date": "2026-08-11",
     "updated_date": "2026-08-18",
-    "fetched_at": "2026-08-31T18:13:16.287327+00:00",
+    "fetched_at": "2026-08-31T23:32:36.131325+00:00",
     "date_confidence": "high",
     "description": "<h2><strong>Who we are</strong></h2> <h3><strong>About Stripe</strong></h3> <p>Stripe is a financial infrastructure platform for businesses. Millions of companies—from the world’s "
   },
@@ -1685,7 +1901,7 @@ Sample normalized records:
     "official_url": "https://stripe.com/jobs/search?gh_jid=7993151",
     "posted_date": "2026-06-09",
     "updated_date": "2026-08-18",
-    "fetched_at": "2026-08-31T18:13:16.287327+00:00",
+    "fetched_at": "2026-08-31T23:32:36.131325+00:00",
     "date_confidence": "high",
     "description": "<h2><strong>Who we are</strong></h2> <h3><strong>About Stripe</strong></h3> <p>Stripe is a financial infrastructure platform for businesses. Millions of companies—from the world’s "
   }
@@ -1719,7 +1935,7 @@ Sample normalized records:
     "official_url": "https://www.coinbase.com/careers/positions/8053751?gh_jid=8053751",
     "posted_date": "2026-07-09",
     "updated_date": "2026-08-28",
-    "fetched_at": "2026-08-31T18:13:16.753127+00:00",
+    "fetched_at": "2026-08-31T23:32:36.766942+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Ready to do the most impactful work of your career? At&nbsp;<a href=\"https://www.coinbase.com/?utm_campaign=mt_o_m_w_m_m__coi_0_jd-onchain&amp;utm_sou"
   },
@@ -1732,7 +1948,7 @@ Sample normalized records:
     "official_url": "https://www.coinbase.com/careers/positions/8093264?gh_jid=8093264",
     "posted_date": "2026-07-28",
     "updated_date": "2026-08-03",
-    "fetched_at": "2026-08-31T18:13:16.753127+00:00",
+    "fetched_at": "2026-08-31T23:32:36.766942+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Ready to do the most impactful work of your career? At&nbsp;<a href=\"https://www.coinbase.com/?utm_campaign=mt_o_m_w_m_m__coi_0_jd-onchain&amp;utm_sou"
   },
@@ -1745,7 +1961,7 @@ Sample normalized records:
     "official_url": "https://www.coinbase.com/careers/positions/7532645?gh_jid=7532645",
     "posted_date": "2026-01-12",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-08-31T18:13:16.753127+00:00",
+    "fetched_at": "2026-08-31T23:32:36.766942+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Ready to do the most impactful work of your career? At&nbsp;<a href=\"https://www.coinbase.com/?utm_campaign=mt_o_m_w_m_m__coi_0_jd-onchain&amp;utm_sou"
   },
@@ -1758,7 +1974,7 @@ Sample normalized records:
     "official_url": "https://www.coinbase.com/careers/positions/8164862?gh_jid=8164862",
     "posted_date": "2026-08-28",
     "updated_date": "2026-08-28",
-    "fetched_at": "2026-08-31T18:13:16.753127+00:00",
+    "fetched_at": "2026-08-31T23:32:36.766942+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Ready to do the most impactful work of your career? At&nbsp;<a href=\"https://www.coinbase.com/?utm_campaign=mt_o_m_w_m_m__coi_0_jd-onchain&amp;utm_sou"
   },
@@ -1771,7 +1987,7 @@ Sample normalized records:
     "official_url": "https://www.coinbase.com/careers/positions/7942306?gh_jid=7942306",
     "posted_date": "2026-06-10",
     "updated_date": "2026-08-21",
-    "fetched_at": "2026-08-31T18:13:16.753127+00:00",
+    "fetched_at": "2026-08-31T23:32:36.766942+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Ready to do the most impactful work of your career? At&nbsp;<a href=\"https://www.coinbase.com/?utm_campaign=mt_o_m_w_m_m__coi_0_jd-onchain&amp;utm_sou"
   }
@@ -1805,7 +2021,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/robinhood/jobs/8114351?t=gh_src=&gh_jid=8114351",
     "posted_date": "2026-08-07",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:13:17.694738+00:00",
+    "fetched_at": "2026-08-31T23:32:37.132231+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2>Join us in building the future of finance.</h2> <p>Our mission is to democratize finance for all. <a href=\"https://www.cerulli.com/press-releases/cer"
   },
@@ -1818,7 +2034,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/robinhood/jobs/6669758?t=gh_src=&gh_jid=6669758",
     "posted_date": "2025-05-08",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:13:17.694738+00:00",
+    "fetched_at": "2026-08-31T23:32:37.132231+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2>Join us in building the future of finance.</h2> <p>Our mission is to democratize finance for all. <a href=\"https://www.cerulli.com/press-releases/cer"
   },
@@ -1831,7 +2047,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/robinhood/jobs/7350823?t=gh_src=&gh_jid=7350823",
     "posted_date": "2025-10-22",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:13:17.694738+00:00",
+    "fetched_at": "2026-08-31T23:32:37.132231+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2>Join us in building the future of finance.</h2> <p>Our mission is to democratize finance for all. <a href=\"https://www.cerulli.com/press-releases/cer"
   },
@@ -1844,7 +2060,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/robinhood/jobs/7943204?t=gh_src=&gh_jid=7943204",
     "posted_date": "2026-06-01",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:13:17.694738+00:00",
+    "fetched_at": "2026-08-31T23:32:37.132231+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2>Join us in building the future of finance.</h2> <p>Our mission is to democratize finance for all. <a href=\"https://www.cerulli.com/press-releases/cer"
   },
@@ -1857,7 +2073,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/robinhood/jobs/8003458?t=gh_src=&gh_jid=8003458",
     "posted_date": "2026-06-18",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:13:17.694738+00:00",
+    "fetched_at": "2026-08-31T23:32:37.132231+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2>Join us in building the future of finance.</h2> <p>Our mission is to democratize finance for all. <a href=\"https://www.cerulli.com/press-releases/cer"
   }
@@ -1891,7 +2107,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/figma/jobs/5426468004?gh_jid=5426468004",
     "posted_date": "2025-01-28",
     "updated_date": "2026-07-22",
-    "fetched_at": "2026-08-31T18:13:17.917335+00:00",
+    "fetched_at": "2026-08-31T23:32:37.456526+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Figma is growing our team of passionate creatives and builders on a mission to make design accessible to all. Figma’s platform helps teams bring ideas"
   },
@@ -1904,7 +2120,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/figma/jobs/6143113004?gh_jid=6143113004",
     "posted_date": "2026-08-14",
     "updated_date": "2026-08-14",
-    "fetched_at": "2026-08-31T18:13:17.917335+00:00",
+    "fetched_at": "2026-08-31T23:32:37.456526+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Figma is growing our team of passionate creatives and builders on a mission to make design accessible to all. Figma’s platform helps teams bring ideas"
   },
@@ -1917,7 +2133,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/figma/jobs/5422236004?gh_jid=5422236004",
     "posted_date": "2025-01-22",
     "updated_date": "2026-08-20",
-    "fetched_at": "2026-08-31T18:13:17.917335+00:00",
+    "fetched_at": "2026-08-31T23:32:37.456526+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Figma is growing our team of passionate creatives and builders on a mission to make design accessible to all. Figma’s platform helps teams bring ideas"
   },
@@ -1930,7 +2146,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/figma/jobs/5694259004?gh_jid=5694259004",
     "posted_date": "2025-11-01",
     "updated_date": "2026-07-22",
-    "fetched_at": "2026-08-31T18:13:17.917335+00:00",
+    "fetched_at": "2026-08-31T23:32:37.456526+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Figma is growing our team of passionate creatives and builders on a mission to make design accessible to all. Figma’s platform helps teams bring ideas"
   },
@@ -1943,7 +2159,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/figma/jobs/5558737004?gh_jid=5558737004",
     "posted_date": "2025-06-16",
     "updated_date": "2026-07-22",
-    "fetched_at": "2026-08-31T18:13:17.917335+00:00",
+    "fetched_at": "2026-08-31T23:32:37.456526+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Figma is growing our team of passionate creatives and builders on a mission to make design accessible to all. Figma’s platform helps teams bring ideas"
   }
@@ -1977,7 +2193,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/gitlab/jobs/8638232002",
     "posted_date": "2026-07-22",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:13:18.107178+00:00",
+    "fetched_at": "2026-08-31T23:32:37.746625+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational e"
   },
@@ -1990,7 +2206,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/gitlab/jobs/8716179002",
     "posted_date": "2026-08-19",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:13:18.107178+00:00",
+    "fetched_at": "2026-08-31T23:32:37.746625+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational e"
   },
@@ -2003,7 +2219,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/gitlab/jobs/8631068002",
     "posted_date": "2026-07-15",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:13:18.107178+00:00",
+    "fetched_at": "2026-08-31T23:32:37.746625+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational e"
   },
@@ -2016,20 +2232,20 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/gitlab/jobs/8698314002",
     "posted_date": "2026-08-20",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:13:18.107178+00:00",
+    "fetched_at": "2026-08-31T23:32:37.746625+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational e"
   },
   {
     "company": "GitLab",
     "source": "gitlab_official_careers",
-    "job_id": "8532272002",
+    "job_id": "8532274002",
     "title": "Business Development Representative",
-    "location": "Remote, North America",
-    "official_url": "https://job-boards.greenhouse.io/gitlab/jobs/8532272002",
+    "location": "Remote, EMEA; Remote, Germany; Remote, Ireland; Remote, Netherlands; Remote, United Kingdom",
+    "official_url": "https://job-boards.greenhouse.io/gitlab/jobs/8532274002",
     "posted_date": "2026-05-01",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:13:18.107178+00:00",
+    "fetched_at": "2026-08-31T23:32:37.746625+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational e"
   }
@@ -2063,7 +2279,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/discord/jobs/8599937002",
     "posted_date": "2026-06-23",
     "updated_date": "2026-08-06",
-    "fetched_at": "2026-08-31T18:13:18.407258+00:00",
+    "fetched_at": "2026-08-31T23:32:38.149872+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Discord has a highly engaged community of millions of daily active users who use the platform for many different reasons, but there’s one thing that n"
   },
@@ -2076,7 +2292,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/discord/jobs/8686353002",
     "posted_date": "2026-08-06",
     "updated_date": "2026-08-21",
-    "fetched_at": "2026-08-31T18:13:18.407258+00:00",
+    "fetched_at": "2026-08-31T23:32:38.149872+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Discord has a highly engaged community of millions of daily active users who use the platform for many different reasons, but there’s one thing that n"
   },
@@ -2089,7 +2305,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/discord/jobs/8625545002",
     "posted_date": "2026-07-13",
     "updated_date": "2026-07-31",
-    "fetched_at": "2026-08-31T18:13:18.407258+00:00",
+    "fetched_at": "2026-08-31T23:32:38.149872+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Discord has a highly engaged community of millions of daily active users who use the platform for many different reasons, but there’s one thing that n"
   },
@@ -2102,7 +2318,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/discord/jobs/8680047002",
     "posted_date": "2026-08-05",
     "updated_date": "2026-08-05",
-    "fetched_at": "2026-08-31T18:13:18.407258+00:00",
+    "fetched_at": "2026-08-31T23:32:38.149872+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Discord has a highly engaged community of millions of daily active users who use the platform for many different reasons, but there’s one thing that n"
   },
@@ -2115,7 +2331,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/discord/jobs/8571766002",
     "posted_date": "2026-05-29",
     "updated_date": "2026-07-31",
-    "fetched_at": "2026-08-31T18:13:18.407258+00:00",
+    "fetched_at": "2026-08-31T23:32:38.149872+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Discord has a highly engaged community of millions of daily active users who use the platform for many different reasons, but there’s one thing that n"
   }
@@ -2132,8 +2348,8 @@ Sample normalized records:
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
 - Raw jobs found: 120
-- After US/location filtering: 93
-- With trustworthy posted_date: 93
+- After US/location filtering: 92
+- With trustworthy posted_date: 92
 - Errors/403s: none
 
 Sample normalized records:
@@ -2149,7 +2365,7 @@ Sample normalized records:
     "official_url": "https://www.asana.com/jobs/apply/8092044?gh_jid=8092044",
     "posted_date": "2026-07-30",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:13:18.952959+00:00",
+    "fetched_at": "2026-08-31T23:32:38.292368+00:00",
     "date_confidence": "high",
     "description": "<p>The Data Science &amp; Analytics team at Asana is how the company turns data into decisions — defining the questions that matter, surfacing the answers, and making sure insight "
   },
@@ -2162,7 +2378,7 @@ Sample normalized records:
     "official_url": "https://www.asana.com/jobs/apply/7964297?gh_jid=7964297",
     "posted_date": "2026-07-22",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:13:18.952959+00:00",
+    "fetched_at": "2026-08-31T23:32:38.292368+00:00",
     "date_confidence": "high",
     "description": "<p>We’re looking for an experienced backend engineer with a passion for learning and working on systems. You will work with a world-class team of engineers on deploying and operati"
   },
@@ -2175,7 +2391,7 @@ Sample normalized records:
     "official_url": "https://www.asana.com/jobs/apply/8137748?gh_jid=8137748",
     "posted_date": "2026-08-31",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:13:18.952959+00:00",
+    "fetched_at": "2026-08-31T23:32:38.292368+00:00",
     "date_confidence": "high",
     "description": "<p id=\"p-rc_10838ec6a95bc2d4-72\" data-path-to-node=\"3\"><span data-path-to-node=\"3,0\">We are looking for a detail-oriented, strategic team player to join as a Benefits Manager on As"
   },
@@ -2188,7 +2404,7 @@ Sample normalized records:
     "official_url": "https://www.asana.com/jobs/apply/8075658?gh_jid=8075658",
     "posted_date": "2026-07-20",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:13:18.952959+00:00",
+    "fetched_at": "2026-08-31T23:32:38.292368+00:00",
     "date_confidence": "high",
     "description": "<p>We’re looking for a strategic and collaborative leader to join Asana as our Chief Accounting Officer. In this pivotal role, you will guide our global financial operations, overs"
   },
@@ -2201,7 +2417,7 @@ Sample normalized records:
     "official_url": "https://www.asana.com/jobs/apply/8052235?gh_jid=8052235",
     "posted_date": "2026-07-21",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:13:18.952959+00:00",
+    "fetched_at": "2026-08-31T23:32:38.292368+00:00",
     "date_confidence": "high",
     "description": "<p>As Chief of Staff to the Chief Product Officer, you will be a force multiplier for Asana's product leadership team. This role helps the CPO run a high-functioning organization b"
   }
@@ -2235,7 +2451,7 @@ Sample normalized records:
     "official_url": "https://www.brex.com/careers/8686667002?gh_jid=8686667002",
     "posted_date": "2026-08-06",
     "updated_date": "2026-08-19",
-    "fetched_at": "2026-08-31T18:13:19.160226+00:00",
+    "fetched_at": "2026-08-31T23:32:38.581941+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>Why join us</strong></p> <p>Brex is the intelligent finance platform that enables companies to spend smarter and move faster in more than 200 "
   },
@@ -2248,7 +2464,7 @@ Sample normalized records:
     "official_url": "https://www.brex.com/careers/8688112002?gh_jid=8688112002",
     "posted_date": "2026-08-06",
     "updated_date": "2026-08-19",
-    "fetched_at": "2026-08-31T18:13:19.160226+00:00",
+    "fetched_at": "2026-08-31T23:32:38.581941+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>Why join us</strong></p> <p>Brex is the intelligent finance platform that enables companies to spend smarter and move faster in more than 200 "
   },
@@ -2261,7 +2477,7 @@ Sample normalized records:
     "official_url": "https://www.brex.com/careers/8688110002?gh_jid=8688110002",
     "posted_date": "2026-08-06",
     "updated_date": "2026-08-19",
-    "fetched_at": "2026-08-31T18:13:19.160226+00:00",
+    "fetched_at": "2026-08-31T23:32:38.581941+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>Why join us</strong></p> <p>Brex is the intelligent finance platform that enables companies to spend smarter and move faster in more than 200 "
   },
@@ -2274,7 +2490,7 @@ Sample normalized records:
     "official_url": "https://www.brex.com/careers/8721806002?gh_jid=8721806002",
     "posted_date": "2026-08-17",
     "updated_date": "2026-08-19",
-    "fetched_at": "2026-08-31T18:13:19.160226+00:00",
+    "fetched_at": "2026-08-31T23:32:38.581941+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>Why join us</strong></p> <p>Brex is the intelligent finance platform that enables companies to spend smarter and move faster in more than 200 "
   },
@@ -2287,7 +2503,7 @@ Sample normalized records:
     "official_url": "https://www.brex.com/careers/8387049002?gh_jid=8387049002",
     "posted_date": "2026-01-28",
     "updated_date": "2026-08-19",
-    "fetched_at": "2026-08-31T18:13:19.160226+00:00",
+    "fetched_at": "2026-08-31T23:32:38.581941+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>Why join us</strong></p> <p>Brex is the intelligent finance platform that enables companies to spend smarter and move faster in more than 200 "
   }
@@ -2303,9 +2519,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 243
-- After US/location filtering: 205
-- With trustworthy posted_date: 205
+- Raw jobs found: 245
+- After US/location filtering: 201
+- With trustworthy posted_date: 201
 - Errors/403s: none
 
 Sample normalized records:
@@ -2321,7 +2537,7 @@ Sample normalized records:
     "official_url": "https://www.samsara.com/company/careers/roles/8094367?gh_jid=8094367",
     "posted_date": "2026-08-12",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:13:19.437566+00:00",
+    "fetched_at": "2026-08-31T23:32:39.051761+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: arial, helvetica, sans-serif;\"><strong>Who we are</strong></span></p> <p><span style=\"font-weight: 300; font-family: arial, "
   },
@@ -2333,8 +2549,8 @@ Sample normalized records:
     "location": "Atlanta, Georgia, United States",
     "official_url": "https://www.samsara.com/company/careers/roles/8103119?gh_jid=8103119",
     "posted_date": "2026-08-21",
-    "updated_date": "2026-08-21",
-    "fetched_at": "2026-08-31T18:13:19.437566+00:00",
+    "updated_date": "2026-08-31",
+    "fetched_at": "2026-08-31T23:32:39.051761+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: arial, helvetica, sans-serif;\"><strong>Who we are</strong></span></p> <p><span style=\"font-weight: 300; font-family: arial, "
   },
@@ -2346,21 +2562,21 @@ Sample normalized records:
     "location": "Phoenix, Arizona, United States",
     "official_url": "https://www.samsara.com/company/careers/roles/8099799?gh_jid=8099799",
     "posted_date": "2026-08-21",
-    "updated_date": "2026-08-21",
-    "fetched_at": "2026-08-31T18:13:19.437566+00:00",
+    "updated_date": "2026-08-31",
+    "fetched_at": "2026-08-31T23:32:39.051761+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: arial, helvetica, sans-serif;\"><strong>Who we are</strong></span></p> <p><span style=\"font-weight: 300; font-family: arial, "
   },
   {
     "company": "Samsara",
     "source": "samsara_official_careers",
-    "job_id": "7612462",
+    "job_id": "6605602",
     "title": "Account Executive, Commercial",
-    "location": "Remote - US",
-    "official_url": "https://www.samsara.com/company/careers/roles/7612462?gh_jid=7612462",
-    "posted_date": "2026-08-25",
-    "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:13:19.437566+00:00",
+    "location": "Columbus, OH; Remote - US",
+    "official_url": "https://www.samsara.com/company/careers/roles/6605602?gh_jid=6605602",
+    "posted_date": "2025-02-19",
+    "updated_date": "2026-08-20",
+    "fetched_at": "2026-08-31T23:32:39.051761+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: arial, helvetica, sans-serif;\"><strong>Who we are</strong></span></p> <p><span style=\"font-weight: 300; font-family: arial, "
   },
@@ -2373,7 +2589,7 @@ Sample normalized records:
     "official_url": "https://www.samsara.com/company/careers/roles/6605599?gh_jid=6605599",
     "posted_date": "2025-02-19",
     "updated_date": "2026-08-20",
-    "fetched_at": "2026-08-31T18:13:19.437566+00:00",
+    "fetched_at": "2026-08-31T23:32:39.051761+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: arial, helvetica, sans-serif;\"><strong>Who we are</strong></span></p> <p><span style=\"font-weight: 300; font-family: arial, "
   }
@@ -2389,9 +2605,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 171
-- After US/location filtering: 102
-- With trustworthy posted_date: 102
+- Raw jobs found: 169
+- After US/location filtering: 100
+- With trustworthy posted_date: 100
 - Errors/403s: none
 
 Sample normalized records:
@@ -2407,7 +2623,7 @@ Sample normalized records:
     "official_url": "https://app.careerpuck.com/job-board/lyft/job/8577546002?gh_jid=8577546002",
     "posted_date": "2026-06-04",
     "updated_date": "2026-08-26",
-    "fetched_at": "2026-08-31T18:13:19.929075+00:00",
+    "fetched_at": "2026-08-31T23:32:39.620169+00:00",
     "date_confidence": "high",
     "description": "<p>At Lyft, our purpose is to serve and connect. We aim to achieve this by cultivating a work environment where all team members belong and have the opportunity to thrive.</p> <p>L"
   },
@@ -2420,7 +2636,7 @@ Sample normalized records:
     "official_url": "https://app.careerpuck.com/job-board/lyft/job/8576942002?gh_jid=8576942002",
     "posted_date": "2026-06-04",
     "updated_date": "2026-08-26",
-    "fetched_at": "2026-08-31T18:13:19.929075+00:00",
+    "fetched_at": "2026-08-31T23:32:39.620169+00:00",
     "date_confidence": "high",
     "description": "<p>At Lyft, our purpose is to serve and connect. We aim to achieve this by cultivating a work environment where all team members belong and have the opportunity to thrive.</p> <p>L"
   },
@@ -2433,7 +2649,7 @@ Sample normalized records:
     "official_url": "https://app.careerpuck.com/job-board/lyft/job/8503985002?gh_jid=8503985002",
     "posted_date": "2026-04-14",
     "updated_date": "2026-08-26",
-    "fetched_at": "2026-08-31T18:13:19.929075+00:00",
+    "fetched_at": "2026-08-31T23:32:39.620169+00:00",
     "date_confidence": "high",
     "description": "<p>At Lyft, our purpose is to serve and connect. We aim to achieve this by cultivating a work environment where all team members belong and have the opportunity to thrive.</p> <p>T"
   },
@@ -2446,7 +2662,7 @@ Sample normalized records:
     "official_url": "https://app.careerpuck.com/job-board/lyft/job/8737764002?gh_jid=8737764002",
     "posted_date": "2026-08-21",
     "updated_date": "2026-08-26",
-    "fetched_at": "2026-08-31T18:13:19.929075+00:00",
+    "fetched_at": "2026-08-31T23:32:39.620169+00:00",
     "date_confidence": "high",
     "description": "<p>At Lyft, our purpose is to serve and connect. We aim to achieve this by cultivating a work environment where all team members belong and have the opportunity to thrive.</p> <p>T"
   },
@@ -2459,7 +2675,7 @@ Sample normalized records:
     "official_url": "https://app.careerpuck.com/job-board/lyft/job/8402813002?gh_jid=8402813002",
     "posted_date": "2026-02-11",
     "updated_date": "2026-08-26",
-    "fetched_at": "2026-08-31T18:13:19.929075+00:00",
+    "fetched_at": "2026-08-31T23:32:39.620169+00:00",
     "date_confidence": "high",
     "description": "<p>At Lyft, our purpose is to serve and connect. We aim to achieve this by cultivating a work environment where all team members belong and have the opportunity to thrive.</p> <p>T"
   }
@@ -2469,15 +2685,15 @@ Sample normalized records:
 ## Spotify
 
 - Status: ok
-- Scraping method: HTTP GET shared Lever postings API /v0/postings/{token}
-- Search URL/API: `https://jobs.lever.co/spotify`
-- Pagination: single JSON payload (no paging)
+- Scraping method: HTTP GET Lever /v0/postings/{token}?mode=json
+- Search URL/API: `https://api.lever.co/v0/postings/spotify`
+- Pagination: single JSON payload
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 33
-- After US/location filtering: 33
-- With trustworthy posted_date: 33
+- Raw jobs found: 86
+- After US/location filtering: 63
+- With trustworthy posted_date: 63
 - Errors/403s: none
 
 Sample normalized records:
@@ -2493,61 +2709,61 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/spotify/a0fa7da3-4c3c-4fa2-97bd-7d6eb01eb9e5",
     "posted_date": "2026-03-18",
     "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "Our mission on the Advertising Product & Technology team is to build a next generation advertising platform that aligns with our unique value proposition for audio and video. We wo"
+    "fetched_at": "2026-08-31T23:32:39.891898+00:00",
+    "date_confidence": "high",
+    "description": "Build and evolve ad experiences that allow millions of listeners to enjoy Spotify for free Collaborate with engineers across Android, iOS, backend, and web, along with product, des"
   },
   {
     "company": "Spotify",
     "source": "spotify_official_careers",
-    "job_id": "1bbaf909-5ff3-4ed6-87ca-f7ff007a169c",
-    "title": "Data Scientist - Music Mission",
-    "location": "New York, NY",
-    "official_url": "https://jobs.lever.co/spotify/1bbaf909-5ff3-4ed6-87ca-f7ff007a169c",
-    "posted_date": "2026-06-22",
-    "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "The Music Mission enables music creators to grow, engage, and monetize their fan bases on Spotify. Central to the Music Mission's vision is the development of promotional tools for"
-  },
-  {
-    "company": "Spotify",
-    "source": "spotify_official_careers",
-    "job_id": "600a4ac7-6ffa-4ced-8d34-253d00147aa9",
-    "title": "Director of ML Engineering, Conversation Product Area",
-    "location": "New York, NY",
-    "official_url": "https://jobs.lever.co/spotify/600a4ac7-6ffa-4ced-8d34-253d00147aa9",
-    "posted_date": "2026-08-06",
-    "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "The Personalization team makes deciding what to play next easier and more enjoyable for every listener. From Blend to Discover Weekly, we're behind some of Spotify's most-loved fea"
-  },
-  {
-    "company": "Spotify",
-    "source": "spotify_official_careers",
-    "job_id": "7aeec299-4653-4c5d-aafb-d537e1232208",
-    "title": "Director, Portfolio & Monetization Architecture",
-    "location": "New York, NY",
-    "official_url": "https://jobs.lever.co/spotify/7aeec299-4653-4c5d-aafb-d537e1232208",
+    "job_id": "2193db3f-77c5-43b8-b030-8f92c9882bf1",
+    "title": "Android Engineer - Experience",
+    "location": "London; Stockholm",
+    "official_url": "https://jobs.lever.co/spotify/2193db3f-77c5-43b8-b030-8f92c9882bf1",
     "posted_date": "2026-06-23",
     "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "Spotify's growth depends on offering the right thing to the right listener at the right price, moving beyond one-size-fits-all packaging toward a portfolio where listeners can mix "
+    "fetched_at": "2026-08-31T23:32:39.891898+00:00",
+    "date_confidence": "high",
+    "description": "Develop and maintain mobile client components that capture and report listening and user behavior signals across Spotify. Build high-quality, well-tested, and well-documented Kotli"
   },
   {
     "company": "Spotify",
     "source": "spotify_official_careers",
-    "job_id": "f45de8ee-8f32-4e19-9163-eddf7a018337",
-    "title": "Engineering Manager - Music",
-    "location": "New York, NY",
-    "official_url": "https://jobs.lever.co/spotify/f45de8ee-8f32-4e19-9163-eddf7a018337",
-    "posted_date": "2026-08-14",
+    "job_id": "b4ad9572-e20f-4185-a284-99d9740d04f0",
+    "title": "Android Engineer - Subscriptions",
+    "location": "London; Stockholm",
+    "official_url": "https://jobs.lever.co/spotify/b4ad9572-e20f-4185-a284-99d9740d04f0",
+    "posted_date": "2026-06-30",
     "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "The Rights Systems team is driving the technical foundations of a step-change for Spotify’s business by enabling the distribution of new forms of content across the platform. This "
+    "fetched_at": "2026-08-31T23:32:39.891898+00:00",
+    "date_confidence": "high",
+    "description": "Design, build, and evolve mobile experiences across some of Spotify’s most visible consumer surfaces. Contribute to the architecture and development of reusable mobile foundations,"
+  },
+  {
+    "company": "Spotify",
+    "source": "spotify_official_careers",
+    "job_id": "d87833d0-fb78-4794-b45d-3fe5c8274bc8",
+    "title": "Artist & Label Partnerships Contractor, Vietnam",
+    "location": "Ho Chi Minh",
+    "official_url": "https://jobs.lever.co/spotify/d87833d0-fb78-4794-b45d-3fe5c8274bc8",
+    "posted_date": "2026-08-27",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:32:39.891898+00:00",
+    "date_confidence": "high",
+    "description": "Maintain positive partnerships across artist and label communities within Vietnam. Support our key partners in Vietnam on Spotify tools, resources and insights. Work closely with o"
+  },
+  {
+    "company": "Spotify",
+    "source": "spotify_official_careers",
+    "job_id": "973b0b71-e8d2-4d7d-9c4b-1c716bd45c8b",
+    "title": "Business Development Senior Manager, APAC",
+    "location": "Singapore; Seoul",
+    "official_url": "https://jobs.lever.co/spotify/973b0b71-e8d2-4d7d-9c4b-1c716bd45c8b",
+    "posted_date": "2026-01-15",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:32:39.891898+00:00",
+    "date_confidence": "high",
+    "description": "Identify, structure, negotiate, amend, close, and manage strategic distribution partnerships across APAC that advance Spotify’s growth and long‑term vision. Develop and refine part"
   }
 ]
 ```
@@ -2579,7 +2795,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/ramp/34413f8d-26bf-4bbc-8ade-eb309a0e2245",
     "posted_date": "2026-04-07",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:21.405852+00:00",
+    "fetched_at": "2026-08-31T23:32:41.174511+00:00",
     "date_confidence": "high",
     "description": "ABOUT RAMP Ramp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized"
   },
@@ -2592,7 +2808,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/ramp/f564dcf9-9390-4a3f-896f-8047a5086040",
     "posted_date": "2025-07-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:21.405852+00:00",
+    "fetched_at": "2026-08-31T23:32:41.174511+00:00",
     "date_confidence": "high",
     "description": "ABOUT RAMP Ramp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized"
   },
@@ -2605,7 +2821,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/ramp/4e64ab86-4e30-403b-b1b9-41dc052570ce",
     "posted_date": "2023-03-09",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:21.405852+00:00",
+    "fetched_at": "2026-08-31T23:32:41.174511+00:00",
     "date_confidence": "high",
     "description": "ABOUT RAMP Ramp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized"
   },
@@ -2618,7 +2834,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/ramp/1db75064-e38c-4b21-8310-21471943d0be",
     "posted_date": "2026-05-22",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:21.405852+00:00",
+    "fetched_at": "2026-08-31T23:32:41.174511+00:00",
     "date_confidence": "high",
     "description": "ABOUT RAMP Ramp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized"
   },
@@ -2631,7 +2847,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/ramp/4745807e-82f4-4b1a-857c-dc8dadc73076",
     "posted_date": "2026-08-12",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:21.405852+00:00",
+    "fetched_at": "2026-08-31T23:32:41.174511+00:00",
     "date_confidence": "high",
     "description": "ABOUT RAMP Ramp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized"
   }
@@ -2665,7 +2881,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/notion/1fc309c8-da20-4ff2-84c7-8b863ece2b0a",
     "posted_date": "2026-08-24",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:21.559480+00:00",
+    "fetched_at": "2026-08-31T23:32:41.515612+00:00",
     "date_confidence": "high",
     "description": "WHO WE ARE Notion is the collaborative AI workspace where teams and agents think together https://www.youtube.com/watch?v=vkpYpWfEK5s. We're building one place where your knowledge"
   },
@@ -2678,7 +2894,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/notion/05e14247-17c4-4e98-9a13-53828a4e2f13",
     "posted_date": "2026-04-02",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:21.559480+00:00",
+    "fetched_at": "2026-08-31T23:32:41.515612+00:00",
     "date_confidence": "high",
     "description": "WHO WE ARE Notion is the collaborative AI workspace where teams and agents think together https://www.youtube.com/watch?v=vkpYpWfEK5s. We're building one place where your knowledge"
   },
@@ -2691,7 +2907,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/notion/b21fef72-4864-4a3e-a627-91557a0f8a36",
     "posted_date": "2026-04-01",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:21.559480+00:00",
+    "fetched_at": "2026-08-31T23:32:41.515612+00:00",
     "date_confidence": "high",
     "description": "WHO WE ARE Notion is the collaborative AI workspace where teams and agents think together https://www.youtube.com/watch?v=vkpYpWfEK5s. We're building one place where your knowledge"
   },
@@ -2704,7 +2920,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/notion/d177d052-ef57-4900-acf2-d58e9eded620",
     "posted_date": "2026-07-02",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:21.559480+00:00",
+    "fetched_at": "2026-08-31T23:32:41.515612+00:00",
     "date_confidence": "high",
     "description": "WHO WE ARE Notion is the collaborative AI workspace where teams and agents think together https://www.youtube.com/watch?v=vkpYpWfEK5s. We're building one place where your knowledge"
   },
@@ -2717,7 +2933,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/notion/10437426-14c8-4c45-8075-67959ce80393",
     "posted_date": "2025-08-07",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:21.559480+00:00",
+    "fetched_at": "2026-08-31T23:32:41.515612+00:00",
     "date_confidence": "high",
     "description": "WHO WE ARE Notion is the collaborative AI workspace where teams and agents think together https://www.youtube.com/watch?v=vkpYpWfEK5s. We're building one place where your knowledge"
   }
@@ -2751,7 +2967,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/linear/d3bc1ced-3ce4-4086-a050-555055dbb1ff",
     "posted_date": "2021-04-27",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:21.988363+00:00",
+    "fetched_at": "2026-08-31T23:32:41.678387+00:00",
     "date_confidence": "high",
     "description": "At Linear, we're building the product development system for teams and agents. AI is fundamentally changing how software gets built, and we’re shaping the tools this new era requir"
   },
@@ -2764,7 +2980,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/linear/cd5ae036-0223-427a-b038-ba16ef9dcb32",
     "posted_date": "2021-08-18",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:21.988363+00:00",
+    "fetched_at": "2026-08-31T23:32:41.678387+00:00",
     "date_confidence": "high",
     "description": "At Linear, we're building the product development system for teams and agents. AI is fundamentally changing how software gets built, and we’re shaping the tools this new era requir"
   },
@@ -2777,7 +2993,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/linear/069c4628-88d7-4e4d-b393-c996fc7f3076",
     "posted_date": "2022-01-22",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:21.988363+00:00",
+    "fetched_at": "2026-08-31T23:32:41.678387+00:00",
     "date_confidence": "high",
     "description": "At Linear, we're building the product development system for teams and agents. AI is fundamentally changing how software gets built, and we’re shaping the tools this new era requir"
   },
@@ -2790,7 +3006,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/linear/12f8f208-0b9c-4569-bb3d-41c8a197029e",
     "posted_date": "2026-03-04",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:21.988363+00:00",
+    "fetched_at": "2026-08-31T23:32:41.678387+00:00",
     "date_confidence": "high",
     "description": "At Linear, we're building the product development system for teams and agents. AI is fundamentally changing how software gets built, and we’re shaping the tools this new era requir"
   },
@@ -2803,7 +3019,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/linear/0c7c2e26-0a98-42cf-a47c-9a3999fb513b",
     "posted_date": "2026-06-09",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:21.988363+00:00",
+    "fetched_at": "2026-08-31T23:32:41.678387+00:00",
     "date_confidence": "high",
     "description": "At Linear, we're building the product development system for teams and agents. AI is fundamentally changing how software gets built, and we’re shaping the tools this new era requir"
   }
@@ -2837,7 +3053,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/cohere/3136a5a5-06fd-4c82-8b72-a43467e6b128",
     "posted_date": "2024-11-01",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:22.047842+00:00",
+    "fetched_at": "2026-08-31T23:32:41.751712+00:00",
     "date_confidence": "high",
     "description": "Who are we? Cohere is the leading security-first enterprise AI company. We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world bus"
   },
@@ -2850,7 +3066,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/cohere/0183bddd-f845-4e7e-af69-e6178cdc32be",
     "posted_date": "2026-08-20",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:22.047842+00:00",
+    "fetched_at": "2026-08-31T23:32:41.751712+00:00",
     "date_confidence": "high",
     "description": "Who are we? Cohere is the leading security-first enterprise AI company. We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world bus"
   },
@@ -2863,7 +3079,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/cohere/443368a3-6276-4b90-9671-27fed40fd6d2",
     "posted_date": "2024-12-03",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:22.047842+00:00",
+    "fetched_at": "2026-08-31T23:32:41.751712+00:00",
     "date_confidence": "high",
     "description": "Who are we? Cohere is the leading security-first enterprise AI company. We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world bus"
   },
@@ -2872,11 +3088,11 @@ Sample normalized records:
     "source": "cohere_official_careers",
     "job_id": "acec6038-117b-400b-92e3-0745fbb4cf53",
     "title": "Data Annotation Specialist - German Writer/Translator",
-    "location": "Canada; Calgary; Boston; Nashville; Richmond, VA; Phoenix; Seattle; United States; Vancouver; North America | Utah; Ottawa; Toronto; Montreal; Remote, Canada",
+    "location": "Canada; Calgary; Boston; Nashville; Richmond; Phoenix; Seattle; United States; Vancouver; North America | Utah; Ottawa; Toronto; Montreal; Remote, Canada",
     "official_url": "https://jobs.ashbyhq.com/cohere/acec6038-117b-400b-92e3-0745fbb4cf53",
     "posted_date": "2026-02-20",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:22.047842+00:00",
+    "fetched_at": "2026-08-31T23:32:41.751712+00:00",
     "date_confidence": "high",
     "description": "Who are we? Our mission is to scale intelligence to serve humanity. We’re training and deploying frontier models for developers and enterprises who are building AI systems to power"
   },
@@ -2889,7 +3105,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/cohere/d42f5fd4-1ffc-45b9-957c-f09862db6af6",
     "posted_date": "2025-02-20",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:22.047842+00:00",
+    "fetched_at": "2026-08-31T23:32:41.751712+00:00",
     "date_confidence": "high",
     "description": "Who are we? Cohere is the leading security-first enterprise AI company. We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world bus"
   }
@@ -2902,12 +3118,12 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://cisco.wd5.myworkdayjobs.com/Cisco_Careers`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 13
+- Pages/requests fetched: 12
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 91 / 0
-- Raw jobs found: 250
-- After US/location filtering: 91
-- With trustworthy posted_date: 91
+- Detail pages fetched/cache reused: 24 / 2
+- Raw jobs found: 92
+- After US/location filtering: 26
+- With trustworthy posted_date: 26
 - Errors/403s: none
 
 Sample normalized records:
@@ -2917,67 +3133,67 @@ Sample normalized records:
   {
     "company": "Cisco",
     "source": "cisco_official_careers",
-    "job_id": "2022599",
-    "title": "Principal Software Engineer - Cisco IQ Validation (Hybrid)",
-    "location": "RTP, North Carolina, US; San Jose, California, US; Richardson, Texas, US",
-    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Principal-Engineer---Cisco-IQ-Validation_2022599",
-    "posted_date": "2026-08-31",
+    "job_id": "2019664",
+    "title": "Product Manager",
+    "location": "Brooklyn, New York, US; Remote - North Dakota, USA; Remote - Montana, USA; Remote - Maine, USA; Remote - Ohio, USA; Remote - Nebraska, USA; Remote - Louisiana, USA; Remote - Texas, USA; Remote - Nevada, USA; Remote - Hawaii, USA; Remote - Georgia, USA; Remote - Mississippi, USA; Remote - Connecticut, USA; Remote - Colorado, USA; Remote - Wyoming, USA; Remote - Wisconsin, USA; Remote - West Virginia, USA; Remote - Maryland, USA; Remote - California, USA; Remote - Vermont, USA; Remote - New York, USA; Remote - New Jersey, USA; Remote - Arkansas, USA; Remote - South Dakota, USA; Remote - Pennsylvania, USA; Remote - Michigan, USA; Remote - Indiana, USA; Remote - Idaho, USA; Remote - Arizona, USA; Remote - New Mexico, USA; Remote - New Hampshire, USA; Remote - Kentucky, USA; Remote - South Carolina, USA; Remote - Illinois, USA; Remote - Missouri, USA; Remote - Massachusetts, USA; Remote - Iowa, USA; Remote - Tennessee, USA; Remote - North Carolina, USA; Remote - Minnesota, USA; Remote - Kansas, USA; Remote - Alaska, USA; Remote - Rhode Island, USA; Remote - Delaware, USA; Remote - Washington, USA; Remote - Virginia, USA; Remote - Utah, USA; Remote - Oregon, USA; Remote - Florida, USA; Remote - Oklahoma, USA",
+    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Brooklyn-New-York-US/Product-Manager_2019664",
+    "posted_date": "2026-08-11",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:22.246953+00:00",
+    "fetched_at": "2026-08-31T23:32:41.957904+00:00",
     "date_confidence": "high",
-    "description": "The application window is expected to close on: 09/29/2026 Meet the Team At Cisco, we are redefining the customer experience through the power of Cisco IQ Services and Applications"
+    "description": "The application window is expected to close on: 07/22/2026 Job posting may be removed earlier if the position is filled or if a sufficient number of applications are received . Mee"
   },
   {
     "company": "Cisco",
     "source": "cisco_official_careers",
-    "job_id": "2014522",
-    "title": "Hardware Design Engineer Technical Lead",
-    "location": "San Jose, California, US; San Francisco, California, US",
-    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Jose-California-US/Hardware-Design-Engineer-Technical-Lead_2014522-1",
+    "job_id": "2023526",
+    "title": "Executive Assistant, VP Americas Service Provider - Technology, Media, and Communications (Remote)",
+    "location": "Remote - Colorado, USA; Remote - Illinois, USA; Remote - Texas, USA; Remote - Nevada, USA; Remote - Utah, USA; Remote - Massachusetts, USA; Remote - California, USA; Remote - Michigan, USA; Remote - Idaho, USA; Remote - Arizona, USA",
+    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Remote---Colorado-USA/Executive-Assistant--VP-Americas-Service-Provider---Technology--Media--and-Communications--Remote-_2023526",
     "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:22.246953+00:00",
+    "fetched_at": "2026-08-31T23:32:41.957904+00:00",
     "date_confidence": "high",
-    "description": "The application window is expected to close on: 09/29/2026 Meet the Team The Common Hardware Group (CHG) creates innovative hardware platforms central to the AI era, powering Cisco"
+    "description": "The application window is expected to close on: 09/10/2026 This role can be performed from any location within the United States. Ideal candidate location is be based in Central or"
   },
   {
     "company": "Cisco",
     "source": "cisco_official_careers",
-    "job_id": "2004763",
-    "title": "Hardware Systems Engineering Technical Leader",
-    "location": "Milpitas, California, US",
-    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Milpitas-California-US/Hardware-Systems-Engineering-Technical-Lead---Milpitas-San-Jose--CA_2004763",
+    "job_id": "2015161",
+    "title": "Leader, Engineering Hybrid",
+    "location": "Annapolis Junction, Maryland, US; Remote - Maryland, USA; Washington, District of Columbia, US; Remote - Virginia, USA",
+    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Annapolis-Junction-Maryland-US/Leader--Engineering-Hybrid_2015161",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:32:41.957904+00:00",
+    "date_confidence": "high",
+    "description": "The application window is expected to close on: 09/29/2026 This role is hybrid in Virginia, Maryland, District of Columbia, DC Metro Area, Beltway Area. The successful applicant wi"
+  },
+  {
+    "company": "Cisco",
+    "source": "cisco_official_careers",
+    "job_id": "2017129",
+    "title": "Security Account Executive - Fed/Civ",
+    "location": "Herndon, Virginia, US; RTP, North Carolina, US; Fulton, Maryland, US; Washington, District of Columbia, US; Remote - Delaware, USA",
+    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Herndon-Virginia-US/Federal-Civilian-Security-Account-Executive---Architecture_2017129",
     "posted_date": "2026-08-30",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:22.246953+00:00",
+    "fetched_at": "2026-08-31T23:32:41.957904+00:00",
     "date_confidence": "high",
-    "description": "The application window is expected to close on: 09/29/2026 This is an onsite position and requires the employee to work out the Milpitas, CA location. Meet the Team The Common Hard"
+    "description": "The application window is expected to close on: 09/03/2026 Meet the Team Empowering the world to reach its full potential, securely—that’s our vision. At Cisco Security, we help or"
   },
   {
     "company": "Cisco",
     "source": "cisco_official_careers",
-    "job_id": "2021114",
-    "title": "Software Engineer",
-    "location": "Boulder, Colorado, US",
-    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Boulder-Colorado-US/Software-Engineer_2021114-1",
-    "posted_date": "2026-08-29",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:22.246953+00:00",
-    "date_confidence": "high",
-    "description": "The application window is expected to close on: 09/18/2026 Meet the Team Splunk, a Cisco company, is building a safer, more resilient digital world with an end-to-end, full-stack p"
-  },
-  {
-    "company": "Cisco",
-    "source": "cisco_official_careers",
-    "job_id": "2022516",
-    "title": "Technical Program Manager",
-    "location": "Milpitas, California, US; San Jose, California, US",
-    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Milpitas-California-US/Technical-Program-Manager_2022516",
+    "job_id": "2020750",
+    "title": "Forward Deployed Engineer (SSE)",
+    "location": "San Jose, California, US; Remote - North Dakota, USA; Remote - Montana, USA; Remote - Maine, USA; Remote - Ohio, USA; Remote - Nebraska, USA; Remote - Louisiana, USA; Remote - Texas, USA; Remote - Nevada, USA; Remote - Hawaii, USA; Remote - Georgia, USA; Remote - Mississippi, USA; Remote - Connecticut, USA; Remote - Colorado, USA; Remote - Wyoming, USA; Remote - Wisconsin, USA; Remote - West Virginia, USA; Remote - Maryland, USA; Remote - California, USA; Remote - Vermont, USA; Remote - New York, USA; Remote - New Jersey, USA; Remote - Arkansas, USA; Remote - South Dakota, USA; Remote - Pennsylvania, USA; Remote - Michigan, USA; Remote - Indiana, USA; Remote - Idaho, USA; Remote - Arizona, USA; Remote - New Mexico, USA; Remote - New Hampshire, USA; Remote - Kentucky, USA; Remote - Alabama, USA; Remote - South Carolina, USA; Remote - Illinois, USA; Remote - Missouri, USA; Remote - Massachusetts, USA; Remote - Iowa, USA; Remote - Tennessee, USA; Remote - North Carolina, USA; Remote - Minnesota, USA; Remote - Kansas, USA; Remote - Alaska, USA; Remote - Rhode Island, USA; Remote - Delaware, USA; Remote - Washington, USA; Remote - Virginia, USA; Remote - Utah, USA; Remote - Oregon, USA; Remote - Florida, USA; Remote - Oklahoma, USA",
+    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Jose-California-US/Forward-Deployed-Engineer--SSE-_2020750",
     "posted_date": "2026-08-28",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:13:22.246953+00:00",
+    "fetched_at": "2026-08-31T23:32:41.957904+00:00",
     "date_confidence": "high",
-    "description": "The application window is expected to close on: 09/10/2026 Meet the Team Cisco Cloud Security Group is a leading provider of Cloud Security and DNS services, enabling the world to "
+    "description": "The application window is expected to close on: 10/29/2026 This position is remote from anywhere in the USA. 50% travel internationally is required Meet the Team Cisco Security Bus"
   }
 ]
 ```
@@ -2988,11 +3204,11 @@ Sample normalized records:
 - Scraping method: HTTP GET jobs.sap.com/search HTML + job detail HTML
 - Search URL/API: `https://jobs.sap.com/search/?q=software+engineer&locationsearch=United+States`
 - Pagination: startrow=0,25,... ; stop on empty/repeat or short page
-- Pages/requests fetched: 14
+- Pages/requests fetched: 38
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 28 / 103
-- Raw jobs found: 350
-- After US/location filtering: 131
+- Detail pages fetched/cache reused: 8 / 142
+- Raw jobs found: 950
+- After US/location filtering: 150
 - With trustworthy posted_date: 0
 - Errors/403s: none
 
@@ -3003,39 +3219,13 @@ Sample normalized records:
   {
     "company": "SAP",
     "source": "sap_official_careers",
-    "job_id": "1426322133",
-    "title": "Principal Software Engineer - Identity & Access Management",
-    "location": "Palo Alto, CA, US, 94304",
-    "official_url": "https://jobs.sap.com/job/Palo-Alto-Principal-Software-Engineer-Identity-&-Access-Management-CA-94304/1426322133/",
-    "posted_date": "",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:14:18.570283+00:00",
-    "date_confidence": "unknown",
-    "description": "We help the world run better At SAP, we keep it simple: you bring your best to us, and we'll bring out the best in you. We're builders touching over 20 industries and 80% of global"
-  },
-  {
-    "company": "SAP",
-    "source": "sap_official_careers",
     "job_id": "1421516633",
     "title": "Forward Deployed Senior AI Engineer",
     "location": "New York, NY, US, 10001",
     "official_url": "https://jobs.sap.com/job/New-York-Forward-Deployed-Senior-AI-Engineer-NY-10001/1421516633/",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:14:18.570283+00:00",
-    "date_confidence": "unknown",
-    "description": "We help the world run better At SAP, we keep it simple: you bring your best to us, and we'll bring out the best in you. We're builders touching over 20 industries and 80% of global"
-  },
-  {
-    "company": "SAP",
-    "source": "sap_official_careers",
-    "job_id": "1429414433",
-    "title": "Principal Software Engineer - Platform Engineering",
-    "location": "Palo Alto, CA, US, 94304",
-    "official_url": "https://jobs.sap.com/job/Palo-Alto-Principal-Software-Engineer-Platform-Engineering-CA-94304/1429414433/",
-    "posted_date": "",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:14:18.570283+00:00",
+    "fetched_at": "2026-08-31T23:32:57.376164+00:00",
     "date_confidence": "unknown",
     "description": "We help the world run better At SAP, we keep it simple: you bring your best to us, and we'll bring out the best in you. We're builders touching over 20 industries and 80% of global"
   },
@@ -3048,20 +3238,46 @@ Sample normalized records:
     "official_url": "https://jobs.sap.com/job/Palo-Alto-Head-Engineering-SAP-Business-Network-Core-CA-94304/1422592533/",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:14:18.570283+00:00",
+    "fetched_at": "2026-08-31T23:32:57.376164+00:00",
     "date_confidence": "unknown",
     "description": "We help the world run better At SAP, we keep it simple: you bring your best to us, and we'll bring out the best in you. We're builders touching over 20 industries and 80% of global"
   },
   {
     "company": "SAP",
     "source": "sap_official_careers",
-    "job_id": "1408906233",
-    "title": "Expert DevOps Engineer",
-    "location": "Reston, VA, US, 20191",
-    "official_url": "https://jobs.sap.com/job/Reston-Expert-DevOps-Engineer-VA-20191/1408906233/",
+    "job_id": "1424105633",
+    "title": "Principal Forward Deployed Architect",
+    "location": "New York, NY, US, 10001",
+    "official_url": "https://jobs.sap.com/job/New-York-Principal-Forward-Deployed-Architect-NY-10001/1424105633/",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:14:18.570283+00:00",
+    "fetched_at": "2026-08-31T23:32:57.376164+00:00",
+    "date_confidence": "unknown",
+    "description": "We help the world run better At SAP, we keep it simple: you bring your best to us, and we'll bring out the best in you. We're builders touching over 20 industries and 80% of global"
+  },
+  {
+    "company": "SAP",
+    "source": "sap_official_careers",
+    "job_id": "1421516533",
+    "title": "Forward Deployed Application/ ML Principal Engineer",
+    "location": "New York, NY, US, 10001",
+    "official_url": "https://jobs.sap.com/job/New-York-Forward-Deployed-Application-ML-Principal-Engineer-NY-10001/1421516533/",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:32:57.376164+00:00",
+    "date_confidence": "unknown",
+    "description": "We help the world run better At SAP, we keep it simple: you bring your best to us, and we'll bring out the best in you. We're builders touching over 20 industries and 80% of global"
+  },
+  {
+    "company": "SAP",
+    "source": "sap_official_careers",
+    "job_id": "1431290433",
+    "title": "Senior Data & Applied Scientist - Ontologies & Semantics",
+    "location": "Palo Alto, CA, US, 94304",
+    "official_url": "https://jobs.sap.com/job/Palo-Alto-Senior-Data-&-Applied-Scientist-Ontologies-&-Semantics-CA-94304/1431290433/",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:32:57.376164+00:00",
     "date_confidence": "unknown",
     "description": "We help the world run better At SAP, we keep it simple: you bring your best to us, and we'll bring out the best in you. We're builders touching over 20 industries and 80% of global"
   }
@@ -3074,13 +3290,13 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://hpe.wd5.myworkdayjobs.com/Jobsathpe`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 11
+- Pages/requests fetched: 28
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 99 / 0
-- Raw jobs found: 220
-- After US/location filtering: 100
-- With trustworthy posted_date: 100
-- Errors/403s: ['detail 1210651: HPE workday detail HTTP 504']
+- Detail pages fetched/cache reused: 158 / 80
+- Raw jobs found: 521
+- After US/location filtering: 238
+- With trustworthy posted_date: 238
+- Errors/403s: none
 
 Sample normalized records:
 
@@ -3089,84 +3305,156 @@ Sample normalized records:
   {
     "company": "HPE",
     "source": "hpe_official_careers",
-    "job_id": "1208691",
-    "title": "Software Engineer",
-    "location": "Westford, Massachusetts, United States of America",
-    "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Westford-Massachusetts-United-States-of-America/Software-Engineer_1208691-2",
-    "posted_date": "2026-08-26",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:14:50.468427+00:00",
-    "date_confidence": "high",
-    "description": "Software Engineer This role has been designed as ‘’Onsite’ with an expectation that you will primarily work from an HPE office. Who We Are: Hewlett Packard Enterprise is the global"
-  },
-  {
-    "company": "HPE",
-    "source": "hpe_official_careers",
-    "job_id": "1202357",
-    "title": "Principal Software Engineer",
-    "location": "Cupertino, California, United States of America",
-    "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Cupertino-California-United-States-of-America/Principal-Software-Engineer_1202357-2",
-    "posted_date": "2026-05-12",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:14:50.468427+00:00",
-    "date_confidence": "high",
-    "description": "Principal Software Engineer This role has been designed as ‘’Onsite’ with an expectation that you will primarily work from an HPE office. Who We Are: Hewlett Packard Enterprise is "
-  },
-  {
-    "company": "HPE",
-    "source": "hpe_official_careers",
-    "job_id": "1203998",
-    "title": "System Software Engineer",
-    "location": "Sunnyvale, California, United States of America",
-    "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Sunnyvale-California-United-States-of-America/System-Software-Engineer_1203998-2",
-    "posted_date": "2026-06-10",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:14:50.468427+00:00",
-    "date_confidence": "high",
-    "description": "System Software Engineer This role has been designed as ‘’Onsite’ with an expectation that you will primarily work from an HPE office. Who We Are: Hewlett Packard Enterprise is the"
-  },
-  {
-    "company": "HPE",
-    "source": "hpe_official_careers",
-    "job_id": "1206283",
-    "title": "Systems/Software Engineer",
-    "location": "Roseville, California, United States of America",
-    "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Roseville-California-United-States-of-America/Systems-Software-Engineer_1206283-1",
+    "job_id": "1209445",
+    "title": "Senior AI Engineer Developer",
+    "location": "Spring, Texas, United States of America",
+    "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Senior-AI-Engineer-Developer_1209445-2",
     "posted_date": "2026-08-24",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:14:50.468427+00:00",
+    "fetched_at": "2026-08-31T23:33:35.336199+00:00",
     "date_confidence": "high",
-    "description": "Systems/Software Engineer This role has been designed as ‘’Onsite’ with an expectation that you will primarily work from an HPE office. Who We Are: Hewlett Packard Enterprise is th"
+    "description": "Senior AI Engineer Developer This role has been designed as ‘’Onsite’ with an expectation that you will primarily work from an HPE office. Who We Are: Hewlett Packard Enterprise is"
   },
   {
     "company": "HPE",
     "source": "hpe_official_careers",
-    "job_id": "1207779",
-    "title": "Systems/Software Engineer",
-    "location": "Sunnyvale, California, United States of America",
-    "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Sunnyvale-California-United-States-of-America/Systems-Software-Engineer_1207779-2",
-    "posted_date": "2026-06-17",
+    "job_id": "1209447",
+    "title": "Senior AI Engineer Developer",
+    "location": "Spring, Texas, United States of America",
+    "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Senior-AI-Engineer-Developer_1209447-2",
+    "posted_date": "2026-08-25",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:14:50.468427+00:00",
+    "fetched_at": "2026-08-31T23:33:35.336199+00:00",
     "date_confidence": "high",
-    "description": "Systems/Software Engineer This role has been designed as ‘’Onsite’ with an expectation that you will primarily work from an HPE office. Who We Are: Hewlett Packard Enterprise is th"
+    "description": "Senior AI Engineer Developer This role has been designed as ‘’Onsite’ with an expectation that you will primarily work from an HPE office. Who We Are: Hewlett Packard Enterprise is"
+  },
+  {
+    "company": "HPE",
+    "source": "hpe_official_careers",
+    "job_id": "1202938",
+    "title": "AI/ML Engineer - Agentic",
+    "location": "San Jose, California, United States of America",
+    "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/San-Jose-California-United-States-of-America/AI-ML-Engineer---Agentic_1202938-2",
+    "posted_date": "2026-07-14",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:33:35.336199+00:00",
+    "date_confidence": "high",
+    "description": "AI/ML Engineer - Agentic This role has been designed as ‘Hybrid’ with an expectation that you will work on average 2 days per week from an HPE office. Who We Are: Hewlett Packard E"
+  },
+  {
+    "company": "HPE",
+    "source": "hpe_official_careers",
+    "job_id": "1206826",
+    "title": "HPC & AI Performance Engineer",
+    "location": "Bloomington, Minnesota, United States of America",
+    "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Bloomington-Minnesota-United-States-of-America/HPC---AI-Performance-Engineer_1206826-3",
+    "posted_date": "2026-08-17",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:33:35.336199+00:00",
+    "date_confidence": "high",
+    "description": "HPC & AI Performance Engineer This role has been designed as 'Hybrid' with a requirement that you will work on average 2 days per week from an HPE office. Who We Are: Hewlett Packa"
+  },
+  {
+    "company": "HPE",
+    "source": "hpe_official_careers",
+    "job_id": "1206761",
+    "title": "Senior Principal AI & Machine Learning Engineer, Spring, Texas, Onsite",
+    "location": "Spring, Texas, United States of America",
+    "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Principal-AI---Machine-Learning-Engineer--Spring--Texas--Onsite_1206761-2",
+    "posted_date": "2026-08-19",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:33:35.336199+00:00",
+    "date_confidence": "high",
+    "description": "Senior Principal AI & Machine Learning Engineer, Spring, Texas, Onsite This role has been designed as ‘’Onsite’ with an expectation that you will primarily work from an HPE office."
   }
 ]
 ```
 
 ## Disney
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
+- Status: ok
+- Scraping method: HTTP GET Disney server-rendered US search results
+- Search URL/API: `https://www.disneycareers.com/en/search-jobs/software%20engineer/United%20States/391/1/2/6252001/39x76/-98x5/100/2`
+- Pagination: ?p=1,2,3 per role query (intentional request cap)
+- Pages/requests fetched: 27
+- Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
+- Raw jobs found: 270
+- After US/location filtering: 121
 - With trustworthy posted_date: 0
-- Errors/403s: ['Tier B · verified official filtered search captured; adapter deferred.']
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Disney",
+    "source": "disney_official_careers",
+    "job_id": "10156962",
+    "title": "Senior AI / Data Engineer",
+    "location": "Celebration, Florida",
+    "official_url": "https://www.disneycareers.com/en/job/celebration/senior-ai-data-engineer/391/98814483936",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:35:43.632371+00:00",
+    "date_confidence": "high",
+    "description": ""
+  },
+  {
+    "company": "Disney",
+    "source": "disney_official_careers",
+    "job_id": "10157759",
+    "title": "Lead Software Engineer - AI and Observability",
+    "location": "New York, New York / Glendale, California",
+    "official_url": "https://www.disneycareers.com/en/job/new-york/lead-software-engineer-ai-and-observability/391/99405820704",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:35:43.632371+00:00",
+    "date_confidence": "high",
+    "description": ""
+  },
+  {
+    "company": "Disney",
+    "source": "disney_official_careers",
+    "job_id": "10146000",
+    "title": "Lead Frontend Software Engineer - AI Assisted Engineering Practices",
+    "location": "Celebration, Florida",
+    "official_url": "https://www.disneycareers.com/en/job/celebration/lead-frontend-software-engineer-ai-assisted-engineering-practices/391/94498288272",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:35:43.632371+00:00",
+    "date_confidence": "high",
+    "description": ""
+  },
+  {
+    "company": "Disney",
+    "source": "disney_official_careers",
+    "job_id": "10132666",
+    "title": "Lead Software Engineer-AI Licensing & Publishing Systems",
+    "location": "Orlando, Florida / Glendale, California",
+    "official_url": "https://www.disneycareers.com/en/job/orlando/lead-software-engineer-ai-licensing-and-publishing-systems/391/87032371952",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:35:43.632371+00:00",
+    "date_confidence": "high",
+    "description": ""
+  },
+  {
+    "company": "Disney",
+    "source": "disney_official_careers",
+    "job_id": "10157864",
+    "title": "Director, Software Engineering",
+    "location": "Glendale, California / Orlando, Florida",
+    "official_url": "https://www.disneycareers.com/en/job/glendale/director-software-engineering/391/99718739296",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:35:43.632371+00:00",
+    "date_confidence": "high",
+    "description": ""
+  }
+]
+```
 
 ## eBay
 
@@ -3174,12 +3462,12 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://ebay.wd5.myworkdayjobs.com/apply`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 10
+- Pages/requests fetched: 20
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 23 / 0
-- Raw jobs found: 165
-- After US/location filtering: 23
-- With trustworthy posted_date: 23
+- Detail pages fetched/cache reused: 36 / 20
+- Raw jobs found: 248
+- After US/location filtering: 56
+- With trustworthy posted_date: 56
 - Errors/403s: none
 
 Sample normalized records:
@@ -3189,65 +3477,65 @@ Sample normalized records:
   {
     "company": "eBay",
     "source": "ebay_official_careers",
+    "job_id": "R0073091",
+    "title": "Senior Python Engineer, AI",
+    "location": "Remote, United States",
+    "official_url": "https://ebay.wd5.myworkdayjobs.com/apply/job/Remote-United-States/Senior-Python-Engineer--AI_R0073091",
+    "posted_date": "2026-04-17",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:36:09.402018+00:00",
+    "date_confidence": "high",
+    "description": "At eBay, we're more than a global ecommerce leader — we’re changing the way the world shops and sells. Our platform empowers millions of buyers and sellers in more than 190 markets"
+  },
+  {
+    "company": "eBay",
+    "source": "ebay_official_careers",
+    "job_id": "R0076084",
+    "title": "Mechanical Production Support Engineer",
+    "location": "Longmont",
+    "official_url": "https://ebay.wd5.myworkdayjobs.com/apply/job/Longmont/Mechanical-Production-Support-Engineer_R0076084",
+    "posted_date": "2026-08-07",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:36:09.402018+00:00",
+    "date_confidence": "high",
+    "description": "At eBay, we're more than a global ecommerce leader — we’re changing the way the world shops and sells. Our platform empowers millions of buyers and sellers in more than 190 markets"
+  },
+  {
+    "company": "eBay",
+    "source": "ebay_official_careers",
+    "job_id": "R0073001",
+    "title": "Director, AI Transformation",
+    "location": "San Jose; Portland; Austin",
+    "official_url": "https://ebay.wd5.myworkdayjobs.com/apply/job/San-Jose/Director--AI-Change-Enablement_R0073001",
+    "posted_date": "2026-08-25",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:36:09.402018+00:00",
+    "date_confidence": "high",
+    "description": "At eBay, we're more than a global ecommerce leader — we’re changing the way the world shops and sells. Our platform empowers millions of buyers and sellers in more than 190 markets"
+  },
+  {
+    "company": "eBay",
+    "source": "ebay_official_careers",
+    "job_id": "R0074541",
+    "title": "Director of Product, AI Listing",
+    "location": "San Jose",
+    "official_url": "https://ebay.wd5.myworkdayjobs.com/apply/job/San-Jose/Director-of-Product--Magical-Listing_R0074541",
+    "posted_date": "2026-06-04",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:36:09.402018+00:00",
+    "date_confidence": "high",
+    "description": "At eBay, we're more than a global ecommerce leader — we’re changing the way the world shops and sells. Our platform empowers millions of buyers and sellers in more than 190 markets"
+  },
+  {
+    "company": "eBay",
+    "source": "ebay_official_careers",
     "job_id": "R0076678",
     "title": "Software Engineer 2",
     "location": "San Jose",
     "official_url": "https://ebay.wd5.myworkdayjobs.com/apply/job/San-Jose/Software-Engineer-2_R0076678",
     "posted_date": "2026-08-26",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:16:47.239517+00:00",
-    "date_confidence": "high",
-    "description": "At eBay, we're more than a global ecommerce leader — we’re changing the way the world shops and sells. Our platform empowers millions of buyers and sellers in more than 190 markets"
-  },
-  {
-    "company": "eBay",
-    "source": "ebay_official_careers",
-    "job_id": "R0076679",
-    "title": "Software Engineer 3",
-    "location": "San Jose",
-    "official_url": "https://ebay.wd5.myworkdayjobs.com/apply/job/San-Jose/Software-Engineer-3_R0076679",
-    "posted_date": "2026-08-26",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:16:47.239517+00:00",
-    "date_confidence": "high",
-    "description": "At eBay, we're more than a global ecommerce leader — we’re changing the way the world shops and sells. Our platform empowers millions of buyers and sellers in more than 190 markets"
-  },
-  {
-    "company": "eBay",
-    "source": "ebay_official_careers",
-    "job_id": "R0076414",
-    "title": "MTS1 Software Engineer, Android",
-    "location": "Portland",
-    "official_url": "https://ebay.wd5.myworkdayjobs.com/apply/job/Portland/MTS1-Software-Engineer--Android_R0076414",
-    "posted_date": "2026-08-28",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:16:47.239517+00:00",
-    "date_confidence": "high",
-    "description": "At eBay, we're more than a global ecommerce leader — we’re changing the way the world shops and sells. Our platform empowers millions of buyers and sellers in more than 190 markets"
-  },
-  {
-    "company": "eBay",
-    "source": "ebay_official_careers",
-    "job_id": "R0075377",
-    "title": "Sr. MTS Software Engineer - Identity",
-    "location": "San Jose",
-    "official_url": "https://ebay.wd5.myworkdayjobs.com/apply/job/San-Jose/Sr-MTS-Software-Engineer---Identity_R0075377",
-    "posted_date": "2026-08-28",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:16:47.239517+00:00",
-    "date_confidence": "high",
-    "description": "At eBay, we're more than a global ecommerce leader — we’re changing the way the world shops and sells. Our platform empowers millions of buyers and sellers in more than 190 markets"
-  },
-  {
-    "company": "eBay",
-    "source": "ebay_official_careers",
-    "job_id": "R0069694",
-    "title": "Sr. MTS iOS Engineer, eBay Live",
-    "location": "San Jose",
-    "official_url": "https://ebay.wd5.myworkdayjobs.com/apply/job/San-Jose/Senior-Software-Engineer--iOS-_R0069694",
-    "posted_date": "2026-08-28",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:16:47.239517+00:00",
+    "fetched_at": "2026-08-31T23:36:09.402018+00:00",
     "date_confidence": "high",
     "description": "At eBay, we're more than a global ecommerce leader — we’re changing the way the world shops and sells. Our platform empowers millions of buyers and sellers in more than 190 markets"
   }
@@ -3256,31 +3544,175 @@ Sample normalized records:
 
 ## Qualcomm
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier B · verified official search captured; adapter deferred.']
+- Status: ok
+- Scraping method: HTTP GET Eightfold PCSX /api/pcsx/search (+ optional position_details)
+- Search URL/API: `https://careers.qualcomm.com/api/pcsx/search?domain=qualcomm.com&query=software+engineer&location=United+States&sort_by=timestamp&start=0&num=10`
+- Pagination: newest-first; minimum 2 pages, then two seen pages + one overlap page; otherwise count/cap
+- Pages/requests fetched: 26
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 112 / 0
+- Raw jobs found: 255
+- After US/location filtering: 112
+- With trustworthy posted_date: 112
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Qualcomm",
+    "source": "qualcomm_official_careers",
+    "job_id": "3094105",
+    "title": "Staff Program Manager",
+    "location": "Santa Clara, California, United States of America",
+    "official_url": "https://careers.qualcomm.com/careers/job/446719923641",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:36:46.272258+00:00",
+    "date_confidence": "high",
+    "description": "Company: Qualcomm Technologies, Inc. Job Area: Engineering Services Group, Engineering Services Group > Program Management General Summary: Ready to disrupt the AI and Data Center "
+  },
+  {
+    "company": "Qualcomm",
+    "source": "qualcomm_official_careers",
+    "job_id": "3095249",
+    "title": "CPU STA CAD Engineer",
+    "location": "Santa Clara, California, United States of America; Austin, Texas, United States of America; San Diego, California, United States of America",
+    "official_url": "https://careers.qualcomm.com/careers/job/446720476815",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:36:46.272258+00:00",
+    "date_confidence": "high",
+    "description": "Company: Qualcomm Technologies, Inc. Job Area: Engineering Group, Engineering Group > CPU Engineering General Summary: NUVIA is now part of Qualcomm. Our mission is to reimagine si"
+  },
+  {
+    "company": "Qualcomm",
+    "source": "qualcomm_official_careers",
+    "job_id": "3095405",
+    "title": "Staff Machine Learning Engineer – Automotive Cybersecurity",
+    "location": "San Diego, California, United States of America",
+    "official_url": "https://careers.qualcomm.com/careers/job/446720724336",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:36:46.272258+00:00",
+    "date_confidence": "high",
+    "description": "Company: Qualcomm Technologies, Inc. Job Area: Engineering Group, Engineering Group > Machine Learning Engineering General Summary: We are seeking a Staff Machine Learning Engineer"
+  },
+  {
+    "company": "Qualcomm",
+    "source": "qualcomm_official_careers",
+    "job_id": "3095472",
+    "title": "Sr, Technical Program Manager",
+    "location": "Santa Clara, California, United States of America; Austin, Texas, United States of America; Folsom, California, United States of America; San Diego, California, United States of America",
+    "official_url": "https://careers.qualcomm.com/careers/job/446720845422",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:36:46.272258+00:00",
+    "date_confidence": "high",
+    "description": "Company: Qualcomm Technologies, Inc. Job Area: Engineering Services Group, Engineering Services Group > Program Management General Summary: The successful candidate will own techni"
+  },
+  {
+    "company": "Qualcomm",
+    "source": "qualcomm_official_careers",
+    "job_id": "3095960",
+    "title": "Software Engineer, Robotics Simulation & AI Infrastructure",
+    "location": "San Diego, California, United States of America",
+    "official_url": "https://careers.qualcomm.com/careers/job/446720880729",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:36:46.272258+00:00",
+    "date_confidence": "high",
+    "description": "Company: Qualcomm Technologies, Inc. Job Area: Engineering Group, Engineering Group > Multimedia Systems General Summary: About Qualcomm Robotics The Qualcomm Advanced Robotics Tea"
+  }
+]
+```
 
 ## AMD
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
+- Status: ok
+- Scraping method: HTTP GET public Jibe/iCIMS jobs JSON
+- Search URL/API: `https://careers.amd.com/api/jobs`
+- Pagination: page=1,2,... per role query; stop on total/empty/repeat/short page
+- Pages/requests fetched: 15
+- Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · verified official search captured; adapter deferred.']
+- Raw jobs found: 1267
+- After US/location filtering: 445
+- With trustworthy posted_date: 445
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "AMD",
+    "source": "amd_official_careers",
+    "job_id": "86806",
+    "title": "Security Software Engineer",
+    "location": "San Jose, California",
+    "official_url": "",
+    "posted_date": "2026-06-17",
+    "updated_date": "2026-08-29",
+    "fetched_at": "2026-08-31T23:37:44.331609+00:00",
+    "date_confidence": "high",
+    "description": "WHAT YOU DO AT AMD CHANGES EVERYTHING At AMD, our mission is to build great products that accelerate next-generation computing experiences—from AI and data centers, to PCs, gaming "
+  },
+  {
+    "company": "AMD",
+    "source": "amd_official_careers",
+    "job_id": "90723",
+    "title": "Principal Software Developer – AI/ML Performance Validation & Systems Testing",
+    "location": "San Jose, California",
+    "official_url": "",
+    "posted_date": "2026-08-18",
+    "updated_date": "2026-08-29",
+    "fetched_at": "2026-08-31T23:37:44.331609+00:00",
+    "date_confidence": "high",
+    "description": "ADVANCE YOUR CAREER. ADVANCE THE WORLD. At AMD, we believe technology has the power to solve the world’s most important challenges. From advancing healthcare and scientific discove"
+  },
+  {
+    "company": "AMD",
+    "source": "amd_official_careers",
+    "job_id": "90795",
+    "title": "Software Engineer, Devops Platform Engineering",
+    "location": "Longmont, Colorado",
+    "official_url": "",
+    "posted_date": "2026-08-20",
+    "updated_date": "2026-08-29",
+    "fetched_at": "2026-08-31T23:37:44.331609+00:00",
+    "date_confidence": "high",
+    "description": "ADVANCE YOUR CAREER. ADVANCE THE WORLD. At AMD, we believe technology has the power to solve the world’s most important challenges. From advancing healthcare and scientific discove"
+  },
+  {
+    "company": "AMD",
+    "source": "amd_official_careers",
+    "job_id": "88610",
+    "title": "Fellow Software Engineer — AI Performance & Reliability",
+    "location": "San Jose, California",
+    "official_url": "",
+    "posted_date": "2026-07-30",
+    "updated_date": "2026-08-28",
+    "fetched_at": "2026-08-31T23:37:44.331609+00:00",
+    "date_confidence": "high",
+    "description": "ADVANCE YOUR CAREER. ADVANCE THE WORLD. At AMD, we believe technology can change lives for the better. It can heal us, entertain us, and make us more connected, productive, and und"
+  },
+  {
+    "company": "AMD",
+    "source": "amd_official_careers",
+    "job_id": "91102",
+    "title": "Senior Confidential Computing Software Engineer (Kubernetes & Virtualization)",
+    "location": "Austin, Texas",
+    "official_url": "",
+    "posted_date": "2026-08-27",
+    "updated_date": "2026-08-29",
+    "fetched_at": "2026-08-31T23:37:44.331609+00:00",
+    "date_confidence": "high",
+    "description": "ADVANCE YOUR CAREER. ADVANCE THE WORLD. At AMD, we believe technology has the power to solve the world’s most important challenges. From advancing healthcare and scientific discove"
+  }
+]
+```
 
 ## Zoom
 
@@ -3288,12 +3720,12 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://zoom.wd5.myworkdayjobs.com/Zoom`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 7
+- Pages/requests fetched: 19
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 45 / 0
-- Raw jobs found: 103
-- After US/location filtering: 45
-- With trustworthy posted_date: 45
+- Detail pages fetched/cache reused: 0 / 41
+- Raw jobs found: 178
+- After US/location filtering: 41
+- With trustworthy posted_date: 41
 - Errors/403s: none
 
 Sample normalized records:
@@ -3309,22 +3741,9 @@ Sample normalized records:
     "official_url": "https://zoom.wd5.myworkdayjobs.com/Zoom/job/San-Jose-CA/Video-AI-Engineer_R19356-1",
     "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:17:22.365010+00:00",
+    "fetched_at": "2026-08-31T23:38:03.473917+00:00",
     "date_confidence": "high",
     "description": "What you can expect As a Video AI Engineer, you'll enhance video codec standards to improve real-time video quality and performance in Zoom products. Work across our stack, develop"
-  },
-  {
-    "company": "Zoom",
-    "source": "zoom_official_careers",
-    "job_id": "R19591",
-    "title": "Audio Software Engineer",
-    "location": "San Jose (CA)",
-    "official_url": "https://zoom.wd5.myworkdayjobs.com/Zoom/job/San-Jose-CA/Audio-Software-Engineer_R19591",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:17:22.365010+00:00",
-    "date_confidence": "high",
-    "description": "Immigration sponsorship is not available for this position What you can expect: We are seeking a highly skilled and motivated Audio Software Engineer to join our team. The successf"
   },
   {
     "company": "Zoom",
@@ -3335,22 +3754,35 @@ Sample normalized records:
     "official_url": "https://zoom.wd5.myworkdayjobs.com/Zoom/job/Seattle-WA/Software-Developer-Engineer_R19597",
     "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:17:22.365010+00:00",
+    "fetched_at": "2026-08-31T23:38:03.473917+00:00",
     "date_confidence": "high",
     "description": "Immigration sponsorship is not available for this position What you can expect We are seeking a talented engineer to join our AI Agent Experience team to help build the next-genera"
   },
   {
     "company": "Zoom",
     "source": "zoom_official_careers",
-    "job_id": "R19467",
-    "title": "Security DevOps Engineer",
+    "job_id": "R19566",
+    "title": "Lead Technical Product Manager",
     "location": "San Jose (CA)",
-    "official_url": "https://zoom.wd5.myworkdayjobs.com/Zoom/job/San-Jose-CA/Security-DevOps-Engineer_R19467-1",
-    "posted_date": "2026-08-28",
+    "official_url": "https://zoom.wd5.myworkdayjobs.com/Zoom/job/San-Jose-CA/Product-Architect-Lead-Product-Manager_R19566-1",
+    "posted_date": "2026-08-29",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:17:22.365010+00:00",
+    "fetched_at": "2026-08-31T23:38:03.473917+00:00",
     "date_confidence": "high",
-    "description": "What You Can Expect As a DevOps Engineer on Zoom’s Security DevOps team, you will work on high-impact infrastructure initiatives that power some of Zoom’s most security-critical pr"
+    "description": "What You Can Expect You will own and drive Zoom's Enterprise Infrastructure portfolio - covering data sovereignty, network resilience, and cryptographic key management for regulate"
+  },
+  {
+    "company": "Zoom",
+    "source": "zoom_official_careers",
+    "job_id": "R19366",
+    "title": "AI Inference Engineer - Speech",
+    "location": "Seattle (WA); San Jose (CA)",
+    "official_url": "https://zoom.wd5.myworkdayjobs.com/Zoom/job/Seattle-WA/AI-Inference-Engineer---Speech_R19366-1",
+    "posted_date": "2026-08-26",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:38:03.473917+00:00",
+    "date_confidence": "high",
+    "description": "What you can expect We are looking for an AI Inference Engineer with a solid background in speech recognition and model inference. In this role, you will develop state-of-the-art a"
   },
   {
     "company": "Zoom",
@@ -3361,7 +3793,7 @@ Sample normalized records:
     "official_url": "https://zoom.wd5.myworkdayjobs.com/Zoom/job/Seattle-WA/Software-Engineer_R19581",
     "posted_date": "2026-08-26",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:17:22.365010+00:00",
+    "fetched_at": "2026-08-31T23:38:03.473917+00:00",
     "date_confidence": "high",
     "description": "Immigration sponsorship is not available for this position What you can expect: We’re building the next-generation AI-native knowledge platform to help organizations easily access "
   }
@@ -3380,7 +3812,7 @@ Sample normalized records:
 - Raw jobs found: 0
 - After US/location filtering: 0
 - With trustworthy posted_date: 0
-- Errors/403s: ['Tier B · verified official search captured; adapter deferred.']
+- Errors/403s: ['Tier B · higher.gs.com is a custom Apollo/GraphQL app with empty server state and rotating client-bundle query definitions; no stable anonymous filtered endpoint was found.']
 
 ## Pure Storage
 
@@ -3391,9 +3823,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 322
-- After US/location filtering: 205
-- With trustworthy posted_date: 205
+- Raw jobs found: 324
+- After US/location filtering: 198
+- With trustworthy posted_date: 198
 - Errors/403s: none
 
 Sample normalized records:
@@ -3409,7 +3841,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/purestorage/jobs/8157796",
     "posted_date": "2026-08-27",
     "updated_date": "2026-08-27",
-    "fetched_at": "2026-08-31T18:17:53.655687+00:00",
+    "fetched_at": "2026-08-31T23:38:17.156739+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quart"
   },
@@ -3422,7 +3854,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/purestorage/jobs/8145906",
     "posted_date": "2026-08-24",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-08-31T18:17:53.655687+00:00",
+    "fetched_at": "2026-08-31T23:38:17.156739+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quart"
   },
@@ -3435,7 +3867,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/purestorage/jobs/8059788",
     "posted_date": "2026-07-13",
     "updated_date": "2026-08-11",
-    "fetched_at": "2026-08-31T18:17:53.655687+00:00",
+    "fetched_at": "2026-08-31T23:38:17.156739+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quart"
   },
@@ -3448,20 +3880,20 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/purestorage/jobs/8081943",
     "posted_date": "2026-07-23",
     "updated_date": "2026-07-23",
-    "fetched_at": "2026-08-31T18:17:53.655687+00:00",
+    "fetched_at": "2026-08-31T23:38:17.156739+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quart"
   },
   {
     "company": "Pure Storage",
     "source": "pure_storage_official_careers",
-    "job_id": "8119401",
-    "title": "Account Executive, FSI, South Africa",
-    "location": "Johannesburg, South Africa",
-    "official_url": "https://job-boards.greenhouse.io/purestorage/jobs/8119401",
-    "posted_date": "2026-08-26",
-    "updated_date": "2026-08-26",
-    "fetched_at": "2026-08-31T18:17:53.655687+00:00",
+    "job_id": "8103422",
+    "title": "Account Executive, SLED (TOLA)",
+    "location": "Remote, Oklahoma; Oklahoma, United States",
+    "official_url": "https://job-boards.greenhouse.io/purestorage/jobs/8103422",
+    "posted_date": "2026-08-03",
+    "updated_date": "2026-08-11",
+    "fetched_at": "2026-08-31T23:38:17.156739+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quart"
   }
@@ -3478,8 +3910,8 @@ Sample normalized records:
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
 - Raw jobs found: 853
-- After US/location filtering: 500
-- With trustworthy posted_date: 500
+- After US/location filtering: 484
+- With trustworthy posted_date: 484
 - Errors/403s: none
 
 Sample normalized records:
@@ -3495,7 +3927,7 @@ Sample normalized records:
     "official_url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7726495002",
     "posted_date": "2025-05-09",
     "updated_date": "2026-08-18",
-    "fetched_at": "2026-08-31T18:17:54.584035+00:00",
+    "fetched_at": "2026-08-31T23:38:17.848837+00:00",
     "date_confidence": "high",
     "description": "<p class=\"p1\">As we continue to increase our presence in the world of Unified Data Analytics and AI, we're looking for a creative, driven, and execution-oriented Enterprise Account"
   },
@@ -3508,7 +3940,7 @@ Sample normalized records:
     "official_url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8604614002",
     "posted_date": "2026-07-01",
     "updated_date": "2026-08-18",
-    "fetched_at": "2026-08-31T18:17:54.584035+00:00",
+    "fetched_at": "2026-08-31T23:38:17.848837+00:00",
     "date_confidence": "high",
     "description": "<p data-pm-slice=\"1 1 []\">GAQ327R255</p> <p data-renderer-start-pos=\"1648\">While candidates in the listed location(s) are encouraged for this role, candidates in other locations wi"
   },
@@ -3521,7 +3953,7 @@ Sample normalized records:
     "official_url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8546367002",
     "posted_date": "2026-05-13",
     "updated_date": "2026-08-18",
-    "fetched_at": "2026-08-31T18:17:54.584035+00:00",
+    "fetched_at": "2026-08-31T23:38:17.848837+00:00",
     "date_confidence": "high",
     "description": "<p><strong>AI Engineer - FDE (Forward Deployed Engineer) (ALL LEVELS)</strong></p> <p><strong>CSQ327R177</strong></p> <p><strong>Mission</strong></p> <p>The AI Forward Deployed Eng"
   },
@@ -3534,7 +3966,7 @@ Sample normalized records:
     "official_url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8638847002",
     "posted_date": "2026-07-30",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:17:54.584035+00:00",
+    "fetched_at": "2026-08-31T23:38:17.848837+00:00",
     "date_confidence": "high",
     "description": "<p data-pm-slice=\"1 1 []\"><span style=\"font-family: helvetica, arial, sans-serif;\">SLSQ327R637</span></p> <p><span style=\"font-family: helvetica, arial, sans-serif;\">At Databricks,"
   },
@@ -3547,7 +3979,7 @@ Sample normalized records:
     "official_url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7803651002",
     "posted_date": "2026-08-25",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:17:54.584035+00:00",
+    "fetched_at": "2026-08-31T23:38:17.848837+00:00",
     "date_confidence": "high",
     "description": "<p data-renderer-start-pos=\"1648\">With the most complete data &amp; AI stack on the market, Databricks is well suited to be the strategic partner for our customers’ AI transformati"
   }
@@ -3563,9 +3995,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 231
-- After US/location filtering: 208
-- With trustworthy posted_date: 208
+- Raw jobs found: 228
+- After US/location filtering: 206
+- With trustworthy posted_date: 206
 - Errors/403s: none
 
 Sample normalized records:
@@ -3581,20 +4013,7 @@ Sample normalized records:
     "official_url": "https://careers.roblox.com/jobs/7350081?gh_jid=7350081",
     "posted_date": "2025-10-27",
     "updated_date": "2026-08-17",
-    "fetched_at": "2026-08-31T18:17:55.491016+00:00",
-    "date_confidence": "high",
-    "description": "<div class=\"content-intro\"><p><span style=\"font-weight: 400;\">Every day, tens of millions of people come to Roblox to explore, create, play, learn, and connect with friends in 3D i"
-  },
-  {
-    "company": "Roblox",
-    "source": "roblox_official_careers",
-    "job_id": "8027588",
-    "title": "[2026] Senior Machine Learning Engineer (Systems), Embodied AI/NPCs, ML Platform - PhD Early Career",
-    "location": "San Mateo, CA, United States",
-    "official_url": "https://careers.roblox.com/jobs/8027588?gh_jid=8027588",
-    "posted_date": "2026-06-30",
-    "updated_date": "2026-08-17",
-    "fetched_at": "2026-08-31T18:17:55.491016+00:00",
+    "fetched_at": "2026-08-31T23:38:19.065329+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-weight: 400;\">Every day, tens of millions of people come to Roblox to explore, create, play, learn, and connect with friends in 3D i"
   },
@@ -3607,7 +4026,20 @@ Sample normalized records:
     "official_url": "https://careers.roblox.com/jobs/8027587?gh_jid=8027587",
     "posted_date": "2026-06-30",
     "updated_date": "2026-08-17",
-    "fetched_at": "2026-08-31T18:17:55.491016+00:00",
+    "fetched_at": "2026-08-31T23:38:19.065329+00:00",
+    "date_confidence": "high",
+    "description": "<div class=\"content-intro\"><p><span style=\"font-weight: 400;\">Every day, tens of millions of people come to Roblox to explore, create, play, learn, and connect with friends in 3D i"
+  },
+  {
+    "company": "Roblox",
+    "source": "roblox_official_careers",
+    "job_id": "8027588",
+    "title": "[2026] Senior Machine Learning Engineer (Systems), Embodied AI/NPCs, ML Platform - PhD Early Career",
+    "location": "San Mateo, CA, United States",
+    "official_url": "https://careers.roblox.com/jobs/8027588?gh_jid=8027588",
+    "posted_date": "2026-06-30",
+    "updated_date": "2026-08-17",
+    "fetched_at": "2026-08-31T23:38:19.065329+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-weight: 400;\">Every day, tens of millions of people come to Roblox to explore, create, play, learn, and connect with friends in 3D i"
   },
@@ -3620,7 +4052,7 @@ Sample normalized records:
     "official_url": "https://careers.roblox.com/jobs/8072244?gh_jid=8072244",
     "posted_date": "2026-08-05",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:17:55.491016+00:00",
+    "fetched_at": "2026-08-31T23:38:19.065329+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-weight: 400;\">Every day, tens of millions of people come to Roblox to explore, create, play, learn, and connect with friends in 3D i"
   },
@@ -3633,7 +4065,7 @@ Sample normalized records:
     "official_url": "https://careers.roblox.com/jobs/8054257?gh_jid=8054257",
     "posted_date": "2026-07-10",
     "updated_date": "2026-08-17",
-    "fetched_at": "2026-08-31T18:17:55.491016+00:00",
+    "fetched_at": "2026-08-31T23:38:19.065329+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-weight: 400;\">Every day, tens of millions of people come to Roblox to explore, create, play, learn, and connect with friends in 3D i"
   }
@@ -3649,9 +4081,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 169
-- After US/location filtering: 100
-- With trustworthy posted_date: 100
+- Raw jobs found: 170
+- After US/location filtering: 99
+- With trustworthy posted_date: 99
 - Errors/403s: none
 
 Sample normalized records:
@@ -3667,7 +4099,7 @@ Sample normalized records:
     "official_url": "https://careers.airbnb.com/positions/7834481?gh_jid=7834481",
     "posted_date": "2026-04-21",
     "updated_date": "2026-07-23",
-    "fetched_at": "2026-08-31T18:17:55.730025+00:00",
+    "fetched_at": "2026-08-31T23:38:19.486045+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: helvetica, arial, sans-serif; font-size: 12pt;\">Airbnb was born in 2007 when two hosts welcomed three guests to their San Fr"
   },
@@ -3680,7 +4112,7 @@ Sample normalized records:
     "official_url": "https://careers.airbnb.com/positions/8144691?gh_jid=8144691",
     "posted_date": "2026-08-20",
     "updated_date": "2026-08-21",
-    "fetched_at": "2026-08-31T18:17:55.730025+00:00",
+    "fetched_at": "2026-08-31T23:38:19.486045+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: helvetica, arial, sans-serif; font-size: 12pt;\">Airbnb was born in 2007 when two hosts welcomed three guests to their San Fr"
   },
@@ -3693,7 +4125,7 @@ Sample normalized records:
     "official_url": "https://careers.airbnb.com/positions/7839229?gh_jid=7839229",
     "posted_date": "2026-04-24",
     "updated_date": "2026-04-24",
-    "fetched_at": "2026-08-31T18:17:55.730025+00:00",
+    "fetched_at": "2026-08-31T23:38:19.486045+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: helvetica, arial, sans-serif; font-size: 12pt;\">Airbnb was born in 2007 when two hosts welcomed three guests to their San Fr"
   },
@@ -3706,7 +4138,7 @@ Sample normalized records:
     "official_url": "https://careers.airbnb.com/positions/8104102?gh_jid=8104102",
     "posted_date": "2026-08-03",
     "updated_date": "2026-08-03",
-    "fetched_at": "2026-08-31T18:17:55.730025+00:00",
+    "fetched_at": "2026-08-31T23:38:19.486045+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: helvetica, arial, sans-serif; font-size: 12pt;\">Airbnb was born in 2007 when two hosts welcomed three guests to their San Fr"
   },
@@ -3719,7 +4151,7 @@ Sample normalized records:
     "official_url": "https://careers.airbnb.com/positions/8153094?gh_jid=8153094",
     "posted_date": "2026-08-24",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-08-31T18:17:55.730025+00:00",
+    "fetched_at": "2026-08-31T23:38:19.486045+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: helvetica, arial, sans-serif; font-size: 12pt;\">Airbnb was born in 2007 when two hosts welcomed three guests to their San Fr"
   }
@@ -3735,9 +4167,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 570
-- After US/location filtering: 454
-- With trustworthy posted_date: 454
+- Raw jobs found: 569
+- After US/location filtering: 453
+- With trustworthy posted_date: 453
 - Errors/403s: none
 
 Sample normalized records:
@@ -3753,7 +4185,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/anthropic/jobs/4461450008",
     "posted_date": "2024-12-20",
     "updated_date": "2026-08-21",
-    "fetched_at": "2026-08-31T18:17:55.940696+00:00",
+    "fetched_at": "2026-08-31T23:38:19.814595+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2><strong>About Anthropic</strong></h2> <p>Anthropic’s mission is to create reliable, interpretable, and steerable AI systems. We want AI to be safe an"
   },
@@ -3766,7 +4198,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/anthropic/jobs/5400138008",
     "posted_date": "2026-08-24",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-08-31T18:17:55.940696+00:00",
+    "fetched_at": "2026-08-31T23:38:19.814595+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2><strong>About Anthropic</strong></h2> <p>Anthropic’s mission is to create reliable, interpretable, and steerable AI systems. We want AI to be safe an"
   },
@@ -3779,7 +4211,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/anthropic/jobs/5205545008",
     "posted_date": "2026-08-20",
     "updated_date": "2026-08-21",
-    "fetched_at": "2026-08-31T18:17:55.940696+00:00",
+    "fetched_at": "2026-08-31T23:38:19.814595+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2><strong>About Anthropic</strong></h2> <p>Anthropic’s mission is to create reliable, interpretable, and steerable AI systems. We want AI to be safe an"
   },
@@ -3792,7 +4224,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/anthropic/jobs/5390966008",
     "posted_date": "2026-08-25",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:17:55.940696+00:00",
+    "fetched_at": "2026-08-31T23:38:19.814595+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2><strong>About Anthropic</strong></h2> <p>Anthropic’s mission is to create reliable, interpretable, and steerable AI systems. We want AI to be safe an"
   },
@@ -3805,7 +4237,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/anthropic/jobs/5383242008",
     "posted_date": "2026-08-07",
     "updated_date": "2026-08-21",
-    "fetched_at": "2026-08-31T18:17:55.940696+00:00",
+    "fetched_at": "2026-08-31T23:38:19.814595+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2><strong>About Anthropic</strong></h2> <p>Anthropic’s mission is to create reliable, interpretable, and steerable AI systems. We want AI to be safe an"
   }
@@ -3821,9 +4253,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 34
-- After US/location filtering: 24
-- With trustworthy posted_date: 24
+- Raw jobs found: 35
+- After US/location filtering: 25
+- With trustworthy posted_date: 25
 - Errors/403s: none
 
 Sample normalized records:
@@ -3833,39 +4265,26 @@ Sample normalized records:
   {
     "company": "AppLovin",
     "source": "applovin_official_careers",
-    "job_id": "4705312006",
-    "title": "Account Executive",
-    "location": "Toronto; Remote - United States",
-    "official_url": "https://boards.greenhouse.io/applovin/jobs/4705312006?gh_jid=4705312006",
-    "posted_date": "2026-08-14",
-    "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:17:56.694574+00:00",
-    "date_confidence": "high",
-    "description": "<div class=\"content-intro\"><h3><span style=\"font-weight: 400;\"><strong>About AppLovin</strong></span></h3> <p><a href=\"https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%"
-  },
-  {
-    "company": "AppLovin",
-    "source": "applovin_official_careers",
     "job_id": "4703378006",
     "title": "Account Executive",
     "location": "New York City, NY; Remote - United States",
     "official_url": "https://boards.greenhouse.io/applovin/jobs/4703378006?gh_jid=4703378006",
     "posted_date": "2026-08-07",
-    "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:17:56.694574+00:00",
+    "updated_date": "2026-08-31",
+    "fetched_at": "2026-08-31T23:38:21.144771+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><span style=\"font-weight: 400;\"><strong>About AppLovin</strong></span></h3> <p><a href=\"https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%"
   },
   {
     "company": "AppLovin",
     "source": "applovin_official_careers",
-    "job_id": "4700129006",
-    "title": "Agency Growth Lead",
-    "location": "Los Angeles/Santa Monica, CA; Remote - United States",
-    "official_url": "https://boards.greenhouse.io/applovin/jobs/4700129006?gh_jid=4700129006",
-    "posted_date": "2026-07-28",
-    "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:17:56.694574+00:00",
+    "job_id": "4705312006",
+    "title": "Account Executive",
+    "location": "Toronto; Remote - United States",
+    "official_url": "https://boards.greenhouse.io/applovin/jobs/4705312006?gh_jid=4705312006",
+    "posted_date": "2026-08-14",
+    "updated_date": "2026-08-31",
+    "fetched_at": "2026-08-31T23:38:21.144771+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><span style=\"font-weight: 400;\"><strong>About AppLovin</strong></span></h3> <p><a href=\"https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%"
   },
@@ -3878,20 +4297,33 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/applovin/jobs/4705316006?gh_jid=4705316006",
     "posted_date": "2026-08-14",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:17:56.694574+00:00",
+    "fetched_at": "2026-08-31T23:38:21.144771+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><span style=\"font-weight: 400;\"><strong>About AppLovin</strong></span></h3> <p><a href=\"https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%"
   },
   {
     "company": "AppLovin",
     "source": "applovin_official_careers",
-    "job_id": "4622998006",
-    "title": "Business Development Associate",
+    "job_id": "4700129006",
+    "title": "Agency Growth Lead",
     "location": "Los Angeles/Santa Monica, CA; Remote - United States",
-    "official_url": "https://boards.greenhouse.io/applovin/jobs/4622998006?gh_jid=4622998006",
-    "posted_date": "2026-01-07",
+    "official_url": "https://boards.greenhouse.io/applovin/jobs/4700129006?gh_jid=4700129006",
+    "posted_date": "2026-07-28",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:17:56.694574+00:00",
+    "fetched_at": "2026-08-31T23:38:21.144771+00:00",
+    "date_confidence": "high",
+    "description": "<div class=\"content-intro\"><h3><span style=\"font-weight: 400;\"><strong>About AppLovin</strong></span></h3> <p><a href=\"https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%"
+  },
+  {
+    "company": "AppLovin",
+    "source": "applovin_official_careers",
+    "job_id": "4611567006",
+    "title": "Business Development Associate",
+    "location": "New York",
+    "official_url": "https://boards.greenhouse.io/applovin/jobs/4611567006?gh_jid=4611567006",
+    "posted_date": "2025-10-25",
+    "updated_date": "2026-08-25",
+    "fetched_at": "2026-08-31T23:38:21.144771+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><span style=\"font-weight: 400;\"><strong>About AppLovin</strong></span></h3> <p><a href=\"https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%"
   }
@@ -3900,17 +4332,89 @@ Sample normalized records:
 
 ## ByteDance
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
+- Status: ok
+- Scraping method: HTTP POST public supplier /search/job/posts
+- Search URL/API: `https://jobs.bytedance.com/api/v1/public/supplier/search/job/posts`
+- Pagination: offset=0,50,...; limit=50; US city filter
+- Pages/requests fetched: 24
+- Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
+- Raw jobs found: 1066
+- After US/location filtering: 436
 - With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · High-value; likely shares patterns with TikTok but treat search surface separately until verified.']
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "ByteDance",
+    "source": "bytedance_official_careers",
+    "job_id": "7571650125270370613",
+    "title": "Machine Learning Engineer, AI Coding Tools",
+    "location": "San Jose, California, United States of America",
+    "official_url": "https://joinbytedance.com/search/7571650125270370613",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:38:21.286531+00:00",
+    "date_confidence": "unknown",
+    "description": "About the team: TRAE (The Real AI Engineer) is an intelligent engineer capable of understanding requirements, orchestrating tools, and independently completing development tasks, p"
+  },
+  {
+    "company": "ByteDance",
+    "source": "bytedance_official_careers",
+    "job_id": "7668212952030841093",
+    "title": "Software Engineer Intern (AI Platform) - 2027 Summer",
+    "location": "San Jose, California, United States of America",
+    "official_url": "https://joinbytedance.com/search/7668212952030841093",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:38:21.286531+00:00",
+    "date_confidence": "unknown",
+    "description": "The AI Platform team is a team focusing on building advanced end-to-end AI production pipelines, including deep learning model training, optimization, deployment and applications. "
+  },
+  {
+    "company": "ByteDance",
+    "source": "bytedance_official_careers",
+    "job_id": "7669859743775000885",
+    "title": "Software Engineer Graduate (Data-Intelligent Creation-AI Platform-Global Vision Engineering) - 2027 Start",
+    "location": "San Jose, California, United States of America",
+    "official_url": "https://joinbytedance.com/search/7669859743775000885",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:38:21.286531+00:00",
+    "date_confidence": "unknown",
+    "description": "The Intelligent Creation - AI Platform team is a team focusing on building advanced end-to-end AI production pipelines, including deep learning model training, optimization, deploy"
+  },
+  {
+    "company": "ByteDance",
+    "source": "bytedance_official_careers",
+    "job_id": "7499641201977723143",
+    "title": "Software Engineer / Researcher, AI-Native database systems",
+    "location": "San Jose, California, United States of America",
+    "official_url": "https://joinbytedance.com/search/7499641201977723143",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:38:21.286531+00:00",
+    "date_confidence": "unknown",
+    "description": "About the Team Join ByteDance’s database R&D team, where you’ll build and own cutting-edge database products supporting ByteDance’s global infrastructure. Our diverse portfolio inc"
+  },
+  {
+    "company": "ByteDance",
+    "source": "bytedance_official_careers",
+    "job_id": "7542987377129457938",
+    "title": "Senior Software Engineer / Researcher, AI-Native database systems",
+    "location": "San Jose, California, United States of America",
+    "official_url": "https://joinbytedance.com/search/7542987377129457938",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:38:21.286531+00:00",
+    "date_confidence": "unknown",
+    "description": "About the Team Join ByteDance’s database R&D team, where you’ll build and own cutting-edge database products supporting Bytedance’s global infrastructure. Our diverse portfolio inc"
+  }
+]
+```
 
 ## Chime
 
@@ -3921,9 +4425,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 64
-- After US/location filtering: 64
-- With trustworthy posted_date: 64
+- Raw jobs found: 65
+- After US/location filtering: 65
+- With trustworthy posted_date: 65
 - Errors/403s: none
 
 Sample normalized records:
@@ -3939,7 +4443,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/chime/jobs/8609153002?gh_jid=8609153002",
     "posted_date": "2026-07-22",
     "updated_date": "2026-08-28",
-    "fetched_at": "2026-08-31T18:17:56.814310+00:00",
+    "fetched_at": "2026-08-31T23:38:51.204406+00:00",
     "date_confidence": "high",
     "description": "<h2><span style=\"font-family: helvetica, arial, sans-serif;\"><strong>About the Role</strong></span></h2> <p><span style=\"font-family: helvetica, arial, sans-serif;\">Chime is lookin"
   },
@@ -3952,7 +4456,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/chime/jobs/8684363002?gh_jid=8684363002",
     "posted_date": "2026-08-26",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:17:56.814310+00:00",
+    "fetched_at": "2026-08-31T23:38:51.204406+00:00",
     "date_confidence": "high",
     "description": "<h2><strong>About the Role</strong></h2> <p>As our Performance Creative Program expands, we're looking for an experienced Associate Creative Director to guide a team of designers, "
   },
@@ -3965,7 +4469,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/chime/jobs/8656772002?gh_jid=8656772002",
     "posted_date": "2026-08-03",
     "updated_date": "2026-08-28",
-    "fetched_at": "2026-08-31T18:17:56.814310+00:00",
+    "fetched_at": "2026-08-31T23:38:51.204406+00:00",
     "date_confidence": "high",
     "description": "<h2>About the Role</h2> <p>We are hiring a Chief of Staff / Head of Legal Operations to join our growing Legal team. This role sits at the intersection of executive strategy and le"
   },
@@ -3978,7 +4482,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/chime/jobs/8564916002?gh_jid=8564916002",
     "posted_date": "2026-05-29",
     "updated_date": "2026-08-28",
-    "fetched_at": "2026-08-31T18:17:56.814310+00:00",
+    "fetched_at": "2026-08-31T23:38:51.204406+00:00",
     "date_confidence": "high",
     "description": "<h2><span style=\"font-family: helvetica, arial, sans-serif;\"><strong>About the role</strong></span></h2> <p><span style=\"font-family: helvetica, arial, sans-serif;\">We are hiring a"
   },
@@ -3991,7 +4495,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/chime/jobs/8586430002?gh_jid=8586430002",
     "posted_date": "2026-06-10",
     "updated_date": "2026-06-29",
-    "fetched_at": "2026-08-31T18:17:56.814310+00:00",
+    "fetched_at": "2026-08-31T23:38:51.204406+00:00",
     "date_confidence": "high",
     "description": "<h2><span style=\"font-family: helvetica, arial, sans-serif;\"><strong>About the role</strong></span></h2> <p class=\"p2\">We're looking for a Growth Product Scientist to partner with "
   }
@@ -4010,21 +4514,93 @@ Sample normalized records:
 - Raw jobs found: 0
 - After US/location filtering: 0
 - With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · High-value SWE/quant; inspect search feed. Some roles may have restrictions but not blanket US-person-only.']
+- Errors/403s: ['Tier A · re-tested Open Opportunities with a GitHub Actions-compatible anonymous client on 2026-08-31; Cloudflare still returns its managed challenge (HTTP 403), so no server-rendered job rows are available without bypassing protection.']
 
 ## Dell
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · Large SWE employer; inspect ATS before custom work.']
+- Status: ok
+- Scraping method: HTTP GET Oracle Cloud HCM recruitingCEJobRequisitions (+ details)
+- Search URL/API: `https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions?keyword=software+engineer`
+- Pagination: finder offset=0,20,... ; limit=20; stop on empty/repeat or TotalJobsCount
+- Pages/requests fetched: 24
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 79 / 0
+- Raw jobs found: 454
+- After US/location filtering: 79
+- With trustworthy posted_date: 79
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Dell",
+    "source": "dell_official_careers",
+    "job_id": "295521",
+    "title": "Senior Principal Software Engineer - (Modernization, Automation & AI)",
+    "location": "Round Rock, TX, United States",
+    "official_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/295521",
+    "posted_date": "2026-07-24",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:38:51.471027+00:00",
+    "date_confidence": "high",
+    "description": "Senior ServiceNow Developer (Modernization, Automation & AI) Be a part of a team that’s ensuring Dell Technologies' product integrity and customer satisfaction. Our IT Software Eng"
+  },
+  {
+    "company": "Dell",
+    "source": "dell_official_careers",
+    "job_id": "294077",
+    "title": "Senior Software Engineer - Data Protection Software Engineering (C, C++)",
+    "location": "Santa Clara, CA, United States",
+    "official_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/294077",
+    "posted_date": "2026-08-16",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:38:51.471027+00:00",
+    "date_confidence": "high",
+    "description": "Senior Software Engineer - Data Protection Software Engineering (C, C++) Infrastructure Solutions Group (ISG) builds the products that power infrastructure, solutions, and data man"
+  },
+  {
+    "company": "Dell",
+    "source": "dell_official_careers",
+    "job_id": "296853",
+    "title": "Consultant, Commodity Management",
+    "location": "Austin, TX, United States",
+    "official_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/296853",
+    "posted_date": "2026-08-28",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:38:51.471027+00:00",
+    "date_confidence": "high",
+    "description": "Consultant, Commodity Management — AI Server A ground-breaking company making game-changing products needs an exceptional supply chain. Commodity Management within the PowerEdge Su"
+  },
+  {
+    "company": "Dell",
+    "source": "dell_official_careers",
+    "job_id": "294076",
+    "title": "Software Engineer - Data Protection Software Engineering",
+    "location": "Santa Clara, CA, United States",
+    "official_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/294076",
+    "posted_date": "2026-08-07",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:38:51.471027+00:00",
+    "date_confidence": "high",
+    "description": "Software Engineer - Data Protection Software Engineering Infrastructure Solutions Group (ISG) builds the products that power infrastructure, solutions, and data management our cust"
+  },
+  {
+    "company": "Dell",
+    "source": "dell_official_careers",
+    "job_id": "297947",
+    "title": "Senior Systems Engineer, Data Management",
+    "location": "NC, United States",
+    "official_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/297947",
+    "posted_date": "2026-08-25",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:38:51.471027+00:00",
+    "date_confidence": "high",
+    "description": "Senior Systems Engineer, Data Management Our field sales professionals rely on proactive technical support during the sales process – and our expert Systems Engineering team always"
+  }
+]
+```
 
 ## Dropbox
 
@@ -4053,7 +4629,7 @@ Sample normalized records:
     "official_url": "https://jobs.dropbox.com/listing/8107794?gh_jid=8107794",
     "posted_date": "2026-08-07",
     "updated_date": "2026-08-07",
-    "fetched_at": "2026-08-31T18:17:57.225275+00:00",
+    "fetched_at": "2026-08-31T23:39:34.173631+00:00",
     "date_confidence": "high",
     "description": "<h2 class=\"p1\"><span class=\"s1\">Role Description</span></h2> <p><span class=\" author-d-iz88z86z86za0dz67zz78zz78zz74zz68zjz80zz71z9iz90z95gas6hz75zjz77zz90zpz71zz80zeoz80zz68zlz66z"
   },
@@ -4066,7 +4642,7 @@ Sample normalized records:
     "official_url": "https://jobs.dropbox.com/listing/8048847?gh_jid=8048847",
     "posted_date": "2026-07-22",
     "updated_date": "2026-08-05",
-    "fetched_at": "2026-08-31T18:17:57.225275+00:00",
+    "fetched_at": "2026-08-31T23:39:34.173631+00:00",
     "date_confidence": "high",
     "description": "<h2 class=\"p1\"><span class=\"s1\">Role Description</span></h2> <p><span class=\" author-d-1gg9uz65z1iz85zgdz68zmqkz84zo2qowz80zsz81z8nqz122zdfz68z5coz87zsz73zz76zipqu3z86zmz88zz81zcth"
   },
@@ -4079,7 +4655,7 @@ Sample normalized records:
     "official_url": "https://jobs.dropbox.com/listing/8048848?gh_jid=8048848",
     "posted_date": "2026-07-22",
     "updated_date": "2026-08-05",
-    "fetched_at": "2026-08-31T18:17:57.225275+00:00",
+    "fetched_at": "2026-08-31T23:39:34.173631+00:00",
     "date_confidence": "high",
     "description": "<h2 class=\"p1\"><span class=\"s1\">Role Description</span></h2> <p><span class=\" author-d-1gg9uz65z1iz85zgdz68zmqkz84zo2qowz80zsz81z8nqz122zdfz68z5coz87zsz73zz76zipqu3z86zmz88zz81zcth"
   },
@@ -4092,7 +4668,7 @@ Sample normalized records:
     "official_url": "https://jobs.dropbox.com/listing/8126572?gh_jid=8126572",
     "posted_date": "2026-08-18",
     "updated_date": "2026-08-18",
-    "fetched_at": "2026-08-31T18:17:57.225275+00:00",
+    "fetched_at": "2026-08-31T23:39:34.173631+00:00",
     "date_confidence": "high",
     "description": "<h2 class=\"p1\"><span class=\"s1\">Role Description</span></h2> <p><span class=\" author-d-iz88z86z86za0dz67zz78zz78zz74zz68zjz80zz71z9iz90z9yz88zz69zpz75zz65zpcz87zkdtuz90zz88zz87z4ez"
   },
@@ -4105,7 +4681,7 @@ Sample normalized records:
     "official_url": "https://jobs.dropbox.com/listing/8126575?gh_jid=8126575",
     "posted_date": "2026-08-18",
     "updated_date": "2026-08-18",
-    "fetched_at": "2026-08-31T18:17:57.225275+00:00",
+    "fetched_at": "2026-08-31T23:39:34.173631+00:00",
     "date_confidence": "high",
     "description": "<h2 class=\"p1\"><span class=\"s1\">Role Description</span></h2> <p><span class=\" author-d-iz88z86z86za0dz67zz78zz78zz74zz68zjz80zz71z9iz90z9yz88zz69zpz75zz65zpcz87zkdtuz90zz88zz87z4ez"
   }
@@ -4114,31 +4690,175 @@ Sample normalized records:
 
 ## Expedia Group
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · Large software hiring volume; inspect search API.']
+- Status: ok
+- Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
+- Search URL/API: `https://expedia.wd108.myworkdayjobs.com/search`
+- Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
+- Pages/requests fetched: 22
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 63 / 0
+- Raw jobs found: 385
+- After US/location filtering: 63
+- With trustworthy posted_date: 63
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Expedia Group",
+    "source": "expedia_group_official_careers",
+    "job_id": "R-101964",
+    "title": "Senior Software Development Engineer",
+    "location": "USA - California - San Jose",
+    "official_url": "https://expedia.wd108.myworkdayjobs.com/search/job/USA---California---San-Jose/Senior-Software-Development-Engineer_R-101964-1",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:39:34.365741+00:00",
+    "date_confidence": "high",
+    "description": "At Expedia Group, we help travelers explore the world, one journey at a time. As a global travel company powered by passionate people, trusted partnerships, and leading technology,"
+  },
+  {
+    "company": "Expedia Group",
+    "source": "expedia_group_official_careers",
+    "job_id": "R-109258",
+    "title": "Senior Technical Program Manager",
+    "location": "Washington - Seattle Campus",
+    "official_url": "https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Senior-Technical-Program-Manager_R-109258-2",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:39:34.365741+00:00",
+    "date_confidence": "high",
+    "description": "At Expedia Group, we help travelers explore the world, one journey at a time. As a global travel company powered by passionate people, trusted partnerships, and leading technology,"
+  },
+  {
+    "company": "Expedia Group",
+    "source": "expedia_group_official_careers",
+    "job_id": "R-107935",
+    "title": "Android Engineer III",
+    "location": "Washington - Seattle Campus",
+    "official_url": "https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Mobile-Engineer-III_R-107935-1",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:39:34.365741+00:00",
+    "date_confidence": "high",
+    "description": "At Expedia Group, we help travelers explore the world, one journey at a time. As a global travel company powered by passionate people, trusted partnerships, and leading technology,"
+  },
+  {
+    "company": "Expedia Group",
+    "source": "expedia_group_official_careers",
+    "job_id": "R-108850",
+    "title": "Machine Learning Scientist III",
+    "location": "Washington - Seattle Campus; Austin Domain 11 - HomeAway",
+    "official_url": "https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Machine-Learning-Scientist-III_R-108850-1",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:39:34.365741+00:00",
+    "date_confidence": "high",
+    "description": "At Expedia Group, we help travelers explore the world, one journey at a time. As a global travel company powered by passionate people, trusted partnerships, and leading technology,"
+  },
+  {
+    "company": "Expedia Group",
+    "source": "expedia_group_official_careers",
+    "job_id": "R-107931",
+    "title": "Principal Data & AI Engineer, Reporting and Insights",
+    "location": "USA - California - San Jose",
+    "official_url": "https://expedia.wd108.myworkdayjobs.com/search/job/USA---California---San-Jose/Principal-Data---AI-Engineer--Reporting-and-Insights_R-107931",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:39:34.365741+00:00",
+    "date_confidence": "high",
+    "description": "At Expedia Group, we help travelers explore the world, one journey at a time. As a global travel company powered by passionate people, trusted partnerships, and leading technology,"
+  }
+]
+```
 
 ## HubSpot
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
+- Status: ok
+- Scraping method: HTTP GET Greenhouse boards-api /v1/boards/{token}/jobs?content=true
+- Search URL/API: `https://boards-api.greenhouse.io/v1/boards/hubspotjobs/jobs`
+- Pagination: single JSON payload (no paging)
+- Pages/requests fetched: 1
+- Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · Strong SWE/product employer; inspect ATS/feed.']
+- Raw jobs found: 146
+- After US/location filtering: 35
+- With trustworthy posted_date: 35
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "HubSpot",
+    "source": "hubspot_official_careers",
+    "job_id": "5990250",
+    "title": "Account Executive - Enterprise",
+    "location": "Remote - USA; Cambridge, MA, USA",
+    "official_url": "https://www.hubspot.com/careers/jobs/5990250?gh_jid=5990250",
+    "posted_date": "2024-06-13",
+    "updated_date": "2026-08-27",
+    "fetched_at": "2026-08-31T23:40:18.168044+00:00",
+    "date_confidence": "high",
+    "description": "<h3>Our Mission: Helping Millions of Organizations Grow Better</h3> <h3>Team Overview</h3> <p>Our Enterprise Sales team drives growth by connecting large organizations (500–5,000 e"
+  },
+  {
+    "company": "HubSpot",
+    "source": "hubspot_official_careers",
+    "job_id": "5990166",
+    "title": "Account Executive - Mid-Market",
+    "location": "Remote - USA; Cambridge, MA, USA",
+    "official_url": "https://www.hubspot.com/careers/jobs/5990166?gh_jid=5990166",
+    "posted_date": "2024-06-07",
+    "updated_date": "2026-08-27",
+    "fetched_at": "2026-08-31T23:40:18.168044+00:00",
+    "date_confidence": "high",
+    "description": "<b>POS-P0618</b><br><hr><p><em>In an effort to help Millions of Companies grow better, the HubSpot product has matured, and we are finding more upmarket companies are implementing "
+  },
+  {
+    "company": "HubSpot",
+    "source": "hubspot_official_careers",
+    "job_id": "5990225",
+    "title": "Account Executive - Small Business",
+    "location": "Remote - USA; Cambridge, MA, USA",
+    "official_url": "https://www.hubspot.com/careers/jobs/5990225?gh_jid=5990225",
+    "posted_date": "2024-06-07",
+    "updated_date": "2026-08-31",
+    "fetched_at": "2026-08-31T23:40:18.168044+00:00",
+    "date_confidence": "high",
+    "description": "<p><strong>***Now accepting applications for an October 6th, 2026 start date***</strong></p> <p>&nbsp;</p> <p>As a Small Business Account Executive at HubSpot, you will&nbsp;<stron"
+  },
+  {
+    "company": "HubSpot",
+    "source": "hubspot_official_careers",
+    "job_id": "8073616",
+    "title": "AI Transformation Program Manager, Finance Transformation",
+    "location": "Remote - USA",
+    "official_url": "https://www.hubspot.com/careers/jobs/8073616?gh_jid=8073616",
+    "posted_date": "2026-08-25",
+    "updated_date": "2026-08-27",
+    "fetched_at": "2026-08-31T23:40:18.168044+00:00",
+    "date_confidence": "high",
+    "description": "<p>&nbsp;</p> <h2 class=\"PDq2pG_selectionAnchorContainer\" data-section-id=\"1ebz78u\" data-start=\"1337\" data-end=\"1397\">AI Transformation Program Manager, Finance Transformation</h2>"
+  },
+  {
+    "company": "HubSpot",
+    "source": "hubspot_official_careers",
+    "job_id": "7715082",
+    "title": "Field & Digital Campaigns Lead, Upmarket Strategy",
+    "location": "Remote - USA",
+    "official_url": "https://www.hubspot.com/careers/jobs/7715082?gh_jid=7715082",
+    "posted_date": "2026-08-17",
+    "updated_date": "2026-08-27",
+    "fetched_at": "2026-08-31T23:40:18.168044+00:00",
+    "date_confidence": "high",
+    "description": "<h2>Team Overview</h2> <p>The Upmarket Strategy team designs and executes marketing campaigns that drive pipeline growth across Mid-Market and Corporate segments. Partnering closel"
+  }
+]
+```
 
 ## Instacart
 
@@ -4149,9 +4869,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 118
-- After US/location filtering: 102
-- With trustworthy posted_date: 102
+- Raw jobs found: 115
+- After US/location filtering: 98
+- With trustworthy posted_date: 98
 - Errors/403s: none
 
 Sample normalized records:
@@ -4167,7 +4887,7 @@ Sample normalized records:
     "official_url": "https://instacart.careers/job/?gh_jid=7144697",
     "posted_date": "2025-08-07",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-08-31T18:17:57.388090+00:00",
+    "fetched_at": "2026-08-31T23:40:19.037152+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>We're transforming the grocery industry</strong></p> <p><span class=\"im\">At Instacart, we invite the world to share love through food because "
   },
@@ -4180,20 +4900,7 @@ Sample normalized records:
     "official_url": "https://instacart.careers/job/?gh_jid=7495338",
     "posted_date": "2025-12-23",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-08-31T18:17:57.388090+00:00",
-    "date_confidence": "high",
-    "description": "<div class=\"content-intro\"><p><strong>We're transforming the grocery industry</strong></p> <p><span class=\"im\">At Instacart, we invite the world to share love through food because "
-  },
-  {
-    "company": "Instacart",
-    "source": "instacart_official_careers",
-    "job_id": "8146070",
-    "title": "AI Solutions Lead, Marketing",
-    "location": "Canada - Remote (ON, AB, BC, or NS Only); Remote - United States",
-    "official_url": "https://instacart.careers/job/?gh_jid=8146070",
-    "posted_date": "2026-08-20",
-    "updated_date": "2026-08-24",
-    "fetched_at": "2026-08-31T18:17:57.388090+00:00",
+    "fetched_at": "2026-08-31T23:40:19.037152+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>We're transforming the grocery industry</strong></p> <p><span class=\"im\">At Instacart, we invite the world to share love through food because "
   },
@@ -4206,7 +4913,20 @@ Sample normalized records:
     "official_url": "https://instacart.careers/job/?gh_jid=8145998",
     "posted_date": "2026-08-20",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-08-31T18:17:57.388090+00:00",
+    "fetched_at": "2026-08-31T23:40:19.037152+00:00",
+    "date_confidence": "high",
+    "description": "<div class=\"content-intro\"><p><strong>We're transforming the grocery industry</strong></p> <p><span class=\"im\">At Instacart, we invite the world to share love through food because "
+  },
+  {
+    "company": "Instacart",
+    "source": "instacart_official_careers",
+    "job_id": "8146070",
+    "title": "AI Solutions Lead, Marketing",
+    "location": "Canada - Remote (ON, AB, BC, or NS Only); Remote - United States",
+    "official_url": "https://instacart.careers/job/?gh_jid=8146070",
+    "posted_date": "2026-08-20",
+    "updated_date": "2026-08-24",
+    "fetched_at": "2026-08-31T23:40:19.037152+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>We're transforming the grocery industry</strong></p> <p><span class=\"im\">At Instacart, we invite the world to share love through food because "
   },
@@ -4219,7 +4939,7 @@ Sample normalized records:
     "official_url": "https://instacart.careers/job/?gh_jid=8157774",
     "posted_date": "2026-08-25",
     "updated_date": "2026-08-26",
-    "fetched_at": "2026-08-31T18:17:57.388090+00:00",
+    "fetched_at": "2026-08-31T23:40:19.037152+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>We're transforming the grocery industry</strong></p> <p><span class=\"im\">At Instacart, we invite the world to share love through food because "
   }
@@ -4232,12 +4952,12 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://intel.wd1.myworkdayjobs.com/External`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 11
+- Pages/requests fetched: 29
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 103 / 0
-- Raw jobs found: 220
-- After US/location filtering: 103
-- With trustworthy posted_date: 103
+- Detail pages fetched/cache reused: 77 / 99
+- Raw jobs found: 563
+- After US/location filtering: 176
+- With trustworthy posted_date: 176
 - Errors/403s: none
 
 Sample normalized records:
@@ -4247,84 +4967,156 @@ Sample normalized records:
   {
     "company": "Intel",
     "source": "intel_official_careers",
+    "job_id": "JR0286233",
+    "title": "AI Infrastructure Engineer",
+    "location": "US, California, Santa Clara; US, Oregon, Hillsboro; US, California, Folsom; US, Texas, Austin",
+    "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-California-Santa-Clara/AI-Infrastructure-Engineer_JR0286233",
+    "posted_date": "2026-08-20",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:40:19.315193+00:00",
+    "date_confidence": "high",
+    "description": "Job Details: Job Description: We are looking for a performance-obsessed AI Infrastructure Engineer to push LLM inference to its absolute limits on Intel's next-generation GPU archi"
+  },
+  {
+    "company": "Intel",
+    "source": "intel_official_careers",
     "job_id": "JR0282641",
     "title": "AI Software Engineering Intern",
     "location": "US, Arizona, Phoenix",
     "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Arizona-Phoenix/AI-Software-Engineering-Intern_JR0282641",
     "posted_date": "2026-07-29",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:17:57.578267+00:00",
+    "fetched_at": "2026-08-31T23:40:19.315193+00:00",
     "date_confidence": "high",
     "description": "Job Details: Job Description: Contributes to the design, development, and optimization of AI software solutions including algorithms, frameworks, and AI software architectures acro"
   },
   {
     "company": "Intel",
     "source": "intel_official_careers",
-    "job_id": "JR0285371",
-    "title": "Software Engineering Leader",
-    "location": "US, Oregon, Hillsboro; US, California, Folsom; US, California, Santa Clara; US, Texas, Austin; US, Arizona, Phoenix",
-    "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/Software-Engineering-Leader_JR0285371-1",
-    "posted_date": "2026-07-23",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:17:57.578267+00:00",
-    "date_confidence": "high",
-    "description": "Job Details: Job Description: We are seeking an innovative and experienced engineering leader to join our developer software team. In this pivotal role, you will be responsible for"
-  },
-  {
-    "company": "Intel",
-    "source": "intel_official_careers",
-    "job_id": "JR0285035",
-    "title": "System Software Engineer",
-    "location": "US, Arizona, Phoenix",
-    "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Arizona-Phoenix/System-Software-Engineer_JR0285035-1",
-    "posted_date": "2026-07-29",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:17:57.578267+00:00",
-    "date_confidence": "high",
-    "description": "Job Details: Job Description: Join Intel as a System Software Engineer, where you will play a pivotal role in designing, developing, and optimizing software solutions across Intel'"
-  },
-  {
-    "company": "Intel",
-    "source": "intel_official_careers",
-    "job_id": "JR0285033",
-    "title": "System Software Engineer",
-    "location": "US, Arizona, Phoenix",
-    "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Arizona-Phoenix/System-Software-Engineer_JR0285033",
-    "posted_date": "2026-07-29",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:17:57.578267+00:00",
-    "date_confidence": "high",
-    "description": "Job Details: Job Description: Join Intel as a System Software Engineer, where you will play a pivotal role in designing, developing, and optimizing software solutions across Intel'"
-  },
-  {
-    "company": "Intel",
-    "source": "intel_official_careers",
-    "job_id": "JR0285048",
-    "title": "System Software Engineer",
+    "job_id": "JR0286546",
+    "title": "AI Solutions Engineering Graduate Intern",
     "location": "US, Oregon, Hillsboro",
-    "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/System-Software-Engineer_JR0285048",
-    "posted_date": "2026-07-29",
+    "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/AI-Solutions-Engineering-Graduate-Intern_JR0286546",
+    "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:17:57.578267+00:00",
+    "fetched_at": "2026-08-31T23:40:19.315193+00:00",
     "date_confidence": "high",
-    "description": "Job Details: Job Description: Join Intel as a System Software Engineer, where you will play a pivotal role in designing, developing, and optimizing software solutions across Intel'"
+    "description": "Job Details: Job Description: Supports the development of integrated AI solutions through AI domain expertise in assisting in system design, performance benchmarking, and deploymen"
+  },
+  {
+    "company": "Intel",
+    "source": "intel_official_careers",
+    "job_id": "JR0281978",
+    "title": "AI Performance Library Architect",
+    "location": "US, Oregon, Hillsboro; US, California, Folsom",
+    "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/AI-Performance-Library-Architect_JR0281978-1",
+    "posted_date": "2026-03-27",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:40:19.315193+00:00",
+    "date_confidence": "high",
+    "description": "Job Details: Job Description: Software and AI (SAI) organization is looking for a software development engineer to work on oneDNN project ( https://github.com/uxlfoundation/oneDNN "
+  },
+  {
+    "company": "Intel",
+    "source": "intel_official_careers",
+    "job_id": "JR0286065",
+    "title": "AI Full Stack Engineer",
+    "location": "US, Oregon, Hillsboro",
+    "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/AI-Full-Stack-Engineer_JR0286065",
+    "posted_date": "2026-08-05",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:40:19.315193+00:00",
+    "date_confidence": "high",
+    "description": "Job Details: Job Description: About the Role Intel’s Client Developer Group is seeking an AI Developer Evangelist to help accelerate adoption of Intel platforms, tools, and technol"
   }
 ]
 ```
 
 ## MathWorks
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · Strong technical hiring; official searchable page.']
+- Status: ok
+- Scraping method: HTTP GET server-rendered MathWorks search + JobPosting JSON-LD
+- Search URL/API: `https://www.mathworks.com/company/jobs/opportunities/search/`
+- Pagination: page=2,3,... after the unnumbered first page; stop on empty/repeat/short page
+- Pages/requests fetched: 9
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 31 / 0
+- Raw jobs found: 78
+- After US/location filtering: 31
+- With trustworthy posted_date: 31
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "MathWorks",
+    "source": "mathworks_official_careers",
+    "job_id": "37011",
+    "title": "Senior Applied AI Engineer",
+    "location": "US-MA-Natick",
+    "official_url": "https://www.mathworks.com/company/jobs/opportunities/37011-senior-applied-ai-engineer?keywords=ai+engineer",
+    "posted_date": "2026-04-23",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:41:33.551845+00:00",
+    "date_confidence": "high",
+    "description": "<p>Job Summary</p> &lt;p&gt;MathWorks has a hybrid work model that enables staff members to split their time between office and home. The hybrid model provides the advantage of hav"
+  },
+  {
+    "company": "MathWorks",
+    "source": "mathworks_official_careers",
+    "job_id": "37010",
+    "title": "Senior Applied AI Engineer",
+    "location": "US-MA-Natick",
+    "official_url": "https://www.mathworks.com/company/jobs/opportunities/37010-senior-applied-ai-engineer?keywords=ai+engineer",
+    "posted_date": "2026-04-23",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:41:33.551845+00:00",
+    "date_confidence": "high",
+    "description": "<p>Job Summary</p> &lt;p&gt;MathWorks has a hybrid work model that enables staff members to split their time between office and home. The hybrid model provides the advantage of hav"
+  },
+  {
+    "company": "MathWorks",
+    "source": "mathworks_official_careers",
+    "job_id": "12382",
+    "title": "Compiler Engineer LLVM",
+    "location": "US-MA-Natick",
+    "official_url": "https://www.mathworks.com/company/jobs/opportunities/12382-compiler-engineer-llvm?keywords=ai+engineer",
+    "posted_date": "2025-04-01",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:41:33.551845+00:00",
+    "date_confidence": "high",
+    "description": "<p>Job Summary</p> &lt;p&gt;MathWorks has a hybrid work model that enables staff members to split their time between office and home. The hybrid model provides the advantage of hav"
+  },
+  {
+    "company": "MathWorks",
+    "source": "mathworks_official_careers",
+    "job_id": "37334",
+    "title": "Senior Product Marketing Engineer",
+    "location": "US-MA-Natick",
+    "official_url": "https://www.mathworks.com/company/jobs/opportunities/37334-senior-product-marketing-engineer?keywords=ai+engineer",
+    "posted_date": "2026-07-07",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:41:33.551845+00:00",
+    "date_confidence": "high",
+    "description": "<p>Job Summary</p> &lt;p&gt;MathWorks has a hybrid work model that enables staff members to split their time between office and home. The hybrid model provides the advantage of hav"
+  },
+  {
+    "company": "MathWorks",
+    "source": "mathworks_official_careers",
+    "job_id": "37188",
+    "title": "Principal C++ Software Engineer",
+    "location": "US-MA-Natick",
+    "official_url": "https://www.mathworks.com/company/jobs/opportunities/37188-principal-c-software-engineer?keywords=ai+engineer",
+    "posted_date": "2026-06-03",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:41:33.551845+00:00",
+    "date_confidence": "high",
+    "description": "<p>Job Summary</p> &lt;p&gt;MathWorks has a hybrid work model that enables staff members to split their time between office and home. The hybrid model provides the advantage of hav"
+  }
+]
+```
 
 ## MongoDB
 
@@ -4335,9 +5127,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 412
-- After US/location filtering: 265
-- With trustworthy posted_date: 265
+- Raw jobs found: 404
+- After US/location filtering: 248
+- With trustworthy posted_date: 248
 - Errors/403s: none
 
 Sample normalized records:
@@ -4353,20 +5145,7 @@ Sample normalized records:
     "official_url": "https://www.mongodb.com/careers/job/?gh_jid=7318558",
     "posted_date": "2026-07-27",
     "updated_date": "2026-08-26",
-    "fetched_at": "2026-08-31T18:19:47.109231+00:00",
-    "date_confidence": "high",
-    "description": "<p>An Account Development Representative at MongoDB is the starting point for building a serious career in technology sales.&nbsp;</p> <p>This role is the foundation of our sales o"
-  },
-  {
-    "company": "MongoDB",
-    "source": "mongodb_official_careers",
-    "job_id": "7318466",
-    "title": "Account Development Representative",
-    "location": "Bengaluru; Bengaluru, Karnataka, India",
-    "official_url": "https://www.mongodb.com/careers/job/?gh_jid=7318466",
-    "posted_date": "2026-07-22",
-    "updated_date": "2026-08-26",
-    "fetched_at": "2026-08-31T18:19:47.109231+00:00",
+    "fetched_at": "2026-08-31T23:41:52.739410+00:00",
     "date_confidence": "high",
     "description": "<p>An Account Development Representative at MongoDB is the starting point for building a serious career in technology sales.&nbsp;</p> <p>This role is the foundation of our sales o"
   },
@@ -4379,7 +5158,7 @@ Sample normalized records:
     "official_url": "https://www.mongodb.com/careers/job/?gh_jid=8079914",
     "posted_date": "2026-07-23",
     "updated_date": "2026-08-21",
-    "fetched_at": "2026-08-31T18:19:47.109231+00:00",
+    "fetched_at": "2026-08-31T23:41:52.739410+00:00",
     "date_confidence": "high",
     "description": "<p>An Account Development Representative at MongoDB is the starting point for building a serious career in technology sales.&nbsp;</p> <p>This role is the foundation of our sales o"
   },
@@ -4392,7 +5171,7 @@ Sample normalized records:
     "official_url": "https://www.mongodb.com/careers/job/?gh_jid=7334938",
     "posted_date": "2025-10-21",
     "updated_date": "2026-08-26",
-    "fetched_at": "2026-08-31T18:19:47.109231+00:00",
+    "fetched_at": "2026-08-31T23:41:52.739410+00:00",
     "date_confidence": "high",
     "description": "<p>At MongoDB, our Account Development team works closely with our partners in both Sales and Marketing to build fanatical customer enthusiasm around MongoDB. ADR reps are responsi"
   },
@@ -4405,7 +5184,20 @@ Sample normalized records:
     "official_url": "https://www.mongodb.com/careers/job/?gh_jid=7566671",
     "posted_date": "2026-04-02",
     "updated_date": "2026-08-26",
-    "fetched_at": "2026-08-31T18:19:47.109231+00:00",
+    "fetched_at": "2026-08-31T23:41:52.739410+00:00",
+    "date_confidence": "high",
+    "description": "<p>An Account Development Representative at MongoDB is the starting point for building a serious career in technology sales.&nbsp;</p> <p>This role is the foundation of our sales o"
+  },
+  {
+    "company": "MongoDB",
+    "source": "mongodb_official_careers",
+    "job_id": "7746436",
+    "title": "Account Development Representative - Thai Speaking",
+    "location": "Malaysia; MYS_KualaLumpur",
+    "official_url": "https://www.mongodb.com/careers/job/?gh_jid=7746436",
+    "posted_date": "2026-03-27",
+    "updated_date": "2026-08-26",
+    "fetched_at": "2026-08-31T23:41:52.739410+00:00",
     "date_confidence": "high",
     "description": "<p>An Account Development Representative at MongoDB is the starting point for building a serious career in technology sales.&nbsp;</p> <p>This role is the foundation of our sales o"
   }
@@ -4414,45 +5206,261 @@ Sample normalized records:
 
 ## Morgan Stanley
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · Large technology org; filter aggressively to SWE/AI.']
+- Status: ok
+- Scraping method: HTTP GET Eightfold PCSX /api/pcsx/search (+ optional position_details)
+- Search URL/API: `https://morganstanley.eightfold.ai/api/pcsx/search?domain=morganstanley.com&query=software+engineer&location=United+States&sort_by=timestamp&start=0&num=10`
+- Pagination: newest-first; minimum 2 pages, then two seen pages + one overlap page; otherwise count/cap
+- Pages/requests fetched: 25
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 105 / 0
+- Raw jobs found: 228
+- After US/location filtering: 105
+- With trustworthy posted_date: 105
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Morgan Stanley",
+    "source": "morgan_stanley_official_careers",
+    "job_id": "PT-JR039174",
+    "title": "Institutional Retirement - Large Market Client Solutions - Analyst/Associate",
+    "location": "Purchase, New York, United States of America",
+    "official_url": "https://morganstanley.eightfold.ai/careers/job/549798302123",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:41:53.401150+00:00",
+    "date_confidence": "high",
+    "description": "Firm Overview Morgan Stanley is a leading global financial services firm providing a wide range of investment banking, securities, investment management and wealth management servi"
+  },
+  {
+    "company": "Morgan Stanley",
+    "source": "morgan_stanley_official_careers",
+    "job_id": "JR036984",
+    "title": "Vice President, Lead Software Engineer",
+    "location": "New York, New York, United States of America",
+    "official_url": "https://morganstanley.eightfold.ai/careers/job/549798011324",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:41:53.401150+00:00",
+    "date_confidence": "high",
+    "description": "Company Profile: Morgan Stanley is a leading global financial services firm providing a wide range of investment banking, securities, investment, and wealth management services. Th"
+  },
+  {
+    "company": "Morgan Stanley",
+    "source": "morgan_stanley_official_careers",
+    "job_id": "JR038633",
+    "title": "Vice President, Lead Software Engineer",
+    "location": "Alpharetta, Georgia, United States of America",
+    "official_url": "https://morganstanley.eightfold.ai/careers/job/549798264165",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:41:53.401150+00:00",
+    "date_confidence": "high",
+    "description": "Company Profile: Morgan Stanley is a leading global financial services firm providing a wide range of investment banking, securities, investment, and wealth management services. Th"
+  },
+  {
+    "company": "Morgan Stanley",
+    "source": "morgan_stanley_official_careers",
+    "job_id": "PT-JR042311",
+    "title": "Cyber Security AI Engineer - Director",
+    "location": "Baltimore, Maryland, United States of America",
+    "official_url": "https://morganstanley.eightfold.ai/careers/job/549799625436",
+    "posted_date": "2026-08-28",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:41:53.401150+00:00",
+    "date_confidence": "high",
+    "description": "We are seeking a AI Developer to design, build and support practical AI-enabled solutions across enterprise technology use cases. The role combines software engineering, GenAI deve"
+  },
+  {
+    "company": "Morgan Stanley",
+    "source": "morgan_stanley_official_careers",
+    "job_id": "PT-JR043021",
+    "title": "Principal Software Engineer (AI Platform) - Parametric",
+    "location": "Minneapolis, Minnesota, United States of America; Seattle, Washington, United States of America",
+    "official_url": "https://morganstanley.eightfold.ai/careers/job/549800024569",
+    "posted_date": "2026-08-28",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:41:53.401150+00:00",
+    "date_confidence": "high",
+    "description": "ABOUT MORGAN STANLEY Morgan Stanley is a leading global financial services firm providing a wide range of investment banking, securities, wealth management and investment managemen"
+  }
+]
+```
 
 ## NetApp
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · Strong systems/software employer; inspect ATS.']
+- Status: ok
+- Scraping method: HTTP GET server-rendered Radancy/TalentBrew search + JobPosting JSON-LD
+- Search URL/API: `https://careers.netapp.com/en/search-jobs`
+- Pagination: p=1,2,...; stop on empty/repeat/short page
+- Pages/requests fetched: 34
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 44 / 0
+- Raw jobs found: 443
+- After US/location filtering: 44
+- With trustworthy posted_date: 44
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "NetApp",
+    "source": "netapp_official_careers",
+    "job_id": "98734011664",
+    "title": "Principal Engineer, AI BU",
+    "location": "San Jose, California, United States; United States; Morrisville, North Carolina, United States",
+    "official_url": "https://careers.netapp.com/en/job/san-jose/principal-engineer-ai-bu/27600/98734011664",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:42:51.638611+00:00",
+    "date_confidence": "high",
+    "description": "Job Summary As a Principal Engineer in NetApp's AI BU, you are a senior technical authority — architecting and tech-leading complex, cross-team initiatives and setting technical di"
+  },
+  {
+    "company": "NetApp",
+    "source": "netapp_official_careers",
+    "job_id": "98734013184",
+    "title": "Senior Engineer, AI BU",
+    "location": "San Jose, California, United States; Morrisville, North Carolina, United States; United States",
+    "official_url": "https://careers.netapp.com/en/job/san-jose/senior-engineer-ai-bu/27600/98734013184",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:42:51.638611+00:00",
+    "date_confidence": "high",
+    "description": "Job Summary As a Senior Engineer in NetApp's AI BU, you are a strong, trusted technical contributor — designing and building complex systems within your team while beginning to ext"
+  },
+  {
+    "company": "NetApp",
+    "source": "netapp_official_careers",
+    "job_id": "98424409296",
+    "title": "Talent Acquisition AI Operations Specialist",
+    "location": "San Jose, California, United States; Morrisville, North Carolina, United States",
+    "official_url": "https://careers.netapp.com/en/job/san-jose/talent-acquisition-ai-operations-specialist/27600/98424409296",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:42:51.638611+00:00",
+    "date_confidence": "high",
+    "description": "Job Summary We are looking for a Mid-Level AI Solutions Developer to join our Talent Acquisition team as a Talent Acquisition AI Operations Specialist . This is a unique, hybrid te"
+  },
+  {
+    "company": "NetApp",
+    "source": "netapp_official_careers",
+    "job_id": "97816763184",
+    "title": "Principal Software Engineer",
+    "location": "Bellevue, Washington, United States; United States",
+    "official_url": "https://careers.netapp.com/en/job/bellevue/principal-software-engineer/27600/97816763184",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:42:51.638611+00:00",
+    "date_confidence": "high",
+    "description": "About the role NetApp's Cloud AI team is building an enterprise AI agent platform that helps Fortune 500 companies automate complex workflows on their own data, across on-premises "
+  },
+  {
+    "company": "NetApp",
+    "source": "netapp_official_careers",
+    "job_id": "96524649088",
+    "title": "Performance Engineer (Cloud Data Plane Engineering)",
+    "location": "San Jose, California, United States",
+    "official_url": "https://careers.netapp.com/en/job/san-jose/performance-engineer-cloud-data-plane-engineering/27600/96524649088",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:42:51.638611+00:00",
+    "date_confidence": "high",
+    "description": "Job Summary Design, develop, analyze, and optimize cloud software and performance capabilities for cloud storage services and distributed systems. In this role you will collaborate"
+  }
+]
+```
 
 ## Netflix
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
+- Status: ok
+- Scraping method: HTTP GET Eightfold server HTML + embedded smartApplyData positions
+- Search URL/API: `https://explore.jobs.netflix.net/careers`
+- Pagination: first 10 embedded positions per focused role query; PCSX remains disabled
+- Pages/requests fetched: 9
+- Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · High-value; inspect jobs search API/feed.']
+- Raw jobs found: 90
+- After US/location filtering: 61
+- With trustworthy posted_date: 61
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Netflix",
+    "source": "netflix_official_careers",
+    "job_id": "AJRT30201",
+    "title": "AI Engineer 6 - AI Foundation & Tooling, Ads Platform",
+    "location": "USA - Remote",
+    "official_url": "https://explore.jobs.netflix.net/careers/job/790298014263",
+    "posted_date": "2024-07-23",
+    "updated_date": "2026-05-19",
+    "fetched_at": "2026-08-31T23:43:23.489337+00:00",
+    "date_confidence": "high",
+    "description": ""
+  },
+  {
+    "company": "Netflix",
+    "source": "netflix_official_careers",
+    "job_id": "JR42022",
+    "title": "AI Research Engineer 6 - TL, Algo Core - AI for Member Systems",
+    "location": "USA - Remote",
+    "official_url": "https://explore.jobs.netflix.net/careers/job/790317717814",
+    "posted_date": "2026-08-08",
+    "updated_date": "2026-08-08",
+    "fetched_at": "2026-08-31T23:43:23.489337+00:00",
+    "date_confidence": "high",
+    "description": ""
+  },
+  {
+    "company": "Netflix",
+    "source": "netflix_official_careers",
+    "job_id": "JR41100",
+    "title": "Software Engineer 5 – Agent Platform, AI Platform",
+    "location": "USA - Remote",
+    "official_url": "https://explore.jobs.netflix.net/careers/job/790316292023",
+    "posted_date": "2026-06-09",
+    "updated_date": "2026-06-09",
+    "fetched_at": "2026-08-31T23:43:23.489337+00:00",
+    "date_confidence": "high",
+    "description": ""
+  },
+  {
+    "company": "Netflix",
+    "source": "netflix_official_careers",
+    "job_id": "JR40898",
+    "title": "Software Engineer 4/5 – Model Development and Management, AI Platform",
+    "location": "USA - Remote",
+    "official_url": "https://explore.jobs.netflix.net/careers/job/790316165312",
+    "posted_date": "2026-06-01",
+    "updated_date": "2026-06-01",
+    "fetched_at": "2026-08-31T23:43:23.489337+00:00",
+    "date_confidence": "high",
+    "description": ""
+  },
+  {
+    "company": "Netflix",
+    "source": "netflix_official_careers",
+    "job_id": "JR31231",
+    "title": "Software Engineer 5 – Training Platform, AI Platform",
+    "location": "USA - Remote",
+    "official_url": "https://explore.jobs.netflix.net/careers/job/790300762468",
+    "posted_date": "2025-01-09",
+    "updated_date": "2026-01-01",
+    "fetched_at": "2026-08-31T23:43:23.489337+00:00",
+    "date_confidence": "high",
+    "description": ""
+  }
+]
+```
 
 ## OpenAI
 
@@ -4463,9 +5471,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 755
-- After US/location filtering: 642
-- With trustworthy posted_date: 642
+- Raw jobs found: 766
+- After US/location filtering: 651
+- With trustworthy posted_date: 651
 - Errors/403s: none
 
 Sample normalized records:
@@ -4481,7 +5489,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/openai/8fb1615c-34bf-47c4-a1d1-b7b2f836bbd3",
     "posted_date": "2026-03-12",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:19:47.772254+00:00",
+    "fetched_at": "2026-08-31T23:43:28.681453+00:00",
     "date_confidence": "high",
     "description": "ABOUT THE TEAM The compute infrastructure team runs the GPU fleet and large-scale compute clusters that serve the models backing ChatGPT and the API, while also supporting training"
   },
@@ -4494,7 +5502,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/openai/240d459b-696d-43eb-8497-fab3e56ecd9b",
     "posted_date": "2025-04-05",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:19:47.772254+00:00",
+    "fetched_at": "2026-08-31T23:43:28.681453+00:00",
     "date_confidence": "high",
     "description": "By applying to this role, you will be considered for Research Engineer roles across all teams at OpenAI. About the Role As a Research Engineer here, you will be responsible for bui"
   },
@@ -4507,7 +5515,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/openai/13995549-e8cc-498f-9eaa-1869067ac35b",
     "posted_date": "2026-05-23",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:19:47.772254+00:00",
+    "fetched_at": "2026-08-31T23:43:28.681453+00:00",
     "date_confidence": "high",
     "description": "ABOUT THE TEAM The Post-Training Frontiers team is responsible for training the frontier agents OpenAI ships to the world (GPT-Next). We train the flagship agentic models behind Co"
   },
@@ -4520,22 +5528,22 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8",
     "posted_date": "2024-03-20",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:19:47.772254+00:00",
+    "fetched_at": "2026-08-31T23:43:28.681453+00:00",
     "date_confidence": "high",
     "description": "About the Team We bring OpenAI's technology to the world through products like ChatGPT and the OpenAI API. We seek to learn from deployment and distribute the benefits of AI, while"
   },
   {
     "company": "OpenAI",
     "source": "openai_official_careers",
-    "job_id": "2560ed50-5535-42b8-b069-9ebc28ce7493",
-    "title": "Researcher, Robustness & Safety Training",
-    "location": "San Francisco; San Francisco, California, United States; London, UK",
-    "official_url": "https://jobs.ashbyhq.com/openai/2560ed50-5535-42b8-b069-9ebc28ce7493",
-    "posted_date": "2023-05-25",
+    "job_id": "0b428c6d-7c06-4feb-82b6-5bbe5cda2a18",
+    "title": "Account Director, Startups",
+    "location": "São Paulo; Sao Paulo, Brazil, Brazil; Remote, Brazil",
+    "official_url": "https://jobs.ashbyhq.com/openai/0b428c6d-7c06-4feb-82b6-5bbe5cda2a18",
+    "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:19:47.772254+00:00",
+    "fetched_at": "2026-08-31T23:43:28.681453+00:00",
     "date_confidence": "high",
-    "description": "ABOUT THE TEAM The Safety Systems team https://openai.com/safety/safety-systems is responsible for various safety work to ensure our best models can be safely deployed to the real "
+    "description": "About the Team OpenAI’s mission is to build safe artificial general intelligence (AGI) which benefits all of humanity. This long-term undertaking brings the world’s best scientists"
   }
 ]
 ```
@@ -4543,15 +5551,15 @@ Sample normalized records:
 ## Palantir
 
 - Status: ok
-- Scraping method: HTTP GET shared Lever postings API /v0/postings/{token}
-- Search URL/API: `https://jobs.lever.co/palantir`
-- Pagination: single JSON payload (no paging)
+- Scraping method: HTTP GET Lever /v0/postings/{token}?mode=json
+- Search URL/API: `https://api.lever.co/v0/postings/palantir`
+- Pagination: single JSON payload
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 162
-- After US/location filtering: 162
-- With trustworthy posted_date: 162
+- Raw jobs found: 309
+- After US/location filtering: 241
+- With trustworthy posted_date: 241
 - Errors/403s: none
 
 Sample normalized records:
@@ -4561,15 +5569,41 @@ Sample normalized records:
   {
     "company": "Palantir",
     "source": "palantir_official_careers",
+    "job_id": "a237973c-cb29-41fe-9c80-416e6f42e087",
+    "title": "Administrative Business Partner - ShipOS",
+    "location": "Washington, D.C.",
+    "official_url": "https://jobs.lever.co/palantir/a237973c-cb29-41fe-9c80-416e6f42e087",
+    "posted_date": "2026-06-18",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:43:29.810482+00:00",
+    "date_confidence": "high",
+    "description": "Own calendar management and deconfliction across multiple workstream leads — onsites, supplier visits, internal syncs, and Navy stakeholder meetings Schedule and track supplier eng"
+  },
+  {
+    "company": "Palantir",
+    "source": "palantir_official_careers",
     "job_id": "a5f93bb6-4f13-4451-80a4-f63090830269",
     "title": "Administrative Business Partner - ShipOS",
     "location": "New York, NY",
     "official_url": "https://jobs.lever.co/palantir/a5f93bb6-4f13-4451-80a4-f63090830269",
     "posted_date": "2026-06-18",
     "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "A World-Changing Company Palantir builds the world’s leading software for data-driven decisions and operations. By bringing the right data to the people who need it, our platforms "
+    "fetched_at": "2026-08-31T23:43:29.810482+00:00",
+    "date_confidence": "high",
+    "description": "Own calendar management and deconfliction across multiple workstream leads — onsites, supplier visits, internal syncs, and Navy stakeholder meetings Schedule and track supplier eng"
+  },
+  {
+    "company": "Palantir",
+    "source": "palantir_official_careers",
+    "job_id": "0ccbe620-a3ef-41d1-a5c4-68e56b3c91d0",
+    "title": "American Tech Fellowship",
+    "location": "North America",
+    "official_url": "https://jobs.lever.co/palantir/0ccbe620-a3ef-41d1-a5c4-68e56b3c91d0",
+    "posted_date": "2025-06-17",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:43:29.810482+00:00",
+    "date_confidence": "high",
+    "description": ""
   },
   {
     "company": "Palantir",
@@ -4580,65 +5614,111 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/palantir/ab7e3425-81d5-4705-a7b5-cd60c8a45cdb",
     "posted_date": "2024-03-11",
     "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "A World-Changing Company Palantir builds the world’s leading software for data-driven decisions and operations. By bringing the right data to the people who need it, our platforms "
+    "fetched_at": "2026-08-31T23:43:29.810482+00:00",
+    "date_confidence": "high",
+    "description": "Architecting, developing, and maintaining high-performance, scalable backend services that underpin our our operational data and AI systems Maintaining high coding standards throug"
   },
   {
     "company": "Palantir",
     "source": "palantir_official_careers",
-    "job_id": "a8174f9c-6f46-46b4-8e15-d1ff9e37c9eb",
+    "job_id": "1345438c-ebfc-4fa5-b545-30c1414f317c",
     "title": "Backend Software Engineer - Defense",
-    "location": "Palo Alto, CA",
-    "official_url": "https://jobs.lever.co/palantir/a8174f9c-6f46-46b4-8e15-d1ff9e37c9eb",
+    "location": "Washington, D.C.",
+    "official_url": "https://jobs.lever.co/palantir/1345438c-ebfc-4fa5-b545-30c1414f317c",
     "posted_date": "2025-02-24",
     "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "A World-Changing Company Palantir builds the world’s leading software for data-driven decisions and operations. By bringing the right data to the people who need it, our platforms "
-  },
-  {
-    "company": "Palantir",
-    "source": "palantir_official_careers",
-    "job_id": "d33e0c31-ac7e-4f57-ba74-36f2df6ae2f5",
-    "title": "Backend Software Engineer - Defense",
-    "location": "New York, NY",
-    "official_url": "https://jobs.lever.co/palantir/d33e0c31-ac7e-4f57-ba74-36f2df6ae2f5",
-    "posted_date": "2025-02-24",
-    "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "A World-Changing Company Palantir builds the world’s leading software for data-driven decisions and operations. By bringing the right data to the people who need it, our platforms "
-  },
-  {
-    "company": "Palantir",
-    "source": "palantir_official_careers",
-    "job_id": "6fe5515f-f677-4d98-8ac2-1775a425f5e7",
-    "title": "Backend Software Engineer - Infrastructure",
-    "location": "New York, NY",
-    "official_url": "https://jobs.lever.co/palantir/6fe5515f-f677-4d98-8ac2-1775a425f5e7",
-    "posted_date": "2025-08-06",
-    "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "A World-Changing Company Palantir builds the world’s leading software for data-driven decisions and operations. By bringing the right data to the people who need it, our platforms "
+    "fetched_at": "2026-08-31T23:43:29.810482+00:00",
+    "date_confidence": "high",
+    "description": "Build for high-scale, collaborative, geospatial workflows ( Gaia ) Design sophisticated frameworks to enable complex workflows across applications in a single workspace Develop the"
   }
 ]
 ```
 
 ## PayPal
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · Large fintech SWE employer; inspect ATS/search endpoint.']
+- Status: ok
+- Scraping method: HTTP GET Eightfold PCSX /api/pcsx/search (+ optional position_details)
+- Search URL/API: `https://paypal.eightfold.ai/api/pcsx/search?domain=paypal.com&query=software+engineer&location=United+States&sort_by=timestamp&start=0&num=10`
+- Pagination: newest-first; minimum 2 pages, then two seen pages + one overlap page; otherwise count/cap
+- Pages/requests fetched: 9
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 10 / 0
+- Raw jobs found: 41
+- After US/location filtering: 10
+- With trustworthy posted_date: 10
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "PayPal",
+    "source": "paypal_official_careers",
+    "job_id": "R0137245",
+    "title": "Staff Software Engineer",
+    "location": "New York City, New York, United States of America",
+    "official_url": "https://paypal.eightfold.ai/careers/job/274921849563",
+    "posted_date": "2026-08-19",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:43:33.623862+00:00",
+    "date_confidence": "high",
+    "description": "The Company PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personal"
+  },
+  {
+    "company": "PayPal",
+    "source": "paypal_official_careers",
+    "job_id": "R0137246",
+    "title": "Sr Data Scientist",
+    "location": "Chicago, Illinois, United States of America",
+    "official_url": "https://paypal.eightfold.ai/careers/job/274921849675",
+    "posted_date": "2026-08-19",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:43:33.623862+00:00",
+    "date_confidence": "high",
+    "description": "The Company PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personal"
+  },
+  {
+    "company": "PayPal",
+    "source": "paypal_official_careers",
+    "job_id": "R0137247",
+    "title": "Staff Machine Learning Engineer",
+    "location": "San Jose, California, United States of America",
+    "official_url": "https://paypal.eightfold.ai/careers/job/274921849678",
+    "posted_date": "2026-08-19",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:43:33.623862+00:00",
+    "date_confidence": "high",
+    "description": "The Company PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personal"
+  },
+  {
+    "company": "PayPal",
+    "source": "paypal_official_careers",
+    "job_id": "R0137248",
+    "title": "Staff Software Engineer",
+    "location": "San Jose, California, United States of America",
+    "official_url": "https://paypal.eightfold.ai/careers/job/274921849776",
+    "posted_date": "2026-08-19",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:43:33.623862+00:00",
+    "date_confidence": "high",
+    "description": "The Company PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personal"
+  },
+  {
+    "company": "PayPal",
+    "source": "paypal_official_careers",
+    "job_id": "R0137249",
+    "title": "Sr Product Manager",
+    "location": "San Jose, California, United States of America",
+    "official_url": "https://paypal.eightfold.ai/careers/job/274921849847",
+    "posted_date": "2026-08-19",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:43:33.623862+00:00",
+    "date_confidence": "high",
+    "description": "The Company PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personal"
+  }
+]
+```
 
 ## Reddit
 
@@ -4667,7 +5747,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/reddit/jobs/7617155",
     "posted_date": "2026-02-27",
     "updated_date": "2026-08-06",
-    "fetched_at": "2026-08-31T18:19:55.227532+00:00",
+    "fetched_at": "2026-08-31T23:43:42.275679+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><div class=\"c-message_kit__blocks c-message_kit__blocks--rich_text\"> <div class=\"c-message__message_blocks c-message__message_blocks--rich_text\" data-qa="
   },
@@ -4680,7 +5760,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/reddit/jobs/8089959",
     "posted_date": "2026-07-29",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:19:55.227532+00:00",
+    "fetched_at": "2026-08-31T23:43:42.275679+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><div class=\"c-message_kit__blocks c-message_kit__blocks--rich_text\"> <div class=\"c-message__message_blocks c-message__message_blocks--rich_text\" data-qa="
   },
@@ -4693,7 +5773,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/reddit/jobs/7792848",
     "posted_date": "2026-04-14",
     "updated_date": "2026-06-01",
-    "fetched_at": "2026-08-31T18:19:55.227532+00:00",
+    "fetched_at": "2026-08-31T23:43:42.275679+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><div class=\"c-message_kit__blocks c-message_kit__blocks--rich_text\"> <div class=\"c-message__message_blocks c-message__message_blocks--rich_text\" data-qa="
   },
@@ -4706,7 +5786,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/reddit/jobs/8148431",
     "posted_date": "2026-08-26",
     "updated_date": "2026-08-26",
-    "fetched_at": "2026-08-31T18:19:55.227532+00:00",
+    "fetched_at": "2026-08-31T23:43:42.275679+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><div class=\"c-message_kit__blocks c-message_kit__blocks--rich_text\"> <div class=\"c-message__message_blocks c-message__message_blocks--rich_text\" data-qa="
   },
@@ -4719,7 +5799,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/reddit/jobs/8114666",
     "posted_date": "2026-08-10",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:19:55.227532+00:00",
+    "fetched_at": "2026-08-31T23:43:42.275679+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><div class=\"c-message_kit__blocks c-message_kit__blocks--rich_text\"> <div class=\"c-message__message_blocks c-message__message_blocks--rich_text\" data-qa="
   }
@@ -4732,12 +5812,12 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://redhat.wd5.myworkdayjobs.com/jobs`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 8
+- Pages/requests fetched: 13
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 29 / 0
-- Raw jobs found: 145
-- After US/location filtering: 29
-- With trustworthy posted_date: 29
+- Detail pages fetched/cache reused: 12 / 21
+- Raw jobs found: 97
+- After US/location filtering: 33
+- With trustworthy posted_date: 33
 - Errors/403s: none
 
 Sample normalized records:
@@ -4747,67 +5827,67 @@ Sample normalized records:
   {
     "company": "Red Hat",
     "source": "red_hat_official_careers",
-    "job_id": "R-058865",
-    "title": "Associate Consultant - OpenShift",
-    "location": "Mumbai",
-    "official_url": "https://redhat.wd5.myworkdayjobs.com/jobs/job/Mumbai/Associate-Consultant---OpenShift_R-058865-1",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:19:55.742758+00:00",
-    "date_confidence": "high",
-    "description": "About the Job: The Associate Consultant exercises judgment when following general instructions and is responsible for working independently to support complex consulting engagement"
-  },
-  {
-    "company": "Red Hat",
-    "source": "red_hat_official_careers",
-    "job_id": "R-058970",
-    "title": "Consultant - Openshift",
-    "location": "New Delhi",
-    "official_url": "https://redhat.wd5.myworkdayjobs.com/jobs/job/New-Delhi/Consultant---Openshift_R-058970-1",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:19:55.742758+00:00",
-    "date_confidence": "high",
-    "description": "About The Job: The Consultant exercises good judgment and is responsible for working independently with minimal instruction whilst making sound decisions to resolve moderately comp"
-  },
-  {
-    "company": "Red Hat",
-    "source": "red_hat_official_careers",
-    "job_id": "R-055739",
-    "title": "Principal Software Engineer - OpenShift Virtualization Windows Guests",
-    "location": "Raanana",
-    "official_url": "https://redhat.wd5.myworkdayjobs.com/jobs/job/Raanana/Principal-Software-Engineer---OpenShift-Virtualization-Windows-Guests_R-055739-1",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:19:55.742758+00:00",
-    "date_confidence": "high",
-    "description": "Job Summary: The Red Hat Virtualization team is seeking a Principal Software Engineer to help define and build the next generation of solutions for running Microsoft Windows as a g"
-  },
-  {
-    "company": "Red Hat",
-    "source": "red_hat_official_careers",
-    "job_id": "R-058514",
-    "title": "Sr. Platform Partner Technical Account Manager (PTAM)",
-    "location": "Remote US NC; Remote US MA",
-    "official_url": "https://redhat.wd5.myworkdayjobs.com/jobs/job/Remote-US-NC/Sr-Platform-Partner-Technical-Account-Manager--PTAM-_R-058514-1",
-    "posted_date": "2026-08-30",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:19:55.742758+00:00",
-    "date_confidence": "high",
-    "description": "About the role: In this role, you will collaborate with a dedicated team of Red Hatters supporting our partners. You will provide hands-on technical and architectural guidance for "
-  },
-  {
-    "company": "Red Hat",
-    "source": "red_hat_official_careers",
-    "job_id": "R-059006",
-    "title": "Senior Software Engineer",
-    "location": "Raleigh",
-    "official_url": "https://redhat.wd5.myworkdayjobs.com/jobs/job/Raleigh/Senior-Software-Engineer_R-059006",
+    "job_id": "R-058210",
+    "title": "Strategic Account Executive - Federal Civilian",
+    "location": "Remote US VA",
+    "official_url": "https://redhat.wd5.myworkdayjobs.com/jobs/job/Remote-US-VA/Strategic-Account-Executive---Federal-Civilian_R-058210-2",
     "posted_date": "2026-08-26",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:19:55.742758+00:00",
+    "fetched_at": "2026-08-31T23:43:42.717506+00:00",
     "date_confidence": "high",
-    "description": "*Telecommuting permitted: work may be performed within normal commuting distance from the Red Hat, LLC office in Raleigh, NC. Own the implementation of security remediation and com"
+    "description": "About the role: The Red Hat Sales team is looking for a Strategic Account Executive to join our Public Sector organization. In this role, you will primarily sell to Civilian agenci"
+  },
+  {
+    "company": "Red Hat",
+    "source": "red_hat_official_careers",
+    "job_id": "R-058902",
+    "title": "Principal Data Analyst",
+    "location": "Raleigh",
+    "official_url": "https://redhat.wd5.myworkdayjobs.com/jobs/job/Raleigh/Principal-Data-Analyst_R-058902",
+    "posted_date": "2026-08-17",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:43:42.717506+00:00",
+    "date_confidence": "high",
+    "description": "*Telecommuting role to be performed anywhere in the U.S. Act as the Product Owner to maximize the business value derived from the contact data domain What You Will Do: Define the s"
+  },
+  {
+    "company": "Red Hat",
+    "source": "red_hat_official_careers",
+    "job_id": "R-058512",
+    "title": "Architect, AI Platform",
+    "location": "Remote US NY",
+    "official_url": "https://redhat.wd5.myworkdayjobs.com/jobs/job/Remote-US-NY/Architect--AI-Platform_R-058512-1",
+    "posted_date": "2026-08-10",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:43:42.717506+00:00",
+    "date_confidence": "high",
+    "description": "We are seeking a visionary Red Hat Architect specializing in Machine Learning Operations (MLOps) and Artificial Intelligence (AI) to design, build, and scale our enterprise AI plat"
+  },
+  {
+    "company": "Red Hat",
+    "source": "red_hat_official_careers",
+    "job_id": "R-058697",
+    "title": "Senior Telco Architect",
+    "location": "Remote US NC; Remote US TX",
+    "official_url": "https://redhat.wd5.myworkdayjobs.com/jobs/job/Remote-US-NC/Senior-Telco-Architect_R-058697-2",
+    "posted_date": "2026-08-10",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:43:42.717506+00:00",
+    "date_confidence": "high",
+    "description": "About The Job The Red Hat Telco Services Consulting Services team is seeking a Senior Architect to join us in North America. In this role, you will earn the trust and confidence of"
+  },
+  {
+    "company": "Red Hat",
+    "source": "red_hat_official_careers",
+    "job_id": "R-058396",
+    "title": "Software Engineer",
+    "location": "Raleigh",
+    "official_url": "https://redhat.wd5.myworkdayjobs.com/jobs/job/Raleigh/Software-Engineer_R-058396",
+    "posted_date": "2026-08-06",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:43:42.717506+00:00",
+    "date_confidence": "high",
+    "description": "*Telecommuting permitted: work may be performed within normal commuting distance from the Red Hat, LLC office in Raleigh, NC. Responsible for implementation of resource models and "
   }
 ]
 ```
@@ -4821,9 +5901,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 250
-- After US/location filtering: 233
-- With trustworthy posted_date: 233
+- Raw jobs found: 252
+- After US/location filtering: 193
+- With trustworthy posted_date: 193
 - Errors/403s: none
 
 Sample normalized records:
@@ -4839,7 +5919,7 @@ Sample normalized records:
     "official_url": "https://www.weareroku.com/jobs/8051546?gh_jid=8051546",
     "posted_date": "2026-07-08",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:20:43.479435+00:00",
+    "fetched_at": "2026-08-31T23:44:00.197256+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2 style=\"font-family: GothamBold,Helvetica,Arial,sans-serif; color: #662d91;\">Teamwork makes the stream work.</h2> <p>&nbsp;</p> <h3 style=\"font-family"
   },
@@ -4852,7 +5932,7 @@ Sample normalized records:
     "official_url": "https://www.weareroku.com/jobs/7874146?gh_jid=7874146",
     "posted_date": "2026-05-01",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:20:43.479435+00:00",
+    "fetched_at": "2026-08-31T23:44:00.197256+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2 style=\"font-family: GothamBold,Helvetica,Arial,sans-serif; color: #662d91;\">Teamwork makes the stream work.</h2> <p>&nbsp;</p> <h3 style=\"font-family"
   },
@@ -4865,7 +5945,7 @@ Sample normalized records:
     "official_url": "https://www.weareroku.com/jobs/7677767?gh_jid=7677767",
     "posted_date": "2026-03-04",
     "updated_date": "2026-08-19",
-    "fetched_at": "2026-08-31T18:20:43.479435+00:00",
+    "fetched_at": "2026-08-31T23:44:00.197256+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2 style=\"font-family: GothamBold,Helvetica,Arial,sans-serif; color: #662d91;\">Teamwork makes the stream work.</h2> <p>&nbsp;</p> <h3 style=\"font-family"
   },
@@ -4878,20 +5958,20 @@ Sample normalized records:
     "official_url": "https://www.weareroku.com/jobs/8154533?gh_jid=8154533",
     "posted_date": "2026-08-24",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-08-31T18:20:43.479435+00:00",
+    "fetched_at": "2026-08-31T23:44:00.197256+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2 style=\"font-family: GothamBold,Helvetica,Arial,sans-serif; color: #662d91;\">Teamwork makes the stream work.</h2> <p>&nbsp;</p> <h3 style=\"font-family"
   },
   {
     "company": "Roku",
     "source": "roku_official_careers",
-    "job_id": "8119497",
-    "title": "Ad Measurement Manager",
+    "job_id": "8167560",
+    "title": "Ad Marketing Coordinator",
     "location": "New York, New York; New York, New York, U.S.",
-    "official_url": "https://www.weareroku.com/jobs/8119497?gh_jid=8119497",
-    "posted_date": "2026-08-10",
+    "official_url": "https://www.weareroku.com/jobs/8167560?gh_jid=8167560",
+    "posted_date": "2026-08-31",
     "updated_date": "2026-08-31",
-    "fetched_at": "2026-08-31T18:20:43.479435+00:00",
+    "fetched_at": "2026-08-31T23:44:00.197256+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2 style=\"font-family: GothamBold,Helvetica,Arial,sans-serif; color: #662d91;\">Teamwork makes the stream work.</h2> <p>&nbsp;</p> <h3 style=\"font-family"
   }
@@ -4907,9 +5987,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 192
-- After US/location filtering: 181
-- With trustworthy posted_date: 181
+- Raw jobs found: 193
+- After US/location filtering: 183
+- With trustworthy posted_date: 183
 - Errors/403s: none
 
 Sample normalized records:
@@ -4925,7 +6005,7 @@ Sample normalized records:
     "official_url": "http://block.xyz/careers/jobs/5317296008?gh_jid=5317296008",
     "posted_date": "2026-07-09",
     "updated_date": "2026-08-28",
-    "fetched_at": "2026-08-31T18:20:44.194521+00:00",
+    "fetched_at": "2026-08-31T23:44:00.894830+00:00",
     "date_confidence": "high",
     "description": "<p>Since we opened our doors in 2009, the world of commerce has evolved immensely, and so has Square. After enabling anyone to take payments and never miss a sale, we saw sellers s"
   },
@@ -4938,7 +6018,7 @@ Sample normalized records:
     "official_url": "http://block.xyz/careers/jobs/5317297008?gh_jid=5317297008",
     "posted_date": "2026-07-09",
     "updated_date": "2026-08-28",
-    "fetched_at": "2026-08-31T18:20:44.194521+00:00",
+    "fetched_at": "2026-08-31T23:44:00.894830+00:00",
     "date_confidence": "high",
     "description": "<p>Since we opened our doors in 2009, the world of commerce has evolved immensely, and so has Square. After enabling anyone to take payments and never miss a sale, we saw sellers s"
   },
@@ -4951,7 +6031,7 @@ Sample normalized records:
     "official_url": "http://block.xyz/careers/jobs/5258372008?gh_jid=5258372008",
     "posted_date": "2026-06-15",
     "updated_date": "2026-08-28",
-    "fetched_at": "2026-08-31T18:20:44.194521+00:00",
+    "fetched_at": "2026-08-31T23:44:00.894830+00:00",
     "date_confidence": "high",
     "description": "<p>Since we opened our doors in 2009, the world of commerce has evolved immensely, and so has Square. After enabling anyone to take payments and never miss a sale, we saw sellers s"
   },
@@ -4964,7 +6044,7 @@ Sample normalized records:
     "official_url": "http://block.xyz/careers/jobs/5367290008?gh_jid=5367290008",
     "posted_date": "2026-07-28",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:20:44.194521+00:00",
+    "fetched_at": "2026-08-31T23:44:00.894830+00:00",
     "date_confidence": "high",
     "description": "<p>Since we opened our doors in 2009, the world of commerce has evolved immensely, and so has Square. After enabling anyone to take payments and never miss a sale, we saw sellers s"
   },
@@ -4977,7 +6057,7 @@ Sample normalized records:
     "official_url": "http://block.xyz/careers/jobs/5108007008?gh_jid=5108007008",
     "posted_date": "2026-06-09",
     "updated_date": "2026-08-26",
-    "fetched_at": "2026-08-31T18:20:44.194521+00:00",
+    "fetched_at": "2026-08-31T23:44:00.894830+00:00",
     "date_confidence": "high",
     "description": "<p><strong>Team:</strong> Apollo — Block Applied R&amp;D<br><strong>Location:</strong> Remote (US / Canada)<br><strong>Duration:</strong> Fall/Winter 2026 co-op — 8 months, flexibl"
   }
@@ -4996,21 +6076,93 @@ Sample normalized records:
 - Raw jobs found: 0
 - After US/location filtering: 0
 - With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · Large software/AI hiring; filter out export-controlled/restricted roles individually.']
+- Errors/403s: ['Tier A · re-tested the filtered US search with a GitHub Actions-compatible anonymous client on 2026-08-31; Akamai still returns HTTP 403 with no server-rendered rows or separate complete public feed, so the official link remains link-only.']
 
 ## Two Sigma
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
+- Status: ok
+- Scraping method: HTTP GET Avature SearchJobs HTML + JobDetail HTML
+- Search URL/API: `https://careers.twosigma.com/careers/OpenRoles?search=software+engineer&jobRecordsPerPage=10&jobOffset=0`
+- Pagination: jobOffset=0,10,... ; stop on empty/repeat or short page
+- Pages/requests fetched: 17
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 37 / 0
+- Raw jobs found: 103
+- After US/location filtering: 37
 - With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · High-value SWE/quant; identify direct openings/search endpoint.']
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Two Sigma",
+    "source": "two_sigma_official_careers",
+    "job_id": "13079",
+    "title": "Quantitative Software Engineer: Generative AI",
+    "location": "United States - NY New York",
+    "official_url": "https://careers.twosigma.com/careers/JobDetail/New-York-City-United-States-Quantitative-Software-Engineer-Generative-AI/13079",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:44:01.460629+00:00",
+    "date_confidence": "unknown",
+    "description": "Quantitative Software Engineer: Generative AI Location NY New York United States"
+  },
+  {
+    "company": "Two Sigma",
+    "source": "two_sigma_official_careers",
+    "job_id": "14102",
+    "title": "AI Solutions Developer",
+    "location": "United States - NY New York",
+    "official_url": "https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-AI-Solutions-Developer/14102",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:44:01.460629+00:00",
+    "date_confidence": "unknown",
+    "description": "AI Solutions Developer Location NY New York United States"
+  },
+  {
+    "company": "Two Sigma",
+    "source": "two_sigma_official_careers",
+    "job_id": "14096",
+    "title": "AI Research Scientist - Intern [2027 Summer]",
+    "location": "United States - NY New York",
+    "official_url": "https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-AI-Research-Scientist-Intern-2027-Summer/14096",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:44:01.460629+00:00",
+    "date_confidence": "unknown",
+    "description": "AI Research Scientist - Intern [2027 Summer] Location NY New York United States"
+  },
+  {
+    "company": "Two Sigma",
+    "source": "two_sigma_official_careers",
+    "job_id": "13671",
+    "title": "AI Research Scientist - Campus Full-Time",
+    "location": "United States - NY New York",
+    "official_url": "https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-AI-Research-Scientist-Campus-Full-Time/13671",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:44:01.460629+00:00",
+    "date_confidence": "unknown",
+    "description": "AI Research Scientist - Campus Full-Time Location NY New York United States"
+  },
+  {
+    "company": "Two Sigma",
+    "source": "two_sigma_official_careers",
+    "job_id": "13080",
+    "title": "Quantitative Software Engineer: Techniques Engineering",
+    "location": "United States - NY New York",
+    "official_url": "https://careers.twosigma.com/careers/JobDetail/New-York-City-United-States-Quantitative-Software-Engineer-Techniques-Engineering/13080",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:44:01.460629+00:00",
+    "date_confidence": "unknown",
+    "description": "Quantitative Software Engineer: Techniques Engineering Location NY New York United States"
+  }
+]
+```
 
 ## Verkada
 
@@ -5039,7 +6191,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/verkada/jobs/4866484007",
     "posted_date": "2025-09-22",
     "updated_date": "2026-08-19",
-    "fetched_at": "2026-08-31T18:20:44.509456+00:00",
+    "fetched_at": "2026-08-31T23:45:15.393281+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><strong>Who We Are</strong></h3> <p>Verkada is transforming how organizations protect their people and places with an integrated, privacy-sensitive A"
   },
@@ -5052,7 +6204,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/verkada/jobs/4248001007",
     "posted_date": "2025-02-21",
     "updated_date": "2026-08-19",
-    "fetched_at": "2026-08-31T18:20:44.509456+00:00",
+    "fetched_at": "2026-08-31T23:45:15.393281+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><strong>Who We Are</strong></h3> <p>Verkada is transforming how organizations protect their people and places with an integrated, privacy-sensitive A"
   },
@@ -5065,7 +6217,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/verkada/jobs/4248006007",
     "posted_date": "2026-07-28",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-08-31T18:20:44.509456+00:00",
+    "fetched_at": "2026-08-31T23:45:15.393281+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><strong>Who We Are</strong></h3> <p>Verkada is transforming how organizations protect their people and places with an integrated, privacy-sensitive A"
   },
@@ -5078,7 +6230,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/verkada/jobs/4247993007",
     "posted_date": "2026-03-31",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-08-31T18:20:44.509456+00:00",
+    "fetched_at": "2026-08-31T23:45:15.393281+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><strong>Who We Are</strong></h3> <p>Verkada is transforming how organizations protect their people and places with an integrated, privacy-sensitive A"
   },
@@ -5091,7 +6243,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/verkada/jobs/4247996007",
     "posted_date": "2025-09-23",
     "updated_date": "2026-08-19",
-    "fetched_at": "2026-08-31T18:20:44.509456+00:00",
+    "fetched_at": "2026-08-31T23:45:15.393281+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><strong>Who We Are</strong></h3> <p>Verkada is transforming how organizations protect their people and places with an integrated, privacy-sensitive A"
   }
@@ -5100,30 +6252,102 @@ Sample normalized records:
 
 ## Visa
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · Large technology org; identify direct search backend.']
+- Status: ok
+- Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
+- Search URL/API: `https://visa.wd5.myworkdayjobs.com/Visa`
+- Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
+- Pages/requests fetched: 19
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 107 / 0
+- Raw jobs found: 340
+- After US/location filtering: 107
+- With trustworthy posted_date: 107
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Visa",
+    "source": "visa_official_careers",
+    "job_id": "REF082908W",
+    "title": "Senior Product Manager – Visa Commercial Virtual Cards",
+    "location": "US - Austin, TX",
+    "official_url": "https://visa.wd5.myworkdayjobs.com/Visa/job/US---Austin-TX/Senior-Product-Manager---Visa-Commercial-Virtual-Cards_REF082908W",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:45:15.983377+00:00",
+    "date_confidence": "high",
+    "description": "About Us Visa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 "
+  },
+  {
+    "company": "Visa",
+    "source": "visa_official_careers",
+    "job_id": "REF081503W",
+    "title": "Software Engineer - Sr. Consultant level",
+    "location": "US - Austin, TX",
+    "official_url": "https://visa.wd5.myworkdayjobs.com/Visa/job/US---Austin-TX/Software-Engineer---Sr-Consultant-level_REF081503W",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:45:15.983377+00:00",
+    "date_confidence": "high",
+    "description": "About Us Visa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 "
+  },
+  {
+    "company": "Visa",
+    "source": "visa_official_careers",
+    "job_id": "REF087014W",
+    "title": "Manager",
+    "location": "US - Foster City, CA",
+    "official_url": "https://visa.wd5.myworkdayjobs.com/Visa/job/US---Foster-City-CA/Manager_REF087014W",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:45:15.983377+00:00",
+    "date_confidence": "high",
+    "description": "About Us Visa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 "
+  },
+  {
+    "company": "Visa",
+    "source": "visa_official_careers",
+    "job_id": "REF087210W",
+    "title": "Staff Site Reliability Engineer, CMDB",
+    "location": "US - Denver, CO",
+    "official_url": "https://visa.wd5.myworkdayjobs.com/Visa/job/US---Denver-CO/Staff-Site-Reliability-Engineer--CMDB_REF087210W",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:45:15.983377+00:00",
+    "date_confidence": "high",
+    "description": "About Us Visa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 "
+  },
+  {
+    "company": "Visa",
+    "source": "visa_official_careers",
+    "job_id": "REF087949W",
+    "title": "Staff Software Engineer-AI Solutions",
+    "location": "US - Ashburn, VA",
+    "official_url": "https://visa.wd5.myworkdayjobs.com/Visa/job/US---Ashburn-VA/Staff-Software-Engineer--AI-Solutions_REF087949W",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:45:15.983377+00:00",
+    "date_confidence": "high",
+    "description": "About Us Visa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 "
+  }
+]
+```
 
 ## WeRide
 
 - Status: ok
-- Scraping method: HTTP GET shared Lever postings API /v0/postings/{token}
-- Search URL/API: `https://jobs.lever.co/weride`
-- Pagination: single JSON payload (no paging)
+- Scraping method: HTTP GET Lever /v0/postings/{token}?mode=json
+- Search URL/API: `https://api.lever.co/v0/postings/weride`
+- Pagination: single JSON payload
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 13
-- After US/location filtering: 13
-- With trustworthy posted_date: 13
+- Raw jobs found: 30
+- After US/location filtering: 23
+- With trustworthy posted_date: 23
 - Errors/403s: none
 
 Sample normalized records:
@@ -5139,9 +6363,9 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/weride/82955de9-485d-4db0-8fd9-1c018489fc8d",
     "posted_date": "2019-01-17",
     "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "Established in 2017, WeRide (NASDAQ: WRD) is a leading global commercial-stage company that develops autonomous driving technologies from Level 2 to Level 4 and is the world's firs"
+    "fetched_at": "2026-08-31T23:46:40.537611+00:00",
+    "date_confidence": "high",
+    "description": "Role Responsibilities: System Bringup & Deployment Deploy and integrate autonomous driving software onto vehicle platforms and embedded computing systems. Validate system functiona"
   },
   {
     "company": "WeRide",
@@ -5152,79 +6376,223 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/weride/67194770-ca27-4291-82ac-a90e58967e29",
     "posted_date": "2026-07-06",
     "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "WeRide is a smart mobility start-up whose mission is to transform mobility with autonomous driving. We are committed to build better transportation experience that’s safe, efficien"
+    "fetched_at": "2026-08-31T23:46:40.537611+00:00",
+    "date_confidence": "high",
+    "description": "Thoroughly understand how our self-driving technology works. Stay on top of countless daily changes, both big and small. Safely operate test vehicles for up to 8 hours a day to eva"
   },
   {
     "company": "WeRide",
     "source": "weride_official_careers",
-    "job_id": "2f22df18-e019-450e-bcfa-9b1c7b94334f",
-    "title": "General Software Engineer",
-    "location": "San Jose, CA",
-    "official_url": "https://jobs.lever.co/weride/2f22df18-e019-450e-bcfa-9b1c7b94334f",
-    "posted_date": "2020-05-02",
+    "job_id": "8b43a662-fd58-45e0-9087-36c00ed82ff7",
+    "title": "Data Annotator",
+    "location": "Bangsar South, Kuala Lumpur",
+    "official_url": "https://jobs.lever.co/weride/8b43a662-fd58-45e0-9087-36c00ed82ff7",
+    "posted_date": "2025-12-21",
     "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "Established in 2017, WeRide (NASDAQ: WRD) is a leading global commercial-stage company that develops autonomous driving technologies from Level 2 to Level 4 and is the world's firs"
+    "fetched_at": "2026-08-31T23:46:40.537611+00:00",
+    "date_confidence": "high",
+    "description": "Accurately label and categorize large datasets, including text, audio, images, and video. Review and correct data annotations to ensure quality and consistency. Work closely with t"
   },
   {
     "company": "WeRide",
     "source": "weride_official_careers",
-    "job_id": "e151540c-f52c-4797-afef-6235f3ec8edc",
-    "title": "Motion Planning Engineer",
-    "location": "San Jose, CA",
-    "official_url": "https://jobs.lever.co/weride/e151540c-f52c-4797-afef-6235f3ec8edc",
-    "posted_date": "2020-05-02",
+    "job_id": "3da6e841-eac2-4dd7-8fa9-934c42f63d1f",
+    "title": "Driving Safety Operator - Singapore",
+    "location": "One-north",
+    "official_url": "https://jobs.lever.co/weride/3da6e841-eac2-4dd7-8fa9-934c42f63d1f",
+    "posted_date": "2024-12-11",
     "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "Established in 2017, WeRide (NASDAQ: WRD) is a leading global commercial-stage company that develops autonomous driving technologies from Level 2 to Level 4 and is the world's firs"
+    "fetched_at": "2026-08-31T23:46:40.537611+00:00",
+    "date_confidence": "high",
+    "description": "Operational Oversight: Sit in the driver’s seat, ready to take control of the autonomous vehicle at any moment, ensuring the safety of all passengers, road users, and the vehicle. "
   },
   {
     "company": "WeRide",
     "source": "weride_official_careers",
-    "job_id": "5cde0d09-ba2d-408d-947e-4a42028cd4f7",
-    "title": "New Grads 2027 - Software Engineer - Perception/Computer Vision",
-    "location": "San Jose, CA",
-    "official_url": "https://jobs.lever.co/weride/5cde0d09-ba2d-408d-947e-4a42028cd4f7",
-    "posted_date": "2026-08-10",
+    "job_id": "012c818d-4ad8-4096-80b0-386cdf79f8d5",
+    "title": "Forward Deployed Engineer",
+    "location": "One-north",
+    "official_url": "https://jobs.lever.co/weride/012c818d-4ad8-4096-80b0-386cdf79f8d5",
+    "posted_date": "2024-03-27",
     "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "Established in 2017, WeRide (NASDAQ: WRD) is a leading global commercial-stage company that develops autonomous driving technologies from Level 2 to Level 4 and is the world's firs"
+    "fetched_at": "2026-08-31T23:46:40.537611+00:00",
+    "date_confidence": "high",
+    "description": "Act as a frontline technical owner for the deployment and operation of L4 autonomous driving systems in real-world environments Lead and execute system-level testing and validation"
   }
 ]
 ```
 
 ## Workday
 
-- Status: error
-- Scraping method: workday
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['JSONDecodeError: Expecting value: line 1 column 1 (char 0)']
+- Status: ok
+- Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
+- Search URL/API: `https://workday.wd5.myworkdayjobs.com/Workday`
+- Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
+- Pages/requests fetched: 26
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 42 / 77
+- Raw jobs found: 497
+- After US/location filtering: 119
+- With trustworthy posted_date: 119
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Workday",
+    "source": "workday_official_careers",
+    "job_id": "JR-0108761",
+    "title": "Principal AI Engineer",
+    "location": "USA, GA, Atlanta; Canada, ON, Toronto; Canada, BC, Vancouver; USA, CO, Boulder",
+    "official_url": "https://workday.wd5.myworkdayjobs.com/Workday/job/USA-GA-Atlanta/Principal-AI-Engineer_JR-0108761",
+    "posted_date": "2026-08-24",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:46:40.854055+00:00",
+    "date_confidence": "high",
+    "description": "Your work days are brighter here. We’re obsessed with making hard work pay off, for our people, our customers, and the world around us. As a Fortune 500 company and a leading AI pl"
+  },
+  {
+    "company": "Workday",
+    "source": "workday_official_careers",
+    "job_id": "JR-0105599",
+    "title": "Senior/Principal AI Engineer",
+    "location": "USA, GA, Atlanta",
+    "official_url": "https://workday.wd5.myworkdayjobs.com/Workday/job/USA-GA-Atlanta/Senior-Principal-Machine-Learning-Engineer_JR-0105599",
+    "posted_date": "2026-06-24",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:46:40.854055+00:00",
+    "date_confidence": "high",
+    "description": "Your work days are brighter here. We’re obsessed with making hard work pay off, for our people, our customers, and the world around us. As a Fortune 500 company and a leading AI pl"
+  },
+  {
+    "company": "Workday",
+    "source": "workday_official_careers",
+    "job_id": "JR-0107977",
+    "title": "Senior AI Deployment Engineer",
+    "location": "USA, IL, Chicago; USA Remote",
+    "official_url": "https://workday.wd5.myworkdayjobs.com/Workday/job/USA-IL-Chicago/Senior-Technical-Delivery-Consultant---AI-Practice_JR-0107977",
+    "posted_date": "2026-08-25",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:46:40.854055+00:00",
+    "date_confidence": "high",
+    "description": "Your work days are brighter here. We’re obsessed with making hard work pay off, for our people, our customers, and the world around us. As a Fortune 500 company and a leading AI pl"
+  },
+  {
+    "company": "Workday",
+    "source": "workday_official_careers",
+    "job_id": "JR-0107313",
+    "title": "Principal AI Researcher",
+    "location": "USA, CA, Pleasanton; USA, GA, Atlanta; USA, WA, Seattle",
+    "official_url": "https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Principal-AI-Researcher_JR-0107313",
+    "posted_date": "2026-05-16",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:46:40.854055+00:00",
+    "date_confidence": "high",
+    "description": "Your work days are brighter here. We’re obsessed with making hard work pay off, for our people, our customers, and the world around us. As a Fortune 500 company and a leading AI pl"
+  },
+  {
+    "company": "Workday",
+    "source": "workday_official_careers",
+    "job_id": "JR-0106716",
+    "title": "Software Development Engineer - Evisort AI",
+    "location": "USA, GA, Atlanta",
+    "official_url": "https://workday.wd5.myworkdayjobs.com/Workday/job/USA-GA-Atlanta/Software-Engineer_JR-0106716",
+    "posted_date": "2026-07-22",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:46:40.854055+00:00",
+    "date_confidence": "high",
+    "description": "Your work days are brighter here. We’re obsessed with making hard work pay off, for our people, our customers, and the world around us. As a Fortune 500 company and a leading AI pl"
+  }
+]
+```
 
 ## Zillow
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier A · Strong product/software hiring; locate direct search feed.']
+- Status: ok
+- Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
+- Search URL/API: `https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External`
+- Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
+- Pages/requests fetched: 15
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 36 / 0
+- Raw jobs found: 157
+- After US/location filtering: 36
+- With trustworthy posted_date: 36
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Zillow",
+    "source": "zillow_official_careers",
+    "job_id": "P751037",
+    "title": "Agentic AI, Senior Software Development Engineer",
+    "location": "Remote-USA",
+    "official_url": "https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Remote-USA/Senior-Software-Development-Engineer_P751037-1",
+    "posted_date": "2026-08-28",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:48:02.515347+00:00",
+    "date_confidence": "high",
+    "description": "About the team The Agentic AI team at Zillow is transforming the real estate industry by helping millions of people use AI assistants to find their next home. We are building alway"
+  },
+  {
+    "company": "Zillow",
+    "source": "zillow_official_careers",
+    "job_id": "P750295",
+    "title": "Senior AI-Native Product Engineer, Full Stack",
+    "location": "Remote-USA",
+    "official_url": "https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Remote-USA/Senior-AI-Native-Product-Engineer--Full-Stack_P750295-1",
+    "posted_date": "2026-06-24",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:48:02.515347+00:00",
+    "date_confidence": "high",
+    "description": "About the team The Metro team works on the systems that shape how customers connect with real estate agents on Zillow. We build tools that real estate professionals rely on to run "
+  },
+  {
+    "company": "Zillow",
+    "source": "zillow_official_careers",
+    "job_id": "P747954",
+    "title": "Principal Machine Learning Engineer, Agentic AI",
+    "location": "Remote-USA",
+    "official_url": "https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Remote-USA/Principal-Machine-Learning-Engineer--Agentic-AI_P747954",
+    "posted_date": "2026-06-24",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:48:02.515347+00:00",
+    "date_confidence": "high",
+    "description": "About the team The Agentic AI team at Zillow is at the forefront of transforming the real estate industry by helping millions of people use AI technologies to find their next home."
+  },
+  {
+    "company": "Zillow",
+    "source": "zillow_official_careers",
+    "job_id": "P748682",
+    "title": "Principal Machine Learning Engineer, Agentic AI",
+    "location": "Remote-USA",
+    "official_url": "https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Remote-USA/Principal-Machine-Learning-Engineer--Agentic-AI_P748682-2",
+    "posted_date": "2026-08-28",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:48:02.515347+00:00",
+    "date_confidence": "high",
+    "description": "About the team The Agentic AI team at Zillow is at the forefront of transforming the real estate industry by helping millions of people use AI assistants to find their next home. W"
+  },
+  {
+    "company": "Zillow",
+    "source": "zillow_official_careers",
+    "job_id": "P751278",
+    "title": "Agentic AI, Principal Machine Learning Engineer",
+    "location": "Remote-USA",
+    "official_url": "https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Remote-USA/Agentic-AI--Principal-Machine-Learning-Engineer_P751278-1",
+    "posted_date": "2026-08-28",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:48:02.515347+00:00",
+    "date_confidence": "high",
+    "description": "About the team ​​The Agentic AI team at Zillow is at the forefront of transforming the real estate industry by helping millions of people use AI assistants to find their next home."
+  }
+]
+```
 
 ## Zscaler
 
@@ -5235,9 +6603,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 338
-- After US/location filtering: 229
-- With trustworthy posted_date: 229
+- Raw jobs found: 342
+- After US/location filtering: 233
+- With trustworthy posted_date: 233
 - Errors/403s: none
 
 Sample normalized records:
@@ -5253,7 +6621,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/zscaler/jobs/5164593007",
     "posted_date": "2026-07-10",
     "updated_date": "2026-08-19",
-    "fetched_at": "2026-08-31T18:21:02.182487+00:00",
+    "fetched_at": "2026-08-31T23:48:38.089196+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>About <strong>Zscaler</strong></p> <p>Zscaler accelerates digital transformation to ensure our customers can be more agile, efficient, resilient, and "
   },
@@ -5266,7 +6634,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/zscaler/jobs/5197814007",
     "posted_date": "2026-07-31",
     "updated_date": "2026-08-19",
-    "fetched_at": "2026-08-31T18:21:02.182487+00:00",
+    "fetched_at": "2026-08-31T23:48:38.089196+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>About <strong>Zscaler</strong></p> <p>Zscaler accelerates digital transformation to ensure our customers can be more agile, efficient, resilient, and "
   },
@@ -5279,7 +6647,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/zscaler/jobs/5159494007",
     "posted_date": "2026-07-13",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:21:02.182487+00:00",
+    "fetched_at": "2026-08-31T23:48:38.089196+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>About <strong>Zscaler</strong></p> <p>Zscaler accelerates digital transformation to ensure our customers can be more agile, efficient, resilient, and "
   },
@@ -5292,7 +6660,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/zscaler/jobs/5179814007",
     "posted_date": "2026-07-13",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:21:02.182487+00:00",
+    "fetched_at": "2026-08-31T23:48:38.089196+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>About <strong>Zscaler</strong></p> <p>Zscaler accelerates digital transformation to ensure our customers can be more agile, efficient, resilient, and "
   },
@@ -5305,7 +6673,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/zscaler/jobs/5199289007",
     "posted_date": "2026-08-07",
     "updated_date": "2026-08-25",
-    "fetched_at": "2026-08-31T18:21:02.182487+00:00",
+    "fetched_at": "2026-08-31T23:48:38.089196+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>About <strong>Zscaler</strong></p> <p>Zscaler accelerates digital transformation to ensure our customers can be more agile, efficient, resilient, and "
   }
@@ -5318,12 +6686,12 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://wd5.myworkdaysite.com/recruiting/chewy/External`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 5
+- Pages/requests fetched: 9
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 30 / 0
-- Raw jobs found: 46
-- After US/location filtering: 30
-- With trustworthy posted_date: 30
+- Detail pages fetched/cache reused: 0 / 2
+- Raw jobs found: 8
+- After US/location filtering: 2
+- With trustworthy posted_date: 2
 - Errors/403s: none
 
 Sample normalized records:
@@ -5333,84 +6701,117 @@ Sample normalized records:
   {
     "company": "Chewy",
     "source": "chewy_official_careers",
-    "job_id": "R29873",
-    "title": "Software Engineer II",
-    "location": "Minneapolis, MN; Boston, MA",
-    "official_url": "https://wd5.myworkdaysite.com/recruiting/chewy/External/job/Minneapolis-MN/Software-Engineer-II_R29873",
-    "posted_date": "2026-08-25",
+    "job_id": "R29015",
+    "title": "Software Engineer III (UX Engineer – Design System)",
+    "location": "USA - MA - Boston - BOS1; USA - MN - Minneapolis - MSP2",
+    "official_url": "https://wd5.myworkdaysite.com/recruiting/chewy/External/job/USA---MA---Boston---BOS1/Software-Engineer-II_R29015",
+    "posted_date": "2026-08-21",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:21:02.606817+00:00",
+    "fetched_at": "2026-08-31T23:48:38.730920+00:00",
     "date_confidence": "high",
-    "description": "Job Description: Our Team: The Cart & Checkout Engineering team is responsible for building and operating the services that orchestrate the end-to-end checkout experience across mu"
+    "description": "Job Description: Our Opportunity Chewy is growing! We're looking for a Software Engineer III to help define and scale the frontend foundations that power consistent, accessible, an"
   },
   {
     "company": "Chewy",
     "source": "chewy_official_careers",
-    "job_id": "R29953",
-    "title": "Software Engineer III",
-    "location": "Bellevue, WA; Boston, MA",
-    "official_url": "https://wd5.myworkdaysite.com/recruiting/chewy/External/job/Bellevue-WA/Software-Engineer-III_R29953",
+    "job_id": "R27817",
+    "title": "Machine Learning Engineer III",
+    "location": "USA - WA - Bellevue - SEA1",
+    "official_url": "https://wd5.myworkdaysite.com/recruiting/chewy/External/job/USA---WA---Bellevue---SEA1/Machine-Learning-Engineer-III_R27817",
     "posted_date": "2026-08-05",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:21:02.606817+00:00",
+    "fetched_at": "2026-08-31T23:48:38.730920+00:00",
     "date_confidence": "high",
-    "description": "Job Description: We are hiring amazing humans, and we hope that includes you! Are you looking for more than just a job? At Chewy, you’ll find yourself on a career path with other o"
-  },
-  {
-    "company": "Chewy",
-    "source": "chewy_official_careers",
-    "job_id": "R30410",
-    "title": "Staff Software Engineer",
-    "location": "Bellevue, WA; Boston, MA",
-    "official_url": "https://wd5.myworkdaysite.com/recruiting/chewy/External/job/Bellevue-WA/Staff-Software-Engineer_R30410",
-    "posted_date": "2026-08-05",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:21:02.606817+00:00",
-    "date_confidence": "high",
-    "description": "Job Description: Our Opportunity: Chewy is hiring a Staff Software Engineer to lead the technical direction of Chewy’s Discovery Experience platform in Bellevue, WA. The Discovery "
-  },
-  {
-    "company": "Chewy",
-    "source": "chewy_official_careers",
-    "job_id": "R30754",
-    "title": "Software Engineer II",
-    "location": "Boston, MA",
-    "official_url": "https://wd5.myworkdaysite.com/recruiting/chewy/External/job/Boston-MA/Software-Engineer-II_R30754",
-    "posted_date": "2026-08-31",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:21:02.606817+00:00",
-    "date_confidence": "high",
-    "description": "Job Description: Our Opportunity: We are hiring a Software Engineer II to join the Developer Experience team in Boston, MA . At Chewy, it is our mission to be the most trusted and "
-  },
-  {
-    "company": "Chewy",
-    "source": "chewy_official_careers",
-    "job_id": "R29253",
-    "title": "Software Engineer II - Frontend",
-    "location": "Boston, MA",
-    "official_url": "https://wd5.myworkdaysite.com/recruiting/chewy/External/job/Boston-MA/Software-Engineer-II---Frontend_R29253",
-    "posted_date": "2026-08-25",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:21:02.606817+00:00",
-    "date_confidence": "high",
-    "description": "Job Description: Our Team: The Chewy+ Loyalty team builds customer-facing membership experiences that help pet parents discover value, manage their plan, earn and use rewards, and "
+    "description": "Job Description: Our Opportunity: The Chewy Sponsored Ads team is looking for a Senior Machine Learning Engineer in Bellevue, WA to help launch various innovative ads offerings for"
   }
 ]
 ```
 
 ## CVS Health
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier B · Large employer; lower SWE density, implement only if cheap.']
+- Status: ok
+- Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
+- Search URL/API: `https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers`
+- Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
+- Pages/requests fetched: 21
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 125 / 0
+- Raw jobs found: 364
+- After US/location filtering: 125
+- With trustworthy posted_date: 125
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "CVS Health",
+    "source": "cvs_health_official_careers",
+    "job_id": "R0983081",
+    "title": "Senior Product Manager",
+    "location": "NY - New York; Work At Home-Georgia; Work At Home-Texas; Work At Home-Illinois; Work At Home-Massachusetts; Work At Home-Florida; Work At Home-Connecticut",
+    "official_url": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Senior-Product-Manager_R0983081",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:48:44.038079+00:00",
+    "date_confidence": "high",
+    "description": "We’re building a world of health around every individual — shaping a more connected, convenient and compassionate health experience. At CVS Health®, you’ll be surrounded by passion"
+  },
+  {
+    "company": "CVS Health",
+    "source": "cvs_health_official_careers",
+    "job_id": "R0909434",
+    "title": "Senior Decision Scientist - Pharmacy and Consumer Wellness Analytics",
+    "location": "RI - Woonsocket",
+    "official_url": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/RI---Woonsocket/Senior-Decision-Scientist--Pharmacy-and-Consumer-Wellness-Analytics_R0909434",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:48:44.038079+00:00",
+    "date_confidence": "high",
+    "description": "We’re building a world of health around every individual — shaping a more connected, convenient and compassionate health experience. At CVS Health®, you’ll be surrounded by passion"
+  },
+  {
+    "company": "CVS Health",
+    "source": "cvs_health_official_careers",
+    "job_id": "R0863931",
+    "title": "Principal AI Cloud Security Architect",
+    "location": "RI - Cumberland",
+    "official_url": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/RI---Cumberland/Principal-AI-Cloud-Security-Architect_R0863931",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:48:44.038079+00:00",
+    "date_confidence": "high",
+    "description": "We’re building a world of health around every individual — shaping a more connected, convenient and compassionate health experience. At CVS Health®, you’ll be surrounded by passion"
+  },
+  {
+    "company": "CVS Health",
+    "source": "cvs_health_official_careers",
+    "job_id": "R0907528",
+    "title": "Staff Software Development Engineer (AI Engineer, Frontend)",
+    "location": "TX - Richardson; Chicago-525 West Monroe",
+    "official_url": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/TX---Richardson/Staff-Software-Development-Engineer--AI-Engineer--Frontend-_R0907528-1",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:48:44.038079+00:00",
+    "date_confidence": "high",
+    "description": "We’re building a world of health around every individual — shaping a more connected, convenient and compassionate health experience. At CVS Health®, you’ll be surrounded by passion"
+  },
+  {
+    "company": "CVS Health",
+    "source": "cvs_health_official_careers",
+    "job_id": "R0984058",
+    "title": "Staff Software Development Engineer - Tech Lead (Agentic)",
+    "location": "MA - Work from home",
+    "official_url": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/MA---Work-from-home/Staff-Software-Development-Engineer---Tech-Lead--Agentic-_R0984058",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:48:44.038079+00:00",
+    "date_confidence": "high",
+    "description": "We’re building a world of health around every individual — shaping a more connected, convenient and compassionate health experience. At CVS Health®, you’ll be surrounded by passion"
+  }
+]
+```
 
 ## Duolingo
 
@@ -5421,9 +6822,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 87
-- After US/location filtering: 75
-- With trustworthy posted_date: 75
+- Raw jobs found: 86
+- After US/location filtering: 74
+- With trustworthy posted_date: 74
 - Errors/403s: none
 
 Sample normalized records:
@@ -5439,7 +6840,7 @@ Sample normalized records:
     "official_url": "https://careers.duolingo.com/jobs/8653419002?gh_jid=8653419002",
     "posted_date": "2026-07-28",
     "updated_date": "2026-08-21",
-    "fetched_at": "2026-08-31T18:21:48.790752+00:00",
+    "fetched_at": "2026-08-31T23:50:00.397377+00:00",
     "date_confidence": "high",
     "description": "<p>Our mission at Duolingo is to develop the best education in the world and make it universally available. It’s a big mission, and that’s where you come in!</p> <p>At Duolingo, yo"
   },
@@ -5452,7 +6853,7 @@ Sample normalized records:
     "official_url": "https://careers.duolingo.com/jobs/8705196002?gh_jid=8705196002",
     "posted_date": "2026-08-13",
     "updated_date": "2026-08-13",
-    "fetched_at": "2026-08-31T18:21:48.790752+00:00",
+    "fetched_at": "2026-08-31T23:50:00.397377+00:00",
     "date_confidence": "high",
     "description": "<p>Our mission at Duolingo is to develop the best education in the world and make it universally available. It’s a big mission, and that’s where you come in!</p> <p>At Duolingo, yo"
   },
@@ -5465,7 +6866,7 @@ Sample normalized records:
     "official_url": "https://careers.duolingo.com/jobs/8625579002?gh_jid=8625579002",
     "posted_date": "2026-07-08",
     "updated_date": "2026-07-29",
-    "fetched_at": "2026-08-31T18:21:48.790752+00:00",
+    "fetched_at": "2026-08-31T23:50:00.397377+00:00",
     "date_confidence": "high",
     "description": "<p>Our mission at Duolingo is to develop the best education in the world and make it universally available. It’s a big mission, and that’s where you come in!</p> <p>At Duolingo, yo"
   },
@@ -5478,7 +6879,7 @@ Sample normalized records:
     "official_url": "https://careers.duolingo.com/jobs/8576434002?gh_jid=8576434002",
     "posted_date": "2026-06-03",
     "updated_date": "2026-07-28",
-    "fetched_at": "2026-08-31T18:21:48.790752+00:00",
+    "fetched_at": "2026-08-31T23:50:00.397377+00:00",
     "date_confidence": "high",
     "description": "<p>Our mission at Duolingo is to develop the best education in the world and make it universally available. It’s a big mission, and that’s where you come in!</p> <p>At Duolingo, yo"
   },
@@ -5491,7 +6892,7 @@ Sample normalized records:
     "official_url": "https://careers.duolingo.com/jobs/8442932002?gh_jid=8442932002",
     "posted_date": "2026-02-27",
     "updated_date": "2026-08-06",
-    "fetched_at": "2026-08-31T18:21:48.790752+00:00",
+    "fetched_at": "2026-08-31T23:50:00.397377+00:00",
     "date_confidence": "high",
     "description": "<p>Our mission at Duolingo is to develop the best education in the world and make it universally available. It’s a big mission, and that’s where you come in!</p> <p>At Duolingo, yo"
   }
@@ -5500,17 +6901,89 @@ Sample normalized records:
 
 ## Equinix
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier B · Good infra/software relevance; inspect ATS.']
+- Status: ok
+- Scraping method: HTTP GET server-rendered Radancy/TalentBrew search + JobPosting JSON-LD
+- Search URL/API: `https://careers.equinix.com/jobs/search`
+- Pagination: page=1,2,...; stop on empty/repeat/short page
+- Pages/requests fetched: 10
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 30 / 0
+- Raw jobs found: 30
+- After US/location filtering: 30
+- With trustworthy posted_date: 6
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Equinix",
+    "source": "equinix_official_careers",
+    "job_id": "JR-161117",
+    "title": "Software Development Engineer -AI/Agentic Systems",
+    "location": "Redwood City, California, United States",
+    "official_url": "https://careers.equinix.com/jobs/software-development-engineer-ai-agentic-systems-redwood-city-california-united-states",
+    "posted_date": "2026-05-28",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:50:00.656471+00:00",
+    "date_confidence": "high",
+    "description": "Who are we? Equinix is the world’s digital infrastructure company®, shortening the path to connectivity to enable the innovations that enrich our work, life and planet. A place whe"
+  },
+  {
+    "company": "Equinix",
+    "source": "equinix_official_careers",
+    "job_id": "JR-162996",
+    "title": "Director, AI Engineering",
+    "location": "Redwood City, California, United States",
+    "official_url": "https://careers.equinix.com/jobs/director-ai-engineering-redwood-city-california-united-states",
+    "posted_date": "2026-08-19",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:50:00.656471+00:00",
+    "date_confidence": "high",
+    "description": "Who are we? Equinix is the world’s digital infrastructure company®, shortening the path to connectivity to enable the innovations that enrich our work, life and planet. A place whe"
+  },
+  {
+    "company": "Equinix",
+    "source": "equinix_official_careers",
+    "job_id": "JR-160186",
+    "title": "Senior Director AI - Chief Revenue Organization",
+    "location": "Toronto, Ontario, Canada; Redwood City, California, United States; Dallas, Texas, United States",
+    "official_url": "https://careers.equinix.com/jobs/senior-director-ai-chief-revenue-organization-redwood-city-california-united-states-dallas-texas-toronto-ontario-canada",
+    "posted_date": "2026-04-21",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:50:00.656471+00:00",
+    "date_confidence": "high",
+    "description": "Who are we? Equinix is the world’s digital infrastructure company®, shortening the path to connectivity to enable the innovations that enrich our work, life and planet. A place whe"
+  },
+  {
+    "company": "Equinix",
+    "source": "equinix_official_careers",
+    "job_id": "JR-162135",
+    "title": "AI and Business Process Strategic Portfolio Integrator",
+    "location": "Toronto, Ontario, Canada; Dallas, Texas, United States",
+    "official_url": "https://careers.equinix.com/jobs/ai-and-business-process-strategic-portfolio-integrator-dallas-texas-united-states-toronto-ontario-canada",
+    "posted_date": "2026-07-11",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:50:00.656471+00:00",
+    "date_confidence": "high",
+    "description": "Who are we? Equinix is the world’s digital infrastructure company®, shortening the path to connectivity to enable the innovations that enrich our work, life and planet. A place whe"
+  },
+  {
+    "company": "Equinix",
+    "source": "equinix_official_careers",
+    "job_id": "JR-155574",
+    "title": "SkillBridge Opportunity: Specialist Accountant & Program Manager – xScale AI Data Center",
+    "location": "Tampa, Florida, United States; Dallas, Texas, United States",
+    "official_url": "https://careers.equinix.com/jobs/skillbridge-opportunity-specialist-accountant-program-manager-xscale-ai-data-center-dallas-texas-united-states-tampa-florida",
+    "posted_date": "2026-03-03",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:50:00.656471+00:00",
+    "date_confidence": "high",
+    "description": "Who are we? Equinix is the world’s digital infrastructure company®, shortening the path to connectivity to enable the innovations that enrich our work, life and planet. A place whe"
+  }
+]
+```
 
 ## F5
 
@@ -5518,11 +6991,11 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://ffive.wd5.myworkdayjobs.com/f5jobs`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 5
+- Pages/requests fetched: 15
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused: 1 / 0
-- Raw jobs found: 50
-- After US/location filtering: 1
+- Raw jobs found: 132
+- After US/location filtering: 2
 - With trustworthy posted_date: 1
 - Errors/403s: none
 
@@ -5533,15 +7006,28 @@ Sample normalized records:
   {
     "company": "F5",
     "source": "f5_official_careers",
-    "job_id": "RP1038531",
-    "title": "Sr. Software Development Engineer",
-    "location": "F5 Tower; San Jose; Spokane Valley",
-    "official_url": "https://ffive.wd5.myworkdayjobs.com/f5jobs/job/F5-Tower/Sr-Software-Development-Engineer_RP1038531",
+    "job_id": "RP1038571",
+    "title": "Principal Technical Product Manager",
+    "location": "Seattle; San Jose",
+    "official_url": "https://ffive.wd5.myworkdayjobs.com/f5jobs/job/Seattle/Principal-Technical-Product-Manager_RP1038571-1",
     "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:21:48.992376+00:00",
+    "fetched_at": "2026-08-31T23:50:10.093086+00:00",
     "date_confidence": "high",
     "description": "At F5, we strive to bring a better digital world to life. Our teams empower organizations across the globe to create, secure, and run applications that enhance how we experience ou"
+  },
+  {
+    "company": "F5",
+    "source": "f5_official_careers",
+    "job_id": "RP1038058",
+    "title": "",
+    "location": "",
+    "official_url": "https://ffive.wd5.myworkdayjobs.com/f5jobs/",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:50:10.093086+00:00",
+    "date_confidence": "unknown",
+    "description": ""
   }
 ]
 ```
@@ -5555,7 +7041,7 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 109
+- Raw jobs found: 110
 - After US/location filtering: 99
 - With trustworthy posted_date: 99
 - Errors/403s: none
@@ -5567,26 +7053,13 @@ Sample normalized records:
   {
     "company": "IXL Learning",
     "source": "ixl_learning_official_careers",
-    "job_id": "8726150002",
-    "title": "Account Executive, Rosetta Stone Latin America",
-    "location": "Bogotá, Colombia; Bogotá, Bogota D.C., Colombia",
-    "official_url": "https://www.ixl.com/company/jobs?gh_jid=8726150002",
-    "posted_date": "2026-08-18",
-    "updated_date": "2026-08-19",
-    "fetched_at": "2026-08-31T18:21:55.211724+00:00",
-    "date_confidence": "high",
-    "description": "<p>IXL Learning, developer of personalized learning products used by millions of people globally, is seeking an Account Executive to join our Rosetta Stone Latin America (LATAM) te"
-  },
-  {
-    "company": "IXL Learning",
-    "source": "ixl_learning_official_careers",
     "job_id": "8642613002",
     "title": "Account Manager, K-12",
     "location": "Raleigh, NC; Morrisville, North Carolina, United States",
     "official_url": "https://www.ixl.com/company/jobs?gh_jid=8642613002",
     "posted_date": "2026-07-21",
     "updated_date": "2026-07-21",
-    "fetched_at": "2026-08-31T18:21:55.211724+00:00",
+    "fetched_at": "2026-08-31T23:50:20.807462+00:00",
     "date_confidence": "high",
     "description": "<p>IXL Learning, developer of personalized learning products used by millions of people globally, is seeking Account Managers to join our growing team. The ideal candidate will hav"
   },
@@ -5599,7 +7072,7 @@ Sample normalized records:
     "official_url": "https://www.ixl.com/company/jobs?gh_jid=8734156002",
     "posted_date": "2026-08-20",
     "updated_date": "2026-08-20",
-    "fetched_at": "2026-08-31T18:21:55.211724+00:00",
+    "fetched_at": "2026-08-31T23:50:20.807462+00:00",
     "date_confidence": "high",
     "description": "<p>IXL Learning, developer of personalized learning products used by millions of people globally, is looking for an Administrative Assistant to support IXL’s RFP and proposals stra"
   },
@@ -5612,7 +7085,7 @@ Sample normalized records:
     "official_url": "https://www.ixl.com/company/jobs?gh_jid=8531284002",
     "posted_date": "2026-04-30",
     "updated_date": "2026-07-10",
-    "fetched_at": "2026-08-31T18:21:55.211724+00:00",
+    "fetched_at": "2026-08-31T23:50:20.807462+00:00",
     "date_confidence": "high",
     "description": "<p>IXL Learning, developer of personalized learning products used by millions of people globally, is seeking an Associate Curriculum Alignment Specialist to join our curriculum dev"
   },
@@ -5625,9 +7098,22 @@ Sample normalized records:
     "official_url": "https://www.ixl.com/company/jobs?gh_jid=8577706002",
     "posted_date": "2026-06-05",
     "updated_date": "2026-08-20",
-    "fetched_at": "2026-08-31T18:21:55.211724+00:00",
+    "fetched_at": "2026-08-31T23:50:20.807462+00:00",
     "date_confidence": "high",
     "description": "<p>IXL Learning, developer of personalized learning products used by millions of people globally, is seeking a driven, customer-focused, and analytical individual to join our Teach"
+  },
+  {
+    "company": "IXL Learning",
+    "source": "ixl_learning_official_careers",
+    "job_id": "8611944002",
+    "title": "Associate Digital Designer",
+    "location": "San Mateo, CA; San Mateo, California, United States",
+    "official_url": "https://www.ixl.com/company/jobs?gh_jid=8611944002",
+    "posted_date": "2026-06-29",
+    "updated_date": "2026-07-30",
+    "fetched_at": "2026-08-31T23:50:20.807462+00:00",
+    "date_confidence": "high",
+    "description": "<p>IXL Learning, developer of personalized learning products used by millions of people globally, is seeking an enthusiastic, highly motivated Associate Digital Designer to join ou"
   }
 ]
 ```
@@ -5644,49 +7130,265 @@ Sample normalized records:
 - Raw jobs found: 0
 - After US/location filtering: 0
 - With trustworthy posted_date: 0
-- Errors/403s: ['Tier B · Good SWE volume; inspect backend.']
+- Errors/403s: ['Tier B · re-tested the official jobs page and current assets on 2026-08-31; PerimeterX returns HTTP 429/CAPTCHA and no complete anonymous ATS/XHR feed is exposed, so the source remains link-only.']
 
 ## Wells Fargo
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier B · Huge feed but low SWE density; only add with strong filters.']
+- Status: ok
+- Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
+- Search URL/API: `https://wf.wd1.myworkdayjobs.com/WellsFargoJobs`
+- Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
+- Pages/requests fetched: 21
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 96 / 0
+- Raw jobs found: 336
+- After US/location filtering: 96
+- With trustworthy posted_date: 96
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Wells Fargo",
+    "source": "wells_fargo_official_careers",
+    "job_id": "R-569781",
+    "title": "Principal Engineer - AI Engineering",
+    "location": "CONCORD, CA; CHARLOTTE, NC; SAN FRANCISCO, CA",
+    "official_url": "https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CONCORD-CA/Principal-Engineer---AI-Engineering_R-569781",
+    "posted_date": "2026-08-26",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:50:21.027592+00:00",
+    "date_confidence": "high",
+    "description": "About this role: Wells Fargo is seeking a Principal Engineer for Tachyon Cortex AI Engineering within the Digital Technology and Innovation organization. This organization supports"
+  },
+  {
+    "company": "Wells Fargo",
+    "source": "wells_fargo_official_careers",
+    "job_id": "R-561534",
+    "title": "Principal Engineer Financial Crime — AI & Modernization",
+    "location": "ISELIN, NJ; CHARLOTTE, NC",
+    "official_url": "https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/ISELIN-NJ/Principal-Engineer-Financial-Crime---AI---Modernization_R-561534-1",
+    "posted_date": "2026-08-27",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:50:21.027592+00:00",
+    "date_confidence": "high",
+    "description": "About this role: Wells Fargo is embarking on a transformative journey to redefine how financial crime risks are detected, assessed, and mitigated through the power of artificial in"
+  },
+  {
+    "company": "Wells Fargo",
+    "source": "wells_fargo_official_careers",
+    "job_id": "R-569594",
+    "title": "Principal Enigneer",
+    "location": "BOSTON, MA",
+    "official_url": "https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/BOSTON-MA/Principal-Enigneer_R-569594",
+    "posted_date": "2026-08-27",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:50:21.027592+00:00",
+    "date_confidence": "high",
+    "description": "About this role: Wells Fargo is seeking a Principal AI Engineer to join the CCIBT Gen AI team, which is responsible for building AI frameworks, intelligent agents, and technology p"
+  },
+  {
+    "company": "Wells Fargo",
+    "source": "wells_fargo_official_careers",
+    "job_id": "R-563547",
+    "title": "Gen AI - Senior Software Automation Engineer",
+    "location": "IRVING, TX; CHARLOTTE, NC",
+    "official_url": "https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/IRVING-TX/Gen-AI---Senior-Software-Automation-Engineer_R-563547-1",
+    "posted_date": "2026-08-28",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:50:21.027592+00:00",
+    "date_confidence": "high",
+    "description": "About this role: This Senior Software Engineer will help design, build, and evolve next-generation AI-powered operational platforms. In this role, you will drive the development of"
+  },
+  {
+    "company": "Wells Fargo",
+    "source": "wells_fargo_official_careers",
+    "job_id": "R-553358",
+    "title": "Senior AI Research Scientist – Foundation Models & Agentic AI",
+    "location": "CHARLOTTE, NC; SAN FRANCISCO, CA; WEST DES MOINES, IA; IRVING, TX; TEMPE, AZ; SAINT LOUIS, MO; MINNEAPOLIS, MN",
+    "official_url": "https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CHARLOTTE-NC/Senior-AI-Research-Scientist---Foundation-Models---Agentic-AI_R-553358",
+    "posted_date": "2026-08-28",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:50:21.027592+00:00",
+    "date_confidence": "high",
+    "description": "About this role: Wells Fargo’s Model Risk Management (MRM) team is seeking a Senior Quantitative Analytics Specialist ( AI Research Scientist – Foundation Models & Agentic AI - Sen"
+  }
+]
+```
 
 ## Yahoo
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier B · Relevant software employer; implement if easy.']
+- Status: ok
+- Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
+- Search URL/API: `https://ouryahoo.wd5.myworkdayjobs.com/careers`
+- Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
+- Pages/requests fetched: 19
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 57 / 0
+- Raw jobs found: 244
+- After US/location filtering: 57
+- With trustworthy posted_date: 57
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Yahoo",
+    "source": "yahoo_official_careers",
+    "job_id": "JR0027165",
+    "title": "Director, Software Apps Engineering – AI-Native Development and Product Experiences",
+    "location": "United States of America",
+    "official_url": "https://ouryahoo.wd5.myworkdayjobs.com/careers/job/United-States-of-America/Director--Software-Apps-Engineering_JR0027165",
+    "posted_date": "2026-08-14",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:52:01.374209+00:00",
+    "date_confidence": "high",
+    "description": "Yahoo Mail is the ultimate consumer inbox with hundreds of millions of users. It’s the best way to access your email and stay organized from a computer, phone or tablet. With its b"
+  },
+  {
+    "company": "Yahoo",
+    "source": "yahoo_official_careers",
+    "job_id": "JR0027182",
+    "title": "Principal Applied Research Scientist – Generative AI and NLP",
+    "location": "United States of America",
+    "official_url": "https://ouryahoo.wd5.myworkdayjobs.com/careers/job/United-States-of-America/Principal-Applied-Research-Scientist---Generative-AI-and-NLP_JR0027182",
+    "posted_date": "2026-08-28",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:52:01.374209+00:00",
+    "date_confidence": "high",
+    "description": "Yahoo Mail is the ultimate consumer inbox with hundreds of millions of users. It’s the best way to access your email and stay organized from a computer, phone or tablet. With its b"
+  },
+  {
+    "company": "Yahoo",
+    "source": "yahoo_official_careers",
+    "job_id": "JR0026993",
+    "title": "Senior Principal AI/ML Architect, Yahoo Mail",
+    "location": "United States of America",
+    "official_url": "https://ouryahoo.wd5.myworkdayjobs.com/careers/job/United-States-of-America/Senior-Principal-AI-ML-Architect--Yahoo-Mail_JR0026993",
+    "posted_date": "2026-05-11",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:52:01.374209+00:00",
+    "date_confidence": "high",
+    "description": "Yahoo Mail is the ultimate consumer inbox with hundreds of millions of users. It’s the best way to access your email and stay organized from a computer, phone or tablet. With its b"
+  },
+  {
+    "company": "Yahoo",
+    "source": "yahoo_official_careers",
+    "job_id": "JR0026054",
+    "title": "Sr. Principal AI Architect, IT Workforce Experiences & Communication",
+    "location": "United States of America",
+    "official_url": "https://ouryahoo.wd5.myworkdayjobs.com/careers/job/United-States-of-America/IT-Sr-Princ-Architect_JR0026054",
+    "posted_date": "2026-04-06",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:52:01.374209+00:00",
+    "date_confidence": "high",
+    "description": "It takes powerful technology to connect our brands and partners with an audience of hundreds of millions of people. Whether you’re looking to write mobile app code, engineer the se"
+  },
+  {
+    "company": "Yahoo",
+    "source": "yahoo_official_careers",
+    "job_id": "JR0027091",
+    "title": "Design Operations Manager, Systems and AI Enablement",
+    "location": "United States of America",
+    "official_url": "https://ouryahoo.wd5.myworkdayjobs.com/careers/job/United-States-of-America/Design-Operations-Manager--Systems-and-AI-Enablement_JR0027091",
+    "posted_date": "2026-07-10",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:52:01.374209+00:00",
+    "date_confidence": "high",
+    "description": "Yahoo serves as a trusted guide for hundreds of millions of people globally, helping them achieve their goals online through our portfolio of iconic products. For advertisers, Yaho"
+  }
+]
+```
 
 ## Ansys
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier C · Technical employer but lower priority; implement only if near-zero incremental cost.']
+- Status: ok
+- Scraping method: HTTP GET server-rendered Radancy/TalentBrew search + JobPosting JSON-LD
+- Search URL/API: `https://careers.synopsys.com/search-jobs`
+- Pagination: p=1,2,...; stop on empty/repeat/short page
+- Pages/requests fetched: 3
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 31 / 0
+- Raw jobs found: 41
+- After US/location filtering: 31
+- With trustworthy posted_date: 31
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Ansys",
+    "source": "ansys_official_careers",
+    "job_id": "98682479840",
+    "title": "Senior Application Engineer",
+    "location": "Waltham, Massachusetts",
+    "official_url": "https://careers.synopsys.com/job/waltham/senior-application-engineer/44408/98682479840",
+    "posted_date": "2026-06-29",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:52:50.507999+00:00",
+    "date_confidence": "high",
+    "description": "THIS POSITION IS ELIGIBLE UNDER THE TERMS OF THE EMPLOYEE REFERRAL PROGRAM (ERP): SUMMARY ANSYS, Inc. seeks Senior Application Engineer to work in Waltham, MA RESPONSIBILITIES Lead"
+  },
+  {
+    "company": "Ansys",
+    "source": "ansys_official_careers",
+    "job_id": "98682479648",
+    "title": "Marketing Coordinator",
+    "location": "Canonsburg, Pennsylvania",
+    "official_url": "https://careers.synopsys.com/job/canonsburg/marketing-coordinator/44408/98682479648",
+    "posted_date": "2026-06-29",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:52:50.507999+00:00",
+    "date_confidence": "high",
+    "description": "THIS POSITION IS ELIGIBLE UNDER THE TERMS OF THE EMPLOYEE REFERRAL PROGRAM (ERP): SUMMARY ANSYS, Inc. seeks Marketing Coordinator to work in Canonsburg, PA and various unanticipate"
+  },
+  {
+    "company": "Ansys",
+    "source": "ansys_official_careers",
+    "job_id": "89569494560",
+    "title": "Staff Application Engineer (Electronics Thermal Management) - Southern California (13730)",
+    "location": "Irvine, California",
+    "official_url": "https://careers.synopsys.com/job/irvine/staff-application-engineer-electronics-thermal-management-southern-california-13730/44408/89569494560",
+    "posted_date": "2025-12-15",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:52:50.507999+00:00",
+    "date_confidence": "high",
+    "description": "We Are: At Synopsys, we drive the innovations that shape the way we live and connect. Our technology is central to the Era of Pervasive Intelligence, from self-driving cars to lear"
+  },
+  {
+    "company": "Ansys",
+    "source": "ansys_official_careers",
+    "job_id": "98682479680",
+    "title": "UX Designer II",
+    "location": "Canonsburg, Pennsylvania",
+    "official_url": "https://careers.synopsys.com/job/canonsburg/ux-designer-ii/44408/98682479680",
+    "posted_date": "2026-06-29",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:52:50.507999+00:00",
+    "date_confidence": "high",
+    "description": "THIS POSITION IS ELIGIBLE UNDER THE TERMS OF THE EMPLOYEE REFERRAL PROGRAM (ERP): SUMMARY ANSYS, Inc. seeks UX Designer II to work in Canonsburg, PA RESPONSIBILITIES The User Exper"
+  },
+  {
+    "company": "Ansys",
+    "source": "ansys_official_careers",
+    "job_id": "98682479744",
+    "title": "Senior R&D Engineer",
+    "location": "Canonsburg, Pennsylvania",
+    "official_url": "https://careers.synopsys.com/job/canonsburg/senior-r-and-d-engineer/44408/98682479744",
+    "posted_date": "2026-06-29",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:52:50.507999+00:00",
+    "date_confidence": "high",
+    "description": "THIS POSITION IS ELIGIBLE UNDER THE TERMS OF THE EMPLOYEE REFERRAL PROGRAM (ERP): SUMMARY ANSYS, Inc. seeks Senior R&D Engineer to work in Canonsburg, PA, and various unanticipated"
+  }
+]
+```
 
 ## Blizzard Entertainment
 
@@ -5700,7 +7402,7 @@ Sample normalized records:
 - Raw jobs found: 0
 - After US/location filtering: 0
 - With trustworthy posted_date: 0
-- Errors/403s: ['Tier C · Interesting SWE roles but lower volume; easy-only.']
+- Errors/403s: ['Tier C · the Activision/Blizzard Eightfold PCSX endpoint returns HTTP 403 (PCSX disabled), and the Phenom surface has no verified reusable anonymous feed.']
 
 ## Flex
 
@@ -5708,12 +7410,12 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://flextronics.wd1.myworkdayjobs.com/Careers`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 10
+- Pages/requests fetched: 22
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 43 / 0
-- Raw jobs found: 179
-- After US/location filtering: 43
-- With trustworthy posted_date: 43
+- Detail pages fetched/cache reused: 123 / 41
+- Raw jobs found: 344
+- After US/location filtering: 164
+- With trustworthy posted_date: 164
 - Errors/403s: none
 
 Sample normalized records:
@@ -5723,41 +7425,28 @@ Sample normalized records:
   {
     "company": "Flex",
     "source": "flex_official_careers",
-    "job_id": "WD227317",
-    "title": "Software Development Engineer",
-    "location": "USA, TX, Austin",
-    "official_url": "https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-TX-Austin/Software-Development-Engineer_WD227317",
-    "posted_date": "2026-08-26",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:21:55.639006+00:00",
-    "date_confidence": "high",
-    "description": "Flex is the diversified manufacturing partner of choice that helps market-leading brands design, build and deliver innovative products that improve the world. A career at Flex offe"
-  },
-  {
-    "company": "Flex",
-    "source": "flex_official_careers",
-    "job_id": "WD228034",
-    "title": "ICT Engineer",
-    "location": "USA, TX, Austin",
-    "official_url": "https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-TX-Austin/ICT-Engineer_WD228034",
+    "job_id": "WD228305",
+    "title": "Senior Director, Platform Architect - AI",
+    "location": "USA, Remote",
+    "official_url": "https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-Remote/Senior-Director--Platform-Architect---AI_WD228305",
     "posted_date": "2026-08-25",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:21:55.639006+00:00",
+    "fetched_at": "2026-08-31T23:53:09.555074+00:00",
     "date_confidence": "high",
     "description": "Flex is the diversified manufacturing partner of choice that helps market-leading brands design, build and deliver innovative products that improve the world. A career at Flex offe"
   },
   {
     "company": "Flex",
     "source": "flex_official_careers",
-    "job_id": "WD228088",
-    "title": "Test Engineering Manager",
-    "location": "USA, SC, Columbia",
-    "official_url": "https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-SC-Columbia/Test-Engineering-Manager_WD228088",
-    "posted_date": "2026-08-28",
+    "job_id": "WD218757",
+    "title": "Sales Engineer",
+    "location": "USA, MA, Littleton; USA, TX, Austin",
+    "official_url": "https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-MA-Littleton/Sales-Engineer_WD218757",
+    "posted_date": "2026-07-27",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:21:55.639006+00:00",
+    "fetched_at": "2026-08-31T23:53:09.555074+00:00",
     "date_confidence": "high",
-    "description": "Flex is the diversified manufacturing partner of choice that helps market-leading brands design, build and deliver innovative products that improve the world. A career at Flex offe"
+    "description": "At JetCool, a Flex company, we’re at the forefront of liquid cooling innovation, delivering advanced solutions that empower our partners in AI and high-performance computing. Unite"
   },
   {
     "company": "Flex",
@@ -5768,20 +7457,33 @@ Sample normalized records:
     "official_url": "https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-CA-Milpitas/Test-Engineer_WD226261",
     "posted_date": "2026-08-03",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:21:55.639006+00:00",
+    "fetched_at": "2026-08-31T23:53:09.555074+00:00",
     "date_confidence": "high",
     "description": "Flex is the diversified manufacturing partner of choice that helps market-leading brands design, build and deliver innovative products that improve the world. A career at Flex offe"
   },
   {
     "company": "Flex",
     "source": "flex_official_careers",
-    "job_id": "WD225959",
-    "title": "Engineering Technician",
-    "location": "USA, TN, Memphis",
-    "official_url": "https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-TN-Memphis/Engineering-Technician_WD225959",
+    "job_id": "WD228496",
+    "title": "Associate Principal Engineer, Mechanical Engineering",
+    "location": "USA, TX, Austin",
+    "official_url": "https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-TX-Austin/Associate-Principal-Engineer--Mechanical-Engineering_WD228496",
     "posted_date": "2026-08-28",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:21:55.639006+00:00",
+    "fetched_at": "2026-08-31T23:53:09.555074+00:00",
+    "date_confidence": "high",
+    "description": "Flex is the diversified manufacturing partner of choice that helps market-leading brands design, build and deliver innovative products that improve the world. A career at Flex offe"
+  },
+  {
+    "company": "Flex",
+    "source": "flex_official_careers",
+    "job_id": "WD228495",
+    "title": "Associate Principal Engineer, Electrical Engineering",
+    "location": "USA, TX, Austin",
+    "official_url": "https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-TX-Austin/Associate-Principal-Engineer--Electrical-Engineering_WD228495",
+    "posted_date": "2026-08-28",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:53:09.555074+00:00",
     "date_confidence": "high",
     "description": "Flex is the diversified manufacturing partner of choice that helps market-leading brands design, build and deliver innovative products that improve the world. A career at Flex offe"
   }
@@ -5794,18 +7496,44 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://iqvia.wd1.myworkdayjobs.com/IQVIA`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 10
+- Pages/requests fetched: 11
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 39 / 0
-- Raw jobs found: 161
-- After US/location filtering: 38
-- With trustworthy posted_date: 38
+- Detail pages fetched/cache reused: 23 / 9
+- Raw jobs found: 80
+- After US/location filtering: 32
+- With trustworthy posted_date: 32
 - Errors/403s: none
 
 Sample normalized records:
 
 ```json
 [
+  {
+    "company": "IQVIA",
+    "source": "iqvia_official_careers",
+    "job_id": "R1547949",
+    "title": "Manager, Laboratory Automation & AI Transformation Lab",
+    "location": "Durham, North Carolina, United States of America",
+    "official_url": "https://iqvia.wd1.myworkdayjobs.com/IQVIA/job/Durham-North-Carolina-United-States-of-America/Manager--Laboratory-Automation---AI-Transformation-Lab_R1547949",
+    "posted_date": "2026-06-18",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:54:41.082381+00:00",
+    "date_confidence": "high",
+    "description": "We are seeking Manager for our Laboratory Automation & AI Transformation Lab to join IQVIA Laboratories at Durham, NC . We hire passionate innovators who drive healthcare forward t"
+  },
+  {
+    "company": "IQVIA",
+    "source": "iqvia_official_careers",
+    "job_id": "R1552020",
+    "title": "MedTech Laboratory Field Service Engineer",
+    "location": "Philadelphia, PA, United States of America; Marysville, Washington, United States; Jacksonville, FL; Los Angeles, CA; Camden, New Jersey, United States",
+    "official_url": "https://iqvia.wd1.myworkdayjobs.com/IQVIA/job/Philadelphia-PA-United-States-of-America/MedTech-Field-Service-Engineer_R1552020",
+    "posted_date": "2026-08-27",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:54:41.082381+00:00",
+    "date_confidence": "high",
+    "description": "Internal Job Description Our MedTech Field Service Engineer experiences a unique opportunity employ their technical experience by collaborating with healthcare professionals and le"
+  },
   {
     "company": "IQVIA",
     "source": "iqvia_official_careers",
@@ -5815,78 +7543,124 @@ Sample normalized records:
     "official_url": "https://iqvia.wd1.myworkdayjobs.com/IQVIA/job/Red-Bank-NJ-United-States-of-America/Senior-Software-Engineer_R1526366",
     "posted_date": "2026-08-19",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:22:34.927684+00:00",
+    "fetched_at": "2026-08-31T23:54:41.082381+00:00",
     "date_confidence": "high",
     "description": "IQVIA Digital Overview: IQVIA Digital powers exceptional brand experiences, delivering innovative solutions based on a customer-first, insights-driven, and integrated omnichannel v"
   },
   {
     "company": "IQVIA",
     "source": "iqvia_official_careers",
-    "job_id": "R1548888",
-    "title": "Sr Software Development Engineer",
-    "location": "Houston, Texas, United States of America; Greenwich, CT, United States of America",
-    "official_url": "https://iqvia.wd1.myworkdayjobs.com/IQVIA/job/Houston-Texas-United-States-of-America/Sr-Software-Development-Engineer_R1548888",
-    "posted_date": "2026-06-29",
+    "job_id": "R1566486",
+    "title": "MedTech Field Service Technician Device Upgrade or Engineer",
+    "location": "Carlsbad, CA, United States of America; Los Angeles, CA; San Francisco , CA",
+    "official_url": "https://iqvia.wd1.myworkdayjobs.com/IQVIA/job/Carlsbad-CA-United-States-of-America/MedTech-Field-Service-Technician-Device-Upgrade-or-Engineer_R1566486",
+    "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:22:34.927684+00:00",
+    "fetched_at": "2026-08-31T23:54:41.082381+00:00",
     "date_confidence": "high",
-    "description": "About Cedar Gate Technologies Cedar Gate Technologies, an IQVIA business, enables payers, providers, employers, and service administrators to excel at value-based care with a unifi"
+    "description": "Our MedTech Field Service Technicians and Engineers experience a unique opportunity employ their technical experience by collaborating with healthcare professionals and leading tec"
   },
   {
     "company": "IQVIA",
     "source": "iqvia_official_careers",
-    "job_id": "R1320047",
-    "title": "Sr. Software Developer",
-    "location": "Bogota, Colombia",
-    "official_url": "https://iqvia.wd1.myworkdayjobs.com/IQVIA/job/Bogota-Colombia/XMLNAME-40842---Software-Devl-Analyst-2_R1320047",
-    "posted_date": "2022-12-14",
+    "job_id": "R1554763",
+    "title": "Director, Enterprise Data & Digital Platform Architecture",
+    "location": "Durham, North Carolina, United States of America",
+    "official_url": "https://iqvia.wd1.myworkdayjobs.com/IQVIA/job/Durham-North-Carolina-United-States-of-America/Director--Enterprise-Data---Digital-Platform-Architecture_R1554763",
+    "posted_date": "2026-08-21",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:22:34.927684+00:00",
+    "fetched_at": "2026-08-31T23:54:41.082381+00:00",
     "date_confidence": "high",
-    "description": "Job Overview Under broad guidance, performs activities related to the analysis, design, programming, debugging, modification, and maintenance of web enhancements and/or new product"
-  },
-  {
-    "company": "IQVIA",
-    "source": "iqvia_official_careers",
-    "job_id": "R1554802",
-    "title": "Development Manager",
-    "location": "Greenwich, CT, United States of America; Burlington, MA, United States of America",
-    "official_url": "https://iqvia.wd1.myworkdayjobs.com/IQVIA/job/Greenwich-CT-United-States-of-America/Development-Manager_R1554802",
-    "posted_date": "2026-08-05",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:22:34.927684+00:00",
-    "date_confidence": "high",
-    "description": "About Cedar Gate Technologies Cedar Gate Technologies, an IQVIA business, enables payers, providers, employers, and service administrators to excel at value-based care with a unifi"
-  },
-  {
-    "company": "IQVIA",
-    "source": "iqvia_official_careers",
-    "job_id": "R1320054",
-    "title": "Sr. Software Developer",
-    "location": "Bogota, Colombia",
-    "official_url": "https://iqvia.wd1.myworkdayjobs.com/IQVIA/job/Bogota-Colombia/Sr-Software-Developer_R1320054",
-    "posted_date": "2022-09-05",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:22:34.927684+00:00",
-    "date_confidence": "high",
-    "description": "Job Overview Under broad guidance, performs activities related to the analysis, design, programming, debugging, modification, and maintenance of software enhancements and/or new pr"
+    "description": "We are seeking a strategic and hands-on Director of Enterprise Data & Digital Platform Architecture to define and lead the architecture vision for next-generation data, analytics, "
   }
 ]
 ```
 
 ## Johnson & Johnson
 
-- Status: blocked
-- Scraping method: skip
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Tier C · Large mixed-role employer; only if generic and cheap.']
+- Status: ok
+- Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
+- Search URL/API: `https://jj.wd5.myworkdayjobs.com/JJ`
+- Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
+- Pages/requests fetched: 22
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused: 194 / 0
+- Raw jobs found: 407
+- After US/location filtering: 194
+- With trustworthy posted_date: 194
+- Errors/403s: none
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Johnson & Johnson",
+    "source": "johnson_&_johnson_official_careers",
+    "job_id": "R-095438",
+    "title": "Principal Scientist, R&D Data, Data Science & Artificial Intelligence - Immunology",
+    "location": "Cambridge, Massachusetts, United States of America; Raritan, New Jersey, United States of America; Titusville, New Jersey, United States of America; Spring House, Pennsylvania, United States of America; San Diego, California, United States of America",
+    "official_url": "https://jj.wd5.myworkdayjobs.com/JJ/job/Cambridge-Massachusetts-United-States-of-America/Principal-Scientist--R-D-Data--Data-Science---Artificial-Intelligence---Immunology_R-095438-2",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:55:08.027947+00:00",
+    "date_confidence": "high",
+    "description": "At Johnson & Johnson, we believe health is everything. Our strength in healthcare innovation empowers us to build a world where complex diseases are prevented, treated, and cured, "
+  },
+  {
+    "company": "Johnson & Johnson",
+    "source": "johnson_&_johnson_official_careers",
+    "job_id": "R-078334",
+    "title": "R&D Applications Engineer",
+    "location": "Raynham, Massachusetts, United States of America; West Chester, Pennsylvania, United States of America; Palm Beach Gardens, Florida, United States of America",
+    "official_url": "https://jj.wd5.myworkdayjobs.com/JJ/job/Raynham-Massachusetts-United-States-of-America/R-D-Applications_R-078334-1",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:55:08.027947+00:00",
+    "date_confidence": "high",
+    "description": "At Johnson & Johnson, we believe health is everything. Our strength in healthcare innovation empowers us to build a world where complex diseases are prevented, treated, and cured, "
+  },
+  {
+    "company": "Johnson & Johnson",
+    "source": "johnson_&_johnson_official_careers",
+    "job_id": "R-096054",
+    "title": "Lead, Digital & Data Analytics",
+    "location": "New Brunswick, New Jersey, United States of America",
+    "official_url": "https://jj.wd5.myworkdayjobs.com/JJ/job/New-Brunswick-New-Jersey-United-States-of-America/Lead--Digital---Data-Analytics_R-096054-2",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:55:08.027947+00:00",
+    "date_confidence": "high",
+    "description": "At Johnson & Johnson, we believe health is everything. Our strength in healthcare innovation empowers us to build a world where complex diseases are prevented, treated, and cured, "
+  },
+  {
+    "company": "Johnson & Johnson",
+    "source": "johnson_&_johnson_official_careers",
+    "job_id": "R-089786",
+    "title": "Principal Scientist, Biologics Optimization",
+    "location": "Spring House, Pennsylvania, United States of America",
+    "official_url": "https://jj.wd5.myworkdayjobs.com/JJ/job/Spring-House-Pennsylvania-United-States-of-America/Principal-Scientist--Biologics-Optimization_R-089786-2",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:55:08.027947+00:00",
+    "date_confidence": "high",
+    "description": "At Johnson & Johnson, we believe health is everything. Our strength in healthcare innovation empowers us to build a world where complex diseases are prevented, treated, and cured, "
+  },
+  {
+    "company": "Johnson & Johnson",
+    "source": "johnson_&_johnson_official_careers",
+    "job_id": "R-089799",
+    "title": "Principal Scientist, Biologics Optimization",
+    "location": "Spring House, Pennsylvania, United States of America",
+    "official_url": "https://jj.wd5.myworkdayjobs.com/JJ/job/Spring-House-Pennsylvania-United-States-of-America/Principal-Scientist--Biologics-Optimization_R-089799-1",
+    "posted_date": "2026-08-31",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:55:08.027947+00:00",
+    "date_confidence": "high",
+    "description": "At Johnson & Johnson, we believe health is everything. Our strength in healthcare innovation empowers us to build a world where complex diseases are prevented, treated, and cured, "
+  }
+]
+```
 
 ## Nasdaq
 
@@ -5894,12 +7668,12 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 8
+- Pages/requests fetched: 11
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 37 / 0
-- Raw jobs found: 143
-- After US/location filtering: 37
-- With trustworthy posted_date: 37
+- Detail pages fetched/cache reused: 2 / 23
+- Raw jobs found: 101
+- After US/location filtering: 25
+- With trustworthy posted_date: 25
 - Errors/403s: none
 
 Sample normalized records:
@@ -5909,67 +7683,67 @@ Sample normalized records:
   {
     "company": "Nasdaq",
     "source": "nasdaq_official_careers",
-    "job_id": "R0026302",
-    "title": "Software Engineer",
-    "location": "Lithuania - Vilnius",
-    "official_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/Lithuania---Vilnius/Software-Engineer_R0026302",
-    "posted_date": "2026-06-19",
+    "job_id": "R0025386",
+    "title": "Director, AI Engineering & Automation",
+    "location": "USA - New York City - New York",
+    "official_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/USA---New-York-City---New-York/AI-Product-Owner---Corporate-Finance_R0025386",
+    "posted_date": "2026-06-08",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:23:18.952549+00:00",
+    "fetched_at": "2026-08-31T23:57:22.088447+00:00",
     "date_confidence": "high",
-    "description": "As a Software Engineer reporting to Senior Director, you'll play a critical role in designing, developing, and delivering software solutions that power Nasdaq's technology platform"
+    "description": "As a Director, AI Engineering & Automation , you will be accountable for leading the execution of the AI strategy within our Corporate Finance Division. This role requires a proven"
   },
   {
     "company": "Nasdaq",
     "source": "nasdaq_official_careers",
-    "job_id": "R0026396",
-    "title": "Senior Software Engineer",
-    "location": "CA-Toronto-York St 24/25",
-    "official_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/CA-Toronto-York-St-2425/Senior-Software-Engineer_R0026396",
-    "posted_date": "2026-07-07",
+    "job_id": "R0024206",
+    "title": "Senior AI Application Engineer (.NET)",
+    "location": "USA - Atlanta - Georgia",
+    "official_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/USA---Atlanta---Georgia/AI-Engineer_R0024206-1",
+    "posted_date": "2026-08-17",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:23:18.952549+00:00",
+    "fetched_at": "2026-08-31T23:57:22.088447+00:00",
     "date_confidence": "high",
-    "description": "As a Senior Software Engineer reporting to the Sr. Director of Software Development, you'll play a critical role in building the next generation of market data streaming products t"
+    "description": "We’re looking for a Senior AI Engineer with a .NET backgound to design and deliver secure, scalable applications that bring modern AI into enterprise environments. In this role, yo"
   },
   {
     "company": "Nasdaq",
     "source": "nasdaq_official_careers",
-    "job_id": "R0026607",
-    "title": "Lead Software Engineer",
-    "location": "USA - Philadelphia - Pennsylvania",
-    "official_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/USA---Philadelphia---Pennsylvania/Lead-Software-Engineer_R0026607",
+    "job_id": "R0026576",
+    "title": "AI / DevOps Engineer – Agentic Systems & Automation",
+    "location": "USA - New York City - New York; USA - Philadelphia - Pennsylvania",
+    "official_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/USA---New-York-City---New-York/AI---DevOps-Engineer---Agentic-Systems---Automation_R0026576",
     "posted_date": "2026-08-04",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:23:18.952549+00:00",
+    "fetched_at": "2026-08-31T23:57:22.088447+00:00",
     "date_confidence": "high",
-    "description": "As a Lead Software Engineer reporting to the VP - Software Engineering, you'll play a critical role in developing and maintaining the technology that powers Nasdaq's Derivatives Ma"
+    "description": "As a Lead DevOps Engineer reporting to the AVP – Systems and Network Administration , y ou'll play a critical role in building and o perating intelligent automation platforms, AI a"
   },
   {
     "company": "Nasdaq",
     "source": "nasdaq_official_careers",
-    "job_id": "R0026685",
-    "title": "Principal Software Engineer",
-    "location": "USA - Atlanta - Georgia",
-    "official_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/USA---Atlanta---Georgia/Principal-Software-Engineer_R0026685-1",
-    "posted_date": "2026-08-18",
+    "job_id": "R0026342",
+    "title": "Markets Investigator",
+    "location": "Washington DC; USA - Philadelphia - Pennsylvania; USA - New York City - New York",
+    "official_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/Washington-DC/Investigative-Data-Scientist-AI-Engineer_R0026342",
+    "posted_date": "2026-08-25",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:23:18.952549+00:00",
+    "fetched_at": "2026-08-31T23:57:22.088447+00:00",
     "date_confidence": "high",
-    "description": "As a Principal Software Engineer, you'll play a defining role in shaping the technical direction of the platforms that power the institutional investing marketplace. You'll operate"
+    "description": "As a Markets Investigator , you'll play a critical role in protecting market integrity by combining investigative analysis with AI and data science to support Nasdaq's Investigatio"
   },
   {
     "company": "Nasdaq",
     "source": "nasdaq_official_careers",
-    "job_id": "R0026675",
-    "title": "Software Engineer Specialist",
-    "location": "USA - New York City - New York",
-    "official_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/USA---New-York-City---New-York/Software-Engineer--Specialist_R0026675",
-    "posted_date": "2026-08-20",
+    "job_id": "R0026782",
+    "title": "Software Engineer - Cloud Solutions & AI",
+    "location": "USA - Boston - Massachusetts",
+    "official_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/USA---Boston---Massachusetts/Software-Engineer---Cloud-Solutions---AI_R0026782",
+    "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:23:18.952549+00:00",
+    "fetched_at": "2026-08-31T23:57:22.088447+00:00",
     "date_confidence": "high",
-    "description": "The Role As a Software Engineer Specialist reporting to th e Director - Software Engineering , you'll play a critical role in building and maintaining the technology platforms that"
+    "description": "As a Software Engineer reporting to the Senior Director of Software Engineering, you'll play a key role in building and improving the Nasdaq Questionnaires platform — a SaaS soluti"
   }
 ]
 ```
@@ -5977,15 +7751,15 @@ Sample normalized records:
 ## PointClickCare
 
 - Status: ok
-- Scraping method: HTTP GET shared Lever postings API /v0/postings/{token}
-- Search URL/API: `https://jobs.lever.co/pointclickcare`
-- Pagination: single JSON payload (no paging)
+- Scraping method: HTTP GET Lever /v0/postings/{token}?mode=json
+- Search URL/API: `https://api.lever.co/v0/postings/pointclickcare`
+- Pagination: single JSON payload
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 59
-- After US/location filtering: 59
-- With trustworthy posted_date: 59
+- Raw jobs found: 86
+- After US/location filtering: 78
+- With trustworthy posted_date: 78
 - Errors/403s: none
 
 Sample normalized records:
@@ -5995,15 +7769,28 @@ Sample normalized records:
   {
     "company": "PointClickCare",
     "source": "pointclickcare_official_careers",
-    "job_id": "30417b22-fd9a-4ff2-bc8d-5689401063b7",
-    "title": "(Canada) Commercial Services Representative (6 month secondment)",
-    "location": "Remote or Mississauga",
-    "official_url": "https://jobs.lever.co/pointclickcare/30417b22-fd9a-4ff2-bc8d-5689401063b7",
-    "posted_date": "2026-08-17",
+    "job_id": "218d6a04-8e57-4034-84a8-2393e07f66d0",
+    "title": "(Canada) - Junior Site Reliability Engineer",
+    "location": "Mississauga",
+    "official_url": "https://jobs.lever.co/pointclickcare/218d6a04-8e57-4034-84a8-2393e07f66d0",
+    "posted_date": "2026-06-07",
     "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "At PointClickCare our mission is simple: to help providers deliver exceptional care. And that starts with our people. As a leading health tech company that’s founder-led and privat"
+    "fetched_at": "2026-08-31T23:57:35.298541+00:00",
+    "date_confidence": "high",
+    "description": ""
+  },
+  {
+    "company": "PointClickCare",
+    "source": "pointclickcare_official_careers",
+    "job_id": "d8fd6d01-d474-4afb-82dc-02fd55b4e7b3",
+    "title": "(Canada) Customer Operations Launch Manager - 1 Year Contract",
+    "location": "Mississauga",
+    "official_url": "https://jobs.lever.co/pointclickcare/d8fd6d01-d474-4afb-82dc-02fd55b4e7b3",
+    "posted_date": "2026-07-10",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:57:35.298541+00:00",
+    "date_confidence": "high",
+    "description": "Plan, organize, and execute on multiple solution or services introductions in partnership with the cross-functional team that maximizes the customer value and business outcomes. Wo"
   },
   {
     "company": "PointClickCare",
@@ -6014,9 +7801,9 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/pointclickcare/ccdecc93-aef2-4b2b-a981-6843f3c16221",
     "posted_date": "2026-08-13",
     "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "At PointClickCare our mission is simple: to help providers deliver exceptional care. And that starts with our people. As a leading health tech company that’s founder-led and privat"
+    "fetched_at": "2026-08-31T23:57:35.298541+00:00",
+    "date_confidence": "high",
+    "description": ""
   },
   {
     "company": "PointClickCare",
@@ -6027,35 +7814,22 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/pointclickcare/dae9f71b-9f8c-4669-a786-3d17c913c959",
     "posted_date": "2026-07-23",
     "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "We are seeking a dynamic and results-oriented Named Regional Account Executive to join our high-performing team. This role is responsible for driving revenue growth through strateg"
+    "fetched_at": "2026-08-31T23:57:35.298541+00:00",
+    "date_confidence": "high",
+    "description": "3–5+ years of experience in B2B SaaS sales, preferably in healthcare, digital health, or care delivery platforms. Proven track record of building high-value relationships and closi"
   },
   {
     "company": "PointClickCare",
     "source": "pointclickcare_official_careers",
-    "job_id": "5fb4a010-9087-45ac-b49a-631cfdb0b2c8",
-    "title": "(Canada) Solutions Analyst- Pharmacy",
-    "location": "Remote or Mississauga",
-    "official_url": "https://jobs.lever.co/pointclickcare/5fb4a010-9087-45ac-b49a-631cfdb0b2c8",
-    "posted_date": "2026-08-05",
+    "job_id": "6b7f5c7a-372b-4a4a-8187-b2c347157e14",
+    "title": "(Canada) Software Implementation Consultant - Clinical",
+    "location": "Mississauga",
+    "official_url": "https://jobs.lever.co/pointclickcare/6b7f5c7a-372b-4a4a-8187-b2c347157e14",
+    "posted_date": "2026-07-09",
     "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "At PointClickCare our mission is simple: to help providers deliver exceptional care. And that starts with our people. As a leading health tech company that’s founder-led and privat"
-  },
-  {
-    "company": "PointClickCare",
-    "source": "pointclickcare_official_careers",
-    "job_id": "efcc56c5-ba22-416a-bff2-5f04ea1579ee",
-    "title": "(US) Commercial Services Representative (6 month contract)",
-    "location": "Remote or In Office",
-    "official_url": "https://jobs.lever.co/pointclickcare/efcc56c5-ba22-416a-bff2-5f04ea1579ee",
-    "posted_date": "2026-08-17",
-    "updated_date": "",
-    "fetched_at": "",
-    "date_confidence": "medium",
-    "description": "At PointClickCare our mission is simple: to help providers deliver exceptional care. And that starts with our people. As a leading health tech company that’s founder-led and privat"
+    "fetched_at": "2026-08-31T23:57:35.298541+00:00",
+    "date_confidence": "high",
+    "description": "Principal implementation liaison on the project team documenting customer requirements, translating technical requirements into configuration setup, business processes and goals Le"
   }
 ]
 ```
@@ -6066,12 +7840,12 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://stryker.wd1.myworkdayjobs.com/StrykerCareers`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 8
+- Pages/requests fetched: 17
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 37 / 0
-- Raw jobs found: 156
-- After US/location filtering: 37
-- With trustworthy posted_date: 37
+- Detail pages fetched/cache reused: 89 / 34
+- Raw jobs found: 210
+- After US/location filtering: 123
+- With trustworthy posted_date: 123
 - Errors/403s: none
 
 Sample normalized records:
@@ -6081,67 +7855,67 @@ Sample normalized records:
   {
     "company": "Stryker",
     "source": "stryker_official_careers",
-    "job_id": "R565692",
-    "title": "Staff Software Engineer",
-    "location": "San Jose, California",
-    "official_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/San-Jose-California/Staff-Software-Engineer_R565692-1",
-    "posted_date": "2026-08-04",
+    "job_id": "R571006",
+    "title": "Staff AI Engineer (Hybrid)",
+    "location": "Menlo Park, California",
+    "official_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/Menlo-Park-California/Staff-AI-Engineer--Hybrid-_R571006",
+    "posted_date": "2026-08-26",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:23:53.457260+00:00",
+    "fetched_at": "2026-08-31T23:57:36.872110+00:00",
     "date_confidence": "high",
-    "description": "Work Flexibility: Hybrid or Onsite Stryker is seeking a Staff Software Engineer to join our Endoscopy division. This role will lead the design and development of Windows-based soft"
+    "description": "Work Flexibility: Hybrid We're hiring a Staff AI Engineer to build GenAI and voice agents for medical devices, deployed both on-device and in the cloud. You'll own the technical di"
   },
   {
     "company": "Stryker",
     "source": "stryker_official_careers",
-    "job_id": "R570033",
-    "title": "Associate Manager, Software Engineering",
-    "location": "Portage, Michigan",
-    "official_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/Portage-Michigan/Associate-Manager--Software-Engineering_R570033",
-    "posted_date": "2026-08-18",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:23:53.457260+00:00",
-    "date_confidence": "high",
-    "description": "Work Flexibility: Hybrid Join a leadership team focused on advancing software quality, verification, and test excellence across a portfolio of regulated products. In this role, you"
-  },
-  {
-    "company": "Stryker",
-    "source": "stryker_official_careers",
-    "job_id": "R570625",
-    "title": "Salesforce Software Engineer (Remote)",
-    "location": "Portage, Michigan; Atlanta, Georgia; Dallas, Texas; Chicago, Illinois; Indianapolis, Indiana",
-    "official_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/Portage-Michigan/Salesforce-Software-Engineer--Remote-_R570625",
-    "posted_date": "2026-08-20",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:23:53.457260+00:00",
-    "date_confidence": "high",
-    "description": "Work Flexibility: Remote As a Salesforce Software Engineer, you will play a key role in shaping how our U.S. commercial organization leverages Salesforce to manage accounts, streng"
-  },
-  {
-    "company": "Stryker",
-    "source": "stryker_official_careers",
-    "job_id": "R570077",
-    "title": "Senior Embedded Software Engineer",
-    "location": "Portage, Michigan",
-    "official_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/Portage-Michigan/Senior-Embedded-Software-Engineer_R570077",
+    "job_id": "R569401",
+    "title": "Senior Lead Data Engineer (Remote)",
+    "location": "Michigan, Virtual Address; New Jersey, Virtual Address; Texas, Dallas Virtual Address; Illinois, Chicago Virtual Address",
+    "official_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/Michigan-Virtual-Address/Senior-Lead-Data-Engineer--Remote-_R569401",
     "posted_date": "2026-08-27",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:23:53.457260+00:00",
+    "fetched_at": "2026-08-31T23:57:36.872110+00:00",
     "date_confidence": "high",
-    "description": "Work Flexibility: Hybrid What You Will Do: We are looking for a collaborative Senior Software Engineer who enjoys solving complex technical challenges and driving continuous improv"
+    "description": "Work Flexibility: Remote As a Senior Lead, Data Engineering, you will serve as a technical leader who helps shape the future of enterprise data solutions. In this role, you will dr"
   },
   {
     "company": "Stryker",
     "source": "stryker_official_careers",
-    "job_id": "R569978",
-    "title": "Staff Software Engineer, R&D",
-    "location": "Portage, Michigan",
-    "official_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/Portage-Michigan/Staff-Software-Engineer--R-D_R569978",
+    "job_id": "R571251",
+    "title": "Senior Staff Product Owner, Voice Intelligence",
+    "location": "San Jose, California",
+    "official_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/San-Jose-California/Senior-Staff-Product-Owner--Voice-Intelligence_R571251",
+    "posted_date": "2026-08-27",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:57:36.872110+00:00",
+    "date_confidence": "high",
+    "description": "Work Flexibility: Hybrid It's Time to Join Stryker! Stryker is seeking a Senior Staff Product Owner, Voice Intelligence to help shape the next generation of intelligent caregiver c"
+  },
+  {
+    "company": "Stryker",
+    "source": "stryker_official_careers",
+    "job_id": "R569627",
+    "title": "Staff Electrical Engineer - PCB Layout & Component Library Support",
+    "location": "Portage, Michigan; Grand Rapids, Michigan",
+    "official_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/Portage-Michigan/Staff-Electrical-Engineer---PCB-Layout---Component-Library-Support_R569627-1",
+    "posted_date": "2026-07-28",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:57:36.872110+00:00",
+    "date_confidence": "high",
+    "description": "Work Flexibility: Hybrid Stryker is seeking a Staff Electrical Engineer who can deliver high-quality PCB layout, ECAD component library support, and component engineering for medic"
+  },
+  {
+    "company": "Stryker",
+    "source": "stryker_official_careers",
+    "job_id": "R568008",
+    "title": "Senior Manufacturing Engineer",
+    "location": "Irvine, California",
+    "official_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/Irvine-California/Senior-Manufacturing-Engineer_R568008",
     "posted_date": "2026-08-05",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:23:53.457260+00:00",
+    "fetched_at": "2026-08-31T23:57:36.872110+00:00",
     "date_confidence": "high",
-    "description": "Work Flexibility: Hybrid Join a team developing embedded software for advanced electromechanical medical devices within Stryker's Orthopaedic Instruments business. In this role, yo"
+    "description": "Work Flexibility: Onsite *This role will be Monday-Friday on second shift (3 pm - 12 am PST) with some flexibility on the hours. * Join a team focused on delivering high-quality me"
   }
 ]
 ```
@@ -6152,12 +7926,12 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://transunion.wd5.myworkdayjobs.com/TransUnion`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 7
+- Pages/requests fetched: 13
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 55 / 0
-- Raw jobs found: 84
-- After US/location filtering: 55
-- With trustworthy posted_date: 55
+- Detail pages fetched/cache reused: 13 / 17
+- Raw jobs found: 108
+- After US/location filtering: 30
+- With trustworthy posted_date: 30
 - Errors/403s: none
 
 Sample normalized records:
@@ -6167,54 +7941,28 @@ Sample normalized records:
   {
     "company": "TransUnion",
     "source": "transunion_official_careers",
-    "job_id": "19041752",
-    "title": "Directors, Software Engineering",
+    "job_id": "19042097",
+    "title": "AI Research & Innovation Lead",
     "location": "Chicago, Illinois",
-    "official_url": "https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Chicago-Illinois/Directors--Software-Engineering_19041752",
-    "posted_date": "2026-08-06",
+    "official_url": "https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Chicago-Illinois/AI-Research---Innovation-Lead_19042097",
+    "posted_date": "2026-08-28",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:24:25.602362+00:00",
+    "fetched_at": "2026-08-31T23:58:41.701513+00:00",
     "date_confidence": "high",
-    "description": "TransUnion's Job Applicant Privacy Notice Personal Information We Collect Your Privacy Choices Team Overview Directors, Software Engineering for Chicago IL, location. Provide strat"
+    "description": "TransUnion's Job Applicant Privacy Notice Personal Information We Collect Your Privacy Choices Team Overview This role reports directly to Senior Manager, Data Science & Analytics "
   },
   {
     "company": "TransUnion",
     "source": "transunion_official_careers",
-    "job_id": "19041696",
-    "title": "Software Engineer II - DevOps",
-    "location": "Bengaluru",
-    "official_url": "https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Bengaluru/Software-Engineer-II---DevOps_19041696",
-    "posted_date": "2026-08-26",
+    "job_id": "19041689",
+    "title": "Vice President, Global Network Engineering",
+    "location": "Chicago, Illinois",
+    "official_url": "https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Chicago-Illinois/Vice-President--Global-Network-Engineering_19041689",
+    "posted_date": "2026-08-07",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:24:25.602362+00:00",
+    "fetched_at": "2026-08-31T23:58:41.701513+00:00",
     "date_confidence": "high",
-    "description": "TransUnion's Job Applicant Privacy Notice Team Overview Sr. Devops Engineer for Fraud Solutions products to handle Production, pre-production environments , automation , monitoring"
-  },
-  {
-    "company": "TransUnion",
-    "source": "transunion_official_careers",
-    "job_id": "19040961",
-    "title": "Senior Developer Software",
-    "location": "Bengaluru; Chennai",
-    "official_url": "https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Bengaluru/Senior-Developer-Software_19040961",
-    "posted_date": "2026-08-02",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:24:25.602362+00:00",
-    "date_confidence": "high",
-    "description": "TransUnion's Job Applicant Privacy Notice Team Overview As a Software Engineer (Java Backend), you will design and develop scalable, cloud-ready backend services that power fraud p"
-  },
-  {
-    "company": "TransUnion",
-    "source": "transunion_official_careers",
-    "job_id": "19041173",
-    "title": "Senior .NET Developer",
-    "location": "Lagunilla de Heredia; Remote - Costa Rica",
-    "official_url": "https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Lagunilla-de-Heredia/Senior-NET-Developer_19041173",
-    "posted_date": "2026-07-20",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:24:25.602362+00:00",
-    "date_confidence": "high",
-    "description": "TransUnion's Job Applicant Privacy Notice Team Overview The DHI Information Technology Online Scrum Team supports TransUnion’s DHI business unit by building, maintaining, and moder"
+    "description": "TransUnion's Job Applicant Privacy Notice Personal Information We Collect Your Privacy Choices Team Overview The Global Infrastructure, Engineering & Operations (GIO) organization "
   },
   {
     "company": "TransUnion",
@@ -6225,9 +7973,35 @@ Sample normalized records:
     "official_url": "https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Chicago-Illinois/Security-Automation-Engineer_19041837",
     "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:24:25.602362+00:00",
+    "fetched_at": "2026-08-31T23:58:41.701513+00:00",
     "date_confidence": "high",
     "description": "TransUnion's Job Applicant Privacy Notice Personal Information We Collect Your Privacy Choices Team Overview The SOAR Development team designs and delivers automation capabilities "
+  },
+  {
+    "company": "TransUnion",
+    "source": "transunion_official_careers",
+    "job_id": "19041688",
+    "title": "Vice President, Global Operations Management & AIOps",
+    "location": "Chicago, Illinois",
+    "official_url": "https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Chicago-Illinois/Vice-President--Global-Operations-Management---AIOps_19041688",
+    "posted_date": "2026-08-07",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:58:41.701513+00:00",
+    "date_confidence": "high",
+    "description": "TransUnion's Job Applicant Privacy Notice Personal Information We Collect Your Privacy Choices Team Overview The Global Infrastructure, Engineering & Operations (GIO) organization "
+  },
+  {
+    "company": "TransUnion",
+    "source": "transunion_official_careers",
+    "job_id": "19040199",
+    "title": "Staff Site Reliability Engineer",
+    "location": "Chicago, Illinois; Reston, Virginia; Crum Lynne, Pennsylvania; GreenWood Village, Colorado; Boca Raton, Florida; White Plains, New York",
+    "official_url": "https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Chicago-Illinois/Staff-Site-Reliability-Engineer_19040199",
+    "posted_date": "2026-04-24",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:58:41.701513+00:00",
+    "date_confidence": "high",
+    "description": "TransUnion's Job Applicant Privacy Notice Personal Information We Collect Your Privacy Choices Team Overview At TransUnion, this role will report to a DevOps Director. The Site Rel"
   }
 ]
 ```
@@ -6238,12 +8012,12 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://travelers.wd5.myworkdayjobs.com/External`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 8
+- Pages/requests fetched: 27
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused: 72 / 0
-- Raw jobs found: 139
-- After US/location filtering: 72
-- With trustworthy posted_date: 72
+- Detail pages fetched/cache reused: 27 / 70
+- Raw jobs found: 363
+- After US/location filtering: 97
+- With trustworthy posted_date: 97
 - Errors/403s: none
 
 Sample normalized records:
@@ -6253,65 +8027,65 @@ Sample normalized records:
   {
     "company": "Travelers",
     "source": "travelers_official_careers",
-    "job_id": "R-51277",
-    "title": "Software Engineer II",
-    "location": "CT - Hartford; GA - Atlanta; MN - St. Paul; MD - Hunt Valley",
-    "official_url": "https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Software-Engineer-II_R-51277",
-    "posted_date": "2026-06-30",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:24:58.554643+00:00",
-    "date_confidence": "high",
-    "description": "Who Are We? Taking care of our customers, our communities and each other. That’s the Travelers Promise. By honoring this commitment, we have maintained our reputation as one of the"
-  },
-  {
-    "company": "Travelers",
-    "source": "travelers_official_careers",
-    "job_id": "R-51279",
-    "title": "Director, Software Engineering",
-    "location": "CT - Hartford; GA - Atlanta; MN - St. Paul; MD - Hunt Valley",
-    "official_url": "https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Director--Software-Engineering_R-51279",
-    "posted_date": "2026-08-20",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:24:58.554643+00:00",
-    "date_confidence": "high",
-    "description": "Who Are We? Taking care of our customers, our communities and each other. That’s the Travelers Promise. By honoring this commitment, we have maintained our reputation as one of the"
-  },
-  {
-    "company": "Travelers",
-    "source": "travelers_official_careers",
-    "job_id": "R-51276",
-    "title": "Software Engineer I",
-    "location": "CT - Hartford; GA - Atlanta; MN - St. Paul; MD - Hunt Valley",
-    "official_url": "https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Software-Engineer-I_R-51276-1",
-    "posted_date": "2026-06-30",
-    "updated_date": "",
-    "fetched_at": "2026-08-31T18:24:58.554643+00:00",
-    "date_confidence": "high",
-    "description": "Who Are We? Taking care of our customers, our communities and each other. That’s the Travelers Promise. By honoring this commitment, we have maintained our reputation as one of the"
-  },
-  {
-    "company": "Travelers",
-    "source": "travelers_official_careers",
-    "job_id": "R-51345",
-    "title": "Sr Software Engineer",
+    "job_id": "R-49982",
+    "title": "Senior Data & AI Engineer",
     "location": "CT - Hartford; MN - St. Paul",
-    "official_url": "https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Sr-Software-Engineer_R-51345",
-    "posted_date": "2026-07-10",
+    "official_url": "https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Senior-Data---AI-Engineer_R-49982",
+    "posted_date": "2026-08-24",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:24:58.554643+00:00",
+    "fetched_at": "2026-08-31T23:58:57.627628+00:00",
     "date_confidence": "high",
     "description": "Who Are We? Taking care of our customers, our communities and each other. That’s the Travelers Promise. By honoring this commitment, we have maintained our reputation as one of the"
   },
   {
     "company": "Travelers",
     "source": "travelers_official_careers",
-    "job_id": "R-51974",
-    "title": "Director, Software Engineer (Circle Engineer)",
-    "location": "CT - Hartford; MN - St. Paul",
-    "official_url": "https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Director--Software-Engineer--Circle-Engineer-_R-51974-1",
-    "posted_date": "2026-08-18",
+    "job_id": "R-51257",
+    "title": "Gen AI - Data Engineer II",
+    "location": "GA - Atlanta",
+    "official_url": "https://travelers.wd5.myworkdayjobs.com/External/job/GA---Atlanta/Gen-AI---Data-Engineer-II_R-51257",
+    "posted_date": "2026-08-19",
     "updated_date": "",
-    "fetched_at": "2026-08-31T18:24:58.554643+00:00",
+    "fetched_at": "2026-08-31T23:58:57.627628+00:00",
+    "date_confidence": "high",
+    "description": "Who Are We? Taking care of our customers, our communities and each other. That’s the Travelers Promise. By honoring this commitment, we have maintained our reputation as one of the"
+  },
+  {
+    "company": "Travelers",
+    "source": "travelers_official_careers",
+    "job_id": "R-49831",
+    "title": "Software Engineer I (AI Driven)",
+    "location": "GA - Atlanta",
+    "official_url": "https://travelers.wd5.myworkdayjobs.com/External/job/GA---Atlanta/Software-Engineer-I--AI-Driven-_R-49831",
+    "posted_date": "2026-06-12",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:58:57.627628+00:00",
+    "date_confidence": "high",
+    "description": "Who Are We? Taking care of our customers, our communities and each other. That’s the Travelers Promise. By honoring this commitment, we have maintained our reputation as one of the"
+  },
+  {
+    "company": "Travelers",
+    "source": "travelers_official_careers",
+    "job_id": "R-51685",
+    "title": "Sr Software Engineer (AI Team Lead)",
+    "location": "CT - Hartford; MN - St. Paul",
+    "official_url": "https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Sr-Software-Engineer--AI-Team-Lead-_R-51685",
+    "posted_date": "2026-08-10",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:58:57.627628+00:00",
+    "date_confidence": "high",
+    "description": "Who Are We? Taking care of our customers, our communities and each other. That’s the Travelers Promise. By honoring this commitment, we have maintained our reputation as one of the"
+  },
+  {
+    "company": "Travelers",
+    "source": "travelers_official_careers",
+    "job_id": "R-50811",
+    "title": "Senior Software Engineer - Enterprise AI Products",
+    "location": "CT - Hartford; MN - St. Paul",
+    "official_url": "https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Senior-Software-Engineer---Enterprise-AI-Products_R-50811-1",
+    "posted_date": "2026-06-15",
+    "updated_date": "",
+    "fetched_at": "2026-08-31T23:58:57.627628+00:00",
     "date_confidence": "high",
     "description": "Who Are We? Taking care of our customers, our communities and each other. That’s the Travelers Promise. By honoring this commitment, we have maintained our reputation as one of the"
   }
@@ -6321,7 +8095,7 @@ Sample normalized records:
 ## Verizon
 
 - Status: blocked
-- Scraping method: skip
+- Scraping method: happydance
 - Search URL/API: `-`
 - Pagination: -
 - Pages/requests fetched: 0
@@ -6330,7 +8104,7 @@ Sample normalized records:
 - Raw jobs found: 0
 - After US/location filtering: 0
 - With trustworthy posted_date: 0
-- Errors/403s: ['Tier C · Large tech org but noisy; easy-only.']
+- Errors/403s: ['Verizon jobs API blocked with HTTP 403']
 
 ## Yext
 
@@ -6341,9 +8115,9 @@ Sample normalized records:
 - Pages/requests fetched: 1
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused: 0 / 0
-- Raw jobs found: 23
-- After US/location filtering: 12
-- With trustworthy posted_date: 12
+- Raw jobs found: 24
+- After US/location filtering: 13
+- With trustworthy posted_date: 13
 - Errors/403s: none
 
 Sample normalized records:
@@ -6359,7 +8133,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/yext/jobs/8054682",
     "posted_date": "2026-07-15",
     "updated_date": "2026-08-21",
-    "fetched_at": "2026-08-31T18:25:45.271798+00:00",
+    "fetched_at": "2026-08-31T23:59:35.613148+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Yext (NYSE: YEXT) is the enterprise agentic marketing platform. Built on the world's most comprehensive structured data platform for local businesses,"
   },
@@ -6372,7 +8146,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/yext/jobs/7731837",
     "posted_date": "2026-03-27",
     "updated_date": "2026-08-21",
-    "fetched_at": "2026-08-31T18:25:45.271798+00:00",
+    "fetched_at": "2026-08-31T23:59:35.613148+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Yext (NYSE: YEXT) is the enterprise agentic marketing platform. Built on the world's most comprehensive structured data platform for local businesses,"
   },
@@ -6385,7 +8159,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/yext/jobs/7766556",
     "posted_date": "2026-04-07",
     "updated_date": "2026-08-17",
-    "fetched_at": "2026-08-31T18:25:45.271798+00:00",
+    "fetched_at": "2026-08-31T23:59:35.613148+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Yext (NYSE: YEXT) is the enterprise agentic marketing platform. Built on the world's most comprehensive structured data platform for local businesses,"
   },
@@ -6398,7 +8172,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/yext/jobs/7989162",
     "posted_date": "2026-06-10",
     "updated_date": "2026-08-17",
-    "fetched_at": "2026-08-31T18:25:45.271798+00:00",
+    "fetched_at": "2026-08-31T23:59:35.613148+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Yext (NYSE: YEXT) is the enterprise agentic marketing platform. Built on the world's most comprehensive structured data platform for local businesses,"
   },
@@ -6411,7 +8185,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/yext/jobs/7914932",
     "posted_date": "2026-06-10",
     "updated_date": "2026-08-21",
-    "fetched_at": "2026-08-31T18:25:45.271798+00:00",
+    "fetched_at": "2026-08-31T23:59:35.613148+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Yext (NYSE: YEXT) is the enterprise agentic marketing platform. Built on the world's most comprehensive structured data platform for local businesses,"
   }

@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import gzip
 import json
 import re
 from collections import Counter
@@ -47,7 +48,7 @@ import llm_config
 
 BASE_DIR = Path(__file__).resolve().parent
 CAREERS_DIR = OUTPUT_DIR / "official_careers"
-RAW_PATH = CAREERS_DIR / "raw.json"
+RAW_PATH = CAREERS_DIR / "raw.json.gz"
 STORE_PATH = CAREERS_DIR / "jobs.json"
 LATEST_MD_PATH = CAREERS_DIR / "latest.md"
 INBOX_MD_PATH = CAREERS_DIR / "inbox.md"
@@ -187,7 +188,9 @@ def write_scrape_outputs(
         "per_company": [r.get("summary") for r in results],
         "jobs": all_jobs,
     }
-    RAW_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    RAW_PATH.write_bytes(
+        gzip.compress((json.dumps(payload, ensure_ascii=False) + "\n").encode(), mtime=0)
+    )
     REPORT_PATH.write_text("\n".join(lines), encoding="utf-8")
     return all_jobs
 
@@ -196,8 +199,8 @@ def load_raw_jobs() -> List[Dict[str, str]]:
     if not RAW_PATH.exists():
         return []
     try:
-        data = json.loads(RAW_PATH.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
+        data = json.loads(gzip.decompress(RAW_PATH.read_bytes()))
+    except (json.JSONDecodeError, OSError, UnicodeDecodeError):
         return []
     jobs = data.get("jobs") if isinstance(data, dict) else data
     return [j for j in jobs if isinstance(j, dict)] if isinstance(jobs, list) else []

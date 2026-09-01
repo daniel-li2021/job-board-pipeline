@@ -267,7 +267,7 @@ on the local launchd agent; GHA never hits those sites.
 
 ## Outputs (`output/official_careers/` only)
 
-- `raw.json` — last scrape, normalized JobRecords.
+- `raw.json.gz` — last scrape, normalized JobRecords.
 - `scrape_report.md` — per-company method, pages, counts, sample records.
 - `jobs.json` — 7-day store (`first_seen` / `last_seen` / LLM cache).
 - `latest.md` — 7-day Tier A/B view.
@@ -357,7 +357,7 @@ or provider is required.
 ```
 Official career sites
     -> sources/careers/* adapters
-    -> output/official_careers/raw.json   (discovery snapshot)
+    -> output/official_careers/raw.json.gz (discovery snapshot)
     -> board_pipeline matching functions   (shared; not copied)
     -> output/official_careers/jobs.json + latest.md + inbox.md
     -> at most one digest/day (new A/B or B→A) -> GitHub Issue

@@ -1,5 +1,11 @@
+import gzip
 import json
+import tempfile
 import unittest
+from pathlib import Path
+from unittest.mock import patch
+
+import official_careers
 
 from sources.careers.avature import scrape_avature
 from sources.careers.disney import scrape_disney
@@ -41,6 +47,19 @@ class Session:
 
 
 class OfficialAdapterTests(unittest.TestCase):
+    def test_raw_snapshot_is_gzipped_and_loadable(self):
+        job = {"company": "Example", "job_id": "1", "title": "Software Engineer"}
+        result = {"company": "Example", "company_id": "example", "jobs": [job]}
+        with tempfile.TemporaryDirectory() as temp:
+            raw = Path(temp) / "raw.json.gz"
+            report = Path(temp) / "report.md"
+            with patch.object(official_careers, "RAW_PATH", raw), patch.object(
+                official_careers, "REPORT_PATH", report
+            ):
+                official_careers.write_scrape_outputs([result], "test", merge_previous=False)
+                self.assertEqual([job], official_careers.load_raw_jobs())
+                self.assertTrue(gzip.decompress(raw.read_bytes()).startswith(b"{"))
+
     def test_walmart_uses_required_hybrid_payload(self):
         session = Session(posts=[Response(payload={
             "jobs": [{"id": "R-1-External", "text": "Build software", "metadata": {
