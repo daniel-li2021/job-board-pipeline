@@ -2690,6 +2690,31 @@
           "url": "https://careers.roblox.com/jobs/8060254?gh_jid=8060254"
         }
       ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-09-01_0354",
+      "emitted_at": "2026-09-01T03:55:14.777327+00:00",
+      "event_kind": "new_matching",
+      "count": 1,
+      "jobs": [
+        {
+          "canonical_job_key": "id::syncareer::09ce6b9265eaca8d42c68fb381c2cca9",
+          "job_id": "09ce6b9265eaca8d42c68fb381c2cca9",
+          "tier": "B",
+          "match_score": 82.0,
+          "fit_score": 82.0,
+          "company": "Tesla",
+          "title": "Internship, Software Engineer, Automated Diagnostics Intern (Spring 2027)",
+          "location": "Palo Alto, California, United States",
+          "posting_date": "2026-08-31",
+          "first_seen": "2026-09-01T03:54:39.602840+00:00",
+          "target_company_match": "Tesla",
+          "review_status": "unreviewed",
+          "job_url": "https://www.tesla.com/careers/search/job/281623",
+          "url": "https://www.tesla.com/careers/search/job/281623"
+        }
+      ]
     }
   ]
 }
