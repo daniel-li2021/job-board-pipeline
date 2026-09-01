@@ -23,6 +23,7 @@ import csv
 import gzip
 import json
 import re
+import time
 from collections import Counter
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -32,7 +33,6 @@ import alert_history
 from sources.careers.http import (
     is_placeholder_location,
     keep_us_or_unknown,
-    make_session,
 )
 from sources.careers.registry import load_companies, scrape_enabled
 from sources.schema import (
@@ -79,6 +79,12 @@ def official_discovery_filter(job: Dict[str, str]) -> Tuple[bool, str]:
     return True, "keep"
 
 
+def _workday_detail_title_filter(title: str) -> bool:
+    """Skip only title rejections that a description cannot rescue."""
+    keep, reason = board.role_seniority_prefilter({"title": title})
+    return keep or reason == "prefilter:no_positive_family"
+
+
 def _sample_record(job: Dict[str, str]) -> Dict[str, str]:
     return {
         "company": job.get("company", ""),
@@ -100,6 +106,7 @@ def write_scrape_outputs(
     stamp: str,
     *,
     merge_previous: bool = True,
+    wall_seconds: Optional[float] = None,
 ) -> List[Dict[str, str]]:
     CAREERS_DIR.mkdir(parents=True, exist_ok=True)
     scraped_companies = {(r.get("company") or "") for r in results}
@@ -129,10 +136,32 @@ def write_scrape_outputs(
                 carried = dict(job)
                 carried["listing_cache_status"] = "carried_until_full_sweep"
                 all_jobs.append(carried)
+    cache_statuses: Counter = Counter()
+    for result in results:
+        cache_statuses.update(result.get("detail_cache_status_counts") or {})
+    metrics = {
+        "wall_seconds": round(float(wall_seconds or 0.0), 3),
+        "http_requests": sum(int(r.get("http_requests") or 0) for r in results),
+        "http_request_seconds": round(sum(float(r.get("http_request_seconds") or 0.0) for r in results), 3),
+        "listing_pages": sum(int(r.get("pages_fetched") or 0) for r in results),
+        "detail_fetches": sum(int(r.get("detail_fetches") or 0) for r in results),
+        "detail_cache_reused": sum(int(r.get("detail_cache_reused") or 0) for r in results),
+        "detail_prefilter_skipped": sum(int(r.get("detail_prefilter_skipped") or 0) for r in results),
+        "detail_cache_status_counts": dict(sorted(cache_statuses.items())),
+    }
     lines = [
         f"# Official careers scrape report — {stamp}",
         "",
         "Discovery only. Matching/ranking is applied afterwards by the shared board pipeline.",
+        "",
+        "## Runtime metrics",
+        "",
+        f"- Wall time: {metrics['wall_seconds']:.3f}s",
+        f"- HTTP requests/cumulative request time: {metrics['http_requests']} / {metrics['http_request_seconds']:.3f}s",
+        f"- Listing pages/detail fetched/cache reused/prefilter skipped: "
+        f"{metrics['listing_pages']} / {metrics['detail_fetches']} / "
+        f"{metrics['detail_cache_reused']} / {metrics['detail_prefilter_skipped']}",
+        f"- Detail cache statuses: {metrics['detail_cache_status_counts'] or 'none'}",
         "",
     ]
     for result in results:
@@ -153,8 +182,13 @@ def write_scrape_outputs(
                 f"- Search URL/API: `{result.get('search_url') or '-'}`",
                 f"- Pagination: {result.get('pagination') or '-'}",
                 f"- Pages/requests fetched: {result.get('pages_fetched', 0)}",
+                f"- HTTP requests/cumulative request time: {result.get('http_requests', 0)} / {float(result.get('http_request_seconds') or 0):.3f}s",
+                f"- Company elapsed time: {float(result.get('elapsed_seconds') or 0):.3f}s",
                 f"- Incremental mode/page cap: {result.get('incremental_mode', '-')} / {result.get('page_cap_applied', '-')}",
-                f"- Detail pages fetched/cache reused: {result.get('detail_fetches', 0)} / {result.get('detail_cache_reused', 0)}",
+                f"- Detail pages fetched/cache reused/prefilter skipped: "
+                f"{result.get('detail_fetches', 0)} / {result.get('detail_cache_reused', 0)} / "
+                f"{result.get('detail_prefilter_skipped', 0)}",
+                f"- Detail cache statuses: {result.get('detail_cache_status_counts') or 'none'}",
                 f"- Raw jobs found: {result.get('raw_jobs', 0)}",
                 f"- After US/location filtering: {len(jobs)}",
                 f"- With trustworthy posted_date: {trustworthy}",
@@ -182,6 +216,7 @@ def write_scrape_outputs(
         "scraped_at": datetime.now(timezone.utc).isoformat(),
         "stamp": stamp,
         "count": len(all_jobs),
+        "metrics": metrics,
         "scraped_company_ids": sorted(
             str(r.get("company_id") or "") for r in results if r.get("company_id")
         ),
@@ -392,23 +427,26 @@ def cmd_scrape(args: argparse.Namespace) -> List[Dict[str, str]]:
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d_%H%M")
     registry = load_companies()
     max_pages = int(args.max_pages or registry.get("max_pages_default") or 50)
-    session = make_session()
     print(f"Scraping official careers (only={args.only or 'all'}, max_pages={max_pages})...")
+    started = time.monotonic()
     results = scrape_enabled(
-        session,
         only=args.only,
         max_pages=max_pages,
         previous_jobs=load_raw_jobs(),
         full_sweep=True if getattr(args, "full_sweep", False) else None,
+        detail_title_filter=_workday_detail_title_filter,
     )
-    jobs = write_scrape_outputs(results, stamp)
+    wall_seconds = time.monotonic() - started
+    jobs = write_scrape_outputs(results, stamp, wall_seconds=wall_seconds)
     for result in results:
         jobs_n = len(result.get("jobs") or [])
         print(
             f"  {result.get('company')}: raw={result.get('raw_jobs', 0)} "
             f"kept={jobs_n} pages={result.get('pages_fetched', 0)} "
+            f"requests={result.get('http_requests', 0)} elapsed={float(result.get('elapsed_seconds') or 0):.1f}s "
             f"errors={len(result.get('errors') or [])}"
         )
+    print(f"Scrape wall time: {wall_seconds:.1f}s")
     print(f"Wrote {len(jobs)} jobs -> {RAW_PATH}")
     print(f"Report -> {REPORT_PATH}")
     return jobs

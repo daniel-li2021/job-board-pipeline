@@ -15,7 +15,7 @@ Adobe: https://adobe.wd5.myworkdayjobs.com/external_experienced
 from __future__ import annotations
 
 import time
-from typing import Any, Dict, List, Optional
+from typing import Any, Callable, Dict, List, Optional
 from urllib.parse import urljoin
 
 import requests
@@ -132,6 +132,7 @@ def scrape_workday(
     public_prefix: Optional[str] = None,
     apply_us_facet: bool = True,
     detail_cache: Optional[DetailCache] = None,
+    detail_title_filter: Optional[Callable[[str], bool]] = None,
 ) -> Dict[str, Any]:
     fetched_at = now_iso()
     queries = list(queries or DEFAULT_QUERIES)
@@ -147,6 +148,7 @@ def scrape_workday(
     errors: List[str] = []
     detail_fetches = 0
     detail_reused = 0
+    detail_prefilter_skipped = 0
     detail_cache = detail_cache or DetailCache([])
     us_applied: Dict[str, List[str]] = {}
 
@@ -230,11 +232,22 @@ def scrape_workday(
                     location = str(decision.cached.get("location") or location)
                     start_date = str(decision.cached.get("posted_date") or "")
                     detail_reused += 1
+                detail_title_ok = not detail_title_filter or detail_title_filter(listing_title)
+                detail_skipped = bool(
+                    fetch_details
+                    and decision.should_fetch
+                    and external_path
+                    and detail_fetches < MAX_DETAILS
+                    and not detail_title_ok
+                )
+                if detail_skipped:
+                    detail_prefilter_skipped += 1
                 need_detail = bool(
                     fetch_details
                     and decision.should_fetch
                     and external_path
                     and detail_fetches < MAX_DETAILS
+                    and detail_title_ok
                 )
                 detail_fetched = False
                 if need_detail:
@@ -282,6 +295,8 @@ def scrape_workday(
                     job, decision, detail_fetched=detail_fetched,
                     listing_title=listing_title, listing_posted_date=posted_on,
                 )
+                if detail_skipped:
+                    job["detail_cache_status"] = f"skipped_prefilter:{decision.reason}"
                 jobs.append(job)
             offset += PAGE_SIZE
             if total and offset >= total:
@@ -302,4 +317,5 @@ def scrape_workday(
         "us_facet": us_applied,
         "detail_fetches": detail_fetches,
         "detail_cache_reused": detail_reused,
+        "detail_prefilter_skipped": detail_prefilter_skipped,
     }

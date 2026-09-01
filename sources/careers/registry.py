@@ -4,9 +4,12 @@ from __future__ import annotations
 
 import json
 import os
+import time
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set
+from typing import Any, Callable, Dict, List, Optional, Set
 
 import requests
 
@@ -36,9 +39,11 @@ from .tiktok import scrape_bytedance, scrape_tiktok
 from .walmart import scrape_walmart
 from .workday import scrape_workday
 from .incremental import DetailCache
+from .http import make_session
 
 REGISTRY_PATH = BASE_DIR / "source" / "official_careers.json"
 ATS_BOARDS_PATH = BASE_DIR / "source" / "ats_boards.json"
+COMPANY_WORKERS = 5
 
 
 def load_companies(path: Optional[Path] = None) -> Dict[str, Any]:
@@ -72,6 +77,7 @@ def scrape_company(
     *,
     max_pages: int,
     detail_cache: Optional[DetailCache] = None,
+    detail_title_filter: Optional[Callable[[str], bool]] = None,
 ) -> Dict[str, Any]:
     adapter = (company.get("adapter") or "").strip().lower()
     name = company.get("name") or company.get("id") or adapter
@@ -141,6 +147,7 @@ def scrape_company(
             extra_queries=wd.get("extra_queries"),
             apply_us_facet=bool(wd.get("apply_us_facet", True)),
             detail_cache=detail_cache,
+            detail_title_filter=detail_title_filter,
         )
     if adapter == "greenhouse":
         gh = company.get("greenhouse") or {}
@@ -245,22 +252,33 @@ def _blocked_result(company: Dict[str, Any], cid: str, exc: Exception, status: s
 
 
 def scrape_enabled(
-    session: requests.Session,
+    session: Optional[requests.Session] = None,
     *,
     only: Optional[str] = None,
     max_pages: int = 50,
     previous_jobs: Optional[List[Dict[str, Any]]] = None,
     full_sweep: Optional[bool] = None,
+    detail_title_filter: Optional[Callable[[str], bool]] = None,
+    max_workers: int = COMPANY_WORKERS,
 ) -> List[Dict[str, Any]]:
     detail_cache = DetailCache(previous_jobs or [])
     if full_sweep is None:
         full_sweep = (os.getenv("OFFICIAL_FULL_SWEEP") or "").strip() == "1" or datetime.now(timezone.utc).weekday() == 6
     wanted = _only_ids(only)
-    results: List[Dict[str, Any]] = []
+    companies = []
     for company in enabled_companies():
         cid = (company.get("id") or "").lower()
         if wanted and cid not in wanted:
             continue
+        companies.append(company)
+
+    def scrape_one(company: Dict[str, Any]) -> Dict[str, Any]:
+        cid = (company.get("id") or "").lower()
+        company_session = make_session()
+        if isinstance(session, requests.Session):
+            company_session.headers.update(dict(session.headers.items()))
+            company_session.cookies.update(session.cookies)
+        started = time.monotonic()
         try:
             adapter = (company.get("adapter") or "").strip().lower()
             # Newest-sorted sources use adaptive overlap stopping. Full-board
@@ -270,16 +288,41 @@ def scrape_enabled(
             if not full_sweep and adapter not in {"ats", "greenhouse", "lever", "ashby", "google", "amazon", "apple", "microsoft"}:
                 bounded_pages = min(max_pages, 4)
             result = scrape_company(
-                session, company, max_pages=bounded_pages, detail_cache=detail_cache,
+                company_session,
+                company,
+                max_pages=bounded_pages,
+                detail_cache=detail_cache,
+                detail_title_filter=detail_title_filter,
             )
             result["company_id"] = cid
             result["incremental_mode"] = "full_sweep" if full_sweep else "incremental"
             result["page_cap_applied"] = bounded_pages
             result["full_listing_coverage"] = adapter in {"ats", "greenhouse", "lever", "ashby"}
-            results.append(result)
         except SourceUnavailable as exc:
-            results.append(_blocked_result(company, cid, exc, "blocked"))
+            result = _blocked_result(company, cid, exc, "blocked")
         except Exception as exc:  # noqa: BLE001
-            results.append(_blocked_result(company, cid, exc, "error"))
-            results[-1]["errors"] = [f"{type(exc).__name__}: {exc}"]
-    return results
+            result = _blocked_result(company, cid, exc, "error")
+            result["errors"] = [f"{type(exc).__name__}: {exc}"]
+        finally:
+            elapsed_seconds = time.monotonic() - started
+
+        request_count = getattr(company_session, "request_count", 0)
+        request_seconds = getattr(company_session, "request_seconds", 0.0)
+        result["http_requests"] = request_count if isinstance(request_count, int) else 0
+        result["http_request_seconds"] = round(
+            float(request_seconds) if isinstance(request_seconds, (int, float)) else 0.0, 3
+        )
+        result["elapsed_seconds"] = round(elapsed_seconds, 3)
+        result["detail_cache_status_counts"] = dict(sorted(Counter(
+            str(job.get("detail_cache_status") or "")
+            for job in result.get("jobs") or []
+            if isinstance(job, dict) and job.get("detail_cache_status")
+        ).items()))
+        company_session.close()
+        return result
+
+    # DetailCache is immutable after construction; workers only read it. All
+    # output merging and persistence remain ordered on the caller thread.
+    workers = max(1, min(max_workers, COMPANY_WORKERS, len(companies) or 1))
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        return list(executor.map(scrape_one, companies))

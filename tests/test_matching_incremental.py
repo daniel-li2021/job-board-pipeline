@@ -1,14 +1,16 @@
 from __future__ import annotations
 
 import json
+import threading
 import unittest
 from datetime import datetime, timedelta, timezone
 from unittest.mock import Mock, patch
 
 import board_pipeline as board
 import llm_config
-from sources.careers.incremental import DetailCache, NewestFirstPager, annotate_detail
+from sources.careers.incremental import DetailCache, NewestFirstPager, annotate_detail, listing_signature
 from sources.careers import registry
+from sources.schema import SourceUnavailable
 
 
 class LlmMatchingTests(unittest.TestCase):
@@ -115,6 +117,13 @@ class IncrementalOfficialTests(unittest.TestCase):
             title=cached["title"], posted_date=cached["posted_date"],
         )
         self.assertFalse(reusable.should_fetch)
+        relative_cache = DetailCache([{**cached,
+            "listing_signature": listing_signature(cached["title"], "Posted 2 Days Ago"),
+        }], now=now)
+        self.assertFalse(relative_cache.decide(
+            company="Example", job_id="42", url=cached["official_url"],
+            title=cached["title"], posted_date="Posted Today",
+        ).should_fetch)
         changed = cache.decide(
             company="Example", job_id="42", url=cached["official_url"],
             title="Software Engineer II", posted_date=cached["posted_date"],
@@ -128,6 +137,11 @@ class IncrementalOfficialTests(unittest.TestCase):
                 title=cached["title"], posted_date=cached["posted_date"],
             ).reason,
         )
+        absolute_date_changed = cache.decide(
+            company="Example", job_id="42", url=cached["official_url"],
+            title=cached["title"], posted_date="2026-08-31",
+        )
+        self.assertEqual("changed", absolute_date_changed.reason)
 
     def test_newest_pager_keeps_one_overlap_page(self) -> None:
         pager = NewestFirstPager({"a", "b"})
@@ -145,6 +159,42 @@ class IncrementalOfficialTests(unittest.TestCase):
         self.assertEqual(4, scrape.call_args.kwargs["max_pages"])
         registry.scrape_enabled(Mock(), max_pages=12, full_sweep=True)
         self.assertEqual(12, scrape.call_args.kwargs["max_pages"])
+
+    @patch("sources.careers.registry.make_session")
+    @patch("sources.careers.registry.scrape_company")
+    @patch("sources.careers.registry.enabled_companies")
+    def test_company_concurrency_is_isolated_ordered_and_error_safe(
+        self, enabled: Mock, scrape: Mock, make_session: Mock,
+    ) -> None:
+        enabled.return_value = [
+            {"id": "one", "name": "One", "adapter": "workday", "enabled": True},
+            {"id": "two", "name": "Two", "adapter": "workday", "enabled": True},
+            {"id": "three", "name": "Three", "adapter": "workday", "enabled": True},
+        ]
+        sessions = []
+
+        def session_factory():
+            item = Mock(request_count=2, request_seconds=0.25)
+            sessions.append(item)
+            return item
+
+        make_session.side_effect = session_factory
+        barrier = threading.Barrier(3)
+
+        def run(_session, company, **_kwargs):
+            barrier.wait(timeout=2)
+            if company["id"] == "two":
+                raise SourceUnavailable("blocked")
+            if company["id"] == "three":
+                raise ValueError("broken")
+            return {"company": company["name"], "jobs": [], "errors": []}
+
+        scrape.side_effect = run
+        results = registry.scrape_enabled(full_sweep=False, max_workers=3)
+        self.assertEqual(["one", "two", "three"], [r["company_id"] for r in results])
+        self.assertEqual([None, "blocked", "error"], [r.get("status") for r in results])
+        self.assertEqual(3, len({id(item) for item in sessions}))
+        self.assertTrue(all(r["http_requests"] == 2 for r in results))
 
 
 if __name__ == "__main__":

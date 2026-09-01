@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+import time
 from datetime import datetime, timezone
 from typing import Any, Dict, Optional
 
@@ -25,8 +26,23 @@ def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+class MeasuredSession(requests.Session):
+    def __init__(self) -> None:
+        super().__init__()
+        self.request_count = 0
+        self.request_seconds = 0.0
+
+    def request(self, method: str, url: str, **kwargs: Any) -> requests.Response:
+        started = time.monotonic()
+        self.request_count += 1
+        try:
+            return super().request(method, url, **kwargs)
+        finally:
+            self.request_seconds += time.monotonic() - started
+
+
 def make_session() -> requests.Session:
-    session = requests.Session()
+    session = MeasuredSession()
     session.headers.update(DEFAULT_HEADERS)
     return session
 

@@ -11,6 +11,7 @@ from sources.careers.avature import scrape_avature
 from sources.careers.disney import scrape_disney
 from sources.careers.eightfold_html import scrape_eightfold_html
 from sources.careers.happydance import scrape_happydance
+from sources.careers.http import make_session
 from sources.careers.jibe import scrape_jibe
 from sources.careers.linkedin_company import scrape_linkedin_company
 from sources.careers.mathworks import scrape_mathworks
@@ -18,7 +19,7 @@ from sources.careers.meta import scrape_meta
 from sources.careers.radancy import scrape_radancy
 from sources.careers.tiktok import scrape_bytedance, scrape_tiktok
 from sources.careers.walmart import scrape_walmart
-from sources.careers.workday import _us_facet
+from sources.careers.workday import _us_facet, scrape_workday
 
 
 class Response:
@@ -49,16 +50,35 @@ class Session:
 class OfficialAdapterTests(unittest.TestCase):
     def test_raw_snapshot_is_gzipped_and_loadable(self):
         job = {"company": "Example", "job_id": "1", "title": "Software Engineer"}
-        result = {"company": "Example", "company_id": "example", "jobs": [job]}
+        result = {
+            "company": "Example", "company_id": "example", "jobs": [job],
+            "http_requests": 3, "http_request_seconds": 0.5, "elapsed_seconds": 0.75,
+            "detail_fetches": 1, "detail_cache_reused": 2, "detail_prefilter_skipped": 4,
+            "detail_cache_status_counts": {"reused": 2},
+        }
         with tempfile.TemporaryDirectory() as temp:
             raw = Path(temp) / "raw.json.gz"
             report = Path(temp) / "report.md"
             with patch.object(official_careers, "RAW_PATH", raw), patch.object(
                 official_careers, "REPORT_PATH", report
             ):
-                official_careers.write_scrape_outputs([result], "test", merge_previous=False)
+                official_careers.write_scrape_outputs(
+                    [result], "test", merge_previous=False, wall_seconds=1.25,
+                )
                 self.assertEqual([job], official_careers.load_raw_jobs())
-                self.assertTrue(gzip.decompress(raw.read_bytes()).startswith(b"{"))
+                payload = json.loads(gzip.decompress(raw.read_bytes()))
+                self.assertEqual(3, payload["metrics"]["http_requests"])
+                self.assertEqual(4, payload["metrics"]["detail_prefilter_skipped"])
+                self.assertIn("Wall time: 1.250s", report.read_text(encoding="utf-8"))
+
+    @patch("requests.Session.request")
+    def test_measured_session_counts_requests_and_time(self, request):
+        request.return_value = Response()
+        session = make_session()
+        session.get("https://example.test/jobs")
+        self.assertEqual(1, session.request_count)
+        self.assertGreaterEqual(session.request_seconds, 0)
+        session.close()
 
     def test_walmart_uses_required_hybrid_payload(self):
         session = Session(posts=[Response(payload={
@@ -112,6 +132,47 @@ class OfficialAdapterTests(unittest.TestCase):
             {"id": "austin", "descriptor": "Austin, Texas, United States of America"},
         ]}]
         self.assertEqual({"locations": ["remote-us", "austin"]}, _us_facet(facets))
+
+    @patch("sources.careers.workday.time.sleep")
+    def test_workday_skips_detail_only_for_title_prefilter_rejections(self, _sleep):
+        self.assertTrue(official_careers._workday_detail_title_filter("Data Scientist"))
+        self.assertTrue(official_careers._workday_detail_title_filter("Computer Scientist II"))
+        listing = {"jobPostings": [
+            {
+                "title": "Senior Software Engineer", "bulletFields": ["JR-S"],
+                "locationsText": "Austin, Texas, United States",
+                "externalPath": "/job/US-TX-Austin/Senior-Software-Engineer_JR-S",
+                "postedOn": "Posted Today",
+            },
+            {
+                "title": "Software Engineer I", "bulletFields": ["JR-J"],
+                "locationsText": "Seattle, Washington, United States",
+                "externalPath": "/job/US-WA-Seattle/Software-Engineer-I_JR-J",
+                "postedOn": "Posted Today",
+            },
+        ], "total": 2}
+        detail = {"jobPostingInfo": {
+            "jobReqId": "JR-J", "jobDescription": "<p>Build APIs</p>",
+            "startDate": "2026-09-01", "location": "Seattle, Washington, United States",
+        }}
+        session = Session(posts=[Response(payload=listing)], gets=[Response(payload=detail)])
+        result = scrape_workday(
+            session,
+            company="Example",
+            host="https://example.wd.test",
+            tenant="example",
+            site="External",
+            max_pages=1,
+            queries=["software"],
+            apply_us_facet=False,
+            detail_title_filter=official_careers._workday_detail_title_filter,
+        )
+        self.assertEqual(["JR-S", "JR-J"], [job["job_id"] for job in result["jobs"]])
+        self.assertEqual(1, sum(method == "GET" for method, _url, _kwargs in session.calls))
+        self.assertEqual(1, result["detail_fetches"])
+        self.assertEqual(1, result["detail_prefilter_skipped"])
+        self.assertEqual("skipped_prefilter:new", result["jobs"][0]["detail_cache_status"])
+        self.assertEqual("Build APIs", result["jobs"][1]["description"])
 
     def test_radancy_parses_server_rendered_us_table(self):
         html = """<table data-controller="jobs--table-results"><tbody>

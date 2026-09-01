@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, Iterable, Optional, Set
@@ -12,6 +13,10 @@ from typing import Any, Dict, Iterable, Optional, Set
 DETAIL_STALE_DAYS = 14
 MIN_NEWEST_PAGES = 2
 CONSISTENT_OVERLAP_PAGES = 2
+RELATIVE_POSTING_RE = re.compile(
+    r"^(?:posted\s+)?(?:today|yesterday|\d+\+?\s+days?\s+ago)$",
+    re.IGNORECASE,
+)
 
 
 def _identity(company: str, job_id: str, url: str) -> tuple[str, str]:
@@ -19,8 +24,17 @@ def _identity(company: str, job_id: str, url: str) -> tuple[str, str]:
     return company_key, (job_id or url or "").strip().lower()
 
 
+def _stable_listing_date(value: str) -> str:
+    normalized = " ".join((value or "").split())
+    return "" if RELATIVE_POSTING_RE.fullmatch(normalized) else normalized
+
+
 def listing_signature(title: str = "", posted_date: str = "", updated_date: str = "") -> str:
-    payload = [" ".join((title or "").lower().split()), posted_date or "", updated_date or ""]
+    payload = [
+        " ".join((title or "").lower().split()),
+        _stable_listing_date(posted_date),
+        _stable_listing_date(updated_date),
+    ]
     return hashlib.sha1(json.dumps(payload, separators=(",", ":")).encode("utf-8")).hexdigest()
 
 
@@ -84,6 +98,17 @@ class DetailCache:
             str(cached.get("posted_date") or ""),
             str(cached.get("updated_date") or ""),
         )
+        # Old Workday signatures contain rolling text such as "Posted Today".
+        # Compare the stable parts directly so deployment does not force one
+        # final detail refresh before the normalized signature is persisted.
+        posted_relative = RELATIVE_POSTING_RE.fullmatch(" ".join((posted_date or "").split()))
+        updated_relative = RELATIVE_POSTING_RE.fullmatch(" ".join((updated_date or "").split()))
+        if posted_relative or updated_relative:
+            previous_sig = listing_signature(
+                str(cached.get("title") or ""),
+                "" if posted_relative else str(cached.get("posted_date") or ""),
+                "" if updated_relative else str(cached.get("updated_date") or ""),
+            )
         if current_sig != previous_sig:
             return DetailDecision(cached, True, "changed")
         detail_time = _parse_time(str(cached.get("detail_fetched_at") or cached.get("fetched_at") or ""))
