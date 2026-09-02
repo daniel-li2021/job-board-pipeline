@@ -1,7 +1,7 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-02_0755
+# ATS / LinkedIn board — 7-day view — 2026-09-02_1834
 
-- Updated (PT): 2026-09-02 00:56 PDT
-- Snapshot (UTC): 2026-09-02T07:56:05.020652+00:00
+- Updated (PT): 2026-09-02 11:35 PDT
+- Snapshot (UTC): 2026-09-02T18:35:30.030742+00:00
 - Last 24 hours: 16
 - Last 3 days: 16
 
@@ -9,12 +9,12 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 
 ## Run stats
 
-- Source raw: ATS 2650 / LinkedIn 768 / Glassdoor 0 (Big Company Official runs separately)
-- Funnel: after dedup 3417 -> after company filter 3406 -> after hard filter 3137 -> after role+seniority prefilter 782 | dropped 2635
-- LLM usage: jobs scored 4 / API requests 2 / cache reused 20 (cross-pipeline 11) / rule fallback+overflow 758 (thin local cards 534, recency-gated 224, overflow 0, new/changed 228)
-- LLM cost: model gpt-5.6-terra / API requests 2 / jobs scored 4 / tokens input 8452 (cached 0) / output 829 (reasoning 0) / estimated cost $0.0269
+- Source raw: ATS 2647 / LinkedIn 768 / Glassdoor 0 (Big Company Official runs separately)
+- Funnel: after dedup 3414 -> after company filter 3403 -> after hard filter 3133 -> after role+seniority prefilter 784 | dropped 2630
+- LLM usage: jobs scored 1 / API requests 1 / cache reused 24 (cross-pipeline 11) / rule fallback+overflow 759 (thin local cards 534, recency-gated 225, overflow 0, new/changed 226)
+- LLM cost: model gpt-5.6-terra / API requests 1 / jobs scored 1 / tokens input 2792 (cached 0) / output 296 (reasoning 42) / estimated cost $0.0091
 - Output sizing: Tier A 0 / Tier B 18 / A+B actionable 18 / Shown in latest.md 18 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 4 / 1-3d 18 / newly-disc 511 / 3-7d 9 / >7d 240
+- Recency (kept): <3h 0 / 3-24h 5 / 1-3d 30 / newly-disc 499 / 3-7d 9 / >7d 241
 
 ## Tier A - apply now / referral (0)
 
@@ -24,7 +24,7 @@ _none_
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 89 | llm | greenhouse | Lyft | Software Engineer | San Francisco, CA | 2026-09-02 | 3to24h | medium | swe | - | unreviewed | pending_official_refresh | yes | [open](https://app.careerpuck.com/job-board/lyft/job/8772571002?gh_jid=8772571002) |
+| 89 | cached_llm | greenhouse | Lyft | Software Engineer | San Francisco, CA | 2026-09-02 | 3to24h | medium | swe | - | unreviewed | pending_official_refresh | yes | [open](https://app.careerpuck.com/job-board/lyft/job/8772571002?gh_jid=8772571002) |
 | 75 | rule_fallback | linkedin | OpenAI | Software Engineer, Developer Productivity | Mountain View, CA | 2026-09-01 | newly_discovered | low | swe | OpenAI | unreviewed | pending_official_refresh | - | [open](https://www.linkedin.com/jobs/view/software-engineer-developer-productivity-at-openai-4460673105) |
 | 75 | rule_fallback | linkedin | Databricks | AI Engineer - FDE (Forward Deployed Engineer) | New York, NY | 2026-09-01 | newly_discovered | low | swe | Databricks | unreviewed | pending_official_refresh | - | [open](https://www.linkedin.com/jobs/view/ai-engineer-fde-forward-deployed-engineer-at-databricks-4459562237) |
 | 75 | rule_fallback | linkedin | Apex - Satellite Platforms | Full Stack Developer, Business Systems | Los Angeles, CA | 2026-09-01 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-business-systems-at-apex-satellite-platforms-4435313232) |
