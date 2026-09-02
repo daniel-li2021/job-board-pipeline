@@ -1,21 +1,22 @@
-Syncareer alert — 2026-09-01_1823
+Syncareer alert — 2026-09-02_0420
 
-Updated (PT): 2026-09-01 11:27 PDT
-Snapshot (UTC): 2026-09-01T18:27:38.037136+00:00
+Updated (PT): 2026-09-01 21:21 PDT
+Snapshot (UTC): 2026-09-02T04:21:52.391193+00:00
 
-8 new matching job(s) this run (hard-filtered).
+7 new matching job(s) this run (hard-filtered).
 
 If you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.md` in the repo (last 3 days, one file).
 
+Referral companies in this batch: 2
+
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 92.0 | Syncareer | CDK Global | Associate Software Engineer | Austin, Texas, United States | 2026-08-31 | Sponsor | - | unreviewed | not_dedicated | [open](https://cdk.wd1.myworkdayjobs.com/en-US/CDK/job/Austin-TX-USA/Associate-Software-Engineer_JR9201-1) |
-| A | 88.0 | Syncareer | RELX | Tech Accelerate Graduate Program - Software Engineer (Alpharetta - Jan | Alpharetta, Georgia, United States | 2026-08-31 | Sponsor | - | unreviewed | not_dedicated | [open](https://relx.wd3.myworkdayjobs.com/en-US/relx/job/Alpharetta-GA/Tech-Accelerate-Graduate-Program---Software-Engineer--Alpharetta---January-_R117617-1?Country___Territory=bc33aa3152ec42d4995f4791a106ed09&Country___Territory=29247e57dbaf46fb855b224e03170bc7&Country___Territory=6cb77610a8a543aea2d6bc10457e35d4&Country___Territory=d903bb3fedad45039383f6de334ad4db&Country___Territory=80938777cac5440fab50d729f9634969&Country___Territory=a30a87ed25634629aa6c3958aa2b91ea&Country___Territory=d4afdeb461d446e4babd204bd102dba8&Country___Territory=a4e08b475d6a4176853c9d1cb9854e02&Country___Territory=55273a1b49934d97ae15342ef51f6b95) |
-| B | 80.0 | Syncareer | UnitedHealth Group | Software Engineer | Schaumburg, Illinois, United States | 2026-08-31 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.unitedhealthgroup.com/job/schaumburg/software-engineer/34088/99985344624) |
-| B | 78.0 | Syncareer | Zebra Technologies | Software Engineer, I | Holtsville, New York, United States | 2026-08-31 | Sponsor | - | unreviewed | not_dedicated | [open](https://zebra.wd501.myworkdayjobs.com/en-US/Zebra_careers/job/Holtsville-New-York/Software-Engineer--I_JR103105) |
-| B | 78.0 | Syncareer | Qorvo | Software Engineering Intern | Richardson, Texas, United States | 2026-08-31 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.qorvo.com/job/Richardson-Software-Engineering-Intern-TX-75080/1424729800/) |
-| B | 78.0 | Syncareer | RELX | Software Engineer II | Boca Raton, Florida, United States | 2026-08-31 | Sponsor | - | unreviewed | not_dedicated | [open](https://relx.wd3.myworkdayjobs.com/en-US/relx/job/Boca-Raton-FL/Software-Engineer-II_R112794-1?Country___Territory=bc33aa3152ec42d4995f4791a106ed09&Country___Territory=29247e57dbaf46fb855b224e03170bc7&Country___Territory=6cb77610a8a543aea2d6bc10457e35d4&Country___Territory=d903bb3fedad45039383f6de334ad4db&Country___Territory=80938777cac5440fab50d729f9634969&Country___Territory=a30a87ed25634629aa6c3958aa2b91ea&Country___Territory=d4afdeb461d446e4babd204bd102dba8&Country___Territory=a4e08b475d6a4176853c9d1cb9854e02&Country___Territory=55273a1b49934d97ae15342ef51f6b95) |
-| B | 77.0 | Syncareer | Mastercard | Data Engineer II | O'Fallon, Missouri, United States | 2026-08-31 | Sponsor | - | unreviewed | not_dedicated | [open](https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/OFallon-Missouri/Data-Engineer-II_R-289305?locations=8eab563831bf10acbe3d7c702f3b222a&locations=15854e620ab6014e5c345533ce3e0c5d&locations=bea842055ec0010f8fa2f063710e65dd&locations=abb6e89c39b847c49cb2958e421072b3&locations=8eab563831bf10acbe0b766b65242035&locations=fb7d771add6201c7c6d0d3914b4acc2f&locations=8eab563831bf10acbda112b729c11c9a&locations=13430a311dc746e1aa9200a749388d03&locations=8eab563831bf10acbd2183c3090f1a20&locations=efacbd97fd67011dbc0f236fbb007b75&locations=4345730331e1457585f99e8c7feb2c84&locations=8eab563831bf10acbcb35b24fcd616d7&locations=8eab563831bf10acbbdb817a833d0fa6&locations=8eab563831bf10acbba0ec70e0f00d06&locations=c9c1221064f54d28ae6ab893b99923cf&locations=b76624f2eeb110019afd21305a220000&locations=d98b53ce7a111038792c1575842cbfb5&locations=8eab563831bf10acb7f44286d1feeaf0&locations=38301974980c10d4a0770cdea411b718&locations=85482cdd21931001b922354af3a90000&locations=a52da795b81f100109d635958d730000&locations=3b2ad45f5eca10bd534be5fa946139c3&locations=8eab563831bf10acb54f0f21651ed219) |
-| B | 73.0 | Syncareer | HII | ENGINEER SOFTWARE 1 | Newport News, Virginia, United States | 2026-08-31 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.huntingtoningalls.com/job/Newport-News-ENGINEER-SOFTWARE-1-Virg/1425127900/) |
+| A | 93.0 | Syncareer | Cisco | Software Engineer Full Stack / Backend I (Full Time) - United States | San Jose, California, United States | 2026-09-01 | Sponsor | - | unreviewed | pending_official_refresh | [open](https://careers.cisco.com/global/en/job/2024035/Software-Engineer-Full-Stack-Backend-I-Full-Time-United-States) |
+| A | 91.0 | Syncareer | Precisely | Associate software Engineer (Python AI) | United States | 2026-08-31 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.precisely.com/careers-and-culture/us-jobs/job/4722721005?gh_jid=4722721005) |
+| A | 89.0 | Syncareer | Silicon Labs | DevOps Platform Engineer | Austin, Texas, United States | 2026-08-31 | Sponsor | - | unreviewed | not_dedicated | [open](https://silabs.wd1.myworkdayjobs.com/en-US/SiliconLabsCareers/job/Austin/DevOps-Platform-Engineer_21029-1) |
+| A | 86.0 | Syncareer | Google | Software Engineer | Mountain View, California, United States | 2026-09-01 | Sponsor | YES (Google) | unreviewed | pending_official_refresh | [open](https://www.google.com/about/careers/applications/jobs/results/106684387621249734-software-engineer) |
+| B | 92.0 | Syncareer | C3 AI | Software Engineer - Intern (Summer 2027) | Redwood City, California, United States | 2026-08-31 | Sponsor | - | unreviewed | not_dedicated | [open](https://c3.ai/job-description/8739037002?gh_jid=8739037002) |
+| B | 80.0 | Syncareer | Qualcomm | Software Engineer | San Diego, California, United States | 2026-09-01 | Sponsor | YES (Qualcomm) | unreviewed | pending_official_refresh | [open](https://careers.qualcomm.com/careers/job/446720833907?domain=qualcomm.com&triggerGoButton=false) |
+| B | 77.0 | Syncareer | Phillips 66 | Advisor II, Data Engineer | Houston, Texas, United States | 2026-08-31 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.phillips66.com/job/Houston-Advisor-II%2C-Data-Engineer-TX-77042/1424859100/) |
 
-Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-09-01_1823.csv`.
+Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-09-02_0420.csv`.
