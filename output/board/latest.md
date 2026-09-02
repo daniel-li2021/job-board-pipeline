@@ -1,7 +1,7 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-02_0452
+# ATS / LinkedIn board — 7-day view — 2026-09-02_0755
 
-- Updated (PT): 2026-09-01 21:52 PDT
-- Snapshot (UTC): 2026-09-02T04:52:39.086084+00:00
+- Updated (PT): 2026-09-02 00:56 PDT
+- Snapshot (UTC): 2026-09-02T07:56:05.020652+00:00
 - Last 24 hours: 16
 - Last 3 days: 16
 
@@ -9,12 +9,12 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 
 ## Run stats
 
-- Source raw: ATS 2646 / LinkedIn 792 / Glassdoor 0 (Big Company Official runs separately)
-- Funnel: after dedup 3437 -> after company filter 3420 -> after hard filter 3151 -> after role+seniority prefilter 776 | dropped 2661
-- LLM usage: jobs scored 0 / API requests 0 / cache reused 20 (cross-pipeline 11) / rule fallback+overflow 756 (thin local cards 531, recency-gated 225, overflow 0, new/changed 225)
-- LLM cost: model gpt-5.6-terra / API requests 0 / jobs scored 0 / tokens input 0 (cached 0) / output 0 (reasoning 0) / estimated cost $0.0000
+- Source raw: ATS 2650 / LinkedIn 768 / Glassdoor 0 (Big Company Official runs separately)
+- Funnel: after dedup 3417 -> after company filter 3406 -> after hard filter 3137 -> after role+seniority prefilter 782 | dropped 2635
+- LLM usage: jobs scored 4 / API requests 2 / cache reused 20 (cross-pipeline 11) / rule fallback+overflow 758 (thin local cards 534, recency-gated 224, overflow 0, new/changed 228)
+- LLM cost: model gpt-5.6-terra / API requests 2 / jobs scored 4 / tokens input 8452 (cached 0) / output 829 (reasoning 0) / estimated cost $0.0269
 - Output sizing: Tier A 0 / Tier B 18 / A+B actionable 18 / Shown in latest.md 18 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 19 / newly-disc 509 / 3-7d 7 / >7d 241
+- Recency (kept): <3h 0 / 3-24h 4 / 1-3d 18 / newly-disc 511 / 3-7d 9 / >7d 240
 
 ## Tier A - apply now / referral (0)
 
@@ -24,19 +24,19 @@ _none_
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 89 | llm | greenhouse | Lyft | Software Engineer | San Francisco, CA | 2026-09-02 | 3to24h | medium | swe | - | unreviewed | pending_official_refresh | yes | [open](https://app.careerpuck.com/job-board/lyft/job/8772571002?gh_jid=8772571002) |
 | 75 | rule_fallback | linkedin | OpenAI | Software Engineer, Developer Productivity | Mountain View, CA | 2026-09-01 | newly_discovered | low | swe | OpenAI | unreviewed | pending_official_refresh | - | [open](https://www.linkedin.com/jobs/view/software-engineer-developer-productivity-at-openai-4460673105) |
 | 75 | rule_fallback | linkedin | Databricks | AI Engineer - FDE (Forward Deployed Engineer) | New York, NY | 2026-09-01 | newly_discovered | low | swe | Databricks | unreviewed | pending_official_refresh | - | [open](https://www.linkedin.com/jobs/view/ai-engineer-fde-forward-deployed-engineer-at-databricks-4459562237) |
 | 75 | rule_fallback | linkedin | Apex - Satellite Platforms | Full Stack Developer, Business Systems | Los Angeles, CA | 2026-09-01 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-business-systems-at-apex-satellite-platforms-4435313232) |
 | 75 | rule_fallback | linkedin | Braintrust | Software Engineer, Developer Experience | New York, NY | 2026-09-01 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-developer-experience-at-braintrust-4423371764) |
 | 75 | rule_fallback | linkedin | Brillio | Full Stack Developer | Manhattan, NY | 2026-09-01 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-brillio-4460612958) |
 | 75 | rule_fallback | linkedin | Gusher | FULL STACK DEVELOPER | United States | 2026-09-01 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-gusher-4460291414) |
-| 75 | rule_fallback | linkedin | Haystack | Python Backend Developer | New York, NY | 2026-09-01 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/python-backend-developer-at-haystack-4458867253) |
+| 75 | rule_fallback | linkedin | Haystack | Python Backend Developer | New York, NY | 2026-09-02 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/python-backend-developer-at-haystack-4458867253) |
 | 75 | rule_fallback | linkedin | MI Softech Inc | Full Stack Developer | Dallas, TX | 2026-09-01 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-mi-softech-inc-4460621231) |
 | 75 | rule_fallback | linkedin | OpenBrand | Full Stack Developer | Chicago, IL | 2026-09-01 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-openbrand-4460615087) |
 | 75 | rule_fallback | linkedin | PhysicsX | Forward Deployed Software Engineer | New York, United States | 2026-09-01 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-at-physicsx-4442793124) |
 | 75 | rule_fallback | linkedin | StoneX Group Inc. | Junior Full Stack Developer - Fixed Income Trading Technology | New York, NY | 2026-09-01 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-full-stack-developer-fixed-income-trading-technology-at-stonex-group-inc-4462091609) |
 | 75 | rule_fallback | linkedin | The Citco Group Limited | Junior Full Stack Developer | Charlotte, NC | 2026-09-01 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-full-stack-developer-at-the-citco-group-limited-4451221096) |
-| 75 | rule_fallback | linkedin | UST | Full Stack Developer | St Louis, MO | 2026-09-02 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-ust-4459576955) |
 | 75 | rule_fallback | linkedin | Quantix Search | Forward Deployed AI Engineer | New York, United States | 2026-09-01 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-at-quantix-search-4462030867) |
 | 75 | rule_fallback | linkedin | Ranger Technical Resources | Full Stack AI Developer | Miami-Dade County, FL | 2026-09-01 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-ai-developer-at-ranger-technical-resources-4461776075) |
 | 75 | rule_fallback | linkedin | Zipline | Forward Deployed AI Engineer, Operations | South San Francisco, CA | 2026-09-01 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-operations-at-zipline-4424708079) |
