@@ -1,7 +1,7 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-03_1247
+# ATS / LinkedIn board — 7-day view — 2026-09-03_1831
 
-- Updated (PT): 2026-09-03 05:48 PDT
-- Snapshot (UTC): 2026-09-03T12:48:12.368101+00:00
+- Updated (PT): 2026-09-03 11:33 PDT
+- Snapshot (UTC): 2026-09-03T18:33:02.156308+00:00
 - Last 24 hours: 14
 - Last 3 days: 19
 
@@ -10,11 +10,11 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 ## Run stats
 
 - Source raw: ATS 2648 / LinkedIn 832 / Glassdoor 0 (Big Company Official runs separately)
-- Funnel: after dedup 3477 -> after company filter 3461 -> after hard filter 3176 -> after role+seniority prefilter 819 | dropped 2658
-- LLM usage: jobs scored 0 / API requests 0 / cache reused 22 (cross-pipeline 18) / rule fallback+overflow 797 (thin local cards 571, recency-gated 226, overflow 0, new/changed 226)
-- LLM cost: model gpt-5.6-terra / API requests 0 / jobs scored 0 / tokens input 0 (cached 0) / output 0 (reasoning 0) / estimated cost $0.0000
+- Funnel: after dedup 3477 -> after company filter 3461 -> after hard filter 3175 -> after role+seniority prefilter 819 | dropped 2658
+- LLM usage: jobs scored 1 / API requests 1 / cache reused 21 (cross-pipeline 18) / rule fallback+overflow 797 (thin local cards 571, recency-gated 226, overflow 0, new/changed 227)
+- LLM cost: model gpt-5.6-terra / API requests 1 / jobs scored 1 / tokens input 3338 (cached 0) / output 223 (reasoning 0) / estimated cost $0.0094
 - Output sizing: Tier A 1 / Tier B 20 / A+B actionable 21 / Shown in latest.md 21 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 34 / newly-disc 543 / 3-7d 7 / >7d 235
+- Recency (kept): <3h 0 / 3-24h 1 / 1-3d 34 / newly-disc 543 / 3-7d 7 / >7d 234
 
 ## Tier A - apply now / referral (1)
 

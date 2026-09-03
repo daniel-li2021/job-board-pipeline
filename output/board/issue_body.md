@@ -1,9 +1,9 @@
-ATS / LinkedIn alert - 2026-09-02_1834
+ATS / LinkedIn alert - 2026-09-03_1831
 
-Updated (PT): 2026-09-02 11:35 PDT
-Snapshot (UTC): 2026-09-02T18:35:30.032344+00:00
+Updated (PT): 2026-09-03 11:33 PDT
+Snapshot (UTC): 2026-09-03T18:33:02.158112+00:00
 
-16 new or promoted (B→A) Tier A/B job(s).
+17 new or promoted (B→A) Tier A/B job(s).
 
 At most one digest is sent per Pacific day. Score/JD-only changes are not re-alerted.
 
@@ -11,19 +11,20 @@ If you skipped a day, open `output/board/inbox.md` (last 3 days). Do not read ev
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| B | 89 | greenhouse | Lyft | Software Engineer | San Francisco, CA | 2026-09-02 | 3to24h | - | unreviewed | pending_official_refresh | [open](https://app.careerpuck.com/job-board/lyft/job/8772571002?gh_jid=8772571002) |
-| B | 75 | linkedin | OpenAI | Software Engineer, Developer Productivity | Mountain View, CA | 2026-09-01 | newly_discovered | OpenAI | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/software-engineer-developer-productivity-at-openai-4460673105) |
-| B | 75 | linkedin | Databricks | AI Engineer - FDE (Forward Deployed Engineer) | New York, NY | 2026-09-01 | newly_discovered | Databricks | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/ai-engineer-fde-forward-deployed-engineer-at-databricks-4459562237) |
-| B | 75 | linkedin | Apex - Satellite Platforms | Full Stack Developer, Business Systems | Los Angeles, CA | 2026-09-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-business-systems-at-apex-satellite-platforms-4435313232) |
-| B | 75 | linkedin | Braintrust | Software Engineer, Developer Experience | New York, NY | 2026-09-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-developer-experience-at-braintrust-4423371764) |
-| B | 75 | linkedin | Brillio | Full Stack Developer | Manhattan, NY | 2026-09-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-brillio-4460612958) |
-| B | 75 | linkedin | Gusher | FULL STACK DEVELOPER | United States | 2026-09-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-gusher-4460291414) |
-| B | 75 | linkedin | Haystack | Python Backend Developer | New York, NY | 2026-09-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/python-backend-developer-at-haystack-4458867253) |
-| B | 75 | linkedin | MI Softech Inc | Full Stack Developer | Dallas, TX | 2026-09-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-mi-softech-inc-4460621231) |
-| B | 75 | linkedin | OpenBrand | Full Stack Developer | Chicago, IL | 2026-09-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-openbrand-4460615087) |
-| B | 75 | linkedin | PhysicsX | Forward Deployed Software Engineer | New York, United States | 2026-09-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-at-physicsx-4442793124) |
-| B | 75 | linkedin | StoneX Group Inc. | Junior Full Stack Developer - Fixed Income Trading Technology | New York, NY | 2026-09-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/junior-full-stack-developer-fixed-income-trading-technology-at-stonex-group-inc-4462091609) |
-| B | 75 | linkedin | The Citco Group Limited | Junior Full Stack Developer | Charlotte, NC | 2026-09-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/junior-full-stack-developer-at-the-citco-group-limited-4451221096) |
-| B | 75 | linkedin | Quantix Search | Forward Deployed AI Engineer | New York, United States | 2026-09-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-at-quantix-search-4462030867) |
-| B | 75 | linkedin | Ranger Technical Resources | Full Stack AI Developer | Miami-Dade County, FL | 2026-09-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-ai-developer-at-ranger-technical-resources-4461776075) |
-| B | 75 | linkedin | Zipline | Forward Deployed AI Engineer, Operations | South San Francisco, CA | 2026-09-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-operations-at-zipline-4424708079) |
+| A | 90 | greenhouse | Lyft | Software Engineer | San Francisco, CA | 2026-09-02 | 1to3d | - | unreviewed | pending_official_refresh | [open](https://app.careerpuck.com/job-board/lyft/job/8772571002?gh_jid=8772571002) |
+| B | 75 | greenhouse | GitLab | Intermediate Backend Engineer, AMER | Remote, Canada; Remote, United States | 2026-09-02 | 1to3d | - | unreviewed | pending_official_refresh | [open](https://job-boards.greenhouse.io/gitlab/jobs/8773006002) |
+| B | 72 | greenhouse | Lyft | Software Engineer | Seattle, WA | 2026-09-02 | 1to3d | - | unreviewed | pending_official_refresh | [open](https://app.careerpuck.com/job-board/lyft/job/8772594002?gh_jid=8772594002) |
+| B | 75 | linkedin | DoorDash | Software Engineer II, Data Engineering | San Francisco, CA | 2026-09-03 | newly_discovered | DoorDash | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-data-engineering-at-doordash-4092899847) |
+| B | 75 | linkedin | BigBear.ai | Full Stack Developer | Suitland, MD | 2026-09-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-bigbear-ai-4442213271) |
+| B | 75 | linkedin | Eccalon, LLC | Full Stack Developer | Hanover, MD | 2026-09-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-eccalon-llc-4461335091) |
+| B | 75 | linkedin | HIRECLOUT | Full Stack Web Developer | City of Industry, CA | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-web-developer-at-hireclout-4452772582) |
+| B | 75 | linkedin | MeeBoss | Forward Deployed Software Engineer | New York, United States | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-at-meeboss-4462736632) |
+| B | 75 | linkedin | Minfy | Full Stack Developer | McLean, VA | 2026-09-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-minfy-4460977542) |
+| B | 75 | linkedin | Scale AI | Forward Deployed Software Engineer, Public Sector | Austin, TX | 2026-09-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-public-sector-at-scale-ai-4443522634) |
+| B | 75 | linkedin | UST | Full Stack Developer | Chicago, IL | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-ust-4450423352) |
+| B | 75 | linkedin | UST | Full Stack Developer (React & Python/Node.js - AWS) | Chicago, IL | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-react-python-node-js-aws-at-ust-4450437153) |
+| B | 75 | linkedin | Winaxis LLC | Full Stack Developer | Boston, MA | 2026-09-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-winaxis-llc-4462441951) |
+| B | 75 | linkedin | Clay | Software Engineer, Developer Experience (AI) | San Francisco, CA | 2026-09-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-developer-experience-ai-at-clay-4460983957) |
+| B | 75 | linkedin | Edra | Forward Deployed AI Engineer (New York) | New York, NY | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-new-york-at-edra-4440117511) |
+| B | 75 | linkedin | Mastech Digital | AI Engineer / Generative AI Developer | United States | 2026-09-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-generative-ai-developer-at-mastech-digital-4459991906) |
+| B | 75 | linkedin | Stem IT | Forward Deployed AI Engineer | McLean, VA | 2026-09-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-at-stem-it-4459957582) |
