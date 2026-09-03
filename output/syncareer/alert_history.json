@@ -3266,6 +3266,105 @@
           "url": "https://careers.americanexpress.com/en/sites/CX_1/job/26013254/?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164"
         }
       ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-09-03_0414",
+      "emitted_at": "2026-09-03T04:15:48.553419+00:00",
+      "event_kind": "new_matching",
+      "count": 6,
+      "jobs": [
+        {
+          "canonical_job_key": "id::syncareer::2c553891c9cb69f4ed647c7670fd3c12",
+          "job_id": "2c553891c9cb69f4ed647c7670fd3c12",
+          "tier": "A",
+          "match_score": 93.0,
+          "fit_score": 93.0,
+          "company": "Infosys",
+          "title": "Gen AI Engineer",
+          "location": "Irving, Texas, United States",
+          "posting_date": "2026-09-02",
+          "first_seen": "2026-09-03T04:14:04.993270+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153052BR",
+          "url": "https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153052BR"
+        },
+        {
+          "canonical_job_key": "id::syncareer::476b52d4a78a3b2008202ab8f7d5bf74",
+          "job_id": "476b52d4a78a3b2008202ab8f7d5bf74",
+          "tier": "A",
+          "match_score": 90.0,
+          "fit_score": 90.0,
+          "company": "Togetherwork",
+          "title": "Full Stack Software Engineer",
+          "location": "Austin, Texas, United States",
+          "posting_date": "2026-09-01",
+          "first_seen": "2026-09-03T04:14:04.993270+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://togetherwork.com/application/?gh_jid=8759765002",
+          "url": "https://togetherwork.com/application/?gh_jid=8759765002"
+        },
+        {
+          "canonical_job_key": "id::syncareer::7d4eb6a3548c25476f892427976c7192",
+          "job_id": "7d4eb6a3548c25476f892427976c7192",
+          "tier": "A",
+          "match_score": 90.0,
+          "fit_score": 90.0,
+          "company": "Clearwater Analytics(CWAN)",
+          "title": "Associate Software Development Engineer",
+          "location": "Boise, Idaho, United States",
+          "posting_date": "2026-09-01",
+          "first_seen": "2026-09-03T04:14:04.993270+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://clearwateranalytics.wd1.myworkdayjobs.com/en-US/Clearwater_Analytics_Careers/job/Office---Boise/Associate-Software-Development-Engineer_R12179",
+          "url": "https://clearwateranalytics.wd1.myworkdayjobs.com/en-US/Clearwater_Analytics_Careers/job/Office---Boise/Associate-Software-Development-Engineer_R12179"
+        },
+        {
+          "canonical_job_key": "id::syncareer::a33f01fd14bb20372e10a70b039abc69",
+          "job_id": "a33f01fd14bb20372e10a70b039abc69",
+          "tier": "A",
+          "match_score": 88.0,
+          "fit_score": 88.0,
+          "company": "Clearwater Analytics(CWAN)",
+          "title": "Software Development Engineer I",
+          "location": "Seattle, Washington, United States",
+          "posting_date": "2026-09-01",
+          "first_seen": "2026-09-03T04:14:04.993270+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://clearwateranalytics.wd1.myworkdayjobs.com/en-US/Clearwater_Analytics_Careers/job/Office---Seattle/Software-Development-Engineer-I_R12047",
+          "url": "https://clearwateranalytics.wd1.myworkdayjobs.com/en-US/Clearwater_Analytics_Careers/job/Office---Seattle/Software-Development-Engineer-I_R12047"
+        },
+        {
+          "canonical_job_key": "id::syncareer::da90322d3926d57b5659cc41672c0ebd",
+          "job_id": "da90322d3926d57b5659cc41672c0ebd",
+          "tier": "A",
+          "match_score": 88.0,
+          "fit_score": 88.0,
+          "company": "OneStream Software",
+          "title": "Associate AI Engineer",
+          "location": "Fort Lauderdale, Florida, United States",
+          "posting_date": "2026-09-01",
+          "first_seen": "2026-09-03T04:14:04.993270+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://recruiting.ultipro.com/ONE1018ONSO/JobBoard/1955ffa6-bda6-4c95-8412-2c731d693ab2/OpportunityDetail?opportunityId=e7db8dcf-d424-4a5f-95c3-a61cacba70a0",
+          "url": "https://recruiting.ultipro.com/ONE1018ONSO/JobBoard/1955ffa6-bda6-4c95-8412-2c731d693ab2/OpportunityDetail?opportunityId=e7db8dcf-d424-4a5f-95c3-a61cacba70a0"
+        },
+        {
+          "canonical_job_key": "id::syncareer::920161b874a4aacd338d2876da767cfb",
+          "job_id": "920161b874a4aacd338d2876da767cfb",
+          "tier": "B",
+          "match_score": 78.0,
+          "fit_score": 78.0,
+          "company": "Togetherwork",
+          "title": "Full Stack Software Engineer",
+          "location": "Austin, Texas, United States",
+          "posting_date": "2026-09-01",
+          "first_seen": "2026-09-03T04:14:04.993270+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://togetherwork.com/application/?gh_jid=8760322002",
+          "url": "https://togetherwork.com/application/?gh_jid=8760322002"
+        }
+      ]
     }
   ]
 }
