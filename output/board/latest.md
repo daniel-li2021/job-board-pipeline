@@ -1,39 +1,39 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-03_0411
+# ATS / LinkedIn board — 7-day view — 2026-09-03_0555
 
-- Updated (PT): 2026-09-02 21:11 PDT
-- Snapshot (UTC): 2026-09-03T04:11:49.443764+00:00
-- Last 24 hours: 19
+- Updated (PT): 2026-09-02 22:56 PDT
+- Snapshot (UTC): 2026-09-03T05:56:31.585988+00:00
+- Last 24 hours: 20
 - Last 3 days: 25
 
 If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) instead of this file.
 
 ## Run stats
 
-- Source raw: ATS 2651 / LinkedIn 777 / Glassdoor 0 (Big Company Official runs separately)
-- Funnel: after dedup 3425 -> after company filter 3404 -> after hard filter 3111 -> after role+seniority prefilter 627 | dropped 2798
-- LLM usage: jobs scored 0 / API requests 0 / cache reused 27 (cross-pipeline 18) / rule fallback+overflow 600 (thin local cards 379, recency-gated 221, overflow 0, new/changed 221)
+- Source raw: ATS 2651 / LinkedIn 814 / Glassdoor 0 (Big Company Official runs separately)
+- Funnel: after dedup 3462 -> after company filter 3437 -> after hard filter 3142 -> after role+seniority prefilter 640 | dropped 2822
+- LLM usage: jobs scored 0 / API requests 0 / cache reused 22 (cross-pipeline 18) / rule fallback+overflow 618 (thin local cards 392, recency-gated 226, overflow 0, new/changed 226)
 - LLM cost: model gpt-5.6-terra / API requests 0 / jobs scored 0 / tokens input 0 (cached 0) / output 0 (reasoning 0) / estimated cost $0.0000
 - Output sizing: Tier A 1 / Tier B 26 / A+B actionable 27 / Shown in latest.md 27 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 7 / 1-3d 26 / newly-disc 352 / 3-7d 10 / >7d 232
+- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 31 / newly-disc 367 / 3-7d 7 / >7d 235
 
 ## Tier A - apply now / referral (1)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 90 | cached_llm | greenhouse | Lyft | Software Engineer | San Francisco, CA | 2026-09-02 | 3to24h | high | swe | - | unreviewed | pending_official_refresh | yes | [open](https://app.careerpuck.com/job-board/lyft/job/8772571002?gh_jid=8772571002) |
+| 90 | cached_llm | greenhouse | Lyft | Software Engineer | San Francisco, CA | 2026-09-02 | 1to3d | high | swe | - | unreviewed | pending_official_refresh | yes | [open](https://app.careerpuck.com/job-board/lyft/job/8772571002?gh_jid=8772571002) |
 
 ## Tier B - worth applying (26)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 75 | cached_llm | greenhouse | GitLab | Intermediate Backend Engineer, AMER | Remote, Canada; Remote, United States | 2026-09-02 | 3to24h | high | swe | - | unreviewed | pending_official_refresh | yes | [open](https://job-boards.greenhouse.io/gitlab/jobs/8773006002) |
-| 72 | cached_llm | greenhouse | Lyft | Software Engineer | Seattle, WA | 2026-09-02 | 3to24h | high | swe | - | unreviewed | pending_official_refresh | yes | [open](https://app.careerpuck.com/job-board/lyft/job/8772594002?gh_jid=8772594002) |
+| 75 | cached_llm | greenhouse | GitLab | Intermediate Backend Engineer, AMER | Remote, Canada; Remote, United States | 2026-09-02 | 1to3d | high | swe | - | unreviewed | pending_official_refresh | yes | [open](https://job-boards.greenhouse.io/gitlab/jobs/8773006002) |
 | 75 | rule_fallback | linkedin | BeaconFire Inc. | Java Full Stack Developer | New Jersey, United States | 2026-09-02 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/java-full-stack-developer-at-beaconfire-inc-4458098833) |
-| 75 | rule_fallback | linkedin | Haystack | Python Backend Developer | New York, NY | 2026-09-02 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/python-backend-developer-at-haystack-4458867253) |
 | 75 | rule_fallback | linkedin | The Citco Group Limited | Junior Full Stack Developer | Charlotte, NC | 2026-09-02 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-full-stack-developer-at-the-citco-group-limited-4451221096) |
+| 72 | cached_llm | greenhouse | Lyft | Software Engineer | Seattle, WA | 2026-09-02 | 1to3d | high | swe | - | unreviewed | pending_official_refresh | yes | [open](https://app.careerpuck.com/job-board/lyft/job/8772594002?gh_jid=8772594002) |
 | 75 | rule_fallback | linkedin | Applied Intuition | Forward Deployed Engineer - New Grad (December 2026) | Sunnyvale, CA | 2026-09-03 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/forward-deployed-engineer-new-grad-december-2026-at-applied-intuition-4461367281) |
 | 75 | rule_fallback | linkedin | BigBear.ai | Full Stack Developer | Suitland, MD | 2026-09-02 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-bigbear-ai-4442213271) |
 | 75 | rule_fallback | linkedin | Capgemini | Java Full stack developer (with Angular) | Dallas, TX | 2026-09-02 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/java-full-stack-developer-with-angular-at-capgemini-4461305103) |
+| 75 | rule_fallback | linkedin | Cognizant | Java Backend Developer (Spring boot/Microservices) - 70286151 | New York, NY | 2026-09-03 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/java-backend-developer-spring-boot-microservices-70286151-at-cognizant-4461387513) |
 | 75 | rule_fallback | linkedin | Eccalon, LLC | Full Stack Developer | Hanover, MD | 2026-09-02 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-eccalon-llc-4461335091) |
 | 75 | rule_fallback | linkedin | Guidehouse | Full-Stack Developer (Java / PostgreSQL) | Washington, DC | 2026-09-02 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-java-postgresql-at-guidehouse-4452330698) |
 | 75 | rule_fallback | linkedin | INTX Insurance Software | Full Stack Developer | Austin, TX | 2026-09-02 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-intx-insurance-software-4462419138) |

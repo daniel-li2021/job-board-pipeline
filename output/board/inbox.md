@@ -1,9 +1,9 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-09-02 21:11 PDT
-- Snapshot (UTC): 2026-09-03T04:11:08.221486+00:00
+- Updated (PT): 2026-09-02 22:55 PDT
+- Snapshot (UTC): 2026-09-03T05:55:41.040758+00:00
 - Jobs: 25 (Tier A/B only)
-- Last 24 hours: 19
+- Last 24 hours: 20
 - Last 3 days: 25
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
@@ -11,15 +11,15 @@ The 7-day dump is `latest.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 90 | greenhouse | Lyft | Software Engineer | San Francisco, CA | 2026-09-02 | 3to24h | - | unreviewed | pending_official_refresh | [open](https://app.careerpuck.com/job-board/lyft/job/8772571002?gh_jid=8772571002) |
-| B | 75 | greenhouse | GitLab | Intermediate Backend Engineer, AMER | Remote, Canada; Remote, United States | 2026-09-02 | 3to24h | - | unreviewed | pending_official_refresh | [open](https://job-boards.greenhouse.io/gitlab/jobs/8773006002) |
-| B | 72 | greenhouse | Lyft | Software Engineer | Seattle, WA | 2026-09-02 | 3to24h | - | unreviewed | pending_official_refresh | [open](https://app.careerpuck.com/job-board/lyft/job/8772594002?gh_jid=8772594002) |
+| A | 90 | greenhouse | Lyft | Software Engineer | San Francisco, CA | 2026-09-02 | 1to3d | - | unreviewed | pending_official_refresh | [open](https://app.careerpuck.com/job-board/lyft/job/8772571002?gh_jid=8772571002) |
+| B | 75 | greenhouse | GitLab | Intermediate Backend Engineer, AMER | Remote, Canada; Remote, United States | 2026-09-02 | 1to3d | - | unreviewed | pending_official_refresh | [open](https://job-boards.greenhouse.io/gitlab/jobs/8773006002) |
 | B | 75 | linkedin | BeaconFire Inc. | Java Full Stack Developer | New Jersey, United States | 2026-09-02 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-full-stack-developer-at-beaconfire-inc-4458098833) |
-| B | 75 | linkedin | Haystack | Python Backend Developer | New York, NY | 2026-09-02 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/python-backend-developer-at-haystack-4458867253) |
 | B | 75 | linkedin | The Citco Group Limited | Junior Full Stack Developer | Charlotte, NC | 2026-09-02 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/junior-full-stack-developer-at-the-citco-group-limited-4451221096) |
+| B | 72 | greenhouse | Lyft | Software Engineer | Seattle, WA | 2026-09-02 | 1to3d | - | unreviewed | pending_official_refresh | [open](https://app.careerpuck.com/job-board/lyft/job/8772594002?gh_jid=8772594002) |
 | B | 75 | linkedin | Applied Intuition | Forward Deployed Engineer - New Grad (December 2026) | Sunnyvale, CA | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-engineer-new-grad-december-2026-at-applied-intuition-4461367281) |
 | B | 75 | linkedin | BigBear.ai | Full Stack Developer | Suitland, MD | 2026-09-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-bigbear-ai-4442213271) |
 | B | 75 | linkedin | Capgemini | Java Full stack developer (with Angular) | Dallas, TX | 2026-09-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-full-stack-developer-with-angular-at-capgemini-4461305103) |
+| B | 75 | linkedin | Cognizant | Java Backend Developer (Spring boot/Microservices) - 70286151 | New York, NY | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-backend-developer-spring-boot-microservices-70286151-at-cognizant-4461387513) |
 | B | 75 | linkedin | Eccalon, LLC | Full Stack Developer | Hanover, MD | 2026-09-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-eccalon-llc-4461335091) |
 | B | 75 | linkedin | Guidehouse | Full-Stack Developer (Java / PostgreSQL) | Washington, DC | 2026-09-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-java-postgresql-at-guidehouse-4452330698) |
 | B | 75 | linkedin | INTX Insurance Software | Full Stack Developer | Austin, TX | 2026-09-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-intx-insurance-software-4462419138) |
