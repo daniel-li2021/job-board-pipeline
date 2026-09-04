@@ -1,21 +1,19 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-09-03 21:18 PDT
-- Snapshot (UTC): 2026-09-04T04:18:53.228885+00:00
-- Jobs: 37 (Tier A/B only)
-- Last 24 hours: 31
-- Last 3 days: 37
+- Updated (PT): 2026-09-03 23:35 PDT
+- Snapshot (UTC): 2026-09-04T06:35:08.175960+00:00
+- Jobs: 36 (Tier A/B only)
+- Last 24 hours: 32
+- Last 3 days: 36
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 90 | greenhouse | Lyft | Software Engineer | San Francisco, CA | 2026-09-02 | 1to3d | - | unreviewed | pending_official_refresh | [open](https://app.careerpuck.com/job-board/lyft/job/8772571002?gh_jid=8772571002) |
+| B | 82 | greenhouse | Lyft | Software Engineer | San Francisco, CA | 2026-09-02 | 1to3d | - | unreviewed | pending_official_refresh | [open](https://app.careerpuck.com/job-board/lyft/job/8772571002?gh_jid=8772571002) |
 | B | 75 | greenhouse | GitLab | Intermediate Backend Engineer, AMER | Remote, Canada; Remote, United States | 2026-09-02 | 1to3d | - | unreviewed | pending_official_refresh | [open](https://job-boards.greenhouse.io/gitlab/jobs/8773006002) |
-| B | 75 | linkedin | Applied Intuition | Forward Deployed Engineer - New Grad (December 2026) | Sunnyvale, CA | 2026-09-03 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-engineer-new-grad-december-2026-at-applied-intuition-4461367281) |
 | B | 75 | linkedin | Haystack | Python Backend Developer | New York, NY | 2026-09-03 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/python-backend-developer-at-haystack-4458867253) |
-| B | 75 | linkedin | Zebra Technologies | Forward Deployed Software Engineer, Advanced | Lincolnshire, IL | 2026-09-03 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-advanced-at-zebra-technologies-4460443125) |
 | B | 72 | greenhouse | Lyft | Software Engineer | Seattle, WA | 2026-09-02 | 1to3d | - | unreviewed | pending_official_refresh | [open](https://app.careerpuck.com/job-board/lyft/job/8772594002?gh_jid=8772594002) |
 | B | 75 | linkedin | DoorDash | Software Engineer II, Data Engineering | San Francisco, CA | 2026-09-03 | newly_discovered | DoorDash | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-data-engineering-at-doordash-4092899847) |
 | B | 75 | linkedin | Accenture Federal Services | Full Stack Developer | Washington, DC | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-accenture-federal-services-4463131190) |
@@ -24,10 +22,11 @@ The 7-day dump is `latest.md`.
 | B | 75 | linkedin | Capgemini | Java Full stack Developer (Angular) | Irving, TX | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-full-stack-developer-angular-at-capgemini-4461693009) |
 | B | 75 | linkedin | Centraprise | React & Dot Net Full Stack Developer | Wilmington, MA | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/react-dot-net-full-stack-developer-at-centraprise-4461668427) |
 | B | 75 | linkedin | Ciena | Platform Software Developer - 2026 New Grads | Atlanta, GA | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/platform-software-developer-2026-new-grads-at-ciena-4461925202) |
-| B | 75 | linkedin | Cognizant | Java Backend Developer (Spring boot/Microservices) - 70286151 | New York, NY | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-backend-developer-spring-boot-microservices-70286151-at-cognizant-4461387513) |
+| B | 75 | linkedin | Cognizant | Full Stack Software Developer | Chicago, IL | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-developer-at-cognizant-4461965061) |
 | B | 75 | linkedin | Cryptic Vector | Full Stack Developer | Cincinnati, OH | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-cryptic-vector-4416960972) |
 | B | 75 | linkedin | IBM | Entry level Backend Developer - San Jose, CA - 2027 | San Jose, CA | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/entry-level-backend-developer-san-jose-ca-2027-at-ibm-4460752391) |
 | B | 75 | linkedin | ICE | Associate Full Stack Developer | Jacksonville, FL | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-full-stack-developer-at-ice-4450198822) |
+| B | 75 | linkedin | NextPath Workforce Solutions | Full Stack Angular, .NET Developer – Accounting Systems (5891) | Tampa, FL | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-angular-net-developer-%E2%80%93-accounting-systems-5891-at-nextpath-workforce-solutions-4461928514) |
 | B | 75 | linkedin | PwC | Forward Deployed Software Engineering - Experienced Associate | New York, NY | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineering-experienced-associate-at-pwc-4453645948) |
 | B | 75 | linkedin | RAPSYS TECHNOLOGIES PTE LTD | Java + AWS Backend Developers | Houston, TX | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-%2B-aws-backend-developers-at-rapsys-technologies-pte-ltd-4461656913) |
 | B | 75 | linkedin | Sherwin-Williams | Associate Full Stack Application Developer - Industrial Automation | Cleveland, OH | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-full-stack-application-developer-industrial-automation-at-sherwin-williams-4462867156) |
@@ -39,9 +38,9 @@ The 7-day dump is `latest.md`.
 | B | 75 | linkedin | UST | Full Stack Developer (React & Python/Node.js - AWS) | Chicago, IL | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-react-python-node-js-aws-at-ust-4450437153) |
 | B | 75 | linkedin | VSolvit | FULL STACK SOFTWARE DEVELOPER | Norco, CA | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-developer-at-vsolvit-4404996358) |
 | B | 75 | linkedin | VSolvit | JUNIOR FULL STACK DEVELOPER | Norco, CA | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/junior-full-stack-developer-at-vsolvit-4417353580) |
-| B | 75 | linkedin | Virtusa | Full Stack .NET Developer | Minneapolis, MN | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-net-developer-at-virtusa-4460700329) |
-| B | 75 | linkedin | Virtusa | Java Full Stack Developer | Irving, TX | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-full-stack-developer-at-virtusa-4460705393) |
+| B | 75 | linkedin | Virtusa | Java Full Stack Developer | Dallas, TX | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-full-stack-developer-at-virtusa-4460713315) |
 | B | 75 | linkedin | backstitch | Full Stack Software Developer | Kansas City, MO | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-developer-at-backstitch-4461692297) |
+| B | 75 | linkedin | BICP | Forward Deployed AI Engineer | San Diego, CA | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-at-bicp-4463196380) |
 | B | 75 | linkedin | Bear Claw | Middle Backend Developer (PHP · AWS Lambda · AI) | Evanston, IL | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/middle-backend-developer-php-%C2%B7-aws-lambda-%C2%B7-ai-at-bear-claw-4461682027) |
 | B | 75 | linkedin | Edra | Forward Deployed AI Engineer (New York) | New York, NY | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-new-york-at-edra-4440117511) |
 | B | 75 | linkedin | Juniper Square | Forward Deployed Engineer, Applied AI | United States | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-engineer-applied-ai-at-juniper-square-4461698201) |
