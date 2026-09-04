@@ -3600,6 +3600,92 @@
           "url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=130786&source=WEB_Search_NA"
         }
       ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-09-04_0421",
+      "emitted_at": "2026-09-04T04:22:40.651980+00:00",
+      "event_kind": "new_matching",
+      "count": 5,
+      "jobs": [
+        {
+          "canonical_job_key": "id::syncareer::cccca6113274f3a33c7cf19bb7a11314",
+          "job_id": "cccca6113274f3a33c7cf19bb7a11314",
+          "tier": "A",
+          "match_score": 87.0,
+          "fit_score": 87.0,
+          "company": "ByteDance",
+          "title": "Software Engineer - Data Agent & Agentic Search",
+          "location": "Seattle, Washington, United States",
+          "posting_date": "2026-09-03",
+          "first_seen": "2026-09-04T04:21:04.737862+00:00",
+          "target_company_match": "ByteDance",
+          "review_status": "unreviewed",
+          "job_url": "https://joinbytedance.com/search/7680326697339259141",
+          "url": "https://joinbytedance.com/search/7680326697339259141"
+        },
+        {
+          "canonical_job_key": "id::syncareer::8648b7a730490b9154741c2795bc7f98",
+          "job_id": "8648b7a730490b9154741c2795bc7f98",
+          "tier": "B",
+          "match_score": 78.0,
+          "fit_score": 78.0,
+          "company": "Lyft",
+          "title": "Software Engineer",
+          "location": "San Francisco, California, United States",
+          "posting_date": "2026-09-02",
+          "first_seen": "2026-09-04T04:21:04.737862+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://app.careerpuck.com/job-board/lyft/job/8772571002",
+          "url": "https://app.careerpuck.com/job-board/lyft/job/8772571002"
+        },
+        {
+          "canonical_job_key": "id::syncareer::790ca7eae86e32c7a8b862f4e1904a1e",
+          "job_id": "790ca7eae86e32c7a8b862f4e1904a1e",
+          "tier": "B",
+          "match_score": 78.0,
+          "fit_score": 78.0,
+          "company": "Chewy",
+          "title": "Software Engineer I, Enterprise Financial Technology",
+          "location": "Bellevue, Washington, United States",
+          "posting_date": "2026-09-02",
+          "first_seen": "2026-09-04T04:21:04.737862+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://careers.chewy.com/us/en/job/R30720/Software-Engineer-I-Enterprise-Financial-Technology",
+          "url": "https://careers.chewy.com/us/en/job/R30720/Software-Engineer-I-Enterprise-Financial-Technology"
+        },
+        {
+          "canonical_job_key": "id::syncareer::1914f056ee03ec7e5c0555225aa27e36",
+          "job_id": "1914f056ee03ec7e5c0555225aa27e36",
+          "tier": "B",
+          "match_score": 78.0,
+          "fit_score": 78.0,
+          "company": "Blackstone Group",
+          "title": "AI Engineer, Analyst – Data Analytics & AI",
+          "location": "New York, New York, United States",
+          "posting_date": "2026-09-02",
+          "first_seen": "2026-09-04T04:21:04.737862+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://blackstone.wd1.myworkdayjobs.com/en-US/Blackstone_Careers/job/New-York/AI-Engineer--Analyst---Data-Analytics---AI_45238-1",
+          "url": "https://blackstone.wd1.myworkdayjobs.com/en-US/Blackstone_Careers/job/New-York/AI-Engineer--Analyst---Data-Analytics---AI_45238-1"
+        },
+        {
+          "canonical_job_key": "id::syncareer::f65b7dc003225dbbcd5cc77cdb43b195",
+          "job_id": "f65b7dc003225dbbcd5cc77cdb43b195",
+          "tier": "B",
+          "match_score": 75.0,
+          "fit_score": 75.0,
+          "company": "Qualcomm",
+          "title": "Software Engineer",
+          "location": "San Diego, California, United States",
+          "posting_date": "2026-09-03",
+          "first_seen": "2026-09-04T04:21:04.737862+00:00",
+          "target_company_match": "Qualcomm",
+          "review_status": "unreviewed",
+          "job_url": "https://careers.qualcomm.com/careers/job/446720949112?domain=qualcomm.com&triggerGoButton=false",
+          "url": "https://careers.qualcomm.com/careers/job/446720949112?domain=qualcomm.com&triggerGoButton=false"
+        }
+      ]
     }
   ]
 }
