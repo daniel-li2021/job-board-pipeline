@@ -1,0 +1,33 @@
+{
+  "run_at": "2026-09-04T18:22:28.800506+00:00",
+  "funnel": {
+    "scoring_candidates": 66
+  },
+  "llm": {
+    "reused": 6,
+    "llm": 59,
+    "new_or_changed": 60,
+    "rule": 1,
+    "sent": 60,
+    "api_requests": 7,
+    "recency_skipped": 0,
+    "overflow": 0,
+    "peer_reused": 6,
+    "thin_source_rule": 0,
+    "model": "gpt-5.6-terra",
+    "jobs_scored": 59,
+    "input_tokens": 72387,
+    "cached_input_tokens": 0,
+    "output_tokens": 12710,
+    "reasoning_tokens": 959,
+    "estimated_usd": 0.297294,
+    "scored": 59
+  },
+  "output": {
+    "tier_a": 3,
+    "tier_b": 10,
+    "tier_c": 53,
+    "shown": 13
+  },
+  "screen_method": "cache+llm"
+}
