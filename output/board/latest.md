@@ -1,20 +1,20 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-04_0031
+# ATS / LinkedIn board — 7-day view — 2026-09-04_0418
 
-- Updated (PT): 2026-09-03 17:32 PDT
-- Snapshot (UTC): 2026-09-04T00:32:01.443417+00:00
-- Last 24 hours: 33
+- Updated (PT): 2026-09-03 21:19 PDT
+- Snapshot (UTC): 2026-09-04T04:19:30.434122+00:00
+- Last 24 hours: 31
 - Last 3 days: 37
 
 If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) instead of this file.
 
 ## Run stats
 
-- Source raw: ATS 2664 / LinkedIn 831 / Glassdoor 0 (Big Company Official runs separately)
-- Funnel: after dedup 3495 -> after company filter 3465 -> after hard filter 3171 -> after role+seniority prefilter 659 | dropped 2836
-- LLM usage: jobs scored 1 / API requests 1 / cache reused 21 (cross-pipeline 19) / rule fallback+overflow 637 (thin local cards 411, recency-gated 226, overflow 0, new/changed 227)
-- LLM cost: model gpt-5.6-terra / API requests 1 / jobs scored 1 / tokens input 2614 (cached 0) / output 285 (reasoning 50) / estimated cost $0.0086
+- Source raw: ATS 2669 / LinkedIn 831 / Glassdoor 0 (Big Company Official runs separately)
+- Funnel: after dedup 3500 -> after company filter 3470 -> after hard filter 3175 -> after role+seniority prefilter 660 | dropped 2840
+- LLM usage: jobs scored 1 / API requests 1 / cache reused 22 (cross-pipeline 19) / rule fallback+overflow 637 (thin local cards 411, recency-gated 226, overflow 0, new/changed 227)
+- LLM cost: model gpt-5.6-terra / API requests 1 / jobs scored 1 / tokens input 4527 (cached 0) / output 254 (reasoning 47) / estimated cost $0.0121
 - Output sizing: Tier A 1 / Tier B 38 / A+B actionable 39 / Shown in latest.md 39 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 1 / 1-3d 25 / newly-disc 392 / 3-7d 8 / >7d 233
+- Recency (kept): <3h 0 / 3-24h 1 / 1-3d 40 / newly-disc 376 / 3-7d 10 / >7d 233
 
 ## Tier A - apply now / referral (1)
 
@@ -27,11 +27,12 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 75 | cached_llm | greenhouse | GitLab | Intermediate Backend Engineer, AMER | Remote, Canada; Remote, United States | 2026-09-02 | 1to3d | high | swe | - | unreviewed | pending_official_refresh | yes | [open](https://job-boards.greenhouse.io/gitlab/jobs/8773006002) |
+| 75 | rule_fallback | linkedin | Applied Intuition | Forward Deployed Engineer - New Grad (December 2026) | Sunnyvale, CA | 2026-09-03 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/forward-deployed-engineer-new-grad-december-2026-at-applied-intuition-4461367281) |
 | 75 | rule_fallback | linkedin | Haystack | Python Backend Developer | New York, NY | 2026-09-03 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/python-backend-developer-at-haystack-4458867253) |
+| 75 | rule_fallback | linkedin | Zebra Technologies | Forward Deployed Software Engineer, Advanced | Lincolnshire, IL | 2026-09-03 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-advanced-at-zebra-technologies-4460443125) |
 | 72 | cached_llm | greenhouse | Lyft | Software Engineer | Seattle, WA | 2026-09-02 | 1to3d | high | swe | - | unreviewed | pending_official_refresh | yes | [open](https://app.careerpuck.com/job-board/lyft/job/8772594002?gh_jid=8772594002) |
 | 75 | rule_fallback | linkedin | DoorDash | Software Engineer II, Data Engineering | San Francisco, CA | 2026-09-03 | newly_discovered | low | swe | DoorDash | unreviewed | pending_official_refresh | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-data-engineering-at-doordash-4092899847) |
 | 75 | rule_fallback | linkedin | Accenture Federal Services | Full Stack Developer | Washington, DC | 2026-09-03 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-accenture-federal-services-4463131190) |
-| 75 | rule_fallback | linkedin | Applied Intuition | Forward Deployed Engineer - New Grad (December 2026) | Sunnyvale, CA | 2026-09-03 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/forward-deployed-engineer-new-grad-december-2026-at-applied-intuition-4461367281) |
 | 75 | rule_fallback | linkedin | Aventis Solutions | Forward Deployed Software Engineer x6 | Washington DC-Baltimore Area | 2026-09-03 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-x6-at-aventis-solutions-4462887774) |
 | 75 | rule_fallback | linkedin | Box | Software Engineer III, Developer Platform | Redwood City, CA | 2026-09-03 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-iii-developer-platform-at-box-4462868330) |
 | 75 | rule_fallback | linkedin | Capgemini | Java Full stack Developer (Angular) | Irving, TX | 2026-09-03 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/java-full-stack-developer-angular-at-capgemini-4461693009) |
@@ -54,7 +55,6 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 75 | rule_fallback | linkedin | VSolvit | JUNIOR FULL STACK DEVELOPER | Norco, CA | 2026-09-03 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-full-stack-developer-at-vsolvit-4417353580) |
 | 75 | rule_fallback | linkedin | Virtusa | Full Stack .NET Developer | Minneapolis, MN | 2026-09-03 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-net-developer-at-virtusa-4460700329) |
 | 75 | rule_fallback | linkedin | Virtusa | Java Full Stack Developer | Irving, TX | 2026-09-03 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/java-full-stack-developer-at-virtusa-4460705393) |
-| 75 | rule_fallback | linkedin | Zebra Technologies | Forward Deployed Software Engineer, Advanced | Lincolnshire, IL | 2026-09-03 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-advanced-at-zebra-technologies-4460443125) |
 | 75 | rule_fallback | linkedin | backstitch | Full Stack Software Developer | Kansas City, MO | 2026-09-03 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-software-developer-at-backstitch-4461692297) |
 | 75 | rule_fallback | linkedin | Bear Claw | Middle Backend Developer (PHP · AWS Lambda · AI) | Evanston, IL | 2026-09-03 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/middle-backend-developer-php-%C2%B7-aws-lambda-%C2%B7-ai-at-bear-claw-4461682027) |
 | 75 | rule_fallback | linkedin | Edra | Forward Deployed AI Engineer (New York) | New York, NY | 2026-09-03 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-new-york-at-edra-4440117511) |
