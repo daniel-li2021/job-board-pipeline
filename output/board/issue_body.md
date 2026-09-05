@@ -1,9 +1,9 @@
-ATS / LinkedIn alert - 2026-09-04_1817
+ATS / LinkedIn alert - 2026-09-05_1715
 
-Updated (PT): 2026-09-04 11:18 PDT
-Snapshot (UTC): 2026-09-04T18:18:39.696091+00:00
+Updated (PT): 2026-09-05 10:15 PDT
+Snapshot (UTC): 2026-09-05T17:15:57.950983+00:00
 
-13 new or promoted (B→A) Tier A/B job(s).
+21 new or promoted (B→A) Tier A/B job(s).
 
 At most one digest is sent per Pacific day. Score/JD-only changes are not re-alerted.
 
@@ -11,16 +11,24 @@ If you skipped a day, open `output/board/inbox.md` (last 3 days). Do not read ev
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| B | 75 | linkedin | Cryptic Vector | Full Stack Developer | Cincinnati, OH | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-cryptic-vector-4416960972) |
-| B | 75 | linkedin | Highland Homes | Full Stack Developer | Plano, TX | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-highland-homes-4462863425) |
-| B | 75 | linkedin | IBM | Entry level Backend Developer - San Jose, CA - 2027 | San Jose, CA | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/entry-level-backend-developer-san-jose-ca-2027-at-ibm-4460752391) |
-| B | 75 | linkedin | NIKSUN | Full Stack Developer | Princeton, NJ | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-niksun-4461699949) |
-| B | 75 | linkedin | PwC | Forward Deployed Software Engineering - Experienced Associate | New York, NY | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineering-experienced-associate-at-pwc-4453645948) |
-| B | 75 | linkedin | Sherwin-Williams | Associate Full Stack Application Developer - Industrial Automation | Cleveland, OH | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-full-stack-application-developer-industrial-automation-at-sherwin-williams-4462867156) |
-| B | 75 | linkedin | Superhuman | Software Engineer, Developer Experience (Full-Stack) | San Francisco, CA | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-developer-experience-full-stack-at-superhuman-4460766912) |
-| B | 75 | linkedin | Torc Robotics | Software Engineer, I - Data Engineering | Blacksburg, VA | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-i-data-engineering-at-torc-robotics-4461934843) |
-| B | 75 | linkedin | VSolvit | SOFTWARE DEVELOPER (FULL STACK) | Norco, CA | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-developer-full-stack-at-vsolvit-4403805595) |
-| B | 75 | linkedin | CarParts.com | Full Stack Developer / AI Focused | Long Beach, CA | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-ai-focused-at-carparts-com-4461106713) |
-| B | 75 | linkedin | NewRocket | Forward Deployed AI Engineer-Anthropic-US East | New York, NY | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-anthropic-us-east-at-newrocket-4462855924) |
-| B | 75 | linkedin | NewRocket | Forward Deployed AI Engineer-Anthropic-US East | New Brunswick, NJ | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-anthropic-us-east-at-newrocket-4462864083) |
-| B | 75 | linkedin | PENNYMAC | Full Stack Developer (AI Native) | Westlake Village, TX | 2026-09-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-ai-native-at-pennymac-4450416056) |
+| B | 75 | linkedin | Bear Claw | Middle Backend Developer (PHP · AWS Lambda · AI) | Evanston, IL | 2026-09-04 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/middle-backend-developer-php-%C2%B7-aws-lambda-%C2%B7-ai-at-bear-claw-4461682027) |
+| B | 75 | linkedin | Accenture Federal Services | Full Stack Developer | Arlington, VA | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-accenture-federal-services-4463377638) |
+| B | 75 | linkedin | Anthropic | Applied AI, Research Engineer | New York, NY | 2026-09-04 | newly_discovered | - | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/applied-ai-research-engineer-at-anthropic-4462311725) |
+| B | 75 | linkedin | Anthropic | Applied AI, Research Engineer | San Francisco, CA | 2026-09-04 | newly_discovered | - | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/applied-ai-research-engineer-at-anthropic-4462320663) |
+| B | 75 | linkedin | Ascendra IT Consulting LLC | Full Stack Developers and Leads | Manhattan, NY | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developers-and-leads-at-ascendra-it-consulting-llc-4461992576) |
+| B | 75 | linkedin | Baker Donelson | Full Stack .NET Developer | Raleigh, NC | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-net-developer-at-baker-donelson-4463392442) |
+| B | 75 | linkedin | Baker Donelson | Full Stack .NET Developer | Charlotte, NC | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-net-developer-at-baker-donelson-4463398267) |
+| B | 75 | linkedin | BeaconFire Inc. | Java Full Stack Developer | New Jersey, United States | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-full-stack-developer-at-beaconfire-inc-4460720723) |
+| B | 75 | linkedin | CGI | .NET/Azure Full Stack Developer | Fairfax, VA | 2026-09-05 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/net-azure-full-stack-developer-at-cgi-4463728196) |
+| B | 75 | linkedin | Citi | Backend Java Developer, Officer | Irving, TX | 2026-09-05 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-java-developer-officer-at-citi-4462374108) |
+| B | 75 | linkedin | Huntington National Bank | Junior Backend Java Developer- Enterprise Payments and Credit Card | Minnetonka, MN | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/junior-backend-java-developer-enterprise-payments-and-credit-card-at-huntington-national-bank-4463636114) |
+| B | 75 | linkedin | Huntington National Bank | Junior Backend Java Developer- Enterprise Payments and Credit Card | Columbus, OH | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/junior-backend-java-developer-enterprise-payments-and-credit-card-at-huntington-national-bank-4463641021) |
+| B | 75 | linkedin | LTIMindtree | Java Full Stack Developer | Seattle, WA | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-full-stack-developer-at-ltimindtree-4450386159) |
+| B | 75 | linkedin | Master Electronics | Full Stack Developer | Phoenix, AZ | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-master-electronics-4436829133) |
+| B | 75 | linkedin | Northslope Technologies | Forward Deployed Software Engineer | New York, United States | 2026-09-05 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-at-northslope-technologies-4218796460) |
+| B | 75 | linkedin | Scale AI | Forward Deployed Software Engineer, Public Sector | Colorado Springs, CO | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-public-sector-at-scale-ai-4454333763) |
+| B | 75 | linkedin | Sigma Infosolutions Ltd. | Associate Full Stack Developer | United States | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-full%C2%A0stack%C2%A0developer-at-sigma-infosolutions-ltd-4461951811) |
+| B | 75 | linkedin | Synechron | Java Full Stack Developer with ReactJS | Charlotte, NC | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-full-stack-developer-with-reactjs-at-synechron-4461172165) |
+| B | 75 | linkedin | UW-Madison College of Engineering | Software Engineer/Developer | Madison, WI | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-developer-at-uw-madison-college-of-engineering-4463643135) |
+| B | 75 | linkedin | Daley And Associates, LLC | Data Engineer - LLM Applications | Boston, MA | 2026-09-05 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/data-engineer-llm-applications-at-daley-and-associates-llc-4454541865) |
+| B | 75 | linkedin | Focus Capital Markets | Forward Deployed Engineer / AI Engineer (Asset Management/Hedge Fund) | New York, NY | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-engineer-ai-engineer-asset-management-hedge-fund-at-focus-capital-markets-4452533039) |

@@ -1,0 +1,63 @@
+{
+  "run_at": "2026-09-05T17:15:32.496425+00:00",
+  "source_raw": {
+    "ats": 2687,
+    "linkedin": 824,
+    "glassdoor": 0
+  },
+  "funnel": {
+    "after_dedup": 3508,
+    "after_company": 3476,
+    "after_hard_filter": 3172,
+    "after_prefilter": 618,
+    "official_duplicates_suppressed": 0,
+    "dropped": 2890
+  },
+  "llm": {
+    "reused": 25,
+    "llm": 0,
+    "new_or_changed": 225,
+    "rule": 593,
+    "sent": 0,
+    "api_requests": 0,
+    "recency_skipped": 225,
+    "overflow": 0,
+    "peer_reused": 20,
+    "thin_source_rule": 368,
+    "model": "gpt-5.6-terra",
+    "jobs_scored": 0,
+    "input_tokens": 0,
+    "cached_input_tokens": 0,
+    "output_tokens": 0,
+    "reasoning_tokens": 0,
+    "estimated_usd": 0.0,
+    "scored": 0
+  },
+  "output": {
+    "tier_a": 0,
+    "tier_b": 23,
+    "ab_before_cap": 23,
+    "shown": 23
+  },
+  "recency": {
+    "lt3h": 0,
+    "3to24h": 0,
+    "1to3d": 13,
+    "newly_discovered": 351,
+    "3to7d": 16,
+    "gt7d": 238
+  },
+  "screen_method": "cache+rule_fallback",
+  "drops": {
+    "company_hidden_external": 11,
+    "company_excluded": 21,
+    "citizen_or_clearance": 269,
+    "incomplete_jd_clearance_risk": 35,
+    "prefilter:negative_family": 772,
+    "prefilter:no_positive_family": 261,
+    "prefilter:senior": 1476,
+    "prefilter:sales_heavy": 42,
+    "prefilter:hardware": 2,
+    "prefilter:high_yoe": 1
+  }
+}

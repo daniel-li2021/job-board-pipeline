@@ -1,7 +1,7 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-05_1158
+# ATS / LinkedIn board — 7-day view — 2026-09-05_1715
 
-- Updated (PT): 2026-09-05 04:59 PDT
-- Snapshot (UTC): 2026-09-05T11:59:21.848993+00:00
+- Updated (PT): 2026-09-05 10:15 PDT
+- Snapshot (UTC): 2026-09-05T17:15:57.949661+00:00
 - Last 24 hours: 20
 - Last 3 days: 21
 
@@ -9,8 +9,8 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 
 ## Run stats
 
-- Source raw: ATS 2689 / LinkedIn 824 / Glassdoor 0 (Big Company Official runs separately)
-- Funnel: after dedup 3510 -> after company filter 3478 -> after hard filter 3173 -> after role+seniority prefilter 618 | dropped 2892
+- Source raw: ATS 2687 / LinkedIn 824 / Glassdoor 0 (Big Company Official runs separately)
+- Funnel: after dedup 3508 -> after company filter 3476 -> after hard filter 3172 -> after role+seniority prefilter 618 | dropped 2890
 - LLM usage: jobs scored 0 / API requests 0 / cache reused 25 (cross-pipeline 20) / rule fallback+overflow 593 (thin local cards 368, recency-gated 225, overflow 0, new/changed 225)
 - LLM cost: model gpt-5.6-terra / API requests 0 / jobs scored 0 / tokens input 0 (cached 0) / output 0 (reasoning 0) / estimated cost $0.0000
 - Output sizing: Tier A 0 / Tier B 23 / A+B actionable 23 / Shown in latest.md 23 (no hard cap)
