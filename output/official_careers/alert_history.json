@@ -6643,6 +6643,68 @@
           "url": "https://lifeattiktok.com/search/7681126649950505221"
         }
       ]
+    },
+    {
+      "pipeline": "official",
+      "stamp": "2026-09-05_1729",
+      "emitted_at": "2026-09-05T17:31:32.668442+00:00",
+      "event_kind": "new_or_promoted_ab",
+      "count": 3,
+      "jobs": [
+        {
+          "canonical_job_key": "url::https://job-boards.greenhouse.io/yext/jobs/8174875",
+          "job_id": "8174875",
+          "tier": "B",
+          "match_score": 84.0,
+          "company": "Yext",
+          "title": "Software Engineer",
+          "location": "New York, NY; New York, NY, United States",
+          "posted_date": "2026-09-04",
+          "date_confidence": "high",
+          "first_seen": "2026-09-05T04:35:40.516908+00:00",
+          "review_status": "unreviewed",
+          "official_url": "https://job-boards.greenhouse.io/yext/jobs/8174875",
+          "source_url": "https://job-boards.greenhouse.io/yext/jobs/8174875",
+          "source": "yext_official_careers",
+          "url": "https://job-boards.greenhouse.io/yext/jobs/8174875"
+        },
+        {
+          "canonical_job_key": "url::https://jobs.apple.com/en-us/details/200682044/applied-ai-ml-software-engineer",
+          "job_id": "200682044-3543",
+          "tier": "B",
+          "match_score": 80.0,
+          "company": "Apple",
+          "title": "Applied AI/ML Software Engineer",
+          "location": "San Diego, United States of America",
+          "posted_date": "2026-09-04",
+          "date_confidence": "high",
+          "first_seen": "2026-09-05T04:35:40.516908+00:00",
+          "referral_name": "Apple",
+          "review_status": "unreviewed",
+          "official_url": "https://jobs.apple.com/en-us/details/200682044/applied-ai-ml-software-engineer",
+          "source_url": "https://jobs.apple.com/en-us/details/200682044/applied-ai-ml-software-engineer",
+          "source": "apple_official_careers",
+          "url": "https://jobs.apple.com/en-us/details/200682044/applied-ai-ml-software-engineer"
+        },
+        {
+          "canonical_job_key": "url::https://www.amazon.jobs/en/jobs/10530461/data-engineer-i-zappos-analytics",
+          "job_id": "10530461",
+          "tier": "B",
+          "match_score": 77.0,
+          "company": "Amazon",
+          "title": "Data Engineer I, Zappos Analytics",
+          "location": "New York, New York, USA",
+          "posted_date": "2026-09-04",
+          "date_confidence": "high",
+          "first_seen": "2026-09-05T04:35:40.516908+00:00",
+          "referral_name": "Amazon",
+          "review_status": "unreviewed",
+          "official_url": "https://www.amazon.jobs/en/jobs/10530461/data-engineer-i-zappos-analytics",
+          "source_url": "https://www.amazon.jobs/en/jobs/10530461/data-engineer-i-zappos-analytics",
+          "source": "amazon_official_careers",
+          "url": "https://www.amazon.jobs/en/jobs/10530461/data-engineer-i-zappos-analytics"
+        }
+      ]
     }
   ]
 }
