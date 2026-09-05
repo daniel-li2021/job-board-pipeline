@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-09-04 22:37 PDT
-- Snapshot (UTC): 2026-09-05T05:37:53.210661+00:00
-- Jobs: 22 (Tier A/B only)
-- Last 24 hours: 22
-- Last 3 days: 22
+- Updated (PT): 2026-09-05 01:40 PDT
+- Snapshot (UTC): 2026-09-05T08:40:54.841346+00:00
+- Jobs: 20 (Tier A/B only)
+- Last 24 hours: 20
+- Last 3 days: 20
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -30,6 +30,4 @@ The 7-day dump is `latest.md`.
 | B | 75 | linkedin | Sigma Infosolutions Ltd. | Associate Full Stack Developer | United States | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-full%C2%A0stack%C2%A0developer-at-sigma-infosolutions-ltd-4461951811) |
 | B | 75 | linkedin | UW-Madison College of Engineering | Software Engineer/Developer | Madison, WI | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-developer-at-uw-madison-college-of-engineering-4463643135) |
 | B | 75 | linkedin | WorldQuant | Full Stack Developer | New York, United States | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-worldquant-4454314098) |
-| B | 75 | linkedin | BICP | Forward Deployed AI Engineer | San Diego, CA | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-at-bicp-4463196380) |
-| B | 75 | linkedin | CarParts.com | Full Stack Developer / AI Focused | Long Beach, CA | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-ai-focused-at-carparts-com-4461106713) |
 | B | 75 | linkedin | Reuben Cooley Inc. | AI Engineer / Data Engineer/ Python Developer | Jersey City, NJ | 2026-09-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-data-engineer-python-developer-at-reuben-cooley-inc-4461983190) |

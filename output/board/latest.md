@@ -1,26 +1,26 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-05_0537
+# ATS / LinkedIn board — 7-day view — 2026-09-05_0840
 
-- Updated (PT): 2026-09-04 22:38 PDT
-- Snapshot (UTC): 2026-09-05T05:38:25.742829+00:00
-- Last 24 hours: 22
-- Last 3 days: 22
+- Updated (PT): 2026-09-05 01:41 PDT
+- Snapshot (UTC): 2026-09-05T08:41:27.060681+00:00
+- Last 24 hours: 20
+- Last 3 days: 20
 
 If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) instead of this file.
 
 ## Run stats
 
-- Source raw: ATS 2688 / LinkedIn 837 / Glassdoor 0 (Big Company Official runs separately)
-- Funnel: after dedup 3523 -> after company filter 3504 -> after hard filter 3216 -> after role+seniority prefilter 779 | dropped 2744
-- LLM usage: jobs scored 0 / API requests 0 / cache reused 25 (cross-pipeline 20) / rule fallback+overflow 754 (thin local cards 529, recency-gated 225, overflow 0, new/changed 225)
+- Source raw: ATS 2688 / LinkedIn 802 / Glassdoor 0 (Big Company Official runs separately)
+- Funnel: after dedup 3488 -> after company filter 3470 -> after hard filter 3179 -> after role+seniority prefilter 758 | dropped 2730
+- LLM usage: jobs scored 0 / API requests 0 / cache reused 25 (cross-pipeline 20) / rule fallback+overflow 733 (thin local cards 508, recency-gated 225, overflow 0, new/changed 225)
 - LLM cost: model gpt-5.6-terra / API requests 0 / jobs scored 0 / tokens input 0 (cached 0) / output 0 (reasoning 0) / estimated cost $0.0000
-- Output sizing: Tier A 0 / Tier B 24 / A+B actionable 24 / Shown in latest.md 24 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 11 / newly-disc 507 / 3-7d 23 / >7d 238
+- Output sizing: Tier A 0 / Tier B 22 / A+B actionable 22 / Shown in latest.md 22 (no hard cap)
+- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 12 / newly-disc 485 / 3-7d 23 / >7d 238
 
 ## Tier A - apply now / referral (0)
 
 _none_
 
-## Tier B - worth applying (24)
+## Tier B - worth applying (22)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -43,8 +43,6 @@ _none_
 | 75 | rule_fallback | linkedin | Sigma Infosolutions Ltd. | Associate Full Stack Developer | United States | 2026-09-04 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/associate-full%C2%A0stack%C2%A0developer-at-sigma-infosolutions-ltd-4461951811) |
 | 75 | rule_fallback | linkedin | UW-Madison College of Engineering | Software Engineer/Developer | Madison, WI | 2026-09-04 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-developer-at-uw-madison-college-of-engineering-4463643135) |
 | 75 | rule_fallback | linkedin | WorldQuant | Full Stack Developer | New York, United States | 2026-09-04 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-worldquant-4454314098) |
-| 75 | rule_fallback | linkedin | BICP | Forward Deployed AI Engineer | San Diego, CA | 2026-09-04 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-at-bicp-4463196380) |
-| 75 | rule_fallback | linkedin | CarParts.com | Full Stack Developer / AI Focused | Long Beach, CA | 2026-09-04 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-ai-focused-at-carparts-com-4461106713) |
 | 75 | rule_fallback | linkedin | Reuben Cooley Inc. | AI Engineer / Data Engineer/ Python Developer | Jersey City, NJ | 2026-09-04 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/ai-engineer-data-engineer-python-developer-at-reuben-cooley-inc-4461983190) |
 | 82 | cached_llm | greenhouse | Lyft | Software Engineer | San Francisco, CA | 2026-09-02 | 3to7d | high | swe | - | unreviewed | pending_official_refresh | yes | [open](https://app.careerpuck.com/job-board/lyft/job/8772571002?gh_jid=8772571002) |
 | 88 | cached_llm | greenhouse | Roblox | [2027] Software Engineer, Early Career | San Mateo, CA, United States | 2026-08-05 | gt7d | high | swe | - | unreviewed | pending_official_refresh | yes | [open](https://careers.roblox.com/jobs/8072244?gh_jid=8072244) |
