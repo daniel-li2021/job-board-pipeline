@@ -4102,6 +4102,75 @@
           "url": "https://wd5.myworkdaysite.com/en-US/recruiting/microchiphr/External/job/AZ---Chandler/Engineer-I--CAD--Software-Development-_R3637-26?locationCountry=80938777cac5440fab50d729f9634969&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea"
         }
       ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-09-05_1716",
+      "emitted_at": "2026-09-05T17:18:14.332176+00:00",
+      "event_kind": "new_matching",
+      "count": 4,
+      "jobs": [
+        {
+          "canonical_job_key": "id::syncareer::63a9cffaa65f8d3850a22b0ae9f4cdd5",
+          "job_id": "63a9cffaa65f8d3850a22b0ae9f4cdd5",
+          "tier": "B",
+          "match_score": 86.0,
+          "fit_score": 86.0,
+          "company": "IBM",
+          "title": "Cloud Infrastructure Network Monitoring and Automation Software Engineer Intern - Dallas, TX - 2027",
+          "location": "Dallas, Texas, United States",
+          "posting_date": "2026-09-04",
+          "first_seen": "2026-09-05T17:16:16.235683+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=131088&source=WEB_Search_NA",
+          "url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=131088&source=WEB_Search_NA"
+        },
+        {
+          "canonical_job_key": "id::syncareer::d87c37f636fcbaf188f7cde88234ecd9",
+          "job_id": "d87c37f636fcbaf188f7cde88234ecd9",
+          "tier": "B",
+          "match_score": 78.0,
+          "fit_score": 78.0,
+          "company": "Appian",
+          "title": "Software Engineer II",
+          "location": "McLean, Virginia, United States",
+          "posting_date": "2026-09-04",
+          "first_seen": "2026-09-05T17:16:16.235683+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://careers.appian.com/jobs/8178208-software-engineer",
+          "url": "https://careers.appian.com/jobs/8178208-software-engineer"
+        },
+        {
+          "canonical_job_key": "id::syncareer::685fb089faed76b760ad66d4789ff6e1",
+          "job_id": "685fb089faed76b760ad66d4789ff6e1",
+          "tier": "B",
+          "match_score": 76.0,
+          "fit_score": 76.0,
+          "company": "GlobalFoundries",
+          "title": "Software Engineer, Cloud Platform (2027 New College Graduate)",
+          "location": "Santa Clara, California, United States",
+          "posting_date": "2026-09-04",
+          "first_seen": "2026-09-05T17:16:16.235683+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://globalfoundries.wd1.myworkdayjobs.com/en-US/External/job/USA---California---Santa-Clara/Software-Engineer--Cloud-Platform--2027-New-College-Graduate-_JR-2604056",
+          "url": "https://globalfoundries.wd1.myworkdayjobs.com/en-US/External/job/USA---California---Santa-Clara/Software-Engineer--Cloud-Platform--2027-New-College-Graduate-_JR-2604056"
+        },
+        {
+          "canonical_job_key": "id::syncareer::8fafc8c9433fb917f50c2fb6131919f4",
+          "job_id": "8fafc8c9433fb917f50c2fb6131919f4",
+          "tier": "B",
+          "match_score": 73.0,
+          "fit_score": 73.0,
+          "company": "Zoox",
+          "title": "Contract Student Worker - Autonomy Safety Data Engineer",
+          "location": "Foster City, California, United States",
+          "posting_date": "2026-09-04",
+          "first_seen": "2026-09-05T17:16:16.235683+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://jobs.lever.co/zoox/dafe2927-74bf-4bef-8df0-cb0874595819",
+          "url": "https://jobs.lever.co/zoox/dafe2927-74bf-4bef-8df0-cb0874595819"
+        }
+      ]
     }
   ]
 }
