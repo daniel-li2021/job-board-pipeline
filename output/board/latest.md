@@ -1,7 +1,7 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-06_0350
+# ATS / LinkedIn board — 7-day view — 2026-09-06_0423
 
-- Updated (PT): 2026-09-05 20:51 PDT
-- Snapshot (UTC): 2026-09-06T03:51:19.897911+00:00
+- Updated (PT): 2026-09-05 21:24 PDT
+- Snapshot (UTC): 2026-09-06T04:24:39.293212+00:00
 - Last 24 hours: 17
 - Last 3 days: 17
 
