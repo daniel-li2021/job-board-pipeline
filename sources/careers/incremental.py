@@ -24,12 +24,12 @@ def _identity(company: str, job_id: str, url: str) -> tuple[str, str]:
     return company_key, (job_id or url or "").strip().lower()
 
 
-def _stable_listing_date(value: str) -> str:
-    normalized = " ".join((value or "").split())
+def _stable_listing_date(value: Any) -> str:
+    normalized = " ".join(str(value or "").split())
     return "" if RELATIVE_POSTING_RE.fullmatch(normalized) else normalized
 
 
-def listing_signature(title: str = "", posted_date: str = "", updated_date: str = "") -> str:
+def listing_signature(title: str = "", posted_date: Any = "", updated_date: Any = "") -> str:
     payload = [
         " ".join((title or "").lower().split()),
         _stable_listing_date(posted_date),
@@ -84,8 +84,8 @@ class DetailCache:
         job_id: str,
         url: str,
         title: str = "",
-        posted_date: str = "",
-        updated_date: str = "",
+        posted_date: Any = "",
+        updated_date: Any = "",
     ) -> DetailDecision:
         cached = self._jobs.get(_identity(company, job_id, "")) or self._jobs.get(_identity(company, "", url))
         if not cached:
@@ -101,8 +101,8 @@ class DetailCache:
         # Old Workday signatures contain rolling text such as "Posted Today".
         # Compare the stable parts directly so deployment does not force one
         # final detail refresh before the normalized signature is persisted.
-        posted_relative = RELATIVE_POSTING_RE.fullmatch(" ".join((posted_date or "").split()))
-        updated_relative = RELATIVE_POSTING_RE.fullmatch(" ".join((updated_date or "").split()))
+        posted_relative = RELATIVE_POSTING_RE.fullmatch(" ".join(str(posted_date or "").split()))
+        updated_relative = RELATIVE_POSTING_RE.fullmatch(" ".join(str(updated_date or "").split()))
         if posted_relative or updated_relative:
             previous_sig = listing_signature(
                 str(cached.get("title") or ""),

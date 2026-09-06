@@ -21,7 +21,7 @@ import requests
 from ..schema import SourceUnavailable, make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso, slugify
 from .incremental import NewestFirstPager
-from .query_terms import ROLE_SEARCH_QUERIES
+from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 SOURCE = "google_official_careers"
 COMPANY = "Google"
@@ -174,11 +174,16 @@ def scrape_google(
     pages = 0
     errors: List[str] = []
     search_urls = [search_url(q, 1) for q in queries]
+    query_stats: List[Dict[str, Any]] = []
 
     for query in queries:
+        query_started = time.monotonic()
+        before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
         pager = NewestFirstPager(seen_job_ids or set())
         query_ids: set[str] = set()
-        query_max_pages = min(max_pages, int(query.get("max_pages") or max_pages))
+        query_max_pages = query_page_budget(
+            query.get("q", ""), min(max_pages, int(query.get("max_pages") or max_pages))
+        )
         for page in range(1, query_max_pages + 1):
             html = http_get(
                 session,
@@ -213,6 +218,11 @@ def scrape_google(
             if total and page * max(page_size, 1) >= total:
                 break
             time.sleep(SLEEP_S)
+        query_stats.append(query_diagnostic(
+            str(query.get("q") or ""), query_max_pages, pages - before_pages,
+            raw_count - before_raw, len(query_ids), jobs[before_jobs:],
+            time.monotonic() - query_started,
+        ))
 
     return {
         "company": COMPANY,
@@ -225,4 +235,5 @@ def scrape_google(
         "raw_jobs": raw_count,
         "jobs": jobs,
         "errors": errors,
+        "query_diagnostics": query_stats,
     }

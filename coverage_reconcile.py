@@ -10,6 +10,7 @@ whether an exact match is suppressed from ATS/Syncareer alerts.
 from __future__ import annotations
 
 import argparse
+import gzip
 import json
 import re
 from collections import Counter, defaultdict
@@ -29,7 +30,7 @@ from sources.schema import (
 )
 
 BASE_DIR = Path(__file__).resolve().parent
-OFFICIAL_RAW_PATH = BASE_DIR / "output" / "official_careers" / "raw.json"
+OFFICIAL_RAW_PATH = BASE_DIR / "output" / "official_careers" / "raw.json.gz"
 OFFICIAL_STORE_PATH = BASE_DIR / "output" / "official_careers" / "jobs.json"
 BOARD_STORE_PATH = BASE_DIR / "output" / "board" / "jobs.json"
 SYNCAREER_STORE_PATH = BASE_DIR / "output" / "syncareer" / "watchlist.json"
@@ -137,8 +138,8 @@ def load_coverage_config() -> Dict[str, Dict[str, Any]]:
 
 def load_official_context() -> Dict[str, Any]:
     try:
-        payload = json.loads(OFFICIAL_RAW_PATH.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
+        payload = json.loads(gzip.decompress(OFFICIAL_RAW_PATH.read_bytes()))
+    except (OSError, json.JSONDecodeError, UnicodeDecodeError):
         payload = {}
     jobs = payload.get("jobs", []) if isinstance(payload, dict) else []
     scraped_company_ids = set(payload.get("scraped_company_ids") or []) if isinstance(payload, dict) else set()
@@ -184,6 +185,22 @@ def exact_match(external: Dict[str, Any], official_jobs: Iterable[Dict[str, Any]
     if len(title_location_candidates) == 1:
         return "title_location", title_location_candidates[0]
     return "", None
+
+
+def hydrate_from_original(external: Dict[str, Any], original: Dict[str, Any]) -> None:
+    """Copy authoritative employer fields while preserving discovery provenance."""
+    provenance = (str(external.get("source") or "") + str(external.get("discovered_via") or "")).lower()
+    if not external.get("aggregator_posted_date") and any(name in provenance for name in ("linkedin", "glassdoor")):
+        external["aggregator_posted_date"] = external.get("posted_date", "")
+    for field in ("official_url", "description", "title", "location"):
+        if original.get(field):
+            external[field] = original[field]
+    if original.get("posted_date"):
+        external["posted_date"] = original["posted_date"]
+        external["date_confidence"] = original.get("date_confidence") or "medium"
+    if original.get("updated_date"):
+        external["updated_date"] = original["updated_date"]
+    external["original_resolved"] = bool(external.get("official_url"))
 
 
 def locations_compatible(left_key: str, right_key: str) -> bool:
@@ -292,6 +309,7 @@ def annotate_jobs(jobs: Iterable[Dict[str, Any]], source_pipeline: str, context:
             else:
                 method, official = exact_match(job, by_company.get(cid, []))
                 if official:
+                    hydrate_from_original(job, official)
                     job["coverage_match_method"] = method
                     job["duplicate_of"] = canonical_job_key(official)
                     job["canonical_source"] = "official"

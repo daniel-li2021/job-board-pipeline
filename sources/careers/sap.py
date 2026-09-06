@@ -16,7 +16,7 @@ import requests
 from ..schema import make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
 from .incremental import DetailCache, annotate_detail
-from .query_terms import ROLE_SEARCH_QUERIES
+from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 SEARCH = "https://jobs.sap.com/search/"
 SLEEP_S = 0.3
@@ -82,11 +82,14 @@ def scrape_sap(
     errors: List[str] = []
     detail_fetches = 0
     detail_reused = 0
+    query_stats: List[Dict[str, Any]] = []
     detail_cache = detail_cache or DetailCache([])
 
     for query in queries:
+        query_started = time.monotonic()
+        before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
         query_ids: set[str] = set()
-        query_max_pages = min(max_pages, QUERY_PAGE_CAPS.get(query, max_pages))
+        query_max_pages = query_page_budget(query, min(max_pages, QUERY_PAGE_CAPS.get(query, max_pages)))
         for page in range(query_max_pages):
             startrow = page * PAGE_SIZE
             payload = http_get(
@@ -169,6 +172,10 @@ def scrape_sap(
             if len(cards) < PAGE_SIZE:
                 break
             time.sleep(SLEEP_S)
+        query_stats.append(query_diagnostic(
+            query, query_max_pages, pages - before_pages, raw_count - before_raw,
+            len(query_ids), jobs[before_jobs:], time.monotonic() - query_started,
+        ))
 
     return {
         "company": company,
@@ -183,4 +190,5 @@ def scrape_sap(
         "errors": errors,
         "detail_fetches": detail_fetches,
         "detail_cache_reused": detail_reused,
+        "query_diagnostics": query_stats,
     }

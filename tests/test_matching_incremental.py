@@ -9,8 +9,9 @@ from unittest.mock import Mock, patch
 import board_pipeline as board
 import llm_config
 from sources.careers.incremental import DetailCache, NewestFirstPager, annotate_detail, listing_signature
+from sources.careers.query_terms import query_page_budget
 from sources.careers import registry
-from sources.schema import SourceUnavailable
+from sources.schema import SourceUnavailable, make_job
 
 
 class LlmMatchingTests(unittest.TestCase):
@@ -100,6 +101,54 @@ class LlmMatchingTests(unittest.TestCase):
 
 
 class IncrementalOfficialTests(unittest.TestCase):
+    def test_numeric_listing_timestamp_is_stable_and_cacheable(self) -> None:
+        timestamp = 1_757_000_000_000
+        signature = listing_signature("Software Engineer", timestamp)
+        cached = {
+            "company": "Example", "job_id": "42", "official_url": "https://example.test/42",
+            "title": "Software Engineer", "posted_date": timestamp,
+            "listing_signature": signature, "description": "Full cached JD",
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+        }
+        self.assertFalse(DetailCache([cached]).decide(
+            company="Example", job_id="42", url=cached["official_url"],
+            title=cached["title"], posted_date=timestamp,
+        ).should_fetch)
+
+    def test_official_query_budgets_are_centralized_ceilings(self) -> None:
+        self.assertEqual(20, query_page_budget("software engineer", 50))
+        self.assertEqual(6, query_page_budget("ai engineer", 50))
+        self.assertEqual(3, query_page_budget("data engineer", 50))
+        self.assertEqual(2, query_page_budget("software engineer", 2))
+
+    def test_direct_original_hydration_reuses_cached_jd(self) -> None:
+        card = make_job(
+            source="linkedin", company="Example", title="Software Engineer",
+            location="Austin, TX", job_id="li-42", posted_date="2026-09-04",
+            aggregator_posted_date="2026-09-04",
+        )
+        card["application_url"] = "https://apply.example/jobs/42"
+        response = Mock(
+            url="https://careers.example/jobs/42",
+            text='''<script type="application/ld+json">{"@type":"JobPosting","title":"Software Engineer II","description":"<p>Complete JD</p>","datePosted":"2026-09-01","dateModified":"2026-09-03","jobLocation":{"address":{"addressLocality":"Austin","addressRegion":"TX","addressCountry":"US"}}}</script>''',
+        )
+        response.raise_for_status.return_value = None
+        session = Mock()
+        session.get.return_value = response
+        self.assertEqual(1, board.resolve_exposed_originals([card], session, {}))
+        self.assertEqual("2026-09-04", card["aggregator_posted_date"])
+        self.assertEqual("2026-09-01", card["posted_date"])
+        self.assertEqual("Complete JD", card["description"])
+        self.assertEqual("Austin, TX, US", card["location"])
+
+        cached = board.build_store_entry(card, board.dedup_key(card))
+        repeat = make_job(source="linkedin", company="Example", title="Software Engineer", job_id="li-42")
+        repeat["application_url"] = card["application_url"]
+        second_session = Mock()
+        self.assertEqual(0, board.resolve_exposed_originals([repeat], second_session, {"cached": cached}))
+        second_session.get.assert_not_called()
+        self.assertEqual("Complete JD", repeat["description"])
+
     def test_detail_cache_reuse_change_and_staleness(self) -> None:
         now = datetime(2026, 8, 31, tzinfo=timezone.utc)
         cached = {

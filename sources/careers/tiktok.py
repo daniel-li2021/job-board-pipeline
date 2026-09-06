@@ -9,7 +9,7 @@ import requests
 
 from ..schema import SourceUnavailable, make_job, normalize_space
 from .http import http_post, keep_us_or_unknown, now_iso
-from .query_terms import ROLE_SEARCH_QUERIES
+from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 SEARCH = "https://api.lifeattiktok.com/api/v1/public/supplier/search/job/posts"
 BYTEDANCE_SEARCH = "https://jobs.bytedance.com/api/v1/public/supplier/search/job/posts"
@@ -63,9 +63,14 @@ def _scrape_supplier(
     seen: set[str] = set()
     jobs: List[Dict[str, str]] = []
     raw_count = pages = 0
+    query_stats: List[Dict[str, Any]] = []
     for query in queries:
+        query_started = time.monotonic()
+        before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
+        query_ids: set[str] = set()
         offset = 0
-        for _page in range(max_pages):
+        budget = query_page_budget(query, max_pages)
+        for _page in range(budget):
             body = {
                 "keyword": query,
                 "limit": PAGE_SIZE,
@@ -95,6 +100,8 @@ def _scrape_supplier(
                     continue
                 raw_count += 1
                 jid = str(item.get("id") or "")
+                if jid:
+                    query_ids.add(jid)
                 if not jid or jid in seen:
                     continue
                 seen.add(jid)
@@ -119,6 +126,10 @@ def _scrape_supplier(
             if offset >= int(data.get("count") or 0):
                 break
             time.sleep(0.15)
+        query_stats.append(query_diagnostic(
+            query, budget, pages - before_pages, raw_count - before_raw,
+            len(query_ids), jobs[before_jobs:], time.monotonic() - query_started,
+        ))
     return {
         "company": company,
         "source": f"{company.lower()}_official_careers",
@@ -130,6 +141,7 @@ def _scrape_supplier(
         "raw_jobs": raw_count,
         "jobs": jobs,
         "errors": [],
+        "query_diagnostics": query_stats,
     }
 
 

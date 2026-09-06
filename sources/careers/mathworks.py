@@ -11,7 +11,7 @@ import requests
 
 from ..schema import make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
-from .query_terms import ROLE_SEARCH_QUERIES
+from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 SEARCH = "https://www.mathworks.com/company/jobs/opportunities/search/"
 PAGE_SIZE = 20
@@ -47,10 +47,14 @@ def scrape_mathworks(
     jobs: List[Dict[str, str]] = []
     raw_count = pages = details = 0
     errors: List[str] = []
+    query_stats: List[Dict[str, Any]] = []
 
     for query in queries or ROLE_SEARCH_QUERIES:
+        query_started = time.monotonic()
+        before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
         query_ids: set[str] = set()
-        for page in range(1, max_pages + 1):
+        budget = query_page_budget(query, max_pages)
+        for page in range(1, budget + 1):
             params: Dict[str, Any] = {"keywords": query}
             if page > 1:
                 params["page"] = page
@@ -119,6 +123,10 @@ def scrape_mathworks(
             if len(rows) < PAGE_SIZE:
                 break
             time.sleep(0.1)
+        query_stats.append(query_diagnostic(
+            query, budget, pages - before_pages, raw_count - before_raw,
+            len(query_ids), jobs[before_jobs:], time.monotonic() - query_started,
+        ))
 
     return {
         "company": "MathWorks",
@@ -132,4 +140,5 @@ def scrape_mathworks(
         "jobs": jobs,
         "errors": errors,
         "detail_fetches": details,
+        "query_diagnostics": query_stats,
     }

@@ -28,6 +28,7 @@ JOB_FIELDS = [
     "title",
     "location",
     "posted_date",       # ISO date "YYYY-MM-DD" when known, else ""
+    "aggregator_posted_date",  # date displayed by LinkedIn/Glassdoor
     "updated_date",      # ISO date when the source exposes a last-updated time
     "date_confidence",   # high | medium | low | unknown
     "source_url",        # where we found it
@@ -479,6 +480,7 @@ def make_job(
     location: str = "",
     job_id: str = "",
     posted_date: Any = "",
+    aggregator_posted_date: Any = "",
     updated_date: Any = "",
     date_confidence: str = "unknown",
     source_url: str = "",
@@ -497,6 +499,7 @@ def make_job(
         "title": normalize_space(title),
         "location": normalize_space(location),
         "posted_date": iso,
+        "aggregator_posted_date": normalize_space(aggregator_posted_date),
         "updated_date": to_iso_date(updated_date),
         "date_confidence": date_confidence,
         "source_url": normalize_space(source_url),
@@ -585,12 +588,19 @@ def write_source_snapshot(name: str, jobs: List[Dict[str, str]], meta: Optional[
 
 
 def read_source_snapshot(name: str) -> List[Dict[str, str]]:
+    return read_source_snapshot_payload(name).get("jobs", [])
+
+
+def read_source_snapshot_payload(name: str) -> Dict[str, Any]:
     path = SOURCES_DIR / f"{name}.json"
     if not path.exists():
-        return []
+        return {"jobs": [], "meta": {}}
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError):
-        return []
+        return {"jobs": [], "meta": {}}
     jobs = data.get("jobs") if isinstance(data, dict) else data
-    return [j for j in jobs if isinstance(j, dict)] if isinstance(jobs, list) else []
+    return {
+        "jobs": [j for j in jobs if isinstance(j, dict)] if isinstance(jobs, list) else [],
+        "meta": data.get("meta", {}) if isinstance(data, dict) and isinstance(data.get("meta"), dict) else {},
+    }

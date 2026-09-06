@@ -20,7 +20,7 @@ Filters (per plan):
 from __future__ import annotations
 
 import time
-from typing import Dict, List
+from typing import Any, Dict, List
 
 import requests
 from bs4 import BeautifulSoup
@@ -31,26 +31,13 @@ from .schema import (
     make_job,
     normalize_space,
 )
+from .local_search import source_queries, query_stat
 
 GUEST_SEARCH_URL = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
 US_GEO_ID = "103644278"
-DEFAULT_KEYWORDS = [
-    "software engineer",
-    "software engineer i",
-    "software engineer ii",
-    "associate software engineer",
-    "backend engineer",
-    "full stack engineer",
-    "platform engineer",
-    "ai engineer",
-    "applied ai engineer",
-    "machine learning engineer",
-    "data engineer",
-    "forward deployed engineer",
-]
+DEFAULT_KEYWORDS = [query for _group, query, _budget in source_queries("linkedin")]
 EXPERIENCE_LEVEL_FILTER = "2,3"
 PAGE_SIZE = 10
-MAX_PAGES_PER_KEYWORD = 10
 REQUEST_TIMEOUT = 25
 POLITE_SLEEP_SECONDS = 1.2
 
@@ -106,6 +93,7 @@ def _parse_cards(html: str) -> List[Dict[str, str]]:
                 location=location,
                 job_id=normalize_space(job_id),
                 posted_date=(time_tag.get("datetime") if time_tag else "") or "",
+                aggregator_posted_date=(time_tag.get("datetime") if time_tag else "") or "",
                 date_confidence="low",  # LinkedIn shows reposts as fresh
                 source_url=clean_url,
                 official_url="",
@@ -117,14 +105,22 @@ def _parse_cards(html: str) -> List[Dict[str, str]]:
 def scrape(
     keywords: List[str] | None = None,
     session: requests.Session | None = None,
-) -> List[Dict[str, str]]:
+) -> Dict[str, Any]:
     """Return LinkedIn job rows. Raises SourceUnavailable on anti-bot/network."""
     session = session or _make_session()
-    keywords = keywords or DEFAULT_KEYWORDS
+    specs = list(source_queries("linkedin"))
+    if keywords:
+        wanted = set(keywords)
+        specs = [spec for spec in specs if spec[1] in wanted]
     seen: set[str] = set()
+    by_key: Dict[str, Dict[str, str]] = {}
     rows: List[Dict[str, str]] = []
-    for keyword in keywords:
-        for page in range(MAX_PAGES_PER_KEYWORD):
+    stats: List[Dict[str, object]] = []
+    for index, (group, keyword, page_budget) in enumerate(specs):
+        stat = query_stat(keyword, group, page_budget)
+        started = time.monotonic()
+        query_seen: set[str] = set()
+        for page in range(page_budget):
             params = {
                 "keywords": keyword,
                 "location": "United States",
@@ -136,24 +132,64 @@ def scrape(
             try:
                 resp = session.get(GUEST_SEARCH_URL, params=params, timeout=REQUEST_TIMEOUT)
             except requests.RequestException as exc:
-                raise SourceUnavailable(f"network error: {exc}") from exc
-            _check_blocked(resp)
+                stat["stop_reason"] = "network_error"
+                stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
+                stats.append(stat)
+                stats.extend(_unattempted(specs[index + 1:], "source_unavailable"))
+                return {"status": "blocked", "reason": f"network error: {exc}", "jobs": rows, "query_stats": stats}
+            try:
+                _check_blocked(resp)
+            except SourceUnavailable as exc:
+                stat["stop_reason"] = f"blocked_http_{resp.status_code}"
+                stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
+                stats.append(stat)
+                stats.extend(_unattempted(specs[index + 1:], "source_unavailable"))
+                return {"status": "blocked", "reason": str(exc), "jobs": rows, "query_stats": stats}
+            stat["pages_fetched"] = int(stat["pages_fetched"]) + 1
             page_rows = _parse_cards(resp.text)
+            stat["raw_jobs"] = int(stat["raw_jobs"]) + len(page_rows)
             if not page_rows:
+                stat["stop_reason"] = "empty_page"
                 break
             added = 0
             for row in page_rows:
                 key = row.get("job_id") or row.get("source_url")
+                if key:
+                    query_seen.add(key)
                 if key and key in seen:
+                    prior = by_key.get(key)
+                    if prior:
+                        prior["discovery_queries"]["linkedin"] = list(dict.fromkeys([
+                            *prior["discovery_queries"]["linkedin"], keyword,
+                        ]))
                     continue
                 if key:
                     seen.add(key)
                 # US filter; keep unknown locations (LinkedIn sometimes omits).
                 if row["location"] and not is_us_location(row["location"]):
                     continue
+                row["discovery_queries"] = {"linkedin": [keyword]}
                 rows.append(row)
+                if key:
+                    by_key[key] = row
                 added += 1
             if added == 0:
+                stat["stop_reason"] = "no_new_jobs"
                 break
             time.sleep(POLITE_SLEEP_SECONDS)
-    return rows
+        stat["unique_jobs"] = len(query_seen)
+        stat["unique_contribution"] = sum(
+            1 for row in rows if (row.get("discovery_queries") or {}).get("linkedin", [None])[0] == keyword
+        )
+        stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
+        stats.append(stat)
+    return {"status": "ok", "jobs": rows, "query_stats": stats}
+
+
+def _unattempted(specs: List[tuple[str, str, int]], reason: str) -> List[Dict[str, object]]:
+    out = []
+    for group, query, budget in specs:
+        stat = query_stat(query, group, budget)
+        stat["stop_reason"] = reason
+        out.append(stat)
+    return out

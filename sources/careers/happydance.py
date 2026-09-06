@@ -12,7 +12,7 @@ import requests
 
 from ..schema import make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
-from .query_terms import ROLE_SEARCH_QUERIES
+from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 PAGE_SIZE = 100
 
@@ -57,11 +57,16 @@ def scrape_happydance(
     jobs: List[Dict[str, str]] = []
     raw_count = pages = details = 0
     errors: List[str] = []
+    query_stats: List[Dict[str, Any]] = []
 
     request_filters = searches or [{"search": query} for query in (queries or ROLE_SEARCH_QUERIES)]
     for request_filter in request_filters:
+        query_started = time.monotonic()
+        before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
+        query = request_filter.get("search", "")
         query_ids: set[str] = set()
-        for page in range(1, max_pages + 1):
+        budget = query_page_budget(query, max_pages)
+        for page in range(1, budget + 1):
             payload = http_get(
                 session,
                 endpoint,
@@ -119,6 +124,10 @@ def scrape_happydance(
             if page >= int(payload.get("totalPages") or 1):
                 break
             time.sleep(0.1)
+        query_stats.append(query_diagnostic(
+            query, budget, pages - before_pages, raw_count - before_raw,
+            len(query_ids), jobs[before_jobs:], time.monotonic() - query_started,
+        ))
 
     return {
         "company": company,
@@ -132,4 +141,5 @@ def scrape_happydance(
         "jobs": jobs,
         "errors": errors,
         "detail_fetches": details,
+        "query_diagnostics": query_stats,
     }

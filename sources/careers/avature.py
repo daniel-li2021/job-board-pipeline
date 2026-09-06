@@ -17,7 +17,7 @@ import requests
 from ..schema import make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
 from .incremental import DetailCache, annotate_detail
-from .query_terms import ROLE_SEARCH_QUERIES
+from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 SEARCH = "https://bloomberg.avature.net/careers/SearchJobs"
 SLEEP_S = 0.3
@@ -81,11 +81,15 @@ def scrape_avature(
     errors: List[str] = []
     detail_fetches = 0
     detail_reused = 0
+    query_stats: List[Dict[str, Any]] = []
     detail_cache = detail_cache or DetailCache([])
 
     for query in queries:
+        query_started = time.monotonic()
+        before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
         query_ids: set[str] = set()
-        for page in range(max_pages):
+        budget = query_page_budget(query, max_pages)
+        for page in range(budget):
             offset = page * page_size
             payload = http_get(
                 session,
@@ -168,6 +172,10 @@ def scrape_avature(
             if len(cards) < page_size:
                 break
             time.sleep(SLEEP_S)
+        query_stats.append(query_diagnostic(
+            query, budget, pages - before_pages, raw_count - before_raw,
+            len(query_ids), jobs[before_jobs:], time.monotonic() - query_started,
+        ))
 
     return {
         "company": company,
@@ -182,4 +190,5 @@ def scrape_avature(
         "errors": errors,
         "detail_fetches": detail_fetches,
         "detail_cache_reused": detail_reused,
+        "query_diagnostics": query_stats,
     }

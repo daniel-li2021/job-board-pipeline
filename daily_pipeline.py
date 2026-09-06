@@ -89,7 +89,6 @@ SEARCH_KEYWORDS = [
     "Platform",
     "New Grad",
     "LLM",
-    "Applied Scientist",
     "Data Engineer",
     "Site Reliability",
 ]
@@ -350,25 +349,40 @@ def build_search_url(keyword: str, time_window: str, page: int) -> str:
     return SEARCH_BASE_URL + "?" + urlencode(params)
 
 
-def search_keyword(session: requests.Session, keyword: str, time_window: str) -> Dict[str, Dict[str, Any]]:
-    """Return {job_id: summary_dict} for one keyword across pages."""
+def search_keyword(
+    session: requests.Session, keyword: str, time_window: str
+) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
+    """Return deduplicated summaries plus lightweight search diagnostics."""
     found: Dict[str, Dict[str, Any]] = {}
     seen_signatures: set[Tuple[str, ...]] = set()
+    started = time.monotonic()
+    stat: Dict[str, Any] = {
+        "query": keyword, "group": "syncareer", "page_budget": MAX_PAGES_PER_KEYWORD,
+        "pages_fetched": 0, "stop_reason": "page_budget", "raw_jobs": 0,
+        "unique_jobs": 0, "unique_contribution": 0, "first_pass_survivors": 0,
+        "original_postings_resolved": 0, "jds_resolved": 0, "elapsed_seconds": 0.0,
+    }
     for page in range(1, MAX_PAGES_PER_KEYWORD + 1):
         url = build_search_url(keyword, time_window, page)
         try:
             resp = session.get(url, timeout=REQUEST_TIMEOUT)
             resp.raise_for_status()
-        except Exception:  # noqa: BLE001
+        except requests.RequestException:
+            stat["stop_reason"] = "network_error"
             break
+        stat["pages_fetched"] += 1
         sr = extract_search_result_global(resp.text)
         if not sr:
+            stat["stop_reason"] = "parse_error"
             break
         page_list = sr.get("list") or []
         if not isinstance(page_list, list) or not page_list:
+            stat["stop_reason"] = "empty_page"
             break
+        stat["raw_jobs"] += len(page_list)
         signature = tuple(sorted(str(i.get("id", "")) for i in page_list if i.get("id")))
         if signature in seen_signatures:
+            stat["stop_reason"] = "repeated_page"
             break
         seen_signatures.add(signature)
         before = len(found)
@@ -377,25 +391,34 @@ def search_keyword(session: requests.Session, keyword: str, time_window: str) ->
             if jid and jid not in found:
                 found[jid] = item
         if len(found) == before:
+            stat["stop_reason"] = "no_new_jobs"
             break
         time.sleep(PAGE_SLEEP_SECONDS)
-    return found
+    stat["unique_jobs"] = len(found)
+    stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
+    return found, stat
 
 
-def run_search(session: requests.Session, time_window: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, List[str]], Dict[str, int]]:
-    """Aggregate all keywords. Returns (id->summary, id->keywords, per-keyword counts)."""
+def run_search(
+    session: requests.Session, time_window: str
+) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, List[str]], Dict[str, int], List[Dict[str, Any]]]:
+    """Aggregate all keywords and retain per-query diagnostics."""
     id_to_summary: Dict[str, Dict[str, Any]] = {}
     id_to_keywords: Dict[str, List[str]] = defaultdict(list)
     per_keyword_counts: Dict[str, int] = {}
+    query_diagnostics: List[Dict[str, Any]] = []
     for keyword in SEARCH_KEYWORDS:
-        found = search_keyword(session, keyword, time_window)
+        found, stat = search_keyword(session, keyword, time_window)
         per_keyword_counts[keyword] = len(found)
+        before = len(id_to_summary)
         for jid, summary in found.items():
             if jid not in id_to_summary:
                 id_to_summary[jid] = summary
             id_to_keywords[jid].append(keyword)
+        stat["unique_contribution"] = len(id_to_summary) - before
+        query_diagnostics.append(stat)
         time.sleep(0.4)
-    return id_to_summary, id_to_keywords, per_keyword_counts
+    return id_to_summary, id_to_keywords, per_keyword_counts, query_diagnostics
 
 
 # --------------------------------------------------------------------------
@@ -1296,7 +1319,7 @@ def run() -> None:
     stamp = now.strftime("%Y-%m-%d_%H%M")
 
     # Phase 1: search
-    id_to_summary, id_to_keywords, per_keyword_counts = run_search(session, time_window)
+    id_to_summary, id_to_keywords, per_keyword_counts, query_diagnostics = run_search(session, time_window)
     total_found = len(id_to_summary)
 
     # Phase 2: dedup against the chosen store.
@@ -1348,6 +1371,11 @@ def run() -> None:
         if apply_external_company_policy(row, company_filters):
             hidden_external_count += 1
     scoring_rows = [row for row in kept_rows if not row.get("suppress_alert")]
+    for stat in query_diagnostics:
+        matches = [row for row in kept_rows if stat["query"] in str(row.get("matched_keywords") or "")]
+        stat["first_pass_survivors"] = len(matches)
+        stat["original_postings_resolved"] = sum(bool(row.get("official_url")) for row in matches)
+        stat["jds_resolved"] = sum(bool(row.get("official_url") and row.get("description")) for row in matches)
 
     # Phase 6: shared 0-100 scoring always runs. --no-llm selects the Board's
     # conservative rule fallback rather than leaving Score/Tier blank.
@@ -1435,9 +1463,15 @@ def run() -> None:
         f"API requests={score_counts.get('api_requests', 0)}"
     )
     lines.append("")
-    lines.append("## Per-keyword counts (this run, pre-dedup)")
-    for kw in SEARCH_KEYWORDS:
-        lines.append(f"- {kw}: {per_keyword_counts.get(kw, 0)}")
+    lines.append("## Per-query search diagnostics")
+    for stat in query_diagnostics:
+        lines.append(
+            f"- {stat['query']}: pages={stat['pages_fetched']}/{stat['page_budget']}, "
+            f"stop={stat['stop_reason']}, raw={stat['raw_jobs']}, unique={stat['unique_jobs']}, "
+            f"contribution={stat['unique_contribution']}, survivors={stat['first_pass_survivors']}, "
+            f"original/JD={stat['original_postings_resolved']}/{stat['jds_resolved']}, "
+            f"elapsed={stat['elapsed_seconds']:.3f}s"
+        )
     lines.append("")
     lines.append("## Hard-filter drops")
     if drop_reasons:
@@ -1473,6 +1507,7 @@ def run() -> None:
                     "shown": len(alert_rows),
                 },
                 "screen_method": shared_screen_method,
+                "query_diagnostics": query_diagnostics,
             },
             indent=2,
             ensure_ascii=False,

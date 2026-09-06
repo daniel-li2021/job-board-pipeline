@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 
 from ..schema import SourceUnavailable, make_job
 from .http import http_get, keep_us_or_unknown, now_iso, raise_for_status
-from .query_terms import ROLE_SEARCH_QUERIES
+from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic
 
 PORTAL = "https://www.metacareers.com/jobsearch/"
 GRAPHQL = "https://www.metacareers.com/graphql"
@@ -58,7 +58,11 @@ def scrape_meta(
     seen: set[str] = set()
     jobs: List[Dict[str, str]] = []
     raw_count = pages = 0
+    query_stats: List[Dict[str, Any]] = []
     for query in queries:
+        query_started = time.monotonic()
+        before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
+        query_ids: set[str] = set()
         search_input = {
             "q": query,
             "divisions": [],
@@ -107,6 +111,8 @@ def scrape_meta(
                 continue
             raw_count += 1
             jid = str(item.get("id") or "")
+            if jid:
+                query_ids.add(jid)
             if not jid or jid in seen:
                 continue
             seen.add(jid)
@@ -128,6 +134,10 @@ def scrape_meta(
                 fetched_at=fetched_at,
             ))
         time.sleep(0.1)
+        query_stats.append(query_diagnostic(
+            query, 1, pages - before_pages, raw_count - before_raw,
+            len(query_ids), jobs[before_jobs:], time.monotonic() - query_started,
+        ))
     return {
         "company": "Meta",
         "source": "meta_official_careers",
@@ -139,4 +149,5 @@ def scrape_meta(
         "raw_jobs": raw_count,
         "jobs": jobs,
         "errors": [],
+        "query_diagnostics": query_stats,
     }

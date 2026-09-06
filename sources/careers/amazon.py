@@ -18,7 +18,7 @@ import requests
 from ..schema import make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
 from .incremental import NewestFirstPager
-from .query_terms import ROLE_SEARCH_QUERIES
+from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 SOURCE = "amazon_official_careers"
 COMPANY = "Amazon"
@@ -57,12 +57,15 @@ def scrape_amazon(
     raw_count = 0
     pages = 0
     errors: List[str] = []
+    query_stats: List[Dict[str, Any]] = []
 
     for keyword in queries:
+        query_started = time.monotonic()
+        before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
         pager = NewestFirstPager(seen_job_ids or set())
         offset = 0
         query_ids: set[str] = set()
-        query_max_pages = min(max_pages, QUERY_PAGE_CAPS.get(keyword, max_pages))
+        query_max_pages = query_page_budget(keyword, min(max_pages, QUERY_PAGE_CAPS.get(keyword, max_pages)))
         for _page in range(query_max_pages):
             params = {
                 "base_query": keyword,
@@ -123,6 +126,10 @@ def scrape_amazon(
             if hits and offset >= hits:
                 break
             time.sleep(SLEEP_S)
+        query_stats.append(query_diagnostic(
+            keyword, query_max_pages, pages - before_pages, raw_count - before_raw,
+            len(query_ids), jobs[before_jobs:], time.monotonic() - query_started,
+        ))
 
     return {
         "company": COMPANY,
@@ -135,4 +142,5 @@ def scrape_amazon(
         "raw_jobs": raw_count,
         "jobs": jobs,
         "errors": errors,
+        "query_diagnostics": query_stats,
     }

@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 
 from ..schema import make_job, normalize_space
 from .http import http_get, keep_us_or_unknown, now_iso
-from .query_terms import ROLE_SEARCH_QUERIES
+from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 BASE = "https://www.disneycareers.com"
 PATH = "/en/search-jobs/{query}/United%20States/391/1/2/6252001/39x76/-98x5/100/2"
@@ -28,9 +28,14 @@ def scrape_disney(
     seen: set[str] = set()
     jobs: List[Dict[str, str]] = []
     raw_count = pages = 0
+    query_stats: List[Dict[str, Any]] = []
     for query in queries:
+        query_started = time.monotonic()
+        before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
+        query_ids: set[str] = set()
         base_url = BASE + PATH.format(query=quote(query, safe=""))
-        for page in range(1, min(max_pages, 3) + 1):
+        budget = query_page_budget(query, max_pages)
+        for page in range(1, budget + 1):
             html = http_get(
                 session,
                 base_url,
@@ -45,6 +50,8 @@ def scrape_disney(
             for card in cards:
                 raw_count += 1
                 jid = str(card.get("data-job-secondary-id") or card.get("data-job-id") or "")
+                if jid:
+                    query_ids.add(jid)
                 if not jid or jid in seen:
                     continue
                 seen.add(jid)
@@ -72,6 +79,10 @@ def scrape_disney(
             if not next_link or "disabled" in (next_link.get("class") or []):
                 break
             time.sleep(0.15)
+        query_stats.append(query_diagnostic(
+            query, budget, pages - before_pages, raw_count - before_raw,
+            len(query_ids), jobs[before_jobs:], time.monotonic() - query_started,
+        ))
     return {
         "company": "Disney",
         "source": "disney_official_careers",
@@ -83,4 +94,5 @@ def scrape_disney(
         "raw_jobs": raw_count,
         "jobs": jobs,
         "errors": [],
+        "query_diagnostics": query_stats,
     }

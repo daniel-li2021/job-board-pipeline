@@ -14,8 +14,8 @@ from __future__ import annotations
 
 import re
 import time
-from typing import Dict, List
-from urllib.parse import quote
+from typing import Any, Dict, List
+from urllib.parse import urlencode, urlsplit
 
 import requests
 from bs4 import BeautifulSoup
@@ -26,17 +26,17 @@ from .schema import (
     make_job,
     normalize_space,
 )
+from .local_search import source_queries, query_stat
 
 REQUEST_TIMEOUT = 25
 POLITE_SLEEP_SECONDS = 2.0
-# Glassdoor SRCH URLs are keyword-specific; keep a small, high-signal set.
-# Each entry: (keyword label, search URL). fromAge=1 -> last day when honored.
-SEARCH_URLS = {
-    "software engineer": "https://www.glassdoor.com/Job/united-states-software-engineer-jobs-SRCH_IL.0,13_IN1_KO14,31.htm",
-    "ai engineer": "https://www.glassdoor.com/Job/united-states-ai-engineer-jobs-SRCH_IL.0,13_IN1_KO14,25.htm",
-    "machine learning engineer": "https://www.glassdoor.com/Job/united-states-machine-learning-engineer-jobs-SRCH_IL.0,13_IN1_KO14,39.htm",
-    "data engineer": "https://www.glassdoor.com/Job/united-states-data-engineer-jobs-SRCH_IL.0,13_IN1_KO14,27.htm",
-}
+SEARCH_BASE_URL = "https://www.glassdoor.com/Job/jobs.htm"
+
+
+def build_search_url(keyword: str, page: int) -> str:
+    return SEARCH_BASE_URL + "?" + urlencode({
+        "sc.keyword": keyword, "locT": "N", "locId": "1", "fromAge": "1", "p": page,
+    })
 
 
 def _make_session() -> requests.Session:
@@ -78,42 +78,119 @@ def _parse_cards(html: str) -> List[Dict[str, str]]:
         clean_url = href.split("?")[0]
         m = re.search(r"jl=(\d+)", href)
         job_id = m.group(1) if m else ""
-        rows.append(
-            make_job(
+        row = make_job(
                 source="glassdoor",
                 company=normalize_space(emp_el.get_text() if emp_el else ""),
                 title=normalize_space(title_el.get_text() if title_el else ""),
                 location=normalize_space(loc_el.get_text() if loc_el else ""),
                 job_id=job_id,
                 posted_date=normalize_space(age_el.get_text() if age_el else ""),
+                aggregator_posted_date=normalize_space(age_el.get_text() if age_el else ""),
                 date_confidence="low",
                 source_url=clean_url,
                 official_url="",
                 description=normalize_space(snip_el.get_text() if snip_el else ""),
             )
-        )
+        if href and urlsplit(href).netloc and "glassdoor." not in urlsplit(href).netloc.lower():
+            row["application_url"] = href
+        rows.append(row)
     return rows
 
 
-def scrape(session: requests.Session | None = None) -> List[Dict[str, str]]:
+def scrape(
+    session: requests.Session | None = None, keywords: List[str] | None = None,
+) -> Dict[str, Any]:
     """Return Glassdoor job rows. Raises SourceUnavailable on captcha/network."""
     session = session or _make_session()
     seen: set[str] = set()
+    by_key: Dict[str, Dict[str, str]] = {}
     rows: List[Dict[str, str]] = []
-    for _keyword, url in SEARCH_URLS.items():
-        try:
-            resp = session.get(url, timeout=REQUEST_TIMEOUT)
-        except requests.RequestException as exc:
-            raise SourceUnavailable(f"network error: {exc}") from exc
-        _check_blocked(resp)
-        for row in _parse_cards(resp.text):
-            key = row.get("job_id") or row.get("source_url")
-            if key and key in seen:
-                continue
-            if key:
-                seen.add(key)
-            if row["location"] and not is_us_location(row["location"]):
-                continue
-            rows.append(row)
-        time.sleep(POLITE_SLEEP_SECONDS)
-    return rows
+    stats: List[Dict[str, object]] = []
+    specs = list(source_queries("glassdoor"))
+    if keywords:
+        wanted = set(keywords)
+        specs = [spec for spec in specs if spec[1] in wanted]
+    for index, (group, keyword, page_budget) in enumerate(specs):
+        stat = query_stat(keyword, group, page_budget)
+        started = time.monotonic()
+        query_seen: set[str] = set()
+        first_page_ids: set[str] = set()
+        for page in range(1, page_budget + 1):
+            try:
+                resp = session.get(build_search_url(keyword, page), timeout=REQUEST_TIMEOUT)
+            except requests.RequestException as exc:
+                stat["stop_reason"] = "network_error"
+                stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
+                stats.append(stat)
+                stats.extend(_unattempted(specs[index + 1:], "source_unavailable"))
+                return {"status": "blocked", "reason": f"network error: {exc}", "jobs": rows, "query_stats": stats}
+            try:
+                _check_blocked(resp)
+            except SourceUnavailable as exc:
+                stat["stop_reason"] = f"blocked_http_{resp.status_code}"
+                stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
+                stats.append(stat)
+                stats.extend(_unattempted(specs[index + 1:], "source_unavailable"))
+                return {"status": "blocked", "reason": str(exc), "jobs": rows, "query_stats": stats}
+            stat["pages_fetched"] = int(stat["pages_fetched"]) + 1
+            page_rows = _parse_cards(resp.text)
+            stat["raw_jobs"] = int(stat["raw_jobs"]) + len(page_rows)
+            page_ids = {row.get("job_id") or row.get("source_url") for row in page_rows}
+            page_ids.discard("")
+            if not page_rows:
+                stat["stop_reason"] = "empty_page"
+                break
+            if page == 2 and (not page_ids or page_ids == first_page_ids):
+                stat["stop_reason"] = "pagination_unverified"
+                break
+            if page_ids and page_ids.issubset(query_seen):
+                stat["stop_reason"] = "repeated_page"
+                break
+            if page == 1:
+                first_page_ids = set(page_ids)
+            query_seen.update(page_ids)
+            added = 0
+            for row in page_rows:
+                key = row.get("job_id") or row.get("source_url")
+                if key and key in seen:
+                    prior = by_key.get(key)
+                    if prior:
+                        prior["discovery_queries"]["glassdoor"] = list(dict.fromkeys([
+                            *prior["discovery_queries"]["glassdoor"], keyword,
+                        ]))
+                    continue
+                if key:
+                    seen.add(key)
+                if row["location"] and not is_us_location(row["location"]):
+                    continue
+                row["discovery_queries"] = {"glassdoor": [keyword]}
+                rows.append(row)
+                if key:
+                    by_key[key] = row
+                added += 1
+            if added == 0:
+                stat["stop_reason"] = "no_new_jobs"
+                break
+            time.sleep(POLITE_SLEEP_SECONDS)
+        stat["unique_jobs"] = len(query_seen)
+        stat["unique_contribution"] = sum(
+            1 for row in rows if (row.get("discovery_queries") or {}).get("glassdoor", [None])[0] == keyword
+        )
+        stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
+        stats.append(stat)
+        if stat["stop_reason"] == "pagination_unverified":
+            stats.extend(_unattempted(specs[index + 1:], "source_unavailable"))
+            return {
+                "status": "pagination_unverified", "reason": "page 2 did not return distinct job IDs",
+                "jobs": rows, "query_stats": stats,
+            }
+    return {"status": "ok", "jobs": rows, "query_stats": stats}
+
+
+def _unattempted(specs: List[tuple[str, str, int]], reason: str) -> List[Dict[str, object]]:
+    out = []
+    for group, query, budget in specs:
+        stat = query_stat(query, group, budget)
+        stat["stop_reason"] = reason
+        out.append(stat)
+    return out

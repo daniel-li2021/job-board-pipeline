@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import gzip
 import json
 import tempfile
 import unittest
@@ -18,7 +19,7 @@ import review_state
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
 from sources.schema import combined_cache_key_from_hash, dedup_key, make_job, normalize_job_url, normalize_location_key
 from sources.schema import classify_location_bucket
-from sources import linkedin_local
+from sources import glassdoor_local, linkedin_local, local_search
 from sources.careers.query_terms import ROLE_SEARCH_QUERIES
 from sources.careers.workday import _detail_location
 
@@ -592,10 +593,21 @@ class CoverageMatchingTests(unittest.TestCase):
 
 
 class ComplementaryDiscoveryTests(unittest.TestCase):
+    def test_official_reconciliation_reads_compressed_raw_snapshot(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            raw = Path(tmpdir) / "raw.json.gz"
+            payload = {"scraped_at": "2026-09-05T00:00:00+00:00", "jobs": [], "scraped_company_ids": ["example"]}
+            raw.write_bytes(gzip.compress(json.dumps(payload).encode()))
+            with patch.object(coverage_reconcile, "OFFICIAL_RAW_PATH", raw), patch.object(
+                coverage_reconcile, "load_registry_entries", return_value=([], {})
+            ), patch.object(coverage_reconcile, "load_coverage_config", return_value={}):
+                context = coverage_reconcile.load_official_context()
+        self.assertEqual({"example"}, context["scraped_company_ids"])
+
     def test_board_does_not_collect_legacy_official_source(self) -> None:
         ats_result = {"jobs": [make_job(source="greenhouse", company="SmallCo", title="Software Engineer I")], "per_board": {}, "errors": []}
         with patch.object(board_pipeline.ats, "fetch_all_ats", return_value=ats_result), patch.object(
-            board_pipeline, "read_source_snapshot", return_value=[]
+            board_pipeline, "read_source_snapshot_payload", return_value={"jobs": [], "meta": {}}
         ):
             jobs, _meta = board_pipeline.collect_sources(object(), skip_network=False)
         self.assertEqual(["greenhouse"], [job["source"] for job in jobs])
@@ -608,6 +620,43 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         self.assertIn("software engineer ii", terms)
         self.assertIn("associate software engineer", terms)
         self.assertIn("forward deployed engineer", terms)
+        self.assertEqual({"primary": 25, "secondary": 8, "specialty": 4}, local_search.SOURCE_PAGE_BUDGETS["linkedin"])
+        self.assertEqual({"primary": 10, "secondary": 4, "specialty": 2}, local_search.SOURCE_PAGE_BUDGETS["glassdoor"])
+        self.assertNotIn("Applied Scientist", daily_pipeline.SEARCH_KEYWORDS)
+
+    def test_original_hydration_keeps_aggregator_date_auditable(self) -> None:
+        card = make_job(
+            source="linkedin", company="Example Tech", title="Software Engineer",
+            location="Austin, TX", job_id="li-1", posted_date="2026-09-04",
+        )
+        original = make_job(
+            source="greenhouse", company="Example Tech", title="Software Engineer II",
+            location="Austin, Texas", job_id="gh-1", posted_date="2026-09-01",
+            updated_date="2026-09-03", official_url="https://example.test/jobs/gh-1",
+            description="Complete employer job description",
+        )
+        coverage_reconcile.hydrate_from_original(card, original)
+        self.assertEqual("2026-09-04", card["aggregator_posted_date"])
+        self.assertEqual("2026-09-01", card["posted_date"])
+        self.assertEqual("2026-09-03", card["updated_date"])
+        self.assertEqual(original["official_url"], card["official_url"])
+        self.assertEqual(original["description"], card["description"])
+
+    def test_glassdoor_block_and_unverified_pagination_are_diagnostic(self) -> None:
+        class Response:
+            def __init__(self, status_code: int, text: str = "") -> None:
+                self.status_code, self.text = status_code, text
+
+        blocked = type("Session", (), {"get": lambda self, *args, **kwargs: Response(403)})()
+        result = glassdoor_local.scrape(session=blocked, keywords=["software engineer"])
+        self.assertEqual("blocked", result["status"])
+        self.assertEqual("blocked_http_403", result["query_stats"][0]["stop_reason"])
+
+        html = '''<div data-test="jobListing"><a data-test="job-title" href="/job.htm?jl=42">Software Engineer</a><span data-test="emp-location">Austin, TX</span></div>'''
+        repeated = type("Session", (), {"get": lambda self, *args, **kwargs: Response(200, html)})()
+        result = glassdoor_local.scrape(session=repeated, keywords=["software engineer"])
+        self.assertEqual("pagination_unverified", result["status"])
+        self.assertEqual("pagination_unverified", result["query_stats"][0]["stop_reason"])
 
     def test_relevant_engineering_titles_survive_positive_family_gate(self) -> None:
         for title in (
@@ -685,7 +734,11 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
                 stack.enter_context(patch.object(
                     daily_pipeline,
                     "run_search",
-                    return_value=({"sync-1": {}}, {"sync-1": ["software engineer"]}, {"software engineer": 1}),
+                    return_value=(
+                        {"sync-1": {}}, {"sync-1": ["software engineer"]},
+                        {"software engineer": 1},
+                        [local_search.query_stat("software engineer", "syncareer", 1)],
+                    ),
                 ))
                 stack.enter_context(patch.object(daily_pipeline, "fetch_job_detail", return_value={}))
                 stack.enter_context(patch.object(daily_pipeline, "normalize_job_row", return_value=row))

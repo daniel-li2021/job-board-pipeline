@@ -36,6 +36,7 @@ from collections import Counter
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 
 import requests
@@ -44,6 +45,7 @@ import alert_history
 import coverage_reconcile
 import llm_config
 from sources import ats, official
+from sources.careers.incremental import DETAIL_STALE_DAYS
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
 from sources.schema import (
     OUTPUT_DIR,
@@ -60,8 +62,9 @@ from sources.schema import (
     normalize_space,
     normalize_sponsorship,
     normalize_title_key,
-    read_source_snapshot,
+    read_source_snapshot_payload,
     recency_bucket,
+    to_iso_date,
     NORMAL_RECENCY_BUCKETS,
 )
 
@@ -115,6 +118,7 @@ RULE_EXCEPTIONAL_FOR_LLM = 72.0
 STRONG_SENIORITY_FITS = {"good", "strong", "realistic", "early_career"}
 
 LOCAL_SOURCES = ["linkedin", "glassdoor"]
+DIRECT_ORIGINAL_LIMIT = 20
 
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) "
@@ -365,7 +369,7 @@ def classify_company(company_name: str, filters: Dict[str, List[Dict[str, Any]]]
 def collect_sources(session: requests.Session, skip_network: bool = False) -> Tuple[List[Dict[str, str]], Dict[str, Any]]:
     """Gather all sources. Each source failing skips only itself."""
     jobs: List[Dict[str, str]] = []
-    meta: Dict[str, Any] = {"per_source": {}, "errors": []}
+    meta: Dict[str, Any] = {"per_source": {}, "local_query_stats": {}, "errors": []}
 
     if not skip_network:
         ats_res = ats.fetch_all_ats(session)
@@ -375,10 +379,12 @@ def collect_sources(session: requests.Session, skip_network: bool = False) -> Tu
 
     # Ingest local snapshots committed by the launchd job.
     for name in LOCAL_SOURCES:
-        rows = read_source_snapshot(name)
+        snapshot = read_source_snapshot_payload(name)
+        rows = snapshot["jobs"]
         if rows:
             jobs.extend(rows)
             meta["per_source"][f"local:{name}"] = len(rows)
+            meta["local_query_stats"][name] = list(snapshot["meta"].get("query_stats") or [])
 
     return jobs, meta
 
@@ -418,6 +424,12 @@ def _merge_pair(canonical: Dict[str, str], other: Dict[str, str]) -> Dict[str, s
     if not merged.get("posted_date") and other.get("posted_date"):
         merged["posted_date"] = other["posted_date"]
         merged["date_confidence"] = other.get("date_confidence", merged.get("date_confidence"))
+    if not merged.get("aggregator_posted_date") and other.get("aggregator_posted_date"):
+        merged["aggregator_posted_date"] = other["aggregator_posted_date"]
+    if not merged.get("updated_date") and other.get("updated_date"):
+        merged["updated_date"] = other["updated_date"]
+    if not merged.get("application_url") and other.get("application_url"):
+        merged["application_url"] = other["application_url"]
     if not merged.get("location") and other.get("location"):
         merged["location"] = other["location"]
     # Union of provenance (which sources surfaced this job).
@@ -426,6 +438,13 @@ def _merge_pair(canonical: Dict[str, str], other: Dict[str, str]) -> Dict[str, s
         if name and name not in via:
             via.append(name)
     merged["discovered_via"] = via
+    queries = dict(merged.get("discovery_queries") or {})
+    for source, values in (other.get("discovery_queries") or {}).items():
+        queries[source] = list(dict.fromkeys([*(queries.get(source) or []), *(values or [])]))
+    if queries:
+        merged["discovery_queries"] = queries
+    if any(source in {"linkedin", "glassdoor"} for source in via) and merged.get("official_url"):
+        merged["original_resolved"] = True
     return merged
 
 
@@ -510,6 +529,105 @@ def verify_official(jobs: List[Dict[str, str]]) -> None:
             hit = by_ctl.get((ckey, tkey, lkey))
             if hit:
                 job["official_url"] = hit
+
+
+def _job_posting_json(html: str) -> Dict[str, Any]:
+    from bs4 import BeautifulSoup
+
+    for node in BeautifulSoup(html, "html.parser").select('script[type="application/ld+json"]'):
+        try:
+            payload = json.loads(node.get_text())
+        except (TypeError, json.JSONDecodeError):
+            continue
+        values = payload if isinstance(payload, list) else [payload]
+        expanded = []
+        for value in values:
+            expanded.append(value)
+            graph = value.get("@graph") if isinstance(value, dict) else None
+            if isinstance(graph, list):
+                expanded.extend(graph)
+        for value in expanded:
+            if isinstance(value, dict) and value.get("@type") == "JobPosting":
+                return value
+    return {}
+
+
+def resolve_exposed_originals(
+    jobs: List[Dict[str, Any]], session: requests.Session, store: Dict[str, Dict[str, Any]]
+) -> int:
+    """Resolve only explicit aggregator application links, with a hard request cap."""
+    cached = {
+        (str(entry.get("source") or ""), str(entry.get("job_id") or "")): entry
+        for entry in store.values() if entry.get("direct_original_fetched")
+    }
+    attempts = 0
+    for job in jobs:
+        application_url = str(job.get("application_url") or "")
+        if job.get("original_resolved") or not application_url or attempts >= DIRECT_ORIGINAL_LIMIT:
+            continue
+        prior = cached.get((str(job.get("source") or ""), str(job.get("job_id") or "")))
+        try:
+            fetched_at = datetime.fromisoformat(str((prior or {}).get("direct_original_fetched_at") or "").replace("Z", "+00:00"))
+            if fetched_at.tzinfo is None:
+                fetched_at = fetched_at.replace(tzinfo=timezone.utc)
+            fresh = datetime.now(timezone.utc) - fetched_at.astimezone(timezone.utc) <= timedelta(days=DETAIL_STALE_DAYS)
+        except (TypeError, ValueError):
+            fresh = False
+        if prior and prior.get("application_url") == application_url and fresh:
+            for field in (
+                "official_url", "description", "posted_date", "updated_date", "date_confidence",
+                "direct_original_fetched_at",
+            ):
+                if prior.get(field):
+                    job[field] = prior[field]
+            job["original_resolved"] = bool(job.get("official_url"))
+            job["direct_original_fetched"] = True
+            continue
+        attempts += 1
+        try:
+            response = session.get(application_url, timeout=15, allow_redirects=True)
+            response.raise_for_status()
+        except requests.RequestException:
+            continue
+        host = urlsplit(response.url).netloc.lower()
+        if not host or any(name in host for name in ("linkedin.", "glassdoor.")):
+            continue
+        posting = _job_posting_json(response.text)
+        if posting.get("description"):
+            from bs4 import BeautifulSoup
+
+            job["description"] = normalize_space(
+                BeautifulSoup(str(posting["description"]), "html.parser").get_text(" ")
+            )
+        if posting.get("title"):
+            job["title"] = normalize_space(posting["title"])
+        locations = posting.get("jobLocation") or []
+        locations = locations if isinstance(locations, list) else [locations]
+        location_parts = []
+        for location in locations:
+            address = location.get("address") if isinstance(location, dict) else {}
+            if isinstance(address, dict):
+                value = ", ".join(
+                    normalize_space(address.get(field))
+                    for field in ("addressLocality", "addressRegion", "addressCountry")
+                    if normalize_space(address.get(field))
+                )
+                if value and value not in location_parts:
+                    location_parts.append(value)
+        if location_parts:
+            job["location"] = "; ".join(location_parts)
+        elif str(posting.get("jobLocationType") or "").upper() == "TELECOMMUTE":
+            job["location"] = "Remote"
+        if posting.get("datePosted"):
+            job["posted_date"] = to_iso_date(posting["datePosted"])
+            job["date_confidence"] = "high"
+        if posting.get("dateModified"):
+            job["updated_date"] = to_iso_date(posting["dateModified"])
+        job["official_url"] = response.url
+        job["original_resolved"] = True
+        job["direct_original_fetched"] = True
+        job["direct_original_fetched_at"] = datetime.now(timezone.utc).isoformat()
+    return attempts
 
 
 # --------------------------------------------------------------------------
@@ -1680,6 +1798,7 @@ def _raw_source_counts(raw_jobs: List[Dict[str, str]]) -> Dict[str, int]:
 
 ENTRY_DEFAULTS: Dict[str, Any] = {
     "job_id": "", "company": "", "title": "", "location": "", "posted_date": "",
+    "aggregator_posted_date": "", "updated_date": "",
     "date_confidence": "unknown", "official_url": "", "source": "", "source_url": "",
     "discovered_via": [], "filter_status": "kept", "drop_reason": "", "referral_name": "",
     "company_flag": "", "staffing_firm": False, "clearance_risk_company": False,
@@ -1693,6 +1812,8 @@ ENTRY_DEFAULTS: Dict[str, Any] = {
     "coverage_match_method": "", "official_company_id": "", "suppress_alert": False,
     "review_status": "unreviewed", "sponsorship": "Unknown",
     "first_seen": "", "last_seen": "",
+    "discovery_queries": dict, "original_resolved": False,
+    "application_url": "", "direct_original_fetched": False, "direct_original_fetched_at": "",
 }
 
 
@@ -1714,6 +1835,8 @@ def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
         "title": job.get("title", ""),
         "location": job.get("location", ""),
         "posted_date": job.get("posted_date", ""),
+        "aggregator_posted_date": job.get("aggregator_posted_date", ""),
+        "updated_date": job.get("updated_date", ""),
         "date_confidence": job.get("date_confidence", "unknown"),
         "official_url": job.get("official_url", ""),
         "source": job.get("source", ""),
@@ -1721,6 +1844,12 @@ def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
         "sponsorship": normalize_sponsorship(job),
         # provenance
         "discovered_via": list(job.get("discovered_via") or ([job.get("source", "")] if job.get("source") else [])),
+        "discovery_queries": dict(job.get("discovery_queries") or {}),
+        "original_resolved": bool(job.get("original_resolved")),
+        "application_url": job.get("application_url", ""),
+        "direct_original_fetched": bool(job.get("direct_original_fetched")),
+        "direct_original_fetched_at": job.get("direct_original_fetched_at", ""),
+        "description": job.get("description", "") if job.get("direct_original_fetched") else "",
         # pipeline status
         "filter_status": job.get("filter_status", "kept"),
         "drop_reason": job.get("drop_reason", ""),
@@ -1882,7 +2011,13 @@ def run() -> None:
             job["drop_reason"] = reason
             drops[reason] += 1
 
-    # 6) Role-family + seniority prefilter (tighten LLM candidate pool)
+    # 7) Resolve exact original postings before the role/JD gate and scoring.
+    coverage_reconcile.annotate_jobs(after_hard, "board")
+    direct_original_attempts = resolve_exposed_originals(after_hard, session, store)
+    for job in after_hard:
+        job["recency_bucket"] = recency_bucket(job, now=now)
+
+    # 8) Role-family + seniority prefilter (tighten LLM candidate pool)
     candidates: List[Dict[str, str]] = []
     for job in after_hard:
         keep, reason = role_seniority_prefilter(job)
@@ -1893,10 +2028,8 @@ def run() -> None:
             job["drop_reason"] = reason
             drops[reason] += 1
 
-    # 7) Strict official reconciliation happens before scoring. Exact matches
-    # are suppressed only for manually validated companies. All records remain
-    # in jobs.json for provenance and audit.
-    coverage_reconcile.annotate_jobs(candidates, "board")
+    # Exact matches are suppressed only for manually validated companies. All
+    # records remain in jobs.json for provenance and audit.
     active_candidates = [j for j in candidates if not j.get("suppress_alert")]
     for job in candidates:
         if job.get("suppress_alert"):
@@ -1966,6 +2099,16 @@ def run() -> None:
     for job in active_candidates:
         recency_dist[job.get("recency_bucket", "gt7d")] += 1
 
+    query_diagnostics = meta.get("local_query_stats") or {}
+    for source, source_stats in query_diagnostics.items():
+        for stat in source_stats:
+            matches = [
+                job for job in deduped
+                if stat.get("query") in (job.get("discovery_queries") or {}).get(source, [])
+            ]
+            stat["original_postings_resolved"] = sum(bool(job.get("official_url")) for job in matches)
+            stat["jds_resolved"] = sum(bool(job.get("official_url") and job.get("description")) for job in matches)
+
     stats = {
         "source_raw": source_raw,
         "funnel": {
@@ -1998,6 +2141,8 @@ def run() -> None:
         "recency": recency_dist,
         "screen_method": screen_method,
         "drops": dict(drops),
+        "query_diagnostics": query_diagnostics,
+        "direct_original_attempts": direct_original_attempts,
     }
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
     (RUNS_DIR / f"{stamp}_stats.json").write_text(

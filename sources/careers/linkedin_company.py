@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 
 from ..schema import make_job, normalize_space
 from .http import http_get, keep_us_or_unknown, now_iso
-from .query_terms import ROLE_SEARCH_QUERIES
+from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 SEARCH = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
 COMPANY_ID = "1337"
@@ -35,9 +35,13 @@ def scrape_linkedin_company(
     seen: set[str] = set()
     jobs: List[Dict[str, str]] = []
     raw_count = pages = 0
+    query_stats: List[Dict[str, Any]] = []
     for query in queries:
+        query_started = time.monotonic()
+        before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
         query_ids: set[str] = set()
-        for page in range(max_pages):
+        budget = query_page_budget(query, max_pages)
+        for page in range(budget):
             params = {
                 "keywords": query,
                 "location": "United States",
@@ -92,6 +96,10 @@ def scrape_linkedin_company(
             if len(cards) < PAGE_SIZE:
                 break
             time.sleep(0.2)
+        query_stats.append(query_diagnostic(
+            query, budget, pages - before_pages, raw_count - before_raw,
+            len(query_ids), jobs[before_jobs:], time.monotonic() - query_started,
+        ))
     return {
         "company": "LinkedIn",
         "source": "linkedin_company_official_careers",
@@ -103,4 +111,5 @@ def scrape_linkedin_company(
         "raw_jobs": raw_count,
         "jobs": jobs,
         "errors": [],
+        "query_diagnostics": query_stats,
     }

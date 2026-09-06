@@ -15,7 +15,7 @@ import requests
 from ..schema import make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
 from .incremental import DetailCache, annotate_detail
-from .query_terms import ROLE_SEARCH_QUERIES
+from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 PAGE_SIZE = 20
 SLEEP_S = 0.25
@@ -81,12 +81,17 @@ def scrape_oracle_hcm(
     errors: List[str] = []
     detail_fetches = 0
     detail_reused = 0
+    query_stats: List[Dict[str, Any]] = []
     detail_cache = detail_cache or DetailCache([])
 
     for query in queries:
+        query_started = time.monotonic()
+        before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
         offset = 0
         query_ids: set[str] = set()
-        query_max_pages = min(max_pages, EXTRA_QUERY_MAX_PAGES if query in extras else max_pages)
+        query_max_pages = query_page_budget(
+            query, min(max_pages, EXTRA_QUERY_MAX_PAGES if query in extras else max_pages)
+        )
         for _page in range(query_max_pages):
             finder = (
                 f"findReqs;siteNumber={site_number},limit={PAGE_SIZE},offset={offset},"
@@ -193,6 +198,10 @@ def scrape_oracle_hcm(
             if total and offset >= total:
                 break
             time.sleep(SLEEP_S)
+        query_stats.append(query_diagnostic(
+            query, query_max_pages, pages - before_pages, raw_count - before_raw,
+            len(query_ids), jobs[before_jobs:], time.monotonic() - query_started,
+        ))
 
     return {
         "company": company,
@@ -207,4 +216,5 @@ def scrape_oracle_hcm(
         "errors": errors,
         "detail_fetches": detail_fetches,
         "detail_cache_reused": detail_reused,
+        "query_diagnostics": query_stats,
     }

@@ -22,7 +22,7 @@ import requests
 from ..schema import SourceUnavailable, make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
 from .incremental import DetailCache, NewestFirstPager, annotate_detail
-from .query_terms import ROLE_SEARCH_QUERIES
+from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 SOURCE = "microsoft_official_careers"
 COMPANY = "Microsoft"
@@ -89,13 +89,17 @@ def scrape_pcsx(
     errors: List[str] = []
     detail_fetches = 0
     detail_reused = 0
+    query_stats: List[Dict[str, Any]] = []
     detail_cache = detail_cache or DetailCache([])
 
     for query in queries:
+        query_started = time.monotonic()
+        before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
+        budget = query_page_budget(query, max_pages)
         pager = NewestFirstPager(detail_cache.seen_ids(COMPANY))
         start = 0
         query_ids: set[str] = set()
-        for _page in range(max_pages):
+        for _page in range(budget):
             params = {
                 "domain": domain,
                 "query": query,
@@ -193,6 +197,10 @@ def scrape_pcsx(
             if total and start >= total:
                 break
             time.sleep(SLEEP_S)
+        query_stats.append(query_diagnostic(
+            query, budget, pages - before_pages, raw_count - before_raw,
+            len(query_ids), jobs[before_jobs:], time.monotonic() - query_started,
+        ))
 
     return {
         "company": company,
@@ -210,6 +218,7 @@ def scrape_pcsx(
         "errors": errors,
         "detail_fetches": detail_fetches,
         "detail_cache_reused": detail_reused,
+        "query_diagnostics": query_stats,
     }
 
 

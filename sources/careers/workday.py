@@ -31,7 +31,7 @@ from .http import (
     now_iso,
 )
 from .incremental import DetailCache, annotate_detail
-from .query_terms import ROLE_SEARCH_QUERIES
+from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 PAGE_SIZE = 20
 SLEEP_S = 0.25
@@ -149,6 +149,7 @@ def scrape_workday(
     detail_fetches = 0
     detail_reused = 0
     detail_prefilter_skipped = 0
+    query_stats: List[Dict[str, Any]] = []
     detail_cache = detail_cache or DetailCache([])
     us_applied: Dict[str, List[str]] = {}
 
@@ -169,9 +170,13 @@ def scrape_workday(
         us_applied = us
 
     for query in queries:
+        query_started = time.monotonic()
+        before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
         offset = 0
         query_ids: set[str] = set()
-        query_max_pages = min(max_pages, QUERY_PAGE_CAPS.get(query, 3 if query in extras else max_pages))
+        query_max_pages = query_page_budget(
+            query, min(max_pages, QUERY_PAGE_CAPS.get(query, 3 if query in extras else max_pages))
+        )
         for _page in range(query_max_pages):
             body = {
                 "appliedFacets": us_applied,
@@ -302,6 +307,10 @@ def scrape_workday(
             if total and offset >= total:
                 break
             time.sleep(SLEEP_S)
+        query_stats.append(query_diagnostic(
+            query, query_max_pages, pages - before_pages, raw_count - before_raw,
+            len(query_ids), jobs[before_jobs:], time.monotonic() - query_started,
+        ))
 
     return {
         "company": company,
@@ -318,4 +327,5 @@ def scrape_workday(
         "detail_fetches": detail_fetches,
         "detail_cache_reused": detail_reused,
         "detail_prefilter_skipped": detail_prefilter_skipped,
+        "query_diagnostics": query_stats,
     }

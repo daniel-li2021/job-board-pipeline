@@ -196,6 +196,13 @@ def write_scrape_outputs(
                 "",
             ]
         )
+        for diagnostic in result.get("query_diagnostics") or []:
+            lines.append(
+                "- Query diagnostic: "
+                + json.dumps(diagnostic, ensure_ascii=False, sort_keys=True)
+            )
+        if result.get("query_diagnostics"):
+            lines.append("")
         samples = [_sample_record(j) for j in jobs[:5]]
         if samples:
             lines.append("Sample normalized records:")
@@ -230,13 +237,18 @@ def write_scrape_outputs(
     return all_jobs
 
 
-def load_raw_jobs() -> List[Dict[str, str]]:
+def load_raw_payload() -> Dict[str, Any]:
     if not RAW_PATH.exists():
-        return []
+        return {}
     try:
         data = json.loads(gzip.decompress(RAW_PATH.read_bytes()))
     except (json.JSONDecodeError, OSError, UnicodeDecodeError):
-        return []
+        return {}
+    return data if isinstance(data, dict) else {"jobs": data}
+
+
+def load_raw_jobs() -> List[Dict[str, str]]:
+    data = load_raw_payload()
     jobs = data.get("jobs") if isinstance(data, dict) else data
     return [j for j in jobs if isinstance(j, dict)] if isinstance(jobs, list) else []
 
@@ -589,6 +601,11 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
     per_company = Counter(j.get("company", "") for j in raw_jobs)
     stats = {
         "source_raw": dict(per_company),
+        "query_diagnostics": {
+            str(company.get("company_id") or company.get("company") or "unknown"): company.get("query_diagnostics")
+            for company in load_raw_payload().get("per_company", [])
+            if isinstance(company, dict) and company.get("query_diagnostics")
+        },
         "funnel": {
             "after_dedup": len(deduped),
             "after_company": len(after_company),

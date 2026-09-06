@@ -23,7 +23,7 @@ import requests
 from ..schema import SourceUnavailable, make_job, normalize_space
 from .http import keep_us_or_unknown, now_iso
 from .incremental import NewestFirstPager
-from .query_terms import ROLE_SEARCH_QUERIES
+from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 SOURCE = "apple_official_careers"
 COMPANY = "Apple"
@@ -140,11 +140,16 @@ def scrape_apple(
     pages = 0
     errors: List[str] = []
     search_urls = [search_url(s, 1) for s in searches]
+    query_stats: List[Dict[str, Any]] = []
 
     for filters in searches:
+        query_started = time.monotonic()
+        before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
+        query = filters.get("search") or filters.get("team") or ""
         pager = NewestFirstPager(seen_job_ids or set())
         query_ids: set[str] = set()
-        for page in range(1, max_pages + 1):
+        budget = query_page_budget(query, max_pages)
+        for page in range(1, budget + 1):
             html = http_get_apple(session, search_url(filters, page))
             pages += 1
             try:
@@ -172,6 +177,10 @@ def scrape_apple(
             if total and page * 20 >= total:
                 break
             time.sleep(SLEEP_S)
+        query_stats.append(query_diagnostic(
+            query, budget, pages - before_pages, raw_count - before_raw,
+            len(query_ids), jobs[before_jobs:], time.monotonic() - query_started,
+        ))
 
     return {
         "company": COMPANY,
@@ -184,6 +193,7 @@ def scrape_apple(
         "raw_jobs": raw_count,
         "jobs": jobs,
         "errors": errors,
+        "query_diagnostics": query_stats,
     }
 
 
