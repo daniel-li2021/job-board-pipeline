@@ -6,6 +6,11 @@ network error, or returns zero rows, it is skipped and its previous
 ``output/sources/<name>.json`` snapshot is left untouched (never overwritten
 with nothing). The other source and the downstream git sync proceed normally.
 
+LinkedIn search remains card-first. Only cheap first-pass survivors that also
+pass the title/seniority prefilter are considered for a bounded, cache-aware
+logged-out detail fetch. Detail blocking never invalidates the search-card
+snapshot; it only stops enrichment for that run.
+
 This is invoked by launchd every 2-3 hours (see scripts/). It does NOT run the
 full board pipeline and does NOT touch jobs.json / latest.md — those are
 GitHub-Actions-owned to avoid local/CI git conflicts.
@@ -26,7 +31,12 @@ from typing import Callable, Dict
 
 import board_pipeline as board
 from sources import glassdoor_local, linkedin_local
-from sources.schema import OUTPUT_DIR, SourceUnavailable, write_source_snapshot
+from sources.schema import (
+    OUTPUT_DIR,
+    SourceUnavailable,
+    read_source_snapshot_payload,
+    write_source_snapshot,
+)
 
 SOURCES: Dict[str, Callable[[], Dict[str, object]]] = {
     "linkedin": linkedin_local.scrape,
@@ -58,32 +68,86 @@ def run_one(name: str) -> Dict[str, object]:
             "elapsed_seconds": round(time.monotonic() - started, 3),
         }
 
-    survivors = []
+    # Stage 1 stays cheap: obvious hard constraints only. This metric is kept
+    # independent of detail enrichment so query diagnostics remain comparable.
+    stage1_survivors = []
     for row in rows:
         keep, _reason = board.hard_filter(row)
         if keep:
-            survivors.append(row)
+            stage1_survivors.append(row)
     for stat in query_stats:
         stat["first_pass_survivors"] = sum(
-            1 for row in survivors
+            1 for row in stage1_survivors
             if stat["query"] in (row.get("discovery_queries") or {}).get(name, [])
         )
+
+    detail_enrichment: Dict[str, object] = {}
+    survivors = stage1_survivors
+    if name == "linkedin" and stage1_survivors:
+        # Only enrich rows whose title/seniority is already plausible. A thin
+        # card failing this gate remains in the source snapshot; we simply do
+        # not spend a detail request on it. Highest rule-fit rows go first when
+        # the request budget is exhausted.
+        detail_candidates = [
+            row for row in stage1_survivors
+            if board.role_seniority_prefilter(row)[0]
+        ]
+        detail_candidates.sort(key=lambda row: (
+            -float(board.rule_match_score(row) or 0),
+            str(row.get("company") or "").lower(),
+            str(row.get("title") or "").lower(),
+        ))
+        previous = read_source_snapshot_payload(name)
+        detail_enrichment = linkedin_local.enrich_details(
+            detail_candidates,
+            previous_jobs=list(previous.get("jobs") or []),
+        )
+
+        # The Board store currently persists rich descriptions behind its
+        # direct-detail persistence marker. Mark LinkedIn detail rows so their
+        # JD/score is not immediately downgraded back to a thin card. Deliberately
+        # leave direct_original_fetched_at empty: the original-posting resolver
+        # must still fetch a real employer URL when application_url is available.
+        for row in detail_candidates:
+            if row.get("linkedin_detail_resolved") and row.get("description"):
+                row["direct_original_fetched"] = True
+
+        # A full JD can reveal a citizenship/clearance restriction that the
+        # search card could not show. Re-run only the hard filter after detail
+        # hydration; role matching remains the Board pipeline's responsibility.
+        survivors = [row for row in stage1_survivors if board.hard_filter(row)[0]]
+        for stat in query_stats:
+            matches = [
+                row for row in survivors
+                if stat["query"] in (row.get("discovery_queries") or {}).get(name, [])
+            ]
+            stat["jds_resolved"] = sum(bool(row.get("description")) for row in matches)
 
     if not survivors:
         print(f"[{name}] SKIP (0 first-pass survivors) -> keeping last good snapshot")
         return {
             "source": name, "status": "skipped_empty", "count": 0,
-            "query_stats": query_stats, "elapsed_seconds": round(time.monotonic() - started, 3),
+            "query_stats": query_stats, "detail_enrichment": detail_enrichment,
+            "elapsed_seconds": round(time.monotonic() - started, 3),
         }
 
     elapsed = round(time.monotonic() - started, 3)
-    path = write_source_snapshot(
-        name, survivors, meta={"scraped_at": stamp, "elapsed_seconds": elapsed, "query_stats": query_stats},
-    )
-    print(f"[{name}] OK {len(survivors)} rows ({elapsed:.1f}s) -> {path}")
+    meta = {"scraped_at": stamp, "elapsed_seconds": elapsed, "query_stats": query_stats}
+    if detail_enrichment:
+        meta["detail_enrichment"] = detail_enrichment
+    path = write_source_snapshot(name, survivors, meta=meta)
+    detail_note = ""
+    if detail_enrichment:
+        detail_note = (
+            f"; detail requests {detail_enrichment.get('requests', 0)}, "
+            f"cache {detail_enrichment.get('cache_reused', 0)}, "
+            f"JDs {detail_enrichment.get('jds_resolved', 0)}"
+        )
+    print(f"[{name}] OK {len(survivors)} rows ({elapsed:.1f}s{detail_note}) -> {path}")
     return {
         "source": name, "status": "ok", "count": len(survivors), "path": str(path),
-        "query_stats": query_stats, "elapsed_seconds": elapsed,
+        "query_stats": query_stats, "detail_enrichment": detail_enrichment,
+        "elapsed_seconds": elapsed,
     }
 
 

@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """LinkedIn guest job-search adapter. LOCAL USE ONLY.
 
-Uses the public, unauthenticated guest endpoint
-``/jobs-guest/jobs/api/seeMoreJobPostings/search`` which returns HTML job
-cards. This is best-effort: on login wall / captcha / 403 / 429 it raises
-``SourceUnavailable`` so the caller keeps the last good snapshot instead of
-overwriting it with nothing.
+Uses the public, unauthenticated guest endpoints for search cards and bounded
+job-detail enrichment. This is best-effort: on login wall / captcha / 403 /
+429 it preserves the card results so the caller can keep the last good
+snapshot behavior without turning a detail-block into a source outage.
 
 Do NOT run this from GitHub Actions (datacenter IPs get blocked fast). It is
 driven locally by launchd via ``local_sources.py``.
@@ -20,7 +19,9 @@ Filters (per plan):
 from __future__ import annotations
 
 import time
+from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, List
+from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 
 import requests
 from bs4 import BeautifulSoup
@@ -34,12 +35,16 @@ from .schema import (
 from .local_search import source_queries, query_stat
 
 GUEST_SEARCH_URL = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
+GUEST_DETAIL_URL = "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{job_id}"
 US_GEO_ID = "103644278"
 DEFAULT_KEYWORDS = [query for _group, query, _budget in source_queries("linkedin")]
 EXPERIENCE_LEVEL_FILTER = "2,3"
 PAGE_SIZE = 10
 REQUEST_TIMEOUT = 25
 POLITE_SLEEP_SECONDS = 1.2
+DETAIL_REQUEST_LIMIT = 60
+DETAIL_CACHE_DAYS = 14
+DETAIL_SLEEP_SECONDS = 0.4
 
 
 def _make_session() -> requests.Session:
@@ -100,6 +105,157 @@ def _parse_cards(html: str) -> List[Dict[str, str]]:
             )
         )
     return rows
+
+
+def _external_apply_url(soup: BeautifulSoup) -> str:
+    """Return an off-site Apply URL only when the guest detail actually exposes one.
+
+    LinkedIn commonly withholds off-site apply destinations when logged out, so
+    absence is expected. Restrict extraction to apply-labelled anchors to avoid
+    accidentally treating the employer's LinkedIn company page as canonical.
+    """
+    for anchor in soup.find_all("a", href=True):
+        label = normalize_space(anchor.get_text(" ")).lower()
+        classes = " ".join(anchor.get("class") or []).lower()
+        if "apply" not in label and "apply" not in classes:
+            continue
+        href = urljoin("https://www.linkedin.com", str(anchor.get("href") or ""))
+        parsed = urlsplit(href)
+        candidate = href
+        if "linkedin." in parsed.netloc.lower():
+            query = parse_qs(parsed.query)
+            redirected = ""
+            for key in ("url", "target", "redirect", "dest"):
+                for value in query.get(key, []):
+                    decoded = unquote(value)
+                    if urlsplit(decoded).scheme in {"http", "https"}:
+                        redirected = decoded
+                        break
+                if redirected:
+                    break
+            candidate = redirected
+        host = urlsplit(candidate).netloc.lower() if candidate else ""
+        if host and "linkedin." not in host:
+            return candidate
+    return ""
+
+
+def _parse_detail(html: str) -> Dict[str, str]:
+    soup = BeautifulSoup(html, "html.parser")
+    description_node = (
+        soup.select_one(".show-more-less-html__markup")
+        or soup.select_one(".description__text")
+        or soup.select_one(".show-more-less-html")
+    )
+    description = normalize_space(description_node.get_text(" ") if description_node else "")
+    return {
+        "description": description,
+        "application_url": _external_apply_url(soup),
+    }
+
+
+def _fresh_cached_detail(previous: Dict[str, Any], row: Dict[str, Any], now: datetime) -> bool:
+    if not previous.get("description"):
+        return False
+    if normalize_space(previous.get("title")) != normalize_space(row.get("title")):
+        return False
+    try:
+        fetched = datetime.fromisoformat(
+            str(previous.get("linkedin_detail_fetched_at") or "").replace("Z", "+00:00")
+        )
+        if fetched.tzinfo is None:
+            fetched = fetched.replace(tzinfo=timezone.utc)
+    except (TypeError, ValueError):
+        return False
+    return now - fetched.astimezone(timezone.utc) <= timedelta(days=DETAIL_CACHE_DAYS)
+
+
+def enrich_details(
+    rows: List[Dict[str, Any]],
+    *,
+    previous_jobs: List[Dict[str, Any]] | None = None,
+    session: requests.Session | None = None,
+    limit: int = DETAIL_REQUEST_LIMIT,
+) -> Dict[str, Any]:
+    """Hydrate a bounded set of LinkedIn rows with the logged-out full JD.
+
+    Previous snapshot details are reused for 14 days when title/job_id are
+    unchanged. A detail-endpoint block stops only enrichment; it does not
+    invalidate already-collected search cards.
+    """
+    session = session or _make_session()
+    now = datetime.now(timezone.utc)
+    previous_by_id = {
+        str(job.get("job_id") or ""): job
+        for job in (previous_jobs or [])
+        if job.get("job_id")
+    }
+    stats: Dict[str, Any] = {
+        "eligible": len(rows),
+        "cache_reused": 0,
+        "requests": 0,
+        "jds_resolved": 0,
+        "external_apply_urls": 0,
+        "failed": 0,
+        "blocked": "",
+        "request_limit": max(0, int(limit)),
+    }
+    pending: List[Dict[str, Any]] = []
+
+    for row in rows:
+        if row.get("description"):
+            stats["jds_resolved"] += 1
+            if row.get("application_url"):
+                stats["external_apply_urls"] += 1
+            continue
+        prior = previous_by_id.get(str(row.get("job_id") or ""))
+        if prior and _fresh_cached_detail(prior, row, now):
+            row["description"] = prior.get("description", "")
+            if prior.get("application_url"):
+                row["application_url"] = prior["application_url"]
+            row["linkedin_detail_fetched_at"] = prior.get("linkedin_detail_fetched_at", "")
+            row["linkedin_detail_resolved"] = True
+            stats["cache_reused"] += 1
+            stats["jds_resolved"] += 1
+            if row.get("application_url"):
+                stats["external_apply_urls"] += 1
+            continue
+        if row.get("job_id"):
+            pending.append(row)
+
+    for row in pending:
+        if stats["requests"] >= stats["request_limit"]:
+            break
+        stats["requests"] += 1
+        try:
+            response = session.get(
+                GUEST_DETAIL_URL.format(job_id=row["job_id"]),
+                timeout=REQUEST_TIMEOUT,
+            )
+        except requests.RequestException:
+            stats["failed"] += 1
+            continue
+        try:
+            _check_blocked(response)
+        except SourceUnavailable as exc:
+            if response.status_code in (401, 403, 429, 999) or response.status_code < 400:
+                stats["blocked"] = str(exc)
+                break
+            stats["failed"] += 1
+            continue
+
+        detail = _parse_detail(response.text)
+        row["linkedin_detail_fetched_at"] = now.isoformat()
+        if detail["description"]:
+            row["description"] = detail["description"]
+            row["linkedin_detail_resolved"] = True
+            stats["jds_resolved"] += 1
+        if detail["application_url"]:
+            row["application_url"] = detail["application_url"]
+            stats["external_apply_urls"] += 1
+        time.sleep(DETAIL_SLEEP_SECONDS)
+
+    return stats
 
 
 def scrape(
