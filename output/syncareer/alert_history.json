@@ -4275,6 +4275,45 @@
           "url": "https://join.cnh.com/job/Data-Engineer-Intern/5637-en_US"
         }
       ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-09-06_1735",
+      "emitted_at": "2026-09-06T17:36:39.066348+00:00",
+      "event_kind": "new_matching",
+      "count": 2,
+      "jobs": [
+        {
+          "canonical_job_key": "id::syncareer::eda01ea42c6a9cbd714bd3f790752972",
+          "job_id": "eda01ea42c6a9cbd714bd3f790752972",
+          "tier": "B",
+          "match_score": 84.0,
+          "fit_score": 84.0,
+          "company": "Amdocs",
+          "title": "Software Engineer - Graduate",
+          "location": "Plano, Texas, United States",
+          "posting_date": "2026-09-05",
+          "first_seen": "2026-09-06T17:35:34.989723+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://jobs.amdocs.com/careers/job/563431014818485",
+          "url": "https://jobs.amdocs.com/careers/job/563431014818485"
+        },
+        {
+          "canonical_job_key": "id::syncareer::e7673ce10f5b44333d305c0f194e8e90",
+          "job_id": "e7673ce10f5b44333d305c0f194e8e90",
+          "tier": "B",
+          "match_score": 72.0,
+          "fit_score": 72.0,
+          "company": "Spirit AeroSystems",
+          "title": "Entry-Level Software Engineer",
+          "location": "Wichita, Kansas, United States",
+          "posting_date": "2026-09-05",
+          "first_seen": "2026-09-06T17:35:34.989723+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://careers.spiritaero.com/jobs/17433?lang=en-us",
+          "url": "https://careers.spiritaero.com/jobs/17433?lang=en-us"
+        }
+      ]
     }
   ]
 }
