@@ -1,0 +1,31 @@
+name: Branch validation
+
+on:
+  push:
+    branches:
+      - fix/linkedin-detail-and-board-search
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: refs/pull/43/merge
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Compile changed Python
+        run: python -m py_compile dashboard.py local_sources.py sources/linkedin_local.py
+      - name: Focused tests
+        run: |
+          python -m unittest discover -s tests -p 'test_linkedin_detail_and_dashboard_search.py' -v
+          python -m unittest discover -s tests -p 'test_matching_incremental.py' -v
+      - name: Render dashboard smoke test
+        run: python dashboard.py --json
