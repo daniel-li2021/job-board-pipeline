@@ -6,6 +6,7 @@
   let archive = {};
   try { archive = JSON.parse(localStorage.getItem(archiveCacheKey) || '{}'); } catch (e) { archive = {}; }
   const archivePending = new Set();
+  let recentSource = 'all';
 
   const persistAppliedArchive = () => {
     try { localStorage.setItem(archiveCacheKey, JSON.stringify(archive)); } catch (e) {}
@@ -153,6 +154,46 @@
     ).join('');
   };
 
+  function ensureLastSevenDaysPanel() {
+    let panel = document.getElementById('lastSevenDaysPanel');
+    if (panel) return panel;
+    const deletedPanel = document.getElementById('deleted')?.closest('.panel');
+    if (!deletedPanel?.parentNode) return null;
+    panel = document.createElement('section');
+    panel.className = 'panel';
+    panel.id = 'lastSevenDaysPanel';
+    panel.innerHTML = '<h2>Last 7 Days</h2><p>Jobs discovered in the last seven days from Big Company Official and Syncareer. Discovery time is based on when the pipeline first found the job, not the employer posting date.</p><div id="lastSevenDaysTabs" class="tabs"></div><div id="lastSevenDays"></div>';
+    deletedPanel.parentNode.insertBefore(panel, deletedPanel);
+    panel.querySelector('#lastSevenDaysTabs').onclick = event => {
+      const button = event.target.closest('[data-recent-source]');
+      if (!button) return;
+      recentSource = button.dataset.recentSource || 'all';
+      renderLastSevenDays(uniqueRows());
+    };
+    return panel;
+  }
+
+  function renderLastSevenDays(rows = uniqueRows()) {
+    const panel = ensureLastSevenDaysPanel();
+    if (!panel) return;
+    const sourceChoices = [
+      ['all', 'All'],
+      ['official', 'Big Company Official'],
+      ['syncareer', 'Syncareer'],
+    ];
+    panel.querySelector('#lastSevenDaysTabs').innerHTML = sourceChoices.map(([key, label]) =>
+      `<button class="tab ${recentSource === key ? 'on' : ''}" type="button" data-recent-source="${key}">${label}</button>`
+    ).join('');
+    const recent = searchedRows(rows.filter(row => {
+      if (!['official', 'syncareer'].includes(row?.pipeline)) return false;
+      if (recentSource !== 'all' && row.pipeline !== recentSource) return false;
+      if (isDeleted(row) || isCompanyHidden(row)) return false;
+      const age = row?.freshness?.discovered?.age_hours;
+      return Number.isFinite(age) && age <= 168;
+    }));
+    renderBox('lastSevenDays', recent);
+  }
+
   // Archive metadata before the source row can age out of its 7-day store.
   setStatus = function(key, value) {
     if (!statusChoices.includes(value)) return;
@@ -180,6 +221,7 @@
     renderBox('referrals', normalRows(D.referrals));
     renderBox('inProgress', searchedRows(rows.filter(r => statusOf(r) === 'in_progress' && !isDeleted(r))));
     renderBox('applied', searchedRows(rows.filter(r => statusOf(r) === 'applied_complete')));
+    renderLastSevenDays(rows);
     const box = document.getElementById('deleted');
     box.innerHTML = jobs(rows.filter(isDeleted), true);
     bindStatus(box);
