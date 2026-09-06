@@ -9,6 +9,7 @@ on:
       - "source/official_careers.json"
       - "source/target_companies.json"
       - "dashboard.py"
+      - "dashboard_applied_history.js"
       - "coverage_reconcile.py"
   workflow_run:
     workflows: ["Official careers", "Board job alert", "Syncareer job alert"]
@@ -55,6 +56,22 @@ jobs:
         run: |
           python3 coverage_reconcile.py
           python3 dashboard.py --json
+
+      - name: Add dashboard runtime extension
+        run: |
+          cp dashboard_applied_history.js public/dashboard_applied_history.js
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path("public/index.html")
+          html = path.read_text(encoding="utf-8")
+          marker = "</body></html>"
+          script = '<script src="dashboard_applied_history.js"></script>'
+          if script not in html:
+              if marker not in html:
+                  raise SystemExit("dashboard closing marker not found")
+              html = html.replace(marker, script + marker, 1)
+          path.write_text(html, encoding="utf-8")
+          PY
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
