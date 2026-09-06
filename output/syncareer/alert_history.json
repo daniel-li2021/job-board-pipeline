@@ -4171,6 +4171,110 @@
           "url": "https://jobs.lever.co/zoox/dafe2927-74bf-4bef-8df0-cb0874595819"
         }
       ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-09-06_0426",
+      "emitted_at": "2026-09-06T04:27:45.510162+00:00",
+      "event_kind": "new_matching",
+      "count": 6,
+      "jobs": [
+        {
+          "canonical_job_key": "id::syncareer::4ffdb9fff30e59fe1bb2526e48b73de1",
+          "job_id": "4ffdb9fff30e59fe1bb2526e48b73de1",
+          "tier": "A",
+          "match_score": 93.0,
+          "fit_score": 93.0,
+          "company": "Rivian",
+          "title": "Software Engineer, Cloud & Software FinOps",
+          "location": "Atlanta, Georgia, United States",
+          "posting_date": "2026-09-04",
+          "first_seen": "2026-09-06T04:26:30.499418+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://careers.rivian.com/careers-home/jobs/33476?lang=en-us&previousLocale=en-US",
+          "url": "https://careers.rivian.com/careers-home/jobs/33476?lang=en-us&previousLocale=en-US"
+        },
+        {
+          "canonical_job_key": "id::syncareer::209663414d880bf5abe35974eba66a25",
+          "job_id": "209663414d880bf5abe35974eba66a25",
+          "tier": "A",
+          "match_score": 91.0,
+          "fit_score": 91.0,
+          "company": "PayPal",
+          "title": "Software Engineer - Recent Graduate",
+          "location": "San Jose, California, United States",
+          "posting_date": "2026-09-05",
+          "first_seen": "2026-09-06T04:26:30.499418+00:00",
+          "target_company_match": "PayPal",
+          "review_status": "unreviewed",
+          "job_url": "https://paypal.eightfold.ai/careers/job/274921995088?domain=paypal.com&triggerGoButton=false",
+          "url": "https://paypal.eightfold.ai/careers/job/274921995088?domain=paypal.com&triggerGoButton=false"
+        },
+        {
+          "canonical_job_key": "id::syncareer::109208a1487faef5f40167ac5d205282",
+          "job_id": "109208a1487faef5f40167ac5d205282",
+          "tier": "A",
+          "match_score": 91.0,
+          "fit_score": 91.0,
+          "company": "PayPal",
+          "title": "Machine Learning Engineer",
+          "location": "San Jose, California, United States",
+          "posting_date": "2026-09-05",
+          "first_seen": "2026-09-06T04:26:30.499418+00:00",
+          "target_company_match": "PayPal",
+          "review_status": "unreviewed",
+          "job_url": "https://paypal.eightfold.ai/careers/job/274922260564?domain=paypal.com&triggerGoButton=false",
+          "url": "https://paypal.eightfold.ai/careers/job/274922260564?domain=paypal.com&triggerGoButton=false"
+        },
+        {
+          "canonical_job_key": "id::syncareer::bde7b26c9b5ffbe749fda819398039d4",
+          "job_id": "bde7b26c9b5ffbe749fda819398039d4",
+          "tier": "A",
+          "match_score": 88.0,
+          "fit_score": 88.0,
+          "company": "Paylocity",
+          "title": "Associate Engineer Software",
+          "location": "Rochester, New York, United States",
+          "posting_date": "2026-09-04",
+          "first_seen": "2026-09-06T04:26:30.499418+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://www.paylocity.com/company/careers/all-listings.job.47607/",
+          "url": "https://www.paylocity.com/company/careers/all-listings.job.47607/"
+        },
+        {
+          "canonical_job_key": "id::syncareer::0926ceb17cb69aa6ddb7ddd64e24a183",
+          "job_id": "0926ceb17cb69aa6ddb7ddd64e24a183",
+          "tier": "B",
+          "match_score": 84.0,
+          "fit_score": 84.0,
+          "company": "Yext",
+          "title": "Software Engineer",
+          "location": "New York, NY; New York, NY, United States",
+          "posted_date": "2026-09-04",
+          "posting_date": "2026-09-04",
+          "date_confidence": "high",
+          "first_seen": "2026-09-06T04:26:30.499418+00:00",
+          "review_status": "unreviewed",
+          "official_url": "https://job-boards.greenhouse.io/yext/jobs/8174875",
+          "job_url": "https://job-boards.greenhouse.io/yext/jobs/8174875",
+          "url": "https://job-boards.greenhouse.io/yext/jobs/8174875"
+        },
+        {
+          "canonical_job_key": "id::syncareer::8899897d76ea150d761a797c68dd129b",
+          "job_id": "8899897d76ea150d761a797c68dd129b",
+          "tier": "B",
+          "match_score": 84.0,
+          "fit_score": 84.0,
+          "company": "CNH Industrial",
+          "title": "Data Engineer Intern",
+          "location": "Tempe, Arizona, United States",
+          "posting_date": "2026-09-05",
+          "first_seen": "2026-09-06T04:26:30.499418+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://join.cnh.com/job/Data-Engineer-Intern/5637-en_US",
+          "url": "https://join.cnh.com/job/Data-Engineer-Intern/5637-en_US"
+        }
+      ]
     }
   ]
 }
