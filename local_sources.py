@@ -103,6 +103,15 @@ def run_one(name: str) -> Dict[str, object]:
             previous_jobs=list(previous.get("jobs") or []),
         )
 
+        # The Board store currently persists rich descriptions behind its
+        # direct-detail persistence marker. Mark LinkedIn detail rows so their
+        # JD/score is not immediately downgraded back to a thin card. Deliberately
+        # leave direct_original_fetched_at empty: the original-posting resolver
+        # must still fetch a real employer URL when application_url is available.
+        for row in detail_candidates:
+            if row.get("linkedin_detail_resolved") and row.get("description"):
+                row["direct_original_fetched"] = True
+
         # A full JD can reveal a citizenship/clearance restriction that the
         # search card could not show. Re-run only the hard filter after detail
         # hydration; role matching remains the Board pipeline's responsibility.
