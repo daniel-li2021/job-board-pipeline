@@ -1820,16 +1820,22 @@ def _raw_source_counts(raw_jobs: List[Dict[str, str]]) -> Dict[str, int]:
 
 
 def _local_coverage_key(job: Dict[str, Any]) -> str:
-    """Exact cross-source identity without source-specific aggregator IDs."""
+    """Diagnostic identity: employer URL first, then complete normalized metadata."""
+    for field in ("official_url", "application_url"):
+        raw_url = str(job.get(field) or "").strip()
+        try:
+            parts = urlsplit(raw_url)
+            if parts.scheme.lower() not in ("http", "https") or not parts.hostname:
+                continue
+        except ValueError:
+            continue
+        if not is_aggregator_url(raw_url):
+            return f"url::{normalize_job_url(raw_url)}"
     company = normalize_company_key(str(job.get("company") or ""))
     title = normalize_title_key(str(job.get("title") or ""))
     location = normalize_location_key(str(job.get("location") or ""))
     if company and title and location:
         return f"ctl::{company}::{title}::{location}"
-    for field in ("official_url", "application_url"):
-        url = normalize_job_url(str(job.get(field) or ""))
-        if url and not is_aggregator_url(url):
-            return f"url::{url}"
     return ""
 
 

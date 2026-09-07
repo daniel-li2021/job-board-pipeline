@@ -22,6 +22,8 @@ Optimize for focused, token-efficient changes and keep Git state easy to reason 
 - If a temporary task branch/worktree was used, integrate the validated commit into the latest `main`, push `main`, verify the remote commit, then remove the temporary local/remote task branch and worktree when no longer needed.
 - Start with the responsible file above, then inspect only files required by the task.
 - Use targeted searches and line ranges; do not repeatedly reread whole files.
+- Batch related edits into coherent implementation passes; reuse prior CodeGraph source and call-path understanding until relevant code changes.
+- Validate once per meaningful change set with targeted checks. Repeat reads/tests only for new changes, failures, or unresolved evidence; use bounded live probes only when offline checks cannot verify the requested result.
 - Reuse existing output data, scores, tiers, caches, and snapshots.
 - Dashboard-only changes must not rerun crawlers, pipelines, or LLM scoring.
 - Do not modify scoring/ranking unless explicitly requested.

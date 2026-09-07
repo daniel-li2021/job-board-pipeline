@@ -1,0 +1,219 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Pacific-time GitHub workflow dispatch with shared Lambda and failure queue.
+Parameters:
+  GitHubTokenSecretArn:
+    Type: String
+    Description: Existing Secrets Manager secret containing a repository-scoped token as plain text (Actions write).
+    AllowedPattern: 'arn:aws:secretsmanager:.*'
+  Repository:
+    Type: String
+    Default: daniel-li2021/job-board-pipeline
+    AllowedPattern: '[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+'
+  ScheduleState:
+    Type: String
+    Default: DISABLED
+    AllowedValues: [DISABLED, ENABLED]
+    Description: Enable only after one-time Scheduler probes pass and GitHub cron is removed.
+Resources:
+  ScheduleGroup:
+    Type: AWS::Scheduler::ScheduleGroup
+  Failures:
+    Type: AWS::SQS::Queue
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      SqsManagedSseEnabled: true
+      MessageRetentionPeriod: 1209600
+  DispatchRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: {Service: lambda.amazonaws.com}
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: dispatch
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: secretsmanager:GetSecretValue
+                Resource: !Ref GitHubTokenSecretArn
+              - Effect: Allow
+                Action: sqs:SendMessage
+                Resource: !GetAtt Failures.Arn
+              - Effect: Allow
+                Action: [logs:CreateLogStream, logs:PutLogEvents]
+                Resource: !Sub arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/${AWS::StackName}-dispatch:*
+  Dispatcher:
+    Type: AWS::Lambda::Function
+    DependsOn: DispatchLogs
+    Properties:
+      FunctionName: !Sub ${AWS::StackName}-dispatch
+      Runtime: python3.12
+      Handler: index.handler
+      Role: !GetAtt DispatchRole.Arn
+      Timeout: 30
+      MemorySize: 128
+      Environment:
+        Variables:
+          TOKEN_SECRET_ARN: !Ref GitHubTokenSecretArn
+          REPOSITORY: !Ref Repository
+      Code:
+        ZipFile: |
+          import json
+          import os
+          import urllib.error
+          import urllib.request
+          import boto3
+          from botocore.config import Config
+
+          secrets = boto3.client("secretsmanager", config=Config(
+              connect_timeout=3, read_timeout=5,
+              retries={"total_max_attempts": 2, "mode": "standard"}))
+          WORKFLOWS = {"board-jobs.yml", "daily-jobs.yml", "official-careers.yml", "reconcile-pages.yml"}
+
+          def handler(event, context):
+              workflow = event.get("workflow")
+              if workflow not in WORKFLOWS:
+                  raise ValueError("Workflow is not allowed")
+              probe = event.get("probe_id", "")
+              if not isinstance(probe, str) or len(probe) > 100:
+                  raise ValueError("Invalid probe_id")
+              if probe and workflow == "reconcile-pages.yml":
+                  raise ValueError("Pages verification runs the real lightweight workflow")
+              token = secrets.get_secret_value(SecretId=os.environ["TOKEN_SECRET_ARN"])["SecretString"].strip()
+              body = {"ref": "main"}
+              if probe:
+                  body["inputs"] = {"scheduler_probe": probe}
+              request = urllib.request.Request(
+                  f'https://api.github.com/repos/{os.environ["REPOSITORY"]}/actions/workflows/{workflow}/dispatches',
+                  data=json.dumps(body).encode(), method="POST", headers={
+                      "Authorization": f"Bearer {token}",
+                      "Accept": "application/vnd.github+json",
+                      "X-GitHub-Api-Version": "2022-11-28",
+                      "Content-Type": "application/json",
+                      "User-Agent": "job-board-scheduler"})
+              # Lambda asynchronous retries handle failures; do not swallow non-2xx responses.
+              # ponytail: dispatch is at-least-once; add durable receipts if duplicate runs become costly.
+              try:
+                  with urllib.request.urlopen(request, timeout=10) as response:
+                      if response.status != 204:
+                          raise RuntimeError(f"Unexpected GitHub status {response.status}")
+              except urllib.error.HTTPError as error:
+                  raise RuntimeError(f"GitHub dispatch failed: HTTP {error.code}") from None
+              receipt = {"workflow": workflow, "probe_id": probe, "status": 204,
+                         "request_id": context.aws_request_id,
+                         "scheduled_time": event.get("scheduled_time", "")}
+              print(json.dumps(receipt))
+              return receipt
+  DispatchLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${AWS::StackName}-dispatch
+      RetentionInDays: 14
+  AsyncRetries:
+    Type: AWS::Lambda::EventInvokeConfig
+    Properties:
+      FunctionName: !Ref Dispatcher
+      Qualifier: '$LATEST'
+      MaximumEventAgeInSeconds: 900
+      MaximumRetryAttempts: 2
+      DestinationConfig:
+        OnFailure:
+          Destination: !GetAtt Failures.Arn
+  SchedulerRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: {Service: scheduler.amazonaws.com}
+            Action: sts:AssumeRole
+            Condition:
+              StringEquals:
+                aws:SourceAccount: !Ref AWS::AccountId
+                aws:SourceArn: !GetAtt ScheduleGroup.Arn
+      Policies:
+        - PolicyName: invoke-dispatcher
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: lambda:InvokeFunction
+                Resource: !GetAtt Dispatcher.Arn
+              - Effect: Allow
+                Action: sqs:SendMessage
+                Resource: !GetAtt Failures.Arn
+  BoardSchedule:
+    Type: AWS::Scheduler::Schedule
+    Properties:
+      GroupName: !Ref ScheduleGroup
+      State: !Ref ScheduleState
+      ScheduleExpression: cron(0 8,17 * * ? *)
+      ScheduleExpressionTimezone: America/Los_Angeles
+      FlexibleTimeWindow: {Mode: 'OFF'}
+      Target:
+        Arn: !GetAtt Dispatcher.Arn
+        RoleArn: !GetAtt SchedulerRole.Arn
+        Input: '{"workflow":"board-jobs.yml","scheduled_time":"<aws.scheduler.scheduled-time>"}'
+        RetryPolicy: {MaximumEventAgeInSeconds: 900, MaximumRetryAttempts: 3}
+        DeadLetterConfig: {Arn: !GetAtt Failures.Arn}
+  SyncareerSchedule:
+    Type: AWS::Scheduler::Schedule
+    Properties:
+      GroupName: !Ref ScheduleGroup
+      State: !Ref ScheduleState
+      ScheduleExpression: cron(10 8,17 * * ? *)
+      ScheduleExpressionTimezone: America/Los_Angeles
+      FlexibleTimeWindow: {Mode: 'OFF'}
+      Target:
+        Arn: !GetAtt Dispatcher.Arn
+        RoleArn: !GetAtt SchedulerRole.Arn
+        Input: '{"workflow":"daily-jobs.yml","scheduled_time":"<aws.scheduler.scheduled-time>"}'
+        RetryPolicy: {MaximumEventAgeInSeconds: 900, MaximumRetryAttempts: 3}
+        DeadLetterConfig: {Arn: !GetAtt Failures.Arn}
+  OfficialSchedule:
+    Type: AWS::Scheduler::Schedule
+    Properties:
+      GroupName: !Ref ScheduleGroup
+      State: !Ref ScheduleState
+      ScheduleExpression: cron(20 8,17 * * ? *)
+      ScheduleExpressionTimezone: America/Los_Angeles
+      FlexibleTimeWindow: {Mode: 'OFF'}
+      Target:
+        Arn: !GetAtt Dispatcher.Arn
+        RoleArn: !GetAtt SchedulerRole.Arn
+        Input: '{"workflow":"official-careers.yml","scheduled_time":"<aws.scheduler.scheduled-time>"}'
+        RetryPolicy: {MaximumEventAgeInSeconds: 900, MaximumRetryAttempts: 3}
+        DeadLetterConfig: {Arn: !GetAtt Failures.Arn}
+  PagesSchedule:
+    Type: AWS::Scheduler::Schedule
+    Properties:
+      GroupName: !Ref ScheduleGroup
+      State: !Ref ScheduleState
+      ScheduleExpression: cron(30 9,21 * * ? *)
+      ScheduleExpressionTimezone: America/Los_Angeles
+      FlexibleTimeWindow: {Mode: 'OFF'}
+      Target:
+        Arn: !GetAtt Dispatcher.Arn
+        RoleArn: !GetAtt SchedulerRole.Arn
+        Input: '{"workflow":"reconcile-pages.yml","scheduled_time":"<aws.scheduler.scheduled-time>"}'
+        RetryPolicy: {MaximumEventAgeInSeconds: 900, MaximumRetryAttempts: 3}
+        DeadLetterConfig: {Arn: !GetAtt Failures.Arn}
+Outputs:
+  FunctionArn:
+    Description: Shared dispatch Lambda
+    Value: !GetAtt Dispatcher.Arn
+  ScheduleGroupName:
+    Description: Group for recurring schedules and temporary verification probes
+    Value: !Ref ScheduleGroup
+  SchedulerRoleArn:
+    Description: Execution role for schedules in this group
+    Value: !GetAtt SchedulerRole.Arn
+  FailureQueueUrl:
+    Description: Inspect delivery and execution failures here
+    Value: !Ref Failures

@@ -3,6 +3,8 @@ name: Official careers
 # Independent Big Company Official pipeline. `--only uber` (and similar)
 # remains available through workflow_dispatch for adapter diagnostics.
 
+run-name: ${{ inputs.scheduler_probe && format('Scheduler probe {0}', inputs.scheduler_probe) || github.workflow }}
+
 on:
   schedule:
     - cron: "30 8 * * *"
@@ -11,6 +13,10 @@ on:
       timezone: "America/Los_Angeles"
   workflow_dispatch:
     inputs:
+      scheduler_probe:
+        description: "Verification receipt only; skip crawling, scoring, and alerts"
+        type: string
+        default: ""
       only:
         description: "Optional company id (google, amazon, apple, microsoft, nvidia, uber, …)"
         required: false
@@ -29,7 +35,16 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  scheduler-probe:
+    if: ${{ inputs.scheduler_probe != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Record external scheduler receipt
+        env:
+          PROBE_ID: ${{ inputs.scheduler_probe }}
+        run: printf 'Scheduler probe %s received\n' "$PROBE_ID"
   official-careers:
+    if: ${{ !inputs.scheduler_probe }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

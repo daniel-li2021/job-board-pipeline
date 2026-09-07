@@ -108,6 +108,12 @@ Reconcile + Pages also runs after successful completion of any of the three disc
 
 Each discovery workflow is independently runnable with `workflow_dispatch`.
 
+The [external scheduler](infra/scheduler/README.md) is prepared for Board **8:00 AM /
+5:00 PM**, Syncareer **8:10 AM / 5:10 PM**, and Official **8:20 AM / 5:20 PM** Pacific.
+It is not yet deployed or verified; the GitHub schedules above remain active until
+Scheduler-to-GitHub probes pass and cutover is completed. The optional
+`scheduler_probe` dispatch input verifies trigger receipt without crawling or scoring.
+
 ## Alerts and outputs
 
 Each pipeline keeps its own state and output directory. A failure in one pipeline does not block the others.

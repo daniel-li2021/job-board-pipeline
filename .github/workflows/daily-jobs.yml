@@ -2,12 +2,18 @@ name: Syncareer job alert
 
 # Writes only under output/syncareer/. Never touches output/board/.
 
+run-name: ${{ inputs.scheduler_probe && format('Scheduler probe {0}', inputs.scheduler_probe) || github.workflow }}
+
 on:
   schedule:
     - cron: "10 8,17 * * *"
       timezone: "America/Los_Angeles"
   workflow_dispatch:
     inputs:
+      scheduler_probe:
+        description: "Verification receipt only; skip crawling, scoring, and alerts"
+        type: string
+        default: ""
       time_window:
         description: "Syncareer time window"
         default: "last3days"
@@ -23,7 +29,16 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  scheduler-probe:
+    if: ${{ inputs.scheduler_probe != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Record external scheduler receipt
+        env:
+          PROBE_ID: ${{ inputs.scheduler_probe }}
+        run: printf 'Scheduler probe %s received\n' "$PROBE_ID"
   scrape-and-alert:
+    if: ${{ !inputs.scheduler_probe }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

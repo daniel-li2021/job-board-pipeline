@@ -5,11 +5,18 @@ name: Board job alert
 # Runs independently from Official and Syncareer. Local job-board
 # snapshot pushes still trigger a board-only ingest without an extra digest.
 
+run-name: ${{ inputs.scheduler_probe && format('Scheduler probe {0}', inputs.scheduler_probe) || github.workflow }}
+
 on:
   schedule:
     - cron: "7 8,17 * * *"
       timezone: "America/Los_Angeles"
   workflow_dispatch:
+    inputs:
+      scheduler_probe:
+        description: "Verification receipt only; skip crawling, scoring, and alerts"
+        type: string
+        default: ""
   push:
     paths:
       - "output/sources/linkedin.json"
@@ -25,7 +32,16 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  scheduler-probe:
+    if: ${{ inputs.scheduler_probe != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Record external scheduler receipt
+        env:
+          PROBE_ID: ${{ inputs.scheduler_probe }}
+        run: printf 'Scheduler probe %s received\n' "$PROBE_ID"
   board-scrape-and-alert:
+    if: ${{ !inputs.scheduler_probe }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

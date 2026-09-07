@@ -594,6 +594,26 @@ class CoverageMatchingTests(unittest.TestCase):
         self.assertEqual(1, report["sources"]["indeed"]["unique_contribution"])
         self.assertEqual(1, report["queries"]["indeed"]["ai engineer"]["cross_source_unique"])
 
+    def test_overlap_prefers_employer_url_and_falls_back_only_without_one(self) -> None:
+        common = {"company": "Example", "title": "Engineer", "location": "Austin, TX"}
+        linkedin = dict(common, source="linkedin", official_url="https://jobs.example.com/123?utm_source=linkedin")
+        indeed = dict(source="indeed", company="Different", title="Different", location="Remote",
+                      official_url="https://indeed.com/viewjob?jk=1",
+                      application_url="https://jobs.example.com/123")
+        for job in (linkedin, indeed):
+            job["discovery_queries"] = {job["source"]: ["engineer"]}
+        report = board_pipeline.local_source_coverage([linkedin, indeed])
+        self.assertEqual(1, report["overlap"])
+        self.assertEqual(1, report["queries"]["indeed"]["engineer"]["cross_source_overlap"])
+        other_url = dict(common, source="indeed", official_url="https://jobs.example.com/456")
+        self.assertEqual(0, board_pipeline.local_source_coverage([linkedin, other_url])["overlap"])
+        for unusable in ("", "not a URL", "/jobs/123", "https://[broken", "mailto:jobs@example.com", "https://www.linkedin.com/jobs/123"):
+            with self.subTest(url=unusable):
+                fallback = dict(common, source="linkedin", official_url=unusable)
+                no_url = dict(common, source="indeed")
+                self.assertEqual(1, board_pipeline.local_source_coverage([fallback, no_url])["overlap"])
+                self.assertEqual(0, board_pipeline.local_source_coverage([linkedin, no_url])["overlap"])
+
     def test_hard_filtered_senior_role_is_out_of_scope_but_relevant_low_score_is_in(self) -> None:
         senior = {
             "job_id": "1", "company": "Example Tech", "title": "Principal Product Manager",
