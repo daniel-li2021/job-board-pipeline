@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-09-06 23:00 PDT
-- Snapshot (UTC): 2026-09-07T06:00:44.442959+00:00
-- Jobs: 23 (Tier A/B only)
-- Last 24 hours: 23
-- Last 3 days: 23
+- Updated (PT): 2026-09-07 02:03 PDT
+- Snapshot (UTC): 2026-09-07T09:03:32.663080+00:00
+- Jobs: 24 (Tier A/B only)
+- Last 24 hours: 24
+- Last 3 days: 24
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -12,7 +12,7 @@ The 7-day dump is `latest.md`.
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | B | 75 | linkedin | Meta | Software Engineer - Backend Infrastructure, Standalone Apps Team | Menlo Park, CA | 2026-09-06 | newly_discovered | Meta | unreviewed | covered_unvalidated | [open](https://www.metacareers.com/jobs/1323055223318859) |
-| B | 75 | linkedin | CoreWeave | Software Engineer II, Developer Experience | New York, NY | 2026-09-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-developer-experience-at-coreweave-4461829393) |
+| B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | St Louis, MO | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464063346) |
 | B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Atlanta, GA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464063354) |
 | B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Nashville, TN | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464064360) |
 | B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Richmond, VA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464064365) |
@@ -29,6 +29,7 @@ The 7-day dump is `latest.md`.
 | B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Cincinnati, OH | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464076353) |
 | B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | McLean, VA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464078332) |
 | B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Tempe, AZ | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464080308) |
+| B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Houston, TX | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464081330) |
 | B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Morristown, NJ | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464083354) |
 | B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Columbus, OH | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464085347) |
 | B | 75 | linkedin | Deloitte | Software Engineer III - Full-stack Developer with Anthropic Experience | Nashville, TN | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-iii-full-stack-developer-with-anthropic-experience-at-deloitte-4464077314) |
