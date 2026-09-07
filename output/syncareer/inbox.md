@@ -1,22 +1,21 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-09-06 21:26 PDT
-- Snapshot (UTC): 2026-09-07T04:26:06.054003+00:00
-- Jobs: 39
-- Last 24 hours: 9
-- Last 3 days: 39
+- Updated (PT): 2026-09-07 08:11 PDT
+- Snapshot (UTC): 2026-09-07T15:11:30.016156+00:00
+- Jobs: 32
+- Last 24 hours: 3
+- Last 3 days: 32
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| B | 76.0 | Syncareer | Applied Materials | Software QA Engineer | Santa Clara, California, United States | 2026-09-05 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.appliedmaterials.com/careers/job/790318275183?domain=appliedmaterials.com&hl=en&triggerGoButton=true) |
 | B | 84.0 | Syncareer | Amdocs | Software Engineer - Graduate | Plano, Texas, United States | 2026-09-05 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.amdocs.com/careers/job/563431014818485) |
 | B | 72.0 | Syncareer | Spirit AeroSystems | Entry-Level Software Engineer | Wichita, Kansas, United States | 2026-09-05 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.spiritaero.com/jobs/17433?lang=en-us) |
 | B | 84.0 | Syncareer | CNH Industrial | Data Engineer Intern | Tempe, Arizona, United States | 2026-09-05 | Sponsor | - | unreviewed | not_dedicated | [open](https://join.cnh.com/job/Data-Engineer-Intern/5637-en_US) |
-| B | 76.0 | Syncareer | Applied Materials | Software QA Engineer | Santa Clara, California, United States | 2026-09-05 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.appliedmaterials.com/careers/job/790318275183?domain=appliedmaterials.com&hl=en&triggerGoButton=true) |
 | A | 88.0 | Syncareer | Paylocity | Associate Engineer Software | Rochester, New York, United States | 2026-09-04 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.paylocity.com/company/careers/all-listings.job.47607/) |
 | A | 93.0 | Syncareer | Rivian | Software Engineer, Cloud & Software FinOps | Atlanta, Georgia, United States | 2026-09-04 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.rivian.com/careers-home/jobs/33476?lang=en-us&previousLocale=en-US) |
-| B | 84.0 | Syncareer | Yext | Software Engineer | New York, NY; New York, NY, United States | 2026-09-04 | Sponsor | - | unreviewed | covered_unvalidated | [open](https://job-boards.greenhouse.io/yext/jobs/8174875) |
 | B | 78.0 | Syncareer | Appian | Software Engineer II | McLean, Virginia, United States | 2026-09-04 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.appian.com/jobs/8178208-software-engineer) |
 | B | 73.0 | Syncareer | Zoox | Contract Student Worker - Autonomy Safety Data Engineer | Foster City, California, United States | 2026-09-04 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/zoox/dafe2927-74bf-4bef-8df0-cb0874595819) |
 | B | 76.0 | Syncareer | GlobalFoundries | Software Engineer, Cloud Platform (2027 New College Graduate) | Santa Clara, California, United States | 2026-09-04 | Sponsor | - | unreviewed | not_dedicated | [open](https://globalfoundries.wd1.myworkdayjobs.com/en-US/External/job/USA---California---Santa-Clara/Software-Engineer--Cloud-Platform--2027-New-College-Graduate-_JR-2604056) |
@@ -38,14 +37,8 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 84.0 | Syncareer | IBM | Site Reliability Engineering Professional Intern - Austin, TX - 2027 | Austin, Texas, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=131810&source=WEB_Search_NA) |
 | A | 88.0 | Syncareer | IBM | Entry level Backend Developer - San Jose, CA - 2027 | San Jose, California, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=131805&source=WEB_Search_NA) |
 | B | 84.0 | Syncareer | IBM | Front End Software Developer | Tucson, Arizona, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=129264&source=WEB_Search_NA) |
-| B | 75.0 | Syncareer | GitLab | Intermediate Backend Engineer, AMER | Remote, Canada; Remote, United States | 2026-09-03 | Sponsor | - | unreviewed | covered_unvalidated | [open](https://job-boards.greenhouse.io/gitlab/jobs/8773006002) |
 | A | 91.0 | Syncareer | PayPal | Software Engineer - Recent Graduate | San Jose, California, United States of America; Chicago, Illinois, United States of America; Austin, Texas, United States of America | 2026-09-05 | Sponsor | YES (PayPal) | unreviewed | covered_unvalidated | [open](https://paypal.eightfold.ai/careers/job/274921995088?domain=paypal.com&triggerGoButton=false) |
 | A | 91.0 | Syncareer | PayPal | Machine Learning Engineer | San Jose, California, United States of America; Austin, Texas, United States of America | 2026-09-05 | Sponsor | YES (PayPal) | unreviewed | covered_unvalidated | [open](https://paypal.eightfold.ai/careers/job/274922260564?domain=paypal.com&triggerGoButton=false) |
 | B | 82.0 | Syncareer | Tesla | Data Engineer, Battery Manufacturing Development | Austin, Texas, United States | 2026-09-04 | Sponsor | YES (Tesla) | unreviewed | official_unsupported | [open](https://www.tesla.com/careers/search/job/282146) |
 | B | 86.0 | Syncareer | Tesla | Software Validation Engineer, Opticaster | Palo Alto, California, United States | 2026-09-04 | Sponsor | YES (Tesla) | unreviewed | official_unsupported | [open](https://www.tesla.com/careers/search/job/282304) |
 | B | 84.0 | Syncareer | Tesla | Software Engineer, Agentic AI Fleet Management | Austin, Texas, United States | 2026-09-04 | Sponsor | YES (Tesla) | unreviewed | official_unsupported | [open](https://www.tesla.com/careers/search/job/281729) |
-| B | 75.0 | Syncareer | Google | Software Engineer III, AI/ML GenAI, Google Cloud Compute Infrastructur | Sunnyvale, CA, USA | 2026-09-04 | Sponsor | YES (Google) | unreviewed | covered_unvalidated | [open](https://www.google.com/about/careers/applications/jobs/results/115026433880793798-software-engineer-iii-aiml-genai-google-cloud-compute-infrastructure) |
-| B | 80.0 | Syncareer | Google | Software Engineer III, AI/ML, Enterprise Engineering, Core | San Jose, CA, USA | 2026-09-04 | Sponsor | YES (Google) | unreviewed | covered_unvalidated | [open](https://www.google.com/about/careers/applications/jobs/results/77938669725328070-software-engineer-iii-aiml-enterprise-engineering-core) |
-| B | 76.0 | Syncareer | Google | Software Engineer III, AI/ML GenAI, YouTube | Mountain View, CA, USA | 2026-09-04 | Sponsor | YES (Google) | unreviewed | covered_unvalidated | [open](https://www.google.com/about/careers/applications/jobs/results/78100641531994822-software-engineer-iii-aiml-genai-youtube) |
-| A | 90.0 | Syncareer | Oracle | Core Infrastructure Engineer 1 | Nashville, TN, United States | 2026-09-03 | Sponsor | YES (Oracle) | unreviewed | covered_unvalidated | [open](https://careers.oracle.com/en/sites/jobsearch/job/344360/?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000149325%253B300000000106863) |
-| A | 90.0 | Syncareer | Oracle | Software Developer 1 | Nashville, TN, United States | 2026-09-03 | Sponsor | YES (Oracle) | unreviewed | covered_unvalidated | [open](https://careers.oracle.com/en/sites/jobsearch/job/344446/?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000149325%253B300000000106863) |
