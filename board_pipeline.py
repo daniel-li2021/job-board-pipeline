@@ -84,14 +84,12 @@ RETENTION_DAYS = 7
 INBOX_DAYS = 3
 TARGET_COMPANIES_JSON = BASE_DIR / "config" / "target_companies.json"
 
-# Profile inputs drive matching. Fallback to legacy config/*.txt if missing.
+# Required profile inputs drive matching.
 PROFILE_DIR = BASE_DIR / "profile"
 CANDIDATE_PROFILE_PATH = PROFILE_DIR / "candidate_profile.md"
 RESUME_SWE_PATH = PROFILE_DIR / "resume_swe.md"
 RESUME_AI_PATH = PROFILE_DIR / "resume_ai.md"
 COMPANY_FILTERS_PATH = PROFILE_DIR / "company_filters.json"
-LEGACY_SWE_RESUME_PATH = BASE_DIR / "config" / "swe-resume.txt"
-LEGACY_AI_RESUME_PATH = BASE_DIR / "config" / "aie-resume.txt"
 
 # Bump whenever the LLM prompt schema/policy changes; invalidates cached scores.
 PROMPT_VERSION = "v4-routed-resume-calibrated-context"
@@ -725,21 +723,18 @@ def hard_filter(job: Dict[str, str]) -> Tuple[bool, str]:
 # --------------------------------------------------------------------------
 # Profiles (candidate policy + routed resumes) + role-family detection
 # --------------------------------------------------------------------------
-def _read_first(*paths: Path) -> str:
-    for p in paths:
-        if p.exists():
-            try:
-                return p.read_text(encoding="utf-8")
-            except OSError:
-                continue
-    return ""
+def _read_profile(path: Path) -> str:
+    text = path.read_text(encoding="utf-8")
+    if not text.strip():
+        raise ValueError(f"Required matching profile is empty: {path}")
+    return text
 
 
 def load_profiles() -> Dict[str, Any]:
     """Load candidate profile + routed resumes and a fingerprint for caching."""
-    candidate = _read_first(CANDIDATE_PROFILE_PATH)
-    swe = _read_first(RESUME_SWE_PATH, LEGACY_SWE_RESUME_PATH)
-    ai = _read_first(RESUME_AI_PATH, LEGACY_AI_RESUME_PATH)
+    candidate = _read_profile(CANDIDATE_PROFILE_PATH)
+    swe = _read_profile(RESUME_SWE_PATH)
+    ai = _read_profile(RESUME_AI_PATH)
     import hashlib
 
     def h(text: str) -> str:

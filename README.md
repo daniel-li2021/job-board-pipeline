@@ -145,3 +145,5 @@ Current regression suites live under `tests/`:
 - `test_matching_incremental.py`
 - `test_official_careers_adapters.py`
 - `test_visibility.py`
+
+Matching requires the nonempty tracked files `profile/candidate_profile.md`, `profile/resume_swe.md`, and `profile/resume_ai.md`. Missing or blank inputs stop scoring; there is no legacy resume fallback. Cleanup checkpoints and remaining review work are recorded in [CLEANUP_PROGRESS.md](CLEANUP_PROGRESS.md).

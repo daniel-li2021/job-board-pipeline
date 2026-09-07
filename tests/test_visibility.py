@@ -59,6 +59,31 @@ def context(status: str = "unvalidated", snapshot: datetime | None = None) -> di
     }
 
 
+class MatchingProfileTests(unittest.TestCase):
+    def test_required_profiles_preserve_text_and_invalidate_cache_on_change(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir, ExitStack() as stack:
+            paths = []
+            for name in ("CANDIDATE_PROFILE_PATH", "RESUME_SWE_PATH", "RESUME_AI_PATH"):
+                path = Path(tmpdir) / name
+                path.write_text(f"{name}\n", encoding="utf-8")
+                paths.append(path)
+                stack.enter_context(patch.object(board_pipeline, name, path))
+            before = board_pipeline.load_profiles()
+            self.assertEqual("RESUME_SWE_PATH\n", before["resume_swe"])
+            for path in paths:
+                original = path.read_text(encoding="utf-8")
+                path.write_text(original + "updated", encoding="utf-8")
+                self.assertNotEqual(before["fingerprint"], board_pipeline.load_profiles()["fingerprint"])
+                path.write_text(" \n", encoding="utf-8")
+                with self.assertRaises(ValueError):
+                    board_pipeline.load_profiles()
+                path.unlink()
+                with self.assertRaises(FileNotFoundError):
+                    board_pipeline.load_profiles()
+                path.write_text(original, encoding="utf-8")
+            self.assertEqual(before, board_pipeline.load_profiles())
+
+
 class ReferralAliasTests(unittest.TestCase):
     def test_single_alias_file_is_consistent_across_pipelines(self) -> None:
         targets = load_alias_file(ROOT / "config" / "target_companies.json")
