@@ -157,7 +157,7 @@ TIER_FIELDS = [
 
 
 # --------------------------------------------------------------------------
-# Shared utilities (self-contained; mirrors syncareer_deep_scrape.py)
+# Syncareer payload parsing and normalization
 # --------------------------------------------------------------------------
 def load_env_file(path: Path) -> None:
     if not path.exists():

@@ -44,7 +44,7 @@ import requests
 import alert_history
 import coverage_reconcile
 import llm_config
-from sources import ats, official
+from sources import ats
 from sources.careers.incremental import DETAIL_STALE_DAYS
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
 from sources.schema import (

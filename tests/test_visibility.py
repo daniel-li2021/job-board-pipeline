@@ -7,7 +7,7 @@ import unittest
 from contextlib import ExitStack
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 from urllib.parse import urlsplit
 
 import board_pipeline
@@ -640,13 +640,17 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         self.assertEqual({"example"}, context["scraped_company_ids"])
 
     def test_board_does_not_collect_legacy_official_source(self) -> None:
+        session = Mock()
+        session.get.side_effect = AssertionError("unexpected direct collection")
+        session.post.side_effect = AssertionError("unexpected direct collection")
         ats_result = {"jobs": [make_job(source="greenhouse", company="SmallCo", title="Software Engineer I")], "per_board": {}, "errors": []}
         with patch.object(board_pipeline.ats, "fetch_all_ats", return_value=ats_result), patch.object(
             board_pipeline, "read_source_snapshot_payload", return_value={"jobs": [], "meta": {}}
         ):
-            jobs, _meta = board_pipeline.collect_sources(object(), skip_network=False)
+            jobs, meta = board_pipeline.collect_sources(session, skip_network=False)
         self.assertEqual(["greenhouse"], [job["source"] for job in jobs])
-        self.assertNotIn("sources.official", (ROOT / "board_pipeline.py").read_text(encoding="utf-8"))
+        self.assertEqual([], meta["errors"])
+        self.assertEqual([], session.mock_calls)
 
     def test_linkedin_search_covers_entry_and_associate_levels(self) -> None:
         self.assertEqual("2,3", linkedin_local.EXPERIENCE_LEVEL_FILTER)
