@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Local source sync: scrape LinkedIn + Glassdoor, then commit/push ONLY the
+# Local source sync: scrape local job boards, then commit/push ONLY the
 # source snapshots if they changed. Intended to be driven by launchd every
 # 2-3 hours (see scripts/macos/). Safe to run manually for testing.
 #
@@ -11,7 +11,7 @@
 #   - Never edits git config; relies on existing SSH / gh credentials.
 #
 # Env:
-#   PYTHON_BIN   python interpreter (default: python3)
+#   PYTHON_BIN   interpreter with requirements-local.txt installed (default: python3)
 #   TARGET_BRANCH remote branch to update (default: main)
 #   SKIP_SCRAPE=1 sync the last good snapshots without scraping again
 #   SKIP_PUSH=1  verify the remote-main diff but do not commit or push
@@ -49,20 +49,10 @@ if [ -f "$REPO_DIR/.env" ]; then
   done < "$REPO_DIR/.env"
 fi
 
-echo "[$STAMP] scraping local sources..."
-if [ "${SKIP_SCRAPE:-0}" = "1" ]; then
-  echo "[$STAMP] SKIP_SCRAPE=1 set; using the last good snapshots."
-else
-  "$PYTHON_BIN" local_sources.py
-  SCRAPE_RC=$?
-  if [ $SCRAPE_RC -ne 0 ]; then
-    echo "[$STAMP] scrape exited $SCRAPE_RC (continuing to git step; snapshots preserved)"
-  fi
-fi
-
 if [ "${NO_GIT:-0}" = "1" ]; then
-  echo "[$STAMP] NO_GIT=1 set; skipping git sync."
-  exit 0
+  echo "[$STAMP] NO_GIT=1 set; scraping the current checkout without git sync."
+  [ "${SKIP_SCRAPE:-0}" = "1" ] || "$PYTHON_BIN" local_sources.py
+  exit $?
 fi
 
 if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
@@ -70,10 +60,9 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   exit 0
 fi
 
-# Never commit from the developer's current branch. The repo may be on a
-# feature branch (or dirty), which previously left main's LinkedIn snapshot
-# stale while launchd misleadingly reported success. Build the source-only
-# commit in a temporary detached worktree based on origin/main instead.
+# Fetch before scraping, then run the collector inside an isolated worktree.
+# This makes the code version that produced an artifact identical to its
+# recorded collector commit even when this long-lived checkout is stale/dirty.
 TARGET_BRANCH="${TARGET_BRANCH:-main}"
 if ! git fetch origin "$TARGET_BRANCH"; then
   echo "[$STAMP] fetch failed; snapshots remain local and will retry next run."
@@ -93,16 +82,24 @@ if ! git worktree add --detach "$SYNC_TREE" "origin/$TARGET_BRANCH" >/dev/null; 
   exit 1
 fi
 
-mkdir -p "$SYNC_TREE/output/sources"
-for source_name in linkedin glassdoor; do
-  source_path="$REPO_DIR/output/sources/${source_name}.json"
-  if [ -f "$source_path" ]; then
-    cp "$source_path" "$SYNC_TREE/output/sources/${source_name}.json"
+COLLECTOR_COMMIT="$(git -C "$SYNC_TREE" rev-parse HEAD)"
+echo "[$STAMP] collector commit: $COLLECTOR_COMMIT"
+if [ "${SKIP_SCRAPE:-0}" = "1" ]; then
+  echo "[$STAMP] SKIP_SCRAPE=1 set; using snapshots already on origin/$TARGET_BRANCH."
+else
+  (
+    cd "$SYNC_TREE" || exit 1
+    COLLECTOR_COMMIT="$COLLECTOR_COMMIT" COLLECTOR_DIRTY=0 "$PYTHON_BIN" local_sources.py
+  )
+  SCRAPE_RC=$?
+  if [ $SCRAPE_RC -ne 0 ]; then
+    echo "[$STAMP] collector exited $SCRAPE_RC; snapshots remain unchanged."
+    exit $SCRAPE_RC
   fi
-done
+fi
 
 staged_any=0
-for source_name in linkedin glassdoor; do
+for source_name in linkedin indeed glassdoor health; do
   relative_path="output/sources/${source_name}.json"
   if [ -f "$SYNC_TREE/$relative_path" ]; then
     git -C "$SYNC_TREE" add "$relative_path" || {
@@ -136,12 +133,15 @@ if git -C "$SYNC_TREE" push origin "HEAD:${TARGET_BRANCH}"; then
   exit 0
 fi
 
-# One bounded race retry if another Action committed to main meanwhile.
-echo "[$STAMP] main advanced during sync; rebasing once and retrying."
+# Re-scrape once if main advanced. Rebasing would publish artifacts produced by
+# old code alongside newer code, recreating the provenance bug.
 git -C "$SYNC_TREE" fetch origin "$TARGET_BRANCH" || exit 1
-git -C "$SYNC_TREE" rebase "origin/$TARGET_BRANCH" || exit 1
-git -C "$SYNC_TREE" push origin "HEAD:${TARGET_BRANCH}" || {
-  echo "[$STAMP] push retry failed; local snapshot is preserved for the next run."
-  exit 1
-}
-echo "[$STAMP] pushed after rebase. GitHub Actions will ingest the updated sources."
+LATEST_TARGET="$(git -C "$SYNC_TREE" rev-parse "origin/$TARGET_BRANCH")"
+if [ "$LATEST_TARGET" != "$COLLECTOR_COMMIT" ] && [ "${LOCAL_SOURCE_RETRY:-0}" != "1" ]; then
+  echo "[$STAMP] main advanced during collection; restarting once on $LATEST_TARGET."
+  cleanup_sync_tree
+  trap - EXIT
+  LOCAL_SOURCE_RETRY=1 exec "$0"
+fi
+echo "[$STAMP] push failed; snapshots remain on origin/$TARGET_BRANCH and will retry next run."
+exit 1

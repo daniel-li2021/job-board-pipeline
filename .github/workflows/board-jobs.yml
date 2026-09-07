@@ -1,8 +1,8 @@
 name: Board job alert
 
 # Complementary discovery pipeline (Greenhouse/Lever/Ashby + ingested local
-# LinkedIn/Glassdoor snapshots). Big Company Official runs separately.
-# Runs independently from Official and Syncareer. Local LinkedIn/Glassdoor
+# LinkedIn/Indeed/Glassdoor snapshots). Big Company Official runs separately.
+# Runs independently from Official and Syncareer. Local job-board
 # snapshot pushes still trigger a board-only ingest without an extra digest.
 
 on:
@@ -14,6 +14,7 @@ on:
     paths:
       - "output/sources/linkedin.json"
       - "output/sources/glassdoor.json"
+      - "output/sources/indeed.json"
 
 permissions:
   contents: write

@@ -8,7 +8,7 @@ Flow:
 
 Sources:
   - ATS (Greenhouse/Lever/Ashby)         -> sources.ats
-  - Local snapshots (LinkedIn/Glassdoor)  -> output/sources/*.json (ingested)
+  - Local snapshots (LinkedIn/broad boards) -> output/sources/*.json (ingested)
 
 Big-company official discovery is intentionally owned by
 ``official_careers.py`` and is not fetched again here.
@@ -117,7 +117,7 @@ RULE_EXCEPTIONAL_FOR_LLM = 72.0
 # Seniority-fit labels that count as realistic for an early-career candidate.
 STRONG_SENIORITY_FITS = {"good", "strong", "realistic", "early_career"}
 
-LOCAL_SOURCES = ["linkedin", "glassdoor"]
+LOCAL_SOURCES = ["linkedin", "indeed", "glassdoor"]
 DIRECT_ORIGINAL_LIMIT = 20
 
 USER_AGENT = (
@@ -392,7 +392,7 @@ def collect_sources(session: requests.Session, skip_network: bool = False) -> Tu
 def canonical_rank(job: Dict[str, str]) -> Tuple[int, int, int, int]:
     """Lower is more canonical. Encodes source positioning from the plan:
 
-    official career page > greenhouse|lever|ashby > linkedin > glassdoor,
+    official career page > greenhouse|lever|ashby > linkedin > other aggregators,
     preferring records that already carry an official_url. Ties broken by
     date confidence then description richness.
     """
@@ -403,7 +403,7 @@ def canonical_rank(job: Dict[str, str]) -> Tuple[int, int, int, int]:
         base = 1
     elif "linkedin" in src:
         base = 3
-    elif "glassdoor" in src:
+    elif any(name in src for name in LOCAL_SOURCES):
         base = 4
     else:
         base = 2
@@ -685,7 +685,7 @@ YOE_RE = re.compile(r"\b(\d{1,2})\+?\s*(?:years|yrs)\b", re.IGNORECASE)
 
 
 def is_thin_local_discovery(job: Dict[str, str]) -> bool:
-    """True for low-information LinkedIn/Glassdoor cards without a usable JD."""
+    """True for low-information local aggregator cards without a usable JD."""
     source = str(job.get("source") or "").lower()
     return any(name in source for name in LOCAL_SOURCES) and len(
         str(job.get("description") or "").strip()
@@ -1593,8 +1593,9 @@ def _stats_lines(stats: Dict[str, Any]) -> List[str]:
     lines = [
         "## Run stats",
         "",
-        f"- Source raw: ATS {src['ats']} / LinkedIn {src['linkedin']} / "
-        f"Glassdoor {src['glassdoor']} (Big Company Official runs separately)",
+        "- Source raw: ATS " + str(src["ats"]) + " / " + " / ".join(
+            f"{name.title()} {src.get(name, 0)}" for name in LOCAL_SOURCES
+        ) + " (Big Company Official runs separately)",
         f"- Funnel: after dedup {fn['after_dedup']} -> after company filter {fn['after_company']} "
         f"-> after hard filter {fn['after_hard_filter']} "
         f"-> after role+seniority prefilter {fn['after_prefilter']} | dropped {fn['dropped']}",
@@ -1782,15 +1783,12 @@ def write_alert(new_ab: List[Dict[str, str]], stamp: str) -> Dict[str, Path]:
 # Main
 # --------------------------------------------------------------------------
 def _raw_source_counts(raw_jobs: List[Dict[str, str]]) -> Dict[str, int]:
-    counts = {"ats": 0, "linkedin": 0, "glassdoor": 0}
+    counts = {"ats": 0, **{name: 0 for name in LOCAL_SOURCES}}
     for job in raw_jobs:
         src = (job.get("source") or "").lower()
-        if "linkedin" in src:
-            counts["linkedin"] += 1
-        elif "glassdoor" in src:
-            counts["glassdoor"] += 1
-        elif any(a in src for a in ("greenhouse", "lever", "ashby")):
-            counts["ats"] += 1
+        local = next((name for name in LOCAL_SOURCES if name in src), "")
+        if local:
+            counts[local] += 1
         else:
             counts["ats"] += 1
     return counts
@@ -1918,7 +1916,7 @@ def refresh_retained_entry_policy(
 def run() -> None:
     parser = argparse.ArgumentParser(description="Multi-source job board pipeline")
     parser.add_argument("--no-llm", action="store_true", help="Force rule-based scoring (local debug)")
-    parser.add_argument("--skip-network", action="store_true", help="Ingest local LinkedIn/Glassdoor snapshots only (no ATS fetch)")
+    parser.add_argument("--skip-network", action="store_true", help="Ingest local job-board snapshots only (no ATS fetch)")
     parser.add_argument("--local-out", action="store_true", help="Write to output/board-local/ (gitignored) for local testing")
     parser.add_argument("--no-digest", action="store_true", help="Update store/latest.md without a user-facing digest")
     parser.add_argument("--force-digest", action="store_true", help="Emit a digest even if one already went out today")
@@ -2194,8 +2192,9 @@ def run() -> None:
     })
 
     # Console summary
-    print(f"Source raw: ATS {source_raw['ats']} / LinkedIn {source_raw['linkedin']} / "
-          f"Glassdoor {source_raw['glassdoor']} (Big Company Official separate)")
+    print("Source raw: ATS " + str(source_raw["ats"]) + " / " + " / ".join(
+        f"{name.title()} {source_raw.get(name, 0)}" for name in LOCAL_SOURCES
+    ) + " (Big Company Official separate)")
     print(f"Funnel: dedup {len(deduped)} -> company {len(after_company)} -> hard {len(after_hard)} "
           f"-> prefilter {len(candidates)} | dropped {sum(drops.values())}")
     print(f"LLM usage: scored {score_counts['llm']} / API requests {score_counts.get('api_requests', 0)} "

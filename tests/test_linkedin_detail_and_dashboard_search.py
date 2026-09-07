@@ -96,6 +96,11 @@ class DashboardSearchTests(unittest.TestCase):
         self.assertIn("searchedRows(normalRows", dashboard.HTML_TEMPLATE)
         self.assertNotIn("activeMainView='fresh';searchQuery", dashboard.HTML_TEMPLATE)
 
+    def test_multi_location_display_keeps_each_job_state_and_url(self) -> None:
+        self.assertIn("function displayRows(rows)", dashboard.HTML_TEMPLATE)
+        self.assertIn("individual links and states preserved", dashboard.HTML_TEMPLATE)
+        self.assertIn('data-key="${esc(r.canonical_job_key)}"', dashboard.HTML_TEMPLATE)
+
 
 if __name__ == "__main__":
     unittest.main()

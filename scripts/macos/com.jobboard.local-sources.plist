@@ -6,6 +6,9 @@
   installing. launchd requires absolute paths.
 
   Install:
+    cd /Users/daniel/Projects/job_scrape_feasibility-automation
+    python3 -m venv .venv
+    .venv/bin/python -m pip install -r requirements-local.txt
     cp scripts/macos/com.jobboard.local-sources.plist ~/Library/LaunchAgents/
     launchctl load  ~/Library/LaunchAgents/com.jobboard.local-sources.plist
   Uninstall:
@@ -43,7 +46,7 @@
         <key>PATH</key>
         <string>/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
         <key>PYTHON_BIN</key>
-        <string>/usr/local/bin/python3</string>
+        <string>/Users/daniel/Projects/job_scrape_feasibility-automation/.venv/bin/python3</string>
     </dict>
 
     <key>StartInterval</key>

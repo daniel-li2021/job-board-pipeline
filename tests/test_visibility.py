@@ -19,7 +19,7 @@ import review_state
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
 from sources.schema import combined_cache_key_from_hash, dedup_key, make_job, normalize_job_url, normalize_location_key
 from sources.schema import classify_location_bucket
-from sources import glassdoor_local, linkedin_local, local_search
+from sources import linkedin_local, local_search
 from sources.careers.query_terms import ROLE_SEARCH_QUERIES
 from sources.careers.workday import _detail_location
 
@@ -339,8 +339,8 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertIn("<summary>Hidden companies", dashboard.HTML_TEMPLATE)
         self.assertIn("Show again", dashboard.HTML_TEMPLATE)
         self.assertIn("allRows.filter(r=>!isPreferenceKey(r.canonical_job_key))", dashboard.HTML_TEMPLATE)
-        self.assertIn("renderBox('inProgress',rows.filter(r=>statusOf(r)==='in_progress'&&!isDeleted(r)))", dashboard.HTML_TEMPLATE)
-        self.assertIn("renderBox('applied',rows.filter(r=>statusOf(r)==='applied_complete'&&!isDeleted(r)))", dashboard.HTML_TEMPLATE)
+        self.assertIn("renderBox('inProgress',searchedRows(rows.filter(r=>statusOf(r)==='in_progress'&&!isDeleted(r))))", dashboard.HTML_TEMPLATE)
+        self.assertIn("renderBox('applied',searchedRows(rows.filter(r=>statusOf(r)==='applied_complete'&&!isDeleted(r))))", dashboard.HTML_TEMPLATE)
 
 
 class MatchingPolicyTests(unittest.TestCase):
@@ -621,7 +621,8 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         self.assertIn("associate software engineer", terms)
         self.assertIn("forward deployed engineer", terms)
         self.assertEqual({"primary": 25, "secondary": 8, "specialty": 4}, local_search.SOURCE_PAGE_BUDGETS["linkedin"])
-        self.assertEqual({"primary": 10, "secondary": 4, "specialty": 2}, local_search.SOURCE_PAGE_BUDGETS["glassdoor"])
+        for source in ("indeed", "glassdoor"):
+            self.assertEqual({"primary": 1, "secondary": 1, "specialty": 1}, local_search.SOURCE_PAGE_BUDGETS[source])
         self.assertNotIn("Applied Scientist", daily_pipeline.SEARCH_KEYWORDS)
 
     def test_original_hydration_keeps_aggregator_date_auditable(self) -> None:
@@ -641,22 +642,6 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         self.assertEqual("2026-09-03", card["updated_date"])
         self.assertEqual(original["official_url"], card["official_url"])
         self.assertEqual(original["description"], card["description"])
-
-    def test_glassdoor_block_and_unverified_pagination_are_diagnostic(self) -> None:
-        class Response:
-            def __init__(self, status_code: int, text: str = "") -> None:
-                self.status_code, self.text = status_code, text
-
-        blocked = type("Session", (), {"get": lambda self, *args, **kwargs: Response(403)})()
-        result = glassdoor_local.scrape(session=blocked, keywords=["software engineer"])
-        self.assertEqual("blocked", result["status"])
-        self.assertEqual("blocked_http_403", result["query_stats"][0]["stop_reason"])
-
-        html = '''<div data-test="jobListing"><a data-test="job-title" href="/job.htm?jl=42">Software Engineer</a><span data-test="emp-location">Austin, TX</span></div>'''
-        repeated = type("Session", (), {"get": lambda self, *args, **kwargs: Response(200, html)})()
-        result = glassdoor_local.scrape(session=repeated, keywords=["software engineer"])
-        self.assertEqual("pagination_unverified", result["status"])
-        self.assertEqual("pagination_unverified", result["query_stats"][0]["stop_reason"])
 
     def test_relevant_engineering_titles_survive_positive_family_gate(self) -> None:
         for title in (

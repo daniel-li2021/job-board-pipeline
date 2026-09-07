@@ -5,7 +5,7 @@ Three independent job-discovery pipelines feed one public dashboard and share th
 | Pipeline | Script | Main inbox |
 |---|---|---|
 | **Syncareer** | `daily_pipeline.py` | [`output/syncareer/inbox.md`](output/syncareer/inbox.md) |
-| **ATS / LinkedIn / Glassdoor** | `board_pipeline.py` | [`output/board/inbox.md`](output/board/inbox.md) |
+| **ATS / broad job boards** | `board_pipeline.py` | [`output/board/inbox.md`](output/board/inbox.md) |
 | **Official Careers** | `official_careers.py` | [`output/official_careers/inbox.md`](output/official_careers/inbox.md) |
 
 Each inbox is the rolling **last 3 days** of actionable jobs. `latest.md` is the wider 7-day view.
@@ -24,12 +24,12 @@ python3 daily_pipeline.py --alert --time last3days
 
 Outputs live under `output/syncareer/`.
 
-### 2. ATS / LinkedIn / Glassdoor
+### 2. ATS / broad job boards
 
 `board_pipeline.py` combines:
 
 - public ATS boards such as Greenhouse / Lever / Ashby;
-- locally collected LinkedIn and Glassdoor snapshots;
+- locally collected LinkedIn, Indeed, and Glassdoor snapshots;
 - cross-source deduplication and official-link verification.
 
 ```bash
@@ -38,7 +38,7 @@ python3 board_pipeline.py --local-out --no-llm
 python3 board_pipeline.py --skip-network
 ```
 
-GitHub runners do **not** scrape LinkedIn/Glassdoor directly. The Mac launchd job runs `local_sources.py` through `scripts/local_source_sync.sh` roughly every 3 hours and pushes only `output/sources/*.json`.
+GitHub runners do **not** scrape these consumer job boards directly. Install local dependencies with `python3 -m pip install -r requirements-local.txt`; the Mac launchd job then runs `local_sources.py` through `scripts/local_source_sync.sh` roughly every 3 hours and pushes only `output/sources/*.json`. Each successful snapshot records its collector commit, while [`output/sources/health.json`](output/sources/health.json) records every source's last attempt, last success, last-good count, and failure reason.
 
 Outputs live under `output/board/`.
 

@@ -19,6 +19,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = BASE_DIR / "output"
 SOURCES_DIR = OUTPUT_DIR / "sources"
+SNAPSHOT_SCHEMA_VERSION = 1
 
 # Unified record fields. Adapters must fill these (missing -> "").
 JOB_FIELDS = [
@@ -578,12 +579,15 @@ def write_source_snapshot(name: str, jobs: List[Dict[str, str]], meta: Optional[
     path = SOURCES_DIR / f"{name}.json"
     ordered = sorted(jobs, key=lambda j: (j.get("company", ""), j.get("title", ""), j.get("job_id", "")))
     payload = {
+        "schema_version": SNAPSHOT_SCHEMA_VERSION,
         "source": name,
         "count": len(ordered),
         "meta": meta or {},
         "jobs": ordered,
     }
-    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    pending = path.with_suffix(".json.tmp")
+    pending.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    pending.replace(path)
     return path
 
 
@@ -594,13 +598,14 @@ def read_source_snapshot(name: str) -> List[Dict[str, str]]:
 def read_source_snapshot_payload(name: str) -> Dict[str, Any]:
     path = SOURCES_DIR / f"{name}.json"
     if not path.exists():
-        return {"jobs": [], "meta": {}}
+        return {"schema_version": 0, "jobs": [], "meta": {}}
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError):
-        return {"jobs": [], "meta": {}}
+        return {"schema_version": 0, "jobs": [], "meta": {}}
     jobs = data.get("jobs") if isinstance(data, dict) else data
     return {
+        "schema_version": data.get("schema_version", 0) if isinstance(data, dict) else 0,
         "jobs": [j for j in jobs if isinstance(j, dict)] if isinstance(jobs, list) else [],
         "meta": data.get("meta", {}) if isinstance(data, dict) and isinstance(data.get("meta"), dict) else {},
     }
