@@ -1,37 +1,42 @@
-# Big Tech official careers — 7-day view — 2026-09-07_0447
+# Big Tech official careers — 7-day view — 2026-09-07_1525
 
-- Updated (PT): 2026-09-06 21:49 PDT
-- Snapshot (UTC): 2026-09-07T04:49:17.879725+00:00
-- Last 24 hours: 0
-- Last 3 days: 0
+- Updated (PT): 2026-09-07 08:27 PDT
+- Snapshot (UTC): 2026-09-07T15:27:45.322079+00:00
+- Last 24 hours: 3
+- Last 3 days: 3
 
 Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scoring/ranking.
 
 ## Run stats
 
-- Scraped companies: {'Walmart Global Tech': 310, 'Microsoft': 153, 'NVIDIA': 599, 'Salesforce': 267, 'Adobe': 286, 'TikTok': 622, 'ServiceNow': 362, 'Bloomberg': 71, 'JPMorgan Chase': 423, 'Capital One': 288, 'Oracle': 480, 'Cisco': 24, 'SAP': 172, 'HPE': 272, 'Disney': 125, 'Qualcomm': 128, 'ByteDance': 445, 'Dell': 78, 'Intel': 206, 'Morgan Stanley': 116, 'Red Hat': 36, 'Workday': 131, 'CVS Health': 122, 'Wells Fargo': 91, 'Ansys': 32, 'Flex': 237, 'Johnson & Johnson': 204, 'Nasdaq': 26, 'Stryker': 128, 'Verizon': 18, 'Google': 150, 'Amazon': 504, 'Apple': 138, 'Meta': 544, 'Uber': 146, 'DoorDash': 454, 'Snap': 96, 'Pinterest': 145, 'Snowflake': 281, 'Cloudflare': 328, 'Stripe': 359, 'Coinbase': 155, 'Robinhood': 120, 'Figma': 97, 'GitLab': 126, 'Discord': 48, 'Asana': 88, 'Brex': 277, 'Samsara': 210, 'Lyft': 103, 'Spotify': 58, 'Ramp': 128, 'Notion': 78, 'Linear': 27, 'Cohere': 121, 'eBay': 54, 'AMD': 456, 'Zoom': 41, 'Pure Storage': 197, 'Databricks': 477, 'Roblox': 210, 'Airbnb': 93, 'Anthropic': 474, 'AppLovin': 26, 'Chime': 65, 'Dropbox': 34, 'Expedia Group': 55, 'HubSpot': 40, 'Instacart': 97, 'MathWorks': 35, 'MongoDB': 260, 'NetApp': 89, 'Netflix': 61, 'OpenAI': 652, 'Palantir': 242, 'PayPal': 32, 'Reddit': 131, 'Roku': 191, 'Block / Square': 189, 'Two Sigma': 32, 'Verkada': 233, 'Visa': 107, 'WeRide': 13, 'Zillow': 36, 'Zscaler': 239, 'Chewy': 2, 'Duolingo': 77, 'Equinix': 30, 'F5': 1, 'IXL Learning': 100, 'Yahoo': 58, 'IQVIA': 37, 'PointClickCare': 79, 'TransUnion': 29, 'Travelers': 98, 'Yext': 11}
-- Funnel: after dedup 16572 -> after company filter 16572 -> after hard filter 13958 -> after role+seniority prefilter 2517 | dropped 14055
-- LLM usage: scored 1 / API requests 1 / cache reused 1159 (cross-pipeline 0) / rule fallback 1357
-- LLM cost: model gpt-5.6-terra / API requests 1 / jobs scored 1 / tokens input 3462 (cached 0) / output 225 (reasoning 51) / estimated cost $0.0096
-- Output: Tier A 8 / Tier B 62 / shown 70
+- Scraped companies: {'Walmart Global Tech': 310, 'Microsoft': 154, 'NVIDIA': 600, 'Salesforce': 267, 'Adobe': 286, 'ServiceNow': 364, 'Bloomberg': 71, 'JPMorgan Chase': 424, 'Capital One': 288, 'Oracle': 482, 'Cisco': 25, 'SAP': 172, 'HPE': 272, 'Qualcomm': 133, 'Dell': 79, 'Intel': 207, 'Morgan Stanley': 118, 'Red Hat': 36, 'Workday': 131, 'CVS Health': 122, 'Wells Fargo': 91, 'Ansys': 32, 'Flex': 237, 'Johnson & Johnson': 206, 'Nasdaq': 26, 'Stryker': 128, 'Verizon': 18, 'Google': 174, 'Amazon': 653, 'Meta': 544, 'TikTok': 625, 'Disney': 125, 'ByteDance': 445, 'Expedia Group': 57, 'NetApp': 89, 'Apple': 138, 'Uber': 146, 'DoorDash': 454, 'Snap': 96, 'Pinterest': 145, 'Snowflake': 279, 'Cloudflare': 331, 'Stripe': 358, 'Coinbase': 155, 'Robinhood': 120, 'Figma': 97, 'GitLab': 126, 'Discord': 48, 'Asana': 88, 'Brex': 277, 'Samsara': 210, 'Lyft': 103, 'Spotify': 58, 'Ramp': 128, 'Notion': 78, 'Linear': 27, 'Cohere': 121, 'eBay': 54, 'AMD': 456, 'Zoom': 41, 'Pure Storage': 197, 'Databricks': 477, 'Roblox': 210, 'Airbnb': 93, 'Anthropic': 475, 'AppLovin': 26, 'Chime': 65, 'Dropbox': 35, 'HubSpot': 40, 'Instacart': 97, 'MathWorks': 35, 'MongoDB': 261, 'Netflix': 61, 'OpenAI': 652, 'Palantir': 242, 'PayPal': 32, 'Reddit': 131, 'Roku': 191, 'Block / Square': 189, 'Two Sigma': 32, 'Verkada': 233, 'Visa': 107, 'WeRide': 13, 'Zillow': 36, 'Zscaler': 241, 'Chewy': 2, 'Duolingo': 77, 'Equinix': 30, 'F5': 1, 'IXL Learning': 100, 'Yahoo': 58, 'IQVIA': 37, 'PointClickCare': 79, 'TransUnion': 29, 'Travelers': 98, 'Yext': 11}
+- Funnel: after dedup 16774 -> after company filter 16774 -> after hard filter 14119 -> after role+seniority prefilter 2618 | dropped 14156
+- LLM usage: scored 31 / API requests 4 / cache reused 1161 (cross-pipeline 0) / rule fallback 1426
+- LLM cost: model gpt-5.6-terra / API requests 4 / jobs scored 31 / tokens input 44242 (cached 0) / output 6353 (reasoning 802) / estimated cost $0.1647
+- Output: Tier A 10 / Tier B 63 / shown 73
 
-## Tier A - apply now / referral (8)
+## Tier A - apply now / referral (10)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 93 | cached_llm | official | ByteDance | Dev AI Software Engineer Graduate (Dev Infra US) - 2027 Start | San Jose, California, United States of America | - | 3to7d | unknown | ai | ByteDance | unreviewed | official_canonical | [open](https://joinbytedance.com/search/7667901772678302005) |
 | 93 | cached_llm | official | ByteDance | Agent Evaluation & Evolution Machine Learning Engineer Graduate (AML-A | Seattle, Washington, United States of America | - | 3to7d | unknown | ai | ByteDance | unreviewed | official_canonical | [open](https://joinbytedance.com/search/7672391016194066693) |
+| 93 | cached_llm | official | Amazon | Software Dev Engineer I, AWS Region Expansion | Arlington, Virginia, USA | 2026-08-24 | gt7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10512584/software-dev-engineer-i-aws-region-expansion) |
 | 93 | cached_llm | official | Google | Software Engineer, Early Career, Campus | Mountain View, CA, USA; Cambridge, MA, USA; Kirkland, WA, USA; Los Angeles, CA, USA; New York, NY, USA; Pittsburgh, PA, USA; San Bruno, CA, USA; Seattle, WA, USA; San Jose, CA, USA; Sunnyvale, CA, USA | 2026-08-07 | gt7d | high | swe | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/78703249065943750-software-engineer-early-career-campus) |
 | 92 | cached_llm | official | Uber | Software Engineer I | Sunnyvale, CA, United States | 2026-08-21 | gt7d | high | swe | Uber | unreviewed | official_canonical | [open](https://jobs.uber.com/en/jobs/301056) |
 | 92 | cached_llm | official | IXL Learning | Software Engineer, New Grad | Raleigh, NC; Morrisville, North Carolina, United States | 2026-08-31 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://www.ixl.com/company/jobs?gh_jid=8765745002) |
 | 91 | cached_llm | official | Uber | Software Engineer I | New York City, NY, United States | 2026-08-26 | gt7d | high | swe | Uber | unreviewed | official_canonical | [open](https://jobs.uber.com/en/jobs/301277) |
 | 91 | cached_llm | official | Uber | Software Engineer I | San Francisco, CA, United States | 2026-08-25 | gt7d | high | swe | Uber | unreviewed | official_canonical | [open](https://jobs.uber.com/en/jobs/301203) |
+| 91 | llm | official | Roblox | [2027] Software Engineer, Early Career | San Mateo, CA, United States | 2026-08-05 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8072244?gh_jid=8072244) |
 | 91 | cached_llm | official | IXL Learning | Software Engineer, New Grad | San Mateo, CA; San Mateo, California, United States | 2026-08-31 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://www.ixl.com/company/jobs?gh_jid=8765715002) |
 
-## Tier B - worth applying (62)
+## Tier B - worth applying (63)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 93 | llm | official | SAP | SAP iXp Intern - Full-Stack AI Developer | Palo Alto, CA, US, 94304 | - | newly_discovered | unknown | ai | SAP | unreviewed | official_canonical | [open](https://jobs.sap.com/job/Palo-Alto-SAP-iXp-Intern-Full-Stack-AI-Developer-CA-94304/1425371233/) |
+| 78 | llm | official | TikTok | Data Engineer Graduate (Data Platfrom TikTok BP) - 2027 Start | San Jose, California, United States of America | - | newly_discovered | unknown | swe | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7681779180341709109) |
+| 74 | llm | official | SAP | Data and Applied Scientist, Finance and Spend Autonomous Suite, Palo A | Palo Alto, CA, US, 94304 | - | newly_discovered | unknown | ai | SAP | unreviewed | official_canonical | [open](https://jobs.sap.com/job/Palo-Alto-Data-and-Applied-Scientist%2C-Finance-and-Spend-Autonomous-Suite%2C-Palo-Alto-CA-94304/1431263233/) |
 | 94 | cached_llm | official | ByteDance | Agent Evaluation & Evolution Machine Learning Engineer Intern (AML-Ark | Seattle, Washington, United States of America | - | 3to7d | unknown | ai | ByteDance | unreviewed | official_canonical | [open](https://joinbytedance.com/search/7672391300141877557) |
 | 94 | cached_llm | official | ByteDance | Agent Evaluation & Evolution Machine Learning Engineer Intern (AML-Ark | San Jose, California, United States of America | - | 3to7d | unknown | ai | ByteDance | unreviewed | official_canonical | [open](https://joinbytedance.com/search/7671096345243535669) |
 | 89 | cached_llm | official | Amazon | Software Development Engineer, Early Careers | Newark, New Jersey, USA | 2026-09-04 | 3to7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10529830/software-development-engineer-early-careers) |
@@ -84,13 +89,11 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 77 | cached_llm | official | Amazon | Data Engineer I, Zappos Analytics | New York, New York, USA | 2026-09-04 | 3to7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10530461/data-engineer-i-zappos-analytics) |
 | 92 | cached_llm | official | TikTok | Backend Software Engineer Graduate (Global E-commerce) - 2027 Start | Seattle, Washington, United States of America | - | gt7d | unknown | swe | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7668827379083823413) |
 | 92 | cached_llm | official | TikTok | Backend Software Engineer Graduate (Global E-commerce) - 2027 Start | San Jose, California, United States of America | - | gt7d | unknown | swe | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7668824169648097541) |
-| 92 | cached_llm | official | SAP | SAP iXp Intern - Full-Stack AI Developer | Palo Alto, CA, US, 94304 | - | gt7d | unknown | ai | SAP | unreviewed | official_canonical | [open](https://jobs.sap.com/job/Palo-Alto-SAP-iXp-Intern-Full-Stack-AI-Developer-CA-94304/1425371233/) |
 | 91 | cached_llm | official | TikTok | Fullstack Software Engineer Graduate (Global E-commerce) - 2027 Start | Seattle, Washington, United States of America | - | gt7d | unknown | swe | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7668828193675036981) |
 | 91 | cached_llm | official | TikTok | Backend Software Engineer Graduate (Creation Platform) - 2027 Start | San Jose, California, United States of America | - | gt7d | unknown | swe | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7670292836050422021) |
 | 91 | cached_llm | official | TikTok | Software Engineer Graduate (Foundation Platform) - 2027 Start | San Jose, California, United States of America | - | gt7d | unknown | swe | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7673674252889246005) |
 | 91 | cached_llm | official | TikTok | Software Engineer Graduate (AI Agent & Global Revenue Platform) - 2027 | San Jose, California, United States of America | - | gt7d | unknown | ai | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7668566347702569269) |
 | 90 | cached_llm | official | TikTok | Software Engineer Graduate (Foundation Platform) - 2027 Start | San Jose, California, United States of America | - | gt7d | unknown | swe | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7670276769459456309) |
 | 88 | cached_llm | official | Stripe | Software Engineer, New Grad | San Francisco, Seattle, New York; US | 2026-08-31 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://stripe.com/jobs/search?gh_jid=8128744) |
-| 88 | cached_llm | official | Roblox | [2027] Software Engineer, Early Career | San Mateo, CA, United States | 2026-08-05 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8072244?gh_jid=8072244) |
 | 88 | cached_llm | official | Notion | Software Engineer, Early Career (AI) | San Francisco, California; San Francisco, California, United States; Remote, United States | 2026-07-06 | gt7d | high | ai | - | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/notion/85947779-6b87-466a-98bc-30a640448c28) |
 | 86 | cached_llm | official | Notion | Software Engineer, Early Career | San Francisco, California; San Francisco, California, United States | 2026-07-06 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/notion/297b4ece-765f-4eea-b1b8-46057cb6501f) |

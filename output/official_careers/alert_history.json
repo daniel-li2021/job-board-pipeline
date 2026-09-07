@@ -6705,6 +6705,32 @@
           "url": "https://www.amazon.jobs/en/jobs/10530461/data-engineer-i-zappos-analytics"
         }
       ]
+    },
+    {
+      "pipeline": "official",
+      "stamp": "2026-09-07_1525",
+      "emitted_at": "2026-09-07T15:27:45.324743+00:00",
+      "event_kind": "new_or_promoted_ab",
+      "count": 1,
+      "jobs": [
+        {
+          "canonical_job_key": "url::https://lifeattiktok.com/search/7681779180341709109",
+          "job_id": "7681779180341709109",
+          "tier": "B",
+          "match_score": 78.0,
+          "company": "TikTok",
+          "title": "Data Engineer Graduate (Data Platfrom TikTok BP) - 2027 Start",
+          "location": "San Jose, California, United States of America",
+          "date_confidence": "unknown",
+          "first_seen": "2026-09-07T15:25:09.538267+00:00",
+          "referral_name": "TikTok",
+          "review_status": "unreviewed",
+          "official_url": "https://lifeattiktok.com/search/7681779180341709109",
+          "source_url": "https://lifeattiktok.com/search/7681779180341709109",
+          "source": "tiktok_official_careers",
+          "url": "https://lifeattiktok.com/search/7681779180341709109"
+        }
+      ]
     }
   ]
 }
