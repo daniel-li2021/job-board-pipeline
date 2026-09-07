@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import gzip
 import json
+from datetime import datetime, timedelta, timezone
 import tempfile
 import unittest
 from pathlib import Path
@@ -63,6 +64,28 @@ class StateSafetyTests(unittest.TestCase):
                 path.write_text(json.dumps({"jobs": {"id::job": {"notes": "Keep these notes", "status": "in_progress"}}}))
                 review_state.set_status("id::job", "applied")
                 self.assertEqual("Keep these notes", json.loads(path.read_text())["jobs"]["id::job"]["notes"])
+
+    def test_retention_and_history_treat_naive_dates_as_utc(self):
+        now = datetime(2026, 9, 7, tzinfo=timezone.utc)
+        rows = {
+            "date": {"first_seen": "2026-08-31"},
+            "offset": {"first_seen": "2026-08-30T17:00:00-07:00"},
+            "old": {"first_seen": "2026-08-29"},
+            "unknown": {"first_seen": 123},
+        }
+        self.assertEqual({"date", "offset", "unknown"}, set(board.prune_store(rows, now)))
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "history.json"
+            path.write_text(json.dumps({"events": [{"emitted_at": "2026-09-06T23:00:00", "jobs": []}]}))
+            self.assertEqual(1, len(alert_history.recent_events(path, now, hours=2)))
+
+    def test_shared_output_emitter_keeps_explicit_and_environment_prefixes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "outputs"
+            with patch.dict("os.environ", {"GITHUB_OUTPUT": str(path), "GITHUB_OUTPUT_PREFIX": "official_"}):
+                board.emit_github_output({"count": "1"})
+                board.emit_github_output({"count": "2"}, prefix="")
+            self.assertEqual("official_count=1\ncount=2\n", path.read_text())
 
     def test_invalid_official_raw_snapshot_cannot_be_replaced_during_merge(self):
         with tempfile.TemporaryDirectory() as directory:

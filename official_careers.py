@@ -258,15 +258,7 @@ def load_careers_store() -> Dict[str, Dict[str, Any]]:
 
 
 def save_careers_store(store: Dict[str, Dict[str, Any]]) -> None:
-    CAREERS_DIR.mkdir(parents=True, exist_ok=True)
-    entries = sorted(store.values(), key=lambda e: (e.get("first_seen", ""), e.get("key", "")), reverse=True)
-    payload = {
-        "updated_at": datetime.now(timezone.utc).isoformat(),
-        "retention_days": RETENTION_DAYS,
-        "count": len(entries),
-        "entries": entries,
-    }
-    atomic_write(STORE_PATH, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
+    board.save_store_path(STORE_PATH, store, RETENTION_DAYS)
 
 
 def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp: str) -> None:

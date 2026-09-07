@@ -15,7 +15,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional
 
-from sources.schema import dedup_key
+from sources.schema import dedup_key, parse_datetime
 
 RETENTION_DAYS = 14
 SNAPSHOT_FIELDS = (
@@ -98,11 +98,7 @@ def recent_events(path: Path, now: datetime, hours: int = 24) -> List[Dict[str, 
     for event in _read(path).get("events", []):
         if not isinstance(event, dict):
             continue
-        when_raw = event.get("emitted_at")
-        try:
-            when = datetime.fromisoformat(str(when_raw).replace("Z", "+00:00"))
-        except ValueError:
-            when = parse_stamp(str(event.get("stamp") or ""))
+        when = parse_datetime(event.get("emitted_at")) or parse_stamp(str(event.get("stamp") or ""))
         if when and when.astimezone(timezone.utc) >= cutoff:
             events.append(event)
     return events

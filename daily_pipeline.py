@@ -22,7 +22,6 @@ import csv
 import json
 
 from state_io import atomic_write, read_json
-import os
 import re
 import time
 from collections import Counter, defaultdict
@@ -855,19 +854,6 @@ ALERT_FIELDS = [
 ]
 
 
-def emit_github_output(values: Dict[str, str]) -> None:
-    """Expose key=value pairs to GitHub Actions steps via $GITHUB_OUTPUT."""
-    out_path = os.environ.get("GITHUB_OUTPUT")
-    if not out_path:
-        return
-    try:
-        with open(out_path, "a", encoding="utf-8") as f:
-            for key, value in values.items():
-                f.write(f"{key}={value}\n")
-    except Exception:  # noqa: BLE001
-        pass
-
-
 def build_issue_body(new_rows: List[Dict[str, Any]], stamp: str, with_tiers: bool) -> str:
     lines: List[str] = []
     lines.append(f"Syncareer alert — {stamp}")
@@ -973,7 +959,7 @@ def run() -> None:
     targets = load_target_companies()
     company_filters = board.load_company_filters()
 
-    now = datetime.now()
+    now = datetime.now(timezone.utc)
     today = now.strftime("%Y-%m-%d")
     stamp = now.strftime("%Y-%m-%d_%H%M")
 
@@ -1277,14 +1263,15 @@ def run() -> None:
                 encoding="utf-8",
             )
             alert_paths["issue_body"] = body
-        emit_github_output(
+        board.emit_github_output(
             {
                 "new_count": str(len(alert_rows)),
                 "inbox_count": str(len(inbox_rows)),
                 "stamp": stamp,
                 "issue_title": f"Syncareer alert {stamp} ({len(alert_rows)} new A/B)",
                 "issue_body_path": str(alert_paths.get("issue_body", "")),
-            }
+            },
+            prefix="",
         )
     else:
         seen_ids.update(id_to_summary.keys())

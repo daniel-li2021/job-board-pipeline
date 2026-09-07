@@ -191,20 +191,20 @@ def days_since(iso_date: str) -> Optional[int]:
     return (datetime.now(timezone.utc) - d).days
 
 
-def _parse_iso_timestamp(value: str) -> Optional[datetime]:
-    value = (value or "").strip()
-    if not value:
+def parse_datetime(value: Any) -> Optional[datetime]:
+    raw = str(value or "").strip()
+    if not raw:
         return None
     try:
-        dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
     except ValueError:
         try:
-            dt = datetime.strptime(value[:10], "%Y-%m-%d")
+            parsed = datetime.strptime(raw[:10], "%Y-%m-%d")
         except ValueError:
             return None
-    if dt.tzinfo is None:
-        dt = dt.replace(tzinfo=timezone.utc)
-    return dt
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
 
 
 # Recency bucket ordering (lower rank = fresher = higher priority).
@@ -223,7 +223,7 @@ def _trusted_posted_hours(job: Dict[str, str], now: datetime) -> Optional[float]
     confidence = (job.get("date_confidence") or "unknown").lower()
     posted = (job.get("posted_date") or "").strip()
     if posted and confidence in ("high", "medium"):
-        dt = _parse_iso_timestamp(posted)
+        dt = parse_datetime(posted)
         if dt is not None:
             return max(0.0, (now - dt).total_seconds() / 3600.0)
     return None
@@ -240,7 +240,7 @@ def recency_hours(job: Dict[str, str], now: Optional[datetime] = None) -> Option
     trusted = _trusted_posted_hours(job, now)
     if trusted is not None:
         return trusted
-    fs = _parse_iso_timestamp(job.get("first_seen", ""))
+    fs = parse_datetime(job.get("first_seen", ""))
     if fs is not None:
         return max(0.0, (now - fs).total_seconds() / 3600.0)
     return None
@@ -268,7 +268,7 @@ def recency_bucket(job: Dict[str, str], now: Optional[datetime] = None) -> str:
             return "3to7d"
         return "gt7d"
     # Low/unknown confidence: rely on discovery time only.
-    fs = _parse_iso_timestamp(job.get("first_seen", ""))
+    fs = parse_datetime(job.get("first_seen", ""))
     if fs is None:
         return "gt7d"  # unknown recency -> stale (store-only)
     hours = max(0.0, (now - fs).total_seconds() / 3600.0)

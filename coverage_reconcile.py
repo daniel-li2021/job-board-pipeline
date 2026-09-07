@@ -22,6 +22,7 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
 from sources.schema import (
     dedup_key,
+    parse_datetime,
     make_job,
     normalize_company_key,
     normalize_job_url,
@@ -41,22 +42,6 @@ REVIEW_STATE_PATH = BASE_DIR / "profile" / "review_state.json"
 OUTPUT_DIR = BASE_DIR / "output" / "cross_pipeline"
 COVERAGE_JSON_PATH = OUTPUT_DIR / "coverage.json"
 COVERAGE_MD_PATH = OUTPUT_DIR / "coverage.md"
-
-def parse_datetime(value: Any) -> Optional[datetime]:
-    raw = str(value or "").strip()
-    if not raw:
-        return None
-    try:
-        parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
-    except ValueError:
-        try:
-            parsed = datetime.strptime(raw[:10], "%Y-%m-%d")
-        except ValueError:
-            return None
-    if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=timezone.utc)
-    return parsed.astimezone(timezone.utc)
-
 
 def snapshot_timestamp(payload: Dict[str, Any]) -> Optional[datetime]:
     for field in ("scraped_at", "updated_at", "generated_at"):

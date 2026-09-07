@@ -51,6 +51,7 @@ from sources.careers.incremental import DETAIL_STALE_DAYS
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
 from sources.schema import (
     OUTPUT_DIR,
+    parse_datetime,
     RECENCY_BUCKET_RANK,
     RECENCY_BUCKETS,
     classify_location_bucket,
@@ -152,11 +153,11 @@ def make_session() -> requests.Session:
     return session
 
 
-def emit_github_output(values: Dict[str, str]) -> None:
+def emit_github_output(values: Dict[str, str], *, prefix: Optional[str] = None) -> None:
     out_path = os.environ.get("GITHUB_OUTPUT")
     if not out_path:
         return
-    prefix = os.environ.get("GITHUB_OUTPUT_PREFIX", "")
+    prefix = os.environ.get("GITHUB_OUTPUT_PREFIX", "") if prefix is None else prefix
     try:
         with open(out_path, "a", encoding="utf-8") as f:
             for key, value in values.items():
@@ -1551,26 +1552,25 @@ def load_store() -> Dict[str, Dict[str, Any]]:
     return load_store_path(JOBS_STORE_PATH, strict=True)
 
 
-def save_store(store: Dict[str, Dict[str, Any]]) -> None:
-    BOARD_DIR.mkdir(parents=True, exist_ok=True)
+def save_store_path(path: Path, store: Dict[str, Dict[str, Any]], retention_days: int) -> None:
     entries = sorted(store.values(), key=lambda e: (e.get("first_seen", ""), e.get("key", "")), reverse=True)
     payload = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
-        "retention_days": RETENTION_DAYS,
+        "retention_days": retention_days,
         "count": len(entries),
         "entries": entries,
     }
-    atomic_write(JOBS_STORE_PATH, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
+    atomic_write(path, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
+
+
+def save_store(store: Dict[str, Dict[str, Any]]) -> None:
+    save_store_path(JOBS_STORE_PATH, store, RETENTION_DAYS)
 
 
 def prune_store(store: Dict[str, Dict[str, Any]], now: datetime) -> Dict[str, Dict[str, Any]]:
     kept: Dict[str, Dict[str, Any]] = {}
     for key, e in store.items():
-        fs = e.get("first_seen", "")
-        try:
-            seen = datetime.fromisoformat(fs.replace("Z", "+00:00")) if fs else now
-        except ValueError:
-            seen = now
+        seen = parse_datetime(e.get("first_seen")) or now
         if (now - seen).days <= RETENTION_DAYS:
             kept[key] = e
     return kept

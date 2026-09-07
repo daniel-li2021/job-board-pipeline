@@ -821,7 +821,7 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
                         [local_search.query_stat("software engineer", "syncareer", 1)],
                     ),
                 ))
-                stack.enter_context(patch.object(daily_pipeline, "fetch_job_detail", return_value={}))
+                fetch_detail = stack.enter_context(patch.object(daily_pipeline, "fetch_job_detail", return_value={}))
                 stack.enter_context(patch.object(daily_pipeline, "normalize_job_row", return_value=row))
                 stack.enter_context(patch.object(daily_pipeline, "hard_filter", return_value=(True, "keep")))
                 stack.enter_context(patch.object(daily_pipeline.coverage_reconcile, "syncareer_job_in_scope", return_value=True))
@@ -830,12 +830,22 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
                 stack.enter_context(patch.object(board_pipeline, "load_store_path", return_value={}))
                 stack.enter_context(patch("requests.post", side_effect=AssertionError("no LLM calls in rule mode")))
                 stack.enter_context(patch.object(daily_pipeline.time, "sleep"))
-                stack.enter_context(patch.object(daily_pipeline, "emit_github_output"))
+                stack.enter_context(patch.object(daily_pipeline.board, "emit_github_output"))
                 daily_pipeline.run()
+                first_stats = json.loads(next((syncareer_dir / "runs").glob("*_stats.json")).read_text())
+                first_store = daily_pipeline.load_watchlist()
+                first_store["sync-1"]["review_status"] = "applied"
+                first_store["sync-1"]["notes"] = "Keep on repeated runs"
+                daily_pipeline.save_watchlist(first_store)
+                daily_pipeline.run()
+                fetch_detail.assert_called_once()
+                second_store = daily_pipeline.load_watchlist()
+                for field in ("first_seen", "match_score", "tier", "review_status", "notes"):
+                    self.assertEqual(first_store["sync-1"][field], second_store["sync-1"][field])
 
             stats_paths = list((syncareer_dir / "runs").glob("*_stats.json"))
-            self.assertEqual(1, len(stats_paths))
-            stats = json.loads(stats_paths[0].read_text(encoding="utf-8"))
+            self.assertTrue(stats_paths)
+            stats = first_stats
             self.assertEqual({"scoring_candidates": 1}, stats["funnel"])
             self.assertEqual(1, stats["llm"]["rule"])
             self.assertEqual(0, stats["llm"]["scored"])
