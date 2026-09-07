@@ -1,7 +1,7 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-07_1342
+# ATS / LinkedIn board — 7-day view — 2026-09-07_1501
 
-- Updated (PT): 2026-09-07 06:45 PDT
-- Snapshot (UTC): 2026-09-07T13:45:02.839275+00:00
+- Updated (PT): 2026-09-07 08:02 PDT
+- Snapshot (UTC): 2026-09-07T15:02:18.334152+00:00
 - Last 24 hours: 34
 - Last 3 days: 34
 
@@ -11,10 +11,10 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 
 - Source raw: ATS 2681 / Linkedin 841 / Indeed 272 / Glassdoor 120 (Big Company Official runs separately)
 - Funnel: after dedup 3909 -> after company filter 3824 -> after hard filter 3537 -> after role+seniority prefilter 690 | dropped 3219
-- LLM usage: jobs scored 72 / API requests 7 / cache reused 6 (cross-pipeline 0) / rule fallback+overflow 319 (thin local cards 318, recency-gated 1, overflow 0, new/changed 73)
-- LLM cost: model gpt-5.6-terra / API requests 7 / jobs scored 72 / tokens input 91950 (cached 0) / output 11366 (reasoning 897) / estimated cost $0.3203
+- LLM usage: jobs scored 3 / API requests 2 / cache reused 75 (cross-pipeline 0) / rule fallback+overflow 319 (thin local cards 318, recency-gated 1, overflow 0, new/changed 4)
+- LLM cost: model gpt-5.6-terra / API requests 2 / jobs scored 3 / tokens input 6867 (cached 0) / output 947 (reasoning 386) / estimated cost $0.0251
 - Output sizing: Tier A 2 / Tier B 32 / A+B actionable 34 / Shown in latest.md 34 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 3 / 1-3d 7 / newly-disc 377 / 3-7d 10 / >7d 0
+- Recency (kept): <3h 0 / 3-24h 6 / 1-3d 7 / newly-disc 374 / 3-7d 10 / >7d 0
 - LinkedIn vs Indeed exact coverage: overlap 0 / LinkedIn unique 837 of 837 / Indeed unique 244 of 244
 - Linkedin top exact-unique queries: ai engineer=233, software engineer=223, platform engineer=80, software engineer i=78, backend engineer=75
 - Indeed top exact-unique queries: ai engineer=111, software engineer=79, platform engineer=76, infrastructure engineer=73, machine learning engineer=34
@@ -23,16 +23,16 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 92 | llm | indeed | Lenovo | Associate AI Solutions Architect - Global Future Leaders Program (2027 | Morrisville, NC, US | 2026-09-05 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ceec1a7c68a3123f) |
-| 92 | llm | glassdoor | Lenovo | Associate AI Solutions Architect - Global Future Leaders Program (2027 | Morrisville, NC | 2026-09-07 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010254687361) |
+| 92 | cached_llm | indeed | Lenovo | Associate AI Solutions Architect - Global Future Leaders Program (2027 | Morrisville, NC, US | 2026-09-05 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ceec1a7c68a3123f) |
+| 92 | cached_llm | glassdoor | Lenovo | Associate AI Solutions Architect - Global Future Leaders Program (2027 | Morrisville, NC | 2026-09-07 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010254687361) |
 
 ## Tier B - worth applying (32)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 86 | llm | indeed | RHEACTION | Full Stack Engineer | San Francisco, CA, US | 2026-09-05 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=fce784ea1b251ee8) |
-| 78 | llm | glassdoor | Rheaction | Full Stack Engineer | San Francisco, CA | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010255077839) |
-| 76 | llm | indeed | TikTok | Data Engineer Graduate (Data Platfrom TikTok BP) - 2027 Start | San Jose, CA, US | 2026-09-06 | newly_discovered | low | swe | TikTok | unreviewed | pending_official_refresh | - | [open](https://www.indeed.com/viewjob?jk=75088026287b3d7a) |
+| 86 | cached_llm | indeed | RHEACTION | Full Stack Engineer | San Francisco, CA, US | 2026-09-05 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=fce784ea1b251ee8) |
+| 78 | cached_llm | glassdoor | Rheaction | Full Stack Engineer | San Francisco, CA | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010255077839) |
+| 76 | cached_llm | indeed | TikTok | Data Engineer Graduate (Data Platfrom TikTok BP) - 2027 Start | San Jose, CA, US | 2026-09-06 | newly_discovered | low | swe | TikTok | unreviewed | pending_official_refresh | - | [open](https://www.indeed.com/viewjob?jk=75088026287b3d7a) |
 | 75 | rule_fallback | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Atlanta, GA | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464063354) |
 | 75 | rule_fallback | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Austin, TX | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464063355) |
 | 75 | rule_fallback | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Nashville, TN | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464064360) |
