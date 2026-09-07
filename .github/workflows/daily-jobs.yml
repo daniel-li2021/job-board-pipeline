@@ -5,9 +5,10 @@ name: Syncareer job alert
 run-name: ${{ inputs.scheduler_probe && format('Scheduler probe {0}', inputs.scheduler_probe) || github.workflow }}
 
 on:
-  schedule:
-    - cron: "10 8,17 * * *"
-      timezone: "America/Los_Angeles"
+  # Legacy GitHub cron disabled after verified AWS Scheduler cutover.
+  # schedule:
+  #   - cron: "10 8,17 * * *"
+  #     timezone: "America/Los_Angeles"
   workflow_dispatch:
     inputs:
       scheduler_probe:
