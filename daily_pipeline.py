@@ -37,7 +37,7 @@ import alert_history
 import board_pipeline as board
 import coverage_reconcile
 from sources.company_aliases import load_alias_file, match_company_alias
-from sources.schema import normalize_sponsorship
+from sources.schema import normalize_sponsorship, to_iso_date
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -230,12 +230,6 @@ def parse_location(loc: Dict[str, Any]) -> str:
     return ", ".join(parts)
 
 
-def epoch_to_date(value: Any) -> str:
-    if not isinstance(value, (int, float)) or value <= 0:
-        return ""
-    return datetime.fromtimestamp(value, tz=timezone.utc).strftime("%Y-%m-%d")
-
-
 def html_to_text(value: str) -> str:
     if not value:
         return ""
@@ -401,25 +395,6 @@ def save_seen_ids(seen_ids: set[str]) -> None:
 # --------------------------------------------------------------------------
 # Rolling 7-day watchlist (used by the automated alert flow)
 # --------------------------------------------------------------------------
-def _parse_iso_date(value: str) -> Optional[datetime]:
-    value = (value or "").strip()
-    if not value:
-        return None
-    parsed: Optional[datetime] = None
-    try:
-        # Accept both "YYYY-MM-DD" and full ISO timestamps.
-        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
-    except ValueError:
-        try:
-            parsed = datetime.strptime(value[:10], "%Y-%m-%d")
-        except ValueError:
-            return None
-    # Normalize to UTC-aware so comparisons never mix naive/aware.
-    if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=timezone.utc)
-    return parsed
-
-
 def load_watchlist() -> Dict[str, Dict[str, Any]]:
     """Return {job_id: entry}. Entry keeps title/company/posted/url/first_seen."""
     path = WATCHLIST_PATH if WATCHLIST_PATH.exists() else LEGACY_WATCHLIST_PATH
@@ -452,7 +427,7 @@ def prune_watchlist(
     cutoff = now - timedelta(days=retention_days)
     kept: Dict[str, Dict[str, Any]] = {}
     for jid, e in watchlist.items():
-        ref = _parse_iso_date(e.get("first_seen", "")) or _parse_iso_date(e.get("posted_date", ""))
+        ref = coverage_reconcile.parse_datetime(e.get("first_seen", "")) or coverage_reconcile.parse_datetime(e.get("posted_date", ""))
         # Missing/unparseable dates: keep (they will age out once first_seen set).
         if ref is None or ref >= cutoff:
             kept[jid] = e
@@ -478,9 +453,9 @@ def save_watchlist(watchlist: Dict[str, Dict[str, Any]]) -> None:
 def _entry_age_ref(entry: Dict[str, Any]) -> Optional[datetime]:
     """Discovery activity for inbox/rolling views; posting date is fallback."""
     return (
-        _parse_iso_date(entry.get("first_seen", ""))
-        or _parse_iso_date(entry.get("posting_date", ""))
-        or _parse_iso_date(entry.get("posted_date", ""))
+        coverage_reconcile.parse_datetime(entry.get("first_seen", ""))
+        or coverage_reconcile.parse_datetime(entry.get("posting_date", ""))
+        or coverage_reconcile.parse_datetime(entry.get("posted_date", ""))
     )
 
 
@@ -685,7 +660,7 @@ def normalize_job_row(
         or detail.get("companyNameChn")
         or ""
     ).strip()
-    posting_date = epoch_to_date(detail.get("publishAt") or summary.get("publishAt"))
+    posting_date = to_iso_date(detail.get("publishAt") or summary.get("publishAt"))
     job_url = str(detail.get("url") or summary.get("url") or "").strip()
     desc_text = html_to_text(str(detail.get("desc") or ""))
     desc_main, requirements = split_requirements(desc_text)

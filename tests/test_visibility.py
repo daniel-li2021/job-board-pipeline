@@ -754,7 +754,7 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         self.assertEqual(1, counts["rule"])
         self.assertEqual([], errors)
 
-    def test_syncareer_run_writes_current_stats_schema(self) -> None:
+    def test_syncareer_run_persists_real_rule_scores_without_alerting_tier_c(self) -> None:
         row = {
             "job_id": "sync-1",
             "company": "SmallCo",
@@ -763,8 +763,6 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
             "posting_date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
             "job_url": "https://small.example/jobs/sync-1",
         }
-        score_counts = {"llm": 0, "api_requests": 0, "reused": 0, "peer_reused": 0, "rule": 1}
-        decision = {"sync-1": {"match_score": 82, "tier": "A", "score_source": "rule"}}
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
             syncareer_dir = root / "syncareer"
@@ -795,11 +793,8 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
                 stack.enter_context(patch.object(daily_pipeline.coverage_reconcile, "syncareer_job_in_scope", return_value=True))
                 stack.enter_context(patch.object(daily_pipeline.coverage_reconcile, "annotate_jobs"))
                 stack.enter_context(patch.object(daily_pipeline, "apply_external_company_policy", return_value=False))
-                stack.enter_context(patch.object(
-                    daily_pipeline,
-                    "assign_shared_scores",
-                    return_value=(decision, score_counts, [], "rule"),
-                ))
+                stack.enter_context(patch.object(board_pipeline, "load_store_path", return_value={}))
+                stack.enter_context(patch("requests.post", side_effect=AssertionError("no LLM calls in rule mode")))
                 stack.enter_context(patch.object(daily_pipeline.time, "sleep"))
                 stack.enter_context(patch.object(daily_pipeline, "emit_github_output"))
                 daily_pipeline.run()
@@ -811,10 +806,43 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
             self.assertEqual(1, stats["llm"]["rule"])
             self.assertEqual(0, stats["llm"]["scored"])
             self.assertEqual(
-                {"tier_a": 1, "tier_b": 0, "tier_c": 0, "shown": 1},
+                {"tier_a": 0, "tier_b": 0, "tier_c": 1, "shown": 0},
                 stats["output"],
             )
             self.assertEqual("rule", stats["screen_method"])
+            stored = json.loads((syncareer_dir / "watchlist.json").read_text())["entries"]
+            self.assertEqual(1, len(stored))
+            self.assertEqual("C", stored[0]["tier"])
+            self.assertEqual("rule", stored[0]["score_source"])
+            self.assertEqual(65, stored[0]["match_score"])
+            self.assertEqual("sync-1", stored[0]["job_id"])
+            self.assertTrue(stored[0]["first_seen"])
+            self.assertIn("0 new jobs", (syncareer_dir / "issue_body.md").read_text())
+            self.assertNotIn("SmallCo", (syncareer_dir / "inbox.md").read_text())
+
+    def test_syncareer_source_dates_accept_epochs_and_reject_invalid_values(self) -> None:
+        stamp = datetime(2026, 9, 1, tzinfo=timezone.utc).timestamp()
+        for value in (stamp, stamp * 1000, str(int(stamp)), "2026-09-01T00:00:00Z"):
+            with self.subTest(value=value):
+                row = daily_pipeline.normalize_job_row({"publishAt": value}, {}, [], [])
+                self.assertEqual("2026-09-01", row["posting_date"])
+        for value in (None, -1, float("inf"), float("nan"), 1e100, "invalid"):
+            with self.subTest(value=value):
+                row = daily_pipeline.normalize_job_row({"publishAt": value}, {}, [], [])
+                self.assertEqual("", row["posting_date"])
+
+    def test_syncareer_retention_preserves_legacy_dates_and_unknown_age(self) -> None:
+        now = datetime(2026, 9, 7, tzinfo=timezone.utc)
+        rows = {
+            "boundary": {"first_seen": "2026-08-31"},
+            "offset": {"first_seen": "2026-08-30T17:00:00-07:00"},
+            "old": {"first_seen": "2026-08-30T23:59:59Z"},
+            "fallback": {"first_seen": None, "posted_date": "2026-09-01"},
+            "unknown": {"first_seen": 123},
+        }
+        kept = daily_pipeline.prune_watchlist(rows, now=now)
+        self.assertEqual({"boundary", "offset", "fallback", "unknown"}, set(kept))
+        self.assertEqual(rows["offset"], kept["offset"])
 
     def test_syncareer_rolling_activity_prefers_first_seen(self) -> None:
         now = datetime.now(timezone.utc)

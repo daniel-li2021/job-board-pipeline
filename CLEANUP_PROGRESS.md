@@ -25,12 +25,19 @@
 - Kept the active shared scorer, both CLI modes, independent outputs and persistent-state readers.
 - Validation: 52 visibility tests passed, Python compilation and diff check passed. Removed 314 net lines.
 
+## Completed — batch 5: Syncareer dates and meaningful CLI validation
+- Replaced Syncareer's seconds-only epoch converter with `sources.schema.to_iso_date`; millisecond/overflow/nonfinite timestamps no longer abort normalization. Valid epoch dates retain the same values.
+- Reused `coverage_reconcile.parse_datetime` for retention/inbox dates; preserved date-only, offset and first-seen precedence semantics while treating invalid non-string dates as unknown.
+- Replaced mocked scorer results in the CLI test with real shared rule scoring and persisted-watchlist assertions: Tier C remains stored, produces no alert and stays out of the actionable inbox. Peer caches and external calls are isolated.
+- Added boundary tests through source normalization and retention. Inspected current watchlist shape (807 entries, string first-seen timestamps); did not rewrite it.
+- Validation: 54 visibility tests passed, Python compilation and diff check passed.
+
 ## Remaining high-value work
 - Trace duplicated Board/Syncareer utilities, environment/profile loading and large root modules; extract only where it reduces coupling.
 - Review persistent-state compatibility and tests against real production invariants; retain needed old-format readers.
 
 ## Next recommended batch
-Review Syncareer timestamp normalization and store compatibility with existing snapshots, then strengthen the CLI test to exercise real shared scoring and persistence. Avoid splitting large modules until shared dependencies are mapped. Generated `public/` artifacts are rebuilt by Pages; do not regenerate job data for this cleanup.
+Trace persistent-store read/write failure behavior: distinguish missing files from corrupt/unreadable files before any overwrite; test compatibility readers and repeated-run preservation. Review duplicated GitHub-output emitters with prefix semantics before consolidating. Avoid splitting large modules until shared dependencies are mapped. Generated `public/` artifacts are rebuilt by Pages; do not regenerate job data for this cleanup.
 
 ## Intentionally preserved
 - Matching/ranking policy, score cache keys, adapter budgets and source reliability guards.
