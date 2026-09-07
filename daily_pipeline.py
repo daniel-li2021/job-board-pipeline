@@ -7,7 +7,7 @@ Runs once per day:
   3. Fetch full detail for each new job.
   4. Hard-filter (senior/lead titles, US-citizen-only, non-US locations).
   5. Enrich (sponsorship / target-company / graduation flags).
-  6. LLM match against both resumes -> Tier 1 (must-apply) / Tier 2 (backup).
+  6. Shared Board matching with routed resumes and A/B/C tiers.
   7. Write dated CSVs + markdown report; update the seen store.
 
 Usage:
@@ -36,8 +36,6 @@ from bs4 import BeautifulSoup
 import alert_history
 import board_pipeline as board
 import coverage_reconcile
-import board_pipeline as board
-import llm_config
 from sources.company_aliases import load_alias_file, match_company_alias
 from sources.schema import normalize_sponsorship
 
@@ -56,10 +54,7 @@ LEGACY_WATCHLIST_PATH = OUTPUT_DIR / "watchlist.json"
 WATCHLIST_RETENTION_DAYS = 7
 # Canonical "I skipped a day" view: kept jobs first_seen/posted in this window.
 INBOX_DAYS = 3
-COMPANY_LINKS_JSON = BASE_DIR / "config" / "company_links.json"
 TARGET_COMPANIES_JSON = BASE_DIR / "config" / "target_companies.json"
-SWE_RESUME_PATH = BASE_DIR / "profile" / "resume_swe.md"
-AI_RESUME_PATH = BASE_DIR / "profile" / "resume_ai.md"
 PACIFIC = ZoneInfo("America/Los_Angeles")
 
 SEARCH_BASE_URL = "https://syncareer.com/"
@@ -159,34 +154,6 @@ TIER_FIELDS = [
 # --------------------------------------------------------------------------
 # Syncareer payload parsing and normalization
 # --------------------------------------------------------------------------
-def load_env_file(path: Path) -> None:
-    if not path.exists():
-        return
-    for line in path.read_text(encoding="utf-8").splitlines():
-        text = line.strip()
-        if not text or text.startswith("#") or "=" not in text:
-            continue
-        key, value = text.split("=", 1)
-        key = key.strip()
-        value = value.strip().strip('"').strip("'")
-        if key and value and key not in os.environ:
-            os.environ[key] = value
-
-
-def make_session() -> requests.Session:
-    session = requests.Session()
-    session.headers.update(
-        {
-            "User-Agent": (
-                "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
-            ),
-            "Accept-Language": "en-US,en;q=0.9",
-        }
-    )
-    return session
-
-
 class NuxtPayloadDecoder:
     def __init__(self, array_payload: List[Any]) -> None:
         self.arr = array_payload
@@ -261,23 +228,6 @@ def parse_location(loc: Dict[str, Any]) -> str:
     country = ((loc.get("country") or {}).get("eng") or "").strip()
     parts = [p for p in [city, province, country] if p]
     return ", ".join(parts)
-
-
-def classify_location_bucket(location: str) -> str:
-    loc = (location or "").strip().lower()
-    if not loc:
-        return "unknown"
-    if any(t in loc for t in ["united states", ", usa", ", us", "u.s."]):
-        return "us"
-    non_us_tokens = [
-        "canada", "india", "china", "japan", "singapore", "ireland", "uk",
-        "united kingdom", "germany", "france", "spain", "italy", "netherlands",
-        "sweden", "switzerland", "australia", "new zealand", "mexico",
-        "brazil", "argentina", "poland", "korea", "taiwan", "israel",
-    ]
-    if any(t in loc for t in non_us_tokens):
-        return "non_us"
-    return "unknown"
 
 
 def epoch_to_date(value: Any) -> str:
@@ -656,10 +606,6 @@ def _jobs_markdown_table(rows: List[Dict[str, Any]], with_tiers: bool) -> str:
 # --------------------------------------------------------------------------
 # Phase 3 + 5: normalize + enrich
 # --------------------------------------------------------------------------
-def normalize_company_key(name: str) -> str:
-    return re.sub(r"[^a-z0-9]", "", (name or "").lower())
-
-
 def load_target_companies() -> List[Dict[str, Any]]:
     return load_alias_file(TARGET_COMPANIES_JSON)
 
@@ -776,28 +722,6 @@ def normalize_job_row(
 # --------------------------------------------------------------------------
 # Phase 4: hard filters
 # --------------------------------------------------------------------------
-SENIOR_TITLE_RE = re.compile(
-    r"\b(senior|sr\.?|lead|staff|principal|director|manager|head of|vp|vice president|architect)\b",
-    re.IGNORECASE,
-)
-CITIZEN_ONLY_PHRASES = [
-    "us citizen",
-    "u.s. citizen",
-    "united states citizen",
-    "us citizenship",
-    "u.s. citizenship",
-    "must be a citizen",
-    "us person",
-    "u.s. person",
-    "security clearance",
-]
-# Word-boundary regexes so e.g. "campus personnel" does not match "us person".
-CITIZEN_ONLY_RES = [
-    (phrase, re.compile(r"\b" + re.escape(phrase).replace(r"\ ", r"\s+") + r"\b", re.IGNORECASE))
-    for phrase in CITIZEN_ONLY_PHRASES
-]
-
-
 def hard_filter(
     row: Dict[str, str],
     company_filters: Optional[Dict[str, List[Dict[str, Any]]]] = None,
@@ -817,7 +741,7 @@ def hard_filter(
 
 
 # --------------------------------------------------------------------------
-# Phase 6: LLM tier assignment
+# Phase 6: shared scoring
 # --------------------------------------------------------------------------
 SHARED_SCORE_FIELDS = (
     "match_score", "tier", "score_source", "screen_method",
@@ -909,244 +833,6 @@ def assign_shared_scores(
         ) in {"No sponsor", "Unknown"} else "no"
         decisions[str(job.get("job_id") or "")] = result
     return decisions, counts, errors, method
-
-
-def build_providers() -> List[Dict[str, str]]:
-    providers: List[Dict[str, str]] = []
-    openai_key = (os.environ.get("OPENAI_API_KEY") or "").strip()
-    groq_key = (os.environ.get("GROQ_API_KEY") or "").strip()
-    if openai_key:
-        providers.append(
-            {"name": "openai", "endpoint": llm_config.OPENAI_CHAT_COMPLETIONS_ENDPOINT, "api_key": openai_key, "model": llm_config.configured_model()}
-        )
-    if groq_key:
-        providers.append(
-            {"name": "groq", "endpoint": llm_config.GROQ_CHAT_COMPLETIONS_ENDPOINT, "api_key": groq_key, "model": llm_config.GROQ_FALLBACK_MODEL}
-        )
-    return providers
-
-
-def parse_json_object(text: str) -> Optional[Dict[str, Any]]:
-    text = (text or "").strip()
-    try:
-        data = json.loads(text)
-        return data if isinstance(data, dict) else None
-    except Exception:  # noqa: BLE001
-        pass
-    match = re.search(r"\{.*\}", text, flags=re.S)
-    if not match:
-        return None
-    try:
-        data = json.loads(match.group(0))
-        return data if isinstance(data, dict) else None
-    except Exception:  # noqa: BLE001
-        return None
-
-
-def full_text_of(row: Dict[str, str]) -> str:
-    description = (row.get("description") or "").strip()
-    requirements = (row.get("requirements") or "").strip()
-    if description and requirements:
-        return f"{description}\n{requirements}"
-    return description or requirements
-
-
-def llm_tier_batch(
-    batch: List[Dict[str, str]],
-    swe_resume: str,
-    ai_resume: str,
-    provider: Dict[str, str],
-    resume_route: str,
-) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
-    jobs_payload = [
-        {
-            "job_id": r["job_id"],
-            "title": r["title"],
-            "company": r["company"],
-            "location": r["location"],
-            "sponsorship": r["sponsorship"],
-            "job_description": llm_config.select_jd_context(full_text_of(r)),
-        }
-        for r in batch
-    ]
-    prompt = {
-        "task": "Match early-career SWE / AI-engineer jobs to the candidate using responsibilities and core required qualifications.",
-        "candidate_target": "New-grad / early-career Software Engineer or AI/ML Engineer. Master's CS (grad 2026).",
-        "tier_rules": [
-            "tier 1 = strong or exceptional match (fit_score >= 80)",
-            "tier 2 = reasonable or weak/stretch match (fit_score 60-79)",
-            "skip = generally skip (fit_score < 60)",
-        ],
-        "resume_route": resume_route,
-        "instructions": [
-            "Score 0-100 with broad spread: 90+ exceptional/direct, 80s strong, 70s reasonable, 60s weak/stretch, below 60 generally skip.",
-            "Use responsibilities and required/minimum qualifications, not keyword overlap.",
-            "Do not automatically reject strong 3-5 years-of-experience fits; judge demonstrated scope and core skills.",
-            "main_gaps contains only meaningful missing core requirements; preferred/nice-to-have gaps are minor.",
-            "Flag sponsorship_concern=yes when sponsorship is 'No sponsor' or 'Unknown'.",
-        ],
-        "return_schema": {
-            "results": [
-                {
-                    "job_id": "string",
-                    "fit_score": "0-100 int",
-                    "recommended_resume": "SWE|AI-FDE",
-                    "tier": "1|2|skip",
-                    "fit_category": "short string",
-                    "reason": "short string",
-                    "risk": "short string",
-                    "main_gaps": ["0-3 missing core requirements"],
-                    "sponsorship_concern": "yes|no",
-                }
-            ]
-        },
-        "jobs": jobs_payload,
-    }
-    if resume_route in {"SWE", "BOTH"}:
-        prompt["swe_resume"] = swe_resume
-    if resume_route in {"AI-FDE", "BOTH"}:
-        prompt["ai_fde_resume"] = ai_resume
-    request_json: Dict[str, Any] = {
-        "model": provider["model"],
-        "response_format": {"type": "json_object"},
-        "messages": [
-            {"role": "system", "content": "You are a precise early-career tech recruiting screener. Return JSON only."},
-            {"role": "user", "content": json.dumps(prompt)},
-        ],
-    }
-    if provider["name"] == "openai":
-        request_json["reasoning_effort"] = llm_config.configured_reasoning_effort()
-    resp = requests.post(
-        provider["endpoint"],
-        headers={"Authorization": f"Bearer {provider['api_key']}", "Content-Type": "application/json"},
-        json=request_json,
-        timeout=90,
-    )
-    resp.raise_for_status()
-    response_payload = resp.json()
-    usage = llm_config.usage_from_response(response_payload, provider["model"])
-    parsed = parse_json_object(response_payload["choices"][0]["message"]["content"])
-    if not parsed:
-        return {}, usage
-    out: Dict[str, Dict[str, Any]] = {}
-    for item in parsed.get("results", []):
-        job_id = str(item.get("job_id", "")).strip()
-        if not job_id:
-            continue
-        tier = str(item.get("tier", "skip")).lower().strip()
-        if tier not in {"1", "2", "skip"}:
-            tier = "skip"
-        out[job_id] = {
-            "fit_score": float(item.get("fit_score", 0) or 0),
-            "recommended_resume": str(item.get("recommended_resume", "SWE")),
-            "tier": tier,
-            "fit_category": str(item.get("fit_category", "")),
-            "reason": str(item.get("reason", "")),
-            "risk": str(item.get("risk", "")),
-            "main_gaps": (
-                [str(x) for x in item.get("main_gaps", [])][:3]
-                if isinstance(item.get("main_gaps"), list)
-                else ([str(item.get("main_gaps"))] if item.get("main_gaps") else [])
-            ),
-            "sponsorship_concern": str(item.get("sponsorship_concern", "no")).lower(),
-        }
-    usage["jobs_scored"] = len(out)
-    usage["estimated_usd"] = llm_config.estimate_cost_usd(usage)
-    return out, usage
-
-
-def fallback_tier(row: Dict[str, str]) -> Dict[str, Any]:
-    title = (row.get("title") or "").lower()
-    text = f"{title} {full_text_of(row)[:1200]}".lower()
-    ai_signals = ["machine learning", " ml", " ai ", "llm", "rag", "agent", "applied ai", "model", "forward deployed"]
-    eng_signals = [
-        "software engineer", "backend", "full stack", "full-stack", "platform",
-        "infrastructure", "cloud", "devops", "data engineer", "distributed",
-    ]
-    score = 4.5
-    if any(x in text for x in eng_signals):
-        score += 2.2
-    if any(x in text for x in ai_signals):
-        score += 1.6
-    score = max(1.0, min(10.0, score))
-    tier = "skip"
-    score *= 10
-    if score >= 80:
-        tier = "1"
-    elif score >= 60:
-        tier = "2"
-    rec = "AI-FDE" if any(x in text for x in ai_signals) else "SWE"
-    concern = "yes" if row.get("sponsorship") in {"No sponsor", "Unknown"} else "no"
-    return {
-        "fit_score": round(score, 1),
-        "recommended_resume": rec,
-        "tier": tier,
-        "fit_category": "keyword_match",
-        "reason": "Keyword-based technical relevance (LLM unavailable)",
-        "risk": "No LLM judgment; verify manually",
-        "main_gaps": [],
-        "sponsorship_concern": concern,
-    }
-
-
-def assign_tiers(
-    rows: List[Dict[str, str]],
-    swe_resume: str,
-    ai_resume: str,
-) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, str], List[str], Dict[str, Any]]:
-    """Return decisions, methods, errors, and per-run LLM usage."""
-    decisions: Dict[str, Dict[str, Any]] = {}
-    methods: Dict[str, str] = {}
-    errors: List[str] = []
-    providers = build_providers()
-    usage_total = llm_config.empty_usage(providers[0]["model"] if providers else None)
-    if not providers:
-        errors.append("no_api_key_configured")
-        for row in rows:
-            decisions[row["job_id"]] = fallback_tier(row)
-            methods[row["job_id"]] = "fallback"
-        return decisions, methods, errors, usage_total
-
-    chunk_size = 12
-    routed_batches: List[Tuple[str, List[Dict[str, str]]]] = []
-    def family_of(row: Dict[str, str]) -> str:
-        routed_row = dict(row)
-        routed_row["description"] = full_text_of(row)
-        return board.detect_role_family(routed_row)
-
-    for route, family in (("SWE", "swe"), ("AI-FDE", "ai"), ("BOTH", "ambiguous")):
-        routed = [r for r in rows if family_of(r) == family]
-        routed_batches.extend((route, routed[i : i + chunk_size]) for i in range(0, len(routed), chunk_size))
-    for chunk_idx, (route, batch) in enumerate(routed_batches):
-        batch_done = False
-        chunk_errors: List[str] = []
-        for provider in providers:
-            try:
-                result, usage = llm_tier_batch(batch, swe_resume, ai_resume, provider, route)
-                llm_config.merge_usage(usage_total, [usage])
-                if result:
-                    for row in batch:
-                        d = result.get(row["job_id"])
-                        if d is not None:
-                            decisions[row["job_id"]] = d
-                            methods[row["job_id"]] = "llm_decision"
-                    batch_done = True
-                    break
-            except Exception as exc:  # noqa: BLE001
-                usage_total["api_requests"] += 1
-                chunk_errors.append(f"{provider['name']}:{type(exc).__name__}:{str(exc)[:120]}")
-                continue
-        # Fill any rows the LLM omitted, or the whole batch on failure.
-        for row in batch:
-            if row["job_id"] not in decisions:
-                decisions[row["job_id"]] = fallback_tier(row)
-                methods[row["job_id"]] = "fallback"
-        if batch_done:
-            time.sleep(0.25)
-        else:
-            errors.append(f"chunk_{chunk_idx}_failed[{len(batch)} jobs]: " + " | ".join(chunk_errors))
-    usage_total["jobs_scored"] = sum(1 for method in methods.values() if method == "llm_decision")
-    return decisions, methods, errors, usage_total
 
 
 # --------------------------------------------------------------------------
@@ -1309,8 +995,8 @@ def run() -> None:
     use_llm = not args.no_llm
     alert_mode = args.alert
 
-    load_env_file(BASE_DIR / ".env")
-    session = make_session()
+    board.load_env_file(BASE_DIR / ".env")
+    session = board.make_session()
     targets = load_target_companies()
     company_filters = board.load_company_filters()
 

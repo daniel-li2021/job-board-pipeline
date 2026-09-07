@@ -776,8 +776,8 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
                 stack.enter_context(patch.object(daily_pipeline, "WATCHLIST_PATH", syncareer_dir / "watchlist.json"))
                 stack.enter_context(patch.object(daily_pipeline, "ALERT_HISTORY_PATH", syncareer_dir / "alert_history.json"))
                 stack.enter_context(patch.object(daily_pipeline, "LEGACY_WATCHLIST_PATH", root / "legacy_watchlist.json"))
-                stack.enter_context(patch.object(daily_pipeline, "load_env_file"))
-                stack.enter_context(patch.object(daily_pipeline, "make_session", return_value=object()))
+                stack.enter_context(patch.object(daily_pipeline.board, "load_env_file"))
+                stack.enter_context(patch.object(daily_pipeline.board, "make_session", return_value=object()))
                 stack.enter_context(patch.object(daily_pipeline, "load_target_companies", return_value=[]))
                 stack.enter_context(patch.object(daily_pipeline.board, "load_company_filters", return_value={}))
                 stack.enter_context(patch.object(

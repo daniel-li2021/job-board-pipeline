@@ -19,12 +19,18 @@
 - Added a regression check covering each required file missing/blank, exact text preservation and cache invalidation on each profile change.
 - Validation: 52 visibility tests passed; existing real profile payload and cache fingerprint match the pre-change baseline exactly; diff check passed.
 
+## Completed — batch 4: legacy Syncareer scoring
+- CodeGraph traced the isolated `assign_tiers` -> provider/LLM/fallback graph; neither CLI mode calls it. Removed it and its private parser/text helpers, unused local filter definitions and obsolete profile/config constants.
+- Removed duplicate Board import; reused Board's identical environment loader and HTTP-session setup without adding a module or changing transport settings.
+- Kept the active shared scorer, both CLI modes, independent outputs and persistent-state readers.
+- Validation: 52 visibility tests passed, Python compilation and diff check passed. Removed 314 net lines.
+
 ## Remaining high-value work
 - Trace duplicated Board/Syncareer utilities, environment/profile loading and large root modules; extract only where it reduces coupling.
 - Review persistent-state compatibility and tests against real production invariants; retain needed old-format readers.
 
 ## Next recommended batch
-Trace remaining legacy Syncareer scoring helpers and their CLI callers before removal; review timestamp/store compatibility with existing snapshots. Avoid splitting large modules until shared dependencies are mapped. Generated `public/` artifacts are rebuilt by Pages; do not regenerate job data for this cleanup.
+Review Syncareer timestamp normalization and store compatibility with existing snapshots, then strengthen the CLI test to exercise real shared scoring and persistence. Avoid splitting large modules until shared dependencies are mapped. Generated `public/` artifacts are rebuilt by Pages; do not regenerate job data for this cleanup.
 
 ## Intentionally preserved
 - Matching/ranking policy, score cache keys, adapter budgets and source reliability guards.
