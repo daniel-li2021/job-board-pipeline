@@ -114,6 +114,24 @@ class LocalSourceTests(unittest.TestCase):
             self.assertEqual("old", health["last_success_collector"]["commit"])
             self.assertEqual(1, health["last_good_count"])
 
+    def test_empty_attempt_updates_health_but_keeps_last_success(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(schema, "SOURCES_DIR", Path(tmpdir)), patch.object(
+            local_sources, "HEALTH_PATH", Path(tmpdir) / "health.json",
+        ), patch.dict(local_sources.SOURCES, {"indeed": lambda: {"status": "ok", "jobs": []}}):
+            old = {"commit": "old", "dirty": False}
+            new = {"commit": "new", "dirty": False}
+            schema.write_source_snapshot(
+                "indeed", [{"job_id": "last-good"}],
+                {"scraped_at": "2026-09-01T00:00:00+00:00", "collector": old},
+            )
+            result = local_sources.run_one("indeed", new)
+            local_sources.write_health([result], new)
+            health = json.loads((Path(tmpdir) / "health.json").read_text(encoding="utf-8"))["sources"]["indeed"]
+            self.assertFalse(health["healthy"])
+            self.assertEqual("0 first-pass survivors", health["reason"])
+            self.assertEqual("old", health["last_success_collector"]["commit"])
+            self.assertEqual(1, health["last_good_count"])
+
     def test_runner_executes_collector_from_fetched_origin_main(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             base = Path(tmpdir)
@@ -139,7 +157,14 @@ class LocalSourceTests(unittest.TestCase):
                 "path.write_text(json.dumps({'collector':sha}))\nprint('current collector',sha)\n",
                 encoding="utf-8",
             )
-            subprocess.run(["git", "-C", str(repo), "add", "local_sources.py"], check=True)
+            runner = repo / "scripts" / "local_source_sync.sh"
+            runner.write_text(
+                runner.read_text(encoding="utf-8").replace(
+                    "set -uo pipefail", "set -uo pipefail\necho 'current runner logic'", 1,
+                ),
+                encoding="utf-8",
+            )
+            subprocess.run(["git", "-C", str(repo), "add", "local_sources.py", "scripts/local_source_sync.sh"], check=True)
             subprocess.run(["git", "-C", str(repo), "commit", "-m", "current"], check=True, capture_output=True)
             current = subprocess.run(["git", "-C", str(repo), "rev-parse", "HEAD"], check=True, capture_output=True, text=True).stdout.strip()
             subprocess.run(["git", "-C", str(repo), "push", "origin", "main"], check=True, capture_output=True)
@@ -151,8 +176,10 @@ class LocalSourceTests(unittest.TestCase):
                 ["bash", "scripts/local_source_sync.sh"], cwd=repo, env=env,
                 check=True, capture_output=True, text=True,
             )
+            self.assertIn("current runner logic", run.stdout)
             self.assertIn(f"current collector {current}", run.stdout)
             self.assertIn(f"collector commit: {current}", run.stdout)
+            self.assertFalse(list(base.glob("jobboard-source-*")))
 
 
 if __name__ == "__main__":

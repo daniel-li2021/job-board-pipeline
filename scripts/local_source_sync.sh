@@ -19,7 +19,7 @@
 #
 set -uo pipefail
 
-REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+REPO_DIR="${LOCAL_SOURCE_REPO_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
 cd "$REPO_DIR" || exit 1
 
 PYTHON_BIN="${PYTHON_BIN:-python3}"
@@ -60,13 +60,30 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   exit 0
 fi
 
-# Fetch before scraping, then run the collector inside an isolated worktree.
-# This makes the code version that produced an artifact identical to its
-# recorded collector commit even when this long-lived checkout is stale/dirty.
 TARGET_BRANCH="${TARGET_BRANCH:-main}"
-if ! git fetch origin "$TARGET_BRANCH"; then
-  echo "[$STAMP] fetch failed; snapshots remain local and will retry next run."
-  exit 1
+# Bootstrap the runner itself from the fetched target. The long-lived checkout
+# may be stale or dirty; neither its runner nor its collector code should run.
+if [ "${LOCAL_SOURCE_BOOTSTRAPPED:-0}" != "1" ]; then
+  if ! git fetch origin "$TARGET_BRANCH"; then
+    echo "[$STAMP] fetch failed; snapshots remain local and will retry next run."
+    exit 1
+  fi
+  RUNNER_COMMIT="$(git rev-parse "origin/$TARGET_BRANCH")" || exit 1
+  RUNNER_TMP="$(mktemp "${TMPDIR:-/tmp}/jobboard-source-runner.XXXXXX")" || exit 1
+  cleanup_runner() { rm -f "$RUNNER_TMP"; }
+  trap cleanup_runner EXIT
+  if ! git show "$RUNNER_COMMIT:scripts/local_source_sync.sh" > "$RUNNER_TMP"; then
+    echo "[$STAMP] could not load runner from $RUNNER_COMMIT; will retry next run."
+    exit 1
+  fi
+  LOCAL_SOURCE_BOOTSTRAPPED=1 LOCAL_SOURCE_REPO_DIR="$REPO_DIR" \
+    LOCAL_SOURCE_TARGET_COMMIT="$RUNNER_COMMIT" /bin/bash "$RUNNER_TMP"
+  exit $?
+fi
+TARGET_COMMIT="${LOCAL_SOURCE_TARGET_COMMIT:-}"
+if [ -z "$TARGET_COMMIT" ]; then
+  git fetch origin "$TARGET_BRANCH" || exit 1
+  TARGET_COMMIT="$(git rev-parse "origin/$TARGET_BRANCH")" || exit 1
 fi
 
 SYNC_PARENT="$(mktemp -d "${TMPDIR:-/tmp}/jobboard-source-sync.XXXXXX")"
@@ -77,7 +94,7 @@ cleanup_sync_tree() {
 }
 trap cleanup_sync_tree EXIT
 
-if ! git worktree add --detach "$SYNC_TREE" "origin/$TARGET_BRANCH" >/dev/null; then
+if ! git worktree add --detach "$SYNC_TREE" "$TARGET_COMMIT" >/dev/null; then
   echo "[$STAMP] could not create isolated sync worktree; will retry next run."
   exit 1
 fi
@@ -141,7 +158,7 @@ if [ "$LATEST_TARGET" != "$COLLECTOR_COMMIT" ] && [ "${LOCAL_SOURCE_RETRY:-0}" !
   echo "[$STAMP] main advanced during collection; restarting once on $LATEST_TARGET."
   cleanup_sync_tree
   trap - EXIT
-  LOCAL_SOURCE_RETRY=1 exec "$0"
+  LOCAL_SOURCE_RETRY=1 LOCAL_SOURCE_BOOTSTRAPPED=0 LOCAL_SOURCE_TARGET_COMMIT= exec /bin/bash "$0"
 fi
 echo "[$STAMP] push failed; snapshots remain on origin/$TARGET_BRANCH and will retry next run."
 exit 1

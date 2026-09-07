@@ -155,7 +155,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
     if not survivors:
         print(f"[{name}] SKIP (0 first-pass survivors) -> keeping last good snapshot")
         return {
-            "source": name, "status": "skipped_empty", "source_healthy": True, "reason": "0 first-pass survivors", "count": 0,
+            "source": name, "status": "skipped_empty", "source_healthy": False, "reason": "0 first-pass survivors", "count": 0,
             "query_stats": query_stats, "detail_enrichment": detail_enrichment,
             "elapsed_seconds": round(time.monotonic() - started, 3),
             "attempted_at": stamp, "collector": collector, "source_provenance": source_provenance,
