@@ -20,9 +20,9 @@ KEYWORD_GROUPS = {
 
 SOURCE_PAGE_BUDGETS = {
     "linkedin": {"primary": 25, "secondary": 8, "specialty": 4},
-    # One JobSpy page per query. Raise only after unique-contribution data says
-    # another page is worth the extra requests.
-    "indeed": {"primary": 1, "secondary": 1, "specialty": 1},
+    # Primary queries were still contributing 62-86 unique jobs at one page;
+    # supplemental queries stay shallow because several contributed 0-4.
+    "indeed": {"primary": 2, "secondary": 1, "specialty": 1},
     "glassdoor": {"primary": 1, "secondary": 1, "specialty": 1},
 }
 

@@ -3,8 +3,8 @@
 
 Coverage is evaluated before LLM/ranking.  Only URL, requisition-id, or exact
 company+title+location matches count as covered.  Fuzzy matches are audit hints
-only.  Manual company state in ``profile/official_coverage.json`` controls
-whether an exact match is suppressed from ATS/Syncareer alerts.
+only.  Every exact Official match is suppressed from external pipelines;
+manual company state remains an audit signal and never hides an entire company.
 """
 
 from __future__ import annotations
@@ -190,7 +190,7 @@ def exact_match(external: Dict[str, Any], official_jobs: Iterable[Dict[str, Any]
 def hydrate_from_original(external: Dict[str, Any], original: Dict[str, Any]) -> None:
     """Copy authoritative employer fields while preserving discovery provenance."""
     provenance = (str(external.get("source") or "") + str(external.get("discovered_via") or "")).lower()
-    if not external.get("aggregator_posted_date") and any(name in provenance for name in ("linkedin", "glassdoor")):
+    if not external.get("aggregator_posted_date") and any(name in provenance for name in ("linkedin", "indeed", "glassdoor")):
         external["aggregator_posted_date"] = external.get("posted_date", "")
     for field in ("official_url", "description", "title", "location"):
         if original.get(field):
@@ -313,11 +313,8 @@ def annotate_jobs(jobs: Iterable[Dict[str, Any]], source_pipeline: str, context:
                     job["coverage_match_method"] = method
                     job["duplicate_of"] = canonical_job_key(official)
                     job["canonical_source"] = "official"
-                    if manual_status == "validated":
-                        job["coverage_status"] = "official_duplicate"
-                        job["suppress_alert"] = True
-                    else:
-                        job["coverage_status"] = "covered_unvalidated"
+                    job["coverage_status"] = "official_duplicate"
+                    job["suppress_alert"] = True
                 else:
                     source_at = parse_datetime(job.get("first_seen") or job.get("fetched_at") or job.get("last_seen"))
                     if source_at and snapshot_at and source_at > snapshot_at:

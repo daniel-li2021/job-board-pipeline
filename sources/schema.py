@@ -29,7 +29,7 @@ JOB_FIELDS = [
     "title",
     "location",
     "posted_date",       # ISO date "YYYY-MM-DD" when known, else ""
-    "aggregator_posted_date",  # date displayed by LinkedIn/Glassdoor
+    "aggregator_posted_date",  # date displayed by LinkedIn/Indeed/Glassdoor
     "updated_date",      # ISO date when the source exposes a last-updated time
     "date_confidence",   # high | medium | low | unknown
     "source_url",        # where we found it
@@ -320,6 +320,19 @@ ATS_URL_MARKERS = [
 def looks_official(url: str) -> bool:
     u = (url or "").lower()
     return any(marker in u for marker in ATS_URL_MARKERS)
+
+
+AGGREGATOR_HOSTS = ("linkedin.com", "indeed.com", "glassdoor.com")
+
+
+def is_aggregator_url(url: str) -> bool:
+    """Return whether a URL still points at a consumer job aggregator."""
+    try:
+        host = urlsplit(url or "").hostname or ""
+    except ValueError:
+        return False
+    host = host.lower()
+    return any(host == domain or host.endswith(f".{domain}") for domain in AGGREGATOR_HOSTS)
 
 
 # --------------------------------------------------------------------------

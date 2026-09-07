@@ -51,7 +51,19 @@ class LocalSourceTests(unittest.TestCase):
         self.assertEqual("indeed", row["source"])
         self.assertEqual("2026-09-06", row["aggregator_posted_date"])
         self.assertEqual("https://jobs.example.com/42", row["application_url"])
-        self.assertEqual(100, calls[0]["results_wanted"])
+        self.assertEqual(200, calls[0]["results_wanted"])
+
+    def test_jobspy_does_not_treat_aggregator_redirect_as_original_employer(self) -> None:
+        result = jobspy_local.scrape(
+            "indeed", keywords=["software engineer"],
+            scrape_jobs_func=lambda **_kwargs: Frame([{
+                "id": "in-43", "title": "Software Engineer", "company": "Example",
+                "location": "Austin, TX, US", "job_url": "https://indeed.com/viewjob?jk=43",
+                "job_url_direct": "https://www.indeed.com/job/example-43",
+                "description": "Build Python services.",
+            }]),
+        )
+        self.assertNotIn("application_url", result["jobs"][0])
 
     def test_empty_primary_jobspy_query_is_unverified_not_a_good_snapshot(self) -> None:
         def blocked(**_kwargs):

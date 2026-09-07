@@ -6,10 +6,10 @@ network error, or returns zero rows, it is skipped and its previous
 ``output/sources/<name>.json`` snapshot is left untouched (never overwritten
 with nothing). The other source and the downstream git sync proceed normally.
 
-LinkedIn search remains card-first. Only cheap first-pass survivors that also
-pass the title/seniority prefilter are considered for a bounded, cache-aware
-logged-out detail fetch. Detail blocking never invalidates the search-card
-snapshot; it only stops enrichment for that run.
+LinkedIn search remains card-first. Indeed/Glassdoor arrive through JobSpy;
+all three then share hard filtering, JD persistence, diagnostics, snapshots,
+and downstream Board processing. LinkedIn alone needs a separate bounded,
+cache-aware logged-out detail fetch.
 
 This is invoked by launchd every 2-3 hours (see scripts/). It does NOT run the
 full board pipeline and does NOT touch jobs.json / latest.md — those are
@@ -18,6 +18,7 @@ GitHub-Actions-owned to avoid local/CI git conflicts.
 Usage:
     python3 local_sources.py                 # all sources
     python3 local_sources.py --only linkedin
+    python3 local_sources.py --only indeed
     python3 local_sources.py --only glassdoor
 """
 
@@ -105,10 +106,18 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
         if keep:
             stage1_survivors.append(row)
     for stat in query_stats:
-        stat["first_pass_survivors"] = sum(
-            1 for row in stage1_survivors
+        matches = [
+            row for row in stage1_survivors
             if stat["query"] in (row.get("discovery_queries") or {}).get(name, [])
-        )
+        ]
+        stat["first_pass_survivors"] = len(matches)
+        stat["jds_resolved"] = sum(bool(row.get("description")) for row in matches)
+
+    # Keep full aggregator JDs in the Board store. Original-employer resolution
+    # remains independent and may still replace them with verified employer data.
+    for row in stage1_survivors:
+        if row.get("description"):
+            row["direct_original_fetched"] = True
 
     detail_enrichment: Dict[str, object] = {}
     survivors = stage1_survivors
@@ -132,11 +141,8 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
             previous_jobs=list(previous.get("jobs") or []),
         )
 
-        # The Board store currently persists rich descriptions behind its
-        # direct-detail persistence marker. Mark LinkedIn detail rows so their
-        # JD/score is not immediately downgraded back to a thin card. Deliberately
-        # leave direct_original_fetched_at empty: the original-posting resolver
-        # must still fetch a real employer URL when application_url is available.
+        # Mark newly enriched LinkedIn rows too; the generic pass above covered
+        # only descriptions that arrived with the search result.
         for row in detail_candidates:
             if row.get("linkedin_detail_resolved") and row.get("description"):
                 row["direct_original_fetched"] = True

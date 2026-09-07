@@ -56,9 +56,11 @@ from sources.schema import (
     combined_cache_key_from_hash,
     dedup_key,
     jd_hash,
+    is_aggregator_url,
     looks_official,
     normalize_company_key,
     normalize_location_key,
+    normalize_job_url,
     normalize_space,
     normalize_sponsorship,
     normalize_title_key,
@@ -443,7 +445,7 @@ def _merge_pair(canonical: Dict[str, str], other: Dict[str, str]) -> Dict[str, s
         queries[source] = list(dict.fromkeys([*(queries.get(source) or []), *(values or [])]))
     if queries:
         merged["discovery_queries"] = queries
-    if any(source in {"linkedin", "glassdoor"} for source in via) and merged.get("official_url"):
+    if any(source in LOCAL_SOURCES for source in via) and merged.get("official_url"):
         merged["original_resolved"] = True
     return merged
 
@@ -590,7 +592,7 @@ def resolve_exposed_originals(
         except requests.RequestException:
             continue
         host = urlsplit(response.url).netloc.lower()
-        if not host or any(name in host for name in ("linkedin.", "glassdoor.")):
+        if not host or is_aggregator_url(response.url):
             continue
         posting = _job_posting_json(response.text)
         if posting.get("description"):
@@ -1612,6 +1614,29 @@ def _stats_lines(stats: Dict[str, Any]) -> List[str]:
         f"1-3d {rec['1to3d']} / newly-disc {rec['newly_discovered']} / "
         f"3-7d {rec['3to7d']} / >7d {rec['gt7d']}",
     ]
+    coverage = stats.get("local_source_coverage") or {}
+    source_coverage = coverage.get("sources") or {}
+    if source_coverage:
+        linkedin = source_coverage.get("linkedin", {})
+        indeed = source_coverage.get("indeed", {})
+        lines.append(
+            f"- LinkedIn vs Indeed exact coverage: overlap {coverage.get('overlap', 0)} / "
+            f"LinkedIn unique {linkedin.get('unique_contribution', 0)} of {linkedin.get('identified_jobs', 0)} / "
+            f"Indeed unique {indeed.get('unique_contribution', 0)} of {indeed.get('identified_jobs', 0)}"
+        )
+        for source in ("linkedin", "indeed"):
+            source_stats = stats.get("query_diagnostics", {}).get(source, [])
+            useful = sorted(
+                source_stats,
+                key=lambda item: int(item.get("cross_source_unique", 0)),
+                reverse=True,
+            )[:5]
+            if useful:
+                detail = ", ".join(
+                    f"{item.get('query')}={item.get('cross_source_unique', 0)}"
+                    for item in useful
+                )
+                lines.append(f"- {source.title()} top exact-unique queries: {detail}")
     return lines
 
 
@@ -1794,6 +1819,65 @@ def _raw_source_counts(raw_jobs: List[Dict[str, str]]) -> Dict[str, int]:
     return counts
 
 
+def _local_coverage_key(job: Dict[str, Any]) -> str:
+    """Exact cross-source identity without source-specific aggregator IDs."""
+    company = normalize_company_key(str(job.get("company") or ""))
+    title = normalize_title_key(str(job.get("title") or ""))
+    location = normalize_location_key(str(job.get("location") or ""))
+    if company and title and location:
+        return f"ctl::{company}::{title}::{location}"
+    for field in ("official_url", "application_url"):
+        url = normalize_job_url(str(job.get(field) or ""))
+        if url and not is_aggregator_url(url):
+            return f"url::{url}"
+    return ""
+
+
+def local_source_coverage(raw_jobs: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """LinkedIn/Indeed exact overlap plus per-query unique contribution."""
+    sources = ("linkedin", "indeed")
+    rows = {
+        source: [job for job in raw_jobs if str(job.get("source") or "").lower() == source]
+        for source in sources
+    }
+    keys = {
+        source: {_local_coverage_key(job) for job in rows[source]} - {""}
+        for source in sources
+    }
+    overlap = keys["linkedin"] & keys["indeed"]
+    queries: Dict[str, Dict[str, Dict[str, int]]] = {}
+    for source, other in (("linkedin", "indeed"), ("indeed", "linkedin")):
+        queries[source] = {}
+        query_names = {
+            query
+            for job in rows[source]
+            for query in (job.get("discovery_queries") or {}).get(source, [])
+        }
+        for query in query_names:
+            query_keys = {
+                _local_coverage_key(job)
+                for job in rows[source]
+                if query in (job.get("discovery_queries") or {}).get(source, [])
+            } - {""}
+            queries[source][query] = {
+                "identified_jobs": len(query_keys),
+                "cross_source_overlap": len(query_keys & keys[other]),
+                "cross_source_unique": len(query_keys - keys[other]),
+            }
+    return {
+        "match_basis": "exact employer URL or company+title+location",
+        "overlap": len(overlap),
+        "sources": {
+            source: {
+                "identified_jobs": len(keys[source]),
+                "unique_contribution": len(keys[source] - keys["indeed" if source == "linkedin" else "linkedin"]),
+            }
+            for source in sources
+        },
+        "queries": queries,
+    }
+
+
 ENTRY_DEFAULTS: Dict[str, Any] = {
     "job_id": "", "company": "", "title": "", "location": "", "posted_date": "",
     "aggregator_posted_date": "", "updated_date": "",
@@ -1944,6 +2028,7 @@ def run() -> None:
     # 1) Collect (raw)
     raw_jobs, meta = collect_sources(session, skip_network=args.skip_network)
     source_raw = _raw_source_counts(raw_jobs)
+    source_coverage = local_source_coverage(raw_jobs)
 
     # 2) Dedup + merge (carry discovered_via, prefer canonical source)
     deduped = merge_by_key(raw_jobs)
@@ -2026,8 +2111,8 @@ def run() -> None:
             job["drop_reason"] = reason
             drops[reason] += 1
 
-    # Exact matches are suppressed only for manually validated companies. All
-    # records remain in jobs.json for provenance and audit.
+    # Exact Official matches are suppressed; unmatched jobs at the same company
+    # remain eligible. All records stay in jobs.json for provenance and audit.
     active_candidates = [j for j in candidates if not j.get("suppress_alert")]
     for job in candidates:
         if job.get("suppress_alert"):
@@ -2106,6 +2191,7 @@ def run() -> None:
             ]
             stat["original_postings_resolved"] = sum(bool(job.get("official_url")) for job in matches)
             stat["jds_resolved"] = sum(bool(job.get("official_url") and job.get("description")) for job in matches)
+            stat.update(source_coverage.get("queries", {}).get(source, {}).get(stat.get("query"), {}))
 
     stats = {
         "source_raw": source_raw,
@@ -2140,6 +2226,7 @@ def run() -> None:
         "screen_method": screen_method,
         "drops": dict(drops),
         "query_diagnostics": query_diagnostics,
+        "local_source_coverage": source_coverage,
         "direct_original_attempts": direct_original_attempts,
     }
     RUNS_DIR.mkdir(parents=True, exist_ok=True)

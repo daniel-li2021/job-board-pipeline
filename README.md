@@ -40,6 +40,8 @@ python3 board_pipeline.py --skip-network
 
 GitHub runners do **not** scrape these consumer job boards directly. Install local dependencies with `python3 -m pip install -r requirements-local.txt`; the Mac launchd job then runs `local_sources.py` through `scripts/local_source_sync.sh` roughly every 3 hours and pushes only `output/sources/*.json`. Each successful snapshot records its collector commit, while [`output/sources/health.json`](output/sources/health.json) records every source's last attempt, last success, last-good count, and failure reason.
 
+Board run stats report exact LinkedIn/Indeed overlap, each source's unique contribution, and per-query exact-unique counts. Indeed uses deeper primary Software Engineer/AI Engineer searches while supplemental queries stay shallow.
+
 Outputs live under `output/board/`.
 
 ### 3. Official Careers
@@ -84,13 +86,12 @@ Referral companies have one source of truth: [`source/target_companies.json`](so
 
 Important states:
 
-- `covered_unvalidated` — exact Official counterpart found, but company coverage has not been manually trusted yet;
-- `official_duplicate` — exact counterpart found for a manually validated company and external alert can be suppressed;
+- `official_duplicate` — exact Official counterpart found, so the external copy is suppressed regardless of manual company validation;
 - `pending_official_refresh` — external job is newer than the latest Official snapshot or that company is awaiting refresh;
 - `official_gap` — comparable external job was observed but no exact Official counterpart was found;
 - `official_unsupported` — Official adapter is intentionally unavailable/link-only.
 
-Manual validation lives in [`profile/official_coverage.json`](profile/official_coverage.json). Unmatched external jobs are never hidden just because a company has an Official adapter.
+Manual validation lives in [`profile/official_coverage.json`](profile/official_coverage.json) for coverage auditing. Unmatched external jobs are never hidden just because a company has an Official adapter.
 
 ## Schedule
 

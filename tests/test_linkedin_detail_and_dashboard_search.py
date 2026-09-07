@@ -98,8 +98,9 @@ class DashboardSearchTests(unittest.TestCase):
 
     def test_multi_location_display_keeps_each_job_state_and_url(self) -> None:
         self.assertIn("function displayRows(rows)", dashboard.HTML_TEMPLATE)
-        self.assertIn("individual links and states preserved", dashboard.HTML_TEMPLATE)
-        self.assertIn('data-key="${esc(r.canonical_job_key)}"', dashboard.HTML_TEMPLATE)
+        self.assertIn("Collapsed same role · individual location links preserved", dashboard.HTML_TEMPLATE)
+        self.assertIn('data-keys="${keyData}"', dashboard.HTML_TEMPLATE)
+        self.assertIn("saveStates(keys", dashboard.HTML_TEMPLATE)
 
 
 if __name__ == "__main__":

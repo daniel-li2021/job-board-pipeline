@@ -149,6 +149,17 @@ class IncrementalOfficialTests(unittest.TestCase):
         second_session.get.assert_not_called()
         self.assertEqual("Complete JD", repeat["description"])
 
+    def test_direct_original_redirect_back_to_aggregator_is_not_verified(self) -> None:
+        card = make_job(source="indeed", company="Example", title="Software Engineer", job_id="in-42")
+        card["application_url"] = "https://apply.example/jobs/42"
+        response = Mock(url="https://www.indeed.com/viewjob?jk=42", text="")
+        response.raise_for_status.return_value = None
+        session = Mock()
+        session.get.return_value = response
+        self.assertEqual(1, board.resolve_exposed_originals([card], session, {}))
+        self.assertFalse(card.get("official_url"))
+        self.assertFalse(card.get("original_resolved"))
+
     def test_detail_cache_reuse_change_and_staleness(self) -> None:
         now = datetime(2026, 8, 31, tzinfo=timezone.utc)
         cached = {

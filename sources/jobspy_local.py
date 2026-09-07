@@ -5,12 +5,15 @@ from __future__ import annotations
 
 import time
 import logging
+import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from importlib.metadata import PackageNotFoundError, version
 from typing import Any, Callable, Dict, List
+from urllib.parse import quote
 
 from .local_search import query_stat, source_queries
-from .schema import is_us_location, make_job, normalize_space
+from .schema import is_aggregator_url, is_us_location, make_job, normalize_space
 
 JOBSPY_SITE = {
     "indeed": "indeed",
@@ -25,6 +28,93 @@ def provenance() -> Dict[str, str]:
     except PackageNotFoundError:
         release = "not-installed"
     return {"implementation": "python-jobspy", "version": release}
+
+
+def _patch_glassdoor_transport() -> None:
+    """Backport JobSpy PRs #347/#350 until they reach a PyPI release."""
+    from jobspy.exception import GlassdoorException
+    from jobspy.glassdoor import Glassdoor
+    from jobspy.glassdoor.util import get_cursor_for_page
+    from jobspy.model import DescriptionFormat
+    from jobspy.util import markdown_converter
+
+    if getattr(Glassdoor, "_jobboard_compat", False):
+        return
+
+    def csrf_token(self: Any) -> str | None:
+        response = self.session.get(f"{self.base_url.rstrip('/')}/")
+        matches = re.findall(r'"token":\s*"([^"]+)"', response.text)
+        return matches[0] if matches else None
+
+    def location(self: Any, value: str, is_remote: bool) -> tuple[int | str, str]:
+        if not value or is_remote:
+            return "11047", "STATE"
+        url = (
+            f"{self.base_url.rstrip('/')}/findPopularLocationAjax.htm?maxLocationsToReturn=10"
+            f"&term={quote(value, safe='')}"
+        )
+        response = self.session.get(url)
+        if response.status_code != 200:
+            raise GlassdoorException(f"location lookup HTTP {response.status_code}")
+        items = response.json()
+        if not items:
+            raise GlassdoorException(f"location not found: {value}")
+        location_type = {"C": "CITY", "S": "STATE", "N": "COUNTRY"}.get(
+            items[0]["locationType"], items[0]["locationType"]
+        )
+        return int(items[0]["locationId"]), location_type
+
+    def fetch_page(
+        self: Any, scraper_input: Any, location_id: int, location_type: str,
+        page_num: int, cursor: str | None,
+    ) -> tuple[list[Any], str | None]:
+        response = self.session.post(
+            f"{self.base_url.rstrip('/')}/graph",
+            timeout_seconds=15,
+            data=self._add_payload(location_id, location_type, page_num, cursor),
+        )
+        if response.status_code != 200:
+            raise GlassdoorException(f"search GraphQL HTTP {response.status_code}")
+        payload = response.json()[0]
+        listings = (payload.get("data") or {}).get("jobListings")
+        if not listings:
+            raise GlassdoorException("search GraphQL response missing jobListings")
+        jobs: List[Any] = []
+        with ThreadPoolExecutor(max_workers=self.jobs_per_page) as executor:
+            futures = [executor.submit(self._process_job, item) for item in listings.get("jobListings") or []]
+            for future in as_completed(futures):
+                result = future.result()
+                if result:
+                    jobs.append(result)
+        return jobs, get_cursor_for_page(listings.get("paginationCursors") or [], page_num + 1)
+
+    def fetch_description(self: Any, job_id: int) -> str | None:
+        response = self.session.post(
+            f"{self.base_url.rstrip('/')}/graph",
+            timeout_seconds=15,
+            json=[{
+                "operationName": "JobDetailQuery",
+                "variables": {"jl": job_id, "queryString": "q", "pageTypeEnum": "SERP"},
+                "query": """
+                    query JobDetailQuery($jl: Long!, $queryString: String, $pageTypeEnum: PageTypeEnum) {
+                        jobview: jobView(
+                            listingId: $jl
+                            contextHolder: {queryString: $queryString, pageTypeEnum: $pageTypeEnum}
+                        ) { job { description } }
+                    }
+                """,
+            }],
+        )
+        if response.status_code != 200:
+            return None
+        description = response.json()[0]["data"]["jobview"]["job"]["description"]
+        return markdown_converter(description) if self.scraper_input.description_format == DescriptionFormat.MARKDOWN else description
+
+    Glassdoor._get_csrf_token = csrf_token
+    Glassdoor._get_location = location
+    Glassdoor._fetch_jobs_page = fetch_page
+    Glassdoor._fetch_job_description = fetch_description
+    Glassdoor._jobboard_compat = True
 
 
 def _value(value: Any) -> str:
@@ -55,7 +145,7 @@ def _normalize(source: str, record: Dict[str, Any], fetched_at: str) -> Dict[str
         fetched_at=fetched_at,
     )
     direct = _value(record.get("job_url_direct"))
-    if direct:
+    if direct and not is_aggregator_url(direct):
         row["application_url"] = direct
     return row
 
@@ -79,6 +169,9 @@ def scrape(
                 "query_stats": [],
                 "provenance": source_provenance,
             }
+        if source == "glassdoor":
+            _patch_glassdoor_transport()
+            source_provenance["compat"] = "JobSpy PRs #347/#350"
 
     specs = list(source_queries(source))
     if keywords:

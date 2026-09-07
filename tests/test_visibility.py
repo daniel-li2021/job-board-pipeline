@@ -323,7 +323,7 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertIn("pending:true", dashboard.HTML_TEMPLATE)
         self.assertIn("Pending sync", dashboard.HTML_TEMPLATE)
         self.assertIn("window.addEventListener('online',refreshSharedStates)", dashboard.HTML_TEMPLATE)
-        self.assertIn("persist();renderReviewMessage();renderAll();pushState(next)", dashboard.HTML_TEMPLATE)
+        self.assertIn("persist();renderReviewMessage();renderAll();keys.forEach", dashboard.HTML_TEMPLATE)
         self.assertNotIn("reviewStates[key]=previous", dashboard.HTML_TEMPLATE)
         self.assertNotIn("delete reviewStates[key]", dashboard.HTML_TEMPLATE)
         self.assertIn("<details class=\"panel\"><summary>Referral opportunities</summary>", dashboard.HTML_TEMPLATE)
@@ -442,7 +442,7 @@ class CoverageMatchingTests(unittest.TestCase):
         self.assertEqual("", method)
         self.assertIsNone(matched)
 
-    def test_validated_exact_suppresses_but_unvalidated_does_not(self) -> None:
+    def test_exact_official_match_suppresses_regardless_of_manual_validation(self) -> None:
         external = make_job(
             source="linkedin",
             company="Example Tech",
@@ -458,8 +458,8 @@ class CoverageMatchingTests(unittest.TestCase):
 
         other = dict(external)
         coverage_reconcile.annotate_jobs([other], "board", context("unvalidated"))
-        self.assertEqual("covered_unvalidated", other["coverage_status"])
-        self.assertFalse(other["suppress_alert"])
+        self.assertEqual("official_duplicate", other["coverage_status"])
+        self.assertTrue(other["suppress_alert"])
 
     def test_location_format_and_multi_location_match_is_safe(self) -> None:
         official = official_job("20001", "Software Engineering MTS", "Washington - Bellevue; California - San Francisco")
@@ -576,8 +576,23 @@ class CoverageMatchingTests(unittest.TestCase):
         for job in external:
             job["first_seen"] = "2026-08-28T11:00:00+00:00"
         coverage_reconcile.annotate_jobs(external, "board", ctx)
-        self.assertEqual(["covered_unvalidated", "covered_unvalidated", "official_gap"], [j["coverage_status"] for j in external])
+        self.assertEqual(["official_duplicate", "official_duplicate", "official_gap"], [j["coverage_status"] for j in external])
         self.assertEqual("unvalidated", ctx["config"]["example"]["status"])
+
+    def test_linkedin_indeed_overlap_reports_exact_unique_query_contribution(self) -> None:
+        jobs = [
+            make_job(source="linkedin", company="Example", title="Software Engineer", location="Austin, TX"),
+            make_job(source="linkedin", company="LinkedIn Only", title="AI Engineer", location="Seattle, WA"),
+            make_job(source="indeed", company="Example", title="Software Engineer", location="Austin, TX"),
+            make_job(source="indeed", company="Indeed Only", title="ML Engineer", location="Boston, MA"),
+        ]
+        for job, query in zip(jobs, ("software engineer", "ai engineer", "software engineer", "ai engineer")):
+            job["discovery_queries"] = {job["source"]: [query]}
+        report = board_pipeline.local_source_coverage(jobs)
+        self.assertEqual(1, report["overlap"])
+        self.assertEqual(1, report["sources"]["linkedin"]["unique_contribution"])
+        self.assertEqual(1, report["sources"]["indeed"]["unique_contribution"])
+        self.assertEqual(1, report["queries"]["indeed"]["ai engineer"]["cross_source_unique"])
 
     def test_hard_filtered_senior_role_is_out_of_scope_but_relevant_low_score_is_in(self) -> None:
         senior = {
@@ -621,8 +636,8 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         self.assertIn("associate software engineer", terms)
         self.assertIn("forward deployed engineer", terms)
         self.assertEqual({"primary": 25, "secondary": 8, "specialty": 4}, local_search.SOURCE_PAGE_BUDGETS["linkedin"])
-        for source in ("indeed", "glassdoor"):
-            self.assertEqual({"primary": 1, "secondary": 1, "specialty": 1}, local_search.SOURCE_PAGE_BUDGETS[source])
+        self.assertEqual({"primary": 2, "secondary": 1, "specialty": 1}, local_search.SOURCE_PAGE_BUDGETS["indeed"])
+        self.assertEqual({"primary": 1, "secondary": 1, "specialty": 1}, local_search.SOURCE_PAGE_BUDGETS["glassdoor"])
         self.assertNotIn("Applied Scientist", daily_pipeline.SEARCH_KEYWORDS)
 
     def test_original_hydration_keeps_aggregator_date_auditable(self) -> None:
