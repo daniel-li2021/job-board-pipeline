@@ -56,8 +56,8 @@ LEGACY_WATCHLIST_PATH = OUTPUT_DIR / "watchlist.json"
 WATCHLIST_RETENTION_DAYS = 7
 # Canonical "I skipped a day" view: kept jobs first_seen/posted in this window.
 INBOX_DAYS = 3
-COMPANY_LINKS_JSON = BASE_DIR / "source" / "company_links.json"
-TARGET_COMPANIES_JSON = BASE_DIR / "source" / "target_companies.json"
+COMPANY_LINKS_JSON = BASE_DIR / "config" / "company_links.json"
+TARGET_COMPANIES_JSON = BASE_DIR / "config" / "target_companies.json"
 SWE_RESUME_PATH = BASE_DIR / "profile" / "resume_swe.md"
 AI_RESUME_PATH = BASE_DIR / "profile" / "resume_ai.md"
 PACIFIC = ZoneInfo("America/Los_Angeles")

@@ -22,8 +22,8 @@ HEURISTIC_CSV = OUTPUT_DIR / "google_heuristic_candidates.csv"
 SHORTLIST_CSV = OUTPUT_DIR / "google_llm_shortlist.csv"
 REPORT_MD = OUTPUT_DIR / "google_screening_report.md"
 ENV_PATH = BASE_DIR / ".env"
-SWE_RESUME_PATH = BASE_DIR / "source" / "swe-resume.txt"
-AI_RESUME_PATH = BASE_DIR / "source" / "aie-resume.txt"
+SWE_RESUME_PATH = BASE_DIR / "config" / "swe-resume.txt"
+AI_RESUME_PATH = BASE_DIR / "config" / "aie-resume.txt"
 
 SHORTLIST_COLUMNS = [
     "company",

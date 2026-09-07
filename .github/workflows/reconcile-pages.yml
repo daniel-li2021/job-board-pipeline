@@ -6,8 +6,8 @@ on:
     paths:
       - ".github/workflows/reconcile-pages.yml"
       - "profile/official_coverage.json"
-      - "source/official_careers.json"
-      - "source/target_companies.json"
+      - "config/official_careers.json"
+      - "config/target_companies.json"
       - "dashboard.py"
       - "dashboard_applied_history.js"
       - "dashboard_last7.js"

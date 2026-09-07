@@ -699,7 +699,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     scrape = sub.add_parser("scrape", help="Discover jobs from official career sites")
-    scrape.add_argument("--only", help="Company id(s) from source/official_careers.json, comma-separated")
+    scrape.add_argument("--only", help="Company id(s) from config/official_careers.json, comma-separated")
     scrape.add_argument("--max-pages", type=int, default=0, help="Safety cap per query (default from registry)")
     scrape.add_argument("--full-sweep", action="store_true", help="Force deep/full pagination instead of the daily incremental depth")
 
@@ -709,7 +709,7 @@ def build_parser() -> argparse.ArgumentParser:
     match.add_argument("--force-digest", action="store_true", help="Emit a digest even if one already went out today")
 
     run = sub.add_parser("run", help="Scrape then match (default scheduled entry point)")
-    run.add_argument("--only", help="Company id(s) from source/official_careers.json, comma-separated")
+    run.add_argument("--only", help="Company id(s) from config/official_careers.json, comma-separated")
     run.add_argument("--max-pages", type=int, default=0)
     run.add_argument("--full-sweep", action="store_true", help="Force deep/full pagination instead of the daily incremental depth")
     run.add_argument("--no-llm", action="store_true")

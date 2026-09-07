@@ -61,7 +61,7 @@ def context(status: str = "unvalidated", snapshot: datetime | None = None) -> di
 
 class ReferralAliasTests(unittest.TestCase):
     def test_single_alias_file_is_consistent_across_pipelines(self) -> None:
-        targets = load_alias_file(ROOT / "source" / "target_companies.json")
+        targets = load_alias_file(ROOT / "config" / "target_companies.json")
         samples = {
             "Amazon Web Services, Inc.": "Amazon",
             "JPMorganChase": "J.P. Morgan",
@@ -74,7 +74,7 @@ class ReferralAliasTests(unittest.TestCase):
             self.assertEqual(expected, daily_pipeline.match_target_company(company, targets))
 
     def test_short_alias_does_not_match_substring(self) -> None:
-        targets = load_alias_file(ROOT / "source" / "target_companies.json")
+        targets = load_alias_file(ROOT / "config" / "target_companies.json")
         self.assertIsNone(match_company_alias("Sapios", targets))
         self.assertIsNone(match_company_alias("Metadata Systems", targets))
         self.assertIsNone(match_company_alias("GE HealthCare", targets))
@@ -82,7 +82,7 @@ class ReferralAliasTests(unittest.TestCase):
 
 class DashboardPolicyTests(unittest.TestCase):
     def test_dashboard_company_key_reuses_canonical_referral_alias(self) -> None:
-        referrals = load_alias_file(ROOT / "source" / "target_companies.json")
+        referrals = load_alias_file(ROOT / "config" / "target_companies.json")
         row = dashboard.normalize_row(
             {
                 "canonical_job_key": "test-job",
@@ -890,7 +890,7 @@ class ReportingWorkflowTests(unittest.TestCase):
 
 class RegistryCoverageTests(unittest.TestCase):
     def test_official_registry_is_structurally_complete(self) -> None:
-        payload = json.loads((ROOT / "source" / "official_careers.json").read_text(encoding="utf-8"))
+        payload = json.loads((ROOT / "config" / "official_careers.json").read_text(encoding="utf-8"))
         companies = payload["companies"]
         ids = [company["id"] for company in companies]
         names = [company["name"].casefold() for company in companies]
@@ -929,7 +929,7 @@ class RegistryCoverageTests(unittest.TestCase):
         self.assertGreaterEqual(sum(company.get("adapter") != "skip" for company in companies), 70)
 
     def test_manual_unsupported_overrides_do_not_mask_active_adapters(self) -> None:
-        registry = json.loads((ROOT / "source" / "official_careers.json").read_text(encoding="utf-8"))
+        registry = json.loads((ROOT / "config" / "official_careers.json").read_text(encoding="utf-8"))
         coverage = json.loads((ROOT / "profile" / "official_coverage.json").read_text(encoding="utf-8"))
         active = {company["id"] for company in registry["companies"] if company.get("adapter") != "skip"}
         stale = {
@@ -940,9 +940,9 @@ class RegistryCoverageTests(unittest.TestCase):
         self.assertEqual(set(), stale)
 
     def test_ats_and_syncareer_have_explicit_official_cross_check_coverage(self) -> None:
-        official = json.loads((ROOT / "source" / "official_careers.json").read_text(encoding="utf-8"))
-        ats = json.loads((ROOT / "source" / "ats_boards.json").read_text(encoding="utf-8"))
-        syncareer = json.loads((ROOT / "source" / "company_links.json").read_text(encoding="utf-8"))
+        official = json.loads((ROOT / "config" / "official_careers.json").read_text(encoding="utf-8"))
+        ats = json.loads((ROOT / "config" / "ats_boards.json").read_text(encoding="utf-8"))
+        syncareer = json.loads((ROOT / "config" / "company_links.json").read_text(encoding="utf-8"))
         official_ids = {company["id"] for company in official["companies"]}
         ats_ids = {board["token"] for board in ats["boards"]}
         sync_ids = {company["key"] for company in syncareer["companies"]}
@@ -967,7 +967,7 @@ class RegistryCoverageTests(unittest.TestCase):
         self.assertLessEqual(max(amazon_caps.values()), 3)
         self.assertLessEqual(max(workday_caps.values()), 3)
 
-        registry = json.loads((ROOT / "source" / "official_careers.json").read_text(encoding="utf-8"))
+        registry = json.loads((ROOT / "config" / "official_careers.json").read_text(encoding="utf-8"))
         companies = {company["id"]: company for company in registry["companies"]}
         self.assertIn("core infrastructure", companies["oracle"]["oracle_hcm"]["extra_queries"])
 

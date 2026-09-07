@@ -54,7 +54,7 @@ python3 official_careers.py scrape --only google
 python3 official_careers.py match --no-llm
 ```
 
-Registry: [`source/official_careers.json`](source/official_careers.json)
+Registry: [`config/official_careers.json`](config/official_careers.json)
 
 Per-company scrape diagnostics: [`output/official_careers/scrape_report.md`](output/official_careers/scrape_report.md)
 
@@ -78,7 +78,7 @@ The matcher uses:
 
 Tier A/B/C is deterministic after scoring. Referral status affects action/ranking, not the underlying match score.
 
-Referral companies have one source of truth: [`source/target_companies.json`](source/target_companies.json).
+Referral companies have one source of truth: [`config/target_companies.json`](config/target_companies.json).
 
 ## Official coverage reconciliation
 
@@ -131,9 +131,9 @@ User-facing digests are deduplicated so reruns, rescoring, and ordinary JD chang
 
 ## Main configuration
 
-- `source/official_careers.json` — Official company registry and adapter configuration;
-- `source/ats_boards.json` — reusable ATS sources;
-- `source/target_companies.json` — referral companies;
+- `config/official_careers.json` — Official company registry and adapter configuration;
+- `config/ats_boards.json` — reusable ATS sources;
+- `config/target_companies.json` — referral companies;
 - `profile/company_filters.json` — exclusions, staffing, clearance-risk, and visibility rules;
 - `profile/official_coverage.json` — manual Official validation state;
 - `sources/careers/query_terms.py` — shared Official role-search queries.

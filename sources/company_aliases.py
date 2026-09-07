@@ -1,6 +1,6 @@
 """Shared, conservative company-alias matching.
 
-``source/target_companies.json`` is the single canonical referral list.  The
+``config/target_companies.json`` is the single canonical referral list.  The
 same matcher is used by Syncareer, ATS/LinkedIn, official careers, and the
 cross-pipeline reconciler so referral/coverage decisions cannot drift.
 """

@@ -8,7 +8,7 @@ Optimize for focused, token-efficient changes and keep Git state easy to reason 
 - Syncareer → `daily_pipeline.py`
 - Big Company Official → `official_careers.py`
 - Shared job schema / normalization → `sources/schema.py`
-- Shared/company configuration → `profile/` and `source/`
+- Shared/company configuration → `profile/` and `config/`
 - Full architecture and pipeline documentation → `README.md`
 
 ## Rules

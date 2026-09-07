@@ -25,9 +25,9 @@ RAW_CSV = OUTPUT_DIR / "syncareer_raw_jobs.csv"
 SCREENED_CSV = OUTPUT_DIR / "syncareer_screened_jobs.csv"
 REPORT_MD = OUTPUT_DIR / "syncareer_report.md"
 DROPPED_SAMPLE_CSV = OUTPUT_DIR / "stage1_dropped_sample.csv"
-COMPANY_LINKS_JSON = BASE_DIR / "source" / "company_links.json"
-SWE_RESUME_PATH = BASE_DIR / "source" / "swe-resume.txt"
-AI_RESUME_PATH = BASE_DIR / "source" / "aie-resume.txt"
+COMPANY_LINKS_JSON = BASE_DIR / "config" / "company_links.json"
+SWE_RESUME_PATH = BASE_DIR / "config" / "swe-resume.txt"
+AI_RESUME_PATH = BASE_DIR / "config" / "aie-resume.txt"
 
 DETAIL_API_URL = "https://syncareer.com/api/job/detail"
 REQUEST_TIMEOUT = 30

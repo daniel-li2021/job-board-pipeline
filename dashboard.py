@@ -25,9 +25,9 @@ DASHBOARD_HTML = PUBLIC_DIR / "index.html"
 REPO_URL = "https://github.com/daniel-li2021/job-board-pipeline"
 PAGES_URL = "https://daniel-li2021.github.io/job-board-pipeline/"
 PACIFIC = ZoneInfo("America/Los_Angeles")
-REFERRAL_PATH = BASE_DIR / "source" / "target_companies.json"
+REFERRAL_PATH = BASE_DIR / "config" / "target_companies.json"
 COMPANY_FILTERS_PATH = BASE_DIR / "profile" / "company_filters.json"
-OFFICIAL_REGISTRY_PATH = BASE_DIR / "source" / "official_careers.json"
+OFFICIAL_REGISTRY_PATH = BASE_DIR / "config" / "official_careers.json"
 SUPABASE_URL = os.getenv("SUPABASE_URL", "https://wzriavtjqfpkeafeisfv.supabase.co")
 SUPABASE_PUBLISHABLE_KEY = os.getenv(
     "SUPABASE_PUBLISHABLE_KEY", "sb_publishable_uYhplHl4QV7h5sKcItb4vg_UP9uiAQF"
@@ -493,7 +493,7 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         "repository": REPO_URL,
         "snapshots": snapshots,
         "report_links": {key: f"{REPO_URL}/blob/main/{path}" for key, path in REPORT_PATHS.items()},
-        "referral_file": f"{REPO_URL}/blob/main/source/target_companies.json",
+        "referral_file": f"{REPO_URL}/blob/main/config/target_companies.json",
         "coverage_report": f"{REPO_URL}/blob/main/output/cross_pipeline/coverage.md",
         "supabase": {"url": SUPABASE_URL, "publishable_key": SUPABASE_PUBLISHABLE_KEY},
         "counts_24h": counts(fresh),
@@ -533,7 +533,7 @@ button.hide-company,button.show-company{border:1px solid var(--line);border-radi
 <div id="main-view-applied" class="main-view" role="tabpanel" aria-labelledby="main-tab-applied" data-main-panel="applied" hidden><h2>Applied / Completed</h2><p>Applied jobs leave the active Fresh and Rolling lists.</p><div id="applied"></div></div></section>
 <details class="panel"><summary>Hidden companies <span id="hiddenCompanyCount"></span></summary><p>Hidden companies stay out of discovery views. Show one again at any time.</p><div id="hiddenCompanies"></div></details>
 <section class="panel"><h2>Deleted</h2><p>Deleted jobs stay recoverable with Restore while they remain in the rolling job data.</p><div id="deleted"></div></section>
-<details class="panel"><summary>Referral opportunities</summary><p>Optional view. Aliases come only from <a id="referralFile">source/target_companies.json</a>.</p><div id="referrals"></div></details>
+<details class="panel"><summary>Referral opportunities</summary><p>Optional view. Aliases come only from <a id="referralFile">config/target_companies.json</a>.</p><div id="referrals"></div></details>
 <section class="panel"><h2>Official company search links</h2><p>Quick official searches for manual checks and future adapters. “Automated” entries already have a scraper; “link only” entries are intentionally not reverse-engineered yet.</p><div id="officialSearches"></div></section>
 </div><script id="payload" type="application/json">__PAYLOAD__</script><script>
 const D=JSON.parse(document.getElementById('payload').textContent); document.getElementById('updated').textContent=D.updated_pt; document.getElementById('repo').href=D.repository;document.getElementById('referralFile').href=D.referral_file;

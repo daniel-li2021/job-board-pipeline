@@ -3,7 +3,7 @@
 
 These endpoints are anonymous and CI-friendly (no login, low block risk),
 so they run in GitHub Actions. Each board is described in
-``source/ats_boards.json``:
+``config/ats_boards.json``:
 
     {
       "boards": [
@@ -30,7 +30,7 @@ from .schema import (
 )
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-ATS_BOARDS_JSON = BASE_DIR / "source" / "ats_boards.json"
+ATS_BOARDS_JSON = BASE_DIR / "config" / "ats_boards.json"
 REQUEST_TIMEOUT = 25
 
 

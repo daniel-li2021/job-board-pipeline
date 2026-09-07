@@ -82,16 +82,16 @@ RUNS_DIR = BOARD_DIR / "runs"
 PACIFIC = ZoneInfo("America/Los_Angeles")
 RETENTION_DAYS = 7
 INBOX_DAYS = 3
-TARGET_COMPANIES_JSON = BASE_DIR / "source" / "target_companies.json"
+TARGET_COMPANIES_JSON = BASE_DIR / "config" / "target_companies.json"
 
-# Profile inputs drive matching. Fallback to legacy source/*.txt if missing.
+# Profile inputs drive matching. Fallback to legacy config/*.txt if missing.
 PROFILE_DIR = BASE_DIR / "profile"
 CANDIDATE_PROFILE_PATH = PROFILE_DIR / "candidate_profile.md"
 RESUME_SWE_PATH = PROFILE_DIR / "resume_swe.md"
 RESUME_AI_PATH = PROFILE_DIR / "resume_ai.md"
 COMPANY_FILTERS_PATH = PROFILE_DIR / "company_filters.json"
-LEGACY_SWE_RESUME_PATH = BASE_DIR / "source" / "swe-resume.txt"
-LEGACY_AI_RESUME_PATH = BASE_DIR / "source" / "aie-resume.txt"
+LEGACY_SWE_RESUME_PATH = BASE_DIR / "config" / "swe-resume.txt"
+LEGACY_AI_RESUME_PATH = BASE_DIR / "config" / "aie-resume.txt"
 
 # Bump whenever the LLM prompt schema/policy changes; invalidates cached scores.
 PROMPT_VERSION = "v4-routed-resume-calibrated-context"

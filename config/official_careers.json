@@ -1,5 +1,5 @@
 {
-  "_comment": "Official company careers discovery registry. Adapters live in sources/careers/. priority_tier controls implementation priority; adapter=ats reuses source/ats_boards.json, while adapter=skip remains link-only and makes no external call. Matching is handled downstream by board_pipeline.",
+  "_comment": "Official company careers discovery registry. Adapters live in sources/careers/. priority_tier controls implementation priority; adapter=ats reuses config/ats_boards.json, while adapter=skip remains link-only and makes no external call. Matching is handled downstream by board_pipeline.",
   "max_pages_default": 12,
   "companies": [
     {

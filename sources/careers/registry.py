@@ -41,8 +41,8 @@ from .workday import scrape_workday
 from .incremental import DetailCache
 from .http import make_session
 
-REGISTRY_PATH = BASE_DIR / "source" / "official_careers.json"
-ATS_BOARDS_PATH = BASE_DIR / "source" / "ats_boards.json"
+REGISTRY_PATH = BASE_DIR / "config" / "official_careers.json"
+ATS_BOARDS_PATH = BASE_DIR / "config" / "ats_boards.json"
 COMPANY_WORKERS = 5
 
 
