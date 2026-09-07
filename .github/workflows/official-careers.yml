@@ -6,11 +6,12 @@ name: Official careers
 run-name: ${{ inputs.scheduler_probe && format('Scheduler probe {0}', inputs.scheduler_probe) || github.workflow }}
 
 on:
-  schedule:
-    - cron: "30 8 * * *"
-      timezone: "America/Los_Angeles"
-    - cron: "20 17 * * *"
-      timezone: "America/Los_Angeles"
+  # Legacy GitHub cron disabled after verified AWS Scheduler cutover.
+  # schedule:
+  #   - cron: "30 8 * * *"
+  #     timezone: "America/Los_Angeles"
+  #   - cron: "20 17 * * *"
+  #     timezone: "America/Los_Angeles"
   workflow_dispatch:
     inputs:
       scheduler_probe:
