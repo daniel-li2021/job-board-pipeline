@@ -15,9 +15,10 @@ on:
   workflow_run:
     workflows: ["Official careers", "Board job alert", "Syncareer job alert"]
     types: [completed]
-  schedule:
-    - cron: "30 9,21 * * *"
-      timezone: "America/Los_Angeles"
+  # Legacy GitHub cron disabled after verified AWS Scheduler cutover.
+  # schedule:
+  #   - cron: "30 9,21 * * *"
+  #     timezone: "America/Los_Angeles"
   workflow_dispatch:
 
 permissions:
