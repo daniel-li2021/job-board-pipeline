@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-07T10:37:52.297898+00:00",
+  "collector": {
+    "commit": "5a9a15d03176b6de256ae28e61cf246b90775984",
+    "dirty": false
+  },
+  "sources": {
+    "linkedin": {
+      "healthy": true,
+      "status": "ok",
+      "reason": "",
+      "last_attempt_at": "2026-09-07T10:34:35.218018+00:00",
+      "last_success_at": "2026-09-07T10:34:35.218018+00:00",
+      "last_attempt_collector": {
+        "commit": "5a9a15d03176b6de256ae28e61cf246b90775984",
+        "dirty": false
+      },
+      "last_success_collector": {
+        "commit": "5a9a15d03176b6de256ae28e61cf246b90775984",
+        "dirty": false
+      },
+      "last_attempt_source_provenance": {
+        "implementation": "sources.linkedin_local"
+      },
+      "last_success_source_provenance": {
+        "implementation": "sources.linkedin_local"
+      },
+      "last_good_count": 828
+    },
+    "indeed": {
+      "healthy": true,
+      "status": "ok",
+      "reason": "",
+      "last_attempt_at": "2026-09-07T10:37:39.226976+00:00",
+      "last_success_at": "2026-09-07T10:37:39.226976+00:00",
+      "last_attempt_collector": {
+        "commit": "5a9a15d03176b6de256ae28e61cf246b90775984",
+        "dirty": false
+      },
+      "last_success_collector": {
+        "commit": "5a9a15d03176b6de256ae28e61cf246b90775984",
+        "dirty": false
+      },
+      "last_attempt_source_provenance": {
+        "implementation": "python-jobspy",
+        "version": "1.1.82"
+      },
+      "last_success_source_provenance": {
+        "implementation": "python-jobspy",
+        "version": "1.1.82"
+      },
+      "last_good_count": 230
+    },
+    "glassdoor": {
+      "healthy": false,
+      "status": "skipped_unavailable",
+      "reason": "Glassdoor response status code 400; Glassdoor: location not parsed",
+      "last_attempt_at": "2026-09-07T10:37:52.136320+00:00",
+      "last_success_at": "",
+      "last_attempt_collector": {
+        "commit": "5a9a15d03176b6de256ae28e61cf246b90775984",
+        "dirty": false
+      },
+      "last_success_collector": {},
+      "last_attempt_source_provenance": {
+        "implementation": "python-jobspy",
+        "version": "1.1.82"
+      },
+      "last_success_source_provenance": {},
+      "last_good_count": 0
+    }
+  }
+}
