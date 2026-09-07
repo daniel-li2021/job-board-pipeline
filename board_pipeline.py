@@ -29,6 +29,8 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+
+from state_io import atomic_write, read_json
 import os
 import re
 import time
@@ -169,19 +171,19 @@ def today_pacific() -> str:
 
 def load_digest_state(path: Path) -> Dict[str, Any]:
     empty: Dict[str, Any] = {"last_digest_date": "", "alerted_keys": [], "alerted_tier": {}}
-    if not path.exists():
-        return dict(empty)
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return dict(empty)
+    data = read_json(path, empty)
     if not isinstance(data, dict):
-        return dict(empty)
+        raise ValueError(f"Invalid digest state: {path}")
     data.setdefault("last_digest_date", "")
     data.setdefault("alerted_keys", [])
     data.setdefault("alerted_tier", {})
-    if not isinstance(data["alerted_tier"], dict):
-        data["alerted_tier"] = {}
+    if (
+        not isinstance(data["alerted_keys"], list)
+        or any(not isinstance(key, str) for key in data["alerted_keys"])
+        or not isinstance(data["alerted_tier"], dict)
+        or not isinstance(data["last_digest_date"], str)
+    ):
+        raise ValueError(f"Invalid digest state: {path}")
     return data
 
 
@@ -191,8 +193,7 @@ def save_digest_state(path: Path, state: Dict[str, Any]) -> None:
     key_set = set(keys)
     raw_tiers = state.get("alerted_tier") or {}
     tiers = {k: v for k, v in raw_tiers.items() if k in key_set} if isinstance(raw_tiers, dict) else {}
-    path.write_text(
-        json.dumps(
+    atomic_write(path, (json.dumps(
             {
                 "last_digest_date": state.get("last_digest_date", ""),
                 "alerted_keys": keys,
@@ -200,9 +201,7 @@ def save_digest_state(path: Path, state: Dict[str, Any]) -> None:
             },
             indent=2,
         )
-        + "\n",
-        encoding="utf-8",
-    )
+        + "\n").encode("utf-8"))
 
 
 def digest_alert_jobs(visible: List[Dict[str, str]], state: Dict[str, Any]) -> List[Dict[str, str]]:
@@ -1532,25 +1531,24 @@ def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
 # --------------------------------------------------------------------------
 # jobs.json store (dedup + first_seen, 7-day rolling)
 # --------------------------------------------------------------------------
-def load_store_path(path: Path) -> Dict[str, Dict[str, Any]]:
-    if not path.exists():
-        return {}
+def load_store_path(path: Path, *, strict: bool = False) -> Dict[str, Dict[str, Any]]:
     try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return {}
-    entries = data.get("entries", []) if isinstance(data, dict) else data
-    out: Dict[str, Dict[str, Any]] = {}
-    if isinstance(entries, list):
-        for e in entries:
-            key = e.get("key")
-            if key:
-                out[key] = e
-    return out
+        data = read_json(path, {"entries": []})
+        entries = data.get("entries") if isinstance(data, dict) else data
+        if not isinstance(entries, list) or any(
+            not isinstance(entry, dict) or not isinstance(entry.get("key"), str) or not entry["key"]
+            for entry in entries
+        ):
+            raise ValueError(f"Invalid job store: {path}")
+        return {entry["key"]: entry for entry in entries}
+    except (ValueError, OSError):
+        if strict:
+            raise
+        return {}  # Optional peer cache; its owner is responsible for repair.
 
 
 def load_store() -> Dict[str, Dict[str, Any]]:
-    return load_store_path(JOBS_STORE_PATH)
+    return load_store_path(JOBS_STORE_PATH, strict=True)
 
 
 def save_store(store: Dict[str, Dict[str, Any]]) -> None:
@@ -1562,7 +1560,7 @@ def save_store(store: Dict[str, Dict[str, Any]]) -> None:
         "count": len(entries),
         "entries": entries,
     }
-    JOBS_STORE_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    atomic_write(JOBS_STORE_PATH, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
 
 
 def prune_store(store: Dict[str, Dict[str, Any]], now: datetime) -> Dict[str, Dict[str, Any]]:

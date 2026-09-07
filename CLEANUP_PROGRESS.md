@@ -38,6 +38,12 @@
 - Added malformed-state checks and round-trip coverage retaining review fields, scores, tiers and first-seen dates. Verified the current 807 watchlist records read identically.
 - Validation: 56 visibility tests passed, Python compilation and diff check passed; no persisted production outputs changed.
 
+## Completed — batch 7: shared persistent-state safety
+- Added a small standard-library atomic replacement helper, reusing the sibling-temp pattern already present in local snapshots but with unique temp names and cleanup. Applied it to owned job/seen/digest/review/history/raw stores and local snapshots/health; JSON and gzip formatting stay unchanged.
+- Board/Official owner reads now reject corruption; optional peer-cache reads remain nonblocking. Official reuses Board's job-store reader. Invalid compressed raw snapshots cannot be silently replaced during merge.
+- Digest/history/review owners preserve corrupt state for repair rather than resetting it. Review status updates retain existing notes; corrected stale CLI instructions about Supabase and Pages.
+- Validation: all 105 tests passed, including failed-write preservation and owner/peer behavior; existing 13,082 Board and 22,468 Official entries read identically; current digests/history passed validation. Production outputs untouched.
+
 ## Remaining high-value work
 - Trace duplicated Board/Syncareer utilities, environment/profile loading and large root modules; extract only where it reduces coupling.
 - Review persistent-state compatibility and tests against real production invariants; retain needed old-format readers.

@@ -20,6 +20,8 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+
+from state_io import atomic_write, read_json
 import os
 import re
 import time
@@ -371,7 +373,7 @@ def run_search(
 def load_seen_ids() -> set[str]:
     if not SEEN_IDS_PATH.exists():
         return set()
-    data = json.loads(SEEN_IDS_PATH.read_text(encoding="utf-8"))
+    data = read_json(SEEN_IDS_PATH, [])
     ids = data.get("seen_ids") if isinstance(data, dict) else data
     if not isinstance(ids, list) or any(not isinstance(jid, (str, int)) for jid in ids):
         raise ValueError(f"Invalid seen-ID store: {SEEN_IDS_PATH}")
@@ -385,7 +387,7 @@ def save_seen_ids(seen_ids: set[str]) -> None:
         "count": len(seen_ids),
         "seen_ids": sorted(seen_ids),
     }
-    SEEN_IDS_PATH.write_text(json.dumps(payload, indent=0), encoding="utf-8")
+    atomic_write(SEEN_IDS_PATH, (json.dumps(payload, indent=0)).encode("utf-8"))
 
 
 # --------------------------------------------------------------------------
@@ -396,7 +398,7 @@ def load_watchlist() -> Dict[str, Dict[str, Any]]:
     path = WATCHLIST_PATH if WATCHLIST_PATH.exists() else LEGACY_WATCHLIST_PATH
     if not path.exists():
         return {}
-    data = json.loads(path.read_text(encoding="utf-8"))
+    data = read_json(path, [])
     entries = data.get("entries") if isinstance(data, dict) else data
     if not isinstance(entries, (list, dict)):
         raise ValueError(f"Invalid watchlist entries: {path}")
@@ -443,7 +445,7 @@ def save_watchlist(watchlist: Dict[str, Dict[str, Any]]) -> None:
         "count": len(entries),
         "entries": entries,
     }
-    WATCHLIST_PATH.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    atomic_write(WATCHLIST_PATH, (json.dumps(payload, indent=2)).encode("utf-8"))
 
 
 def _entry_age_ref(entry: Dict[str, Any]) -> Optional[datetime]:

@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Update the lightweight, committed dashboard job status."""
+"""Update the optional committed pipeline review-state overlay."""
 
 from __future__ import annotations
 
 import argparse
 import json
+
+from state_io import atomic_write, read_json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, Optional
@@ -37,7 +39,7 @@ def _entries() -> Iterable[Dict[str, Any]]:
 
 
 def resolve_selector(selector: str) -> Optional[str]:
-    """Resolve a canonical key, exact URL, or unique job ID/title selector."""
+    """Resolve a canonical key, exact URL, or unique job ID selector."""
     selector = selector.strip()
     matches: list[str] = []
     for entry in _entries():
@@ -66,17 +68,17 @@ def set_status(selector: str, status: str, notes: str = "") -> str:
     key = resolve_selector(selector)
     if not key:
         raise SystemExit("Job not found. Use its canonical_job_key, exact URL, or unique job ID.")
-    payload = _read(STATE_PATH, {"jobs": {}})
+    payload = read_json(STATE_PATH, {"jobs": {}})
     if not isinstance(payload, dict):
-        payload = {"jobs": {}}
+        raise ValueError(f"Invalid review state: {STATE_PATH}")
     jobs = payload.setdefault("jobs", {})
     if not isinstance(jobs, dict):
-        jobs = payload["jobs"] = {}
-    record = {"status": status, "updated_at": datetime.now(timezone.utc).isoformat()}
+        raise ValueError(f"Invalid review state: {STATE_PATH}")
+    record = {**(jobs.get(key) or {}), "status": status, "updated_at": datetime.now(timezone.utc).isoformat()}
     if notes:
         record["notes"] = notes
     jobs[key] = record
-    STATE_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    atomic_write(STATE_PATH, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
     return key
 
 
@@ -88,7 +90,7 @@ def main() -> None:
     args = parser.parse_args()
     key = set_status(args.selector, args.status, args.notes)
     print(f"Updated {key} -> {args.status}")
-    print("Commit profile/review_state.json; the Pages workflow will regenerate and publish the dashboard.")
+    print("Commit profile/review_state.json to retain the pipeline overlay; live dashboard status is stored separately in Supabase.")
 
 
 if __name__ == "__main__":

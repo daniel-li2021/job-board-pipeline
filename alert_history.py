@@ -9,6 +9,8 @@ older. Each pipeline owns its history file under its own output directory.
 from __future__ import annotations
 
 import json
+
+from state_io import atomic_write, read_json
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional
@@ -32,11 +34,13 @@ def parse_stamp(stamp: str) -> Optional[datetime]:
 
 
 def _read(path: Path) -> Dict[str, Any]:
-    try:
-        payload = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return {"events": []}
-    return payload if isinstance(payload, dict) else {"events": []}
+    payload = read_json(path, {"events": []})
+    if not isinstance(payload, dict) or not isinstance(payload.get("events"), list) or any(
+        not isinstance(event, dict) or not isinstance(event.get("jobs"), list)
+        for event in payload["events"]
+    ):
+        raise ValueError(f"Invalid alert history: {path}")
+    return payload
 
 
 def job_snapshot(job: Dict[str, Any]) -> Dict[str, Any]:
@@ -84,7 +88,7 @@ def append_event(
     kept.sort(key=lambda event: str(event.get("emitted_at") or event.get("stamp") or ""))
     result = {"retention_days": RETENTION_DAYS, "events": kept}
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    atomic_write(path, (json.dumps(result, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
     return result
 
 

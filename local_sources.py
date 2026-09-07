@@ -26,6 +26,8 @@ from __future__ import annotations
 
 import argparse
 import json
+
+from state_io import atomic_write
 import os
 import subprocess
 import time
@@ -228,9 +230,7 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
         "collector": collector,
         "sources": sources,
     }
-    pending = HEALTH_PATH.with_suffix(".json.tmp")
-    pending.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    pending.replace(HEALTH_PATH)
+    atomic_write(HEALTH_PATH, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
 
 
 def main() -> None:

@@ -10,6 +10,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+
+from state_io import atomic_write
 import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -598,9 +600,7 @@ def write_source_snapshot(name: str, jobs: List[Dict[str, str]], meta: Optional[
         "meta": meta or {},
         "jobs": ordered,
     }
-    pending = path.with_suffix(".json.tmp")
-    pending.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    pending.replace(path)
+    atomic_write(path, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
     return path
 
 

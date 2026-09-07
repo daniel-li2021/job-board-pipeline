@@ -22,6 +22,8 @@ import argparse
 import csv
 import gzip
 import json
+
+from state_io import atomic_write
 import re
 import time
 from collections import Counter
@@ -230,9 +232,7 @@ def write_scrape_outputs(
         "per_company": [r.get("summary") for r in results],
         "jobs": all_jobs,
     }
-    RAW_PATH.write_bytes(
-        gzip.compress((json.dumps(payload, ensure_ascii=False) + "\n").encode(), mtime=0)
-    )
+    atomic_write(RAW_PATH, gzip.compress((json.dumps(payload, ensure_ascii=False) + "\n").encode(), mtime=0))
     REPORT_PATH.write_text("\n".join(lines), encoding="utf-8")
     return all_jobs
 
@@ -240,11 +240,11 @@ def write_scrape_outputs(
 def load_raw_payload() -> Dict[str, Any]:
     if not RAW_PATH.exists():
         return {}
-    try:
-        data = json.loads(gzip.decompress(RAW_PATH.read_bytes()))
-    except (json.JSONDecodeError, OSError, UnicodeDecodeError):
-        return {}
-    return data if isinstance(data, dict) else {"jobs": data}
+    data = json.loads(gzip.decompress(RAW_PATH.read_bytes()))
+    payload = data if isinstance(data, dict) else {"jobs": data}
+    if not isinstance(payload.get("jobs"), list) or any(not isinstance(job, dict) for job in payload["jobs"]):
+        raise ValueError(f"Invalid Official raw snapshot: {RAW_PATH}")
+    return payload
 
 
 def load_raw_jobs() -> List[Dict[str, str]]:
@@ -254,20 +254,7 @@ def load_raw_jobs() -> List[Dict[str, str]]:
 
 
 def load_careers_store() -> Dict[str, Dict[str, Any]]:
-    if not STORE_PATH.exists():
-        return {}
-    try:
-        data = json.loads(STORE_PATH.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return {}
-    entries = data.get("entries", []) if isinstance(data, dict) else data
-    out: Dict[str, Dict[str, Any]] = {}
-    if isinstance(entries, list):
-        for entry in entries:
-            key = entry.get("key")
-            if key:
-                out[key] = entry
-    return out
+    return board.load_store_path(STORE_PATH, strict=True)
 
 
 def save_careers_store(store: Dict[str, Dict[str, Any]]) -> None:
@@ -279,7 +266,7 @@ def save_careers_store(store: Dict[str, Dict[str, Any]]) -> None:
         "count": len(entries),
         "entries": entries,
     }
-    STORE_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    atomic_write(STORE_PATH, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
 
 
 def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp: str) -> None:
