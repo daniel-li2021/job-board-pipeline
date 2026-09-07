@@ -32,12 +32,18 @@
 - Added boundary tests through source normalization and retention. Inspected current watchlist shape (807 entries, string first-seen timestamps); did not rewrite it.
 - Validation: 54 visibility tests passed, Python compilation and diff check passed.
 
+## Completed — batch 6: Syncareer persistent-state read safety
+- CodeGraph traced both seen-ID and watchlist readers through CLI writes. Corrupt JSON or invalid store structure now raises instead of being treated as empty and later overwritten; missing files still initialize empty stores.
+- Kept legacy watchlist fallback only when the current path is absent. Preserved list/envelope/keyed-entry formats, including restoring job IDs from keyed entries so save/reload does not lose them.
+- Added malformed-state checks and round-trip coverage retaining review fields, scores, tiers and first-seen dates. Verified the current 807 watchlist records read identically.
+- Validation: 56 visibility tests passed, Python compilation and diff check passed; no persisted production outputs changed.
+
 ## Remaining high-value work
 - Trace duplicated Board/Syncareer utilities, environment/profile loading and large root modules; extract only where it reduces coupling.
 - Review persistent-state compatibility and tests against real production invariants; retain needed old-format readers.
 
 ## Next recommended batch
-Trace persistent-store read/write failure behavior: distinguish missing files from corrupt/unreadable files before any overwrite; test compatibility readers and repeated-run preservation. Review duplicated GitHub-output emitters with prefix semantics before consolidating. Avoid splitting large modules until shared dependencies are mapped. Generated `public/` artifacts are rebuilt by Pages; do not regenerate job data for this cleanup.
+Trace Board/Official/alert-history state readers and write interruption behavior; assess atomic replacement using existing helpers before adding one. Strengthen repeated-run CLI preservation checks. Review duplicated GitHub-output emitters with prefix semantics before consolidating. Avoid splitting large modules until shared dependencies are mapped. Generated `public/` artifacts are rebuilt by Pages; do not regenerate job data for this cleanup.
 
 ## Intentionally preserved
 - Matching/ranking policy, score cache keys, adapter budgets and source reliability guards.

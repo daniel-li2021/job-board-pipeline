@@ -371,15 +371,11 @@ def run_search(
 def load_seen_ids() -> set[str]:
     if not SEEN_IDS_PATH.exists():
         return set()
-    try:
-        data = json.loads(SEEN_IDS_PATH.read_text(encoding="utf-8"))
-    except Exception:  # noqa: BLE001
-        return set()
-    if isinstance(data, dict):
-        return set(str(x) for x in data.get("seen_ids", []))
-    if isinstance(data, list):
-        return set(str(x) for x in data)
-    return set()
+    data = json.loads(SEEN_IDS_PATH.read_text(encoding="utf-8"))
+    ids = data.get("seen_ids") if isinstance(data, dict) else data
+    if not isinstance(ids, list) or any(not isinstance(jid, (str, int)) for jid in ids):
+        raise ValueError(f"Invalid seen-ID store: {SEEN_IDS_PATH}")
+    return {str(jid) for jid in ids}
 
 
 def save_seen_ids(seen_ids: set[str]) -> None:
@@ -400,20 +396,20 @@ def load_watchlist() -> Dict[str, Dict[str, Any]]:
     path = WATCHLIST_PATH if WATCHLIST_PATH.exists() else LEGACY_WATCHLIST_PATH
     if not path.exists():
         return {}
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except Exception:  # noqa: BLE001
-        return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
     entries = data.get("entries") if isinstance(data, dict) else data
+    if not isinstance(entries, (list, dict)):
+        raise ValueError(f"Invalid watchlist entries: {path}")
     out: Dict[str, Dict[str, Any]] = {}
-    if isinstance(entries, list):
-        for e in entries:
-            jid = str(e.get("job_id", "")).strip()
-            if jid:
-                out[jid] = e
-    elif isinstance(entries, dict):
-        for jid, e in entries.items():
-            out[str(jid)] = e
+    items = entries.items() if isinstance(entries, dict) else ((None, e) for e in entries)
+    for key, entry in items:
+        if not isinstance(entry, dict):
+            raise ValueError(f"Invalid watchlist record: {path}")
+        jid = str(key if key is not None else entry.get("job_id") or "").strip()
+        if not jid:
+            raise ValueError(f"Missing watchlist job ID: {path}")
+        out[jid] = {**entry, "job_id": jid}
+
     return out
 
 

@@ -59,6 +59,40 @@ def context(status: str = "unvalidated", snapshot: datetime | None = None) -> di
     }
 
 
+class SyncareerStateTests(unittest.TestCase):
+    def test_legacy_watchlist_round_trip_preserves_ids_and_review_fields(self) -> None:
+        entry = {"title": "Engineer", "first_seen": "2026-09-01", "review_status": "applied", "tier": "B", "match_score": 75}
+        with tempfile.TemporaryDirectory() as tmpdir:
+            current, legacy = Path(tmpdir) / "current.json", Path(tmpdir) / "legacy.json"
+            with patch.object(daily_pipeline, "WATCHLIST_PATH", current), patch.object(daily_pipeline, "LEGACY_WATCHLIST_PATH", legacy):
+                self.assertEqual({}, daily_pipeline.load_watchlist())
+                for payload in ({"entries": {"123": entry}}, {"entries": [{**entry, "job_id": "123"}]}, [{**entry, "job_id": "123"}]):
+                    legacy.write_text(json.dumps(payload))
+                    loaded = daily_pipeline.load_watchlist()
+                    self.assertEqual({"123": {**entry, "job_id": "123"}}, loaded)
+                    daily_pipeline.save_watchlist(loaded)
+                    self.assertEqual(loaded, daily_pipeline.load_watchlist())
+                    current.unlink()
+
+    def test_corrupt_state_is_not_treated_as_empty_or_replaced_by_legacy(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            current, legacy = Path(tmpdir) / "current.json", Path(tmpdir) / "legacy.json"
+            legacy.write_text('{"entries": []}')
+            with patch.object(daily_pipeline, "WATCHLIST_PATH", current), patch.object(daily_pipeline, "LEGACY_WATCHLIST_PATH", legacy), patch.object(daily_pipeline, "SEEN_IDS_PATH", current):
+                for text in ('{', 'null', '{}', '{"entries": [null]}', '{"entries": [{}]}'):
+                    current.write_text(text)
+                    with self.assertRaises(ValueError):
+                        daily_pipeline.load_watchlist()
+                    with self.assertRaises(ValueError):
+                        daily_pipeline.load_seen_ids()
+                    self.assertEqual(text, current.read_text())
+                for payload in (["123", 456], {"seen_ids": ["123", 456]}):
+                    current.write_text(json.dumps(payload))
+                    self.assertEqual({"123", "456"}, daily_pipeline.load_seen_ids())
+                current.unlink()
+                self.assertEqual(set(), daily_pipeline.load_seen_ids())
+
+
 class MatchingProfileTests(unittest.TestCase):
     def test_required_profiles_preserve_text_and_invalidate_cache_on_change(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir, ExitStack() as stack:
