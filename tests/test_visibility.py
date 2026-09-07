@@ -848,21 +848,14 @@ class ReportingWorkflowTests(unittest.TestCase):
         self.assertNotIn("cc @daniel-li2021", (ROOT / "board_pipeline.py").read_text(encoding="utf-8").lower())
         self.assertNotIn("cc @daniel-li2021", (ROOT / "official_careers.py").read_text(encoding="utf-8").lower())
 
-    def test_workflows_are_independent_staggered_and_pages_enabled(self) -> None:
+    def test_workflows_are_independent_externally_scheduled_and_pages_enabled(self) -> None:
         board = (ROOT / ".github/workflows/board-jobs.yml").read_text(encoding="utf-8")
         official = (ROOT / ".github/workflows/official-careers.yml").read_text(encoding="utf-8")
         syncareer = (ROOT / ".github/workflows/daily-jobs.yml").read_text(encoding="utf-8")
         pages = (ROOT / ".github/workflows/reconcile-pages.yml").read_text(encoding="utf-8")
-        self.assertIn('cron: "7 8,17 * * *"', board)
-        self.assertIn('cron: "30 8 * * *"', official)
-        self.assertIn('cron: "20 17 * * *"', official)
-        self.assertIn('cron: "10 8,17 * * *"', syncareer)
-        self.assertIn('cron: "30 9,21 * * *"', pages)
-        timezone = 'timezone: "America/Los_Angeles"'
-        self.assertEqual(1, board.count(timezone))
-        self.assertEqual(2, official.count(timezone))
-        self.assertEqual(1, syncareer.count(timezone))
-        self.assertEqual(1, pages.count(timezone))
+        for workflow in (board, official, syncareer, pages):
+            self.assertNotIn("schedule:", workflow)
+            self.assertNotIn("cron:", workflow)
         self.assertNotRegex(official, r"git add[^\n]*output/alerts")
         self.assertIn("workflow_dispatch:", board)
         self.assertIn("workflow_dispatch:", official)

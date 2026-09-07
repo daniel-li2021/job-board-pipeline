@@ -95,24 +95,24 @@ Manual validation lives in [`profile/official_coverage.json`](profile/official_c
 
 ## Schedule
 
-GitHub Actions target the following **America/Los_Angeles** times:
+AWS EventBridge Scheduler dispatches the independent workflows at these
+**America/Los_Angeles** times:
 
 | Workflow | Morning | Evening |
 |---|---:|---:|
-| ATS / LinkedIn board | 8:07 AM | 5:07 PM |
+| ATS / LinkedIn board | 8:00 AM | 5:00 PM |
 | Syncareer | 8:10 AM | 5:10 PM |
-| Official Careers | 8:30 AM | 5:20 PM |
-| Reconcile + Pages fallback | 9:30 AM | 9:30 PM |
+| Official Careers | 8:20 AM | 5:20 PM |
 
-Reconcile + Pages also runs after successful completion of any of the three discovery workflows. GitHub scheduled workflows can occasionally start later than their target cron time.
+Reconcile + Pages runs after successful completion of any discovery workflow.
+Its push and manual triggers remain available; it has no redundant timer.
 
 Each discovery workflow is independently runnable with `workflow_dispatch`.
 
-The [external scheduler](infra/scheduler/README.md) is prepared for Board **8:00 AM /
-5:00 PM**, Syncareer **8:10 AM / 5:10 PM**, and Official **8:20 AM / 5:20 PM** Pacific.
-It is not yet deployed or verified; the GitHub schedules above remain active until
-Scheduler-to-GitHub probes pass and cutover is completed. The optional
-`scheduler_probe` dispatch input verifies trigger receipt without crawling or scoring.
+The [external scheduler](infra/scheduler/README.md) uses a shared Lambda dispatcher,
+fixed Pacific wall-clock schedules, retry policies, and an SQS failure queue. GitHub
+cron blocks were removed after end-to-end verification. The optional `scheduler_probe`
+dispatch input verifies trigger receipt without crawling or scoring.
 
 ## Alerts and outputs
 

@@ -42,7 +42,7 @@ class SchedulerTests(unittest.TestCase):
             self.assertNotIn("test-token", log.getvalue())
             before = send.call_count
             for event in ({"workflow": "unknown.yml"}, {"workflow": "board-jobs.yml", "probe_id": 123},
-                          {"workflow": "reconcile-pages.yml", "probe_id": "probe"}):
+                          {"workflow": "reconcile-pages.yml"}):
                 with self.assertRaises(ValueError):
                     handler(event, context)
             self.assertEqual(before, send.call_count)

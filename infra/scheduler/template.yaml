@@ -73,7 +73,7 @@ Resources:
           secrets = boto3.client("secretsmanager", config=Config(
               connect_timeout=3, read_timeout=5,
               retries={"total_max_attempts": 2, "mode": "standard"}))
-          WORKFLOWS = {"board-jobs.yml", "daily-jobs.yml", "official-careers.yml", "reconcile-pages.yml"}
+          WORKFLOWS = {"board-jobs.yml", "daily-jobs.yml", "official-careers.yml"}
 
           def handler(event, context):
               workflow = event.get("workflow")
@@ -82,8 +82,6 @@ Resources:
               probe = event.get("probe_id", "")
               if not isinstance(probe, str) or len(probe) > 100:
                   raise ValueError("Invalid probe_id")
-              if probe and workflow == "reconcile-pages.yml":
-                  raise ValueError("Pages verification runs the real lightweight workflow")
               token = secrets.get_secret_value(SecretId=os.environ["TOKEN_SECRET_ARN"])["SecretString"].strip()
               body = {"ref": "main"}
               if probe:
@@ -188,20 +186,6 @@ Resources:
         Arn: !GetAtt Dispatcher.Arn
         RoleArn: !GetAtt SchedulerRole.Arn
         Input: '{"workflow":"official-careers.yml","scheduled_time":"<aws.scheduler.scheduled-time>"}'
-        RetryPolicy: {MaximumEventAgeInSeconds: 900, MaximumRetryAttempts: 3}
-        DeadLetterConfig: {Arn: !GetAtt Failures.Arn}
-  PagesSchedule:
-    Type: AWS::Scheduler::Schedule
-    Properties:
-      GroupName: !Ref ScheduleGroup
-      State: !Ref ScheduleState
-      ScheduleExpression: cron(30 9,21 * * ? *)
-      ScheduleExpressionTimezone: America/Los_Angeles
-      FlexibleTimeWindow: {Mode: 'OFF'}
-      Target:
-        Arn: !GetAtt Dispatcher.Arn
-        RoleArn: !GetAtt SchedulerRole.Arn
-        Input: '{"workflow":"reconcile-pages.yml","scheduled_time":"<aws.scheduler.scheduled-time>"}'
         RetryPolicy: {MaximumEventAgeInSeconds: 900, MaximumRetryAttempts: 3}
         DeadLetterConfig: {Arn: !GetAtt Failures.Arn}
 Outputs:
