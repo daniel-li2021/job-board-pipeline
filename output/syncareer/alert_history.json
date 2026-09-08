@@ -4407,6 +4407,45 @@
           "url": "https://careers.micron.com/careers/job/44280744?domain=micron.com"
         }
       ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-09-08_1511",
+      "emitted_at": "2026-09-08T15:11:53.136553+00:00",
+      "event_kind": "new_matching",
+      "count": 2,
+      "jobs": [
+        {
+          "canonical_job_key": "id::syncareer::ace0ef4a14f7fd98e94365c756776d57",
+          "job_id": "ace0ef4a14f7fd98e94365c756776d57",
+          "tier": "A",
+          "match_score": 87.0,
+          "fit_score": 87.0,
+          "company": "IBM",
+          "title": "Entry Level Software Developer-Different locations",
+          "location": "Poughkeepsie, New York, United States",
+          "posting_date": "2026-09-07",
+          "first_seen": "2026-09-08T15:11:10.233966+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=130369&source=WEB_Search_NA",
+          "url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=130369&source=WEB_Search_NA"
+        },
+        {
+          "canonical_job_key": "id::syncareer::c1dd772c6f06ee1e765b08cc646b6e9f",
+          "job_id": "c1dd772c6f06ee1e765b08cc646b6e9f",
+          "tier": "B",
+          "match_score": 84.0,
+          "fit_score": 84.0,
+          "company": "ICF",
+          "title": "2027 Summer Intern, Software Developer (Reston, VA)",
+          "location": "Reston, Virginia, United States",
+          "posting_date": "2026-09-07",
+          "first_seen": "2026-09-08T15:11:10.233966+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://icf.wd5.myworkdayjobs.com/en-US/ICFExternal_Career_Site/job/Reston-VA/XMLNAME-2027-Summer-Intern--Software-Developer--Reston--VA-_R2603002",
+          "url": "https://icf.wd5.myworkdayjobs.com/en-US/ICFExternal_Career_Site/job/Reston-VA/XMLNAME-2027-Summer-Intern--Software-Developer--Reston--VA-_R2603002"
+        }
+      ]
     }
   ]
 }

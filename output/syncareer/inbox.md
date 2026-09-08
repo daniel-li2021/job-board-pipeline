@@ -1,19 +1,21 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-09-07 17:11 PDT
-- Snapshot (UTC): 2026-09-08T00:11:41.316995+00:00
-- Jobs: 26
-- Last 24 hours: 5
-- Last 3 days: 26
+- Updated (PT): 2026-09-08 08:11 PDT
+- Snapshot (UTC): 2026-09-08T15:11:53.136080+00:00
+- Jobs: 18
+- Last 24 hours: 6
+- Last 3 days: 18
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 91.0 | Syncareer | TriNet | Associate Software Engineer | Atlanta, Georgia, United States | 2026-09-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.trinet.com/careers/job/43588832?domain=trinet.com&triggerGoButton=false) |
+| A | 87.0 | Syncareer | IBM | Entry Level Software Developer-Different locations | Poughkeepsie, New York, United States | 2026-09-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=130369&source=WEB_Search_NA) |
+| B | 84.0 | Syncareer | ICF | 2027 Summer Intern, Software Developer (Reston, VA) | Reston, Virginia, United States | 2026-09-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://icf.wd5.myworkdayjobs.com/en-US/ICFExternal_Career_Site/job/Reston-VA/XMLNAME-2027-Summer-Intern--Software-Developer--Reston--VA-_R2603002) |
+| B | 93.0 | Syncareer | Micron Technology | Intern - AI Agentic Systems Engineer | California, United States | 2026-09-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.micron.com/careers/job/44280744?domain=micron.com) |
 | A | 92.0 | Syncareer | Audible | Software Development Engineer, Early Careers | Newark, New Jersey, United States | 2026-09-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.audiblecareers.com/job/newark/software-development-engineer-early-careers/27552/100193825584) |
 | A | 92.0 | Syncareer | Audible | Software Development Engineer, Early Careers | Cambridge, Massachusetts, United States | 2026-09-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.audiblecareers.com/job/cambridge/software-development-engineer-early-careers/27552/100193825568) |
-| B | 93.0 | Syncareer | Micron Technology | Intern - AI Agentic Systems Engineer | California, United States | 2026-09-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.micron.com/careers/job/44280744?domain=micron.com) |
+| A | 91.0 | Syncareer | TriNet | Associate Software Engineer | Atlanta, Georgia, United States | 2026-09-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.trinet.com/careers/job/43588832?domain=trinet.com&triggerGoButton=false) |
 | B | 76.0 | Syncareer | Applied Materials | Software QA Engineer | Santa Clara, California, United States | 2026-09-05 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.appliedmaterials.com/careers/job/790318275183?domain=appliedmaterials.com&hl=en&triggerGoButton=true) |
 | B | 84.0 | Syncareer | Amdocs | Software Engineer - Graduate | Plano, Texas, United States | 2026-09-05 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.amdocs.com/careers/job/563431014818485) |
 | B | 72.0 | Syncareer | Spirit AeroSystems | Entry-Level Software Engineer | Wichita, Kansas, United States | 2026-09-05 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.spiritaero.com/jobs/17433?lang=en-us) |
@@ -24,15 +26,5 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 73.0 | Syncareer | Zoox | Contract Student Worker - Autonomy Safety Data Engineer | Foster City, California, United States | 2026-09-04 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/zoox/dafe2927-74bf-4bef-8df0-cb0874595819) |
 | B | 76.0 | Syncareer | GlobalFoundries | Software Engineer, Cloud Platform (2027 New College Graduate) | Santa Clara, California, United States | 2026-09-04 | Sponsor | - | unreviewed | not_dedicated | [open](https://globalfoundries.wd1.myworkdayjobs.com/en-US/External/job/USA---California---Santa-Clara/Software-Engineer--Cloud-Platform--2027-New-College-Graduate-_JR-2604056) |
 | B | 86.0 | Syncareer | IBM | Cloud Infrastructure Network Monitoring and Automation Software Engine | Dallas, Texas, United States | 2026-09-04 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=131088&source=WEB_Search_NA) |
-| B | 83.0 | Syncareer | BETA Technologies | Platform Software Engineer – Digital Operations Platform | South Burlington, Vermont, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://beta.team/open-positions/4265190009?hsLang=en) |
-| B | 76.0 | Syncareer | The Kraft Group | Software Engineer Intern | Foxborough, Massachusetts, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://paycomonline.net/v4/ats/web.php/portal/715F4103F5E4D572C92AFE85684343DC/jobs/552896) |
-| B | 84.0 | Syncareer | GE HealthCare | Software Engineer | Bellevue, Washington, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://gehc.wd5.myworkdayjobs.com/en-US/GEHC_ExternalSite/job/WA07-01-Bellevue-1100-112th-Avenue-NE/Software-Engineer_R4045428-1) |
-| A | 88.0 | Syncareer | Chewy | Backend Software Engineer I | Boston, Massachusetts, United States | 2026-09-03 | Sponsor | - | unreviewed | official_gap | [open](https://careers.chewy.com/us/en/job/R30760/Backend-Software-Engineer-I) |
-| B | 78.0 | Syncareer | Capital Insurance Group | Software Developer II | Reno, Nevada, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://ciginsurance.hrmdirect.com/employment/job-opening.php?req=3792174&req_loc=1446853&&&jbsrc=1025#job) |
-| B | 73.0 | Syncareer | Microchip Technology | Engineer I- CAD (Software Development) | Chandler, Arizona, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://wd5.myworkdaysite.com/en-US/recruiting/microchiphr/External/job/AZ---Chandler/Engineer-I--CAD--Software-Development-_R3637-26?locationCountry=80938777cac5440fab50d729f9634969&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea) |
-| B | 83.0 | Syncareer | Conagra Brands | Forward Deployed Engineer - Palantir | Omaha, Nebraska, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.conagrabrands.com/us/en/job/Req-040092/Forward-Deployed-Engineer-Palantir) |
 | A | 91.0 | Syncareer | PayPal | Software Engineer - Recent Graduate | San Jose, California, United States of America; Chicago, Illinois, United States of America; Austin, Texas, United States of America | 2026-09-05 | Sponsor | YES (PayPal) | unreviewed | covered_unvalidated | [open](https://paypal.eightfold.ai/careers/job/274921995088?domain=paypal.com&triggerGoButton=false) |
 | A | 91.0 | Syncareer | PayPal | Machine Learning Engineer | San Jose, California, United States of America; Austin, Texas, United States of America | 2026-09-05 | Sponsor | YES (PayPal) | unreviewed | covered_unvalidated | [open](https://paypal.eightfold.ai/careers/job/274922260564?domain=paypal.com&triggerGoButton=false) |
-| B | 82.0 | Syncareer | Tesla | Data Engineer, Battery Manufacturing Development | Austin, Texas, United States | 2026-09-04 | Sponsor | YES (Tesla) | unreviewed | official_unsupported | [open](https://www.tesla.com/careers/search/job/282146) |
-| B | 86.0 | Syncareer | Tesla | Software Validation Engineer, Opticaster | Palo Alto, California, United States | 2026-09-04 | Sponsor | YES (Tesla) | unreviewed | official_unsupported | [open](https://www.tesla.com/careers/search/job/282304) |
-| B | 84.0 | Syncareer | Tesla | Software Engineer, Agentic AI Fleet Management | Austin, Texas, United States | 2026-09-04 | Sponsor | YES (Tesla) | unreviewed | official_unsupported | [open](https://www.tesla.com/careers/search/job/281729) |
