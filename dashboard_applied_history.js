@@ -23,6 +23,9 @@
     l: String(row?.location || ''),
     u: String(row?.url || ''),
     d: String(row?.posted_date || ''),
+    tier: row?.tier || '-',
+    score: row?.score ?? '',
+    applied: row?._applied_at || '',
   });
   const archiveStorageKey = row => {
     const snapshot = compactSnapshot(row);
@@ -53,8 +56,9 @@
         location: s.l || '',
         posted_date: s.d || '',
         first_seen: '',
-        tier: '-',
-        score: '',
+        tier: s.tier || '-',
+        score: s.score ?? '',
+        _applied_at: s.applied || '',
         sponsorship: 'Unknown',
         referral: '',
         url: s.u || '',
@@ -82,10 +86,25 @@
     freshness: { discovered: { age_hours: null }, posted: { trusted: false } },
     _applied_archive: true,
   });
-  const isCompanyState = key => String(key || '').startsWith(companyStatePrefix);
-  const currentSourceRow = key => [...allRows].reverse().find(row =>
-    row?.canonical_job_key === key && !row?._applied_archive
-  ) || null;
+  const isCompanyState = key => isPreferenceKey(key) || String(key || '').startsWith(archivePrefix);
+
+  const hasTier = row => row?.tier && row.tier !== '-';
+  const hasScore = row => row?.score !== '' && row?.score != null;
+  function recoveredRow(key) {
+    const matches = [...(D.history_rows || []), archive[key], ...allRows]
+      .filter(row => row?.canonical_job_key === key);
+    if (!matches.length) return null;
+    const row = {...matches[matches.length - 1]};
+    for (const candidate of matches.reverse()) {
+      if (!hasTier(row) && hasTier(candidate)) row.tier = candidate.tier;
+      if (!hasScore(row) && hasScore(candidate)) row.score = candidate.score;
+    }
+    return row;
+  }
+  const appliedTime = row => Date.parse(archive[row.canonical_job_key]?._applied_at || reviewState(row.canonical_job_key)?.updated_at || '') || 0;
+  const appliedRows = rows => searchedRows(rows.filter(r => statusOf(r) === 'applied_complete' && !isDeleted(r)))
+    .map(row => recoveredRow(row.canonical_job_key) || row)
+    .sort((a, b) => appliedTime(b) - appliedTime(a));
 
   function syncArchiveRows() {
     for (let i = allRows.length - 1; i >= 0; i--) {
@@ -109,8 +128,10 @@
     archivePending.add(jobKey);
     const updatedAt = snapshot._archive_updated_at || new Date().toISOString();
     const payload = { canonical_job_key: storageKey, status: 'applied_complete', deleted: false, updated_at: updatedAt };
-    const { error } = await supabase.from('job_review_status').upsert(payload, { onConflict: 'canonical_job_key' });
-    archivePending.delete(jobKey);
+    let error;
+    try { ({ error } = await supabase.from('job_review_status').upsert(payload, { onConflict: 'canonical_job_key' })); }
+    catch (failure) { error = failure; }
+    finally { archivePending.delete(jobKey); }
     const current = archive[jobKey];
     if (error) {
       sharedError = `Could not sync applied history: ${error.message}`;
@@ -125,10 +146,10 @@
   }
 
   function archiveAppliedJob(key) {
-    const row = currentSourceRow(key) || archive[key];
+    const row = recoveredRow(key);
     if (!row) return;
     const snapshot = decodeArchive({
-      canonical_job_key: archiveStorageKey(row),
+      canonical_job_key: archiveStorageKey({...row, _applied_at: archive[key]?._applied_at || reviewState(key)?.updated_at || new Date().toISOString()}),
       updated_at: new Date().toISOString(),
     });
     if (!snapshot) return;
@@ -141,8 +162,9 @@
 
   function backfillAppliedArchives() {
     Object.entries(reviewStates).forEach(([key, state]) => {
-      if (isCompanyState(key) || normalizeStatus(state?.status) !== 'applied_complete' || archive[key]) return;
-      if (currentSourceRow(key)) archiveAppliedJob(key);
+      if (isCompanyState(key) || normalizeStatus(state?.status) !== 'applied_complete') return;
+      const recovered = recoveredRow(key), saved = archive[key];
+      if (recovered && (!saved || (!hasTier(saved) && hasTier(recovered)) || (!hasScore(saved) && hasScore(recovered)))) archiveAppliedJob(key);
     });
   }
 
@@ -150,7 +172,7 @@
   renderSummary = function() {
     const fresh = D.counts_24h || {}, rolling = D.counts_3d || {};
     document.getElementById('summary').innerHTML = Object.keys(names).map(k =>
-      `<div class="card"><span>${names[k]}</span><div class="countline"><b>${fresh[k] || 0}</b><span>last 24h</span><i>·</i><b>${rolling[k] || 0}</b><span>in 3 days</span></div><a href="${D.report_links[k]}">open report</a></div>`
+      `<div class="card"><span>${names[k]}</span><div class="countline"><b>${fresh[k] || 0}</b><span>last 24h</span><i>·</i><b>${rolling[k] || 0}</b><span>in 3 days</span></div><a target="_blank" rel="noopener noreferrer" href="${D.report_links[k]}">open report</a></div>`
     ).join('');
   };
 
@@ -195,10 +217,14 @@
   }
 
   // Archive metadata before the source row can age out of its 7-day store.
-  setStatus = function(key, value) {
+  setStatus = function(keys, value) {
     if (!statusChoices.includes(value)) return;
-    if (value === 'applied_complete') archiveAppliedJob(key);
-    saveState(key, { status: value, deleted: false });
+    keys = Array.isArray(keys) ? keys : [keys];
+    saveStates(keys, { status: value, deleted: false });
+    if (value === 'applied_complete') keys.forEach(key => {
+      if (archive[key]) archive[key]._applied_at = reviewState(key).updated_at;
+      archiveAppliedJob(key);
+    });
   };
 
   mainViewCounts = function(rows = uniqueRows()) {
@@ -208,7 +234,7 @@
       fresh: searchedRows(normalRows(D.fresh_24h)).length,
       rolling: searchedRows(normalRows(D.rolling_3d)).length,
       'in-progress': searchedRows(rows.filter(r => statusOf(r) === 'in_progress' && !isDeleted(r))).length,
-      applied: searchedRows(rows.filter(r => statusOf(r) === 'applied_complete')).length,
+      applied: appliedRows(rows).length,
     };
   };
 
@@ -220,7 +246,7 @@
     tabs('rolling', D.rolling_3d);
     renderBox('referrals', normalRows(D.referrals));
     renderBox('inProgress', searchedRows(rows.filter(r => statusOf(r) === 'in_progress' && !isDeleted(r))));
-    renderBox('applied', searchedRows(rows.filter(r => statusOf(r) === 'applied_complete')));
+    renderBox('applied', appliedRows(rows));
     renderLastSevenDays(rows);
     const box = document.getElementById('deleted');
     box.innerHTML = jobs(rows.filter(isDeleted), true);
@@ -261,11 +287,11 @@
       if (row.canonical_job_key && statusChoices.includes(row.status)) merged[row.canonical_job_key] = normalizedState(row, false);
     });
 
-    Object.values(reviewStates).filter(state => state?.pending).forEach(local => {
+    Object.values(reviewStates).forEach(local => {
       const remote = merged[local.canonical_job_key];
-      if (!remote || stateTime(local) > stateTime(remote)) merged[local.canonical_job_key] = normalizedState(local, true);
+      if (!remote || stateTime(local) > stateTime(remote)) merged[local.canonical_job_key] = normalizedState(local, Boolean(local.pending));
     });
-    Object.values(archive).filter(row => row?.pending).forEach(local => {
+    Object.values(archive).forEach(local => {
       const remote = remoteArchive[local.canonical_job_key];
       if (!remote || archiveTime(local) > archiveTime(remote)) remoteArchive[local.canonical_job_key] = local;
     });

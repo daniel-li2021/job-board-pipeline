@@ -343,8 +343,24 @@ class DashboardPolicyTests(unittest.TestCase):
             with patch.object(dashboard, "ALERT_HISTORY_PATHS", paths), patch.object(dashboard, "ISSUE_BODY_PATHS", bodies):
                 fresh, basis = dashboard.alert_fresh_rows([row], now)
             self.assertEqual(1, len(fresh))
-            self.assertEqual("alert_history_or_issue", basis["official"])
+            self.assertEqual("alerts_and_new_discoveries", basis["official"])
             self.assertEqual(1, fresh[0]["activity_age_hours"])
+
+    def test_official_fresh_includes_unalerted_discoveries_without_caps(self) -> None:
+        now = datetime(2026, 9, 8, tzinfo=timezone.utc)
+        rows = [dict(canonical_job_key=str(i), pipeline="official", tier="B",
+                     company="Example", location="Seattle, WA", score=80,
+                     filter_status="kept", freshness=dashboard.recency(
+                         {"first_seen": now.isoformat()}, now)) for i in range(600)]
+        rows.extend([dict(rows[0], canonical_job_key="excluded", suppress_alert=True),
+                     dict(rows[0], canonical_job_key="filtered", filter_status="dropped")])
+        with patch.object(dashboard.alert_history, "recent_events", side_effect=lambda path, *args, **kwargs: [{
+            "emitted_at": now.isoformat(), "jobs": [{"canonical_job_key": "0"}]}] if path == dashboard.ALERT_HISTORY_PATHS["official"] else []), \
+                patch.object(dashboard, "parse_issue_event", return_value=None):
+            fresh, _ = dashboard.alert_fresh_rows(rows, now)
+        official = [row for row in fresh if row["pipeline"] == "official"]
+        self.assertEqual(600, len(official))
+        self.assertEqual(600, len({row["canonical_job_key"] for row in official}))
 
     def test_public_template_has_compact_navigation_and_shared_status_control(self) -> None:
         self.assertNotIn("Official coverage", dashboard.HTML_TEMPLATE)
