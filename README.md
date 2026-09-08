@@ -40,7 +40,7 @@ python3 board_pipeline.py --skip-network
 
 GitHub runners do **not** scrape these consumer job boards directly. Install local dependencies with `python3 -m pip install -r requirements-local.txt`; the Mac launchd job then runs `local_sources.py` through `scripts/local_source_sync.sh` roughly every 3 hours and pushes only `output/sources/*.json`. Each successful snapshot records its collector commit, while [`output/sources/health.json`](output/sources/health.json) records every source's last attempt, last success, last-good count, and failure reason.
 
-Board run stats report exact LinkedIn/Indeed overlap, each source's unique contribution, and per-query exact-unique counts. Indeed uses deeper primary Software Engineer/AI Engineer searches while supplemental queries stay shallow.
+Board run stats report exact LinkedIn/Indeed/Glassdoor overlap, each source's unique contribution, and per-query exact-unique counts. Indeed uses three pages/48 hours for primary queries; supplemental queries and Glassdoor stay at one page/24 hours.
 
 Outputs live under `output/board/`.
 

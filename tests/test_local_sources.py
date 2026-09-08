@@ -51,7 +51,9 @@ class LocalSourceTests(unittest.TestCase):
         self.assertEqual("indeed", row["source"])
         self.assertEqual("2026-09-06", row["aggregator_posted_date"])
         self.assertEqual("https://jobs.example.com/42", row["application_url"])
-        self.assertEqual(200, calls[0]["results_wanted"])
+        self.assertEqual(300, calls[0]["results_wanted"])
+        self.assertEqual(48, calls[0]["hours_old"])
+        self.assertEqual("United States", calls[0]["location"])
 
     def test_jobspy_does_not_treat_aggregator_redirect_as_original_employer(self) -> None:
         result = jobspy_local.scrape(
@@ -77,6 +79,61 @@ class LocalSourceTests(unittest.TestCase):
         self.assertEqual("empty_unverified", result["status"])
         self.assertEqual("HTTP 403", result["reason"])
         self.assertEqual("empty_unverified", result["query_stats"][0]["stop_reason"])
+
+    def test_partial_or_later_transport_failure_is_not_a_good_snapshot(self) -> None:
+        for fail_at in (1, 2):
+            calls = []
+            def partial(**_kwargs):
+                calls.append(1)
+                if len(calls) == fail_at:
+                    logging.getLogger("JobSpy:Glassdoor").error("HTTP 429")
+                return Frame([{
+                    "id": f"gd-{len(calls)}", "title": "Software Engineer",
+                    "company": "Example", "location": "Austin, TX, US",
+                    "description": "Build Python services.",
+                }])
+            result = jobspy_local.scrape(
+                "glassdoor", keywords=["software engineer", "ai engineer"],
+                scrape_jobs_func=partial,
+            )
+            self.assertEqual("blocked", result["status"])
+            self.assertIn("HTTP 429", result["reason"])
+
+    def test_glassdoor_joins_three_source_unique_contribution(self) -> None:
+        rows = [dict(source=source, official_url="https://jobs.example.com/1",
+                     discovery_queries={source: ["software engineer"]})
+                for source in ("linkedin", "indeed", "glassdoor")]
+        rows.append(dict(source="glassdoor", official_url="https://jobs.example.com/2",
+                         discovery_queries={"glassdoor": ["software engineer"]}))
+        report = board_pipeline.local_source_coverage(rows)
+        self.assertEqual(1, report["overlap"])
+        self.assertEqual(1, report["sources"]["glassdoor"]["unique_contribution"])
+        self.assertEqual(1, report["queries"]["glassdoor"]["software engineer"]["cross_source_unique"])
+
+    def test_transport_page_cap_and_exhaustion_are_measured(self) -> None:
+        try:
+            import jobspy.indeed
+        except ImportError:
+            self.skipTest("requires local collector dependencies")
+        from types import SimpleNamespace
+        for cursor in ("next", None):
+            class FakeIndeed:
+                def __init__(self):
+                    self.session = SimpleNamespace(post=lambda: SimpleNamespace(status_code=200))
+                def _scrape_page(self, _cursor):
+                    self.session.post()
+                    return [SimpleNamespace()], cursor
+                def scrape(self, _input):
+                    for _ in range(5):
+                        jobs, _cursor = self._scrape_page(None)
+                        if not jobs:
+                            break
+                    return SimpleNamespace(jobs=[])
+            stat = {"pages_fetched": 0, "stop_reason": "page_budget"}
+            with patch.object(jobspy.indeed, "Indeed", FakeIndeed):
+                jobspy_local._fetch_records("indeed", "software engineer", 2, 24, stat)
+            self.assertEqual(2 if cursor else 1, stat["pages_fetched"])
+            self.assertEqual("page_budget" if cursor else "exhausted", stat["stop_reason"])
 
     def test_codegraph_generated_data_is_ignored(self) -> None:
         self.assertIn(".codegraph/", (ROOT / ".gitignore").read_text(encoding="utf-8").splitlines())

@@ -735,7 +735,7 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         self.assertIn("associate software engineer", terms)
         self.assertIn("forward deployed engineer", terms)
         self.assertEqual({"primary": 25, "secondary": 8, "specialty": 4}, local_search.SOURCE_PAGE_BUDGETS["linkedin"])
-        self.assertEqual({"primary": 2, "secondary": 1, "specialty": 1}, local_search.SOURCE_PAGE_BUDGETS["indeed"])
+        self.assertEqual({"primary": 3, "secondary": 1, "specialty": 1}, local_search.SOURCE_PAGE_BUDGETS["indeed"])
         self.assertEqual({"primary": 1, "secondary": 1, "specialty": 1}, local_search.SOURCE_PAGE_BUDGETS["glassdoor"])
         self.assertNotIn("Applied Scientist", daily_pipeline.SEARCH_KEYWORDS)
 

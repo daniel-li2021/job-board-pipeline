@@ -20,9 +20,9 @@ KEYWORD_GROUPS = {
 
 SOURCE_PAGE_BUDGETS = {
     "linkedin": {"primary": 25, "secondary": 8, "specialty": 4},
-    # Primary queries were still contributing 62-86 unique jobs at one page;
-    # supplemental queries stay shallow because several contributed 0-4.
-    "indeed": {"primary": 2, "secondary": 1, "specialty": 1},
+    # Bounded 2026-09-07 probe: Indeed page 3 added 10 eligible 24h jobs;
+    # 48h added 16 eligible jobs. Glassdoor page 2 was rate-limited.
+    "indeed": {"primary": 3, "secondary": 1, "specialty": 1},
     "glassdoor": {"primary": 1, "secondary": 1, "specialty": 1},
 }
 

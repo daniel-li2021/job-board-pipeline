@@ -247,6 +247,18 @@ def visible_candidate(
     return tier in {"A", "B", "1", "2", "-"}
 
 
+def dedup_canonical_rows(rows: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Show an exact canonical job once across pipeline stores."""
+    rank = {"official": 0, "board": 1, "syncareer": 2}
+    chosen: Dict[str, Dict[str, Any]] = {}
+    for row in rows:
+        key = str(row.get("canonical_job_key") or "")
+        previous = chosen.get(key)
+        if not previous or rank.get(str(row.get("pipeline")), 99) < rank.get(str(previous.get("pipeline")), 99):
+            chosen[key] = row
+    return list(chosen.values())
+
+
 def fallback_c_candidate(row: Dict[str, Any]) -> bool:
     """Presentation-only eligibility for stored Board Tier C fallback rows."""
     if row.get("pipeline") != "board" or str(row.get("tier") or "") != "C":
@@ -404,18 +416,15 @@ def alert_fresh_rows(
                 row["alert_stamp"] = event.get("stamp", "")
                 row["alert_kind"] = event.get("event_kind", "")
                 row["activity_age_hours"] = activity_age
-                # Fresh mirrors alert activity. The same canonical job may
-                # legitimately appear in both an ATS Issue and an Official
-                # Issue, so deduplicate within a pipeline, not across them.
-                stable = f"{pipeline}::{row.get('canonical_job_key') or url_key}"
+                stable = str(row.get("canonical_job_key") or url_key)
                 previous = chosen.get(stable)
                 if previous is None or float(previous.get("activity_age_hours") or 999999) > activity_age:
                     chosen[stable] = row
     for row in all_rows:
         if (row.get("pipeline") == "official" and row["freshness"]["fresh_activity"]
                 and visible_candidate(row, hard_excludes)):
-            stable = f"official::{row.get('canonical_job_key') or coverage_reconcile.normalize_url(str(row.get('url') or ''))}"
-            chosen.setdefault(stable, row)
+            stable = str(row.get("canonical_job_key") or coverage_reconcile.normalize_url(str(row.get("url") or "")))
+            chosen[stable] = row
     basis["official"] = "alerts_and_new_discoveries"
     return _sort_rows(chosen.values()), basis
 
@@ -486,7 +495,9 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         row for row in all_rows
         if not match_company_alias(str(row.get("company") or ""), hard_excludes)
     ]
-    candidates = [row for row in eligible_rows if visible_candidate(row, hard_excludes)]
+    candidates = dedup_canonical_rows(
+        row for row in eligible_rows if visible_candidate(row, hard_excludes)
+    )
     current = candidates
     fresh, fresh_basis = alert_fresh_rows(eligible_rows, now, hard_excludes)
     fresh = append_board_c_fallback(fresh, eligible_rows, minimum_ab=10, target=20, window="fresh")

@@ -1833,8 +1833,8 @@ def _local_coverage_key(job: Dict[str, Any]) -> str:
 
 
 def local_source_coverage(raw_jobs: List[Dict[str, Any]]) -> Dict[str, Any]:
-    """LinkedIn/Indeed exact overlap plus per-query unique contribution."""
-    sources = ("linkedin", "indeed")
+    """All local sources: exact overlap and per-query unique contribution."""
+    sources = LOCAL_SOURCES
     rows = {
         source: [job for job in raw_jobs if str(job.get("source") or "").lower() == source]
         for source in sources
@@ -1843,9 +1843,10 @@ def local_source_coverage(raw_jobs: List[Dict[str, Any]]) -> Dict[str, Any]:
         source: {_local_coverage_key(job) for job in rows[source]} - {""}
         for source in sources
     }
-    overlap = keys["linkedin"] & keys["indeed"]
+    peers = {source: set().union(*(keys[other] for other in sources if other != source)) for source in sources}
+    overlap = set().union(*(keys[source] & peers[source] for source in sources))
     queries: Dict[str, Dict[str, Dict[str, int]]] = {}
-    for source, other in (("linkedin", "indeed"), ("indeed", "linkedin")):
+    for source in sources:
         queries[source] = {}
         query_names = {
             query
@@ -1860,8 +1861,8 @@ def local_source_coverage(raw_jobs: List[Dict[str, Any]]) -> Dict[str, Any]:
             } - {""}
             queries[source][query] = {
                 "identified_jobs": len(query_keys),
-                "cross_source_overlap": len(query_keys & keys[other]),
-                "cross_source_unique": len(query_keys - keys[other]),
+                "cross_source_overlap": len(query_keys & peers[source]),
+                "cross_source_unique": len(query_keys - peers[source]),
             }
     return {
         "match_basis": "exact employer URL or company+title+location",
@@ -1869,7 +1870,7 @@ def local_source_coverage(raw_jobs: List[Dict[str, Any]]) -> Dict[str, Any]:
         "sources": {
             source: {
                 "identified_jobs": len(keys[source]),
-                "unique_contribution": len(keys[source] - keys["indeed" if source == "linkedin" else "linkedin"]),
+                "unique_contribution": len(keys[source] - peers[source]),
             }
             for source in sources
         },
@@ -2031,6 +2032,7 @@ def run() -> None:
 
     # 2) Dedup + merge (carry discovered_via, prefer canonical source)
     deduped = merge_by_key(raw_jobs)
+    initial_dedup_count = len(deduped)
     # 3) Official verify then a second cross-source collapse
     verify_official(deduped)
     deduped = collapse_cross_source(deduped)
@@ -2096,6 +2098,21 @@ def run() -> None:
     # 7) Resolve exact original postings before the role/JD gate and scoring.
     coverage_reconcile.annotate_jobs(after_hard, "board")
     direct_original_attempts = resolve_exposed_originals(after_hard, session, store)
+    # Resolution can expose a shared employer URL only after the first dedup.
+    after_hard = collapse_cross_source(after_hard)
+    coverage_reconcile.annotate_jobs(after_hard, "board")
+    deduped = [job for job in deduped if job.get("filter_status") != "kept"] + after_hard
+    # Employer JDs may add hard exclusions absent from aggregator cards.
+    verified = []
+    for job in after_hard:
+        keep, reason = hard_filter(job)
+        if keep:
+            verified.append(job)
+        else:
+            job["filter_status"] = "dropped"
+            job["drop_reason"] = reason
+            drops[reason] += 1
+    after_hard = verified
     for job in after_hard:
         job["recency_bucket"] = recency_bucket(job, now=now)
 
@@ -2195,7 +2212,7 @@ def run() -> None:
     stats = {
         "source_raw": source_raw,
         "funnel": {
-            "after_dedup": len(deduped),
+            "after_dedup": initial_dedup_count,
             "after_company": len(after_company),
             "after_hard_filter": len(after_hard),
             "after_prefilter": len(candidates),
@@ -2281,7 +2298,7 @@ def run() -> None:
     print("Source raw: ATS " + str(source_raw["ats"]) + " / " + " / ".join(
         f"{name.title()} {source_raw.get(name, 0)}" for name in LOCAL_SOURCES
     ) + " (Big Company Official separate)")
-    print(f"Funnel: dedup {len(deduped)} -> company {len(after_company)} -> hard {len(after_hard)} "
+    print(f"Funnel: dedup {initial_dedup_count} -> company {len(after_company)} -> hard {len(after_hard)} "
           f"-> prefilter {len(candidates)} | dropped {sum(drops.values())}")
     print(f"LLM usage: scored {score_counts['llm']} / API requests {score_counts.get('api_requests', 0)} "
           f"/ cache reused {score_counts['reused']} (cross-pipeline {score_counts.get('peer_reused', 0)}) "

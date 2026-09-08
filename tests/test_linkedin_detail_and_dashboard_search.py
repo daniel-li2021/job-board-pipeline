@@ -10,6 +10,16 @@ from sources.schema import make_job
 
 
 class LinkedInDetailTests(unittest.TestCase):
+    def test_dashboard_shows_one_row_for_an_exact_cross_pipeline_job(self) -> None:
+        rows = [
+            {"canonical_job_key": "url::https://jobs.example.com/42", "pipeline": "syncareer"},
+            {"canonical_job_key": "url::https://jobs.example.com/42", "pipeline": "board"},
+            {"canonical_job_key": "url::https://jobs.example.com/43", "pipeline": "board"},
+        ]
+        result = dashboard.dedup_canonical_rows(rows)
+        self.assertEqual(2, len(result))
+        self.assertEqual("board", result[0]["pipeline"])
+
     def test_parse_detail_extracts_jd_and_only_apply_labelled_external_url(self) -> None:
         html = """
         <a href="https://www.linkedin.com/company/example">Example company</a>

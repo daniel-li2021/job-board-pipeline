@@ -6,11 +6,11 @@ from __future__ import annotations
 import time
 import logging
 import re
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from importlib.metadata import PackageNotFoundError, version
 from typing import Any, Callable, Dict, List
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit
 
 from .local_search import query_stat, source_queries
 from .schema import is_aggregator_url, is_us_location, make_job, normalize_space
@@ -81,9 +81,7 @@ def _patch_glassdoor_transport() -> None:
             raise GlassdoorException("search GraphQL response missing jobListings")
         jobs: List[Any] = []
         with ThreadPoolExecutor(max_workers=self.jobs_per_page) as executor:
-            futures = [executor.submit(self._process_job, item) for item in listings.get("jobListings") or []]
-            for future in as_completed(futures):
-                result = future.result()
+            for result in executor.map(self._process_job, listings.get("jobListings") or []):
                 if result:
                     jobs.append(result)
         return jobs, get_cursor_for_page(listings.get("paginationCursors") or [], page_num + 1)
@@ -117,6 +115,54 @@ def _patch_glassdoor_transport() -> None:
     Glassdoor._jobboard_compat = True
 
 
+def _fetch_records(source: str, keyword: str, budget: int, hours: int, stat: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Use separate JobSpy transports with a measured, hard page ceiling."""
+    from jobspy.indeed import Indeed
+    from jobspy.glassdoor import Glassdoor
+    from jobspy.model import ScraperInput, Site
+
+    scraper = (Indeed if source == "indeed" else Glassdoor)()
+    method = "_scrape_page" if source == "indeed" else "_fetch_jobs_page"
+    fetch = getattr(scraper, method)
+    exhausted = False
+
+    def page(*args: Any, **kwargs: Any) -> Any:
+        nonlocal exhausted
+        if exhausted or stat["pages_fetched"] >= budget:
+            return [], None
+        # Indeed otherwise silently turns HTTP failures into an empty page.
+        post = scraper.session.post
+        def checked_post(*a: Any, **kw: Any) -> Any:
+            response = post(*a, **kw)
+            if response.status_code != 200:
+                raise RuntimeError(f"{source} HTTP {response.status_code}")
+            return response
+        scraper.session.post = checked_post
+        try:
+            jobs, cursor = fetch(*args, **kwargs)
+        finally:
+            scraper.session.post = post
+        stat["pages_fetched"] += 1
+        exhausted = not cursor or not jobs
+        if exhausted:
+            stat["stop_reason"] = "exhausted"
+        return jobs, cursor
+
+    setattr(scraper, method, page)
+    response = scraper.scrape(ScraperInput(
+        site_type=[Site.INDEED if source == "indeed" else Site.GLASSDOOR],
+        search_term=keyword, location="United States", distance=50,
+        hours_old=hours, results_wanted=budget * RESULTS_PER_PAGE[source],
+    ))
+    records = []
+    for job in response.jobs:
+        record = job.model_dump()
+        record["company"] = job.company_name
+        record["location"] = job.location.display_location() if job.location else ("Remote" if job.is_remote else "")
+        records.append(record)
+    return records
+
+
 def _value(value: Any) -> str:
     if value is None:
         return ""
@@ -145,7 +191,7 @@ def _normalize(source: str, record: Dict[str, Any], fetched_at: str) -> Dict[str
         fetched_at=fetched_at,
     )
     direct = _value(record.get("job_url_direct"))
-    if direct and not is_aggregator_url(direct):
+    if urlsplit(direct).scheme in {"http", "https"} and not is_aggregator_url(direct):
         row["application_url"] = direct
     return row
 
@@ -160,7 +206,7 @@ def scrape(
     source_provenance = provenance()
     if scrape_jobs_func is None:
         try:
-            from jobspy import scrape_jobs as scrape_jobs_func
+            import jobspy  # noqa: F401
         except ImportError:
             return {
                 "status": "missing_dependency",
@@ -183,7 +229,7 @@ def scrape(
     stats: List[Dict[str, object]] = []
     fetched_at = datetime.now(timezone.utc).isoformat()
     errors: List[str] = []
-    handler = logging.Handler()
+    handler = logging.Handler(level=logging.ERROR)
     handler.emit = lambda record: errors.append(record.getMessage())  # type: ignore[method-assign]
     logger = logging.getLogger(f"JobSpy:{JOBSPY_SITE[source].replace('_', '').title()}")
     logger.addHandler(handler)
@@ -192,18 +238,21 @@ def scrape(
         for index, (group, keyword, page_budget) in enumerate(specs):
             stat = query_stat(keyword, group, page_budget)
             started = time.monotonic()
+            errors.clear()
+            hours = 48 if source == "indeed" and group == "primary" else 24
+            stat["hours_old"] = hours
             try:
-                frame = scrape_jobs_func(
-                    site_name=JOBSPY_SITE[source],
-                    search_term=keyword,
-                    location="United States",
-                    results_wanted=page_budget * RESULTS_PER_PAGE[source],
-                    hours_old=24,
-                    country_indeed="USA",
-                    description_format="markdown",
-                    verbose=0,
-                )
-                records = frame.to_dict(orient="records")
+                if scrape_jobs_func is None:
+                    records = _fetch_records(source, keyword, page_budget, hours, stat)
+                else:
+                    frame = scrape_jobs_func(
+                        site_name=JOBSPY_SITE[source], search_term=keyword,
+                        location="United States", results_wanted=page_budget * RESULTS_PER_PAGE[source],
+                        hours_old=hours, country_indeed="USA", description_format="markdown", verbose=0,
+                    )
+                    records = frame.to_dict(orient="records")
+                if errors and (records or index > 0):
+                    raise RuntimeError("; ".join(errors[-2:]))
             except Exception as exc:  # JobSpy wraps board-specific transport errors.
                 stat["stop_reason"] = "source_error"
                 stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
@@ -216,7 +265,6 @@ def scrape(
                     "provenance": source_provenance,
                 }
 
-            stat["pages_fetched"] = page_budget if records else 0
             stat["raw_jobs"] = len(records)
             if not records:
                 stat["stop_reason"] = "empty_unverified"
@@ -257,7 +305,6 @@ def scrape(
                 added += 1
             stat["unique_jobs"] = len(query_seen)
             stat["unique_contribution"] = added
-            stat["stop_reason"] = "page_budget"
             stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
             stats.append(stat)
     finally:
