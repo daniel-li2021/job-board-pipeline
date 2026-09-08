@@ -1,15 +1,19 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-09-07 08:11 PDT
-- Snapshot (UTC): 2026-09-07T15:11:30.016156+00:00
-- Jobs: 32
-- Last 24 hours: 3
-- Last 3 days: 32
+- Updated (PT): 2026-09-07 17:11 PDT
+- Snapshot (UTC): 2026-09-08T00:11:41.316995+00:00
+- Jobs: 26
+- Last 24 hours: 5
+- Last 3 days: 26
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 91.0 | Syncareer | TriNet | Associate Software Engineer | Atlanta, Georgia, United States | 2026-09-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.trinet.com/careers/job/43588832?domain=trinet.com&triggerGoButton=false) |
+| A | 92.0 | Syncareer | Audible | Software Development Engineer, Early Careers | Newark, New Jersey, United States | 2026-09-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.audiblecareers.com/job/newark/software-development-engineer-early-careers/27552/100193825584) |
+| A | 92.0 | Syncareer | Audible | Software Development Engineer, Early Careers | Cambridge, Massachusetts, United States | 2026-09-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.audiblecareers.com/job/cambridge/software-development-engineer-early-careers/27552/100193825568) |
+| B | 93.0 | Syncareer | Micron Technology | Intern - AI Agentic Systems Engineer | California, United States | 2026-09-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.micron.com/careers/job/44280744?domain=micron.com) |
 | B | 76.0 | Syncareer | Applied Materials | Software QA Engineer | Santa Clara, California, United States | 2026-09-05 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.appliedmaterials.com/careers/job/790318275183?domain=appliedmaterials.com&hl=en&triggerGoButton=true) |
 | B | 84.0 | Syncareer | Amdocs | Software Engineer - Graduate | Plano, Texas, United States | 2026-09-05 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.amdocs.com/careers/job/563431014818485) |
 | B | 72.0 | Syncareer | Spirit AeroSystems | Entry-Level Software Engineer | Wichita, Kansas, United States | 2026-09-05 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.spiritaero.com/jobs/17433?lang=en-us) |
@@ -27,16 +31,6 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 78.0 | Syncareer | Capital Insurance Group | Software Developer II | Reno, Nevada, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://ciginsurance.hrmdirect.com/employment/job-opening.php?req=3792174&req_loc=1446853&&&jbsrc=1025#job) |
 | B | 73.0 | Syncareer | Microchip Technology | Engineer I- CAD (Software Development) | Chandler, Arizona, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://wd5.myworkdaysite.com/en-US/recruiting/microchiphr/External/job/AZ---Chandler/Engineer-I--CAD--Software-Development-_R3637-26?locationCountry=80938777cac5440fab50d729f9634969&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea) |
 | B | 83.0 | Syncareer | Conagra Brands | Forward Deployed Engineer - Palantir | Omaha, Nebraska, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.conagrabrands.com/us/en/job/Req-040092/Forward-Deployed-Engineer-Palantir) |
-| B | 78.0 | Syncareer | Q2 Software | Software Engineer | Cary, North Carolina, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://q2ebanking.wd5.myworkdayjobs.com/en-US/Q2/job/Cary-North-Carolina/Software-Engineer_REQ-12745?jobFamilies=8b86f00a4a2a01e03cacfbdc0288b96a&jobFamilies=8b86f00a4a2a0161c8f6dbdc0288ab6a&jobFamilies=54838d87026b0142d4a0dd78070250f5&jobFamilies=54838d87026b019304a74a65070243f5&jobFamilies=8b86f00a4a2a0105bcc1d3dc0288a76a) |
-| B | 86.0 | Syncareer | Zebra Technologies | Software Engineer I | Holtsville, New York, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://zebra.wd501.myworkdayjobs.com/en-US/Zebra_careers/job/Holtsville-New-York/Software-Engineer-I_JR103056) |
-| B | 87.0 | Syncareer | IBM | Entry Level Site Reliability Engineering Professional - Austin, TX - 2 | Austin, Texas, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=131820&source=WEB_Search_NA) |
-| B | 76.0 | Syncareer | Aramark | Jr. Data Engineer | Rockville, Maryland, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://aramarkcareers.com/UnitedStates/job/Rockville-Jr_-Data-Engineer-MD-20850/1426145000/) |
-| B | 80.0 | Syncareer | Kikoff | Software Engineer - Recent Grad | San Francisco, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/kikoff/jobs/4393822009) |
-| B | 78.0 | Syncareer | Aramark | Junior Data Engineer | Philadelphia, Pennsylvania, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://aramarkcareers.com/UnitedStates/job/Philadelphia-Junior-Data-Engineer-PA-19106/1426164400/) |
-| B | 78.0 | Syncareer | IBM | Backend Developer Intern - Austin, TX - 2027 | Austin, Texas, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=131799&source=WEB_Search_NA) |
-| B | 84.0 | Syncareer | IBM | Site Reliability Engineering Professional Intern - Austin, TX - 2027 | Austin, Texas, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=131810&source=WEB_Search_NA) |
-| A | 88.0 | Syncareer | IBM | Entry level Backend Developer - San Jose, CA - 2027 | San Jose, California, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=131805&source=WEB_Search_NA) |
-| B | 84.0 | Syncareer | IBM | Front End Software Developer | Tucson, Arizona, United States | 2026-09-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=129264&source=WEB_Search_NA) |
 | A | 91.0 | Syncareer | PayPal | Software Engineer - Recent Graduate | San Jose, California, United States of America; Chicago, Illinois, United States of America; Austin, Texas, United States of America | 2026-09-05 | Sponsor | YES (PayPal) | unreviewed | covered_unvalidated | [open](https://paypal.eightfold.ai/careers/job/274921995088?domain=paypal.com&triggerGoButton=false) |
 | A | 91.0 | Syncareer | PayPal | Machine Learning Engineer | San Jose, California, United States of America; Austin, Texas, United States of America | 2026-09-05 | Sponsor | YES (PayPal) | unreviewed | covered_unvalidated | [open](https://paypal.eightfold.ai/careers/job/274922260564?domain=paypal.com&triggerGoButton=false) |
 | B | 82.0 | Syncareer | Tesla | Data Engineer, Battery Manufacturing Development | Austin, Texas, United States | 2026-09-04 | Sponsor | YES (Tesla) | unreviewed | official_unsupported | [open](https://www.tesla.com/careers/search/job/282146) |
