@@ -476,11 +476,14 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
             all_rows.append(normalize_row(entry, pipeline, now, referrals, coverage_by_key))
 
     # History is recovery-only: expired or newly filtered jobs must not re-enter discovery.
-    history_scores: Dict[str, List[Any]] = {}
+    history_details: Dict[str, List[Any]] = {}
     for row in all_rows:
         key = str(row.get("canonical_job_key") or "")
         if key and (row.get("tier") not in (None, "", "-") or row.get("score") not in (None, "")):
-            history_scores[key] = [row.get("tier") or "-", row.get("score", "")]
+            history_details[key] = [
+                row.get("pipeline", ""), row.get("company", ""), row.get("title", ""),
+                row.get("location", ""), row.get("url", ""), row.get("tier") or "-", row.get("score", ""),
+            ]
     for pipeline, path in ALERT_HISTORY_PATHS.items():
         for event in read_json(path, {}).get("events", []):
             for entry in event.get("jobs", []):
@@ -488,8 +491,15 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
                     key = str(entry.get("canonical_job_key") or coverage_reconcile.canonical_job_key(entry))
                     tier = entry.get("tier") or "-"
                     score = entry.get("match_score") if entry.get("match_score") is not None else entry.get("fit_score", "")
-                    previous = history_scores.get(key, ["-", ""])
-                    history_scores[key] = [tier if tier != "-" else previous[0], score if score not in (None, "") else previous[1]]
+                    previous = history_details.get(key, ["", "", "", "", "", "-", ""])
+                    values = [
+                        pipeline, entry.get("company") or "", entry.get("title") or "",
+                        entry.get("location") or "",
+                        entry.get("official_url") or entry.get("source_url") or entry.get("job_url") or entry.get("url") or "",
+                    ]
+                    history_details[key] = [value or previous[index] for index, value in enumerate(values)] + [
+                        tier if tier != "-" else previous[5], score if score not in (None, "") else previous[6],
+                    ]
 
     eligible_rows = [
         row for row in all_rows
@@ -539,7 +549,7 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         # Shared status changes need a complete row pool so a job can move
         # between sections immediately without regenerating static job data.
         "workflow_rows": _sort_rows(candidates),
-        "history_scores": history_scores,
+        "history_details": history_details,
         "coverage": coverage,
         "official_searches": official_search_catalog(),
     }

@@ -8,6 +8,25 @@
   const archivePending = new Set();
   let recentSource = 'all';
 
+  const stateKeys = key => {
+    if (!String(key || '').startsWith('[')) return [key];
+    try {
+      const keys = JSON.parse(key);
+      return Array.isArray(keys) && keys.length && keys.every(value => typeof value === 'string') ? keys : [key];
+    } catch (e) { return [key]; }
+  };
+  const expandedStates = (state, pending) => {
+    const keys = stateKeys(state.canonical_job_key);
+    const grouped = keys.length !== 1 || keys[0] !== state.canonical_job_key;
+    return keys.map(key => {
+      const snapshot = normalizedState({...state, canonical_job_key: key}, pending);
+      snapshot._applied_at = state._applied_at || (
+        grouped && normalizeStatus(state.status) === 'applied_complete' ? state.updated_at : ''
+      );
+      return snapshot;
+    });
+  };
+
   const persistAppliedArchive = () => {
     try { localStorage.setItem(archiveCacheKey, JSON.stringify(archive)); } catch (e) {}
   };
@@ -16,6 +35,7 @@
     return Number.isFinite(value) ? value : 0;
   };
   const compactSnapshot = row => ({
+    v: 2,
     k: String(row?.canonical_job_key || ''),
     p: String(row?.pipeline || ''),
     c: String(row?.company || ''),
@@ -28,17 +48,7 @@
     applied: row?._applied_at || '',
   });
   const archiveStorageKey = row => {
-    const snapshot = compactSnapshot(row);
-    const build = () => archivePrefix + JSON.stringify(snapshot);
-    let key = build();
-    if (key.length <= 2000) return key;
-    snapshot.u = '';
-    key = build();
-    if (key.length <= 2000) return key;
-    snapshot.t = snapshot.t.slice(0, 160);
-    snapshot.l = snapshot.l.slice(0, 120);
-    snapshot.c = snapshot.c.slice(0, 80);
-    key = build();
+    const key = archivePrefix + JSON.stringify(compactSnapshot(row));
     return key.length <= 2000 ? key : '';
   };
   const decodeArchive = state => {
@@ -47,6 +57,11 @@
     try {
       const s = JSON.parse(key.slice(archivePrefix.length));
       if (!s?.k) return null;
+      const applied = String(s.applied || '');
+      const appliedTime = Date.parse(applied), archivedTime = Date.parse(state.updated_at || '');
+      const trustedApplied = Number(s.v) >= 2 || (
+        Number.isFinite(appliedTime) && Number.isFinite(archivedTime) && Math.abs(appliedTime - archivedTime) <= 60000
+      );
       return {
         canonical_job_key: s.k,
         pipeline: s.p || '',
@@ -58,10 +73,10 @@
         first_seen: '',
         tier: s.tier || '-',
         score: s.score ?? '',
-        _applied_at: s.applied || '',
+        _applied_at: trustedApplied ? applied : '',
         sponsorship: 'Unknown',
         referral: '',
-        url: s.u || '',
+        url: s.u || (String(s.k).startsWith('url::') ? String(s.k).slice(5) : ''),
         freshness: { discovered: { age_hours: null }, posted: { trusted: false } },
         _applied_archive: true,
         _archive_updated_at: state.updated_at || '',
@@ -88,26 +103,63 @@
   });
   const isCompanyState = key => isPreferenceKey(key) || String(key || '').startsWith(archivePrefix);
 
+  const metadataFields = ['pipeline', 'company', 'title', 'location', 'url', 'tier', 'score'];
   const hasTier = row => row?.tier && row.tier !== '-';
   const hasScore = row => row?.score !== '' && row?.score != null;
+  const hasMetadata = (row, field) => {
+    if (field === 'tier') return hasTier(row);
+    if (field === 'score') return hasScore(row);
+    const value = String(row?.[field] || '');
+    return Boolean(value) && value !== 'Archived application' && !value.startsWith('Previously applied job');
+  };
+  const metadataQuality = row => metadataFields.filter(field => hasMetadata(row, field)).length;
+  const mergeArchive = (left, right) => {
+    if (!left) return right;
+    if (!right) return left;
+    const newer = archiveTime(right) >= archiveTime(left) ? right : left;
+    const merged = {...newer};
+    metadataFields.forEach(field => {
+      if (!hasMetadata(merged, field)) {
+        const source = hasMetadata(right, field) ? right : left;
+        if (hasMetadata(source, field)) merged[field] = source[field];
+      }
+    });
+    const applied = [left._applied_at, right._applied_at]
+      .filter(value => Number.isFinite(Date.parse(value)))
+      .sort((a, b) => Date.parse(b) - Date.parse(a))[0];
+    merged._applied_at = applied || '';
+    return merged;
+  };
   function recoveredRow(key) {
     const matches = [archive[key], ...allRows]
       .filter(row => row?.canonical_job_key === key);
-    const historical = (D.history_scores || {})[key];
+    const details = (D.history_details || {})[key];
+    const scores = (D.history_scores || {})[key];
+    const historical = details ? {
+      canonical_job_key: key, pipeline: details[0], company: details[1], title: details[2],
+      location: details[3], url: details[4], tier: details[5], score: details[6],
+    } : scores ? {canonical_job_key: key, tier: scores[0], score: scores[1]} : null;
     if (!matches.length && !historical) return null;
-    const row = {...(matches[matches.length - 1] || placeholderApplied(key))};
-    for (const candidate of matches.reverse()) {
-      if (!hasTier(row) && hasTier(candidate)) row.tier = candidate.tier;
-      if (!hasScore(row) && hasScore(candidate)) row.score = candidate.score;
-    }
-    if (!hasTier(row) && historical?.[0] && historical[0] !== '-') row.tier = historical[0];
-    if (!hasScore(row) && historical?.[1] !== '' && historical?.[1] != null) row.score = historical[1];
+    const row = matches.reverse().reduce(mergeArchive, historical || placeholderApplied(key));
     return row;
   }
-  const appliedTime = row => Date.parse(archive[row.canonical_job_key]?._applied_at || reviewState(row.canonical_job_key)?.updated_at || '') || 0;
+  const appliedTime = row => Date.parse(row?._applied_at || '') || 0;
   const appliedRows = rows => searchedRows(rows.filter(r => statusOf(r) === 'applied_complete' && !isDeleted(r)))
     .map(row => recoveredRow(row.canonical_job_key) || row)
-    .sort((a, b) => appliedTime(b) - appliedTime(a));
+    .sort((a, b) => appliedTime(b) - appliedTime(a)
+      || metadataQuality(b) - metadataQuality(a)
+      || String(a.company || '').localeCompare(String(b.company || ''))
+      || String(a.title || '').localeCompare(String(b.title || '')));
+  const discoveryActivityText = activityText;
+  activityText = row => {
+    if (!row?._applied_archive && !row?._applied_at) return discoveryActivityText(row);
+    const applied = Date.parse(row._applied_at || '');
+    if (!Number.isFinite(applied)) return 'Applied date unavailable';
+    return `Applied ${new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Los_Angeles', month: 'short', day: 'numeric', year: 'numeric',
+      hour: 'numeric', minute: '2-digit', hour12: true,
+    }).format(new Date(applied)).replace(',', '')} PT`;
+  };
 
   function syncArchiveRows() {
     for (let i = allRows.length - 1; i >= 0; i--) {
@@ -125,7 +177,8 @@
     if (!supabase || !jobKey || archivePending.has(jobKey)) return;
     const storageKey = archiveStorageKey(snapshot);
     if (!storageKey) {
-      if (archive[jobKey]) { archive[jobKey].pending = false; persistAppliedArchive(); }
+      sharedError = 'Could not sync applied history: archived job metadata exceeds the storage limit';
+      renderReviewMessage();
       return;
     }
     archivePending.add(jobKey);
@@ -148,15 +201,16 @@
     renderAll();
   }
 
-  function archiveAppliedJob(key) {
+  function archiveAppliedJob(key, appliedAt = archive[key]?._applied_at || '') {
     const row = recoveredRow(key);
     if (!row) return;
-    const snapshot = decodeArchive({
-      canonical_job_key: archiveStorageKey({...row, _applied_at: archive[key]?._applied_at || reviewState(key)?.updated_at || new Date().toISOString()}),
-      updated_at: new Date().toISOString(),
-    });
-    if (!snapshot) return;
-    snapshot.pending = true;
+    const snapshot = {
+      ...row,
+      _applied_archive: true,
+      _applied_at: appliedAt,
+      _archive_updated_at: new Date().toISOString(),
+      pending: true,
+    };
     archive[key] = snapshot;
     persistAppliedArchive();
     syncArchiveRows();
@@ -167,7 +221,8 @@
     Object.entries(reviewStates).forEach(([key, state]) => {
       if (isCompanyState(key) || normalizeStatus(state?.status) !== 'applied_complete') return;
       const recovered = recoveredRow(key), saved = archive[key];
-      if (recovered && (!saved || (!hasTier(saved) && hasTier(recovered)) || (!hasScore(saved) && hasScore(recovered)))) archiveAppliedJob(key);
+      const improves = recovered && metadataFields.some(field => !hasMetadata(saved, field) && hasMetadata(recovered, field));
+      if (!saved || improves) archiveAppliedJob(key, state._applied_at || saved?._applied_at || '');
     });
   }
 
@@ -224,10 +279,7 @@
     if (!statusChoices.includes(value)) return;
     keys = Array.isArray(keys) ? keys : [keys];
     saveStates(keys, { status: value, deleted: false });
-    if (value === 'applied_complete') keys.forEach(key => {
-      if (archive[key]) archive[key]._applied_at = reviewState(key).updated_at;
-      archiveAppliedJob(key);
-    });
+    if (value === 'applied_complete') keys.forEach(key => archiveAppliedJob(key, reviewState(key).updated_at));
   };
 
   mainViewCounts = function(rows = uniqueRows()) {
@@ -284,19 +336,25 @@
       const snapshot = decodeArchive(row);
       if (snapshot) {
         const previous = remoteArchive[snapshot.canonical_job_key];
-        if (!previous || archiveTime(snapshot) >= archiveTime(previous)) remoteArchive[snapshot.canonical_job_key] = snapshot;
+        remoteArchive[snapshot.canonical_job_key] = mergeArchive(previous, snapshot);
         return;
       }
-      if (row.canonical_job_key && statusChoices.includes(row.status)) merged[row.canonical_job_key] = normalizedState(row, false);
+      if (row.canonical_job_key && statusChoices.includes(row.status)) expandedStates(row, false).forEach(snapshot => {
+        const key = snapshot.canonical_job_key;
+        if (!merged[key] || stateTime(snapshot) >= stateTime(merged[key])) merged[key] = snapshot;
+      });
     });
 
     Object.values(reviewStates).forEach(local => {
-      const remote = merged[local.canonical_job_key];
-      if (!remote || stateTime(local) > stateTime(remote)) merged[local.canonical_job_key] = normalizedState(local, Boolean(local.pending));
+      expandedStates(local, Boolean(local.pending)).forEach(snapshot => {
+        const key = snapshot.canonical_job_key;
+        const remote = merged[key];
+        if (!remote || stateTime(snapshot) > stateTime(remote)) merged[key] = snapshot;
+      });
     });
     Object.values(archive).forEach(local => {
       const remote = remoteArchive[local.canonical_job_key];
-      if (!remote || archiveTime(local) > archiveTime(remote)) remoteArchive[local.canonical_job_key] = local;
+      remoteArchive[local.canonical_job_key] = mergeArchive(remote, local);
     });
 
     reviewStates = merged;
