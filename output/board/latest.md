@@ -1,51 +1,52 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-08_1500
+# ATS / LinkedIn board — 7-day view — 2026-09-08_1540
 
-- Updated (PT): 2026-09-08 08:02 PDT
-- Snapshot (UTC): 2026-09-08T15:02:30.064112+00:00
-- Last 24 hours: 18
-- Last 3 days: 21
+- Updated (PT): 2026-09-08 08:47 PDT
+- Snapshot (UTC): 2026-09-08T15:47:06.937673+00:00
+- Last 24 hours: 22
+- Last 3 days: 22
 
 If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) instead of this file.
 
 ## Run stats
 
-- Source raw: ATS 2670 / Linkedin 772 / Indeed 580 / Glassdoor 137 (Big Company Official runs separately)
-- Funnel: after dedup 4159 -> after company filter 4071 -> after hard filter 3688 -> after role+seniority prefilter 807 | dropped 3289
-- LLM usage: jobs scored 1 / API requests 1 / cache reused 233 (cross-pipeline 0) / rule fallback+overflow 293 (thin local cards 291, recency-gated 2, overflow 0, new/changed 3)
-- LLM cost: model gpt-5.6-terra / API requests 1 / jobs scored 1 / tokens input 3556 (cached 0) / output 314 (reasoning 99) / estimated cost $0.0109
-- Output sizing: Tier A 2 / Tier B 19 / A+B actionable 21 / Shown in latest.md 21 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 1 / 1-3d 144 / newly-disc 369 / 3-7d 10 / >7d 3
-- LinkedIn vs Indeed exact coverage: overlap 8 / LinkedIn unique 756 of 764 / Indeed unique 374 of 374
-- Linkedin top exact-unique queries: software engineer=234, ai engineer=221, new grad software engineer=78, backend engineer=78, platform engineer=76
-- Indeed top exact-unique queries: software engineer=198, ai engineer=130, platform engineer=62, infrastructure engineer=55, backend engineer=38
+- Source raw: ATS 2670 / Linkedin 768 / Indeed 599 / Glassdoor 153 (Big Company Official runs separately)
+- Funnel: after dedup 4190 -> after company filter 4145 -> after hard filter 3782 -> after role+seniority prefilter 1011 | dropped 3137
+- LLM usage: jobs scored 153 / API requests 15 / cache reused 140 (cross-pipeline 0) / rule fallback+overflow 401 (thin local cards 399, recency-gated 2, overflow 0, new/changed 155)
+- LLM cost: model gpt-5.6-terra / API requests 15 / jobs scored 153 / tokens input 222945 (cached 0) / output 26470 (reasoning 1815) / estimated cost $0.7635
+- Output sizing: Tier A 1 / Tier B 21 / A+B actionable 22 / Shown in latest.md 22 (no hard cap)
+- Recency (kept): <3h 0 / 3-24h 1 / 1-3d 1 / newly-disc 670 / 3-7d 15 / >7d 7
+- LinkedIn vs Indeed exact coverage: overlap 6 / LinkedIn unique 740 of 746 / Indeed unique 380 of 380
+- Linkedin top exact-unique queries: ai engineer=221, software engineer=215, software engineer i=76, backend engineer=76, platform engineer=76
+- Indeed top exact-unique queries: software engineer=163, ai engineer=120, infrastructure engineer=78, platform engineer=76, machine learning engineer=39
 
-## Tier A - apply now / referral (2)
+## Tier A - apply now / referral (1)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 91 | cached_llm | indeed | Global Shop Solutions | ASSOCIATE SOFTWARE ENGINEER | The Woodlands, TX, US | 2026-09-06 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=cbaffb936e54e0ff) |
-| 91 | cached_llm | glassdoor | Global Shop Solutions | ASSOCIATE SOFTWARE ENGINEER | The Woodlands, TX | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010255812760) |
 
-## Tier B - worth applying (19)
+## Tier B - worth applying (21)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 75 | rule_fallback | linkedin | UST | Junior Full Stack Developer | Atlanta, GA | 2026-09-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-full-stack-developer-at-ust-4441070698) |
-| 75 | rule_fallback | linkedin | Reach Velocity - Emerging Technology 🇺🇸 🇵🇹 | Forward Deployed AI Engineer | Houston, TX | 2026-09-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-at-reach-velocity-emerging-technology-%F0%9F%87%BA%F0%9F%87%B8-%F0%9F%87%B5%F0%9F%87%B9-4462211278) |
-| 75 | rule_fallback | linkedin | UST | Full-Stack Developer (.NET Microservices + Angular/React + AI-Driven D | Dallas, TX | 2026-09-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-net-microservices-%2B-angular-react-%2B-ai-driven-development-at-ust-4440400020) |
+| 88 | llm | indeed | Makeable | AI Engineer Intern | San Francisco, CA, US | 2026-09-08 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=50291e6674e7ab58) |
 | 88 | cached_llm | indeed | Private School in Wylie | Software Engineer - AI Intern | Remote, US | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=8f7338af8b0f5a32) |
+| 85 | llm | indeed | Farm Credit Services of America | Application Developer - Intern | Omaha, NE, US | 2026-09-01 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=f11d8dc4c3f4715d) |
+| 84 | llm | linkedin | Giftogram | Junior Full Stack Developer | Whippany, NJ | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-full-stack-developer-at-giftogram-4464626208) |
 | 84 | cached_llm | linkedin | PwC | Forward Deployed Software Engineering - Experienced Associate | Chicago, IL | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineering-experienced-associate-at-pwc-4452609561) |
+| 84 | llm | linkedin | BIP Ventures | Junior AI Engineer / Full Stack Developer / Financial Services / Ventu | Atlanta, GA | 2026-09-08 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-ai-engineer-full-stack-developer-financial-services-venture-capital-at-bip-ventures-4464623701) |
 | 84 | cached_llm | indeed | Global Shop Solutions | SOFTWARE ENGINEER | The Woodlands, TX, US | 2026-09-06 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=731d50f60677fdb3) |
-| 84 | cached_llm | glassdoor | Global Shop Solutions | SOFTWARE ENGINEER | The Woodlands, TX | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010255813175) |
 | 83 | cached_llm | indeed | Sideshift | Full Stack Engineer | New York, NY, US | 2026-09-06 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=7cf3ddade4705516) |
 | 83 | cached_llm | glassdoor | SideShift | Full Stack Engineer | New York, NY | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010255721689) |
-| 82 | cached_llm | indeed | Rocket Science Group | Full-Stack Engineer - Albany | Albany, NY, US | 2026-09-06 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=a173f8b22852bf0b) |
-| 82 | cached_llm | glassdoor | Rocket Science Group | Full-Stack Engineer - Albany | Albany, NY | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010255367165) |
 | 80 | cached_llm | indeed | Magnakom | Artificial Intelligence Engineer | Van Nuys, CA, US | 2026-09-07 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=c5ecac3f539cabf9) |
 | 79 | cached_llm | indeed | Convey | Software Engineer | San Francisco, CA, US | 2026-09-06 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=28924dc8fa3349a5) |
-| 79 | cached_llm | glassdoor | Convey | Software Engineer | San Francisco, CA | 2026-09-08 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010255826329) |
+| 78 | llm | indeed | Farm Credit Services of America | Artificial Intelligence Engineer - Intern | Omaha, NE, US | 2026-09-01 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=7ac6ba06de0bbad1) |
+| 78 | llm | indeed | JOb Assist | Software Developer / Engineer | Remote, US | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=5e4b70d4e466c6eb) |
+| 78 | llm | indeed | Vertafore | Software Engineer II | Denver, CO, US | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=589eab8f3951b95e) |
+| 78 | llm | indeed | Vertafore | Software Engineer II | Melville, NY, US | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=5f25531165f4b7fa) |
+| 78 | llm | indeed | Vertafore | Software Engineer II | Melville, NY, US | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=6d1ccfa397a3c978) |
+| 78 | llm | indeed | Vertafore | Software Engineer II | Denver, CO, US | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=d45f3ad388583424) |
+| 78 | llm | glassdoor | Vertafore | Software Engineer II | Denver, CO | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010256423658) |
+| 78 | llm | glassdoor | Vertafore | Software Engineer II | Denver, CO | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010256423661) |
 | 77 | cached_llm | indeed | Caterpillar | Software Engineer | Chicago, IL, US | 2026-09-06 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ecdd34b1899db9ed) |
-| 77 | cached_llm | glassdoor | Caterpillar | Software Engineer | Chicago, IL | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010255837395) |
-| 75 | rule_fallback | linkedin | Sundayy | Full Stack Developer - Remote | United States | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-remote-at-sundayy-4464326276) |
-| 75 | rule_fallback | linkedin | Sardine | Forward Deployed AI Engineer | United States | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-at-sardine-4427618068) |
-| 74 | cached_llm | linkedin | Capgemini | Java Full Stack Developer opportunity in Dallas, TX | Dallas, TX | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/java-full-stack-developer-opportunity-in-dallas-tx-at-capgemini-4426140138) |
+| 75 | rule_fallback | linkedin | Oak Ridge National Laboratory | Full Stack Developer | Oak Ridge, TN | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-oak-ridge-national-laboratory-4455300971) |
