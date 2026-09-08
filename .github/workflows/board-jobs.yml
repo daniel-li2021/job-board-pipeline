@@ -80,7 +80,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Only board artifacts + alerts. Local sources are owned by launchd.
-          git add output/board/ 2>/dev/null || true
+          git add -A -- output/board/
           if git diff --staged --quiet; then
             echo "No board changes to commit."
           else

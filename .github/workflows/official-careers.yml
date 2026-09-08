@@ -59,9 +59,9 @@ jobs:
         id: pipeline
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ONLY: ${{ inputs.only }}
+          NO_LLM: ${{ inputs.no_llm }}
         run: |
-          ONLY="${{ github.event.inputs.only }}"
-          NO_LLM="${{ github.event.inputs.no_llm }}"
           ARGS=()
           if [ -n "$ONLY" ]; then ARGS+=(--only "$ONLY"); fi
           if [ "$NO_LLM" = "true" ]; then ARGS+=(--no-llm); fi

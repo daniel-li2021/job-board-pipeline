@@ -12,6 +12,13 @@ on:
       - "dashboard_applied_history.js"
       - "dashboard_last7.js"
       - "coverage_reconcile.py"
+      - "alert_history.py"
+      - "board_pipeline.py"
+      - "llm_config.py"
+      - "state_io.py"
+      - "sources/**"
+      - "profile/company_filters.json"
+      - "requirements.txt"
   workflow_run:
     workflows: ["Official careers", "Board job alert", "Syncareer job alert"]
     types: [completed]

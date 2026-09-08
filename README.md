@@ -138,12 +138,18 @@ User-facing digests are deduplicated so reruns, rescoring, and ordinary JD chang
 - `profile/official_coverage.json` — manual Official validation state;
 - `sources/careers/query_terms.py` — shared Official role-search queries.
 
-## Tests
+## State and validation
 
-Current regression suites live under `tests/`:
+Owned job stores, watchlists, digest histories and the optional committed review overlay reject corrupt data rather than resetting it. Writes use atomic replacement to retain the previous complete file if writing fails. Missing files can initialize empty state; unavailable optional peer caches do not block another pipeline. Supported legacy record formats remain readable.
 
-- `test_matching_incremental.py`
-- `test_official_careers_adapters.py`
-- `test_visibility.py`
+Matching requires nonempty `profile/candidate_profile.md`, `profile/resume_swe.md`, and `profile/resume_ai.md`. Missing or blank inputs stop scoring; no legacy resume fallback is used. Run stamps and persisted timestamps use UTC; display and schedules use Pacific time.
 
-Matching requires the nonempty tracked files `profile/candidate_profile.md`, `profile/resume_swe.md`, and `profile/resume_ai.md`. Missing or blank inputs stop scoring; there is no legacy resume fallback. Cleanup checkpoints and remaining review work are recorded in [CLEANUP_PROGRESS.md](CLEANUP_PROGRESS.md).
+Run the offline regression checks without crawling, scoring API calls, or generated-output updates:
+
+```bash
+python3 -m unittest discover -s tests -q
+python3 infra/scheduler/test_scheduler.py
+bash -n scripts/local_source_sync.sh
+```
+
+These cover matching/cache invariants, adapters, state recovery, repeated runs, dashboard rendering and the local runner. Cleanup decisions and validation are recorded in [CLEANUP_PROGRESS.md](CLEANUP_PROGRESS.md).

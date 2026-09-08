@@ -62,7 +62,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output/syncareer/ 2>/dev/null || true
+          git add -A -- output/syncareer/
           if git diff --staged --quiet; then
             echo "No Syncareer changes to commit."
           else

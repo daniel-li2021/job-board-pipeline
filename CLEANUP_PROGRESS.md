@@ -57,15 +57,19 @@
 - Preserved active legacy record normalization, score aliases, snapshot formats and strict incremental-cache date parsing where behavior differs intentionally. Root entrypoints remain in place; transports and reports have source-specific contracts and do not warrant another abstraction.
 - Validation: all 108 tests passed in the isolated cleanup worktree. Concurrent dashboard edits in the primary checkout were left to their owning task.
 
-## Remaining high-value work
-- Finish traced compatibility/default-value review, workflow dependency triggers and stale documentation/tests.
-- Run final offline validation and verify published Pages; no broad module restructuring is warranted by the current call graph.
+## Completed — batch 10: workflow and documentation review
+- Pages now rebuilds for the shared code, source modules, company filters and dependencies its renderer consumes. Independent source workflows and external schedules remain unchanged.
+- Board/Syncareer staging errors now fail publication instead of being hidden. Official free-form dispatch values enter the shell through environment variables, with an executed shell-contract test proving command-substitution text remains a literal argument.
+- Updated README state-recovery, UTC/Pacific and validation instructions. Reviewed root modules, adapters, operational scripts, workflow/output boundaries and compatibility paths; no further high-value deletion or structural change is supported by the traced call graph.
+- Final offline validation: 109 regression tests and the scheduler contract test pass; tracked Python modules compile; local runner shell syntax and diff checks pass. Rendered the dashboard from existing snapshots into a temporary directory with network access blocked.
 
-## Next recommended batch
-Complete the remaining review in this run; checkpoints are recovery records only.
+## Completion status
+All identified high-value cleanup/correctness work is implemented. Final cleanup commits integrate cleanly with current main through `7353923`, including the newer dashboard and local-source work. Integrated validation on 2026-09-08: 114 regression tests ran, 113 passed and one JobSpy-dependent transport test was skipped because local collector dependencies are not installed; the offline scheduler contract, tracked Python compilation, shell syntax and diff checks passed. No implementation batch remains. Remote publication and Pages verification are the final delivery checks.
 
 ## Intentionally preserved
 - Matching/ranking policy, score cache keys, adapter budgets and source reliability guards.
-- Persistent stores, application/review state and old snapshot readers; their migrations need separate evidence.
+- Existing persistent contents, application/review status and needed legacy snapshot/store formats; current read/write contracts remain compatible.
 - Root pipeline entrypoints, `sources/`, `scripts/`, `.codex/`, `.cursor/` and CodeGraph.
-- Existing generated outputs; Pages rebuilds the dashboard from stored data after publication.
+- Generated job data and scores; only Pages rendering uses stored data after publication.
+- Source-specific HTML parsing, strict incremental-cache timestamps, protected-source policies, matching thresholds and current Supabase access policy. These have active contracts; changing them would exceed cleanup.
+- Concurrent dashboard/local-source changes in the primary checkout remain owned by their respective tasks. Cleanup integration must not overwrite them.
