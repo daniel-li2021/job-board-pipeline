@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-09-07 19:28 PDT
-- Snapshot (UTC): 2026-09-08T02:28:18.056378+00:00
-- Jobs: 33 (Tier A/B only)
-- Last 24 hours: 33
-- Last 3 days: 33
+- Updated (PT): 2026-09-07 22:31 PDT
+- Snapshot (UTC): 2026-09-08T05:31:55.312235+00:00
+- Jobs: 27 (Tier A/B only)
+- Last 24 hours: 27
+- Last 3 days: 27
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -23,24 +23,18 @@ The 7-day dump is `latest.md`.
 | B | 80 | indeed | Magnakom | Artificial Intelligence Engineer | Van Nuys, CA, US | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c5ecac3f539cabf9) |
 | B | 79 | indeed | Convey | Software Engineer | San Francisco, CA, US | 2026-09-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=28924dc8fa3349a5) |
 | B | 79 | glassdoor | Convey | Software Engineer | San Francisco, CA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.glassdoor.com/job-listing/j?jl=1010255826329) |
-| B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Richmond, VA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464064365) |
-| B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Seattle, WA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464066348) |
-| B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Philadelphia, PA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464068344) |
-| B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Raleigh, NC | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464068346) |
-| B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Dallas, TX | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464069330) |
-| B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | San Francisco, CA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464070363) |
-| B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Pittsburgh, PA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464072665) |
-| B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | Costa Mesa, CA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464074314) |
-| B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | San Jose, CA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464076349) |
-| B | 75 | linkedin | Deloitte | Software Engineer II - Full-stack Developer with Anthropic Experience | McLean, VA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-full-stack-developer-with-anthropic-experience-at-deloitte-4464078332) |
-| B | 75 | linkedin | Deloitte | Software Engineer III - Full-stack Developer with Anthropic Experience | Los Angeles, CA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-iii-full-stack-developer-with-anthropic-experience-at-deloitte-4464072672) |
-| B | 75 | linkedin | Deloitte | Software Engineer III - Full-stack Developer with Anthropic Experience | Nashville, TN | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-iii-full-stack-developer-with-anthropic-experience-at-deloitte-4464077314) |
+| B | 77 | indeed | Caterpillar | Software Engineer | Chicago, IL, US | 2026-09-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ecdd34b1899db9ed) |
+| B | 77 | glassdoor | Caterpillar | Software Engineer | Chicago, IL | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.glassdoor.com/job-listing/j?jl=1010255837395) |
 | B | 75 | linkedin | Jobot | Forward Deployed Software Engineer | New York, NY | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-at-jobot-4451757936) |
-| B | 75 | linkedin | Jobot | Forward Deployed Software Engineer | Austin, TX | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-at-jobot-4451768891) |
-| B | 75 | linkedin | Jobot | Forward Deployed Software Engineer | Los Angeles, CA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-at-jobot-4451776036) |
-| B | 75 | linkedin | MeeBoss | Forward Deployed Software Engineer | New York, United States | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineer-at-meeboss-4464354274) |
-| B | 75 | linkedin | Saronic Technologies | Software Engineer - Forward Deployed | Austin, TX | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-forward-deployed-at-saronic-technologies-4407228471) |
+| B | 75 | linkedin | Liquidity Services | Full Stack Developer | United States | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-liquidity-services-4463156160) |
+| B | 75 | linkedin | MicroAI | Full Stack Developer | Texas, United States | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-microai-4464385628) |
+| B | 75 | linkedin | PwC | Forward Deployed Software Engineering - Experienced Associate | Chicago, IL | 2026-09-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-software-engineering-experienced-associate-at-pwc-4452609561) |
 | B | 75 | linkedin | UST | Junior Full Stack Developer | Atlanta, GA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/junior-full-stack-developer-at-ust-4441070698) |
+| B | 75 | linkedin | Loft Orbital | Full Stack Developer - AI Marketplace | Golden, CO | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-ai-marketplace-at-loft-orbital-4462258057) |
+| B | 75 | linkedin | Loft Orbital | Full Stack Developer - AI Marketplace | San Francisco, CA | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-ai-marketplace-at-loft-orbital-4462274045) |
 | B | 75 | linkedin | Reach Velocity - Emerging Technology 🇺🇸 🇵🇹 | Forward Deployed AI Engineer | Houston, TX | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-at-reach-velocity-emerging-technology-%F0%9F%87%BA%F0%9F%87%B8-%F0%9F%87%B5%F0%9F%87%B9-4462211278) |
+| B | 75 | linkedin | Sardine | Forward Deployed AI Engineer | United States | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-at-sardine-4427618068) |
+| B | 75 | linkedin | UST | Full-Stack Developer (.NET Microservices + Angular/React + AI-Driven D | Dallas, TX | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-net-microservices-%2B-angular-react-%2B-ai-driven-development-at-ust-4440400020) |
+| B | 74 | linkedin | Capgemini | Java Full Stack Developer opportunity in Dallas, TX | Dallas, TX | 2026-09-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-full-stack-developer-opportunity-in-dallas-tx-at-capgemini-4426140138) |
 | B | 74 | indeed |  | Web Developer | Bethel, AK, US | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6d298a44df028b6a) |
 | B | 74 | glassdoor | UCP49 LLC | Web Developer | Bethel, AK | 2026-09-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.glassdoor.com/job-listing/j?jl=1010255584066) |
