@@ -24,7 +24,6 @@ from sources.schema import (
     dedup_key,
     parse_datetime,
     make_job,
-    normalize_company_key,
     normalize_job_url,
     normalize_location_key,
     normalize_title_key,

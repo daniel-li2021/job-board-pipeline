@@ -181,16 +181,6 @@ def to_iso_date(value: Any) -> str:
     return m.group(1) if m else ""
 
 
-def days_since(iso_date: str) -> Optional[int]:
-    if not iso_date:
-        return None
-    try:
-        d = datetime.strptime(iso_date[:10], "%Y-%m-%d").replace(tzinfo=timezone.utc)
-    except ValueError:
-        return None
-    return (datetime.now(timezone.utc) - d).days
-
-
 def parse_datetime(value: Any) -> Optional[datetime]:
     raw = str(value or "").strip()
     if not raw:
@@ -226,23 +216,6 @@ def _trusted_posted_hours(job: Dict[str, str], now: datetime) -> Optional[float]
         dt = parse_datetime(posted)
         if dt is not None:
             return max(0.0, (now - dt).total_seconds() / 3600.0)
-    return None
-
-
-def recency_hours(job: Dict[str, str], now: Optional[datetime] = None) -> Optional[float]:
-    """Best-effort hours since the job became relevant (for diagnostics).
-
-    Trusted posted_date wins; otherwise falls back to discovery time.
-    Note: bucketing uses ``recency_bucket`` which keeps posted vs first_seen
-    conceptually separate — this helper only exists for coarse reporting.
-    """
-    now = now or datetime.now(timezone.utc)
-    trusted = _trusted_posted_hours(job, now)
-    if trusted is not None:
-        return trusted
-    fs = parse_datetime(job.get("first_seen", ""))
-    if fs is not None:
-        return max(0.0, (now - fs).total_seconds() / 3600.0)
     return None
 
 
@@ -602,10 +575,6 @@ def write_source_snapshot(name: str, jobs: List[Dict[str, str]], meta: Optional[
     }
     atomic_write(path, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
     return path
-
-
-def read_source_snapshot(name: str) -> List[Dict[str, str]]:
-    return read_source_snapshot_payload(name).get("jobs", [])
 
 
 def read_source_snapshot_payload(name: str) -> Dict[str, Any]:

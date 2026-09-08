@@ -470,10 +470,6 @@ def merge_by_key(jobs: List[Dict[str, str]]) -> List[Dict[str, str]]:
     return list(best.values())
 
 
-# Backwards-compatible alias.
-dedup_merge = merge_by_key
-
-
 def collapse_cross_source(jobs: List[Dict[str, str]]) -> List[Dict[str, str]]:
     """Second dedup pass after official_url is filled by verify_official().
 
@@ -1882,12 +1878,12 @@ ENTRY_DEFAULTS: Dict[str, Any] = {
     "job_id": "", "company": "", "title": "", "location": "", "posted_date": "",
     "aggregator_posted_date": "", "updated_date": "",
     "date_confidence": "unknown", "official_url": "", "source": "", "source_url": "",
-    "discovered_via": [], "filter_status": "kept", "drop_reason": "", "referral_name": "",
+    "discovered_via": list, "filter_status": "kept", "drop_reason": "", "referral_name": "",
     "company_flag": "", "staffing_firm": False, "clearance_risk_company": False,
     "role_family": "", "role_relevance": 0, "tier": "", "recency_bucket": "",
     "cache_key": "", "jd_hash": "", "match_score": None, "resume_profile_used": "",
-    "seniority_fit": "", "hard_constraint_status": "", "top_match_reasons": [],
-    "main_gaps": [], "recommended_action": "", "screen_method": "", "score_source": "",
+    "seniority_fit": "", "hard_constraint_status": "", "top_match_reasons": list,
+    "main_gaps": list, "recommended_action": "", "screen_method": "", "score_source": "",
     "match_canonical_key": "", "match_source_pipeline": "", "match_jd_hash": "",
     "coverage_status": "", "canonical_source": "", "canonical_job_key": "",
     "duplicate_of": "", "official_snapshot_at": "", "source_snapshot_at": "",

@@ -8,7 +8,7 @@ from contextlib import ExitStack
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import Mock, patch
-from urllib.parse import urlsplit
+from urllib.parse import parse_qs, urlsplit
 
 import board_pipeline
 import alert_history
@@ -306,12 +306,19 @@ class DashboardPolicyTests(unittest.TestCase):
             self.assertEqual("applied", saved["jobs"][key]["status"])
             self.assertEqual("Applied 2026-08-29", saved["jobs"][key]["notes"])
 
-    def test_current_ats_issue_fallback_parses_current_alert_rows(self) -> None:
-        event = dashboard.parse_issue_event(ROOT / "output" / "board" / "issue_body.md", "board")
-        self.assertIsNotNone(event)
-        self.assertRegex(event["stamp"], r"^\d{4}-\d{2}-\d{2}_\d{4}$")
-        self.assertEqual(event["count"], len(event["jobs"]))
-        self.assertGreater(len(event["jobs"]), 0)
+    def test_ats_issue_fallback_round_trips_the_current_writer(self) -> None:
+        job = official_job("10001", "Software Engineer I", "Seattle, WA")
+        job.update(tier="B", match_score=75)
+        with tempfile.TemporaryDirectory() as tmpdir:
+            directory = Path(tmpdir)
+            with patch.object(board_pipeline, "BOARD_DIR", directory), patch.object(board_pipeline, "RUNS_DIR", directory / "runs"):
+                paths = board_pipeline.write_alert([job], "2026-09-07_1200")
+            event = dashboard.parse_issue_event(paths["issue_body"], "board")
+        self.assertEqual("2026-09-07_1200", event["stamp"])
+        self.assertEqual(1, event["count"])
+        self.assertEqual(job["company"], event["jobs"][0]["company"])
+        self.assertEqual(job["official_url"], event["jobs"][0]["url"])
+        self.assertEqual("B", event["jobs"][0]["tier"])
 
     def test_alert_history_is_idempotent_and_drives_fresh_even_for_old_job(self) -> None:
         now = datetime(2026, 8, 29, 12, tzinfo=timezone.utc)
@@ -951,11 +958,6 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         self.assertLess(float(entry["match_score"]), 94)
         self.assertNotEqual("A", entry["tier"])
 
-    def test_local_sync_targets_main_from_an_isolated_worktree(self) -> None:
-        script = (ROOT / "scripts/local_source_sync.sh").read_text(encoding="utf-8")
-        self.assertIn('TARGET_BRANCH="${TARGET_BRANCH:-main}"', script)
-        self.assertIn("git worktree add --detach", script)
-        self.assertIn('push origin "HEAD:${TARGET_BRANCH}"', script)
 
 
 class ReportingWorkflowTests(unittest.TestCase):
@@ -1056,17 +1058,17 @@ class RegistryCoverageTests(unittest.TestCase):
         }
         self.assertEqual(set(), stale)
 
-    def test_ats_and_syncareer_have_explicit_official_cross_check_coverage(self) -> None:
+    def test_ats_boards_have_official_cross_check_coverage(self) -> None:
         official = json.loads((ROOT / "config" / "official_careers.json").read_text(encoding="utf-8"))
         ats = json.loads((ROOT / "config" / "ats_boards.json").read_text(encoding="utf-8"))
-        syncareer = json.loads((ROOT / "config" / "company_links.json").read_text(encoding="utf-8"))
         official_ids = {company["id"] for company in official["companies"]}
         ats_ids = {board["token"] for board in ats["boards"]}
-        sync_ids = {company["key"] for company in syncareer["companies"]}
         self.assertTrue(ats_ids.issubset(official_ids))
-        self.assertGreaterEqual(len(official_ids & sync_ids), 38)
-        self.assertGreaterEqual(len(official_ids & ats_ids & sync_ids), 7)
-        self.assertEqual(len(sync_ids), len(syncareer["companies"]))
+
+    def test_syncareer_search_is_keyword_based_without_company_restrictions(self) -> None:
+        url = daily_pipeline.build_search_url("Software Engineer", "last3days", 2)
+        self.assertEqual("/", urlsplit(url).path)
+        self.assertEqual({"q": ["Software Engineer"], "loc": ["United States"], "time": ["last3days"], "exps": [daily_pipeline.EXPERIENCE_FILTER], "page": ["2"]}, parse_qs(urlsplit(url).query))
 
     def test_bounded_query_variants_are_kept_in_configuration(self) -> None:
         self.assertIn("Site Reliability", daily_pipeline.SEARCH_KEYWORDS)

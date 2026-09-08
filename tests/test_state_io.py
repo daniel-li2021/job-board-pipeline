@@ -65,6 +65,21 @@ class StateSafetyTests(unittest.TestCase):
                 review_state.set_status("id::job", "applied")
                 self.assertEqual("Keep these notes", json.loads(path.read_text())["jobs"]["id::job"]["notes"])
 
+    def test_legacy_entry_defaults_do_not_share_mutable_fields(self):
+        first, second = board.ensure_entry_defaults({}), board.ensure_entry_defaults({})
+        for key, value in first.items():
+            if isinstance(value, list):
+                value.append("first job only")
+                self.assertEqual([], second[key])
+            elif isinstance(value, dict):
+                value["first job only"] = True
+                self.assertEqual({}, second[key])
+        existing = {"main_gaps": ["existing gap"], "match_score": 75, "review_status": "applied"}
+        self.assertIs(existing, board.ensure_entry_defaults(existing))
+        self.assertEqual(["existing gap"], existing["main_gaps"])
+        self.assertEqual(75, existing["match_score"])
+        self.assertEqual("applied", existing["review_status"])
+
     def test_retention_and_history_treat_naive_dates_as_utc(self):
         now = datetime(2026, 9, 7, tzinfo=timezone.utc)
         rows = {

@@ -44,12 +44,25 @@
 - Digest/history/review owners preserve corrupt state for repair rather than resetting it. Review status updates retain existing notes; corrected stale CLI instructions about Supabase and Pages.
 - Validation: all 105 tests passed, including failed-write preservation and owner/peer behavior; existing 13,082 Board and 22,468 Official entries read identically; current digests/history passed validation. Production outputs untouched.
 
+## Completed — batch 8: shared helpers and repeated runs (`6fe96e6`)
+- Shared the canonical UTC/date-only parser at the schema layer, fixing Board/Official retention on naive dates and alert-history interpretation across host timezones. Syncareer run stamps are now UTC consistently with history consumers.
+- Reused Board's store writer for Official and its GitHub-output emitter for Syncareer, retaining Syncareer's explicit unprefixed output and Board/Official environment-prefix behavior.
+- Repeated-run CLI coverage verifies no duplicate detail request and preservation of first_seen, score, tier, review status and notes. All 107 tests passed for this batch.
+- Reconciled against current main through `58c3057`; subsequent commits `8852e36`, `4638d2b`, and `58c3057` contain routine pipeline outputs, not additional cleanup changes.
+
+## Completed — batch 9: final dead-code and compatibility audit
+- CodeGraph and tracked-reference checks confirmed the old Syncareer company registry only served an obsolete count test; removed it, the uncalled `dedup_merge` alias, and four uncalled schema/Workday convenience helpers.
+- Corrected mutable list defaults shared between retained records; each record now owns its default lists, matching the existing dict-factory pattern.
+- Replaced the live-generated-issue test with a writer/parser round trip; replaced obsolete company-count checks with the active keyword-search contract. Removed redundant runner string assertions already covered by its local Git integration test.
+- Preserved active legacy record normalization, score aliases, snapshot formats and strict incremental-cache date parsing where behavior differs intentionally. Root entrypoints remain in place; transports and reports have source-specific contracts and do not warrant another abstraction.
+- Validation: all 108 tests passed in the isolated cleanup worktree. Concurrent dashboard edits in the primary checkout were left to their owning task.
+
 ## Remaining high-value work
-- Trace duplicated Board/Syncareer utilities, environment/profile loading and large root modules; extract only where it reduces coupling.
-- Review persistent-state compatibility and tests against real production invariants; retain needed old-format readers.
+- Finish traced compatibility/default-value review, workflow dependency triggers and stale documentation/tests.
+- Run final offline validation and verify published Pages; no broad module restructuring is warranted by the current call graph.
 
 ## Next recommended batch
-Trace Board/Official/alert-history state readers and write interruption behavior; assess atomic replacement using existing helpers before adding one. Strengthen repeated-run CLI preservation checks. Review duplicated GitHub-output emitters with prefix semantics before consolidating. Avoid splitting large modules until shared dependencies are mapped. Generated `public/` artifacts are rebuilt by Pages; do not regenerate job data for this cleanup.
+Complete the remaining review in this run; checkpoints are recovery records only.
 
 ## Intentionally preserved
 - Matching/ranking policy, score cache keys, adapter budgets and source reliability guards.

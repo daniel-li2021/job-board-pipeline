@@ -109,15 +109,6 @@ def _us_facet(facets: Any) -> Optional[Dict[str, List[str]]]:
     return found or None
 
 
-def _posted_recent_enough(posted_on: str) -> bool:
-    text = (posted_on or "").lower()
-    if not text:
-        return True
-    if "30+" in text or "30 +" in text:
-        return False
-    return True
-
-
 def scrape_workday(
     session: requests.Session,
     *,
