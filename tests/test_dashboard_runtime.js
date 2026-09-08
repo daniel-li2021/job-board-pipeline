@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const {execFileSync} = require('node:child_process');
 const html = execFileSync('python3', ['-c', 'import dashboard; print(dashboard.HTML_TEMPLATE)'], {encoding:'utf8'});
-const payload = {snapshots:{}, fresh_24h:[], rolling_3d:[], referrals:[], workflow_rows:[], history_rows:[], supabase:{}};
+const payload = {snapshots:{}, fresh_24h:[], rolling_3d:[], referrals:[], workflow_rows:[], history_scores:{}, supabase:{}};
 const cache = {};
 const context = vm.createContext({console, setTimeout, Date, localStorage:{getItem:k=>cache[k],setItem:(k,v)=>cache[k]=v}, document:{getElementById:()=>({textContent:JSON.stringify(payload)})}});
 let script = html.split('</script><script>')[1].split('</script>')[0];
@@ -26,7 +26,7 @@ assert.equal(vm.runInContext('activeMainView', context),'applied');
 let archived=JSON.parse(cache.jobAppliedArchiveCacheV1);
 assert.equal(archived.one.tier,'A');assert.equal(archived.one.score,91);assert.equal(archived.two.score,0);
 vm.runInContext(`
-D.history_rows.push({canonical_job_key:'old',tier:'B',score:78,company:'Old',title:'Engineer'});
+D.history_scores.old=['B',78];
 reviewStates.old={canonical_job_key:'old',status:'applied_complete',updated_at:'2020-01-01T00:00:00Z'};
 check.backfillAppliedArchives();
 `,context);

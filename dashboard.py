@@ -467,12 +467,20 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
             all_rows.append(normalize_row(entry, pipeline, now, referrals, coverage_by_key))
 
     # History is recovery-only: expired or newly filtered jobs must not re-enter discovery.
-    history_rows = list(all_rows)
+    history_scores: Dict[str, List[Any]] = {}
+    for row in all_rows:
+        key = str(row.get("canonical_job_key") or "")
+        if key and (row.get("tier") not in (None, "", "-") or row.get("score") not in (None, "")):
+            history_scores[key] = [row.get("tier") or "-", row.get("score", "")]
     for pipeline, path in ALERT_HISTORY_PATHS.items():
         for event in read_json(path, {}).get("events", []):
             for entry in event.get("jobs", []):
                 if isinstance(entry, dict):
-                    history_rows.append(normalize_row(entry, pipeline, now, referrals, coverage_by_key))
+                    key = str(entry.get("canonical_job_key") or coverage_reconcile.canonical_job_key(entry))
+                    tier = entry.get("tier") or "-"
+                    score = entry.get("match_score") if entry.get("match_score") is not None else entry.get("fit_score", "")
+                    previous = history_scores.get(key, ["-", ""])
+                    history_scores[key] = [tier if tier != "-" else previous[0], score if score not in (None, "") else previous[1]]
 
     eligible_rows = [
         row for row in all_rows
@@ -520,7 +528,7 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         # Shared status changes need a complete row pool so a job can move
         # between sections immediately without regenerating static job data.
         "workflow_rows": _sort_rows(candidates),
-        "history_rows": history_rows,
+        "history_scores": history_scores,
         "coverage": coverage,
         "official_searches": official_search_catalog(),
     }

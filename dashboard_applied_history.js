@@ -91,14 +91,17 @@
   const hasTier = row => row?.tier && row.tier !== '-';
   const hasScore = row => row?.score !== '' && row?.score != null;
   function recoveredRow(key) {
-    const matches = [...(D.history_rows || []), archive[key], ...allRows]
+    const matches = [archive[key], ...allRows]
       .filter(row => row?.canonical_job_key === key);
-    if (!matches.length) return null;
-    const row = {...matches[matches.length - 1]};
+    const historical = (D.history_scores || {})[key];
+    if (!matches.length && !historical) return null;
+    const row = {...(matches[matches.length - 1] || placeholderApplied(key))};
     for (const candidate of matches.reverse()) {
       if (!hasTier(row) && hasTier(candidate)) row.tier = candidate.tier;
       if (!hasScore(row) && hasScore(candidate)) row.score = candidate.score;
     }
+    if (!hasTier(row) && historical?.[0] && historical[0] !== '-') row.tier = historical[0];
+    if (!hasScore(row) && historical?.[1] !== '' && historical?.[1] != null) row.score = historical[1];
     return row;
   }
   const appliedTime = row => Date.parse(archive[row.canonical_job_key]?._applied_at || reviewState(row.canonical_job_key)?.updated_at || '') || 0;
