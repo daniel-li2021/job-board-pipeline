@@ -10,6 +10,23 @@ const context = vm.createContext({console, setTimeout, Date, localStorage:{getIt
 let script = html.split('</script><script>')[1].split('</script>')[0];
 script = script.slice(0, script.indexOf("window.addEventListener('online'"));
 vm.runInContext(script, context);
+vm.runInContext(`
+activeMainView='fresh';
+exportViewLabels.fresh='Fresh → Big Company Official → Google';
+exportViewRows.fresh=[{_variants:[
+  {company:'Google',title:'AI | Engineer',score:91,location:'Seattle, WA',url:'https://example.com/full?job=1',tier:'A',pipeline:'official',sponsorship:'Unknown'},
+  {company:'Google',title:'AI | Engineer',score:91,location:'New York, NY',url:'https://example.com/full?job=2',tier:'A',pipeline:'official',sponsorship:'Unknown'},
+]}];
+exportViewRows.rolling=[{company:'Other',title:'Wrong view',score:1,location:'Elsewhere',url:'https://example.com/wrong'}];
+`, context);
+const markdown = vm.runInContext('markdownExport()', context);
+assert.match(markdown,/^## Fresh → Big Company Official → Google/);
+assert.match(markdown,/\| Google \| AI \\\| Engineer \| 91 \| Seattle, WA \| https:\/\/example.com\/full\?job=1 \|/);
+assert.match(markdown,/\| Google \| AI \\\| Engineer \| 91 \| New York, NY \| https:\/\/example.com\/full\?job=2 \|/);
+assert.ok(!markdown.includes('Wrong view'));
+assert.ok(!markdown.includes('Tier'));
+assert.ok(!markdown.includes('Source'));
+assert.ok(!markdown.includes('Sponsorship'));
 let extension = fs.readFileSync('dashboard_applied_history.js','utf8');
 extension = extension.slice(0, extension.indexOf('  // Existing applied rows')) + 'globalThis.check={appliedRows,archiveStorageKey,decodeArchive,backfillAppliedArchives,expandedStates,getArchive:()=>archive};})();';
 vm.runInContext(extension, context);
