@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 856,
+  "count": 871,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-09-09T02:53:29.692456+00:00",
+    "scraped_at": "2026-09-09T05:57:26.739806+00:00",
     "collector": {
-      "commit": "6e443f5f44b06669733c0baf51641d1591f7b536",
+      "commit": "cdb9eddbcba3fb1077f0d973cb245d0fa64ab8a4",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 208.243,
+    "elapsed_seconds": 205.292,
     "query_stats": [
       {
         "query": "software engineer",
@@ -21,12 +21,12 @@
         "pages_fetched": 25,
         "stop_reason": "page_budget",
         "raw_jobs": 250,
-        "unique_jobs": 248,
-        "unique_contribution": 238,
-        "first_pass_survivors": 238,
+        "unique_jobs": 250,
+        "unique_contribution": 242,
+        "first_pass_survivors": 242,
         "original_postings_resolved": 0,
-        "jds_resolved": 6,
-        "elapsed_seconds": 41.366
+        "jds_resolved": 8,
+        "elapsed_seconds": 40.72
       },
       {
         "query": "ai engineer",
@@ -34,13 +34,13 @@
         "page_budget": 25,
         "pages_fetched": 25,
         "stop_reason": "page_budget",
-        "raw_jobs": 250,
-        "unique_jobs": 250,
+        "raw_jobs": 249,
+        "unique_jobs": 249,
         "unique_contribution": 214,
-        "first_pass_survivors": 226,
+        "first_pass_survivors": 225,
         "original_postings_resolved": 0,
         "jds_resolved": 5,
-        "elapsed_seconds": 41.074
+        "elapsed_seconds": 40.794
       },
       {
         "query": "software engineer i",
@@ -50,11 +50,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 80,
         "unique_jobs": 80,
-        "unique_contribution": 73,
-        "first_pass_survivors": 78,
+        "unique_contribution": 75,
+        "first_pass_survivors": 79,
         "original_postings_resolved": 0,
         "jds_resolved": 1,
-        "elapsed_seconds": 13.325
+        "elapsed_seconds": 13.042
       },
       {
         "query": "software engineer ii",
@@ -64,11 +64,11 @@
         "stop_reason": "no_new_jobs",
         "raw_jobs": 40,
         "unique_jobs": 40,
-        "unique_contribution": 6,
-        "first_pass_survivors": 37,
+        "unique_contribution": 7,
+        "first_pass_survivors": 36,
         "original_postings_resolved": 0,
         "jds_resolved": 1,
-        "elapsed_seconds": 5.473
+        "elapsed_seconds": 5.423
       },
       {
         "query": "associate software engineer",
@@ -78,11 +78,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 80,
         "unique_jobs": 80,
-        "unique_contribution": 28,
-        "first_pass_survivors": 75,
+        "unique_contribution": 30,
+        "first_pass_survivors": 77,
         "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 13.297
+        "jds_resolved": 3,
+        "elapsed_seconds": 13.103
       },
       {
         "query": "new grad software engineer",
@@ -92,11 +92,11 @@
         "stop_reason": "no_new_jobs",
         "raw_jobs": 40,
         "unique_jobs": 40,
-        "unique_contribution": 10,
+        "unique_contribution": 11,
         "first_pass_survivors": 40,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 5.397
+        "elapsed_seconds": 5.384
       },
       {
         "query": "backend engineer",
@@ -106,11 +106,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 80,
         "unique_jobs": 80,
-        "unique_contribution": 42,
+        "unique_contribution": 41,
         "first_pass_survivors": 78,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 13.272
+        "elapsed_seconds": 12.96
       },
       {
         "query": "full stack engineer",
@@ -120,11 +120,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 80,
         "unique_jobs": 80,
-        "unique_contribution": 40,
+        "unique_contribution": 39,
         "first_pass_survivors": 74,
         "original_postings_resolved": 0,
-        "jds_resolved": 3,
-        "elapsed_seconds": 13.097
+        "jds_resolved": 9,
+        "elapsed_seconds": 12.854
       },
       {
         "query": "platform engineer",
@@ -134,11 +134,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 80,
         "unique_jobs": 80,
-        "unique_contribution": 62,
+        "unique_contribution": 64,
         "first_pass_survivors": 77,
         "original_postings_resolved": 0,
-        "jds_resolved": 1,
-        "elapsed_seconds": 13.132
+        "jds_resolved": 2,
+        "elapsed_seconds": 12.918
       },
       {
         "query": "applied ai engineer",
@@ -152,7 +152,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.529
+        "elapsed_seconds": 0.479
       },
       {
         "query": "machine learning engineer",
@@ -162,11 +162,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 80,
         "unique_jobs": 80,
-        "unique_contribution": 37,
-        "first_pass_survivors": 75,
+        "unique_contribution": 38,
+        "first_pass_survivors": 77,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 13.406
+        "elapsed_seconds": 13.158
       },
       {
         "query": "ml engineer",
@@ -180,7 +180,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.499
+        "elapsed_seconds": 0.379
       },
       {
         "query": "llm engineer",
@@ -194,7 +194,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.538
+        "elapsed_seconds": 0.367
       },
       {
         "query": "infrastructure engineer",
@@ -204,11 +204,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 40,
         "unique_jobs": 40,
-        "unique_contribution": 27,
+        "unique_contribution": 29,
         "first_pass_survivors": 38,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 6.783
+        "elapsed_seconds": 6.365
       },
       {
         "query": "site reliability engineer",
@@ -218,11 +218,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 40,
         "unique_jobs": 40,
-        "unique_contribution": 20,
+        "unique_contribution": 21,
         "first_pass_survivors": 39,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 6.554
+        "elapsed_seconds": 6.577
       },
       {
         "query": "forward deployed engineer",
@@ -232,11 +232,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 40,
         "unique_jobs": 40,
-        "unique_contribution": 26,
+        "unique_contribution": 27,
         "first_pass_survivors": 33,
         "original_postings_resolved": 0,
         "jds_resolved": 1,
-        "elapsed_seconds": 6.556
+        "elapsed_seconds": 6.432
       },
       {
         "query": "data engineer",
@@ -250,14 +250,14 @@
         "first_pass_survivors": 37,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 6.692
+        "elapsed_seconds": 6.537
       }
     ],
     "detail_enrichment": {
-      "eligible": 650,
-      "cache_reused": 5,
-      "requests": 11,
-      "jds_resolved": 15,
+      "eligible": 666,
+      "cache_reused": 13,
+      "requests": 12,
+      "jds_resolved": 24,
       "external_apply_urls": 0,
       "failed": 0,
       "blocked": "blocked with HTTP 429",
@@ -338,6 +338,33 @@
       "role_relevance": 0
     },
     {
+      "job_id": "4464969473",
+      "source": "linkedin",
+      "company": "ADP WFN RECRUITMENT TEST COMPANY",
+      "title": "Full Stack Developer",
+      "location": "New York, NY",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-developer-at-adp-wfn-recruitment-test-company-4464969473",
+      "official_url": "",
+      "description": "About the Role: As a Full Stack Developer, you will be responsible for designing, developing, and maintaining both the front-end and back-end components of web applications to deliver seamless user experiences. You will collaborate closely with cross-functional teams including product managers, designers, and other developers to translate business requirements into technical solutions. Your role will involve writing clean, efficient, and scalable code while ensuring the responsiveness and performance of applications across various devices. You will also be tasked with troubleshooting, debugging, and optimizing existing systems to enhance functionality and user satisfaction. Ultimately, your contributions will drive the successful deployment of innovative software products that meet the evolving needs of our users and stakeholders. Minimum Qualifications: Bachelor’s degree in Computer Science, Software Engineering, or a related field, or equivalent practical experience. Proven experience as a Full Stack Developer or similar role in software development. Proficiency with front-end technologies such as HTML, CSS, and JavaScript frameworks (e.g., React, Angular, or Vue). Strong knowledge of back-end programming languages and frameworks (e.g., Node.js, Python, Ruby, Java, or .NET). Experience working with databases, both relational (e.g., MySQL, PostgreSQL) and NoSQL (e.g., MongoDB). Familiarity with RESTful API design and development. Understanding of version control systems, preferably Git. Strong problem-solving skills and attention to detail. Preferred Qualifications: Experience with cloud platforms such as AWS, Azure, or Google Cloud. Knowledge of containerization and orchestration tools like Docker and Kubernetes. Familiarity with CI/CD pipelines and automated testing frameworks. Experience with Agile development methodologies. Understanding of security best practices in web application development. Responsibilities: Develop and maintain front-end interfaces using modern JavaScript frameworks and libraries. Build and manage robust back-end services and APIs to support application functionality. Collaborate with design and product teams to implement user-centric features and enhancements. Write unit and integration tests to ensure code quality and reliability. Participate in code reviews, provide constructive feedback, and adhere to best practices. Optimize applications for maximum speed and scalability. Troubleshoot and resolve software defects and performance issues. Stay current with emerging technologies and industry trends to continuously improve development processes. Skills: The required skills enable you to build and maintain both client-side and server-side components effectively, ensuring seamless integration and performance. Front-end skills allow you to create intuitive and responsive user interfaces, while back-end expertise ensures robust data processing and business logic implementation. Database knowledge is essential for managing data storage and retrieval efficiently. Version control skills facilitate collaboration and codebase management within development teams. Preferred skills such as cloud platform experience and containerization enhance deployment flexibility and scalability, while familiarity with CI/CD and Agile practices supports continuous improvement and rapid delivery of high-quality software.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "full stack engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2,
+      "linkedin_detail_fetched_at": "2026-09-09T06:00:44.287277+00:00",
+      "linkedin_detail_resolved": true,
+      "direct_original_fetched": true
+    },
+    {
       "job_id": "4413176947",
       "source": "linkedin",
       "company": "AI Fund",
@@ -362,30 +389,6 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4462569585",
-      "source": "linkedin",
-      "company": "AIC",
-      "title": "Technical Staff Lead",
-      "location": "El Segundo, CA",
-      "posted_date": "2026-09-09",
-      "aggregator_posted_date": "2026-09-09",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/technical-staff-lead-at-aic-4462569585",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "forward deployed engineer"
-        ]
-      },
-      "role_family": "none",
-      "role_relevance": 0
-    },
-    {
       "job_id": "4452537700",
       "source": "linkedin",
       "company": "AMD",
@@ -408,6 +411,30 @@
       },
       "role_family": "ambiguous",
       "role_relevance": 1
+    },
+    {
+      "job_id": "4462577112",
+      "source": "linkedin",
+      "company": "AMD",
+      "title": "Sr. Software Development Engineer",
+      "location": "Secaucus, NJ",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-software-development-engineer-at-amd-4462577112",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
     },
     {
       "job_id": "4464623060",
@@ -655,6 +682,30 @@
       "role_relevance": 2
     },
     {
+      "job_id": "4439325320",
+      "source": "linkedin",
+      "company": "Addison Group",
+      "title": "System Engineer - Infrastructure",
+      "location": "Bellevue, WA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/system-engineer-infrastructure-at-addison-group-4439325320",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "infrastructure engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
       "job_id": "4451552732",
       "source": "linkedin",
       "company": "Aderant",
@@ -753,30 +804,6 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4464499881",
-      "source": "linkedin",
-      "company": "AeroVect",
-      "title": "Software Engineer, Platform",
-      "location": "Atlanta, GA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-platform-at-aerovect-4464499881",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "software engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
       "job_id": "4463587237",
       "source": "linkedin",
       "company": "Afficiency",
@@ -802,30 +829,6 @@
       "linkedin_detail_fetched_at": "2026-09-09T02:56:50.729593+00:00",
       "linkedin_detail_resolved": true,
       "direct_original_fetched": true
-    },
-    {
-      "job_id": "4464946058",
-      "source": "linkedin",
-      "company": "AgileEngine",
-      "title": "DevOps / Site Reliability Engineer ID70127",
-      "location": "New York, NY",
-      "posted_date": "2026-09-09",
-      "aggregator_posted_date": "2026-09-09",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/devops-site-reliability-engineer-id70127-at-agileengine-4464946058",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "site reliability engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
     },
     {
       "job_id": "4463570099",
@@ -869,7 +872,8 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer"
+          "ai engineer",
+          "machine learning engineer"
         ]
       },
       "role_family": "ai",
@@ -954,7 +958,7 @@
       "source": "linkedin",
       "company": "Aline",
       "title": "Engineering - Software Engineer (AI & Agentic Solutions)",
-      "location": "Indiana, United States",
+      "location": "Missouri, United States",
       "posted_date": "2026-09-08",
       "aggregator_posted_date": "2026-09-08",
       "updated_date": "",
@@ -999,30 +1003,6 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4463224535",
-      "source": "linkedin",
-      "company": "Ally",
-      "title": "2027 Early Talent – Technology – Software Engineering",
-      "location": "Charlotte, NC",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/2027-early-talent-%E2%80%93-technology-%E2%80%93-software-engineering-at-ally-4463224535",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "software engineer i"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
       "job_id": "4464477829",
       "source": "linkedin",
       "company": "Amazon Web Services (AWS)",
@@ -1033,6 +1013,30 @@
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-aws-cloudwatch-at-amazon-web-services-aws-4464477829",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4464671987",
+      "source": "linkedin",
+      "company": "Amentum",
+      "title": "Software Engineer 2",
+      "location": "Hanover, MD",
+      "posted_date": "2026-09-08",
+      "aggregator_posted_date": "2026-09-08",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-2-at-amentum-4464671987",
       "official_url": "",
       "description": "",
       "sponsorship": "Unknown",
@@ -1088,7 +1092,8 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer"
+          "software engineer",
+          "software engineer ii"
         ]
       },
       "role_family": "swe",
@@ -1112,8 +1117,7 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "software engineer ii"
+          "software engineer"
         ]
       },
       "role_family": "swe",
@@ -1343,34 +1347,6 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4450477429",
-      "source": "linkedin",
-      "company": "Applied Materials",
-      "title": "Software Engineer",
-      "location": "Santa Clara, CA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-applied-materials-4450477429",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "software engineer",
-          "software engineer i",
-          "software engineer ii",
-          "associate software engineer",
-          "new grad software engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
       "job_id": "4436261665",
       "source": "linkedin",
       "company": "Applied Systems",
@@ -1442,6 +1418,30 @@
         ]
       },
       "role_family": "ai",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4464977596",
+      "source": "linkedin",
+      "company": "Assembled",
+      "title": "Software Engineer - Forecasting & Scheduling",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-forecasting-scheduling-at-assembled-4464977596",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "role_family": "swe",
       "role_relevance": 2
     },
     {
@@ -1809,6 +1809,30 @@
         "linkedin": [
           "software engineer",
           "full stack engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4464978401",
+      "source": "linkedin",
+      "company": "Bank of America",
+      "title": "Software Engineer III",
+      "location": "Jersey City, NJ",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-iii-at-bank-of-america-4464978401",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
         ]
       },
       "role_family": "swe",
@@ -2365,12 +2389,38 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "platform engineer",
-          "infrastructure engineer"
+          "platform engineer"
         ]
       },
       "role_family": "ambiguous",
       "role_relevance": 1
+    },
+    {
+      "job_id": "4459573188",
+      "source": "linkedin",
+      "company": "Breeze",
+      "title": "Full Stack Engineer - Junior",
+      "location": "New York, NY",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-junior-at-breeze-4459573188",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer i",
+          "associate software engineer",
+          "new grad software engineer",
+          "full stack engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
     },
     {
       "job_id": "4410777817",
@@ -2670,6 +2720,84 @@
       "role_relevance": 2
     },
     {
+      "job_id": "4463596928",
+      "source": "linkedin",
+      "company": "Capgemini",
+      "title": "Java AWS Backend Developer",
+      "location": "New York, NY",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/java-aws-backend-developer-at-capgemini-4463596928",
+      "official_url": "",
+      "description": "Choosing Capgemini means choosing a company where you will be empowered to shape your career in the way you’d like, where you’ll be supported and inspired by a collaborative community of colleagues around the world, and where you’ll be able to reimagine what’s possible. Join us and help the world’s leading organizations unlock the value of technology and build a more sustainable, more inclusive world. Onsite - Dallas, TX Job Description 2 to 4 years full stack software development experience building enterprise APIs and web applications including Angular, Typescript, and core Java with Spring/Spring boot. Bachelors in Computer Science, Engineering, Mathematics, or equivalent experience. Leadership experience to guide, encourage, and motivate your fellow engineers. Experience working in an Agile Scrum development environment. Experience with web services - JSON, XML, REST, SOAP, etc. Experience with Docker, Kubernetes, Terraform, and AWS cloud deployment/application management. Experience with unit testing and test automation libraries/strategies. Experience leveraging AI-assisted development tools (e.g., GitHub Copilot, ChatGPT) to improve engineering productivity and code quality Experience building and deploying applications using continuous integration pipelines and automated deployment tools such as Jenkins. Experience using source control and pull requests for collaborative development in code repository tools such as GitHub. Strong communications and problem-solving skills The base compensation range for this role in the posted location is: $70000 to $85000 Capgemini provides compensation range information in accordance with applicable national, state, provincial, and local pay transparency laws. The base compensation range listed for this position reflects the minimum and maximum target compensation Capgemini, in good faith, believes it may pay for the role at the time of this posting. This range may be subject to change as permitted by law. The actual compensation offered to any candidate may fall outside of the posted range and will be determined based on multiple factors legally permitted in the applicable jurisdiction. These may include, but are not limited to: Geographic location, Education and qualifications, Certifications and licenses, Relevant experience and skills, Seniority and performance, Market and business consideration, Internal pay equity. It is not typical for candidates to be hired at or near the top of the posted compensation range. In addition to base salary, this role may be eligible for additional compensation such as variable incentives, bonuses, or commissions, depending on the position and applicable laws. Capgemini offers a comprehensive, non-negotiable benefits package to all regular, full-time employees. In the U.S. and Canada, available benefits are determined by local policy and eligibility and may include: Paid time off based on employee grade (A-F), defined by policy: Vacation: 12-25 days, depending on grade, Company paid holidays, Personal Days, Sick Leave Medical, dental, and vision coverage (or provincial healthcare coordination in Canada) Retirement savings plans (e.g., 401(k) in the U.S., RRSP in Canada) Life and disability insurance Employee assistance programs Other benefits as provided by local policy and eligibility Important Notice: Compensation (including bonuses, commissions, or other forms of incentive pay) is not considered earned, vested, or payable until it becomes due under the terms of applicable plans or agreements and is subject to Capgemini’s discretion, consistent with applicable laws. The Company reserves the right to amend or withdraw compensation programs at any time, within the limits of applicable legislation. Disclaimers Capgemini is an Equal Opportunity Employer encouraging inclusion in the workplace. Capgemini also participates in the Partnership Accreditation in Indigenous Relations (PAIR) program which supports meaningful engagement with Indigenous communities across Canada by promoting fairness, accessibility, inclusion and respect. We value the rich cultural heritage and contributions of Indigenous Peoples and actively work to create a welcoming and respectful environment. All qualified applicants will receive consideration for employment without regard to race, national origin, gender identity/expression, age, religion, disability, sexual orientation, genetics, veteran status, marital status or any other characteristic protected by law. This is a general description of the Duties, Responsibilities and Qualifications required for this position. Physical, mental, sensory or environmental demands may be referenced in an attempt to communicate the manner in which this position traditionally is performed. Whenever necessary to provide individuals with disabilities an equal employment opportunity, Capgemini will consider reasonable accommodations that might involve varying job requirements and/or changing the way this job is performed, provided that such accommodation does not pose an undue hardship. Capgemini is committed to providing reasonable accommodation during our recruitment process. If you need assistance or accommodation, please reach out to your recruiting contact. Please be aware that Capgemini may capture your image (video or screenshot) during the interview process and that image may be used for verification, including during the hiring and onboarding process. Click the following link for more information on your rights as an Applicant in the United States. http://www.capgemini.com/resources/equal-employment-opportunity-is-the-law Capgemini is a global business and technology transformation partner, helping organizations to accelerate their dual transition to a digital and sustainable world, while creating tangible impact for enterprises and society. It is a responsible and diverse group of 340,000 team members in more than 50 countries. With its strong over 55-year heritage, Capgemini is trusted by its clients to unlock the value of technology to address the entire breadth of their business needs. It delivers end-to-end services and solutions leveraging strengths from strategy and design to engineering, all fueled by its market leading capabilities in AI, generative AI, cloud and data, combined with its deep industry expertise and partner ecosystem.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "associate software engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2,
+      "linkedin_detail_fetched_at": "2026-09-09T06:00:44.287277+00:00",
+      "linkedin_detail_resolved": true,
+      "direct_original_fetched": true
+    },
+    {
+      "job_id": "4463806432",
+      "source": "linkedin",
+      "company": "Capgemini",
+      "title": "Java AWS Backend Developer",
+      "location": "New York, United States",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/java-aws-backend-developer-at-capgemini-4463806432",
+      "official_url": "",
+      "description": "Choosing Capgemini means choosing a company where you will be empowered to shape your career in the way you’d like, where you’ll be supported and inspired by a collaborative community of colleagues around the world, and where you’ll be able to reimagine what’s possible. Join us and help the world’s leading organizations unlock the value of technology and build a more sustainable, more inclusive world. Onsite - Dallas, TX Job Description 2 to 4 years full stack software development experience building enterprise APIs and web applications including Angular, Typescript, and core Java with Spring/Spring boot. Bachelors in Computer Science, Engineering, Mathematics, or equivalent experience. Leadership experience to guide, encourage, and motivate your fellow engineers. Experience working in an Agile Scrum development environment. Experience with web services - JSON, XML, REST, SOAP, etc. Experience with Docker, Kubernetes, Terraform, and AWS cloud deployment/application management. Experience with unit testing and test automation libraries/strategies. Experience leveraging AI-assisted development tools (e.g., GitHub Copilot, ChatGPT) to improve engineering productivity and code quality Experience building and deploying applications using continuous integration pipelines and automated deployment tools such as Jenkins. Experience using source control and pull requests for collaborative development in code repository tools such as GitHub. Strong communications and problem-solving skills The base compensation range for this role in the posted location is: $70000 to $85000 Capgemini provides compensation range information in accordance with applicable national, state, provincial, and local pay transparency laws. The base compensation range listed for this position reflects the minimum and maximum target compensation Capgemini, in good faith, believes it may pay for the role at the time of this posting. This range may be subject to change as permitted by law. The actual compensation offered to any candidate may fall outside of the posted range and will be determined based on multiple factors legally permitted in the applicable jurisdiction. These may include, but are not limited to: Geographic location, Education and qualifications, Certifications and licenses, Relevant experience and skills, Seniority and performance, Market and business consideration, Internal pay equity. It is not typical for candidates to be hired at or near the top of the posted compensation range. In addition to base salary, this role may be eligible for additional compensation such as variable incentives, bonuses, or commissions, depending on the position and applicable laws. Benefits Capgemini offers a comprehensive, non-negotiable benefits package to all regular, full-time employees. In the U.S. and Canada, available benefits are determined by local policy and eligibility and may include: Paid time off based on employee grade (A-F), defined by policy: Vacation: 12-25 days, depending on grade, Company paid holidays, Personal Days, Sick Leave Medical, dental, and vision coverage (or provincial healthcare coordination in Canada) Retirement savings plans (e.g., 401(k) in the U.S., RRSP in Canada) Life and disability insurance Employee assistance programs Other benefits as provided by local policy and eligibility Important Notice: Compensation (including bonuses, commissions, or other forms of incentive pay) is not considered earned, vested, or payable until it becomes due under the terms of applicable plans or agreements and is subject to Capgemini’s discretion, consistent with applicable laws. The Company reserves the right to amend or withdraw compensation programs at any time, within the limits of applicable legislation. Disclaimers Capgemini is an Equal Opportunity Employer encouraging inclusion in the workplace. Capgemini also participates in the Partnership Accreditation in Indigenous Relations (PAIR) program which supports meaningful engagement with Indigenous communities across Canada by promoting fairness, accessibility, inclusion and respect. We value the rich cultural heritage and contributions of Indigenous Peoples and actively work to create a welcoming and respectful environment. All qualified applicants will receive consideration for employment without regard to race, national origin, gender identity/expression, age, religion, disability, sexual orientation, genetics, veteran status, marital status or any other characteristic protected by law. This is a general description of the Duties, Responsibilities and Qualifications required for this position. Physical, mental, sensory or environmental demands may be referenced in an attempt to communicate the manner in which this position traditionally is performed. Whenever necessary to provide individuals with disabilities an equal employment opportunity, Capgemini will consider reasonable accommodations that might involve varying job requirements and/or changing the way this job is performed, provided that such accommodation does not pose an undue hardship. Capgemini is committed to providing reasonable accommodation during our recruitment process. If you need assistance or accommodation, please reach out to your recruiting contact. Please be aware that Capgemini may capture your image (video or screenshot) during the interview process and that image may be used for verification, including during the hiring and onboarding process. Click the following link for more information on your rights as an Applicant in the United States. http://www.capgemini.com/resources/equal-employment-opportunity-is-the-law Capgemini is a global business and technology transformation partner, helping organizations to accelerate their dual transition to a digital and sustainable world, while creating tangible impact for enterprises and society. It is a responsible and diverse group of 340,000 team members in more than 50 countries. With its strong over 55-year heritage, Capgemini is trusted by its clients to unlock the value of technology to address the entire breadth of their business needs. It delivers end-to-end services and solutions leveraging strengths from strategy and design to engineering, all fueled by its market leading capabilities in AI, generative AI, cloud and data, combined with its deep industry expertise and partner ecosystem.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "associate software engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2,
+      "linkedin_detail_fetched_at": "2026-09-09T06:00:44.287277+00:00",
+      "linkedin_detail_resolved": true,
+      "direct_original_fetched": true
+    },
+    {
+      "job_id": "4461297679",
+      "source": "linkedin",
+      "company": "Capgemini",
+      "title": "Java Fullstack Engineer",
+      "location": "New York, NY",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/java-fullstack-engineer-at-capgemini-4461297679",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
       "job_id": "4463152420",
       "source": "linkedin",
       "company": "Capgemini",
@@ -2838,30 +2966,6 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4418496802",
-      "source": "linkedin",
-      "company": "Capital One",
-      "title": "Lead Software Engineer - Back End",
-      "location": "New York, NY",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/lead-software-engineer-back-end-at-capital-one-4418496802",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "backend engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
       "job_id": "4461106713",
       "source": "linkedin",
       "company": "CarParts.com",
@@ -2912,6 +3016,30 @@
         ]
       },
       "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4462572976",
+      "source": "linkedin",
+      "company": "Cellanome",
+      "title": "Machine Learning Engineer",
+      "location": "Foster City, CA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-at-cellanome-4462572976",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "machine learning engineer"
+        ]
+      },
+      "role_family": "ai",
       "role_relevance": 2
     },
     {
@@ -2988,16 +3116,16 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4406560261",
+      "job_id": "4463588442",
       "source": "linkedin",
       "company": "Chalk",
-      "title": "Forward Deployed Engineer",
-      "location": "San Francisco, CA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
+      "title": "Forward Deployed Strategist",
+      "location": "New York, NY",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
       "updated_date": "",
       "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/forward-deployed-engineer-at-chalk-4406560261",
+      "source_url": "https://www.linkedin.com/jobs/view/forward-deployed-strategist-at-chalk-4463588442",
       "official_url": "",
       "description": "",
       "sponsorship": "Unknown",
@@ -3158,7 +3286,33 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer"
+          "software engineer",
+          "full stack engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463592650",
+      "source": "linkedin",
+      "company": "Cisco",
+      "title": "Software Engineer, Collaboration Devices",
+      "location": "Durham, NC",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-collaboration-devices-at-cisco-4463592650",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer",
+          "software engineer ii"
         ]
       },
       "role_family": "swe",
@@ -3208,6 +3362,127 @@
       "discovery_queries": {
         "linkedin": [
           "backend engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463597934",
+      "source": "linkedin",
+      "company": "Cloudjobs",
+      "title": "Forward Deployed Engineer",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/forward-deployed-engineer-at-cloudjobs-4463597934",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "forward deployed engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463598853",
+      "source": "linkedin",
+      "company": "Cloudjobs",
+      "title": "Site Reliability Engineer II",
+      "location": "Sunnyvale, CA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/site-reliability-engineer-ii-at-cloudjobs-4463598853",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "site reliability engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463595970",
+      "source": "linkedin",
+      "company": "Cloudjobs",
+      "title": "Software Engineer, Full Stack",
+      "location": "Marina del Rey, CA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-cloudjobs-4463595970",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer",
+          "full stack engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463813101",
+      "source": "linkedin",
+      "company": "Cloudjobs",
+      "title": "Sr. Member of Technical Staff - Platform",
+      "location": "Sunnyvale, CA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-member-of-technical-staff-platform-at-cloudjobs-4463813101",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "platform engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463807185",
+      "source": "linkedin",
+      "company": "Cloudjobs",
+      "title": "Sr. Site Reliability Engineer",
+      "location": "Sunnyvale, CA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-site-reliability-engineer-at-cloudjobs-4463807185",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "site reliability engineer"
         ]
       },
       "role_family": "swe",
@@ -3932,7 +4207,8 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer"
+          "software engineer",
+          "ai engineer"
         ]
       },
       "role_family": "swe",
@@ -3980,7 +4256,6 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "full stack engineer"
         ]
       },
@@ -5212,30 +5487,6 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4418109620",
-      "source": "linkedin",
-      "company": "Deloitte",
-      "title": "Forward Deployed Engineer- AWS",
-      "location": "Philadelphia, PA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/forward-deployed-engineer-aws-at-deloitte-4418109620",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "ai engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
       "job_id": "4418109633",
       "source": "linkedin",
       "company": "Deloitte",
@@ -5715,6 +5966,7 @@
       "discovery_queries": {
         "linkedin": [
           "ai engineer",
+          "applied ai engineer",
           "machine learning engineer",
           "ml engineer"
         ]
@@ -6062,6 +6314,30 @@
         ]
       },
       "role_family": "ai",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463815259",
+      "source": "linkedin",
+      "company": "FAMU National Alumni Association",
+      "title": "Data Engineer",
+      "location": "Scottsdale, AZ",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/data-engineer-at-famu-national-alumni-association-4463815259",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "data engineer"
+        ]
+      },
+      "role_family": "swe",
       "role_relevance": 2
     },
     {
@@ -6581,6 +6857,30 @@
       },
       "role_family": "swe",
       "role_relevance": 2
+    },
+    {
+      "job_id": "4464696387",
+      "source": "linkedin",
+      "company": "Fireworks AI",
+      "title": "Member of Technical Staff, New Grad (BS/MS)",
+      "location": "San Mateo, CA",
+      "posted_date": "2026-09-08",
+      "aggregator_posted_date": "2026-09-08",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/member-of-technical-staff-new-grad-bs-ms-at-fireworks-ai-4464696387",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "new grad software engineer"
+        ]
+      },
+      "role_family": "none",
+      "role_relevance": 0
     },
     {
       "job_id": "4436036818",
@@ -7781,30 +8081,6 @@
       "role_relevance": 0
     },
     {
-      "job_id": "4462483299",
-      "source": "linkedin",
-      "company": "HHS Technology Group",
-      "title": "Data Engineer - REMOTE",
-      "location": "Sacramento, CA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/data-engineer-remote-at-hhs-technology-group-4462483299",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "data engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
       "job_id": "4463537187",
       "source": "linkedin",
       "company": "HII",
@@ -8012,7 +8288,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-developer-at-halborn-4464675254",
       "official_url": "",
-      "description": "",
+      "description": "About Halborn Inc Our mission is to provide value-add security services and products to the world’s most cutting edge technology firms and that starts with blockchain tech. Founded in 2019, Halborn is an elite cyber security company focused on solving complex adversarial problems unique to the cryptocurrency and fintech industries. From breaches and social engineering to stolen private keys and economic hacks, Halborn solves it. Our clientele are the exclusive blockchain companies as well as new startups with high growth trajectories. Our Culture Halborn is a globally distributed team of 100+, looking to grow our elite team of white hat hackers, sales professionals, security engineers and DevSecOps specialists who value independence, want to make their own hours, work for themselves and have a passion for the ever evolving cryptocurrency industry. Our Commitment to Diversity Halborn Inc is an Equal Opportunity Employer. We do not discriminate based upon race, religion, color, national origin, sexual orientation, gender, gender identity, gender expression, transgender status, sexual stereotypes, age, education, status as a protected veteran, status as an individual with a disability, or other applicable legally protected characteristics and celebrates the diversity of its growing team. We are unable to sponsor or take over sponsorship of employment Visas at this time. Recruitment agencies and consultants may not submit resumes/CVs through this website or directly to managers. Halborn does not accept unsolicited agency resumes, and will not pay fees to any third-party agency or company that does not have a signed agreement with Halborn Inc. We are looking for a full stack developer who is comfortable owning a feature from the database schema to the last pixel and who already builds with AI as a core part of how they work, not as a novelty. You will build the platforms our security researchers use to run engagements, the products our clients use to consume findings, and the AI-assisted workflows that let a small team operate at a scale that should not be possible. The work is real product engineering against real adversarial conditions, and the security bar is high because our customers are the reason it has to be. Responsibilities Design, build, and ship features end to end across a React and TypeScript front end and Python or Node.js services, taking ownership from technical design through production support. Model data and design APIs that hold up as requirements change — clear contracts, sane migrations, and schemas that will not need to be rescued in six months. Build AI-native product capabilities: LLM orchestration, agentic and multi-step workflows, retrieval over engagement data, and structured output that downstream systems can rely on. Use AI coding tooling aggressively in your own development loop while maintaining the review discipline that keeps generated code from becoming a liability. Automate internal engineering and security workflows, turning processes our researchers currently run by hand into durable product surface. Write secure code by default — input validation, authentication and authorization, secrets handling, dependency hygiene — and treat security review as part of shipping, not a gate at the end. Participate in code review as both author and reviewer, raising the standard of the codebase rather than just approving diffs. Deploy and operate what you build: containerized services, cloud infrastructure, CI/CD pipelines, monitoring, and the on-call ownership that comes with running production systems. Collaborate directly with security researchers, auditors, and product stakeholders to translate deep domain expertise into software that non-experts can use. Contribute to technical direction — framework choices, architecture, and the tradeoffs behind them — and document decisions so the team can move without you in the room. Qualifications 4 or more years building and shipping production web applications, with genuine ownership on both the front end and the back end. Strong React and TypeScript, including modern state management, component architecture, and CSS competent enough to build an interface without a designer hovering. Strong server-side skills in Python, Node.js, or both, with production experience designing REST or GraphQL APIs. Solid relational database experience — PostgreSQL preferred — including schema design, query performance, and migrations. Experience with cloud infrastructure (AWS, GCP, or Azure), Docker, and CI/CD pipelines you configured yourself. Demonstrated AI-forward development practice: you integrate LLM APIs into real products, you use AI coding assistants as part of your daily loop, and you can articulate where they accelerate you and where they need a human. Security-minded engineering instincts and a working understanding of common web vulnerability classes and how to prevent them. Excellent asynchronous written communication and the self-direction to own outcomes across time zones without being managed day to day. Comfort operating in ambiguity in a constantly changing and evolving work environment where growth is non-stop. Willingness to learn the technical aspects of blockchain and cybersecurity. Bonus Points Web3 development experience — ethers.js or viem, wallet integrations, RPC providers, or Solidity and Rust smart contract familiarity. Experience building agentic systems, working with the Model Context Protocol, vector databases, or evaluation frameworks for LLM features. DevSecOps experience: infrastructure as code, secrets management, supply chain security, or automated security scanning in CI. Prior work at a cybersecurity, fintech, or crypto company, or on products handling sensitive customer data. Experience taking a product from zero to one on a small team. Open source contributions. Knowledgeable of the latest trends in Blockchain and DeFi.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -8022,7 +8298,10 @@
         ]
       },
       "role_family": "swe",
-      "role_relevance": 2
+      "role_relevance": 2,
+      "linkedin_detail_fetched_at": "2026-09-09T06:00:44.287277+00:00",
+      "linkedin_detail_resolved": true,
+      "direct_original_fetched": true
     },
     {
       "job_id": "4463503959",
@@ -8297,30 +8576,6 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4461489059",
-      "source": "linkedin",
-      "company": "Haystack",
-      "title": "Lead AI Engineer",
-      "location": "New York, United States",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/lead-ai-engineer-at-haystack-4461489059",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "ai engineer"
-        ]
-      },
-      "role_family": "ai",
-      "role_relevance": 2
-    },
-    {
       "job_id": "4462527804",
       "source": "linkedin",
       "company": "Haystack",
@@ -8362,7 +8617,8 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer"
+          "software engineer",
+          "associate software engineer"
         ]
       },
       "role_family": "swe",
@@ -8386,8 +8642,7 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "associate software engineer"
+          "software engineer"
         ]
       },
       "role_family": "swe",
@@ -8428,6 +8683,78 @@
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-haystack-4463506017",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463801812",
+      "source": "linkedin",
+      "company": "Haystack",
+      "title": "Software Engineer",
+      "location": "Washington DC-Baltimore Area",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-haystack-4463801812",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463804756",
+      "source": "linkedin",
+      "company": "Haystack",
+      "title": "Software Engineer",
+      "location": "Washington DC-Baltimore Area",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-haystack-4463804756",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463822205",
+      "source": "linkedin",
+      "company": "Haystack",
+      "title": "Software Engineer",
+      "location": "Washington DC-Baltimore Area",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-haystack-4463822205",
       "official_url": "",
       "description": "",
       "sponsorship": "Unknown",
@@ -8704,8 +9031,7 @@
       "discovery_queries": {
         "linkedin": [
           "software engineer",
-          "platform engineer",
-          "site reliability engineer"
+          "platform engineer"
         ]
       },
       "role_family": "swe",
@@ -8760,16 +9086,16 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4464433776",
+      "job_id": "4464982125",
       "source": "linkedin",
       "company": "Hire Feed",
       "title": "Software Engineer",
       "location": "San Francisco Bay Area",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
       "updated_date": "",
       "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-hire-feed-4464433776",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-hire-feed-4464982125",
       "official_url": "",
       "description": "",
       "sponsorship": "Unknown",
@@ -8801,7 +9127,8 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer"
+          "ai engineer",
+          "llm engineer"
         ]
       },
       "role_family": "ai",
@@ -8924,6 +9251,7 @@
       "discovery_queries": {
         "linkedin": [
           "software engineer i",
+          "associate software engineer",
           "new grad software engineer"
         ]
       },
@@ -8948,7 +9276,56 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer i"
+          "software engineer i",
+          "associate software engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463588932",
+      "source": "linkedin",
+      "company": "Humana",
+      "title": "Senior DevOps Platform Engineer",
+      "location": "Georgia, United States",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-devops-platform-engineer-at-humana-4463588932",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "platform engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463589912",
+      "source": "linkedin",
+      "company": "Humana",
+      "title": "Senior DevOps Platform Engineer",
+      "location": "New York, United States",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-devops-platform-engineer-at-humana-4463589912",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "platform engineer"
         ]
       },
       "role_family": "swe",
@@ -9004,16 +9381,16 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4452292977",
+      "job_id": "4462553974",
       "source": "linkedin",
       "company": "IBM",
-      "title": "Confluent - Senior Software Engineer II",
-      "location": "Research Park, CA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
+      "title": "Software Developer",
+      "location": "Tucson, AZ",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
       "updated_date": "",
       "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/confluent-senior-software-engineer-ii-at-ibm-4452292977",
+      "source_url": "https://www.linkedin.com/jobs/view/software-developer-at-ibm-4462553974",
       "official_url": "",
       "description": "",
       "sponsorship": "Unknown",
@@ -9021,7 +9398,7 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "platform engineer"
+          "software engineer"
         ]
       },
       "role_family": "swe",
@@ -9125,30 +9502,6 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4463511751",
-      "source": "linkedin",
-      "company": "IMR Soft LLC",
-      "title": "ML-Ops / Platform Engineer",
-      "location": "Charlotte, NC",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/ml-ops-platform-engineer-at-imr-soft-llc-4463511751",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "platform engineer"
-        ]
-      },
-      "role_family": "ambiguous",
-      "role_relevance": 1
-    },
-    {
       "job_id": "4464665839",
       "source": "linkedin",
       "company": "ISITE TECHNOLOGIES",
@@ -9160,7 +9513,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-developer-only-on-w2-at-isite-technologies-4464665839",
       "official_url": "",
-      "description": "",
+      "description": "Job role: Full Stack Developer ( Only On W2 ) Exp: 8-10+ location: Chicago IL, Tempe AZ, Jersey City NJ (local to any location) note: Only USC And EAD Preferred skills: • Experience developing enterprise-scale applications. Front-End: React, Angular, or Vue.js, Responsive web design, Redux, Context API, Material UI, or Tailwind CSS, Back-End: Java (Spring Boot), .NET Core, Node.js, or Python, REST APIs, GraphQL, Microservices architecture, API, Gateway integration Databases: SQL Server, PostgreSQL, Oracle, MongoDB, Redis Cloud & DevOps: AWS, Azure, or Google Cloud Platform, Docker, Kubernetes, GitHub/GitLab, Jenkins, GitHub Actions, or Azure DevOps, Terraform (preferred) Development Practices: Git source control, CI/CD, Test automation, Secure coding, Performance tuning, Logging and monitoring, Observability best practices • Knowledge of event-driven architectures (Kafka, RabbitMQ, Azure Service Bus). • Experience with OAuth2, OpenID Connect, and SAML. • Knowledge of AI-assisted development tools such as GitHub Copilot. • Experience with monitoring tools such as Dynatrace, Splunk, Grafana, or Prometheus. • Full Stack Engineering, Software Architecture, API Development, Cloud Computing, DevSecOps, Microservices. CI/CD Automation, Secure Application Development, Performance Optimization, Agile Delivery • Develop secure RESTful and GraphQL APIs.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -9171,7 +9524,10 @@
         ]
       },
       "role_family": "swe",
-      "role_relevance": 2
+      "role_relevance": 2,
+      "linkedin_detail_fetched_at": "2026-09-09T06:00:44.287277+00:00",
+      "linkedin_detail_resolved": true,
+      "direct_original_fetched": true
     },
     {
       "job_id": "4452521027",
@@ -9347,8 +9703,8 @@
       "company": "Infosys",
       "title": "Gen AI Python Engineer",
       "location": "Charlotte, NC",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/gen-ai-python-engineer-at-infosys-4414037864",
@@ -9408,7 +9764,30 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer i",
+          "software engineer i"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463589930",
+      "source": "linkedin",
+      "company": "Infosys",
+      "title": "Python AWS Developer",
+      "location": "Plano, TX",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/python-aws-developer-at-infosys-4463589930",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
           "associate software engineer"
         ]
       },
@@ -9482,31 +9861,6 @@
       "discovery_queries": {
         "linkedin": [
           "ai engineer"
-        ]
-      },
-      "role_family": "ai",
-      "role_relevance": 2
-    },
-    {
-      "job_id": "4463242261",
-      "source": "linkedin",
-      "company": "Innovatech Staffing",
-      "title": "Machine Learning Engineer",
-      "location": "United States",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-at-innovatech-staffing-4463242261",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "ai engineer",
-          "machine learning engineer"
         ]
       },
       "role_family": "ai",
@@ -9805,30 +10159,6 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4401136279",
-      "source": "linkedin",
-      "company": "Ivo",
-      "title": "Senior Software Engineer, Backend",
-      "location": "San Francisco, CA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-backend-at-ivo-4401136279",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "backend engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
       "job_id": "4401128372",
       "source": "linkedin",
       "company": "Ivo",
@@ -9903,6 +10233,30 @@
       },
       "role_family": "swe",
       "role_relevance": 2
+    },
+    {
+      "job_id": "4464963284",
+      "source": "linkedin",
+      "company": "JPMorganChase",
+      "title": "Software Engineer III - GenAI Foundational Services",
+      "location": "McLean, VA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-iii-genai-foundational-services-at-jpmorganchase-4464963284",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "role_family": "ambiguous",
+      "role_relevance": 1
     },
     {
       "job_id": "4454293176",
@@ -10043,30 +10397,6 @@
       "discovery_queries": {
         "linkedin": [
           "platform engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
-      "job_id": "4463570706",
-      "source": "linkedin",
-      "company": "Jobright.ai",
-      "title": "Senior Fullstack Engineer",
-      "location": "New York, United States",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/senior-fullstack-engineer-at-jobright-ai-4463570706",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "full stack engineer"
         ]
       },
       "role_family": "swe",
@@ -10304,7 +10634,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/ui-full-stack-developer-at-l-t-technology-services-4463572017",
       "official_url": "",
-      "description": "",
+      "description": "Key Responsibilities Design, develop, test, and maintain scalable applications using Python and JavaScript , ensuring high performance and reliability. Develop and optimize backend services, business logic, and web applications while following best coding practices and software development standards. Design, implement, and maintain RESTful APIs and microservices to support internal and external application integrations. Collaborate with cross-functional teams to gather requirements, design technical solutions, and deliver high-quality software products. Build and integrate applications with PostgreSQL , SQL databases, and other data storage technologies, including query optimization and performance tuning. Develop secure and efficient data models, database schemas, stored procedures, and data access layers. Nice to Have: Experience integrating and working with Large Language Models (LLMs) such as OpenAI, Azure OpenAI, Anthropic, or similar AI platforms to build intelligent applications, chatbots, AI assistants, or workflow automation solutions. Required Skills Strong programming experience in Python and JavaScript Experience with PostgreSQL and relational databases using SQL Solid understanding of API development , REST services, and API integrations Knowledge of software design patterns, data structures, and application architecture Familiarity with version control systems such as Git Strong debugging, troubleshooting, and problem-solving skills Preferred Skills Experience with LLM integration , prompt engineering, Retrieval Augmented Generation (RAG), or AI-powered application development Familiarity with cloud platforms such as Azure, AWS, or GCP Experience with Docker, Kubernetes, and CI/CD pipelines Understanding of scalable, distributed system architectures Education & Experience Bachelor's or Master's degree in Computer Science, Engineering, or a related field The expected salary range for this position is between $60K - $100K annually. The actual salary may vary based upon several factors including, but not limited to, relevant skills/experience, time in role, base salary of internal peers, prior performance, business line, and geographic/office location. Paid Leave, Health Insurance, Group life Insurance, Disability, 401(K)",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -10316,7 +10646,10 @@
         ]
       },
       "role_family": "swe",
-      "role_relevance": 2
+      "role_relevance": 2,
+      "linkedin_detail_fetched_at": "2026-09-09T06:00:44.287277+00:00",
+      "linkedin_detail_resolved": true,
+      "direct_original_fetched": true
     },
     {
       "job_id": "4462550074",
@@ -10427,7 +10760,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-developer-iii-at-ledgent-technology-4463537043",
       "official_url": "",
-      "description": "",
+      "description": "Pay: $75 - 87 per hour JOB DESCRIPTION How you will help move us forward: Design, Develop & Deliver end to end solutions to meet business needs and build as per enterprise architecture guidelines. Collaborate with cross-functional teams to understand project requirements and deliver high-quality software solutions. Own end-to-end feature development, from concept to deployment. Identify and address performance bottlenecks, security vulnerabilities, and system stability concerns. Design, Develop & Maintain end to end CI/CD pipelines for continuous delivery. The experience you bring: Bachelor's degree in Computer Science, Engineering, or a related field. 6+ Years of software development experiences with minimum 2 years of experience as Full Stack Engineer. Proven expertise in building and maintaining web applications using modern frameworks and libraries (e.g., React). Strong proficiency in server-side languages (Node.js) Experience with other programming languages like Python and/or Java is a plus. Experience with AWS Cloud services and serverless computing Solid understanding of microservices architecture and SOAP/RESTful/GraphQL API design. Experience with database technologies (SQLServer, PostgreSql, DynamoDB) Proficiency with DevSecOps practices and tools for continuous integration and deployment. Experience with Work Management platforms Azure DevOps or similar platforms. Excellent problem-solving skills and the ability to adapt to new technologies quickly. Effective communication skills and the ability to work collaboratively in a team environment. What makes you stand out: AWS Certifications (e.g., AWS Certified Solutions Architect Associate, AWS Certified Developer) Familiarity with containerization and orchestration tools Experience with an Integration Platform like Mulesoft is a plus. Knowledge of best practices in cybersecurity and data protection. TECHNICAL SKILLS Must Have 6+ Years of software development experiences with minimum 2 years of experience as Full Stack Engineer. Experience with AWS Cloud services and serverless computing Experience with database technologies (SQLServer, PostgreSql, DynamoDB) Experience with Work Management platforms Azure DevOps or similar platforms. Proficiency with DevSecOps practices and tools for continuous integration and deployment. Proven expertise in building and maintaining web applications using modern frameworks and libraries (e.g., React). Solid understanding of microservices architecture and SOAP/RESTful/GraphQL API design Strong proficiency in server-side languages (Node.js) Nice To Have AWS Certifications (e.g., AWS Certified Solutions Architect Associate, AWS Certified Developer) Experience with an Integration Platform like Mulesoft is a plus. Experience with other programming languages like Python and/or Java is a plus. Familiarity with containerization and orchestration tools Knowledge of best practices in cybersecurity and data protection. All qualified applicants will receive consideration for employment without regard to race, color, national origin, age, ancestry, religion, sex, sexual orientation, gender identity, gender expression, marital status, disability, medical condition, genetic information, pregnancy, or military or veteran status. We consider all qualified applicants, including those with criminal histories, in a manner consistent with state and local laws, including the California Fair Chance Act, City of Los Angeles' Fair Chance Initiative for Hiring Ordinance, Los Angeles County Fair Chance Ordinance, and San Francisco Fair Chance Ordinance.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -10437,7 +10770,10 @@
         ]
       },
       "role_family": "swe",
-      "role_relevance": 2
+      "role_relevance": 2,
+      "linkedin_detail_fetched_at": "2026-09-09T06:00:44.287277+00:00",
+      "linkedin_detail_resolved": true,
+      "direct_original_fetched": true
     },
     {
       "job_id": "4464668420",
@@ -10483,6 +10819,31 @@
         "linkedin": [
           "platform engineer",
           "infrastructure engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4464976219",
+      "source": "linkedin",
+      "company": "Leidos",
+      "title": "Software Engineer",
+      "location": "Bethesda, MD",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-leidos-4464976219",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer",
+          "associate software engineer"
         ]
       },
       "role_family": "swe",
@@ -10767,7 +11128,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/infrastructure-developer-platform-engineering-at-maintainx-4463530022",
       "official_url": "",
-      "description": "",
+      "description": "MaintainX is a leading mobile-first work execution platform for industrial and frontline teams. More than 13,000 customers , including Duracell, McDonald's, Shell, DHL and Volvo, use MaintainX to cut unplanned downtime and run better operations, across 13.9 million managed assets and 79.5 million completed work orders. In August 2026 MaintainX became part of Autodesk, joining Autodesk Operations Solutions , the organization unifying Autodesk's operations platform alongside Tandem, FlexSim and Fusion Operations. Autodesk's strategy is to converge design, make and operate into one continuous lifecycle: design an asset, build it, run it, then feed what you learn running it back into the next design. Autodesk had design and make. Operate is the phase that tells you what actually happened, and it is ours. The Team and Mission You'd be joining our Infrastructure team within the Platform Engineering division. We're building an AI-native platform for our internal developers, over 150 of them, guided by a single question: does this shorten the time from idea to value, for the teams building on our platform and for the customers they ultimately serve? The smooth path is the safe, fast path, because the platform makes it the default. We build the route that maximizes AI acceleration. What You'll Do Design, build, and evolve our cloud infrastructure (primarily AWS) as code, using Terraform to keep every environment reproducible and legible to both engineers and agents Build CI/CD pipelines (GitHub Actions) with guardrails that make agentic releases safe by default Manage and scale multi-region Kubernetes clusters Maintain and evolve Helm charts and deployment workflows as reusable Strengthen observability, monitoring, logging, and alerting, feeding signal back into AI-assisted remediation and define clear alert ownership Harden infrastructure security, image scanning, policy-as-code, network segmentation, and firewall configuration Partner closely with product engineering teams to support their infrastructure needs Enable developers and agents to deploy and manage services independently Participate in the on-call rotation About You 5+ years of experience in DevOps, cloud infrastructure, or software engineering AI-forward: you hold everything you build to an AI-native standard Strong experience with cloud platforms (AWS preferred; Azure or GCP experience transfers well) Experience building and maintaining CI/CD pipelines and managing deployments Proficient with Kubernetes in production environments Experience with Docker and containerized applications Experience with observability tools, including monitoring, logging, and alerting systems Strong collaboration skills and the ability to support engineering teams A strong communicator who can explain platform complexity and trade-offs clearly to stakeholders Expert-level English, spoken and written. About MaintainX MaintainX is committed to creating a diverse environment. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, national origin, genetics, disability, age, or veteran status . Our mission is to keep the physical world running. Factories, fleets, hospitals and campuses stay up because the people who maintain them have tools worth using. That is what we build. Compensation and benefits. Base pay is one part of the package. Depending on the role, compensation may also include commission, an annual bonus and equity. Benefits differ by country. For roles in the United States, Autodesk’s benefits are described at benefits.autodesk.com. For roles in Canada and other countries, the plan differs on health coverage, retirement and leave, and your recruiter will walk you through it. Belonging. We take pride in a culture where everyone can thrive. More at autodesk.com/company/global-belonging. More on where this is going: Autodesk CEO Andrew Anagnost on building the future of connected operations, and AOS SVP Stephen Hooper on welcoming MaintainX to Autodesk. Compensation Range: $120,000 - $249,260",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -10777,7 +11138,10 @@
         ]
       },
       "role_family": "swe",
-      "role_relevance": 2
+      "role_relevance": 2,
+      "linkedin_detail_fetched_at": "2026-09-09T06:00:44.287277+00:00",
+      "linkedin_detail_resolved": true,
+      "direct_original_fetched": true
     },
     {
       "job_id": "4463509979",
@@ -10840,7 +11204,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-developer-at-martian-wall-4464646456",
       "official_url": "",
-      "description": "",
+      "description": "Role: Full Stack Developer (React, GoLang, Python, Java, Node.js, AWS) Location: US (Madison, NJ | Manhattan, NY | Boston, MA | Aventura, FL | Seattle, WA Key Responsibilities Design, build, and maintain scalable full-stack applications end to end from frontend UI to backend services, APIs, and databases using React, TypeScript, Go, Java, Python, and Node.js. Build and enhance RESTful APIs, gRPC/Thrift integrations, microservices, and distributed systems. Participate in architecture reviews, technical design discussions, and code reviews. Drive engineering practices across automated testing, security, observability, and CI/CD. Troubleshoot complex production issues. Contribute to AWS cloud infrastructure and deployment automation. Mentor engineers and collaborate closely with product managers, architects, and designers. Required Skills & Experience Bachelor's Degree with 5+ years of hands-on Full Stack development experience. Strong ReactJS, TypeScript, JavaScript experience. Strong backend experience in Go, Java, Python, or Node.js. System design and distributed systems knowledge. Experience with PostgreSQL, MySQL, Aurora, RDS, MongoDB, DynamoDB, Redis. AWS experience (ECS, Lambda, API Gateway, S3, CloudWatch). Docker, CI/CD, Terraform. Jest, Cypress or similar testing frameworks. Agile/Scrum delivery experience. Nice to Have Elasticsearch Thrift Monorepo experience Bazel Terraform/AWS CDK/CloudFormation Kafka/AWS EventBridge SaaS, Marketplace, Real Estate Tech experience",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -10850,7 +11214,10 @@
         ]
       },
       "role_family": "swe",
-      "role_relevance": 2
+      "role_relevance": 2,
+      "linkedin_detail_fetched_at": "2026-09-09T06:00:44.287277+00:00",
+      "linkedin_detail_resolved": true,
+      "direct_original_fetched": true
     },
     {
       "job_id": "4455349491",
@@ -10875,30 +11242,6 @@
       },
       "role_family": "none",
       "role_relevance": 0
-    },
-    {
-      "job_id": "4455351413",
-      "source": "linkedin",
-      "company": "MatX",
-      "title": "Software Engineer - Kernels",
-      "location": "Mountain View, CA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-kernels-at-matx-4455351413",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "software engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
     },
     {
       "job_id": "4455336684",
@@ -11063,8 +11406,7 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer i",
-          "associate software engineer"
+          "software engineer i"
         ]
       },
       "role_family": "swe",
@@ -12215,7 +12557,6 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "software engineer ii"
         ]
       },
@@ -12227,7 +12568,7 @@
       "source": "linkedin",
       "company": "Netflix",
       "title": "Software Engineer 5 - Content & Business Products",
-      "location": "Los Angeles, CA",
+      "location": "New York, NY",
       "posted_date": "2026-09-08",
       "aggregator_posted_date": "2026-09-08",
       "updated_date": "",
@@ -12408,8 +12749,7 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "software engineer ii"
+          "software engineer"
         ]
       },
       "role_family": "swe",
@@ -12776,7 +13116,6 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "platform engineer",
           "infrastructure engineer",
           "site reliability engineer"
         ]
@@ -12806,6 +13145,31 @@
         ]
       },
       "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4464943495",
+      "source": "linkedin",
+      "company": "OneStream Software",
+      "title": "AI Engineer",
+      "location": "Birmingham, MI",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-onestream-software-4464943495",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer",
+          "machine learning engineer"
+        ]
+      },
+      "role_family": "ai",
       "role_relevance": 2
     },
     {
@@ -13073,6 +13437,32 @@
         "linkedin": [
           "software engineer",
           "ai engineer"
+        ]
+      },
+      "role_family": "ambiguous",
+      "role_relevance": 1
+    },
+    {
+      "job_id": "4464983408",
+      "source": "linkedin",
+      "company": "OpenAI",
+      "title": "Software Engineer, AI for Chip Design",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ai-for-chip-design-at-openai-4464983408",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer",
+          "ai engineer",
+          "new grad software engineer"
         ]
       },
       "role_family": "ambiguous",
@@ -13483,8 +13873,7 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "new grad software engineer"
+          "software engineer"
         ]
       },
       "role_family": "swe",
@@ -13799,7 +14188,8 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer"
+          "ai engineer",
+          "machine learning engineer"
         ]
       },
       "role_family": "ai",
@@ -13921,7 +14311,6 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "platform engineer"
         ]
       },
@@ -14219,6 +14608,30 @@
       "discovery_queries": {
         "linkedin": [
           "platform engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4325482368",
+      "source": "linkedin",
+      "company": "Perplexity",
+      "title": "Member of Technical Staff (Software Engineer, Security)",
+      "location": "New York, NY",
+      "posted_date": "2026-09-08",
+      "aggregator_posted_date": "2026-09-08",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/member-of-technical-staff-software-engineer-security-at-perplexity-4325482368",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
         ]
       },
       "role_family": "swe",
@@ -14777,8 +15190,7 @@
         "linkedin": [
           "software engineer",
           "software engineer ii",
-          "backend engineer",
-          "full stack engineer"
+          "backend engineer"
         ]
       },
       "role_family": "swe",
@@ -15007,6 +15419,30 @@
       "role_relevance": 2
     },
     {
+      "job_id": "4463800328",
+      "source": "linkedin",
+      "company": "Raytheon",
+      "title": "NASAMS Platform Engineer",
+      "location": "Tewksbury, MA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/nasams-platform-engineer-at-raytheon-4463800328",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "platform engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
       "job_id": "4464901172",
       "source": "linkedin",
       "company": "Raytheon",
@@ -15109,7 +15545,7 @@
       "source": "linkedin",
       "company": "Redfin",
       "title": "Staff Infrastructure Reliability Engineer - Database & Storage",
-      "location": "Daly City, CA",
+      "location": "Maryland, United States",
       "posted_date": "2026-09-08",
       "aggregator_posted_date": "2026-09-08",
       "updated_date": "",
@@ -15220,6 +15656,30 @@
       "discovery_queries": {
         "linkedin": [
           "platform engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463597625",
+      "source": "linkedin",
+      "company": "Regions Bank",
+      "title": "Software Engineer",
+      "location": "Salt Lake City, UT",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-regions-bank-4463597625",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
         ]
       },
       "role_family": "swe",
@@ -15654,30 +16114,6 @@
       "discovery_queries": {
         "linkedin": [
           "full stack engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
-      "job_id": "4463506188",
-      "source": "linkedin",
-      "company": "ST Global Tech LLC",
-      "title": "Forward Deployed Engineer (FDE)",
-      "location": "Maryland, United States",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/forward-deployed-engineer-fde-at-st-global-tech-llc-4463506188",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "software engineer"
         ]
       },
       "role_family": "swe",
@@ -16393,30 +16829,6 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4463545837",
-      "source": "linkedin",
-      "company": "Setpoint",
-      "title": "Senior Full Stack Engineer",
-      "location": "Austin, TX",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-engineer-at-setpoint-4463545837",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "full stack engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
       "job_id": "4464615922",
       "source": "linkedin",
       "company": "Sherwin-Williams",
@@ -16438,30 +16850,6 @@
         ]
       },
       "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
-      "job_id": "4463220038",
-      "source": "linkedin",
-      "company": "Shield Consulting Solutions, Inc.",
-      "title": "AI Engineer",
-      "location": "Annapolis Junction, MD",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-shield-consulting-solutions-inc-4463220038",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "ai engineer"
-        ]
-      },
-      "role_family": "ai",
       "role_relevance": 2
     },
     {
@@ -16583,6 +16971,30 @@
           "software engineer",
           "software engineer ii",
           "associate software engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463599784",
+      "source": "linkedin",
+      "company": "Siemens EDA (Siemens Digital Industries Software)",
+      "title": "Software Engineer - Physical Implementation",
+      "location": "Costa Mesa, CA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-physical-implementation-at-siemens-eda-siemens-digital-industries-software-4463599784",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
         ]
       },
       "role_family": "swe",
@@ -16878,30 +17290,6 @@
       "discovery_queries": {
         "linkedin": [
           "software engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
-      "job_id": "4447581210",
-      "source": "linkedin",
-      "company": "Space Telescope Science Institute",
-      "title": "Software Engineer, II",
-      "location": "Baltimore, MD",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-at-space-telescope-science-institute-4447581210",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "associate software engineer"
         ]
       },
       "role_family": "swe",
@@ -17617,6 +18005,30 @@
       "role_relevance": 2
     },
     {
+      "job_id": "4454553325",
+      "source": "linkedin",
+      "company": "Stripe",
+      "title": "AI Engineer",
+      "location": "Chicago, IL",
+      "posted_date": "2026-09-08",
+      "aggregator_posted_date": "2026-09-08",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-stripe-4454553325",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "role_family": "ai",
+      "role_relevance": 2
+    },
+    {
       "job_id": "4454556315",
       "source": "linkedin",
       "company": "Stripe",
@@ -17790,6 +18202,56 @@
       "role_relevance": 2
     },
     {
+      "job_id": "4463581735",
+      "source": "linkedin",
+      "company": "T-Mobile",
+      "title": "Associate Software Engineer",
+      "location": "Denver, CO",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/associate-software-engineer-at-t-mobile-4463581735",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer i",
+          "associate software engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463599428",
+      "source": "linkedin",
+      "company": "T-Mobile",
+      "title": "Associate Software Engineer",
+      "location": "Overland Park, KS",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/associate-software-engineer-at-t-mobile-4463599428",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer i",
+          "associate software engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
       "job_id": "4462592051",
       "source": "linkedin",
       "company": "TP-Link Systems Inc.",
@@ -17856,30 +18318,6 @@
       "discovery_queries": {
         "linkedin": [
           "forward deployed engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
-      "job_id": "4464615846",
-      "source": "linkedin",
-      "company": "TalentAlly",
-      "title": "Software Engineer",
-      "location": "Anaheim, CA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-talentally-4464615846",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "software engineer"
         ]
       },
       "role_family": "swe",
@@ -18128,30 +18566,6 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4424274025",
-      "source": "linkedin",
-      "company": "Tatari",
-      "title": "Senior Data Platform Engineer",
-      "location": "San Francisco, CA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/senior-data-platform-engineer-at-tatari-4424274025",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "site reliability engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
       "job_id": "4446128599",
       "source": "linkedin",
       "company": "Tebra",
@@ -18267,33 +18681,8 @@
       "discovery_queries": {
         "linkedin": [
           "software engineer",
-          "software engineer ii",
           "associate software engineer",
           "backend engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
-      "job_id": "4464696286",
-      "source": "linkedin",
-      "company": "Tesla",
-      "title": "Sr. Fullstack Software Engineer, Cloud Platforms",
-      "location": "Palo Alto, CA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/sr-fullstack-software-engineer-cloud-platforms-at-tesla-4464696286",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "full stack engineer"
         ]
       },
       "role_family": "swe",
@@ -18317,8 +18706,7 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
-          "platform engineer"
+          "ai engineer"
         ]
       },
       "role_family": "ambiguous",
@@ -18706,8 +19094,7 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer i",
-          "associate software engineer"
+          "software engineer i"
         ]
       },
       "role_family": "swe",
@@ -18926,7 +19313,6 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "ai engineer",
           "full stack engineer"
         ]
@@ -19052,7 +19438,6 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
           "forward deployed engineer"
         ]
       },
@@ -19156,6 +19541,30 @@
       "role_relevance": 2
     },
     {
+      "job_id": "4464979195",
+      "source": "linkedin",
+      "company": "University of Utah",
+      "title": "Software Development Engineer",
+      "location": "Salt Lake City, UT",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-at-university-of-utah-4464979195",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer i"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
       "job_id": "4442889182",
       "source": "linkedin",
       "company": "Upgraid",
@@ -19252,6 +19661,31 @@
       "role_relevance": 2
     },
     {
+      "job_id": "4462475590",
+      "source": "linkedin",
+      "company": "Vanguard",
+      "title": "Full Stack Software Engineer, Resiliency Engineering Platforms",
+      "location": "Wayne, PA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-resiliency-engineering-platforms-at-vanguard-4462475590",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer",
+          "software engineer ii"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
       "job_id": "4463565485",
       "source": "linkedin",
       "company": "Vaspire Technologies Inc.",
@@ -19294,30 +19728,6 @@
       "discovery_queries": {
         "linkedin": [
           "site reliability engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
-      "job_id": "4455542196",
-      "source": "linkedin",
-      "company": "Vast.ai",
-      "title": "Developer Relations Engineer",
-      "location": "Los Angeles, CA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/developer-relations-engineer-at-vast-ai-4455542196",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "ai engineer"
         ]
       },
       "role_family": "swe",
@@ -19549,8 +19959,8 @@
       "company": "Viasat",
       "title": "Embedded Software Engineer, Early Career",
       "location": "Carlsbad, CA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/embedded-software-engineer-early-career-at-viasat-4456400452",
@@ -19738,6 +20148,31 @@
       "role_relevance": 1
     },
     {
+      "job_id": "4463592713",
+      "source": "linkedin",
+      "company": "Walmart",
+      "title": "(USA) Distinguished, Software Engineer",
+      "location": "Sunnyvale, CA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/usa-distinguished-software-engineer-at-walmart-4463592713",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer",
+          "backend engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
       "job_id": "4452541034",
       "source": "linkedin",
       "company": "Walmart",
@@ -19820,30 +20255,6 @@
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/usa-senior-software-engineer-at-walmart-4452522046",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "software engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
-      "job_id": "4452536038",
-      "source": "linkedin",
-      "company": "Walmart",
-      "title": "(USA) Senior, Software Engineer",
-      "location": "Sunnyvale, CA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/usa-senior-software-engineer-at-walmart-4452536038",
       "official_url": "",
       "description": "",
       "sponsorship": "Unknown",
@@ -19955,6 +20366,54 @@
       "role_relevance": 2
     },
     {
+      "job_id": "4464984028",
+      "source": "linkedin",
+      "company": "Wand AI",
+      "title": "Forward Deployed Engineer",
+      "location": "Palo Alto, CA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/forward-deployed-engineer-at-wand-ai-4464984028",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4464974566",
+      "source": "linkedin",
+      "company": "Wand AI",
+      "title": "Staff Site Reliability Engineer",
+      "location": "Palo Alto, CA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/staff-site-reliability-engineer-at-wand-ai-4464974566",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "site reliability engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
       "job_id": "4454415891",
       "source": "linkedin",
       "company": "Waymo",
@@ -19992,6 +20451,30 @@
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/staff-ml-engineer-generative-model-performance-efficiency-at-waymo-4463568338",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "machine learning engineer"
+        ]
+      },
+      "role_family": "ai",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463571271",
+      "source": "linkedin",
+      "company": "Waymo",
+      "title": "Staff ML Engineer, Generative Model Performance & Efficiency",
+      "location": "New York, NY",
+      "posted_date": "2026-09-08",
+      "aggregator_posted_date": "2026-09-08",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/staff-ml-engineer-generative-model-performance-efficiency-at-waymo-4463571271",
       "official_url": "",
       "description": "",
       "sponsorship": "Unknown",
@@ -20051,6 +20534,30 @@
         ]
       },
       "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4464966694",
+      "source": "linkedin",
+      "company": "Wells Fargo",
+      "title": "AI Engineer, Innovation & AI (contract)",
+      "location": "Charlotte, NC",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-innovation-ai-contract-at-wells-fargo-4464966694",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "role_family": "ai",
       "role_relevance": 2
     },
     {
@@ -20297,30 +20804,6 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4454458157",
-      "source": "linkedin",
-      "company": "X, The Moonshot Factory",
-      "title": "Machine Learning Engineer, Tapestry",
-      "location": "Mountain View, CA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-tapestry-at-x-the-moonshot-factory-4454458157",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "machine learning engineer"
-        ]
-      },
-      "role_family": "ai",
-      "role_relevance": 2
-    },
-    {
       "job_id": "4451929141",
       "source": "linkedin",
       "company": "Xcede",
@@ -20419,42 +20902,16 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4464425936",
+      "job_id": "4464973755",
       "source": "linkedin",
       "company": "Yara AI",
       "title": "AI Engineer",
       "location": "United States",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
       "updated_date": "",
       "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-yara-ai-4464425936",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "software engineer",
-          "ai engineer",
-          "llm engineer"
-        ]
-      },
-      "role_family": "ai",
-      "role_relevance": 2
-    },
-    {
-      "job_id": "4464426974",
-      "source": "linkedin",
-      "company": "Yara AI",
-      "title": "AI Engineer",
-      "location": "United States",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-yara-ai-4464426974",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-yara-ai-4464973755",
       "official_url": "",
       "description": "",
       "sponsorship": "Unknown",
@@ -20470,43 +20927,16 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4464462062",
+      "job_id": "4464987044",
       "source": "linkedin",
       "company": "Yara AI",
       "title": "AI Engineer",
       "location": "United States",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
       "updated_date": "",
       "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-yara-ai-4464462062",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "software engineer",
-          "ai engineer",
-          "applied ai engineer",
-          "machine learning engineer"
-        ]
-      },
-      "role_family": "ai",
-      "role_relevance": 2
-    },
-    {
-      "job_id": "4464423924",
-      "source": "linkedin",
-      "company": "Yara AI",
-      "title": "Full Stack Engineer",
-      "location": "United States",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-at-yara-ai-4464423924",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-yara-ai-4464987044",
       "official_url": "",
       "description": "",
       "sponsorship": "Unknown",
@@ -20517,20 +20947,20 @@
           "software engineer"
         ]
       },
-      "role_family": "swe",
+      "role_family": "ai",
       "role_relevance": 2
     },
     {
-      "job_id": "4464440623",
+      "job_id": "4464977600",
       "source": "linkedin",
       "company": "Yara AI",
       "title": "Full Stack Engineer",
       "location": "United States",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
       "updated_date": "",
       "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-at-yara-ai-4464440623",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-at-yara-ai-4464977600",
       "official_url": "",
       "description": "",
       "sponsorship": "Unknown",
@@ -20546,41 +20976,16 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4464439774",
-      "source": "linkedin",
-      "company": "Yara AI",
-      "title": "Full Stack Engineer (New Grad)",
-      "location": "United States",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-new-grad-at-yara-ai-4464439774",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "software engineer i",
-          "new grad software engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
-      "job_id": "4464419874",
+      "job_id": "4464967940",
       "source": "linkedin",
       "company": "Yara AI",
       "title": "Software Engineer",
       "location": "United States",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
       "updated_date": "",
       "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-yara-ai-4464419874",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-yara-ai-4464967940",
       "official_url": "",
       "description": "",
       "sponsorship": "Unknown",
@@ -20588,34 +20993,7 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "associate software engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
-      "job_id": "4464452422",
-      "source": "linkedin",
-      "company": "Yara AI",
-      "title": "Software Engineer (New Grad)",
-      "location": "United States",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-new-grad-at-yara-ai-4464452422",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "software engineer i",
-          "associate software engineer",
-          "new grad software engineer"
+          "software engineer"
         ]
       },
       "role_family": "swe",
@@ -20692,30 +21070,6 @@
       },
       "role_family": "none",
       "role_relevance": 0
-    },
-    {
-      "job_id": "4463216117",
-      "source": "linkedin",
-      "company": "ZealTech",
-      "title": "Thought spot developer",
-      "location": "Fremont, CA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/thought-spot-developer-at-zealtech-4463216117",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "software engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
     },
     {
       "job_id": "4462545411",
@@ -20865,30 +21219,6 @@
       "role_relevance": 2
     },
     {
-      "job_id": "4464480810",
-      "source": "linkedin",
-      "company": "eNGINE",
-      "title": "Software Lead",
-      "location": "Pittsburgh, PA",
-      "posted_date": "2026-09-08",
-      "aggregator_posted_date": "2026-09-08",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/software-lead-at-engine-4464480810",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "",
-      "discovery_queries": {
-        "linkedin": [
-          "software engineer"
-        ]
-      },
-      "role_family": "swe",
-      "role_relevance": 2
-    },
-    {
       "job_id": "4463521880",
       "source": "linkedin",
       "company": "edkey",
@@ -21008,6 +21338,55 @@
       },
       "role_family": "ambiguous",
       "role_relevance": 1
+    },
+    {
+      "job_id": "4463584932",
+      "source": "linkedin",
+      "company": "interface.ai",
+      "title": "Software Engineer",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-interface-ai-4463584932",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer i",
+          "new grad software engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
+    },
+    {
+      "job_id": "4463800673",
+      "source": "linkedin",
+      "company": "interface.ai",
+      "title": "Software Engineer II",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-09-09",
+      "aggregator_posted_date": "2026-09-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-at-interface-ai-4463800673",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "role_family": "swe",
+      "role_relevance": 2
     },
     {
       "job_id": "4464642298",
