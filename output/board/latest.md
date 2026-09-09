@@ -1,7 +1,7 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-09_0905
+# ATS / LinkedIn board — 7-day view — 2026-09-09_1500
 
-- Updated (PT): 2026-09-09 02:08 PDT
-- Snapshot (UTC): 2026-09-09T09:08:42.884441+00:00
+- Updated (PT): 2026-09-09 08:03 PDT
+- Snapshot (UTC): 2026-09-09T15:03:06.997315+00:00
 - Last 24 hours: 49
 - Last 3 days: 53
 
@@ -9,12 +9,12 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 
 ## Run stats
 
-- Source raw: ATS 2688 / Linkedin 893 / Indeed 994 / Glassdoor 153 (Big Company Official runs separately)
-- Funnel: after dedup 4728 -> after company filter 4674 -> after hard filter 4321 -> after role+seniority prefilter 1027 | dropped 3674
-- LLM usage: jobs scored 48 / API requests 5 / cache reused 295 (cross-pipeline 0) / rule fallback+overflow 361 (thin local cards 361, recency-gated 0, overflow 0, new/changed 48)
-- LLM cost: model gpt-5.6-terra / API requests 5 / jobs scored 48 / tokens input 67908 (cached 0) / output 7875 (reasoning 558) / estimated cost $0.2303
+- Source raw: ATS 2687 / Linkedin 893 / Indeed 994 / Glassdoor 153 (Big Company Official runs separately)
+- Funnel: after dedup 4727 -> after company filter 4673 -> after hard filter 4320 -> after role+seniority prefilter 1027 | dropped 3673
+- LLM usage: jobs scored 1 / API requests 1 / cache reused 343 (cross-pipeline 0) / rule fallback+overflow 361 (thin local cards 361, recency-gated 0, overflow 0, new/changed 1)
+- LLM cost: model gpt-5.6-terra / API requests 1 / jobs scored 1 / tokens input 4444 (cached 0) / output 168 (reasoning 0) / estimated cost $0.0109
 - Output sizing: Tier A 8 / Tier B 45 / A+B actionable 53 / Shown in latest.md 53 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 38 / newly-disc 651 / 3-7d 10 / >7d 5
+- Recency (kept): <3h 0 / 3-24h 1 / 1-3d 38 / newly-disc 652 / 3-7d 10 / >7d 4
 - LinkedIn vs Indeed exact coverage: overlap 3 / LinkedIn unique 876 of 879 / Indeed unique 941 of 941
 - Linkedin top exact-unique queries: ai engineer=230, software engineer=224, platform engineer=79, software engineer i=78, software engineer ii=76
 - Indeed top exact-unique queries: ai engineer=249, software engineer=248, backend engineer=86, llm engineer=83, ml engineer=82
@@ -65,11 +65,11 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 78 | cached_llm | indeed | Western Camps, Inc. | Software Engineer Co-op | Calumet, MI, US | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=86560f630df981c7) |
 | 78 | cached_llm | glassdoor | Vertafore | Software Engineer II | Denver, CO | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010256423658) |
 | 78 | cached_llm | glassdoor | Vertafore | Software Engineer II | Denver, CO | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010256423661) |
-| 76 | llm | indeed | CNH Industrial | Software Engineer | Sioux Falls, SD, US | 2026-08-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=0c7d15e1ae932a8a) |
+| 76 | cached_llm | indeed | CNH Industrial | Software Engineer | Sioux Falls, SD, US | 2026-08-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=0c7d15e1ae932a8a) |
 | 76 | cached_llm | indeed | Demiurge Studios | 2027 Associate Software Engineer | Remote, US | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=f2f2803ecea79121) |
 | 76 | cached_llm | indeed | Mayo Clinic | Associate AI/ML Engineer | Rochester, MN, US | 2026-09-07 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ac418ce880989eec) |
 | 76 | cached_llm | indeed | Gallagher | AI Developer | Rolling Meadows, IL, US | 2026-09-07 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=095c32e83e37f1b7) |
-| 76 | llm | indeed | Premier Global Links | Backend Software Engineer | New York, NY, US | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=504f3f34fdefcf2f) |
+| 76 | cached_llm | indeed | Premier Global Links | Backend Software Engineer | New York, NY, US | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=504f3f34fdefcf2f) |
 | 76 | cached_llm | indeed | Publix | Software Engineer - POS Software Engineering 2 (Hybrid) | Lakeland, FL, US | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=d507f034c232c3b2) |
 | 75 | rule_fallback | linkedin | Haystack | Software Engineer, Developer Platform | United States | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-developer-platform-at-haystack-4464480873) |
 | 75 | rule_fallback | linkedin | International Forest Products (IFP) | Full Stack Developer | Foxborough (Foxboro), MA | 2026-09-09 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-international-forest-products-ifp-4422883940) |
@@ -79,5 +79,5 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 75 | rule_fallback | linkedin | VetJobs | Full Stack Software Developer, Mid-level - Denver, CO | Denver, CO | 2026-09-09 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-software-developer-mid-level-denver-co-at-vetjobs-4463827190) |
 | 74 | cached_llm | indeed | CNH Industrial | Engenheiro Software | Sioux Falls, SD, US | 2026-08-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=4139238510f9a43d) |
 | 74 | cached_llm | indeed | CNH Industrial | Software Engineer | Sioux Falls, SD, US | 2026-08-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=4d6b8b7b761cc851) |
-| 74 | llm | indeed | Innovecture | Mern Stack Developer | Phoenix, AZ, US | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=51c66236d8ce9b5f) |
+| 74 | cached_llm | indeed | Innovecture | Mern Stack Developer | Phoenix, AZ, US | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=51c66236d8ce9b5f) |
 | 74 | cached_llm | indeed | SmartLight Analytics | Jr Data Engineer | Remote, US | 2026-09-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=655690fc5c5e504a) |
