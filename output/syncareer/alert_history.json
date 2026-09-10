@@ -4590,6 +4590,75 @@
           "url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=129923&source=WEB_Search_NA"
         }
       ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-09-10_0011",
+      "emitted_at": "2026-09-10T00:12:46.293139+00:00",
+      "event_kind": "new_matching",
+      "count": 4,
+      "jobs": [
+        {
+          "canonical_job_key": "id::syncareer::e69a13b9b7b0e133d93d10de651db891",
+          "job_id": "e69a13b9b7b0e133d93d10de651db891",
+          "tier": "B",
+          "match_score": 78.0,
+          "fit_score": 78.0,
+          "company": "American Express",
+          "title": "Software Engineer II",
+          "location": "Phoenix, Arizona, United States",
+          "posting_date": "2026-09-08",
+          "first_seen": "2026-09-10T00:11:11.309325+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://careers.americanexpress.com/en/sites/CX_1/job/26013674/?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
+          "url": "https://careers.americanexpress.com/en/sites/CX_1/job/26013674/?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164"
+        },
+        {
+          "canonical_job_key": "id::syncareer::3880e678d512ca5d832435ebfb084d1e",
+          "job_id": "3880e678d512ca5d832435ebfb084d1e",
+          "tier": "B",
+          "match_score": 78.0,
+          "fit_score": 78.0,
+          "company": "CNH Industrial",
+          "title": "Data Engineer Intern 1",
+          "location": "Arizona, United States",
+          "posting_date": "2026-09-08",
+          "first_seen": "2026-09-10T00:11:11.309325+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://join.cnh.com/job/Data-Engineer-Intern-1/5656-en_US",
+          "url": "https://join.cnh.com/job/Data-Engineer-Intern-1/5656-en_US"
+        },
+        {
+          "canonical_job_key": "id::syncareer::0cabec24bbc9cea1f94011a42dfd90f0",
+          "job_id": "0cabec24bbc9cea1f94011a42dfd90f0",
+          "tier": "B",
+          "match_score": 76.0,
+          "fit_score": 76.0,
+          "company": "OneStream Software",
+          "title": "AI Engineer",
+          "location": "Birmingham, Michigan, United States",
+          "posting_date": "2026-09-08",
+          "first_seen": "2026-09-10T00:11:11.309325+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://recruiting.ultipro.com/ONE1018ONSO/JobBoard/1955ffa6-bda6-4c95-8412-2c731d693ab2/OpportunityDetail?opportunityId=ed7ad546-da2b-45c7-b411-e07a1332e06d",
+          "url": "https://recruiting.ultipro.com/ONE1018ONSO/JobBoard/1955ffa6-bda6-4c95-8412-2c731d693ab2/OpportunityDetail?opportunityId=ed7ad546-da2b-45c7-b411-e07a1332e06d"
+        },
+        {
+          "canonical_job_key": "id::syncareer::4a1bab928ce38eae20e85f6b5b344b63",
+          "job_id": "4a1bab928ce38eae20e85f6b5b344b63",
+          "tier": "B",
+          "match_score": 74.0,
+          "fit_score": 74.0,
+          "company": "Pepsico",
+          "title": "Analytics Platform Engineer",
+          "location": "New York, New York, United States",
+          "posting_date": "2026-09-08",
+          "first_seen": "2026-09-10T00:11:11.309325+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://www.pepsicojobs.com/northamerica/jobs/468920?lang=en-us&previousLocale=en-US",
+          "url": "https://www.pepsicojobs.com/northamerica/jobs/468920?lang=en-us&previousLocale=en-US"
+        }
+      ]
     }
   ]
 }
