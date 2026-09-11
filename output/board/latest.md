@@ -1,7 +1,7 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-11_1419
+# ATS / LinkedIn board — 7-day view — 2026-09-11_1500
 
-- Updated (PT): 2026-09-11 07:22 PDT
-- Snapshot (UTC): 2026-09-11T14:22:17.403144+00:00
+- Updated (PT): 2026-09-11 08:02 PDT
+- Snapshot (UTC): 2026-09-11T15:02:44.430688+00:00
 - Last 24 hours: 54
 - Last 3 days: 57
 
@@ -9,10 +9,10 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 
 ## Run stats
 
-- Source raw: ATS 2687 / Linkedin 960 / Indeed 988 / Glassdoor 153 (Big Company Official runs separately)
-- Funnel: after dedup 4788 -> after company filter 4662 -> after hard filter 4284 -> after role+seniority prefilter 1021 | dropped 3719
-- LLM usage: jobs scored 36 / API requests 4 / cache reused 283 (cross-pipeline 0) / rule fallback+overflow 381 (thin local cards 380, recency-gated 1, overflow 0, new/changed 37)
-- LLM cost: model gpt-5.6-terra / API requests 4 / jobs scored 36 / tokens input 43518 (cached 0) / output 5906 (reasoning 485) / estimated cost $0.1579
+- Source raw: ATS 2688 / Linkedin 960 / Indeed 988 / Glassdoor 153 (Big Company Official runs separately)
+- Funnel: after dedup 4789 -> after company filter 4663 -> after hard filter 4286 -> after role+seniority prefilter 1021 | dropped 3720
+- LLM usage: jobs scored 0 / API requests 0 / cache reused 319 (cross-pipeline 0) / rule fallback+overflow 381 (thin local cards 380, recency-gated 1, overflow 0, new/changed 1)
+- LLM cost: model gpt-5.6-terra / API requests 0 / jobs scored 0 / tokens input 0 (cached 0) / output 0 (reasoning 0) / estimated cost $0.0000
 - Output sizing: Tier A 14 / Tier B 44 / A+B actionable 58 / Shown in latest.md 58 (no hard cap)
 - Recency (kept): <3h 0 / 3-24h 3 / 1-3d 31 / newly-disc 638 / 3-7d 27 / >7d 1
 - LinkedIn vs Indeed exact coverage: overlap 0 / LinkedIn unique 943 of 943 / Indeed unique 840 of 840
@@ -44,7 +44,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 78 | cached_llm | glassdoor | Vertafore | Software Engineer II | Denver, CO | 2026-09-08 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010256423658) |
 | 78 | cached_llm | glassdoor | Vertafore | Software Engineer II | Denver, CO | 2026-09-08 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/j?jl=1010256423661) |
-| 89 | llm | indeed | Micron Technology | Full-Stack AI Engineer | Boise, ID, US | 2026-07-19 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=e1d64b090a5428a5) |
+| 89 | cached_llm | indeed | Micron Technology | Full-Stack AI Engineer | Boise, ID, US | 2026-07-19 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=e1d64b090a5428a5) |
 | 87 | cached_llm | indeed |  | Software Engineer Intern | Menlo Park, CA, US | 2026-09-10 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=8570fc8d34e50f7c) |
 | 87 | cached_llm | indeed | KLA | AI Software Engineer/Manufacturing | Ann Arbor, MI, US | 2026-09-09 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ad19b6154b9730df) |
 | 86 | cached_llm | indeed | GE Vernova | Data Scientist | Greenville, SC, US | 2026-09-09 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=34a45510e8cd6a74) |
@@ -62,16 +62,16 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 78 | cached_llm | linkedin | Alkira, Inc. | Software Engineer - UI Developer | San Jose, CA | 2026-09-11 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ui-developer-at-alkira-inc-4466027647) |
 | 78 | cached_llm | indeed | CNH Industrial | Software Engineer | Sioux Falls, SD, US | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=618755024d81583b) |
 | 78 | cached_llm | indeed | Caterpillar | Data Engineer | Peoria, IL, US | 2026-09-09 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=b6fca088326cd72d) |
-| 78 | llm | indeed | Merchynt | Technical Support Engineer / Junior Software Developer | Remote, US | 2026-09-10 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=4cb31165feb24f5e) |
+| 78 | cached_llm | indeed | Merchynt | Technical Support Engineer / Junior Software Developer | Remote, US | 2026-09-10 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=4cb31165feb24f5e) |
 | 77 | cached_llm | indeed | American University | Part Time Research Assistant Data Scientist and Engineer | Washington, DC, US | 2026-09-10 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=33a7e9dfed1d6a8e) |
 | 76 | cached_llm | indeed | Cambia Health Solutions | Software Development Engineer I – III | Salt Lake City, UT, US | 2026-09-09 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=b5099641a9af3c93) |
 | 76 | cached_llm | indeed | Honeywell Aerospace | Software Engineer I | Phoenix, AZ, US | 2026-09-09 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=68f70e210e8bf707) |
 | 76 | cached_llm | indeed | Mobomo, LLC | Front End Engineer | Remote, US | 2026-09-09 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=e47b07bd6e451397) |
 | 76 | cached_llm | indeed | State of New Mexico | Associate IT Application Developer (DWS #9483) | Albuquerque, NM, US | 2026-09-09 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=994afe0939eafa25) |
-| 76 | llm | indeed | Trihydro | Software Developer Intern | Fort Collins, CO, US | 2026-09-10 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=6f0854e07bc8e0ee) |
+| 76 | cached_llm | indeed | Trihydro | Software Developer Intern | Fort Collins, CO, US | 2026-09-10 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=6f0854e07bc8e0ee) |
 | 76 | cached_llm | indeed | Zebra Technologies | Software Engineer, I | Kennesaw, GA, US | 2026-09-09 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=f9ea492873e14143) |
 | 76 | cached_llm | indeed | Evans General Contractors | Junior Business Automation Engineer | Alpharetta, GA, US | 2026-09-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=3c1d07da6179c87a) |
-| 76 | llm | indeed | Nextdoor | Software Engineer | Remote, US | 2026-09-11 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=4392e7354cbe61ab) |
+| 76 | cached_llm | indeed | Nextdoor | Software Engineer | Remote, US | 2026-09-11 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=4392e7354cbe61ab) |
 | 75 | cached_llm | indeed | Microsoft | Software Engineer | Redmond, WA, US | 2026-09-03 | newly_discovered | low | swe | Microsoft | unreviewed | pending_official_refresh | - | [open](https://www.indeed.com/viewjob?jk=39980b58238349d9) |
 | 75 | cached_llm | indeed | Microsoft | Software Engineer II | Redmond, WA, US | 2026-09-03 | newly_discovered | low | swe | Microsoft | unreviewed | pending_official_refresh | - | [open](https://www.indeed.com/viewjob?jk=5753875b2d44c209) |
 | 75 | rule_fallback | linkedin | EY | Service Delivery Center-Full Stack Developer: Financial Services-Analy | Atlanta, GA | 2026-09-10 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/service-delivery-center-full-stack-developer-financial-services-analyst-raleigh-dallas-san-antonio-at-ey-4464561909) |
