@@ -1,15 +1,22 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-09-10 17:12 PDT
-- Snapshot (UTC): 2026-09-11T00:12:58.521263+00:00
-- Jobs: 31
-- Last 24 hours: 16
-- Last 3 days: 31
+- Updated (PT): 2026-09-11 08:12 PDT
+- Snapshot (UTC): 2026-09-11T15:12:59.309848+00:00
+- Jobs: 32
+- Last 24 hours: 7
+- Last 3 days: 32
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 90.0 | Syncareer | KLA | AI Software Engineer/Manufacturing | Ann Arbor, Michigan, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://kla.wd1.myworkdayjobs.com/en-US/Search/job/Ann-Arbor-MI/AI-Software-Engineer-Manufacturing_2640648-1?Country=bc33aa3152ec42d4995f4791a106ed09&Country=a4e08b475d6a4176853c9d1cb9854e02&Country=80938777cac5440fab50d729f9634969&Country=6cb77610a8a543aea2d6bc10457e35d4&Country=29247e57dbaf46fb855b224e03170bc7) |
+| A | 85.0 | Syncareer | Verisk | Full Stack SDE II | Boston, Massachusetts, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://fa-ewmy-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4711) |
+| B | 78.0 | Syncareer | Handshake | AI Red Teamer (LLM Generalist) | Seattle, Washington, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/handshake/e15e3244-06f9-4c41-96c6-8860ad7594c5) |
+| B | 84.0 | Syncareer | Micron Technology | New College Grad - IT Software Support Engineer | Boise, Idaho, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.micron.com/careers/job/44419615?domain=micron.com) |
+| B | 74.0 | Syncareer | CNH Industrial | Software Engineer Intern | Sioux Falls, South Dakota, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://join.cnh.com/job/Software-Engineer-Intern/5672-en_US) |
+| B | 79.0 | Syncareer | Intercontinental Exchange | Junior Software Development Engineer in Test | Atlanta, Georgia, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ice.com/jobs/13399?lang=en-us) |
+| B | 78.0 | Syncareer | CNH Industrial | AI Engineer Intern | Tempe, Arizona, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://join.cnh.com/job/AI-Engineer-Intern/5686-en_US) |
 | B | 84.0 | Syncareer | The Cigna Group | The Cigna Group’s Technology Development Program (TECDP) Infrastructur | Bloomfield, Connecticut, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://cigna.wd5.myworkdayjobs.com/en-US/cignacareers/job/CT-Bloomfield-900-Cottage-Grove-Rd-Wilde-Bldg/The-Cigna-Group-s-Technology-Development-Program-----Infrastructure---Cloud-Engineering-Track_26009529?Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=6cb77610a8a543aea2d6bc10457e35d4) |
 | A | 85.0 | Syncareer | Texas Instruments | Career Accelerator Program - Software Engineer | Dallas, Texas, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://edbz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/25017860/?brand=Interns&lastSelectedFacet=WORK_LOCATIONS&selectedWorkLocationsFacet=300000068944502%253B300000069140837%253B300000972512782%253B300000069115462%253B300000068944070%253B300000068944563%253B300000069115376%253B300000069139239%253B300000069139953%253B300000069139396%253B300000068944251%253B300000068944485%253B300000069115441) |
 | B | 86.0 | Syncareer | General Motors | Software Engineer, AV Launch – Early Career | Sunnyvale, California, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://search-careers.gm.com/en/jobs/jr-202619888/software-engineer-av-launch-early-career/) |
@@ -22,10 +29,6 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 73.0 | Syncareer | HII | SOFTWARE ENGINEER 2 | Newport News, Virginia, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.huntingtoningalls.com/job/Newport-News-SOFTWARE-ENGINEER-2-Virg/1410080200/) |
 | B | 83.0 | Syncareer | Old Mission | Junior Trading Operations/DevOps Engineer | Chicago, Illinois, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.oldmissioncapital.com/careers/?gh_jid=7989374003) |
 | B | 83.0 | Syncareer | FIS | Backend Software Engineer II 3 year's experience | Chicago, Illinois, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/job/US-IL-CHI-222-STE-1700/Software--Engineer-II_JR0308355) |
-| B | 74.0 | Syncareer | CNH Industrial | Software Engineer Intern | Sioux Falls, South Dakota, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://join.cnh.com/job/Software-Engineer-Intern/5672-en_US) |
-| B | 84.0 | Syncareer | Micron Technology | New College Grad - IT Software Support Engineer | Boise, Idaho, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.micron.com/careers/job/44419615?domain=micron.com) |
-| B | 79.0 | Syncareer | Intercontinental Exchange | Junior Software Development Engineer in Test | Atlanta, Georgia, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ice.com/jobs/13399?lang=en-us) |
-| B | 78.0 | Syncareer | CNH Industrial | AI Engineer Intern | Tempe, Arizona, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://join.cnh.com/job/AI-Engineer-Intern/5686-en_US) |
 | B | 78.0 | Syncareer | American Express | Software Engineer II | Phoenix, Arizona, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.americanexpress.com/en/sites/CX_1/job/26013674/?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164) |
 | B | 74.0 | Syncareer | Pepsico | Analytics Platform Engineer | New York, New York, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.pepsicojobs.com/northamerica/jobs/468920?lang=en-us&previousLocale=en-US) |
 | B | 78.0 | Syncareer | CNH Industrial | Data Engineer Intern 1 | Arizona, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://join.cnh.com/job/Data-Engineer-Intern-1/5656-en_US) |
@@ -39,5 +42,3 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | A | 88.0 | Syncareer | IBM | Entry Level Software Developer-Rochester, MN | Rochester, Minnesota, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=130378&source=WEB_Search_NA) |
 | B | 73.0 | Syncareer | IBM | Data Scientist & AI ELH - RTP 2027 | Durham, North Carolina, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=129923&source=WEB_Search_NA) |
 | B | 88.0 | Syncareer | IBM | Software Developer Intern-Austin-TX | Austin, Texas, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=130116&source=WEB_Search_NA) |
-| B | 84.0 | Syncareer | ICF | 2027 Summer Intern, Software Developer (Reston, VA) | Reston, Virginia, United States | 2026-09-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://icf.wd5.myworkdayjobs.com/en-US/ICFExternal_Career_Site/job/Reston-VA/XMLNAME-2027-Summer-Intern--Software-Developer--Reston--VA-_R2603002) |
-| A | 87.0 | Syncareer | IBM | Entry Level Software Developer-Different locations | Poughkeepsie, New York, United States | 2026-09-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=130369&source=WEB_Search_NA) |
