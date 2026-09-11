@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-10T05:21:57.576628+00:00",
+  "generated_at": "2026-09-11T05:05:37.293897+00:00",
   "collector": {
-    "commit": "f65492689506cb19030522c68d50bf212a94826d",
+    "commit": "d147d8eccd8147f97cbb4eedaf0fa7cfaac7632c",
     "dirty": false
   },
   "sources": {
@@ -10,14 +10,14 @@
       "healthy": true,
       "status": "ok",
       "reason": "",
-      "last_attempt_at": "2026-09-10T05:18:47.235285+00:00",
-      "last_success_at": "2026-09-10T05:18:47.235285+00:00",
+      "last_attempt_at": "2026-09-11T05:02:01.365128+00:00",
+      "last_success_at": "2026-09-11T05:02:01.365128+00:00",
       "last_attempt_collector": {
-        "commit": "f65492689506cb19030522c68d50bf212a94826d",
+        "commit": "d147d8eccd8147f97cbb4eedaf0fa7cfaac7632c",
         "dirty": false
       },
       "last_success_collector": {
-        "commit": "f65492689506cb19030522c68d50bf212a94826d",
+        "commit": "d147d8eccd8147f97cbb4eedaf0fa7cfaac7632c",
         "dirty": false
       },
       "last_attempt_source_provenance": {
@@ -26,40 +26,40 @@
       "last_success_source_provenance": {
         "implementation": "sources.linkedin_local"
       },
-      "last_good_count": 863
+      "last_good_count": 935
     },
     "indeed": {
-      "healthy": false,
-      "status": "skipped_unavailable",
-      "reason": "python-jobspy is not installed; install requirements-local.txt",
-      "last_attempt_at": "2026-09-10T05:21:57.526213+00:00",
-      "last_success_at": "2026-09-09T09:04:42.798112+00:00",
+      "healthy": true,
+      "status": "ok",
+      "reason": "",
+      "last_attempt_at": "2026-09-11T05:05:14.121711+00:00",
+      "last_success_at": "2026-09-11T05:05:14.121711+00:00",
       "last_attempt_collector": {
-        "commit": "f65492689506cb19030522c68d50bf212a94826d",
+        "commit": "d147d8eccd8147f97cbb4eedaf0fa7cfaac7632c",
         "dirty": false
       },
       "last_success_collector": {
-        "commit": "6718ea930c09ee422af28d5a4366d8336d49b0c7",
+        "commit": "d147d8eccd8147f97cbb4eedaf0fa7cfaac7632c",
         "dirty": false
       },
       "last_attempt_source_provenance": {
         "implementation": "python-jobspy",
-        "version": "not-installed"
+        "version": "1.1.82"
       },
       "last_success_source_provenance": {
         "implementation": "python-jobspy",
         "version": "1.1.82"
       },
-      "last_good_count": 994
+      "last_good_count": 1100
     },
     "glassdoor": {
       "healthy": false,
       "status": "skipped_unavailable",
-      "reason": "python-jobspy is not installed; install requirements-local.txt",
-      "last_attempt_at": "2026-09-10T05:21:57.532681+00:00",
+      "reason": "GlassdoorException: location lookup HTTP 404",
+      "last_attempt_at": "2026-09-11T05:05:36.992431+00:00",
       "last_success_at": "2026-09-08T15:39:53.463312+00:00",
       "last_attempt_collector": {
-        "commit": "f65492689506cb19030522c68d50bf212a94826d",
+        "commit": "d147d8eccd8147f97cbb4eedaf0fa7cfaac7632c",
         "dirty": false
       },
       "last_success_collector": {
@@ -68,7 +68,8 @@
       },
       "last_attempt_source_provenance": {
         "implementation": "python-jobspy",
-        "version": "not-installed"
+        "version": "1.1.82",
+        "compat": "JobSpy PRs #347/#350"
       },
       "last_success_source_provenance": {
         "implementation": "python-jobspy",
