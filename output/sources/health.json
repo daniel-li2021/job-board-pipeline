@@ -1,19 +1,19 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-11T10:44:32.074378+00:00",
+  "generated_at": "2026-09-11T14:18:36.011017+00:00",
   "collector": {
-    "commit": "51518372e0dc4c193081d796c1035fa8e187a44d",
+    "commit": "af8b856b9396fd8a2b9578b1a8950df53f103e9a",
     "dirty": false
   },
   "sources": {
     "linkedin": {
-      "healthy": true,
-      "status": "ok",
-      "reason": "",
-      "last_attempt_at": "2026-09-11T10:40:30.401452+00:00",
+      "healthy": false,
+      "status": "skipped_unavailable",
+      "reason": "network error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "last_attempt_at": "2026-09-11T13:59:37.784667+00:00",
       "last_success_at": "2026-09-11T10:40:30.401452+00:00",
       "last_attempt_collector": {
-        "commit": "51518372e0dc4c193081d796c1035fa8e187a44d",
+        "commit": "af8b856b9396fd8a2b9578b1a8950df53f103e9a",
         "dirty": false
       },
       "last_success_collector": {
@@ -32,14 +32,14 @@
       "healthy": true,
       "status": "ok",
       "reason": "",
-      "last_attempt_at": "2026-09-11T10:44:07.901525+00:00",
-      "last_success_at": "2026-09-11T10:44:07.901525+00:00",
+      "last_attempt_at": "2026-09-11T14:18:04.633575+00:00",
+      "last_success_at": "2026-09-11T14:18:04.633575+00:00",
       "last_attempt_collector": {
-        "commit": "51518372e0dc4c193081d796c1035fa8e187a44d",
+        "commit": "af8b856b9396fd8a2b9578b1a8950df53f103e9a",
         "dirty": false
       },
       "last_success_collector": {
-        "commit": "51518372e0dc4c193081d796c1035fa8e187a44d",
+        "commit": "af8b856b9396fd8a2b9578b1a8950df53f103e9a",
         "dirty": false
       },
       "last_attempt_source_provenance": {
@@ -50,16 +50,16 @@
         "implementation": "python-jobspy",
         "version": "1.1.82"
       },
-      "last_good_count": 1099
+      "last_good_count": 988
     },
     "glassdoor": {
       "healthy": false,
       "status": "skipped_unavailable",
       "reason": "GlassdoorException: location lookup HTTP 404",
-      "last_attempt_at": "2026-09-11T10:44:31.803341+00:00",
+      "last_attempt_at": "2026-09-11T14:18:35.717318+00:00",
       "last_success_at": "2026-09-08T15:39:53.463312+00:00",
       "last_attempt_collector": {
-        "commit": "51518372e0dc4c193081d796c1035fa8e187a44d",
+        "commit": "af8b856b9396fd8a2b9578b1a8950df53f103e9a",
         "dirty": false
       },
       "last_success_collector": {
