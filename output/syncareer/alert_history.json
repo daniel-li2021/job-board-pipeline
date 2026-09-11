@@ -4848,6 +4848,75 @@
           "url": "https://careers.spglobal.com/jobs/331714?lang=en-us"
         }
       ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-09-11_0011",
+      "emitted_at": "2026-09-11T00:12:58.521897+00:00",
+      "event_kind": "new_matching",
+      "count": 4,
+      "jobs": [
+        {
+          "canonical_job_key": "id::syncareer::d35a21b5b9c35e85885809d75b7a3f9d",
+          "job_id": "d35a21b5b9c35e85885809d75b7a3f9d",
+          "tier": "B",
+          "match_score": 84.0,
+          "fit_score": 84.0,
+          "company": "Micron Technology",
+          "title": "New College Grad - IT Software Support Engineer",
+          "location": "Boise, Idaho, United States",
+          "posting_date": "2026-09-09",
+          "first_seen": "2026-09-11T00:11:09.996504+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://careers.micron.com/careers/job/44419615?domain=micron.com",
+          "url": "https://careers.micron.com/careers/job/44419615?domain=micron.com"
+        },
+        {
+          "canonical_job_key": "id::syncareer::61d454e6ecdd18c1f33edc080d5b7fa9",
+          "job_id": "61d454e6ecdd18c1f33edc080d5b7fa9",
+          "tier": "B",
+          "match_score": 79.0,
+          "fit_score": 79.0,
+          "company": "Intercontinental Exchange",
+          "title": "Junior Software Development Engineer in Test",
+          "location": "Atlanta, Georgia, United States",
+          "posting_date": "2026-09-09",
+          "first_seen": "2026-09-11T00:11:09.996504+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://careers.ice.com/jobs/13399?lang=en-us",
+          "url": "https://careers.ice.com/jobs/13399?lang=en-us"
+        },
+        {
+          "canonical_job_key": "id::syncareer::0026b62ddc0aac6a164f3f5f5b8ee1a7",
+          "job_id": "0026b62ddc0aac6a164f3f5f5b8ee1a7",
+          "tier": "B",
+          "match_score": 78.0,
+          "fit_score": 78.0,
+          "company": "CNH Industrial",
+          "title": "AI Engineer Intern",
+          "location": "Tempe, Arizona, United States",
+          "posting_date": "2026-09-09",
+          "first_seen": "2026-09-11T00:11:09.996504+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://join.cnh.com/job/AI-Engineer-Intern/5686-en_US",
+          "url": "https://join.cnh.com/job/AI-Engineer-Intern/5686-en_US"
+        },
+        {
+          "canonical_job_key": "id::syncareer::647fab6d6a43787ad22581175c938dfc",
+          "job_id": "647fab6d6a43787ad22581175c938dfc",
+          "tier": "B",
+          "match_score": 74.0,
+          "fit_score": 74.0,
+          "company": "CNH Industrial",
+          "title": "Software Engineer Intern",
+          "location": "Sioux Falls, South Dakota, United States",
+          "posting_date": "2026-09-09",
+          "first_seen": "2026-09-11T00:11:09.996504+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://join.cnh.com/job/Software-Engineer-Intern/5672-en_US",
+          "url": "https://join.cnh.com/job/Software-Engineer-Intern/5672-en_US"
+        }
+      ]
     }
   ]
 }
