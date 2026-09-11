@@ -247,6 +247,13 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertFalse(old_discovery["fresh_activity"])
         self.assertFalse(old_discovery["rolling_activity"])
 
+    def test_rolling_discovery_window_includes_exactly_72_hours(self) -> None:
+        now = datetime(2026, 8, 29, 12, tzinfo=timezone.utc)
+        boundary = dashboard.recency({"first_seen": (now - timedelta(hours=72)).isoformat()}, now)
+        expired = dashboard.recency({"first_seen": (now - timedelta(hours=72, seconds=1)).isoformat()}, now)
+        self.assertTrue(boundary["rolling_activity"])
+        self.assertFalse(expired["rolling_activity"])
+
     def test_sort_is_tier_then_discovery_then_score(self) -> None:
         now = datetime(2026, 8, 29, 12, tzinfo=timezone.utc)
 
@@ -368,6 +375,21 @@ class DashboardPolicyTests(unittest.TestCase):
         official = [row for row in fresh if row["pipeline"] == "official"]
         self.assertEqual(600, len(official))
         self.assertEqual(600, len({row["canonical_job_key"] for row in official}))
+
+    def test_board_fresh_includes_unalerted_discovery_when_digest_is_skipped(self) -> None:
+        now = datetime(2026, 9, 11, 5, tzinfo=timezone.utc)
+        rows = [dict(canonical_job_key=key, pipeline="board", tier="B",
+                     company="Example", location="Seattle, WA", score=80,
+                     filter_status="kept", freshness=dashboard.recency(
+                         {"first_seen": now.isoformat()}, now))
+                for key in ("alerted", "unalerted")]
+        with patch.object(dashboard.alert_history, "recent_events", side_effect=lambda path, *args, **kwargs: [{
+            "emitted_at": now.isoformat(), "jobs": [{"canonical_job_key": "alerted"}]}]
+                if path == dashboard.ALERT_HISTORY_PATHS["board"] else []), \
+                patch.object(dashboard, "parse_issue_event", return_value=None):
+            fresh, basis = dashboard.alert_fresh_rows(rows, now)
+        self.assertEqual({"alerted", "unalerted"}, {row["canonical_job_key"] for row in fresh})
+        self.assertEqual("alerts_and_new_discoveries", basis["board"])
 
     def test_public_template_has_compact_navigation_and_shared_status_control(self) -> None:
         self.assertNotIn("Official coverage", dashboard.HTML_TEMPLATE)

@@ -8,7 +8,7 @@ import json
 import os
 import re
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 from zoneinfo import ZoneInfo
@@ -174,8 +174,8 @@ def recency(job: Dict[str, Any], now: datetime) -> Dict[str, Any]:
         "discovered": {"bucket": discovered_bucket, "age_hours": discovered_age, "at": first_seen.isoformat() if first_seen else ""},
         # Dashboard windows intentionally follow discovery/Issue activity, not
         # the employer's posting date. posted_date remains reference metadata.
-        "fresh_activity": discovered_age is not None and discovered_age <= 24,
-        "rolling_activity": discovered_age is not None and discovered_age <= 72,
+        "fresh_activity": first_seen is not None and now - first_seen <= timedelta(hours=24),
+        "rolling_activity": first_seen is not None and now - first_seen <= timedelta(hours=72),
     }
 
 
@@ -348,7 +348,7 @@ def alert_fresh_rows(
     all_rows: List[Dict[str, Any]], now: datetime,
     hard_excludes: Optional[List[Dict[str, Any]]] = None,
 ) -> Tuple[List[Dict[str, Any]], Dict[str, str]]:
-    """Include alert activity and every newly discovered qualifying Official job."""
+    """Include alert activity and every newly discovered qualifying job."""
     by_key = {str(row.get("canonical_job_key") or ""): row for row in all_rows if row.get("canonical_job_key")}
     by_key_pipeline = {
         (str(row.get("pipeline") or ""), str(row.get("canonical_job_key") or "")): row
@@ -372,22 +372,7 @@ def alert_fresh_rows(
             known_stamps = {str(event.get("stamp") or "") for event in events}
             if fallback_at and (now - fallback_at).total_seconds() <= 24 * 3600 and fallback.get("stamp") not in known_stamps:
                 events.append(fallback)
-        if events:
-            basis[pipeline] = "alert_history_or_issue"
-        else:
-            # One-release migration guard for official, whose prior Issue body
-            # was ignored by git. New runs immediately create alert_history.
-            basis[pipeline] = "first_seen_migration_fallback"
-            for row in all_rows:
-                if row.get("pipeline") == pipeline and row["freshness"]["fresh_activity"]:
-                    event_at = row.get("first_seen")
-                    events.append({
-                        "pipeline": pipeline,
-                        "stamp": "",
-                        "emitted_at": event_at,
-                        "event_kind": "first_seen_migration_fallback",
-                        "jobs": [{"canonical_job_key": row.get("canonical_job_key"), "url": row.get("url")}],
-                    })
+        basis[pipeline] = "alerts_and_new_discoveries"
 
         for event in events:
             emitted_at = parse_dt(event.get("emitted_at")) or alert_history.parse_stamp(str(event.get("stamp") or ""))
@@ -421,11 +406,9 @@ def alert_fresh_rows(
                 if previous is None or float(previous.get("activity_age_hours") or 999999) > activity_age:
                     chosen[stable] = row
     for row in all_rows:
-        if (row.get("pipeline") == "official" and row["freshness"]["fresh_activity"]
-                and visible_candidate(row, hard_excludes)):
+        if row["freshness"]["fresh_activity"] and visible_candidate(row, hard_excludes):
             stable = str(row.get("canonical_job_key") or coverage_reconcile.normalize_url(str(row.get("url") or "")))
             chosen[stable] = row
-    basis["official"] = "alerts_and_new_discoveries"
     return _sort_rows(chosen.values()), basis
 
 
