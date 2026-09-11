@@ -1,39 +1,38 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-10_1501
+# ATS / LinkedIn board — 7-day view — 2026-09-11_0000
 
-- Updated (PT): 2026-09-10 08:03 PDT
-- Snapshot (UTC): 2026-09-10T15:03:37.137635+00:00
+- Updated (PT): 2026-09-10 17:02 PDT
+- Snapshot (UTC): 2026-09-11T00:02:53.717991+00:00
 - Last 24 hours: 12
-- Last 3 days: 57
+- Last 3 days: 56
 
 If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) instead of this file.
 
 ## Run stats
 
-- Source raw: ATS 2691 / Linkedin 863 / Indeed 994 / Glassdoor 153 (Big Company Official runs separately)
-- Funnel: after dedup 4701 -> after company filter 4599 -> after hard filter 4244 -> after role+seniority prefilter 1122 | dropped 3535
-- LLM usage: jobs scored 1 / API requests 1 / cache reused 335 (cross-pipeline 0) / rule fallback+overflow 482 (thin local cards 482, recency-gated 0, overflow 0, new/changed 1)
-- LLM cost: model gpt-5.6-terra / API requests 1 / jobs scored 1 / tokens input 3687 (cached 0) / output 309 (reasoning 53) / estimated cost $0.0111
-- Output sizing: Tier A 9 / Tier B 48 / A+B actionable 57 / Shown in latest.md 57 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 1 / 1-3d 350 / newly-disc 461 / 3-7d 5 / >7d 1
+- Source raw: ATS 2685 / Linkedin 863 / Indeed 994 / Glassdoor 153 (Big Company Official runs separately)
+- Funnel: after dedup 4695 -> after company filter 4593 -> after hard filter 4239 -> after role+seniority prefilter 1120 | dropped 3530
+- LLM usage: jobs scored 3 / API requests 2 / cache reused 334 (cross-pipeline 0) / rule fallback+overflow 482 (thin local cards 482, recency-gated 0, overflow 0, new/changed 3)
+- LLM cost: model gpt-5.6-terra / API requests 2 / jobs scored 3 / tokens input 9471 (cached 0) / output 721 (reasoning 81) / estimated cost $0.0276
+- Output sizing: Tier A 8 / Tier B 49 / A+B actionable 57 / Shown in latest.md 57 (no hard cap)
+- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 341 / newly-disc 461 / 3-7d 16 / >7d 1
 - LinkedIn vs Indeed exact coverage: overlap 0 / LinkedIn unique 833 of 833 / Indeed unique 941 of 941
 - Linkedin top exact-unique queries: ai engineer=230, software engineer=221, software engineer i=80, associate software engineer=79, ml engineer=77
 - Indeed top exact-unique queries: ai engineer=249, software engineer=248, backend engineer=86, llm engineer=83, ml engineer=82
 
-## Tier A - apply now / referral (9)
+## Tier A - apply now / referral (8)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 91 | cached_llm | indeed | Global Shop Solutions | ASSOCIATE SOFTWARE ENGINEER | The Woodlands, TX, US | 2026-09-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=cbaffb936e54e0ff) |
 | 90 | cached_llm | indeed | MAZO Capital Solutions | Software Engineer | Irvine, CA, US | 2026-09-08 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=2465dc0b64b9750f) |
 | 89 | cached_llm | indeed | Aptean | Associate Product Engineer | Alpharetta, GA, US | 2026-09-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=02670ab6505e0f8d) |
-| 88 | cached_llm | indeed |  | Software Engineer, Applied AI | New York, NY, US | 2026-09-08 | 1to3d | high | ai | - | unreviewed | not_dedicated | yes | [open](https://jobs.ashbyhq.com/kaizenlabs/fea8a38f-0f22-47d6-bbf9-a72ef6bb215c?utm_source=0xOQZDab3j) |
 | 88 | cached_llm | indeed | Giftogram | Junior Full Stack Developer | Whippany, NJ, US | 2026-09-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=0a1abfbf6cbb3f84) |
 | 88 | cached_llm | indeed | OLD MISSION | Junior Trading Operations/DevOps Engineer | Chicago, IL, US | 2026-09-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=9c41046f73e65f21) |
 | 88 | cached_llm | indeed | Zebra Technologies | Software Engineer, I (Fullstack) | Holtsville, NY, US | 2026-09-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=a678ce655b65fe27) |
 | 88 | cached_llm | indeed | Adheris | AI Platform Engineer | Woburn, MA, US | 2026-09-07 | 1to3d | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=c8f7e1f317356264) |
 | 86 | cached_llm | indeed | micro1 | Software Engineer, Internal Platforms | Remote, US | 2026-09-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=99eef43cbe7420b4) |
 
-## Tier B - worth applying (48)
+## Tier B - worth applying (49)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -85,3 +84,4 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 75 | rule_fallback | linkedin | Thomson Reuters | Software Engineer - AI – CoCounsel Forward Deployed Engineering | Eagan, MN | 2026-09-09 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ai-%E2%80%93-cocounsel-forward-deployed-engineering-at-thomson-reuters-4402785502) |
 | 75 | rule_fallback | linkedin | Thomson Reuters | Software Engineer - AI – CoCounsel Forward Deployed Engineering | Frisco, TX | 2026-09-09 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ai-%E2%80%93-cocounsel-forward-deployed-engineering-at-thomson-reuters-4402791487) |
 | 75 | rule_fallback | linkedin | Thomson Reuters | Software Engineer - AI – CoCounsel Forward Deployed Engineering | Ann Arbor, MI | 2026-09-09 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ai-%E2%80%93-cocounsel-forward-deployed-engineering-at-thomson-reuters-4442903043) |
+| 88 | cached_llm | indeed |  | Software Engineer, Applied AI | New York, NY, US | 2026-09-08 | 3to7d | high | ai | - | unreviewed | not_dedicated | yes | [open](https://jobs.ashbyhq.com/kaizenlabs/fea8a38f-0f22-47d6-bbf9-a72ef6bb215c?utm_source=0xOQZDab3j) |

@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-09-10 08:01 PDT
-- Snapshot (UTC): 2026-09-10T15:01:16.515721+00:00
-- Jobs: 57 (Tier A/B only)
+- Updated (PT): 2026-09-10 17:00 PDT
+- Snapshot (UTC): 2026-09-11T00:00:55.268093+00:00
+- Jobs: 56 (Tier A/B only)
 - Last 24 hours: 12
-- Last 3 days: 57
+- Last 3 days: 56
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -14,7 +14,6 @@ The 7-day dump is `latest.md`.
 | A | 91 | indeed | Global Shop Solutions | ASSOCIATE SOFTWARE ENGINEER | The Woodlands, TX, US | 2026-09-06 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=cbaffb936e54e0ff) |
 | A | 90 | indeed | MAZO Capital Solutions | Software Engineer | Irvine, CA, US | 2026-09-08 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2465dc0b64b9750f) |
 | A | 89 | indeed | Aptean | Associate Product Engineer | Alpharetta, GA, US | 2026-09-07 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=02670ab6505e0f8d) |
-| A | 88 | indeed |  | Software Engineer, Applied AI | New York, NY, US | 2026-09-08 | 1to3d | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/kaizenlabs/fea8a38f-0f22-47d6-bbf9-a72ef6bb215c?utm_source=0xOQZDab3j) |
 | A | 88 | indeed | Giftogram | Junior Full Stack Developer | Whippany, NJ, US | 2026-09-07 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=0a1abfbf6cbb3f84) |
 | A | 88 | indeed | OLD MISSION | Junior Trading Operations/DevOps Engineer | Chicago, IL, US | 2026-09-07 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=9c41046f73e65f21) |
 | A | 88 | indeed | Zebra Technologies | Software Engineer, I (Fullstack) | Holtsville, NY, US | 2026-09-07 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a678ce655b65fe27) |
