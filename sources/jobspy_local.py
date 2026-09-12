@@ -10,7 +10,9 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from importlib.metadata import PackageNotFoundError, version
 from typing import Any, Callable, Dict, List
-from urllib.parse import quote, urlsplit
+from urllib.parse import parse_qs, quote, urljoin, urlsplit
+
+from bs4 import BeautifulSoup
 
 from .local_search import query_stat, source_queries
 from .schema import is_aggregator_url, is_us_location, make_job, normalize_space
@@ -163,6 +165,49 @@ def _fetch_records(source: str, keyword: str, budget: int, hours: int, stat: Dic
     return records
 
 
+def _scrapling_glassdoor_records(keyword: str, hours: int) -> List[Dict[str, Any]]:
+    """Recover the static Glassdoor result cards after its old location API fails."""
+    try:
+        from scrapling.fetchers import Fetcher
+    except ImportError as exc:
+        raise RuntimeError("Scrapling is not installed") from exc
+    url = (
+        "https://www.glassdoor.com/Job/jobs.htm?"
+        f"sc.keyword={quote(keyword, safe='')}&locT=N&locId=1&fromAge={max(1, hours // 24)}"
+    )
+    response = Fetcher.get(
+        url, impersonate="chrome", stealthy_headers=True, retries=0, timeout=25,
+    )
+    status = int(getattr(response, "status", 0) or 0)
+    if status != 200:
+        raise RuntimeError(f"Glassdoor static search HTTP {status}")
+    return _parse_glassdoor_cards(getattr(response, "body", b""))
+
+
+def _parse_glassdoor_cards(body: str | bytes) -> List[Dict[str, Any]]:
+    soup = BeautifulSoup(body, "html.parser")
+    records: List[Dict[str, Any]] = []
+    for card in soup.select('[data-test="job-card-wrapper"]'):
+        anchor = card.select_one('a[data-test="job-title"]')
+        href = urljoin("https://www.glassdoor.com", str(anchor.get("href") or "")) if anchor else ""
+        job_id = (parse_qs(urlsplit(href).query).get("jl") or [""])[0]
+        company = card.select_one('[class*="compactEmployerName"]')
+        location = card.select_one('[data-test="emp-location"]')
+        snippet = card.select_one('[data-test="descSnippet"]')
+        if not anchor or not href:
+            continue
+        records.append({
+            "id": job_id,
+            "title": anchor.get_text(" ", strip=True),
+            "company": company.get_text(" ", strip=True) if company else "",
+            "location": location.get_text(" ", strip=True) if location else "",
+            "job_url": href,
+            "description": snippet.get_text(" ", strip=True) if snippet else "",
+            "enrichment_failure_reason": "glassdoor_detail_http_403_static_card_only",
+        })
+    return records
+
+
 def _value(value: Any) -> str:
     if value is None:
         return ""
@@ -193,6 +238,9 @@ def _normalize(source: str, record: Dict[str, Any], fetched_at: str) -> Dict[str
     direct = _value(record.get("job_url_direct"))
     if urlsplit(direct).scheme in {"http", "https"} and not is_aggregator_url(direct):
         row["application_url"] = direct
+    if record.get("enrichment_failure_reason"):
+        row["enrichment_status"] = "unresolved"
+        row["enrichment_failure_reason"] = _value(record["enrichment_failure_reason"])
     return row
 
 
@@ -255,16 +303,37 @@ def scrape(
                 if errors and (records or index > 0):
                     raise RuntimeError("; ".join(errors[-2:]))
             except Exception as exc:  # JobSpy wraps board-specific transport errors.
-                stat["stop_reason"] = "source_error"
-                stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
-                stats.append(stat)
-                return {
-                    "status": "blocked",
-                    "reason": f"{type(exc).__name__}: {exc}",
-                    "jobs": rows,
-                    "query_stats": stats,
-                    "provenance": source_provenance,
-                }
+                if source == "glassdoor" and scrape_jobs_func is None:
+                    try:
+                        records = _scrapling_glassdoor_records(keyword, hours)
+                    except Exception as fallback_exc:  # noqa: BLE001 - preserve last-good snapshot
+                        records = []
+                        exc = fallback_exc
+                    if records:
+                        stat["pages_fetched"] = 1
+                        stat["stop_reason"] = "static_html_fallback"
+                        stat["fallback_reason"] = f"JobSpy failed before results: {type(exc).__name__}: {exc}"
+                        source_provenance["implementation"] = "python-jobspy+scrapling-static"
+                    else:
+                        stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
+                        stats.append(stat)
+                        return {
+                            "status": "blocked",
+                            "reason": f"{type(exc).__name__}: {exc}",
+                            "jobs": rows,
+                            "query_stats": stats,
+                            "provenance": source_provenance,
+                        }
+                else:
+                    stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
+                    stats.append(stat)
+                    return {
+                        "status": "blocked",
+                        "reason": f"{type(exc).__name__}: {exc}",
+                        "jobs": rows,
+                        "query_stats": stats,
+                        "provenance": source_provenance,
+                    }
 
             stat["raw_jobs"] = len(records)
             if not records:

@@ -134,7 +134,7 @@ class OfficialAdapterTests(unittest.TestCase):
         self.assertEqual({"locations": ["remote-us", "austin"]}, _us_facet(facets))
 
     @patch("sources.careers.workday.time.sleep")
-    def test_workday_skips_detail_only_for_title_prefilter_rejections(self, _sleep):
+    def test_workday_enriches_every_discovered_listing(self, _sleep):
         self.assertTrue(official_careers._workday_detail_title_filter("Data Scientist"))
         self.assertTrue(official_careers._workday_detail_title_filter("Computer Scientist II"))
         listing = {"jobPostings": [
@@ -151,11 +151,18 @@ class OfficialAdapterTests(unittest.TestCase):
                 "postedOn": "Posted Today",
             },
         ], "total": 2}
+        senior_detail = {"jobPostingInfo": {
+            "jobReqId": "JR-S", "jobDescription": "<p>Lead APIs</p>",
+            "startDate": "2026-09-01", "location": "Austin, Texas, United States",
+        }}
         detail = {"jobPostingInfo": {
             "jobReqId": "JR-J", "jobDescription": "<p>Build APIs</p>",
             "startDate": "2026-09-01", "location": "Seattle, Washington, United States",
         }}
-        session = Session(posts=[Response(payload=listing)], gets=[Response(payload=detail)])
+        session = Session(
+            posts=[Response(payload=listing)],
+            gets=[Response(payload=senior_detail), Response(payload=detail)],
+        )
         result = scrape_workday(
             session,
             company="Example",
@@ -168,10 +175,9 @@ class OfficialAdapterTests(unittest.TestCase):
             detail_title_filter=official_careers._workday_detail_title_filter,
         )
         self.assertEqual(["JR-S", "JR-J"], [job["job_id"] for job in result["jobs"]])
-        self.assertEqual(1, sum(method == "GET" for method, _url, _kwargs in session.calls))
-        self.assertEqual(1, result["detail_fetches"])
-        self.assertEqual(1, result["detail_prefilter_skipped"])
-        self.assertEqual("skipped_prefilter:new", result["jobs"][0]["detail_cache_status"])
+        self.assertEqual(2, sum(method == "GET" for method, _url, _kwargs in session.calls))
+        self.assertEqual(2, result["detail_fetches"])
+        self.assertEqual(0, result["detail_prefilter_skipped"])
         self.assertEqual("Build APIs", result["jobs"][1]["description"])
 
     def test_radancy_parses_server_rendered_us_table(self):

@@ -29,6 +29,19 @@ class Frame:
 
 
 class LocalSourceTests(unittest.TestCase):
+    def test_glassdoor_static_cards_preserve_partial_discovery(self) -> None:
+        records = jobspy_local._parse_glassdoor_cards('''
+          <div data-test="job-card-wrapper">
+            <span class="EmployerProfile_compactEmployerName__x">Example</span>
+            <a data-test="job-title" href="/job-listing/software-engineer-JV.htm?jl=42">Software Engineer</a>
+            <span data-test="emp-location">Austin, TX</span>
+            <div data-test="descSnippet">Build APIs and services.</div>
+          </div>
+        ''')
+        self.assertEqual("42", records[0]["id"])
+        self.assertEqual("Example", records[0]["company"])
+        self.assertEqual("glassdoor_detail_http_403_static_card_only", records[0]["enrichment_failure_reason"])
+
     def test_jobspy_rows_use_shared_schema_and_keep_direct_apply_url(self) -> None:
         calls = []
 

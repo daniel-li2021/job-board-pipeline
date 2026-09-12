@@ -20,7 +20,6 @@ from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budge
 PAGE_SIZE = 20
 SLEEP_S = 0.25
 DETAIL_SLEEP_S = 0.12
-MAX_DETAILS = 200
 DEFAULT_QUERIES = ROLE_SEARCH_QUERIES
 EXTRA_QUERY_MAX_PAGES = 3
 
@@ -144,7 +143,7 @@ def scrape_oracle_hcm(
                     posted = str(decision.cached.get("posted_date") or posted)
                     detail_reused += 1
                 detail_fetched = False
-                if fetch_details and decision.should_fetch and detail_fetches < MAX_DETAILS:
+                if fetch_details and decision.should_fetch:
                     try:
                         det_payload = http_get(
                             session,

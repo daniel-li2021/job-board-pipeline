@@ -92,7 +92,7 @@ def scrape_mathworks(
                 official = urljoin(SEARCH, link.get("href") or "")
                 title = normalize_space(link.get_text(" ", strip=True))
                 description = posted = ""
-                if fetch_details and details < 100:
+                if fetch_details:
                     try:
                         detail = http_get(
                             session,

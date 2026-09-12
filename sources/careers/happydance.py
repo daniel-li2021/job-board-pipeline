@@ -101,7 +101,7 @@ def scrape_happydance(
                 path = path or next((item.get("Url") for item in urls if isinstance(item, dict)), "")
                 official = urljoin(base_url.rstrip("/") + "/", path or f"jobs/{dedup_id}/")
                 description = posted = ""
-                if fetch_details and details < 100:
+                if fetch_details:
                     try:
                         detail = http_get(session, official, label=f"{company} career detail")
                         description, posted = _rsc_detail(detail.text)

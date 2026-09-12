@@ -65,7 +65,7 @@ class LinkedInDetailTests(unittest.TestCase):
         session.get.return_value = response
 
         stats = linkedin_local.enrich_details(
-            [first, second], previous_jobs=[cached], session=session, limit=5,
+            [first, second], previous_jobs=[cached], session=session,
         )
 
         self.assertEqual(1, stats["cache_reused"])
@@ -89,7 +89,7 @@ class LinkedInDetailTests(unittest.TestCase):
         session.get.return_value = response
 
         with patch.object(linkedin_local, "_scrapling_fetch_html", return_value=None):
-            stats = linkedin_local.enrich_details([row], session=session, limit=5)
+            stats = linkedin_local.enrich_details([row], session=session)
 
         self.assertIn("HTTP 429", stats["blocked"])
         self.assertEqual("Backend Engineer", row["title"])
@@ -106,7 +106,7 @@ class LinkedInDetailTests(unittest.TestCase):
         html = '<div class="description__text">Build production Python services.</div>'
 
         with patch.object(linkedin_local, "_scrapling_fetch_html", return_value=html):
-            stats = linkedin_local.enrich_details([row], session=session, limit=5)
+            stats = linkedin_local.enrich_details([row], session=session)
 
         self.assertEqual("Build production Python services.", row["description"])
         self.assertEqual(1, stats["scrapling_requests"])
@@ -118,6 +118,8 @@ class DashboardSearchTests(unittest.TestCase):
         self.assertIn("jobSearch", dashboard.HTML_TEMPLATE)
         self.assertIn("matchesSearch", dashboard.HTML_TEMPLATE)
         self.assertIn("Search title or company", dashboard.HTML_TEMPLATE)
+        self.assertIn("healthIndicator", dashboard.HTML_TEMPLATE)
+        self.assertIn("D.health?.components", dashboard.HTML_TEMPLATE)
 
     def test_search_is_applied_without_replacing_main_view_state(self) -> None:
         self.assertIn("activeMainView", dashboard.HTML_TEMPLATE)

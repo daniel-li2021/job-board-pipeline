@@ -15,8 +15,7 @@ ROLE_SEARCH_QUERIES = [
     "platform engineer",
     "full stack engineer",
     "forward deployed engineer",
-    # Keep the broadest query last so per-run detail limits do not consume the
-    # entire budget before the specialty coverage queries execute.
+    # Keep the broadest query last so specialty discovery runs first.
     "software engineer",
 ]
 

@@ -21,7 +21,6 @@ DETAIL_URL = "https://api.smartrecruiters.com/v1/companies/{slug}/postings/{pid}
 PAGE_SIZE = 100
 SLEEP_S = 0.2
 DETAIL_SLEEP_S = 0.12
-MAX_DETAILS = 200
 DEFAULT_QUERIES = ROLE_SEARCH_QUERIES
 
 
@@ -123,7 +122,7 @@ def scrape_smartrecruiters(
                     location = str(decision.cached.get("location") or location)
                     detail_reused += 1
                 detail_fetched = False
-                if fetch_details and decision.should_fetch and detail_fetches < MAX_DETAILS:
+                if fetch_details and decision.should_fetch:
                     try:
                         det = http_get(
                             session,

@@ -21,7 +21,6 @@ from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budge
 SEARCH = "https://jobs.sap.com/search/"
 SLEEP_S = 0.3
 DETAIL_SLEEP_S = 0.12
-MAX_DETAILS = 200
 PAGE_SIZE = 25
 DEFAULT_QUERIES = ROLE_SEARCH_QUERIES + ["cloud developer"]
 QUERY_PAGE_CAPS = {"data scientist": 3, "cloud developer": 3}
@@ -127,7 +126,7 @@ def scrape_sap(
                     location = str(decision.cached.get("location") or location)
                     detail_reused += 1
                 detail_fetched = False
-                if fetch_details and decision.should_fetch and detail_fetches < MAX_DETAILS:
+                if fetch_details and decision.should_fetch:
                     try:
                         det = http_get(session, official, label="sap detail")
                         soup = _soup(det.text)

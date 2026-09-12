@@ -491,6 +491,14 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
         review_entry = review_state.get(job["canonical_job_key"], {})
         job["review_status"] = review_entry.get("status", "unreviewed") if isinstance(review_entry, dict) else "unreviewed"
 
+    enrichment_needed = sum(
+        len(str(job.get("description") or "").strip()) < board.THIN_JD_CHARS for job in deduped
+    )
+    peer_jds_resolved = board.enrich_from_exact_peers(deduped, [
+        ("board", board.load_store_path(OUTPUT_DIR / "board" / "jobs.json")),
+        ("syncareer", board.load_syncareer_peer_store()),
+    ])
+
     drops: Counter = Counter()
     after_company: List[Dict[str, str]] = []
     for job in deduped:
@@ -578,11 +586,12 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
         recency_dist[job.get("recency_bucket", "gt7d")] += 1
 
     per_company = Counter(j.get("company", "") for j in raw_jobs)
+    raw_payload = load_raw_payload()
     stats = {
         "source_raw": dict(per_company),
         "query_diagnostics": {
             str(company.get("company_id") or company.get("company") or "unknown"): company.get("query_diagnostics")
-            for company in load_raw_payload().get("per_company", [])
+            for company in raw_payload.get("per_company", [])
             if isinstance(company, dict) and company.get("query_diagnostics")
         },
         "funnel": {
@@ -607,6 +616,27 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
         },
         "recency": recency_dist,
         "screen_method": screen_method,
+        "failures": {
+            "scrape": {
+                str(company.get("company_id") or company.get("company") or "unknown"): company.get("errors")
+                for company in raw_payload.get("per_company", [])
+                if isinstance(company, dict) and company.get("errors")
+            },
+            "llm": llm_errors,
+        },
+        "enrichment": {
+            "discovered": len(raw_jobs),
+            "needed": enrichment_needed,
+            "source_jds_available": sum(
+                len(str(job.get("description") or "").strip()) >= board.THIN_JD_CHARS
+                for job in raw_jobs
+            ),
+            "exact_peer_resolved": peer_jds_resolved,
+            "remaining_no_jd": sum(
+                len(str(job.get("description") or "").strip()) < board.THIN_JD_CHARS
+                for job in raw_jobs
+            ),
+        },
     }
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
     (RUNS_DIR / f"{stamp}_stats.json").write_text(

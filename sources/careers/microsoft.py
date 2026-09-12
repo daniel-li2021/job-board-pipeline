@@ -33,7 +33,6 @@ DOMAIN = "microsoft.com"
 PAGE_SIZE = 10
 SLEEP_S = 0.25
 DETAIL_SLEEP_S = 0.12
-MAX_DETAILS = 200
 
 DEFAULT_QUERIES = ROLE_SEARCH_QUERIES
 
@@ -151,7 +150,7 @@ def scrape_pcsx(
                     location = str(decision.cached.get("location") or location)
                     detail_reused += 1
                 detail_fetched = False
-                if fetch_details and decision.should_fetch and pid and detail_fetches < MAX_DETAILS:
+                if fetch_details and decision.should_fetch and pid:
                     try:
                         det = http_get(
                             session,

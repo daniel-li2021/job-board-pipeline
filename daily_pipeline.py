@@ -976,17 +976,41 @@ def run() -> None:
         seen_ids = load_seen_ids()
         known_ids = seen_ids
     new_ids = [jid for jid in id_to_summary if jid not in known_ids]
+    unresolved_known_ids = [
+        jid for jid in id_to_summary
+        if jid in watchlist
+        and len(str(watchlist[jid].get("description") or "").strip()) < board.THIN_JD_CHARS
+    ] if alert_mode else []
+    processing_ids = new_ids + unresolved_known_ids
 
     # Phase 3 + 5: fetch details + enrich for new jobs only.
     raw_rows: List[Dict[str, str]] = []
-    for jid in new_ids:
+    detail_api_resolved = 0
+    for jid in processing_ids:
         detail = fetch_job_detail(session, jid, referer_url=SEARCH_BASE_URL)
         summary = id_to_summary[jid]
         if not detail:
             detail = summary
+        else:
+            detail_api_resolved += 1
         row = normalize_job_row(summary, detail, id_to_keywords.get(jid, []), targets)
+        if len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS:
+            row["enrichment_status"] = "unresolved"
+            row["enrichment_failure_reason"] = "syncareer_detail_missing_or_thin"
         raw_rows.append(row)
         time.sleep(DETAIL_SLEEP_SECONDS)
+
+    enrichment_needed = sum(
+        len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS for row in raw_rows
+    )
+    coverage_reconcile.annotate_jobs(raw_rows, "syncareer")
+    official_exact_resolved = enrichment_needed - sum(
+        len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS for row in raw_rows
+    )
+    peer_jds_resolved = board.enrich_from_exact_peers(raw_rows, [
+        ("official", board.load_official_peer_store()),
+        ("board", board.load_store_path(OUTPUT_DIR / "board" / "jobs.json")),
+    ])
 
     # Phase 4: hard filters (always applied).
     kept_rows: List[Dict[str, str]] = []
@@ -1152,7 +1176,18 @@ def run() -> None:
                     "shown": len(alert_rows),
                 },
                 "screen_method": shared_screen_method,
+                "failures": {"llm": llm_errors},
                 "query_diagnostics": query_diagnostics,
+                "enrichment": {
+                    "needed": enrichment_needed,
+                    "detail_api_resolved": detail_api_resolved,
+                    "official_exact_resolved": official_exact_resolved,
+                    "exact_peer_resolved": peer_jds_resolved,
+                    "remaining_no_jd": sum(
+                        len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS
+                        for row in raw_rows
+                    ),
+                },
             },
             indent=2,
             ensure_ascii=False,
@@ -1165,7 +1200,9 @@ def run() -> None:
     if alert_mode:
         kept_ids = {row["job_id"] for row in kept_rows}
         for row in kept_rows:
+            previous = dict(watchlist.get(row["job_id"], {}))
             watchlist[row["job_id"]] = {
+                **previous,
                 "job_id": row["job_id"],
                 "title": row.get("title", ""),
                 "company": row.get("company", ""),
@@ -1183,8 +1220,11 @@ def run() -> None:
                 "description": row.get("description", ""),
                 "requirements": row.get("requirements", ""),
                 "snippet": row.get("snippet", ""),
+                "enrichment_method": row.get("enrichment_method", ""),
+                "enrichment_status": row.get("enrichment_status", ""),
+                "enrichment_failure_reason": row.get("enrichment_failure_reason", ""),
                 "kept": "yes",
-                "first_seen": first_seen_iso,
+                "first_seen": str(previous.get("first_seen") or first_seen_iso),
                 "coverage_status": row.get("coverage_status", ""),
                 "canonical_source": row.get("canonical_source", ""),
                 "canonical_job_key": row.get("canonical_job_key", ""),
@@ -1208,7 +1248,9 @@ def run() -> None:
             canonical_key = coverage_reconcile.canonical_job_key(
                 coverage_reconcile.normalize_syncareer_job(row)
             )
+            previous = dict(watchlist.get(row["job_id"], {}))
             watchlist[row["job_id"]] = {
+                **previous,
                 "job_id": row["job_id"],
                 "title": row.get("title", ""),
                 "company": row.get("company", ""),
@@ -1216,13 +1258,13 @@ def run() -> None:
                 "posted_date": row.get("posting_date", ""),
                 "url": row.get("job_url", ""),
                 "kept": "no",
-                "first_seen": first_seen_iso,
+                "first_seen": str(previous.get("first_seen") or first_seen_iso),
                 "coverage_status": "out_of_scope",
                 "canonical_source": "syncareer",
                 "canonical_job_key": canonical_key,
                 "duplicate_of": "",
                 "source_snapshot_at": first_seen_iso,
-                "review_status": "unreviewed",
+                "review_status": str(previous.get("review_status") or "unreviewed"),
                 "source_pipeline": "syncareer",
             }
         watchlist = prune_watchlist(watchlist, now=now.astimezone(timezone.utc))

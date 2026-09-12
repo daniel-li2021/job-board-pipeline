@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import gzip
 import json
 
 from state_io import atomic_write, read_json
@@ -121,8 +122,6 @@ RULE_EXCEPTIONAL_FOR_LLM = 72.0
 STRONG_SENIORITY_FITS = {"good", "strong", "realistic", "early_career"}
 
 LOCAL_SOURCES = ["linkedin", "indeed", "glassdoor"]
-DIRECT_ORIGINAL_LIMIT = 20
-
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
@@ -530,36 +529,83 @@ def verify_official(jobs: List[Dict[str, str]]) -> None:
 def _job_posting_json(html: str) -> Dict[str, Any]:
     from bs4 import BeautifulSoup
 
-    for node in BeautifulSoup(html, "html.parser").select('script[type="application/ld+json"]'):
+    soup = BeautifulSoup(html, "html.parser")
+    nodes = soup.select('script[type="application/ld+json"], script#__NEXT_DATA__')
+
+    def postings(value: Any) -> List[Dict[str, Any]]:
+        found: List[Dict[str, Any]] = []
+        if isinstance(value, dict):
+            types = value.get("@type")
+            if types == "JobPosting" or isinstance(types, list) and "JobPosting" in types:
+                found.append(value)
+            elif len(str(value.get("description") or "")) >= THIN_JD_CHARS and (
+                value.get("jobTitle") or value.get("title")
+            ):
+                found.append({**value, "title": value.get("title") or value.get("jobTitle")})
+            for child in value.values():
+                found.extend(postings(child))
+        elif isinstance(value, list):
+            for child in value:
+                found.extend(postings(child))
+        return found
+
+    for node in nodes:
         try:
             payload = json.loads(node.get_text())
         except (TypeError, json.JSONDecodeError):
             continue
-        values = payload if isinstance(payload, list) else [payload]
-        expanded = []
-        for value in values:
-            expanded.append(value)
-            graph = value.get("@graph") if isinstance(value, dict) else None
-            if isinstance(graph, list):
-                expanded.extend(graph)
-        for value in expanded:
-            if isinstance(value, dict) and value.get("@type") == "JobPosting":
-                return value
+        found = postings(payload)
+        if found:
+            return found[0]
     return {}
+
+
+def _scrapling_fetch(url: str) -> Tuple[str, str, str]:
+    try:
+        from scrapling.fetchers import Fetcher
+    except ImportError:
+        return "", url, "scrapling_unavailable"
+    try:
+        response = Fetcher.get(
+            url, impersonate="chrome", stealthy_headers=True, retries=0, timeout=25,
+        )
+    except Exception as exc:  # noqa: BLE001 - optional fallback
+        return "", url, f"scrapling_error:{type(exc).__name__}"
+    status = int(getattr(response, "status", 0) or 0)
+    final_url = str(getattr(response, "url", "") or url)
+    body = getattr(response, "body", b"")
+    html = body.decode("utf-8", errors="replace") if isinstance(body, bytes) else str(body or "")
+    return (html if status == 200 else ""), final_url, ("" if status == 200 else f"scrapling_http_{status}")
 
 
 def resolve_exposed_originals(
     jobs: List[Dict[str, Any]], session: requests.Session, store: Dict[str, Dict[str, Any]]
-) -> int:
-    """Resolve only explicit aggregator application links, with a hard request cap."""
+) -> Dict[str, Any]:
+    """Resolve every thin job that exposes an official or application URL."""
     cached = {
         (str(entry.get("source") or ""), str(entry.get("job_id") or "")): entry
         for entry in store.values() if entry.get("direct_original_fetched")
     }
-    attempts = 0
+    stats: Counter = Counter()
+    reasons: Counter = Counter()
+    blocked_http_domains: set[str] = set()
+    last_request: Dict[str, float] = {}
     for job in jobs:
-        application_url = str(job.get("application_url") or "")
-        if job.get("original_resolved") or not application_url or attempts >= DIRECT_ORIGINAL_LIMIT:
+        if len(str(job.get("description") or "").strip()) >= THIN_JD_CHARS:
+            continue
+        stats["needed"] += 1
+        urls = [
+            str(job.get("official_url") or ""),
+            str(job.get("application_url") or ""),
+        ]
+        source_url = str(job.get("source_url") or "")
+        if looks_official(source_url):
+            urls.append(source_url)
+        application_url = next((url for url in urls if urlsplit(url).scheme in {"http", "https"}), "")
+        if not application_url:
+            job["enrichment_status"] = "unresolved"
+            job["enrichment_failure_reason"] = "no_direct_or_official_url"
+            reasons["no_direct_or_official_url"] += 1
             continue
         prior = cached.get((str(job.get("source") or ""), str(job.get("job_id") or "")))
         try:
@@ -569,7 +615,7 @@ def resolve_exposed_originals(
             fresh = datetime.now(timezone.utc) - fetched_at.astimezone(timezone.utc) <= timedelta(days=DETAIL_STALE_DAYS)
         except (TypeError, ValueError):
             fresh = False
-        if prior and prior.get("application_url") == application_url and fresh:
+        if prior and len(str(prior.get("description") or "").strip()) >= THIN_JD_CHARS and fresh:
             for field in (
                 "official_url", "description", "posted_date", "updated_date", "date_confidence",
                 "direct_original_fetched_at",
@@ -578,23 +624,67 @@ def resolve_exposed_originals(
                     job[field] = prior[field]
             job["original_resolved"] = bool(job.get("official_url"))
             job["direct_original_fetched"] = True
+            job["enrichment_method"] = "direct_cache"
+            job["enrichment_status"] = "resolved" if len(str(job.get("description") or "")) >= THIN_JD_CHARS else "unresolved"
+            stats["cache_reused"] += 1
+            if job["enrichment_status"] == "resolved":
+                stats["jds_resolved"] += 1
             continue
-        attempts += 1
-        try:
-            response = session.get(application_url, timeout=15, allow_redirects=True)
-            response.raise_for_status()
-        except requests.RequestException:
+        host = urlsplit(application_url).netloc.lower()
+        html = ""
+        final_url = application_url
+        failure = ""
+        if host not in blocked_http_domains:
+            delay = 0.35 - (time.monotonic() - last_request.get(host, 0.0))
+            if delay > 0:
+                time.sleep(delay)
+            try:
+                response = session.get(application_url, timeout=15, allow_redirects=True)
+                stats["http_requests"] += 1
+                last_request[host] = time.monotonic()
+                final_url = response.url
+                if response.status_code == 429:
+                    blocked_http_domains.add(host)
+                    failure = "http_429"
+                elif response.status_code >= 400:
+                    failure = f"http_{response.status_code}"
+                else:
+                    html = response.text
+            except requests.RequestException:
+                stats["http_requests"] += 1
+                failure = "http_network_error"
+        else:
+            failure = "http_domain_blocked_after_429"
+        posting = _job_posting_json(html) if html else {}
+        method = "direct_http"
+        if not posting:
+            html, final_url, scrapling_failure = _scrapling_fetch(application_url)
+            stats["scrapling_requests"] += 1
+            posting = _job_posting_json(html) if html else {}
+            method = "scrapling_fetcher"
+            failure = scrapling_failure or ("structured_jd_not_found" if not posting else "")
+        final_host = urlsplit(final_url).netloc.lower()
+        if not final_host or is_aggregator_url(final_url):
+            failure = failure or "redirect_remained_aggregator"
+        elif final_url and (html or posting):
+            job["official_url"] = final_url
+            job["original_resolved"] = True
+        if not posting:
+            job["enrichment_status"] = "unresolved"
+            job["enrichment_failure_reason"] = failure or "structured_jd_not_found"
+            reasons[job["enrichment_failure_reason"]] += 1
             continue
-        host = urlsplit(response.url).netloc.lower()
-        if not host or is_aggregator_url(response.url):
-            continue
-        posting = _job_posting_json(response.text)
         if posting.get("description"):
             from bs4 import BeautifulSoup
 
             job["description"] = normalize_space(
                 BeautifulSoup(str(posting["description"]), "html.parser").get_text(" ")
             )
+            job["enrichment_method"] = method
+            job["enrichment_status"] = "resolved"
+            job.pop("enrichment_failure_reason", None)
+            stats["jds_resolved"] += 1
+            stats[f"{method}_resolved"] += 1
         if posting.get("title"):
             job["title"] = normalize_space(posting["title"])
         locations = posting.get("jobLocation") or []
@@ -619,11 +709,12 @@ def resolve_exposed_originals(
             job["date_confidence"] = "high"
         if posting.get("dateModified"):
             job["updated_date"] = to_iso_date(posting["dateModified"])
-        job["official_url"] = response.url
-        job["original_resolved"] = True
         job["direct_original_fetched"] = True
         job["direct_original_fetched_at"] = datetime.now(timezone.utc).isoformat()
-    return attempts
+    stats["remaining_no_jd"] = sum(
+        len(str(job.get("description") or "").strip()) < THIN_JD_CHARS for job in jobs
+    )
+    return {**dict(stats), "failure_reasons": dict(reasons)}
 
 
 # --------------------------------------------------------------------------
@@ -1007,7 +1098,6 @@ def parse_json_object(text: str) -> Optional[Dict[str, Any]]:
         return None
 
 
-LLM_MAX_CANDIDATES = 400  # safety cap on new/changed jobs sent to the LLM per run
 
 
 def llm_match_batch(
@@ -1378,11 +1468,9 @@ def score_survivors(
 
     model = llm_config.configured_model()
     counts["model"] = model
-    eligible_sorted = sorted(eligible, key=llm_dispatch_priority, reverse=True)
-    llm_pool = eligible_sorted[:LLM_MAX_CANDIDATES]
-    overflow = eligible_sorted[LLM_MAX_CANDIDATES:]
+    llm_pool = sorted(eligible, key=llm_dispatch_priority, reverse=True)
     counts["sent"] = len(llm_pool)
-    counts["overflow"] = len(overflow)
+    counts["overflow"] = 0
 
     decisions: Dict[str, Dict[str, Any]] = {}
     llm_ok = False
@@ -1434,11 +1522,6 @@ def score_survivors(
         else:
             _apply_rule_result(job, SCORE_FALLBACK, "Rule-based (missing from LLM response)")
             counts["rule"] += 1
-    for job in overflow:
-        # Deliberately NOT a cacheable LLM score — next run will retry.
-        _apply_rule_result(job, SCORE_OVERFLOW, "Rule-based (over LLM cap; retry next run)")
-        counts["rule"] += 1
-
     method = "cache+llm" if counts["reused"] else "llm"
     counts["jobs_scored"] = counts["llm"]
     return (method, errors, counts)
@@ -1607,6 +1690,19 @@ def load_syncareer_peer_store() -> Dict[str, Dict[str, Any]]:
         return {}
 
 
+def load_official_peer_store() -> Dict[str, Dict[str, Any]]:
+    """Use the Official store plus its current raw detail snapshot."""
+    store = load_store_path(OUTPUT_DIR / "official_careers" / "jobs.json")
+    try:
+        payload = json.loads(gzip.decompress((OUTPUT_DIR / "official_careers" / "raw.json.gz").read_bytes()))
+        for index, job in enumerate(payload.get("jobs") or []):
+            if isinstance(job, dict):
+                store[f"official-raw::{index}"] = job
+    except (OSError, ValueError, gzip.BadGzipFile):
+        pass
+    return store
+
+
 def enrich_from_exact_peers(
     jobs: List[Dict[str, Any]],
     peer_stores: List[Tuple[str, Dict[str, Dict[str, Any]]]],
@@ -1625,7 +1721,7 @@ def enrich_from_exact_peers(
 
     resolved = 0
     for job in jobs:
-        if not is_thin_local_discovery(job):
+        if len(str(job.get("description") or "").strip()) >= THIN_JD_CHARS:
             continue
         company = normalize_company_key(job.get("company", ""))
         for pipeline, by_company in grouped:
@@ -1641,6 +1737,9 @@ def enrich_from_exact_peers(
                 job["application_url"] = peer["application_url"]
             job["direct_original_fetched"] = True
             job["direct_original_fetched_at"] = peer.get("direct_original_fetched_at") or datetime.now(timezone.utc).isoformat()
+            job["enrichment_method"] = f"exact_peer:{pipeline}"
+            job["enrichment_status"] = "resolved"
+            job.pop("enrichment_failure_reason", None)
             resolved += 1
             break
     return resolved
@@ -1990,6 +2089,7 @@ ENTRY_DEFAULTS: Dict[str, Any] = {
     "first_seen": "", "last_seen": "",
     "discovery_queries": dict, "original_resolved": False,
     "application_url": "", "direct_original_fetched": False, "direct_original_fetched_at": "",
+    "enrichment_method": "", "enrichment_status": "", "enrichment_failure_reason": "",
 }
 
 
@@ -2025,7 +2125,10 @@ def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
         "application_url": job.get("application_url", ""),
         "direct_original_fetched": bool(job.get("direct_original_fetched")),
         "direct_original_fetched_at": job.get("direct_original_fetched_at", ""),
-        "description": job.get("description", "") if job.get("direct_original_fetched") else "",
+        "enrichment_method": job.get("enrichment_method", ""),
+        "enrichment_status": job.get("enrichment_status", ""),
+        "enrichment_failure_reason": job.get("enrichment_failure_reason", ""),
+        "description": job.get("description", ""),
         # pipeline status
         "filter_status": job.get("filter_status", "kept"),
         "drop_reason": job.get("drop_reason", ""),
@@ -2146,6 +2249,24 @@ def run() -> None:
         job["last_seen"] = now_iso
         job["recency_bucket"] = recency_bucket(job, now=now)
 
+    # Every discovered record gets the same enrichment chain before filtering.
+    enrichment_needed = sum(
+        len(str(job.get("description") or "").strip()) < THIN_JD_CHARS for job in deduped
+    )
+    coverage_reconcile.annotate_jobs(deduped, "board")
+    official_exact_resolved = enrichment_needed - sum(
+        len(str(job.get("description") or "").strip()) < THIN_JD_CHARS for job in deduped
+    )
+    official_peer_store = load_official_peer_store()
+    syncareer_peer_store = load_syncareer_peer_store()
+    peer_jds_resolved = enrich_from_exact_peers(
+        deduped,
+        [("official", official_peer_store), ("board", store), ("syncareer", syncareer_peer_store)],
+    )
+    direct_enrichment = resolve_exposed_originals(deduped, session, store)
+    deduped = collapse_cross_source(deduped)
+    coverage_reconcile.annotate_jobs(deduped, "board")
+
     # 5) Company filter. Only explicit exclusions are dropped here. Companies
     #    covered by a dedicated official adapter are reconciled exactly below;
     #    a company-wide flag must never suppress an unmatched requisition.
@@ -2189,30 +2310,7 @@ def run() -> None:
             job["drop_reason"] = reason
             drops[reason] += 1
 
-    # 7) Resolve exact original postings before the role/JD gate and scoring.
-    coverage_reconcile.annotate_jobs(after_hard, "board")
-    direct_original_attempts = resolve_exposed_originals(after_hard, session, store)
-    # Resolution can expose a shared employer URL only after the first dedup.
-    after_hard = collapse_cross_source(after_hard)
-    coverage_reconcile.annotate_jobs(after_hard, "board")
-    official_peer_store = load_store_path(OUTPUT_DIR / "official_careers" / "jobs.json")
-    syncareer_peer_store = load_syncareer_peer_store()
-    peer_jds_resolved = enrich_from_exact_peers(
-        after_hard,
-        [("official", official_peer_store), ("board", store), ("syncareer", syncareer_peer_store)],
-    )
-    deduped = [job for job in deduped if job.get("filter_status") != "kept"] + after_hard
-    # Employer JDs may add hard exclusions absent from aggregator cards.
-    verified = []
-    for job in after_hard:
-        keep, reason = hard_filter(job)
-        if keep:
-            verified.append(job)
-        else:
-            job["filter_status"] = "dropped"
-            job["drop_reason"] = reason
-            drops[reason] += 1
-    after_hard = verified
+    # 7) Enrichment already ran over the full discovered population above.
     for job in after_hard:
         job["recency_bucket"] = recency_bucket(job, now=now)
 
@@ -2341,10 +2439,26 @@ def run() -> None:
         },
         "recency": recency_dist,
         "screen_method": screen_method,
+        "failures": {"discovery": list(meta.get("errors") or []), "llm": llm_errors},
         "drops": dict(drops),
         "query_diagnostics": query_diagnostics,
         "local_source_coverage": source_coverage,
-        "direct_original_attempts": direct_original_attempts,
+        "enrichment": {
+            "needed": enrichment_needed,
+            "official_exact_resolved": official_exact_resolved,
+            "exact_peer_resolved": peer_jds_resolved,
+            "direct": direct_enrichment,
+            "remaining_no_jd": sum(
+                len(str(job.get("description") or "").strip()) < THIN_JD_CHARS
+                for job in deduped
+            ),
+            "failure_reasons": dict(Counter(
+                str(job.get("enrichment_failure_reason") or "no_enrichment_path")
+                for job in deduped
+                if len(str(job.get("description") or "").strip()) < THIN_JD_CHARS
+            )),
+        },
+        "direct_original_attempts": direct_enrichment.get("http_requests", 0) + direct_enrichment.get("scrapling_requests", 0),
         "peer_jds_resolved": peer_jds_resolved,
     }
     RUNS_DIR.mkdir(parents=True, exist_ok=True)

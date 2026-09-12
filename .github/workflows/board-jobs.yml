@@ -19,6 +19,7 @@ on:
       - "output/sources/linkedin.json"
       - "output/sources/glassdoor.json"
       - "output/sources/indeed.json"
+      - "output/sources/health.json"
 
 permissions:
   contents: write

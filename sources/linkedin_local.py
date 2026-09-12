@@ -42,7 +42,6 @@ EXPERIENCE_LEVEL_FILTER = "2,3"
 PAGE_SIZE = 10
 REQUEST_TIMEOUT = 25
 POLITE_SLEEP_SECONDS = 1.2
-DETAIL_REQUEST_LIMIT = 60
 DETAIL_CACHE_DAYS = 14
 DETAIL_SLEEP_SECONDS = 0.4
 
@@ -197,9 +196,8 @@ def enrich_details(
     *,
     previous_jobs: List[Dict[str, Any]] | None = None,
     session: requests.Session | None = None,
-    limit: int = DETAIL_REQUEST_LIMIT,
 ) -> Dict[str, Any]:
-    """Hydrate a bounded set of LinkedIn rows with the logged-out full JD.
+    """Hydrate every unresolved LinkedIn row with the logged-out full JD.
 
     Previous snapshot details are reused for 14 days when title/job_id are
     unchanged. A detail-endpoint block stops only enrichment; it does not
@@ -223,7 +221,8 @@ def enrich_details(
         "scrapling_requests": 0,
         "scrapling_jds_resolved": 0,
         "scrapling_error": "",
-        "request_limit": max(0, int(limit)),
+        "remaining_no_jd": 0,
+        "failure_reasons": {},
     }
     pending: List[Dict[str, Any]] = []
 
@@ -240,6 +239,8 @@ def enrich_details(
                 row["application_url"] = prior["application_url"]
             row["linkedin_detail_fetched_at"] = prior.get("linkedin_detail_fetched_at", "")
             row["linkedin_detail_resolved"] = True
+            row["enrichment_method"] = "linkedin_cache"
+            row["enrichment_status"] = "resolved"
             stats["cache_reused"] += 1
             stats["jds_resolved"] += 1
             if row.get("application_url"):
@@ -247,11 +248,11 @@ def enrich_details(
             continue
         if row.get("job_id"):
             pending.append(row)
+        else:
+            row["enrichment_status"] = "unresolved"
+            row["enrichment_failure_reason"] = "missing_job_id"
 
-    blocked_at = len(pending)
-    for index, row in enumerate(pending):
-        if stats["requests"] >= stats["request_limit"]:
-            break
+    for row in pending:
         stats["requests"] += 1
         try:
             response = session.get(
@@ -260,15 +261,18 @@ def enrich_details(
             )
         except requests.RequestException:
             stats["failed"] += 1
+            row["enrichment_status"] = "unresolved"
+            row["enrichment_failure_reason"] = "linkedin_http_network_error"
             continue
         try:
             _check_blocked(response)
         except SourceUnavailable as exc:
             if response.status_code in (401, 403, 429, 999) or response.status_code < 400:
                 stats["blocked"] = str(exc)
-                blocked_at = index
                 break
             stats["failed"] += 1
+            row["enrichment_status"] = "unresolved"
+            row["enrichment_failure_reason"] = f"linkedin_http_{response.status_code}"
             continue
 
         detail = _parse_detail(response.text)
@@ -276,39 +280,63 @@ def enrich_details(
         if detail["description"]:
             row["description"] = detail["description"]
             row["linkedin_detail_resolved"] = True
+            row["enrichment_method"] = "linkedin_http"
+            row["enrichment_status"] = "resolved"
+            row.pop("enrichment_failure_reason", None)
             stats["jds_resolved"] += 1
+        else:
+            row["enrichment_status"] = "unresolved"
+            row["enrichment_failure_reason"] = "linkedin_http_no_jd"
         if detail["application_url"]:
             row["application_url"] = detail["application_url"]
             stats["external_apply_urls"] += 1
         time.sleep(DETAIL_SLEEP_SECONDS)
 
-    # LinkedIn's ordinary client is often rate-limited mid-run. Reuse the same
-    # hard request budget and try the requested browser-impersonating fallback.
-    if stats["blocked"]:
-        for row in pending[blocked_at:]:
-            if stats["requests"] >= stats["request_limit"]:
-                break
+    # A LinkedIn block disables the ordinary path for the rest of this run.
+    # Scrapling attempts every still-unresolved row, including ordinary network
+    # failures and detail pages that returned no JD.
+    fallback_rows = [row for row in pending if not row.get("description")]
+    if fallback_rows:
+        for index, row in enumerate(fallback_rows):
             html = _scrapling_fetch_html(GUEST_DETAIL_URL.format(job_id=row["job_id"]))
             if html is None:
                 stats["scrapling_error"] = "Scrapling is not installed"
+                for remaining in fallback_rows[index:]:
+                    remaining["enrichment_status"] = "unresolved"
+                    remaining["enrichment_failure_reason"] = "scrapling_unavailable"
                 break
             stats["requests"] += 1
             stats["scrapling_requests"] += 1
             if not html:
                 stats["failed"] += 1
+                row["enrichment_status"] = "unresolved"
+                row["enrichment_failure_reason"] = "scrapling_fetch_failed"
                 continue
             detail = _parse_detail(html)
             row["linkedin_detail_fetched_at"] = now.isoformat()
             if detail["description"]:
                 row["description"] = detail["description"]
                 row["linkedin_detail_resolved"] = True
+                row["enrichment_method"] = "scrapling_fetcher"
+                row["enrichment_status"] = "resolved"
+                row.pop("enrichment_failure_reason", None)
                 stats["jds_resolved"] += 1
                 stats["scrapling_jds_resolved"] += 1
+            else:
+                row["enrichment_status"] = "unresolved"
+                row["enrichment_failure_reason"] = "scrapling_no_jd"
             if detail["application_url"]:
                 row["application_url"] = detail["application_url"]
                 stats["external_apply_urls"] += 1
             time.sleep(DETAIL_SLEEP_SECONDS)
 
+    unresolved = [row for row in rows if not row.get("description")]
+    reasons: Dict[str, int] = {}
+    for row in unresolved:
+        reason = str(row.get("enrichment_failure_reason") or "no_description")
+        reasons[reason] = reasons.get(reason, 0) + 1
+    stats["remaining_no_jd"] = len(unresolved)
+    stats["failure_reasons"] = reasons
     return stats
 
 

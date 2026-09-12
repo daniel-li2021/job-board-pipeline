@@ -101,8 +101,16 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
             "attempted_at": stamp, "collector": collector, "source_provenance": source_provenance,
         }
 
-    # Stage 1 stays cheap: obvious hard constraints only. This metric is kept
-    # independent of detail enrichment so query diagnostics remain comparable.
+    detail_enrichment: Dict[str, object] = {}
+    if name == "linkedin" and rows:
+        detail_candidates = [row for row in rows if not row.get("description")]
+        previous = read_source_snapshot_payload(name)
+        detail_enrichment = linkedin_local.enrich_details(
+            detail_candidates,
+            previous_jobs=list(previous.get("jobs") or []),
+        )
+
+    # Every discovered record reaches enrichment before filtering.
     stage1_survivors = []
     for row in rows:
         keep, _reason = board.hard_filter(row)
@@ -122,44 +130,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
         if row.get("description"):
             row["direct_original_fetched"] = True
 
-    detail_enrichment: Dict[str, object] = {}
     survivors = stage1_survivors
-    if name == "linkedin" and stage1_survivors:
-        # Only enrich rows whose title/seniority is already plausible. A thin
-        # card failing this gate remains in the source snapshot; we simply do
-        # not spend a detail request on it. Highest rule-fit rows go first when
-        # the request budget is exhausted.
-        detail_candidates = [
-            row for row in stage1_survivors
-            if board.role_seniority_prefilter(row)[0]
-        ]
-        detail_candidates.sort(key=lambda row: (
-            -float(board.rule_match_score(row) or 0),
-            str(row.get("company") or "").lower(),
-            str(row.get("title") or "").lower(),
-        ))
-        previous = read_source_snapshot_payload(name)
-        detail_enrichment = linkedin_local.enrich_details(
-            detail_candidates,
-            previous_jobs=list(previous.get("jobs") or []),
-        )
-
-        # Mark newly enriched LinkedIn rows too; the generic pass above covered
-        # only descriptions that arrived with the search result.
-        for row in detail_candidates:
-            if row.get("linkedin_detail_resolved") and row.get("description"):
-                row["direct_original_fetched"] = True
-
-        # A full JD can reveal a citizenship/clearance restriction that the
-        # search card could not show. Re-run only the hard filter after detail
-        # hydration; role matching remains the Board pipeline's responsibility.
-        survivors = [row for row in stage1_survivors if board.hard_filter(row)[0]]
-        for stat in query_stats:
-            matches = [
-                row for row in survivors
-                if stat["query"] in (row.get("discovery_queries") or {}).get(name, [])
-            ]
-            stat["jds_resolved"] = sum(bool(row.get("description")) for row in matches)
 
     if not survivors:
         print(f"[{name}] SKIP (0 first-pass survivors) -> keeping last good snapshot")

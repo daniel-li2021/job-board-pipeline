@@ -12,6 +12,8 @@ Each inbox is the rolling **last 3 days** of actionable jobs. `latest.md` is the
 
 Public dashboard: **https://daniel-li2021.github.io/job-board-pipeline/**
 
+Detailed current flow and ownership: [`docs/PIPELINE_ALGORITHM.md`](docs/PIPELINE_ALGORITHM.md)
+
 ## Architecture
 
 ### 1. Syncareer
@@ -40,7 +42,7 @@ python3 board_pipeline.py --skip-network
 
 GitHub runners do **not** scrape these consumer job boards directly. Install local dependencies with `python3 -m pip install -r requirements-local.txt`; the Mac launchd job then runs `local_sources.py` through `scripts/local_source_sync.sh` roughly every 3 hours and pushes only `output/sources/*.json`. Each successful snapshot records its collector commit, while [`output/sources/health.json`](output/sources/health.json) records every source's last attempt, last success, last-good count, and failure reason.
 
-Board run stats report exact LinkedIn/Indeed/Glassdoor overlap, each source's unique contribution, and per-query exact-unique counts. Indeed uses three pages/48 hours for primary queries; supplemental queries and Glassdoor stay at one page/24 hours.
+Board run stats report exact LinkedIn/Indeed/Glassdoor overlap, each source's unique contribution, per-query exact-unique counts, and the full enrichment funnel. Discovery depth is bounded, but every discovered record is processed; there is no post-discovery job-count cap.
 
 Outputs live under `output/board/`.
 
@@ -104,7 +106,7 @@ AWS EventBridge Scheduler dispatches the independent workflows at these
 | Syncareer | 8:10 AM | 5:10 PM |
 | Official Careers | 8:20 AM | 5:20 PM |
 
-Reconcile + Pages runs after successful completion of any discovery workflow.
+Reconcile + Pages runs after every completed discovery workflow so failures are visible in health reporting.
 Its push and manual triggers remain available; it has no redundant timer.
 
 Each discovery workflow is independently runnable with `workflow_dispatch`.

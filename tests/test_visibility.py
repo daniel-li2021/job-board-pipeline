@@ -931,7 +931,7 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
                 first_store["sync-1"]["notes"] = "Keep on repeated runs"
                 daily_pipeline.save_watchlist(first_store)
                 daily_pipeline.run()
-                fetch_detail.assert_called_once()
+                self.assertEqual(2, fetch_detail.call_count)  # thin known rows retry enrichment
                 second_store = daily_pipeline.load_watchlist()
                 for field in ("first_seen", "match_score", "tier", "review_status", "notes"):
                     self.assertEqual(first_store["sync-1"][field], second_store["sync-1"][field])

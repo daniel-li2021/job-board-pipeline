@@ -14,7 +14,6 @@ from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
 from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 PAGE_SIZE = 30
-MAX_DETAILS = 100
 
 
 def _soup(html: str):
@@ -123,7 +122,7 @@ def scrape_radancy(
                 if location and not keep_us_or_unknown(location):
                     continue
                 description = posted = ""
-                if fetch_details and detail_fetches < MAX_DETAILS:
+                if fetch_details:
                     try:
                         detail = http_get(session, official, label=f"{company} career detail")
                         posting = _job_posting(detail.text)

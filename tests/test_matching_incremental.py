@@ -165,35 +165,38 @@ class IncrementalOfficialTests(unittest.TestCase):
             aggregator_posted_date="2026-09-04",
         )
         card["application_url"] = "https://apply.example/jobs/42"
+        full_jd = "Complete JD " * 30
         response = Mock(
+            status_code=200,
             url="https://careers.example/jobs/42",
-            text='''<script type="application/ld+json">{"@type":"JobPosting","title":"Software Engineer II","description":"<p>Complete JD</p>","datePosted":"2026-09-01","dateModified":"2026-09-03","jobLocation":{"address":{"addressLocality":"Austin","addressRegion":"TX","addressCountry":"US"}}}</script>''',
+            text=f'''<script type="application/ld+json">{{"@type":"JobPosting","title":"Software Engineer II","description":"<p>{full_jd}</p>","datePosted":"2026-09-01","dateModified":"2026-09-03","jobLocation":{{"address":{{"addressLocality":"Austin","addressRegion":"TX","addressCountry":"US"}}}}}}</script>''',
         )
         response.raise_for_status.return_value = None
         session = Mock()
         session.get.return_value = response
-        self.assertEqual(1, board.resolve_exposed_originals([card], session, {}))
+        self.assertEqual(1, board.resolve_exposed_originals([card], session, {})["http_requests"])
         self.assertEqual("2026-09-04", card["aggregator_posted_date"])
         self.assertEqual("2026-09-01", card["posted_date"])
-        self.assertEqual("Complete JD", card["description"])
+        self.assertIn("Complete JD", card["description"])
         self.assertEqual("Austin, TX, US", card["location"])
 
         cached = board.build_store_entry(card, board.dedup_key(card))
         repeat = make_job(source="linkedin", company="Example", title="Software Engineer", job_id="li-42")
         repeat["application_url"] = card["application_url"]
         second_session = Mock()
-        self.assertEqual(0, board.resolve_exposed_originals([repeat], second_session, {"cached": cached}))
+        self.assertEqual(1, board.resolve_exposed_originals([repeat], second_session, {"cached": cached})["cache_reused"])
         second_session.get.assert_not_called()
-        self.assertEqual("Complete JD", repeat["description"])
+        self.assertIn("Complete JD", repeat["description"])
 
     def test_direct_original_redirect_back_to_aggregator_is_not_verified(self) -> None:
         card = make_job(source="indeed", company="Example", title="Software Engineer", job_id="in-42")
         card["application_url"] = "https://apply.example/jobs/42"
-        response = Mock(url="https://www.indeed.com/viewjob?jk=42", text="")
+        response = Mock(status_code=200, url="https://www.indeed.com/viewjob?jk=42", text="")
         response.raise_for_status.return_value = None
         session = Mock()
         session.get.return_value = response
-        self.assertEqual(1, board.resolve_exposed_originals([card], session, {}))
+        with patch.object(board, "_scrapling_fetch", return_value=("", card["application_url"], "scrapling_http_403")):
+            self.assertEqual(1, board.resolve_exposed_originals([card], session, {})["http_requests"])
         self.assertFalse(card.get("official_url"))
         self.assertFalse(card.get("original_resolved"))
 
