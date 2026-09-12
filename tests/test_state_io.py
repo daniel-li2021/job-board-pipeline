@@ -11,6 +11,7 @@ from unittest.mock import patch
 import alert_history
 import board_pipeline as board
 import official_careers as official
+import pipeline_health
 import review_state
 import state_io
 
@@ -46,6 +47,27 @@ class StateSafetyTests(unittest.TestCase):
                     path.write_text(json.dumps(payload))
                     self.assertEqual({"job": entry}, board.load_store())
                     self.assertEqual(board.load_store(), official.load_careers_store())
+
+    def test_job_store_round_trips_gzip_and_legacy_json(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "jobs.json"
+            entry = {"key": "job", "first_seen": "2026-09-01", "description": "Build APIs. " * 20}
+            board.save_store_path(path, {"job": entry}, 7)
+            raw = path.read_bytes()
+            self.assertTrue(raw.startswith(b"\x1f\x8b"))
+            self.assertLess(len(raw), len(json.dumps({"entries": [entry]}, indent=2)))
+            loaded = board.load_store_path(path, strict=True)
+            self.assertEqual(entry["description"], loaded["job"]["description"])
+            path.write_text(json.dumps({"entries": [entry]}), encoding="utf-8")
+            self.assertEqual(entry["description"], board.load_store_path(path, strict=True)["job"]["description"])
+            self.assertEqual(
+                entry["description"],
+                review_state._read(path, {})["entries"][0]["description"],
+            )
+            self.assertEqual(
+                entry["description"],
+                pipeline_health._read(path, {})["entries"][0]["description"],
+            )
 
     def test_corrupt_digest_history_and_review_state_are_never_overwritten(self):
         with tempfile.TemporaryDirectory() as directory:

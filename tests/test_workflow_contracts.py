@@ -25,6 +25,30 @@ class WorkflowContractTests(unittest.TestCase):
             self.assertEqual(["official_careers.py", "run", "--only", value, "--no-llm"], result.stdout.splitlines())
             self.assertFalse((root / "must-not-exist").exists())
 
+    def test_output_commit_steps_guard_github_blob_size(self):
+        for name in ("board-jobs.yml", "official-careers.yml", "daily-jobs.yml"):
+            workflow = (ROOT / ".github/workflows" / name).read_text()
+            self.assertIn("python3 scripts/guard_github_blob_size.py", workflow)
+
+    def test_blob_size_guard_rejects_oversized_staged_file(self):
+        import importlib.util
+
+        spec = importlib.util.spec_from_file_location(
+            "guard_github_blob_size", ROOT / "scripts" / "guard_github_blob_size.py"
+        )
+        guard = importlib.util.module_from_spec(spec)
+        assert spec.loader is not None
+        spec.loader.exec_module(guard)
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            small = root / "small.json"
+            huge = root / "jobs.json"
+            small.write_text("{}", encoding="utf-8")
+            huge.write_bytes(b"x" * (guard.LIMIT))
+            self.assertEqual([], guard.oversized([small]))
+            self.assertEqual([f"{huge} ({huge.stat().st_size} bytes)"], guard.oversized([huge]))
+
 
 if __name__ == "__main__":
     unittest.main()

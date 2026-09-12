@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 
-from state_io import atomic_write, read_json
+from state_io import atomic_write, decode_json_bytes, read_json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, Optional
@@ -25,8 +25,8 @@ STATUSES = {"unreviewed", "in_progress", "applied"}
 
 def _read(path: Path, default: Any) -> Any:
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
+        return decode_json_bytes(path.read_bytes())
+    except (OSError, json.JSONDecodeError, UnicodeDecodeError):
         return default
 
 

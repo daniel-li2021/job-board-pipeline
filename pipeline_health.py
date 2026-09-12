@@ -11,6 +11,8 @@ from pathlib import Path
 from statistics import median
 from typing import Any
 
+from state_io import decode_json_bytes
+
 PIPELINES = {
     "board": ("ATS / LinkedIn", "board", "jobs.json"),
     "official": ("Big Company Official", "official_careers", "jobs.json"),
@@ -21,8 +23,8 @@ SEVERITY = {"Healthy": 0, "Warning": 1, "Stale": 2, "Problem": 3}
 
 def _read(path: Path, default: Any) -> Any:
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, ValueError):
+        return decode_json_bytes(path.read_bytes())
+    except (OSError, ValueError, UnicodeDecodeError):
         return default
 
 

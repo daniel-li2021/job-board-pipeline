@@ -31,7 +31,7 @@ import csv
 import gzip
 import json
 
-from state_io import atomic_write, read_json
+from state_io import atomic_write, encode_json_gzip, read_json
 import os
 import re
 import time
@@ -1754,7 +1754,7 @@ def save_store_path(path: Path, store: Dict[str, Dict[str, Any]], retention_days
         "count": len(entries),
         "entries": entries,
     }
-    atomic_write(path, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
+    atomic_write(path, encode_json_gzip(payload))
 
 
 def save_store(store: Dict[str, Dict[str, Any]]) -> None:

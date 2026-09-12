@@ -79,6 +79,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A -- output/official_careers/
+          python3 scripts/guard_github_blob_size.py
           if git diff --staged --quiet; then
             echo "No official-careers changes to commit."
           else

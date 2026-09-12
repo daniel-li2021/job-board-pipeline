@@ -82,6 +82,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Only board artifacts + alerts. Local sources are owned by launchd.
           git add -A -- output/board/
+          python3 scripts/guard_github_blob_size.py
           if git diff --staged --quiet; then
             echo "No board changes to commit."
           else

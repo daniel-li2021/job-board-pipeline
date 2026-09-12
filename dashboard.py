@@ -18,6 +18,7 @@ import alert_history
 import pipeline_health
 from sources.company_aliases import load_alias_file, match_company_alias
 from sources.schema import classify_location_bucket, normalize_company_key, normalize_sponsorship, normalize_title_key
+from state_io import decode_json_bytes
 
 BASE_DIR = Path(__file__).resolve().parent
 PUBLIC_DIR = BASE_DIR / "public"
@@ -58,8 +59,8 @@ REPORT_PATHS = {
 
 def read_json(path: Path, default: Any) -> Any:
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
+        return decode_json_bytes(path.read_bytes())
+    except (OSError, json.JSONDecodeError, UnicodeDecodeError):
         return default
 
 

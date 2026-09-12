@@ -20,6 +20,7 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
+from state_io import decode_json_bytes
 from sources.schema import (
     dedup_key,
     parse_datetime,
@@ -326,8 +327,10 @@ def within_days(job: Dict[str, Any], now: datetime, days: int) -> bool:
 
 def _load_store_entries(path: Path) -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
     try:
-        payload = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
+        payload = decode_json_bytes(path.read_bytes())
+    except (OSError, json.JSONDecodeError, UnicodeDecodeError):
+        return {}, []
+    if not isinstance(payload, dict):
         return {}, []
     return payload, list(payload.get("entries", []))
 

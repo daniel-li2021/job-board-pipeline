@@ -1,5 +1,6 @@
 """Read owned state without hiding corruption; replace complete files atomically."""
 
+import gzip
 import json
 import os
 import tempfile
@@ -7,9 +8,22 @@ from pathlib import Path
 from typing import Any
 
 
+def decode_json_bytes(raw: bytes) -> Any:
+    """Parse JSON, including gzip-compressed job stores."""
+    if raw.startswith(b"\x1f\x8b"):
+        raw = gzip.decompress(raw)
+    return json.loads(raw)
+
+
+def encode_json_gzip(payload: Any) -> bytes:
+    """Compact JSON plus gzip, so large job stores stay under GitHub's 100MB blob limit."""
+    body = (json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n").encode("utf-8")
+    return gzip.compress(body, mtime=0)
+
+
 def read_json(path: Path, default: Any) -> Any:
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
+        return decode_json_bytes(path.read_bytes())
     except FileNotFoundError:
         return default
 
