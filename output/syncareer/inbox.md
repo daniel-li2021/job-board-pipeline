@@ -1,20 +1,23 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-09-11 17:12 PDT
-- Snapshot (UTC): 2026-09-12T00:12:35.540294+00:00
-- Jobs: 34
-- Last 24 hours: 5
-- Last 3 days: 34
+- Updated (PT): 2026-09-12 08:12 PDT
+- Snapshot (UTC): 2026-09-12T15:12:37.857067+00:00
+- Jobs: 29
+- Last 24 hours: 6
+- Last 3 days: 29
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| B | 77.0 | Syncareer | RELX | ReactJS Java API Software Engineer | Philadelphia, Pennsylvania, United States | 2026-09-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://relx.wd3.myworkdayjobs.com/en-US/relx/job/Philadelphia/Java-API-Back-End-Developer_R110947-1?Country___Territory=bc33aa3152ec42d4995f4791a106ed09&Country___Territory=29247e57dbaf46fb855b224e03170bc7&Country___Territory=6cb77610a8a543aea2d6bc10457e35d4&Country___Territory=d903bb3fedad45039383f6de334ad4db&Country___Territory=80938777cac5440fab50d729f9634969&Country___Territory=a30a87ed25634629aa6c3958aa2b91ea&Country___Territory=d4afdeb461d446e4babd204bd102dba8&Country___Territory=a4e08b475d6a4176853c9d1cb9854e02&Country___Territory=55273a1b49934d97ae15342ef51f6b95) |
+| B | 88.0 | Syncareer | CLA (CliftonLarsonAllen) | Machine Learning Engineer | Kansas City, Missouri, United States | 2026-09-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://cliftonlarsonallen.wd115.myworkdayjobs.com/en-US/CLA/job/Kansas-City-MO/Machine-Learning-Engineer_R18055) |
+| B | 84.0 | Syncareer | Piper Sandler | Site Reliability Engineer | New York, New York, United States | 2026-09-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://pipersandler.wd501.myworkdayjobs.com/en-US/Piper_Sandler_Careers/job/New-York-NY/Site-Reliability-Engineer_R-100707) |
+| B | 72.0 | Syncareer | Infosys | Java Full Stack Developer | Boston, Massachusetts, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153514BR) |
+| B | 86.0 | Syncareer | DRW | Platform Engineer - AI Engineering | Chicago, Illinois, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/drweng/jobs/8186711) |
 | A | 90.0 | Syncareer | KLA | AI Software Engineer/Manufacturing | Ann Arbor, Michigan, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://kla.wd1.myworkdayjobs.com/en-US/Search/job/Ann-Arbor-MI/AI-Software-Engineer-Manufacturing_2640648-1?Country=bc33aa3152ec42d4995f4791a106ed09&Country=a4e08b475d6a4176853c9d1cb9854e02&Country=80938777cac5440fab50d729f9634969&Country=6cb77610a8a543aea2d6bc10457e35d4&Country=29247e57dbaf46fb855b224e03170bc7) |
 | A | 85.0 | Syncareer | Verisk | Full Stack SDE II | Boston, Massachusetts, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://fa-ewmy-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4711) |
 | B | 78.0 | Syncareer | Handshake | AI Red Teamer (LLM Generalist) | Seattle, Washington, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/handshake/e15e3244-06f9-4c41-96c6-8860ad7594c5) |
-| B | 72.0 | Syncareer | Infosys | Java Full Stack Developer | Boston, Massachusetts, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153514BR) |
-| B | 86.0 | Syncareer | DRW | Platform Engineer - AI Engineering | Chicago, Illinois, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/drweng/jobs/8186711) |
 | B | 84.0 | Syncareer | Micron Technology | New College Grad - IT Software Support Engineer | Boise, Idaho, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.micron.com/careers/job/44419615?domain=micron.com) |
 | B | 74.0 | Syncareer | CNH Industrial | Software Engineer Intern | Sioux Falls, South Dakota, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://join.cnh.com/job/Software-Engineer-Intern/5672-en_US) |
 | B | 79.0 | Syncareer | Intercontinental Exchange | Junior Software Development Engineer in Test | Atlanta, Georgia, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ice.com/jobs/13399?lang=en-us) |
@@ -35,12 +38,4 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 74.0 | Syncareer | Pepsico | Analytics Platform Engineer | New York, New York, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.pepsicojobs.com/northamerica/jobs/468920?lang=en-us&previousLocale=en-US) |
 | B | 78.0 | Syncareer | CNH Industrial | Data Engineer Intern 1 | Arizona, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://join.cnh.com/job/Data-Engineer-Intern-1/5656-en_US) |
 | B | 76.0 | Syncareer | OneStream Software | AI Engineer | Birmingham, Michigan, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://recruiting.ultipro.com/ONE1018ONSO/JobBoard/1955ffa6-bda6-4c95-8412-2c731d693ab2/OpportunityDetail?opportunityId=ed7ad546-da2b-45c7-b411-e07a1332e06d) |
-| A | 91.0 | Syncareer | T-Mobile | Associate Software Engineer | Overland Park, Kansas, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.t-mobile.com/associate-software-engineer/job/E1474DC7AD27D3E30F750ACA55C0FDDC) |
-| A | 88.0 | Syncareer | IBM | Entry Level Software Developer | Poughkeepsie, New York, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=130384&source=WEB_Search_NA) |
-| B | 88.0 | Syncareer | IBM | Software Developer Intern/Tucson-AZ | TUCSON, Arizona, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=130092&source=WEB_Search_NA) |
-| B | 88.0 | Syncareer | IBM | Software Developer Intern-Poughkeepsie, NY | Poughkeepsie, New York, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=130113&source=WEB_Search_NA) |
-| A | 86.0 | Syncareer | Zebra Technologies | Software Engineer, I (Fullstack) | Holtsville, New York, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://zebra.wd501.myworkdayjobs.com/en-US/Zebra_careers/job/Holtsville-New-York/Software-Engineer--I--Fullstack-_JR103057) |
-| B | 86.0 | Syncareer | Nelnet | Intern - Software Engineer - New Ventures - Starting Summer 2026 | Lincoln, Nebraska, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://nelnet.wd1.myworkdayjobs.com/en-US/MyNelnet/job/Lincoln-NE/Intern---Software-Engineer---New-Ventures---Starting-Summer-2026_R23098?utm_source=google&utm_medium=organic&nn_uuid=7fb07fba-405e-4a4c-b214-670b3c34f383) |
-| A | 88.0 | Syncareer | IBM | Entry Level Software Developer-Rochester, MN | Rochester, Minnesota, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=130378&source=WEB_Search_NA) |
-| B | 73.0 | Syncareer | IBM | Data Scientist & AI ELH - RTP 2027 | Durham, North Carolina, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=129923&source=WEB_Search_NA) |
-| B | 88.0 | Syncareer | IBM | Software Developer Intern-Austin-TX | Austin, Texas, United States | 2026-09-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=130116&source=WEB_Search_NA) |
+| B | 87.0 | Syncareer | Tesla | Software Development Engineer, New Product Introduction | Lathrop, California, United States | 2026-09-11 | Sponsor | YES (Tesla) | unreviewed | official_unsupported | [open](https://www.tesla.com/careers/search/job/282972) |
