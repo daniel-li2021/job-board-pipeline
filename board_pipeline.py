@@ -711,8 +711,8 @@ def hard_filter(job: Dict[str, str]) -> Tuple[bool, str]:
     thin = len(desc) < THIN_JD_CHARS
     low_conf_source = "linkedin" in src or "glassdoor" in src
     if thin and (low_conf_source or job.get("clearance_risk_company")):
-        title = job.get("title") or ""
-        if GOV_DEFENSE_TITLE_RE.search(title) or job.get("clearance_risk_company"):
+        company_title = f"{job.get('company') or ''} {job.get('title') or ''}"
+        if GOV_DEFENSE_TITLE_RE.search(company_title) or job.get("clearance_risk_company"):
             return False, "incomplete_jd_clearance_risk"
     return True, "keep"
 
@@ -807,10 +807,19 @@ INTERNSHIP_TITLE_RE = re.compile(
     re.IGNORECASE,
 )
 EARLY_CAREER_TITLE_RE = re.compile(
-    r"\b(new grad|new-grad|new college grad|early career|early-career|university grad|"
+    r"\b(new grad|new-grad|new college grad|early career|early-career|junior|graduate|university grad|"
     r"university graduate|university hire|college grad|recent graduate|"
-    r"entry[- ]?level|engineer i\b|swe i\b|sde i\b|"
+    r"entry[- ]?level|engineer (?:i|1)\b|swe (?:i|1)\b|sde (?:i|1)\b|"
     r"associate software|associate engineer)\b",
+    re.IGNORECASE,
+)
+LEVEL_TWO_TITLE_RE = re.compile(
+    r"\b(?:software (?:development )?engineer|engineer|swe|sde) (?:ii|2)\b",
+    re.IGNORECASE,
+)
+THIN_ADVANCED_TITLE_RE = re.compile(
+    r"\b(?:software (?:development )?engineer|engineer|developer) (?:iii|[3-9])\b|"
+    r"\b(?:expert|advisory|founding|specialist|advanced|mid[- ]?level)\b",
     re.IGNORECASE,
 )
 
@@ -824,6 +833,8 @@ def detect_role_family(job: Dict[str, str]) -> str:
         return "negative"
     is_ai = bool(AI_FAMILY_RE.search(text))
     is_swe = bool(SWE_FAMILY_RE.search(text))
+    if not is_ai and not is_swe and EARLY_CAREER_TITLE_RE.search(title) and re.search(r"\bengineer\b", title, re.IGNORECASE):
+        return "ambiguous"
     if is_ai and is_swe:
         return "ambiguous"
     if is_ai:
@@ -876,7 +887,7 @@ def role_seniority_prefilter(job: Dict[str, str]) -> Tuple[bool, str]:
         return False, "prefilter:high_yoe"
     # Title must look like an engineering role. JD keywords cannot rescue
     # Content Designer / BizOps / asset-management titles.
-    if not TITLE_TECH_RE.search(title):
+    if not TITLE_TECH_RE.search(title) and not EARLY_CAREER_TITLE_RE.search(title):
         return False, "prefilter:no_positive_family"
     if family == "none":
         return False, "prefilter:no_positive_family"
@@ -915,14 +926,30 @@ MEDIUM_HITS = [
 ]
 
 
+def _clean_thin_record(job: Dict[str, str]) -> bool:
+    source = str(job.get("source") or "").lower()
+    url = str(job.get("official_url") or job.get("application_url") or job.get("source_url") or "")
+    return bool(
+        normalize_space(job.get("company"))
+        and normalize_space(job.get("location"))
+        and urlsplit(url).scheme in {"http", "https"}
+        and any(name in source for name in ("linkedin", "indeed"))
+        and not job.get("staffing_firm")
+        and not job.get("clearance_risk_company")
+    )
+
+
 def rule_match_score(job: Dict[str, str]) -> float:
     """Resume/JD keyword fit only (0-100). No referral / recency / official boosts."""
     title = normalize_space(job.get("title", "")).lower()
     text = f"{title} {normalize_space(job.get('description',''))[:1500].lower()}"
     score = 40.0
-    if any(w in text for w in STRONG_HITS):
+    strong_hit = any(w in text for w in STRONG_HITS)
+    medium_hit = any(w in text for w in MEDIUM_HITS)
+    thin = is_thin_local_discovery(job)
+    if strong_hit or (thin and EARLY_CAREER_TITLE_RE.search(title) and detect_role_family(job) in {"ai", "swe", "ambiguous"}):
         score += 25.0
-    if any(w in text for w in MEDIUM_HITS):
+    if medium_hit and not (thin and strong_hit):
         score += 10.0
     if SENIOR_TITLE_RE.search(title):
         score -= 25.0
@@ -935,6 +962,15 @@ def rule_match_score(job: Dict[str, str]) -> float:
         score -= 20.0
     if job.get("deprioritized"):
         score -= 10.0
+    if thin:
+        if EARLY_CAREER_TITLE_RE.search(title):
+            score += 13.0
+        elif LEVEL_TWO_TITLE_RE.search(title):
+            score += 5.0
+        if _clean_thin_record(job):
+            score += 5.0
+        if (job.get("recency_bucket") or recency_bucket(job)) in NORMAL_RECENCY_BUCKETS:
+            score += 5.0
     return max(1.0, min(100.0, score))
 
 
@@ -1290,7 +1326,7 @@ def score_survivors(
             # A title-only local card is useful discovery evidence but poor LLM
             # evidence. Do not call the API or reuse a prior title-only LLM
             # result. An exact Official peer above is still authoritative.
-            _apply_rule_result(job, SCORE_FALLBACK, "Rule-based (thin local discovery card)")
+            _apply_rule_result(job, SCORE_FALLBACK, "Low-confidence title/metadata match (JD unavailable after enrichment)")
             counts["rule"] += 1
             counts["thin_source_rule"] += 1
         elif _is_reusable_llm_cache(prev or {}, job):
@@ -1442,7 +1478,10 @@ def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
     strong_family = family in ("swe", "ai", "ambiguous")
 
     # Title-only rule scores are discovery hints, not evidence of resume fit.
-    if rule_only and len(str(job.get("description") or "").strip()) < THIN_JD_CHARS and not early:
+    thin = len(str(job.get("description") or "").strip()) < THIN_JD_CHARS
+    if rule_only and thin and THIN_ADVANCED_TITLE_RE.search(job.get("title") or ""):
+        return "C"
+    if rule_only and thin and not early and (not strong_family or not _clean_thin_record(job)):
         return "C"
 
     intern = bool(INTERNSHIP_TITLE_RE.search(job.get("title") or ""))
@@ -1552,6 +1591,59 @@ def load_store_path(path: Path, *, strict: bool = False) -> Dict[str, Dict[str, 
 
 def load_store() -> Dict[str, Dict[str, Any]]:
     return load_store_path(JOBS_STORE_PATH, strict=True)
+
+
+def load_syncareer_peer_store() -> Dict[str, Dict[str, Any]]:
+    """Load normalized Syncareer rows as an optional JD peer store."""
+    try:
+        payload = read_json(coverage_reconcile.SYNCAREER_STORE_PATH, {"entries": []})
+        entries = payload.get("entries", []) if isinstance(payload, dict) else payload
+        return {
+            f"syncareer::{index}": coverage_reconcile.normalize_syncareer_job(entry)
+            for index, entry in enumerate(entries or [])
+            if isinstance(entry, dict)
+        }
+    except (OSError, ValueError):
+        return {}
+
+
+def enrich_from_exact_peers(
+    jobs: List[Dict[str, Any]],
+    peer_stores: List[Tuple[str, Dict[str, Dict[str, Any]]]],
+) -> int:
+    """Hydrate thin jobs from one unambiguous richer peer, in source order."""
+    grouped: List[Tuple[str, Dict[str, List[Dict[str, Any]]]]] = []
+    for pipeline, store in peer_stores:
+        by_company: Dict[str, List[Dict[str, Any]]] = {}
+        for peer in store.values():
+            if len(str(peer.get("description") or "").strip()) < THIN_JD_CHARS:
+                continue
+            company = normalize_company_key(peer.get("company", ""))
+            if company:
+                by_company.setdefault(company, []).append(peer)
+        grouped.append((pipeline, by_company))
+
+    resolved = 0
+    for job in jobs:
+        if not is_thin_local_discovery(job):
+            continue
+        company = normalize_company_key(job.get("company", ""))
+        for pipeline, by_company in grouped:
+            method, peer = coverage_reconcile.exact_match(job, by_company.get(company, []))
+            if not method or not peer:
+                continue
+            job["description"] = peer["description"]
+            official = str(peer.get("official_url") or "")
+            if official and looks_official(official):
+                job["official_url"] = official
+                job["original_resolved"] = True
+            if peer.get("application_url") and not job.get("application_url"):
+                job["application_url"] = peer["application_url"]
+            job["direct_original_fetched"] = True
+            job["direct_original_fetched_at"] = peer.get("direct_original_fetched_at") or datetime.now(timezone.utc).isoformat()
+            resolved += 1
+            break
+    return resolved
 
 
 def save_store_path(path: Path, store: Dict[str, Dict[str, Any]], retention_days: int) -> None:
@@ -1995,7 +2087,7 @@ def refresh_retained_entry_policy(
         return
     if is_thin_local_discovery(entry) and entry.get("match_source_pipeline") != "official":
         entry["rule_score"] = rule_match_score(entry)
-        _apply_rule_result(entry, SCORE_FALLBACK, "Rule-based (thin local discovery card)")
+        _apply_rule_result(entry, SCORE_FALLBACK, "Low-confidence title/metadata match (JD unavailable after enrichment)")
         entry["tier"] = assign_tier(entry, False)
 
 
@@ -2103,6 +2195,12 @@ def run() -> None:
     # Resolution can expose a shared employer URL only after the first dedup.
     after_hard = collapse_cross_source(after_hard)
     coverage_reconcile.annotate_jobs(after_hard, "board")
+    official_peer_store = load_store_path(OUTPUT_DIR / "official_careers" / "jobs.json")
+    syncareer_peer_store = load_syncareer_peer_store()
+    peer_jds_resolved = enrich_from_exact_peers(
+        after_hard,
+        [("official", official_peer_store), ("board", store), ("syncareer", syncareer_peer_store)],
+    )
     deduped = [job for job in deduped if job.get("filter_status") != "kept"] + after_hard
     # Employer JDs may add hard exclusions absent from aggregator cards.
     verified = []
@@ -2162,7 +2260,8 @@ def run() -> None:
         store,
         use_llm=not args.no_llm,
         peer_stores=[
-            ("official", load_store_path(OUTPUT_DIR / "official_careers" / "jobs.json"))
+            ("official", official_peer_store),
+            ("syncareer", syncareer_peer_store),
         ],
         prefer_peer=True,
     )
@@ -2246,6 +2345,7 @@ def run() -> None:
         "query_diagnostics": query_diagnostics,
         "local_source_coverage": source_coverage,
         "direct_original_attempts": direct_original_attempts,
+        "peer_jds_resolved": peer_jds_resolved,
     }
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
     (RUNS_DIR / f"{stamp}_stats.json").write_text(

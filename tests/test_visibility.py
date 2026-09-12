@@ -473,6 +473,54 @@ class MatchingPolicyTests(unittest.TestCase):
         self.assertEqual("B", board_pipeline.assign_tier(old, False))
         self.assertEqual("A", board_pipeline.assign_tier(self._job(score=94, bucket="gt7d", title="New Grad Software Engineer"), False))
 
+    def test_thin_jobs_use_title_and_record_quality_without_auto_demotion(self) -> None:
+        def thin(title: str) -> dict:
+            job = self._job(score=0, bucket="lt3h", title=title)
+            job.update(source="linkedin", source_url="https://www.linkedin.com/jobs/view/42", description="")
+            job["score_source"] = board_pipeline.SCORE_FALLBACK
+            job["role_family"] = board_pipeline.detect_role_family(job)
+            job["match_score"] = board_pipeline.rule_match_score(job)
+            return job
+
+        junior = thin("Junior Software Engineer")
+        level_two = thin("Software Engineer II")
+        level_three = thin("Software Engineer III")
+        self.assertEqual((88.0, "A"), (junior["match_score"], board_pipeline.assign_tier(junior, False)))
+        self.assertEqual((80.0, "B"), (level_two["match_score"], board_pipeline.assign_tier(level_two, False)))
+        self.assertEqual("C", board_pipeline.assign_tier(level_three, False))
+
+        incomplete = thin("Full Stack Developer")
+        incomplete["source_url"] = ""
+        incomplete["match_score"] = board_pipeline.rule_match_score(incomplete)
+        self.assertEqual("C", board_pipeline.assign_tier(incomplete, False))
+
+        nsa = thin("Software Engineer - Entry Level")
+        nsa["company"] = "National Security Agency"
+        self.assertEqual((False, "incomplete_jd_clearance_risk"), board_pipeline.hard_filter(nsa))
+
+    def test_exact_richer_peer_hydrates_thin_job_but_ambiguous_peers_do_not(self) -> None:
+        job = make_job(
+            source="linkedin", company="Example Tech", title="Software Engineer I",
+            location="Seattle, WA", job_id="linkedin-1",
+        )
+        peer = make_job(
+            source="indeed", company="Example Tech", title="Software Engineer I",
+            location="Seattle, WA", job_id="indeed-1", description="x" * 250,
+        )
+        count = board_pipeline.enrich_from_exact_peers([job], [("board", {"peer": peer})])
+        self.assertEqual(1, count)
+        self.assertEqual("x" * 250, job["description"])
+
+        other = make_job(
+            source="linkedin", company="Example Tech", title="Software Engineer I",
+            location="Seattle, WA", job_id="linkedin-2",
+        )
+        count = board_pipeline.enrich_from_exact_peers(
+            [other], [("board", {"one": peer, "two": {**peer, "job_id": "indeed-2"}})],
+        )
+        self.assertEqual(0, count)
+        self.assertFalse(other["description"])
+
     def test_core_gap_and_stretch_block_easy_a_or_b(self) -> None:
         self.assertEqual("B", board_pipeline.assign_tier(self._job(score=95, bucket="3to24h", gaps=["distributed systems"]), False))
         self.assertEqual("C", board_pipeline.assign_tier(self._job(score=78, bucket="3to24h", seniority="stretch"), False))

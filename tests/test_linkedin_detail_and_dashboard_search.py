@@ -88,11 +88,29 @@ class LinkedInDetailTests(unittest.TestCase):
         session = Mock()
         session.get.return_value = response
 
-        stats = linkedin_local.enrich_details([row], session=session, limit=5)
+        with patch.object(linkedin_local, "_scrapling_fetch_html", return_value=None):
+            stats = linkedin_local.enrich_details([row], session=session, limit=5)
 
         self.assertIn("HTTP 429", stats["blocked"])
         self.assertEqual("Backend Engineer", row["title"])
         self.assertFalse(row.get("description"))
+
+    @patch("sources.linkedin_local.time.sleep")
+    def test_scrapling_recovers_detail_after_requests_is_blocked(self, _sleep: Mock) -> None:
+        row = make_job(
+            source="linkedin", company="Example", title="Junior Software Engineer",
+            location="New York, NY", job_id="4",
+        )
+        session = Mock()
+        session.get.return_value = Mock(status_code=429, text="rate limited")
+        html = '<div class="description__text">Build production Python services.</div>'
+
+        with patch.object(linkedin_local, "_scrapling_fetch_html", return_value=html):
+            stats = linkedin_local.enrich_details([row], session=session, limit=5)
+
+        self.assertEqual("Build production Python services.", row["description"])
+        self.assertEqual(1, stats["scrapling_requests"])
+        self.assertEqual(1, stats["scrapling_jds_resolved"])
 
 
 class DashboardSearchTests(unittest.TestCase):

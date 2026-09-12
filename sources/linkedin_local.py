@@ -20,7 +20,7 @@ from __future__ import annotations
 
 import time
 from datetime import datetime, timedelta, timezone
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 
 import requests
@@ -154,6 +154,28 @@ def _parse_detail(html: str) -> Dict[str, str]:
     }
 
 
+def _scrapling_fetch_html(url: str) -> Optional[str]:
+    """Fetch one blocked guest detail page; None means Scrapling is unavailable."""
+    try:
+        from scrapling.fetchers import Fetcher
+    except ImportError:
+        return None
+    try:
+        response = Fetcher.get(
+            url,
+            impersonate="chrome",
+            stealthy_headers=True,
+            retries=0,
+            timeout=REQUEST_TIMEOUT,
+        )
+    except Exception:  # noqa: BLE001 - optional fallback must not fail collection
+        return ""
+    if int(getattr(response, "status", 0) or 0) != 200:
+        return ""
+    body = getattr(response, "body", b"")
+    return body.decode("utf-8", errors="replace") if isinstance(body, bytes) else str(body or "")
+
+
 def _fresh_cached_detail(previous: Dict[str, Any], row: Dict[str, Any], now: datetime) -> bool:
     if not previous.get("description"):
         return False
@@ -198,6 +220,9 @@ def enrich_details(
         "external_apply_urls": 0,
         "failed": 0,
         "blocked": "",
+        "scrapling_requests": 0,
+        "scrapling_jds_resolved": 0,
+        "scrapling_error": "",
         "request_limit": max(0, int(limit)),
     }
     pending: List[Dict[str, Any]] = []
@@ -223,7 +248,8 @@ def enrich_details(
         if row.get("job_id"):
             pending.append(row)
 
-    for row in pending:
+    blocked_at = len(pending)
+    for index, row in enumerate(pending):
         if stats["requests"] >= stats["request_limit"]:
             break
         stats["requests"] += 1
@@ -240,6 +266,7 @@ def enrich_details(
         except SourceUnavailable as exc:
             if response.status_code in (401, 403, 429, 999) or response.status_code < 400:
                 stats["blocked"] = str(exc)
+                blocked_at = index
                 break
             stats["failed"] += 1
             continue
@@ -254,6 +281,33 @@ def enrich_details(
             row["application_url"] = detail["application_url"]
             stats["external_apply_urls"] += 1
         time.sleep(DETAIL_SLEEP_SECONDS)
+
+    # LinkedIn's ordinary client is often rate-limited mid-run. Reuse the same
+    # hard request budget and try the requested browser-impersonating fallback.
+    if stats["blocked"]:
+        for row in pending[blocked_at:]:
+            if stats["requests"] >= stats["request_limit"]:
+                break
+            html = _scrapling_fetch_html(GUEST_DETAIL_URL.format(job_id=row["job_id"]))
+            if html is None:
+                stats["scrapling_error"] = "Scrapling is not installed"
+                break
+            stats["requests"] += 1
+            stats["scrapling_requests"] += 1
+            if not html:
+                stats["failed"] += 1
+                continue
+            detail = _parse_detail(html)
+            row["linkedin_detail_fetched_at"] = now.isoformat()
+            if detail["description"]:
+                row["description"] = detail["description"]
+                row["linkedin_detail_resolved"] = True
+                stats["jds_resolved"] += 1
+                stats["scrapling_jds_resolved"] += 1
+            if detail["application_url"]:
+                row["application_url"] = detail["application_url"]
+                stats["external_apply_urls"] += 1
+            time.sleep(DETAIL_SLEEP_SECONDS)
 
     return stats
 
