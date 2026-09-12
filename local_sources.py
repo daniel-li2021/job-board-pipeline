@@ -102,6 +102,11 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
         }
 
     detail_enrichment: Dict[str, object] = {}
+    if name != "linkedin":
+        for row in rows:
+            if len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS and not row.get("enrichment_failure_reason"):
+                row["enrichment_status"] = "unresolved"
+                row["enrichment_failure_reason"] = f"{name}_detail_missing_or_thin"
     if name == "linkedin" and rows:
         detail_candidates = [row for row in rows if not row.get("description")]
         previous = read_source_snapshot_payload(name)

@@ -40,6 +40,8 @@ class LocalSourceTests(unittest.TestCase):
         ''')
         self.assertEqual("42", records[0]["id"])
         self.assertEqual("Example", records[0]["company"])
+        self.assertEqual("", records[0]["description"])
+        self.assertEqual("Build APIs and services.", records[0]["source_snippet"])
         self.assertEqual("glassdoor_detail_http_403_static_card_only", records[0]["enrichment_failure_reason"])
 
     def test_jobspy_rows_use_shared_schema_and_keep_direct_apply_url(self) -> None:

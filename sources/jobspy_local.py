@@ -202,7 +202,8 @@ def _parse_glassdoor_cards(body: str | bytes) -> List[Dict[str, Any]]:
             "company": company.get_text(" ", strip=True) if company else "",
             "location": location.get_text(" ", strip=True) if location else "",
             "job_url": href,
-            "description": snippet.get_text(" ", strip=True) if snippet else "",
+            "description": "",
+            "source_snippet": snippet.get_text(" ", strip=True) if snippet else "",
             "enrichment_failure_reason": "glassdoor_detail_http_403_static_card_only",
         })
     return records
@@ -241,6 +242,8 @@ def _normalize(source: str, record: Dict[str, Any], fetched_at: str) -> Dict[str
     if record.get("enrichment_failure_reason"):
         row["enrichment_status"] = "unresolved"
         row["enrichment_failure_reason"] = _value(record["enrichment_failure_reason"])
+    if record.get("source_snippet"):
+        row["source_snippet"] = _value(record["source_snippet"])
     return row
 
 

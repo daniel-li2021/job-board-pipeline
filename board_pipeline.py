@@ -604,8 +604,9 @@ def resolve_exposed_originals(
         application_url = next((url for url in urls if urlsplit(url).scheme in {"http", "https"}), "")
         if not application_url:
             job["enrichment_status"] = "unresolved"
-            job["enrichment_failure_reason"] = "no_direct_or_official_url"
-            reasons["no_direct_or_official_url"] += 1
+            reason = str(job.get("enrichment_failure_reason") or "no_direct_or_official_url")
+            job["enrichment_failure_reason"] = reason
+            reasons[reason] += 1
             continue
         prior = cached.get((str(job.get("source") or ""), str(job.get("job_id") or "")))
         try:
@@ -2090,6 +2091,7 @@ ENTRY_DEFAULTS: Dict[str, Any] = {
     "discovery_queries": dict, "original_resolved": False,
     "application_url": "", "direct_original_fetched": False, "direct_original_fetched_at": "",
     "enrichment_method": "", "enrichment_status": "", "enrichment_failure_reason": "",
+    "source_snippet": "",
 }
 
 
@@ -2128,6 +2130,7 @@ def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
         "enrichment_method": job.get("enrichment_method", ""),
         "enrichment_status": job.get("enrichment_status", ""),
         "enrichment_failure_reason": job.get("enrichment_failure_reason", ""),
+        "source_snippet": job.get("source_snippet", ""),
         "description": job.get("description", ""),
         # pipeline status
         "filter_status": job.get("filter_status", "kept"),
