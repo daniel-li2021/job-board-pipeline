@@ -64,6 +64,18 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   exit 0
 fi
 
+# Use the repository owner's SSH credential even when the wrapper is run
+# manually outside the launchd environment. Leave non-production remotes alone.
+case "$(git remote get-url origin 2>/dev/null)" in
+  *github.com/daniel-li2021/job-board-pipeline*)
+    export GIT_CONFIG_COUNT="${GIT_CONFIG_COUNT:-1}"
+    export GIT_CONFIG_KEY_0="${GIT_CONFIG_KEY_0:-remote.origin.pushurl}"
+    export GIT_CONFIG_VALUE_0="${GIT_CONFIG_VALUE_0:-git@github.com:daniel-li2021/job-board-pipeline.git}"
+    export GIT_SSH_COMMAND="${GIT_SSH_COMMAND:-/usr/bin/ssh -o BatchMode=yes}"
+    export GIT_TERMINAL_PROMPT="${GIT_TERMINAL_PROMPT:-0}"
+    ;;
+esac
+
 TARGET_BRANCH="${TARGET_BRANCH:-main}"
 # Bootstrap the runner itself from the fetched target. The long-lived checkout
 # may be stale or dirty; neither its runner nor its collector code should run.
