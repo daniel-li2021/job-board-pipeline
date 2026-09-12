@@ -22,7 +22,11 @@ set -uo pipefail
 REPO_DIR="${LOCAL_SOURCE_REPO_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
 cd "$REPO_DIR" || exit 1
 
-PYTHON_BIN="${PYTHON_BIN:-python3}"
+if [ -z "${PYTHON_BIN:-}" ] && [ -x "$REPO_DIR/.venv/bin/python3" ]; then
+  PYTHON_BIN="$REPO_DIR/.venv/bin/python3"
+else
+  PYTHON_BIN="${PYTHON_BIN:-python3}"
+fi
 LOG_DIR="$REPO_DIR/output/logs"
 mkdir -p "$LOG_DIR"
 STAMP="$(date +%Y-%m-%d_%H%M)"
