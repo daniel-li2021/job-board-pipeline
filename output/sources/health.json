@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-12T22:04:10.988331+00:00",
+  "generated_at": "2026-09-12T22:47:14.584696+00:00",
   "collector": {
-    "commit": "2288fc6f74344651a3feebcc3f6fb6d8f8d9cdc5",
+    "commit": "2907cfe2d89171cca935d7e4397bda6a85235376",
     "dirty": false
   },
   "sources": {
@@ -11,14 +11,14 @@
       "healthy": true,
       "status": "ok",
       "reason": "",
-      "last_attempt_at": "2026-09-12T22:00:10.047368+00:00",
-      "last_success_at": "2026-09-12T22:00:10.047368+00:00",
+      "last_attempt_at": "2026-09-12T22:35:05.282355+00:00",
+      "last_success_at": "2026-09-12T22:35:05.282355+00:00",
       "last_attempt_collector": {
-        "commit": "2288fc6f74344651a3feebcc3f6fb6d8f8d9cdc5",
+        "commit": "2907cfe2d89171cca935d7e4397bda6a85235376",
         "dirty": false
       },
       "last_success_collector": {
-        "commit": "2288fc6f74344651a3feebcc3f6fb6d8f8d9cdc5",
+        "commit": "2907cfe2d89171cca935d7e4397bda6a85235376",
         "dirty": false
       },
       "last_attempt_source_provenance": {
@@ -27,21 +27,21 @@
       "last_success_source_provenance": {
         "implementation": "sources.linkedin_local"
       },
-      "last_good_count": 843
+      "last_good_count": 763
     },
     "indeed": {
       "required": true,
       "healthy": true,
       "status": "ok",
       "reason": "",
-      "last_attempt_at": "2026-09-12T22:03:45.423744+00:00",
-      "last_success_at": "2026-09-12T22:03:45.423744+00:00",
+      "last_attempt_at": "2026-09-12T22:46:25.201950+00:00",
+      "last_success_at": "2026-09-12T22:46:25.201950+00:00",
       "last_attempt_collector": {
-        "commit": "2288fc6f74344651a3feebcc3f6fb6d8f8d9cdc5",
+        "commit": "2907cfe2d89171cca935d7e4397bda6a85235376",
         "dirty": false
       },
       "last_success_collector": {
-        "commit": "2288fc6f74344651a3feebcc3f6fb6d8f8d9cdc5",
+        "commit": "2907cfe2d89171cca935d7e4397bda6a85235376",
         "dirty": false
       },
       "last_attempt_source_provenance": {
@@ -52,35 +52,36 @@
         "implementation": "python-jobspy",
         "version": "1.1.82"
       },
-      "last_good_count": 856
+      "last_good_count": 757
     },
     "glassdoor": {
       "required": false,
-      "healthy": false,
-      "status": "skipped_unavailable",
-      "reason": "GlassdoorException: location lookup HTTP 404",
-      "last_attempt_at": "2026-09-12T22:04:10.706143+00:00",
-      "last_success_at": "2026-09-08T15:39:53.463312+00:00",
+      "healthy": true,
+      "status": "ok",
+      "reason": "",
+      "last_attempt_at": "2026-09-12T22:46:46.886325+00:00",
+      "last_success_at": "2026-09-12T22:46:46.886325+00:00",
       "last_attempt_collector": {
-        "commit": "2288fc6f74344651a3feebcc3f6fb6d8f8d9cdc5",
+        "commit": "2907cfe2d89171cca935d7e4397bda6a85235376",
         "dirty": false
       },
       "last_success_collector": {
-        "commit": "4b0d863fa414ff91d8317fbb32b7bf81603a7089",
+        "commit": "2907cfe2d89171cca935d7e4397bda6a85235376",
         "dirty": false
       },
       "last_attempt_source_provenance": {
-        "implementation": "python-jobspy",
+        "implementation": "python-jobspy+scrapling-static",
         "version": "1.1.82",
         "compat": "JobSpy PRs #347/#350",
         "reliability": "best_effort_optional"
       },
       "last_success_source_provenance": {
-        "implementation": "python-jobspy",
+        "implementation": "python-jobspy+scrapling-static",
         "version": "1.1.82",
-        "compat": "JobSpy PRs #347/#350"
+        "compat": "JobSpy PRs #347/#350",
+        "reliability": "best_effort_optional"
       },
-      "last_good_count": 153
+      "last_good_count": 394
     }
   }
 }
