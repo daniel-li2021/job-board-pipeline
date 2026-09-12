@@ -28,6 +28,16 @@ class LlmMatchingTests(unittest.TestCase):
         self.assertIn("distributed Python services", selected)
         self.assertIn("Responsibilities", selected)
 
+    def test_long_jd_preserves_common_alternate_headings(self) -> None:
+        text = (
+            "Overview\n" + ("introductory context " * 420) + "\n"
+            "What you'll be doing\nOwn reliable backend services.\n"
+            "What we're looking for\nProduction Python experience.\n"
+        )
+        selected = llm_config.select_jd_context(text)
+        self.assertIn("Own reliable backend services", selected)
+        self.assertIn("Production Python experience", selected)
+
     @patch("board_pipeline.requests.post")
     def test_llm_batch_sends_only_complete_routed_resume(self, post: Mock) -> None:
         job = {
@@ -99,6 +109,27 @@ class LlmMatchingTests(unittest.TestCase):
         self.assertTrue(board.role_seniority_prefilter(five)[0])
         self.assertFalse(board.role_seniority_prefilter(six)[0])
 
+    def test_prefilter_recognizes_missing_strong_families_and_senior_aliases(self) -> None:
+        for title in ("Cloud Engineer", "iOS Engineer", "DevSecOps Engineer", "Robotics Autonomy Engineer"):
+            self.assertTrue(board.role_seniority_prefilter({"title": title})[0], title)
+        for title in ("Software Engineering SMTS", "Software Engineering Technical Leader"):
+            self.assertFalse(board.role_seniority_prefilter({"title": title})[0], title)
+
+    def test_title_only_rule_fallback_is_not_actionable(self) -> None:
+        job = {
+            "title": "Full Stack Developer", "description": "", "match_score": 75,
+            "score_source": board.SCORE_FALLBACK, "role_family": "swe",
+            "seniority_fit": "good", "hard_constraint_status": "ok",
+            "main_gaps": [], "recency_bucket": "lt3h",
+        }
+        self.assertEqual("C", board.assign_tier(job, False))
+
+    def test_google_queries_include_coverage_audit_gaps(self) -> None:
+        from sources.careers.google import DEFAULT_QUERIES
+        queries = {item["q"] for item in DEFAULT_QUERIES}
+        self.assertIn('"Software Engineer III"', queries)
+        self.assertIn('"Web Solutions Engineer"', queries)
+
 
 class IncrementalOfficialTests(unittest.TestCase):
     def test_numeric_listing_timestamp_is_stable_and_cacheable(self) -> None:
@@ -120,6 +151,12 @@ class IncrementalOfficialTests(unittest.TestCase):
         self.assertEqual(6, query_page_budget("ai engineer", 50))
         self.assertEqual(3, query_page_budget("data engineer", 50))
         self.assertEqual(2, query_page_budget("software engineer", 2))
+
+    def test_high_gap_companies_have_audit_backed_queries(self) -> None:
+        companies = {item["id"]: item for item in registry.load_companies()["companies"]}
+        self.assertIn("site reliability engineer", companies["jpmorgan"]["oracle_hcm"]["extra_queries"])
+        self.assertIn("software developer", companies["oracle"]["oracle_hcm"]["extra_queries"])
+        self.assertIn("splunk engineer", companies["cisco"]["workday"]["extra_queries"])
 
     def test_direct_original_hydration_reuses_cached_jd(self) -> None:
         card = make_job(

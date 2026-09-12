@@ -95,7 +95,7 @@ RESUME_AI_PATH = PROFILE_DIR / "resume_ai.md"
 COMPANY_FILTERS_PATH = PROFILE_DIR / "company_filters.json"
 
 # Bump whenever the LLM prompt schema/policy changes; invalidates cached scores.
-PROMPT_VERSION = "v4-routed-resume-calibrated-context"
+PROMPT_VERSION = "v5-routed-resume-jd-evidence"
 
 # score_source values. Only llm / cached_llm are reusable cache hits.
 # rule_overflow MUST remain eligible for LLM on a later run.
@@ -630,7 +630,8 @@ def resolve_exposed_originals(
 # Hard filter
 # --------------------------------------------------------------------------
 SENIOR_TITLE_RE = re.compile(
-    r"\b(senior|sr\.?|lead|staff|principal|director|manager|head of|vp|vice president|distinguished|fellow)\b",
+    r"\b(senior|sr\.?|lead|staff|principal|director|manager|head of|vp|vice president|"
+    r"distinguished|fellow|technical leader|pmts|smts|lmts|engineer iv|engineer v|level [4-9])\b",
     re.IGNORECASE,
 )
 HARDWARE_TITLE_RE = re.compile(
@@ -756,7 +757,7 @@ AI_FAMILY_RE = re.compile(
     r"\b(ai|a\.i\.|artificial intelligence|ml|machine learning|deep learning|"
     r"llm|genai|generative ai|applied ai|applied scientist|nlp|computer vision|"
     r"cv engineer|rag|retrieval|search engineer|agent|agentic|mlops|ml ?ops|"
-    r"model|inference)\b",
+    r"model|inference|robotics|autonomy|data science)\b",
     re.IGNORECASE,
 )
 SWE_FAMILY_RE = re.compile(
@@ -767,7 +768,7 @@ SWE_FAMILY_RE = re.compile(
     r"solutions architect|solution architect|ai solutions architect|"
     r"solutions? engineer|integration engineer|implementation engineer|"
     r"automation engineer|security engineer|product engineer|etl engineer|"
-    r"compiler|gpu|firmware|embedded|tooling)\b",
+    r"compiler|gpu|firmware|embedded|tooling|cloud engineer|ios engineer|android engineer|devsecops)\b",
     re.IGNORECASE,
 )
 # Title must look like an engineering role. Stops JD keywords from rescuing
@@ -780,7 +781,8 @@ TITLE_TECH_RE = re.compile(
     r"sre|site reliability|devops|research engineer|systems engineer|agentic|"
     r"compiler|gpu|firmware|embedded|tooling|computer vision|"
     r"solutions? engineer|integration engineer|implementation engineer|"
-    r"automation engineer|security engineer|product engineer|etl engineer)\b",
+    r"automation engineer|security engineer|product engineer|etl engineer|cloud engineer|"
+    r"ios engineer|android engineer|devsecops|robotics engineer|autonomy engineer|data science engineer)\b",
     re.IGNORECASE,
 )
 NEGATIVE_FAMILY_RE = re.compile(
@@ -1438,6 +1440,10 @@ def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
     early = bool(EARLY_CAREER_TITLE_RE.search(job.get("title") or ""))
     family = (job.get("role_family") or "").lower()
     strong_family = family in ("swe", "ai", "ambiguous")
+
+    # Title-only rule scores are discovery hints, not evidence of resume fit.
+    if rule_only and len(str(job.get("description") or "").strip()) < THIN_JD_CHARS and not early:
+        return "C"
 
     intern = bool(INTERNSHIP_TITLE_RE.search(job.get("title") or ""))
     staffing = bool(job.get("staffing_firm"))

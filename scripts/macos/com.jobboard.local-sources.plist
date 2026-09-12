@@ -18,8 +18,7 @@
     launchctl start com.jobboard.local-sources
 
   Notes:
-    - StartInterval is 10800s (3h). Use 7200 for 2h.
-    - launchd does not fire while the Mac is asleep; it runs at the next wake.
+    - Calendar jobs missed during sleep are coalesced and run after wake.
     - stdout/stderr go to output/logs/ (git-ignored).
     - If the repo lives under Desktop/Documents/Downloads, macOS TCC blocks
       launchd with "Operation not permitted". Fix: System Settings → Privacy &
@@ -47,10 +46,31 @@
         <string>/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
         <key>PYTHON_BIN</key>
         <string>/Users/daniel/Projects/job_scrape_feasibility-automation/.venv/bin/python3</string>
+        <!-- Push over the inherited SSH agent; HTTPS Keychain may select another account. -->
+        <key>GIT_CONFIG_COUNT</key>
+        <string>1</string>
+        <key>GIT_CONFIG_KEY_0</key>
+        <string>remote.origin.pushurl</string>
+        <key>GIT_CONFIG_VALUE_0</key>
+        <string>git@github.com:daniel-li2021/job-board-pipeline.git</string>
+        <key>GIT_SSH_COMMAND</key>
+        <string>/usr/bin/ssh -o BatchMode=yes</string>
+        <key>GIT_TERMINAL_PROMPT</key>
+        <string>0</string>
     </dict>
 
-    <key>StartInterval</key>
-    <integer>10800</integer>
+    <!-- Unlike StartInterval, missed calendar events run when the Mac wakes. -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict><key>Hour</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>3</integer></dict>
+        <dict><key>Hour</key><integer>6</integer></dict>
+        <dict><key>Hour</key><integer>9</integer></dict>
+        <dict><key>Hour</key><integer>12</integer></dict>
+        <dict><key>Hour</key><integer>15</integer></dict>
+        <dict><key>Hour</key><integer>18</integer></dict>
+        <dict><key>Hour</key><integer>21</integer></dict>
+    </array>
 
     <key>RunAtLoad</key>
     <true/>

@@ -49,6 +49,7 @@ SOURCES: Dict[str, Callable[[], Dict[str, object]]] = {
     "indeed": lambda: jobspy_local.scrape("indeed"),
     "glassdoor": lambda: jobspy_local.scrape("glassdoor"),
 }
+OPTIONAL_SOURCES = {"glassdoor"}
 HEALTH_PATH = OUTPUT_DIR / "sources" / "health.json"
 HEALTH_SCHEMA_VERSION = 1
 
@@ -212,6 +213,7 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
         snapshot_meta = snapshot.get("meta", {})
         healthy = bool(result.get("source_healthy", result.get("status") == "ok"))
         sources[name] = {
+            "required": name not in OPTIONAL_SOURCES,
             "healthy": healthy,
             "status": result.get("status", "unknown"),
             "reason": "" if healthy else result.get("reason", "unknown failure"),
@@ -253,6 +255,10 @@ def main() -> None:
     ok = [r for r in results if r["status"] == "ok"]
     print(f"\nDone. {len(ok)}/{len(results)} source(s) updated: "
           + ", ".join(f"{r['source']}={r['status']}" for r in results))
+    if names != ["glassdoor"] and not any(
+        r["status"] == "ok" and r["source"] not in OPTIONAL_SOURCES for r in results
+    ):
+        raise SystemExit("No required local source succeeded; last-good snapshots were preserved.")
 
 
 if __name__ == "__main__":

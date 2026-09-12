@@ -26,6 +26,10 @@ PYTHON_BIN="${PYTHON_BIN:-python3}"
 LOG_DIR="$REPO_DIR/output/logs"
 mkdir -p "$LOG_DIR"
 STAMP="$(date +%Y-%m-%d_%H%M)"
+if ! [ -x "$PYTHON_BIN" ] && ! command -v "$PYTHON_BIN" >/dev/null 2>&1; then
+  echo "[$STAMP] Python interpreter is unavailable: $PYTHON_BIN"
+  exit 1
+fi
 
 # Load .env WITHOUT echoing secrets and WITHOUT executing file contents.
 # Parses KEY=VALUE lines, tolerating spaces around '=' and surrounding quotes.
@@ -84,6 +88,13 @@ TARGET_COMMIT="${LOCAL_SOURCE_TARGET_COMMIT:-}"
 if [ -z "$TARGET_COMMIT" ]; then
   git fetch origin "$TARGET_BRANCH" || exit 1
   TARGET_COMMIT="$(git rev-parse "origin/$TARGET_BRANCH")" || exit 1
+fi
+
+# A public fetch can succeed with the wrong cached GitHub account. Check write
+# authentication before spending several minutes scraping.
+if [ "${SKIP_PUSH:-0}" != "1" ] && ! git push --dry-run origin "origin/$TARGET_BRANCH:$TARGET_BRANCH" >/dev/null; then
+  echo "[$STAMP] Git push authentication failed before collection; fix the credential for this repo owner."
+  exit 1
 fi
 
 SYNC_PARENT="$(mktemp -d "${TMPDIR:-/tmp}/jobboard-source-sync.XXXXXX")"

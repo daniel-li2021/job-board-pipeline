@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import plistlib
 import shutil
 import subprocess
 import sys
@@ -138,6 +139,17 @@ class LocalSourceTests(unittest.TestCase):
     def test_codegraph_generated_data_is_ignored(self) -> None:
         self.assertIn(".codegraph/", (ROOT / ".gitignore").read_text(encoding="utf-8").splitlines())
 
+    def test_launchd_agent_runs_after_wake_and_uses_noninteractive_ssh_push(self) -> None:
+        with (ROOT / "scripts/macos/com.jobboard.local-sources.plist").open("rb") as handle:
+            agent = plistlib.load(handle)
+        self.assertNotIn("StartInterval", agent)
+        self.assertEqual(list(range(0, 24, 3)), [item["Hour"] for item in agent["StartCalendarInterval"]])
+        env = agent["EnvironmentVariables"]
+        self.assertEqual("remote.origin.pushurl", env["GIT_CONFIG_KEY_0"])
+        self.assertEqual("git@github.com:daniel-li2021/job-board-pipeline.git", env["GIT_CONFIG_VALUE_0"])
+        self.assertEqual("/usr/bin/ssh -o BatchMode=yes", env["GIT_SSH_COMMAND"])
+        self.assertEqual("0", env["GIT_TERMINAL_PROMPT"])
+
     def test_snapshot_schema_is_versioned_and_reads_legacy_lists(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir, patch.object(schema, "SOURCES_DIR", Path(tmpdir)):
             path = schema.write_source_snapshot("indeed", [{"job_id": "1"}], {"collector": {"commit": "abc"}})
@@ -177,11 +189,20 @@ class LocalSourceTests(unittest.TestCase):
                 "reason": "HTTP 403", "attempted_at": "2026-09-07T00:00:00+00:00",
             }], new)
             health = json.loads((Path(tmpdir) / "health.json").read_text(encoding="utf-8"))["sources"]["glassdoor"]
+            self.assertFalse(health["required"])
             self.assertFalse(health["healthy"])
             self.assertEqual("HTTP 403", health["reason"])
             self.assertEqual("2026-09-01T00:00:00+00:00", health["last_success_at"])
             self.assertEqual("old", health["last_success_collector"]["commit"])
             self.assertEqual(1, health["last_good_count"])
+
+    def test_collector_fails_when_no_required_source_succeeds(self) -> None:
+        failed = {"source": "linkedin", "status": "skipped_unavailable"}
+        with patch.object(sys, "argv", ["local_sources.py"]), patch.object(
+            local_sources, "run_one", return_value=failed,
+        ), patch.object(local_sources, "write_health"):
+            with self.assertRaisesRegex(SystemExit, "No required local source succeeded"):
+                local_sources.main()
 
     def test_empty_attempt_updates_health_but_keeps_last_success(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir, patch.object(schema, "SOURCES_DIR", Path(tmpdir)), patch.object(

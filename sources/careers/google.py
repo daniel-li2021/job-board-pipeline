@@ -48,6 +48,20 @@ DEFAULT_QUERIES: List[Dict[str, Any]] = [
         "max_pages": 3,
     },
     {
+        "q": '"Software Engineer III"',
+        "target_levels": ["MID", "EARLY", "INTERN_AND_APPRENTICE"],
+        "location": "United States",
+        "sort_by": "date",
+        "max_pages": 4,
+    },
+    {
+        "q": '"Web Solutions Engineer"',
+        "target_levels": ["MID", "EARLY", "INTERN_AND_APPRENTICE"],
+        "location": "United States",
+        "sort_by": "date",
+        "max_pages": 2,
+    },
+    {
         "q": '"DeepMind"',
         "target_levels": ["MID", "EARLY", "INTERN_AND_APPRENTICE"],
         "location": "United States",

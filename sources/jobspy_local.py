@@ -218,6 +218,7 @@ def scrape(
         if source == "glassdoor":
             _patch_glassdoor_transport()
             source_provenance["compat"] = "JobSpy PRs #347/#350"
+            source_provenance["reliability"] = "best_effort_optional"
 
     specs = list(source_queries(source))
     if keywords:

@@ -27,10 +27,14 @@ MODEL_PRICING_USD_PER_MILLION: Dict[str, Dict[str, float]] = {
 }
 
 _REQUIRED_HEADING_RE = re.compile(
-    r"(?im)^\s*(?:minimum|required|basic|must[- ]have)\s+qualifications?\s*[:\-]?\s*$"
+    r"(?im)^\s*(?:(?:minimum|required|basic|must[- ]have)\s+qualifications?|"
+    r"requirements?|qualifications?|what you(?:'|’)ll need|what you bring|"
+    r"what we(?:'|’)re looking for)\s*[:\-]?\s*$"
 )
 _RESPONSIBILITY_HEADING_RE = re.compile(
-    r"(?im)^\s*(?:responsibilities|what you(?:'|’)ll do|the role|role responsibilities)\s*[:\-]?\s*$"
+    r"(?im)^\s*(?:responsibilities|job responsibilities|your responsibilities|"
+    r"what you(?:'|’)ll do|what you will do|what you(?:'|’)ll be doing|"
+    r"what you will work on|the role|about the role|role responsibilities)\s*[:\-]?\s*$"
 )
 _ANY_HEADING_RE = re.compile(r"(?m)^\s*[A-Z][A-Za-z0-9 &/'’(),+\-]{2,70}\s*[:\-]?\s*$")
 
@@ -67,11 +71,20 @@ def select_jd_context(text: str, max_chars: int = JD_CONTEXT_CHARS) -> str:
     # Some APIs flatten headings into one long line. Preserve the surrounding
     # qualification/responsibility text even when line-based sections vanish.
     if not required:
-        hit = re.search(r"(?i)\b(?:minimum|required|basic|must[- ]have)\s+qualifications?\b", value)
+        hit = re.search(
+            r"(?i)\b(?:(?:minimum|required|basic|must[- ]have)\s+qualifications?|"
+            r"requirements?|what you(?:'|’)ll need|what you bring|what we(?:'|’)re looking for)\b",
+            value,
+        )
         if hit:
             required = value[hit.start() : hit.start() + 4200]
     if not responsibilities:
-        hit = re.search(r"(?i)\b(?:responsibilities|what you(?:'|’)ll do|role responsibilities)\b", value)
+        hit = re.search(
+            r"(?i)\b(?:responsibilities|job responsibilities|your responsibilities|"
+            r"what you(?:'|’)ll do|what you will do|what you(?:'|’)ll be doing|"
+            r"what you will work on|about the role|role responsibilities)\b",
+            value,
+        )
         if hit:
             responsibilities = value[hit.start() : hit.start() + 2600]
     selected = "\n\n".join(part for part in (responsibilities, required) if part)
