@@ -1,10 +1,10 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-09-11 08:12 PDT
-- Snapshot (UTC): 2026-09-11T15:12:59.309848+00:00
-- Jobs: 32
-- Last 24 hours: 7
-- Last 3 days: 32
+- Updated (PT): 2026-09-11 17:12 PDT
+- Snapshot (UTC): 2026-09-12T00:12:35.540294+00:00
+- Jobs: 34
+- Last 24 hours: 5
+- Last 3 days: 34
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
@@ -13,6 +13,8 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | A | 90.0 | Syncareer | KLA | AI Software Engineer/Manufacturing | Ann Arbor, Michigan, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://kla.wd1.myworkdayjobs.com/en-US/Search/job/Ann-Arbor-MI/AI-Software-Engineer-Manufacturing_2640648-1?Country=bc33aa3152ec42d4995f4791a106ed09&Country=a4e08b475d6a4176853c9d1cb9854e02&Country=80938777cac5440fab50d729f9634969&Country=6cb77610a8a543aea2d6bc10457e35d4&Country=29247e57dbaf46fb855b224e03170bc7) |
 | A | 85.0 | Syncareer | Verisk | Full Stack SDE II | Boston, Massachusetts, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://fa-ewmy-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4711) |
 | B | 78.0 | Syncareer | Handshake | AI Red Teamer (LLM Generalist) | Seattle, Washington, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/handshake/e15e3244-06f9-4c41-96c6-8860ad7594c5) |
+| B | 72.0 | Syncareer | Infosys | Java Full Stack Developer | Boston, Massachusetts, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153514BR) |
+| B | 86.0 | Syncareer | DRW | Platform Engineer - AI Engineering | Chicago, Illinois, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/drweng/jobs/8186711) |
 | B | 84.0 | Syncareer | Micron Technology | New College Grad - IT Software Support Engineer | Boise, Idaho, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.micron.com/careers/job/44419615?domain=micron.com) |
 | B | 74.0 | Syncareer | CNH Industrial | Software Engineer Intern | Sioux Falls, South Dakota, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://join.cnh.com/job/Software-Engineer-Intern/5672-en_US) |
 | B | 79.0 | Syncareer | Intercontinental Exchange | Junior Software Development Engineer in Test | Atlanta, Georgia, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ice.com/jobs/13399?lang=en-us) |
