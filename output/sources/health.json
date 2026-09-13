@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-13T04:07:17.798955+00:00",
+  "generated_at": "2026-09-13T07:06:20.494420+00:00",
   "collector": {
-    "commit": "c6c9a39b5191dccf49e3e160461097baa2b3165b",
+    "commit": "21e47a6149e3c5564ceab76c0830be6a0ffcb5aa",
     "dirty": false
   },
   "sources": {
@@ -11,14 +11,14 @@
       "healthy": true,
       "status": "ok",
       "reason": "",
-      "last_attempt_at": "2026-09-13T04:00:10.612115+00:00",
-      "last_success_at": "2026-09-13T04:00:10.612115+00:00",
+      "last_attempt_at": "2026-09-13T07:00:11.012282+00:00",
+      "last_success_at": "2026-09-13T07:00:11.012282+00:00",
       "last_attempt_collector": {
-        "commit": "c6c9a39b5191dccf49e3e160461097baa2b3165b",
+        "commit": "21e47a6149e3c5564ceab76c0830be6a0ffcb5aa",
         "dirty": false
       },
       "last_success_collector": {
-        "commit": "c6c9a39b5191dccf49e3e160461097baa2b3165b",
+        "commit": "21e47a6149e3c5564ceab76c0830be6a0ffcb5aa",
         "dirty": false
       },
       "last_attempt_source_provenance": {
@@ -27,21 +27,21 @@
       "last_success_source_provenance": {
         "implementation": "sources.linkedin_local"
       },
-      "last_good_count": 781
+      "last_good_count": 746
     },
     "indeed": {
       "required": true,
       "healthy": true,
       "status": "ok",
       "reason": "",
-      "last_attempt_at": "2026-09-13T04:06:27.400130+00:00",
-      "last_success_at": "2026-09-13T04:06:27.400130+00:00",
+      "last_attempt_at": "2026-09-13T07:05:23.946829+00:00",
+      "last_success_at": "2026-09-13T07:05:23.946829+00:00",
       "last_attempt_collector": {
-        "commit": "c6c9a39b5191dccf49e3e160461097baa2b3165b",
+        "commit": "21e47a6149e3c5564ceab76c0830be6a0ffcb5aa",
         "dirty": false
       },
       "last_success_collector": {
-        "commit": "c6c9a39b5191dccf49e3e160461097baa2b3165b",
+        "commit": "21e47a6149e3c5564ceab76c0830be6a0ffcb5aa",
         "dirty": false
       },
       "last_attempt_source_provenance": {
@@ -52,21 +52,21 @@
         "implementation": "python-jobspy",
         "version": "1.1.82"
       },
-      "last_good_count": 606
+      "last_good_count": 548
     },
     "glassdoor": {
       "required": false,
       "healthy": true,
       "status": "ok",
       "reason": "",
-      "last_attempt_at": "2026-09-13T04:06:44.986356+00:00",
-      "last_success_at": "2026-09-13T04:06:44.986356+00:00",
+      "last_attempt_at": "2026-09-13T07:05:41.808976+00:00",
+      "last_success_at": "2026-09-13T07:05:41.808976+00:00",
       "last_attempt_collector": {
-        "commit": "c6c9a39b5191dccf49e3e160461097baa2b3165b",
+        "commit": "21e47a6149e3c5564ceab76c0830be6a0ffcb5aa",
         "dirty": false
       },
       "last_success_collector": {
-        "commit": "c6c9a39b5191dccf49e3e160461097baa2b3165b",
+        "commit": "21e47a6149e3c5564ceab76c0830be6a0ffcb5aa",
         "dirty": false
       },
       "last_attempt_source_provenance": {
@@ -81,7 +81,7 @@
         "compat": "JobSpy PRs #347/#350",
         "reliability": "best_effort_optional"
       },
-      "last_good_count": 385
+      "last_good_count": 389
     }
   }
 }
