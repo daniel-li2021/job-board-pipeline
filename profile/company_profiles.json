@@ -1,0 +1,3019 @@
+{
+  "_meta": {
+    "purpose": "Canonical employer profiles for company-level application ranking. priority is an employer/application signal, not a job-fit or role-family score.",
+    "generated": "2026-09-12",
+    "company_count": 198,
+    "source_scope": [
+      "config/official_careers.json",
+      "config/target_companies.json",
+      "profile/company_filters.json",
+      "selected recurring/recent job-output and application-related companies"
+    ],
+    "classification_notes": {
+      "size": "Broad employee-count bands only; intentionally avoids false precision.",
+      "sponsor": "Conservative heuristic: likely only with reasonable sponsorship history/evidence or a well-established sponsor-friendly employer; unlikely for defense/citizenship/clearance-heavy or known poor-sponsorship cases; otherwise unknown.",
+      "priority": "Application-ranking signal only. High favors larger/established sponsor-friendly employers and strong mature/growth tech companies; low favors staffing, clearance-heavy/defense, excluded aggregators, and weak sponsorship prospects."
+    }
+  },
+  "companies": [
+    {
+      "name": "Abridge",
+      "aliases": [
+        "abridge ai"
+      ],
+      "size": "200-1k",
+      "type": "healthcare",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "tags": [
+        "ai_company",
+        "healthtech",
+        "startup"
+      ],
+      "priority": "high",
+      "notes": "Current LinkedIn profile lists 201–500 employees; mapped to 200-1k. Growth-stage health/AI company; sponsorship left unknown.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Adecco",
+      "aliases": [],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Adobe",
+      "aliases": [],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "enterprise_software"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Aerotek",
+      "aliases": [],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Airbnb",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Amazon",
+      "aliases": [
+        "aws",
+        "amazon web services"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "AMD",
+      "aliases": [
+        "advanced micro devices"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "semiconductor"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Amentum",
+      "aliases": [],
+      "size": "20k+",
+      "type": "industrial",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "public_company",
+        "defense",
+        "clearance_heavy"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Anduril",
+      "aliases": [
+        "anduril industries"
+      ],
+      "size": "1k-5k",
+      "type": "industrial",
+      "maturity": "growth",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy",
+        "pipeline_exclude",
+        "startup"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Ansys",
+      "aliases": [
+        "ansys inc",
+        "ansys (synopsys)"
+      ],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "notes": "Ansys roles are currently surfaced through Synopsys careers; kept as an Ansys profile rather than swallowing all Synopsys roles.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Anthropic",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly",
+        "ai_company",
+        "startup"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Apple",
+      "aliases": [],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "AppLovin",
+      "aliases": [
+        "app lovin"
+      ],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Arcfield",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy",
+        "government_contracting"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Arkhya Tech",
+      "aliases": [
+        "arkhya"
+      ],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing",
+        "startup"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Asana",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "enterprise_software"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Ascendion",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "BAE Systems US",
+      "aliases": [
+        "bae systems",
+        "bae systems inc"
+      ],
+      "size": "20k+",
+      "type": "industrial",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "public_company",
+        "defense",
+        "clearance_heavy"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Beacon Hill",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "BeaconFire",
+      "aliases": [],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Blizzard Entertainment",
+      "aliases": [
+        "blizzard",
+        "activision blizzard"
+      ],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Block",
+      "aliases": [
+        "square",
+        "block inc",
+        "square inc"
+      ],
+      "size": "5k-20k",
+      "type": "finance",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "fintech"
+      ],
+      "priority": "high",
+      "notes": "Canonicalizes Block and Square naming variants.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Bloomberg",
+      "aliases": [
+        "bloomberg lp"
+      ],
+      "size": "20k+",
+      "type": "finance",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Blue Origin",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "industrial",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy",
+        "pipeline_exclude"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Booz Allen Hamilton",
+      "aliases": [
+        "booz allen"
+      ],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy",
+        "government_contracting"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Brex",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "finance",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly",
+        "fintech",
+        "startup"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Broadcom",
+      "aliases": [
+        "vmware",
+        "vmware by broadcom"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "semiconductor"
+      ],
+      "priority": "high",
+      "notes": "VMware target-company aliases are attached here because VMware is a Broadcom business; avoid a separate VMware profile.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "ByteDance",
+      "aliases": [
+        "tiktok",
+        "lifeattiktok",
+        "bytedance"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "notes": "Merged TikTok/lifeattiktok with ByteDance for company-level ranking; official career sources may still be scraped separately.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "CACI",
+      "aliases": [],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "public_company",
+        "defense",
+        "clearance_heavy",
+        "government_contracting"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Capgemini",
+      "aliases": [],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "tech_service"
+      ],
+      "priority": "normal",
+      "notes": "Large established technology consulting employer; sponsor-friendly classification is company-level and does not imply every U.S. posting sponsors.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Capital One",
+      "aliases": [
+        "capitalone"
+      ],
+      "size": "20k+",
+      "type": "finance",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "CareerXperts",
+      "aliases": [],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing",
+        "startup"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Carvana",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "retail",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "tags": [
+        "public_company"
+      ],
+      "priority": "normal",
+      "notes": "Current LinkedIn profile lists 10,001+ employees; conservatively mapped to 5k-20k rather than assuming 20k+.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Chenega",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy",
+        "government_contracting"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Chewy",
+      "aliases": [],
+      "size": "20k+",
+      "type": "retail",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "public_company"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Chime",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "finance",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "tags": [
+        "public_company",
+        "fintech"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Cisco",
+      "aliases": [],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Citadel",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "finance",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Cloudflare",
+      "aliases": [
+        "cloudflare inc"
+      ],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "cybersecurity"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Cohere",
+      "aliases": [],
+      "size": "200-1k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly",
+        "ai_company",
+        "startup"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Coinbase",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "finance",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "fintech"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Collabera",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Commure",
+      "aliases": [
+        "commure inc"
+      ],
+      "size": "1k-5k",
+      "type": "healthcare",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "tags": [
+        "healthtech",
+        "startup"
+      ],
+      "priority": "high",
+      "notes": "Current LinkedIn profile lists 1,001–5,000 employees and describes rapid growth; sponsorship left unknown pending stronger evidence.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Corriculo Recruitment",
+      "aliases": [
+        "corriculo"
+      ],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "CVS Health",
+      "aliases": [
+        "cvs",
+        "cvs health"
+      ],
+      "size": "20k+",
+      "type": "healthcare",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "public_company"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "CyberCoders",
+      "aliases": [],
+      "size": "200-1k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "DataAnnotation",
+      "aliases": [
+        "data annotation"
+      ],
+      "size": "50-200",
+      "type": "other",
+      "maturity": "growth",
+      "sponsor": "unlikely",
+      "tags": [
+        "pipeline_exclude",
+        "gig_platform",
+        "startup"
+      ],
+      "priority": "low",
+      "notes": "Existing pipeline exclusion; treated as a gig/platform-style source rather than a conventional employer.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Databricks",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly",
+        "enterprise_software",
+        "startup"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Dell Technologies",
+      "aliases": [
+        "dell",
+        "dell technologies"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Digital Waffle",
+      "aliases": [],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Discord",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "tags": [
+        "startup"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "DoorDash",
+      "aliases": [
+        "doordash usa"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Dropbox",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Duolingo",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "eBay",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "ECS",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy",
+        "government_contracting"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Encore Talent",
+      "aliases": [],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Equinix",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Expedia Group",
+      "aliases": [
+        "expedia"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "F5",
+      "aliases": [
+        "f5 networks"
+      ],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "cybersecurity"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "FastTek Global",
+      "aliases": [
+        "fasttek"
+      ],
+      "size": "200-1k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Figma",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "FIS",
+      "aliases": [
+        "fidelity national information services",
+        "fis global"
+      ],
+      "size": "20k+",
+      "type": "finance",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "fintech"
+      ],
+      "priority": "normal",
+      "notes": "Large established financial-technology employer; current LinkedIn profile lists 10,001+ employees.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Flex",
+      "aliases": [],
+      "size": "20k+",
+      "type": "industrial",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Freedom Technology Solutions",
+      "aliases": [],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "General Atomics",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "industrial",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "General Dynamics / GDIT",
+      "aliases": [
+        "general dynamics",
+        "gdit"
+      ],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "public_company",
+        "defense",
+        "clearance_heavy",
+        "government_contracting"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "GitLab",
+      "aliases": [
+        "gitlab inc"
+      ],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "enterprise_software"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Goldman Sachs",
+      "aliases": [],
+      "size": "20k+",
+      "type": "finance",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Google",
+      "aliases": [
+        "alphabet",
+        "youtube",
+        "google llc"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "notes": "Merged pipeline aliases for Alphabet and YouTube; treat YouTube as a Google brand, not a separate employer profile.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "GRVTY",
+      "aliases": [],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "early_startup",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy",
+        "startup"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Harvey Nash",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Hays",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Hewlett Packard Enterprise",
+      "aliases": [
+        "hpe"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Hire IT People",
+      "aliases": [],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "HireOn Tech",
+      "aliases": [],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing",
+        "startup"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Hirewell",
+      "aliases": [],
+      "size": "200-1k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "HP Inc.",
+      "aliases": [
+        "hp inc"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "clearance_some"
+      ],
+      "priority": "normal",
+      "notes": "Existing clearance-risk filter is title-scoped to intern/new-grad/graduate roles; do not treat all HP roles as clearance-heavy.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "HubSpot",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "IBM",
+      "aliases": [
+        "international business machines"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "tech_service"
+      ],
+      "priority": "high",
+      "notes": "Large established technology/services employer with long sponsorship history; current LinkedIn profile lists 10,001+ employees.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "IDR",
+      "aliases": [],
+      "size": "200-1k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Initi8 Recruitment",
+      "aliases": [
+        "initi8"
+      ],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Insight Global",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Instacart",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Intel",
+      "aliases": [
+        "intel corporation"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "semiconductor"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "interface.ai",
+      "aliases": [
+        "interface ai"
+      ],
+      "size": "50-200",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "tags": [
+        "ai_company",
+        "startup"
+      ],
+      "priority": "normal",
+      "notes": "Current LinkedIn profile lists 51–200 employees; growth-stage AI company. Sponsorship left unknown.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Internet Brands",
+      "aliases": [
+        "ib",
+        "internetbrands"
+      ],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [],
+      "priority": "normal",
+      "notes": "Current LinkedIn profile lists 5,001–10,000 employees; mapped to the broader 5k-20k band. Sponsorship left unknown.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Interon IT Solutions",
+      "aliases": [
+        "interon"
+      ],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "IQVIA",
+      "aliases": [],
+      "size": "20k+",
+      "type": "healthcare",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "IXL Learning",
+      "aliases": [
+        "ixl"
+      ],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Jobot",
+      "aliases": [],
+      "size": "200-1k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "JobRight.ai",
+      "aliases": [
+        "jobright",
+        "jobrightai"
+      ],
+      "size": "50-200",
+      "type": "other",
+      "maturity": "growth",
+      "sponsor": "unlikely",
+      "tags": [
+        "pipeline_exclude",
+        "aggregator",
+        "startup"
+      ],
+      "priority": "low",
+      "notes": "Existing pipeline exclusion: aggregator/reposter rather than a direct employer.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Johns Hopkins APL",
+      "aliases": [
+        "johns hopkins applied physics laboratory",
+        "jhu apl"
+      ],
+      "size": "5k-20k",
+      "type": "government",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy",
+        "pipeline_exclude"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Johnson & Johnson",
+      "aliases": [
+        "johnson and johnson",
+        "jnj"
+      ],
+      "size": "20k+",
+      "type": "healthcare",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "JPMorgan Chase",
+      "aliases": [
+        "jpmorgan",
+        "jp morgan",
+        "j.p. morgan",
+        "jpmorgan chase"
+      ],
+      "size": "20k+",
+      "type": "finance",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "notes": "Includes J.P. Morgan / JP Morgan naming variants used in target-company matching.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "KBR",
+      "aliases": [],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "public_company",
+        "defense",
+        "clearance_heavy",
+        "government_contracting"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Kforce",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "KLA",
+      "aliases": [
+        "kla corporation"
+      ],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "semiconductor"
+      ],
+      "priority": "high",
+      "notes": "Current LinkedIn profile lists 10,001+ employees; mapped to 5k-20k.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Koniag",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy",
+        "government_contracting"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "L3Harris",
+      "aliases": [
+        "l3 harris"
+      ],
+      "size": "20k+",
+      "type": "industrial",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "public_company",
+        "defense",
+        "clearance_heavy",
+        "pipeline_exclude"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Lawrence Harvey",
+      "aliases": [],
+      "size": "200-1k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Leidos",
+      "aliases": [],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "public_company",
+        "defense",
+        "clearance_heavy",
+        "government_contracting"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Liberty Personnel",
+      "aliases": [],
+      "size": "200-1k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Linear",
+      "aliases": [],
+      "size": "200-1k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "tags": [
+        "startup"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "LinkedIn",
+      "aliases": [],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Lockheed Martin",
+      "aliases": [
+        "lockheed"
+      ],
+      "size": "20k+",
+      "type": "industrial",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "public_company",
+        "defense",
+        "clearance_heavy",
+        "pipeline_exclude"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Lyft",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "ManTech",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy",
+        "government_contracting"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "MathWorks",
+      "aliases": [
+        "the mathworks"
+      ],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Matlen Silver",
+      "aliases": [],
+      "size": "200-1k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "MeeBoss",
+      "aliases": [],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing",
+        "startup"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Meta",
+      "aliases": [
+        "facebook",
+        "instagram",
+        "meta platforms"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "notes": "Merged Facebook and Instagram aliases into Meta.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Microsoft",
+      "aliases": [],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Mitchell Martin",
+      "aliases": [],
+      "size": "200-1k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "MITRE",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "government",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy",
+        "government_contracting"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "MongoDB",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "enterprise_software"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Morgan Stanley",
+      "aliases": [],
+      "size": "20k+",
+      "type": "finance",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Motion Recruitment",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Nasdaq",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "finance",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "NetApp",
+      "aliases": [
+        "netapp inc"
+      ],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Netflix",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "New York Technology Partners",
+      "aliases": [],
+      "size": "200-1k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Noblis",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy",
+        "government_contracting"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Northrop Grumman",
+      "aliases": [
+        "northrop"
+      ],
+      "size": "20k+",
+      "type": "industrial",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "public_company",
+        "defense",
+        "clearance_heavy",
+        "pipeline_exclude"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Notion",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly",
+        "enterprise_software",
+        "startup"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "NVIDIA",
+      "aliases": [
+        "nvidia corporation"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "semiconductor"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "OpenAI",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly",
+        "ai_company",
+        "startup"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Oracle",
+      "aliases": [],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "enterprise_software"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "P&G",
+      "aliases": [
+        "procter & gamble",
+        "procter and gamble"
+      ],
+      "size": "20k+",
+      "type": "industrial",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "public_company",
+        "pipeline_exclude"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Palantir",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Parsons",
+      "aliases": [],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "public_company",
+        "defense",
+        "clearance_heavy",
+        "government_contracting"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "PayPal",
+      "aliases": [],
+      "size": "20k+",
+      "type": "finance",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "fintech"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Peraton",
+      "aliases": [],
+      "size": "20k+",
+      "type": "industrial",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy",
+        "pipeline_exclude"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Phaxis",
+      "aliases": [],
+      "size": "200-1k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "PHT Staffing",
+      "aliases": [],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing",
+        "startup"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Pinterest",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "PointClickCare",
+      "aliases": [
+        "point click care"
+      ],
+      "size": "1k-5k",
+      "type": "healthcare",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "healthtech"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Prelim",
+      "aliases": [
+        "prelim solutions"
+      ],
+      "size": "50-200",
+      "type": "finance",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "tags": [
+        "fintech",
+        "startup"
+      ],
+      "priority": "normal",
+      "notes": "Current LinkedIn profile lists 51–200 employees; growth-stage fintech. Sponsorship left unknown.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Pure Storage",
+      "aliases": [
+        "purestorage"
+      ],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Pyramid Consulting",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Qualcomm",
+      "aliases": [],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "semiconductor"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Ramp",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "finance",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly",
+        "fintech",
+        "startup"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Randstad",
+      "aliases": [],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Red Hat",
+      "aliases": [
+        "redhat"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly",
+        "enterprise_software"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Reddit",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "RemoteHunter",
+      "aliases": [],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing",
+        "startup"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Revature",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Rivago Infotech",
+      "aliases": [
+        "rivago"
+      ],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing",
+        "startup"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Robert Half",
+      "aliases": [],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Robinhood",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "finance",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "fintech"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Roblox",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Rocket Lab USA",
+      "aliases": [
+        "rocket lab"
+      ],
+      "size": "1k-5k",
+      "type": "industrial",
+      "maturity": "growth",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy",
+        "startup"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Roku",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "RS Global Services",
+      "aliases": [],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "RTX",
+      "aliases": [
+        "raytheon"
+      ],
+      "size": "20k+",
+      "type": "industrial",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "public_company",
+        "defense",
+        "clearance_heavy",
+        "pipeline_exclude"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "SAIC",
+      "aliases": [],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "public_company",
+        "defense",
+        "clearance_heavy",
+        "government_contracting"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Salesforce",
+      "aliases": [
+        "salesforce.com"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "enterprise_software"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Samsara",
+      "aliases": [
+        "samsara inc"
+      ],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "SAP",
+      "aliases": [],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "enterprise_software"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Selby Jennings",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "ServiceNow",
+      "aliases": [
+        "service now"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "enterprise_software"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Snap",
+      "aliases": [
+        "snapchat",
+        "snap inc",
+        "snap inc."
+      ],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "notes": "Merged Snapchat/Snap Inc. aliases into the Snap profile.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Snowflake",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "enterprise_software"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "SpaceX",
+      "aliases": [
+        "space exploration technologies"
+      ],
+      "size": "5k-20k",
+      "type": "industrial",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Spotify",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Strategic Employment Partners",
+      "aliases": [],
+      "size": "200-1k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Stripe",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "finance",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly",
+        "fintech",
+        "startup"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Stryker",
+      "aliases": [],
+      "size": "20k+",
+      "type": "healthcare",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "TalentAlly",
+      "aliases": [
+        "talent ally"
+      ],
+      "size": "200-1k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Tata Consultancy Services",
+      "aliases": [
+        "tcs"
+      ],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "tech_service"
+      ],
+      "priority": "normal",
+      "notes": "Large established IT-services employer with substantial historical U.S. visa sponsorship; kept normal priority because this signal is employer-level, not role quality.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "TEKsystems",
+      "aliases": [],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Tencent",
+      "aliases": [
+        "tencent america",
+        "tencent games"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Tenzor AI Talent",
+      "aliases": [
+        "tenzor"
+      ],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing",
+        "startup"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Tesla",
+      "aliases": [],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "The Developer Link",
+      "aliases": [],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "The Walt Disney Company",
+      "aliases": [
+        "disney",
+        "walt disney company"
+      ],
+      "size": "20k+",
+      "type": "other",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "public_company"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "TMV Global",
+      "aliases": [],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Top Stack",
+      "aliases": [],
+      "size": "50-200",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "staffing"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "TransUnion",
+      "aliases": [
+        "trans union"
+      ],
+      "size": "5k-20k",
+      "type": "finance",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Travelers",
+      "aliases": [],
+      "size": "20k+",
+      "type": "finance",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "public_company"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Two Sigma",
+      "aliases": [
+        "two sigma investments"
+      ],
+      "size": "1k-5k",
+      "type": "finance",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Uber",
+      "aliases": [],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Verizon",
+      "aliases": [
+        "verizon communications"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Verkada",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly",
+        "startup"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Visa",
+      "aliases": [],
+      "size": "20k+",
+      "type": "finance",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "fintech"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "VTG",
+      "aliases": [
+        "vt group"
+      ],
+      "size": "1k-5k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy",
+        "government_contracting"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Walmart",
+      "aliases": [
+        "walmart global tech",
+        "walmart labs"
+      ],
+      "size": "20k+",
+      "type": "retail",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "notes": "Canonicalizes Walmart Global Tech and Walmart Labs to the parent employer.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Wayfair",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "retail",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Wells Fargo",
+      "aliases": [
+        "wells fargo bank"
+      ],
+      "size": "20k+",
+      "type": "finance",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "WeRide",
+      "aliases": [],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Wipro",
+      "aliases": [],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "tech_service"
+      ],
+      "priority": "normal",
+      "notes": "Large established IT-services employer with substantial historical U.S. visa sponsorship; kept normal priority rather than treating consulting as top-tier by default.",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Workday",
+      "aliases": [
+        "workday inc"
+      ],
+      "size": "20k+",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "enterprise_software"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Wyetech",
+      "aliases": [],
+      "size": "200-1k",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unlikely",
+      "tags": [
+        "defense",
+        "clearance_heavy"
+      ],
+      "priority": "low",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Yahoo",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Yext",
+      "aliases": [
+        "yext inc"
+      ],
+      "size": "1k-5k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "sponsor_friendly",
+        "enterprise_software",
+        "startup"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Zillow",
+      "aliases": [
+        "zillow group"
+      ],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Zoom",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Zscaler",
+      "aliases": [],
+      "size": "5k-20k",
+      "type": "tech",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "tags": [
+        "public_company",
+        "sponsor_friendly",
+        "cybersecurity"
+      ],
+      "priority": "high",
+      "last_verified": "2026-09-12"
+    }
+  ]
+}

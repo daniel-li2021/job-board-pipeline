@@ -19,6 +19,7 @@ Optimize for focused, token-efficient changes and keep Git state easy to reason 
 - A dirty checkout during active editing is normal; do not leave stale uncommitted changes or temporary worktrees after the task is finished.
 - Start new code changes from current `origin/main`, not from an old reused task branch.
 - After the requested behavior is implemented and targeted validation passes, commit it and publish it to the latest `origin/main` by default without waiting for confirmation. Only stop before publishing for conflicts, failing tests, uncertain local changes, or another real safety issue.
+- After pushing a commit, do not wait for or continuously monitor GitHub Actions unless the task specifically requires deployment/CI verification or the push itself appears to have failed.
 - If a temporary task branch/worktree was used, integrate the validated commit into the latest `main`, push `main`, verify the remote commit, then remove the temporary local/remote task branch and worktree when no longer needed.
 - For any non-trivial investigation or multi-file change, if .codegraph/ exists, use CodeGraph before grep/rg/find or broad file reading to identify the relevant symbols and call paths.
 - Start with the responsible file above, then inspect only files required by the task.
