@@ -50,7 +50,6 @@ STORE_PATHS = {
     "official": BASE_DIR / "output" / "official_careers" / "jobs.json",
     "syncareer": BASE_DIR / "output" / "syncareer" / "jobs.json",
 }
-TRACKED_JOBS_PATH = BASE_DIR / "output" / "tracked_jobs.json"
 REPORT_PATHS = {
     "board": "output/board/inbox.md",
     "official": "output/official_careers/inbox.md",
@@ -448,11 +447,6 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
     coverage = coverage_reconcile.build_coverage_payload(now)
     health, health_history = pipeline_health.build(BASE_DIR, now)
     coverage_by_key = {record.get("canonical_job_key", ""): record for record in coverage.get("records", [])}
-    tracked_payload = read_json(TRACKED_JOBS_PATH, {"jobs": {}})
-    tracked_jobs = tracked_payload.get("jobs", {}) if isinstance(tracked_payload, dict) else {}
-    if not isinstance(tracked_jobs, dict):
-        tracked_jobs = {}
-
     snapshots: Dict[str, str] = {}
     all_rows: List[Dict[str, Any]] = []
     for pipeline, path in STORE_PATHS.items():
@@ -540,21 +534,6 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         # Shared status changes need a complete row pool so a job can move
         # between sections immediately without regenerating static job data.
         "workflow_rows": _sort_rows(candidates),
-        "tracked_rows": [
-            normalize_row(
-                dict(job), str(job.get("pipeline") or "board"), now, referrals, coverage_by_key
-            )
-            for job in tracked_jobs.values() if isinstance(job, dict)
-        ],
-        "tracked_states": {
-            key: {
-                "canonical_job_key": key,
-                "status": job.get("status", "unreviewed"),
-                "deleted": False,
-                "updated_at": job.get("updated_at", ""),
-            }
-            for key, job in tracked_jobs.items() if isinstance(job, dict)
-        },
         "history_details": history_details,
         "coverage": coverage,
         "health": health,
@@ -602,7 +581,6 @@ const statusChoices=['unreviewed','in_progress','applied_complete'];const status
 const companyStatePrefix='company::';
 const normalizeStatus=s=>statusAliases[s]||(statusChoices.includes(s)?s:'unreviewed');
 let reviewStates={};try{reviewStates=JSON.parse(localStorage.getItem(statusCacheKey)||'{}')}catch(e){reviewStates={}}
-Object.entries(D.tracked_states||{}).forEach(([key,state])=>{const local=reviewStates[key];if(!local||(Date.parse(state.updated_at||'')||0)>=(Date.parse(local.updated_at||'')||0))reviewStates[key]=state});
 let supabase=null,sharedLoaded=false,sharedError='';const pendingKeys=new Set();
 function reviewState(key){const state=reviewStates[key];return state&&typeof state==='object'?state:null}
 function statusOf(r){return normalizeStatus(reviewState(r.canonical_job_key)?.status||'unreviewed')}
@@ -662,7 +640,7 @@ const discoveryRows=rows=>searchedRows(rows).filter(matchesDiscoveryFilters);
 const discoveryFilterActive=()=>minScore!==''||sponsorshipFilters.size!==sponsorshipChoices.length;
 function tabs(elId,rows){const tab=document.querySelector(`[data-target="${elId}"]`),companyTab=document.querySelector(`[data-company-target="${elId}"]`),box=document.getElementById(elId);let active=tab.querySelector('[data-k].on')?.dataset.k||'all',company=companyTab.querySelector('[data-company].on')?.dataset.company||'all';const companyNames=['all','Google','Microsoft','Apple','Amazon','Meta','TikTok'];const draw=()=>{const filtered=discoveryRows(normalRows(rows)),companyRows=k=>filtered.filter(r=>r.pipeline==='official'&&(k==='all'||r.company.toLowerCase().includes(k.toLowerCase())));tab.innerHTML=['all',...Object.keys(names)].map(k=>`<button class="tab ${k===active?'on':''}" data-k="${k}">${k==='all'?'All':names[k]} (${k==='all'?filtered.length:filtered.filter(r=>r.pipeline===k).length})</button>`).join('');companyTab.style.display=active==='official'?'flex':'none';companyTab.innerHTML=active==='official'?companyNames.map(k=>`<button class="tab ${k===company?'on':''}" data-company="${k}">${k} (${companyRows(k).length})</button>`).join(''):'';let shown=active==='all'?filtered:filtered.filter(r=>r.pipeline===active);if(active==='official'&&company!=='all')shown=companyRows(company);exportViewRows[elId]=displayRows(shown);exportViewLabels[elId]=[elId==='fresh'?'Fresh':'Rolling',active==='all'?'All':names[active],...(active==='official'&&company!=='all'?[company]:[])].join(' → ');const body=box.querySelector('tbody');if(body)body.innerHTML=jobRows(shown);else box.innerHTML=jobs(shown,false,true);bindStatus(box);bindDiscoveryFilters(box,draw);tab.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.k;if(active!=='official')company='all';draw()});companyTab.querySelectorAll('button').forEach(b=>b.onclick=()=>{company=b.dataset.company;draw()})};draw()}
 function renderDiscoveryViews(){const rolling=activeMainView==='rolling';tabs(rolling?'rolling':'fresh',rolling?D.rolling_3d:D.fresh_24h);renderMainViewTabs();renderSearchState()}
-const allRows=[...(D.tracked_rows||[]),...(D.workflow_rows||[]),...D.fresh_24h,...D.rolling_3d,...D.referrals];const uniqueRows=()=>[...new Map(allRows.filter(r=>!isPreferenceKey(r.canonical_job_key)).map(r=>[r.canonical_job_key,r])).values()];let activeMainView='fresh';
+const allRows=[...(D.workflow_rows||[]),...D.fresh_24h,...D.rolling_3d,...D.referrals];const uniqueRows=()=>[...new Map(allRows.filter(r=>!isPreferenceKey(r.canonical_job_key)).map(r=>[r.canonical_job_key,r])).values()];let activeMainView='fresh';
 function renderSummary(){const fresh=normalRows(D.fresh_24h),rolling=normalRows(D.rolling_3d);document.getElementById('summary').innerHTML=Object.keys(names).map(k=>{const h=D.health?.components?.[k]||{status:'Warning'};return `<div class="card"><span>${names[k]}</span> <a class="pill health-${h.status.toLowerCase()}" target="_blank" rel="noopener noreferrer" href="${D.health_report}">${h.status}</a><div class="countline"><b>${fresh.filter(r=>r.pipeline===k).length}</b><span>last 24h</span><i>·</i><b>${rolling.filter(r=>r.pipeline===k).length}</b><span>in 3 days</span></div><a target="_blank" rel="noopener noreferrer" href="${D.report_links[k]}">open report</a></div>`}).join('')}
 function renderHiddenCompanies(rows){const labels=new Map(rows.filter(r=>r.company_key).map(r=>[r.company_key,r.referral||r.company||r.company_key])),hidden=Object.entries(reviewStates).filter(([key,state])=>isPreferenceKey(key)&&state?.deleted).map(([key])=>{const company_key=key.slice(companyStatePrefix.length);return {company_key,company:labels.get(company_key)||company_key}}).sort((a,b)=>a.company.localeCompare(b.company));document.getElementById('hiddenCompanyCount').textContent=`(${hidden.length})`;const box=document.getElementById('hiddenCompanies');box.innerHTML=hidden.length?`<div class="links">${hidden.map(r=>`<span class="pill"><b>${esc(r.company)}</b> <button class="show-company" data-company-key="${esc(r.company_key)}" ${pendingKeys.has(companyStatePrefix+r.company_key)?'disabled':''}>Show again</button></span>`).join('')}</div>`:'<div class="empty">No hidden companies.</div>';bindStatus(box)}
 function mainViewCounts(rows=uniqueRows()){return {fresh:discoveryRows(normalRows(D.fresh_24h)).length,rolling:discoveryRows(normalRows(D.rolling_3d)).length,'in-progress':searchedRows(rows.filter(r=>statusOf(r)==='in_progress'&&!isDeleted(r))).length,applied:searchedRows(rows.filter(r=>statusOf(r)==='applied_complete'&&!isDeleted(r))).length}}
@@ -678,7 +656,7 @@ function downloadMarkdown(){const blob=new Blob([markdownExport()],{type:'text/m
 function initializeMarkdownExport(){document.getElementById('copyMarkdown').onclick=copyMarkdown;document.getElementById('downloadMarkdown').onclick=downloadMarkdown}
 function renderAll(){const rows=uniqueRows();renderSummary();tabs('fresh',D.fresh_24h);tabs('rolling',D.rolling_3d);renderBox('referrals',normalRows(D.referrals));renderBox('inProgress',searchedRows(rows.filter(r=>statusOf(r)==='in_progress'&&!isDeleted(r))));renderBox('applied',searchedRows(rows.filter(r=>statusOf(r)==='applied_complete'&&!isDeleted(r))));const box=document.getElementById('deleted');box.innerHTML=jobs(rows.filter(isDeleted),true);bindStatus(box);renderHiddenCompanies(rows);renderMainViewTabs(rows);renderSearchState(rows)}
 async function syncPending(){await Promise.all(Object.values(reviewStates).filter(state=>state?.pending).map(state=>pushState(state)))}
-async function loadSharedStates(){const {data,error}=await supabase.from('job_review_status').select('canonical_job_key,status,deleted,updated_at');if(error)throw error;const merged={};(data||[]).forEach(row=>{if(row.canonical_job_key&&statusChoices.includes(row.status))merged[row.canonical_job_key]=normalizedState(row,false)});Object.values(D.tracked_states||{}).forEach(local=>{const remote=merged[local.canonical_job_key];if(!remote||stateTime(local)>stateTime(remote))merged[local.canonical_job_key]=normalizedState(local,false)});Object.values(reviewStates).filter(state=>state?.pending).forEach(local=>{const remote=merged[local.canonical_job_key];if(!remote||stateTime(local)>stateTime(remote))merged[local.canonical_job_key]=normalizedState(local,true)});reviewStates=merged;persist();sharedLoaded=true;sharedError='';renderReviewMessage();renderAll();await syncPending()}
+async function loadSharedStates(){const {data,error}=await supabase.from('job_review_status').select('canonical_job_key,status,deleted,updated_at');if(error)throw error;const merged={};(data||[]).forEach(row=>{if(row.canonical_job_key&&statusChoices.includes(row.status))merged[row.canonical_job_key]=normalizedState(row,false)});Object.values(reviewStates).filter(state=>state?.pending).forEach(local=>{const remote=merged[local.canonical_job_key];if(!remote||stateTime(local)>stateTime(remote))merged[local.canonical_job_key]=normalizedState(local,true)});reviewStates=merged;persist();sharedLoaded=true;sharedError='';renderReviewMessage();renderAll();await syncPending()}
 async function refreshSharedStates(){try{await loadSharedStates()}catch(error){sharedError=`Shared review unavailable: ${error.message}`;renderReviewMessage();renderAll()}}
 async function initializeSupabase(){try{const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');supabase=createClient(D.supabase.url,D.supabase.publishable_key);await refreshSharedStates()}catch(error){sharedError=`Shared review unavailable: ${error.message}`;renderReviewMessage();renderAll()}}
 window.addEventListener('online',refreshSharedStates);renderReviewMessage();initializeJobSearch();initializeMarkdownExport();renderAll();initializeMainViewTabs();initializeSupabase();

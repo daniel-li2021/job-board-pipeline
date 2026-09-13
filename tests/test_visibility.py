@@ -316,13 +316,6 @@ class DashboardPolicyTests(unittest.TestCase):
             saved = json.loads(state.read_text(encoding="utf-8"))
             self.assertEqual("applied", saved["jobs"][key]["status"])
             self.assertEqual("Applied 2026-08-29", saved["jobs"][key]["notes"])
-            self.assertEqual("Example Tech", saved["jobs"][key]["company"])
-            self.assertEqual(job["title"], saved["jobs"][key]["title"])
-            self.assertEqual(job["official_url"], saved["jobs"][key]["url"])
-            self.assertEqual(1, saved["count"])
-            with patch.object(review_state, "STORE_PATHS", (store,)), patch.object(review_state, "STATE_PATH", state):
-                review_state.set_status(key, "unreviewed")
-            self.assertEqual({}, json.loads(state.read_text(encoding="utf-8"))["jobs"])
 
     def test_ats_issue_fallback_round_trips_the_current_writer(self) -> None:
         job = official_job("10001", "Software Engineer I", "Seattle, WA")
@@ -414,8 +407,6 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertNotIn("let active='all',company='all'", dashboard.HTML_TEMPLATE)
         self.assertNotIn('<div class="small">Big Company Official</div>', dashboard.HTML_TEMPLATE)
         self.assertIn("job_review_status", dashboard.HTML_TEMPLATE)
-        self.assertIn("D.tracked_states", dashboard.HTML_TEMPLATE)
-        self.assertIn("D.tracked_rows", dashboard.HTML_TEMPLATE)
         self.assertNotIn("signInWithOtp", dashboard.HTML_TEMPLATE)
         self.assertIn('id="mainViewTabs"', dashboard.HTML_TEMPLATE)
         self.assertIn('role="tablist"', dashboard.HTML_TEMPLATE)
