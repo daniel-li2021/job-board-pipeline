@@ -128,10 +128,17 @@ class DashboardSearchTests(unittest.TestCase):
         self.assertNotIn("activeMainView='fresh';searchQuery", dashboard.HTML_TEMPLATE)
 
     def test_discovery_filters_are_presentation_only_for_fresh_and_rolling(self) -> None:
-        self.assertIn('id="minScoreFilter"', dashboard.HTML_TEMPLATE)
-        self.assertIn('data-sponsorship="Sponsor"', dashboard.HTML_TEMPLATE)
-        self.assertIn('data-sponsorship="Unknown"', dashboard.HTML_TEMPLATE)
-        self.assertIn('data-sponsorship="No sponsor"', dashboard.HTML_TEMPLATE)
+        self.assertIn("class=\"min-score-filter\"", dashboard.HTML_TEMPLATE)
+        self.assertIn("class=\"col-tier\"", dashboard.HTML_TEMPLATE)
+        self.assertIn("class=\"col-sponsorship\"", dashboard.HTML_TEMPLATE)
+        self.assertIn("data-sponsorship=\"${esc(value)}\"", dashboard.HTML_TEMPLATE)
+        self.assertIn("const sponsorshipChoices=['Sponsor','Unknown','No sponsor']", dashboard.HTML_TEMPLATE)
+        self.assertIn("jobs(shown,false,true)", dashboard.HTML_TEMPLATE)
+        self.assertNotIn('id="discoveryFilters"', dashboard.HTML_TEMPLATE)
+        self.assertNotIn('id="minScoreFilter"', dashboard.HTML_TEMPLATE)
+        job_search = dashboard.HTML_TEMPLATE.split('<div class="job-search">', 1)[1].split("</div>", 1)[0]
+        self.assertNotIn("min-score-filter", job_search)
+        self.assertNotIn("sponsorship-filters", job_search)
         self.assertIn("fresh:discoveryRows(normalRows(D.fresh_24h)).length", dashboard.HTML_TEMPLATE)
         self.assertIn("rolling:discoveryRows(normalRows(D.rolling_3d)).length", dashboard.HTML_TEMPLATE)
         self.assertIn("renderBox('inProgress',searchedRows(rows.filter(r=>statusOf(r)==='in_progress'&&!isDeleted(r))))", dashboard.HTML_TEMPLATE)
