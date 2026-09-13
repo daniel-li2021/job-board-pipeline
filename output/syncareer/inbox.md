@@ -1,21 +1,22 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-09-12 08:12 PDT
-- Snapshot (UTC): 2026-09-12T15:12:37.857067+00:00
-- Jobs: 29
+- Updated (PT): 2026-09-12 17:12 PDT
+- Snapshot (UTC): 2026-09-13T00:12:16.941378+00:00
+- Jobs: 30
 - Last 24 hours: 6
-- Last 3 days: 29
+- Last 3 days: 30
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| B | 77.0 | Syncareer | RELX | ReactJS Java API Software Engineer | Philadelphia, Pennsylvania, United States | 2026-09-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://relx.wd3.myworkdayjobs.com/en-US/relx/job/Philadelphia/Java-API-Back-End-Developer_R110947-1?Country___Territory=bc33aa3152ec42d4995f4791a106ed09&Country___Territory=29247e57dbaf46fb855b224e03170bc7&Country___Territory=6cb77610a8a543aea2d6bc10457e35d4&Country___Territory=d903bb3fedad45039383f6de334ad4db&Country___Territory=80938777cac5440fab50d729f9634969&Country___Territory=a30a87ed25634629aa6c3958aa2b91ea&Country___Territory=d4afdeb461d446e4babd204bd102dba8&Country___Territory=a4e08b475d6a4176853c9d1cb9854e02&Country___Territory=55273a1b49934d97ae15342ef51f6b95) |
 | B | 88.0 | Syncareer | CLA (CliftonLarsonAllen) | Machine Learning Engineer | Kansas City, Missouri, United States | 2026-09-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://cliftonlarsonallen.wd115.myworkdayjobs.com/en-US/CLA/job/Kansas-City-MO/Machine-Learning-Engineer_R18055) |
 | B | 84.0 | Syncareer | Piper Sandler | Site Reliability Engineer | New York, New York, United States | 2026-09-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://pipersandler.wd501.myworkdayjobs.com/en-US/Piper_Sandler_Careers/job/New-York-NY/Site-Reliability-Engineer_R-100707) |
+| B | 77.0 | Syncareer | RELX | ReactJS Java API Software Engineer | Philadelphia, Pennsylvania, United States | 2026-09-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://relx.wd3.myworkdayjobs.com/en-US/relx/job/Philadelphia/Java-API-Back-End-Developer_R110947-1?Country___Territory=bc33aa3152ec42d4995f4791a106ed09&Country___Territory=29247e57dbaf46fb855b224e03170bc7&Country___Territory=6cb77610a8a543aea2d6bc10457e35d4&Country___Territory=d903bb3fedad45039383f6de334ad4db&Country___Territory=80938777cac5440fab50d729f9634969&Country___Territory=a30a87ed25634629aa6c3958aa2b91ea&Country___Territory=d4afdeb461d446e4babd204bd102dba8&Country___Territory=a4e08b475d6a4176853c9d1cb9854e02&Country___Territory=55273a1b49934d97ae15342ef51f6b95) |
+| B | 76.0 | Syncareer | Adyen | Full-Stack Developer (Junior) - Docs Experience Engineering Team | Chicago, Illinois, United States | 2026-09-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/adyen/jobs/8068230) |
+| B | 74.0 | Syncareer | Infosys | Full Stack JavaScript Developer | Columbus, Ohio, United States | 2026-09-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/151339BR) |
 | B | 72.0 | Syncareer | Infosys | Java Full Stack Developer | Boston, Massachusetts, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153514BR) |
 | B | 86.0 | Syncareer | DRW | Platform Engineer - AI Engineering | Chicago, Illinois, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/drweng/jobs/8186711) |
-| A | 90.0 | Syncareer | KLA | AI Software Engineer/Manufacturing | Ann Arbor, Michigan, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://kla.wd1.myworkdayjobs.com/en-US/Search/job/Ann-Arbor-MI/AI-Software-Engineer-Manufacturing_2640648-1?Country=bc33aa3152ec42d4995f4791a106ed09&Country=a4e08b475d6a4176853c9d1cb9854e02&Country=80938777cac5440fab50d729f9634969&Country=6cb77610a8a543aea2d6bc10457e35d4&Country=29247e57dbaf46fb855b224e03170bc7) |
 | A | 85.0 | Syncareer | Verisk | Full Stack SDE II | Boston, Massachusetts, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://fa-ewmy-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4711) |
 | B | 78.0 | Syncareer | Handshake | AI Red Teamer (LLM Generalist) | Seattle, Washington, United States | 2026-09-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/handshake/e15e3244-06f9-4c41-96c6-8860ad7594c5) |
 | B | 84.0 | Syncareer | Micron Technology | New College Grad - IT Software Support Engineer | Boise, Idaho, United States | 2026-09-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.micron.com/careers/job/44419615?domain=micron.com) |
