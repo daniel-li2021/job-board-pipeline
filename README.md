@@ -136,6 +136,8 @@ under `output/*/runs/` are local or workflow artifacts, not repository history.
 In-progress and applied jobs use `output/tracked_jobs.json` as the committed recovery
 store and the existing Supabase review state for live dashboard updates.
 
+Refresh the committed recovery snapshot explicitly with `python3 review_state.py --sync-supabase`.
+
 User-facing digests are deduplicated so reruns, rescoring, and ordinary JD changes do not repeatedly alert the same job.
 
 ## Main configuration

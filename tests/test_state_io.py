@@ -89,6 +89,29 @@ class StateSafetyTests(unittest.TestCase):
             self.assertEqual(seen, board.load_seen_jobs_path(path))
             self.assertNotIn("description", path.read_text())
 
+    def test_tracked_job_sync_keeps_only_active_statuses_and_archive_metadata(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "tracked_jobs.json"
+            path.write_text('{"jobs": {}}')
+            compact = json.dumps({
+                "v": 3, "k": "id::job", "p": "board", "c": "Example Tech",
+                "t": "Software Engineer", "l": "Seattle, WA", "u": "https://example.com/job",
+                "tier": "A", "score": 91, "s": "in_progress", "applied": "",
+            }, separators=(",", ":"))
+            states = [
+                {"canonical_job_key": f"applied-archive::{compact}", "status": "in_progress", "deleted": False, "updated_at": "2026-09-12T00:00:00Z"},
+                {"canonical_job_key": "id::job", "status": "in_progress", "deleted": False, "updated_at": "2026-09-13T00:00:00Z"},
+                {"canonical_job_key": "id::deleted", "status": "applied_complete", "deleted": True, "updated_at": "2026-09-13T00:00:00Z"},
+                {"canonical_job_key": "id::unreviewed", "status": "unreviewed", "deleted": False, "updated_at": "2026-09-13T00:00:00Z"},
+            ]
+            with patch.object(review_state, "STATE_PATH", path), patch.object(review_state, "STORE_PATHS", ()):
+                self.assertEqual(1, review_state.sync_remote_states(states))
+            saved = json.loads(path.read_text())
+            self.assertEqual(1, saved["count"])
+            self.assertEqual("in_progress", saved["jobs"]["id::job"]["status"])
+            self.assertEqual("Example Tech", saved["jobs"]["id::job"]["company"])
+            self.assertEqual(91, saved["jobs"]["id::job"]["score"])
+
     def test_corrupt_digest_history_and_review_state_are_never_overwritten(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "state.json"
