@@ -37,6 +37,7 @@ import re
 import time
 from collections import Counter
 from datetime import datetime, timedelta, timezone
+from functools import lru_cache
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import urlsplit
@@ -49,7 +50,7 @@ import coverage_reconcile
 import llm_config
 from sources import ats
 from sources.careers.incremental import DETAIL_STALE_DAYS
-from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
+from sources.company_aliases import load_alias_file, match_company_alias, match_company_entry, prepare_alias_entries
 from sources.schema import (
     OUTPUT_DIR,
     parse_datetime,
@@ -97,9 +98,10 @@ CANDIDATE_PROFILE_PATH = PROFILE_DIR / "candidate_profile.md"
 RESUME_SWE_PATH = PROFILE_DIR / "resume_swe.md"
 RESUME_AI_PATH = PROFILE_DIR / "resume_ai.md"
 COMPANY_FILTERS_PATH = PROFILE_DIR / "company_filters.json"
+COMPANY_PROFILES_PATH = PROFILE_DIR / "company_profiles.json"
 
 # Bump whenever the LLM prompt schema/policy changes; invalidates cached scores.
-PROMPT_VERSION = "v5-routed-resume-jd-evidence"
+PROMPT_VERSION = "v6-early-career-transferable-gaps"
 
 # score_source values. Only llm / cached_llm are reusable cache hits.
 # rule_overflow MUST remain eligible for LLM on a later run.
@@ -293,6 +295,12 @@ def match_target_company(company_name: str, targets: List[Dict[str, Any]]) -> Op
     Never bidirectional substring — that flagged Sapios as SAP.
     """
     return match_company_alias(company_name, targets)
+
+
+@lru_cache(maxsize=1)
+def load_company_profiles() -> Tuple[Dict[str, Any], ...]:
+    """Load the canonical employer metadata used only for application ranking."""
+    return tuple(load_alias_file(COMPANY_PROFILES_PATH))
 
 
 # --------------------------------------------------------------------------
@@ -1136,6 +1144,9 @@ def llm_match_batch(
             "Use responsibilities and required/minimum qualifications as primary evidence; do not use keyword overlap as the scoring method.",
             "Calibrate broadly: 90-100 exceptional/direct fit; 80-89 strong; 70-79 reasonable; 60-69 weak/stretch; below 60 generally skip.",
             "Do not automatically reject a strong 3-5 years-of-experience fit. Judge whether the resume evidence covers the actual scope and core requirements.",
+            "Explicit New Grad, Early Career, Entry Level, Junior, Engineer I/1, SWE I/1, and SDE I/1 titles are strong seniority-fit evidence when the actual responsibilities are relevant to the routed resume.",
+            "For those explicit early-career roles, do not push match_score below 80 merely for minor, learnable, or transferable stack/domain gaps. A score below 80 still applies when the actual work is a weak fit or a material core requirement is missing.",
+            "Do not impose a fixed role-family hierarchy. Judge what the job actually does and the material requirements evidenced by the resume.",
             "Senior/Staff/Principal/Lead scope that is materially beyond the resume should score below 60 and seniority_fit=mismatch.",
             "If the job's core required qualifications are NOT clearly evidenced in "
             "the resume, cap match_score below 80 and list them in main_gaps.",
@@ -1148,6 +1159,7 @@ def llm_match_batch(
             "recommended_action in {referral_now, apply_now, apply_if_time, skip}.",
             "top_match_reasons: 2-4 short strings. main_gaps: 0-3 meaningful missing core requirements only.",
             "Preferred or nice-to-have qualifications are minor gaps and must not appear in main_gaps unless they are clearly central to the role.",
+            "Internship/co-op status must not change match_score; application priority is separate. Set recommended_action=apply_if_time by default for internships/co-ops unless the JD gives a specific unusually strong reason to prioritize it.",
             "Penalize hardware-first roles.",
             "Keep hands-on Solutions Architect, AI Solutions Architect, Forward Deployed, "
             "and implementation-engineering roles when the work is technical. "
@@ -1632,13 +1644,31 @@ def apply_referral_action(job: Dict[str, str]) -> None:
 
 
 def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
-    """Tier first; within a tier recency/confidence dominate, then fit.
-
-    (tier_rank, bucket_rank, confidence, -match_score,
-     seniority_fit_rank, 0 if official_verified else 1, -role_relevance)
-    """
+    """Application order: tier, posting day, job/company quality, exact age."""
     bucket = job.get("recency_bucket") or recency_bucket(job)
     tier_rank = {"A": 0, "B": 1, "C": 2}.get(job.get("tier", "C"), 2)
+    now = datetime.now(timezone.utc)
+    confidence = (job.get("date_confidence") or "unknown").lower()
+    reference = parse_datetime(job.get("posted_date") if confidence in {"high", "medium"} else job.get("first_seen"))
+    age = max(0.0, (now - reference).total_seconds() / 3600) if reference else 999999.0
+    if confidence in {"high", "medium"} and age < 72:
+        day_rank = int(age // 24)
+    else:
+        day_rank = {
+            "newly_discovered": 3, "1to3d": 3, "3to7d": 4, "gt7d": 5,
+        }.get(bucket, 6)
+    score = float(job.get("match_score", 0) or 0)
+    profile = match_company_entry(str(job.get("company") or ""), load_company_profiles()) or {}
+    priority_rank = {"high": 0, "normal": 1, "low": 2}.get(str(profile.get("priority") or "normal"), 1)
+    sponsor_rank = {"likely": 0, "unknown": 1, "unlikely": 2}.get(str(profile.get("sponsor") or "unknown"), 1)
+    company_type_rank = 0 if profile.get("type") == "tech" else 1
+    maturity_rank = 0 if profile.get("maturity") in {"growth", "established"} else 1
+    size_rank = {"20k+": 0, "5k-20k": 1, "1k-5k": 2, "200-1k": 3, "50-200": 4}.get(str(profile.get("size") or ""), 5)
+    application_low = bool(
+        INTERNSHIP_TITLE_RE.search(job.get("title") or "")
+        or job.get("staffing_firm")
+        or job.get("clearance_risk_company")
+    )
     sfit = (job.get("seniority_fit") or "").lower()
     sfit_rank = {"good": 0, "strong": 0, "realistic": 0, "stretch": 1}.get(sfit, 2 if sfit == "mismatch" else 1)
     verified = 0 if job.get("official_url") else 1
@@ -1648,12 +1678,20 @@ def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
     )
     return (
         tier_rank,
-        RECENCY_BUCKET_RANK.get(bucket, len(RECENCY_BUCKETS)),
-        -float(job.get("match_score", 0) or 0),
-        conf,
+        day_rank,
+        int(application_low),
+        -int(score // 5),
+        priority_rank,
+        sponsor_rank,
+        company_type_rank,
+        maturity_rank,
+        size_rank,
+        -score,
         referral,
         sfit_rank,
         verified,
+        age,
+        conf,
         -int(job.get("role_relevance", 0) or 0),
     )
 
@@ -2550,10 +2588,9 @@ def run() -> None:
         "peer_jds_resolved": peer_jds_resolved,
     }
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
-    (RUNS_DIR / f"{stamp}_stats.json").write_text(
-        json.dumps({"run_at": now_iso, **stats}, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
+    stats_text = json.dumps({"run_at": now_iso, **stats}, indent=2, ensure_ascii=False) + "\n"
+    (RUNS_DIR / f"{stamp}_stats.json").write_text(stats_text, encoding="utf-8")
+    (BOARD_DIR / "latest_stats.json").write_text(stats_text, encoding="utf-8")
 
     # 12) Outputs (Tier A/B only)
     write_latest_md(visible, stats, stamp)

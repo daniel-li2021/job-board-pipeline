@@ -19,6 +19,7 @@ on:
       - "state_io.py"
       - "sources/**"
       - "profile/company_filters.json"
+      - "profile/company_profiles.json"
       - "requirements.txt"
   workflow_run:
     workflows: ["Official careers", "Board job alert", "Syncareer job alert"]

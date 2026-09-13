@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import json
+import os
 import threading
 import unittest
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from unittest.mock import Mock, patch
 
 import board_pipeline as board
@@ -78,13 +80,17 @@ class LlmMatchingTests(unittest.TestCase):
             [job],
             {"candidate": "candidate", "resume_swe": full_resume, "resume_ai": "AI RESUME"},
             "test-key",
-            "gpt-5.6-terra",
+            "gpt-5.6-sol",
             "resume_swe",
         )
         sent = post.call_args.kwargs["json"]
         prompt = json.loads(sent["messages"][1]["content"])
         self.assertEqual(full_resume, prompt["resume_swe"])
         self.assertNotIn("resume_ai", prompt)
+        instructions = " ".join(prompt["instructions"])
+        self.assertIn("strong seniority-fit evidence", instructions)
+        self.assertIn("do not push match_score below 80", instructions)
+        self.assertIn("Internship/co-op status must not change match_score", instructions)
         self.assertEqual("low", sent["reasoning_effort"])
         self.assertEqual(82, results[key]["match_score"])
         self.assertEqual(25, usage["cached_input_tokens"])
@@ -92,16 +98,68 @@ class LlmMatchingTests(unittest.TestCase):
 
     def test_cost_and_quality_first_sort(self) -> None:
         usage = {
-            "model": "gpt-5.6-terra",
+            "model": "gpt-5.6-sol",
             "input_tokens": 1_000_000,
             "cached_input_tokens": 200_000,
             "output_tokens": 100_000,
         }
-        self.assertAlmostEqual(2.84, llm_config.estimate_cost_usd(usage))
+        self.assertAlmostEqual(5.28, llm_config.estimate_cost_usd(usage))
+        self.assertEqual("gpt-5.6-sol", llm_config.DEFAULT_MODEL)
         base = {"recency_bucket": "1to3d", "tier": "B", "seniority_fit": "good"}
         high_quality = {**base, "match_score": 78, "date_confidence": "low"}
         high_confidence = {**base, "match_score": 71, "date_confidence": "high"}
         self.assertLess(board.user_facing_sort_key(high_quality), board.user_facing_sort_key(high_confidence))
+
+    def test_regression_fixture_covers_matching_and_application_risks(self) -> None:
+        fixture = json.loads(
+            (Path(__file__).parent / "fixtures" / "matching_regression.json").read_text(encoding="utf-8")
+        )
+        cases = fixture["cases"]
+        self.assertEqual("gpt-5.6-terra", fixture["baseline_model"])
+        self.assertTrue({
+            "strong_early_career", "stretch", "level_ii", "senior_mismatch",
+            "irrelevant_engineer", "thin_no_jd", "staffing", "internship",
+        }.issubset({case["category"] for case in cases}))
+        for case in cases:
+            keep, _reason = board.role_seniority_prefilter(case)
+            self.assertEqual(case["expected_prefilter"] == "keep", keep, case["id"])
+            if case["old_score"] is not None:
+                self.assertLessEqual(0, case["old_score"])
+                self.assertLessEqual(case["old_score"], 100)
+            low, high = case["expected_score_band"]
+            self.assertGreaterEqual(case["last_live_score"], low, case["id"])
+            self.assertLessEqual(case["last_live_score"], high, case["id"])
+
+    @unittest.skipUnless(os.getenv("OPENAI_API_KEY"), "live matching regression requires OPENAI_API_KEY")
+    def test_live_matching_regression(self) -> None:
+        fixture = json.loads(
+            (Path(__file__).parent / "fixtures" / "matching_regression.json").read_text(encoding="utf-8")
+        )
+        profiles = board.load_profiles()
+        comparisons = []
+        for case in fixture["cases"]:
+            job = {
+                **case,
+                "job_id": case["id"],
+                "source": "matching_regression",
+                "role_family": board.detect_role_family(case),
+                "posted_date": "2026-09-13",
+            }
+            route = {"ai": "resume_ai", "swe": "resume_swe"}.get(job["role_family"], "both")
+            result, _usage = board.llm_match_batch(
+                [job], profiles, os.environ["OPENAI_API_KEY"], llm_config.configured_model(), route,
+            )
+            decision = result[board.dedup_key(job)]
+            low, high = case["expected_score_band"]
+            self.assertGreaterEqual(decision["match_score"], low, case["id"])
+            self.assertLessEqual(decision["match_score"], high, case["id"])
+            if case["category"] == "internship":
+                self.assertEqual("apply_if_time", decision["recommended_action"])
+            comparisons.append({
+                "id": case["id"], "old_score": case["old_score"],
+                "new_score": decision["match_score"], "seniority_fit": decision["seniority_fit"],
+            })
+        print(json.dumps({"model": llm_config.configured_model(), "comparisons": comparisons}, indent=2))
 
     def test_five_year_role_reaches_llm_prefilter(self) -> None:
         five = {"title": "Backend Software Engineer", "description": "Requires 5+ years building APIs"}

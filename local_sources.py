@@ -199,6 +199,9 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
             "last_success_collector": collector if healthy else prior.get("last_success_collector") or snapshot_meta.get("collector", {}),
             "last_attempt_source_provenance": result.get("source_provenance", {}),
             "last_success_source_provenance": result.get("source_provenance", {}) if healthy else prior.get("last_success_source_provenance") or snapshot_meta.get("source_provenance", {}),
+            "last_attempt_count": int(result.get("count", 0) or 0),
+            "query_stats": list(result.get("query_stats") or []),
+            "detail_enrichment": dict(result.get("detail_enrichment") or {}),
             "last_good_count": len(snapshot.get("jobs", [])),
         }
     HEALTH_PATH.parent.mkdir(parents=True, exist_ok=True)

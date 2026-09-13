@@ -16,7 +16,7 @@ from zoneinfo import ZoneInfo
 import coverage_reconcile
 import alert_history
 import pipeline_health
-from sources.company_aliases import load_alias_file, match_company_alias
+from sources.company_aliases import load_alias_file, match_company_alias, match_company_entry
 from sources.schema import classify_location_bucket, normalize_company_key, normalize_sponsorship, normalize_title_key
 from state_io import decode_json_bytes
 
@@ -29,7 +29,9 @@ PAGES_URL = "https://daniel-li2021.github.io/job-board-pipeline/"
 PACIFIC = ZoneInfo("America/Los_Angeles")
 REFERRAL_PATH = BASE_DIR / "config" / "target_companies.json"
 COMPANY_FILTERS_PATH = BASE_DIR / "profile" / "company_filters.json"
+COMPANY_PROFILES_PATH = BASE_DIR / "profile" / "company_profiles.json"
 OFFICIAL_REGISTRY_PATH = BASE_DIR / "config" / "official_careers.json"
+INTERNSHIP_TITLE_RE = re.compile(r"\b(intern|internship|co-op|coop)\b", re.IGNORECASE)
 SUPABASE_URL = os.getenv("SUPABASE_URL", "https://wzriavtjqfpkeafeisfv.supabase.co")
 SUPABASE_PUBLISHABLE_KEY = os.getenv(
     "SUPABASE_PUBLISHABLE_KEY", "sb_publishable_uYhplHl4QV7h5sKcItb4vg_UP9uiAQF"
@@ -192,6 +194,7 @@ def normalize_row(
     now: datetime,
     referrals: List[Dict[str, Any]],
     coverage_by_key: Dict[str, Dict[str, Any]],
+    company_profiles: Iterable[Dict[str, Any]] = (),
 ) -> Dict[str, Any]:
     if pipeline == "syncareer":
         entry.setdefault("source_url", entry.get("job_url") or entry.get("url") or "")
@@ -203,9 +206,18 @@ def normalize_row(
     key = entry.get("canonical_job_key") or coverage_reconcile.canonical_job_key(entry)
     audit = coverage_by_key.get(key, {})
     company = str(entry.get("company") or "")
+    company_profile = match_company_entry(company, company_profiles) or {}
     referral = entry.get("referral_name") or entry.get("target_company_match") or match_company_alias(company, referrals) or ""
     company_key = normalize_company_key(str(referral or company))
     freshness = recency(entry, now)
+    staffing = bool(entry.get("staffing_firm") or "staffing" in (company_profile.get("tags") or []))
+    internship = bool(INTERNSHIP_TITLE_RE.search(str(entry.get("title") or "")))
+    application_priority = "low" if (
+        internship
+        or staffing
+        or company_profile.get("priority") == "low"
+        or company_profile.get("sponsor") == "unlikely"
+    ) else str(company_profile.get("priority") or "normal")
     return {
         "canonical_job_key": key,
         "pipeline": pipeline,
@@ -222,6 +234,15 @@ def normalize_row(
         "tier": entry.get("tier") or "-",
         "score": entry.get("match_score") if entry.get("match_score") is not None else entry.get("fit_score", ""),
         "sponsorship": sponsorship_label(entry),
+        "company_priority": company_profile.get("priority", "normal"),
+        "company_sponsor": company_profile.get("sponsor", "unknown"),
+        "company_size": company_profile.get("size", "unknown"),
+        "company_type": company_profile.get("type", "unknown"),
+        "company_maturity": company_profile.get("maturity", "unknown"),
+        "company_tags": list(company_profile.get("tags") or []),
+        "application_priority": application_priority,
+        "internship": internship,
+        "staffing_firm": staffing,
         "referral": referral,
         "review_status": "unreviewed",
         "review_updated_at": "",
@@ -305,15 +326,9 @@ def append_board_c_fallback(
         if fallback_c_candidate(row) and row.get("freshness", {}).get(activity_flag):
             candidates.append(dict(row, dashboard_fallback=True))
 
-    candidates.sort(key=lambda row: (
-        -float(row.get("score") or 0),
-        row.get("freshness", {}).get("discovered", {}).get("age_hours")
-        if row.get("freshness", {}).get("discovered", {}).get("age_hours") is not None else 999999,
-        str(row.get("company") or "").lower(),
-    ))
     needed = max(0, target - board_ab)
-    strong = [row for row in candidates if float(row.get("score") or 0) >= 65]
-    secondary = [row for row in candidates if 60 <= float(row.get("score") or 0) < 65]
+    strong = _sort_rows(row for row in candidates if float(row.get("score") or 0) >= 65)
+    secondary = _sort_rows(row for row in candidates if 60 <= float(row.get("score") or 0) < 65)
     result.extend((strong + secondary)[:needed])
     return result
 
@@ -329,20 +344,48 @@ def config_company_match(company: str, title: str, entries: List[Dict[str, Any]]
 
 
 def _sort_rows(rows: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    bucket_rank = {"lt3h": 0, "3to24h": 1, "1to3d": 2, "newly_discovered": 3, "3to7d": 4, "gt7d": 5, "unknown": 6}
     tier_rank = {"A": 0, "1": 0, "B": 1, "2": 1, "-": 2}
+
+    def key(row: Dict[str, Any]) -> Tuple[Any, ...]:
+        freshness = row.get("freshness") or {}
+        posted = freshness.get("posted") or {}
+        discovered = freshness.get("discovered") or {}
+        posted_age = posted.get("age_hours")
+        discovered_age = discovered.get("age_hours")
+        if posted.get("trusted") and posted_age is not None and posted_age < 72:
+            day_rank = int(posted_age // 24)
+            exact_age = posted_age
+        else:
+            day_rank = {
+                "newly_discovered": 3, "1to3d": 3, "3to7d": 4, "gt7d": 5,
+            }.get(str(freshness.get("bucket") or "unknown"), 6)
+            exact_age = discovered_age if discovered_age is not None else 999999
+        score = float(row.get("score") or 0)
+        application_low = bool(
+            row.get("application_priority") == "low"
+            or row.get("internship")
+            or row.get("staffing_firm")
+            or INTERNSHIP_TITLE_RE.search(str(row.get("title") or ""))
+        )
+        return (
+            tier_rank.get(str(row.get("tier") or "-"), 3),
+            day_rank,
+            int(application_low),
+            -int(score // 5),
+            {"high": 0, "normal": 1, "low": 2}.get(str(row.get("company_priority") or "normal"), 1),
+            {"likely": 0, "unknown": 1, "unlikely": 2}.get(str(row.get("company_sponsor") or "unknown"), 1),
+            0 if row.get("company_type") == "tech" else 1,
+            0 if row.get("company_maturity") in {"growth", "established"} else 1,
+            {"20k+": 0, "5k-20k": 1, "1k-5k": 2, "200-1k": 3, "50-200": 4}.get(str(row.get("company_size") or ""), 5),
+            -score,
+            0 if row.get("referral") else 1,
+            exact_age,
+            str(row.get("company") or "").lower(),
+        )
+
     return sorted(
         rows,
-        key=lambda row: (
-            tier_rank.get(str(row.get("tier") or "-"), 3),
-            row.get("activity_age_hours") if row.get("activity_age_hours") is not None else (
-                row["freshness"]["discovered"]["age_hours"]
-                if row["freshness"]["discovered"]["age_hours"] is not None else 999999
-            ),
-            -float(row.get("score") or 0),
-            bucket_rank.get(row["freshness"]["posted"]["bucket"], 9),
-            str(row.get("company") or "").lower(),
-        ),
+        key=key,
     )
 
 
@@ -444,6 +487,7 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
     referrals = load_alias_file(REFERRAL_PATH)
     hard_excludes = load_alias_file(COMPANY_FILTERS_PATH, key="exclude")
     practical_skips = load_alias_file(COMPANY_FILTERS_PATH, key="clearance_risk")
+    company_profiles = load_alias_file(COMPANY_PROFILES_PATH)
     coverage = coverage_reconcile.build_coverage_payload(now)
     health, health_history = pipeline_health.build(BASE_DIR, now)
     coverage_by_key = {record.get("canonical_job_key", ""): record for record in coverage.get("records", [])}
@@ -458,7 +502,7 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
             )
             if practical and not entry.get("clearance_risk_company"):
                 continue
-            all_rows.append(normalize_row(entry, pipeline, now, referrals, coverage_by_key))
+            all_rows.append(normalize_row(entry, pipeline, now, referrals, coverage_by_key, company_profiles))
 
     # History is recovery-only: expired or newly filtered jobs must not re-enter discovery.
     history_details: Dict[str, List[Any]] = {}
@@ -561,7 +605,7 @@ button.hide-company,button.show-company{border:1px solid var(--line);border-radi
 <section class="panel main-jobs"><div id="mainViewTabs" class="main-tabs" role="tablist" aria-label="Job views"><button id="main-tab-fresh" class="main-tab on" type="button" role="tab" aria-selected="true" aria-controls="main-view-fresh" data-main-view="fresh">Fresh</button><button id="main-tab-rolling" class="main-tab" type="button" role="tab" aria-selected="false" aria-controls="main-view-rolling" data-main-view="rolling">Rolling</button><button id="main-tab-in-progress" class="main-tab" type="button" role="tab" aria-selected="false" aria-controls="main-view-in-progress" data-main-view="in-progress">In Progress</button><button id="main-tab-applied" class="main-tab" type="button" role="tab" aria-selected="false" aria-controls="main-view-applied" data-main-view="applied">Applied</button></div>
 <div class="job-search"><input id="jobSearch" type="search" autocomplete="off" placeholder="Search title or company" aria-label="Search jobs by title or company"><button id="clearJobSearch" type="button" hidden>Clear</button><span id="jobSearchCount" class="small" aria-live="polite"></span><div class="export-actions"><button id="copyMarkdown" type="button">Copy MD</button><button id="downloadMarkdown" type="button">Download MD</button></div></div>
 <div id="main-view-fresh" class="main-view" role="tabpanel" aria-labelledby="main-tab-fresh" data-main-panel="fresh"><h2>Fresh — alerts and discoveries in the last 24 hours</h2><p>Jobs from recent alerts, including B→A promotions, plus all qualifying Official jobs first discovered in the last 24 hours.</p><p id="freshBasis" class="small"></p><div class="tabs" data-target="fresh"></div><div class="tabs company-tabs" data-company-target="fresh"></div><div id="fresh"></div></div>
-<div id="main-view-rolling" class="main-view" role="tabpanel" aria-labelledby="main-tab-rolling" data-main-panel="rolling" hidden><h2>Rolling — newly found in the last 3 days</h2><p>Current A/B (or Syncareer kept) candidates, ranked Tier A first, then discovery time and score.</p><div class="tabs" data-target="rolling"></div><div class="tabs company-tabs" data-company-target="rolling"></div><div id="rolling"></div></div>
+<div id="main-view-rolling" class="main-view" role="tabpanel" aria-labelledby="main-tab-rolling" data-main-panel="rolling" hidden><h2>Rolling — newly found in the last 3 days</h2><p>Current A/B (or Syncareer kept) candidates, ranked by tier, posting day, fit, and application quality.</p><div class="tabs" data-target="rolling"></div><div class="tabs company-tabs" data-company-target="rolling"></div><div id="rolling"></div></div>
 <div id="main-view-in-progress" class="main-view" role="tabpanel" aria-labelledby="main-tab-in-progress" data-main-panel="in-progress" hidden><h2>In Progress</h2><p>Jobs you are actively preparing or following up on.</p><div id="inProgress"></div></div>
 <div id="main-view-applied" class="main-view" role="tabpanel" aria-labelledby="main-tab-applied" data-main-panel="applied" hidden><h2>Applied / Completed</h2><p>Applied jobs leave the active Fresh and Rolling lists.</p><div id="applied"></div></div></section>
 <details class="panel"><summary>Hidden companies <span id="hiddenCompanyCount"></span></summary><p>Hidden companies stay out of discovery views. Show one again at any time.</p><div id="hiddenCompanies"></div></details>

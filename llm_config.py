@@ -7,22 +7,22 @@ import re
 from typing import Any, Dict, Iterable
 
 
-DEFAULT_MODEL = "gpt-5.6-terra"
+DEFAULT_MODEL = "gpt-5.6-sol"
 DEFAULT_REASONING_EFFORT = "low"
 OPENAI_CHAT_COMPLETIONS_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 GROQ_CHAT_COMPLETIONS_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_FALLBACK_MODEL = "llama-3.1-8b-instant"
 JD_CONTEXT_CHARS = 7800
-OPENAI_PRICING_SOURCE = "https://developers.openai.com/api/docs/models/gpt-5.6-terra"
-OPENAI_PRICING_VERIFIED_DATE = "2026-08-31"
+OPENAI_PRICING_SOURCE = "https://developers.openai.com/api/docs/models/gpt-5.6-sol"
+OPENAI_PRICING_VERIFIED_DATE = "2026-09-13"
 
-# OpenAI API pricing verified 2026-08-31 from the GPT-5.6 Terra model page.
+# OpenAI API pricing verified 2026-09-13 from the GPT-5.6 Sol model page.
 # USD per one million tokens. Reasoning tokens are included in output tokens.
 MODEL_PRICING_USD_PER_MILLION: Dict[str, Dict[str, float]] = {
-    "gpt-5.6-terra": {
-        "input": 2.00,
-        "cached_input": 0.20,
-        "output": 12.00,
+    "gpt-5.6-sol": {
+        "input": 4.00,
+        "cached_input": 0.40,
+        "output": 20.00,
     },
 }
 

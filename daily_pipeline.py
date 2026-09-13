@@ -1210,44 +1210,43 @@ def run() -> None:
         lines.append("")
     (DAILY_DIR / f"{today}_report.md").write_text("\n".join(lines), encoding="utf-8")
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
-    (RUNS_DIR / f"{stamp}_stats.json").write_text(
-        json.dumps(
-            {
-                "run_at": datetime.now(timezone.utc).isoformat(),
-                "funnel": {"scoring_candidates": len(scoring_rows)},
-                "llm": {
-                    **score_counts,
-                    "scored": score_counts.get("llm", 0),
-                    "api_requests": score_counts.get("api_requests", 0),
-                    "reused": score_counts.get("reused", 0),
-                    "peer_reused": score_counts.get("peer_reused", 0),
-                    "rule": score_counts.get("rule", 0),
-                },
-                "output": {
-                    "tier_a": len(tier_a_rows),
-                    "tier_b": len(tier_b_rows),
-                    "tier_c": len(tier_c_rows),
-                    "shown": len(alert_rows),
-                },
-                "screen_method": shared_screen_method,
-                "failures": {"llm": llm_errors},
-                "query_diagnostics": query_diagnostics,
-                "enrichment": {
-                    "needed": enrichment_needed,
-                    "detail_api_resolved": detail_api_resolved,
-                    "official_exact_resolved": official_exact_resolved,
-                    "exact_peer_resolved": peer_jds_resolved,
-                    "remaining_no_jd": sum(
-                        len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS
-                        for row in raw_rows
-                    ),
-                },
+    stats_text = json.dumps(
+        {
+            "run_at": datetime.now(timezone.utc).isoformat(),
+            "funnel": {"scoring_candidates": len(scoring_rows)},
+            "llm": {
+                **score_counts,
+                "scored": score_counts.get("llm", 0),
+                "api_requests": score_counts.get("api_requests", 0),
+                "reused": score_counts.get("reused", 0),
+                "peer_reused": score_counts.get("peer_reused", 0),
+                "rule": score_counts.get("rule", 0),
             },
-            indent=2,
-            ensure_ascii=False,
-        ) + "\n",
-        encoding="utf-8",
-    )
+            "output": {
+                "tier_a": len(tier_a_rows),
+                "tier_b": len(tier_b_rows),
+                "tier_c": len(tier_c_rows),
+                "shown": len(alert_rows),
+            },
+            "screen_method": shared_screen_method,
+            "failures": {"llm": llm_errors},
+            "query_diagnostics": query_diagnostics,
+            "enrichment": {
+                "needed": enrichment_needed,
+                "detail_api_resolved": detail_api_resolved,
+                "official_exact_resolved": official_exact_resolved,
+                "exact_peer_resolved": peer_jds_resolved,
+                "remaining_no_jd": sum(
+                    len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS
+                    for row in raw_rows
+                ),
+            },
+        },
+        indent=2,
+        ensure_ascii=False,
+    ) + "\n"
+    (RUNS_DIR / f"{stamp}_stats.json").write_text(stats_text, encoding="utf-8")
+    (SYNCAREER_DIR / "latest_stats.json").write_text(stats_text, encoding="utf-8")
 
     # Alert-mode outputs + rolling watchlist update.
     alert_paths: Dict[str, Path] = {}

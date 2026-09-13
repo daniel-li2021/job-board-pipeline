@@ -202,6 +202,8 @@ class LocalSourceTests(unittest.TestCase):
             local_sources.write_health([{
                 "source": "glassdoor", "status": "skipped_unavailable", "count": 0,
                 "reason": "HTTP 403", "attempted_at": "2026-09-07T00:00:00+00:00",
+                "query_stats": [{"query": "software engineer", "stop_reason": "HTTP 403"}],
+                "detail_enrichment": {"remaining_no_jd": 1},
             }], new)
             health = json.loads((Path(tmpdir) / "health.json").read_text(encoding="utf-8"))["sources"]["glassdoor"]
             self.assertFalse(health["required"])
@@ -210,6 +212,9 @@ class LocalSourceTests(unittest.TestCase):
             self.assertEqual("2026-09-01T00:00:00+00:00", health["last_success_at"])
             self.assertEqual("old", health["last_success_collector"]["commit"])
             self.assertEqual(1, health["last_good_count"])
+            self.assertEqual(0, health["last_attempt_count"])
+            self.assertEqual("HTTP 403", health["query_stats"][0]["stop_reason"])
+            self.assertEqual(1, health["detail_enrichment"]["remaining_no_jd"])
 
     def test_collector_fails_when_no_required_source_succeeds(self) -> None:
         failed = {"source": "linkedin", "status": "skipped_unavailable"}

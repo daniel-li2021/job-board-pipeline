@@ -62,8 +62,10 @@ def load_alias_file(path: Path, key: str = "companies") -> List[Dict[str, Any]]:
     return prepare_alias_entries(entries)
 
 
-def match_company_alias(company_name: str, entries: Iterable[Dict[str, Any]]) -> Optional[str]:
-    """Return the canonical name using exact, token, and declared aliases only.
+def match_company_entry(
+    company_name: str, entries: Iterable[Dict[str, Any]]
+) -> Optional[Dict[str, Any]]:
+    """Return the matching canonical entry using declared aliases only.
 
     Arbitrary substrings are deliberately forbidden: besides short-alias errors
     such as SAP/Sapios, they can make eHealth match GE HealthCare. Legal suffixes
@@ -80,5 +82,11 @@ def match_company_alias(company_name: str, entries: Iterable[Dict[str, Any]]) ->
         aliases = entry.get("norm_aliases") or []
         for alias in aliases:
             if alias in forms or alias in tokens:
-                return str(entry.get("name") or "") or None
+                return entry
     return None
+
+
+def match_company_alias(company_name: str, entries: Iterable[Dict[str, Any]]) -> Optional[str]:
+    """Return the canonical name using exact, token, and declared aliases only."""
+    entry = match_company_entry(company_name, entries)
+    return (str(entry.get("name") or "") or None) if entry else None

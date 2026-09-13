@@ -16,7 +16,7 @@ import coverage_reconcile
 import daily_pipeline
 import dashboard
 import review_state
-from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
+from sources.company_aliases import load_alias_file, match_company_alias, match_company_entry, prepare_alias_entries
 from sources.schema import combined_cache_key_from_hash, dedup_key, make_job, normalize_job_url, normalize_location_key
 from sources.schema import classify_location_bucket
 from sources import linkedin_local, local_search
@@ -81,8 +81,9 @@ class SyncareerStateTests(unittest.TestCase):
     def test_corrupt_state_is_not_treated_as_empty_or_replaced_by_legacy(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             current, legacy = Path(tmpdir) / "current.json", Path(tmpdir) / "legacy.json"
+            legacy_seen = Path(tmpdir) / "legacy_seen.json"
             legacy.write_text('{"entries": []}')
-            with patch.object(daily_pipeline, "WATCHLIST_PATH", current), patch.object(daily_pipeline, "LEGACY_WATCHLIST_PATH", legacy), patch.object(daily_pipeline, "SEEN_IDS_PATH", current):
+            with patch.object(daily_pipeline, "WATCHLIST_PATH", current), patch.object(daily_pipeline, "LEGACY_WATCHLIST_PATH", legacy), patch.object(daily_pipeline, "SEEN_IDS_PATH", current), patch.object(daily_pipeline, "LEGACY_SEEN_IDS_PATH", legacy_seen):
                 for text in ('{', 'null', '{}', '{"entries": [null]}', '{"entries": [{}]}'):
                     current.write_text(text)
                     with self.assertRaises(ValueError):
@@ -258,7 +259,7 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertTrue(boundary["rolling_activity"])
         self.assertFalse(expired["rolling_activity"])
 
-    def test_sort_is_tier_then_discovery_then_score(self) -> None:
+    def test_sort_is_tier_then_posting_day_then_quality_then_exact_age(self) -> None:
         now = datetime(2026, 8, 29, 12, tzinfo=timezone.utc)
 
         def row(tier: str, score: int, age: int, company: str) -> dict:
@@ -267,7 +268,12 @@ class DashboardPolicyTests(unittest.TestCase):
                 "score": score,
                 "company": company,
                 "freshness": dashboard.recency(
-                    {"first_seen": (now - timedelta(hours=age)).isoformat()}, now
+                    {
+                        "posted_date": (now - timedelta(hours=age)).isoformat(),
+                        "date_confidence": "high",
+                        "first_seen": now.isoformat(),
+                    },
+                    now,
                 ),
             }
 
@@ -275,8 +281,40 @@ class DashboardPolicyTests(unittest.TestCase):
             row("B", 99, 1, "B Co"),
             row("A", 85, 5, "A lower"),
             row("A", 92, 20, "A higher"),
+            row("A", 99, 30, "Yesterday best"),
         ])
-        self.assertEqual(["A lower", "A higher", "B Co"], [item["company"] for item in ordered])
+        self.assertEqual(
+            ["A higher", "A lower", "Yesterday best", "B Co"],
+            [item["company"] for item in ordered],
+        )
+
+    def test_company_profiles_and_internships_change_application_order_not_score(self) -> None:
+        profiles = load_alias_file(ROOT / "profile" / "company_profiles.json")
+        self.assertEqual("high", match_company_entry("Amazon Web Services", profiles)["priority"])
+        self.assertEqual("low", match_company_entry("Randstad USA", profiles)["priority"])
+        now = datetime(2026, 9, 13, 12, tzinfo=timezone.utc)
+
+        def normalized(company: str, title: str) -> dict:
+            return dashboard.normalize_row({
+                "company": company,
+                "title": title,
+                "location": "Seattle, WA",
+                "match_score": 90,
+                "tier": "A",
+                "first_seen": now.isoformat(),
+            }, "board", now, [], {}, profiles)
+
+        amazon = normalized("Amazon", "Software Engineer I")
+        staffing = normalized("Randstad USA", "Junior Software Engineer")
+        internship = normalized("Figma", "Software Engineer Intern")
+        figma_full_time = normalized("Figma", "Software Engineer I")
+        self.assertEqual("Amazon", dashboard._sort_rows([internship, staffing, amazon])[0]["company"])
+        self.assertEqual(
+            ["Software Engineer I", "Software Engineer Intern"],
+            [row["title"] for row in dashboard._sort_rows([internship, figma_full_time])],
+        )
+        self.assertEqual(90, internship["score"])
+        self.assertEqual("low", internship["application_priority"])
 
     def test_official_registry_has_search_link_only_targets(self) -> None:
         catalog = {entry["id"]: entry for entry in dashboard.official_search_catalog()}
@@ -978,6 +1016,9 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
                 stats["output"],
             )
             self.assertEqual("rule", stats["screen_method"])
+            self.assertGreaterEqual(
+                json.loads((syncareer_dir / "latest_stats.json").read_text())["run_at"], stats["run_at"]
+            )
             stored = json.loads((syncareer_dir / "watchlist.json").read_text())["entries"]
             self.assertEqual(1, len(stored))
             self.assertEqual("C", stored[0]["tier"])
