@@ -123,8 +123,21 @@ class DashboardSearchTests(unittest.TestCase):
 
     def test_search_is_applied_without_replacing_main_view_state(self) -> None:
         self.assertIn("activeMainView", dashboard.HTML_TEMPLATE)
-        self.assertIn("searchedRows(normalRows", dashboard.HTML_TEMPLATE)
+        self.assertIn("discoveryRows(normalRows", dashboard.HTML_TEMPLATE)
+        self.assertIn("const discoveryRows=rows=>searchedRows(rows).filter(matchesDiscoveryFilters)", dashboard.HTML_TEMPLATE)
         self.assertNotIn("activeMainView='fresh';searchQuery", dashboard.HTML_TEMPLATE)
+
+    def test_discovery_filters_are_presentation_only_for_fresh_and_rolling(self) -> None:
+        self.assertIn('id="minScoreFilter"', dashboard.HTML_TEMPLATE)
+        self.assertIn('data-sponsorship="Sponsor"', dashboard.HTML_TEMPLATE)
+        self.assertIn('data-sponsorship="Unknown"', dashboard.HTML_TEMPLATE)
+        self.assertIn('data-sponsorship="No sponsor"', dashboard.HTML_TEMPLATE)
+        self.assertIn("fresh:discoveryRows(normalRows(D.fresh_24h)).length", dashboard.HTML_TEMPLATE)
+        self.assertIn("rolling:discoveryRows(normalRows(D.rolling_3d)).length", dashboard.HTML_TEMPLATE)
+        self.assertIn("renderBox('inProgress',searchedRows(rows.filter(r=>statusOf(r)==='in_progress'&&!isDeleted(r))))", dashboard.HTML_TEMPLATE)
+        self.assertIn("renderBox('applied',searchedRows(rows.filter(r=>statusOf(r)==='applied_complete'&&!isDeleted(r))))", dashboard.HTML_TEMPLATE)
+        self.assertIn("box.innerHTML=jobs(rows.filter(isDeleted),true)", dashboard.HTML_TEMPLATE)
+        self.assertIn("exportViewRows[elId]=displayRows(shown)", dashboard.HTML_TEMPLATE)
 
     def test_multi_location_display_keeps_each_job_state_and_url(self) -> None:
         self.assertIn("function displayRows(rows)", dashboard.HTML_TEMPLATE)

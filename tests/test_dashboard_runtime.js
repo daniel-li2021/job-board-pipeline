@@ -6,7 +6,7 @@ const {execFileSync} = require('node:child_process');
 const html = execFileSync('python3', ['-c', 'import dashboard; print(dashboard.HTML_TEMPLATE)'], {encoding:'utf8'});
 const payload = {snapshots:{}, fresh_24h:[], rolling_3d:[], referrals:[], workflow_rows:[], history_details:{}, supabase:{}};
 const cache = {};
-const context = vm.createContext({console, setTimeout, Date, localStorage:{getItem:k=>cache[k],setItem:(k,v)=>cache[k]=v}, document:{getElementById:()=>({textContent:JSON.stringify(payload)})}});
+const context = vm.createContext({console, setTimeout, Date, localStorage:{getItem:k=>cache[k],setItem:(k,v)=>cache[k]=v}, document:{getElementById:()=>({textContent:JSON.stringify(payload),classList:{add(){}},href:''})}});
 let script = html.split('</script><script>')[1].split('</script>')[0];
 script = script.slice(0, script.indexOf("window.addEventListener('online'"));
 vm.runInContext(script, context);
@@ -27,6 +27,34 @@ assert.ok(!markdown.includes('Wrong view'));
 assert.ok(!markdown.includes('Tier'));
 assert.ok(!markdown.includes('Source'));
 assert.ok(!markdown.includes('Sponsorship'));
+vm.runInContext(`
+D.fresh_24h=[
+  {canonical_job_key:'hi',company:'Acme',title:'Staff Engineer',score:91,location:'Seattle, WA',url:'https://example.com/hi',tier:'A',pipeline:'official',sponsorship:'Sponsor',filter_status:'kept'},
+  {canonical_job_key:'mid',company:'Acme',title:'Engineer',score:70,location:'Austin, TX',url:'https://example.com/mid',tier:'B',pipeline:'board',sponsorship:'Sponsor',filter_status:'kept'},
+  {canonical_job_key:'visa',company:'Globex',title:'Engineer',score:95,location:'Remote',url:'https://example.com/visa',tier:'A',pipeline:'official',sponsorship:'No sponsor',filter_status:'kept'},
+  {canonical_job_key:'blank',company:'Acme',title:'Unknown Score',score:'',location:'Boston, MA',url:'https://example.com/blank',tier:'-',pipeline:'syncareer',sponsorship:'Unknown',filter_status:'kept'}
+];
+D.rolling_3d=D.fresh_24h.slice();
+searchQuery='engineer';
+minScore='80';
+sponsorshipFilters=new Set(['Sponsor']);
+`, context);
+const filtered = vm.runInContext('discoveryRows(D.fresh_24h).map(r=>r.canonical_job_key).join(",")', context);
+assert.equal(filtered, 'hi');
+assert.equal(vm.runInContext('searchedRows(D.fresh_24h).map(r=>r.canonical_job_key).join(",")', context), 'hi,mid,visa');
+assert.equal(vm.runInContext('mainViewCounts().fresh', context), 1);
+assert.equal(vm.runInContext('mainViewCounts()["in-progress"]', context), 0);
+vm.runInContext(`
+activeMainView='fresh';
+exportViewLabels.fresh='Fresh → All';
+exportViewRows.fresh=displayRows(discoveryRows(D.fresh_24h));
+`, context);
+const filteredMarkdown = vm.runInContext('markdownExport()', context);
+assert.match(filteredMarkdown, /Staff Engineer/);
+assert.ok(!filteredMarkdown.includes('Unknown Score'));
+assert.ok(!filteredMarkdown.includes('https://example.com/mid'));
+assert.ok(!filteredMarkdown.includes('https://example.com/visa'));
+vm.runInContext(`searchQuery='';minScore='';sponsorshipFilters=new Set(sponsorshipChoices);`, context);
 let extension = fs.readFileSync('dashboard_applied_history.js','utf8');
 extension = extension.slice(0, extension.indexOf('  // Existing applied rows')) + 'globalThis.check={appliedRows,archiveStorageKey,decodeArchive,backfillAppliedArchives,expandedStates,getArchive:()=>archive};})();';
 vm.runInContext(extension, context);
@@ -74,7 +102,9 @@ assert.equal(direct._applied_at,'2026-09-08T00:00:00Z');
 const expanded=vm.runInContext("check.expandedStates({canonical_job_key:'[\\\"id::one\\\",\\\"id::two\\\"]',status:'applied_complete',deleted:false,updated_at:'2020-01-01T00:00:00Z'},false)",context);
 assert.equal(expanded.map(state=>state.canonical_job_key).join(','),'id::one,id::two');
 assert.ok(expanded.every(state=>state._applied_at==='2020-01-01T00:00:00Z'));
-assert.ok(!/<a (?!target="_blank" rel="noopener noreferrer")/.test(html+extension));
+const htmlAndExtension = html + extension;
+const anchors = [...htmlAndExtension.matchAll(/<a\b[^>]*>/g)].map(match => match[0]);
+assert.ok(anchors.every(tag => /target="_blank"/.test(tag) && /rel="noopener noreferrer"/.test(tag)));
 (async()=>{
 vm.runInContext("supabase={from(){throw new Error('offline')}}",context);
 await vm.runInContext('pushState(reviewStates.one)',context);

@@ -286,8 +286,8 @@
     syncArchiveRows();
     rows = uniqueRows();
     return {
-      fresh: searchedRows(normalRows(D.fresh_24h)).length,
-      rolling: searchedRows(normalRows(D.rolling_3d)).length,
+      fresh: discoveryRows(normalRows(D.fresh_24h)).length,
+      rolling: discoveryRows(normalRows(D.rolling_3d)).length,
       'in-progress': searchedRows(rows.filter(r => statusOf(r) === 'in_progress' && !isDeleted(r))).length,
       applied: appliedRows(rows).length,
     };
