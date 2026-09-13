@@ -16,7 +16,7 @@ from state_io import decode_json_bytes
 PIPELINES = {
     "board": ("ATS / LinkedIn", "board", "jobs.json"),
     "official": ("Big Company Official", "official_careers", "jobs.json"),
-    "syncareer": ("Syncareer", "syncareer", "watchlist.json"),
+    "syncareer": ("Syncareer", "syncareer", "jobs.json"),
 }
 SEVERITY = {"Healthy": 0, "Warning": 1, "Stale": 2, "Problem": 3}
 
@@ -102,8 +102,10 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             problems.append(f"{label}: {detail}")
 
         for entry in entries:
-            description = str(entry.get("description") or "").strip()
-            if len(description) >= 200 or str(entry.get("filter_status") or "kept") not in {"kept", ""}:
+            description_available = bool(entry.get("description_available")) or len(
+                str(entry.get("description") or "").strip()
+            ) >= 200
+            if description_available or str(entry.get("filter_status") or "kept") not in {"kept", ""}:
                 continue
             reason = str(entry.get("enrichment_failure_reason") or "no_recorded_failure")
             failure_reasons[reason] += 1

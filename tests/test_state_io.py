@@ -48,16 +48,28 @@ class StateSafetyTests(unittest.TestCase):
                     self.assertEqual({"job": entry}, board.load_store())
                     self.assertEqual(board.load_store(), official.load_careers_store())
 
-    def test_job_store_round_trips_gzip_and_legacy_json(self):
+    def test_job_store_publishes_compact_json_and_keeps_full_local_cache(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "jobs.json"
-            entry = {"key": "job", "first_seen": "2026-09-01", "description": "Build APIs. " * 20}
-            board.save_store_path(path, {"job": entry}, 7)
+            cache = Path(directory) / "cache.json.gz"
+            entry = {
+                "key": "job", "first_seen": "2026-09-01", "filter_status": "kept",
+                "description": "Build APIs. " * 20, "top_match_reasons": ["private evidence"],
+                "main_gaps": ["private gap"],
+            }
+            board.save_store_path(path, {"job": entry}, 7, cache_path=cache)
             raw = path.read_bytes()
-            self.assertTrue(raw.startswith(b"\x1f\x8b"))
-            self.assertLess(len(raw), len(json.dumps({"entries": [entry]}, indent=2)))
+            self.assertFalse(raw.startswith(b"\x1f\x8b"))
             loaded = board.load_store_path(path, strict=True)
-            self.assertEqual(entry["description"], loaded["job"]["description"])
+            self.assertNotIn("description", loaded["job"])
+            self.assertNotIn("top_match_reasons", loaded["job"])
+            self.assertNotIn("main_gaps", loaded["job"])
+            self.assertTrue(loaded["job"]["description_available"])
+            self.assertEqual(1, loaded["job"]["main_gaps_count"])
+            self.assertEqual(
+                entry["description"],
+                board.load_store_path(path, strict=True, cache_path=cache)["job"]["description"],
+            )
             path.write_text(json.dumps({"entries": [entry]}), encoding="utf-8")
             self.assertEqual(entry["description"], board.load_store_path(path, strict=True)["job"]["description"])
             self.assertEqual(
@@ -68,6 +80,14 @@ class StateSafetyTests(unittest.TestCase):
                 entry["description"],
                 pipeline_health._read(path, {})["entries"][0]["description"],
             )
+
+    def test_seen_job_store_is_small_and_preserves_first_seen(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "seen_jobs.json"
+            seen = {"job-a": "2026-09-01T00:00:00+00:00", "job-b": ""}
+            board.save_seen_jobs_path(path, seen)
+            self.assertEqual(seen, board.load_seen_jobs_path(path))
+            self.assertNotIn("description", path.read_text())
 
     def test_corrupt_digest_history_and_review_state_are_never_overwritten(self):
         with tempfile.TemporaryDirectory() as directory:

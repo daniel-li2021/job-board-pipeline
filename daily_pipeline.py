@@ -21,7 +21,7 @@ import argparse
 import csv
 import json
 
-from state_io import atomic_write, read_json
+from state_io import atomic_write, encode_json_gzip, read_json
 import re
 import time
 from collections import Counter, defaultdict
@@ -48,10 +48,13 @@ DAILY_DIR = OUTPUT_DIR / "daily"
 # writes only under output/board/ — never mix the two.
 SYNCAREER_DIR = OUTPUT_DIR / "syncareer"
 RUNS_DIR = SYNCAREER_DIR / "runs"
-SEEN_IDS_PATH = OUTPUT_DIR / "seen_job_ids.json"
-WATCHLIST_PATH = SYNCAREER_DIR / "watchlist.json"
+SEEN_IDS_PATH = SYNCAREER_DIR / "seen_jobs.json"
+LEGACY_SEEN_IDS_PATH = OUTPUT_DIR / "seen_job_ids.json"
+DEFAULT_WATCHLIST_PATH = SYNCAREER_DIR / "jobs.json"
+WATCHLIST_PATH = DEFAULT_WATCHLIST_PATH
+LOCAL_WATCHLIST_PATH = OUTPUT_DIR / "cache" / "syncareer" / "jobs.json.gz"
 ALERT_HISTORY_PATH = SYNCAREER_DIR / "alert_history.json"
-LEGACY_WATCHLIST_PATH = OUTPUT_DIR / "watchlist.json"
+LEGACY_WATCHLIST_PATH = SYNCAREER_DIR / "watchlist.json"
 WATCHLIST_RETENTION_DAYS = 7
 # Canonical "I skipped a day" view: kept jobs first_seen/posted in this window.
 INBOX_DAYS = 3
@@ -370,12 +373,13 @@ def run_search(
 # Phase 2: incremental dedup
 # --------------------------------------------------------------------------
 def load_seen_ids() -> set[str]:
-    if not SEEN_IDS_PATH.exists():
+    path = SEEN_IDS_PATH if SEEN_IDS_PATH.exists() else LEGACY_SEEN_IDS_PATH
+    if not path.exists():
         return set()
-    data = read_json(SEEN_IDS_PATH, [])
+    data = read_json(path, [])
     ids = data.get("seen_ids") if isinstance(data, dict) else data
     if not isinstance(ids, list) or any(not isinstance(jid, (str, int)) for jid in ids):
-        raise ValueError(f"Invalid seen-ID store: {SEEN_IDS_PATH}")
+        raise ValueError(f"Invalid seen-ID store: {path}")
     return {str(jid) for jid in ids}
 
 
@@ -394,7 +398,14 @@ def save_seen_ids(seen_ids: set[str]) -> None:
 # --------------------------------------------------------------------------
 def load_watchlist() -> Dict[str, Dict[str, Any]]:
     """Return {job_id: entry}. Entry keeps title/company/posted/url/first_seen."""
-    path = WATCHLIST_PATH if WATCHLIST_PATH.exists() else LEGACY_WATCHLIST_PATH
+    candidates = (
+        (LOCAL_WATCHLIST_PATH, WATCHLIST_PATH, LEGACY_WATCHLIST_PATH)
+        if WATCHLIST_PATH == DEFAULT_WATCHLIST_PATH else (WATCHLIST_PATH, LEGACY_WATCHLIST_PATH)
+    )
+    path = next(
+        (candidate for candidate in candidates if candidate.exists()),
+        WATCHLIST_PATH,
+    )
     if not path.exists():
         return {}
     data = read_json(path, [])
@@ -431,6 +442,38 @@ def prune_watchlist(
     return kept
 
 
+SYNCAREER_REMOTE_FIELDS = {
+    "job_id", "title", "company", "location", "posted_date", "posting_date", "url",
+    "sponsorship", "target_company", "target_company_match", "has_grad_req", "matched_keywords",
+    "salary", "kept", "first_seen", "coverage_status", "canonical_source", "canonical_job_key",
+    "duplicate_of", "official_snapshot_at", "source_snapshot_at", "suppress_alert", "filter_status",
+    "drop_reason", "company_flag", "deprioritized", "preferred", "staffing_firm", "match_score",
+    "fit_score", "tier", "score_source", "screen_method", "resume_profile_used", "role_family",
+    "role_relevance", "seniority_fit", "hard_constraint_status", "main_gaps_count",
+    "recommended_action", "cache_key", "jd_hash", "match_canonical_key", "match_source_pipeline",
+    "match_jd_hash", "recency_bucket", "review_status", "notes", "source_pipeline",
+    "description_available", "enrichment_failure_reason",
+}
+
+
+def compact_watchlist_entry(entry: Dict[str, Any]) -> Dict[str, Any]:
+    compact = {
+        key: value for key, value in entry.items()
+        if key in SYNCAREER_REMOTE_FIELDS and value not in (None, "", False, [], {})
+    }
+    compact["job_id"] = entry["job_id"]
+    compact["kept"] = "yes"
+    compact["description_available"] = bool(
+        entry.get("description_available")
+        or len("\n".join(str(entry.get(field) or "") for field in ("description", "requirements", "snippet")).strip())
+        >= board.THIN_JD_CHARS
+    )
+    compact["main_gaps_count"] = int(
+        entry.get("main_gaps_count", len(entry.get("main_gaps") or [])) or 0
+    )
+    return compact
+
+
 def save_watchlist(watchlist: Dict[str, Dict[str, Any]]) -> None:
     WATCHLIST_PATH.parent.mkdir(parents=True, exist_ok=True)
     entries = sorted(
@@ -438,13 +481,18 @@ def save_watchlist(watchlist: Dict[str, Dict[str, Any]]) -> None:
         key=lambda e: (e.get("first_seen", ""), e.get("job_id", "")),
         reverse=True,
     )
-    payload = {
+    base = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "retention_days": WATCHLIST_RETENTION_DAYS,
-        "count": len(entries),
-        "entries": entries,
     }
-    atomic_write(WATCHLIST_PATH, (json.dumps(payload, indent=2)).encode("utf-8"))
+    if WATCHLIST_PATH == DEFAULT_WATCHLIST_PATH:
+        atomic_write(LOCAL_WATCHLIST_PATH, encode_json_gzip({**base, "count": len(entries), "entries": entries}))
+    published = [
+        compact_watchlist_entry(entry) for entry in entries
+        if str(entry.get("kept", "yes")).lower() in {"yes", "true", "1"}
+    ]
+    payload = {**base, "count": len(published), "entries": published}
+    atomic_write(WATCHLIST_PATH, (json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n").encode("utf-8"))
 
 
 def _entry_age_ref(entry: Dict[str, Any]) -> Optional[datetime]:
@@ -719,7 +767,7 @@ SHARED_SCORE_FIELDS = (
     "match_score", "tier", "score_source", "screen_method",
     "resume_profile_used", "role_family", "role_relevance",
     "seniority_fit", "hard_constraint_status", "top_match_reasons",
-    "main_gaps", "recommended_action", "cache_key", "jd_hash",
+    "main_gaps", "main_gaps_count", "recommended_action", "cache_key", "jd_hash",
     "match_canonical_key", "match_source_pipeline", "match_jd_hash",
     "recency_bucket",
 )
@@ -783,7 +831,10 @@ def assign_shared_scores(
         shared_score_store(watchlist),
         use_llm=use_llm,
         peer_stores=[
-            ("official", board.load_store_path(OUTPUT_DIR / "official_careers" / "jobs.json"))
+            ("official", board.load_store_path(
+                OUTPUT_DIR / "official_careers" / "jobs.json",
+                cache_path=OUTPUT_DIR / "cache" / "official_careers" / "jobs.json.gz",
+            ))
         ],
         prefer_peer=True,
     )
@@ -968,12 +1019,12 @@ def run() -> None:
     total_found = len(id_to_summary)
 
     # Phase 2: dedup against the chosen store.
+    seen_ids = load_seen_ids()
     if alert_mode:
         watchlist = prune_watchlist(load_watchlist(), now=now.astimezone(timezone.utc))
-        known_ids = set(watchlist.keys())
+        known_ids = seen_ids | set(watchlist.keys())
     else:
         watchlist = {}
-        seen_ids = load_seen_ids()
         known_ids = seen_ids
     new_ids = [jid for jid in id_to_summary if jid not in known_ids]
     unresolved_known_ids = [
@@ -1009,7 +1060,10 @@ def run() -> None:
     )
     peer_jds_resolved = board.enrich_from_exact_peers(raw_rows, [
         ("official", board.load_official_peer_store()),
-        ("board", board.load_store_path(OUTPUT_DIR / "board" / "jobs.json")),
+        ("board", board.load_store_path(
+            OUTPUT_DIR / "board" / "jobs.json",
+            cache_path=OUTPUT_DIR / "cache" / "board" / "jobs.json.gz",
+        )),
     ])
 
     # Phase 4: hard filters (always applied).
@@ -1279,6 +1333,8 @@ def run() -> None:
         for entry in historical_rows:
             apply_external_company_policy(entry, company_filters)
         save_watchlist(watchlist)
+        seen_ids.update(id_to_summary.keys())
+        save_seen_ids(seen_ids)
 
         inbox_rows = [
             _watchlist_to_alert_row(e)

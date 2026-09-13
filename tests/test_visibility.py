@@ -71,7 +71,11 @@ class SyncareerStateTests(unittest.TestCase):
                     loaded = daily_pipeline.load_watchlist()
                     self.assertEqual({"123": {**entry, "job_id": "123"}}, loaded)
                     daily_pipeline.save_watchlist(loaded)
-                    self.assertEqual(loaded, daily_pipeline.load_watchlist())
+                    reloaded = daily_pipeline.load_watchlist()["123"]
+                    for field, value in loaded["123"].items():
+                        self.assertEqual(value, reloaded[field])
+                    self.assertEqual("yes", reloaded["kept"])
+                    self.assertFalse(reloaded["description_available"])
                     current.unlink()
 
     def test_corrupt_state_is_not_treated_as_empty_or_replaced_by_legacy(self) -> None:
@@ -312,6 +316,13 @@ class DashboardPolicyTests(unittest.TestCase):
             saved = json.loads(state.read_text(encoding="utf-8"))
             self.assertEqual("applied", saved["jobs"][key]["status"])
             self.assertEqual("Applied 2026-08-29", saved["jobs"][key]["notes"])
+            self.assertEqual("Example Tech", saved["jobs"][key]["company"])
+            self.assertEqual(job["title"], saved["jobs"][key]["title"])
+            self.assertEqual(job["official_url"], saved["jobs"][key]["url"])
+            self.assertEqual(1, saved["count"])
+            with patch.object(review_state, "STORE_PATHS", (store,)), patch.object(review_state, "STATE_PATH", state):
+                review_state.set_status(key, "unreviewed")
+            self.assertEqual({}, json.loads(state.read_text(encoding="utf-8"))["jobs"])
 
     def test_ats_issue_fallback_round_trips_the_current_writer(self) -> None:
         job = official_job("10001", "Software Engineer I", "Seattle, WA")
@@ -403,6 +414,8 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertNotIn("let active='all',company='all'", dashboard.HTML_TEMPLATE)
         self.assertNotIn('<div class="small">Big Company Official</div>', dashboard.HTML_TEMPLATE)
         self.assertIn("job_review_status", dashboard.HTML_TEMPLATE)
+        self.assertIn("D.tracked_states", dashboard.HTML_TEMPLATE)
+        self.assertIn("D.tracked_rows", dashboard.HTML_TEMPLATE)
         self.assertNotIn("signInWithOtp", dashboard.HTML_TEMPLATE)
         self.assertIn('id="mainViewTabs"', dashboard.HTML_TEMPLATE)
         self.assertIn('role="tablist"', dashboard.HTML_TEMPLATE)
@@ -793,6 +806,29 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
                 context = coverage_reconcile.load_official_context()
         self.assertEqual({"example"}, context["scraped_company_ids"])
 
+    def test_official_reconciliation_uses_compact_remote_index_without_raw_cache(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            store = root / "jobs.json"
+            store.write_text(json.dumps({
+                "scraped_at": "2026-09-05T00:00:00+00:00",
+                "scraped_company_ids": ["example"],
+                "coverage_fields": ["company", "title", "location", "job_id", "official_url", "source"],
+                "coverage_entries": [["Example Tech", "Software Engineer I", "Seattle, WA", "10001", "https://example.test/jobs/10001", "official"]],
+                "entries": [],
+            }))
+            expected_context = context()
+            with patch.object(coverage_reconcile, "OFFICIAL_RAW_PATH", root / "missing-cache.gz"), patch.object(
+                coverage_reconcile, "LEGACY_OFFICIAL_RAW_PATH", root / "missing-legacy.gz"
+            ), patch.object(coverage_reconcile, "OFFICIAL_STORE_PATH", store), patch.object(
+                coverage_reconcile,
+                "load_registry_entries",
+                return_value=(expected_context["registry_entries"], expected_context["registry_by_id"]),
+            ):
+                loaded = coverage_reconcile.load_official_context()
+        self.assertEqual({"example"}, loaded["scraped_company_ids"])
+        self.assertEqual("10001", loaded["jobs"][0]["job_id"])
+
     def test_board_does_not_collect_legacy_official_source(self) -> None:
         session = Mock()
         session.get.side_effect = AssertionError("unexpected direct collection")
@@ -901,6 +937,8 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
                 stack.enter_context(patch.object(daily_pipeline, "SYNCAREER_DIR", syncareer_dir))
                 stack.enter_context(patch.object(daily_pipeline, "RUNS_DIR", syncareer_dir / "runs"))
                 stack.enter_context(patch.object(daily_pipeline, "WATCHLIST_PATH", syncareer_dir / "watchlist.json"))
+                stack.enter_context(patch.object(daily_pipeline, "SEEN_IDS_PATH", syncareer_dir / "seen_jobs.json"))
+                stack.enter_context(patch.object(daily_pipeline, "LEGACY_SEEN_IDS_PATH", root / "legacy_seen_jobs.json"))
                 stack.enter_context(patch.object(daily_pipeline, "ALERT_HISTORY_PATH", syncareer_dir / "alert_history.json"))
                 stack.enter_context(patch.object(daily_pipeline, "LEGACY_WATCHLIST_PATH", root / "legacy_watchlist.json"))
                 stack.enter_context(patch.object(daily_pipeline.board, "load_env_file"))

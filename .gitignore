@@ -44,3 +44,9 @@ output/alerts/
 # Local LinkedIn/Glassdoor snapshots for GHA ingest
 !output/sources/
 !output/sources/**
+
+# Runtime-only detail/enrichment caches and historical diagnostics.
+output/cache/
+output/board/runs/
+output/official_careers/runs/
+output/syncareer/runs/

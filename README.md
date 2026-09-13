@@ -120,14 +120,21 @@ dispatch input verifies trigger receipt without crawling or scoring.
 
 Each pipeline keeps its own state and output directory. A failure in one pipeline does not block the others.
 
-Useful files:
+GitHub keeps only the small durable/current state each independent pipeline owns:
 
 - `output/*/inbox.md` — rolling 3-day actionable view;
 - `output/*/latest.md` — wider current view where available;
-- `output/*/runs/` — per-run diagnostics/snapshots;
-- `output/*/jobs.json` or watchlist state — dedup/matching history;
+- `output/*/seen_jobs.json` — permanent lightweight identity history;
+- `output/*/jobs.json` — compact current 7-day board state;
+- `output/tracked_jobs.json` — permanent lightweight `in_progress` / `applied` snapshots;
 - `output/cross_pipeline/` — coverage audit artifacts when generated;
 - `public/` — generated dashboard files.
+
+Full descriptions, source snippets, enrichment/LLM evidence, raw Official snapshots,
+and full scoring caches stay under gitignored `output/cache/`. Per-run diagnostics
+under `output/*/runs/` are local or workflow artifacts, not repository history.
+In-progress and applied jobs use `output/tracked_jobs.json` as the committed recovery
+store and the existing Supabase review state for live dashboard updates.
 
 User-facing digests are deduplicated so reruns, rescoring, and ordinary JD changes do not repeatedly alert the same job.
 
@@ -142,7 +149,7 @@ User-facing digests are deduplicated so reruns, rescoring, and ordinary JD chang
 
 ## State and validation
 
-Owned job stores, watchlists, digest histories and the optional committed review overlay reject corrupt data rather than resetting it. Writes use atomic replacement to retain the previous complete file if writing fails. Missing files can initialize empty state; unavailable optional peer caches do not block another pipeline. Supported legacy record formats remain readable.
+Owned job stores, watchlists, digest histories and the committed tracked-job store reject corrupt data rather than resetting it. Writes use atomic replacement to retain the previous complete file if writing fails. Missing files can initialize empty state; unavailable optional peer caches do not block another pipeline. Supported legacy record formats remain readable.
 
 Matching requires nonempty `profile/candidate_profile.md`, `profile/resume_swe.md`, and `profile/resume_ai.md`. Missing or blank inputs stop scoring; no legacy resume fallback is used. Run stamps and persisted timestamps use UTC; display and schedules use Pacific time.
 

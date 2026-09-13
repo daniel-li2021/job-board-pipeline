@@ -1,4 +1,4 @@
-// Dashboard runtime extension: immutable discovery counters + durable applied-job history.
+// Dashboard runtime extension: immutable discovery counters + durable tracked-job history.
 // Loaded after dashboard.py's inline script by the Pages workflow.
 (() => {
   const archivePrefix = 'applied-archive::';
@@ -6,6 +6,7 @@
   let archive = {};
   try { archive = JSON.parse(localStorage.getItem(archiveCacheKey) || '{}'); } catch (e) { archive = {}; }
   const archivePending = new Set();
+  const trackedStatuses = new Set(['in_progress', 'applied_complete']);
   let recentSource = 'all';
 
   const stateKeys = key => {
@@ -35,7 +36,7 @@
     return Number.isFinite(value) ? value : 0;
   };
   const compactSnapshot = row => ({
-    v: 2,
+    v: 3,
     k: String(row?.canonical_job_key || ''),
     p: String(row?.pipeline || ''),
     c: String(row?.company || ''),
@@ -45,6 +46,7 @@
     d: String(row?.posted_date || ''),
     tier: row?.tier || '-',
     score: row?.score ?? '',
+    s: row?._tracked_status || statusOf(row),
     applied: row?._applied_at || '',
   });
   const archiveStorageKey = row => {
@@ -57,6 +59,7 @@
     try {
       const s = JSON.parse(key.slice(archivePrefix.length));
       if (!s?.k) return null;
+      const status = normalizeStatus(s.s || state.status);
       const applied = String(s.applied || '');
       const appliedTime = Date.parse(applied), archivedTime = Date.parse(state.updated_at || '');
       const trustedApplied = Number(s.v) >= 2 || (
@@ -74,22 +77,24 @@
         tier: s.tier || '-',
         score: s.score ?? '',
         _applied_at: trustedApplied ? applied : '',
+        _tracked_status: status,
         sponsorship: 'Unknown',
         referral: '',
         url: s.u || (String(s.k).startsWith('url::') ? String(s.k).slice(5) : ''),
         freshness: { discovered: { age_hours: null }, posted: { trusted: false } },
-        _applied_archive: true,
+        _tracked_archive: true,
+        _applied_archive: status === 'applied_complete',
         _archive_updated_at: state.updated_at || '',
         pending: false,
       };
     } catch (e) { return null; }
   };
-  const placeholderApplied = key => ({
+  const placeholderTracked = (key, status = 'applied_complete') => ({
     canonical_job_key: key,
     pipeline: '',
-    company: 'Archived application',
+    company: 'Archived tracked job',
     company_key: '',
-    title: 'Previously applied job (source details expired)',
+    title: 'Tracked job (source details expired)',
     location: '',
     posted_date: '',
     first_seen: '',
@@ -99,7 +104,9 @@
     referral: '',
     url: String(key).startsWith('url::') ? String(key).slice(5) : '',
     freshness: { discovered: { age_hours: null }, posted: { trusted: false } },
-    _applied_archive: true,
+    _tracked_status: status,
+    _tracked_archive: true,
+    _applied_archive: status === 'applied_complete',
   });
   const isCompanyState = key => isPreferenceKey(key) || String(key || '').startsWith(archivePrefix);
 
@@ -140,7 +147,7 @@
       location: details[3], url: details[4], tier: details[5], score: details[6],
     } : scores ? {canonical_job_key: key, tier: scores[0], score: scores[1]} : null;
     if (!matches.length && !historical) return null;
-    const row = matches.reverse().reduce(mergeArchive, historical || placeholderApplied(key));
+    const row = matches.reverse().reduce(mergeArchive, historical || placeholderTracked(key));
     return row;
   }
   const appliedTime = row => Date.parse(row?._applied_at || '') || 0;
@@ -163,12 +170,12 @@
 
   function syncArchiveRows() {
     for (let i = allRows.length - 1; i >= 0; i--) {
-      if (allRows[i]?._applied_archive) allRows.splice(i, 1);
+      if (allRows[i]?._tracked_archive || allRows[i]?._applied_archive) allRows.splice(i, 1);
     }
-    const archived = Object.values(archive);
+    const archived = Object.values(archive).filter(row => trackedStatuses.has(statusOf(row)));
     const placeholders = Object.entries(reviewStates)
-      .filter(([key, state]) => !isCompanyState(key) && normalizeStatus(state?.status) === 'applied_complete' && !archive[key])
-      .map(([key]) => placeholderApplied(key));
+      .filter(([key, state]) => !isCompanyState(key) && trackedStatuses.has(normalizeStatus(state?.status)) && !archive[key])
+      .map(([key, state]) => placeholderTracked(key, normalizeStatus(state.status)));
     allRows.unshift(...archived, ...placeholders);
   }
 
@@ -183,7 +190,7 @@
     }
     archivePending.add(jobKey);
     const updatedAt = snapshot._archive_updated_at || new Date().toISOString();
-    const payload = { canonical_job_key: storageKey, status: 'applied_complete', deleted: false, updated_at: updatedAt };
+    const payload = { canonical_job_key: storageKey, status: snapshot._tracked_status || 'applied_complete', deleted: false, updated_at: updatedAt };
     let error;
     try { ({ error } = await supabase.from('job_review_status').upsert(payload, { onConflict: 'canonical_job_key' })); }
     catch (failure) { error = failure; }
@@ -201,13 +208,15 @@
     renderAll();
   }
 
-  function archiveAppliedJob(key, appliedAt = archive[key]?._applied_at || '') {
+  function archiveTrackedJob(key, status, appliedAt = archive[key]?._applied_at || '') {
     const row = recoveredRow(key);
     if (!row) return;
     const snapshot = {
       ...row,
-      _applied_archive: true,
-      _applied_at: appliedAt,
+      _tracked_status: status,
+      _tracked_archive: true,
+      _applied_archive: status === 'applied_complete',
+      _applied_at: status === 'applied_complete' ? appliedAt : '',
       _archive_updated_at: new Date().toISOString(),
       pending: true,
     };
@@ -217,12 +226,15 @@
     pushAppliedArchive(snapshot);
   }
 
-  function backfillAppliedArchives() {
+  function backfillTrackedArchives() {
     Object.entries(reviewStates).forEach(([key, state]) => {
-      if (isCompanyState(key) || normalizeStatus(state?.status) !== 'applied_complete') return;
+      const status = normalizeStatus(state?.status);
+      if (isCompanyState(key) || !trackedStatuses.has(status)) return;
       const recovered = recoveredRow(key), saved = archive[key];
       const improves = recovered && metadataFields.some(field => !hasMetadata(saved, field) && hasMetadata(recovered, field));
-      if (!saved || improves) archiveAppliedJob(key, state._applied_at || saved?._applied_at || '');
+      if (!saved || improves || saved._tracked_status !== status) {
+        archiveTrackedJob(key, status, state._applied_at || saved?._applied_at || '');
+      }
     });
   }
 
@@ -274,12 +286,14 @@
     renderBox('lastSevenDays', recent);
   }
 
-  // Archive metadata before the source row can age out of its 7-day store.
+  // Archive tracked metadata before the source row can age out of its 7-day store.
   setStatus = function(keys, value) {
     if (!statusChoices.includes(value)) return;
     keys = Array.isArray(keys) ? keys : [keys];
     saveStates(keys, { status: value, deleted: false });
-    if (value === 'applied_complete') keys.forEach(key => archiveAppliedJob(key, reviewState(key).updated_at));
+    if (trackedStatuses.has(value)) {
+      keys.forEach(key => archiveTrackedJob(key, value, reviewState(key).updated_at));
+    }
   };
 
   mainViewCounts = function(rows = uniqueRows()) {
@@ -364,15 +378,15 @@
     sharedLoaded = true;
     sharedError = '';
     syncArchiveRows();
-    backfillAppliedArchives();
+    backfillTrackedArchives();
     renderReviewMessage();
     renderAll();
     await syncPending();
   };
 
-  // Existing applied rows are immediately retained; old rows with already-pruned
+  // Existing tracked rows are immediately retained; old rows with already-pruned
   // metadata remain visible as placeholders instead of silently disappearing.
   syncArchiveRows();
-  backfillAppliedArchives();
+  backfillTrackedArchives();
   renderAll();
 })();

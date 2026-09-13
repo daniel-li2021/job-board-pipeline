@@ -16,7 +16,7 @@ def decode_json_bytes(raw: bytes) -> Any:
 
 
 def encode_json_gzip(payload: Any) -> bytes:
-    """Compact JSON plus gzip, so large job stores stay under GitHub's 100MB blob limit."""
+    """Compact JSON plus deterministic gzip for local runtime caches."""
     body = (json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n").encode("utf-8")
     return gzip.compress(body, mtime=0)
 

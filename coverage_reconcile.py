@@ -31,10 +31,11 @@ from sources.schema import (
 )
 
 BASE_DIR = Path(__file__).resolve().parent
-OFFICIAL_RAW_PATH = BASE_DIR / "output" / "official_careers" / "raw.json.gz"
+OFFICIAL_RAW_PATH = BASE_DIR / "output" / "cache" / "official_careers" / "raw.json.gz"
+LEGACY_OFFICIAL_RAW_PATH = BASE_DIR / "output" / "official_careers" / "raw.json.gz"
 OFFICIAL_STORE_PATH = BASE_DIR / "output" / "official_careers" / "jobs.json"
 BOARD_STORE_PATH = BASE_DIR / "output" / "board" / "jobs.json"
-SYNCAREER_STORE_PATH = BASE_DIR / "output" / "syncareer" / "watchlist.json"
+SYNCAREER_STORE_PATH = BASE_DIR / "output" / "syncareer" / "jobs.json"
 REGISTRY_PATH = BASE_DIR / "config" / "official_careers.json"
 REFERRAL_PATH = BASE_DIR / "config" / "target_companies.json"
 COVERAGE_CONFIG_PATH = BASE_DIR / "profile" / "official_coverage.json"
@@ -122,11 +123,19 @@ def load_coverage_config() -> Dict[str, Dict[str, Any]]:
 
 
 def load_official_context() -> Dict[str, Any]:
+    raw_path = OFFICIAL_RAW_PATH if OFFICIAL_RAW_PATH.exists() else LEGACY_OFFICIAL_RAW_PATH
+    raw_exists = raw_path.exists()
     try:
-        payload = json.loads(gzip.decompress(OFFICIAL_RAW_PATH.read_bytes()))
+        payload = json.loads(gzip.decompress(raw_path.read_bytes()))
     except (OSError, json.JSONDecodeError, UnicodeDecodeError):
         payload = {}
     jobs = payload.get("jobs", []) if isinstance(payload, dict) else []
+    if not raw_exists:
+        store_payload, store_jobs = _load_store_entries(OFFICIAL_STORE_PATH)
+        payload = store_payload or payload
+        fields = payload.get("coverage_fields") or []
+        rows = payload.get("coverage_entries") or []
+        jobs = [dict(zip(fields, row)) for row in rows if isinstance(row, list)] if fields else store_jobs
     scraped_company_ids = set(payload.get("scraped_company_ids") or []) if isinstance(payload, dict) else set()
     registry_entries, registry_by_id = load_registry_entries()
     by_company: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
@@ -381,8 +390,7 @@ def syncareer_scope(now: datetime) -> List[Dict[str, Any]]:
         job = normalize_syncareer_job(entry)
         if not within_days(job, now, 3):
             continue
-        if syncareer_job_in_scope(entry):
-            scoped.append(job)
+        scoped.append(job)
     return scoped
 
 

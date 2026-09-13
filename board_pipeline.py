@@ -76,7 +76,10 @@ from sources.schema import (
 
 BASE_DIR = Path(__file__).resolve().parent
 BOARD_DIR = OUTPUT_DIR / "board"
-JOBS_STORE_PATH = BOARD_DIR / "jobs.json"
+DEFAULT_JOBS_STORE_PATH = BOARD_DIR / "jobs.json"
+JOBS_STORE_PATH = DEFAULT_JOBS_STORE_PATH
+SEEN_JOBS_PATH = BOARD_DIR / "seen_jobs.json"
+LOCAL_STORE_PATH = OUTPUT_DIR / "cache" / "board" / "jobs.json.gz"
 LATEST_MD_PATH = BOARD_DIR / "latest.md"
 INBOX_MD_PATH = BOARD_DIR / "inbox.md"
 INBOX_CSV_PATH = BOARD_DIR / "inbox.csv"
@@ -1245,6 +1248,7 @@ def _apply_cached_result(job: Dict[str, str], entry: Dict[str, Any]) -> None:
     job["hard_constraint_status"] = entry.get("hard_constraint_status", "ok")
     job["top_match_reasons"] = list(entry.get("top_match_reasons") or [])
     job["main_gaps"] = list(entry.get("main_gaps") or [])
+    job["main_gaps_count"] = int(entry.get("main_gaps_count", len(job["main_gaps"])) or 0)
     job["recommended_action"] = entry.get("recommended_action", "apply_if_time")
     job["score_source"] = SCORE_CACHED_LLM
     job["screen_method"] = SCORE_CACHED_LLM
@@ -1552,7 +1556,8 @@ def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
     score = float(job.get("match_score", 0) or 0)
     bucket = job.get("recency_bucket") or recency_bucket(job)
     strong_sen = _strong_seniority(job)
-    few_gaps = len(job.get("main_gaps") or []) <= MAX_A_GAPS
+    gaps = int(job.get("main_gaps_count", len(job.get("main_gaps") or [])) or 0)
+    few_gaps = gaps <= MAX_A_GAPS
     deprioritized = bool(job.get("deprioritized"))
     src = (job.get("score_source") or "").strip()
     llm_scored = src in LLM_SCORE_SOURCES
@@ -1600,7 +1605,6 @@ def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
             return "A"
         # rule-only otherwise caps at B
     hard_status = str(job.get("hard_constraint_status") or "ok").lower()
-    gaps = len(job.get("main_gaps") or [])
     sfit = str(job.get("seniority_fit") or "").lower()
     if hard_status not in {"", "ok"} or sfit in {"mismatch", "senior", "over"}:
         return "C"
@@ -1657,9 +1661,12 @@ def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
 # --------------------------------------------------------------------------
 # jobs.json store (dedup + first_seen, 7-day rolling)
 # --------------------------------------------------------------------------
-def load_store_path(path: Path, *, strict: bool = False) -> Dict[str, Dict[str, Any]]:
+def load_store_path(
+    path: Path, *, strict: bool = False, cache_path: Optional[Path] = None
+) -> Dict[str, Dict[str, Any]]:
     try:
-        data = read_json(path, {"entries": []})
+        source = cache_path if cache_path and cache_path.exists() else path
+        data = read_json(source, {"entries": []})
         entries = data.get("entries") if isinstance(data, dict) else data
         if not isinstance(entries, list) or any(
             not isinstance(entry, dict) or not isinstance(entry.get("key"), str) or not entry["key"]
@@ -1674,13 +1681,35 @@ def load_store_path(path: Path, *, strict: bool = False) -> Dict[str, Dict[str, 
 
 
 def load_store() -> Dict[str, Dict[str, Any]]:
-    return load_store_path(JOBS_STORE_PATH, strict=True)
+    cache_path = LOCAL_STORE_PATH if JOBS_STORE_PATH == DEFAULT_JOBS_STORE_PATH or JOBS_STORE_PATH.parent.name == "board-local" else None
+    return load_store_path(JOBS_STORE_PATH, strict=True, cache_path=cache_path)
+
+
+def load_seen_jobs_path(path: Path) -> Dict[str, str]:
+    data = read_json(path, {"seen": {}})
+    seen = data.get("seen") if isinstance(data, dict) else None
+    if not isinstance(seen, dict) or any(not isinstance(key, str) or not key for key in seen):
+        raise ValueError(f"Invalid seen-job store: {path}")
+    return {key: str(first_seen or "") for key, first_seen in seen.items()}
+
+
+def save_seen_jobs_path(path: Path, seen: Dict[str, str]) -> None:
+    payload = {
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "count": len(seen),
+        "seen": dict(sorted(seen.items())),
+    }
+    atomic_write(path, (json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n").encode("utf-8"))
 
 
 def load_syncareer_peer_store() -> Dict[str, Dict[str, Any]]:
     """Load normalized Syncareer rows as an optional JD peer store."""
     try:
-        payload = read_json(coverage_reconcile.SYNCAREER_STORE_PATH, {"entries": []})
+        cache_path = OUTPUT_DIR / "cache" / "syncareer" / "jobs.json.gz"
+        payload = read_json(
+            cache_path if cache_path.exists() else coverage_reconcile.SYNCAREER_STORE_PATH,
+            {"entries": []},
+        )
         entries = payload.get("entries", []) if isinstance(payload, dict) else payload
         return {
             f"syncareer::{index}": coverage_reconcile.normalize_syncareer_job(entry)
@@ -1693,9 +1722,12 @@ def load_syncareer_peer_store() -> Dict[str, Dict[str, Any]]:
 
 def load_official_peer_store() -> Dict[str, Dict[str, Any]]:
     """Use the Official store plus its current raw detail snapshot."""
-    store = load_store_path(OUTPUT_DIR / "official_careers" / "jobs.json")
+    store = load_store_path(
+        OUTPUT_DIR / "official_careers" / "jobs.json",
+        cache_path=OUTPUT_DIR / "cache" / "official_careers" / "jobs.json.gz",
+    )
     try:
-        payload = json.loads(gzip.decompress((OUTPUT_DIR / "official_careers" / "raw.json.gz").read_bytes()))
+        payload = json.loads(gzip.decompress((OUTPUT_DIR / "cache" / "official_careers" / "raw.json.gz").read_bytes()))
         for index, job in enumerate(payload.get("jobs") or []):
             if isinstance(job, dict):
                 store[f"official-raw::{index}"] = job
@@ -1746,19 +1778,60 @@ def enrich_from_exact_peers(
     return resolved
 
 
-def save_store_path(path: Path, store: Dict[str, Dict[str, Any]], retention_days: int) -> None:
+REMOTE_STORE_FIELDS = {
+    "key", "job_id", "company", "title", "location", "posted_date", "date_confidence",
+    "official_url", "source", "source_url", "sponsorship", "filter_status", "referral_name",
+    "company_flag", "staffing_firm", "clearance_risk_company", "role_family", "role_relevance",
+    "tier", "recency_bucket", "cache_key", "jd_hash", "match_score", "resume_profile_used",
+    "seniority_fit", "hard_constraint_status", "main_gaps_count", "recommended_action",
+    "screen_method", "score_source", "match_canonical_key", "match_source_pipeline",
+    "match_jd_hash", "coverage_status", "canonical_source", "canonical_job_key", "duplicate_of",
+    "official_snapshot_at", "source_snapshot_at", "official_company_id", "suppress_alert",
+    "review_status", "first_seen", "last_seen", "description_available", "enrichment_failure_reason",
+}
+
+
+def compact_store_entry(entry: Dict[str, Any]) -> Dict[str, Any]:
+    compact = {
+        key: value for key, value in entry.items()
+        if key in REMOTE_STORE_FIELDS and value not in (None, "", False, [], {})
+    }
+    compact["key"] = entry["key"]
+    compact["filter_status"] = "kept"
+    compact["description_available"] = bool(
+        entry.get("description_available")
+        or len(str(entry.get("description") or "").strip()) >= THIN_JD_CHARS
+    )
+    compact["main_gaps_count"] = int(
+        entry.get("main_gaps_count", len(entry.get("main_gaps") or [])) or 0
+    )
+    return compact
+
+
+def save_store_path(
+    path: Path,
+    store: Dict[str, Dict[str, Any]],
+    retention_days: int,
+    *,
+    cache_path: Optional[Path] = None,
+    metadata: Optional[Dict[str, Any]] = None,
+) -> None:
     entries = sorted(store.values(), key=lambda e: (e.get("first_seen", ""), e.get("key", "")), reverse=True)
-    payload = {
+    base = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "retention_days": retention_days,
-        "count": len(entries),
-        "entries": entries,
+        **(metadata or {}),
     }
-    atomic_write(path, encode_json_gzip(payload))
+    if cache_path:
+        atomic_write(cache_path, encode_json_gzip({**base, "count": len(entries), "entries": entries}))
+    published = [compact_store_entry(entry) for entry in entries if entry.get("filter_status", "kept") == "kept"]
+    payload = {**base, "count": len(published), "entries": published}
+    atomic_write(path, (json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n").encode("utf-8"))
 
 
 def save_store(store: Dict[str, Dict[str, Any]]) -> None:
-    save_store_path(JOBS_STORE_PATH, store, RETENTION_DAYS)
+    cache_path = LOCAL_STORE_PATH if JOBS_STORE_PATH == DEFAULT_JOBS_STORE_PATH or JOBS_STORE_PATH.parent.name == "board-local" else None
+    save_store_path(JOBS_STORE_PATH, store, RETENTION_DAYS, cache_path=cache_path)
 
 
 def prune_store(store: Dict[str, Dict[str, Any]], now: datetime) -> Dict[str, Dict[str, Any]]:
@@ -2081,7 +2154,7 @@ ENTRY_DEFAULTS: Dict[str, Any] = {
     "role_family": "", "role_relevance": 0, "tier": "", "recency_bucket": "",
     "cache_key": "", "jd_hash": "", "match_score": None, "resume_profile_used": "",
     "seniority_fit": "", "hard_constraint_status": "", "top_match_reasons": list,
-    "main_gaps": list, "recommended_action": "", "screen_method": "", "score_source": "",
+    "main_gaps": list, "main_gaps_count": 0, "recommended_action": "", "screen_method": "", "score_source": "",
     "match_canonical_key": "", "match_source_pipeline": "", "match_jd_hash": "",
     "coverage_status": "", "canonical_source": "", "canonical_job_key": "",
     "duplicate_of": "", "official_snapshot_at": "", "source_snapshot_at": "",
@@ -2091,7 +2164,7 @@ ENTRY_DEFAULTS: Dict[str, Any] = {
     "discovery_queries": dict, "original_resolved": False,
     "application_url": "", "direct_original_fetched": False, "direct_original_fetched_at": "",
     "enrichment_method": "", "enrichment_status": "", "enrichment_failure_reason": "",
-    "source_snippet": "",
+    "source_snippet": "", "description_available": False,
 }
 
 
@@ -2104,7 +2177,7 @@ def ensure_entry_defaults(entry: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
-    """One canonical entry for jobs.json (kept OR dropped)."""
+    """One full local-cache entry (kept or dropped)."""
     return {
         # identity + display
         "key": key,
@@ -2152,6 +2225,7 @@ def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
         "hard_constraint_status": job.get("hard_constraint_status", ""),
         "top_match_reasons": list(job.get("top_match_reasons") or []),
         "main_gaps": list(job.get("main_gaps") or []),
+        "main_gaps_count": int(job.get("main_gaps_count", len(job.get("main_gaps") or [])) or 0),
         "recommended_action": job.get("recommended_action", ""),
         "screen_method": job.get("screen_method", ""),
         "score_source": job.get("score_source", ""),
@@ -2191,7 +2265,11 @@ def refresh_retained_entry_policy(
         entry["drop_reason"] = "company_hidden_external"
         entry["suppress_alert"] = True
         return
-    if is_thin_local_discovery(entry) and entry.get("match_source_pipeline") != "official":
+    if (
+        is_thin_local_discovery(entry)
+        and not entry.get("description_available")
+        and entry.get("match_source_pipeline") != "official"
+    ):
         entry["rule_score"] = rule_match_score(entry)
         _apply_rule_result(entry, SCORE_FALLBACK, "Low-confidence title/metadata match (JD unavailable after enrichment)")
         entry["tier"] = assign_tier(entry, False)
@@ -2206,10 +2284,12 @@ def run() -> None:
     parser.add_argument("--force-digest", action="store_true", help="Emit a digest even if one already went out today")
     args = parser.parse_args()
 
-    global BOARD_DIR, JOBS_STORE_PATH, LATEST_MD_PATH, INBOX_MD_PATH, INBOX_CSV_PATH, RUNS_DIR, DIGEST_STATE_PATH
+    global BOARD_DIR, JOBS_STORE_PATH, SEEN_JOBS_PATH, LOCAL_STORE_PATH, LATEST_MD_PATH, INBOX_MD_PATH, INBOX_CSV_PATH, RUNS_DIR, DIGEST_STATE_PATH
     if args.local_out:
         BOARD_DIR = OUTPUT_DIR / "board-local"
         JOBS_STORE_PATH = BOARD_DIR / "jobs.json"
+        SEEN_JOBS_PATH = BOARD_DIR / "seen_jobs.json"
+        LOCAL_STORE_PATH = BOARD_DIR / "full_jobs.json.gz"
         LATEST_MD_PATH = BOARD_DIR / "latest.md"
         INBOX_MD_PATH = BOARD_DIR / "inbox.md"
         INBOX_CSV_PATH = BOARD_DIR / "inbox.csv"
@@ -2240,15 +2320,19 @@ def run() -> None:
     # 4) Store lifecycle: assign first_seen/last_seen BEFORE recency so
     #    first_seen can back low-confidence sources.
     store = prune_store(load_store(), now)
+    seen_jobs = load_seen_jobs_path(SEEN_JOBS_PATH)
+    for key, entry in store.items():
+        seen_jobs.setdefault(key, str(entry.get("first_seen") or ""))
     new_keys: set = set()
     for job in deduped:
         key = dedup_key(job)
         prev = store.get(key)
-        if prev and prev.get("first_seen"):
-            job["first_seen"] = prev["first_seen"]
+        if (prev and prev.get("first_seen")) or seen_jobs.get(key):
+            job["first_seen"] = str((prev or {}).get("first_seen") or seen_jobs[key])
         else:
             job["first_seen"] = now_iso
             new_keys.add(key)
+        seen_jobs.setdefault(key, job["first_seen"])
         job["last_seen"] = now_iso
         job["recency_bucket"] = recency_bucket(job, now=now)
 
@@ -2329,7 +2413,7 @@ def run() -> None:
             drops[reason] += 1
 
     # Exact Official matches are suppressed; unmatched jobs at the same company
-    # remain eligible. All records stay in jobs.json for provenance and audit.
+    # remain eligible. All records stay in the local cache for provenance and audit.
     active_candidates = [j for j in candidates if not j.get("suppress_alert")]
     for job in candidates:
         if job.get("suppress_alert"):
@@ -2394,6 +2478,7 @@ def run() -> None:
         refresh_retained_entry_policy(entry, company_filters)
     new_store = prune_store(new_store, now)
     save_store(new_store)
+    save_seen_jobs_path(SEEN_JOBS_PATH, seen_jobs)
 
     # 11) Recency distribution over visible candidate jobs
     recency_dist = {b: 0 for b in RECENCY_BUCKETS}

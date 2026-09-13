@@ -54,13 +54,13 @@ assert.match(filteredMarkdown, /Staff Engineer/);
 assert.ok(!filteredMarkdown.includes('Unknown Score'));
 assert.ok(!filteredMarkdown.includes('https://example.com/mid'));
 assert.ok(!filteredMarkdown.includes('https://example.com/visa'));
-assert.match(vm.runInContext('jobs([],false,true)', context), /min-score-filter/);
-assert.match(vm.runInContext('jobs([],false,true)', context), /No sponsor/);
+assert.match(vm.runInContext('jobs([],false,true)', context), /No qualifying jobs in this view/);
+assert.equal(vm.runInContext("sponsorshipChoices.includes('No sponsor')", context), true);
 assert.equal(vm.runInContext('jobs([],false)', context), '<div class="empty">No qualifying jobs in this view.</div>');
 assert.ok(!vm.runInContext('jobs([],false,true)', context).includes('id="discoveryFilters"'));
 vm.runInContext(`searchQuery='';minScore='';sponsorshipFilters=new Set(sponsorshipChoices);`, context);
 let extension = fs.readFileSync('dashboard_applied_history.js','utf8');
-extension = extension.slice(0, extension.indexOf('  // Existing applied rows')) + 'globalThis.check={appliedRows,archiveStorageKey,decodeArchive,backfillAppliedArchives,expandedStates,getArchive:()=>archive};})();';
+extension = extension.slice(0, extension.indexOf('  // Existing tracked rows')) + 'globalThis.check={appliedRows,archiveStorageKey,decodeArchive,backfillTrackedArchives,expandedStates,syncArchiveRows,getArchive:()=>archive};})();';
 vm.runInContext(extension, context);
 vm.runInContext(`
 renderAll=()=>{};renderReviewMessage=()=>{};
@@ -89,7 +89,7 @@ assert.equal(vm.runInContext("check.appliedRows(uniqueRows())[0].canonical_job_k
 vm.runInContext(`
 D.history_details.old=['official','Old Co','Senior Engineer','Boston, MA','https://example.com/old','B',78];
 reviewStates.old={canonical_job_key:'old',status:'applied_complete',updated_at:'2026-09-08T00:00:00Z'};
-check.backfillAppliedArchives();
+check.backfillTrackedArchives();
 `,context);
 archived=JSON.parse(cache.jobAppliedArchiveCacheV1);
 assert.equal(archived.old.tier,'B');assert.equal(archived.old.score,78);
@@ -106,6 +106,14 @@ assert.equal(direct._applied_at,'2026-09-08T00:00:00Z');
 const expanded=vm.runInContext("check.expandedStates({canonical_job_key:'[\\\"id::one\\\",\\\"id::two\\\"]',status:'applied_complete',deleted:false,updated_at:'2020-01-01T00:00:00Z'},false)",context);
 assert.equal(expanded.map(state=>state.canonical_job_key).join(','),'id::one,id::two');
 assert.ok(expanded.every(state=>state._applied_at==='2020-01-01T00:00:00Z'));
+vm.runInContext(`
+allRows.push({canonical_job_key:'progress',pipeline:'official',tier:'B',score:80,company:'Progress Co',title:'Engineer',location:'Remote',url:'https://example.com/progress'});
+setStatus('progress','in_progress');
+allRows.splice(allRows.findIndex(row=>row.canonical_job_key==='progress'),1);
+check.syncArchiveRows();
+`,context);
+assert.equal(vm.runInContext("uniqueRows().find(row=>row.canonical_job_key==='progress').company",context),'Progress Co');
+assert.equal(vm.runInContext("reviewStates.progress.status",context),'in_progress');
 const htmlAndExtension = html + extension;
 const anchors = [...htmlAndExtension.matchAll(/<a\b[^>]*>/g)].map(match => match[0]);
 assert.ok(anchors.every(tag => /target="_blank"/.test(tag) && /rel="noopener noreferrer"/.test(tag)));

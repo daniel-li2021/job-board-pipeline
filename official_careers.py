@@ -50,8 +50,12 @@ import llm_config
 
 BASE_DIR = Path(__file__).resolve().parent
 CAREERS_DIR = OUTPUT_DIR / "official_careers"
-RAW_PATH = CAREERS_DIR / "raw.json.gz"
-STORE_PATH = CAREERS_DIR / "jobs.json"
+RAW_PATH = OUTPUT_DIR / "cache" / "official_careers" / "raw.json.gz"
+LEGACY_RAW_PATH = CAREERS_DIR / "raw.json.gz"
+DEFAULT_STORE_PATH = CAREERS_DIR / "jobs.json"
+STORE_PATH = DEFAULT_STORE_PATH
+SEEN_JOBS_PATH = CAREERS_DIR / "seen_jobs.json"
+LOCAL_STORE_PATH = OUTPUT_DIR / "cache" / "official_careers" / "jobs.json.gz"
 LATEST_MD_PATH = CAREERS_DIR / "latest.md"
 INBOX_MD_PATH = CAREERS_DIR / "inbox.md"
 INBOX_CSV_PATH = CAREERS_DIR / "inbox.csv"
@@ -238,9 +242,10 @@ def write_scrape_outputs(
 
 
 def load_raw_payload() -> Dict[str, Any]:
-    if not RAW_PATH.exists():
+    path = RAW_PATH if RAW_PATH.exists() else LEGACY_RAW_PATH
+    if not path.exists():
         return {}
-    data = json.loads(gzip.decompress(RAW_PATH.read_bytes()))
+    data = json.loads(gzip.decompress(path.read_bytes()))
     payload = data if isinstance(data, dict) else {"jobs": data}
     if not isinstance(payload.get("jobs"), list) or any(not isinstance(job, dict) for job in payload["jobs"]):
         raise ValueError(f"Invalid Official raw snapshot: {RAW_PATH}")
@@ -250,15 +255,26 @@ def load_raw_payload() -> Dict[str, Any]:
 def load_raw_jobs() -> List[Dict[str, str]]:
     data = load_raw_payload()
     jobs = data.get("jobs") if isinstance(data, dict) else data
-    return [j for j in jobs if isinstance(j, dict)] if isinstance(jobs, list) else []
+    if isinstance(jobs, list):
+        return [j for j in jobs if isinstance(j, dict)]
+    if RAW_PATH.exists() or LEGACY_RAW_PATH.exists():
+        return []
+    return list(load_careers_store().values())
 
 
 def load_careers_store() -> Dict[str, Dict[str, Any]]:
-    return board.load_store_path(STORE_PATH, strict=True)
+    cache_path = LOCAL_STORE_PATH if STORE_PATH == DEFAULT_STORE_PATH else None
+    return board.load_store_path(STORE_PATH, strict=True, cache_path=cache_path)
 
 
-def save_careers_store(store: Dict[str, Dict[str, Any]]) -> None:
-    board.save_store_path(STORE_PATH, store, RETENTION_DAYS)
+def save_careers_store(store: Dict[str, Dict[str, Any]], metadata: Optional[Dict[str, Any]] = None) -> None:
+    board.save_store_path(
+        STORE_PATH,
+        store,
+        RETENTION_DAYS,
+        cache_path=LOCAL_STORE_PATH if STORE_PATH == DEFAULT_STORE_PATH else None,
+        metadata=metadata,
+    )
 
 
 def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp: str) -> None:
@@ -469,15 +485,19 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
 
     deduped = board.merge_by_key(raw_jobs)
     store = board.prune_store(load_careers_store(), now)
+    seen_jobs = board.load_seen_jobs_path(SEEN_JOBS_PATH)
+    for key, entry in store.items():
+        seen_jobs.setdefault(key, str(entry.get("first_seen") or ""))
     new_keys: set[str] = set()
     for job in deduped:
         key = dedup_key(job)
         prev = store.get(key)
-        if prev and prev.get("first_seen"):
-            job["first_seen"] = prev["first_seen"]
+        if (prev and prev.get("first_seen")) or seen_jobs.get(key):
+            job["first_seen"] = str((prev or {}).get("first_seen") or seen_jobs[key])
         else:
             job["first_seen"] = now_iso
             new_keys.add(key)
+        seen_jobs.setdefault(key, job["first_seen"])
         job["last_seen"] = now_iso
         job["recency_bucket"] = recency_bucket(job, now=now)
         job["source_pipeline"] = "official"
@@ -495,7 +515,10 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
         len(str(job.get("description") or "").strip()) < board.THIN_JD_CHARS for job in deduped
     )
     peer_jds_resolved = board.enrich_from_exact_peers(deduped, [
-        ("board", board.load_store_path(OUTPUT_DIR / "board" / "jobs.json")),
+        ("board", board.load_store_path(
+            OUTPUT_DIR / "board" / "jobs.json",
+            cache_path=OUTPUT_DIR / "cache" / "board" / "jobs.json.gz",
+        )),
         ("syncareer", board.load_syncareer_peer_store()),
     ])
 
@@ -579,14 +602,24 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
     for entry in new_store.values():
         board.ensure_entry_defaults(entry)
     new_store = board.prune_store(new_store, now)
-    save_careers_store(new_store)
+    raw_payload = load_raw_payload()
+    coverage_fields = ("company", "title", "location", "job_id", "official_url", "source")
+    save_careers_store(new_store, {
+        "scraped_company_ids": list(raw_payload.get("scraped_company_ids") or []),
+        "scraped_at": str(raw_payload.get("scraped_at") or now_iso),
+        "coverage_fields": list(coverage_fields),
+        "coverage_entries": [
+            [job.get(field) or "" for field in coverage_fields]
+            for job in raw_payload.get("jobs") or [] if isinstance(job, dict)
+        ],
+    })
+    board.save_seen_jobs_path(SEEN_JOBS_PATH, seen_jobs)
 
     recency_dist = {b: 0 for b in RECENCY_BUCKETS}
     for job in candidates:
         recency_dist[job.get("recency_bucket", "gt7d")] += 1
 
     per_company = Counter(j.get("company", "") for j in raw_jobs)
-    raw_payload = load_raw_payload()
     stats = {
         "source_raw": dict(per_company),
         "query_diagnostics": {
