@@ -1,7 +1,7 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-09-12 16:52 PDT
-- Snapshot (UTC): 2026-09-12T23:52:24.356118+00:00
+- Updated (PT): 2026-09-12 17:00 PDT
+- Snapshot (UTC): 2026-09-13T00:00:53.320947+00:00
 - Jobs: 138 (Tier A/B only)
 - Last 24 hours: 131
 - Last 3 days: 138

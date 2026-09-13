@@ -1,7 +1,7 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-12_2352
+# ATS / LinkedIn board — 7-day view — 2026-09-13_0000
 
-- Updated (PT): 2026-09-12 16:54 PDT
-- Snapshot (UTC): 2026-09-12T23:54:45.224140+00:00
+- Updated (PT): 2026-09-12 17:02 PDT
+- Snapshot (UTC): 2026-09-13T00:02:48.150297+00:00
 - Last 24 hours: 131
 - Last 3 days: 138
 
@@ -11,8 +11,8 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 
 - Source raw: ATS 2694 / Linkedin 763 / Indeed 757 / Glassdoor 396 (Big Company Official runs separately)
 - Funnel: after dedup 4610 -> after company filter 4447 -> after hard filter 4135 -> after role+seniority prefilter 1032 | dropped 3528
-- LLM usage: jobs scored 17 / API requests 3 / cache reused 618 (cross-pipeline 0) / rule fallback+overflow 75 (thin local cards 73, recency-gated 2, overflow 0, new/changed 19)
-- LLM cost: model gpt-5.6-terra / API requests 3 / jobs scored 17 / tokens input 11479 (cached 0) / output 2471 (reasoning 217) / estimated cost $0.0526
+- LLM usage: jobs scored 0 / API requests 0 / cache reused 635 (cross-pipeline 0) / rule fallback+overflow 75 (thin local cards 73, recency-gated 2, overflow 0, new/changed 2)
+- LLM cost: model gpt-5.6-terra / API requests 0 / jobs scored 0 / tokens input 0 (cached 0) / output 0 (reasoning 0) / estimated cost $0.0000
 - Output sizing: Tier A 30 / Tier B 108 / A+B actionable 138 / Shown in latest.md 138 (no hard cap)
 - Recency (kept): <3h 0 / 3-24h 0 / 1-3d 58 / newly-disc 649 / 3-7d 2 / >7d 1
 - LinkedIn vs Indeed exact coverage: overlap 2 / LinkedIn unique 747 of 749 / Indeed unique 743 of 743
@@ -27,7 +27,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 85 | cached_llm | indeed | KLA | AI Software Engineer/Manufacturing | Ann Arbor, MI, US | 2026-09-09 | 1to3d | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ad19b6154b9730df) |
 | 95 | cached_llm | indeed | Achieve | Associate AI Solutions Engineer | Tempe, AZ, US | 2026-09-10 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=787dd75944e829b4) |
 | 93 | rule_fallback | glassdoor | Wipro | Junior Forward Deployed Engineer | Plano, TX | - | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/junior-forward-deployed-engineer-wipro-JV_IC1140045_KO0,32_KE33,38.htm?jl=1010213738973) |
-| 93 | llm | glassdoor | MetLife | Junior Software Engineer | Cary, NC | - | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/junior-software-engineer-metlife-JV_IC1138945_KO0,24_KE25,32.htm?jl=1010259249954) |
+| 93 | cached_llm | glassdoor | MetLife | Junior Software Engineer | Cary, NC | - | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/junior-software-engineer-metlife-JV_IC1138945_KO0,24_KE25,32.htm?jl=1010259249954) |
 | 91 | cached_llm | linkedin | Helic & Co | Junior Software Developer | United States | 2026-09-12 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-software-developer-at-helic-co-4466707323) |
 | 91 | cached_llm | linkedin | Nerdio | Solutions Engineer (Early Career) | United States | 2026-09-12 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/solutions-engineer-early-career-at-nerdio-4466479494) |
 | 91 | cached_llm | linkedin | Tech Consulting | Application Developer | Missouri, United States | 2026-09-11 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/application-developer-at-tech-consulting-4464241545) |
@@ -127,7 +127,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 78 | cached_llm | linkedin | Starbucks | software engineer- ST, Nashville TN | Nashville, TN | 2026-09-12 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-st-nashville-tn-at-starbucks-4411459601) |
 | 78 | cached_llm | indeed | Intelisys | UI Developer II | Greenville, SC, US | 2026-09-10 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=8b4eb3373c87285d) |
 | 78 | cached_llm | glassdoor | GovDocs | Software Engineer: Hybrid, MN Based | Saint Paul, MN | - | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/software-engineer-hybrid-mn-based-govdocs-JV_IC1142575_KO0,33_KE34,41.htm?jl=1010222286482) |
-| 78 | llm | glassdoor | Starbucks | software engineer- ST, Nashville TN | Nashville, TN | - | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/software-engineer-st-nashville-tn-starbucks-JV_IC1144541_KO0,33_KE34,43.htm?jl=1010128257888) |
+| 78 | cached_llm | glassdoor | Starbucks | software engineer- ST, Nashville TN | Nashville, TN | - | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/software-engineer-st-nashville-tn-starbucks-JV_IC1144541_KO0,33_KE34,43.htm?jl=1010128257888) |
 | 78 | cached_llm | linkedin | Epic | Entry-Level Software Developer | Dubuque, IA | 2026-09-12 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/entry-level-software-developer-at-epic-4321375719) |
 | 78 | cached_llm | linkedin | Epic | Entry-Level Software Developer | Green Bay, WI | 2026-09-12 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/entry-level-software-developer-at-epic-4363407594) |
 | 78 | cached_llm | linkedin | Epic | Entry-Level Software Developer | Omaha, NE | 2026-09-12 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/entry-level-software-developer-at-epic-4363487618) |
@@ -140,7 +140,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 78 | cached_llm | glassdoor | Spotter | Remote Machine Learning Engineer | Lemont, IL | - | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/remote-machine-learning-engineer-spotter-JV_IC1128896_KO0,32_KE33,40.htm?jl=1010212397037) |
 | 77 | cached_llm | linkedin | Adyen | Full-Stack Developer (Junior) - Docs Experience Engineering Team | Chicago, IL | 2026-09-12 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-junior-docs-experience-engineering-team-at-adyen-4465188302) |
 | 77 | cached_llm | linkedin | Affirm | Software Engineer II, Back-end (Card Mgmt & Transaction Processing) | Miami, FL | 2026-09-12 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-back-end-card-mgmt-transaction-processing-at-affirm-4429093853) |
-| 77 | llm | glassdoor | SpaceX | New Graduate Engineer, Software | Hawthorne, CA | - | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/new-graduate-engineer-software-spacex-JV_IC1146793_KO0,30_KE31,37.htm?jl=1010089718257) |
+| 77 | cached_llm | glassdoor | SpaceX | New Graduate Engineer, Software | Hawthorne, CA | - | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/new-graduate-engineer-software-spacex-JV_IC1146793_KO0,30_KE31,37.htm?jl=1010089718257) |
 | 76 | cached_llm | linkedin | Affirm | Software Engineer II, Fullstack (App Experience) | Miami, FL | 2026-09-12 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-app-experience-at-affirm-4456261789) |
 | 76 | cached_llm | linkedin | Affirm | Software Engineer II, Fullstack (App Experience) | Chicago, IL | 2026-09-12 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-app-experience-at-affirm-4456262858) |
 | 76 | cached_llm | linkedin | Affirm | Software Engineer II, Fullstack (App Experience) | Austin, TX | 2026-09-12 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-app-experience-at-affirm-4456266787) |
@@ -157,12 +157,12 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 76 | cached_llm | indeed | CarParts.com | Junior AI/ML Engineer | Long Beach, CA, US | 2026-09-10 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=24a3e16353933b0a) |
 | 75 | cached_llm | linkedin | TikTok USDS Joint Venture | Site Reliability Engineer, Platform Responsibility - USDS | Seattle, WA | 2026-09-12 | newly_discovered | low | ai | TikTok | unreviewed | pending_official_refresh | - | [open](https://www.linkedin.com/jobs/view/site-reliability-engineer-platform-responsibility-usds-at-tiktok-usds-joint-venture-4466719171) |
 | 75 | cached_llm | indeed | State of Arizona | C# Applications Developer | Phoenix, AZ, US | 2026-09-09 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=6405ca644c87e618) |
-| 75 | llm | glassdoor | Honeywell Aerospace | Software Engineer I | Phoenix, AZ | - | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/software-engineer-i-honeywell-aerospace-JV_IC1133904_KO0,19_KE20,39.htm?jl=1010259725345) |
+| 75 | cached_llm | glassdoor | Honeywell Aerospace | Software Engineer I | Phoenix, AZ | - | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/software-engineer-i-honeywell-aerospace-JV_IC1133904_KO0,19_KE20,39.htm?jl=1010259725345) |
 | 75 | cached_llm | linkedin | HappyRobot | Software Engineer - Full-Stack | San Francisco, CA | 2026-09-12 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-happyrobot-4286307379) |
 | 75 | cached_llm | glassdoor | Office Equipment Company | Junior AI Programmer-NO remote-Las Vegas ONLY | Las Vegas, NV | - | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/junior-ai-programmer-no-remote-las-vegas-only-office-equipment-company-JV_IC1149603_KO0,45_KE46,70.htm?jl=1010219971166) |
 | 74 | cached_llm | linkedin | Premier Research Labs | Junior Web Developer / Business Systems Analyst | Austin, TX | 2026-09-12 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-web-developer-business-systems-analyst-at-premier-research-labs-4465420764) |
 | 74 | cached_llm | indeed | Hyland | Software Solutions Engineer | Remote, US | 2026-09-10 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=a43239ebf56548ae) |
 | 74 | cached_llm | indeed | Realign | Gen AI Engineer | Plano, TX, US | 2026-09-10 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=75d4584624626366) |
 | 74 | cached_llm | indeed | Veracity Ventures Inc. | Java Backend Developer | Wilmington, DE, US | 2026-09-11 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ddd53ab46e9f2bf4) |
-| 74 | llm | glassdoor | Penske Truck Leasing | Software Engineer I | Reading, PA | - | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/software-engineer-i-penske-truck-leasing-JV_IC1153175_KO0,19_KE20,40.htm?jl=1010208711775) |
+| 74 | cached_llm | glassdoor | Penske Truck Leasing | Software Engineer I | Reading, PA | - | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/software-engineer-i-penske-truck-leasing-JV_IC1153175_KO0,19_KE20,40.htm?jl=1010208711775) |
 | 74 | cached_llm | glassdoor | GroundWork Renewables | Data Engineer | Albuquerque, NM | - | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/data-engineer-groundwork-renewables-JV_IC1137959_KO0,13_KE14,35.htm?jl=1010198715035) |
