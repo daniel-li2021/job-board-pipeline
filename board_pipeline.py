@@ -57,7 +57,6 @@ from sources.schema import (
     RECENCY_BUCKET_RANK,
     RECENCY_BUCKETS,
     classify_location_bucket,
-    combined_cache_key,
     combined_cache_key_from_hash,
     dedup_key,
     jd_hash,
@@ -100,8 +99,9 @@ RESUME_AI_PATH = PROFILE_DIR / "resume_ai.md"
 COMPANY_FILTERS_PATH = PROFILE_DIR / "company_filters.json"
 COMPANY_PROFILES_PATH = PROFILE_DIR / "company_profiles.json"
 
-# Bump whenever the LLM prompt schema/policy changes; invalidates cached scores.
-PROMPT_VERSION = "v6-early-career-transferable-gaps"
+# Prompt/schema provenance. A bump is recorded but does not mass-invalidate
+# otherwise valid JD scores; newly discovered or materially changed jobs use it.
+PROMPT_VERSION = "v7-compact-early-career"
 
 # score_source values. Only llm / cached_llm are reusable cache hits.
 # rule_overflow MUST remain eligible for LLM on a later run.
@@ -782,6 +782,8 @@ GOV_DEFENSE_TITLE_RE = re.compile(
 )
 THIN_JD_CHARS = 200  # LinkedIn guest cards often have empty descriptions
 YOE_RE = re.compile(r"\b(\d{1,2})\+?\s*(?:years|yrs)\b", re.IGNORECASE)
+LLM_BATCH_SIZE = 15
+RULE_SCORING_VERSION = "rule-v2-title-confidence"
 
 
 def is_thin_local_discovery(job: Dict[str, str]) -> bool:
@@ -840,10 +842,11 @@ def load_profiles() -> Dict[str, Any]:
     def h(text: str) -> str:
         return hashlib.sha1((text or "").encode("utf-8")).hexdigest()
 
+    candidate_fingerprint = h("::".join([h(swe), h(ai), h(candidate)]))
     fingerprint = h(
         "::".join(
             [
-                h(swe), h(ai), h(candidate), PROMPT_VERSION,
+                candidate_fingerprint, PROMPT_VERSION,
                 llm_config.configured_model(), llm_config.configured_reasoning_effort(),
             ]
         )
@@ -852,6 +855,7 @@ def load_profiles() -> Dict[str, Any]:
         "candidate": candidate,
         "resume_swe": swe,
         "resume_ai": ai,
+        "candidate_fingerprint": candidate_fingerprint,
         "fingerprint": fingerprint,
     }
 
@@ -914,6 +918,14 @@ EARLY_CAREER_TITLE_RE = re.compile(
     r"university graduate|university hire|college grad|recent graduate|"
     r"entry[- ]?level|engineer (?:i|1)\b|swe (?:i|1)\b|sde (?:i|1)\b|"
     r"associate software|associate engineer)\b",
+    re.IGNORECASE,
+)
+EXPLICIT_SOFTWARE_EARLY_RE = re.compile(
+    r"\b(?:new grad|new[- ]college grad|early[- ]career|junior|graduate|entry[- ]level|associate)\b.{0,45}"
+    r"\b(?:software|swe|sde|developer|data|ai|machine learning|ml|backend|full[- ]?stack|platform)\b|"
+    r"\b(?:software|swe|sde|developer|data|ai|machine learning|ml|backend|full[- ]?stack|platform)\b.{0,45}"
+    r"\b(?:new grad|new[- ]college grad|early[- ]career|junior|graduate|entry[- ]level|associate|engineer (?:i|1))\b|"
+    r"\b(?:software engineer|software development engineer|swe|sde) (?:i|1)\b",
     re.IGNORECASE,
 )
 LEVEL_TWO_TITLE_RE = re.compile(
@@ -1050,7 +1062,8 @@ def rule_match_score(job: Dict[str, str]) -> float:
     strong_hit = any(w in text for w in STRONG_HITS)
     medium_hit = any(w in text for w in MEDIUM_HITS)
     thin = is_thin_local_discovery(job)
-    if strong_hit or (thin and EARLY_CAREER_TITLE_RE.search(title) and detect_role_family(job) in {"ai", "swe", "ambiguous"}):
+    explicit_software_early = bool(EXPLICIT_SOFTWARE_EARLY_RE.search(title))
+    if strong_hit or (thin and explicit_software_early):
         score += 25.0
     if medium_hit and not (thin and strong_hit):
         score += 10.0
@@ -1066,8 +1079,10 @@ def rule_match_score(job: Dict[str, str]) -> float:
     if job.get("deprioritized"):
         score -= 10.0
     if thin:
-        if EARLY_CAREER_TITLE_RE.search(title):
+        if explicit_software_early:
             score += 13.0
+        elif EARLY_CAREER_TITLE_RE.search(title):
+            score += 4.0
         elif LEVEL_TWO_TITLE_RE.search(title):
             score += 5.0
         if _clean_thin_record(job):
@@ -1152,14 +1167,11 @@ def llm_match_batch(
             "the resume, cap match_score below 80 and list them in main_gaps.",
             "Directional relevance alone (right domain, wrong depth/seniority) is NOT "
             "a high score.",
-            "role_family in {swe, ai, ambiguous}.",
-            "Use only the routed resume(s) supplied. resume_profile_used must reflect that route.",
             "seniority_fit in {good, stretch, mismatch} for an early-career candidate.",
             "hard_constraint_status in {ok, citizen_or_clearance, non_us, other}.",
-            "recommended_action in {referral_now, apply_now, apply_if_time, skip}.",
-            "top_match_reasons: 2-4 short strings. main_gaps: 0-3 meaningful missing core requirements only.",
+            "top_match_reasons: 1-2 short strings. main_gaps: 0-2 meaningful missing core requirements only.",
             "Preferred or nice-to-have qualifications are minor gaps and must not appear in main_gaps unless they are clearly central to the role.",
-            "Internship/co-op status must not change match_score; application priority is separate. Set recommended_action=apply_if_time by default for internships/co-ops unless the JD gives a specific unusually strong reason to prioritize it.",
+            "Internship/co-op status must not change match_score; application priority is separate.",
             "Penalize hardware-first roles.",
             "Keep hands-on Solutions Architect, AI Solutions Architect, Forward Deployed, "
             "and implementation-engineering roles when the work is technical. "
@@ -1169,14 +1181,11 @@ def llm_match_batch(
             "results": [
                 {
                     "key": "string",
-                    "role_family": "swe|ai|ambiguous",
-                    "resume_profile_used": "resume_swe|resume_ai",
                     "match_score": "0-100 int",
                     "seniority_fit": "good|stretch|mismatch",
                     "hard_constraint_status": "ok|citizen_or_clearance|non_us|other",
                     "top_match_reasons": ["string"],
                     "main_gaps": ["string"],
-                    "recommended_action": "referral_now|apply_now|apply_if_time|skip",
                 }
             ]
         },
@@ -1218,20 +1227,17 @@ def llm_match_batch(
 
         def _as_list(v: Any) -> List[str]:
             if isinstance(v, list):
-                return [str(x) for x in v][:4]
+                return [str(x) for x in v][:2]
             if v:
                 return [str(v)]
             return []
 
         out[key] = {
             "match_score": max(0.0, min(100.0, score)),
-            "role_family": str(item.get("role_family", "")) or "",
-            "resume_profile_used": str(item.get("resume_profile_used", "resume_swe")),
             "seniority_fit": str(item.get("seniority_fit", "")) or "",
             "hard_constraint_status": str(item.get("hard_constraint_status", "ok")),
             "top_match_reasons": _as_list(item.get("top_match_reasons")),
             "main_gaps": _as_list(item.get("main_gaps")),
-            "recommended_action": str(item.get("recommended_action", "apply_if_time")),
         }
     usage["jobs_scored"] = len(out)
     usage["estimated_usd"] = llm_config.estimate_cost_usd(usage)
@@ -1250,6 +1256,11 @@ def _apply_rule_result(job: Dict[str, str], score_source: str, note: str) -> Non
     job["recommended_action"] = "apply_if_time"
     job["score_source"] = score_source
     job["screen_method"] = score_source
+    job["score_model"] = "rules"
+    job["scoring_version"] = RULE_SCORING_VERSION
+    job["reasoning_effort"] = "none"
+    job["llm_retryable"] = False
+    job["llm_last_error"] = ""
 
 
 def _apply_cached_result(job: Dict[str, str], entry: Dict[str, Any]) -> None:
@@ -1267,6 +1278,18 @@ def _apply_cached_result(job: Dict[str, str], entry: Dict[str, Any]) -> None:
     job["match_canonical_key"] = entry.get("match_canonical_key") or entry.get("canonical_job_key") or entry.get("key") or ""
     job["match_source_pipeline"] = entry.get("match_source_pipeline") or entry.get("source_pipeline") or ""
     job["match_jd_hash"] = entry.get("match_jd_hash") or entry.get("jd_hash") or ""
+    for field in (
+        "score_model", "scoring_version", "reasoning_effort", "candidate_fingerprint",
+        "score_at", "llm_retryable", "llm_retry_count", "llm_last_attempt_at",
+        "llm_last_error",
+    ):
+        job[field] = entry.get(field, "" if field not in {"llm_retryable", "llm_retry_count"} else (False if field == "llm_retryable" else 0))
+    if not job.get("score_model"):
+        job["score_model"] = "legacy_unknown"
+    if not job.get("scoring_version"):
+        job["scoring_version"] = "legacy_unknown"
+    if not job.get("reasoning_effort"):
+        job["reasoning_effort"] = "unknown"
 
 
 def _is_reusable_llm_cache(prev: Dict[str, Any], job: Dict[str, str]) -> bool:
@@ -1276,7 +1299,11 @@ def _is_reusable_llm_cache(prev: Dict[str, Any], job: Dict[str, str]) -> bool:
     """
     if not prev:
         return False
-    if prev.get("cache_key") != job.get("cache_key"):
+    if str(prev.get("jd_hash") or "") != str(job.get("jd_hash") or ""):
+        return False
+    prior_candidate = str(prev.get("candidate_fingerprint") or "")
+    current_candidate = str(job.get("candidate_fingerprint") or "")
+    if prior_candidate and current_candidate and prior_candidate != current_candidate:
         return False
     if prev.get("match_score") is None:
         return False
@@ -1305,15 +1332,15 @@ def _canonical_match_keys(job: Dict[str, Any]) -> List[str]:
 
 
 def _peer_cache_is_current(entry: Dict[str, Any], profile_fingerprint: str) -> bool:
-    """Accept only completed LLM output created with the current profiles/prompt."""
+    """Accept completed exact-peer LLM output without relabeling its provenance."""
+    del profile_fingerprint
     if not entry or entry.get("match_score") is None:
         return False
     src = str(entry.get("score_source") or "").strip()
     if src not in LLM_SCORE_SOURCES and not (not src and entry.get("screen_method") == "llm"):
         return False
     digest = str(entry.get("jd_hash") or "").strip()
-    cache_key = str(entry.get("cache_key") or "").strip()
-    return bool(digest and cache_key == combined_cache_key_from_hash(digest, profile_fingerprint))
+    return bool(digest)
 
 
 def _peer_cache_index(
@@ -1404,10 +1431,15 @@ def score_survivors(
     counts: Dict[str, Any] = {
         "reused": 0, "llm": 0, "new_or_changed": 0, "rule": 0, "sent": 0,
         "api_requests": 0, "recency_skipped": 0, "overflow": 0,
-        "peer_reused": 0, "thin_source_rule": 0,
+        "peer_reused": 0, "thin_source_rule": 0, "retryable_fallbacks": 0,
+        "batch_size": LLM_BATCH_SIZE, "batches_total": 0, "batches_succeeded": 0,
+        "batches_attempted": 0, "batches_failed": 0, "batches_skipped": 0,
+        "latency_seconds": 0.0, "json_results": 0,
+        "batches": [],
     }
     counts.update(llm_config.empty_usage())
     fp = profiles["fingerprint"]
+    candidate_fp = profiles.get("candidate_fingerprint", "")
 
     peer_context_index = _peer_identity_index(peer_stores)
     for job in candidates:
@@ -1416,8 +1448,10 @@ def score_survivors(
             _apply_peer_context(job, context_peer[0], context_peer[1])
         peer_rule = job.get("_canonical_peer_rule_score")
         job["rule_score"] = float(peer_rule) if peer_rule is not None else rule_match_score(job)
-        job["cache_key"] = combined_cache_key(job, fp)
-        job["jd_hash"] = jd_hash(job)
+        digest = str(job.get("source_jd_hash") or jd_hash(job))
+        job["jd_hash"] = digest
+        job["cache_key"] = combined_cache_key_from_hash(digest, fp)
+        job["candidate_fingerprint"] = candidate_fp
 
     peer_index = _peer_cache_index(peer_stores, fp)
     to_llm: List[Dict[str, str]] = []
@@ -1477,6 +1511,9 @@ def score_survivors(
         note = "Rule-based (LLM disabled)" if not use_llm else "Rule-based (no OPENAI_API_KEY)"
         for job in eligible:
             _apply_rule_result(job, SCORE_RULE, note)
+            if use_llm:
+                _mark_llm_failure(job, "no_openai_key", attempted=False)
+                counts["retryable_fallbacks"] += 1
             counts["rule"] += 1
         method = "cache+rule" if counts["reused"] else "rule"
         if use_llm and not api_key:
@@ -1485,13 +1522,15 @@ def score_survivors(
 
     model = llm_config.configured_model()
     counts["model"] = model
+    counts["scoring_version"] = PROMPT_VERSION
+    counts["reasoning_effort"] = llm_config.configured_reasoning_effort()
     llm_pool = sorted(eligible, key=llm_dispatch_priority, reverse=True)
     counts["sent"] = len(llm_pool)
     counts["overflow"] = 0
 
     decisions: Dict[str, Dict[str, Any]] = {}
     llm_ok = False
-    chunk = 12
+    chunk = LLM_BATCH_SIZE
     routed_batches: List[Tuple[str, List[Dict[str, str]]]] = []
     for route, families in (
         ("resume_swe", {"swe"}),
@@ -1500,22 +1539,70 @@ def score_survivors(
     ):
         routed = [j for j in llm_pool if (j.get("role_family") or detect_role_family(j)) in families]
         routed_batches.extend((route, routed[i : i + chunk]) for i in range(0, len(routed), chunk))
+    counts["batches_total"] = len(routed_batches)
+    failed_keys: Dict[str, str] = {}
+    abort_reason = ""
     for batch_index, (route, batch) in enumerate(routed_batches):
+        batch_record: Dict[str, Any] = {
+            "batch": batch_index + 1,
+            "route": route,
+            "jobs": [
+                {"key": dedup_key(job), "company": job.get("company", ""), "title": job.get("title", "")}
+                for job in batch
+            ],
+            "model": model,
+            "scoring_version": PROMPT_VERSION,
+            "reasoning_effort": counts["reasoning_effort"],
+        }
+        if abort_reason:
+            summary = f"deferred_after_{abort_reason}"
+            batch_record.update({"status": "skipped", "latency_seconds": 0.0, "error": {"summary": summary}})
+            counts["batches_skipped"] += 1
+            for job in batch:
+                failed_keys[dedup_key(job)] = summary
+            counts["batches"].append(batch_record)
+            continue
+        started = time.perf_counter()
+        counts["batches_attempted"] += 1
         try:
             result, usage = llm_match_batch(batch, profiles, api_key, model, route)
             llm_config.merge_usage(counts, [usage])
+            elapsed = round(time.perf_counter() - started, 3)
+            batch_record.update({
+                "status": "success", "latency_seconds": elapsed,
+                "usage": usage,
+                "decisions": [
+                    {"key": key, **decision} for key, decision in result.items()
+                ],
+            })
+            counts["batches_succeeded"] += 1
+            counts["json_results"] += len(result)
             if result:
                 decisions.update(result)
                 llm_ok = True
             time.sleep(0.2)
         except Exception as exc:  # noqa: BLE001
             counts["api_requests"] += 1
-            errors.append(f"chunk_{batch_index}: {type(exc).__name__}: {str(exc)[:120]}")
+            elapsed = round(time.perf_counter() - started, 3)
+            error = _llm_error_metadata(exc)
+            summary = f"batch_{batch_index + 1}: {error['summary']}"
+            errors.append(summary)
+            batch_record.update({"status": "failed", "latency_seconds": elapsed, "error": error})
+            counts["batches_failed"] += 1
+            for job in batch:
+                failed_keys[dedup_key(job)] = error["summary"]
+            if error.get("api_code") in {"credit_balance_exhausted", "insufficient_quota"}:
+                abort_reason = str(error["api_code"])
+        counts["latency_seconds"] = round(float(counts["latency_seconds"]) + float(batch_record["latency_seconds"]), 3)
+        counts["batches"].append(batch_record)
 
     if not llm_ok:
         for job in eligible:
             _apply_rule_result(job, SCORE_FALLBACK, "Rule-based fallback (LLM error)")
+            reason = failed_keys.get(dedup_key(job), "LLM returned no usable results")
+            _mark_llm_failure(job, reason, attempted=not reason.startswith("deferred_after_"))
             counts["rule"] += 1
+            counts["retryable_fallbacks"] += 1
         method = "cache+rule_fallback" if counts["reused"] else "rule_fallback"
         return (method, errors, counts)
 
@@ -1523,25 +1610,75 @@ def score_survivors(
         d = decisions.get(dedup_key(job))
         if d:
             job["match_score"] = d["match_score"]
-            job["role_family"] = d["role_family"] or job.get("role_family", "")
-            job["resume_profile_used"] = d["resume_profile_used"]
+            family = job.get("role_family") or detect_role_family(job)
+            job["role_family"] = family
+            job["resume_profile_used"] = "resume_ai" if family == "ai" else "resume_swe"
             job["seniority_fit"] = d["seniority_fit"]
             job["hard_constraint_status"] = d["hard_constraint_status"]
             job["top_match_reasons"] = d["top_match_reasons"]
             job["main_gaps"] = d["main_gaps"]
-            job["recommended_action"] = d["recommended_action"]
+            job["recommended_action"] = "apply_if_time"
             job["score_source"] = SCORE_LLM
             job["screen_method"] = SCORE_LLM
             job["match_canonical_key"] = job.get("duplicate_of") or job.get("canonical_job_key") or dedup_key(job)
             job["match_source_pipeline"] = job.get("source_pipeline") or "board"
             job["match_jd_hash"] = job.get("jd_hash", "")
+            job["score_model"] = model
+            job["scoring_version"] = PROMPT_VERSION
+            job["reasoning_effort"] = counts["reasoning_effort"]
+            job["candidate_fingerprint"] = candidate_fp
+            job["score_at"] = datetime.now(timezone.utc).isoformat()
+            job["llm_retryable"] = False
+            job["llm_last_error"] = ""
+            job["llm_last_attempt_at"] = job["score_at"]
             counts["llm"] += 1
         else:
             _apply_rule_result(job, SCORE_FALLBACK, "Rule-based (missing from LLM response)")
+            reason = failed_keys.get(dedup_key(job), "missing_from_llm_response")
+            _mark_llm_failure(job, reason, attempted=not reason.startswith("deferred_after_"))
             counts["rule"] += 1
+            counts["retryable_fallbacks"] += 1
     method = "cache+llm" if counts["reused"] else "llm"
     counts["jobs_scored"] = counts["llm"]
     return (method, errors, counts)
+
+
+def _llm_error_metadata(exc: Exception) -> Dict[str, Any]:
+    response = getattr(exc, "response", None)
+    status = int(getattr(response, "status_code", 0) or 0)
+    error: Dict[str, Any] = {"type": type(exc).__name__, "status_code": status}
+    if response is not None:
+        try:
+            payload = response.json().get("error") or {}
+        except (ValueError, AttributeError):
+            payload = {}
+        error.update({
+            "api_type": str(payload.get("type") or ""),
+            "api_code": str(payload.get("code") or ""),
+            "message": str(payload.get("message") or "")[:240],
+            "request_id": str(response.headers.get("x-request-id") or ""),
+            "remaining_requests": str(response.headers.get("x-ratelimit-remaining-requests") or ""),
+            "remaining_tokens": str(response.headers.get("x-ratelimit-remaining-tokens") or ""),
+            "reset_requests": str(response.headers.get("x-ratelimit-reset-requests") or ""),
+            "reset_tokens": str(response.headers.get("x-ratelimit-reset-tokens") or ""),
+        })
+    summary_bits = [f"HTTP {status}" if status else type(exc).__name__]
+    if error.get("api_code"):
+        summary_bits.append(error["api_code"])
+    elif error.get("api_type"):
+        summary_bits.append(error["api_type"])
+    elif str(exc):
+        summary_bits.append(str(exc)[:160])
+    error["summary"] = ": ".join(summary_bits)
+    return error
+
+
+def _mark_llm_failure(job: Dict[str, Any], reason: str, *, attempted: bool = True) -> None:
+    job["llm_retryable"] = True
+    if attempted:
+        job["llm_retry_count"] = int(job.get("llm_retry_count", 0) or 0) + 1
+        job["llm_last_attempt_at"] = datetime.now(timezone.utc).isoformat()
+    job["llm_last_error"] = reason[:240]
 
 
 # --------------------------------------------------------------------------
@@ -1632,14 +1769,20 @@ def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
 
 
 def apply_referral_action(job: Dict[str, str]) -> None:
-    """Referral is a ranking/action flag, not a match_score bonus."""
-    if not job.get("referral_name"):
-        return
+    """Derive application action from tier and priority flags, outside the LLM."""
     score = float(job.get("match_score", 0) or 0)
-    action = job.get("recommended_action") or "apply_if_time"
-    if job.get("tier") == "A" or score >= TIER_A_MIN:
+    hard_status = str(job.get("hard_constraint_status") or "ok").lower()
+    if hard_status not in {"", "ok"} or job.get("tier") == "C":
+        job["recommended_action"] = "skip"
+    elif INTERNSHIP_TITLE_RE.search(job.get("title") or "") or job.get("staffing_firm"):
+        job["recommended_action"] = "apply_if_time"
+    elif job.get("tier") == "A":
+        job["recommended_action"] = "apply_now"
+    else:
+        job["recommended_action"] = "apply_if_time"
+    if job.get("referral_name") and (job.get("tier") == "A" or score >= TIER_A_MIN):
         job["recommended_action"] = "referral_now"
-    elif action == "apply_if_time":
+    elif job.get("referral_name") and job.get("tier") == "B":
         job["recommended_action"] = "apply_now"
 
 
@@ -1661,6 +1804,7 @@ def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
     profile = match_company_entry(str(job.get("company") or ""), load_company_profiles()) or {}
     priority_rank = {"high": 0, "normal": 1, "low": 2}.get(str(profile.get("priority") or "normal"), 1)
     sponsor_rank = {"likely": 0, "unknown": 1, "unlikely": 2}.get(str(profile.get("sponsor") or "unknown"), 1)
+    tech_service_rank = int("tech_service" in (profile.get("tags") or []))
     company_type_rank = 0 if profile.get("type") == "tech" else 1
     maturity_rank = 0 if profile.get("maturity") in {"growth", "established"} else 1
     size_rank = {"20k+": 0, "5k-20k": 1, "1k-5k": 2, "200-1k": 3, "50-200": 4}.get(str(profile.get("size") or ""), 5)
@@ -1681,6 +1825,7 @@ def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
         day_rank,
         int(application_low),
         -int(score // 5),
+        tech_service_rank,
         priority_rank,
         sponsor_rank,
         company_type_rank,
@@ -1821,11 +1966,13 @@ REMOTE_STORE_FIELDS = {
     "official_url", "source", "source_url", "sponsorship", "filter_status", "referral_name",
     "company_flag", "staffing_firm", "clearance_risk_company", "role_family", "role_relevance",
     "tier", "recency_bucket", "cache_key", "jd_hash", "match_score", "resume_profile_used",
-    "seniority_fit", "hard_constraint_status", "main_gaps_count", "recommended_action",
+    "seniority_fit", "hard_constraint_status", "top_match_reasons", "main_gaps", "main_gaps_count", "recommended_action",
     "screen_method", "score_source", "match_canonical_key", "match_source_pipeline",
     "match_jd_hash", "coverage_status", "canonical_source", "canonical_job_key", "duplicate_of",
     "official_snapshot_at", "source_snapshot_at", "official_company_id", "suppress_alert",
     "review_status", "first_seen", "last_seen", "description_available", "enrichment_failure_reason",
+    "score_model", "scoring_version", "reasoning_effort", "candidate_fingerprint", "score_at",
+    "llm_retryable", "llm_retry_count", "llm_last_attempt_at", "llm_last_error",
 }
 
 
@@ -1843,6 +1990,12 @@ def compact_store_entry(entry: Dict[str, Any]) -> Dict[str, Any]:
     compact["main_gaps_count"] = int(
         entry.get("main_gaps_count", len(entry.get("main_gaps") or [])) or 0
     )
+    reasons = [str(item)[:180] for item in entry.get("top_match_reasons") or []][:2]
+    gaps = [str(item)[:180] for item in entry.get("main_gaps") or []][:2]
+    if reasons:
+        compact["top_match_reasons"] = reasons
+    if gaps:
+        compact["main_gaps"] = gaps
     return compact
 
 
@@ -1870,6 +2023,183 @@ def save_store_path(
 def save_store(store: Dict[str, Dict[str, Any]]) -> None:
     cache_path = LOCAL_STORE_PATH if JOBS_STORE_PATH == DEFAULT_JOBS_STORE_PATH or JOBS_STORE_PATH.parent.name == "board-local" else None
     save_store_path(JOBS_STORE_PATH, store, RETENTION_DAYS, cache_path=cache_path)
+
+
+def append_run_history(
+    path: Path, pipeline: str, run: Dict[str, Any], limit: int = 20
+) -> None:
+    """Persist bounded Pages-safe run summaries plus compact LLM batch decisions."""
+    llm = dict(run.get("llm") or {})
+    llm_failures = _failure_values((run.get("failures") or {}).get("llm", []))
+    inferred_fallbacks = max(0, int(llm.get("sent", 0) or 0) - int(llm.get("scored", llm.get("llm", 0)) or 0))
+    latency = float(llm.get("latency_seconds", 0) or 0)
+    requests_count = int(llm.get("api_requests", 0) or 0)
+    total_tokens = sum(int(llm.get(key, 0) or 0) for key in ("input_tokens", "output_tokens"))
+    sent = int(llm.get("sent", 0) or 0)
+    record = {
+        "pipeline": pipeline,
+        "run_at": run.get("run_at", ""),
+        "mode": run.get("mode", "pipeline"),
+        "health": "degraded" if run.get("failures") and _failure_values(run["failures"]) else "success",
+        "model": llm.get("model", ""),
+        "scoring_version": llm.get("scoring_version", ""),
+        "reasoning_effort": llm.get("reasoning_effort", ""),
+        "jobs_scored": int(llm.get("scored", llm.get("llm", 0)) or 0),
+        "cache_reused": int(llm.get("reused", 0) or 0),
+        "fallback_count": int(llm.get("retryable_fallbacks", inferred_fallbacks if llm_failures else 0) or 0),
+        "rule_count": int(llm.get("rule", 0) or 0),
+        "requests": requests_count,
+        "input_tokens": int(llm.get("input_tokens", 0) or 0),
+        "cached_input_tokens": int(llm.get("cached_input_tokens", 0) or 0),
+        "output_tokens": int(llm.get("output_tokens", 0) or 0),
+        "reasoning_tokens": int(llm.get("reasoning_tokens", 0) or 0),
+        "estimated_usd": float(llm.get("estimated_usd", 0) or 0),
+        "latency_seconds": latency,
+        "effective_rpm": round(requests_count * 60 / latency, 2) if latency else None,
+        "effective_tpm": round(total_tokens * 60 / latency, 2) if latency else None,
+        "json_reliability": round(int(llm.get("json_results", 0) or 0) / sent, 4) if sent else None,
+        "batches_total": int(llm.get("batches_total", llm.get("api_requests", 0)) or 0),
+        "batches_attempted": int(llm.get("batches_attempted", llm.get("api_requests", 0)) or 0),
+        "batches_succeeded": int(llm.get("batches_succeeded", 0) or 0),
+        "batches_failed": int(llm.get("batches_failed", len(llm_failures)) or 0),
+        "batches_skipped": int(llm.get("batches_skipped", 0) or 0),
+        "json_results": int(llm.get("json_results", 0) or 0),
+        "funnel": run.get("funnel", {}),
+        "output": run.get("output", {}),
+        "enrichment": run.get("enrichment", {}),
+        "comparison": run.get("comparison", {}),
+        "batches": llm.get("batches", []),
+    }
+    payload = read_json(path, {"runs": []})
+    prior = payload.get("runs", []) if isinstance(payload, dict) else []
+    runs = [record] + [item for item in prior if item.get("run_at") != record["run_at"]]
+    atomic_write(path, (json.dumps({"runs": runs[:limit]}, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
+
+
+def _failure_values(value: Any) -> List[str]:
+    if isinstance(value, dict):
+        return [item for child in value.values() for item in _failure_values(child)]
+    if isinstance(value, (list, tuple, set)):
+        return [item for child in value for item in _failure_values(child)]
+    return [str(value)] if str(value or "").strip() else []
+
+
+def save_matching_retry(path: Path, jobs: List[Dict[str, Any]]) -> int:
+    """Persist only the context required to retry failed LLM matching."""
+    fields = (
+        "key", "job_id", "company", "title", "location", "description", "posted_date",
+        "date_confidence", "first_seen", "last_seen", "source", "source_url", "official_url",
+        "canonical_job_key", "duplicate_of", "role_family", "role_relevance", "referral_name",
+        "staffing_firm", "clearance_risk_company", "llm_retry_count", "llm_last_attempt_at",
+        "llm_last_error", "source_jd_hash",
+    )
+    entries = []
+    for job in jobs:
+        if not job.get("llm_retryable") or len(str(job.get("description") or "").strip()) < THIN_JD_CHARS:
+            continue
+        item = {field: job.get(field) for field in fields if job.get(field) not in (None, "", False, [], {})}
+        item["key"] = dedup_key(job)
+        item["source_jd_hash"] = str(job.get("source_jd_hash") or job.get("jd_hash") or jd_hash(job))
+        item["description"] = llm_config.select_jd_context(str(job.get("description") or ""))
+        entries.append(item)
+    payload = {"updated_at": datetime.now(timezone.utc).isoformat(), "count": len(entries), "entries": entries}
+    atomic_write(path, encode_json_gzip(payload))
+    return len(entries)
+
+
+def summarize_retry_comparison(
+    before: Dict[str, Dict[str, Any]], jobs: List[Dict[str, Any]]
+) -> Dict[str, Any]:
+    keys = {dedup_key(job) for job in jobs}
+    before_rows = [dict(before[key]) for key in keys if key in before]
+    after_rows = [job for job in jobs if dedup_key(job) in keys]
+    before_rank = {dedup_key(job): index + 1 for index, job in enumerate(sorted(before_rows, key=user_facing_sort_key))}
+    after_rank = {dedup_key(job): index + 1 for index, job in enumerate(sorted(after_rows, key=user_facing_sort_key))}
+    rows = []
+    for job in after_rows:
+        key = dedup_key(job)
+        prior = before.get(key, {})
+        old_score = float(prior.get("match_score", 0) or 0)
+        new_score = float(job.get("match_score", 0) or 0)
+        rows.append({
+            "key": key, "company": job.get("company", ""), "title": job.get("title", ""),
+            "before_score": old_score, "after_score": new_score, "delta": new_score - old_score,
+            "before_tier": prior.get("tier", ""), "after_tier": job.get("tier", ""),
+            "before_rank": before_rank.get(key), "after_rank": after_rank.get(key),
+        })
+    transitions = Counter(f"{row['before_tier']}->{row['after_tier']}" for row in rows)
+    return {
+        "population": len(rows),
+        "score_changed": sum(row["delta"] != 0 for row in rows),
+        "average_score_delta": round(sum(row["delta"] for row in rows) / len(rows), 2) if rows else 0.0,
+        "tier_transitions": dict(transitions),
+        "largest_increases": sorted(rows, key=lambda row: row["delta"], reverse=True)[:8],
+        "largest_decreases": sorted(rows, key=lambda row: row["delta"])[:8],
+    }
+
+
+def retry_failed_matching() -> Dict[str, Any]:
+    """Retry the persisted Board LLM failures without discovery or enrichment."""
+    retry_path = BOARD_DIR / "matching_retry.json.gz"
+    payload = read_json(retry_path, {"entries": []})
+    jobs = [dict(item) for item in payload.get("entries", []) if isinstance(item, dict)]
+    now = datetime.now(timezone.utc)
+    now_iso = now.isoformat()
+    # Retry mode must not let a developer's older gitignored full cache replace
+    # the authoritative published store.
+    store_payload = read_json(JOBS_STORE_PATH, {"entries": []})
+    store = prune_store(load_store_path(JOBS_STORE_PATH, strict=True), now)
+    for job in jobs:
+        ensure_entry_defaults(job)
+        job["last_seen"] = job.get("last_seen") or now_iso
+        job["recency_bucket"] = recency_bucket(job, now=now)
+        role_seniority_prefilter(job)
+    referrals = {dedup_key(job): bool(job.get("referral_name")) for job in jobs}
+    before = {key: dict(value) for key, value in store.items()}
+    method, errors, counts = score_survivors(
+        jobs, referrals, load_profiles(), store, use_llm=True
+    )
+    score_fields = {
+        "cache_key", "jd_hash", "match_score", "role_family", "role_relevance",
+        "resume_profile_used", "seniority_fit", "hard_constraint_status",
+        "top_match_reasons", "main_gaps", "main_gaps_count", "recommended_action",
+        "screen_method", "score_source", "match_canonical_key", "match_source_pipeline",
+        "match_jd_hash", "score_model", "scoring_version", "reasoning_effort",
+        "candidate_fingerprint", "score_at", "llm_retryable", "llm_retry_count",
+        "llm_last_attempt_at", "llm_last_error", "tier",
+    }
+    for job in jobs:
+        job["tier"] = assign_tier(job, referrals.get(dedup_key(job), False))
+        apply_referral_action(job)
+        key = dedup_key(job)
+        entry = dict(store.get(key) or build_store_entry(job, key))
+        entry.update({field: job.get(field) for field in score_fields})
+        store[key] = entry
+    comparison = summarize_retry_comparison(before, jobs)
+    save_store_path(
+        JOBS_STORE_PATH, store, RETENTION_DAYS,
+        metadata={"updated_at": store_payload.get("updated_at", "")},
+    )
+    retry_count = save_matching_retry(retry_path, jobs)
+    run_payload = {
+        "run_at": now_iso,
+        "mode": "matching_retry",
+        "funnel": {"retry_candidates": len(jobs)},
+        "llm": {**counts, "scored": counts.get("llm", 0)},
+        "output": {
+            "recovered": counts.get("llm", 0) + counts.get("reused", 0),
+            "recovered_llm": counts.get("llm", 0),
+            "recovered_cache": counts.get("reused", 0),
+            "remaining_retryable": retry_count,
+            "shown": 0,
+        },
+        "comparison": comparison,
+        "failures": {"llm": errors},
+    }
+    stats_text = json.dumps(run_payload, indent=2, ensure_ascii=False) + "\n"
+    (BOARD_DIR / "latest_stats.json").write_text(stats_text, encoding="utf-8")
+    append_run_history(BOARD_DIR / "run_history.json", "board", run_payload)
+    return run_payload
 
 
 def prune_store(store: Dict[str, Dict[str, Any]], now: datetime) -> Dict[str, Dict[str, Any]]:
@@ -2193,6 +2523,8 @@ ENTRY_DEFAULTS: Dict[str, Any] = {
     "cache_key": "", "jd_hash": "", "match_score": None, "resume_profile_used": "",
     "seniority_fit": "", "hard_constraint_status": "", "top_match_reasons": list,
     "main_gaps": list, "main_gaps_count": 0, "recommended_action": "", "screen_method": "", "score_source": "",
+    "score_model": "", "scoring_version": "", "reasoning_effort": "", "candidate_fingerprint": "", "score_at": "",
+    "llm_retryable": False, "llm_retry_count": 0, "llm_last_attempt_at": "", "llm_last_error": "",
     "match_canonical_key": "", "match_source_pipeline": "", "match_jd_hash": "",
     "coverage_status": "", "canonical_source": "", "canonical_job_key": "",
     "duplicate_of": "", "official_snapshot_at": "", "source_snapshot_at": "",
@@ -2267,6 +2599,15 @@ def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
         "recommended_action": job.get("recommended_action", ""),
         "screen_method": job.get("screen_method", ""),
         "score_source": job.get("score_source", ""),
+        "score_model": job.get("score_model", ""),
+        "scoring_version": job.get("scoring_version", ""),
+        "reasoning_effort": job.get("reasoning_effort", ""),
+        "candidate_fingerprint": job.get("candidate_fingerprint", ""),
+        "score_at": job.get("score_at", ""),
+        "llm_retryable": bool(job.get("llm_retryable")),
+        "llm_retry_count": int(job.get("llm_retry_count", 0) or 0),
+        "llm_last_attempt_at": job.get("llm_last_attempt_at", ""),
+        "llm_last_error": job.get("llm_last_error", ""),
         "match_canonical_key": job.get("match_canonical_key", ""),
         "match_source_pipeline": job.get("match_source_pipeline", ""),
         "match_jd_hash": job.get("match_jd_hash", ""),
@@ -2320,6 +2661,7 @@ def run() -> None:
     parser.add_argument("--local-out", action="store_true", help="Write to output/board-local/ (gitignored) for local testing")
     parser.add_argument("--no-digest", action="store_true", help="Update store/latest.md without a user-facing digest")
     parser.add_argument("--force-digest", action="store_true", help="Emit a digest even if one already went out today")
+    parser.add_argument("--retry-llm-failures", action="store_true", help="Retry saved LLM matching failures without discovery")
     args = parser.parse_args()
 
     global BOARD_DIR, JOBS_STORE_PATH, SEEN_JOBS_PATH, LOCAL_STORE_PATH, LATEST_MD_PATH, INBOX_MD_PATH, INBOX_CSV_PATH, RUNS_DIR, DIGEST_STATE_PATH
@@ -2335,6 +2677,14 @@ def run() -> None:
         RUNS_DIR = BOARD_DIR / "runs"
 
     load_env_file(BASE_DIR / ".env")
+    if args.retry_llm_failures:
+        result = retry_failed_matching()
+        print(json.dumps({
+            "mode": result["mode"],
+            "llm": {key: value for key, value in result["llm"].items() if key != "batches"},
+            "output": result["output"],
+        }, indent=2))
+        return
     now = datetime.now(timezone.utc)
     now_iso = now.isoformat()
     stamp = now.strftime("%Y-%m-%d_%H%M")
@@ -2517,6 +2867,7 @@ def run() -> None:
     new_store = prune_store(new_store, now)
     save_store(new_store)
     save_seen_jobs_path(SEEN_JOBS_PATH, seen_jobs)
+    retry_count = save_matching_retry(BOARD_DIR / "matching_retry.json.gz", active_candidates)
 
     # 11) Recency distribution over visible candidate jobs
     recency_dist = {b: 0 for b in RECENCY_BUCKETS}
@@ -2556,6 +2907,7 @@ def run() -> None:
             "overflow": score_counts.get("overflow", 0),
             "new_or_changed": score_counts["new_or_changed"],
             "sent": score_counts.get("sent", 0),
+            "retryable": retry_count,
         },
         "output": {
             "tier_a": len(tier_a),
@@ -2588,9 +2940,11 @@ def run() -> None:
         "peer_jds_resolved": peer_jds_resolved,
     }
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
-    stats_text = json.dumps({"run_at": now_iso, **stats}, indent=2, ensure_ascii=False) + "\n"
+    run_payload = {"run_at": now_iso, **stats}
+    stats_text = json.dumps(run_payload, indent=2, ensure_ascii=False) + "\n"
     (RUNS_DIR / f"{stamp}_stats.json").write_text(stats_text, encoding="utf-8")
     (BOARD_DIR / "latest_stats.json").write_text(stats_text, encoding="utf-8")
+    append_run_history(BOARD_DIR / "run_history.json", "board", run_payload)
 
     # 12) Outputs (Tier A/B only)
     write_latest_md(visible, stats, stamp)

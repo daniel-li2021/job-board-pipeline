@@ -129,6 +129,13 @@ RAW_FIELDS = [
     "recommended_action",
     "cache_key",
     "jd_hash",
+    "score_model",
+    "scoring_version",
+    "reasoning_effort",
+    "llm_retryable",
+    "llm_retry_count",
+    "llm_last_attempt_at",
+    "llm_last_error",
 ]
 
 TIER_FIELDS = [
@@ -449,10 +456,12 @@ SYNCAREER_REMOTE_FIELDS = {
     "duplicate_of", "official_snapshot_at", "source_snapshot_at", "suppress_alert", "filter_status",
     "drop_reason", "company_flag", "deprioritized", "preferred", "staffing_firm", "match_score",
     "fit_score", "tier", "score_source", "screen_method", "resume_profile_used", "role_family",
-    "role_relevance", "seniority_fit", "hard_constraint_status", "main_gaps_count",
+    "role_relevance", "seniority_fit", "hard_constraint_status", "top_match_reasons", "main_gaps", "main_gaps_count",
     "recommended_action", "cache_key", "jd_hash", "match_canonical_key", "match_source_pipeline",
     "match_jd_hash", "recency_bucket", "review_status", "notes", "source_pipeline",
     "description_available", "enrichment_failure_reason",
+    "score_model", "scoring_version", "reasoning_effort", "candidate_fingerprint", "score_at",
+    "llm_retryable", "llm_retry_count", "llm_last_attempt_at", "llm_last_error",
 }
 
 
@@ -471,6 +480,12 @@ def compact_watchlist_entry(entry: Dict[str, Any]) -> Dict[str, Any]:
     compact["main_gaps_count"] = int(
         entry.get("main_gaps_count", len(entry.get("main_gaps") or [])) or 0
     )
+    reasons = [str(item)[:180] for item in entry.get("top_match_reasons") or []][:2]
+    gaps = [str(item)[:180] for item in entry.get("main_gaps") or []][:2]
+    if reasons:
+        compact["top_match_reasons"] = reasons
+    if gaps:
+        compact["main_gaps"] = gaps
     return compact
 
 
@@ -769,6 +784,8 @@ SHARED_SCORE_FIELDS = (
     "seniority_fit", "hard_constraint_status", "top_match_reasons",
     "main_gaps", "main_gaps_count", "recommended_action", "cache_key", "jd_hash",
     "match_canonical_key", "match_source_pipeline", "match_jd_hash",
+    "score_model", "scoring_version", "reasoning_effort", "candidate_fingerprint", "score_at",
+    "llm_retryable", "llm_retry_count", "llm_last_attempt_at", "llm_last_error",
     "recency_bucket",
 )
 
@@ -1247,6 +1264,9 @@ def run() -> None:
     ) + "\n"
     (RUNS_DIR / f"{stamp}_stats.json").write_text(stats_text, encoding="utf-8")
     (SYNCAREER_DIR / "latest_stats.json").write_text(stats_text, encoding="utf-8")
+    board.append_run_history(
+        SYNCAREER_DIR / "run_history.json", "syncareer", json.loads(stats_text)
+    )
 
     # Alert-mode outputs + rolling watchlist update.
     alert_paths: Dict[str, Path] = {}

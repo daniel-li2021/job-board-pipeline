@@ -1,0 +1,102 @@
+{
+  "runs": [
+    {
+      "pipeline": "official",
+      "run_at": "2026-09-14T00:33:16.199388+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-5.6-sol",
+      "scoring_version": "",
+      "reasoning_effort": "",
+      "jobs_scored": 31,
+      "cache_reused": 421,
+      "fallback_count": 0,
+      "rule_count": 2677,
+      "requests": 4,
+      "input_tokens": 21758,
+      "cached_input_tokens": 0,
+      "output_tokens": 5216,
+      "reasoning_tokens": 634,
+      "estimated_usd": 0.191352,
+      "latency_seconds": 0.0,
+      "effective_rpm": null,
+      "effective_tpm": null,
+      "json_reliability": 0.0,
+      "batches_total": 4,
+      "batches_attempted": 4,
+      "batches_succeeded": 0,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "json_results": 0,
+      "funnel": {
+        "after_dedup": 16531,
+        "after_company": 16531,
+        "after_hard_filter": 13842,
+        "after_prefilter": 3129,
+        "dropped": 13402
+      },
+      "output": {
+        "tier_a": 84,
+        "tier_b": 112,
+        "shown": 196
+      },
+      "enrichment": {
+        "discovered": 16595,
+        "needed": 1377,
+        "source_jds_available": 15218,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 1377
+      },
+      "comparison": {},
+      "batches": []
+    },
+    {
+      "pipeline": "official",
+      "run_at": "2026-09-13T15:34:32.383041+00:00",
+      "health": "degraded",
+      "model": "gpt-5.6-sol",
+      "scoring_version": "",
+      "reasoning_effort": "",
+      "jobs_scored": 431,
+      "cache_reused": 0,
+      "fallback_count": 0,
+      "rule_count": 2295,
+      "requests": 37,
+      "input_tokens": 430592,
+      "cached_input_tokens": 0,
+      "output_tokens": 75905,
+      "reasoning_tokens": 8554,
+      "estimated_usd": 3.240468,
+      "latency_seconds": 0.0,
+      "effective_rpm": null,
+      "effective_tpm": null,
+      "json_reliability": 0.0,
+      "batches_total": 37,
+      "batches_attempted": 37,
+      "batches_succeeded": 0,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "json_results": 0,
+      "funnel": {
+        "after_dedup": 16629,
+        "after_company": 16629,
+        "after_hard_filter": 13920,
+        "after_prefilter": 2726,
+        "dropped": 13903
+      },
+      "output": {
+        "tier_a": 84,
+        "tier_b": 100,
+        "shown": 184
+      },
+      "enrichment": {
+        "discovered": 16693,
+        "needed": 1043,
+        "source_jds_available": 15650,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 1043
+      },
+      "batches": []
+    }
+  ]
+}

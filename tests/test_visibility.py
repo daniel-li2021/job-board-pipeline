@@ -308,6 +308,7 @@ class DashboardPolicyTests(unittest.TestCase):
         staffing = normalized("Randstad USA", "Junior Software Engineer")
         internship = normalized("Figma", "Software Engineer Intern")
         figma_full_time = normalized("Figma", "Software Engineer I")
+        ibm = normalized("IBM", "Software Engineer I")
         self.assertEqual("Amazon", dashboard._sort_rows([internship, staffing, amazon])[0]["company"])
         self.assertEqual(
             ["Software Engineer I", "Software Engineer Intern"],
@@ -315,6 +316,9 @@ class DashboardPolicyTests(unittest.TestCase):
         )
         self.assertEqual(90, internship["score"])
         self.assertEqual("low", internship["application_priority"])
+        self.assertEqual("Amazon", dashboard._sort_rows([ibm, amazon])[0]["company"])
+        self.assertEqual(90, ibm["score"])
+        self.assertTrue(ibm["tech_service"])
 
     def test_official_registry_has_search_link_only_targets(self) -> None:
         catalog = {entry["id"]: entry for entry in dashboard.official_search_catalog()}
@@ -541,6 +545,88 @@ class MatchingPolicyTests(unittest.TestCase):
         nsa = thin("Software Engineer - Entry Level")
         nsa["company"] = "National Security Agency"
         self.assertEqual((False, "incomplete_jd_clearance_risk"), board_pipeline.hard_filter(nsa))
+
+        generic = thin("Engineer I")
+        self.assertLess(generic["match_score"], 70)
+        self.assertEqual("C", board_pipeline.assign_tier(generic, False))
+
+    def test_lazy_cache_and_failed_only_retry_across_sequential_runs(self) -> None:
+        now = datetime.now(timezone.utc).isoformat()
+
+        def job(description: str = "Build Python services and APIs. " * 12) -> dict:
+            value = make_job(
+                source="greenhouse", company="Example Tech", title="Junior Software Engineer",
+                location="Seattle, WA", job_id="one", description=description,
+                source_url="https://example.test/jobs/one",
+            )
+            value["first_seen"] = now
+            value["recency_bucket"] = "3to24h"
+            board_pipeline.role_seniority_prefilter(value)
+            return value
+
+        def result(batch, _profiles, _key, model, _route):
+            key = dedup_key(batch[0])
+            usage = {
+                "model": model, "api_requests": 1, "jobs_scored": 1,
+                "input_tokens": 100, "cached_input_tokens": 0, "output_tokens": 20,
+                "reasoning_tokens": 5, "estimated_usd": 0.001,
+            }
+            return {key: {
+                "match_score": 88, "seniority_fit": "good", "hard_constraint_status": "ok",
+                "top_match_reasons": ["Relevant API work"], "main_gaps": [],
+            }}, usage
+
+        profiles = {"fingerprint": "prompt-a", "candidate_fingerprint": "candidate-a"}
+        with patch.dict("os.environ", {"OPENAI_API_KEY": "test"}), patch.object(
+            board_pipeline, "llm_match_batch", side_effect=result
+        ) as call:
+            first = job()
+            _, _, first_counts = board_pipeline.score_survivors([first], {}, profiles, {}, True)
+            self.assertEqual(1, call.call_count)
+            self.assertEqual(1, first_counts["llm"])
+            cached = {dedup_key(first): board_pipeline.build_store_entry(first, dedup_key(first))}
+
+            second = job()
+            _, _, second_counts = board_pipeline.score_survivors(
+                [second], {}, {"fingerprint": "prompt-b", "candidate_fingerprint": "candidate-a"}, cached, True
+            )
+            self.assertEqual(1, call.call_count)
+            self.assertEqual(1, second_counts["reused"])
+            self.assertEqual("gpt-5.6-terra", second["score_model"])
+
+            changed = job("Build Java distributed systems and streaming services. " * 10)
+            board_pipeline.score_survivors([changed], {}, profiles, cached, True)
+            self.assertEqual(2, call.call_count)
+
+        failed = job()
+        with patch.dict("os.environ", {"OPENAI_API_KEY": "test"}), patch.object(
+            board_pipeline, "llm_match_batch", side_effect=RuntimeError("rate limited")
+        ):
+            board_pipeline.score_survivors([failed], {}, profiles, {}, True)
+        self.assertTrue(failed["llm_retryable"])
+        self.assertEqual(board_pipeline.SCORE_FALLBACK, failed["score_source"])
+        failed_store = {dedup_key(failed): board_pipeline.build_store_entry(failed, dedup_key(failed))}
+
+        recovered = job()
+        recovered["llm_retry_count"] = failed["llm_retry_count"]
+        with patch.dict("os.environ", {"OPENAI_API_KEY": "test"}), patch.object(
+            board_pipeline, "llm_match_batch", side_effect=result
+        ) as retry_call:
+            _, _, retry_counts = board_pipeline.score_survivors([recovered], {}, profiles, failed_store, True)
+        self.assertEqual(1, retry_call.call_count)
+        self.assertEqual(1, retry_counts["llm"])
+        self.assertFalse(recovered["llm_retryable"])
+
+    def test_repeated_digest_run_does_not_duplicate_alert(self) -> None:
+        job = self._job(score=90, bucket="3to24h", title="Junior Software Engineer")
+        job.update(source="greenhouse", job_id="one", company="Example Tech", location="Seattle, WA", tier="A")
+        state = {"last_digest_date": "", "alerted_keys": [], "alerted_tier": {}}
+        first, emit, day = board_pipeline.decide_digest([job], state)
+        self.assertTrue(emit)
+        board_pipeline.apply_digest_state(state, first, day)
+        second, emit_again, _ = board_pipeline.decide_digest([job], state)
+        self.assertEqual([], second)
+        self.assertFalse(emit_again)
 
     def test_exact_richer_peer_hydrates_thin_job_but_ambiguous_peers_do_not(self) -> None:
         job = make_job(

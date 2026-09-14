@@ -1,8 +1,8 @@
 {
   "_meta": {
     "purpose": "Canonical employer profiles for company-level application ranking. priority is an employer/application signal, not a job-fit or role-family score.",
-    "generated": "2026-09-12",
-    "company_count": 198,
+    "generated": "2026-09-13",
+    "company_count": 199,
     "source_scope": [
       "config/official_careers.json",
       "config/target_companies.json",
@@ -771,6 +771,23 @@
       ],
       "priority": "normal",
       "last_verified": "2026-09-12"
+    },
+    {
+      "name": "Deloitte",
+      "aliases": [
+        "deloitte consulting",
+        "deloitte touche tohmatsu"
+      ],
+      "size": "20k+",
+      "type": "consulting",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "tags": [
+        "tech_service"
+      ],
+      "priority": "normal",
+      "notes": "Large professional-services employer; tech-service roles receive a mild application-order penalty while job fit remains role-specific.",
+      "last_verified": "2026-09-13"
     },
     {
       "name": "Digital Waffle",

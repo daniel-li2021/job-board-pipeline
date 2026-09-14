@@ -672,9 +672,13 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
         },
     }
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
-    stats_text = json.dumps({"run_at": now_iso, **stats}, indent=2, ensure_ascii=False) + "\n"
+    run_payload = {"run_at": now_iso, **stats}
+    stats_text = json.dumps(run_payload, indent=2, ensure_ascii=False) + "\n"
     (RUNS_DIR / f"{stamp}_stats.json").write_text(stats_text, encoding="utf-8")
     (CAREERS_DIR / "latest_stats.json").write_text(stats_text, encoding="utf-8")
+    board.append_run_history(
+        CAREERS_DIR / "run_history.json", "official", run_payload
+    )
     write_latest_md(visible, stats, stamp)
     write_inbox(visible, stamp, now)
 

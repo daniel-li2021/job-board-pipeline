@@ -116,7 +116,7 @@ def parse_issue_event(path: Path, pipeline: str) -> Optional[Dict[str, Any]]:
             "url": link_match.group(1) if link_match else "",
             "source": pipeline,
         })
-    return {
+    row = {
         "pipeline": pipeline,
         "stamp": stamp,
         "emitted_at": emitted.isoformat(),
@@ -124,6 +124,7 @@ def parse_issue_event(path: Path, pipeline: str) -> Optional[Dict[str, Any]]:
         "count": len(jobs),
         "jobs": jobs,
     }
+    return row
 
 
 def _age_bucket(age_hours: Optional[float]) -> str:
@@ -218,6 +219,7 @@ def normalize_row(
         or company_profile.get("priority") == "low"
         or company_profile.get("sponsor") == "unlikely"
     ) else str(company_profile.get("priority") or "normal")
+    tech_service = "tech_service" in (company_profile.get("tags") or [])
     return {
         "canonical_job_key": key,
         "pipeline": pipeline,
@@ -241,6 +243,8 @@ def normalize_row(
         "company_maturity": company_profile.get("maturity", "unknown"),
         "company_tags": list(company_profile.get("tags") or []),
         "application_priority": application_priority,
+        "application_reason": "internship/co-op" if internship else ("staffing" if staffing else ("tech service" if tech_service else "")),
+        "tech_service": tech_service,
         "internship": internship,
         "staffing_firm": staffing,
         "referral": referral,
@@ -252,7 +256,21 @@ def normalize_row(
         "url": entry.get("official_url") or entry.get("source_url") or entry.get("job_url") or entry.get("url") or "",
         "filter_status": entry.get("filter_status", "kept"),
         "suppress_alert": bool(audit.get("suppress_alert") or entry.get("suppress_alert")),
+        "score_source": entry.get("score_source", ""),
+        "score_model": entry.get("score_model", ""),
+        "scoring_version": entry.get("scoring_version", ""),
+        "reasoning_effort": entry.get("reasoning_effort", ""),
+        "top_match_reasons": list(entry.get("top_match_reasons") or [])[:2],
+        "main_gaps": list(entry.get("main_gaps") or [])[:2],
+        "llm_retryable": bool(entry.get("llm_retryable")),
+        "llm_last_error": entry.get("llm_last_error", ""),
     }
+    optional = {
+        "application_reason", "tech_service", "score_model", "scoring_version",
+        "reasoning_effort", "top_match_reasons", "main_gaps", "llm_retryable",
+        "llm_last_error",
+    }
+    return {key: value for key, value in row.items() if key not in optional or value not in (None, "", False, [], {})}
 
 
 def visible_candidate(
@@ -372,6 +390,7 @@ def _sort_rows(rows: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
             day_rank,
             int(application_low),
             -int(score // 5),
+            int(bool(row.get("tech_service"))),
             {"high": 0, "normal": 1, "low": 2}.get(str(row.get("company_priority") or "normal"), 1),
             {"likely": 0, "unknown": 1, "unlikely": 2}.get(str(row.get("company_sponsor") or "unknown"), 1),
             0 if row.get("company_type") == "tech" else 1,
@@ -558,6 +577,28 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         result = Counter(row["pipeline"] for row in rows)
         return {pipeline: result.get(pipeline, 0) for pipeline in STORE_PATHS}
 
+    today = now.astimezone(PACIFIC).date()
+    today_runs = [
+        run for run in health_history
+        if (parse_dt(run.get("run_at")) or datetime.min.replace(tzinfo=timezone.utc)).astimezone(PACIFIC).date() == today
+    ]
+    llm_observability = {
+        "today_estimated_usd": round(sum(float(run.get("estimated_usd", 0) or 0) for run in today_runs), 6),
+        "today_runs": len(today_runs),
+        "recent_runs": health_history[:20],
+        "details_url": f"{PAGES_URL}health-history.json",
+    }
+    matching_summary = {
+        "tiers": dict(Counter(str(row.get("tier") or "-") for row in candidates)),
+        "score_sources": dict(Counter(str(row.get("score_source") or "unknown") for row in candidates)),
+        "retryable": max(
+            sum(bool(row.get("llm_retryable")) for row in all_rows),
+            int(read_json(BASE_DIR / "output" / "board" / "matching_retry.json.gz", {}).get("count", 0) or 0),
+        ),
+        "explainable": sum(bool(row.get("top_match_reasons") or row.get("main_gaps")) for row in candidates),
+        "total_visible": len(candidates),
+    }
+
     return {
         "generated_at": now.isoformat(),
         "updated_pt": now.astimezone(PACIFIC).strftime("%b %-d, %Y · %-I:%M %p"),
@@ -567,6 +608,11 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         "report_links": {key: f"{REPO_URL}/blob/main/{path}" for key, path in REPORT_PATHS.items()},
         "referral_file": f"{REPO_URL}/blob/main/config/target_companies.json",
         "coverage_report": f"{REPO_URL}/blob/main/output/cross_pipeline/coverage.md",
+        "coverage_summary": {
+            "counts": coverage.get("counts", {}),
+            "registry_counts": coverage.get("registry_counts", {}),
+            "generated_at": coverage.get("generated_at", ""),
+        },
         "supabase": {"url": SUPABASE_URL, "publishable_key": SUPABASE_PUBLISHABLE_KEY},
         "counts_24h": counts(fresh),
         "counts_3d": counts(rolling),
@@ -582,6 +628,8 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         "coverage": coverage,
         "health": health,
         "health_history": health_history,
+        "llm_observability": llm_observability,
+        "matching_summary": matching_summary,
         "health_report": f"{PAGES_URL}health.html",
         "official_searches": official_search_catalog(),
     }
@@ -602,6 +650,8 @@ button.hide-company,button.show-company{border:1px solid var(--line);border-radi
 </style></head><body><div class="wrap">
 <header><div><h1>Job visibility dashboard</h1><p id="updated" class="timestamp"></p><p id="sourceSnapshots" class="small"></p></div><div class="header-actions"><a id="healthIndicator" class="health-indicator" target="_blank" rel="noopener noreferrer">Health</a><span id="reviewMessage" class="sync-indicator sync-expanded" aria-live="polite">● Syncing…</span><a target="_blank" rel="noopener noreferrer" id="repo">Repository</a></div></header>
 <div class="cards" id="summary"></div>
+<section class="panel"><h2>LLM matching today: <span id="llmToday"></span></h2><p id="llmTodayDetail"></p><details><summary>Recent matching runs and batch details</summary><div id="llmRuns"></div></details></section>
+<section class="panel"><h2>Coverage and matching</h2><div class="cards"><div class="card"><span>Coverage</span><p id="coverageSummary"></p><a id="coverageReport" target="_blank" rel="noopener noreferrer">Open full coverage report</a></div><div class="card"><span>Matching</span><p id="matchingSummary"></p><a id="matchingDetails" target="_blank" rel="noopener noreferrer">Open run details</a></div></div></section>
 <section class="panel main-jobs"><div id="mainViewTabs" class="main-tabs" role="tablist" aria-label="Job views"><button id="main-tab-fresh" class="main-tab on" type="button" role="tab" aria-selected="true" aria-controls="main-view-fresh" data-main-view="fresh">Fresh</button><button id="main-tab-rolling" class="main-tab" type="button" role="tab" aria-selected="false" aria-controls="main-view-rolling" data-main-view="rolling">Rolling</button><button id="main-tab-in-progress" class="main-tab" type="button" role="tab" aria-selected="false" aria-controls="main-view-in-progress" data-main-view="in-progress">In Progress</button><button id="main-tab-applied" class="main-tab" type="button" role="tab" aria-selected="false" aria-controls="main-view-applied" data-main-view="applied">Applied</button></div>
 <div class="job-search"><input id="jobSearch" type="search" autocomplete="off" placeholder="Search title or company" aria-label="Search jobs by title or company"><button id="clearJobSearch" type="button" hidden>Clear</button><span id="jobSearchCount" class="small" aria-live="polite"></span><div class="export-actions"><button id="copyMarkdown" type="button">Copy MD</button><button id="downloadMarkdown" type="button">Download MD</button></div></div>
 <div id="main-view-fresh" class="main-view" role="tabpanel" aria-labelledby="main-tab-fresh" data-main-panel="fresh"><h2>Fresh — alerts and discoveries in the last 24 hours</h2><p>Jobs from recent alerts, including B→A promotions, plus all qualifying Official jobs first discovered in the last 24 hours.</p><p id="freshBasis" class="small"></p><div class="tabs" data-target="fresh"></div><div class="tabs company-tabs" data-company-target="fresh"></div><div id="fresh"></div></div>
@@ -620,6 +670,9 @@ const snapshotTime=v=>{const d=new Date(v);return Number.isNaN(d.getTime())?'unk
 document.getElementById('sourceSnapshots').textContent='Source snapshots: '+Object.keys(names).map(k=>`${names[k]} · ${snapshotTime(D.snapshots[k])}`).join('   ');
 document.getElementById('freshBasis').textContent='Fresh source: '+Object.keys(names).map(k=>`${names[k]} ${(D.fresh_basis||{})[k]==='alerts_and_new_discoveries'?'alerts + all new discoveries':(D.fresh_basis||{})[k]==='first_seen_migration_fallback'?'temporary migration fallback':'alert history / latest Issue'}`).join(' · ');
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const compactJson=value=>esc(JSON.stringify(value||{},null,2));
+function renderObservability(){const o=D.llm_observability||{},runs=o.recent_runs||[];document.getElementById('llmToday').textContent=`$${Number(o.today_estimated_usd||0).toFixed(4)}`;document.getElementById('llmTodayDetail').textContent=`${o.today_runs||0} runs today · production and retry attempts combined`;document.getElementById('llmRuns').innerHTML=runs.length?`<div class="tablewrap"><table><thead><tr><th>Run</th><th>Model</th><th>Jobs / cache / fallback</th><th>Requests / tokens</th><th>Cost / latency</th><th>Health / detail</th></tr></thead><tbody>${runs.map(r=>`<tr><td>${esc(names[r.pipeline]||r.pipeline)}<div class="small">${esc(snapshotTime(r.run_at))}</div></td><td>${esc(r.model||'-')}<div class="small">${esc(r.reasoning_effort||'-')} · ${esc(r.scoring_version||'-')}</div></td><td>${esc(r.jobs_scored||0)} / ${esc(r.cache_reused||0)} / ${esc(r.fallback_count||0)}</td><td>${esc(r.requests||0)} · in ${esc(r.input_tokens||0)} / out ${esc(r.output_tokens||0)} / reasoning ${esc(r.reasoning_tokens||0)}<div class="small">RPM ${esc(r.effective_rpm??'-')} · TPM ${esc(r.effective_tpm??'-')} · JSON ${r.json_reliability==null?'-':Math.round(r.json_reliability*100)+'%'}</div></td><td>$${Number(r.estimated_usd||0).toFixed(4)} · ${esc(r.latency_seconds||0)}s</td><td><span class="pill">${esc(r.health||'unknown')}</span><details><summary>data</summary><pre>${compactJson({funnel:r.funnel,output:r.output,batches:r.batches})}</pre></details></td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">No persistent run history yet.</div>';const coverage=D.coverage_summary||{},matching=D.matching_summary||{};document.getElementById('coverageSummary').textContent=`${Object.entries(coverage.counts||{}).map(([k,v])=>`${k}: ${v}`).join(' · ')||'No coverage summary'}`;document.getElementById('coverageReport').href=D.coverage_report;document.getElementById('matchingSummary').textContent=`Visible ${matching.total_visible||0} · explainable ${matching.explainable||0} · retryable ${matching.retryable||0} · tiers ${Object.entries(matching.tiers||{}).map(([k,v])=>`${k}:${v}`).join(' ')}`;document.getElementById('matchingDetails').href=o.details_url||D.health_report}
+renderObservability();
 const bucketNames={lt3h:'<3h', '3to24h':'3–24h', '1to3d':'1–3d', '3to7d':'3–7d', gt7d:'>7d', unknown:'unknown'};
 const statusChoices=['unreviewed','in_progress','applied_complete'];const statusLabels={unreviewed:'Unreviewed',in_progress:'In Progress',applied_complete:'Applied/Complete'};const statusCacheKey='jobReviewSharedCacheV1';const statusAliases={applied:'applied_complete',completed:'applied_complete',replied:'in_progress'};
 const companyStatePrefix='company::';
@@ -661,7 +714,8 @@ function postingText(r){const p=r.freshness.posted||{};if(!p.trusted)return r.po
 const displayGroupKey=r=>r.display_group_key||`${r.company||''}|${r.title||''}`.toLowerCase().replace(/[^a-z0-9|]+/g,' ');
 function displayRows(rows){const groups=new Map();rows.forEach(r=>{const key=displayGroupKey(r);if(!groups.has(key))groups.set(key,[]);groups.get(key).push(r)});return [...groups.values()].flatMap(group=>{const variants=[...new Map(group.map(r=>[r.canonical_job_key,r])).values()],locations=new Set(variants.map(r=>String(r.location||'').trim().toLowerCase()).filter(Boolean));return locations.size>1?[{...variants[0],_variants:variants}]:variants})}
 const actionKeys=element=>{try{return JSON.parse(element.dataset.keys||'[]')}catch(error){return element.dataset.key?[element.dataset.key]:[]}};
-function jobRows(rows,deleted=false){return rows.length?displayRows(rows).map(r=>{const variants=r._variants||[r],keys=variants.map(v=>v.canonical_job_key),keyData=esc(JSON.stringify(keys)),states=keys.map(reviewState),statuses=variants.map(statusOf),status=statuses.every(value=>value===statuses[0])?statuses[0]:'mixed',disabled=keys.some(key=>pendingKeys.has(key))?'disabled':'',companyDisabled=pendingKeys.has(companyStateKey(r))?'disabled':'',pending=states.some(state=>state?.pending)?'<span class="small">Pending sync</span>':'',companyAction=r.company_key?` <button class="${isCompanyHidden(r)?'show-company':'hide-company'}" data-company-key="${esc(r.company_key)}" ${companyDisabled}>${isCompanyHidden(r)?'Show again':'Hide company'}</button>`:'',location=variants.length>1?`<details><summary>${variants.length} locations</summary>${variants.map(v=>`<div><a target="_blank" rel="noopener noreferrer" href="${esc(v.url)}">${esc(v.location||'Open location')}</a></div>`).join('')}</details>`:esc(r.location),sources=[...new Set(variants.map(v=>names[v.pipeline]||v.pipeline))].join(' / ');return `<tr><td><b>${esc(r.tier)}</b>${r.score!==''?`<div class="small">${esc(r.score)}</div>`:''}</td><td><b>${esc(r.company)}</b>${companyAction}<br><a target="_blank" rel="noopener noreferrer" href="${esc(r.url)}">${esc(r.title)}</a>${variants.length>1?`<div class="small">Collapsed same role · individual location links preserved</div>`:''}</td><td>${location}</td><td><span class="pill discovered">${activityText(r)}</span><div class="small">${postingText(r)}</div></td><td>${esc(r.sponsorship||'Unknown')}</td><td>${r.referral?`<span class="pill referral">${esc(r.referral)}</span>`:'-'}</td><td><div class="workflow">${deleted?`<span class="pill">Deleted</span><button class="restore" data-keys="${keyData}" ${disabled}>Restore</button>`:`<select class="status-select" data-keys="${keyData}" ${disabled}>${status==='mixed'?'<option value="mixed" selected disabled>Mixed</option>':''}${statusChoices.map(s=>`<option value="${s}" ${status===s?'selected':''}>${statusLabels[s]}</option>`).join('')}</select><button class="delete" data-keys="${keyData}" ${disabled}>Delete</button>`}${pending}</div></td><td>${esc(sources)}</td></tr>`}).join(''):'<tr><td colspan="8"><div class="empty">No qualifying jobs in this view.</div></td></tr>'}
+function whyMatch(r){const reasons=(r.top_match_reasons||[]).map(esc).join('; ')||'No saved reason',gaps=(r.main_gaps||[]).map(esc).join('; ')||'none',provenance=[r.score_source,r.score_model,r.reasoning_effort,r.scoring_version].filter(Boolean).map(esc).join(' · ')||'legacy provenance unknown',priority=r.application_reason?` · application priority: ${esc(r.application_reason)}`:'';return `<details class="small"><summary>Why</summary><div><b>Match:</b> ${reasons}</div><div><b>Gaps:</b> ${gaps}</div><div>${provenance}${priority}${r.llm_retryable?` · retryable: ${esc(r.llm_last_error||'LLM failure')}`:''}</div></details>`}
+function jobRows(rows,deleted=false){return rows.length?displayRows(rows).map(r=>{const variants=r._variants||[r],keys=variants.map(v=>v.canonical_job_key),keyData=esc(JSON.stringify(keys)),states=keys.map(reviewState),statuses=variants.map(statusOf),status=statuses.every(value=>value===statuses[0])?statuses[0]:'mixed',disabled=keys.some(key=>pendingKeys.has(key))?'disabled':'',companyDisabled=pendingKeys.has(companyStateKey(r))?'disabled':'',pending=states.some(state=>state?.pending)?'<span class="small">Pending sync</span>':'',companyAction=r.company_key?` <button class="${isCompanyHidden(r)?'show-company':'hide-company'}" data-company-key="${esc(r.company_key)}" ${companyDisabled}>${isCompanyHidden(r)?'Show again':'Hide company'}</button>`:'',location=variants.length>1?`<details><summary>${variants.length} locations</summary>${variants.map(v=>`<div><a target="_blank" rel="noopener noreferrer" href="${esc(v.url)}">${esc(v.location||'Open location')}</a></div>`).join('')}</details>`:esc(r.location),sources=[...new Set(variants.map(v=>names[v.pipeline]||v.pipeline))].join(' / ');return `<tr><td><b>${esc(r.tier)}</b>${r.score!==''?`<div class="small">${esc(r.score)}</div>`:''}${whyMatch(r)}</td><td><b>${esc(r.company)}</b>${companyAction}<br><a target="_blank" rel="noopener noreferrer" href="${esc(r.url)}">${esc(r.title)}</a>${variants.length>1?`<div class="small">Collapsed same role · individual location links preserved</div>`:''}</td><td>${location}</td><td><span class="pill discovered">${activityText(r)}</span><div class="small">${postingText(r)}</div></td><td>${esc(r.sponsorship||'Unknown')}</td><td>${r.referral?`<span class="pill referral">${esc(r.referral)}</span>`:'-'}</td><td><div class="workflow">${deleted?`<span class="pill">Deleted</span><button class="restore" data-keys="${keyData}" ${disabled}>Restore</button>`:`<select class="status-select" data-keys="${keyData}" ${disabled}>${status==='mixed'?'<option value="mixed" selected disabled>Mixed</option>':''}${statusChoices.map(s=>`<option value="${s}" ${status===s?'selected':''}>${statusLabels[s]}</option>`).join('')}</select><button class="delete" data-keys="${keyData}" ${disabled}>Delete</button>`}${pending}</div></td><td>${esc(sources)}</td></tr>`}).join(''):'<tr><td colspan="8"><div class="empty">No qualifying jobs in this view.</div></td></tr>'}
 function sponsorshipSummary(){const selected=sponsorshipChoices.filter(value=>sponsorshipFilters.has(value));return selected.length===sponsorshipChoices.length?'All':selected.length===1?selected[0]:selected.length+' selected'}
 function discoveryHeader(){const option=value=>`<label><input type="checkbox" value="${value}" ${sponsorshipFilters.has(value)?'checked':''}> ${value}</label>`;return `<th class="tier-header">Tier<div class="header-filter"><input class="min-score-filter" type="number" min="0" max="100" step="1" inputmode="numeric" value="${esc(minScore)}" placeholder="Min" aria-label="Minimum score"></div></th><th>Company / Title</th><th>Location</th><th>Alert / Posted</th><th class="sponsorship-header">Sponsorship<details class="filter-menu sponsorship-filter"><summary>${sponsorshipSummary()}</summary><div class="filter-options" role="group" aria-label="Sponsorship options">${sponsorshipChoices.map(option).join('')}</div></details></th>`}
 function jobs(rows,deleted=false,discovery=false){if(!rows.length&&!discovery)return '<div class="empty">No qualifying jobs in this view.</div>';const header=discovery?discoveryHeader():'<th>Tier</th><th>Company / Title</th><th>Location</th><th>Alert / Posted</th><th>Sponsorship</th>';return `<div class="tablewrap"><table><thead><tr>${header}<th>Referral</th><th>Status</th><th>Source</th></tr></thead><tbody>${jobRows(rows,deleted)}</tbody></table></div>`}

@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import tempfile
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import patch
 
@@ -11,6 +11,45 @@ import pipeline_health
 
 
 class PipelineHealthTests(unittest.TestCase):
+    def test_repeated_llm_429s_are_collapsed_with_retryable_impact(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            now = datetime(2026, 9, 13, 22, tzinfo=timezone.utc)
+            for key, (_label, folder, store_name) in pipeline_health.PIPELINES.items():
+                out = root / "output" / folder
+                out.mkdir(parents=True)
+                out.joinpath(store_name).write_text(json.dumps({
+                    "updated_at": now.isoformat(), "entries": [{"company": "Example", "title": "Engineer"}],
+                }))
+                if key == "board":
+                    runs = [{
+                        "pipeline": "board", "run_at": (now - timedelta(hours=i)).isoformat(),
+                        "health": "degraded", "batches_total": 11, "batches_failed": 11,
+                        "fallback_count": 111, "output": {"shown": 20},
+                    } for i in range(3)]
+                    out.joinpath("run_history.json").write_text(json.dumps({"runs": runs}))
+                    out.joinpath("latest_stats.json").write_text(json.dumps({
+                        "run_at": now.isoformat(), "output": {"shown": 20},
+                        "llm": {"batches_total": 11, "batches_failed": 11, "retryable_fallbacks": 111},
+                        "failures": {"llm": [f"batch_{i}: HTTP 429: rate_limit_exceeded" for i in range(1, 12)]},
+                    }))
+            source_dir = root / "output" / "sources"
+            source_dir.mkdir(parents=True)
+            source_dir.joinpath("health.json").write_text(json.dumps({"sources": {
+                name: {"healthy": True, "last_success_at": now.isoformat()}
+                for name in ("linkedin", "indeed", "glassdoor")
+            }}))
+            for name in ("linkedin", "indeed", "glassdoor"):
+                source_dir.joinpath(f"{name}.json").write_text(json.dumps({"jobs": [{}]}))
+
+            report, history = pipeline_health.build(root, now)
+            board = report["components"]["board"]
+            self.assertEqual("Warning", board["status"])
+            self.assertEqual(3, board["consecutive_failures"])
+            self.assertIn("11/11 LLM batches failed with HTTP 429", board["detail"])
+            self.assertIn("111 jobs used retryable rule fallback", board["impact"])
+            self.assertEqual(3, len([run for run in history if run["pipeline"] == "board"]))
+
     def test_reuses_runs_and_source_health_and_keeps_unresolved_links(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

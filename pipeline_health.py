@@ -42,35 +42,67 @@ def _run_history(base: Path) -> tuple[dict[str, dict[str, Any]], list[dict[str, 
     latest: dict[str, dict[str, Any]] = {}
     history: list[dict[str, Any]] = []
     for key, (_label, folder, _store) in PIPELINES.items():
-        records = []
-        for path in sorted((base / "output" / folder / "runs").glob("*_stats.json"))[-20:]:
-            record = _read(path, {})
-            if record:
-                records.append(record)
-                history.append({
-                    "pipeline": key,
-                    "run_at": record.get("run_at", ""),
-                    "output": record.get("output", {}),
-                    "enrichment": record.get("enrichment", {}),
-                })
+        records = list((_read(base / "output" / folder / "run_history.json", {}) or {}).get("runs") or [])
+        if not records:
+            for path in sorted((base / "output" / folder / "runs").glob("*_stats.json"))[-20:]:
+                record = _read(path, {})
+                if record:
+                    records.append(record)
+        records.sort(key=lambda item: str(item.get("run_at") or ""), reverse=True)
+        history.extend({"pipeline": key, **record} for record in records)
         current = _read(base / "output" / folder / "latest_stats.json", {})
         if current:
             latest[key] = current
-            if not records or current.get("run_at") != records[-1].get("run_at"):
+            if not any(current.get("run_at") == record.get("run_at") for record in records):
+                llm = current.get("llm", {})
                 history.append({
-                    "pipeline": key,
-                    "run_at": current.get("run_at", ""),
-                    "output": current.get("output", {}),
-                    "enrichment": current.get("enrichment", {}),
+                    "pipeline": key, "run_at": current.get("run_at", ""),
+                    "health": "degraded" if _failure_items(current.get("failures")) else "success",
+                    "model": llm.get("model", ""), "reasoning_effort": llm.get("reasoning_effort", ""),
+                    "scoring_version": llm.get("scoring_version", ""),
+                    "jobs_scored": llm.get("scored", llm.get("llm", 0)),
+                    "cache_reused": llm.get("reused", 0), "fallback_count": llm.get("retryable_fallbacks", 0),
+                    "requests": llm.get("api_requests", 0), "input_tokens": llm.get("input_tokens", 0),
+                    "output_tokens": llm.get("output_tokens", 0), "reasoning_tokens": llm.get("reasoning_tokens", 0),
+                    "estimated_usd": llm.get("estimated_usd", 0), "output": current.get("output", {}),
+                    "funnel": current.get("funnel", {}), "enrichment": current.get("enrichment", {}),
+                    "batches_total": llm.get("batches_total", 0), "batches_failed": llm.get("batches_failed", 0),
                 })
         elif records:
-            latest[key] = records[-1]
+            latest[key] = records[0]
         if records:
-            shown = [int(item.get("output", {}).get("shown", 0) or 0) for item in records[-7:-1]]
+            shown = [int(item.get("output", {}).get("shown", 0) or 0) for item in records[1:7]]
             if shown:
                 latest[key]["recent_shown_median"] = median(shown)
     history.sort(key=lambda item: str(item.get("run_at") or ""), reverse=True)
     return latest, history[:40]
+
+
+def _consecutive_degraded(history: list[dict[str, Any]], pipeline: str) -> int:
+    count = 0
+    for run in (item for item in history if item.get("pipeline") == pipeline):
+        failed = run.get("health") == "degraded" or int(run.get("batches_failed", 0) or 0) > 0
+        if not failed:
+            break
+        count += 1
+    return count
+
+
+def _llm_impact(run: dict[str, Any]) -> str:
+    llm = run.get("llm") or {}
+    total = int(llm.get("batches_total", 0) or 0)
+    failed = int(llm.get("batches_failed", 0) or 0)
+    attempted = int(llm.get("batches_attempted", total) or 0)
+    skipped = int(llm.get("batches_skipped", 0) or 0)
+    fallback = int(llm.get("retryable_fallbacks", 0) or 0)
+    errors = _failure_items((run.get("failures") or {}).get("llm"))
+    rate_limited = sum("429" in item for item in errors)
+    if total and failed:
+        reason = " with HTTP 429" if rate_limited == failed else ""
+        scope = f"{failed}/{attempted} attempted" if skipped else f"{failed}/{total}"
+        skipped_note = f"; {skipped} later batches skipped" if skipped else ""
+        return f"{scope} LLM batches failed{reason}{skipped_note}; {fallback} jobs used retryable rule fallback"
+    return ""
 
 
 def _failure_items(value: Any, prefix: str = "") -> list[str]:
@@ -129,7 +161,7 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             details = ["No usable job snapshot"]
         shown = int(run.get("output", {}).get("shown", 0) or 0)
         baseline = float(run.get("recent_shown_median", 0) or 0)
-        if status == "Healthy" and baseline >= 10 and shown < baseline * 0.3:
+        if status == "Healthy" and run.get("mode") != "matching_retry" and baseline >= 10 and shown < baseline * 0.3:
             status = "Warning"
             details.append(f"latest output fell to {shown} vs recent median {baseline:g}")
         failures = run.get("failures") or {}
@@ -137,7 +169,8 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         if failure_count:
             if status == "Healthy":
                 status = "Warning"
-            details.append(f"latest run degraded: {failure_count} failure(s): {failure_detail}")
+            llm_impact = _llm_impact(run)
+            details.append(f"latest run degraded: {llm_impact or f'{failure_count} failure(s): {failure_detail}'}")
         workflow_token = {"board": "board", "official": "official", "syncareer": "syncareer"}[key]
         if workflow_conclusion and workflow_conclusion != "success" and workflow_token in workflow_name.lower():
             status = "Warning" if data_usable and data_age is not None and data_age <= 36 else "Problem"
@@ -155,6 +188,8 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             "latest_attempt_age_hours": round(attempt_age, 1) if attempt_age is not None else None,
             "latest_attempt_status": "failed" if workflow_conclusion and workflow_conclusion != "success" and workflow_token in workflow_name.lower() else ("degraded" if failure_count else ("success" if run_stamp else "unknown")),
             "failure_count": failure_count,
+            "consecutive_failures": _consecutive_degraded(history, key),
+            "impact": _llm_impact(run) or ("latest attempt degraded; fresh last-good snapshot remains usable" if failure_count and data_usable else ""),
         }
 
         for entry in entries:
@@ -225,6 +260,15 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                 details.append(f"{remaining} discovered records remain without a JD")
             if degradation_kinds and status == "Healthy":
                 status = "Warning"
+        query_stats = list(state.get("query_stats") or [])
+        static_fallbacks = sum(str(item.get("stop_reason") or "") == "static_html_fallback" for item in query_stats)
+        if static_fallbacks:
+            degradation_kinds.append("static_html_fallback")
+            details.append(
+                f"{static_fallbacks}/{len(query_stats)} queries used static HTML fallback; cards remain usable but coverage is a repeatable known limitation"
+            )
+            if status == "Healthy":
+                status = "Warning"
         detail = "; ".join(details)
         components[source] = {
             "label": {"linkedin": "LinkedIn", "indeed": "Indeed", "glassdoor": "Glassdoor"}[source],
@@ -238,6 +282,12 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             "latest_attempt_age_hours": round(attempt_age, 1) if attempt_age is not None else None,
             "latest_attempt_status": state.get("status", "unknown"),
             "degradation_kinds": degradation_kinds,
+            "consecutive_failures": int(state.get("consecutive_failures", 1 if attempt_failed else 0) or 0),
+            "impact": (
+                f"collection failed; {last_good_count} last-good jobs remain usable"
+                if attempt_failed and data_usable else
+                ("required source has no usable data" if not data_usable and state.get("required", source != "glassdoor") else "")
+            ),
         }
 
     board_statuses = [components[name]["status"] for name in ("linkedin", "indeed", "glassdoor")]
@@ -281,7 +331,10 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
     (public / "health.json").write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (public / "health-history.json").write_text(json.dumps(history, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     rows = "".join(
-        f"<tr><td>{html.escape(item['label'])}</td><td>{item['status']}</td><td>{html.escape(item['detail'])}</td></tr>"
+        f"<tr><td>{html.escape(item['label'])}</td><td>{item['status']}</td>"
+        f"<td>{html.escape(str(item.get('last_good_count', 0)))} at {html.escape(str(item.get('last_good_at') or 'unknown'))}</td>"
+        f"<td>{html.escape(str(item.get('latest_attempt_status') or 'unknown'))} at {html.escape(str(item.get('latest_attempt_at') or 'unknown'))}</td>"
+        f"<td>{html.escape(str(item.get('consecutive_failures', 0)))}</td><td>{html.escape(item['detail'])}</td></tr>"
         for item in report["components"].values()
     )
     issues = "".join(f"<li>{html.escape(issue)}</li>" for issue in report["problems"]) or "<li>None</li>"
@@ -290,5 +343,5 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
         f"<li>{html.escape(item['pipeline'])}: <a href=\"{html.escape(item['url'])}\">{html.escape(item['company'])} — {html.escape(item['title'])}</a> — {html.escape(item['reason'])}</li>"
         for item in report["unresolved_examples"]
     ) or "<li>None</li>"
-    page = f"""<!doctype html><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Pipeline health</title><style>body{{font:15px/1.45 system-ui;max-width:1050px;margin:40px auto;padding:0 20px;color:#172019}}table{{border-collapse:collapse;width:100%}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left}}code{{background:#eee;padding:2px 4px}}li{{margin:5px 0}}</style><h1>Pipeline health: {report['overall']}</h1><p>Generated {html.escape(report['generated_at'])}. <a href=\"index.html\">Dashboard</a> · <a href=\"health.json\">current JSON</a> · <a href=\"health-history.json\">recent run history</a></p><h2>Components</h2><table><tr><th>Pipeline/source</th><th>Status</th><th>Detail</th></tr>{rows}</table><h2>Actionable problems</h2><ul>{issues}</ul><h2>Recoverable degradation / known limitations</h2><ul>{degradations}</ul><h2>Enrichment funnel</h2><pre>{html.escape(json.dumps(report['enrichment'], indent=2))}</pre><h2>Unresolved JD examples</h2><ul>{examples}</ul>"""
+    page = f"""<!doctype html><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Pipeline health</title><style>body{{font:15px/1.45 system-ui;max-width:1250px;margin:40px auto;padding:0 20px;color:#172019}}table{{border-collapse:collapse;width:100%}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}}code{{background:#eee;padding:2px 4px}}li{{margin:5px 0}}</style><h1>Pipeline health: {report['overall']}</h1><p>Generated {html.escape(report['generated_at'])}. <a href=\"index.html\">Dashboard</a> · <a href=\"health.json\">current JSON</a> · <a href=\"health-history.json\">recent run and batch history</a></p><h2>Components</h2><table><tr><th>Pipeline/source</th><th>Status</th><th>Last good</th><th>Latest attempt</th><th>Consecutive failures</th><th>Impact / detail</th></tr>{rows}</table><h2>Actionable problems</h2><ul>{issues}</ul><h2>Recoverable degradation / known limitations</h2><ul>{degradations}</ul><h2>Enrichment funnel</h2><pre>{html.escape(json.dumps(report['enrichment'], indent=2))}</pre><h2>Unresolved JD examples</h2><ul>{examples}</ul>"""
     (public / "health.html").write_text(page, encoding="utf-8")

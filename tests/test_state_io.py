@@ -54,16 +54,16 @@ class StateSafetyTests(unittest.TestCase):
             cache = Path(directory) / "cache.json.gz"
             entry = {
                 "key": "job", "first_seen": "2026-09-01", "filter_status": "kept",
-                "description": "Build APIs. " * 20, "top_match_reasons": ["private evidence"],
-                "main_gaps": ["private gap"],
+                "description": "Build APIs. " * 20, "top_match_reasons": ["API experience"],
+                "main_gaps": ["distributed systems"],
             }
             board.save_store_path(path, {"job": entry}, 7, cache_path=cache)
             raw = path.read_bytes()
             self.assertFalse(raw.startswith(b"\x1f\x8b"))
             loaded = board.load_store_path(path, strict=True)
             self.assertNotIn("description", loaded["job"])
-            self.assertNotIn("top_match_reasons", loaded["job"])
-            self.assertNotIn("main_gaps", loaded["job"])
+            self.assertEqual(["API experience"], loaded["job"]["top_match_reasons"])
+            self.assertEqual(["distributed systems"], loaded["job"]["main_gaps"])
             self.assertTrue(loaded["job"]["description_available"])
             self.assertEqual(1, loaded["job"]["main_gaps_count"])
             self.assertEqual(

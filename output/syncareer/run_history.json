@@ -1,0 +1,96 @@
+{
+  "runs": [
+    {
+      "pipeline": "syncareer",
+      "run_at": "2026-09-14T00:12:15.523108+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-sol",
+      "scoring_version": "",
+      "reasoning_effort": "",
+      "jobs_scored": 6,
+      "cache_reused": 34,
+      "fallback_count": 0,
+      "rule_count": 1,
+      "requests": 3,
+      "input_tokens": 12717,
+      "cached_input_tokens": 0,
+      "output_tokens": 1630,
+      "reasoning_tokens": 573,
+      "estimated_usd": 0.083468,
+      "latency_seconds": 0.0,
+      "effective_rpm": null,
+      "effective_tpm": null,
+      "json_reliability": 0.0,
+      "batches_total": 3,
+      "batches_attempted": 3,
+      "batches_succeeded": 0,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "json_results": 0,
+      "funnel": {
+        "scoring_candidates": 40
+      },
+      "output": {
+        "tier_a": 7,
+        "tier_b": 5,
+        "tier_c": 28,
+        "shown": 12
+      },
+      "enrichment": {
+        "needed": 1,
+        "detail_api_resolved": 61,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 1
+      },
+      "comparison": {},
+      "batches": []
+    },
+    {
+      "pipeline": "syncareer",
+      "run_at": "2026-09-13T15:13:51.835399+00:00",
+      "health": "success",
+      "model": "gpt-5.6-sol",
+      "scoring_version": "",
+      "reasoning_effort": "",
+      "jobs_scored": 42,
+      "cache_reused": 0,
+      "fallback_count": 0,
+      "rule_count": 9,
+      "requests": 6,
+      "input_tokens": 52214,
+      "cached_input_tokens": 0,
+      "output_tokens": 9044,
+      "reasoning_tokens": 1598,
+      "estimated_usd": 0.389736,
+      "latency_seconds": 0.0,
+      "effective_rpm": null,
+      "effective_tpm": null,
+      "json_reliability": 0.0,
+      "batches_total": 6,
+      "batches_attempted": 6,
+      "batches_succeeded": 0,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "json_results": 0,
+      "funnel": {
+        "scoring_candidates": 46
+      },
+      "output": {
+        "tier_a": 4,
+        "tier_b": 10,
+        "tier_c": 32,
+        "shown": 14
+      },
+      "enrichment": {
+        "needed": 3,
+        "detail_api_resolved": 66,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 3
+      },
+      "batches": []
+    }
+  ]
+}

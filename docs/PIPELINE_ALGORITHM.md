@@ -39,7 +39,7 @@ The three discovery pipelines are deliberately independent. A failure in one doe
 
 The development checkout must not become a second local collector. `scripts/local_source_sync.sh` runs collection from `/Users/daniel/Projects/job_scrape_feasibility-automation` in an isolated worktree and stages only the four local-source artifacts. GitHub Actions owns the three pipeline output trees.
 
-Persistent JSON state is written atomically where interruption could corrupt the canonical store. Corrupt or structurally invalid state is rejected rather than silently replacing a last-good store. Large full-detail caches and timestamped run histories are gitignored; compact stores and `latest_stats.json` are tracked so Actions and Pages can consume useful current state.
+Persistent JSON state is written atomically where interruption could corrupt the canonical store. Corrupt or structurally invalid state is rejected rather than silently replacing a last-good store. Large full-detail caches and timestamped local run files are gitignored; compact stores, bounded `run_history.json`, and `latest_stats.json` are tracked so Actions and Pages can consume useful current state.
 
 ## Shared record and time invariants
 
@@ -122,7 +122,7 @@ Enrichment is ordered to reuse reliable existing work before making network requ
 
 Requests retain bounded concurrency, per-domain pacing, timeouts, retry/backoff, and cache behavior already owned by each adapter. A 429 can disable the affected ordinary request path for the remainder of the run rather than amplifying the throttle.
 
-Failure to obtain a description does not delete a valid job card. The job keeps `enrichment_failure_reason`, uses title/metadata evidence conservatively, and remains visible for diagnostics. This is different from a hard eligibility failure.
+Failure to obtain a description does not delete a valid job card. The job keeps `enrichment_failure_reason`, uses title/metadata evidence conservatively, and remains visible for diagnostics. Explicit software/AI/data early-career titles remain useful review signals; generic `Engineer I` or `Entry Level` wording alone receives only a small title bonus. This is different from a hard eligibility failure.
 
 ## Filtering, scoring, and tiering
 
@@ -132,7 +132,9 @@ Company classification and hard filters run before LLM scoring. The role/seniori
 
 ### Match score
 
-`match_score` measures job-to-candidate fit only. The matcher uses `gpt-5.6-sol`; cached LLM results are keyed by the job-description hash and a profile fingerprint that includes the prompt version and candidate/profile inputs. Changing the prompt version invalidates incompatible cached scores. Eligible changed records are sent in small batches, and rule scoring remains the per-record fallback for API failures or unusable model output.
+`match_score` measures job-to-candidate fit only. The production matcher uses `gpt-5.6-terra` with medium reasoning and routed batches of up to 15 jobs. Each completed score records the actual model, prompt/scoring version, reasoning effort, candidate fingerprint, JD hash, and score time.
+
+Cache migration is lazy. A model, prompt, or reasoning-default change does not relabel or mass-rescore a job whose JD and candidate inputs are still valid; the older score remains reusable with its original provenance. New jobs, materially changed JDs, candidate-input changes, and explicit refresh/retry work are scored with the current configuration. Rule fallbacks are never treated as completed LLM cache hits.
 
 The scoring prompt treats explicit New Grad, Early Career, Entry Level, Junior, and Engineer I roles as strong seniority-fit evidence when the actual responsibilities are relevant. Minor learnable or transferable stack/domain gaps do not by themselves force those roles below 80. Material core requirements, the actual work, hard constraints, and genuine family mismatches still control the score; title wording never receives a blind boost. Level II roles are judged from their scope and requirements rather than from a fixed family hierarchy.
 
@@ -155,6 +157,7 @@ Company metadata never changes `match_score`. Within the actionable tiers it hel
 
 - generally prefer high-priority, sponsor-friendly larger employers, strong technology companies, and mature or growth-stage startups;
 - down-rank staffing firms, poor/unknown sponsorship where configured, and defense or clearance-heavy employers;
+- apply a mild `tech_service` ordering penalty so large consulting/IT-services employers do not outrank stronger product-company opportunities on size and sponsorship alone;
 - down-rank internship/co-op roles by default;
 - do not enforce a fixed role-family hierarchy: retain the score's assessment of the actual work and material requirements.
 
@@ -175,9 +178,11 @@ Each pipeline owns:
 - `alert_history.json` and `digest_state.json`: notification history and daily digest control;
 - `latest.md`, inbox files, and alert bodies: human-facing pipeline views;
 - `latest_stats.json`: tracked latest-attempt counts, failures, funnel, enrichment, and output totals;
+- `run_history.json`: bounded tracked history with per-run cost/model/cache/fallback/token/funnel/output data and compact per-batch decisions/errors for Pages drill-down;
+- Board `matching_retry.json.gz`: only the JD context and retry state needed for failed LLM records; successful records leave the queue;
 - `runs/*_stats.json`: deeper local history when present; these files are intentionally gitignored.
 
-The dashboard build combines canonical jobs, coverage, alert history, company profiles, and browser review state into `public/dashboard.json` and `public/index.html`. Health generation writes `public/health.json`, `public/health-history.json`, and `public/health.html`.
+The dashboard build combines canonical jobs, coverage, alert history, company profiles, and browser review state into `public/dashboard.json` and `public/index.html`. It shows today's estimated LLM cost, bounded run history, batch/request/token/latency/JSON metrics, coverage and matching summaries, and per-job score reasons/gaps/provenance. Health generation writes `public/health.json`, `public/health-history.json`, and `public/health.html`.
 
 ## Automation and publication sequence
 
@@ -211,7 +216,7 @@ Health output separates:
 - **Recoverable degradation / known limitations**: current data is still usable but discovery, enrichment, fallback, or output quality was degraded.
 - **Unresolved enrichment**: counts and reasons for records still lacking descriptions.
 
-Messages include source, impact, attempt age, last-good count/age, failure count, and available reasons. LinkedIn search/discovery failures, detail-enrichment 429s, Scrapling attempts/resolutions, and remaining no-JD records are reported independently. `PIPELINE_WORKFLOW_*` values supplied by reconciliation identify whether the triggering workflow failed; a failed trigger yields Warning when a fresh store is still usable and Problem when it is not.
+Messages include source, impact, attempt age, last-good count/age, consecutive failures, and available reasons. Repeated batch failures are collapsed into counts such as “1/1 attempted batches failed; 8 later batches skipped; 106 jobs remain retryable.” LinkedIn search/discovery failures, detail-enrichment 429s, Scrapling attempts/resolutions, and remaining no-JD records are reported independently. `PIPELINE_WORKFLOW_*` values supplied by reconciliation identify whether the triggering workflow failed; a failed trigger yields Warning when a fresh store is still usable and Problem when it is not.
 
 ## Failure recovery
 
@@ -222,6 +227,7 @@ Messages include source, impact, attempt age, last-good count/age, failure count
 | LinkedIn detail 429 | Discovered cards remain; cache/peer/Scrapling may fill descriptions | Detail request/429 counts, Scrapling resolutions, remaining no-JD |
 | One Official adapter fails | Other companies complete; prior data is carried when the sweep is not authoritative | Per-company errors and full-sweep status |
 | LLM call or response fails | Cached scores remain; affected records receive rule fallback | Failure details, score-source counts, model/prompt fingerprint |
+| LLM quota/balance is exhausted | First failed batch records the API code and available rate headers, later batches are skipped, and jobs remain retryable | `latest_stats.json`, `run_history.json`, then `board_pipeline.py --retry-llm-failures` after quota recovery |
 | One discovery workflow fails | Other stores still reconcile; fresh last-good data can still publish with Warning | Workflow conclusion, store age/count, `latest_stats.json` |
 | Concurrent output pushes race | Owning workflow rebases/retries its scoped output commit | Push attempt logs and current `origin/main` |
 | Reconciliation or Pages fails | Pipeline stores remain committed; public site may be stale | Source/output commit, reconcile run, deployment, live artifact timestamp |
@@ -239,4 +245,4 @@ Messages include source, impact, attempt age, last-good count/age, failure count
 
 ## Matching regression guard
 
-`tests/fixtures/matching_regression.json` is the small representative set used before and after prompt/model changes. It covers strong early-career matches, 70s/stretch jobs, Level II scope, senior mismatches, irrelevant “engineer” false positives, thin/no-JD records, staffing, and internships. The automated test enforces broad expected bands and application-priority behavior rather than freezing exact model scores. Live comparison results are recorded only when the explicit integration test is run with API access; normal tests remain offline and deterministic.
+`tests/fixtures/matching_regression_round2.json` records the recent Board 429 population baseline and representative strong early-career, 70s/stretch, Level II, staffing/tech-service, internship, thin/no-JD, and non-software Engineer I cases. It also records the latest live comparison outcome. Offline sequential-run tests verify cache reuse across prompt/model changes, changed-JD scoring, safe failure fallback, retryability, and failed-only recovery behavior.

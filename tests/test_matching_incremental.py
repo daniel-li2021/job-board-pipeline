@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import tempfile
 import threading
 import unittest
 from datetime import datetime, timedelta, timezone
@@ -17,6 +18,45 @@ from sources.schema import SourceUnavailable, make_job
 
 
 class LlmMatchingTests(unittest.TestCase):
+    def test_exhausted_credit_stops_later_batches_and_preserves_retry_state(self) -> None:
+        now = datetime.now(timezone.utc).isoformat()
+        jobs = [
+            make_job(
+                source="test", company="Example", title=title, location="Remote, US",
+                job_id=str(index), description=("Relevant responsibilities and requirements. " * 12),
+                source_url=f"https://example.test/{index}",
+            )
+            for index, title in enumerate(("Software Engineer", "Machine Learning Engineer"), 1)
+        ]
+        for job, family in zip(jobs, ("swe", "ai")):
+            job.update(first_seen=now, recency_bucket="3to24h", role_family=family, role_relevance=2)
+        response = Mock(status_code=429, headers={})
+        response.json.return_value = {"error": {"code": "credit_balance_exhausted", "type": "tokens"}}
+        error = board.requests.HTTPError("429", response=response)
+        profiles = {"fingerprint": "prompt", "candidate_fingerprint": "candidate"}
+        with patch.dict("os.environ", {"OPENAI_API_KEY": "test"}), patch.object(
+            board, "llm_match_batch", side_effect=error
+        ) as match:
+            _method, _errors, counts = board.score_survivors(jobs, {}, profiles, {}, True)
+        self.assertEqual(1, match.call_count)
+        self.assertEqual((1, 1), (counts["batches_attempted"], counts["batches_skipped"]))
+        self.assertTrue(all(job["llm_retryable"] for job in jobs))
+        self.assertEqual([1, 0], [job.get("llm_retry_count", 0) for job in jobs])
+
+    def test_retry_payload_keeps_full_jd_identity_while_trimming_context(self) -> None:
+        job = make_job(
+            source="test", company="Example", title="Software Engineer", location="Remote, US",
+            job_id="long", description="Build Python services. " * 1000,
+            source_url="https://example.test/long",
+        )
+        job["llm_retryable"] = True
+        with self.subTest("bounded payload"), tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "retry.json.gz"
+            board.save_matching_retry(path, [job])
+            saved = board.read_json(path, {})["entries"][0]
+        self.assertEqual(board.jd_hash(job), saved["source_jd_hash"])
+        self.assertLessEqual(len(saved["description"]), llm_config.JD_CONTEXT_CHARS)
+
     def test_long_jd_preserves_required_qualifications(self) -> None:
         text = (
             "Overview\n" + ("introductory context " * 420) + "\n"
@@ -80,7 +120,7 @@ class LlmMatchingTests(unittest.TestCase):
             [job],
             {"candidate": "candidate", "resume_swe": full_resume, "resume_ai": "AI RESUME"},
             "test-key",
-            "gpt-5.6-sol",
+            "gpt-5.6-terra",
             "resume_swe",
         )
         sent = post.call_args.kwargs["json"]
@@ -91,20 +131,21 @@ class LlmMatchingTests(unittest.TestCase):
         self.assertIn("strong seniority-fit evidence", instructions)
         self.assertIn("do not push match_score below 80", instructions)
         self.assertIn("Internship/co-op status must not change match_score", instructions)
-        self.assertEqual("low", sent["reasoning_effort"])
+        self.assertEqual("medium", sent["reasoning_effort"])
         self.assertEqual(82, results[key]["match_score"])
+        self.assertNotIn("recommended_action", results[key])
         self.assertEqual(25, usage["cached_input_tokens"])
         self.assertEqual(5, usage["reasoning_tokens"])
 
     def test_cost_and_quality_first_sort(self) -> None:
         usage = {
-            "model": "gpt-5.6-sol",
+            "model": "gpt-5.6-terra",
             "input_tokens": 1_000_000,
             "cached_input_tokens": 200_000,
             "output_tokens": 100_000,
         }
-        self.assertAlmostEqual(5.28, llm_config.estimate_cost_usd(usage))
-        self.assertEqual("gpt-5.6-sol", llm_config.DEFAULT_MODEL)
+        self.assertAlmostEqual(2.84, llm_config.estimate_cost_usd(usage))
+        self.assertEqual("gpt-5.6-terra", llm_config.DEFAULT_MODEL)
         base = {"recency_bucket": "1to3d", "tier": "B", "seniority_fit": "good"}
         high_quality = {**base, "match_score": 78, "date_confidence": "low"}
         high_confidence = {**base, "match_score": 71, "date_confidence": "high"}
@@ -153,8 +194,6 @@ class LlmMatchingTests(unittest.TestCase):
             low, high = case["expected_score_band"]
             self.assertGreaterEqual(decision["match_score"], low, case["id"])
             self.assertLessEqual(decision["match_score"], high, case["id"])
-            if case["category"] == "internship":
-                self.assertEqual("apply_if_time", decision["recommended_action"])
             comparisons.append({
                 "id": case["id"], "old_score": case["old_score"],
                 "new_score": decision["match_score"], "seniority_fit": decision["seniority_fit"],
