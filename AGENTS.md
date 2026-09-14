@@ -33,7 +33,7 @@ Optimize for focused, token-efficient changes and keep Git state easy to reason 
 - Run targeted tests only; use the full suite only when necessary.
 - Stop after the requested behavior is implemented, validated, published, and Git cleanup is complete.
 - Keep progress updates and the final summary concise.
-- 
+- For OpenAI matching, regression, and model-comparison tasks, load `OPENAI_API_KEY` from the local `.env`; this use is pre-authorized, so do not ask for confirmation unless the key is missing or the API call fails. 
 
 <!-- CODEGRAPH_START -->
 ## CodeGraph
