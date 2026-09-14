@@ -2,6 +2,218 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-09-14T07:03:54.951228+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 5,
+      "cache_reused": 335,
+      "fallback_count": 0,
+      "rule_count": 181,
+      "requests": 2,
+      "input_tokens": 12085,
+      "cached_input_tokens": 0,
+      "output_tokens": 818,
+      "reasoning_tokens": 140,
+      "estimated_usd": 0.033986,
+      "latency_seconds": 12.535,
+      "latency_measured": true,
+      "effective_rpm": 9.57,
+      "effective_tpm": 61761.47,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 5,
+      "funnel": {
+        "after_dedup": 4040,
+        "after_company": 3917,
+        "after_hard_filter": 3613,
+        "after_prefilter": 811,
+        "official_duplicates_suppressed": 290,
+        "dropped": 3210
+      },
+      "output": {
+        "tier_a": 40,
+        "tier_b": 79,
+        "ab_before_cap": 119,
+        "shown": 119
+      },
+      "enrichment": {
+        "needed": 389,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 389,
+          "http_requests": 9,
+          "scrapling_requests": 6,
+          "jds_resolved": 4,
+          "scrapling_fetcher_resolved": 1,
+          "direct_http_resolved": 3,
+          "remaining_no_jd": 385,
+          "failure_reasons": {
+            "scrapling_fetch_failed": 2,
+            "glassdoor_detail_http_403_static_card_only": 378,
+            "structured_jd_not_found": 5
+          }
+        },
+        "remaining_no_jd": 385,
+        "failure_reasons": {
+          "scrapling_fetch_failed": 2,
+          "glassdoor_detail_http_403_static_card_only": 378,
+          "structured_jd_not_found": 5
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "id::indeed::in-e6f89b31244aef4a",
+              "company": "Hewlett Packard Enterprise | HPE",
+              "title": "Telco Infrastructure Engineer"
+            },
+            {
+              "key": "id::indeed::in-d0ad833078dc9770",
+              "company": "Aeroflow Health",
+              "title": "Developer DBA"
+            },
+            {
+              "key": "id::indeed::in-23a210111c27280e",
+              "company": "Ross Dress For Less",
+              "title": "Security Engineer II"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 6.938,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 6349,
+            "cached_input_tokens": 0,
+            "output_tokens": 479,
+            "reasoning_tokens": 62,
+            "estimated_usd": 0.018446
+          },
+          "decisions": [
+            {
+              "key": "id::indeed::in-e6f89b31244aef4a",
+              "match_score": 46.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Demonstrated Python/Bash, Linux, Docker/CI/CD, automated testing, and performance/reliability work.",
+                "Has built and debugged backend services and integration tests in production-oriented environments."
+              ],
+              "main_gaps": [
+                "Role requires 4–6 years and project leadership/mentoring scope beyond the candidate's early-career experience.",
+                "Core telco server/NIC hardware validation, traffic-generator tooling, NEBS, and carrier-grade test experience are not evidenced."
+              ]
+            },
+            {
+              "key": "id::indeed::in-d0ad833078dc9770",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate has SQL, data-pipeline, backend, CI/CD, testing, and reliability experience.",
+                "Has worked with PostgreSQL/MySQL and diagnosed data-workflow issues in Databricks/Spark."
+              ],
+              "main_gaps": [
+                "Deep Microsoft SQL Server/T-SQL, database architecture, and query-optimization expertise are core requirements but are not clearly evidenced.",
+                "The role is explicitly a senior technical-review, architecture, and mentoring position, beyond the candidate's demonstrated scope."
+              ]
+            },
+            {
+              "key": "id::indeed::in-23a210111c27280e",
+              "match_score": 10.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and SQL automation experience is transferable to security workflow development.",
+                "Backend reliability and observability work offers limited adjacent systems experience."
+              ],
+              "main_gaps": [
+                "Requires 8+ years of cybersecurity experience, including 5+ years in threat intelligence and threat hunting, which is not evidenced.",
+                "Core CTI/SIEM/EDR, MITRE ATT&CK, malware/APT analysis, threat feeds, and incident-response experience are not evidenced."
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "id::indeed::in-e8659a53ca35cc3f",
+              "company": "Hewlett Packard Enterprise | HPE",
+              "title": "AI and Machine Learning Engineering Graduate"
+            },
+            {
+              "key": "id::indeed::in-5ffce734350f57f3",
+              "company": "FAST",
+              "title": "Founding Engineer - Mobile + SaaS Fitness Platform"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 5.597,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 5736,
+            "cached_input_tokens": 0,
+            "output_tokens": 339,
+            "reasoning_tokens": 78,
+            "estimated_usd": 0.01554
+          },
+          "decisions": [
+            {
+              "key": "id::indeed::in-e8659a53ca35cc3f",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct 0–2 year AI/ML graduate role aligned with the candidate's M.S. CS and applied AI engineering experience.",
+                "Demonstrated end-to-end model/data work: feature engineering and ML pipeline improvement, LLM evaluation, fine-tuning, Python services, and production ML/AI deployment."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "id::indeed::in-5ffce734350f57f3",
+              "match_score": 46.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate has relevant hands-on full-stack, backend, cloud deployment, API, testing, and production reliability experience.",
+                "Has shipped user-facing React/FastAPI applications and worked across application layers."
+              ],
+              "main_gaps": [
+                "Role requires a founding-level owner to set architecture, modernize an entire product, and make broad technical strategy decisions under high autonomy.",
+                "Expected expansion into contractor management, recruiting, technical leadership, and engineering management is materially beyond the demonstrated early-career scope."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-09-14T04:03:43.173133+00:00",
       "mode": "pipeline",
       "health": "success",
