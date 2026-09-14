@@ -2,6 +2,2700 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-09-14T15:34:35.061287+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 135,
+      "cache_reused": 432,
+      "fallback_count": 0,
+      "rule_count": 2696,
+      "requests": 10,
+      "input_tokens": 120467,
+      "cached_input_tokens": 0,
+      "output_tokens": 20410,
+      "reasoning_tokens": 4553,
+      "estimated_usd": 0.485854,
+      "latency_seconds": 259.893,
+      "latency_measured": true,
+      "effective_rpm": 2.31,
+      "effective_tpm": 32523.46,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 10,
+      "batches_attempted": 10,
+      "batches_succeeded": 10,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 135,
+      "funnel": {
+        "after_dedup": 16764,
+        "after_company": 16764,
+        "after_hard_filter": 14039,
+        "after_prefilter": 3263,
+        "dropped": 13501
+      },
+      "output": {
+        "tier_a": 83,
+        "tier_b": 179,
+        "shown": 262
+      },
+      "enrichment": {
+        "discovered": 16828,
+        "needed": 1407,
+        "source_jds_available": 15421,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 1407
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7671232204182276405",
+              "company": "TikTok",
+              "title": "Data Engineer Intern (Monetization Data) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667934759481526581",
+              "company": "TikTok",
+              "title": "Software Development Engineer in Test Intern（TikTok-Testing）- 2027 Summer"
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8142963?t=gh_src%3D&gh_jid=8142963",
+              "company": "Robinhood",
+              "title": "Software Engineering Intern, Web (Summer 2027)"
+            },
+            {
+              "key": "url::https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Software-Development-Engineer_R171675-1",
+              "company": "Adobe",
+              "title": "Software Development Engineer"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210787315",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer [Multiple Positions Available]"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210770776",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer III - Full Stack"
+            },
+            {
+              "key": "url::https://morganstanley.eightfold.ai/careers/job/549799423962",
+              "company": "Morgan Stanley",
+              "title": "Software Engineer - Backend"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668834837268416821",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Intern (Global E-Commerce) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670700387322300677",
+              "company": "TikTok",
+              "title": "Fullstack Software Engineer Intern (Global E-Commerce) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668834837268138293",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Intern (Global E-Commerce) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670738362521520437",
+              "company": "TikTok",
+              "title": "Fullstack Software Engineer Intern (Global E-Commerce) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673663349758675205",
+              "company": "TikTok",
+              "title": "Mobile Software Engineer Intern (Global E-Commerce) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668582031916435717",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Ads Measurement Signal and Privacy) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668584161852229893",
+              "company": "TikTok",
+              "title": "Frontend Software Engineer Intern (Ads Measurement Signal and Privacy) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668581636242016565",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Ads Infrastructure) - 2027 Summer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 27.352,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 14552,
+            "cached_input_tokens": 0,
+            "output_tokens": 2237,
+            "reasoning_tokens": 333,
+            "estimated_usd": 0.055948
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7671232204182276405",
+              "match_score": 58.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong evidence of Python, SQL, Spark/Databricks workflows, data pipelines, and reliability-focused data processing.",
+                "Has built production ingestion and retrieval/data services with validation, monitoring, and performance optimization."
+              ],
+              "main_gaps": [
+                "The internship requires active enrollment and a 12-week Summer 2027 commitment; the listed M.S. ends May 2026."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667934759481526581",
+              "match_score": 56.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Fluent Python experience plus substantial automated regression, unit/integration testing, validation, and reliability work.",
+                "Has developed backend tools and services in collaborative product environments."
+              ],
+              "main_gaps": [
+                "The internship requires current enrollment and Summer 2027 availability, which is not supported by the May 2026 degree completion.",
+                "Direct test-automation-framework and performance/security testing experience is not clearly evidenced."
+              ]
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8142963?t=gh_src%3D&gh_jid=8142963",
+              "match_score": 48.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong React, TypeScript/JavaScript, Node.js, and end-to-end full-stack feature delivery evidence.",
+                "Has built reusable typed services, testing infrastructure, and production web applications."
+              ],
+              "main_gaps": [
+                "Requires graduation in Winter 2027 or Spring 2028, while the listed M.S. completion is May 2026.",
+                "Functional/reactive programming and React Native are not clearly evidenced."
+              ]
+            },
+            {
+              "key": "url::https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Software-Development-Engineer_R171675-1",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct React, TypeScript/JavaScript, Node.js, FastAPI, and full-stack production application experience.",
+                "Evidence of secure/reliable service delivery, CI/CD, testing, observability, caching, and cross-functional implementation."
+              ],
+              "main_gaps": [
+                "The required two years of professional software product/service development is not clearly met by the listed experience.",
+                "Expert-level HTML/CSS and direct React/Node web-application tenure are not clearly established."
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210787315",
+              "match_score": 22.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant foundations in Java, CI/CD, observability, Docker/Kubernetes, and production reliability work.",
+                "Has experience with testing and performance-oriented backend optimization."
+              ],
+              "main_gaps": [
+                "Requires five years of relevant experience with a bachelor's or three years with a master's; candidate evidence is materially below this.",
+                "Requires specialized enterprise performance-testing depth with JMeter/LoadRunner, JVM tuning, workload modeling, and production performance analysis not evidenced."
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210770776",
+              "match_score": 38.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong React, TypeScript/JavaScript, REST API, testing, CI/CD, and full-stack delivery evidence.",
+                "Experience building production services with validation, observability, caching, and reliability practices."
+              ],
+              "main_gaps": [
+                "This Software Engineer III role requires 3+ years of applied experience and seasoned ownership in a large corporate environment, beyond the resume's demonstrated scope.",
+                "Required GraphQL/AEM and dedicated frontend testing-stack experience with Jest, RTL, and Cypress/Playwright are not clearly evidenced."
+              ]
+            },
+            {
+              "key": "url::https://morganstanley.eightfold.ai/careers/job/549799423962",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant Java/Python, REST API, caching, connection pooling, async/concurrency, data-pipeline, CI/CD, and observability experience.",
+                "Has built and operated backend services with latency and reliability improvements."
+              ],
+              "main_gaps": [
+                "Director-level scope and the stated 4+ years of production backend experience are materially beyond the candidate's early-career experience.",
+                "Spring/AOP/transaction management, multithreaded production systems, and messaging/pub-sub architecture depth are not clearly evidenced."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668834837268416821",
+              "match_score": 62.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct backend evidence in Python and Java, REST APIs, databases, caching, async services, reliability, and performance optimization.",
+                "Relevant experience with scalable retrieval services, connection pooling, Docker deployment, and distributed-systems fundamentals."
+              ],
+              "main_gaps": [
+                "The Summer 2027 internship requires current enrollment, but the listed M.S. ends in May 2026."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670700387322300677",
+              "match_score": 64.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct end-to-end full-stack delivery using React, TypeScript/JavaScript, Node.js, FastAPI, APIs, databases, and cloud deployment.",
+                "Strong evidence of testing, debugging, reliability engineering, and scalable service performance work."
+              ],
+              "main_gaps": [
+                "The Summer 2027 internship requires current enrollment, but the listed M.S. ends in May 2026."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668834837268138293",
+              "match_score": 62.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct backend evidence in Python and Java, REST APIs, databases, caching, async services, reliability, and performance optimization.",
+                "Relevant experience with scalable retrieval services, connection pooling, Docker deployment, and distributed-systems fundamentals."
+              ],
+              "main_gaps": [
+                "The Summer 2027 internship requires current enrollment, but the listed M.S. ends in May 2026."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670738362521520437",
+              "match_score": 64.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct end-to-end full-stack delivery using React, TypeScript/JavaScript, Node.js, FastAPI, APIs, databases, and cloud deployment.",
+                "Strong evidence of testing, debugging, reliability engineering, and scalable service performance work."
+              ],
+              "main_gaps": [
+                "The Summer 2027 internship requires current enrollment, but the listed M.S. ends in May 2026."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673663349758675205",
+              "match_score": 38.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has general software engineering foundations in Java, debugging, testing, and end-to-end product development.",
+                "Frontend experience may transfer to mobile UI concepts."
+              ],
+              "main_gaps": [
+                "The Summer 2027 internship requires current undergraduate enrollment, which is not supported by the resume.",
+                "No direct iOS/Android or Java/Kotlin/Objective-C/Swift mobile-development evidence."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668582031916435717",
+              "match_score": 60.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong general-purpose programming evidence in Java, Python, C++, plus DSA, backend systems, data processing, and scalable service work.",
+                "Relevant data-quality, data-pipeline, retrieval, and cross-functional product implementation experience."
+              ],
+              "main_gaps": [
+                "The Summer 2027 internship requires current enrollment, but the listed M.S. ends in May 2026."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668584161852229893",
+              "match_score": 61.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong React and TypeScript/JavaScript experience alongside backend APIs, data processing, and full-stack product delivery.",
+                "Relevant experience building data-oriented applications with testing, validation, and cross-functional collaboration."
+              ],
+              "main_gaps": [
+                "The Summer 2027 internship requires current enrollment, but the listed M.S. ends in May 2026."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668581636242016565",
+              "match_score": 62.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong programming and systems foundations in Java, Python, C++, DSA, distributed systems, concurrency, performance, and production reliability.",
+                "Experience developing scalable backend services, CI/CD workflows, and data-intensive platform components."
+              ],
+              "main_gaps": [
+                "The Summer 2027 internship requires current enrollment, but the listed M.S. ends in May 2026."
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7572665884037826869",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Ads Infrastructure) - 2026 Summer (BS/MS)"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7662700594251958581",
+              "company": "TikTok",
+              "title": "(General Hire) Software Engineer Intern (Trust and Safety-Engineering) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7662684280234232117",
+              "company": "TikTok",
+              "title": "(General Hire) Software Engineer Intern (Trust and Safety-Engineering) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669943120351906053",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Transaction Platform) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670289874020993285",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Intern (Creation Platform) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670281449668905269",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Foundation Platform) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669711844487399685",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Global CRM) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7654431844394322229",
+              "company": "TikTok",
+              "title": "Frontend Software Engineer Project Intern (Global CRM) - 2026 Start（BS/MS）"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935399050692917",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (TikTok-Social-Friending) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668584916620527925",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Business Integrity) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935739300317493",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Intern (TikTok-Privacy and Security) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668642761473902901",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Creative Intelligence and Brand Innovation) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7662594807715072261",
+              "company": "TikTok",
+              "title": "Software Engineer Project Intern (Global E-Commerce Search Infrastructure) - 2026 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668921505254410549",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (TikTok - Shoot Experience Optimization) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667933770819897605",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Intern (TikTok-PGC-Creator Strategy) - 2027 Summer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 25.408,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 10689,
+            "cached_input_tokens": 0,
+            "output_tokens": 2071,
+            "reasoning_tokens": 332,
+            "estimated_usd": 0.04623
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7572665884037826869",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct backend/platform experience with Python, Java, C++, async services, caching, reliability, and production deployments.",
+                "Strong evidence of algorithms/systems foundations and collaborative full-stack delivery."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7662700594251958581",
+              "match_score": 69.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong software-engineering evidence across Python, Java, C++, APIs, testing, and scalable backend services.",
+                "Prior internship and production project work exceed the role's preferred engineering-experience signal."
+              ],
+              "main_gaps": [
+                "The role requires current enrollment and Summer 2027 availability; the listed MS ends May 2026.",
+                "U.S. work authorization is required and sponsorship is unavailable; authorization is not established by the resume."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7662684280234232117",
+              "match_score": 69.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong software-engineering evidence across Python, Java, C++, APIs, testing, and scalable backend services.",
+                "Prior internship and production project work exceed the role's preferred engineering-experience signal."
+              ],
+              "main_gaps": [
+                "The role requires current enrollment and Summer 2027 availability; the listed MS ends May 2026.",
+                "U.S. work authorization is required and sponsorship is unavailable; authorization is not established by the resume."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669943120351906053",
+              "match_score": 68.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant Java, MySQL, Redis, Spark/data-pipeline, async-concurrency, and production reliability experience.",
+                "Has built and optimized backend retrieval services at meaningful user scale."
+              ],
+              "main_gaps": [
+                "The role requires current enrollment and Summer 2027 availability; the listed MS ends May 2026.",
+                "Hands-on familiarity with the required transaction-platform stack, especially Kafka, Flink, Elasticsearch, and RPC, is only partially evidenced."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670289874020993285",
+              "match_score": 70.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct backend experience with Java/Python/C++, REST services, databases, Redis caching, concurrency, and scalable system design.",
+                "Production work shows reliability, performance optimization, and cross-functional feature delivery."
+              ],
+              "main_gaps": [
+                "The role requires current enrollment and Summer 2027 availability; the listed MS ends May 2026.",
+                "Hands-on message-queue experience is required but not clearly evidenced."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670281449668905269",
+              "match_score": 72.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Meets the core language requirement through Python, Java, and C++ plus substantial backend and production engineering work.",
+                "Evidence includes scalable services, data pipelines, CI/CD, testing, observability, and cloud deployment."
+              ],
+              "main_gaps": [
+                "The role requires current enrollment and Summer 2027 availability; the listed MS ends May 2026."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669711844487399685",
+              "match_score": 68.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant Java, MySQL, Redis, Spark/data-pipeline, async-concurrency, and production reliability experience.",
+                "Has built and optimized backend retrieval services at meaningful user scale."
+              ],
+              "main_gaps": [
+                "The role requires current enrollment and Summer 2027 availability; the listed MS ends May 2026.",
+                "Hands-on familiarity with required components including Kafka, Flink, Elasticsearch, and RPC is only partially evidenced."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7654431844394322229",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct React, TypeScript/JavaScript, Vite, and production full-stack web application experience.",
+                "Built maintainable frontend-facing systems and shared platform components while working with cross-functional teams."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935399050692917",
+              "match_score": 67.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong backend/API, full-stack React, testing, and scalable-service experience supports end-to-end product engineering.",
+                "Demonstrated collaboration and production feature delivery are relevant to the team’s product scope."
+              ],
+              "main_gaps": [
+                "The role requires current enrollment and Summer 2027 availability; the listed MS ends May 2026.",
+                "Experience developing or integrating iOS and Android clients with backend services is a core requirement not evidenced."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668584916620527925",
+              "match_score": 70.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant scalable backend, information-retrieval/search, data-pipeline, and production reliability experience.",
+                "Strong programming and debugging evidence in Python, Java, and C++, with cross-functional project delivery."
+              ],
+              "main_gaps": [
+                "The role requires current enrollment and Summer 2027 availability; the listed MS ends May 2026."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935739300317493",
+              "match_score": 68.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Substantial software engineering experience with backend services, testing, cloud deployment, reliability, and team delivery.",
+                "Python, C++, Bash, and systems-oriented work align with the preferred technical profile."
+              ],
+              "main_gaps": [
+                "The role requires current enrollment and Summer 2027 availability; the listed MS ends May 2026."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668642761473902901",
+              "match_score": 69.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant Python and Java engineering experience, plus full-stack and retrieval-system work involving AI/content-understanding-adjacent products.",
+                "Prior internships and collaborative production projects meet the role’s stated expectation for early engineering-team experience."
+              ],
+              "main_gaps": [
+                "The role requires current enrollment and Summer 2027 availability; the listed MS ends May 2026."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7662594807715072261",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Exceptionally direct evidence in information retrieval, hybrid/vector search, reranking, retrieval APIs, latency optimization, and high-scale backend systems.",
+                "Relevant Spark/data-pipeline, Redis, distributed-systems, reliability, and production deployment experience supports the search-infrastructure scope."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668921505254410549",
+              "match_score": 62.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has Java, strong systems/software foundations, performance-oriented backend work, and experience building monitoring and reliability practices.",
+                "Demonstrated analytical problem-solving and production engineering are transferable to performance tooling."
+              ],
+              "main_gaps": [
+                "The role requires current enrollment and Summer 2027 availability; the listed MS ends May 2026.",
+                "Mobile-client development and Android/iOS performance optimization are central to the role but not evidenced."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667933770819897605",
+              "match_score": 71.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong fit for the core language requirement through Python, Java, and C++, supported by multiple backend and full-stack engineering roles.",
+                "Experience with scalable services, testing, reliability, and product-facing collaboration exceeds the basic internship expectations."
+              ],
+              "main_gaps": [
+                "The role requires current enrollment and Summer 2027 availability; the listed MS ends May 2026.",
+                "U.S. work authorization is required and sponsorship is unavailable; authorization is not established by the resume."
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935150530840837",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Intern (TikTok-Global Live-Foundation) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667934635573692725",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Intern (TikTok-Social-Friending) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935633764370741",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Intern (TikTok - Product Infrastructure) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667933335084124469",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Intern (TikTok-Search) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935565120112949",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Intern (TikTok-Social-Foundation) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667934302872537397",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Intern (TikTok- PGC-Digital Content Center) - 2027 Summer"
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8142961?t=gh_src%3D&gh_jid=8142961",
+              "company": "Robinhood",
+              "title": "Software Engineering Intern, Android (Summer 2027)"
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8123225?t=gh_src%3D&gh_jid=8123225",
+              "company": "Robinhood",
+              "title": "Software Engineering Intern, Backend (Summer 2027)"
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8142959?t=gh_src%3D&gh_jid=8142959",
+              "company": "Robinhood",
+              "title": "Software Engineering Intern, iOS (Summer 2027)"
+            },
+            {
+              "key": "url::https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/Michigan-Kalamazoo-4100-East-Milham-Rd/Architect--Cybersecurity--Identity-Security---Remote_R573260-1",
+              "company": "Stryker",
+              "title": "Architect, Cybersecurity, Identity Security - Remote"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673667938889009461",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Media Engine) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673284715407886597",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Recommendation Infrastructure) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670367152357673221",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Media Engine) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668680253677504821",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Quality and Efficiency Technology) - 2027 Start"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Ft-Collins-Colorado-United-States-of-America/Telco-Infrastructure-Engineer_1212326-3",
+              "company": "HPE",
+              "title": "Telco Infrastructure Engineer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 28.78,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 15020,
+            "cached_input_tokens": 0,
+            "output_tokens": 2338,
+            "reasoning_tokens": 534,
+            "estimated_usd": 0.058096
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935150530840837",
+              "match_score": 74.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production backend experience with async REST services, caching, reliability testing, and AWS deployment.",
+                "Strong evidence of scalable-system work, Python/Java/C++, and distributed-systems fundamentals."
+              ],
+              "main_gaps": [
+                "The required Summer 2027 enrollment/12-week availability conflicts with the resume's May 2026 MS graduation."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667934635573692725",
+              "match_score": 68.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has delivered production full-stack applications and collaborated across engineering and product-oriented stakeholders.",
+                "Relevant backend and frontend implementation experience for high-scale consumer features."
+              ],
+              "main_gaps": [
+                "The required Summer 2027 enrollment/12-week availability conflicts with the resume's May 2026 MS graduation."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935633764370741",
+              "match_score": 75.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct evidence of backend service development, SQL/NoSQL databases, caching, Docker, and cloud deployment.",
+                "Reliability, scalability, monitoring, and distributed-system experience align closely with account-platform work."
+              ],
+              "main_gaps": [
+                "The required Summer 2027 enrollment/12-week availability conflicts with the resume's May 2026 MS graduation."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667933335084124469",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct search-platform experience: hybrid search, reranking, retrieval APIs, and sub-second latency optimization.",
+                "Strong backend, data-processing, testing, and scalability evidence for Search infrastructure work."
+              ],
+              "main_gaps": [
+                "The required Summer 2027 enrollment/12-week availability conflicts with the resume's May 2026 MS graduation."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935565120112949",
+              "match_score": 72.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Demonstrated scalable backend, async/concurrency, caching, and distributed-system experience.",
+                "Meets the core programming and CS-fundamentals expectations with Python, Java, and C++ evidence."
+              ],
+              "main_gaps": [
+                "The required Summer 2027 enrollment/12-week availability conflicts with the resume's May 2026 MS graduation.",
+                "No direct graph database, graph-computing, or real-time graph-mining experience."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667934302872537397",
+              "match_score": 77.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong direct fit in REST backend services, MySQL/PostgreSQL/MongoDB/Redis, Docker, Linux, testing, and production reliability.",
+                "Experience with async processing, scalable retrieval systems, CI/CD, and cloud deployment supports event-driven distributed-service work."
+              ],
+              "main_gaps": [
+                "The required Summer 2027 enrollment/12-week availability conflicts with the resume's May 2026 MS graduation."
+              ]
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8142961?t=gh_src%3D&gh_jid=8142961",
+              "match_score": 47.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has solid general software engineering and full-stack product delivery experience.",
+                "React/TypeScript frontend work is transferable to product-facing mobile development."
+              ],
+              "main_gaps": [
+                "No evidence of building an Android app or using Android components, Kotlin, and the required Android ecosystem.",
+                "The stated Winter 2027 or Spring 2028 graduation eligibility does not match the May 2026 MS graduation."
+              ]
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8123225?t=gh_src%3D&gh_jid=8123225",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong backend fit through production Python/FastAPI services, databases, caching, Docker, AWS, CI/CD, and reliability work.",
+                "Has delivered end-to-end engineering projects and has relevant SQL, distributed-system, and scalability experience."
+              ],
+              "main_gaps": [
+                "The stated Winter 2027 or Spring 2028 graduation eligibility does not match the May 2026 MS graduation."
+              ]
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8142959?t=gh_src%3D&gh_jid=8142959",
+              "match_score": 40.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has general full-stack product engineering experience and cross-functional collaboration experience.",
+                "Strong software fundamentals are transferable to mobile engineering."
+              ],
+              "main_gaps": [
+                "No evidence of Swift, UIKit, iOS/watchOS development, or the required deep UIKit understanding.",
+                "The stated Winter 2027 or Spring 2028 graduation eligibility does not match the May 2026 MS graduation."
+              ]
+            },
+            {
+              "key": "url::https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/Michigan-Kalamazoo-4100-East-Milham-Rd/Architect--Cybersecurity--Identity-Security---Remote_R573260-1",
+              "match_score": 12.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Some transferable cloud and backend systems experience.",
+                "No direct evidence supporting enterprise IAM architecture ownership."
+              ],
+              "main_gaps": [
+                "Requires 8+ years in cybersecurity/identity management and 3+ years designing enterprise IAM architectures.",
+                "No evidenced hands-on IAM, SSO/MFA/PAM/IGA, or identity-platform expertise."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673667938889009461",
+              "match_score": 73.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Explicit 2027 graduate software-engineering role fits the candidate's early-career level.",
+                "Backend, cloud deployment, performance, reliability, and systems experience provide relevant general SWE evidence."
+              ],
+              "main_gaps": [
+                "The listing provides no responsibilities or qualifications to establish a direct Media Engine specialization match."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673284715407886597",
+              "match_score": 79.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong relevant evidence in retrieval/search, reranking, data pipelines, scalable backend services, and latency optimization.",
+                "Explicit 2027 graduate software-engineering role is aligned with early-career seniority."
+              ],
+              "main_gaps": [
+                "The listing provides no responsibilities or qualifications to confirm the specific Recommendation Infrastructure scope."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670367152357673221",
+              "match_score": 73.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Explicit 2027 graduate software-engineering role fits the candidate's early-career level.",
+                "Production backend, cloud, performance, and reliability work offer relevant software-engineering foundations."
+              ],
+              "main_gaps": [
+                "The listing provides no responsibilities or qualifications to establish a direct Media Engine specialization match."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668680253677504821",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong quality and efficiency evidence through 90+ automated tests, regression harnesses, observability, validation, and release automation.",
+                "Explicit graduate SWE scope is appropriate for the candidate's career level."
+              ],
+              "main_gaps": [
+                "The listing provides no responsibilities or qualifications beyond the title, limiting confirmation of the actual scope."
+              ]
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Ft-Collins-Colorado-United-States-of-America/Telco-Infrastructure-Engineer_1212326-3",
+              "match_score": 34.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Python, Bash, automation, Linux, testing, and performance-oriented engineering experience are partially transferable.",
+                "Some systems and distributed-platform background is relevant to infrastructure work."
+              ],
+              "main_gaps": [
+                "Requires 4–6 years of experience and project-lead/mentoring scope beyond the early-career resume.",
+                "Hardware-first telco server/network validation requires server, switching, traffic-generator, and carrier-grade testing experience not evidenced."
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Software-Engineer--Hardware-Tools-and-Methodology---New-College-Grad-2026_JR2018659",
+              "company": "NVIDIA",
+              "title": "Software Engineer, Hardware Tools and Methodology - New College Grad 2026"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673218580784367925",
+              "company": "TikTok",
+              "title": "Solutions Engineer Intern (Advertisement Team) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672345290048817413",
+              "company": "TikTok",
+              "title": "Open Platform Product Project Intern (TikTok-Product-Open Platform) - 2026 Start"
+            },
+            {
+              "key": "url::https://www.disneycareers.com/en/job/burbank/forward-deployed-engineer/391/99732117968",
+              "company": "Disney",
+              "title": "Forward Deployed Engineer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670419762749819189",
+              "company": "TikTok",
+              "title": "Platform User Operations Specialist Intern（TikTok-Platform Responsibility-User Feedback Operations）- 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7592014594232142085",
+              "company": "TikTok",
+              "title": "Platform Campaign Project Intern (TikTok Shop - Operations) - 2026 Start (BS/MS)"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668701361741007109",
+              "company": "TikTok",
+              "title": "Site Reliability Engineer Graduate (Global SRE) - 2027 Start"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 15.329,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 7,
+            "input_tokens": 4732,
+            "cached_input_tokens": 0,
+            "output_tokens": 1160,
+            "reasoning_tokens": 309,
+            "estimated_usd": 0.023384
+          },
+          "decisions": [
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Software-Engineer--Hardware-Tools-and-Methodology---New-College-Grad-2026_JR2018659",
+              "match_score": 67.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Explicit new-college-grad software engineering role aligns with candidate's early-career level.",
+                "Candidate has strong backend/software delivery, testing, CI/CD, and performance/reliability experience."
+              ],
+              "main_gaps": [
+                "Hardware-tools, hardware-methodology, or EDA-specific experience is not evidenced."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673218580784367925",
+              "match_score": 83.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has shipped production-quality Python/TypeScript backend and full-stack systems, including REST services, testing, deployment, and reliability work.",
+                "Direct evidence of API/backend design plus experience building tools for support and implementation teams fits hands-on customer-solution delivery."
+              ],
+              "main_gaps": [
+                "Limited explicit evidence of advertiser-domain work or customer-facing technical roadmap ownership."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672345290048817413",
+              "match_score": 43.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant CS background and some full-stack/platform experience could support technical product collaboration.",
+                "Experience building APIs and platform-oriented services provides useful context for an open-platform product team."
+              ],
+              "main_gaps": [
+                "Fluent written and spoken Mandarin, a stated minimum qualification, is not evidenced.",
+                "Resume emphasizes engineering delivery rather than product requirements, prototyping, and product-project management."
+              ]
+            },
+            {
+              "key": "url::https://www.disneycareers.com/en/job/burbank/forward-deployed-engineer/391/99732117968",
+              "match_score": 70.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate built a production knowledge application specifically for support/implementation teams, a relevant foundation for forward-deployed technical work.",
+                "Strong full-stack, API, deployment, troubleshooting, and reliability experience supports hands-on implementation work."
+              ],
+              "main_gaps": [
+                "The provided description contains no responsibilities or required qualifications, so direct fit with the actual forward-deployed scope cannot be verified."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670419762749819189",
+              "match_score": 62.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate meets the technical foundation through JavaScript, SQL, REST APIs, backend systems, and production debugging/reliability experience.",
+                "Experience diagnosing pipeline and service issues and building support-oriented internal tooling is relevant to technical troubleshooting."
+              ],
+              "main_gaps": [
+                "The role is primarily user operations and ticket/SOP support rather than software engineering or platform development."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7592014594232142085",
+              "match_score": 48.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "CS and applied-mathematics background plus data-pipeline work support analytical problem solving.",
+                "Experience collaborating on production systems could help with product/operations coordination."
+              ],
+              "main_gaps": [
+                "Core work is commerce operations, product coordination, and project execution rather than hands-on software engineering.",
+                "No direct e-commerce or operations-project experience is evidenced."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668701361741007109",
+              "match_score": 87.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Explicit graduate SRE role strongly matches candidate seniority, while the resume shows substantial reliability-oriented engineering work.",
+                "Candidate has AWS ECS/Fargate deployment, Docker, Kubernetes, Terraform, CI/CD, observability, Linux, testing, and async/distributed-systems experience."
+              ],
+              "main_gaps": [
+                "The provided description has no listed minimum qualifications or operational responsibilities, limiting verification of specific SRE expectations."
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 5,
+          "route": "resume_ai",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7668202602270951733",
+              "company": "TikTok",
+              "title": "Research Engineer Intern (Monetization Technology - Business Integrity) - 2027 Summer"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7630900369176430853",
+              "company": "ByteDance",
+              "title": "Research Engineer - LLM Training Infrastructure - Seed Infra"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669702702763018501",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Intern (Commercial AI-CRM and Transaction) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670285031018432773",
+              "company": "TikTok",
+              "title": "LLM Post-training Engineer Intern (Research & Product) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669698648817305909",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Intern (Search Ads) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669693163422845237",
+              "company": "TikTok",
+              "title": "(General Hire) Machine Learning Engineer Intern (Performance Monetization) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669709472078170373",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Intern (App Ads and Gaming) - 2027 Summer"
+            },
+            {
+              "key": "url::https://wd5.myworkdaysite.com/recruiting/chewy/External/job/Richardson-TX/Machine-Learning-Engineer-II_R30459-1",
+              "company": "Chewy",
+              "title": "Machine Learning Engineer II"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7674025781001062709",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (E-Commerce Governance) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7674023327725373701",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (E-Commerce Governance) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672915427278457141",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (E-Commerce Recommendation Mall) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668592348941273349",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (Monetization Technology - Ads Core Global) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668669015051405573",
+              "company": "TikTok",
+              "title": "Research Scientist Graduate (Ads Creative) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667770207780194613",
+              "company": "TikTok",
+              "title": "Research Scientist Graduate (Monetization Technology - Business Integrity) - 2027 Start"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 32.275,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 14,
+            "input_tokens": 6652,
+            "cached_input_tokens": 0,
+            "output_tokens": 2405,
+            "reasoning_tokens": 751,
+            "estimated_usd": 0.042164
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7668202602270951733",
+              "match_score": 79.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Built production RAG, agent, multimodal-document, evaluation, and LLM fine-tuning/serving systems.",
+                "Strong Python and end-to-end engineering evidence, including CI/CD, deployment, debugging, retrieval evaluation, and guardrails."
+              ],
+              "main_gaps": [
+                "PyTorch or TensorFlow proficiency is not explicitly evidenced."
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7630900369176430853",
+              "match_score": 63.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has direct LLM fine-tuning and vLLM serving experience, plus production AI-platform engineering work.",
+                "Has strong supporting infrastructure experience with Docker, AWS, CI/CD, evaluation, and observability."
+              ],
+              "main_gaps": [
+                "The posting provides no qualifications, but an LLM training-infrastructure research role may require distributed-training experience not clearly demonstrated."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669702702763018501",
+              "match_score": 79.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct hands-on LangGraph, MCP tool-calling, memory, and enterprise agent-system experience.",
+                "Has practical LLM fine-tuning, retrieval augmentation, structured evaluation, and production Python service experience."
+              ],
+              "main_gaps": [
+                "In-depth SFT/RLHF post-training experience is not clearly evidenced."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670285031018432773",
+              "match_score": 77.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct QLoRA/PEFT model fine-tuning and vLLM deployment experience aligns with applied LLM post-training work.",
+                "Built robust LLM evaluation infrastructure with large labeled datasets, rubric metrics, regression tests, and human validation."
+              ],
+              "main_gaps": [
+                "PyTorch or JAX experience is not explicitly listed.",
+                "Preference optimization/RLHF methods such as DPO or PPO are not clearly evidenced."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669698648817305909",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has applied ML pipeline experience, retrieval/reranking work, Python/C++ skills, and evidence of data-driven model evaluation.",
+                "Strong engineering foundation for large-scale ML iteration, including Spark/Databricks data work and production services."
+              ],
+              "main_gaps": [
+                "PyTorch, TensorFlow, or MXNet experience is not explicitly evidenced.",
+                "Direct ads ranking, CTR/CVR estimation, or search-query modeling experience is not shown."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669693163422845237",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Demonstrated applied ML, model evaluation, feature engineering, Python/C++, and production data-system experience.",
+                "Has built and deployed practical AI systems and collaborated on business-facing enterprise applications."
+              ],
+              "main_gaps": [
+                "PyTorch, TensorFlow, or MXNet experience is not explicitly evidenced.",
+                "No direct evidence of ads targeting, recommendation, or monetization-model development."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669709472078170373",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Applied ML pipeline work, Python/C++ programming, and data/production engineering provide a solid base for ad-delivery ML work.",
+                "Experience delivering business-facing AI systems and collaborating across implementation contexts supports product-team work."
+              ],
+              "main_gaps": [
+                "PyTorch, TensorFlow, or MXNet experience is not explicitly evidenced.",
+                "No direct evidence of ads targeting, recommendation, or monetization-model development."
+              ]
+            },
+            {
+              "key": "url::https://wd5.myworkdaysite.com/recruiting/chewy/External/job/Richardson-TX/Machine-Learning-Engineer-II_R30459-1",
+              "match_score": 62.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has production LLM/ML systems experience spanning fine-tuning, evaluation, serving, data pipelines, and cloud deployment.",
+                "Relevant software engineering and MLOps evidence includes FastAPI, Docker, AWS, CI/CD, Spark, and observability."
+              ],
+              "main_gaps": [
+                "MLE II scope may require more sustained industry ML-engineering experience than the resume demonstrates.",
+                "The posting contains no responsibilities or minimum qualifications to verify domain-specific fit."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7674025781001062709",
+              "match_score": 72.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Explicit graduate ML-engineer title is well aligned with the candidate's M.S. and early-career AI engineering background.",
+                "Resume shows applied ML, LLM, retrieval, evaluation, and production implementation experience."
+              ],
+              "main_gaps": [
+                "No job responsibilities or minimum qualifications were provided, so fit with e-commerce governance modeling cannot be confirmed."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7674023327725373701",
+              "match_score": 72.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Explicit graduate ML-engineer title aligns well with the candidate's M.S. and early-career AI engineering experience.",
+                "Relevant evidence includes applied ML pipelines, LLM systems, evaluation, and production deployment."
+              ],
+              "main_gaps": [
+                "No job responsibilities or minimum qualifications were provided, so fit with e-commerce governance modeling cannot be confirmed."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672915427278457141",
+              "match_score": 73.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Graduate ML-engineer scope fits the candidate's early-career profile and applied ML engineering background.",
+                "Retrieval optimization, reranking, feature engineering, and data-pipeline work are relevant to recommendation-adjacent systems."
+              ],
+              "main_gaps": [
+                "No job responsibilities or minimum qualifications were provided, so direct e-commerce recommendation-model fit cannot be verified."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668592348941273349",
+              "match_score": 72.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Graduate ML-engineer level is appropriate for the candidate's education and practical AI engineering experience.",
+                "Has relevant applied ML, evaluation, data engineering, and production-system evidence."
+              ],
+              "main_gaps": [
+                "No job responsibilities or minimum qualifications were provided, so direct ads-core modeling fit cannot be verified."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668669015051405573",
+              "match_score": 71.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant LLM research-engineering evidence includes a large-scale evaluation platform, labeled datasets, metrics design, and human study validation.",
+                "Also has practical multimodal-document processing, fine-tuning, and production AI implementation experience."
+              ],
+              "main_gaps": [
+                "No job responsibilities or minimum qualifications were provided, so the depth of research-scientist and ads-creative requirements cannot be verified."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667770207780194613",
+              "match_score": 71.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strongly relevant LLM evaluation, guardrail, multimodal-document, and production AI-system experience for business-integrity-adjacent work.",
+                "Research-engineering evidence includes large labeled datasets, evaluation metrics, and human-study validation."
+              ],
+              "main_gaps": [
+                "No job responsibilities or minimum qualifications were provided, so the role's expected research depth and moderation-model specialization cannot be verified."
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 6,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7646621925436131637",
+              "company": "TikTok",
+              "title": "AI software Engineer Project Intern (Transaction Platform) - 2026 Start (BS/MS)"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935739300792629",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (TikTok- Developer Platform) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7674032146438162693",
+              "company": "TikTok",
+              "title": "Data Engineer Intern (Data Platform Global Live) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7676250516494436661",
+              "company": "TikTok",
+              "title": "Data Engineer Intern (E-commerce) - 2027 Summer"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/127788813236740806-software-engineer-agent-cloud-rate-limiting",
+              "company": "Google",
+              "title": "Software Engineer, Agent Cloud Rate Limiting"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10538318/software-development-engineer-aws-transform",
+              "company": "Amazon",
+              "title": "Software Development Engineer, AWS Transform"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10538328/software-development-engineer-ads-nova",
+              "company": "Amazon",
+              "title": "Software Development Engineer , Ads Nova"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210779864",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer III - ML Model Delivery"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210784706",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer III (Full Stack Java)"
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/297773",
+              "company": "Dell",
+              "title": "ISG Software Engineering Undergrad Internship"
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/297379",
+              "company": "Dell",
+              "title": "Oracle Database Automation Engineer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672671220798818613",
+              "company": "TikTok",
+              "title": "AI Infra Engineer Intern (Recommendation & LLM) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935738190465285",
+              "company": "TikTok",
+              "title": "AI Engineer Intern (TikTok-Client Arch)- 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7676276048527214901",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (TikTok AI Search & Visual Search Infra Team) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668837276597127477",
+              "company": "TikTok",
+              "title": "Software Development Engineer Intern (Global E-Commerce-Quality Platform & AI Test Automation) - 2027 Summer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 28.722,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 14515,
+            "cached_input_tokens": 0,
+            "output_tokens": 2245,
+            "reasoning_tokens": 338,
+            "estimated_usd": 0.05597
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7646621925436131637",
+              "match_score": 95.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct production experience building RAG knowledge systems with ingestion, hybrid retrieval, reranking, agents, and evaluation.",
+                "Strong platform delivery evidence across FastAPI/React, AWS deployment, CI/CD, testing, reliability, and developer-facing tooling."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935739300792629",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Built production full-stack applications and REST services using React, TypeScript, FastAPI, Node.js, databases, and testing.",
+                "Relevant developer-platform experience through internal knowledge tooling, CI/CD deployment, API development, and workflow usability improvements."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7674032146438162693",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Demonstrated Python, SQL, Spark, Databricks, ingestion, normalization, and data-quality work in production-oriented workflows.",
+                "Experience translating operational/business needs into data and automation solutions, including high-volume ingestion and analytics improvements."
+              ],
+              "main_gaps": [
+                "Direct data-warehouse design and data-consulting/product-facing data-tool ownership are less clearly evidenced."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7676250516494436661",
+              "match_score": 74.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has hands-on Spark, Databricks, SQL, ingestion, integration, and reliable data-processing experience.",
+                "Strong software reliability and scalable-service background is transferable to data-platform engineering."
+              ],
+              "main_gaps": [
+                "Required experience with the listed big-data ecosystem technologies is only partially evidenced; Spark is clear, but Hadoop/Hive/Kafka/Flink-style platform work is not.",
+                "ETL architecture, schema design, and data modeling ownership are not clearly demonstrated."
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/127788813236740806-software-engineer-agent-cloud-rate-limiting",
+              "match_score": 63.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant backend/platform evidence includes asynchronous services, caching, cloud deployment, reliability work, and distributed-systems fundamentals.",
+                "Production LLM-agent and retrieval-system experience aligns directionally with the Agent Cloud domain."
+              ],
+              "main_gaps": [
+                "The required two years of software development and large-scale infrastructure/distributed-systems experience are not clearly met by the resume.",
+                "No direct evidence of rate-limiting, networking infrastructure, or large-scale cloud control-plane ownership."
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10538318/software-development-engineer-aws-transform",
+              "match_score": 49.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong applied agentic-AI and production backend experience, including tool calling, deployment, evaluation, and reliability practices.",
+                "Has relevant distributed-systems and cloud-development foundations."
+              ],
+              "main_gaps": [
+                "Role requires 3+ years of non-internship professional software development and substantial architecture experience, which are not evidenced.",
+                "Scope calls for complex distributed-system architecture, cross-team technical alignment, and mentoring beyond the candidate's demonstrated seniority."
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10538328/software-development-engineer-ads-nova",
+              "match_score": 47.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate has credible AI application, full-stack, and production-service delivery experience.",
+                "Experience evaluating and integrating LLM/agent capabilities is relevant to AI-powered product development."
+              ],
+              "main_gaps": [
+                "Required 3+ years of non-internship software-development and full-SDLC experience are not clearly evidenced.",
+                "The greenfield, enterprise-scale architecture and peer-mentoring scope is materially beyond early-career experience."
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210779864",
+              "match_score": 56.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong Python, FastAPI, Spark/Databricks, AWS, Docker, Terraform, CI/CD, LLM evaluation, and production data-pipeline evidence.",
+                "Relevant experience building reliable retrieval and AI workflows with testing, observability, validation, and deployment automation."
+              ],
+              "main_gaps": [
+                "Required 3+ years of applied experience and independent ownership of production ML/data platform work are not clearly met.",
+                "Hands-on AWS ML-platform components and MLOps requirements such as EMR/ECS deployment, model lifecycle management, and Terraform-led infrastructure are only partially evidenced."
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210784706",
+              "match_score": 49.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant React/TypeScript, Java/Spring Boot, REST API, database, testing, CI/CD, and full-stack delivery experience.",
+                "Candidate has built and maintained production-oriented applications with validation, observability, and integration testing."
+              ],
+              "main_gaps": [
+                "Required 3+ years of applied experience and extensive enterprise-scale full-stack delivery are not clearly evidenced.",
+                "No clear evidence of large-corporate Java/Spring Boot ownership, design-system work at scale, or accessibility/WCAG implementation."
+              ]
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/297773",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Excellent foundation in Python/Java/C++, Git, CI/CD, Docker, testing, debugging, and production software delivery.",
+                "Direct experience with agents, LangGraph, MCP tool calling, LLM evaluation, guardrails, structured validation, and AI-assisted workflow reliability."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/297379",
+              "match_score": 24.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has Python, Bash, Terraform, CI/CD, Docker, AI-agent, and MCP-related experience that is directionally relevant to automation work.",
+                "Demonstrated production reliability and validation practices transfer to infrastructure automation."
+              ],
+              "main_gaps": [
+                "The core requirement of 5+ years with Oracle RAC, ASM, and DataGuard is entirely unsubstantiated.",
+                "Deep Linux administration, enterprise Ansible automation, and GitLab CI/CD template ownership at database-fleet scale are not evidenced."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672671220798818613",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong Python/C++ foundation plus production LLM, vLLM serving, fine-tuning, RAG, performance, and AI-platform experience.",
+                "Meets core ML-system foundations through PyTorch, LLM work, scalable backend systems, and performance-oriented retrieval optimization."
+              ],
+              "main_gaps": [
+                "No clear hands-on evidence of distributed model training or GPU programming/optimization, which is central to the team's likely day-to-day work."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935738190465285",
+              "match_score": 93.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct experience building AI-native developer and knowledge platforms with agents, MCP tool calling, RAG, evaluation, guardrails, and developer-facing full-stack systems.",
+                "Strong end-to-end engineering evidence across React/TypeScript, FastAPI, APIs, AWS, CI/CD, testing, observability, and maintainable architecture."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7676276048527214901",
+              "match_score": 93.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Exceptionally direct experience with document ingestion, indexing, hybrid retrieval, reranking, RAG, agent/tool workflows, vLLM serving, and evaluation.",
+                "Strong matching systems background in Python/C++, Linux, async services, performance optimization, scalable data workflows, and production AI platforms."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668837276597127477",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong testing and quality evidence: 90+ unit/integration tests, regression gates, structured-output validation, evaluation harnesses, tracing, and debugging.",
+                "Relevant engineering-tooling background across full-stack services, CI/CD, automated workflows, reliability, and AI evaluation."
+              ],
+              "main_gaps": [
+                "Direct ownership of traditional functional/regression/performance test-automation frameworks is less explicit than the role's quality-engineering focus."
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 7,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7669712589169117445",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (AI Agent & Global Revenue Platform) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668837275459324213",
+              "company": "TikTok",
+              "title": "Software Development Engineer Intern (Global E-Commerce - Quality Platform & AI Test Automation) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670876223732762933",
+              "company": "TikTok",
+              "title": "Recommendation Architecture AI/ML Infrastructure Engineer Intern (Data-Arch-TikTok Live) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7621299118434961669",
+              "company": "TikTok",
+              "title": "Software Engineer Project Intern (Content AI Infrastructure) - 2026 Start (BS/MS)"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668675500744837381",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (TikTok-Agentic Creation-AIGC) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668445566565321013",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (TikTok-Agentic Creation-Effect Platform) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667934860750063925",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Intern (TikTok-Growth-Innovative Growth) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669705785962727733",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Ads Interface) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7629500062003218741",
+              "company": "TikTok",
+              "title": "Software Engineer Project Intern (Recommendation Infrastructure, TikTok Video Social) - 2026 Start (BS/MS)"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670839727059339525",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Global E-commerce-Search) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675159726676101381",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Recommendation Infra, Performance Efficiency) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668725183121000757",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (TikTok - Effects Performance) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670839752644233525",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Global E-commerce-Search) - 2027 Fall"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7624284785283746053",
+              "company": "TikTok",
+              "title": "Software Engineer Project Intern (Model Infrastructure) - 2026 Start (BS/MS)"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675163472469444917",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Recommendation Infra, Performance Efficiency) - 2027 Fall"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 27.575,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 13395,
+            "cached_input_tokens": 0,
+            "output_tokens": 2135,
+            "reasoning_tokens": 469,
+            "estimated_usd": 0.05241
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7669712589169117445",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct production experience building AI agents with MCP tool calling, RAG, evaluation, and retrieval services.",
+                "Strong backend/platform evidence across FastAPI, APIs, caching, databases, CI/CD, and scalable retrieval."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668837275459324213",
+              "match_score": 83.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Built automated evaluation harnesses, regression tests, structured validation, and 90+ unit/integration tests.",
+                "Has hands-on Python engineering, debugging, backend, data, and reliability experience."
+              ],
+              "main_gaps": [
+                "Limited explicit experience owning functional/regression/performance test-automation frameworks."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670876223732762933",
+              "match_score": 83.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong Python/C++ foundation plus production LLM, retrieval, model-serving, and PyTorch experience.",
+                "Relevant work optimizing retrieval/inference services and diagnosing performance and quality bottlenecks."
+              ],
+              "main_gaps": [
+                "No clear hands-on distributed LLM training or GPU-kernel/communication optimization experience."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7621299118434961669",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant Python/C++/Java, Spark, scalable backend, retrieval, and LLM inference experience.",
+                "Has built reliable high-volume ingestion and data-processing workflows and improved performance of enterprise retrieval systems."
+              ],
+              "main_gaps": [
+                "No clear evidence of required message-queue experience such as Kafka or Pulsar.",
+                "No demonstrated high-concurrency training/inference architecture using Flink/Spark at the stated infrastructure scope."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668675500744837381",
+              "match_score": 62.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong GenAI evidence, including RAG, prompt workflows, LLM evaluation, multimodal document processing, and production AI systems.",
+                "Meets the general programming and software-engineering foundation for an intern role."
+              ],
+              "main_gaps": [
+                "No demonstrated computer graphics, 3D creation, game-engine, rendering, or VFX-pipeline experience, which is central to the work."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668445566565321013",
+              "match_score": 93.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Exceptional overlap with agentic systems: LangGraph, MCP tool calling, RAG, retrieval, prompt workflows, evaluation, and production guardrails.",
+                "Strong end-to-end full-stack and backend delivery evidence using React, TypeScript, FastAPI, APIs, data workflows, and cloud deployment."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667934860750063925",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct backend experience with FastAPI, REST services, databases, caching, async processing, data pipelines, and production reliability.",
+                "Strong evidence for AI-enabled backend work through agents, tool calling, RAG, retrieval, evaluation pipelines, and workflow automation."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669705785962727733",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong CS/software-engineering foundation with production full-stack/backend delivery, testing, and cross-functional collaboration.",
+                "Relevant experience developing scalable services and AI-enabled product features."
+              ],
+              "main_gaps": [
+                "The stated responsibilities include managing engineers, defining team roadmaps, and owning project priorities, which is materially beyond typical intern-level scope and the resume evidence."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7629500062003218741",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant scalable data-pipeline and backend experience, including Spark/Databricks workflows, high-volume ingestion, and production retrieval services.",
+                "Meets programming requirement through C++ and Java, with strong ownership, testing, and reliability evidence."
+              ],
+              "main_gaps": [
+                "No direct demonstrated recommendation-system or real-time training-pipeline experience."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670839727059339525",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct search/retrieval evidence: hybrid search, BM25+dense retrieval, reranking, vector search, Recall@10 improvements, and low-latency services.",
+                "Strong production software background in Python/C++/Java, modular backend design, testing, debugging, metrics, and scalable data systems."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675159726676101381",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong evidence building scalable backend/distributed services with async concurrency, caching, reliability practices, observability, and performance improvements.",
+                "Relevant systems programming languages and data-platform experience, including C++, Java, Spark, Docker, Linux, and production service deployment."
+              ],
+              "main_gaps": [
+                "No direct evidence of low-latency recommendation-serving optimization across CPU/GPU resources at large-scale production scope."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668725183121000757",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong general software engineering foundation with C++/Python, scalable systems, testing, observability, and performance-oriented retrieval optimization.",
+                "Relevant experience building automated evaluation and regression-analysis workflows."
+              ],
+              "main_gaps": [
+                "No demonstrated graphics, real-time rendering, mobile performance profiling, or graphics-API experience central to the role."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670839752644233525",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct search/retrieval evidence: hybrid search, BM25+dense retrieval, reranking, vector search, Recall@10 improvements, and low-latency services.",
+                "Strong production software background in Python/C++/Java, modular backend design, testing, debugging, metrics, and scalable data systems."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7624284785283746053",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has C++/Python, PyTorch, LLM systems, model serving, and performance-minded backend/retrieval experience.",
+                "Relevant interest and experience in production inference, fine-tuning, vLLM serving, and scalable AI services."
+              ],
+              "main_gaps": [
+                "No clear evidence of the required solid GPU software-stack knowledge in CUDA, Triton, or NCCL.",
+                "No demonstrated distributed training, hardware-aware optimization, or large-scale model-state infrastructure experience."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675163472469444917",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong evidence building scalable backend/distributed services with async concurrency, caching, reliability practices, observability, and performance improvements.",
+                "Relevant systems programming languages and data-platform experience, including C++, Java, Spark, Docker, Linux, and production service deployment."
+              ],
+              "main_gaps": [
+                "No direct evidence of low-latency recommendation-serving optimization across CPU/GPU resources at large-scale production scope."
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 8,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7674029284224092421",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Recommendation Architecture, Feeds Infrastructure) - 2027 Fall"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672934842451577141",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Recommendation Architecture, Feeds Infrastructure) - 2027 Fall"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668862422178318597",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (TikTok-Intelligent Creation-Camera) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7662653087863081221",
+              "company": "TikTok",
+              "title": "(General Hire) Machine Learning Engineer Intern (TikTok-Recommendation) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668396597746862341",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Intern (Data-Global E-Commerce-Search) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667350291952765237",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Intern (TikTok-Data-Search-Visual Search) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7665475460339665157",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Intern (TikTok-Data-Search-Search Quality) - Summer 2027"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668379675467761925",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Intern (TikTok-Data-Search-Local Service) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669711968043092229",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Intern (Commerce Ads) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669700361976809733",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Intern (Ads Signal & Measurement) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667338938890930437",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Intern (TikTok-Data-Search-Basic Ranking) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668383643375257909",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Intern (TikTok-Data-Search-Recommendation-Global E-Commerce) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667346576033777925",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Intern (TikTok-Data-Search-Recommendation) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675524738811218229",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (TikTok Search Architecture) - 2027 Fall"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675517686256863541",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (TikTok Search Architecture) - 2027 Summer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 28.62,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 12190,
+            "cached_input_tokens": 0,
+            "output_tokens": 2304,
+            "reasoning_tokens": 715,
+            "estimated_usd": 0.052028
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7674029284224092421",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong backend/data-pipeline experience, including Spark/Databricks workflows and reliable high-throughput ingestion.",
+                "Direct production retrieval and ML-serving-adjacent systems experience with Python, Java, C++, async services, caching, and reliability practices."
+              ],
+              "main_gaps": [
+                "No clearly demonstrated production recommendation-model training or real-time online-training experience."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672934842451577141",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong backend/data-pipeline experience, including Spark/Databricks workflows and reliable high-throughput ingestion.",
+                "Direct production retrieval and ML-serving-adjacent systems experience with Python, Java, C++, async services, caching, and reliability practices."
+              ],
+              "main_gaps": [
+                "No clearly demonstrated production recommendation-model training or real-time online-training experience."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668862422178318597",
+              "match_score": 82.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Explicit internship scope fits the candidate's current M.S. program and software-engineering background.",
+                "Has production AI-enabled user-facing application experience and strong full-stack engineering evidence."
+              ],
+              "main_gaps": [
+                "No demonstrated mobile application development or AR/camera-effects implementation experience."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7662653087863081221",
+              "match_score": 82.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Pursuing the required M.S. degree and has hands-on PyTorch, fine-tuning, ML-pipeline, and model-evaluation experience.",
+                "Relevant retrieval/ranking-adjacent work includes hybrid retrieval, reranking, learner-risk modeling, and production AI systems."
+              ],
+              "main_gaps": [
+                "Limited evidence of theoretical ML research depth or recommendation-model research compared with the role's research-oriented scope."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668396597746862341",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct search and retrieval experience: hybrid BM25+dense retrieval, reranking, evaluation sets, and Recall@10 improvement.",
+                "Strong evidence for the required programming and CS fundamentals through production backend systems, data pipelines, testing, and scalable services."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667350291952765237",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct search and retrieval experience: hybrid BM25+dense retrieval, reranking, evaluation sets, and Recall@10 improvement.",
+                "Strong evidence for the required programming and CS fundamentals through production backend systems, data pipelines, testing, and scalable services."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7665475460339665157",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct search and retrieval experience: hybrid BM25+dense retrieval, reranking, evaluation sets, and Recall@10 improvement.",
+                "Strong evidence for the required programming and CS fundamentals through production backend systems, data pipelines, testing, and scalable services."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668379675467761925",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct search and retrieval experience: hybrid BM25+dense retrieval, reranking, evaluation sets, and Recall@10 improvement.",
+                "Strong evidence for the required programming and CS fundamentals through production backend systems, data pipelines, testing, and scalable services."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669711968043092229",
+              "match_score": 85.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Demonstrated ML engineering with PyTorch, fine-tuning, model evaluation, feature-engineering/classification work, and Python/C++ programming.",
+                "Relevant scalable-system experience includes production deployment, Spark/Databricks processing, retrieval/ranking optimization, and experimentation-oriented evaluation."
+              ],
+              "main_gaps": [
+                "No direct evidence of ads ranking, CTR/CVR modeling, or advertising-platform objectives."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669700361976809733",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong hands-on ML and data evidence through learner-risk models, LLM evaluation, model fine-tuning, production pipelines, and Python/C++ development.",
+                "Relevant reliability and data-quality work includes validation, anomaly-oriented error routing, version-aware data processing, and large-scale Spark/Databricks workflows."
+              ],
+              "main_gaps": [
+                "No clear causal-inference, attribution, identity-resolution, or advertising-measurement experience."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667338938890930437",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct search and retrieval experience: hybrid BM25+dense retrieval, reranking, evaluation sets, and Recall@10 improvement.",
+                "Strong evidence for the required programming and CS fundamentals through production backend systems, data pipelines, testing, and scalable services."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668383643375257909",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct search and retrieval experience: hybrid BM25+dense retrieval, reranking, evaluation sets, and Recall@10 improvement.",
+                "Strong evidence for the required programming and CS fundamentals through production backend systems, data pipelines, testing, and scalable services."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667346576033777925",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct search and retrieval experience: hybrid BM25+dense retrieval, reranking, evaluation sets, and Recall@10 improvement.",
+                "Strong evidence for the required programming and CS fundamentals through production backend systems, data pipelines, testing, and scalable services."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675524738811218229",
+              "match_score": 93.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Exceptional direct fit for search architecture: production hybrid retrieval, reranking, vector search, retrieval evaluation, and measurable Recall@10 gains.",
+                "Meets the core software requirements with strong Python/Java/C++ evidence plus distributed backend, reliability, cloud deployment, and LLM-system work."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675517686256863541",
+              "match_score": 93.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Exceptional direct fit for search architecture: production hybrid retrieval, reranking, vector search, retrieval evaluation, and measurable Recall@10 gains.",
+                "Meets the core software requirements with strong Python/Java/C++ evidence plus distributed backend, reliability, cloud deployment, and LLM-system work."
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 9,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7668582086899763461",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Data Arch - E-commerce) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675128776856029445",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (TikTok Search Data Infra) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675129440242010421",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (TikTok Search Data Infra) - 2027 Fall"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668582146236631349",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Data Arch - E-commerce) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7530513185797359880",
+              "company": "TikTok",
+              "title": "Software Engineer Project Intern (Platform efficiency) - 2026 Start (BS/MS)"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670420117406452021",
+              "company": "TikTok",
+              "title": "Search Safety Operations Intern（TikTok-Platform Responsibility-Search）- 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7671211313289398581",
+              "company": "TikTok",
+              "title": "Frontend Engineer Intern (Ads Interface) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669711026846058757",
+              "company": "TikTok",
+              "title": "Frontend Engineer Intern (Global CRM) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935738376227077",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (TikTok-Generalized Arch-Code Intelligence & Quality Validation) - 2027 Summer"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/cohere/1b909aeb-1221-476f-88fe-8300a2065975",
+              "company": "Cohere",
+              "title": "Software Engineer, Security Agents"
+            },
+            {
+              "key": "url::https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Software-Development-Engineer-II_R-107932-1",
+              "company": "Expedia Group",
+              "title": "Software Development Engineer II - Payments"
+            },
+            {
+              "key": "url::https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/SAN-FRANCISCO-CA/XMLNAME-2027-Technology-Summer-Internship---Early-Careers--Software-Engineering---California-_R-574294",
+              "company": "Wells Fargo",
+              "title": "2027 Technology Summer Internship – Early Careers (Software Engineering - California)"
+            },
+            {
+              "key": "url::https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CHARLOTTE-NC/XMLNAME-2027-Technology-Summer-Internship---Early-Careers--Software-Engineering-_R-574285",
+              "company": "Wells Fargo",
+              "title": "2027 Technology Summer Internship – Early Careers (Software Engineering)"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Durham-North-Carolina-United-States-of-America/AI-and-Machine-Learning-Engineering-Graduate_1213475",
+              "company": "HPE",
+              "title": "AI and Machine Learning Engineering Graduate"
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556866541",
+              "company": "Microsoft",
+              "title": "Solution Engineer - AI Business Process"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 26.899,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 17069,
+            "cached_input_tokens": 0,
+            "output_tokens": 2125,
+            "reasoning_tokens": 443,
+            "estimated_usd": 0.059638
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7668582086899763461",
+              "match_score": 90.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct evidence of scalable retrieval/data services, async processing, caching, and production reliability.",
+                "Has Java/C++/Python plus Spark/Databricks and recommendation/retrieval infrastructure experience."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675128776856029445",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Built production ingestion and Spark/Databricks workflows, plus retrieval systems and data pipelines.",
+                "Strong Python/Java/C++ and demonstrated search/retrieval, observability, and distributed-systems foundations."
+              ],
+              "main_gaps": [
+                "No clear production Flink, Hive/Iceberg, or billion-scale indexing experience."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675129440242010421",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Built production ingestion and Spark/Databricks workflows, plus retrieval systems and data pipelines.",
+                "Strong Python/Java/C++ and demonstrated search/retrieval, observability, and distributed-systems foundations."
+              ],
+              "main_gaps": [
+                "No clear production Flink, Hive/Iceberg, or billion-scale indexing experience."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668582146236631349",
+              "match_score": 90.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct evidence of scalable retrieval/data services, async processing, caching, and production reliability.",
+                "Has Java/C++/Python plus Spark/Databricks and recommendation/retrieval infrastructure experience."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7530513185797359880",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong fit for internal engineering tools: CI/CD, automated regression tests, observability, and full-stack service development.",
+                "Has Python, Java, DevOps/cloud deployment, and production workflow-automation experience."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670420117406452021",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant LLM evaluation, structured-output validation, golden datasets, and human-study experience.",
+                "Has practical prompt, model-output analysis, and large labeled-dataset experience."
+              ],
+              "main_gaps": [
+                "Role is primarily high-volume content operations and English-language labeling; exceptional editorial/content-sensitivity evidence is not clearly established."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7671211313289398581",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Demonstrated full-stack delivery with React, TypeScript, FastAPI, Node.js, testing, and production deployment.",
+                "Strong CS/backend foundations and cross-functional product implementation experience."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669711026846058757",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Demonstrated full-stack delivery with React, TypeScript, FastAPI, Node.js, testing, and production deployment.",
+                "Strong CS/backend foundations and cross-functional product implementation experience."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667935738376227077",
+              "match_score": 87.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong programming, testing, production-quality, tracing, and research-software evidence.",
+                "Research engineering work and LLM evaluation platform demonstrate ability to investigate complex technical problems and build reliable tooling."
+              ],
+              "main_gaps": [
+                "No direct evidence of static-analysis, compiler, code-graph, or dynamic-tracing implementation."
+              ]
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/cohere/1b909aeb-1221-476f-88fe-8300a2065975",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong relevant experience building production AI agents, orchestration-adjacent services, guardrails, and LLM evaluation.",
+                "Python and full-stack AI systems experience aligns directionally with the agentic-security work."
+              ],
+              "main_gaps": [
+                "Requires 5+ years and senior-level ownership of shipped security features, materially beyond the resume.",
+                "No clear security engineering depth in authentication, authorization, secure coding, or vulnerability assessment."
+              ]
+            },
+            {
+              "key": "url::https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Software-Development-Engineer-II_R-107932-1",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant backend/cloud delivery with FastAPI, REST APIs, AWS ECS/Fargate, CI/CD, databases, observability, and reliability work.",
+                "Has Java and distributed-system foundations, plus evidence of production service ownership."
+              ],
+              "main_gaps": [
+                "Required 2+ years of backend development at cloud/distributed-system scale is not clearly evidenced.",
+                "No direct payment-domain or secure payment/compliance experience."
+              ]
+            },
+            {
+              "key": "url::https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/SAN-FRANCISCO-CA/XMLNAME-2027-Technology-Summer-Internship---Early-Careers--Software-Engineering---California-_R-574294",
+              "match_score": 89.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct fit for scalable applications, APIs, cloud services, data pipelines, CI/CD, testing, and Agile-style engineering.",
+                "Strong evidence across Python, Java, React/TypeScript, SQL, Spark/Databricks, AWS/GCP, and AI-assisted application work."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CHARLOTTE-NC/XMLNAME-2027-Technology-Summer-Internship---Early-Careers--Software-Engineering-_R-574285",
+              "match_score": 89.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct fit for scalable applications, APIs, cloud services, data pipelines, CI/CD, testing, and Agile-style engineering.",
+                "Strong evidence across Python, Java, React/TypeScript, SQL, Spark/Databricks, AWS/GCP, and AI-assisted application work."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Durham-North-Carolina-United-States-of-America/AI-and-Machine-Learning-Engineering-Graduate_1213475",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct early-career AI/ML fit with feature engineering, ML pipelines, model evaluation, fine-tuning, PyTorch, and production LLM systems.",
+                "Strong quantitative CS education and hands-on data processing, experimentation, documentation, and cross-functional engineering experience."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556866541",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant hands-on AI-agent, cloud, RAG, and solution implementation experience.",
+                "Has experience building and deploying practical AI systems that could support technical demonstrations or PoCs."
+              ],
+              "main_gaps": [
+                "Requires 2+ years of technical pre-sales/consulting experience or equivalent, which is not clearly evidenced.",
+                "Role centers on customer-facing technical sales, workshops, and influencing enterprise purchasing decisions rather than hands-on product engineering."
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 10,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7667934792727906565",
+              "company": "TikTok",
+              "title": "Research Engineer Intern, Agentic Systems & AI Infrastructure (TikTok-Generalized Arch) - 2027 Summer"
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Cambridge-MA/Part-Time-Applied-Data-Scientist_R1000592",
+              "company": "Capital One",
+              "title": "Part-Time Applied Data Scientist"
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/299017",
+              "company": "Dell",
+              "title": "Process Development Engineer 1"
+            },
+            {
+              "key": "url::https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/AZ---Scottsdale/AVP--Platform-Security_R1025538",
+              "company": "CVS Health",
+              "title": "AVP, Platform Security"
+            },
+            {
+              "key": "url::https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/New-York---New-York/Specialist-Solution-Engineer_JR358388-1",
+              "company": "Salesforce",
+              "title": "Specialist Solution Engineer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7610543185362372917",
+              "company": "TikTok",
+              "title": "Data Scientist Project Intern (TikTok Integrity and Safety) - 2026 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7677483498854205701",
+              "company": "TikTok",
+              "title": "Product Operations Project Intern (TikTok-Platform Responsibility-Teen Experiences) - 2026 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670420017544251701",
+              "company": "TikTok",
+              "title": "AI Product Operations Intern（TikTok-Platform Responsibility-Teen Experiences）- 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7611950589973186821",
+              "company": "TikTok",
+              "title": "AI Product Operations Project Intern (TikTok-Platform Responsibility-Teen Experience) - 2026 Start (BS/MS)"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 18.933,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 9,
+            "input_tokens": 11653,
+            "cached_input_tokens": 0,
+            "output_tokens": 1390,
+            "reasoning_tokens": 329,
+            "estimated_usd": 0.039986
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7667934792727906565",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Built production LLM agents with tool calling, memory, evaluation, guardrails, and deployment infrastructure.",
+                "Strong Python/FastAPI, retrieval, CI/CD, observability, and scalable systems evidence aligns with agent-platform responsibilities."
+              ],
+              "main_gaps": [
+                "Limited direct evidence of reinforcement learning, agent post-training research, or publishable frontier research."
+              ]
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Cambridge-MA/Part-Time-Applied-Data-Scientist_R1000592",
+              "match_score": 20.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Has strong Python, ML/LLM evaluation, Spark/Databricks, data processing, and applied mathematical background."
+              ],
+              "main_gaps": [
+                "Role explicitly requires current enrollment at MIT; candidate is enrolled at USC.",
+                "Limited direct evidence of statistical experimentation and credit/risk analytics work."
+              ]
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/299017",
+              "match_score": 12.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Has general software engineering problem-solving and automation experience."
+              ],
+              "main_gaps": [
+                "Required degree is in industrial, manufacturing, mechanical, or electrical engineering; candidate has computer science degrees.",
+                "Role is manufacturing/process-engineering-first rather than software, platform, or AI engineering."
+              ]
+            },
+            {
+              "key": "url::https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/AZ---Scottsdale/AVP--Platform-Security_R1025538",
+              "match_score": 8.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate has some relevant cloud deployment, Kubernetes, CI/CD, and AI-agent guardrail experience."
+              ],
+              "main_gaps": [
+                "AVP-level enterprise security leadership, strategy ownership, and regulated-industry governance scope are materially beyond early-career experience.",
+                "No clear evidence of cloud/container security architecture, security programs, or executive-level risk leadership."
+              ]
+            },
+            {
+              "key": "url::https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/New-York---New-York/Specialist-Solution-Engineer_JR358388-1",
+              "match_score": 34.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Can build technical prototypes and production AI/data applications, which is relevant to solution demonstrations.",
+                "Has strong communication-oriented evaluation-platform and full-stack implementation experience."
+              ],
+              "main_gaps": [
+                "Role is primarily customer-facing technical sales, business development, and presales solution strategy rather than hands-on product engineering.",
+                "No evidence of required Salesforce/Tableau/CRM Analytics expertise or enterprise account-facing sales experience."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7610543185362372917",
+              "match_score": 82.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong Python, SQL, data-pipeline, Spark/Databricks, ML evaluation, and large-scale data-processing evidence.",
+                "Applied mathematics background and ML-pipeline work support quantitative analysis and model-monitoring responsibilities."
+              ],
+              "main_gaps": [
+                "No clear direct evidence of A/B testing, causal inference, or platform Trust & Safety analytics."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7677483498854205701",
+              "match_score": 24.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Has data analysis, AI evaluation, and cross-functional engineering experience that could support operational metrics work."
+              ],
+              "main_gaps": [
+                "Written and spoken Chinese is a stated minimum qualification and is not evidenced.",
+                "Role is product/risk operations-focused rather than the candidate's core software or applied-AI engineering path."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670420017544251701",
+              "match_score": 83.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct experience with LLM systems, agent workflows, evaluation datasets, model-quality measurement, and structured data-production processes.",
+                "Built production evaluation infrastructure and improved retrieval/model performance through evidence-driven testing and iteration."
+              ],
+              "main_gaps": [
+                "No direct Trust & Safety, content-moderation, or minor-safety domain experience."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7611950589973186821",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong direct evidence in LLM tools, model evaluation, data quality, retrieval optimization, and AI workflow productionization.",
+                "Experience designing labeled evaluation sets and diagnosing model failures closely fits model strategy, training-data, and evaluation support work."
+              ],
+              "main_gaps": [
+                "No direct Trust & Safety, content-moderation, or safety-compliance experience."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-09-14T00:33:16.199388+00:00",
       "mode": "pipeline",
       "health": "degraded",
