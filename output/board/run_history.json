@@ -2,6 +2,79 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-09-14T15:02:30.263044+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 0,
+      "cache_reused": 358,
+      "fallback_count": 0,
+      "rule_count": 181,
+      "requests": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0,
+      "estimated_usd": 0.0,
+      "latency_seconds": 0.0,
+      "latency_measured": true,
+      "effective_rpm": null,
+      "effective_tpm": null,
+      "json_reliability": null,
+      "json_reliability_measured": true,
+      "batches_total": 0,
+      "batches_attempted": 0,
+      "batches_succeeded": 0,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 0,
+      "funnel": {
+        "after_dedup": 4157,
+        "after_company": 4036,
+        "after_hard_filter": 3732,
+        "after_prefilter": 838,
+        "official_duplicates_suppressed": 299,
+        "dropped": 3297
+      },
+      "output": {
+        "tier_a": 39,
+        "tier_b": 82,
+        "ab_before_cap": 121,
+        "shown": 121
+      },
+      "enrichment": {
+        "needed": 389,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 389,
+          "http_requests": 9,
+          "scrapling_requests": 6,
+          "jds_resolved": 4,
+          "scrapling_fetcher_resolved": 1,
+          "direct_http_resolved": 3,
+          "remaining_no_jd": 385,
+          "failure_reasons": {
+            "scrapling_fetch_failed": 2,
+            "glassdoor_detail_http_403_static_card_only": 378,
+            "structured_jd_not_found": 5
+          }
+        },
+        "remaining_no_jd": 385,
+        "failure_reasons": {
+          "scrapling_fetch_failed": 2,
+          "glassdoor_detail_http_403_static_card_only": 378,
+          "structured_jd_not_found": 5
+        }
+      },
+      "comparison": {},
+      "batches": []
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-09-14T14:18:39.521773+00:00",
       "mode": "pipeline",
       "health": "success",

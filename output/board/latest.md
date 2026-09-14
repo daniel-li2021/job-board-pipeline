@@ -1,7 +1,7 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-14_1418
+# ATS / LinkedIn board — 7-day view — 2026-09-14_1502
 
-- Updated (PT): 2026-09-14 07:20 PDT
-- Snapshot (UTC): 2026-09-14T14:20:59.379023+00:00
+- Updated (PT): 2026-09-14 08:03 PDT
+- Snapshot (UTC): 2026-09-14T15:03:47.019516+00:00
 - Last 24 hours: 70
 - Last 3 days: 121
 
@@ -9,10 +9,10 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 
 ## Run stats
 
-- Source raw: ATS 2706 / Linkedin 718 / Indeed 345 / Glassdoor 387 (Big Company Official runs separately)
-- Funnel: after dedup 4156 -> after company filter 4035 -> after hard filter 3731 -> after role+seniority prefilter 838 | dropped 3296
-- LLM usage: jobs scored 34 / API requests 3 / cache reused 324 (cross-pipeline 0) / rule fallback+overflow 181 (thin local cards 180, recency-gated 1, overflow 0, new/changed 35)
-- LLM cost: model gpt-5.6-terra / API requests 3 / jobs scored 34 / tokens input 50578 (cached 0) / output 5329 (reasoning 1194) / estimated cost $0.1651
+- Source raw: ATS 2707 / Linkedin 718 / Indeed 345 / Glassdoor 387 (Big Company Official runs separately)
+- Funnel: after dedup 4157 -> after company filter 4036 -> after hard filter 3732 -> after role+seniority prefilter 838 | dropped 3297
+- LLM usage: jobs scored 0 / API requests 0 / cache reused 358 (cross-pipeline 0) / rule fallback+overflow 181 (thin local cards 180, recency-gated 1, overflow 0, new/changed 1)
+- LLM cost: model gpt-5.6-terra / API requests 0 / jobs scored 0 / tokens input 0 (cached 0) / output 0 (reasoning 0) / estimated cost $0.0000
 - Output sizing: Tier A 39 / Tier B 82 / A+B actionable 121 / Shown in latest.md 121 (no hard cap)
 - Recency (kept): <3h 0 / 3-24h 5 / 1-3d 251 / newly-disc 280 / 3-7d 2 / >7d 1
 - LinkedIn vs Indeed exact coverage: overlap 2 / LinkedIn unique 711 of 713 / Indeed unique 337 of 337
@@ -74,7 +74,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 88 | cached_llm | linkedin | MongoDB | Software Engineer 3 | United States | 2026-09-13 | newly_discovered | low | ai | - | unreviewed | official_ambiguous | - | [open](https://www.linkedin.com/jobs/view/software-engineer-3-at-mongodb-4447720429) |
 | 89 | cached_llm | linkedin | AgileGrid Solutions | JavaScript Developer | United States | 2026-09-13 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/javascript-developer-at-agilegrid-solutions-4467001334) |
 | 88 | cached_llm | linkedin | CJ | Software Engineer 2, Platform | Chicago, IL | 2026-09-13 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-2-platform-at-cj-4447196538) |
-| 88 | llm | indeed | Munich Re Life US | Software Engineer, US Life (2027 Permanent) | New York, NY, US | 2026-09-11 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=b9c7b92751622956) |
+| 88 | cached_llm | indeed | Munich Re Life US | Software Engineer, US Life (2027 Permanent) | New York, NY, US | 2026-09-11 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=b9c7b92751622956) |
 | 87 | cached_llm | linkedin | Cadence | Adams MultiBody Dynamics Application Software Developer (Recent Grad 2 | Livonia, MI | 2026-09-13 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/adams-multibody-dynamics-application-software-developer-recent-grad-2026-at-cadence-4447185926) |
 | 87 | cached_llm | linkedin | Echos | Forward Deployed Engineer — AI Agents & Enterprise Deployment | California, United States | 2026-09-13 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/forward-deployed-engineer-%E2%80%94-ai-agents-enterprise-deployment-at-echos-4465492075) |
 | 87 | cached_llm | linkedin | TalentHop | Software Engineer II (REMOTE) | United States | 2026-09-13 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-remote-at-talenthop-4464744401) |
@@ -146,6 +146,6 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 76 | cached_llm | indeed | Edurech Technoogy | Machine Learning Engineer | Santa Clara, CA, US | 2026-09-13 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=f7bc69f7ee34b797) |
 | 76 | cached_llm | linkedin | Waystar | Software Engineer II (PHP) | Atlanta, GA | 2026-09-13 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-php-at-waystar-4389453861) |
 | 74 | cached_llm | linkedin | TikTok USDS Joint Venture | Machine Learning Engineer - Ads Pangle - USDS | San Jose, CA | 2026-09-13 | newly_discovered | low | ai | TikTok | unreviewed | pending_official_refresh | - | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-ads-pangle-usds-at-tiktok-usds-joint-venture-4466797291) |
-| 92 | llm | indeed | Tive | Software Engineer Co-op | Boston, MA, US | 2026-09-14 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=005da61dfbfbb316) |
+| 92 | cached_llm | indeed | Tive | Software Engineer Co-op | Boston, MA, US | 2026-09-14 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=005da61dfbfbb316) |
 | 91 | cached_llm | linkedin | RemoteHunter | Software Engineer I | United States | 2026-09-13 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-i-at-remotehunter-4465477749) |
 | 89 | cached_llm | linkedin | BeaconFire Inc. | Java Software Engineer | California, United States | 2026-09-13 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/java-software-engineer-at-beaconfire-inc-4460723030) |
