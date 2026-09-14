@@ -246,6 +246,7 @@ class IncrementalOfficialTests(unittest.TestCase):
     def test_official_query_budgets_are_centralized_ceilings(self) -> None:
         self.assertEqual(20, query_page_budget("software engineer", 50))
         self.assertEqual(6, query_page_budget("ai engineer", 50))
+        self.assertEqual(5, query_page_budget('"Software Engineer III"', 50))
         self.assertEqual(3, query_page_budget("data engineer", 50))
         self.assertEqual(2, query_page_budget("software engineer", 2))
 

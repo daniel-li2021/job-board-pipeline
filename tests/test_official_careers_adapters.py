@@ -6,6 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 import official_careers
+from sources.careers import registry
 
 from sources.careers.avature import scrape_avature
 from sources.careers.disney import scrape_disney
@@ -48,6 +49,14 @@ class Session:
 
 
 class OfficialAdapterTests(unittest.TestCase):
+    def test_link_only_registry_source_is_expected_limitation(self):
+        company = {"id": "link-only", "name": "Link Only", "adapter": "skip"}
+        with patch.object(registry, "enabled_companies", return_value=[company]):
+            result = registry.scrape_enabled(only="link-only", max_workers=1)[0]
+        self.assertEqual("expected_limitation", result["status"])
+        self.assertEqual([], result["errors"])
+        self.assertIn("expected_limitation", result)
+
     def test_raw_snapshot_is_gzipped_and_loadable(self):
         job = {"company": "Example", "job_id": "1", "title": "Software Engineer"}
         result = {
@@ -81,7 +90,7 @@ class OfficialAdapterTests(unittest.TestCase):
         session.close()
 
     def test_walmart_uses_required_hybrid_payload(self):
-        session = Session(posts=[Response(payload={
+        session = Session(gets=[Response(text="results")], posts=[Response(payload={
             "jobs": [{"id": "R-1-External", "text": "Build software", "metadata": {
                 "jobId": "R-1", "jobPostingTitle": "Software Engineer",
                 "primaryLocationCity": "Bentonville", "primaryLocationState": "AR",
@@ -91,9 +100,11 @@ class OfficialAdapterTests(unittest.TestCase):
         })])
         result = scrape_walmart(session, max_pages=1, queries=["software"])
         self.assertEqual("R-1", result["jobs"][0]["job_id"])
-        call = session.calls[0][2]
+        self.assertEqual("GET", session.calls[0][0])
+        call = session.calls[1][2]
         self.assertEqual({"query": "software", "basicSearch": False, "filter": "", "locale": "en_US"}, call["json"])
         self.assertEqual(0, call["params"]["page"])
+        self.assertEqual("https://careers.walmart.com", call["headers"]["Origin"])
 
     def test_tiktok_keeps_lifeattiktok_canonical_url(self):
         session = Session(posts=[Response(payload={"code": 0, "data": {

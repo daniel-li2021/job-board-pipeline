@@ -165,9 +165,9 @@ Recency is calibrated as an ordering constraint rather than a single mechanical 
 
 ## Coverage reconciliation
 
-`coverage_reconcile.py` reads all three canonical stores and assigns cross-pipeline coverage state. It uses, in order, exact canonical URL, stable job ID, and a conservative unique company/title/location identity. Fuzzy similarity or mere company coverage is diagnostic only and never automatically suppresses a job.
+`coverage_reconcile.py` reads all three canonical stores and assigns cross-pipeline coverage state. When both a local raw Official cache and the compact published Official store exist, it uses the candidate with the newest snapshot timestamp so a stale development cache cannot override fresh committed data. Identity uses, in order, exact canonical URL, stable job ID, and a conservative unique company/title/location match. Fuzzy similarity or mere company coverage is diagnostic only and never automatically suppresses a job.
 
-When an external record exactly matches Official Careers, the Official record remains canonical and the external copy is marked/suppressed. Unmatched LinkedIn, Indeed, Glassdoor, ATS, or Syncareer records remain eligible even at an officially covered company. Reconciliation also retains source snapshot timestamps and review status needed by the dashboard.
+When an external record exactly matches Official Careers, the Official record remains canonical and the external copy is marked/suppressed. Multiple same-title/location Official candidates are recorded as `official_ambiguous` and remain visible rather than being attached arbitrarily. Unmatched LinkedIn, Indeed, Glassdoor, ATS, or Syncareer records remain eligible even at an officially covered company. Reconciliation retains all three snapshot timestamps, exact-match methods, pending refreshes, genuine gaps, expected unsupported sources, and review status. Every reconciliation/Pages build publishes the current Markdown audit as `coverage.md`, so it refreshes after any Board, Official, or Syncareer workflow rather than depending on a tracked report commit.
 
 ## Outputs
 
@@ -182,7 +182,7 @@ Each pipeline owns:
 - Board `matching_retry.json.gz`: only the JD context and retry state needed for failed LLM records; successful records leave the queue;
 - `runs/*_stats.json`: deeper local history when present; these files are intentionally gitignored.
 
-The dashboard build combines canonical jobs, coverage, alert history, company profiles, and browser review state into `public/dashboard.json` and `public/index.html`. It shows today's estimated LLM cost, bounded run history, batch/request/token/latency/JSON metrics, coverage and matching summaries, and per-job score reasons/gaps/provenance. Health generation writes `public/health.json`, `public/health-history.json`, and `public/health.html`.
+The dashboard build combines canonical jobs, coverage, alert history, company profiles, and browser review state into `public/dashboard.json` and `public/index.html`. It shows today's estimated LLM cost, bounded run history, batch/request/token/latency/JSON metrics, coverage and matching summaries, and per-job score reasons/gaps/provenance. Legacy run records without measured latency, JSON reliability, or batch outcomes display `Unknown`/`—`; new runs retain real measured zeroes through explicit telemetry flags. Health generation writes `public/health.json`, `public/health-history.json`, and `public/health.html`, and reconciliation also copies the current audit to `public/coverage.md`.
 
 ## Automation and publication sequence
 
@@ -204,19 +204,20 @@ Overall health remains the worst component severity. Component details preserve 
 | Status | Meaning |
 | --- | --- |
 | Healthy | A usable snapshot is within its freshness target and no material degradation is reported. |
-| Warning | Fresh last-good data remains usable, but the latest attempt failed, output collapsed, enrichment degraded, or the component is approaching its stale threshold. |
+| Warning | Fresh last-good data remains usable, but failures are repeated/material, output collapsed, fallback recovery is poor, data loss is significant, or the component is approaching its stale threshold. |
 | Stale | A previously usable pipeline snapshot exists but is older than 36 hours, or has records without a usable update timestamp. |
 | Problem | No usable required snapshot exists, or a failed workflow leaves data unusable. |
 
-Local sources use tighter collection expectations: up to six hours is healthy, six to twelve hours is warning, and more than twelve hours is stale. A required local source with no usable snapshot is a problem; an optional source is a warning. A failed latest attempt with a fresh last-good snapshot is recoverable degradation, not data loss.
+Local sources use tighter collection expectations: up to six hours is healthy, six to twelve hours is warning, and more than twelve hours is stale. A required local source with no usable snapshot is a problem; an optional source is a warning. One isolated failed attempt with a fresh last-good snapshot, a LinkedIn detail 429 successfully recovered by Scrapling, or a very small unresolved-JD tail is reported as recovered behavior rather than an active Warning.
 
 Health output separates:
 
 - **Actionable problems**: unusable or stale required data that needs intervention.
-- **Recoverable degradation / known limitations**: current data is still usable but discovery, enrichment, fallback, or output quality was degraded.
+- **Active warnings**: unexpected or material degradation that merits investigation while last-good data remains usable.
+- **Recovered behavior / known limitations**: current data is usable because fallback succeeded, impact is small, or a source is intentionally link-only/non-scrapable.
 - **Unresolved enrichment**: counts and reasons for records still lacking descriptions.
 
-Messages include source, impact, attempt age, last-good count/age, consecutive failures, and available reasons. Repeated batch failures are collapsed into counts such as “1/1 attempted batches failed; 8 later batches skipped; 106 jobs remain retryable.” LinkedIn search/discovery failures, detail-enrichment 429s, Scrapling attempts/resolutions, and remaining no-JD records are reported independently. `PIPELINE_WORKFLOW_*` values supplied by reconciliation identify whether the triggering workflow failed; a failed trigger yields Warning when a fresh store is still usable and Problem when it is not.
+Messages include source, impact, attempt age, last-good count/age, consecutive failures, and available reasons. Repeated batch failures are collapsed into counts such as “1/1 attempted batches failed; 8 later batches skipped; 106 jobs remain retryable.” `LinkedIn (local/general)` search/discovery failures, its detail-enrichment 429s, Scrapling attempts/resolutions, and remaining no-JD records are independent from the `linkedin_company_official_adapter`. Configured Official `skip` adapters are expected limitations, not fresh scrape failures. `PIPELINE_WORKFLOW_*` values supplied by reconciliation identify whether the triggering workflow failed; a failed trigger yields Warning when a fresh store is still usable and Problem when it is not.
 
 ## Failure recovery
 

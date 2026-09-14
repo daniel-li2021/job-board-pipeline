@@ -52,7 +52,7 @@ DEFAULT_QUERIES: List[Dict[str, Any]] = [
         "target_levels": ["MID", "EARLY", "INTERN_AND_APPRENTICE"],
         "location": "United States",
         "sort_by": "date",
-        "max_pages": 4,
+        "max_pages": 5,
     },
     {
         "q": '"Web Solutions Engineer"',

@@ -88,7 +88,7 @@ class PipelineHealthTests(unittest.TestCase):
             self.assertEqual("https://example.test/job", report["unresolved_examples"][0]["url"])
             self.assertEqual(3, len(history))
 
-    def test_failed_attempt_with_fresh_last_good_is_degradation_not_unusable(self) -> None:
+    def test_isolated_failed_attempt_with_fresh_last_good_is_recovered_limitation(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             now = datetime(2026, 9, 12, 12, tzinfo=timezone.utc)
@@ -114,11 +114,12 @@ class PipelineHealthTests(unittest.TestCase):
 
             report, _history = pipeline_health.build(root, now)
 
-            self.assertEqual("Warning", report["components"]["linkedin"]["status"])
+            self.assertEqual("Healthy", report["components"]["linkedin"]["status"])
             self.assertTrue(report["components"]["linkedin"]["data_usable"])
             self.assertIn("search/discovery", report["components"]["linkedin"]["detail"])
             self.assertFalse(any(item.startswith("LinkedIn:") for item in report["problems"]))
-            self.assertTrue(any(item.startswith("LinkedIn:") for item in report["degradations"]))
+            self.assertFalse(report["degradations"])
+            self.assertTrue(any(item.startswith("LinkedIn (local/general):") for item in report["limitations"]))
 
     def test_linkedin_detail_429_and_scrapling_are_reported_separately(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -152,8 +153,41 @@ class PipelineHealthTests(unittest.TestCase):
             linkedin = report["components"]["linkedin"]
             self.assertEqual("Warning", linkedin["status"])
             self.assertIn("detail enrichment blocked: blocked with HTTP 429", linkedin["detail"])
-            self.assertIn("Scrapling fallback resolved 5/8", linkedin["detail"])
+            self.assertIn("Scrapling fallback recovered 5/8", linkedin["detail"])
             self.assertNotIn("search/discovery attempt", linkedin["detail"])
+
+    def test_linkedin_detail_429_with_high_scrapling_recovery_is_not_warning(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            now = datetime(2026, 9, 12, 12, tzinfo=timezone.utc)
+            for _key, (_label, folder, store_name) in pipeline_health.PIPELINES.items():
+                out = root / "output" / folder
+                out.mkdir(parents=True)
+                out.joinpath(store_name).write_text(json.dumps({
+                    "updated_at": now.isoformat(), "entries": [{"company": "Example", "title": "Engineer"}],
+                }))
+            source_dir = root / "output" / "sources"
+            source_dir.mkdir(parents=True)
+            source_dir.joinpath("health.json").write_text(json.dumps({"sources": {
+                "linkedin": {
+                    "healthy": True, "required": True, "last_success_at": now.isoformat(),
+                    "last_attempt_at": now.isoformat(), "last_good_count": 120,
+                    "detail_enrichment": {
+                        "blocked": "HTTP 429", "scrapling_requests": 100,
+                        "scrapling_jds_resolved": 99, "remaining_no_jd": 1,
+                    },
+                },
+                "indeed": {"healthy": True, "last_success_at": now.isoformat()},
+                "glassdoor": {"healthy": True, "required": False, "last_success_at": now.isoformat()},
+            }}))
+            for name, count in (("linkedin", 120), ("indeed", 1), ("glassdoor", 1)):
+                source_dir.joinpath(f"{name}.json").write_text(json.dumps({"jobs": [{}] * count}))
+
+            report, _history = pipeline_health.build(root, now)
+
+            self.assertEqual("Healthy", report["components"]["linkedin"]["status"])
+            self.assertFalse(report["degradations"])
+            self.assertTrue(any("recovered detail limitation" in item for item in report["limitations"]))
 
     def test_committed_latest_stats_exposes_specific_failure_counts(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -185,12 +219,62 @@ class PipelineHealthTests(unittest.TestCase):
             report, history = pipeline_health.build(root, now)
 
             official = report["components"]["official"]
-            self.assertEqual("Warning", official["status"])
+            self.assertEqual("Healthy", official["status"])
             self.assertEqual(2, official["failure_count"])
             self.assertIn("meta: blocked with HTTP 429", official["detail"])
             self.assertIn("chunk_1: timeout", official["detail"])
-            self.assertFalse(any("scrape/auth/LLM failures" in item for item in report["degradations"]))
+            self.assertFalse(report["degradations"])
             self.assertEqual("official", history[0]["pipeline"])
+
+    def test_official_link_only_failures_are_limitations_and_linkedin_name_is_explicit(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            now = datetime(2026, 9, 12, 12, tzinfo=timezone.utc)
+            for key, (_label, folder, store_name) in pipeline_health.PIPELINES.items():
+                out = root / "output" / folder
+                out.mkdir(parents=True)
+                out.joinpath(store_name).write_text(json.dumps({
+                    "updated_at": now.isoformat(), "entries": [{"company": "Example", "title": "Engineer"}],
+                }))
+                if key == "official":
+                    out.joinpath("latest_stats.json").write_text(json.dumps({
+                        "run_at": now.isoformat(),
+                        "failures": {"scrape": {"citadel": ["link only"], "linkedin": ["HTTP 429"]}},
+                    }))
+            config = root / "config"
+            config.mkdir()
+            config.joinpath("official_careers.json").write_text(json.dumps({"companies": [
+                {"id": "citadel", "adapter": "skip"}, {"id": "linkedin", "adapter": "linkedin_company"},
+            ]}))
+            source_dir = root / "output" / "sources"
+            source_dir.mkdir(parents=True)
+            source_dir.joinpath("health.json").write_text(json.dumps({"sources": {
+                name: {"healthy": True, "last_success_at": now.isoformat()}
+                for name in ("linkedin", "indeed", "glassdoor")
+            }}))
+            for name in ("linkedin", "indeed", "glassdoor"):
+                source_dir.joinpath(f"{name}.json").write_text(json.dumps({"jobs": [{}]}))
+
+            report, _history = pipeline_health.build(root, now)
+
+            official = report["components"]["official"]
+            self.assertEqual(1, official["failure_count"])
+            self.assertIn("linkedin_company_official_adapter", official["detail"])
+            self.assertNotIn("citadel", official["detail"])
+            self.assertTrue(any("citadel" in item for item in report["limitations"]))
+
+    def test_legacy_zero_telemetry_is_marked_unknown_but_measured_zero_is_preserved(self) -> None:
+        legacy = pipeline_health._normalize_run_telemetry({
+            "latency_seconds": 0, "json_reliability": 0, "batches_succeeded": 0,
+        })
+        measured = pipeline_health._normalize_run_telemetry({
+            "latency_seconds": 0, "latency_measured": True,
+            "json_reliability_measured": True, "batch_outcomes_measured": True,
+        })
+        self.assertFalse(legacy["latency_measured"])
+        self.assertFalse(legacy["json_reliability_measured"])
+        self.assertFalse(legacy["batch_outcomes_measured"])
+        self.assertTrue(measured["latency_measured"])
 
     def test_failed_workflow_distinguishes_fresh_last_good_from_unusable_data(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

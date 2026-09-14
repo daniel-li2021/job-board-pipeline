@@ -145,6 +145,16 @@ class ReferralAliasTests(unittest.TestCase):
 
 
 class DashboardPolicyTests(unittest.TestCase):
+    def test_observability_cards_share_one_responsive_row_and_legacy_telemetry_is_unknown(self) -> None:
+        template = dashboard.HTML_TEMPLATE
+        self.assertIn('<div class="cards"><div class="card"><span>LLM Matching Today</span>', template)
+        self.assertIn('<div class="card"><span>Coverage</span>', template)
+        self.assertIn('<div class="card"><span>Matching</span>', template)
+        self.assertIn("r.latency_measured?`${r.latency_seconds}s`:'Unknown'", template)
+        self.assertIn("r.json_reliability_measured", template)
+        self.assertIn("r.batch_outcomes_measured", template)
+        self.assertIn("official presence ${presence}", template)
+
     def test_dashboard_company_key_reuses_canonical_referral_alias(self) -> None:
         referrals = load_alias_file(ROOT / "config" / "target_companies.json")
         row = dashboard.normalize_row(
@@ -768,6 +778,14 @@ class CoverageMatchingTests(unittest.TestCase):
             normalize_location_key("Seattle, WA"),
             normalize_location_key("San Francisco, CA; Seattle; Remote, United States"),
         ))
+        self.assertEqual("bellevue|wa", normalize_location_key("US-WA-Bellevue"))
+        self.assertEqual("ca|san jose", normalize_location_key("San Jose (CA)"))
+        self.assertEqual(
+            normalize_location_key("Research Triangle Park, NC"), normalize_location_key("RTP, North Carolina")
+        )
+        self.assertTrue(coverage_reconcile.locations_compatible(
+            normalize_location_key("Seattle, WA"), normalize_location_key("Washington - Seattle Campus")
+        ))
         self.assertEqual("lausanne|switzerland", normalize_location_key("Lausanne, Switzerland"))
 
     def test_unique_remote_title_can_match_geo_targeted_external_rows(self) -> None:
@@ -796,6 +814,17 @@ class CoverageMatchingTests(unittest.TestCase):
         )
         self.assertEqual("", method)
         self.assertIsNone(matched)
+
+        external = make_job(
+            source="linkedin", company="Example Tech", title="Software Development Engineer",
+            location="San Jose, CA", source_url="https://linkedin.test/ambiguous",
+        )
+        ctx = context("validated")
+        ctx["by_company"]["example"] = jobs
+        coverage_reconcile.annotate_jobs([external], "board", ctx)
+        self.assertEqual("official_ambiguous", external["coverage_status"])
+        self.assertEqual(2, external["coverage_candidate_count"])
+        self.assertFalse(external["suppress_alert"])
 
     def test_workday_detail_keeps_additional_locations(self) -> None:
         info = {
@@ -916,10 +945,36 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
             payload = {"scraped_at": "2026-09-05T00:00:00+00:00", "jobs": [], "scraped_company_ids": ["example"]}
             raw.write_bytes(gzip.compress(json.dumps(payload).encode()))
             with patch.object(coverage_reconcile, "OFFICIAL_RAW_PATH", raw), patch.object(
+                coverage_reconcile, "LEGACY_OFFICIAL_RAW_PATH", Path(tmpdir) / "missing-legacy.gz"
+            ), patch.object(
+                coverage_reconcile, "OFFICIAL_STORE_PATH", Path(tmpdir) / "missing-store.json"
+            ), patch.object(
                 coverage_reconcile, "load_registry_entries", return_value=([], {})
             ), patch.object(coverage_reconcile, "load_coverage_config", return_value={}):
                 context = coverage_reconcile.load_official_context()
         self.assertEqual({"example"}, context["scraped_company_ids"])
+
+    def test_official_reconciliation_uses_newest_snapshot_candidate(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            raw = root / "raw.json.gz"
+            raw.write_bytes(gzip.compress(json.dumps({
+                "scraped_at": "2026-09-04T00:00:00+00:00", "jobs": [],
+                "scraped_company_ids": ["stale"],
+            }).encode()))
+            store = root / "jobs.json"
+            store.write_text(json.dumps({
+                "scraped_at": "2026-09-05T00:00:00+00:00", "entries": [],
+                "scraped_company_ids": ["fresh"],
+            }))
+            with patch.object(coverage_reconcile, "OFFICIAL_RAW_PATH", raw), patch.object(
+                coverage_reconcile, "LEGACY_OFFICIAL_RAW_PATH", root / "missing-legacy.gz"
+            ), patch.object(coverage_reconcile, "OFFICIAL_STORE_PATH", store), patch.object(
+                coverage_reconcile, "load_registry_entries", return_value=([], {})
+            ), patch.object(coverage_reconcile, "load_coverage_config", return_value={}):
+                loaded = coverage_reconcile.load_official_context()
+        self.assertEqual("published_store", loaded["coverage_source"])
+        self.assertEqual({"fresh"}, loaded["scraped_company_ids"])
 
     def test_official_reconciliation_uses_compact_remote_index_without_raw_cache(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -1222,6 +1277,7 @@ class ReportingWorkflowTests(unittest.TestCase):
         self.assertNotIn("git push", pages)
         self.assertNotIn('"profile/review_state.json"', pages)
         self.assertFalse((ROOT / ".github/workflows/scheduled-jobs.yml").exists())
+        self.assertIn('f"{PAGES_URL}coverage.md"', (ROOT / "dashboard.py").read_text(encoding="utf-8"))
 
     def test_supabase_schema_allows_public_read_and_write(self) -> None:
         sql = (ROOT / "supabase" / "job_review_setup.sql").read_text(encoding="utf-8")

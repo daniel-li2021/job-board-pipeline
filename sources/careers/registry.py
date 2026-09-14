@@ -300,6 +300,10 @@ def scrape_enabled(
             result["full_listing_coverage"] = adapter in {"ats", "greenhouse", "lever", "ashby"}
         except SourceUnavailable as exc:
             result = _blocked_result(company, cid, exc, "blocked")
+            if (company.get("adapter") or "").strip().lower() == "skip":
+                result["status"] = "expected_limitation"
+                result["expected_limitation"] = str(exc)
+                result["errors"] = []
         except Exception as exc:  # noqa: BLE001
             result = _blocked_result(company, cid, exc, "error")
             result["errors"] = [f"{type(exc).__name__}: {exc}"]

@@ -21,6 +21,7 @@ ROLE_SEARCH_QUERIES = [
 
 QUERY_PAGE_BUDGETS = {
     "software engineer": 20,
+    "software engineer iii": 5,
     "ai engineer": 6,
 }
 DEFAULT_QUERY_PAGE_BUDGET = 3

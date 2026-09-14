@@ -38,16 +38,29 @@ def _age_hours(value: str, now: datetime) -> float | None:
         return None
 
 
+def _normalize_run_telemetry(run: dict[str, Any]) -> dict[str, Any]:
+    """Mark legacy placeholder zeroes as unavailable without hiding measured zeroes."""
+    normalized = dict(run)
+    measured = float(run.get("latency_seconds", 0) or 0) > 0 or bool(run.get("batches"))
+    normalized.setdefault("latency_measured", measured)
+    normalized.setdefault("json_reliability_measured", measured)
+    normalized.setdefault("batch_outcomes_measured", measured)
+    return normalized
+
+
 def _run_history(base: Path) -> tuple[dict[str, dict[str, Any]], list[dict[str, Any]]]:
     latest: dict[str, dict[str, Any]] = {}
     history: list[dict[str, Any]] = []
     for key, (_label, folder, _store) in PIPELINES.items():
-        records = list((_read(base / "output" / folder / "run_history.json", {}) or {}).get("runs") or [])
+        records = [
+            _normalize_run_telemetry(record)
+            for record in list((_read(base / "output" / folder / "run_history.json", {}) or {}).get("runs") or [])
+        ]
         if not records:
             for path in sorted((base / "output" / folder / "runs").glob("*_stats.json"))[-20:]:
                 record = _read(path, {})
                 if record:
-                    records.append(record)
+                    records.append(_normalize_run_telemetry(record))
         records.sort(key=lambda item: str(item.get("run_at") or ""), reverse=True)
         history.extend({"pipeline": key, **record} for record in records)
         current = _read(base / "output" / folder / "latest_stats.json", {})
@@ -55,7 +68,7 @@ def _run_history(base: Path) -> tuple[dict[str, dict[str, Any]], list[dict[str, 
             latest[key] = current
             if not any(current.get("run_at") == record.get("run_at") for record in records):
                 llm = current.get("llm", {})
-                history.append({
+                history.append(_normalize_run_telemetry({
                     "pipeline": key, "run_at": current.get("run_at", ""),
                     "health": "degraded" if _failure_items(current.get("failures")) else "success",
                     "model": llm.get("model", ""), "reasoning_effort": llm.get("reasoning_effort", ""),
@@ -67,7 +80,10 @@ def _run_history(base: Path) -> tuple[dict[str, dict[str, Any]], list[dict[str, 
                     "estimated_usd": llm.get("estimated_usd", 0), "output": current.get("output", {}),
                     "funnel": current.get("funnel", {}), "enrichment": current.get("enrichment", {}),
                     "batches_total": llm.get("batches_total", 0), "batches_failed": llm.get("batches_failed", 0),
-                })
+                    "latency_measured": "latency_seconds" in llm,
+                    "json_reliability_measured": "json_results" in llm,
+                    "batch_outcomes_measured": "batches_succeeded" in llm,
+                }))
         elif records:
             latest[key] = records[0]
         if records:
@@ -128,12 +144,40 @@ def _failure_summary(failures: Any) -> tuple[int, str]:
     return len(items), shown
 
 
+def _official_failure_partition(base: Path, failures: Any) -> tuple[Any, list[str]]:
+    """Remove configured link-only sources from active failures and clarify LinkedIn ownership."""
+    if not isinstance(failures, dict):
+        return failures, []
+    registry = _read(base / "config" / "official_careers.json", {})
+    link_only = {
+        str(company.get("id") or "")
+        for company in registry.get("companies", [])
+        if isinstance(company, dict) and company.get("adapter") == "skip"
+    }
+    actionable = dict(failures)
+    scrape = dict(actionable.get("scrape") or {})
+    limited = sorted(key for key in scrape if key in link_only)
+    for key in limited:
+        scrape.pop(key, None)
+    if "linkedin" in scrape:
+        scrape["linkedin_company_official_adapter"] = scrape.pop("linkedin")
+    if scrape:
+        actionable["scrape"] = scrape
+    else:
+        actionable.pop("scrape", None)
+    limitations = [
+        f"Big Company Official: {len(limited)} configured link-only source(s) omitted from active failures ({', '.join(limited)})"
+    ] if limited else []
+    return actionable, limitations
+
+
 def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     now = now or datetime.now(timezone.utc)
     latest, history = _run_history(base)
     components: dict[str, dict[str, Any]] = {}
     problems: list[str] = []
     degradations: list[str] = []
+    limitations: list[str] = []
     unresolved: list[dict[str, str]] = []
     failure_reasons: Counter[str] = Counter()
 
@@ -165,12 +209,18 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             status = "Warning"
             details.append(f"latest output fell to {shown} vs recent median {baseline:g}")
         failures = run.get("failures") or {}
+        known_limitations: list[str] = []
+        if key == "official":
+            failures, known_limitations = _official_failure_partition(base, failures)
+            limitations.extend(known_limitations)
         failure_count, failure_detail = _failure_summary(failures)
+        consecutive_failures = _consecutive_degraded(history, key)
         if failure_count:
-            if status == "Healthy":
-                status = "Warning"
             llm_impact = _llm_impact(run)
-            details.append(f"latest run degraded: {llm_impact or f'{failure_count} failure(s): {failure_detail}'}")
+            if status == "Healthy" and (llm_impact or consecutive_failures >= 2):
+                status = "Warning"
+            qualifier = "degraded" if status == "Warning" else "had recoverable issues"
+            details.append(f"latest run {qualifier}: {llm_impact or f'{failure_count} failure(s): {failure_detail}'}")
         workflow_token = {"board": "board", "official": "official", "syncareer": "syncareer"}[key]
         if workflow_conclusion and workflow_conclusion != "success" and workflow_token in workflow_name.lower():
             status = "Warning" if data_usable and data_age is not None and data_age <= 36 else "Problem"
@@ -188,8 +238,12 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             "latest_attempt_age_hours": round(attempt_age, 1) if attempt_age is not None else None,
             "latest_attempt_status": "failed" if workflow_conclusion and workflow_conclusion != "success" and workflow_token in workflow_name.lower() else ("degraded" if failure_count else ("success" if run_stamp else "unknown")),
             "failure_count": failure_count,
-            "consecutive_failures": _consecutive_degraded(history, key),
-            "impact": _llm_impact(run) or ("latest attempt degraded; fresh last-good snapshot remains usable" if failure_count and data_usable else ""),
+            "consecutive_failures": consecutive_failures,
+            "impact": _llm_impact(run) or (
+                f"latest attempt {'degraded' if status == 'Warning' else 'had recoverable issues'}; fresh last-good snapshot remains usable"
+                if failure_count and data_usable else ""
+            ),
+            "known_limitations": known_limitations,
         }
 
         for entry in entries:
@@ -223,10 +277,13 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             status = "Problem" if state.get("required", source != "glassdoor") else "Warning"
         elif age > 12:
             status = "Stale"
-        elif attempt_failed or age > 6:
+        elif age > 6:
             status = "Warning"
         else:
             status = "Healthy"
+        consecutive_failures = int(state.get("consecutive_failures", 1 if attempt_failed else 0) or 0)
+        if attempt_failed and consecutive_failures >= 2:
+            status = "Warning"
         details = [
             f"Usable last-good snapshot: {last_good_count} jobs, {age:.1f}h old"
             if data_usable else "No usable last-good snapshot"
@@ -238,6 +295,11 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                 f"latest {attempt_kind} attempt{attempt_when} failed ({state.get('status', 'unknown')}): "
                 f"{state.get('reason') or 'unknown reason'}"
             )
+            if status == "Healthy":
+                limitations.append(
+                    f"{'LinkedIn (local/general)' if source == 'linkedin' else source.title()}: one recoverable "
+                    f"{attempt_kind} failure; fresh last-good data remains usable"
+                )
         enrichment = state.get("detail_enrichment") or (
             snapshot.get("meta", {}).get("detail_enrichment", {}) if isinstance(snapshot, dict) else {}
         )
@@ -249,17 +311,25 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             remaining = int(enrichment.get("remaining_no_jd", 0) or 0)
             if blocked:
                 degradation_kinds.append("detail_enrichment_blocked")
-                details.append(f"detail enrichment blocked: {blocked}")
+                details.append(f"primary detail enrichment blocked: {blocked}")
             if scrapling_requests:
-                details.append(f"Scrapling fallback resolved {scrapling_resolved}/{scrapling_requests} attempted JDs")
+                details.append(f"Scrapling fallback recovered {scrapling_resolved}/{scrapling_requests} attempted JDs")
             if enrichment.get("scrapling_error"):
                 degradation_kinds.append("scrapling_limited")
                 details.append(f"Scrapling fallback unavailable: {enrichment['scrapling_error']}")
             if remaining:
                 degradation_kinds.append("missing_descriptions")
                 details.append(f"{remaining} discovered records remain without a JD")
-            if degradation_kinds and status == "Healthy":
+            recovery_ratio = scrapling_resolved / scrapling_requests if scrapling_requests else 0.0
+            material_missing = remaining >= max(10, round(last_good_count * 0.05))
+            poor_recovery = bool(blocked) and (not scrapling_requests or recovery_ratio < 0.9)
+            if (enrichment.get("scrapling_error") or poor_recovery or material_missing) and status == "Healthy":
                 status = "Warning"
+            elif blocked or remaining:
+                limitations.append(
+                    f"LinkedIn (local/general): recovered detail limitation; Scrapling resolved "
+                    f"{scrapling_resolved}/{scrapling_requests}, {remaining} JD(s) remain"
+                )
         query_stats = list(state.get("query_stats") or [])
         static_fallbacks = sum(str(item.get("stop_reason") or "") == "static_html_fallback" for item in query_stats)
         if static_fallbacks:
@@ -267,11 +337,12 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             details.append(
                 f"{static_fallbacks}/{len(query_stats)} queries used static HTML fallback; cards remain usable but coverage is a repeatable known limitation"
             )
-            if status == "Healthy":
-                status = "Warning"
+            limitations.append(
+                f"Glassdoor: {static_fallbacks}/{len(query_stats)} queries used the expected static HTML fallback"
+            )
         detail = "; ".join(details)
         components[source] = {
-            "label": {"linkedin": "LinkedIn", "indeed": "Indeed", "glassdoor": "Glassdoor"}[source],
+            "label": {"linkedin": "LinkedIn (local/general)", "indeed": "Indeed", "glassdoor": "Glassdoor"}[source],
             "status": status,
             "detail": detail,
             "updated_at": state.get("last_success_at", ""),
@@ -282,7 +353,7 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             "latest_attempt_age_hours": round(attempt_age, 1) if attempt_age is not None else None,
             "latest_attempt_status": state.get("status", "unknown"),
             "degradation_kinds": degradation_kinds,
-            "consecutive_failures": int(state.get("consecutive_failures", 1 if attempt_failed else 0) or 0),
+            "consecutive_failures": consecutive_failures,
             "impact": (
                 f"collection failed; {last_good_count} last-good jobs remain usable"
                 if attempt_failed and data_usable else
@@ -314,6 +385,7 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         "components": components,
         "problems": problems,
         "degradations": degradations,
+        "limitations": limitations,
         "workflow_failure": {"name": workflow_name, "conclusion": workflow_conclusion, "url": workflow_url} if workflow_conclusion and workflow_conclusion != "success" else {},
         "enrichment": {
             "pipelines": {key: latest.get(key, {}).get("enrichment", {}) for key in PIPELINES},
@@ -339,9 +411,10 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
     )
     issues = "".join(f"<li>{html.escape(issue)}</li>" for issue in report["problems"]) or "<li>None</li>"
     degradations = "".join(f"<li>{html.escape(issue)}</li>" for issue in report.get("degradations", [])) or "<li>None</li>"
+    limitations = "".join(f"<li>{html.escape(issue)}</li>" for issue in report.get("limitations", [])) or "<li>None</li>"
     examples = "".join(
         f"<li>{html.escape(item['pipeline'])}: <a href=\"{html.escape(item['url'])}\">{html.escape(item['company'])} — {html.escape(item['title'])}</a> — {html.escape(item['reason'])}</li>"
         for item in report["unresolved_examples"]
     ) or "<li>None</li>"
-    page = f"""<!doctype html><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Pipeline health</title><style>body{{font:15px/1.45 system-ui;max-width:1250px;margin:40px auto;padding:0 20px;color:#172019}}table{{border-collapse:collapse;width:100%}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}}code{{background:#eee;padding:2px 4px}}li{{margin:5px 0}}</style><h1>Pipeline health: {report['overall']}</h1><p>Generated {html.escape(report['generated_at'])}. <a href=\"index.html\">Dashboard</a> · <a href=\"health.json\">current JSON</a> · <a href=\"health-history.json\">recent run and batch history</a></p><h2>Components</h2><table><tr><th>Pipeline/source</th><th>Status</th><th>Last good</th><th>Latest attempt</th><th>Consecutive failures</th><th>Impact / detail</th></tr>{rows}</table><h2>Actionable problems</h2><ul>{issues}</ul><h2>Recoverable degradation / known limitations</h2><ul>{degradations}</ul><h2>Enrichment funnel</h2><pre>{html.escape(json.dumps(report['enrichment'], indent=2))}</pre><h2>Unresolved JD examples</h2><ul>{examples}</ul>"""
+    page = f"""<!doctype html><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Pipeline health</title><style>body{{font:15px/1.45 system-ui;max-width:1250px;margin:40px auto;padding:0 20px;color:#172019}}table{{border-collapse:collapse;width:100%}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}}code{{background:#eee;padding:2px 4px}}li{{margin:5px 0}}</style><h1>Pipeline health: {report['overall']}</h1><p>Generated {html.escape(report['generated_at'])}. <a href=\"index.html\">Dashboard</a> · <a href=\"health.json\">current JSON</a> · <a href=\"health-history.json\">recent run and batch history</a></p><h2>Components</h2><table><tr><th>Pipeline/source</th><th>Status</th><th>Last good</th><th>Latest attempt</th><th>Consecutive failures</th><th>Impact / detail</th></tr>{rows}</table><h2>Actionable problems</h2><ul>{issues}</ul><h2>Active warnings</h2><ul>{degradations}</ul><h2>Recovered behavior / known limitations</h2><ul>{limitations}</ul><h2>Enrichment funnel</h2><pre>{html.escape(json.dumps(report['enrichment'], indent=2))}</pre><h2>Unresolved JD examples</h2><ul>{examples}</ul>"""
     (public / "health.html").write_text(page, encoding="utf-8")

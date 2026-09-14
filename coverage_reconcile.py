@@ -123,19 +123,24 @@ def load_coverage_config() -> Dict[str, Dict[str, Any]]:
 
 
 def load_official_context() -> Dict[str, Any]:
-    raw_path = OFFICIAL_RAW_PATH if OFFICIAL_RAW_PATH.exists() else LEGACY_OFFICIAL_RAW_PATH
-    raw_exists = raw_path.exists()
-    try:
-        payload = json.loads(gzip.decompress(raw_path.read_bytes()))
-    except (OSError, json.JSONDecodeError, UnicodeDecodeError):
-        payload = {}
-    jobs = payload.get("jobs", []) if isinstance(payload, dict) else []
-    if not raw_exists:
-        store_payload, store_jobs = _load_store_entries(OFFICIAL_STORE_PATH)
-        payload = store_payload or payload
-        fields = payload.get("coverage_fields") or []
-        rows = payload.get("coverage_entries") or []
-        jobs = [dict(zip(fields, row)) for row in rows if isinstance(row, list)] if fields else store_jobs
+    candidates: List[Tuple[Dict[str, Any], List[Dict[str, Any]], str]] = []
+    for path, source in ((OFFICIAL_RAW_PATH, "local_raw_cache"), (LEGACY_OFFICIAL_RAW_PATH, "legacy_raw")):
+        try:
+            raw_payload = json.loads(gzip.decompress(path.read_bytes()))
+        except (OSError, json.JSONDecodeError, UnicodeDecodeError):
+            continue
+        if isinstance(raw_payload, dict):
+            candidates.append((raw_payload, list(raw_payload.get("jobs") or []), source))
+    store_payload, store_jobs = _load_store_entries(OFFICIAL_STORE_PATH)
+    if store_payload:
+        fields = store_payload.get("coverage_fields") or []
+        rows = store_payload.get("coverage_entries") or []
+        coverage_jobs = [dict(zip(fields, row)) for row in rows if isinstance(row, list)] if fields else store_jobs
+        candidates.append((store_payload, coverage_jobs, "published_store"))
+    payload, jobs, coverage_source = max(
+        candidates or [({}, [], "missing")],
+        key=lambda item: snapshot_timestamp(item[0]) or datetime.min.replace(tzinfo=timezone.utc),
+    )
     scraped_company_ids = set(payload.get("scraped_company_ids") or []) if isinstance(payload, dict) else set()
     registry_entries, registry_by_id = load_registry_entries()
     by_company: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
@@ -146,6 +151,7 @@ def load_official_context() -> Dict[str, Any]:
     return {
         "payload": payload,
         "jobs": jobs,
+        "coverage_source": coverage_source,
         "snapshot_at": snapshot_timestamp(payload),
         "registry_entries": registry_entries,
         "registry_by_id": registry_by_id,
@@ -158,27 +164,35 @@ def load_official_context() -> Dict[str, Any]:
 def exact_match(external: Dict[str, Any], official_jobs: Iterable[Dict[str, Any]]) -> Tuple[str, Optional[Dict[str, Any]]]:
     ext_url = normalize_url(str(external.get("official_url") or external.get("source_url") or external.get("job_url") or ""))
     ext_ids = job_ids(external)
-    ext_title = normalize_title_key(str(external.get("title") or ""))
-    ext_location = normalize_location_key(str(external.get("location") or ""))
-    title_location_candidates: List[Dict[str, Any]] = []
     for official in official_jobs:
         off_url = normalize_url(str(official.get("official_url") or official.get("source_url") or ""))
         if ext_url and off_url and ext_url == off_url:
             return "url", official
         if ext_ids and ext_ids.intersection(job_ids(official)):
             return "job_id", official
-        if ext_title and ext_location:
-            off_title = normalize_title_key(str(official.get("title") or ""))
-            off_location = normalize_location_key(str(official.get("location") or ""))
-            remote_title = bool(re.search(r"\bremote\b\s*\)?\s*$", str(external.get("title") or ""), re.I))
-            if ext_title == off_title and (remote_title or locations_compatible(ext_location, off_location)):
-                title_location_candidates.append(official)
+    title_location_candidates = title_location_matches(external, official_jobs)
     # Title/location is safe only when it identifies one official requisition.
     # Multiple same-title jobs in one city remain reviewable rather than being
     # silently attached to an arbitrary requisition.
     if len(title_location_candidates) == 1:
         return "title_location", title_location_candidates[0]
     return "", None
+
+
+def title_location_matches(external: Dict[str, Any], official_jobs: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    ext_title = normalize_title_key(str(external.get("title") or ""))
+    ext_location = normalize_location_key(str(external.get("location") or ""))
+    if not ext_title or not ext_location:
+        return []
+    remote_title = bool(re.search(r"\bremote\b\s*\)?\s*$", str(external.get("title") or ""), re.I))
+    return [
+        official for official in official_jobs
+        if ext_title == normalize_title_key(str(official.get("title") or ""))
+        and (
+            remote_title
+            or locations_compatible(ext_location, normalize_location_key(str(official.get("location") or "")))
+        )
+    ]
 
 
 def hydrate_from_original(external: Dict[str, Any], original: Dict[str, Any]) -> None:
@@ -310,14 +324,20 @@ def annotate_jobs(jobs: Iterable[Dict[str, Any]], source_pipeline: str, context:
                     job["coverage_status"] = "official_duplicate"
                     job["suppress_alert"] = True
                 else:
-                    source_at = parse_datetime(job.get("first_seen") or job.get("fetched_at") or job.get("last_seen"))
-                    if source_at and snapshot_at and source_at > snapshot_at:
-                        job["coverage_status"] = "pending_official_refresh"
+                    ambiguous = title_location_matches(job, by_company.get(cid, []))
+                    if len(ambiguous) > 1:
+                        job["coverage_status"] = "official_ambiguous"
+                        job["coverage_candidate_count"] = len(ambiguous)
+                        job["coverage_candidate_ids"] = [str(item.get("job_id") or "") for item in ambiguous[:10]]
                     else:
-                        job["coverage_status"] = "official_gap"
-                    suggestion = fuzzy_suggestion(job, by_company.get(cid, []))
-                    if suggestion:
-                        job["coverage_suggestion"] = suggestion
+                        source_at = parse_datetime(job.get("first_seen") or job.get("fetched_at") or job.get("last_seen"))
+                        if source_at and snapshot_at and source_at > snapshot_at:
+                            job["coverage_status"] = "pending_official_refresh"
+                        else:
+                            job["coverage_status"] = "official_gap"
+                        suggestion = fuzzy_suggestion(job, by_company.get(cid, []))
+                        if suggestion:
+                            job["coverage_suggestion"] = suggestion
         review_entry = review.get(job["canonical_job_key"], {})
         job["review_status"] = review_entry.get("status", "unreviewed") if isinstance(review_entry, dict) else "unreviewed"
         annotations.append(job)
@@ -421,6 +441,8 @@ def build_coverage_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         company_stats[cid]["in_scope"] += 1
         company_stats[cid][record.get("coverage_status", "unknown")] += 1
         company_stats[cid][f"source_{record.get('source_pipeline')}"] += 1
+        if record.get("coverage_match_method"):
+            company_stats[cid][f"method_{record['coverage_match_method']}"] += 1
 
     companies: List[Dict[str, Any]] = []
     config = context.get("config", {})
@@ -438,22 +460,47 @@ def build_coverage_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
             "in_scope": counts["in_scope"],
             "exact_covered": exact,
             "official_gaps": counts["official_gap"],
+            "ambiguous_covered": counts["official_ambiguous"],
             "pending_refresh": counts["pending_official_refresh"],
             "unsupported": counts["official_unsupported"],
             "coverage_ratio": round(ratio, 4) if ratio is not None else None,
             "board_jobs": counts["source_board"],
             "syncareer_jobs": counts["source_syncareer"],
+            "exact_methods": {
+                method: counts[f"method_{method}"]
+                for method in ("url", "job_id", "title_location")
+                if counts[f"method_{method}"]
+            },
         })
     companies.sort(key=lambda c: (c["manual_status"] != "validated", -(c["in_scope"] or 0), c["name"]))
     adapter_counts = Counter(str(company.get("adapter") or "skip") for company in companies)
     configured_total = len(companies)
     link_only = adapter_counts.get("skip", 0)
+    status_counts = Counter(r.get("coverage_status", "unknown") for r in records)
+    exact_methods = Counter(
+        r.get("coverage_match_method") for r in records if r.get("coverage_match_method")
+    )
+    comparable = (
+        status_counts["official_duplicate"]
+        + status_counts["official_ambiguous"]
+        + status_counts["official_gap"]
+    )
+    board_payload, _ = _load_store_entries(BOARD_STORE_PATH)
+    sync_payload, _ = _load_store_entries(SYNCAREER_STORE_PATH)
     return {
         "generated_at": now.isoformat(),
         "window_days": 3,
         "official_snapshot_at": context.get("snapshot_at").isoformat() if context.get("snapshot_at") else "",
+        "official_coverage_source": context.get("coverage_source", ""),
+        "board_snapshot_at": str(board_payload.get("updated_at") or board_payload.get("scraped_at") or ""),
+        "syncareer_snapshot_at": str(sync_payload.get("updated_at") or sync_payload.get("scraped_at") or ""),
         "manual_validation_target": "100% exact observed in-scope coverage; user makes final validation decision",
-        "counts": dict(Counter(r.get("coverage_status", "unknown") for r in records)),
+        "counts": dict(status_counts),
+        "coverage_ratio": round(status_counts["official_duplicate"] / comparable, 4) if comparable else None,
+        "observed_coverage_ratio": round(
+            (status_counts["official_duplicate"] + status_counts["official_ambiguous"]) / comparable, 4
+        ) if comparable else None,
+        "exact_match_methods": dict(exact_methods),
         "registry_counts": {
             "companies": configured_total,
             "implemented": configured_total - link_only,
@@ -473,27 +520,48 @@ def write_coverage_outputs(payload: Dict[str, Any]) -> None:
         "",
         f"- Generated: {payload.get('generated_at', '')}",
         f"- Official snapshot: {payload.get('official_snapshot_at') or 'missing'}",
+        f"- Board snapshot: {payload.get('board_snapshot_at') or 'missing'}",
+        f"- Syncareer snapshot: {payload.get('syncareer_snapshot_at') or 'missing'}",
+        f"- Official coverage source: {payload.get('official_coverage_source') or 'unknown'}",
         "- Coverage scope: jobs from the last 3 days that pass shared hard + role/seniority prefilters; LLM score is not used.",
         "- Validation: 100% exact observed coverage is the current review target; final validation is manual.",
         f"- Registry adapters: {payload.get('registry_counts', {}).get('implemented', 0)} implemented / "
         f"{payload.get('registry_counts', {}).get('companies', 0)} companies; "
         f"{payload.get('registry_counts', {}).get('link_only', 0)} remain link-only.",
+        f"- Comparable exact coverage: "
+        f"{payload.get('counts', {}).get('official_duplicate', 0)} exact / "
+        f"{payload.get('counts', {}).get('official_duplicate', 0) + payload.get('counts', {}).get('official_ambiguous', 0) + payload.get('counts', {}).get('official_gap', 0)} observed "
+        f"({payload.get('coverage_ratio', 0):.1%})." if payload.get("coverage_ratio") is not None else "- Comparable exact coverage: not available.",
+        f"- Official presence including ambiguous candidates: {payload.get('observed_coverage_ratio', 0):.1%}."
+        if payload.get("observed_coverage_ratio") is not None else "- Official presence coverage: not available.",
+        f"- Ambiguous title/location coverage: {payload.get('counts', {}).get('official_ambiguous', 0)} "
+        "record(s) have multiple possible Official requisitions and remain unsuppressed.",
+        f"- Exact match methods: {payload.get('exact_match_methods') or 'none'}",
         "",
         "## Company coverage",
         "",
-        "| Company | Manual state | Adapter | In scope | Exact | Gaps | Pending refresh | Coverage |",
-        "|---|---|---|---:|---:|---:|---:|---:|",
+        "| Company | Manual state | Adapter | Board / Sync | In scope | Exact | Ambiguous | Gaps | Pending | Unsupported | Coverage |",
+        "|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for company in payload.get("companies", []):
         ratio = company.get("coverage_ratio")
         ratio_text = "-" if ratio is None else f"{ratio:.0%}"
         lines.append(
             f"| {company['name']} | {company['manual_status']} | {company['adapter']} | "
-            f"{company['in_scope']} | {company['exact_covered']} | {company['official_gaps']} | "
-            f"{company['pending_refresh']} | {ratio_text} |"
+            f"{company['board_jobs']} / {company['syncareer_jobs']} | "
+            f"{company['in_scope']} | {company['exact_covered']} | {company['ambiguous_covered']} | {company['official_gaps']} | "
+            f"{company['pending_refresh']} | {company['unsupported']} | {ratio_text} |"
         )
+    unsupported = [company for company in payload.get("companies", []) if company.get("adapter") == "skip"]
+    lines.extend(["", f"## Expected unsupported / link-only sources ({len(unsupported)})", ""])
+    lines.extend(f"- {company['name']}" for company in unsupported)
     gaps = [r for r in payload.get("records", []) if r.get("coverage_status") in {"official_gap", "pending_official_refresh"}]
-    lines.extend(["", f"## Gaps / pending review ({len(gaps)})", "", "| Status | Pipeline | Company | Title | Location | Link |", "|---|---|---|---|---|---|"])
+    lines.extend([
+        "",
+        f"## Genuine gaps ({payload.get('counts', {}).get('official_gap', 0)}) and pending refreshes "
+        f"({payload.get('counts', {}).get('pending_official_refresh', 0)})",
+        "", "| Status | Pipeline | Company | Title | Location | Link |", "|---|---|---|---|---|---|",
+    ])
     for row in gaps:
         link_url = row.get("official_url") or row.get("source_url") or row.get("job_url") or ""
         link = f"[open]({link_url})" if link_url else "-"

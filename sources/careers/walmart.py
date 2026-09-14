@@ -8,10 +8,11 @@ from typing import Any, Dict, List, Optional
 import requests
 
 from ..schema import make_job, normalize_space
-from .http import http_post, keep_us_or_unknown, now_iso
+from .http import http_get, http_post, keep_us_or_unknown, now_iso
 from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 SEARCH = "https://careers.walmart.com/api/ai/search-ai/api/v1/combined/hybrid-search"
+RESULTS = "https://careers.walmart.com/results"
 PAGE_SIZE = 25
 
 
@@ -34,6 +35,9 @@ def scrape_walmart(
     jobs: List[Dict[str, str]] = []
     raw_count = pages = 0
     query_stats: List[Dict[str, Any]] = []
+    # Walmart's edge now requires cookies set by the public results page; a
+    # direct API POST returns HTTP 520 even with the browser's JSON payload.
+    http_get(session, RESULTS, label="Walmart careers", params={"q": queries[0]})
     for query in queries:
         query_started = time.monotonic()
         before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
@@ -47,7 +51,10 @@ def scrape_walmart(
                 label="Walmart hybrid search",
                 params=params,
                 json_body={"query": query, "basicSearch": False, "filter": "", "locale": "en_US"},
-                headers={"Accept": "application/json", "Content-Type": "application/json"},
+                headers={
+                    "Accept": "application/json", "Content-Type": "application/json",
+                    "Origin": "https://careers.walmart.com", "Referer": RESULTS,
+                },
             ).json()
             pages += 1
             rows = payload.get("jobs") or []
