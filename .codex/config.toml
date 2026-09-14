@@ -1,3 +1,10 @@
 [mcp_servers.codegraph]
 command = "codegraph"
 args = ["serve", "--mcp"]
+
+approvals_reviewer = "auto_review"
+sandbox_mode = "workspace-write"
+
+[experimental_network]
+enabled = true
+allowed_domains = ["api.openai.com", "*.openai.com"]
