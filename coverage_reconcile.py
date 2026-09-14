@@ -23,6 +23,7 @@ from sources.company_aliases import load_alias_file, match_company_alias, prepar
 from state_io import decode_json_bytes
 from sources.schema import (
     dedup_key,
+    is_aggregator_url,
     parse_datetime,
     make_job,
     normalize_job_url,
@@ -57,14 +58,25 @@ def normalize_url(value: str) -> str:
     return normalize_job_url(value)
 
 
+def job_urls(job: Dict[str, Any]) -> set[str]:
+    return {
+        normalized
+        for field in ("official_url", "application_url", "source_url", "job_url", "url")
+        if (normalized := normalize_url(str(job.get(field) or "")))
+    }
+
+
 def job_ids(job: Dict[str, Any]) -> set[str]:
     values: set[str] = set()
-    explicit = str(job.get("job_id") or "").strip().lower()
-    if explicit:
-        values.add(explicit)
-    url = str(job.get("official_url") or job.get("source_url") or job.get("job_url") or "")
-    values.update(re.findall(r"(?<!\d)(\d{5,})(?!\d)", url))
-    values.update(re.findall(r"[0-9a-f]{8}-[0-9a-f-]{27,}", url.lower()))
+    for field in ("job_id", "requisition_id", "req_id"):
+        explicit = str(job.get(field) or "").strip().lower()
+        if explicit:
+            values.add(explicit)
+    for url in job_urls(job):
+        if is_aggregator_url(url):
+            continue
+        values.update(re.findall(r"(?<!\d)(\d{5,})(?!\d)", url))
+        values.update(re.findall(r"[0-9a-f]{8}-[0-9a-f-]{27,}", url.lower()))
     return values
 
 
@@ -162,11 +174,10 @@ def load_official_context() -> Dict[str, Any]:
 
 
 def exact_match(external: Dict[str, Any], official_jobs: Iterable[Dict[str, Any]]) -> Tuple[str, Optional[Dict[str, Any]]]:
-    ext_url = normalize_url(str(external.get("official_url") or external.get("source_url") or external.get("job_url") or ""))
+    ext_urls = job_urls(external)
     ext_ids = job_ids(external)
     for official in official_jobs:
-        off_url = normalize_url(str(official.get("official_url") or official.get("source_url") or ""))
-        if ext_url and off_url and ext_url == off_url:
+        if ext_urls.intersection(job_urls(official)):
             return "url", official
         if ext_ids and ext_ids.intersection(job_ids(official)):
             return "job_id", official

@@ -156,7 +156,7 @@ def scrape_tiktok(
         company="TikTok",
         search_url=SEARCH,
         headers=HEADERS,
-        recruitment_ids=["1", "201"],
+        recruitment_ids=[],
         public_base="https://lifeattiktok.com/search",
         max_pages=max_pages,
         queries=queries,

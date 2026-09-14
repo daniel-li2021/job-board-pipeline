@@ -12,7 +12,7 @@ from .http import http_get, http_post, keep_us_or_unknown, now_iso
 from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 SEARCH = "https://careers.walmart.com/api/ai/search-ai/api/v1/combined/hybrid-search"
-RESULTS = "https://careers.walmart.com/results"
+RESULTS = "https://careers.walmart.com/us/en/results"
 PAGE_SIZE = 25
 
 
@@ -74,7 +74,7 @@ def scrape_walmart(
                 location = _location(meta)
                 if location and not keep_us_or_unknown(location):
                     continue
-                official = f"https://careers.walmart.com/job/{jid}"
+                official = f"https://careers.walmart.com/us/en/jobs/{jid}"
                 jobs.append(make_job(
                     source="walmart_official_careers",
                     company="Walmart Global Tech",

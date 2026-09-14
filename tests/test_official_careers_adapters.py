@@ -100,6 +100,7 @@ class OfficialAdapterTests(unittest.TestCase):
         })])
         result = scrape_walmart(session, max_pages=1, queries=["software"])
         self.assertEqual("R-1", result["jobs"][0]["job_id"])
+        self.assertEqual("https://careers.walmart.com/us/en/jobs/R-1", result["jobs"][0]["official_url"])
         self.assertEqual("GET", session.calls[0][0])
         call = session.calls[1][2]
         self.assertEqual({"query": "software", "basicSearch": False, "filter": "", "locale": "en_US"}, call["json"])
@@ -119,6 +120,7 @@ class OfficialAdapterTests(unittest.TestCase):
         result = scrape_tiktok(session, max_pages=1, queries=["machine learning engineer"])
         self.assertEqual("https://lifeattiktok.com/search/123", result["jobs"][0]["official_url"])
         self.assertTrue(session.calls[0][2]["json"]["location_code_list"])
+        self.assertEqual([], session.calls[0][2]["json"]["recruitment_id_list"])
 
     def test_bytedance_uses_shared_supplier_api_with_required_environment_header(self):
         session = Session(posts=[Response(payload={"code": 0, "data": {

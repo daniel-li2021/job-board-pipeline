@@ -734,6 +734,30 @@ class CoverageMatchingTests(unittest.TestCase):
         self.assertEqual("", method)
         self.assertIsNone(matched)
 
+    def test_exact_match_reads_raw_syncareer_url_and_requisition_fields(self) -> None:
+        official = official_job("R-12345", "Software Engineer", "Austin, TX")
+        official["official_url"] = "https://careers.example/jobs/R-12345"
+        method, matched = coverage_reconcile.exact_match(
+            {"url": "https://careers.example/jobs/R-12345?utm_source=syncareer"},
+            [official],
+        )
+        self.assertEqual("url", method)
+        self.assertIs(official, matched)
+        method, matched = coverage_reconcile.exact_match(
+            {"req_id": "R-12345", "source_url": "https://www.linkedin.com/jobs/view/12345"},
+            [official],
+        )
+        self.assertEqual("job_id", method)
+        self.assertIs(official, matched)
+
+    def test_aggregator_url_digits_are_not_requisition_ids(self) -> None:
+        method, matched = coverage_reconcile.exact_match(
+            {"source_url": "https://www.linkedin.com/jobs/view/12345678"},
+            [official_job("12345678", "Different Role", "Boston, MA")],
+        )
+        self.assertEqual("", method)
+        self.assertIsNone(matched)
+
     def test_exact_official_match_suppresses_regardless_of_manual_validation(self) -> None:
         external = make_job(
             source="linkedin",
@@ -786,6 +810,10 @@ class CoverageMatchingTests(unittest.TestCase):
         self.assertTrue(coverage_reconcile.locations_compatible(
             normalize_location_key("Seattle, WA"), normalize_location_key("Washington - Seattle Campus")
         ))
+        self.assertTrue(coverage_reconcile.locations_compatible(
+            normalize_location_key("Houston, TX"), normalize_location_key("United States - TX Houston")
+        ))
+        self.assertEqual(normalize_location_key("McLean, VA"), normalize_location_key("Mc Lean, VA"))
         self.assertEqual("lausanne|switzerland", normalize_location_key("Lausanne, Switzerland"))
 
     def test_unique_remote_title_can_match_geo_targeted_external_rows(self) -> None:

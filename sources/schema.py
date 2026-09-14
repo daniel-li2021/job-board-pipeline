@@ -393,6 +393,7 @@ def normalize_location_key(location: str) -> str:
         tok = re.sub(r"[^a-z0-9 ]", " ", tok).strip()
         tok = re.sub(r"\s+", " ", tok)
         tok = re.sub(r"\s+(?:campus|office)$", "", tok)
+        tok = re.sub(r"^mc\s+([a-z])", r"mc\1", tok)
         if tok == "rtp":
             tok = "research triangle park"
         if not tok or tok.isdigit() or tok in {"location", "locations", "n a"}:
@@ -409,6 +410,10 @@ def normalize_location_key(location: str) -> str:
             normalized = tok
         else:
             normalized = _STATE_NAME_TO_ABBR.get(tok, tok)
+        state_city = re.fullmatch(r"([a-z]{2})\s+(.+)", normalized)
+        if state_city and state_city.group(1) in state_abbrs and index and tokens[index - 1].lower() == "us":
+            norm.extend(state_city.groups())
+            continue
         if normalized == "new york city" or normalized.startswith("nyc "):
             normalized = "new york"
         norm.append(normalized)
