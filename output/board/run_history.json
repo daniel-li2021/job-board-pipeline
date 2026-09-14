@@ -2,6 +2,781 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-09-14T14:18:39.521773+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 34,
+      "cache_reused": 324,
+      "fallback_count": 0,
+      "rule_count": 181,
+      "requests": 3,
+      "input_tokens": 50578,
+      "cached_input_tokens": 0,
+      "output_tokens": 5329,
+      "reasoning_tokens": 1194,
+      "estimated_usd": 0.165104,
+      "latency_seconds": 74.427,
+      "latency_measured": true,
+      "effective_rpm": 2.42,
+      "effective_tpm": 45069.93,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 3,
+      "batches_attempted": 3,
+      "batches_succeeded": 3,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 34,
+      "funnel": {
+        "after_dedup": 4156,
+        "after_company": 4035,
+        "after_hard_filter": 3731,
+        "after_prefilter": 838,
+        "official_duplicates_suppressed": 299,
+        "dropped": 3296
+      },
+      "output": {
+        "tier_a": 39,
+        "tier_b": 82,
+        "ab_before_cap": 121,
+        "shown": 121
+      },
+      "enrichment": {
+        "needed": 389,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 389,
+          "http_requests": 9,
+          "scrapling_requests": 6,
+          "jds_resolved": 4,
+          "scrapling_fetcher_resolved": 1,
+          "direct_http_resolved": 3,
+          "remaining_no_jd": 385,
+          "failure_reasons": {
+            "scrapling_fetch_failed": 2,
+            "glassdoor_detail_http_403_static_card_only": 378,
+            "structured_jd_not_found": 5
+          }
+        },
+        "remaining_no_jd": 385,
+        "failure_reasons": {
+          "scrapling_fetch_failed": 2,
+          "glassdoor_detail_http_403_static_card_only": 378,
+          "structured_jd_not_found": 5
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8142963?t=gh_src%3D&gh_jid=8142963",
+              "company": "Robinhood",
+              "title": "Software Engineering Intern, Web (Summer 2027)"
+            },
+            {
+              "key": "id::indeed::in-7dfd9caed8f1f0ff",
+              "company": "Magna International",
+              "title": "Software Developer"
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8142961?t=gh_src%3D&gh_jid=8142961",
+              "company": "Robinhood",
+              "title": "Software Engineering Intern, Android (Summer 2027)"
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8123225?t=gh_src%3D&gh_jid=8123225",
+              "company": "Robinhood",
+              "title": "Software Engineering Intern, Backend (Summer 2027)"
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8142959?t=gh_src%3D&gh_jid=8142959",
+              "company": "Robinhood",
+              "title": "Software Engineering Intern, iOS (Summer 2027)"
+            },
+            {
+              "key": "id::indeed::in-0be79b000e6b7643",
+              "company": "Adobe",
+              "title": "Software Development Engineer"
+            },
+            {
+              "key": "id::indeed::in-acf99ea8798263cc",
+              "company": "JPMorganChase",
+              "title": "AWS Software Engineer III-Full Stack/Java/Spring Boot"
+            },
+            {
+              "key": "id::indeed::in-6e625141b6dbd1f2",
+              "company": "JPMorganChase",
+              "title": "Site Reliability Engineer III"
+            },
+            {
+              "key": "id::indeed::in-9378e3b9fa17137f",
+              "company": "JPMorganChase",
+              "title": "Site Reliability Engineer III"
+            },
+            {
+              "key": "id::indeed::in-57999baaa41bb3e6",
+              "company": "JPMorganChase",
+              "title": "Software Engineer III (Java/React)"
+            },
+            {
+              "key": "id::indeed::in-c33f02a8035bdca7",
+              "company": "JPMorganChase",
+              "title": "Software Engineer III - Asset Management Technology"
+            },
+            {
+              "key": "id::indeed::in-ff5282a795d3a7e5",
+              "company": "JPMorganChase",
+              "title": "Software Engineer III — Asset & Wealth Management (AM Services) — New Jersey (Onsite)"
+            },
+            {
+              "key": "id::indeed::in-b9c7b92751622956",
+              "company": "Munich Re Life US",
+              "title": "Software Engineer, US Life (2027 Permanent)"
+            },
+            {
+              "key": "id::indeed::in-3aea9ae8d552ef04",
+              "company": "",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "id::indeed::in-005da61dfbfbb316",
+              "company": "Tive",
+              "title": "Software Engineer Co-op"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 32.891,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 24096,
+            "cached_input_tokens": 0,
+            "output_tokens": 2371,
+            "reasoning_tokens": 489,
+            "estimated_usd": 0.076644
+          },
+          "decisions": [
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8142963?t=gh_src%3D&gh_jid=8142963",
+              "match_score": 53.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong React and TypeScript production experience across full-stack applications.",
+                "Has shipped tested developer-facing tools and cloud services."
+              ],
+              "main_gaps": [
+                "The required Winter 2027 or Spring 2028 graduation date conflicts with the May 2026 MS graduation date.",
+                "Functional/reactive programming and dedicated web UI design evidence is limited."
+              ]
+            },
+            {
+              "key": "id::indeed::in-7dfd9caed8f1f0ff",
+              "match_score": 63.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant production React/TypeScript, SQL, AWS, Docker, CI/CD, and full-stack delivery experience.",
+                "Has experience building and supporting resilient backend services and data workflows."
+              ],
+              "main_gaps": [
+                "C#/.NET and Microsoft Azure are core requirements not clearly evidenced.",
+                "Role prefers four years of professional development experience and includes ERP/shop-floor support outside the candidate's background."
+              ]
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8142961?t=gh_src%3D&gh_jid=8142961",
+              "match_score": 40.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has solid general software engineering, frontend, and production delivery experience.",
+                "Early-career internship scope is otherwise appropriate."
+              ],
+              "main_gaps": [
+                "No Android app, Kotlin, or Android-component experience is evidenced.",
+                "The required Winter 2027 or Spring 2028 graduation date conflicts with the May 2026 MS graduation date."
+              ]
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8123225?t=gh_src%3D&gh_jid=8123225",
+              "match_score": 55.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct backend evidence in Python/FastAPI, REST APIs, PostgreSQL, Redis, AWS, Docker, Kubernetes, testing, and scalable retrieval services.",
+                "Has owned production-oriented backend work with reliability and performance responsibilities."
+              ],
+              "main_gaps": [
+                "The required Winter 2027 or Spring 2028 graduation date conflicts with the May 2026 MS graduation date.",
+                "Python/Django or Go familiarity is requested; Python is strong, but Django and Go are not clearly evidenced."
+              ]
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8142959?t=gh_src%3D&gh_jid=8142959",
+              "match_score": 35.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong general full-stack engineering and cross-functional product delivery experience.",
+                "Early-career internship scope is otherwise appropriate."
+              ],
+              "main_gaps": [
+                "No Swift, UIKit, iOS/watchOS, or mobile-product experience is evidenced.",
+                "The required Winter 2027 or Spring 2028 graduation date conflicts with the May 2026 MS graduation date."
+              ]
+            },
+            {
+              "key": "id::indeed::in-0be79b000e6b7643",
+              "match_score": 70.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct React, TypeScript/JavaScript, Node.js, full-stack, testing, and production-service experience.",
+                "Has delivered cloud-deployed applications with reliability, validation, and CI/CD practices."
+              ],
+              "main_gaps": [
+                "The stated requirement for two years of professional product/service development is not clearly met.",
+                "Deep production web expertise in HTML/CSS and secure high-availability ecommerce systems is not clearly evidenced."
+              ]
+            },
+            {
+              "key": "id::indeed::in-acf99ea8798263cc",
+              "match_score": 46.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant Java, Spring Boot, Python, AWS, Docker/Kubernetes, CI/CD, database, and backend-service foundations.",
+                "Experience with scalable API services and reliability-oriented testing transfers to payments engineering."
+              ],
+              "main_gaps": [
+                "Requires 3+ years of applied experience and Engineer III scope; this is materially beyond the documented experience.",
+                "Production Java/Spring Boot microservices with Oracle and Kafka are not clearly demonstrated."
+              ]
+            },
+            {
+              "key": "id::indeed::in-6e625141b6dbd1f2",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has Python, cloud deployment, Docker/Kubernetes, CI/CD, tracing, testing, and reliability-related production experience.",
+                "Experience improving service performance and deployment operations is relevant to SRE work."
+              ],
+              "main_gaps": [
+                "Requires 3+ years of applied SRE experience and a significant-contributor Engineer III scope.",
+                "Dedicated SRE practice, SLO/SLI alerting, telemetry monitoring, and incident operations are not clearly evidenced."
+              ]
+            },
+            {
+              "key": "id::indeed::in-9378e3b9fa17137f",
+              "match_score": 45.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant Python, AWS, Docker/Kubernetes, CI/CD, observability exposure, and cloud-service delivery.",
+                "Has practical reliability and performance work on backend systems."
+              ],
+              "main_gaps": [
+                "Requires 3+ years of applied SRE experience and Engineer III-level independence.",
+                "Direct evidence of SLO/SLI implementation, production incident response, and infrastructure/network-as-code is limited."
+              ]
+            },
+            {
+              "key": "id::indeed::in-57999baaa41bb3e6",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong full-stack foundation with Java, React, REST APIs, SQL, CI/CD, cloud, and testing skills.",
+                "Has delivered production full-stack applications and scalable backend services."
+              ],
+              "main_gaps": [
+                "Requires 3+ years of applied experience and seasoned Engineer III scope.",
+                "Production Java/Spring Boot, Kafka microservices, and large-corporate operational stability experience are not clearly evidenced."
+              ]
+            },
+            {
+              "key": "id::indeed::in-c33f02a8035bdca7",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant Java, REST API, SQL, distributed-systems, testing, CI/CD, AWS, and observability foundations.",
+                "Candidate has strong experience translating platform needs into tested full-stack/backend systems."
+              ],
+              "main_gaps": [
+                "Requires 3+ years of applied experience and end-to-end ownership at a seasoned Engineer III level.",
+                "Required event-driven Kafka systems, formal observability/SLO practice, and investment-data platform integration are not clearly evidenced."
+              ]
+            },
+            {
+              "key": "id::indeed::in-ff5282a795d3a7e5",
+              "match_score": 45.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant backend/full-stack delivery in Java, SQL, REST APIs, cloud infrastructure, CI/CD, testing, and distributed systems.",
+                "Has practical production experience with reliability-oriented services and deployments."
+              ],
+              "main_gaps": [
+                "Requires 3+ years of applied experience and independent Engineer III scope.",
+                "Production Java microservices and large-corporate application support/on-call experience are not clearly evidenced."
+              ]
+            },
+            {
+              "key": "id::indeed::in-b9c7b92751622956",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Exceptional direct stack fit: Python/FastAPI, React/TypeScript, PostgreSQL, REST APIs, Docker, AWS, CI/CD, testing, and Linux.",
+                "Has already built and shipped robust full-stack systems with typed contracts, data workflows, validation, and production reliability practices."
+              ],
+              "main_gaps": [
+                "Permanent U.S. work authorization without current or future sponsorship is required; the resume does not establish work-authorization status."
+              ]
+            },
+            {
+              "key": "id::indeed::in-3aea9ae8d552ef04",
+              "match_score": 71.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong evidence for Python, Java, C++, JavaScript/React, SQL, REST APIs, cloud deployment, Docker, CI/CD, and scalable-service work.",
+                "Has hands-on full-stack production delivery, testing, and reliability experience."
+              ],
+              "main_gaps": [
+                "The posting asks for broad proficiency across several stacks, including Ruby on Rails and Azure, which are not clearly evidenced.",
+                "System-architecture ownership at the requested broad scope is only partially demonstrated."
+              ]
+            },
+            {
+              "key": "id::indeed::in-005da61dfbfbb316",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct match for Python, TypeScript/JavaScript, React, relational databases, data processing, Docker/Kubernetes, AWS, CI/CD, testing, and agile full-stack delivery.",
+                "Relevant experience building scalable ingestion, retrieval, and analytics-oriented systems with reliability and performance improvements."
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "id::indeed::in-f7bffb08b5633615",
+              "company": "FedEx Freight",
+              "title": "61920: Data Engineer III"
+            },
+            {
+              "key": "id::indeed::in-2acce007eda5067e",
+              "company": "Micron Technology",
+              "title": "Facilities Life Safety Systems Engineer - Operations & Design"
+            },
+            {
+              "key": "id::indeed::in-6e1021cbf9c10bf9",
+              "company": "Nucleus Financial",
+              "title": "Test Automation Engineer"
+            },
+            {
+              "key": "id::indeed::in-cb50ad526fec3876",
+              "company": "Qode",
+              "title": "AS/400 IBM Developer"
+            },
+            {
+              "key": "id::indeed::in-fc80ada9235b6133",
+              "company": "Saliense Consulting LLC",
+              "title": "SharePoint Developer"
+            },
+            {
+              "key": "id::indeed::in-c5a71e5cdec01a57",
+              "company": "ENTRUST Solutions Group",
+              "title": "Design Engineer I - Natural Gas Design"
+            },
+            {
+              "key": "id::indeed::in-aa7c837e09efe299",
+              "company": "Genworth",
+              "title": "Security Engineer, Application"
+            },
+            {
+              "key": "id::indeed::in-a96cb7bc3688f310",
+              "company": "Optimum",
+              "title": "Software Quality Engineer I"
+            },
+            {
+              "key": "id::indeed::in-23a210111c27280e",
+              "company": "Ross Dress For Less",
+              "title": "Security Engineer II"
+            },
+            {
+              "key": "id::indeed::in-6015e6abe376fbde",
+              "company": "Terumo",
+              "title": "Software Quality Test Engineer 3"
+            },
+            {
+              "key": "id::indeed::in-954957af36a2ae7c",
+              "company": "Wade Trim",
+              "title": "Entry Level Civil/Environmental Engineer - #3042"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 24.557,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 11,
+            "input_tokens": 14689,
+            "cached_input_tokens": 0,
+            "output_tokens": 1750,
+            "reasoning_tokens": 512,
+            "estimated_usd": 0.050378
+          },
+          "decisions": [
+            {
+              "key": "id::indeed::in-f7bffb08b5633615",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has hands-on Databricks/Spark workflow productionization and Python data-ingestion pipeline experience.",
+                "Demonstrated CI/CD, cloud deployment, SQL, and scalable backend/data-service work."
+              ],
+              "main_gaps": [
+                "Role requires 2-4 years of relevant experience and describes Data Engineer III/complex-system scope beyond the resume.",
+                "Azure Data Lake and Power BI dashboard experience are required but not evidenced."
+              ]
+            },
+            {
+              "key": "id::indeed::in-2acce007eda5067e",
+              "match_score": 18.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has a computer science background and general software problem-solving experience."
+              ],
+              "main_gaps": [
+                "Core life-safety/fire-alarm systems, NFPA-code, controls, and industrial-facilities engineering experience are not evidenced.",
+                "Role requires two years specifically as a facilities life-safety systems engineer."
+              ]
+            },
+            {
+              "key": "id::indeed::in-6e1021cbf9c10bf9",
+              "match_score": 68.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Built automated regression tests, unit/integration tests, validation, and failure-handling for production software services.",
+                "Has Python, SQL, REST API, CI/CD, and cross-functional software-development experience applicable to API and database testing."
+              ],
+              "main_gaps": [
+                "Dedicated test-automation framework and end-to-end UI automation experience are not clearly evidenced."
+              ]
+            },
+            {
+              "key": "id::indeed::in-cb50ad526fec3876",
+              "match_score": 8.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Has general SQL and software-development experience."
+              ],
+              "main_gaps": [
+                "Requires five years of specialized IBM i/AS400 administration and RPG/CL development, none of which is evidenced.",
+                "Posting restricts eligibility to U.S. citizens or green-card holders."
+              ]
+            },
+            {
+              "key": "id::indeed::in-fc80ada9235b6133",
+              "match_score": 12.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has general full-stack development, workflow-oriented backend, and dashboard-adjacent data experience."
+              ],
+              "main_gaps": [
+                "Requires 5+ years of SharePoint/Microsoft 365 and Power Platform development plus an active Power Platform certification, none evidenced.",
+                "Power Apps, Power Automate, SharePoint governance/permissions, and Power BI/DAX are central required capabilities not evidenced."
+              ]
+            },
+            {
+              "key": "id::indeed::in-c5a71e5cdec01a57",
+              "match_score": 13.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "The Engineer I title and early-career level align in seniority only."
+              ],
+              "main_gaps": [
+                "Work is natural-gas utility/civil infrastructure design rather than software engineering.",
+                "Requires an ABET-accredited engineering degree and field/design capability not evidenced by the computer science resume."
+              ]
+            },
+            {
+              "key": "id::indeed::in-aa7c837e09efe299",
+              "match_score": 45.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has cloud deployment, CI/CD, automation, Python/JavaScript, and production-software reliability experience.",
+                "Experience collaborating with development teams and building automated validation is transferable to secure-SDLC support."
+              ],
+              "main_gaps": [
+                "Application-security core requirements—including vulnerability/AST tools, threat modeling, penetration testing, and security controls—are not evidenced.",
+                "Role seeks 3+ years of security-engineering experience and formal security-program experience beyond the resume."
+              ]
+            },
+            {
+              "key": "id::indeed::in-a96cb7bc3688f310",
+              "match_score": 62.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong Python/Java development, API testing, automated regression testing, CI/CD, and cloud deployment experience.",
+                "Has demonstrated production debugging, reliability work, and collaboration with software teams."
+              ],
+              "main_gaps": [
+                "The required three years of automation/tools experience and one year of mobile automation are not clearly evidenced.",
+                "iOS/Android end-to-end testing and mobile-specific automation frameworks are not evidenced."
+              ]
+            },
+            {
+              "key": "id::indeed::in-23a210111c27280e",
+              "match_score": 10.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has Python and SQL experience that are only tangentially relevant to automation work."
+              ],
+              "main_gaps": [
+                "Requires 8+ years in cybersecurity, including 5+ years of threat hunting and threat-intelligence analysis, far beyond the resume.",
+                "Core CTI/SIEM/EDR, MITRE ATT&CK, malware/APT analysis, and incident-response experience are not evidenced."
+              ]
+            },
+            {
+              "key": "id::indeed::in-6015e6abe376fbde",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has created substantial unit/integration test coverage, automated validation, and investigated production failures.",
+                "Has software-development lifecycle, CI/CD, and cross-functional engineering experience."
+              ],
+              "main_gaps": [
+                "Requires at least five years in software quality engineering/testing, which is not evidenced.",
+                "Risk-based verification, requirements traceability, and regulated-product quality-system experience are not evidenced."
+              ]
+            },
+            {
+              "key": "id::indeed::in-954957af36a2ae7c",
+              "match_score": 10.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "The stated 0-3 years experience level is early-career compatible."
+              ],
+              "main_gaps": [
+                "This is a civil/environmental water-infrastructure design role, not a software role.",
+                "Requires a bachelor's degree in civil or environmental engineering and engineering-design/field skills not evidenced."
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "id::indeed::in-7b14e30f1dc2f397",
+              "company": "JPMorganChase",
+              "title": "Software Engineer III - Asset Management Research Engineer"
+            },
+            {
+              "key": "id::indeed::in-e84c81c095e31c4c",
+              "company": "JPMorganChase",
+              "title": "Software Engineer III - Big Data Databricks, Python / Java"
+            },
+            {
+              "key": "id::indeed::in-8184eae9967c16b3",
+              "company": "turing",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/cohere/1b909aeb-1221-476f-88fe-8300a2065975",
+              "company": "Cohere",
+              "title": "Software Engineer, Security Agents"
+            },
+            {
+              "key": "id::indeed::in-a7eb50abf8fbed3e",
+              "company": "JPMorganChase",
+              "title": "Java AWS Software Engineer III"
+            },
+            {
+              "key": "id::indeed::in-7df4cec596751d00",
+              "company": "JPMorganChase",
+              "title": "Software Engineer III - PySpark/AWS/Databricks"
+            },
+            {
+              "key": "id::indeed::in-5e59d3c33970aa66",
+              "company": "ENGIE",
+              "title": "BESS Engineer I"
+            },
+            {
+              "key": "id::indeed::in-8f7fe9eb26556e43",
+              "company": "Penumbra, Inc.",
+              "title": "Development Manufacturing Engineer I"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 16.979,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 8,
+            "input_tokens": 11793,
+            "cached_input_tokens": 0,
+            "output_tokens": 1208,
+            "reasoning_tokens": 193,
+            "estimated_usd": 0.038082
+          },
+          "decisions": [
+            {
+              "key": "id::indeed::in-7b14e30f1dc2f397",
+              "match_score": 63.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Built production React/TypeScript and backend services, with AWS deployment, testing, and reliability work.",
+                "Has Java, SQL, system-design, and full-stack experience relevant to secure application development."
+              ],
+              "main_gaps": [
+                "Requires 3+ years of applied experience and seasoned Engineer III scope.",
+                "Kafka/event-driven production experience and enterprise AI-development-tool governance are not clearly evidenced."
+              ]
+            },
+            {
+              "key": "id::indeed::in-e84c81c095e31c4c",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant Python/Java, Spark/Databricks, AWS, data-pipeline, and production software experience.",
+                "Has evaluation and retrieval-platform work that is directionally relevant to data/AI platform engineering."
+              ],
+              "main_gaps": [
+                "Requires 5+ years and expert-level enterprise-scale technical depth, including advising teams and communicating with executives.",
+                "Core required experience across large-scale processing, Kafka, microservices, orchestration, observability, and data-platform architecture is not evidenced at the requested depth."
+              ]
+            },
+            {
+              "key": "id::indeed::in-8184eae9967c16b3",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Directly relevant experience building LLM evaluation systems, regression tests, and structured validation of model outputs.",
+                "Strong Python/Java foundation plus production REST services, retrieval systems, testing, and analytical problem solving."
+              ],
+              "main_gaps": [
+                "Explicit 4+ years of software-development experience is not met by the resume timeline."
+              ]
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/cohere/1b909aeb-1221-476f-88fe-8300a2065975",
+              "match_score": 42.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong direct experience with production AI agents, agent orchestration, tool calling, guardrails, and Python services.",
+                "Has hands-on evaluation, testing, observability, and deployment experience for AI systems."
+              ],
+              "main_gaps": [
+                "Senior role requires 5+ years of production software engineering experience.",
+                "Security engineering fundamentals and production work in authentication, authorization, threat modeling, vulnerability assessment, and security controls are not clearly evidenced."
+              ]
+            },
+            {
+              "key": "id::indeed::in-a7eb50abf8fbed3e",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant Java/Spring Boot, REST API, microservices, testing, CI/CD, Docker, Terraform, and AWS experience.",
+                "Has production backend and full-stack delivery experience with React/TypeScript and FastAPI services."
+              ],
+              "main_gaps": [
+                "Requires 3+ years of applied experience and seasoned Engineer III ownership.",
+                "Hands-on Java/Spring Boot production delivery and the specified Java testing frameworks are not clearly demonstrated in experience bullets."
+              ]
+            },
+            {
+              "key": "id::indeed::in-7df4cec596751d00",
+              "match_score": 64.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct Spark/Databricks pipeline troubleshooting, SQL/data-quality work, Python, ML evaluation, and AWS deployment experience.",
+                "Relevant production data/AI engineering work includes large-volume ingestion, Databricks workflows, and model-evaluation infrastructure."
+              ],
+              "main_gaps": [
+                "Requires 3+ years of applied experience and seasoned Engineer III scope.",
+                "Spark-cluster configuration/optimization plus AWS EMR, EC2, S3, CloudWatch, and Databricks ML deployment are not clearly evidenced at the required hands-on depth."
+              ]
+            },
+            {
+              "key": "id::indeed::in-5e59d3c33970aa66",
+              "match_score": 8.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Early-career level is aligned in seniority only."
+              ],
+              "main_gaps": [
+                "This is a hardware/energy-project engineering role requiring an electrical, civil, or mechanical engineering background and BESS design knowledge.",
+                "No evidence of AutoCAD Civil3D, GIS/site-layout work, or utility-scale battery-storage engineering."
+              ]
+            },
+            {
+              "key": "id::indeed::in-8f7fe9eb26556e43",
+              "match_score": 7.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Early-career engineering level is aligned in seniority only."
+              ],
+              "main_gaps": [
+                "Manufacturing/medical-device engineering role requires mechanical, biomedical, electrical, chemical, materials, or industrial engineering preparation.",
+                "No evidence of production-process validation, equipment qualification, fixtures/tooling, FDA/QMS, or manufacturing engineering experience."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-09-14T07:03:54.951228+00:00",
       "mode": "pipeline",
       "health": "success",
