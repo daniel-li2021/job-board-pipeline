@@ -3,30 +3,6 @@
   "events": [
     {
       "pipeline": "syncareer",
-      "stamp": "2026-08-31_0954",
-      "emitted_at": "2026-08-31T09:55:27.401055+00:00",
-      "event_kind": "new_matching",
-      "count": 1,
-      "jobs": [
-        {
-          "canonical_job_key": "id::syncareer::b63c431047dc65d181cf2743738fd260",
-          "job_id": "b63c431047dc65d181cf2743738fd260",
-          "tier": "A",
-          "match_score": 85.0,
-          "fit_score": 85.0,
-          "company": "Roblox",
-          "title": "Software Engineer, Economy Platform",
-          "location": "San Mateo, California, United States",
-          "posting_date": "2026-08-29",
-          "first_seen": "2026-08-31T09:54:55.045832+00:00",
-          "review_status": "unreviewed",
-          "job_url": "https://careers.roblox.com/jobs/8060254?gh_jid=8060254",
-          "url": "https://careers.roblox.com/jobs/8060254?gh_jid=8060254"
-        }
-      ]
-    },
-    {
-      "pipeline": "syncareer",
       "stamp": "2026-09-01_0354",
       "emitted_at": "2026-09-01T03:55:14.777327+00:00",
       "event_kind": "new_matching",
@@ -2864,6 +2840,150 @@
           "review_status": "unreviewed",
           "job_url": "https://job-boards.greenhouse.io/schrdinger/jobs/7991930003",
           "url": "https://job-boards.greenhouse.io/schrdinger/jobs/7991930003"
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-09-14_1511",
+      "emitted_at": "2026-09-14T15:11:50.318345+00:00",
+      "event_kind": "new_matching",
+      "count": 9,
+      "jobs": [
+        {
+          "canonical_job_key": "id::syncareer::ba73b61ba0da0147acc286b762167cc3",
+          "job_id": "ba73b61ba0da0147acc286b762167cc3",
+          "tier": "A",
+          "match_score": 95.0,
+          "fit_score": 95.0,
+          "company": "Acuity Brands Lighting",
+          "title": "Specialist Growth & Transformation Software Engineering BUILD Leadership Program",
+          "location": "Atlanta, Georgia, United States",
+          "posting_date": "2026-09-12",
+          "first_seen": "2026-09-14T15:11:14.081784+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://careers.acuityinc.com/job/Atlanta-Specialist-Growth-&-Transformation-Software-Engineering-BUILD-Leadership-Program-GA-30309/1429282700/",
+          "url": "https://careers.acuityinc.com/job/Atlanta-Specialist-Growth-&-Transformation-Software-Engineering-BUILD-Leadership-Program-GA-30309/1429282700/"
+        },
+        {
+          "canonical_job_key": "id::syncareer::16f17f4ddd15151b5a74a057cdd4ecc8",
+          "job_id": "16f17f4ddd15151b5a74a057cdd4ecc8",
+          "tier": "A",
+          "match_score": 92.0,
+          "fit_score": 92.0,
+          "company": "Acuity Brands Lighting",
+          "title": "Specialist Software Engineering BUILD Leadership Program",
+          "location": "Atlanta, Georgia, United States",
+          "posting_date": "2026-09-12",
+          "first_seen": "2026-09-14T15:11:14.081784+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://careers.acuityinc.com/job/Conyers-Specialist-Software-Engineering-BUILD-Leadership-Program-GA-30012/1429302100/",
+          "url": "https://careers.acuityinc.com/job/Conyers-Specialist-Software-Engineering-BUILD-Leadership-Program-GA-30012/1429302100/"
+        },
+        {
+          "canonical_job_key": "id::syncareer::88b192dd56e82ae7c1c5263880104912",
+          "job_id": "88b192dd56e82ae7c1c5263880104912",
+          "tier": "A",
+          "match_score": 92.0,
+          "fit_score": 92.0,
+          "company": "Acuity Brands Lighting",
+          "title": "Specialist Software Engineering BUILD Leadership Program",
+          "location": "Atlanta, Georgia, United States",
+          "posting_date": "2026-09-12",
+          "first_seen": "2026-09-14T15:11:14.081784+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://careers.acuityinc.com/job/Conyers-Specialist-Software-Engineering-BUILD-Leadership-Program-GA-30012/1429301800/",
+          "url": "https://careers.acuityinc.com/job/Conyers-Specialist-Software-Engineering-BUILD-Leadership-Program-GA-30012/1429301800/"
+        },
+        {
+          "canonical_job_key": "id::syncareer::72d7d8a62ebc3a4b809f74813b8c7acc",
+          "job_id": "72d7d8a62ebc3a4b809f74813b8c7acc",
+          "tier": "A",
+          "match_score": 92.0,
+          "fit_score": 92.0,
+          "company": "Adyen",
+          "title": "Full-Stack Developer (Junior) - Docs Experience Engineering Team",
+          "location": "Chicago, Illinois, United States",
+          "posting_date": "2026-09-11",
+          "first_seen": "2026-09-14T15:11:14.081784+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://job-boards.greenhouse.io/adyen/jobs/8068230",
+          "url": "https://job-boards.greenhouse.io/adyen/jobs/8068230"
+        },
+        {
+          "canonical_job_key": "id::syncareer::89a36bb0e7fa07b64a0fc2102fe4ce09",
+          "job_id": "89a36bb0e7fa07b64a0fc2102fe4ce09",
+          "tier": "B",
+          "match_score": 92.0,
+          "fit_score": 92.0,
+          "company": "TD Bank",
+          "title": "2027 Summer Internship Program - Global Technology & Solutions - Cloud/DevOps",
+          "location": "Mount Laurel, New Jersey, United States",
+          "posting_date": "2026-09-13",
+          "first_seen": "2026-09-14T15:11:14.081784+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Cloud-DevOps_R_1510799",
+          "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Cloud-DevOps_R_1510799"
+        },
+        {
+          "canonical_job_key": "id::syncareer::a596947f3ed817623b10df6609163409",
+          "job_id": "a596947f3ed817623b10df6609163409",
+          "tier": "B",
+          "match_score": 91.0,
+          "fit_score": 91.0,
+          "company": "TD Bank",
+          "title": "2027 Summer Internship Program - Global Technology & Solutions - Software Engineer (SWE)",
+          "location": "Mount Laurel, New Jersey, United States",
+          "posting_date": "2026-09-13",
+          "first_seen": "2026-09-14T15:11:14.081784+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Software-Engineer--SWE-_R_1510796-1",
+          "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Software-Engineer--SWE-_R_1510796-1"
+        },
+        {
+          "canonical_job_key": "id::syncareer::a2ba3f26db4955f96da394f067692ed2",
+          "job_id": "a2ba3f26db4955f96da394f067692ed2",
+          "tier": "B",
+          "match_score": 88.0,
+          "fit_score": 88.0,
+          "company": "TD Bank",
+          "title": "2027 Summer Internship Program - Global Technology & Solutions - Data Engineer",
+          "location": "Mount Laurel, New Jersey, United States",
+          "posting_date": "2026-09-13",
+          "first_seen": "2026-09-14T15:11:14.081784+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Data-Engineer_R_1510797",
+          "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Data-Engineer_R_1510797"
+        },
+        {
+          "canonical_job_key": "id::syncareer::524fc1a161d473c2fad97c0b27cd8a66",
+          "job_id": "524fc1a161d473c2fad97c0b27cd8a66",
+          "tier": "B",
+          "match_score": 87.0,
+          "fit_score": 87.0,
+          "company": "Island",
+          "title": "Software Engineering Intern/Co-op Summer 2027",
+          "location": "Dallas, Texas, United States",
+          "posting_date": "2026-09-12",
+          "first_seen": "2026-09-14T15:11:14.081784+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://www.island.io/positions/position-6a_279",
+          "url": "https://www.island.io/positions/position-6a_279"
+        },
+        {
+          "canonical_job_key": "id::syncareer::517e1ffcc97a6ce8b21eab13831021e5",
+          "job_id": "517e1ffcc97a6ce8b21eab13831021e5",
+          "tier": "B",
+          "match_score": 82.0,
+          "fit_score": 82.0,
+          "company": "Abnormal AI",
+          "title": "Software Engineer II - Insider Risk",
+          "location": "San Francisco, California, United States",
+          "posting_date": "2026-09-12",
+          "first_seen": "2026-09-14T15:11:14.081784+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://abnormal.ai/careers/jobs/7992780003?gh_jid=7992780003",
+          "url": "https://abnormal.ai/careers/jobs/7992780003?gh_jid=7992780003"
         }
       ]
     }
