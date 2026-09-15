@@ -2,6 +2,1143 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-09-15T15:35:39.582670+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 47,
+      "cache_reused": 636,
+      "fallback_count": 15,
+      "rule_count": 2672,
+      "requests": 6,
+      "input_tokens": 57261,
+      "cached_input_tokens": 0,
+      "output_tokens": 7912,
+      "reasoning_tokens": 1286,
+      "estimated_usd": 0.209466,
+      "latency_seconds": 100.909,
+      "latency_measured": true,
+      "effective_rpm": 3.57,
+      "effective_tpm": 38751.55,
+      "json_reliability": 0.7581,
+      "json_reliability_measured": true,
+      "batches_total": 6,
+      "batches_attempted": 6,
+      "batches_succeeded": 5,
+      "batches_failed": 1,
+      "batches_skipped": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 47,
+      "funnel": {
+        "after_dedup": 16910,
+        "after_company": 16910,
+        "after_hard_filter": 14198,
+        "after_prefilter": 3355,
+        "dropped": 13555
+      },
+      "output": {
+        "tier_a": 69,
+        "tier_b": 200,
+        "shown": 269
+      },
+      "enrichment": {
+        "discovered": 16974,
+        "needed": 1464,
+        "source_jds_available": 15510,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 1464
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/doordashusa/jobs/8202736",
+              "company": "DoorDash",
+              "title": "Software Engineer, Code Quality"
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/345416",
+              "company": "Oracle",
+              "title": "Software Developer 2/Core Infrastructure Engineer"
+            },
+            {
+              "key": "url::https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Software-Development-Engineer_R171559",
+              "company": "Adobe",
+              "title": "Software Development Engineer"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210789900",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer [Multiple Positions Available]"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446721104433",
+              "company": "Qualcomm",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Cloud-Engineer-Graduate_1213628-1",
+              "company": "HPE",
+              "title": "Cloud Engineer Graduate"
+            },
+            {
+              "key": "url::https://careers.roblox.com/jobs/8072244?gh_jid=8072244",
+              "company": "Roblox",
+              "title": "[2027] Software Engineer, Early Career"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Sunnyvale-California-United-States-of-America/Junos-EVO-OS-Infrastructure-Engineer_1212190-3",
+              "company": "HPE",
+              "title": "Junos-EVO OS Infrastructure Engineer"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Sunnyvale-California-United-States-of-America/Sr-Staff-Software-Engineer--Networking---C-C--_1193121-2",
+              "company": "HPE",
+              "title": "Software Engineer, Networking & C/C++"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672530785573980421",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Recommendation Architecture, Feeds Infrastructure) - 2027 Start"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Backend-Compiler-Engineer---New-College-Grad-2026_JR2021242",
+              "company": "NVIDIA",
+              "title": "Backend Compiler Engineer - New College Grad 2026"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Software-Engineer-Graduate_1213624-1",
+              "company": "HPE",
+              "title": "Software Engineer Graduate"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541718/systems-engineer-controls-fleet-data-center-capacity-delivery-controls-fleet",
+              "company": "Amazon",
+              "title": "Systems Engineer - Controls Fleet, Data Center Capacity Delivery, Controls Fleet"
+            },
+            {
+              "key": "url::https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/Application-Developer_R1008924",
+              "company": "CVS Health",
+              "title": "Application Developer"
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/337038",
+              "company": "Oracle",
+              "title": "Software Developer 5"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "failed",
+          "latency_seconds": 0.002,
+          "error": {
+            "type": "KeyError",
+            "status_code": 0,
+            "summary": "KeyError: 'location'"
+          }
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/337037",
+              "company": "Oracle",
+              "title": "Software Developer 5"
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Business-Solutions-Architect_R-52533",
+              "company": "Travelers",
+              "title": "Business Solutions Architect"
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Boulder-Colorado-US/Leader--Solutions-Engineer--Splunk_2022596-1",
+              "company": "Cisco",
+              "title": "Leader, Solutions Engineer, Splunk"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7681779180341709109",
+              "company": "TikTok",
+              "title": "Data Engineer Graduate (Data Platfrom TikTok BP) - 2027 Start"
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/337368",
+              "company": "Oracle",
+              "title": "Architect, Deployment Platforms, OCI"
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/341917",
+              "company": "Oracle",
+              "title": "Building Automation Engineer"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Entry-Electrical-Engineering-Embedded-Power-Solutions_1211914-2",
+              "company": "HPE",
+              "title": "Entry Electrical Engineering Embedded Power Solutions (ON-SITE Houston, TX)"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Ft-Collins-Colorado-United-States-of-America/Systems-Software-Expert_1206799-2",
+              "company": "HPE",
+              "title": "Systems Software Expert"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 16.292,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 8,
+            "input_tokens": 11660,
+            "cached_input_tokens": 0,
+            "output_tokens": 1247,
+            "reasoning_tokens": 99,
+            "estimated_usd": 0.038284
+          },
+          "decisions": [
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/337037",
+              "match_score": 28.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has backend, async/concurrent services, cloud deployment, observability, and performance/reliability experience.",
+                "Has worked on retrieval and data-processing services with caching and latency goals."
+              ],
+              "main_gaps": [
+                "Role requires 8+ years plus technical strategy, architecture ownership, and mentoring leadership at hyperscale.",
+                "No clear evidence of operating massive multi-tenant telemetry ingestion, storage, and query platforms."
+              ]
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Business-Solutions-Architect_R-52533",
+              "match_score": 24.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate has analytical software-project experience and has collaborated with implementation/support teams.",
+                "Some experience improving workflows and documenting typed service contracts is transferable."
+              ],
+              "main_gaps": [
+                "Core role is business architecture, transformation, capability assessment, and strategy rather than hands-on software engineering.",
+                "Requires demonstrated business-analysis/process-improvement experience in complex organizations, which is not clearly evidenced."
+              ]
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Boulder-Colorado-US/Leader--Solutions-Engineer--Splunk_2022596-1",
+              "match_score": 8.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate has relevant technical exposure to observability, cloud services, and customer/support-oriented internal tools."
+              ],
+              "main_gaps": [
+                "Requires 5+ years in technical presales and 3+ years managing Solutions Engineers; neither is evidenced.",
+                "This is a sales-aligned people-leadership role focused on pipeline, forecasting, and team performance rather than hands-on engineering."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7681779180341709109",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Explicit graduate data-engineering role aligns with the candidate's current MS CS program and early-career level.",
+                "Evidence includes Spark/Databricks workflow productionization, high-volume ingestion processing, SQL/data pipelines, and reliability work."
+              ],
+              "main_gaps": [
+                "The required Hadoop ecosystem tools (such as Hive, Kafka, Flink, Presto, or ClickHouse) are not clearly evidenced.",
+                "Direct evidence of production ETL architecture, schema/data modeling, and large-scale transformation systems is limited."
+              ]
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/337368",
+              "match_score": 18.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate has relevant foundations in backend/platform development, cloud deployment, testing, reliability, and API design.",
+                "Has some performance and scalability work on retrieval services."
+              ],
+              "main_gaps": [
+                "Role requires organization-wide platform strategy, architectural governance, and senior-leadership influence far beyond early-career scope.",
+                "No evidence of owning shared SDK/platform standards or leading cross-organization architecture decisions."
+              ]
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/341917",
+              "match_score": 32.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "The 0–2 year individual-contributor scope is compatible with an early-career candidate.",
+                "Python, troubleshooting, documentation, networking/Linux exposure, and reliability-oriented engineering are modestly transferable."
+              ],
+              "main_gaps": [
+                "This is a hardware/OT controls role requiring BMS, EPMS, PLC, SCADA/HMI, field-device, and industrial-networking foundations not evidenced on the resume.",
+                "Candidate's education and experience are software-focused rather than controls, electrical, or industrial automation focused."
+              ]
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Entry-Electrical-Engineering-Embedded-Power-Solutions_1211914-2",
+              "match_score": 12.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "The stated 0–2 year level is early-career compatible.",
+                "Candidate has general analytical programming experience."
+              ],
+              "main_gaps": [
+                "Requires an Electrical Engineering degree and electrical/electronic hardware design background, neither of which is evidenced.",
+                "Core work is board/electrical-component validation, thermal/EMI analysis, and hardware design rather than software engineering."
+              ]
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Ft-Collins-Colorado-United-States-of-America/Systems-Software-Expert_1206799-2",
+              "match_score": 21.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate has software development, Linux/Bash, C++, testing, debugging, and backend systems experience.",
+                "Some distributed-systems and performance work is directionally relevant."
+              ],
+              "main_gaps": [
+                "Requires 8–10 years, systems-architecture expertise, and leadership of multiple project teams, far beyond the candidate's demonstrated scope.",
+                "Strong C and Linux systems experience plus kernel/device-driver, RDMA/InfiniBand, and embedded/networking expertise are not evidenced."
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "resume_ai",
+          "jobs": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541627/applied-scientist-agi",
+              "company": "Amazon",
+              "title": "Applied Scientist, AGI"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--Efficient-Deep-Learning---New-College-Grad-2026_JR2019729-1",
+              "company": "NVIDIA",
+              "title": "Research Scientist, Efficient Deep Learning - New College Grad 2026"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--Fundamental-Generative-AI---New-College-Grad-2026_JR2012698",
+              "company": "NVIDIA",
+              "title": "Research Scientist, Fundamental Generative AI - New College Grad 2026"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 8.458,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 4147,
+            "cached_input_tokens": 0,
+            "output_tokens": 633,
+            "reasoning_tokens": 134,
+            "estimated_usd": 0.01589
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541627/applied-scientist-agi",
+              "match_score": 54.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production LLM engineering experience includes QLoRA fine-tuning, vLLM serving, RAG evaluation, and AWS deployment.",
+                "Strong Python/software-development evidence and practical work on LLM systems."
+              ],
+              "main_gaps": [
+                "Does not clearly meet the required 3+ years building models for business applications.",
+                "Does not meet the stated PhD or Master's plus 4+ years related-experience requirement; frontier applied-research scope is beyond the documented experience."
+              ]
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--Efficient-Deep-Learning---New-College-Grad-2026_JR2019729-1",
+              "match_score": 63.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Explicit new-college-grad role and the candidate has relevant LLM fine-tuning, production LLM evaluation, and AI engineering experience.",
+                "Python-based LLM systems, retrieval work, and performance/cost-oriented vLLM deployment are relevant transferable evidence."
+              ],
+              "main_gaps": [
+                "The role requires PhD-level or equivalent research experience and an outstanding research record, which are not clearly evidenced.",
+                "Required large-scale model training with tensor/pipeline parallelization is not documented."
+              ]
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--Fundamental-Generative-AI---New-College-Grad-2026_JR2012698",
+              "match_score": 47.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate has practical generative-AI experience through LLM fine-tuning, serving, evaluation, and multimodal/RAG systems.",
+                "Python and applied deep-learning tooling experience provide a relevant technical foundation."
+              ],
+              "main_gaps": [
+                "No documented experience building generative models for molecules, proteins, RNA, molecular dynamics, or other scientific data.",
+                "The PhD/equivalent fundamental-research requirement and outstanding publication-level research record are not clearly evidenced."
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/130800413166183110-software-engineer-iii-google-cloud-security-and-privacy",
+              "company": "Google",
+              "title": "Software Engineer III, Google Cloud Security and Privacy"
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556994805",
+              "company": "Microsoft",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210769609",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer III - Python/AWS/AI"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210727002",
+              "company": "JPMorgan Chase",
+              "title": "Data Engineer III - UI/Java/React/Agentic AI"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-TX-Austin/Software-R-D-Engineer--VLSI-Physical-Design---New-College-Grad-2026_JR2019330",
+              "company": "NVIDIA",
+              "title": "Software R&D Engineer, VLSI Physical Design - New College Grad 2026"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/138249054688551622-software-engineer-semantic-understanding-search-ads-personalization",
+              "company": "Google",
+              "title": "Software Engineer, Semantic Understanding, Search Ads Personalization"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/127808642027004614-software-engineer-iii-ai-ml-search-ecosystems",
+              "company": "Google",
+              "title": "Software Engineer III, AI/ML, Search Ecosystems"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/103784038082192070-network-implementation-engineer-data-center-networking-delivery",
+              "company": "Google",
+              "title": "Network Implementation Engineer, Data Center Networking Delivery"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541530/software-development-engineer-ai-studios-engineering",
+              "company": "Amazon",
+              "title": "Software Development Engineer, AI Studios Engineering"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541540/software-development-engineer-ai-studios-engineering",
+              "company": "Amazon",
+              "title": "Software Development Engineer, AI Studios Engineering"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541943/software-development-engineer-agentic-workspaces",
+              "company": "Amazon",
+              "title": "Software Development Engineer, Agentic Workspaces"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541733/software-development-engineer-ads-nova",
+              "company": "Amazon",
+              "title": "Software Development Engineer, Ads Nova"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541281/software-development-engineer-eva-development-team",
+              "company": "Amazon",
+              "title": "Software Development Engineer, Eva Development Team"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541282/software-development-engineer-eva-development-team",
+              "company": "Amazon",
+              "title": "Software Development Engineer, Eva Development Team"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541930/applied-scientist-agentic-workspaces-aaws",
+              "company": "Amazon",
+              "title": "Applied Scientist, Agentic WorkSpaces (AAWS)"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 28.375,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 19387,
+            "cached_input_tokens": 0,
+            "output_tokens": 2341,
+            "reasoning_tokens": 369,
+            "estimated_usd": 0.066866
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/130800413166183110-software-engineer-iii-google-cloud-security-and-privacy",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Demonstrated backend, distributed-systems, async-service, reliability, and cloud deployment work.",
+                "Python, C++, system design, testing, and scalable retrieval-service experience align with core engineering work."
+              ],
+              "main_gaps": [
+                "Two years of large-scale distributed infrastructure experience is not clearly established at the requested level."
+              ]
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556994805",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong evidence of cloud-deployed backend services, Docker/Kubernetes, CI/CD, observability, and reliability practices.",
+                "Applied AI platform and retrieval-system work is relevant to the team's AI infrastructure domain."
+              ],
+              "main_gaps": [
+                "Required 2+ years of technical engineering experience is not clearly evidenced.",
+                "No direct experience building C# Service Fabric control-plane or large-scale scheduler services."
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210769609",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong hands-on Python, AWS deployment, Docker, CI/CD, testing, and production AI/LLM-service experience.",
+                "Has built evaluation, retrieval, and model-serving systems with operational reliability practices."
+              ],
+              "main_gaps": [
+                "The required 3+ years of applied software engineering experience is not clearly evidenced.",
+                "Direct large-corporate-environment and production MLOps experience at this seasoned Engineer III scope is limited."
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210727002",
+              "match_score": 63.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Evidence of production React/TypeScript interfaces, REST APIs, SQL, and agentic LLM workflows.",
+                "Has integrated tool calling, guardrails, stateful agent flows, and backend evaluation services."
+              ],
+              "main_gaps": [
+                "Required 3+ years of applied experience is not clearly evidenced.",
+                "Strong hands-on Java backend/service development is listed as a skill but not clearly demonstrated in experience."
+              ]
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-TX-Austin/Software-R-D-Engineer--VLSI-Physical-Design---New-College-Grad-2026_JR2019330",
+              "match_score": 18.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Candidate has C++ and some ML/software-systems background.",
+                "The new-college-grad level aligns generally with candidate seniority."
+              ],
+              "main_gaps": [
+                "This is hardware-first VLSI physical-design work; no evidence of required physical-design algorithms, timing optimization, or EDA tool experience.",
+                "No evidence of the requested master's/PhD-level VLSI specialization."
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/138249054688551622-software-engineer-semantic-understanding-search-ads-personalization",
+              "match_score": 73.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong production retrieval, embeddings, hybrid search, reranking, LLM, multimodal-document, and ML evaluation experience.",
+                "Has built and deployed Python AI services with measurable retrieval quality and latency improvements."
+              ],
+              "main_gaps": [
+                "Production recommendation/personalization model deployment is not clearly evidenced.",
+                "Required experience level and scope for a Google software-engineer role are somewhat beyond the documented employment duration."
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/127808642027004614-software-engineer-iii-ai-ml-search-ecosystems",
+              "match_score": 71.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct experience with information retrieval, content processing, evaluation signals, large labeled datasets, and scalable retrieval backends.",
+                "Candidate has Java/C++ skills plus Python service and data-pipeline experience."
+              ],
+              "main_gaps": [
+                "Two years of professional C++ and Java development is not clearly demonstrated.",
+                "Large-scale search infrastructure/data-pipeline experience is relevant but not clearly at Google's requested production scale."
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/103784038082192070-network-implementation-engineer-data-center-networking-delivery",
+              "match_score": 24.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Some transferable cloud, Linux, automation, and systems knowledge.",
+                "Candidate has experience with reliability-oriented software deployment."
+              ],
+              "main_gaps": [
+                "No evidence of the required 3 years in DWDM, TCP/IP network operations, or system-design operations methodology.",
+                "No telecommunications field deployment, optical-network design, vendor, or contractor experience."
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541530/software-development-engineer-ai-studios-engineering",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong full-stack and AI application delivery evidence: React, TypeScript, FastAPI, APIs, Docker, AWS, testing, and production troubleshooting.",
+                "Direct experience integrating LLM systems and working across backend services, user-facing tooling, and evaluation workflows."
+              ],
+              "main_gaps": [
+                "The stated 3+ years of non-internship professional software-development experience is not clearly evidenced."
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541540/software-development-engineer-ai-studios-engineering",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong full-stack and AI application delivery evidence: React, TypeScript, FastAPI, APIs, Docker, AWS, testing, and production troubleshooting.",
+                "Direct experience integrating LLM systems and working across backend services, user-facing tooling, and evaluation workflows."
+              ],
+              "main_gaps": [
+                "The stated 3+ years of non-internship professional software-development experience is not clearly evidenced."
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541943/software-development-engineer-agentic-workspaces",
+              "match_score": 54.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate has relevant distributed-service, cloud deployment, AI-agent, Kubernetes, observability, and reliability experience.",
+                "Agentic-system implementation and secure backend service work are directionally relevant."
+              ],
+              "main_gaps": [
+                "Role scope requires ownership of globally scaled, low-latency, highly available identity, authorization, and streaming data-plane services beyond documented experience.",
+                "No direct evidence of production identity-provider integration, session brokering, real-time streaming, or cross-region failover ownership."
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541733/software-development-engineer-ads-nova",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate has strong AI/LLM application engineering, backend-service development, and scalable retrieval-system experience.",
+                "Experience working across Python, Java, APIs, testing, and production deployment is relevant to end-to-end service delivery."
+              ],
+              "main_gaps": [
+                "Required 3+ years of non-internship software-development experience and 2+ years of architecture/design experience are not clearly evidenced.",
+                "No clear evidence of owning large-scale multi-tier distributed systems at the stated scope."
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541281/software-development-engineer-eva-development-team",
+              "match_score": 90.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct production experience building RAG, agentic workflows, tool calling, guardrails, evaluation systems, FastAPI services, and AWS/CI-CD deployments.",
+                "Strong overlap with the hands-on role responsibilities across AI integrations, reusable platform components, deployment, testing, and user-facing full-stack tooling."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541282/software-development-engineer-eva-development-team",
+              "match_score": 90.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct production experience building RAG, agentic workflows, tool calling, guardrails, evaluation systems, FastAPI services, and AWS/CI-CD deployments.",
+                "Strong overlap with the hands-on role responsibilities across AI integrations, reusable platform components, deployment, testing, and user-facing full-stack tooling."
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10541930/applied-scientist-agentic-workspaces-aaws",
+              "match_score": 37.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate has applied ML, data engineering, model evaluation, and Python experience.",
+                "Applied work on learner-risk modeling and production AI systems is directionally relevant to forecasting and optimization."
+              ],
+              "main_gaps": [
+                "Required PhD or master's plus 4+ years of related experience is not met or clearly evidenced.",
+                "No evidence of top-tier publications/patents or deep production work in capacity forecasting, probabilistic modeling, operations research, and resource optimization."
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 5,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210715977",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer III - Java, Spring Boot, DevOps, AWS"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210788250",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer II - Asset & Wealth Management Technology"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/openai/4923fd3e-acf2-4551-91ad-5a92ca81455b",
+              "company": "OpenAI",
+              "title": "Software Engineer, Healthcare"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210770595",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210729233",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer II (Full Stack Engineer)"
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200683064/machine-learning-engineer-notifications-personalization",
+              "company": "Apple",
+              "title": "Machine Learning Engineer - Notifications & Personalization"
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556962891",
+              "company": "Microsoft",
+              "title": "AI Software Engineering Intern"
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/297379",
+              "company": "Dell",
+              "title": "Oracle Database Automation Engineer"
+            },
+            {
+              "key": "url::https://www.metacareers.com/jobs/2033115780677034",
+              "company": "Meta",
+              "title": "Robotics Backend & ML Integration Engineer, Site Services"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672930401597671733",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Recommendation Architecture, Feeds Infrastructure) - 2027 Summer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672926068681951493",
+              "company": "TikTok",
+              "title": "Software Engineer Intern (Recommendation Architecture, Feeds Infrastructure) - 2027 Summer"
+            },
+            {
+              "key": "id::amd_official_careers::91408",
+              "company": "AMD",
+              "title": "C-Simulation Engineer, GPU Modeling"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Applied-Machine-Learning-Engineer--Circuit-Design---New-College-Grad-2026_JR2011517",
+              "company": "NVIDIA",
+              "title": "Applied Machine Learning Engineer, Circuit Design - New College Grad 2026"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Architecture-Energy-Modeling-Engineer---New-College-Grad-2026_JR2023398",
+              "company": "NVIDIA",
+              "title": "Architecture Energy Modeling Engineer - New College Grad 2026"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--AI-for-Graphics-and-Gaming---New-College-Grad-2026_JR2011267",
+              "company": "NVIDIA",
+              "title": "Research Scientist, AI for Graphics and Gaming - New College Grad 2026"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 33.279,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 12144,
+            "cached_input_tokens": 0,
+            "output_tokens": 2656,
+            "reasoning_tokens": 495,
+            "estimated_usd": 0.05616
+          },
+          "decisions": [
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210715977",
+              "match_score": 67.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct Java/Spring Boot, REST API, AWS, Kubernetes, Terraform, CI/CD, SQL, and production reliability evidence.",
+                "Has built and deployed scalable backend services with testing, observability, caching, and staged rollouts."
+              ],
+              "main_gaps": [
+                "Required 3+ years of applied engineering experience is not clearly evidenced.",
+                "Azure and enterprise API-gateway experience are not clearly demonstrated."
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210788250",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong Python, SQL, database, data-pipeline, AWS deployment, testing, and operational-reliability evidence.",
+                "Relevant experience debugging production ingestion/retrieval systems and using CI/CD, validation, retries, and observability."
+              ],
+              "main_gaps": [
+                "Required 2+ years of applied experience in a corporate production environment is not clearly met by the listed internships and short-term roles."
+              ]
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/openai/4923fd3e-acf2-4551-91ad-5a92ca81455b",
+              "match_score": 45.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant production backend/full-stack work includes APIs, data pipelines, AWS deployment, observability, testing, and enterprise RAG systems.",
+                "Has meaningful applied-AI and enterprise-data experience that aligns with parts of the product domain."
+              ],
+              "main_gaps": [
+                "Role explicitly requires 5+ years building and owning production-quality software, which is materially beyond the resume.",
+                "No clear healthcare-system/EHR integration or regulated healthcare-compliance experience."
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210770595",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Software Engineer II is broadly aligned with the candidate's backend, full-stack, cloud deployment, testing, and reliability experience.",
+                "Candidate has practical production work across Python, Java, SQL, APIs, Docker, AWS, and CI/CD."
+              ],
+              "main_gaps": [
+                "The posting provides no responsibilities or qualifications to verify the specific team stack and required experience level."
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210729233",
+              "match_score": 79.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct full-stack evidence: React, TypeScript, FastAPI, Node.js, REST APIs, databases, Docker, AWS, and CI/CD.",
+                "Built production full-stack applications with testing, structured validation, reliability features, and deployment ownership."
+              ],
+              "main_gaps": [
+                "The posting provides no actual responsibilities or required qualifications, so the precise stack and experience expectations cannot be verified."
+              ]
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200683064/machine-learning-engineer-notifications-personalization",
+              "match_score": 70.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant ML and applied-AI background includes model fine-tuning, retrieval/ranking optimization, ML pipelines, evaluation, and PyTorch.",
+                "Experience improving retrieval quality and building user-facing AI systems is directionally relevant to personalization work."
+              ],
+              "main_gaps": [
+                "No job responsibilities or qualifications are supplied to establish the role's seniority, production-ML depth, or recommendation-model requirements.",
+                "No direct evidence of notifications, large-scale personalization, or online recommendation systems."
+              ]
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556962891",
+              "match_score": 48.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Strong technical alignment through Python, Java, C++, applied AI/ML work, PyTorch, LLM systems, and production software projects.",
+                "The internship's AI engineering, responsible-AI, development, and testing responsibilities fit the candidate's background."
+              ],
+              "main_gaps": [
+                "The required active enrollment with at least one academic term remaining after the internship is not supported: the listed M.S. ends May 2026, while this is an ongoing internship posting."
+              ]
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/297379",
+              "match_score": 25.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate has transferable Python, Bash, SQL, Docker, Terraform, Kubernetes, CI/CD, and agentic-AI experience.",
+                "Has built agentic workflows with MCP/tool calling, evaluation, guardrails, and production deployment."
+              ],
+              "main_gaps": [
+                "Requires 5+ years of deep Oracle database infrastructure experience, including RAC, ASM, and DataGuard, which is not evidenced.",
+                "Requires advanced Linux/Ansible/GitLab CI operations across database-server fleets, which is not clearly demonstrated."
+              ]
+            },
+            {
+              "key": "url::https://www.metacareers.com/jobs/2033115780677034",
+              "match_score": 55.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Relevant backend and ML-integration foundation: Python, APIs, data pipelines, retrieval systems, AI evaluation, AWS, and production reliability.",
+                "Has experience integrating AI services into practical applications and troubleshooting system behavior."
+              ],
+              "main_gaps": [
+                "No job description is provided to verify the role's actual scope, required seniority, or technologies.",
+                "No direct robotics, site-services, or physical-system integration experience is evidenced."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672930401597671733",
+              "match_score": 49.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Relevant systems background includes Java/C++, data pipelines, retrieval/ranking infrastructure, async services, and production reliability work.",
+                "The candidate has experience with ML-adjacent data and inference workflows, plus operational tooling and evaluation."
+              ],
+              "main_gaps": [
+                "The minimum qualification requires currently pursuing a bachelor's degree; the listed B.S. was completed in 2024 and M.S. ends in 2026, so 2027 internship eligibility is not evidenced.",
+                "No direct experience operating recommendation infrastructure at the stated global scale."
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672926068681951493",
+              "match_score": 49.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Relevant systems background includes Java/C++, data pipelines, retrieval/ranking infrastructure, async services, and production reliability work.",
+                "The candidate has experience with ML-adjacent data and inference workflows, plus operational tooling and evaluation."
+              ],
+              "main_gaps": [
+                "The minimum qualification requires currently pursuing a bachelor's degree; the listed B.S. was completed in 2024 and M.S. ends in 2026, so 2027 internship eligibility is not evidenced.",
+                "No direct experience operating recommendation infrastructure at the stated global scale."
+              ]
+            },
+            {
+              "key": "id::amd_official_careers::91408",
+              "match_score": 54.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has C++, Python, Linux, debugging, version-control, and large software-project experience.",
+                "Computer-science background and systems work provide some transferable foundation for simulation-software development."
+              ],
+              "main_gaps": [
+                "No direct hardware modeling, GPU architecture, verification, firmware, or performance-simulation experience.",
+                "The role is hardware-adjacent and requires strong computer-organization depth beyond what is explicitly evidenced."
+              ]
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Applied-Machine-Learning-Engineer--Circuit-Design---New-College-Grad-2026_JR2011517",
+              "match_score": 36.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong transferable applied-AI evidence: Python/C++, fine-tuning, agentic workflows, evaluation, data analysis, and production AI systems.",
+                "The new-college-grad framing is compatible with the candidate's M.S. timeline."
+              ],
+              "main_gaps": [
+                "Circuit design, VLSI, ASIC, EDA, silicon analysis, or custom-circuit-design knowledge is an explicit required qualification and is not evidenced.",
+                "No demonstrated AI/ML work applied to design automation, SPICE, or circuit optimization."
+              ]
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Architecture-Energy-Modeling-Engineer---New-College-Grad-2026_JR2023398",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "M.S. CS education plus Python/C++, ML/statistical work, model evaluation, and algorithmic systems experience align with parts of the role.",
+                "New-college-grad level and ML-based modeling responsibilities are directionally appropriate."
+              ],
+              "main_gaps": [
+                "Required background in computer architecture and energy-efficient GPU design is not clearly demonstrated.",
+                "Energy/power estimation and low-power-design knowledge are core to the role but absent from the resume."
+              ]
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--AI-for-Graphics-and-Gaming---New-College-Grad-2026_JR2011267",
+              "match_score": 24.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Candidate has applied LLM/AI systems, PyTorch exposure, data-pipeline work, and production evaluation experience.",
+                "There is some transferable experience building AI-enabled products and scalable retrieval systems."
+              ],
+              "main_gaps": [
+                "The role requires a PhD-level research profile, large-scale multi-GPU training, and an impactful research or shipping record; these are not evidenced.",
+                "No demonstrated graphics, rendering, game-engine, image/video generation, neural-rendering, or distributed-training experience."
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 6,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5424111008",
+              "company": "Anthropic",
+              "title": "Recruiting Analytics Data Engineer"
+            },
+            {
+              "key": "url::https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/New-York---New-York/Specialist-Solution-Engineer_JR358388-1",
+              "company": "Salesforce",
+              "title": "Specialist Solution Engineer"
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/345353",
+              "company": "Oracle",
+              "title": "Security Product Management Architect"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/snowflake/a51a1e30-94ec-4550-b39f-90ef328dfa87",
+              "company": "Snowflake",
+              "title": "Fullstack Engineer - Marketplace"
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/296580",
+              "company": "Dell",
+              "title": "Test Engineer 1 (1st Shift)"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Data-Science-Graduate_1213631-1",
+              "company": "HPE",
+              "title": "Data Science Graduate"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 14.503,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 6,
+            "input_tokens": 9923,
+            "cached_input_tokens": 0,
+            "output_tokens": 1035,
+            "reasoning_tokens": 189,
+            "estimated_usd": 0.032266
+          },
+          "decisions": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5424111008",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has Python, SQL, Spark/Databricks pipeline work and production reliability experience.",
+                "Has built data-processing workflows with validation, lineage-related debugging, and stakeholder-oriented applications."
+              ],
+              "main_gaps": [
+                "Expert-level BigQuery, dbt/Fivetran, dimensional modeling/SCDs, and cloud-warehouse security controls are not evidenced.",
+                "The role is calibrated for a highly experienced data engineer, with 5+ years listed as preferred and a very senior scope."
+              ]
+            },
+            {
+              "key": "url::https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/New-York---New-York/Specialist-Solution-Engineer_JR358388-1",
+              "match_score": 34.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has hands-on React, TypeScript, Python, data, AI, and rapid-prototyping experience relevant to technical demonstrations.",
+                "Has built customer/support-oriented knowledge and AI applications."
+              ],
+              "main_gaps": [
+                "This is a customer-facing technical sales and business-development role; no evidence of presales ownership, sales strategy, or enterprise solution demonstrations.",
+                "Required Salesforce/Tableau/CRM Analytics experience is not evidenced."
+              ]
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/345353",
+              "match_score": 15.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has a technical software/AI background and hands-on API and AI-system implementation experience."
+              ],
+              "main_gaps": [
+                "Requires extensive product-management ownership across multiple security products/platforms; neither senior PM experience nor portfolio ownership is evidenced.",
+                "Deep cybersecurity, cloud-security, identity, and infrastructure-security expertise is not evidenced."
+              ]
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/snowflake/a51a1e30-94ec-4550-b39f-90ef328dfa87",
+              "match_score": 64.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct full-stack evidence: production React/TypeScript applications plus FastAPI, Node.js, Java, Python, APIs, testing, and cloud deployment.",
+                "Has built reliable, performance-sensitive customer/support-facing systems and collaborated across end-to-end product work."
+              ],
+              "main_gaps": [
+                "The role explicitly requires 4+ years of industry experience; the resume shows strong but substantially shorter professional experience.",
+                "Significant React/TypeScript frontend depth at the stated scale is not fully established."
+              ]
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/296580",
+              "match_score": 56.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Engineer 1 title is appropriate for an early-career candidate.",
+                "Resume shows substantial automated testing, integration testing, validation, debugging, and production-reliability work."
+              ],
+              "main_gaps": [
+                "The description provides no responsibilities or required qualifications, so fit with the actual test domain cannot be verified.",
+                "Potential hardware/product test requirements are unknown."
+              ]
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Data-Science-Graduate_1213631-1",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Explicit graduate role seeking 0–2 years and a CS/equivalent degree, directly aligned with the candidate's MS CS and BS CS/Applied Mathematics.",
+                "Demonstrated data preparation, Spark/Databricks analysis, ML feature engineering and modeling, evaluation, validation, and analytics workflow experience."
+              ],
+              "main_gaps": [
+                "Visualization and business-storytelling work is less directly evidenced than data engineering, model evaluation, and ML pipeline work."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-09-15T00:33:50.376666+00:00",
       "mode": "pipeline",
       "health": "degraded",
