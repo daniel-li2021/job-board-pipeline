@@ -498,8 +498,8 @@ def verify_official(jobs: List[Dict[str, str]]) -> None:
     Never match on company+title alone — that would attach one city's
     requisition URL to a same-title opening in a different city.
     """
-    by_id: Dict[Tuple[str, str], str] = {}
-    by_ctl: Dict[Tuple[str, str, str], str] = {}
+    by_id: Dict[Tuple[str, str], set[str]] = {}
+    by_ctl: Dict[Tuple[str, str, str], set[str]] = {}
     for job in jobs:
         url = job.get("official_url") or ""
         if not url:
@@ -507,11 +507,11 @@ def verify_official(jobs: List[Dict[str, str]]) -> None:
         ckey = normalize_company_key(job.get("company", ""))
         tkey = normalize_title_key(job.get("title", ""))
         lkey = normalize_location_key(job.get("location", ""))
-        jid = (job.get("job_id") or "").strip()
-        if ckey and jid:
-            by_id.setdefault((ckey, jid), url)
+        if ckey:
+            for jid in coverage_reconcile.job_ids(job):
+                by_id.setdefault((ckey, jid), set()).add(url)
         if ckey and tkey and lkey:
-            by_ctl.setdefault((ckey, tkey, lkey), url)
+            by_ctl.setdefault((ckey, tkey, lkey), set()).add(url)
 
     for job in jobs:
         if job.get("official_url"):
@@ -520,21 +520,24 @@ def verify_official(jobs: List[Dict[str, str]]) -> None:
         if looks_official(job.get("source_url", "")):
             job["official_url"] = job["source_url"]
             continue
+        # A direct application link can expose the employer's canonical URL;
+        # do not overwrite that evidence with a title/location guess.
+        if job.get("application_url"):
+            continue
         ckey = normalize_company_key(job.get("company", ""))
         tkey = normalize_title_key(job.get("title", ""))
         lkey = normalize_location_key(job.get("location", ""))
-        jid = (job.get("job_id") or "").strip()
         # 2) Same company + job_id (cross-source same requisition).
-        if ckey and jid:
-            hit = by_id.get((ckey, jid))
-            if hit:
-                job["official_url"] = hit
+        if ckey:
+            hits = set().union(*(by_id.get((ckey, jid), set()) for jid in coverage_reconcile.job_ids(job)))
+            if len(hits) == 1:
+                job["official_url"] = next(iter(hits))
                 continue
         # 3) Same company + title + location (never title-only).
         if ckey and tkey and lkey:
-            hit = by_ctl.get((ckey, tkey, lkey))
-            if hit:
-                job["official_url"] = hit
+            hits = by_ctl.get((ckey, tkey, lkey), set())
+            if len(hits) == 1:
+                job["official_url"] = next(iter(hits))
 
 
 def _job_posting_json(html: str) -> Dict[str, Any]:
@@ -592,7 +595,7 @@ def _scrapling_fetch(url: str) -> Tuple[str, str, str]:
 def resolve_exposed_originals(
     jobs: List[Dict[str, Any]], session: requests.Session, store: Dict[str, Dict[str, Any]]
 ) -> Dict[str, Any]:
-    """Resolve every thin job that exposes an official or application URL."""
+    """Resolve thin JDs and ambiguous jobs that expose a direct application URL."""
     cached = {
         (str(entry.get("source") or ""), str(entry.get("job_id") or "")): entry
         for entry in store.values() if entry.get("direct_original_fetched")
@@ -602,9 +605,15 @@ def resolve_exposed_originals(
     blocked_http_domains: set[str] = set()
     last_request: Dict[str, float] = {}
     for job in jobs:
-        if len(str(job.get("description") or "").strip()) >= THIN_JD_CHARS:
+        needs_jd = len(str(job.get("description") or "").strip()) < THIN_JD_CHARS
+        needs_identity = bool(job.get("application_url")) and not job.get("official_url") and job.get("coverage_status") in {
+            "official_ambiguous", "official_gap", "official_identity_unmatched",
+        }
+        if not needs_jd and not needs_identity:
             continue
         stats["needed"] += 1
+        if needs_identity:
+            stats["identity_needed"] += 1
         urls = [
             str(job.get("official_url") or ""),
             str(job.get("application_url") or ""),
@@ -627,7 +636,9 @@ def resolve_exposed_originals(
             fresh = datetime.now(timezone.utc) - fetched_at.astimezone(timezone.utc) <= timedelta(days=DETAIL_STALE_DAYS)
         except (TypeError, ValueError):
             fresh = False
-        if prior and len(str(prior.get("description") or "").strip()) >= THIN_JD_CHARS and fresh:
+        if prior and prior.get("official_url") and fresh and (
+            not needs_jd or len(str(prior.get("description") or "").strip()) >= THIN_JD_CHARS
+        ):
             for field in (
                 "official_url", "description", "posted_date", "updated_date", "date_confidence",
                 "direct_original_fetched_at",
@@ -637,9 +648,11 @@ def resolve_exposed_originals(
             job["original_resolved"] = bool(job.get("official_url"))
             job["direct_original_fetched"] = True
             job["enrichment_method"] = "direct_cache"
-            job["enrichment_status"] = "resolved" if len(str(job.get("description") or "")) >= THIN_JD_CHARS else "unresolved"
+            job["enrichment_status"] = "resolved"
             stats["cache_reused"] += 1
-            if job["enrichment_status"] == "resolved":
+            if needs_identity:
+                stats["identities_resolved"] += 1
+            if needs_jd and len(str(job.get("description") or "")) >= THIN_JD_CHARS:
                 stats["jds_resolved"] += 1
             continue
         host = urlsplit(application_url).netloc.lower()
@@ -669,22 +682,41 @@ def resolve_exposed_originals(
             failure = "http_domain_blocked_after_429"
         posting = _job_posting_json(html) if html else {}
         method = "direct_http"
-        if not posting:
-            html, final_url, scrapling_failure = _scrapling_fetch(application_url)
+        if not posting and needs_jd:
+            scrapling_html, scrapling_url, scrapling_failure = _scrapling_fetch(application_url)
             stats["scrapling_requests"] += 1
-            posting = _job_posting_json(html) if html else {}
+            posting = _job_posting_json(scrapling_html) if scrapling_html else {}
+            if scrapling_html:
+                html = scrapling_html
+            scrapling_host = urlsplit(scrapling_url).netloc.lower()
+            scrapling_tracker = any(
+                scrapling_host == domain or scrapling_host.endswith(f".{domain}")
+                for domain in ("contacthr.com", "appcast.io")
+            )
+            if scrapling_url and not is_aggregator_url(scrapling_url) and not scrapling_tracker:
+                final_url = scrapling_url
             method = "scrapling_fetcher"
             failure = scrapling_failure or ("structured_jd_not_found" if not posting else "")
         final_host = urlsplit(final_url).netloc.lower()
-        if not final_host or is_aggregator_url(final_url):
+        tracker = any(final_host == domain or final_host.endswith(f".{domain}") for domain in ("contacthr.com", "appcast.io"))
+        if not final_host or is_aggregator_url(final_url) or tracker:
             failure = failure or "redirect_remained_aggregator"
-        elif final_url and (html or posting):
+        elif final_url:
             job["official_url"] = final_url
             job["original_resolved"] = True
+            job["direct_original_fetched"] = True
+            job["direct_original_fetched_at"] = datetime.now(timezone.utc).isoformat()
+            if needs_identity:
+                stats["identities_resolved"] += 1
         if not posting:
-            job["enrichment_status"] = "unresolved"
-            job["enrichment_failure_reason"] = failure or "structured_jd_not_found"
-            reasons[job["enrichment_failure_reason"]] += 1
+            if needs_jd:
+                job["enrichment_status"] = "unresolved"
+                job["enrichment_failure_reason"] = failure or "structured_jd_not_found"
+                reasons[job["enrichment_failure_reason"]] += 1
+            else:
+                job["enrichment_status"] = "resolved" if job.get("official_url") else "unresolved"
+                if job["enrichment_status"] == "resolved":
+                    job.pop("enrichment_failure_reason", None)
             continue
         if posting.get("description"):
             from bs4 import BeautifulSoup
@@ -1969,7 +2001,7 @@ def enrich_from_exact_peers(
 
 REMOTE_STORE_FIELDS = {
     "key", "job_id", "company", "title", "location", "posted_date", "date_confidence",
-    "official_url", "source", "source_url", "sponsorship", "filter_status", "referral_name",
+    "official_url", "application_url", "source", "source_url", "sponsorship", "filter_status", "referral_name",
     "company_flag", "staffing_firm", "clearance_risk_company", "role_family", "role_relevance",
     "tier", "recency_bucket", "cache_key", "jd_hash", "match_score", "resume_profile_used",
     "seniority_fit", "hard_constraint_status", "top_match_reasons", "main_gaps", "main_gaps_count", "recommended_action",

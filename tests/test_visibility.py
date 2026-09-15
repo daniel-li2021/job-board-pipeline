@@ -815,6 +815,45 @@ class CoverageMatchingTests(unittest.TestCase):
         self.assertEqual("", method)
         self.assertIsNone(matched)
 
+        method, matched = coverage_reconcile.exact_match(
+            {"source": "linkedin", "job_id": "12345678", "title": "Different Role", "location": "Boston, MA"},
+            [official_job("12345678", "Another Role", "Seattle, WA")],
+        )
+        self.assertEqual("", method)
+        self.assertIsNone(matched)
+
+    def test_stable_employer_id_disagreement_is_not_hidden_by_title_location(self) -> None:
+        external = make_job(
+            source="indeed", company="Example Tech", title="Software Engineer I",
+            location="Seattle, WA", job_id="indeed-1",
+            source_url="https://indeed.test/view/indeed-1",
+        )
+        external["application_url"] = "https://careers.example.com/jobs/99999"
+        coverage_reconcile.annotate_jobs([external], "board", context("validated"))
+        self.assertEqual("official_identity_unmatched", external["coverage_status"])
+        self.assertEqual(["99999"], external["coverage_stable_ids"])
+        self.assertFalse(external["suppress_alert"])
+
+    def test_board_scope_prefers_current_application_identity(self) -> None:
+        now = datetime(2026, 9, 15, 12, tzinfo=timezone.utc)
+        base = {
+            "source": "indeed", "job_id": "in-1", "company": "Example Tech",
+            "title": "Software Engineer", "location": "Seattle, WA", "filter_status": "kept",
+            "first_seen": "2026-09-15T10:00:00+00:00",
+        }
+        entries = [
+            {**base, "last_seen": "2026-09-15T10:00:00+00:00"},
+            {**base, "last_seen": "2026-09-15T11:00:00+00:00", "official_url": "https://careers.example/jobs/11111"},
+        ]
+        snapshot = {"jobs": [{**base, "application_url": "https://careers.example/jobs/22222"}]}
+        with patch.object(coverage_reconcile, "_load_store_entries", return_value=({}, entries)), patch.object(
+            coverage_reconcile, "read_source_snapshot_payload", return_value=snapshot,
+        ):
+            scoped = coverage_reconcile.board_scope(now)
+        self.assertEqual(1, len(scoped))
+        self.assertFalse(scoped[0]["official_url"])
+        self.assertEqual("https://careers.example/jobs/22222", scoped[0]["application_url"])
+
     def test_exact_official_match_suppresses_regardless_of_manual_validation(self) -> None:
         external = make_job(
             source="linkedin",
@@ -824,6 +863,7 @@ class CoverageMatchingTests(unittest.TestCase):
             job_id="10003",
             source_url="https://www.linkedin.com/jobs/view/10003",
         )
+        external["requisition_id"] = "10003"
         coverage_reconcile.annotate_jobs([external], "board", context("validated"))
         self.assertEqual("official_duplicate", external["coverage_status"])
         self.assertTrue(external["suppress_alert"])
@@ -911,6 +951,41 @@ class CoverageMatchingTests(unittest.TestCase):
         self.assertEqual(2, external["coverage_candidate_count"])
         self.assertFalse(external["suppress_alert"])
 
+    def test_official_url_propagation_requires_unique_evidence(self) -> None:
+        peers = [
+            official_job("30001", "Software Engineer", "Seattle, WA"),
+            official_job("30002", "Software Engineer", "Seattle, WA"),
+        ]
+        ambiguous = make_job(
+            source="linkedin", company="Example Tech", title="Software Engineer",
+            location="Seattle, WA", job_id="linkedin-1",
+        )
+        direct = {**ambiguous, "job_id": "indeed-1", "source": "indeed", "application_url": "https://apply.test/redirect"}
+        board_pipeline.verify_official([*peers, ambiguous, direct])
+        self.assertFalse(ambiguous["official_url"])
+        self.assertFalse(direct["official_url"])
+
+    def test_rich_ambiguous_job_resolves_canonical_application_redirect(self) -> None:
+        job = make_job(
+            source="indeed", company="Example Tech", title="Software Engineer",
+            location="Seattle, WA", job_id="indeed-1", description="x" * 250,
+        )
+        job.update(
+            application_url="https://contacthr.com/track/123456",
+            coverage_status="official_ambiguous",
+        )
+        response = Mock(
+            status_code=200,
+            url="https://careers.example.com/jobs/30001",
+            text="<html></html>",
+        )
+        session = Mock()
+        session.get.return_value = response
+        stats = board_pipeline.resolve_exposed_originals([job], session, {})
+        self.assertEqual("https://careers.example.com/jobs/30001", job["official_url"])
+        self.assertTrue(job["direct_original_fetched"])
+        self.assertEqual(1, stats["identities_resolved"])
+
     def test_workday_detail_keeps_additional_locations(self) -> None:
         info = {
             "location": "Washington - Bellevue",
@@ -972,7 +1047,10 @@ class CoverageMatchingTests(unittest.TestCase):
         for job in external:
             job["first_seen"] = "2026-08-28T11:00:00+00:00"
         coverage_reconcile.annotate_jobs(external, "board", ctx)
-        self.assertEqual(["official_duplicate", "official_duplicate", "official_gap"], [j["coverage_status"] for j in external])
+        self.assertEqual(
+            ["official_duplicate", "official_duplicate", "official_identity_unmatched"],
+            [j["coverage_status"] for j in external],
+        )
         self.assertEqual("unvalidated", ctx["config"]["example"]["status"])
 
     def test_linkedin_indeed_overlap_reports_exact_unique_query_contribution(self) -> None:

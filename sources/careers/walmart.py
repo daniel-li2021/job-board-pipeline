@@ -7,13 +7,32 @@ from typing import Any, Dict, List, Optional
 
 import requests
 
-from ..schema import make_job, normalize_space
+from ..schema import SourceUnavailable, make_job, normalize_space
 from .http import http_get, http_post, keep_us_or_unknown, now_iso
 from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
 SEARCH = "https://careers.walmart.com/api/ai/search-ai/api/v1/combined/hybrid-search"
 RESULTS = "https://careers.walmart.com/us/en/results"
 PAGE_SIZE = 25
+
+
+def _scrapling_post(params: Dict[str, Any], json_body: Dict[str, Any], headers: Dict[str, str]) -> Dict[str, Any]:
+    try:
+        from scrapling.fetchers import Fetcher
+    except ImportError as exc:
+        raise SourceUnavailable("Walmart hybrid search blocked and Scrapling is unavailable") from exc
+    try:
+        response = Fetcher.post(
+            SEARCH, params=params, json=json_body, headers=headers,
+            impersonate="chrome", stealthy_headers=True, retries=0, timeout=30,
+        )
+        if int(getattr(response, "status", 0) or 0) != 200:
+            raise SourceUnavailable(f"Walmart Scrapling fallback HTTP {getattr(response, 'status', 0)}")
+        return response.json()
+    except SourceUnavailable:
+        raise
+    except Exception as exc:  # noqa: BLE001 - optional fallback boundary
+        raise SourceUnavailable(f"Walmart Scrapling fallback failed: {type(exc).__name__}") from exc
 
 
 def _location(meta: Dict[str, Any]) -> str:
@@ -35,9 +54,11 @@ def scrape_walmart(
     jobs: List[Dict[str, str]] = []
     raw_count = pages = 0
     query_stats: List[Dict[str, Any]] = []
-    # Walmart's edge now requires cookies set by the public results page; a
-    # direct API POST returns HTTP 520 even with the browser's JSON payload.
-    http_get(session, RESULTS, label="Walmart careers", params={"q": queries[0]})
+    use_scrapling = False
+    try:
+        http_get(session, RESULTS, label="Walmart careers", params={"q": queries[0]})
+    except SourceUnavailable:
+        use_scrapling = True
     for query in queries:
         query_started = time.monotonic()
         before_pages, before_raw, before_jobs = pages, raw_count, len(jobs)
@@ -45,17 +66,21 @@ def scrape_walmart(
         budget = query_page_budget(query, max_pages)
         for page in range(budget):
             params = {"page": page, "size": PAGE_SIZE, "locale": "en_US"}
-            payload = http_post(
-                session,
-                SEARCH,
-                label="Walmart hybrid search",
-                params=params,
-                json_body={"query": query, "basicSearch": False, "filter": "", "locale": "en_US"},
-                headers={
-                    "Accept": "application/json", "Content-Type": "application/json",
-                    "Origin": "https://careers.walmart.com", "Referer": RESULTS,
-                },
-            ).json()
+            json_body = {"query": query, "basicSearch": False, "filter": "", "locale": "en_US"}
+            headers = {
+                "Accept": "application/json", "Content-Type": "application/json",
+                "Origin": "https://careers.walmart.com", "Referer": RESULTS,
+            }
+            try:
+                if use_scrapling:
+                    raise SourceUnavailable("normal HTTP preflight blocked")
+                payload = http_post(
+                    session, SEARCH, label="Walmart hybrid search", params=params,
+                    json_body=json_body, headers=headers,
+                ).json()
+            except SourceUnavailable:
+                payload = _scrapling_post(params, json_body, headers)
+                use_scrapling = True
             pages += 1
             rows = payload.get("jobs") or []
             if not rows:
@@ -98,7 +123,7 @@ def scrape_walmart(
     return {
         "company": "Walmart Global Tech",
         "source": "walmart_official_careers",
-        "method": "HTTP POST Walmart combined hybrid-search",
+        "method": "Scrapling POST Walmart combined hybrid-search" if use_scrapling else "HTTP POST Walmart combined hybrid-search",
         "search_url": SEARCH,
         "search_urls": [SEARCH],
         "pagination": f"page=0,1,...; size={PAGE_SIZE}; bounded per query",

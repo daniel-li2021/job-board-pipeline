@@ -107,6 +107,25 @@ class OfficialAdapterTests(unittest.TestCase):
         self.assertEqual(0, call["params"]["page"])
         self.assertEqual("https://careers.walmart.com", call["headers"]["Origin"])
 
+    @patch("sources.careers.walmart._scrapling_post")
+    @patch("sources.careers.walmart.http_get")
+    def test_walmart_falls_back_to_scrapling_when_normal_http_is_blocked(self, get, scrapling_post):
+        from sources.schema import SourceUnavailable
+
+        get.side_effect = SourceUnavailable("Walmart careers HTTP 520")
+        scrapling_post.return_value = {
+            "jobs": [{"id": "R-2-External", "text": "Build software", "metadata": {
+                "jobId": "R-2", "jobPostingTitle": "Software Engineer",
+                "primaryLocationCity": "Bentonville", "primaryLocationState": "AR",
+                "primaryLocationCountry": "US",
+            }}],
+            "totalJobs": 1,
+        }
+        result = scrape_walmart(Session(), max_pages=1, queries=["software"])
+        self.assertEqual(["R-2"], [job["job_id"] for job in result["jobs"]])
+        self.assertIn("Scrapling", result["method"])
+        scrapling_post.assert_called_once()
+
     def test_tiktok_keeps_lifeattiktok_canonical_url(self):
         session = Session(posts=[Response(payload={"code": 0, "data": {
             "count": 1,
