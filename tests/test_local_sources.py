@@ -165,6 +165,16 @@ class LocalSourceTests(unittest.TestCase):
         self.assertEqual("/usr/bin/ssh -o BatchMode=yes", env["GIT_SSH_COMMAND"])
         self.assertEqual("0", env["GIT_TERMINAL_PROMPT"])
 
+    def test_cloud_collector_is_manual_serialized_and_commits_only_durable_state(self) -> None:
+        workflow = (ROOT / ".github/workflows/local-sources.yml").read_text(encoding="utf-8")
+        self.assertIn("workflow_dispatch:", workflow)
+        self.assertNotIn("schedule:", workflow)
+        self.assertIn("group: local-source-collection", workflow)
+        self.assertIn("cancel-in-progress: false", workflow)
+        for name in ("linkedin", "indeed", "glassdoor", "health"):
+            self.assertIn(f"output/sources/{name}.json", workflow)
+        self.assertNotIn("git add -A", workflow)
+
     def test_snapshot_schema_is_versioned_and_reads_legacy_lists(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir, patch.object(schema, "SOURCES_DIR", Path(tmpdir)):
             path = schema.write_source_snapshot("indeed", [{"job_id": "1"}], {"collector": {"commit": "abc"}})

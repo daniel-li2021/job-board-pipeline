@@ -40,7 +40,7 @@ python3 board_pipeline.py --local-out --no-llm
 python3 board_pipeline.py --skip-network
 ```
 
-GitHub runners do **not** scrape these consumer job boards directly. Install local dependencies with `python3 -m pip install -r requirements-local.txt`; the Mac launchd job then runs `local_sources.py` through `scripts/local_source_sync.sh` roughly every 3 hours and pushes only `output/sources/*.json`. Each successful snapshot records its collector commit, while [`output/sources/health.json`](output/sources/health.json) records every source's last attempt, last success, last-good count, and failure reason.
+Local sources can run through the Mac launchd job or the manual-only `Local source collection` GitHub Actions workflow; do not run both concurrently. Install local dependencies with `python3 -m pip install -r requirements-local.txt`; the Mac job runs `local_sources.py` through `scripts/local_source_sync.sh` roughly every 3 hours. Both runners commit only `output/sources/*.json`, which keeps last-good source data, health history, and reusable LinkedIn JD details durable. The workflow serializes runs, while its pip cache is disposable and correctness does not depend on a cache hit. Each successful snapshot records its collector commit, while [`output/sources/health.json`](output/sources/health.json) records every source's last attempt, last success, last-good count, and failure reason.
 
 Board run stats report exact LinkedIn/Indeed/Glassdoor overlap, each source's unique contribution, per-query exact-unique counts, and the full enrichment funnel. Discovery depth is bounded, but every discovered record is processed; there is no post-discovery job-count cap.
 
