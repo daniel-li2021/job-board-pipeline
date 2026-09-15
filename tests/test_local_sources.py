@@ -165,10 +165,11 @@ class LocalSourceTests(unittest.TestCase):
         self.assertEqual("/usr/bin/ssh -o BatchMode=yes", env["GIT_SSH_COMMAND"])
         self.assertEqual("0", env["GIT_TERMINAL_PROMPT"])
 
-    def test_cloud_collector_is_manual_serialized_and_commits_only_durable_state(self) -> None:
+    def test_cloud_collector_is_daytime_serialized_and_commits_only_durable_state(self) -> None:
         workflow = (ROOT / ".github/workflows/local-sources.yml").read_text(encoding="utf-8")
         self.assertIn("workflow_dispatch:", workflow)
-        self.assertNotIn("schedule:", workflow)
+        self.assertIn('cron: "17 5-20/3 * * *"', workflow)
+        self.assertIn('timezone: "America/Los_Angeles"', workflow)
         self.assertIn("group: local-source-collection", workflow)
         self.assertIn("cancel-in-progress: false", workflow)
         self.assertIn("source_ingest=true", workflow)

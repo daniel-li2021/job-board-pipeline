@@ -1,7 +1,10 @@
 name: Local source collection
 
-# Manual-only while GitHub-hosted runner reliability is evaluated.
 on:
+  schedule:
+    # Every 3 hours from 5:17 AM through 8:17 PM Pacific; :17 avoids peak queue load.
+    - cron: "17 5-20/3 * * *"
+      timezone: "America/Los_Angeles"
   workflow_dispatch:
 
 permissions:
