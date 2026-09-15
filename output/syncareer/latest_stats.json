@@ -1,178 +1,88 @@
 {
-  "run_at": "2026-09-14T15:11:49.487935+00:00",
+  "run_at": "2026-09-15T00:11:38.741760+00:00",
   "funnel": {
-    "scoring_candidates": 21
+    "scoring_candidates": 15
   },
   "llm": {
-    "reused": 16,
-    "llm": 5,
-    "new_or_changed": 6,
-    "rule": 1,
-    "sent": 5,
-    "api_requests": 2,
-    "recency_skipped": 1,
+    "reused": 14,
+    "llm": 1,
+    "new_or_changed": 1,
+    "rule": 0,
+    "sent": 1,
+    "api_requests": 1,
+    "recency_skipped": 0,
     "overflow": 0,
-    "peer_reused": 1,
+    "peer_reused": 0,
     "thin_source_rule": 0,
     "retryable_fallbacks": 0,
     "batch_size": 15,
-    "batches_total": 2,
-    "batches_succeeded": 2,
-    "batches_attempted": 2,
+    "batches_total": 1,
+    "batches_succeeded": 1,
+    "batches_attempted": 1,
     "batches_failed": 0,
     "batches_skipped": 0,
-    "latency_seconds": 14.465,
-    "json_results": 5,
+    "latency_seconds": 6.056,
+    "json_results": 1,
     "batches": [
       {
         "batch": 1,
         "route": "resume_swe",
         "jobs": [
           {
-            "key": "url::https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Software-Engineer--SWE-_R_1510796-1",
-            "company": "TD Bank",
-            "title": "2027 Summer Internship Program - Global Technology & Solutions - Software Engineer (SWE)"
-          },
-          {
-            "key": "url::https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Data-Engineer_R_1510797",
-            "company": "TD Bank",
-            "title": "2027 Summer Internship Program - Global Technology & Solutions - Data Engineer"
-          },
-          {
-            "key": "url::https://plmr.com/job/data-engineer",
-            "company": "Palomar",
-            "title": "Data Engineer"
-          },
-          {
-            "key": "url::https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Cloud-DevOps_R_1510799",
-            "company": "TD Bank",
-            "title": "2027 Summer Internship Program - Global Technology & Solutions - Cloud/DevOps"
+            "key": "url::https://careers.wecenergygroup.com/job/Milwaukee-IT-Cloud-Server-&-Storage-Platform-Engineer-WI-53203/1429333700",
+            "company": "WEC Energy Group",
+            "title": "IT Cloud Server & Storage Platform Engineer"
           }
         ],
         "model": "gpt-5.6-terra",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 8.891,
-        "usage": {
-          "model": "gpt-5.6-terra",
-          "api_requests": 1,
-          "jobs_scored": 4,
-          "input_tokens": 4466,
-          "cached_input_tokens": 0,
-          "output_tokens": 591,
-          "reasoning_tokens": 0,
-          "estimated_usd": 0.016024
-        },
-        "decisions": [
-          {
-            "key": "url::https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Software-Engineer--SWE-_R_1510796-1",
-            "match_score": 91.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Direct SWE experience building production full-stack applications, typed REST services, testing, and AWS deployments.",
-              "Meets the CS enrollment requirement and exceeds the preferred Java/JavaScript and AI/ML-interest signals through Java, TypeScript, retrieval, and LLM work."
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Data-Engineer_R_1510797",
-            "match_score": 88.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Direct evidence of high-volume ingestion pipelines, Databricks/Spark workflow productionization, normalization, validation, and data-quality troubleshooting.",
-              "CS and applied-mathematics background plus SQL, relational databases, and data-pipeline experience fit the entry-level data engineering scope."
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://plmr.com/job/data-engineer",
-            "match_score": 58.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Has relevant SQL, relational-database, Spark/Databricks, ingestion-pipeline, normalization, and data-quality experience.",
-              "Demonstrated cloud deployment and production reliability work is transferable to scalable data-platform operations."
-            ],
-            "main_gaps": [
-              "Requires 4+ years of data-engineering experience; resume shows early-career internships and approximately one year of directly relevant software/data work.",
-              "No clear insurance-domain experience, which the role strongly prefers, and limited direct evidence of owning data warehousing, governance, and architecture at this level."
-            ]
-          },
-          {
-            "key": "url::https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Cloud-DevOps_R_1510799",
-            "match_score": 92.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Direct cloud/DevOps evidence: Dockerized AWS ECS/Fargate deployment, GitHub Actions CI/CD, staged rollouts, health checks, observability, and automated testing.",
-              "Lists Terraform, Kubernetes, cloud computing, Linux, and reliability engineering skills, closely covering the internship's preferred technical areas."
-            ],
-            "main_gaps": []
-          }
-        ]
-      },
-      {
-        "batch": 2,
-        "route": "resume_ai",
-        "jobs": [
-          {
-            "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26013455?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
-            "company": "American Express",
-            "title": "Agentic AI Cybersecurity Engineer - Identity Access Lifecycle Management"
-          }
-        ],
-        "model": "gpt-5.6-terra",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 5.574,
+        "latency_seconds": 6.056,
         "usage": {
           "model": "gpt-5.6-terra",
           "api_requests": 1,
           "jobs_scored": 1,
-          "input_tokens": 3468,
+          "input_tokens": 2913,
           "cached_input_tokens": 0,
-          "output_tokens": 277,
-          "reasoning_tokens": 82,
-          "estimated_usd": 0.01026
+          "output_tokens": 357,
+          "reasoning_tokens": 179,
+          "estimated_usd": 0.01011
         },
         "decisions": [
           {
-            "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26013455?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
-            "match_score": 67.0,
+            "key": "url::https://careers.wecenergygroup.com/job/Milwaukee-IT-Cloud-Server-&-Storage-Platform-Engineer-WI-53203/1429333700",
+            "match_score": 62.0,
             "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
+            "hard_constraint_status": "other",
             "top_match_reasons": [
-              "Built production AI agents, RAG workflows, evaluation/validation guardrails, and human-reviewed automation using Python, APIs, LangGraph, and AWS.",
-              "Strong evidence of data ingestion, analytics pipelines, structured-output validation, monitoring, and scalable AI workflow engineering."
+              "Hands-on AWS deployment, Docker, Terraform, CI/CD, Linux, observability, and production reliability experience align with cloud-platform operations and IaC work.",
+              "Demonstrated backend/platform engineering experience deploying and maintaining production services."
             ],
             "main_gaps": [
-              "No demonstrated cybersecurity, technology-risk, audit-response, RCSA, or control-testing experience.",
-              "No clear evidence of designing governed AI workflows specifically for security-control evidence review, exception triage, or enterprise security monitoring."
+              "The required 2+ years of IT infrastructure experience is not clearly evidenced; resume experience is primarily application/backend engineering.",
+              "No direct evidence of cloud VM/storage provisioning, backup/patch management, enterprise production support, or rotating on-call ownership."
             ]
           }
         ]
       }
     ],
     "model": "gpt-5.6-terra",
-    "jobs_scored": 5,
-    "input_tokens": 7934,
+    "jobs_scored": 1,
+    "input_tokens": 2913,
     "cached_input_tokens": 0,
-    "output_tokens": 868,
-    "reasoning_tokens": 82,
-    "estimated_usd": 0.026284,
+    "output_tokens": 357,
+    "reasoning_tokens": 179,
+    "estimated_usd": 0.01011,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 5
+    "scored": 1
   },
   "output": {
-    "tier_a": 4,
+    "tier_a": 3,
     "tier_b": 5,
-    "tier_c": 12,
-    "shown": 9
+    "tier_c": 7,
+    "shown": 8
   },
   "screen_method": "cache+llm",
   "failures": {
@@ -183,116 +93,18 @@
       "query": "Software",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 3,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 20,
-      "unique_jobs": 20,
-      "unique_contribution": 20,
-      "first_pass_survivors": 19,
-      "original_postings_resolved": 7,
-      "jds_resolved": 7,
-      "elapsed_seconds": 1.531
+      "raw_jobs": 11,
+      "unique_jobs": 11,
+      "unique_contribution": 11,
+      "first_pass_survivors": 11,
+      "original_postings_resolved": 2,
+      "jds_resolved": 2,
+      "elapsed_seconds": 0.874
     },
     {
       "query": "Full Stack",
-      "group": "syncareer",
-      "page_budget": 6,
-      "pages_fetched": 2,
-      "stop_reason": "empty_page",
-      "raw_jobs": 2,
-      "unique_jobs": 2,
-      "unique_contribution": 2,
-      "first_pass_survivors": 2,
-      "original_postings_resolved": 0,
-      "jds_resolved": 0,
-      "elapsed_seconds": 0.671
-    },
-    {
-      "query": "AI",
-      "group": "syncareer",
-      "page_budget": 6,
-      "pages_fetched": 2,
-      "stop_reason": "empty_page",
-      "raw_jobs": 8,
-      "unique_jobs": 8,
-      "unique_contribution": 6,
-      "first_pass_survivors": 3,
-      "original_postings_resolved": 1,
-      "jds_resolved": 1,
-      "elapsed_seconds": 0.619
-    },
-    {
-      "query": "Machine Learning",
-      "group": "syncareer",
-      "page_budget": 6,
-      "pages_fetched": 2,
-      "stop_reason": "empty_page",
-      "raw_jobs": 2,
-      "unique_jobs": 2,
-      "unique_contribution": 1,
-      "first_pass_survivors": 2,
-      "original_postings_resolved": 1,
-      "jds_resolved": 1,
-      "elapsed_seconds": 0.616
-    },
-    {
-      "query": "Infrastructure",
-      "group": "syncareer",
-      "page_budget": 6,
-      "pages_fetched": 2,
-      "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 2,
-      "first_pass_survivors": 2,
-      "original_postings_resolved": 0,
-      "jds_resolved": 0,
-      "elapsed_seconds": 0.672
-    },
-    {
-      "query": "Forward Deployed",
-      "group": "syncareer",
-      "page_budget": 6,
-      "pages_fetched": 2,
-      "stop_reason": "empty_page",
-      "raw_jobs": 1,
-      "unique_jobs": 1,
-      "unique_contribution": 0,
-      "first_pass_survivors": 1,
-      "original_postings_resolved": 0,
-      "jds_resolved": 0,
-      "elapsed_seconds": 0.6
-    },
-    {
-      "query": "DevOps",
-      "group": "syncareer",
-      "page_budget": 6,
-      "pages_fetched": 2,
-      "stop_reason": "empty_page",
-      "raw_jobs": 2,
-      "unique_jobs": 2,
-      "unique_contribution": 2,
-      "first_pass_survivors": 2,
-      "original_postings_resolved": 0,
-      "jds_resolved": 0,
-      "elapsed_seconds": 0.617
-    },
-    {
-      "query": "Backend",
-      "group": "syncareer",
-      "page_budget": 6,
-      "pages_fetched": 2,
-      "stop_reason": "empty_page",
-      "raw_jobs": 1,
-      "unique_jobs": 1,
-      "unique_contribution": 0,
-      "first_pass_survivors": 1,
-      "original_postings_resolved": 1,
-      "jds_resolved": 1,
-      "elapsed_seconds": 0.608
-    },
-    {
-      "query": "Platform",
       "group": "syncareer",
       "page_budget": 6,
       "pages_fetched": 1,
@@ -303,7 +115,105 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.138
+      "elapsed_seconds": 0.282
+    },
+    {
+      "query": "AI",
+      "group": "syncareer",
+      "page_budget": 6,
+      "pages_fetched": 2,
+      "stop_reason": "empty_page",
+      "raw_jobs": 7,
+      "unique_jobs": 7,
+      "unique_contribution": 6,
+      "first_pass_survivors": 2,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.594
+    },
+    {
+      "query": "Machine Learning",
+      "group": "syncareer",
+      "page_budget": 6,
+      "pages_fetched": 2,
+      "stop_reason": "empty_page",
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
+      "first_pass_survivors": 1,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.593
+    },
+    {
+      "query": "Infrastructure",
+      "group": "syncareer",
+      "page_budget": 6,
+      "pages_fetched": 2,
+      "stop_reason": "empty_page",
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 0,
+      "first_pass_survivors": 1,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.589
+    },
+    {
+      "query": "Forward Deployed",
+      "group": "syncareer",
+      "page_budget": 6,
+      "pages_fetched": 1,
+      "stop_reason": "empty_page",
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.131
+    },
+    {
+      "query": "DevOps",
+      "group": "syncareer",
+      "page_budget": 6,
+      "pages_fetched": 2,
+      "stop_reason": "empty_page",
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
+      "first_pass_survivors": 1,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.597
+    },
+    {
+      "query": "Backend",
+      "group": "syncareer",
+      "page_budget": 6,
+      "pages_fetched": 1,
+      "stop_reason": "empty_page",
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.164
+    },
+    {
+      "query": "Platform",
+      "group": "syncareer",
+      "page_budget": 6,
+      "pages_fetched": 2,
+      "stop_reason": "empty_page",
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
+      "first_pass_survivors": 1,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.594
     },
     {
       "query": "New Grad",
@@ -317,7 +227,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.139
+      "elapsed_seconds": 0.128
     },
     {
       "query": "LLM",
@@ -331,7 +241,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.133
+      "elapsed_seconds": 0.122
     },
     {
       "query": "Data Engineer",
@@ -339,13 +249,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 4,
-      "unique_jobs": 4,
-      "unique_contribution": 4,
-      "first_pass_survivors": 3,
-      "original_postings_resolved": 1,
-      "jds_resolved": 1,
-      "elapsed_seconds": 0.615
+      "raw_jobs": 2,
+      "unique_jobs": 2,
+      "unique_contribution": 2,
+      "first_pass_survivors": 2,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.587
     },
     {
       "query": "Site Reliability",
@@ -359,12 +269,12 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.152
+      "elapsed_seconds": 0.129
     }
   ],
   "enrichment": {
     "needed": 0,
-    "detail_api_resolved": 30,
+    "detail_api_resolved": 19,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
     "remaining_no_jd": 0

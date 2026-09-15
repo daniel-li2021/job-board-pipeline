@@ -2,6 +2,99 @@
   "runs": [
     {
       "pipeline": "syncareer",
+      "run_at": "2026-09-15T00:11:38.741760+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 1,
+      "cache_reused": 14,
+      "fallback_count": 0,
+      "rule_count": 0,
+      "requests": 1,
+      "input_tokens": 2913,
+      "cached_input_tokens": 0,
+      "output_tokens": 357,
+      "reasoning_tokens": 179,
+      "estimated_usd": 0.01011,
+      "latency_seconds": 6.056,
+      "latency_measured": true,
+      "effective_rpm": 9.91,
+      "effective_tpm": 32397.62,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 1,
+      "funnel": {
+        "scoring_candidates": 15
+      },
+      "output": {
+        "tier_a": 3,
+        "tier_b": 5,
+        "tier_c": 7,
+        "shown": 8
+      },
+      "enrichment": {
+        "needed": 0,
+        "detail_api_resolved": 19,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 0
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "url::https://careers.wecenergygroup.com/job/Milwaukee-IT-Cloud-Server-&-Storage-Platform-Engineer-WI-53203/1429333700",
+              "company": "WEC Energy Group",
+              "title": "IT Cloud Server & Storage Platform Engineer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 6.056,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2913,
+            "cached_input_tokens": 0,
+            "output_tokens": 357,
+            "reasoning_tokens": 179,
+            "estimated_usd": 0.01011
+          },
+          "decisions": [
+            {
+              "key": "url::https://careers.wecenergygroup.com/job/Milwaukee-IT-Cloud-Server-&-Storage-Platform-Engineer-WI-53203/1429333700",
+              "match_score": 62.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Hands-on AWS deployment, Docker, Terraform, CI/CD, Linux, observability, and production reliability experience align with cloud-platform operations and IaC work.",
+                "Demonstrated backend/platform engineering experience deploying and maintaining production services."
+              ],
+              "main_gaps": [
+                "The required 2+ years of IT infrastructure experience is not clearly evidenced; resume experience is primarily application/backend engineering.",
+                "No direct evidence of cloud VM/storage provisioning, backup/patch management, enterprise production support, or rotating on-call ownership."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
       "run_at": "2026-09-14T15:11:49.487935+00:00",
       "mode": "pipeline",
       "health": "success",
