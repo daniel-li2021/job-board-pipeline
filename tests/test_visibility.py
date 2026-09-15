@@ -145,6 +145,29 @@ class ReferralAliasTests(unittest.TestCase):
 
 
 class DashboardPolicyTests(unittest.TestCase):
+    def test_pending_company_profiles_are_a_separate_artifact(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            public = Path(tmpdir)
+            coverage = public / "source-coverage.md"
+            coverage.write_text("coverage", encoding="utf-8")
+            payload = {
+                "generated_at": "2026-09-15T12:00:00+00:00",
+                "company_profiles_pending": ["A Co", "B Co"],
+                "health": {}, "health_history": [],
+            }
+            with patch.object(dashboard, "PUBLIC_DIR", public), patch.object(
+                dashboard, "DASHBOARD_JSON", public / "dashboard.json",
+            ), patch.object(dashboard, "DASHBOARD_HTML", public / "index.html"), patch.object(
+                dashboard, "PENDING_COMPANY_PROFILES_JSON", public / "company_profiles_pending.json",
+            ), patch.object(dashboard.coverage_reconcile, "COVERAGE_MD_PATH", coverage), patch.object(
+                dashboard.pipeline_health, "write",
+            ):
+                dashboard.write_dashboard(payload)
+            main = json.loads((public / "dashboard.json").read_text(encoding="utf-8"))
+            pending = json.loads((public / "company_profiles_pending.json").read_text(encoding="utf-8"))
+            self.assertNotIn("company_profiles_pending", main)
+            self.assertEqual({"generated_at": payload["generated_at"], "count": 2, "companies": ["A Co", "B Co"]}, pending)
+
     def test_observability_cards_share_one_responsive_row_and_legacy_telemetry_is_unknown(self) -> None:
         template = dashboard.HTML_TEMPLATE
         self.assertIn('<div class="cards"><div class="card"><span>LLM Matching Today</span>', template)

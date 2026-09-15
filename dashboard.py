@@ -24,6 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent
 PUBLIC_DIR = BASE_DIR / "public"
 DASHBOARD_JSON = PUBLIC_DIR / "dashboard.json"
 DASHBOARD_HTML = PUBLIC_DIR / "index.html"
+PENDING_COMPANY_PROFILES_JSON = PUBLIC_DIR / "company_profiles_pending.json"
 REPO_URL = "https://github.com/daniel-li2021/job-board-pipeline"
 PAGES_URL = "https://daniel-li2021.github.io/job-board-pipeline/"
 PACIFIC = ZoneInfo("America/Los_Angeles")
@@ -853,8 +854,13 @@ document.getElementById('officialSearches').innerHTML=`<div class="tablewrap"><t
 
 def write_dashboard(payload: Dict[str, Any]) -> None:
     PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
-    serialized = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
-    DASHBOARD_JSON.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    dashboard_payload = {key: value for key, value in payload.items() if key != "company_profiles_pending"}
+    pending = payload.get("company_profiles_pending") or []
+    PENDING_COMPANY_PROFILES_JSON.write_text(json.dumps({
+        "generated_at": payload.get("generated_at", ""), "count": len(pending), "companies": pending,
+    }, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    serialized = json.dumps(dashboard_payload, ensure_ascii=False).replace("</", "<\\/")
+    DASHBOARD_JSON.write_text(json.dumps(dashboard_payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     DASHBOARD_HTML.write_text(HTML_TEMPLATE.replace("__PAYLOAD__", serialized), encoding="utf-8")
     pipeline_health.write(PUBLIC_DIR, payload["health"], payload["health_history"])
     (PUBLIC_DIR / "coverage.md").write_text(coverage_reconcile.COVERAGE_MD_PATH.read_text(encoding="utf-8"), encoding="utf-8")
