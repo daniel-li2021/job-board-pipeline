@@ -2,6 +2,78 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-09-15T15:01:57.771312+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 0,
+      "cache_reused": 488,
+      "fallback_count": 0,
+      "rule_count": 166,
+      "requests": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0,
+      "estimated_usd": 0.0,
+      "latency_seconds": 0.0,
+      "latency_measured": true,
+      "effective_rpm": null,
+      "effective_tpm": null,
+      "json_reliability": null,
+      "json_reliability_measured": true,
+      "batches_total": 0,
+      "batches_attempted": 0,
+      "batches_succeeded": 0,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 0,
+      "funnel": {
+        "after_dedup": 4732,
+        "after_company": 4591,
+        "after_hard_filter": 4284,
+        "after_prefilter": 975,
+        "official_duplicates_suppressed": 321,
+        "dropped": 3716
+      },
+      "output": {
+        "tier_a": 41,
+        "tier_b": 80,
+        "ab_before_cap": 121,
+        "shown": 121
+      },
+      "enrichment": {
+        "needed": 390,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 390,
+          "http_requests": 7,
+          "scrapling_requests": 4,
+          "jds_resolved": 3,
+          "direct_http_resolved": 3,
+          "remaining_no_jd": 387,
+          "failure_reasons": {
+            "structured_jd_not_found": 4,
+            "scrapling_fetch_failed": 9,
+            "glassdoor_detail_http_403_static_card_only": 374
+          }
+        },
+        "remaining_no_jd": 387,
+        "failure_reasons": {
+          "structured_jd_not_found": 4,
+          "scrapling_fetch_failed": 9,
+          "glassdoor_detail_http_403_static_card_only": 374
+        }
+      },
+      "comparison": {},
+      "batches": []
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-09-15T09:00:37.045655+00:00",
       "mode": "pipeline",
       "health": "success",
