@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-15T17:08:48.385793+00:00",
+  "generated_at": "2026-09-15T21:24:20.369826+00:00",
   "collector": {
-    "commit": "7c3622d36561a7c5b0917db99f7b49465d3dee6c",
+    "commit": "48435ff8c205f0fc7b434344a552a3615a881e4d",
     "dirty": false
   },
   "sources": {
     "linkedin": {
       "required": true,
-      "healthy": true,
-      "status": "ok",
-      "reason": "",
-      "last_attempt_at": "2026-09-15T16:59:43.358457+00:00",
+      "healthy": false,
+      "status": "skipped_unavailable",
+      "reason": "blocked with HTTP 429",
+      "last_attempt_at": "2026-09-15T21:21:27.485239+00:00",
       "last_success_at": "2026-09-15T16:59:43.358457+00:00",
       "last_attempt_collector": {
-        "commit": "7c3622d36561a7c5b0917db99f7b49465d3dee6c",
+        "commit": "48435ff8c205f0fc7b434344a552a3615a881e4d",
         "dirty": false
       },
       "last_success_collector": {
@@ -27,8 +27,8 @@
       "last_success_source_provenance": {
         "implementation": "sources.linkedin_local"
       },
-      "last_attempt_count": 748,
-      "consecutive_failures": 0,
+      "last_attempt_count": 0,
+      "consecutive_failures": 1,
       "query_stats": [
         {
           "query": "software engineer",
@@ -38,11 +38,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 250,
           "unique_jobs": 250,
-          "unique_contribution": 238,
-          "first_pass_survivors": 204,
+          "unique_contribution": 242,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 198,
-          "elapsed_seconds": 39.846
+          "jds_resolved": 0,
+          "elapsed_seconds": 38.976
         },
         {
           "query": "ai engineer",
@@ -52,11 +52,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 250,
           "unique_jobs": 250,
-          "unique_contribution": 236,
-          "first_pass_survivors": 214,
+          "unique_contribution": 233,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 214,
-          "elapsed_seconds": 39.167
+          "jds_resolved": 0,
+          "elapsed_seconds": 38.199
         },
         {
           "query": "software engineer i",
@@ -67,10 +67,10 @@
           "raw_jobs": 80,
           "unique_jobs": 80,
           "unique_contribution": 57,
-          "first_pass_survivors": 61,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 58,
-          "elapsed_seconds": 12.741
+          "jds_resolved": 0,
+          "elapsed_seconds": 12.583
         },
         {
           "query": "software engineer ii",
@@ -80,11 +80,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 80,
           "unique_jobs": 80,
-          "unique_contribution": 36,
-          "first_pass_survivors": 62,
+          "unique_contribution": 43,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 61,
-          "elapsed_seconds": 13.083
+          "jds_resolved": 0,
+          "elapsed_seconds": 12.556
         },
         {
           "query": "associate software engineer",
@@ -95,24 +95,24 @@
           "raw_jobs": 10,
           "unique_jobs": 10,
           "unique_contribution": 0,
-          "first_pass_survivors": 8,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 6,
-          "elapsed_seconds": 0.32
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.319
         },
         {
           "query": "new grad software engineer",
           "group": "secondary",
           "page_budget": 8,
-          "pages_fetched": 4,
+          "pages_fetched": 3,
           "stop_reason": "no_new_jobs",
-          "raw_jobs": 40,
-          "unique_jobs": 39,
-          "unique_contribution": 6,
-          "first_pass_survivors": 31,
+          "raw_jobs": 30,
+          "unique_jobs": 30,
+          "unique_contribution": 5,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 28,
-          "elapsed_seconds": 5.376
+          "jds_resolved": 0,
+          "elapsed_seconds": 3.394
         },
         {
           "query": "backend engineer",
@@ -122,11 +122,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 79,
           "unique_jobs": 79,
-          "unique_contribution": 38,
-          "first_pass_survivors": 65,
+          "unique_contribution": 34,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 64,
-          "elapsed_seconds": 12.606
+          "jds_resolved": 0,
+          "elapsed_seconds": 11.912
         },
         {
           "query": "full stack engineer",
@@ -136,11 +136,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 80,
           "unique_jobs": 80,
-          "unique_contribution": 41,
-          "first_pass_survivors": 57,
+          "unique_contribution": 46,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 57,
-          "elapsed_seconds": 12.371
+          "jds_resolved": 0,
+          "elapsed_seconds": 12.197
         },
         {
           "query": "platform engineer",
@@ -150,25 +150,25 @@
           "stop_reason": "page_budget",
           "raw_jobs": 80,
           "unique_jobs": 80,
-          "unique_contribution": 77,
-          "first_pass_survivors": 67,
+          "unique_contribution": 79,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 67,
-          "elapsed_seconds": 12.451
+          "jds_resolved": 0,
+          "elapsed_seconds": 12.027
         },
         {
           "query": "applied ai engineer",
           "group": "secondary",
           "page_budget": 8,
-          "pages_fetched": 2,
+          "pages_fetched": 1,
           "stop_reason": "no_new_jobs",
-          "raw_jobs": 20,
-          "unique_jobs": 20,
-          "unique_contribution": 1,
-          "first_pass_survivors": 17,
+          "raw_jobs": 10,
+          "unique_jobs": 10,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 17,
-          "elapsed_seconds": 2.138
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.554
         },
         {
           "query": "machine learning engineer",
@@ -179,10 +179,10 @@
           "raw_jobs": 10,
           "unique_jobs": 10,
           "unique_contribution": 0,
-          "first_pass_survivors": 10,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 10,
-          "elapsed_seconds": 0.391
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.306
         },
         {
           "query": "ml engineer",
@@ -193,10 +193,10 @@
           "raw_jobs": 10,
           "unique_jobs": 10,
           "unique_contribution": 0,
-          "first_pass_survivors": 10,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 10,
-          "elapsed_seconds": 0.592
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.307
         },
         {
           "query": "llm engineer",
@@ -207,84 +207,69 @@
           "raw_jobs": 20,
           "unique_jobs": 20,
           "unique_contribution": 2,
-          "first_pass_survivors": 17,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 17,
-          "elapsed_seconds": 2.132
+          "jds_resolved": 0,
+          "elapsed_seconds": 2.015
         },
         {
           "query": "infrastructure engineer",
           "group": "specialty",
           "page_budget": 4,
-          "pages_fetched": 4,
-          "stop_reason": "page_budget",
-          "raw_jobs": 40,
-          "unique_jobs": 40,
-          "unique_contribution": 35,
-          "first_pass_survivors": 25,
+          "pages_fetched": 0,
+          "stop_reason": "blocked_http_429",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 24,
-          "elapsed_seconds": 6.044
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.063
         },
         {
           "query": "site reliability engineer",
           "group": "specialty",
           "page_budget": 4,
-          "pages_fetched": 4,
-          "stop_reason": "page_budget",
-          "raw_jobs": 40,
-          "unique_jobs": 40,
-          "unique_contribution": 37,
-          "first_pass_survivors": 32,
+          "pages_fetched": 0,
+          "stop_reason": "source_unavailable",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 32,
-          "elapsed_seconds": 6.202
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.0
         },
         {
           "query": "forward deployed engineer",
           "group": "specialty",
           "page_budget": 4,
-          "pages_fetched": 4,
-          "stop_reason": "page_budget",
-          "raw_jobs": 40,
-          "unique_jobs": 40,
-          "unique_contribution": 37,
-          "first_pass_survivors": 30,
+          "pages_fetched": 0,
+          "stop_reason": "source_unavailable",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 30,
-          "elapsed_seconds": 6.287
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.0
         },
         {
           "query": "data engineer",
           "group": "specialty",
           "page_budget": 4,
-          "pages_fetched": 4,
-          "stop_reason": "page_budget",
-          "raw_jobs": 40,
-          "unique_jobs": 40,
-          "unique_contribution": 37,
-          "first_pass_survivors": 34,
+          "pages_fetched": 0,
+          "stop_reason": "source_unavailable",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
           "original_postings_resolved": 0,
-          "jds_resolved": 34,
-          "elapsed_seconds": 6.206
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.0
         }
       ],
-      "detail_enrichment": {
-        "eligible": 878,
-        "cache_reused": 365,
-        "requests": 514,
-        "jds_resolved": 871,
-        "external_apply_urls": 0,
-        "failed": 7,
-        "blocked": "blocked with HTTP 429",
-        "scrapling_requests": 503,
-        "scrapling_jds_resolved": 496,
-        "scrapling_error": "",
-        "remaining_no_jd": 7,
-        "failure_reasons": {
-          "scrapling_fetch_failed": 7
-        }
-      },
+      "detail_enrichment": {},
       "last_good_count": 748
     },
     "indeed": {
@@ -292,14 +277,14 @@
       "healthy": true,
       "status": "ok",
       "reason": "",
-      "last_attempt_at": "2026-09-15T17:08:26.426067+00:00",
-      "last_success_at": "2026-09-15T17:08:26.426067+00:00",
+      "last_attempt_at": "2026-09-15T21:23:52.898227+00:00",
+      "last_success_at": "2026-09-15T21:23:52.898227+00:00",
       "last_attempt_collector": {
-        "commit": "7c3622d36561a7c5b0917db99f7b49465d3dee6c",
+        "commit": "48435ff8c205f0fc7b434344a552a3615a881e4d",
         "dirty": false
       },
       "last_success_collector": {
-        "commit": "7c3622d36561a7c5b0917db99f7b49465d3dee6c",
+        "commit": "48435ff8c205f0fc7b434344a552a3615a881e4d",
         "dirty": false
       },
       "last_attempt_source_provenance": {
@@ -310,7 +295,7 @@
         "implementation": "python-jobspy",
         "version": "1.1.82"
       },
-      "last_attempt_count": 949,
+      "last_attempt_count": 971,
       "consecutive_failures": 0,
       "query_stats": [
         {
@@ -321,11 +306,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 300,
           "unique_jobs": 300,
-          "unique_contribution": 289,
-          "first_pass_survivors": 199,
+          "unique_contribution": 291,
+          "first_pass_survivors": 224,
           "original_postings_resolved": 0,
-          "jds_resolved": 199,
-          "elapsed_seconds": 2.472,
+          "jds_resolved": 224,
+          "elapsed_seconds": 2.995,
           "hours_old": 48
         },
         {
@@ -334,13 +319,13 @@
           "page_budget": 3,
           "pages_fetched": 3,
           "stop_reason": "page_budget",
-          "raw_jobs": 299,
-          "unique_jobs": 299,
-          "unique_contribution": 218,
-          "first_pass_survivors": 244,
+          "raw_jobs": 300,
+          "unique_jobs": 300,
+          "unique_contribution": 225,
+          "first_pass_survivors": 221,
           "original_postings_resolved": 0,
-          "jds_resolved": 244,
-          "elapsed_seconds": 2.714,
+          "jds_resolved": 221,
+          "elapsed_seconds": 3.267,
           "hours_old": 48
         },
         {
@@ -352,10 +337,10 @@
           "raw_jobs": 100,
           "unique_jobs": 100,
           "unique_contribution": 78,
-          "first_pass_survivors": 61,
+          "first_pass_survivors": 58,
           "original_postings_resolved": 0,
-          "jds_resolved": 61,
-          "elapsed_seconds": 0.894,
+          "jds_resolved": 58,
+          "elapsed_seconds": 1.163,
           "hours_old": 24
         },
         {
@@ -366,11 +351,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 68,
-          "first_pass_survivors": 60,
+          "unique_contribution": 75,
+          "first_pass_survivors": 62,
           "original_postings_resolved": 0,
-          "jds_resolved": 60,
-          "elapsed_seconds": 0.866,
+          "jds_resolved": 62,
+          "elapsed_seconds": 1.131,
           "hours_old": 24
         },
         {
@@ -381,11 +366,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 64,
-          "first_pass_survivors": 77,
+          "unique_contribution": 57,
+          "first_pass_survivors": 73,
           "original_postings_resolved": 0,
-          "jds_resolved": 77,
-          "elapsed_seconds": 0.89,
+          "jds_resolved": 73,
+          "elapsed_seconds": 1.117,
           "hours_old": 24
         },
         {
@@ -396,11 +381,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 80,
-          "first_pass_survivors": 74,
+          "unique_contribution": 88,
+          "first_pass_survivors": 69,
           "original_postings_resolved": 0,
-          "jds_resolved": 74,
-          "elapsed_seconds": 0.846,
+          "jds_resolved": 69,
+          "elapsed_seconds": 1.155,
           "hours_old": 24
         },
         {
@@ -411,11 +396,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 60,
-          "first_pass_survivors": 89,
+          "unique_contribution": 47,
+          "first_pass_survivors": 85,
           "original_postings_resolved": 0,
-          "jds_resolved": 89,
-          "elapsed_seconds": 0.774,
+          "jds_resolved": 85,
+          "elapsed_seconds": 0.958,
           "hours_old": 24
         },
         {
@@ -426,11 +411,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 56,
-          "first_pass_survivors": 75,
+          "unique_contribution": 47,
+          "first_pass_survivors": 83,
           "original_postings_resolved": 0,
-          "jds_resolved": 75,
-          "elapsed_seconds": 0.738,
+          "jds_resolved": 83,
+          "elapsed_seconds": 0.979,
           "hours_old": 24
         },
         {
@@ -441,11 +426,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 52,
-          "first_pass_survivors": 75,
+          "unique_contribution": 39,
+          "first_pass_survivors": 80,
           "original_postings_resolved": 0,
-          "jds_resolved": 75,
-          "elapsed_seconds": 0.909,
+          "jds_resolved": 80,
+          "elapsed_seconds": 1.181,
           "hours_old": 24
         },
         {
@@ -456,11 +441,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 26,
-          "first_pass_survivors": 90,
+          "unique_contribution": 55,
+          "first_pass_survivors": 78,
           "original_postings_resolved": 0,
-          "jds_resolved": 90,
-          "elapsed_seconds": 0.865,
+          "jds_resolved": 78,
+          "elapsed_seconds": 1.306,
           "hours_old": 24
         },
         {
@@ -471,11 +456,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 16,
-          "first_pass_survivors": 80,
+          "unique_contribution": 32,
+          "first_pass_survivors": 54,
           "original_postings_resolved": 0,
-          "jds_resolved": 80,
-          "elapsed_seconds": 1.875,
+          "jds_resolved": 54,
+          "elapsed_seconds": 1.12,
           "hours_old": 24
         },
         {
@@ -486,11 +471,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 35,
-          "first_pass_survivors": 80,
+          "unique_contribution": 30,
+          "first_pass_survivors": 70,
           "original_postings_resolved": 0,
-          "jds_resolved": 80,
-          "elapsed_seconds": 0.982,
+          "jds_resolved": 70,
+          "elapsed_seconds": 1.092,
           "hours_old": 24
         },
         {
@@ -501,11 +486,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 35,
-          "first_pass_survivors": 83,
+          "unique_contribution": 37,
+          "first_pass_survivors": 82,
           "original_postings_resolved": 0,
-          "jds_resolved": 83,
-          "elapsed_seconds": 1.005,
+          "jds_resolved": 82,
+          "elapsed_seconds": 1.093,
           "hours_old": 24
         },
         {
@@ -516,11 +501,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 45,
-          "first_pass_survivors": 79,
+          "unique_contribution": 36,
+          "first_pass_survivors": 83,
           "original_postings_resolved": 0,
-          "jds_resolved": 79,
-          "elapsed_seconds": 0.846,
+          "jds_resolved": 83,
+          "elapsed_seconds": 1.086,
           "hours_old": 24
         },
         {
@@ -529,13 +514,13 @@
           "page_budget": 1,
           "pages_fetched": 1,
           "stop_reason": "exhausted",
-          "raw_jobs": 22,
-          "unique_jobs": 22,
-          "unique_contribution": 16,
-          "first_pass_survivors": 17,
+          "raw_jobs": 20,
+          "unique_jobs": 20,
+          "unique_contribution": 12,
+          "first_pass_survivors": 15,
           "original_postings_resolved": 0,
-          "jds_resolved": 17,
-          "elapsed_seconds": 0.36,
+          "jds_resolved": 15,
+          "elapsed_seconds": 0.33,
           "hours_old": 24
         },
         {
@@ -544,13 +529,13 @@
           "page_budget": 1,
           "pages_fetched": 1,
           "stop_reason": "exhausted",
-          "raw_jobs": 58,
-          "unique_jobs": 58,
-          "unique_contribution": 43,
-          "first_pass_survivors": 43,
+          "raw_jobs": 70,
+          "unique_jobs": 70,
+          "unique_contribution": 33,
+          "first_pass_survivors": 58,
           "original_postings_resolved": 0,
-          "jds_resolved": 43,
-          "elapsed_seconds": 0.632,
+          "jds_resolved": 58,
+          "elapsed_seconds": 0.867,
           "hours_old": 24
         },
         {
@@ -561,26 +546,26 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 73,
-          "first_pass_survivors": 79,
+          "unique_contribution": 71,
+          "first_pass_survivors": 75,
           "original_postings_resolved": 0,
-          "jds_resolved": 79,
-          "elapsed_seconds": 0.853,
+          "jds_resolved": 75,
+          "elapsed_seconds": 1.052,
           "hours_old": 24
         }
       ],
       "detail_enrichment": {},
-      "last_good_count": 949
+      "last_good_count": 971
     },
     "glassdoor": {
       "required": false,
       "healthy": false,
       "status": "skipped_unavailable",
       "reason": "RuntimeError: Glassdoor static search HTTP 403",
-      "last_attempt_at": "2026-09-15T17:08:48.154270+00:00",
+      "last_attempt_at": "2026-09-15T21:24:19.650272+00:00",
       "last_success_at": "2026-09-15T07:02:44.646497+00:00",
       "last_attempt_collector": {
-        "commit": "7c3622d36561a7c5b0917db99f7b49465d3dee6c",
+        "commit": "48435ff8c205f0fc7b434344a552a3615a881e4d",
         "dirty": false
       },
       "last_success_collector": {
@@ -600,7 +585,7 @@
         "reliability": "best_effort_optional"
       },
       "last_attempt_count": 0,
-      "consecutive_failures": 2,
+      "consecutive_failures": 3,
       "query_stats": [
         {
           "query": "software engineer",
@@ -614,7 +599,7 @@
           "first_pass_survivors": 0,
           "original_postings_resolved": 0,
           "jds_resolved": 0,
-          "elapsed_seconds": 0.181,
+          "elapsed_seconds": 0.641,
           "hours_old": 24
         }
       ],
