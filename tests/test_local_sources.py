@@ -171,6 +171,7 @@ class LocalSourceTests(unittest.TestCase):
         self.assertNotIn("schedule:", workflow)
         self.assertIn("group: local-source-collection", workflow)
         self.assertIn("cancel-in-progress: false", workflow)
+        self.assertIn("source_ingest=true", workflow)
         for name in ("linkedin", "indeed", "glassdoor", "health"):
             self.assertIn(f"output/sources/{name}.json", workflow)
         self.assertNotIn("git add -A", workflow)

@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: write
   contents: write
 
 concurrency:
@@ -41,6 +42,7 @@ jobs:
           COLLECTOR_COMMIT="$(git rev-parse HEAD)" COLLECTOR_DIRTY=0 python3 local_sources.py
 
       - name: Commit durable source and health state
+        id: publish
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -52,12 +54,14 @@ jobs:
           python3 scripts/guard_github_blob_size.py
           if git diff --staged --quiet; then
             echo "No local-source changes to commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git commit -m "chore: local job sources $(date -u +%Y-%m-%d_%H%M)"
           for attempt in 1 2 3; do
             git fetch origin main
             if git rebase origin/main && git push origin HEAD:main; then
+              echo "changed=true" >> "$GITHUB_OUTPUT"
               exit 0
             fi
             git rebase --abort || true
@@ -67,3 +71,9 @@ jobs:
             fi
             sleep $((attempt * 5))
           done
+
+      - name: Dispatch Board matching for the committed snapshots
+        if: ${{ steps.publish.outputs.changed == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run board-jobs.yml --ref main -f source_ingest=true

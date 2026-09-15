@@ -1787,7 +1787,7 @@ def apply_referral_action(job: Dict[str, str]) -> None:
 
 
 def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
-    """Application order: tier, posting day, job/company quality, exact age."""
+    """Application order: tier, freshness, fit/evidence, company quality, exact age."""
     bucket = job.get("recency_bucket") or recency_bucket(job)
     tier_rank = {"A": 0, "B": 1, "C": 2}.get(job.get("tier", "C"), 2)
     now = datetime.now(timezone.utc)
@@ -1801,6 +1801,7 @@ def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
             "newly_discovered": 3, "1to3d": 3, "3to7d": 4, "gt7d": 5,
         }.get(bucket, 6)
     score = float(job.get("match_score", 0) or 0)
+    gaps = min(2, int(job.get("main_gaps_count", len(job.get("main_gaps") or [])) or 0))
     profile = match_company_entry(str(job.get("company") or ""), load_company_profiles()) or {}
     priority_rank = {"high": 0, "normal": 1, "low": 2}.get(str(profile.get("priority") or "normal"), 1)
     sponsor_rank = {"likely": 0, "unknown": 1, "unlikely": 2}.get(str(profile.get("sponsor") or "unknown"), 1)
@@ -1815,6 +1816,9 @@ def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
     )
     sfit = (job.get("seniority_fit") or "").lower()
     sfit_rank = {"good": 0, "strong": 0, "realistic": 0, "stretch": 1}.get(sfit, 2 if sfit == "mismatch" else 1)
+    evidence_rank = 0 if (
+        job.get("description_available") or len(str(job.get("description") or "").strip()) >= THIN_JD_CHARS
+    ) else 1
     verified = 0 if job.get("official_url") else 1
     referral = 0 if job.get("referral_name") else 1
     conf = {"high": 0, "medium": 1, "low": 2, "unknown": 3}.get(
@@ -1823,8 +1827,11 @@ def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
     return (
         tier_rank,
         day_rank,
-        int(application_low),
         -int(score // 5),
+        gaps,
+        sfit_rank,
+        evidence_rank,
+        int(application_low),
         tech_service_rank,
         priority_rank,
         sponsor_rank,
@@ -1833,7 +1840,6 @@ def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
         size_rank,
         -score,
         referral,
-        sfit_rank,
         verified,
         age,
         conf,

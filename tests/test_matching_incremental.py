@@ -150,6 +150,14 @@ class LlmMatchingTests(unittest.TestCase):
         high_quality = {**base, "match_score": 78, "date_confidence": "low"}
         high_confidence = {**base, "match_score": 71, "date_confidence": "high"}
         self.assertLess(board.user_facing_sort_key(high_quality), board.user_facing_sort_key(high_confidence))
+        full_jd_fallback = {**base, "match_score": 78, "score_source": "rule_fallback", "description_available": True}
+        title_only_cached = {
+            **base, "match_score": 78, "score_source": "cached_llm", "description_available": False,
+            "main_gaps": ["Requires 3+ years"],
+        }
+        self.assertLess(
+            board.user_facing_sort_key(full_jd_fallback), board.user_facing_sort_key(title_only_cached)
+        )
 
     def test_regression_fixture_covers_matching_and_application_risks(self) -> None:
         fixture = json.loads(

@@ -189,6 +189,67 @@ def sponsorship_label(entry: Dict[str, Any]) -> str:
     return normalize_sponsorship(entry)
 
 
+def why_match_reasons(entry: Dict[str, Any]) -> List[str]:
+    reasons = [str(value).strip() for value in entry.get("top_match_reasons") or [] if str(value).strip()]
+    fallback = []
+    family = str(entry.get("role_family") or "").lower()
+    if family == "ai":
+        fallback.append("AI/ML fit")
+    elif family == "swe":
+        fallback.append("SWE fit")
+    elif family == "ambiguous":
+        fallback.append("Engineering fit")
+    if str(entry.get("seniority_fit") or "").lower() in {"good", "strong", "realistic"}:
+        fallback.append("Experience fit")
+    if not fallback and float(entry.get("match_score") or entry.get("fit_score") or 0) >= 85:
+        fallback.append("Strong fit")
+    if not fallback:
+        fallback = [" ".join(reason.split()[:4]) for reason in reasons]
+    return fallback[:2]
+
+
+def why_company_signals(profile: Dict[str, Any], *, profiled: bool, staffing: bool, tech_service: bool) -> List[str]:
+    if not profiled:
+        return ["Profile pending", "Neutral priority"]
+    signals = [f"{str(profile.get('priority') or 'normal').title()} priority"]
+    sponsor = str(profile.get("sponsor") or "unknown")
+    if sponsor != "unknown":
+        signals.append(f"Sponsor {sponsor}")
+    company_type = str(profile.get("type") or "unknown")
+    maturity = str(profile.get("maturity") or "unknown")
+    if company_type != "unknown" or maturity != "unknown":
+        signals.append(" / ".join(value.title() for value in (company_type, maturity) if value != "unknown"))
+    if staffing:
+        signals.append("Staffing penalty")
+    elif tech_service:
+        signals.append("Tech-service penalty")
+    return signals[:4]
+
+
+def why_evidence(entry: Dict[str, Any]) -> List[str]:
+    source = str(entry.get("score_source") or "")
+    evidence = []
+    if source in {"llm", "cached_llm"}:
+        evidence.append("LLM")
+    elif source == "rule_fallback":
+        evidence.append("Rule fallback")
+    elif source.startswith("rule"):
+        evidence.append("Rules")
+    if not entry.get("description_available"):
+        evidence.append("Title only")
+    if entry.get("llm_retryable"):
+        evidence.append("LLM retry")
+    return evidence[:2]
+
+
+def why_gap(entry: Dict[str, Any]) -> str:
+    for gap in entry.get("main_gaps") or []:
+        years = re.search(r"\b([3-9]|\d{2,})\s*\+?\s*(?:years?|yrs?)\b", str(gap), re.IGNORECASE)
+        if years:
+            return f"{years.group(1)}+ yrs required"
+    return ""
+
+
 def normalize_row(
     entry: Dict[str, Any],
     pipeline: str,
@@ -207,7 +268,8 @@ def normalize_row(
     key = entry.get("canonical_job_key") or coverage_reconcile.canonical_job_key(entry)
     audit = coverage_by_key.get(key, {})
     company = str(entry.get("company") or "")
-    company_profile = match_company_entry(company, company_profiles) or {}
+    matched_company_profile = match_company_entry(company, company_profiles)
+    company_profile = matched_company_profile or {}
     referral = entry.get("referral_name") or entry.get("target_company_match") or match_company_alias(company, referrals) or ""
     company_key = normalize_company_key(str(referral or company))
     freshness = recency(entry, now)
@@ -242,6 +304,7 @@ def normalize_row(
         "company_type": company_profile.get("type", "unknown"),
         "company_maturity": company_profile.get("maturity", "unknown"),
         "company_tags": list(company_profile.get("tags") or []),
+        "company_profile_status": "curated" if matched_company_profile else "pending",
         "application_priority": application_priority,
         "application_reason": "internship/co-op" if internship else ("staffing" if staffing else ("tech service" if tech_service else "")),
         "tech_service": tech_service,
@@ -262,6 +325,16 @@ def normalize_row(
         "reasoning_effort": entry.get("reasoning_effort", ""),
         "top_match_reasons": list(entry.get("top_match_reasons") or [])[:2],
         "main_gaps": list(entry.get("main_gaps") or [])[:2],
+        "main_gaps_count": int(entry.get("main_gaps_count", len(entry.get("main_gaps") or [])) or 0),
+        "role_family": entry.get("role_family", ""),
+        "seniority_fit": entry.get("seniority_fit", ""),
+        "description_available": bool(entry.get("description_available")),
+        "why_match": why_match_reasons(entry),
+        "why_company": why_company_signals(
+            company_profile, profiled=bool(matched_company_profile), staffing=staffing, tech_service=tech_service,
+        ),
+        "why_gap": why_gap(entry),
+        "why_evidence": why_evidence(entry),
         "llm_retryable": bool(entry.get("llm_retryable")),
         "llm_last_error": entry.get("llm_last_error", ""),
     }
@@ -379,6 +452,11 @@ def _sort_rows(rows: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
             }.get(str(freshness.get("bucket") or "unknown"), 6)
             exact_age = discovered_age if discovered_age is not None else 999999
         score = float(row.get("score") or 0)
+        gaps = min(2, int(row.get("main_gaps_count", len(row.get("main_gaps") or [])) or 0))
+        seniority_rank = {
+            "good": 0, "strong": 0, "realistic": 0, "stretch": 1, "mismatch": 2,
+        }.get(str(row.get("seniority_fit") or "").lower(), 1)
+        evidence_rank = 0 if row.get("description_available") else 1
         application_low = bool(
             row.get("application_priority") == "low"
             or row.get("internship")
@@ -388,8 +466,11 @@ def _sort_rows(rows: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
         return (
             tier_rank.get(str(row.get("tier") or "-"), 3),
             day_rank,
-            int(application_low),
             -int(score // 5),
+            gaps,
+            seniority_rank,
+            evidence_rank,
+            int(application_low),
             int(bool(row.get("tech_service"))),
             {"high": 0, "normal": 1, "low": 2}.get(str(row.get("company_priority") or "normal"), 1),
             {"likely": 0, "unknown": 1, "unlikely": 2}.get(str(row.get("company_sponsor") or "unknown"), 1),
@@ -556,6 +637,10 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
     candidates = dedup_canonical_rows(
         row for row in eligible_rows if visible_candidate(row, hard_excludes)
     )
+    company_profiles_pending = sorted({
+        str(row.get("company") or "") for row in candidates
+        if row.get("company_profile_status") == "pending" and row.get("company")
+    })
     current = candidates
     fresh, fresh_basis = alert_fresh_rows(eligible_rows, now, hard_excludes)
     fresh = append_board_c_fallback(fresh, eligible_rows, minimum_ab=10, target=20, window="fresh")
@@ -595,7 +680,8 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
             sum(bool(row.get("llm_retryable")) for row in all_rows),
             int(read_json(BASE_DIR / "output" / "board" / "matching_retry.json.gz", {}).get("count", 0) or 0),
         ),
-        "explainable": sum(bool(row.get("top_match_reasons") or row.get("main_gaps")) for row in candidates),
+        "explainable": sum(bool(row.get("why_match")) for row in candidates),
+        "company_profiles_pending": len(company_profiles_pending),
         "total_visible": len(candidates),
     }
 
@@ -633,6 +719,7 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         "health_history": health_history,
         "llm_observability": llm_observability,
         "matching_summary": matching_summary,
+        "company_profiles_pending": company_profiles_pending,
         "health_report": f"{PAGES_URL}health.html",
         "official_searches": official_search_catalog(),
     }
@@ -673,7 +760,7 @@ document.getElementById('sourceSnapshots').textContent='Source snapshots: '+Obje
 document.getElementById('freshBasis').textContent='Fresh source: '+Object.keys(names).map(k=>`${names[k]} ${(D.fresh_basis||{})[k]==='alerts_and_new_discoveries'?'alerts + all new discoveries':(D.fresh_basis||{})[k]==='first_seen_migration_fallback'?'temporary migration fallback':'alert history / latest Issue'}`).join(' · ');
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const compactJson=value=>esc(JSON.stringify(value||{},null,2));
-function renderObservability(){const o=D.llm_observability||{},runs=o.recent_runs||[];document.getElementById('llmToday').textContent=`$${Number(o.today_estimated_usd||0).toFixed(4)}`;document.getElementById('llmTodayDetail').textContent=`${o.today_runs||0} runs today · production and retry attempts combined`;document.getElementById('llmRuns').innerHTML=runs.length?`<div class="tablewrap"><table><thead><tr><th>Run</th><th>Model</th><th>Jobs / cache / fallback</th><th>Requests / tokens</th><th>Cost / latency</th><th>Health / detail</th></tr></thead><tbody>${runs.map(r=>{const latency=r.latency_measured?`${r.latency_seconds}s`:'Unknown',json=r.json_reliability_measured&&r.json_reliability!=null?Math.round(r.json_reliability*100)+'%':'—',batches=r.batch_outcomes_measured?`${r.batches_succeeded||0}/${r.batches_total||0} succeeded`:'—';return `<tr><td>${esc(names[r.pipeline]||r.pipeline)}<div class="small">${esc(snapshotTime(r.run_at))}</div></td><td>${esc(r.model||'-')}<div class="small">${esc(r.reasoning_effort||'-')} · ${esc(r.scoring_version||'-')}</div></td><td>${esc(r.jobs_scored||0)} / ${esc(r.cache_reused||0)} / ${esc(r.fallback_count||0)}</td><td>${esc(r.requests||0)} · in ${esc(r.input_tokens||0)} / out ${esc(r.output_tokens||0)} / reasoning ${esc(r.reasoning_tokens||0)}<div class="small">RPM ${esc(r.effective_rpm??'—')} · TPM ${esc(r.effective_tpm??'—')} · JSON ${json} · batches ${batches}</div></td><td>$${Number(r.estimated_usd||0).toFixed(4)} · ${esc(latency)}</td><td><span class="pill">${esc(r.health||'unknown')}</span><details><summary>data</summary><pre>${compactJson({funnel:r.funnel,output:r.output,batches:r.batches})}</pre></details></td></tr>`}).join('')}</tbody></table></div>`:'<div class="empty">No persistent run history yet.</div>';const coverage=D.coverage_summary||{},matching=D.matching_summary||{};const ratio=coverage.coverage_ratio==null?'—':Math.round(coverage.coverage_ratio*100)+'%',presence=coverage.observed_coverage_ratio==null?'—':Math.round(coverage.observed_coverage_ratio*100)+'%';document.getElementById('coverageSummary').textContent=`Exact ${ratio} · official presence ${presence} · ${Object.entries(coverage.counts||{}).map(([k,v])=>`${k}: ${v}`).join(' · ')||'No coverage summary'}`;document.getElementById('coverageReport').href=D.coverage_report;document.getElementById('matchingSummary').textContent=`Visible ${matching.total_visible||0} · explainable ${matching.explainable||0} · retryable ${matching.retryable||0} · tiers ${Object.entries(matching.tiers||{}).map(([k,v])=>`${k}:${v}`).join(' ')}`;document.getElementById('matchingDetails').href=o.details_url||D.health_report}
+function renderObservability(){const o=D.llm_observability||{},runs=o.recent_runs||[];document.getElementById('llmToday').textContent=`$${Number(o.today_estimated_usd||0).toFixed(4)}`;document.getElementById('llmTodayDetail').textContent=`${o.today_runs||0} runs today · production and retry attempts combined`;document.getElementById('llmRuns').innerHTML=runs.length?`<div class="tablewrap"><table><thead><tr><th>Run</th><th>Model</th><th>Jobs / cache / fallback</th><th>Requests / tokens</th><th>Cost / latency</th><th>Health / detail</th></tr></thead><tbody>${runs.map(r=>{const latency=r.latency_measured?`${r.latency_seconds}s`:'Unknown',json=r.json_reliability_measured&&r.json_reliability!=null?Math.round(r.json_reliability*100)+'%':'—',batches=r.batch_outcomes_measured?`${r.batches_succeeded||0}/${r.batches_total||0} succeeded`:'—';return `<tr><td>${esc(names[r.pipeline]||r.pipeline)}<div class="small">${esc(snapshotTime(r.run_at))}</div></td><td>${esc(r.model||'-')}<div class="small">${esc(r.reasoning_effort||'-')} · ${esc(r.scoring_version||'-')}</div></td><td>${esc(r.jobs_scored||0)} / ${esc(r.cache_reused||0)} / ${esc(r.fallback_count||0)}</td><td>${esc(r.requests||0)} · in ${esc(r.input_tokens||0)} / out ${esc(r.output_tokens||0)} / reasoning ${esc(r.reasoning_tokens||0)}<div class="small">RPM ${esc(r.effective_rpm??'—')} · TPM ${esc(r.effective_tpm??'—')} · JSON ${json} · batches ${batches}</div></td><td>$${Number(r.estimated_usd||0).toFixed(4)} · ${esc(latency)}</td><td><span class="pill">${esc(r.health||'unknown')}</span><details><summary>data</summary><pre>${compactJson({funnel:r.funnel,output:r.output,batches:r.batches})}</pre></details></td></tr>`}).join('')}</tbody></table></div>`:'<div class="empty">No persistent run history yet.</div>';const coverage=D.coverage_summary||{},matching=D.matching_summary||{};const ratio=coverage.coverage_ratio==null?'—':Math.round(coverage.coverage_ratio*100)+'%',presence=coverage.observed_coverage_ratio==null?'—':Math.round(coverage.observed_coverage_ratio*100)+'%';document.getElementById('coverageSummary').textContent=`Exact ${ratio} · official presence ${presence} · ${Object.entries(coverage.counts||{}).map(([k,v])=>`${k}: ${v}`).join(' · ')||'No coverage summary'}`;document.getElementById('coverageReport').href=D.coverage_report;document.getElementById('matchingSummary').textContent=`Visible ${matching.total_visible||0} · explainable ${matching.explainable||0} · retryable ${matching.retryable||0} · company profiles pending ${matching.company_profiles_pending||0} · tiers ${Object.entries(matching.tiers||{}).map(([k,v])=>`${k}:${v}`).join(' ')}`;document.getElementById('matchingDetails').href=o.details_url||D.health_report}
 renderObservability();
 const bucketNames={lt3h:'<3h', '3to24h':'3–24h', '1to3d':'1–3d', '3to7d':'3–7d', gt7d:'>7d', unknown:'unknown'};
 const statusChoices=['unreviewed','in_progress','applied_complete'];const statusLabels={unreviewed:'Unreviewed',in_progress:'In Progress',applied_complete:'Applied/Complete'};const statusCacheKey='jobReviewSharedCacheV1';const statusAliases={applied:'applied_complete',completed:'applied_complete',replied:'in_progress'};
@@ -716,7 +803,7 @@ function postingText(r){const p=r.freshness.posted||{};if(!p.trusted)return r.po
 const displayGroupKey=r=>r.display_group_key||`${r.company||''}|${r.title||''}`.toLowerCase().replace(/[^a-z0-9|]+/g,' ');
 function displayRows(rows){const groups=new Map();rows.forEach(r=>{const key=displayGroupKey(r);if(!groups.has(key))groups.set(key,[]);groups.get(key).push(r)});return [...groups.values()].flatMap(group=>{const variants=[...new Map(group.map(r=>[r.canonical_job_key,r])).values()],locations=new Set(variants.map(r=>String(r.location||'').trim().toLowerCase()).filter(Boolean));return locations.size>1?[{...variants[0],_variants:variants}]:variants})}
 const actionKeys=element=>{try{return JSON.parse(element.dataset.keys||'[]')}catch(error){return element.dataset.key?[element.dataset.key]:[]}};
-function whyMatch(r){const reasons=(r.top_match_reasons||[]).map(esc).join('; ')||'No saved reason',gaps=(r.main_gaps||[]).map(esc).join('; ')||'none',provenance=[r.score_source,r.score_model,r.reasoning_effort,r.scoring_version].filter(Boolean).map(esc).join(' · ')||'legacy provenance unknown',priority=r.application_reason?` · application priority: ${esc(r.application_reason)}`:'';return `<details class="small"><summary>Why</summary><div><b>Match:</b> ${reasons}</div><div><b>Gaps:</b> ${gaps}</div><div>${provenance}${priority}${r.llm_retryable?` · retryable: ${esc(r.llm_last_error||'LLM failure')}`:''}</div></details>`}
+function whyMatch(r){const reasons=(r.why_match||[]).map(esc).join(' · ')||'Unknown',company=(r.why_company||[]).map(esc).join(' · ')||'Neutral priority',gap=esc(r.why_gap||'None'),evidence=(r.why_evidence||[]).map(esc).join(' · ');return `<details class="small"><summary>Why</summary><div><b>Match:</b> ${reasons}</div><div><b>Company:</b> ${company}</div><div><b>Gap:</b> ${gap}${evidence?` · <b>Evidence:</b> ${evidence}`:''}</div></details>`}
 function jobRows(rows,deleted=false){return rows.length?displayRows(rows).map(r=>{const variants=r._variants||[r],keys=variants.map(v=>v.canonical_job_key),keyData=esc(JSON.stringify(keys)),states=keys.map(reviewState),statuses=variants.map(statusOf),status=statuses.every(value=>value===statuses[0])?statuses[0]:'mixed',disabled=keys.some(key=>pendingKeys.has(key))?'disabled':'',companyDisabled=pendingKeys.has(companyStateKey(r))?'disabled':'',pending=states.some(state=>state?.pending)?'<span class="small">Pending sync</span>':'',companyAction=r.company_key?` <button class="${isCompanyHidden(r)?'show-company':'hide-company'}" data-company-key="${esc(r.company_key)}" ${companyDisabled}>${isCompanyHidden(r)?'Show again':'Hide company'}</button>`:'',location=variants.length>1?`<details><summary>${variants.length} locations</summary>${variants.map(v=>`<div><a target="_blank" rel="noopener noreferrer" href="${esc(v.url)}">${esc(v.location||'Open location')}</a></div>`).join('')}</details>`:esc(r.location),sources=[...new Set(variants.map(v=>names[v.pipeline]||v.pipeline))].join(' / ');return `<tr><td><b>${esc(r.tier)}</b>${r.score!==''?`<div class="small">${esc(r.score)}</div>`:''}${whyMatch(r)}</td><td><b>${esc(r.company)}</b>${companyAction}<br><a target="_blank" rel="noopener noreferrer" href="${esc(r.url)}">${esc(r.title)}</a>${variants.length>1?`<div class="small">Collapsed same role · individual location links preserved</div>`:''}</td><td>${location}</td><td><span class="pill discovered">${activityText(r)}</span><div class="small">${postingText(r)}</div></td><td>${esc(r.sponsorship||'Unknown')}</td><td>${r.referral?`<span class="pill referral">${esc(r.referral)}</span>`:'-'}</td><td><div class="workflow">${deleted?`<span class="pill">Deleted</span><button class="restore" data-keys="${keyData}" ${disabled}>Restore</button>`:`<select class="status-select" data-keys="${keyData}" ${disabled}>${status==='mixed'?'<option value="mixed" selected disabled>Mixed</option>':''}${statusChoices.map(s=>`<option value="${s}" ${status===s?'selected':''}>${statusLabels[s]}</option>`).join('')}</select><button class="delete" data-keys="${keyData}" ${disabled}>Delete</button>`}${pending}</div></td><td>${esc(sources)}</td></tr>`}).join(''):'<tr><td colspan="8"><div class="empty">No qualifying jobs in this view.</div></td></tr>'}
 function sponsorshipSummary(){const selected=sponsorshipChoices.filter(value=>sponsorshipFilters.has(value));return selected.length===sponsorshipChoices.length?'All':selected.length===1?selected[0]:selected.length+' selected'}
 function discoveryHeader(){const option=value=>`<label><input type="checkbox" value="${value}" ${sponsorshipFilters.has(value)?'checked':''}> ${value}</label>`;return `<th class="tier-header">Tier<div class="header-filter"><input class="min-score-filter" type="number" min="0" max="100" step="1" inputmode="numeric" value="${esc(minScore)}" placeholder="Min" aria-label="Minimum score"></div></th><th>Company / Title</th><th>Location</th><th>Alert / Posted</th><th class="sponsorship-header">Sponsorship<details class="filter-menu sponsorship-filter"><summary>${sponsorshipSummary()}</summary><div class="filter-options" role="group" aria-label="Sponsorship options">${sponsorshipChoices.map(option).join('')}</div></details></th>`}

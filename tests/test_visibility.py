@@ -330,6 +330,40 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertEqual(90, ibm["score"])
         self.assertTrue(ibm["tech_service"])
 
+    def test_why_is_concise_and_order_uses_experience_and_evidence_not_fallback_label(self) -> None:
+        now = datetime(2026, 9, 15, 12, tzinfo=timezone.utc)
+        base = {
+            "company": "New Company",
+            "title": "AI Engineer",
+            "location": "New York, NY",
+            "match_score": 95,
+            "tier": "A",
+            "first_seen": now.isoformat(),
+            "role_family": "ai",
+            "seniority_fit": "good",
+            "score_source": "cached_llm",
+            "score_model": "legacy_unknown",
+            "scoring_version": "legacy_unknown",
+            "reasoning_effort": "unknown",
+            "description_available": True,
+        }
+        normalized = dashboard.normalize_row(base, "board", now, [], {}, [])
+        self.assertEqual(["AI/ML fit", "Experience fit"], normalized["why_match"])
+        self.assertEqual(["Profile pending", "Neutral priority"], normalized["why_company"])
+        self.assertEqual(["LLM"], normalized["why_evidence"])
+
+        strong_fallback = dashboard.normalize_row(
+            {**base, "company": "Fallback", "score_source": "rule_fallback"}, "board", now, [], {}, [],
+        )
+        weak_cached = dashboard.normalize_row(
+            {**base, "company": "Cached", "description_available": False, "main_gaps": ["Requires 3+ years"]},
+            "board", now, [], {}, [],
+        )
+        self.assertEqual("3+ yrs required", weak_cached["why_gap"])
+        self.assertEqual(["LLM", "Title only"], weak_cached["why_evidence"])
+        self.assertEqual("Fallback", dashboard._sort_rows([weak_cached, strong_fallback])[0]["company"])
+        self.assertNotIn("legacy_unknown", dashboard.HTML_TEMPLATE)
+
     def test_official_registry_has_search_link_only_targets(self) -> None:
         catalog = {entry["id"]: entry for entry in dashboard.official_search_catalog()}
         for company_id in ("goldman-sachs", "citadel", "tesla", "wayfair"):
