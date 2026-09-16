@@ -455,6 +455,9 @@ def _merge_pair(canonical: Dict[str, str], other: Dict[str, str]) -> Dict[str, s
         merged["discovery_queries"] = queries
     if any(source in LOCAL_SOURCES for source in via) and merged.get("official_url"):
         merged["original_resolved"] = True
+    first_seen = [str(value) for value in (merged.get("first_seen"), other.get("first_seen")) if value]
+    if first_seen:
+        merged["first_seen"] = min(first_seen)
     return merged
 
 
@@ -2532,6 +2535,52 @@ def _raw_source_counts(raw_jobs: List[Dict[str, str]]) -> Dict[str, int]:
     return counts
 
 
+def new_job_telemetry(
+    new_jobs: List[Dict[str, Any]], added_jobs: List[Dict[str, Any]]
+) -> Dict[str, Any]:
+    """Count unique new jobs plus overlapping discovery credit by source."""
+    by_source = {
+        source: {"found": 0, "added": 0}
+        for source in ("ats", *LOCAL_SOURCES)
+    }
+
+    def credit(rows: List[Dict[str, Any]], field: str) -> None:
+        for job in rows:
+            buckets = set()
+            for raw_source in job.get("discovered_via") or [job.get("source", "")]:
+                source = str(raw_source or "").lower()
+                buckets.add(next((name for name in LOCAL_SOURCES if name in source), "ats"))
+            for source in buckets or {"ats"}:
+                by_source[source][field] += 1
+
+    credit(new_jobs, "found")
+    credit(added_jobs, "added")
+    return {
+        "new_jobs": len(new_jobs),
+        "new_jobs_added": len(added_jobs),
+        "new_jobs_by_source": by_source,
+    }
+
+
+def finalize_new_jobs(
+    jobs: List[Dict[str, Any]],
+    store: Dict[str, Dict[str, Any]],
+    seen_jobs: Dict[str, str],
+    now_iso: str,
+) -> List[Dict[str, Any]]:
+    """Resolve final canonical identities before deciding which jobs are new."""
+    new_jobs = []
+    for job in jobs:
+        key = dedup_key(job)
+        prior_first_seen = str((store.get(key) or {}).get("first_seen") or seen_jobs.get(key) or "")
+        if prior_first_seen:
+            job["first_seen"] = min(str(job.get("first_seen") or prior_first_seen), prior_first_seen)
+        seen_jobs.setdefault(key, str(job.get("first_seen") or now_iso))
+        if job.get("first_seen") == now_iso:
+            new_jobs.append(job)
+    return new_jobs
+
+
 def _local_coverage_key(job: Dict[str, Any]) -> str:
     """Diagnostic identity: employer URL first, then complete normalized metadata."""
     for field in ("official_url", "application_url"):
@@ -2796,7 +2845,6 @@ def run() -> None:
     seen_jobs = load_seen_jobs_path(SEEN_JOBS_PATH)
     for key, entry in store.items():
         seen_jobs.setdefault(key, str(entry.get("first_seen") or ""))
-    new_keys: set = set()
     for job in deduped:
         key = dedup_key(job)
         prev = store.get(key)
@@ -2804,7 +2852,6 @@ def run() -> None:
             job["first_seen"] = str((prev or {}).get("first_seen") or seen_jobs[key])
         else:
             job["first_seen"] = now_iso
-            new_keys.add(key)
         seen_jobs.setdefault(key, job["first_seen"])
         job["last_seen"] = now_iso
         job["recency_bucket"] = recency_bucket(job, now=now)
@@ -2826,6 +2873,7 @@ def run() -> None:
     direct_enrichment = resolve_exposed_originals(deduped, session, store)
     deduped = collapse_cross_source(deduped)
     coverage_reconcile.annotate_jobs(deduped, "board")
+    new_jobs = finalize_new_jobs(deduped, store, seen_jobs, now_iso)
 
     # 5) Company filter. Only explicit exclusions are dropped here. Companies
     #    covered by a dedicated official adapter are reconciled exactly below;
@@ -2934,6 +2982,7 @@ def run() -> None:
     tier_b = [j for j in active_candidates if j["tier"] == "B"]
     ab_before_cap = len(tier_a) + len(tier_b)
     visible = tier_a + tier_b
+    added_jobs = [job for job in visible if job.get("first_seen") == now_iso]
     staffing_capped_to_b = sum(
         1 for j in active_candidates
         if j.get("staffing_firm") and j["tier"] == "B"
@@ -2999,7 +3048,7 @@ def run() -> None:
             "tier_b": len(tier_b),
             "ab_before_cap": ab_before_cap,
             "shown": len(visible),
-            "new_jobs": len(new_keys),
+            **new_job_telemetry(new_jobs, added_jobs),
         },
         "recency": recency_dist,
         "screen_method": screen_method,

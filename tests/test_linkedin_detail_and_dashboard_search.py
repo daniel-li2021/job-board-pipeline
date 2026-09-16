@@ -121,6 +121,14 @@ class DashboardSearchTests(unittest.TestCase):
         self.assertIn("healthIndicator", dashboard.HTML_TEMPLATE)
         self.assertIn("D.health?.components", dashboard.HTML_TEMPLATE)
 
+    def test_dashboard_cards_show_found_added_and_pipeline_run_history(self) -> None:
+        self.assertIn("new_jobs_added", dashboard.HTML_TEMPLATE)
+        self.assertIn("Runs in past 24h", dashboard.HTML_TEMPLATE)
+        self.assertIn("runs.slice(0,2)", dashboard.HTML_TEMPLATE)
+        self.assertIn("Date.parse(item.run_at)>=cutoff", dashboard.HTML_TEMPLATE)
+        self.assertIn("Object.prototype.hasOwnProperty.call", dashboard.HTML_TEMPLATE)
+        self.assertIn("America/Los_Angeles", dashboard.HTML_TEMPLATE)
+
     def test_search_is_applied_without_replacing_main_view_state(self) -> None:
         self.assertIn("activeMainView", dashboard.HTML_TEMPLATE)
         self.assertIn("discoveryRows(normalRows", dashboard.HTML_TEMPLATE)

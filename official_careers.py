@@ -393,6 +393,10 @@ def write_inbox(visible: List[Dict[str, str]], stamp: str, now: datetime) -> Non
     INBOX_MD_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def count_new_jobs_added(visible: List[Dict[str, str]], new_keys: set[str]) -> int:
+    return sum(dedup_key(job) in new_keys for job in visible)
+
+
 def write_digest(jobs: List[Dict[str, str]], stamp: str) -> Dict[str, Path]:
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
     ALERTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -595,6 +599,7 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
     tier_a = [j for j in candidates if j["tier"] == "A"]
     tier_b = [j for j in candidates if j["tier"] == "B"]
     visible = tier_a + tier_b
+    new_jobs_added = count_new_jobs_added(visible, new_keys)
 
     new_store = dict(store)
     for job in deduped:
@@ -648,6 +653,7 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
             "tier_b": len(tier_b),
             "shown": len(visible),
             "new_jobs": len(new_keys),
+            "new_jobs_added": new_jobs_added,
         },
         "recency": recency_dist,
         "screen_method": screen_method,

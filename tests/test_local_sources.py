@@ -29,6 +29,37 @@ class Frame:
 
 
 class LocalSourceTests(unittest.TestCase):
+    def test_new_job_telemetry_is_final_unique_and_credits_overlapping_sources(self) -> None:
+        now = "2026-09-16T12:00:00+00:00"
+        old = "2026-09-15T12:00:00+00:00"
+        added = schema.make_job(
+            source="linkedin", company="One", title="Software Engineer I",
+            location="Austin, TX", job_id="one",
+        )
+        added.update(first_seen=now, tier="A", discovered_via=["linkedin", "indeed"])
+        filtered = schema.make_job(
+            source="glassdoor", company="Two", title="Software Engineer Intern",
+            location="Seattle, WA", job_id="two",
+        )
+        filtered.update(first_seen=now, tier="C", discovered_via=["glassdoor"])
+        known = schema.make_job(
+            source="greenhouse", company="Three", title="Data Engineer",
+            location="Remote, US", job_id="three",
+        )
+        known["first_seen"] = now
+        seen = {schema.dedup_key(known): old}
+
+        new_jobs = board_pipeline.finalize_new_jobs([added, filtered, known], {}, seen, now)
+        telemetry = board_pipeline.new_job_telemetry(new_jobs, [added])
+
+        self.assertEqual(2, telemetry["new_jobs"])
+        self.assertEqual(1, telemetry["new_jobs_added"])
+        self.assertEqual({"found": 1, "added": 1}, telemetry["new_jobs_by_source"]["linkedin"])
+        self.assertEqual({"found": 1, "added": 1}, telemetry["new_jobs_by_source"]["indeed"])
+        self.assertEqual({"found": 1, "added": 0}, telemetry["new_jobs_by_source"]["glassdoor"])
+        self.assertEqual({"found": 0, "added": 0}, telemetry["new_jobs_by_source"]["ats"])
+        self.assertEqual(old, known["first_seen"])
+
     def test_glassdoor_static_cards_preserve_partial_discovery(self) -> None:
         records = jobspy_local._parse_glassdoor_cards('''
           <div data-test="job-card-wrapper">
@@ -168,11 +199,14 @@ class LocalSourceTests(unittest.TestCase):
     def test_cloud_collector_is_daytime_serialized_and_commits_only_durable_state(self) -> None:
         workflow = (ROOT / ".github/workflows/local-sources.yml").read_text(encoding="utf-8")
         self.assertIn("workflow_dispatch:", workflow)
-        self.assertIn('cron: "17 5-20/3 * * *"', workflow)
-        self.assertIn('timezone: "America/Los_Angeles"', workflow)
+        self.assertNotIn("schedule:", workflow)
+        self.assertNotIn("cron:", workflow)
+        self.assertIn("scheduler_probe:", workflow)
+        self.assertIn("Record external scheduler receipt", workflow)
         self.assertIn("group: local-source-collection", workflow)
         self.assertIn("cancel-in-progress: false", workflow)
         self.assertIn("source_ingest=true", workflow)
+        self.assertNotIn("steps.publish.outputs.changed == 'true'", workflow)
         for name in ("linkedin", "indeed", "glassdoor", "health"):
             self.assertIn(f"output/sources/{name}.json", workflow)
         self.assertNotIn("git add -A", workflow)

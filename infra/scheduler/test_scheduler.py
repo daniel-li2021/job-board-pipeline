@@ -24,6 +24,10 @@ class SchedulerTests(unittest.TestCase):
         with patch.dict("sys.modules", {"boto3": boto, "botocore": types.ModuleType("botocore"), "botocore.config": config}):
             exec(compile(code, "inline-dispatcher", "exec"), namespace)
         handler = namespace["handler"]
+        self.assertEqual(
+            {"local-sources.yml", "board-jobs.yml", "daily-jobs.yml", "official-careers.yml"},
+            namespace["WORKFLOWS"],
+        )
         response = Mock()
         response.__enter__ = Mock(return_value=types.SimpleNamespace(status=204))
         response.__exit__ = Mock(return_value=False)
@@ -53,6 +57,14 @@ class SchedulerTests(unittest.TestCase):
             send.side_effect = TimeoutError("timed out")
             with self.assertRaises(TimeoutError):
                 handler({"workflow": "board-jobs.yml"}, context)
+
+    def test_local_source_schedule_owns_four_daily_board_chains(self):
+        template = Path(__file__).with_name("template.yaml").read_text()
+        self.assertIn("LocalSourceSchedule:", template)
+        self.assertNotIn("BoardSchedule:", template)
+        self.assertIn("ScheduleExpression: cron(0 8,11,14,17 * * ? *)", template)
+        self.assertIn("America/Los_Angeles", template)
+        self.assertIn('Input: \'{"workflow":"local-sources.yml"', template)
 
 
 if __name__ == "__main__":

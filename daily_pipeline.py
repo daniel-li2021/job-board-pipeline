@@ -27,7 +27,7 @@ import time
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, Iterable, List, Optional, Tuple
 from urllib.parse import urlencode
 from zoneinfo import ZoneInfo
 
@@ -887,6 +887,11 @@ def write_csv(path: Path, rows: List[Dict[str, Any]], fields: List[str]) -> None
             writer.writerow({k: row.get(k, "") for k in fields})
 
 
+def count_new_jobs_added(rows: List[Dict[str, Any]], new_ids: Iterable[str]) -> int:
+    ids = set(new_ids)
+    return sum(str(row.get("job_id")) in ids for row in rows)
+
+
 # Compact schema for the downloadable alert CSV/TXT.
 ALERT_FIELDS = [
     "title",
@@ -1176,6 +1181,7 @@ def run() -> None:
 
     # Only actionable A/B jobs appear in alerts; C remains in the internal store.
     alert_rows = tier_a_rows + tier_b_rows
+    new_jobs_added = count_new_jobs_added(alert_rows, new_ids)
 
     # Report
     lines: List[str] = []
@@ -1245,6 +1251,7 @@ def run() -> None:
                 "tier_c": len(tier_c_rows),
                 "shown": len(alert_rows),
                 "new_jobs": len(new_ids),
+                "new_jobs_added": new_jobs_added,
             },
             "screen_method": shared_screen_method,
             "failures": {"llm": llm_errors},

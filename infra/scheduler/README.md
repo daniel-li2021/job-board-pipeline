@@ -5,15 +5,16 @@ the redundant scheduled Pages fallback are removed.
 
 | Workflow | America/Los_Angeles targets | AWS expression |
 |---|---|---|
-| board-jobs.yml | 08:00, 17:00 | `cron(0 8,17 * * ? *)` |
+| local-sources.yml → board-jobs.yml → Pages | 08:00, 11:00, 14:00, 17:00 | `cron(0 8,11,14,17 * * ? *)` |
 | daily-jobs.yml | 08:10, 17:10 | `cron(10 8,17 * * ? *)` |
 | official-careers.yml | 08:20, 17:20 | `cron(20 8,17 * * ? *)` |
 
 All three schedules use `America/Los_Angeles`, automatically follow DST, and set the
 flexible window to OFF. Scheduler has minute-level precision; GitHub runner
-queuing can still delay actual execution. Discovery workflows remain independent,
-manual dispatch stays available, and successful `workflow_run` events continue to
-reconcile and publish Pages using latest main.
+queuing can still delay actual execution. Local source collection dispatches Board
+after every successful run, even when snapshots are unchanged; Board then triggers
+Pages reconciliation. Syncareer and Official remain independent, manual dispatch
+stays available, and successful `workflow_run` events publish latest main.
 
 One Lambda, secret reference, execution roles, schedule group, and encrypted SQS
 failure queue serve all three schedules. Scheduler retries delivery up to three
@@ -46,7 +47,7 @@ runs of each pipeline, but is not an exactly-once guarantee.
    ```
 
 4. Read stack outputs for group, role and Lambda ARNs. For each of the three
-   discovery workflows, create one **temporary one-time Scheduler schedule** in
+   scheduled workflows, create one **temporary one-time Scheduler schedule** in
    that same group, 2–3 minutes ahead, with flexible window OFF, the same role,
    Lambda target, retry/DLQ settings and a unique input such as:
 

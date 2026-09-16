@@ -1,11 +1,14 @@
 name: Local source collection
 
+run-name: ${{ inputs.scheduler_probe && format('Scheduler probe {0}', inputs.scheduler_probe) || github.workflow }}
+
 on:
-  schedule:
-    # Every 3 hours from 5:17 AM through 8:17 PM Pacific; :17 avoids peak queue load.
-    - cron: "17 5-20/3 * * *"
-      timezone: "America/Los_Angeles"
   workflow_dispatch:
+    inputs:
+      scheduler_probe:
+        description: "Verification receipt only; skip collection and Board dispatch"
+        type: string
+        default: ""
 
 permissions:
   actions: write
@@ -16,7 +19,17 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  scheduler-probe:
+    if: ${{ inputs.scheduler_probe != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Record external scheduler receipt
+        env:
+          PROBE_ID: ${{ inputs.scheduler_probe }}
+        run: printf 'Scheduler probe %s received\n' "$PROBE_ID"
+
   collect:
+    if: ${{ !inputs.scheduler_probe }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -76,7 +89,6 @@ jobs:
           done
 
       - name: Dispatch Board matching for the committed snapshots
-        if: ${{ steps.publish.outputs.changed == 'true' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run board-jobs.yml --ref main -f source_ingest=true

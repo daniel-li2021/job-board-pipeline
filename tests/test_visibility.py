@@ -15,6 +15,7 @@ import alert_history
 import coverage_reconcile
 import daily_pipeline
 import dashboard
+import official_careers
 import review_state
 from sources.company_aliases import company_risk_rank, load_alias_file, match_company_alias, match_company_entry, prepare_alias_entries
 from sources.schema import combined_cache_key_from_hash, dedup_key, make_job, normalize_job_url, normalize_location_key
@@ -1202,6 +1203,28 @@ class CoverageMatchingTests(unittest.TestCase):
 
 
 class ComplementaryDiscoveryTests(unittest.TestCase):
+    def test_official_and_syncareer_added_counts_only_include_new_visible_jobs(self) -> None:
+        official_new = make_job(
+            source="google_official_careers", company="Google", title="Software Engineer I",
+            location="Mountain View, CA", job_id="new",
+        )
+        official_known = make_job(
+            source="google_official_careers", company="Google", title="Data Engineer",
+            location="Seattle, WA", job_id="known",
+        )
+        self.assertEqual(
+            1,
+            official_careers.count_new_jobs_added(
+                [official_new, official_known], {dedup_key(official_new)},
+            ),
+        )
+        self.assertEqual(
+            1,
+            daily_pipeline.count_new_jobs_added(
+                [{"job_id": "new"}, {"job_id": "known"}], ["new"],
+            ),
+        )
+
     def test_official_reconciliation_reads_compressed_raw_snapshot(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             raw = Path(tmpdir) / "raw.json.gz"
@@ -1416,7 +1439,10 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
             self.assertEqual(1, stats["llm"]["rule"])
             self.assertEqual(0, stats["llm"]["scored"])
             self.assertEqual(
-                {"tier_a": 0, "tier_b": 0, "tier_c": 1, "shown": 0, "new_jobs": 1},
+                {
+                    "tier_a": 0, "tier_b": 0, "tier_c": 1, "shown": 0,
+                    "new_jobs": 1, "new_jobs_added": 0,
+                },
                 stats["output"],
             )
             self.assertEqual("rule", stats["screen_method"])
