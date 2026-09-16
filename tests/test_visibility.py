@@ -16,7 +16,7 @@ import coverage_reconcile
 import daily_pipeline
 import dashboard
 import review_state
-from sources.company_aliases import load_alias_file, match_company_alias, match_company_entry, prepare_alias_entries
+from sources.company_aliases import company_risk_rank, load_alias_file, match_company_alias, match_company_entry, prepare_alias_entries
 from sources.schema import combined_cache_key_from_hash, dedup_key, make_job, normalize_job_url, normalize_location_key
 from sources.schema import classify_location_bucket
 from sources import linkedin_local, local_search
@@ -148,6 +148,7 @@ class DashboardPolicyTests(unittest.TestCase):
     def test_pending_company_profiles_are_a_separate_artifact(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             public = Path(tmpdir)
+            local_pending = public / "local-company-profiles-pending.json"
             coverage = public / "source-coverage.md"
             coverage.write_text("coverage", encoding="utf-8")
             payload = {
@@ -159,6 +160,8 @@ class DashboardPolicyTests(unittest.TestCase):
                 dashboard, "DASHBOARD_JSON", public / "dashboard.json",
             ), patch.object(dashboard, "DASHBOARD_HTML", public / "index.html"), patch.object(
                 dashboard, "PENDING_COMPANY_PROFILES_JSON", public / "company_profiles_pending.json",
+            ), patch.object(
+                dashboard, "LOCAL_PENDING_COMPANY_PROFILES_JSON", local_pending,
             ), patch.object(dashboard.coverage_reconcile, "COVERAGE_MD_PATH", coverage), patch.object(
                 dashboard.pipeline_health, "write",
             ):
@@ -167,6 +170,7 @@ class DashboardPolicyTests(unittest.TestCase):
             pending = json.loads((public / "company_profiles_pending.json").read_text(encoding="utf-8"))
             self.assertNotIn("company_profiles_pending", main)
             self.assertEqual({"generated_at": payload["generated_at"], "count": 2, "companies": ["A Co", "B Co"]}, pending)
+            self.assertEqual(pending, json.loads(local_pending.read_text(encoding="utf-8")))
 
     def test_observability_cards_share_one_responsive_row_and_legacy_telemetry_is_unknown(self) -> None:
         template = dashboard.HTML_TEMPLATE
@@ -342,6 +346,7 @@ class DashboardPolicyTests(unittest.TestCase):
         internship = normalized("Figma", "Software Engineer Intern")
         figma_full_time = normalized("Figma", "Software Engineer I")
         ibm = normalized("IBM", "Software Engineer I")
+        cloudflare = normalized("Cloudflare", "Software Engineer I")
         self.assertEqual("Amazon", dashboard._sort_rows([internship, staffing, amazon])[0]["company"])
         self.assertEqual(
             ["Software Engineer I", "Software Engineer Intern"],
@@ -352,6 +357,9 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertEqual("Amazon", dashboard._sort_rows([ibm, amazon])[0]["company"])
         self.assertEqual(90, ibm["score"])
         self.assertTrue(ibm["tech_service"])
+        self.assertEqual(1, company_risk_rank(match_company_entry("Cloudflare", profiles)))
+        self.assertEqual(2, company_risk_rank(match_company_entry("Lockheed Martin", profiles)))
+        self.assertEqual("Amazon", dashboard._sort_rows([cloudflare, amazon])[0]["company"])
 
     def test_why_is_concise_and_order_uses_experience_and_evidence_not_fallback_label(self) -> None:
         now = datetime(2026, 9, 15, 12, tzinfo=timezone.utc)
@@ -555,6 +563,7 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertIn("renderSummary()", dashboard.HTML_TEMPLATE)
         self.assertIn("<summary>Hidden companies", dashboard.HTML_TEMPLATE)
         self.assertIn("Show again", dashboard.HTML_TEMPLATE)
+        self.assertIn("Enter password to ${hidden?'hide':'show again'} this company", dashboard.HTML_TEMPLATE)
         self.assertIn("allRows.filter(r=>!isPreferenceKey(r.canonical_job_key))", dashboard.HTML_TEMPLATE)
         self.assertIn("renderBox('inProgress',searchedRows(rows.filter(r=>statusOf(r)==='in_progress'&&!isDeleted(r))))", dashboard.HTML_TEMPLATE)
         self.assertIn("renderBox('applied',searchedRows(rows.filter(r=>statusOf(r)==='applied_complete'&&!isDeleted(r))))", dashboard.HTML_TEMPLATE)
@@ -587,6 +596,35 @@ class MatchingPolicyTests(unittest.TestCase):
         old = self._job(score=80, bucket="gt7d", title="Software Engineer I")
         self.assertEqual("B", board_pipeline.assign_tier(old, False))
         self.assertEqual("A", board_pipeline.assign_tier(self._job(score=94, bucket="gt7d", title="New Grad Software Engineer"), False))
+        self.assertEqual("B", board_pipeline.assign_tier(
+            self._job(score=99, bucket="lt3h", title="Software Engineer Intern"), False,
+        ))
+
+    def test_early_career_requirements_drop_only_explicitly_ineligible_roles(self) -> None:
+        filler = " Build production software and collaborate with engineers." * 5
+        required_2027 = self._job(score=90, bucket="lt3h", title="Software Engineer New Grad")
+        required_2027["description"] = filler + " Graduation in Spring 2027 with a computer science degree is required."
+        self.assertEqual(
+            (False, "ineligible_2027_graduate_requirement"), board_pipeline.hard_filter(required_2027),
+        )
+
+        multiple_years = self._job(score=90, bucket="lt3h", title="Software Engineer New Grad")
+        multiple_years["description"] = filler + " Graduation in Spring 2026 or Spring 2027 is required."
+        self.assertEqual((True, "keep"), board_pipeline.hard_filter(multiple_years))
+
+        student_only = self._job(score=90, bucket="lt3h", title="Software Engineer Intern")
+        student_only["description"] = filler + " Candidates must be currently enrolled in a bachelor's degree program."
+        self.assertEqual(
+            (False, "ineligible_current_student_requirement"), board_pipeline.hard_filter(student_only),
+        )
+
+        graduate_allowed = self._job(score=90, bucket="lt3h", title="Software Engineer Intern")
+        graduate_allowed["description"] = filler + " Currently pursuing or recently completed a computer science degree."
+        self.assertEqual((True, "keep"), board_pipeline.hard_filter(graduate_allowed))
+
+        unknown = self._job(score=90, bucket="lt3h", title="Software Engineer Intern 2027")
+        unknown["description"] = ""
+        self.assertEqual((True, "keep"), board_pipeline.hard_filter(unknown))
 
     def test_thin_jobs_use_title_and_record_quality_without_auto_demotion(self) -> None:
         def thin(title: str) -> dict:

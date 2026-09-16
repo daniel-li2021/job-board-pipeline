@@ -7,6 +7,11 @@
   try { archive = JSON.parse(localStorage.getItem(archiveCacheKey) || '{}'); } catch (e) { archive = {}; }
   const archivePending = new Set();
   const trackedStatuses = new Set(['in_progress', 'applied_complete']);
+  // ponytail: one record predates durable snapshots; remove after the repaired archive has synced.
+  const legacyDetails = {
+    'url::https://jobs.sap.com/job/Palo-Alto-SAP-iXp-Intern-Full-Stack-AI-Developer-CA-94304/1425371233':
+      ['official', 'SAP', 'SAP iXp Intern - Full-Stack AI Developer', '', '', '-', ''],
+  };
   let recentSource = 'all';
 
   const stateKeys = key => {
@@ -117,7 +122,8 @@
     if (field === 'tier') return hasTier(row);
     if (field === 'score') return hasScore(row);
     const value = String(row?.[field] || '');
-    return Boolean(value) && value !== 'Archived application' && !value.startsWith('Previously applied job');
+    return Boolean(value) && !['Archived application', 'Archived tracked job'].includes(value)
+      && !value.startsWith('Previously applied job') && !value.startsWith('Tracked job (source details expired)');
   };
   const metadataQuality = row => metadataFields.filter(field => hasMetadata(row, field)).length;
   const mergeArchive = (left, right) => {
@@ -140,7 +146,7 @@
   function recoveredRow(key) {
     const matches = [archive[key], ...allRows]
       .filter(row => row?.canonical_job_key === key);
-    const details = (D.history_details || {})[key];
+    const details = (D.history_details || {})[key] || legacyDetails[key];
     const scores = (D.history_scores || {})[key];
     const historical = details ? {
       canonical_job_key: key, pipeline: details[0], company: details[1], title: details[2],

@@ -97,6 +97,23 @@ assert.equal(archived.old.company,'Old Co');assert.equal(archived.old.title,'Sen
 assert.equal(archived.old.location,'Boston, MA');assert.equal(archived.old.url,'https://example.com/old');
 assert.equal(archived.old._applied_at,'');
 assert.equal(vm.runInContext("check.appliedRows(uniqueRows()).at(-1).canonical_job_key",context),'old');
+vm.runInContext(`
+D.history_details.expired=['board','Recovered Co','Recovered Engineer','Austin, TX','https://example.com/expired','B',82];
+reviewStates.expired={canonical_job_key:'expired',status:'applied_complete',updated_at:'2026-09-09T00:00:00Z'};
+check.getArchive().expired={canonical_job_key:'expired',company:'Archived tracked job',title:'Tracked job (source details expired)',tier:'-',score:'',_tracked_status:'applied_complete',_tracked_archive:true,_applied_archive:true,_archive_updated_at:'2099-01-01T00:00:00Z'};
+check.backfillTrackedArchives();
+`,context);
+archived=JSON.parse(cache.jobAppliedArchiveCacheV1);
+assert.equal(archived.expired.company,'Recovered Co');assert.equal(archived.expired.title,'Recovered Engineer');
+assert.ok(vm.runInContext("check.appliedRows(uniqueRows()).some(row=>row.canonical_job_key==='expired')",context));
+vm.runInContext(`
+legacyKey='url::https://jobs.sap.com/job/Palo-Alto-SAP-iXp-Intern-Full-Stack-AI-Developer-CA-94304/1425371233';
+reviewStates[legacyKey]={canonical_job_key:legacyKey,status:'in_progress',updated_at:'2026-09-15T00:00:00Z'};
+check.getArchive()[legacyKey]={canonical_job_key:legacyKey,company:'Archived tracked job',title:'Tracked job (source details expired)',location:'Palo Alto, CA',url:legacyKey.slice(5),tier:'B',score:95,_tracked_status:'in_progress',_tracked_archive:true,_archive_updated_at:'2099-01-01T00:00:00Z'};
+check.backfillTrackedArchives();
+`,context);
+archived=JSON.parse(cache.jobAppliedArchiveCacheV1);
+assert.equal(archived[vm.runInContext('legacyKey',context)].company,'SAP');
 vm.runInContext("allRows.push({canonical_job_key:'generic',company:'Archived application',title:'Previously applied job (source details expired)',tier:'-',score:'',_applied_archive:true});reviewStates.generic={canonical_job_key:'generic',status:'applied_complete',updated_at:'2099-01-01T00:00:00Z'}",context);
 assert.equal(vm.runInContext("check.appliedRows(uniqueRows()).at(-1).canonical_job_key",context),'generic');
 const migrated=vm.runInContext("check.decodeArchive({canonical_job_key:'applied-archive::'+JSON.stringify({k:'migrated',c:'Migrated',t:'Engineer',applied:'2020-01-01T00:00:00Z'}),updated_at:'2026-09-08T00:00:00Z'})",context);
@@ -116,7 +133,9 @@ assert.equal(vm.runInContext("uniqueRows().find(row=>row.canonical_job_key==='pr
 assert.equal(vm.runInContext("reviewStates.progress.status",context),'in_progress');
 const htmlAndExtension = html + extension;
 const anchors = [...htmlAndExtension.matchAll(/<a\b[^>]*>/g)].map(match => match[0]);
-assert.ok(anchors.every(tag => /target="_blank"/.test(tag) && /rel="noopener noreferrer"/.test(tag)));
+assert.ok(anchors.filter(tag => !/href="#/.test(tag)).every(
+  tag => /target="_blank"/.test(tag) && /rel="noopener noreferrer"/.test(tag),
+));
 (async()=>{
 vm.runInContext("supabase={from(){throw new Error('offline')}}",context);
 await vm.runInContext('pushState(reviewStates.one)',context);

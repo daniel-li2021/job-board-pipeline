@@ -50,7 +50,7 @@ import coverage_reconcile
 import llm_config
 from sources import ats
 from sources.careers.incremental import DETAIL_STALE_DAYS
-from sources.company_aliases import load_alias_file, match_company_alias, match_company_entry, prepare_alias_entries
+from sources.company_aliases import company_risk_rank, load_alias_file, match_company_alias, match_company_entry, prepare_alias_entries
 from sources.schema import (
     OUTPUT_DIR,
     parse_datetime,
@@ -804,6 +804,29 @@ CLEARANCE_EXTRA_RES = [
     re.compile(r"\bclearance\b.{0,40}\b(required|needed|must)\b", re.IGNORECASE),
     re.compile(r"\b(active|obtain|obtaining|eligibility|eligible|willingness).{0,50}\b(us |u\.s\. )?security clearance\b", re.IGNORECASE),
 ]
+GRAD_2027_REQUIREMENT_RE = re.compile(
+    r"\b(?:graduat(?:e|ing|ion)(?: date)?|class of)\b.{0,80}\b2027\b|"
+    r"\b2027\b.{0,50}\b(?:graduate|graduating|graduation)\b",
+    re.IGNORECASE,
+)
+GRAD_ELIGIBLE_ALTERNATIVE_RE = re.compile(
+    r"\b(?:graduat(?:e|ing|ion)(?: date)?|class of)\b.{0,80}\b202[0-6]\b|"
+    r"\b202[0-6]\b.{0,50}\b(?:graduate|graduating|graduation)\b|"
+    r"\brecent(?:ly)? (?:completed|graduated|graduate)\b",
+    re.IGNORECASE,
+)
+CURRENT_STUDENT_REQUIREMENT_RE = re.compile(
+    r"\b(?:must be |applicants? must be |candidates? must be )?(?:currently|actively) "
+    r"(?:enrolled|pursuing)\b.{0,140}\b(?:degree|student|program|college|university)\b|"
+    r"\bpursuing (?:an? |their )?.{0,80}\bdegree\b|"
+    r"\breturn(?:ing)? to (?:school|college|university) after (?:the )?(?:internship|program)\b",
+    re.IGNORECASE,
+)
+STUDENT_OR_GRADUATE_RE = re.compile(
+    r"\b(?:enrolled|pursuing)\b.{0,120}\bor\b.{0,120}\b(?:recent(?:ly)? (?:completed|graduated)|"
+    r"recent graduates?|possess(?:ing)?|equivalent experience)\b",
+    re.IGNORECASE,
+)
 # Title-only gov/defense signal when the JD is too thin to verify constraints.
 GOV_DEFENSE_TITLE_RE = re.compile(
     r"\b(us government|u\.s\. government|u\.s\. gov|us gov|"
@@ -841,6 +864,14 @@ def hard_filter(job: Dict[str, str]) -> Tuple[bool, str]:
     for pattern in CLEARANCE_EXTRA_RES:
         if pattern.search(content):
             return False, "citizen_or_clearance"
+    title = str(job.get("title") or "")
+    description = str(job.get("description") or "")
+    early_career = bool(INTERNSHIP_TITLE_RE.search(title) or EARLY_CAREER_TITLE_RE.search(title))
+    if early_career and len(description.strip()) >= THIN_JD_CHARS:
+        if GRAD_2027_REQUIREMENT_RE.search(description) and not GRAD_ELIGIBLE_ALTERNATIVE_RE.search(description):
+            return False, "ineligible_2027_graduate_requirement"
+        if CURRENT_STUDENT_REQUIREMENT_RE.search(description) and not STUDENT_OR_GRADUATE_RE.search(description):
+            return False, "ineligible_current_student_requirement"
     # LinkedIn guest cards have no JD. Do not promote gov/defense roles to
     # A/B when we cannot read citizenship/clearance requirements.
     desc = (job.get("description") or "").strip()
@@ -1835,6 +1866,7 @@ def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
     score = float(job.get("match_score", 0) or 0)
     gaps = min(2, int(job.get("main_gaps_count", len(job.get("main_gaps") or [])) or 0))
     profile = match_company_entry(str(job.get("company") or ""), load_company_profiles()) or {}
+    risk_rank = company_risk_rank(profile)
     priority_rank = {"high": 0, "normal": 1, "low": 2}.get(str(profile.get("priority") or "normal"), 1)
     sponsor_rank = {"likely": 0, "unknown": 1, "unlikely": 2}.get(str(profile.get("sponsor") or "unknown"), 1)
     tech_service_rank = int("tech_service" in (profile.get("tags") or []))
@@ -1864,6 +1896,7 @@ def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
         sfit_rank,
         evidence_rank,
         int(application_low),
+        risk_rank,
         tech_service_rank,
         priority_rank,
         sponsor_rank,

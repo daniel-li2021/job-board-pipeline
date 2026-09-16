@@ -90,3 +90,13 @@ def match_company_alias(company_name: str, entries: Iterable[Dict[str, Any]]) ->
     """Return the canonical name using exact, token, and declared aliases only."""
     entry = match_company_entry(company_name, entries)
     return (str(entry.get("name") or "") or None) if entry else None
+
+
+def company_risk_rank(entry: Dict[str, Any]) -> int:
+    """Rank employer exposure: defense/government above cybersecurity."""
+    tags = set(entry.get("tags") or [])
+    if entry.get("type") == "government" or tags & {
+        "clearance_heavy", "clearance_risk", "defense", "government", "government_contracting",
+    }:
+        return 2
+    return int("cybersecurity" in tags)

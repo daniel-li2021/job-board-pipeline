@@ -16,7 +16,7 @@ from zoneinfo import ZoneInfo
 import coverage_reconcile
 import alert_history
 import pipeline_health
-from sources.company_aliases import load_alias_file, match_company_alias, match_company_entry
+from sources.company_aliases import company_risk_rank, load_alias_file, match_company_alias, match_company_entry
 from sources.schema import classify_location_bucket, normalize_company_key, normalize_sponsorship, normalize_title_key
 from state_io import decode_json_bytes
 
@@ -25,6 +25,7 @@ PUBLIC_DIR = BASE_DIR / "public"
 DASHBOARD_JSON = PUBLIC_DIR / "dashboard.json"
 DASHBOARD_HTML = PUBLIC_DIR / "index.html"
 PENDING_COMPANY_PROFILES_JSON = PUBLIC_DIR / "company_profiles_pending.json"
+LOCAL_PENDING_COMPANY_PROFILES_JSON = BASE_DIR / "profile" / "company_profiles_pending.json"
 REPO_URL = "https://github.com/daniel-li2021/job-board-pipeline"
 PAGES_URL = "https://daniel-li2021.github.io/job-board-pipeline/"
 PACIFIC = ZoneInfo("America/Los_Angeles")
@@ -209,7 +210,9 @@ def why_match_reasons(entry: Dict[str, Any]) -> List[str]:
     return fallback[:2]
 
 
-def why_company_signals(profile: Dict[str, Any], *, profiled: bool, staffing: bool, tech_service: bool) -> List[str]:
+def why_company_signals(
+    profile: Dict[str, Any], *, profiled: bool, staffing: bool, tech_service: bool, risk_rank: int = 0,
+) -> List[str]:
     if not profiled:
         return ["Profile pending", "Neutral priority"]
     signals = [f"{str(profile.get('priority') or 'normal').title()} priority"]
@@ -220,6 +223,8 @@ def why_company_signals(profile: Dict[str, Any], *, profiled: bool, staffing: bo
     maturity = str(profile.get("maturity") or "unknown")
     if company_type != "unknown" or maturity != "unknown":
         signals.append(" / ".join(value.title() for value in (company_type, maturity) if value != "unknown"))
+    if risk_rank:
+        signals.append("Government/defense penalty" if risk_rank == 2 else "Cybersecurity penalty")
     if staffing:
         signals.append("Staffing penalty")
     elif tech_service:
@@ -271,6 +276,7 @@ def normalize_row(
     company = str(entry.get("company") or "")
     matched_company_profile = match_company_entry(company, company_profiles)
     company_profile = matched_company_profile or {}
+    risk_rank = company_risk_rank(company_profile)
     referral = entry.get("referral_name") or entry.get("target_company_match") or match_company_alias(company, referrals) or ""
     company_key = normalize_company_key(str(referral or company))
     freshness = recency(entry, now)
@@ -305,6 +311,7 @@ def normalize_row(
         "company_type": company_profile.get("type", "unknown"),
         "company_maturity": company_profile.get("maturity", "unknown"),
         "company_tags": list(company_profile.get("tags") or []),
+        "company_risk_rank": risk_rank,
         "company_profile_status": "curated" if matched_company_profile else "pending",
         "application_priority": application_priority,
         "application_reason": "internship/co-op" if internship else ("staffing" if staffing else ("tech service" if tech_service else "")),
@@ -332,7 +339,8 @@ def normalize_row(
         "description_available": bool(entry.get("description_available")),
         "why_match": why_match_reasons(entry),
         "why_company": why_company_signals(
-            company_profile, profiled=bool(matched_company_profile), staffing=staffing, tech_service=tech_service,
+            company_profile, profiled=bool(matched_company_profile), staffing=staffing,
+            tech_service=tech_service, risk_rank=risk_rank,
         ),
         "why_gap": why_gap(entry),
         "why_evidence": why_evidence(entry),
@@ -472,6 +480,7 @@ def _sort_rows(rows: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
             seniority_rank,
             evidence_rank,
             int(application_low),
+            int(row.get("company_risk_rank") or 0),
             int(bool(row.get("tech_service"))),
             {"high": 0, "normal": 1, "low": 2}.get(str(row.get("company_priority") or "normal"), 1),
             {"likely": 0, "unknown": 1, "unlikely": 2}.get(str(row.get("company_sponsor") or "unknown"), 1),
@@ -798,7 +807,7 @@ function saveState(key,changes){saveStates([key],changes)}
 function setStatus(keys,value){if(statusChoices.includes(value))saveStates(keys,{status:value,deleted:false})}
 function deleteJob(keys){saveStates(keys,{deleted:true})}
 function restoreJob(keys){saveStates(keys,{deleted:false})}
-function setCompanyHidden(key,hidden){if(!key)return;if(hidden){const password=window.prompt('Enter password to hide this company:');if(password!=='300701'){if(password!==null)window.alert('Incorrect password.');return}}saveState(companyStatePrefix+key,{deleted:hidden})}
+function setCompanyHidden(key,hidden){if(!key)return;const password=window.prompt(`Enter password to ${hidden?'hide':'show again'} this company:`);if(password!=='300701'){if(password!==null)window.alert('Incorrect password.');return}saveState(companyStatePrefix+key,{deleted:hidden})}
 function activityText(r){if(r.alerted_at){const h=r.activity_age_hours;const b=h<3?'lt3h':h<24?'3to24h':'1to3d';return `Alerted ${bucketNames[b]} ago`}const d=r.freshness.discovered||{};return d.age_hours===null||d.age_hours===undefined?'Discovery unknown':`Found ${bucketNames[d.bucket]||d.bucket} ago`}
 function postingText(r){const p=r.freshness.posted||{};if(!p.trusted)return r.posted_date?`Posted ${esc(r.posted_date)} · low confidence`:'Posting date unknown';return p.date_only?`Posted ${esc(r.posted_date)} · day precision`:`Posted ${bucketNames[p.bucket]||p.bucket} ago`}
 const displayGroupKey=r=>r.display_group_key||`${r.company||''}|${r.title||''}`.toLowerCase().replace(/[^a-z0-9|]+/g,' ');
@@ -856,9 +865,11 @@ def write_dashboard(payload: Dict[str, Any]) -> None:
     PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
     dashboard_payload = {key: value for key, value in payload.items() if key != "company_profiles_pending"}
     pending = payload.get("company_profiles_pending") or []
-    PENDING_COMPANY_PROFILES_JSON.write_text(json.dumps({
+    pending_payload = json.dumps({
         "generated_at": payload.get("generated_at", ""), "count": len(pending), "companies": pending,
-    }, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    }, indent=2, ensure_ascii=False) + "\n"
+    PENDING_COMPANY_PROFILES_JSON.write_text(pending_payload, encoding="utf-8")
+    LOCAL_PENDING_COMPANY_PROFILES_JSON.write_text(pending_payload, encoding="utf-8")
     serialized = json.dumps(dashboard_payload, ensure_ascii=False).replace("</", "<\\/")
     DASHBOARD_JSON.write_text(json.dumps(dashboard_payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     DASHBOARD_HTML.write_text(HTML_TEMPLATE.replace("__PAYLOAD__", serialized), encoding="utf-8")
