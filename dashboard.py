@@ -34,6 +34,11 @@ COMPANY_FILTERS_PATH = BASE_DIR / "profile" / "company_filters.json"
 COMPANY_PROFILES_PATH = BASE_DIR / "profile" / "company_profiles.json"
 OFFICIAL_REGISTRY_PATH = BASE_DIR / "config" / "official_careers.json"
 INTERNSHIP_TITLE_RE = re.compile(r"\b(intern|internship|co-op|coop)\b", re.IGNORECASE)
+FRESH_INELIGIBLE_2027_TITLE_RE = re.compile(
+    r"\b2027\b.*\b(?:intern(?:ship)?|co-op|coop|graduate|new grad)\b|"
+    r"\b(?:intern(?:ship)?|co-op|coop|graduate|new grad)\b.*\b2027\b",
+    re.IGNORECASE,
+)
 SUPABASE_URL = os.getenv("SUPABASE_URL", "https://wzriavtjqfpkeafeisfv.supabase.co")
 SUPABASE_PUBLISHABLE_KEY = os.getenv(
     "SUPABASE_PUBLISHABLE_KEY", "sb_publishable_uYhplHl4QV7h5sKcItb4vg_UP9uiAQF"
@@ -370,6 +375,11 @@ def visible_candidate(
     return tier in {"A", "B", "1", "2", "-"}
 
 
+def fresh_title_eligible(row: Dict[str, Any]) -> bool:
+    """Hide explicit 2027 student-cohort roles from Fresh without mutating stores."""
+    return not FRESH_INELIGIBLE_2027_TITLE_RE.search(str(row.get("title") or ""))
+
+
 def dedup_canonical_rows(rows: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """Show an exact canonical job once across pipeline stores."""
     rank = {"official": 0, "board": 1, "syncareer": 2}
@@ -423,7 +433,11 @@ def append_board_c_fallback(
         stable = str(row.get("canonical_job_key") or coverage_reconcile.normalize_url(str(row.get("url") or "")))
         if stable in existing:
             continue
-        if fallback_c_candidate(row) and row.get("freshness", {}).get(activity_flag):
+        if (
+            fallback_c_candidate(row)
+            and row.get("freshness", {}).get(activity_flag)
+            and (window != "fresh" or fresh_title_eligible(row))
+        ):
             candidates.append(dict(row, dashboard_fallback=True))
 
     needed = max(0, target - board_ab)
@@ -550,7 +564,7 @@ def alert_fresh_rows(
                 if not source_row:
                     continue
                 row = dict(source_row)
-                if not visible_candidate(row, hard_excludes):
+                if not visible_candidate(row, hard_excludes) or not fresh_title_eligible(row):
                     continue
                 row["alerted_at"] = emitted_at.isoformat()
                 row["alert_stamp"] = event.get("stamp", "")
@@ -561,7 +575,11 @@ def alert_fresh_rows(
                 if previous is None or float(previous.get("activity_age_hours") or 999999) > activity_age:
                     chosen[stable] = row
     for row in all_rows:
-        if row["freshness"]["fresh_activity"] and visible_candidate(row, hard_excludes):
+        if (
+            row["freshness"]["fresh_activity"]
+            and visible_candidate(row, hard_excludes)
+            and fresh_title_eligible(row)
+        ):
             stable = str(row.get("canonical_job_key") or coverage_reconcile.normalize_url(str(row.get("url") or "")))
             chosen[stable] = row
     return _sort_rows(chosen.values()), basis

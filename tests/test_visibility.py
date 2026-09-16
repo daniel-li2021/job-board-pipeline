@@ -524,6 +524,28 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertEqual({"alerted", "unalerted"}, {row["canonical_job_key"] for row in fresh})
         self.assertEqual("alerts_and_new_discoveries", basis["board"])
 
+    def test_fresh_omits_explicit_2027_student_cohorts_only(self) -> None:
+        now = datetime(2026, 9, 16, tzinfo=timezone.utc)
+        titles = {
+            "intern": "Software Engineer Intern - 2027 Summer",
+            "graduate": "Software Engineer Graduate - 2027 Start",
+            "keep": "Software Engineer Intern - 2026 Summer",
+        }
+        rows = [dict(
+            canonical_job_key=key, pipeline="official", tier="B", company="Example",
+            title=title, location="Seattle, WA", score=80, filter_status="kept",
+            freshness=dashboard.recency({"first_seen": now.isoformat()}, now),
+        ) for key, title in titles.items()]
+        with patch.object(dashboard.alert_history, "recent_events", return_value=[]), \
+                patch.object(dashboard, "parse_issue_event", return_value=None):
+            fresh, _ = dashboard.alert_fresh_rows(rows, now)
+        self.assertEqual({"keep"}, {row["canonical_job_key"] for row in fresh})
+
+        fallback = dict(rows[0], pipeline="board", tier="C", score=80)
+        self.assertEqual([], dashboard.append_board_c_fallback(
+            [], [fallback], minimum_ab=10, target=20, window="fresh",
+        ))
+
     def test_public_template_has_compact_navigation_and_shared_status_control(self) -> None:
         self.assertNotIn("Official coverage", dashboard.HTML_TEMPLATE)
         self.assertNotIn("<th>Coverage</th>", dashboard.HTML_TEMPLATE)
