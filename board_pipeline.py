@@ -1228,7 +1228,7 @@ def llm_match_batch(
             "key": dedup_key(j),
             "title": j["title"],
             "company": j["company"],
-            "location": j["location"],
+            "location": j.get("location") or "",
             "posted_date": j.get("posted_date", ""),
             "detected_family": j.get("role_family", "none"),
             "job_description": llm_config.select_jd_context(j.get("description") or j["title"]),

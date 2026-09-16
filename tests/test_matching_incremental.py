@@ -81,11 +81,10 @@ class LlmMatchingTests(unittest.TestCase):
         self.assertIn("Production Python experience", selected)
 
     @patch("board_pipeline.requests.post")
-    def test_llm_batch_sends_only_complete_routed_resume(self, post: Mock) -> None:
+    def test_llm_batch_accepts_missing_location_and_sends_only_routed_resume(self, post: Mock) -> None:
         job = {
             "title": "Backend Engineer",
             "company": "Example",
-            "location": "Remote, US",
             "job_id": "1",
             "source": "example",
             "source_url": "https://example.test/jobs/1",
@@ -125,6 +124,7 @@ class LlmMatchingTests(unittest.TestCase):
         )
         sent = post.call_args.kwargs["json"]
         prompt = json.loads(sent["messages"][1]["content"])
+        self.assertEqual("", prompt["jobs"][0]["location"])
         self.assertEqual(full_resume, prompt["resume_swe"])
         self.assertNotIn("resume_ai", prompt)
         instructions = " ".join(prompt["instructions"])
