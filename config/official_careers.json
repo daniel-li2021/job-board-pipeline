@@ -297,7 +297,12 @@
           "software engineer ii",
           "infrastructure engineer",
           "security engineer",
-          "quantitative developer"
+          "quantitative developer",
+          "software engineer java spring",
+          "software engineer python authe",
+          "aws data platform engineer",
+          "data engineer applied ai",
+          "asset management technology"
         ]
       }
     },
@@ -346,7 +351,7 @@
     {
       "id": "walmart",
       "name": "Walmart Global Tech",
-      "adapter": "walmart",
+      "adapter": "workday",
       "enabled": true,
       "max_pages": 4,
       "priority_tier": "A",
@@ -355,7 +360,13 @@
           "label": "US software search",
           "url": "https://careers.walmart.com/results?q=software%20engineer&jobCity=United%20States"
         }
-      ]
+      ],
+      "workday": {
+        "host": "https://walmart.wd504.myworkdayjobs.com",
+        "tenant": "walmart",
+        "site": "WalmartExternal",
+        "extra_queries": ["usa software engineer ii"]
+      }
     },
     {
       "id": "cloudflare",
@@ -603,8 +614,10 @@
           "cloud engineer",
           "security engineer remote",
           "software engineer collaboration devices",
-          "splunk engineer"
-        ]
+          "splunk engineer",
+          "software engineer solution test iq platform"
+        ],
+        "apply_us_facet": false
       }
     },
     {
@@ -635,7 +648,8 @@
       "workday": {
         "host": "https://hpe.wd5.myworkdayjobs.com",
         "tenant": "hpe",
-        "site": "Jobsathpe"
+        "site": "Jobsathpe",
+        "extra_queries": ["ai workflow specialist"]
       }
     },
     {
@@ -1512,6 +1526,7 @@
     {
       "id": "flex",
       "name": "Flex",
+      "exclude_aliases": ["Flex Employee Services", "Trade Flex Supply Chain Solutions Inc."],
       "adapter": "workday",
       "enabled": true,
       "priority_tier": "C",

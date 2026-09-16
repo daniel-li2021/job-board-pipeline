@@ -23,6 +23,12 @@ QUERY_PAGE_BUDGETS = {
     "software engineer": 20,
     "software engineer iii": 5,
     "ai engineer": 6,
+    "asset management technology": 1,
+    "aws data platform engineer": 1,
+    "data engineer applied ai": 1,
+    "software engineer java spring": 1,
+    "software engineer python authe": 1,
+    "usa software engineer ii": 1,
 }
 DEFAULT_QUERY_PAGE_BUDGET = 3
 

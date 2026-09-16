@@ -257,12 +257,44 @@ class IncrementalOfficialTests(unittest.TestCase):
         self.assertEqual(5, query_page_budget('"Software Engineer III"', 50))
         self.assertEqual(3, query_page_budget("data engineer", 50))
         self.assertEqual(2, query_page_budget("software engineer", 2))
+        self.assertEqual(1, query_page_budget("usa software engineer ii", 50))
 
     def test_high_gap_companies_have_audit_backed_queries(self) -> None:
         companies = {item["id"]: item for item in registry.load_companies()["companies"]}
         self.assertIn("site reliability engineer", companies["jpmorgan"]["oracle_hcm"]["extra_queries"])
+        self.assertIn("aws data platform engineer", companies["jpmorgan"]["oracle_hcm"]["extra_queries"])
         self.assertIn("software developer", companies["oracle"]["oracle_hcm"]["extra_queries"])
-        self.assertIn("splunk engineer", companies["cisco"]["workday"]["extra_queries"])
+        self.assertFalse(companies["cisco"]["workday"]["apply_us_facet"])
+        self.assertIn("software engineer solution test iq platform", companies["cisco"]["workday"]["extra_queries"])
+        self.assertEqual("workday", companies["walmart"]["adapter"])
+        self.assertIn("usa software engineer ii", companies["walmart"]["workday"]["extra_queries"])
+        self.assertIn("ai workflow specialist", companies["hpe"]["workday"]["extra_queries"])
+
+    def test_appcast_javascript_redirect_exposes_workday_identity(self) -> None:
+        card = make_job(
+            source="linkedin", company="Walmart Global Tech", title="Software Engineer II",
+            job_id="li-1", description="Full external description " * 30,
+        )
+        card.update(
+            application_url="https://click.appcast.io/track/12345?cs=abc",
+            coverage_status="official_gap",
+        )
+        destination = (
+            "https://careers.walmart.com/results?r="
+            "https%3A%2F%2Fwalmart.wd504.myworkdayjobs.com%2Fen-US%2FWalmartExternal%2Fjob%2FX%2FR-2632333"
+        )
+        session = Mock()
+        session.get.return_value = Mock(
+            status_code=200,
+            url=card["application_url"],
+            text=f'<script>navigateTo(event, "{destination}")</script>',
+        )
+        stats = board.resolve_exposed_originals([card], session, {})
+        self.assertEqual(1, stats["identities_resolved"])
+        self.assertEqual(
+            "https://walmart.wd504.myworkdayjobs.com/en-US/WalmartExternal/job/X/R-2632333",
+            card["official_url"],
+        )
 
     def test_direct_original_hydration_reuses_cached_jd(self) -> None:
         card = make_job(

@@ -29,6 +29,7 @@ from __future__ import annotations
 import argparse
 import csv
 import gzip
+import html
 import json
 
 from state_io import atomic_write, encode_json_gzip, read_json
@@ -61,6 +62,7 @@ from sources.schema import (
     dedup_key,
     jd_hash,
     is_aggregator_url,
+    is_outbound_tracker_url,
     looks_official,
     normalize_company_key,
     normalize_location_key,
@@ -71,6 +73,7 @@ from sources.schema import (
     read_source_snapshot_payload,
     recency_bucket,
     to_iso_date,
+    unwrap_redirect_url,
     NORMAL_RECENCY_BUCKETS,
 )
 
@@ -589,10 +592,23 @@ def _scrapling_fetch(url: str) -> Tuple[str, str, str]:
     except Exception as exc:  # noqa: BLE001 - optional fallback
         return "", url, f"scrapling_error:{type(exc).__name__}"
     status = int(getattr(response, "status", 0) or 0)
-    final_url = str(getattr(response, "url", "") or url)
+    final_url = unwrap_redirect_url(str(getattr(response, "url", "") or url))
     body = getattr(response, "body", b"")
     html = body.decode("utf-8", errors="replace") if isinstance(body, bytes) else str(body or "")
     return (html if status == 200 else ""), final_url, ("" if status == 200 else f"scrapling_http_{status}")
+
+
+def _html_redirect_url(body: str) -> str:
+    """Extract the explicit destination from tracker landing-page JavaScript."""
+    patterns = (
+        r"navigateTo\([^;]*?[\"'](https?://[^\"']+)[\"']\s*\)",
+        r"(?:location\.replace|location\.href\s*=)\(?[\"'](https?://[^\"']+)[\"']",
+    )
+    for pattern in patterns:
+        match = re.search(pattern, body or "", re.I)
+        if match:
+            return unwrap_redirect_url(html.unescape(match.group(1)).replace(r"\/", "/"))
+    return ""
 
 
 def resolve_exposed_originals(
@@ -678,6 +694,7 @@ def resolve_exposed_originals(
                     failure = f"http_{response.status_code}"
                 else:
                     html = response.text
+                    final_url = _html_redirect_url(html) or unwrap_redirect_url(response.url)
             except requests.RequestException:
                 stats["http_requests"] += 1
                 failure = "http_network_error"
@@ -691,17 +708,14 @@ def resolve_exposed_originals(
             posting = _job_posting_json(scrapling_html) if scrapling_html else {}
             if scrapling_html:
                 html = scrapling_html
-            scrapling_host = urlsplit(scrapling_url).netloc.lower()
-            scrapling_tracker = any(
-                scrapling_host == domain or scrapling_host.endswith(f".{domain}")
-                for domain in ("contacthr.com", "appcast.io")
-            )
-            if scrapling_url and not is_aggregator_url(scrapling_url) and not scrapling_tracker:
+                final_url = _html_redirect_url(scrapling_html) or final_url
+            scrapling_tracker = is_outbound_tracker_url(scrapling_url)
+            if scrapling_html and scrapling_url and not is_aggregator_url(scrapling_url) and not scrapling_tracker:
                 final_url = scrapling_url
             method = "scrapling_fetcher"
             failure = scrapling_failure or ("structured_jd_not_found" if not posting else "")
         final_host = urlsplit(final_url).netloc.lower()
-        tracker = any(final_host == domain or final_host.endswith(f".{domain}") for domain in ("contacthr.com", "appcast.io"))
+        tracker = is_outbound_tracker_url(final_url)
         if not final_host or is_aggregator_url(final_url) or tracker:
             failure = failure or "redirect_remained_aggregator"
         elif final_url:

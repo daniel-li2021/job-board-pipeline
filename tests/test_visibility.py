@@ -144,6 +144,15 @@ class ReferralAliasTests(unittest.TestCase):
         self.assertIsNone(match_company_alias("Metadata Systems", targets))
         self.assertIsNone(match_company_alias("GE HealthCare", targets))
 
+    def test_declared_company_exclusions_prevent_short_alias_collisions(self) -> None:
+        entries = prepare_alias_entries([{
+            "id": "flex", "name": "Flex",
+            "exclude_aliases": ["Flex Employee Services", "Trade Flex Supply Chain Solutions Inc."],
+        }])
+        self.assertEqual("Flex", match_company_alias("Flex", entries))
+        self.assertIsNone(match_company_alias("Flex Employee Services", entries))
+        self.assertIsNone(match_company_alias("Trade Flex Supply Chain Solutions Inc.", entries))
+
 
 class DashboardPolicyTests(unittest.TestCase):
     def test_pending_company_profiles_are_a_separate_artifact(self) -> None:
@@ -917,6 +926,11 @@ class CoverageMatchingTests(unittest.TestCase):
         self.assertEqual("", method)
         self.assertIsNone(matched)
 
+        self.assertEqual(set(), coverage_reconcile.job_ids({
+            "source": "linkedin",
+            "application_url": "https://click.appcast.io/track/29893004?cs=71665",
+        }))
+
         method, matched = coverage_reconcile.exact_match(
             {"source": "linkedin", "job_id": "12345678", "title": "Different Role", "location": "Boston, MA"},
             [official_job("12345678", "Another Role", "Seattle, WA")],
@@ -955,6 +969,14 @@ class CoverageMatchingTests(unittest.TestCase):
         self.assertEqual(1, len(scoped))
         self.assertFalse(scoped[0]["official_url"])
         self.assertEqual("https://careers.example/jobs/22222", scoped[0]["application_url"])
+
+        entries[-1]["official_url"] = "https://jobs.uber.com/en/jobs/302349"
+        snapshot["jobs"][0]["application_url"] = "https://click.appcast.io/track/29893004?cs=71665"
+        with patch.object(coverage_reconcile, "_load_store_entries", return_value=({}, entries)), patch.object(
+            coverage_reconcile, "read_source_snapshot_payload", return_value=snapshot,
+        ):
+            scoped = coverage_reconcile.board_scope(now)
+        self.assertEqual("https://jobs.uber.com/en/jobs/302349", scoped[0]["official_url"])
 
     def test_exact_official_match_suppresses_regardless_of_manual_validation(self) -> None:
         external = make_job(
@@ -1014,6 +1036,9 @@ class CoverageMatchingTests(unittest.TestCase):
         ))
         self.assertEqual(normalize_location_key("McLean, VA"), normalize_location_key("Mc Lean, VA"))
         self.assertEqual("lausanne|switzerland", normalize_location_key("Lausanne, Switzerland"))
+        self.assertEqual("san francisco", normalize_location_key("San Francisco Bay Area"))
+        self.assertEqual("new york", normalize_location_key("New York Privy HQ"))
+        self.assertEqual("new york", normalize_location_key("New York HQ"))
 
     def test_unique_remote_title_can_match_geo_targeted_external_rows(self) -> None:
         official = official_job("21001", "Forward Deployed Engineer (Remote)", "Austin, TX, US")

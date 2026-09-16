@@ -16,7 +16,7 @@ import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
-from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+from urllib.parse import parse_qsl, unquote, urlencode, urlsplit, urlunsplit
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = BASE_DIR / "output"
@@ -298,6 +298,9 @@ def looks_official(url: str) -> bool:
 
 
 AGGREGATOR_HOSTS = ("linkedin.com", "indeed.com", "glassdoor.com")
+OUTBOUND_TRACKER_HOSTS = (
+    "appcast.io", "contacthr.com", "jometer.com", "recruitics.com",
+)
 
 
 def is_aggregator_url(url: str) -> bool:
@@ -308,6 +311,31 @@ def is_aggregator_url(url: str) -> bool:
         return False
     host = host.lower()
     return any(host == domain or host.endswith(f".{domain}") for domain in AGGREGATOR_HOSTS)
+
+
+def is_outbound_tracker_url(url: str) -> bool:
+    """Return whether a URL is a redirect/tracking hop, not employer identity."""
+    try:
+        host = urlsplit(url or "").hostname or ""
+    except ValueError:
+        return False
+    host = host.lower()
+    return any(host == domain or host.endswith(f".{domain}") for domain in OUTBOUND_TRACKER_HOSTS)
+
+
+def unwrap_redirect_url(value: str) -> str:
+    """Unwrap common redirect query parameters when they contain an HTTP URL."""
+    try:
+        parts = urlsplit(value or "")
+    except ValueError:
+        return value
+    for key, candidate in parse_qsl(parts.query, keep_blank_values=True):
+        if key.lower() not in {"r", "url", "target", "redirect", "dest"}:
+            continue
+        decoded = unquote(candidate)
+        if urlsplit(decoded).scheme in {"http", "https"}:
+            return decoded
+    return value
 
 
 # --------------------------------------------------------------------------
@@ -392,7 +420,9 @@ def normalize_location_key(location: str) -> str:
     for index, tok in enumerate(tokens):
         tok = re.sub(r"[^a-z0-9 ]", " ", tok).strip()
         tok = re.sub(r"\s+", " ", tok)
-        tok = re.sub(r"\s+(?:campus|office)$", "", tok)
+        hq_token = bool(re.search(r"\s+(?:privy\s+)?(?:hq|headquarters)$", tok))
+        tok = re.sub(r"\s+(?:bay area|campus|office)$", "", tok)
+        tok = re.sub(r"\s+(?:privy\s+)?(?:hq|headquarters)$", "", tok)
         tok = re.sub(r"^mc\s+([a-z])", r"mc\1", tok)
         if tok == "rtp":
             tok = "research triangle park"
@@ -404,7 +434,7 @@ def normalize_location_key(location: str) -> str:
             next_tok = _STATE_NAME_TO_ABBR.get(next_tok, next_tok)
         # New York and Washington can be city names. When a leading state-name
         # token is followed by a state/DC token, preserve it as the city.
-        if tok == "new york" and (next_tok in state_abbrs or len(tokens) > 1):
+        if tok == "new york" and (next_tok in state_abbrs or len(tokens) > 1 or hq_token):
             normalized = tok
         elif tok == "washington" and next_tok in state_abbrs:
             normalized = tok

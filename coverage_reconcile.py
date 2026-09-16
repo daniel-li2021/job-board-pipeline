@@ -25,6 +25,7 @@ from state_io import decode_json_bytes
 from sources.schema import (
     dedup_key,
     is_aggregator_url,
+    is_outbound_tracker_url,
     parse_datetime,
     make_job,
     normalize_job_url,
@@ -82,9 +83,8 @@ def job_ids(job: Dict[str, Any]) -> set[str]:
             values.add(explicit)
     for url in job_urls(job):
         host = (urlsplit(url).hostname or "").lower()
-        if is_aggregator_url(url) or any(
-            host == domain or host.endswith(f".{domain}")
-            for domain in ("contacthr.com", "appcast.io", "syncareer.com")
+        if is_aggregator_url(url) or is_outbound_tracker_url(url) or (
+            host == "syncareer.com" or host.endswith(".syncareer.com")
         ):
             continue
         values.update(re.findall(r"(?<!\d)(\d{5,})(?!\d)", url))

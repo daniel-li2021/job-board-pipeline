@@ -47,7 +47,17 @@ def prepare_alias_entries(entries: Iterable[Dict[str, Any]]) -> List[Dict[str, A
             key=len,
             reverse=True,
         )
-        prepared.append({**entry, "name": name, "norm_aliases": [a for a in normalized if a]})
+        excluded = {
+            form
+            for alias in entry.get("exclude_aliases") or []
+            for form in _company_forms(str(alias))
+        }
+        prepared.append({
+            **entry,
+            "name": name,
+            "norm_aliases": [a for a in normalized if a],
+            "norm_exclude_aliases": sorted(excluded),
+        })
     return prepared
 
 
@@ -79,6 +89,8 @@ def match_company_entry(
     forms = _company_forms(company_name)
     tokens = {t for t in re.split(r"[^a-z0-9]+", (company_name or "").lower()) if t}
     for entry in entries:
+        if forms.intersection(entry.get("norm_exclude_aliases") or []):
+            continue
         aliases = entry.get("norm_aliases") or []
         for alias in aliases:
             if alias in forms or alias in tokens:
