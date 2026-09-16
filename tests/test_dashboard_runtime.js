@@ -10,6 +10,7 @@ const context = vm.createContext({console, setTimeout, Date, localStorage:{getIt
 let script = html.split('</script><script>')[1].split('</script>')[0];
 script = script.slice(0, script.indexOf("window.addEventListener('online'"));
 vm.runInContext(script, context);
+const renderSummaryOwner = vm.runInContext('renderSummary', context);
 vm.runInContext(`
 activeMainView='fresh';
 exportViewLabels.fresh='Fresh → Big Company Official → Google';
@@ -59,9 +60,12 @@ assert.equal(vm.runInContext("sponsorshipChoices.includes('No sponsor')", contex
 assert.equal(vm.runInContext('jobs([],false)', context), '<div class="empty">No qualifying jobs in this view.</div>');
 assert.ok(!vm.runInContext('jobs([],false,true)', context).includes('id="discoveryFilters"'));
 vm.runInContext(`searchQuery='';minScore='';sponsorshipFilters=new Set(sponsorshipChoices);`, context);
-let extension = fs.readFileSync('dashboard_applied_history.js','utf8');
+const extensionSources = ['dashboard_applied_history.js','dashboard_last7.js'].map(file => fs.readFileSync(file,'utf8'));
+extensionSources.forEach(source => assert.doesNotMatch(source, /\bfunction\s+renderSummary\b|\brenderSummary\s*=/));
+let extension = extensionSources[0];
 extension = extension.slice(0, extension.indexOf('  // Existing tracked rows')) + 'globalThis.check={appliedRows,archiveStorageKey,decodeArchive,backfillTrackedArchives,expandedStates,syncArchiveRows,getArchive:()=>archive};})();';
 vm.runInContext(extension, context);
+assert.equal(vm.runInContext('renderSummary', context), renderSummaryOwner);
 vm.runInContext(`
 renderAll=()=>{};renderReviewMessage=()=>{};
 allRows.push(
