@@ -864,6 +864,18 @@ document.getElementById('officialSearches').innerHTML=`<div class="tablewrap"><t
 def write_dashboard(payload: Dict[str, Any]) -> None:
     PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
     dashboard_payload = {key: value for key, value in payload.items() if key != "company_profiles_pending"}
+    if DASHBOARD_JSON.exists():
+        previous_history = read_json(DASHBOARD_JSON, {}).get("history_details", {})
+        current_history = dashboard_payload.setdefault("history_details", {})
+        for key, old_values in previous_history.items():
+            new_values = current_history.get(key)
+            if not new_values:
+                current_history[key] = old_values
+            else:
+                current_history[key] = [
+                    old if new in (None, "", "-") else new
+                    for old, new in zip(old_values, new_values)
+                ]
     pending = payload.get("company_profiles_pending") or []
     pending_payload = json.dumps({
         "generated_at": payload.get("generated_at", ""), "count": len(pending), "companies": pending,

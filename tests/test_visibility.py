@@ -151,9 +151,18 @@ class DashboardPolicyTests(unittest.TestCase):
             local_pending = public / "local-company-profiles-pending.json"
             coverage = public / "source-coverage.md"
             coverage.write_text("coverage", encoding="utf-8")
+            (public / "dashboard.json").write_text(json.dumps({
+                "history_details": {
+                    "old": ["board", "Old Co", "Old Job", "Remote", "https://old", "B", 80],
+                    "same": ["board", "Same Co", "Old Title", "Remote", "https://same", "A", 91],
+                },
+            }), encoding="utf-8")
             payload = {
                 "generated_at": "2026-09-15T12:00:00+00:00",
                 "company_profiles_pending": ["A Co", "B Co"],
+                "history_details": {
+                    "same": ["board", "Same Co", "New Title", "Remote", "https://same", "-", ""],
+                },
                 "health": {}, "health_history": [],
             }
             with patch.object(dashboard, "PUBLIC_DIR", public), patch.object(
@@ -169,6 +178,9 @@ class DashboardPolicyTests(unittest.TestCase):
             main = json.loads((public / "dashboard.json").read_text(encoding="utf-8"))
             pending = json.loads((public / "company_profiles_pending.json").read_text(encoding="utf-8"))
             self.assertNotIn("company_profiles_pending", main)
+            self.assertEqual("Old Job", main["history_details"]["old"][2])
+            self.assertEqual("New Title", main["history_details"]["same"][2])
+            self.assertEqual(["A", 91], main["history_details"]["same"][5:])
             self.assertEqual({"generated_at": payload["generated_at"], "count": 2, "companies": ["A Co", "B Co"]}, pending)
             self.assertEqual(pending, json.loads(local_pending.read_text(encoding="utf-8")))
 

@@ -9,6 +9,18 @@
   const trackedStatuses = new Set(['in_progress', 'applied_complete']);
   // ponytail: one record predates durable snapshots; remove after the repaired archive has synced.
   const legacyDetails = {
+    'id::linkedin::4368576778':
+      ['board', 'Figma', 'Software Engineer - Developer Experience', 'San Francisco, CA; New York, NY', 'https://boards.greenhouse.io/figma/jobs/5790627004?gh_jid=5790627004', '-', ''],
+    'id::linkedin::4382947701':
+      ['board', 'McKinsey & Company', 'Forward Deployed Engineer, USG Analytics (Backend & AI)', 'Washington, DC', 'https://www.linkedin.com/jobs/view/forward-deployed-engineer-usg-analytics-backend-ai-at-mckinsey-company-4382947701', 'B', 75],
+    'id::linkedin::4460048892':
+      ['board', 'Zachary Piper Solutions', 'Full Stack Developer', 'Colorado Springs, CO', 'https://www.linkedin.com/jobs/view/full-stack-developer-at-zachary-piper-solutions-4460048892', 'B', 75],
+    'url::https://job-boards.greenhouse.io/anthropic/jobs/5129961008':
+      ['official', 'Anthropic', 'Applied AI Research (Capabilities)', 'San Francisco, CA; New York, NY', 'https://job-boards.greenhouse.io/anthropic/jobs/5129961008', 'C', 62],
+    'url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Compiler-Engineer--Backend--New-College-Grad-2026_JR2017290':
+      ['syncareer', 'NVIDIA', 'Compiler Engineer, Backend - New College Grad 2026', 'Santa Clara, CA', 'https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Compiler-Engineer--Backend--New-College-Grad-2026_JR2017290', '-', ''],
+    'url::https://www.disneycareers.com/en/job/orlando/associate-software-engineer/391/99722447760':
+      ['board', 'The Walt Disney Company', 'Associate Software Engineer', 'Orlando, FL', 'https://www.disneycareers.com/en/job/orlando/associate-software-engineer/391/99722447760', '-', ''],
     'url::https://jobs.sap.com/job/Palo-Alto-SAP-iXp-Intern-Full-Stack-AI-Developer-CA-94304/1425371233':
       ['official', 'SAP', 'SAP iXp Intern - Full-Stack AI Developer', '', '', '-', ''],
   };
