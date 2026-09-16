@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-09-15 14:24 PDT
-- Snapshot (UTC): 2026-09-15T21:24:43.422118+00:00
-- Jobs: 132 (Tier A/B only)
-- Last 24 hours: 126
-- Last 3 days: 132
+- Updated (PT): 2026-09-15 17:00 PDT
+- Snapshot (UTC): 2026-09-16T00:00:59.761822+00:00
+- Jobs: 128 (Tier A/B only)
+- Last 24 hours: 127
+- Last 3 days: 128
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -53,8 +53,6 @@ The 7-day dump is `latest.md`.
 | A | 94 | linkedin | IBM | Entry Level Software Developer-Different locations | San Jose, CA | 2026-09-15 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/entry-level-software-developer-different-locations-at-ibm-4456531064) |
 | A | 92 | linkedin | Tata Consultancy Services | GenAI Engineer / Developer | McLean, VA | 2026-09-15 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/genai-engineer-developer-at-tata-consultancy-services-4457182688) |
 | A | 93 | glassdoor | Travelers | Data Engineer I (Databricks, AWS, Python) | Hartford, CT | - | 1to3d | - | unreviewed | official_ambiguous | [open](https://www.glassdoor.com/job-listing/data-engineer-i-databricks-aws-python-travelers-JV_IC1148399_KO0,37_KE38,47.htm?jl=1010253881512) |
-| A | 93 | glassdoor | Travelers | Data Engineer I (AWS, Databricks) | Hartford, CT | - | 1to3d | - | unreviewed | official_ambiguous | [open](https://www.glassdoor.com/job-listing/data-engineer-i-aws-databricks-travelers-JV_IC1148399_KO0,30_KE31,40.htm?jl=1010259312694) |
-| A | 93 | glassdoor | Office Equipment Company | Junior AI Programmer-NO remote-Las Vegas ONLY | Las Vegas, NV | - | 1to3d | - | unreviewed | not_dedicated | [open](https://www.glassdoor.com/job-listing/junior-ai-programmer-no-remote-las-vegas-only-office-equipment-company-JV_IC1149603_KO0,45_KE46,70.htm?jl=1010219971166) |
 | A | 89 | indeed | Jack Henry & Associates | Front-End UI Developer | Birmingham, AL, US | 2026-08-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2404b00a2c0b5b69) |
 | A | 89 | indeed | Jack Henry & Associates | Front-End UI Developer | Cedar Falls, IA, US | 2026-08-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=35f0751547d54cd9) |
 | A | 89 | indeed | Jack Henry & Associates | Front-End UI Developer | KS, US | 2026-08-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=8a7b1c28e7fd98db) |
@@ -113,9 +111,6 @@ The 7-day dump is `latest.md`.
 | B | 83 | glassdoor | Twenty-Six Defense | Software Automation Engineer I | Roanoke, VA | - | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.glassdoor.com/job-listing/software-automation-engineer-i-elbit-systems-of-america-JV_IC1130242_KO0,30_KE31,55.htm?jl=1010259291778) |
 | B | 83 | glassdoor | Twenty-Six Defense | Software Engineer I | Roanoke, VA | - | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.glassdoor.com/job-listing/software-engineer-i-elbit-systems-of-america-JV_IC1130242_KO0,19_KE20,44.htm?jl=1010259291736) |
 | B | 83 | glassdoor | Yamaha Motor | Software Engineer I | Kennesaw, GA | - | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.glassdoor.com/job-listing/software-engineer-i-yamaha-motor-JV_IC1155639_KO0,19_KE20,32.htm?jl=1010212229655) |
-| B | 83 | glassdoor | CarParts.com | Junior AI/ML Engineer | Long Beach, CA | - | 1to3d | - | unreviewed | not_dedicated | [open](https://www.glassdoor.com/job-listing/junior-ai-ml-engineer-carparts-com-JV_IC1146819_KO0,21_KE22,34.htm?jl=1010260939757) |
-| B | 83 | glassdoor | Rolls-Royce | Software Systems Controls Engineer I & II | Reston, VA | - | 1to3d | - | unreviewed | not_dedicated | [open](https://www.glassdoor.com/job-listing/software-systems-controls-engineer-i-ii-rolls-royce-JV_IC1130404_KO0,39_KE40,51.htm?jl=1010229824045) |
-| B | 83 | glassdoor | Vituity | Software Engineer I - Remote - Nationwide | Sacramento, CA | - | 1to3d | - | unreviewed | not_dedicated | [open](https://www.glassdoor.com/job-listing/software-engineer-i-remote-nationwide-vituity-JV_IC1147229_KO0,37_KE38,45.htm?jl=1010109861479) |
 | B | 84 | linkedin | TikTok USDS Joint Venture | Machine Learning Engineer Graduate (Tech and Product, USDS) - 2027 Sta | San Jose, CA | 2026-09-15 | newly_discovered | TikTok | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-graduate-tech-and-product-usds-2027-start-at-tiktok-usds-joint-venture-4446630169) |
 | B | 84 | indeed | ITC Holdings Corp. | Software Developer, Assoc I | Novi, MI, US | 2026-09-15 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1609756ea8209e8a) |
 | B | 84 | indeed | Tenet3 | Junior Frontend Software Engineer- Hybrid | Dayton, OH, US | 2026-09-15 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=bf93d89b95a304f6) |
@@ -141,5 +136,6 @@ The 7-day dump is `latest.md`.
 | B | 77 | indeed | Intuit | Summer 2027: Software Engineering Intern - Full Stack | Charlotte, NC, US | 2026-09-15 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=13f37b1feaf49bb9) |
 | B | 77 | indeed | Intuit | Summer 2027: Software Engineering Intern - Full Stack | New York, NY, US | 2026-09-15 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=3066f06cc0e8e042) |
 | B | 76 | indeed | MaineHealth | Data Engineer - IT Enterprise Data Management | Westbrook, ME, US | 2026-09-14 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=9baec6244fcc2cbf) |
+| B | 76 | indeed | Smart Apply Test Company | IT Full Stack Web Developer | Albuquerque, NM, US | 2026-09-15 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=88c8b6a3a949cada) |
 | B | 76 | linkedin | Florida Atlantic University | Software Engineer I | Boca Raton, FL | 2026-09-14 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-i-at-florida-atlantic-university-4467216898) |
 | B | 72 | linkedin | Choice Hotels International | Software Engineer 1, Mobile Apps - Kotlin exposure required | Scottsdale, AZ | 2026-09-15 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-1-mobile-apps-kotlin-exposure-required-at-choice-hotels-international-4458581381) |

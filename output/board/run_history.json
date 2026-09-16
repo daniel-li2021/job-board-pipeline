@@ -2,6 +2,180 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-09-16T00:00:59.761822+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 4,
+      "cache_reused": 515,
+      "fallback_count": 0,
+      "rule_count": 166,
+      "requests": 1,
+      "input_tokens": 3671,
+      "cached_input_tokens": 0,
+      "output_tokens": 762,
+      "reasoning_tokens": 217,
+      "estimated_usd": 0.016486,
+      "latency_seconds": 13.0,
+      "latency_measured": true,
+      "effective_rpm": 4.62,
+      "effective_tpm": 20460.0,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 4,
+      "funnel": {
+        "after_dedup": 4822,
+        "after_company": 4699,
+        "after_hard_filter": 4392,
+        "after_prefilter": 1001,
+        "official_duplicates_suppressed": 316,
+        "dropped": 3770
+      },
+      "output": {
+        "tier_a": 62,
+        "tier_b": 75,
+        "ab_before_cap": 137,
+        "shown": 137
+      },
+      "enrichment": {
+        "needed": 387,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 422,
+          "identity_needed": 35,
+          "http_requests": 41,
+          "identities_resolved": 35,
+          "jds_resolved": 19,
+          "direct_http_resolved": 19,
+          "scrapling_requests": 4,
+          "remaining_no_jd": 385,
+          "failure_reasons": {
+            "scrapling_fetch_failed": 7,
+            "glassdoor_detail_http_403_static_card_only": 374,
+            "structured_jd_not_found": 4
+          }
+        },
+        "remaining_no_jd": 385,
+        "failure_reasons": {
+          "scrapling_fetch_failed": 7,
+          "glassdoor_detail_http_403_static_card_only": 374,
+          "structured_jd_not_found": 4
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "id::indeed::in-05fc4e7dcf8e9410",
+              "company": "Smart Apply Test Company",
+              "title": "Full Stack Developer"
+            },
+            {
+              "key": "id::indeed::in-db2b9588d4f41dbc",
+              "company": "Smart Apply Test Company",
+              "title": "Full stack developer Node and React"
+            },
+            {
+              "key": "id::indeed::in-88c8b6a3a949cada",
+              "company": "Smart Apply Test Company",
+              "title": "IT Full Stack Web Developer"
+            },
+            {
+              "key": "id::indeed::in-ecac317732399856",
+              "company": "Smart Apply Test Company",
+              "title": "Software Engineer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 13.0,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 4,
+            "input_tokens": 3671,
+            "cached_input_tokens": 0,
+            "output_tokens": 762,
+            "reasoning_tokens": 217,
+            "estimated_usd": 0.016486
+          },
+          "decisions": [
+            {
+              "key": "id::indeed::in-05fc4e7dcf8e9410",
+              "match_score": 45.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has production full-stack delivery experience with React/TypeScript, Node.js, REST APIs, PostgreSQL, testing, and deployment.",
+                "Has demonstrated backend reliability and API work across production systems."
+              ],
+              "main_gaps": [
+                "Role explicitly requires 6+ years of professional production web-development experience and significant architecture ownership.",
+                "No evidence of the required JavaScript/jQuery depth or the role's complex database-programming and infrastructure stack (Kendo UI, Perl/Mojolicious, PostgREST, macOS servers)."
+              ]
+            },
+            {
+              "key": "id::indeed::in-db2b9588d4f41dbc",
+              "match_score": 66.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Direct Node.js, JavaScript/TypeScript, React, REST API, and full-stack production experience.",
+                "Has delivered typed backend services, testing, deployment automation, and stakeholder-facing applications."
+              ],
+              "main_gaps": [
+                "Job requires 3+ years of Node.js experience; the resume demonstrates Node.js but not that duration.",
+                "No clear evidence of JWT authorization or the listed Node-specific templating/tooling stack."
+              ]
+            },
+            {
+              "key": "id::indeed::in-88c8b6a3a949cada",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Strong direct evidence for React, JavaScript/TypeScript, Java/Spring Boot, REST APIs, databases, testing, and full-stack application delivery.",
+                "Resume includes Docker, Linux, deployment, observability, and production troubleshooting practices relevant to supporting web hosting environments and integrations."
+              ],
+              "main_gaps": [
+                "Limited evidence of maintaining legacy PHP/WordPress applications and administering the specified Apache/Tomcat environment.",
+                "No explicit evidence of Jakarta EE-specific enterprise application support."
+              ]
+            },
+            {
+              "key": "id::indeed::in-ecac317732399856",
+              "match_score": 57.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Has hands-on full-stack development, API design, external-service integration, SQL, testing, and production deployment experience.",
+                "Experience collaborating on business-facing internal tools is relevant to the role's internal software focus."
+              ],
+              "main_gaps": [
+                "The role calls for ASP.NET and Go Web API development, neither of which is clearly evidenced on the resume.",
+                "No demonstrated CRM custom-development, case-lifecycle-management, or CRM API-enhancement experience."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-09-15T21:24:43.422118+00:00",
       "mode": "pipeline",
       "health": "success",
