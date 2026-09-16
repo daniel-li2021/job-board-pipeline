@@ -194,6 +194,38 @@ class DashboardPolicyTests(unittest.TestCase):
             self.assertEqual({"generated_at": payload["generated_at"], "count": 2, "companies": ["A Co", "B Co"]}, pending)
             self.assertEqual(pending, json.loads(local_pending.read_text(encoding="utf-8")))
 
+    def test_pending_company_profiles_accumulate_and_drop_curated_names(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            stored = Path(tmpdir) / "company_profiles_pending.json"
+            stored.write_text(json.dumps({"companies": ["Legacy Co", "Profiled Alias"]}), encoding="utf-8")
+            profiles = prepare_alias_entries([{"name": "Profiled Co", "aliases": ["Profiled Alias"]}])
+            with patch.object(dashboard, "LOCAL_PENDING_COMPANY_PROFILES_JSON", stored):
+                self.assertEqual(
+                    ["Legacy Co", "New Co"],
+                    dashboard.pending_company_profiles(["New Co", "Profiled Co"], profiles),
+                )
+
+    def test_pending_company_capture_precedes_dashboard_filtering(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            stored = Path(tmpdir) / "company_profiles_pending.json"
+            stored.write_text(json.dumps({"companies": ["Legacy Co"]}), encoding="utf-8")
+            filtered_entry = {"company": "Filtered Co", "title": "Engineer"}
+            stores = [({}, [filtered_entry]), ({}, []), ({}, [])]
+            with patch.object(dashboard, "LOCAL_PENDING_COMPANY_PROFILES_JSON", stored), patch.object(
+                dashboard, "load_alias_file", return_value=[],
+            ), patch.object(
+                dashboard, "_load_entries", side_effect=stores,
+            ), patch.object(
+                dashboard, "config_company_match", return_value={"name": "Filtered Co"},
+            ), patch.object(
+                dashboard.coverage_reconcile, "build_coverage_payload", return_value={"records": []},
+            ), patch.object(
+                dashboard.pipeline_health, "build", return_value=({}, []),
+            ):
+                payload = dashboard.build_payload(datetime(2026, 9, 16, tzinfo=timezone.utc))
+            self.assertEqual([], payload["workflow_rows"])
+            self.assertEqual(["Filtered Co", "Legacy Co"], payload["company_profiles_pending"])
+
     def test_observability_cards_share_one_responsive_row_and_legacy_telemetry_is_unknown(self) -> None:
         template = dashboard.HTML_TEMPLATE
         self.assertIn('<div class="cards"><div class="card"><span>LLM Matching Today</span>', template)
@@ -228,6 +260,42 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertEqual("No sponsor", dashboard.sponsorship_label({"description": "Visa sponsorship is not available."}))
         self.assertEqual("Unknown", dashboard.sponsorship_label({"description": "Applicants may require sponsorship."}))
         self.assertEqual("Unknown", dashboard.sponsorship_label({}))
+        self.assertEqual("Likely", dashboard.sponsorship_label({}, {"sponsor": "likely"}))
+        self.assertEqual("Unlikely", dashboard.sponsorship_label({}, {"sponsor": "unlikely"}))
+        self.assertEqual("No sponsor", dashboard.sponsorship_label(
+            {"description": "Applicants must be authorized to work without sponsorship now or in the future."},
+            {"sponsor": "likely"},
+        ))
+        self.assertEqual("Sponsor", dashboard.sponsorship_label(
+            {"description": "H-1B sponsorship is available for this role."},
+            {"sponsor": "unlikely"},
+        ))
+        self.assertEqual("Likely", dashboard.sponsorship_label(
+            {"description": "H-1B sponsorship may be available on a case-by-case basis."},
+            {"sponsor": "unlikely"},
+        ))
+        likely_phrases = [
+            "OPT and STEM OPT candidates are welcome.",
+            "CPT candidates may apply.",
+            "We support H-1B transfers.",
+            "Candidates in F-1 visa status are accepted.",
+        ]
+        for description in likely_phrases:
+            with self.subTest(description=description):
+                self.assertEqual("Likely", dashboard.sponsorship_label({"description": description}))
+        no_sponsor_phrases = [
+            "U.S. citizenship is required for this role.",
+            "Candidates must be permanent residents.",
+            "We cannot support CPT, OPT, or STEM OPT employment.",
+            "You must not require visa sponsorship now or at any time in the future.",
+        ]
+        for description in no_sponsor_phrases:
+            with self.subTest(description=description):
+                self.assertEqual("No sponsor", dashboard.sponsorship_label({"description": description}))
+        self.assertEqual("No sponsor", dashboard.sponsorship_label({
+            "sponsorship": "Sponsor",
+            "requirements": "The employer will not provide visa sponsorship now or in the future, even though OPT candidates are welcome.",
+        }))
         self.assertEqual("Sponsor", daily_pipeline.sponsorship_from_supports(["H-1B"]))
         self.assertEqual("No sponsor", daily_pipeline.sponsorship_from_supports(["OPT"]))
         self.assertEqual("Unknown", daily_pipeline.sponsorship_from_supports([]))
@@ -1585,11 +1653,13 @@ class ReportingWorkflowTests(unittest.TestCase):
             self.assertNotIn('git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true', workflow)
         self.assertIn("actions/deploy-pages@v4", pages)
         self.assertIn("concurrency:", pages)
-        self.assertIn("contents: read", pages)
-        self.assertIn("persist-credentials: false", pages)
+        self.assertIn("contents: write", pages)
         self.assertIn('".github/workflows/reconcile-pages.yml"', pages)
-        self.assertNotIn("git commit", pages)
-        self.assertNotIn("git push", pages)
+        self.assertIn("git add -- profile/company_profiles_pending.json", pages)
+        self.assertIn("git push origin HEAD:main", pages)
+        self.assertIn("git stash push --include-untracked --message pending-company-generated-files", pages)
+        self.assertLess(pages.index("Deploy GitHub Pages"), pages.index("Persist pending company profiles"))
+        self.assertNotIn("git add -A", pages)
         self.assertNotIn('"profile/review_state.json"', pages)
         self.assertFalse((ROOT / ".github/workflows/scheduled-jobs.yml").exists())
         self.assertIn('f"{PAGES_URL}coverage.md"', (ROOT / "dashboard.py").read_text(encoding="utf-8"))

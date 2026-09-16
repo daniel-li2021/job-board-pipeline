@@ -57,6 +57,8 @@ assert.ok(!filteredMarkdown.includes('https://example.com/mid'));
 assert.ok(!filteredMarkdown.includes('https://example.com/visa'));
 assert.match(vm.runInContext('jobs([],false,true)', context), /No qualifying jobs in this view/);
 assert.equal(vm.runInContext("sponsorshipChoices.includes('No sponsor')", context), true);
+assert.equal(vm.runInContext("sponsorshipChoices.includes('Likely')", context), true);
+assert.equal(vm.runInContext("sponsorshipChoices.includes('Unlikely')", context), true);
 assert.equal(vm.runInContext('jobs([],false)', context), '<div class="empty">No qualifying jobs in this view.</div>');
 assert.ok(!vm.runInContext('jobs([],false,true)', context).includes('id="discoveryFilters"'));
 vm.runInContext(`searchQuery='';minScore='';sponsorshipFilters=new Set(sponsorshipChoices);`, context);

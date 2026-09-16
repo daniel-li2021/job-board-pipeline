@@ -191,9 +191,30 @@ def recency(job: Dict[str, Any], now: datetime) -> Dict[str, Any]:
     }
 
 
-def sponsorship_label(entry: Dict[str, Any]) -> str:
-    """Map source/JD evidence to the dashboard's small vocabulary."""
-    return normalize_sponsorship(entry)
+def sponsorship_label(entry: Dict[str, Any], company_profile: Optional[Dict[str, Any]] = None) -> str:
+    """Prefer source/JD evidence, then fall back to company-level likelihood."""
+    label = normalize_sponsorship(entry)
+    if label != "Unknown":
+        return label
+    return {"likely": "Likely", "unlikely": "Unlikely"}.get(
+        str((company_profile or {}).get("sponsor") or "").lower(), "Unknown"
+    )
+
+
+def pending_company_profiles(
+    seen_companies: Iterable[str], company_profiles: Iterable[Dict[str, Any]]
+) -> List[str]:
+    """Accumulate every seen unprofiled company and drop newly profiled names."""
+    stored = read_json(LOCAL_PENDING_COMPANY_PROFILES_JSON, {})
+    existing = stored.get("companies", []) if isinstance(stored, dict) else []
+    pending = {
+        str(company).strip() for company in existing if str(company).strip()
+    } if isinstance(existing, list) else set()
+    pending.update(str(company).strip() for company in seen_companies if str(company).strip())
+    return sorted(
+        (company for company in pending if not match_company_entry(company, company_profiles)),
+        key=str.casefold,
+    )
 
 
 def why_match_reasons(entry: Dict[str, Any]) -> List[str]:
@@ -309,7 +330,7 @@ def normalize_row(
         "freshness": freshness,
         "tier": entry.get("tier") or "-",
         "score": entry.get("match_score") if entry.get("match_score") is not None else entry.get("fit_score", ""),
-        "sponsorship": sponsorship_label(entry),
+        "sponsorship": sponsorship_label(entry, company_profile),
         "company_priority": company_profile.get("priority", "normal"),
         "company_sponsor": company_profile.get("sponsor", "unknown"),
         "company_size": company_profile.get("size", "unknown"),
@@ -621,10 +642,12 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
     coverage_by_key = {record.get("canonical_job_key", ""): record for record in coverage.get("records", [])}
     snapshots: Dict[str, str] = {}
     all_rows: List[Dict[str, Any]] = []
+    seen_companies: List[str] = []
     for pipeline, path in STORE_PATHS.items():
         store, entries = _load_entries(path)
         snapshots[pipeline] = str(store.get("updated_at") or store.get("scraped_at") or "")
         for entry in entries:
+            seen_companies.append(str(entry.get("company") or ""))
             practical = config_company_match(
                 str(entry.get("company") or ""), str(entry.get("title") or ""), practical_skips
             )
@@ -665,10 +688,7 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
     candidates = dedup_canonical_rows(
         row for row in eligible_rows if visible_candidate(row, hard_excludes)
     )
-    company_profiles_pending = sorted({
-        str(row.get("company") or "") for row in candidates
-        if row.get("company_profile_status") == "pending" and row.get("company")
-    })
+    company_profiles_pending = pending_company_profiles(seen_companies, company_profiles)
     current = candidates
     fresh, fresh_basis = alert_fresh_rows(eligible_rows, now, hard_excludes)
     fresh = append_board_c_fallback(fresh, eligible_rows, minimum_ab=10, target=20, window="fresh")
@@ -845,7 +865,7 @@ const searchTerms=()=>searchQuery.trim().toLowerCase().split(/\s+/).filter(Boole
 function matchesSearch(r){const terms=searchTerms();if(!terms.length)return true;const haystack=`${r.title||''} ${r.company||''}`.toLowerCase();return terms.every(term=>haystack.includes(term))}
 const searchedRows=rows=>rows.filter(matchesSearch);
 let minScore='';
-const sponsorshipChoices=['Sponsor','Unknown','No sponsor'];
+const sponsorshipChoices=['Sponsor','Likely','Unknown','Unlikely','No sponsor'];
 let sponsorshipFilters=new Set(sponsorshipChoices);
 function jobScore(r){const raw=r?.score;if(raw===''||raw==null)return null;const n=Number(raw);return Number.isFinite(n)?n:null}
 function matchesMinScore(r){if(minScore==='')return true;const n=Number(minScore);if(!Number.isFinite(n))return true;const score=jobScore(r);return score!==null&&score>=n}

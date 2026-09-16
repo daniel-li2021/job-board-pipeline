@@ -37,7 +37,7 @@ JOB_FIELDS = [
     "source_url",        # where we found it
     "official_url",      # canonical company/ATS URL when verified, else ""
     "description",
-    "sponsorship",       # Sponsor | No sponsor | Unknown
+    "sponsorship",       # Sponsor | Likely | No sponsor | Unknown
     "fetched_at",        # ISO timestamp when this adapter fetched the record
     "first_seen",        # ISO timestamp, set by the orchestrator on first sight
 ]
@@ -458,17 +458,39 @@ JD_HEAD_CHARS = 5000
 JD_TAIL_CHARS = 4000
 
 SPONSORSHIP_NO_RE = re.compile(
-    r"(?:\b(?:no|without)\b.{0,40}\bsponsor(?:ship)?\b|"
-    r"\b(?:do(?:es)? not|cannot|can't|will not|won't|unable to)\b.{0,40}\bsponsor(?:ship)?\b|"
-    r"\bnot eligible\b.{0,40}\bsponsor(?:ship)?\b|"
-    r"\bsponsor(?:ship)?\b.{0,20}\b(?:not available|not provided|not offered|unavailable)\b)",
-    re.IGNORECASE,
+    r"(?:\b(?:no|without)\b.{0,80}\bsponsor(?:ship)?\b|"
+    r"\b(?:do(?:es)? not|cannot|can't|will not|won't|unable to|not able to)\b.{0,80}\bsponsor(?:ship)?\b|"
+    r"\b(?:do(?:es)? not|cannot|can't|will not|won't|unable to|not able to)\b.{0,50}"
+    r"\b(?:provide|offer|support|accommodate)\b.{0,50}\b(?:visa|immigration|h-?1b|cpt|(?:stem[ -]?)?opt|sponsor(?:ship)?)\b|"
+    r"\bnot eligible\b.{0,80}\bsponsor(?:ship)?\b|"
+    r"\bsponsor(?:ship)?\b.{0,50}\b(?:not available|not provided|not offered|unavailable|not supported)\b|"
+    r"\b(?:authorized|authorization|eligible)\b.{0,80}\bwork\b.{0,80}\bwithout\b.{0,50}\bsponsor(?:ship)?\b|"
+    r"\b(?:must|may|should|will)\b.{0,40}\bnot require\b.{0,80}\bsponsor(?:ship)?\b|"
+    r"\b(?:cpt|(?:stem[ -]?)?opt|f-?1|h-?1b)\b.{0,60}\b(?:not supported|not accepted|not eligible|ineligible|cannot be accommodated)\b|"
+    r"\b(?:must (?:be|have)|requires?)\b.{0,40}\b(?:u\.?s\.? citizenship|u\.?s\.? citizen|permanent residen(?:cy|ts?)|green card)\b|"
+    r"\b(?:u\.?s\.? citizenship|permanent residen(?:cy|ts?)|green card)\b.{0,40}\brequired\b|"
+    r"\bonly\b.{0,30}\b(?:u\.?s\.? citizens?|permanent residents?|green card holders?)\b)",
+    re.IGNORECASE | re.DOTALL,
 )
 SPONSORSHIP_YES_RE = re.compile(
-    r"(?:\b(?:visa|immigration|employment|h-?1b) sponsorship\b.{0,20}\b(?:available|provided|offered)\b|"
-    r"\b(?:we|employer|company)\b.{0,20}\b(?:will|can|may) sponsor\b|"
-    r"\bh-?1b sponsor\b)",
-    re.IGNORECASE,
+    r"(?:\b(?:visa|immigration|employment|h-?1b) sponsorship\b\s+"
+    r"(?:(?:for (?:this|the) role\s+)?(?:is|will be|can be)\s+)?(?:available|provided|offered)\b|"
+    r"\b(?:we|employer|company)\b.{0,30}\b(?:will|can|does)\b.{0,15}\bsponsor\b|"
+    r"\b(?:will|can)\b.{0,25}\b(?:provide|offer)\b.{0,30}\b(?:visa|immigration|h-?1b) sponsorship\b|"
+    r"\b(?:we|employer|company)\b.{0,30}\b(?:provide|provides|offer|offers)\b.{0,30}"
+    r"\b(?:visa|immigration|h-?1b) sponsorship\b)",
+    re.IGNORECASE | re.DOTALL,
+)
+
+SPONSORSHIP_LIKELY_RE = re.compile(
+    r"(?:\bsponsor(?:ship)?\b.{0,30}\b(?:may|might|could)\b.{0,25}\b(?:available|provided|offered|considered)\b|"
+    r"\b(?:may|might|could)\b.{0,30}\b(?:offer|provide|consider)\b.{0,40}\bsponsor(?:ship)?\b|"
+    r"\b(?:cpt|(?:stem[ -]?)?opt)\b.{0,60}\b(?:welcome|accepted|eligible|supported|considered|may apply)\b|"
+    r"\b(?:welcome|accept|consider|support)\w*\b.{0,60}\b(?:cpt|(?:stem[ -]?)?opt|f-?1)\b|"
+    r"\bh-?1b\b.{0,30}\btransfers?\b.{0,30}\b(?:supported|accepted|considered|available)\b|"
+    r"\b(?:support|accept|consider)\w*\b.{0,50}\bh-?1b\b.{0,20}\btransfers?\b|"
+    r"\b(?:visa[- ]status|f-?1 visa[- ]status|nonimmigrant visa)\b.{0,60}\b(?:welcome|accepted|eligible|considered)\b)",
+    re.IGNORECASE | re.DOTALL,
 )
 
 
@@ -480,19 +502,23 @@ def normalize_sponsorship(job: Dict[str, Any]) -> str:
         or job.get("visa_sponsorship")
         or ""
     ).strip()
-    lowered = raw.lower()
-    if lowered in {"no", "false", "no sponsor", "no sponsorship", "no h-1b sponsor"}:
-        return "No sponsor"
-    if lowered in {"yes", "true", "sponsor", "sponsorship available", "h-1b sponsor"}:
-        return "Sponsor"
     evidence = " ".join(
         str(value or "")
-        for value in (raw, job.get("description"), job.get("requirements"))
+        for value in (job.get("description"), job.get("requirements"))
     )
     if SPONSORSHIP_NO_RE.search(evidence):
         return "No sponsor"
     if SPONSORSHIP_YES_RE.search(evidence):
         return "Sponsor"
+    if SPONSORSHIP_LIKELY_RE.search(evidence):
+        return "Likely"
+    lowered = raw.lower()
+    if lowered in {"no", "false", "no sponsor", "no sponsorship", "no h-1b sponsor"}:
+        return "No sponsor"
+    if lowered in {"yes", "true", "sponsor", "sponsorship available", "h-1b sponsor"}:
+        return "Sponsor"
+    if lowered in {"likely", "sponsorship may be available", "h-1b transfer supported"}:
+        return "Likely"
     return "Unknown"
 
 

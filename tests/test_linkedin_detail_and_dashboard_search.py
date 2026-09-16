@@ -138,7 +138,7 @@ class DashboardSearchTests(unittest.TestCase):
     def test_discovery_filters_are_presentation_only_for_fresh_and_rolling(self) -> None:
         self.assertIn("class=\"min-score-filter\"", dashboard.HTML_TEMPLATE)
         self.assertIn('type="checkbox" value="${value}"', dashboard.HTML_TEMPLATE)
-        self.assertIn("const sponsorshipChoices=['Sponsor','Unknown','No sponsor']", dashboard.HTML_TEMPLATE)
+        self.assertIn("const sponsorshipChoices=['Sponsor','Likely','Unknown','Unlikely','No sponsor']", dashboard.HTML_TEMPLATE)
         self.assertIn("jobs(shown,false,true)", dashboard.HTML_TEMPLATE)
         job_search = dashboard.HTML_TEMPLATE.split('<div class="job-search">', 1)[1].split("</div>", 1)[0]
         self.assertNotIn("min-score-filter", job_search)
