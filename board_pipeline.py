@@ -818,13 +818,21 @@ GRAD_ELIGIBLE_ALTERNATIVE_RE = re.compile(
 CURRENT_STUDENT_REQUIREMENT_RE = re.compile(
     r"\b(?:must be |applicants? must be |candidates? must be )?(?:currently|actively) "
     r"(?:enrolled|pursuing)\b.{0,140}\b(?:degree|student|program|college|university)\b|"
-    r"\bpursuing (?:an? |their )?.{0,80}\bdegree\b|"
+    r"\b(?:pursuing|working toward(?:s)?) (?:an? |their )?.{0,80}\b"
+    r"(?:degree|bachelor(?:'s|’s)?|master(?:'s|’s)?|ph\.?d\.?|doctoral|b\.?s\.?|m\.?s\.?)\b|"
+    r"\bcurrent (?:bachelor(?:'s|’s)?|master(?:'s|’s)?|ph\.?d\.?|doctoral|undergraduate|graduate)"
+    r"[^.\n]{0,60}\bstudents?\b|"
+    r"\b(?:must be )?(?:a )?current students?\b|"
+    r"\b(?:seeking|open to)\b.{0,100}\b(?:undergraduate|graduate|college|university) students?\b|"
+    r"\b(?:one|a) (?:semester|quarter) (?:of school )?remaining after (?:the )?(?:internship|program)\b|"
     r"\breturn(?:ing)? to (?:school|college|university) after (?:the )?(?:internship|program)\b",
     re.IGNORECASE,
 )
 STUDENT_OR_GRADUATE_RE = re.compile(
-    r"\b(?:enrolled|pursuing)\b.{0,120}\bor\b.{0,120}\b(?:recent(?:ly)? (?:completed|graduated)|"
-    r"recent graduates?|possess(?:ing)?|equivalent experience)\b",
+    r"\b(?:enrolled|pursuing|current students?|current (?:undergraduate|graduate|bachelor(?:'s|’s)?|master(?:'s|’s)?|ph\.?d\.?)"
+    r"[^.\n]{0,60}students?)"
+    r"\b.{0,120}\bor\b.{0,120}\b(?:recent(?:ly)? (?:completed|graduated)|"
+    r"recent graduates?|possess(?:ing)?|in possession|hold(?:ing)?|equivalent experience)\b",
     re.IGNORECASE,
 )
 # Title-only gov/defense signal when the JD is too thin to verify constraints.
@@ -1787,6 +1795,8 @@ def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
 
     intern = bool(INTERNSHIP_TITLE_RE.search(job.get("title") or ""))
     staffing = bool(job.get("staffing_firm"))
+    if intern and re.search(r"\b2027\b", job.get("title") or ""):
+        return "C"
     a_quality = strong_sen and few_gaps and not deprioritized and not intern and not staffing
 
     # Normal requisitions decay continuously instead of falling off a cliff at
@@ -2310,6 +2320,7 @@ def _stats_lines(stats: Dict[str, Any]) -> List[str]:
         f"recency-gated {llm['recency_skipped']}, overflow {llm.get('overflow', 0)}, "
         f"new/changed {llm['new_or_changed']})",
         f"- LLM cost: {llm_config.format_usage(llm)}",
+        f"- New jobs discovered this run: {out.get('new_jobs', '—')}",
         f"- Output sizing: Tier A {out['tier_a']} / Tier B {out['tier_b']} / "
         f"A+B actionable {out['ab_before_cap']} / Shown in latest.md {out['shown']} (no hard cap)",
         f"- Recency (kept): <3h {rec['lt3h']} / 3-24h {rec['3to24h']} / "
@@ -2988,6 +2999,7 @@ def run() -> None:
             "tier_b": len(tier_b),
             "ab_before_cap": ab_before_cap,
             "shown": len(visible),
+            "new_jobs": len(new_keys),
         },
         "recency": recency_dist,
         "screen_method": screen_method,

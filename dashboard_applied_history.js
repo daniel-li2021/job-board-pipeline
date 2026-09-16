@@ -259,9 +259,12 @@
   // Headline cards are discovery metrics, not remaining-action counts.
   renderSummary = function() {
     const fresh = D.counts_24h || {}, rolling = D.counts_3d || {};
-    document.getElementById('summary').innerHTML = Object.keys(names).map(k =>
-      `<div class="card"><span>${names[k]}</span><div class="countline"><b>${fresh[k] || 0}</b><span>last 24h</span><i>·</i><b>${rolling[k] || 0}</b><span>in 3 days</span></div><a target="_blank" rel="noopener noreferrer" href="${D.report_links[k]}">open report</a></div>`
-    ).join('');
+    document.getElementById('summary').innerHTML = Object.keys(names).map(k => {
+      const h = D.health?.components?.[k] || {status: 'Warning'};
+      const run = (D.health_history || []).find(item => item.pipeline === k && item.mode === 'pipeline');
+      const added = run?.output?.new_jobs ?? '—';
+      return `<div class="card"><span>${names[k]}</span> <a class="pill health-${h.status.toLowerCase()}" target="_blank" rel="noopener noreferrer" href="${D.health_report}">${h.status}</a><div class="countline"><b>${added}</b><span>new/run</span><i>·</i><b>${fresh[k] || 0}</b><span>last 24h</span><i>·</i><b>${rolling[k] || 0}</b><span>in 3 days</span></div><a target="_blank" rel="noopener noreferrer" href="${D.report_links[k]}">open report</a></div>`;
+    }).join('');
   };
 
   function ensureLastSevenDaysPanel() {

@@ -581,6 +581,7 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertIn("renderBox('applied',searchedRows(rows.filter(r=>statusOf(r)==='applied_complete'&&!isDeleted(r))))", dashboard.HTML_TEMPLATE)
         self.assertIn("fresh:discoveryRows(normalRows(D.fresh_24h)).length", dashboard.HTML_TEMPLATE)
         self.assertIn("rolling:discoveryRows(normalRows(D.rolling_3d)).length", dashboard.HTML_TEMPLATE)
+        self.assertIn("new/run", dashboard.HTML_TEMPLATE)
 
 
 class MatchingPolicyTests(unittest.TestCase):
@@ -611,6 +612,9 @@ class MatchingPolicyTests(unittest.TestCase):
         self.assertEqual("B", board_pipeline.assign_tier(
             self._job(score=99, bucket="lt3h", title="Software Engineer Intern"), False,
         ))
+        self.assertEqual("C", board_pipeline.assign_tier(
+            self._job(score=99, bucket="lt3h", title="2027 Summer Software Engineer Intern"), False,
+        ))
 
     def test_early_career_requirements_drop_only_explicitly_ineligible_roles(self) -> None:
         filler = " Build production software and collaborate with engineers." * 5
@@ -633,6 +637,30 @@ class MatchingPolicyTests(unittest.TestCase):
         graduate_allowed = self._job(score=90, bucket="lt3h", title="Software Engineer Intern")
         graduate_allowed["description"] = filler + " Currently pursuing or recently completed a computer science degree."
         self.assertEqual((True, "keep"), board_pipeline.hard_filter(graduate_allowed))
+
+        current_degree_student = self._job(score=90, bucket="lt3h", title="Software Engineer Intern")
+        current_degree_student["description"] = filler + " Current Bachelor's, Master's, or PhD student in computer science."
+        self.assertEqual(
+            (False, "ineligible_current_student_requirement"), board_pipeline.hard_filter(current_degree_student),
+        )
+
+        pursuing_degree = self._job(score=90, bucket="lt3h", title="Software Engineer Intern")
+        pursuing_degree["description"] = filler + " You are working toward a BS or MS in computer science."
+        self.assertEqual(
+            (False, "ineligible_current_student_requirement"), board_pipeline.hard_filter(pursuing_degree),
+        )
+
+        student_or_grad = self._job(score=90, bucket="lt3h", title="Software Engineer Intern")
+        student_or_grad["description"] = filler + " Open to current undergraduate students or recent graduates."
+        self.assertEqual((True, "keep"), board_pipeline.hard_filter(student_or_grad))
+
+        pursuing_or_holding = self._job(score=90, bucket="lt3h", title="Software Engineer Early Career")
+        pursuing_or_holding["description"] = filler + " Pursuing or in possession of an undergraduate degree."
+        self.assertEqual((True, "keep"), board_pipeline.hard_filter(pursuing_or_holding))
+
+        student_friendly = self._job(score=90, bucket="lt3h", title="Software Engineer Intern")
+        student_friendly["description"] = filler + " This program is designed for students interested in software."
+        self.assertEqual((True, "keep"), board_pipeline.hard_filter(student_friendly))
 
         unknown = self._job(score=90, bucket="lt3h", title="Software Engineer Intern 2027")
         unknown["description"] = ""
@@ -1366,7 +1394,7 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
             self.assertEqual(1, stats["llm"]["rule"])
             self.assertEqual(0, stats["llm"]["scored"])
             self.assertEqual(
-                {"tier_a": 0, "tier_b": 0, "tier_c": 1, "shown": 0},
+                {"tier_a": 0, "tier_b": 0, "tier_c": 1, "shown": 0, "new_jobs": 1},
                 stats["output"],
             )
             self.assertEqual("rule", stats["screen_method"])

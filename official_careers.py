@@ -300,6 +300,7 @@ def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp:
         f"cache reused {stats['llm']['reused']} (cross-pipeline {stats['llm'].get('peer_reused', 0)}) / "
         f"rule fallback {stats['llm']['rule']}",
         f"- LLM cost: {llm_config.format_usage(stats['llm'])}",
+        f"- New jobs discovered this run: {stats['output'].get('new_jobs', '—')}",
         f"- Output: Tier A {stats['output']['tier_a']} / Tier B {stats['output']['tier_b']} / shown {stats['output']['shown']}",
         "",
     ]
@@ -646,6 +647,7 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
             "tier_a": len(tier_a),
             "tier_b": len(tier_b),
             "shown": len(visible),
+            "new_jobs": len(new_keys),
         },
         "recency": recency_dist,
         "screen_method": screen_method,

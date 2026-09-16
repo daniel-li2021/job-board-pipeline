@@ -1244,6 +1244,7 @@ def run() -> None:
                 "tier_b": len(tier_b_rows),
                 "tier_c": len(tier_c_rows),
                 "shown": len(alert_rows),
+                "new_jobs": len(new_ids),
             },
             "screen_method": shared_screen_method,
             "failures": {"llm": llm_errors},
@@ -1346,8 +1347,16 @@ def run() -> None:
         # effect without waiting for a job to be rediscovered.
         historical_rows: List[Dict[str, Any]] = []
         for entry in watchlist.values():
-            if str(entry.get("kept") or "").lower() in {"yes", "true", "1"} and coverage_reconcile.syncareer_job_in_scope(entry):
-                historical_rows.append(entry)
+            if str(entry.get("kept") or "").lower() not in {"yes", "true", "1"}:
+                continue
+            if not coverage_reconcile.syncareer_job_in_scope(entry):
+                entry.update(
+                    kept="no", filter_status="dropped",
+                    drop_reason="exclude_shared_hard_or_scope", suppress_alert=True,
+                )
+                continue
+            entry["tier"] = board.assign_tier(entry, bool(entry.get("target_company_match")))
+            historical_rows.append(entry)
         coverage_reconcile.annotate_jobs(historical_rows, "syncareer")
         for entry in historical_rows:
             apply_external_company_policy(entry, company_filters)
