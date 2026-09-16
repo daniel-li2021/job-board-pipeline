@@ -12,9 +12,10 @@ the redundant scheduled Pages fallback are removed.
 All three schedules use `America/Los_Angeles`, automatically follow DST, and set the
 flexible window to OFF. Scheduler has minute-level precision; GitHub runner
 queuing can still delay actual execution. Local source collection dispatches Board
-after every successful run, even when snapshots are unchanged; Board then triggers
-Pages reconciliation. Syncareer and Official remain independent, manual dispatch
-stays available, and successful `workflow_run` events publish latest main.
+after every successful run, even when snapshots are unchanged; successful Board
+runs explicitly dispatch Pages reconciliation. Syncareer and Official remain
+independent, manual dispatch stays available, and their successful `workflow_run`
+events publish latest main.
 
 One Lambda, secret reference, execution roles, schedule group, and encrypted SQS
 failure queue serve all three schedules. Scheduler retries delivery up to three

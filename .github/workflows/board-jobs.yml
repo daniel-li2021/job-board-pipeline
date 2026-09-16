@@ -26,6 +26,7 @@ on:
       - "output/sources/health.json"
 
 permissions:
+  actions: write
   contents: write
   issues: write
 
@@ -138,3 +139,8 @@ jobs:
           else
             echo "No issue body file; skipping issue creation."
           fi
+
+      - name: Publish updated dashboard
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run reconcile-pages.yml --ref main

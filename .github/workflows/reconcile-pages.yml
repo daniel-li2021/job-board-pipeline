@@ -22,7 +22,7 @@ on:
       - "profile/company_profiles.json"
       - "requirements.txt"
   workflow_run:
-    workflows: ["Official careers", "Board job alert", "Syncareer job alert"]
+    workflows: ["Official careers", "Syncareer job alert"]
     types: [completed]
   workflow_dispatch:
 
