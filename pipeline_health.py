@@ -86,6 +86,10 @@ def _run_history(base: Path) -> tuple[dict[str, dict[str, Any]], list[dict[str, 
                     "estimated_usd": llm.get("estimated_usd", 0), "output": current.get("output", {}),
                     "funnel": current.get("funnel", {}), "enrichment": current.get("enrichment", {}),
                     "batches_total": llm.get("batches_total", 0), "batches_failed": llm.get("batches_failed", 0),
+                    "primary_batches_total": llm.get("primary_batches_total", llm.get("batches_total", 0)),
+                    "retry_splits": llm.get("retry_splits", 0), "retry_batches": llm.get("retry_batches", 0),
+                    "retry_batches_succeeded": llm.get("retry_batches_succeeded", 0),
+                    "retry_batches_failed": llm.get("retry_batches_failed", 0),
                     "latency_measured": "latency_seconds" in llm,
                     "json_reliability_measured": "json_results" in llm,
                     "batch_outcomes_measured": "batches_succeeded" in llm,
@@ -121,9 +125,17 @@ def _llm_impact(run: dict[str, Any]) -> str:
     rate_limited = sum("429" in item for item in errors)
     if total and failed:
         reason = " with HTTP 429" if rate_limited == failed else ""
+        reasons = list(dict.fromkeys(
+            item.split(": ", 1)[1] if item.startswith("batch_") and ": " in item else item
+            for item in errors
+        ))
+        reason_detail = (
+            f" ({'; '.join(reasons[:2])}{'; more' if len(reasons) > 2 else ''})"
+            if reasons else ""
+        )
         scope = f"{failed}/{attempted} attempted" if skipped else f"{failed}/{total}"
         skipped_note = f"; {skipped} later batches skipped" if skipped else ""
-        return f"{scope} LLM batches failed{reason}{skipped_note}; {fallback} jobs used retryable rule fallback"
+        return f"{scope} LLM batches failed{reason}{reason_detail}{skipped_note}; {fallback} jobs used retryable rule fallback"
     return ""
 
 

@@ -801,7 +801,7 @@ class MatchingPolicyTests(unittest.TestCase):
 
         def job(description: str = "Build Python services and APIs. " * 12) -> dict:
             value = make_job(
-                source="greenhouse", company="Example Tech", title="Junior Software Engineer",
+                source="greenhouse", company="Example Tech", title="Software Engineer",
                 location="Seattle, WA", job_id="one", description=description,
                 source_url="https://example.test/jobs/one",
             )
@@ -854,7 +854,7 @@ class MatchingPolicyTests(unittest.TestCase):
         failed_store = {dedup_key(failed): board_pipeline.build_store_entry(failed, dedup_key(failed))}
 
         recovered = job()
-        recovered["llm_retry_count"] = failed["llm_retry_count"]
+        recovered["recency_bucket"] = "gt7d"
         with patch.dict("os.environ", {"OPENAI_API_KEY": "test"}), patch.object(
             board_pipeline, "llm_match_batch", side_effect=result
         ) as retry_call:
@@ -862,6 +862,9 @@ class MatchingPolicyTests(unittest.TestCase):
         self.assertEqual(1, retry_call.call_count)
         self.assertEqual(1, retry_counts["llm"])
         self.assertFalse(recovered["llm_retryable"])
+        self.assertEqual(failed["llm_retry_count"], recovered["llm_retry_count"])
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(0, board_pipeline.save_matching_retry(Path(tmp) / "retry.json.gz", [recovered]))
 
     def test_match_content_hash_ignores_formatting_but_preserves_constraints(self) -> None:
         base = make_job(

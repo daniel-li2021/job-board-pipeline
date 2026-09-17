@@ -11,6 +11,13 @@ import pipeline_health
 
 
 class PipelineHealthTests(unittest.TestCase):
+    def test_llm_impact_keeps_specific_timeout_reason(self) -> None:
+        impact = pipeline_health._llm_impact({
+            "llm": {"batches_total": 3, "batches_attempted": 3, "batches_failed": 1},
+            "failures": {"llm": ["batch_1: ReadTimeout: read timed out"]},
+        })
+        self.assertIn("ReadTimeout: read timed out", impact)
+
     def test_repeated_llm_429s_are_collapsed_with_retryable_impact(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -47,6 +54,7 @@ class PipelineHealthTests(unittest.TestCase):
             self.assertEqual("Warning", board["status"])
             self.assertEqual(3, board["consecutive_failures"])
             self.assertIn("11/11 LLM batches failed with HTTP 429", board["detail"])
+            self.assertIn("rate_limit_exceeded", board["detail"])
             self.assertIn("111 jobs used retryable rule fallback", board["impact"])
             self.assertEqual(3, len([run for run in history if run["pipeline"] == "board"]))
 

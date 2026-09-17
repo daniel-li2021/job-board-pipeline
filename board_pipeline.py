@@ -865,7 +865,7 @@ GOV_DEFENSE_TITLE_RE = re.compile(
 )
 THIN_JD_CHARS = 200  # LinkedIn guest cards often have empty descriptions
 YOE_RE = re.compile(r"\b(\d{1,2})\+?\s*(?:years|yrs)\b", re.IGNORECASE)
-LLM_BATCH_SIZE = 15
+LLM_BATCH_SIZE = 10
 RULE_SCORING_VERSION = "rule-v2-title-confidence"
 
 
@@ -1591,8 +1591,11 @@ def score_survivors(
         "peer_reused": 0, "thin_source_rule": 0, "retryable_fallbacks": 0,
         "non_material_change_reused": 0, "same_content_reused": 0,
         "rescored_within_24h": 0, "new_or_changed_reasons": {},
-        "batch_size": LLM_BATCH_SIZE, "batches_total": 0, "batches_succeeded": 0,
+        "batch_size": LLM_BATCH_SIZE, "primary_batches_total": 0,
+        "batches_total": 0, "batches_succeeded": 0,
         "batches_attempted": 0, "batches_failed": 0, "batches_skipped": 0,
+        "retry_splits": 0, "retry_batches": 0,
+        "retry_batches_succeeded": 0, "retry_batches_failed": 0,
         "latency_seconds": 0.0, "json_results": 0,
         "batches": [],
     }
@@ -1620,6 +1623,9 @@ def score_survivors(
     for job in candidates:
         key = dedup_key(job)
         prev = store.get(key)
+        if prev and prev.get("llm_retryable"):
+            for field in ("llm_retryable", "llm_retry_count", "llm_last_attempt_at", "llm_last_error"):
+                job[field] = prev.get(field)
         peer = _matching_peer(job, peer_index)
         compatible_peer = peer if peer and _peer_result_matches_job(job, peer[1]) else None
         if prefer_peer and compatible_peer:
@@ -1669,6 +1675,8 @@ def score_survivors(
         return ("cache", errors, counts)
 
     def llm_recency_eligible(job: Dict[str, str]) -> bool:
+        if job.get("llm_retryable"):
+            return True
         title = job.get("title") or ""
         # Explicit early-career titles may enter the LLM gate at any age,
         # including >7d, so we don't miss New Grad / Engineer I postings.
@@ -1744,21 +1752,26 @@ def score_survivors(
     decisions: Dict[str, Dict[str, Any]] = {}
     llm_ok = False
     chunk = LLM_BATCH_SIZE
-    routed_batches: List[Tuple[str, List[Dict[str, str]]]] = []
+    routed_batches: List[Tuple[str, List[Dict[str, str]], bool, int]] = []
     for route, families in (
         ("resume_swe", {"swe"}),
         ("resume_ai", {"ai"}),
         ("both", {"ambiguous"}),
     ):
         routed = [j for j in llm_pool if (j.get("role_family") or detect_role_family(j)) in families]
-        routed_batches.extend((route, routed[i : i + chunk]) for i in range(0, len(routed), chunk))
+        routed_batches.extend((route, routed[i : i + chunk], False, 0) for i in range(0, len(routed), chunk))
+    counts["primary_batches_total"] = len(routed_batches)
     counts["batches_total"] = len(routed_batches)
     failed_keys: Dict[str, str] = {}
     abort_reason = ""
-    for batch_index, (route, batch) in enumerate(routed_batches):
+    batch_index = 0
+    while batch_index < len(routed_batches):
+        route, batch, is_retry, parent_batch = routed_batches[batch_index]
+        batch_number = batch_index + 1
         batch_record: Dict[str, Any] = {
-            "batch": batch_index + 1,
+            "batch": batch_number,
             "route": route,
+            "attempt": "split_retry" if is_retry else "initial",
             "jobs": [
                 {"key": dedup_key(job), "company": job.get("company", ""), "title": job.get("title", "")}
                 for job in batch
@@ -1767,6 +1780,8 @@ def score_survivors(
             "scoring_version": PROMPT_VERSION,
             "reasoning_effort": counts["reasoning_effort"],
         }
+        if parent_batch:
+            batch_record["parent_batch"] = parent_batch
         if abort_reason:
             summary = f"deferred_after_{abort_reason}"
             batch_record.update({"status": "skipped", "latency_seconds": 0.0, "error": {"summary": summary}})
@@ -1774,9 +1789,12 @@ def score_survivors(
             for job in batch:
                 failed_keys[dedup_key(job)] = summary
             counts["batches"].append(batch_record)
+            batch_index += 1
             continue
         started = time.perf_counter()
         counts["batches_attempted"] += 1
+        if is_retry:
+            counts["retry_batches"] += 1
         try:
             result, usage = llm_match_batch(batch, profiles, api_key, model, route)
             llm_config.merge_usage(counts, [usage])
@@ -1789,6 +1807,8 @@ def score_survivors(
                 ],
             })
             counts["batches_succeeded"] += 1
+            if is_retry:
+                counts["retry_batches_succeeded"] += 1
             counts["json_results"] += len(result)
             if result:
                 decisions.update(result)
@@ -1798,16 +1818,28 @@ def score_survivors(
             counts["api_requests"] += 1
             elapsed = round(time.perf_counter() - started, 3)
             error = _llm_error_metadata(exc)
-            summary = f"batch_{batch_index + 1}: {error['summary']}"
+            summary = f"batch_{batch_number}: {error['summary']}"
             errors.append(summary)
             batch_record.update({"status": "failed", "latency_seconds": elapsed, "error": error})
             counts["batches_failed"] += 1
+            if is_retry:
+                counts["retry_batches_failed"] += 1
             for job in batch:
                 failed_keys[dedup_key(job)] = error["summary"]
             if error.get("api_code") in {"credit_balance_exhausted", "insufficient_quota"}:
                 abort_reason = str(error["api_code"])
+            elif len(batch) == LLM_BATCH_SIZE and _is_retryable_llm_error(exc):
+                midpoint = len(batch) // 2
+                routed_batches[batch_index + 1 : batch_index + 1] = [
+                    (route, batch[:midpoint], True, batch_number),
+                    (route, batch[midpoint:], True, batch_number),
+                ]
+                counts["retry_splits"] += 1
+                counts["batches_total"] += 2
+                batch_record["split_into"] = [batch_number + 1, batch_number + 2]
         counts["latency_seconds"] = round(float(counts["latency_seconds"]) + float(batch_record["latency_seconds"]), 3)
         counts["batches"].append(batch_record)
+        batch_index += 1
 
     if not llm_ok:
         for job in eligible:
@@ -1890,6 +1922,18 @@ def _llm_error_metadata(exc: Exception) -> Dict[str, Any]:
         summary_bits.append(str(exc)[:160])
     error["summary"] = ": ".join(summary_bits)
     return error
+
+
+def _is_retryable_llm_error(exc: Exception) -> bool:
+    error = _llm_error_metadata(exc)
+    if error.get("api_code") in {"credit_balance_exhausted", "insufficient_quota"}:
+        return False
+    status = int(error.get("status_code", 0) or 0)
+    return (
+        isinstance(exc, (requests.Timeout, requests.ConnectionError))
+        or status in {408, 409, 429}
+        or status >= 500
+    )
 
 
 def _mark_llm_failure(job: Dict[str, Any], reason: str, *, attempted: bool = True) -> None:
@@ -2296,10 +2340,15 @@ def append_run_history(
         "json_reliability": round(int(llm.get("json_results", 0) or 0) / sent, 4) if sent else None,
         "json_reliability_measured": "json_results" in llm,
         "batches_total": int(llm.get("batches_total", llm.get("api_requests", 0)) or 0),
+        "primary_batches_total": int(llm.get("primary_batches_total", llm.get("batches_total", 0)) or 0),
         "batches_attempted": int(llm.get("batches_attempted", llm.get("api_requests", 0)) or 0),
         "batches_succeeded": int(llm.get("batches_succeeded", 0) or 0),
         "batches_failed": int(llm.get("batches_failed", len(llm_failures)) or 0),
         "batches_skipped": int(llm.get("batches_skipped", 0) or 0),
+        "retry_splits": int(llm.get("retry_splits", 0) or 0),
+        "retry_batches": int(llm.get("retry_batches", 0) or 0),
+        "retry_batches_succeeded": int(llm.get("retry_batches_succeeded", 0) or 0),
+        "retry_batches_failed": int(llm.get("retry_batches_failed", 0) or 0),
         "batch_outcomes_measured": "batches_succeeded" in llm,
         "json_results": int(llm.get("json_results", 0) or 0),
         "funnel": run.get("funnel", {}),
@@ -2329,7 +2378,7 @@ def save_matching_retry(path: Path, jobs: List[Dict[str, Any]]) -> int:
         "date_confidence", "first_seen", "last_seen", "source", "source_url", "official_url",
         "canonical_job_key", "duplicate_of", "role_family", "role_relevance", "referral_name",
         "staffing_firm", "clearance_risk_company", "llm_retry_count", "llm_last_attempt_at",
-        "llm_last_error", "source_jd_hash", "source_match_content_hash",
+        "llm_retryable", "llm_last_error", "source_jd_hash", "source_match_content_hash",
     )
     entries = []
     for job in jobs:
@@ -2346,6 +2395,14 @@ def save_matching_retry(path: Path, jobs: List[Dict[str, Any]]) -> int:
     payload = {"updated_at": datetime.now(timezone.utc).isoformat(), "count": len(entries), "entries": entries}
     atomic_write(path, encode_json_gzip(payload))
     return len(entries)
+
+
+def load_matching_retry(path: Path) -> List[Dict[str, Any]]:
+    payload = read_json(path, {"entries": []})
+    jobs = [dict(item) for item in payload.get("entries", []) if isinstance(item, dict)]
+    for job in jobs:
+        job["llm_retryable"] = True
+    return jobs
 
 
 def summarize_retry_comparison(
@@ -2382,8 +2439,7 @@ def summarize_retry_comparison(
 def retry_failed_matching() -> Dict[str, Any]:
     """Retry the persisted Board LLM failures without discovery or enrichment."""
     retry_path = BOARD_DIR / "matching_retry.json.gz"
-    payload = read_json(retry_path, {"entries": []})
-    jobs = [dict(item) for item in payload.get("entries", []) if isinstance(item, dict)]
+    jobs = load_matching_retry(retry_path)
     now = datetime.now(timezone.utc)
     now_iso = now.isoformat()
     # Retry mode must not let a developer's older gitignored full cache replace
@@ -3003,6 +3059,12 @@ def run() -> None:
     # 2) Dedup + merge (carry discovered_via, prefer canonical source)
     deduped = merge_by_key(raw_jobs)
     initial_dedup_count = len(deduped)
+    retry_jobs = load_matching_retry(BOARD_DIR / "matching_retry.json.gz")
+    discovered_keys = {dedup_key(job) for job in deduped}
+    retry_only = [job for job in retry_jobs if dedup_key(job) not in discovered_keys]
+    for job in retry_only:
+        job["_retry_only"] = True
+    deduped.extend(retry_only)
     # 3) Official verify then a second cross-source collapse
     verify_official(deduped)
     deduped = collapse_cross_source(deduped)
@@ -3024,10 +3086,10 @@ def run() -> None:
         job["first_seen"] = str(job.get("first_seen") or now_iso)
         if not seen_jobs.get(key):
             seen_jobs[key] = job["first_seen"]
-        job["last_seen"] = now_iso
+        job["last_seen"] = str(job.get("last_seen") or now_iso) if job.get("_retry_only") else now_iso
         job["recency_bucket"] = recency_bucket(job, now=now)
 
-    # Every discovered record gets the same enrichment chain before filtering.
+    # Discovered and one-shot retry records use the same enrichment and filters.
     enrichment_needed = sum(
         len(str(job.get("description") or "").strip()) < THIN_JD_CHARS for job in deduped
     )
@@ -3067,11 +3129,13 @@ def run() -> None:
             job["filter_status"] = "hidden"
             job["drop_reason"] = "company_hidden_external"
             job["suppress_alert"] = True
+            job["llm_retryable"] = False
             drops["company_hidden_external"] += 1
         elif action in CATEGORY_DROP_REASON:
             reason = CATEGORY_DROP_REASON[action]
             job["filter_status"] = "dropped"
             job["drop_reason"] = reason
+            job["llm_retryable"] = False
             drops[reason] += 1
         else:
             after_company.append(job)
@@ -3087,6 +3151,7 @@ def run() -> None:
         else:
             job["filter_status"] = "dropped"
             job["drop_reason"] = reason
+            job["llm_retryable"] = False
             drops[reason] += 1
 
     # 7) Enrichment already ran over the full discovered population above.
@@ -3102,6 +3167,7 @@ def run() -> None:
         else:
             job["filter_status"] = "dropped"
             job["drop_reason"] = reason
+            job["llm_retryable"] = False
             drops[reason] += 1
 
     # Exact Official matches are suppressed; unmatched jobs at the same company
@@ -3110,6 +3176,7 @@ def run() -> None:
     for job in candidates:
         if job.get("suppress_alert"):
             job["tier"] = "ignored"
+            job["llm_retryable"] = False
 
     # Referral flags on the candidate pool
     referrals: Dict[str, bool] = {}
@@ -3142,6 +3209,8 @@ def run() -> None:
         ],
         prefer_peer=True,
     )
+    score_counts["persisted_retry_jobs"] = len(retry_jobs)
+    score_counts["retry_only_carried"] = len(retry_only)
 
     # 9) Tier + user-facing rank
     for job in active_candidates:
@@ -3198,6 +3267,7 @@ def run() -> None:
             "after_hard_filter": len(after_hard),
             "after_prefilter": len(candidates),
             "official_duplicates_suppressed": len(candidates) - len(active_candidates),
+            "retry_only_carried": len(retry_only),
             "dropped": sum(drops.values()),
         },
         "llm": {

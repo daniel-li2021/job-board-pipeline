@@ -18,6 +18,58 @@ from sources.schema import SourceUnavailable, make_job
 
 
 class LlmMatchingTests(unittest.TestCase):
+    def test_retryable_ten_job_batch_splits_into_fives_before_fallback(self) -> None:
+        now = datetime.now(timezone.utc).isoformat()
+        jobs = [
+            make_job(
+                source="test", company="Example", title="Software Engineer",
+                location="Remote, US", job_id=str(index),
+                description=(f"Build Python service {index}. " * 20),
+                source_url=f"https://example.test/{index}",
+            )
+            for index in range(10)
+        ]
+        for job in jobs:
+            job.update(first_seen=now, recency_bucket="3to24h", role_family="swe", role_relevance=2)
+
+        attempts = 0
+
+        def match(batch, _profiles, _key, model, _route):
+            nonlocal attempts
+            attempts += 1
+            if attempts in {1, 3}:
+                raise board.requests.ReadTimeout("read timed out")
+            return {
+                board.dedup_key(job): {
+                    "match_score": 80, "seniority_fit": "good", "hard_constraint_status": "ok",
+                    "top_match_reasons": ["Python services"], "main_gaps": [],
+                }
+                for job in batch
+            }, {"model": model, "api_requests": 1, "jobs_scored": len(batch)}
+
+        with patch.dict("os.environ", {"OPENAI_API_KEY": "test"}), patch.object(
+            board, "llm_match_batch", side_effect=match
+        ) as mocked:
+            _method, errors, counts = board.score_survivors(
+                jobs, {}, {"fingerprint": "prompt", "candidate_fingerprint": "candidate"}, {}, True
+            )
+
+        self.assertEqual([10, 5, 5], [len(call.args[0]) for call in mocked.call_args_list])
+        self.assertEqual((3, 3, 1, 2), (
+            counts["batches_total"], counts["batches_attempted"],
+            counts["batches_succeeded"], counts["batches_failed"],
+        ))
+        self.assertEqual(1, counts["primary_batches_total"])
+        self.assertEqual((1, 2, 1, 1), (
+            counts["retry_splits"], counts["retry_batches"],
+            counts["retry_batches_succeeded"], counts["retry_batches_failed"],
+        ))
+        self.assertEqual((3, 5, 5), (
+            counts["api_requests"], counts["llm"], counts["retryable_fallbacks"],
+        ))
+        self.assertEqual(2, len(errors))
+        self.assertEqual(5, sum(bool(job.get("llm_retryable")) for job in jobs))
+
     def test_exhausted_credit_stops_later_batches_and_preserves_retry_state(self) -> None:
         now = datetime.now(timezone.utc).isoformat()
         jobs = [
@@ -54,8 +106,10 @@ class LlmMatchingTests(unittest.TestCase):
             path = Path(tmp) / "retry.json.gz"
             board.save_matching_retry(path, [job])
             saved = board.read_json(path, {})["entries"][0]
+            loaded = board.load_matching_retry(path)[0]
         self.assertEqual(board.jd_hash(job), saved["source_jd_hash"])
         self.assertLessEqual(len(saved["description"]), llm_config.JD_CONTEXT_CHARS)
+        self.assertTrue(loaded["llm_retryable"])
 
     def test_long_jd_preserves_required_qualifications(self) -> None:
         text = (
