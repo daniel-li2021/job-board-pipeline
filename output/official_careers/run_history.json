@@ -2,6 +2,4777 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-09-17T15:37:14.254353+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 244,
+      "cache_reused": 568,
+      "peer_reused": 3,
+      "same_content_reused": 43,
+      "non_material_change_reused": 0,
+      "new_or_changed": 2621,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 1809,
+        "material_jd_change": 20,
+        "prior_rule_result_now_eligible_for_llm": 1,
+        "prior_rule_result_recency_gated": 791
+      },
+      "rescored_within_24h": 7,
+      "fallback_count": 1,
+      "rule_count": 2353,
+      "requests": 18,
+      "input_tokens": 234103,
+      "cached_input_tokens": 41449,
+      "output_tokens": 21848,
+      "reasoning_tokens": 5040,
+      "estimated_usd": 0.655775,
+      "latency_seconds": 565.756,
+      "latency_measured": true,
+      "effective_rpm": 1.91,
+      "effective_tpm": 27144.32,
+      "json_reliability": 0.9959,
+      "json_reliability_measured": true,
+      "batches_total": 18,
+      "batches_attempted": 18,
+      "batches_succeeded": 18,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 244,
+      "funnel": {
+        "after_dedup": 17543,
+        "after_company": 17543,
+        "after_hard_filter": 14414,
+        "after_prefilter": 3165,
+        "dropped": 14378
+      },
+      "output": {
+        "tier_a": 64,
+        "tier_b": 117,
+        "shown": 181,
+        "new_jobs": 315,
+        "new_jobs_added": 3
+      },
+      "enrichment": {
+        "discovered": 17603,
+        "needed": 1390,
+        "source_jds_available": 16213,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 1390
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200684319/data-engineer-apple-ads",
+              "company": "Apple",
+              "title": "Data Engineer, Apple Ads"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446716911659",
+              "company": "Qualcomm",
+              "title": "RISC-V CPU Compiler Engineer"
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/345416",
+              "company": "Oracle",
+              "title": "Software Developer, Core Infrastructure Engineer"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10551443/software-development-engineer",
+              "company": "Amazon",
+              "title": "Software Development Engineer"
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200670724/security-software-engineer-secure-transports-sear",
+              "company": "Apple",
+              "title": "Security Software Engineer - Secure Transports, SEAR"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446719838669",
+              "company": "Qualcomm",
+              "title": "Modem Software Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720709389",
+              "company": "Qualcomm",
+              "title": "#PE Software Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720845753",
+              "company": "Qualcomm",
+              "title": "Software Engineer — RISC-V Random Test Generator"
+            },
+            {
+              "key": "url::https://visa.wd5.myworkdayjobs.com/Visa/job/US---Foster-City-CA/Software-Engineer--New-College-Grad---2027-Foster-City--CA_REF088543W-1",
+              "company": "Visa",
+              "title": "Software Engineer, New College Grad - 2027 Foster City, CA"
+            },
+            {
+              "key": "url::https://visa.wd5.myworkdayjobs.com/Visa/job/US---Austin-TX/Software-Engineer--New-College-Grad---2027--Austin--TX_REF088586W",
+              "company": "Visa",
+              "title": "Software Engineer, New College Grad - 2027, Austin, TX"
+            },
+            {
+              "key": "url::https://visa.wd5.myworkdayjobs.com/Visa/job/US---Bellevue-WA/Software-Engineer--New-College-Grad--Bellevue---2027_REF088530W-3",
+              "company": "Visa",
+              "title": "Software Engineer, New College Grad, Bellevue - 2027"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210786721",
+              "company": "JPMorgan Chase",
+              "title": "Backend Software Engineer III - Python/JAVA"
+            },
+            {
+              "key": "url::https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/RI---Woonsocket/Software-Engineer---SRE--Retail---Pharmacy_R0987009",
+              "company": "CVS Health",
+              "title": "Software Engineer - SRE, Retail & Pharmacy"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446721106667",
+              "company": "Qualcomm",
+              "title": "Software Development Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717707980",
+              "company": "Qualcomm",
+              "title": "Enablement Software Engineer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 24.096,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 12976,
+            "cached_input_tokens": 1851,
+            "output_tokens": 1633,
+            "reasoning_tokens": 509,
+            "estimated_usd": 0.042216
+          },
+          "decisions": [
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200684319/data-engineer-apple-ads",
+              "match_score": 83.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks data workflows",
+                "scalable backend services"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446716911659",
+              "match_score": 32.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming",
+                "systems performance experience"
+              ],
+              "main_gaps": [
+                "LLVM optimization development",
+                "compiler architecture experience"
+              ]
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/345416",
+              "match_score": 67.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python Java backend tooling",
+                "REST CI/CD testing"
+              ],
+              "main_gaps": [
+                "embedded systems experience",
+                "firmware development"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10551443/software-development-engineer",
+              "match_score": 57.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "distributed backend services",
+                "reliability and scalable systems"
+              ],
+              "main_gaps": [
+                "three years professional SDE",
+                "technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200670724/security-software-engineer-secure-transports-sear",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "systems software foundation",
+                "reliability-focused backend engineering"
+              ],
+              "main_gaps": [
+                "cryptographic protocol engineering",
+                "kernel embedded development"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446719838669",
+              "match_score": 66.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ and Python",
+                "Linux CI/CD debugging"
+              ],
+              "main_gaps": [
+                "embedded software development",
+                "networking protocol experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720709389",
+              "match_score": 43.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "C++ Python programming",
+                "performance-oriented software"
+              ],
+              "main_gaps": [
+                "GNSS navigation algorithms",
+                "real-time embedded systems"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720845753",
+              "match_score": 31.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python programming",
+                "C++ systems foundation"
+              ],
+              "main_gaps": [
+                "RISC-V verification experience",
+                "CPU architecture knowledge"
+              ]
+            },
+            {
+              "key": "url::https://visa.wd5.myworkdayjobs.com/Visa/job/US---Foster-City-CA/Software-Engineer--New-College-Grad---2027-Foster-City--CA_REF088543W-1",
+              "match_score": 77.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "full-stack production delivery",
+                "testing REST AWS experience"
+              ],
+              "main_gaps": [
+                "less than six months experience"
+              ]
+            },
+            {
+              "key": "url::https://visa.wd5.myworkdayjobs.com/Visa/job/US---Austin-TX/Software-Engineer--New-College-Grad---2027--Austin--TX_REF088586W",
+              "match_score": 77.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "full-stack production delivery",
+                "testing REST AWS experience"
+              ],
+              "main_gaps": [
+                "less than six months experience"
+              ]
+            },
+            {
+              "key": "url::https://visa.wd5.myworkdayjobs.com/Visa/job/US---Bellevue-WA/Software-Engineer--New-College-Grad--Bellevue---2027_REF088530W-3",
+              "match_score": 77.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "full-stack production delivery",
+                "testing REST AWS experience"
+              ],
+              "main_gaps": [
+                "less than six months experience"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210786721",
+              "match_score": 54.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python Java backend",
+                "REST service development"
+              ],
+              "main_gaps": [
+                "Engineer III seniority"
+              ]
+            },
+            {
+              "key": "url::https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/RI---Woonsocket/Software-Engineer---SRE--Retail---Pharmacy_R0987009",
+              "match_score": 62.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS deployment automation",
+                "observability and reliability"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446721106667",
+              "match_score": 50.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production software engineering",
+                "backend systems development"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717707980",
+              "match_score": 50.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production software engineering",
+                "CI/CD deployment experience"
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Cloud-Engineer-Graduate_1213628-1",
+              "company": "HPE",
+              "title": "Cloud Engineer Graduate"
+            },
+            {
+              "key": "url::https://careers.roblox.com/jobs/8072244?gh_jid=8072244",
+              "company": "Roblox",
+              "title": "[2027] Software Engineer, Early Career"
+            },
+            {
+              "key": "url::https://www.ixl.com/company/jobs?gh_jid=8765715002",
+              "company": "IXL Learning",
+              "title": "Software Engineer, New Grad"
+            },
+            {
+              "key": "url::https://www.ixl.com/company/jobs?gh_jid=8765745002",
+              "company": "IXL Learning",
+              "title": "Software Engineer, New Grad"
+            },
+            {
+              "key": "url::https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Software-Development-Engineer-III_R-109776",
+              "company": "Expedia Group",
+              "title": "Software Development Engineer III"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668828193675036981",
+              "company": "TikTok",
+              "title": "Fullstack Software Engineer Graduate (Global E-commerce) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668827379083823413",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Graduate (Global E-commerce) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668831181590513925",
+              "company": "TikTok",
+              "title": "Mobile Software Engineer Graduate (Global E-commerce) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669957922422507781",
+              "company": "TikTok",
+              "title": "Software Development Engineer Graduate (TikTok - Testing - Growth) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668845522007722245",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (TikTok Global Live) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668717356843977013",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Ads Measurement Signal Technology) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668561079544154373",
+              "company": "TikTok",
+              "title": "Frontend Software Engineer Graduate (Global CRM) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668879883938203957",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate(Ads Infrastructure) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673409179353139461",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Ads Infra) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668557209047894325",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Transaction Platform) - 2027 Start"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 11.853,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 13895,
+            "cached_input_tokens": 1851,
+            "output_tokens": 1035,
+            "reasoning_tokens": 85,
+            "estimated_usd": 0.036878
+          },
+          "decisions": [
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Cloud-Engineer-Graduate_1213628-1",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS Docker CI/CD",
+                "full-stack REST services"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://careers.roblox.com/jobs/8072244?gh_jid=8072244",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production full-stack features",
+                "distributed systems experience"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.ixl.com/company/jobs?gh_jid=8765715002",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React FastAPI production apps",
+                "Java Python TypeScript"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.ixl.com/company/jobs?gh_jid=8765745002",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React FastAPI production apps",
+                "Java Python TypeScript"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Software-Development-Engineer-III_R-109776",
+              "match_score": 42.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend reliability experience",
+                "AWS deployment automation"
+              ],
+              "main_gaps": [
+                "5+ years experience",
+                "technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668828193675036981",
+              "match_score": 95.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production full-stack applications",
+                "React TypeScript FastAPI"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668827379083823413",
+              "match_score": 96.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "scalable backend services",
+                "Redis APIs async systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668831181590513925",
+              "match_score": 68.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java programming",
+                "testing and debugging"
+              ],
+              "main_gaps": [
+                "mobile platform development",
+                "iOS Android architecture"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669957922422507781",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "automated evaluation harnesses",
+                "unit integration testing"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668845522007722245",
+              "match_score": 89.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production backend systems",
+                "scalable retrieval services"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668717356843977013",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "data ingestion pipelines",
+                "cross-functional product delivery"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668561079544154373",
+              "match_score": 90.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React TypeScript applications",
+                "reusable frontend components"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668879883938203957",
+              "match_score": 87.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend performance optimization",
+                "Python Java systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673409179353139461",
+              "match_score": 87.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend performance optimization",
+                "Python Java systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668557209047894325",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "async backend architecture",
+                "performance and reliability"
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7670391173613160757",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Graduate (TikTok - Data Lifecycle Management) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7663032057264244997",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Graduate (Risk & Response) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7664533229944178949",
+              "company": "TikTok",
+              "title": "(General hire) Backend Software Engineer Graduate (Trust & Safety) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7665994926887291189",
+              "company": "TikTok",
+              "title": "(General Hire) Backend Software Engineer Graduate (Trust & Safety) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7663042453461600517",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Graduate (Business Governance) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7663028952600807733",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Graduate (Feed Safety) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7663036950303050037",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Graduate (Machine Moderation Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673669198965278981",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Graduate (Creation Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670292836050422021",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Graduate (Creation Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670276769459456309",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Foundation Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673674252889246005",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Foundation Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668554579301124357",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Global CRM) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668592494649690421",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Business Integrity) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670387719826786565",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Graduate (TikTok - Privacy and Security - Product) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668701834807101749",
+              "company": "TikTok",
+              "title": "Software Engineer/Mobile Engineer Graduate (Ads Core Demonstration) - 2027 Start"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 59.247,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 9793,
+            "cached_input_tokens": 1851,
+            "output_tokens": 1116,
+            "reasoning_tokens": 207,
+            "estimated_usd": 0.029646
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7670391173613160757",
+              "match_score": 89.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend microservices",
+                "distributed systems reliability"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7663032057264244997",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks workflows",
+                "backend data pipelines"
+              ],
+              "main_gaps": [
+                "RPC message queues"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7664533229944178949",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks workflows",
+                "backend data pipelines"
+              ],
+              "main_gaps": [
+                "RPC message queues"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7665994926887291189",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks workflows",
+                "backend data pipelines"
+              ],
+              "main_gaps": [
+                "RPC message queues"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7663042453461600517",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks workflows",
+                "backend data pipelines"
+              ],
+              "main_gaps": [
+                "RPC message queues"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7663028952600807733",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks workflows",
+                "backend data pipelines"
+              ],
+              "main_gaps": [
+                "RPC message queues"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7663036950303050037",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks workflows",
+                "backend data pipelines"
+              ],
+              "main_gaps": [
+                "RPC message queues"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673669198965278981",
+              "match_score": 89.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "scalable backend services",
+                "caching REST APIs"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670292836050422021",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "scalable backend services",
+                "caching REST APIs"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670276769459456309",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production software engineering",
+                "reliable data products"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673674252889246005",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production software engineering",
+                "reliable data products"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668554579301124357",
+              "match_score": 90.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spring Boot microservices",
+                "relational databases"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668592494649690421",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "retrieval search systems",
+                "high-performance backend"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670387719826786565",
+              "match_score": 89.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend performance tuning",
+                "testing reliability"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668701834807101749",
+              "match_score": 55.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java development",
+                "full-stack engineering"
+              ],
+              "main_gaps": [
+                "mobile app development",
+                "Kotlin or Swift"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7673674249270839557",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Video-on-Demand Algorithm) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670282906426476853",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Video-on-Demand Algorithm) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668843238309824773",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Graduate (TikTok-PGC-Digital Content Center) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668662545059023157",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Ads Delivery) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7671145911004842245",
+              "company": "ByteDance",
+              "title": "Software Development Engineer Graduate (Intent-Based Networking) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7673632479987992837",
+              "company": "ByteDance",
+              "title": "Multi-Cloud CDN Data Platform Engineer Graduate (CDN Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7670355647603984693",
+              "company": "ByteDance",
+              "title": "Multi-Cloud CDN Data Platform Engineer Graduate (CDN Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667269919588321541",
+              "company": "ByteDance",
+              "title": "Backend Software Engineer Graduate (Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7665849950984194309",
+              "company": "ByteDance",
+              "title": "Software Engineer Graduate (Traffic Infrastructure)- 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7673626856724023557",
+              "company": "ByteDance",
+              "title": "Multi-Cloud CDN Scheduling Platform Engineer Graduate (CDN Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7670355689064646917",
+              "company": "ByteDance",
+              "title": "Multi-Cloud CDN Scheduling Platform Engineer Graduate (CDN Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7668484998475663621",
+              "company": "ByteDance",
+              "title": "Backend Development Engineer Graduate (Infrastructure Platform Delivery) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667894766036322565",
+              "company": "ByteDance",
+              "title": "Backend and Infra Software Engineer Graduate (Dev Infra US) - 2027 Start"
+            },
+            {
+              "key": "url::https://stripe.com/jobs/search?gh_jid=8128744",
+              "company": "Stripe",
+              "title": "Software Engineer, New Grad"
+            },
+            {
+              "key": "url::https://stripe.com/jobs/search?gh_jid=8130927",
+              "company": "Stripe",
+              "title": "Software Engineer, New Grad - Frontend"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 20.478,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 12273,
+            "cached_input_tokens": 1851,
+            "output_tokens": 1411,
+            "reasoning_tokens": 493,
+            "estimated_usd": 0.038146
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7673674249270839557",
+              "match_score": 70.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "algorithm evaluation experience",
+                "performance optimization background"
+              ],
+              "main_gaps": [
+                "multimedia streaming domain",
+                "networking algorithms"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670282906426476853",
+              "match_score": 70.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "algorithm evaluation experience",
+                "performance optimization background"
+              ],
+              "main_gaps": [
+                "multimedia streaming domain",
+                "networking algorithms"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668843238309824773",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend API development",
+                "distributed reliability systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668662545059023157",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend performance optimization",
+                "evaluation and experimentation"
+              ],
+              "main_gaps": [
+                "ads delivery systems"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7671145911004842245",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack platform development",
+                "Python TypeScript SQL"
+              ],
+              "main_gaps": [
+                "network protocol knowledge"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7673632479987992837",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks pipelines",
+                "SQL data quality"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7670355647603984693",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks pipelines",
+                "SQL data quality"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667269919588321541",
+              "match_score": 89.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "cloud platform deployment",
+                "distributed backend systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7665849950984194309",
+              "match_score": 87.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Kubernetes Docker deployment",
+                "observability and reliability"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7673626856724023557",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "caching performance optimization",
+                "metrics and observability"
+              ],
+              "main_gaps": [
+                "network protocol knowledge"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7670355689064646917",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "caching performance optimization",
+                "metrics and observability"
+              ],
+              "main_gaps": [
+                "network protocol knowledge"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7668484998475663621",
+              "match_score": 89.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java backend development",
+                "production deployment reliability"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667894766036322565",
+              "match_score": 93.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "CI/CD cloud infrastructure",
+                "testing and observability"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://stripe.com/jobs/search?gh_jid=8128744",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production software delivery",
+                "collaborative full-stack systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://stripe.com/jobs/search?gh_jid=8130927",
+              "match_score": 35.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "non_us",
+              "top_match_reasons": [
+                "React TypeScript development",
+                "production full-stack delivery"
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 5,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Software-Engineer-Graduate_1213624-1",
+              "company": "HPE",
+              "title": "Software Engineer Graduate"
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Software-Engineer-I---Elixir--Python--AWS_R-52134",
+              "company": "Travelers",
+              "title": "Software Engineer I - Elixir, Python, AWS"
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Software-Engineer-I_R-51276-1",
+              "company": "Travelers",
+              "title": "Software Engineer I"
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Software-Engineer-I--MERN--AWS-_R-51988",
+              "company": "Travelers",
+              "title": "Software Engineer I (MERN, AWS)"
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Software-Engineer-I---Guidewire-Policy-Configuration_R-51545",
+              "company": "Travelers",
+              "title": "Software Engineer I - Guidewire Policy Configuration"
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/MD---Baltimore/Software-Engineer-I--JavaScript--TypeScript--AWS--React--Nodejs-_R-51994",
+              "company": "Travelers",
+              "title": "Software Engineer I (JavaScript, TypeScript, AWS, React, Node.js)"
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200683106/strategic-business-developer",
+              "company": "Apple",
+              "title": "Strategic Business Developer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446718152975",
+              "company": "Qualcomm",
+              "title": "Rack Systems Architect"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720925142",
+              "company": "Qualcomm",
+              "title": "Baseband Hardware/Systems Engineer"
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Chicago-Illinois-US/Solutions-Engineer---GVSE-Mid-Market_2025190-1",
+              "company": "Cisco",
+              "title": "Solutions Engineer - GVSE Mid-Market"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668550561096665397",
+              "company": "TikTok",
+              "title": "Data Engineer Graduate (Monetization Data) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7332027205470636315",
+              "company": "TikTok",
+              "title": "Junior Solutions Engineer - SMB, Ads"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7496763358990993672",
+              "company": "TikTok",
+              "title": "Junior Solutions Engineer - Partnerships, Ads"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675084972638046517",
+              "company": "TikTok",
+              "title": "Solutions Engineer Graduate (Advertisement Team) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7681779180341709109",
+              "company": "TikTok",
+              "title": "Data Engineer Graduate (Data Platfrom TikTok BP) - 2027 Start"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 19.649,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 16050,
+            "cached_input_tokens": 1851,
+            "output_tokens": 1237,
+            "reasoning_tokens": 144,
+            "estimated_usd": 0.043612
+          },
+          "decisions": [
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Software-Engineer-Graduate_1213624-1",
+              "match_score": 90.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "graduate 0–2 years",
+                "production backend testing"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Software-Engineer-I---Elixir--Python--AWS_R-52134",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Python AWS services",
+                "full-stack debugging"
+              ],
+              "main_gaps": [
+                "Elixir experience",
+                "U.S. work authorization"
+              ]
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Software-Engineer-I_R-51276-1",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "enterprise software delivery",
+                "object-oriented backend development"
+              ],
+              "main_gaps": [
+                "Salesforce development",
+                "U.S. work authorization"
+              ]
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Software-Engineer-I--MERN--AWS-_R-51988",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "React Node.js AWS",
+                "CI/CD testing"
+              ],
+              "main_gaps": [
+                "three years development",
+                "U.S. work authorization"
+              ]
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Software-Engineer-I---Guidewire-Policy-Configuration_R-51545",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "software debugging testing",
+                "backend engineering fundamentals"
+              ],
+              "main_gaps": [
+                "Guidewire policy configuration",
+                "U.S. work authorization"
+              ]
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/MD---Baltimore/Software-Engineer-I--JavaScript--TypeScript--AWS--React--Nodejs-_R-51994",
+              "match_score": 81.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "React TypeScript Node.js",
+                "AWS GitHub Actions"
+              ],
+              "main_gaps": [
+                "three years development",
+                "U.S. work authorization"
+              ]
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200683106/strategic-business-developer",
+              "match_score": 25.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "business development experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446718152975",
+              "match_score": 5.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "rack-scale hardware architecture",
+                "10+ years experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720925142",
+              "match_score": 8.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "board-level hardware design",
+                "signal integrity analysis"
+              ]
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Chicago-Illinois-US/Solutions-Engineer---GVSE-Mid-Market_2025190-1",
+              "match_score": 20.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "technical solutions background"
+              ],
+              "main_gaps": [
+                "B2B sales experience",
+                "quota attainment"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668550561096665397",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks pipelines",
+                "Python SQL distributed systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7332027205470636315",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production API services",
+                "customer-facing knowledge app"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7496763358990993672",
+              "match_score": 85.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production API services",
+                "end-to-end integrations"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675084972638046517",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production backend solutions",
+                "API system design"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7681779180341709109",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks workflows",
+                "data ingestion pipelines"
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 6,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7676253726624024837",
+              "company": "TikTok",
+              "title": "Data Engineer Graduate (Data Platform E-commerce) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672518398222387461",
+              "company": "TikTok",
+              "title": "Big Data Engineer Graduate (TikTok Recommendation Architecture) - 2027 Start"
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200683814/executive-assistant-cloud-infrastructure-apple-services",
+              "company": "Apple",
+              "title": "Executive Assistant, Cloud Infrastructure — Apple Services"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446715536717",
+              "company": "Qualcomm",
+              "title": "Graphics (GPU) Hardware Project Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717133035",
+              "company": "Qualcomm",
+              "title": "FPGA Firmware Engineer / FPGA Design Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717807401",
+              "company": "Qualcomm",
+              "title": "GPU Design Verification Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446721004718",
+              "company": "Qualcomm",
+              "title": "Signal Integrity Architect, PCIe/CXL"
+            },
+            {
+              "key": "url::https://redhat.wd5.myworkdayjobs.com/jobs/job/Boston/Junior-Solution-Architect_R-059073",
+              "company": "Red Hat",
+              "title": "Junior Solution Architect"
+            },
+            {
+              "key": "url::https://mycareer.verizon.com/jobs/r-1099282/network-security-engineer-ii",
+              "company": "Verizon",
+              "title": "Network Security Engineer II"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670364202242427189",
+              "company": "TikTok",
+              "title": "Self-Built Engineer Graduate (CDN Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670364187265255733",
+              "company": "TikTok",
+              "title": "Self-Built Engineer Graduate (CDN Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673612865722599733",
+              "company": "TikTok",
+              "title": "Self-Built Engineer Graduate (CDN Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667619805899966725",
+              "company": "ByteDance",
+              "title": "Production System Engineer Graduate (Server Management) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7668636404159858997",
+              "company": "ByteDance",
+              "title": "Product Security Engineer Graduate (Security BP) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7670285492619266309",
+              "company": "ByteDance",
+              "title": "Network Engineer Graduate (Physical Network Infra) - 2027 Start"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 10.255,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 12598,
+            "cached_input_tokens": 1851,
+            "output_tokens": 927,
+            "reasoning_tokens": 0,
+            "estimated_usd": 0.032988
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7676253726624024837",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks pipelines",
+                "data ingestion integration"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672518398222387461",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "distributed systems performance",
+                "Java C++ Python"
+              ],
+              "main_gaps": [
+                "Hadoop Hive Flink"
+              ]
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200683814/executive-assistant-cloud-infrastructure-apple-services",
+              "match_score": 5.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "executive administration"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446715536717",
+              "match_score": 8.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "ASIC GPU engineering",
+                "10+ years experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717133035",
+              "match_score": 12.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Python C++ Linux"
+              ],
+              "main_gaps": [
+                "FPGA RTL design",
+                "ASIC experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717807401",
+              "match_score": 18.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "C++ Python testing"
+              ],
+              "main_gaps": [
+                "SystemVerilog UVM verification",
+                "GPU hardware experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446721004718",
+              "match_score": 5.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "signal integrity PCIe CXL"
+              ]
+            },
+            {
+              "key": "url::https://redhat.wd5.myworkdayjobs.com/jobs/job/Boston/Junior-Solution-Architect_R-059073",
+              "match_score": 73.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "cloud automation experience",
+                "customer-facing implementation"
+              ],
+              "main_gaps": [
+                "work authorization sponsorship"
+              ]
+            },
+            {
+              "key": "url::https://mycareer.verizon.com/jobs/r-1099282/network-security-engineer-ii",
+              "match_score": 35.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend infrastructure experience"
+              ],
+              "main_gaps": [
+                "network security experience"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670364202242427189",
+              "match_score": 89.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "cloud platform operations",
+                "distributed systems reliability"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670364187265255733",
+              "match_score": 89.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "cloud platform operations",
+                "distributed systems reliability"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673612865722599733",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS Docker CI/CD",
+                "distributed systems reliability"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667619805899966725",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Docker Kubernetes automation",
+                "Linux cloud infrastructure"
+              ],
+              "main_gaps": [
+                "server hardware operations"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7668636404159858997",
+              "match_score": 42.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python Java backend",
+                "LLM solution development"
+              ],
+              "main_gaps": [
+                "security engineering experience",
+                "security domain expertise"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7670285492619266309",
+              "match_score": 64.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "distributed infrastructure",
+                "Python automation"
+              ],
+              "main_gaps": [
+                "routing protocols",
+                "network device experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 7,
+          "route": "resume_swe",
+          "jobs": [
+            {
+              "key": "url::https://joinbytedance.com/search/7667259987255560453",
+              "company": "ByteDance",
+              "title": "Data Center Site Acquisition Specialist Graduate (Data Center Development) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7675096204766054709",
+              "company": "ByteDance",
+              "title": "Site Reliability Graduate (Data Infrastructure) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7668461589331642677",
+              "company": "ByteDance",
+              "title": "System Engineer Graduate (Operating System-System Technologies and Engineering) - 2027 Start"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/ramp/fc971889-db1d-4a20-a25e-f282f9296936",
+              "company": "Ramp",
+              "title": "University Grad | Customer Experience Associate"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Firmware-Engineer-Graduate_1213626-1",
+              "company": "HPE",
+              "title": "Firmware Engineer Graduate"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 25.682,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 5,
+            "input_tokens": 6870,
+            "cached_input_tokens": 1851,
+            "output_tokens": 462,
+            "reasoning_tokens": 84,
+            "estimated_usd": 0.015952
+          },
+          "decisions": [
+            {
+              "key": "url::https://joinbytedance.com/search/7667259987255560453",
+              "match_score": 34.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "data infrastructure exposure",
+                "cross-functional engineering collaboration"
+              ],
+              "main_gaps": [
+                "site acquisition experience",
+                "lease procurement analysis"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7675096204766054709",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS Docker Kubernetes",
+                "reliability and observability"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7668461589331642677",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Linux and C++",
+                "deployment automation systems"
+              ],
+              "main_gaps": [
+                "Linux kernel development",
+                "device driver migration"
+              ]
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/ramp/fc971889-db1d-4a20-a25e-f282f9296936",
+              "match_score": 43.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "API troubleshooting",
+                "AI workflow building"
+              ],
+              "main_gaps": [
+                "customer support experience",
+                "CX performance metrics"
+              ]
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Firmware-Engineer-Graduate_1213626-1",
+              "match_score": 42.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ and Python",
+                "testing and debugging"
+              ],
+              "main_gaps": [
+                "firmware development",
+                "hardware design principles"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 8,
+          "route": "resume_ai",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7667769079948347701",
+              "company": "TikTok",
+              "title": "Research Engineer Graduate (Monetization Technology - Business Integrity) - 2027 Start"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446719587824",
+              "company": "Qualcomm",
+              "title": "AI Researcher, On-Device LLM Efficiency"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669702699627661573",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (Commercial AI-CRM and Transaction) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670285949976201477",
+              "company": "TikTok",
+              "title": "LLM Post-training Engineer Graduate (Research & Product) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673672141012093189",
+              "company": "TikTok",
+              "title": "LLM Post-Training Engineer Graduate (Research & Product) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669913085331409205",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (E-Commerce Recommendation/Search Alliance) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668663594419374341",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (Brand Ads) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669698543896054069",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (Search Ads) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672882500030138629",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (E-Commerce Recommendation Foundation) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669709290431236357",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (App Ads and Gaming) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669691374918011141",
+              "company": "TikTok",
+              "title": "(General Hire) Machine Learning Engineer Graduate (Performance Monetization) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670285949553707317",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (E-Commerce Recommendation Live) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672915427278457141",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (E-Commerce Recommendation Mall) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7675477660855781637",
+              "company": "ByteDance",
+              "title": "Machine Learning Engineer Graduate (E-Commerce Risk Control) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7670850283815160069",
+              "company": "ByteDance",
+              "title": "Research Scientist Graduate (ML Recommendation Systems) - 2027 Start"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 20.074,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 14,
+            "input_tokens": 11737,
+            "cached_input_tokens": 1988,
+            "output_tokens": 1580,
+            "reasoning_tokens": 644,
+            "estimated_usd": 0.038856
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7667769079948347701",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM fine-tuning deployment",
+                "production RAG evaluation"
+              ],
+              "main_gaps": [
+                "PyTorch or TensorFlow"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446719587824",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM fine-tuning",
+                "vLLM serving optimization"
+              ],
+              "main_gaps": [
+                "four years AI research",
+                "on-device inference research"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669702699627661573",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LangGraph agent systems",
+                "QLoRA fine-tuning"
+              ],
+              "main_gaps": [
+                "RLHF post-training"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670285949976201477",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "QLoRA model fine-tuning",
+                "LLM evaluation pipelines"
+              ],
+              "main_gaps": [
+                "PyTorch or JAX"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7673672141012093189",
+              "match_score": 79.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "QLoRA model fine-tuning",
+                "LLM evaluation pipelines"
+              ],
+              "main_gaps": [
+                "PyTorch or JAX"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669913085331409205",
+              "match_score": 72.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "hybrid retrieval systems",
+                "Spark data pipelines"
+              ],
+              "main_gaps": [
+                "recommendation ranking systems"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668663594419374341",
+              "match_score": 73.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production ML systems",
+                "Python backend engineering"
+              ],
+              "main_gaps": [
+                "PyTorch or TensorFlow"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669698543896054069",
+              "match_score": 77.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "hybrid search retrieval",
+                "NLP evaluation systems"
+              ],
+              "main_gaps": [
+                "PyTorch or TensorFlow"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672882500030138629",
+              "match_score": 73.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production LLM systems",
+                "Python engineering"
+              ],
+              "main_gaps": [
+                "PyTorch or TensorFlow"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669691374918011141",
+              "match_score": 73.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production ML systems",
+                "Python backend engineering"
+              ],
+              "main_gaps": [
+                "PyTorch or TensorFlow"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670285949553707317",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "retrieval system optimization",
+                "multimodal LLM applications"
+              ],
+              "main_gaps": [
+                "PyTorch experience",
+                "recommendation ranking models"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672915427278457141",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM fine-tuning",
+                "agentic AI systems"
+              ],
+              "main_gaps": [
+                "PyTorch framework experience"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7675477660855781637",
+              "match_score": 64.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "agentic AI systems",
+                "Python and SQL"
+              ],
+              "main_gaps": [
+                "Hadoop/Hive experience",
+                "risk-control modeling"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7670850283815160069",
+              "match_score": 70.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM evaluation research",
+                "retrieval model optimization"
+              ],
+              "main_gaps": [
+                "recommendation research"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 9,
+          "route": "resume_ai",
+          "jobs": [
+            {
+              "key": "url::https://joinbytedance.com/search/7623536303630469381",
+              "company": "ByteDance",
+              "title": "Research Scientist Graduate (Seed Large Language Model LLM) - 2027 Start"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446719164923",
+              "company": "Qualcomm",
+              "title": "Speech & Audio Research Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446718686256",
+              "company": "Qualcomm",
+              "title": "Computer Vision System Engineer"
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Riyadh-Saudi-Arabia/Customer-Delivery-Architect_2018455",
+              "company": "Cisco",
+              "title": "Customer Delivery Architect - Splunk Security"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--Efficient-Deep-Learning---New-College-Grad-2026_JR2019729-1",
+              "company": "NVIDIA",
+              "title": "Research Scientist, Efficient Deep Learning - New College Grad 2026"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--Fundamental-Generative-AI---New-College-Grad-2026_JR2012698",
+              "company": "NVIDIA",
+              "title": "Research Scientist, Fundamental Generative AI - New College Grad 2026"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667837906192877829",
+              "company": "TikTok",
+              "title": "Design Engineering Graduate (Design System & AI Workflow) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667794209077152053",
+              "company": "TikTok",
+              "title": "AI Product Designer Graduate (TikTok-Design) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668700671828707589",
+              "company": "TikTok",
+              "title": "Machine Learning MLOps Engineer Graduate (MLOps) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7623543228228536581",
+              "company": "ByteDance",
+              "title": "Research Scientist Graduate (Seed Vision Foundation Model) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7623545710681016581",
+              "company": "ByteDance",
+              "title": "Research Scientist Graduate (Seed Multimodal Interaction and World Model) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7623548379708197125",
+              "company": "ByteDance",
+              "title": "Research Scientist Graduate (Seed-Speech Foundation Model) - 2027 Start"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 13.335,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 12,
+            "input_tokens": 9704,
+            "cached_input_tokens": 1988,
+            "output_tokens": 1063,
+            "reasoning_tokens": 161,
+            "estimated_usd": 0.028586
+          },
+          "decisions": [
+            {
+              "key": "url::https://joinbytedance.com/search/7623536303630469381",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM fine-tuning",
+                "LLM evaluation platform"
+              ],
+              "main_gaps": [
+                "large-scale pretraining"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446719164923",
+              "match_score": 42.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python development",
+                "Transformer experience"
+              ],
+              "main_gaps": [
+                "speech audio processing",
+                "DSP expertise"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446718686256",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "multimodal AI",
+                "Python prototyping"
+              ],
+              "main_gaps": [
+                "AI accelerator architecture",
+                "HW/SW co-design"
+              ]
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Riyadh-Saudi-Arabia/Customer-Delivery-Architect_2018455",
+              "match_score": 18.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "non_us",
+              "top_match_reasons": [
+                "production AI systems",
+                "automation tooling"
+              ],
+              "main_gaps": [
+                "Splunk security expertise",
+                "enterprise consulting leadership"
+              ]
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--Efficient-Deep-Learning---New-College-Grad-2026_JR2019729-1",
+              "match_score": 56.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "QLoRA fine-tuning",
+                "vLLM model serving"
+              ],
+              "main_gaps": [
+                "PhD research record",
+                "large-scale distributed training"
+              ]
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--Fundamental-Generative-AI---New-College-Grad-2026_JR2012698",
+              "match_score": 30.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM systems",
+                "Python development"
+              ],
+              "main_gaps": [
+                "PhD research record",
+                "biomolecular generative models"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667837906192877829",
+              "match_score": 74.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI agent development",
+                "LoRA fine-tuning"
+              ],
+              "main_gaps": [
+                "design systems experience",
+                "interactive prototype portfolio"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667794209077152053",
+              "match_score": 48.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI product experience",
+                "full-stack AI tools"
+              ],
+              "main_gaps": [
+                "Figma UI design",
+                "product design portfolio"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668700671828707589",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production model serving",
+                "CI/CD observability"
+              ],
+              "main_gaps": [
+                "Linux networking storage"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7623543228228536581",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "multimodal document RAG",
+                "VLM captioning"
+              ],
+              "main_gaps": [
+                "vision model training"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7623545710681016581",
+              "match_score": 85.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "agent tool calling",
+                "memory and multimodal AI"
+              ],
+              "main_gaps": [
+                "reinforcement learning"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7623548379708197125",
+              "match_score": 66.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM fine-tuning",
+                "training evaluation pipelines"
+              ],
+              "main_gaps": [
+                "speech audio modeling"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 10,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446715273199",
+              "company": "Qualcomm",
+              "title": "GPU Research Engineer- AI (San Diego / Boxborough )"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446719107884",
+              "company": "Qualcomm",
+              "title": "Machine Learning Researcher"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446716514304",
+              "company": "Qualcomm",
+              "title": "GPU Compiler Performance"
+            },
+            {
+              "key": "url::https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/AI-Performance-Library-Architect_JR0281978-1",
+              "company": "Intel",
+              "title": "AI Performance Library Architect"
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Milpitas-California-US/Software-Engineer---SRE_2023569",
+              "company": "Cisco",
+              "title": "Software Engineer - SRE"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210769609",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer III - Python/AWS/AI"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446718691837",
+              "company": "Qualcomm",
+              "title": "Embedded NPU Software Engineer"
+            },
+            {
+              "key": "url::https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Remote-USA/Data-Scientist_P751219-2",
+              "company": "Zillow",
+              "title": "Data Scientist"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-TX-Austin/Software-R-D-Engineer--VLSI-Physical-Design---New-College-Grad-2026_JR2019330",
+              "company": "NVIDIA",
+              "title": "Software R&D Engineer, VLSI Physical Design - New College Grad 2026"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7664978367107713333",
+              "company": "TikTok",
+              "title": "AI Engineer Graduate (Client Arch) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7678120538997098805",
+              "company": "TikTok",
+              "title": "Data Engineer Graduate (Data Platform Global Live) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675484418022181173",
+              "company": "TikTok",
+              "title": "Data Engineer Graduate (Data Platform - Global Live) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667901772678302005",
+              "company": "ByteDance",
+              "title": "Dev AI Software Engineer Graduate (Dev Infra US) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7672395094280063285",
+              "company": "ByteDance",
+              "title": "Data Lake Infrastructure & Data Analytics Research Engineer Graduate (AML-Ark-US) - 2027 Start"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/95424090398958278-software-engineer-gdc-ai-applications-and-agents",
+              "company": "Google",
+              "title": "Software Engineer, GDC AI Applications and Agents"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 75.017,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 16849,
+            "cached_input_tokens": 2724,
+            "output_tokens": 1406,
+            "reasoning_tokens": 315,
+            "estimated_usd": 0.045667
+          },
+          "decisions": [
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446715273199",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "LLM inference experience",
+                "C++ and Python"
+              ],
+              "main_gaps": [
+                "GPU architecture expertise",
+                "CUDA/OpenCL kernel optimization"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446719107884",
+              "match_score": 52.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "ML systems evaluation",
+                "model fine-tuning"
+              ],
+              "main_gaps": [
+                "fundamental ML research",
+                "research publications"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446716514304",
+              "match_score": 47.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "C++ programming",
+                "performance optimization"
+              ],
+              "main_gaps": [
+                "GPU compiler development",
+                "GPU architecture experience"
+              ]
+            },
+            {
+              "key": "url::https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/AI-Performance-Library-Architect_JR0281978-1",
+              "match_score": 24.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming",
+                "vLLM serving"
+              ],
+              "main_gaps": [
+                "five years performance engineering",
+                "low-level numerical optimization"
+              ]
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Milpitas-California-US/Software-Engineer---SRE_2023569",
+              "match_score": 54.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS Docker CI/CD",
+                "Terraform Kubernetes observability"
+              ],
+              "main_gaps": [
+                "four years experience",
+                "technical leadership"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210769609",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python AWS production systems",
+                "LLM platform evaluation"
+              ],
+              "main_gaps": [
+                "three years applied experience",
+                "enterprise AI development tools"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446718691837",
+              "match_score": 32.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "C++ and Python",
+                "ML inference experience"
+              ],
+              "main_gaps": [
+                "microprocessor design experience",
+                "design verification methods"
+              ]
+            },
+            {
+              "key": "url::https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Remote-USA/Data-Scientist_P751219-2",
+              "match_score": 49.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python SQL Spark",
+                "production ML evaluation"
+              ],
+              "main_gaps": [
+                "statistical experimentation",
+                "three years data science"
+              ]
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-TX-Austin/Software-R-D-Engineer--VLSI-Physical-Design---New-College-Grad-2026_JR2019330",
+              "match_score": 36.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "C++ concurrency",
+                "ML systems experience"
+              ],
+              "main_gaps": [
+                "VLSI physical design",
+                "timing optimization"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7664978367107713333",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI agent platforms",
+                "full-stack CI/CD delivery"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7678120538997098805",
+              "match_score": 83.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks pipelines",
+                "Python SQL data systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675484418022181173",
+              "match_score": 83.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks pipelines",
+                "Python SQL data systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667901772678302005",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "agentic developer tooling",
+                "LLM evaluation frameworks"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7672395094280063285",
+              "match_score": 85.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark data pipelines",
+                "LLM evaluation data"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/95424090398958278-software-engineer-gdc-ai-applications-and-agents",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production AI agents",
+                "FastAPI cloud deployment"
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 11,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/77247651363332806-software-engineer-android",
+              "company": "Google",
+              "title": "Software Engineer, Android"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10551438/software-engineer-hardware-abstraction-layer-aws-machine-learning-accelerators",
+              "company": "Amazon",
+              "title": "Software Engineer - Hardware Abstraction Layer, AWS Machine Learning Accelerators"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10552014/software-dev-engineer-ii-foundational-services-aws-applied-ai-solution-core-services",
+              "company": "Amazon",
+              "title": "Software Dev Engineer II, Foundational Services, AWS Applied AI Solution – Core Services"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10551950/software-development-engineer-amazon-vulnerability-management-service-avms",
+              "company": "Amazon",
+              "title": "Software Development Engineer, Amazon Vulnerability Management Service (AVMS)"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210778966",
+              "company": "JPMorgan Chase",
+              "title": "Backend Software Engineer III - JAVA, Springboot"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720226567",
+              "company": "Qualcomm",
+              "title": "Embedded Software Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446719591126",
+              "company": "Qualcomm",
+              "title": "#Agentic AI Windows Power and Thermal Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720428288",
+              "company": "Qualcomm",
+              "title": "Wireless Software Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446719654327",
+              "company": "Qualcomm",
+              "title": "Machine Learning Engineer - Generative AI"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720282038",
+              "company": "Qualcomm",
+              "title": "#Software Engineer - Edge AI/Gen AI"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717478816",
+              "company": "Qualcomm",
+              "title": "AI Model Optimization Architect"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210790026",
+              "company": "JPMorgan Chase",
+              "title": "Cloud Software Engineer III"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210780301",
+              "company": "JPMorgan Chase",
+              "title": "Fullstack Software Engineer III - JAVA, Springboot, AWS, AI"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210783606",
+              "company": "JPMorgan Chase",
+              "title": "Full-Stack Java/Python React Software Engineer III - Trading applications"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/System-Software-Engineer--Engineering-Workflow-Platform_JR2018371",
+              "company": "NVIDIA",
+              "title": "System Software Engineer, Engineering Workflow Platform"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 18.672,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 16270,
+            "cached_input_tokens": 2724,
+            "output_tokens": 1403,
+            "reasoning_tokens": 296,
+            "estimated_usd": 0.044473
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/77247651363332806-software-engineer-android",
+              "match_score": 62.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React frontend development",
+                "Java production experience"
+              ],
+              "main_gaps": [
+                "Android Kotlin development",
+                "mobile application experience"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10551438/software-engineer-hardware-abstraction-layer-aws-machine-learning-accelerators",
+              "match_score": 26.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "C++ and Python",
+                "testing and deployment"
+              ],
+              "main_gaps": [
+                "SoC hardware modeling",
+                "HAL driver architecture"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10552014/software-dev-engineer-ii-foundational-services-aws-applied-ai-solution-core-services",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "agentic infrastructure",
+                "production FastAPI services"
+              ],
+              "main_gaps": [
+                "identity security platforms",
+                "SDE II scope"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10551950/software-development-engineer-amazon-vulnerability-management-service-avms",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "scalable data pipelines",
+                "production backend services"
+              ],
+              "main_gaps": [
+                "three years non-internship",
+                "security domain experience"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210778966",
+              "match_score": 65.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java Spring Boot",
+                "React microservices"
+              ],
+              "main_gaps": [
+                "Kafka experience",
+                "three years applied experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720226567",
+              "match_score": 59.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming",
+                "concurrency and systems"
+              ],
+              "main_gaps": [
+                "embedded software experience",
+                "wireless protocol systems"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446719591126",
+              "match_score": 42.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI infrastructure",
+                "data pipeline engineering"
+              ],
+              "main_gaps": [
+                "SoC power thermal",
+                "embedded systems expertise"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720428288",
+              "match_score": 38.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI agent systems",
+                "C++ programming"
+              ],
+              "main_gaps": [
+                "real-time modem firmware",
+                "DSP Arm embedded systems"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446719654327",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production RAG systems",
+                "LLM fine-tuning evaluation"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720282038",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python API development",
+                "AI cloud infrastructure"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717478816",
+              "match_score": 46.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM fine-tuning",
+                "model evaluation systems"
+              ],
+              "main_gaps": [
+                "Staff-level optimization leadership",
+                "accelerator inference optimization"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210790026",
+              "match_score": 52.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS deployment",
+                "cloud backend services"
+              ],
+              "main_gaps": [
+                "Software Engineer III scope"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210780301",
+              "match_score": 57.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java React AWS",
+                "AI application systems"
+              ],
+              "main_gaps": [
+                "Software Engineer III scope"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210783606",
+              "match_score": 55.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java Python React",
+                "full-stack backend experience"
+              ],
+              "main_gaps": [
+                "Software Engineer III scope",
+                "trading applications"
+              ]
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/System-Software-Engineer--Engineering-Workflow-Platform_JR2018371",
+              "match_score": 67.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "CI/CD infrastructure",
+                "Python Linux automation"
+              ],
+              "main_gaps": [
+                "four years experience",
+                "workflow platform ownership"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 12,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Washington---Bellevue/Software-Engineering-MTS_JR357265",
+              "company": "Salesforce",
+              "title": "Software Engineering MTS"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210759618",
+              "company": "JPMorgan Chase",
+              "title": "Full Stack Software Engineer III - Network Perimeter & CDN"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210715977",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer III - Java, Spring Boot, DevOps, AWS"
+            },
+            {
+              "key": "url::https://jobs.lever.co/palantir/2e6b0ac8-83e9-4be5-a3aa-cf319f751728",
+              "company": "Palantir",
+              "title": "Forward Deployed Software Engineer, New Grad - Commercial"
+            },
+            {
+              "key": "url::https://zoom.wd5.myworkdayjobs.com/Zoom/job/Remote--US/Software-Engineer_R19560-1",
+              "company": "Zoom",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://expedia.wd108.myworkdayjobs.com/search/job/USA---Illinois---Chicago/Software-Development-Engineer-II_R-109868-1",
+              "company": "Expedia Group",
+              "title": "Software Development Engineer II"
+            },
+            {
+              "key": "url::https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Software-Development-Engineer-II_R-109774",
+              "company": "Expedia Group",
+              "title": "Software Development Engineer II"
+            },
+            {
+              "key": "url::https://workday.wd5.myworkdayjobs.com/Workday/job/USAVAReston/Software-Development-Engineer---US-Federal_JR-0109457",
+              "company": "Workday",
+              "title": "Software Development Engineer - US Federal"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Applied-Machine-Learning-Engineer--Circuit-Design---New-College-Grad-2026_JR2011517",
+              "company": "NVIDIA",
+              "title": "Applied Machine Learning Engineer, Circuit Design - New College Grad 2026"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Architecture-Energy-Modeling-Engineer---New-College-Grad-2026_JR2023398",
+              "company": "NVIDIA",
+              "title": "Architecture Energy Modeling Engineer - New College Grad 2026"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--AI-for-Graphics-and-Gaming---New-College-Grad-2026_JR2011267",
+              "company": "NVIDIA",
+              "title": "Research Scientist, AI for Graphics and Gaming - New College Grad 2026"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7663036952090347829",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Graduate (Emerging Products & AI Safety) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672654026594093317",
+              "company": "TikTok",
+              "title": "AI Infra Engineer Graduate (Recommendation & LLM) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668827381435517237",
+              "company": "TikTok",
+              "title": "Software Development Engineer Graduate (Global E-Commerce-Quality Platform & AI Test Automation) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672517471946000645",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (TikTok AI Search & Visual Search Infra Team) - 2027 Start"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 71.842,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 17518,
+            "cached_input_tokens": 2724,
+            "output_tokens": 1425,
+            "reasoning_tokens": 206,
+            "estimated_usd": 0.047233
+          },
+          "decisions": [
+            {
+              "key": "url::https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Washington---Bellevue/Software-Engineering-MTS_JR357265",
+              "match_score": 58.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "RAG and agent workflows",
+                "cloud data pipelines"
+              ],
+              "main_gaps": [
+                "technical leadership scope",
+                "security data platforms"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210759618",
+              "match_score": 73.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "FastAPI production services",
+                "AWS CI/CD reliability"
+              ],
+              "main_gaps": [
+                "3+ years experience",
+                "seasoned technical leadership"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210715977",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java Spring Boot",
+                "AWS Kubernetes Terraform"
+              ],
+              "main_gaps": [
+                "3+ years experience",
+                "Azure production experience"
+              ]
+            },
+            {
+              "key": "url::https://jobs.lever.co/palantir/2e6b0ac8-83e9-4be5-a3aa-cf319f751728",
+              "match_score": 61.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production delivery",
+                "Python Java TypeScript"
+              ],
+              "main_gaps": [
+                "graduation date eligibility"
+              ]
+            },
+            {
+              "key": "url::https://zoom.wd5.myworkdayjobs.com/Zoom/job/Remote--US/Software-Engineer_R19560-1",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend API ownership",
+                "AWS Postgres Node.js"
+              ],
+              "main_gaps": [
+                "3+ years experience"
+              ]
+            },
+            {
+              "key": "url::https://expedia.wd108.myworkdayjobs.com/search/job/USA---Illinois---Chicago/Software-Development-Engineer-II_R-109868-1",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "scalable backend APIs",
+                "React service delivery"
+              ],
+              "main_gaps": [
+                "3+ years experience"
+              ]
+            },
+            {
+              "key": "url::https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Software-Development-Engineer-II_R-109774",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production backend services",
+                "observability and CI/CD"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://workday.wd5.myworkdayjobs.com/Workday/job/USAVAReston/Software-Development-Engineer---US-Federal_JR-0109457",
+              "match_score": 15.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "citizen_or_clearance",
+              "top_match_reasons": [
+                "Kubernetes AWS Terraform",
+                "CI/CD observability"
+              ],
+              "main_gaps": [
+                "United States citizenship"
+              ]
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Applied-Machine-Learning-Engineer--Circuit-Design---New-College-Grad-2026_JR2011517",
+              "match_score": 45.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Python C++ machine learning",
+                "agentic AI systems"
+              ],
+              "main_gaps": [
+                "circuit design knowledge",
+                "VLSI EDA experience"
+              ]
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Architecture-Energy-Modeling-Engineer---New-College-Grad-2026_JR2023398",
+              "match_score": 43.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Python C++ modeling",
+                "machine learning experience"
+              ],
+              "main_gaps": [
+                "computer architecture",
+                "power modeling expertise"
+              ]
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Research-Scientist--AI-for-Graphics-and-Gaming---New-College-Grad-2026_JR2011267",
+              "match_score": 28.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "PyTorch LLM systems",
+                "production AI evaluation"
+              ],
+              "main_gaps": [
+                "PhD requirement",
+                "graphics generative research"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7663036952090347829",
+              "match_score": 82.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks pipelines",
+                "distributed retrieval systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672654026594093317",
+              "match_score": 75.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM serving systems",
+                "Python PyTorch vLLM"
+              ],
+              "main_gaps": [
+                "GPU optimization experience",
+                "distributed training systems"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668827381435517237",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "automated evaluation frameworks",
+                "LLM testing workflows"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672517471946000645",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production RAG retrieval",
+                "LangGraph vLLM systems"
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 13,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7668566347702569269",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (AI Agent & Global Revenue Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670876337129425205",
+              "company": "TikTok",
+              "title": "Recommendation Architecture AI/ML Infrastructure Engineer Graduate (Data-Arch-TikTok Live) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7665986019233958197",
+              "company": "TikTok",
+              "title": "Backend Engineer Graduate (User Growth) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7678145401619237173",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (E-Commerce Recommendation Video) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668855346857019701",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Ads Interface) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670558992960358661",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Global E-commerce-Search) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675844938504702213",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (E-Commerce Supply Chain & Logistics) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7679156878833682693",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (E-Commerce Knowledge Graph) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669711968024430853",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (Commerce Ads) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7663389745178757429",
+              "company": "TikTok",
+              "title": "(General Hire)Machine Learning Engineer Graduate (TikTok Recommendation) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672532275557583157",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (TikTok Vertical Recommendation) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7665991852209932597",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (TikTok Trust and Safety) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669700358734170373",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (Ads Signal & Measurement) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667346543553710389",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (TikTok-Data-Search-Recommendation) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7665797203155896581",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (TikTok-Data-Search-Search Quality) - 2027 Start"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 18.591,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 12212,
+            "cached_input_tokens": 2724,
+            "output_tokens": 1108,
+            "reasoning_tokens": 160,
+            "estimated_usd": 0.032817
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7668566347702569269",
+              "match_score": 95.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production AI agents",
+                "RAG MCP backend systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670876337129425205",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM inference serving",
+                "Python PyTorch distributed systems"
+              ],
+              "main_gaps": [
+                "GPU programming",
+                "distributed training techniques"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7665986019233958197",
+              "match_score": 96.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production backend services",
+                "agentic retrieval workflows"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7678145401619237173",
+              "match_score": 71.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "PyTorch LLM systems",
+                "retrieval production experience"
+              ],
+              "main_gaps": [
+                "recommendation model development",
+                "online A/B experimentation"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668855346857019701",
+              "match_score": 56.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production engineering",
+                "cross-functional collaboration"
+              ],
+              "main_gaps": [
+                "engineering team management",
+                "technical roadmap ownership"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670558992960358661",
+              "match_score": 97.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production search infrastructure",
+                "hybrid retrieval optimization"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7675844938504702213",
+              "match_score": 72.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM agents evaluation",
+                "PyTorch ML pipeline"
+              ],
+              "main_gaps": [
+                "time-series forecasting",
+                "operations research models"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7679156878833682693",
+              "match_score": 81.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "NLP multimodal retrieval",
+                "Spark data processing"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669711968024430853",
+              "match_score": 70.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "PyTorch LLM systems",
+                "Spark distributed processing"
+              ],
+              "main_gaps": [
+                "ads ranking models",
+                "deep learning model development"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7663389745178757429",
+              "match_score": 74.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "PyTorch ML pipeline",
+                "retrieval system optimization"
+              ],
+              "main_gaps": [
+                "recommendation model experience"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672532275557583157",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "retrieval and reranking",
+                "Spark distributed systems"
+              ],
+              "main_gaps": [
+                "recommendation model training",
+                "online A/B experimentation"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7665991852209932597",
+              "match_score": 82.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM multimodal systems",
+                "production model serving"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669700358734170373",
+              "match_score": 73.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "ML evaluation pipelines",
+                "Spark data processing"
+              ],
+              "main_gaps": [
+                "causal inference",
+                "attribution modeling"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667346543553710389",
+              "match_score": 96.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "search retrieval engineering",
+                "LLM evaluation systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7665797203155896581",
+              "match_score": 96.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "search retrieval engineering",
+                "LLM evaluation systems"
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 14,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7674025781001062709",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (E-Commerce Governance) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7663389956951918853",
+              "company": "TikTok",
+              "title": "(General Hire) Research Scientist Graduate (TikTok Recommendation) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668582086900680965",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Data Arch - E-commerce) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668582542044072245",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Data Arch - E-commerce) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667344113001384197",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (TikTok-Data-Search-Basic Ranking) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668390999147776309",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (Data-Global E-Commerce-Search) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667349591747758341",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (TikTok-Data-Search-Visual Search) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668376903708281141",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (TikTok-Data-Search-Local Service) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668384123840514309",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (TikTok-Data-Search-Recommendation-Global E-Commerce) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668724383120804149",
+              "company": "TikTok",
+              "title": "Software Engineer Graduate (Ads Signal & Measurement) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668569995571726597",
+              "company": "TikTok",
+              "title": "Frontend Software Engineer Graduate (Ads Interface) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672976491146004741",
+              "company": "TikTok",
+              "title": "Backend Software Engineer Graduate (TikTok-PGC-Creator Strategy) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7669859743775000885",
+              "company": "ByteDance",
+              "title": "Software Engineer Graduate (Data-Intelligent Creation-AI Platform-Global Vision Engineering) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7668614787018393909",
+              "company": "ByteDance",
+              "title": "AI Agent Security Software Engineer Graduate (Security Engineering) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667976924430633269",
+              "company": "ByteDance",
+              "title": "Software Engineer - AI Agent Infra Graduate (Security Engineering) - 2027 Start"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 88.499,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 12227,
+            "cached_input_tokens": 2724,
+            "output_tokens": 1432,
+            "reasoning_tokens": 512,
+            "estimated_usd": 0.036735
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7674025781001062709",
+              "match_score": 77.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM fine-tuning experience",
+                "retrieval and multimodal systems"
+              ],
+              "main_gaps": [
+                "fraud risk algorithms",
+                "deep learning depth"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7663389956951918853",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "PyTorch and ML pipelines",
+                "production retrieval systems"
+              ],
+              "main_gaps": [
+                "recommendation modeling",
+                "deep learning research"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668582086900680965",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "scalable backend systems",
+                "Spark data pipelines"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668582542044072245",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "scalable backend systems",
+                "Spark data pipelines"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667344113001384197",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production retrieval optimization",
+                "search evaluation metrics"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668390999147776309",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production retrieval optimization",
+                "search evaluation metrics"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7667349591747758341",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production retrieval optimization",
+                "multimodal document processing"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668376903708281141",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production retrieval optimization",
+                "search evaluation metrics"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668384123840514309",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production retrieval optimization",
+                "search evaluation metrics"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668724383120804149",
+              "match_score": 83.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "data-intensive production systems",
+                "Spark pipeline experience"
+              ],
+              "main_gaps": [
+                "causal attribution methods",
+                "identity resolution systems"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668569995571726597",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production React applications",
+                "TypeScript full-stack delivery"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7672976491146004741",
+              "match_score": 93.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "FastAPI backend services",
+                "Redis database optimization"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7669859743775000885",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM serving deployment",
+                "concurrent backend services"
+              ],
+              "main_gaps": [
+                "RPC framework experience"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7668614787018393909",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM agent systems",
+                "distributed backend engineering"
+              ],
+              "main_gaps": [
+                "security engineering fundamentals",
+                "LLM security analysis"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667976924430633269",
+              "match_score": 93.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production AI agent systems",
+                "RAG evaluation pipelines"
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 15,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://joinbytedance.com/search/7667334059728341253",
+              "company": "ByteDance",
+              "title": "Software Engineer Graduate (AI Infra Compute) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7668799019359357237",
+              "company": "ByteDance",
+              "title": "Software Engineer Graduate (AI Infrastructure — Compute Efficiency & Scheduling) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7670773781477394741",
+              "company": "ByteDance",
+              "title": "LLM/AI Ops Development Engineer Graduate (Data Center Networking) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7669899962768165173",
+              "company": "ByteDance",
+              "title": "Software Engineer Graduate (Data-Speech-Product RD-Engineering-US) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7673306902554102069",
+              "company": "ByteDance",
+              "title": "Software Engineer Graduate (AML-Engine-Forge Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7668487570285496581",
+              "company": "ByteDance",
+              "title": "Hardware UX Designer Graduate (PICO-Edge AI & Spatial Computing) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7670004502598060341",
+              "company": "ByteDance",
+              "title": "Applied Machine Learning Production Engineer Graduate (AML-Production Engineer) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7672391016194066693",
+              "company": "ByteDance",
+              "title": "Agent Evaluation & Evolution Machine Learning Engineer Graduate (AML-Ark-US) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7669791940490168629",
+              "company": "ByteDance",
+              "title": "Machine Learning Backend Engineer Graduate (AML MLDev) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7672392998189959429",
+              "company": "ByteDance",
+              "title": "Visual Generation & Multimodal Evaluation Machine Learning Engineer Graduate (AML-Ark-US) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667730992538585349",
+              "company": "ByteDance",
+              "title": "LLM Backend Engineer Graduate (Applied Machine Learning) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7672383576726276405",
+              "company": "ByteDance",
+              "title": "Machine Learning Engineer Graduate (AML-Engine-Orchestration) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7669670735275526453",
+              "company": "ByteDance",
+              "title": "Backend Inference Framework Engineer Graduate (AML Inference) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7669789046777940229",
+              "company": "ByteDance",
+              "title": "Backend Inference Runtime Engineer Graduate (AML Inference) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7672389697767377205",
+              "company": "ByteDance",
+              "title": "Software Engineer Graduate (AML-Engine-Orchestration) - 2027 Start"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 21.457,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 13923,
+            "cached_input_tokens": 2724,
+            "output_tokens": 1355,
+            "reasoning_tokens": 389,
+            "estimated_usd": 0.039203
+          },
+          "decisions": [
+            {
+              "key": "url::https://joinbytedance.com/search/7667334059728341253",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production agent infrastructure",
+                "vLLM inference deployment"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7668799019359357237",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "distributed systems foundation",
+                "Kubernetes cloud deployment"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7670773781477394741",
+              "match_score": 48.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "RAG agent systems",
+                "Docker Kubernetes CI/CD"
+              ],
+              "main_gaps": [
+                "data-center networking",
+                "network protocols"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7669899962768165173",
+              "match_score": 72.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "vLLM model serving",
+                "QLoRA fine-tuning"
+              ],
+              "main_gaps": [
+                "GPU optimization",
+                "CUDA compiler experience"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7673306902554102069",
+              "match_score": 89.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "ML platform engineering",
+                "evaluation inference lifecycle"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7668487570285496581",
+              "match_score": 20.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "AI agent experience",
+                "multimodal AI exposure"
+              ],
+              "main_gaps": [
+                "UX spatial design",
+                "wearable hardware prototyping"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7670004502598060341",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production reliability engineering",
+                "distributed systems troubleshooting"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7672391016194066693",
+              "match_score": 97.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "agent evaluation systems",
+                "tool calling RAG"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7669791940490168629",
+              "match_score": 55.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "vLLM serving exposure",
+                "Python C++ skills"
+              ],
+              "main_gaps": [
+                "ML compiler optimization",
+                "GPU kernel development"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7672392998189959429",
+              "match_score": 48.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "multimodal LLM exposure",
+                "evaluation platform engineering"
+              ],
+              "main_gaps": [
+                "computer vision fundamentals",
+                "visual generation experience"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667730992538585349",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "high-availability FastAPI services",
+                "LLM agent serving"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7672383576726276405",
+              "match_score": 87.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Kubernetes ML deployment",
+                "vLLM serving experience"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7669670735275526453",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "async distributed services",
+                "inference service deployment"
+              ],
+              "main_gaps": [
+                "C++ concurrency experience",
+                "high-concurrency service R&D"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7669789046777940229",
+              "match_score": 40.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "vLLM serving exposure",
+                "Python C++ skills"
+              ],
+              "main_gaps": [
+                "CUDA kernel optimization",
+                "GPU inference compilation"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7672389697767377205",
+              "match_score": 87.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Kubernetes ML deployment",
+                "vLLM serving experience"
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 16,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://joinbytedance.com/search/7664894974764828981",
+              "company": "ByteDance",
+              "title": "Test Software Engineer Graduate (Douyin Research and Development Middle Platform) - 2027 Start"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/notion/85947779-6b87-466a-98bc-30a640448c28",
+              "company": "Notion",
+              "title": "Software Engineer, Early Career (AI)"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/notion/297b4ece-765f-4eea-b1b8-46057cb6501f",
+              "company": "Notion",
+              "title": "Software Engineer, Early Career"
+            },
+            {
+              "key": "url::https://jobs.lever.co/palantir/95e0d2b0-437a-4096-a5c6-0f247f426c90",
+              "company": "Palantir",
+              "title": "Privacy & Civil Liberties Engineer - New Grad"
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/GA---Atlanta/Software-Engineer-I---AI-Agents---Harnesses_R-51943",
+              "company": "Travelers",
+              "title": "Software Engineer I – AI Agents & Harnesses"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10551860/solutions-architect-consumer-packaged-goods",
+              "company": "Amazon",
+              "title": "Solutions Architect, Consumer Packaged Goods"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10551958/solutions-architect-amazon-web-services-wwps-sa-state-local-government-west",
+              "company": "Amazon",
+              "title": "Solutions Architect, Amazon Web Services, WWPS SA - State & Local Government -West"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210790133",
+              "company": "JPMorgan Chase",
+              "title": "Data Engineer - New York Jobs CEO Council"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717981472",
+              "company": "Qualcomm",
+              "title": "EVA Systems Engineer"
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556864954",
+              "company": "Microsoft",
+              "title": "Solution Architect - Data & AI"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8210922",
+              "company": "Pure Storage",
+              "title": "Quality Systems Engineer - Flash Blade and Flash Array"
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Solutions-Architect_2022705-1",
+              "company": "Cisco",
+              "title": "Solutions Architect"
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Athens-Greece/Solutions-Engineer---Greece_2022555-1",
+              "company": "Cisco",
+              "title": "Solutions Engineer - Greece"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7665989305914984709",
+              "company": "TikTok",
+              "title": "AI Systems Engineer Graduate (AI Code Infrastructure-Agentic Ops US) - 2027 Start"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/116004749047669446-research-data-scientist-cloud-demand-forecasting-and-capacity-planning",
+              "company": "Google",
+              "title": "Research Data Scientist, Cloud Demand Forecasting and Capacity Planning"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 21.238,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 18450,
+            "cached_input_tokens": 2724,
+            "output_tokens": 1442,
+            "reasoning_tokens": 312,
+            "estimated_usd": 0.049301
+          },
+          "decisions": [
+            {
+              "key": "url::https://joinbytedance.com/search/7664894974764828981",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM evaluation platforms",
+                "RAG evaluation frameworks"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/notion/85947779-6b87-466a-98bc-30a640448c28",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production AI features",
+                "LLM evaluation and guardrails"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/notion/297b4ece-765f-4eea-b1b8-46057cb6501f",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack product delivery",
+                "reliability and platform work"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://jobs.lever.co/palantir/95e0d2b0-437a-4096-a5c6-0f247f426c90",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production systems",
+                "AI evaluation platform"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/GA---Atlanta/Software-Engineer-I---AI-Agents---Harnesses_R-51943",
+              "match_score": 77.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "agent orchestration systems",
+                "production guardrails and tracing"
+              ],
+              "main_gaps": [
+                "required software experience"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10551860/solutions-architect-consumer-packaged-goods",
+              "match_score": 45.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS AI deployment",
+                "agentic AI systems"
+              ],
+              "main_gaps": [
+                "enterprise customer architecture",
+                "CPG domain expertise"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10551958/solutions-architect-amazon-web-services-wwps-sa-state-local-government-west",
+              "match_score": 25.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS deployment experience",
+                "cloud infrastructure skills"
+              ],
+              "main_gaps": [
+                "10 years consulting experience",
+                "public-sector architecture"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210790133",
+              "match_score": 42.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python SQL pipelines",
+                "Databricks data workflows"
+              ],
+              "main_gaps": [
+                "5 years data engineering",
+                "data modeling ownership"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717981472",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "PyTorch development",
+                "multimodal AI exposure"
+              ],
+              "main_gaps": [
+                "computer vision algorithms",
+                "hardware-software optimization"
+              ]
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556864954",
+              "match_score": 27.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production RAG systems",
+                "AI evaluation controls"
+              ],
+              "main_gaps": [
+                "enterprise architecture leadership",
+                "federal technical sales"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8210922",
+              "match_score": 20.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Python test automation",
+                "reliability testing"
+              ],
+              "main_gaps": [
+                "10 years storage testing",
+                "storage domain expertise"
+              ]
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Solutions-Architect_2022705-1",
+              "match_score": 43.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "cloud deployment experience",
+                "technical implementation background"
+              ],
+              "main_gaps": [
+                "role requirements unavailable"
+              ]
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Athens-Greece/Solutions-Engineer---Greece_2022555-1",
+              "match_score": 0.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "non_us",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "non-U.S. location"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7665989305914984709",
+              "match_score": 87.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production tracing and testing",
+                "Python backend systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/116004749047669446-research-data-scientist-cloud-demand-forecasting-and-capacity-planning",
+              "match_score": 57.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python SQL analytics",
+                "ML pipeline development"
+              ],
+              "main_gaps": [
+                "three years analytics experience",
+                "forecasting model experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 17,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720178575",
+              "company": "Qualcomm",
+              "title": "Computer Vision Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446718460795",
+              "company": "Qualcomm",
+              "title": "Server SoC Security Architect"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/132534755320046278-security-engineer-android-product-security",
+              "company": "Google",
+              "title": "Security Engineer, Android Product Security"
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/293104",
+              "company": "Dell",
+              "title": "Consultant Machine Learning & Knowledge Graph Engineer"
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Data-Engineer-I--Databricks--AWS--Python-_R-51638",
+              "company": "Travelers",
+              "title": "Data Engineer I (Databricks, AWS, Python)"
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Data-Engineer-I--AWS--Python--GenAI-_R-50910",
+              "company": "Travelers",
+              "title": "Data Engineer I (AWS, Python, GenAI)"
+            },
+            {
+              "key": "url::https://www.metacareers.com/jobs/28245852058411164",
+              "company": "Meta",
+              "title": "Network Production Engineer (University Grad)"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7686220455414106421",
+              "company": "TikTok",
+              "title": "Data Scientist, Transparency & Observability - Trust and Safety"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/snowflake/a51a1e30-94ec-4550-b39f-90ef328dfa87",
+              "company": "Snowflake",
+              "title": "Fullstack Engineer - Marketplace"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670351062847260981",
+              "company": "TikTok",
+              "title": "Testing Engineer Graduate (TikTok - Intelligent Creation) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668693662561634613",
+              "company": "TikTok",
+              "title": "ML Infra Engineer Graduate (Ads Infra) - 2027 Start"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7674027218993154357",
+              "company": "TikTok",
+              "title": "Data Scientist Graduate (E-Commerce Governance) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7669854602477684997",
+              "company": "ByteDance",
+              "title": "Infrastructure Delivery Engineer Graduate (Server Delivery) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667727006294214965",
+              "company": "ByteDance",
+              "title": "Machine Learning System Scheduling Engineer Graduate (Applied Machine Learning) - 2027 Start"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667685712993650997",
+              "company": "ByteDance",
+              "title": "Large Language Model Training System Engineer Graduate (Applied Machine Learning) - 2027 Start"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 23.836,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 15,
+            "input_tokens": 14297,
+            "cached_input_tokens": 2724,
+            "output_tokens": 1455,
+            "reasoning_tokens": 408,
+            "estimated_usd": 0.041151
+          },
+          "decisions": [
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720178575",
+              "match_score": 25.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python C++ development",
+                "PyTorch experience"
+              ],
+              "main_gaps": [
+                "Staff-level technical leadership",
+                "embedded CV optimization"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446718460795",
+              "match_score": 8.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "systems engineering background",
+                "cloud infrastructure exposure"
+              ],
+              "main_gaps": [
+                "SoC security architecture",
+                "10+ years experience"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/132534755320046278-security-engineer-android-product-security",
+              "match_score": 32.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend engineering",
+                "reliability testing"
+              ],
+              "main_gaps": [
+                "Android security",
+                "product security experience"
+              ]
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/293104",
+              "match_score": 24.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production RAG systems",
+                "Spark Databricks pipelines"
+              ],
+              "main_gaps": [
+                "12+ years ML systems",
+                "knowledge graph architecture"
+              ]
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Data-Engineer-I--Databricks--AWS--Python-_R-51638",
+              "match_score": 65.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Databricks Spark pipelines",
+                "AWS Python deployment"
+              ],
+              "main_gaps": [
+                "required engineering experience"
+              ]
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Data-Engineer-I--AWS--Python--GenAI-_R-50910",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "GenAI production systems",
+                "Python data pipelines"
+              ],
+              "main_gaps": [
+                "required engineering experience"
+              ]
+            },
+            {
+              "key": "url::https://www.metacareers.com/jobs/28245852058411164",
+              "match_score": 68.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "University Grad role",
+                "cloud infrastructure experience"
+              ],
+              "main_gaps": [
+                "networking operations"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7686220455414106421",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks experience",
+                "data quality systems"
+              ],
+              "main_gaps": [
+                "5+ years experience",
+                "dashboard metrics ownership"
+              ]
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/snowflake/a51a1e30-94ec-4550-b39f-90ef328dfa87",
+              "match_score": 62.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React TypeScript full-stack",
+                "FastAPI production services"
+              ],
+              "main_gaps": [
+                "4+ years experience"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7670351062847260981",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "automated regression testing",
+                "FastAPI React development"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7668693662561634613",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "ML pipeline development",
+                "Spark data pipelines"
+              ],
+              "main_gaps": [
+                "recommendation systems"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7674027218993154357",
+              "match_score": 82.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python SQL analytics",
+                "Spark Databricks experience"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7669854602477684997",
+              "match_score": 55.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python data processing",
+                "cloud systems exposure"
+              ],
+              "main_gaps": [
+                "data center engineering",
+                "server hardware deployment"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667727006294214965",
+              "match_score": 80.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Kubernetes Docker experience",
+                "distributed systems background"
+              ],
+              "main_gaps": [
+                "resource scheduling systems"
+              ]
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7667685712993650997",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM fine-tuning",
+                "production inference systems"
+              ],
+              "main_gaps": [
+                "distributed training systems"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 18,
+          "route": "both",
+          "jobs": [
+            {
+              "key": "url::https://joinbytedance.com/search/7667726338627356933",
+              "company": "ByteDance",
+              "title": "Large Language Model Inference System Engineer Graduate (Applied Machine Learning) - 2027 Start"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Data-Science-Graduate_1213631-1",
+              "company": "HPE",
+              "title": "Data Science Graduate"
+            },
+            {
+              "key": "url::https://redhat.wd5.myworkdayjobs.com/jobs/job/Remote-US-TX/Junior-Specialist-Adoption-Architect_R-059524",
+              "company": "Red Hat",
+              "title": "Junior Specialist Adoption Architect"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 21.935,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 6461,
+            "cached_input_tokens": 2724,
+            "output_tokens": 358,
+            "reasoning_tokens": 115,
+            "estimated_usd": 0.012315
+          },
+          "decisions": [
+            {
+              "key": "url::https://joinbytedance.com/search/7667726338627356933",
+              "match_score": 68.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM inference deployment",
+                "distributed systems interest"
+              ],
+              "main_gaps": [
+                "CUDA GPU performance analysis",
+                "GPU architecture expertise"
+              ]
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Data-Science-Graduate_1213631-1",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "ML evaluation frameworks",
+                "Spark data pipelines"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://redhat.wd5.myworkdayjobs.com/jobs/job/Remote-US-TX/Junior-Specialist-Adoption-Architect_R-059524",
+              "match_score": 82.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "cloud-native platform experience",
+                "AI platform implementation"
+              ],
+              "main_gaps": [
+                "customer adoption engagements"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-09-17T00:35:38.686808+00:00",
       "mode": "pipeline",
       "health": "degraded",

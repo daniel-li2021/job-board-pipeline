@@ -1,27 +1,31 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-09-16 17:35 PDT
-- Snapshot (UTC): 2026-09-17T00:35:38.686808+00:00
-- Jobs: 22 (Tier A/B only)
-- Last 24 hours: 0
-- Last 3 days: 22
+- Updated (PT): 2026-09-17 08:37 PDT
+- Snapshot (UTC): 2026-09-17T15:37:14.254353+00:00
+- Jobs: 26 (Tier A/B only)
+- Last 24 hours: 4
+- Last 3 days: 26
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 92 | official | Qualcomm | Machine Learning Engineer - Generative AI | San Diego, California, United States of America | 2026-09-17 | 3to24h | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446719654327) |
+| A | 86 | official | Google | Software Engineer, GDC AI Applications and Agents | Sunnyvale, CA, USA | 2026-09-17 | 3to24h | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/95424090398958278-software-engineer-gdc-ai-applications-and-agents) |
 | A | 90 | official | Amazon | Software Development Engineer, Eva Development Team | Bellevue, Washington, USA | 2026-09-15 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10541281/software-development-engineer-eva-development-team) |
 | A | 90 | official | Amazon | Software Development Engineer, Eva Development Team | Bellevue, Washington, USA | 2026-09-15 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10541282/software-development-engineer-eva-development-team) |
 | A | 93 | official | HPE | AI Workflow Specialist Graduate | San Jose, California, United States of America | 2026-09-15 | 1to3d | - | unreviewed | official_canonical | [open](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/San-Jose-California-United-States-of-America/AI-Workflow-Specialist-Graduate_1211885) |
+| B | 84 | official | Qualcomm | #Software Engineer - Edge AI/Gen AI | San Diego, California, United States of America | 2026-09-17 | 3to24h | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446720282038) |
+| B | 83 | official | Apple | Data Engineer, Apple Ads | Cupertino, United States of America | 2026-09-17 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200684319/data-engineer-apple-ads) |
 | B | 85 | official | Google | Software Engineer, Generative Media AI, Apparel ML | Mountain View, CA, USA; Seattle, WA, USA; New York, NY, USA | 2026-09-16 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/128378670086529734-software-engineer-generative-media-ai-apparel-ml) |
 | B | 81 | official | Amazon | Software Development Engineer, Humorphic Labs | Austin, Texas, USA | 2026-09-16 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10547103/software-development-engineer-humorphic-labs) |
 | B | 84 | official | Walmart Global Tech | (USA) Software Engineer II | (USA) Crossman Respect Building CA SUNNYVALE Home Office | 2026-09-16 | 1to3d | - | unreviewed | official_canonical | [open](https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Crossman-Respect-Building-CA-SUNNYVALE-Home-Office/XMLNAME--USA--Software-Engineer-II_R-2561156-1) |
+| B | 84 | official | Expedia Group | Software Development Engineer II | Washington - Seattle Campus | 2026-09-16 | 1to3d | - | unreviewed | official_canonical | [open](https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Software-Development-Engineer-II_R-109774) |
 | B | 83 | official | Roblox | Software Engineer, Discovery UX | San Mateo, CA, United States | 2026-09-16 | 1to3d | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8168383?gh_jid=8168383) |
 | B | 78 | official | Amazon | Software Dev Engineer II, Region Authority | Seattle, Washington, USA | 2026-09-16 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10550291/software-dev-engineer-ii-region-authority) |
 | B | 76 | official | Amazon | Data Engineer, Workforce Solutions - Talent Mobility | Bellevue, Washington, USA | 2026-09-16 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10544213/data-engineer-workforce-solutions-talent-mobility) |
 | B | 75 | official | Apple | Machine Learning Engineer, Apple Search & Knowledge Platforms | Seattle, United States of America | 2026-09-16 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200683907/machine-learning-engineer-apple-search-knowledge-platforms) |
 | B | 76 | official | Apple | Software Engineer - Cloud Infrastructure, Golang | Seattle Metro Area, United States of America | 2026-09-16 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200661492/software-engineer-cloud-infrastructure-golang) |
-| B | 77 | official | CVS Health | Software Engineer - SRE, Retail & Pharmacy | RI - Woonsocket | 2026-09-16 | 1to3d | CVS | unreviewed | official_canonical | [open](https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/RI---Woonsocket/Software-Engineer---SRE--Retail---Pharmacy_R0987009) |
 | B | 74 | official | Apple | Machine Learning Engineer | Cupertino, United States of America | 2026-09-16 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200684201/machine-learning-engineer) |
 | B | 74 | official | Intel | Mfg Systems Software Development Engineer | US, Oregon, Hillsboro; US, Arizona, Phoenix | 2026-09-16 | 1to3d | Intel | unreviewed | official_canonical | [open](https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/Mfg-Systems-Software-Development-Engineer_JR0287195-1) |
 | B | 74 | official | Intel | Mfg Systems Software Development Engineer | US, Oregon, Hillsboro; US, Arizona, Phoenix | 2026-09-16 | 1to3d | Intel | unreviewed | official_canonical | [open](https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/Mfg-Systems-Software-Development-Engineer_JR0287196-1) |
