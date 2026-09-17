@@ -80,6 +80,19 @@ class LlmMatchingTests(unittest.TestCase):
         self.assertIn("Own reliable backend services", selected)
         self.assertIn("Production Python experience", selected)
 
+    def test_long_jd_preserves_hard_constraints_from_the_tail(self) -> None:
+        text = (
+            "Overview\n" + ("general company and benefits text " * 500) + "\n"
+            "Responsibilities\nBuild reliable APIs.\n"
+            "Required Qualifications\nThree years of Python.\n"
+            + ("equal opportunity statement " * 300)
+            + " Candidates must be U.S. citizens eligible for security clearance; visa sponsorship is unavailable."
+        )
+        selected = llm_config.select_jd_context(text)
+        self.assertLessEqual(len(selected), llm_config.JD_CONTEXT_CHARS)
+        self.assertIn("security clearance", selected)
+        self.assertIn("visa sponsorship", selected)
+
     @patch("board_pipeline.requests.post")
     def test_llm_batch_accepts_missing_location_and_sends_only_routed_resume(self, post: Mock) -> None:
         job = {
@@ -123,15 +136,21 @@ class LlmMatchingTests(unittest.TestCase):
             "resume_swe",
         )
         sent = post.call_args.kwargs["json"]
-        prompt = json.loads(sent["messages"][1]["content"])
-        self.assertEqual("", prompt["jobs"][0]["location"])
-        self.assertEqual(full_resume, prompt["resume_swe"])
-        self.assertNotIn("resume_ai", prompt)
-        instructions = " ".join(prompt["instructions"])
+        static = json.loads(sent["messages"][0]["content"][0]["text"])
+        dynamic = json.loads(sent["messages"][1]["content"])
+        self.assertEqual("", dynamic["jobs"][0]["location"])
+        self.assertEqual(full_resume, static["resume_swe"])
+        self.assertNotIn("resume_ai", static)
+        self.assertNotIn("jobs", static)
+        instructions = " ".join(static["instructions"])
         self.assertIn("strong seniority-fit evidence", instructions)
         self.assertIn("do not push match_score below 80", instructions)
         self.assertIn("Internship/co-op status must not change match_score", instructions)
+        self.assertIn("keyword phrases", instructions)
         self.assertEqual("medium", sent["reasoning_effort"])
+        self.assertEqual({"mode": "explicit", "ttl": "30m"}, sent["prompt_cache_options"])
+        self.assertTrue(sent["prompt_cache_key"].startswith("job-match:resume_swe:"))
+        self.assertEqual({"mode": "explicit"}, sent["messages"][0]["content"][0]["prompt_cache_breakpoint"])
         self.assertEqual(82, results[key]["match_score"])
         self.assertNotIn("recommended_action", results[key])
         self.assertEqual(25, usage["cached_input_tokens"])

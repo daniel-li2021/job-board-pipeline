@@ -284,6 +284,7 @@ def save_careers_store(store: Dict[str, Dict[str, Any]], metadata: Optional[Dict
 def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp: str) -> None:
     CAREERS_DIR.mkdir(parents=True, exist_ok=True)
     report_now = datetime.now(timezone.utc)
+    reasons = stats["llm"].get("new_or_changed_reasons") or {}
     lines = [
         f"# Big Tech official careers — 7-day view — {stamp}",
         "",
@@ -303,6 +304,13 @@ def write_latest_md(visible: List[Dict[str, str]], stats: Dict[str, Any], stamp:
         f"- LLM usage: scored {stats['llm']['scored']} / API requests {stats['llm']['api_requests']} / "
         f"cache reused {stats['llm']['reused']} (cross-pipeline {stats['llm'].get('peer_reused', 0)}) / "
         f"rule fallback {stats['llm']['rule']}",
+        f"- LLM cache causes: new {reasons.get('genuinely_new_job', 0)} / "
+        f"material JD {reasons.get('material_jd_change', 0)} / "
+        f"matching context {reasons.get('matching_context_change', 0)} / "
+        f"prior rule now eligible {reasons.get('prior_rule_result_now_eligible_for_llm', 0)} / "
+        f"non-material reused {stats['llm'].get('non_material_change_reused', 0)} / "
+        f"same-content reused {stats['llm'].get('same_content_reused', 0)} / "
+        f"rescored <24h {stats['llm'].get('rescored_within_24h', 0)}",
         f"- LLM cost: {llm_config.format_usage(stats['llm'])}",
         f"- New jobs discovered this run: {stats['output'].get('new_jobs', '—')}",
         f"- Output: Tier A {stats['output']['tier_a']} / Tier B {stats['output']['tier_b']} / shown {stats['output']['shown']}",
@@ -528,13 +536,14 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
     enrichment_needed = sum(
         len(str(job.get("description") or "").strip()) < board.THIN_JD_CHARS for job in deduped
     )
-    peer_jds_resolved = board.enrich_from_exact_peers(deduped, [
+    peer_stores = [
         ("board", board.load_store_path(
             OUTPUT_DIR / "board" / "jobs.json",
             cache_path=OUTPUT_DIR / "cache" / "board" / "jobs.json.gz",
         )),
         ("syncareer", board.load_syncareer_peer_store()),
-    ])
+    ]
+    peer_jds_resolved = board.enrich_from_exact_peers(deduped, peer_stores)
 
     drops: Counter = Counter()
     after_company: List[Dict[str, str]] = []
@@ -599,6 +608,7 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
         profiles,
         store,
         use_llm=not args.no_llm,
+        peer_stores=peer_stores,
     )
     for job in candidates:
         job["tier"] = board.assign_tier(job, referrals.get(dedup_key(job), False))

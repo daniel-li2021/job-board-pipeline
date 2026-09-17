@@ -129,6 +129,7 @@ RAW_FIELDS = [
     "recommended_action",
     "cache_key",
     "jd_hash",
+    "match_content_hash",
     "score_model",
     "scoring_version",
     "reasoning_effort",
@@ -457,7 +458,7 @@ SYNCAREER_REMOTE_FIELDS = {
     "drop_reason", "company_flag", "deprioritized", "preferred", "staffing_firm", "match_score",
     "fit_score", "tier", "score_source", "screen_method", "resume_profile_used", "role_family",
     "role_relevance", "seniority_fit", "hard_constraint_status", "top_match_reasons", "main_gaps", "main_gaps_count",
-    "recommended_action", "cache_key", "jd_hash", "match_canonical_key", "match_source_pipeline",
+    "recommended_action", "cache_key", "jd_hash", "match_content_hash", "match_canonical_key", "match_source_pipeline",
     "match_jd_hash", "recency_bucket", "review_status", "notes", "source_pipeline",
     "description_available", "enrichment_failure_reason",
     "score_model", "scoring_version", "reasoning_effort", "candidate_fingerprint", "score_at",
@@ -784,7 +785,7 @@ SHARED_SCORE_FIELDS = (
     "match_score", "tier", "score_source", "screen_method",
     "resume_profile_used", "role_family", "role_relevance",
     "seniority_fit", "hard_constraint_status", "top_match_reasons",
-    "main_gaps", "main_gaps_count", "recommended_action", "cache_key", "jd_hash",
+    "main_gaps", "main_gaps_count", "recommended_action", "cache_key", "jd_hash", "match_content_hash",
     "match_canonical_key", "match_source_pipeline", "match_jd_hash",
     "score_model", "scoring_version", "reasoning_effort", "candidate_fingerprint", "score_at",
     "llm_retryable", "llm_retry_count", "llm_last_attempt_at", "llm_last_error",
@@ -853,7 +854,11 @@ def assign_shared_scores(
             ("official", board.load_store_path(
                 OUTPUT_DIR / "official_careers" / "jobs.json",
                 cache_path=OUTPUT_DIR / "cache" / "official_careers" / "jobs.json.gz",
-            ))
+            )),
+            ("board", board.load_store_path(
+                OUTPUT_DIR / "board" / "jobs.json",
+                cache_path=OUTPUT_DIR / "cache" / "board" / "jobs.json.gz",
+            )),
         ],
         prefer_peer=True,
     )
@@ -1211,6 +1216,16 @@ def run() -> None:
         f"- Screening: {shared_screen_method}; LLM={score_counts.get('llm', 0)}, "
         f"cache={score_counts.get('reused', 0)}, rules={score_counts.get('rule', 0)}, "
         f"API requests={score_counts.get('api_requests', 0)}"
+    )
+    reasons = score_counts.get("new_or_changed_reasons") or {}
+    lines.append(
+        f"- LLM cache causes: new={reasons.get('genuinely_new_job', 0)}, "
+        f"material JD={reasons.get('material_jd_change', 0)}, "
+        f"matching context={reasons.get('matching_context_change', 0)}, "
+        f"prior rule now eligible={reasons.get('prior_rule_result_now_eligible_for_llm', 0)}, "
+        f"non-material reused={score_counts.get('non_material_change_reused', 0)}, "
+        f"same-content reused={score_counts.get('same_content_reused', 0)}, "
+        f"rescored <24h={score_counts.get('rescored_within_24h', 0)}"
     )
     lines.append("")
     lines.append("## Per-query search diagnostics")

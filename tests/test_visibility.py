@@ -18,7 +18,7 @@ import dashboard
 import official_careers
 import review_state
 from sources.company_aliases import company_risk_rank, load_alias_file, match_company_alias, match_company_entry, prepare_alias_entries
-from sources.schema import combined_cache_key_from_hash, dedup_key, make_job, normalize_job_url, normalize_location_key
+from sources.schema import combined_cache_key_from_hash, dedup_key, make_job, match_content_hash, normalize_job_url, normalize_location_key
 from sources.schema import classify_location_bucket
 from sources import linkedin_local, local_search, schema
 from sources.careers.query_terms import ROLE_SEARCH_QUERIES
@@ -836,13 +836,13 @@ class MatchingPolicyTests(unittest.TestCase):
             _, _, second_counts = board_pipeline.score_survivors(
                 [second], {}, {"fingerprint": "prompt-b", "candidate_fingerprint": "candidate-a"}, cached, True
             )
-            self.assertEqual(1, call.call_count)
-            self.assertEqual(1, second_counts["reused"])
+            self.assertEqual(2, call.call_count)
+            self.assertEqual(1, second_counts["llm"])
             self.assertEqual("gpt-5.6-terra", second["score_model"])
 
             changed = job("Build Java distributed systems and streaming services. " * 10)
             board_pipeline.score_survivors([changed], {}, profiles, cached, True)
-            self.assertEqual(2, call.call_count)
+            self.assertEqual(3, call.call_count)
 
         failed = job()
         with patch.dict("os.environ", {"OPENAI_API_KEY": "test"}), patch.object(
@@ -862,6 +862,171 @@ class MatchingPolicyTests(unittest.TestCase):
         self.assertEqual(1, retry_call.call_count)
         self.assertEqual(1, retry_counts["llm"])
         self.assertFalse(recovered["llm_retryable"])
+
+    def test_match_content_hash_ignores_formatting_but_preserves_constraints(self) -> None:
+        base = make_job(
+            source="test", company="Example Tech", title="Software Engineer",
+            location="Seattle, WA", job_id="one",
+            description="Responsibilities Build APIs Required Qualifications 3+ years.",
+            sponsorship="No",
+        )
+        formatted = {
+            **base,
+            "description": (
+                "<p>Responsibilities</p><p>Build&nbsp; APIs</p>"
+                "<p>Required Qualifications</p><p>3+ years.</p>"
+            ),
+        }
+        self.assertNotEqual(board_pipeline.jd_hash(base), board_pipeline.jd_hash(formatted))
+        self.assertEqual(match_content_hash(base), match_content_hash(formatted))
+        for changed in (
+            {**base, "description": base["description"].replace("Build APIs", "Design hardware")},
+            {**base, "description": base["description"].replace("3+ years", "6+ years")},
+            {**base, "description": base["description"] + " US citizenship and clearance required."},
+            {**base, "sponsorship": "Yes"},
+            {**base, "location": "Toronto, Canada"},
+        ):
+            self.assertNotEqual(match_content_hash(base), match_content_hash(changed))
+
+        core = (
+            "Overview\n" + ("company context " * 500) + "\n"
+            "Responsibilities\nBuild APIs.\nRequired Qualifications\n3+ years Python.\nBenefits\n"
+        )
+        long_a = {**base, "description": core + ("health plan " * 800)}
+        long_b = {**base, "description": core + ("wellness plan " * 800)}
+        self.assertNotEqual(board_pipeline.jd_hash(long_a), board_pipeline.jd_hash(long_b))
+        self.assertEqual(
+            board_pipeline.decision_content_hash(long_a),
+            board_pipeline.decision_content_hash(long_b),
+        )
+
+    def test_non_material_change_reuses_cache(self) -> None:
+        profiles = {"fingerprint": "prompt-a", "candidate_fingerprint": "candidate-a"}
+        old = make_job(
+            source="test", company="Example Tech", title="Software Engineer",
+            location="Seattle, WA", job_id="one",
+            description="Responsibilities Build APIs Required Qualifications 3+ years.",
+        )
+        old.update({
+            "jd_hash": board_pipeline.jd_hash(old),
+            "match_content_hash": board_pipeline.decision_content_hash(old),
+            "match_score": 86,
+            "score_source": board_pipeline.SCORE_LLM,
+            "screen_method": board_pipeline.SCORE_LLM,
+            "cache_key": combined_cache_key_from_hash(board_pipeline.decision_content_hash(old), profiles["fingerprint"]),
+        })
+        store = {dedup_key(old): board_pipeline.build_store_entry(old, dedup_key(old))}
+        current = {
+            **old,
+            "description": "<p>Responsibilities</p><p>Build&nbsp; APIs</p><p>Required Qualifications</p><p>3+ years.</p>",
+        }
+        current.pop("jd_hash")
+        current.pop("match_content_hash")
+        current.pop("cache_key")
+        with patch.object(board_pipeline, "llm_match_batch", side_effect=AssertionError("cache should win")):
+            _method, _errors, counts = board_pipeline.score_survivors(
+                [current], {}, profiles, store, use_llm=True
+            )
+        self.assertEqual(board_pipeline.SCORE_CACHED_LLM, current["score_source"])
+        self.assertEqual(1, counts["non_material_change_reused"])
+        self.assertEqual(0, counts["new_or_changed"])
+
+        legacy = dict(store[dedup_key(old)])
+        legacy.pop("match_content_hash")
+        legacy["cache_key"] = combined_cache_key_from_hash(legacy["jd_hash"], profiles["fingerprint"])
+        unchanged = make_job(
+            source="test", company="Example Tech", title="Software Engineer",
+            location="Seattle, WA", job_id="one", description=old["description"],
+        )
+        _method, _errors, legacy_counts = board_pipeline.score_survivors(
+            [unchanged], {}, profiles, {dedup_key(old): legacy}, use_llm=False
+        )
+        self.assertEqual(1, legacy_counts["reused"])
+        self.assertTrue(unchanged["match_content_hash"])
+
+    def test_same_content_jobs_share_one_llm_result_but_remain_separate(self) -> None:
+        now = datetime.now(timezone.utc).isoformat()
+        jobs = [
+            make_job(
+                source="test", company="Example Tech", title="Software Engineer",
+                location=location, job_id=job_id,
+                description="Responsibilities Build Python APIs. Required Qualifications 2+ years. " * 5,
+            )
+            for job_id, location in (("one", "Seattle, WA"), ("two", "Austin, TX"))
+        ]
+        for job in jobs:
+            job.update(first_seen=now, recency_bucket="3to24h")
+            board_pipeline.role_seniority_prefilter(job)
+
+        def result(batch, _profiles, _key, model, _route):
+            self.assertEqual(1, len(batch))
+            key = dedup_key(batch[0])
+            return {key: {
+                "match_score": 88, "seniority_fit": "good", "hard_constraint_status": "ok",
+                "top_match_reasons": ["Python APIs"], "main_gaps": [],
+            }}, {"model": model, "api_requests": 1, "jobs_scored": 1}
+
+        with patch.dict("os.environ", {"OPENAI_API_KEY": "test"}), patch.object(
+            board_pipeline, "llm_match_batch", side_effect=result
+        ) as call:
+            _method, _errors, counts = board_pipeline.score_survivors(
+                jobs, {}, {"fingerprint": "prompt-a", "candidate_fingerprint": "candidate-a"}, {}, True
+            )
+        self.assertEqual(1, call.call_count)
+        self.assertEqual((1, 1, 1), (counts["llm"], counts["reused"], counts["same_content_reused"]))
+        self.assertNotEqual(dedup_key(jobs[0]), dedup_key(jobs[1]))
+        self.assertEqual(
+            {board_pipeline.SCORE_LLM, board_pipeline.SCORE_CACHED_LLM},
+            {job["score_source"] for job in jobs},
+        )
+
+    def test_material_rescore_and_prior_rule_reentry_are_visible(self) -> None:
+        profiles = {"fingerprint": "prompt-a", "candidate_fingerprint": "candidate-a"}
+        old = make_job(
+            source="test", company="Example Tech", title="Software Engineer",
+            location="Seattle, WA", job_id="one", description="Build Python APIs. " * 20,
+        )
+        old.update({
+            "jd_hash": board_pipeline.jd_hash(old), "match_content_hash": board_pipeline.decision_content_hash(old),
+            "cache_key": combined_cache_key_from_hash(board_pipeline.decision_content_hash(old), profiles["fingerprint"]),
+            "match_score": 88, "score_source": board_pipeline.SCORE_LLM,
+            "screen_method": board_pipeline.SCORE_LLM, "score_at": datetime.now(timezone.utc).isoformat(),
+        })
+        changed = {**old, "description": "Design distributed Java services. Required 5+ years. " * 10}
+        for field in ("jd_hash", "match_content_hash", "cache_key", "match_score", "score_source", "screen_method"):
+            changed.pop(field, None)
+        changed["recency_bucket"] = "3to24h"
+        board_pipeline.role_seniority_prefilter(changed)
+
+        def result(batch, _profiles, _key, model, _route):
+            key = dedup_key(batch[0])
+            return {key: {
+                "match_score": 70, "seniority_fit": "stretch", "hard_constraint_status": "ok",
+                "top_match_reasons": ["distributed systems"], "main_gaps": ["5+ YOE"],
+            }}, {"model": model, "api_requests": 1, "jobs_scored": 1}
+
+        with patch.dict("os.environ", {"OPENAI_API_KEY": "test"}), patch.object(
+            board_pipeline, "llm_match_batch", side_effect=result
+        ):
+            _method, _errors, counts = board_pipeline.score_survivors(
+                [changed], {}, profiles, {dedup_key(old): board_pipeline.build_store_entry(old, dedup_key(old))}, True
+            )
+        self.assertEqual(1, counts["new_or_changed_reasons"]["material_jd_change"])
+        self.assertEqual(1, counts["rescored_within_24h"])
+
+        rule = {**old, "score_source": board_pipeline.SCORE_FALLBACK, "screen_method": board_pipeline.SCORE_FALLBACK}
+        candidate = {**old}
+        for field in ("jd_hash", "match_content_hash", "cache_key", "match_score", "score_source", "screen_method"):
+            candidate.pop(field, None)
+        candidate["recency_bucket"] = "3to24h"
+        board_pipeline.role_seniority_prefilter(candidate)
+        _method, _errors, rule_counts = board_pipeline.score_survivors(
+            [candidate], {}, profiles, {dedup_key(rule): board_pipeline.build_store_entry(rule, dedup_key(rule))}, False
+        )
+        self.assertEqual(
+            1,
+            rule_counts["new_or_changed_reasons"]["prior_rule_result_now_eligible_for_llm"],
+        )
 
     def test_repeated_digest_run_does_not_duplicate_alert(self) -> None:
         job = self._job(score=90, bucket="3to24h", title="Junior Software Engineer")
@@ -940,6 +1105,31 @@ class MatchingPolicyTests(unittest.TestCase):
         self.assertEqual("official", job["match_source_pipeline"])
         self.assertEqual("3to24h", job["recency_bucket"])
         self.assertEqual(1, counts["peer_reused"])
+
+        changed = make_job(
+            source="greenhouse", company="Example Tech", title="Software Engineer",
+            location="Seattle, WA", official_url=url,
+            description="Different responsibilities and required qualifications. " * 10,
+        )
+        changed["canonical_job_key"] = f"url::{normalize_job_url(url)}"
+        _method, _errors, changed_counts = board_pipeline.score_survivors(
+            [changed], {}, {"fingerprint": profile_fp}, {}, use_llm=False,
+            peer_stores=[("official", {peer["key"]: peer})], prefer_peer=True,
+        )
+        self.assertEqual(0, changed_counts["peer_reused"])
+        self.assertEqual(board_pipeline.SCORE_RULE, changed["score_source"])
+
+        stale_profile = make_job(
+            source="linkedin", company="Example Tech", title="Software Engineer",
+            location="Seattle, WA", official_url=url, description="short card",
+        )
+        stale_profile["canonical_job_key"] = f"url::{normalize_job_url(url)}"
+        _method, _errors, stale_counts = board_pipeline.score_survivors(
+            [stale_profile], {}, {"fingerprint": "profile-v2"}, {}, use_llm=False,
+            peer_stores=[("official", {peer["key"]: peer})], prefer_peer=True,
+        )
+        self.assertEqual(0, stale_counts["peer_reused"])
+        self.assertEqual(board_pipeline.SCORE_FALLBACK, stale_profile["score_source"])
 
     def test_shared_official_queries_cover_requested_role_families(self) -> None:
         for query in ("software engineer", "ai engineer", "data engineer", "platform engineer", "full stack engineer", "forward deployed engineer"):

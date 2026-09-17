@@ -9,6 +9,7 @@ is just a matter of emitting the same dict shape.
 from __future__ import annotations
 
 import hashlib
+import html
 import json
 
 from state_io import atomic_write
@@ -668,13 +669,35 @@ def jd_hash(job: Dict[str, str]) -> str:
     return _sha1(basis)
 
 
+def match_content_hash(job: Dict[str, Any]) -> str:
+    """Hash only decision-relevant content, ignoring presentation-only JD churn."""
+    description = html.unescape(str(job.get("description") or ""))
+    description = re.sub(r"(?is)<(?:script|style)\b.*?</(?:script|style)>", " ", description)
+    description = re.sub(r"(?i)<br\s*/?>|</(?:p|li|div|h[1-6])\s*>", "\n", description)
+    description = re.sub(r"<[^>]+>", " ", description)
+    description = description.translate(str.maketrans({
+        "\u2018": "'", "\u2019": "'", "\u201c": '"', "\u201d": '"',
+        "\u2013": "-", "\u2014": "-", "\u2022": "-", "\u00a0": " ",
+    }))
+    description = normalize_space(description).lower()
+    basis = "\n".join([
+        normalize_company_key(job.get("company", "")),
+        normalize_title_key(job.get("title", "")),
+        classify_location_bucket(str(job.get("location") or "")),
+        normalize_sponsorship(job).lower(),
+        "clearance-risk" if job.get("clearance_risk_company") else "",
+        description,
+    ])
+    return _sha1(basis)
+
+
 def combined_cache_key(job: Dict[str, str], profile_fingerprint: str) -> str:
     """Cache key = JD content + resume/profile/prompt fingerprint.
 
     Changing any resume, the candidate profile, or the prompt version changes
     ``profile_fingerprint`` and thus invalidates all cached scores.
     """
-    return combined_cache_key_from_hash(jd_hash(job), profile_fingerprint)
+    return combined_cache_key_from_hash(match_content_hash(job), profile_fingerprint)
 
 
 def combined_cache_key_from_hash(jd_digest: str, profile_fingerprint: str) -> str:

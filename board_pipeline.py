@@ -62,6 +62,7 @@ from sources.schema import (
     combined_cache_key_from_hash,
     dedup_key,
     jd_hash,
+    match_content_hash as schema_match_content_hash,
     is_aggregator_url,
     is_outbound_tracker_url,
     looks_official,
@@ -1237,7 +1238,7 @@ def llm_match_batch(
         }
         for j in batch
     ]
-    prompt = {
+    static_prompt = {
         "task": (
             "Score how well each job fits the candidate using evidence from the "
             "job description AND the resume(s). Do not score on keyword overlap alone."
@@ -1259,7 +1260,7 @@ def llm_match_batch(
             "a high score.",
             "seniority_fit in {good, stretch, mismatch} for an early-career candidate.",
             "hard_constraint_status in {ok, citizen_or_clearance, non_us, other}.",
-            "top_match_reasons: 1-2 short strings. main_gaps: 0-2 meaningful missing core requirements only.",
+            "top_match_reasons: 1-2 keyword phrases, at most 6 words each. main_gaps: 0-2 keyword phrases naming meaningful missing core requirements only. No sentences.",
             "Preferred or nice-to-have qualifications are minor gaps and must not appear in main_gaps unless they are clearly central to the role.",
             "Internship/co-op status must not change match_score; application priority is separate.",
             "Penalize hardware-first roles.",
@@ -1279,24 +1280,34 @@ def llm_match_batch(
                 }
             ]
         },
-        "jobs": jobs_payload,
     }
     if resume_route in {"resume_swe", "both"}:
-        prompt["resume_swe"] = profiles.get("resume_swe", "")
+        static_prompt["resume_swe"] = profiles.get("resume_swe", "")
     if resume_route in {"resume_ai", "both"}:
-        prompt["resume_ai"] = profiles.get("resume_ai", "")
+        static_prompt["resume_ai"] = profiles.get("resume_ai", "")
+    static_text = json.dumps(static_prompt, separators=(",", ":"))
+    static_message: Dict[str, Any] = {"role": "developer", "content": static_text}
+    request_payload: Dict[str, Any] = {
+        "model": model,
+        "reasoning_effort": llm_config.configured_reasoning_effort(),
+        "response_format": {"type": "json_object"},
+        "prompt_cache_key": f"job-match:{resume_route}:{str(profiles.get('fingerprint') or '')[:32]}",
+        "messages": [
+            static_message,
+            {"role": "user", "content": json.dumps({"jobs": jobs_payload}, separators=(",", ":"))},
+        ],
+    }
+    if model.startswith("gpt-5.6"):
+        static_message["content"] = [{
+            "type": "text",
+            "text": static_text,
+            "prompt_cache_breakpoint": {"mode": "explicit"},
+        }]
+        request_payload["prompt_cache_options"] = {"mode": "explicit", "ttl": "30m"}
     resp = requests.post(
         llm_config.OPENAI_CHAT_COMPLETIONS_ENDPOINT,
         headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
-        json={
-            "model": model,
-            "reasoning_effort": llm_config.configured_reasoning_effort(),
-            "response_format": {"type": "json_object"},
-            "messages": [
-                {"role": "system", "content": "You are a precise early-career tech recruiting screener. Return JSON only."},
-                {"role": "user", "content": json.dumps(prompt)},
-            ],
-        },
+        json=request_payload,
         timeout=90,
     )
     resp.raise_for_status()
@@ -1317,9 +1328,9 @@ def llm_match_batch(
 
         def _as_list(v: Any) -> List[str]:
             if isinstance(v, list):
-                return [str(x) for x in v][:2]
+                return [normalize_space(x).strip(" .;")[:80] for x in v if normalize_space(x)][:2]
             if v:
-                return [str(v)]
+                return [normalize_space(v).strip(" .;")[:80]]
             return []
 
         out[key] = {
@@ -1382,28 +1393,56 @@ def _apply_cached_result(job: Dict[str, str], entry: Dict[str, Any]) -> None:
         job["reasoning_effort"] = "unknown"
 
 
-def _is_reusable_llm_cache(prev: Dict[str, Any], job: Dict[str, str]) -> bool:
+def _is_completed_llm_result(entry: Dict[str, Any]) -> bool:
+    if not entry or entry.get("match_score") is None:
+        return False
+    src = str(entry.get("score_source") or "").strip()
+    return src in LLM_SCORE_SOURCES or (not src and entry.get("screen_method") == "llm")
+
+
+def _cache_context_is_current(entry: Dict[str, Any], profile_fingerprint: str) -> bool:
+    digest = str(entry.get("match_content_hash") or entry.get("jd_hash") or "").strip()
+    return bool(
+        digest
+        and entry.get("cache_key") == combined_cache_key_from_hash(digest, profile_fingerprint)
+    )
+
+
+def _decision_content_matches(entry: Dict[str, Any], job: Dict[str, Any]) -> bool:
+    prior_material = str(entry.get("match_content_hash") or "")
+    if prior_material:
+        return prior_material == str(job.get("match_content_hash") or "")
+    return str(entry.get("jd_hash") or "") == str(job.get("jd_hash") or "")
+
+
+def _is_reusable_llm_cache(
+    prev: Dict[str, Any], job: Dict[str, str], profile_fingerprint: str
+) -> bool:
     """Only a completed LLM (or cached-LLM) score may be reused.
 
     rule_overflow / rule_fallback / rule_recency stay eligible for a later LLM call.
     """
-    if not prev:
-        return False
-    if str(prev.get("jd_hash") or "") != str(job.get("jd_hash") or ""):
-        return False
-    prior_candidate = str(prev.get("candidate_fingerprint") or "")
-    current_candidate = str(job.get("candidate_fingerprint") or "")
-    if prior_candidate and current_candidate and prior_candidate != current_candidate:
-        return False
-    if prev.get("match_score") is None:
-        return False
-    src = (prev.get("score_source") or "").strip()
-    if src in LLM_SCORE_SOURCES:
-        return True
-    # Legacy store: real LLM results used screen_method=llm and no score_source.
-    if not src and prev.get("screen_method") == "llm":
-        return True
-    return False
+    return bool(
+        _is_completed_llm_result(prev)
+        and _cache_context_is_current(prev, profile_fingerprint)
+        and _decision_content_matches(prev, job)
+    )
+
+
+def _content_reuse_keys(job: Dict[str, Any]) -> List[str]:
+    keys: List[str] = []
+    material = str(job.get("match_content_hash") or "").strip()
+    if material:
+        keys.append(f"material::{material}")
+    raw = str(job.get("jd_hash") or "").strip()
+    if raw:
+        context = "::".join([
+            classify_location_bucket(str(job.get("location") or "")),
+            normalize_sponsorship(job).lower(),
+            "clearance-risk" if job.get("clearance_risk_company") else "",
+        ])
+        keys.append(f"raw::{raw}::{context}")
+    return keys
 
 
 def _canonical_match_keys(job: Dict[str, Any]) -> List[str]:
@@ -1423,14 +1462,7 @@ def _canonical_match_keys(job: Dict[str, Any]) -> List[str]:
 
 def _peer_cache_is_current(entry: Dict[str, Any], profile_fingerprint: str) -> bool:
     """Accept completed exact-peer LLM output without relabeling its provenance."""
-    del profile_fingerprint
-    if not entry or entry.get("match_score") is None:
-        return False
-    src = str(entry.get("score_source") or "").strip()
-    if src not in LLM_SCORE_SOURCES and not (not src and entry.get("screen_method") == "llm"):
-        return False
-    digest = str(entry.get("jd_hash") or "").strip()
-    return bool(digest)
+    return _is_completed_llm_result(entry) and _cache_context_is_current(entry, profile_fingerprint)
 
 
 def _peer_cache_index(
@@ -1445,6 +1477,36 @@ def _peer_cache_index(
             for identity in _canonical_match_keys(entry):
                 index.setdefault(identity, (pipeline, entry))
     return index
+
+
+def _content_cache_index(
+    stores: List[Tuple[str, Dict[str, Dict[str, Any]]]],
+    profile_fingerprint: str,
+) -> Dict[str, Tuple[str, Dict[str, Any]]]:
+    index: Dict[str, Tuple[str, Dict[str, Any]]] = {}
+    for pipeline, store in stores:
+        for entry in store.values():
+            if not _peer_cache_is_current(entry, profile_fingerprint):
+                continue
+            for key in _content_reuse_keys(entry):
+                current = index.get(key)
+                if not current or str(entry.get("score_at") or "") > str(current[1].get("score_at") or ""):
+                    index[key] = (pipeline, entry)
+    return index
+
+
+def _matching_content_result(
+    job: Dict[str, Any], index: Dict[str, Tuple[str, Dict[str, Any]]]
+) -> Optional[Tuple[str, Dict[str, Any]]]:
+    for key in _content_reuse_keys(job):
+        if key in index:
+            return index[key]
+    return None
+
+
+def _peer_result_matches_job(job: Dict[str, Any], entry: Dict[str, Any]) -> bool:
+    # An exact identity backed by a richer peer is authoritative for a thin card.
+    return len(str(job.get("description") or "").strip()) < THIN_JD_CHARS or _decision_content_matches(entry, job)
 
 
 def _peer_identity_index(
@@ -1474,12 +1536,14 @@ def _apply_peer_result(
 ) -> None:
     """Reuse one exact canonical LLM result without changing fit semantics."""
     current_cache_key = job.get("cache_key", "")
+    current_candidate = job.get("candidate_fingerprint", "")
     _apply_cached_result(job, entry)
     # The local representation now intentionally adopts the canonical result;
     # make it stable in this pipeline's cache on the next run.
     job["cache_key"] = current_cache_key
+    job["candidate_fingerprint"] = current_candidate
     job["match_canonical_key"] = entry.get("canonical_job_key") or entry.get("key") or ""
-    job["match_source_pipeline"] = pipeline
+    job["match_source_pipeline"] = pipeline or entry.get("match_source_pipeline") or entry.get("source_pipeline") or ""
     job["match_jd_hash"] = entry.get("jd_hash", "")
     # Official posted_date is the canonical recency signal. Never copy a
     # low-confidence peer first_seen into another pipeline.
@@ -1497,6 +1561,13 @@ def _apply_peer_context(job: Dict[str, Any], pipeline: str, entry: Dict[str, Any
     if src in {SCORE_OVERFLOW, SCORE_FALLBACK, SCORE_RECENCY, SCORE_RULE, ""} and entry.get("match_score") is not None:
         # Still a rule score: it remains eligible for LLM on a later run.
         job["_canonical_peer_rule_score"] = float(entry.get("match_score") or 0)
+
+
+def decision_content_hash(job: Dict[str, Any]) -> str:
+    """Fingerprint exactly the decision-bearing job content sent to the LLM."""
+    scoped = dict(job)
+    scoped["description"] = llm_config.select_jd_context(str(job.get("description") or job.get("title") or ""))
+    return schema_match_content_hash(scoped)
 
 
 def score_survivors(
@@ -1518,6 +1589,8 @@ def score_survivors(
         "reused": 0, "llm": 0, "new_or_changed": 0, "rule": 0, "sent": 0,
         "api_requests": 0, "recency_skipped": 0, "overflow": 0,
         "peer_reused": 0, "thin_source_rule": 0, "retryable_fallbacks": 0,
+        "non_material_change_reused": 0, "same_content_reused": 0,
+        "rescored_within_24h": 0, "new_or_changed_reasons": {},
         "batch_size": LLM_BATCH_SIZE, "batches_total": 0, "batches_succeeded": 0,
         "batches_attempted": 0, "batches_failed": 0, "batches_skipped": 0,
         "latency_seconds": 0.0, "json_results": 0,
@@ -1534,19 +1607,23 @@ def score_survivors(
             _apply_peer_context(job, context_peer[0], context_peer[1])
         peer_rule = job.get("_canonical_peer_rule_score")
         job["rule_score"] = float(peer_rule) if peer_rule is not None else rule_match_score(job)
-        digest = str(job.get("source_jd_hash") or jd_hash(job))
-        job["jd_hash"] = digest
-        job["cache_key"] = combined_cache_key_from_hash(digest, fp)
+        raw_digest = str(job.get("source_jd_hash") or jd_hash(job))
+        material_digest = str(job.get("source_match_content_hash") or decision_content_hash(job))
+        job["jd_hash"] = raw_digest
+        job["match_content_hash"] = material_digest
+        job["cache_key"] = combined_cache_key_from_hash(material_digest, fp)
         job["candidate_fingerprint"] = candidate_fp
 
     peer_index = _peer_cache_index(peer_stores, fp)
+    content_index = _content_cache_index([("", store), *(peer_stores or [])], fp)
     to_llm: List[Dict[str, str]] = []
     for job in candidates:
         key = dedup_key(job)
         prev = store.get(key)
         peer = _matching_peer(job, peer_index)
-        if prefer_peer and peer:
-            _apply_peer_result(job, peer[0], peer[1])
+        compatible_peer = peer if peer and _peer_result_matches_job(job, peer[1]) else None
+        if prefer_peer and compatible_peer:
+            _apply_peer_result(job, compatible_peer[0], compatible_peer[1])
             counts["reused"] += 1
             counts["peer_reused"] += 1
         elif is_thin_local_discovery(job):
@@ -1556,15 +1633,36 @@ def score_survivors(
             _apply_rule_result(job, SCORE_FALLBACK, "Low-confidence title/metadata match (JD unavailable after enrichment)")
             counts["rule"] += 1
             counts["thin_source_rule"] += 1
-        elif _is_reusable_llm_cache(prev or {}, job):
+        elif _is_reusable_llm_cache(prev or {}, job, fp):
+            current_candidate = job.get("candidate_fingerprint", "")
             _apply_cached_result(job, prev)
+            job["candidate_fingerprint"] = current_candidate
             counts["reused"] += 1
-        elif peer:
-            _apply_peer_result(job, peer[0], peer[1])
+            if str(prev.get("jd_hash") or "") != str(job.get("jd_hash") or ""):
+                counts["non_material_change_reused"] += 1
+        elif compatible_peer:
+            _apply_peer_result(job, compatible_peer[0], compatible_peer[1])
             counts["reused"] += 1
             counts["peer_reused"] += 1
         else:
-            to_llm.append(job)
+            content_result = _matching_content_result(job, content_index)
+            if content_result:
+                _apply_peer_result(job, content_result[0], content_result[1])
+                counts["reused"] += 1
+                counts["same_content_reused"] += 1
+                if content_result[0]:
+                    counts["peer_reused"] += 1
+            else:
+                if not prev:
+                    reason = "genuinely_new_job"
+                elif not _is_completed_llm_result(prev):
+                    reason = "prior_rule_result"
+                elif _decision_content_matches(prev, job):
+                    reason = "matching_context_change"
+                else:
+                    reason = "material_jd_change"
+                job["_new_or_changed_reason"] = reason
+                to_llm.append(job)
     counts["new_or_changed"] = len(to_llm)
 
     if not to_llm:
@@ -1591,6 +1689,18 @@ def score_survivors(
             _apply_rule_result(job, SCORE_RECENCY, "Rule-based (recency-gated from LLM)")
             counts["rule"] += 1
             counts["recency_skipped"] += 1
+    eligible_keys = {dedup_key(job) for job in eligible}
+    reason_counts: Counter = Counter()
+    for job in to_llm:
+        reason = str(job.get("_new_or_changed_reason") or "other")
+        if reason == "prior_rule_result":
+            reason = (
+                "prior_rule_result_now_eligible_for_llm"
+                if dedup_key(job) in eligible_keys
+                else "prior_rule_result_recency_gated"
+            )
+        reason_counts[reason] += 1
+    counts["new_or_changed_reasons"] = dict(sorted(reason_counts.items()))
 
     api_key = (os.getenv("OPENAI_API_KEY") or "").strip()
     if not use_llm or not api_key:
@@ -1610,9 +1720,26 @@ def score_survivors(
     counts["model"] = model
     counts["scoring_version"] = PROMPT_VERSION
     counts["reasoning_effort"] = llm_config.configured_reasoning_effort()
-    llm_pool = sorted(eligible, key=llm_dispatch_priority, reverse=True)
+    pending = sorted(eligible, key=llm_dispatch_priority, reverse=True)
+    leader_by_content: Dict[str, Dict[str, str]] = {}
+    leader_key_by_job: Dict[str, str] = {}
+    llm_pool: List[Dict[str, str]] = []
+    for job in pending:
+        content_key = _content_reuse_keys(job)[0]
+        leader = leader_by_content.get(content_key)
+        if leader is None:
+            leader_by_content[content_key] = job
+            leader = job
+            llm_pool.append(job)
+        leader_key_by_job[dedup_key(job)] = dedup_key(leader)
     counts["sent"] = len(llm_pool)
     counts["overflow"] = 0
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+    for job in llm_pool:
+        prev = store.get(dedup_key(job)) or {}
+        scored_at = parse_datetime(str(prev.get("score_at") or prev.get("llm_last_attempt_at") or ""))
+        if scored_at and scored_at >= cutoff:
+            counts["rescored_within_24h"] += 1
 
     decisions: Dict[str, Dict[str, Any]] = {}
     llm_ok = False
@@ -1692,9 +1819,11 @@ def score_survivors(
         method = "cache+rule_fallback" if counts["reused"] else "rule_fallback"
         return (method, errors, counts)
 
-    for job in llm_pool:
-        d = decisions.get(dedup_key(job))
+    for job in eligible:
+        leader_key = leader_key_by_job[dedup_key(job)]
+        d = decisions.get(leader_key)
         if d:
+            direct_result = leader_key == dedup_key(job)
             job["match_score"] = d["match_score"]
             family = job.get("role_family") or detect_role_family(job)
             job["role_family"] = family
@@ -1704,9 +1833,9 @@ def score_survivors(
             job["top_match_reasons"] = d["top_match_reasons"]
             job["main_gaps"] = d["main_gaps"]
             job["recommended_action"] = "apply_if_time"
-            job["score_source"] = SCORE_LLM
-            job["screen_method"] = SCORE_LLM
-            job["match_canonical_key"] = job.get("duplicate_of") or job.get("canonical_job_key") or dedup_key(job)
+            job["score_source"] = SCORE_LLM if direct_result else SCORE_CACHED_LLM
+            job["screen_method"] = job["score_source"]
+            job["match_canonical_key"] = leader_key
             job["match_source_pipeline"] = job.get("source_pipeline") or "board"
             job["match_jd_hash"] = job.get("jd_hash", "")
             job["score_model"] = model
@@ -1717,10 +1846,14 @@ def score_survivors(
             job["llm_retryable"] = False
             job["llm_last_error"] = ""
             job["llm_last_attempt_at"] = job["score_at"]
-            counts["llm"] += 1
+            if direct_result:
+                counts["llm"] += 1
+            else:
+                counts["reused"] += 1
+                counts["same_content_reused"] += 1
         else:
             _apply_rule_result(job, SCORE_FALLBACK, "Rule-based (missing from LLM response)")
-            reason = failed_keys.get(dedup_key(job), "missing_from_llm_response")
+            reason = failed_keys.get(leader_key, "missing_from_llm_response")
             _mark_llm_failure(job, reason, attempted=not reason.startswith("deferred_after_"))
             counts["rule"] += 1
             counts["retryable_fallbacks"] += 1
@@ -2061,7 +2194,7 @@ REMOTE_STORE_FIELDS = {
     "key", "job_id", "company", "title", "location", "posted_date", "date_confidence",
     "official_url", "application_url", "source", "source_url", "sponsorship", "filter_status", "referral_name",
     "company_flag", "staffing_firm", "clearance_risk_company", "role_family", "role_relevance",
-    "tier", "recency_bucket", "cache_key", "jd_hash", "match_score", "resume_profile_used",
+    "tier", "recency_bucket", "cache_key", "jd_hash", "match_content_hash", "match_score", "resume_profile_used",
     "seniority_fit", "hard_constraint_status", "top_match_reasons", "main_gaps", "main_gaps_count", "recommended_action",
     "screen_method", "score_source", "match_canonical_key", "match_source_pipeline",
     "match_jd_hash", "coverage_status", "canonical_source", "canonical_job_key", "duplicate_of",
@@ -2142,6 +2275,12 @@ def append_run_history(
         "reasoning_effort": llm.get("reasoning_effort", ""),
         "jobs_scored": int(llm.get("scored", llm.get("llm", 0)) or 0),
         "cache_reused": int(llm.get("reused", 0) or 0),
+        "peer_reused": int(llm.get("peer_reused", 0) or 0),
+        "same_content_reused": int(llm.get("same_content_reused", 0) or 0),
+        "non_material_change_reused": int(llm.get("non_material_change_reused", 0) or 0),
+        "new_or_changed": int(llm.get("new_or_changed", 0) or 0),
+        "new_or_changed_reasons": llm.get("new_or_changed_reasons", {}),
+        "rescored_within_24h": int(llm.get("rescored_within_24h", 0) or 0),
         "fallback_count": int(llm.get("retryable_fallbacks", inferred_fallbacks if llm_failures else 0) or 0),
         "rule_count": int(llm.get("rule", 0) or 0),
         "requests": requests_count,
@@ -2190,7 +2329,7 @@ def save_matching_retry(path: Path, jobs: List[Dict[str, Any]]) -> int:
         "date_confidence", "first_seen", "last_seen", "source", "source_url", "official_url",
         "canonical_job_key", "duplicate_of", "role_family", "role_relevance", "referral_name",
         "staffing_firm", "clearance_risk_company", "llm_retry_count", "llm_last_attempt_at",
-        "llm_last_error", "source_jd_hash",
+        "llm_last_error", "source_jd_hash", "source_match_content_hash",
     )
     entries = []
     for job in jobs:
@@ -2199,6 +2338,9 @@ def save_matching_retry(path: Path, jobs: List[Dict[str, Any]]) -> int:
         item = {field: job.get(field) for field in fields if job.get(field) not in (None, "", False, [], {})}
         item["key"] = dedup_key(job)
         item["source_jd_hash"] = str(job.get("source_jd_hash") or job.get("jd_hash") or jd_hash(job))
+        item["source_match_content_hash"] = str(
+            job.get("source_match_content_hash") or job.get("match_content_hash") or decision_content_hash(job)
+        )
         item["description"] = llm_config.select_jd_context(str(job.get("description") or ""))
         entries.append(item)
     payload = {"updated_at": datetime.now(timezone.utc).isoformat(), "count": len(entries), "entries": entries}
@@ -2259,7 +2401,7 @@ def retry_failed_matching() -> Dict[str, Any]:
         jobs, referrals, load_profiles(), store, use_llm=True
     )
     score_fields = {
-        "cache_key", "jd_hash", "match_score", "role_family", "role_relevance",
+        "cache_key", "jd_hash", "match_content_hash", "match_score", "role_family", "role_relevance",
         "resume_profile_used", "seniority_fit", "hard_constraint_status",
         "top_match_reasons", "main_gaps", "main_gaps_count", "recommended_action",
         "screen_method", "score_source", "match_canonical_key", "match_source_pipeline",
@@ -2319,6 +2461,7 @@ def _stats_lines(stats: Dict[str, Any]) -> List[str]:
     out = stats["output"]
     rec = stats["recency"]
     llm = stats["llm"]
+    reasons = llm.get("new_or_changed_reasons") or {}
     lines = [
         "## Run stats",
         "",
@@ -2334,6 +2477,13 @@ def _stats_lines(stats: Dict[str, Any]) -> List[str]:
         f"(thin local cards {llm.get('thin_source_rule', 0)}, "
         f"recency-gated {llm['recency_skipped']}, overflow {llm.get('overflow', 0)}, "
         f"new/changed {llm['new_or_changed']})",
+        f"- LLM cache causes: new {reasons.get('genuinely_new_job', 0)} / "
+        f"material JD {reasons.get('material_jd_change', 0)} / "
+        f"matching context {reasons.get('matching_context_change', 0)} / "
+        f"prior rule now eligible {reasons.get('prior_rule_result_now_eligible_for_llm', 0)} / "
+        f"non-material reused {llm.get('non_material_change_reused', 0)} / "
+        f"same-content reused {llm.get('same_content_reused', 0)} / "
+        f"rescored <24h {llm.get('rescored_within_24h', 0)}",
         f"- LLM cost: {llm_config.format_usage(llm)}",
         f"- New jobs discovered this run: {out.get('new_jobs', '—')}",
         f"- Output sizing: Tier A {out['tier_a']} / Tier B {out['tier_b']} / "
@@ -2666,7 +2816,7 @@ ENTRY_DEFAULTS: Dict[str, Any] = {
     "discovered_via": list, "filter_status": "kept", "drop_reason": "", "referral_name": "",
     "company_flag": "", "staffing_firm": False, "clearance_risk_company": False,
     "role_family": "", "role_relevance": 0, "tier": "", "recency_bucket": "",
-    "cache_key": "", "jd_hash": "", "match_score": None, "resume_profile_used": "",
+    "cache_key": "", "jd_hash": "", "match_content_hash": "", "match_score": None, "resume_profile_used": "",
     "seniority_fit": "", "hard_constraint_status": "", "top_match_reasons": list,
     "main_gaps": list, "main_gaps_count": 0, "recommended_action": "", "screen_method": "", "score_source": "",
     "score_model": "", "scoring_version": "", "reasoning_effort": "", "candidate_fingerprint": "", "score_at": "",
@@ -2740,6 +2890,7 @@ def build_store_entry(
         # LLM cache
         "cache_key": job.get("cache_key", ""),
         "jd_hash": job.get("jd_hash", ""),
+        "match_content_hash": job.get("match_content_hash", ""),
         "match_score": job.get("match_score", None),
         "resume_profile_used": job.get("resume_profile_used", ""),
         "seniority_fit": job.get("seniority_fit", ""),

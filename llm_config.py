@@ -41,6 +41,10 @@ _RESPONSIBILITY_HEADING_RE = re.compile(
     r"what you(?:'|’)ll do|what you will do|what you(?:'|’)ll be doing|"
     r"what you will work on|the role|about the role|role responsibilities)\s*[:\-]?\s*$"
 )
+_HARD_CONSTRAINT_RE = re.compile(
+    r"(?i)\b(?:visa|sponsor(?:ship)?|work authori[sz]ation|citizen(?:ship)?|"
+    r"security clearance|clearance|export control|itar|u\.?s\.? person|government contract)\b"
+)
 _ANY_HEADING_RE = re.compile(r"(?m)^\s*[A-Z][A-Za-z0-9 &/'’(),+\-]{2,70}\s*[:\-]?\s*$")
 
 
@@ -71,8 +75,8 @@ def select_jd_context(text: str, max_chars: int = JD_CONTEXT_CHARS) -> str:
     value = (text or "").strip()
     if len(value) <= max_chars:
         return value
-    required = _section(value, _REQUIRED_HEADING_RE, 4200)
-    responsibilities = _section(value, _RESPONSIBILITY_HEADING_RE, 2600)
+    required = _section(value, _REQUIRED_HEADING_RE, 3800)
+    responsibilities = _section(value, _RESPONSIBILITY_HEADING_RE, 2300)
     # Some APIs flatten headings into one long line. Preserve the surrounding
     # qualification/responsibility text even when line-based sections vanish.
     if not required:
@@ -82,7 +86,7 @@ def select_jd_context(text: str, max_chars: int = JD_CONTEXT_CHARS) -> str:
             value,
         )
         if hit:
-            required = value[hit.start() : hit.start() + 4200]
+            required = value[hit.start() : hit.start() + 3800]
     if not responsibilities:
         hit = re.search(
             r"(?i)\b(?:responsibilities|job responsibilities|your responsibilities|"
@@ -91,8 +95,16 @@ def select_jd_context(text: str, max_chars: int = JD_CONTEXT_CHARS) -> str:
             value,
         )
         if hit:
-            responsibilities = value[hit.start() : hit.start() + 2600]
-    selected = "\n\n".join(part for part in (responsibilities, required) if part)
+            responsibilities = value[hit.start() : hit.start() + 2300]
+    hard_constraints = []
+    for hit in _HARD_CONSTRAINT_RE.finditer(value):
+        snippet = value[max(0, hit.start() - 160) : hit.end() + 440].strip()
+        if snippet and snippet not in hard_constraints:
+            hard_constraints.append(snippet)
+        if sum(len(part) for part in hard_constraints) >= 1200:
+            break
+    hard = "\n".join(hard_constraints)[:1200]
+    selected = "\n\n".join(part for part in (responsibilities, required, hard) if part)
     remaining = max_chars - len(selected) - (2 if selected else 0)
     intro = value[: max(0, remaining)].strip()
     result = "\n\n".join(part for part in (intro, selected) if part)
