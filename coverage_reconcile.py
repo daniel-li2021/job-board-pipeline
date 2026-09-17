@@ -23,6 +23,7 @@ from urllib.parse import urlsplit
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
 from state_io import decode_json_bytes
 from sources.schema import (
+    adopt_better_posted_date,
     dedup_key,
     is_aggregator_url,
     is_outbound_tracker_url,
@@ -230,9 +231,7 @@ def hydrate_from_original(external: Dict[str, Any], original: Dict[str, Any]) ->
     for field in ("official_url", "description", "title", "location"):
         if original.get(field):
             external[field] = original[field]
-    if original.get("posted_date"):
-        external["posted_date"] = original["posted_date"]
-        external["date_confidence"] = original.get("date_confidence") or "medium"
+    adopt_better_posted_date(external, original)
     if original.get("updated_date"):
         external["updated_date"] = original["updated_date"]
     external["original_resolved"] = bool(external.get("official_url"))

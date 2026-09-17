@@ -117,11 +117,15 @@ def write_scrape_outputs(
     CAREERS_DIR.mkdir(parents=True, exist_ok=True)
     scraped_companies = {(r.get("company") or "") for r in results}
     current_jobs = [j for r in results for j in (r.get("jobs") or []) if isinstance(j, dict)]
+    previous_jobs = load_raw_jobs() if merge_previous else []
+    previous_by_key = {dedup_key(job): job for job in previous_jobs}
+    for job in current_jobs:
+        board.preserve_job_dates(job, previous_by_key.get(dedup_key(job), {}))
     current_keys = {dedup_key(j) for j in current_jobs}
     result_by_company = {(r.get("company") or ""): r for r in results}
     all_jobs: List[Dict[str, str]] = []
     if merge_previous:
-        for job in load_raw_jobs():
+        for job in previous_jobs:
             company = job.get("company") or ""
             result = result_by_company.get(company)
             if company not in scraped_companies:
@@ -489,20 +493,25 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
     review_state = coverage_reconcile.load_review_state()
 
     deduped = board.merge_by_key(raw_jobs)
-    store = board.prune_store(load_careers_store(), now)
     seen_jobs = board.load_seen_jobs_path(SEEN_JOBS_PATH)
+    store = load_careers_store()
     for key, entry in store.items():
-        seen_jobs.setdefault(key, str(entry.get("first_seen") or ""))
+        if seen_jobs.get(key):
+            entry["first_seen"] = seen_jobs[key]
+        elif entry.get("first_seen"):
+            seen_jobs[key] = str(entry["first_seen"])
+    store = board.prune_store(store, now)
     new_keys: set[str] = set()
     for job in deduped:
         key = dedup_key(job)
         prev = store.get(key)
-        if (prev and prev.get("first_seen")) or seen_jobs.get(key):
-            job["first_seen"] = str((prev or {}).get("first_seen") or seen_jobs[key])
-        else:
-            job["first_seen"] = now_iso
+        board.preserve_job_dates(job, prev or {}, first_seen=seen_jobs.get(key))
+        job["first_seen"] = str(job.get("first_seen") or now_iso)
+        is_new = not (prev or seen_jobs.get(key))
+        if is_new:
             new_keys.add(key)
-        seen_jobs.setdefault(key, job["first_seen"])
+        if not seen_jobs.get(key):
+            seen_jobs[key] = job["first_seen"]
         job["last_seen"] = now_iso
         job["recency_bucket"] = recency_bucket(job, now=now)
         job["source_pipeline"] = "official"
@@ -604,7 +613,7 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
     new_store = dict(store)
     for job in deduped:
         key = dedup_key(job)
-        new_store[key] = board.build_store_entry(job, key)
+        new_store[key] = board.build_store_entry(job, key, store.get(key))
     for entry in new_store.values():
         board.ensure_entry_defaults(entry)
     new_store = board.prune_store(new_store, now)

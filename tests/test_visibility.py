@@ -20,7 +20,7 @@ import review_state
 from sources.company_aliases import company_risk_rank, load_alias_file, match_company_alias, match_company_entry, prepare_alias_entries
 from sources.schema import combined_cache_key_from_hash, dedup_key, make_job, normalize_job_url, normalize_location_key
 from sources.schema import classify_location_bucket
-from sources import linkedin_local, local_search
+from sources import linkedin_local, local_search, schema
 from sources.careers.query_terms import ROLE_SEARCH_QUERIES
 from sources.careers.workday import _detail_location
 
@@ -1422,6 +1422,103 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         self.assertEqual(original["official_url"], card["official_url"])
         self.assertEqual(original["description"], card["description"])
 
+    def test_temporal_fields_survive_merge_enrichment_and_store_round_trip(self) -> None:
+        first_seen = "2026-09-01T12:00:00+00:00"
+        key = "id::greenhouse::job-1"
+        prior = make_job(
+            source="greenhouse", company="Example Tech", title="Software Engineer",
+            location="Austin, TX", job_id="job-1", posted_date="2026-08-30",
+            date_confidence="medium",
+        )
+        prior.update(key=key, first_seen=first_seen)
+        current = make_job(
+            source="greenhouse", company="Example Tech", title="Software Engineer",
+            location="Austin, TX", job_id="job-1", posted_date="",
+        )
+        current["first_seen"] = "2026-09-03T12:00:00+00:00"
+        seen = {key: first_seen}
+
+        self.assertEqual([], board_pipeline.finalize_new_jobs(
+            [current], {key: prior}, seen, "2026-09-03T12:00:00+00:00"
+        ))
+        self.assertEqual(first_seen, current["first_seen"])
+        self.assertEqual("2026-08-30", current["posted_date"])
+        merged = board_pipeline._merge_pair(current, {
+            **current, "first_seen": "2026-08-31T12:00:00+00:00",
+        })
+        self.assertEqual(first_seen, merged["first_seen"])
+
+        official = make_job(
+            source="example_official_careers", company="Example Tech",
+            title="Software Engineer", location="Austin, TX", job_id="job-1",
+            posted_date="2026-08-29", date_confidence="high",
+        )
+        coverage_reconcile.hydrate_from_original(current, official)
+        self.assertEqual("2026-08-29", current["posted_date"])
+        lower_quality = make_job(
+            source="linkedin", company="Example Tech", title="Software Engineer",
+            location="Austin, TX", job_id="job-1", posted_date="2026-09-02",
+            date_confidence="low",
+        )
+        coverage_reconcile.hydrate_from_original(current, lower_quality)
+        self.assertEqual("2026-08-29", current["posted_date"])
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "jobs.json"
+            entry = board_pipeline.build_store_entry(current, key, prior)
+            board_pipeline.save_store_path(path, {key: entry}, 7)
+            stored = board_pipeline.load_store_path(path, strict=True)[key]
+        self.assertEqual(first_seen, stored["first_seen"])
+        self.assertEqual("2026-08-29", stored["posted_date"])
+
+        missing_again = make_job(
+            source="greenhouse", company="Example Tech", title="Software Engineer",
+            location="Austin, TX", job_id="job-1", posted_date="",
+        )
+        board_pipeline.finalize_new_jobs(
+            [missing_again], {key: stored}, seen, "2026-09-04T12:00:00+00:00"
+        )
+        self.assertEqual(first_seen, missing_again["first_seen"])
+        self.assertEqual("2026-08-29", missing_again["posted_date"])
+
+    def test_source_snapshots_do_not_erase_temporal_history(self) -> None:
+        first_seen = "2026-09-01T12:00:00+00:00"
+        prior = make_job(
+            source="linkedin", company="Example Tech", title="Software Engineer",
+            location="Austin, TX", job_id="job-1", posted_date="2026-08-30",
+            date_confidence="low",
+        )
+        prior["first_seen"] = first_seen
+        degraded = make_job(
+            source="linkedin", company="Example Tech", title="Software Engineer",
+            location="Austin, TX", job_id="job-1", posted_date="",
+        )
+        result = {
+            "company": "Example Tech", "company_id": "example", "jobs": [prior],
+            "errors": [],
+        }
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            with patch.object(schema, "SOURCES_DIR", root / "sources"):
+                schema.write_source_snapshot("linkedin", [prior])
+                schema.write_source_snapshot("linkedin", [degraded])
+                saved = schema.read_source_snapshot_payload("linkedin")["jobs"][0]
+            self.assertEqual(first_seen, saved["first_seen"])
+            self.assertEqual("2026-08-30", saved["posted_date"])
+
+            raw = root / "raw.json.gz"
+            report = root / "report.md"
+            with patch.object(official_careers, "RAW_PATH", raw), patch.object(
+                official_careers, "REPORT_PATH", report
+            ), patch.object(official_careers, "CAREERS_DIR", root):
+                official_careers.write_scrape_outputs([result], "first", merge_previous=False)
+                result["jobs"] = [degraded]
+                official_careers.write_scrape_outputs([result], "second")
+                saved = official_careers.load_raw_jobs()[0]
+            self.assertEqual(first_seen, saved["first_seen"])
+            self.assertEqual("2026-08-30", saved["posted_date"])
+
     def test_relevant_engineering_titles_survive_positive_family_gate(self) -> None:
         for title in (
             "AI Solutions Engineer",
@@ -1520,10 +1617,14 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
                 first_store["sync-1"]["review_status"] = "applied"
                 first_store["sync-1"]["notes"] = "Keep on repeated runs"
                 daily_pipeline.save_watchlist(first_store)
+                row.update(posting_date="", posted_date="", date_confidence="unknown")
                 daily_pipeline.run()
                 self.assertEqual(2, fetch_detail.call_count)  # thin known rows retry enrichment
                 second_store = daily_pipeline.load_watchlist()
-                for field in ("first_seen", "match_score", "tier", "review_status", "notes"):
+                for field in (
+                    "first_seen", "posted_date", "date_confidence", "match_score",
+                    "tier", "review_status", "notes",
+                ):
                     self.assertEqual(first_store["sync-1"][field], second_store["sync-1"][field])
 
             stats_paths = list((syncareer_dir / "runs").glob("*_stats.json"))

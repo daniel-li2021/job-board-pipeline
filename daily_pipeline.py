@@ -38,7 +38,7 @@ import alert_history
 import board_pipeline as board
 import coverage_reconcile
 from sources.company_aliases import load_alias_file, match_company_alias
-from sources.schema import normalize_sponsorship, to_iso_date
+from sources.schema import normalize_sponsorship, preserve_job_dates, to_iso_date
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -450,7 +450,7 @@ def prune_watchlist(
 
 
 SYNCAREER_REMOTE_FIELDS = {
-    "job_id", "title", "company", "location", "posted_date", "posting_date", "url",
+    "job_id", "title", "company", "location", "posted_date", "posting_date", "date_confidence", "url",
     "sponsorship", "target_company", "target_company_match", "has_grad_req", "matched_keywords",
     "salary", "kept", "first_seen", "coverage_status", "canonical_source", "canonical_job_key",
     "duplicate_of", "official_snapshot_at", "source_snapshot_at", "suppress_alert", "filter_status",
@@ -738,6 +738,8 @@ def normalize_job_row(
         "company": company,
         "location": location,
         "posting_date": posting_date,
+        "posted_date": posting_date,
+        "date_confidence": "medium" if posting_date else "unknown",
         "job_url": job_url,
         "experience": str(detail.get("experience") or summary.get("experience") or ""),
         "degree": str(detail.get("degree") or summary.get("degree") or ""),
@@ -1033,6 +1035,7 @@ def run() -> None:
     company_filters = board.load_company_filters()
 
     now = datetime.now(timezone.utc)
+    first_seen_iso = now.astimezone(timezone.utc).isoformat()
     today = now.strftime("%Y-%m-%d")
     stamp = now.strftime("%Y-%m-%d_%H%M")
 
@@ -1067,6 +1070,9 @@ def run() -> None:
         else:
             detail_api_resolved += 1
         row = normalize_job_row(summary, detail, id_to_keywords.get(jid, []), targets)
+        previous = watchlist.get(jid, {})
+        preserve_job_dates(row, previous)
+        row["first_seen"] = str(row.get("first_seen") or first_seen_iso)
         if len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS:
             row["enrichment_status"] = "unresolved"
             row["enrichment_failure_reason"] = "syncareer_detail_missing_or_thin"
@@ -1101,10 +1107,8 @@ def run() -> None:
     # Shared role/seniority scope and strict official reconciliation happen
     # before LLM calls. Suppressed official duplicates remain in kept_rows and
     # the watchlist, but do not consume scoring calls or appear in alerts.
-    first_seen_iso = now.astimezone(timezone.utc).isoformat()
     scoped_rows: List[Dict[str, str]] = []
     for row in kept_rows:
-        row["first_seen"] = first_seen_iso
         if coverage_reconcile.syncareer_job_in_scope(row):
             scoped_rows.append(row)
         else:
@@ -1288,8 +1292,9 @@ def run() -> None:
                 "title": row.get("title", ""),
                 "company": row.get("company", ""),
                 "location": row.get("location", ""),
-                "posted_date": row.get("posting_date", ""),
-                "posting_date": row.get("posting_date", ""),
+                "posted_date": row.get("posted_date") or row.get("posting_date", ""),
+                "posting_date": row.get("posted_date") or row.get("posting_date", ""),
+                "date_confidence": row.get("date_confidence", "medium"),
                 "url": row.get("job_url", ""),
                 "job_url": row.get("job_url", ""),
                 "sponsorship": row.get("sponsorship", ""),
@@ -1305,7 +1310,7 @@ def run() -> None:
                 "enrichment_status": row.get("enrichment_status", ""),
                 "enrichment_failure_reason": row.get("enrichment_failure_reason", ""),
                 "kept": "yes",
-                "first_seen": str(previous.get("first_seen") or first_seen_iso),
+                "first_seen": row["first_seen"],
                 "coverage_status": row.get("coverage_status", ""),
                 "canonical_source": row.get("canonical_source", ""),
                 "canonical_job_key": row.get("canonical_job_key", ""),
@@ -1336,10 +1341,12 @@ def run() -> None:
                 "title": row.get("title", ""),
                 "company": row.get("company", ""),
                 "location": row.get("location", ""),
-                "posted_date": row.get("posting_date", ""),
+                "posted_date": row.get("posted_date") or row.get("posting_date", ""),
+                "posting_date": row.get("posted_date") or row.get("posting_date", ""),
+                "date_confidence": row.get("date_confidence", "medium"),
                 "url": row.get("job_url", ""),
                 "kept": "no",
-                "first_seen": str(previous.get("first_seen") or first_seen_iso),
+                "first_seen": row["first_seen"],
                 "coverage_status": "out_of_scope",
                 "canonical_source": "syncareer",
                 "canonical_job_key": canonical_key,

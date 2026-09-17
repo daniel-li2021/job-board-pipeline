@@ -197,6 +197,62 @@ def parse_datetime(value: Any) -> Optional[datetime]:
     return parsed.astimezone(timezone.utc)
 
 
+_DATE_CONFIDENCE_RANK = {"unknown": 0, "low": 1, "medium": 2, "high": 3}
+_TRUSTED_DATE_SOURCES = (
+    "official", "greenhouse", "lever", "ashby", "workday", "smartrecruiters",
+    "eightfold", "oracle", "jibe", "radancy", "avature", "syncareer",
+)
+
+
+def _posted_date_value(job: Dict[str, Any]) -> str:
+    value = str(job.get("posted_date") or job.get("posting_date") or "").strip()
+    return value if parse_datetime(value) else ""
+
+
+def _posted_date_quality(job: Dict[str, Any]) -> Tuple[int, int, int]:
+    value = _posted_date_value(job)
+    if not value:
+        return (-1, -1, -1)
+    confidence = str(job.get("date_confidence") or "").lower()
+    confidence_rank = _DATE_CONFIDENCE_RANK.get(confidence, 0) if confidence else 2
+    source = str(job.get("source") or job.get("source_pipeline") or "").lower()
+    source_rank = 2 if any(name in source for name in _TRUSTED_DATE_SOURCES) else (0 if any(
+        name in source for name in ("linkedin", "indeed", "glassdoor")
+    ) else 1)
+    precision_rank = int(bool(re.search(r"(?:T|\s)\d{2}:\d{2}", value[10:])))
+    return (confidence_rank, source_rank, precision_rank)
+
+
+def _copy_posted_date(job: Dict[str, Any], source: Dict[str, Any]) -> None:
+    value = _posted_date_value(source)
+    if not value:
+        return
+    job["posted_date"] = value
+    confidence = str(source.get("date_confidence") or "").lower()
+    job["date_confidence"] = confidence if confidence in _DATE_CONFIDENCE_RANK else "medium"
+
+
+def adopt_better_posted_date(job: Dict[str, Any], candidate: Dict[str, Any]) -> bool:
+    """Adopt a posted date only when the candidate has stronger provenance."""
+    if _posted_date_quality(candidate) <= _posted_date_quality(job):
+        return False
+    _copy_posted_date(job, candidate)
+    return True
+
+
+def preserve_job_dates(
+    job: Dict[str, Any], previous: Dict[str, Any], *, first_seen: Any = ""
+) -> None:
+    """Restore immutable discovery time and prevent persisted date regression."""
+    prior_first_seen = str(first_seen or previous.get("first_seen") or "")
+    if prior_first_seen:
+        job["first_seen"] = prior_first_seen
+    if _posted_date_quality(previous) >= _posted_date_quality(job):
+        _copy_posted_date(job, previous)
+    elif _posted_date_value(job):
+        _copy_posted_date(job, job)
+
+
 # Recency bucket ordering (lower rank = fresher = higher priority).
 # Trusted official/ATS posted_date buckets (lt3h / 3to24h / 1to3d) outrank
 # `newly_discovered` (low-confidence first_seen) so a LinkedIn card found
@@ -633,7 +689,15 @@ def write_source_snapshot(name: str, jobs: List[Dict[str, str]], meta: Optional[
     """Write output/sources/<name>.json. Sorted for stable git diffs."""
     SOURCES_DIR.mkdir(parents=True, exist_ok=True)
     path = SOURCES_DIR / f"{name}.json"
-    ordered = sorted(jobs, key=lambda j: (j.get("company", ""), j.get("title", ""), j.get("job_id", "")))
+    previous = {
+        dedup_key(job): job for job in read_source_snapshot_payload(name).get("jobs", [])
+    }
+    retained = []
+    for job in jobs:
+        record = dict(job)
+        preserve_job_dates(record, previous.get(dedup_key(record), {}))
+        retained.append(record)
+    ordered = sorted(retained, key=lambda j: (j.get("company", ""), j.get("title", ""), j.get("job_id", "")))
     payload = {
         "schema_version": SNAPSHOT_SCHEMA_VERSION,
         "source": name,

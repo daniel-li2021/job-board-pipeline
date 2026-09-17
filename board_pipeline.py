@@ -54,6 +54,7 @@ from sources.careers.incremental import DETAIL_STALE_DAYS
 from sources.company_aliases import company_risk_rank, load_alias_file, match_company_alias, match_company_entry, prepare_alias_entries
 from sources.schema import (
     OUTPUT_DIR,
+    adopt_better_posted_date,
     parse_datetime,
     RECENCY_BUCKET_RANK,
     RECENCY_BUCKETS,
@@ -70,6 +71,7 @@ from sources.schema import (
     normalize_space,
     normalize_sponsorship,
     normalize_title_key,
+    preserve_job_dates,
     read_source_snapshot_payload,
     recency_bucket,
     to_iso_date,
@@ -434,9 +436,7 @@ def _merge_pair(canonical: Dict[str, str], other: Dict[str, str]) -> Dict[str, s
     # came from a terse ATS card. Identity/source preference stays unchanged.
     if len(other.get("description") or "") > len(merged.get("description") or ""):
         merged["description"] = other["description"]
-    if not merged.get("posted_date") and other.get("posted_date"):
-        merged["posted_date"] = other["posted_date"]
-        merged["date_confidence"] = other.get("date_confidence", merged.get("date_confidence"))
+    adopt_better_posted_date(merged, other)
     if not merged.get("aggregator_posted_date") and other.get("aggregator_posted_date"):
         merged["aggregator_posted_date"] = other["aggregator_posted_date"]
     if not merged.get("updated_date") and other.get("updated_date"):
@@ -458,9 +458,8 @@ def _merge_pair(canonical: Dict[str, str], other: Dict[str, str]) -> Dict[str, s
         merged["discovery_queries"] = queries
     if any(source in LOCAL_SOURCES for source in via) and merged.get("official_url"):
         merged["original_resolved"] = True
-    first_seen = [str(value) for value in (merged.get("first_seen"), other.get("first_seen")) if value]
-    if first_seen:
-        merged["first_seen"] = min(first_seen)
+    if not merged.get("first_seen") and other.get("first_seen"):
+        merged["first_seen"] = other["first_seen"]
     return merged
 
 
@@ -659,11 +658,11 @@ def resolve_exposed_originals(
             not needs_jd or len(str(prior.get("description") or "").strip()) >= THIN_JD_CHARS
         ):
             for field in (
-                "official_url", "description", "posted_date", "updated_date", "date_confidence",
-                "direct_original_fetched_at",
+                "official_url", "description", "updated_date", "direct_original_fetched_at",
             ):
                 if prior.get(field):
                     job[field] = prior[field]
+            adopt_better_posted_date(job, prior)
             job["original_resolved"] = bool(job.get("official_url"))
             job["direct_original_fetched"] = True
             job["enrichment_method"] = "direct_cache"
@@ -766,8 +765,11 @@ def resolve_exposed_originals(
         elif str(posting.get("jobLocationType") or "").upper() == "TELECOMMUTE":
             job["location"] = "Remote"
         if posting.get("datePosted"):
-            job["posted_date"] = to_iso_date(posting["datePosted"])
-            job["date_confidence"] = "high"
+            adopt_better_posted_date(job, {
+                "posted_date": to_iso_date(posting["datePosted"]),
+                "date_confidence": "high",
+                "source": "official",
+            })
         if posting.get("dateModified"):
             job["updated_date"] = to_iso_date(posting["dateModified"])
         job["direct_original_fetched"] = True
@@ -1481,9 +1483,7 @@ def _apply_peer_result(
     job["match_jd_hash"] = entry.get("jd_hash", "")
     # Official posted_date is the canonical recency signal. Never copy a
     # low-confidence peer first_seen into another pipeline.
-    if pipeline == "official" and str(entry.get("date_confidence") or "").lower() in {"high", "medium"}:
-        job["posted_date"] = entry.get("posted_date", "")
-        job["date_confidence"] = entry.get("date_confidence", "medium")
+    if pipeline == "official" and adopt_better_posted_date(job, entry):
         job["recency_bucket"] = entry.get("recency_bucket") or recency_bucket(job)
 
 
@@ -1491,9 +1491,7 @@ def _apply_peer_context(job: Dict[str, Any], pipeline: str, entry: Dict[str, Any
     """Adopt authoritative recency/rule context without creating an LLM hit."""
     if pipeline != "official":
         return
-    if str(entry.get("date_confidence") or "").lower() in {"high", "medium"}:
-        job["posted_date"] = entry.get("posted_date", "")
-        job["date_confidence"] = entry.get("date_confidence", "medium")
+    if adopt_better_posted_date(job, entry):
         job["recency_bucket"] = entry.get("recency_bucket") or recency_bucket(job)
     src = str(entry.get("score_source") or "")
     if src in {SCORE_OVERFLOW, SCORE_FALLBACK, SCORE_RECENCY, SCORE_RULE, ""} and entry.get("match_score") is not None:
@@ -2586,10 +2584,10 @@ def finalize_new_jobs(
     new_jobs = []
     for job in jobs:
         key = dedup_key(job)
-        prior_first_seen = str((store.get(key) or {}).get("first_seen") or seen_jobs.get(key) or "")
-        if prior_first_seen:
-            job["first_seen"] = min(str(job.get("first_seen") or prior_first_seen), prior_first_seen)
-        seen_jobs.setdefault(key, str(job.get("first_seen") or now_iso))
+        preserve_job_dates(job, store.get(key) or {}, first_seen=seen_jobs.get(key))
+        job["first_seen"] = str(job.get("first_seen") or now_iso)
+        if not seen_jobs.get(key):
+            seen_jobs[key] = job["first_seen"]
         if job.get("first_seen") == now_iso:
             new_jobs.append(job)
     return new_jobs
@@ -2694,8 +2692,13 @@ def ensure_entry_defaults(entry: Dict[str, Any]) -> Dict[str, Any]:
     return entry
 
 
-def build_store_entry(job: Dict[str, str], key: str) -> Dict[str, Any]:
+def build_store_entry(
+    job: Dict[str, str], key: str, previous: Optional[Dict[str, Any]] = None
+) -> Dict[str, Any]:
     """One full local-cache entry (kept or dropped)."""
+    job = dict(job)
+    if previous:
+        preserve_job_dates(job, previous)
     return {
         # identity + display
         "key": key,
@@ -2855,18 +2858,21 @@ def run() -> None:
 
     # 4) Store lifecycle: assign first_seen/last_seen BEFORE recency so
     #    first_seen can back low-confidence sources.
-    store = prune_store(load_store(), now)
     seen_jobs = load_seen_jobs_path(SEEN_JOBS_PATH)
+    store = load_store()
     for key, entry in store.items():
-        seen_jobs.setdefault(key, str(entry.get("first_seen") or ""))
+        if seen_jobs.get(key):
+            entry["first_seen"] = seen_jobs[key]
+        elif entry.get("first_seen"):
+            seen_jobs[key] = str(entry["first_seen"])
+    store = prune_store(store, now)
     for job in deduped:
         key = dedup_key(job)
         prev = store.get(key)
-        if (prev and prev.get("first_seen")) or seen_jobs.get(key):
-            job["first_seen"] = str((prev or {}).get("first_seen") or seen_jobs[key])
-        else:
-            job["first_seen"] = now_iso
-        seen_jobs.setdefault(key, job["first_seen"])
+        preserve_job_dates(job, prev or {}, first_seen=seen_jobs.get(key))
+        job["first_seen"] = str(job.get("first_seen") or now_iso)
+        if not seen_jobs.get(key):
+            seen_jobs[key] = job["first_seen"]
         job["last_seen"] = now_iso
         job["recency_bucket"] = recency_bucket(job, now=now)
 
@@ -3008,7 +3014,7 @@ def run() -> None:
     new_store: Dict[str, Dict[str, Any]] = dict(store)
     for job in deduped:
         key = dedup_key(job)
-        new_store[key] = build_store_entry(job, key)
+        new_store[key] = build_store_entry(job, key, store.get(key))
     # Normalize carried-forward (legacy) entries to the current schema.
     for entry in new_store.values():
         refresh_retained_entry_policy(entry, company_filters)
