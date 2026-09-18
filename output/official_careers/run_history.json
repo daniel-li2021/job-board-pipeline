@@ -2,6 +2,889 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-09-18T15:36:22.909651+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 37,
+      "cache_reused": 593,
+      "peer_reused": 0,
+      "same_content_reused": 26,
+      "non_material_change_reused": 1,
+      "new_or_changed": 38,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 38
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 2501,
+      "requests": 5,
+      "input_tokens": 54806,
+      "cached_input_tokens": 11138,
+      "output_tokens": 4285,
+      "reasoning_tokens": 1240,
+      "estimated_usd": 0.140984,
+      "latency_seconds": 162.874,
+      "latency_measured": true,
+      "effective_rpm": 1.84,
+      "effective_tpm": 21768.12,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 5,
+      "primary_batches_total": 5,
+      "batches_attempted": 5,
+      "batches_succeeded": 5,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 37,
+      "funnel": {
+        "after_dedup": 17487,
+        "after_company": 17487,
+        "after_hard_filter": 14344,
+        "after_prefilter": 3131,
+        "dropped": 14356
+      },
+      "output": {
+        "tier_a": 15,
+        "tier_b": 54,
+        "shown": 69,
+        "new_jobs": 233,
+        "new_jobs_added": 2
+      },
+      "enrichment": {
+        "discovered": 17542,
+        "needed": 1397,
+        "source_jds_available": 16144,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 1398
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10553194/software-development-engineer-2-prime-video-personalization-and-discovery",
+              "company": "Amazon",
+              "title": "Software Development Engineer 2, Prime Video Personalization and Discovery"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446718852057",
+              "company": "Qualcomm",
+              "title": "#Platform SW Engineer, Automotive"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7684427309076400437",
+              "company": "TikTok",
+              "title": "Software Engineer (Backend) - TikTok Privacy and Security"
+            },
+            {
+              "key": "url::https://jj.wd5.myworkdayjobs.com/JJ/job/Raritan-New-Jersey-United-States-of-America/Platform-Engineer---Service---Repair_R-096952-1",
+              "company": "Johnson & Johnson",
+              "title": "Platform Engineer – Service & Repair"
+            },
+            {
+              "key": "url::https://jj.wd5.myworkdayjobs.com/JJ/job/Raritan-New-Jersey-United-States-of-America/Platform-Engineer---Customer-Service_R-096950-1",
+              "company": "Johnson & Johnson",
+              "title": "Platform Engineer - Customer Service"
+            },
+            {
+              "key": "url::https://jj.wd5.myworkdayjobs.com/JJ/job/Raritan-New-Jersey-United-States-of-America/Platform-Engineer---Marketing_R-096948",
+              "company": "Johnson & Johnson",
+              "title": "Platform Engineer - Marketing"
+            },
+            {
+              "key": "url::https://jj.wd5.myworkdayjobs.com/JJ/job/Raritan-New-Jersey-United-States-of-America/Global-Platform-Engineer---Sales-CPQ--PRO-AMP_R-096941-1",
+              "company": "Johnson & Johnson",
+              "title": "Global Platform Engineer – Sales CPQ PRO AMP"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Sunnyvale-California-United-States-of-America/System-Software-Engineer_1210331-2",
+              "company": "HPE",
+              "title": "System Software Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446718423897",
+              "company": "Qualcomm",
+              "title": "SOC Infrastructure IP System HW Architect"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Ft-Collins-Colorado-United-States-of-America/Storage-Systems-Engineer_1213920-3",
+              "company": "HPE",
+              "title": "Storage Systems Engineer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 16.135,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 15651,
+            "cached_input_tokens": 1851,
+            "output_tokens": 1141,
+            "reasoning_tokens": 288,
+            "estimated_usd": 0.041662
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10553194/software-development-engineer-2-prime-video-personalization-and-discovery",
+              "match_score": 67.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "retrieval backend performance",
+                "AWS production reliability"
+              ],
+              "main_gaps": [
+                "3+ non-internship years",
+                "large-scale streaming systems"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446718852057",
+              "match_score": 48.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python software development",
+                "Linux systems foundations"
+              ],
+              "main_gaps": [
+                "embedded ARM development",
+                "C and JTAG debugging"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7684427309076400437",
+              "match_score": 73.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production FastAPI services",
+                "tested REST API development"
+              ],
+              "main_gaps": [
+                "3+ backend development years"
+              ]
+            },
+            {
+              "key": "url::https://jj.wd5.myworkdayjobs.com/JJ/job/Raritan-New-Jersey-United-States-of-America/Platform-Engineer---Service---Repair_R-096952-1",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Docker Terraform Kubernetes",
+                "RAG service development"
+              ],
+              "main_gaps": [
+                "enterprise architecture leadership",
+                "XENA platform expertise"
+              ]
+            },
+            {
+              "key": "url::https://jj.wd5.myworkdayjobs.com/JJ/job/Raritan-New-Jersey-United-States-of-America/Platform-Engineer---Customer-Service_R-096950-1",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Docker Terraform Kubernetes",
+                "RAG service development"
+              ],
+              "main_gaps": [
+                "enterprise architecture leadership",
+                "XENA platform expertise"
+              ]
+            },
+            {
+              "key": "url::https://jj.wd5.myworkdayjobs.com/JJ/job/Raritan-New-Jersey-United-States-of-America/Platform-Engineer---Marketing_R-096948",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Docker Terraform Kubernetes",
+                "RAG service development"
+              ],
+              "main_gaps": [
+                "enterprise architecture leadership",
+                "XENA platform expertise"
+              ]
+            },
+            {
+              "key": "url::https://jj.wd5.myworkdayjobs.com/JJ/job/Raritan-New-Jersey-United-States-of-America/Global-Platform-Engineer---Sales-CPQ--PRO-AMP_R-096941-1",
+              "match_score": 18.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "API platform development",
+                "RAG evaluation experience"
+              ],
+              "main_gaps": [
+                "Senior Principal leadership",
+                "Microsoft Dynamics architecture"
+              ]
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Sunnyvale-California-United-States-of-America/System-Software-Engineer_1210331-2",
+              "match_score": 65.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "distributed backend systems",
+                "Docker Kubernetes REST APIs"
+              ],
+              "main_gaps": [
+                "4+ development years"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446718423897",
+              "match_score": 15.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "C++ programming",
+                "distributed systems knowledge"
+              ],
+              "main_gaps": [
+                "SoC hardware architecture",
+                "RTL design experience"
+              ]
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Ft-Collins-Colorado-United-States-of-America/Storage-Systems-Engineer_1213920-3",
+              "match_score": 10.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "citizen_or_clearance",
+              "top_match_reasons": [
+                "Linux and Docker",
+                "distributed systems experience"
+              ],
+              "main_gaps": [
+                "United States citizenship",
+                "storage systems expertise"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://jj.wd5.myworkdayjobs.com/JJ/job/Raritan-New-Jersey-United-States-of-America/Technical-Platform-Owner--PRO_R-096946-1",
+              "company": "Johnson & Johnson",
+              "title": "Technical Platform Owner- PRO"
+            },
+            {
+              "key": "url::https://jj.wd5.myworkdayjobs.com/JJ/job/Raritan-New-Jersey-United-States-of-America/Technical-Platform-Owner---CPQ_R-096942-1",
+              "company": "Johnson & Johnson",
+              "title": "Technical Platform Owner - CPQ"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.7,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 4780,
+            "cached_input_tokens": 1851,
+            "output_tokens": 201,
+            "reasoning_tokens": 0,
+            "estimated_usd": 0.00864
+          },
+          "decisions": [
+            {
+              "key": "url::https://jj.wd5.myworkdayjobs.com/JJ/job/Raritan-New-Jersey-United-States-of-America/Technical-Platform-Owner--PRO_R-096946-1",
+              "match_score": 24.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production platform engineering",
+                "regulated data pipelines"
+              ],
+              "main_gaps": [
+                "senior product leadership",
+                "Dynamics 365 platform ownership"
+              ]
+            },
+            {
+              "key": "url::https://jj.wd5.myworkdayjobs.com/JJ/job/Raritan-New-Jersey-United-States-of-America/Technical-Platform-Owner---CPQ_R-096942-1",
+              "match_score": 21.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production backend systems",
+                "platform reliability"
+              ],
+              "main_gaps": [
+                "senior CPQ product leadership",
+                "Dynamics 365 CPQ"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10553200/applied-scientist-speech-ai-content-reasoning-enrichment-and-localization",
+              "company": "Amazon",
+              "title": "Applied Scientist (Speech AI), Content Reasoning, Enrichment and Localization"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10553505/applied-scientist-amazon-robotics-amazon-robotics-vulcan-stow",
+              "company": "Amazon",
+              "title": "Applied Scientist - Amazon Robotics, Amazon Robotics - Vulcan Stow"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/119471955886645958-research-data-scientist-search-ads-google-experience",
+              "company": "Google",
+              "title": "Research Data Scientist, Search Ads, Google Experience"
+            },
+            {
+              "key": "url::https://www.metacareers.com/jobs/1738451364026306",
+              "company": "Meta",
+              "title": "Partner Engineering GenAI - US"
+            },
+            {
+              "key": "url::https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Chicago-Illinois/Data-Scientist--Financial-Services-Consulting_19042464",
+              "company": "TransUnion",
+              "title": "Data Scientist, Financial Services Consulting"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 9.774,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 5,
+            "input_tokens": 6141,
+            "cached_input_tokens": 1988,
+            "output_tokens": 579,
+            "reasoning_tokens": 170,
+            "estimated_usd": 0.015652
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10553200/applied-scientist-speech-ai-content-reasoning-enrichment-and-localization",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production LLM systems",
+                "Python model deployment"
+              ],
+              "main_gaps": [
+                "speech/audio generation",
+                "4+ years experience"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10553505/applied-scientist-amazon-robotics-amazon-robotics-vulcan-stow",
+              "match_score": 24.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python ML engineering",
+                "production learning pipelines"
+              ],
+              "main_gaps": [
+                "robot manipulation RL",
+                "sim-to-real deployment"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/119471955886645958-research-data-scientist-search-ads-google-experience",
+              "match_score": 66.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python SQL data pipelines",
+                "quantitative CS education"
+              ],
+              "main_gaps": [
+                "3 years analytics",
+                "product experimentation analytics"
+              ]
+            },
+            {
+              "key": "url::https://www.metacareers.com/jobs/1738451364026306",
+              "match_score": 55.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production GenAI systems",
+                "technical implementation experience"
+              ],
+              "main_gaps": [
+                "role responsibilities unavailable"
+              ]
+            },
+            {
+              "key": "url::https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Chicago-Illinois/Data-Scientist--Financial-Services-Consulting_19042464",
+              "match_score": 57.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python SQL Spark",
+                "applied mathematics degree"
+              ],
+              "main_gaps": [
+                "financial services experience",
+                "client consulting analytics"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/88974939305976518-software-engineer-iii-cloud-security-identity-and-access-management",
+              "company": "Google",
+              "title": "Software Engineer III, Cloud Security, Identity and Access Management"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/112852895887434438-software-engineer-cloud-observability-analytics-integrations",
+              "company": "Google",
+              "title": "Software Engineer, Cloud Observability Analytics Integrations"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10553307/software-development-engineer-ii-s3-storage-control-plane-durability",
+              "company": "Amazon",
+              "title": "Software Development Engineer II, S3 Storage Control Plane - Durability"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10553306/software-development-engineer-sagemaker-unified-studio",
+              "company": "Amazon",
+              "title": "Software Development Engineer, SageMaker Unified Studio"
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/299014",
+              "company": "Dell",
+              "title": "Agentic Context Engineering Architect & AI Practitioner"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717343573",
+              "company": "Qualcomm",
+              "title": "DevOps Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446719378208",
+              "company": "Qualcomm",
+              "title": "Compiler Software Engineer"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/116667514041049798-software-engineer-iii-search-data-and-ml-platform",
+              "company": "Google",
+              "title": "Software Engineer III, Search Data and ML Platform"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/86584875905098438-software-engineer-core-runtime-bigquery",
+              "company": "Google",
+              "title": "Software Engineer, Core Runtime, BigQuery"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10553195/software-development-engineer-prime-video-ml-infrastructure",
+              "company": "Amazon",
+              "title": "Software Development Engineer, Prime Video ML Infrastructure"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 57.314,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 12008,
+            "cached_input_tokens": 2724,
+            "output_tokens": 1105,
+            "reasoning_tokens": 328,
+            "estimated_usd": 0.032373
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/88974939305976518-software-engineer-iii-cloud-security-identity-and-access-management",
+              "match_score": 65.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend distributed systems",
+                "AWS deployment and SQL"
+              ],
+              "main_gaps": [
+                "two years C++",
+                "cloud IAM systems"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/112852895887434438-software-engineer-cloud-observability-analytics-integrations",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "distributed data pipelines",
+                "production reliability tooling"
+              ],
+              "main_gaps": [
+                "two years large-scale infrastructure"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10553307/software-development-engineer-ii-s3-storage-control-plane-durability",
+              "match_score": 69.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack product delivery",
+                "ML and data workflows"
+              ],
+              "main_gaps": [
+                "three years non-internship experience",
+                "two years architecture experience"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10553306/software-development-engineer-sagemaker-unified-studio",
+              "match_score": 71.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack ML applications",
+                "AWS production deployment"
+              ],
+              "main_gaps": [
+                "three years non-internship experience",
+                "two years architecture experience"
+              ]
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/299014",
+              "match_score": 42.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "agentic RAG systems",
+                "context retrieval evaluation"
+              ],
+              "main_gaps": [
+                "12+ years technical leadership",
+                "enterprise platform architecture"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717343573",
+              "match_score": 27.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "CI/CD and Docker",
+                "Python automation"
+              ],
+              "main_gaps": [
+                "high-performance microprocessor design",
+                "seven years DevOps"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446719378208",
+              "match_score": 46.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming",
+                "ML systems exposure"
+              ],
+              "main_gaps": [
+                "compiler framework experience",
+                "open-source compiler contributions"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/116667514041049798-software-engineer-iii-search-data-and-ml-platform",
+              "match_score": 87.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production LLM deployment",
+                "retrieval and evaluation"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/86584875905098438-software-engineer-core-runtime-bigquery",
+              "match_score": 63.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark data processing",
+                "distributed systems performance"
+              ],
+              "main_gaps": [
+                "database internals",
+                "production C++ experience"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10553195/software-development-engineer-prime-video-ml-infrastructure",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production ML platforms",
+                "distributed retrieval systems"
+              ],
+              "main_gaps": [
+                "three years non-internship experience",
+                "ML training infrastructure"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 5,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10553155/software-development-engineer-devices-services-trust-cx-innovations",
+              "company": "Amazon",
+              "title": "Software Development Engineer, Devices & Services Trust CX Innovations"
+            },
+            {
+              "key": "url::https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Architect--Data-Platform---AgentExchange_JR342027",
+              "company": "Salesforce",
+              "title": "Architect, Data Platform — AgentExchange"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/doordashusa/jobs/8212984",
+              "company": "DoorDash",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210751624",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer III - Java / Transformative AI/LLM"
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/AI-Engineer-5--AI-Foundations--LLM-Customization--Finetuning--Reinforcement-Learning-_R1001032-1",
+              "company": "Capital One",
+              "title": "AI Engineer 5 (AI Foundations: LLM Customization, Finetuning, Reinforcement Learning)"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717134102",
+              "company": "Qualcomm",
+              "title": "#Embedded Software Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717356390",
+              "company": "Qualcomm",
+              "title": "SOC Platform Architect"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/83385434507223750-ai-outcome-customer-engineer-forward-deployed-engineering",
+              "company": "Google",
+              "title": "AI Outcome Customer Engineer, Forward Deployed Engineering"
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556999303",
+              "company": "Microsoft",
+              "title": "Partner Solution Architect, AI Business Solutions"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720226566",
+              "company": "Qualcomm",
+              "title": "Wireless Subsystem Test and Software Tools Engineer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 75.951,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 16226,
+            "cached_input_tokens": 2724,
+            "output_tokens": 1259,
+            "reasoning_tokens": 454,
+            "estimated_usd": 0.042657
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10553155/software-development-engineer-devices-services-trust-cx-innovations",
+              "match_score": 67.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production AI evaluation",
+                "distributed backend systems"
+              ],
+              "main_gaps": [
+                "3+ years professional SDE",
+                "privacy-preserving AI"
+              ]
+            },
+            {
+              "key": "url::https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Architect--Data-Platform---AgentExchange_JR342027",
+              "match_score": 25.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "RAG and MCP systems",
+                "Databricks pipelines"
+              ],
+              "main_gaps": [
+                "12+ years data platforms",
+                "enterprise architecture leadership"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/doordashusa/jobs/8212984",
+              "match_score": 38.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React TypeScript full stack",
+                "Docker Kubernetes"
+              ],
+              "main_gaps": [
+                "5+ years full-stack",
+                "3D computer graphics"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210751624",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS full-stack delivery",
+                "LLM evaluation systems"
+              ],
+              "main_gaps": [
+                "3+ years applied experience",
+                "Java Spring Boot depth"
+              ]
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/AI-Engineer-5--AI-Foundations--LLM-Customization--Finetuning--Reinforcement-Learning-_R1001032-1",
+              "match_score": 36.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM fine-tuning",
+                "production RAG systems"
+              ],
+              "main_gaps": [
+                "4-6 years AI engineering",
+                "senior technical leadership"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717134102",
+              "match_score": 34.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming",
+                "Linux systems skills"
+              ],
+              "main_gaps": [
+                "kernel driver development",
+                "embedded systems debugging"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717356390",
+              "match_score": 8.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ Python automation"
+              ],
+              "main_gaps": [
+                "15+ years SoC architecture",
+                "silicon microarchitecture"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/83385434507223750-ai-outcome-customer-engineer-forward-deployed-engineering",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LangGraph MCP implementations",
+                "enterprise RAG deployment"
+              ],
+              "main_gaps": [
+                "5 years customer-facing cloud",
+                "enterprise solution delivery"
+              ]
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556999303",
+              "match_score": 60.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "agentic AI systems",
+                "cloud solution delivery"
+              ],
+              "main_gaps": [
+                "4+ years consulting",
+                "Microsoft AI platform"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720226566",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python C++ development",
+                "test automation CI/CD"
+              ],
+              "main_gaps": [
+                "wireless systems testing"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-09-18T00:35:35.121768+00:00",
       "mode": "pipeline",
       "health": "degraded",
