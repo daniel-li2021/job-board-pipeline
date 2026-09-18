@@ -18,6 +18,54 @@ from sources.schema import SourceUnavailable, make_job
 
 
 class LlmMatchingTests(unittest.TestCase):
+    def test_seen_jobs_only_reenter_llm_when_retryable(self) -> None:
+        def job(job_id: str) -> dict:
+            row = make_job(
+                source="test", company="Example", title="Software Engineer",
+                location="Remote, US", job_id=job_id,
+                description=f"Build Python service {job_id} and APIs. " * 20,
+                source_url=f"https://example.test/{job_id}",
+            )
+            row.update(
+                first_seen=datetime.now(timezone.utc).isoformat(),
+                recency_bucket="3to24h", role_family="swe", role_relevance=2,
+            )
+            return row
+
+        def match(batch, _profiles, _key, model, _route):
+            return {
+                board.dedup_key(row): {
+                    "match_score": 80, "seniority_fit": "good",
+                    "hard_constraint_status": "ok",
+                    "top_match_reasons": ["Python services"], "main_gaps": [],
+                }
+                for row in batch
+            }, {"model": model, "api_requests": 1, "jobs_scored": len(batch)}
+
+        profiles = {"fingerprint": "prompt", "candidate_fingerprint": "candidate"}
+        historical = job("historical")
+        retryable = job("retryable")
+        retryable["llm_retryable"] = True
+        new = job("new")
+        seen = {board.dedup_key(historical), board.dedup_key(retryable)}
+
+        with patch.dict("os.environ", {"OPENAI_API_KEY": "test"}), patch.object(
+            board, "llm_match_batch", side_effect=match
+        ) as mocked:
+            _method, _errors, counts = board.score_survivors(
+                [historical, retryable, new], {}, profiles, {}, True,
+                seen_before_run=seen,
+            )
+
+        self.assertEqual(1, mocked.call_count)
+        self.assertEqual(
+            {board.dedup_key(retryable), board.dedup_key(new)},
+            {board.dedup_key(row) for row in mocked.call_args.args[0]},
+        )
+        self.assertEqual(1, counts["historical_seen_skipped"])
+        self.assertEqual(board.SCORE_RULE, historical["score_source"])
+        self.assertEqual(2, counts["llm"])
+
     def test_retryable_ten_job_batch_splits_into_fives_before_fallback(self) -> None:
         now = datetime.now(timezone.utc).isoformat()
         jobs = [

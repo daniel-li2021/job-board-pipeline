@@ -508,6 +508,7 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
             entry["first_seen"] = seen_jobs[key]
         elif entry.get("first_seen"):
             seen_jobs[key] = str(entry["first_seen"])
+    seen_before_run = set(seen_jobs)
     store = board.prune_store(store, now)
     new_keys: set[str] = set()
     for job in deduped:
@@ -609,6 +610,7 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
         store,
         use_llm=not args.no_llm,
         peer_stores=peer_stores,
+        seen_before_run=seen_before_run,
     )
     for job in candidates:
         job["tier"] = board.assign_tier(job, referrals.get(dedup_key(job), False))

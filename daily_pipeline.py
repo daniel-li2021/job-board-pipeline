@@ -835,6 +835,7 @@ def assign_shared_scores(
     rows: List[Dict[str, Any]],
     watchlist: Dict[str, Dict[str, Any]],
     use_llm: bool,
+    seen_job_ids: Optional[set[str]] = None,
 ) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, int], List[str], str]:
     """Use the shared 0-100 matcher and deterministic A/B/C tier policy."""
     if not rows:
@@ -844,6 +845,11 @@ def assign_shared_scores(
     referrals: Dict[str, bool] = {}
     for job in jobs:
         referrals[board.dedup_key(job)] = bool(job.get("referral_name"))
+    seen_before_run = {
+        board.dedup_key(job)
+        for row, job in zip(rows, jobs)
+        if seen_job_ids is not None and str(row.get("job_id") or "") in seen_job_ids
+    }
     method, errors, counts = board.score_survivors(
         jobs,
         referrals,
@@ -861,6 +867,7 @@ def assign_shared_scores(
             )),
         ],
         prefer_peer=True,
+        seen_before_run=seen_before_run if seen_job_ids is not None else None,
     )
     decisions: Dict[str, Dict[str, Any]] = {}
     for job in jobs:
@@ -1159,7 +1166,7 @@ def run() -> None:
 
     score_input = scoring_rows + historical_to_score
     decisions, score_counts, llm_errors, shared_screen_method = assign_shared_scores(
-        score_input, watchlist, use_llm=use_llm
+        score_input, watchlist, use_llm=use_llm, seen_job_ids=known_ids
     )
     enriched_rows: List[Dict[str, Any]] = []
     for row in scoring_rows:

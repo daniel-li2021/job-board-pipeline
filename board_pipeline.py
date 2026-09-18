@@ -1578,6 +1578,7 @@ def score_survivors(
     use_llm: bool,
     peer_stores: Optional[List[Tuple[str, Dict[str, Dict[str, Any]]]]] = None,
     prefer_peer: bool = False,
+    seen_before_run: Optional[set[str]] = None,
 ) -> Tuple[str, List[str], Dict[str, Any]]:
     """Attach match_score + LLM fields to each candidate in place.
 
@@ -1589,6 +1590,7 @@ def score_survivors(
         "reused": 0, "llm": 0, "new_or_changed": 0, "rule": 0, "sent": 0,
         "api_requests": 0, "recency_skipped": 0, "overflow": 0,
         "peer_reused": 0, "thin_source_rule": 0, "retryable_fallbacks": 0,
+        "historical_seen_skipped": 0,
         "non_material_change_reused": 0, "same_content_reused": 0,
         "rescored_within_24h": 0, "new_or_changed_reasons": {},
         "batch_size": LLM_BATCH_SIZE, "primary_batches_total": 0,
@@ -1658,6 +1660,10 @@ def score_survivors(
                 counts["same_content_reused"] += 1
                 if content_result[0]:
                     counts["peer_reused"] += 1
+            elif seen_before_run is not None and key in seen_before_run and not job.get("llm_retryable"):
+                _apply_rule_result(job, SCORE_RULE, "Rule-based (historical seen job; LLM skipped)")
+                counts["rule"] += 1
+                counts["historical_seen_skipped"] += 1
             else:
                 if not prev:
                     reason = "genuinely_new_job"
@@ -3078,6 +3084,7 @@ def run() -> None:
             entry["first_seen"] = seen_jobs[key]
         elif entry.get("first_seen"):
             seen_jobs[key] = str(entry["first_seen"])
+    seen_before_run = set(seen_jobs)
     store = prune_store(store, now)
     for job in deduped:
         key = dedup_key(job)
@@ -3208,6 +3215,7 @@ def run() -> None:
             ("syncareer", syncareer_peer_store),
         ],
         prefer_peer=True,
+        seen_before_run=seen_before_run,
     )
     score_counts["persisted_retry_jobs"] = len(retry_jobs)
     score_counts["retry_only_carried"] = len(retry_only)
