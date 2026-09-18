@@ -2,6 +2,516 @@
   "runs": [
     {
       "pipeline": "syncareer",
+      "run_at": "2026-09-18T15:13:27.859534+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 19,
+      "cache_reused": 62,
+      "peer_reused": 14,
+      "same_content_reused": 0,
+      "non_material_change_reused": 0,
+      "new_or_changed": 19,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 19
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 0,
+      "requests": 4,
+      "input_tokens": 28381,
+      "cached_input_tokens": 1851,
+      "output_tokens": 3810,
+      "reasoning_tokens": 1187,
+      "estimated_usd": 0.09915,
+      "latency_seconds": 67.92,
+      "latency_measured": true,
+      "effective_rpm": 3.53,
+      "effective_tpm": 28437.28,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 4,
+      "primary_batches_total": 4,
+      "batches_attempted": 4,
+      "batches_succeeded": 4,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 19,
+      "funnel": {
+        "scoring_candidates": 67
+      },
+      "output": {
+        "tier_a": 7,
+        "tier_b": 10,
+        "tier_c": 50,
+        "shown": 17,
+        "new_jobs": 88,
+        "new_jobs_added": 5
+      },
+      "enrichment": {
+        "needed": 14,
+        "detail_api_resolved": 166,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 14
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://rbc.wd3.myworkdayjobs.com/en-US/RBCGLOBAL1/job/Minneapolis-Minnesota-United-States-of-America/Software-Developer_R-0000187920-1?Country=a30a87ed25634629aa6c3958aa2b91ea&Country=bc33aa3152ec42d4995f4791a106ed09&Country=29247e57dbaf46fb855b224e03170bc7&Country=d4afdeb461d446e4babd204bd102dba8&Country=d903bb3fedad45039383f6de334ad4db&Country=80938777cac5440fab50d729f9634969",
+              "company": "RBC",
+              "title": "Software Developer"
+            },
+            {
+              "key": "url::https://jobs.citi.com/job/irving/backend-java-developer-officer/287/100178752608",
+              "company": "Citi",
+              "title": "Backend Java Developer, Officer"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210791406",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer [Multiple Positions Available]"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210775025",
+              "company": "JPMorgan Chase",
+              "title": "Backend Software Engineer II - JAVA"
+            },
+            {
+              "key": "url::https://philips.wd3.myworkdayjobs.com/en-US/jobs-and-careers/job/Cambridge-US-Massachusetts-United-States/Software-Development-Engineer---C--NET--Cambridge--MA-_584187?locationHierarchy1=6e1b2a934716103c2add7199453f00aa&locationHierarchy1=6e1b2a934716103c2adf29e9ce47012b&locationHierarchy1=6e1b2a934716103c2addd4024f3700e2&locationHierarchy1=6e1b2a934716103c2add7be8a4ef00b0&locationHierarchy1=6e1b2a934716103c2addcd3ddf4f00de&locationHierarchy1=6e1b2a934716103c2addc9a585ef00dc&locationHierarchy1=6e1b2a934716103c2add63e60d9700a2&locationHierarchy1=6e1b2a934716103c2add443cd4170090&locationHierarchy1=6e1b2a934716103c2ade3cb0060f011e",
+              "company": "Philips",
+              "title": "Software Development Engineer - C#/.NET (Cambridge, MA)"
+            },
+            {
+              "key": "url::https://wd1.myworkdaysite.com/en-US/recruiting/onto/ONTO_Careers/job/Budd-Lake-NJ/Software-Engineer-3_R-6343",
+              "company": "Onto Innovation",
+              "title": "Software Engineer 3"
+            },
+            {
+              "key": "url::https://careers.ibm.com/en_US/careers/JobDetail?jobId=132890",
+              "company": "IBM",
+              "title": "Site Reliability Engineer ELH - OneIT - Poughkeepsie, NY"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/95405192542855878-analyst-technical-infrastructure-assets",
+              "company": "Google",
+              "title": "Analyst, Technical Infrastructure Assets"
+            },
+            {
+              "key": "url::https://jobs.paccar.com/job/Mount-Vernon-Vehicle-Software-and-Diagnostics-Tool-Test-Engineer-WA-98273-9671/1438191633",
+              "company": "Paccar",
+              "title": "Vehicle Software and Diagnostics Tool Test Engineer"
+            },
+            {
+              "key": "url::https://jobs.scotiabank.com/job/New-York-City-Analyst%2C-Infrastructure-&-Project-Finance-NY-10281/605362717",
+              "company": "Scotiabank",
+              "title": "Analyst, Infrastructure & Project Finance"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 35.951,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 12703,
+            "cached_input_tokens": 0,
+            "output_tokens": 2069,
+            "reasoning_tokens": 888,
+            "estimated_usd": 0.050234
+          },
+          "decisions": [
+            {
+              "key": "url::https://rbc.wd3.myworkdayjobs.com/en-US/RBCGLOBAL1/job/Minneapolis-Minnesota-United-States-of-America/Software-Developer_R-0000187920-1?Country=a30a87ed25634629aa6c3958aa2b91ea&Country=bc33aa3152ec42d4995f4791a106ed09&Country=29247e57dbaf46fb855b224e03170bc7&Country=d4afdeb461d446e4babd204bd102dba8&Country=d903bb3fedad45039383f6de334ad4db&Country=80938777cac5440fab50d729f9634969",
+              "match_score": 63.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack web applications",
+                "APIs CI/CD testing"
+              ],
+              "main_gaps": [
+                "NET Core",
+                "Angular"
+              ]
+            },
+            {
+              "key": "url::https://jobs.citi.com/job/irving/backend-java-developer-officer/287/100178752608",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java Python backend",
+                "microservices container deployments"
+              ],
+              "main_gaps": [
+                "2-5 years experience",
+                "event-driven messaging"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210791406",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS ECS deployments",
+                "React API development"
+              ],
+              "main_gaps": [
+                "three years required experience",
+                "mainframe z/OS integrations"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210775025",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java backend development",
+                "REST API experience"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://philips.wd3.myworkdayjobs.com/en-US/jobs-and-careers/job/Cambridge-US-Massachusetts-United-States/Software-Development-Engineer---C--NET--Cambridge--MA-_584187?locationHierarchy1=6e1b2a934716103c2add7199453f00aa&locationHierarchy1=6e1b2a934716103c2adf29e9ce47012b&locationHierarchy1=6e1b2a934716103c2addd4024f3700e2&locationHierarchy1=6e1b2a934716103c2add7be8a4ef00b0&locationHierarchy1=6e1b2a934716103c2addcd3ddf4f00de&locationHierarchy1=6e1b2a934716103c2addc9a585ef00dc&locationHierarchy1=6e1b2a934716103c2add63e60d9700a2&locationHierarchy1=6e1b2a934716103c2add443cd4170090&locationHierarchy1=6e1b2a934716103c2ade3cb0060f011e",
+              "match_score": 42.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React full-stack development",
+                "testing and CI/CD"
+              ],
+              "main_gaps": [
+                "C#/.NET experience",
+                "four years experience"
+              ]
+            },
+            {
+              "key": "url::https://wd1.myworkdaysite.com/en-US/recruiting/onto/ONTO_Careers/job/Budd-Lake-NJ/Software-Engineer-3_R-6343",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "object-oriented programming",
+                "testing and integration"
+              ],
+              "main_gaps": [
+                "C# .NET WPF",
+                "hardware communication interfaces"
+              ]
+            },
+            {
+              "key": "url::https://careers.ibm.com/en_US/careers/JobDetail?jobId=132890",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "entry-level infrastructure role",
+                "Python C++ scripting"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/95405192542855878-analyst-technical-infrastructure-assets",
+              "match_score": 5.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "SQL Python familiarity"
+              ],
+              "main_gaps": [
+                "accounting finance degree",
+                "GAAP accounting experience"
+              ]
+            },
+            {
+              "key": "url::https://jobs.paccar.com/job/Mount-Vernon-Vehicle-Software-and-Diagnostics-Tool-Test-Engineer-WA-98273-9671/1438191633",
+              "match_score": 24.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "automated testing",
+                "technical troubleshooting"
+              ],
+              "main_gaps": [
+                "CAN J1939 protocols",
+                "electrical systems testing"
+              ]
+            },
+            {
+              "key": "url::https://jobs.scotiabank.com/job/New-York-City-Analyst%2C-Infrastructure-&-Project-Finance-NY-10281/605362717",
+              "match_score": 8.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "applied mathematics degree"
+              ],
+              "main_gaps": [
+                "investment banking experience",
+                "financial modeling accounting"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://jobsearch.alstom.com/job/Pittsburgh-DevOps-Engineer-PA-15122/1438106733",
+              "company": "Alstom",
+              "title": "DevOps Engineer"
+            },
+            {
+              "key": "url::https://abbott.wd5.myworkdayjobs.com/en-US/abbottcareers/job/United-States---California---Sylmar/Cloud-and-DevOps-Engineer-II---Medical-Devices_31162032-1?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=55273a1b49934d97ae15342ef51f6b95&Location_Country=a4e08b475d6a4176853c9d1cb9854e02&Location_Country=d4afdeb461d446e4babd204bd102dba8&jobFamilyGroup=77166004ab82108dbc36d45444ea5319&jobFamilyGroup=77166004ab82108dbc369f0685c75300&jobFamilyGroup=77166004ab82108dbc36ddc1741b531d&jobFamilyGroup=77166004ab82108dbc36c1aa703d530e&jobFamilyGroup=77166004ab82108dbc368b52e1f452f7&jobFamilyGroup=77166004ab82108dbc36c663b1735313&jobFamilyGroup=77166004ab82108dbc36a3f4c1f35302&jobFamilyGroup=77166004ab82108dbc36d8a13149531b&jobFamilyGroup=77166004ab82108dbc36ae7004d75306&jobFamilyGroup=77166004ab82108dbc36b387bcb25308&jobFamilyGroup=77166004ab82108dbc36bd400e63530c&jobFamilyGroup=77166004ab82108dbc36b8277206530a&jobFamilyGroup=77166004ab82108dbc36cf373cfb5317&jobFamilyGroup=77166004ab82108dbc3691dba9f452f9&jobFamilyGroup=77166004ab82108dbc36a9373a205304&jobFamilyGroup=77166004ab82108dbc3697ef47b552fb",
+              "company": "Abbott",
+              "title": "Cloud and DevOps Engineer II - Medical Devices"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 9.809,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 4204,
+            "cached_input_tokens": 1851,
+            "output_tokens": 704,
+            "reasoning_tokens": 0,
+            "estimated_usd": 0.013524
+          },
+          "decisions": [
+            {
+              "key": "url::https://jobsearch.alstom.com/job/Pittsburgh-DevOps-Engineer-PA-15122/1438106733",
+              "match_score": 67.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "CI/CD and AWS deployment",
+                "Docker Kubernetes Terraform"
+              ],
+              "main_gaps": [
+                "4 years DevOps experience",
+                "Jenkins Ansible expertise"
+              ]
+            },
+            {
+              "key": "url::https://abbott.wd5.myworkdayjobs.com/en-US/abbottcareers/job/United-States---California---Sylmar/Cloud-and-DevOps-Engineer-II---Medical-Devices_31162032-1?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=55273a1b49934d97ae15342ef51f6b95&Location_Country=a4e08b475d6a4176853c9d1cb9854e02&Location_Country=d4afdeb461d446e4babd204bd102dba8&jobFamilyGroup=77166004ab82108dbc36d45444ea5319&jobFamilyGroup=77166004ab82108dbc369f0685c75300&jobFamilyGroup=77166004ab82108dbc36ddc1741b531d&jobFamilyGroup=77166004ab82108dbc36c1aa703d530e&jobFamilyGroup=77166004ab82108dbc368b52e1f452f7&jobFamilyGroup=77166004ab82108dbc36c663b1735313&jobFamilyGroup=77166004ab82108dbc36a3f4c1f35302&jobFamilyGroup=77166004ab82108dbc36d8a13149531b&jobFamilyGroup=77166004ab82108dbc36ae7004d75306&jobFamilyGroup=77166004ab82108dbc36b387bcb25308&jobFamilyGroup=77166004ab82108dbc36bd400e63530c&jobFamilyGroup=77166004ab82108dbc36b8277206530a&jobFamilyGroup=77166004ab82108dbc36cf373cfb5317&jobFamilyGroup=77166004ab82108dbc3691dba9f452f9&jobFamilyGroup=77166004ab82108dbc36a9373a205304&jobFamilyGroup=77166004ab82108dbc3697ef47b552fb",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Terraform Docker CI/CD",
+                "Python Bash cloud automation"
+              ],
+              "main_gaps": [
+                "Azure infrastructure experience",
+                "Azure DevOps pipelines"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7668675484492597557",
+              "company": "TikTok",
+              "title": "Machine Learning Engineer Graduate (Monetization Technology - Ads Core Global) - 2027 Start (PhD)"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 2.037,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3011,
+            "cached_input_tokens": 0,
+            "output_tokens": 78,
+            "reasoning_tokens": 0,
+            "estimated_usd": 0.006958
+          },
+          "decisions": [
+            {
+              "key": "url::https://lifeattiktok.com/search/7668675484492597557",
+              "match_score": 45.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python ML systems",
+                "LLM fine-tuning"
+              ],
+              "main_gaps": [
+                "PhD requirement",
+                "ads ranking expertise"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://smithnephew.wd5.myworkdayjobs.com/en-US/External/job/US---Pittsburgh-PA/Intern-Robotics-Software-Engineering_R92482?Country=bc33aa3152ec42d4995f4791a106ed09&Country=29247e57dbaf46fb855b224e03170bc7&Country=a30a87ed25634629aa6c3958aa2b91ea&Country=d903bb3fedad45039383f6de334ad4db&Country=6cb77610a8a543aea2d6bc10457e35d4&Country=80938777cac5440fab50d729f9634969&Country=55273a1b49934d97ae15342ef51f6b95",
+              "company": "Smith+Nephew",
+              "title": "Intern Robotics Software Engineering"
+            },
+            {
+              "key": "url::https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/New-York-New-York/Software-Engineer---Compliance-Technology_R_1511685",
+              "company": "TD Bank",
+              "title": "Software Engineer – Compliance Technology"
+            },
+            {
+              "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26013774?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
+              "company": "American Express",
+              "title": "Agentic AI Engineer - Global Infrastructure"
+            },
+            {
+              "key": "url::https://careers.synopsys.com/job/pennsylvania/sfdc-devops-engineer/44408/100768196048",
+              "company": "Synopsys",
+              "title": "SFDC DevOps Engineer"
+            },
+            {
+              "key": "url::https://epitec.com/jobs-at-epitec-careerportaldomainroot/software-tester-3-106960",
+              "company": "Epitec",
+              "title": "Software Tester 3"
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153153BR",
+              "company": "Infosys",
+              "title": "DevOps & AI Platform Consultant"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 20.123,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 6,
+            "input_tokens": 8463,
+            "cached_input_tokens": 0,
+            "output_tokens": 959,
+            "reasoning_tokens": 299,
+            "estimated_usd": 0.028434
+          },
+          "decisions": [
+            {
+              "key": "url::https://smithnephew.wd5.myworkdayjobs.com/en-US/External/job/US---Pittsburgh-PA/Intern-Robotics-Software-Engineering_R92482?Country=bc33aa3152ec42d4995f4791a106ed09&Country=29247e57dbaf46fb855b224e03170bc7&Country=a30a87ed25634629aa6c3958aa2b91ea&Country=d903bb3fedad45039383f6de334ad4db&Country=6cb77610a8a543aea2d6bc10457e35d4&Country=80938777cac5440fab50d729f9634969&Country=55273a1b49934d97ae15342ef51f6b95",
+              "match_score": 74.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ and object-oriented programming",
+                "full SDLC testing experience"
+              ],
+              "main_gaps": [
+                "surgical robotics domain"
+              ]
+            },
+            {
+              "key": "url::https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/New-York-New-York/Software-Engineer---Compliance-Technology_R_1511685",
+              "match_score": 57.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java REST and databases",
+                "distributed backend systems"
+              ],
+              "main_gaps": [
+                "3–5 years experience",
+                "financial compliance technology"
+              ]
+            },
+            {
+              "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26013774?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production LLM and RAG",
+                "AI pipelines and evaluation"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://careers.synopsys.com/job/pennsylvania/sfdc-devops-engineer/44408/100768196048",
+              "match_score": 25.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "GitHub Actions CI/CD",
+                "Docker deployment automation"
+              ],
+              "main_gaps": [
+                "Salesforce platform development",
+                "Copado release management"
+              ]
+            },
+            {
+              "key": "url::https://epitec.com/jobs-at-epitec-careerportaldomainroot/software-tester-3-106960",
+              "match_score": 75.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM evaluation frameworks",
+                "automated regression testing"
+              ],
+              "main_gaps": [
+                "formal QA defect management"
+              ]
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153153BR",
+              "match_score": 64.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS DevOps infrastructure",
+                "Terraform Kubernetes ECS"
+              ],
+              "main_gaps": [
+                "technical project leadership",
+                "client stakeholder management"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
       "run_at": "2026-09-18T00:13:37.820558+00:00",
       "mode": "pipeline",
       "health": "success",
