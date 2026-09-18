@@ -9,12 +9,13 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import local_sources
 import board_pipeline
-from sources import jobspy_local, schema
+from sources import jobspy_local, linkedin_local, schema
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -287,6 +288,232 @@ class LocalSourceTests(unittest.TestCase):
             self.assertEqual("0 first-pass survivors", health["reason"])
             self.assertEqual("old", health["last_success_collector"]["commit"])
             self.assertEqual(1, health["last_good_count"])
+
+    @staticmethod
+    def _linkedin_card(job_id: str, title: str = "Software Engineer", location: str = "Austin, TX") -> dict:
+        card = schema.make_job(
+            source="linkedin", company="Example Tech", title=title,
+            location=location, job_id=job_id,
+            description="Build Python services for a growing platform team.",
+        )
+        card["discovery_queries"] = {"linkedin": ["software engineer"]}
+        return card
+
+    def _partial_scrape(self, rows: list[dict], *, queries_completed: int = 1) -> dict:
+        return {
+            "status": "blocked", "reason": "blocked with HTTP 429", "http_status": 429,
+            "jobs": rows, "queries_completed": queries_completed, "queries_total": 22,
+            "query_stats": [{"query": "software engineer", "stop_reason": "blocked_http_429"}],
+        }
+
+    def test_rate_limited_linkedin_merges_partial_rows_over_last_good(self) -> None:
+        collector = {"commit": "new", "dirty": False}
+        fresh, carried = self._linkedin_card("li-1"), self._linkedin_card("li-2")
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            schema, "SOURCES_DIR", Path(tmpdir)
+        ), patch.dict(
+            local_sources.SOURCES,
+            {"linkedin": lambda: self._partial_scrape([fresh, self._linkedin_card("li-3")])},
+        ):
+            schema.write_source_snapshot(
+                "linkedin", [fresh, carried],
+                {"scraped_at": "2026-09-17T15:00:00+00:00", "collector": {"commit": "old"}},
+            )
+            result = local_sources.run_one("linkedin", collector)
+            payload = schema.read_source_snapshot_payload("linkedin")
+
+        self.assertEqual("partial", result["status"])
+        self.assertFalse(result["source_healthy"])
+        self.assertTrue(result["data_usable"])
+        self.assertEqual(2, result["fresh_kept"])
+        self.assertEqual(1, result["carried_count"])
+        self.assertEqual(3, result["merged_count"])
+        by_id = {job["job_id"]: job for job in payload["jobs"]}
+        self.assertEqual({"li-1", "li-2", "li-3"}, set(by_id))
+        self.assertTrue(by_id["li-1"]["verified_this_run"])
+        self.assertTrue(by_id["li-3"]["verified_this_run"])
+        self.assertFalse(by_id["li-2"]["verified_this_run"])
+        self.assertEqual("2026-09-17T15:00:00+00:00", by_id["li-2"]["source_verified_at"])
+        self.assertTrue(payload["meta"]["partial"])
+        self.assertEqual(1, payload["meta"]["carried_count"])
+
+    def test_rate_limit_on_first_page_still_preserves_its_rows(self) -> None:
+        collector = {"commit": "new", "dirty": False}
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            schema, "SOURCES_DIR", Path(tmpdir)
+        ), patch.dict(
+            local_sources.SOURCES,
+            {"linkedin": lambda: self._partial_scrape([self._linkedin_card("li-9")], queries_completed=0)},
+        ):
+            schema.write_source_snapshot("linkedin", [self._linkedin_card("li-8")])
+            result = local_sources.run_one("linkedin", collector)
+            payload = schema.read_source_snapshot_payload("linkedin")
+
+        self.assertEqual("partial", result["status"])
+        self.assertEqual(1, result["fresh_kept"])
+        self.assertEqual({"li-8", "li-9"}, {job["job_id"] for job in payload["jobs"]})
+
+    def test_rate_limited_partial_with_every_fresh_row_filtered_is_still_partial(self) -> None:
+        collector = {"commit": "new", "dirty": False}
+        dropped = self._linkedin_card("li-ca", location="Toronto, ON, Canada")
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            schema, "SOURCES_DIR", Path(tmpdir)
+        ), patch.dict(local_sources.SOURCES, {"linkedin": lambda: self._partial_scrape([dropped])}):
+            schema.write_source_snapshot("linkedin", [self._linkedin_card("li-7")])
+            result = local_sources.run_one("linkedin", collector)
+            payload = schema.read_source_snapshot_payload("linkedin")
+
+        self.assertEqual("partial", result["status"])
+        self.assertEqual(0, result["fresh_kept"])
+        self.assertEqual(1, result["carried_count"])
+        self.assertEqual(["li-7"], [job["job_id"] for job in payload["jobs"]])
+
+    def test_empty_rate_limited_collection_keeps_last_good_untouched(self) -> None:
+        collector = {"commit": "new", "dirty": False}
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            schema, "SOURCES_DIR", Path(tmpdir)
+        ), patch.dict(local_sources.SOURCES, {"linkedin": lambda: self._partial_scrape([])}):
+            schema.write_source_snapshot(
+                "linkedin", [self._linkedin_card("li-6")], {"scraped_at": "2026-09-17T15:00:00+00:00"},
+            )
+            result = local_sources.run_one("linkedin", collector)
+            payload = schema.read_source_snapshot_payload("linkedin")
+
+        self.assertEqual("skipped_unavailable", result["status"])
+        self.assertEqual("2026-09-17T15:00:00+00:00", payload["meta"]["scraped_at"])
+        self.assertNotIn("partial", payload["meta"])
+
+    def test_rate_limited_enrichment_issues_no_further_linkedin_requests(self) -> None:
+        session = Mock()
+        session.get.side_effect = AssertionError("no LinkedIn request after HTTP 429")
+        row = self._linkedin_card("li-5")
+        row["description"] = ""
+        with patch.object(linkedin_local, "_scrapling_fetch_html") as scrapling:
+            stats = linkedin_local.enrich_details(
+                [row], session=session, allow_requests=False,
+            )
+        scrapling.assert_not_called()
+        self.assertEqual([], session.mock_calls)
+        self.assertEqual(0, stats["requests"])
+        self.assertEqual("rate_limited_no_further_requests", stats["blocked"])
+        self.assertEqual("linkedin_rate_limited", row["enrichment_failure_reason"])
+
+    def test_rate_limited_enrichment_still_reuses_cached_details(self) -> None:
+        row = self._linkedin_card("li-4")
+        row["description"] = ""
+        prior = self._linkedin_card("li-4")
+        prior["linkedin_detail_fetched_at"] = datetime.now(timezone.utc).isoformat()
+        session = Mock()
+        session.get.side_effect = AssertionError("no LinkedIn request after HTTP 429")
+        stats = linkedin_local.enrich_details(
+            [row], previous_jobs=[prior], session=session, allow_requests=False,
+        )
+        self.assertEqual(1, stats["cache_reused"])
+        self.assertEqual(prior["description"], row["description"])
+
+    def test_linkedin_search_returns_cards_collected_before_the_429(self) -> None:
+        card_html = (
+            '<div class="base-card" data-entity-urn="urn:li:jobPosting:111">'
+            '<h3>Software Engineer</h3><h4>Example Tech</h4>'
+            '<span class="job-search-card__location">Austin, TX</span>'
+            '<a class="base-card__full-link" href="https://www.linkedin.com/jobs/view/111?ref=x"></a>'
+            "</div>"
+        )
+        responses = [Mock(status_code=200, text=card_html), Mock(status_code=429, text="")]
+        session = Mock()
+        session.get.side_effect = responses
+        with patch.object(linkedin_local.time, "sleep"):
+            result = linkedin_local.scrape(keywords=["software engineer"], session=session)
+
+        self.assertEqual("blocked", result["status"])
+        self.assertEqual(429, result["http_status"])
+        self.assertEqual(0, result["queries_completed"])
+        self.assertEqual(["111"], [job["job_id"] for job in result["jobs"]])
+
+    def test_partial_attempt_keeps_last_success_and_records_partial_freshness(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            schema, "SOURCES_DIR", Path(tmpdir)
+        ), patch.object(local_sources, "HEALTH_PATH", Path(tmpdir) / "health.json"):
+            old = {"commit": "old", "dirty": False}
+            new = {"commit": "new", "dirty": False}
+            schema.write_source_snapshot(
+                "linkedin", [self._linkedin_card("li-1")],
+                {"scraped_at": "2026-09-17T15:00:00+00:00", "collector": old},
+            )
+            local_sources.write_health([{
+                "source": "linkedin", "status": "ok", "count": 1,
+                "attempted_at": "2026-09-17T15:00:00+00:00",
+                "succeeded_at": "2026-09-17T15:00:00+00:00",
+            }], old)
+            schema.write_source_snapshot(
+                "linkedin", [self._linkedin_card("li-1"), self._linkedin_card("li-2")],
+                {"scraped_at": "2026-09-18T00:00:00+00:00", "partial": True},
+            )
+            local_sources.write_health([{
+                "source": "linkedin", "status": "partial", "source_healthy": False,
+                "reason": "blocked with HTTP 429", "count": 1, "collected_count": 4,
+                "fresh_kept": 1, "carried_count": 1,
+                "attempted_at": "2026-09-18T00:00:00+00:00",
+                "partial_at": "2026-09-18T00:00:00+00:00",
+            }], new)
+            health = json.loads((Path(tmpdir) / "health.json").read_text(encoding="utf-8"))["sources"]["linkedin"]
+
+        self.assertEqual("partial", health["status"])
+        self.assertFalse(health["healthy"])
+        self.assertEqual("2026-09-17T15:00:00+00:00", health["last_success_at"])
+        self.assertEqual("2026-09-18T00:00:00+00:00", health["last_partial_at"])
+        self.assertEqual("old", health["last_success_collector"]["commit"])
+        self.assertEqual(4, health["partial_collected_count"])
+        self.assertEqual(1, health["partial_fresh_kept"])
+        self.assertEqual(1, health["partial_carried_count"])
+        self.assertEqual(2, health["last_good_count"])
+
+    def test_partial_snapshot_is_never_adopted_as_a_full_success(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            schema, "SOURCES_DIR", Path(tmpdir)
+        ), patch.object(local_sources, "HEALTH_PATH", Path(tmpdir) / "health.json"):
+            schema.write_source_snapshot(
+                "linkedin", [self._linkedin_card("li-1")],
+                {"scraped_at": "2026-09-18T00:00:00+00:00", "partial": True},
+            )
+            local_sources.write_health([{
+                "source": "linkedin", "status": "partial", "source_healthy": False,
+                "attempted_at": "2026-09-18T00:00:00+00:00",
+                "partial_at": "2026-09-18T00:00:00+00:00",
+            }], {"commit": "new", "dirty": False})
+            health = json.loads((Path(tmpdir) / "health.json").read_text(encoding="utf-8"))["sources"]["linkedin"]
+
+        self.assertEqual("", health["last_success_at"])
+
+    def test_partial_required_source_does_not_fail_the_collector(self) -> None:
+        partial = {"source": "linkedin", "status": "partial"}
+        with patch.object(sys, "argv", ["local_sources.py", "--only", "linkedin"]), patch.object(
+            local_sources, "run_one", return_value=partial,
+        ), patch.object(local_sources, "write_health"), patch.object(
+            local_sources, "OUTPUT_DIR", Path(tempfile.mkdtemp()),
+        ):
+            local_sources.main()
+
+    def test_carried_rows_keep_their_earned_last_seen(self) -> None:
+        now_iso = "2026-09-18T00:00:00+00:00"
+        verified_at = "2026-09-17T15:00:00+00:00"
+        carried = self._linkedin_card("li-2")
+        carried.update(verified_this_run=False, source_verified_at=verified_at)
+
+        stored = board_pipeline.resolve_last_seen(
+            dict(carried), {"last_seen": "2026-09-17T15:00:01+00:00"}, now_iso,
+        )
+        pruned = board_pipeline.resolve_last_seen(dict(carried), None, now_iso)
+        discovery_only = dict(carried)
+        discovery_only["source_verified_at"] = ""
+        discovery_only["first_seen"] = "2026-09-10T00:00:00+00:00"
+        fallback = board_pipeline.resolve_last_seen(discovery_only, None, now_iso)
+        fresh = board_pipeline.resolve_last_seen(self._linkedin_card("li-1"), None, now_iso)
+
+        self.assertEqual("2026-09-17T15:00:01+00:00", stored)
+        self.assertEqual(verified_at, pruned)
+        self.assertEqual("2026-09-10T00:00:00+00:00", fallback)
+        self.assertEqual(now_iso, fresh)
 
     def test_runner_executes_collector_from_fetched_origin_main(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

@@ -129,6 +129,79 @@ class PipelineHealthTests(unittest.TestCase):
             self.assertFalse(report["degradations"])
             self.assertTrue(any(item.startswith("LinkedIn (local/general):") for item in report["limitations"]))
 
+    def test_fresh_partial_does_not_refresh_carried_row_staleness(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            now = datetime(2026, 9, 18, 12, tzinfo=timezone.utc)
+            for _key, (_label, folder, store_name) in pipeline_health.PIPELINES.items():
+                out = root / "output" / folder
+                out.mkdir(parents=True)
+                out.joinpath(store_name).write_text(json.dumps({
+                    "updated_at": now.isoformat(), "entries": [{"company": "Example", "title": "Engineer"}],
+                }))
+            source_dir = root / "output" / "sources"
+            source_dir.mkdir(parents=True)
+            source_dir.joinpath("health.json").write_text(json.dumps({"sources": {
+                "linkedin": {
+                    "healthy": False, "required": True, "status": "partial",
+                    "reason": "blocked with HTTP 429",
+                    "last_attempt_at": now.isoformat(),
+                    "last_partial_at": now.isoformat(),
+                    "last_success_at": (now - timedelta(hours=20)).isoformat(),
+                    "partial_collected_count": 300, "partial_fresh_kept": 240,
+                    "partial_carried_count": 572, "last_good_count": 812,
+                },
+                "indeed": {"healthy": True, "required": True, "last_success_at": now.isoformat(), "last_good_count": 80},
+                "glassdoor": {"healthy": True, "required": False, "last_success_at": now.isoformat(), "last_good_count": 20},
+            }}))
+            for name, count in (("linkedin", 812), ("indeed", 80), ("glassdoor", 20)):
+                source_dir.joinpath(f"{name}.json").write_text(json.dumps({"jobs": [{}] * count}))
+
+            report, _history = pipeline_health.build(root, now)
+            linkedin = report["components"]["linkedin"]
+
+        self.assertEqual("Stale", linkedin["status"])
+        self.assertTrue(linkedin["data_usable"])
+        self.assertEqual(0.0, linkedin["latest_partial_age_hours"])
+        self.assertIn("rate_limited_partial_collection", linkedin["degradation_kinds"])
+        self.assertIn("collected 300 rows, kept 240", linkedin["detail"])
+        self.assertIn("812 (572 carried, last full collection 20.0h old)", linkedin["detail"])
+        self.assertIn("partial collection", linkedin["impact"])
+        self.assertTrue(any("rate-limited partial collection" in item for item in report["limitations"]))
+
+    def test_partial_over_fresh_full_success_is_degraded_not_healthy(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            now = datetime(2026, 9, 18, 12, tzinfo=timezone.utc)
+            for _key, (_label, folder, store_name) in pipeline_health.PIPELINES.items():
+                out = root / "output" / folder
+                out.mkdir(parents=True)
+                out.joinpath(store_name).write_text(json.dumps({
+                    "updated_at": now.isoformat(), "entries": [{"company": "Example", "title": "Engineer"}],
+                }))
+            source_dir = root / "output" / "sources"
+            source_dir.mkdir(parents=True)
+            source_dir.joinpath("health.json").write_text(json.dumps({"sources": {
+                "linkedin": {
+                    "healthy": False, "required": True, "status": "partial",
+                    "reason": "blocked with HTTP 429",
+                    "last_attempt_at": now.isoformat(), "last_partial_at": now.isoformat(),
+                    "last_success_at": (now - timedelta(hours=2)).isoformat(),
+                    "partial_collected_count": 100, "partial_fresh_kept": 90,
+                    "partial_carried_count": 30, "last_good_count": 120,
+                },
+                "indeed": {"healthy": True, "required": True, "last_success_at": now.isoformat(), "last_good_count": 80},
+                "glassdoor": {"healthy": True, "required": False, "last_success_at": now.isoformat(), "last_good_count": 20},
+            }}))
+            for name, count in (("linkedin", 120), ("indeed", 80), ("glassdoor", 20)):
+                source_dir.joinpath(f"{name}.json").write_text(json.dumps({"jobs": [{}] * count}))
+
+            report, _history = pipeline_health.build(root, now)
+            linkedin = report["components"]["linkedin"]
+
+        self.assertEqual("Warning", linkedin["status"])
+        self.assertFalse(any(item.startswith("LinkedIn (local/general):") for item in report["problems"]))
+
     def test_linkedin_detail_429_and_scrapling_are_reported_separately(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

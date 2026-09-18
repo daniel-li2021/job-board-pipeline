@@ -91,7 +91,17 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
     rows = list(result.get("jobs") or [])
     query_stats = list(result.get("query_stats") or [])
     source_provenance = dict(result.get("provenance") or source_provenance)
-    if result.get("status") != "ok":
+    # A rate-limited LinkedIn run still collected real coverage before the
+    # block. Keep it and merge it over the last-good snapshot instead of
+    # throwing the whole run away; any non-empty collection qualifies, even
+    # when the first query never finished.
+    partial = bool(
+        name == "linkedin"
+        and result.get("status") == "blocked"
+        and int(result.get("http_status") or 0) == 429
+        and rows
+    )
+    if result.get("status") != "ok" and not partial:
         reason = str(result.get("reason") or result.get("status"))
         print(f"[{name}] SKIP ({reason}) -> keeping last good snapshot")
         return {
@@ -113,6 +123,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
         detail_enrichment = linkedin_local.enrich_details(
             detail_candidates,
             previous_jobs=list(previous.get("jobs") or []),
+            allow_requests=not partial,
         )
 
     # Every discovered record reaches enrichment before filtering.
@@ -137,7 +148,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
 
     survivors = stage1_survivors
 
-    if not survivors:
+    if not survivors and not partial:
         print(f"[{name}] SKIP (0 first-pass survivors) -> keeping last good snapshot")
         return {
             "source": name, "status": "skipped_empty", "source_healthy": False, "reason": "0 first-pass survivors", "count": 0,
@@ -157,7 +168,36 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
     }
     if detail_enrichment:
         meta["detail_enrichment"] = detail_enrichment
-    path = write_source_snapshot(name, survivors, meta=meta)
+    carried_count = 0
+    if partial:
+        fresh_keys = {board.dedup_key(job) for job in survivors}
+        carried_count = sum(
+            1 for job in read_source_snapshot_payload(name).get("jobs") or []
+            if board.dedup_key(job) not in fresh_keys
+        )
+        meta.update({
+            "partial": True,
+            "blocked_reason": str(result.get("reason") or ""),
+            "collected_count": len(rows),
+            "carried_count": carried_count,
+        })
+    path = write_source_snapshot(name, survivors, meta=meta, merge_previous=partial)
+    if partial:
+        merged_count = len(survivors) + carried_count
+        print(
+            f"[{name}] PARTIAL {len(survivors)} fresh + {carried_count} carried = {merged_count} rows "
+            f"({elapsed:.1f}s; {result.get('reason')}) -> {path}"
+        )
+        return {
+            "source": name, "status": "partial", "source_healthy": False, "data_usable": True,
+            "reason": str(result.get("reason") or "rate limited"),
+            "count": len(survivors), "collected_count": len(rows), "fresh_kept": len(survivors),
+            "carried_count": carried_count, "merged_count": merged_count, "path": str(path),
+            "query_stats": query_stats, "detail_enrichment": detail_enrichment,
+            "elapsed_seconds": elapsed,
+            "attempted_at": stamp, "partial_at": stamp, "collector": collector,
+            "source_provenance": source_provenance,
+        }
     detail_note = ""
     if detail_enrichment:
         detail_note = (
@@ -188,13 +228,28 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
         snapshot = read_source_snapshot_payload(name)
         snapshot_meta = snapshot.get("meta", {})
         healthy = bool(result.get("source_healthy", result.get("status") == "ok"))
+        partial = result.get("status") == "partial"
+        # ``last_success_at`` means a complete collection that verified the
+        # whole snapshot. A partial run rewrites the snapshot, so its
+        # ``scraped_at`` must never be adopted as a full success.
+        snapshot_full_success = "" if snapshot_meta.get("partial") else str(snapshot_meta.get("scraped_at", ""))
         sources[name] = {
             "required": name not in OPTIONAL_SOURCES,
             "healthy": healthy,
             "status": result.get("status", "unknown"),
             "reason": "" if healthy else result.get("reason", "unknown failure"),
             "last_attempt_at": result.get("attempted_at", ""),
-            "last_success_at": result.get("succeeded_at") or prior.get("last_success_at") or snapshot_meta.get("scraped_at", ""),
+            "last_success_at": result.get("succeeded_at") or prior.get("last_success_at") or snapshot_full_success,
+            "last_partial_at": result.get("partial_at") or prior.get("last_partial_at") or "",
+            "partial_collected_count": int(
+                (result.get("collected_count") if partial else prior.get("partial_collected_count")) or 0
+            ),
+            "partial_fresh_kept": int(
+                (result.get("fresh_kept") if partial else prior.get("partial_fresh_kept")) or 0
+            ),
+            "partial_carried_count": int(
+                (result.get("carried_count") if partial else prior.get("partial_carried_count")) or 0
+            ),
             "last_attempt_collector": collector,
             "last_success_collector": collector if healthy else prior.get("last_success_collector") or snapshot_meta.get("collector", {}),
             "last_attempt_source_provenance": result.get("source_provenance", {}),
@@ -236,7 +291,7 @@ def main() -> None:
     print(f"\nDone. {len(ok)}/{len(results)} source(s) updated: "
           + ", ".join(f"{r['source']}={r['status']}" for r in results))
     if names != ["glassdoor"] and not any(
-        r["status"] == "ok" and r["source"] not in OPTIONAL_SOURCES for r in results
+        r["status"] in ("ok", "partial") and r["source"] not in OPTIONAL_SOURCES for r in results
     ):
         raise SystemExit("No required local source succeeded; last-good snapshots were preserved.")
 

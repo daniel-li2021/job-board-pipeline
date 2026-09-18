@@ -196,12 +196,17 @@ def enrich_details(
     *,
     previous_jobs: List[Dict[str, Any]] | None = None,
     session: requests.Session | None = None,
+    allow_requests: bool = True,
 ) -> Dict[str, Any]:
     """Hydrate every unresolved LinkedIn row with the logged-out full JD.
 
     Previous snapshot details are reused for 14 days when title/job_id are
     unchanged. A detail-endpoint block stops only enrichment; it does not
     invalidate already-collected search cards.
+
+    ``allow_requests=False`` serves a rate-limited run: cached details only,
+    with no further LinkedIn request from either the guest endpoint or the
+    Scrapling fallback.
     """
     session = session or _make_session()
     now = datetime.now(timezone.utc)
@@ -251,6 +256,13 @@ def enrich_details(
         else:
             row["enrichment_status"] = "unresolved"
             row["enrichment_failure_reason"] = "missing_job_id"
+
+    if not allow_requests:
+        stats["blocked"] = "rate_limited_no_further_requests"
+        for row in pending:
+            row["enrichment_status"] = "unresolved"
+            row["enrichment_failure_reason"] = "linkedin_rate_limited"
+        pending = []
 
     for row in pending:
         stats["requests"] += 1
@@ -374,7 +386,11 @@ def scrape(
                 stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
                 stats.append(stat)
                 stats.extend(_unattempted(specs[index + 1:], "source_unavailable"))
-                return {"status": "blocked", "reason": f"network error: {exc}", "jobs": rows, "query_stats": stats}
+                return {
+                    "status": "blocked", "reason": f"network error: {exc}", "jobs": rows,
+                    "query_stats": stats, "http_status": 0,
+                    "queries_completed": index, "queries_total": len(specs),
+                }
             try:
                 _check_blocked(resp)
             except SourceUnavailable as exc:
@@ -382,7 +398,11 @@ def scrape(
                 stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
                 stats.append(stat)
                 stats.extend(_unattempted(specs[index + 1:], "source_unavailable"))
-                return {"status": "blocked", "reason": str(exc), "jobs": rows, "query_stats": stats}
+                return {
+                    "status": "blocked", "reason": str(exc), "jobs": rows,
+                    "query_stats": stats, "http_status": resp.status_code,
+                    "queries_completed": index, "queries_total": len(specs),
+                }
             stat["pages_fetched"] = int(stat["pages_fetched"]) + 1
             page_rows = _parse_cards(resp.text)
             stat["raw_jobs"] = int(stat["raw_jobs"]) + len(page_rows)
@@ -421,7 +441,10 @@ def scrape(
         )
         stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
         stats.append(stat)
-    return {"status": "ok", "jobs": rows, "query_stats": stats}
+    return {
+        "status": "ok", "jobs": rows, "query_stats": stats,
+        "queries_completed": len(specs), "queries_total": len(specs),
+    }
 
 
 def _unattempted(specs: List[tuple[str, str, int]], reason: str) -> List[Dict[str, object]]:

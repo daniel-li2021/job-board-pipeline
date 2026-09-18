@@ -708,18 +708,45 @@ def combined_cache_key_from_hash(jd_digest: str, profile_fingerprint: str) -> st
 # --------------------------------------------------------------------------
 # Local source snapshot IO (used by local adapters + orchestrator ingest)
 # --------------------------------------------------------------------------
-def write_source_snapshot(name: str, jobs: List[Dict[str, str]], meta: Optional[Dict[str, Any]] = None) -> Path:
-    """Write output/sources/<name>.json. Sorted for stable git diffs."""
+def write_source_snapshot(
+    name: str,
+    jobs: List[Dict[str, str]],
+    meta: Optional[Dict[str, Any]] = None,
+    *,
+    merge_previous: bool = False,
+) -> Path:
+    """Write output/sources/<name>.json. Sorted for stable git diffs.
+
+    ``merge_previous`` unions the last-good rows under the freshly collected
+    ones, so a partial (rate-limited) collection never reads as removals. Rows
+    only this run verified are marked ``verified_this_run``; carried rows keep
+    the verification timestamp they already had.
+    """
     SOURCES_DIR.mkdir(parents=True, exist_ok=True)
     path = SOURCES_DIR / f"{name}.json"
-    previous = {
-        dedup_key(job): job for job in read_source_snapshot_payload(name).get("jobs", [])
-    }
+    previous_payload = read_source_snapshot_payload(name)
+    previous = {dedup_key(job): job for job in previous_payload.get("jobs", [])}
+    verified_at = str((meta or {}).get("scraped_at") or "")
+    previous_verified_at = str(previous_payload.get("meta", {}).get("scraped_at") or "")
     retained = []
     for job in jobs:
         record = dict(job)
         preserve_job_dates(record, previous.get(dedup_key(record), {}))
+        if merge_previous:
+            record["source_verified_at"] = verified_at
+            record["verified_this_run"] = True
         retained.append(record)
+    if merge_previous:
+        fresh_keys = {dedup_key(record) for record in retained}
+        for key, job in previous.items():
+            if key in fresh_keys:
+                continue
+            carried = dict(job)
+            carried["source_verified_at"] = str(
+                carried.get("source_verified_at") or previous_verified_at
+            )
+            carried["verified_this_run"] = False
+            retained.append(carried)
     ordered = sorted(retained, key=lambda j: (j.get("company", ""), j.get("title", ""), j.get("job_id", "")))
     payload = {
         "schema_version": SNAPSHOT_SCHEMA_VERSION,

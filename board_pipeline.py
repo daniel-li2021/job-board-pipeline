@@ -2786,6 +2786,25 @@ def new_job_telemetry(
     }
 
 
+def resolve_last_seen(
+    job: Dict[str, Any], prev: Optional[Dict[str, Any]], now_iso: str
+) -> str:
+    """Return the last_seen a job earned, not the time we ingested it.
+
+    Carried snapshot rows were not re-verified this run (a rate-limited
+    partial collection merges them forward), so their last_seen comes from
+    real prior evidence and never from `now`.
+    """
+    if not (job.get("_retry_only") or job.get("verified_this_run") is False):
+        return now_iso
+    return str(
+        job.get("last_seen")
+        or (prev or {}).get("last_seen")
+        or job.get("source_verified_at")
+        or job.get("first_seen")
+    )
+
+
 def finalize_new_jobs(
     jobs: List[Dict[str, Any]],
     store: Dict[str, Dict[str, Any]],
@@ -3093,7 +3112,7 @@ def run() -> None:
         job["first_seen"] = str(job.get("first_seen") or now_iso)
         if not seen_jobs.get(key):
             seen_jobs[key] = job["first_seen"]
-        job["last_seen"] = str(job.get("last_seen") or now_iso) if job.get("_retry_only") else now_iso
+        job["last_seen"] = resolve_last_seen(job, prev, now_iso)
         job["recency_bucket"] = recency_bucket(job, now=now)
 
     # Discovered and one-shot retry records use the same enrichment and filters.
@@ -3200,7 +3219,10 @@ def run() -> None:
         job.setdefault("coverage_status", "out_of_scope")
         job.setdefault("duplicate_of", "")
         job.setdefault("official_snapshot_at", "")
-        job.setdefault("source_snapshot_at", job.get("last_seen") or now_iso)
+        job.setdefault(
+            "source_snapshot_at",
+            job.get("source_verified_at") or job.get("last_seen") or now_iso,
+        )
         job.setdefault("review_status", "unreviewed")
 
     # 8) Score: reuse cache, LLM only on new/changed, rule fallback

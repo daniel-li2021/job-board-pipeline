@@ -286,13 +286,20 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         state = local.get(source, {})
         snapshot = _read(base / "output" / "sources" / f"{source}.json", {})
         snapshot_jobs = list(snapshot.get("jobs") or []) if isinstance(snapshot, dict) else []
+        # ``age`` is the freshness of the last complete collection, which is
+        # the only verification the whole snapshot ever received. A recent
+        # partial attempt is tracked separately and never resets that clock.
         age = _age_hours(str(state.get("last_success_at") or ""), now)
         attempt_age = _age_hours(str(state.get("last_attempt_at") or ""), now)
+        partial_age = _age_hours(str(state.get("last_partial_at") or ""), now)
+        is_partial = str(state.get("status") or "") == "partial"
         last_good_count = len(snapshot_jobs)
-        data_usable = last_good_count > 0 and age is not None
+        data_usable = last_good_count > 0 and (age is not None or partial_age is not None)
         attempt_failed = not state.get("healthy")
         if not data_usable:
             status = "Problem" if state.get("required", source != "glassdoor") else "Warning"
+        elif age is None:
+            status = "Warning"  # rows exist but no complete collection on record
         elif age > 12:
             status = "Stale"
         elif age > 6:
@@ -302,13 +309,23 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         consecutive_failures = int(state.get("consecutive_failures", 1 if attempt_failed else 0) or 0)
         if attempt_failed and consecutive_failures >= 2:
             status = "Warning"
+        verified_age = f"{age:.1f}h old" if age is not None else "never fully verified"
         details = [
-            f"Usable last-good snapshot: {last_good_count} jobs, {age:.1f}h old"
+            f"Usable last-good snapshot: {last_good_count} jobs, {verified_age}"
             if data_usable else "No usable last-good snapshot"
         ]
-        if attempt_failed:
-            attempt_kind = "search/discovery" if source == "linkedin" else "collection"
-            attempt_when = f" {attempt_age:.1f}h ago" if attempt_age is not None else ""
+        attempt_kind = "search/discovery" if source == "linkedin" else "collection"
+        attempt_when = f" {attempt_age:.1f}h ago" if attempt_age is not None else ""
+        if is_partial:
+            collected = int(state.get("partial_collected_count", 0) or 0)
+            fresh_kept = int(state.get("partial_fresh_kept", 0) or 0)
+            carried = int(state.get("partial_carried_count", 0) or 0)
+            details.append(
+                f"latest {attempt_kind} attempt{attempt_when} was rate-limited "
+                f"({state.get('reason') or 'HTTP 429'}): collected {collected} rows, kept {fresh_kept}; "
+                f"merged snapshot serves {last_good_count} ({carried} carried, last full collection {verified_age})"
+            )
+        elif attempt_failed:
             details.append(
                 f"latest {attempt_kind} attempt{attempt_when} failed ({state.get('status', 'unknown')}): "
                 f"{state.get('reason') or 'unknown reason'}"
@@ -322,6 +339,15 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             snapshot.get("meta", {}).get("detail_enrichment", {}) if isinstance(snapshot, dict) else {}
         )
         degradation_kinds: list[str] = []
+        if is_partial:
+            degradation_kinds.append("rate_limited_partial_collection")
+            if status == "Healthy":
+                status = "Warning"
+            limitations.append(
+                f"{'LinkedIn (local/general)' if source == 'linkedin' else source.title()}: rate-limited partial "
+                f"collection; {last_good_count} jobs usable "
+                f"({int(state.get('partial_carried_count', 0) or 0)} carried from the last complete run)"
+            )
         if source == "linkedin" and enrichment:
             blocked = str(enrichment.get("blocked") or "")
             scrapling_requests = int(enrichment.get("scrapling_requests", 0) or 0)
@@ -370,9 +396,17 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             "latest_attempt_at": state.get("last_attempt_at", ""),
             "latest_attempt_age_hours": round(attempt_age, 1) if attempt_age is not None else None,
             "latest_attempt_status": state.get("status", "unknown"),
+            "latest_partial_at": state.get("last_partial_at", ""),
+            "latest_partial_age_hours": round(partial_age, 1) if partial_age is not None else None,
+            "partial_collected_count": int(state.get("partial_collected_count", 0) or 0),
+            "partial_fresh_kept": int(state.get("partial_fresh_kept", 0) or 0),
+            "partial_carried_count": int(state.get("partial_carried_count", 0) or 0),
             "degradation_kinds": degradation_kinds,
             "consecutive_failures": consecutive_failures,
             "impact": (
+                f"partial collection ({state.get('reason') or 'HTTP 429'}); {last_good_count} jobs usable, "
+                f"last full collection {verified_age}"
+                if is_partial and data_usable else
                 f"collection failed; {last_good_count} last-good jobs remain usable"
                 if attempt_failed and data_usable else
                 ("required source has no usable data" if not data_usable and state.get("required", source != "glassdoor") else "")

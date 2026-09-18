@@ -66,6 +66,43 @@ class LlmMatchingTests(unittest.TestCase):
         self.assertEqual(board.SCORE_RULE, historical["score_source"])
         self.assertEqual(2, counts["llm"])
 
+    def test_carried_partial_rows_reuse_cached_scores_without_llm(self) -> None:
+        profiles = {"fingerprint": "prompt", "candidate_fingerprint": "candidate"}
+        carried = make_job(
+            source="linkedin", company="Example", title="Software Engineer",
+            location="Remote, US", job_id="li-carried",
+            description="Build Python services and internal APIs. " * 20,
+            source_url="https://example.test/li-carried",
+        )
+        carried.update(
+            first_seen="2026-09-10T00:00:00+00:00", recency_bucket="1to3d",
+            role_family="swe", role_relevance=2,
+            verified_this_run=False, source_verified_at="2026-09-17T15:00:00+00:00",
+        )
+        key = board.dedup_key(carried)
+        digest = board.decision_content_hash(carried)
+        store = {key: {
+            "key": key, "match_score": 78, "score_source": board.SCORE_LLM,
+            "match_content_hash": digest,
+            "cache_key": board.combined_cache_key_from_hash(digest, profiles["fingerprint"]),
+            "seniority_fit": "good", "hard_constraint_status": "ok",
+            "top_match_reasons": ["Python services"], "main_gaps": [],
+            "score_at": "2026-09-17T15:00:00+00:00",
+        }}
+
+        with patch.dict("os.environ", {"OPENAI_API_KEY": "test"}), patch.object(
+            board, "llm_match_batch", side_effect=AssertionError("carried row must not be re-scored")
+        ):
+            method, _errors, counts = board.score_survivors(
+                [carried], {}, profiles, store, True,
+            )
+
+        self.assertEqual("cache", method)
+        self.assertEqual(1, counts["reused"])
+        self.assertEqual(0, counts["api_requests"])
+        self.assertEqual(78, carried["match_score"])
+        self.assertEqual(board.SCORE_CACHED_LLM, carried["score_source"])
+
     def test_retryable_ten_job_batch_splits_into_fives_before_fallback(self) -> None:
         now = datetime.now(timezone.utc).isoformat()
         jobs = [
