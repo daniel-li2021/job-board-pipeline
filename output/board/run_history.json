@@ -2,6 +2,518 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-09-18T18:02:33.092306+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 18,
+      "cache_reused": 399,
+      "peer_reused": 0,
+      "same_content_reused": 1,
+      "non_material_change_reused": 0,
+      "new_or_changed": 19,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 19
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 173,
+      "requests": 3,
+      "input_tokens": 24048,
+      "cached_input_tokens": 1851,
+      "output_tokens": 2156,
+      "reasoning_tokens": 949,
+      "estimated_usd": 0.070636,
+      "latency_seconds": 41.402,
+      "latency_measured": true,
+      "effective_rpm": 4.35,
+      "effective_tpm": 37974.98,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 3,
+      "primary_batches_total": 3,
+      "batches_attempted": 3,
+      "batches_succeeded": 3,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 18,
+      "funnel": {
+        "after_dedup": 4805,
+        "after_company": 4545,
+        "after_hard_filter": 4183,
+        "after_prefilter": 906,
+        "official_duplicates_suppressed": 316,
+        "retry_only_carried": 0,
+        "dropped": 3743
+      },
+      "output": {
+        "tier_a": 66,
+        "tier_b": 87,
+        "ab_before_cap": 153,
+        "shown": 153,
+        "new_jobs": 193,
+        "new_jobs_added": 7,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 10,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 15,
+            "added": 4
+          },
+          "indeed": {
+            "found": 168,
+            "added": 3
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 411,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 560,
+          "http_requests": 160,
+          "scrapling_requests": 8,
+          "identity_needed": 149,
+          "identities_resolved": 149,
+          "jds_resolved": 12,
+          "direct_http_resolved": 12,
+          "remaining_no_jd": 408,
+          "failure_reasons": {
+            "scrapling_fetch_failed": 13,
+            "linkedin_rate_limited": 14,
+            "structured_jd_not_found": 8,
+            "glassdoor_detail_http_403_static_card_only": 373
+          }
+        },
+        "remaining_no_jd": 407,
+        "failure_reasons": {
+          "scrapling_fetch_failed": 13,
+          "linkedin_rate_limited": 14,
+          "structured_jd_not_found": 7,
+          "glassdoor_detail_http_403_static_card_only": 373
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::indeed::in-f72b1bf0684bf1b1",
+              "company": "PENNYMAC",
+              "title": "Full Stack Developer (.NET)"
+            },
+            {
+              "key": "id::indeed::in-48899877e5f6a136",
+              "company": "JPMorganChase",
+              "title": "Software Engineer III - Java"
+            },
+            {
+              "key": "id::indeed::in-586f393d7c251495",
+              "company": "Tesla",
+              "title": "Software Engineer, HR Operations & Systems"
+            },
+            {
+              "key": "id::indeed::in-3d358b34f47eae4b",
+              "company": "University of Florida",
+              "title": "Marketing Cloud Engineer"
+            },
+            {
+              "key": "id::indeed::in-faffcdc4640505dd",
+              "company": "AT&T",
+              "title": "Network Implementation Engineer I - Minneapolis, MN"
+            },
+            {
+              "key": "id::indeed::in-205fdef8d0c3ed07",
+              "company": "American Vision Partners",
+              "title": "Systems Engineer III"
+            },
+            {
+              "key": "id::indeed::in-9509d1acab8121b5",
+              "company": "Cognizant",
+              "title": "Progress OpenEdge Developer - 70587471"
+            },
+            {
+              "key": "id::indeed::in-f3e1dcc6a15f6ef0",
+              "company": "Cotiviti",
+              "title": "Data Engineer - Operations Focus"
+            },
+            {
+              "key": "id::indeed::in-f4ae0cd4e40e5430",
+              "company": "McNeese State University",
+              "title": "IT STATEWIDE APPLICATIONS DEVELOPER"
+            },
+            {
+              "key": "id::indeed::in-479b2d0fa02a2826",
+              "company": "Nunez Community College",
+              "title": "IT Applications Developer 1,2,3"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 17.991,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 12672,
+            "cached_input_tokens": 0,
+            "output_tokens": 1167,
+            "reasoning_tokens": 499,
+            "estimated_usd": 0.039348
+          },
+          "decisions": [
+            {
+              "key": "id::indeed::in-f72b1bf0684bf1b1",
+              "match_score": 69.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production delivery",
+                "REST APIs and SQL"
+              ],
+              "main_gaps": [
+                "3+ years experience",
+                "NET/C# production experience"
+              ]
+            },
+            {
+              "key": "id::indeed::in-48899877e5f6a136",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java and REST APIs",
+                "AWS Kubernetes testing"
+              ],
+              "main_gaps": [
+                "5+ years software engineering",
+                "Java Spring Boot depth"
+              ]
+            },
+            {
+              "key": "id::indeed::in-586f393d7c251495",
+              "match_score": 60.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React TypeScript full-stack",
+                "RAG production services"
+              ],
+              "main_gaps": [
+                "5+ years backend services",
+                "NET/C# production experience"
+              ]
+            },
+            {
+              "key": "id::indeed::in-3d358b34f47eae4b",
+              "match_score": 42.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "data integrations",
+                "Python automation experience"
+              ],
+              "main_gaps": [
+                "Salesforce Marketing Cloud",
+                "AMPscript email journeys"
+              ]
+            },
+            {
+              "key": "id::indeed::in-faffcdc4640505dd",
+              "match_score": 20.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "technical engineering background"
+              ],
+              "main_gaps": [
+                "OSP fiber design",
+                "4–7 years telecom experience"
+              ]
+            },
+            {
+              "key": "id::indeed::in-205fdef8d0c3ed07",
+              "match_score": 18.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Docker and infrastructure exposure"
+              ],
+              "main_gaps": [
+                "10+ years systems engineering",
+                "enterprise Windows virtualization"
+              ]
+            },
+            {
+              "key": "id::indeed::in-9509d1acab8121b5",
+              "match_score": 16.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "REST API development"
+              ],
+              "main_gaps": [
+                "7+ years OpenEdge",
+                "Progress 4GL/PASOE"
+              ]
+            },
+            {
+              "key": "id::indeed::in-f3e1dcc6a15f6ef0",
+              "match_score": 71.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "SQL data pipelines",
+                "Databricks Spark troubleshooting"
+              ],
+              "main_gaps": [
+                "2+ years SQL/ETL"
+              ]
+            },
+            {
+              "key": "id::indeed::in-f4ae0cd4e40e5430",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full SDLC development",
+                "testing and debugging"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "id::indeed::in-479b2d0fa02a2826",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "REST API development",
+                "Agile full-stack delivery"
+              ],
+              "main_gaps": [
+                "NET/C# production experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::indeed::in-405896e286ed18e6",
+              "company": "",
+              "title": "PLC Systems Integration Engineer (Siemens TIA Portal)"
+            },
+            {
+              "key": "id::indeed::in-70260e08095f7aef",
+              "company": "Amyris",
+              "title": "Process Engineer I (Temporary)"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 9.94,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 4103,
+            "cached_input_tokens": 1851,
+            "output_tokens": 142,
+            "reasoning_tokens": 0,
+            "estimated_usd": 0.006578
+          },
+          "decisions": [
+            {
+              "key": "id::indeed::in-405896e286ed18e6",
+              "match_score": 18.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "software engineering background",
+                "debugging and system reliability"
+              ],
+              "main_gaps": [
+                "Siemens PLC programming",
+                "industrial controls experience"
+              ]
+            },
+            {
+              "key": "id::indeed::in-70260e08095f7aef",
+              "match_score": 24.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "quantitative data analysis",
+                "experimental evaluation systems"
+              ],
+              "main_gaps": [
+                "chemical engineering degree",
+                "downstream process development"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::indeed::in-310532eae7ec9ed8",
+              "company": "BV Teck",
+              "title": "LLM Architect"
+            },
+            {
+              "key": "id::indeed::in-fe6152beb9326461",
+              "company": "Everforce Software India Pvt.LTD",
+              "title": "AI & Data Engineer"
+            },
+            {
+              "key": "id::indeed::in-a41e6a89f2d98beb",
+              "company": "BV Teck",
+              "title": "Workday Solutions Developer"
+            },
+            {
+              "key": "id::indeed::in-c9c291a59e036015",
+              "company": "First Citizens Bank",
+              "title": "Data Engineer II"
+            },
+            {
+              "key": "id::indeed::in-c9107ad488379d3c",
+              "company": "Grafana Labs",
+              "title": "Solutions Engineer, Acquisition | West Coast | Remote"
+            },
+            {
+              "key": "id::indeed::in-c4840bf3b213fdfb",
+              "company": "Sysintelli",
+              "title": "Microsoft Dynamics 365 Contact Center Developer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 13.471,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 6,
+            "input_tokens": 7273,
+            "cached_input_tokens": 0,
+            "output_tokens": 847,
+            "reasoning_tokens": 450,
+            "estimated_usd": 0.02471
+          },
+          "decisions": [
+            {
+              "key": "id::indeed::in-310532eae7ec9ed8",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production LLM systems",
+                "RAG evaluation pipelines"
+              ],
+              "main_gaps": [
+                "10+ years experience",
+                "technical leadership mentoring"
+              ]
+            },
+            {
+              "key": "id::indeed::in-fe6152beb9326461",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production data pipelines",
+                "LLM RAG deployment"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "id::indeed::in-a41e6a89f2d98beb",
+              "match_score": 18.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "software engineering background"
+              ],
+              "main_gaps": [
+                "Workday technical experience",
+                "Workday configuration expertise"
+              ]
+            },
+            {
+              "key": "id::indeed::in-c9c291a59e036015",
+              "match_score": 77.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python data pipelines",
+                "Spark Databricks production"
+              ],
+              "main_gaps": [
+                "two years data engineering"
+              ]
+            },
+            {
+              "key": "id::indeed::in-c9107ad488379d3c",
+              "match_score": 40.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "observability and CI/CD",
+                "customer-facing implementation work"
+              ],
+              "main_gaps": [
+                "technical presales experience",
+                "five years experience"
+              ]
+            },
+            {
+              "key": "id::indeed::in-c4840bf3b213fdfb",
+              "match_score": 50.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "TypeScript REST integrations",
+                "testing and CI/CD"
+              ],
+              "main_gaps": [
+                "Dynamics 365 Contact Center",
+                "Power Platform Dataverse"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-09-18T15:15:15.914241+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -58568,218 +59080,6 @@
               "main_gaps": [
                 "Manufacturing/medical-device engineering role requires mechanical, biomedical, electrical, chemical, materials, or industrial engineering preparation.",
                 "No evidence of production-process validation, equipment qualification, fixtures/tooling, FDA/QMS, or manufacturing engineering experience."
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-09-14T07:03:54.951228+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-5.6-terra",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 5,
-      "cache_reused": 335,
-      "fallback_count": 0,
-      "rule_count": 181,
-      "requests": 2,
-      "input_tokens": 12085,
-      "cached_input_tokens": 0,
-      "output_tokens": 818,
-      "reasoning_tokens": 140,
-      "estimated_usd": 0.033986,
-      "latency_seconds": 12.535,
-      "latency_measured": true,
-      "effective_rpm": 9.57,
-      "effective_tpm": 61761.47,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 5,
-      "funnel": {
-        "after_dedup": 4040,
-        "after_company": 3917,
-        "after_hard_filter": 3613,
-        "after_prefilter": 811,
-        "official_duplicates_suppressed": 290,
-        "dropped": 3210
-      },
-      "output": {
-        "tier_a": 40,
-        "tier_b": 79,
-        "ab_before_cap": 119,
-        "shown": 119
-      },
-      "enrichment": {
-        "needed": 389,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 389,
-          "http_requests": 9,
-          "scrapling_requests": 6,
-          "jds_resolved": 4,
-          "scrapling_fetcher_resolved": 1,
-          "direct_http_resolved": 3,
-          "remaining_no_jd": 385,
-          "failure_reasons": {
-            "scrapling_fetch_failed": 2,
-            "glassdoor_detail_http_403_static_card_only": 378,
-            "structured_jd_not_found": 5
-          }
-        },
-        "remaining_no_jd": 385,
-        "failure_reasons": {
-          "scrapling_fetch_failed": 2,
-          "glassdoor_detail_http_403_static_card_only": 378,
-          "structured_jd_not_found": 5
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "jobs": [
-            {
-              "key": "id::indeed::in-e6f89b31244aef4a",
-              "company": "Hewlett Packard Enterprise | HPE",
-              "title": "Telco Infrastructure Engineer"
-            },
-            {
-              "key": "id::indeed::in-d0ad833078dc9770",
-              "company": "Aeroflow Health",
-              "title": "Developer DBA"
-            },
-            {
-              "key": "id::indeed::in-23a210111c27280e",
-              "company": "Ross Dress For Less",
-              "title": "Security Engineer II"
-            }
-          ],
-          "model": "gpt-5.6-terra",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 6.938,
-          "usage": {
-            "model": "gpt-5.6-terra",
-            "api_requests": 1,
-            "jobs_scored": 3,
-            "input_tokens": 6349,
-            "cached_input_tokens": 0,
-            "output_tokens": 479,
-            "reasoning_tokens": 62,
-            "estimated_usd": 0.018446
-          },
-          "decisions": [
-            {
-              "key": "id::indeed::in-e6f89b31244aef4a",
-              "match_score": 46.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Demonstrated Python/Bash, Linux, Docker/CI/CD, automated testing, and performance/reliability work.",
-                "Has built and debugged backend services and integration tests in production-oriented environments."
-              ],
-              "main_gaps": [
-                "Role requires 4–6 years and project leadership/mentoring scope beyond the candidate's early-career experience.",
-                "Core telco server/NIC hardware validation, traffic-generator tooling, NEBS, and carrier-grade test experience are not evidenced."
-              ]
-            },
-            {
-              "key": "id::indeed::in-d0ad833078dc9770",
-              "match_score": 35.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Candidate has SQL, data-pipeline, backend, CI/CD, testing, and reliability experience.",
-                "Has worked with PostgreSQL/MySQL and diagnosed data-workflow issues in Databricks/Spark."
-              ],
-              "main_gaps": [
-                "Deep Microsoft SQL Server/T-SQL, database architecture, and query-optimization expertise are core requirements but are not clearly evidenced.",
-                "The role is explicitly a senior technical-review, architecture, and mentoring position, beyond the candidate's demonstrated scope."
-              ]
-            },
-            {
-              "key": "id::indeed::in-23a210111c27280e",
-              "match_score": 10.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python and SQL automation experience is transferable to security workflow development.",
-                "Backend reliability and observability work offers limited adjacent systems experience."
-              ],
-              "main_gaps": [
-                "Requires 8+ years of cybersecurity experience, including 5+ years in threat intelligence and threat hunting, which is not evidenced.",
-                "Core CTI/SIEM/EDR, MITRE ATT&CK, malware/APT analysis, threat feeds, and incident-response experience are not evidenced."
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "both",
-          "jobs": [
-            {
-              "key": "id::indeed::in-e8659a53ca35cc3f",
-              "company": "Hewlett Packard Enterprise | HPE",
-              "title": "AI and Machine Learning Engineering Graduate"
-            },
-            {
-              "key": "id::indeed::in-5ffce734350f57f3",
-              "company": "FAST",
-              "title": "Founding Engineer - Mobile + SaaS Fitness Platform"
-            }
-          ],
-          "model": "gpt-5.6-terra",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 5.597,
-          "usage": {
-            "model": "gpt-5.6-terra",
-            "api_requests": 1,
-            "jobs_scored": 2,
-            "input_tokens": 5736,
-            "cached_input_tokens": 0,
-            "output_tokens": 339,
-            "reasoning_tokens": 78,
-            "estimated_usd": 0.01554
-          },
-          "decisions": [
-            {
-              "key": "id::indeed::in-e8659a53ca35cc3f",
-              "match_score": 92.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Direct 0–2 year AI/ML graduate role aligned with the candidate's M.S. CS and applied AI engineering experience.",
-                "Demonstrated end-to-end model/data work: feature engineering and ML pipeline improvement, LLM evaluation, fine-tuning, Python services, and production ML/AI deployment."
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "id::indeed::in-5ffce734350f57f3",
-              "match_score": 46.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Candidate has relevant hands-on full-stack, backend, cloud deployment, API, testing, and production reliability experience.",
-                "Has shipped user-facing React/FastAPI applications and worked across application layers."
-              ],
-              "main_gaps": [
-                "Role requires a founding-level owner to set architecture, modernize an entire product, and make broad technical strategy decisions under high autonomy.",
-                "Expected expansion into contractor management, recruiting, technical leadership, and engineering management is materially beyond the demonstrated early-career scope."
               ]
             }
           ]
