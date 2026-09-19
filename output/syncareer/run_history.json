@@ -2,6 +2,736 @@
   "runs": [
     {
       "pipeline": "syncareer",
+      "run_at": "2026-09-19T15:13:04.904255+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 28,
+      "cache_reused": 51,
+      "peer_reused": 4,
+      "same_content_reused": 0,
+      "non_material_change_reused": 0,
+      "new_or_changed": 31,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 30,
+        "prior_rule_result_now_eligible_for_llm": 1
+      },
+      "rescored_within_24h": 1,
+      "fallback_count": 3,
+      "rule_count": 5,
+      "requests": 4,
+      "input_tokens": 49522,
+      "cached_input_tokens": 4575,
+      "output_tokens": 6467,
+      "reasoning_tokens": 1473,
+      "estimated_usd": 0.168413,
+      "latency_seconds": 60.853,
+      "latency_measured": true,
+      "effective_rpm": 3.94,
+      "effective_tpm": 55204.18,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 4,
+      "primary_batches_total": 4,
+      "batches_attempted": 4,
+      "batches_succeeded": 4,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 31,
+      "funnel": {
+        "scoring_candidates": 79
+      },
+      "output": {
+        "tier_a": 11,
+        "tier_b": 7,
+        "tier_c": 61,
+        "shown": 18,
+        "new_jobs": 79,
+        "new_jobs_added": 6
+      },
+      "enrichment": {
+        "needed": 11,
+        "detail_api_resolved": 153,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 11
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/100827636672",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 4"
+            },
+            {
+              "key": "url::https://fifththird.wd5.myworkdayjobs.com/en-US/53careers/job/Cincinnati-OH/Software-Engineer-II-4_R72713?jobFamilyGroup=5d81a4de586e01daf1d8a5247a0bfca9&jobFamilyGroup=5d81a4de586e01c130fba6247a0b00aa&jobFamilyGroup=5d81a4de586e01171d54ab247a0b12aa&jobFamilyGroup=5d81a4de586e01d0a5bea3247a0bf2a9&jobFamilyGroup=5d81a4de586e01fe2a84a7247a0b02aa&jobFamilyGroup=5d81a4de586e014889e3ac247a0b18aa&jobFamilyGroup=5d81a4de586e01aed645a3247a0bf0a9&jobFamilyGroup=5d81a4de586e011266deaa247a0b10aa&jobFamilyGroup=5d81a4de586e01292163aa247a0b0eaa&jobFamilyGroup=5d81a4de586e01c547aea4247a0bf6a9&jobFamilyGroup=5d81a4de586e0184095eac247a0b16aa&jobFamilyGroup=5d81a4de586e01d9140da5247a0bf8a9&jobFamilyGroup=5d81a4de586e0100d37aa9247a0b0aaa&jobFamilyGroup=5d81a4de586e01f881e2a2247a0beea9&jobFamilyGroup=5d81a4de586e017ee13fa4247a0bf4a9&jobFamilyGroup=5d81a4de586e01057a0fa2247a0beca9&jobFamilyGroup=5d81a4de586e01940efca8247a0b08aa",
+              "company": "Fifth Third",
+              "title": "Software Engineer II-4"
+            },
+            {
+              "key": "url::https://careers.pennymac.com/jobs/40323?lang=en-us&previousLocale=en-US",
+              "company": "PennyMac",
+              "title": "Full Stack Developer (.NET)"
+            },
+            {
+              "key": "url::https://careers.mckesson.com/en/job/columbus/databricks-platform-engineer/733/100805640992",
+              "company": "McKesson",
+              "title": "Databricks Platform Engineer"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210779191",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer III - Databricks"
+            },
+            {
+              "key": "url::https://careers.dauch.com/en/job/newton/software-engineer/44944/100801566128",
+              "company": "American Axle & Manufacturing",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://labcorp.wd1.myworkdayjobs.com/en-US/External/job/Durham-NC/Software-Development-Engineer-II_2632403?jobFamilyGroup=4a6c2a97581e01007f4f68424ccd0001&jobFamilyGroup=4a6c2a97581e01007f4f68dd6f9e0000&jobFamilyGroup=4a6c2a97581e01007f4f6199e45a0000&jobFamilyGroup=4a6c2a97581e01007f4f6b49ffc90001&jobFamilyGroup=4a6c2a97581e01007f4f640679390000&jobFamilyGroup=4a6c2a97581e01007f4f653b66780002&jobFamilyGroup=4a6c2a97581e01007f4f65d6fab20000&jobFamilyGroup=4a6c2a97581e01007f4f6a14064c0002&jobFamilyGroup=4a6c2a97581e01007f4f653b66780000&jobFamilyGroup=4a6c2a97581e01007f4f6671e7a40000&jobFamilyGroup=4a6c2a97581e01007f4f6671e7a40002&jobFamilyGroup=4a6c2a97581e01007f4f670d0f060000&jobFamilyGroup=4a6c2a97581e01007f4f67a6fd370002&jobFamilyGroup=4a6c2a97581e01007f4f6aaed7bf0000",
+              "company": "LabCorp",
+              "title": "Software Development Engineer II"
+            },
+            {
+              "key": "url::https://recruiting.ultipro.com/ONE1018ONSO/JobBoard/1955ffa6-bda6-4c95-8412-2c731d693ab2/OpportunityDetail?opportunityId=e4ce0303-bb96-4059-b7e5-2ceb15924bbb",
+              "company": "OneStream Software",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://careers.principal.com/careers-home/jobs/52572?lang=en-us&previousLocale=en-US",
+              "company": "Principal Financial Group",
+              "title": "Software Engineer (Hybrid- Des Moines)"
+            },
+            {
+              "key": "url::https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/job/US-FL-JAX-347/Software-Engineers-II---Risk-and-Fraud-Technology_JR0309714?jobFamilyGroup=0e1af0e1ee1d1001836c3bbdc7940000&jobFamilyGroup=fea3e38a3564100183196e657c1e0000&jobFamilyGroup=d26eff0fee761001831d2319121c0000&jobFamilyGroup=041bdfd5e4d01001834c7fdbd0320000&jobFamilyGroup=67bfefe10eff1001833a9e2885240000&jobFamilyGroup=494eed1c8de601ea5300eb07a76f5e16&jobFamilyGroup=0e1af0e1ee1d1001836c8b8a29230000&jobFamilyGroup=041bdfd5e4d01001834cb559a5f10000&jobFamilyGroup=d26eff0fee761001831d7e66edfa0000&jobFamilyGroup=a2088ec533f410263c62091ebad3509e&jobFamilyGroup=7f383875dd521001834598af68560000&jobFamilyGroup=d26eff0fee761001831d97a4a9120000&jobFamilyGroup=7f383875dd5210018345b02252560000&jobFamilyGroup=a0b9127138f4100183637a54f3710000&jobFamilyGroup=041bdfd5e4d01001834cfa78ccf10000&jobFamilyGroup=d26eff0fee761001831dc4bc6eee0000&jobFamilyGroup=a0b9127138f4100183639e55ae1b0000&jobFamilyGroup=67bfefe10eff1001833b3277b0650000&jobFamilyGroup=a2088ec533f410263c621eb9a6a450a8&jobFamilyGroup=67bfefe10eff1001833b4349ae3b0000&jobFamilyGroup=972f8275a36e1001836b7a7c77eb0000&jobFamilyGroup=041bdfd5e4d01001834d46d1949c0000&jobFamilyGroup=a0b9127138f410018363dcbf33160000&jobFamilyGroup=972f8275a36e1001836ba4a98f990000&jobFamilyGroup=7f383875dd52100183463a63dbc20000",
+              "company": "FIS",
+              "title": "Software Engineers II - Risk and Fraud Technology"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 21.075,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 13280,
+            "cached_input_tokens": 0,
+            "output_tokens": 2420,
+            "reasoning_tokens": 285,
+            "estimated_usd": 0.0556
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/100827636672",
+              "match_score": 45.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack cloud delivery",
+                "microservices and CI/CD"
+              ],
+              "main_gaps": [
+                "4+ non-internship years",
+                "technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://fifththird.wd5.myworkdayjobs.com/en-US/53careers/job/Cincinnati-OH/Software-Engineer-II-4_R72713?jobFamilyGroup=5d81a4de586e01daf1d8a5247a0bfca9&jobFamilyGroup=5d81a4de586e01c130fba6247a0b00aa&jobFamilyGroup=5d81a4de586e01171d54ab247a0b12aa&jobFamilyGroup=5d81a4de586e01d0a5bea3247a0bf2a9&jobFamilyGroup=5d81a4de586e01fe2a84a7247a0b02aa&jobFamilyGroup=5d81a4de586e014889e3ac247a0b18aa&jobFamilyGroup=5d81a4de586e01aed645a3247a0bf0a9&jobFamilyGroup=5d81a4de586e011266deaa247a0b10aa&jobFamilyGroup=5d81a4de586e01292163aa247a0b0eaa&jobFamilyGroup=5d81a4de586e01c547aea4247a0bf6a9&jobFamilyGroup=5d81a4de586e0184095eac247a0b16aa&jobFamilyGroup=5d81a4de586e01d9140da5247a0bf8a9&jobFamilyGroup=5d81a4de586e0100d37aa9247a0b0aaa&jobFamilyGroup=5d81a4de586e01f881e2a2247a0beea9&jobFamilyGroup=5d81a4de586e017ee13fa4247a0bf4a9&jobFamilyGroup=5d81a4de586e01057a0fa2247a0beca9&jobFamilyGroup=5d81a4de586e01940efca8247a0b08aa",
+              "match_score": 85.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "JavaScript TypeScript full-stack",
+                "REST APIs and databases"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://careers.pennymac.com/jobs/40323?lang=en-us&previousLocale=en-US",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production delivery",
+                "SQL and AWS containers"
+              ],
+              "main_gaps": [
+                "C# .NET development",
+                "3+ relevant years"
+              ]
+            },
+            {
+              "key": "url::https://careers.mckesson.com/en/job/columbus/databricks-platform-engineer/733/100805640992",
+              "match_score": 55.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Databricks workflow experience",
+                "Terraform and data pipelines"
+              ],
+              "main_gaps": [
+                "4+ platform engineering years",
+                "Azure Databricks administration"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210779191",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python distributed services",
+                "testing CI/CD Docker"
+              ],
+              "main_gaps": [
+                "3+ applied experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.dauch.com/en/job/newton/software-engineer/44944/100801566128",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "application development",
+                "production troubleshooting"
+              ],
+              "main_gaps": [
+                "CAN bus communication",
+                "manufacturing software experience"
+              ]
+            },
+            {
+              "key": "url::https://labcorp.wd1.myworkdayjobs.com/en-US/External/job/Durham-NC/Software-Development-Engineer-II_2632403?jobFamilyGroup=4a6c2a97581e01007f4f68424ccd0001&jobFamilyGroup=4a6c2a97581e01007f4f68dd6f9e0000&jobFamilyGroup=4a6c2a97581e01007f4f6199e45a0000&jobFamilyGroup=4a6c2a97581e01007f4f6b49ffc90001&jobFamilyGroup=4a6c2a97581e01007f4f640679390000&jobFamilyGroup=4a6c2a97581e01007f4f653b66780002&jobFamilyGroup=4a6c2a97581e01007f4f65d6fab20000&jobFamilyGroup=4a6c2a97581e01007f4f6a14064c0002&jobFamilyGroup=4a6c2a97581e01007f4f653b66780000&jobFamilyGroup=4a6c2a97581e01007f4f6671e7a40000&jobFamilyGroup=4a6c2a97581e01007f4f670d0f060000&jobFamilyGroup=4a6c2a97581e01007f4f67a6fd370002&jobFamilyGroup=4a6c2a97581e01007f4f6aaed7bf0000",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python microservice delivery",
+                "AWS containers CI/CD"
+              ],
+              "main_gaps": [
+                "3+ software development years"
+              ]
+            },
+            {
+              "key": "url::https://recruiting.ultipro.com/ONE1018ONSO/JobBoard/1955ffa6-bda6-4c95-8412-2c731d693ab2/OpportunityDetail?opportunityId=e4ce0303-bb96-4059-b7e5-2ceb15924bbb",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "REST API development",
+                "testing and CI/CD"
+              ],
+              "main_gaps": [
+                "C# .NET proficiency",
+                "OneStream development experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.principal.com/careers-home/jobs/52572?lang=en-us&previousLocale=en-US",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "TypeScript full-stack delivery",
+                "AWS API architecture"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/job/US-FL-JAX-347/Software-Engineers-II---Risk-and-Fraud-Technology_JR0309714?jobFamilyGroup=0e1af0e1ee1d1001836c3bbdc7940000&jobFamilyGroup=fea3e38a3564100183196e657c1e0000&jobFamilyGroup=d26eff0fee761001831d2319121c0000&jobFamilyGroup=041bdfd5e4d01001834c7fdbd0320000&jobFamilyGroup=67bfefe10eff1001833a9e2885240000&jobFamilyGroup=494eed1c8de601ea5300eb07a76f5e16&jobFamilyGroup=0e1af0e1ee1d1001836c8b8a29230000&jobFamilyGroup=041bdfd5e4d01001834cb559a5f10000&jobFamilyGroup=d26eff0fee761001831d7e66edfa0000&jobFamilyGroup=a2088ec533f410263c62091ebad3509e&jobFamilyGroup=7f383875dd521001834598af68560000&jobFamilyGroup=d26eff0fee761001831d97a4a9120000&jobFamilyGroup=7f383875dd5210018345b02252560000&jobFamilyGroup=a0b9127138f4100183637a54f3710000&jobFamilyGroup=041bdfd5e4d01001834cfa78ccf10000&jobFamilyGroup=d26eff0fee761001831dc4bc6eee0000&jobFamilyGroup=a0b9127138f4100183639e55ae1b0000&jobFamilyGroup=67bfefe10eff1001833b3277b0650000&jobFamilyGroup=a2088ec533f410263c621eb9a6a450a8&jobFamilyGroup=67bfefe10eff1001833b4349ae3e0000&jobFamilyGroup=972f8275a36e1001836b7a7c77eb0000&jobFamilyGroup=041bdfd5e4d01001834d46d1949c0000&jobFamilyGroup=a0b9127138f410018363dcbf33160000&jobFamilyGroup=972f8275a36e1001836ba4a98f990000&jobFamilyGroup=7f383875dd52100183463a63dbc20000",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java backend experience",
+                "AWS REST services"
+              ],
+              "main_gaps": [
+                "four years security engineering",
+                "identity fraud security expertise"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://republic.wd5.myworkdayjobs.com/en-US/Republic/job/USA---Remote/Software-Development-Engineer-in-Test_R-181721-1?jobFamilyGroup=34db874922a30101e65a3b97ad006f0e&jobFamilyGroup=34db874922a30100a2a44a97ad009d0e&jobFamilyGroup=34db874922a3016d869f4897ad00970e&jobFamilyGroup=34db874922a30122c3fb3b97ad00710e&jobFamilyGroup=34db874922a301dfcb5f4597ad008d0e&jobFamilyGroup=36f0053f8b9a1000c3035f03b8660000&jobFamilyGroup=34db874922a30146994e4997ad00990e&jobFamilyGroup=34db874922a301babce23d97ad00770e&jobFamilyGroup=34db874922a30143e2863c97ad00730e&jobFamilyGroup=34db874922a3014bcfbf3e97ad00790e&jobFamilyGroup=36f0053f8b9a1000c2fdecf211570000&jobFamilyGroup=34db874922a301d2bb763f97ad007b0e&jobFamilyGroup=34db874922a301a148044297ad00830e&jobFamilyGroup=34db874922a30165e3843997ad006b0e&jobFamilyGroup=34db874922a301306e434797ad00930e&jobFamilyGroup=34db874922a301ed0e2d4397ad00870e&jobFamilyGroup=34db874922a30138c5994297ad00850e&jobFamilyGroup=34db874922a3011f93984697ad00910e&jobFamilyGroup=34db874922a3016b91a34097ad007f0e&jobFamilyGroup=34db874922a30140ec004897ad00950e",
+              "company": "Republic Services",
+              "title": "Software Development Engineer in Test"
+            },
+            {
+              "key": "url::https://careers.se.com/jobs/134118?lang=en-us&previousLocale=en-US",
+              "company": "Schneider Electric",
+              "title": "Engineer II, Software"
+            },
+            {
+              "key": "url::https://careers.wexinc.com/us/en/job/R22943/Site-Reliability-Engineer-2",
+              "company": "WEX",
+              "title": "Site Reliability Engineer 2"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 7.296,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 5889,
+            "cached_input_tokens": 1851,
+            "output_tokens": 782,
+            "reasoning_tokens": 112,
+            "estimated_usd": 0.01783
+          },
+          "decisions": [
+            {
+              "key": "url::https://republic.wd5.myworkdayjobs.com/en-US/Republic/job/USA---Remote/Software-Development-Engineer-in-Test_R-181721-1?jobFamilyGroup=34db874922a30101e65a3b97ad006f0e&jobFamilyGroup=34db874922a30100a2a44a97ad009d0e&jobFamilyGroup=34db874922a3016d869f4897ad00970e&jobFamilyGroup=34db874922a30122c3fb3b97ad00710e&jobFamilyGroup=34db874922a301dfcb5f4597ad008d0e&jobFamilyGroup=36f0053f8b9a1000c3035f03b8660000&jobFamilyGroup=34db874922a30146994e4997ad00990e&jobFamilyGroup=34db874922a301babce23d97ad00770e&jobFamilyGroup=34db874922a30143e2863c97ad00730e&jobFamilyGroup=34db874922a3014bcfbf3e97ad00790e&jobFamilyGroup=36f0053f8b9a1000c2fdecf211570000&jobFamilyGroup=34db874922a301d2bb763f97ad007b0e&jobFamilyGroup=34db874922a301a148044297ad00830e&jobFamilyGroup=34db874922a30165e3843997ad006b0e&jobFamilyGroup=34db874922a301306e434797ad00930e&jobFamilyGroup=34db874922a301ed0e2d4397ad00870e&jobFamilyGroup=34db874922a30138c5994297ad00850e&jobFamilyGroup=34db874922a3011f93984697ad00910e&jobFamilyGroup=34db874922a3016b91a34097ad007f0e&jobFamilyGroup=34db874922a30140ec004897ad00950e",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "API testing experience",
+                "TypeScript and Node.js"
+              ],
+              "main_gaps": [
+                "test automation frameworks",
+                "SDET leadership experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.se.com/jobs/134118?lang=en-us&previousLocale=en-US",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "software troubleshooting",
+                "web application development"
+              ],
+              "main_gaps": [
+                "building automation systems",
+                "DDC commissioning experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.wexinc.com/us/en/job/R22943/Site-Reliability-Engineer-2",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS Docker Kubernetes Terraform",
+                "CI/CD reliability engineering"
+              ],
+              "main_gaps": [
+                "production incident response"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://axos.wd5.myworkdayjobs.com/en-US/Axos/job/HQ---San-Diego-CA/Intermediate-Software-Engineer_JR5481?jobFamilyGroup=fd8c8b4af17f1001618e57bfccf30000&jobFamilyGroup=fd8c8b4af17f1001618e72f4aed00000&jobFamilyGroup=961987b7bef410401c57838a85910000&jobFamilyGroup=fd8c8b4af17f1001618e79e5ee0b0000&jobFamilyGroup=fd8c8b4af17f1001618e159c6df40000",
+              "company": "Axos Bank",
+              "title": "Intermediate Software Engineer"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210788991",
+              "company": "JPMorgan Chase",
+              "title": "Back-end Java Software Engineer III"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/san-francisco/ai-engineer-4-gen-ai-platform-services-agentic-ai-agent-guardrails-agent-evaluation-agent-memory/1732/100813798496",
+              "company": "Capital One",
+              "title": "AI Engineer 4 (Gen AI Platform Services: Agentic AI, Agent Guardrails, Agent Evaluation, Agent Memory)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/san-jose/applied-researcher-4-ai-foundations-llm-core-and-agentic-ai/1732/100827637904",
+              "company": "Capital One",
+              "title": "Applied Researcher 4 (AI Foundations, LLM Core and Agentic AI)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/san-jose/ai-engineer-4-mlx-agentic-ai-gen-ai-platform-services/1732/100827637088",
+              "company": "Capital One",
+              "title": "AI Engineer 4 (MLX, Agentic AI, Gen AI platform Services)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/san-jose/ai-engineer-4-mlx-agentic-ai-gen-ai-platform-services/1732/100827636640",
+              "company": "Capital One",
+              "title": "AI Engineer 4 (MLX, Agentic AI, Gen AI platform Services)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/san-jose/ai-engineer-2/1732/100827636448",
+              "company": "Capital One",
+              "title": "AI Engineer 2"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/ai-engineer-4/1732/100827635904",
+              "company": "Capital One",
+              "title": "AI Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/san-jose/applied-researcher-4-ai-foundations-llm-core-and-agentic-ai/1732/100827635216",
+              "company": "Capital One",
+              "title": "Applied Researcher 4 (AI Foundations, LLM Core and Agentic AI)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/ai-engineer-4-ai-foundations-llm-customization-finetuning-reinforcement-learning/1732/100813798192",
+              "company": "Capital One",
+              "title": "AI Engineer 4 (AI Foundations: LLM Customization, Finetuning, Reinforcement Learning)"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 16.791,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 16917,
+            "cached_input_tokens": 0,
+            "output_tokens": 1740,
+            "reasoning_tokens": 700,
+            "estimated_usd": 0.054714
+          },
+          "decisions": [
+            {
+              "key": "url::https://axos.wd5.myworkdayjobs.com/en-US/Axos/job/HQ---San-Diego-CA/Intermediate-Software-Engineer_JR5481?jobFamilyGroup=fd8c8b4af17f1001618e57bfccf30000&jobFamilyGroup=fd8c8b4af17f1001618e72f4aed00000&jobFamilyGroup=961987b7bef410401c57838a85910000&jobFamilyGroup=fd8c8b4af17f1001618e79e5ee0b0000&jobFamilyGroup=fd8c8b4af17f1001618e159c6df40000",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "operational AI workflows",
+                "production API delivery"
+              ],
+              "main_gaps": [
+                "C#/.NET",
+                "Retool/n8n automation"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210788991",
+              "match_score": 66.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "REST microservice delivery",
+                "cloud CI/CD experience"
+              ],
+              "main_gaps": [
+                "3+ years experience",
+                "Java Spring Boot evidence"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/san-francisco/ai-engineer-4-gen-ai-platform-services-agentic-ai-agent-guardrails-agent-evaluation-agent-memory/1732/100813798496",
+              "match_score": 52.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "agentic AI systems",
+                "LLM evaluation guardrails"
+              ],
+              "main_gaps": [
+                "4+ years AI development",
+                "large-scale platform leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/san-jose/applied-researcher-4-ai-foundations-llm-core-and-agentic-ai/1732/100827637904",
+              "match_score": 44.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM evaluation research",
+                "QLoRA fine-tuning"
+              ],
+              "main_gaps": [
+                "two years applied research",
+                "foundation-model research depth"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/san-jose/ai-engineer-4-mlx-agentic-ai-gen-ai-platform-services/1732/100827637088",
+              "match_score": 52.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "agentic AI systems",
+                "production LLM deployment"
+              ],
+              "main_gaps": [
+                "4+ years AI development",
+                "large-scale platform leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/san-jose/ai-engineer-4-mlx-agentic-ai-gen-ai-platform-services/1732/100827636640",
+              "match_score": 52.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "agentic AI systems",
+                "production LLM deployment"
+              ],
+              "main_gaps": [
+                "4+ years AI development",
+                "large-scale platform leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/san-jose/ai-engineer-2/1732/100827636448",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production agentic AI",
+                "RAG evaluation pipelines"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/ai-engineer-4/1732/100827635904",
+              "match_score": 52.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM inference systems",
+                "retrieval and evaluation"
+              ],
+              "main_gaps": [
+                "4+ years AI development",
+                "large-scale platform leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/san-jose/applied-researcher-4-ai-foundations-llm-core-and-agentic-ai/1732/100827635216",
+              "match_score": 44.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM evaluation research",
+                "QLoRA fine-tuning"
+              ],
+              "main_gaps": [
+                "two years applied research",
+                "foundation-model research depth"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/ai-engineer-4-ai-foundations-llm-customization-finetuning-reinforcement-learning/1732/100813798192",
+              "match_score": 54.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "QLoRA fine-tuning",
+                "production LLM evaluation"
+              ],
+              "main_gaps": [
+                "4+ years AI development",
+                "large-scale platform leadership"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://careers.zionsbancorp.com/jobs/software-engineer-release-platform-engineering-28130",
+              "company": "Zions Bancorporation",
+              "title": "Software Engineer (Release & Platform Engineering)"
+            },
+            {
+              "key": "url::https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/OFallon-Missouri/Software-Engineer-II_R-289524-1?locations=8eab563831bf10acbe3d7c702f3b222a&locations=15854e620ab6014e5c345533ce3e0c5d&locations=bea842055ec0010f8fa2f063710e65dd&locations=abb6e89c39b847c49cb2958e421072b3&locations=8eab563831bf10acbe0b766b65242035&locations=fb7d771add6201c7c6d0d3914b4acc2f&locations=8eab563831bf10acbda112b729c11c9a&locations=13430a311dc746e1aa9200a749388d03&locations=8eab563831bf10acbd2183c3090f1a20&locations=efacbd97fd67011dbc0f236fbb007b75&locations=4345730331e1457585f99e8c7feb2c84&locations=8eab563831bf10acbcb35b24fcd616d7&locations=8eab563831bf10acbbdb817a833d0fa6&locations=8eab563831bf10acbba0ec70e0f00d06&locations=c9c1221064f54d28ae6ab893b99923cf&locations=b76624f2eeb110019afd21305a220000&locations=d98b53ce7a111038792c1575842cbfb5&locations=8eab563831bf10acb7f44286d1feeaf0&locations=38301974980c10d4a0770cdea411b718&locations=85482cdd21931001b922354af3a90000&locations=a52da795b81f100109d635958d730000&locations=3b2ad45f5eca10bd534be5fa946139c3&locations=8eab563831bf10acb54f0f21651ed219",
+              "company": "Mastercard",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/40535?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000480126%253B300000000471544%253B300000000471661",
+              "company": "Nokia",
+              "title": "AI Assisted Software Development Co-op"
+            },
+            {
+              "key": "url::https://careers.t-mobile.com/ai-engineer-multiple-roles/job/F90F9558FDF47CB3B8703C98210DC84A",
+              "company": "T-Mobile",
+              "title": "AI Engineer (Multiple Roles)"
+            },
+            {
+              "key": "url::https://careers.veeam.com/job/united-states/forward-deployed-engineer/22681/100820733376",
+              "company": "Veeam Software",
+              "title": "Forward Deployed Engineer"
+            },
+            {
+              "key": "url::https://jobs.janushenderson.com/job/Denver-Forward-Deployed-Engineer-CO-80206/1431146200",
+              "company": "Janus Henderson",
+              "title": "Forward Deployed Engineer"
+            },
+            {
+              "key": "url::https://jobs.tennantco.com/job/Eden-Prairie-Global-Data-Engineer-MN-55344/1431328800",
+              "company": "Tennant",
+              "title": "Global Data Engineer"
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/152764BR",
+              "company": "Infosys",
+              "title": "Data Engineer (Talend & Snowflake)"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 15.691,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 8,
+            "input_tokens": 13436,
+            "cached_input_tokens": 2724,
+            "output_tokens": 1525,
+            "reasoning_tokens": 376,
+            "estimated_usd": 0.040269
+          },
+          "decisions": [
+            {
+              "key": "url::https://careers.zionsbancorp.com/jobs/software-engineer-release-platform-engineering-28130",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "GitHub Actions and Terraform",
+                "AWS containerized FastAPI deployments"
+              ],
+              "main_gaps": [
+                "GKE and Helm administration",
+                "2+ years platform experience"
+              ]
+            },
+            {
+              "key": "url::https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/OFallon-Missouri/Software-Engineer-II_R-289524-1?locations=8eab563831bf10acbe3d7c702f3b222a&locations=15854e620ab6014e5c345533ce3e0c5d&locations=bea842055ec0010f8fa2f063710e65dd&locations=abb6e89c39b847c49cb2958e421072b3&locations=8eab563831bf10acbe0b766b65242035&locations=fb7d771add6201c7c6d0d3914b4acc2f&locations=8eab563831bf10acbda112b729c11c9a&locations=13430a311dc746e1aa9200a749388d03&locations=8eab563831bf10acbd2183c3090f1a20&locations=efacbd97011dbc0f236fbb007b75&locations=4345730331e1457585f99e8c7feb2c84&locations=8eab563831bf10acbcb35b24fcd616d7&locations=8eab563831bf10acbbdb817a833d0fa6&locations=8eab563831bf10acbba0ec70e0f00d06&locations=c9c1221064f54d28ae6ab893b99923cf&locations=b76624f2eeb110019afd21305a220000&locations=d98b53ce7a111038792c1575842cbfb5&locations=8eab563831bf10acb7f44286d1feeaf0&locations=38301974980c10d4a0770cdea411b718&locations=85482cdd21931001b922354af3a90000&locations=a52da795b81f100109d635958d730000&locations=3b2ad45f5eca10bd534be5fa946139c3&locations=8eab563831bf10acb54f0f21651ed219",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "MCP agent integrations",
+                "production APIs and microservices"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/40535?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000480126%253B300000000471544%253B300000000471661",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "agent workflow implementation",
+                "CI/CD automation experience"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://careers.t-mobile.com/ai-engineer-multiple-roles/job/F90F9558FDF47CB3B8703C98210DC84A",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production RAG and reranking",
+                "LLM evaluation and fine-tuning"
+              ],
+              "main_gaps": [
+                "2+ years ML deployment"
+              ]
+            },
+            {
+              "key": "url::https://careers.veeam.com/job/united-states/forward-deployed-engineer/22681/100820733376",
+              "match_score": 55.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "cloud integrations and APIs",
+                "Kubernetes and AI agents"
+              ],
+              "main_gaps": [
+                "4–7 years customer-facing experience",
+                "security privacy governance"
+              ]
+            },
+            {
+              "key": "url::https://jobs.janushenderson.com/job/Denver-Forward-Deployed-Engineer-CO-80206/1431146200",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production AI evaluation",
+                "data pipelines and APIs"
+              ],
+              "main_gaps": [
+                "investment-domain expertise",
+                "independent complex delivery"
+              ]
+            },
+            {
+              "key": "url::https://jobs.tennantco.com/job/Eden-Prairie-Global-Data-Engineer-MN-55344/1431328800",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks data pipelines",
+                "SQL data validation"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/152764BR",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "data pipeline experience",
+                "Databricks and SQL"
+              ],
+              "main_gaps": [
+                "Talend experience",
+                "Snowflake experience"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
       "run_at": "2026-09-19T00:13:14.114462+00:00",
       "mode": "pipeline",
       "health": "success",
