@@ -1,15 +1,16 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-09-18 17:34 PDT
-- Snapshot (UTC): 2026-09-19T00:34:35.492513+00:00
-- Jobs: 41 (Tier A/B only)
-- Last 24 hours: 1
-- Last 3 days: 41
+- Updated (PT): 2026-09-19 08:34 PDT
+- Snapshot (UTC): 2026-09-19T15:34:32.694944+00:00
+- Jobs: 46 (Tier A/B only)
+- Last 24 hours: 2
+- Last 3 days: 46
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 92 | official | Microsoft | Software Engineer II - Excel Team | United States, Washington, Redmond | 2026-09-19 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557001308) |
 | A | 91 | official | Qualcomm | #Machine Learning Engineer - Generative AI | San Diego, California, United States of America | 2026-09-18 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446721159438) |
 | A | 90 | official | Microsoft | Software Engineer: AI Experiences Search | United States, Washington, Redmond | 2026-09-18 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556986144) |
 | A | 91 | official | Capital One | AI Engineer 2 | San Jose, CA; McLean, VA; Cambridge, MA; New York, NY | 2026-09-18 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/San-Jose-CA/AI-Engineer-2_R1001174-1) |
@@ -40,14 +41,18 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | B | 75 | official | Workday | Software Development Engineer | USA, CA, Pleasanton | 2026-09-18 | 1to3d | - | unreviewed | official_canonical | [open](https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Software-Development-Engineer_JR-0109889) |
 | B | 75 | official | Morgan Stanley | Generative AI, Backend Engineer | New York, New York, United States of America | 2026-09-18 | 1to3d | Morgan Stanley | unreviewed | official_canonical | [open](https://morganstanley.eightfold.ai/careers/job/549799388181) |
 | B | 76 | official | Apple | Software Engineer (Graph), Supply Chain Integration | Sunnyvale, United States of America | 2026-09-18 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200684594/software-engineer-graph-supply-chain-integration) |
+| B | 77 | official | Qualcomm | #Wireless Subsystem Test and Software Tools Engineer | San Diego, California, United States of America | 2026-09-18 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446721161405) |
 | B | 72 | official | Apple | Machine Learning Engineer | Cupertino, United States of America | 2026-09-18 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200681112/machine-learning-engineer) |
 | B | 72 | official | Apple | Software Engineer, Finance Engineering | San Francisco Bay Area, United States of America | 2026-09-18 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200684265/software-engineer-finance-engineering) |
 | B | 84 | official | Apple | Data Engineer, (Data Products, Apple Ads) | Cupertino, United States of America | 2026-09-17 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200684319/data-engineer-data-products-apple-ads) |
 | B | 84 | official | Pure Storage | Associate Security Engineer | Lehi, Utah; Lehi, Utah, United States; Santa Clara, California, United States | 2026-09-17 | 1to3d | - | unreviewed | official_canonical | [open](https://job-boards.greenhouse.io/purestorage/jobs/8211966) |
 | B | 84 | official | Pure Storage | Associate Security Engineer | Santa Clara, California; Lehi, Utah, United States; Santa Clara, California, United States | 2026-09-17 | 1to3d | - | unreviewed | official_canonical | [open](https://job-boards.greenhouse.io/purestorage/jobs/8211954) |
+| B | 82 | official | Qualcomm | GPU Compiler QA | San Diego, California, United States of America | 2026-09-17 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446716337611) |
 | B | 75 | official | Qualcomm | RISC-V CPU Compiler Engineer | Santa Clara, California, United States of America; Austin, Texas, United States of America; Cork, Ireland; France - Remote, France; Munich - Remote, Germany; Netherlands - Remote, Netherlands | 2026-09-17 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446716911659) |
+| B | 75 | official | Qualcomm | GPU Research Engineer- AI (San Diego / Boxborough ) | San Diego, California, United States of America | 2026-09-17 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446715273199) |
+| B | 75 | official | Qualcomm | GPU HW Research Engineer (San Diego/Boxborough) | Boxborough, Massachusetts, United States of America | 2026-09-17 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446716191606) |
 | B | 75 | official | Qualcomm | Machine Learning Researcher | San Diego, California, United States of America | 2026-09-17 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446719107884) |
 | B | 75 | official | Intel | AI Performance Library Architect | US, Oregon, Hillsboro; US, California, Folsom | 2026-09-17 | 1to3d | Intel | unreviewed | official_canonical | [open](https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/AI-Performance-Library-Architect_JR0281978-1) |
-| B | 77 | official | Uber | Software Engineer II - Engineer | San Francisco, CA, United States | 2026-09-17 | 1to3d | Uber | unreviewed | official_canonical | [open](https://jobs.uber.com/en/jobs/302383) |
 | B | 76 | official | eBay | Software Engineer - Traffic | Austin | 2026-09-17 | 1to3d | eBay | unreviewed | official_canonical | [open](https://ebay.wd5.myworkdayjobs.com/apply/job/Austin/Software-Engineer---Traffic_R0076603) |
+| B | 77 | official | Uber | Software Engineer II - Engineer | San Francisco, CA, United States | 2026-09-17 | 1to3d | Uber | unreviewed | official_canonical | [open](https://jobs.uber.com/en/jobs/302383) |
 | B | 76 | official | TikTok | Machine Learning Engineer Graduate (E-Commerce Recommendation Video) - | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7686999927260105013) |

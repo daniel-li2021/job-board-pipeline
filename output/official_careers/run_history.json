@@ -2,6 +2,270 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-09-19T15:34:32.694944+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 8,
+      "cache_reused": 652,
+      "peer_reused": 1,
+      "same_content_reused": 18,
+      "non_material_change_reused": 0,
+      "new_or_changed": 12,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 12
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 2477,
+      "requests": 2,
+      "input_tokens": 14387,
+      "cached_input_tokens": 0,
+      "output_tokens": 1249,
+      "reasoning_tokens": 650,
+      "estimated_usd": 0.043762,
+      "latency_seconds": 18.044,
+      "latency_measured": true,
+      "effective_rpm": 6.65,
+      "effective_tpm": 51992.91,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 8,
+      "funnel": {
+        "after_dedup": 17417,
+        "after_company": 17417,
+        "after_hard_filter": 14255,
+        "after_prefilter": 3137,
+        "dropped": 14280
+      },
+      "output": {
+        "tier_a": 20,
+        "tier_b": 58,
+        "shown": 78,
+        "new_jobs": 43,
+        "new_jobs_added": 3
+      },
+      "enrichment": {
+        "discovered": 17477,
+        "needed": 1358,
+        "source_jds_available": 16118,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 1359
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446716337611",
+              "company": "Qualcomm",
+              "title": "GPU Compiler QA"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717394529",
+              "company": "Qualcomm",
+              "title": "IOT Software Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717026616",
+              "company": "Qualcomm",
+              "title": "Hardware Platform Architect"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 7.142,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 5567,
+            "cached_input_tokens": 0,
+            "output_tokens": 400,
+            "reasoning_tokens": 177,
+            "estimated_usd": 0.015934
+          },
+          "decisions": [
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446716337611",
+              "match_score": 82.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack REST development",
+                "CI/CD and automated testing"
+              ],
+              "main_gaps": [
+                "GPU compiler testing",
+                "C++ build systems"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717394529",
+              "match_score": 31.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and C++ experience",
+                "Software reliability testing"
+              ],
+              "main_gaps": [
+                "Bare-metal device drivers",
+                "Hardware bring-up debugging"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446717026616",
+              "match_score": 18.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Computer science education",
+                "Software systems experience"
+              ],
+              "main_gaps": [
+                "Electronic system design",
+                "PCB architecture and validation"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10554141/sde-ii-ml-infra-services-annapurna-labs",
+              "company": "Amazon",
+              "title": "SDE II, ML Infra Services, Annapurna Labs"
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557001308",
+              "company": "Microsoft",
+              "title": "Software Engineer II - Excel Team"
+            },
+            {
+              "key": "url::https://careers.netapp.com/en/job/san-diego/consulting-solutions-engineer-hi-tech-strategic-accounts/27600/100842229296",
+              "company": "NetApp",
+              "title": "Consulting Solutions Engineer - Hi-Tech Strategic Accounts"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446721161405",
+              "company": "Qualcomm",
+              "title": "#Wireless Subsystem Test and Software Tools Engineer"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446715532700",
+              "company": "Qualcomm",
+              "title": "GPU Power Analysis Engineer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 10.902,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 5,
+            "input_tokens": 8820,
+            "cached_input_tokens": 0,
+            "output_tokens": 849,
+            "reasoning_tokens": 473,
+            "estimated_usd": 0.027828
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10554141/sde-ii-ml-infra-services-annapurna-labs",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production ML services",
+                "Kubernetes and CI/CD"
+              ],
+              "main_gaps": [
+                "accelerator fleet orchestration",
+                "kernel-level performance profiling"
+              ]
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557001308",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production agentic AI",
+                "full-stack LLM systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://careers.netapp.com/en/job/san-diego/consulting-solutions-engineer-hi-tech-strategic-accounts/27600/100842229296",
+              "match_score": 16.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI infrastructure exposure"
+              ],
+              "main_gaps": [
+                "12+ years strategic presales",
+                "enterprise technical sales leadership"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446721161405",
+              "match_score": 77.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python C++ testing",
+                "CI/CD regression automation"
+              ],
+              "main_gaps": [
+                "embedded software debugging",
+                "wireless systems integration"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446715532700",
+              "match_score": 18.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python programming"
+              ],
+              "main_gaps": [
+                "GPU SoC power analysis",
+                "required industry experience"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-09-19T00:34:35.492513+00:00",
       "mode": "pipeline",
       "health": "degraded",
