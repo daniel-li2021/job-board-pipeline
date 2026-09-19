@@ -2,6 +2,177 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-09-19T00:05:35.735770+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 2,
+      "cache_reused": 380,
+      "peer_reused": 0,
+      "same_content_reused": 0,
+      "non_material_change_reused": 0,
+      "new_or_changed": 2,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 2
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 320,
+      "requests": 1,
+      "input_tokens": 4654,
+      "cached_input_tokens": 0,
+      "output_tokens": 146,
+      "reasoning_tokens": 0,
+      "estimated_usd": 0.01106,
+      "latency_seconds": 3.182,
+      "latency_measured": true,
+      "effective_rpm": 18.86,
+      "effective_tpm": 90509.11,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 2,
+      "funnel": {
+        "after_dedup": 4993,
+        "after_company": 4719,
+        "after_hard_filter": 4327,
+        "after_prefilter": 1019,
+        "official_duplicates_suppressed": 317,
+        "retry_only_carried": 0,
+        "dropped": 3819
+      },
+      "output": {
+        "tier_a": 76,
+        "tier_b": 183,
+        "ab_before_cap": 259,
+        "shown": 259,
+        "new_jobs": 69,
+        "new_jobs_added": 27,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 8,
+            "added": 2
+          },
+          "linkedin": {
+            "found": 61,
+            "added": 25
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 860,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 987,
+          "http_requests": 159,
+          "scrapling_requests": 23,
+          "jds_resolved": 15,
+          "direct_http_resolved": 15,
+          "identity_needed": 127,
+          "identities_resolved": 127,
+          "remaining_no_jd": 851,
+          "failure_reasons": {
+            "linkedin_rate_limited": 449,
+            "scrapling_fetch_failed": 6,
+            "structured_jd_not_found": 23,
+            "glassdoor_detail_http_403_static_card_only": 373
+          }
+        },
+        "remaining_no_jd": 848,
+        "failure_reasons": {
+          "linkedin_rate_limited": 449,
+          "scrapling_fetch_failed": 6,
+          "structured_jd_not_found": 20,
+          "glassdoor_detail_http_403_static_card_only": 373
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/reddit/jobs/8214910",
+              "company": "Reddit",
+              "title": "Software Engineer, Ingestion Platform"
+            },
+            {
+              "key": "url::https://app.careerpuck.com/job-board/lyft/job/8806570002?gh_jid=8806570002",
+              "company": "Lyft",
+              "title": "Backend Software Engineer, Airports"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.182,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 4654,
+            "cached_input_tokens": 0,
+            "output_tokens": 146,
+            "reasoning_tokens": 0,
+            "estimated_usd": 0.01106
+          },
+          "decisions": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/reddit/jobs/8214910",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production data pipelines",
+                "Spark cloud infrastructure"
+              ],
+              "main_gaps": [
+                "Airflow/Flink production ownership"
+              ]
+            },
+            {
+              "key": "url::https://app.careerpuck.com/job-board/lyft/job/8806570002?gh_jid=8806570002",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python backend production",
+                "tested scalable services"
+              ],
+              "main_gaps": [
+                "Go experience"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-09-18T21:05:07.442044+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -58391,79 +58562,6 @@
           ]
         }
       ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-09-14T15:02:30.263044+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-5.6-terra",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 0,
-      "cache_reused": 358,
-      "fallback_count": 0,
-      "rule_count": 181,
-      "requests": 0,
-      "input_tokens": 0,
-      "cached_input_tokens": 0,
-      "output_tokens": 0,
-      "reasoning_tokens": 0,
-      "estimated_usd": 0.0,
-      "latency_seconds": 0.0,
-      "latency_measured": true,
-      "effective_rpm": null,
-      "effective_tpm": null,
-      "json_reliability": null,
-      "json_reliability_measured": true,
-      "batches_total": 0,
-      "batches_attempted": 0,
-      "batches_succeeded": 0,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 0,
-      "funnel": {
-        "after_dedup": 4157,
-        "after_company": 4036,
-        "after_hard_filter": 3732,
-        "after_prefilter": 838,
-        "official_duplicates_suppressed": 299,
-        "dropped": 3297
-      },
-      "output": {
-        "tier_a": 39,
-        "tier_b": 82,
-        "ab_before_cap": 121,
-        "shown": 121
-      },
-      "enrichment": {
-        "needed": 389,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 389,
-          "http_requests": 9,
-          "scrapling_requests": 6,
-          "jds_resolved": 4,
-          "scrapling_fetcher_resolved": 1,
-          "direct_http_resolved": 3,
-          "remaining_no_jd": 385,
-          "failure_reasons": {
-            "scrapling_fetch_failed": 2,
-            "glassdoor_detail_http_403_static_card_only": 378,
-            "structured_jd_not_found": 5
-          }
-        },
-        "remaining_no_jd": 385,
-        "failure_reasons": {
-          "scrapling_fetch_failed": 2,
-          "glassdoor_detail_http_403_static_card_only": 378,
-          "structured_jd_not_found": 5
-        }
-      },
-      "comparison": {},
-      "batches": []
     }
   ]
 }
