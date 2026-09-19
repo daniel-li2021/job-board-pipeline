@@ -1,9 +1,9 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-09-18 17:05 PDT
-- Snapshot (UTC): 2026-09-19T00:05:35.735770+00:00
+- Updated (PT): 2026-09-19 08:02 PDT
+- Snapshot (UTC): 2026-09-19T15:02:29.261831+00:00
 - Jobs: 237 (Tier A/B only)
-- Last 24 hours: 217
+- Last 24 hours: 219
 - Last 3 days: 237
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
@@ -85,8 +85,6 @@ The 7-day dump is `latest.md`.
 | A | 88 | linkedin | TalentHop | Software Engineer I | United States | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-i-at-talenthop-4466911710) |
 | A | 88 | linkedin | Toyota North America | Software Engineer (Early Career Professional) | Plano, TX | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-early-career-professional-at-toyota-north-america-4468014559) |
 | A | 88 | linkedin | Curtiss-Wright Corporation | Associate Software Development Engineer | Tewksbury, MA | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-software-development-engineer-at-curtiss-wright-corporation-4448057799) |
-| B | 86 | greenhouse | Lyft | Backend Software Engineer, Airports | San Francisco, CA | 2026-09-18 | 1to3d | - | unreviewed | official_identity_unmatched | [open](https://app.careerpuck.com/job-board/lyft/job/8806570002?gh_jid=8806570002) |
-| B | 84 | greenhouse | Reddit | Software Engineer, Ingestion Platform | Remote - United States | 2026-09-18 | 1to3d | - | unreviewed | official_identity_unmatched | [open](https://job-boards.greenhouse.io/reddit/jobs/8214910) |
 | B | 98 | linkedin | Revolutional | Associate Application Programmer / Java Developer | United States | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-application-programmer-java-developer-at-revolutional-4468027331) |
 | B | 91 | linkedin | CyberCoders | Jr. Software Engineer | Manhattan, NY | 2026-09-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/jr-software-engineer-at-cybercoders-4457277488) |
 | B | 93 | linkedin | BeaconFire Inc. | Junior Backend Software Engineer | California, United States | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/junior-backend-software-engineer-at-beaconfire-inc-4466211814) |
@@ -125,6 +123,7 @@ The 7-day dump is `latest.md`.
 | B | 84 | indeed | TreeHouse Foods | Application Developer, Business Applications & Process Automation | Oak Brook, IL, US | 2026-09-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ca0fb32b3e4e6409) |
 | B | 82 | linkedin | Torc Robotics | Software Engineer, II - Map Enablement | Ann Arbor, MI | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-map-enablement-at-torc-robotics-4467816789) |
 | B | 80 | linkedin | Microsoft | Software Engineer II | Redmond, WA | 2026-09-18 | newly_discovered | Microsoft | unreviewed | official_ambiguous | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-microsoft-4441988140) |
+| B | 80 | linkedin | U.S. Bank | Software Engineer 2 (Java) | Atlanta, GA | 2026-09-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-2-java-at-u-s-bank-4469287150) |
 | B | 80 | linkedin | American Express | Software Engineer II - Java - Digital Payments | Phoenix, AZ | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-java-digital-payments-at-american-express-4468027633) |
 | B | 80 | linkedin | Global Payments Inc. | Platform Engineer II - AWS, Kubernetes & Golang | Cincinnati, OH | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/platform-engineer-ii-aws-kubernetes-golang-at-global-payments-inc-4441490009) |
 | B | 80 | linkedin | Mastercard | Software Engineer II | O'Fallon, MO | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-mastercard-4466912758) |
@@ -144,9 +143,9 @@ The 7-day dump is `latest.md`.
 | B | 80 | linkedin | GBIT (Global Bridge InfoTech Inc) | Jr-Java Developer (W2 position) | Richardson, TX | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/jr-java-developer-w2-position-at-gbit-global-bridge-infotech-inc-4457612924) |
 | B | 82 | indeed | North Carolina State University | Data Engineer | Raleigh, NC, US | 2026-09-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d5bbd626a801fa18) |
 | B | 78 | indeed | Infosys | Data Engineer - PySpark and Apache | Atlanta, GA, US | 2026-09-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a3d9da5dcaf6828a) |
-| B | 75 | linkedin | LinkedIn | Software Engineer, Systems and Infrastructure | Bellevue, WA | 2026-09-18 | newly_discovered | LinkedIn | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/software-engineer-systems-and-infrastructure-at-linkedin-4469238781) |
-| B | 75 | linkedin | TikTok | Software Engineer, C/C++ SDK Performance Optimization | San Jose, CA | 2026-09-18 | newly_discovered | TikTok | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/software-engineer-c-c%2B%2B-sdk-performance-optimization-at-tiktok-4467890915) |
-| B | 75 | linkedin | Lyft | Backend Software Engineer, Airports | San Francisco County, CA | 2026-09-18 | newly_discovered | - | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/backend-software-engineer-airports-at-lyft-4469277150) |
+| B | 75 | linkedin | LinkedIn | Software Engineer, Systems and Infrastructure | Bellevue, WA | 2026-09-18 | newly_discovered | LinkedIn | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/software-engineer-systems-and-infrastructure-at-linkedin-4469238781) |
+| B | 75 | linkedin | TikTok | Software Engineer, C/C++ SDK Performance Optimization | San Jose, CA | 2026-09-18 | newly_discovered | TikTok | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/software-engineer-c-c%2B%2B-sdk-performance-optimization-at-tiktok-4467890915) |
+| B | 75 | linkedin | Lyft | Backend Software Engineer, Airports | San Francisco County, CA | 2026-09-18 | newly_discovered | - | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/backend-software-engineer-airports-at-lyft-4469277150) |
 | B | 75 | linkedin | Superhuman | Machine Learning Engineer | San Francisco, CA | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-superhuman-4448084190) |
 | B | 75 | linkedin | Charles Schwab | AI Engineer, AI.x | San Francisco, CA | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-ai-x-at-charles-schwab-4466922640) |
 | B | 75 | linkedin | McKesson | AI full stack Engineer | Columbus, OH | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-full-stack-engineer-at-mckesson-4469201090) |
@@ -160,7 +159,7 @@ The 7-day dump is `latest.md`.
 | B | 75 | linkedin | Miter | Software Engineer | New York, NY | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-miter-4469219477) |
 | B | 75 | linkedin | Bedrock Robotics | Machine Learning Engineer: Perception | San Francisco, CA | 2026-09-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-perception-at-bedrock-robotics-4408940437) |
 | B | 75 | linkedin | Bedrock Robotics | Machine Learning Engineer: Perception Analytics | San Francisco, CA | 2026-09-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-perception-analytics-at-bedrock-robotics-4442604327) |
-| B | 75 | linkedin | Cisco | Software Engineer | Durham, NC | 2026-09-18 | newly_discovered | - | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/software-engineer-at-cisco-4469246587) |
+| B | 75 | linkedin | Cisco | Software Engineer | Durham, NC | 2026-09-18 | newly_discovered | - | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/software-engineer-at-cisco-4469246587) |
 | B | 75 | linkedin | Brivo | Backend Engineer - Billing Systems | Austin, TX | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-billing-systems-at-brivo-4466936483) |
 | B | 75 | linkedin | Jacobs | Software Engineer | Chantilly, VA | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-jacobs-4441285250) |
 | B | 75 | linkedin | Haystack | Software Engineer | Chicago, IL | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-haystack-4469217259) |
@@ -170,6 +169,7 @@ The 7-day dump is `latest.md`.
 | B | 75 | linkedin | Sandvik | Software Engineer | Detroit, MI | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-sandvik-4466907848) |
 | B | 75 | linkedin | iHeartMedia | Full-Stack Software Developer | Austin, TX | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-developer-at-iheartmedia-4441263758) |
 | B | 75 | linkedin | Lendbuzz | Full-Stack Engineer (Backend) | Boston, MA | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-backend-at-lendbuzz-4469234806) |
+| B | 75 | linkedin | CapitalG | Backend Software Engineer, Airports | San Francisco, CA | 2026-09-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-software-engineer-airports-at-capitalg-4468039953) |
 | B | 75 | linkedin | American Bureau of Shipping (ABS) | AI/ML Engineer | Washington, DC | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-at-american-bureau-of-shipping-abs-4469261475) |
 | B | 75 | linkedin | CCC Intelligent Solutions | AI Engineer | Chicago, IL | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-ccc-intelligent-solutions-4469262370) |
 | B | 75 | linkedin | Forward Progress Staffing | Full Stack Engineer | Chicago, IL | 2026-09-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-forward-progress-staffing-4469242841) |

@@ -2,6 +2,160 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-09-19T15:02:29.261831+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 1,
+      "cache_reused": 379,
+      "peer_reused": 0,
+      "same_content_reused": 0,
+      "non_material_change_reused": 0,
+      "new_or_changed": 1,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 1
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 327,
+      "requests": 1,
+      "input_tokens": 4404,
+      "cached_input_tokens": 0,
+      "output_tokens": 226,
+      "reasoning_tokens": 137,
+      "estimated_usd": 0.01152,
+      "latency_seconds": 4.682,
+      "latency_measured": true,
+      "effective_rpm": 12.82,
+      "effective_tpm": 59333.62,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 1,
+      "funnel": {
+        "after_dedup": 5022,
+        "after_company": 4741,
+        "after_hard_filter": 4347,
+        "after_prefilter": 1026,
+        "official_duplicates_suppressed": 319,
+        "retry_only_carried": 0,
+        "dropped": 3835
+      },
+      "output": {
+        "tier_a": 76,
+        "tier_b": 182,
+        "ab_before_cap": 258,
+        "shown": 258,
+        "new_jobs": 27,
+        "new_jobs_added": 2,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 3,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 24,
+            "added": 2
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 887,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 1019,
+          "http_requests": 175,
+          "scrapling_requests": 28,
+          "jds_resolved": 21,
+          "direct_http_resolved": 21,
+          "identity_needed": 132,
+          "identities_resolved": 132,
+          "remaining_no_jd": 872,
+          "failure_reasons": {
+            "linkedin_rate_limited": 465,
+            "scrapling_fetch_failed": 6,
+            "structured_jd_not_found": 28,
+            "glassdoor_detail_http_403_static_card_only": 373
+          }
+        },
+        "remaining_no_jd": 867,
+        "failure_reasons": {
+          "linkedin_rate_limited": 465,
+          "scrapling_fetch_failed": 6,
+          "structured_jd_not_found": 23,
+          "glassdoor_detail_http_403_static_card_only": 373
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.pinterestcareers.com/jobs?gh_jid=8213988",
+              "company": "Pinterest",
+              "title": "Software Engineer II, Data Analytics & Engineering"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.682,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 4404,
+            "cached_input_tokens": 0,
+            "output_tokens": 226,
+            "reasoning_tokens": 137,
+            "estimated_usd": 0.01152
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.pinterestcareers.com/jobs?gh_jid=8213988",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python data pipelines",
+                "Spark Databricks reliability work"
+              ],
+              "main_gaps": [
+                "workflow orchestration and DAGs",
+                "product instrumentation experimentation"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-09-19T00:05:35.735770+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -58327,237 +58481,6 @@
                 "The required 5+ years of SRE/DevOps/infrastructure experience is materially beyond the evidenced experience level.",
                 "Deep operational experience across AWS infrastructure, on-call incident response, SLOs, container orchestration, and compliance/security operations is not clearly demonstrated."
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-09-15T00:00:56.204044+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-5.6-terra",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 6,
-      "cache_reused": 347,
-      "fallback_count": 0,
-      "rule_count": 181,
-      "requests": 2,
-      "input_tokens": 12631,
-      "cached_input_tokens": 0,
-      "output_tokens": 940,
-      "reasoning_tokens": 75,
-      "estimated_usd": 0.036542,
-      "latency_seconds": 13.071,
-      "latency_measured": true,
-      "effective_rpm": 9.18,
-      "effective_tpm": 62295.16,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 6,
-      "funnel": {
-        "after_dedup": 4164,
-        "after_company": 4041,
-        "after_hard_filter": 3735,
-        "after_prefilter": 842,
-        "official_duplicates_suppressed": 308,
-        "dropped": 3298
-      },
-      "output": {
-        "tier_a": 39,
-        "tier_b": 82,
-        "ab_before_cap": 121,
-        "shown": 121
-      },
-      "enrichment": {
-        "needed": 389,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 389,
-          "http_requests": 9,
-          "scrapling_requests": 6,
-          "jds_resolved": 4,
-          "scrapling_fetcher_resolved": 1,
-          "direct_http_resolved": 3,
-          "remaining_no_jd": 385,
-          "failure_reasons": {
-            "scrapling_fetch_failed": 2,
-            "glassdoor_detail_http_403_static_card_only": 378,
-            "structured_jd_not_found": 5
-          }
-        },
-        "remaining_no_jd": 385,
-        "failure_reasons": {
-          "scrapling_fetch_failed": 2,
-          "glassdoor_detail_http_403_static_card_only": 378,
-          "structured_jd_not_found": 5
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "jobs": [
-            {
-              "key": "url::https://stripe.com/jobs/search?gh_jid=8198280",
-              "company": "Stripe",
-              "title": "Software Engineer, Backend"
-            },
-            {
-              "key": "url::https://stripe.com/jobs/search?gh_jid=8197135",
-              "company": "Stripe",
-              "title": "Software Engineer, High Availability and Disaster Recovery"
-            },
-            {
-              "key": "url::https://stripe.com/jobs/search?gh_jid=8198207",
-              "company": "Stripe",
-              "title": "Software Engineer, Payins Card Networks"
-            },
-            {
-              "key": "url::https://stripe.com/jobs/search?gh_jid=8171095",
-              "company": "Stripe",
-              "title": "Strategy & Operations, Infrastructure"
-            },
-            {
-              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8202874?t=gh_src%3D&gh_jid=8202874",
-              "company": "Robinhood",
-              "title": "Android Engineer, Social"
-            }
-          ],
-          "model": "gpt-5.6-terra",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 10.617,
-          "usage": {
-            "model": "gpt-5.6-terra",
-            "api_requests": 1,
-            "jobs_scored": 5,
-            "input_tokens": 7838,
-            "cached_input_tokens": 0,
-            "output_tokens": 803,
-            "reasoning_tokens": 75,
-            "estimated_usd": 0.025312
-          },
-          "decisions": [
-            {
-              "key": "url::https://stripe.com/jobs/search?gh_jid=8198280",
-              "match_score": 38.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Demonstrated backend delivery in Python/Java-adjacent stacks, REST services, databases, CI/CD, testing, and production reliability.",
-                "Has hands-on scalability, caching, async-service, observability, and production-debugging evidence."
-              ],
-              "main_gaps": [
-                "Role explicitly requires a master's degree plus 6 years of development experience and 4 years in scalable/distributed microservices; resume reflects early-career experience.",
-                "No evidence of the required multi-year depth across distributed systems and high-performance REST microservices."
-              ]
-            },
-            {
-              "key": "url::https://stripe.com/jobs/search?gh_jid=8197135",
-              "match_score": 24.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Resume has relevant foundational experience with AWS deployment, MongoDB/Postgres, asynchronous services, reliability, and investigating production workflow issues.",
-                "Backend and distributed-systems coursework/skills provide directional relevance to resilience work."
-              ],
-              "main_gaps": [
-                "Requires 3-5 years of progressive software experience; this high-availability role has materially beyond-early-career architecture scope.",
-                "No clear evidence of required database internals/quorums, Temporal workflows, Trino, or fault-tolerant sharding and replication design."
-              ]
-            },
-            {
-              "key": "url::https://stripe.com/jobs/search?gh_jid=8198207",
-              "match_score": 40.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Strong evidence of Python/Java development, REST API implementation, debugging, integration testing, cloud deployment, and production software delivery.",
-                "Experience building and maintaining backend services and automated tests aligns with the general engineering responsibilities."
-              ],
-              "main_gaps": [
-                "No evidence of the required payins acquiring domain experience, including authorization/clearing flows with Visa/Mastercard, card-feature data modeling, and ISO 8583.",
-                "The position requires two years of software-development experience and payment-integration depth not clearly established by the resume."
-              ]
-            },
-            {
-              "key": "url::https://stripe.com/jobs/search?gh_jid=8171095",
-              "match_score": 12.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Has technical infrastructure exposure through AWS deployment, CI/CD, observability, and data workflow work.",
-                "Demonstrates some data analysis and cross-functional implementation experience."
-              ],
-              "main_gaps": [
-                "Requires 12+ years in strategy, operations, data science, finance, product management, or related technology roles.",
-                "Core work is senior infrastructure strategy, financial/capacity planning, and organization-wide influence rather than hands-on early-career software engineering."
-              ]
-            },
-            {
-              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8202874?t=gh_src%3D&gh_jid=8202874",
-              "match_score": 20.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Has general software-engineering experience, Java familiarity, testing practice, and cross-functional product delivery exposure.",
-                "Frontend experience with React demonstrates some client-facing application development, though not Android-native development."
-              ],
-              "main_gaps": [
-                "Requires 3+ years of professional Android application development, with Kotlin/Compose and Android platform expertise; none is evidenced.",
-                "No evidence of Jetpack Compose, Android SDK, MVVM, Coroutines/Flow, Retrofit, or Room."
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "both",
-          "jobs": [
-            {
-              "key": "url::https://boards.greenhouse.io/figma/jobs/6143238004?gh_jid=6143238004",
-              "company": "Figma",
-              "title": "Software Engineer Intern (Summer 2027)"
-            }
-          ],
-          "model": "gpt-5.6-terra",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 2.454,
-          "usage": {
-            "model": "gpt-5.6-terra",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 4793,
-            "cached_input_tokens": 0,
-            "output_tokens": 137,
-            "reasoning_tokens": 0,
-            "estimated_usd": 0.01123
-          },
-          "decisions": [
-            {
-              "key": "url::https://boards.greenhouse.io/figma/jobs/6143238004?gh_jid=6143238004",
-              "match_score": 91.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Explicit software-engineering internship with product, full-stack, platform, infrastructure, and scalability paths directly aligned with the candidate's SWE experience.",
-                "Demonstrated production React/TypeScript, Python/FastAPI, REST services, testing, CI/CD, AWS deployment, retrieval systems, and performance/reliability work supports both user-facing and infrastructure assignments."
-              ],
-              "main_gaps": []
             }
           ]
         }

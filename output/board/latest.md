@@ -1,24 +1,24 @@
-# ATS / LinkedIn board — 7-day view — 2026-09-19_0005
+# ATS / LinkedIn board — 7-day view — 2026-09-19_1502
 
-- Updated (PT): 2026-09-18 17:08 PDT
-- Snapshot (UTC): 2026-09-19T00:08:51.689038+00:00
-- Last 24 hours: 217
+- Updated (PT): 2026-09-19 08:05 PDT
+- Snapshot (UTC): 2026-09-19T15:05:31.710584+00:00
+- Last 24 hours: 219
 - Last 3 days: 237
 
 If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) instead of this file.
 
 ## Run stats
 
-- Source raw: ATS 2732 / Linkedin 1257 / Indeed 624 / Glassdoor 380 (Big Company Official runs separately)
-- Funnel: after dedup 4993 -> after company filter 4719 -> after hard filter 4327 -> after role+seniority prefilter 1019 | dropped 3819
-- LLM usage: jobs scored 2 / API requests 1 / cache reused 380 (cross-pipeline 0) / rule fallback+overflow 320 (thin local cards 309, recency-gated 0, overflow 0, new/changed 2)
-- LLM cache causes: new 2 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 0 / rescored <24h 0
-- LLM cost: model gpt-5.6-terra / API requests 1 / jobs scored 2 / tokens input 4654 (cached 0) / output 146 (reasoning 0) / estimated cost $0.0111
-- New jobs discovered this run: 69
-- Output sizing: Tier A 76 / Tier B 183 / A+B actionable 259 / Shown in latest.md 259 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 47 / newly-disc 482 / 3-7d 162 / >7d 11
-- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 1201 of 1202 / Indeed unique 587 of 587
-- Linkedin top exact-unique queries: ai engineer=340, software engineer=310, platform engineer=116, software engineer i=107, software engineer ii=103
+- Source raw: ATS 2734 / Linkedin 1284 / Indeed 624 / Glassdoor 380 (Big Company Official runs separately)
+- Funnel: after dedup 5022 -> after company filter 4741 -> after hard filter 4347 -> after role+seniority prefilter 1026 | dropped 3835
+- LLM usage: jobs scored 1 / API requests 1 / cache reused 379 (cross-pipeline 0) / rule fallback+overflow 327 (thin local cards 315, recency-gated 0, overflow 0, new/changed 1)
+- LLM cache causes: new 1 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 0 / rescored <24h 0
+- LLM cost: model gpt-5.6-terra / API requests 1 / jobs scored 1 / tokens input 4404 (cached 0) / output 226 (reasoning 137) / estimated cost $0.0115
+- New jobs discovered this run: 27
+- Output sizing: Tier A 76 / Tier B 182 / A+B actionable 258 / Shown in latest.md 258 (no hard cap)
+- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 45 / newly-disc 489 / 3-7d 158 / >7d 15
+- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 1225 of 1226 / Indeed unique 587 of 587
+- Linkedin top exact-unique queries: ai engineer=340, software engineer=337, platform engineer=116, software engineer i=106, full stack engineer=97
 - Indeed top exact-unique queries: software engineer=214, full stack engineer=100, associate software engineer=72, llm engineer=71, applied ai engineer=70
 
 ## Tier A - apply now / referral (76)
@@ -102,12 +102,10 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 88 | rule_fallback | glassdoor | Travelers | Data Engineer I (Databricks, AWS, Python) | Hartford, CT | - | 3to7d | low | swe | - | unreviewed | official_ambiguous | - | [open](https://www.glassdoor.com/job-listing/data-engineer-i-databricks-aws-python-travelers-JV_IC1148399_KO0,37_KE38,47.htm?jl=1010253881512) |
 | 88 | rule_fallback | glassdoor | Office Equipment Company | Junior AI Programmer-NO remote-Las Vegas ONLY | Las Vegas, NV | - | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/junior-ai-programmer-no-remote-las-vegas-only-office-equipment-company-JV_IC1149603_KO0,45_KE46,70.htm?jl=1010219971166) |
 
-## Tier B - worth applying (183)
+## Tier B - worth applying (182)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 86 | llm | greenhouse | Lyft | Backend Software Engineer, Airports | San Francisco, CA | 2026-09-18 | 1to3d | medium | swe | - | unreviewed | official_identity_unmatched | yes | [open](https://app.careerpuck.com/job-board/lyft/job/8806570002?gh_jid=8806570002) |
-| 84 | llm | greenhouse | Reddit | Software Engineer, Ingestion Platform | Remote - United States | 2026-09-18 | 1to3d | medium | swe | - | unreviewed | official_identity_unmatched | yes | [open](https://job-boards.greenhouse.io/reddit/jobs/8214910) |
 | 98 | rule_fallback | linkedin | Revolutional | Associate Application Programmer / Java Developer | United States | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/associate-application-programmer-java-developer-at-revolutional-4468027331) |
 | 91 | cached_llm | linkedin | CyberCoders | Jr. Software Engineer | Manhattan, NY | 2026-09-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/jr-software-engineer-at-cybercoders-4457277488) |
 | 93 | cached_llm | linkedin | BeaconFire Inc. | Junior Backend Software Engineer | California, United States | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-backend-software-engineer-at-beaconfire-inc-4466211814) |
@@ -146,6 +144,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 84 | cached_llm | indeed | TreeHouse Foods | Application Developer, Business Applications & Process Automation | Oak Brook, IL, US | 2026-09-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ca0fb32b3e4e6409) |
 | 82 | cached_llm | linkedin | Torc Robotics | Software Engineer, II - Map Enablement | Ann Arbor, MI | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-map-enablement-at-torc-robotics-4467816789) |
 | 80 | rule_fallback | linkedin | Microsoft | Software Engineer II | Redmond, WA | 2026-09-18 | newly_discovered | low | swe | Microsoft | unreviewed | official_ambiguous | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-microsoft-4441988140) |
+| 80 | rule_fallback | linkedin | U.S. Bank | Software Engineer 2 (Java) | Atlanta, GA | 2026-09-19 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-2-java-at-u-s-bank-4469287150) |
 | 80 | rule_fallback | linkedin | American Express | Software Engineer II - Java - Digital Payments | Phoenix, AZ | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-java-digital-payments-at-american-express-4468027633) |
 | 80 | rule_fallback | linkedin | Global Payments Inc. | Platform Engineer II - AWS, Kubernetes & Golang | Cincinnati, OH | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/platform-engineer-ii-aws-kubernetes-golang-at-global-payments-inc-4441490009) |
 | 80 | rule_fallback | linkedin | Mastercard | Software Engineer II | O'Fallon, MO | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-mastercard-4466912758) |
@@ -165,9 +164,9 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 80 | cached_llm | linkedin | GBIT (Global Bridge InfoTech Inc) | Jr-Java Developer (W2 position) | Richardson, TX | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/jr-java-developer-w2-position-at-gbit-global-bridge-infotech-inc-4457612924) |
 | 82 | cached_llm | indeed | North Carolina State University | Data Engineer | Raleigh, NC, US | 2026-09-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=d5bbd626a801fa18) |
 | 78 | cached_llm | indeed | Infosys | Data Engineer - PySpark and Apache | Atlanta, GA, US | 2026-09-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=a3d9da5dcaf6828a) |
-| 75 | rule_fallback | linkedin | LinkedIn | Software Engineer, Systems and Infrastructure | Bellevue, WA | 2026-09-18 | newly_discovered | low | swe | LinkedIn | unreviewed | pending_official_refresh | - | [open](https://www.linkedin.com/jobs/view/software-engineer-systems-and-infrastructure-at-linkedin-4469238781) |
-| 75 | rule_fallback | linkedin | TikTok | Software Engineer, C/C++ SDK Performance Optimization | San Jose, CA | 2026-09-18 | newly_discovered | low | swe | TikTok | unreviewed | pending_official_refresh | - | [open](https://www.linkedin.com/jobs/view/software-engineer-c-c%2B%2B-sdk-performance-optimization-at-tiktok-4467890915) |
-| 75 | rule_fallback | linkedin | Lyft | Backend Software Engineer, Airports | San Francisco County, CA | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | pending_official_refresh | - | [open](https://www.linkedin.com/jobs/view/backend-software-engineer-airports-at-lyft-4469277150) |
+| 75 | rule_fallback | linkedin | LinkedIn | Software Engineer, Systems and Infrastructure | Bellevue, WA | 2026-09-18 | newly_discovered | low | swe | LinkedIn | unreviewed | official_gap | - | [open](https://www.linkedin.com/jobs/view/software-engineer-systems-and-infrastructure-at-linkedin-4469238781) |
+| 75 | rule_fallback | linkedin | TikTok | Software Engineer, C/C++ SDK Performance Optimization | San Jose, CA | 2026-09-18 | newly_discovered | low | swe | TikTok | unreviewed | official_gap | - | [open](https://www.linkedin.com/jobs/view/software-engineer-c-c%2B%2B-sdk-performance-optimization-at-tiktok-4467890915) |
+| 75 | rule_fallback | linkedin | Lyft | Backend Software Engineer, Airports | San Francisco County, CA | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | official_gap | - | [open](https://www.linkedin.com/jobs/view/backend-software-engineer-airports-at-lyft-4469277150) |
 | 75 | rule_fallback | linkedin | Superhuman | Machine Learning Engineer | San Francisco, CA | 2026-09-18 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-superhuman-4448084190) |
 | 75 | rule_fallback | linkedin | Charles Schwab | AI Engineer, AI.x | San Francisco, CA | 2026-09-18 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/ai-engineer-ai-x-at-charles-schwab-4466922640) |
 | 75 | rule_fallback | linkedin | McKesson | AI full stack Engineer | Columbus, OH | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/ai-full-stack-engineer-at-mckesson-4469201090) |
@@ -181,7 +180,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 75 | rule_fallback | linkedin | Miter | Software Engineer | New York, NY | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-at-miter-4469219477) |
 | 75 | rule_fallback | linkedin | Bedrock Robotics | Machine Learning Engineer: Perception | San Francisco, CA | 2026-09-16 | 1to3d | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-perception-at-bedrock-robotics-4408940437) |
 | 75 | rule_fallback | linkedin | Bedrock Robotics | Machine Learning Engineer: Perception Analytics | San Francisco, CA | 2026-09-16 | 1to3d | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-perception-analytics-at-bedrock-robotics-4442604327) |
-| 75 | rule_fallback | linkedin | Cisco | Software Engineer | Durham, NC | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | pending_official_refresh | - | [open](https://www.linkedin.com/jobs/view/software-engineer-at-cisco-4469246587) |
+| 75 | rule_fallback | linkedin | Cisco | Software Engineer | Durham, NC | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | official_gap | - | [open](https://www.linkedin.com/jobs/view/software-engineer-at-cisco-4469246587) |
 | 75 | rule_fallback | linkedin | Brivo | Backend Engineer - Billing Systems | Austin, TX | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/backend-engineer-billing-systems-at-brivo-4466936483) |
 | 75 | rule_fallback | linkedin | Jacobs | Software Engineer | Chantilly, VA | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-at-jacobs-4441285250) |
 | 75 | rule_fallback | linkedin | Haystack | Software Engineer | Chicago, IL | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-at-haystack-4469217259) |
@@ -191,6 +190,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 75 | rule_fallback | linkedin | Sandvik | Software Engineer | Detroit, MI | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-at-sandvik-4466907848) |
 | 75 | rule_fallback | linkedin | iHeartMedia | Full-Stack Software Developer | Austin, TX | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-software-developer-at-iheartmedia-4441263758) |
 | 75 | rule_fallback | linkedin | Lendbuzz | Full-Stack Engineer (Backend) | Boston, MA | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-backend-at-lendbuzz-4469234806) |
+| 75 | rule_fallback | linkedin | CapitalG | Backend Software Engineer, Airports | San Francisco, CA | 2026-09-19 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/backend-software-engineer-airports-at-capitalg-4468039953) |
 | 75 | rule_fallback | linkedin | American Bureau of Shipping (ABS) | AI/ML Engineer | Washington, DC | 2026-09-18 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-at-american-bureau-of-shipping-abs-4469261475) |
 | 75 | rule_fallback | linkedin | CCC Intelligent Solutions | AI Engineer | Chicago, IL | 2026-09-18 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-ccc-intelligent-solutions-4469262370) |
 | 75 | rule_fallback | linkedin | Forward Progress Staffing | Full Stack Engineer | Chicago, IL | 2026-09-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-forward-progress-staffing-4469242841) |
@@ -270,7 +270,6 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 74 | cached_llm | linkedin | Quest Diagnostics | Full Stack Software Workflow Engineer (PHP) | Marlborough, MA | 2026-09-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-software-workflow-engineer-php-at-quest-diagnostics-4466609567) |
 | 74 | cached_llm | linkedin | NVIDIA AI | Software Engineer, Coding Agent Harness Engineering - New College Grad | Santa Clara, CA | 2026-09-18 | newly_discovered | low | swe | NVIDIA | unreviewed | official_gap | - | [open](https://www.linkedin.com/jobs/view/software-engineer-coding-agent-harness-engineering-new-college-grad-2026-at-nvidia-ai-4466656692) |
 | 88 | cached_llm | linkedin | BeaconFire Inc. | Entry Level- Java Developer | California, United States | 2026-09-15 | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/entry-level-java-developer-at-beaconfire-inc-4465207929) |
-| 83 | rule_fallback | linkedin | Newfold Digital | Associate Backend Engineer | United States | 2026-09-16 | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/associate-backend-engineer-at-newfold-digital-4466447337) |
 | 78 | rule_fallback | glassdoor | Esri | Software Engineer I - Front-End Engineer for ArcGIS Enterprise | Redlands, CA | - | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/software-engineer-i-front-end-engineer-for-arcgis-enterprise-esri-JV_IC1147135_KO0,60_KE61,65.htm?jl=1010203471888) |
 | 78 | rule_fallback | glassdoor | Silicon Labs | Software Engineer I | Austin, TX | - | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/software-engineer-i-silicon-labs-JV_IC1139761_KO0,19_KE20,32.htm?jl=1010262802238) |
 | 78 | rule_fallback | glassdoor | Handshake | Software Engineer I, Quality | San Francisco, CA | - | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/software-engineer-i-quality-handshake-JV_IC1147401_KO0,27_KE28,37.htm?jl=1010257857859) |
@@ -288,4 +287,4 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 78 | rule_fallback | glassdoor | SEACORP | Software Engineer I/II | Middletown, RI | - | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/software-engineer-i-ii-seacorp-JV_IC1151277_KO0,22_KE23,30.htm?jl=1010263008598) |
 | 78 | rule_fallback | glassdoor | Twenty-Six Defense | Software Automation Engineer I | Roanoke, VA | - | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/software-automation-engineer-i-elbit-systems-of-america-JV_IC1130242_KO0,30_KE31,55.htm?jl=1010259291778) |
 | 78 | rule_fallback | glassdoor | Twenty-Six Defense | Software Engineer I | Roanoke, VA | - | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.glassdoor.com/job-listing/software-engineer-i-elbit-systems-of-america-JV_IC1130242_KO0,19_KE20,44.htm?jl=1010259291736) |
-| 83 | rule_fallback | linkedin | Nominal | Software Engineer - New Grad (Summer 2027) | Austin, TX | 2026-09-11 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-new-grad-summer-2027-at-nominal-4463950891) |
+| 83 | rule_fallback | linkedin | Nominal | Software Engineer - New Grad (Summer 2027) | Austin, TX | 2026-09-18 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-new-grad-summer-2027-at-nominal-4463950891) |
