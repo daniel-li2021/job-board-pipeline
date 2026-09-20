@@ -1,36 +1,31 @@
-Syncareer alert — 2026-09-20_0011
+Syncareer alert — 2026-09-20_1511
 
-Updated (PT): 2026-09-19 17:13 PDT
-Snapshot (UTC): 2026-09-20T00:13:06.726200+00:00
+Updated (PT): 2026-09-20 08:12 PDT
+Snapshot (UTC): 2026-09-20T15:12:20.703662+00:00
 
-21 new matching job(s) this run (hard-filtered).
+16 new matching job(s) this run (hard-filtered).
 
 If you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.md` in the repo (last 3 days, one file).
 
-Referral companies in this batch: 1
+Referral companies in this batch: 2
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 92.0 | Syncareer | American Express | Agentic AI Engineer - Global Infrastructure | New York, New York, United States | 2026-09-17 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.americanexpress.com/en/sites/CX_1/job/26013774/?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164) |
 | A | 90.0 | Syncareer | Thales | Software DevOps Engineer - Grad | Orlando, Florida, United States | 2026-09-18 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.thalesgroup.com/global/en/job/R0340353/Software-DevOps-Engineer-Grad) |
 | A | 90.0 | Syncareer | Michelin | Data Engineer | Greenville, South Carolina, United States | 2026-09-18 | Sponsor | - | unreviewed | not_dedicated | [open](https://michelinhr.wd3.myworkdayjobs.com/en-US/Michelin/job/GREENVILLE-SC/Data-Engineer_R-2026032949?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969) |
-| A | 90.0 | Syncareer | Comcast | Junior Backend Software Engineer (Python or PHP) - Chicago - ONSITE 2X | Chicago, Illinois, United States | 2026-09-17 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.comcast.com/job/chicago/junior-backend-software-engineer-python-or-php-chicago-onsite-2x-week/45483/100771494400) |
 | A | 88.0 | Syncareer | Capital One | AI Engineer 2 | San Jose, California, United States | 2026-09-18 | Sponsor | YES (Capital One) | unreviewed | official_identity_unmatched | [open](https://www.capitalonecareers.com/job/san-jose/ai-engineer-2/1732/100827636448) |
 | A | 88.0 | Syncareer | Principal Financial Group | Software Engineer (Hybrid- Des Moines) | Des Moines, Iowa, United States | 2026-09-18 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.principal.com/careers-home/jobs/52572?lang=en-us&previousLocale=en-US) |
 | A | 88.0 | Syncareer | Tennant | Global Data Engineer | Minneapolis, Minnesota, United States | 2026-09-18 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.tennantco.com/job/Eden-Prairie-Global-Data-Engineer-MN-55344/1431328800/) |
 | A | 86.0 | Syncareer | Koch | Forward Deployed Engineer | Atlanta, Georgia, United States | 2026-09-18 | No sponsor | - | unreviewed | not_dedicated | [open](https://koch.avature.net/en_US/careers/JobDetail/United-States-Forward-Deployed-Engineer/194728) |
-| A | 86.0 | Syncareer | Digi International | Software Test Engineer I - Infrastructure Management (Hybrid - Hopkins | Hopkins, Minnesota, United States | 2026-09-17 | No sponsor | - | unreviewed | not_dedicated | [open](https://recruiting2.ultipro.com/DIG1008DIGI/JobBoard/bf7d79dc-5bb9-447e-be77-bc5713185792/OpportunityDetail?opportunityId=fb34c428-3307-4c9f-a0ed-b4b7bd11384b) |
 | A | 85.0 | Syncareer | Wolverine Trading | Entry Level C++ Software Engineer | Chicago, Illinois, United States | 2026-09-18 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.wolve.com/en/postings/2b2e514b-4709-4897-960d-77909fe33ab8) |
 | B | 94.0 | Syncareer | Nokia | AI Assisted Software Development Co-op | Sunnyvale, California, United States | 2026-09-18 | No sponsor | - | unreviewed | not_dedicated | [open](https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/40535/?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000480126%253B300000000471544%253B300000000471661) |
 | B | 88.0 | Syncareer | Keysight | Software Engineer Intern | Santa Rosa, California, United States | 2026-09-18 | No sponsor | - | unreviewed | not_dedicated | [open](https://jobs.keysight.com/external/jobs/54329?lang=en-us) |
-| B | 88.0 | Syncareer | Extra Space Storage | Associate Site Reliability Engineer | Salt Lake City, Utah, United States | 2026-09-17 | No sponsor | - | unreviewed | not_dedicated | [open](https://extraspace.wd5.myworkdayjobs.com/en-US/ESS_External/job/Salt-Lake-City-UT-United-States/Associate-Site-Reliability-Engineer_R-81708?jobFamilyGroup=d6816e04dd2144df8b10c1fe3b9c5cd0&jobFamilyGroup=24827b9bd0604390a24a0607a884dfda&jobFamilyGroup=078a8d9e6e994c4ab23ad1b7ae474c72&jobFamilyGroup=2c127315f4be4de9a49db1d9e3e53a6c&jobFamilyGroup=1088610a1a464bd0b823a8655336adec&jobFamilyGroup=261836d7829b4d3bbd97fee8b19fb92c&jobFamilyGroup=95179ab1b64641eea62e3144a88ce6e1&jobFamilyGroup=06a773557abc4f4f818d24351a87c443&jobFamilyGroup=c5461b9b44a54888bd5872c96f14e2ad) |
 | B | 87.0 | Syncareer | Wayve | Platform Engineer (SDO) | Sunnyvale, California, United States | 2026-09-17 | Sponsor | - | unreviewed | not_dedicated | [open](https://wayve.firststage.co/jobs/PNHO7GreUi/view?layout=grid) |
-| B | 86.0 | Syncareer | IBM | Site Reliability Engineer ELH - OneIT - Poughkeepsie, NY | Poughkeepsie, New York, United States | 2026-09-17 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=132890&source=WEB_Search_NA) |
-| B | 84.0 | Syncareer | First Citizens Bank | Data Engineer II | Raleigh, North Carolina, United States | 2026-09-17 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.firstcitizens.com/jobs/35485?lang=en-us) |
+| B | 86.0 | Syncareer | Linkedin | Software Engineer, Systems and Infrastructure | Bellevue, Washington, United States | 2026-09-18 | Sponsor | YES (LinkedIn) | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/4469238781/) |
 | B | 84.0 | Syncareer | WEX | Site Reliability Engineer 2 | Portland, Maine, United States | 2026-09-18 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.wexinc.com/us/en/job/R22943/Site-Reliability-Engineer-2) |
 | B | 82.0 | Syncareer | Twitch | Software Engineer, Data Platform | San Francisco, California, United States | 2026-09-18 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/twitch/jobs/8817023002) |
 | B | 82.0 | Syncareer | Twitch | Software Engineer, Data Platform | Seattle, Washington, United States | 2026-09-18 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/twitch/jobs/8821382002) |
 | B | 73.0 | Syncareer | Microchip Technology | Engineer I-Software Development | Houston, Texas, United States | 2026-09-18 | Sponsor | - | unreviewed | not_dedicated | [open](https://wd5.myworkdaysite.com/en-US/recruiting/microchiphr/External/job/TX---Houston---Compaq-Center-Dr/Engineer-I-Software-Development_R3962-26?locationCountry=80938777cac5440fab50d729f9634969&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea) |
 | B | 72.0 | Syncareer | H&R Block | Machine Learning Engineer | Missouri, United States | 2026-09-18 | Sponsor | - | unreviewed | official_identity_unmatched | [open](https://careers.hrblock.com/corporate-opportunities/jobs/76907?lang=en-us) |
 
-Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-09-20_0011.csv`.
+Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-09-20_1511.csv`.
