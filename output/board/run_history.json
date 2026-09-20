@@ -2,6 +2,604 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-09-20T00:07:17.810543+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 23,
+      "cache_reused": 223,
+      "peer_reused": 0,
+      "same_content_reused": 5,
+      "non_material_change_reused": 0,
+      "new_or_changed": 24,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 24
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 314,
+      "requests": 3,
+      "input_tokens": 26979,
+      "cached_input_tokens": 1851,
+      "output_tokens": 1908,
+      "reasoning_tokens": 566,
+      "estimated_usd": 0.073522,
+      "latency_seconds": 20.292,
+      "latency_measured": true,
+      "effective_rpm": 8.87,
+      "effective_tpm": 85413.96,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 3,
+      "primary_batches_total": 3,
+      "batches_attempted": 3,
+      "batches_succeeded": 3,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 23,
+      "funnel": {
+        "after_dedup": 4511,
+        "after_company": 4225,
+        "after_hard_filter": 3864,
+        "after_prefilter": 887,
+        "official_duplicates_suppressed": 327,
+        "retry_only_carried": 0,
+        "dropped": 3427
+      },
+      "output": {
+        "tier_a": 23,
+        "tier_b": 98,
+        "ab_before_cap": 121,
+        "shown": 121,
+        "new_jobs": 82,
+        "new_jobs_added": 12,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 2,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 80,
+            "added": 12
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 390,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 522,
+          "http_requests": 142,
+          "scrapling_requests": 7,
+          "jds_resolved": 9,
+          "direct_http_resolved": 9,
+          "identity_needed": 132,
+          "identities_resolved": 132,
+          "remaining_no_jd": 387,
+          "failure_reasons": {
+            "scrapling_fetch_failed": 7,
+            "structured_jd_not_found": 7,
+            "no_direct_or_official_url": 1,
+            "glassdoor_detail_http_403_static_card_only": 372
+          }
+        },
+        "remaining_no_jd": 387,
+        "failure_reasons": {
+          "scrapling_fetch_failed": 7,
+          "structured_jd_not_found": 7,
+          "no_direct_or_official_url": 1,
+          "glassdoor_detail_http_403_static_card_only": 372
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4468673801",
+              "company": "Capgemini",
+              "title": "Java Full Stack Developer"
+            },
+            {
+              "key": "id::linkedin::4469213003",
+              "company": "Capgemini",
+              "title": "Java Full Stack Developer"
+            },
+            {
+              "key": "id::linkedin::4459426783",
+              "company": "Cognizant",
+              "title": "Full Stack Java Developer"
+            },
+            {
+              "key": "id::linkedin::4466967900",
+              "company": "Haystack",
+              "title": "JavaScript Developer"
+            },
+            {
+              "key": "id::linkedin::4468412577",
+              "company": "Black Osprey",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "id::linkedin::4371575959",
+              "company": "Cape",
+              "title": "Full Stack Software Engineer"
+            },
+            {
+              "key": "id::linkedin::4469533849",
+              "company": "Labcorp",
+              "title": "Software Development Engineer II"
+            },
+            {
+              "key": "id::linkedin::4466979616",
+              "company": "TalentHop",
+              "title": "Software Engineer, Product"
+            },
+            {
+              "key": "id::linkedin::4405261650",
+              "company": "Tebra",
+              "title": "Software Engineer III"
+            },
+            {
+              "key": "id::linkedin::4458982973",
+              "company": "Trace3",
+              "title": "Software Engineer BM/SRM (26-216)"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 5.533,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 11985,
+            "cached_input_tokens": 0,
+            "output_tokens": 577,
+            "reasoning_tokens": 0,
+            "estimated_usd": 0.030894
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4468673801",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java Spring Boot APIs",
+                "Angular TypeScript full stack"
+              ],
+              "main_gaps": [
+                "3-5 years development",
+                "Playwright automation"
+              ]
+            },
+            {
+              "key": "id::linkedin::4469213003",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java Spring Boot APIs",
+                "Angular TypeScript full stack"
+              ],
+              "main_gaps": [
+                "3-5 years development",
+                "Playwright automation"
+              ]
+            },
+            {
+              "key": "id::linkedin::4459426783",
+              "match_score": 42.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React FastAPI applications",
+                "REST microservices"
+              ],
+              "main_gaps": [
+                "8+ years experience",
+                "technical team leadership"
+              ]
+            },
+            {
+              "key": "id::linkedin::4466967900",
+              "match_score": 67.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Node Express REST APIs",
+                "PostgreSQL data services"
+              ],
+              "main_gaps": [
+                "4+ years Node.js",
+                "rules-engine experience"
+              ]
+            },
+            {
+              "key": "id::linkedin::4468412577",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend API development",
+                "CI/CD cloud deployment"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "id::linkedin::4371575959",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "TypeScript React full stack",
+                "Scalable reliable systems"
+              ],
+              "main_gaps": [
+                "5+ years full stack",
+                "privacy cryptography systems"
+              ]
+            },
+            {
+              "key": "id::linkedin::4469533849",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python scalable services",
+                "Docker Kubernetes CI/CD"
+              ],
+              "main_gaps": [
+                "3+ years experience",
+                "technical project ownership"
+              ]
+            },
+            {
+              "key": "id::linkedin::4466979616",
+              "match_score": 82.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React Node PostgreSQL",
+                "Scalable product systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "id::linkedin::4405261650",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java Spring Boot",
+                "TypeScript React applications"
+              ],
+              "main_gaps": [
+                "subsystem technical leadership"
+              ]
+            },
+            {
+              "key": "id::linkedin::4458982973",
+              "match_score": 20.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "citizen_or_clearance",
+              "top_match_reasons": [
+                "Java software development",
+                "Linux testing pipelines"
+              ],
+              "main_gaps": [
+                "Secret clearance",
+                "classified onsite environment"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4460576782",
+              "company": "Invesco",
+              "title": "ETF Quantitative Developer"
+            },
+            {
+              "key": "id::linkedin::4458442320",
+              "company": "Rocket",
+              "title": "Data Engineer, Data Governance & Compliance"
+            },
+            {
+              "key": "id::linkedin::4469291858",
+              "company": "Thales",
+              "title": "Software DevOps Engineer - Grad"
+            },
+            {
+              "key": "id::linkedin::4469549613",
+              "company": "val's services",
+              "title": "Software & System Development Engineer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.438,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 4,
+            "input_tokens": 5304,
+            "cached_input_tokens": 1851,
+            "output_tokens": 385,
+            "reasoning_tokens": 139,
+            "estimated_usd": 0.011896
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4460576782",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and C++ development",
+                "data pipelines and AWS"
+              ],
+              "main_gaps": [
+                "capital markets knowledge",
+                "portfolio analytics platforms"
+              ]
+            },
+            {
+              "key": "id::linkedin::4458442320",
+              "match_score": 52.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "data pipelines and Spark",
+                "SQL and REST APIs"
+              ],
+              "main_gaps": [
+                "5 years data engineering",
+                "large-scale data lake"
+              ]
+            },
+            {
+              "key": "id::linkedin::4469291858",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Docker CI/CD deployment",
+                "Python, C++, SQL"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "id::linkedin::4469549613",
+              "match_score": 70.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ and software testing",
+                "early-career software development"
+              ],
+              "main_gaps": [
+                "embedded infotainment development",
+                "automotive system integration"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4460372496",
+              "company": "Jacobs",
+              "title": "AI Developer"
+            },
+            {
+              "key": "id::linkedin::4466240211",
+              "company": "BeaconFire Inc.",
+              "title": "Java Software Engineer"
+            },
+            {
+              "key": "id::linkedin::4450290161",
+              "company": "Imagen Technologies",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "id::linkedin::4432837487",
+              "company": "Relativity",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "id::linkedin::4469272731",
+              "company": "Tailored Management",
+              "title": "Machine Learning Engineer"
+            },
+            {
+              "key": "id::linkedin::4466944363",
+              "company": "Fenwick & West",
+              "title": "Applications Developer"
+            },
+            {
+              "key": "id::linkedin::4469551957",
+              "company": "GILLIG",
+              "title": "AI Forward Deployed Engineer"
+            },
+            {
+              "key": "id::linkedin::4469549066",
+              "company": "General Atomics",
+              "title": "Systems Engineer – Scientific Computing & Storage"
+            },
+            {
+              "key": "id::linkedin::4468056395",
+              "company": "Maxwood Furniture",
+              "title": "eCommerce Data Engineer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 10.321,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 9,
+            "input_tokens": 9690,
+            "cached_input_tokens": 0,
+            "output_tokens": 946,
+            "reasoning_tokens": 427,
+            "estimated_usd": 0.030732
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4460372496",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production RAG and agent systems",
+                "LangGraph MCP full-stack delivery"
+              ],
+              "main_gaps": [
+                "3-5 years development experience",
+                "Consulting experience"
+              ]
+            },
+            {
+              "key": "id::linkedin::4466240211",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java Spring Boot REST APIs",
+                "RAG retrieval and reranking"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "id::linkedin::4450290161",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python Java C++ development",
+                "ML systems and algorithms"
+              ],
+              "main_gaps": [
+                "Data visualization experience"
+              ]
+            },
+            {
+              "key": "id::linkedin::4432837487",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java REST API development",
+                "Distributed cloud data systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "id::linkedin::4469272731",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "PyTorch fine-tuning experience",
+                "ML evaluation infrastructure"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "id::linkedin::4466944363",
+              "match_score": 75.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI automation application delivery",
+                "SQL APIs cloud data"
+              ],
+              "main_gaps": [
+                "3+ years professional experience"
+              ]
+            },
+            {
+              "key": "id::linkedin::4469551957",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production full-stack AI applications",
+                "Stakeholder support tools"
+              ],
+              "main_gaps": [
+                "Two years full-stack delivery",
+                "Stakeholder program management"
+              ]
+            },
+            {
+              "key": "id::linkedin::4469549066",
+              "match_score": 15.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Linux automation foundations"
+              ],
+              "main_gaps": [
+                "15+ years systems administration",
+                "Bare-metal storage networking"
+              ]
+            },
+            {
+              "key": "id::linkedin::4468056395",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks data pipelines",
+                "Python SQL data processing"
+              ],
+              "main_gaps": [
+                "3+ years data engineering",
+                "Cloud data platform operations"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-09-19T21:14:22.901035+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -50662,78 +51260,6 @@
           ]
         }
       ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-09-15T15:01:57.771312+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-5.6-terra",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 0,
-      "cache_reused": 488,
-      "fallback_count": 0,
-      "rule_count": 166,
-      "requests": 0,
-      "input_tokens": 0,
-      "cached_input_tokens": 0,
-      "output_tokens": 0,
-      "reasoning_tokens": 0,
-      "estimated_usd": 0.0,
-      "latency_seconds": 0.0,
-      "latency_measured": true,
-      "effective_rpm": null,
-      "effective_tpm": null,
-      "json_reliability": null,
-      "json_reliability_measured": true,
-      "batches_total": 0,
-      "batches_attempted": 0,
-      "batches_succeeded": 0,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 0,
-      "funnel": {
-        "after_dedup": 4732,
-        "after_company": 4591,
-        "after_hard_filter": 4284,
-        "after_prefilter": 975,
-        "official_duplicates_suppressed": 321,
-        "dropped": 3716
-      },
-      "output": {
-        "tier_a": 41,
-        "tier_b": 80,
-        "ab_before_cap": 121,
-        "shown": 121
-      },
-      "enrichment": {
-        "needed": 390,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 390,
-          "http_requests": 7,
-          "scrapling_requests": 4,
-          "jds_resolved": 3,
-          "direct_http_resolved": 3,
-          "remaining_no_jd": 387,
-          "failure_reasons": {
-            "structured_jd_not_found": 4,
-            "scrapling_fetch_failed": 9,
-            "glassdoor_detail_http_403_static_card_only": 374
-          }
-        },
-        "remaining_no_jd": 387,
-        "failure_reasons": {
-          "structured_jd_not_found": 4,
-          "scrapling_fetch_failed": 9,
-          "glassdoor_detail_http_403_static_card_only": 374
-        }
-      },
-      "comparison": {},
-      "batches": []
     }
   ]
 }
