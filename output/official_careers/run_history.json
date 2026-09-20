@@ -2,6 +2,255 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-09-20T00:35:33.170252+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 7,
+      "cache_reused": 522,
+      "peer_reused": 1,
+      "same_content_reused": 15,
+      "non_material_change_reused": 0,
+      "new_or_changed": 12,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 12
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 2233,
+      "requests": 2,
+      "input_tokens": 11457,
+      "cached_input_tokens": 4575,
+      "output_tokens": 1106,
+      "reasoning_tokens": 488,
+      "estimated_usd": 0.027951,
+      "latency_seconds": 13.609,
+      "latency_measured": true,
+      "effective_rpm": 8.82,
+      "effective_tpm": 55388.35,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 7,
+      "funnel": {
+        "after_dedup": 17876,
+        "after_company": 17876,
+        "after_hard_filter": 14640,
+        "after_prefilter": 2762,
+        "dropped": 15114
+      },
+      "output": {
+        "tier_a": 17,
+        "tier_b": 42,
+        "shown": 59,
+        "new_jobs": 126,
+        "new_jobs_added": 2
+      },
+      "enrichment": {
+        "discovered": 17936,
+        "needed": 976,
+        "source_jds_available": 16959,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 977
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210779191",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer III - Databricks"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.976,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2565,
+            "cached_input_tokens": 1851,
+            "output_tokens": 181,
+            "reasoning_tokens": 82,
+            "estimated_usd": 0.00397
+          },
+          "decisions": [
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210779191",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "scalable backend systems",
+                "CI/CD testing cloud deployment"
+              ],
+              "main_gaps": [
+                "3+ years applied experience",
+                "enterprise AI coding tools"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210790857",
+              "company": "JPMorgan Chase",
+              "title": "Site Reliability Engineer II"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210746847",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer III - Java"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Software-Engineer--Coding-Agent-Harness-Engineering----New-College-Grad-2026_JR2023749",
+              "company": "NVIDIA",
+              "title": "Software Engineer, Coding Agent Harness Engineering - New College Grad 2026"
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Security-Engineer-I--Full-Time----United-States_2025883",
+              "company": "Cisco",
+              "title": "Security Engineer I (Full Time) - United States"
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556984043",
+              "company": "Microsoft",
+              "title": "Solution Engineer - AI Business Process"
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556983961",
+              "company": "Microsoft",
+              "title": "Cloud Solution Architect- AI Business Process"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 9.633,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 6,
+            "input_tokens": 8892,
+            "cached_input_tokens": 2724,
+            "output_tokens": 925,
+            "reasoning_tokens": 406,
+            "estimated_usd": 0.023981
+          },
+          "decisions": [
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210790857",
+              "match_score": 70.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS Docker Kubernetes delivery",
+                "FastAPI microservices observability"
+              ],
+              "main_gaps": [
+                "SRE incident management",
+                "Kafka Oracle Dynatrace stack"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210746847",
+              "match_score": 73.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production full-stack systems",
+                "Testing CI/CD reliability"
+              ],
+              "main_gaps": [
+                "3+ years applied experience",
+                "Large-corporate Java delivery"
+              ]
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Software-Engineer--Coding-Agent-Harness-Engineering----New-College-Grad-2026_JR2023749",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Agentic AI systems",
+                "LLM evaluation and retrieval"
+              ],
+              "main_gaps": [
+                "Coding-agent harness experience",
+                "Inference performance metrics"
+              ]
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Security-Engineer-I--Full-Time----United-States_2025883",
+              "match_score": 83.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python AI evaluation tooling",
+                "RAG agents guardrails"
+              ],
+              "main_gaps": [
+                "Security threat modeling"
+              ]
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556984043",
+              "match_score": 53.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Hands-on AI deployments",
+                "Technical implementation experience"
+              ],
+              "main_gaps": [
+                "Technical presales experience",
+                "Dynamics Power Platform expertise"
+              ]
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556983961",
+              "match_score": 47.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud deployment experience",
+                "AI implementation background"
+              ],
+              "main_gaps": [
+                "Customer-facing solution architecture",
+                "Dynamics Power Platform expertise"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-09-19T15:34:32.694944+00:00",
       "mode": "pipeline",
       "health": "degraded",
