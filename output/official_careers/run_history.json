@@ -2,6 +2,197 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-09-20T15:36:15.336578+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 4,
+      "cache_reused": 511,
+      "peer_reused": 0,
+      "same_content_reused": 11,
+      "non_material_change_reused": 0,
+      "new_or_changed": 4,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 4
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 2244,
+      "requests": 2,
+      "input_tokens": 7244,
+      "cached_input_tokens": 0,
+      "output_tokens": 529,
+      "reasoning_tokens": 215,
+      "estimated_usd": 0.020836,
+      "latency_seconds": 9.829,
+      "latency_measured": true,
+      "effective_rpm": 12.21,
+      "effective_tpm": 47449.38,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 4,
+      "funnel": {
+        "after_dedup": 17854,
+        "after_company": 17854,
+        "after_hard_filter": 14621,
+        "after_prefilter": 2759,
+        "dropped": 15095
+      },
+      "output": {
+        "tier_a": 16,
+        "tier_b": 40,
+        "shown": 56,
+        "new_jobs": 10,
+        "new_jobs_added": 0
+      },
+      "enrichment": {
+        "discovered": 17914,
+        "needed": 981,
+        "source_jds_available": 16932,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 982
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.metacareers.com/jobs/1809721810184545",
+              "company": "Meta",
+              "title": "Software Engineer - Host Networking"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.053,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 1933,
+            "cached_input_tokens": 0,
+            "output_tokens": 152,
+            "reasoning_tokens": 74,
+            "estimated_usd": 0.00569
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.metacareers.com/jobs/1809721810184545",
+              "match_score": 66.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend systems experience",
+                "async performance optimization"
+              ],
+              "main_gaps": [
+                "host networking experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Francisco-California-US/Forward-Deployed-Engineer--Splunk_2020310",
+              "company": "Cisco",
+              "title": "Forward Deployed Engineer- Splunk"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446704270279",
+              "company": "Qualcomm",
+              "title": "DSP Applications Software Engineer"
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200683893/ai-data-infrastructure-engineer",
+              "company": "Apple",
+              "title": "AI Data & Infrastructure Engineer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 5.776,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 5311,
+            "cached_input_tokens": 0,
+            "output_tokens": 377,
+            "reasoning_tokens": 141,
+            "estimated_usd": 0.015146
+          },
+          "decisions": [
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Francisco-California-US/Forward-Deployed-Engineer--Splunk_2020310",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production AI deployments",
+                "RAG evaluation observability"
+              ],
+              "main_gaps": [
+                "3+ years experience",
+                "enterprise customer delivery"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446704270279",
+              "match_score": 31.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python AI systems",
+                "PyTorch experience"
+              ],
+              "main_gaps": [
+                "microprocessor design",
+                "embedded DSP optimization"
+              ]
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200683893/ai-data-infrastructure-engineer",
+              "match_score": 55.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI infrastructure",
+                "data pipeline experience"
+              ],
+              "main_gaps": [
+                "requirements unavailable"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-09-20T00:35:33.170252+00:00",
       "mode": "pipeline",
       "health": "degraded",

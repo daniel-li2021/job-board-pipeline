@@ -1,10 +1,10 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-09-19 17:35 PDT
-- Snapshot (UTC): 2026-09-20T00:35:33.170252+00:00
-- Jobs: 29 (Tier A/B only)
+- Updated (PT): 2026-09-20 08:36 PDT
+- Snapshot (UTC): 2026-09-20T15:36:15.336578+00:00
+- Jobs: 30 (Tier A/B only)
 - Last 24 hours: 0
-- Last 3 days: 29
+- Last 3 days: 30
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
@@ -36,6 +36,7 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | B | 75 | official | Workday | Software Development Engineer | USA, CA, Pleasanton | 2026-09-18 | 1to3d | - | unreviewed | official_canonical | [open](https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Software-Development-Engineer_JR-0109889) |
 | B | 75 | official | Morgan Stanley | Generative AI, Backend Engineer | New York, New York, United States of America | 2026-09-18 | 1to3d | Morgan Stanley | unreviewed | official_canonical | [open](https://morganstanley.eightfold.ai/careers/job/549799388181) |
 | B | 76 | official | Apple | Software Engineer (Graph), Supply Chain Integration | Sunnyvale, United States of America | 2026-09-18 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200684594/software-engineer-graph-supply-chain-integration) |
+| B | 77 | official | Qualcomm | #Wireless Subsystem Test and Software Tools Engineer | San Diego, California, United States of America | 2026-09-18 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446721161405) |
 | B | 72 | official | Apple | Machine Learning Engineer | Cupertino, United States of America | 2026-09-18 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200681112/machine-learning-engineer) |
 | B | 72 | official | Apple | Software Engineer, Finance Engineering | San Francisco Bay Area, United States of America | 2026-09-18 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200684265/software-engineer-finance-engineering) |
 | B | 76 | official | TikTok | Machine Learning Engineer Graduate (E-Commerce Recommendation Video) - | San Jose, California, United States of America | - | 1to3d | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7686999927260105013) |
