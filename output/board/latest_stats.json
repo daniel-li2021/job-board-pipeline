@@ -1,78 +1,126 @@
 {
-  "run_at": "2026-09-21T00:03:52.725031+00:00",
+  "run_at": "2026-09-21T15:02:52.933788+00:00",
   "source_raw": {
-    "ats": 2733,
-    "linkedin": 1029,
+    "ats": 2732,
+    "linkedin": 1174,
     "indeed": 624,
     "glassdoor": 380
   },
   "funnel": {
-    "after_dedup": 4766,
-    "after_company": 4469,
-    "after_hard_filter": 4076,
-    "after_prefilter": 929,
-    "official_duplicates_suppressed": 312,
+    "after_dedup": 4910,
+    "after_company": 4604,
+    "after_hard_filter": 4208,
+    "after_prefilter": 984,
+    "official_duplicates_suppressed": 324,
     "retry_only_carried": 0,
-    "dropped": 3698
+    "dropped": 3784
   },
   "llm": {
     "reused": 313,
-    "llm": 0,
-    "new_or_changed": 0,
-    "rule": 304,
-    "sent": 0,
-    "api_requests": 0,
+    "llm": 1,
+    "new_or_changed": 1,
+    "rule": 346,
+    "sent": 1,
+    "api_requests": 1,
     "recency_skipped": 0,
     "overflow": 0,
     "peer_reused": 0,
-    "thin_source_rule": 279,
+    "thin_source_rule": 322,
     "retryable_fallbacks": 0,
-    "historical_seen_skipped": 25,
+    "historical_seen_skipped": 24,
     "non_material_change_reused": 0,
     "same_content_reused": 0,
     "rescored_within_24h": 0,
-    "new_or_changed_reasons": {},
+    "new_or_changed_reasons": {
+      "genuinely_new_job": 1
+    },
     "batch_size": 10,
-    "primary_batches_total": 0,
-    "batches_total": 0,
-    "batches_succeeded": 0,
-    "batches_attempted": 0,
+    "primary_batches_total": 1,
+    "batches_total": 1,
+    "batches_succeeded": 1,
+    "batches_attempted": 1,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 0.0,
-    "json_results": 0,
-    "batches": [],
+    "latency_seconds": 4.274,
+    "json_results": 1,
+    "batches": [
+      {
+        "batch": 1,
+        "route": "both",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/4942024008",
+            "company": "Anthropic",
+            "title": "Software Engineer, Beneficial Deployments"
+          }
+        ],
+        "model": "gpt-5.6-terra",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 4.274,
+        "usage": {
+          "model": "gpt-5.6-terra",
+          "api_requests": 1,
+          "jobs_scored": 1,
+          "input_tokens": 4495,
+          "cached_input_tokens": 0,
+          "output_tokens": 136,
+          "reasoning_tokens": 49,
+          "estimated_usd": 0.010622
+        },
+        "decisions": [
+          {
+            "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/4942024008",
+            "match_score": 55.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "full-stack AI systems",
+              "MCP integrations"
+            ],
+            "main_gaps": [
+              "6+ years experience",
+              "identity and billing systems"
+            ]
+          }
+        ]
+      }
+    ],
     "model": "gpt-5.6-terra",
-    "jobs_scored": 0,
-    "input_tokens": 0,
+    "jobs_scored": 1,
+    "input_tokens": 4495,
     "cached_input_tokens": 0,
-    "output_tokens": 0,
-    "reasoning_tokens": 0,
-    "estimated_usd": 0.0,
+    "output_tokens": 136,
+    "reasoning_tokens": 49,
+    "estimated_usd": 0.010622,
+    "scoring_version": "v7-compact-early-career",
+    "reasoning_effort": "medium",
     "persisted_retry_jobs": 0,
     "retry_only_carried": 0,
-    "scored": 0,
+    "scored": 1,
     "retryable": 0
   },
   "output": {
-    "tier_a": 41,
-    "tier_b": 147,
-    "ab_before_cap": 188,
-    "shown": 188,
-    "new_jobs": 24,
-    "new_jobs_added": 2,
+    "tier_a": 46,
+    "tier_b": 176,
+    "ab_before_cap": 222,
+    "shown": 222,
+    "new_jobs": 134,
+    "new_jobs_added": 32,
     "new_jobs_by_source": {
       "ats": {
-        "found": 1,
+        "found": 5,
         "added": 0
       },
       "linkedin": {
-        "found": 23,
-        "added": 2
+        "found": 129,
+        "added": 32
       },
       "indeed": {
         "found": 0,
@@ -86,28 +134,28 @@
   },
   "recency": {
     "lt3h": 0,
-    "3to24h": 0,
-    "1to3d": 152,
-    "newly_discovered": 278,
-    "3to7d": 106,
-    "gt7d": 81
+    "3to24h": 1,
+    "1to3d": 162,
+    "newly_discovered": 309,
+    "3to7d": 103,
+    "gt7d": 85
   },
-  "screen_method": "cache",
+  "screen_method": "cache+llm",
   "failures": {
     "discovery": [],
     "llm": []
   },
   "drops": {
-    "company_hidden_external": 56,
-    "company_excluded": 102,
-    "citizen_or_clearance": 250,
+    "company_hidden_external": 57,
+    "company_excluded": 107,
+    "citizen_or_clearance": 248,
     "non_us_location": 49,
     "ineligible_current_student_requirement": 25,
     "ineligible_2027_graduate_requirement": 27,
-    "incomplete_jd_clearance_risk": 42,
+    "incomplete_jd_clearance_risk": 47,
     "prefilter:no_positive_family": 388,
-    "prefilter:senior": 1879,
-    "prefilter:negative_family": 811,
+    "prefilter:senior": 1954,
+    "prefilter:negative_family": 813,
     "prefilter:hardware": 4,
     "prefilter:sales_heavy": 41,
     "prefilter:high_yoe": 24
@@ -120,149 +168,149 @@
         "page_budget": 25,
         "pages_fetched": 25,
         "stop_reason": "page_budget",
-        "raw_jobs": 250,
-        "unique_jobs": 250,
+        "raw_jobs": 249,
+        "unique_jobs": 249,
         "unique_contribution": 233,
-        "first_pass_survivors": 228,
-        "original_postings_resolved": 34,
-        "jds_resolved": 27,
-        "elapsed_seconds": 38.476,
-        "identified_jobs": 307,
+        "first_pass_survivors": 230,
+        "original_postings_resolved": 50,
+        "jds_resolved": 32,
+        "elapsed_seconds": 39.448,
+        "identified_jobs": 445,
         "cross_source_overlap": 0,
-        "cross_source_unique": 307
+        "cross_source_unique": 445
       },
       {
         "query": "ai engineer",
         "group": "primary",
         "page_budget": 25,
-        "pages_fetched": 25,
-        "stop_reason": "page_budget",
-        "raw_jobs": 250,
-        "unique_jobs": 250,
-        "unique_contribution": 239,
-        "first_pass_survivors": 243,
-        "original_postings_resolved": 28,
+        "pages_fetched": 2,
+        "stop_reason": "blocked_http_429",
+        "raw_jobs": 20,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 20,
+        "original_postings_resolved": 29,
         "jds_resolved": 25,
-        "elapsed_seconds": 38.008,
-        "identified_jobs": 334,
+        "elapsed_seconds": 3.303,
+        "identified_jobs": 341,
         "cross_source_overlap": 2,
-        "cross_source_unique": 332
+        "cross_source_unique": 339
       },
       {
         "query": "software engineer i",
         "group": "secondary",
         "page_budget": 8,
-        "pages_fetched": 8,
-        "stop_reason": "page_budget",
-        "raw_jobs": 80,
-        "unique_jobs": 80,
-        "unique_contribution": 49,
-        "first_pass_survivors": 77,
-        "original_postings_resolved": 5,
-        "jds_resolved": 5,
-        "elapsed_seconds": 12.246,
-        "identified_jobs": 100,
+        "pages_fetched": 0,
+        "stop_reason": "source_unavailable",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 3,
+        "jds_resolved": 3,
+        "elapsed_seconds": 0.0,
+        "identified_jobs": 83,
         "cross_source_overlap": 0,
-        "cross_source_unique": 100
+        "cross_source_unique": 83
       },
       {
         "query": "software engineer ii",
         "group": "secondary",
         "page_budget": 8,
-        "pages_fetched": 8,
-        "stop_reason": "page_budget",
-        "raw_jobs": 80,
-        "unique_jobs": 80,
-        "unique_contribution": 33,
-        "first_pass_survivors": 78,
-        "original_postings_resolved": 9,
-        "jds_resolved": 7,
-        "elapsed_seconds": 12.306,
-        "identified_jobs": 104,
+        "pages_fetched": 0,
+        "stop_reason": "source_unavailable",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 8,
+        "jds_resolved": 6,
+        "elapsed_seconds": 0.0,
+        "identified_jobs": 80,
         "cross_source_overlap": 0,
-        "cross_source_unique": 104
+        "cross_source_unique": 80
       },
       {
         "query": "associate software engineer",
         "group": "secondary",
         "page_budget": 8,
-        "pages_fetched": 2,
-        "stop_reason": "no_new_jobs",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 2,
-        "first_pass_survivors": 19,
+        "pages_fetched": 0,
+        "stop_reason": "source_unavailable",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.828,
-        "identified_jobs": 22,
+        "elapsed_seconds": 0.0,
+        "identified_jobs": 15,
         "cross_source_overlap": 0,
-        "cross_source_unique": 22
+        "cross_source_unique": 15
       },
       {
         "query": "new grad software engineer",
         "group": "secondary",
         "page_budget": 8,
-        "pages_fetched": 1,
-        "stop_reason": "no_new_jobs",
-        "raw_jobs": 10,
-        "unique_jobs": 10,
+        "pages_fetched": 0,
+        "stop_reason": "source_unavailable",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
         "unique_contribution": 0,
-        "first_pass_survivors": 9,
+        "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.308,
-        "identified_jobs": 22,
+        "elapsed_seconds": 0.0,
+        "identified_jobs": 19,
         "cross_source_overlap": 0,
-        "cross_source_unique": 22
+        "cross_source_unique": 19
       },
       {
         "query": "backend engineer",
         "group": "secondary",
         "page_budget": 8,
-        "pages_fetched": 1,
-        "stop_reason": "no_new_jobs",
-        "raw_jobs": 10,
-        "unique_jobs": 10,
+        "pages_fetched": 0,
+        "stop_reason": "source_unavailable",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
         "unique_contribution": 0,
-        "first_pass_survivors": 10,
+        "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.3,
-        "identified_jobs": 17,
+        "elapsed_seconds": 0.0,
+        "identified_jobs": 15,
         "cross_source_overlap": 0,
-        "cross_source_unique": 17
+        "cross_source_unique": 15
       },
       {
         "query": "full stack engineer",
         "group": "secondary",
         "page_budget": 8,
-        "pages_fetched": 1,
-        "stop_reason": "no_new_jobs",
-        "raw_jobs": 10,
-        "unique_jobs": 10,
+        "pages_fetched": 0,
+        "stop_reason": "source_unavailable",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
         "unique_contribution": 0,
-        "first_pass_survivors": 10,
-        "original_postings_resolved": 3,
-        "jds_resolved": 3,
-        "elapsed_seconds": 0.316,
-        "identified_jobs": 35,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 2,
+        "jds_resolved": 2,
+        "elapsed_seconds": 0.0,
+        "identified_jobs": 29,
         "cross_source_overlap": 0,
-        "cross_source_unique": 35
+        "cross_source_unique": 29
       },
       {
         "query": "platform engineer",
         "group": "secondary",
         "page_budget": 8,
         "pages_fetched": 0,
-        "stop_reason": "blocked_http_429",
+        "stop_reason": "source_unavailable",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
-        "original_postings_resolved": 15,
-        "jds_resolved": 11,
-        "elapsed_seconds": 0.075,
+        "original_postings_resolved": 14,
+        "jds_resolved": 10,
+        "elapsed_seconds": 0.0,
         "identified_jobs": 92,
         "cross_source_overlap": 0,
         "cross_source_unique": 92
@@ -727,7 +775,7 @@
         "unique_jobs": 30,
         "unique_contribution": 26,
         "first_pass_survivors": 27,
-        "original_postings_resolved": 1,
+        "original_postings_resolved": 2,
         "jds_resolved": 1,
         "elapsed_seconds": 1.473,
         "hours_old": 24,
@@ -1012,7 +1060,7 @@
         "unique_jobs": 30,
         "unique_contribution": 28,
         "first_pass_survivors": 28,
-        "original_postings_resolved": 1,
+        "original_postings_resolved": 2,
         "jds_resolved": 1,
         "elapsed_seconds": 1.958,
         "hours_old": 24,
@@ -1028,8 +1076,8 @@
     "overlap": 2,
     "sources": {
       "linkedin": {
-        "identified_jobs": 970,
-        "unique_contribution": 968
+        "identified_jobs": 1111,
+        "unique_contribution": 1109
       },
       "indeed": {
         "identified_jobs": 587,
@@ -1042,87 +1090,102 @@
     },
     "queries": {
       "linkedin": {
-        "machine learning engineer": {
-          "identified_jobs": 1,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 1
-        },
-        "software engineer": {
-          "identified_jobs": 307,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 307
-        },
-        "ai engineer": {
-          "identified_jobs": 334,
-          "cross_source_overlap": 2,
-          "cross_source_unique": 332
-        },
-        "software engineer i": {
-          "identified_jobs": 100,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 100
-        },
         "full stack engineer": {
-          "identified_jobs": 35,
+          "identified_jobs": 29,
           "cross_source_overlap": 0,
-          "cross_source_unique": 35
+          "cross_source_unique": 29
+        },
+        "backend engineer": {
+          "identified_jobs": 15,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 15
         },
         "infrastructure engineer": {
           "identified_jobs": 38,
           "cross_source_overlap": 0,
           "cross_source_unique": 38
         },
-        "forward deployed engineer": {
-          "identified_jobs": 29,
+        "associate software engineer": {
+          "identified_jobs": 15,
           "cross_source_overlap": 0,
-          "cross_source_unique": 29
+          "cross_source_unique": 15
         },
-        "software engineer ii": {
-          "identified_jobs": 104,
+        "software engineer": {
+          "identified_jobs": 445,
           "cross_source_overlap": 0,
-          "cross_source_unique": 104
+          "cross_source_unique": 445
         },
-        "backend engineer": {
-          "identified_jobs": 17,
+        "software engineer i": {
+          "identified_jobs": 83,
           "cross_source_overlap": 0,
-          "cross_source_unique": 17
-        },
-        "llm engineer": {
-          "identified_jobs": 6,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 6
+          "cross_source_unique": 83
         },
         "site reliability engineer": {
           "identified_jobs": 29,
           "cross_source_overlap": 0,
           "cross_source_unique": 29
         },
-        "platform engineer": {
-          "identified_jobs": 92,
+        "forward deployed engineer": {
+          "identified_jobs": 29,
           "cross_source_overlap": 0,
-          "cross_source_unique": 92
+          "cross_source_unique": 29
         },
         "new grad software engineer": {
-          "identified_jobs": 22,
+          "identified_jobs": 19,
           "cross_source_overlap": 0,
-          "cross_source_unique": 22
-        },
-        "associate software engineer": {
-          "identified_jobs": 22,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 22
+          "cross_source_unique": 19
         },
         "data engineer": {
           "identified_jobs": 35,
           "cross_source_overlap": 0,
           "cross_source_unique": 35
+        },
+        "software engineer ii": {
+          "identified_jobs": 80,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 80
+        },
+        "machine learning engineer": {
+          "identified_jobs": 1,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 1
+        },
+        "llm engineer": {
+          "identified_jobs": 6,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 6
+        },
+        "platform engineer": {
+          "identified_jobs": 92,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 92
+        },
+        "ai engineer": {
+          "identified_jobs": 341,
+          "cross_source_overlap": 2,
+          "cross_source_unique": 339
         }
       },
       "indeed": {
-        "machine learning engineer": {
+        "associate software engineer": {
+          "identified_jobs": 72,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 72
+        },
+        "backend engineer": {
+          "identified_jobs": 38,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 38
+        },
+        "applied ai engineer": {
           "identified_jobs": 70,
           "cross_source_overlap": 0,
           "cross_source_unique": 70
+        },
+        "full stack engineer": {
+          "identified_jobs": 100,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 100
         },
         "software engineer": {
           "identified_jobs": 214,
@@ -1134,40 +1197,15 @@
           "cross_source_overlap": 0,
           "cross_source_unique": 21
         },
-        "full stack engineer": {
-          "identified_jobs": 100,
+        "site reliability engineer": {
+          "identified_jobs": 6,
           "cross_source_overlap": 0,
-          "cross_source_unique": 100
-        },
-        "applied ai engineer": {
-          "identified_jobs": 70,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 70
-        },
-        "software engineer ii": {
-          "identified_jobs": 59,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 59
+          "cross_source_unique": 6
         },
         "forward deployed engineer": {
           "identified_jobs": 32,
           "cross_source_overlap": 0,
           "cross_source_unique": 32
-        },
-        "backend engineer": {
-          "identified_jobs": 38,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 38
-        },
-        "llm engineer": {
-          "identified_jobs": 71,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 71
-        },
-        "site reliability engineer": {
-          "identified_jobs": 6,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 6
         },
         "ml engineer": {
           "identified_jobs": 49,
@@ -1179,49 +1217,84 @@
           "cross_source_overlap": 0,
           "cross_source_unique": 36
         },
-        "associate software engineer": {
-          "identified_jobs": 72,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 72
-        },
         "data engineer": {
           "identified_jobs": 45,
           "cross_source_overlap": 0,
           "cross_source_unique": 45
+        },
+        "software engineer ii": {
+          "identified_jobs": 59,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 59
+        },
+        "machine learning engineer": {
+          "identified_jobs": 70,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 70
+        },
+        "llm engineer": {
+          "identified_jobs": 71,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 71
         }
       },
       "glassdoor": {
-        "machine learning engineer": {
+        "associate software engineer": {
           "identified_jobs": 26,
-          "cross_source_overlap": 1,
-          "cross_source_unique": 25
-        },
-        "software engineer": {
-          "identified_jobs": 28,
           "cross_source_overlap": 0,
-          "cross_source_unique": 28
+          "cross_source_unique": 26
         },
-        "software engineer i": {
-          "identified_jobs": 30,
+        "backend engineer": {
+          "identified_jobs": 29,
           "cross_source_overlap": 0,
-          "cross_source_unique": 30
+          "cross_source_unique": 29
         },
         "infrastructure engineer": {
           "identified_jobs": 28,
           "cross_source_overlap": 0,
           "cross_source_unique": 28
         },
-        "ai engineer": {
+        "applied ai engineer": {
           "identified_jobs": 27,
           "cross_source_overlap": 0,
           "cross_source_unique": 27
+        },
+        "software engineer": {
+          "identified_jobs": 28,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 28
         },
         "full stack engineer": {
           "identified_jobs": 22,
           "cross_source_overlap": 0,
           "cross_source_unique": 22
         },
-        "applied ai engineer": {
+        "software engineer i": {
+          "identified_jobs": 30,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 30
+        },
+        "site reliability engineer": {
+          "identified_jobs": 22,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 22
+        },
+        "forward deployed engineer": {
+          "identified_jobs": 28,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 28
+        },
+        "ml engineer": {
+          "identified_jobs": 23,
+          "cross_source_overlap": 2,
+          "cross_source_unique": 21
+        },
+        "new grad software engineer": {
+          "identified_jobs": 28,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 28
+        },
+        "data engineer": {
           "identified_jobs": 27,
           "cross_source_overlap": 0,
           "cross_source_unique": 27
@@ -1231,47 +1304,22 @@
           "cross_source_overlap": 0,
           "cross_source_unique": 29
         },
-        "forward deployed engineer": {
-          "identified_jobs": 28,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 28
-        },
-        "backend engineer": {
-          "identified_jobs": 29,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 29
+        "machine learning engineer": {
+          "identified_jobs": 26,
+          "cross_source_overlap": 1,
+          "cross_source_unique": 25
         },
         "llm engineer": {
           "identified_jobs": 22,
           "cross_source_overlap": 0,
           "cross_source_unique": 22
         },
-        "site reliability engineer": {
-          "identified_jobs": 22,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 22
-        },
-        "ml engineer": {
-          "identified_jobs": 23,
-          "cross_source_overlap": 2,
-          "cross_source_unique": 21
-        },
         "platform engineer": {
           "identified_jobs": 29,
           "cross_source_overlap": 0,
           "cross_source_unique": 29
         },
-        "new grad software engineer": {
-          "identified_jobs": 28,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 28
-        },
-        "associate software engineer": {
-          "identified_jobs": 26,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 26
-        },
-        "data engineer": {
+        "ai engineer": {
           "identified_jobs": 27,
           "cross_source_overlap": 0,
           "cross_source_unique": 27
@@ -1280,34 +1328,34 @@
     }
   },
   "enrichment": {
-    "needed": 761,
+    "needed": 906,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
     "direct": {
-      "needed": 892,
-      "http_requests": 169,
-      "jds_resolved": 24,
-      "direct_http_resolved": 23,
-      "scrapling_requests": 22,
-      "scrapling_fetcher_resolved": 1,
-      "identity_needed": 131,
-      "identities_resolved": 131,
-      "remaining_no_jd": 744,
+      "needed": 1039,
+      "http_requests": 194,
+      "jds_resolved": 31,
+      "direct_http_resolved": 27,
+      "scrapling_requests": 40,
+      "scrapling_fetcher_resolved": 4,
+      "identity_needed": 133,
+      "identities_resolved": 133,
+      "remaining_no_jd": 881,
       "failure_reasons": {
-        "linkedin_rate_limited": 347,
-        "structured_jd_not_found": 21,
+        "linkedin_rate_limited": 471,
+        "structured_jd_not_found": 36,
         "scrapling_fetch_failed": 2,
-        "glassdoor_detail_http_403_static_card_only": 374
+        "glassdoor_detail_http_403_static_card_only": 372
       }
     },
-    "remaining_no_jd": 741,
+    "remaining_no_jd": 877,
     "failure_reasons": {
-      "linkedin_rate_limited": 347,
-      "structured_jd_not_found": 18,
+      "linkedin_rate_limited": 471,
+      "structured_jd_not_found": 32,
       "scrapling_fetch_failed": 2,
-      "glassdoor_detail_http_403_static_card_only": 374
+      "glassdoor_detail_http_403_static_card_only": 372
     }
   },
-  "direct_original_attempts": 191,
+  "direct_original_attempts": 234,
   "peer_jds_resolved": 0
 }
