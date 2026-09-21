@@ -1,15 +1,16 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-09-20 17:12 PDT
-- Snapshot (UTC): 2026-09-21T00:12:45.118054+00:00
-- Jobs: 29
+- Updated (PT): 2026-09-21 08:12 PDT
+- Snapshot (UTC): 2026-09-21T15:12:14.004081+00:00
+- Jobs: 27
 - Last 24 hours: 2
-- Last 3 days: 29
+- Last 3 days: 27
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| B | 72.0 | Syncareer | Innodata | AI Agentic Workflow Reviewer | San Jose, California, United States | 2026-09-20 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/innodatainc/jobs/4412191009) |
 | B | 82.0 | Syncareer | Intercontinental Exchange | Full Stack Developer | Jacksonville, Florida, United States | 2026-09-19 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ice.com/jobs/13441?lang=en-us) |
 | A | 90.0 | Syncareer | Michelin | Data Engineer | Greenville, South Carolina, United States | 2026-09-18 | Sponsor | - | unreviewed | not_dedicated | [open](https://michelinhr.wd3.myworkdayjobs.com/en-US/Michelin/job/GREENVILLE-SC/Data-Engineer_R-2026032949?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969) |
 | B | 73.0 | Syncareer | Microchip Technology | Engineer I-Software Development | Houston, Texas, United States | 2026-09-18 | Sponsor | - | unreviewed | not_dedicated | [open](https://wd5.myworkdaysite.com/en-US/recruiting/microchiphr/External/job/TX---Houston---Compaq-Center-Dr/Engineer-I-Software-Development_R3962-26?locationCountry=80938777cac5440fab50d729f9634969&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea) |
@@ -36,6 +37,3 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | A | 92.0 | Syncareer | American Express | Agentic AI Engineer - Global Infrastructure | New York, New York, United States | 2026-09-17 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.americanexpress.com/en/sites/CX_1/job/26013774/?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164) |
 | B | 86.0 | Syncareer | Linkedin | Software Engineer, Systems and Infrastructure | Bellevue, Washington, United States | 2026-09-18 | Sponsor | YES (LinkedIn) | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/4469238781/) |
 | B | 88.0 | Syncareer | Capital One | AI Engineer 2 | San Jose, California, United States | 2026-09-18 | Sponsor | YES (Capital One) | unreviewed | official_identity_unmatched | [open](https://www.capitalonecareers.com/job/san-jose/ai-engineer-2/1732/100827636448) |
-| B | 82.0 | Syncareer | Uber | Software Engineer II - Web Engineer | San Francisco, CA, United States | 2026-09-17 | Sponsor | YES (Uber) | unreviewed | official_identity_unmatched | [open](https://jobs.uber.com/en/jobs/302452/) |
-| A | 96.0 | Syncareer | JPMorgan Chase | 2027 Asset Wealth Management Machine Learning Engineer - Summer Associ | Jersey City, NJ, United States | 2026-09-17 | Sponsor | YES (J.P. Morgan) | unreviewed | official_identity_unmatched | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210790885) |
-| B | 77.0 | Syncareer | Uber | Software Engineer II - Engineer | San Francisco, CA, United States | 2026-09-17 | Sponsor | YES (Uber) | unreviewed | official_identity_unmatched | [open](https://jobs.uber.com/en/jobs/302438/) |

@@ -1,27 +1,26 @@
 {
-  "run_at": "2026-09-21T00:12:43.330391+00:00",
+  "run_at": "2026-09-21T15:12:12.012583+00:00",
   "funnel": {
-    "scoring_candidates": 84
+    "scoring_candidates": 49
   },
   "llm": {
-    "reused": 72,
-    "llm": 14,
-    "new_or_changed": 15,
-    "rule": 5,
-    "sent": 15,
+    "reused": 46,
+    "llm": 5,
+    "new_or_changed": 5,
+    "rule": 2,
+    "sent": 5,
     "api_requests": 3,
     "recency_skipped": 0,
     "overflow": 0,
-    "peer_reused": 6,
+    "peer_reused": 4,
     "thin_source_rule": 0,
-    "retryable_fallbacks": 1,
-    "historical_seen_skipped": 4,
+    "retryable_fallbacks": 0,
+    "historical_seen_skipped": 2,
     "non_material_change_reused": 0,
     "same_content_reused": 0,
-    "rescored_within_24h": 1,
+    "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 14,
-      "prior_rule_result_now_eligible_for_llm": 1
+      "genuinely_new_job": 5
     },
     "batch_size": 10,
     "primary_batches_total": 3,
@@ -34,8 +33,8 @@
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 22.727,
-    "json_results": 15,
+    "latency_seconds": 17.838,
+    "json_results": 5,
     "batches": [
       {
         "batch": 1,
@@ -43,96 +42,58 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://careers.ice.com/jobs/13441?lang=en-us",
-            "company": "Intercontinental Exchange",
-            "title": "Full Stack Developer"
+            "key": "url::https://us-careers.crown.com/job/New-Bremen-Embedded-Software-Engineer-%28Indefinite-US-Work-Authorization-Required%29-OH-45869/1428150400",
+            "company": "Crown Equipment",
+            "title": "Embedded Software Engineer (Indefinite US Work Authorization Required)"
           },
           {
-            "key": "url::https://jobs.ashbyhq.com/t1energy/82614947-7008-4811-b346-6263020912ea",
-            "company": "T1 Energy",
-            "title": "IT Software Development Engineer"
-          },
-          {
-            "key": "url::https://bostonscientific.eightfold.ai/careers/job/563602813469625?domain=bostonscientific.com&hl=en&triggerGoButton=false",
-            "company": "Boston Scientific",
-            "title": "Software Engineer III"
-          },
-          {
-            "key": "url::https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/job/US-FL-JAX-347/Software-Engineers-II---Risk-and-Fraud-Technology_JR0309714?jobFamilyGroup=0e1af0e1ee1d1001836c3bbdc7940000&jobFamilyGroup=fea3e38a3564100183196e657c1e0000&jobFamilyGroup=d26eff0fee761001831d2319121c0000&jobFamilyGroup=041bdfd5e4d01001834c7fdbd0320000&jobFamilyGroup=67bfefe10eff1001833a9e2885240000&jobFamilyGroup=494eed1c8de601ea5300eb07a76f5e16&jobFamilyGroup=0e1af0e1ee1d1001836c8b8a29230000&jobFamilyGroup=041bdfd5e4d01001834cb559a5f10000&jobFamilyGroup=d26eff0fee761001831d7e66edfa0000&jobFamilyGroup=a2088ec533f410263c62091ebad3509e&jobFamilyGroup=7f383875dd521001834598af68560000&jobFamilyGroup=d26eff0fee761001831d97a4a9120000&jobFamilyGroup=7f383875dd5210018345b02252560000&jobFamilyGroup=a0b9127138f4100183637a54f3710000&jobFamilyGroup=041bdfd5e4d01001834cfa78ccf10000&jobFamilyGroup=d26eff0fee761001831dc4bc6eee0000&jobFamilyGroup=a0b9127138f4100183639e55ae1b0000&jobFamilyGroup=67bfefe10eff1001833b3277b0650000&jobFamilyGroup=a2088ec533f410263c621eb9a6a450a8&jobFamilyGroup=67bfefe10eff1001833b4349ae3b0000&jobFamilyGroup=972f8275a36e1001836b7a7c77eb0000&jobFamilyGroup=041bdfd5e4d01001834d46d1949c0000&jobFamilyGroup=a0b9127138f410018363dcbf33160000&jobFamilyGroup=972f8275a36e1001836ba4a98f990000&jobFamilyGroup=7f383875dd52100183463a63dbc20000",
-            "company": "FIS",
-            "title": "Software Engineers II - Risk and Fraud Technology"
+            "key": "url::https://jobs.igt.com/IGT/job/Reno-Software-Duplicator-II-Reno%2C-NV-%28Swing-Shift%29-NV-89521/1367665657",
+            "company": "Everi",
+            "title": "Software Duplicator II - Reno, NV (Swing Shift)"
           }
         ],
         "model": "gpt-5.6-terra",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 8.036,
+        "latency_seconds": 6.47,
         "usage": {
           "model": "gpt-5.6-terra",
           "api_requests": 1,
-          "jobs_scored": 4,
-          "input_tokens": 6044,
+          "jobs_scored": 2,
+          "input_tokens": 3417,
           "cached_input_tokens": 0,
-          "output_tokens": 895,
-          "reasoning_tokens": 0,
-          "estimated_usd": 0.022828
+          "output_tokens": 313,
+          "reasoning_tokens": 107,
+          "estimated_usd": 0.01059
         },
         "decisions": [
           {
-            "key": "url::https://careers.ice.com/jobs/13441?lang=en-us",
-            "match_score": 82.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
+            "key": "url::https://us-careers.crown.com/job/New-Bremen-Embedded-Software-Engineer-%28Indefinite-US-Work-Authorization-Required%29-OH-45869/1428150400",
+            "match_score": 28.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "other",
             "top_match_reasons": [
-              "React FastAPI production apps",
-              "REST APIs PostgreSQL CI/CD"
+              "C++ and Python",
+              "testing and software design"
             ],
             "main_gaps": [
-              "3+ years professional experience",
-              "deep Java Spring Boot"
+              "embedded RTOS development",
+              "CAN and hardware integration"
             ]
           },
           {
-            "key": "url::https://jobs.ashbyhq.com/t1energy/82614947-7008-4811-b346-6263020912ea",
-            "match_score": 58.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Python Java SQL pipelines",
-              "production troubleshooting"
-            ],
-            "main_gaps": [
-              "Nintex Infor WMS experience",
-              "Mandarin proficiency"
-            ]
-          },
-          {
-            "key": "url::https://bostonscientific.eightfold.ai/careers/job/563602813469625?domain=bostonscientific.com&hl=en&triggerGoButton=false",
-            "match_score": 42.0,
+            "key": "url::https://jobs.igt.com/IGT/job/Reno-Software-Duplicator-II-Reno%2C-NV-%28Swing-Shift%29-NV-89521/1367665657",
+            "match_score": 18.0,
             "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "C++ and software testing",
-              "Docker CI/CD experience"
+              "validation and testing",
+              "production reliability experience"
             ],
             "main_gaps": [
-              "regulated medical device experience",
-              "3+ years C++ experience"
-            ]
-          },
-          {
-            "key": "url::https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/job/US-FL-JAX-347/Software-Engineers-II---Risk-and-Fraud-Technology_JR0309714?jobFamilyGroup=0e1af0e1ee1d1001836c3bbdc7940000&jobFamilyGroup=fea3e38a3564100183196e657c1e0000&jobFamilyGroup=d26eff0fee761001831d2319121c0000&jobFamilyGroup=041bdfd5e4d01001834c7fdbd0320000&jobFamilyGroup=67bfefe10eff1001833a9e2885240000&jobFamilyGroup=494eed1c8de601ea5300eb07a76f5e16&jobFamilyGroup=0e1af0e1ee1d1001836c8b8a29230000&jobFamilyGroup=041bdfd5e4d01001834cb559a5f10000&jobFamilyGroup=d26eff0fee761001831d7e66edfa0000&jobFamilyGroup=a2088ec533f410263c62091ebad3509e&jobFamilyGroup=7f383875dd521001834598af68560000&jobFamilyGroup=d26eff0fee761001831d97a4a9120000&jobFamilyGroup=7f383875dd5210018345b02252560000&jobFamilyGroup=a0b9127138f4100183637a54f3710000&jobFamilyGroup=041bdfd5e4d01001834cfa78ccf10000&jobFamilyGroup=d26eff0fee761001831dc4bc6eee0000&jobFamilyGroup=a0b9127138f4100183639e55ae1b0000&jobFamilyGroup=67bfefe10eff1001833b3277b0650000&jobFamilyGroup=a2088ec533f410263c621eb9a6a450a8&jobFamilyGroup=7f383875dd5210018345b4349ae3b0000&jobFamilyGroup=972f8275a36e1001836b7a7c77eb0000&jobFamilyGroup=041bdfd5e4d01001834d46d1949c0000&jobFamilyGroup=a0b9127138f410018363dcbf33160000&jobFamilyGroup=972f8275a36e1001836ba4a98f990000&jobFamilyGroup=7f383875dd52100183463a63dbc20000",
-            "match_score": 55.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "secure REST backend services",
-              "AWS Linux Git CI/CD"
-            ],
-            "main_gaps": [
-              "2-4 years required experience",
-              "authentication fraud domain experience"
+              "manufacturing production operations",
+              "software media duplication"
             ]
           }
         ]
@@ -143,58 +104,38 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://careers.lilly.com/us/en/job/R-110971/AI-Engineer",
-            "company": "Eli Lilly",
-            "title": "AI Engineer"
-          },
-          {
-            "key": "url::https://careers.lilly.com/us/en/job/R-110973/AI-Scientist-Model-Building-Training",
-            "company": "Eli Lilly",
-            "title": "AI Scientist (Model Building & Training)"
+            "key": "url::https://job-boards.greenhouse.io/innodatainc/jobs/4412191009",
+            "company": "Innodata",
+            "title": "AI Agentic Workflow Reviewer"
           }
         ],
         "model": "gpt-5.6-terra",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 2.725,
+        "latency_seconds": 3.801,
         "usage": {
           "model": "gpt-5.6-terra",
           "api_requests": 1,
-          "jobs_scored": 2,
-          "input_tokens": 4630,
+          "jobs_scored": 1,
+          "input_tokens": 2704,
           "cached_input_tokens": 0,
-          "output_tokens": 168,
+          "output_tokens": 81,
           "reasoning_tokens": 0,
-          "estimated_usd": 0.011276
+          "estimated_usd": 0.00638
         },
         "decisions": [
           {
-            "key": "url::https://careers.lilly.com/us/en/job/R-110971/AI-Engineer",
+            "key": "url::https://job-boards.greenhouse.io/innodatainc/jobs/4412191009",
             "match_score": 72.0,
-            "seniority_fit": "stretch",
+            "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "production LLM systems",
-              "evaluation and vLLM serving"
+              "LLM evaluation platforms",
+              "agent safety guardrails"
             ],
             "main_gaps": [
-              "4+ years ML systems",
-              "multi-node distributed training"
-            ]
-          },
-          {
-            "key": "url::https://careers.lilly.com/us/en/job/R-110973/AI-Scientist-Model-Building-Training",
-            "match_score": 28.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "LLM evaluation platform",
-              "model fine-tuning"
-            ],
-            "main_gaps": [
-              "PhD plus postdoctoral experience",
-              "computational chemistry or biology"
+              "QA/trust-safety review experience"
             ]
           }
         ]
@@ -205,212 +146,81 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://careers.allianz.com/us/en/job/104987/Full-Stack-Developer",
-            "company": "Allianz",
-            "title": "Full Stack Developer"
+            "key": "url::https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/System-Software-Engineer---CUDA-Chips_JR2026249-1?locationHierarchy1=2fcb99c455831013ea52df1adb7432a8&locationHierarchy1=2fcb99c455831013ea52f785717432d2&locationHierarchy1=2fcb99c455831013ea52fb338f2932d8&locationHierarchy1=2fcb99c455831013ea52ed162d4932c0&locationHierarchy1=2fcb99c455831013ea52b157d0d6325a&locationHierarchy1=2fcb99c455831013ea529fe151e3323c&locationHierarchy1=2fcb99c455831013ea529c3b93ba3236&locationHierarchy1=2fcb99c455831013ea528dce556b3224",
+            "company": "NVIDIA",
+            "title": "System Software Engineer - CUDA Chips"
           },
           {
-            "key": "url::https://careers.blackrock.com/job/atlanta/platform-reliability-engineer-associate-aladdin/45831/99036735808",
-            "company": "BlackRock",
-            "title": "Platform Reliability Engineer, Associate – Aladdin"
-          },
-          {
-            "key": "url::https://www.tower-research.com/open-positions?gh_jid=8212158",
-            "company": "Tower Research Capital",
-            "title": "Software Engineer Intern (Summer 2027)"
-          },
-          {
-            "key": "url::https://careers.rocket.com/us/en/job/R-083739/Software-Engineering-Team-Leader",
-            "company": "Rocket",
-            "title": "Software Engineering Team Leader"
-          },
-          {
-            "key": "url::https://careers.micron.com/careers/job/44462876?domain=micron.com",
-            "company": "Micron Technology",
-            "title": "Full Stack AI Engineer"
-          },
-          {
-            "key": "url::https://ats.comparably.com/api/v2/stash/post/8213807:?gh_jid=8213807",
-            "company": "Stash",
-            "title": "Backend Engineer III"
-          },
-          {
-            "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153741BR",
-            "company": "Infosys",
-            "title": "Data Engineer"
-          },
-          {
-            "key": "url::https://careers.micron.com/careers/job/44544598?domain=micron.com",
-            "company": "Micron Technology",
-            "title": "New College Grad - Memory System Architect, HBM Generative AI"
-          },
-          {
-            "key": "url::https://careers.micron.com/careers/job/44541908?domain=micron.com",
-            "company": "Micron Technology",
-            "title": "AI Product Engineer"
+            "key": "url::https://careers.zionsbank.com/jobs/software-engineer-release-platform-engineering-28130",
+            "company": "Zions Bank",
+            "title": "Software Engineer (Release & Platform Engineering)"
           }
         ],
         "model": "gpt-5.6-terra",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 11.966,
+        "latency_seconds": 7.567,
         "usage": {
           "model": "gpt-5.6-terra",
           "api_requests": 1,
-          "jobs_scored": 9,
-          "input_tokens": 11059,
+          "jobs_scored": 2,
+          "input_tokens": 4805,
           "cached_input_tokens": 0,
-          "output_tokens": 1095,
-          "reasoning_tokens": 396,
-          "estimated_usd": 0.035258
+          "output_tokens": 565,
+          "reasoning_tokens": 206,
+          "estimated_usd": 0.01639
         },
         "decisions": [
           {
-            "key": "url::https://careers.allianz.com/us/en/job/104987/Full-Stack-Developer",
-            "match_score": 58.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "other",
-            "top_match_reasons": [
-              "React and TypeScript applications",
-              "Full-stack API development"
-            ],
-            "main_gaps": [
-              "Figma and design systems",
-              "WCAG-focused UI engineering"
-            ]
-          },
-          {
-            "key": "url::https://careers.blackrock.com/job/atlanta/platform-reliability-engineer-associate-aladdin/45831/99036735808",
-            "match_score": 68.0,
+            "key": "url::https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/System-Software-Engineer---CUDA-Chips_JR2026249-1?locationHierarchy1=2fcb99c455831013ea52df1adb7432a8&locationHierarchy1=2fcb99c455831013ea52f785717432d2&locationHierarchy1=2fcb99c455831013ea52fb338f2932d8&locationHierarchy1=2fcb99c455831013ea52ed162d4932c0&locationHierarchy1=2fcb99c455831013ea52b157d0d6325a&locationHierarchy1=2fcb99c455831013ea529fe151e3323c&locationHierarchy1=2fcb99c455831013ea529c3b93ba3236&locationHierarchy1=2fcb99c455831013ea528dce556b3224",
+            "match_score": 48.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "AWS Docker CI/CD",
-              "RAG and retrieval pipelines"
+              "C++ and systems foundations",
+              "concurrent backend development"
             ],
             "main_gaps": [
-              "Four years infrastructure-as-code",
-              "Production secrets management"
+              "C driver programming",
+              "kernel and GPU architecture"
             ]
           },
           {
-            "key": "url::https://www.tower-research.com/open-positions?gh_jid=8212158",
-            "match_score": 86.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Python Java C++ SQL",
-              "Linux data pipeline experience"
-            ],
-            "main_gaps": [
-              "Low-latency systems experience"
-            ]
-          },
-          {
-            "key": "url::https://careers.rocket.com/us/en/job/R-083739/Software-Engineering-Team-Leader",
-            "match_score": 25.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "React full-stack delivery",
-              "AWS Kubernetes CI/CD"
-            ],
-            "main_gaps": [
-              "Two years people leadership",
-              "C# .NET and NestJS"
-            ]
-          },
-          {
-            "key": "url::https://careers.micron.com/careers/job/44462876?domain=micron.com",
+            "key": "url::https://careers.zionsbank.com/jobs/software-engineer-release-platform-engineering-28130",
             "match_score": 76.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production RAG and AI agents",
-              "MCP FastAPI cloud deployment"
-            ],
-            "main_gaps": [
-              "Three years production experience"
-            ]
-          },
-          {
-            "key": "url::https://ats.comparably.com/api/v2/stash/post/8213807:?gh_jid=8213807",
-            "match_score": 70.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Async backend services",
-              "AWS PostgreSQL reliability"
-            ],
-            "main_gaps": [
-              "Go or Rails proficiency",
-              "Three years backend experience"
-            ]
-          },
-          {
-            "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153741BR",
-            "match_score": 66.0,
-            "seniority_fit": "stretch",
+            "seniority_fit": "good",
             "hard_constraint_status": "other",
             "top_match_reasons": [
-              "PySpark Databricks pipelines",
-              "Python SQL REST APIs"
+              "Terraform and GitHub Actions",
+              "AWS deployment automation"
             ],
             "main_gaps": [
-              "Telco OSS/BSS",
-              "Oracle PL/SQL"
-            ]
-          },
-          {
-            "key": "url::https://careers.micron.com/careers/job/44544598?domain=micron.com",
-            "match_score": 45.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Python and C++",
-              "AI systems exposure"
-            ],
-            "main_gaps": [
-              "Memory architecture and HBM",
-              "GPU performance modeling"
-            ]
-          },
-          {
-            "key": "url::https://careers.micron.com/careers/job/44541908?domain=micron.com",
-            "match_score": 67.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "LLM agents and evaluation",
-              "Python SQL data pipelines"
-            ],
-            "main_gaps": [
-              "Product ownership experience",
-              "Semiconductor business experience"
+              "GKE and Helm",
+              "Splunk operations"
             ]
           }
         ]
       }
     ],
     "model": "gpt-5.6-terra",
-    "jobs_scored": 14,
-    "input_tokens": 21733,
+    "jobs_scored": 5,
+    "input_tokens": 10926,
     "cached_input_tokens": 0,
-    "output_tokens": 2158,
-    "reasoning_tokens": 396,
-    "estimated_usd": 0.069362,
+    "output_tokens": 959,
+    "reasoning_tokens": 313,
+    "estimated_usd": 0.03336,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 14
+    "scored": 5
   },
   "output": {
-    "tier_a": 3,
-    "tier_b": 10,
-    "tier_c": 71,
-    "shown": 13,
-    "new_jobs": 31,
-    "new_jobs_added": 0
+    "tier_a": 1,
+    "tier_b": 6,
+    "tier_c": 42,
+    "shown": 7,
+    "new_jobs": 11,
+    "new_jobs_added": 1
   },
   "screen_method": "cache+llm",
   "failures": {
@@ -422,14 +232,14 @@
       "group": "syncareer",
       "page_budget": 6,
       "pages_fetched": 6,
-      "stop_reason": "page_budget",
-      "raw_jobs": 90,
-      "unique_jobs": 90,
-      "unique_contribution": 90,
-      "first_pass_survivors": 51,
-      "original_postings_resolved": 15,
-      "jds_resolved": 14,
-      "elapsed_seconds": 3.763
+      "stop_reason": "empty_page",
+      "raw_jobs": 65,
+      "unique_jobs": 65,
+      "unique_contribution": 65,
+      "first_pass_survivors": 38,
+      "original_postings_resolved": 16,
+      "jds_resolved": 15,
+      "elapsed_seconds": 3.242
     },
     {
       "query": "Full Stack",
@@ -437,27 +247,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 12,
-      "unique_jobs": 12,
-      "unique_contribution": 11,
-      "first_pass_survivors": 8,
+      "raw_jobs": 9,
+      "unique_jobs": 9,
+      "unique_contribution": 7,
+      "first_pass_survivors": 5,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.583
+      "elapsed_seconds": 0.684
     },
     {
       "query": "AI",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 6,
+      "pages_fetched": 4,
       "stop_reason": "empty_page",
-      "raw_jobs": 66,
-      "unique_jobs": 66,
-      "unique_contribution": 55,
-      "first_pass_survivors": 31,
-      "original_postings_resolved": 12,
-      "jds_resolved": 11,
-      "elapsed_seconds": 2.612
+      "raw_jobs": 38,
+      "unique_jobs": 38,
+      "unique_contribution": 28,
+      "first_pass_survivors": 16,
+      "original_postings_resolved": 7,
+      "jds_resolved": 6,
+      "elapsed_seconds": 1.737
     },
     {
       "query": "Machine Learning",
@@ -465,27 +275,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 10,
-      "unique_jobs": 10,
-      "unique_contribution": 10,
-      "first_pass_survivors": 6,
-      "original_postings_resolved": 2,
-      "jds_resolved": 2,
-      "elapsed_seconds": 0.635
+      "raw_jobs": 6,
+      "unique_jobs": 6,
+      "unique_contribution": 6,
+      "first_pass_survivors": 4,
+      "original_postings_resolved": 1,
+      "jds_resolved": 1,
+      "elapsed_seconds": 0.66
     },
     {
       "query": "Infrastructure",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 3,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 16,
-      "unique_jobs": 16,
-      "unique_contribution": 10,
-      "first_pass_survivors": 11,
-      "original_postings_resolved": 6,
-      "jds_resolved": 6,
-      "elapsed_seconds": 1.069
+      "raw_jobs": 6,
+      "unique_jobs": 6,
+      "unique_contribution": 1,
+      "first_pass_survivors": 5,
+      "original_postings_resolved": 2,
+      "jds_resolved": 2,
+      "elapsed_seconds": 0.693
     },
     {
       "query": "Forward Deployed",
@@ -493,13 +303,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
-      "unique_contribution": 4,
-      "first_pass_survivors": 5,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 2,
+      "first_pass_survivors": 3,
       "original_postings_resolved": 1,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.589
+      "elapsed_seconds": 0.677
     },
     {
       "query": "DevOps",
@@ -507,13 +317,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 2,
-      "first_pass_survivors": 2,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
+      "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.614
+      "elapsed_seconds": 0.657
     },
     {
       "query": "Backend",
@@ -527,21 +337,21 @@
       "first_pass_survivors": 3,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.661
+      "elapsed_seconds": 0.646
     },
     {
       "query": "Platform",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 3,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 19,
-      "unique_jobs": 19,
-      "unique_contribution": 11,
-      "first_pass_survivors": 14,
+      "raw_jobs": 12,
+      "unique_jobs": 12,
+      "unique_contribution": 6,
+      "first_pass_survivors": 10,
       "original_postings_resolved": 2,
       "jds_resolved": 2,
-      "elapsed_seconds": 1.054
+      "elapsed_seconds": 0.622
     },
     {
       "query": "New Grad",
@@ -555,7 +365,7 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.595
+      "elapsed_seconds": 0.646
     },
     {
       "query": "LLM",
@@ -563,13 +373,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 4,
-      "unique_jobs": 4,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
       "unique_contribution": 0,
-      "first_pass_survivors": 3,
+      "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.585
+      "elapsed_seconds": 0.686
     },
     {
       "query": "Data Engineer",
@@ -577,13 +387,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 7,
-      "unique_jobs": 7,
-      "unique_contribution": 7,
-      "first_pass_survivors": 6,
+      "raw_jobs": 4,
+      "unique_jobs": 4,
+      "unique_contribution": 4,
+      "first_pass_survivors": 3,
       "original_postings_resolved": 2,
       "jds_resolved": 2,
-      "elapsed_seconds": 0.604
+      "elapsed_seconds": 0.63
     },
     {
       "query": "Site Reliability",
@@ -591,18 +401,18 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 3,
-      "first_pass_survivors": 2,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
+      "first_pass_survivors": 1,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.646
+      "elapsed_seconds": 0.629
     }
   ],
   "enrichment": {
     "needed": 4,
-    "detail_api_resolved": 132,
+    "detail_api_resolved": 76,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
     "remaining_no_jd": 4
