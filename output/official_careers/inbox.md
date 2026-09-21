@@ -1,42 +1,14 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-09-20 08:36 PDT
-- Snapshot (UTC): 2026-09-20T15:36:15.336578+00:00
-- Jobs: 30 (Tier A/B only)
+- Updated (PT): 2026-09-20 17:34 PDT
+- Snapshot (UTC): 2026-09-21T00:34:40.277545+00:00
+- Jobs: 2 (Tier A/B only)
 - Last 24 hours: 0
-- Last 3 days: 30
+- Last 3 days: 2
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | A | 92 | official | Microsoft | Software Engineer II - Excel Team | United States, Washington, Redmond | 2026-09-19 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557001308) |
-| A | 91 | official | Qualcomm | #Machine Learning Engineer - Generative AI | San Diego, California, United States of America | 2026-09-18 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446721159438) |
-| A | 90 | official | Microsoft | Software Engineer: AI Experiences Search | United States, Washington, Redmond | 2026-09-18 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556986144) |
-| A | 91 | official | Capital One | AI Engineer 2 | San Jose, CA; McLean, VA; Cambridge, MA; New York, NY | 2026-09-18 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/San-Jose-CA/AI-Engineer-2_R1001174-1) |
-| A | 91 | official | HPE | AI and Machine Learning Engineer I Graduate | San Jose, California, United States of America | 2026-09-18 | 1to3d | - | unreviewed | official_canonical | [open](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/San-Jose-California-United-States-of-America/AI-and-Machine-Learning-Engineer-I-Graduate_1211881) |
-| A | 91 | official | Expedia Group | Machine Learning Scientist II | Austin Domain 11 - HomeAway; Washington - Seattle Campus | 2026-09-18 | 1to3d | - | unreviewed | official_canonical | [open](https://expedia.wd108.myworkdayjobs.com/search/job/Austin-Domain-11---HomeAway/Machine-Learning-Scientist-II_R-109347-1) |
-| A | 89 | official | Amazon | Data Engineer, Ring Agent Platforms | Hawthorne, California, USA | 2026-09-18 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10553797/data-engineer-ring-agent-platforms) |
-| A | 87 | official | Google | Software Engineer III, Search Data and ML Platform | Mountain View, CA, USA | 2026-09-18 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/116667514041049798-software-engineer-iii-search-data-and-ml-platform) |
-| B | 87 | official | Amazon | Applied Scientist, AWS Applied AI Solutions - Life Sciences | Seattle, Washington, USA | 2026-09-18 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10553641/applied-scientist-aws-applied-ai-solutions-life-sciences) |
-| B | 86 | official | Lyft | Backend Software Engineer, Airports | San Francisco, CA; San Francisco, California, United States; Seattle, Washington, United States | 2026-09-18 | 1to3d | - | unreviewed | official_canonical | [open](https://app.careerpuck.com/job-board/lyft/job/8806570002?gh_jid=8806570002) |
-| B | 84 | official | Amazon | Software Engineer, Data Platform | San Francisco, California, USA | 2026-09-18 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10553687/software-engineer-data-platform) |
-| B | 84 | official | Apple | Software Engineer (Data Solutions), AI & Data Platforms (AiDP) | Austin, United States of America | 2026-09-18 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200684577/software-engineer-data-solutions-ai-data-platforms-aidp) |
-| B | 83 | official | Apple | Software Engineer (AML), AI & Data Platforms (AiDP) | Austin, United States of America | 2026-09-18 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200684574/software-engineer-aml-ai-data-platforms-aidp) |
-| B | 84 | official | Uber | Software Engineer II - Backend Engineer | San Francisco, CA, United States | 2026-09-18 | 1to3d | Uber | unreviewed | official_canonical | [open](https://jobs.uber.com/en/jobs/302455) |
-| B | 84 | official | Reddit | Software Engineer, Ingestion Platform | Remote - United States | 2026-09-18 | 1to3d | - | unreviewed | official_canonical | [open](https://job-boards.greenhouse.io/reddit/jobs/8214910) |
-| B | 75 | official | Adobe | Applied AI Engineer | San Jose | 2026-09-18 | 1to3d | Adobe | unreviewed | official_canonical | [open](https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Applied-AI-Engineer_R168901) |
-| B | 75 | official | Adobe | Operations AI Developer | San Jose | 2026-09-18 | 1to3d | Adobe | unreviewed | official_canonical | [open](https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Operations-AI-Developer_R170011-1) |
-| B | 75 | official | Adobe | Full-Stack Engineer | San Jose; San Francisco | 2026-09-18 | 1to3d | Adobe | unreviewed | official_canonical | [open](https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Full-Stack-Engineer_R170948) |
-| B | 75 | official | Adobe | iOS Developer | San Jose; Seattle; San Francisco | 2026-09-18 | 1to3d | Adobe | unreviewed | official_canonical | [open](https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/iOS-Developer_R171231) |
-| B | 75 | official | Adobe | Software Development Engineer | San Jose | 2026-09-18 | 1to3d | Adobe | unreviewed | official_canonical | [open](https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Software-Development-Engineer_R170818) |
-| B | 75 | official | Adobe | Software Development Engineer | San Jose | 2026-09-18 | 1to3d | Adobe | unreviewed | official_canonical | [open](https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Software-Development-Engineer_R164904) |
-| B | 75 | official | Adobe | Quality Engineering Developer - Mobile | San Jose | 2026-09-18 | 1to3d | Adobe | unreviewed | official_canonical | [open](https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Quality-Engineering-Developer---Mobile_R171332) |
-| B | 75 | official | Adobe | Software Developer Engineer 3/4 | San Jose | 2026-09-18 | 1to3d | Adobe | unreviewed | official_canonical | [open](https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Software-Developer-Engineer_R164352) |
-| B | 75 | official | Workday | Software Development Engineer | USA, CA, Pleasanton | 2026-09-18 | 1to3d | - | unreviewed | official_canonical | [open](https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Software-Development-Engineer_JR-0109889) |
-| B | 75 | official | Morgan Stanley | Generative AI, Backend Engineer | New York, New York, United States of America | 2026-09-18 | 1to3d | Morgan Stanley | unreviewed | official_canonical | [open](https://morganstanley.eightfold.ai/careers/job/549799388181) |
-| B | 76 | official | Apple | Software Engineer (Graph), Supply Chain Integration | Sunnyvale, United States of America | 2026-09-18 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200684594/software-engineer-graph-supply-chain-integration) |
-| B | 77 | official | Qualcomm | #Wireless Subsystem Test and Software Tools Engineer | San Diego, California, United States of America | 2026-09-18 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446721161405) |
-| B | 72 | official | Apple | Machine Learning Engineer | Cupertino, United States of America | 2026-09-18 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200681112/machine-learning-engineer) |
-| B | 72 | official | Apple | Software Engineer, Finance Engineering | San Francisco Bay Area, United States of America | 2026-09-18 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200684265/software-engineer-finance-engineering) |
 | B | 76 | official | TikTok | Machine Learning Engineer Graduate (E-Commerce Recommendation Video) - | San Jose, California, United States of America | - | 1to3d | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7686999927260105013) |

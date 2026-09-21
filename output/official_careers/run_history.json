@@ -2,6 +2,176 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-09-21T00:34:40.277545+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 3,
+      "cache_reused": 576,
+      "peer_reused": 0,
+      "same_content_reused": 12,
+      "non_material_change_reused": 0,
+      "new_or_changed": 5,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 5
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 2399,
+      "requests": 2,
+      "input_tokens": 6822,
+      "cached_input_tokens": 4575,
+      "output_tokens": 430,
+      "reasoning_tokens": 203,
+      "estimated_usd": 0.010569,
+      "latency_seconds": 7.988,
+      "latency_measured": true,
+      "effective_rpm": 15.02,
+      "effective_tpm": 54471.71,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 3,
+      "funnel": {
+        "after_dedup": 17296,
+        "after_company": 17296,
+        "after_hard_filter": 14131,
+        "after_prefilter": 2978,
+        "dropped": 14318
+      },
+      "output": {
+        "tier_a": 13,
+        "tier_b": 31,
+        "shown": 44,
+        "new_jobs": 26,
+        "new_jobs_added": 0
+      },
+      "enrichment": {
+        "discovered": 17356,
+        "needed": 1186,
+        "source_jds_available": 16169,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 1187
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720174471",
+              "company": "Qualcomm",
+              "title": "#Embedded Software Engineer - Video Technology"
+            },
+            {
+              "key": "url::https://www.disneycareers.com/en/job/orlando/software-engineer/391/99688867296",
+              "company": "Disney",
+              "title": "Software Engineer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.28,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 3040,
+            "cached_input_tokens": 1851,
+            "output_tokens": 142,
+            "reasoning_tokens": 0,
+            "estimated_usd": 0.004452
+          },
+          "decisions": [
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446720174471",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C/C++ and Linux",
+                "performance reliability engineering"
+              ],
+              "main_gaps": [
+                "embedded driver development",
+                "video codec expertise"
+              ]
+            },
+            {
+              "key": "url::https://www.disneycareers.com/en/job/orlando/software-engineer/391/99688867296",
+              "match_score": 62.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production software engineering",
+                "full-stack backend development"
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556999241",
+              "company": "Microsoft",
+              "title": "Software Engineer II - Full Stack"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.708,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3782,
+            "cached_input_tokens": 2724,
+            "output_tokens": 288,
+            "reasoning_tokens": 203,
+            "estimated_usd": 0.006117
+          },
+          "decisions": [
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556999241",
+              "match_score": 77.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack production services",
+                "Cloud CI/CD reliability"
+              ],
+              "main_gaps": [
+                "2+ years engineering experience"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-09-20T15:36:15.336578+00:00",
       "mode": "pipeline",
       "health": "degraded",
