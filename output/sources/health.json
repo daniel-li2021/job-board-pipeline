@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-21T00:03:32.148920+00:00",
+  "generated_at": "2026-09-21T15:02:28.190859+00:00",
   "collector": {
-    "commit": "ad916a83a09fb520d7b4a10ca9102153a56ada0c",
+    "commit": "a274e2a67d0c6d760c9b85efa6b0fc02d24e3713",
     "dirty": false
   },
   "sources": {
@@ -11,14 +11,14 @@
       "healthy": false,
       "status": "partial",
       "reason": "blocked with HTTP 429",
-      "last_attempt_at": "2026-09-21T00:01:45.990700+00:00",
+      "last_attempt_at": "2026-09-21T15:01:44.254243+00:00",
       "last_success_at": "2026-09-20T15:01:45.497048+00:00",
-      "last_partial_at": "2026-09-21T00:01:45.990700+00:00",
-      "partial_collected_count": 556,
-      "partial_fresh_kept": 550,
-      "partial_carried_count": 479,
+      "last_partial_at": "2026-09-21T15:01:44.254243+00:00",
+      "partial_collected_count": 253,
+      "partial_fresh_kept": 250,
+      "partial_carried_count": 924,
       "last_attempt_collector": {
-        "commit": "ad916a83a09fb520d7b4a10ca9102153a56ada0c",
+        "commit": "a274e2a67d0c6d760c9b85efa6b0fc02d24e3713",
         "dirty": false
       },
       "last_success_collector": {
@@ -31,8 +31,8 @@
       "last_success_source_provenance": {
         "implementation": "sources.linkedin_local"
       },
-      "last_attempt_count": 550,
-      "consecutive_failures": 3,
+      "last_attempt_count": 250,
+      "consecutive_failures": 4,
       "query_stats": [
         {
           "query": "software engineer",
@@ -40,125 +40,125 @@
           "page_budget": 25,
           "pages_fetched": 25,
           "stop_reason": "page_budget",
-          "raw_jobs": 250,
-          "unique_jobs": 250,
+          "raw_jobs": 249,
+          "unique_jobs": 249,
           "unique_contribution": 233,
-          "first_pass_survivors": 228,
+          "first_pass_survivors": 230,
           "original_postings_resolved": 0,
-          "jds_resolved": 112,
-          "elapsed_seconds": 38.476
+          "jds_resolved": 23,
+          "elapsed_seconds": 39.448
         },
         {
           "query": "ai engineer",
           "group": "primary",
           "page_budget": 25,
-          "pages_fetched": 25,
-          "stop_reason": "page_budget",
-          "raw_jobs": 250,
-          "unique_jobs": 250,
-          "unique_contribution": 239,
-          "first_pass_survivors": 243,
+          "pages_fetched": 2,
+          "stop_reason": "blocked_http_429",
+          "raw_jobs": 20,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 20,
           "original_postings_resolved": 0,
-          "jds_resolved": 116,
-          "elapsed_seconds": 38.008
+          "jds_resolved": 1,
+          "elapsed_seconds": 3.303
         },
         {
           "query": "software engineer i",
           "group": "secondary",
           "page_budget": 8,
-          "pages_fetched": 8,
-          "stop_reason": "page_budget",
-          "raw_jobs": 80,
-          "unique_jobs": 80,
-          "unique_contribution": 49,
-          "first_pass_survivors": 77,
-          "original_postings_resolved": 0,
-          "jds_resolved": 30,
-          "elapsed_seconds": 12.246
-        },
-        {
-          "query": "software engineer ii",
-          "group": "secondary",
-          "page_budget": 8,
-          "pages_fetched": 8,
-          "stop_reason": "page_budget",
-          "raw_jobs": 80,
-          "unique_jobs": 80,
-          "unique_contribution": 33,
-          "first_pass_survivors": 78,
-          "original_postings_resolved": 0,
-          "jds_resolved": 37,
-          "elapsed_seconds": 12.306
-        },
-        {
-          "query": "associate software engineer",
-          "group": "secondary",
-          "page_budget": 8,
-          "pages_fetched": 2,
-          "stop_reason": "no_new_jobs",
-          "raw_jobs": 20,
-          "unique_jobs": 20,
-          "unique_contribution": 2,
-          "first_pass_survivors": 19,
-          "original_postings_resolved": 0,
-          "jds_resolved": 5,
-          "elapsed_seconds": 1.828
-        },
-        {
-          "query": "new grad software engineer",
-          "group": "secondary",
-          "page_budget": 8,
-          "pages_fetched": 1,
-          "stop_reason": "no_new_jobs",
-          "raw_jobs": 10,
-          "unique_jobs": 10,
-          "unique_contribution": 0,
-          "first_pass_survivors": 9,
-          "original_postings_resolved": 0,
-          "jds_resolved": 3,
-          "elapsed_seconds": 0.308
-        },
-        {
-          "query": "backend engineer",
-          "group": "secondary",
-          "page_budget": 8,
-          "pages_fetched": 1,
-          "stop_reason": "no_new_jobs",
-          "raw_jobs": 10,
-          "unique_jobs": 10,
-          "unique_contribution": 0,
-          "first_pass_survivors": 10,
-          "original_postings_resolved": 0,
-          "jds_resolved": 9,
-          "elapsed_seconds": 0.3
-        },
-        {
-          "query": "full stack engineer",
-          "group": "secondary",
-          "page_budget": 8,
-          "pages_fetched": 1,
-          "stop_reason": "no_new_jobs",
-          "raw_jobs": 10,
-          "unique_jobs": 10,
-          "unique_contribution": 0,
-          "first_pass_survivors": 10,
-          "original_postings_resolved": 0,
-          "jds_resolved": 3,
-          "elapsed_seconds": 0.316
-        },
-        {
-          "query": "platform engineer",
-          "group": "secondary",
-          "page_budget": 8,
           "pages_fetched": 0,
-          "stop_reason": "blocked_http_429",
+          "stop_reason": "source_unavailable",
           "raw_jobs": 0,
           "unique_jobs": 0,
           "unique_contribution": 0,
           "first_pass_survivors": 0,
           "original_postings_resolved": 0,
           "jds_resolved": 0,
-          "elapsed_seconds": 0.075
+          "elapsed_seconds": 0.0
+        },
+        {
+          "query": "software engineer ii",
+          "group": "secondary",
+          "page_budget": 8,
+          "pages_fetched": 0,
+          "stop_reason": "source_unavailable",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
+          "original_postings_resolved": 0,
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.0
+        },
+        {
+          "query": "associate software engineer",
+          "group": "secondary",
+          "page_budget": 8,
+          "pages_fetched": 0,
+          "stop_reason": "source_unavailable",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
+          "original_postings_resolved": 0,
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.0
+        },
+        {
+          "query": "new grad software engineer",
+          "group": "secondary",
+          "page_budget": 8,
+          "pages_fetched": 0,
+          "stop_reason": "source_unavailable",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
+          "original_postings_resolved": 0,
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.0
+        },
+        {
+          "query": "backend engineer",
+          "group": "secondary",
+          "page_budget": 8,
+          "pages_fetched": 0,
+          "stop_reason": "source_unavailable",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
+          "original_postings_resolved": 0,
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.0
+        },
+        {
+          "query": "full stack engineer",
+          "group": "secondary",
+          "page_budget": 8,
+          "pages_fetched": 0,
+          "stop_reason": "source_unavailable",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
+          "original_postings_resolved": 0,
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.0
+        },
+        {
+          "query": "platform engineer",
+          "group": "secondary",
+          "page_budget": 8,
+          "pages_fetched": 0,
+          "stop_reason": "source_unavailable",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
+          "original_postings_resolved": 0,
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.0
         },
         {
           "query": "applied ai engineer",
@@ -274,36 +274,36 @@
         }
       ],
       "detail_enrichment": {
-        "eligible": 556,
-        "cache_reused": 260,
+        "eligible": 253,
+        "cache_reused": 24,
         "requests": 0,
-        "jds_resolved": 260,
+        "jds_resolved": 24,
         "external_apply_urls": 0,
         "failed": 0,
         "blocked": "rate_limited_no_further_requests",
         "scrapling_requests": 0,
         "scrapling_jds_resolved": 0,
         "scrapling_error": "",
-        "remaining_no_jd": 296,
+        "remaining_no_jd": 229,
         "failure_reasons": {
-          "linkedin_rate_limited": 296
+          "linkedin_rate_limited": 229
         }
       },
-      "last_good_count": 1029
+      "last_good_count": 1174
     },
     "indeed": {
       "required": true,
       "healthy": false,
       "status": "skipped_unavailable",
       "reason": "JobSpy returned no rows for the broad primary query; access may be blocked",
-      "last_attempt_at": "2026-09-21T00:03:31.207550+00:00",
+      "last_attempt_at": "2026-09-21T15:02:27.287834+00:00",
       "last_success_at": "2026-09-18T21:04:00.630340+00:00",
       "last_partial_at": "",
       "partial_collected_count": 0,
       "partial_fresh_kept": 0,
       "partial_carried_count": 0,
       "last_attempt_collector": {
-        "commit": "ad916a83a09fb520d7b4a10ca9102153a56ada0c",
+        "commit": "a274e2a67d0c6d760c9b85efa6b0fc02d24e3713",
         "dirty": false
       },
       "last_success_collector": {
@@ -319,7 +319,7 @@
         "version": "1.1.82"
       },
       "last_attempt_count": 0,
-      "consecutive_failures": 9,
+      "consecutive_failures": 10,
       "query_stats": [
         {
           "query": "software engineer",
@@ -333,7 +333,7 @@
           "first_pass_survivors": 0,
           "original_postings_resolved": 0,
           "jds_resolved": 0,
-          "elapsed_seconds": 0.123,
+          "elapsed_seconds": 0.14,
           "hours_old": 48
         }
       ],
@@ -345,14 +345,14 @@
       "healthy": false,
       "status": "skipped_unavailable",
       "reason": "RuntimeError: Glassdoor static search HTTP 403",
-      "last_attempt_at": "2026-09-21T00:03:31.754391+00:00",
+      "last_attempt_at": "2026-09-21T15:02:27.844050+00:00",
       "last_success_at": "2026-09-15T07:02:44.646497+00:00",
       "last_partial_at": "",
       "partial_collected_count": 0,
       "partial_fresh_kept": 0,
       "partial_carried_count": 0,
       "last_attempt_collector": {
-        "commit": "ad916a83a09fb520d7b4a10ca9102153a56ada0c",
+        "commit": "a274e2a67d0c6d760c9b85efa6b0fc02d24e3713",
         "dirty": false
       },
       "last_success_collector": {
@@ -372,7 +372,7 @@
         "reliability": "best_effort_optional"
       },
       "last_attempt_count": 0,
-      "consecutive_failures": 24,
+      "consecutive_failures": 25,
       "query_stats": [
         {
           "query": "software engineer",
@@ -386,7 +386,7 @@
           "first_pass_survivors": 0,
           "original_postings_resolved": 0,
           "jds_resolved": 0,
-          "elapsed_seconds": 0.345,
+          "elapsed_seconds": 0.292,
           "hours_old": 24
         }
       ],
