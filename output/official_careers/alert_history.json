@@ -3,32 +3,6 @@
   "events": [
     {
       "pipeline": "official",
-      "stamp": "2026-09-07_1525",
-      "emitted_at": "2026-09-07T15:27:45.324743+00:00",
-      "event_kind": "new_or_promoted_ab",
-      "count": 1,
-      "jobs": [
-        {
-          "canonical_job_key": "url::https://lifeattiktok.com/search/7681779180341709109",
-          "job_id": "7681779180341709109",
-          "tier": "B",
-          "match_score": 78.0,
-          "company": "TikTok",
-          "title": "Data Engineer Graduate (Data Platfrom TikTok BP) - 2027 Start",
-          "location": "San Jose, California, United States of America",
-          "date_confidence": "unknown",
-          "first_seen": "2026-09-07T15:25:09.538267+00:00",
-          "referral_name": "TikTok",
-          "review_status": "unreviewed",
-          "official_url": "https://lifeattiktok.com/search/7681779180341709109",
-          "source_url": "https://lifeattiktok.com/search/7681779180341709109",
-          "source": "tiktok_official_careers",
-          "url": "https://lifeattiktok.com/search/7681779180341709109"
-        }
-      ]
-    },
-    {
-      "pipeline": "official",
       "stamp": "2026-09-08_1525",
       "emitted_at": "2026-09-08T15:28:19.531181+00:00",
       "event_kind": "new_or_promoted_ab",
@@ -6265,6 +6239,69 @@
           "source_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Software-Engineer--Coding-Agent-Harness-Engineering----New-College-Grad-2026_JR2023749",
           "source": "nvidia_official_careers",
           "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Software-Engineer--Coding-Agent-Harness-Engineering----New-College-Grad-2026_JR2023749"
+        }
+      ]
+    },
+    {
+      "pipeline": "official",
+      "stamp": "2026-09-21_1537",
+      "emitted_at": "2026-09-21T15:39:43.299991+00:00",
+      "event_kind": "new_or_promoted_ab",
+      "count": 3,
+      "jobs": [
+        {
+          "canonical_job_key": "url::https://www.amazon.jobs/en/jobs/10554516/software-development-engineer",
+          "job_id": "10554516",
+          "tier": "B",
+          "match_score": 84.0,
+          "company": "Amazon",
+          "title": "Software Development Engineer",
+          "location": "Newark, New Jersey, USA",
+          "posted_date": "2026-09-21",
+          "date_confidence": "high",
+          "first_seen": "2026-09-21T15:37:16.524230+00:00",
+          "referral_name": "Amazon",
+          "review_status": "unreviewed",
+          "official_url": "https://www.amazon.jobs/en/jobs/10554516/software-development-engineer",
+          "source_url": "https://www.amazon.jobs/en/jobs/10554516/software-development-engineer",
+          "source": "amazon_official_careers",
+          "url": "https://www.amazon.jobs/en/jobs/10554516/software-development-engineer"
+        },
+        {
+          "canonical_job_key": "url::https://www.google.com/about/careers/applications/jobs/results/123026788648395462-ads-solutions-engineer-gtech-agency-and-partner-engineering",
+          "job_id": "123026788648395462",
+          "tier": "B",
+          "match_score": 74.0,
+          "company": "Google",
+          "title": "Ads Solutions Engineer, gTech Agency and Partner Engineering",
+          "location": "Chicago, IL, USA; New York, NY, USA; Sunnyvale, CA, USA",
+          "posted_date": "2026-09-21",
+          "date_confidence": "high",
+          "first_seen": "2026-09-21T15:37:16.524230+00:00",
+          "referral_name": "Google",
+          "review_status": "unreviewed",
+          "official_url": "https://www.google.com/about/careers/applications/jobs/results/123026788648395462-ads-solutions-engineer-gtech-agency-and-partner-engineering",
+          "source_url": "https://www.google.com/about/careers/applications/jobs/results/123026788648395462-ads-solutions-engineer-gtech-agency-and-partner-engineering",
+          "source": "google_official_careers",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/123026788648395462-ads-solutions-engineer-gtech-agency-and-partner-engineering"
+        },
+        {
+          "canonical_job_key": "url::https://jobs.apple.com/en-us/details/200684809/cad-engineer-signoff-infrastructure",
+          "job_id": "200684809-0157",
+          "tier": "B",
+          "match_score": 73.0,
+          "company": "Apple",
+          "title": "CAD Engineer - Signoff Infrastructure",
+          "location": "Austin, United States of America",
+          "posted_date": "2026-09-21",
+          "date_confidence": "high",
+          "first_seen": "2026-09-21T15:37:16.524230+00:00",
+          "referral_name": "Apple",
+          "review_status": "unreviewed",
+          "official_url": "https://jobs.apple.com/en-us/details/200684809/cad-engineer-signoff-infrastructure",
+          "source_url": "https://jobs.apple.com/en-us/details/200684809/cad-engineer-signoff-infrastructure",
+          "source": "apple_official_careers",
+          "url": "https://jobs.apple.com/en-us/details/200684809/cad-engineer-signoff-infrastructure"
         }
       ]
     }

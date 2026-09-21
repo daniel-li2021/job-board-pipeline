@@ -2,6 +2,583 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-09-21T15:37:16.524230+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 22,
+      "cache_reused": 566,
+      "peer_reused": 1,
+      "same_content_reused": 13,
+      "non_material_change_reused": 0,
+      "new_or_changed": 23,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 23
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 2385,
+      "requests": 4,
+      "input_tokens": 30997,
+      "cached_input_tokens": 1851,
+      "output_tokens": 2746,
+      "reasoning_tokens": 826,
+      "estimated_usd": 0.091614,
+      "latency_seconds": 39.917,
+      "latency_measured": true,
+      "effective_rpm": 6.01,
+      "effective_tpm": 50719.74,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 4,
+      "primary_batches_total": 4,
+      "batches_attempted": 4,
+      "batches_succeeded": 4,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 22,
+      "funnel": {
+        "after_dedup": 17269,
+        "after_company": 17269,
+        "after_hard_filter": 14112,
+        "after_prefilter": 2973,
+        "dropped": 14296
+      },
+      "output": {
+        "tier_a": 13,
+        "tier_b": 32,
+        "shown": 45,
+        "new_jobs": 159,
+        "new_jobs_added": 3
+      },
+      "enrichment": {
+        "discovered": 17329,
+        "needed": 1184,
+        "source_jds_available": 16144,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 1185
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1001331-3",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-5_R1001301-2",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 5"
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-Stack-Engineer-5--ATM-_R1001142-1",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 5 (ATM)"
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-Stack-Engineer-4_R1001154-2",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 4"
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Chicago-IL/Full-Stack-Engineer-5_R1001167-1",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 5"
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-Stack-Engineer-4--Golang--AWS-_R1001284-1",
+              "company": "Capital One",
+              "title": "Full-Stack Engineer 4 (Golang, AWS)"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10554516/software-development-engineer",
+              "company": "Amazon",
+              "title": "Software Development Engineer"
+            },
+            {
+              "key": "url::https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CHARLOTTE-NC/Software-Engineer_R-576173",
+              "company": "Wells Fargo",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/123026788648395462-ads-solutions-engineer-gtech-agency-and-partner-engineering",
+              "company": "Google",
+              "title": "Ads Solutions Engineer, gTech Agency and Partner Engineering"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/109784236243722950-android-platform-developer-relations-engineer",
+              "company": "Google",
+              "title": "Android Platform Developer Relations Engineer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 15.259,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 13608,
+            "cached_input_tokens": 0,
+            "output_tokens": 1118,
+            "reasoning_tokens": 249,
+            "estimated_usd": 0.040632
+          },
+          "decisions": [
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1001331-3",
+              "match_score": 42.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack production systems",
+                "AWS Docker CI/CD"
+              ],
+              "main_gaps": [
+                "4 years non-internship experience",
+                "Technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-5_R1001301-2",
+              "match_score": 25.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud-native full-stack work",
+                "Distributed services experience"
+              ],
+              "main_gaps": [
+                "6 years non-internship experience",
+                "Multi-team technical leadership"
+              ]
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-Stack-Engineer-5--ATM-_R1001142-1",
+              "match_score": 18.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend API development",
+                "Cloud deployment experience"
+              ],
+              "main_gaps": [
+                "6 years non-internship experience",
+                "Hardware network integration"
+              ]
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-Stack-Engineer-4_R1001154-2",
+              "match_score": 42.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Developer tooling experience",
+                "Full-stack cloud systems"
+              ],
+              "main_gaps": [
+                "4 years non-internship experience",
+                "Technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Chicago-IL/Full-Stack-Engineer-5_R1001167-1",
+              "match_score": 25.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Developer tooling experience",
+                "Cloud-native services"
+              ],
+              "main_gaps": [
+                "6 years non-internship experience",
+                "Multi-team technical leadership"
+              ]
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-Stack-Engineer-4--Golang--AWS-_R1001284-1",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS ECS deployments",
+                "Full-stack API development"
+              ],
+              "main_gaps": [
+                "4 years non-internship experience",
+                "Technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10554516/software-development-engineer",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production software delivery",
+                "AWS and scalable services"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CHARLOTTE-NC/Software-Engineer_R-576173",
+              "match_score": 66.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python data pipelines",
+                "Spark Databricks workflows"
+              ],
+              "main_gaps": [
+                "Python certification",
+                "Azure fundamentals certification"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/123026788648395462-ads-solutions-engineer-gtech-agency-and-partner-engineering",
+              "match_score": 74.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "JavaScript Python development",
+                "Technical troubleshooting experience"
+              ],
+              "main_gaps": [
+                "Client-facing partner support"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/109784236243722950-android-platform-developer-relations-engineer",
+              "match_score": 38.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Software engineering foundation",
+                "Technical communication exposure"
+              ],
+              "main_gaps": [
+                "Android Kotlin development",
+                "Developer relations experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Customer-Success-Splunk-Platform-Area-TAM-Leader_2022973",
+              "company": "Cisco",
+              "title": "Customer Success Splunk Platform Area TAM Leader"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 2.947,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3483,
+            "cached_input_tokens": 1851,
+            "output_tokens": 114,
+            "reasoning_tokens": 0,
+            "estimated_usd": 0.005002
+          },
+          "decisions": [
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Customer-Success-Splunk-Platform-Area-TAM-Leader_2022973",
+              "match_score": 22.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and Bash experience",
+                "technical consulting-adjacent support tools"
+              ],
+              "main_gaps": [
+                "5+ years Splunk Core",
+                "Splunk Architect certification"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210791733",
+              "company": "JPMorgan Chase",
+              "title": "Applied AI ML [Multiple Positions Available]"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.816,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2406,
+            "cached_input_tokens": 0,
+            "output_tokens": 193,
+            "reasoning_tokens": 96,
+            "estimated_usd": 0.007128
+          },
+          "decisions": [
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210791733",
+              "match_score": 45.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and SQL analytics",
+                "ML pipeline experience"
+              ],
+              "main_gaps": [
+                "causal inference modeling",
+                "time series and econometrics"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/142014254948459206-software-engineer-iii-android-xr-developer",
+              "company": "Google",
+              "title": "Software Engineer III, Android XR Developer"
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Cambridge-MA/Full-stack-Engineer-4_R1001232-1",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/136934133271012038-software-engineer-iii-front-end-google-flow",
+              "company": "Google",
+              "title": "Software Engineer III, Front End, Google Flow"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10554286/software-development-engineer-expert-consultant-agi-data-services",
+              "company": "Amazon",
+              "title": "Software Development Engineer - Expert Consultant, AGI - Data Services"
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200684809/cad-engineer-signoff-infrastructure",
+              "company": "Apple",
+              "title": "CAD Engineer - Signoff Infrastructure"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210788258",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer III – DevOps AWS Platform Engineer"
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/AI-Engineer-5---AI-Foundations--LLM-Core-and-Agentic-AI-_R1001358-1",
+              "company": "Capital One",
+              "title": "AI Engineer 5 ((AI Foundations, LLM Core and Agentic AI)"
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/System-Software-Engineer---CUDA-Chips_JR2026249-1",
+              "company": "NVIDIA",
+              "title": "System Software Engineer - CUDA Chips"
+            },
+            {
+              "key": "id::amd_official_careers::92556",
+              "company": "AMD",
+              "title": "AIE Software Development Engineer"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792628",
+              "company": "JPMorgan Chase",
+              "title": "Security Engineer II"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 16.895,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 11500,
+            "cached_input_tokens": 0,
+            "output_tokens": 1321,
+            "reasoning_tokens": 481,
+            "estimated_usd": 0.038852
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/142014254948459206-software-engineer-iii-android-xr-developer",
+              "match_score": 54.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "MCP agent implementation",
+                "Java and C++ experience"
+              ],
+              "main_gaps": [
+                "Android application development",
+                "two years mobile experience"
+              ]
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Cambridge-MA/Full-stack-Engineer-4_R1001232-1",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production full-stack systems",
+                "AWS container deployment"
+              ],
+              "main_gaps": [
+                "four years non-internship experience",
+                "technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/136934133271012038-software-engineer-iii-front-end-google-flow",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "TypeScript React product development",
+                "generative AI platform experience"
+              ],
+              "main_gaps": [
+                "client-side state management"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10554286/software-development-engineer-expert-consultant-agi-data-services",
+              "match_score": 52.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI evaluation data pipelines",
+                "production testing and reliability"
+              ],
+              "main_gaps": [
+                "three years non-internship experience",
+                "organizational mentorship leadership"
+              ]
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200684809/cad-engineer-signoff-infrastructure",
+              "match_score": 73.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack platform development",
+                "RAG application deployment"
+              ],
+              "main_gaps": [
+                "CAD signoff infrastructure"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210788258",
+              "match_score": 47.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS ECS deployment",
+                "Terraform Kubernetes CI/CD"
+              ],
+              "main_gaps": [
+                "five years DevOps experience",
+                "enterprise SRE observability"
+              ]
+            },
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/AI-Engineer-5---AI-Foundations--LLM-Core-and-Agentic-AI-_R1001358-1",
+              "match_score": 42.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production agentic RAG systems",
+                "LLM inference optimization"
+              ],
+              "main_gaps": [
+                "four years AI experience",
+                "principal-level technical leadership"
+              ]
+            },
+            {
+              "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/System-Software-Engineer---CUDA-Chips_JR2026249-1",
+              "match_score": 48.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming foundation",
+                "async concurrency experience"
+              ],
+              "main_gaps": [
+                "kernel driver development",
+                "computer architecture depth"
+              ]
+            },
+            {
+              "key": "id::amd_official_careers::92556",
+              "match_score": 35.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and C++",
+                "AI systems experience"
+              ],
+              "main_gaps": [
+                "MLIR compiler development",
+                "NPU architecture expertise"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792628",
+              "match_score": 49.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "secure production engineering",
+                "CI/CD testing practices"
+              ],
+              "main_gaps": [
+                "security engineering experience",
+                "Java or Golang experience"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-09-21T00:34:40.277545+00:00",
       "mode": "pipeline",
       "health": "degraded",

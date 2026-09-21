@@ -1,21 +1,21 @@
-# Big Tech official careers — 7-day view — 2026-09-21_0034
+# Big Tech official careers — 7-day view — 2026-09-21_1537
 
-- Updated (PT): 2026-09-20 17:36 PDT
-- Snapshot (UTC): 2026-09-21T00:36:19.672741+00:00
-- Last 24 hours: 0
-- Last 3 days: 2
+- Updated (PT): 2026-09-21 08:39 PDT
+- Snapshot (UTC): 2026-09-21T15:39:43.297125+00:00
+- Last 24 hours: 3
+- Last 3 days: 5
 
 Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scoring/ranking.
 
 ## Run stats
 
-- Scraped companies: {'Qualcomm': 149, 'NVIDIA': 480, 'JPMorgan Chase': 566, 'Cisco': 194, 'Walmart Global Tech': 380, 'Meta': 606, 'Google': 331, 'Amazon': 734, 'Workday': 123, 'Uber': 136, 'eBay': 57, 'Apple': 321, 'Expedia Group': 61, 'Disney': 131, 'Wells Fargo': 92, 'Salesforce': 164, 'Oracle': 491, 'CVS Health': 126, 'Microsoft': 206, 'Verizon': 15, 'Intel': 150, 'IQVIA': 34, 'Visa': 119, 'Travelers': 93, 'SAP': 154, 'Johnson & Johnson': 189, 'TikTok': 724, 'Dell': 103, 'HPE': 228, 'Adobe': 228, 'DoorDash': 460, 'Snap': 93, 'Pinterest': 116, 'Snowflake': 258, 'ServiceNow': 373, 'Bloomberg': 25, 'Capital One': 127, 'Cloudflare': 375, 'Stripe': 390, 'Coinbase': 183, 'Robinhood': 144, 'Figma': 99, 'GitLab': 122, 'Discord': 47, 'Asana': 76, 'Brex': 247, 'Samsara': 215, 'Lyft': 100, 'Spotify': 57, 'Ramp': 131, 'Notion': 76, 'Linear': 30, 'Cohere': 117, 'AMD': 472, 'Zoom': 42, 'Pure Storage': 205, 'Databricks': 485, 'Roblox': 225, 'Airbnb': 96, 'Anthropic': 499, 'AppLovin': 24, 'ByteDance': 449, 'Chime': 67, 'Dropbox': 35, 'HubSpot': 31, 'Instacart': 92, 'MathWorks': 34, 'MongoDB': 255, 'Morgan Stanley': 105, 'NetApp': 89, 'Netflix': 58, 'OpenAI': 674, 'Palantir': 243, 'PayPal': 51, 'Reddit': 139, 'Red Hat': 40, 'Roku': 194, 'Block / Square': 204, 'Two Sigma': 39, 'Verkada': 238, 'WeRide': 12, 'Zillow': 37, 'Zscaler': 227, 'Chewy': 2, 'Duolingo': 73, 'Equinix': 30, 'F5': 1, 'IXL Learning': 100, 'Yahoo': 70, 'Ansys': 26, 'Flex': 169, 'Nasdaq': 27, 'PointClickCare': 79, 'Stryker': 131, 'TransUnion': 30, 'Yext': 11}
-- Funnel: after dedup 17296 -> after company filter 17296 -> after hard filter 14131 -> after role+seniority prefilter 2978 | dropped 14318
-- LLM usage: scored 3 / API requests 2 / cache reused 576 (cross-pipeline 0) / rule fallback 2399
-- LLM cache causes: new 5 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 12 / rescored <24h 0
-- LLM cost: model gpt-5.6-terra / API requests 2 / jobs scored 3 / tokens input 6822 (cached 4575) / output 430 (reasoning 203) / estimated cost $0.0106
-- New jobs discovered this run: 26
-- Output: Tier A 13 / Tier B 31 / shown 44
+- Scraped companies: {'Qualcomm': 143, 'Cisco': 196, 'Google': 319, 'NVIDIA': 481, 'JPMorgan Chase': 559, 'Walmart Global Tech': 379, 'CVS Health': 127, 'Capital One': 141, 'Meta': 606, 'Amazon': 731, 'Workday': 122, 'Uber': 136, 'eBay': 57, 'Apple': 322, 'Expedia Group': 61, 'Disney': 131, 'Wells Fargo': 79, 'Salesforce': 163, 'Oracle': 493, 'Microsoft': 208, 'Verizon': 15, 'Intel': 143, 'IQVIA': 30, 'Visa': 118, 'Travelers': 93, 'SAP': 154, 'Johnson & Johnson': 187, 'TikTok': 723, 'Dell': 101, 'Chewy': 2, 'Adobe': 230, 'DoorDash': 461, 'Snap': 93, 'Pinterest': 116, 'Snowflake': 261, 'ServiceNow': 376, 'Bloomberg': 25, 'Cloudflare': 375, 'Stripe': 393, 'Coinbase': 182, 'Robinhood': 144, 'Figma': 99, 'GitLab': 118, 'Discord': 47, 'Asana': 77, 'Brex': 247, 'Samsara': 214, 'Lyft': 100, 'Spotify': 56, 'Ramp': 131, 'Notion': 77, 'Linear': 30, 'Cohere': 117, 'HPE': 229, 'AMD': 473, 'Zoom': 43, 'Pure Storage': 205, 'Databricks': 484, 'Roblox': 225, 'Airbnb': 96, 'Anthropic': 498, 'AppLovin': 24, 'ByteDance': 450, 'Chime': 67, 'Dropbox': 35, 'HubSpot': 32, 'Instacart': 92, 'MathWorks': 34, 'MongoDB': 259, 'Morgan Stanley': 105, 'NetApp': 88, 'Netflix': 58, 'OpenAI': 672, 'Palantir': 242, 'PayPal': 51, 'Reddit': 139, 'Red Hat': 40, 'Roku': 194, 'Block / Square': 205, 'Two Sigma': 39, 'Verkada': 238, 'WeRide': 12, 'Zillow': 37, 'Zscaler': 227, 'Duolingo': 73, 'Equinix': 30, 'F5': 1, 'IXL Learning': 101, 'Yahoo': 71, 'Ansys': 26, 'Flex': 170, 'Nasdaq': 27, 'PointClickCare': 77, 'Stryker': 130, 'TransUnion': 30, 'Yext': 11}
+- Funnel: after dedup 17269 -> after company filter 17269 -> after hard filter 14112 -> after role+seniority prefilter 2973 | dropped 14296
+- LLM usage: scored 22 / API requests 4 / cache reused 566 (cross-pipeline 1) / rule fallback 2385
+- LLM cache causes: new 23 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 13 / rescored <24h 0
+- LLM cost: model gpt-5.6-terra / API requests 4 / jobs scored 22 / tokens input 30997 (cached 1851) / output 2746 (reasoning 826) / estimated cost $0.0916
+- New jobs discovered this run: 159
+- Output: Tier A 13 / Tier B 32 / shown 45
 
 ## Tier A - apply now / referral (13)
 
@@ -35,10 +35,13 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 92 | cached_llm | official | HPE | AI and Machine Learning Engineering Graduate | Durham, North Carolina, United States of America | 2026-09-13 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Durham-North-Carolina-United-States-of-America/AI-and-Machine-Learning-Engineering-Graduate_1213475) |
 | 91 | cached_llm | official | Cisco | Data Engineer I (Full-Time) - United States | RTP, North Carolina, US; San Jose, California, US; Austin, Texas, US; Atlanta, Georgia, US | 2026-09-04 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Data-Engineer-I--Full-Time----United-States_2024459) |
 
-## Tier B - worth applying (31)
+## Tier B - worth applying (32)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 84 | llm | official | Amazon | Software Development Engineer | Newark, New Jersey, USA | 2026-09-21 | 3to24h | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10554516/software-development-engineer) |
+| 74 | llm | official | Google | Ads Solutions Engineer, gTech Agency and Partner Engineering | Chicago, IL, USA; New York, NY, USA; Sunnyvale, CA, USA | 2026-09-21 | 3to24h | high | swe | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/123026788648395462-ads-solutions-engineer-gtech-agency-and-partner-engineering) |
+| 73 | llm | official | Apple | CAD Engineer - Signoff Infrastructure | Austin, United States of America | 2026-09-21 | 3to24h | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200684809/cad-engineer-signoff-infrastructure) |
 | 76 | cached_llm | official | TikTok | Machine Learning Engineer Graduate (E-Commerce Recommendation Video) - | San Jose, California, United States of America | - | 1to3d | unknown | ai | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7686999927260105013) |
 | 90 | cached_llm | official | Amazon | Jr. Software Development Engineer - San Luis Obispo, CA, Jr. Developer | San Luis Obispo, California, USA | 2026-09-15 | 3to7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10544071/jr-software-development-engineer-san-luis-obispo-ca-jr-developer-program) |
 | 89 | cached_llm | official | Amazon | Data Engineer, Ring Agent Platforms | Hawthorne, California, USA | 2026-09-18 | 3to7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10553797/data-engineer-ring-agent-platforms) |
@@ -55,7 +58,6 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 83 | cached_llm | official | Apple | Software Engineer (AML), AI & Data Platforms (AiDP) | Austin, United States of America | 2026-09-18 | 3to7d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200684574/software-engineer-aml-ai-data-platforms-aidp) |
 | 82 | cached_llm | official | Apple | Software Engineer - Customer Feedback | San Diego, United States of America | 2026-09-15 | 3to7d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200683935/software-engineer-customer-feedback) |
 | 81 | cached_llm | official | Amazon | Software Development Engineer, Humorphic Labs | Austin, Texas, USA | 2026-09-16 | 3to7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10547103/software-development-engineer-humorphic-labs) |
-| 84 | cached_llm | official | Walmart Global Tech | (USA) Software Engineer II | (USA) Crossman Respect Building CA SUNNYVALE Home Office | 2026-09-16 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Crossman-Respect-Building-CA-SUNNYVALE-Home-Office/XMLNAME--USA--Software-Engineer-II_R-2561156-1) |
 | 84 | cached_llm | official | Expedia Group | Software Development Engineer II | Washington - Seattle Campus | 2026-09-16 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Software-Development-Engineer-II_R-109774) |
 | 84 | cached_llm | official | Uber | Software Engineer II - Backend Engineer | San Francisco, CA, United States | 2026-09-18 | 3to7d | high | swe | Uber | unreviewed | official_canonical | [open](https://jobs.uber.com/en/jobs/302455) |
 | 84 | cached_llm | official | Reddit | Software Engineer, Ingestion Platform | Remote - United States | 2026-09-18 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://job-boards.greenhouse.io/reddit/jobs/8214910) |
@@ -66,7 +68,6 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 82 | cached_llm | official | Uber | Software Engineer II - Web Engineer | San Francisco, CA, United States | 2026-09-16 | 3to7d | high | swe | Uber | unreviewed | official_canonical | [open](https://jobs.uber.com/en/jobs/302452) |
 | 91 | cached_llm | official | OpenAI | Software Engineer, Applied Emerging Talent (2027) | San Francisco; San Francisco, California, United States; Remote, United States | 2026-09-14 | gt7d | high | swe | OpenAI | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/openai/55150071-fce8-48f5-aea4-14ed78b83511) |
 | 88 | cached_llm | official | Travelers | Software Engineer I- Enterprise AI Products | CT - Hartford; MN - St. Paul | 2026-09-14 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Software-Engineer-I--Enterprise-AI-Products_R-52171-1) |
-| 84 | cached_llm | official | Amazon | Software Engineer I, Memberships | San Francisco, California, USA | 2026-08-26 | gt7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10515912/software-engineer-i-memberships) |
 | 76 | cached_llm | official | DoorDash | Software Engineer I, Entry-Level (Graduation Date: Fall 2026-Summer 20 | Los Angeles, CA; New York, NY; San Francisco, CA; Sunnyvale, CA; Seattle, WA; Los Angeles, CA; New York; San Francisco; Seattle, WA; Sunnyvale, CA | 2026-09-04 | gt7d | high | swe | DoorDash | unreviewed | official_canonical | [open](https://job-boards.greenhouse.io/doordashusa/jobs/8163709) |
 | 76 | cached_llm | official | Amazon | Data Engineer I, Business Data Technologies | Seattle, Washington, USA | 2026-09-14 | gt7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10539106/data-engineer-i-business-data-technologies) |
 | 76 | cached_llm | official | Amazon | Data Engineer I, Business Data Technologies | Seattle, Washington, USA | 2026-09-14 | gt7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10539104/data-engineer-i-business-data-technologies) |
