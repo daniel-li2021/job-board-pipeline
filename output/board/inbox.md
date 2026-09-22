@@ -1,9 +1,9 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-09-22 11:06 PDT
-- Snapshot (UTC): 2026-09-22T18:06:00.013998+00:00
+- Updated (PT): 2026-09-22 12:21 PDT
+- Snapshot (UTC): 2026-09-22T19:21:57.579288+00:00
 - Jobs: 276 (Tier A/B only)
-- Last 24 hours: 268
+- Last 24 hours: 267
 - Last 3 days: 276
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
@@ -46,7 +46,6 @@ The 7-day dump is `latest.md`.
 | A | 88 | linkedin | TikTok USDS Joint Venture | Software Engineer Graduate (Search) - 2027 Start | San Jose, CA | 2026-09-22 | newly_discovered | TikTok | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/software-engineer-graduate-search-2027-start-at-tiktok-usds-joint-venture-4449548361) |
 | A | 88 | linkedin | TikTok USDS Joint Venture | Machine Learning Engineer Graduate (E-Commerce) - 2027 Start | San Jose, CA | 2026-09-22 | newly_discovered | TikTok | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-graduate-e-commerce-2027-start-at-tiktok-usds-joint-venture-4449531961) |
 | A | 88 | linkedin | TikTok USDS Joint Venture | Machine Learning Engineer Graduate (Risk & Integrity) - 2027 Start | San Jose, CA | 2026-09-22 | newly_discovered | TikTok | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-graduate-risk-integrity-2027-start-at-tiktok-usds-joint-venture-4451643781) |
-| A | 88 | linkedin | Adyen | Software Engineer I (Front End) - Lifecycle Experience | Chicago, IL | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-i-front-end-lifecycle-experience-at-adyen-4468772768) |
 | A | 88 | linkedin | Whatnot | Software Engineer, 2027 New Grad | San Francisco, CA | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-2027-new-grad-at-whatnot-4460087902) |
 | A | 88 | linkedin | Whatnot | Software Engineer, 2027 New Grad | Los Angeles, CA | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-2027-new-grad-at-whatnot-4460099703) |
 | A | 88 | linkedin | Authentic | New Grad Software Engineer | New York, NY | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/new-grad-software-engineer-at-authentic-4470483355) |
@@ -72,6 +71,7 @@ The 7-day dump is `latest.md`.
 | A | 88 | linkedin | Honeywell Technologies | Software Engineer I | Duluth, GA | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-i-at-honeywell-technologies-4470486465) |
 | A | 88 | linkedin | Boeing | Associate Software Engineer | Omaha, NE | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-software-engineer-at-boeing-4439682345) |
 | B | 82 | greenhouse | Dropbox | Data Engineer | Remote - US: Select locations | 2026-09-22 | 3to24h | - | unreviewed | official_identity_unmatched | [open](https://jobs.dropbox.com/listing/8211529?gh_jid=8211529) |
+| B | 75 | indeed | Capital One | Full Stack Engineer 4 | McLean, VA, US | 2026-09-21 | 1to3d | Capital One | unreviewed | official_identity_unmatched | [open](https://www.capitalonecareers.com/job/-/-/1732/100959416032) |
 | B | 75 | indeed | Capital One | Full-stack Engineer 4 | McLean, Virginia, United States; Richmond, Virginia, United States; New York, New York, United States; Plano, Texas, United States; Chicago, Illinois, United States | 2026-09-21 | 1to3d | Capital One | unreviewed | official_identity_unmatched | [open](https://www.capitalonecareers.com/job/-/-/1732/100950228464) |
 | B | 93 | indeed | Lean Techniques | Software Engineer Intern - Hybrid | Johnston, IA, US | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=058b552a275496dc) |
 | B | 93 | linkedin | Revature | Entry Level Software Developer | Denver, CO | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/entry-level-software-developer-at-revature-4468783984) |
@@ -132,6 +132,7 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed | The Fresh Market | Software Engineer I | Greensboro, NC, US | 2026-09-21 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=91cbf9edc7817327) |
 | B | 82 | indeed | Vitol | GenAI Engineer | Houston, TX, US | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=8f6ef27fa4b5027b) |
 | B | 79 | indeed | Barrett Petfood | IT Business Systems Engineer | Little Falls, MN, US | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=0ed0d5b4290e123f) |
+| B | 75 | linkedin | Acumatica | Full Stack Software Developer | Westerville, OH | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-developer-at-acumatica-4470476028) |
 | B | 75 | indeed | COGNITIVE MEDIA | Full-Stack Developer — AI Applications & Integrations (onsite beverly  | Beverly Hills, CA, US | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=83a9b78b83b2f13c) |
 | B | 75 | linkedin | Google | Software Engineer, Site Reliability Engineering | New York, NY | 2026-09-22 | newly_discovered | Google | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/software-engineer-site-reliability-engineering-at-google-4460060165) |
 | B | 75 | linkedin | Google | Software Engineer, Site Reliability Engineering | Sunnyvale, CA | 2026-09-22 | newly_discovered | Google | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/software-engineer-site-reliability-engineering-at-google-4460063051) |
@@ -168,7 +169,6 @@ The 7-day dump is `latest.md`.
 | B | 75 | linkedin | State Farm | Software Engineer | Tempe, AZ | 2026-09-21 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-state-farm-4469954437) |
 | B | 75 | linkedin | ENFOS | Software Engineer (Full Stack) | Durham, NC | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-enfos-4469028175) |
 | B | 79 | linkedin | BankUnited | Cloud Infrastructure Engineer I | Miami Lakes, FL | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/cloud-infrastructure-engineer-i-at-bankunited-4449810855) |
-| B | 75 | linkedin | Acumatica | Full Stack Software Developer | Westerville, OH | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-developer-at-acumatica-4470476028) |
 | B | 75 | linkedin | Airtable | Software Engineer, Infrastructure (4-8 YOE) | San Francisco Bay Area | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-infrastructure-4-8-yoe-at-airtable-4424658385) |
 | B | 75 | linkedin | Anori | Full Stack Engineer - ML | San Mateo, CA | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-ml-at-anori-4470242170) |
 | B | 75 | linkedin | Ark FinTech.AI | Infrastructure Engineer | Palo Alto, CA | 2026-09-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/infrastructure-engineer-at-ark-fintech-ai-4460258076) |
