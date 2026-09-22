@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-22T21:03:00.781401+00:00",
+  "generated_at": "2026-09-22T23:34:40.736539+00:00",
   "collector": {
     "commit": "065f68a7d574bc878c7fe9fe482fb192f8addbc3",
     "dirty": false
@@ -8,21 +8,21 @@
   "sources": {
     "linkedin": {
       "required": true,
-      "healthy": true,
-      "status": "ok",
-      "reason": "",
+      "healthy": false,
+      "status": "partial",
+      "reason": "search page budget exhausted",
       "last_attempt_at": "2026-09-22T21:01:45.439166+00:00",
-      "last_success_at": "2026-09-22T21:01:45.439166+00:00",
-      "last_partial_at": "2026-09-22T15:01:42.444111+00:00",
-      "partial_collected_count": 408,
-      "partial_fresh_kept": 405,
-      "partial_carried_count": 1801,
+      "last_success_at": "2026-09-22T18:01:45.946101+00:00",
+      "last_partial_at": "2026-09-22T21:01:45.439166+00:00",
+      "partial_collected_count": 88,
+      "partial_fresh_kept": 88,
+      "partial_carried_count": 820,
       "last_attempt_collector": {
         "commit": "065f68a7d574bc878c7fe9fe482fb192f8addbc3",
         "dirty": false
       },
       "last_success_collector": {
-        "commit": "065f68a7d574bc878c7fe9fe482fb192f8addbc3",
+        "commit": "c58de49c3fefeb784e0f0e462dab98924bca30b6",
         "dirty": false
       },
       "last_attempt_source_provenance": {
@@ -32,7 +32,7 @@
         "implementation": "sources.linkedin_local"
       },
       "last_attempt_count": 88,
-      "consecutive_failures": 0,
+      "consecutive_failures": 1,
       "query_stats": [
         {
           "query": "software engineer",
@@ -301,7 +301,7 @@
         "cooldown_active": false,
         "probe": false
       },
-      "last_good_count": 88,
+      "last_good_count": 908,
       "detail_last_attempt_at": "2026-09-22T21:01:45.439166+00:00",
       "detail_429_streak": 0,
       "detail_cooldown_until": "",
@@ -321,7 +321,8 @@
         "requests": 12,
         "responses": 12,
         "pages_fetched": 12,
-        "rate_limited": false
+        "rate_limited": false,
+        "budget_exhausted": true
       },
       "search_last_attempt_at": "2026-09-22T21:01:45.439166+00:00",
       "search_query_cursor": 1,
