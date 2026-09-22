@@ -20,7 +20,7 @@ from __future__ import annotations
 
 import time
 from datetime import datetime, timedelta, timezone
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 
 import requests
@@ -44,6 +44,7 @@ REQUEST_TIMEOUT = 25
 POLITE_SLEEP_SECONDS = 1.2
 DETAIL_CACHE_DAYS = 14
 DETAIL_SLEEP_SECONDS = 0.4
+DETAIL_RETRY_HOURS = 24
 
 
 def _make_session() -> requests.Session:
@@ -153,12 +154,12 @@ def _parse_detail(html: str) -> Dict[str, str]:
     }
 
 
-def _scrapling_fetch_html(url: str) -> Optional[str]:
-    """Fetch one blocked guest detail page; None means Scrapling is unavailable."""
+def _scrapling_fetch_html(url: str) -> tuple[str, int | None, str]:
+    """Return body, status, and error; a missing status means no request occurred."""
     try:
         from scrapling.fetchers import Fetcher
     except ImportError:
-        return None
+        return "", None, "Scrapling is not installed"
     try:
         response = Fetcher.get(
             url,
@@ -168,11 +169,13 @@ def _scrapling_fetch_html(url: str) -> Optional[str]:
             timeout=REQUEST_TIMEOUT,
         )
     except Exception:  # noqa: BLE001 - optional fallback must not fail collection
-        return ""
-    if int(getattr(response, "status", 0) or 0) != 200:
-        return ""
+        return "", 0, "scrapling_fetch_failed"
+    status = int(getattr(response, "status", 0) or 0)
+    if status != 200:
+        return "", status, f"scrapling_http_{status}"
     body = getattr(response, "body", b"")
-    return body.decode("utf-8", errors="replace") if isinstance(body, bytes) else str(body or "")
+    html = body.decode("utf-8", errors="replace") if isinstance(body, bytes) else str(body or "")
+    return html, status, ""
 
 
 def _fresh_cached_detail(previous: Dict[str, Any], row: Dict[str, Any], now: datetime) -> bool:
@@ -197,6 +200,7 @@ def enrich_details(
     previous_jobs: List[Dict[str, Any]] | None = None,
     session: requests.Session | None = None,
     allow_requests: bool = True,
+    request_limit: int | None = None,
 ) -> Dict[str, Any]:
     """Hydrate every unresolved LinkedIn row with the logged-out full JD.
 
@@ -204,9 +208,9 @@ def enrich_details(
     unchanged. A detail-endpoint block stops only enrichment; it does not
     invalidate already-collected search cards.
 
-    ``allow_requests=False`` serves a rate-limited run: cached details only,
-    with no further LinkedIn request from either the guest endpoint or the
-    Scrapling fallback.
+    ``allow_requests=False`` serves a rate-limited run: cached details only.
+    Each eligible job gets one transport attempt; a later retry may use
+    Scrapling after an ordinary non-429 HTTP failure.
     """
     session = session or _make_session()
     now = datetime.now(timezone.utc)
@@ -219,6 +223,15 @@ def enrich_details(
         "eligible": len(rows),
         "cache_reused": 0,
         "requests": 0,
+        "responses": 0,
+        "request_limit": request_limit,
+        "budget_deferred": 0,
+        "budget_exhausted": False,
+        "retry_deferred": 0,
+        "retry_attempts": 0,
+        "exact_official": 0,
+        "official_deferred": 0,
+        "rate_limited": False,
         "jds_resolved": 0,
         "external_apply_urls": 0,
         "failed": 0,
@@ -251,8 +264,33 @@ def enrich_details(
             if row.get("application_url"):
                 stats["external_apply_urls"] += 1
             continue
+        if row.pop("_linkedin_official_defer", False):
+            stats["exact_official"] += 1
+            stats["official_deferred"] += 1
+            row.pop("_linkedin_official_url", None)
+            row["enrichment_status"] = "unresolved"
+            row["enrichment_failure_reason"] = "official_detail_deferred"
+            continue
+        if row.pop("_linkedin_official_url", None):
+            stats["exact_official"] += 1
         if row.get("job_id"):
-            pending.append(row)
+            attempted_at = str((prior or {}).get("linkedin_detail_attempted_at") or "")
+            try:
+                attempted = datetime.fromisoformat(attempted_at.replace("Z", "+00:00"))
+                if attempted.tzinfo is None:
+                    attempted = attempted.replace(tzinfo=timezone.utc)
+                deferred = now - attempted.astimezone(timezone.utc) < timedelta(hours=DETAIL_RETRY_HOURS)
+            except (TypeError, ValueError):
+                deferred = False
+            if deferred:
+                row["linkedin_detail_attempted_at"] = attempted_at
+                row["enrichment_status"] = "unresolved"
+                row["enrichment_failure_reason"] = str(
+                    (prior or {}).get("enrichment_failure_reason") or "linkedin_detail_deferred"
+                )
+                stats["retry_deferred"] += 1
+            else:
+                pending.append(row)
         else:
             row["enrichment_status"] = "unresolved"
             row["enrichment_failure_reason"] = "missing_job_id"
@@ -264,83 +302,93 @@ def enrich_details(
             row["enrichment_failure_reason"] = "linkedin_rate_limited"
         pending = []
 
-    for row in pending:
-        stats["requests"] += 1
-        try:
-            response = session.get(
-                GUEST_DETAIL_URL.format(job_id=row["job_id"]),
-                timeout=REQUEST_TIMEOUT,
-            )
-        except requests.RequestException:
-            stats["failed"] += 1
-            row["enrichment_status"] = "unresolved"
-            row["enrichment_failure_reason"] = "linkedin_http_network_error"
-            continue
-        try:
-            _check_blocked(response)
-        except SourceUnavailable as exc:
-            if response.status_code in (401, 403, 429, 999) or response.status_code < 400:
-                stats["blocked"] = str(exc)
+    for index, row in enumerate(pending):
+        if request_limit is not None and stats["requests"] >= request_limit:
+            stats["budget_exhausted"] = True
+            stats["budget_deferred"] = len(pending) - index
+            break
+        prior = previous_by_id.get(str(row.get("job_id") or "")) or {}
+        prior_reason = str(prior.get("enrichment_failure_reason") or "")
+        use_scrapling = prior_reason.startswith("linkedin_http_") and prior_reason not in {
+            "linkedin_http_429", "linkedin_http_network_error",
+        }
+        url = GUEST_DETAIL_URL.format(job_id=row["job_id"])
+        if use_scrapling:
+            html, status, error = _scrapling_fetch_html(url)
+            if status is None:
+                stats["scrapling_error"] = error
+                row["enrichment_status"] = "unresolved"
+                row["enrichment_failure_reason"] = "scrapling_unavailable"
                 break
-            stats["failed"] += 1
-            row["enrichment_status"] = "unresolved"
-            row["enrichment_failure_reason"] = f"linkedin_http_{response.status_code}"
-            continue
+            stats["requests"] += 1
+            stats["scrapling_requests"] += 1
+            stats["retry_attempts"] += 1
+            row["linkedin_detail_attempted_at"] = now.isoformat()
+            if status:
+                stats["responses"] += 1
+            if status == 429:
+                stats["blocked"] = "blocked with HTTP 429"
+                stats["rate_limited"] = True
+                row["enrichment_status"] = "unresolved"
+                row["enrichment_failure_reason"] = "scrapling_http_429"
+                break
+            if not html:
+                stats["failed"] += 1
+                row["enrichment_status"] = "unresolved"
+                row["enrichment_failure_reason"] = error or "scrapling_fetch_failed"
+                time.sleep(DETAIL_SLEEP_SECONDS)
+                continue
+            detail = _parse_detail(html)
+            method = "scrapling_fetcher"
+        else:
+            stats["requests"] += 1
+            row["linkedin_detail_attempted_at"] = now.isoformat()
+            try:
+                response = session.get(url, timeout=REQUEST_TIMEOUT)
+            except requests.RequestException:
+                stats["failed"] += 1
+                row["enrichment_status"] = "unresolved"
+                row["enrichment_failure_reason"] = "linkedin_http_network_error"
+                time.sleep(DETAIL_SLEEP_SECONDS)
+                continue
+            stats["responses"] += 1
+            try:
+                _check_blocked(response)
+            except SourceUnavailable as exc:
+                row["enrichment_status"] = "unresolved"
+                row["enrichment_failure_reason"] = f"linkedin_http_{response.status_code}"
+                if response.status_code == 429:
+                    stats["rate_limited"] = True
+                if response.status_code in (401, 403, 429, 999) or response.status_code < 400:
+                    stats["blocked"] = str(exc)
+                    break
+                stats["failed"] += 1
+                time.sleep(DETAIL_SLEEP_SECONDS)
+                continue
+            detail = _parse_detail(response.text)
+            method = "linkedin_http"
 
-        detail = _parse_detail(response.text)
         row["linkedin_detail_fetched_at"] = now.isoformat()
         if detail["description"]:
             row["description"] = detail["description"]
             row["linkedin_detail_resolved"] = True
-            row["enrichment_method"] = "linkedin_http"
+            row["enrichment_method"] = method
             row["enrichment_status"] = "resolved"
             row.pop("enrichment_failure_reason", None)
             stats["jds_resolved"] += 1
+            if use_scrapling:
+                stats["scrapling_jds_resolved"] += 1
         else:
             row["enrichment_status"] = "unresolved"
-            row["enrichment_failure_reason"] = "linkedin_http_no_jd"
+            row["enrichment_failure_reason"] = f"{method}_no_jd"
         if detail["application_url"]:
             row["application_url"] = detail["application_url"]
             stats["external_apply_urls"] += 1
         time.sleep(DETAIL_SLEEP_SECONDS)
 
-    # A LinkedIn block disables the ordinary path for the rest of this run.
-    # Scrapling attempts every still-unresolved row, including ordinary network
-    # failures and detail pages that returned no JD.
-    fallback_rows = [row for row in pending if not row.get("description")]
-    if fallback_rows:
-        for index, row in enumerate(fallback_rows):
-            html = _scrapling_fetch_html(GUEST_DETAIL_URL.format(job_id=row["job_id"]))
-            if html is None:
-                stats["scrapling_error"] = "Scrapling is not installed"
-                for remaining in fallback_rows[index:]:
-                    remaining["enrichment_status"] = "unresolved"
-                    remaining["enrichment_failure_reason"] = "scrapling_unavailable"
-                break
-            stats["requests"] += 1
-            stats["scrapling_requests"] += 1
-            if not html:
-                stats["failed"] += 1
-                row["enrichment_status"] = "unresolved"
-                row["enrichment_failure_reason"] = "scrapling_fetch_failed"
-                continue
-            detail = _parse_detail(html)
-            row["linkedin_detail_fetched_at"] = now.isoformat()
-            if detail["description"]:
-                row["description"] = detail["description"]
-                row["linkedin_detail_resolved"] = True
-                row["enrichment_method"] = "scrapling_fetcher"
-                row["enrichment_status"] = "resolved"
-                row.pop("enrichment_failure_reason", None)
-                stats["jds_resolved"] += 1
-                stats["scrapling_jds_resolved"] += 1
-            else:
-                row["enrichment_status"] = "unresolved"
-                row["enrichment_failure_reason"] = "scrapling_no_jd"
-            if detail["application_url"]:
-                row["application_url"] = detail["application_url"]
-                stats["external_apply_urls"] += 1
-            time.sleep(DETAIL_SLEEP_SECONDS)
+    for row in rows:
+        row.pop("_linkedin_official_defer", None)
+        row.pop("_linkedin_official_url", None)
 
     unresolved = [row for row in rows if not row.get("description")]
     reasons: Dict[str, int] = {}

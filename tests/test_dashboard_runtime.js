@@ -6,7 +6,8 @@ const {execFileSync} = require('node:child_process');
 const html = execFileSync('python3', ['-c', 'import dashboard; print(dashboard.HTML_TEMPLATE)'], {encoding:'utf8'});
 const payload = {snapshots:{}, fresh_24h:[], rolling_3d:[], referrals:[], workflow_rows:[], history_details:{}, supabase:{}};
 const cache = {};
-const context = vm.createContext({console, setTimeout, Date, localStorage:{getItem:k=>cache[k],setItem:(k,v)=>cache[k]=v}, document:{getElementById:()=>({textContent:JSON.stringify(payload),classList:{add(){}},href:''})}});
+let replacedUrl='';
+const context = vm.createContext({console, setTimeout, Date, URL, location:{href:'https://example.com/job-board/',replace:url=>{replacedUrl=url}}, window:{addEventListener(){}}, localStorage:{getItem:k=>cache[k],setItem:(k,v)=>cache[k]=v}, document:{lastModified:'Mon, 21 Sep 2026 10:00:00 GMT',visibilityState:'visible',addEventListener(){},getElementById:()=>({textContent:JSON.stringify(payload),classList:{add(){}},href:''})}});
 let script = html.split('</script><script>')[1].split('</script>')[0];
 script = script.slice(0, script.indexOf("window.addEventListener('online'"));
 vm.runInContext(script, context);
@@ -168,6 +169,12 @@ assert.ok(anchors.filter(tag => !/href="#/.test(tag)).every(
   tag => /target="_blank"/.test(tag) && /rel="noopener noreferrer"/.test(tag),
 ));
 (async()=>{
+context.fetch=async()=>({ok:true,headers:{get:()=> 'Mon, 21 Sep 2026 09:00:00 GMT'}});
+await vm.runInContext('checkForDashboardUpdate()',context);
+assert.equal(replacedUrl,'');
+context.fetch=async()=>({ok:true,headers:{get:()=> 'Mon, 21 Sep 2026 11:00:00 GMT'}});
+await vm.runInContext('checkForDashboardUpdate()',context);
+assert.match(replacedUrl,/\?v=\d+$/);
 vm.runInContext("supabase={from(){throw new Error('offline')}}",context);
 await vm.runInContext('pushState(reviewStates.one)',context);
 assert.equal(vm.runInContext("pendingKeys.size",context),0);

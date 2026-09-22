@@ -31,10 +31,11 @@ from state_io import atomic_write
 import os
 import subprocess
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Callable, Dict
 
 import board_pipeline as board
+import coverage_reconcile
 from sources import jobspy_local, linkedin_local
 from sources.schema import (
     OUTPUT_DIR,
@@ -52,6 +53,71 @@ SOURCES: Dict[str, Callable[[], Dict[str, object]]] = {
 OPTIONAL_SOURCES = {"glassdoor"}
 HEALTH_PATH = OUTPUT_DIR / "sources" / "health.json"
 HEALTH_SCHEMA_VERSION = 1
+LINKEDIN_DETAIL_LIMIT = 8
+LINKEDIN_DETAIL_COOLDOWN_HOURS = 24
+
+
+def _health_source(name: str) -> Dict[str, object]:
+    try:
+        payload = json.loads(HEALTH_PATH.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return {}
+    source = payload.get("sources", {}).get(name, {}) if isinstance(payload, dict) else {}
+    return dict(source) if isinstance(source, dict) else {}
+
+
+def _linkedin_detail_control(now: datetime) -> tuple[int, bool, bool]:
+    state = _health_source("linkedin")
+    streak = int(state.get("detail_429_streak", 0) or 0)
+    try:
+        cooldown_until = datetime.fromisoformat(
+            str(state.get("detail_cooldown_until") or "").replace("Z", "+00:00")
+        )
+        if cooldown_until.tzinfo is None:
+            cooldown_until = cooldown_until.replace(tzinfo=timezone.utc)
+    except (TypeError, ValueError):
+        cooldown_until = datetime.min.replace(tzinfo=timezone.utc)
+    if cooldown_until > now:
+        return 0, True, False
+    probe = streak >= 2
+    return (1 if probe else LINKEDIN_DETAIL_LIMIT), False, probe
+
+
+def _mark_linkedin_official_matches(
+    rows: list[dict], previous_jobs: list[dict], context: Dict[str, object], store: Dict[str, dict],
+) -> int:
+    """Mark exact official matches without changing local snapshot identities."""
+    previous_by_id = {str(job.get("job_id") or ""): job for job in previous_jobs if job.get("job_id")}
+    stored_by_id = {
+        (str(entry.get("source") or ""), str(entry.get("job_id") or "")): entry
+        for entry in store.values()
+    }
+    matched = 0
+    for row in rows:
+        company_id = coverage_reconcile.company_id_for(
+            str(row.get("company") or ""), context.get("registry_entries", []),
+        )
+        if not company_id:
+            continue
+        probe = dict(row)
+        prior = previous_by_id.get(str(row.get("job_id") or ""), {})
+        for field in ("official_url", "application_url", "requisition_id", "req_id"):
+            if not probe.get(field) and prior.get(field):
+                probe[field] = prior[field]
+        method, official = coverage_reconcile.exact_match(
+            probe, context.get("by_company", {}).get(company_id, []),
+        )
+        if not method or not official:
+            continue
+        official_url = str(official.get("official_url") or official.get("application_url") or "")
+        if not official_url:
+            continue
+        board_prior = stored_by_id.get((str(row.get("source") or ""), str(row.get("job_id") or "")), {})
+        same_prior_match = coverage_reconcile.normalize_url(str(board_prior.get("official_url") or "")) == coverage_reconcile.normalize_url(official_url)
+        row["_linkedin_official_url"] = official_url
+        row["_linkedin_official_defer"] = not (same_prior_match and not board_prior.get("description_available"))
+        matched += 1
+    return matched
 
 
 def collector_provenance() -> Dict[str, object]:
@@ -120,11 +186,29 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
     if name == "linkedin" and rows:
         detail_candidates = [row for row in rows if not row.get("description")]
         previous = read_source_snapshot_payload(name)
+        try:
+            official_context = coverage_reconcile.load_official_context()
+        except (OSError, ValueError, json.JSONDecodeError):
+            official_context = {}
+        try:
+            board_store = board.load_store()
+        except (OSError, ValueError, json.JSONDecodeError):
+            board_store = {}
+        if official_context:
+            _mark_linkedin_official_matches(
+                detail_candidates, list(previous.get("jobs") or []), official_context, board_store,
+            )
+        detail_limit, cooldown_active, probe = _linkedin_detail_control(
+            datetime.fromisoformat(stamp)
+        )
         detail_enrichment = linkedin_local.enrich_details(
             detail_candidates,
             previous_jobs=list(previous.get("jobs") or []),
-            allow_requests=not partial,
+            allow_requests=not partial and not cooldown_active,
+            request_limit=detail_limit,
         )
+        detail_enrichment["cooldown_active"] = cooldown_active
+        detail_enrichment["probe"] = probe
 
     # Every discovered record reaches enrichment before filtering.
     stage1_survivors = []
@@ -233,7 +317,8 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
         # whole snapshot. A partial run rewrites the snapshot, so its
         # ``scraped_at`` must never be adopted as a full success.
         snapshot_full_success = "" if snapshot_meta.get("partial") else str(snapshot_meta.get("scraped_at", ""))
-        sources[name] = {
+        state = dict(prior)
+        state.update({
             "required": name not in OPTIONAL_SOURCES,
             "healthy": healthy,
             "status": result.get("status", "unknown"),
@@ -259,7 +344,29 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
             "query_stats": list(result.get("query_stats") or []),
             "detail_enrichment": dict(result.get("detail_enrichment") or {}),
             "last_good_count": len(snapshot.get("jobs", [])),
-        }
+        })
+        if name == "linkedin":
+            detail = state["detail_enrichment"]
+            requests_made = int(detail.get("requests", 0) or 0)
+            if requests_made:
+                state["detail_last_attempt_at"] = result.get("attempted_at", "")
+            if requests_made and detail.get("rate_limited"):
+                streak = int(prior.get("detail_429_streak", 0) or 0) + 1
+                state["detail_429_streak"] = streak
+                if streak >= 2:
+                    try:
+                        attempted_at = datetime.fromisoformat(
+                            str(result.get("attempted_at") or "").replace("Z", "+00:00")
+                        )
+                    except ValueError:
+                        attempted_at = datetime.now(timezone.utc)
+                    state["detail_cooldown_until"] = (
+                        attempted_at + timedelta(hours=LINKEDIN_DETAIL_COOLDOWN_HOURS)
+                    ).isoformat()
+            elif requests_made and int(detail.get("responses", 0) or 0):
+                state["detail_429_streak"] = 0
+                state["detail_cooldown_until"] = ""
+        sources[name] = state
     HEALTH_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = {
         "schema_version": HEALTH_SCHEMA_VERSION,

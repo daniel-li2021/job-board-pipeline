@@ -309,6 +309,8 @@ class LocalSourceTests(unittest.TestCase):
     def test_rate_limited_linkedin_merges_partial_rows_over_last_good(self) -> None:
         collector = {"commit": "new", "dirty": False}
         fresh, carried = self._linkedin_card("li-1"), self._linkedin_card("li-2")
+        carried["first_seen"] = "2026-09-10T00:00:00+00:00"
+        carried["last_seen"] = "2026-09-17T15:00:01+00:00"
         with tempfile.TemporaryDirectory() as tmpdir, patch.object(
             schema, "SOURCES_DIR", Path(tmpdir)
         ), patch.dict(
@@ -334,6 +336,8 @@ class LocalSourceTests(unittest.TestCase):
         self.assertTrue(by_id["li-3"]["verified_this_run"])
         self.assertFalse(by_id["li-2"]["verified_this_run"])
         self.assertEqual("2026-09-17T15:00:00+00:00", by_id["li-2"]["source_verified_at"])
+        self.assertEqual("2026-09-10T00:00:00+00:00", by_id["li-2"]["first_seen"])
+        self.assertEqual("2026-09-17T15:00:01+00:00", by_id["li-2"]["last_seen"])
         self.assertTrue(payload["meta"]["partial"])
         self.assertEqual(1, payload["meta"]["carried_count"])
 
@@ -514,6 +518,73 @@ class LocalSourceTests(unittest.TestCase):
         self.assertEqual(verified_at, pruned)
         self.assertEqual("2026-09-10T00:00:00+00:00", fallback)
         self.assertEqual(now_iso, fresh)
+
+    def test_official_matching_reuses_prior_identifier_then_allows_later_fallback(self) -> None:
+        row = self._linkedin_card("li-official")
+        row["description"] = ""
+        prior = dict(row, application_url="https://jobs.example.com/req-42")
+        official_jobs = [
+            dict(company="Example Tech", title="Software Engineer", location="Austin, TX", official_url="https://jobs.example.com/req-41"),
+            dict(company="Example Tech", title="Software Engineer", location="Austin, TX", official_url="https://jobs.example.com/req-42"),
+        ]
+        context = {"registry_entries": [], "by_company": {"example": official_jobs}}
+        with patch.object(local_sources.coverage_reconcile, "company_id_for", return_value="example"):
+            matched = local_sources._mark_linkedin_official_matches([row], [prior], context, {})
+
+        self.assertEqual(1, matched)
+        self.assertEqual("https://jobs.example.com/req-42", row["_linkedin_official_url"])
+        self.assertTrue(row["_linkedin_official_defer"])
+        self.assertEqual("", row["official_url"])
+
+        board_store = {"key": {
+            "source": "linkedin", "job_id": "li-official",
+            "official_url": "https://jobs.example.com/req-42", "description_available": False,
+        }}
+        with patch.object(local_sources.coverage_reconcile, "company_id_for", return_value="example"):
+            local_sources._mark_linkedin_official_matches([row], [prior], context, board_store)
+        self.assertFalse(row["_linkedin_official_defer"])
+
+    def test_detail_429_cooldown_survives_health_writes_and_recovers_with_probe(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            schema, "SOURCES_DIR", Path(tmpdir) / "sources",
+        ), patch.object(local_sources, "HEALTH_PATH", Path(tmpdir) / "health.json"):
+            collector = {"commit": "test", "dirty": False}
+            first = "2026-09-18T00:00:00+00:00"
+            second = "2026-09-18T03:00:00+00:00"
+            rate_limited = {"requests": 1, "responses": 1, "rate_limited": True}
+            local_sources.write_health([{
+                "source": "linkedin", "status": "ok", "count": 1,
+                "attempted_at": first, "detail_enrichment": rate_limited,
+            }], collector)
+            local_sources.write_health([{
+                "source": "linkedin", "status": "partial", "count": 1,
+                "attempted_at": "2026-09-18T01:00:00+00:00", "detail_enrichment": {"requests": 0},
+            }], collector)
+            local_sources.write_health([{
+                "source": "linkedin", "status": "ok", "count": 1,
+                "attempted_at": second, "detail_enrichment": rate_limited,
+            }], collector)
+            before = local_sources._health_source("linkedin")
+            local_sources.write_health([{
+                "source": "indeed", "status": "ok", "count": 1,
+                "attempted_at": second,
+            }], collector)
+            preserved = local_sources._health_source("linkedin")
+            active = local_sources._linkedin_detail_control(datetime(2026, 9, 18, 4, tzinfo=timezone.utc))
+            probe = local_sources._linkedin_detail_control(datetime(2026, 9, 19, 4, tzinfo=timezone.utc))
+            local_sources.write_health([{
+                "source": "linkedin", "status": "ok", "count": 1,
+                "attempted_at": "2026-09-19T04:00:00+00:00",
+                "detail_enrichment": {"requests": 1, "responses": 1, "rate_limited": False},
+            }], collector)
+            recovered = local_sources._health_source("linkedin")
+
+        self.assertEqual(2, before["detail_429_streak"])
+        self.assertEqual(before["detail_cooldown_until"], preserved["detail_cooldown_until"])
+        self.assertEqual((0, True, False), active)
+        self.assertEqual((1, False, True), probe)
+        self.assertEqual(0, recovered["detail_429_streak"])
+        self.assertEqual("", recovered["detail_cooldown_until"])
 
     def test_runner_executes_collector_from_fetched_origin_main(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

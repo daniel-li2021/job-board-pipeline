@@ -374,6 +374,15 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                     f"LinkedIn (local/general): recovered detail limitation; Scrapling resolved "
                     f"{scrapling_resolved}/{scrapling_requests}, {remaining} JD(s) remain"
                 )
+            cooldown_until = str(state.get("detail_cooldown_until") or "")
+            if cooldown_until:
+                degradation_kinds.append("detail_enrichment_cooldown")
+                details.append(
+                    f"LinkedIn detail cooldown after {int(state.get('detail_429_streak', 0) or 0)} "
+                    f"consecutive 429 runs; next probe after {cooldown_until}"
+                )
+                if status == "Healthy":
+                    status = "Warning"
         query_stats = list(state.get("query_stats") or [])
         static_fallbacks = sum(str(item.get("stop_reason") or "") == "static_html_fallback" for item in query_stats)
         if static_fallbacks:
