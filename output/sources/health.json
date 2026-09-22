@@ -274,35 +274,35 @@
         }
       ],
       "detail_enrichment": {
-        "eligible": 904,
-        "cache_reused": 4,
+        "eligible": 881,
+        "cache_reused": 0,
         "requests": 8,
         "responses": 8,
         "request_limit": 8,
-        "budget_deferred": 809,
+        "budget_deferred": 792,
         "budget_exhausted": true,
         "retry_deferred": 0,
         "retry_attempts": 0,
         "exact_official": 87,
-        "official_deferred": 83,
+        "official_deferred": 81,
         "rate_limited": false,
-        "jds_resolved": 12,
+        "jds_resolved": 8,
         "external_apply_urls": 0,
         "failed": 0,
         "blocked": "",
         "scrapling_requests": 0,
         "scrapling_jds_resolved": 0,
         "scrapling_error": "",
-        "remaining_no_jd": 892,
+        "remaining_no_jd": 873,
         "failure_reasons": {
           "official_detail_deferred": 83,
-          "no_description": 809
+          "no_description": 790
         },
         "cooldown_active": false,
         "probe": false
       },
       "last_good_count": 893,
-      "detail_last_attempt_at": "2026-09-22T18:01:45.946101+00:00",
+      "detail_last_attempt_at": "2026-09-22T19:12:37.381219+00:00",
       "detail_429_streak": 0,
       "detail_cooldown_until": ""
     },

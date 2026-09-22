@@ -280,7 +280,8 @@
       },
       "cooldown_active": false,
       "probe": false
-    }
+    },
+    "jd_recovery_at": "2026-09-22T19:12:37.381219+00:00"
   },
   "jobs": [
     {
@@ -295,7 +296,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-devops-engineer-at-1x-4468531880",
       "official_url": "",
-      "description": "",
+      "description": "About 1X We're building humanoid robots that work in home - doing the chores, handling the tasks, and giving people their time back. Simple, but it's not. To do this right, we have to solve robotics, AI, manufacturing - at the same time, at scale, in a form factor that has to be safe enough to live with your family. If you're inspired by this, you'll thrive here. We've been at this since 2014 and we're at the point where the hard problems are behind us and the hard work is in front of us. NEO is our flagship - a home robot designed to move, learn, and operate in the real world alongside real people. We're not demoing it - we're shipping it. We're excited to meet you, if this excites you. If you've spent your career working on problems that matter and want to see them actually reach the world - this is that moment. We're scaling, we're hiring with intention, and we need people who want to build something that will genuinely change how humans spend their time - safely creating abundance for all. About The Team The Cloud Infrastructure team owns the platform every other team at 1X builds on: our Kubernetes clusters, AWS accounts, CI systems, identity and access layer, and the GPU compute our AI, robotics, and fleet teams depend on every day. We're a small team with an outsized blast radius - there's no SRE org or ticket queue between us and the engineers we serve, so when a training run needs a thousand GPUs by Monday, a cluster goes down at 2am, or a robot in someone's home needs a secure path back to our cloud, it lands with us. Your Charter The mission of this role is to make 1X's cloud infrastructure reliable, secure, and self-service enough that every team building NEO can move as fast as the hardware allows. You'll own the reliability and scalability of our cloud infrastructure end-to-end, from architecture decisions through incident response, and build the automation and self-service tooling that lets the broader engineering team handle common requests safely on their own, without piling up technical debt. You'll also be a steady hand for day-to-day urgent requests and team support when the platform needs it most. Key Outcomes Design and maintain infrastructure-as-code systems that make provisioning and scaling reliable and easy. Build self-service tooling that lets engineers safely handle common cloud requests without creating technical debt. Drive incident response with clear communication and urgency, and lead post-incident remediations so we systematically improve. Partner with the security team to strengthen cloud infrastructure security and reliability. Key Competencies Deep understanding of distributed systems, networking, and cloud architecture trade-offs. Strong infrastructure-as-code mindset. Pragmatic about balancing speed against long-term architecture. Calm, clear communicator who brings urgency to incident response. Bias toward automation and self-service tooling over manual toil. Customer-focused attitude that shows up in how you support urgent requests from the team. Minimum Requirements Proven track record of 5+ years in a DevOps, SRE, or infrastructure engineering role. Experience with hands-on production operation of a major cloud provider or large-scale on-prem infrastructure using modern tooling. Experience with service-to-service communication, specifically identity and auth. Demonstrated ability to write production code in Python and/or Go. Experience with Terraform. Preferred Skills Experience in improving incident response processes. Experience with AWS, Cloudflare, and/or GPU cloud providers. Experience in infrastructure security. Experience with chaos engineering and improving cloud reliability under adverse conditions. Experience in improving CI as a platform. What does a successful 1X Team Member look like Team members at 1X who thrive here are builders. They move fast, own their work completely, and treat time like it's the one thing you can't get back - because it is. They say what they mean, finish what they start, and hold themselves to a standard before anyone has to ask. We push each other to be better, and we do it with honesty and respect. Compensation Range $190,000 - $230,000 + Equity Benefits Comprehensive medical, dental, and vision coverage Generous paid time off, company holidays, and parental leave 401(k) plan with company match (100% on the first 3% of contributions, 50% on the next 2%) Flexible Spending Accounts (FSA) and Health Savings Accounts (HSA) options Commuter benefits (transit and parking) Short-term and long-term disability, and life insurance Employee Assistance Program (EAP) for mental health, financial, and personal support Onsite snacks and catered lunches Equal Opportunity Employer 1X is an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, gender, gender identity or expression, sexual orientation, national origin, ancestry, citizenship, age, marital status, medical condition, genetic information, disability, military or veteran status, justice system impact, or any other characteristic protected under applicable federal, state, or local law. Compensation Range: $190K - $230K",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -303,7 +304,12 @@
         "linkedin": [
           "site reliability engineer"
         ]
-      }
+      },
+      "linkedin_detail_attempted_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_fetched_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4459239985",
@@ -317,7 +323,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-platform-engineer-product-facing-systems-remote-at-abercrombie-fitch-co-4459239985",
       "official_url": "",
-      "description": "",
+      "description": "We are looking for a Senior Engineer to contribute to the design, development, and maintenance of our platform that supports enterprise system applications, integrations, and services. You’ll help with the entire lifecycle right from concept stage until delivery and post-launch support. The candidate will be heavily involved in driving the technology strategy, best practices, and roadmap at Abercrombie & Fitch. In this role, you’ll work cross-functionally to execute and deliver associate experiences on our Product Facing Systems. Responsibilities include operating, maintaining, and optimizing applications running on Azure Kubernetes Service (AKS) and Oracle Kubernetes Engine (OKE) across multiple environments. Candidates are expected to proactively research new trends and capabilities applicable to our platform solutions, maintaining, upgrading and developing solutions to enhance our platforms and collaborating with third-party software vendors, etc. What Will You Be Doing? Design, build, and maintain CI/CD pipelines using Azure DevOps, GitLab, and related tools. Proactive monitoring for updates & research to stay current on emerging technologies, cloud capabilities, Kubernetes advancements, and industry best practices. Design and implement Azure platform architecture, including landing zones, management groups, subscriptions, networking, and governance. Manage, maintain, and optimize Azure Kubernetes Service (AKS) and Oracle Kubernetes Engine (OKE) environments across production and non-production landscapes, including: Kubernetes resource management and application onboarding Cluster lifecycle management, upgrades, and patching SSL certificate and secret lifecycle management Service principal credential renewal and access management Build, maintain, and deploy infrastructure as code using Terraform, ensuring platforms leverage current standards and reusable modules. Automate infrastructure provisioning, application deployments, certificate renewals, and operational workflows. Support application teams with Kubernetes deployments, troubleshooting, release management, and environment promotion strategies. Manage platform security and access controls, including RBAC, SAS tokens, Key Vault integration, and security best practices. Ensure observability, monitoring, and platform health through tools such as Splunk and Dynatrace. Participate in architecture reviews and technical design discussions to deliver scalable, secure, and maintainable solutions. Drive standardization across environments, including networking, security, monitoring, deployment, and operational practices. Troubleshoot and resolve infrastructure, deployment, and production issues across all environments. Establish and enforce engineering, deployment, and operational best practices. Create and maintain technical documentation, SOPs, architecture diagrams, infrastructure patterns, and deployment templates. Collaborate with developers, product owners, architects, business partners, and cross-functional teams to deliver reliable solutions and a high level of customer service. Participate in Agile ceremonies, feature planning, dependency management, and project delivery activities. Mentor and assist with onboarding team members while contributing to continuous improvement of engineering practices. Identify risks early, develop mitigation plans, and contribute to application and platform roadmaps. What Do You Need To Bring? 5+ years of experience in a fast-paced environment maintaining cloud-based technology Proven experience designing, implementing, and supporting cloud infrastructure and platform services in Azure, including cloud migrations, governance, networking, and security. Proven track record of improving system reliability and scalability Hands-on experience with Kubernetes platforms, CI/CD pipelines, infrastructure as code (Terraform/Bicep), and application deployment automation. Strong understanding of platform reliability, scalability, observability, and performance optimization, including monitoring tools such as Splunk, Dynatrace, or similar solutions. Experience defining and enforcing security standards, access controls, networking patterns, and operational best practices across enterprise environments. Familiarity with Java APIs (Spring Boot, Kafka) and React based UIs and troubleshooting techniques, including profiling and root cause analysis. Working knowledge of source control and development tools, including GitLab, Azure DevOps (ADO), Jira, and Agile delivery methodologies. Proven ability to continuously improve deployment pipelines, platform capabilities, and engineering practices through automation, AI, and modern DevOps approaches. Strong understanding of the full software development lifecycle, from solution design, development, testing, deployment and production support. Strong organizational, time management skills & work ethic - ability to drive to an outcome individually as well as in a team environment. Excellent communication, facilitation, and collaboration skills, with the ability to build relationships, influence decisions, build consensus, and work effectively across teams. Strong analytical, organizational, and problem-solving skills, with the ability to identify, elevate, and mitigate technical risks. Self-starter who enjoys understanding architectural decisions, solving complex problems, and continuously learning new technologies. Demonstrated ability to thrive in a fast-paced, evolving environment while balancing competing priorities and delivering high-quality outcomes. Experience or excitement to leverage AI & automation tools within day-to-day practices Excitement to support onboarding and mentoring teammates to contribute to the success of the broader engineering organization. Retail and/or e-commerce experience preferred. Benefits & Perks As an Abercrombie & Fitch Co. (A&F Co.) associate, you’ll be eligible to participate in a variety of benefit programs designed to fit you and your lifestyle. A&F Co. is committed to providing competitive and comprehensive benefits that align with our company’s culture and values, but most importantly – with you! We also provide competitive incentives to reward the commitment our associates have for moving our global business forward: Incentive bonus program 401(K) savings plan with company match Annual companywide review process Flexible spending accounts Medical, dental and vision insurance Life and disability insurance Associate assistance program Paid parental and adoption leave Access to fertility and adoption benefits through Carrot Access to mental health and wellness app, Headspace Paid Caregiver Leave Mobile Stipend Paid time off and one paid volunteer day per year, allowing you to give back to your community Work from anywhere (Mondays and Fridays are “work from anywhere” days for most roles and six work from anywhere weeks per year) Seven associate wellness half days per year Merchandise discount on all of our brands Opportunities for career advancement, we believe in promoting from within Access to multiple Associate Resource Groups Global team of people who will celebrate you for being YOU! This role allows for remote work across the U.S.. Therefore, in states and cities that require the hourly or salary compensation or pay range to be included in a job posting, the recruiting pay range for this position is $121,000 - $144,000. Factors that may be used to determine your actual salary may include your specific skills, your years of experience, your work location, comparison to other employees in similar or related roles, or market demands. The range may be modified in the future.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -325,7 +331,12 @@
         "linkedin": [
           "platform engineer"
         ]
-      }
+      },
+      "linkedin_detail_attempted_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_fetched_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4394960346",
@@ -339,7 +350,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/generative-ai-applications-engineer-agents-rag-at-accenture-federal-services-4394960346",
       "official_url": "",
-      "description": "",
+      "description": "At Accenture Federal Services, nothing matters more than helping the US federal government make the nation stronger and safer and life better for people. Our 13,000+ people are united in a shared purpose to pursue the limitless potential of technology and ingenuity for clients across defense, national security, public safety, civilian, and military health organizations. Join Accenture Federal Services, a technology company within global Accenture. Recognized as a Glassdoor Top 100 Best Place to Work, we offer a collaborative and caring community where you feel like you belong and are empowered to grow, learn and thrive through hands-on experience, certifications, industry training and more. Join us to drive positive, lasting change that moves missions and the government forward! Build AI that matters . We ship production GenAI apps for confidential federal programs across defense, national security, public safety, civilian, and military health where reliability, privacy, and safety aren’t optional. AFS is a technology company within global Accenture and a Glassdoor Top 100 Best Place to Work. You’ll join a collaborative, inclusive community with handson growth, certifications, and industry training. We ship in weeks, not quarters, and measure success with latency, reliability, safety, and cost. Confidentiality matters: We don’t disclose program details publicly. If you advance, we’ll share specifics during the process. Role Overview You’ll turn mission needs into secure, reliable, and scalable GenAI applications no model training required. This is a hands-on role across agentic workflows, RAG, prompt/policy design, LLM evaluation, and platform integration. You’ll own the end-to-end path from use case evaluation → production deployment → operational excellence, partnering with product, security, data, and SRE to ship features safely and at scale. What You’ll Do (Day To Day) Design & ship mission grade GenAI: Build agentic workflows and RAG systems tailored to mission data and environments; target low hallucination, tight p95 latency, and predictable cost. Agent frameworks & orchestration: Apply patterns from LangChain/LlamaIndex/Semantic Kernel; design task decomposition, tool use, guardrails, and recovery/fallback strategies. Platform integration (no model training): Implement with AWS Bedrock, Azure OpenAI, Google Vertex AI, Amazon Kendra, and managed services (e.g., Document AI, Gemini, Gemma). LLM selection & evaluation: Compare models for quality, safety, latency, cost; author/test prompts & policies; deploy with observability and safe rollback/fallback. RAG done right: Build retrieval pipelines & vector search (Pinecone, Weaviate, OpenSearch, pgvector, FAISS/Chroma); handle data prep, chunking, metadata, and IRstyle evals (e.g., NDCG) to maximize signal to noise. Production rigor: Instrument metrics/logs/traces; run A/B experiments; maintain incident playbooks; and implement safety & compliance guardrails. SRE & FinOps for AI: Define SLIs/SLOs (quality/latency/safety/cost), run on call and postmortems, reduce MTTR; meter usage and optimize token/spend. Reusable platform components: Ship SDKs, CI/CD templates, Terraform/IaC modules, evaluation harnesses that accelerate multiple mission team not one-off projects. Operate in real world constraints: Deliver into hybrid, restricted, or air gapped environments with Zero Trust principles and audit ready controls. You'll Thrive Here If you have Built and deployed a production GenAI application (chatbot, copilot, assistant, or enterprise AI). Hands-on with LLMs GPT, Claude, Llama, Gemini, Mistral, via APIs or self-hosted. Designed and implemented RAG solutions using embeddings, vector databases, and semantic search for enterprise or mission data. Shipped AI applications with frameworks like LangChain, LangGraph, LlamaIndex, Semantic Kernel, DSPy, or similar. Strong Python development for building and integrating AI/ML applications. Owned AI solutions through full production life cycle, deployment and operational support. Active U.S. citizenship. Nice to Have Integration with leading cloud AI services or on prem inference stacks Background in LLM evaluation, prompt authoring/testing, A/B experimentation, and LLM Ops. Responsible AI expertise (privacy, security, bias, transparency, human in the loop) and data governance. Experience implementing tool using agents for API integration and external data access. Containerization & orchestration (Docker, Kubernetes, VMware) and scripting/automation (Linux Bash, PowerShell). Prior work in regulated/secure environments (e.g., ATO, STIGs, Zero Trust) with fast shipping. Familiarity with NVIDIA AI Foundations, OpenAI ChatGPT, and AI assisted dev tools (Cursor, Windsurf, Claude). Contributions to internal frameworks or opensource; mentorship of engineers. Clear communication with engineers, PMs, and security/compliance stakeholders. As required by local law, Accenture Federal Services provides reasonable ranges of compensation for hired roles based on labor costs in the states of California, Colorado, Hawaii, Illinois, Maine, Maryland, Massachusetts, Minnesota, New Jersey, New York, Vermont, Virginia, Washington, and the District of Columbia, and the city of Cleveland . The base pay range for this position in these locations is shown below. Compensation for roles at Accenture Federal Services varies depending on a wide array of factors, including but not limited to office location, role, skill set, and level of experience. Accenture Federal Services offers a wide variety of benefits. You can find more information on benefits here. We accept applications on an on-going basis and there is no fixed deadline to apply. The pay range for the states of California, Colorado, Hawaii, Illinois, Maine, Maryland, Massachusetts, Minnesota, New Jersey, New York, Vermont, Virginia, Washington, and the District of Columbia, and the city of Cleveland is: $103,200—$203,400 USD What We Believe As a company wholly dedicated to serving the US federal government, we bring together the best talent to help reinvent how federal agencies operate and deliver greater value for their mission and the American people. We have an unwavering commitment to creating a culture in which all our people are respected, feel a sense of belonging, and have equal opportunity. As a business imperative, every person at Accenture Federal Services has the responsibility to create and sustain a culture where everyone feels welcomed and included. This is grounded in our core values and our experience that hiring and developing great people who reflect different perspectives, experiences, and backgrounds is key to driving innovation and delivering the results that our clients and the country count on. Equal Employment Opportunity Statement We believe that no one should be discriminated against because of their differences. All employment decisions shall be made without regard to age, race, creed, color, religion, sex, national origin, ancestry, disability status, veteran status, sexual orientation, gender identity or expression, genetic information, marital status, citizenship status or any other basis as protected by federal, state, or local law. Our rich diversity makes us more innovative, more competitive, and more creative, which helps us better serve our clients and our communities. For details, view a copy of the Accenture Federal Services Equal Opportunity Policy Statement. Accenture Federal Services is an Equal Employment Opportunity employer. Additionally, as an Affirmative Action Employer for Veterans and Individuals with Disabilities, Accenture Federal Services is committed to providing veteran employment opportunities to our service men and women. Requesting An Accommodation Accenture Federal Services is committed to providing equal employment opportunities for persons with disabilities or religious observances, including reasonable accommodation when needed. If you are hired by Accenture Federal Services and require accommodation to perform the essential functions of your role, you will be asked to participate in our reasonable accommodation process. Accommodations made to facilitate the recruiting process are not a guarantee of future or continued accommodations once hired. If you are being considered for employment opportunities with Accenture Federal Services and need an accommodation for a disability or religious observance during the interview process or for the job you are interviewing for, please speak with your recruiter. Other Employment Statements Applicants for employment in the US must have work authorization that does not now or in the future require sponsorship of a visa for employment authorization in the United States. Candidates who are currently employed by a client of Accenture Federal Services or an affiliated Accenture business may not be eligible for consideration. Job candidates will not be obligated to disclose sealed or expunged records of conviction or arrest as part of the hiring process. The Company will not discharge or in any other manner discriminate against employees or applicants because they have inquired about, discussed, or disclosed their own pay or the pay of another employee or applicant. Additionally, employees who have access to the compensation information of other employees or applicants as a part of their essential job functions cannot disclose the pay of other employees or applicants to individuals who do not otherwise have access to compensation information, unless the disclosure is (a) in response to a formal complaint or charge, (b) in furtherance of an investigation, proceeding, hearing, or action, including an investigation conducted by the employer, or (c) consistent with the Company's legal duty to furnish information. California requires additional notifications for applicants and employees. If you are a California resident, live in or plan to work from Los Angeles County upon being hired for this position, please click here for additional important information.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -347,7 +358,12 @@
         "linkedin": [
           "llm engineer"
         ]
-      }
+      },
+      "linkedin_detail_attempted_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_fetched_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4468152961",
@@ -361,7 +377,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-ai-platform-engineer-at-accruepartners-4468152961",
       "official_url": "",
-      "description": "",
+      "description": "The Team You Will Be Joining Join the technology team of a national real estate investment and development firm operating across 20 states Become the senior individual contributor responsible for the organization’s enterprise AI and automation platforms Support a company combining institutional scale with local market expertise across 11 regional offices Help advance an enterprise-wide Agentic Workspace and Unified Data Strategy Join at a pivotal stage as the organization moves AI capabilities from pilots into reliable, production-ready solutions What They Offer You The opportunity to own enterprise AI and automation platforms from development through production High visibility across the organization with the ability to influence how teams adopt and use AI Meaningful work building agents and automations that solve real operational challenges Exposure to Microsoft Azure, AWS, Microsoft 365 Copilot, Copilot Studio, Microsoft Graph and other emerging AI technologies The ability to establish platform standards for security, reliability, governance and performance A senior-level individual contributor role with significant autonomy and end-to-end technical ownership Location and Work Environment Charlotte, NC is the preferred location, with a hybrid schedule at the company’s headquarters Highly qualified remote candidates in the Eastern or Central time zones will also be considered Remote candidates must be able to travel to the Charlotte headquarters as needed, potentially on a quarterly basis The role partners across technical and non-technical teams throughout the organization Why This Role Is Important Serve as the accountable technical owner for the company’s enterprise AI and automation ecosystem Build AI agents, enterprise automations and integrations that can move securely from pilot programs into production Create the business context layer that grounds AI outputs in accurate, current and permission-appropriate information Replace manual handoffs with scalable, observable and reliable workflows Establish guardrails, evaluation frameworks and monitoring to maintain quality and prevent performance drift Strengthen responsible AI operations through access controls, audit logging, data lineage and change management Help employees across the organization understand and responsibly adopt Microsoft Copilot and other AI capabilities The Background That Fits 7+ years of experience building and operating production software or automation systems Strong coding proficiency in Python or a comparable language, including tested, peer-reviewed and version-controlled development Hands-on experience with large language models, RAG, agent orchestration, tool and function calling, prompt engineering and structured outputs Proven ownership of live production systems, including CI/CD, releases, monitoring, rollback, incident response and root-cause remediation Strong integration engineering experience across REST APIs, MCPs, webhooks, authentication, retry logic and troubleshooting Experience developing evaluation frameworks for non-deterministic AI systems and measuring quality, accuracy and regression Working knowledge of cloud, identity and security fundamentals, with Microsoft Azure experience strongly preferred Experience with Microsoft 365 Copilot, Copilot Studio, Azure AI Foundry, AWS or multi-cloud environments is a strong plus Open",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -369,7 +385,12 @@
         "linkedin": [
           "llm engineer"
         ]
-      }
+      },
+      "linkedin_detail_attempted_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_fetched_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4470476028",
@@ -383,7 +404,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-developer-at-acumatica-4470476028",
       "official_url": "",
-      "description": "",
+      "description": "Acumatica is looking for a Software Developer to join the Vertrax business unit. Vertrax was built to empower midstream and downstream fuel suppliers with cutting-edge ERP and logistics solutions designed to address the complexities of the energy industry. Our mission is to simplify the demands of fuel operations, drive efficiency, and give businesses a genuine competitive edge. Different by design, Vertrax is business technology purpose-built for the fuel industry. Our unified platform brings together two solutions. Vertrax Energy ERP is a commercial-grade, cloud-native back-office system that delivers real-time insights into every operation and automates the order-to-cash workflow. SmartDrops handles dispatch and logistics, including optimized route scheduling, driver performance tracking, and delivery analytics, built directly into Vertrax Energy ERP for seamless, live data communication. Together, they support fuel, propane, and lubricant operations, replacing inefficient legacy systems with a single modern, scalable solution. More than a product, Vertrax is a community of partners, customers, and creators dedicated to helping fuel businesses thrive on their own terms. In 2026, we joined Acumatica as a dedicated business unit, combining our deep industry expertise with the momentum, scale, and platform strength of a cloud ERP leader. Our culture is collaborative and high-energy. We are passionate about our product and mission, guided by our commitment to teamwork, partnership, creativity, agility, and integrity. We turn industry challenges into lasting opportunities and have fostered a culture of loyalty among our employees, our customers, and the fuel businesses we serve. Vertrax offers exceptional professional and financial growth potential. To learn more about the Vertrax mission, visit https://vertrax.com/about/ Job Description We are looking for a Full-Stack Software Engineer with strong front-end expertise in React and practical back-end experience with Java and Spring Boot. In this role, you will build responsive, intuitive web applications; integrate user interfaces with scalable services and databases; and collaborate with product, design, quality assurance, and engineering partners to deliver reliable software. The ideal candidate combines sound engineering practices with strong user-experience awareness, analytical problem-solving, and attention to detail. Key Responsibilities Design, develop, test, and deploy responsive, accessible, and visually consistent user interfaces using React, TypeScript or JavaScript, HTML, and CSS. Translate wireframes, mockups, and product requirements into reusable, maintainable front-end components. Develop and maintain back-end APIs and services using Java and Spring Boot. Integrate front-end applications with RESTful APIs or GraphQL services. Write and optimize SQL queries to support application functionality, performance, and data integrity. Improve application speed, scalability, reliability, and usability through performance analysis and sound engineering practices. Collaborate with product managers, designers, quality assurance professionals, and engineers throughout the software development lifecycle. Write clean, testable, well-documented code and participate in code reviews. Use Git, npm, and related development tools to maintain code quality, version control, and build automation. Troubleshoot defects, resolve production issues, and contribute to continuous product improvement. Participate in Agile planning, estimation, reviews, and retrospectives. Stay current with modern front-end, back-end, cloud, and user-experience practices. Qualifications Three or more years of professional software development experience, with substantial hands-on front-end development experience. Strong proficiency in React, TypeScript or JavaScript, HTML, and CSS. Experience with Node.js and npm-based development workflows. Working knowledge of Java and Spring Boot, including the ability to implement and maintain straightforward back-end APIs. Strong SQL skills, including the ability to write efficient, well-structured database queries. Experience integrating web applications with RESTful APIs; GraphQL experience is also welcome. Proficiency with Git or a comparable version-control platform. Strong understanding of responsive design, usability, browser compatibility, and front-end performance. Demonstrated problem-solving and troubleshooting skills, with strong attention to detail. Clear written and verbal communication skills and the ability to collaborate effectively in a remote, cross-functional environment. Preferred Qualifications: One or more years of experience working in an Agile software development environment. Experience with DevOps practices, automated testing, and continuous integration and delivery pipelines. Familiarity with AWS or another cloud platform. Experience with browser debugging, profiling, and performance-testing tools. Knowledge of secure coding practices, API authentication, and scalable application design. Bachelor’s degree in computer science, software engineering, or a related field, or equivalent practical experience. Additional Information Acumatica is an Affirmative Action and Equal Opportunity Employer/Veterans/Disabled. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, or protected veteran status and will not be discriminated against on the basis of disability. If you have a disability and you believe you need a reasonable accommodation in order to search for a job opening or to submit an online application, please e-mail HR@acumatica.com. This email is created exclusively to assist disabled job seekers whose disability prevents them from being able to apply online. Only emails sent for this purpose will be returned. Emails sent for other purposes, such as following up on an application or technical issues not related to a disability, will not receive a response. For this role, the salary range is $115,000-130,000 annually. This range represents the low and high end of the salary range for this job and may vary based on location. The actual salary offer will carefully consider a wide range of factors, including skills, qualifications, experience and other relevant elements. At Acumatica, certain roles are eligible for additional rewards, including annual bonus and stock. These awards are allocated based on individual performance. In addition, certain roles also have the opportunity to earn sales incentives based on revenue or utilization, depending on the terms of the plan and the employee’s role. Benefits/perks listed here may vary depending on the nature of your employment with Acumatica and the country where you work. US-based employees gain access to healthcare benefits (medical, dental and vision insurance for you and your dependents), employer paid Short-Term/Long-Term Disability and Basic life coverage, 401(k) plan with company match, Flexible time off, sick and safe leave, among others.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -391,7 +412,12 @@
         "linkedin": [
           "full stack engineer"
         ]
-      }
+      },
+      "linkedin_detail_attempted_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_fetched_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4469955080",
@@ -405,7 +431,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-ai-full-stack-engineer-%E2%80%93-agentic-ai-at-acunor-4469955080",
       "official_url": "",
-      "description": "",
+      "description": "Senior AI Full-Stack Engineer – Agentic AI Location: Pittsburgh, PA / Dallas, TX / Cleveland, OH Work Model: Hybrid – 2–3 Days/Week Onsite Job Summary We are looking for a hands-on Senior AI Full-Stack Engineer to support the migration of an enterprise RAG platform from Microsoft Semantic Kernel to Microsoft Agent Framework . The role requires strong Python/Django development experience along with hands-on Azure AI and Agentic AI expertise. Key Responsibilities Migrate Semantic Kernel plugins, planners, function calling, prompts, memory, and agents to Microsoft Agent Framework agents/workflows. Develop and enhance the AI orchestration layer using Python/Django . Build and maintain enterprise RAG solutions using Azure AI Search and Azure OpenAI . Implement AI tools/connectors using Model Context Protocol (MCP) . Maintain retrieval, reranking, prompt assembly, citations, APIs, RBAC, and permissions during migration. Deploy containerized AI services on OpenShift/OCP . Implement AI observability and evaluation using Arize Phoenix and OpenTelemetry . Support GitHub-based CI/CD and DevSecOps practices. Required Skills Strong hands-on Microsoft Semantic Kernel experience. Hands-on Microsoft Agent Framework experience with agents/workflows. Strong Python and Django development. Azure AI Search, Azure OpenAI, RAG and embeddings . Experience with Agentic AI, function/tool calling and AI orchestration. MCP (Model Context Protocol) experience. Docker/OpenShift or similar container platforms. GitHub, CI/CD and DevSecOps.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -414,7 +440,12 @@
           "ai engineer",
           "llm engineer"
         ]
-      }
+      },
+      "linkedin_detail_attempted_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_fetched_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4281554006",
@@ -439,7 +470,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4468772768",
@@ -453,7 +486,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-i-front-end-lifecycle-experience-at-adyen-4468772768",
       "official_url": "",
-      "description": "",
+      "description": "This is Adyen Adyen provides payments, data, and financial products in a single solution for customers like Meta, Uber, H&M, and Microsoft - making us the financial technology platform of choice. At Adyen, everything we do is engineered for ambition. For our teams, we create an environment with opportunities for our people to succeed, backed by the culture and support to ensure they are enabled to truly own their careers. We are motivated individuals who tackle unique technical challenges at scale and solve them as a team. Together, we deliver innovative and ethical solutions that help businesses achieve their ambitions faster. Lifecycle Experience Team The Lifecycle Experience teams aim to build a best-in-class customer experience for onboarding to Adyen's platform. Our product offers a one-stop solution to unlock access to a wide range of financial products and services. Tasks that we handle include identifying and verifying customer data, connecting payout accounts, ensuring compliance with all applicable local and global regulations, and securing legal entity data in motion and at rest. At a high level, our team builds and maintains both API and UI integration methods and seeks to improve our automation and compliance processes for our users. Day-to-day, our work can span from adding a field, to integrating with internal or third-party services for data enhancement, to preparing to launch our platform in a new region, and much more. Successful onboarding is ensured via designing a systematic API and an intuitive UI to guide customers through the entire journey with minimal manual data entry from the user or manual intervention from Adyen's operations teams. You will be responsible for researching, creating PoCs, integrating with external providers, and anything else necessary to reach this goal. Sounds exciting? Keep reading! What You’ll Do Be part of a full-stack team of Frontend, Backend and Data engineers who like to balance robust design with lean development, by validating concepts with minimal effort and then being able to shift to highly reliable systems You will be primarily working on the user interfaces for the team using Preact to help us scale our business by providing the best possible user experience for users of our product You will be responsible for the full life cycle of your developments. This includes architecture, communicating with stakeholders to understand requirements, automated testing, iterating purposefully, and monitoring the impact of your projects Contribute to the team’s ideas, and bring your own point of view on engineering best practices Identify and improve parts of the platform to make it more robust and scalable Collaborate across teams and time zones to get projects over the finish line Minimum Qualifications 3 years of experience or less in the software development industry Full professional proficiency in English Office first culture- we love working together! Due to our hybrid work model, we expect you to come to the office at least three days per week You are a strong team player, you like to connect and communicate in person with your team members and other stakeholders to come to the best solution The annual base salary range for this role is $120,000.00 - $156,000.00; to learn more about our compensation philosophy, please click here . Our Diversity, Equity and Inclusion commitments Our unique approach is a product of our diverse perspectives. This diversity of backgrounds and cultures is essential in helping us maintain our momentum. Our business and technical challenges are unique, and we need as many different voices as possible to join us in solving them - voices like yours. No matter who you are or where you’re from, we welcome you to be your true self at Adyen. Studies show that women and members of underrepresented communities apply for jobs only if they meet 100% of the qualifications. Does this sound like you? If so, Adyen encourages you to reconsider and apply. We look forward to your application! What’s next? Ensuring a smooth and enjoyable candidate experience is critical for us. We aim to get back to you regarding your application within 5 business days. Our interview process tends to take about 4 weeks to complete, but may fluctuate depending on the role. Learn more about our hiring process here. Don’t be afraid to let us know if you need more flexibility. This role is based out of our Chicago office. We have a hybrid workplace and value in-person collaboration; we do not offer remote-only roles.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -461,7 +494,12 @@
         "linkedin": [
           "software engineer i"
         ]
-      }
+      },
+      "linkedin_detail_attempted_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_fetched_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4445164767",
@@ -475,7 +513,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/principal-platform-engineer-at-affinity-4445164767",
       "official_url": "",
-      "description": "",
+      "description": "Job Description Our client is an early-stage, venture-backed AI software company building a next-generation enterprise platform that leverages artificial intelligence, automation, and cloud-native technologies to transform how organizations manage complex digital operations. This is an opportunity to join a highly experienced leadership team at an exciting stage of growth, where you'll have significant influence over the architecture, engineering standards, and technical direction of a groundbreaking platform. As the company builds its engineering organization, they are seeking an exceptional Principal Platform Engineer to establish the technical bar, lead the most challenging engineering initiatives, and help build a secure, scalable platform from the ground up. Position Summary The Principal Platform Engineer is the organization's most senior individual contributor and technical authority for platform engineering. Working closely with executive technology leadership, architects, data scientists, and engineering teams, you will lead the design and delivery of the company's most critical systems. You will own the engineering pipeline from source code through production deployment, including CI/CD, infrastructure automation, cloud operations, and MLOps capabilities supporting machine learning model training and inference. This is a deeply hands-on technical role for an engineer who enjoys solving difficult engineering challenges. Rather than managing people directly, you will lead through technical excellence, architecture, mentorship, and engineering best practices. You will play a key role in transforming innovative ideas into production-grade software capable of supporting enterprise-scale environments while elevating engineering standards across the organization. Key Qualifications Technical Leadership Act as the technical lead on the organization's most complex and high-impact engineering initiatives. Drive platform engineering standards, patterns, and best practices. Partner with architecture and engineering leadership to translate technical vision into production-ready solutions. Identify technical risks, trade-offs, and opportunities while guiding pragmatic engineering decisions. Platform Engineering Design, build, and operate highly scalable cloud-native services. Build resilient, secure, high-performance distributed systems. Resolve complex scalability, reliability, and production challenges. Champion automation, observability, and operational excellence throughout the software development lifecycle. AI Platform & Infrastructure Build infrastructure supporting AI and machine learning workloads. Develop frameworks for model deployment, orchestration, experimentation, and inference. Integrate AI services with enterprise applications and data platforms. Support scalable MLOps practices across development and production environments. Engineering Excellence Establish high standards for architecture, code quality, testing, documentation, and security. Lead architecture reviews and code reviews. Improve engineering tooling and developer productivity. Balance innovation with long-term scalability and maintainability. Technical Mentorship Mentor and coach engineers across the organization. Influence technical direction without direct people management. Assist with hiring and evaluating engineering talent. Serve as a trusted advisor to technical leadership. Qualifications Required Experience 10+ years of hands-on platform and software engineering experience. Deep expertise designing and operating distributed systems and cloud-native platforms. Proven experience delivering enterprise-scale software solutions. Strong proficiency in Python and modern software engineering practices. Demonstrated success leading complex technical initiatives as an individual contributor. Preferred Experience AI, machine learning, agentic AI, or large-scale data platform experience. Experience in cybersecurity, observability, cloud infrastructure, or platform engineering. Experience with LLM integrations, model inference, orchestration frameworks, and data pipelines. MLOps experience. Previous experience as a Principal Engineer, Staff Engineer, Distinguished Engineer, or similar senior technical leadership role. Startup or high-growth technology company experience. Core Competencies Technical Leadership Distributed Systems Architecture Engineering Excellence Systems Thinking Cloud Platform Engineering Pragmatic Problem Solving Ownership & Accountability Mentorship Decision Making in Ambiguous Environments Technical Communication Success Measures During Your First Year, You Will Deliver foundational components of the company's core platform. Establish engineering standards adopted across the organization. Improve platform scalability, reliability, and security. Implement robust CI/CD and infrastructure automation practices. Successfully operationalize AI and machine learning capabilities in production. Mentor engineers and help raise the overall technical capability of the team. Affinity Earn Know someone who’s great for this, or any of our open roles? Earn up to $4,000/year for each successful referral through Affinity Earn. You can also earn up to $50,000 for helping us find new clients. Learn about our referral program at https://affinity-group.ca/earn/ or browse our jobs & follow us at https://www.linkedin.com/company/affinity-staffing/jobs/ About Affinity Affinity Group is a technology and business consulting and services company. We believe in creating long term relationships between clients and consultants that foster a mutually beneficial partnership. Affinity is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees. All employment is decided on the basis of qualifications, merit and business need. For more information on Affinity, please visit www.affinity-group.ca Job Number: 13754",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -483,7 +521,12 @@
         "linkedin": [
           "platform engineer"
         ]
-      }
+      },
+      "linkedin_detail_attempted_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_fetched_at": "2026-09-22T19:18:30.071322+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4442213541",
@@ -1366,7 +1409,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4282107574",
@@ -1390,7 +1435,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4432499181",
@@ -1415,7 +1462,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4469969062",
@@ -1571,7 +1620,9 @@
           "software engineer",
           "software engineer ii"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470200755",
@@ -1624,7 +1675,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470208512",
@@ -1646,7 +1699,9 @@
         "linkedin": [
           "software engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4461518267",
@@ -1670,7 +1725,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4461568364",
@@ -1692,7 +1749,9 @@
         "linkedin": [
           "software engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "no_match"
     },
     {
       "job_id": "4468136657",
@@ -1716,7 +1775,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470222111",
@@ -1741,7 +1802,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4461518257",
@@ -1765,7 +1828,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470216352",
@@ -1790,7 +1855,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470209507",
@@ -1812,7 +1879,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "no_match"
     },
     {
       "job_id": "4461525141",
@@ -1835,7 +1904,9 @@
           "software engineer",
           "software engineer ii"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "no_match"
     },
     {
       "job_id": "4470203725",
@@ -1857,7 +1928,9 @@
         "linkedin": [
           "infrastructure engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "no_match"
     },
     {
       "job_id": "4470210510",
@@ -1879,7 +1952,9 @@
         "linkedin": [
           "infrastructure engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "no_match"
     },
     {
       "job_id": "4470233610",
@@ -3686,7 +3761,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4468900486",
@@ -4201,7 +4278,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470429988",
@@ -4223,7 +4302,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470433823",
@@ -4245,7 +4326,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470439673",
@@ -4267,7 +4350,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470427981",
@@ -4291,7 +4376,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470435787",
@@ -4315,7 +4402,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470450078",
@@ -4339,7 +4428,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470434808",
@@ -4361,7 +4452,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470443372",
@@ -4383,7 +4476,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470444361",
@@ -4407,7 +4502,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470447176",
@@ -4429,7 +4526,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470450023",
@@ -4451,7 +4550,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470428963",
@@ -4473,7 +4574,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470429983",
@@ -4495,7 +4598,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470439677",
@@ -4518,7 +4623,9 @@
           "ai engineer",
           "llm engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470440669",
@@ -4542,7 +4649,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470441625",
@@ -4564,7 +4673,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470430976",
@@ -4586,7 +4697,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470435790",
@@ -4608,7 +4721,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470442519",
@@ -4630,7 +4745,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470448219",
@@ -4653,7 +4770,9 @@
           "ai engineer",
           "llm engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470429987",
@@ -4677,7 +4796,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470229404",
@@ -4699,7 +4820,9 @@
         "linkedin": [
           "full stack engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470440663",
@@ -4724,7 +4847,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470434809",
@@ -4748,7 +4873,9 @@
           "machine learning engineer",
           "ml engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470441628",
@@ -4773,7 +4900,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470442523",
@@ -4798,7 +4927,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470441641",
@@ -4822,7 +4953,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470443375",
@@ -4846,7 +4979,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4461559895",
@@ -4868,7 +5003,9 @@
         "linkedin": [
           "ai engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470231267",
@@ -4892,7 +5029,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470238097",
@@ -4917,7 +5056,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4468123266",
@@ -5029,7 +5170,9 @@
           "software engineer",
           "software engineer ii"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4460616370",
@@ -5073,7 +5216,9 @@
         "linkedin": [
           "software engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4470253132",
@@ -5095,7 +5240,9 @@
         "linkedin": [
           "software engineer ii"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4461561135",
@@ -5117,7 +5264,9 @@
         "linkedin": [
           "software engineer ii"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4461282743",
@@ -5143,7 +5292,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4461286654",
@@ -5167,7 +5318,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4461291578",
@@ -5191,7 +5344,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4461295437",
@@ -5218,7 +5373,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4461296425",
@@ -5242,7 +5399,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4461299463",
@@ -5267,7 +5426,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4461500405",
@@ -5291,7 +5452,9 @@
         ]
       },
       "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred"
+      "enrichment_failure_reason": "official_detail_deferred",
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4469016551",
@@ -5405,7 +5568,9 @@
         "linkedin": [
           "backend engineer"
         ]
-      }
+      },
+      "official_search_attempted_at": "2026-09-22T19:12:37.381219+00:00",
+      "official_search_status": "deferred"
     },
     {
       "job_id": "4468174813",
