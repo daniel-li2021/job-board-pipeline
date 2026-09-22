@@ -357,6 +357,41 @@ class LocalSourceTests(unittest.TestCase):
         self.assertEqual(1, result["fresh_kept"])
         self.assertEqual({"li-8", "li-9"}, {job["job_id"] for job in payload["jobs"]})
 
+    def test_global_page_budget_merges_coverage_and_keeps_detail_eligible(self) -> None:
+        fresh, carried = self._linkedin_card("li-1"), self._linkedin_card("li-2")
+        carried.update(first_seen="2026-09-10T00:00:00+00:00",
+                       last_seen="2026-09-17T15:00:01+00:00",
+                       description="Cached official description " * 12)
+        result_rows = [fresh, self._linkedin_card("li-3")]
+        bounded = {
+            "status": "ok", "jobs": result_rows, "requests": 12, "responses": 12,
+            "pages_fetched": 12, "query_stats": [
+                {"query": "software engineer", "stop_reason": "global_page_budget"},
+            ],
+        }
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            schema, "SOURCES_DIR", Path(tmpdir)
+        ), patch.dict(local_sources.SOURCES, {"linkedin": lambda: bounded}), patch.object(
+            linkedin_local, "enrich_details", return_value={"requests": 0, "responses": 0}
+        ) as enrich:
+            schema.write_source_snapshot("linkedin", [fresh, carried],
+                                         {"scraped_at": "2026-09-17T15:00:00+00:00"})
+            result = local_sources.run_one("linkedin", {"commit": "new", "dirty": False})
+            payload = schema.read_source_snapshot_payload("linkedin")
+
+        self.assertEqual("partial", result["status"])
+        self.assertEqual("search page budget exhausted", result["reason"])
+        self.assertTrue(result["search_collection"]["budget_exhausted"])
+        self.assertTrue(enrich.call_args.kwargs["allow_requests"])
+        self.assertEqual(3, result["merged_count"])
+        by_id = {job["job_id"]: job for job in payload["jobs"]}
+        self.assertEqual({"li-1", "li-2", "li-3"}, set(by_id))
+        self.assertFalse(by_id["li-2"]["verified_this_run"])
+        self.assertEqual("2026-09-10T00:00:00+00:00", by_id["li-2"]["first_seen"])
+        self.assertEqual("2026-09-17T15:00:01+00:00", by_id["li-2"]["last_seen"])
+        self.assertEqual(carried["description"], by_id["li-2"]["description"])
+        self.assertTrue(payload["meta"]["partial"])
+
     def test_rate_limited_partial_with_every_fresh_row_filtered_is_still_partial(self) -> None:
         collector = {"commit": "new", "dirty": False}
         dropped = self._linkedin_card("li-ca", location="Toronto, ON, Canada")

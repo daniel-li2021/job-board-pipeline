@@ -195,17 +195,15 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
         "responses": int(result.get("responses", 0) or 0),
         "pages_fetched": int(result.get("pages_fetched", 0) or 0),
         "rate_limited": int(result.get("http_status") or 0) == 429,
+        "budget_exhausted": any(stat.get("stop_reason") == "global_page_budget" for stat in query_stats),
     } if name == "linkedin" else {}
-    # A rate-limited LinkedIn run still collected real coverage before the
-    # block. Keep it and merge it over the last-good snapshot instead of
-    # throwing the whole run away; any non-empty collection qualifies, even
-    # when the first query never finished.
-    partial = bool(
-        name == "linkedin"
-        and result.get("status") == "blocked"
-        and int(result.get("http_status") or 0) == 429
-        and rows
-    )
+    # A bounded search cannot verify queries it never reached. Merge its
+    # coverage just like a 429-limited run, without treating absence as removal.
+    search_rate_limited = bool(name == "linkedin" and int(result.get("http_status") or 0) == 429)
+    budget_partial = bool(name == "linkedin" and result.get("status") == "ok"
+                          and search_collection["budget_exhausted"])
+    partial = bool(rows and (search_rate_limited or budget_partial))
+    partial_reason = "search page budget exhausted" if budget_partial else str(result.get("reason") or "rate limited")
     if result.get("status") != "ok" and not partial:
         reason = str(result.get("reason") or result.get("status"))
         print(f"[{name}] SKIP ({reason}) -> keeping last good snapshot")
@@ -272,7 +270,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
         detail_enrichment = linkedin_local.enrich_details(
             detail_candidates,
             previous_jobs=list(previous.get("jobs") or []),
-            allow_requests=not partial and not cooldown_active,
+            allow_requests=not search_rate_limited and not cooldown_active,
             request_limit=detail_limit,
             min_description_chars=board.THIN_JD_CHARS,
         )
@@ -332,7 +330,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
         )
         meta.update({
             "partial": True,
-            "blocked_reason": str(result.get("reason") or ""),
+            "blocked_reason": partial_reason,
             "collected_count": len(rows),
             "carried_count": carried_count,
         })
@@ -341,11 +339,11 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
         merged_count = len(survivors) + carried_count
         print(
             f"[{name}] PARTIAL {len(survivors)} fresh + {carried_count} carried = {merged_count} rows "
-            f"({elapsed:.1f}s; {result.get('reason')}) -> {path}"
+            f"({elapsed:.1f}s; {partial_reason}) -> {path}"
         )
         return {
             "source": name, "status": "partial", "source_healthy": False, "data_usable": True,
-            "reason": str(result.get("reason") or "rate limited"),
+            "reason": partial_reason,
             "count": len(survivors), "collected_count": len(rows), "fresh_kept": len(survivors),
             "carried_count": carried_count, "merged_count": merged_count, "path": str(path),
             "query_stats": query_stats, "detail_enrichment": detail_enrichment, "official_enrichment": official_enrichment, "search_collection": search_collection,
