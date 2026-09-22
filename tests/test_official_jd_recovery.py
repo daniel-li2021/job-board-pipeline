@@ -186,8 +186,12 @@ class OfficialRecoveryTests(unittest.TestCase):
         ), patch.object(local_sources.board, "load_store", return_value={}), patch.object(
             local_sources.official_jd_recovery, "Resolver", FakeResolver
         ):
+            path = Path(temp) / "sources" / "linkedin.json"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(json.dumps({"schema_version": 1, "source": "linkedin", "count": 1,
+                                        "meta": snapshot["meta"], "jobs": [original]}))
             report = local_sources.recover_jds()
-            saved = json.loads((Path(temp) / "sources" / "linkedin.json").read_text())
+            saved = json.loads(path.read_text())
         self.assertEqual(["linkedin", "indeed"], seen)
         self.assertEqual(1, report["before_total"])
         self.assertEqual(0, report["after_total"])
@@ -195,6 +199,7 @@ class OfficialRecoveryTests(unittest.TestCase):
         self.assertEqual(original["last_seen"], saved["jobs"][0]["last_seen"])
         self.assertEqual(original["source_verified_at"], saved["jobs"][0]["source_verified_at"])
         self.assertEqual(snapshot["meta"]["scraped_at"], saved["meta"]["scraped_at"])
+        self.assertEqual(["schema_version", "source", "count", "meta", "jobs"], list(saved))
 
     def test_search_budget_rotation_low_yield_and_cooldown_state(self):
         card = (

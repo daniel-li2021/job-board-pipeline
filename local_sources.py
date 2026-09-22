@@ -538,11 +538,17 @@ def recover_jds() -> Dict[str, object]:
             row.pop("_linkedin_official_defer", None)
         if snapshots[name]["jobs"] == originals[name]:
             continue
-        payload = dict(snapshots[name])
+        path = OUTPUT_DIR / "sources" / f"{name}.json"
+        try:
+            # Keep the persisted snapshot layout; the loader returns a reduced,
+            # differently ordered view intended for consumers, not serialization.
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (FileNotFoundError, json.JSONDecodeError, OSError):
+            payload = dict(snapshots[name])
+        payload["jobs"] = snapshots[name]["jobs"]
         payload["source"] = name
         payload["count"] = len(payload["jobs"])
         payload["meta"] = {**payload.get("meta", {}), "jd_recovery_at": now.isoformat()}
-        path = OUTPUT_DIR / "sources" / f"{name}.json"
         atomic_write(path, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
         changed.append(name)
     if int(detail.get("requests", 0) or 0):
