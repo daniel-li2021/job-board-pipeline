@@ -65,7 +65,7 @@ vm.runInContext(`searchQuery='';minScore='';sponsorshipFilters=new Set(sponsorsh
 const extensionSources = ['dashboard_applied_history.js','dashboard_last7.js'].map(file => fs.readFileSync(file,'utf8'));
 extensionSources.forEach(source => assert.doesNotMatch(source, /\bfunction\s+renderSummary\b|\brenderSummary\s*=/));
 let extension = extensionSources[0];
-extension = extension.slice(0, extension.indexOf('  // Existing tracked rows')) + 'globalThis.check={appliedRows,archiveStorageKey,decodeArchive,backfillTrackedArchives,expandedStates,syncArchiveRows,getArchive:()=>archive};})();';
+extension = extension.slice(0, extension.indexOf('  // Existing tracked rows')) + 'globalThis.check={appliedRows,applicationHistorySummary,archiveStorageKey,decodeArchive,backfillTrackedArchives,expandedStates,syncArchiveRows,getArchive:()=>archive};})();';
 vm.runInContext(extension, context);
 assert.equal(vm.runInContext('renderSummary', context), renderSummaryOwner);
 vm.runInContext(`
@@ -90,6 +90,31 @@ const roundTrip=vm.runInContext("check.decodeArchive({canonical_job_key:check.ar
 assert.equal(roundTrip.company,'X');assert.equal(roundTrip.title,'Engineer');assert.equal(roundTrip.location,'Seattle, WA');
 assert.equal(roundTrip.tier,'A');assert.equal(roundTrip.score,91);assert.equal(roundTrip.url,'https://example.com/one');
 assert.equal(roundTrip._applied_at,archived.one._applied_at);
+vm.runInContext(`
+reviewStates['metlife-applied']={canonical_job_key:'metlife-applied',status:'applied_complete',deleted:false,updated_at:'2026-09-10T12:00:00Z'};
+reviewStates['metlife-applied-2']={canonical_job_key:'metlife-applied-2',status:'applied_complete',deleted:false,updated_at:'2026-09-11T12:00:00Z'};
+check.getArchive()['metlife-applied']={canonical_job_key:'metlife-applied',company:'MetLife',title:'Junior Software Engineer',_applied_at:'2026-09-10T12:00:00Z',_tracked_status:'applied_complete'};
+check.getArchive()['metlife-applied-2']={canonical_job_key:'metlife-applied-2',company:'MetLife',title:'Platform Engineer',_applied_at:'2026-09-11T12:00:00Z',_tracked_status:'applied_complete'};
+`,context);
+const likelyRow={canonical_job_key:'metlife-new',company:'MetLife',title:'Junior Software Engineer',first_seen:'2026-09-12T12:00:00Z',tier:'B',score:80,url:'https://example.com/metlife-new',pipeline:'board',location:'',sponsorship:'Unknown',referral:'',freshness:{discovered:{},posted:{}}};
+assert.deepEqual({...vm.runInContext(`check.applicationHistorySummary(${JSON.stringify(likelyRow)})`,context)},{count:2,likely:true});
+assert.match(vm.runInContext(`applicationHistoryBadges(${JSON.stringify(likelyRow)})`,context),/Applied 2×.*Likely applied/);
+assert.match(vm.runInContext(`jobRows([${JSON.stringify(likelyRow)}])`,context),/<b>MetLife<\/b><span class="application-badges">/);
+assert.equal(vm.runInContext(`check.applicationHistorySummary(${JSON.stringify({...likelyRow,canonical_job_key:'metlife-applied'})}).likely`,context),false);
+assert.equal(vm.runInContext(`check.applicationHistorySummary(${JSON.stringify({...likelyRow,company:'Other Co'})}).likely`,context),false);
+assert.equal(vm.runInContext(`check.applicationHistorySummary(${JSON.stringify({...likelyRow,first_seen:'2026-09-25T12:00:01Z'})}).likely`,context),false);
+assert.equal(vm.runInContext(`check.applicationHistorySummary(${JSON.stringify({...likelyRow,first_seen:'invalid',posted_date:'2026-09-12'})}).likely`,context),true);
+assert.equal(vm.runInContext(`check.applicationHistorySummary(${JSON.stringify({...likelyRow,first_seen:'',posted_date:''})}).likely`,context),false);
+vm.runInContext(`
+reviewStates['vsolvit-applied']={canonical_job_key:'vsolvit-applied',status:'applied_complete',deleted:false,updated_at:'2026-09-10T12:00:00Z'};
+check.getArchive()['vsolvit-applied']={canonical_job_key:'vsolvit-applied',company:'VSolvit',title:'SOFTWARE DEVELOPER (FULL STACK)',_applied_at:'2026-09-10T12:00:00Z',_tracked_status:'applied_complete'};
+reviewStates['notion-applied']={canonical_job_key:'notion-applied',status:'applied_complete',deleted:false,updated_at:'2026-09-10T12:00:00Z'};
+check.getArchive()['notion-applied']={canonical_job_key:'notion-applied',company:'Notion',title:'Software Engineer Early Career',_applied_at:'2026-09-10T12:00:00Z',_tracked_status:'applied_complete'};
+`,context);
+assert.equal(vm.runInContext("check.applicationHistorySummary({canonical_job_key:'vsolvit-new',company:'VSolvit',title:'FULL STACK SOFTWARE DEVELOPER',first_seen:'2026-09-12T12:00:00Z'}).likely",context),true);
+assert.equal(vm.runInContext("check.applicationHistorySummary({canonical_job_key:'notion-new',company:'Notion',title:'Software Engineer Early Career AI',first_seen:'2026-09-12T12:00:00Z'}).likely",context),true);
+vm.runInContext(`D.fresh_24h=[allRows.find(row=>row.canonical_job_key==='one'),${JSON.stringify(likelyRow)}]`,context);
+assert.equal(vm.runInContext("normalRows(D.fresh_24h).map(row=>row.canonical_job_key).join(',')",context),'metlife-new');
 vm.runInContext("check.getArchive().one._applied_at='2024-01-01T00:00:00Z';check.getArchive().one._archive_updated_at='2099-01-01T00:00:00Z';check.getArchive().two._applied_at='2025-01-01T00:00:00Z';check.getArchive().two._archive_updated_at='2020-01-01T00:00:00Z'",context);
 assert.equal(vm.runInContext("check.appliedRows(uniqueRows())[0].canonical_job_key",context),'two');
 vm.runInContext(`

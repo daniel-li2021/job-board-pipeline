@@ -169,6 +169,47 @@
     return row;
   }
   const appliedTime = row => Date.parse(row?._applied_at || '') || 0;
+  const applicationWindowMs = 14 * 24 * 60 * 60 * 1000;
+  const normalizeHistoryCompany = value => String(value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const normalizeHistoryTitle = value => String(value || '').toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ').trim().replace(/\s+/g, ' ');
+  const similarHistoryTitle = (left, right) => {
+    const a = normalizeHistoryTitle(left), b = normalizeHistoryTitle(right);
+    if (!a || !b) return false;
+    if (a === b) return true;
+    const aTokens = new Set(a.split(' ')), bTokens = new Set(b.split(' '));
+    const union = new Set([...aTokens, ...bTokens]);
+    return [...aTokens].filter(token => bTokens.has(token)).length / union.size >= 0.8;
+  };
+  const firstValidTime = values => {
+    for (const value of values) {
+      const parsed = Date.parse(value || '');
+      if (Number.isFinite(parsed)) return parsed;
+    }
+    return 0;
+  };
+  const applicationHistorySummary = row => {
+    const company = normalizeHistoryCompany(row?.company);
+    // ponytail: archives are hundreds of rows; index by company only if rendering becomes measurable.
+    const history = company ? [...new Map(Object.values(archive)
+      .filter(item => statusOf(item) === 'applied_complete' && !isDeleted(item)
+        && normalizeHistoryCompany(item.company) === company)
+      .map(item => [item.canonical_job_key, item])).values()] : [];
+    const seenAt = firstValidTime([row?.first_seen, row?.posted_date]);
+    const likely = statusOf(row) === 'unreviewed' && seenAt > 0 && history.some(item => {
+      const appliedAt = firstValidTime([item._applied_at]);
+      return item.canonical_job_key !== row.canonical_job_key
+        && appliedAt > 0
+        && Math.abs(seenAt - appliedAt) <= applicationWindowMs
+        && similarHistoryTitle(row.title, item.title);
+    });
+    return { count: history.length, likely };
+  };
+  applicationHistoryBadges = row => {
+    const history = applicationHistorySummary(row);
+    if (!history.count) return '';
+    return `<span class="application-badges"><span class="pill confirmed">Applied ${history.count}×</span>${history.likely ? '<span class="pill discovered">Likely applied</span>' : ''}</span>`;
+  };
   const appliedRows = rows => searchedRows(rows.filter(r => statusOf(r) === 'applied_complete' && !isDeleted(r)))
     .map(row => recoveredRow(row.canonical_job_key) || row)
     .sort((a, b) => appliedTime(b) - appliedTime(a)
