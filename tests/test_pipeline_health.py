@@ -169,7 +169,7 @@ class PipelineHealthTests(unittest.TestCase):
         self.assertIn("partial collection", linkedin["impact"])
         self.assertTrue(any("rate-limited partial collection" in item for item in report["limitations"]))
 
-    def test_partial_over_fresh_full_success_is_degraded_not_healthy(self) -> None:
+    def test_partial_over_fresh_full_success_is_healthy_before_three_failures(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             now = datetime(2026, 9, 18, 12, tzinfo=timezone.utc)
@@ -187,6 +187,7 @@ class PipelineHealthTests(unittest.TestCase):
                     "reason": "blocked with HTTP 429",
                     "last_attempt_at": now.isoformat(), "last_partial_at": now.isoformat(),
                     "last_success_at": (now - timedelta(hours=2)).isoformat(),
+                    "consecutive_failures": 2,
                     "partial_collected_count": 100, "partial_fresh_kept": 90,
                     "partial_carried_count": 30, "last_good_count": 120,
                 },
@@ -199,7 +200,8 @@ class PipelineHealthTests(unittest.TestCase):
             report, _history = pipeline_health.build(root, now)
             linkedin = report["components"]["linkedin"]
 
-        self.assertEqual("Warning", linkedin["status"])
+        self.assertEqual("Healthy", linkedin["status"])
+        self.assertEqual(["partial", "rate-limited", "cached", "scraper errors"], linkedin["keywords"])
         self.assertFalse(any(item.startswith("LinkedIn (local/general):") for item in report["problems"]))
 
     def test_linkedin_detail_429_and_scrapling_are_reported_separately(self) -> None:
@@ -232,9 +234,10 @@ class PipelineHealthTests(unittest.TestCase):
 
             report, _history = pipeline_health.build(root, now)
             linkedin = report["components"]["linkedin"]
-            self.assertEqual("Warning", linkedin["status"])
+            self.assertEqual("Healthy", linkedin["status"])
             self.assertIn("detail enrichment blocked: blocked with HTTP 429", linkedin["detail"])
             self.assertIn("Scrapling fallback recovered 5/8", linkedin["detail"])
+            self.assertIn("rate-limited", linkedin["keywords"])
             self.assertNotIn("search/discovery attempt", linkedin["detail"])
 
     def test_linkedin_detail_429_with_high_scrapling_recovery_is_not_warning(self) -> None:
@@ -307,7 +310,7 @@ class PipelineHealthTests(unittest.TestCase):
             self.assertFalse(report["degradations"])
             self.assertEqual("official", history[0]["pipeline"])
 
-    def test_official_link_only_failures_are_limitations_and_linkedin_name_is_explicit(self) -> None:
+    def test_official_link_only_and_linkedin_failures_are_limitations(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             now = datetime(2026, 9, 12, 12, tzinfo=timezone.utc)
@@ -339,10 +342,122 @@ class PipelineHealthTests(unittest.TestCase):
             report, _history = pipeline_health.build(root, now)
 
             official = report["components"]["official"]
-            self.assertEqual(1, official["failure_count"])
-            self.assertIn("linkedin_company_official_adapter", official["detail"])
+            self.assertEqual(0, official["failure_count"])
+            self.assertNotIn("linkedin_company_official_adapter", official["detail"])
             self.assertNotIn("citadel", official["detail"])
             self.assertTrue(any("citadel" in item for item in report["limitations"]))
+            self.assertTrue(any("linkedin_company_official_adapter" in item for item in report["limitations"]))
+
+    def test_official_scraper_error_thresholds(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            now = datetime(2026, 9, 22, 12, tzinfo=timezone.utc)
+            for _key, (_label, folder, store_name) in pipeline_health.PIPELINES.items():
+                out = root / "output" / folder
+                out.mkdir(parents=True)
+                out.joinpath(store_name).write_text(json.dumps({
+                    "updated_at": now.isoformat(), "entries": [{"company": "Example", "title": "Engineer"}],
+                }))
+            source_dir = root / "output" / "sources"
+            source_dir.mkdir(parents=True)
+            source_dir.joinpath("health.json").write_text(json.dumps({"sources": {
+                name: {"healthy": True, "last_success_at": now.isoformat()}
+                for name in ("linkedin", "indeed", "glassdoor")
+            }}))
+            for name in ("linkedin", "indeed", "glassdoor"):
+                source_dir.joinpath(f"{name}.json").write_text(json.dumps({"jobs": [{}]}))
+
+            official_stats = root / "output" / "official_careers" / "latest_stats.json"
+            for count, expected in ((4, "Healthy"), (5, "Warning"), (9, "Warning"), (10, "Problem")):
+                with self.subTest(count=count):
+                    official_stats.write_text(json.dumps({
+                        "run_at": now.isoformat(), "output": {"shown": 20},
+                        "failures": {"scrape": {
+                            f"source-{index}": ["HTTP 429" if index == 0 else "error"]
+                            for index in range(count)
+                        }},
+                    }))
+                    report, _history = pipeline_health.build(root, now)
+                    official = report["components"]["official"]
+                    self.assertEqual(expected, official["status"])
+                    self.assertEqual(count, official["scraper_error_count"])
+                    self.assertIn("scraper errors", official["keywords"])
+                    self.assertIn("rate-limited", official["keywords"])
+                    self.assertEqual(expected, report["overall"])
+
+    def test_linkedin_threshold_and_optional_children_do_not_warn_board(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            now = datetime(2026, 9, 22, 12, tzinfo=timezone.utc)
+            for _key, (_label, folder, store_name) in pipeline_health.PIPELINES.items():
+                out = root / "output" / folder
+                out.mkdir(parents=True)
+                out.joinpath(store_name).write_text(json.dumps({
+                    "updated_at": now.isoformat(), "entries": [{"company": "Example", "title": "Engineer"}],
+                }))
+            source_dir = root / "output" / "sources"
+            source_dir.mkdir(parents=True)
+            for name in ("linkedin", "indeed", "glassdoor"):
+                source_dir.joinpath(f"{name}.json").write_text(json.dumps({"jobs": [{}]}))
+
+            for failures, expected in ((1, "Healthy"), (2, "Healthy"), (3, "Warning")):
+                with self.subTest(failures=failures):
+                    source_dir.joinpath("health.json").write_text(json.dumps({"sources": {
+                        "linkedin": {
+                            "healthy": False, "required": True, "status": "partial",
+                            "reason": "blocked with HTTP 429", "last_attempt_at": now.isoformat(),
+                            "last_success_at": now.isoformat(), "last_partial_at": now.isoformat(),
+                            "consecutive_failures": failures,
+                        },
+                        "indeed": {"healthy": True, "required": True, "last_success_at": now.isoformat()},
+                        "glassdoor": {
+                            "healthy": False, "required": False, "status": "skipped_unavailable",
+                            "reason": "HTTP 403", "last_attempt_at": now.isoformat(),
+                            "last_success_at": now.isoformat(), "consecutive_failures": 10,
+                        },
+                    }}))
+                    report, _history = pipeline_health.build(root, now)
+                    self.assertEqual(expected, report["components"]["linkedin"]["status"])
+                    self.assertEqual("Healthy", report["components"]["board"]["status"])
+                    self.assertEqual("Healthy", report["overall"])
+                    self.assertIn("scraper errors", report["components"]["board"]["keywords"])
+
+    def test_syncareer_low_volume_requires_two_consecutive_runs(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            now = datetime(2026, 9, 22, 12, tzinfo=timezone.utc)
+            for _key, (_label, folder, store_name) in pipeline_health.PIPELINES.items():
+                out = root / "output" / folder
+                out.mkdir(parents=True)
+                out.joinpath(store_name).write_text(json.dumps({
+                    "updated_at": now.isoformat(), "entries": [{"company": "Example", "title": "Engineer"}],
+                }))
+            source_dir = root / "output" / "sources"
+            source_dir.mkdir(parents=True)
+            source_dir.joinpath("health.json").write_text(json.dumps({"sources": {
+                name: {"healthy": True, "last_success_at": now.isoformat()}
+                for name in ("linkedin", "indeed", "glassdoor")
+            }}))
+            for name in ("linkedin", "indeed", "glassdoor"):
+                source_dir.joinpath(f"{name}.json").write_text(json.dumps({"jobs": [{}]}))
+
+            syncareer = root / "output" / "syncareer"
+            current = {"run_at": now.isoformat(), "mode": "pipeline", "health": "success", "output": {"shown": 2}}
+            syncareer.joinpath("latest_stats.json").write_text(json.dumps(current))
+            for previous, expected in ((8, "Healthy"), (3, "Warning")):
+                with self.subTest(previous=previous):
+                    runs = [current, {
+                        "run_at": (now - timedelta(hours=12)).isoformat(), "mode": "pipeline",
+                        "health": "success", "output": {"shown": previous},
+                    }, *[{
+                        "run_at": (now - timedelta(days=index)).isoformat(), "mode": "pipeline",
+                        "health": "success", "output": {"shown": 20},
+                    } for index in range(1, 6)]]
+                    syncareer.joinpath("run_history.json").write_text(json.dumps({"runs": runs}))
+                    report, _history = pipeline_health.build(root, now)
+                    component = report["components"]["syncareer"]
+                    self.assertEqual(expected, component["status"])
+                    self.assertEqual(expected == "Warning", "low-volume" in component["keywords"])
 
     def test_legacy_zero_telemetry_is_marked_unknown_but_measured_zero_is_preserved(self) -> None:
         legacy = pipeline_health._normalize_run_telemetry({

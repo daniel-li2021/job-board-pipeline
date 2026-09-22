@@ -681,8 +681,8 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertIn("renderBox('applied',searchedRows(rows.filter(r=>statusOf(r)==='applied_complete'&&!isDeleted(r))))", dashboard.HTML_TEMPLATE)
         self.assertIn("fresh:discoveryRows(normalRows(D.fresh_24h)).length", dashboard.HTML_TEMPLATE)
         self.assertIn("rolling:discoveryRows(normalRows(D.rolling_3d)).length", dashboard.HTML_TEMPLATE)
-        self.assertIn("<span>found</span>", dashboard.HTML_TEMPLATE)
-        self.assertIn("<span>added</span>", dashboard.HTML_TEMPLATE)
+        self.assertIn("<span>usable · updated", dashboard.HTML_TEMPLATE)
+        self.assertIn("h.keywords", dashboard.HTML_TEMPLATE)
 
 
 class MatchingPolicyTests(unittest.TestCase):

@@ -114,6 +114,18 @@ def _consecutive_degraded(history: list[dict[str, Any]], pipeline: str) -> int:
     return count
 
 
+def _consecutive_low_volume(history: list[dict[str, Any]], pipeline: str, baseline: float) -> int:
+    count = 0
+    for run in (
+        item for item in history
+        if item.get("pipeline") == pipeline and item.get("mode") != "matching_retry"
+    ):
+        if int((run.get("output") or {}).get("shown", 0) or 0) >= baseline * 0.3:
+            break
+        count += 1
+    return count
+
+
 def _llm_impact(run: dict[str, Any]) -> str:
     llm = run.get("llm") or {}
     total = int(llm.get("batches_total", 0) or 0)
@@ -163,7 +175,7 @@ def _failure_summary(failures: Any) -> tuple[int, str]:
 
 
 def _official_failure_partition(base: Path, failures: Any) -> tuple[Any, list[str]]:
-    """Remove configured link-only sources from active failures and clarify LinkedIn ownership."""
+    """Remove configured limitations and the LinkedIn-company adapter from active failures."""
     if not isinstance(failures, dict):
         return failures, []
     registry = _read(base / "config" / "official_careers.json", {})
@@ -177,8 +189,7 @@ def _official_failure_partition(base: Path, failures: Any) -> tuple[Any, list[st
     limited = sorted(key for key in scrape if key in link_only)
     for key in limited:
         scrape.pop(key, None)
-    if "linkedin" in scrape:
-        scrape["linkedin_company_official_adapter"] = scrape.pop("linkedin")
+    linkedin = scrape.pop("linkedin", None)
     if scrape:
         actionable["scrape"] = scrape
     else:
@@ -186,6 +197,10 @@ def _official_failure_partition(base: Path, failures: Any) -> tuple[Any, list[st
     limitations = [
         f"Big Company Official: {len(limited)} configured link-only source(s) omitted from active failures ({', '.join(limited)})"
     ] if limited else []
+    if linkedin:
+        limitations.append(
+            "Big Company Official: linkedin_company_official_adapter failures are ignored for overall health"
+        )
     return actionable, limitations
 
 
@@ -221,27 +236,49 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         else:
             status = "Problem"
             details = ["No usable job snapshot"]
+        keywords: list[str] = []
         shown = int(run.get("output", {}).get("shown", 0) or 0)
         baseline = float(run.get("recent_shown_median", 0) or 0)
-        if status == "Healthy" and run.get("mode") != "matching_retry" and baseline >= 10 and shown < baseline * 0.3:
+        low_volume_runs = (
+            _consecutive_low_volume(history, key, baseline)
+            if key == "syncareer" and baseline >= 10 else 0
+        )
+        if status == "Healthy" and low_volume_runs >= 2:
             status = "Warning"
-            details.append(f"latest output fell to {shown} vs recent median {baseline:g}")
+            keywords.append("low-volume")
+            details.append(
+                f"output stayed low for {low_volume_runs} runs; latest {shown} vs recent median {baseline:g}"
+            )
         failures = run.get("failures") or {}
         known_limitations: list[str] = []
         if key == "official":
             failures, known_limitations = _official_failure_partition(base, failures)
             limitations.extend(known_limitations)
         failure_count, failure_detail = _failure_summary(failures)
+        scraper_error_count = len(_failure_items(failures.get("scrape"))) if key == "official" else 0
         consecutive_failures = _consecutive_degraded(history, key)
         if failure_count:
             llm_impact = _llm_impact(run)
-            if status == "Healthy" and (llm_impact or consecutive_failures >= 2):
+            if key == "official":
+                if scraper_error_count >= 10:
+                    status = "Problem"
+                elif status == "Healthy" and (scraper_error_count >= 5 or llm_impact):
+                    status = "Warning"
+                if scraper_error_count:
+                    keywords.append("scraper errors")
+            elif status == "Healthy" and (llm_impact or consecutive_failures >= 2):
                 status = "Warning"
-            qualifier = "degraded" if status == "Warning" else "had recoverable issues"
+            if "429" in (llm_impact or failure_detail) or "rate" in failure_detail.lower():
+                keywords.append("rate-limited")
+            if data_usable:
+                keywords.append("cached")
+            qualifier = "degraded" if status != "Healthy" else "had recoverable issues"
             details.append(f"latest run {qualifier}: {llm_impact or f'{failure_count} failure(s): {failure_detail}'}")
         workflow_token = {"board": "board", "official": "official", "syncareer": "syncareer"}[key]
         if workflow_conclusion and workflow_conclusion != "success" and workflow_token in workflow_name.lower():
             status = "Warning" if data_usable and data_age is not None and data_age <= 36 else "Problem"
+            if data_usable:
+                keywords.append("cached")
             details.append(f"latest workflow attempt concluded {workflow_conclusion}; last-good data remains {'usable' if data_usable else 'unusable'}")
         detail = "; ".join(details)
         components[key] = {
@@ -256,9 +293,12 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             "latest_attempt_age_hours": round(attempt_age, 1) if attempt_age is not None else None,
             "latest_attempt_status": "failed" if workflow_conclusion and workflow_conclusion != "success" and workflow_token in workflow_name.lower() else ("degraded" if failure_count else ("success" if run_stamp else "unknown")),
             "failure_count": failure_count,
+            "scraper_error_count": scraper_error_count,
             "consecutive_failures": consecutive_failures,
+            "low_volume_runs": low_volume_runs,
+            "keywords": list(dict.fromkeys(keywords)),
             "impact": _llm_impact(run) or (
-                f"latest attempt {'degraded' if status == 'Warning' else 'had recoverable issues'}; fresh last-good snapshot remains usable"
+                f"latest attempt {'degraded' if status != 'Healthy' else 'had recoverable issues'}; fresh last-good snapshot remains usable"
                 if failure_count and data_usable else ""
             ),
             "known_limitations": known_limitations,
@@ -299,15 +339,16 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         if not data_usable:
             status = "Problem" if state.get("required", source != "glassdoor") else "Warning"
         elif age is None:
-            status = "Warning"  # rows exist but no complete collection on record
+            status = "Healthy" if source == "linkedin" and partial_age is not None else "Warning"
         elif age > 12:
             status = "Stale"
-        elif age > 6:
+        elif age > 6 and source != "linkedin":
             status = "Warning"
         else:
             status = "Healthy"
         consecutive_failures = int(state.get("consecutive_failures", 1 if attempt_failed else 0) or 0)
-        if attempt_failed and consecutive_failures >= 2:
+        failure_threshold = 3 if source == "linkedin" else 2
+        if status == "Healthy" and attempt_failed and consecutive_failures >= failure_threshold:
             status = "Warning"
         verified_age = f"{age:.1f}h old" if age is not None else "never fully verified"
         details = [
@@ -339,10 +380,10 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             snapshot.get("meta", {}).get("detail_enrichment", {}) if isinstance(snapshot, dict) else {}
         )
         degradation_kinds: list[str] = []
+        keywords = []
         if is_partial:
             degradation_kinds.append("rate_limited_partial_collection")
-            if status == "Healthy":
-                status = "Warning"
+            keywords.extend(("partial", "rate-limited", "cached"))
             limitations.append(
                 f"{'LinkedIn (local/general)' if source == 'linkedin' else source.title()}: rate-limited partial "
                 f"collection; {last_good_count} jobs usable "
@@ -356,6 +397,8 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             if blocked:
                 degradation_kinds.append("detail_enrichment_blocked")
                 details.append(f"primary detail enrichment blocked: {blocked}")
+                if "429" in blocked or "rate" in blocked.lower():
+                    keywords.append("rate-limited")
             if scrapling_requests:
                 details.append(f"Scrapling fallback recovered {scrapling_resolved}/{scrapling_requests} attempted JDs")
             if enrichment.get("scrapling_error"):
@@ -364,12 +407,7 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             if remaining:
                 degradation_kinds.append("missing_descriptions")
                 details.append(f"{remaining} discovered records remain without a JD")
-            recovery_ratio = scrapling_resolved / scrapling_requests if scrapling_requests else 0.0
-            material_missing = remaining >= max(10, round(last_good_count * 0.05))
-            poor_recovery = bool(blocked) and (not scrapling_requests or recovery_ratio < 0.9)
-            if (enrichment.get("scrapling_error") or poor_recovery or material_missing) and status == "Healthy":
-                status = "Warning"
-            elif blocked or remaining:
+            if blocked or remaining:
                 limitations.append(
                     f"LinkedIn (local/general): recovered detail limitation; Scrapling resolved "
                     f"{scrapling_resolved}/{scrapling_requests}, {remaining} JD(s) remain"
@@ -381,8 +419,12 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                     f"LinkedIn detail cooldown after {int(state.get('detail_429_streak', 0) or 0)} "
                     f"consecutive 429 runs; next probe after {cooldown_until}"
                 )
-                if status == "Healthy":
-                    status = "Warning"
+                keywords.append("rate-limited")
+        if attempt_failed and data_usable:
+            keywords.extend(("cached", "scraper errors"))
+            reason = str(state.get("reason") or "")
+            if "429" in reason or "rate" in reason.lower():
+                keywords.append("rate-limited")
         query_stats = list(state.get("query_stats") or [])
         static_fallbacks = sum(str(item.get("stop_reason") or "") == "static_html_fallback" for item in query_stats)
         if static_fallbacks:
@@ -412,6 +454,7 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             "partial_carried_count": int(state.get("partial_carried_count", 0) or 0),
             "degradation_kinds": degradation_kinds,
             "consecutive_failures": consecutive_failures,
+            "keywords": list(dict.fromkeys(keywords)),
             "impact": (
                 f"partial collection ({state.get('reason') or 'HTTP 429'}); {last_good_count} jobs usable, "
                 f"last full collection {verified_age}"
@@ -422,15 +465,10 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             ),
         }
 
-    board_statuses = [components[name]["status"] for name in ("linkedin", "indeed", "glassdoor")]
-    if components["board"]["status"] == "Healthy" and any(status != "Healthy" for status in board_statuses):
-        components["board"]["status"] = "Warning"
-        affected = [
-            f"{name}={components[name]['status']} ({components[name]['detail']})"
-            for name in ("linkedin", "indeed", "glassdoor")
-            if components[name]["status"] != "Healthy"
-        ]
-        components["board"]["detail"] += "; local inputs: " + "; ".join(affected)
+    components["board"]["keywords"] = list(dict.fromkeys([
+        *components["board"]["keywords"],
+        *(keyword for name in ("linkedin", "indeed", "glassdoor") for keyword in components[name]["keywords"]),
+    ]))
 
     for item in components.values():
         summary = f"{item['label']}: {item['detail']}"
@@ -439,7 +477,7 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         elif item["status"] == "Warning":
             degradations.append(summary)
 
-    overall = max((item["status"] for item in components.values()), key=SEVERITY.get)
+    overall = max((components[name]["status"] for name in PIPELINES), key=SEVERITY.get)
     report = {
         "generated_at": now.isoformat(),
         "overall": overall,
