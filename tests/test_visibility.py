@@ -838,7 +838,7 @@ class MatchingPolicyTests(unittest.TestCase):
             )
             self.assertEqual(2, call.call_count)
             self.assertEqual(1, second_counts["llm"])
-            self.assertEqual("gpt-5.6-terra", second["score_model"])
+            self.assertEqual("gpt-6-luna", second["score_model"])
 
             changed = job("Build Java distributed systems and streaming services. " * 10)
             board_pipeline.score_survivors([changed], {}, profiles, cached, True)

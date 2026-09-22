@@ -270,7 +270,7 @@ class LlmMatchingTests(unittest.TestCase):
             [job],
             {"candidate": "candidate", "resume_swe": full_resume, "resume_ai": "AI RESUME"},
             "test-key",
-            "gpt-5.6-terra",
+            "gpt-6-luna",
             "resume_swe",
         )
         sent = post.call_args.kwargs["json"]
@@ -303,7 +303,9 @@ class LlmMatchingTests(unittest.TestCase):
             "output_tokens": 100_000,
         }
         self.assertAlmostEqual(2.84, llm_config.estimate_cost_usd(usage))
-        self.assertEqual("gpt-5.6-terra", llm_config.DEFAULT_MODEL)
+        luna_usage = {**usage, "model": "gpt-6-luna"}
+        self.assertAlmostEqual(0.132, llm_config.estimate_cost_usd(luna_usage))
+        self.assertEqual("gpt-6-luna", llm_config.DEFAULT_MODEL)
         base = {"recency_bucket": "1to3d", "tier": "B", "seniority_fit": "good"}
         high_quality = {**base, "match_score": 78, "date_confidence": "low"}
         high_confidence = {**base, "match_score": 71, "date_confidence": "high"}

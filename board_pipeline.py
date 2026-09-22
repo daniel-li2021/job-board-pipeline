@@ -1311,7 +1311,7 @@ def llm_match_batch(
             {"role": "user", "content": json.dumps({"jobs": jobs_payload}, separators=(",", ":"))},
         ],
     }
-    if model.startswith("gpt-5.6"):
+    if model.startswith(("gpt-5.6", "gpt-6")):
         static_message["content"] = [{
             "type": "text",
             "text": static_text,

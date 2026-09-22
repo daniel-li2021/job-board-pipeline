@@ -265,7 +265,9 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                 elif status == "Healthy" and (scraper_error_count >= 5 or llm_impact):
                     status = "Warning"
                 if scraper_error_count:
-                    keywords.append("scraper errors")
+                    scraper_summary = f"{scraper_error_count} scraper failure{'s' if scraper_error_count != 1 else ''}"
+                    keywords.append(scraper_summary)
+                    details.append(scraper_summary)
             elif status == "Healthy" and (llm_impact or consecutive_failures >= 2):
                 status = "Warning"
             if "429" in (llm_impact or failure_detail) or "rate" in failure_detail.lower():

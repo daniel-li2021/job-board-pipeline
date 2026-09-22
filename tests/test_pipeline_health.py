@@ -368,7 +368,7 @@ class PipelineHealthTests(unittest.TestCase):
                 source_dir.joinpath(f"{name}.json").write_text(json.dumps({"jobs": [{}]}))
 
             official_stats = root / "output" / "official_careers" / "latest_stats.json"
-            for count, expected in ((4, "Healthy"), (5, "Warning"), (9, "Warning"), (10, "Problem")):
+            for count, expected in ((2, "Healthy"), (4, "Healthy"), (5, "Warning"), (9, "Warning"), (10, "Problem")):
                 with self.subTest(count=count):
                     official_stats.write_text(json.dumps({
                         "run_at": now.isoformat(), "output": {"shown": 20},
@@ -381,7 +381,8 @@ class PipelineHealthTests(unittest.TestCase):
                     official = report["components"]["official"]
                     self.assertEqual(expected, official["status"])
                     self.assertEqual(count, official["scraper_error_count"])
-                    self.assertIn("scraper errors", official["keywords"])
+                    self.assertIn(f"{count} scraper failures", official["keywords"])
+                    self.assertIn(f"{count} scraper failures", official["detail"])
                     self.assertIn("rate-limited", official["keywords"])
                     self.assertEqual(expected, report["overall"])
 
