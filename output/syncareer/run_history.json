@@ -2,6 +2,1213 @@
   "runs": [
     {
       "pipeline": "syncareer",
+      "run_at": "2026-09-22T15:13:32.794614+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 52,
+      "cache_reused": 19,
+      "peer_reused": 0,
+      "same_content_reused": 0,
+      "non_material_change_reused": 0,
+      "new_or_changed": 52,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 52
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 0,
+      "requests": 7,
+      "input_tokens": 83362,
+      "cached_input_tokens": 8277,
+      "output_tokens": 6747,
+      "reasoning_tokens": 1894,
+      "estimated_usd": 0.232789,
+      "latency_seconds": 97.122,
+      "latency_measured": true,
+      "effective_rpm": 4.32,
+      "effective_tpm": 55667.51,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 7,
+      "primary_batches_total": 7,
+      "batches_attempted": 7,
+      "batches_succeeded": 7,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 52,
+      "funnel": {
+        "scoring_candidates": 71
+      },
+      "output": {
+        "tier_a": 4,
+        "tier_b": 2,
+        "tier_c": 65,
+        "shown": 6,
+        "new_jobs": 90,
+        "new_jobs_added": 5
+      },
+      "enrichment": {
+        "needed": 2,
+        "detail_api_resolved": 116,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 2
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-golang-aws/1732/100938343168",
+              "company": "Capital One",
+              "title": "Full-Stack Engineer 4 (Golang, AWS)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/100959416032",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/richmond/full-stack-engineer-4/1732/100966268176",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-typescript-vue-aws/1732/100959430576",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4 (Typescript, Vue, AWS)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-java-python-javascript/1732/100959430544",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4 (Java, Python, JavaScript)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-java-python-aws/1732/100959430528",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4 (Java, Python, AWS)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-typescript-vue-aws/1732/100959430464",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4 (Typescript, Vue, AWS)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/100959416432",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-java-aws/1732/100959416368",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 4 (Java, AWS)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4/1732/100959416304",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 15.76,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 14531,
+            "cached_input_tokens": 0,
+            "output_tokens": 1068,
+            "reasoning_tokens": 209,
+            "estimated_usd": 0.041878
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-golang-aws/1732/100938343168",
+              "match_score": 49.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production delivery",
+                "AWS container deployment"
+              ],
+              "main_gaps": [
+                "4 years non-internship experience",
+                "technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/100959416032",
+              "match_score": 51.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production delivery",
+                "microservices and cloud"
+              ],
+              "main_gaps": [
+                "4 years non-internship experience",
+                "technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/richmond/full-stack-engineer-4/1732/100966268176",
+              "match_score": 51.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production delivery",
+                "microservices and cloud"
+              ],
+              "main_gaps": [
+                "4 years non-internship experience",
+                "technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-typescript-vue-aws/1732/100959430576",
+              "match_score": 53.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "TypeScript React applications",
+                "AWS container deployment"
+              ],
+              "main_gaps": [
+                "4 years non-internship experience",
+                "technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-java-python-javascript/1732/100959430544",
+              "match_score": 53.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python JavaScript backend",
+                "full-stack production delivery"
+              ],
+              "main_gaps": [
+                "4 years non-internship experience",
+                "technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-java-python-aws/1732/100959430528",
+              "match_score": 53.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python backend services",
+                "AWS container deployment"
+              ],
+              "main_gaps": [
+                "4 years non-internship experience",
+                "technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-typescript-vue-aws/1732/100959430464",
+              "match_score": 53.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "TypeScript React applications",
+                "AWS container deployment"
+              ],
+              "main_gaps": [
+                "4 years non-internship experience",
+                "technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/100959416432",
+              "match_score": 51.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production delivery",
+                "microservices and cloud"
+              ],
+              "main_gaps": [
+                "4 years non-internship experience",
+                "technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-java-aws/1732/100959416368",
+              "match_score": 52.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java Python services",
+                "AWS container deployment"
+              ],
+              "main_gaps": [
+                "4 years non-internship experience",
+                "technical leadership scope"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4/1732/100959416304",
+              "match_score": 51.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production delivery",
+                "microservices and cloud"
+              ],
+              "main_gaps": [
+                "4 years non-internship experience",
+                "technical leadership scope"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-python-java-aws/1732/100950788320",
+              "company": "Capital One",
+              "title": "Full-Stack Engineer 4 (Python, Java, AWS)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4/1732/100950788304",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/richmond/full-stack-engineer-4/1732/100950788208",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/richmond/full-stack-engineer-4/1732/100950230784",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/100950230080",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4/1732/100950229920",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4-python-typescript/1732/100950229792",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4 (Python, Typescript)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/100950229600",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/100950228464",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4/1732/100950228016",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 4"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 12.625,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 15398,
+            "cached_input_tokens": 1851,
+            "output_tokens": 1040,
+            "reasoning_tokens": 228,
+            "estimated_usd": 0.039944
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-python-java-aws/1732/100950788320",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production systems",
+                "AWS Docker CI/CD"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "technical team leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4/1732/100950788304",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production systems",
+                "distributed backend services"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "technical team leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/richmond/full-stack-engineer-4/1732/100950788208",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production systems",
+                "distributed backend services"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "technical team leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/richmond/full-stack-engineer-4/1732/100950230784",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production systems",
+                "distributed backend services"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "technical team leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/100950230080",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production systems",
+                "distributed backend services"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "technical team leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4/1732/100950229920",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production systems",
+                "distributed backend services"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "technical team leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4-python-typescript/1732/100950229792",
+              "match_score": 45.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python TypeScript full-stack",
+                "AWS Docker CI/CD"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "technical team leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/100950229600",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production systems",
+                "distributed backend services"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "technical team leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/100950228464",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack production systems",
+                "distributed backend services"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "technical team leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4/1732/100950228016",
+              "match_score": 44.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "CI/CD deployment automation",
+                "full-stack developer tooling"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "technical team leadership"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://careers.ibm.com/en_US/careers/JobDetail?jobId=133804",
+              "company": "IBM",
+              "title": "Entry Level Software Developer-Tucson-AZ"
+            },
+            {
+              "key": "url::https://veradigm.wd12.myworkdayjobs.com/en-US/VR/job/Raleigh-NC/DevOps-Engineer_JR10932?locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+              "company": "Veradigm",
+              "title": "DevOps Engineer"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-2/1732/100959416224",
+              "company": "Capital One",
+              "title": "Full-Stack Engineer 2"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/chicago/full-stack-engineer-4/1732/100959416176",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://insulet.wd5.myworkdayjobs.com/en-US/insuletcareers/job/Acton-Massachusetts/Software-Engineer_REQ-2026-18386?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db",
+              "company": "Insulet Corporation",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/71009?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000425727%253B300000000425151%253B300000000425265%253B300000000425079",
+              "company": "Ford Motor Company",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://jacksonhealthcare.wd1.myworkdayjobs.com/en-US/careers-jacksonhealthcare/job/Nashville-Tennessee/Software-Engineer-II_JR109280-2",
+              "company": "Jackson Healthcare",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://careers.toyota.com/us/en/job/10336396/Data-Platform-Engineer",
+              "company": "Toyota",
+              "title": "Data Platform Engineer"
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556995318",
+              "company": "Microsoft",
+              "title": "Data Engineer II- Windows Servicing & Delivery Update Platform team"
+            },
+            {
+              "key": "url::https://epitec.com/jobs-at-epitec-careerportaldomainroot/computer-support-associate-i-infrastructure-107029",
+              "company": "Epitec",
+              "title": "Computer Support Associate I – Infrastructure"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 17.179,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 13828,
+            "cached_input_tokens": 1851,
+            "output_tokens": 1240,
+            "reasoning_tokens": 295,
+            "estimated_usd": 0.039204
+          },
+          "decisions": [
+            {
+              "key": "url::https://careers.ibm.com/en_US/careers/JobDetail?jobId=133804",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "REST microservices delivery",
+                "AWS Docker CI/CD"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://veradigm.wd12.myworkdayjobs.com/en-US/VR/job/Raleigh-NC/DevOps-Engineer_JR10932?locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Terraform Docker CI/CD",
+                "Python backend automation"
+              ],
+              "main_gaps": [
+                "Azure infrastructure",
+                "C# .NET development"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-2/1732/100959416224",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production full-stack applications",
+                "Cloud APIs CI/CD"
+              ],
+              "main_gaps": [
+                "1.5 years professional experience"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/chicago/full-stack-engineer-4/1732/100959416176",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack cloud experience",
+                "Distributed API services"
+              ],
+              "main_gaps": [
+                "4 years professional experience",
+                "Technical leadership experience"
+              ]
+            },
+            {
+              "key": "url::https://insulet.wd5.myworkdayjobs.com/en-US/insuletcareers/job/Acton-Massachusetts/Software-Engineer_REQ-2026-18386?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db",
+              "match_score": 22.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming",
+                "Software testing experience"
+              ],
+              "main_gaps": [
+                "Embedded systems experience",
+                "5 years relevant experience"
+              ]
+            },
+            {
+              "key": "url::https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/71009?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000425727%253B300000000425151%253B300000000425265%253B300000000425079",
+              "match_score": 55.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React API development",
+                "Microservices cloud delivery"
+              ],
+              "main_gaps": [
+                "3 years Java Spring",
+                "3 years experience"
+              ]
+            },
+            {
+              "key": "url::https://jacksonhealthcare.wd1.myworkdayjobs.com/en-US/careers-jacksonhealthcare/job/Nashville-Tennessee/Software-Engineer-II_JR109280-2",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack production features",
+                "Testing CI/CD APIs"
+              ],
+              "main_gaps": [
+                "2 years professional experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.toyota.com/us/en/job/10336396/Data-Platform-Engineer",
+              "match_score": 69.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python data pipelines",
+                "AWS Docker Kubernetes"
+              ],
+              "main_gaps": [
+                "Snowflake experience",
+                "2 years relevant experience"
+              ]
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556995318",
+              "match_score": 87.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Data pipeline reliability",
+                "Quality evaluation metrics"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://epitec.com/jobs-at-epitec-careerportaldomainroot/computer-support-associate-i-infrastructure-107029",
+              "match_score": 48.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Linux troubleshooting",
+                "Technical documentation"
+              ],
+              "main_gaps": [
+                "Desktop support experience",
+                "Hardware asset management"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://ffive.wd5.myworkdayjobs.com/en-US/f5jobs/job/Seattle/Systems-Platform-Admin-I_RP1038803?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+              "company": "F5",
+              "title": "Systems/Platform Admin I"
+            },
+            {
+              "key": "url::https://careers.ibm.com/en_US/careers/JobDetail?jobId=132819",
+              "company": "IBM",
+              "title": "Entry Level Site Reliability Engineering Professional - Austin, TX - 2027"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 6.095,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 4574,
+            "cached_input_tokens": 1851,
+            "output_tokens": 399,
+            "reasoning_tokens": 86,
+            "estimated_usd": 0.010604
+          },
+          "decisions": [
+            {
+              "key": "url::https://ffive.wd5.myworkdayjobs.com/en-US/f5jobs/job/Seattle/Systems-Platform-Admin-I_RP1038803?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+              "match_score": 38.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "technical troubleshooting background",
+                "cloud deployment experience"
+              ],
+              "main_gaps": [
+                "F5 Summer 2026 internship",
+                "desktop support administration"
+              ]
+            },
+            {
+              "key": "url::https://careers.ibm.com/en_US/careers/JobDetail?jobId=132819",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "cloud reliability engineering",
+                "Python Linux automation"
+              ],
+              "main_gaps": [
+                "network device administration"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 5,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/machine-learning-engineer-4-python-aws-sql-genai-enterprise-platforms-technology/1732/100963429632",
+              "company": "Capital One",
+              "title": "Machine Learning Engineer 4 (Python, AWS, SQL, GenAI) (Enterprise Platforms Technology)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/machine-learning-engineer-4-python-aws-sql-genai-enterprise-platforms-technology/1732/100963429088",
+              "company": "Capital One",
+              "title": "Machine Learning Engineer 4 (Python, AWS, SQL, GenAI) (Enterprise Platforms Technology)"
+            },
+            {
+              "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26013923?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
+              "company": "American Express",
+              "title": "AI Engineer II - Enterprise Architecture"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.558,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 6190,
+            "cached_input_tokens": 0,
+            "output_tokens": 297,
+            "reasoning_tokens": 0,
+            "estimated_usd": 0.015944
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/machine-learning-engineer-4-python-aws-sql-genai-enterprise-platforms-technology/1732/100963429632",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "production LLM systems",
+                "AWS Spark Kubernetes"
+              ],
+              "main_gaps": [
+                "4+ years ML experience",
+                "4+ years distributed systems"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/machine-learning-engineer-4-python-aws-sql-genai-enterprise-platforms-technology/1732/100963429088",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "production LLM systems",
+                "AWS Spark Kubernetes"
+              ],
+              "main_gaps": [
+                "4+ years ML experience",
+                "4+ years distributed systems"
+              ]
+            },
+            {
+              "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26013923?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "agentic AI production",
+                "RAG evaluation infrastructure"
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 6,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-enterprise-ci-cd-aws-python-groovy/1732/100959430176",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 4, Enterprise CI/CD (AWS, Python, Groovy)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-enterprise-ci-cd-aws-python-groovy/1732/100959416320",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 4, Enterprise CI/CD (AWS, Python, Groovy"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/cambridge/full-stack-engineer-4/1732/100950227936",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/chicago/machine-learning-engineer-4/1732/100950230736",
+              "company": "Capital One",
+              "title": "Machine Learning Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/machine-learning-engineer-4/1732/100950230608",
+              "company": "Capital One",
+              "title": "Machine Learning Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4-java-scala-aws/1732/100950230384",
+              "company": "Capital One",
+              "title": "Machine Learning Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/richmond/data-engineer-4-python-aws/1732/100959430640",
+              "company": "Capital One",
+              "title": "Data Engineer 4 (Python, AWS)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/data-engineer-4-risk-tech/1732/100950788176",
+              "company": "Capital One",
+              "title": "Data Engineer 4 (Risk Tech)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-people-tech-genai-and-agentic-systems-langchain-langgraph/1732/100959429632",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 4- People Tech- GenAI & Agentic Systems (LangChain, LangGraph)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/ai-engineer-4/1732/100959416080",
+              "company": "Capital One",
+              "title": "AI Engineer 4"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 20.627,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 16414,
+            "cached_input_tokens": 0,
+            "output_tokens": 1315,
+            "reasoning_tokens": 455,
+            "estimated_usd": 0.048608
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-enterprise-ci-cd-aws-python-groovy/1732/100959430176",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "AWS CI/CD deployment",
+                "backend platform engineering"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "technical leadership mentorship"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-enterprise-ci-cd-aws-python-groovy/1732/100959416320",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "AWS CI/CD deployment",
+                "backend platform engineering"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "technical leadership mentorship"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/cambridge/full-stack-engineer-4/1732/100950227936",
+              "match_score": 45.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "full-stack cloud applications",
+                "distributed services testing"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "team technical leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/chicago/machine-learning-engineer-4/1732/100950230736",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "production AI systems",
+                "Spark Databricks pipelines"
+              ],
+              "main_gaps": [
+                "4 years ML experience",
+                "large-scale ML operations"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/machine-learning-engineer-4/1732/100950230608",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "production AI systems",
+                "Spark Databricks pipelines"
+              ],
+              "main_gaps": [
+                "4 years ML experience",
+                "large-scale ML operations"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4-java-scala-aws/1732/100950230384",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "production AI systems",
+                "Spark Databricks pipelines"
+              ],
+              "main_gaps": [
+                "4 years ML experience",
+                "large-scale ML operations"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/richmond/data-engineer-4-python-aws/1732/100959430640",
+              "match_score": 46.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Spark Databricks workflows",
+                "Python data ingestion"
+              ],
+              "main_gaps": [
+                "4 years application development",
+                "data platform leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/data-engineer-4-risk-tech/1732/100950788176",
+              "match_score": 51.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "RAG retrieval pipelines",
+                "Spark Databricks workflows"
+              ],
+              "main_gaps": [
+                "4 years application development",
+                "data platform leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-people-tech-genai-and-agentic-systems-langchain-langgraph/1732/100959429632",
+              "match_score": 58.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "LangChain LangGraph agents",
+                "production RAG systems"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "enterprise technical leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/ai-engineer-4/1732/100959416080",
+              "match_score": 56.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "agentic AI systems",
+                "LLM inference evaluation"
+              ],
+              "main_gaps": [
+                "senior AI architecture",
+                "large-scale AI infrastructure"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 7,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/cambridge/ai-engineer-4-ai-foundations/1732/100950229680",
+              "company": "Capital One",
+              "title": "AI Engineer 4 (AI Foundations)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/applied-researcher-4-ai-foundations-llm-optimization-and-finetuning/1732/100950229232",
+              "company": "Capital One",
+              "title": "Applied Researcher 4 (AI Foundations - LLM, Optimization and Finetuning)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/ai-engineer-4-ai-foundations-llm-core-and-agentic-ai/1732/100950226896",
+              "company": "Capital One",
+              "title": "AI Engineer 4 (AI Foundations, LLM Core and Agentic AI)"
+            },
+            {
+              "key": "url::https://thehartford.wd5.myworkdayjobs.com/en-US/Careers_External/job/Charlotte-NC/DevOps-Software-Engineer_R2626159?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea",
+              "company": "The Hartford",
+              "title": "DevOps Software Engineer"
+            },
+            {
+              "key": "url::https://www.jobs.global.fujitsu.com/job/Software-Engineering-Fall-Co-Op-1Finity/12573-en_US",
+              "company": "Fujitsu",
+              "title": "Software Engineering Fall Co Op - 1Finity"
+            },
+            {
+              "key": "url::https://careers.equifax.com/en/jobs/j00178092/generative-ai-engineer-qa-engineer",
+              "company": "Equifax",
+              "title": "Generative AI Engineer / QA Engineer"
+            },
+            {
+              "key": "url::https://uhaul.wd1.myworkdayjobs.com/en-US/UhaulJobs/job/Phoenix-Arizona/Software-Developer---Core-Services_R256015?jobFamilyGroup=81586da719a0012db7c8e8630633bf1f&jobFamilyGroup=2a5762831a2b0106f511965ca101a8d9&jobFamilyGroup=81586da719a001e988e2ca630633ab1f",
+              "company": "U-Haul",
+              "title": "Software Developer - Core Services"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 20.278,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 7,
+            "input_tokens": 12427,
+            "cached_input_tokens": 2724,
+            "output_tokens": 1388,
+            "reasoning_tokens": 621,
+            "estimated_usd": 0.036607
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/cambridge/ai-engineer-4-ai-foundations/1732/100950229680",
+              "match_score": 54.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production LLM systems",
+                "RAG evaluation and observability"
+              ],
+              "main_gaps": [
+                "senior AI architecture leadership",
+                "four years AI experience"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/applied-researcher-4-ai-foundations-llm-optimization-and-finetuning/1732/100950229232",
+              "match_score": 46.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "QLoRA LLM fine-tuning",
+                "LLM evaluation platform"
+              ],
+              "main_gaps": [
+                "PhD or two research years",
+                "large-scale foundation model training"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/ai-engineer-4-ai-foundations-llm-core-and-agentic-ai/1732/100950226896",
+              "match_score": 55.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "agentic RAG systems",
+                "production inference optimization"
+              ],
+              "main_gaps": [
+                "senior AI architecture leadership",
+                "four years AI experience"
+              ]
+            },
+            {
+              "key": "url::https://thehartford.wd5.myworkdayjobs.com/en-US/Careers_External/job/Charlotte-NC/DevOps-Software-Engineer_R2626159?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea",
+              "match_score": 59.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "AWS ECS CI/CD deployment",
+                "Terraform Docker Kubernetes"
+              ],
+              "main_gaps": [
+                "three post-baccalaureate years",
+                "senior DevOps mentorship"
+              ]
+            },
+            {
+              "key": "url::https://www.jobs.global.fujitsu.com/job/Software-Engineering-Fall-Co-Op-1Finity/12573-en_US",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Python C++ Linux",
+                "CI/CD and Docker"
+              ],
+              "main_gaps": [
+                "embedded systems experience",
+                "optical networking experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.equifax.com/en/jobs/j00178092/generative-ai-engineer-qa-engineer",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "production RAG pipelines",
+                "LLM evaluation and fine-tuning"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://uhaul.wd1.myworkdayjobs.com/en-US/UhaulJobs/job/Phoenix-Arizona/Software-Developer---Core-Services_R256015?jobFamilyGroup=81586da719a0012db7c8e8630633bf1f&jobFamilyGroup=2a5762831a2b0106f511965ca101a8d9&jobFamilyGroup=81586da719a001e988e2ca630633ab1f",
+              "match_score": 69.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "scalable REST services",
+                "SQL PostgreSQL distributed systems"
+              ],
+              "main_gaps": [
+                "Kafka event-stream experience",
+                "NET C# Azure stack"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
       "run_at": "2026-09-22T00:11:43.109728+00:00",
       "mode": "pipeline",
       "health": "success",
