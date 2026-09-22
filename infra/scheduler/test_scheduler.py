@@ -63,8 +63,12 @@ class SchedulerTests(unittest.TestCase):
         self.assertIn("LocalSourceSchedule:", template)
         self.assertNotIn("BoardSchedule:", template)
         self.assertIn("ScheduleExpression: cron(0 8,11,14,17 * * ? *)", template)
-        self.assertIn("America/Los_Angeles", template)
+        self.assertIn("ScheduleExpression: cron(50 7,16 * * ? *)", template)
+        self.assertIn("ScheduleExpression: cron(30 7,16 * * ? *)", template)
+        self.assertEqual(3, template.count("ScheduleExpressionTimezone: America/Los_Angeles"))
         self.assertIn('Input: \'{"workflow":"local-sources.yml"', template)
+        self.assertIn('Input: \'{"workflow":"daily-jobs.yml"', template)
+        self.assertIn('Input: \'{"workflow":"official-careers.yml"', template)
 
 
 if __name__ == "__main__":

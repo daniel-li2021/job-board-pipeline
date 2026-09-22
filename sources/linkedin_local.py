@@ -45,6 +45,8 @@ POLITE_SLEEP_SECONDS = 1.2
 DETAIL_CACHE_DAYS = 14
 DETAIL_SLEEP_SECONDS = 0.4
 DETAIL_RETRY_HOURS = 24
+SEARCH_PAGE_LIMIT = 12
+SEARCH_QUERY_PAGE_LIMIT = 2
 
 
 def _make_session() -> requests.Session:
@@ -178,8 +180,8 @@ def _scrapling_fetch_html(url: str) -> tuple[str, int | None, str]:
     return html, status, ""
 
 
-def _fresh_cached_detail(previous: Dict[str, Any], row: Dict[str, Any], now: datetime) -> bool:
-    if not previous.get("description"):
+def _fresh_cached_detail(previous: Dict[str, Any], row: Dict[str, Any], now: datetime, min_description_chars: int = 1) -> bool:
+    if len(str(previous.get("description") or "").strip()) < min_description_chars:
         return False
     if normalize_space(previous.get("title")) != normalize_space(row.get("title")):
         return False
@@ -201,6 +203,7 @@ def enrich_details(
     session: requests.Session | None = None,
     allow_requests: bool = True,
     request_limit: int | None = None,
+    min_description_chars: int = 1,
 ) -> Dict[str, Any]:
     """Hydrate every unresolved LinkedIn row with the logged-out full JD.
 
@@ -245,13 +248,13 @@ def enrich_details(
     pending: List[Dict[str, Any]] = []
 
     for row in rows:
-        if row.get("description"):
+        if len(str(row.get("description") or "").strip()) >= min_description_chars:
             stats["jds_resolved"] += 1
             if row.get("application_url"):
                 stats["external_apply_urls"] += 1
             continue
         prior = previous_by_id.get(str(row.get("job_id") or ""))
-        if prior and _fresh_cached_detail(prior, row, now):
+        if prior and _fresh_cached_detail(prior, row, now, min_description_chars):
             row["description"] = prior.get("description", "")
             if prior.get("application_url"):
                 row["application_url"] = prior["application_url"]
@@ -369,7 +372,7 @@ def enrich_details(
             method = "linkedin_http"
 
         row["linkedin_detail_fetched_at"] = now.isoformat()
-        if detail["description"]:
+        if len(str(detail["description"] or "").strip()) >= min_description_chars:
             row["description"] = detail["description"]
             row["linkedin_detail_resolved"] = True
             row["enrichment_method"] = method
@@ -403,6 +406,9 @@ def enrich_details(
 def scrape(
     keywords: List[str] | None = None,
     session: requests.Session | None = None,
+    *,
+    query_cursor: int = 0,
+    page_limit: int = SEARCH_PAGE_LIMIT,
 ) -> Dict[str, Any]:
     """Return LinkedIn job rows. Raises SourceUnavailable on anti-bot/network."""
     session = session or _make_session()
@@ -410,15 +416,24 @@ def scrape(
     if keywords:
         wanted = set(keywords)
         specs = [spec for spec in specs if spec[1] in wanted]
+    if specs:
+        offset = query_cursor % len(specs)
+        specs = specs[offset:] + specs[:offset]
     seen: set[str] = set()
     by_key: Dict[str, Dict[str, str]] = {}
     rows: List[Dict[str, str]] = []
     stats: List[Dict[str, object]] = []
+    requests_made = 0
+    responses = 0
+    pages_fetched = 0
     for index, (group, keyword, page_budget) in enumerate(specs):
-        stat = query_stat(keyword, group, page_budget)
+        stat = query_stat(keyword, group, min(page_budget, SEARCH_QUERY_PAGE_LIMIT))
         started = time.monotonic()
         query_seen: set[str] = set()
-        for page in range(page_budget):
+        for page in range(min(page_budget, SEARCH_QUERY_PAGE_LIMIT)):
+            if requests_made >= page_limit:
+                stat["stop_reason"] = "global_page_budget"
+                break
             params = {
                 "keywords": keyword,
                 "location": "United States",
@@ -428,6 +443,7 @@ def scrape(
                 "start": page * PAGE_SIZE,
             }
             try:
+                requests_made += 1
                 resp = session.get(GUEST_SEARCH_URL, params=params, timeout=REQUEST_TIMEOUT)
             except requests.RequestException as exc:
                 stat["stop_reason"] = "network_error"
@@ -438,8 +454,10 @@ def scrape(
                     "status": "blocked", "reason": f"network error: {exc}", "jobs": rows,
                     "query_stats": stats, "http_status": 0,
                     "queries_completed": index, "queries_total": len(specs),
+                    "requests": requests_made, "responses": responses, "pages_fetched": pages_fetched,
                 }
             try:
+                responses += 1
                 _check_blocked(resp)
             except SourceUnavailable as exc:
                 stat["stop_reason"] = f"blocked_http_{resp.status_code}"
@@ -450,8 +468,10 @@ def scrape(
                     "status": "blocked", "reason": str(exc), "jobs": rows,
                     "query_stats": stats, "http_status": resp.status_code,
                     "queries_completed": index, "queries_total": len(specs),
+                    "requests": requests_made, "responses": responses, "pages_fetched": pages_fetched,
                 }
             stat["pages_fetched"] = int(stat["pages_fetched"]) + 1
+            pages_fetched += 1
             page_rows = _parse_cards(resp.text)
             stat["raw_jobs"] = int(stat["raw_jobs"]) + len(page_rows)
             if not page_rows:
@@ -479,8 +499,8 @@ def scrape(
                 if key:
                     by_key[key] = row
                 added += 1
-            if added == 0:
-                stat["stop_reason"] = "no_new_jobs"
+            if added <= 1:
+                stat["stop_reason"] = "low_unique_yield"
                 break
             time.sleep(POLITE_SLEEP_SECONDS)
         stat["unique_jobs"] = len(query_seen)
@@ -489,9 +509,14 @@ def scrape(
         )
         stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
         stats.append(stat)
+        if requests_made >= page_limit:
+            stats.extend(_unattempted(specs[index + 1:], "global_page_budget"))
+            break
     return {
         "status": "ok", "jobs": rows, "query_stats": stats,
-        "queries_completed": len(specs), "queries_total": len(specs),
+        "queries_completed": sum(bool(stat["pages_fetched"]) for stat in stats),
+        "queries_total": len(specs), "requests": requests_made,
+        "responses": responses, "pages_fetched": pages_fetched,
     }
 
 

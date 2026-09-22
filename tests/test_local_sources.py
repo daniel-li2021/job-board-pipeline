@@ -423,7 +423,7 @@ class LocalSourceTests(unittest.TestCase):
             '<a class="base-card__full-link" href="https://www.linkedin.com/jobs/view/111?ref=x"></a>'
             "</div>"
         )
-        responses = [Mock(status_code=200, text=card_html), Mock(status_code=429, text="")]
+        responses = [Mock(status_code=200, text=card_html + card_html.replace("111", "112")), Mock(status_code=429, text="")]
         session = Mock()
         session.get.side_effect = responses
         with patch.object(linkedin_local.time, "sleep"):
@@ -432,7 +432,7 @@ class LocalSourceTests(unittest.TestCase):
         self.assertEqual("blocked", result["status"])
         self.assertEqual(429, result["http_status"])
         self.assertEqual(0, result["queries_completed"])
-        self.assertEqual(["111"], [job["job_id"] for job in result["jobs"]])
+        self.assertEqual(["111", "112"], [job["job_id"] for job in result["jobs"]])
 
     def test_partial_attempt_keeps_last_success_and_records_partial_freshness(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir, patch.object(

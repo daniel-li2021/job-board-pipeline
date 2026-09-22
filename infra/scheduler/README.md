@@ -6,8 +6,8 @@ the redundant scheduled Pages fallback are removed.
 | Workflow | America/Los_Angeles targets | AWS expression |
 |---|---|---|
 | local-sources.yml → board-jobs.yml → Pages | 08:00, 11:00, 14:00, 17:00 | `cron(0 8,11,14,17 * * ? *)` |
-| daily-jobs.yml | 08:10, 17:10 | `cron(10 8,17 * * ? *)` |
-| official-careers.yml | 08:20, 17:20 | `cron(20 8,17 * * ? *)` |
+| daily-jobs.yml | 07:50, 16:50 | `cron(50 7,16 * * ? *)` |
+| official-careers.yml | 07:30, 16:30 | `cron(30 7,16 * * ? *)` |
 
 All three schedules use `America/Los_Angeles`, automatically follow DST, and set the
 flexible window to OFF. Scheduler has minute-level precision; GitHub runner

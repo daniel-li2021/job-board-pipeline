@@ -625,9 +625,9 @@ def resolve_exposed_originals(
     last_request: Dict[str, float] = {}
     for job in jobs:
         needs_jd = len(str(job.get("description") or "").strip()) < THIN_JD_CHARS
-        needs_identity = bool(job.get("application_url")) and not job.get("official_url") and job.get("coverage_status") in {
+        needs_identity = bool(job.get("application_url")) and not job.get("official_url") and (job.get("official_search_verified") or job.get("coverage_status") in {
             "official_ambiguous", "official_gap", "official_identity_unmatched",
-        }
+        })
         if not needs_jd and not needs_identity:
             continue
         stats["needed"] += 1
@@ -646,6 +646,20 @@ def resolve_exposed_originals(
             reason = str(job.get("enrichment_failure_reason") or "no_direct_or_official_url")
             job["enrichment_failure_reason"] = reason
             reasons[reason] += 1
+            continue
+        fetched_at = parse_datetime(job.get("official_jd_fetched_at"))
+        if (job.get("official_search_verified") and fetched_at
+                and datetime.now(timezone.utc) - fetched_at <= timedelta(days=DETAIL_STALE_DAYS)
+                and len(str(job.get("description") or "").strip()) >= THIN_JD_CHARS
+                and not is_aggregator_url(application_url)
+                and not is_outbound_tracker_url(application_url)):
+            job["official_url"] = application_url
+            job["original_resolved"] = True
+            job["direct_original_fetched"] = True
+            job["direct_original_fetched_at"] = str(job.get("official_jd_fetched_at") or "")
+            job["enrichment_status"] = "resolved"
+            stats["identities_resolved"] += 1
+            stats["cache_reused"] += 1
             continue
         prior = cached.get((str(job.get("source") or ""), str(job.get("job_id") or "")))
         try:
@@ -2252,6 +2266,7 @@ REMOTE_STORE_FIELDS = {
     "review_status", "first_seen", "last_seen", "description_available", "enrichment_failure_reason",
     "score_model", "scoring_version", "reasoning_effort", "candidate_fingerprint", "score_at",
     "llm_retryable", "llm_retry_count", "llm_last_attempt_at", "llm_last_error",
+    "official_search_verified", "official_jd_fetched_at", "official_search_status", "official_search_attempted_at",
 }
 
 
@@ -2952,6 +2967,10 @@ def build_store_entry(
         "application_url": job.get("application_url", ""),
         "direct_original_fetched": bool(job.get("direct_original_fetched")),
         "direct_original_fetched_at": job.get("direct_original_fetched_at", ""),
+        "official_search_verified": bool(job.get("official_search_verified")),
+        "official_jd_fetched_at": job.get("official_jd_fetched_at", ""),
+        "official_search_status": job.get("official_search_status", ""),
+        "official_search_attempted_at": job.get("official_search_attempted_at", ""),
         "enrichment_method": job.get("enrichment_method", ""),
         "enrichment_status": job.get("enrichment_status", ""),
         "enrichment_failure_reason": job.get("enrichment_failure_reason", ""),

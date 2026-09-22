@@ -58,7 +58,7 @@ All sources normalize into the schema in `sources/schema.py`. The important inva
 
 ### Collection
 
-- LinkedIn searches bounded primary, secondary, and specialty query groups. Search/discovery obtains cards; detail enrichment is a separate phase that tries to obtain descriptions for the discovered records.
+- LinkedIn rotates queries across runs and spends at most 12 search pages total (two per query). A low-yield page ends its query. Search 429 stops requests immediately; two attempted 429 runs trigger a 24-hour cooldown and a one-page probe. Partial cards merge with last-good rows without advancing carried-row verification time.
 - Indeed and Glassdoor use their own smaller bounded page budgets. These budgets limit discovery traffic only; they do not truncate processing of cards already returned.
 - Glassdoor first uses JobSpy. When its location lookup cannot produce results, the Scrapling/static-page fallback can still preserve cards and snippets. Detail-page blocking remains an explicit enrichment limitation.
 - Per-query diagnostics retain pages fetched, stop reasons, results, unique contributions, and enrichment outcomes where the collector provides them.
@@ -72,7 +72,7 @@ Each source has two distinct states:
 
 A failed or empty-unverified attempt does not overwrite a usable last-good snapshot. This distinction is fundamental: a current attempt can be degraded while the published data remains fresh and usable. An empty result replaces prior data only when the collector can verify that the empty result is authoritative.
 
-For LinkedIn, health keeps search/discovery throttling separate from detail-enrichment throttling. A search 429 affects discovery coverage. A detail 429 affects descriptions for already discovered cards and may be partly or fully recovered by Scrapling. Scrapling request/resolution counts and any remaining no-JD count are reported separately.
+For LinkedIn, health keeps independent search and detail 429 streaks, cooldowns, and probes. A detail 429 stops all further LinkedIn detail requests; cache and official enrichment continue. The combined HTTP/Scrapling detail budget remains eight requests per normal run.
 
 ### Publication
 
@@ -121,6 +121,8 @@ Enrichment is ordered to reuse reliable existing work before making network requ
 6. Where implemented, use Scrapling when normal HTTP is blocked.
 
 Requests retain bounded concurrency, per-domain pacing, timeouts, retry/backoff, and cache behavior already owned by each adapter. A 429 can disable the affected ordinary request path for the remainder of the run rather than amplifying the throttle.
+
+Local LinkedIn/Indeed JD recovery first reuses cached JDs and dedicated Official matches, then tries three bounded employer/title search shapes, direct employer-careers or known ATS links, and site-restricted title search. A candidate needs verified `JobPosting` company, title, location, and a usable description. The source immediately caches that description and keeps the verified URL as `application_url`; Board promotes it to `official_url` without refetching a fresh JD. LinkedIn detail remains the final fallback. `local_sources.py --recover-jds` runs this chain once over current LinkedIn/Indeed snapshots with a 60-minute, 300-search, 300-official-page, eight-detail ceiling; it does not rediscover jobs or change collection freshness.
 
 Failure to obtain a description does not delete a valid job card. The job keeps `enrichment_failure_reason`, uses title/metadata evidence conservatively, and remains visible for diagnostics. Explicit software/AI/data early-career titles remain useful review signals; generic `Engineer I` or `Entry Level` wording alone receives only a small title bonus. This is different from a hard eligibility failure.
 

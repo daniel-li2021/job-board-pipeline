@@ -102,9 +102,9 @@ AWS EventBridge Scheduler dispatches the independent workflows at these
 
 | Workflow | Morning | Evening |
 |---|---:|---:|
-| ATS / LinkedIn board | 8:00 AM | 5:00 PM |
-| Syncareer | 8:10 AM | 5:10 PM |
-| Official Careers | 8:20 AM | 5:20 PM |
+| Local Sources → Board | 8:00 AM, 11:00 AM, 2:00 PM | 5:00 PM |
+| Syncareer | 7:50 AM | 4:50 PM |
+| Official Careers | 7:30 AM | 4:30 PM |
 
 Reconcile + Pages runs after every completed discovery workflow so failures are visible in health reporting.
 Its push and manual triggers remain available; it has no redundant timer.

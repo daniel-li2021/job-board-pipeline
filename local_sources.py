@@ -20,11 +20,13 @@ Usage:
     python3 local_sources.py --only linkedin
     python3 local_sources.py --only indeed
     python3 local_sources.py --only glassdoor
+    python3 local_sources.py --recover-jds         # current LinkedIn + Indeed only
 """
 
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 
 from state_io import atomic_write
@@ -36,7 +38,7 @@ from typing import Callable, Dict
 
 import board_pipeline as board
 import coverage_reconcile
-from sources import jobspy_local, linkedin_local
+from sources import jobspy_local, linkedin_local, official_jd_recovery
 from sources.schema import (
     OUTPUT_DIR,
     SNAPSHOT_SCHEMA_VERSION,
@@ -55,6 +57,10 @@ HEALTH_PATH = OUTPUT_DIR / "sources" / "health.json"
 HEALTH_SCHEMA_VERSION = 1
 LINKEDIN_DETAIL_LIMIT = 8
 LINKEDIN_DETAIL_COOLDOWN_HOURS = 24
+LINKEDIN_SEARCH_COOLDOWN_HOURS = 24
+RECOVERY_SEARCH_LIMIT = 300
+RECOVERY_PAGE_LIMIT = 300
+RECOVERY_SECONDS = 60 * 60
 
 
 def _health_source(name: str) -> Dict[str, object]:
@@ -81,6 +87,20 @@ def _linkedin_detail_control(now: datetime) -> tuple[int, bool, bool]:
         return 0, True, False
     probe = streak >= 2
     return (1 if probe else LINKEDIN_DETAIL_LIMIT), False, probe
+
+
+def _linkedin_search_control(now: datetime) -> tuple[int, bool, bool, int]:
+    state = _health_source("linkedin")
+    streak = int(state.get("search_429_streak", 0) or 0)
+    try:
+        until = datetime.fromisoformat(str(state.get("search_cooldown_until") or "").replace("Z", "+00:00"))
+        if until.tzinfo is None:
+            until = until.replace(tzinfo=timezone.utc)
+    except (TypeError, ValueError):
+        until = datetime.min.replace(tzinfo=timezone.utc)
+    active = until > now
+    probe = not active and streak >= 2
+    return (0 if active else 1 if probe else linkedin_local.SEARCH_PAGE_LIMIT), active, probe, int(state.get("search_query_cursor", 0) or 0)
 
 
 def _mark_linkedin_official_matches(
@@ -145,8 +165,20 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
         "implementation": "sources.linkedin_local" if name == "linkedin" else "sources.jobspy_local",
     }
     started = time.monotonic()
+    search_control: Dict[str, object] = {}
+    if name == "linkedin" and scraper is linkedin_local.scrape:
+        limit, cooldown, probe, cursor = _linkedin_search_control(datetime.fromisoformat(stamp))
+        search_control = {"cooldown_active": cooldown, "probe": probe, "query_cursor": cursor}
     try:
-        result = scraper()
+        if name == "linkedin" and scraper is linkedin_local.scrape:
+            result = (
+                {"status": "blocked", "reason": "search cooldown", "jobs": [], "query_stats": [],
+                 "requests": 0, "responses": 0, "http_status": 0}
+                if search_control["cooldown_active"] else
+                scraper(query_cursor=cursor, page_limit=limit)
+            )
+        else:
+            result = scraper()
     except SourceUnavailable as exc:
         print(f"[{name}] SKIP (blocked/unavailable): {exc} -> keeping last good snapshot")
         return {"source": name, "status": "skipped_unavailable", "source_healthy": False, "reason": str(exc), "count": 0, "attempted_at": stamp, "collector": collector, "source_provenance": source_provenance}
@@ -157,6 +189,13 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
     rows = list(result.get("jobs") or [])
     query_stats = list(result.get("query_stats") or [])
     source_provenance = dict(result.get("provenance") or source_provenance)
+    search_collection = {
+        **search_control,
+        "requests": int(result.get("requests", 0) or 0),
+        "responses": int(result.get("responses", 0) or 0),
+        "pages_fetched": int(result.get("pages_fetched", 0) or 0),
+        "rate_limited": int(result.get("http_status") or 0) == 429,
+    } if name == "linkedin" else {}
     # A rate-limited LinkedIn run still collected real coverage before the
     # block. Keep it and merge it over the last-good snapshot instead of
     # throwing the whole run away; any non-empty collection qualifies, even
@@ -172,20 +211,17 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
         print(f"[{name}] SKIP ({reason}) -> keeping last good snapshot")
         return {
             "source": name, "status": "skipped_unavailable", "source_healthy": False, "reason": reason,
-            "count": 0, "query_stats": query_stats,
+            "count": 0, "query_stats": query_stats, "search_collection": search_collection,
             "elapsed_seconds": round(time.monotonic() - started, 3),
             "attempted_at": stamp, "collector": collector, "source_provenance": source_provenance,
         }
 
     detail_enrichment: Dict[str, object] = {}
-    if name != "linkedin":
-        for row in rows:
-            if len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS and not row.get("enrichment_failure_reason"):
-                row["enrichment_status"] = "unresolved"
-                row["enrichment_failure_reason"] = f"{name}_detail_missing_or_thin"
-    if name == "linkedin" and rows:
-        detail_candidates = [row for row in rows if not row.get("description")]
-        previous = read_source_snapshot_payload(name)
+    official_enrichment: Dict[str, object] = {}
+    official_context: Dict[str, object] = {}
+    board_store: Dict[str, dict] = {}
+    previous = read_source_snapshot_payload(name) if name in {"linkedin", "indeed"} else {}
+    if name in {"linkedin", "indeed"} and rows and (name != "linkedin" or scraper is linkedin_local.scrape):
         try:
             official_context = coverage_reconcile.load_official_context()
         except (OSError, ValueError, json.JSONDecodeError):
@@ -194,6 +230,37 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
             board_store = board.load_store()
         except (OSError, ValueError, json.JSONDecodeError):
             board_store = {}
+        previous_jobs = list(previous.get("jobs") or [])
+        previous_by_id = {str(job.get("job_id") or ""): job for job in previous_jobs if job.get("job_id")}
+        board_store = {
+            **{f"source-cache::{index}": job for index, job in enumerate(previous_jobs) if job.get("official_search_verified")},
+            **board_store,
+        }
+        resolver = official_jd_recovery.Resolver()
+        now = datetime.fromisoformat(stamp)
+        pending = []
+        for row in rows:
+            if len(str(row.get("description") or "").strip()) >= board.THIN_JD_CHARS:
+                continue
+            prior = previous_by_id.get(str(row.get("job_id") or ""), {})
+            if resolver.recover(row, previous=prior, context=official_context, store=board_store,
+                                now=now, cheap_only=True) == "pending":
+                pending.append(row)
+        for row in pending:
+            prior = previous_by_id.get(str(row.get("job_id") or ""), {})
+            resolver.recover(row, previous=prior, context=official_context, store=board_store, now=now)
+        official_enrichment = {
+            **dict(resolver.stats), "search_requests": resolver.search_requests,
+            "official_page_requests": resolver.page_requests,
+            "remaining_no_jd": sum(len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS for row in rows),
+        }
+    if name != "linkedin":
+        for row in rows:
+            if len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS and not row.get("enrichment_failure_reason"):
+                row["enrichment_status"] = "unresolved"
+                row["enrichment_failure_reason"] = f"{name}_detail_missing_or_thin"
+    if name == "linkedin" and rows:
+        detail_candidates = [row for row in rows if len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS]
         if official_context:
             _mark_linkedin_official_matches(
                 detail_candidates, list(previous.get("jobs") or []), official_context, board_store,
@@ -206,6 +273,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
             previous_jobs=list(previous.get("jobs") or []),
             allow_requests=not partial and not cooldown_active,
             request_limit=detail_limit,
+            min_description_chars=board.THIN_JD_CHARS,
         )
         detail_enrichment["cooldown_active"] = cooldown_active
         detail_enrichment["probe"] = probe
@@ -236,7 +304,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
         print(f"[{name}] SKIP (0 first-pass survivors) -> keeping last good snapshot")
         return {
             "source": name, "status": "skipped_empty", "source_healthy": False, "reason": "0 first-pass survivors", "count": 0,
-            "query_stats": query_stats, "detail_enrichment": detail_enrichment,
+            "query_stats": query_stats, "detail_enrichment": detail_enrichment, "official_enrichment": official_enrichment, "search_collection": search_collection,
             "elapsed_seconds": round(time.monotonic() - started, 3),
             "attempted_at": stamp, "collector": collector, "source_provenance": source_provenance,
         }
@@ -252,6 +320,8 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
     }
     if detail_enrichment:
         meta["detail_enrichment"] = detail_enrichment
+    if official_enrichment:
+        meta["official_enrichment"] = official_enrichment
     carried_count = 0
     if partial:
         fresh_keys = {board.dedup_key(job) for job in survivors}
@@ -277,7 +347,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
             "reason": str(result.get("reason") or "rate limited"),
             "count": len(survivors), "collected_count": len(rows), "fresh_kept": len(survivors),
             "carried_count": carried_count, "merged_count": merged_count, "path": str(path),
-            "query_stats": query_stats, "detail_enrichment": detail_enrichment,
+            "query_stats": query_stats, "detail_enrichment": detail_enrichment, "official_enrichment": official_enrichment, "search_collection": search_collection,
             "elapsed_seconds": elapsed,
             "attempted_at": stamp, "partial_at": stamp, "collector": collector,
             "source_provenance": source_provenance,
@@ -292,7 +362,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
     print(f"[{name}] OK {len(survivors)} rows ({elapsed:.1f}s{detail_note}) -> {path}")
     return {
         "source": name, "status": "ok", "source_healthy": True, "count": len(survivors), "path": str(path),
-        "query_stats": query_stats, "detail_enrichment": detail_enrichment,
+        "query_stats": query_stats, "detail_enrichment": detail_enrichment, "official_enrichment": official_enrichment, "search_collection": search_collection,
         "elapsed_seconds": elapsed,
         "attempted_at": stamp, "succeeded_at": stamp, "collector": collector,
         "source_provenance": source_provenance,
@@ -343,9 +413,25 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
             "consecutive_failures": 0 if healthy else int(prior.get("consecutive_failures", 0) or 0) + 1,
             "query_stats": list(result.get("query_stats") or []),
             "detail_enrichment": dict(result.get("detail_enrichment") or {}),
+            "official_enrichment": dict(result.get("official_enrichment") or {}),
+            "search_collection": dict(result.get("search_collection") or {}),
             "last_good_count": len(snapshot.get("jobs", [])),
         })
         if name == "linkedin":
+            search = state["search_collection"]
+            search_requests = int(search.get("requests", 0) or 0)
+            if search_requests:
+                state["search_last_attempt_at"] = result.get("attempted_at", "")
+                state["search_query_cursor"] = int(prior.get("search_query_cursor", 0) or 0) + 1
+                if search.get("rate_limited"):
+                    streak = int(prior.get("search_429_streak", 0) or 0) + 1
+                    state["search_429_streak"] = streak
+                    if streak >= 2:
+                        attempted_at = datetime.fromisoformat(str(result.get("attempted_at") or "").replace("Z", "+00:00"))
+                        state["search_cooldown_until"] = (attempted_at + timedelta(hours=LINKEDIN_SEARCH_COOLDOWN_HOURS)).isoformat()
+                elif int(search.get("responses", 0) or 0):
+                    state["search_429_streak"] = 0
+                    state["search_cooldown_until"] = ""
             detail = state["detail_enrichment"]
             requests_made = int(detail.get("requests", 0) or 0)
             if requests_made:
@@ -377,10 +463,132 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
     atomic_write(HEALTH_PATH, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
 
 
+def recover_jds() -> Dict[str, object]:
+    """One bounded enrichment pass over current snapshots, without rediscovery."""
+    names = ("linkedin", "indeed")
+    snapshots = {name: read_source_snapshot_payload(name) for name in names}
+    originals = {name: copy.deepcopy(snapshots[name]["jobs"]) for name in names}
+    counts_before = {
+        name: sum(len(str(job.get("description") or "").strip()) < board.THIN_JD_CHARS for job in originals[name])
+        for name in names
+    }
+    now = datetime.now(timezone.utc)
+    deadline = time.monotonic() + RECOVERY_SECONDS
+    context = coverage_reconcile.load_official_context()
+    store = board.load_store()
+    store = {
+        **{f"source-cache::{name}::{index}": job
+           for name in names for index, job in enumerate(originals[name]) if job.get("official_search_verified")},
+        **store,
+    }
+    resolver = official_jd_recovery.Resolver(
+        search_limit=RECOVERY_SEARCH_LIMIT, page_limit=RECOVERY_PAGE_LIMIT, deadline=deadline,
+    )
+    prior_by_id = {
+        name: {str(job.get("job_id") or ""): job for job in originals[name] if job.get("job_id")}
+        for name in names
+    }
+    pending = []
+    cheap_counts: Dict[str, int] = {}
+    for name in names:
+        for row in snapshots[name]["jobs"]:
+            if len(str(row.get("description") or "").strip()) >= board.THIN_JD_CHARS:
+                continue
+            prior = prior_by_id[name].get(str(row.get("job_id") or ""), {})
+            method = resolver.recover(row, previous=prior, context=context, store=store,
+                                      now=now, cheap_only=True)
+            if method == "pending":
+                pending.append((name, row, prior))
+            else:
+                cheap_counts[method] = cheap_counts.get(method, 0) + 1
+    pending.sort(key=lambda item: (
+        bool(resolver.pattern_cache.get(official_jd_recovery.normalize_company_key(str(item[1].get("company") or "")))),
+        official_jd_recovery._stamp(item[1].get("first_seen")) or datetime.min.replace(tzinfo=timezone.utc),
+    ), reverse=True)
+    methods: Dict[str, int] = {}
+    processed = 0
+    for name, row, prior in pending:
+        if (time.monotonic() >= deadline or resolver.search_requests >= RECOVERY_SEARCH_LIMIT
+                or resolver.page_requests >= RECOVERY_PAGE_LIMIT):
+            break
+        method = resolver.recover(row, previous=prior, context=context, store=store, now=now)
+        methods[method] = methods.get(method, 0) + 1
+        processed += 1
+    linkedin_rows = [row for row in snapshots["linkedin"]["jobs"]
+                     if len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS]
+    if linkedin_rows:
+        _mark_linkedin_official_matches(linkedin_rows, originals["linkedin"], context, store)
+    detail_limit, cooldown, probe = _linkedin_detail_control(now)
+    detail = linkedin_local.enrich_details(
+        linkedin_rows, previous_jobs=originals["linkedin"],
+        allow_requests=not cooldown and time.monotonic() < deadline,
+        request_limit=min(detail_limit, LINKEDIN_DETAIL_LIMIT),
+        min_description_chars=board.THIN_JD_CHARS,
+    ) if linkedin_rows else {"requests": 0, "responses": 0, "rate_limited": False, "jds_resolved": 0}
+    detail.update(cooldown_active=cooldown, probe=probe)
+    after = {
+        name: sum(len(str(job.get("description") or "").strip()) < board.THIN_JD_CHARS for job in snapshots[name]["jobs"])
+        for name in names
+    }
+    changed = []
+    for name in names:
+        for row in snapshots[name]["jobs"]:
+            row.pop("_linkedin_official_url", None)
+            row.pop("_linkedin_official_defer", None)
+        if snapshots[name]["jobs"] == originals[name]:
+            continue
+        payload = dict(snapshots[name])
+        payload["source"] = name
+        payload["count"] = len(payload["jobs"])
+        payload["meta"] = {**payload.get("meta", {}), "jd_recovery_at": now.isoformat()}
+        path = OUTPUT_DIR / "sources" / f"{name}.json"
+        atomic_write(path, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
+        changed.append(name)
+    if int(detail.get("requests", 0) or 0):
+        # Keep collection freshness and other health fields unchanged.
+        try:
+            health = json.loads(HEALTH_PATH.read_text(encoding="utf-8"))
+        except (FileNotFoundError, json.JSONDecodeError, OSError):
+            health = {"schema_version": HEALTH_SCHEMA_VERSION, "sources": {}}
+        state = health.setdefault("sources", {}).setdefault("linkedin", {})
+        state["detail_last_attempt_at"] = now.isoformat()
+        state["detail_enrichment"] = detail
+        if detail.get("rate_limited"):
+            streak = int(state.get("detail_429_streak", 0) or 0) + 1
+            state["detail_429_streak"] = streak
+            if streak >= 2:
+                state["detail_cooldown_until"] = (now + timedelta(hours=LINKEDIN_DETAIL_COOLDOWN_HOURS)).isoformat()
+        elif int(detail.get("responses", 0) or 0):
+            state["detail_429_streak"] = 0
+            state["detail_cooldown_until"] = ""
+        atomic_write(HEALTH_PATH, (json.dumps(health, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
+    report: Dict[str, object] = {
+        "run_at": now.isoformat(), "before_no_jd": counts_before, "after_no_jd": after,
+        "before_total": sum(counts_before.values()), "after_total": sum(after.values()),
+        "cheap_matches": cheap_counts, "methods": methods, "official_matches": dict(resolver.stats),
+        "official_jds_recovered": sum(counts_before.values()) - sum(after.values()) - int(detail.get("jds_resolved", 0) or 0),
+        "linkedin_detail_recoveries": int(detail.get("jds_resolved", 0) or 0),
+        "linkedin_detail": detail, "search_requests": resolver.search_requests,
+        "official_page_requests": resolver.page_requests, "generic_jobs_processed": processed,
+        "generic_jobs_deferred": len(pending) - processed, "changed_sources": changed,
+        "glassdoor": "excluded",
+    }
+    log_path = OUTPUT_DIR / "logs" / "linkedin_jd_recovery_latest.json"
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    atomic_write(log_path, (json.dumps(report, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
+    print(json.dumps(report, indent=2, ensure_ascii=False))
+    return report
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run local best-effort job sources")
     parser.add_argument("--only", choices=sorted(SOURCES.keys()), help="Run a single source")
+    parser.add_argument("--recover-jds", action="store_true", help="Bounded JD recovery for current LinkedIn and Indeed snapshots")
     args = parser.parse_args()
+
+    if args.recover_jds:
+        recover_jds()
+        return
 
     names = [args.only] if args.only else list(SOURCES.keys())
     collector = collector_provenance()
