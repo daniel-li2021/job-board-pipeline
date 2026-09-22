@@ -80,6 +80,21 @@ class OfficialRecoveryTests(unittest.TestCase):
             self.assertEqual("deferred", limited.recover(later, previous={}, context={}, store={}, now=datetime.now(timezone.utc)))
         self.assertNotEqual("no_match", later["official_search_status"])
 
+    def test_search_provider_failure_moves_to_bounded_bing_fallback(self):
+        import requests
+
+        url = "https://jobs.ashbyhq.com/abridge/123"
+        results = f'<li class="b_algo"><h2><a href="{url}">Software Engineer</a></h2></li>'
+        session = Mock()
+        session.get.side_effect = [requests.ConnectionError("timeout"),
+                                   response(recovery.BING_SEARCH_URL, results), response(url, posting())]
+        resolver = recovery.Resolver(session=session, search_limit=5, page_limit=4)
+        with patch.object(recovery.time, "sleep"):
+            self.assertEqual("generic_2", resolver.recover(row(), previous={}, context={}, store={}, now=datetime.now(timezone.utc)))
+        self.assertEqual("bing", resolver.search_provider)
+        self.assertEqual(2, resolver.search_requests)
+        self.assertEqual(1, resolver.stats["search_provider_failures"])
+
     def test_wrong_identity_and_recent_no_match(self):
         source = row()
         self.assertEqual("", recovery._verified_posting(source, posting(company="Other")))
@@ -158,6 +173,7 @@ class OfficialRecoveryTests(unittest.TestCase):
                 self.pattern_cache = {}
                 self.search_requests = 0
                 self.page_requests = 0
+                self.search_provider = "duckduckgo"
 
             def recover(self, job, **_kwargs):
                 job["description"] = "A" * 250

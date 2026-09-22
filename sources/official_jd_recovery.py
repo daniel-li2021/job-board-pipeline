@@ -2,12 +2,13 @@
 
 from __future__ import annotations
 
+import base64
 import json
 import re
 import time
 from collections import Counter
 from datetime import datetime, timedelta, timezone
-from urllib.parse import urljoin, urlsplit
+from urllib.parse import parse_qs, urljoin, urlsplit
 
 import requests
 from bs4 import BeautifulSoup
@@ -21,6 +22,7 @@ from .schema import (
 )
 
 SEARCH_URL = "https://html.duckduckgo.com/html/"
+BING_SEARCH_URL = "https://www.bing.com/search"
 CACHE_DAYS = 14
 NO_MATCH_HOURS = 24
 NORMAL_SEARCH_LIMIT = 12
@@ -44,6 +46,18 @@ def _host(url: str) -> str:
     try:
         return (urlsplit(url).hostname or "").lower()
     except ValueError:
+        return ""
+
+
+def _bing_target(url: str) -> str:
+    if _host(url) != "www.bing.com":
+        return url
+    encoded = parse_qs(urlsplit(url).query).get("u", [""])[0]
+    if not encoded.startswith("a1"):
+        return ""
+    try:
+        return base64.urlsafe_b64decode(encoded[2:] + "===").decode("utf-8")
+    except (ValueError, UnicodeDecodeError):
         return ""
 
 
@@ -165,6 +179,7 @@ class Resolver:
         self.search_requests = 0
         self.page_requests = 0
         self.last_search = 0.0
+        self.search_provider = "duckduckgo"
         self.stats: Counter = Counter()
         self.pattern_cache: dict[str, set[str]] = {}
         self.listing_cache: dict[str, list[str]] = {}
@@ -177,23 +192,34 @@ class Resolver:
     def search(self, query: str) -> tuple[list[str], str]:
         if self.search_requests >= self.search_limit or not self._available():
             return [], "budget"
+        if self.search_provider == "disabled":
+            return [], "network"
         delay = 1.0 - (time.monotonic() - self.last_search)
         if delay > 0:
             time.sleep(delay)
         self.search_requests += 1
         self.last_search = time.monotonic()
+        provider = self.search_provider
+        url = SEARCH_URL if provider == "duckduckgo" else BING_SEARCH_URL
         try:
-            response = self.session.get(SEARCH_URL, params={"q": query}, timeout=15)
+            response = self.session.get(url, params={"q": query}, timeout=10)
         except requests.RequestException:
+            self.search_provider = "bing" if provider == "duckduckgo" else "disabled"
+            self.stats["search_provider_failures"] += 1
             return [], "network"
         if response.status_code != 200:
+            self.search_provider = "disabled" if response.status_code == 429 or provider == "bing" else "bing"
+            self.stats["search_provider_failures"] += 1
             return [], "http"
         soup = BeautifulSoup(response.text, "html.parser")
         urls = []
-        for link in soup.select("a.result__a"):
-            url = unwrap_redirect_url(str(link.get("href") or ""))
-            if urlsplit(url).scheme in {"http", "https"}:
-                urls.append(url)
+        selector = "a.result__a" if provider == "duckduckgo" else "li.b_algo h2 a"
+        for link in soup.select(selector):
+            target = unwrap_redirect_url(str(link.get("href") or ""))
+            if provider == "bing":
+                target = _bing_target(target)
+            if urlsplit(target).scheme in {"http", "https"}:
+                urls.append(target)
         return list(dict.fromkeys(urls[:8])), "ok"
 
     def page(self, url: str, local: Counter) -> tuple[str, str, str]:

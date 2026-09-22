@@ -251,6 +251,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
             resolver.recover(row, previous=prior, context=official_context, store=board_store, now=now)
         official_enrichment = {
             **dict(resolver.stats), "search_requests": resolver.search_requests,
+            "search_provider": resolver.search_provider,
             "official_page_requests": resolver.page_requests,
             "remaining_no_jd": sum(len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS for row in rows),
         }
@@ -570,6 +571,7 @@ def recover_jds() -> Dict[str, object]:
         "linkedin_detail_recoveries": int(detail.get("jds_resolved", 0) or 0),
         "linkedin_detail": detail, "search_requests": resolver.search_requests,
         "official_page_requests": resolver.page_requests, "generic_jobs_processed": processed,
+        "search_provider": resolver.search_provider,
         "generic_jobs_deferred": len(pending) - processed, "changed_sources": changed,
         "glassdoor": "excluded",
     }
