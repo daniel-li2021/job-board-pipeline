@@ -2,6 +2,725 @@
   "runs": [
     {
       "pipeline": "syncareer",
+      "run_at": "2026-09-22T23:53:04.829611+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 30,
+      "cache_reused": 60,
+      "peer_reused": 4,
+      "same_content_reused": 0,
+      "non_material_change_reused": 0,
+      "new_or_changed": 30,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 28,
+        "material_jd_change": 2
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1,
+      "requests": 5,
+      "input_tokens": 44489,
+      "cached_input_tokens": 4575,
+      "output_tokens": 5036,
+      "reasoning_tokens": 1222,
+      "estimated_usd": 0.141175,
+      "latency_seconds": 57.253,
+      "latency_measured": true,
+      "effective_rpm": 5.24,
+      "effective_tpm": 51901.21,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 5,
+      "primary_batches_total": 5,
+      "batches_attempted": 5,
+      "batches_succeeded": 5,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 30,
+      "funnel": {
+        "scoring_candidates": 86
+      },
+      "output": {
+        "tier_a": 10,
+        "tier_b": 4,
+        "tier_c": 72,
+        "shown": 14,
+        "new_jobs": 64,
+        "new_jobs_added": 9
+      },
+      "enrichment": {
+        "needed": 8,
+        "detail_api_resolved": 138,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 8
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://careers.heb.com/careers-home/jobs/239190?lang=en-us&previousLocale=en-US",
+              "company": "H-E-B Grocery Company",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://statestreet.wd1.myworkdayjobs.com/en-US/Global/job/Burlington-Massachusetts/Software-Engineer---REST-API-Development--Officer_R-798140?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=a4e08b475d6a4176853c9d1cb9854e02&Location_Country=d4afdeb461d446e4babd204bd102dba8",
+              "company": "State Street",
+              "title": "Software Engineer - REST API Development, Officer"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/teletrackingtechnologiesinc/jobs/5425154008",
+              "company": "TeleTracking",
+              "title": "Software Engineer I"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/mercury/jobs/6199367004",
+              "company": "Mercury",
+              "title": "Software Engineering Intern - Spring 2027"
+            },
+            {
+              "key": "url::https://jobs.statefarm.com/main/jobs/46099?lang=en-us",
+              "company": "State Farm",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://insperity.wd12.myworkdayjobs.com/en-US/NSP/job/TX-Home-Office/Software-Engineer_JR103344",
+              "company": "Insperity",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/teletrackingtechnologiesinc/jobs/5425206008",
+              "company": "TeleTracking",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "company": "Kforce",
+              "title": "Embedded Software Engineer"
+            },
+            {
+              "key": "url::https://jobs.jobvite.com/biofiredx/job/oIaPAfw1",
+              "company": "bioMérieux",
+              "title": "Software Technical Writer II"
+            },
+            {
+              "key": "url::https://verabradley.wd5.myworkdayjobs.com/en-US/vbcareers/job/Corporate-Headquarters---Roanoke-IN/Software-Developer---Business-Applications_R021025?jobFamily=d5a9ff1b44a41001aba4479f022e0000&jobFamily=d5a9ff1b44a41001aba1a09cf20e0000&jobFamily=b2f08eeeedd01001fc1f4c5cc05e0000&jobFamily=2e791eb49e891001abbe494445320000",
+              "company": "Vera Bradley",
+              "title": "Software Developer - Business Applications"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 15.734,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 12488,
+            "cached_input_tokens": 0,
+            "output_tokens": 1362,
+            "reasoning_tokens": 385,
+            "estimated_usd": 0.04132
+          },
+          "decisions": [
+            {
+              "key": "url::https://careers.heb.com/careers-home/jobs/239190?lang=en-us&previousLocale=en-US",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production backend services",
+                "AWS Docker CI/CD"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://statestreet.wd1.myworkdayjobs.com/en-US/Global/job/Burlington-Massachusetts/Software-Engineer---REST-API-Development--Officer_R-798140?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=a4e08b475d6a4176853c9d1cb9854e02&Location_Country=d4afdeb461d446e4babd204bd102dba8",
+              "match_score": 96.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "REST API development",
+                "Spring Boot SQL"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/teletrackingtechnologiesinc/jobs/5425154008",
+              "match_score": 87.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "resilient microservices",
+                "AWS production deployment"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/mercury/jobs/6199367004",
+              "match_score": 74.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "TypeScript React development",
+                "SQL backend experience"
+              ],
+              "main_gaps": [
+                "Spring 2027 enrollment",
+                "Haskell experience"
+              ]
+            },
+            {
+              "key": "url::https://jobs.statefarm.com/main/jobs/46099?lang=en-us",
+              "match_score": 90.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python AWS deployment",
+                "React Docker Terraform"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://insperity.wd12.myworkdayjobs.com/en-US/NSP/job/TX-Home-Office/Software-Engineer_JR103344",
+              "match_score": 56.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "application development",
+                "Angular SQL foundations"
+              ],
+              "main_gaps": [
+                "3-5 years experience",
+                "NET C# ecosystem"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/teletrackingtechnologiesinc/jobs/5425206008",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "scalable backend services",
+                "AWS microservices experience"
+              ],
+              "main_gaps": [
+                "Java or Go depth"
+              ]
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "match_score": 24.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Python automation"
+              ],
+              "main_gaps": [
+                "embedded Linux systems",
+                "hardware integration experience"
+              ]
+            },
+            {
+              "key": "url::https://jobs.jobvite.com/biofiredx/job/oIaPAfw1",
+              "match_score": 28.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "technical documentation"
+              ],
+              "main_gaps": [
+                "technical writing experience",
+                "documentation-focused role"
+              ]
+            },
+            {
+              "key": "url::https://verabradley.wd5.myworkdayjobs.com/en-US/vbcareers/job/Corporate-Headquarters---Roanoke-IN/Software-Developer---Business-Applications_R021025?jobFamily=d5a9ff1b44a41001aba4479f022e0000&jobFamily=d5a9ff1b44a41001aba1a09cf20e0000&jobFamily=b2f08eeeedd01001fc1f4c5cc05e0000&jobFamily=2e791eb49e891001abbe494445320000",
+              "match_score": 42.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "SQL application development",
+                "API integration experience"
+              ],
+              "main_gaps": [
+                "Dynamics 365 X++",
+                "Azure C# experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://insulet.wd5.myworkdayjobs.com/en-US/insuletcareers/job/Acton-Massachusetts/Co-op--DevOps-Engineer--January---June-2027--Hybrid-_REQ-2026-18027?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db",
+              "company": "Insulet Corporation",
+              "title": "Co-op, DevOps Engineer: January - June 2027 (Hybrid)"
+            },
+            {
+              "key": "url::https://truist.wd1.myworkdayjobs.com/en-US/Careers/job/Charlotte-NC/Client-Journey-Platform-Owner_R0119363?Job_Area=d11eada2db70010c4f2b2bc44c77e01f&Job_Area=c6e004faaf510188fa53c57e78458c0d&Job_Area=79e521f9f723100102e8a7e145c30000&Job_Area=1ed629d2716901e1965c077d4c77ed1a&Job_Area=4eabe3f7903510014937d8b110410000&Job_Area=ee5fb80e3744011e0cd4fbc24c77f439&Job_Area=95d05e5a806401f6304cf98c4d0115f8&Job_Area=d11eada2db70014c74569fc34c77ca1f&Job_Area=ac74f6e2c4fa01d74aabf9c44c774b20&Job_Area=d11eada2db7001e8ffb13dc44c77e21f&Job_Area=019e2d2b368b1001e243242a0f930000&Job_Area=ac74f6e2c4fa0146f64fb9c44c774720&Job_Area=1ed629d271690136e34bb07c4c77eb1a&Job_Area=0b3ef2fcc1951000fe1e504695e20000&Job_Area=bb8ec011e8a21001e15d05722f080000&Job_Area=2fe754eb9d011000d70d3e8911560000&Job_Area=ac74f6e2c4fa013471a390c44c774520",
+              "company": "Truist",
+              "title": "Client Journey Platform Owner"
+            },
+            {
+              "key": "url::https://www.rgarecareers.com/us/en/job/J28835/Data-Engineer",
+              "company": "Reinsurance Group of America",
+              "title": "Data Engineer"
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "company": "Kforce",
+              "title": "Hardware Software Integration Engineer"
+            },
+            {
+              "key": "url::https://wd3.myworkdaysite.com/en-US/recruiting/magna/Magna/job/Auburn-Hills-Michigan-US/Engineer-II---Systems-and-Software-Quality_R00261125?Country=a30a87ed25634629aa6c3958aa2b91ea&Country=bc33aa3152ec42d4995f4791a106ed09&Country=6cb77610a8a543aea2d6bc10457e35d4&Country=29247e57dbaf46fb855b224e03170bc7&jobFamilyGroup=5aaaed564f43010127e356ca250347df&jobFamilyGroup=5aaaed564f4301e050504eca250341df&jobFamilyGroup=5aaaed564f430127348455ca250345df&jobFamilyGroup=5aaaed564f430166175050ca250343df&jobFamilyGroup=5aaaed564f4301f4835048ca25033ddf&jobFamilyGroup=5aaaed564f43015d2adc43ca250337df&jobFamilyGroup=5aaaed564f4301f96b3346ca250339df&jobFamilyGroup=5aaaed564f43012fc35659ca25034bdf&jobFamilyGroup=5aaaed564f4301832a8441ca250335df&jobFamilyGroup=5aaaed564f430174b55449ca25033fdf&jobFamilyGroup=5aaaed564f430182435158ca250349df&jobFamilyGroup=5aaaed564f430114a16f3fca250333df",
+              "company": "Magna International",
+              "title": "Engineer II - Systems and Software Quality"
+            },
+            {
+              "key": "url::https://nexstar.wd5.myworkdayjobs.com/en-US/nexstar/job/CO-Denver100-E-Speer-Blvd-Tribune-KDVRKWGN/Multi-Platform-Producer_REQ-43087",
+              "company": "Nexstar Media Group",
+              "title": "Multi-Platform Producer"
+            },
+            {
+              "key": "url::https://ffive.wd5.myworkdayjobs.com/en-US/f5jobs/job/San-Jose/Systems-Platform-Admin-I_RP1038802?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+              "company": "F5",
+              "title": "Systems/Platform Admin I"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 19.377,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 7,
+            "input_tokens": 10240,
+            "cached_input_tokens": 1851,
+            "output_tokens": 1843,
+            "reasoning_tokens": 277,
+            "estimated_usd": 0.039264
+          },
+          "decisions": [
+            {
+              "key": "url::https://insulet.wd5.myworkdayjobs.com/en-US/insuletcareers/job/Acton-Massachusetts/Co-op--DevOps-Engineer--January---June-2027--Hybrid-_REQ-2026-18027?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS Docker CI/CD",
+                "GitHub Actions deployments"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://truist.wd1.myworkdayjobs.com/en-US/Careers/job/Charlotte-NC/Client-Journey-Platform-Owner_R0119363?Job_Area=d11eada2db70010c4f2b2bc44c77e01f&Job_Area=c6e004faaf510188fa53c57e78458c0d&Job_Area=79e521f9f723100102e8a7e145c30000&Job_Area=1ed629d2716901e1965c077d4c77ed1a&Job_Area=4eabe3f7903510014937d8b110410000&Job_Area=ee5fb80e3744011e0cd4fbc24c77f439&Job_Area=95d05e5a806401f6304cf98c4d0115f8&Job_Area=d11eada2db70014c74569fc34c77ca1f&Job_Area=ac74f6e2c4fa01d74aabf9c44c774b20&Job_Area=d11eada2db7001e8ffb13dc44c77e21f&Job_Area=019e2d2b368b1001e243242a0f930000&Job_Area=ac74f6e2c4fa0146f64fb9c44c774720&Job_Area=1ed629d271690136e34bb07c4c77eb1a&Job_Area=0b3ef2fcc1951000fe1e504695e20000&Job_Area=bb8ec011e8a21001e15d05722f080000&Job_Area=2fe754eb9d011000d70d3e8911560000&Job_Area=ac74f6e2c4fa013471a390c44c774520",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "API integration experience",
+                "platform operations exposure"
+              ],
+              "main_gaps": [
+                "four years service design",
+                "journey-management governance"
+              ]
+            },
+            {
+              "key": "url::https://www.rgarecareers.com/us/en/job/J28835/Data-Engineer",
+              "match_score": 72.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark Databricks pipelines",
+                "Python REST SQL"
+              ],
+              "main_gaps": [
+                "one year big data",
+                "enterprise data cataloging"
+              ]
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "match_score": 34.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python debugging automation",
+                "integration testing experience"
+              ],
+              "main_gaps": [
+                "hardware interface debugging",
+                "electrical engineering fundamentals"
+              ]
+            },
+            {
+              "key": "url::https://wd3.myworkdaysite.com/en-US/recruiting/magna/Magna/job/Auburn-Hills-Michigan-US/Engineer-II---Systems-and-Software-Quality_R00261125?Country=a30a87ed25634629aa6c3958aa2b91ea&Country=bc33aa3152ec42d4995f4791a106ed09&Country=6cb77610a8a543aea2d6bc10457e35d4&Country=29247e57dbaf46fb855b224e03170bc7&jobFamilyGroup=5aaaed564f43010127e356ca250347df&jobFamilyGroup=5aaaed564f4301e050504eca250341df&jobFamilyGroup=5aaaed564f430127348455ca250345df&jobFamilyGroup=5aaaed564f430166175050ca250343df&jobFamilyGroup=5aaaed564f4301f4835048ca25033ddf&jobFamilyGroup=5aaaed564f43015d2adc43ca250337df&jobFamilyGroup=5aaaed564f4301f96b3346ca250339df&jobFamilyGroup=5aaaed564f43012fc35659ca25034bdf&jobFamilyGroup=5aaaed564f4301832a8441ca250335df&jobFamilyGroup=5aaaed564f430174b55449ca25033fdf&jobFamilyGroup=5aaaed564f430182435158ca250349df&jobFamilyGroup=5aaaed564f430114a16f3fca250333df",
+              "match_score": 30.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "automated regression testing",
+                "software quality experience"
+              ],
+              "main_gaps": [
+                "five years automotive quality",
+                "ASPICE requirements traceability"
+              ]
+            },
+            {
+              "key": "url::https://nexstar.wd5.myworkdayjobs.com/en-US/nexstar/job/CO-Denver100-E-Speer-Blvd-Tribune-KDVRKWGN/Multi-Platform-Producer_REQ-43087",
+              "match_score": 5.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "journalism production experience",
+                "broadcast news writing"
+              ]
+            },
+            {
+              "key": "url::https://ffive.wd5.myworkdayjobs.com/en-US/f5jobs/job/San-Jose/Systems-Platform-Admin-I_RP1038802?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+              "match_score": 20.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Linux cloud exposure",
+                "technical troubleshooting experience"
+              ],
+              "main_gaps": [
+                "F5 Summer 2026 internship",
+                "desktop support administration"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://dtna.wd5.myworkdayjobs.com/en-US/DTNA_external/job/Portland-OR-US/Applied-AI-Engineer-I_DT-19739",
+              "company": "Daimler Truck North America",
+              "title": "Applied AI Engineer I"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/brunswickgroup/jobs/8821383002",
+              "company": "Brunswick Group",
+              "title": "AI Engineer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 5.817,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 4544,
+            "cached_input_tokens": 0,
+            "output_tokens": 318,
+            "reasoning_tokens": 161,
+            "estimated_usd": 0.012904
+          },
+          "decisions": [
+            {
+              "key": "url::https://dtna.wd5.myworkdayjobs.com/en-US/DTNA_external/job/Portland-OR-US/Applied-AI-Engineer-I_DT-19739",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "production RAG agents",
+                "LLM evaluation pipelines"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/brunswickgroup/jobs/8821383002",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM application development",
+                "fine-tuning and evaluation"
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://salesforce.wd12.myworkdayjobs.com/en-US/Slack/job/California---San-Francisco/Software-Engineer-II--Machine-Learning---Slack_JR358348?CF_-_REC_-_LRV_-_Job_Posting_Anchor_-_Country_from_Job_Posting_Location_Extended=a30a87ed25634629aa6c3958aa2b91ea&CF_-_REC_-_LRV_-_Job_Posting_Anchor_-_Country_from_Job_Posting_Location_Extended=bc33aa3152ec42d4995f4791a106ed09&CF_-_REC_-_LRV_-_Job_Posting_Anchor_-_Country_from_Job_Posting_Location_Extended=29247e57dbaf46fb855b224e03170bc7",
+              "company": "Slack",
+              "title": "Software Engineer II - Slack Developer Experience AI"
+            },
+            {
+              "key": "url::https://thehartford.wd5.myworkdayjobs.com/en-US/Careers_External/job/Hartford-CT/Software-Engineer_R2627118?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea",
+              "company": "The Hartford",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/132400846829691590-business-data-analyst-i-google-global-infrastructure-strategy-and-operations",
+              "company": "Google",
+              "title": "Business Data Analyst I, Google Global Infrastructure, Strategy and Operations"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/Rogo/ac4e74a3-4f95-4a5b-843c-d28591c82da8",
+              "company": "Rogo",
+              "title": "Software Engineer: Backend"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/mirage/2c6f553e-0fe9-4e30-83da-de3dcbec36ea",
+              "company": "Captions",
+              "title": "Software Engineer, iOS"
+            },
+            {
+              "key": "url::https://careers.appliedmaterials.com/careers/job/790317913273?domain=appliedmaterials.com&hl=en&triggerGoButton=true",
+              "company": "Applied Materials",
+              "title": "2027 Software Engineer New College Grad (Bachelor's) - Gloucester, MA"
+            },
+            {
+              "key": "url::https://wk.wd3.myworkdayjobs.com/en-US/External/job/USA---Wichita-KS/Tax-Software-Content-Management-Consultant_R0060095",
+              "company": "Wolters Kluwer",
+              "title": "Tax Software Content Management Consultant"
+            },
+            {
+              "key": "url::https://corningjobs.corning.com/job/Corning-New-Grad-Polymer-Engineer-Summer-Fall-2027-Start-Date-NY-14831/1432239200",
+              "company": "Corning",
+              "title": "New Grad Polymer Engineer - Summer / Fall 2027 Start Date"
+            },
+            {
+              "key": "url::https://careers.gftinc.com/us/en/job/2026-14760/Associate-Software-Developer",
+              "company": "Gannett Fleming",
+              "title": "Associate Software Developer"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/appdirect/jobs/8795672002",
+              "company": "AppDirect",
+              "title": "AI Platform Product Sales Specialist (Devs.ai)"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 12.422,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 13481,
+            "cached_input_tokens": 0,
+            "output_tokens": 1272,
+            "reasoning_tokens": 248,
+            "estimated_usd": 0.042226
+          },
+          "decisions": [
+            {
+              "key": "url::https://salesforce.wd12.myworkdayjobs.com/en-US/Slack/job/California---San-Francisco/Software-Engineer-II--Machine-Learning---Slack_JR358348?CF_-_REC_-_LRV_-_Job_Posting_Anchor_-_Country_from_Job_Posting_Location_Extended=a30a87ed25634629aa6c3958aa2b91ea&CF_-_REC_-_LRV_-_Job_Posting_Anchor_-_Country_from_Job_Posting_Location_Extended=bc33aa3152ec42d4995f4791a106ed09&CF_-_REC_-_LRV_-_Job_Posting_Anchor_-_Country_from_Job_Posting_Location_Extended=29247e57dbaf46fb855b224e03170bc7",
+              "match_score": 73.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production AI tooling",
+                "LangChain LangGraph AWS"
+              ],
+              "main_gaps": [
+                "3+ years experience",
+                "developer productivity metrics"
+              ]
+            },
+            {
+              "key": "url::https://thehartford.wd5.myworkdayjobs.com/en-US/Careers_External/job/Hartford-CT/Software-Engineer_R2627118?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea",
+              "match_score": 59.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "data platform engineering",
+                "SQL Python AWS"
+              ],
+              "main_gaps": [
+                "3+ years .NET C#",
+                "work authorization requirement"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/132400846829691590-business-data-analyst-i-google-global-infrastructure-strategy-and-operations",
+              "match_score": 75.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "SQL Python data analysis",
+                "data quality pipelines"
+              ],
+              "main_gaps": [
+                "business strategy communication"
+              ]
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/Rogo/ac4e74a3-4f95-4a5b-843c-d28591c82da8",
+              "match_score": 67.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "retrieval systems",
+                "async API services"
+              ],
+              "main_gaps": [
+                "4+ years distributed systems",
+                "large-scale infrastructure"
+              ]
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/mirage/2c6f553e-0fe9-4e30-83da-de3dcbec36ea",
+              "match_score": 35.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "software engineering fundamentals"
+              ],
+              "main_gaps": [
+                "native iOS development",
+                "Swift AVFoundation"
+              ]
+            },
+            {
+              "key": "url::https://careers.appliedmaterials.com/careers/job/790317913273?domain=appliedmaterials.com&hl=en&triggerGoButton=true",
+              "match_score": 85.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "new college grad",
+                "C++ software development"
+              ],
+              "main_gaps": [
+                "semiconductor equipment software"
+              ]
+            },
+            {
+              "key": "url::https://wk.wd3.myworkdayjobs.com/en-US/External/job/USA---Wichita-KS/Tax-Software-Content-Management-Consultant_R0060095",
+              "match_score": 8.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "fixed asset tax expertise",
+                "CPA firm experience"
+              ]
+            },
+            {
+              "key": "url::https://corningjobs.corning.com/job/Corning-New-Grad-Polymer-Engineer-Summer-Fall-2027-Start-Date-NY-14831/1432239200",
+              "match_score": 5.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "polymer materials science",
+                "laboratory characterization"
+              ]
+            },
+            {
+              "key": "url::https://careers.gftinc.com/us/en/job/2026-14760/Associate-Software-Developer",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "early-career full-stack",
+                "Python SQL React"
+              ],
+              "main_gaps": [
+                "work sponsorship unavailable"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/appdirect/jobs/8795672002",
+              "match_score": 15.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "enterprise AI systems"
+              ],
+              "main_gaps": [
+                "quota-carrying B2B sales",
+                "channel co-selling experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 5,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153720BR",
+              "company": "Infosys",
+              "title": "Devops Engineer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.903,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3736,
+            "cached_input_tokens": 2724,
+            "output_tokens": 241,
+            "reasoning_tokens": 151,
+            "estimated_usd": 0.005461
+          },
+          "decisions": [
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153720BR",
+              "match_score": 67.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "CI/CD cloud deployments",
+                "production reliability engineering"
+              ],
+              "main_gaps": [
+                "Azure production services",
+                "PowerShell automation"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
       "run_at": "2026-09-22T15:13:32.794614+00:00",
       "mode": "pipeline",
       "health": "success",
