@@ -2,6 +2,115 @@
   "runs": [
     {
       "pipeline": "syncareer",
+      "run_at": "2026-09-22T00:11:43.109728+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-5.6-terra",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 1,
+      "cache_reused": 24,
+      "peer_reused": 2,
+      "same_content_reused": 0,
+      "non_material_change_reused": 0,
+      "new_or_changed": 1,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 1
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1,
+      "requests": 1,
+      "input_tokens": 4261,
+      "cached_input_tokens": 0,
+      "output_tokens": 232,
+      "reasoning_tokens": 61,
+      "estimated_usd": 0.011306,
+      "latency_seconds": 5.152,
+      "latency_measured": true,
+      "effective_rpm": 11.65,
+      "effective_tpm": 52325.31,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 1,
+      "funnel": {
+        "scoring_candidates": 23
+      },
+      "output": {
+        "tier_a": 0,
+        "tier_b": 1,
+        "tier_c": 22,
+        "shown": 1,
+        "new_jobs": 6,
+        "new_jobs_added": 0
+      },
+      "enrichment": {
+        "needed": 0,
+        "detail_api_resolved": 44,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 0
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://cdw.wd5.myworkdayjobs.com/en-US/Careers/job/Remote--USA/Microsoft-Infrastructure-Support-Engineer_R26_00002527?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=29247e57dbaf46fb855b224e03170bc7",
+              "company": "CDW",
+              "title": "Microsoft Infrastructure Support Engineer"
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 5.152,
+          "usage": {
+            "model": "gpt-5.6-terra",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 4261,
+            "cached_input_tokens": 0,
+            "output_tokens": 232,
+            "reasoning_tokens": 61,
+            "estimated_usd": 0.011306
+          },
+          "decisions": [
+            {
+              "key": "url::https://cdw.wd5.myworkdayjobs.com/en-US/Careers/job/Remote--USA/Microsoft-Infrastructure-Support-Engineer_R26_00002527?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=29247e57dbaf46fb855b224e03170bc7",
+              "match_score": 35.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production troubleshooting",
+                "cloud deployment experience"
+              ],
+              "main_gaps": [
+                "Windows Server and Active Directory",
+                "Microsoft break/fix support experience"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
       "run_at": "2026-09-21T15:12:12.012583+00:00",
       "mode": "pipeline",
       "health": "success",

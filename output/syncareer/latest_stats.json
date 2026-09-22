@@ -1,226 +1,103 @@
 {
-  "run_at": "2026-09-21T15:12:12.012583+00:00",
+  "run_at": "2026-09-22T00:11:43.109728+00:00",
   "funnel": {
-    "scoring_candidates": 49
+    "scoring_candidates": 23
   },
   "llm": {
-    "reused": 46,
-    "llm": 5,
-    "new_or_changed": 5,
-    "rule": 2,
-    "sent": 5,
-    "api_requests": 3,
+    "reused": 24,
+    "llm": 1,
+    "new_or_changed": 1,
+    "rule": 1,
+    "sent": 1,
+    "api_requests": 1,
     "recency_skipped": 0,
     "overflow": 0,
-    "peer_reused": 4,
+    "peer_reused": 2,
     "thin_source_rule": 0,
     "retryable_fallbacks": 0,
-    "historical_seen_skipped": 2,
+    "historical_seen_skipped": 1,
     "non_material_change_reused": 0,
     "same_content_reused": 0,
     "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 5
+      "genuinely_new_job": 1
     },
     "batch_size": 10,
-    "primary_batches_total": 3,
-    "batches_total": 3,
-    "batches_succeeded": 3,
-    "batches_attempted": 3,
+    "primary_batches_total": 1,
+    "batches_total": 1,
+    "batches_succeeded": 1,
+    "batches_attempted": 1,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 17.838,
-    "json_results": 5,
+    "latency_seconds": 5.152,
+    "json_results": 1,
     "batches": [
       {
         "batch": 1,
-        "route": "resume_swe",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://us-careers.crown.com/job/New-Bremen-Embedded-Software-Engineer-%28Indefinite-US-Work-Authorization-Required%29-OH-45869/1428150400",
-            "company": "Crown Equipment",
-            "title": "Embedded Software Engineer (Indefinite US Work Authorization Required)"
-          },
-          {
-            "key": "url::https://jobs.igt.com/IGT/job/Reno-Software-Duplicator-II-Reno%2C-NV-%28Swing-Shift%29-NV-89521/1367665657",
-            "company": "Everi",
-            "title": "Software Duplicator II - Reno, NV (Swing Shift)"
-          }
-        ],
-        "model": "gpt-5.6-terra",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 6.47,
-        "usage": {
-          "model": "gpt-5.6-terra",
-          "api_requests": 1,
-          "jobs_scored": 2,
-          "input_tokens": 3417,
-          "cached_input_tokens": 0,
-          "output_tokens": 313,
-          "reasoning_tokens": 107,
-          "estimated_usd": 0.01059
-        },
-        "decisions": [
-          {
-            "key": "url::https://us-careers.crown.com/job/New-Bremen-Embedded-Software-Engineer-%28Indefinite-US-Work-Authorization-Required%29-OH-45869/1428150400",
-            "match_score": 28.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "other",
-            "top_match_reasons": [
-              "C++ and Python",
-              "testing and software design"
-            ],
-            "main_gaps": [
-              "embedded RTOS development",
-              "CAN and hardware integration"
-            ]
-          },
-          {
-            "key": "url::https://jobs.igt.com/IGT/job/Reno-Software-Duplicator-II-Reno%2C-NV-%28Swing-Shift%29-NV-89521/1367665657",
-            "match_score": 18.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "validation and testing",
-              "production reliability experience"
-            ],
-            "main_gaps": [
-              "manufacturing production operations",
-              "software media duplication"
-            ]
-          }
-        ]
-      },
-      {
-        "batch": 2,
-        "route": "resume_ai",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://job-boards.greenhouse.io/innodatainc/jobs/4412191009",
-            "company": "Innodata",
-            "title": "AI Agentic Workflow Reviewer"
-          }
-        ],
-        "model": "gpt-5.6-terra",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 3.801,
-        "usage": {
-          "model": "gpt-5.6-terra",
-          "api_requests": 1,
-          "jobs_scored": 1,
-          "input_tokens": 2704,
-          "cached_input_tokens": 0,
-          "output_tokens": 81,
-          "reasoning_tokens": 0,
-          "estimated_usd": 0.00638
-        },
-        "decisions": [
-          {
-            "key": "url::https://job-boards.greenhouse.io/innodatainc/jobs/4412191009",
-            "match_score": 72.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "LLM evaluation platforms",
-              "agent safety guardrails"
-            ],
-            "main_gaps": [
-              "QA/trust-safety review experience"
-            ]
-          }
-        ]
-      },
-      {
-        "batch": 3,
         "route": "both",
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/System-Software-Engineer---CUDA-Chips_JR2026249-1?locationHierarchy1=2fcb99c455831013ea52df1adb7432a8&locationHierarchy1=2fcb99c455831013ea52f785717432d2&locationHierarchy1=2fcb99c455831013ea52fb338f2932d8&locationHierarchy1=2fcb99c455831013ea52ed162d4932c0&locationHierarchy1=2fcb99c455831013ea52b157d0d6325a&locationHierarchy1=2fcb99c455831013ea529fe151e3323c&locationHierarchy1=2fcb99c455831013ea529c3b93ba3236&locationHierarchy1=2fcb99c455831013ea528dce556b3224",
-            "company": "NVIDIA",
-            "title": "System Software Engineer - CUDA Chips"
-          },
-          {
-            "key": "url::https://careers.zionsbank.com/jobs/software-engineer-release-platform-engineering-28130",
-            "company": "Zions Bank",
-            "title": "Software Engineer (Release & Platform Engineering)"
+            "key": "url::https://cdw.wd5.myworkdayjobs.com/en-US/Careers/job/Remote--USA/Microsoft-Infrastructure-Support-Engineer_R26_00002527?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=29247e57dbaf46fb855b224e03170bc7",
+            "company": "CDW",
+            "title": "Microsoft Infrastructure Support Engineer"
           }
         ],
         "model": "gpt-5.6-terra",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 7.567,
+        "latency_seconds": 5.152,
         "usage": {
           "model": "gpt-5.6-terra",
           "api_requests": 1,
-          "jobs_scored": 2,
-          "input_tokens": 4805,
+          "jobs_scored": 1,
+          "input_tokens": 4261,
           "cached_input_tokens": 0,
-          "output_tokens": 565,
-          "reasoning_tokens": 206,
-          "estimated_usd": 0.01639
+          "output_tokens": 232,
+          "reasoning_tokens": 61,
+          "estimated_usd": 0.011306
         },
         "decisions": [
           {
-            "key": "url::https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/System-Software-Engineer---CUDA-Chips_JR2026249-1?locationHierarchy1=2fcb99c455831013ea52df1adb7432a8&locationHierarchy1=2fcb99c455831013ea52f785717432d2&locationHierarchy1=2fcb99c455831013ea52fb338f2932d8&locationHierarchy1=2fcb99c455831013ea52ed162d4932c0&locationHierarchy1=2fcb99c455831013ea52b157d0d6325a&locationHierarchy1=2fcb99c455831013ea529fe151e3323c&locationHierarchy1=2fcb99c455831013ea529c3b93ba3236&locationHierarchy1=2fcb99c455831013ea528dce556b3224",
-            "match_score": 48.0,
+            "key": "url::https://cdw.wd5.myworkdayjobs.com/en-US/Careers/job/Remote--USA/Microsoft-Infrastructure-Support-Engineer_R26_00002527?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=29247e57dbaf46fb855b224e03170bc7",
+            "match_score": 35.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "C++ and systems foundations",
-              "concurrent backend development"
+              "production troubleshooting",
+              "cloud deployment experience"
             ],
             "main_gaps": [
-              "C driver programming",
-              "kernel and GPU architecture"
-            ]
-          },
-          {
-            "key": "url::https://careers.zionsbank.com/jobs/software-engineer-release-platform-engineering-28130",
-            "match_score": 76.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "other",
-            "top_match_reasons": [
-              "Terraform and GitHub Actions",
-              "AWS deployment automation"
-            ],
-            "main_gaps": [
-              "GKE and Helm",
-              "Splunk operations"
+              "Windows Server and Active Directory",
+              "Microsoft break/fix support experience"
             ]
           }
         ]
       }
     ],
     "model": "gpt-5.6-terra",
-    "jobs_scored": 5,
-    "input_tokens": 10926,
+    "jobs_scored": 1,
+    "input_tokens": 4261,
     "cached_input_tokens": 0,
-    "output_tokens": 959,
-    "reasoning_tokens": 313,
-    "estimated_usd": 0.03336,
+    "output_tokens": 232,
+    "reasoning_tokens": 61,
+    "estimated_usd": 0.011306,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 5
+    "scored": 1
   },
   "output": {
-    "tier_a": 1,
-    "tier_b": 6,
-    "tier_c": 42,
-    "shown": 7,
-    "new_jobs": 11,
-    "new_jobs_added": 1
+    "tier_a": 0,
+    "tier_b": 1,
+    "tier_c": 22,
+    "shown": 1,
+    "new_jobs": 6,
+    "new_jobs_added": 0
   },
   "screen_method": "cache+llm",
   "failures": {
@@ -231,15 +108,15 @@
       "query": "Software",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 6,
+      "pages_fetched": 4,
       "stop_reason": "empty_page",
-      "raw_jobs": 65,
-      "unique_jobs": 65,
-      "unique_contribution": 65,
-      "first_pass_survivors": 38,
-      "original_postings_resolved": 16,
-      "jds_resolved": 15,
-      "elapsed_seconds": 3.242
+      "raw_jobs": 33,
+      "unique_jobs": 33,
+      "unique_contribution": 33,
+      "first_pass_survivors": 18,
+      "original_postings_resolved": 10,
+      "jds_resolved": 10,
+      "elapsed_seconds": 2.358
     },
     {
       "query": "Full Stack",
@@ -247,27 +124,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 9,
-      "unique_jobs": 9,
-      "unique_contribution": 7,
-      "first_pass_survivors": 5,
+      "raw_jobs": 7,
+      "unique_jobs": 7,
+      "unique_contribution": 6,
+      "first_pass_survivors": 4,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.684
+      "elapsed_seconds": 0.625
     },
     {
       "query": "AI",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 4,
+      "pages_fetched": 3,
       "stop_reason": "empty_page",
-      "raw_jobs": 38,
-      "unique_jobs": 38,
-      "unique_contribution": 28,
-      "first_pass_survivors": 16,
-      "original_postings_resolved": 7,
-      "jds_resolved": 6,
-      "elapsed_seconds": 1.737
+      "raw_jobs": 19,
+      "unique_jobs": 19,
+      "unique_contribution": 14,
+      "first_pass_survivors": 11,
+      "original_postings_resolved": 5,
+      "jds_resolved": 5,
+      "elapsed_seconds": 1.088
     },
     {
       "query": "Machine Learning",
@@ -275,13 +152,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
-      "unique_contribution": 6,
-      "first_pass_survivors": 4,
+      "raw_jobs": 4,
+      "unique_jobs": 4,
+      "unique_contribution": 4,
+      "first_pass_survivors": 2,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.66
+      "elapsed_seconds": 0.634
     },
     {
       "query": "Infrastructure",
@@ -289,13 +166,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
-      "unique_contribution": 1,
-      "first_pass_survivors": 5,
-      "original_postings_resolved": 2,
-      "jds_resolved": 2,
-      "elapsed_seconds": 0.693
+      "raw_jobs": 4,
+      "unique_jobs": 4,
+      "unique_contribution": 3,
+      "first_pass_survivors": 1,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.619
     },
     {
       "query": "Forward Deployed",
@@ -303,27 +180,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 2,
-      "first_pass_survivors": 3,
-      "original_postings_resolved": 1,
-      "jds_resolved": 0,
-      "elapsed_seconds": 0.677
-    },
-    {
-      "query": "DevOps",
-      "group": "syncareer",
-      "page_budget": 6,
-      "pages_fetched": 2,
-      "stop_reason": "empty_page",
       "raw_jobs": 1,
       "unique_jobs": 1,
       "unique_contribution": 1,
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.657
+      "elapsed_seconds": 0.648
+    },
+    {
+      "query": "DevOps",
+      "group": "syncareer",
+      "page_budget": 6,
+      "pages_fetched": 1,
+      "stop_reason": "empty_page",
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.154
     },
     {
       "query": "Backend",
@@ -331,13 +208,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 2,
-      "first_pass_survivors": 3,
+      "raw_jobs": 2,
+      "unique_jobs": 2,
+      "unique_contribution": 1,
+      "first_pass_survivors": 2,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.646
+      "elapsed_seconds": 0.645
     },
     {
       "query": "Platform",
@@ -345,41 +222,41 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 12,
-      "unique_jobs": 12,
-      "unique_contribution": 6,
-      "first_pass_survivors": 10,
-      "original_postings_resolved": 2,
-      "jds_resolved": 2,
-      "elapsed_seconds": 0.622
+      "raw_jobs": 5,
+      "unique_jobs": 5,
+      "unique_contribution": 3,
+      "first_pass_survivors": 4,
+      "original_postings_resolved": 1,
+      "jds_resolved": 1,
+      "elapsed_seconds": 0.636
     },
     {
       "query": "New Grad",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 2,
-      "unique_jobs": 2,
-      "unique_contribution": 1,
-      "first_pass_survivors": 1,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.646
+      "elapsed_seconds": 0.198
     },
     {
       "query": "LLM",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 1,
-      "unique_jobs": 1,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
       "unique_contribution": 0,
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.686
+      "elapsed_seconds": 0.189
     },
     {
       "query": "Data Engineer",
@@ -393,7 +270,7 @@
       "first_pass_survivors": 3,
       "original_postings_resolved": 2,
       "jds_resolved": 2,
-      "elapsed_seconds": 0.63
+      "elapsed_seconds": 0.622
     },
     {
       "query": "Site Reliability",
@@ -407,14 +284,14 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.629
+      "elapsed_seconds": 0.648
     }
   ],
   "enrichment": {
-    "needed": 4,
-    "detail_api_resolved": 76,
+    "needed": 0,
+    "detail_api_resolved": 44,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 4
+    "remaining_no_jd": 0
   }
 }

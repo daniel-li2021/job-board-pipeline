@@ -3,75 +3,6 @@
   "events": [
     {
       "pipeline": "syncareer",
-      "stamp": "2026-09-08_0011",
-      "emitted_at": "2026-09-08T00:11:41.317678+00:00",
-      "event_kind": "new_matching",
-      "count": 4,
-      "jobs": [
-        {
-          "canonical_job_key": "id::syncareer::9217fe3b774dd3a4b9d4ae1f5aae6001",
-          "job_id": "9217fe3b774dd3a4b9d4ae1f5aae6001",
-          "tier": "A",
-          "match_score": 92.0,
-          "fit_score": 92.0,
-          "company": "Audible",
-          "title": "Software Development Engineer, Early Careers",
-          "location": "Newark, New Jersey, United States",
-          "posting_date": "2026-09-06",
-          "first_seen": "2026-09-08T00:11:06.313568+00:00",
-          "review_status": "unreviewed",
-          "job_url": "https://www.audiblecareers.com/job/newark/software-development-engineer-early-careers/27552/100193825584",
-          "url": "https://www.audiblecareers.com/job/newark/software-development-engineer-early-careers/27552/100193825584"
-        },
-        {
-          "canonical_job_key": "id::syncareer::882877a8d4b03fa749235461f4ada673",
-          "job_id": "882877a8d4b03fa749235461f4ada673",
-          "tier": "A",
-          "match_score": 92.0,
-          "fit_score": 92.0,
-          "company": "Audible",
-          "title": "Software Development Engineer, Early Careers",
-          "location": "Cambridge, Massachusetts, United States",
-          "posting_date": "2026-09-06",
-          "first_seen": "2026-09-08T00:11:06.313568+00:00",
-          "review_status": "unreviewed",
-          "job_url": "https://www.audiblecareers.com/job/cambridge/software-development-engineer-early-careers/27552/100193825568",
-          "url": "https://www.audiblecareers.com/job/cambridge/software-development-engineer-early-careers/27552/100193825568"
-        },
-        {
-          "canonical_job_key": "id::syncareer::35bfb008ef8178966ee9d4fa4e7e68d0",
-          "job_id": "35bfb008ef8178966ee9d4fa4e7e68d0",
-          "tier": "A",
-          "match_score": 91.0,
-          "fit_score": 91.0,
-          "company": "TriNet",
-          "title": "Associate Software Engineer",
-          "location": "Atlanta, Georgia, United States",
-          "posting_date": "2026-09-06",
-          "first_seen": "2026-09-08T00:11:06.313568+00:00",
-          "review_status": "unreviewed",
-          "job_url": "https://jobs.trinet.com/careers/job/43588832?domain=trinet.com&triggerGoButton=false",
-          "url": "https://jobs.trinet.com/careers/job/43588832?domain=trinet.com&triggerGoButton=false"
-        },
-        {
-          "canonical_job_key": "id::syncareer::cb1ff521ca17f20870507f7b1d1895ee",
-          "job_id": "cb1ff521ca17f20870507f7b1d1895ee",
-          "tier": "B",
-          "match_score": 93.0,
-          "fit_score": 93.0,
-          "company": "Micron Technology",
-          "title": "Intern - AI Agentic Systems Engineer",
-          "location": "California, United States",
-          "posting_date": "2026-09-06",
-          "first_seen": "2026-09-08T00:11:06.313568+00:00",
-          "review_status": "unreviewed",
-          "job_url": "https://careers.micron.com/careers/job/44280744?domain=micron.com",
-          "url": "https://careers.micron.com/careers/job/44280744?domain=micron.com"
-        }
-      ]
-    },
-    {
-      "pipeline": "syncareer",
       "stamp": "2026-09-08_1511",
       "emitted_at": "2026-09-08T15:11:53.136553+00:00",
       "event_kind": "new_matching",
@@ -5194,6 +5125,32 @@
           "job_url": "https://careers.ice.com/jobs/13441?lang=en-us",
           "url": "https://careers.ice.com/jobs/13441?lang=en-us"
         },
+        {
+          "canonical_job_key": "id::syncareer::e5ba175e9214cef4c04c40d88355306d",
+          "job_id": "e5ba175e9214cef4c04c40d88355306d",
+          "tier": "B",
+          "match_score": 72.0,
+          "fit_score": 72.0,
+          "company": "Innodata",
+          "title": "AI Agentic Workflow Reviewer",
+          "location": "San Jose, California, United States",
+          "posted_date": "2026-09-20",
+          "posting_date": "2026-09-20",
+          "date_confidence": "medium",
+          "first_seen": "2026-09-21T15:11:14.342699+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://job-boards.greenhouse.io/innodatainc/jobs/4412191009",
+          "url": "https://job-boards.greenhouse.io/innodatainc/jobs/4412191009"
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-09-22_0011",
+      "emitted_at": "2026-09-22T00:11:44.010250+00:00",
+      "event_kind": "new_matching",
+      "count": 1,
+      "jobs": [
         {
           "canonical_job_key": "id::syncareer::e5ba175e9214cef4c04c40d88355306d",
           "job_id": "e5ba175e9214cef4c04c40d88355306d",
