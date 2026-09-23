@@ -45,12 +45,16 @@ def _patch_glassdoor_transport() -> None:
 
     def csrf_token(self: Any) -> str | None:
         response = self.session.get(f"{self.base_url.rstrip('/')}/")
+        if response.status_code == 403:
+            raise GlassdoorException("homepage HTTP 403")
         matches = re.findall(r'"token":\s*"([^"]+)"', response.text)
         return matches[0] if matches else None
 
     def location(self: Any, value: str, is_remote: bool) -> tuple[int | str, str]:
         if not value or is_remote:
             return "11047", "STATE"
+        if value == "United States":
+            return 1, "COUNTRY"
         url = (
             f"{self.base_url.rstrip('/')}/findPopularLocationAjax.htm?maxLocationsToReturn=10"
             f"&term={quote(value, safe='')}"
@@ -303,10 +307,16 @@ def scrape(
                         hours_old=hours, country_indeed="USA", description_format="markdown", verbose=0,
                     )
                     records = frame.to_dict(orient="records")
+                if source == "glassdoor" and any("HTTP 403" in error for error in errors):
+                    raise RuntimeError("; ".join(errors[-2:]))
                 if errors and (records or index > 0):
                     raise RuntimeError("; ".join(errors[-2:]))
             except Exception as exc:  # JobSpy wraps board-specific transport errors.
-                if source == "glassdoor" and scrape_jobs_func is None:
+                blocked_403 = source == "glassdoor" and "HTTP 403" in str(exc)
+                if blocked_403:
+                    stat["stop_reason"] = "blocked_http_403"
+                    stat["http_status"] = 403
+                if source == "glassdoor" and scrape_jobs_func is None and not blocked_403:
                     try:
                         records = _scrapling_glassdoor_records(keyword, hours)
                     except Exception as fallback_exc:  # noqa: BLE001 - preserve last-good snapshot

@@ -57,6 +57,7 @@ HEALTH_PATH = OUTPUT_DIR / "sources" / "health.json"
 HEALTH_SCHEMA_VERSION = 1
 LINKEDIN_DETAIL_LIMIT = 8
 LINKEDIN_DETAIL_COOLDOWN_HOURS = 24
+GLASSDOOR_RECOVERY_HOURS = 24
 LINKEDIN_SEARCH_COOLDOWN_HOURS = 24
 RECOVERY_SEARCH_LIMIT = 300
 RECOVERY_PAGE_LIMIT = 300
@@ -157,13 +158,30 @@ def collector_provenance() -> Dict[str, object]:
     return {"commit": commit or "unknown", "dirty": dirty}
 
 
-def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, object]:
+def run_one(name: str, collector: Dict[str, object] | None = None, *, force: bool = False) -> Dict[str, object]:
     scraper = SOURCES[name]
-    stamp = datetime.now(timezone.utc).isoformat()
+    now = datetime.now(timezone.utc)
+    stamp = now.isoformat()
     collector = collector or collector_provenance()
     source_provenance: Dict[str, object] = {
         "implementation": "sources.linkedin_local" if name == "linkedin" else "sources.jobspy_local",
     }
+    if name == "glassdoor" and not force:
+        state = _health_source(name)
+        try:
+            last_attempt = datetime.fromisoformat(
+                str(state.get("last_attempt_at") or "").replace("Z", "+00:00")
+            )
+            if last_attempt.tzinfo is None:
+                last_attempt = last_attempt.replace(tzinfo=timezone.utc)
+        except (TypeError, ValueError):
+            last_attempt = datetime.min.replace(tzinfo=timezone.utc)
+        if state.get("healthy") is False and now - last_attempt < timedelta(hours=GLASSDOOR_RECOVERY_HOURS):
+            return {
+                "source": name, "status": "deferred", "source_healthy": False,
+                "reason": "Glassdoor recovery probe deferred until 24 hours after the last attempt",
+                "count": 0, "collector": collector, "source_provenance": source_provenance,
+            }
     started = time.monotonic()
     search_control: Dict[str, object] = {}
     if name == "linkedin" and scraper is linkedin_local.scrape:
@@ -369,6 +387,8 @@ def run_one(name: str, collector: Dict[str, object] | None = None) -> Dict[str, 
 
 
 def write_health(results: list[Dict[str, object]], collector: Dict[str, object]) -> None:
+    if not any(result.get("status") != "deferred" for result in results):
+        return
     try:
         previous = json.loads(HEALTH_PATH.read_text(encoding="utf-8"))
     except (FileNotFoundError, json.JSONDecodeError, OSError):
@@ -376,6 +396,8 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
     previous_sources = previous.get("sources", {}) if isinstance(previous, dict) else {}
     sources = dict(previous_sources) if isinstance(previous_sources, dict) else {}
     for result in results:
+        if result.get("status") == "deferred":
+            continue
         name = str(result["source"])
         prior = sources.get(name, {}) if isinstance(sources.get(name), dict) else {}
         snapshot = read_source_snapshot_payload(name)
@@ -598,7 +620,7 @@ def main() -> None:
 
     names = [args.only] if args.only else list(SOURCES.keys())
     collector = collector_provenance()
-    results = [run_one(name, collector) for name in names]
+    results = [run_one(name, collector, force=args.only == "glassdoor") for name in names]
     write_health(results, collector)
 
     diagnostics_path = OUTPUT_DIR / "logs" / "local_sources_latest.json"

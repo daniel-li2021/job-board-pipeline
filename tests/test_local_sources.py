@@ -9,8 +9,9 @@ import subprocess
 import sys
 import tempfile
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 import local_sources
@@ -30,6 +31,156 @@ class Frame:
 
 
 class LocalSourceTests(unittest.TestCase):
+    def test_glassdoor_known_us_location_skips_obsolete_lookup(self) -> None:
+        try:
+            from jobspy.glassdoor import Glassdoor
+        except ImportError:
+            self.skipTest("python-jobspy is not installed")
+        jobspy_local._patch_glassdoor_transport()
+        scraper = Glassdoor()
+        scraper.base_url = "https://www.glassdoor.com/"
+        scraper.session = Mock()
+        scraper.session.get.return_value = SimpleNamespace(
+            status_code=200, json=lambda: [{"locationType": "C", "locationId": 42}],
+        )
+
+        self.assertEqual((1, "COUNTRY"), scraper._get_location("United States", False))
+        scraper.session.get.assert_not_called()
+        self.assertEqual(("11047", "STATE"), scraper._get_location("United States", True))
+        scraper.session.get.assert_not_called()
+        self.assertEqual((42, "CITY"), scraper._get_location("New York, NY", False))
+        self.assertIn("term=New%20York%2C%20NY", scraper.session.get.call_args.args[0])
+
+    def test_glassdoor_graphql_403_stops_without_static_retry(self) -> None:
+        try:
+            import jobspy.glassdoor
+        except ImportError:
+            self.skipTest("python-jobspy is not installed")
+        session = Mock()
+        session.headers = {}
+        session.get.return_value = SimpleNamespace(status_code=200, text='"token":"csrf"')
+        session.post.return_value = SimpleNamespace(status_code=403)
+        with patch.object(jobspy.glassdoor, "create_session", return_value=session), patch.object(
+            jobspy_local, "_scrapling_glassdoor_records",
+        ) as fallback:
+            result = jobspy_local.scrape("glassdoor", keywords=["software engineer"])
+
+        self.assertEqual("blocked", result["status"])
+        self.assertIn("HTTP 403", result["reason"])
+        self.assertEqual("blocked_http_403", result["query_stats"][0]["stop_reason"])
+        self.assertEqual(1, session.post.call_count)
+        self.assertEqual(1, session.get.call_count)
+        fallback.assert_not_called()
+
+    def test_glassdoor_homepage_403_stops_before_search(self) -> None:
+        try:
+            import jobspy.glassdoor
+        except ImportError:
+            self.skipTest("python-jobspy is not installed")
+        session = Mock()
+        session.headers = {}
+        session.get.return_value = SimpleNamespace(status_code=403, text="Access denied")
+        with patch.object(jobspy.glassdoor, "create_session", return_value=session), patch.object(
+            jobspy_local, "_scrapling_glassdoor_records",
+        ) as fallback:
+            result = jobspy_local.scrape("glassdoor", keywords=["software engineer"])
+
+        self.assertEqual("blocked", result["status"])
+        self.assertIn("homepage HTTP 403", result["reason"])
+        self.assertEqual("blocked_http_403", result["query_stats"][0]["stop_reason"])
+        session.post.assert_not_called()
+        fallback.assert_not_called()
+
+    def test_glassdoor_graphql_card_and_description_fixture(self) -> None:
+        try:
+            from jobspy.glassdoor import Glassdoor
+            from jobspy.model import DescriptionFormat, ScraperInput, Site
+        except ImportError:
+            self.skipTest("python-jobspy is not installed")
+        jobspy_local._patch_glassdoor_transport()
+        scraper = Glassdoor()
+        scraper.base_url = "https://www.glassdoor.com/"
+        scraper.jobs_per_page = 1
+        scraper.scraper_input = ScraperInput(
+            site_type=[Site.GLASSDOOR], search_term="software engineer",
+            location="United States", hours_old=24, results_wanted=1,
+            description_format=DescriptionFormat.MARKDOWN,
+        )
+        card = {
+            "jobview": {
+                "job": {"listingId": 42, "jobTitleText": "Software Engineer"},
+                "header": {
+                    "employerNameFromSearch": "Example", "employer": {"id": 7},
+                    "locationName": "Austin, TX", "locationType": "C", "ageInDays": 1,
+                },
+            },
+        }
+        session = Mock()
+        session.post.side_effect = [
+            SimpleNamespace(status_code=200, json=lambda: [{"data": {"jobListings": {
+                "jobListings": [card], "paginationCursors": [],
+            }}}]),
+            SimpleNamespace(status_code=200, json=lambda: [{"data": {"jobview": {
+                "job": {"description": "<p>Build APIs and services.</p>"},
+            }}}]),
+        ]
+        scraper.session = session
+
+        jobs, cursor = scraper._fetch_jobs_page(scraper.scraper_input, 1, "COUNTRY", 1, None)
+
+        self.assertIsNone(cursor)
+        self.assertEqual(1, len(jobs))
+        self.assertEqual("gd-42", jobs[0].id)
+        self.assertEqual("Software Engineer", jobs[0].title)
+        self.assertIn("Build APIs and services.", jobs[0].description)
+        self.assertEqual(2, session.post.call_count)
+
+    def test_glassdoor_recovery_defer_preserves_health_and_snapshot(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(schema, "SOURCES_DIR", Path(tmpdir)), patch.object(
+            local_sources, "HEALTH_PATH", Path(tmpdir) / "health.json",
+        ):
+            snapshot = schema.write_source_snapshot("glassdoor", [{"job_id": "last-good"}])
+            previous = snapshot.read_bytes()
+            now = datetime.now(timezone.utc)
+            health = {
+                "sources": {"glassdoor": {
+                    "healthy": False, "last_attempt_at": (now - timedelta(hours=1)).isoformat(),
+                    "consecutive_failures": 29,
+                }},
+            }
+            local_sources.HEALTH_PATH.write_text(json.dumps(health), encoding="utf-8")
+            prior_health = local_sources.HEALTH_PATH.read_bytes()
+            blocked = {"status": "blocked", "reason": "HTTP 403", "jobs": [], "query_stats": []}
+            scraper = Mock(return_value=blocked)
+            with patch.dict(local_sources.SOURCES, {"glassdoor": scraper}):
+                deferred = local_sources.run_one("glassdoor", {"commit": "test"})
+                local_sources.write_health([deferred], {"commit": "test"})
+                self.assertEqual("deferred", deferred["status"])
+                scraper.assert_not_called()
+                self.assertEqual(previous, snapshot.read_bytes())
+                self.assertEqual(prior_health, local_sources.HEALTH_PATH.read_bytes())
+
+                health["sources"]["glassdoor"]["last_attempt_at"] = (now - timedelta(hours=25)).isoformat()
+                local_sources.HEALTH_PATH.write_text(json.dumps(health), encoding="utf-8")
+                self.assertEqual("skipped_unavailable", local_sources.run_one("glassdoor", {"commit": "test"})["status"])
+                health["sources"]["glassdoor"]["last_attempt_at"] = now.isoformat()
+                local_sources.HEALTH_PATH.write_text(json.dumps(health), encoding="utf-8")
+                self.assertEqual("skipped_unavailable", local_sources.run_one("glassdoor", {"commit": "test"}, force=True)["status"])
+                self.assertEqual(2, scraper.call_count)
+                self.assertEqual(previous, snapshot.read_bytes())
+
+    def test_explicit_glassdoor_only_forces_recovery_probe(self) -> None:
+        result = {"source": "glassdoor", "status": "skipped_unavailable"}
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            local_sources, "OUTPUT_DIR", Path(tmpdir),
+        ), patch.object(sys, "argv", ["local_sources.py", "--only", "glassdoor"]), patch.object(
+            local_sources, "collector_provenance", return_value={"commit": "test"},
+        ), patch.object(local_sources, "run_one", return_value=result) as run, patch.object(
+            local_sources, "write_health",
+        ):
+            local_sources.main()
+        run.assert_called_once_with("glassdoor", {"commit": "test"}, force=True)
+
     def test_new_job_telemetry_is_final_unique_and_credits_overlapping_sources(self) -> None:
         now = "2026-09-16T12:00:00+00:00"
         old = "2026-09-15T12:00:00+00:00"
@@ -124,9 +275,9 @@ class LocalSourceTests(unittest.TestCase):
             "glassdoor", keywords=["software engineer"],
             scrape_jobs_func=blocked,
         )
-        self.assertEqual("empty_unverified", result["status"])
-        self.assertEqual("HTTP 403", result["reason"])
-        self.assertEqual("empty_unverified", result["query_stats"][0]["stop_reason"])
+        self.assertEqual("blocked", result["status"])
+        self.assertIn("HTTP 403", result["reason"])
+        self.assertEqual("blocked_http_403", result["query_stats"][0]["stop_reason"])
 
     def test_partial_or_later_transport_failure_is_not_a_good_snapshot(self) -> None:
         for fail_at in (1, 2):
