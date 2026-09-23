@@ -7,7 +7,7 @@
   try { archive = JSON.parse(localStorage.getItem(archiveCacheKey) || '{}'); } catch (e) { archive = {}; }
   const archivePending = new Set();
   const trackedStatuses = new Set(['in_progress', 'applied_complete']);
-  // ponytail: one record predates durable snapshots; remove after the repaired archive has synced.
+  // Verified pre-snapshot records remain here until their metadata reaches shared history.
   const legacyDetails = {
     'id::linkedin::4368576778':
       ['board', 'Figma', 'Software Engineer - Developer Experience', 'San Francisco, CA; New York, NY', 'https://boards.greenhouse.io/figma/jobs/5790627004?gh_jid=5790627004', '-', ''],
@@ -23,6 +23,18 @@
       ['board', 'The Walt Disney Company', 'Associate Software Engineer', 'Orlando, FL', 'https://www.disneycareers.com/en/job/orlando/associate-software-engineer/391/99722447760', '-', ''],
     'url::https://jobs.sap.com/job/Palo-Alto-SAP-iXp-Intern-Full-Stack-AI-Developer-CA-94304/1425371233':
       ['official', 'SAP', 'SAP iXp Intern - Full-Stack AI Developer', '', '', '-', ''],
+    'id::indeed::in-003572caa2054d12':
+      ['board', 'Draftwise', 'Forward-Deployed AI Engineer, Backend - West Palm Beach', 'West Palm Beach, FL, US', 'https://www.indeed.com/viewjob?jk=003572caa2054d12', '-', ''],
+    'id::indeed::in-b214d60eb40ecc74':
+      ['board', 'Draftwise', 'Forward-Deployed AI Engineer, Backend - New York', 'New York, NY, US', 'https://www.indeed.com/viewjob?jk=b214d60eb40ecc74', '-', ''],
+    'id::indeed::in-a445f496cdc6ae69':
+      ['board', 'MintMCP', 'Software Engineer', 'San Mateo, CA, US', 'https://www.indeed.com/viewjob?jk=a445f496cdc6ae69', '-', ''],
+    'id::indeed::in-af8120c6f81934cd':
+      ['board', 'MintMCP', 'Software Engineer', 'San Francisco, CA, US', 'https://www.indeed.com/viewjob?jk=af8120c6f81934cd', '-', ''],
+    'id::indeed::in-3ef703e7ae186034':
+      ['board', 'Woods Bagot', 'Full-Stack Software Developer Remote', 'Manhattan, NY, US', 'https://www.indeed.com/viewjob?jk=3ef703e7ae186034', '-', ''],
+    'id::indeed::in-fc53f2cac7fd0eec':
+      ['board', 'InfitiateIT', 'Junior / Mid-Level AI & Machine Learning Engineer', 'Remote, US', 'https://www.indeed.com/viewjob?jk=fc53f2cac7fd0eec', '-', ''],
   };
   let recentSource = 'all';
 
@@ -67,7 +79,15 @@
     applied: row?._applied_at || '',
   });
   const archiveStorageKey = row => {
-    const key = archivePrefix + JSON.stringify(compactSnapshot(row));
+    const snapshot = compactSnapshot(row);
+    let key = archivePrefix + JSON.stringify(snapshot);
+    if (key.length > 2000) {
+      for (const field of ['u', 'l', 'd', 'p', 'tier', 'score']) {
+        snapshot[field] = '';
+        key = archivePrefix + JSON.stringify(snapshot);
+        if (key.length <= 2000) break;
+      }
+    }
     return key.length <= 2000 ? key : '';
   };
   const decodeArchive = state => {
@@ -158,7 +178,9 @@
   function recoveredRow(key) {
     const matches = [archive[key], ...allRows]
       .filter(row => row?.canonical_job_key === key);
-    const details = (D.history_details || {})[key] || legacyDetails[key];
+    const published = (D.history_details || {})[key], legacy = legacyDetails[key];
+    const details = published ? published.map((value, index) =>
+      value && value !== '-' ? value : (legacy?.[index] ?? value)) : legacy;
     const scores = (D.history_scores || {})[key];
     const historical = details ? {
       canonical_job_key: key, pipeline: details[0], company: details[1], title: details[2],
@@ -207,11 +229,16 @@
   };
   applicationHistoryBadges = row => {
     const history = applicationHistorySummary(row);
-    if (!history.count) return '';
-    return `<span class="application-badges"><span class="pill confirmed">Applied ${history.count}×</span>${history.likely ? '<span class="pill discovered">Likely applied</span>' : ''}</span>`;
+    const repair = statusOf(row) === 'applied_complete' && (!hasMetadata(row, 'company') || !hasMetadata(row, 'title'))
+      ? ` <button class="repair-archive" data-key="${esc(row.canonical_job_key)}">Add job details</button>` : '';
+    return `${history.count ? `<span class="application-badges"><span class="pill confirmed">Applied ${history.count}×</span>${history.likely ? '<span class="pill discovered">Likely applied</span>' : ''}</span>` : ''}${repair}`;
   };
-  const appliedRows = rows => searchedRows(rows.filter(r => statusOf(r) === 'applied_complete' && !isDeleted(r)))
-    .map(row => recoveredRow(row.canonical_job_key) || row)
+  const appliedRows = rows => searchedRows(rows.filter(r => statusOf(r) === 'applied_complete' && !isDeleted(r))
+    .map(row => {
+      const recovered = recoveredRow(row.canonical_job_key) || row;
+      return !hasMetadata(recovered, 'company') || !hasMetadata(recovered, 'title')
+        ? {...recovered, display_group_key: recovered.canonical_job_key} : recovered;
+    }))
     .sort((a, b) => appliedTime(b) - appliedTime(a)
       || metadataQuality(b) - metadataQuality(a)
       || String(a.company || '').localeCompare(String(b.company || ''))
@@ -267,9 +294,8 @@
     renderAll();
   }
 
-  function archiveTrackedJob(key, status, appliedAt = archive[key]?._applied_at || '') {
-    const row = recoveredRow(key);
-    if (!row) return;
+  function archiveTrackedJob(key, status, appliedAt = archive[key]?._applied_at || '', row = recoveredRow(key)) {
+    if (!hasMetadata(row, 'company') || !hasMetadata(row, 'title')) return;
     const snapshot = {
       ...row,
       _tracked_status: status,
@@ -283,6 +309,21 @@
     persistAppliedArchive();
     syncArchiveRows();
     pushAppliedArchive(snapshot);
+  }
+
+  function completeTrackedRow(key, row = recoveredRow(key), edit = false) {
+    if (!row) return null;
+    const company = edit || !hasMetadata(row, 'company')
+      ? window.prompt('Company for this tracked job:', hasMetadata(row, 'company') ? row.company : '') : row.company;
+    if (company === null) return null;
+    const title = edit || !hasMetadata(row, 'title')
+      ? window.prompt('Job title for this tracked job:', hasMetadata(row, 'title') ? row.title : '') : row.title;
+    if (title === null) return null;
+    if (!String(company).trim() || !String(title).trim()) {
+      window.alert('Company and job title are required to save a tracked job.');
+      return null;
+    }
+    return {...row, company: String(company).trim(), title: String(title).trim()};
   }
 
   function backfillTrackedArchives() {
@@ -341,9 +382,17 @@
   setStatus = function(keys, value) {
     if (!statusChoices.includes(value)) return;
     keys = Array.isArray(keys) ? keys : [keys];
+    const snapshots = trackedStatuses.has(value) ? keys.map(key => completeTrackedRow(key)) : [];
+    if (snapshots.includes(null)) { renderAll(); return; }
+    if (snapshots.some(row => !archiveStorageKey({...row, _tracked_status: value, _applied_at: new Date().toISOString()}))) {
+      window.alert('This job is too long to save safely. Its status was not changed.');
+      renderAll();
+      return;
+    }
     saveStates(keys, { status: value, deleted: false });
     if (trackedStatuses.has(value)) {
-      keys.forEach(key => archiveTrackedJob(key, value, reviewState(key).updated_at));
+      keys.forEach((key, index) => archiveTrackedJob(key, value, reviewState(key).updated_at, snapshots[index]));
+      renderAll();
     }
   };
 
@@ -367,6 +416,10 @@
     renderBox('referrals', normalRows(D.referrals));
     renderBox('inProgress', searchedRows(rows.filter(r => statusOf(r) === 'in_progress' && !isDeleted(r))));
     renderBox('applied', appliedRows(rows));
+    document.querySelectorAll('#applied .repair-archive').forEach(button => button.onclick = () => {
+      const key = button.dataset.key, row = completeTrackedRow(key, recoveredRow(key), true);
+      if (row) { archiveTrackedJob(key, 'applied_complete', row._applied_at, row); renderAll(); }
+    });
     renderLastSevenDays(rows);
     const box = document.getElementById('deleted');
     box.innerHTML = jobs(rows.filter(isDeleted), true);

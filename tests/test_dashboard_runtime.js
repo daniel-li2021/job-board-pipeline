@@ -66,7 +66,7 @@ vm.runInContext(`searchQuery='';minScore='';sponsorshipFilters=new Set(sponsorsh
 const extensionSources = ['dashboard_applied_history.js','dashboard_last7.js'].map(file => fs.readFileSync(file,'utf8'));
 extensionSources.forEach(source => assert.doesNotMatch(source, /\bfunction\s+renderSummary\b|\brenderSummary\s*=/));
 let extension = extensionSources[0];
-extension = extension.slice(0, extension.indexOf('  // Existing tracked rows')) + 'globalThis.check={appliedRows,applicationHistorySummary,archiveStorageKey,decodeArchive,backfillTrackedArchives,expandedStates,syncArchiveRows,getArchive:()=>archive};})();';
+extension = extension.slice(0, extension.indexOf('  // Existing tracked rows')) + 'globalThis.check={appliedRows,applicationHistorySummary,archiveStorageKey,decodeArchive,backfillTrackedArchives,expandedStates,syncArchiveRows,completeTrackedRow,archiveTrackedJob,getArchive:()=>archive};})();';
 vm.runInContext(extension, context);
 assert.equal(vm.runInContext('renderSummary', context), renderSummaryOwner);
 vm.runInContext(`
@@ -91,6 +91,9 @@ const roundTrip=vm.runInContext("check.decodeArchive({canonical_job_key:check.ar
 assert.equal(roundTrip.company,'X');assert.equal(roundTrip.title,'Engineer');assert.equal(roundTrip.location,'Seattle, WA');
 assert.equal(roundTrip.tier,'A');assert.equal(roundTrip.score,91);assert.equal(roundTrip.url,'https://example.com/one');
 assert.equal(roundTrip._applied_at,archived.one._applied_at);
+const longKey=vm.runInContext("check.archiveStorageKey({...check.getArchive().one,url:'https://example.com/'+ 'x'.repeat(2200)})",context);
+assert.ok(longKey.length<=2000);
+assert.equal(vm.runInContext(`check.decodeArchive({canonical_job_key:${JSON.stringify(longKey)}}).company`,context),'X');
 vm.runInContext(`
 reviewStates['metlife-applied']={canonical_job_key:'metlife-applied',status:'applied_complete',deleted:false,updated_at:'2026-09-10T12:00:00Z'};
 reviewStates['metlife-applied-2']={canonical_job_key:'metlife-applied-2',status:'applied_complete',deleted:false,updated_at:'2026-09-11T12:00:00Z'};
@@ -146,6 +149,28 @@ check.backfillTrackedArchives();
 `,context);
 archived=JSON.parse(cache.jobAppliedArchiveCacheV1);
 assert.equal(archived[vm.runInContext('legacyKey',context)].company,'SAP');
+vm.runInContext(`
+D.history_details['id::indeed::in-af8120c6f81934cd']=['board','','Software Engineer','San Francisco, CA, US','https://www.indeed.com/viewjob?jk=af8120c6f81934cd','A',88];
+reviewStates['id::indeed::in-af8120c6f81934cd']={canonical_job_key:'id::indeed::in-af8120c6f81934cd',status:'applied_complete',updated_at:'2026-09-22T12:00:00Z'};
+check.getArchive()['id::indeed::in-af8120c6f81934cd']={canonical_job_key:'id::indeed::in-af8120c6f81934cd',company:'Archived tracked job',title:'Software Engineer',_tracked_status:'applied_complete',_archive_updated_at:'2099-01-01T00:00:00Z'};
+check.backfillTrackedArchives();
+`,context);
+assert.equal(vm.runInContext("check.getArchive()['id::indeed::in-af8120c6f81934cd'].company",context),'MintMCP');
+vm.runInContext("check.syncArchiveRows();searchQuery='mintmcp'",context);
+assert.ok(vm.runInContext("check.appliedRows(uniqueRows()).some(row=>row.company==='MintMCP')",context));
+vm.runInContext("searchQuery=''",context);
+vm.runInContext("allRows.push({canonical_job_key:'missing-company',company:'',title:'Developer',location:'Herndon, VA',url:'https://example.com/missing',tier:'A',score:88});window.prompt=()=>null;setStatus('missing-company','applied_complete')",context);
+assert.equal(vm.runInContext("reviewStates['missing-company']",context),undefined);
+vm.runInContext("window.prompt=()=> 'Verified Co';setStatus('missing-company','applied_complete')",context);
+assert.equal(vm.runInContext("check.getArchive()['missing-company'].company",context),'Verified Co');
+assert.equal(vm.runInContext("check.getArchive()['missing-company'].title",context),'Developer');
+vm.runInContext("reviewStates['repair-me']={canonical_job_key:'repair-me',status:'applied_complete',updated_at:'2026-09-22T00:00:00Z'};check.syncArchiveRows()",context);
+vm.runInContext('check.backfillTrackedArchives()',context);
+assert.equal(vm.runInContext("check.getArchive()['repair-me']",context),undefined);
+assert.match(vm.runInContext("applicationHistoryBadges(check.appliedRows(uniqueRows()).find(row=>row.canonical_job_key==='repair-me'))",context),/Add job details/);
+vm.runInContext("window.prompt=message=>message.startsWith('Company')?'Repaired Co':'Repaired Engineer';check.archiveTrackedJob('repair-me','applied_complete','',check.completeTrackedRow('repair-me',undefined,true))",context);
+assert.equal(vm.runInContext("check.getArchive()['repair-me'].company",context),'Repaired Co');
+assert.equal(vm.runInContext("check.getArchive()['repair-me'].title",context),'Repaired Engineer');
 vm.runInContext("allRows.push({canonical_job_key:'generic',company:'Archived application',title:'Previously applied job (source details expired)',tier:'-',score:'',_applied_archive:true});reviewStates.generic={canonical_job_key:'generic',status:'applied_complete',updated_at:'2099-01-01T00:00:00Z'}",context);
 assert.equal(vm.runInContext("check.appliedRows(uniqueRows()).at(-1).canonical_job_key",context),'generic');
 const migrated=vm.runInContext("check.decodeArchive({canonical_job_key:'applied-archive::'+JSON.stringify({k:'migrated',c:'Migrated',t:'Engineer',applied:'2020-01-01T00:00:00Z'}),updated_at:'2026-09-08T00:00:00Z'})",context);
