@@ -8,6 +8,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 import pipeline_health
+import board_pipeline
 
 
 class PipelineHealthTests(unittest.TestCase):
@@ -348,13 +349,17 @@ class PipelineHealthTests(unittest.TestCase):
             official = report["components"]["official"]
             self.assertEqual("Healthy", official["status"])
             self.assertEqual(0, official["failure_count"])
-            self.assertEqual("degraded", official["latest_attempt_status"])
-            self.assertEqual(10, official["consecutive_failures"])
+            self.assertEqual("limited", official["latest_attempt_status"])
+            self.assertEqual(0, official["consecutive_failures"])
             self.assertIn("LinkedIn company adapter excluded from status: HTTP 429", official["detail"])
-            self.assertIn("10 consecutive degraded runs", official["detail"])
+            self.assertNotIn("Warning at 5", official["detail"])
+            self.assertNotIn("prior scraper identities", official["detail"])
             self.assertNotIn("citadel", official["detail"])
             self.assertTrue(any("citadel" in item for item in report["limitations"]))
             self.assertTrue(any("linkedin_company_official_adapter" in item for item in report["limitations"]))
+            official_runs = [item for item in history if item["pipeline"] == "official"]
+            self.assertEqual("limited", official_runs[0]["health"])
+            self.assertEqual("unknown", official_runs[1]["health"])
             pipeline_health.write(root / "public", report, history)
             self.assertIn("Consecutive degraded runs", (root / "public" / "health.html").read_text())
 
@@ -391,12 +396,68 @@ class PipelineHealthTests(unittest.TestCase):
                     official = report["components"]["official"]
                     self.assertEqual(expected, official["status"])
                     self.assertEqual(count, official["scraper_error_count"])
+                    self.assertEqual(1 if count >= 5 else 0, official["consecutive_failures"])
+                    self.assertEqual("degraded" if count >= 5 else "limited", official["latest_attempt_status"])
                     self.assertIn(f"{count} scraper failures", official["keywords"])
                     self.assertIn(f"{count} scraper failures", official["detail"])
                     for index in range(count):
                         self.assertIn(f"source-{index} (", official["detail"])
                     self.assertIn("rate-limited", official["keywords"])
                     self.assertEqual(expected, report["overall"])
+
+    def test_official_degraded_streak_requires_five_actionable_scrapers_per_run(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            config = root / "config"
+            config.mkdir()
+            config.joinpath("official_careers.json").write_text(json.dumps({"companies": [
+                {"id": "link-only", "adapter": "skip"},
+            ]}))
+            sources = [f"source-{index}" for index in range(5)]
+            now = datetime(2026, 9, 22, 12, tzinfo=timezone.utc)
+            run = {"run_at": now.isoformat()}
+            history = [
+                {"pipeline": "official", "run_at": run["run_at"], "scrape_failure_sources": sources},
+                {"pipeline": "official", "run_at": (now - timedelta(hours=1)).isoformat(),
+                 "scrape_failure_sources": [*sources, "linkedin", "link-only"]},
+                {"pipeline": "official", "run_at": (now - timedelta(hours=2)).isoformat(),
+                 "scrape_failure_sources": [*sources[:4], "linkedin"]},
+                {"pipeline": "official", "run_at": (now - timedelta(hours=3)).isoformat(),
+                 "scrape_failure_sources": sources},
+            ]
+            self.assertEqual(2, pipeline_health._consecutive_official_degraded(root, history, run, 5))
+            self.assertEqual(0, pipeline_health._consecutive_official_degraded(root, history, run, 4))
+            history[1].pop("scrape_failure_sources")
+            self.assertEqual(1, pipeline_health._consecutive_official_degraded(root, history, run, 5))
+
+            official_dir = root / "output" / "official_careers"
+            official_dir.mkdir(parents=True)
+            path = official_dir / "run_history.json"
+            board_pipeline.append_run_history(path, "official", {
+                "run_at": run["run_at"],
+                "ignored_scrape_sources": ["linkedin", "link-only"],
+                "failures": {"scrape": {
+                    "linkedin": ["HTTP 429"], "link-only": ["not scraped"],
+                    **{source: ["error"] for source in sources},
+                }},
+            })
+            recorded = json.loads(path.read_text())["runs"][0]
+            self.assertEqual(["linkedin", "link-only", *sources], recorded["scrape_failure_sources"])
+            self.assertEqual("degraded", recorded["health"])
+            board_pipeline.append_run_history(path, "official", {
+                "run_at": (now + timedelta(hours=1)).isoformat(),
+                "ignored_scrape_sources": ["linkedin", "link-only"],
+                "failures": {"scrape": {"linkedin": ["HTTP 429"], "link-only": ["not scraped"]}},
+            })
+            limited = json.loads(path.read_text())["runs"][0]
+            self.assertEqual("limited", limited["health"])
+            official_dir.joinpath("latest_stats.json").write_text(json.dumps({
+                "run_at": limited["run_at"],
+                "failures": {"scrape": {"linkedin": ["HTTP 429"], "link-only": ["not scraped"]}},
+            }))
+            _latest, normalized = pipeline_health._run_history(root)
+            official_runs = [item for item in normalized if item["pipeline"] == "official"]
+            self.assertEqual(["limited", "degraded"], [item["health"] for item in official_runs])
 
     def test_linkedin_threshold_and_optional_children_do_not_warn_board(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

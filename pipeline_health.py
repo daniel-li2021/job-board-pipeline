@@ -84,6 +84,10 @@ def _run_history(base: Path) -> tuple[dict[str, dict[str, Any]], list[dict[str, 
                     "requests": llm.get("api_requests", 0), "input_tokens": llm.get("input_tokens", 0),
                     "output_tokens": llm.get("output_tokens", 0), "reasoning_tokens": llm.get("reasoning_tokens", 0),
                     "estimated_usd": llm.get("estimated_usd", 0), "output": current.get("output", {}),
+                    "scrape_failure_sources": [
+                        source for source, errors in ((current.get("failures") or {}).get("scrape") or {}).items()
+                        if _failure_items(errors)
+                    ] if key == "official" else [],
                     "funnel": current.get("funnel", {}), "enrichment": current.get("enrichment", {}),
                     "batches_total": llm.get("batches_total", 0), "batches_failed": llm.get("batches_failed", 0),
                     "primary_batches_total": llm.get("primary_batches_total", llm.get("batches_total", 0)),
@@ -100,6 +104,29 @@ def _run_history(base: Path) -> tuple[dict[str, dict[str, Any]], list[dict[str, 
             shown = [int(item.get("output", {}).get("shown", 0) or 0) for item in records[1:7]]
             if shown:
                 latest[key]["recent_shown_median"] = median(shown)
+        if key == "official":
+            current_sources = [
+                source for source, errors in ((current.get("failures") or {}).get("scrape") or {}).items()
+                if _failure_items(errors)
+            ] if current else None
+            for item in (entry for entry in history if entry.get("pipeline") == "official"):
+                if current_sources is not None and item.get("run_at") == current.get("run_at"):
+                    item["scrape_failure_sources"] = current_sources
+                sources = item.get("scrape_failure_sources")
+                if sources is None and "failures" in item:
+                    sources = [
+                        source for source, errors in ((item.get("failures") or {}).get("scrape") or {}).items()
+                        if _failure_items(errors)
+                    ]
+                    item["scrape_failure_sources"] = sources
+                if sources is None:
+                    item["health"] = "unknown"
+                elif _official_scraper_count(base, sources) >= 5:
+                    item["health"] = "degraded"
+                else:
+                    item["health"] = (
+                        "limited" if sources or item.get("health") in {"degraded", "limited"} else "success"
+                    )
     history.sort(key=lambda item: str(item.get("run_at") or ""), reverse=True)
     return latest, history[:40]
 
@@ -109,6 +136,24 @@ def _consecutive_degraded(history: list[dict[str, Any]], pipeline: str) -> int:
     for run in (item for item in history if item.get("pipeline") == pipeline):
         failed = run.get("health") == "degraded" or int(run.get("batches_failed", 0) or 0) > 0
         if not failed:
+            break
+        count += 1
+    return count
+
+
+def _consecutive_official_degraded(
+    base: Path, history: list[dict[str, Any]], run: dict[str, Any], current_count: int
+) -> int:
+    if current_count < 5:
+        return 0
+    count = 1
+    for previous in (item for item in history if item.get("pipeline") == "official"):
+        if previous.get("run_at") == run.get("run_at"):
+            continue
+        sources = previous.get("scrape_failure_sources")
+        if sources is None:  # Older summaries do not identify failed scrapers.
+            break
+        if _official_scraper_count(base, sources) < 5:
             break
         count += 1
     return count
@@ -205,6 +250,13 @@ def _official_failure_partition(base: Path, failures: Any) -> tuple[Any, list[st
     return actionable, limitations
 
 
+def _official_scraper_count(base: Path, sources: list[str]) -> int:
+    actionable, _limitations = _official_failure_partition(
+        base, {"scrape": {source: ["failed"] for source in sources}}
+    )
+    return len(actionable.get("scrape", {}))
+
+
 def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     now = now or datetime.now(timezone.utc)
     latest, history = _run_history(base)
@@ -266,18 +318,15 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         )
         failed_scrapers = {name: errors for name, errors in failed_scrapers.items() if errors}
         scraper_error_count = len(failed_scrapers)
-        consecutive_failures = _consecutive_degraded(history, key)
+        consecutive_failures = (
+            _consecutive_official_degraded(base, history, run, scraper_error_count)
+            if key == "official" else _consecutive_degraded(history, key)
+        )
         if ignored_linkedin:
             details.append(
                 "LinkedIn company adapter excluded from status: " + "; ".join(ignored_linkedin)
             )
             keywords.append("LinkedIn adapter blocked")
-            if not scraper_error_count:
-                details.append("0 actionable scraper failures; scraper thresholds: Warning at 5, Problem at 10")
-        if key == "official" and consecutive_failures >= 2:
-            details.append(
-                f"{consecutive_failures} consecutive degraded runs; prior scraper identities are not recorded"
-            )
         if scraper_error_count:
             scraper_summary = f"{scraper_error_count} scraper failure{'s' if scraper_error_count != 1 else ''}"
             keywords.append(scraper_summary)
@@ -307,6 +356,17 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             if data_usable:
                 keywords.append("cached")
             details.append(f"latest workflow attempt concluded {workflow_conclusion}; last-good data remains {'usable' if data_usable else 'unusable'}")
+        if workflow_conclusion and workflow_conclusion != "success" and workflow_token in workflow_name.lower():
+            latest_attempt_status = "failed"
+        elif not run_stamp:
+            latest_attempt_status = "unknown"
+        elif key == "official":
+            latest_attempt_status = (
+                "degraded" if scraper_error_count >= 5
+                else "limited" if _failure_items(run.get("failures")) else "success"
+            )
+        else:
+            latest_attempt_status = "degraded" if failure_count else "success"
         detail = "; ".join(details)
         components[key] = {
             "label": label,
@@ -318,7 +378,7 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             "last_good_at": store_stamp,
             "latest_attempt_at": run_stamp,
             "latest_attempt_age_hours": round(attempt_age, 1) if attempt_age is not None else None,
-            "latest_attempt_status": "failed" if workflow_conclusion and workflow_conclusion != "success" and workflow_token in workflow_name.lower() else ("degraded" if _failure_items(run.get("failures")) else ("success" if run_stamp else "unknown")),
+            "latest_attempt_status": latest_attempt_status,
             "failure_count": failure_count,
             "scraper_error_count": scraper_error_count,
             "consecutive_failures": consecutive_failures,

@@ -2378,6 +2378,16 @@ def append_run_history(
         "comparison": run.get("comparison", {}),
         "batches": llm.get("batches", []),
     }
+    if pipeline == "official":
+        record["scrape_failure_sources"] = [
+            source for source, errors in ((run.get("failures") or {}).get("scrape") or {}).items()
+            if _failure_values(errors)
+        ]
+        actionable = set(record["scrape_failure_sources"]) - set(run.get("ignored_scrape_sources") or ["linkedin"])
+        record["health"] = (
+            "degraded" if len(actionable) >= 5
+            else "limited" if _failure_values(run.get("failures")) else "success"
+        )
     payload = read_json(path, {"runs": []})
     prior = payload.get("runs", []) if isinstance(payload, dict) else []
     runs = [record] + [item for item in prior if item.get("run_at") != record["run_at"]]
