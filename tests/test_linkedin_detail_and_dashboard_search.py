@@ -200,13 +200,16 @@ class DashboardSearchTests(unittest.TestCase):
         self.assertIn("healthIndicator", dashboard.HTML_TEMPLATE)
         self.assertIn("D.health?.components", dashboard.HTML_TEMPLATE)
 
-    def test_dashboard_cards_show_concise_usable_health(self) -> None:
+    def test_dashboard_cards_keep_usable_health_and_recent_run_yields(self) -> None:
         self.assertIn("h.last_good_count", dashboard.HTML_TEMPLATE)
         self.assertIn("h.last_good_at", dashboard.HTML_TEMPLATE)
         self.assertIn("h.keywords", dashboard.HTML_TEMPLATE)
         self.assertIn("health details", dashboard.HTML_TEMPLATE)
-        self.assertNotIn("Runs in past 24h", dashboard.HTML_TEMPLATE)
-        self.assertNotIn("pipelineRuns", dashboard.HTML_TEMPLATE)
+        self.assertIn("run.mode==='pipeline'", dashboard.HTML_TEMPLATE)
+        self.assertIn("k==='board'?4:2", dashboard.HTML_TEMPLATE)
+        self.assertIn("runMetric(run,'new_jobs')", dashboard.HTML_TEMPLATE)
+        self.assertIn("runMetric(run,'new_jobs_added')", dashboard.HTML_TEMPLATE)
+        self.assertIn("Recent runs", dashboard.HTML_TEMPLATE)
         self.assertIn("America/Los_Angeles", dashboard.HTML_TEMPLATE)
 
     def test_search_is_applied_without_replacing_main_view_state(self) -> None:
