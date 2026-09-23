@@ -1,8 +1,8 @@
 {
   "_meta": {
     "purpose": "Canonical employer profiles for company-level application ranking. priority is an employer/application signal, not a job-fit or role-family score.",
-    "generated": "2026-09-16",
-    "company_count": 1255,
+    "generated": "2026-09-22",
+    "company_count": 1254,
     "source_scope": [
       "config/official_careers.json",
       "config/target_companies.json",
@@ -225,14 +225,14 @@
       "size": "200-1k",
       "type": "healthcare",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "ai_company",
         "healthtech",
         "startup"
       ],
       "priority": "high",
-      "notes": "Current LinkedIn profile lists 201–500 employees; mapped to 200-1k. Growth-stage health/AI company; sponsorship left unknown.",
+      "notes": "Current LinkedIn profile lists 201–500 employees; mapped to 200-1k. Growth-stage health/AI company; recent H-1B/LCA activity supports likely sponsorship.",
       "last_verified": "2026-09-12"
     },
     {
@@ -262,8 +262,8 @@
     {
       "name": "Accenture Federal Services",
       "aliases": [],
-      "size": "200-1k",
-      "type": "industrial",
+      "size": "5k-20k",
+      "type": "consulting",
       "maturity": "established",
       "sponsor": "unlikely",
       "tags": [
@@ -454,7 +454,7 @@
     {
       "name": "AeroVect",
       "aliases": [],
-      "size": "200-1k",
+      "size": "50-200",
       "type": "industrial",
       "maturity": "growth",
       "sponsor": "unknown",
@@ -801,7 +801,7 @@
       "size": "50-200",
       "type": "tech",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "ai_company",
         "startup"
@@ -1090,7 +1090,7 @@
     {
       "name": "Apex Systems",
       "aliases": [],
-      "size": "200-1k",
+      "size": "1k-5k",
       "type": "consulting",
       "maturity": "established",
       "sponsor": "unlikely",
@@ -1270,7 +1270,7 @@
     {
       "name": "Arlo",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "200-1k",
       "type": "tech",
       "maturity": "established",
       "sponsor": "likely",
@@ -1352,13 +1352,11 @@
     {
       "name": "AssetMark",
       "aliases": [],
-      "size": "200-1k",
+      "size": "1k-5k",
       "type": "finance",
-      "maturity": "growth",
+      "maturity": "established",
       "sponsor": "unknown",
-      "tags": [
-        "startup"
-      ],
+      "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
     },
@@ -2839,7 +2837,7 @@
       "size": "200-1k",
       "type": "tech",
       "maturity": "growth",
-      "sponsor": "likely",
+      "sponsor": "unlikely",
       "tags": [
         "ai_company",
         "cybersecurity",
@@ -2852,12 +2850,11 @@
     {
       "name": "Chainlink Labs",
       "aliases": [],
-      "size": "50-200",
+      "size": "200-1k",
       "type": "tech",
       "maturity": "growth",
       "sponsor": "likely",
       "tags": [
-        "ai_company",
         "startup",
         "sponsor_friendly"
       ],
@@ -2989,7 +2986,7 @@
       "size": "1k-5k",
       "type": "finance",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "fintech",
         "public_company"
@@ -3066,7 +3063,7 @@
       "aliases": [
         "Citizens Wealth Management"
       ],
-      "size": "1k-5k",
+      "size": "5k-20k",
       "type": "finance",
       "maturity": "established",
       "sponsor": "unknown",
@@ -3230,7 +3227,7 @@
     {
       "name": "CNH Industrial",
       "aliases": [],
-      "size": "5k-20k",
+      "size": "20k+",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "unknown",
@@ -3378,13 +3375,13 @@
       "size": "1k-5k",
       "type": "healthcare",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "healthtech",
         "startup"
       ],
       "priority": "high",
-      "notes": "Current LinkedIn profile lists 1,001–5,000 employees and describes rapid growth; sponsorship left unknown pending stronger evidence.",
+      "notes": "Current LinkedIn profile lists 1,001–5,000 employees and describes rapid growth; recent LCAs support likely sponsorship.",
       "last_verified": "2026-09-12"
     },
     {
@@ -3403,7 +3400,7 @@
     {
       "name": "Conagra Brands",
       "aliases": [],
-      "size": "20k+",
+      "size": "5k-20k",
       "type": "retail",
       "maturity": "established",
       "sponsor": "unknown",
@@ -3455,7 +3452,7 @@
     {
       "name": "Constellium",
       "aliases": [],
-      "size": "200-1k",
+      "size": "5k-20k",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "unknown",
@@ -3559,7 +3556,7 @@
     {
       "name": "Cox Automotive Inc.",
       "aliases": [],
-      "size": "200-1k",
+      "size": "20k+",
       "type": "other",
       "maturity": "established",
       "sponsor": "unknown",
@@ -3719,11 +3716,13 @@
     },
     {
       "name": "Cursor",
-      "aliases": [],
+      "aliases": [
+        "Anysphere"
+      ],
       "size": "1k-5k",
       "type": "tech",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "ai_company",
         "developer_tools",
@@ -3731,12 +3730,12 @@
       ],
       "priority": "high",
       "last_verified": "2026-09-15",
-      "notes": "Canonicalized to Cursor for pipeline matching; LinkedIn's Anysphere page shows more than 1,000 employees despite a stale smaller company-size label."
+      "notes": "Canonicalized to Cursor for pipeline matching. LinkedIn lists Anysphere as 51–200 but shows more than 1,400 associated employees; the broader 1k-5k band follows observed headcount."
     },
     {
       "name": "Curtiss-Wright Corporation",
       "aliases": [],
-      "size": "200-1k",
+      "size": "5k-20k",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "unlikely",
@@ -3915,7 +3914,7 @@
     {
       "name": "Day & Zimmermann",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "20k+",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "unlikely",
@@ -3958,7 +3957,7 @@
     {
       "name": "DeepL",
       "aliases": [],
-      "size": "200-1k",
+      "size": "1k-5k",
       "type": "tech",
       "maturity": "growth",
       "sponsor": "unknown",
@@ -4010,7 +4009,7 @@
       "size": "20k+",
       "type": "consulting",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "tech_service"
       ],
@@ -4108,7 +4107,7 @@
       "size": "1k-5k",
       "type": "tech",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "startup"
       ],
@@ -4173,7 +4172,7 @@
     {
       "name": "Dominion Energy",
       "aliases": [],
-      "size": "20k+",
+      "size": "5k-20k",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "likely",
@@ -4187,7 +4186,7 @@
     {
       "name": "Domino's",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "5k-20k",
       "type": "retail",
       "maturity": "established",
       "sponsor": "unknown",
@@ -4240,7 +4239,7 @@
     {
       "name": "DPR Construction",
       "aliases": [],
-      "size": "200-1k",
+      "size": "5k-20k",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "unknown",
@@ -4435,7 +4434,7 @@
     {
       "name": "EchoStar Corporation",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "5k-20k",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "unknown",
@@ -4825,7 +4824,7 @@
     {
       "name": "eSentire",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "200-1k",
       "type": "tech",
       "maturity": "established",
       "sponsor": "likely",
@@ -4952,8 +4951,8 @@
     {
       "name": "Excellus BCBS",
       "aliases": [],
-      "size": "1k-5k",
-      "type": "other",
+      "size": "5k-20k",
+      "type": "healthcare",
       "maturity": "established",
       "sponsor": "unknown",
       "tags": [],
@@ -5218,10 +5217,10 @@
     {
       "name": "Fitch Ratings",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "5k-20k",
       "type": "finance",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -5256,7 +5255,7 @@
     {
       "name": "Flexcompute",
       "aliases": [],
-      "size": "200-1k",
+      "size": "50-200",
       "type": "tech",
       "maturity": "growth",
       "sponsor": "unknown",
@@ -5530,11 +5529,13 @@
     },
     {
       "name": "Gallagher",
-      "aliases": [],
-      "size": "1k-5k",
-      "type": "consulting",
+      "aliases": [
+        "Arthur J. Gallagher"
+      ],
+      "size": "20k+",
+      "type": "finance",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "consulting"
       ],
@@ -5571,7 +5572,7 @@
     {
       "name": "Garmin",
       "aliases": [],
-      "size": "5k-20k",
+      "size": "20k+",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "likely",
@@ -5702,20 +5703,18 @@
     {
       "name": "Genworth",
       "aliases": [],
-      "size": "200-1k",
+      "size": "1k-5k",
       "type": "finance",
-      "maturity": "growth",
-      "sponsor": "unknown",
-      "tags": [
-        "startup"
-      ],
+      "maturity": "established",
+      "sponsor": "likely",
+      "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
     },
     {
       "name": "Giftogram",
       "aliases": [],
-      "size": "50-200",
+      "size": "<50",
       "type": "other",
       "maturity": "established",
       "sponsor": "unknown",
@@ -5837,7 +5836,7 @@
     {
       "name": "Global Shop Solutions",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "200-1k",
       "type": "tech",
       "maturity": "established",
       "sponsor": "unknown",
@@ -5861,10 +5860,10 @@
     {
       "name": "GM Financial",
       "aliases": [],
-      "size": "1k-5k",
-      "type": "industrial",
+      "size": "5k-20k",
+      "type": "finance",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -5947,7 +5946,7 @@
     {
       "name": "Gotion Inc.",
       "aliases": [],
-      "size": "200-1k",
+      "size": "50-200",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "unknown",
@@ -6051,9 +6050,9 @@
     {
       "name": "Haast Autonomous",
       "aliases": [],
-      "size": "50-200",
+      "size": "<50",
       "type": "tech",
-      "maturity": "established",
+      "maturity": "early_startup",
       "sponsor": "unknown",
       "tags": [],
       "priority": "normal",
@@ -6064,7 +6063,7 @@
       "aliases": [],
       "size": "200-1k",
       "type": "industrial",
-      "maturity": "established",
+      "maturity": "growth",
       "sponsor": "unlikely",
       "tags": [
         "defense",
@@ -6135,7 +6134,7 @@
       "size": "200-1k",
       "type": "industrial",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "startup"
       ],
@@ -6211,13 +6210,11 @@
     {
       "name": "Haver Analytics",
       "aliases": [],
-      "size": "200-1k",
+      "size": "50-200",
       "type": "finance",
-      "maturity": "growth",
+      "maturity": "established",
       "sponsor": "unknown",
-      "tags": [
-        "startup"
-      ],
+      "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
     },
@@ -6316,7 +6313,7 @@
     {
       "name": "Herzog",
       "aliases": [],
-      "size": "200-1k",
+      "size": "1k-5k",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "unknown",
@@ -6516,7 +6513,7 @@
     {
       "name": "HIWIN Corporation",
       "aliases": [],
-      "size": "200-1k",
+      "size": "50-200",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "unknown",
@@ -6546,18 +6543,15 @@
       "size": "20k+",
       "type": "industrial",
       "maturity": "established",
-      "sponsor": "unlikely",
-      "tags": [
-        "defense",
-        "clearance_heavy"
-      ],
-      "priority": "low",
+      "sponsor": "likely",
+      "tags": [],
+      "priority": "normal",
       "last_verified": "2026-09-15"
     },
     {
       "name": "Horizon Media, Inc.",
       "aliases": [],
-      "size": "200-1k",
+      "size": "1k-5k",
       "type": "other",
       "maturity": "established",
       "sponsor": "unknown",
@@ -6568,7 +6562,7 @@
     {
       "name": "Hover",
       "aliases": [],
-      "size": "50-200",
+      "size": "200-1k",
       "type": "tech",
       "maturity": "established",
       "sponsor": "unknown",
@@ -6682,7 +6676,7 @@
       "size": "5k-20k",
       "type": "finance",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -6727,17 +6721,6 @@
         "sponsor_friendly"
       ],
       "priority": "high",
-      "last_verified": "2026-09-15"
-    },
-    {
-      "name": "ICE",
-      "aliases": [],
-      "size": "1k-5k",
-      "type": "finance",
-      "maturity": "established",
-      "sponsor": "unknown",
-      "tags": [],
-      "priority": "normal",
       "last_verified": "2026-09-15"
     },
     {
@@ -6902,13 +6885,11 @@
     {
       "name": "Information Technology Senior Management Forum",
       "aliases": [],
-      "size": "50-200",
-      "type": "tech",
-      "maturity": "growth",
+      "size": "<50",
+      "type": "other",
+      "maturity": "established",
       "sponsor": "unknown",
-      "tags": [
-        "startup"
-      ],
+      "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
     },
@@ -7131,11 +7112,13 @@
     },
     {
       "name": "Intercontinental Exchange",
-      "aliases": [],
-      "size": "1k-5k",
+      "aliases": [
+        "ICE"
+      ],
+      "size": "5k-20k",
       "type": "finance",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -7332,8 +7315,8 @@
     {
       "name": "ITA Group, Inc.",
       "aliases": [],
-      "size": "1k-5k",
-      "type": "other",
+      "size": "200-1k",
+      "type": "consulting",
       "maturity": "established",
       "sponsor": "unknown",
       "tags": [],
@@ -7343,7 +7326,7 @@
     {
       "name": "ITC Holdings Corp.",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "200-1k",
       "type": "other",
       "maturity": "established",
       "sponsor": "unknown",
@@ -7354,10 +7337,10 @@
     {
       "name": "Itron",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "5k-20k",
       "type": "industrial",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -7413,10 +7396,10 @@
     {
       "name": "Jack Henry & Associates",
       "aliases": [],
-      "size": "1k-5k",
-      "type": "other",
+      "size": "5k-20k",
+      "type": "finance",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -7764,7 +7747,7 @@
     {
       "name": "Jupiter Power",
       "aliases": [],
-      "size": "200-1k",
+      "size": "50-200",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "unknown",
@@ -7920,7 +7903,7 @@
     {
       "name": "Kimball Midwest",
       "aliases": [],
-      "size": "50-200",
+      "size": "1k-5k",
       "type": "retail",
       "maturity": "established",
       "sponsor": "unknown",
@@ -7931,8 +7914,8 @@
     {
       "name": "Kin",
       "aliases": [],
-      "size": "50-200",
-      "type": "other",
+      "size": "200-1k",
+      "type": "finance",
       "maturity": "established",
       "sponsor": "unknown",
       "tags": [],
@@ -7942,7 +7925,7 @@
     {
       "name": "Kingland",
       "aliases": [],
-      "size": "50-200",
+      "size": "200-1k",
       "type": "tech",
       "maturity": "established",
       "sponsor": "unknown",
@@ -8182,7 +8165,7 @@
       "size": "200-1k",
       "type": "finance",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "startup"
       ],
@@ -8230,7 +8213,7 @@
     {
       "name": "Leviton",
       "aliases": [],
-      "size": "200-1k",
+      "size": "5k-20k",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "unknown",
@@ -8282,7 +8265,7 @@
     {
       "name": "Liberty Mutual Insurance",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "20k+",
       "type": "finance",
       "maturity": "established",
       "sponsor": "likely",
@@ -8321,10 +8304,10 @@
     {
       "name": "Light & Wonder",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "5k-20k",
       "type": "tech",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -8372,7 +8355,7 @@
     {
       "name": "Linear",
       "aliases": [],
-      "size": "200-1k",
+      "size": "50-200",
       "type": "tech",
       "maturity": "growth",
       "sponsor": "unknown",
@@ -8434,8 +8417,8 @@
     {
       "name": "LMI",
       "aliases": [],
-      "size": "200-1k",
-      "type": "industrial",
+      "size": "1k-5k",
+      "type": "consulting",
       "maturity": "established",
       "sponsor": "unlikely",
       "tags": [
@@ -8466,11 +8449,13 @@
     {
       "name": "Lodestar Space",
       "aliases": [],
-      "size": "50-200",
-      "type": "other",
-      "maturity": "established",
-      "sponsor": "unknown",
-      "tags": [],
+      "size": "<50",
+      "type": "industrial",
+      "maturity": "early_startup",
+      "sponsor": "unlikely",
+      "tags": [
+        "export_control"
+      ],
       "priority": "normal",
       "last_verified": "2026-09-15"
     },
@@ -8656,10 +8641,10 @@
     {
       "name": "M&T Bank",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "20k+",
       "type": "finance",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -8667,8 +8652,8 @@
     {
       "name": "M.C. Dean, Inc.",
       "aliases": [],
-      "size": "200-1k",
-      "type": "other",
+      "size": "5k-20k",
+      "type": "industrial",
       "maturity": "established",
       "sponsor": "unknown",
       "tags": [],
@@ -8856,7 +8841,7 @@
       "size": "20k+",
       "type": "other",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "public_company"
       ],
@@ -9146,7 +9131,7 @@
       "size": "1k-5k",
       "type": "finance",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "public_company"
       ],
@@ -9349,7 +9334,7 @@
       "size": "5k-20k",
       "type": "industrial",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "public_company"
       ],
@@ -9512,7 +9497,7 @@
       "size": "5k-20k",
       "type": "healthcare",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -9695,7 +9680,7 @@
     {
       "name": "Murphy USA",
       "aliases": [],
-      "size": "200-1k",
+      "size": "5k-20k",
       "type": "retail",
       "maturity": "established",
       "sponsor": "unknown",
@@ -9773,8 +9758,10 @@
     },
     {
       "name": "National Security Agency",
-      "aliases": [],
-      "size": "200-1k",
+      "aliases": [
+        "NSA"
+      ],
+      "size": "20k+",
       "type": "government",
       "maturity": "established",
       "sponsor": "unlikely",
@@ -10047,12 +10034,11 @@
       "aliases": [],
       "size": "200-1k",
       "type": "tech",
-      "maturity": "growth",
+      "maturity": "established",
       "sponsor": "likely",
       "tags": [
         "public_company",
-        "sponsor_friendly",
-        "startup"
+        "sponsor_friendly"
       ],
       "priority": "high",
       "last_verified": "2026-09-15"
@@ -10102,10 +10088,10 @@
     {
       "name": "Nexxen",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "200-1k",
       "type": "tech",
-      "maturity": "growth",
-      "sponsor": "unknown",
+      "maturity": "established",
+      "sponsor": "likely",
       "tags": [
         "public_company"
       ],
@@ -10295,7 +10281,7 @@
       "size": "50-200",
       "type": "tech",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "startup",
         "ai_company"
@@ -10310,7 +10296,7 @@
       "size": "20k+",
       "type": "retail",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -10376,7 +10362,7 @@
       "size": "5k-20k",
       "type": "finance",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -10485,10 +10471,10 @@
     {
       "name": "NYU Langone Health",
       "aliases": [],
-      "size": "200-1k",
+      "size": "20k+",
       "type": "healthcare",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -10507,10 +10493,10 @@
     {
       "name": "Oak Ridge National Laboratory",
       "aliases": [],
-      "size": "200-1k",
+      "size": "5k-20k",
       "type": "government",
       "maturity": "established",
-      "sponsor": "unlikely",
+      "sponsor": "likely",
       "tags": [
         "defense",
         "clearance_heavy"
@@ -10575,12 +10561,11 @@
       "aliases": [],
       "size": "50-200",
       "type": "tech",
-      "maturity": "growth",
+      "maturity": "established",
       "sponsor": "likely",
       "tags": [
         "public_company",
-        "sponsor_friendly",
-        "startup"
+        "sponsor_friendly"
       ],
       "priority": "high",
       "last_verified": "2026-09-15"
@@ -10669,7 +10654,7 @@
       "size": "5k-20k",
       "type": "finance",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "public_company"
       ],
@@ -10891,14 +10876,15 @@
     },
     {
       "name": "Outset",
-      "aliases": [],
+      "aliases": [
+        "Outset Medical"
+      ],
       "size": "200-1k",
       "type": "healthcare",
-      "maturity": "growth",
+      "maturity": "established",
       "sponsor": "unknown",
       "tags": [
-        "public_company",
-        "startup"
+        "public_company"
       ],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -10943,7 +10929,7 @@
       "size": "20k+",
       "type": "industrial",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "pipeline_exclude",
         "public_company"
@@ -11051,13 +11037,14 @@
     {
       "name": "Palo Alto Networks",
       "aliases": [],
-      "size": "50-200",
+      "size": "20k+",
       "type": "tech",
       "maturity": "established",
       "sponsor": "likely",
       "tags": [
         "public_company",
-        "sponsor_friendly"
+        "sponsor_friendly",
+        "cybersecurity"
       ],
       "priority": "high",
       "last_verified": "2026-09-15"
@@ -11065,7 +11052,7 @@
     {
       "name": "PAM Health",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "5k-20k",
       "type": "healthcare",
       "maturity": "established",
       "sponsor": "unknown",
@@ -11175,7 +11162,7 @@
       "size": "20k+",
       "type": "other",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "university"
       ],
@@ -11188,7 +11175,7 @@
       "size": "20k+",
       "type": "industrial",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -11509,7 +11496,7 @@
       "size": "1k-5k",
       "type": "healthcare",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "healthtech"
       ],
@@ -11577,7 +11564,7 @@
       "size": "1k-5k",
       "type": "tech",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -11800,9 +11787,9 @@
       "name": "Public Storage",
       "aliases": [],
       "size": "5k-20k",
-      "type": "retail",
+      "type": "other",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "public_company"
       ],
@@ -11817,7 +11804,7 @@
       "size": "20k+",
       "type": "retail",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "public_company"
       ],
@@ -11874,7 +11861,7 @@
       "size": "50-200",
       "type": "tech",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "startup"
       ],
@@ -11943,7 +11930,7 @@
       "size": "200-1k",
       "type": "tech",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "startup"
       ],
@@ -12261,17 +12248,17 @@
       "size": "1k-5k",
       "type": "industrial",
       "maturity": "growth",
-      "sponsor": "likely",
+      "sponsor": "unlikely",
       "tags": [
-        "sponsor_friendly"
+        "export_control"
       ],
-      "priority": "high",
+      "priority": "low",
       "last_verified": "2026-09-15"
     },
     {
       "name": "RELX",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "5k-20k",
       "type": "tech",
       "maturity": "established",
       "sponsor": "likely",
@@ -12419,7 +12406,7 @@
     {
       "name": "REVOLVE",
       "aliases": [],
-      "size": "200-1k",
+      "size": "1k-5k",
       "type": "retail",
       "maturity": "established",
       "sponsor": "unknown",
@@ -12516,10 +12503,10 @@
     {
       "name": "RLI Insurance Company",
       "aliases": [],
-      "size": "200-1k",
+      "size": "1k-5k",
       "type": "finance",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "public_company"
       ],
@@ -12612,7 +12599,7 @@
     {
       "name": "Rockwell Automation",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "5k-20k",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "likely",
@@ -12803,8 +12790,7 @@
       "sponsor": "likely",
       "tags": [
         "public_company",
-        "sponsor_friendly",
-        "ai_company"
+        "sponsor_friendly"
       ],
       "priority": "high",
       "last_verified": "2026-09-15"
@@ -12952,8 +12938,8 @@
     {
       "name": "Sardine",
       "aliases": [],
-      "size": "50-200",
-      "type": "tech",
+      "size": "200-1k",
+      "type": "finance",
       "maturity": "growth",
       "sponsor": "unknown",
       "tags": [
@@ -12965,7 +12951,7 @@
     {
       "name": "Saronic Technologies",
       "aliases": [],
-      "size": "200-1k",
+      "size": "1k-5k",
       "type": "industrial",
       "maturity": "growth",
       "sponsor": "unlikely",
@@ -13204,13 +13190,11 @@
     {
       "name": "Semiconductor Engineering",
       "aliases": [],
-      "size": "200-1k",
-      "type": "industrial",
-      "maturity": "growth",
+      "size": "<50",
+      "type": "other",
+      "maturity": "established",
       "sponsor": "unknown",
-      "tags": [
-        "startup"
-      ],
+      "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
     },
@@ -13495,13 +13479,11 @@
     {
       "name": "Simplot Company",
       "aliases": [],
-      "size": "200-1k",
+      "size": "5k-20k",
       "type": "industrial",
-      "maturity": "growth",
+      "maturity": "established",
       "sponsor": "unknown",
-      "tags": [
-        "startup"
-      ],
+      "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
     },
@@ -13762,13 +13744,12 @@
       "aliases": [
         "PlayStation"
       ],
-      "size": "1k-5k",
-      "type": "tech",
+      "size": "5k-20k",
+      "type": "other",
       "maturity": "established",
       "sponsor": "likely",
       "tags": [
-        "sponsor_friendly",
-        "ai_company"
+        "sponsor_friendly"
       ],
       "priority": "high",
       "last_verified": "2026-09-15"
@@ -13834,12 +13815,10 @@
       "name": "Space Telescope Science Institute",
       "aliases": [],
       "size": "200-1k",
-      "type": "industrial",
-      "maturity": "growth",
+      "type": "other",
+      "maturity": "established",
       "sponsor": "unknown",
-      "tags": [
-        "startup"
-      ],
+      "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
     },
@@ -13905,9 +13884,7 @@
       "type": "industrial",
       "maturity": "established",
       "sponsor": "unknown",
-      "tags": [
-        "public_company"
-      ],
+      "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
     },
@@ -14010,7 +13987,7 @@
       "size": "20k+",
       "type": "industrial",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "public_company"
       ],
@@ -14049,7 +14026,7 @@
       "size": "20k+",
       "type": "finance",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -14099,7 +14076,7 @@
       "aliases": [
         "Steel Dynamics, Inc"
       ],
-      "size": "20k+",
+      "size": "5k-20k",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "unknown",
@@ -14253,7 +14230,7 @@
       "size": "50-200",
       "type": "tech",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "startup",
         "ai_company"
@@ -14281,7 +14258,7 @@
       "aliases": [
         "Super Micro Computer Spain, S.L."
       ],
-      "size": "1k-5k",
+      "size": "5k-20k",
       "type": "tech",
       "maturity": "established",
       "sponsor": "likely",
@@ -14360,13 +14337,11 @@
     {
       "name": "Swisslog Healthcare",
       "aliases": [],
-      "size": "200-1k",
+      "size": "5k-20k",
       "type": "healthcare",
-      "maturity": "growth",
+      "maturity": "established",
       "sponsor": "unknown",
-      "tags": [
-        "startup"
-      ],
+      "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
     },
@@ -14386,7 +14361,7 @@
     {
       "name": "Sydecar",
       "aliases": [],
-      "size": "200-1k",
+      "size": "1k-5k",
       "type": "finance",
       "maturity": "growth",
       "sponsor": "unknown",
@@ -14584,7 +14559,7 @@
       "aliases": [
         "TD"
       ],
-      "size": "1k-5k",
+      "size": "20k+",
       "type": "finance",
       "maturity": "established",
       "sponsor": "likely",
@@ -14676,8 +14651,8 @@
     {
       "name": "Teladoc Health",
       "aliases": [],
-      "size": "1k-5k",
-      "type": "tech",
+      "size": "5k-20k",
+      "type": "healthcare",
       "maturity": "established",
       "sponsor": "likely",
       "tags": [
@@ -14997,7 +14972,7 @@
     {
       "name": "Thomas Jefferson University & Jefferson Health",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "5k-20k",
       "type": "healthcare",
       "maturity": "established",
       "sponsor": "likely",
@@ -15010,7 +14985,7 @@
     {
       "name": "Thomson Reuters",
       "aliases": [],
-      "size": "5k-20k",
+      "size": "20k+",
       "type": "tech",
       "maturity": "established",
       "sponsor": "likely",
@@ -15131,14 +15106,13 @@
       "aliases": [],
       "size": "200-1k",
       "type": "consulting",
-      "maturity": "growth",
+      "maturity": "established",
       "sponsor": "unlikely",
       "tags": [
         "consulting",
         "defense",
         "clearance_heavy",
         "government_contracting",
-        "startup",
         "tech_service"
       ],
       "priority": "low",
@@ -15160,7 +15134,7 @@
     {
       "name": "Toyota North America",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "20k+",
       "type": "industrial",
       "maturity": "established",
       "sponsor": "likely",
@@ -15221,7 +15195,7 @@
       "size": "20k+",
       "type": "finance",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "public_company"
       ],
@@ -15269,12 +15243,10 @@
       "name": "Trihydro",
       "aliases": [],
       "size": "200-1k",
-      "type": "industrial",
-      "maturity": "growth",
+      "type": "consulting",
+      "maturity": "established",
       "sponsor": "unknown",
-      "tags": [
-        "startup"
-      ],
+      "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
     },
@@ -15327,8 +15299,7 @@
       "sponsor": "likely",
       "tags": [
         "sponsor_friendly",
-        "startup",
-        "ai_company"
+        "startup"
       ],
       "priority": "high",
       "last_verified": "2026-09-15"
@@ -15351,7 +15322,7 @@
     {
       "name": "Truist",
       "aliases": [],
-      "size": "200-1k",
+      "size": "20k+",
       "type": "finance",
       "maturity": "established",
       "sponsor": "likely",
@@ -15486,14 +15457,13 @@
       "aliases": [],
       "size": "200-1k",
       "type": "consulting",
-      "maturity": "growth",
+      "maturity": "established",
       "sponsor": "unlikely",
       "tags": [
         "consulting",
         "defense",
         "clearance_heavy",
         "government_contracting",
-        "startup",
         "tech_service"
       ],
       "priority": "low",
@@ -15545,12 +15515,11 @@
       "name": "United Airlines",
       "aliases": [],
       "size": "20k+",
-      "type": "tech",
+      "type": "other",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
-        "public_company",
-        "ai_company"
+        "public_company"
       ],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -15728,7 +15697,7 @@
       "size": "20k+",
       "type": "industrial",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "public_company"
       ],
@@ -15750,11 +15719,13 @@
     },
     {
       "name": "Valero",
-      "aliases": [],
+      "aliases": [
+        "Valero Services, Inc."
+      ],
       "size": "20k+",
       "type": "industrial",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "public_company"
       ],
@@ -15821,7 +15792,7 @@
     {
       "name": "Varda Space Industries",
       "aliases": [],
-      "size": "200-1k",
+      "size": "50-200",
       "type": "industrial",
       "maturity": "growth",
       "sponsor": "unknown",
@@ -16003,7 +15974,7 @@
       "size": "1k-5k",
       "type": "tech",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-15"
@@ -16094,10 +16065,10 @@
     {
       "name": "Virta Health",
       "aliases": [],
-      "size": "200-1k",
+      "size": "1k-5k",
       "type": "healthcare",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "startup"
       ],
@@ -16245,7 +16216,7 @@
       "size": "200-1k",
       "type": "finance",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "startup"
       ],
@@ -16498,7 +16469,7 @@
     {
       "name": "Whova",
       "aliases": [],
-      "size": "200-1k",
+      "size": "50-200",
       "type": "tech",
       "maturity": "growth",
       "sponsor": "likely",
@@ -16512,14 +16483,13 @@
     {
       "name": "Williams International",
       "aliases": [],
-      "size": "200-1k",
+      "size": "1k-5k",
       "type": "industrial",
-      "maturity": "growth",
+      "maturity": "established",
       "sponsor": "unlikely",
       "tags": [
         "defense",
-        "clearance_heavy",
-        "startup"
+        "clearance_heavy"
       ],
       "priority": "low",
       "last_verified": "2026-09-15"
@@ -16543,7 +16513,7 @@
       "size": "50-200",
       "type": "industrial",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "startup"
       ],
@@ -16598,7 +16568,7 @@
       "size": "50-200",
       "type": "tech",
       "maturity": "growth",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "startup",
         "ai_company"
@@ -16792,7 +16762,7 @@
       "size": "20k+",
       "type": "industrial",
       "maturity": "established",
-      "sponsor": "unknown",
+      "sponsor": "likely",
       "tags": [
         "public_company"
       ],
@@ -16957,7 +16927,7 @@
     {
       "name": "ZOLL Medical Corporation",
       "aliases": [],
-      "size": "1k-5k",
+      "size": "5k-20k",
       "type": "healthcare",
       "maturity": "established",
       "sponsor": "likely",
