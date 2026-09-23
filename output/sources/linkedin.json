@@ -1,33 +1,19 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 908,
+  "count": 921,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-09-22T21:01:45.439166+00:00",
+    "scraped_at": "2026-09-23T00:01:35.703598+00:00",
     "collector": {
-      "commit": "065f68a7d574bc878c7fe9fe482fb192f8addbc3",
+      "commit": "409392292119f99663c437065daaac5656333ac8",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 43.009,
+    "elapsed_seconds": 40.224,
     "query_stats": [
-      {
-        "query": "software engineer",
-        "group": "primary",
-        "page_budget": 2,
-        "pages_fetched": 2,
-        "stop_reason": "page_budget",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 20,
-        "first_pass_survivors": 20,
-        "original_postings_resolved": 0,
-        "jds_resolved": 14,
-        "elapsed_seconds": 3.106
-      },
       {
         "query": "ai engineer",
         "group": "primary",
@@ -36,11 +22,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 19,
-        "first_pass_survivors": 18,
+        "unique_contribution": 18,
+        "first_pass_survivors": 16,
         "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 3.069
+        "jds_resolved": 7,
+        "elapsed_seconds": 3.137
       },
       {
         "query": "software engineer i",
@@ -50,11 +36,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 15,
+        "unique_contribution": 18,
         "first_pass_survivors": 18,
         "original_postings_resolved": 0,
         "jds_resolved": 2,
-        "elapsed_seconds": 3.15
+        "elapsed_seconds": 3.135
       },
       {
         "query": "software engineer ii",
@@ -64,11 +50,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 18,
+        "unique_contribution": 20,
         "first_pass_survivors": 20,
         "original_postings_resolved": 0,
         "jds_resolved": 1,
-        "elapsed_seconds": 3.215
+        "elapsed_seconds": 3.229
       },
       {
         "query": "associate software engineer",
@@ -78,11 +64,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 6,
+        "unique_contribution": 10,
         "first_pass_survivors": 19,
         "original_postings_resolved": 0,
         "jds_resolved": 3,
-        "elapsed_seconds": 3.04
+        "elapsed_seconds": 2.969
       },
       {
         "query": "new grad software engineer",
@@ -96,21 +82,21 @@
         "first_pass_survivors": 19,
         "original_postings_resolved": 0,
         "jds_resolved": 1,
-        "elapsed_seconds": 3.016
+        "elapsed_seconds": 3.007
       },
       {
         "query": "backend engineer",
         "group": "secondary",
         "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "global_page_budget",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
+        "pages_fetched": 2,
+        "stop_reason": "page_budget",
+        "raw_jobs": 20,
+        "unique_jobs": 20,
+        "unique_contribution": 17,
+        "first_pass_survivors": 19,
         "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0
+        "jds_resolved": 2,
+        "elapsed_seconds": 3.025
       },
       {
         "query": "full stack engineer",
@@ -251,50 +237,65 @@
         "original_postings_resolved": 0,
         "jds_resolved": 0,
         "elapsed_seconds": 0.0
+      },
+      {
+        "query": "software engineer",
+        "group": "primary",
+        "page_budget": 2,
+        "pages_fetched": 0,
+        "stop_reason": "global_page_budget",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 0.0
       }
     ],
     "detail_enrichment": {
-      "eligible": 89,
-      "cache_reused": 7,
+      "eligible": 93,
+      "cache_reused": 5,
       "requests": 8,
       "responses": 8,
       "request_limit": 8,
-      "budget_deferred": 60,
+      "budget_deferred": 71,
       "budget_exhausted": true,
       "retry_deferred": 0,
       "retry_attempts": 0,
-      "exact_official": 15,
-      "official_deferred": 14,
+      "exact_official": 11,
+      "official_deferred": 9,
       "rate_limited": false,
-      "jds_resolved": 15,
+      "jds_resolved": 13,
       "external_apply_urls": 0,
       "failed": 0,
       "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 74,
+      "remaining_no_jd": 80,
       "failure_reasons": {
-        "official_detail_deferred": 14,
-        "no_description": 60
+        "no_description": 71,
+        "official_detail_deferred": 9
       },
       "cooldown_active": false,
       "probe": false
     },
     "official_enrichment": {
-      "dedicated_matches": 15,
+      "dedicated_matches": 12,
       "search_provider_failures": 1,
-      "deferred": 89,
+      "deferred": 92,
+      "dedicated_official": 1,
+      "no_match": 1,
       "search_requests": 12,
       "search_provider": "bing",
       "official_page_requests": 12,
-      "remaining_no_jd": 89
+      "remaining_no_jd": 93
     },
     "partial": true,
     "blocked_reason": "search page budget exhausted",
-    "collected_count": 88,
-    "jd_recovery_at": "2026-09-22T19:12:37.381219+00:00",
-    "carried_count": 820
+    "collected_count": 94,
+    "carried_count": 829
   },
   "jobs": [
     {
@@ -471,6 +472,34 @@
       "enrichment_status": "resolved",
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4469060815",
+      "source": "linkedin",
+      "company": "Adobe",
+      "title": "2027 University Graduate - AI Forward Deployed Engineer",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-09-22",
+      "aggregator_posted_date": "2026-09-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/2027-university-graduate-ai-forward-deployed-engineer-at-adobe-4469060815",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "new grad software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4281554006",
@@ -988,8 +1017,10 @@
           "backend engineer"
         ]
       },
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4451423449",
@@ -1033,12 +1064,13 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "backend engineer"
         ]
       },
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4451424332",
@@ -1698,9 +1730,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -1748,9 +1780,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -1782,7 +1814,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470202781",
@@ -1859,9 +1891,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -2278,9 +2310,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -2721,9 +2753,9 @@
           "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -3061,9 +3093,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -3139,7 +3171,7 @@
       "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4466267902",
@@ -3165,6 +3197,58 @@
       "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "verified_this_run": false
+    },
+    {
+      "job_id": "4468920910",
+      "source": "linkedin",
+      "company": "BeaconFire Inc.",
+      "title": "Artificial Intelligence Engineer",
+      "location": "East Windsor, NJ",
+      "posted_date": "2026-09-22",
+      "aggregator_posted_date": "2026-09-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/artificial-intelligence-engineer-at-beaconfire-inc-4468920910",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "new grad software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4468934587",
+      "source": "linkedin",
+      "company": "BeaconFire Inc.",
+      "title": "Artificial Intelligence Engineer",
+      "location": "New Jersey, United States",
+      "posted_date": "2026-09-22",
+      "aggregator_posted_date": "2026-09-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/artificial-intelligence-engineer-at-beaconfire-inc-4468934587",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "new grad software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -3551,13 +3635,12 @@
       "discovery_queries": {
         "linkedin": [
           "software engineer i",
-          "associate software engineer",
           "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -3581,9 +3664,9 @@
           "software engineer i"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -3682,7 +3765,7 @@
       "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461531603",
@@ -4072,7 +4155,7 @@
       "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469019538",
@@ -4143,11 +4226,11 @@
           "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -4369,7 +4452,7 @@
       "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469938591",
@@ -4469,6 +4552,32 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4469056858",
+      "source": "linkedin",
+      "company": "CHAI AI",
+      "title": "Senior Backend Engineer",
+      "location": "Palo Alto, CA",
+      "posted_date": "2026-09-22",
+      "aggregator_posted_date": "2026-09-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-backend-engineer-at-chai-ai-4469056858",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469958328",
@@ -5071,7 +5180,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-5-ai-foundations-llm-core-and-agentic-ai-at-capital-one-4470439677",
       "official_url": "",
-      "description": "",
+      "description": "Overview: At Capital One, we are creating responsible and reliable AI systems, changing banking for good. For years, Capital One has been an industry leader in using machine learning to create real-time, personalized customer experiences. Our investments in technology infrastructure and world-class talent — along with our deep experience in machine learning — position us to be at the forefront of enterprises leveraging AI. From informing customers about unusual charges to answering their questions in real time, our applications of AI & ML are bringing humanity and simplicity to banking. We are committed to continuing to build world-class applied science and engineering teams to deliver our industry leading capabilities with breakthrough product experiences and scalable, high-performance AI infrastructure. At Capital One, you will help bring the transformative power of emerging AI capabilities to reimagine how we serve our customers and businesses who have come to love the products and services we build. Team Description: The Intelligent Foundations and Experiences (IFX) team is at the center of bringing our vision for AI at Capital One to life. We work hand-in-hand with our partners across the company to advance the state of the art in science and AI engineering, and we build and deploy proprietary solutions that are central to our business and deliver value to millions of customers. Our AI models and platforms empower teams across Capital One to enhance their products with the transformative power of AI, in responsible and scalable ways for the highest leverage impact. What You’ll Do: Partner with a cross-functional team of engineers, research scientists, technical program managers, and product managers to deliver AI-powered products that change how our associates work and how our customers interact with Capital One. Design, develop, test, deploy, and support AI software components including foundation model training, large language model inference, agents and multi-agent workflows, similarity search, guardrails, model evaluation, experimentation, governance, and observability, etc. Leverage a broad stack of Open Source and SaaS AI technologies such as AWS Ultraclusters, Huggingface, VectorDBs, PyTorch, and more. Invent and introduce state-of-the-art foundation model optimization techniques to improve the performance — scalability, cost, latency, throughput — of large scale production AI systems. Contribute to the technical vision and the long term roadmap of foundational AI systems at Capital One. Design, implement and optimize multi-model orchestration pipelines - integrating LLMs, vector search, and domain-specific models into unified systems Establish and lead cost-performance governance reviews across AI systems, tracking GPU utilization, model throughput, and inference cost efficiency Lead team design councils or design review boards to ensure technical consistency and compliance with AI engineering standards Mentor Principal and Manager-level AI engineers, fostering cross-domain learning and elevating organizational technical maturity The Ideal Candidate: You love to build systems, take pride in the quality of your work, and also share our passion to do the right thing. You want to work on problems that will help change banking for good Passion for staying abreast of the latest research, and an ability to intuitively understand scientific publications and judiciously apply novel techniques in production You adapt quickly and thrive on bringing clarity to big, undefined problems. You love asking questions and digging deep to uncover the root of problems and can articulate your findings concisely with clarity. You have the courage to share new ideas even when they are unproven You are deeply Technical. You possess a strong foundation in engineering and mathematics, and your expertise in hardware, software, and AI enables you to see and exploit optimization opportunities that others miss You are a resilient trailblazer who can forge new paths to achieve business goals when the route is unknown Basic Qualifications: Bachelor's degree in Computer Science, AI, Electrical Engineering, Computer Engineering, or related fields plus at least 6 years of experience developing AI and ML algorithms or technologies, or a Master's degree in Computer Science, AI, Electrical Engineering, Computer Engineering, or related fields plus at least 4 years of experience developing AI and ML algorithms or technologies At least 6 years of experience programming with Python, Go, Scala, CUDA, or Java Preferred Qualifications: Experience leading development AI systems with tradeoff decisions around cost, latency, throughput and accuracy 7 years of experience deploying scalable and responsible AI solutions on cloud platforms (e.g. AWS, Google Cloud, Azure, or equivalent private cloud) Experience designing, developing, delivering, and supporting complex AI systems Experience developing AI and ML algorithms or technologies (e.g. LLM Inference, Similarity Search and VectorDBs, Guardrails, Memory) using Python, C++, C#, Java, CUDA, or Golang Experience developing and applying state-of-the-art techniques for optimizing training and inference software to improve hardware utilization, latency, throughput, and cost Experience in building agentic AI systems and agentic workflows Passion for staying abreast of the latest AI research and AI systems, and judiciously apply novel techniques in production Excellent communication and presentation skills, with the ability to articulate complex AI concepts to peers Experience architecting and integrating heterogeneous AI systems - including rule-based, retrieval-augmented, and generative components - into unified production pipelines Experience defining and enforcing standards for ethical AI deployment, including explainability, fairness, and human-in-the-loop review processes Demonstrated ability to balance model performance and operational cost through dynamic inference strategies and model compression Experience right-sizing models, instance counts, and hardware types given requirements (e.g., context length, token inputs, token outputs) Capital One will consider sponsoring a new qualified applicant for employment authorization for this position. The minimum and maximum full-time annual salaries for this role are listed below, by location. Please note that this salary information is solely for candidates hired to perform work within one of these locations, and refers to the amount Capital One is willing to pay at the time of this posting. Salaries for part-time roles will be prorated based upon the agreed upon number of hours to be regularly worked. Cambridge, MA: $229,900 - $262,400 for AI Engineer 5 McLean, VA: $229,900 - $262,400 for AI Engineer 5 New York, NY: $250,800 - $286,200 for AI Engineer 5 San Francisco, CA: $250,800 - $286,200 for AI Engineer 5 San Jose, CA: $250,800 - $286,200 for AI Engineer 5 Candidates hired to work in other locations will be subject to the pay range associated with that location, and the actual annualized salary amount offered to any candidate at the time of hire will be reflected solely in the candidate’s offer letter. This role is also eligible to earn performance based incentive compensation, which may include cash bonus(es) and/or long term incentives (LTI). Incentives could be discretionary or non discretionary depending on the plan. Capital One offers a comprehensive, competitive, and inclusive set of health, financial and other benefits that support your total well-being. Learn more at the Capital One Careers website. Eligibility varies based on full or part-time status, exempt or non-exempt status, and management level. This role is expected to accept applications for a minimum of 5 business days. No agencies please. Capital One is an equal opportunity employer (EOE, including disability/vet) committed to non-discrimination in compliance with applicable federal, state, and local laws. Capital One promotes a drug-free workplace. Capital One will consider for employment qualified applicants with a criminal history in a manner consistent with the requirements of applicable laws regarding criminal background inquiries, including, to the extent applicable, Article 23-A of the New York Correction Law; San Francisco, California Police Code Article 49, Sections 4901-4920; New York City’s Fair Chance Act; Philadelphia’s Fair Criminal Records Screening Act; and other applicable federal, state, and local laws and regulations regarding criminal background inquiries. If you have visited our website in search of information on employment opportunities or to apply for a position, and you require an accommodation, please contact Capital One Recruiting at 1-800-304-9102 or via email at RecruitingAccommodation@capitalone.com. All information you provide will be kept confidential and will be used only to the extent required to provide needed reasonable accommodations. For technical support or questions about Capital One's recruiting process, please send an email to Careers@capitalone.com Capital One does not provide, endorse nor guarantee and is not liable for third-party products, services, educational tools or other information available through this site. Capital One Financial is made up of several different entities. Please note that any position posted in Canada is for Capital One Canada, any position posted in the United Kingdom is for Capital One Europe and any position posted in the Philippines is for Capital One Philippines Service Corp. (COPSSC).",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -5080,9 +5189,15 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "linkedin_detail_attempted_at": "2026-09-23T00:02:11.568930+00:00",
+      "linkedin_detail_fetched_at": "2026-09-23T00:02:11.568930+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -5229,7 +5344,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-5-ai-foundations-llm-core-and-agentic-ai-at-capital-one-4470448219",
       "official_url": "",
-      "description": "",
+      "description": "At Capital One, we are creating responsible and reliable AI systems, changing banking for good. For years, Capital One has been an industry leader in using machine learning to create real-time, personalized customer experiences. Our investments in technology infrastructure and world-class talent — along with our deep experience in machine learning — position us to be at the forefront of enterprises leveraging AI. From informing customers about unusual charges to answering their questions in real time, our applications of AI & ML are bringing humanity and simplicity to banking. We are committed to continuing to build world-class applied science and engineering teams to deliver our industry leading capabilities with breakthrough product experiences and scalable, high-performance AI infrastructure. At Capital One, you will help bring the transformative power of emerging AI capabilities to reimagine how we serve our customers and businesses who have come to love the products and services we build. Team Description: The Intelligent Foundations and Experiences (IFX) team is at the center of bringing our vision for AI at Capital One to life. We work hand-in-hand with our partners across the company to advance the state of the art in science and AI engineering, and we build and deploy proprietary solutions that are central to our business and deliver value to millions of customers. Our AI models and platforms empower teams across Capital One to enhance their products with the transformative power of AI, in responsible and scalable ways for the highest leverage impact. What You’ll Do: Partner with a cross-functional team of engineers, research scientists, technical program managers, and product managers to deliver AI-powered products that change how our associates work and how our customers interact with Capital One. Design, develop, test, deploy, and support AI software components including foundation model training, large language model inference, agents and multi-agent workflows, similarity search, guardrails, model evaluation, experimentation, governance, and observability, etc. Leverage a broad stack of Open Source and SaaS AI technologies such as AWS Ultraclusters, Huggingface, VectorDBs, PyTorch, and more. Invent and introduce state-of-the-art foundation model optimization techniques to improve the performance — scalability, cost, latency, throughput — of large scale production AI systems. Contribute to the technical vision and the long term roadmap of foundational AI systems at Capital One. Design, implement and optimize multi-model orchestration pipelines - integrating LLMs, vector search, and domain-specific models into unified systems Establish and lead cost-performance governance reviews across AI systems, tracking GPU utilization, model throughput, and inference cost efficiency Lead team design councils or design review boards to ensure technical consistency and compliance with AI engineering standards Mentor Principal and Manager-level AI engineers, fostering cross-domain learning and elevating organizational technical maturity The Ideal Candidate: You love to build systems, take pride in the quality of your work, and also share our passion to do the right thing. You want to work on problems that will help change banking for good Passion for staying abreast of the latest research, and an ability to intuitively understand scientific publications and judiciously apply novel techniques in production You adapt quickly and thrive on bringing clarity to big, undefined problems. You love asking questions and digging deep to uncover the root of problems and can articulate your findings concisely with clarity. You have the courage to share new ideas even when they are unproven You are deeply Technical. You possess a strong foundation in engineering and mathematics, and your expertise in hardware, software, and AI enables you to see and exploit optimization opportunities that others miss You are a resilient trailblazer who can forge new paths to achieve business goals when the route is unknown Basic Qualifications: Bachelor's Degree in Computer Science, AI, Electrical Engineering, Computer Engineering, or related fields plus at least 6 years of experience developing AI and ML algorithms or technologies, or a Master's degree in Computer Science, AI, Electrical Engineering, Computer Engineering, or related fields plus at least 4 years of experience developing AI and ML algorithms or technologies At least 6 years of experience programming with Python, Go, Scala, CUDA, or Java Preferred Qualifications: Experience leading development AI systems with tradeoff decisions around cost, latency, throughput and accuracy 7 years of experience deploying scalable and responsible AI solutions on cloud platforms (e.g. AWS, Google Cloud, Azure, or equivalent private cloud) Experience designing, developing, delivering, and supporting complex AI systems Experience developing AI and ML algorithms or technologies (e.g. LLM Inference, Similarity Search and VectorDBs, Guardrails, Memory) using Python, C++, C#, Java, CUDA, or Golang Experience developing and applying state-of-the-art techniques for optimizing training and inference software to improve hardware utilization, latency, throughput, and cost Experience in building agentic AI systems and agentic workflows Passion for staying abreast of the latest AI research and AI systems, and judiciously apply novel techniques in production Excellent communication and presentation skills, with the ability to articulate complex AI concepts to peers Experience architecting and integrating heterogeneous AI systems - including rule-based, retrieval-augmented, and generative components - into unified production pipelines Experience defining and enforcing standards for ethical AI deployment, including explainability, fairness, and human-in-the-loop review processes Demonstrated ability to balance model performance and operational cost through dynamic inference strategies and model compression Experience right-sizing models, instance counts, and hardware types given requirements (e.g., context length, token inputs, token outputs) Capital One will consider sponsoring a new qualified applicant for employment authorization for this position. The minimum and maximum full-time annual salaries for this role are listed below, by location. Please note that this salary information is solely for candidates hired to perform work within one of these locations, and refers to the amount Capital One is willing to pay at the time of this posting. Salaries for part-time roles will be prorated based upon the agreed upon number of hours to be regularly worked. Cambridge, MA: $229,900 - $262,400 for AI Engineer 5 McLean, VA: $229,900 - $262,400 for AI Engineer 5 New York, NY: $250,800 - $286,200 for AI Engineer 5 San Jose, CA: $250,800 - $286,200 for AI Engineer 5 Candidates hired to work in other locations will be subject to the pay range associated with that location, and the actual annualized salary amount offered to any candidate at the time of hire will be reflected solely in the candidate’s offer letter. This role is also eligible to earn performance based incentive compensation, which may include cash bonus(es) and/or long term incentives (LTI). Incentives could be discretionary or non discretionary depending on the plan. Capital One offers a comprehensive, competitive, and inclusive set of health, financial and other benefits that support your total well-being. Learn more at the Capital One Careers website. Eligibility varies based on full or part-time status, exempt or non-exempt status, and management level. This role is expected to accept applications for a minimum of 5 business days. No agencies please. Capital One is an equal opportunity employer (EOE, including disability/vet) committed to non-discrimination in compliance with applicable federal, state, and local laws. Capital One promotes a drug-free workplace. Capital One will consider for employment qualified applicants with a criminal history in a manner consistent with the requirements of applicable laws regarding criminal background inquiries, including, to the extent applicable, Article 23-A of the New York Correction Law; San Francisco, California Police Code Article 49, Sections 4901-4920; New York City’s Fair Chance Act; Philadelphia’s Fair Criminal Records Screening Act; and other applicable federal, state, and local laws and regulations regarding criminal background inquiries. If you have visited our website in search of information on employment opportunities or to apply for a position, and you require an accommodation, please contact Capital One Recruiting at 1-800-304-9102 or via email at RecruitingAccommodation@capitalone.com. All information you provide will be kept confidential and will be used only to the extent required to provide needed reasonable accommodations. For technical support or questions about Capital One's recruiting process, please send an email to Careers@capitalone.com Capital One does not provide, endorse nor guarantee and is not liable for third-party products, services, educational tools or other information available through this site. Capital One Financial is made up of several different entities. Please note that any position posted in Canada is for Capital One Canada, any position posted in the United Kingdom is for Capital One Europe and any position posted in the Philippines is for Capital One Philippines Service Corp. (COPSSC).",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -5238,9 +5353,15 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "linkedin_detail_attempted_at": "2026-09-23T00:02:11.568930+00:00",
+      "linkedin_detail_fetched_at": "2026-09-23T00:02:11.568930+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -5515,11 +5636,9 @@
           "associate software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -5543,11 +5662,9 @@
           "associate software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -5668,9 +5785,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -5770,9 +5887,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -5797,11 +5914,11 @@
           "associate software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -5878,17 +5995,16 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "software engineer i",
           "associate software engineer",
           "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -5940,11 +6056,11 @@
           "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -5973,7 +6089,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469016551",
@@ -6171,12 +6287,13 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "backend engineer"
         ]
       },
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4459251317",
@@ -6397,12 +6514,13 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "backend engineer"
         ]
       },
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470483078",
@@ -6422,12 +6540,13 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "backend engineer"
         ]
       },
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470484075",
@@ -6522,9 +6641,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -6548,9 +6667,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -6703,7 +6822,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4456425560",
@@ -6783,7 +6902,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4458898869",
@@ -6903,8 +7022,10 @@
           "backend engineer"
         ]
       },
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470478154",
@@ -6999,9 +7120,9 @@
           "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -8111,9 +8232,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -8284,9 +8405,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -8310,9 +8431,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -8360,9 +8481,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -8945,9 +9066,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -9956,7 +10077,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460041987",
@@ -9983,6 +10104,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4469071120",
+      "source": "linkedin",
+      "company": "Google",
+      "title": "Software Engineer III, AI/ML GenAI, Search",
+      "location": "New York, NY",
+      "posted_date": "2026-09-22",
+      "aggregator_posted_date": "2026-09-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-iii-ai-ml-genai-search-at-google-4469071120",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4460033334",
@@ -10304,6 +10453,32 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4468260532",
+      "source": "linkedin",
+      "company": "Harris Computer",
+      "title": "Software Developer",
+      "location": "Florida, United States",
+      "posted_date": "2026-09-22",
+      "aggregator_posted_date": "2026-09-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-developer-at-harris-computer-4468260532",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer i"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468268348",
       "source": "linkedin",
       "company": "Harris Computer",
@@ -10324,9 +10499,9 @@
           "software engineer i"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -10548,8 +10723,10 @@
           "backend engineer"
         ]
       },
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468149041",
@@ -10644,9 +10821,9 @@
           "associate software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -10844,6 +11021,32 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4470617484",
+      "source": "linkedin",
+      "company": "IT Resources",
+      "title": "Application Development Associate (Azure)",
+      "location": "Tampa, FL",
+      "posted_date": "2026-09-22",
+      "aggregator_posted_date": "2026-09-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/application-development-associate-azure-at-it-resources-4470617484",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "associate software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4460090449",
       "source": "linkedin",
       "company": "IXL Learning",
@@ -10865,11 +11068,11 @@
           "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -10893,9 +11096,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -11402,15 +11605,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -11431,18 +11633,18 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "software engineer ii"
+          "software engineer ii",
+          "backend engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
       "linkedin_detail_fetched_at": "2026-09-22T18:04:50.005523+00:00",
       "linkedin_detail_resolved": true,
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -11744,6 +11946,32 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "verified_this_run": false
+    },
+    {
+      "job_id": "4458834669",
+      "source": "linkedin",
+      "company": "Jobot",
+      "title": "Sr. Software Engineer (.NET / PHP)",
+      "location": "Nashville, TN",
+      "posted_date": "2026-09-22",
+      "aggregator_posted_date": "2026-09-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-software-engineer-net-php-at-jobot-4458834669",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -11764,12 +11992,13 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "backend engineer"
         ]
       },
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469027039",
@@ -12136,7 +12365,7 @@
       "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468593258",
@@ -12281,13 +12510,15 @@
           "backend engineer"
         ]
       },
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
       "linkedin_detail_fetched_at": "2026-09-20T15:04:23.394419+00:00",
       "linkedin_detail_resolved": true,
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468160880",
@@ -12577,9 +12808,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -12635,7 +12866,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4424918381",
@@ -12811,6 +13042,32 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "verified_this_run": false
+    },
+    {
+      "job_id": "4468935763",
+      "source": "linkedin",
+      "company": "Mastercard",
+      "title": "Software Engineer II",
+      "location": "Arlington, VA",
+      "posted_date": "2026-09-22",
+      "aggregator_posted_date": "2026-09-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-at-mastercard-4468935763",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer ii"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -12931,9 +13188,9 @@
           "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -13030,9 +13287,9 @@
           "associate software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -13058,9 +13315,9 @@
           "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -13188,7 +13445,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461749037",
@@ -13211,9 +13468,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -13292,7 +13549,7 @@
       "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4432944164",
@@ -13416,7 +13673,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4451825568",
@@ -13444,7 +13701,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4406694620",
@@ -13464,15 +13721,13 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "software engineer ii",
           "backend engineer"
         ]
       },
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4431872420",
@@ -13887,8 +14142,10 @@
           "ai engineer"
         ]
       },
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468782284",
@@ -14007,8 +14264,10 @@
           "backend engineer"
         ]
       },
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469937493",
@@ -14348,7 +14607,7 @@
       "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469982447",
@@ -14386,7 +14645,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/new-grad-ai-engineer-at-nuvo-4461293821",
       "official_url": "",
-      "description": "",
+      "description": "About Nuvo We’re Redefining the $11T B2B Commerce and Payments Market Nuvo is bringing B2B commerce online. While technology has reshaped consumer commerce, the business-to-business (B2B) economy — three times larger— has lagged behind. From coffee to lumber, every product we use has been traded through a complex supply chain of suppliers, manufacturers, wholesalers, and retailers. Despite the massive scale of this market, most businesses manage their trading relationships and commerce activities using outdated methods like paper forms, PDFs, emails, faxes, phone calls, and spreadsheets, making processes slow and inefficient. Much like how Shopify, Stripe and Square have transformed how consumer companies transact, we aim to do the same for B2B companies. About The Role We are looking for smart engineers to help build category-defining products. Our problems span scaling AI agents, multi-agent workflows that automate risk and payments, and running agents on large scale data. You'll partner with our engineering, design and product teams to help shape the roadmap, solve real world problems and build our 0-1 products. Your work will have huge impact: on team culture, on our customers and on the economy. What You’ll Do Build the AI systems that automate real trade workflows: collections, credit decisioning, payments operations, and the manual work that slows the physical economy down. Turn LLMs and agents into reliable, production-grade features, not demos, with the evals and guardrails to back them. Write high-quality, clean and performant code and partner with platform and product engineers to ship end to end. Help shape how Nuvo builds with AI as both the field and our product move quickly. Use the best tools for the job. What matters is whether the system works in production, not which model or framework you used. What You Bring Strong CS fundamentals plus hands-on experience building with modern ML or LLMs (coursework, research, internships, or projects you can show). Good judgment about where AI genuinely helps versus where it adds risk, and a rigorous approach to evaluating output quality. The ability to communicate technical solutions and tradeoffs clearly. Excitement to work in an early-stage team solving ambiguous problems with a strong bias for action.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -14395,9 +14654,15 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "linkedin_detail_attempted_at": "2026-09-23T00:02:11.568930+00:00",
+      "linkedin_detail_fetched_at": "2026-09-23T00:02:11.568930+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -14558,7 +14823,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-monetization-ai-ml-at-openai-4468190167",
       "official_url": "",
-      "description": "",
+      "description": "About the Team The Monetization team is a new cross-functional group working across engineering, product, research, and design to build the foundational systems that will help OpenAI scale access to intelligence responsibly. Our mission is to develop user-first, privacy-preserving monetization products—including next-generation ads experiences—that strengthen user trust, unlock economic opportunity, and support OpenAI’s long-term innovation. Monetization plays a critical role in enabling OpenAI to continue pushing the boundaries of AI capabilities while ensuring the benefits of AGI are broadly shared. We believe monetization must be aligned with user value, uphold rigorous privacy and safety standards, and sustain a healthy ecosystem of developers and businesses. This team operates in a greenfield environment and moves quickly through prototyping, experimentation, and iterative deployment. We partner closely with Product, Design, and Research to bring research breakthroughs into real-world systems at global scale. About the Role As a Research Engineer in OpenAI's Monetization Group, you will have the opportunity to work with some of the brightest minds in AI. You'll contribute to deploying state-of-the-art models in production environments, helping turn research breakthroughs into tangible solutions. If you're excited about making AI technology accessible and impactful, this role is your chance to make a significant mark. In this role, you will: Innovate and Deploy: Design and deploy advanced machine learning models that solve real-world problems. Bring OpenAI's research from concept to implementation, creating AI-driven applications with a direct impact. Collaborate with the Best: Work closely with researchers, software engineers, and product managers to understand complex business challenges and deliver AI-powered solutions. Be part of a dynamic team where ideas flow freely and creativity thrives. Optimize and Scale: Implement scalable data pipelines, optimize models for performance and accuracy, and ensure they are production-ready. Contribute to projects that require cutting-edge technology and innovative approaches. Learn and Lead: Stay ahead of the curve by engaging with the latest developments in machine learning and AI. Take part in code reviews, share knowledge, and lead by example to maintain high-quality engineering practices. Make a Difference: Monitor and maintain deployed models to ensure they continue delivering value. Your work will directly influence how AI benefits individuals, businesses, and society at large. You might thrive in this role if you: Master's/ PhD degree in Computer Science, Machine Learning, Data Science, or a related field. Demonstrated experience in deep learning and transformers models Proficiency in frameworks like PyTorch or Tensorflow Strong foundation in data structures, algorithms, and software engineering principles. Experience with search relevance, ads ranking or LLMs is a plus. Are familiar with methods of training and fine-tuning large language models, such as distillation, supervised fine-tuning, and policy optimization Excellent problem-solving and analytical skills, with a proactive approach to challenges. Ability to work collaboratively with cross-functional teams. Ability to move fast in an environment where things are sometimes loosely defined and may have competing priorities or deadlines Enjoy owning the problems end-to-end, and are willing to pick up whatever knowledge you're missing to get the job done About OpenAI OpenAI is an AI research and deployment company dedicated to ensuring that general-purpose artificial intelligence benefits all of humanity. We push the boundaries of the capabilities of AI systems and seek to safely deploy them to the world through our products. AI is an extremely powerful tool that must be created with safety and human needs at its core, and to achieve our mission, we must encompass and value the many different perspectives, voices, and experiences that form the full spectrum of humanity. We are an equal opportunity employer, and we do not discriminate on the basis of race, religion, color, national origin, sex, sexual orientation, age, veteran status, disability, genetic information, or other applicable legally protected characteristic. For additional information, please see OpenAI’s Affirmative Action and Equal Employment Opportunity Policy Statement . Background checks for applicants will be administered in accordance with applicable law, and qualified applicants with arrest or conviction records will be considered for employment consistent with those laws, including the San Francisco Fair Chance Ordinance, the Los Angeles County Fair Chance Ordinance for Employers, and the California Fair Chance Act, for US-based candidates. For unincorporated Los Angeles County workers: we reasonably believe that criminal history may have a direct, adverse and negative relationship with the following job duties, potentially resulting in the withdrawal of a conditional offer of employment: protect computer hardware entrusted to you from theft, loss or damage; return all computer hardware in your possession (including the data contained therein) upon termination of employment or end of assignment; and maintain the confidentiality of proprietary, confidential, and non-public information. In addition, job duties require access to secure and protected information technology systems and related data security obligations. To notify OpenAI that you believe this job posting is non-compliant, please submit a report through this form . No response will be provided to inquiries unrelated to job posting compliance. We are committed to providing reasonable accommodations to applicants with disabilities, and requests can be made via this link . OpenAI Global Applicant Privacy Policy At OpenAI, we believe artificial intelligence has the potential to help people solve immense global challenges, and we want the upside of AI to be widely shared. Join us in shaping the future of technology.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -14567,11 +14832,18 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
-      "official_search_status": "deferred",
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "_linkedin_official_url": "https://jobs.ashbyhq.com/openai/80f9f564-d789-47bc-91c3-3babf5a1a33d",
+      "_linkedin_official_defer": true,
+      "application_url": "https://jobs.ashbyhq.com/openai/80f9f564-d789-47bc-91c3-3babf5a1a33d",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-09-23T00:01:35.703598+00:00",
+      "jd_recovery_at": "2026-09-23T00:01:35.703598+00:00",
+      "enrichment_method": "dedicated_official",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-09-23T00:01:35.703598+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -14599,6 +14871,58 @@
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4470629909",
+      "source": "linkedin",
+      "company": "Optimum",
+      "title": "Software Dev Engineer I",
+      "location": "Bethpage, NY",
+      "posted_date": "2026-09-22",
+      "aggregator_posted_date": "2026-09-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-dev-engineer-i-at-optimum-4470629909",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer i"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4470648075",
+      "source": "linkedin",
+      "company": "Optimum",
+      "title": "Software Dev Engineer I",
+      "location": "Plano, TX",
+      "posted_date": "2026-09-22",
+      "aggregator_posted_date": "2026-09-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-dev-engineer-i-at-optimum-4470648075",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer i"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468174918",
@@ -15037,6 +15361,32 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4470641179",
+      "source": "linkedin",
+      "company": "OurPetPolicy",
+      "title": "Backend Engineer",
+      "location": "Boise, ID",
+      "posted_date": "2026-09-22",
+      "aggregator_posted_date": "2026-09-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/backend-engineer-at-ourpetpolicy-4470641179",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4415107917",
       "source": "linkedin",
       "company": "PAR Technology",
@@ -15105,9 +15455,9 @@
           "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -15685,8 +16035,10 @@
           "backend engineer"
         ]
       },
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469970529",
@@ -15758,9 +16110,9 @@
           "associate software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -16695,7 +17047,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-at-qualcomm-4468798883",
       "official_url": "",
-      "description": "",
+      "description": "Company: Qualcomm Technologies, Inc. Job Area: Engineering Group, Engineering Group > Machine Learning Engineering General Summary: As a leading technology innovator, Qualcomm pushes the boundaries of what's possible to enable next-generation experiences and drives digital transformation to help create a smarter, connected future for all. As a Qualcomm Machine Learning Engineer, you will create and implement machine learning techniques, frameworks, and tools that enable the efficient discovery and utilization of state-of-the-art machine learning solutions over a broad set of technology verticals or designs. Qualcomm Engineers collaborate with cross-functional teams to enhance the world of mobile, edge, auto, and IOT products through machine learning hardware and software. Minimum Qualifications: Bachelor's degree in Computer Science, Engineering, Information Systems, or related field. Daily Duties: Collaborate in the design, development, and delivery of AI-powered capabilities that advance Nimbus product objectives and address customer needs. Contribute to the development, evaluation, and deployment of AI and Generative AI solutions supporting network optimization, Digital Twin technologies, and other strategic AI-driven products. Work closely with engineering, product, and domain experts to translate business and customer requirements into practical AI-enabled solutions. Communicate technical concepts, project status, and recommendations effectively to both technical and non-technical audiences. Stay current with emerging AI technologies, industry trends, and best practices, identifying opportunities to apply them across Nimbus initiatives. Apply sound software engineering and AI development practices to ensure scalable, maintainable, and high-quality solutions. Minimum Qualifications: Working knowledge of modern AI/ML concepts, including model development, evaluation, deployment, and operationalization. Experience delivering AI-enabled software products or features from concept through production deployment. Familiarity with AI concepts, agentic AI frameworks, knowledge management systems, and other LLM-based applications. Strong communication, collaboration, analytical, and problem-solving skills. B.S. in Computer Science, Engineering, Data Science, or a related technical field. Preferred Qualifications: 1+ years of hands-on experience developing, fine-tuning, or deploying AI/ML models. M.S. or Ph.D. in Computer Science, Engineering, Data Science, Artificial Intelligence, or a related discipline. Experience with cloud-based AI platforms, MLOps practices, data engineering, or large-scale data processing systems. Familiarity with telecommunications, wireless networking, Digital Twin technologies, network automation, or intelligent network-management systems. Experience with Generative AI, agentic systems, multi-agent frameworks, LLM applications, or AI-assisted software development. Demonstrated interest in emerging AI technologies and their application to real-world engineering and product challenges. Qualcomm is an equal opportunity employer. If you are an individual with a disability and need an accommodation during the application/hiring process, rest assured that Qualcomm is committed to providing an accessible process. You may e-mail disability-accomodations@qualcomm.com or call Qualcomm's toll-free number found here. Upon request, Qualcomm will provide reasonable accommodations to support individuals with disabilities to be able participate in the hiring process. Qualcomm is also committed to making our workplace accessible for individuals with disabilities. (Keep in mind that this email address is used to provide reasonable accommodations for individuals with disabilities. We will not respond here to requests for updates on applications or resume inquiries). To all Staffing and Recruiting Agencies : Our Careers Site is only for individuals seeking a job at Qualcomm. Staffing and recruiting agencies and individuals being represented by an agency are not authorized to use this site or to submit profiles, applications or resumes, and any such submissions will be considered unsolicited. Qualcomm does not accept unsolicited resumes or applications from agencies. Please do not forward resumes to our jobs alias, Qualcomm employees or any other company location. Qualcomm is not responsible for any fees related to unsolicited resumes/applications. EEO Employer: Qualcomm is an equal opportunity employer; all qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, Veteran status, or any other protected classification. Qualcomm expects its employees to abide by all applicable policies and procedures, including but not limited to security and other requirements regarding protection of Company confidential information and other confidential and/or proprietary information, to the extent those requirements are permissible under applicable law. Pay Range and Other Compensation & Benefits : $122,800.00 - $184,200.00 The above pay scale reflects the broad, minimum to maximum, pay scale for this job code for the location for which it has been posted. Even more importantly, please note that salary is only one component of total compensation at Qualcomm. We also offer a competitive annual discretionary bonus program and opportunity for annual RSU grants (employees on sales-incentive plans are not eligible for our annual bonus). In addition, our highly competitive benefits package is designed to support your success at work, at home, and at play. Your recruiter will be happy to discuss all that Qualcomm has to offer – and you can review more details about our US benefits at this link. If you would like more information about this role, please contact Qualcomm Careers.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -16704,9 +17056,15 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "linkedin_detail_attempted_at": "2026-09-23T00:02:11.568930+00:00",
+      "linkedin_detail_fetched_at": "2026-09-23T00:02:11.568930+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -16769,7 +17127,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-ra-capital-management-4422826143",
       "official_url": "",
-      "description": "",
+      "description": "Imagine if you had the skills, knowledge, and teammates to both understand the root of the world’s most pressing problems and build the technologies and companies best positioned to solve them. RA Capital has done exactly that for more than two decades, backing bold ideas in medicines to further human health and now expanding into Planetary Health to improve how efficiently we utilize the world’s precious resources. RA Capital is among the leading providers of capital and services to the most promising innovators in the world. We invest flexibly—seed to IPO and beyond, anywhere in the world—with $10 B+ under management and a culture that prizes curiosity, rigor, and collaborative debate. We are investors who not only fund companies but get elbow deep in building them. From helping them recruit talent to helping them recruit patients for their studies to helping match them to strategic partners and even going to Washington to win reforms, RA Capital’s large team has people with nearly every relevant expertise one might need to turn an idea into a cure that actually helps people. If you live for first-principles problem-solving with great colleagues, thrive on complexity, and want to do meaningful work that ripples across industries and ecosystems, you’ll feel at home at RA Capital. Here, questions are welcomed, ideas are tested, and victories are shared. Even our lawyers are creative and engaging. And don’t get us started on our compliance team’s wicked sense of humor; nothing about what we do is boring. Are you ready to bring your creativity, discipline and collaborative spirit to help us invent the future? Join us and you’ll collaborate daily with investors, founders, physicians, biologists, engineers, economists, and reform advocates who think in systems and act with urgency. Join us to invent a happier, healthier, more productive future - and have fun doing it. Role Overview As an engineer within the AI/ML space, you'll be instrumental in developing and implementing AI/ML solutions that transform how we identify and evaluate investment opportunities in biomedical technologies. You'll work at the intersection of software development, large language models, predictive analytics, and investment analysis. Key Responsibilities Design and develop end-to-end AI applications, from concept through deployment Create and optimize deep learning models for diverse data types (time-series, business data, images) and prediction tasks Build and enhance large language models trained on proprietary research data Implement real-time prediction systems operating on various timescales (millisecond to daily) Develop full-stack AI applications with both frontend and backend components Optimize model performance and solve complex multi-layered data challenges Academic & Experience Requirements Master's in a Computer Science – AI and Machine Learning field required; Bachelors Degree with equivalent experience Extensive academic or professional background in Computer Science with AI specialization 2-3 years of professional software engineering experience Healthcare and/or finance industry experience strongly preferred Technical Requirements Expert-level Python programming skills Strong proficiency in JavaScript and Java Deep understanding of machine learning fundamentals (regression, classification, clustering) Extensive knowledge of neural networks and deep learning frameworks (PyTorch) Proven expertise with AWS AI platforms (SageMaker, Bedrock) Experience with containerization and orchestration (ECS, Kubernetes) Strong foundation in algorithms and data structures Strong proficiency with the latest agentic coding techniques using tools like Claude Code or Codex. Professional experience with building advanced AI workflows, MCPs, agent swarms etc… Additional Requirements Excellent English communication skills for collaboration with team members and stakeholders Strong problem-solving abilities and investigative mindset Experience with full AI/ML development lifecycle Ability to work in a collaborative, mentorship-driven environment Ability to work in a hybrid environment in our local Boston office What Makes This Role Unique You'll be working with extensive proprietary datasets and building systems that directly impact investment decisions in breakthrough medical and climate technologies. Success in this role means creating AI systems that help fund innovations that can extend and improve human lives. Compensation RA Capital Management is committed to fair and equitable compensation practices. Pay for this position will be based on experience, skills, qualifications, and current market conditions. In addition to base salary (listed below), employees may be eligible for performance-based bonuses and a comprehensive benefits package that includes health insurance, retirement contributions, and paid time off. Total Rewards Benefits We take pride in offering a comprehensive employee benefits program as a key part of overall compensation. Our Total Rewards include: Employer-paid monthly premiums for health, dental, and vision coverage Wellness benefits and programs to support physical and mental well-being Resources and perks that enhance work-life balance and financial security We’re dedicated to helping our employees thrive professionally and personally. Massachusetts base pay range $120,000 - $180,000 USD RA Capital is an equal opportunity employer. We are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity or Veteran status. If you require an accommodation during the interview process, please reach out to careers@racap.com for assistance.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -16778,9 +17136,15 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "linkedin_detail_attempted_at": "2026-09-23T00:02:11.568930+00:00",
+      "linkedin_detail_fetched_at": "2026-09-23T00:02:11.568930+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -16908,7 +17272,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468173556",
@@ -16940,7 +17304,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468169697",
@@ -17253,12 +17617,13 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "associate software engineer"
+          "associate software engineer",
+          "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -17450,9 +17815,9 @@
           "software engineer i"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -17887,8 +18252,10 @@
           "backend engineer"
         ]
       },
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470227898",
@@ -18402,7 +18769,7 @@
       "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468151528",
@@ -18743,9 +19110,9 @@
           "associate software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -18983,13 +19350,12 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer i",
           "associate software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -19022,7 +19388,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470412911",
@@ -19471,9 +19837,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -19740,9 +20106,9 @@
           "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -20249,9 +20615,9 @@
           "associate software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -20469,11 +20835,11 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -20497,9 +20863,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -20595,9 +20961,9 @@
           "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -20621,9 +20987,9 @@
           "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -20716,12 +21082,13 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer ii"
+          "software engineer ii",
+          "backend engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -20742,13 +21109,13 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "software engineer ii",
           "backend engineer"
         ]
       },
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470456929",
@@ -20816,20 +21183,18 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "software engineer i",
           "associate software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "linkedin_detail_attempted_at": "2026-09-22T21:02:23.854066+00:00",
       "linkedin_detail_fetched_at": "2026-09-22T21:02:23.854066+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -21203,6 +21568,32 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4468927535",
+      "source": "linkedin",
+      "company": "UST",
+      "title": "Junior Full Stack Developer",
+      "location": "Frisco, TX",
+      "posted_date": "2026-09-22",
+      "aggregator_posted_date": "2026-09-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/junior-full-stack-developer-at-ust-4468927535",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "associate software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468524856",
       "source": "linkedin",
       "company": "Uber",
@@ -21223,9 +21614,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -21249,9 +21640,9 @@
           "software engineer ii"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -21550,7 +21941,7 @@
       "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468908584",
@@ -21598,9 +21989,9 @@
           "associate software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -22023,9 +22414,9 @@
           "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -22070,18 +22461,17 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "associate software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
       "linkedin_detail_fetched_at": "2026-09-22T18:04:50.005523+00:00",
       "linkedin_detail_resolved": true,
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -22102,20 +22492,19 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "software engineer i",
           "associate software engineer",
           "new grad software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
       "linkedin_detail_fetched_at": "2026-09-22T18:04:50.005523+00:00",
       "linkedin_detail_resolved": true,
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -22538,9 +22927,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
@@ -22579,7 +22968,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-machine-learning-engineer-at-zotec-partners-4468598243",
       "official_url": "",
-      "description": "",
+      "description": "At Zotec Partners, our People make it happen. Transforming the healthcare industry isn’t easy. But when you build a team like the one we have, that goal can become a reality. Our accomplishments can’t happen without our extraordinary people – the men and women across the country who make up our diverse Zotec family and help make this company a best place to work. Over 25 years ago, we started Zotec with a clear vision, to partner with physicians to simplify the business of healthcare. Today we are more than 900 employees strong and we continue to use our incredible talent and energy to bring that vision to life. We are a team of Innovators, Collaborators and Doers. We’re seeking a Senior ML Engineer to join us. As a Senior ML Engineer at Zotec, you will build and extend the machine learning and AI systems that give our teams direct, governed access to data and AI tooling. You will design and ship models, build the infrastructure and integrations that connect large language models to real Zotec data, and help define how AI systems reason over that data safely and accurately. This role is perfect if you’re passionate about applied ML, AI tooling, and turning complex data into systems the business can actually use. We’re seeking ML engineering professionals with: Bachelor's degree required, preferably in a STEM field; Master's degree preferred 3-5 years delivering ML solutions at scale Proficiency in: Python Machine learning model development, training, and evaluation Working with structured and unstructured data at scale System design for data and ML pipelines Familiarity with: AWS, including SageMaker, Bedrock, Lambda, and Redshift Claude and other large language models Ontology, knowledge graphs, or structured data modeling DevOps practices, such as CI/CD pipelines and infrastructure as code (IaC) Experience in: Building and maintaining tools and integrations that connect large language models to real data sources Deploying and monitoring ML models in production on AWS Applying knowledge representation (ontologies, taxonomies, or graphs) to improve retrieval or reasoning Instrumenting models and pipelines for observability and performance monitoring Who You Are: Can communicate clearly and effectively with cross-functional teams, including Data Engineers, Data Scientists, Business Analysts, and other engineers Enjoy balancing technical depth with practical problem-solving, knowing when to prioritize performance, scalability, or accuracy Are committed to writing clean, maintainable code and mentoring others through code reviews, documentation, and collaboration Enjoy collaborating closely with a supportive team to tackle complex technical challenges from start to finish Understand the importance of quality standards, processes, compliance and security as it relates to the healthcare industry and have general knowledge of standards such as HIPAA or PCI What You’ll Do: Design, develop, and maintain the ML models and data integrations that power our AI-driven products and internal tools Connect large language models to real data by building and maintaining the tools and integrations that let AI systems query and reason over Zotec’s data accurately and safely Own the ML lifecycle from problem framing and data preparation through model training, evaluation, deployment, and monitoring Architect for AWS, designing scalable, cost-aware ML infrastructure using services like SageMaker, Bedrock, and Lambda Bring structure to data by applying ontology, taxonomy, or knowledge-graph thinking where it improves retrieval, reasoning, or data quality for AI systems Other Ways You Can Contribute: Help us continue to expand our usage of LLM application patterns with your experience in retrieval-augmented generation, prompt engineering, and evaluation frameworks Utilize your experience with knowledge graphs and semantic data modeling to help us further improve data retrieval and reasoning Follow the appropriate development methodologies including Scrum and Kanban How We Focus on Your Wellbeing: Paid time off (PTO) to balance a fulfilling work and personal life Health, dental and vision insurance Company paid life insurance, AD&D, and disability Money for your 401k Volunteerism support and charitable gift matching through the Zotec Effect program Tailored learning and professional development opportunities to help you grow your career in ways that matter to you",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -22588,9 +22977,15 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-22T21:01:45.439166+00:00",
-      "official_search_status": "deferred",
-      "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
+      "official_search_attempted_at": "2026-09-23T00:01:35.703598+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_attempted_at": "2026-09-23T00:02:11.568930+00:00",
+      "linkedin_detail_fetched_at": "2026-09-23T00:02:11.568930+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": true
     },
     {
