@@ -199,7 +199,8 @@ def _official_failure_partition(base: Path, failures: Any) -> tuple[Any, list[st
     ] if limited else []
     if linkedin:
         limitations.append(
-            "Big Company Official: linkedin_company_official_adapter failures are ignored for overall health"
+            "Big Company Official: linkedin_company_official_adapter failures are ignored for overall health "
+            f"({'; '.join(_failure_items(linkedin))})"
         )
     return actionable, limitations
 
@@ -250,13 +251,41 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                 f"output stayed low for {low_volume_runs} runs; latest {shown} vs recent median {baseline:g}"
             )
         failures = run.get("failures") or {}
+        ignored_linkedin = (
+            _failure_items((failures.get("scrape") or {}).get("linkedin"))
+            if key == "official" and isinstance(failures, dict) else []
+        )
         known_limitations: list[str] = []
         if key == "official":
             failures, known_limitations = _official_failure_partition(base, failures)
             limitations.extend(known_limitations)
         failure_count, failure_detail = _failure_summary(failures)
-        scraper_error_count = len(_failure_items(failures.get("scrape"))) if key == "official" else 0
+        failed_scrapers = (
+            {name: _failure_items(errors) for name, errors in (failures.get("scrape") or {}).items()}
+            if key == "official" else {}
+        )
+        failed_scrapers = {name: errors for name, errors in failed_scrapers.items() if errors}
+        scraper_error_count = len(failed_scrapers)
         consecutive_failures = _consecutive_degraded(history, key)
+        if ignored_linkedin:
+            details.append(
+                "LinkedIn company adapter excluded from status: " + "; ".join(ignored_linkedin)
+            )
+            keywords.append("LinkedIn adapter blocked")
+            if not scraper_error_count:
+                details.append("0 actionable scraper failures; scraper thresholds: Warning at 5, Problem at 10")
+        if key == "official" and consecutive_failures >= 2:
+            details.append(
+                f"{consecutive_failures} consecutive degraded runs; prior scraper identities are not recorded"
+            )
+        if scraper_error_count:
+            scraper_summary = f"{scraper_error_count} scraper failure{'s' if scraper_error_count != 1 else ''}"
+            keywords.append(scraper_summary)
+            details.append(
+                scraper_summary + ": " + "; ".join(
+                    f"{name} ({'; '.join(errors)})" for name, errors in failed_scrapers.items()
+                )
+            )
         if failure_count:
             llm_impact = _llm_impact(run)
             if key == "official":
@@ -264,10 +293,6 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                     status = "Problem"
                 elif status == "Healthy" and (scraper_error_count >= 5 or llm_impact):
                     status = "Warning"
-                if scraper_error_count:
-                    scraper_summary = f"{scraper_error_count} scraper failure{'s' if scraper_error_count != 1 else ''}"
-                    keywords.append(scraper_summary)
-                    details.append(scraper_summary)
             elif status == "Healthy" and (llm_impact or consecutive_failures >= 2):
                 status = "Warning"
             if "429" in (llm_impact or failure_detail) or "rate" in failure_detail.lower():
@@ -293,7 +318,7 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             "last_good_at": store_stamp,
             "latest_attempt_at": run_stamp,
             "latest_attempt_age_hours": round(attempt_age, 1) if attempt_age is not None else None,
-            "latest_attempt_status": "failed" if workflow_conclusion and workflow_conclusion != "success" and workflow_token in workflow_name.lower() else ("degraded" if failure_count else ("success" if run_stamp else "unknown")),
+            "latest_attempt_status": "failed" if workflow_conclusion and workflow_conclusion != "success" and workflow_token in workflow_name.lower() else ("degraded" if _failure_items(run.get("failures")) else ("success" if run_stamp else "unknown")),
             "failure_count": failure_count,
             "scraper_error_count": scraper_error_count,
             "consecutive_failures": consecutive_failures,
@@ -517,5 +542,5 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
         f"<li>{html.escape(item['pipeline'])}: <a href=\"{html.escape(item['url'])}\">{html.escape(item['company'])} — {html.escape(item['title'])}</a> — {html.escape(item['reason'])}</li>"
         for item in report["unresolved_examples"]
     ) or "<li>None</li>"
-    page = f"""<!doctype html><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Pipeline health</title><style>body{{font:15px/1.45 system-ui;max-width:1250px;margin:40px auto;padding:0 20px;color:#172019}}table{{border-collapse:collapse;width:100%}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}}code{{background:#eee;padding:2px 4px}}li{{margin:5px 0}}</style><h1>Pipeline health: {report['overall']}</h1><p>Generated {html.escape(report['generated_at'])}. <a href=\"index.html\">Dashboard</a> · <a href=\"health.json\">current JSON</a> · <a href=\"health-history.json\">recent run and batch history</a></p><h2>Components</h2><table><tr><th>Pipeline/source</th><th>Status</th><th>Last good</th><th>Latest attempt</th><th>Consecutive failures</th><th>Impact / detail</th></tr>{rows}</table><h2>Actionable problems</h2><ul>{issues}</ul><h2>Active warnings</h2><ul>{degradations}</ul><h2>Recovered behavior / known limitations</h2><ul>{limitations}</ul><h2>Enrichment funnel</h2><pre>{html.escape(json.dumps(report['enrichment'], indent=2))}</pre><h2>Unresolved JD examples</h2><ul>{examples}</ul>"""
+    page = f"""<!doctype html><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Pipeline health</title><style>body{{font:15px/1.45 system-ui;max-width:1250px;margin:40px auto;padding:0 20px;color:#172019}}table{{border-collapse:collapse;width:100%}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}}code{{background:#eee;padding:2px 4px}}li{{margin:5px 0}}</style><h1>Pipeline health: {report['overall']}</h1><p>Generated {html.escape(report['generated_at'])}. <a href=\"index.html\">Dashboard</a> · <a href=\"health.json\">current JSON</a> · <a href=\"health-history.json\">recent run and batch history</a></p><h2>Components</h2><table><tr><th>Pipeline/source</th><th>Status</th><th>Last good</th><th>Latest attempt</th><th>Consecutive degraded runs</th><th>Impact / detail</th></tr>{rows}</table><h2>Actionable problems</h2><ul>{issues}</ul><h2>Active warnings</h2><ul>{degradations}</ul><h2>Recovered behavior / known limitations</h2><ul>{limitations}</ul><h2>Enrichment funnel</h2><pre>{html.escape(json.dumps(report['enrichment'], indent=2))}</pre><h2>Unresolved JD examples</h2><ul>{examples}</ul>"""
     (public / "health.html").write_text(page, encoding="utf-8")

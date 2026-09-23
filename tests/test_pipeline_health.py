@@ -325,6 +325,10 @@ class PipelineHealthTests(unittest.TestCase):
                         "run_at": now.isoformat(),
                         "failures": {"scrape": {"citadel": ["link only"], "linkedin": ["HTTP 429"]}},
                     }))
+                    out.joinpath("run_history.json").write_text(json.dumps({"runs": [
+                        {"run_at": (now - timedelta(hours=index)).isoformat(), "health": "degraded"}
+                        for index in range(10)
+                    ]}))
             config = root / "config"
             config.mkdir()
             config.joinpath("official_careers.json").write_text(json.dumps({"companies": [
@@ -339,14 +343,20 @@ class PipelineHealthTests(unittest.TestCase):
             for name in ("linkedin", "indeed", "glassdoor"):
                 source_dir.joinpath(f"{name}.json").write_text(json.dumps({"jobs": [{}]}))
 
-            report, _history = pipeline_health.build(root, now)
+            report, history = pipeline_health.build(root, now)
 
             official = report["components"]["official"]
+            self.assertEqual("Healthy", official["status"])
             self.assertEqual(0, official["failure_count"])
-            self.assertNotIn("linkedin_company_official_adapter", official["detail"])
+            self.assertEqual("degraded", official["latest_attempt_status"])
+            self.assertEqual(10, official["consecutive_failures"])
+            self.assertIn("LinkedIn company adapter excluded from status: HTTP 429", official["detail"])
+            self.assertIn("10 consecutive degraded runs", official["detail"])
             self.assertNotIn("citadel", official["detail"])
             self.assertTrue(any("citadel" in item for item in report["limitations"]))
             self.assertTrue(any("linkedin_company_official_adapter" in item for item in report["limitations"]))
+            pipeline_health.write(root / "public", report, history)
+            self.assertIn("Consecutive degraded runs", (root / "public" / "health.html").read_text())
 
     def test_official_scraper_error_thresholds(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -373,7 +383,7 @@ class PipelineHealthTests(unittest.TestCase):
                     official_stats.write_text(json.dumps({
                         "run_at": now.isoformat(), "output": {"shown": 20},
                         "failures": {"scrape": {
-                            f"source-{index}": ["HTTP 429" if index == 0 else "error"]
+                            f"source-{index}": ["HTTP 429", "retry timeout"] if index == 0 else ["error"]
                             for index in range(count)
                         }},
                     }))
@@ -383,6 +393,8 @@ class PipelineHealthTests(unittest.TestCase):
                     self.assertEqual(count, official["scraper_error_count"])
                     self.assertIn(f"{count} scraper failures", official["keywords"])
                     self.assertIn(f"{count} scraper failures", official["detail"])
+                    for index in range(count):
+                        self.assertIn(f"source-{index} (", official["detail"])
                     self.assertIn("rate-limited", official["keywords"])
                     self.assertEqual(expected, report["overall"])
 
