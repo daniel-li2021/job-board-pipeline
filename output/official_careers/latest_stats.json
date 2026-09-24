@@ -9493,9 +9493,9 @@
     "scored": 97
   },
   "output": {
-    "tier_a": 1,
-    "tier_b": 50,
-    "shown": 51,
+    "tier_a": 19,
+    "tier_b": 43,
+    "shown": 62,
     "new_jobs": 504,
     "new_jobs_added": 9
   },
@@ -9522,5 +9522,14 @@
     "source_jds_available": 16170,
     "exact_peer_resolved": 0,
     "remaining_no_jd": 1424
+  },
+  "repair": {
+    "at": "2026-09-24T04:43:02.148107+00:00",
+    "reference_commit": "a09d1f7",
+    "restored_historical_llm": 613,
+    "changed_material_pending_rescore": 98,
+    "corrected_alert_stamp": "2026-09-23_1447",
+    "original_alert_count": 77,
+    "corrected_alert_count": 2
   }
 }
