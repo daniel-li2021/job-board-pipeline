@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-09-23 17:03 PDT
-- Snapshot (UTC): 2026-09-24T00:03:15.007817+00:00
-- Jobs: 312 (Tier A/B only)
-- Last 24 hours: 84
-- Last 3 days: 312
+- Updated (PT): 2026-09-23 21:44 PDT
+- Snapshot (UTC): 2026-09-24T04:44:33.938529+00:00
+- Jobs: 313 (Tier A/B only)
+- Last 24 hours: 85
+- Last 3 days: 313
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -27,6 +27,7 @@ The 7-day dump is `latest.md`.
 | A | 93 | indeed | HUD | Full-Stack Software Engineer, Reinforcement Learning | San Francisco, CA, US | 2026-09-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ec86a385e19aebab) |
 | A | 92 | indeed |  | Software Engineer | San Mateo, CA, US | 2026-09-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=590f66c4be409f68) |
 | A | 91 | indeed | Kadir | Forward Deployed Research Engineer | Remote, US | 2026-09-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=98d2c28a487d2c34) |
+| A | 89 | indeed | MetLife | Software Development Engineer | Cary, NC, US | 2026-09-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ca1f90d133dd6c0e) |
 | A | 88 | indeed | Jacobs | Forward Deployed Engineer (Palantir Foundry & Custom Development) | Dallas, TX, US | 2026-09-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e04a1c4764f16e30) |
 | A | 86 | linkedin | BDO USA | Natl Tax Technology Associate, Software Engineer I - Tax Product Devel | Dallas, TX | 2026-09-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/natl-tax-technology-associate-software-engineer-i-tax-product-development-winter-2027-multiple-locations-at-bdo-usa-4469304408) |
 | A | 86 | linkedin | BDO USA | Natl Tax Technology Associate, Software Engineer I - Tax Product Devel | New York, NY | 2026-09-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/natl-tax-technology-associate-software-engineer-i-tax-product-development-winter-2027-multiple-locations-at-bdo-usa-4469309313) |
