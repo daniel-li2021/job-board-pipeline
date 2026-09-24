@@ -204,6 +204,8 @@ def enrich_details(
     allow_requests: bool = True,
     request_limit: int | None = None,
     min_description_chars: int = 1,
+    cooldown: bool = False,
+    probe: bool = False,
 ) -> Dict[str, Any]:
     """Hydrate every unresolved LinkedIn row with the logged-out full JD.
 
@@ -213,7 +215,9 @@ def enrich_details(
 
     ``allow_requests=False`` serves a rate-limited run: cached details only.
     Each eligible job gets one transport attempt; a later retry may use
-    Scrapling after an ordinary non-429 HTTP failure.
+    Scrapling after an ordinary non-429 HTTP failure. During ``cooldown``,
+    unresolved cards are intentionally deferred; ``probe`` permits one fresh
+    HTTP attempt after the pause even if that job's retry timer is still active.
     """
     session = session or _make_session()
     now = datetime.now(timezone.utc)
@@ -238,6 +242,8 @@ def enrich_details(
         "jds_resolved": 0,
         "external_apply_urls": 0,
         "failed": 0,
+        "detail_jds_fetched": 0,
+        "intentional_skips": 0,
         "blocked": "",
         "scrapling_requests": 0,
         "scrapling_jds_resolved": 0,
@@ -277,6 +283,9 @@ def enrich_details(
         if row.pop("_linkedin_official_url", None):
             stats["exact_official"] += 1
         if row.get("job_id"):
+            if cooldown:
+                pending.append(row)
+                continue
             attempted_at = str((prior or {}).get("linkedin_detail_attempted_at") or "")
             try:
                 attempted = datetime.fromisoformat(attempted_at.replace("Z", "+00:00"))
@@ -285,7 +294,7 @@ def enrich_details(
                 deferred = now - attempted.astimezone(timezone.utc) < timedelta(hours=DETAIL_RETRY_HOURS)
             except (TypeError, ValueError):
                 deferred = False
-            if deferred:
+            if deferred and not probe:
                 row["linkedin_detail_attempted_at"] = attempted_at
                 row["enrichment_status"] = "unresolved"
                 row["enrichment_failure_reason"] = str(
@@ -299,10 +308,15 @@ def enrich_details(
             row["enrichment_failure_reason"] = "missing_job_id"
 
     if not allow_requests:
-        stats["blocked"] = "rate_limited_no_further_requests"
+        stats["blocked"] = "" if cooldown else "rate_limited_no_further_requests"
+        stats["intentional_skips"] = len(pending) if cooldown else 0
         for row in pending:
-            row["enrichment_status"] = "unresolved"
-            row["enrichment_failure_reason"] = "linkedin_rate_limited"
+            row["enrichment_status"] = "deferred" if cooldown else "unresolved"
+            if cooldown:
+                row["enrichment_deferred_reason"] = "linkedin_detail_cooldown"
+                row.pop("enrichment_failure_reason", None)
+            else:
+                row["enrichment_failure_reason"] = "linkedin_rate_limited"
         pending = []
 
     for index, row in enumerate(pending):
@@ -312,7 +326,7 @@ def enrich_details(
             break
         prior = previous_by_id.get(str(row.get("job_id") or "")) or {}
         prior_reason = str(prior.get("enrichment_failure_reason") or "")
-        use_scrapling = prior_reason.startswith("linkedin_http_") and prior_reason not in {
+        use_scrapling = not probe and prior_reason.startswith("linkedin_http_") and prior_reason not in {
             "linkedin_http_429", "linkedin_http_network_error",
         }
         url = GUEST_DETAIL_URL.format(job_id=row["job_id"])
@@ -379,6 +393,7 @@ def enrich_details(
             row["enrichment_status"] = "resolved"
             row.pop("enrichment_failure_reason", None)
             stats["jds_resolved"] += 1
+            stats["detail_jds_fetched"] += 1
             if use_scrapling:
                 stats["scrapling_jds_resolved"] += 1
         else:
@@ -396,6 +411,8 @@ def enrich_details(
     unresolved = [row for row in rows if not row.get("description")]
     reasons: Dict[str, int] = {}
     for row in unresolved:
+        if row.get("enrichment_deferred_reason") == "linkedin_detail_cooldown":
+            continue
         reason = str(row.get("enrichment_failure_reason") or "no_description")
         reasons[reason] = reasons.get(reason, 0) + 1
     stats["remaining_no_jd"] = len(unresolved)

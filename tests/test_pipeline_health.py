@@ -274,6 +274,40 @@ class PipelineHealthTests(unittest.TestCase):
             self.assertFalse(report["degradations"])
             self.assertTrue(any("recovered detail limitation" in item for item in report["limitations"]))
 
+    def test_intentional_linkedin_detail_pause_is_reported_as_cooldown(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            now = datetime(2026, 9, 24, 4, tzinfo=timezone.utc)
+            for _key, (_label, folder, store_name) in pipeline_health.PIPELINES.items():
+                out = root / "output" / folder
+                out.mkdir(parents=True)
+                out.joinpath(store_name).write_text(json.dumps({"updated_at": now.isoformat(), "entries": [{}]}))
+            source_dir = root / "output" / "sources"
+            source_dir.mkdir(parents=True)
+            source_dir.joinpath("health.json").write_text(json.dumps({"sources": {
+                "linkedin": {
+                    "healthy": True, "required": True, "status": "ok",
+                    "last_attempt_at": now.isoformat(), "last_success_at": now.isoformat(),
+                    "detail_status": "cooldown", "detail_cooldown_reason": "intentional pause",
+                    "detail_cooldown_until": (now + timedelta(hours=24)).isoformat(),
+                    "detail_enrichment": {"requests": 0, "intentional_skips": 1,
+                                          "blocked": "", "remaining_no_jd": 1},
+                },
+                "indeed": {"healthy": True, "last_success_at": now.isoformat()},
+                "glassdoor": {"healthy": True, "required": False, "last_success_at": now.isoformat()},
+            }}))
+            for name in ("linkedin", "indeed", "glassdoor"):
+                source_dir.joinpath(f"{name}.json").write_text(json.dumps({"jobs": [{}]}))
+
+            report, _history = pipeline_health.build(root, now)
+
+        linkedin = report["components"]["linkedin"]
+        self.assertEqual("Healthy", linkedin["status"])
+        self.assertEqual("cooldown", linkedin["detail_status"])
+        self.assertIn("detail intentionally paused/cooldown", linkedin["detail"])
+        self.assertIn("search/discovery continues", linkedin["detail"])
+        self.assertNotIn("rate-limited", linkedin["keywords"])
+
     def test_committed_latest_stats_exposes_specific_failure_counts(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

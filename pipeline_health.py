@@ -476,37 +476,46 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                 f"collection; {last_good_count} jobs usable "
                 f"({int(state.get('partial_carried_count', 0) or 0)} carried from the last complete run)"
             )
-        if source == "linkedin" and enrichment:
+        if source == "linkedin":
+            cooldown_until = str(state.get("detail_cooldown_until") or "")
+            intentional_pause = state.get("detail_cooldown_reason") == "intentional pause"
             blocked = str(enrichment.get("blocked") or "")
             scrapling_requests = int(enrichment.get("scrapling_requests", 0) or 0)
             scrapling_resolved = int(enrichment.get("scrapling_jds_resolved", 0) or 0)
             remaining = int(enrichment.get("remaining_no_jd", 0) or 0)
-            if blocked:
+            if blocked and not intentional_pause:
                 degradation_kinds.append("detail_enrichment_blocked")
                 details.append(f"primary detail enrichment blocked: {blocked}")
                 if "429" in blocked or "rate" in blocked.lower():
                     keywords.append("rate-limited")
-            if scrapling_requests:
+            if scrapling_requests and not intentional_pause:
                 details.append(f"Scrapling fallback recovered {scrapling_resolved}/{scrapling_requests} attempted JDs")
-            if enrichment.get("scrapling_error"):
+            if enrichment.get("scrapling_error") and not intentional_pause:
                 degradation_kinds.append("scrapling_limited")
                 details.append(f"Scrapling fallback unavailable: {enrichment['scrapling_error']}")
             if remaining:
                 degradation_kinds.append("missing_descriptions")
                 details.append(f"{remaining} discovered records remain without a JD")
-            if blocked or remaining:
+            if (blocked and not intentional_pause) or remaining:
                 limitations.append(
+                    f"LinkedIn (local/general): {remaining} JD(s) remain without enrichment"
+                    if intentional_pause else
                     f"LinkedIn (local/general): recovered detail limitation; Scrapling resolved "
                     f"{scrapling_resolved}/{scrapling_requests}, {remaining} JD(s) remain"
                 )
-            cooldown_until = str(state.get("detail_cooldown_until") or "")
             if cooldown_until:
                 degradation_kinds.append("detail_enrichment_cooldown")
-                details.append(
-                    f"LinkedIn detail cooldown after {int(state.get('detail_429_streak', 0) or 0)} "
-                    f"consecutive 429 runs; next probe after {cooldown_until}"
-                )
-                keywords.append("rate-limited")
+                if intentional_pause:
+                    details.append(
+                        f"LinkedIn detail intentionally paused/cooldown until {cooldown_until}; "
+                        "search/discovery continues; next eligible detail request is a one-job probe"
+                    )
+                else:
+                    details.append(
+                        f"LinkedIn detail cooldown ({state.get('detail_cooldown_reason') or 'repeated 429'}); "
+                        f"next probe after {cooldown_until}"
+                    )
+                    keywords.append("rate-limited")
         if attempt_failed and data_usable:
             keywords.extend(("cached", "scraper errors"))
             reason = str(state.get("reason") or "")
@@ -526,6 +535,7 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         components[source] = {
             "label": {"linkedin": "LinkedIn (local/general)", "indeed": "Indeed", "glassdoor": "Glassdoor"}[source],
             "status": status,
+            "detail_status": state.get("detail_status", "") if source == "linkedin" else "",
             "detail": detail,
             "updated_at": state.get("last_success_at", ""),
             "data_usable": data_usable,

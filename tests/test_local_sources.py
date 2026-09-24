@@ -522,6 +522,8 @@ class LocalSourceTests(unittest.TestCase):
         }
         with tempfile.TemporaryDirectory() as tmpdir, patch.object(
             schema, "SOURCES_DIR", Path(tmpdir)
+        ), patch.object(
+            local_sources, "HEALTH_PATH", Path(tmpdir) / "health.json"
         ), patch.dict(local_sources.SOURCES, {"linkedin": lambda: bounded}), patch.object(
             linkedin_local, "enrich_details", return_value={"requests": 0, "responses": 0}
         ) as enrich:
@@ -596,10 +598,11 @@ class LocalSourceTests(unittest.TestCase):
         session = Mock()
         session.get.side_effect = AssertionError("no LinkedIn request after HTTP 429")
         stats = linkedin_local.enrich_details(
-            [row], previous_jobs=[prior], session=session, allow_requests=False,
+            [row], previous_jobs=[prior], session=session, allow_requests=False, cooldown=True,
         )
         self.assertEqual(1, stats["cache_reused"])
         self.assertEqual(prior["description"], row["description"])
+        self.assertEqual(0, stats["requests"])
 
     def test_linkedin_search_returns_cards_collected_before_the_429(self) -> None:
         card_html = (
@@ -761,7 +764,8 @@ class LocalSourceTests(unittest.TestCase):
             local_sources.write_health([{
                 "source": "linkedin", "status": "ok", "count": 1,
                 "attempted_at": "2026-09-19T04:00:00+00:00",
-                "detail_enrichment": {"requests": 1, "responses": 1, "rate_limited": False},
+                "detail_enrichment": {"requests": 1, "responses": 1, "rate_limited": False,
+                                      "probe": True, "detail_jds_fetched": 1},
             }], collector)
             recovered = local_sources._health_source("linkedin")
 
@@ -771,6 +775,105 @@ class LocalSourceTests(unittest.TestCase):
         self.assertEqual((1, False, True), probe)
         self.assertEqual(0, recovered["detail_429_streak"])
         self.assertEqual("", recovered["detail_cooldown_until"])
+
+    def test_intentional_detail_pause_keeps_discovery_and_does_not_count_failures(self) -> None:
+        now = datetime.now(timezone.utc)
+        until = (now + timedelta(hours=24)).isoformat()
+        card = self._linkedin_card("li-paused")
+        card["description"] = ""
+        calls = []
+
+        def discover(**_kwargs):
+            calls.append("search")
+            return {"status": "ok", "jobs": [card], "requests": 1, "responses": 1,
+                    "pages_fetched": 1, "query_stats": [{"query": "software engineer", "stop_reason": "empty_page"}]}
+
+        resolver = Mock()
+        resolver.recover.return_value = "unresolved"
+        resolver.stats = {}
+        resolver.search_requests = resolver.page_requests = 0
+        resolver.search_provider = ""
+        session = Mock()
+        session.get.side_effect = AssertionError("LinkedIn detail was requested during cooldown")
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            schema, "SOURCES_DIR", Path(tmpdir) / "sources",
+        ), patch.object(local_sources, "HEALTH_PATH", Path(tmpdir) / "health.json"), patch.object(
+            linkedin_local, "scrape", discover,
+        ), patch.dict(local_sources.SOURCES, {"linkedin": discover}), patch.object(
+            local_sources.coverage_reconcile, "load_official_context", return_value={},
+        ), patch.object(local_sources.board, "load_store", return_value={}), patch.object(
+            local_sources.official_jd_recovery, "Resolver", return_value=resolver,
+        ), patch.object(linkedin_local, "_make_session", return_value=session):
+            health_path = Path(tmpdir) / "health.json"
+            health_path.write_text(json.dumps({"sources": {"linkedin": {
+                "detail_cooldown_until": until, "detail_cooldown_reason": "intentional pause",
+                "detail_429_streak": 3,
+            }}}), encoding="utf-8")
+            schema.write_source_snapshot("linkedin", [dict(
+                card, linkedin_detail_attempted_at=now.isoformat(),
+                enrichment_failure_reason="linkedin_http_429",
+            )])
+            result = local_sources.run_one("linkedin", {"commit": "test", "dirty": False})
+            local_sources.write_health([result], {"commit": "test", "dirty": False})
+            health = local_sources._health_source("linkedin")
+            saved = schema.read_source_snapshot_payload("linkedin")["jobs"]
+
+        self.assertEqual(["search"], calls)
+        session.get.assert_not_called()
+        self.assertEqual("ok", result["status"])
+        self.assertEqual(1, len(saved))
+        self.assertEqual("", saved[0]["description"])
+        self.assertEqual("deferred", saved[0]["enrichment_status"])
+        self.assertNotIn("enrichment_failure_reason", saved[0])
+        self.assertEqual(0, health["detail_enrichment"]["requests"])
+        self.assertEqual(1, health["detail_enrichment"]["intentional_skips"])
+        self.assertEqual(0, health["detail_enrichment"]["retry_deferred"])
+        self.assertEqual(0, health["detail_enrichment"]["failed"])
+        self.assertEqual({}, health["detail_enrichment"]["failure_reasons"])
+        self.assertEqual("cooldown", health["detail_status"])
+        self.assertEqual(3, health["detail_429_streak"])
+        self.assertEqual(until, health["detail_cooldown_until"])
+        self.assertNotIn("detail_last_attempt_at", health)
+
+    def test_failed_detail_probe_restarts_cooldown_without_retry(self) -> None:
+        row = self._linkedin_card("li-probe")
+        row["description"] = ""
+        prior = dict(row, linkedin_detail_attempted_at=datetime.now(timezone.utc).isoformat(),
+                     enrichment_failure_reason="linkedin_http_403")
+        response = SimpleNamespace(status_code=429, text="")
+        session = Mock()
+        session.get.return_value = response
+        with patch.object(linkedin_local, "_scrapling_fetch_html") as scrapling:
+            detail = linkedin_local.enrich_details([row], previous_jobs=[prior], session=session,
+                                                   request_limit=1, probe=True)
+        detail["probe"] = True
+        state = {"detail_cooldown_until": datetime.now(timezone.utc).isoformat(), "detail_429_streak": 0}
+        now = datetime.now(timezone.utc)
+        local_sources._update_linkedin_detail_health(state, detail, now)
+        session.get.assert_called_once()
+        scrapling.assert_not_called()
+        self.assertEqual(1, detail["requests"])
+        self.assertEqual("cooldown", state["detail_status"])
+        self.assertGreater(datetime.fromisoformat(state["detail_cooldown_until"]), now)
+        self.assertEqual(1, state["detail_429_streak"])
+
+    def test_successful_detail_probe_restores_normal_budget(self) -> None:
+        row = self._linkedin_card("li-probe-success")
+        row["description"] = ""
+        session = Mock()
+        session.get.return_value = SimpleNamespace(
+            status_code=200,
+            text='<div class="show-more-less-html__markup">A full verified job description.</div>',
+        )
+        with patch.object(linkedin_local.time, "sleep"):
+            detail = linkedin_local.enrich_details([row], session=session, request_limit=1, probe=True)
+        detail["probe"] = True
+        state = {"detail_cooldown_until": datetime.now(timezone.utc).isoformat(), "detail_429_streak": 2}
+        local_sources._update_linkedin_detail_health(state, detail, datetime.now(timezone.utc))
+        self.assertEqual(1, detail["detail_jds_fetched"])
+        self.assertEqual("active", state["detail_status"])
+        self.assertEqual("", state["detail_cooldown_until"])
+        self.assertEqual(0, state["detail_429_streak"])
 
     def test_runner_executes_collector_from_fetched_origin_main(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

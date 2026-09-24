@@ -86,8 +86,39 @@ def _linkedin_detail_control(now: datetime) -> tuple[int, bool, bool]:
         cooldown_until = datetime.min.replace(tzinfo=timezone.utc)
     if cooldown_until > now:
         return 0, True, False
-    probe = streak >= 2
+    probe = bool(state.get("detail_cooldown_until")) or streak >= 2
     return (1 if probe else LINKEDIN_DETAIL_LIMIT), False, probe
+
+
+def _update_linkedin_detail_health(state: Dict[str, object], detail: Dict[str, object], attempted_at: datetime) -> None:
+    """Advance detail failure state only when a detail request occurred."""
+    requests_made = int(detail.get("requests", 0) or 0)
+    if not requests_made:
+        return
+    state["detail_last_attempt_at"] = attempted_at.isoformat()
+    if detail.get("probe"):
+        if int(detail.get("detail_jds_fetched", 0) or 0):
+            state["detail_429_streak"] = 0
+            state["detail_cooldown_until"] = ""
+            state["detail_cooldown_reason"] = ""
+            state["detail_status"] = "active"
+        else:
+            state["detail_cooldown_until"] = (attempted_at + timedelta(hours=LINKEDIN_DETAIL_COOLDOWN_HOURS)).isoformat()
+            state["detail_cooldown_reason"] = str(detail.get("blocked") or "detail probe returned no JD")
+            state["detail_status"] = "cooldown"
+            if detail.get("rate_limited"):
+                state["detail_429_streak"] = int(state.get("detail_429_streak", 0) or 0) + 1
+    elif detail.get("rate_limited"):
+        streak = int(state.get("detail_429_streak", 0) or 0) + 1
+        state["detail_429_streak"] = streak
+        if streak >= 2:
+            state["detail_cooldown_until"] = (attempted_at + timedelta(hours=LINKEDIN_DETAIL_COOLDOWN_HOURS)).isoformat()
+            state["detail_cooldown_reason"] = "repeated HTTP 429"
+            state["detail_status"] = "cooldown"
+    elif int(detail.get("responses", 0) or 0):
+        state["detail_429_streak"] = 0
+        state["detail_cooldown_until"] = ""
+        state["detail_cooldown_reason"] = ""
 
 
 def _linkedin_search_control(now: datetime) -> tuple[int, bool, bool, int]:
@@ -291,9 +322,14 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
             allow_requests=not search_rate_limited and not cooldown_active,
             request_limit=detail_limit,
             min_description_chars=board.THIN_JD_CHARS,
+            cooldown=cooldown_active,
+            probe=probe,
         )
         detail_enrichment["cooldown_active"] = cooldown_active
         detail_enrichment["probe"] = probe
+        detail_enrichment["status"] = "cooldown" if cooldown_active else "probe" if probe else "active"
+        if cooldown_active:
+            detail_enrichment["cooldown_until"] = str(_health_source("linkedin").get("detail_cooldown_until") or "")
 
     # Every discovered record reaches enrichment before filtering.
     stage1_survivors = []
@@ -454,25 +490,13 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
                     state["search_429_streak"] = 0
                     state["search_cooldown_until"] = ""
             detail = state["detail_enrichment"]
-            requests_made = int(detail.get("requests", 0) or 0)
-            if requests_made:
-                state["detail_last_attempt_at"] = result.get("attempted_at", "")
-            if requests_made and detail.get("rate_limited"):
-                streak = int(prior.get("detail_429_streak", 0) or 0) + 1
-                state["detail_429_streak"] = streak
-                if streak >= 2:
-                    try:
-                        attempted_at = datetime.fromisoformat(
-                            str(result.get("attempted_at") or "").replace("Z", "+00:00")
-                        )
-                    except ValueError:
-                        attempted_at = datetime.now(timezone.utc)
-                    state["detail_cooldown_until"] = (
-                        attempted_at + timedelta(hours=LINKEDIN_DETAIL_COOLDOWN_HOURS)
-                    ).isoformat()
-            elif requests_made and int(detail.get("responses", 0) or 0):
-                state["detail_429_streak"] = 0
-                state["detail_cooldown_until"] = ""
+            state["detail_status"] = str(detail.get("status") or prior.get("detail_status") or "active")
+            if detail.get("cooldown_active"):
+                state["detail_cooldown_reason"] = str(prior.get("detail_cooldown_reason") or "intentional pause")
+            _update_linkedin_detail_health(
+                state, detail,
+                datetime.fromisoformat(str(result.get("attempted_at") or datetime.now(timezone.utc).isoformat()).replace("Z", "+00:00")),
+            )
         sources[name] = state
     HEALTH_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = {
@@ -545,8 +569,11 @@ def recover_jds() -> Dict[str, object]:
         allow_requests=not cooldown and time.monotonic() < deadline,
         request_limit=min(detail_limit, LINKEDIN_DETAIL_LIMIT),
         min_description_chars=board.THIN_JD_CHARS,
+        cooldown=cooldown,
+        probe=probe,
     ) if linkedin_rows else {"requests": 0, "responses": 0, "rate_limited": False, "jds_resolved": 0}
-    detail.update(cooldown_active=cooldown, probe=probe)
+    detail.update(cooldown_active=cooldown, probe=probe,
+                  status="cooldown" if cooldown else "probe" if probe else "active")
     after = {
         name: sum(len(str(job.get("description") or "").strip()) < board.THIN_JD_CHARS for job in snapshots[name]["jobs"])
         for name in names
@@ -578,16 +605,9 @@ def recover_jds() -> Dict[str, object]:
         except (FileNotFoundError, json.JSONDecodeError, OSError):
             health = {"schema_version": HEALTH_SCHEMA_VERSION, "sources": {}}
         state = health.setdefault("sources", {}).setdefault("linkedin", {})
-        state["detail_last_attempt_at"] = now.isoformat()
         state["detail_enrichment"] = detail
-        if detail.get("rate_limited"):
-            streak = int(state.get("detail_429_streak", 0) or 0) + 1
-            state["detail_429_streak"] = streak
-            if streak >= 2:
-                state["detail_cooldown_until"] = (now + timedelta(hours=LINKEDIN_DETAIL_COOLDOWN_HOURS)).isoformat()
-        elif int(detail.get("responses", 0) or 0):
-            state["detail_429_streak"] = 0
-            state["detail_cooldown_until"] = ""
+        _update_linkedin_detail_health(state, detail, now)
+        state["detail_status"] = state.get("detail_status") or detail["status"]
         atomic_write(HEALTH_PATH, (json.dumps(health, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
     report: Dict[str, object] = {
         "run_at": now.isoformat(), "before_no_jd": counts_before, "after_no_jd": after,
