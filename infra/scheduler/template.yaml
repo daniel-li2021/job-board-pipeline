@@ -151,7 +151,7 @@ Resources:
     Properties:
       GroupName: !Ref ScheduleGroup
       State: !Ref ScheduleState
-      ScheduleExpression: cron(0 17 * * ? *)
+      ScheduleExpression: cron(20 17 * * ? *)
       ScheduleExpressionTimezone: America/Los_Angeles
       FlexibleTimeWindow: {Mode: 'OFF'}
       Target:

@@ -63,7 +63,7 @@ class SchedulerTests(unittest.TestCase):
         self.assertIn("LocalSourceSchedule:", template)
         self.assertIn("LocalMorningSchedule:", template)
         self.assertNotIn("BoardSchedule:", template)
-        self.assertIn("ScheduleExpression: cron(0 17 * * ? *)", template)
+        self.assertIn("ScheduleExpression: cron(20 17 * * ? *)", template)
         self.assertIn("ScheduleExpression: cron(20 8 * * ? *)", template)
         self.assertIn("ScheduleExpression: cron(50 7,16 * * ? *)", template)
         self.assertIn("ScheduleExpression: cron(30 7,16 * * ? *)", template)

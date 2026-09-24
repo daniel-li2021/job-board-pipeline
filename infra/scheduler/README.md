@@ -5,7 +5,7 @@ the redundant scheduled Pages fallback are removed.
 
 | Workflow | America/Los_Angeles targets | AWS expression |
 |---|---|---|
-| local-sources.yml → board-jobs.yml → Pages | 08:20, 17:00 | `cron(20 8 * * ? *)` and `cron(0 17 * * ? *)` |
+| local-sources.yml → board-jobs.yml → Pages | 08:20, 17:20 | `cron(20 8 * * ? *)` and `cron(20 17 * * ? *)` |
 | daily-jobs.yml | 07:50, 16:50 | `cron(50 7,16 * * ? *)` |
 | official-careers.yml | 07:30, 16:30 | `cron(30 7,16 * * ? *)` |
 
