@@ -1,33 +1,19 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 1131,
+  "count": 1143,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-09-24T15:01:40.886255+00:00",
+    "scraped_at": "2026-09-24T18:02:13.704987+00:00",
     "collector": {
-      "commit": "1760f4812e35a6f96cc14a6110ef26e5021b3b41",
+      "commit": "03044214adfaabb6edaa41b28a2203cffd0c1f78",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 34.355,
+    "elapsed_seconds": 22.997,
     "query_stats": [
-      {
-        "query": "backend engineer",
-        "group": "secondary",
-        "page_budget": 2,
-        "pages_fetched": 2,
-        "stop_reason": "page_budget",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 18,
-        "first_pass_survivors": 18,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 3.294
-      },
       {
         "query": "full stack engineer",
         "group": "secondary",
@@ -36,11 +22,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 19,
-        "first_pass_survivors": 18,
+        "unique_contribution": 20,
+        "first_pass_survivors": 19,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 3.27
+        "elapsed_seconds": 3.105
       },
       {
         "query": "platform engineer",
@@ -54,70 +40,70 @@
         "first_pass_survivors": 20,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 3.094
+        "elapsed_seconds": 3.143
       },
       {
         "query": "applied ai engineer",
         "group": "secondary",
         "page_budget": 2,
-        "pages_fetched": 2,
-        "stop_reason": "page_budget",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 20,
-        "first_pass_survivors": 20,
+        "pages_fetched": 1,
+        "stop_reason": "blocked_http_429",
+        "raw_jobs": 10,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 10,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 3.199
+        "elapsed_seconds": 1.767
       },
       {
         "query": "machine learning engineer",
         "group": "secondary",
         "page_budget": 2,
-        "pages_fetched": 2,
-        "stop_reason": "page_budget",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 10,
-        "first_pass_survivors": 20,
+        "pages_fetched": 0,
+        "stop_reason": "source_unavailable",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 3.105
+        "elapsed_seconds": 0.0
       },
       {
         "query": "ml engineer",
         "group": "secondary",
         "page_budget": 2,
-        "pages_fetched": 1,
-        "stop_reason": "low_unique_yield",
-        "raw_jobs": 10,
-        "unique_jobs": 10,
+        "pages_fetched": 0,
+        "stop_reason": "source_unavailable",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
         "unique_contribution": 0,
-        "first_pass_survivors": 10,
+        "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.481
+        "elapsed_seconds": 0.0
       },
       {
         "query": "llm engineer",
         "group": "secondary",
         "page_budget": 2,
-        "pages_fetched": 1,
-        "stop_reason": "global_page_budget",
-        "raw_jobs": 10,
-        "unique_jobs": 10,
-        "unique_contribution": 8,
-        "first_pass_survivors": 9,
+        "pages_fetched": 0,
+        "stop_reason": "source_unavailable",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.755
+        "elapsed_seconds": 0.0
       },
       {
         "query": "infrastructure engineer",
         "group": "specialty",
         "page_budget": 2,
         "pages_fetched": 0,
-        "stop_reason": "global_page_budget",
+        "stop_reason": "source_unavailable",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
@@ -131,7 +117,7 @@
         "group": "specialty",
         "page_budget": 2,
         "pages_fetched": 0,
-        "stop_reason": "global_page_budget",
+        "stop_reason": "source_unavailable",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
@@ -145,7 +131,7 @@
         "group": "specialty",
         "page_budget": 2,
         "pages_fetched": 0,
-        "stop_reason": "global_page_budget",
+        "stop_reason": "source_unavailable",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
@@ -159,7 +145,7 @@
         "group": "specialty",
         "page_budget": 2,
         "pages_fetched": 0,
-        "stop_reason": "global_page_budget",
+        "stop_reason": "source_unavailable",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
@@ -173,7 +159,7 @@
         "group": "primary",
         "page_budget": 2,
         "pages_fetched": 0,
-        "stop_reason": "global_page_budget",
+        "stop_reason": "source_unavailable",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
@@ -187,7 +173,7 @@
         "group": "primary",
         "page_budget": 2,
         "pages_fetched": 0,
-        "stop_reason": "global_page_budget",
+        "stop_reason": "source_unavailable",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
@@ -201,7 +187,7 @@
         "group": "secondary",
         "page_budget": 2,
         "pages_fetched": 0,
-        "stop_reason": "global_page_budget",
+        "stop_reason": "source_unavailable",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
@@ -215,7 +201,7 @@
         "group": "secondary",
         "page_budget": 2,
         "pages_fetched": 0,
-        "stop_reason": "global_page_budget",
+        "stop_reason": "source_unavailable",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
@@ -229,7 +215,7 @@
         "group": "secondary",
         "page_budget": 2,
         "pages_fetched": 0,
-        "stop_reason": "global_page_budget",
+        "stop_reason": "source_unavailable",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
@@ -243,7 +229,21 @@
         "group": "secondary",
         "page_budget": 2,
         "pages_fetched": 0,
-        "stop_reason": "global_page_budget",
+        "stop_reason": "source_unavailable",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 0.0
+      },
+      {
+        "query": "backend engineer",
+        "group": "secondary",
+        "page_budget": 2,
+        "pages_fetched": 0,
+        "stop_reason": "source_unavailable",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
@@ -254,7 +254,7 @@
       }
     ],
     "detail_enrichment": {
-      "eligible": 95,
+      "eligible": 50,
       "cache_reused": 0,
       "requests": 0,
       "responses": 0,
@@ -263,21 +263,21 @@
       "budget_exhausted": false,
       "retry_deferred": 0,
       "retry_attempts": 0,
-      "exact_official": 14,
-      "official_deferred": 13,
+      "exact_official": 3,
+      "official_deferred": 2,
       "rate_limited": false,
       "jds_resolved": 0,
       "external_apply_urls": 0,
       "failed": 0,
       "detail_jds_fetched": 0,
-      "intentional_skips": 82,
+      "intentional_skips": 48,
       "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 95,
+      "remaining_no_jd": 50,
       "failure_reasons": {
-        "official_detail_deferred": 13
+        "official_detail_deferred": 2
       },
       "cooldown_active": true,
       "probe": false,
@@ -285,18 +285,18 @@
       "cooldown_until": "2026-09-25T04:42:15.832365+00:00"
     },
     "official_enrichment": {
-      "dedicated_matches": 14,
+      "dedicated_matches": 3,
       "search_provider_failures": 1,
-      "deferred": 95,
+      "deferred": 50,
       "search_requests": 12,
       "search_provider": "bing",
       "official_page_requests": 12,
-      "remaining_no_jd": 95
+      "remaining_no_jd": 50
     },
     "partial": true,
-    "blocked_reason": "search page budget exhausted",
-    "collected_count": 95,
-    "carried_count": 1037
+    "blocked_reason": "blocked with HTTP 429",
+    "collected_count": 50,
+    "carried_count": 1094
   },
   "jobs": [
     {
@@ -375,11 +375,11 @@
           "full stack engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -603,16 +603,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer",
-          "machine learning engineer",
-          "ml engineer"
+          "applied ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -1693,7 +1691,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4402080943",
@@ -1904,7 +1902,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468943230",
@@ -1958,7 +1956,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4467650300",
@@ -2648,7 +2646,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460613687",
@@ -2702,7 +2700,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460674213",
@@ -3421,15 +3419,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer",
-          "machine learning engineer"
+          "applied ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -4686,6 +4683,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4443002051",
+      "source": "linkedin",
+      "company": "Booz Allen Hamilton",
+      "title": "Full Stack Software Engineer, Senior",
+      "location": "McLean, VA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-senior-at-booz-allen-hamilton-4443002051",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "full stack engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4461543381",
@@ -6519,7 +6544,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471480709",
@@ -6549,7 +6574,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470442523",
@@ -6606,7 +6631,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470441641",
@@ -6898,7 +6923,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4451428785",
@@ -7228,6 +7253,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4443159809",
+      "source": "linkedin",
+      "company": "Citi",
+      "title": "Full Stack Developer - Vice President",
+      "location": "Irving, TX",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-developer-vice-president-at-citi-4443159809",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "full stack engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4469016551",
       "source": "linkedin",
       "company": "Citi",
@@ -7329,7 +7382,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470948620",
@@ -7586,7 +7639,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470284812",
@@ -7974,6 +8027,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4471146184",
+      "source": "linkedin",
+      "company": "Constrafor",
+      "title": "Full Stack Engineer",
+      "location": "New York, NY",
+      "posted_date": "2026-09-23",
+      "aggregator_posted_date": "2026-09-23",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-at-constrafor-4471146184",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "full stack engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468191323",
       "source": "linkedin",
       "company": "ConstructConnect",
@@ -8231,7 +8312,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4458898869",
@@ -8377,11 +8458,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -8458,7 +8539,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470419247",
@@ -8559,6 +8640,34 @@
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4471625423",
+      "source": "linkedin",
+      "company": "Datadog",
+      "title": "Software Engineer with Systems Depth",
+      "location": "New York, NY",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-with-systems-depth-at-datadog-4471625423",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "platform engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469958304",
@@ -8706,7 +8815,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470208597",
@@ -9525,11 +9634,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -9553,11 +9662,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -9634,7 +9743,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4459990631",
@@ -9662,7 +9771,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468518267",
@@ -9887,7 +9996,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470257124",
@@ -10310,6 +10419,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4434705746",
+      "source": "linkedin",
+      "company": "Enlighten",
+      "title": "Platform Engineer (Hybrid) - 27786",
+      "location": "Columbia, MD",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/platform-engineer-hybrid-27786-at-enlighten-4434705746",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "platform engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4395722691",
       "source": "linkedin",
       "company": "Enlighten",
@@ -10359,7 +10496,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4434708596",
@@ -10382,11 +10519,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -10482,11 +10619,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -10515,7 +10652,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470278742",
@@ -10665,7 +10802,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469486457",
@@ -10695,7 +10832,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469935653",
@@ -10804,7 +10941,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469399031",
@@ -10832,7 +10969,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468933244",
@@ -11157,7 +11294,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461349369",
@@ -11180,11 +11317,11 @@
           "full stack engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -11515,11 +11652,11 @@
           "full stack engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -12011,7 +12148,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469969956",
@@ -12499,11 +12636,11 @@
           "full stack engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -12602,11 +12739,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -12755,11 +12892,11 @@
           "full stack engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -12872,7 +13009,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4344971308",
@@ -13491,11 +13628,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -13709,7 +13846,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469951758",
@@ -13828,11 +13965,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -13981,7 +14118,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4369769068",
@@ -14009,7 +14146,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4452420680",
@@ -14134,11 +14271,11 @@
           "full stack engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -14159,16 +14296,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer",
-          "machine learning engineer",
-          "ml engineer"
+          "applied ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -14299,7 +14434,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461709050",
@@ -14359,7 +14494,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461599773",
@@ -14413,7 +14548,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461551439",
@@ -14491,7 +14626,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4467641429",
@@ -15237,7 +15372,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4397341016",
@@ -15265,7 +15400,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4443010619",
@@ -15293,7 +15428,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4424902713",
@@ -15474,11 +15609,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -15502,11 +15637,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -15676,11 +15811,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -15958,7 +16093,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468171886",
@@ -16835,15 +16970,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer",
-          "machine learning engineer"
+          "applied ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -17023,11 +17157,11 @@
           "full stack engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -17056,7 +17190,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4406694620",
@@ -17525,11 +17659,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -17558,7 +17692,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468781369",
@@ -17980,7 +18114,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470294252",
@@ -18125,11 +18259,11 @@
           "full stack engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -18596,6 +18730,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4469768352",
+      "source": "linkedin",
+      "company": "Oracle",
+      "title": "Lead Principal Software Engineer, Core Infrastructure",
+      "location": "Seattle, WA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/lead-principal-software-engineer-core-infrastructure-at-oracle-4469768352",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "platform engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4449841219",
       "source": "linkedin",
       "company": "Oracle",
@@ -18939,7 +19101,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469327876",
@@ -18967,7 +19129,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469868008",
@@ -19043,7 +19205,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4373085544",
@@ -19844,11 +20006,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -19878,7 +20040,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4452406585",
@@ -20943,11 +21105,11 @@
           "full stack engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -20971,11 +21133,11 @@
           "full stack engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -21083,6 +21245,34 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4471637029",
+      "source": "linkedin",
+      "company": "REI Systems",
+      "title": "Associate Software Engineer- Java full stack",
+      "location": "Sterling, VA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/associate-software-engineer-java-full-stack-at-rei-systems-4471637029",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "full stack engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4459208537",
@@ -21564,7 +21754,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468767828",
@@ -21721,7 +21911,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470459842",
@@ -21999,11 +22189,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -22125,11 +22315,11 @@
           "applied ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -22380,6 +22570,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4434608306",
+      "source": "linkedin",
+      "company": "Rivian and Volkswagen Group Technologies",
+      "title": "Sr. Software Engineer, Full-Stack (Factory Systems)",
+      "location": "Palo Alto, CA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-software-engineer-full-stack-factory-systems-at-rivian-and-volkswagen-group-technologies-4434608306",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "full stack engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4463925703",
       "source": "linkedin",
       "company": "Roadie",
@@ -22597,15 +22815,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer",
-          "machine learning engineer"
+          "applied ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -22759,7 +22976,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4393889822",
@@ -22813,6 +23030,34 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "verified_this_run": false
+    },
+    {
+      "job_id": "4471498414",
+      "source": "linkedin",
+      "company": "SAIC",
+      "title": "Senior AI Engineer",
+      "location": "South Dakota, United States",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-ai-engineer-at-saic-4471498414",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "applied ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -23717,11 +23962,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -23930,7 +24175,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470280622",
@@ -23977,11 +24222,39 @@
           "full stack engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4452627519",
+      "source": "linkedin",
+      "company": "SpaceX",
+      "title": "Full Stack Software Engineer, MES (Manufacturing Execution System)",
+      "location": "Bastrop, TX",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-mes-manufacturing-execution-system-at-spacex-4452627519",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "full stack engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -24415,7 +24688,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470944939",
@@ -24638,16 +24911,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer",
-          "machine learning engineer",
-          "ml engineer"
+          "applied ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -24668,16 +24939,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer",
-          "machine learning engineer",
-          "ml engineer"
+          "applied ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -25004,7 +25273,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469064251",
@@ -25083,7 +25352,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4459230646",
@@ -25605,7 +25874,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469025541",
@@ -25849,11 +26118,11 @@
           "applied ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -26193,11 +26462,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -26221,11 +26490,11 @@
           "platform engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": true
     },
     {
@@ -27346,7 +27615,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469961670",
@@ -27396,6 +27665,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4469496618",
+      "source": "linkedin",
+      "company": "UpCore Solutions",
+      "title": "Senior Full Stack Software Engineer",
+      "location": "New York, United States",
+      "posted_date": "2026-09-23",
+      "aggregator_posted_date": "2026-09-23",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-software-engineer-at-upcore-solutions-4469496618",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "full stack engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4459249236",
@@ -27709,7 +28006,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4358418070",
@@ -27810,6 +28107,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4469496594",
+      "source": "linkedin",
+      "company": "Virtuous",
+      "title": "Senior Software Engineer (Full Stack) - Donor Intelligence",
+      "location": "Phoenix, AZ",
+      "posted_date": "2026-09-23",
+      "aggregator_posted_date": "2026-09-23",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-full-stack-donor-intelligence-at-virtuous-4469496594",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "full stack engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468905473",
@@ -28503,7 +28828,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4424708079",
@@ -29039,7 +29364,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468507766",
