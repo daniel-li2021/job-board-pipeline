@@ -1,26 +1,23 @@
-Syncareer alert — 2026-09-24_1451
+Syncareer alert — 2026-09-24_2351
 
-Updated (PT): 2026-09-24 07:55 PDT
-Snapshot (UTC): 2026-09-24T14:55:16.011959+00:00
+Updated (PT): 2026-09-24 16:54 PDT
+Snapshot (UTC): 2026-09-24T23:54:38.592397+00:00
 
-19 new matching job(s) this run (hard-filtered).
+17 new matching job(s) this run (hard-filtered).
 
 If you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.md` in the repo (last 3 days, one file).
-
-Referral companies in this batch: 1
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | A | 95.0 | Syncareer | SingleStore | MIT-Software Engineer-New Grad /Helios/ | United States | 2026-09-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/singlestore/jobs/8220882) |
-| A | 89.0 | Syncareer | Wise | Graduate Software Engineer | Austin, Texas, United States | 2026-09-22 | No sponsor | - | unreviewed | not_dedicated | [open](https://wise.jobs/job/graduate-software-engineer-in-austin-jid-4197) |
+| A | 88.0 | Syncareer | Adyen | Software Engineer I (Front End) - Lifecycle Experience | Chicago, Illinois, United States | 2026-09-23 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/adyen/jobs/8153114) |
 | A | 88.0 | Syncareer | Audible | Software Development Engineer | Newark, New Jersey, United States | 2026-09-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.audiblecareers.com/job/newark/software-development-engineer/27552/100945718000) |
 | A | 86.0 | Syncareer | Sonos | Software Development Engineer, Cloud | Boston, Massachusetts, United States | 2026-09-23 | Sponsor | - | unreviewed | not_dedicated | [open](https://sonos.wd1.myworkdayjobs.com/en-US/sonos/job/Boston-MA/Software-Development-Engineer--Cloud_R2820) |
 | A | 85.0 | Syncareer | Fidelity Investments | Full Stack Software Engineer (Typescript, Angular, Node.js, REST API) | Salt Lake City, Utah, United States | 2026-09-22 | No sponsor | - | unreviewed | not_dedicated | [open](https://jobs.fidelity.com/en/jobs/2125855/full-stack-software-engineer-typescript-angular-nodejs-rest-api/) |
 | B | 85.0 | Syncareer | Mistral AI | Software Engineer, Backend | New York, New York, United States | 2026-09-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/mistral.ai/80f8c81d-394f-4892-8f06-97a880563cc7) |
-| B | 84.0 | Syncareer | Microsoft | Software Engineer II - UI/UX Product Engineering | Redmond, Washington, United States | 2026-09-23 | Sponsor | YES (Microsoft) | unreviewed | official_identity_unmatched | [open](https://apply.careers.microsoft.com/careers/job/1970393557005291) |
 | B | 83.0 | Syncareer | Medtronic | Data Engineer | Lafayette, Colorado, United States | 2026-09-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://medtronic.wd1.myworkdayjobs.com/en-US/MedtronicCareers/job/Lafayette-Colorado-United-States-of-America/Data-Engineer_R77104-1?locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea) |
 | B | 78.0 | Syncareer | PlayStation | Full Stack Software Engineer II (Contract Role) | Madison, Wisconsin, United States | 2026-09-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.playstation.com/full-stack-software-engineer-ii-contract-role/job/6199059004) |
-| B | 77.0 | Syncareer | Klaviyo | Software Engineer II, Test Frameworks & Tooling | Boston, Massachusetts, United States | 2026-09-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.klaviyo.com/careers/jobs/7855793003?gh_jid=7855793003) |
+| B | 76.0 | Syncareer | Tyler Technologies | Associate Software Support Specialist | Latham, New York, United States | 2026-09-23 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.tylertech.com/careers/job-listings/associate-software-support-specialist-26-oimpafwd-01) |
 | B | 76.0 | Syncareer | Honeywell | Software Engineer I | Duluth, Georgia, United States | 2026-09-23 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.honeywell.com/en/sites/Honeywell/job/157648/?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000469866) |
 | B | 76.0 | Syncareer | Iron Mountain | Machine Learning Associate | Florida, United States | 2026-09-23 | Sponsor | - | unreviewed | not_dedicated | [open](https://ironmountain.wd5.myworkdayjobs.com/en-US/iron-mountain-jobs/job/US--FL--Remote/Machine-Learning-Associate_J0107736?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db) |
 | B | 75.0 | Syncareer | GCS | Machine Learning Engineer | Seattle, Washington, United States | 2026-09-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.gcstechtalent.com/job-search/2833/machine-learning-engineer/data/seattle/job) |
@@ -29,6 +26,5 @@ Referral companies in this batch: 1
 | B | 74.0 | Syncareer | GCS | Machine Learning Engineer | McKinney, Texas, United States | 2026-09-23 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.gcstechtalent.com/job-search/2852/machine-learning-engineer/data/mckinney/job) |
 | B | 74.0 | Syncareer | GCS | Machine Learning Engineer | Chicago, Illinois, United States | 2026-09-23 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.gcstechtalent.com/job-search/2851/machine-learning-engineer/data/chicago/job) |
 | B | 74.0 | Syncareer | SingleStore | MIT-Software Engineer-New Grad /Engine/ | United States | 2026-09-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/singlestore/jobs/8220863) |
-| B | 72.0 | Syncareer | Tyler Technologies | Software Support Specialist | Troy, Michigan, United States | 2026-09-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.tylertech.com/careers/job-listings/software-support-specialist-26-ovopafws-01) |
 
-Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-09-24_1451.csv`.
+Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-09-24_2351.csv`.
