@@ -13,7 +13,7 @@ Filters (per plan):
   - f_TPR=r86400  : posted in the last 24h (wide window; pipeline re-sorts)
   - f_E=2,3       : entry + associate (captures realistic ~0-3 YOE / I-II)
   - geoId=103644278 + location=United States
-  - keywords      : rotated across several engineering titles
+  - keywords      : software engineer, then ai engineer on every run
 """
 
 from __future__ import annotations
@@ -32,12 +32,13 @@ from .schema import (
     make_job,
     normalize_space,
 )
-from .local_search import source_queries, query_stat
+from .local_search import query_stat
 
 GUEST_SEARCH_URL = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
 GUEST_DETAIL_URL = "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{job_id}"
 US_GEO_ID = "103644278"
-DEFAULT_KEYWORDS = [query for _group, query, _budget in source_queries("linkedin")]
+SEARCH_SPECS = (("primary", "software engineer", 5, 2), ("primary", "ai engineer", 3, 1))
+DEFAULT_KEYWORDS = [query for _group, query, _maximum, _minimum in SEARCH_SPECS]
 EXPERIENCE_LEVEL_FILTER = "2,3"
 PAGE_SIZE = 10
 REQUEST_TIMEOUT = 25
@@ -45,8 +46,7 @@ POLITE_SLEEP_SECONDS = 1.2
 DETAIL_CACHE_DAYS = 14
 DETAIL_SLEEP_SECONDS = 0.4
 DETAIL_RETRY_HOURS = 24
-SEARCH_PAGE_LIMIT = 12
-SEARCH_QUERY_PAGE_LIMIT = 2
+SEARCH_PAGE_LIMIT = 8
 
 
 def _make_session() -> requests.Session:
@@ -429,13 +429,13 @@ def scrape(
 ) -> Dict[str, Any]:
     """Return LinkedIn job rows. Raises SourceUnavailable on anti-bot/network."""
     session = session or _make_session()
-    specs = list(source_queries("linkedin"))
+    # Keep query_cursor for older callers, but focused discovery always begins
+    # with software engineer. Older unqueried titles remain in partial snapshots.
+    del query_cursor
+    specs = list(SEARCH_SPECS)
     if keywords:
         wanted = set(keywords)
         specs = [spec for spec in specs if spec[1] in wanted]
-    if specs:
-        offset = query_cursor % len(specs)
-        specs = specs[offset:] + specs[:offset]
     seen: set[str] = set()
     by_key: Dict[str, Dict[str, str]] = {}
     rows: List[Dict[str, str]] = []
@@ -443,11 +443,11 @@ def scrape(
     requests_made = 0
     responses = 0
     pages_fetched = 0
-    for index, (group, keyword, page_budget) in enumerate(specs):
-        stat = query_stat(keyword, group, min(page_budget, SEARCH_QUERY_PAGE_LIMIT))
+    for index, (group, keyword, page_budget, minimum_pages) in enumerate(specs):
+        stat = query_stat(keyword, group, page_budget)
         started = time.monotonic()
         query_seen: set[str] = set()
-        for page in range(min(page_budget, SEARCH_QUERY_PAGE_LIMIT)):
+        for page in range(page_budget):
             if requests_made >= page_limit:
                 stat["stop_reason"] = "global_page_budget"
                 break
@@ -516,7 +516,7 @@ def scrape(
                 if key:
                     by_key[key] = row
                 added += 1
-            if added <= 1:
+            if added <= 1 and page + 1 >= minimum_pages:
                 stat["stop_reason"] = "low_unique_yield"
                 break
             time.sleep(POLITE_SLEEP_SECONDS)
@@ -534,12 +534,13 @@ def scrape(
         "queries_completed": sum(bool(stat["pages_fetched"]) for stat in stats),
         "queries_total": len(specs), "requests": requests_made,
         "responses": responses, "pages_fetched": pages_fetched,
+        "coverage_limited": True,
     }
 
 
-def _unattempted(specs: List[tuple[str, str, int]], reason: str) -> List[Dict[str, object]]:
+def _unattempted(specs: List[tuple[str, str, int, int]], reason: str) -> List[Dict[str, object]]:
     out = []
-    for group, query, budget in specs:
+    for group, query, budget, _minimum in specs:
         stat = query_stat(query, group, budget)
         stat["stop_reason"] = reason
         out.append(stat)

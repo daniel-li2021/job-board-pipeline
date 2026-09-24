@@ -121,7 +121,7 @@ def _update_linkedin_detail_health(state: Dict[str, object], detail: Dict[str, o
         state["detail_cooldown_reason"] = ""
 
 
-def _linkedin_search_control(now: datetime) -> tuple[int, bool, bool, int]:
+def _linkedin_search_control(now: datetime) -> tuple[int, bool, bool]:
     state = _health_source("linkedin")
     streak = int(state.get("search_429_streak", 0) or 0)
     try:
@@ -132,7 +132,7 @@ def _linkedin_search_control(now: datetime) -> tuple[int, bool, bool, int]:
         until = datetime.min.replace(tzinfo=timezone.utc)
     active = until > now
     probe = not active and streak >= 2
-    return (0 if active else 1 if probe else linkedin_local.SEARCH_PAGE_LIMIT), active, probe, int(state.get("search_query_cursor", 0) or 0)
+    return (0 if active else 1 if probe else linkedin_local.SEARCH_PAGE_LIMIT), active, probe
 
 
 def _mark_linkedin_official_matches(
@@ -216,15 +216,15 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
     started = time.monotonic()
     search_control: Dict[str, object] = {}
     if name == "linkedin" and scraper is linkedin_local.scrape:
-        limit, cooldown, probe, cursor = _linkedin_search_control(datetime.fromisoformat(stamp))
-        search_control = {"cooldown_active": cooldown, "probe": probe, "query_cursor": cursor}
+        limit, cooldown, probe = _linkedin_search_control(datetime.fromisoformat(stamp))
+        search_control = {"cooldown_active": cooldown, "probe": probe}
     try:
         if name == "linkedin" and scraper is linkedin_local.scrape:
             result = (
                 {"status": "blocked", "reason": "search cooldown", "jobs": [], "query_stats": [],
                  "requests": 0, "responses": 0, "http_status": 0}
                 if search_control["cooldown_active"] else
-                scraper(query_cursor=cursor, page_limit=limit)
+                scraper(page_limit=limit)
             )
         else:
             result = scraper()
@@ -245,14 +245,18 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
         "pages_fetched": int(result.get("pages_fetched", 0) or 0),
         "rate_limited": int(result.get("http_status") or 0) == 429,
         "budget_exhausted": any(stat.get("stop_reason") == "global_page_budget" for stat in query_stats),
+        "coverage_limited": bool(result.get("coverage_limited")),
     } if name == "linkedin" else {}
     # A bounded search cannot verify queries it never reached. Merge its
     # coverage just like a 429-limited run, without treating absence as removal.
     search_rate_limited = bool(name == "linkedin" and int(result.get("http_status") or 0) == 429)
     budget_partial = bool(name == "linkedin" and result.get("status") == "ok"
                           and search_collection["budget_exhausted"])
-    partial = bool(rows and (search_rate_limited or budget_partial))
-    partial_reason = "search page budget exhausted" if budget_partial else str(result.get("reason") or "rate limited")
+    focused_partial = bool(name == "linkedin" and result.get("status") == "ok"
+                           and search_collection["coverage_limited"])
+    partial = bool(rows and (search_rate_limited or budget_partial or focused_partial))
+    partial_reason = (str(result.get("reason") or "rate limited") if search_rate_limited else
+                      "search page budget exhausted" if budget_partial else "focused query coverage")
     if result.get("status") != "ok" and not partial:
         reason = str(result.get("reason") or result.get("status"))
         print(f"[{name}] SKIP ({reason}) -> keeping last good snapshot")
@@ -479,7 +483,6 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
             search_requests = int(search.get("requests", 0) or 0)
             if search_requests:
                 state["search_last_attempt_at"] = result.get("attempted_at", "")
-                state["search_query_cursor"] = int(prior.get("search_query_cursor", 0) or 0) + 1
                 if search.get("rate_limited"):
                     streak = int(prior.get("search_429_streak", 0) or 0) + 1
                     state["search_429_streak"] = streak

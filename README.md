@@ -102,7 +102,7 @@ AWS EventBridge Scheduler dispatches the independent workflows at these
 
 | Workflow | Morning | Evening |
 |---|---:|---:|
-| Local Sources → Board | 8:00 AM, 11:00 AM, 2:00 PM | 5:00 PM |
+| Local Sources → Board | 8:20 AM | 5:00 PM |
 | Syncareer | 7:50 AM | 4:50 PM |
 | Official Careers | 7:30 AM | 4:30 PM |
 

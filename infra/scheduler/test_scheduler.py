@@ -58,15 +58,25 @@ class SchedulerTests(unittest.TestCase):
             with self.assertRaises(TimeoutError):
                 handler({"workflow": "board-jobs.yml"}, context)
 
-    def test_local_source_schedule_owns_four_daily_board_chains(self):
+    def test_local_source_schedules_own_two_daily_board_chains(self):
         template = Path(__file__).with_name("template.yaml").read_text()
         self.assertIn("LocalSourceSchedule:", template)
+        self.assertIn("LocalMorningSchedule:", template)
         self.assertNotIn("BoardSchedule:", template)
-        self.assertIn("ScheduleExpression: cron(0 8,11,14,17 * * ? *)", template)
+        self.assertIn("ScheduleExpression: cron(0 17 * * ? *)", template)
+        self.assertIn("ScheduleExpression: cron(20 8 * * ? *)", template)
         self.assertIn("ScheduleExpression: cron(50 7,16 * * ? *)", template)
         self.assertIn("ScheduleExpression: cron(30 7,16 * * ? *)", template)
-        self.assertEqual(3, template.count("ScheduleExpressionTimezone: America/Los_Angeles"))
-        self.assertIn('Input: \'{"workflow":"local-sources.yml"', template)
+        self.assertEqual(4, template.count("ScheduleExpressionTimezone: America/Los_Angeles"))
+        self.assertEqual(2, template.count('Input: \'{"workflow":"local-sources.yml"'))
+        evening = template.split("  LocalSourceSchedule:", 1)[1].split("  LocalMorningSchedule:", 1)[0]
+        morning = template.split("  LocalMorningSchedule:", 1)[1].split("  SyncareerSchedule:", 1)[0]
+        for field in ("State: !Ref ScheduleState", "ScheduleExpressionTimezone: America/Los_Angeles",
+                      "FlexibleTimeWindow: {Mode: 'OFF'}", "Arn: !GetAtt Dispatcher.Arn",
+                      "RoleArn: !GetAtt SchedulerRole.Arn", "MaximumRetryAttempts: 3",
+                      "DeadLetterConfig: {Arn: !GetAtt Failures.Arn}"):
+            self.assertIn(field, evening)
+            self.assertIn(field, morning)
         self.assertIn('Input: \'{"workflow":"daily-jobs.yml"', template)
         self.assertIn('Input: \'{"workflow":"official-careers.yml"', template)
 

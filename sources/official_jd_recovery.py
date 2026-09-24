@@ -15,8 +15,9 @@ from bs4 import BeautifulSoup
 
 import board_pipeline as board
 import coverage_reconcile
+from . import ats
 from .schema import (
-    is_aggregator_url, is_outbound_tracker_url, looks_official,
+    SourceUnavailable, is_aggregator_url, is_outbound_tracker_url, looks_official,
     normalize_company_key, normalize_location_key, normalize_space,
     normalize_title_key, unwrap_redirect_url,
 )
@@ -71,6 +72,40 @@ def _credible(url: str, company: str, patterns: set[str]) -> bool:
         return True
     slug = re.sub(r"[^a-z0-9]", "", normalize_company_key(company))
     return len(slug) >= 4 and slug in host.replace("-", "")
+
+
+def _likely_posting_url(url: str, title: str) -> bool:
+    """Do not spend a candidate validation on an employer homepage or board root."""
+    parts = [part.lower() for part in urlsplit(url).path.split("/") if part]
+    if not parts or parts[-1] in {"jobs", "careers", "positions", "job", "openings"}:
+        return False
+    host = _host(url)
+    if host in {"jobs.ashbyhq.com", "boards.greenhouse.io", "job-boards.greenhouse.io", "jobs.lever.co"}:
+        return len(parts) >= 2
+    if any(part in {"job", "jobs", "position", "positions", "careers"} for part in parts[:-1]):
+        return True
+    title_words = {word for word in _title_key(title).split() if len(word) > 2}
+    path_words = set(re.findall(r"[a-z0-9]+", " ".join(parts)))
+    return len(title_words & path_words) >= 2
+
+
+def _ats_board(url: str, company: str, verified_urls: list[str]) -> tuple[str, str] | None:
+    """Use an ATS tenant only when its slug matches the employer or was verified before."""
+    host = _host(url)
+    kind = {
+        "jobs.ashbyhq.com": "ashby",
+        "boards.greenhouse.io": "greenhouse",
+        "job-boards.greenhouse.io": "greenhouse",
+        "jobs.lever.co": "lever",
+    }.get(host)
+    segments = [part for part in urlsplit(url).path.split("/") if part]
+    if not kind or not segments or not re.fullmatch(r"[A-Za-z0-9_-]+", segments[0]):
+        return None
+    token = segments[0]
+    slug = lambda value: re.sub(r"[^a-z0-9]", "", normalize_company_key(value))
+    known = any(urlsplit(prior).hostname == host and urlsplit(prior).path.split("/")[1:2] == [token]
+                for prior in verified_urls)
+    return (kind, token) if slug(token) == slug(company) or known else None
 
 
 def _posting_location(posting: dict) -> str:
@@ -183,6 +218,8 @@ class Resolver:
         self.stats: Counter = Counter()
         self.pattern_cache: dict[str, set[str]] = {}
         self.listing_cache: dict[str, list[str]] = {}
+        self.ats_cache: dict[tuple[str, str], tuple[list[dict], str]] = {}
+        self.ats_matches: dict[str, list[dict]] = {}
         self.store_by_id: dict[tuple[str, str], dict] = {}
         self.dedicated_seen: set[tuple[str, str]] = set()
 
@@ -243,6 +280,30 @@ class Resolver:
             return html, final_url, failure or "ok"
         return "", url, f"http_{response.status_code}"
 
+    def ats_board(self, url: str, company: str, verified_urls: list[str], local: Counter) -> tuple[list[dict], str]:
+        board_key = _ats_board(url, company, verified_urls)
+        if not board_key:
+            return [], "unsupported"
+        if board_key in self.ats_cache:
+            self.stats["ats_board_cache_hits"] += 1
+            return self.ats_cache[board_key]
+        if self.page_requests >= self.page_limit or local["pages"] >= 4 or not self._available():
+            return [], "budget"
+        self.page_requests += 1
+        local["pages"] += 1
+        local["discovery_pages"] += 1
+        try:
+            fetcher = {"ashby": ats.fetch_ashby, "greenhouse": ats.fetch_greenhouse,
+                       "lever": ats.fetch_lever}[board_key[0]]
+            rows = fetcher(self.session, company, board_key[1])
+            result = (rows, "ok")
+            if rows:
+                self.ats_matches[normalize_company_key(company)] = rows
+        except SourceUnavailable:
+            result = ([], "network")
+        self.ats_cache[board_key] = result
+        return result
+
     def recover(self, row: dict, *, previous: dict, context: dict, store: dict, now: datetime,
                 cheap_only: bool = False) -> str:
         """Return resolution method or a deferred/no-match reason."""
@@ -293,10 +354,24 @@ class Resolver:
         patterns = self.pattern_cache[company_key]
         local = Counter()
         variant_candidates: list[tuple[str, str]] = []
+        discovered_urls: list[str] = []
+        seen_candidates: set[str] = set()
+
+        def resolved(url: str, description: str, method: str) -> str:
+            row.update(description=description, application_url=url,
+                       official_search_verified=True, official_jd_fetched_at=now.isoformat(),
+                       jd_recovery_at=now.isoformat(), enrichment_method=method,
+                       enrichment_status="resolved", official_search_status="resolved", direct_original_fetched=True,
+                       direct_original_fetched_at=now.isoformat())
+            row.pop("enrichment_failure_reason", None)
+            patterns.add(_host(url))
+            self.stats[method] += 1
+            return method
 
         def accept(url: str, method: str, *, variant: bool = False) -> bool:
-            if not _credible(url, company, patterns) or local["candidates"] >= 2:
+            if not _credible(url, company, patterns) or local["candidates"] >= 2 or url in seen_candidates:
                 return False
+            seen_candidates.add(url)
             local["candidates"] += 1
             html, final_url, status = self.page(url, local)
             if status != "ok":
@@ -314,15 +389,22 @@ class Resolver:
                     if variant_description:
                         variant_candidates.append((final_url, variant_description))
                 return False
-            row.update(description=description, application_url=final_url,
-                       official_search_verified=True, official_jd_fetched_at=now.isoformat(),
-                       jd_recovery_at=now.isoformat(), enrichment_method=method,
-                       enrichment_status="resolved", official_search_status="resolved", direct_original_fetched=True,
-                       direct_original_fetched_at=now.isoformat())
-            row.pop("enrichment_failure_reason", None)
-            patterns.add(_host(final_url))
-            self.stats[method] += 1
+            resolved(final_url, description, method)
             return True
+
+        def try_ats(url: str, method: str) -> tuple[str, str]:
+            ats_rows, status = self.ats_board(url, company, self.listing_cache[company_key], local)
+            if status == "ok":
+                _basis, match = coverage_reconcile.exact_match(row, ats_rows)
+                if match and len(str(match.get("description") or "").strip()) >= board.THIN_JD_CHARS:
+                    official_url = str(match.get("official_url") or "")
+                    if _credible(official_url, company, patterns):
+                        return status, resolved(official_url, match["description"], method)
+            elif status == "budget":
+                local["deferred"] += 1
+            elif status != "unsupported":
+                local["errors"] += 1
+            return status, ""
 
         if official:
             if key not in self.dedicated_seen:
@@ -330,18 +412,20 @@ class Resolver:
                 self.stats["dedicated_matches"] += 1
             official_url = str(official.get("official_url") or official.get("application_url") or "")
             if len(str(official.get("description") or "").strip()) >= board.THIN_JD_CHARS and official_url:
-                row.update(description=official["description"], application_url=official_url,
-                           official_search_verified=True, official_jd_fetched_at=now.isoformat(),
-                           jd_recovery_at=now.isoformat(), enrichment_method="dedicated_official",
-                           enrichment_status="resolved", official_search_status="resolved", direct_original_fetched=True,
-                           direct_original_fetched_at=now.isoformat())
-                self.stats["dedicated_official"] += 1
-                return "dedicated_official"
+                return resolved(official_url, official["description"], "dedicated_official")
             if official_url and not cheap_only and accept(official_url, "dedicated_official"):
                 return "dedicated_official"
             if official_url:
                 row["_linkedin_official_url"] = official_url
                 row["_linkedin_official_defer"] = True
+
+        cached_board = self.ats_matches.get(company_key, [])
+        if cached_board:
+            _method, match = coverage_reconcile.exact_match(row, cached_board)
+            if match and len(str(match.get("description") or "").strip()) >= board.THIN_JD_CHARS:
+                url = str(match.get("official_url") or "")
+                if _credible(url, company, patterns):
+                    return resolved(url, match["description"], "ats_board_cache")
 
         if cheap_only:
             return "pending"
@@ -352,10 +436,15 @@ class Resolver:
             row["official_search_attempted_at"] = previous["official_search_attempted_at"]
             return "no_match_cached"
 
+        for listing_url in self.listing_cache[company_key][:2]:
+            _status, method = try_ats(listing_url, "known_ats_board")
+            if method:
+                return method
+
         title = str(row.get("title") or "").strip()
         location = str(row.get("location") or "").strip()
         queries = [f'"{title}" "{company}"', f'"{title}" "{company}" "{location}"',
-                   f'{company} {title} careers jobs']
+                   f'"{company}" careers jobs']
         discovered: list[str] = []
         for index, query in enumerate(queries, 1):
             urls, status = self.search(query)
@@ -370,6 +459,10 @@ class Resolver:
                 host = _host(url)
                 if host and host not in discovered:
                     discovered.append(host)
+                if url not in discovered_urls:
+                    discovered_urls.append(url)
+                if not _likely_posting_url(url, title):
+                    continue
                 if accept(url, f"generic_{index}"):
                     return f"generic_{index}"
                 if local["candidates"] >= 2:
@@ -377,14 +470,23 @@ class Resolver:
             if local["candidates"] >= 2:
                 local["deferred"] += 1
 
-        hosts = list(dict.fromkeys([*sorted(patterns), *discovered]))[:2]
+        hosts = list(dict.fromkeys([*sorted(patterns), *discovered]))
+        hosts.sort(key=lambda host: (host not in {"jobs.ashbyhq.com", "boards.greenhouse.io",
+                                                  "job-boards.greenhouse.io", "jobs.lever.co"}, host))
+        hosts = hosts[:2]
         # Inspect verified ATS board paths and employer career homepages.
         for host in hosts:
-            if local["pages"] >= 2 or local["candidates"] >= 2:
+            if local["discovery_pages"] >= 2 or local["candidates"] >= 2:
                 break
-            starts = [url for url in self.listing_cache[company_key] if _host(url) == host]
+            starts = [url for url in [*self.listing_cache[company_key], *discovered_urls] if _host(url) == host]
             start_url = starts[0] if starts else f"https://{host}/"
+            ats_status, ats_method = try_ats(start_url, "direct_ats_board")
+            if ats_method:
+                return ats_method
+            if ats_status != "unsupported":
+                continue
             html, final_url, status = self.page(start_url, local)
+            local["discovery_pages"] += 1
             if status != "ok":
                 local["deferred" if status == "budget" else "errors"] += 1
                 continue
@@ -399,6 +501,7 @@ class Resolver:
                     links.append(target)
             for target in list(dict.fromkeys(links))[:1]:
                 careers_html, careers_url, careers_status = self.page(target, local)
+                local["discovery_pages"] += 1
                 if careers_status != "ok":
                     local["deferred" if careers_status == "budget" else "errors"] += 1
                     continue
@@ -424,14 +527,7 @@ class Resolver:
         unique = {url: description for url, description in variant_candidates}
         if len(unique) == 1 and not local["deferred"] and not local["errors"]:
             url, description = next(iter(unique.items()))
-            row.update(description=description, application_url=url,
-                       official_search_verified=True, official_jd_fetched_at=now.isoformat(),
-                       jd_recovery_at=now.isoformat(), enrichment_method="title_fallback",
-                       enrichment_status="resolved", official_search_status="resolved", direct_original_fetched=True,
-                       direct_original_fetched_at=now.isoformat())
-            row.pop("enrichment_failure_reason", None)
-            self.stats["title_fallback"] += 1
-            return "title_fallback"
+            return resolved(url, description, "title_fallback")
 
         row["official_search_attempted_at"] = now.isoformat()
         if local["deferred"] or local["errors"] or local["candidates"] >= 2 or not self._available():

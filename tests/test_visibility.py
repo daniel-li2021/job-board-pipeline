@@ -1646,14 +1646,11 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         self.assertEqual([], meta["errors"])
         self.assertEqual([], session.mock_calls)
 
-    def test_linkedin_search_covers_entry_and_associate_levels(self) -> None:
+    def test_linkedin_search_focuses_two_titles_at_entry_and_associate_levels(self) -> None:
         self.assertEqual("2,3", linkedin_local.EXPERIENCE_LEVEL_FILTER)
-        terms = {term.lower() for term in linkedin_local.DEFAULT_KEYWORDS}
-        self.assertIn("software engineer i", terms)
-        self.assertIn("software engineer ii", terms)
-        self.assertIn("associate software engineer", terms)
-        self.assertIn("forward deployed engineer", terms)
-        self.assertEqual({"primary": 2, "secondary": 2, "specialty": 2}, local_search.SOURCE_PAGE_BUDGETS["linkedin"])
+        self.assertEqual(["software engineer", "ai engineer"], linkedin_local.DEFAULT_KEYWORDS)
+        self.assertEqual([5, 3], [spec[2] for spec in linkedin_local.SEARCH_SPECS])
+        self.assertEqual(8, linkedin_local.SEARCH_PAGE_LIMIT)
         self.assertEqual({"primary": 3, "secondary": 1, "specialty": 1}, local_search.SOURCE_PAGE_BUDGETS["indeed"])
         self.assertEqual({"primary": 1, "secondary": 1, "specialty": 1}, local_search.SOURCE_PAGE_BUDGETS["glassdoor"])
         self.assertNotIn("Applied Scientist", daily_pipeline.SEARCH_KEYWORDS)

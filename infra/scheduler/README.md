@@ -5,11 +5,11 @@ the redundant scheduled Pages fallback are removed.
 
 | Workflow | America/Los_Angeles targets | AWS expression |
 |---|---|---|
-| local-sources.yml → board-jobs.yml → Pages | 08:00, 11:00, 14:00, 17:00 | `cron(0 8,11,14,17 * * ? *)` |
+| local-sources.yml → board-jobs.yml → Pages | 08:20, 17:00 | `cron(20 8 * * ? *)` and `cron(0 17 * * ? *)` |
 | daily-jobs.yml | 07:50, 16:50 | `cron(50 7,16 * * ? *)` |
 | official-careers.yml | 07:30, 16:30 | `cron(30 7,16 * * ? *)` |
 
-All three schedules use `America/Los_Angeles`, automatically follow DST, and set the
+All four schedules use `America/Los_Angeles`, automatically follow DST, and set the
 flexible window to OFF. Scheduler has minute-level precision; GitHub runner
 queuing can still delay actual execution. Local source collection dispatches Board
 after every successful run, even when snapshots are unchanged; successful Board
@@ -18,7 +18,7 @@ independent, manual dispatch stays available, and their successful `workflow_run
 events publish latest main.
 
 One Lambda, secret reference, execution roles, schedule group, and encrypted SQS
-failure queue serve all three schedules. Scheduler retries delivery up to three
+failure queue serve all four schedules. Scheduler retries delivery up to three
 times within 15 minutes. Lambda retries execution twice within 15 minutes and
 routes exhausted errors to the same queue. Logs retain receipts for 14 days;
 failed messages retain for 14 days. Check the queue and Lambda Errors metric if

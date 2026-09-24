@@ -545,6 +545,32 @@ class LocalSourceTests(unittest.TestCase):
         self.assertEqual(carried["description"], by_id["li-2"]["description"])
         self.assertTrue(payload["meta"]["partial"])
 
+    def test_focused_linkedin_queries_carry_unqueried_jobs_without_refreshing_them(self) -> None:
+        fresh, carried = self._linkedin_card("li-1"), self._linkedin_card("li-2")
+        carried.update(first_seen="2026-09-10T00:00:00+00:00",
+                       last_seen="2026-09-17T15:00:01+00:00")
+        focused = {"status": "ok", "jobs": [fresh], "coverage_limited": True,
+                   "query_stats": [{"query": "software engineer", "stop_reason": "low_unique_yield"}]}
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            schema, "SOURCES_DIR", Path(tmpdir)
+        ), patch.object(local_sources, "HEALTH_PATH", Path(tmpdir) / "health.json"), patch.dict(
+            local_sources.SOURCES, {"linkedin": lambda: focused}
+        ), patch.object(
+            linkedin_local, "enrich_details", return_value={"requests": 0, "responses": 0}
+        ) as enrich:
+            schema.write_source_snapshot("linkedin", [fresh, carried],
+                                         {"scraped_at": "2026-09-17T15:00:00+00:00"})
+            result = local_sources.run_one("linkedin", {"commit": "new", "dirty": False})
+            payload = schema.read_source_snapshot_payload("linkedin")
+        self.assertEqual("partial", result["status"])
+        self.assertEqual("focused query coverage", result["reason"])
+        self.assertTrue(enrich.call_args.kwargs["allow_requests"])
+        by_id = {job["job_id"]: job for job in payload["jobs"]}
+        self.assertEqual(2, len(by_id))
+        self.assertFalse(by_id["li-2"]["verified_this_run"])
+        self.assertEqual("2026-09-10T00:00:00+00:00", by_id["li-2"]["first_seen"])
+        self.assertEqual("2026-09-17T15:00:01+00:00", by_id["li-2"]["last_seen"])
+
     def test_rate_limited_partial_with_every_fresh_row_filtered_is_still_partial(self) -> None:
         collector = {"commit": "new", "dirty": False}
         dropped = self._linkedin_card("li-ca", location="Toronto, ON, Canada")

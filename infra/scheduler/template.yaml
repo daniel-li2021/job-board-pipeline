@@ -151,7 +151,21 @@ Resources:
     Properties:
       GroupName: !Ref ScheduleGroup
       State: !Ref ScheduleState
-      ScheduleExpression: cron(0 8,11,14,17 * * ? *)
+      ScheduleExpression: cron(0 17 * * ? *)
+      ScheduleExpressionTimezone: America/Los_Angeles
+      FlexibleTimeWindow: {Mode: 'OFF'}
+      Target:
+        Arn: !GetAtt Dispatcher.Arn
+        RoleArn: !GetAtt SchedulerRole.Arn
+        Input: '{"workflow":"local-sources.yml","scheduled_time":"<aws.scheduler.scheduled-time>"}'
+        RetryPolicy: {MaximumEventAgeInSeconds: 900, MaximumRetryAttempts: 3}
+        DeadLetterConfig: {Arn: !GetAtt Failures.Arn}
+  LocalMorningSchedule:
+    Type: AWS::Scheduler::Schedule
+    Properties:
+      GroupName: !Ref ScheduleGroup
+      State: !Ref ScheduleState
+      ScheduleExpression: cron(20 8 * * ? *)
       ScheduleExpressionTimezone: America/Los_Angeles
       FlexibleTimeWindow: {Mode: 'OFF'}
       Target:

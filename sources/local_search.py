@@ -19,6 +19,7 @@ KEYWORD_GROUPS = {
 }
 
 SOURCE_PAGE_BUDGETS = {
+    # LinkedIn's focused adapter owns its live two-query page limits.
     "linkedin": {"primary": 2, "secondary": 2, "specialty": 2},
     # Bounded 2026-09-07 probe: Indeed page 3 added 10 eligible 24h jobs;
     # 48h added 16 eligible jobs. Glassdoor page 2 was rate-limited.
