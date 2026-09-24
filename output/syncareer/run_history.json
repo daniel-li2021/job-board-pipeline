@@ -2,6 +2,1429 @@
   "runs": [
     {
       "pipeline": "syncareer",
+      "run_at": "2026-09-24T14:55:12.462905+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 63,
+      "cache_reused": 115,
+      "peer_reused": 0,
+      "same_content_reused": 2,
+      "non_material_change_reused": 0,
+      "new_or_changed": 64,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 55,
+        "prior_rule_result_now_eligible_for_llm": 9
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 5,
+      "requests": 8,
+      "input_tokens": 83120,
+      "cached_input_tokens": 10128,
+      "output_tokens": 14022,
+      "reasoning_tokens": 6533,
+      "estimated_usd": 0.014412,
+      "latency_seconds": 152.558,
+      "latency_measured": true,
+      "effective_rpm": 3.15,
+      "effective_tpm": 38205.27,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 8,
+      "primary_batches_total": 8,
+      "batches_attempted": 8,
+      "batches_succeeded": 8,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 63,
+      "funnel": {
+        "scoring_candidates": 174
+      },
+      "output": {
+        "tier_a": 5,
+        "tier_b": 14,
+        "tier_c": 155,
+        "shown": 19,
+        "new_jobs": 110,
+        "new_jobs_added": 7
+      },
+      "enrichment": {
+        "needed": 7,
+        "detail_api_resolved": 253,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 7
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/chicago/full-stack-engineer-4/1732/101053670928",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4/1732/101053670816",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4/1732/101053670688",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101053670512",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-tech-college-engineering/1732/101053670000",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4, Tech College Engineering"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101042091936",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4/1732/101042091904",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101042091744",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4/1732/101042091680",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101042091648",
+              "company": "Capital One",
+              "title": "Full-Stack Engineer 4"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 17.262,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 14934,
+            "cached_input_tokens": 0,
+            "output_tokens": 1600,
+            "reasoning_tokens": 701,
+            "estimated_usd": 0.002293
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/chicago/full-stack-engineer-4/1732/101053670928",
+              "match_score": 47.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "Cloud deployment and APIs"
+              ],
+              "main_gaps": [
+                "4+ years non-internship software engineering",
+                "2+ years public cloud experience"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4/1732/101053670816",
+              "match_score": 47.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "Cloud deployment and APIs"
+              ],
+              "main_gaps": [
+                "4+ years non-internship software engineering",
+                "2+ years public cloud experience"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4/1732/101053670688",
+              "match_score": 47.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "Cloud deployment and APIs"
+              ],
+              "main_gaps": [
+                "4+ years non-internship software engineering",
+                "2+ years public cloud experience"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101053670512",
+              "match_score": 47.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "Cloud deployment and APIs"
+              ],
+              "main_gaps": [
+                "4+ years non-internship software engineering",
+                "2+ years public cloud experience"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-tech-college-engineering/1732/101053670000",
+              "match_score": 46.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "Cloud deployment and APIs"
+              ],
+              "main_gaps": [
+                "4+ years non-internship software engineering",
+                "2+ years public cloud experience"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101042091936",
+              "match_score": 47.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "Cloud deployment and APIs"
+              ],
+              "main_gaps": [
+                "4+ years non-internship software engineering",
+                "2+ years public cloud experience"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4/1732/101042091904",
+              "match_score": 47.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "Cloud deployment and APIs"
+              ],
+              "main_gaps": [
+                "4+ years non-internship software engineering",
+                "2+ years public cloud experience"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101042091744",
+              "match_score": 47.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "Cloud deployment and APIs"
+              ],
+              "main_gaps": [
+                "4+ years non-internship software engineering",
+                "2+ years public cloud experience"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4/1732/101042091680",
+              "match_score": 47.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "Cloud deployment and APIs"
+              ],
+              "main_gaps": [
+                "4+ years non-internship software engineering",
+                "2+ years public cloud experience"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101042091648",
+              "match_score": 47.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "Cloud deployment and APIs"
+              ],
+              "main_gaps": [
+                "4+ years non-internship software engineering",
+                "2+ years public cloud experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101042091584",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101042091568",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/chicago/full-stack-engineer-4/1732/101042091520",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-devops-network-automation/1732/101042091248",
+              "company": "Capital One",
+              "title": "Full-Stack Engineer 4, DevOps (Network Automation)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-intelligent-foundations-and-experiences-ifx/1732/101042091216",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4 - Intelligent Foundations and Experiences (IFX)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101042091168",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4/1732/101042091136",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-bank-tech/1732/101058579808",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 4 (Bank Tech)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-java-spring-dynamodb-s3-graphql-genal/1732/101019112928",
+              "company": "Capital One",
+              "title": "Full-Stack Engineer 4 (Java, Spring, DynamoDB, S3, GraphQL, GenAL)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-python-aws-network-automation/1732/101019112896",
+              "company": "Capital One",
+              "title": "Full-Stack Engineer 4 (Python, AWS, Network Automation)"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 13.096,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 15042,
+            "cached_input_tokens": 1851,
+            "output_tokens": 1399,
+            "reasoning_tokens": 540,
+            "estimated_usd": 0.002037
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101042091584",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack production delivery",
+                "Cloud APIs and CI/CD"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "2 years public cloud"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101042091568",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack production delivery",
+                "Cloud APIs and CI/CD"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "2 years public cloud"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/chicago/full-stack-engineer-4/1732/101042091520",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack production delivery",
+                "Cloud APIs and CI/CD"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "2 years public cloud"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-devops-network-automation/1732/101042091248",
+              "match_score": 38.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python automation experience",
+                "Cloud deployment experience"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "Network engineering depth"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-intelligent-foundations-and-experiences-ifx/1732/101042091216",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack production delivery",
+                "Cloud APIs and CI/CD"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "2 years public cloud"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101042091168",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack production delivery",
+                "Cloud APIs and CI/CD"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "2 years public cloud"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4/1732/101042091136",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack production delivery",
+                "Cloud APIs and CI/CD"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "2 years public cloud"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-bank-tech/1732/101058579808",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack production delivery",
+                "Cloud APIs and CI/CD"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "2 years public cloud"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-java-spring-dynamodb-s3-graphql-genal/1732/101019112928",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java full-stack experience",
+                "Cloud APIs and CI/CD"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "2 years public cloud"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-python-aws-network-automation/1732/101019112896",
+              "match_score": 38.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python automation experience",
+                "AWS deployment experience"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "Network engineering depth"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153957BR",
+              "company": "Infosys",
+              "title": "Java Backend Developer"
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153956BR",
+              "company": "Infosys",
+              "title": "Java Backend Developer"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210790121",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer II – Java Backend/Mobile APIs"
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557002586",
+              "company": "Microsoft",
+              "title": "Software Engineer II - Backend"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/openai/ac442f1f-c0d2-4608-a155-bfc89190e01c",
+              "company": "OpenAI",
+              "title": "Fullstack Software Engineer, Child Safety Tools & Systems"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/92679765210604230-software-engineer-applied-research-youtube-languages-capabilities",
+              "company": "Google",
+              "title": "Software Engineer, Applied Research, YouTube Languages Capabilities"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/118616007559258822-software-engineer-iii-infrastructure-youtube-ads",
+              "company": "Google",
+              "title": "Software Engineer III, Infrastructure, YouTube Ads"
+            },
+            {
+              "key": "url::https://sonos.wd1.myworkdayjobs.com/en-US/sonos/job/Boston-MA/Software-Development-Engineer--Cloud_R2820",
+              "company": "Sonos",
+              "title": "Software Development Engineer, Cloud"
+            },
+            {
+              "key": "url::https://nutanix.dejobs.org/san-jose-ca/software-engineer-1-os-internals/CF057C89D18B4810BEEADB755EA6ACEB/job",
+              "company": "Nutanix",
+              "title": "Software Engineer 1 - OS Internals"
+            },
+            {
+              "key": "url::https://talentmanagementsolution.wd3.myworkdayjobs.com/en-US/perseus-careers/job/Sharon-Pennsylvania---USA/Software-Engineer-II_R54343-1",
+              "company": "Perseus Group",
+              "title": "Software Engineer II"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 23.844,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 9564,
+            "cached_input_tokens": 1851,
+            "output_tokens": 2342,
+            "reasoning_tokens": 1309,
+            "estimated_usd": 0.001961
+          },
+          "decisions": [
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153957BR",
+              "match_score": 62.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "REST API development",
+                "AWS service deployment"
+              ],
+              "main_gaps": [
+                "Java/Spring production experience",
+                "Kafka/Kubernetes experience"
+              ]
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/153956BR",
+              "match_score": 62.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "REST API development",
+                "AWS service deployment"
+              ],
+              "main_gaps": [
+                "Java/Spring production experience",
+                "Kafka/Kubernetes experience"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210790121",
+              "match_score": 64.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend API development",
+                "Production reliability"
+              ],
+              "main_gaps": [
+                "Java/Spring production experience",
+                "Mobile API/Kubernetes experience"
+              ]
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557002586",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud service deployment",
+                "Reliability and observability"
+              ],
+              "main_gaps": [
+                "Two years engineering experience"
+              ]
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/openai/ac442f1f-c0d2-4608-a155-bfc89190e01c",
+              "match_score": 61.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "React and TypeScript"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/92679765210604230-software-engineer-applied-research-youtube-languages-capabilities",
+              "match_score": 65.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Model evaluation platform",
+                "Python software development"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/118616007559258822-software-engineer-iii-infrastructure-youtube-ads",
+              "match_score": 55.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud deployment experience",
+                "Distributed systems foundations"
+              ],
+              "main_gaps": [
+                "Software Engineer III scope"
+              ]
+            },
+            {
+              "key": "url::https://sonos.wd1.myworkdayjobs.com/en-US/sonos/job/Boston-MA/Software-Development-Engineer--Cloud_R2820",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud backend services",
+                "Production DevOps experience"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://nutanix.dejobs.org/san-jose-ca/software-engineer-1-os-internals/CF057C89D18B4810BEEADB755EA6ACEB/job",
+              "match_score": 53.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming",
+                "Linux development tools"
+              ],
+              "main_gaps": [
+                "Kernel-level Linux debugging",
+                "OS internals and virtualization"
+              ]
+            },
+            {
+              "key": "url::https://talentmanagementsolution.wd3.myworkdayjobs.com/en-US/perseus-careers/job/Sharon-Pennsylvania---USA/Software-Engineer-II_R54343-1",
+              "match_score": 64.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full SDLC delivery",
+                "Testing and production support"
+              ],
+              "main_gaps": [
+                "3–5+ years experience",
+                "Strong SQL/database development"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://medtronic.wd1.myworkdayjobs.com/en-US/MedtronicCareers/job/Lafayette-Colorado-United-States-of-America/Embedded-Software-Engineer-II--Christine-_R78076-2?locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea",
+              "company": "Medtronic",
+              "title": "Embedded Software Engineer II (Christine)"
+            },
+            {
+              "key": "url::https://careers.usbank.com/global/en/job/2026-0026293/Software-Engineer-2-NET-Java-Spring-Boot-AWS",
+              "company": "U.S. Bank",
+              "title": "Software Engineer 2 (.NET / Java Spring Boot / AWS)"
+            },
+            {
+              "key": "url::https://nutanix.dejobs.org/san-jose-ca/software-engineer-2-kernel-development/72CB0E10CC50487585C118E5A91FC607/job",
+              "company": "Nutanix",
+              "title": "Software Engineer 2 (Kernel Development)"
+            },
+            {
+              "key": "url::https://ffive.wd5.myworkdayjobs.com/en-US/f5jobs/job/Seattle/Software-Engineer-I_RP1038827-1?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+              "company": "F5",
+              "title": "Software Engineer I"
+            },
+            {
+              "key": "url::https://hdjq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26010838?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164%253B300000000228618%253B300000000229065%253B300000192461701&selectedTitlesFacet=INTERN+CO+OP%253BENGINEERING+SERVICES%253BDEVELOPMENT+ENGINEERING%253BSALES+SYSTEMS+ENGINEERING%253BMARKETING%253BMANUFACTURING+ENGINEERING%253BFinance%253BHUMAN_RESOURCES%253BPRJ_MGM%253BIT",
+              "company": "National Instruments",
+              "title": "Software Test Engineer (C# & .NET)"
+            },
+            {
+              "key": "url::https://mizuho.wd1.myworkdayjobs.com/en-US/mizuhoamericas/job/New-York-NY-1271-AOA6th-Ave/Investment---Corporate-Banking---Infrastructure---Project-Finance---Natural-Resources--Power---Infrastructure---Analyst_R7395",
+              "company": "Mizuho Financial Group",
+              "title": "Investment & Corporate Banking | Infrastructure & Project Finance | Natural Resources, Power & Infrastructure – Analyst"
+            },
+            {
+              "key": "url::https://www.addisongroup.com/jobs/job/data-engineer-information-technology-schaumburg-il-a1qjb000000o4v3qai/43f7f38e-b6a8-11f1-ac9e-024201c20d84",
+              "company": "Addison Group",
+              "title": "Data Engineer"
+            },
+            {
+              "key": "url::https://www.dropbox.jobs/en/jobs/8211529/data-engineer",
+              "company": "Dropbox",
+              "title": "Data Engineer"
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/en-US/External/job/CT---Hartford/Data-Engineer-II--dbt--AWS-_R-52559",
+              "company": "Travelers",
+              "title": "Data Engineer II (dbt, AWS)"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/127670839075054278-software-test-engineer",
+              "company": "Google",
+              "title": "Software Test Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 24.592,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 7875,
+            "cached_input_tokens": 1851,
+            "output_tokens": 2644,
+            "reasoning_tokens": 1013,
+            "estimated_usd": 0.001943
+          },
+          "decisions": [
+            {
+              "key": "url::https://medtronic.wd1.myworkdayjobs.com/en-US/MedtronicCareers/job/Lafayette-Colorado-United-States-of-America/Embedded-Software-Engineer-II--Christine-_R78076-2?locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea",
+              "match_score": 45.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ listed",
+                "Automated testing experience"
+              ],
+              "main_gaps": [
+                "Embedded Linux development",
+                "Hardware-software debugging"
+              ]
+            },
+            {
+              "key": "url::https://careers.usbank.com/global/en/job/2026-0026293/Software-Engineer-2-NET-Java-Spring-Boot-AWS",
+              "match_score": 73.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "REST APIs and microservices",
+                "AWS and CI/CD"
+              ],
+              "main_gaps": [
+                "C#/.NET experience",
+                "3–5 years relevant experience"
+              ]
+            },
+            {
+              "key": "url::https://nutanix.dejobs.org/san-jose-ca/software-engineer-2-kernel-development/72CB0E10CC50487585C118E5A91FC607/job",
+              "match_score": 42.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming",
+                "Linux systems familiarity"
+              ],
+              "main_gaps": [
+                "Kernel-level development",
+                "Device driver experience"
+              ]
+            },
+            {
+              "key": "url::https://ffive.wd5.myworkdayjobs.com/en-US/f5jobs/job/Seattle/Software-Engineer-I_RP1038827-1?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+              "match_score": 80.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Software Engineer I",
+                "Production software experience"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://hdjq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26010838?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164%253B300000000228618%253B300000000229065%253B300000192461701&selectedTitlesFacet=INTERN+CO+OP%253BENGINEERING+SERVICES%253BDEVELOPMENT+ENGINEERING%253BSALES+SYSTEMS+ENGINEERING%253BMARKETING%253BMANUFACTURING+ENGINEERING%253BFinance%253BHUMAN_RESOURCES%253BPRJ_MGM%253BIT",
+              "match_score": 74.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Automated test infrastructure",
+                "Unit and integration testing"
+              ],
+              "main_gaps": [
+                "C#/.NET experience"
+              ]
+            },
+            {
+              "key": "url::https://mizuho.wd1.myworkdayjobs.com/en-US/mizuhoamericas/job/New-York-NY-1271-AOA6th-Ave/Investment---Corporate-Banking---Infrastructure---Project-Finance---Natural-Resources--Power---Infrastructure---Analyst_R7395",
+              "match_score": 15.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Quantitative education",
+                "Analytical experience"
+              ],
+              "main_gaps": [
+                "Project finance experience",
+                "Financial modeling experience"
+              ]
+            },
+            {
+              "key": "url::https://www.addisongroup.com/jobs/job/data-engineer-information-technology-schaumburg-il-a1qjb000000o4v3qai/43f7f38e-b6a8-11f1-ac9e-024201c20d84",
+              "match_score": 71.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Data pipelines and integrations",
+                "SQL and Python"
+              ],
+              "main_gaps": [
+                "Salesforce and Microsoft Fabric",
+                "Power BI experience"
+              ]
+            },
+            {
+              "key": "url::https://www.dropbox.jobs/en/jobs/8211529/data-engineer",
+              "match_score": 73.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Data pipeline experience",
+                "Spark and Databricks"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://travelers.wd5.myworkdayjobs.com/en-US/External/job/CT---Hartford/Data-Engineer-II--dbt--AWS-_R-52559",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS and data pipelines",
+                "Spark and Databricks"
+              ],
+              "main_gaps": [
+                "dbt experience"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/127670839075054278-software-test-engineer",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Test automation experience",
+                "Unit and integration testing"
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 5,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://recruiting2.ultipro.com/SUP1002SPRM/JobBoard/d7242952-1f26-44c3-bd0e-5dda7e739f73/OpportunityDetail?opportunityId=d625d933-4461-4282-82cd-7b1d756e6585",
+              "company": "Thryv",
+              "title": "Outside Software Account Rep - Kansas City"
+            },
+            {
+              "key": "url::https://wd3.myworkdaysite.com/en-US/recruiting/magna/Magna/job/Southfield-Michigan-US/Engineer-II---Software-Test_R00241284?Country=a30a87ed25634629aa6c3958aa2b91ea&Country=bc33aa3152ec42d4995f4791a106ed09&Country=6cb77610a8a543aea2d6bc10457e35d4&Country=29247e57dbaf46fb855b224e03170bc7&jobFamilyGroup=5aaaed564f43010127e356ca250347df&jobFamilyGroup=5aaaed564f4301e050504eca250341df&jobFamilyGroup=5aaaed564f430127348455ca250345df&jobFamilyGroup=5aaaed564f430166175050ca250343df&jobFamilyGroup=5aaaed564f4301f4835048ca25033ddf&jobFamilyGroup=5aaaed564f43015d2adc43ca250337df&jobFamilyGroup=5aaaed564f4301f96b3346ca250339df&jobFamilyGroup=5aaaed564f43012fc35659ca25034bdf&jobFamilyGroup=5aaaed564f4301832a8441ca250335df&jobFamilyGroup=5aaaed564f430174b55449ca25033fdf&jobFamilyGroup=5aaaed564f430182435158ca250349df&jobFamilyGroup=5aaaed564f430114a16f3fca250333df",
+              "company": "Magna International",
+              "title": "Engineer II - Software Test"
+            },
+            {
+              "key": "url::https://recruiting2.ultipro.com/SUP1002SPRM/JobBoard/d7242952-1f26-44c3-bd0e-5dda7e739f73/OpportunityDetail?opportunityId=1d568f2f-a752-4cdf-b503-a22090c5b08f",
+              "company": "Thryv",
+              "title": "Outside Software Account Rep - St. Louis"
+            },
+            {
+              "key": "url::https://recruiting2.ultipro.com/SUP1002SPRM/JobBoard/d7242952-1f26-44c3-bd0e-5dda7e739f73/OpportunityDetail?opportunityId=eac5cd91-40a6-4186-a6eb-5f5e16cb96ad",
+              "company": "Thryv",
+              "title": "Outside Software Account Representative - Paramus, New Jersey"
+            },
+            {
+              "key": "url::https://careers.fcc-asrgroup.com/job/West-Palm-Beach-IT-Infrastructure-Services-Analyst-FL-33401/1433127700",
+              "company": "Florida Crystals",
+              "title": "IT Infrastructure Services Analyst"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 14.275,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 5,
+            "input_tokens": 9781,
+            "cached_input_tokens": 1851,
+            "output_tokens": 1558,
+            "reasoning_tokens": 569,
+            "estimated_usd": 0.001591
+          },
+          "decisions": [
+            {
+              "key": "url::https://recruiting2.ultipro.com/SUP1002SPRM/JobBoard/d7242952-1f26-44c3-bd0e-5dda7e739f73/OpportunityDetail?opportunityId=d625d933-4461-4282-82cd-7b1d756e6585",
+              "match_score": 12.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "SaaS product familiarity"
+              ],
+              "main_gaps": [
+                "Sales experience",
+                "Quota-based prospecting"
+              ]
+            },
+            {
+              "key": "url::https://wd3.myworkdaysite.com/en-US/recruiting/magna/Magna/job/Southfield-Michigan-US/Engineer-II---Software-Test_R00241284?Country=a30a87ed25634629aa6c3958aa2b91ea&Country=bc33aa3152ec42d4995f4791a106ed09&Country=6cb77610a8a543aea2d6bc10457e35d4&Country=29247e57dbaf46fb855b224e03170bc7&jobFamilyGroup=5aaaed564f43010127e356ca250347df&jobFamilyGroup=5aaaed564f4301e050504eca250341df&jobFamilyGroup=5aaaed564f430127348455ca250345df&jobFamilyGroup=5aaaed564f430166175050ca250343df&jobFamilyGroup=5aaaed564f4301f4835048ca25033ddf&jobFamilyGroup=5aaaed564f43015d2adc43ca250337df&jobFamilyGroup=5aaaed564f4301f96b3346ca250339df&jobFamilyGroup=5aaaed564f43012fc35659ca25034bdf&jobFamilyGroup=5aaaed564f4301832a8441ca250335df&jobFamilyGroup=5aaaed564f430174b55449ca25033fdf&jobFamilyGroup=5aaaed564f430182435158ca250349df&jobFamilyGroup=5aaaed564f430114a16f3fca250333df",
+              "match_score": 36.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Software testing experience",
+                "C++ knowledge"
+              ],
+              "main_gaps": [
+                "Automotive embedded testing",
+                "AUTOSAR and test tools"
+              ]
+            },
+            {
+              "key": "url::https://recruiting2.ultipro.com/SUP1002SPRM/JobBoard/d7242952-1f26-44c3-bd0e-5dda7e739f73/OpportunityDetail?opportunityId=1d568f2f-a752-4cdf-b503-a22090c5b08f",
+              "match_score": 10.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "SaaS product familiarity"
+              ],
+              "main_gaps": [
+                "Direct sales experience",
+                "Full-cycle outbound sales"
+              ]
+            },
+            {
+              "key": "url::https://recruiting2.ultipro.com/SUP1002SPRM/JobBoard/d7242952-1f26-44c3-bd0e-5dda7e739f73/OpportunityDetail?opportunityId=eac5cd91-40a6-4186-a6eb-5f5e16cb96ad",
+              "match_score": 10.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "SaaS product familiarity"
+              ],
+              "main_gaps": [
+                "Direct sales experience",
+                "Full-cycle outbound sales"
+              ]
+            },
+            {
+              "key": "url::https://careers.fcc-asrgroup.com/job/West-Palm-Beach-IT-Infrastructure-Services-Analyst-FL-33401/1433127700",
+              "match_score": 48.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud deployment experience",
+                "Python scripting"
+              ],
+              "main_gaps": [
+                "Outsourced-provider SLA management",
+                "Microsoft infrastructure operations"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 6,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://ironmountain.wd5.myworkdayjobs.com/en-US/iron-mountain-jobs/job/US--FL--Remote/Machine-Learning-Associate_J0107736?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db",
+              "company": "Iron Mountain",
+              "title": "Machine Learning Associate"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/76626345689260742-research-scientist-quantum-error-correction-quantum-ai",
+              "company": "Google",
+              "title": "Research Scientist, Quantum Error Correction, Quantum AI"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 12.566,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 2953,
+            "cached_input_tokens": 0,
+            "output_tokens": 917,
+            "reasoning_tokens": 573,
+            "estimated_usd": 0.000754
+          },
+          "decisions": [
+            {
+              "key": "url::https://ironmountain.wd5.myworkdayjobs.com/en-US/iron-mountain-jobs/job/US--FL--Remote/Machine-Learning-Associate_J0107736?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production agentic AI systems",
+                "Enterprise API engineering"
+              ],
+              "main_gaps": [
+                "Golang/JVM API development",
+                "Reinforcement learning"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/76626345689260742-research-scientist-quantum-error-correction-quantum-ai",
+              "match_score": 22.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM evaluation research",
+                "Applied AI experience"
+              ],
+              "main_gaps": [
+                "Quantum error correction",
+                "Quantum AI research"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 7,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-java-python-docker-ai-enterprise-platforms-technology/1732/101053670560",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4 (Java, Python, Docker, AI) (Enterprise Platforms Technology)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-risk-tech/1732/101043340544",
+              "company": "Capital One",
+              "title": "Full-Stack Engineer 4 (Risk Tech)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-risk-tech/1732/101043340528",
+              "company": "Capital One",
+              "title": "Full-Stack Engineer 4 (Risk Tech)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/machine-learning-engineer-4-intelligent-foundations-and-experiences-ifx/1732/101042091312",
+              "company": "Capital One",
+              "title": "Full-Stack Engineer 4 (Risk Tech)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4-java-spring-dynamodb-s3-graphql-genai/1732/101019112944",
+              "company": "Capital One",
+              "title": "Full-Stack Engineer 4 (Java, Spring, DynamoDB, S3, GraphQL, GenAI)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-python-aws-ai-snowflake-databricks/1732/101019112864",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 4 (Python, AWS, AI, Snowflake, Databricks)"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/data-engineer-4-python-aws-kafka-spark-sql-snowflake-databricks-genai/1732/101019112880",
+              "company": "Capital One",
+              "title": "Data Engineer 4 (Python, AWS, Kafka, Spark, SQL, Snowflake, Databricks, GenAI)"
+            },
+            {
+              "key": "url::https://thehartford.wd5.myworkdayjobs.com/en-US/Careers_External/job/Hartford-CT/Software-Engineer_R2627119?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea",
+              "company": "The Hartford",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210785345",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer III - ServiceNow"
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557005291",
+              "company": "Microsoft",
+              "title": "Software Engineer II - UI/UX Product Engineering"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 32.32,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 15491,
+            "cached_input_tokens": 0,
+            "output_tokens": 2520,
+            "reasoning_tokens": 1316,
+            "estimated_usd": 0.002809
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-java-python-docker-ai-enterprise-platforms-technology/1732/101053670560",
+              "match_score": 49.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack platform engineering",
+                "AWS and container deployment"
+              ],
+              "main_gaps": [
+                "4+ years non-internship engineering",
+                "2+ years public cloud"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-risk-tech/1732/101043340544",
+              "match_score": 49.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI-powered software products",
+                "Full-stack cloud engineering"
+              ],
+              "main_gaps": [
+                "4+ years non-internship engineering",
+                "2+ years public cloud"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-risk-tech/1732/101043340528",
+              "match_score": 49.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI-powered software products",
+                "Full-stack cloud engineering"
+              ],
+              "main_gaps": [
+                "4+ years non-internship engineering",
+                "2+ years public cloud"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/machine-learning-engineer-4-intelligent-foundations-and-experiences-ifx/1732/101042091312",
+              "match_score": 49.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI-powered software products",
+                "Full-stack cloud engineering"
+              ],
+              "main_gaps": [
+                "4+ years non-internship engineering",
+                "2+ years public cloud"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4-java-spring-dynamodb-s3-graphql-genai/1732/101019112944",
+              "match_score": 47.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production full-stack systems",
+                "Cloud API development"
+              ],
+              "main_gaps": [
+                "4+ years non-internship engineering",
+                "2+ years public cloud"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4-python-aws-ai-snowflake-databricks/1732/101019112864",
+              "match_score": 52.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and cloud AI systems",
+                "Databricks data workflows"
+              ],
+              "main_gaps": [
+                "4+ years non-internship engineering",
+                "2+ years public cloud"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/data-engineer-4-python-aws-kafka-spark-sql-snowflake-databricks-genai/1732/101019112880",
+              "match_score": 53.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark and Databricks workflows",
+                "Python data pipelines"
+              ],
+              "main_gaps": [
+                "2+ years distributed data",
+                "End-to-end data modeling"
+              ]
+            },
+            {
+              "key": "url::https://thehartford.wd5.myworkdayjobs.com/en-US/Careers_External/job/Hartford-CT/Software-Engineer_R2627119?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea",
+              "match_score": 43.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Enterprise data platform",
+                "APIs and data workflows"
+              ],
+              "main_gaps": [
+                "3+ years C#/.NET"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210785345",
+              "match_score": 39.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production software engineering",
+                "Agile APIs and services"
+              ],
+              "main_gaps": [
+                "Hands-on ServiceNow implementation",
+                "3+ years applied experience"
+              ]
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557005291",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production full-stack product work",
+                "AI-powered user experiences"
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 8,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-mlops/1732/101053670464",
+              "company": "Capital One",
+              "title": "Full Stack Engineer 4 - MLOps"
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/san-jose/ai-engineer-4-ai-foundations/1732/101042090816",
+              "company": "Capital One",
+              "title": "AI Engineer 4 (AI Foundations)"
+            },
+            {
+              "key": "url::https://careers.honeywell.com/en/sites/Honeywell/job/157648?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000469866",
+              "company": "Honeywell",
+              "title": "Software Engineer I"
+            },
+            {
+              "key": "url::https://www.gcstechtalent.com/job-search/2852/machine-learning-engineer/data/mckinney/job",
+              "company": "GCS",
+              "title": "Machine Learning Engineer"
+            },
+            {
+              "key": "url::https://recruiting.ultipro.com/TWI1006TRWH/JobBoard/81558f08-2fad-4ff9-ac95-f1622f6fa6b6/OpportunityDetail?opportunityId=79276ab8-3e1f-4d4a-94ba-a0f014116e3d",
+              "company": "Bally's",
+              "title": "DevOps Engineer"
+            },
+            {
+              "key": "url::https://asana.com/jobs/apply/8155344",
+              "company": "Asana",
+              "title": "Software Engineer, AI Teammates Experience"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 14.603,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 6,
+            "input_tokens": 7480,
+            "cached_input_tokens": 2724,
+            "output_tokens": 1042,
+            "reasoning_tokens": 512,
+            "estimated_usd": 0.001024
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4-mlops/1732/101053670464",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production ML infrastructure",
+                "AWS and container deployment"
+              ],
+              "main_gaps": [
+                "4 years software engineering",
+                "Technical delivery leadership"
+              ]
+            },
+            {
+              "key": "url::https://www.capitalonecareers.com/job/san-jose/ai-engineer-4-ai-foundations/1732/101042090816",
+              "match_score": 47.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production agentic AI systems",
+                "LLM inference optimization"
+              ],
+              "main_gaps": [
+                "Required AI/ML experience",
+                "Foundational AI platform leadership"
+              ]
+            },
+            {
+              "key": "url::https://careers.honeywell.com/en/sites/Honeywell/job/157648?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000469866",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "RAG application development",
+                "Python APIs and CI/CD"
+              ],
+              "main_gaps": [
+                "C#/.NET Core"
+              ]
+            },
+            {
+              "key": "url::https://www.gcstechtalent.com/job-search/2852/machine-learning-engineer/data/mckinney/job",
+              "match_score": 74.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "ML pipeline experience",
+                "Model evaluation and feature engineering"
+              ],
+              "main_gaps": [
+                "Recommendation systems",
+                "A/B testing"
+              ]
+            },
+            {
+              "key": "url::https://recruiting.ultipro.com/TWI1006TRWH/JobBoard/81558f08-2fad-4ff9-ac95-f1622f6fa6b6/OpportunityDetail?opportunityId=79276ab8-3e1f-4d4a-94ba-a0f014116e3d",
+              "match_score": 63.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS deployment experience",
+                "CI/CD and containerization"
+              ],
+              "main_gaps": [
+                "Terraform and Ansible in practice",
+                "Production on-call operations"
+              ]
+            },
+            {
+              "key": "url::https://asana.com/jobs/apply/8155344",
+              "match_score": 66.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI teammate implementation",
+                "Full-stack AI applications"
+              ],
+              "main_gaps": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
       "run_at": "2026-09-23T23:54:02.330159+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -14017,189 +15440,6 @@
               "main_gaps": [
                 "The required 2+ years of IT infrastructure experience is not clearly evidenced; resume experience is primarily application/backend engineering.",
                 "No direct evidence of cloud VM/storage provisioning, backup/patch management, enterprise production support, or rotating on-call ownership."
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "syncareer",
-      "run_at": "2026-09-14T15:11:49.487935+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-5.6-terra",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 5,
-      "cache_reused": 16,
-      "fallback_count": 0,
-      "rule_count": 1,
-      "requests": 2,
-      "input_tokens": 7934,
-      "cached_input_tokens": 0,
-      "output_tokens": 868,
-      "reasoning_tokens": 82,
-      "estimated_usd": 0.026284,
-      "latency_seconds": 14.465,
-      "latency_measured": true,
-      "effective_rpm": 8.3,
-      "effective_tpm": 36510.2,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 5,
-      "funnel": {
-        "scoring_candidates": 21
-      },
-      "output": {
-        "tier_a": 4,
-        "tier_b": 5,
-        "tier_c": 12,
-        "shown": 9
-      },
-      "enrichment": {
-        "needed": 0,
-        "detail_api_resolved": 30,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 0
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "jobs": [
-            {
-              "key": "url::https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Software-Engineer--SWE-_R_1510796-1",
-              "company": "TD Bank",
-              "title": "2027 Summer Internship Program - Global Technology & Solutions - Software Engineer (SWE)"
-            },
-            {
-              "key": "url::https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Data-Engineer_R_1510797",
-              "company": "TD Bank",
-              "title": "2027 Summer Internship Program - Global Technology & Solutions - Data Engineer"
-            },
-            {
-              "key": "url::https://plmr.com/job/data-engineer",
-              "company": "Palomar",
-              "title": "Data Engineer"
-            },
-            {
-              "key": "url::https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Cloud-DevOps_R_1510799",
-              "company": "TD Bank",
-              "title": "2027 Summer Internship Program - Global Technology & Solutions - Cloud/DevOps"
-            }
-          ],
-          "model": "gpt-5.6-terra",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 8.891,
-          "usage": {
-            "model": "gpt-5.6-terra",
-            "api_requests": 1,
-            "jobs_scored": 4,
-            "input_tokens": 4466,
-            "cached_input_tokens": 0,
-            "output_tokens": 591,
-            "reasoning_tokens": 0,
-            "estimated_usd": 0.016024
-          },
-          "decisions": [
-            {
-              "key": "url::https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Software-Engineer--SWE-_R_1510796-1",
-              "match_score": 91.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Direct SWE experience building production full-stack applications, typed REST services, testing, and AWS deployments.",
-                "Meets the CS enrollment requirement and exceeds the preferred Java/JavaScript and AI/ML-interest signals through Java, TypeScript, retrieval, and LLM work."
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Data-Engineer_R_1510797",
-              "match_score": 88.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Direct evidence of high-volume ingestion pipelines, Databricks/Spark workflow productionization, normalization, validation, and data-quality troubleshooting.",
-                "CS and applied-mathematics background plus SQL, relational databases, and data-pipeline experience fit the entry-level data engineering scope."
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://plmr.com/job/data-engineer",
-              "match_score": 58.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Has relevant SQL, relational-database, Spark/Databricks, ingestion-pipeline, normalization, and data-quality experience.",
-                "Demonstrated cloud deployment and production reliability work is transferable to scalable data-platform operations."
-              ],
-              "main_gaps": [
-                "Requires 4+ years of data-engineering experience; resume shows early-career internships and approximately one year of directly relevant software/data work.",
-                "No clear insurance-domain experience, which the role strongly prefers, and limited direct evidence of owning data warehousing, governance, and architecture at this level."
-              ]
-            },
-            {
-              "key": "url::https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2027-Summer-Internship-Program---Global-Technology---Solutions---Cloud-DevOps_R_1510799",
-              "match_score": 92.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Direct cloud/DevOps evidence: Dockerized AWS ECS/Fargate deployment, GitHub Actions CI/CD, staged rollouts, health checks, observability, and automated testing.",
-                "Lists Terraform, Kubernetes, cloud computing, Linux, and reliability engineering skills, closely covering the internship's preferred technical areas."
-              ],
-              "main_gaps": []
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "resume_ai",
-          "jobs": [
-            {
-              "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26013455?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
-              "company": "American Express",
-              "title": "Agentic AI Cybersecurity Engineer - Identity Access Lifecycle Management"
-            }
-          ],
-          "model": "gpt-5.6-terra",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 5.574,
-          "usage": {
-            "model": "gpt-5.6-terra",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 3468,
-            "cached_input_tokens": 0,
-            "output_tokens": 277,
-            "reasoning_tokens": 82,
-            "estimated_usd": 0.01026
-          },
-          "decisions": [
-            {
-              "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26013455?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
-              "match_score": 67.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Built production AI agents, RAG workflows, evaluation/validation guardrails, and human-reviewed automation using Python, APIs, LangGraph, and AWS.",
-                "Strong evidence of data ingestion, analytics pipelines, structured-output validation, monitoring, and scalable AI workflow engineering."
-              ],
-              "main_gaps": [
-                "No demonstrated cybersecurity, technology-risk, audit-response, RCSA, or control-testing experience.",
-                "No clear evidence of designing governed AI workflows specifically for security-control evidence review, exception triage, or enterprise security monitoring."
               ]
             }
           ]
