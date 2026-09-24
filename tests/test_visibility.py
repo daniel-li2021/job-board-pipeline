@@ -1490,6 +1490,67 @@ class CoverageMatchingTests(unittest.TestCase):
 
 
 class ComplementaryDiscoveryTests(unittest.TestCase):
+    def test_official_digest_and_fresh_exclude_historical_c_to_b(self) -> None:
+        now = datetime.now(timezone.utc)
+        old_c = official_job("old-c", "Software Engineer I", "Seattle, WA")
+        new_b = official_job("new-b", "Software Engineer I", "Seattle, WA")
+        promoted = official_job("promoted", "Software Engineer I", "Seattle, WA")
+        carried = official_job("carried", "Software Engineer I", "Seattle, WA")
+        for job in (old_c, new_b, promoted, carried):
+            job.update(
+                canonical_job_key=dedup_key(job), source_pipeline="official",
+                tier="B", match_score=75,
+            )
+        promoted["tier"] = "A"
+        promoted["match_score"] = 90
+        old_seen = (now - timedelta(days=3)).isoformat()
+        recent_seen = (now - timedelta(hours=9)).isoformat()
+        for job in (old_c, promoted):
+            job["first_seen"] = old_seen
+        for job in (new_b, carried):
+            job["first_seen"] = recent_seen
+        previous = {
+            dedup_key(old_c): {"tier": "C", "first_seen": old_seen},
+            dedup_key(promoted): {"tier": "B", "first_seen": old_seen},
+            dedup_key(carried): {"tier": "B", "first_seen": recent_seen},
+        }
+        eligible = official_careers.digest_new_keys({dedup_key(new_b)}, previous, now)
+        self.assertNotIn(dedup_key(old_c), eligible)
+        self.assertIn(dedup_key(carried), eligible)
+        self.assertEqual(1, official_careers.count_new_jobs_added(
+            [old_c, new_b, promoted, carried], {dedup_key(new_b)},
+        ))
+        state = {
+            "last_digest_date": "", "alerted_keys": [dedup_key(promoted)],
+            "alerted_tier": {dedup_key(promoted): "B"},
+        }
+        digest, emit, _ = board_pipeline.decide_digest(
+            [old_c, new_b, promoted, carried], state, eligible_new_keys=eligible,
+        )
+        self.assertTrue(emit)
+        self.assertEqual(
+            {dedup_key(new_b), dedup_key(promoted), dedup_key(carried)},
+            {dedup_key(job) for job in digest},
+        )
+
+        rows = [dict(
+            canonical_job_key=dedup_key(job), pipeline="official", tier=job["tier"],
+            company=job["company"], title=job["title"], location=job["location"],
+            url=job["official_url"], filter_status="kept", score=job["match_score"],
+            freshness=dashboard.recency(job, now),
+        ) for job in (old_c, new_b, promoted, carried)]
+        with patch.object(dashboard.alert_history, "recent_events", side_effect=lambda path, *args, **kwargs: [{
+            "emitted_at": now.isoformat(),
+            "jobs": [{"canonical_job_key": dedup_key(job)} for job in digest],
+        }] if path == dashboard.ALERT_HISTORY_PATHS["official"] else []), patch.object(
+            dashboard, "parse_issue_event", return_value=None
+        ):
+            fresh, _ = dashboard.alert_fresh_rows(rows, now)
+        self.assertEqual(
+            {dedup_key(new_b), dedup_key(promoted), dedup_key(carried)},
+            {row["canonical_job_key"] for row in fresh},
+        )
+
     def test_official_and_syncareer_added_counts_only_include_new_visible_jobs(self) -> None:
         official_new = make_job(
             source="google_official_careers", company="Google", title="Software Engineer I",

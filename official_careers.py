@@ -41,6 +41,7 @@ from sources.schema import (
     OUTPUT_DIR,
     RECENCY_BUCKETS,
     dedup_key,
+    parse_datetime,
     recency_bucket,
 )
 
@@ -409,6 +410,21 @@ def count_new_jobs_added(visible: List[Dict[str, str]], new_keys: set[str]) -> i
     return sum(dedup_key(job) in new_keys for job in visible)
 
 
+def digest_new_keys(
+    new_keys: set[str], previous_store: Dict[str, Dict[str, Any]], now: datetime,
+) -> set[str]:
+    """Carry recent, already-visible discoveries past the daily digest cutoff."""
+    eligible = set(new_keys)
+    for key, previous in previous_store.items():
+        first_seen = parse_datetime(previous.get("first_seen"))
+        if (
+            previous.get("tier") in {"A", "B"} and first_seen
+            and timedelta(0) <= now - first_seen <= timedelta(hours=24)
+        ):
+            eligible.add(key)
+    return eligible
+
+
 def write_digest(jobs: List[Dict[str, str]], stamp: str) -> Dict[str, Path]:
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
     ALERTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -719,7 +735,8 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
 
     digest_state = board.load_digest_state(DIGEST_STATE_PATH)
     digest_jobs, emit_digest, digest_day = board.decide_digest(
-        visible, digest_state, force=args.force_digest, no_digest=args.no_digest
+        visible, digest_state, force=args.force_digest, no_digest=args.no_digest,
+        eligible_new_keys=digest_new_keys(new_keys, store, now),
     )
     alert_paths: Dict[str, Path] = {}
     digest_count = 0

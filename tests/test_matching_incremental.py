@@ -18,6 +18,84 @@ from sources.schema import SourceUnavailable, make_job
 
 
 class LlmMatchingTests(unittest.TestCase):
+    def test_model_switch_keeps_historical_llm_decision_until_rescored(self) -> None:
+        def job(job_id: str, description: str = "Build Python APIs. " * 25) -> dict:
+            row = make_job(
+                source="official_careers", company="Capital One", title="Software Engineer II",
+                location="Seattle, WA", job_id=job_id, description=description,
+                source_url=f"https://example.test/{job_id}",
+            )
+            row.update(first_seen="2026-09-22T15:00:00+00:00", recency_bucket="1to3d")
+            board.role_seniority_prefilter(row)
+            return row
+
+        old = job("historical")
+        old.update(
+            match_score=55, score_source=board.SCORE_LLM,
+            screen_method=board.SCORE_LLM, score_model="gpt-5.6-terra",
+            scoring_version=board.PROMPT_VERSION, reasoning_effort="medium",
+            candidate_fingerprint="candidate", seniority_fit="good",
+            hard_constraint_status="ok", top_match_reasons=["Python APIs"], main_gaps=[],
+            jd_hash=board.jd_hash(old), match_content_hash=board.decision_content_hash(old),
+        )
+        old["cache_key"] = board.combined_cache_key_from_hash(old["match_content_hash"], "old-model")
+        old["tier"] = board.assign_tier(old, False)
+        self.assertEqual("C", old["tier"])
+        stored = {board.dedup_key(old): board.build_store_entry(old, board.dedup_key(old))}
+        historical = job("historical")
+        changed = job("historical-changed")
+        changed_old = job("historical-changed")
+        changed_old.update(old, job_id="historical-changed", source_url="https://example.test/historical-changed")
+        changed_old["key"] = board.dedup_key(changed)
+        stored[board.dedup_key(changed)] = board.build_store_entry(changed_old, board.dedup_key(changed))
+        changed["description"] = "Design Java distributed services. " * 25
+        new = job("new")
+        profiles = {"fingerprint": "new-model", "candidate_fingerprint": "candidate"}
+
+        def match(batch, _profiles, _key, model, _route):
+            return {
+                board.dedup_key(row): {
+                    "match_score": 82, "seniority_fit": "good", "hard_constraint_status": "ok",
+                    "top_match_reasons": ["Relevant work"], "main_gaps": [],
+                } for row in batch
+            }, {"model": model, "api_requests": 1, "jobs_scored": len(batch)}
+
+        with patch.dict("os.environ", {"OPENAI_API_KEY": "test", "OPENAI_MODEL": "gpt-6-luna"}), patch.object(
+            board, "llm_match_batch", side_effect=match
+        ) as mocked:
+            _, _, counts = board.score_survivors(
+                [historical, changed, new], {}, profiles, stored, True,
+                seen_before_run={board.dedup_key(historical), board.dedup_key(changed)},
+            )
+
+        self.assertEqual({board.dedup_key(changed), board.dedup_key(new)}, {
+            board.dedup_key(row) for call in mocked.call_args_list for row in call.args[0]
+        })
+        self.assertEqual((55, "gpt-5.6-terra", board.SCORE_CACHED_LLM), (
+            historical["match_score"], historical["score_model"], historical["score_source"],
+        ))
+        self.assertEqual("C", board.assign_tier(historical, False))
+        self.assertEqual("B", board.assign_tier({
+            **historical, "match_score": 75, "score_source": board.SCORE_RULE,
+            "seniority_fit": "good", "main_gaps": [],
+        }, False))
+        self.assertEqual(old["cache_key"], board.build_store_entry(historical, board.dedup_key(historical))["cache_key"])
+        self.assertEqual(1, counts["historical_llm_retained"])
+        self.assertEqual(0, counts["historical_seen_skipped"])
+        self.assertEqual(2, counts["llm"])
+        self.assertEqual("gpt-6-luna", new["score_model"])
+        self.assertEqual("gpt-6-luna", changed["score_model"])
+        self.assertEqual("B", board.assign_tier(new, False))
+
+        next_run = job("historical")
+        next_store = {board.dedup_key(historical): board.build_store_entry(historical, board.dedup_key(historical))}
+        with patch.object(board, "llm_match_batch", side_effect=AssertionError("historical score must persist")):
+            board.score_survivors(
+                [next_run], {}, profiles, next_store, True,
+                seen_before_run={board.dedup_key(next_run)},
+            )
+        self.assertEqual((55, "gpt-5.6-terra"), (next_run["match_score"], next_run["score_model"]))
+
     def test_seen_jobs_only_reenter_llm_when_retryable(self) -> None:
         def job(job_id: str) -> dict:
             row = make_job(

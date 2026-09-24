@@ -215,7 +215,10 @@ def save_digest_state(path: Path, state: Dict[str, Any]) -> None:
         + "\n").encode("utf-8"))
 
 
-def digest_alert_jobs(visible: List[Dict[str, str]], state: Dict[str, Any]) -> List[Dict[str, str]]:
+def digest_alert_jobs(
+    visible: List[Dict[str, str]], state: Dict[str, Any],
+    eligible_new_keys: Optional[set[str]] = None,
+) -> List[Dict[str, str]]:
     """Visible A/B that are newly discovered, or a B→A promotion.
 
     Unmigrated ``alerted_keys`` without a stored tier are treated as already
@@ -234,7 +237,7 @@ def digest_alert_jobs(visible: List[Dict[str, str]], state: Dict[str, Any]) -> L
         last = last_tier.get(key)
         if last is None and key in already_keys:
             last = "A"
-        if last is None:
+        if last is None and (eligible_new_keys is None or key in eligible_new_keys):
             out.append(job)
         elif last == "B" and tier == "A":
             out.append(job)
@@ -279,9 +282,10 @@ def decide_digest(
     *,
     force: bool = False,
     no_digest: bool = False,
+    eligible_new_keys: Optional[set[str]] = None,
 ) -> Tuple[List[Dict[str, str]], bool, str]:
     today = today_pacific()
-    candidates = digest_alert_jobs(visible, state)
+    candidates = digest_alert_jobs(visible, state, eligible_new_keys)
     candidates.sort(key=user_facing_sort_key)
     emit = digest_should_emit(state, candidates, force=force, no_digest=no_digest, today=today)
     return candidates, emit, today
@@ -1605,6 +1609,7 @@ def score_survivors(
         "api_requests": 0, "recency_skipped": 0, "overflow": 0,
         "peer_reused": 0, "thin_source_rule": 0, "retryable_fallbacks": 0,
         "historical_seen_skipped": 0,
+        "historical_llm_retained": 0,
         "non_material_change_reused": 0, "same_content_reused": 0,
         "rescored_within_24h": 0, "new_or_changed_reasons": {},
         "batch_size": LLM_BATCH_SIZE, "primary_batches_total": 0,
@@ -1674,7 +1679,28 @@ def score_survivors(
                 counts["same_content_reused"] += 1
                 if content_result[0]:
                     counts["peer_reused"] += 1
-            elif seen_before_run is not None and key in seen_before_run and not job.get("llm_retryable"):
+            elif (
+                seen_before_run is not None and key in seen_before_run
+                and not job.get("llm_retryable") and _is_completed_llm_result(prev or {})
+                and _decision_content_matches(prev, job)
+                and prev.get("candidate_fingerprint") == candidate_fp
+                and prev.get("scoring_version") == PROMPT_VERSION
+            ):
+                # A model switch invalidates reuse for new work, but must not
+                # replace an unchanged historical LLM decision with a rule score.
+                _apply_cached_result(job, prev)
+                job["cache_key"] = prev.get("cache_key", "")
+                counts["reused"] += 1
+                counts["historical_llm_retained"] += 1
+            elif (
+                seen_before_run is not None and key in seen_before_run
+                and not job.get("llm_retryable") and (
+                    not prev or (
+                        not _is_completed_llm_result(prev)
+                        and _decision_content_matches(prev, job)
+                    )
+                )
+            ):
                 _apply_rule_result(job, SCORE_RULE, "Rule-based (historical seen job; LLM skipped)")
                 counts["rule"] += 1
                 counts["historical_seen_skipped"] += 1
