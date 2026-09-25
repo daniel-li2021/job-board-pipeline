@@ -2,6 +2,737 @@
   "runs": [
     {
       "pipeline": "syncareer",
+      "run_at": "2026-09-25T23:53:48.763406+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 30,
+      "cache_reused": 132,
+      "peer_reused": 14,
+      "same_content_reused": 0,
+      "non_material_change_reused": 0,
+      "new_or_changed": 30,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 28,
+        "prior_rule_result_now_eligible_for_llm": 2
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 0,
+      "requests": 5,
+      "input_tokens": 43697,
+      "cached_input_tokens": 11138,
+      "output_tokens": 8214,
+      "reasoning_tokens": 4523,
+      "estimated_usd": 0.007475,
+      "latency_seconds": 63.518,
+      "latency_measured": true,
+      "effective_rpm": 4.72,
+      "effective_tpm": 49035.86,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 5,
+      "primary_batches_total": 5,
+      "batches_attempted": 5,
+      "batches_succeeded": 5,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 30,
+      "funnel": {
+        "scoring_candidates": 147
+      },
+      "output": {
+        "tier_a": 8,
+        "tier_b": 14,
+        "tier_c": 125,
+        "shown": 22,
+        "new_jobs": 87,
+        "new_jobs_added": 8
+      },
+      "enrichment": {
+        "needed": 8,
+        "detail_api_resolved": 241,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 8
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://flatiron.com/careers/open-positions/job?gh_jid=8123090",
+              "company": "Flatiron Health",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/cardless/6678f11a-04bf-4871-a7fc-80e3c2e611a3",
+              "company": "Cardless",
+              "title": "Software Engineer - Backend"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/alarmcom/jobs/8822741002",
+              "company": "Alarm.com",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/affirm/jobs/7985860003",
+              "company": "Affirm",
+              "title": "Software Engineer II, Backend (Identity Decisioning)"
+            },
+            {
+              "key": "url::https://www.weareroku.com/jobs/software-engineer-san-jose-california-united-states-109f1c2a-752e-4390-aae2-ec757c7331e3",
+              "company": "Roku",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://abbott.wd5.myworkdayjobs.com/en-US/abbottcareers/job/United-States---California---Sunnyvale/Software-Engineer-II_31162832?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=55273a1b49934d97ae15342ef51f6b95&Location_Country=a4e08b475d6a4176853c9d1cb9854e02&Location_Country=d4afdeb461d446e4babd204bd102dba8&jobFamilyGroup=77166004ab82108dbc36d45444ea5319&jobFamilyGroup=77166004ab82108dbc369f0685c75300&jobFamilyGroup=77166004ab82108dbc36ddc1741b531d&jobFamilyGroup=77166004ab82108dbc36c1aa703d530e&jobFamilyGroup=77166004ab82108dbc368b52e1f452f7&jobFamilyGroup=77166004ab82108dbc36c663b1735313&jobFamilyGroup=77166004ab82108dbc36a3f4c1f35302&jobFamilyGroup=77166004ab82108dbc36d8a13149531b&jobFamilyGroup=77166004ab82108dbc36ae7004d75306&jobFamilyGroup=77166004ab82108dbc36b387bcb25308&jobFamilyGroup=77166004ab82108dbc36bd400e63530c&jobFamilyGroup=77166004ab82108dbc36b8277206530a&jobFamilyGroup=77166004ab82108dbc36cf373cfb5317&jobFamilyGroup=77166004ab82108dbc3691dba9f452f9&jobFamilyGroup=77166004ab82108dbc36a9373a205304&jobFamilyGroup=77166004ab82108dbc3697ef47b552fb",
+              "company": "Abbott",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://careers.honeywell.com/en/sites/Honeywell/job/156942?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000469866",
+              "company": "Honeywell",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://www.weareroku.com/jobs/software-engineer-san-jose-california-united-states-5298d565-733d-4233-a285-79682dc233ad",
+              "company": "Roku",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "company": "Kforce",
+              "title": "IT Virtual Desktop Infrastructure Engineer"
+            },
+            {
+              "key": "url::https://koch.avature.net/en_US/careers/JobDetail/United-States-Data-Engineer-RL/194742",
+              "company": "Koch",
+              "title": "Data Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 21.252,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 12588,
+            "cached_input_tokens": 1851,
+            "output_tokens": 2909,
+            "reasoning_tokens": 1366,
+            "estimated_usd": 0.002547
+          },
+          "decisions": [
+            {
+              "key": "url::https://flatiron.com/careers/open-positions/job?gh_jid=8123090",
+              "match_score": 89.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "End-to-end feature delivery",
+                "Python and cloud services"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/cardless/6678f11a-04bf-4871-a7fc-80e3c2e611a3",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production backend services",
+                "Distributed systems and APIs"
+              ],
+              "main_gaps": [
+                "Payments infrastructure"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/alarmcom/jobs/8822741002",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "End-to-end feature ownership",
+                "Backend and web UI"
+              ],
+              "main_gaps": [
+                "Professional C#/.NET",
+                "Device lifecycle software"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/affirm/jobs/7985860003",
+              "match_score": 87.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python backend systems",
+                "AWS and distributed systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.weareroku.com/jobs/software-engineer-san-jose-california-united-states-109f1c2a-752e-4390-aae2-ec757c7331e3",
+              "match_score": 65.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ and Python",
+                "CI/CD and API integration"
+              ],
+              "main_gaps": [
+                "Memory management and synchronization",
+                "Linux build systems"
+              ]
+            },
+            {
+              "key": "url::https://abbott.wd5.myworkdayjobs.com/en-US/abbottcareers/job/United-States---California---Sunnyvale/Software-Engineer-II_31162832?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=55273a1b49934d97ae15342ef51f6b95&Location_Country=a4e08b475d6a4176853c9d1cb9854e02&Location_Country=d4afdeb461d446e4babd204bd102dba8&jobFamilyGroup=77166004ab82108dbc36d45444ea5319&jobFamilyGroup=77166004ab82108dbc369f0685c75300&jobFamilyGroup=77166004ab82108dbc36ddc1741b531d&jobFamilyGroup=77166004ab82108dbc36c1aa703d530e&jobFamilyGroup=77166004ab82108dbc368b52e1f452f7&jobFamilyGroup=77166004ab82108dbc36c663b1735313&jobFamilyGroup=77166004ab82108dbc36a3f4c1f35302&jobFamilyGroup=77166004ab82108dbc36d8a13149531b&jobFamilyGroup=77166004ab82108dbc36ae7004d75306&jobFamilyGroup=77166004ab82108dbc36b387bcb25308&jobFamilyGroup=77166004ab82108dbc36bd400e63530c&jobFamilyGroup=77166004ab82108dbc36b8277206530a&jobFamilyGroup=77166004ab82108dbc36cf373cfb5317&jobFamilyGroup=77166004ab82108dbc3691dba9f452f9&jobFamilyGroup=77166004ab82108dbc36a9373a205304&jobFamilyGroup=77166004ab82108dbc3697ef47b552fb",
+              "match_score": 55.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Automated software testing",
+                "Root-cause analysis"
+              ],
+              "main_gaps": [
+                "Embedded software testing",
+                "Implantable device experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.honeywell.com/en/sites/Honeywell/job/156942?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000469866",
+              "match_score": 61.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend APIs and microservices",
+                "CI/CD and cloud deployment"
+              ],
+              "main_gaps": [
+                "C#/.NET",
+                "Azure services"
+              ]
+            },
+            {
+              "key": "url::https://www.weareroku.com/jobs/software-engineer-san-jose-california-united-states-5298d565-733d-4233-a285-79682dc233ad",
+              "match_score": 73.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark data pipelines",
+                "Cloud and ETL experience"
+              ],
+              "main_gaps": [
+                "Airflow pipeline experience"
+              ]
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "match_score": 36.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud deployment experience",
+                "Automation and troubleshooting"
+              ],
+              "main_gaps": [
+                "VDI and endpoint administration",
+                "Enterprise PowerShell"
+              ]
+            },
+            {
+              "key": "url::https://koch.avature.net/en_US/careers/JobDetail/United-States-Data-Engineer-RL/194742",
+              "match_score": 56.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Data pipelines and ETL",
+                "Python and Spark"
+              ],
+              "main_gaps": [
+                "Data warehouse modeling",
+                "Data engineering mentorship"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://careers.usa.skanska.com/careers-home/jobs/9329?lang=en-us",
+              "company": "Skanska",
+              "title": "Data Engineer"
+            },
+            {
+              "key": "url::https://jobs.exxonmobil.com/job/Spring-Data-Engineer-TX-77389/1433004400",
+              "company": "ExxonMobil",
+              "title": "Data Engineer"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/105601741256303302-financial-analyst-compute-infrastructure-business",
+              "company": "Google",
+              "title": "Financial Analyst, Compute Infrastructure Business"
+            },
+            {
+              "key": "url::https://us-careers.crown.com/job/New-Bremen-Embedded-Software-Test-and-Validation-Engineer-%28Indefinite-US-Work-Authorization-Required%29-OH-45869/1432696800",
+              "company": "Crown Equipment",
+              "title": "Embedded Software Test and Validation Engineer (Indefinite US Work Authorization Required)"
+            },
+            {
+              "key": "url::https://www.tylertech.com/careers/job-listings/software-support-specialist-26-25893-01",
+              "company": "Tyler Technologies",
+              "title": "Software Support Specialist"
+            },
+            {
+              "key": "url::https://www.paycomonline.net/v4/ats/web.php/portal/E86D60EDAF14F62BD0B3F719F912C645/jobs/423885",
+              "company": "Fulgent",
+              "title": "Solutions/Software Analyst/Scientist/Engineer - Workflow"
+            },
+            {
+              "key": "url::https://jobs.paccar.com/job/Bellevue-Software-Integration-&-Test-Engineer-WA-98004/1441191933",
+              "company": "Paccar",
+              "title": "Software Integration & Test Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 14.238,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 7,
+            "input_tokens": 9658,
+            "cached_input_tokens": 1851,
+            "output_tokens": 1765,
+            "reasoning_tokens": 1170,
+            "estimated_usd": 0.001682
+          },
+          "decisions": [
+            {
+              "key": "url::https://careers.usa.skanska.com/careers-home/jobs/9329?lang=en-us",
+              "match_score": 69.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Data pipeline development",
+                "Databricks and Spark"
+              ],
+              "main_gaps": [
+                "3+ years SQL integration",
+                "Warehouse and dimensional modeling"
+              ]
+            },
+            {
+              "key": "url::https://jobs.exxonmobil.com/job/Spring-Data-Engineer-TX-77389/1433004400",
+              "match_score": 29.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Data engineering experience",
+                "Analytical problem solving"
+              ],
+              "main_gaps": [
+                "Engineering degree and field execution",
+                "Cost forecasting and financial analysis"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/105601741256303302-financial-analyst-compute-infrastructure-business",
+              "match_score": 19.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "SQL experience",
+                "Quantitative education"
+              ],
+              "main_gaps": [
+                "Full-cycle FP&A experience",
+                "Financial modeling and forecasting"
+              ]
+            },
+            {
+              "key": "url::https://us-careers.crown.com/job/New-Bremen-Embedded-Software-Test-and-Validation-Engineer-%28Indefinite-US-Work-Authorization-Required%29-OH-45869/1432696800",
+              "match_score": 64.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Automated regression testing",
+                "Computer science degree"
+              ],
+              "main_gaps": [
+                "Embedded software validation",
+                "MIL/SIL/HIL testing"
+              ]
+            },
+            {
+              "key": "url::https://www.tylertech.com/careers/job-listings/software-support-specialist-26-25893-01",
+              "match_score": 51.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Technical troubleshooting",
+                "SQL background"
+              ],
+              "main_gaps": [
+                "Service desk experience",
+                "ITIL incident management"
+              ]
+            },
+            {
+              "key": "url::https://www.paycomonline.net/v4/ats/web.php/portal/E86D60EDAF14F62BD0B3F719F912C645/jobs/423885",
+              "match_score": 85.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Workflow and systems engineering",
+                "Production data solutions"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://jobs.paccar.com/job/Bellevue-Software-Integration-&-Test-Engineer-WA-98004/1441191933",
+              "match_score": 69.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Automated test frameworks",
+                "Python and software testing"
+              ],
+              "main_gaps": [
+                "3+ years software testing"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/1747806499828365",
+              "company": "Meta",
+              "title": "Research Scientist, Machine Learning for Monetization (PhD)"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 2.905,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2096,
+            "cached_input_tokens": 1988,
+            "output_tokens": 280,
+            "reasoning_tokens": 193,
+            "estimated_usd": 0.000171
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/1747806499828365",
+              "match_score": 30.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Applied ML systems",
+                "LLM evaluation"
+              ],
+              "main_gaps": [
+                "PhD qualification",
+                "Monetization ML research"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://job-boards.eu.greenhouse.io/invisibletech/jobs/4697599101",
+              "company": "Invisible Technologies",
+              "title": "Software Engineer, Forward Deployed"
+            },
+            {
+              "key": "url::https://www.mckinsey.com/careers/search-jobs/jobs/aidataengineer-quantumblackaibymckinsey-112288",
+              "company": "McKinsey & Company",
+              "title": "AI Data Engineer - QuantumBlack, AI by McKinsey"
+            },
+            {
+              "key": "url::https://careers.carters.com/ai-developer/job/P1-6922137-0",
+              "company": "Carter's",
+              "title": "AI Developer"
+            },
+            {
+              "key": "url::https://kyndryl.wd5.myworkdayjobs.com/en-US/KyndrylProfessionalCareers/job/Dallas-USDALFRI-Frisco-AI-HUB/Early-Career-Consult-Program---Associate-AI-Engineer_R-66739-2?jobFamilyGroup=07af781d896b101d9ba3b40f836f0000&jobFamilyGroup=d81e70248647101d9ba322697c6d0000&jobFamilyGroup=0900d2009f02101d9ba3a148fd1e0000&jobFamilyGroup=9991250c32dd101d9ba972a2d8bc0000&jobFamilyGroup=c4f48076700a101d9baa50b5d6760000&jobFamilyGroup=c25962a91176101d9ba806c4e7c90000",
+              "company": "Kyndryl",
+              "title": "Early Career Consult Program - Associate AI Engineer"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/90333510476145350-software-engineer-antidistillation-investigations-enforcements-and-infrastructure-deepmind",
+              "company": "Google",
+              "title": "Software Engineer, Anti-distillation Investigations, Enforcements and Infrastructure, DeepMind"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/pendo/jobs/8675727002",
+              "company": "Pendo",
+              "title": "Software Engineer, Full Stack"
+            },
+            {
+              "key": "url::https://apply.deloitte.com/en_US/careers/JobDetail/Software-Engineer-II/368113",
+              "company": "Deloitte",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://apply.deloitte.com/en_US/careers/JobDetail/Software-Engineer-II/368112",
+              "company": "Deloitte",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://crowdstrike.wd5.myworkdayjobs.com/en-US/crowdstrikecareers/job/USA---Remote/Engineer-II--Full-Stack--Remote-_R30113?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+              "company": "CrowdStrike",
+              "title": "Engineer II, Full Stack (Remote)"
+            },
+            {
+              "key": "url::https://jobs.echostar.com/jobs/99904?lang=en-us",
+              "company": "EchoStar",
+              "title": "Data Engineer II"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 20.358,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 14514,
+            "cached_input_tokens": 2724,
+            "output_tokens": 2785,
+            "reasoning_tokens": 1493,
+            "estimated_usd": 0.002599
+          },
+          "decisions": [
+            {
+              "key": "url::https://job-boards.eu.greenhouse.io/invisibletech/jobs/4697599101",
+              "match_score": 90.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production AI workflows",
+                "End-to-end deployment"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.mckinsey.com/careers/search-jobs/jobs/aidataengineer-quantumblackaibymckinsey-112288",
+              "match_score": 69.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI data pipelines",
+                "Python and Spark"
+              ],
+              "main_gaps": [
+                "Graduation date window"
+              ]
+            },
+            {
+              "key": "url::https://careers.carters.com/ai-developer/job/P1-6922137-0",
+              "match_score": 93.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM application development",
+                "Production AI solutions"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://kyndryl.wd5.myworkdayjobs.com/en-US/KyndrylProfessionalCareers/job/Dallas-USDALFRI-Frisco-AI-HUB/Early-Career-Consult-Program---Associate-AI-Engineer_R-66739-2?jobFamilyGroup=07af781d896b101d9ba3b40f836f0000&jobFamilyGroup=d81e70248647101d9ba322697c6d0000&jobFamilyGroup=0900d2009f02101d9ba3a148fd1e0000&jobFamilyGroup=9991250c32dd101d9ba972a2d8bc0000&jobFamilyGroup=c4f48076700a101d9baa50b5d6760000&jobFamilyGroup=c25962a91176101d9ba806c4e7c90000",
+              "match_score": 96.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Early-career AI engineering",
+                "RAG and data pipelines"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/90333510476145350-software-engineer-antidistillation-investigations-enforcements-and-infrastructure-deepmind",
+              "match_score": 34.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Software engineering foundation",
+                "AI agent development"
+              ],
+              "main_gaps": [
+                "Anti-abuse investigations",
+                "Anti-abuse ML deployment"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/pendo/jobs/8675727002",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack product development",
+                "React and TypeScript"
+              ],
+              "main_gaps": [
+                "2+ years production web apps",
+                "Daily AI-tool use"
+              ]
+            },
+            {
+              "key": "url::https://apply.deloitte.com/en_US/careers/JobDetail/Software-Engineer-II/368113",
+              "match_score": 27.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Software engineering experience",
+                "Cross-functional delivery"
+              ],
+              "main_gaps": [
+                "Public assistance systems",
+                "State-government client experience"
+              ]
+            },
+            {
+              "key": "url::https://apply.deloitte.com/en_US/careers/JobDetail/Software-Engineer-II/368112",
+              "match_score": 27.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Software engineering experience",
+                "Cross-functional delivery"
+              ],
+              "main_gaps": [
+                "Public assistance systems",
+                "State-government client experience"
+              ]
+            },
+            {
+              "key": "url::https://crowdstrike.wd5.myworkdayjobs.com/en-US/crowdstrikecareers/job/USA---Remote/Engineer-II--Full-Stack--Remote-_R30113?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+              "match_score": 84.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production AI agents",
+                "APIs and automated testing"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://jobs.echostar.com/jobs/99904?lang=en-us",
+              "match_score": 52.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and Spark pipelines",
+                "Data quality experience"
+              ],
+              "main_gaps": [
+                "EMR and Airflow",
+                "Amazon Q / GitLab CI/CD"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 5,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://ameren.wd1.myworkdayjobs.com/en-US/External/job/St-Louis-MO/Intern--Robotics--AI--OT--Software-development-_033945-1",
+              "company": "Ameren",
+              "title": "Intern (Robotics, AI, OT, Software development)"
+            },
+            {
+              "key": "url::https://www.tower-research.com/open-positions?gh_jid=8230413",
+              "company": "Tower Research Capital",
+              "title": "Machine Learning Performance Engineer, Training"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.765,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 4841,
+            "cached_input_tokens": 2724,
+            "output_tokens": 475,
+            "reasoning_tokens": 301,
+            "estimated_usd": 0.000476
+          },
+          "decisions": [
+            {
+              "key": "url::https://ameren.wd1.myworkdayjobs.com/en-US/External/job/St-Louis-MO/Intern--Robotics--AI--OT--Software-development-_033945-1",
+              "match_score": 72.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "AI/software project experience",
+                "Research and evaluation platforms"
+              ],
+              "main_gaps": [
+                "Current full-time enrollment"
+              ]
+            },
+            {
+              "key": "url::https://www.tower-research.com/open-positions?gh_jid=8230413",
+              "match_score": 46.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and ML systems",
+                "Model fine-tuning experience"
+              ],
+              "main_gaps": [
+                "GPU kernel optimization",
+                "Distributed training systems"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
       "run_at": "2026-09-25T14:54:47.992094+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -15897,871 +16628,6 @@
               "main_gaps": [
                 "Required AI/ML experience duration is not clearly evidenced at the stated threshold.",
                 "Security operations, threat-intelligence integrations, and AI security controls such as prompt-injection defense are not clearly demonstrated."
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "syncareer",
-      "run_at": "2026-09-16T00:13:49.532041+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-5.6-terra",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 33,
-      "cache_reused": 49,
-      "fallback_count": 5,
-      "rule_count": 5,
-      "requests": 5,
-      "input_tokens": 54132,
-      "cached_input_tokens": 0,
-      "output_tokens": 9910,
-      "reasoning_tokens": 1675,
-      "estimated_usd": 0.227184,
-      "latency_seconds": 106.953,
-      "latency_measured": true,
-      "effective_rpm": 2.8,
-      "effective_tpm": 35927.18,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 5,
-      "batches_attempted": 5,
-      "batches_succeeded": 5,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 38,
-      "funnel": {
-        "scoring_candidates": 79
-      },
-      "output": {
-        "tier_a": 6,
-        "tier_b": 12,
-        "tier_c": 61,
-        "shown": 18
-      },
-      "enrichment": {
-        "needed": 2,
-        "detail_api_resolved": 116,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 2
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "jobs": [
-            {
-              "key": "url::https://careers.heb.com/careers-home/jobs/226278?lang=en-us&previousLocale=en-US",
-              "company": "H-E-B Grocery Company",
-              "title": "Software Engineer II- Quality"
-            },
-            {
-              "key": "url::https://jobs.comcast.com/job/chicago/junior-backend-software-engineer-python-or-php-chicago-onsite-2x-week-freewheel/45483/100640335760",
-              "company": "Comcast",
-              "title": "Junior Backend Software Engineer (Python or PHP) - Chicago - ONSITE 2X Week- FreeWheel"
-            },
-            {
-              "key": "url::https://jobs.comcast.com/job/chicago/entry-level-backend-software-engineer-python-chicago-onsite-2x-week-freewheel/45483/100640335376",
-              "company": "Comcast",
-              "title": "Entry-level Backend Software Engineer (Python) - Chicago - ONSITE 2X Week - FreeWheel"
-            },
-            {
-              "key": "url::https://wd3.myworkdaysite.com/en-US/recruiting/magna/Magna/job/Piedmont-South-Carolina-US/Software-Developer_R00261595?Country=a30a87ed25634629aa6c3958aa2b91ea&Country=bc33aa3152ec42d4995f4791a106ed09&Country=6cb77610a8a543aea2d6bc10457e35d4&Country=29247e57dbaf46fb855b224e03170bc7&jobFamilyGroup=5aaaed564f43010127e356ca250347df&jobFamilyGroup=5aaaed564f4301e050504eca250341df&jobFamilyGroup=5aaaed564f430127348455ca250345df&jobFamilyGroup=5aaaed564f430166175050ca250343df&jobFamilyGroup=5aaaed564f4301f4835048ca25033ddf&jobFamilyGroup=5aaaed564f43015d2adc43ca250337df&jobFamilyGroup=5aaaed564f4301f96b3346ca250339df&jobFamilyGroup=5aaaed564f43012fc35659ca25034bdf&jobFamilyGroup=5aaaed564f4301832a8441ca250335df&jobFamilyGroup=5aaaed564f430174b55449ca25033fdf&jobFamilyGroup=5aaaed564f430182435158ca250349df&jobFamilyGroup=5aaaed564f430114a16f3fca250333df",
-              "company": "Magna International",
-              "title": "Software Developer"
-            },
-            {
-              "key": "url::https://dowjones.jobs/new-york-ny/software-engineer-ii-search/38FCA1FB0C1E492AA657F0E9C66E7AD9/job",
-              "company": "Dow Jones",
-              "title": "Software Engineer II, Search"
-            },
-            {
-              "key": "url::https://jobs.amdocs.com/careers/job/563431014872071",
-              "company": "Amdocs",
-              "title": "Software Engineer"
-            },
-            {
-              "key": "url::https://careers.newscorp.com/new-york-ny/software-engineer-ii-search/38FCA1FB0C1E492AA657F0E9C66E7AD9/job",
-              "company": "News Corp",
-              "title": "Software Engineer II, Search"
-            },
-            {
-              "key": "url::https://www.kforce.com/find-work/search-jobs",
-              "company": "Kforce",
-              "title": "Software Engineer PHP"
-            },
-            {
-              "key": "url::https://jobs.intuit.com/job/mountain-view/summer-2027-mobile-software-engineering-intern-android/27595/100620927552",
-              "company": "Intuit",
-              "title": "Summer 2027: Mobile Software Engineering Intern - Android"
-            },
-            {
-              "key": "url::https://jobs.statefarm.com/main/jobs/45592?lang=en-us",
-              "company": "State Farm",
-              "title": "Summer 2027 Intern - Enterprise Technology - Mainframe Software Engineer"
-            },
-            {
-              "key": "url::https://adtran.wd3.myworkdayjobs.com/en-US/ADTRAN/job/Adtran-Huntsville-HQ/Software-Development-Engineer-I_R005903",
-              "company": "ADTRAN",
-              "title": "Software Development Engineer I"
-            },
-            {
-              "key": "url::https://dowjones.jobs/new-york-ny/summer-2027-internship-program-software-engineering-intern/0EEF3CCEB256436795A99FA1E09A6275/job",
-              "company": "Dow Jones",
-              "title": "Summer 2027 Internship Program – Software Engineering Intern"
-            },
-            {
-              "key": "url::https://careers.newscorp.com/new-york-ny/summer-2027-internship-program-software-engineering-intern/0EEF3CCEB256436795A99FA1E09A6275/job",
-              "company": "News Corp",
-              "title": "Summer 2027 Internship Program – Software Engineering Intern"
-            },
-            {
-              "key": "url::https://jobs.intuit.com/job/mountain-view/summer-2027-software-engineering-intern-full-stack/27595/100620927520",
-              "company": "Intuit",
-              "title": "Summer 2027: Software Engineering Intern - Full Stack"
-            },
-            {
-              "key": "url::https://jobs.intuit.com/job/mountain-view/summer-2027-software-engineering-intern-cybersecurity/27595/100620927616",
-              "company": "Intuit",
-              "title": "Summer 2027: Software Engineering Intern - Cybersecurity"
-            }
-          ],
-          "model": "gpt-5.6-terra",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 33.295,
-          "usage": {
-            "model": "gpt-5.6-terra",
-            "api_requests": 1,
-            "jobs_scored": 15,
-            "input_tokens": 18321,
-            "cached_input_tokens": 0,
-            "output_tokens": 3070,
-            "reasoning_tokens": 559,
-            "estimated_usd": 0.073482
-          },
-          "decisions": [
-            {
-              "key": "url::https://careers.heb.com/careers-home/jobs/226278?lang=en-us&previousLocale=en-US",
-              "match_score": 74.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production backend/full-stack delivery with React, TypeScript, Python/FastAPI, REST APIs, Docker, AWS, CI/CD, and reliability testing.",
-                "Resume shows scalable async services, debugging, observability, regression tests, and deployment ownership."
-              ],
-              "main_gaps": [
-                "The role explicitly asks for 2+ years of software-development experience; the resume shows roughly early-career experience.",
-                "Quality-engineering-specific tooling such as Playwright, XCTest, Espresso, or Locust is not clearly evidenced."
-              ]
-            },
-            {
-              "key": "url::https://jobs.comcast.com/job/chicago/junior-backend-software-engineer-python-or-php-chicago-onsite-2x-week-freewheel/45483/100640335760",
-              "match_score": 77.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Strong direct Python backend evidence: production FastAPI services, async REST APIs, testing, deployment, and troubleshooting.",
-                "Has built scalable retrieval services and data-processing systems with caching, integrations, and operational reliability work."
-              ],
-              "main_gaps": [
-                "Job lists 2-5 years of relevant work experience; resume evidence is strong but somewhat short of that stated range."
-              ]
-            },
-            {
-              "key": "url::https://jobs.comcast.com/job/chicago/entry-level-backend-software-engineer-python-chicago-onsite-2x-week-freewheel/45483/100640335376",
-              "match_score": 93.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Explicit entry-level role aligns closely with the candidate's early-career stage and demonstrated Python backend work.",
-                "Direct evidence of designing, testing, deploying, documenting, and debugging production FastAPI/REST services in collaborative development environments."
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://wd3.myworkdaysite.com/en-US/recruiting/magna/Magna/job/Piedmont-South-Carolina-US/Software-Developer_R00261595?Country=a30a87ed25634629aa6c3958aa2b91ea&Country=bc33aa3152ec42d4995f4791a106ed09&Country=6cb77610a8a543aea2d6bc10457e35d4&Country=29247e57dbaf46fb855b224e03170bc7&jobFamilyGroup=5aaaed564f43010127e356ca250347df&jobFamilyGroup=5aaaed564f4301e050504eca250341df&jobFamilyGroup=5aaaed564f430127348455ca250345df&jobFamilyGroup=5aaaed564f430166175050ca250343df&jobFamilyGroup=5aaaed564f4301f4835048ca25033ddf&jobFamilyGroup=5aaaed564f43015d2adc43ca250337df&jobFamilyGroup=5aaaed564f4301f96b3346ca250339df&jobFamilyGroup=5aaaed564f43012fc35659ca25034bdf&jobFamilyGroup=5aaaed564f4301832a8441ca250335df&jobFamilyGroup=5aaaed564f430174b55449ca25033fdf&jobFamilyGroup=5aaaed564f430182435158ca250349df&jobFamilyGroup=5aaaed564f430114a16f3fca250333df",
-              "match_score": 62.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Relevant full-stack evidence includes React/TypeScript, SQL databases, REST services, Docker, AWS, CI/CD, and production support.",
-                "Candidate has deployed and maintained cloud-based services and has experience with debugging integration and data-pipeline issues."
-              ],
-              "main_gaps": [
-                "C#/.NET is a central stated application stack but is not evidenced on the resume.",
-                "ERP/shop-floor support and PLC or microcontroller experience are not evidenced and are meaningful to this plant-facing role."
-              ]
-            },
-            {
-              "key": "url::https://dowjones.jobs/new-york-ny/software-engineer-ii-search/38FCA1FB0C1E492AA657F0E9C66E7AD9/job",
-              "match_score": 78.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Highly direct search experience: built hybrid retrieval, reranking, vector-search tuning, async APIs, and a service serving thousands of active users.",
-                "Strong platform evidence in Docker, Kubernetes, Terraform, CI/CD, observability, reliability testing, and backend API development."
-              ],
-              "main_gaps": [
-                "The stated 2-4 years of professional backend/platform experience is not clearly met by the early-career resume.",
-                "Production multi-region high-availability/disaster-recovery operations are not clearly evidenced."
-              ]
-            },
-            {
-              "key": "url::https://jobs.amdocs.com/careers/job/563431014872071",
-              "match_score": 46.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Candidate has applicable software design, Agile collaboration, requirements-oriented development, API, cloud, and production-support experience."
-              ],
-              "main_gaps": [
-                "Telecom OSS, Ethernet, broadband-services, and network-domain expertise are central requirements but are not evidenced.",
-                "The role requires 3 years designing software applications and leading module-level design discussions, beyond the demonstrated experience depth."
-              ]
-            },
-            {
-              "key": "url::https://careers.newscorp.com/new-york-ny/software-engineer-ii-search/38FCA1FB0C1E492AA657F0E9C66E7AD9/job",
-              "match_score": 78.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Highly direct search experience: built hybrid retrieval, reranking, vector-search tuning, async APIs, and a service serving thousands of active users.",
-                "Strong platform evidence in Docker, Kubernetes, Terraform, CI/CD, observability, reliability testing, and backend API development."
-              ],
-              "main_gaps": [
-                "The stated 2-4 years of professional backend/platform experience is not clearly met by the early-career resume.",
-                "Production multi-region high-availability/disaster-recovery operations are not clearly evidenced."
-              ]
-            },
-            {
-              "key": "url::https://www.kforce.com/find-work/search-jobs",
-              "match_score": 45.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Relevant adjacent experience includes high-throughput REST services, MySQL, Redis, Docker, cloud deployment, CI/CD, testing, and production troubleshooting."
-              ],
-              "main_gaps": [
-                "Modern PHP and a PHP framework are core requirements but are not evidenced.",
-                "The role requires 3+ years of professional development plus production Kubernetes/message-queue experience at high traffic, which is not clearly demonstrated."
-              ]
-            },
-            {
-              "key": "url::https://jobs.intuit.com/job/mountain-view/summer-2027-mobile-software-engineering-intern-android/27595/100620927552",
-              "match_score": 48.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Candidate has strong general production software experience with APIs, Python, testing, deployment, debugging, and cross-functional development."
-              ],
-              "main_gaps": [
-                "Resume indicates the M.S. concludes in May 2026, conflicting with the requirement to remain enrolled with graduation after the 2027 internship.",
-                "Android development, Kotlin/Java Android applications, and Android frameworks are not evidenced."
-              ]
-            },
-            {
-              "key": "url::https://jobs.statefarm.com/main/jobs/45592?lang=en-us",
-              "match_score": 34.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python and AWS exposure are adjacent to the listed technology set, and the candidate has a CS background."
-              ],
-              "main_gaps": [
-                "The internship requires a current undergraduate student with at least one semester remaining after summer 2027; the resume shows degree completion by May 2026.",
-                "Core mainframe technologies such as COBOL, PL/1, IMS, DB2, JCL, and Assembler are not evidenced."
-              ]
-            },
-            {
-              "key": "url::https://adtran.wd3.myworkdayjobs.com/en-US/ADTRAN/job/Adtran-Huntsville-HQ/Software-Development-Engineer-I_R005903",
-              "match_score": 67.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Direct Python, Linux, GitHub Actions/CI/CD, Docker, automated regression testing, debugging, and reliability experience.",
-                "Candidate's async-service and production troubleshooting work transfers well to test infrastructure and validation tooling."
-              ],
-              "main_gaps": [
-                "The listing explicitly requires 3+ years of software-development or test-automation experience, which is not clearly met.",
-                "Networking/Wi-Fi domain knowledge and Artifactory experience are not clearly evidenced."
-              ]
-            },
-            {
-              "key": "url::https://dowjones.jobs/new-york-ny/summer-2027-internship-program-software-engineering-intern/0EEF3CCEB256436795A99FA1E09A6275/job",
-              "match_score": 24.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Candidate has strong technical and analytical project experience, but the described work is consumer strategy and ventures rather than software engineering."
-              ],
-              "main_gaps": [
-                "The actual responsibilities center on market research, business cases, go-to-market planning, and consumer growth initiatives rather than building software.",
-                "The program requires undergraduate enrollment and graduation in Dec. 2027-July 2029, conflicting with the resume's completed B.S. and May 2026 M.S. end date."
-              ]
-            },
-            {
-              "key": "url::https://careers.newscorp.com/new-york-ny/summer-2027-internship-program-software-engineering-intern/0EEF3CCEB256436795A99FA1E09A6275/job",
-              "match_score": 24.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Candidate has strong technical and analytical project experience, but the described work is consumer strategy and ventures rather than software engineering."
-              ],
-              "main_gaps": [
-                "The actual responsibilities center on market research, business cases, go-to-market planning, and consumer growth initiatives rather than building software.",
-                "The program requires undergraduate enrollment and graduation in Dec. 2027-July 2029, conflicting with the resume's completed B.S. and May 2026 M.S. end date."
-              ]
-            },
-            {
-              "key": "url::https://jobs.intuit.com/job/mountain-view/summer-2027-software-engineering-intern-full-stack/27595/100620927520",
-              "match_score": 68.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Excellent technical alignment with full-stack work: React/TypeScript, FastAPI/Node, REST APIs, cloud deployment, GitHub Actions, testing, and debugging.",
-                "Candidate has already delivered production full-stack applications and collaborated across implementation-oriented teams."
-              ],
-              "main_gaps": [
-                "Resume indicates graduation by May 2026, conflicting with the requirement for enrollment and a graduation date after the 2027 internship."
-              ]
-            },
-            {
-              "key": "url::https://jobs.intuit.com/job/mountain-view/summer-2027-software-engineering-intern-cybersecurity/27595/100620927616",
-              "match_score": 67.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Strong transferable software foundation in full-stack/backend development, Git workflows, code review, cloud deployment, testing, reliability, and debugging.",
-                "The role does not require prior security experience, so the candidate's production engineering background is relevant."
-              ],
-              "main_gaps": [
-                "Resume indicates graduation by May 2026, conflicting with the requirement for enrollment and a graduation date after the 2027 internship.",
-                "Direct cybersecurity, identity, fraud, data-protection, or threat-operations experience is not evidenced."
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "resume_swe",
-          "jobs": [
-            {
-              "key": "url::https://jobs.intuit.com/job/mountain-view/summer-2027-mobile-software-engineering-intern-ios/27595/100620927568",
-              "company": "Intuit",
-              "title": "Summer 2027: Mobile Software Engineering Intern - iOS"
-            },
-            {
-              "key": "url::https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/job/US-GA-ATL-201-STE-900/Mainframe-Software-Engineer-I--COBOL_JR0309079?jobFamilyGroup=0e1af0e1ee1d1001836c3bbdc7940000&jobFamilyGroup=fea3e38a3564100183196e657c1e0000&jobFamilyGroup=d26eff0fee761001831d2319121c0000&jobFamilyGroup=041bdfd5e4d01001834c7fdbd0320000&jobFamilyGroup=67bfefe10eff1001833a9e2885240000&jobFamilyGroup=494eed1c8de601ea5300eb07a76f5e16&jobFamilyGroup=0e1af0e1ee1d1001836c8b8a29230000&jobFamilyGroup=041bdfd5e4d01001834cb559a5f10000&jobFamilyGroup=d26eff0fee761001831d7e66edfa0000&jobFamilyGroup=a2088ec533f410263c62091ebad3509e&jobFamilyGroup=7f383875dd521001834598af68560000&jobFamilyGroup=d26eff0fee761001831d97a4a9120000&jobFamilyGroup=7f383875dd5210018345b02252560000&jobFamilyGroup=a0b9127138f4100183637a54f3710000&jobFamilyGroup=041bdfd5e4d01001834cfa78ccf10000&jobFamilyGroup=d26eff0fee761001831dc4bc6eee0000&jobFamilyGroup=a0b9127138f4100183639e55ae1b0000&jobFamilyGroup=67bfefe10eff1001833b3277b0650000&jobFamilyGroup=a2088ec533f410263c621eb9a6a450a8&jobFamilyGroup=67bfefe10eff1001833b4349ae3b0000&jobFamilyGroup=972f8275a36e1001836b7a7c77eb0000&jobFamilyGroup=041bdfd5e4d01001834d46d1949c0000&jobFamilyGroup=a0b9127138f410018363dcbf33160000&jobFamilyGroup=972f8275a36e1001836ba4a98f990000&jobFamilyGroup=7f383875dd52100183463a63dbc20000",
-              "company": "FIS",
-              "title": "Mainframe Software Engineer I, COBOL"
-            },
-            {
-              "key": "url::https://pnc.wd5.myworkdayjobs.com/en-US/External/job/PA---Pittsburgh-15219/Software-DevOps-Cloud-Engineer---Data-and-Automation_R232038-1?jobFamily=212fee894bd90164b34581093c073f99&jobFamily=4b200b4f2af41001146bb3e8d4c90000&jobFamily=212fee894bd9013a942ea8093c07099a&jobFamily=212fee894bd901220876ba093c07839a&jobFamily=212fee894bd901031a15ad093c07299a&jobFamily=212fee894bd901df68ffb6093c076b9a&jobFamily=212fee894bd9019952ef9f093c07dd99&jobFamily=212fee894bd901177dbcaf093c073b9a&jobFamily=ecfe462481801001145e795c333f0000&jobFamily=c1ad2fda60ec017e325c6b951411f60b&jobFamily=ecfe462481801001145e262a26f10000&jobFamily=212fee894bd901c1ed9faa093c07179a&jobFamily=212fee894bd901ec16608f093c077d99&jobFamily=212fee894bd90158e33b83093c074f99&jobFamily=212fee894bd90124378797093c07af99&jobFamily=212fee894bd9011ea81c88093c077599&jobFamily=212fee894bd9015ada10ac093c07219a&jobFamily=212fee894bd901572c4e93093c079799&jobFamily=6013e82a6ec8100114307d1f6c060000&jobFamily=212fee894bd901beb30a9e093c07d399&jobFamily=212fee894bd90147011d99093c07b799&jobFamily=212fee894bd9015f553fc8093c07d99a&jobFamily=212fee894bd901aca8ebbd093c079b9a&jobFamily=212fee894bd901bd2e7282093c074999&jobFamily=212fee894bd901293e1abd093c07959a&jobFamily=212fee894bd901eb936db5093c07619a&jobFamily=212fee894bd901377e7c90093c078799&jobFamily=212fee894bd901c1c9a6bd093c07999a&jobFamily=212fee894bd901851d8ca6093c07019a&jobFamily=212fee894bd901eaee8c95093c07a399&jobFamily=212fee894bd901a4777487093c076f99&jobFamily=212fee894bd901eb94d883093c075399&jobFamily=212fee894bd90135784480093c073999&jobFamily=b7ea20f03d8410015904e98868ae0000&jobFamily=b9bf0bd0833410011454dbc93e6a0000&jobFamily=4b200b4f2af41001146b266a894c0000&jobFamily=212fee894bd901c432d47c093c071d99&jobFamily=212fee894bd901371b08c6093c07cd9a&jobFamily=212fee894bd901eae8a5b6093c07699a&jobFamily=212fee894bd901be7be8b4093c075d9a&jobFamily=212fee894bd9018ae196b2093c074d9a&jobFamily=212fee894bd9010ab503a7093c07039a&jobFamily=212fee894bd90187ef12c2093c07b79a&jobFamily=212fee894bd90100a997c0093c07ad9a&jobFamily=212fee894bd901379851c0093c07ab9a",
-              "company": "PNC Financial Services",
-              "title": "Software DevOps Cloud Engineer - Data and Automation"
-            },
-            {
-              "key": "url::https://jobs.grainger.com/job/LAKE-FOREST-Data-Engineer-III-335087-IL-60045-5201/1429687900",
-              "company": "Grainger",
-              "title": "Data Engineer III - 335087"
-            },
-            {
-              "key": "url::https://jobs.statefarm.com/main/jobs/45589?lang=en-us",
-              "company": "State Farm",
-              "title": "Summer 2027 Intern – Enterprise Technology – Engineer (Software, Data, Infrastructure)"
-            },
-            {
-              "key": "url::https://higher.gs.com/roles/183843",
-              "company": "Goldman Sachs",
-              "title": "Asset Management, Platform Management, Analyst"
-            }
-          ],
-          "model": "gpt-5.6-terra",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 26.198,
-          "usage": {
-            "model": "gpt-5.6-terra",
-            "api_requests": 1,
-            "jobs_scored": 6,
-            "input_tokens": 9841,
-            "cached_input_tokens": 0,
-            "output_tokens": 2641,
-            "reasoning_tokens": 326,
-            "estimated_usd": 0.051374
-          },
-          "decisions": [
-            {
-              "key": "url::https://jobs.intuit.com/job/mountain-view/summer-2027-mobile-software-engineering-intern-ios/27595/100620927568",
-              "match_score": 35.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [
-                "Production full-stack engineering, testing, API integration, and deployment experience transfers to feature development.",
-                "The role is explicitly an early-career internship."
-              ],
-              "main_gaps": [
-                "The candidate's M.S. ends in May 2026, so the stated requirement to remain enrolled and graduate after the summer 2027 internship is not met.",
-                "No demonstrated iOS, Swift/Objective-C, or iOS-framework experience."
-              ]
-            },
-            {
-              "key": "url::https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/job/US-GA-ATL-201-STE-900/Mainframe-Software-Engineer-I--COBOL_JR0309079?jobFamilyGroup=0e1af0e1ee1d1001836c3bbdc7940000&jobFamilyGroup=fea3e38a3564100183196e657c1e0000&jobFamilyGroup=d26eff0fee761001831d2319121c0000&jobFamilyGroup=041bdfd5e4d01001834c7fdbd0320000&jobFamilyGroup=67bfefe10eff1001833a9e2885240000&jobFamilyGroup=494eed1c8de601ea5300eb07a76f5e16&jobFamilyGroup=0e1af0e1ee1d1001836c8b8a29230000&jobFamilyGroup=041bdfd5e4d01001834cb559a5f10000&jobFamilyGroup=d26eff0fee761001831d2319121c0000&jobFamilyGroup=a2088ec533f410263c62091ebad3509e&jobFamilyGroup=7f383875dd521001834598af68560000&jobFamilyGroup=d26eff0fee761001831d97a4a9120000&jobFamilyGroup=7f383875dd5210018345b02252560000&jobFamilyGroup=a0b9127138f4100183637a54f3710000&jobFamilyGroup=041bdfd5e4d01001834d46d1949c0000&jobFamilyGroup=d26eff0fee761001831dc4bc6eee0000&jobFamilyGroup=a0b9127138f4100183639e55ae1b0000&jobFamilyGroup=67bfefe10eff1001833b3277b0650000&jobFamilyGroup=a2088ec533f410263c621eb9a6a450a8&jobFamilyGroup=67bfefe10eff1001833b4349ae3b0000&jobFamilyGroup=972f8275a36e1001836b7a7c77eb0000&jobFamilyGroup=041bdfd5e4d01001834d46d1949c0000&jobFamilyGroup=a0b9127138f410018363dcbf33160000&jobFamilyGroup=972f8275a36e1001836ba4a98f990000&jobFamilyGroup=7f383875dd52100183463a63dbc20000",
-              "match_score": 38.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Engineer I scope and responsibilities around development, testing, debugging, code review, and documentation fit the candidate's software-engineering background.",
-                "The candidate has demonstrated reliable backend services and production testing practices."
-              ],
-              "main_gaps": [
-                "No evidence of the required COBOL programming experience.",
-                "No evidence of foundational IBM z/OS mainframe technologies such as CICS, IMS, VSAM, DB2, or MQ."
-              ]
-            },
-            {
-              "key": "url::https://pnc.wd5.myworkdayjobs.com/en-US/External/job/PA---Pittsburgh-15219/Software-DevOps-Cloud-Engineer---Data-and-Automation_R232038-1?jobFamily=212fee894bd90164b34581093c073f99&jobFamily=4b200b4f2af41001146bb3e8d4c90000&jobFamily=212fee894bd9013a942ea8093c07099a&jobFamily=212fee894bd901220876ba093c07839a&jobFamily=212fee894bd901031a15ad093c07299a&jobFamily=212fee894bd901df68ffb6093c076b9a&jobFamily=212fee894bd9019952ef9f093c07dd99&jobFamily=212fee894bd901177dbcaf093c073b9a&jobFamily=ecfe462481801001145e795c333f0000&jobFamily=c1ad2fda60ec017e325c6b951411f60b&jobFamily=ecfe462481801001145e262a26f10000&jobFamily=212fee894bd901c1ed9faa093c07179a&jobFamily=212fee894bd901ec16608f902c077d99&jobFamily=212fee894bd90158e33b83093c074f99&jobFamily=212fee894bd90124378797093c07af99&jobFamily=212fee894bd9011ea81c88093c077599&jobFamily=212fee894bd9015ada10ac093c07219a&jobFamily=212fee894bd901572c4e93093c079799&jobFamily=6013e82a6ec8100114307d1f6c060000&jobFamily=212fee894bd901beb30a9e093c07d399&jobFamily=212fee894bd90147011d99093c07b799&jobFamily=212fee894bd9015f553fc8093c07d99&jobFamily=212fee894bd901aca8ebbd093c079b9a&jobFamily=212fee894bd901bd2e7282093c074999&jobFamily=212fee894bd901293e1abd093c07959a&jobFamily=212fee894bd901eb936db5093c07619a&jobFamily=212fee894bd901377e7c90093c078799&jobFamily=212fee894bd901c1c9a6bd093c07999a&jobFamily=212fee894bd901851d8ca6093c07019a&jobFamily=212fee894bd901eaee8c95093c07a399&jobFamily=212fee894bd901a4777487093c076f99&jobFamily=212fee894bd901eb94d883093c075d9a&jobFamily=212fee894bd90135784480093c073999&jobFamily=b7ea20f03d8410015904e98868ae0000&jobFamily=b9bf0bd0833410011454dbc93e6a0000&jobFamily=4b200b4f2af41001146b266a894c0000&jobFamily=212fee894bd901c432d47c093c071d99&jobFamily=212fee894bd901371b08c6093c07cd9a&jobFamily=212fee894bd901eae8a5b6093c07699a&jobFamily=212fee894bd901be7be8b4093c075d9a&jobFamily=212fee894bd9018ae196b2093c074d9a&jobFamily=212fee894bd9010ab503a7093c07039a&jobFamily=212fee894bd90187ef12c2093c07b79a&jobFamily=212fee894bd90100a997c0093c07ad9a&jobFamily=212fee894bd901379851c0093c07ab9a",
-              "match_score": 72.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Direct evidence of CI/CD, Docker, Terraform, cloud deployment, observability, testing, and production reliability work.",
-                "Backend and platform experience aligns with automation, troubleshooting, documentation, and operational-support responsibilities."
-              ],
-              "main_gaps": [
-                "The role's stated 2+ years of relevant professional experience is only partially evidenced by the candidate's internships and short-term engineering roles.",
-                "No direct Azure platform-operations experience is shown; the candidate's cloud deployment evidence is primarily AWS."
-              ]
-            },
-            {
-              "key": "url::https://jobs.grainger.com/job/LAKE-FOREST-Data-Engineer-III-335087-IL-60045-5201/1429687900",
-              "match_score": 52.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "The candidate has Python, SQL, Spark/Databricks, data-pipeline, and data-processing experience.",
-                "Experience diagnosing data lineage, normalization, and join issues is relevant to ETL maintenance."
-              ],
-              "main_gaps": [
-                "Data Engineer III requires a bachelor's degree plus 3 years of related experience; the resume does not clearly establish the required experience level.",
-                "No direct evidence of data-warehouse work with Vertica or orchestration using Airflow."
-              ]
-            },
-            {
-              "key": "url::https://jobs.statefarm.com/main/jobs/45589?lang=en-us",
-              "match_score": 30.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [
-                "The broad software, data, and infrastructure internship scope fits the candidate's experience across backend development, cloud, CI/CD, and data systems.",
-                "The candidate demonstrates several preferred technical areas, including Java, Python, SQL, APIs, Docker, Terraform, and AI/search systems."
-              ],
-              "main_gaps": [
-                "The program seeks freshmen and sophomores with at least one college semester remaining after summer 2027; the listed degrees conclude by May 2026.",
-                "This is an undergraduate-focused internship rather than a role aligned with the candidate's completed/near-completed graduate trajectory."
-              ]
-            },
-            {
-              "key": "url::https://higher.gs.com/roles/183843",
-              "match_score": 22.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "The candidate has analytical software and data-platform experience that may support reporting or technology-improvement work.",
-                "The stated 1-4 year experience range is broadly early-career compatible."
-              ],
-              "main_gaps": [
-                "Core work is private-markets fund, liquidity, capital-activity, allocation, and portfolio-management operations rather than software engineering.",
-                "No evidence of required financial-services experience or financial acumen for cash flows, fund structures, and investment performance analysis."
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 3,
-          "route": "resume_ai",
-          "jobs": [
-            {
-              "key": "url::https://allstate.wd5.myworkdayjobs.com/en-US/allstate_careers/job/USA---IL-Remote/Applied-Machine-Learning-Engineer--All-Levels-_R27180-1?Country=bc33aa3152ec42d4995f4791a106ed09&Country=a30a87ed25634629aa6c3958aa2b91ea&Country=29247e57dbaf46fb855b224e03170bc7&jobFamilyGroup=bf1cc5a85e0b1002ffcbbf16fc5d0001&jobFamilyGroup=bf1cc5a85e0b1002ffcbc04a1f4d0002&jobFamilyGroup=bf1cc5a85e0b1002ffcbbfb093dc0000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc217c2580000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc3e475410000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc17e3d280002&jobFamilyGroup=bf1cc5a85e0b1002ffcbc217c2580002&jobFamilyGroup=bf1cc5a85e0b1002ffcbc34af3f20000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc17e3d280000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc0e4b82f0000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc04a1f4d0000",
-              "company": "Allstate",
-              "title": "Applied Machine Learning Engineer (All Levels)"
-            }
-          ],
-          "model": "gpt-5.6-terra",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 7.327,
-          "usage": {
-            "model": "gpt-5.6-terra",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 3192,
-            "cached_input_tokens": 0,
-            "output_tokens": 644,
-            "reasoning_tokens": 117,
-            "estimated_usd": 0.014112
-          },
-          "decisions": [
-            {
-              "key": "url::https://allstate.wd5.myworkdayjobs.com/en-US/allstate_careers/job/USA---IL-Remote/Applied-Machine-Learning-Engineer--All-Levels-_R27180-1?Country=bc33aa3152ec42d4995f4791a106ed09&Country=a30a87ed25634629aa6c3958aa2b91ea&Country=29247e57dbaf46fb855b224e03170bc7&jobFamilyGroup=bf1cc5a85e0b1002ffcbbf16fc5d0001&jobFamilyGroup=bf1cc5a85e0b1002ffcbc04a1f4d0002&jobFamilyGroup=bf1cc5a85e0b1002ffcbbfb093dc0000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc217c2580000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc3e475410000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc17e3d280002&jobFamilyGroup=bf1cc5a85e0b1002ffcbc217c2580002&jobFamilyGroup=bf1cc5a85e0b1002ffcbc34af3f20000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc17e3d280000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc0e4b82f0000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc04a1f4d0000",
-              "match_score": 78.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Strong hands-on evidence across production AI/ML lifecycle: data pipelines, feature engineering, model evaluation, deployment, monitoring, CI/CD, Docker, AWS, and Terraform.",
-                "Entry-level scope directly fits a current CS master's student with applied AI engineering internships and a learner-risk ML pipeline that improved macro-F1 from 0.74 to 0.84."
-              ],
-              "main_gaps": [
-                "The required classical ML stack is not explicitly evidenced: scikit-learn and XGBoost/LightGBM experience.",
-                "SHAP-style model interpretability is not explicitly demonstrated."
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 4,
-          "route": "both",
-          "jobs": [
-            {
-              "key": "url::https://careers.withwaymo.com/jobs/2027-summer-intern-bs-ms-software-engineer-san-francisco-california-united-states",
-              "company": "Waymo",
-              "title": "2027 Summer Intern, BS/MS, Software Engineer"
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/boxinc/jobs/8172408",
-              "company": "Box",
-              "title": "Software Engineer III, DB Platform"
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/adyen/jobs/7582298",
-              "company": "Adyen",
-              "title": "Software Engineer II (Frontend)"
-            },
-            {
-              "key": "url::https://allstate.wd5.myworkdayjobs.com/en-US/allstate_careers/job/USA---IL-Remote/AI-Software-Engineer_R34190?Country=bc33aa3152ec42d4995f4791a106ed09&Country=a30a87ed25634629aa6c3958aa2b91ea&Country=29247e57dbaf46fb855b224e03170bc7&jobFamilyGroup=bf1cc5a85e0b1002ffcbbf16fc5d0001&jobFamilyGroup=bf1cc5a85e0b1002ffcbc04a1f4d0002&jobFamilyGroup=bf1cc5a85e0b1002ffcbbfb093dc0000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc217c2580000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc3e475410000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc17e3d280002&jobFamilyGroup=bf1cc5a85e0b1002ffcbc217c2580002&jobFamilyGroup=bf1cc5a85e0b1002ffcbc34af3f20000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc17e3d280000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc0e4b82f0000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc04a1f4d0000",
-              "company": "Allstate",
-              "title": "AI Software Engineer"
-            },
-            {
-              "key": "url::https://c3.ai/job-description/8801434002?gh_jid=8801434002",
-              "company": "C3 AI",
-              "title": "Platform Full-Stack Engineer, New Grad 2027"
-            },
-            {
-              "key": "url::https://jobs.lever.co/reply/74422215-dd06-404a-a35c-3c9bd80e1f0b",
-              "company": "Reply",
-              "title": "AI/Machine Learning Intern"
-            },
-            {
-              "key": "url::https://c3.ai/job-description/8804558002?gh_jid=8804558002",
-              "company": "C3 AI",
-              "title": "Forward Deployed Engineer, New Grad 2027"
-            },
-            {
-              "key": "url::https://jobs.lever.co/cscgeneration-2/3a04b45f-a2eb-438a-a8ac-b07324223813",
-              "company": "CSC Generation",
-              "title": "Software Engineer - Legacy Applications & Modernization"
-            },
-            {
-              "key": "url::https://jobs.ashbyhq.com/opengov/d036cfd6-5a01-41ed-af73-78fc32854849",
-              "company": "OpenGov",
-              "title": "Intern, Software Engineer"
-            },
-            {
-              "key": "url::https://bostonscientific.eightfold.ai/careers/job/563602813549535?domain=bostonscientific.com&hl=en&triggerGoButton=false",
-              "company": "Boston Scientific",
-              "title": "Software Engineering Internship"
-            },
-            {
-              "key": "url::https://jobs.ashbyhq.com/opengov/c31622c1-be01-4d4a-b7cf-d116be84cc08",
-              "company": "OpenGov",
-              "title": "Intern, Software Engineer"
-            },
-            {
-              "key": "url::https://www.kforce.com/find-work/search-jobs",
-              "company": "Kforce",
-              "title": "Associate Software Engineer"
-            },
-            {
-              "key": "url::https://pnc.wd5.myworkdayjobs.com/en-US/External/job/PA---Pittsburgh/Software-Engineer---Data---Automation_R235661-1?jobFamily=212fee894bd90164b34581093c073f99&jobFamily=4b200b4f2af41001146bb3e8d4c90000&jobFamily=212fee894bd9013a942ea8093c07099a&jobFamily=212fee894bd901220876ba093c07839a&jobFamily=212fee894bd901031a15ad093c07299a&jobFamily=212fee894bd901df68ffb6093c076b9a&jobFamily=212fee894bd9019952ef9f093c07dd99&jobFamily=212fee894bd901177dbcaf093c073b9a&jobFamily=ecfe462481801001145e795c333f0000&jobFamily=c1ad2fda60ec017e325c6b951411f60b&jobFamily=ecfe462481801001145e262a26f10000&jobFamily=212fee894bd901c1ed9faa093c07179a&jobFamily=212fee894bd901ec16608f093c077d99&jobFamily=212fee894bd90158e33b83093c074f99&jobFamily=212fee894bd90124378797093c07af99&jobFamily=212fee894bd9011ea81c88093c077599&jobFamily=212fee894bd9015ada10ac093c07219a&jobFamily=212fee894bd901572c4e93093c079799&jobFamily=6013e82a6ec8100114307d1f6c060000&jobFamily=212fee894bd901beb30a9e093c07d399&jobFamily=212fee894bd90147011d99093c07b799&jobFamily=212fee894bd9015f553fc8093c07d99a&jobFamily=212fee894bd901aca8ebbd093c079b9a&jobFamily=212fee894bd901bd2e7282093c074999&jobFamily=212fee894bd901293e1abd093c07959a&jobFamily=212fee894bd901eb936db5093c07619a&jobFamily=212fee894bd901377e7c90093c078799&jobFamily=212fee894bd901c1c9a6bd093c07999a&jobFamily=212fee894bd901851d8ca6093c07019a&jobFamily=212fee894bd901eaee8c95093c07a399&jobFamily=212fee894bd901a4777487093c076f99&jobFamily=212fee894bd901eb94d883093c075399&jobFamily=212fee894bd90135784480093c073999&jobFamily=b7ea20f03d8410015904e98868ae0000&jobFamily=b9bf0bd0833410011454dbc93e6a0000&jobFamily=4b200b4f2af41001146b266a894c0000&jobFamily=212fee894bd901c432d47c093c071d99&jobFamily=212fee894bd901371b08c6093c07cd9a&jobFamily=212fee894bd901eae8a5b6093c07699a&jobFamily=212fee894bd901be7be8b4093c075d9a&jobFamily=212fee894bd9018ae196b2093c074d9a&jobFamily=212fee894bd9010ab503a7093c07039a&jobFamily=212fee894bd90187ef12c2093c07b79a&jobFamily=212fee894bd90100a997c0093c07ad9a&jobFamily=212fee894bd901379851c0093c07ab9a",
-              "company": "PNC Financial Services",
-              "title": "Software Engineer - Data & Automation"
-            },
-            {
-              "key": "url::https://careers.questdiagnostics.com/job/secaucus/data-engineer-remote/38852/100633904976",
-              "company": "Quest Diagnostics",
-              "title": "Data Engineer (Remote)"
-            },
-            {
-              "key": "url::https://tencent.wd1.myworkdayjobs.com/en-US/Tencent_Careers/job/US-California-Palo-Alto/Machine-Learning-Intern_R108140-1?locations=1c8376485a4e100177e7bc873e280000&locations=b3d4dad114e4100177c032bef7130000&locations=b32f1ee18078012f1fd236f105740000&locations=b3d4dad114e4100177c0535a2e410000&locations=1ceb2bf150e410014736e11d91ad0000&locations=1c8376485a4e100177e619f974680000&locations=b3d4dad114e4100177c1f65eefa30000&locations=b3d4dad114e4100177c1eb7dc6410000&locations=1c8376485a4e100177e6ebae21110000&locations=ef0e956d1347100142173599cf010000&locations=1c8376485a4e100177e72a6e2a150000&locations=1c8376485a4e100177e8d8f766ca0000&locations=1c8376485a4e100177e90637c3320000&locations=1c8376485a4e100177e8fdcb023b0000&locations=1c8376485a4e100177e8f4c2cf340000&locations=ef0e956d134710014153bb8ff2160000",
-              "company": "Tencent",
-              "title": "Machine Learning Intern"
-            }
-          ],
-          "model": "gpt-5.6-terra",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 35.161,
-          "usage": {
-            "model": "gpt-5.6-terra",
-            "api_requests": 1,
-            "jobs_scored": 15,
-            "input_tokens": 19282,
-            "cached_input_tokens": 0,
-            "output_tokens": 3168,
-            "reasoning_tokens": 584,
-            "estimated_usd": 0.07658
-          },
-          "decisions": [
-            {
-              "key": "url::https://careers.withwaymo.com/jobs/2027-summer-intern-bs-ms-software-engineer-san-francisco-california-united-states",
-              "match_score": 83.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Strong ML/production-systems and retrieval-evaluation experience aligns with analyzing and porting desirable ML behavior.",
-                "Lists C++ and has demonstrated data fluency, testing, and production engineering experience."
-              ],
-              "main_gaps": [
-                "C++ proficiency is listed but is less directly demonstrated in work experience than Python-based systems work."
-              ]
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/boxinc/jobs/8172408",
-              "match_score": 52.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Relevant experience building scalable backend services, distributed retrieval systems, cloud deployments, and production reliability tooling.",
-                "Strong foundations in algorithms, system design, APIs, and databases align with the platform domain."
-              ],
-              "main_gaps": [
-                "The required 3+ years of professional software-development experience is not clearly evidenced.",
-                "No direct demonstrated ownership of high-scale relational database platform operations or on-call systems."
-              ]
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/adyen/jobs/7582298",
-              "match_score": 38.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Has full-stack production experience with React, TypeScript, APIs, testing, and monitoring.",
-                "Has experience collaborating across product-oriented engineering work."
-              ],
-              "main_gaps": [
-                "Requires 5+ years building JavaScript applications, which is materially beyond the resume's experience level.",
-                "Vue.js is a stated core requirement and is not evidenced; the candidate's demonstrated frontend work is primarily React."
-              ]
-            },
-            {
-              "key": "url::https://allstate.wd5.myworkdayjobs.com/en-US/allstate_careers/job/USA---IL-Remote/AI-Software-Engineer_R34190?Country=bc33aa3152ec42d4995f4791a106ed09&Country=a30a87ed25634629aa6c3958aa2b91ea&Country=29247e57dbaf46fb855b224e03170bc7&jobFamilyGroup=bf1cc5a85e0b1002ffcbbf16fc5d0001&jobFamilyGroup=bf1cc5a85e0b1002ffcbc04a1f4d0002&jobFamilyGroup=bf1cc5a85e0b1002ffcbbfb093dc0000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc217c2580000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc3e475410000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc17e3d280002&jobFamilyGroup=bf1cc5a85e0b1002ffcbc217c2580002&jobFamilyGroup=bf1cc5a85e0b1002ffcbc34af3f20000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc17e3d280000&jobFamilyGroup=bf1cc5a85e0b1002ffcbbf16fc5d0000",
-              "match_score": 68.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Directly relevant production RAG, LangChain/LangGraph, LLM fine-tuning, model serving, FastAPI, and AWS CI/CD experience.",
-                "Has built scalable async APIs, Dockerized services, evaluation gates, and observability for production AI systems."
-              ],
-              "main_gaps": [
-                "The role requires 3+ years of backend development and states 4+ years overall; this level of professional experience is not clearly evidenced."
-              ]
-            },
-            {
-              "key": "url::https://c3.ai/job-description/8801434002?gh_jid=8801434002",
-              "match_score": 58.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [
-                "Strong direct evidence for full-stack platform work: React/TypeScript, FastAPI, APIs, data systems, cloud deployment, testing, and reliability.",
-                "Experience building AI-enabled retrieval and evaluation platforms is highly relevant to C3 AI's platform scope."
-              ],
-              "main_gaps": [
-                "The posting is explicitly limited to candidates graduating in December 2025 or Summer/Fall 2027; the resume states an expected M.S. graduation of May 2026."
-              ]
-            },
-            {
-              "key": "url::https://jobs.lever.co/reply/74422215-dd06-404a-a35c-3c9bd80e1f0b",
-              "match_score": 91.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Direct applied-AI evidence includes LLM fine-tuning with QLoRA/PEFT, ML evaluation, Python data pipelines, and production deployment.",
-                "Has relevant predictive-model experience, Spark/Databricks data engineering, and robust backend/API implementation experience."
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://c3.ai/job-description/8804558002?gh_jid=8804558002",
-              "match_score": 62.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [
-                "Very strong hands-on fit for customer-facing AI application delivery: agentic systems, prompt/tool calling, RAG, full-stack applications, and scalable data services.",
-                "Demonstrated debugging, testing, documentation-oriented platform work, APIs, cloud deployment, and communication through applied research and implementation work."
-              ],
-              "main_gaps": [
-                "The role's stated graduation window is December 2026 or Summer/Fall 2027, while the resume gives a May 2026 M.S. graduation date."
-              ]
-            },
-            {
-              "key": "url::https://jobs.lever.co/cscgeneration-2/3a04b45f-a2eb-438a-a8ac-b07324223813",
-              "match_score": 72.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Relevant production experience with Python, JavaScript/TypeScript, Java, SQL, AWS, Docker, CI/CD, tests, debugging, and observability.",
-                "Has delivered resilient ingestion/data services and deployed containerized FastAPI systems with automated release workflows."
-              ],
-              "main_gaps": [
-                "Ansible is a required infrastructure-automation skill and is not evidenced.",
-                "No direct demonstrated experience maintaining .NET Framework or administering legacy relational-database systems."
-              ]
-            },
-            {
-              "key": "url::https://jobs.ashbyhq.com/opengov/d036cfd6-5a01-41ed-af73-78fc32854849",
-              "match_score": 57.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [
-                "Strong fit for production full-stack feature work, REST APIs, React/TypeScript, testing, debugging, and AI-enabled application development.",
-                "The candidate has materially more hands-on production software experience than typical internship requirements."
-              ],
-              "main_gaps": [
-                "The internship requires the applicant to be currently pursuing a bachelor's degree in 2027; the resume shows completed B.S. and M.S. studies ending by May 2026."
-              ]
-            },
-            {
-              "key": "url::https://bostonscientific.eightfold.ai/careers/job/563602813549535?domain=bostonscientific.com&hl=en&triggerGoButton=false",
-              "match_score": 48.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [
-                "Has C++, Python, Linux, testing, and cross-functional software-development experience.",
-                "Demonstrates strong engineering rigor through production validation, automated testing, and reliability work."
-              ],
-              "main_gaps": [
-                "The required graduation window is Fall 2027 through Spring 2029, which conflicts with the resume's May 2026 M.S. graduation.",
-                "Strong embedded software and Qt experience are core requirements but are not clearly evidenced."
-              ]
-            },
-            {
-              "key": "url::https://jobs.ashbyhq.com/opengov/c31622c1-be01-4d4a-b7cf-d116be84cc08",
-              "match_score": 57.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [
-                "Strong fit for hands-on web/API delivery, React/TypeScript, testing, debugging, and AI-driven workflow development.",
-                "The candidate's full-stack production work and code-quality experience exceed the technical baseline for the internship."
-              ],
-              "main_gaps": [
-                "The internship requires a candidate currently pursuing a bachelor's degree in 2027; the resume shows degree completion by May 2026."
-              ]
-            },
-            {
-              "key": "url::https://www.kforce.com/find-work/search-jobs",
-              "match_score": 88.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Direct early-career full-stack fit: React/Next.js, TypeScript, REST APIs, GitHub Actions CI/CD, testing, deployment, and production debugging.",
-                "Strong evidence of AI-native application work, including LLM-enabled products, agents, retrieval systems, and AI evaluation workflows."
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://pnc.wd5.myworkdayjobs.com/en-US/External/job/PA---Pittsburgh/Software-Engineer---Data---Automation_R235661-1?jobFamily=212fee894bd90164b34581093c073f99&jobFamily=4b200b4f2af41001146bb3e8d4c90000&jobFamily=212fee894bd9013a942ea8093c07099a&jobFamily=212fee894bd901220876ba093c07839a&jobFamily=212fee894bd901031a15ad093c07299a&jobFamily=212fee894bd901df68ffb6093c076b9a",
-              "match_score": 70.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [
-                "Relevant evidence across Python, SQL, GenAI/RAG automation, data pipelines, API/backend development, and React/Angular familiarity.",
-                "Has productionized data and AI workflows with Spark/Databricks and demonstrated testing, debugging, and documentation practices."
-              ],
-              "main_gaps": [
-                "The role typically requires 2+ years of relevant professional experience, which is not clearly met by the resume.",
-                "PNC will not sponsor employment visas or participate in STEM OPT; work-authorization eligibility is not established by the resume."
-              ]
-            },
-            {
-              "key": "url::https://careers.questdiagnostics.com/job/secaucus/data-engineer-remote/38852/100633904976",
-              "match_score": 51.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Has relevant Python, SQL, Spark/Databricks, data-ingestion, normalization, and cloud-deployed service experience.",
-                "Relevant exposure to production data-quality evaluation and ML-adjacent data workflows."
-              ],
-              "main_gaps": [
-                "The required 3-5 years of data-development, cloud, warehouse, and ETL/ELT experience is not clearly evidenced.",
-                "Required cloud data-warehouse and ETL/ELT tool depth, particularly Matillion, is not demonstrated."
-              ]
-            },
-            {
-              "key": "url::https://tencent.wd1.myworkdayjobs.com/en-US/Tencent_Careers/job/US-California-Palo-Alto/Machine-Learning-Intern_R108140-1?locations=1c8376485a4e100177e7bc873e280000&locations=b3d4dad114e4100177c032bef7130000&locations=b32f1ee18078012f1fd236f105740000&locations=b3d4dad114e4100177c0535a2e410000",
-              "match_score": 65.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [
-                "Strong Python/SQL, ML pipeline, LLM, retrieval, evaluation, and large-scale data-processing evidence aligns closely with the technical work.",
-                "Applied model evaluation, forecasting-adjacent data work, experimentation, and production data pipelines provide relevant practical grounding."
-              ],
-              "main_gaps": [
-                "The role requires candidates pursuing an M.S. or Ph.D.; the resume indicates the M.S. concluded in May 2026.",
-                "Statistical analysis, causal inference, econometrics, and gaming-domain experience are not clearly demonstrated."
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 5,
-          "route": "both",
-          "jobs": [
-            {
-              "key": "url::https://sec.wd3.myworkdayjobs.com/en-US/Samsung_Careers/job/645-Clyde-Avenue-Mountain-View-CA-USA/Engineer-II--Machine-Learning-Software_R120631?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=d903bb3fedad45039383f6de334ad4db",
-              "company": "Samsung Electronics",
-              "title": "Engineer II, Machine Learning Software"
-            }
-          ],
-          "model": "gpt-5.6-terra",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 4.972,
-          "usage": {
-            "model": "gpt-5.6-terra",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 3496,
-            "cached_input_tokens": 0,
-            "output_tokens": 387,
-            "reasoning_tokens": 89,
-            "estimated_usd": 0.011636
-          },
-          "decisions": [
-            {
-              "key": "url::https://sec.wd3.myworkdayjobs.com/en-US/Samsung_Careers/job/645-Clyde-Avenue-Mountain-View-CA-USA/Engineer-II--Machine-Learning-Software_R120631?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=d903bb3fedad45039383f6de334ad4db",
-              "match_score": 45.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Has hands-on Python, Spark/Databricks, production backend deployment, and ML/AI pipeline experience.",
-                "Demonstrates data-analysis and model-evaluation work, including a learner-risk ML pipeline and large-scale ingestion workflows."
-              ],
-              "main_gaps": [
-                "Role explicitly requires four years of relevant experience and leading/mentoring scope; the resume shows substantially less experience.",
-                "No clear evidence of authoring Spark ML feature pipelines at the required depth or deploying advertising optimization models such as pCTR, ROAS, or retention models."
               ]
             }
           ]
