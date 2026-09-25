@@ -2,6 +2,116 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-09-25T07:16:00.926029+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "",
+      "reasoning_effort": "",
+      "jobs_scored": 0,
+      "cache_reused": 206,
+      "peer_reused": 0,
+      "same_content_reused": 0,
+      "non_material_change_reused": 0,
+      "new_or_changed": 0,
+      "new_or_changed_reasons": {},
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 650,
+      "requests": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0,
+      "estimated_usd": 0.0,
+      "latency_seconds": 0.0,
+      "latency_measured": true,
+      "effective_rpm": null,
+      "effective_tpm": null,
+      "json_reliability": null,
+      "json_reliability_measured": true,
+      "batches_total": 0,
+      "primary_batches_total": 0,
+      "batches_attempted": 0,
+      "batches_succeeded": 0,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 0,
+      "funnel": {
+        "after_dedup": 5259,
+        "after_company": 5087,
+        "after_hard_filter": 4675,
+        "after_prefilter": 1190,
+        "official_duplicates_suppressed": 334,
+        "retry_only_carried": 0,
+        "dropped": 4033
+      },
+      "output": {
+        "tier_a": 65,
+        "tier_b": 254,
+        "ab_before_cap": 319,
+        "shown": 319,
+        "new_jobs": 7,
+        "new_jobs_added": 0,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 7,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 0,
+            "added": 0
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 1520,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 1567,
+          "http_requests": 156,
+          "scrapling_requests": 65,
+          "jds_resolved": 61,
+          "direct_http_resolved": 61,
+          "identity_needed": 47,
+          "identities_resolved": 47,
+          "remaining_no_jd": 1476,
+          "failure_reasons": {
+            "no_direct_or_official_url": 1013,
+            "structured_jd_not_found": 63,
+            "scrapling_http_404": 2,
+            "official_detail_deferred": 23,
+            "glassdoor_detail_http_403_static_card_only": 375
+          }
+        },
+        "remaining_no_jd": 1463,
+        "failure_reasons": {
+          "no_direct_or_official_url": 1013,
+          "structured_jd_not_found": 50,
+          "scrapling_http_404": 2,
+          "official_detail_deferred": 23,
+          "glassdoor_detail_http_403_static_card_only": 375
+        }
+      },
+      "comparison": {},
+      "batches": []
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-09-25T00:23:12.021854+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -32414,115 +32524,6 @@
         "remaining_no_jd": 741,
         "failure_reasons": {
           "linkedin_rate_limited": 347,
-          "structured_jd_not_found": 18,
-          "scrapling_fetch_failed": 2,
-          "glassdoor_detail_http_403_static_card_only": 374
-        }
-      },
-      "comparison": {},
-      "batches": []
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-09-20T21:04:08.833382+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-5.6-terra",
-      "scoring_version": "",
-      "reasoning_effort": "",
-      "jobs_scored": 0,
-      "cache_reused": 313,
-      "peer_reused": 0,
-      "same_content_reused": 0,
-      "non_material_change_reused": 0,
-      "new_or_changed": 0,
-      "new_or_changed_reasons": {},
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 296,
-      "requests": 0,
-      "input_tokens": 0,
-      "cached_input_tokens": 0,
-      "output_tokens": 0,
-      "reasoning_tokens": 0,
-      "estimated_usd": 0.0,
-      "latency_seconds": 0.0,
-      "latency_measured": true,
-      "effective_rpm": null,
-      "effective_tpm": null,
-      "json_reliability": null,
-      "json_reliability_measured": true,
-      "batches_total": 0,
-      "primary_batches_total": 0,
-      "batches_attempted": 0,
-      "batches_succeeded": 0,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 0,
-      "funnel": {
-        "after_dedup": 4740,
-        "after_company": 4454,
-        "after_hard_filter": 4062,
-        "after_prefilter": 921,
-        "official_duplicates_suppressed": 312,
-        "retry_only_carried": 0,
-        "dropped": 3680
-      },
-      "output": {
-        "tier_a": 41,
-        "tier_b": 146,
-        "ab_before_cap": 187,
-        "shown": 187,
-        "new_jobs": 124,
-        "new_jobs_added": 36,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 0,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 124,
-            "added": 36
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 736,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 867,
-          "http_requests": 169,
-          "jds_resolved": 24,
-          "direct_http_resolved": 23,
-          "scrapling_requests": 22,
-          "scrapling_fetcher_resolved": 1,
-          "identity_needed": 131,
-          "identities_resolved": 131,
-          "remaining_no_jd": 719,
-          "failure_reasons": {
-            "linkedin_rate_limited": 322,
-            "structured_jd_not_found": 21,
-            "scrapling_fetch_failed": 2,
-            "glassdoor_detail_http_403_static_card_only": 374
-          }
-        },
-        "remaining_no_jd": 716,
-        "failure_reasons": {
-          "linkedin_rate_limited": 322,
           "structured_jd_not_found": 18,
           "scrapling_fetch_failed": 2,
           "glassdoor_detail_http_403_static_card_only": 374
