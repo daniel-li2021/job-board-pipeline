@@ -1,260 +1,50 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 1143,
+  "count": 1205,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-09-24T18:02:13.704987+00:00",
+    "scraped_at": "2026-09-25T00:21:45.937548+00:00",
     "collector": {
-      "commit": "03044214adfaabb6edaa41b28a2203cffd0c1f78",
+      "commit": "975681d0a61f322e384df19d4b7445cd36c25b01",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 22.997,
+    "elapsed_seconds": 28.405,
     "query_stats": [
-      {
-        "query": "full stack engineer",
-        "group": "secondary",
-        "page_budget": 2,
-        "pages_fetched": 2,
-        "stop_reason": "page_budget",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 20,
-        "first_pass_survivors": 19,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 3.105
-      },
-      {
-        "query": "platform engineer",
-        "group": "secondary",
-        "page_budget": 2,
-        "pages_fetched": 2,
-        "stop_reason": "page_budget",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 20,
-        "first_pass_survivors": 20,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 3.143
-      },
-      {
-        "query": "applied ai engineer",
-        "group": "secondary",
-        "page_budget": 2,
-        "pages_fetched": 1,
-        "stop_reason": "blocked_http_429",
-        "raw_jobs": 10,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 10,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 1.767
-      },
-      {
-        "query": "machine learning engineer",
-        "group": "secondary",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0
-      },
-      {
-        "query": "ml engineer",
-        "group": "secondary",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0
-      },
-      {
-        "query": "llm engineer",
-        "group": "secondary",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0
-      },
-      {
-        "query": "infrastructure engineer",
-        "group": "specialty",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0
-      },
-      {
-        "query": "site reliability engineer",
-        "group": "specialty",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0
-      },
-      {
-        "query": "forward deployed engineer",
-        "group": "specialty",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0
-      },
-      {
-        "query": "data engineer",
-        "group": "specialty",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0
-      },
       {
         "query": "software engineer",
         "group": "primary",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
+        "page_budget": 5,
+        "pages_fetched": 5,
+        "stop_reason": "page_budget",
+        "raw_jobs": 50,
+        "unique_jobs": 50,
+        "unique_contribution": 50,
+        "first_pass_survivors": 49,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.0
+        "elapsed_seconds": 7.594
       },
       {
         "query": "ai engineer",
         "group": "primary",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
+        "page_budget": 3,
+        "pages_fetched": 3,
+        "stop_reason": "page_budget",
+        "raw_jobs": 30,
+        "unique_jobs": 30,
+        "unique_contribution": 30,
+        "first_pass_survivors": 28,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.0
-      },
-      {
-        "query": "software engineer i",
-        "group": "secondary",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0
-      },
-      {
-        "query": "software engineer ii",
-        "group": "secondary",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0
-      },
-      {
-        "query": "associate software engineer",
-        "group": "secondary",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0
-      },
-      {
-        "query": "new grad software engineer",
-        "group": "secondary",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0
-      },
-      {
-        "query": "backend engineer",
-        "group": "secondary",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0
+        "elapsed_seconds": 4.493
       }
     ],
     "detail_enrichment": {
-      "eligible": 50,
+      "eligible": 80,
       "cache_reused": 0,
       "requests": 0,
       "responses": 0,
@@ -263,21 +53,21 @@
       "budget_exhausted": false,
       "retry_deferred": 0,
       "retry_attempts": 0,
-      "exact_official": 3,
-      "official_deferred": 2,
+      "exact_official": 11,
+      "official_deferred": 11,
       "rate_limited": false,
       "jds_resolved": 0,
       "external_apply_urls": 0,
       "failed": 0,
       "detail_jds_fetched": 0,
-      "intentional_skips": 48,
+      "intentional_skips": 69,
       "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 50,
+      "remaining_no_jd": 80,
       "failure_reasons": {
-        "official_detail_deferred": 2
+        "official_detail_deferred": 11
       },
       "cooldown_active": true,
       "probe": false,
@@ -285,18 +75,19 @@
       "cooldown_until": "2026-09-25T04:42:15.832365+00:00"
     },
     "official_enrichment": {
-      "dedicated_matches": 3,
+      "dedicated_matches": 11,
       "search_provider_failures": 1,
-      "deferred": 50,
+      "deferred": 79,
+      "no_match": 1,
       "search_requests": 12,
       "search_provider": "bing",
       "official_page_requests": 12,
-      "remaining_no_jd": 50
+      "remaining_no_jd": 80
     },
     "partial": true,
-    "blocked_reason": "blocked with HTTP 429",
-    "collected_count": 50,
-    "carried_count": 1094
+    "blocked_reason": "focused query coverage",
+    "collected_count": 80,
+    "carried_count": 1128
   },
   "jobs": [
     {
@@ -380,7 +171,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4459239985",
@@ -603,14 +394,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
       "verified_this_run": true
     },
     {
@@ -722,6 +513,62 @@
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-24T00:01:43.970475+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4470012847",
+      "source": "linkedin",
+      "company": "Affirm",
+      "title": "Software Engineer II, Backend (Identity Decisioning)",
+      "location": "Boise, ID",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-backend-identity-decisioning-at-affirm-4470012847",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4470016722",
+      "source": "linkedin",
+      "company": "Affirm",
+      "title": "Software Engineer II, Backend (Identity Decisioning)",
+      "location": "Salt Lake City, UT",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-backend-identity-decisioning-at-affirm-4470016722",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4442213541",
@@ -1681,17 +1528,15 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer",
-          "machine learning engineer",
-          "ml engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4402080943",
@@ -1903,6 +1748,34 @@
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4469786281",
+      "source": "linkedin",
+      "company": "Alarm.com",
+      "title": "Software Engineer II",
+      "location": "Tysons Corner, VA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-at-alarm-com-4469786281",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468943230",
@@ -2449,6 +2322,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4462716056",
+      "source": "linkedin",
+      "company": "Amazon Web Services (AWS)",
+      "title": "Sr. Software Dev Engineer, CloudTrail",
+      "location": "Arlington, VA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-software-dev-engineer-cloudtrail-at-amazon-web-services-aws-4462716056",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4470203725",
       "source": "linkedin",
       "company": "Amazon Web Services (AWS)",
@@ -2788,6 +2689,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4432906627",
+      "source": "linkedin",
+      "company": "American Express",
+      "title": "Sr AI Engineer I - Global Servicing Technology",
+      "location": "Sunrise, FL",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-ai-engineer-i-global-servicing-technology-at-american-express-4432906627",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470216015",
@@ -3176,6 +3105,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4471118682",
+      "source": "linkedin",
+      "company": "Audible",
+      "title": "Senior Software Development Engineer, AI",
+      "location": "Newark, NJ",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-development-engineer-ai-at-audible-4471118682",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468105136",
       "source": "linkedin",
       "company": "Audible",
@@ -3205,6 +3162,62 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4471115811",
+      "source": "linkedin",
+      "company": "Audible",
+      "title": "Software Development Engineer",
+      "location": "Newark, NJ",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-at-audible-4471115811",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4471122640",
+      "source": "linkedin",
+      "company": "Audible",
+      "title": "Software Development Engineer, Early Career",
+      "location": "Cambridge, MA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-early-career-at-audible-4471122640",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470483355",
@@ -3427,7 +3440,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469988421",
@@ -3575,6 +3588,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4471682905",
+      "source": "linkedin",
+      "company": "Bank of America",
+      "title": "Software Engineer II - Java/J2EE",
+      "location": "Plano, TX",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-java-j2ee-at-bank-of-america-4471682905",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4451556708",
@@ -3988,6 +4029,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4471634641",
+      "source": "linkedin",
+      "company": "Belvedere Trading, LLC",
+      "title": "Senior C++ Software Engineer",
+      "location": "Chicago, IL",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-c%2B%2B-software-engineer-at-belvedere-trading-llc-4471634641",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4469989577",
       "source": "linkedin",
       "company": "Benchmark Gensuite®",
@@ -4308,6 +4377,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4460424185",
+      "source": "linkedin",
+      "company": "Bloomberg",
+      "title": "Senior Machine Learning Engineer - Artificial Intelligence",
+      "location": "New York, NY",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-machine-learning-engineer-artificial-intelligence-at-bloomberg-4460424185",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4461267969",
@@ -4710,6 +4807,34 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "verified_this_run": false
+    },
+    {
+      "job_id": "4434768030",
+      "source": "linkedin",
+      "company": "Booz Allen Hamilton",
+      "title": "Software Engineer",
+      "location": "Beavercreek, OH",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-booz-allen-hamilton-4434768030",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
       "verified_this_run": true
     },
     {
@@ -4882,6 +5007,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4471174455",
+      "source": "linkedin",
+      "company": "Bright Vision Technologies",
+      "title": "Generative AI Engineer",
+      "location": "Beaverton, OR",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/generative-ai-engineer-at-bright-vision-technologies-4471174455",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468157010",
@@ -5132,6 +5285,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4469751816",
+      "source": "linkedin",
+      "company": "CACI International Inc",
+      "title": "Senior AI Engineer",
+      "location": "Washington, DC",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-ai-engineer-at-caci-international-inc-4469751816",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468900478",
@@ -5454,6 +5635,62 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4453194394",
+      "source": "linkedin",
+      "company": "CLEAR",
+      "title": "Senior Fullstack Software Engineer",
+      "location": "New York, NY",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-fullstack-software-engineer-at-clear-4453194394",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4471641260",
+      "source": "linkedin",
+      "company": "CLEAR",
+      "title": "Software Development Engineer III",
+      "location": "New York, NY",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-iii-at-clear-4471641260",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468321484",
@@ -6324,6 +6561,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4471482562",
+      "source": "linkedin",
+      "company": "Capital One",
+      "title": "AI Engineer 5 (Gen AI Platform Services)",
+      "location": "Richmond, VA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-5-gen-ai-platform-services-at-capital-one-4471482562",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4470429987",
       "source": "linkedin",
       "company": "Capital One",
@@ -6564,17 +6829,15 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer",
-          "machine learning engineer",
-          "ml engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470442523",
@@ -6766,6 +7029,62 @@
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4469795049",
+      "source": "linkedin",
+      "company": "CaptiveAire Systems",
+      "title": "Full Stack. NET Sr. Software Engineer",
+      "location": "Raleigh, NC",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-net-sr-software-engineer-at-captiveaire-systems-4469795049",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4402753231",
+      "source": "linkedin",
+      "company": "Carbon Robotics",
+      "title": "Deep Learning Engineer",
+      "location": "Seattle, WA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/deep-learning-engineer-at-carbon-robotics-4402753231",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4449857879",
@@ -7253,6 +7572,62 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4471181938",
+      "source": "linkedin",
+      "company": "Cisco",
+      "title": "Software Engineer Full Stack / Backend II (Full-Time) - United States",
+      "location": "Durham, NC",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-backend-ii-full-time-united-states-at-cisco-4471181938",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4471187619",
+      "source": "linkedin",
+      "company": "Cisco",
+      "title": "Software Engineer Full Stack / Backend II (Full-Time) - United States",
+      "location": "Boulder, CO",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-backend-ii-full-time-united-states-at-cisco-4471187619",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4443159809",
       "source": "linkedin",
       "company": "Citi",
@@ -7278,7 +7653,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469016551",
@@ -8052,7 +8427,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468191323",
@@ -8463,7 +8838,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470478154",
@@ -8667,7 +9042,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469958304",
@@ -8816,6 +9191,34 @@
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4426734745",
+      "source": "linkedin",
+      "company": "Deloitte",
+      "title": "Agentic AI Engineer — Healthcare AI",
+      "location": "Chicago, IL",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/agentic-ai-engineer-%E2%80%94-healthcare-ai-at-deloitte-4426734745",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470208597",
@@ -9639,7 +10042,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469494015",
@@ -9667,7 +10070,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4433415533",
@@ -10444,7 +10847,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4395722691",
@@ -10524,7 +10927,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4434710449",
@@ -10624,7 +11027,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471103579",
@@ -10703,6 +11106,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4469686221",
+      "source": "linkedin",
+      "company": "Evinova",
+      "title": "Senior Software Engineer - Evinova",
+      "location": "Gaithersburg, MD",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-evinova-at-evinova-4469686221",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469933713",
@@ -10961,15 +11392,15 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "backend engineer"
+          "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468933244",
@@ -11322,7 +11753,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470635480",
@@ -11478,6 +11909,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4471669606",
+      "source": "linkedin",
+      "company": "Flatiron Health",
+      "title": "Software Engineer",
+      "location": "New York, NY",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-flatiron-health-4471669606",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4451528889",
@@ -11657,7 +12116,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4467672103",
@@ -11805,6 +12264,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4469777002",
+      "source": "linkedin",
+      "company": "Galent",
+      "title": "Gen AI Engineer",
+      "location": "Charlotte, NC",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/gen-ai-engineer-at-galent-4469777002",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4461518593",
       "source": "linkedin",
       "company": "Garmin",
@@ -11949,6 +12436,62 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4471622230",
+      "source": "linkedin",
+      "company": "General Motors",
+      "title": "Senior Backend Software Engineer - Commercial Software",
+      "location": "Austin, TX",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-backend-software-engineer-commercial-software-at-general-motors-4471622230",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4443945149",
+      "source": "linkedin",
+      "company": "General Motors",
+      "title": "Senior Backend Software Engineer - GM Energy",
+      "location": "Sunnyvale, CA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-backend-software-engineer-gm-energy-at-general-motors-4443945149",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4384379649",
@@ -12149,6 +12692,62 @@
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4471675285",
+      "source": "linkedin",
+      "company": "GliaCell Technologies",
+      "title": "Senior Software Engineer",
+      "location": "Annapolis Junction, MD",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-at-gliacell-technologies-4471675285",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4443705909",
+      "source": "linkedin",
+      "company": "Global Payments Inc.",
+      "title": "Software Engineer II – Java",
+      "location": "Boston, MA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-%E2%80%93-java-at-global-payments-inc-4443705909",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469969956",
@@ -12387,6 +12986,62 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-22T21:01:45.439166+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4452701612",
+      "source": "linkedin",
+      "company": "Google",
+      "title": "Senior Software Engineer, Infrastructure, Google Cloud Platforms",
+      "location": "Seattle, WA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-infrastructure-google-cloud-platforms-at-google-4452701612",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4460498111",
+      "source": "linkedin",
+      "company": "Google",
+      "title": "Senior Software Engineer, Infrastructure, YouTube Ads Serving Infrastructure",
+      "location": "Mountain View, CA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-infrastructure-youtube-ads-serving-infrastructure-at-google-4460498111",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4460041987",
@@ -12641,7 +13296,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470468459",
@@ -12744,7 +13399,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4440185704",
@@ -12897,7 +13552,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468260532",
@@ -13633,7 +14288,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470617484",
@@ -13970,7 +14625,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4424796686",
@@ -14201,6 +14856,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4469711591",
+      "source": "linkedin",
+      "company": "JPMorganChase",
+      "title": "Java Software Engineer III - AWS",
+      "location": "Tampa, FL",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/java-software-engineer-iii-aws-at-jpmorganchase-4469711591",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468507096",
       "source": "linkedin",
       "company": "JPMorganChase",
@@ -14276,7 +14959,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460492406",
@@ -14296,14 +14979,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
       "verified_this_run": true
     },
     {
@@ -14407,6 +15090,34 @@
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-23T00:01:35.703598+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4453093350",
+      "source": "linkedin",
+      "company": "JPMorganChase",
+      "title": "Software Engineer III (Java)",
+      "location": "New York, NY",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-iii-java-at-jpmorganchase-4453093350",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "no_match",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469715361",
@@ -15558,6 +16269,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4471617036",
+      "source": "linkedin",
+      "company": "LaSalle Network",
+      "title": "Sr. Software Engineer",
+      "location": "Oak Brook, IL",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-software-engineer-at-lasalle-network-4471617036",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4469586502",
       "source": "linkedin",
       "company": "LaStellar Group",
@@ -15614,7 +16353,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471447362",
@@ -15642,7 +16381,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468160880",
@@ -15816,7 +16555,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461235183",
@@ -16329,6 +17068,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4440197061",
+      "source": "linkedin",
+      "company": "Mastercard",
+      "title": "Software Engineer II",
+      "location": "O'Fallon, MO",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-at-mastercard-4440197061",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468935763",
       "source": "linkedin",
       "company": "Mastercard",
@@ -16715,6 +17482,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4471477087",
+      "source": "linkedin",
+      "company": "Microsoft",
+      "title": "Senior Software Engineer - Substrate App Platform team",
+      "location": "Redmond, WA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-substrate-app-platform-team-at-microsoft-4471477087",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4470432181",
       "source": "linkedin",
       "company": "Microsoft",
@@ -16970,14 +17765,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
       "verified_this_run": true
     },
     {
@@ -17051,6 +17846,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4471668530",
+      "source": "linkedin",
+      "company": "Miter",
+      "title": "Software Engineer (New Grad)",
+      "location": "New York, NY",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-new-grad-at-miter-4471668530",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4451815670",
@@ -17162,7 +17985,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4451833452",
@@ -17664,7 +18487,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460680708",
@@ -17867,6 +18690,34 @@
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-23T15:01:39.680800+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4459988473",
+      "source": "linkedin",
+      "company": "Nationwide",
+      "title": "Sr Engineer, Software Engineer - Java/Angular (2 - 5 years' experience)",
+      "location": "Columbus, OH",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-engineer-software-engineer-java-angular-2-5-years-experience-at-nationwide-4459988473",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4471132843",
@@ -18264,7 +19115,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468597271",
@@ -18519,6 +19370,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4452905145",
+      "source": "linkedin",
+      "company": "OpenAI",
+      "title": "Machine Learning Engineer, API Multicloud",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-api-multicloud-at-openai-4452905145",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468190167",
       "source": "linkedin",
       "company": "OpenAI",
@@ -18755,7 +19634,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4449841219",
@@ -18780,6 +19659,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4438003414",
+      "source": "linkedin",
+      "company": "Oracle",
+      "title": "Senior Application Software Engineer",
+      "location": "Reston, VA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-application-software-engineer-at-oracle-4438003414",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4459268071",
@@ -18830,6 +19737,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4449976953",
+      "source": "linkedin",
+      "company": "Oracle",
+      "title": "Senior Platform Software Engineer",
+      "location": "Nashville, TN",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-platform-software-engineer-at-oracle-4449976953",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4452197364",
@@ -19524,6 +20459,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4460405060",
+      "source": "linkedin",
+      "company": "Palo Alto Networks",
+      "title": "Principal Machine Learning Engineer (Prisma AIRS)",
+      "location": "Santa Clara, CA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/principal-machine-learning-engineer-prisma-airs-at-palo-alto-networks-4460405060",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468153465",
       "source": "linkedin",
       "company": "Palo Alto Networks",
@@ -19962,6 +20925,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4462736571",
+      "source": "linkedin",
+      "company": "Ping Identity",
+      "title": "Staff Software Engineer",
+      "location": "Austin, TX",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/staff-software-engineer-at-ping-identity-4462736571",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468114857",
       "source": "linkedin",
       "company": "Piper Companies",
@@ -19984,6 +20975,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4421979281",
+      "source": "linkedin",
+      "company": "PitchBook",
+      "title": "Sr. Machine Learning Engineer",
+      "location": "Seattle, WA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-machine-learning-engineer-at-pitchbook-4421979281",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4416252959",
@@ -20011,7 +21030,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4452728150",
@@ -20031,16 +21050,15 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "machine learning engineer",
-          "ml engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4452406585",
@@ -21110,7 +22128,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4443155296",
@@ -21138,7 +22156,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4449893041",
@@ -21264,14 +22282,42 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "full stack engineer"
+          "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4471626522",
+      "source": "linkedin",
+      "company": "REI Systems",
+      "title": "Software Engineer- full stack Java",
+      "location": "Sterling, VA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-java-at-rei-systems-4471626522",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
       "verified_this_run": true
     },
     {
@@ -22194,7 +23240,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468783984",
@@ -22312,14 +23358,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
       "verified_this_run": true
     },
     {
@@ -22521,6 +23567,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4471443941",
+      "source": "linkedin",
+      "company": "Rippling",
+      "title": "Software Engineer II, Backend Full Stack - HR Product",
+      "location": "Seattle, WA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-backend-full-stack-hr-product-at-rippling-4471443941",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4469970518",
       "source": "linkedin",
       "company": "Ritchie Bros.",
@@ -22595,7 +23669,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4463925703",
@@ -22815,14 +23889,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
       "verified_this_run": true
     },
     {
@@ -22967,16 +24041,15 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer",
-          "llm engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T15:01:40.886255+00:00",
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4393889822",
@@ -23050,14 +24123,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
       "verified_this_run": true
     },
     {
@@ -23967,7 +25040,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4451955638",
@@ -24070,6 +25143,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4453006505",
+      "source": "linkedin",
+      "company": "Snap Inc.",
+      "title": "Software Engineer, Level 3",
+      "location": "Bellevue, WA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-level-3-at-snap-inc-4453006505",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4453013490",
       "source": "linkedin",
       "company": "Snap Inc.",
@@ -24096,6 +25197,34 @@
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-23T18:01:38.694486+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4453025446",
+      "source": "linkedin",
+      "company": "Snap Inc.",
+      "title": "Software Engineer, Level 3",
+      "location": "Seattle, WA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-level-3-at-snap-inc-4453025446",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4461245411",
@@ -24227,7 +25356,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4452627519",
@@ -24255,7 +25384,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4423567242",
@@ -24455,6 +25584,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4470036816",
+      "source": "linkedin",
+      "company": "Starburst",
+      "title": "Senior Software Engineer, Context Layer",
+      "location": "Boston, MA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-context-layer-at-starburst-4470036816",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469954437",
@@ -24911,14 +26068,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
       "verified_this_run": true
     },
     {
@@ -24939,14 +26096,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
       "verified_this_run": true
     },
     {
@@ -26024,6 +27181,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4470053012",
+      "source": "linkedin",
+      "company": "Tata Consultancy Services",
+      "title": "Generative AI Engineer",
+      "location": "Irving, TX",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/generative-ai-engineer-at-tata-consultancy-services-4470053012",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4460613568",
       "source": "linkedin",
       "company": "Tata Consultancy Services",
@@ -26115,14 +27300,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "applied ai engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-24T18:02:13.704987+00:00",
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
       "verified_this_run": true
     },
     {
@@ -26467,7 +27652,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4452750602",
@@ -26495,7 +27680,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469962623",
@@ -26979,6 +28164,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4469642406",
+      "source": "linkedin",
+      "company": "Toyota North America",
+      "title": "Lead ML/AI Engineer",
+      "location": "Plano, TX",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/lead-ml-ai-engineer-at-toyota-north-america-4469642406",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4461562620",
       "source": "linkedin",
       "company": "Trader Interactive",
@@ -27135,6 +28348,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4470033655",
+      "source": "linkedin",
+      "company": "Travelers",
+      "title": "Software Engineer I - MERN, AWS",
+      "location": "St Paul, MN",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-i-mern-aws-at-travelers-4470033655",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4451463158",
       "source": "linkedin",
       "company": "Travelers",
@@ -27257,6 +28498,90 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4470010470",
+      "source": "linkedin",
+      "company": "Tyler Technologies",
+      "title": "Sr. Software Engineer",
+      "location": "Troy, MI",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-software-engineer-at-tyler-technologies-4470010470",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4469699468",
+      "source": "linkedin",
+      "company": "Typeface",
+      "title": "Senior ML Engineer",
+      "location": "Palo Alto, CA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-ml-engineer-at-typeface-4469699468",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4471172418",
+      "source": "linkedin",
+      "company": "U.S. Bank",
+      "title": "Software Engineer 2 (.NET Core / C# web applications)",
+      "location": "Hopkins, MN",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-2-net-core-c%23-web-applications-at-u-s-bank-4471172418",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470659767",
@@ -27692,7 +29017,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4459249236",
@@ -28134,7 +29459,7 @@
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468905473",
@@ -28514,6 +29839,90 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4416991510",
+      "source": "linkedin",
+      "company": "Waystar",
+      "title": "Senior Software Engineer - Full Stack",
+      "location": "Atlanta, GA",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-full-stack-at-waystar-4416991510",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4471438339",
+      "source": "linkedin",
+      "company": "Wells Fargo",
+      "title": "Software Engineer",
+      "location": "Charlotte, NC",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-wells-fargo-4471438339",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4471442251",
+      "source": "linkedin",
+      "company": "Wells Fargo",
+      "title": "Software Engineer",
+      "location": "St Louis, MO",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-wells-fargo-4471442251",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4449831246",
       "source": "linkedin",
       "company": "West Health",
@@ -28537,6 +29946,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4469676630",
+      "source": "linkedin",
+      "company": "Western & Southern Financial Group",
+      "title": "Senior Software Developer",
+      "location": "Cincinnati, OH",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-developer-at-western-southern-financial-group-4469676630",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4460087902",
@@ -28683,6 +30120,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4432331549",
+      "source": "linkedin",
+      "company": "Workday",
+      "title": "Software Development Engineer",
+      "location": "Mason, OH",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-at-workday-4432331549",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468195212",
       "source": "linkedin",
       "company": "Workday",
@@ -28801,6 +30266,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4451695521",
+      "source": "linkedin",
+      "company": "Zimmer Biomet",
+      "title": "Senior C++ Software Engineer",
+      "location": "Salt Lake City, UT",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-c%2B%2B-software-engineer-at-zimmer-biomet-4451695521",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4314539014",
@@ -29288,6 +30781,34 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4469779788",
+      "source": "linkedin",
+      "company": "eBay",
+      "title": "Software Engineer 3, Full-stack",
+      "location": "Salt Lake City, UT",
+      "posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-09-24",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-3-full-stack-at-ebay-4469779788",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-25T00:21:45.937548+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4461261100",
