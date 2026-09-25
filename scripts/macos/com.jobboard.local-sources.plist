@@ -10,12 +10,15 @@
     python3 -m venv .venv
     .venv/bin/python -m pip install -r requirements-local.txt
     cp scripts/macos/com.jobboard.local-sources.plist ~/Library/LaunchAgents/
-    launchctl load  ~/Library/LaunchAgents/com.jobboard.local-sources.plist
+    launchctl enable gui/$(id -u)/com.jobboard.local-sources
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.jobboard.local-sources.plist
+    launchctl print gui/$(id -u)/com.jobboard.local-sources
   Uninstall:
-    launchctl unload ~/Library/LaunchAgents/com.jobboard.local-sources.plist
+    launchctl bootout gui/$(id -u)/com.jobboard.local-sources
+    launchctl disable gui/$(id -u)/com.jobboard.local-sources
     rm ~/Library/LaunchAgents/com.jobboard.local-sources.plist
   Run once now (for testing):
-    launchctl start com.jobboard.local-sources
+    launchctl kickstart gui/$(id -u)/com.jobboard.local-sources
 
   Notes:
     - Calendar jobs missed during sleep are coalesced and run after wake.
