@@ -244,16 +244,16 @@
     {
       "id": "linkedin",
       "name": "LinkedIn",
-      "adapter": "linkedin_company",
+      "adapter": "skip",
       "enabled": true,
-      "max_pages": 3,
       "priority_tier": "A",
       "search_links": [
         {
           "label": "LinkedIn company jobs",
           "url": "https://www.linkedin.com/company/linkedin/jobs/"
         }
-      ]
+      ],
+      "skip_reason": "LinkedIn company guest search is disabled for Big Company Official; local LinkedIn discovery remains independent."
     },
     {
       "id": "bloomberg",

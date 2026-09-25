@@ -49,6 +49,17 @@ class Session:
 
 
 class OfficialAdapterTests(unittest.TestCase):
+    def test_linkedin_company_guest_search_is_disabled_in_official_registry(self):
+        company = next(c for c in registry.enabled_companies() if c.get("id") == "linkedin")
+        self.assertEqual("skip", company["adapter"])
+        with patch.object(registry, "enabled_companies", return_value=[company]), patch.object(
+            registry, "scrape_linkedin_company", side_effect=AssertionError("guest search requested")
+        ):
+            result = registry.scrape_enabled(only="linkedin", max_workers=1)[0]
+        self.assertEqual("expected_limitation", result["status"])
+        self.assertEqual(0, result["http_requests"])
+        self.assertEqual([], result["jobs"])
+
     def test_link_only_registry_source_is_expected_limitation(self):
         company = {"id": "link-only", "name": "Link Only", "adapter": "skip"}
         with patch.object(registry, "enabled_companies", return_value=[company]):
