@@ -186,6 +186,27 @@ class OfficialRecoveryTests(unittest.TestCase):
             job, previous={}, context={}, store=known, now=datetime.now(timezone.utc)))
         self.assertEqual(url, job["application_url"])
 
+    def test_greenhouse_city_only_location_is_usable_but_foreign_city_is_not(self):
+        url = "https://job-boards.greenhouse.io/workstream/jobs/6204349004"
+        api_response = response("https://boards-api.greenhouse.io/v1/boards/workstream/jobs", "")
+        api_response.json.return_value = {"jobs": [
+            {"id": 6204349004, "title": "Staff Full Stack Engineer ", "location": {"name": "Lehi"},
+             "absolute_url": url, "content": "<p>Build reliable systems.</p>" * 15},
+            {"id": 6204364004, "title": "Staff Full Stack Engineer ",
+             "location": {"name": "Vancouver, British Columbia, Canada"},
+             "absolute_url": "https://job-boards.greenhouse.io/workstream/jobs/6204364004",
+             "content": "<p>Build reliable systems.</p>" * 15},
+        ]}
+        session = Mock(get=Mock(return_value=api_response))
+        candidate = {**row(), "company": "Workstream", "title": "Staff Full Stack Engineer",
+                     "location": "Lehi, UT"}
+        resolver = recovery.Resolver(session=session)
+        known = {"prior": {"company": "Workstream", "official_url": url}}
+        self.assertEqual("known_ats_board", resolver.recover(
+            candidate, previous={}, context={}, store=known, now=datetime.now(timezone.utc)))
+        self.assertEqual(url, candidate["application_url"])
+        self.assertEqual(1, len(resolver.ats_matches["workstream"]))
+
     def test_ats_board_rejects_wrong_location_and_ambiguous_requisitions(self):
         url = "https://jobs.ashbyhq.com/Abridge/123"
         base = {"title": "Software Engineer", "descriptionHtml": "Build reliable systems. " * 15}

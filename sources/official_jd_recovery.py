@@ -297,10 +297,7 @@ class Resolver:
         try:
             fetcher = {"ashby": ats.fetch_ashby, "greenhouse": ats.fetch_greenhouse,
                        "lever": ats.fetch_lever}[board_key[0]]
-            if board_key[0] == "ashby":
-                rows = fetcher(self.session, company, board_key[1], include_unknown_location=True)
-            else:
-                rows = fetcher(self.session, company, board_key[1])
+            rows = fetcher(self.session, company, board_key[1], include_unknown_location=True)
             result = (rows, "ok")
             if rows:
                 self.ats_matches[normalize_company_key(company)] = rows

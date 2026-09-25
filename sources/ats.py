@@ -24,6 +24,7 @@ import requests
 
 from .schema import (
     SourceUnavailable,
+    classify_location_bucket,
     is_us_location,
     make_job,
     normalize_space,
@@ -75,7 +76,8 @@ def _get_json(session: requests.Session, url: str, params: Dict[str, Any] | None
         raise SourceUnavailable(f"non-JSON response: {exc}") from exc
 
 
-def fetch_greenhouse(session: requests.Session, company: str, token: str) -> List[Dict[str, str]]:
+def fetch_greenhouse(session: requests.Session, company: str, token: str,
+                     *, include_unknown_location: bool = False) -> List[Dict[str, str]]:
     url = f"https://boards-api.greenhouse.io/v1/boards/{token}/jobs"
     data = _get_json(session, url, params={"content": "true"})
     if not data:
@@ -83,7 +85,7 @@ def fetch_greenhouse(session: requests.Session, company: str, token: str) -> Lis
     rows: List[Dict[str, str]] = []
     for item in data.get("jobs", []):
         location = (item.get("location") or {}).get("name", "")
-        if location and not is_us_location(location):
+        if location and not is_us_location(location) and not (include_unknown_location and classify_location_bucket(location) == "unknown"):
             continue
         rows.append(
             make_job(
@@ -102,7 +104,8 @@ def fetch_greenhouse(session: requests.Session, company: str, token: str) -> Lis
     return rows
 
 
-def fetch_lever(session: requests.Session, company: str, token: str) -> List[Dict[str, str]]:
+def fetch_lever(session: requests.Session, company: str, token: str,
+                *, include_unknown_location: bool = False) -> List[Dict[str, str]]:
     url = f"https://api.lever.co/v0/postings/{token}"
     data = _get_json(session, url, params={"mode": "json"})
     if not data:
@@ -111,7 +114,7 @@ def fetch_lever(session: requests.Session, company: str, token: str) -> List[Dic
     for item in data:
         cats = item.get("categories") or {}
         location = cats.get("location") or ""
-        if location and not is_us_location(location):
+        if location and not is_us_location(location) and not (include_unknown_location and classify_location_bucket(location) == "unknown"):
             continue
         rows.append(
             make_job(
@@ -139,7 +142,7 @@ def fetch_ashby(session: requests.Session, company: str, token: str,
     rows: List[Dict[str, str]] = []
     for item in data.get("jobs", []):
         location = item.get("location") or ""
-        if location and not is_us_location(location) and not include_unknown_location:
+        if location and not is_us_location(location) and not (include_unknown_location and classify_location_bucket(location) == "unknown"):
             continue
         rows.append(
             make_job(
