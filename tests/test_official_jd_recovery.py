@@ -39,12 +39,57 @@ def response(url: str, text: str, status: int = 200) -> Mock:
 
 
 class OfficialRecoveryTests(unittest.TestCase):
+    def test_mac_search_cooldown_does_not_modify_github_control_state(self):
+        with tempfile.TemporaryDirectory() as temp, patch.object(local_sources, "HEALTH_PATH", Path(temp) / "health.json"), \
+             patch.object(local_sources, "read_source_snapshot_payload", return_value={"jobs": [], "meta": {}}), \
+             patch.dict("os.environ", {"LOCAL_SOURCE_PROFILE": "mac"}):
+            now = datetime.now(timezone.utc)
+            local_sources.HEALTH_PATH.write_text(json.dumps({"sources": {"linkedin": {
+                "search_429_streak": 2,
+                "search_cooldown_until": (now + timedelta(hours=24)).isoformat(),
+            }}}))
+            self.assertEqual(14, local_sources._linkedin_search_control(now)[0])
+            local_sources.write_health([{"source": "linkedin", "status": "partial",
+                "attempted_at": now.isoformat(), "search_collection": {"requests": 1, "responses": 1, "rate_limited": True},
+                "detail_enrichment": {"requests": 0}}], {})
+            state = json.loads(local_sources.HEALTH_PATH.read_text())["sources"]["linkedin"]
+            self.assertEqual(2, state["search_429_streak"])
+            self.assertEqual(1, state["runner_states"]["mac"]["search_429_streak"])
+
+    def test_linkedin_mac_and_github_query_profiles_have_independent_global_caps(self):
+        def fake_get(_url, *, params, timeout):
+            return response(_url, f"{params['keywords']}:{params['start']}")
+
+        def fake_cards(text):
+            return [{"job_id": f"{text}:{index}", "company": "Abridge",
+                     "title": "Software Engineer", "location": "Austin, TX",
+                     "source_url": "https://linkedin.com/jobs/view/1"}
+                    for index in range(2)]
+
+        for profile, limit, names in (
+            ("github", 8, ["software engineer", "ai engineer"]),
+            ("mac", 14, ["software engineer", "ai engineer", "backend engineer",
+                         "full-stack engineer", "machine learning engineer"]),
+        ):
+            with self.subTest(profile=profile):
+                session = Mock()
+                session.get.side_effect = fake_get
+                with patch.object(linkedin_local, "_parse_cards", side_effect=fake_cards), \
+                     patch.object(linkedin_local.time, "sleep"):
+                    result = linkedin_local.scrape(session=session, profile=profile, page_limit=limit)
+                self.assertEqual(limit, result["requests"])
+                self.assertEqual(names, [item["query"] for item in result["query_stats"]])
+                self.assertEqual([5, 3] if profile == "github" else [5, 3, 2, 2, 2],
+                                 [item["pages_fetched"] for item in result["query_stats"]])
+
     def test_generic_exact_match_reuses_fetched_jd_and_board_promotes_without_fetch(self):
         url = "https://jobs.ashbyhq.com/abridge/123"
         results = (f'<a class="result__a" href="https://www.abridge.com/">Abridge</a>'
                    f'<a class="result__a" href="{url}">Software Engineer</a>')
         session = Mock()
-        session.get.side_effect = [response(recovery.SEARCH_URL, results), response(url, posting())]
+        api_response = response("https://api.ashbyhq.com/posting-api/job-board/abridge", "")
+        api_response.json.return_value = {"jobs": []}
+        session.get.side_effect = [response(recovery.SEARCH_URL, results), api_response, response(url, posting())]
         resolver = recovery.Resolver(session=session, search_limit=5, page_limit=4)
         job = row()
         method = resolver.recover(job, previous={}, context={}, store={}, now=datetime.now(timezone.utc))
@@ -54,13 +99,30 @@ class OfficialRecoveryTests(unittest.TestCase):
         self.assertGreaterEqual(len(job["description"]), board.THIN_JD_CHARS)
         self.assertNotIn("official_url", job)
         self.assertEqual(1, resolver.search_requests)
-        self.assertEqual(1, resolver.page_requests)
+        self.assertEqual(2, resolver.page_requests)
         job["coverage_status"] = "not_dedicated"
         board_session = Mock()
         stats = board.resolve_exposed_originals([job], board_session, {})
         board_session.get.assert_not_called()
         self.assertEqual(url, job["official_url"])
         self.assertEqual(1, stats["cache_reused"])
+
+    def test_generic_ats_link_uses_verified_api_jd_without_html_refetch(self):
+        url = "https://jobs.ashbyhq.com/abridge/123"
+        results = f'<a class="result__a" href="{url}">Software Engineer</a>'
+        ats_response = response("https://api.ashbyhq.com/posting-api/job-board/abridge", "")
+        ats_response.json.return_value = {"jobs": [{"id": "123", "title": "Software Engineer",
+            "location": "Austin", "jobUrl": url,
+            "descriptionHtml": "<p>Build reliable engineering systems.</p>" * 12}]}
+        session = Mock()
+        session.get.side_effect = [response(recovery.SEARCH_URL, results), ats_response]
+        resolver = recovery.Resolver(session=session)
+        job = row()
+        self.assertEqual("generic_1", resolver.recover(
+            job, previous={}, context={}, store={}, now=datetime.now(timezone.utc)))
+        self.assertEqual(2, session.get.call_count)
+        self.assertEqual(url, job["application_url"])
+        self.assertFalse(job.get("jd_tentative"))
 
     def test_company_careers_finds_exact_ats_board_jd_without_detail_refetch(self):
         board_url = "https://jobs.ashbyhq.com/Abridge"
@@ -110,6 +172,20 @@ class OfficialRecoveryTests(unittest.TestCase):
         self.assertEqual(1, resolver.page_requests)
         self.assertIn("posting-api/job-board/Abridge", session.get.call_args.args[0])
 
+    def test_known_ashby_board_accepts_city_only_location_for_reconciliation(self):
+        url = "https://jobs.ashbyhq.com/Abridge/123"
+        ats_response = response("https://api.ashbyhq.com/posting-api/job-board/Abridge", "")
+        ats_response.json.return_value = {"jobs": [{
+            "id": "123", "title": "Software Engineer", "location": "Austin",
+            "jobUrl": url, "descriptionHtml": "<p>Build reliable engineering systems.</p>" * 12,
+        }]}
+        resolver = recovery.Resolver(session=Mock(get=Mock(return_value=ats_response)))
+        known = {"old": {"company": "Abridge", "official_url": "https://jobs.ashbyhq.com/Abridge/old"}}
+        job = row()
+        self.assertEqual("known_ats_board", resolver.recover(
+            job, previous={}, context={}, store=known, now=datetime.now(timezone.utc)))
+        self.assertEqual(url, job["application_url"])
+
     def test_ats_board_rejects_wrong_location_and_ambiguous_requisitions(self):
         url = "https://jobs.ashbyhq.com/Abridge/123"
         base = {"title": "Software Engineer", "descriptionHtml": "Build reliable systems. " * 15}
@@ -155,11 +231,13 @@ class OfficialRecoveryTests(unittest.TestCase):
         url = "https://jobs.ashbyhq.com/abridge/123"
         results = f'<li class="b_algo"><h2><a href="{url}">Software Engineer</a></h2></li>'
         session = Mock()
+        api_response = response("https://api.ashbyhq.com/posting-api/job-board/abridge", "")
+        api_response.json.return_value = {"jobs": []}
         session.get.side_effect = [requests.ConnectionError("timeout"),
-                                   response(recovery.BING_SEARCH_URL, results), response(url, posting())]
+                                   response(recovery.BING_SEARCH_URL, results), api_response, response(url, posting())]
         resolver = recovery.Resolver(session=session, search_limit=5, page_limit=4)
         with patch.object(recovery.time, "sleep"):
-            self.assertEqual("generic_2", resolver.recover(row(), previous={}, context={}, store={}, now=datetime.now(timezone.utc)))
+            self.assertEqual("generic_1", resolver.recover(row(), previous={}, context={}, store={}, now=datetime.now(timezone.utc)))
         self.assertEqual("bing", resolver.search_provider)
         self.assertEqual(2, resolver.search_requests)
         self.assertEqual(1, resolver.stats["search_provider_failures"])
@@ -178,6 +256,59 @@ class OfficialRecoveryTests(unittest.TestCase):
         resolver = recovery.Resolver(session=session)
         self.assertEqual("no_match_cached", resolver.recover(source, previous=prior, context={}, store={}, now=now))
         session.get.assert_not_called()
+
+    def test_unique_wrong_city_is_tentative_without_official_identity(self):
+        url = "https://jobs.ashbyhq.com/abridge/123"
+        candidate = row()
+        before = {field: candidate[field] for field in ("first_seen", "last_seen", "source_verified_at", "verified_this_run")}
+        resolver = recovery.Resolver(session=Mock(), search_limit=5, page_limit=4)
+        resolver.search = Mock(side_effect=[([url], "ok"), ([], "ok"), ([], "ok"), ([], "ok")])
+        resolver.page = Mock(return_value=(posting(city="Dallas"), url, "ok"))
+        resolver.ats_board = Mock(return_value=([], "unsupported"))
+        self.assertEqual("tentative_official", resolver.recover(
+            candidate, previous={}, context={}, store={}, now=datetime.now(timezone.utc)))
+        self.assertTrue(candidate["jd_tentative"])
+        self.assertEqual(url, candidate["tentative_official_url"])
+        self.assertNotIn("application_url", candidate)
+        self.assertNotIn("official_url", candidate)
+        self.assertEqual(before, {field: candidate[field] for field in before})
+        board_session = Mock()
+        board.resolve_exposed_originals([candidate], board_session, {})
+        board_session.get.assert_not_called()
+        self.assertNotIn("official_url", candidate)
+
+        fresh = row()
+        self.assertEqual("tentative_cache", resolver.recover(
+            fresh, previous=candidate, context={}, store={}, now=datetime.now(timezone.utc)))
+        self.assertTrue(fresh["jd_tentative"])
+
+    def test_unique_richer_indeed_peer_precedes_web_search(self):
+        peer = {"source": "indeed", "job_id": "indeed-1", "company": "Abridge",
+                "title": "Software Engineer", "location": "Austin, TX", "description": "Peer JD " * 40}
+        job = row()
+        session = Mock()
+        resolver = recovery.Resolver(session=session)
+        self.assertEqual("exact_indeed_peer", resolver.recover(
+            job, previous={}, context={}, store={"peer": peer}, now=datetime.now(timezone.utc), cheap_only=True))
+        self.assertEqual(peer["description"], job["description"])
+        self.assertNotIn("application_url", job)
+        session.get.assert_not_called()
+
+    def test_linkedin_detail_can_replace_tentative_jd(self):
+        job = {**row(), "description": "Tentative " * 30, "jd_tentative": True,
+               "tentative_official_url": "https://jobs.ashbyhq.com/abridge/123"}
+        prior = dict(job)
+        session = Mock()
+        session.get.return_value = response("https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/li-1", "")
+        with patch.object(linkedin_local, "_parse_detail", return_value={"description": "Verified " * 35, "application_url": ""}), \
+             patch.object(linkedin_local.time, "sleep"):
+            stats = linkedin_local.enrich_details([job], previous_jobs=[prior], session=session,
+                                                  request_limit=1, min_description_chars=board.THIN_JD_CHARS)
+        self.assertEqual(1, stats["detail_jds_fetched"])
+        self.assertFalse(job.get("jd_tentative"))
+        self.assertNotIn("tentative_official_url", job)
+        self.assertEqual(prior["first_seen"], job["first_seen"])
+        self.assertEqual(prior["last_seen"], job["last_seen"])
 
     def test_dedicated_match_and_fresh_cache_need_no_web_request(self):
         now = datetime.now(timezone.utc)

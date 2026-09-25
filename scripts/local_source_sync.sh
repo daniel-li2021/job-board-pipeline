@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 #
 # Local source sync: scrape local job boards, then commit/push ONLY the
-# source snapshots if they changed. Intended to be driven by launchd every
-# 2-3 hours (see scripts/macos/). Safe to run manually for testing.
+# source snapshots if they changed. The Mac gate controls launch times.
 #
 # Guarantees per plan:
 #   - Only `output/sources/*.json` is staged. Never `git add -A`.
@@ -126,6 +125,17 @@ if ! git worktree add --detach "$SYNC_TREE" "$TARGET_COMMIT" >/dev/null; then
   exit 1
 fi
 
+finish_publication() {
+  if [ -n "${LOCAL_SOURCE_RESULT_PATH:-}" ] && [ -f "$SYNC_TREE/output/logs/local_sources_latest.json" ]; then
+    cp "$SYNC_TREE/output/logs/local_sources_latest.json" "$LOCAL_SOURCE_RESULT_PATH" || return 1
+  fi
+  if [ "${COLLECTOR_DEGRADED:-0}" = "1" ]; then
+    echo "[$STAMP] all required sources failed; health published, last-good data retained."
+    return 1
+  fi
+  return 0
+}
+
 COLLECTOR_COMMIT="$(git -C "$SYNC_TREE" rev-parse HEAD)"
 echo "[$STAMP] collector commit: $COLLECTOR_COMMIT"
 if [ "${SKIP_SCRAPE:-0}" = "1" ]; then
@@ -137,8 +147,12 @@ else
   )
   SCRAPE_RC=$?
   if [ $SCRAPE_RC -ne 0 ]; then
-    echo "[$STAMP] collector exited $SCRAPE_RC; snapshots remain unchanged."
-    exit $SCRAPE_RC
+    if [ "${LOCAL_SOURCE_PROFILE:-}" != "mac" ]; then
+      echo "[$STAMP] collector exited $SCRAPE_RC; snapshots remain unchanged."
+      exit $SCRAPE_RC
+    fi
+    echo "[$STAMP] collector degraded ($SCRAPE_RC); publishing health/last-good state."
+    COLLECTOR_DEGRADED=1
   fi
 fi
 
@@ -158,12 +172,28 @@ if [ "$staged_any" -ne 1 ]; then
   exit 0
 fi
 if git -C "$SYNC_TREE" diff --staged --quiet; then
-  echo "[$STAMP] no source changes versus origin/$TARGET_BRANCH; nothing to commit."
-  exit 0
+  if [ "${LOCAL_SOURCE_PROFILE:-}" = "mac" ] && [ "${SKIP_PUSH:-0}" != "1" ]; then
+    # A successful no-change Mac round still needs a meaningful health receipt
+    # on main so the existing source push -> Board -> Pages chain runs once.
+    (
+      cd "$SYNC_TREE" || exit 1
+      "$PYTHON_BIN" -c 'import json, sys; from datetime import datetime, timezone; from pathlib import Path; from state_io import atomic_write; p=Path(sys.argv[1]); data=json.loads(p.read_text(encoding="utf-8")); data["mac_no_change_round_at"]=datetime.now(timezone.utc).isoformat(); atomic_write(p, (json.dumps(data, indent=2, ensure_ascii=False)+"\n").encode("utf-8"))' output/sources/health.json
+    ) || exit 1
+    git -C "$SYNC_TREE" add output/sources/health.json || exit 1
+    echo "[$STAMP] no changed jobs; publishing Mac health receipt for Board refresh."
+  else
+    echo "[$STAMP] no source changes versus origin/$TARGET_BRANCH; nothing to commit."
+    exit 0
+  fi
 fi
 if [ "${SKIP_PUSH:-0}" = "1" ]; then
   echo "[$STAMP] SKIP_PUSH=1 set; source diff verified, not committed or pushed."
   exit 0
+fi
+
+if ! (cd "$SYNC_TREE" && "$PYTHON_BIN" scripts/guard_github_blob_size.py); then
+  echo "[$STAMP] source blob size guard failed."
+  exit 1
 fi
 
 git -C "$SYNC_TREE" commit -m "chore: local job sources ${STAMP}" || {
@@ -174,7 +204,8 @@ git -C "$SYNC_TREE" commit -m "chore: local job sources ${STAMP}" || {
 echo "[$STAMP] pushing source-only commit to ${TARGET_BRANCH}..."
 if git -C "$SYNC_TREE" push origin "HEAD:${TARGET_BRANCH}"; then
   echo "[$STAMP] pushed. GitHub Actions will ingest the updated sources."
-  exit 0
+  finish_publication
+  exit $?
 fi
 
 # Re-scrape once if main advanced. Rebasing would publish artifacts produced by

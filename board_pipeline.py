@@ -652,7 +652,7 @@ def resolve_exposed_originals(
             reasons[reason] += 1
             continue
         fetched_at = parse_datetime(job.get("official_jd_fetched_at"))
-        if (job.get("official_search_verified") and fetched_at
+        if (job.get("official_search_verified") and not job.get("jd_tentative") and fetched_at
                 and datetime.now(timezone.utc) - fetched_at <= timedelta(days=DETAIL_STALE_DAYS)
                 and len(str(job.get("description") or "").strip()) >= THIN_JD_CHARS
                 and not is_aggregator_url(application_url)
@@ -2293,6 +2293,7 @@ REMOTE_STORE_FIELDS = {
     "score_model", "scoring_version", "reasoning_effort", "candidate_fingerprint", "score_at",
     "llm_retryable", "llm_retry_count", "llm_last_attempt_at", "llm_last_error",
     "official_search_verified", "official_jd_fetched_at", "official_search_status", "official_search_attempted_at",
+    "jd_tentative", "tentative_official_url", "jd_recovery_at",
 }
 
 
@@ -2962,6 +2963,7 @@ ENTRY_DEFAULTS: Dict[str, Any] = {
     "discovery_queries": dict, "original_resolved": False,
     "application_url": "", "direct_original_fetched": False, "direct_original_fetched_at": "",
     "enrichment_method": "", "enrichment_status": "", "enrichment_failure_reason": "",
+    "jd_tentative": False, "tentative_official_url": "", "jd_recovery_at": "",
     "source_snippet": "", "description_available": False,
 }
 
@@ -3001,12 +3003,15 @@ def build_store_entry(
         "discovery_queries": dict(job.get("discovery_queries") or {}),
         "original_resolved": bool(job.get("original_resolved")),
         "application_url": job.get("application_url", ""),
-        "direct_original_fetched": bool(job.get("direct_original_fetched")),
+        "direct_original_fetched": bool(job.get("direct_original_fetched") and not job.get("jd_tentative")),
         "direct_original_fetched_at": job.get("direct_original_fetched_at", ""),
         "official_search_verified": bool(job.get("official_search_verified")),
         "official_jd_fetched_at": job.get("official_jd_fetched_at", ""),
         "official_search_status": job.get("official_search_status", ""),
         "official_search_attempted_at": job.get("official_search_attempted_at", ""),
+        "jd_tentative": bool(job.get("jd_tentative")),
+        "tentative_official_url": job.get("tentative_official_url", ""),
+        "jd_recovery_at": job.get("jd_recovery_at", ""),
         "enrichment_method": job.get("enrichment_method", ""),
         "enrichment_status": job.get("enrichment_status", ""),
         "enrichment_failure_reason": job.get("enrichment_failure_reason", ""),

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  launchd agent: run the local source sync every 3 hours.
+  launchd agent: noon/3 PM/9 PM Pacific plus a ten-minute wake check.
 
   IMPORTANT: edit the absolute paths below to match your machine before
   installing. launchd requires absolute paths.
@@ -32,8 +32,8 @@
 
     <key>ProgramArguments</key>
     <array>
-        <string>/bin/bash</string>
-        <string>/Users/daniel/Projects/job_scrape_feasibility-automation/scripts/local_source_sync.sh</string>
+        <string>/Users/daniel/Projects/job_scrape_feasibility-automation/.venv/bin/python3</string>
+        <string>/Users/daniel/Projects/job_scrape_feasibility-automation/scripts/macos/local_source_gate.py</string>
     </array>
 
     <key>WorkingDirectory</key>
@@ -59,17 +59,14 @@
         <string>0</string>
     </dict>
 
-    <!-- Unlike StartInterval, missed calendar events run when the Mac wakes. -->
+    <!-- The heartbeat checks wake gaps; the gate coalesces overlapping starts. -->
+    <key>StartInterval</key>
+    <integer>600</integer>
     <key>StartCalendarInterval</key>
     <array>
-        <dict><key>Hour</key><integer>0</integer></dict>
-        <dict><key>Hour</key><integer>3</integer></dict>
-        <dict><key>Hour</key><integer>6</integer></dict>
-        <dict><key>Hour</key><integer>9</integer></dict>
-        <dict><key>Hour</key><integer>12</integer></dict>
-        <dict><key>Hour</key><integer>15</integer></dict>
-        <dict><key>Hour</key><integer>18</integer></dict>
-        <dict><key>Hour</key><integer>21</integer></dict>
+        <dict><key>Hour</key><integer>12</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>15</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>21</integer><key>Minute</key><integer>0</integer></dict>
     </array>
 
     <key>RunAtLoad</key>

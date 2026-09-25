@@ -130,7 +130,8 @@ def fetch_lever(session: requests.Session, company: str, token: str) -> List[Dic
     return rows
 
 
-def fetch_ashby(session: requests.Session, company: str, token: str) -> List[Dict[str, str]]:
+def fetch_ashby(session: requests.Session, company: str, token: str,
+                 *, include_unknown_location: bool = False) -> List[Dict[str, str]]:
     url = f"https://api.ashbyhq.com/posting-api/job-board/{token}"
     data = _get_json(session, url, params={"includeCompensation": "false"})
     if not data:
@@ -138,7 +139,7 @@ def fetch_ashby(session: requests.Session, company: str, token: str) -> List[Dic
     rows: List[Dict[str, str]] = []
     for item in data.get("jobs", []):
         location = item.get("location") or ""
-        if location and not is_us_location(location):
+        if location and not is_us_location(location) and not include_unknown_location:
             continue
         rows.append(
             make_job(

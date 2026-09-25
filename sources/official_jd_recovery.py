@@ -127,7 +127,8 @@ def _title_key(value: str, *, variant: bool = False) -> str:
     return title
 
 
-def _verified_posting(row: dict, html: str, *, variant: bool = False) -> str:
+def _verified_posting(row: dict, html: str, *, variant: bool = False,
+                      allow_location_mismatch: bool = False) -> str:
     def postings(value: object) -> list[dict]:
         if isinstance(value, list):
             return [job for item in value for job in postings(item)]
@@ -156,7 +157,7 @@ def _verified_posting(row: dict, html: str, *, variant: bool = False) -> str:
     source_loc = normalize_location_key(str(row.get("location") or ""))
     posting_loc = normalize_location_key(_posting_location(posting))
     remote = str(posting.get("jobLocationType") or "").upper() == "TELECOMMUTE"
-    if not source_loc or not (coverage_reconcile.locations_compatible(source_loc, posting_loc) or (remote and "remote" in source_loc)):
+    if not allow_location_mismatch and (not source_loc or not (coverage_reconcile.locations_compatible(source_loc, posting_loc) or (remote and "remote" in source_loc))):
         return ""
     description = normalize_space(BeautifulSoup(str(posting.get("description") or ""), "html.parser").get_text(" "))
     return description if len(description) >= board.THIN_JD_CHARS else ""
@@ -221,6 +222,7 @@ class Resolver:
         self.ats_cache: dict[tuple[str, str], tuple[list[dict], str]] = {}
         self.ats_matches: dict[str, list[dict]] = {}
         self.store_by_id: dict[tuple[str, str], dict] = {}
+        self.indeed_by_company: dict[str, list[dict]] | None = None
         self.dedicated_seen: set[tuple[str, str]] = set()
 
     def _available(self) -> bool:
@@ -243,11 +245,11 @@ class Resolver:
         except requests.RequestException:
             self.search_provider = "bing" if provider == "duckduckgo" else "disabled"
             self.stats["search_provider_failures"] += 1
-            return [], "network"
+            return self.search(query) if provider == "duckduckgo" else ([], "network")
         if response.status_code != 200:
             self.search_provider = "disabled" if response.status_code == 429 or provider == "bing" else "bing"
             self.stats["search_provider_failures"] += 1
-            return [], "http"
+            return self.search(query) if provider == "duckduckgo" and response.status_code != 429 else ([], "http")
         soup = BeautifulSoup(response.text, "html.parser")
         urls = []
         selector = "a.result__a" if provider == "duckduckgo" else "li.b_algo h2 a"
@@ -295,7 +297,10 @@ class Resolver:
         try:
             fetcher = {"ashby": ats.fetch_ashby, "greenhouse": ats.fetch_greenhouse,
                        "lever": ats.fetch_lever}[board_key[0]]
-            rows = fetcher(self.session, company, board_key[1])
+            if board_key[0] == "ashby":
+                rows = fetcher(self.session, company, board_key[1], include_unknown_location=True)
+            else:
+                rows = fetcher(self.session, company, board_key[1])
             result = (rows, "ok")
             if rows:
                 self.ats_matches[normalize_company_key(company)] = rows
@@ -309,6 +314,16 @@ class Resolver:
         """Return resolution method or a deferred/no-match reason."""
         if len(str(row.get("description") or "").strip()) >= board.THIN_JD_CHARS:
             return "already_resolved"
+        tentative_at = _stamp(previous.get("jd_recovery_at"))
+        if (previous.get("jd_tentative") and tentative_at and now - tentative_at <= timedelta(days=CACHE_DAYS)
+                and normalize_title_key(str(previous.get("title") or "")) == normalize_title_key(str(row.get("title") or ""))
+                and len(str(previous.get("description") or "").strip()) >= board.THIN_JD_CHARS):
+            for field in ("description", "jd_tentative", "tentative_official_url", "jd_recovery_at"):
+                row[field] = previous[field]
+            row["enrichment_method"] = "tentative_cache"
+            row["enrichment_status"] = "tentative"
+            self.stats["tentative_cache"] += 1
+            return "tentative_cache"
         if normalize_title_key(str(previous.get("title") or "")) == normalize_title_key(str(row.get("title") or "")):
             cached_at = _stamp(previous.get("official_jd_fetched_at"))
             if cached_at and now - cached_at <= timedelta(days=CACHE_DAYS) and len(str(previous.get("description") or "").strip()) >= board.THIN_JD_CHARS:
@@ -329,6 +344,14 @@ class Resolver:
         for entry in [self.store_by_id.get(key, {})]:
             if normalize_title_key(str(entry.get("title") or "")) == normalize_title_key(str(row.get("title") or "")) and len(str(entry.get("description") or "").strip()) >= board.THIN_JD_CHARS:
                 row["description"] = entry["description"]
+                if entry.get("jd_tentative"):
+                    row["jd_tentative"] = True
+                    row["tentative_official_url"] = entry.get("tentative_official_url", "")
+                    row["jd_recovery_at"] = entry.get("jd_recovery_at", "")
+                    row["enrichment_method"] = "tentative_cache"
+                    row["enrichment_status"] = "tentative"
+                    self.stats["tentative_cache"] += 1
+                    return "tentative_cache"
                 if entry.get("official_url"):
                     row["application_url"] = entry["official_url"]
                     row["official_search_verified"] = True
@@ -339,6 +362,27 @@ class Resolver:
                 self.stats["cache"] += 1
                 return "cache"
         company = str(row.get("company") or "")
+        company_key = normalize_company_key(company)
+        if str(row.get("source") or "").lower() == "linkedin":
+            if self.indeed_by_company is None:
+                peers: dict[str, list[dict]] = {}
+                for entry in store.values():
+                    if "indeed" not in str(entry.get("source") or "").lower():
+                        continue
+                    if len(str(entry.get("description") or "").strip()) < board.THIN_JD_CHARS:
+                        continue
+                    peer_company = normalize_company_key(str(entry.get("company") or ""))
+                    peers.setdefault(peer_company, []).append(entry)
+                self.indeed_by_company = peers
+            matches = coverage_reconcile.title_location_matches(row, self.indeed_by_company.get(company_key, []))
+            unique = {str(peer.get("job_id") or peer.get("source_url") or index): peer
+                      for index, peer in enumerate(matches)}
+            if len(unique) == 1:
+                peer = next(iter(unique.values()))
+                row.update(description=peer["description"], jd_recovery_at=now.isoformat(),
+                           enrichment_method="exact_indeed_peer", enrichment_status="resolved")
+                self.stats["exact_indeed_peer"] += 1
+                return "exact_indeed_peer"
         cid = coverage_reconcile.company_id_for(company, context.get("registry_entries", []))
         official = None
         if cid:
@@ -347,13 +391,13 @@ class Resolver:
                 if not probe.get(field) and previous.get(field):
                     probe[field] = previous[field]
             _method, official = coverage_reconcile.exact_match(probe, context.get("by_company", {}).get(cid, []))
-        company_key = normalize_company_key(company)
         if company_key not in self.pattern_cache:
             self.pattern_cache[company_key] = _patterns(company, context, store)
             self.listing_cache[company_key] = _listing_urls(company, context, store)
         patterns = self.pattern_cache[company_key]
         local = Counter()
         variant_candidates: list[tuple[str, str]] = []
+        tentative_candidates: dict[str, str] = {}
         discovered_urls: list[str] = []
         seen_candidates: set[str] = set()
 
@@ -364,6 +408,8 @@ class Resolver:
                        enrichment_status="resolved", official_search_status="resolved", direct_original_fetched=True,
                        direct_original_fetched_at=now.isoformat())
             row.pop("enrichment_failure_reason", None)
+            row.pop("jd_tentative", None)
+            row.pop("tentative_official_url", None)
             patterns.add(_host(url))
             self.stats[method] += 1
             return method
@@ -373,6 +419,12 @@ class Resolver:
                 return False
             seen_candidates.add(url)
             local["candidates"] += 1
+            if _ats_board(url, company, self.listing_cache[company_key]):
+                ats_status, ats_method = try_ats(url, method)
+                if ats_method:
+                    return True
+                if ats_status == "ok" and url in tentative_candidates:
+                    return False
             html, final_url, status = self.page(url, local)
             if status != "ok":
                 if status == "budget":
@@ -384,6 +436,9 @@ class Resolver:
                 return False
             description = _verified_posting(row, html, variant=variant)
             if not description:
+                tentative = _verified_posting(row, html, variant=variant, allow_location_mismatch=True)
+                if tentative:
+                    tentative_candidates[final_url] = tentative
                 if method == "site_exact":
                     variant_description = _verified_posting(row, html, variant=True)
                     if variant_description:
@@ -400,6 +455,18 @@ class Resolver:
                     official_url = str(match.get("official_url") or "")
                     if _credible(official_url, company, patterns):
                         return status, resolved(official_url, match["description"], method)
+                else:
+                    possible = [candidate for candidate in ats_rows
+                                if normalize_company_key(str(candidate.get("company") or company)) == company_key
+                                and _title_key(str(candidate.get("title") or "")) == _title_key(str(row.get("title") or ""))
+                                and len(str(candidate.get("description") or "").strip()) >= board.THIN_JD_CHARS]
+                    if len(possible) == 1:
+                        candidate = possible[0]
+                        candidate_url = str(candidate.get("official_url") or "")
+                        if _credible(candidate_url, company, patterns):
+                            tentative_candidates[candidate_url] = str(candidate["description"])
+                    elif len(possible) > 1:
+                        local["deferred"] += 1
             elif status == "budget":
                 local["deferred"] += 1
             elif status != "unsupported":
@@ -444,7 +511,7 @@ class Resolver:
         title = str(row.get("title") or "").strip()
         location = str(row.get("location") or "").strip()
         queries = [f'"{title}" "{company}"', f'"{title}" "{company}" "{location}"',
-                   f'"{company}" careers jobs']
+                   f'"{company}" "{title}" careers jobs']
         discovered: list[str] = []
         for index, query in enumerate(queries, 1):
             urls, status = self.search(query)
@@ -528,6 +595,15 @@ class Resolver:
         if len(unique) == 1 and not local["deferred"] and not local["errors"]:
             url, description = next(iter(unique.items()))
             return resolved(url, description, "title_fallback")
+
+        if len(tentative_candidates) == 1 and not local["deferred"] and not local["errors"]:
+            url, description = next(iter(tentative_candidates.items()))
+            row.update(description=description, jd_tentative=True, tentative_official_url=url,
+                       jd_recovery_at=now.isoformat(), enrichment_method="tentative_official",
+                       enrichment_status="tentative", official_search_status="tentative")
+            row.pop("enrichment_failure_reason", None)
+            self.stats["tentative_official"] += 1
+            return "tentative_official"
 
         row["official_search_attempted_at"] = now.isoformat()
         if local["deferred"] or local["errors"] or local["candidates"] >= 2 or not self._available():

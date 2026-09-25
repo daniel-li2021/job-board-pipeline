@@ -56,6 +56,7 @@ OPTIONAL_SOURCES = {"glassdoor"}
 HEALTH_PATH = OUTPUT_DIR / "sources" / "health.json"
 HEALTH_SCHEMA_VERSION = 1
 LINKEDIN_DETAIL_LIMIT = 8
+MAC_SEARCH_PAGE_LIMIT = 14
 LINKEDIN_DETAIL_COOLDOWN_HOURS = 24
 GLASSDOOR_RECOVERY_HOURS = 24
 LINKEDIN_SEARCH_COOLDOWN_HOURS = 24
@@ -73,8 +74,17 @@ def _health_source(name: str) -> Dict[str, object]:
     return dict(source) if isinstance(source, dict) else {}
 
 
-def _linkedin_detail_control(now: datetime) -> tuple[int, bool, bool]:
+def _linkedin_runner_state() -> Dict[str, object]:
     state = _health_source("linkedin")
+    if os.environ.get("LOCAL_SOURCE_PROFILE") != "mac":
+        return state
+    runners = state.get("runner_states", {})
+    runner = runners.get("mac", {}) if isinstance(runners, dict) else {}
+    return dict(runner) if isinstance(runner, dict) else {}
+
+
+def _linkedin_detail_control(now: datetime) -> tuple[int, bool, bool]:
+    state = _linkedin_runner_state()
     streak = int(state.get("detail_429_streak", 0) or 0)
     try:
         cooldown_until = datetime.fromisoformat(
@@ -122,7 +132,7 @@ def _update_linkedin_detail_health(state: Dict[str, object], detail: Dict[str, o
 
 
 def _linkedin_search_control(now: datetime) -> tuple[int, bool, bool]:
-    state = _health_source("linkedin")
+    state = _linkedin_runner_state()
     streak = int(state.get("search_429_streak", 0) or 0)
     try:
         until = datetime.fromisoformat(str(state.get("search_cooldown_until") or "").replace("Z", "+00:00"))
@@ -132,7 +142,8 @@ def _linkedin_search_control(now: datetime) -> tuple[int, bool, bool]:
         until = datetime.min.replace(tzinfo=timezone.utc)
     active = until > now
     probe = not active and streak >= 2
-    return (0 if active else 1 if probe else linkedin_local.SEARCH_PAGE_LIMIT), active, probe
+    normal_limit = MAC_SEARCH_PAGE_LIMIT if os.environ.get("LOCAL_SOURCE_PROFILE") == "mac" else linkedin_local.SEARCH_PAGE_LIMIT
+    return (0 if active else 1 if probe else normal_limit), active, probe
 
 
 def _mark_linkedin_official_matches(
@@ -224,7 +235,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
                 {"status": "blocked", "reason": "search cooldown", "jobs": [], "query_stats": [],
                  "requests": 0, "responses": 0, "http_status": 0}
                 if search_control["cooldown_active"] else
-                scraper(page_limit=limit)
+                scraper(page_limit=limit, profile=os.environ.get("LOCAL_SOURCE_PROFILE", "github"))
             )
         else:
             result = scraper()
@@ -285,6 +296,8 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
         previous_by_id = {str(job.get("job_id") or ""): job for job in previous_jobs if job.get("job_id")}
         board_store = {
             **{f"source-cache::{index}": job for index, job in enumerate(previous_jobs) if job.get("official_search_verified")},
+            **({f"indeed-peer::{index}": job for index, job in enumerate(read_source_snapshot_payload("indeed").get("jobs") or [])}
+               if name == "linkedin" else {}),
             **board_store,
         }
         resolver = official_jd_recovery.Resolver()
@@ -297,6 +310,10 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
             if resolver.recover(row, previous=prior, context=official_context, store=board_store,
                                 now=now, cheap_only=True) == "pending":
                 pending.append(row)
+        pending.sort(key=lambda row: (
+            bool(resolver.pattern_cache.get(official_jd_recovery.normalize_company_key(str(row.get("company") or "")))),
+            official_jd_recovery._stamp(row.get("first_seen")) or datetime.min.replace(tzinfo=timezone.utc),
+        ), reverse=True)
         for row in pending:
             prior = previous_by_id.get(str(row.get("job_id") or ""), {})
             resolver.recover(row, previous=prior, context=official_context, store=board_store, now=now)
@@ -312,7 +329,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
                 row["enrichment_status"] = "unresolved"
                 row["enrichment_failure_reason"] = f"{name}_detail_missing_or_thin"
     if name == "linkedin" and rows:
-        detail_candidates = [row for row in rows if len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS]
+        detail_candidates = [row for row in rows if row.get("jd_tentative") or len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS]
         if official_context:
             _mark_linkedin_official_matches(
                 detail_candidates, list(previous.get("jobs") or []), official_context, board_store,
@@ -333,7 +350,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
         detail_enrichment["probe"] = probe
         detail_enrichment["status"] = "cooldown" if cooldown_active else "probe" if probe else "active"
         if cooldown_active:
-            detail_enrichment["cooldown_until"] = str(_health_source("linkedin").get("detail_cooldown_until") or "")
+            detail_enrichment["cooldown_until"] = str(_linkedin_runner_state().get("detail_cooldown_until") or "")
 
     # Every discovered record reaches enrichment before filtering.
     stage1_survivors = []
@@ -352,7 +369,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
     # Keep full aggregator JDs in the Board store. Original-employer resolution
     # remains independent and may still replace them with verified employer data.
     for row in stage1_survivors:
-        if row.get("description"):
+        if row.get("description") and not row.get("jd_tentative"):
             row["direct_original_fetched"] = True
 
     survivors = stage1_survivors
@@ -479,27 +496,36 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
             "last_good_count": len(snapshot.get("jobs", [])),
         })
         if name == "linkedin":
+            mac = os.environ.get("LOCAL_SOURCE_PROFILE") == "mac"
+            prior_runtime = (prior.get("runner_states", {}).get("mac", {}) if mac else prior)
+            if not isinstance(prior_runtime, dict):
+                prior_runtime = {}
+            runtime = dict(prior_runtime) if mac else state
             search = state["search_collection"]
             search_requests = int(search.get("requests", 0) or 0)
             if search_requests:
-                state["search_last_attempt_at"] = result.get("attempted_at", "")
+                runtime["search_last_attempt_at"] = result.get("attempted_at", "")
                 if search.get("rate_limited"):
-                    streak = int(prior.get("search_429_streak", 0) or 0) + 1
-                    state["search_429_streak"] = streak
+                    streak = int(prior_runtime.get("search_429_streak", 0) or 0) + 1
+                    runtime["search_429_streak"] = streak
                     if streak >= 2:
                         attempted_at = datetime.fromisoformat(str(result.get("attempted_at") or "").replace("Z", "+00:00"))
-                        state["search_cooldown_until"] = (attempted_at + timedelta(hours=LINKEDIN_SEARCH_COOLDOWN_HOURS)).isoformat()
+                        runtime["search_cooldown_until"] = (attempted_at + timedelta(hours=LINKEDIN_SEARCH_COOLDOWN_HOURS)).isoformat()
                 elif int(search.get("responses", 0) or 0):
-                    state["search_429_streak"] = 0
-                    state["search_cooldown_until"] = ""
+                    runtime["search_429_streak"] = 0
+                    runtime["search_cooldown_until"] = ""
             detail = state["detail_enrichment"]
-            state["detail_status"] = str(detail.get("status") or prior.get("detail_status") or "active")
+            runtime["detail_status"] = str(detail.get("status") or prior_runtime.get("detail_status") or "active")
             if detail.get("cooldown_active"):
-                state["detail_cooldown_reason"] = str(prior.get("detail_cooldown_reason") or "intentional pause")
+                runtime["detail_cooldown_reason"] = str(prior_runtime.get("detail_cooldown_reason") or "intentional pause")
             _update_linkedin_detail_health(
-                state, detail,
+                runtime, detail,
                 datetime.fromisoformat(str(result.get("attempted_at") or datetime.now(timezone.utc).isoformat()).replace("Z", "+00:00")),
             )
+            if mac:
+                runners = dict(state.get("runner_states") or {})
+                runners["mac"] = runtime
+                state["runner_states"] = runners
         sources[name] = state
     HEALTH_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = {

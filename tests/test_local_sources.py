@@ -340,8 +340,10 @@ class LocalSourceTests(unittest.TestCase):
     def test_launchd_agent_runs_after_wake_and_uses_noninteractive_ssh_push(self) -> None:
         with (ROOT / "scripts/macos/com.jobboard.local-sources.plist").open("rb") as handle:
             agent = plistlib.load(handle)
-        self.assertNotIn("StartInterval", agent)
-        self.assertEqual(list(range(0, 24, 3)), [item["Hour"] for item in agent["StartCalendarInterval"]])
+        self.assertEqual(600, agent["StartInterval"])
+        self.assertEqual([12, 15, 21], [item["Hour"] for item in agent["StartCalendarInterval"]])
+        self.assertTrue(agent["RunAtLoad"])
+        self.assertIn("local_source_gate.py", agent["ProgramArguments"][-1])
         env = agent["EnvironmentVariables"]
         self.assertEqual("remote.origin.pushurl", env["GIT_CONFIG_KEY_0"])
         self.assertEqual("git@github.com:daniel-li2021/job-board-pipeline.git", env["GIT_CONFIG_VALUE_0"])
@@ -359,8 +361,16 @@ class LocalSourceTests(unittest.TestCase):
         self.assertIn("cancel-in-progress: false", workflow)
         self.assertIn("source_ingest=true", workflow)
         self.assertNotIn("steps.publish.outputs.changed == 'true'", workflow)
+        self.assertIn("bash scripts/local_source_sync.sh", workflow)
+        wrapper = (ROOT / "scripts/local_source_sync.sh").read_text(encoding="utf-8")
         for name in ("linkedin", "indeed", "glassdoor", "health"):
-            self.assertIn(f"output/sources/{name}.json", workflow)
+            self.assertIn(f'output/sources/${{source_name}}.json', wrapper)
+            self.assertIn(name, wrapper)
+        self.assertNotIn("git rebase", workflow)
+        self.assertIn('LOCAL_SOURCE_RETRY=1', wrapper)
+        self.assertIn('main advanced during collection; restarting once', wrapper)
+        self.assertNotIn('git rebase', wrapper)
+        self.assertIn('mac_no_change_round_at', wrapper)
         self.assertNotIn("git add -A", workflow)
 
     def test_snapshot_schema_is_versioned_and_reads_legacy_lists(self) -> None:

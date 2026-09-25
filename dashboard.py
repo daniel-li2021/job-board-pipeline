@@ -269,6 +269,8 @@ def why_evidence(entry: Dict[str, Any]) -> List[str]:
         evidence.append("Rules")
     if not entry.get("description_available"):
         evidence.append("Title only")
+    elif entry.get("jd_tentative"):
+        evidence.append("Tentative JD")
     if entry.get("llm_retryable"):
         evidence.append("LLM retry")
     return evidence[:2]
@@ -363,6 +365,7 @@ def normalize_row(
         "role_family": entry.get("role_family", ""),
         "seniority_fit": entry.get("seniority_fit", ""),
         "description_available": bool(entry.get("description_available")),
+        "jd_tentative": bool(entry.get("jd_tentative")),
         "why_match": why_match_reasons(entry),
         "why_company": why_company_signals(
             company_profile, profiled=bool(matched_company_profile), staffing=staffing,

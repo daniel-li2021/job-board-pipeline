@@ -38,6 +38,9 @@ GUEST_SEARCH_URL = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPosti
 GUEST_DETAIL_URL = "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{job_id}"
 US_GEO_ID = "103644278"
 SEARCH_SPECS = (("primary", "software engineer", 5, 2), ("primary", "ai engineer", 3, 1))
+MAC_SEARCH_SPECS = (*SEARCH_SPECS, ("primary", "backend engineer", 2, 1),
+                    ("primary", "full-stack engineer", 2, 1),
+                    ("primary", "machine learning engineer", 2, 1))
 DEFAULT_KEYWORDS = [query for _group, query, _maximum, _minimum in SEARCH_SPECS]
 EXPERIENCE_LEVEL_FILTER = "2,3"
 PAGE_SIZE = 10
@@ -254,7 +257,7 @@ def enrich_details(
     pending: List[Dict[str, Any]] = []
 
     for row in rows:
-        if len(str(row.get("description") or "").strip()) >= min_description_chars:
+        if len(str(row.get("description") or "").strip()) >= min_description_chars and not row.get("jd_tentative"):
             stats["jds_resolved"] += 1
             if row.get("application_url"):
                 stats["external_apply_urls"] += 1
@@ -388,6 +391,8 @@ def enrich_details(
         row["linkedin_detail_fetched_at"] = now.isoformat()
         if len(str(detail["description"] or "").strip()) >= min_description_chars:
             row["description"] = detail["description"]
+            row.pop("jd_tentative", None)
+            row.pop("tentative_official_url", None)
             row["linkedin_detail_resolved"] = True
             row["enrichment_method"] = method
             row["enrichment_status"] = "resolved"
@@ -407,6 +412,8 @@ def enrich_details(
     for row in rows:
         row.pop("_linkedin_official_defer", None)
         row.pop("_linkedin_official_url", None)
+        if row.get("jd_tentative"):
+            row["enrichment_status"] = "tentative"
 
     unresolved = [row for row in rows if not row.get("description")]
     reasons: Dict[str, int] = {}
@@ -426,13 +433,14 @@ def scrape(
     *,
     query_cursor: int = 0,
     page_limit: int = SEARCH_PAGE_LIMIT,
+    profile: str = "github",
 ) -> Dict[str, Any]:
     """Return LinkedIn job rows. Raises SourceUnavailable on anti-bot/network."""
     session = session or _make_session()
     # Keep query_cursor for older callers, but focused discovery always begins
     # with software engineer. Older unqueried titles remain in partial snapshots.
     del query_cursor
-    specs = list(SEARCH_SPECS)
+    specs = list(MAC_SEARCH_SPECS if profile == "mac" else SEARCH_SPECS)
     if keywords:
         wanted = set(keywords)
         specs = [spec for spec in specs if spec[1] in wanted]
