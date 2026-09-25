@@ -40,6 +40,10 @@ class MacGateTests(unittest.TestCase):
         self.assertTrue(decision(self.at(12), state)[0])
         self.assertFalse(decision(self.at(12, 10), {"last_check_at": self.at(12).isoformat()})[0])
 
+    def test_first_agent_load_is_not_mistaken_for_a_wake(self):
+        self.assertFalse(decision(self.at(1), {})[0])
+        self.assertTrue(decision(self.at(4), {"last_check_at": self.at(1).isoformat()})[0])
+
     def test_after_six_wake_runs_but_active_evening_waits_for_nine(self):
         self.assertTrue(decision(self.at(19), {"last_check_at": self.at(16).isoformat()})[0])
         self.assertFalse(decision(self.at(19), {"last_check_at": self.at(18, 50).isoformat()})[0])

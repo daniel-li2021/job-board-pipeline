@@ -37,7 +37,8 @@ def decision(now: datetime, state: dict) -> tuple[bool, str, dict]:
     result = dict(state)
     last_check = _stamp(state.get("last_check_at"))
     last_success = _stamp(state.get("last_success_at"))
-    wake = last_check is None or now - last_check > timedelta(minutes=17)
+    # An agent install/reload is not itself evidence that the Mac woke.
+    wake = last_check is not None and now - last_check > timedelta(minutes=17)
     fixed = now.hour in {12, 15, 21} and now.minute < 10
     result["last_check_at"] = now.isoformat()
     if now.hour == 17:
