@@ -243,7 +243,7 @@ def pending_company_profiles(
                     job_keys[key].add(hashlib.sha256(identity.encode("utf-8")).hexdigest()[:24])
     for key, entry in pending.items():
         entry["seen_job_keys"] = sorted(job_keys[key])
-        entry["seen_count"] = len(job_keys[key])
+        entry["seen_count"] = max(1, len(job_keys[key]))
     profiled = {
         company_key(alias)
         for profile in company_profiles

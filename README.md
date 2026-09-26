@@ -148,7 +148,7 @@ User-facing digests are deduplicated so reruns, rescoring, and ordinary JD chang
 - `profile/official_coverage.json` — manual Official validation state;
 - `sources/careers/query_terms.py` — shared Official role-search queries.
 
-Company profiles use only `size`, `maturity`, `sponsor`, `type`, names/aliases, and screening-relevant tags for offline enrichment. The dashboard keeps new unprofiled companies in `profile/company_profiles_pending.json` with unknown screening fields; it preserves any values already filled there. Each pending entry also keeps `seen_count` and compact `seen_job_keys`, so repeat pipeline runs do not count the same job again. To import curated findings, run:
+Company profiles use only `size`, `maturity`, `sponsor`, `type`, names/aliases, and screening-relevant tags for offline enrichment. The dashboard keeps new unprofiled companies in `profile/company_profiles_pending.json` with unknown screening fields; it preserves any values already filled there. Each pending entry also keeps `seen_count` and compact `seen_job_keys`, so repeat pipeline runs do not count the same job again. Older entries without retained job keys have a conservative minimum `seen_count` of 1. To list companies seen in at least two or three distinct jobs, run `python3 scripts/pending_company_subset.py 2` or `python3 scripts/pending_company_subset.py 3`; the JSON output includes the number and subset (without job-key hashes). To import curated findings, run:
 
 ```bash
 python3 scripts/enrich_company_profiles.py --findings /path/to/batch1.json --findings /path/to/batch2.json --apply

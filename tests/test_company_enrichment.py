@@ -8,6 +8,7 @@ from scripts.enrich_company_profiles import (
     apply_evidence, company_key, import_findings, load_pending, names_index, prune_profile_tags, resolve,
     validate_findings,
 )
+from scripts.pending_company_subset import subset
 from sources.company_aliases import match_company_entry, prepare_alias_entries
 from sources.company_pending import pending_entry
 
@@ -109,6 +110,23 @@ class CompanyEnrichmentTests(unittest.TestCase):
     def test_pending_rejects_inconsistent_job_count(self):
         with self.assertRaises(ValueError):
             pending_entry({"name": "Example", "seen_job_keys": ["a" * 24], "seen_count": 2})
+
+    def test_pending_legacy_zero_becomes_one(self):
+        self.assertEqual(1, pending_entry({"name": "Legacy", "seen_job_keys": [], "seen_count": 0})["seen_count"])
+        self.assertEqual(1, pending_entry({"name": "Legacy", "seen_job_keys": [], "seen_count": 1})["seen_count"])
+
+    def test_pending_subset_threshold(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "pending.json"
+            path.write_text(json.dumps({"companies": [
+                {"name": "Once", "seen_count": 1},
+                {"name": "Twice", "seen_job_keys": ["a" * 24, "b" * 24], "seen_count": 2},
+                {"name": "Thrice", "seen_job_keys": ["a" * 24, "b" * 24, "c" * 24], "seen_count": 3},
+            ]}), encoding="utf-8")
+            self.assertEqual(["Thrice", "Twice"], [row["name"] for row in subset(path, 2)["companies"]])
+            self.assertEqual(2, subset(path, 2)["count"])
+            self.assertEqual(["Thrice"], [row["name"] for row in subset(path, 3)["companies"]])
+            self.assertEqual(1, subset(path, 3)["count"])
 
 
 if __name__ == "__main__":

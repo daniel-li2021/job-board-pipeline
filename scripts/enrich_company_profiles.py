@@ -147,7 +147,7 @@ def load_pending(path: Path, profiles: list[dict]) -> list[dict]:
                 if old[field] == "unknown":
                     old[field] = entry[field]
             old["seen_job_keys"] = sorted(set(old["seen_job_keys"] + entry["seen_job_keys"]))
-            old["seen_count"] = len(old["seen_job_keys"])
+            old["seen_count"] = max(1, len(old["seen_job_keys"]))
             old["aliases"] = sorted(set(old["aliases"] + entry["aliases"] + [entry["name"]]) - {old["name"]})
         else:
             pending[key] = entry

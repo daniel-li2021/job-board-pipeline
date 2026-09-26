@@ -192,7 +192,7 @@ class DashboardPolicyTests(unittest.TestCase):
             self.assertEqual("New Title", main["history_details"]["same"][2])
             self.assertEqual(["A", 91], main["history_details"]["same"][5:])
             self.assertEqual({"generated_at": payload["generated_at"], "count": 2, "companies": [
-                {"name": name, "aliases": [], "size": "unknown", "maturity": "unknown", "sponsor": "unknown", "type": "unknown", "tags": [], "seen_job_keys": [], "seen_count": 0}
+                {"name": name, "aliases": [], "size": "unknown", "maturity": "unknown", "sponsor": "unknown", "type": "unknown", "tags": [], "seen_job_keys": [], "seen_count": 1}
                 for name in ("A Co", "B Co")
             ]}, pending)
             self.assertEqual(pending, json.loads(local_pending.read_text(encoding="utf-8")))
@@ -207,8 +207,8 @@ class DashboardPolicyTests(unittest.TestCase):
             with patch.object(dashboard, "LOCAL_PENDING_COMPANY_PROFILES_JSON", stored):
                 self.assertEqual(
                     [
-                        {"name": "Legacy Co", "aliases": [], "size": "50-200", "maturity": "unknown", "sponsor": "likely", "type": "unknown", "tags": [], "seen_job_keys": [], "seen_count": 0},
-                        {"name": "New Co", "aliases": [], "size": "unknown", "maturity": "unknown", "sponsor": "unknown", "type": "unknown", "tags": [], "seen_job_keys": [], "seen_count": 0},
+                        {"name": "Legacy Co", "aliases": [], "size": "50-200", "maturity": "unknown", "sponsor": "likely", "type": "unknown", "tags": [], "seen_job_keys": [], "seen_count": 1},
+                        {"name": "New Co", "aliases": [], "size": "unknown", "maturity": "unknown", "sponsor": "unknown", "type": "unknown", "tags": [], "seen_job_keys": [], "seen_count": 1},
                     ],
                     dashboard.pending_company_profiles(["New Co", "Profiled Co"], profiles),
                 )
