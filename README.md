@@ -146,6 +146,14 @@ User-facing digests are deduplicated so reruns, rescoring, and ordinary JD chang
 - `profile/official_coverage.json` — manual Official validation state;
 - `sources/careers/query_terms.py` — shared Official role-search queries.
 
+Company profiles use only `size`, `maturity`, `sponsor`, `type`, names/aliases, and screening-relevant tags for offline enrichment. The dashboard keeps new unprofiled companies in `profile/company_profiles_pending.json` with unknown screening fields; it preserves any values already filled there. To import curated findings and enrich profiles/pending from local USCIS, DOL, and SEC downloads, run:
+
+```bash
+python3 scripts/enrich_company_profiles.py --findings /path/to/company_profiles_clean_620.json --data-dir /path/to/downloads --apply
+```
+
+Omit `--findings` on later runs to enrich newly pending companies. Omit `--apply` to preview counts. The script reads `Employer Information.csv`, the FY2024–FY2026 LCA workbooks, and `company_tickers.json`; it does not crawl or use an API. It keeps unknown values when evidence is absent, preserves existing size and conflicting classifications, and writes uncertain matches to `profile/company_profiles_manual_review.json`. JD sponsorship remains authoritative over company-level values. Raw downloads are local inputs, not committed artifacts.
+
 ## State and validation
 
 Owned job stores, watchlists, digest histories and the optional committed review overlay reject corrupt data rather than resetting it. Writes use atomic replacement to retain the previous complete file if writing fails. Missing files can initialize empty state; unavailable optional peer caches do not block another pipeline. Supported legacy record formats remain readable.

@@ -1,0 +1,1134 @@
+{
+  "generated_at": "2026-09-25",
+  "count": 160,
+  "summary": {
+    "added": 614,
+    "existing_matched": 6,
+    "sponsor_likely": 825,
+    "type_filled": 107,
+    "maturity_established": 111,
+    "tags_simplified": 841
+  },
+  "items": [
+    {
+      "name": "22nd Century Technologies Inc.",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=31, certified LCAs=22"
+    },
+    {
+      "name": "AbbVie",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Accenture",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=3113, certified LCAs=2040"
+    },
+    {
+      "name": "Achronix",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "ADTRAN",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Advanced Solutions International, Advanced Solutions International, Inc.",
+      "field": "identity",
+      "existing": "",
+      "candidate": "advancedsolutionsinternational",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Advantest",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Agilent Technologies",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Airbnb",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Akamai, Akamai Technologies",
+      "field": "identity",
+      "existing": "",
+      "candidate": "akamaitechnologies",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "All IT Solutions, All IT Solutions LLC",
+      "field": "identity",
+      "existing": "",
+      "candidate": "allitsolutions",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Altera",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "AMD",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Ampcus, Ampcus Inc",
+      "field": "identity",
+      "existing": "",
+      "candidate": "ampcus",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Ampere Computing",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Anagh Technologies Inc",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=25, certified LCAs=31"
+    },
+    {
+      "name": "Apex Systems",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=15, certified LCAs=5"
+    },
+    {
+      "name": "AppLovin",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "ASML",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Beta Bionics",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "BETA Technologies",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "BETA Technologies",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Bitdeer Technologies Group",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Block",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Blue Owl Capital",
+      "field": "maturity",
+      "existing": "unknown",
+      "candidate": "established",
+      "reason": "SEC name maps to multiple CIKs"
+    },
+    {
+      "name": "Booz Allen Hamilton",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=17, certified LCAs=10"
+    },
+    {
+      "name": "Bosch",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Boston Scientific",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Broad Institute, Broad Institute of MIT and Harvard",
+      "field": "identity",
+      "existing": "",
+      "candidate": "broadinstituteofmitandharvard",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "BTI Solutions",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=24, certified LCAs=25"
+    },
+    {
+      "name": "Cadence Design Systems",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Cambia Health Solutions",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "finance",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Carvana",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Cboe, Cboe Global Markets",
+      "field": "identity",
+      "existing": "",
+      "candidate": "cboeglobalmarkets",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Centennial Technologies",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=3, certified LCAs=3"
+    },
+    {
+      "name": "CesiumAstro",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Chobani",
+      "field": "type",
+      "existing": "other",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Ciena",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Cimarron Software Services, Cimarron Software Services Inc",
+      "field": "identity",
+      "existing": "",
+      "candidate": "cimarronsoftwareservices",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Citizens, Citizens Financial Group",
+      "field": "identity",
+      "existing": "",
+      "candidate": "citizensfinancialgroup",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Cloudflare",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Colgate-Palmolive",
+      "field": "type",
+      "existing": "retail",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Conagra Brands",
+      "field": "type",
+      "existing": "retail",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "CoreWeave",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Cox Automotive Inc.",
+      "field": "type",
+      "existing": "other",
+      "candidate": "tech",
+      "reason": "curated finding conflicts with existing profile"
+    },
+    {
+      "name": "Cygnus Professionals Inc.",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=26, certified LCAs=17"
+    },
+    {
+      "name": "Cyngn",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Day & Zimmermann",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=0, certified LCAs=5"
+    },
+    {
+      "name": "Denso",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Digital Foundry, Digital Foundry, Inc.",
+      "field": "identity",
+      "existing": "",
+      "candidate": "digitalfoundry",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "DivIHN Integration Inc",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=3, certified LCAs=9"
+    },
+    {
+      "name": "DoorDash",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Duolingo",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Eccalon, LLC",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=3, certified LCAs=2"
+    },
+    {
+      "name": "EchoStar Corporation",
+      "field": "type",
+      "existing": "industrial",
+      "candidate": "tech",
+      "reason": "curated finding conflicts with existing profile"
+    },
+    {
+      "name": "Eikon Therapeutics",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Eli Lilly",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Eliassen Group",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=110, certified LCAs=100"
+    },
+    {
+      "name": "Emonics LLC",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=51, certified LCAs=56"
+    },
+    {
+      "name": "Eos Energy Storage",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Epitec",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=139, certified LCAs=90"
+    },
+    {
+      "name": "Etsy",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "retail",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "EVgo",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Exelixis",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Fairlife, LLC, fairlife",
+      "field": "identity",
+      "existing": "",
+      "candidate": "fairlife",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Fervo Energy",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Fifth Third, Fifth Third Bank",
+      "field": "identity",
+      "existing": "",
+      "candidate": "fifththirdbank",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Figma",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Flowserve, Flowserve Corporation",
+      "field": "identity",
+      "existing": "",
+      "candidate": "flowserve",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Forgent Power Solutions, Inc.",
+      "field": "maturity",
+      "existing": "early_startup",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "General Dynamics / GDIT",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=35, certified LCAs=20"
+    },
+    {
+      "name": "GlobalFoundries",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Google, X Development",
+      "field": "identity",
+      "existing": "",
+      "candidate": "xthemoonshotfactory",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "GSK",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "HARMAN International",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Hasbro, Hasbro, Inc.",
+      "field": "identity",
+      "existing": "",
+      "candidate": "hasbro",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "HNTB, HNTB Corporation",
+      "field": "identity",
+      "existing": "",
+      "candidate": "hntb",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "HP, HP Inc.",
+      "field": "identity",
+      "existing": "",
+      "candidate": "hpinc",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "ICON plc, Icon",
+      "field": "identity",
+      "existing": "",
+      "candidate": "icon",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "iFIT",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Illumina",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Innovecture",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=4, certified LCAs=3"
+    },
+    {
+      "name": "Insulet Corporation",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Intel",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Intuitive",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "JRSS",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=9, certified LCAs=6"
+    },
+    {
+      "name": "Karmak, Karmak, Inc.",
+      "field": "identity",
+      "existing": "",
+      "candidate": "karmak",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Keysight Technologies",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "KLA",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Lambda",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Leidos",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=87, certified LCAs=50"
+    },
+    {
+      "name": "Lorvenk Technologies",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=8, certified LCAs=37"
+    },
+    {
+      "name": "Medtronic",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Microchip Technology",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Micron Technology",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Molex",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "MongoDB",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Navan",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Neogen, Neogen Corporation",
+      "field": "identity",
+      "existing": "",
+      "candidate": "neogen",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "New York Times, The New York Times",
+      "field": "identity",
+      "existing": "",
+      "candidate": "thenewyorktimes",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Nexstar Media Group, Nexstar Media Group, Inc.",
+      "field": "identity",
+      "existing": "",
+      "candidate": "nexstarmediagroup",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "NextPower",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "NVIDIA",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "O'Neil Digital Solutions",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Omada Health",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Onto Innovation",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Outset",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Patrick Industries, Patrick Industries, Inc.",
+      "field": "identity",
+      "existing": "",
+      "candidate": "patrickindustries",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Peloton Interactive",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "retail",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Penumbra, Inc.",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "PepsiCo",
+      "field": "type",
+      "existing": "retail",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Pfizer",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Pony.ai",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Qualcomm",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Reddit",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Regions Bank, Regions Financial",
+      "field": "identity",
+      "existing": "",
+      "candidate": "regionsbank",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Revolution Medicines",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Revolution Medicines",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Roblox",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Rocket",
+      "field": "sponsor",
+      "existing": "unknown",
+      "candidate": "likely",
+      "reason": "2024-only LCA history is not recent evidence"
+    },
+    {
+      "name": "Rocket Lab USA",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Rocket Lab USA",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=4, certified LCAs=5"
+    },
+    {
+      "name": "Samsara",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Samsara",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Scale AI",
+      "field": "size",
+      "existing": "1k-5k",
+      "candidate": "200-1k",
+      "reason": "curated finding conflicts with existing profile"
+    },
+    {
+      "name": "SCAN Health Plan",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "finance",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Serco",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=8, certified LCAs=1"
+    },
+    {
+      "name": "SICK",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Skydio",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Snowflake",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "SpaceX",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=37, certified LCAs=33"
+    },
+    {
+      "name": "Spreetail",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "retail",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Stryker",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Super Micro Computer, Inc.",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Super Micro Computer, Inc., Supermicro",
+      "field": "identity",
+      "existing": "",
+      "candidate": "supermicro",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Symbotic",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Symbotic",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Tenaska, Tenaska, Inc.",
+      "field": "identity",
+      "existing": "",
+      "candidate": "tenaska",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Tennant, Tennant Company",
+      "field": "identity",
+      "existing": "",
+      "candidate": "tennant",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Teradyne",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Tesla",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Texas Instruments",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "TherapyNotes, TherapyNotes, LLC",
+      "field": "identity",
+      "existing": "",
+      "candidate": "therapynotes",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Trimble Inc.",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "TSMC",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Tyson Foods, Tyson Foods Incorporated",
+      "field": "identity",
+      "existing": "",
+      "candidate": "tysonfoods",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Vanda Pharmaceuticals",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "VeeRteq Solutions, VeeRteq Solutions Inc.",
+      "field": "identity",
+      "existing": "",
+      "candidate": "veerteqsolutions",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Venture Global LNG",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Wachter, Wachter, Inc.",
+      "field": "identity",
+      "existing": "",
+      "candidate": "wachter",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "Wealthfront",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "WeRide",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Williams International",
+      "field": "sponsor",
+      "existing": "unlikely",
+      "candidate": "likely",
+      "reason": "recent USCIS approvals=8, certified LCAs=10"
+    },
+    {
+      "name": "Yext",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Yield Solutions Group, Yield Solutions Group LLC",
+      "field": "identity",
+      "existing": "",
+      "candidate": "yieldsolutionsgroup",
+      "reason": "ambiguous normalized name/alias"
+    },
+    {
+      "name": "York Space Systems",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    },
+    {
+      "name": "Zebra Technologies",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "ZOLL Medical Corporation",
+      "field": "type",
+      "existing": "healthcare",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Zoox",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "Zscaler",
+      "field": "maturity",
+      "existing": "growth",
+      "candidate": "established",
+      "reason": "exact SEC company-title match"
+    }
+  ]
+}

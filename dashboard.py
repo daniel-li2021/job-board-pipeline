@@ -18,6 +18,7 @@ import alert_history
 import pipeline_health
 from sources.company_aliases import company_risk_rank, load_alias_file, match_company_alias, match_company_entry
 from sources.schema import classify_location_bucket, normalize_company_key, normalize_sponsorship, normalize_title_key
+from sources.company_pending import company_key, pending_entry
 from state_io import decode_json_bytes
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -203,17 +204,27 @@ def sponsorship_label(entry: Dict[str, Any], company_profile: Optional[Dict[str,
 
 def pending_company_profiles(
     seen_companies: Iterable[str], company_profiles: Iterable[Dict[str, Any]]
-) -> List[str]:
+) -> List[Dict[str, Any]]:
     """Accumulate every seen unprofiled company and drop newly profiled names."""
     stored = read_json(LOCAL_PENDING_COMPANY_PROFILES_JSON, {})
     existing = stored.get("companies", []) if isinstance(stored, dict) else []
-    pending = {
-        str(company).strip() for company in existing if str(company).strip()
-    } if isinstance(existing, list) else set()
-    pending.update(str(company).strip() for company in seen_companies if str(company).strip())
+    pending = {}
+    for raw in (existing if isinstance(existing, list) else []):
+        if entry := pending_entry(raw):
+            pending[normalize_company_key(entry["name"])] = entry
+    for company in seen_companies:
+        if entry := pending_entry(company):
+            pending.setdefault(normalize_company_key(entry["name"]), entry)
+    profiled = {
+        company_key(alias)
+        for profile in company_profiles
+        for alias in [profile["name"], *profile.get("aliases", [])]
+    }
     return sorted(
-        (company for company in pending if not match_company_entry(company, company_profiles)),
-        key=str.casefold,
+        (entry for entry in pending.values() if not any(
+            company_key(alias) in profiled for alias in [entry["name"], *entry["aliases"]]
+        )),
+        key=lambda entry: entry["name"].casefold(),
     )
 
 
@@ -924,7 +935,7 @@ def write_dashboard(payload: Dict[str, Any]) -> None:
                     old if new in (None, "", "-") else new
                     for old, new in zip(old_values, new_values)
                 ]
-    pending = payload.get("company_profiles_pending") or []
+    pending = [entry for raw in payload.get("company_profiles_pending") or [] if (entry := pending_entry(raw))]
     pending_payload = json.dumps({
         "generated_at": payload.get("generated_at", ""), "count": len(pending), "companies": pending,
     }, indent=2, ensure_ascii=False) + "\n"

@@ -88,14 +88,17 @@ def match_company_entry(
         return None
     forms = _company_forms(company_name)
     tokens = {t for t in re.split(r"[^a-z0-9]+", (company_name or "").lower()) if t}
+    fallback = None
     for entry in entries:
         if forms.intersection(entry.get("norm_exclude_aliases") or []):
             continue
         aliases = entry.get("norm_aliases") or []
+        if key in aliases:
+            return entry
         for alias in aliases:
-            if alias in forms or alias in tokens:
-                return entry
-    return None
+            if fallback is None and (alias in forms or alias in tokens):
+                fallback = entry
+    return fallback
 
 
 def match_company_alias(company_name: str, entries: Iterable[Dict[str, Any]]) -> Optional[str]:

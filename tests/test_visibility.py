@@ -191,19 +191,35 @@ class DashboardPolicyTests(unittest.TestCase):
             self.assertEqual("Old Job", main["history_details"]["old"][2])
             self.assertEqual("New Title", main["history_details"]["same"][2])
             self.assertEqual(["A", 91], main["history_details"]["same"][5:])
-            self.assertEqual({"generated_at": payload["generated_at"], "count": 2, "companies": ["A Co", "B Co"]}, pending)
+            self.assertEqual({"generated_at": payload["generated_at"], "count": 2, "companies": [
+                {"name": name, "aliases": [], "size": "unknown", "maturity": "unknown", "sponsor": "unknown", "type": "unknown", "tags": []}
+                for name in ("A Co", "B Co")
+            ]}, pending)
             self.assertEqual(pending, json.loads(local_pending.read_text(encoding="utf-8")))
 
     def test_pending_company_profiles_accumulate_and_drop_curated_names(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             stored = Path(tmpdir) / "company_profiles_pending.json"
-            stored.write_text(json.dumps({"companies": ["Legacy Co", "Profiled Alias"]}), encoding="utf-8")
+            stored.write_text(json.dumps({"companies": [
+                {"name": "Legacy Co", "size": "50-200", "sponsor": "likely"}, "Profiled Alias",
+            ]}), encoding="utf-8")
             profiles = prepare_alias_entries([{"name": "Profiled Co", "aliases": ["Profiled Alias"]}])
             with patch.object(dashboard, "LOCAL_PENDING_COMPANY_PROFILES_JSON", stored):
                 self.assertEqual(
-                    ["Legacy Co", "New Co"],
+                    [
+                        {"name": "Legacy Co", "aliases": [], "size": "50-200", "maturity": "unknown", "sponsor": "likely", "type": "unknown", "tags": []},
+                        {"name": "New Co", "aliases": [], "size": "unknown", "maturity": "unknown", "sponsor": "unknown", "type": "unknown", "tags": []},
+                    ],
                     dashboard.pending_company_profiles(["New Co", "Profiled Co"], profiles),
                 )
+
+    def test_pending_does_not_drop_unrelated_token_matches(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            stored = Path(tmpdir) / "company_profiles_pending.json"
+            stored.write_text(json.dumps({"companies": ["Strong Point", "Point Inc."]}), encoding="utf-8")
+            profiles = prepare_alias_entries([{"name": "Point", "aliases": []}])
+            with patch.object(dashboard, "LOCAL_PENDING_COMPANY_PROFILES_JSON", stored):
+                self.assertEqual(["Strong Point"], [entry["name"] for entry in dashboard.pending_company_profiles([], profiles)])
 
     def test_pending_company_capture_precedes_dashboard_filtering(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -224,7 +240,7 @@ class DashboardPolicyTests(unittest.TestCase):
             ):
                 payload = dashboard.build_payload(datetime(2026, 9, 16, tzinfo=timezone.utc))
             self.assertEqual([], payload["workflow_rows"])
-            self.assertEqual(["Filtered Co", "Legacy Co"], payload["company_profiles_pending"])
+            self.assertEqual(["Filtered Co", "Legacy Co"], [entry["name"] for entry in payload["company_profiles_pending"]])
 
     def test_observability_cards_share_one_responsive_row_and_legacy_telemetry_is_unknown(self) -> None:
         template = dashboard.HTML_TEMPLATE
