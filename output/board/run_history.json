@@ -2,6 +2,263 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-09-26T12:47:44.473350+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 5,
+      "cache_reused": 205,
+      "peer_reused": 0,
+      "same_content_reused": 3,
+      "non_material_change_reused": 0,
+      "new_or_changed": 7,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 5,
+        "prior_rule_result_now_eligible_for_llm": 2
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 693,
+      "requests": 2,
+      "input_tokens": 9331,
+      "cached_input_tokens": 0,
+      "output_tokens": 927,
+      "reasoning_tokens": 536,
+      "estimated_usd": 0.001397,
+      "latency_seconds": 10.408,
+      "latency_measured": true,
+      "effective_rpm": 11.53,
+      "effective_tpm": 59135.28,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 5,
+      "funnel": {
+        "after_dedup": 5463,
+        "after_company": 5304,
+        "after_hard_filter": 4879,
+        "after_prefilter": 1242,
+        "official_duplicates_suppressed": 339,
+        "retry_only_carried": 0,
+        "dropped": 4183
+      },
+      "output": {
+        "tier_a": 43,
+        "tier_b": 177,
+        "ab_before_cap": 220,
+        "shown": 220,
+        "new_jobs": 10,
+        "new_jobs_added": 2,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 1,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 9,
+            "added": 2
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 1615,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 1667,
+          "http_requests": 129,
+          "jds_resolved": 38,
+          "direct_http_resolved": 38,
+          "scrapling_requests": 51,
+          "identity_needed": 52,
+          "identities_resolved": 52,
+          "cache_reused": 6,
+          "remaining_no_jd": 1583,
+          "failure_reasons": {
+            "no_direct_or_official_url": 1114,
+            "structured_jd_not_found": 49,
+            "scrapling_http_404": 2,
+            "official_detail_deferred": 36,
+            "linkedin_rate_limited": 8,
+            "glassdoor_detail_http_403_static_card_only": 374
+          }
+        },
+        "remaining_no_jd": 1579,
+        "failure_reasons": {
+          "no_direct_or_official_url": 1114,
+          "structured_jd_not_found": 45,
+          "scrapling_http_404": 2,
+          "official_detail_deferred": 36,
+          "linkedin_rate_limited": 8,
+          "glassdoor_detail_http_403_static_card_only": 374
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4470378803",
+              "company": "Adyen",
+              "title": "Software Engineer II (Kotlin) - Core Experience"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.105,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2873,
+            "cached_input_tokens": 0,
+            "output_tokens": 153,
+            "reasoning_tokens": 77,
+            "estimated_usd": 0.000364
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4470378803",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production software engineering",
+                "Automated testing experience"
+              ],
+              "main_gaps": [
+                "5+ years Kotlin Android",
+                "Enterprise SDK development"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.everlaw.com/careers/4705236006",
+              "company": "Everlaw",
+              "title": "Software Engineer I"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/Rogo/04777127-53d6-49cb-9372-4332280857a1",
+              "company": "Rogo",
+              "title": "Software Engineer: Platform"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/Clera/4e176114-dc4a-455c-99e8-30e77a353b32",
+              "company": "Clera",
+              "title": "Machine Learning Engineer"
+            },
+            {
+              "key": "id::linkedin::4387694317",
+              "company": "JPMorganChase",
+              "title": "Software Engineer III - Agentic AI, Java/Python"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 7.303,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 4,
+            "input_tokens": 6458,
+            "cached_input_tokens": 0,
+            "output_tokens": 774,
+            "reasoning_tokens": 459,
+            "estimated_usd": 0.001033
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.everlaw.com/careers/4705236006",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "End-to-end product engineering",
+                "Strong CS and coding foundation"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/Rogo/04777127-53d6-49cb-9372-4332280857a1",
+              "match_score": 44.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud deployment experience",
+                "Distributed systems background"
+              ],
+              "main_gaps": [
+                "Production Kubernetes scaling",
+                "SLOs and capacity planning"
+              ]
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/Clera/4e176114-dc4a-455c-99e8-30e77a353b32",
+              "match_score": 69.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production AI system deployment",
+                "Python ML and evaluation"
+              ],
+              "main_gaps": [
+                "3+ years production ML",
+                "A/B testing experience"
+              ]
+            },
+            {
+              "key": "id::linkedin::4387694317",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Agentic AI and LLM systems",
+                "Python, Spark, and PyTorch"
+              ],
+              "main_gaps": [
+                "3+ years applied experience",
+                "Distributed ML computation"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-09-26T05:20:14.173724+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -33022,114 +33279,6 @@
           ]
         }
       ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-09-22T19:21:57.579288+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-5.6-terra",
-      "scoring_version": "",
-      "reasoning_effort": "",
-      "jobs_scored": 0,
-      "cache_reused": 217,
-      "peer_reused": 0,
-      "same_content_reused": 0,
-      "non_material_change_reused": 0,
-      "new_or_changed": 0,
-      "new_or_changed_reasons": {},
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 512,
-      "requests": 0,
-      "input_tokens": 0,
-      "cached_input_tokens": 0,
-      "output_tokens": 0,
-      "reasoning_tokens": 0,
-      "estimated_usd": 0.0,
-      "latency_seconds": 0.0,
-      "latency_measured": true,
-      "effective_rpm": null,
-      "effective_tpm": null,
-      "json_reliability": null,
-      "json_reliability_measured": true,
-      "batches_total": 0,
-      "primary_batches_total": 0,
-      "batches_attempted": 0,
-      "batches_succeeded": 0,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 0,
-      "funnel": {
-        "after_dedup": 4975,
-        "after_company": 4689,
-        "after_hard_filter": 4298,
-        "after_prefilter": 1058,
-        "official_duplicates_suppressed": 329,
-        "retry_only_carried": 0,
-        "dropped": 3780
-      },
-      "output": {
-        "tier_a": 59,
-        "tier_b": 238,
-        "ab_before_cap": 297,
-        "shown": 297,
-        "new_jobs": 12,
-        "new_jobs_added": 0,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 12,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 0,
-            "added": 0
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 1253,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 1489,
-          "http_requests": 331,
-          "jds_resolved": 130,
-          "direct_http_resolved": 130,
-          "scrapling_requests": 43,
-          "identity_needed": 236,
-          "identities_resolved": 236,
-          "remaining_no_jd": 1201,
-          "failure_reasons": {
-            "no_direct_or_official_url": 786,
-            "structured_jd_not_found": 42,
-            "scrapling_error:Timeout": 1,
-            "glassdoor_detail_http_403_static_card_only": 372
-          }
-        },
-        "remaining_no_jd": 1194,
-        "failure_reasons": {
-          "no_direct_or_official_url": 786,
-          "structured_jd_not_found": 35,
-          "scrapling_error:Timeout": 1,
-          "glassdoor_detail_http_403_static_card_only": 372
-        }
-      },
-      "comparison": {},
-      "batches": []
     }
   ]
 }
