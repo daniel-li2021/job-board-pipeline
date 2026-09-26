@@ -1,7 +1,7 @@
-# Big Tech official careers — 7-day view — 2026-09-26_1443
+# Big Tech official careers — 7-day view — 2026-09-26_2344
 
-- Updated (PT): 2026-09-26 07:46 PDT
-- Snapshot (UTC): 2026-09-26T14:46:26.782040+00:00
+- Updated (PT): 2026-09-26 16:46 PDT
+- Snapshot (UTC): 2026-09-26T23:46:36.092051+00:00
 - Last 24 hours: 1
 - Last 3 days: 25
 
@@ -9,13 +9,13 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 
 ## Run stats
 
-- Scraped companies: {'Amazon': 707, 'Salesforce': 172, 'JPMorgan Chase': 587, 'HPE': 240, 'eBay': 63, 'Capital One': 389, 'Cisco': 206, 'AMD': 494, 'Google': 303, 'Wells Fargo': 90, 'Walmart Global Tech': 383, 'Apple': 294, 'F5': 3, 'CVS Health': 137, 'Microsoft': 212, 'Expedia Group': 62, 'Qualcomm': 159, 'Disney': 138, 'Snap': 96, 'Oracle': 469, 'Adobe': 203, 'NVIDIA': 476, 'Uber': 148, 'Dell': 87, 'Johnson & Johnson': 214, 'Meta': 627, 'Workday': 128, 'TikTok': 713, 'DoorDash': 456, 'Pinterest': 115, 'Snowflake': 257, 'ServiceNow': 397, 'Bloomberg': 26, 'Cloudflare': 392, 'Stripe': 409, 'Coinbase': 176, 'Robinhood': 148, 'Figma': 108, 'GitLab': 113, 'Discord': 49, 'Asana': 75, 'Brex': 253, 'Samsara': 204, 'Lyft': 94, 'Spotify': 63, 'Ramp': 140, 'Notion': 75, 'Linear': 28, 'Cohere': 120, 'Zoom': 47, 'Pure Storage': 216, 'Databricks': 495, 'Roblox': 237, 'Airbnb': 91, 'Anthropic': 497, 'AppLovin': 31, 'ByteDance': 447, 'Chime': 66, 'Dropbox': 35, 'HubSpot': 31, 'Instacart': 101, 'Intel': 138, 'MathWorks': 34, 'MongoDB': 250, 'Morgan Stanley': 110, 'NetApp': 88, 'Netflix': 58, 'OpenAI': 679, 'Palantir': 247, 'PayPal': 48, 'Reddit': 132, 'Red Hat': 42, 'Roku': 201, 'Block / Square': 198, 'Two Sigma': 40, 'Verkada': 246, 'Visa': 107, 'WeRide': 13, 'Zillow': 41, 'Zscaler': 235, 'Chewy': 1, 'Duolingo': 75, 'Equinix': 30, 'IXL Learning': 101, 'Yahoo': 67, 'Ansys': 25, 'Flex': 160, 'IQVIA': 30, 'Nasdaq': 29, 'PointClickCare': 77, 'Stryker': 134, 'TransUnion': 33, 'Travelers': 88, 'Verizon': 18, 'Yext': 9}
-- Funnel: after dedup 17528 -> after company filter 17528 -> after hard filter 14352 -> after role+seniority prefilter 3249 | dropped 14279
-- LLM usage: scored 7 / API requests 3 / cache reused 771 (cross-pipeline 0) / rule fallback 2471
-- LLM cache causes: new 4 / material JD 13 / matching context 0 / prior rule now eligible 1 / non-material reused 0 / same-content reused 15 / rescored <24h 2
-- LLM cost: model gpt-6-luna / API requests 3 / jobs scored 7 / tokens input 12372 (cached 0) / output 1818 (reasoning 1178) / estimated cost $0.0021
-- New jobs discovered this run: 68
-- Output: Tier A 13 / Tier B 34 / shown 47
+- Scraped companies: {'Amazon': 702, 'Salesforce': 172, 'JPMorgan Chase': 580, 'HPE': 240, 'eBay': 60, 'Capital One': 390, 'Cisco': 204, 'AMD': 494, 'Google': 302, 'Wells Fargo': 89, 'Walmart Global Tech': 383, 'Apple': 276, 'F5': 3, 'Oracle': 471, 'CVS Health': 137, 'Microsoft': 209, 'Expedia Group': 62, 'Disney': 138, 'Snap': 96, 'Adobe': 203, 'NVIDIA': 476, 'Uber': 147, 'Qualcomm': 150, 'Dell': 87, 'Johnson & Johnson': 213, 'Meta': 625, 'TikTok': 711, 'DoorDash': 456, 'Pinterest': 115, 'Snowflake': 257, 'ServiceNow': 397, 'Bloomberg': 26, 'Cloudflare': 391, 'Stripe': 408, 'Coinbase': 176, 'Robinhood': 148, 'Figma': 108, 'GitLab': 113, 'Discord': 49, 'Asana': 75, 'Brex': 253, 'Samsara': 204, 'Lyft': 94, 'Spotify': 63, 'Ramp': 140, 'Notion': 75, 'Linear': 28, 'Cohere': 120, 'Zoom': 47, 'Pure Storage': 216, 'Databricks': 495, 'Roblox': 237, 'Airbnb': 91, 'Anthropic': 496, 'AppLovin': 31, 'ByteDance': 447, 'Chime': 66, 'Dropbox': 35, 'HubSpot': 31, 'Instacart': 101, 'Intel': 138, 'MathWorks': 34, 'MongoDB': 250, 'Morgan Stanley': 111, 'NetApp': 87, 'Netflix': 58, 'OpenAI': 679, 'Palantir': 247, 'PayPal': 49, 'Reddit': 132, 'Red Hat': 41, 'Roku': 201, 'Block / Square': 198, 'Two Sigma': 40, 'Verkada': 246, 'Visa': 107, 'WeRide': 13, 'Workday': 127, 'Zillow': 41, 'Zscaler': 235, 'Chewy': 1, 'Duolingo': 75, 'Equinix': 30, 'IXL Learning': 101, 'Yahoo': 67, 'Ansys': 25, 'Flex': 160, 'IQVIA': 30, 'Nasdaq': 29, 'PointClickCare': 77, 'Stryker': 134, 'TransUnion': 33, 'Travelers': 88, 'Verizon': 18, 'Yext': 9}
+- Funnel: after dedup 17473 -> after company filter 17473 -> after hard filter 14299 -> after role+seniority prefilter 3198 | dropped 14275
+- LLM usage: scored 2 / API requests 1 / cache reused 501 (cross-pipeline 0) / rule fallback 2695
+- LLM cache causes: new 3 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 2 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 1 / jobs scored 2 / tokens input 5941 (cached 0) / output 712 (reasoning 485) / estimated cost $0.0009
+- New jobs discovered this run: 7
+- Output: Tier A 13 / Tier B 31 / shown 44
 
 ## Tier A - apply now / referral (13)
 
@@ -35,11 +35,11 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 92 | cached_llm | official | Cisco | Software Quality Assurance Engineer I (Full-Time) - United States | RTP, North Carolina, US | 2026-09-22 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Software-Quality-Assurance-Engineer-I--Full-Time----United-States_2026301) |
 | 91 | cached_llm | official | HPE | AI and Machine Learning Engineer I Graduate | San Jose, California, United States of America | 2026-09-18 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/San-Jose-California-United-States-of-America/AI-and-Machine-Learning-Engineer-I-Graduate_1211881) |
 
-## Tier B - worth applying (34)
+## Tier B - worth applying (31)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 86 | llm | official | Apple | Machine Learning Engineer, Proactive | Cupertino, United States of America | 2026-09-26 | 3to24h | high | ai | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200685771/machine-learning-engineer-proactive) |
+| 86 | cached_llm | official | Apple | Machine Learning Engineer, Proactive | Cupertino, United States of America | 2026-09-26 | 3to24h | high | ai | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200685771/machine-learning-engineer-proactive) |
 | 85 | cached_llm | official | Microsoft | Software Engineer - User Experience | United States, Washington, Redmond | 2026-09-25 | 1to3d | high | swe | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557004928) |
 | 84 | cached_llm | official | Apple | CAD Engineer - Signoff Infrastructure | Austin, United States of America | 2026-09-25 | 1to3d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200685871/cad-engineer-signoff-infrastructure) |
 | 74 | cached_llm | official | CVS Health | Software Development Engineer | PA - Work from home | 2026-09-25 | 1to3d | high | swe | CVS | unreviewed | official_canonical | [open](https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/PA---Work-from-home/Software-Development-Engineer_R1038482) |
@@ -65,11 +65,8 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 85 | cached_llm | official | CVS Health | Decision Scientist - Utilization Management | MA - Wellesley; Work At Home-New York; NY - New York | 2026-09-22 | 3to7d | high | ai | CVS | unreviewed | official_canonical | [open](https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/MA---Wellesley/Decision-Scientist---Utilization-Management_R1050866-1) |
 | 87 | cached_llm | official | Amazon | Applied Scientist, AWS Applied AI Solutions - Life Sciences | Seattle, Washington, USA | 2026-09-22 | 3to7d | high | ai | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10555716/applied-scientist-aws-applied-ai-solutions-life-sciences) |
 | 86 | cached_llm | official | Microsoft | Software Engineer II | United States, Washington, Redmond | 2026-09-23 | 3to7d | high | swe | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557007221) |
-| 88 | cached_llm | official | Adobe | 2027 University Graduate - AI Forward Deployed Engineer | San Francisco; San Jose | 2026-09-22 | 3to7d | high | swe | Adobe | unreviewed | official_canonical | [open](https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Francisco/XMLNAME-2027-University-Graduate---AI-Forward-Deployed-Engineer_R172018) |
 | 84 | cached_llm | official | Apple | Software Engineer, Employee Experience & Productivity | Culver City, United States of America | 2026-09-21 | 3to7d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200671481/software-engineer-employee-experience-productivity) |
 | 84 | cached_llm | official | Apple | Software Engineer, Employee Experience & Productivity | Culver City, United States of America | 2026-09-21 | 3to7d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200652948/software-engineer-employee-experience-productivity) |
 | 83 | cached_llm | official | Amazon | Associate Solutions Architect, AGI-Tech, Early Career - 2027 | Seattle, Washington, USA | 2026-09-23 | 3to7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10558472/associate-solutions-architect-agi-tech-early-career-2027) |
 | 83 | cached_llm | official | Microsoft | Software Engineer - Intune | United States, Massachusetts, Cambridge | 2026-09-23 | 3to7d | high | swe | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556982924) |
-| 81 | cached_llm | official | F5 | Software Engineer I | Seattle | 2026-09-22 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://ffive.wd5.myworkdayjobs.com/f5jobs/job/Seattle/Software-Engineer-I_RP1038827-1) |
-| 81 | cached_llm | official | CVS Health | Software Development Engineer | Work At Home-South Carolina | 2026-09-23 | 3to7d | high | swe | CVS | unreviewed | official_canonical | [open](https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/Work-At-Home-South-Carolina/Software-Development-Engineer_R1008053) |
 | 76 | cached_llm | official | TikTok | Machine Learning Engineer Graduate (E-Commerce Recommendation Video) - | San Jose, California, United States of America | - | gt7d | unknown | ai | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7686999927260105013) |
