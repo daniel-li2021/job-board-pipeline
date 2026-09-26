@@ -82,6 +82,7 @@ class PipelineHealthTests(unittest.TestCase):
             self.assertEqual("Big Company Official (GitHub)", item["label"])
             self.assertEqual("1 scraper failed: Oracle timeout ×3", item["issue"])
             self.assertEqual({"oracle timeout": 3}, item["failure_streaks"])
+            self.assertEqual(0, item["consecutive_failures"])
             self.assertEqual(good_at, item["last_good_at"])
             self.assertEqual(now.isoformat(), item["latest_attempt_at"])
             public = root / "public"
@@ -508,7 +509,7 @@ class PipelineHealthTests(unittest.TestCase):
                     official = report["components"]["official"]
                     self.assertEqual(expected, official["status"])
                     self.assertEqual(count, official["scraper_error_count"])
-                    self.assertEqual(1, official["consecutive_failures"])
+                    self.assertEqual(1 if count >= 5 else 0, official["consecutive_failures"])
                     self.assertEqual("degraded" if count >= 5 else "limited", official["latest_attempt_status"])
                     self.assertIn(f"{count} scraper failures", official["keywords"])
                     self.assertIn(f"{count} scraper failures", official["detail"])
@@ -543,6 +544,10 @@ class PipelineHealthTests(unittest.TestCase):
             self.assertEqual(2, pipeline_health._official_scraper_streak(history, "source-0", "429", run["run_at"]))
             history[1].pop("scrape_failure_causes")
             self.assertEqual(1, pipeline_health._official_scraper_streak(history, "source-0", "429", run["run_at"]))
+            self.assertEqual(2, pipeline_health._consecutive_official_degraded(root, history, run, 5))
+            self.assertEqual(0, pipeline_health._consecutive_official_degraded(root, history, run, 4))
+            history[1].pop("scrape_failure_sources")
+            self.assertEqual(1, pipeline_health._consecutive_official_degraded(root, history, run, 5))
 
             official_dir = root / "output" / "official_careers"
             official_dir.mkdir(parents=True)

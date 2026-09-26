@@ -141,6 +141,22 @@ def _consecutive_degraded(history: list[dict[str, Any]], pipeline: str) -> int:
     return count
 
 
+def _consecutive_official_degraded(
+    base: Path, history: list[dict[str, Any]], run: dict[str, Any], current_count: int
+) -> int:
+    if current_count < 5:
+        return 0
+    count = 1
+    for previous in (item for item in history if item.get("pipeline") == "official"):
+        if previous.get("run_at") == run.get("run_at"):
+            continue
+        sources = previous.get("scrape_failure_sources")
+        if sources is None or _official_scraper_count(base, sources) < 5:
+            break
+        count += 1
+    return count
+
+
 def _official_scraper_streak(history: list[dict[str, Any]], source: str, cause: str,
                              current_stamp: str) -> int:
     count = 1
@@ -330,7 +346,7 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             for name, errors in failed_scrapers.items()
         }
         consecutive_failures = (
-            max(scraper_streaks.values(), default=0)
+            _consecutive_official_degraded(base, history, run, scraper_error_count)
             if key == "official" else _consecutive_degraded(history, key)
         )
         if ignored_linkedin:
