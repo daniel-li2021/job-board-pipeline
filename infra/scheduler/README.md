@@ -5,14 +5,14 @@ the redundant scheduled Pages fallback are removed.
 
 | Workflow | America/Los_Angeles targets | AWS expression |
 |---|---|---|
-| local-sources.yml → board-jobs.yml → Pages | 08:20, 17:20 | `cron(20 8 * * ? *)` and `cron(20 17 * * ? *)` |
+| board-jobs.yml (Indeed → ATS → online JD recovery → matching) → Pages | 08:20, 17:20 | `cron(20 8 * * ? *)` and `cron(20 17 * * ? *)` |
 | daily-jobs.yml | 07:50, 16:50 | `cron(50 7,16 * * ? *)` |
 | official-careers.yml | 07:30, 16:30 | `cron(30 7,16 * * ? *)` |
 
 All four schedules use `America/Los_Angeles`, automatically follow DST, and set the
 flexible window to OFF. Scheduler has minute-level precision; GitHub runner
-queuing can still delay actual execution. Local source collection dispatches Board
-after every successful run, even when snapshots are unchanged; successful Board
+queuing can still delay actual execution. The Mac publishes LinkedIn/Glassdoor
+snapshots separately; successful Board
 runs explicitly dispatch Pages reconciliation. Syncareer and Official remain
 independent, manual dispatch stays available, and their successful `workflow_run`
 events publish latest main.

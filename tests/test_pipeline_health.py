@@ -12,6 +12,84 @@ import board_pipeline
 
 
 class PipelineHealthTests(unittest.TestCase):
+    def test_execution_elapsed_and_local_recovery_counts_do_not_overlap(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            now = datetime(2026, 9, 25, 18, tzinfo=timezone.utc)
+            timings = {
+                "board": {"elapsed_seconds": 100, "remote_elapsed_seconds": 40},
+                "official": {"elapsed_seconds": 20, "scrape_elapsed_seconds": 30},
+                "syncareer": {"elapsed_seconds": 60, "remote_elapsed_seconds": 25},
+            }
+            for key, (_label, folder, store_name) in pipeline_health.PIPELINES.items():
+                out = root / "output" / folder
+                out.mkdir(parents=True)
+                out.joinpath(store_name).write_text(json.dumps({
+                    "updated_at": now.isoformat(), "entries": [{"company": "Example", "title": "Engineer"}],
+                }))
+                out.joinpath("latest_stats.json").write_text(json.dumps({"run_at": now.isoformat(), **timings[key]}))
+            sources = root / "output" / "sources"
+            sources.mkdir(parents=True)
+            sources.joinpath("health.json").write_text(json.dumps({
+                "sources": {name: {"healthy": True, "last_success_at": now.isoformat(),
+                                   "last_attempt_elapsed_seconds": seconds}
+                            for name, seconds in (("linkedin", 5), ("indeed", 10), ("glassdoor", 6))},
+                "local_recovery": {"elapsed_seconds": 7, "official_jds_recovered": 2,
+                                   "linkedin_detail_recoveries": 3,
+                                   "targeted_linkedin_detail_jds": 4},
+            }))
+            for name in ("linkedin", "indeed", "glassdoor"):
+                sources.joinpath(f"{name}.json").write_text(json.dumps({"jobs": [{}]}))
+            report, _ = pipeline_health.build(root, now)
+            self.assertEqual(105, report["groups"]["Remote"]["elapsed_seconds"])
+            self.assertEqual(115, report["groups"]["GitHub Actions"]["elapsed_seconds"])
+            self.assertEqual(18, report["groups"]["Local Mac"]["elapsed_seconds"])
+            self.assertEqual(9, report["groups"]["Local Mac"]["jds_recovered"])
+            self.assertEqual(10, report["groups"]["Remote"]["subcomponents"]["Indeed"]["elapsed_seconds"])
+
+    def test_official_cause_streak_and_last_good_updated_time(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            now = datetime(2026, 9, 25, 18, tzinfo=timezone.utc)
+            good_at = (now - timedelta(hours=2)).isoformat()
+            for _key, (_label, folder, store_name) in pipeline_health.PIPELINES.items():
+                out = root / "output" / folder
+                out.mkdir(parents=True)
+                (out / store_name).write_text(json.dumps({
+                    "updated_at": good_at, "entries": [{"company": "Example", "title": "Engineer"}],
+                }))
+            official = root / "output" / "official_careers"
+            official.joinpath("latest_stats.json").write_text(json.dumps({
+                "run_at": now.isoformat(),
+                "failures": {"scrape": {"oracle": ["Read timed out (30s)"]}},
+            }))
+            official.joinpath("run_history.json").write_text(json.dumps({"runs": [
+                {"run_at": (now - timedelta(hours=index)).isoformat(),
+                 "scrape_failure_sources": ["oracle"],
+                 "scrape_failure_causes": {"oracle": "timeout"}}
+                for index in range(3)
+            ]}))
+            sources = root / "output" / "sources"
+            sources.mkdir(parents=True)
+            sources.joinpath("health.json").write_text(json.dumps({"sources": {
+                name: {"healthy": True, "last_success_at": good_at}
+                for name in ("linkedin", "indeed", "glassdoor")
+            }}))
+            for name in ("linkedin", "indeed", "glassdoor"):
+                sources.joinpath(f"{name}.json").write_text(json.dumps({"jobs": [{}]}))
+            report, history = pipeline_health.build(root, now)
+            item = report["components"]["official"]
+            self.assertEqual("Big Company Official (GitHub)", item["label"])
+            self.assertEqual("1 scraper failed: Oracle timeout ×3", item["issue"])
+            self.assertEqual({"oracle timeout": 3}, item["failure_streaks"])
+            self.assertEqual(good_at, item["last_good_at"])
+            self.assertEqual(now.isoformat(), item["latest_attempt_at"])
+            public = root / "public"
+            pipeline_health.write(public, report, history)
+            page = (public / "health.html").read_text()
+            self.assertIn(good_at, page)
+            self.assertNotIn(f"<td>{now.isoformat()}</td>", page)
+
     def test_llm_impact_keeps_specific_timeout_reason(self) -> None:
         impact = pipeline_health._llm_impact({
             "llm": {"batches_total": 3, "batches_attempted": 3, "batches_failed": 1},
@@ -70,7 +148,7 @@ class PipelineHealthTests(unittest.TestCase):
                     "run_at": now.isoformat(), "output": {"shown": 20},
                     "enrichment": {"needed": 2, "remaining_no_jd": 1},
                 }))
-                (run_dir.parent / store_name).write_text(json.dumps({"entries": [{
+                (run_dir.parent / store_name).write_text(json.dumps({"updated_at": now.isoformat(), "entries": [{
                     "company": "Example", "title": "Junior Engineer", "description": "",
                     "source_url": "https://example.test/job", "filter_status": "kept",
                     "enrichment_failure_reason": "no_direct_or_official_url",
@@ -430,7 +508,7 @@ class PipelineHealthTests(unittest.TestCase):
                     official = report["components"]["official"]
                     self.assertEqual(expected, official["status"])
                     self.assertEqual(count, official["scraper_error_count"])
-                    self.assertEqual(1 if count >= 5 else 0, official["consecutive_failures"])
+                    self.assertEqual(1, official["consecutive_failures"])
                     self.assertEqual("degraded" if count >= 5 else "limited", official["latest_attempt_status"])
                     self.assertIn(f"{count} scraper failures", official["keywords"])
                     self.assertIn(f"{count} scraper failures", official["detail"])
@@ -439,7 +517,7 @@ class PipelineHealthTests(unittest.TestCase):
                     self.assertIn("rate-limited", official["keywords"])
                     self.assertEqual(expected, report["overall"])
 
-    def test_official_degraded_streak_requires_five_actionable_scrapers_per_run(self) -> None:
+    def test_official_scraper_streak_tracks_each_cause(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             config = root / "config"
@@ -451,18 +529,20 @@ class PipelineHealthTests(unittest.TestCase):
             now = datetime(2026, 9, 22, 12, tzinfo=timezone.utc)
             run = {"run_at": now.isoformat()}
             history = [
-                {"pipeline": "official", "run_at": run["run_at"], "scrape_failure_sources": sources},
+                {"pipeline": "official", "run_at": run["run_at"],
+                 "scrape_failure_sources": sources, "scrape_failure_causes": {"source-0": "429"}},
                 {"pipeline": "official", "run_at": (now - timedelta(hours=1)).isoformat(),
-                 "scrape_failure_sources": [*sources, "linkedin", "link-only"]},
+                 "scrape_failure_sources": [*sources, "linkedin", "link-only"],
+                 "scrape_failure_causes": {"source-0": "429"}},
                 {"pipeline": "official", "run_at": (now - timedelta(hours=2)).isoformat(),
-                 "scrape_failure_sources": [*sources[:4], "linkedin"]},
+                 "scrape_failure_sources": [*sources[:4], "linkedin"],
+                 "scrape_failure_causes": {"source-0": "timeout"}},
                 {"pipeline": "official", "run_at": (now - timedelta(hours=3)).isoformat(),
                  "scrape_failure_sources": sources},
             ]
-            self.assertEqual(2, pipeline_health._consecutive_official_degraded(root, history, run, 5))
-            self.assertEqual(0, pipeline_health._consecutive_official_degraded(root, history, run, 4))
-            history[1].pop("scrape_failure_sources")
-            self.assertEqual(1, pipeline_health._consecutive_official_degraded(root, history, run, 5))
+            self.assertEqual(2, pipeline_health._official_scraper_streak(history, "source-0", "429", run["run_at"]))
+            history[1].pop("scrape_failure_causes")
+            self.assertEqual(1, pipeline_health._official_scraper_streak(history, "source-0", "429", run["run_at"]))
 
             official_dir = root / "output" / "official_careers"
             official_dir.mkdir(parents=True)
@@ -477,6 +557,7 @@ class PipelineHealthTests(unittest.TestCase):
             })
             recorded = json.loads(path.read_text())["runs"][0]
             self.assertEqual(["linkedin", "link-only", *sources], recorded["scrape_failure_sources"])
+            self.assertEqual("429", recorded["scrape_failure_causes"]["linkedin"])
             self.assertEqual("degraded", recorded["health"])
             board_pipeline.append_run_history(path, "official", {
                 "run_at": (now + timedelta(hours=1)).isoformat(),

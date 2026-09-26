@@ -31,7 +31,7 @@ Outputs live under `output/syncareer/`.
 `board_pipeline.py` combines:
 
 - public ATS boards such as Greenhouse / Lever / Ashby;
-- locally collected LinkedIn, Indeed, and Glassdoor snapshots;
+- GitHub-collected Indeed and Mac-collected LinkedIn and Glassdoor snapshots;
 - cross-source deduplication and official-link verification.
 
 ```bash
@@ -40,7 +40,7 @@ python3 board_pipeline.py --local-out --no-llm
 python3 board_pipeline.py --skip-network
 ```
 
-Local sources run through the Mac launchd job and the existing 8:20 AM/5:20 PM Pacific GitHub collection. Install local dependencies with `python3 -m pip install -r requirements-local.txt`. The Mac job runs at noon, 3 PM, and 9 PM Pacific, plus one gated catch-up after wake; it never starts from 5:00–5:59 PM. A ten-minute launchd heartbeat detects wake gaps, and a file lock coalesces overlapping triggers. Both runners use the same fast-forward source-only publisher, retrying once from current `main` on a push race rather than rebasing generated JSON. Each successful snapshot records its collector commit, while [`output/sources/health.json`](output/sources/health.json) records every source's last attempt, last success, last-good count, and failure reason. Mac LinkedIn searches add Backend, Full-Stack, and Machine Learning Engineer after Software Engineer and AI Engineer; GitHub remains limited to the first two.
+GitHub's 8:20 AM / 5:20 PM Pacific Board dispatch runs Indeed collection, ATS discovery, online JD recovery, then matching/LLM. Online company/title recovery shares a limit of 100 search queries and 150 candidate-page fetches per run, with a 15-minute deadline. GitHub does not request LinkedIn. The Mac launchd job owns LinkedIn and Glassdoor; install its dependencies with `python3 -m pip install -r requirements-local.txt`. The Mac job runs at noon, 3 PM, and 9 PM Pacific, plus one gated catch-up after wake; it never starts from 5:00–5:59 PM. Its LinkedIn discovery searches Software Engineer, AI Engineer, Backend Engineer, Full-Stack Engineer, and Machine Learning Engineer with a 14-page total limit and separate LinkedIn cooldown controls. Mac JD recovery processes every candidate without a global search/page cap, reusing the committed Indeed snapshot before web or targeted LinkedIn detail. [`output/sources/health.json`](output/sources/health.json) records last attempts and last-good snapshots.
 
 Board run stats report exact LinkedIn/Indeed/Glassdoor overlap, each source's unique contribution, per-query exact-unique counts, and the full enrichment funnel. Discovery depth is bounded, but every discovered record is processed; there is no post-discovery job-count cap.
 
@@ -102,7 +102,7 @@ AWS EventBridge Scheduler dispatches the independent workflows at these
 
 | Workflow | Morning | Evening |
 |---|---:|---:|
-| Local Sources → Board | 8:20 AM | 5:20 PM |
+| Indeed → ATS / Board | 8:20 AM | 5:20 PM |
 | Syncareer | 7:50 AM | 4:50 PM |
 | Official Careers | 7:30 AM | 4:30 PM |
 
@@ -132,6 +132,8 @@ GitHub keeps only the small durable/current state each independent pipeline owns
 Full descriptions, source snippets, enrichment/LLM evidence, raw Official snapshots,
 and full scoring caches stay under gitignored `output/cache/`. Per-run diagnostics
 under `output/*/runs/` are local or workflow artifacts, not repository history.
+GitHub commits `output/sources/indeed.json` with full Indeed JDs and its health state;
+the Mac reads that snapshot as an exact peer and never recollects Indeed.
 In-progress and applied jobs remain durable in the existing Supabase-backed review
 state, so pipelines do not contend on a shared `tracked_jobs.json` commit.
 

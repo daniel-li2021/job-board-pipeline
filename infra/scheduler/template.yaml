@@ -73,7 +73,7 @@ Resources:
           secrets = boto3.client("secretsmanager", config=Config(
               connect_timeout=3, read_timeout=5,
               retries={"total_max_attempts": 2, "mode": "standard"}))
-          WORKFLOWS = {"local-sources.yml", "board-jobs.yml", "daily-jobs.yml", "official-careers.yml"}
+          WORKFLOWS = {"board-jobs.yml", "daily-jobs.yml", "official-careers.yml"}
 
           def handler(event, context):
               workflow = event.get("workflow")
@@ -157,7 +157,7 @@ Resources:
       Target:
         Arn: !GetAtt Dispatcher.Arn
         RoleArn: !GetAtt SchedulerRole.Arn
-        Input: '{"workflow":"local-sources.yml","scheduled_time":"<aws.scheduler.scheduled-time>"}'
+        Input: '{"workflow":"board-jobs.yml","scheduled_time":"<aws.scheduler.scheduled-time>"}'
         RetryPolicy: {MaximumEventAgeInSeconds: 900, MaximumRetryAttempts: 3}
         DeadLetterConfig: {Arn: !GetAtt Failures.Arn}
   LocalMorningSchedule:
@@ -171,7 +171,7 @@ Resources:
       Target:
         Arn: !GetAtt Dispatcher.Arn
         RoleArn: !GetAtt SchedulerRole.Arn
-        Input: '{"workflow":"local-sources.yml","scheduled_time":"<aws.scheduler.scheduled-time>"}'
+        Input: '{"workflow":"board-jobs.yml","scheduled_time":"<aws.scheduler.scheduled-time>"}'
         RetryPolicy: {MaximumEventAgeInSeconds: 900, MaximumRetryAttempts: 3}
         DeadLetterConfig: {Arn: !GetAtt Failures.Arn}
   SyncareerSchedule:

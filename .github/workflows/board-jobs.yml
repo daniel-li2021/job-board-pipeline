@@ -1,7 +1,7 @@
 name: Board job alert
 
-# Complementary discovery pipeline (Greenhouse/Lever/Ashby + ingested local
-# LinkedIn/Indeed/Glassdoor snapshots). Big Company Official runs separately.
+# Complementary discovery pipeline (Indeed + Greenhouse/Lever/Ashby + ingested
+# Mac LinkedIn/Glassdoor snapshots). Big Company Official runs separately.
 # Runs independently from Official and Syncareer. Local job-board
 # snapshot pushes still trigger a board-only ingest without an extra digest.
 
@@ -22,7 +22,6 @@ on:
     paths:
       - "output/sources/linkedin.json"
       - "output/sources/glassdoor.json"
-      - "output/sources/indeed.json"
       - "output/sources/health.json"
       - "output/sources/remote_recovery.json"
 
@@ -45,7 +44,7 @@ jobs:
           PROBE_ID: ${{ inputs.scheduler_probe }}
         run: printf 'Scheduler probe %s received\n' "$PROBE_ID"
   board-scrape-and-alert:
-    if: ${{ !inputs.scheduler_probe }}
+    if: ${{ !inputs.scheduler_probe && github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -59,7 +58,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r requirements.txt python-jobspy==1.1.82
+
+      - name: Collect Indeed and preserve last-good snapshot
+        if: ${{ github.event_name != 'push' && !inputs.source_ingest }}
+        run: python3 remote_indeed.py
 
       - name: Run board pipeline (LLM on when secret present, else rule fallback)
         id: pipeline
@@ -82,13 +85,15 @@ jobs:
             exit 1
           fi
 
-      - name: Commit board outputs (never sources/*.json)
+      - name: Commit Board outputs and GitHub-owned Indeed state
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Only board artifacts + alerts. Local sources are owned by launchd.
           git add -A -- output/board/
           if [ -f output/recovery/board.json.gz ]; then git add -- output/recovery/board.json.gz; fi
+          if [ "${{ github.event_name }}" != "push" ] && [ "${{ inputs.source_ingest }}" != "true" ]; then
+            git add -- output/sources/indeed.json output/sources/health.json
+          fi
           python3 scripts/guard_github_blob_size.py
           if git diff --staged --quiet; then
             echo "No board changes to commit."

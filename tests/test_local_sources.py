@@ -364,9 +364,11 @@ class LocalSourceTests(unittest.TestCase):
         self.assertNotIn("bash scripts/local_source_sync.sh", workflow)
         self.assertIn("LinkedIn and local source collection run on the Mac", workflow)
         wrapper = (ROOT / "scripts/local_source_sync.sh").read_text(encoding="utf-8")
-        for name in ("linkedin", "indeed", "glassdoor", "remote_recovery", "health"):
+        for name in ("linkedin", "glassdoor", "remote_recovery", "health"):
             self.assertIn(f'output/sources/${{source_name}}.json', wrapper)
             self.assertIn(name, wrapper)
+        self.assertNotIn("indeed", local_sources.SOURCES)
+        self.assertNotIn("for source_name in linkedin indeed", wrapper)
         self.assertNotIn("git rebase", workflow)
         self.assertIn('LOCAL_SOURCE_RETRY=1', wrapper)
         self.assertIn('main advanced during collection; restarting once', wrapper)

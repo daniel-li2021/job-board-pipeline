@@ -10,6 +10,13 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class WorkflowContractTests(unittest.TestCase):
+    def test_board_dispatch_collects_indeed_before_matching_and_persists_snapshot(self):
+        workflow = (ROOT / ".github/workflows/board-jobs.yml").read_text()
+        self.assertLess(workflow.index("python3 remote_indeed.py"),
+                        workflow.index("python3 board_pipeline.py"))
+        self.assertIn("git add -- output/sources/indeed.json output/sources/health.json", workflow)
+        self.assertIn("github.actor != 'github-actions[bot]'", workflow)
+
     def test_official_dispatch_input_is_a_literal_argument(self):
         workflow = (ROOT / ".github/workflows/official-careers.yml").read_text()
         step = workflow.split("      - name: Scrape official careers and match\n", 1)[1].split("\n      - name:", 1)[0]

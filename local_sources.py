@@ -6,10 +6,8 @@ network error, or returns zero rows, it is skipped and its previous
 ``output/sources/<name>.json`` snapshot is left untouched (never overwritten
 with nothing). The other source and the downstream git sync proceed normally.
 
-LinkedIn search remains card-first. Indeed/Glassdoor arrive through JobSpy;
-all three then share hard filtering, JD persistence, diagnostics, snapshots,
-and downstream Board processing. LinkedIn alone needs a separate bounded,
-cache-aware logged-out detail fetch.
+LinkedIn search remains card-first. Glassdoor arrives through JobSpy. Indeed
+is collected on GitHub; its persisted snapshot is an exact JD peer here.
 
 This is invoked by launchd every 2-3 hours (see scripts/). It does NOT run the
 full board pipeline and does NOT touch jobs.json / latest.md — those are
@@ -18,9 +16,8 @@ GitHub-Actions-owned to avoid local/CI git conflicts.
 Usage:
     python3 local_sources.py                 # all sources
     python3 local_sources.py --only linkedin
-    python3 local_sources.py --only indeed
     python3 local_sources.py --only glassdoor
-    python3 local_sources.py --recover-jds         # current LinkedIn + Indeed only
+    python3 local_sources.py --recover-jds
 """
 
 from __future__ import annotations
@@ -50,7 +47,6 @@ from sources.schema import (
 
 SOURCES: Dict[str, Callable[[], Dict[str, object]]] = {
     "linkedin": linkedin_local.scrape,
-    "indeed": lambda: jobspy_local.scrape("indeed"),
     "glassdoor": lambda: jobspy_local.scrape("glassdoor"),
 }
 OPTIONAL_SOURCES = {"glassdoor"}
@@ -208,8 +204,10 @@ def collector_provenance() -> Dict[str, object]:
     return {"commit": commit or "unknown", "dirty": dirty}
 
 
-def run_one(name: str, collector: Dict[str, object] | None = None, *, force: bool = False) -> Dict[str, object]:
-    scraper = SOURCES[name]
+def run_one(name: str, collector: Dict[str, object] | None = None, *, force: bool = False,
+            scraper: Callable[[], Dict[str, object]] | None = None,
+            recover_missing: bool = True) -> Dict[str, object]:
+    scraper = scraper or SOURCES[name]
     now = datetime.now(timezone.utc)
     stamp = now.isoformat()
     collector = collector or collector_provenance()
@@ -291,7 +289,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
     official_context: Dict[str, object] = {}
     board_store: Dict[str, dict] = {}
     previous = read_source_snapshot_payload(name) if name in {"linkedin", "indeed"} else {}
-    if name in {"linkedin", "indeed"} and rows and (name != "linkedin" or scraper is linkedin_local.scrape):
+    if recover_missing and name in {"linkedin", "indeed"} and rows and (name != "linkedin" or scraper is linkedin_local.scrape):
         try:
             official_context = coverage_reconcile.load_official_context()
         except (OSError, ValueError, json.JSONDecodeError):
@@ -581,9 +579,9 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
 
 
 def recover_jds() -> Dict[str, object]:
-    """One bounded enrichment pass over current snapshots, without rediscovery."""
+    """Enrich current Mac snapshots and remote candidates without rediscovery."""
     started = time.monotonic()
-    names = ("linkedin", "indeed", "remote_recovery")
+    names = ("linkedin", "remote_recovery")
     snapshots = {name: read_source_snapshot_payload(name) for name in names}
     remote_rows = _remote_handoff_rows()
     previous_remote = list(snapshots["remote_recovery"]["jobs"])
@@ -612,6 +610,8 @@ def recover_jds() -> Dict[str, object]:
         **{f"source-cache::{name}::{index}": job
            for name in names for index, job in enumerate(originals[name]) if job.get("official_search_verified")},
         **{f"remote::{index}": job for index, job in enumerate(remote_rows)
+           if len(str(job.get("description") or "").strip()) >= board.THIN_JD_CHARS},
+        **{f"indeed-peer::{index}": job for index, job in enumerate(read_source_snapshot_payload("indeed").get("jobs") or [])
            if len(str(job.get("description") or "").strip()) >= board.THIN_JD_CHARS},
         **store,
     }
@@ -745,7 +745,8 @@ def recover_jds() -> Dict[str, object]:
         "elapsed_seconds": round(time.monotonic() - started, 3),
         "before_total": sum(counts_before.values()), "after_total": sum(after.values()),
         "cheap_matches": cheap_counts, "methods": methods, "official_matches": dict(resolver.stats),
-        "official_jds_recovered": sum(counts_before.values()) - sum(after.values()) - int(detail.get("jds_resolved", 0) or 0),
+        "official_jds_recovered": max(0, sum(counts_before.values()) - sum(after.values())
+                                       - int(detail.get("jds_resolved", 0) or 0) - targeted_detail_jds),
         "linkedin_detail_recoveries": int(detail.get("jds_resolved", 0) or 0),
         "linkedin_detail": detail, "search_requests": resolver.search_requests,
         "targeted_linkedin_search_requests": targeted_requests,
@@ -782,7 +783,7 @@ def recover_jds() -> Dict[str, object]:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run local best-effort job sources")
     parser.add_argument("--only", choices=sorted(SOURCES.keys()), help="Run a single source")
-    parser.add_argument("--recover-jds", action="store_true", help="Bounded JD recovery for current LinkedIn and Indeed snapshots")
+    parser.add_argument("--recover-jds", action="store_true", help="Recover JDs for LinkedIn and remote candidates")
     args = parser.parse_args()
 
     if args.recover_jds:

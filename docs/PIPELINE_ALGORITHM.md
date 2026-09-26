@@ -5,10 +5,10 @@ This document explains how data moves through the system, which process owns eac
 ## System map
 
 ```text
-Local collectors                    GitHub discovery workflows
-  LinkedIn search + detail            Board: public ATS + local snapshots
-  Indeed search                       Official Careers: company adapters
-  Glassdoor search                    Syncareer: search + detail API
+Mac collectors                      GitHub discovery workflows
+  LinkedIn search + detail            Board: Indeed + public ATS + online JD recovery
+  Glassdoor search                    Official Careers: company adapters
+  local JD recovery                   Syncareer: search + detail API
           |                                      |
           +-- output/sources/*.json --------------+
                               |
@@ -23,21 +23,21 @@ Local collectors                    GitHub discovery workflows
              dashboard + health + GitHub Pages
 ```
 
-The three discovery pipelines are deliberately independent. A failure in one does not prevent the other stores from being reconciled and published. Local collection is also independent: it publishes source snapshots, and the Board workflow consumes the latest committed snapshots rather than running desktop-only collectors in Actions.
+The three discovery pipelines are deliberately independent. A failure in one does not prevent the other stores from being reconciled and published. GitHub owns ATS, Indeed, Big Company Official, Syncareer, Board matching, and online JD recovery. The Mac owns LinkedIn, Glassdoor, and local JD recovery. Board consumes the latest committed Mac snapshots.
 
 ## Ownership and state
 
 | Owner | Responsibility | Durable artifacts |
 | --- | --- | --- |
 | Primary checkout | Development, tests, documentation, and reviewed changes | Source code and tracked configuration |
-| Local automation checkout | LinkedIn, Indeed, and Glassdoor collection | `output/sources/{linkedin,indeed,glassdoor,health}.json` |
-| Board workflow | Public ATS discovery plus committed local snapshots | `output/board/` |
+| Local automation checkout | LinkedIn and Glassdoor collection; local JD recovery | `output/sources/{linkedin,glassdoor,remote_recovery,health}.json` |
+| Board workflow | Indeed and public ATS discovery, online JD recovery, matching | `output/sources/indeed.json`, `output/board/`, `output/recovery/board.json.gz` |
 | Official Careers workflow | Company career-site adapters | `output/official_careers/` |
 | Syncareer workflow | Syncareer search and detail API | `output/syncareer/` plus dated reports in `output/daily/` |
 | Reconciliation workflow | Cross-pipeline identity, dashboard, health, and Pages deployment | `output/cross_pipeline/coverage.*` and `public/` at build time |
 | Browser/Supabase review state | Per-user review and application decisions | Remote review rows; source-expired applied rows are restored into the dashboard |
 
-The development checkout must not become a second local collector. `scripts/local_source_sync.sh` runs collection from `/Users/daniel/Projects/job_scrape_feasibility-automation` in an isolated worktree and stages only the four local-source artifacts. GitHub Actions owns the three pipeline output trees.
+The development checkout must not become a second local collector. `scripts/local_source_sync.sh` runs collection from `/Users/daniel/Projects/job_scrape_feasibility-automation` in an isolated worktree and stages LinkedIn, Glassdoor, local recovery, and health artifacts. GitHub Actions owns the Indeed snapshot and three pipeline output trees.
 
 Persistent JSON state is written atomically where interruption could corrupt the canonical store. Corrupt or structurally invalid state is rejected rather than silently replacing a last-good store. Large full-detail caches and timestamped local run files are gitignored; compact stores, bounded `run_history.json`, and `latest_stats.json` are tracked so Actions and Pages can consume useful current state.
 
@@ -49,17 +49,17 @@ All sources normalize into the schema in `sources/schema.py`. The important inva
 - `first_seen` records when this system first observed a job and survives rediscovery. `last_seen` records the latest successful observation.
 - A trusted source posting timestamp is used for posted-age ranking only when its confidence is high or medium. Low-confidence or missing posting dates fall back to discovery time and sort behind trusted first-three-day records.
 - Dashboard Fresh and Rolling windows use exact `first_seen` datetimes (`<=24h` and `<=72h`). They are discovery views and are intentionally separate from posted-age ranking.
-- Compact tracked stores retain display, match, provenance, coverage, and review fields. Full descriptions and raw source material belong in the local caches where available.
+- Compact tracked stores retain display, match, provenance, coverage, and review fields. Full Indeed descriptions persist in its source snapshot; other full descriptions and raw source material remain in source snapshots, recovery handoffs, or local caches where available.
 - Every discovered canonical record receives an enrichment outcome and remains auditable even if it is later filtered or suppressed.
 
 ## Local source pipeline
 
-`local_sources.py` runs each collector independently and updates `output/sources/health.json` after every attempt.
+`local_sources.py` runs LinkedIn and Glassdoor independently and updates `output/sources/health.json` after every attempt. The Board workflow runs `remote_indeed.py` and updates the same health state for Indeed.
 
 ### Collection
 
-- LinkedIn rotates queries across runs and spends at most 12 search pages total (two per query). A low-yield page ends its query. Search 429 stops requests immediately; two attempted 429 runs trigger a 24-hour cooldown and a one-page probe. Partial cards merge with last-good rows without advancing carried-row verification time.
-- Indeed and Glassdoor use their own smaller bounded page budgets. These budgets limit discovery traffic only; they do not truncate processing of cards already returned.
+- Mac LinkedIn rotates Software Engineer, AI Engineer, Backend Engineer, Full-Stack Engineer, and Machine Learning Engineer queries across runs and spends at most 14 search pages total. A low-yield page ends its query. Search 429 stops requests immediately; two attempted 429 runs trigger a 24-hour cooldown and a one-page probe. Partial cards merge with last-good rows without advancing carried-row verification time.
+- GitHub Indeed and Mac Glassdoor use their own source-specific discovery page budgets. These budgets limit discovery traffic only; they do not truncate processing of cards already returned.
 - Glassdoor first uses JobSpy. When its location lookup cannot produce results, the Scrapling/static-page fallback can still preserve cards and snippets. Detail-page blocking remains an explicit enrichment limitation.
 - Per-query diagnostics retain pages fetched, stop reasons, results, unique contributions, and enrichment outcomes where the collector provides them.
 
@@ -76,13 +76,13 @@ For LinkedIn, health keeps independent search and detail 429 streaks, cooldowns,
 
 ### Publication
 
-The local sync script validates repository and push prerequisites, collects in an isolated checkout, stages only local-source snapshots and health, and pushes the source commit. If `main` advances, it retries against the current remote state without mixing pipeline-owned output into the local commit. Board Actions sees local jobs only after this push succeeds.
+The local sync script validates repository and push prerequisites, collects in an isolated checkout, stages only Mac-owned snapshots and health, and pushes the source commit. If `main` advances, it retries against the current remote state without mixing pipeline-owned output into the local commit. Board Actions sees Mac jobs only after this push succeeds. Its own workflow commits the GitHub-produced Indeed snapshot and full JDs.
 
 ## Board pipeline
 
 `board_pipeline.py` is the shared implementation for filtering, matching, tiering, and application ordering. Its execution order is significant:
 
-1. Collect public ATS jobs and read committed LinkedIn, Indeed, and Glassdoor snapshots.
+1. Collect Indeed, collect public ATS jobs, and read committed LinkedIn and Glassdoor snapshots.
 2. Normalize, merge exact identities, verify exposed official URLs, and collapse cross-source duplicates again.
 3. Load the prior store, preserve `first_seen`, set `last_seen`, and compute recency before filtering.
 4. Annotate cross-pipeline coverage.
@@ -122,8 +122,7 @@ Enrichment is ordered to reuse reliable existing work before making network requ
 
 Requests retain bounded concurrency, per-domain pacing, timeouts, retry/backoff, and cache behavior already owned by each adapter. A 429 can disable the affected ordinary request path for the remainder of the run rather than amplifying the throttle.
 
-Local LinkedIn/Indeed JD recovery first reuses cached JDs and dedicated Official matches, then tries three bounded employer/title search shapes, direct employer-careers or known ATS links, and site-restricted title search. An exact company/title `JobPosting` with compatible location and usable description is verified: the source immediately caches its description and keeps the URL as `application_url`, which Board promotes to `official_url` without refetching. A single candidate with incompatible or missing location may provide a marked tentative JD but never an official application URL; later LinkedIn detail can confirm or replace it. Ambiguous candidates remain unresolved. LinkedIn detail remains the final fallback. `local_sources.py --recover-jds` retains its bounded no-discovery recovery path; routine rollout uses a smaller 25-job pilot first and does not change collection freshness.
-DuckDuckGo HTML search is preferred; a transport failure switches the remaining bounded queries to Bing HTML, and a second provider failure defers search rather than recording a confident no-match.
+GitHub online JD recovery checks exact caches, Official/ATS, and the persisted Indeed snapshot before company/title web search. The normal web pass shares 100 search queries, 150 candidate-page fetches, and a 15-minute deadline. It saves full JDs and unresolved candidates in compressed recovery handoffs. Mac recovery reads those handoffs and the GitHub-produced Indeed snapshot as exact peers, then tries company/title web recovery without a global candidate, search, or page cap. For unresolved records it uses saved company, exact title, and location in targeted LinkedIn search; LinkedIn detail is the final fallback under separate LinkedIn request/cooldown controls. DuckDuckGo HTML search is preferred; transport failure switches to Bing HTML, and a second provider failure defers search rather than recording a confident no-match.
 
 Failure to obtain a description does not delete a valid job card. The job keeps `enrichment_failure_reason`, uses title/metadata evidence conservatively, and remains visible for diagnostics. Explicit software/AI/data early-career titles remain useful review signals; generic `Engineer I` or `Entry Level` wording alone receives only a small title bonus. This is different from a hard eligibility failure.
 
@@ -193,8 +192,8 @@ The cloud schedule is defined in `infra/scheduler/` and dispatches the three Git
 
 For every discovery run, the publication chain is:
 
-1. The owning workflow checks out current `main` and runs only its pipeline.
-2. It commits only that pipeline's output tree and retries a non-fast-forward push against current `main`.
+1. The owning workflow checks out current `main` and runs its owned source collection and pipeline.
+2. It commits its output tree and source/recovery artifacts, then retries a non-fast-forward push against current `main`.
 3. `reconcile-pages.yml` runs on relevant output/config pushes and after discovery workflows complete, including failed workflows.
 4. Reconciliation reads the latest committed stores, rebuilds coverage, dashboard, and health, and deploys `public/` to Pages.
 
@@ -211,7 +210,7 @@ Overall health remains the worst component severity. Component details preserve 
 | Stale | A previously usable pipeline snapshot exists but is older than 36 hours, or has records without a usable update timestamp. |
 | Problem | No usable required snapshot exists, or a failed workflow leaves data unusable. |
 
-Local sources use tighter collection expectations: up to six hours is healthy, six to twelve hours is warning, and more than twelve hours is stale. A required local source with no usable snapshot is a problem; an optional source is a warning. One isolated failed attempt with a fresh last-good snapshot, a LinkedIn detail 429 successfully recovered by Scrapling, or a very small unresolved-JD tail is reported as recovered behavior rather than an active Warning.
+Mac sources use tighter collection expectations: up to six hours is healthy, six to twelve hours is warning, and more than twelve hours is stale. GitHub Indeed is warning after 18 hours and stale after 36 hours. A required source with no usable snapshot is a problem; optional Glassdoor is a warning. One isolated failed attempt with a fresh last-good snapshot, a LinkedIn detail 429 successfully recovered by Scrapling, or a very small unresolved-JD tail is reported as recovered behavior rather than an active Warning. The Health `Updated` column shows the last usable snapshot time; the latest attempt remains in diagnostics.
 
 Health output separates:
 
@@ -220,7 +219,7 @@ Health output separates:
 - **Recovered behavior / known limitations**: current data is usable because fallback succeeded, impact is small, or a source is intentionally link-only/non-scrapable.
 - **Unresolved enrichment**: counts and reasons for records still lacking descriptions.
 
-Messages include source, impact, attempt age, last-good count/age, consecutive failures, and available reasons. Repeated batch failures are collapsed into counts such as “1/1 attempted batches failed; 8 later batches skipped; 106 jobs remain retryable.” `LinkedIn (local/general)` search/discovery failures, its detail-enrichment 429s, Scrapling attempts/resolutions, and remaining no-JD records are independent from the `linkedin_company_official_adapter`. Configured Official `skip` adapters are expected limitations, not fresh scrape failures. `PIPELINE_WORKFLOW_*` values supplied by reconciliation identify whether the triggering workflow failed; a failed trigger yields Warning when a fresh store is still usable and Problem when it is not.
+Messages include source, impact, attempt age, last-good count/age, consecutive failures, and available reasons. Repeated batch failures are collapsed into counts such as “1/1 attempted batches failed; 8 later batches skipped; 106 jobs remain retryable.” `LinkedIn (Mac)` search/discovery failures, its detail-enrichment 429s, Scrapling attempts/resolutions, and remaining no-JD records are independent from the `linkedin_company_official_adapter`. Configured Official `skip` adapters are expected limitations, not fresh scrape failures. `PIPELINE_WORKFLOW_*` values supplied by reconciliation identify whether the triggering workflow failed; a failed trigger yields Warning when a fresh store is still usable and Problem when it is not.
 
 ## Failure recovery
 
@@ -239,7 +238,7 @@ Messages include source, impact, attempt age, last-good count/age, consecutive f
 
 ## Debugging checklist
 
-1. Identify ownership: local source, Board, Official Careers, Syncareer, reconciliation, or browser review state.
+1. Identify ownership: Mac LinkedIn/Glassdoor/recovery, GitHub Indeed/Board/Official/Syncareer, reconciliation, or browser review state.
 2. Inspect the owning compact store and its update timestamp before assuming a failed latest attempt means lost data.
 3. Read `latest_stats.json` for funnel counts, source failures, enrichment, LLM source counts, and shown totals.
 4. For local sources, compare `last_attempt_*` with `last_success_at`/`last_good_count`; for LinkedIn, split discovery from detail and Scrapling.

@@ -2416,6 +2416,11 @@ def append_run_history(
             source for source, errors in ((run.get("failures") or {}).get("scrape") or {}).items()
             if _failure_values(errors)
         ]
+        record["scrape_failure_causes"] = {
+            source: _short_failure_cause(" ".join(_failure_values(errors)))
+            for source, errors in ((run.get("failures") or {}).get("scrape") or {}).items()
+            if _failure_values(errors)
+        }
         actionable = set(record["scrape_failure_sources"]) - set(run.get("ignored_scrape_sources") or ["linkedin"])
         record["health"] = (
             "degraded" if len(actionable) >= 5
@@ -2433,6 +2438,15 @@ def _failure_values(value: Any) -> List[str]:
     if isinstance(value, (list, tuple, set)):
         return [item for child in value for item in _failure_values(child)]
     return [str(value)] if str(value or "").strip() else []
+
+
+def _short_failure_cause(message: str) -> str:
+    lowered = message.lower()
+    for token, cause in (("429", "429"), ("403", "403"), ("timed out", "timeout"),
+                         ("timeout", "timeout"), ("404", "404")):
+        if token in lowered:
+            return cause
+    return "error"
 
 
 def save_matching_retry(path: Path, jobs: List[Dict[str, Any]]) -> int:

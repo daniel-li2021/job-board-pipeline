@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import remote_recovery
+import remote_indeed
 import local_sources
 from sources import official_jd_recovery
 from sources import linkedin_local
@@ -15,6 +16,18 @@ from sources.official_jd_recovery import Resolver
 
 
 class RemoteRecoveryTests(unittest.TestCase):
+    def test_indeed_remote_collector_reuses_snapshot_writer_without_mac_collection(self):
+        self.assertNotIn("indeed", local_sources.SOURCES)
+        with tempfile.TemporaryDirectory() as tmp, patch.object(remote_indeed, "OUTPUT_DIR", Path(tmp)), \
+             patch.object(remote_indeed.local_sources, "collector_provenance", return_value={"commit": "test"}), \
+             patch.object(remote_indeed.local_sources, "run_one", return_value={
+                 "source": "indeed", "status": "ok", "count": 1,
+             }) as run, patch.object(remote_indeed.local_sources, "write_health") as write:
+            remote_indeed.main()
+            self.assertEqual("indeed", run.call_args.args[0])
+            self.assertFalse(run.call_args.kwargs["recover_missing"])
+            write.assert_called_once()
+
     def test_online_budget_is_separate_from_mac_recovery(self):
         self.assertEqual((100, 150), (official_jd_recovery.NORMAL_SEARCH_LIMIT,
                                     official_jd_recovery.NORMAL_PAGE_LIMIT))

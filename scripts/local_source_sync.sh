@@ -157,7 +157,7 @@ else
 fi
 
 staged_any=0
-for source_name in linkedin indeed glassdoor remote_recovery health; do
+for source_name in linkedin glassdoor remote_recovery health; do
   relative_path="output/sources/${source_name}.json"
   if [ -f "$SYNC_TREE/$relative_path" ]; then
     git -C "$SYNC_TREE" add "$relative_path" || {

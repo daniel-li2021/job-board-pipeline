@@ -25,7 +25,7 @@ class SchedulerTests(unittest.TestCase):
             exec(compile(code, "inline-dispatcher", "exec"), namespace)
         handler = namespace["handler"]
         self.assertEqual(
-            {"local-sources.yml", "board-jobs.yml", "daily-jobs.yml", "official-careers.yml"},
+            {"board-jobs.yml", "daily-jobs.yml", "official-careers.yml"},
             namespace["WORKFLOWS"],
         )
         response = Mock()
@@ -68,7 +68,8 @@ class SchedulerTests(unittest.TestCase):
         self.assertIn("ScheduleExpression: cron(50 7,16 * * ? *)", template)
         self.assertIn("ScheduleExpression: cron(30 7,16 * * ? *)", template)
         self.assertEqual(4, template.count("ScheduleExpressionTimezone: America/Los_Angeles"))
-        self.assertEqual(2, template.count('Input: \'{"workflow":"local-sources.yml"'))
+        self.assertEqual(2, template.count('Input: \'{"workflow":"board-jobs.yml"'))
+        self.assertNotIn('Input: \'{"workflow":"local-sources.yml"', template)
         evening = template.split("  LocalSourceSchedule:", 1)[1].split("  LocalMorningSchedule:", 1)[0]
         morning = template.split("  LocalMorningSchedule:", 1)[1].split("  SyncareerSchedule:", 1)[0]
         for field in ("State: !Ref ScheduleState", "ScheduleExpressionTimezone: America/Los_Angeles",
