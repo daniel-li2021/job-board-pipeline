@@ -18,6 +18,9 @@ output/board-local/
 output/official_careers-local/
 
 # Large / derived scrape outputs — do NOT track these.
+/data/Employer Information.csv
+/data/LCA_Disclosure_Data_FY*_Q*.xlsx
+/data/company_tickers.json
 output/*.csv
 output/seen_job_ids.json
 output/daily/
