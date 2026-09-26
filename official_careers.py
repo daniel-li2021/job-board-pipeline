@@ -24,6 +24,7 @@ import gzip
 import json
 
 from state_io import atomic_write
+import remote_recovery
 import re
 import time
 from collections import Counter
@@ -493,6 +494,7 @@ def cmd_scrape(args: argparse.Namespace) -> List[Dict[str, str]]:
 
 
 def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = None) -> None:
+    match_started = time.monotonic()
     board.load_env_file(BASE_DIR / ".env")
     now = datetime.now(timezone.utc)
     now_iso = now.isoformat()
@@ -561,6 +563,8 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
         ("syncareer", board.load_syncareer_peer_store()),
     ]
     peer_jds_resolved = board.enrich_from_exact_peers(deduped, peer_stores)
+    remote_recovery.write_snapshot(OUTPUT_DIR / "recovery" / "official.json.gz", "official",
+                                   [*raw_jobs, *deduped])
 
     drops: Counter = Counter()
     after_company: List[Dict[str, str]] = []
@@ -717,7 +721,8 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
         },
     }
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
-    run_payload = {"run_at": now_iso, **stats}
+    run_payload = {"run_at": now_iso, "elapsed_seconds": round(time.monotonic() - match_started, 3),
+                   "scrape_elapsed_seconds": (raw_payload.get("metrics") or {}).get("wall_seconds"), **stats}
     stats_text = json.dumps(run_payload, indent=2, ensure_ascii=False) + "\n"
     (RUNS_DIR / f"{stamp}_stats.json").write_text(stats_text, encoding="utf-8")
     (CAREERS_DIR / "latest_stats.json").write_text(stats_text, encoding="utf-8")

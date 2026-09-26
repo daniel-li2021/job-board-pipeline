@@ -38,6 +38,7 @@ from typing import Callable, Dict
 
 import board_pipeline as board
 import coverage_reconcile
+import remote_recovery
 from sources import jobspy_local, linkedin_local, official_jd_recovery
 from sources.schema import (
     OUTPUT_DIR,
@@ -60,9 +61,8 @@ MAC_SEARCH_PAGE_LIMIT = 14
 LINKEDIN_DETAIL_COOLDOWN_HOURS = 24
 GLASSDOOR_RECOVERY_HOURS = 24
 LINKEDIN_SEARCH_COOLDOWN_HOURS = 24
-RECOVERY_SEARCH_LIMIT = 300
-RECOVERY_PAGE_LIMIT = 300
-RECOVERY_SECONDS = 60 * 60
+RECOVERY_SEARCH_LIMIT = float("inf")
+RECOVERY_PAGE_LIMIT = float("inf")
 
 
 def _health_source(name: str) -> Dict[str, object]:
@@ -183,6 +183,14 @@ def _mark_linkedin_official_matches(
     return matched
 
 
+def _remote_handoff_rows() -> list[dict]:
+    return [
+        {**row, "remote_recovery": True}
+        for pipeline in ("official", "board", "syncareer")
+        for row in remote_recovery.read_snapshot(OUTPUT_DIR / "recovery" / f"{pipeline}.json.gz")
+    ]
+
+
 def collector_provenance() -> Dict[str, object]:
     commit = os.environ.get("COLLECTOR_COMMIT", "").strip()
     dirty_env = os.environ.get("COLLECTOR_DIRTY")
@@ -298,9 +306,13 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
             **{f"source-cache::{index}": job for index, job in enumerate(previous_jobs) if job.get("official_search_verified")},
             **({f"indeed-peer::{index}": job for index, job in enumerate(read_source_snapshot_payload("indeed").get("jobs") or [])}
                if name == "linkedin" else {}),
+            **{f"remote-peer::{index}": job for index, job in enumerate(_remote_handoff_rows())
+               if len(str(job.get("description") or "").strip()) >= board.THIN_JD_CHARS},
             **board_store,
         }
-        resolver = official_jd_recovery.Resolver()
+        resolver = official_jd_recovery.Resolver(
+            search_limit=RECOVERY_SEARCH_LIMIT, page_limit=RECOVERY_PAGE_LIMIT,
+        ) if os.environ.get("LOCAL_SOURCE_PROFILE") == "mac" else official_jd_recovery.Resolver()
         now = datetime.fromisoformat(stamp)
         pending = []
         for row in rows:
@@ -461,6 +473,31 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
         snapshot_meta = snapshot.get("meta", {})
         healthy = bool(result.get("source_healthy", result.get("status") == "ok"))
         partial = result.get("status") == "partial"
+        reason = str(result.get("reason") or "")
+        search = result.get("search_collection") or {}
+        if name == "linkedin" and partial and not search.get("rate_limited"):
+            failure_cause = ""
+        elif "429" in reason or search.get("rate_limited"):
+            failure_cause = "429"
+        elif "403" in reason:
+            failure_cause = "403"
+        elif "timeout" in reason.lower() or "timed out" in reason.lower():
+            failure_cause = "timeout"
+        elif healthy:
+            failure_cause = ""
+        else:
+            failure_cause = "collection"
+        prior_reason = str(prior.get("reason") or "")
+        prior_cause = str(prior.get("failure_cause") or (
+            "429" if "429" in prior_reason else "403" if "403" in prior_reason else
+            "timeout" if "timeout" in prior_reason.lower() or "timed out" in prior_reason.lower() else ""
+        ))
+        prior_streak = int(prior.get("consecutive_failures", 0) or 0)
+        if name == "linkedin" and not prior.get("failure_cause"):
+            prior_streak = int((prior.get("runner_states") or {}).get("mac", {}).get("search_429_streak", 0) or 0)
+            if prior_cause != "429":
+                prior_streak = 0  # Legacy generic streak includes focused coverage.
+        failure_streak = (prior_streak + 1 if prior_cause == failure_cause else 1) if failure_cause else 0
         # ``last_success_at`` means a complete collection that verified the
         # whole snapshot. A partial run rewrites the snapshot, so its
         # ``scraped_at`` must never be adopted as a full success.
@@ -470,7 +507,7 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
             "required": name not in OPTIONAL_SOURCES,
             "healthy": healthy,
             "status": result.get("status", "unknown"),
-            "reason": "" if healthy else result.get("reason", "unknown failure"),
+            "reason": reason if partial or failure_cause else "",
             "last_attempt_at": result.get("attempted_at", ""),
             "last_success_at": result.get("succeeded_at") or prior.get("last_success_at") or snapshot_full_success,
             "last_partial_at": result.get("partial_at") or prior.get("last_partial_at") or "",
@@ -488,7 +525,13 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
             "last_attempt_source_provenance": result.get("source_provenance", {}),
             "last_success_source_provenance": result.get("source_provenance", {}) if healthy else prior.get("last_success_source_provenance") or snapshot_meta.get("source_provenance", {}),
             "last_attempt_count": int(result.get("count", 0) or 0),
-            "consecutive_failures": 0 if healthy else int(prior.get("consecutive_failures", 0) or 0) + 1,
+            "last_attempt_elapsed_seconds": result.get("elapsed_seconds"),
+            "consecutive_failures": failure_streak,
+            "failure_cause": failure_cause,
+            "previous_failure": (
+                {"cause": prior_cause, "count": prior_streak}
+                if not failure_cause and prior_cause and prior_streak else {}
+            ),
             "query_stats": list(result.get("query_stats") or []),
             "detail_enrichment": dict(result.get("detail_enrichment") or {}),
             "official_enrichment": dict(result.get("official_enrichment") or {}),
@@ -539,24 +582,42 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
 
 def recover_jds() -> Dict[str, object]:
     """One bounded enrichment pass over current snapshots, without rediscovery."""
-    names = ("linkedin", "indeed")
+    started = time.monotonic()
+    names = ("linkedin", "indeed", "remote_recovery")
     snapshots = {name: read_source_snapshot_payload(name) for name in names}
+    remote_rows = _remote_handoff_rows()
+    previous_remote = list(snapshots["remote_recovery"]["jobs"])
+    if not remote_rows:
+        remote_rows = [{**row, "remote_recovery": True} for row in previous_remote]
+    previous_remote_by_key = {
+        (str(row.get("source") or ""), str(row.get("job_id") or "")): row
+        for row in previous_remote
+    }
+    for row in remote_rows:
+        prior = previous_remote_by_key.get((str(row.get("source") or ""), str(row.get("job_id") or "")), {})
+        if len(str(prior.get("description") or "").strip()) >= board.THIN_JD_CHARS and len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS:
+            row["description"] = prior["description"]
+            row["enrichment_method"] = prior.get("enrichment_method", "local_cache")
+    snapshots["remote_recovery"]["jobs"] = remote_rows
     originals = {name: copy.deepcopy(snapshots[name]["jobs"]) for name in names}
     counts_before = {
         name: sum(len(str(job.get("description") or "").strip()) < board.THIN_JD_CHARS for job in originals[name])
         for name in names
     }
     now = datetime.now(timezone.utc)
-    deadline = time.monotonic() + RECOVERY_SECONDS
+    deadline = float("inf")
     context = coverage_reconcile.load_official_context()
     store = board.load_store()
     store = {
         **{f"source-cache::{name}::{index}": job
            for name in names for index, job in enumerate(originals[name]) if job.get("official_search_verified")},
+        **{f"remote::{index}": job for index, job in enumerate(remote_rows)
+           if len(str(job.get("description") or "").strip()) >= board.THIN_JD_CHARS},
         **store,
     }
     resolver = official_jd_recovery.Resolver(
-        search_limit=RECOVERY_SEARCH_LIMIT, page_limit=RECOVERY_PAGE_LIMIT, deadline=deadline,
+        search_limit=RECOVERY_SEARCH_LIMIT,
+        page_limit=RECOVERY_PAGE_LIMIT, deadline=deadline,
     )
     prior_by_id = {
         name: {str(job.get("job_id") or ""): job for job in originals[name] if job.get("job_id")}
@@ -581,11 +642,13 @@ def recover_jds() -> Dict[str, object]:
     ), reverse=True)
     methods: Dict[str, int] = {}
     processed = 0
+    web_attempted_rows: set[int] = set()
     for name, row, prior in pending:
-        if (time.monotonic() >= deadline or resolver.search_requests >= RECOVERY_SEARCH_LIMIT
-                or resolver.page_requests >= RECOVERY_PAGE_LIMIT):
+        if (time.monotonic() >= deadline or resolver.search_requests >= resolver.search_limit
+                or resolver.page_requests >= resolver.page_limit):
             break
         method = resolver.recover(row, previous=prior, context=context, store=store, now=now)
+        web_attempted_rows.add(id(row))
         methods[method] = methods.get(method, 0) + 1
         processed += 1
     linkedin_rows = [row for row in snapshots["linkedin"]["jobs"]
@@ -603,6 +666,40 @@ def recover_jds() -> Dict[str, object]:
     ) if linkedin_rows else {"requests": 0, "responses": 0, "rate_limited": False, "jds_resolved": 0}
     detail.update(cooldown_active=cooldown, probe=probe,
                   status="cooldown" if cooldown else "probe" if probe else "active")
+    targeted_requests = 0
+    targeted_matches = 0
+    targeted_detail_jds = 0
+    targeted_rate_limited = False
+    if not cooldown and not detail.get("rate_limited") and time.monotonic() < deadline:
+        remaining_detail = max(0, min(detail_limit, LINKEDIN_DETAIL_LIMIT) - int(detail.get("requests", 0) or 0))
+        for name, row, _prior in pending:
+            if (name != "remote_recovery" or id(row) not in web_attempted_rows
+                    or targeted_requests >= 3 or not remaining_detail or time.monotonic() >= deadline):
+                continue
+            if len(str(row.get("description") or "").strip()) >= board.THIN_JD_CHARS:
+                continue
+            card, rate_limited = linkedin_local.targeted_search(
+                str(row.get("company") or ""), str(row.get("title") or ""), str(row.get("location") or ""),
+            )
+            targeted_requests += 1
+            if rate_limited:
+                targeted_rate_limited = True
+                break
+            if not card:
+                continue
+            targeted_matches += 1
+            result = linkedin_local.enrich_details(
+                [card], allow_requests=True, request_limit=1,
+                min_description_chars=board.THIN_JD_CHARS,
+            )
+            remaining_detail -= int(result.get("requests", 0) or 0)
+            if len(str(card.get("description") or "").strip()) >= board.THIN_JD_CHARS:
+                row.update(description=card["description"], enrichment_method="targeted_linkedin_detail",
+                           enrichment_status="resolved", linkedin_source_url=card.get("source_url", ""))
+                targeted_detail_jds += 1
+            if result.get("rate_limited"):
+                targeted_rate_limited = True
+                break
     after = {
         name: sum(len(str(job.get("description") or "").strip()) < board.THIN_JD_CHARS for job in snapshots[name]["jobs"])
         for name in names
@@ -612,6 +709,11 @@ def recover_jds() -> Dict[str, object]:
         for row in snapshots[name]["jobs"]:
             row.pop("_linkedin_official_url", None)
             row.pop("_linkedin_official_defer", None)
+        if name == "remote_recovery":
+            recovered = [row for row in snapshots[name]["jobs"]
+                         if row.get("enrichment_method") and len(str(row.get("description") or "").strip()) >= board.THIN_JD_CHARS]
+            snapshots[name]["jobs"] = recovered
+            originals[name] = previous_remote
         if snapshots[name]["jobs"] == originals[name]:
             continue
         path = OUTPUT_DIR / "sources" / f"{name}.json"
@@ -640,11 +742,16 @@ def recover_jds() -> Dict[str, object]:
         atomic_write(HEALTH_PATH, (json.dumps(health, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
     report: Dict[str, object] = {
         "run_at": now.isoformat(), "before_no_jd": counts_before, "after_no_jd": after,
+        "elapsed_seconds": round(time.monotonic() - started, 3),
         "before_total": sum(counts_before.values()), "after_total": sum(after.values()),
         "cheap_matches": cheap_counts, "methods": methods, "official_matches": dict(resolver.stats),
         "official_jds_recovered": sum(counts_before.values()) - sum(after.values()) - int(detail.get("jds_resolved", 0) or 0),
         "linkedin_detail_recoveries": int(detail.get("jds_resolved", 0) or 0),
         "linkedin_detail": detail, "search_requests": resolver.search_requests,
+        "targeted_linkedin_search_requests": targeted_requests,
+        "targeted_linkedin_matches": targeted_matches,
+        "targeted_linkedin_detail_jds": targeted_detail_jds,
+        "targeted_linkedin_rate_limited": targeted_rate_limited,
         "official_page_requests": resolver.page_requests, "generic_jobs_processed": processed,
         "search_provider": resolver.search_provider,
         "generic_jobs_deferred": len(pending) - processed, "changed_sources": changed,
@@ -653,6 +760,21 @@ def recover_jds() -> Dict[str, object]:
     log_path = OUTPUT_DIR / "logs" / "linkedin_jd_recovery_latest.json"
     log_path.parent.mkdir(parents=True, exist_ok=True)
     atomic_write(log_path, (json.dumps(report, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
+    try:
+        health = json.loads(HEALTH_PATH.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        health = {"schema_version": HEALTH_SCHEMA_VERSION, "sources": {}}
+    previous_targeted = int((health.get("local_recovery") or {}).get("targeted_429_streak", 0) or 0)
+    targeted_streak = (previous_targeted + 1 if targeted_rate_limited else 0
+                       if targeted_requests else previous_targeted)
+    health["local_recovery"] = {key: report[key] for key in (
+        "run_at", "elapsed_seconds", "official_jds_recovered", "linkedin_detail_recoveries",
+        "targeted_linkedin_search_requests", "targeted_linkedin_detail_jds",
+        "targeted_linkedin_rate_limited", "generic_jobs_processed",
+        "search_requests", "official_page_requests",
+    )}
+    health["local_recovery"]["targeted_429_streak"] = targeted_streak
+    atomic_write(HEALTH_PATH, (json.dumps(health, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
     print(json.dumps(report, indent=2, ensure_ascii=False))
     return report
 
@@ -671,6 +793,8 @@ def main() -> None:
     collector = collector_provenance()
     results = [run_one(name, collector, force=args.only == "glassdoor") for name in names]
     write_health(results, collector)
+    if not args.only and os.environ.get("LOCAL_SOURCE_PROFILE") == "mac":
+        recover_jds()
 
     diagnostics_path = OUTPUT_DIR / "logs" / "local_sources_latest.json"
     diagnostics_path.parent.mkdir(parents=True, exist_ok=True)

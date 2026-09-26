@@ -413,7 +413,7 @@ class OfficialRecoveryTests(unittest.TestCase):
                                         "meta": snapshot["meta"], "jobs": [original]}))
             report = local_sources.recover_jds()
             saved = json.loads(path.read_text())
-        self.assertEqual(["linkedin", "indeed"], seen)
+        self.assertEqual(["linkedin", "indeed", "remote_recovery"], seen)
         self.assertEqual(1, report["before_total"])
         self.assertEqual(0, report["after_total"])
         self.assertEqual(original["first_seen"], saved["jobs"][0]["first_seen"])

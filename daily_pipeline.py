@@ -22,6 +22,7 @@ import csv
 import json
 
 from state_io import atomic_write, encode_json_gzip, read_json
+import remote_recovery
 import re
 import time
 from collections import Counter, defaultdict
@@ -1028,6 +1029,7 @@ def write_alert_outputs(new_rows: List[Dict[str, Any]], stamp: str, with_tiers: 
 
 
 def run() -> None:
+    run_started = time.monotonic()
     parser = argparse.ArgumentParser(description="Daily Syncareer job pipeline")
     parser.add_argument("--time", default=DEFAULT_TIME_WINDOW, choices=["24hours", "last3days", "last7days"], help="Time window")
     parser.add_argument("--no-llm", action="store_true", help="Skip LLM tiering; use hard filter + keyword fallback only")
@@ -1052,6 +1054,7 @@ def run() -> None:
     stamp = now.strftime("%Y-%m-%d_%H%M")
 
     # Phase 1: search
+    remote_started = time.monotonic()
     id_to_summary, id_to_keywords, per_keyword_counts, query_diagnostics = run_search(session, time_window)
     total_found = len(id_to_summary)
 
@@ -1090,6 +1093,7 @@ def run() -> None:
             row["enrichment_failure_reason"] = "syncareer_detail_missing_or_thin"
         raw_rows.append(row)
         time.sleep(DETAIL_SLEEP_SECONDS)
+    remote_elapsed_seconds = round(time.monotonic() - remote_started, 3)
 
     enrichment_needed = sum(
         len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS for row in raw_rows
@@ -1105,6 +1109,11 @@ def run() -> None:
             cache_path=OUTPUT_DIR / "cache" / "board" / "jobs.json.gz",
         )),
     ])
+    if alert_mode:
+        remote_recovery.write_snapshot(
+            OUTPUT_DIR / "recovery" / "syncareer.json.gz", "syncareer",
+            [*raw_rows, *({"job_id": jid, **row} for jid, row in id_to_summary.items() if jid not in processing_ids)],
+        )
 
     # Phase 4: hard filters (always applied).
     kept_rows: List[Dict[str, str]] = []
@@ -1262,6 +1271,8 @@ def run() -> None:
     stats_text = json.dumps(
         {
             "run_at": datetime.now(timezone.utc).isoformat(),
+            "elapsed_seconds": round(time.monotonic() - run_started, 3),
+            "remote_elapsed_seconds": remote_elapsed_seconds,
             "funnel": {"scoring_candidates": len(scoring_rows)},
             "llm": {
                 **score_counts,

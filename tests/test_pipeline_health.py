@@ -395,7 +395,7 @@ class PipelineHealthTests(unittest.TestCase):
             self.assertEqual("limited", official_runs[0]["health"])
             self.assertEqual("unknown", official_runs[1]["health"])
             pipeline_health.write(root / "public", report, history)
-            self.assertIn("Consecutive degraded runs", (root / "public" / "health.html").read_text())
+            self.assertIn("Consecutive failures", (root / "public" / "health.html").read_text())
 
     def test_official_scraper_error_thresholds(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

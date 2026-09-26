@@ -26,8 +26,8 @@ SEARCH_URL = "https://html.duckduckgo.com/html/"
 BING_SEARCH_URL = "https://www.bing.com/search"
 CACHE_DAYS = 14
 NO_MATCH_HOURS = 24
-NORMAL_SEARCH_LIMIT = 12
-NORMAL_PAGE_LIMIT = 12
+NORMAL_SEARCH_LIMIT = 100
+NORMAL_PAGE_LIMIT = 150
 ATS_HOSTS = (
     "ashbyhq.com", "greenhouse.io", "lever.co", "myworkdayjobs.com",
     "smartrecruiters.com", "workable.com", "icims.com", "teamtailor.com",
@@ -202,7 +202,9 @@ def _listing_urls(company: str, context: dict, store: dict) -> list[str]:
         if first and (first.lower() in {"jobs", "careers", "positions", "job"}
                       or any(host.endswith(ats) for ats in ATS_HOSTS)):
             urls.append(f"{parts.scheme}://{parts.netloc}/{first}")
-    return list(dict.fromkeys(url for url in urls if urlsplit(url).scheme in {"http", "https"}))[:2]
+    return list(dict.fromkeys(url for url in urls
+                              if urlsplit(url).scheme in {"http", "https"}
+                              and not is_aggregator_url(url)))[:2]
 
 
 class Resolver:
@@ -223,6 +225,7 @@ class Resolver:
         self.ats_matches: dict[str, list[dict]] = {}
         self.store_by_id: dict[tuple[str, str], dict] = {}
         self.indeed_by_company: dict[str, list[dict]] | None = None
+        self.remote_by_company: dict[str, list[dict]] | None = None
         self.dedicated_seen: set[tuple[str, str]] = set()
 
     def _available(self) -> bool:
@@ -262,6 +265,8 @@ class Resolver:
         return list(dict.fromkeys(urls[:8])), "ok"
 
     def page(self, url: str, local: Counter) -> tuple[str, str, str]:
+        if is_aggregator_url(url):
+            return "", url, "unsupported"
         if self.page_requests >= self.page_limit or local["pages"] >= 4 or not self._available():
             return "", url, "budget"
         self.page_requests += 1
@@ -360,26 +365,6 @@ class Resolver:
                 return "cache"
         company = str(row.get("company") or "")
         company_key = normalize_company_key(company)
-        if str(row.get("source") or "").lower() == "linkedin":
-            if self.indeed_by_company is None:
-                peers: dict[str, list[dict]] = {}
-                for entry in store.values():
-                    if "indeed" not in str(entry.get("source") or "").lower():
-                        continue
-                    if len(str(entry.get("description") or "").strip()) < board.THIN_JD_CHARS:
-                        continue
-                    peer_company = normalize_company_key(str(entry.get("company") or ""))
-                    peers.setdefault(peer_company, []).append(entry)
-                self.indeed_by_company = peers
-            matches = coverage_reconcile.title_location_matches(row, self.indeed_by_company.get(company_key, []))
-            unique = {str(peer.get("job_id") or peer.get("source_url") or index): peer
-                      for index, peer in enumerate(matches)}
-            if len(unique) == 1:
-                peer = next(iter(unique.values()))
-                row.update(description=peer["description"], jd_recovery_at=now.isoformat(),
-                           enrichment_method="exact_indeed_peer", enrichment_status="resolved")
-                self.stats["exact_indeed_peer"] += 1
-                return "exact_indeed_peer"
         cid = coverage_reconcile.company_id_for(company, context.get("registry_entries", []))
         official = None
         if cid:
@@ -483,6 +468,26 @@ class Resolver:
                 row["_linkedin_official_url"] = official_url
                 row["_linkedin_official_defer"] = True
 
+        if self.remote_by_company is None:
+            peers: dict[str, list[dict]] = {}
+            for entry in store.values():
+                if not entry.get("remote_recovery") or len(str(entry.get("description") or "").strip()) < board.THIN_JD_CHARS:
+                    continue
+                peers.setdefault(normalize_company_key(str(entry.get("company") or "")), []).append(entry)
+            self.remote_by_company = peers
+        matches = coverage_reconcile.title_location_matches(row, self.remote_by_company.get(company_key, []))
+        req = str(row.get("requisition_id") or row.get("req_id") or "")
+        if req:
+            matches = [peer for peer in matches if not peer.get("requisition_id") or
+                       str(peer.get("requisition_id")) == req]
+        unique = {str(peer.get("official_url") or peer.get("job_id") or index): peer
+                  for index, peer in enumerate(matches)}
+        if len(unique) == 1:
+            peer = next(iter(unique.values()))
+            url = str(peer.get("official_url") or peer.get("source_url") or "")
+            if url and _credible(url, company, patterns):
+                return resolved(url, str(peer["description"]), "remote_exact_peer")
+
         cached_board = self.ats_matches.get(company_key, [])
         if cached_board:
             _method, match = coverage_reconcile.exact_match(row, cached_board)
@@ -490,6 +495,27 @@ class Resolver:
                 url = str(match.get("official_url") or "")
                 if _credible(url, company, patterns):
                     return resolved(url, match["description"], "ats_board_cache")
+
+        if str(row.get("source") or "").lower() == "linkedin":
+            if self.indeed_by_company is None:
+                peers: dict[str, list[dict]] = {}
+                for entry in store.values():
+                    if "indeed" not in str(entry.get("source") or "").lower():
+                        continue
+                    if len(str(entry.get("description") or "").strip()) < board.THIN_JD_CHARS:
+                        continue
+                    peer_company = normalize_company_key(str(entry.get("company") or ""))
+                    peers.setdefault(peer_company, []).append(entry)
+                self.indeed_by_company = peers
+            matches = coverage_reconcile.title_location_matches(row, self.indeed_by_company.get(company_key, []))
+            unique = {str(peer.get("job_id") or peer.get("source_url") or index): peer
+                      for index, peer in enumerate(matches)}
+            if len(unique) == 1:
+                peer = next(iter(unique.values()))
+                row.update(description=peer["description"], jd_recovery_at=now.isoformat(),
+                           enrichment_method="exact_indeed_peer", enrichment_status="resolved")
+                self.stats["exact_indeed_peer"] += 1
+                return "exact_indeed_peer"
 
         if cheap_only:
             return "pending"

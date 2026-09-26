@@ -31,37 +31,6 @@ jobs:
   collect:
     if: ${{ !inputs.scheduler_probe }}
     runs-on: ubuntu-latest
-    timeout-minutes: 45
     steps:
-      - name: Checkout latest main with durable source state
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 0
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
-          cache-dependency-path: |
-            requirements.txt
-            requirements-local.txt
-
-      - name: Install local-source dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements-local.txt
-
-      - name: Collect and publish source/health snapshots from latest main
-        env:
-          GIT_CONFIG_COUNT: "0"
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          bash scripts/local_source_sync.sh
-
-      - name: Dispatch Board matching for the committed snapshots
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh workflow run board-jobs.yml --ref main -f source_ingest=true
+      - name: Local source ownership
+        run: echo "LinkedIn and local source collection run on the Mac via launchd."

@@ -359,11 +359,12 @@ class LocalSourceTests(unittest.TestCase):
         self.assertIn("Record external scheduler receipt", workflow)
         self.assertIn("group: local-source-collection", workflow)
         self.assertIn("cancel-in-progress: false", workflow)
-        self.assertIn("source_ingest=true", workflow)
+        self.assertNotIn("source_ingest=true", workflow)
         self.assertNotIn("steps.publish.outputs.changed == 'true'", workflow)
-        self.assertIn("bash scripts/local_source_sync.sh", workflow)
+        self.assertNotIn("bash scripts/local_source_sync.sh", workflow)
+        self.assertIn("LinkedIn and local source collection run on the Mac", workflow)
         wrapper = (ROOT / "scripts/local_source_sync.sh").read_text(encoding="utf-8")
-        for name in ("linkedin", "indeed", "glassdoor", "health"):
+        for name in ("linkedin", "indeed", "glassdoor", "remote_recovery", "health"):
             self.assertIn(f'output/sources/${{source_name}}.json', wrapper)
             self.assertIn(name, wrapper)
         self.assertNotIn("git rebase", workflow)
@@ -571,9 +572,13 @@ class LocalSourceTests(unittest.TestCase):
             schema.write_source_snapshot("linkedin", [fresh, carried],
                                          {"scraped_at": "2026-09-17T15:00:00+00:00"})
             result = local_sources.run_one("linkedin", {"commit": "new", "dirty": False})
+            local_sources.write_health([result], {"commit": "new", "dirty": False})
+            health = json.loads((Path(tmpdir) / "health.json").read_text())["sources"]["linkedin"]
             payload = schema.read_source_snapshot_payload("linkedin")
         self.assertEqual("partial", result["status"])
         self.assertEqual("focused query coverage", result["reason"])
+        self.assertEqual(0, health["consecutive_failures"])
+        self.assertEqual("", health["failure_cause"])
         self.assertTrue(enrich.call_args.kwargs["allow_requests"])
         by_id = {job["job_id"]: job for job in payload["jobs"]}
         self.assertEqual(2, len(by_id))

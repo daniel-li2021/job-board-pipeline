@@ -219,6 +219,15 @@ def _failure_summary(failures: Any) -> tuple[int, str]:
     return len(items), shown
 
 
+def _short_cause(message: str) -> str:
+    lowered = message.lower()
+    for token, label in (("429", "429"), ("403", "403"), ("timed out", "timeout"),
+                         ("timeout", "timeout"), ("404", "404")):
+        if token in lowered:
+            return label
+    return "error"
+
+
 def _official_failure_partition(base: Path, failures: Any) -> tuple[Any, list[str]]:
     """Remove configured limitations and the LinkedIn-company adapter from active failures."""
     if not isinstance(failures, dict):
@@ -368,10 +377,20 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         else:
             latest_attempt_status = "degraded" if failure_count else "success"
         detail = "; ".join(details)
+        issue = ""
+        if key == "official" and scraper_error_count:
+            named = [f"{name.title()} ({_short_cause(' '.join(errors))})"
+                     for name, errors in failed_scrapers.items()]
+            issue = (f"{scraper_error_count} scraper{'s' if scraper_error_count != 1 else ''} failed: "
+                     + ", ".join(named[:2]) + (f", +{len(named) - 2} more" if len(named) > 2 else "")
+                     + (f" ×{consecutive_failures or 1}" if scraper_error_count == 1 else ""))
+        elif failure_count:
+            issue = f"{label} {_short_cause(failure_detail)} ×{max(1, consecutive_failures)}"
         components[key] = {
             "label": label,
             "status": status,
             "detail": detail,
+            "issue": issue,
             "updated_at": store_stamp or run_stamp,
             "data_usable": data_usable,
             "last_good_count": len(entries),
@@ -408,7 +427,8 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                     "reason": reason,
                 })
 
-    local = _read(base / "output" / "sources" / "health.json", {}).get("sources", {})
+    local_payload = _read(base / "output" / "sources" / "health.json", {})
+    local = local_payload.get("sources", {})
     for source in ("linkedin", "indeed", "glassdoor"):
         state = local.get(source, {})
         snapshot = _read(base / "output" / "sources" / f"{source}.json", {})
@@ -420,11 +440,18 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         attempt_age = _age_hours(str(state.get("last_attempt_at") or ""), now)
         partial_age = _age_hours(str(state.get("last_partial_at") or ""), now)
         is_partial = str(state.get("status") or "") == "partial"
+        search = state.get("search_collection") or {}
+        partial_reason = str(state.get("reason") or "")
+        rate_limited_partial = bool(is_partial and (search.get("rate_limited") or "429" in partial_reason
+                                                    or "rate" in partial_reason.lower()))
+        focused_partial = bool(source == "linkedin" and is_partial and not rate_limited_partial)
         last_good_count = len(snapshot_jobs)
         data_usable = last_good_count > 0 and (age is not None or partial_age is not None)
-        attempt_failed = not state.get("healthy")
+        attempt_failed = not state.get("healthy") and not focused_partial
         if not data_usable:
             status = "Problem" if state.get("required", source != "glassdoor") else "Warning"
+        elif focused_partial and partial_age is not None and partial_age <= 12:
+            status = "Healthy"
         elif age is None:
             status = "Healthy" if source == "linkedin" and partial_age is not None else "Warning"
         elif age > 12:
@@ -433,8 +460,21 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             status = "Warning"
         else:
             status = "Healthy"
-        consecutive_failures = int(state.get("consecutive_failures", 1 if attempt_failed else 0) or 0)
+        consecutive_failures = (
+            int((state.get("runner_states") or {}).get("mac", {}).get("search_429_streak", 0) or 0)
+            if source == "linkedin" and focused_partial else
+            int(state.get("consecutive_failures", 1 if attempt_failed else 0) or 0)
+        )
+        if focused_partial:
+            consecutive_failures = 0
+        runtime = (state.get("runner_states") or {}).get("mac", {}) if source == "linkedin" else {}
+        targeted_streak = int((local_payload.get("local_recovery") or {}).get("targeted_429_streak", 0) or 0)
+        detail_streak = int(runtime.get("detail_429_streak", state.get("detail_429_streak", 0)) or 0)
         failure_threshold = 3 if source == "linkedin" else 2
+        if source == "linkedin":
+            consecutive_failures = max(consecutive_failures, targeted_streak, detail_streak)
+            if status == "Healthy" and consecutive_failures >= failure_threshold and (targeted_streak or detail_streak):
+                status = "Warning"
         if status == "Healthy" and attempt_failed and consecutive_failures >= failure_threshold:
             status = "Warning"
         verified_age = f"{age:.1f}h old" if age is not None else "never fully verified"
@@ -449,8 +489,9 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             fresh_kept = int(state.get("partial_fresh_kept", 0) or 0)
             carried = int(state.get("partial_carried_count", 0) or 0)
             details.append(
-                f"latest {attempt_kind} attempt{attempt_when} was rate-limited "
-                f"({state.get('reason') or 'HTTP 429'}): collected {collected} rows, kept {fresh_kept}; "
+                f"latest {attempt_kind} attempt{attempt_when} had "
+                f"{'rate-limited' if rate_limited_partial else 'focused'} coverage "
+                f"({state.get('reason') or 'partial coverage'}): collected {collected} rows, kept {fresh_kept}; "
                 f"merged snapshot serves {last_good_count} ({carried} carried, last full collection {verified_age})"
             )
         elif attempt_failed:
@@ -469,10 +510,11 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         degradation_kinds: list[str] = []
         keywords = []
         if is_partial:
-            degradation_kinds.append("rate_limited_partial_collection")
-            keywords.extend(("partial", "rate-limited", "cached"))
+            degradation_kinds.append("rate_limited_partial_collection" if rate_limited_partial else "focused_coverage")
+            keywords.extend(("partial", "rate-limited" if rate_limited_partial else "focused coverage", "cached"))
             limitations.append(
-                f"{'LinkedIn (local/general)' if source == 'linkedin' else source.title()}: rate-limited partial "
+                f"{'LinkedIn (local/general)' if source == 'linkedin' else source.title()}: "
+                f"{'rate-limited' if rate_limited_partial else 'focused'} partial "
                 f"collection; {last_good_count} jobs usable "
                 f"({int(state.get('partial_carried_count', 0) or 0)} carried from the last complete run)"
             )
@@ -532,11 +574,29 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                 f"Glassdoor: {static_fallbacks}/{len(query_stats)} queries used the expected static HTML fallback"
             )
         detail = "; ".join(details)
+        cause = str(state.get("failure_cause") or "")
+        if source == "linkedin" and targeted_streak:
+            issue = f"LinkedIn targeted 429 ×{targeted_streak}"
+        elif source == "linkedin" and detail_streak:
+            issue = f"LinkedIn detail 429 ×{detail_streak}"
+        elif focused_partial:
+            recovered = state.get("previous_failure") or {}
+            issue = (f"focused coverage · Recovered, previous {recovered.get('cause')} ×{recovered.get('count')}"
+                     if recovered.get("cause") and recovered.get("count") else "focused coverage")
+        elif cause:
+            issue = f"{source.title()} {cause} ×{consecutive_failures}"
+        elif attempt_failed:
+            issue = f"{source.title()} {_short_cause(str(state.get('reason') or ''))} ×{consecutive_failures}"
+        else:
+            recovered = state.get("previous_failure") or {}
+            issue = (f"Recovered · previous {recovered.get('cause')} ×{recovered.get('count')}"
+                     if recovered.get("cause") and recovered.get("count") else "")
         components[source] = {
             "label": {"linkedin": "LinkedIn (local/general)", "indeed": "Indeed", "glassdoor": "Glassdoor"}[source],
             "status": status,
             "detail_status": state.get("detail_status", "") if source == "linkedin" else "",
             "detail": detail,
+            "issue": issue,
             "updated_at": state.get("last_success_at", ""),
             "data_usable": data_usable,
             "last_good_count": last_good_count,
@@ -551,6 +611,11 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             "partial_carried_count": int(state.get("partial_carried_count", 0) or 0),
             "degradation_kinds": degradation_kinds,
             "consecutive_failures": consecutive_failures,
+            "failure_streaks": ({"search_429": int(runtime.get("search_429_streak", 0) or 0),
+                                 "targeted_429": targeted_streak, "detail_429": detail_streak}
+                                if source == "linkedin" else
+                                {str(state.get("failure_cause") or _short_cause(str(state.get("reason") or ""))): consecutive_failures}
+                                if consecutive_failures else {}),
             "keywords": list(dict.fromkeys(keywords)),
             "impact": (
                 f"partial collection ({state.get('reason') or 'HTTP 429'}); {last_good_count} jobs usable, "
@@ -567,18 +632,110 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         *(keyword for name in ("linkedin", "indeed", "glassdoor") for keyword in components[name]["keywords"]),
     ]))
 
-    for item in components.values():
-        summary = f"{item['label']}: {item['detail']}"
+    board_entries = list((_read(base / "output" / "board" / "jobs.json", {}) or {}).get("entries") or [])
+    for key, item in components.items():
+        if key in PIPELINES:
+            entries = list((_read(base / "output" / PIPELINES[key][1] / "jobs.json", {}) or {}).get("entries") or [])
+            jd_count = sum(bool(entry.get("description_available")) for entry in entries)
+            pass_count = sum(entry.get("tier") in {"A", "B"} for entry in entries)
+        else:
+            entries = list((_read(base / "output" / "sources" / f"{key}.json", {}) or {}).get("jobs") or [])
+            jd_count = sum(len(str(entry.get("description") or "").strip()) >= 200 for entry in entries)
+            pass_count = sum(entry.get("tier") in {"A", "B"} for entry in board_entries
+                             if str(entry.get("source") or "").lower() == key)
+        item["volumes"] = {"jobs": item.get("last_good_count", 0), "jd": jd_count, "pass": pass_count}
+        summary = f"{item['label']}: {item.get('issue') or item['detail']}"
         if item["status"] in {"Problem", "Stale"}:
             problems.append(summary)
         elif item["status"] == "Warning":
             degradations.append(summary)
+
+    local_state = local_payload
+    recovery = local_state.get("local_recovery") or {}
+    local_sources = local_state.get("sources") or {}
+
+    def _group(statuses: list[str], jobs: int, jds: int, elapsed: float | None,
+               children: dict[str, Any]) -> dict[str, Any]:
+        return {"jobs_processed": jobs, "jds_recovered": jds, "elapsed_seconds": elapsed,
+                "status": max(statuses, key=SEVERITY.get), "subcomponents": children}
+
+    remote_children = {
+        "ATS": {"jobs_processed": int((latest.get("board", {}).get("source_raw") or {}).get("ats", 0) or 0),
+                "status": components["board"]["status"],
+                "elapsed_seconds": latest.get("board", {}).get("remote_elapsed_seconds")},
+        "Official": {"jobs_processed": int((latest.get("official", {}).get("enrichment") or {}).get("discovered", 0) or 0),
+                     "status": components["official"]["status"],
+                     "elapsed_seconds": latest.get("official", {}).get("scrape_elapsed_seconds")},
+        "Syncareer": {"jobs_processed": int((latest.get("syncareer", {}).get("output") or {}).get("new_jobs", 0) or 0),
+                      "status": components["syncareer"]["status"],
+                      "elapsed_seconds": latest.get("syncareer", {}).get("remote_elapsed_seconds")},
+        "other remote sources": {"jobs_processed": 0, "status": "unmeasured"},
+    }
+    remote_jobs = sum(int(child.get("jobs_processed", 0) or 0) for child in remote_children.values())
+    remote_jds = (
+        int((latest.get("official", {}).get("enrichment") or {}).get("source_jds_available", 0) or 0)
+        + int(((latest.get("board", {}).get("enrichment") or {}).get("direct") or {}).get("jds_resolved", 0) or 0)
+        + int((latest.get("syncareer", {}).get("enrichment") or {}).get("detail_api_resolved", 0) or 0)
+        + sum(int((latest.get(key, {}).get("enrichment") or {}).get("exact_peer_resolved", 0) or 0)
+              for key in PIPELINES)
+    )
+    action_jds = remote_jds + int((latest.get("board", {}).get("online_recovery") or {}).get("jds_recovered", 0) or 0)
+    remote_elapsed_values = [remote_children[key].get("elapsed_seconds") for key in ("ATS", "Official", "Syncareer")]
+    remote_elapsed = (round(sum(float(value or 0) for value in remote_elapsed_values), 3)
+                      if all(value is not None for value in remote_elapsed_values) else None)
+    action_jobs = sum(int((latest.get(key, {}).get("funnel") or {}).get("after_dedup", 0) or 0)
+                      for key in PIPELINES)
+    action_elapsed_values = [latest.get(key, {}).get("elapsed_seconds") for key in PIPELINES]
+    action_children = {
+        "ingest": {"jobs_processed": remote_jobs},
+        "dedup": {"jobs_processed": action_jobs},
+        "enrichment": {"jds_recovered": action_jds,
+                       "needed": sum(int((latest.get(key, {}).get("enrichment") or {}).get("needed", 0) or 0)
+                                     for key in PIPELINES),
+                       "online_company_title": latest.get("board", {}).get("online_recovery", {})},
+        "LLM": {"jobs_processed": sum(int((latest.get(key, {}).get("llm") or {}).get("scored", 0) or 0)
+                                      for key in PIPELINES),
+                "requests": sum(int((latest.get(key, {}).get("llm") or {}).get("api_requests", 0) or 0)
+                                for key in PIPELINES)},
+        "publish": {"jobs_processed": sum(int((latest.get(key, {}).get("output") or {}).get("shown", 0) or 0)
+                                          for key in PIPELINES),
+                    "status": "measured in latest run outputs"},
+    }
+    local_elapsed_values = [(local_sources.get(key) or {}).get("last_attempt_elapsed_seconds")
+                            for key in ("linkedin", "indeed", "glassdoor")]
+    groups = {
+        "Remote": _group([components[key]["status"] for key in PIPELINES], remote_jobs, remote_jds,
+                         remote_elapsed, remote_children),
+        "GitHub Actions": _group([components[key]["status"] for key in PIPELINES], action_jobs,
+                                 action_jds, sum(float(value or 0) for value in action_elapsed_values)
+                                 if any(value is not None for value in action_elapsed_values) else None,
+                                 action_children),
+        "Local Mac": _group([components[key]["status"] for key in ("linkedin", "indeed", "glassdoor")],
+                            sum(int((local_sources.get(key) or {}).get("last_attempt_count", 0) or 0)
+                                for key in ("linkedin", "indeed", "glassdoor")),
+                            int(recovery.get("official_jds_recovered", 0) or 0)
+                            + int(recovery.get("linkedin_detail_recoveries", 0) or 0),
+                            sum(float(value or 0) for value in local_elapsed_values)
+                            + float(recovery.get("elapsed_seconds") or 0)
+                            if any(value is not None for value in local_elapsed_values)
+                            or recovery.get("elapsed_seconds") is not None else None,
+                            {"LinkedIn discovery": {**local_sources.get("linkedin", {}).get("search_collection", {}),
+                                                    "jobs_processed": local_sources.get("linkedin", {}).get("last_attempt_count", 0),
+                                                    "elapsed_seconds": local_sources.get("linkedin", {}).get("last_attempt_elapsed_seconds")},
+                             "official-cache recovery": {"jds_recovered": recovery.get("official_jds_recovered", 0),
+                                                         "requests": recovery.get("search_requests", 0),
+                                                         "elapsed_seconds": recovery.get("elapsed_seconds")},
+                             "targeted LinkedIn recovery": {"requests": recovery.get("targeted_linkedin_search_requests", 0),
+                                                            "jds_recovered": recovery.get("targeted_linkedin_detail_jds", 0)},
+                             "LinkedIn detail": local_sources.get("linkedin", {}).get("detail_enrichment", {})}),
+    }
 
     overall = max((components[name]["status"] for name in PIPELINES), key=SEVERITY.get)
     report = {
         "generated_at": now.isoformat(),
         "overall": overall,
         "components": components,
+        "groups": groups,
         "problems": problems,
         "degradations": degradations,
         "limitations": limitations,
@@ -599,11 +756,19 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
     (public / "health.json").write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (public / "health-history.json").write_text(json.dumps(history, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     rows = "".join(
-        f"<tr><td>{html.escape(item['label'])}</td><td>{item['status']}</td>"
-        f"<td>{html.escape(str(item.get('last_good_count', 0)))} at {html.escape(str(item.get('last_good_at') or 'unknown'))}</td>"
-        f"<td>{html.escape(str(item.get('latest_attempt_status') or 'unknown'))} at {html.escape(str(item.get('latest_attempt_at') or 'unknown'))}</td>"
-        f"<td>{html.escape(str(item.get('consecutive_failures', 0)))}</td><td>{html.escape(item['detail'])}</td></tr>"
+        f"<tr><td>{html.escape(item['label'])}</td><td>{html.escape(item['status'])}</td>"
+        f"<td>{int(item.get('volumes', {}).get('jobs', 0))} / {int(item.get('volumes', {}).get('jd', 0))} / "
+        f"{int(item.get('volumes', {}).get('pass', 0))}</td>"
+        f"<td>{html.escape(str(item.get('latest_attempt_at') or item.get('updated_at') or 'unknown'))}</td>"
+        f"<td>{html.escape(item.get('issue') or '—')}</td>"
+        f"<td>{html.escape(str(item.get('consecutive_failures', 0)))}</td></tr>"
         for item in report["components"].values()
+    )
+    groups = "".join(
+        f"<tr><td>{html.escape(name)}</td><td>{html.escape(str(group['status']))}</td>"
+        f"<td>{group['jobs_processed']}</td><td>{group['jds_recovered']}</td>"
+        f"<td>{html.escape(str(group.get('elapsed_seconds') if group.get('elapsed_seconds') is not None else '—'))}</td></tr>"
+        for name, group in report.get("groups", {}).items()
     )
     issues = "".join(f"<li>{html.escape(issue)}</li>" for issue in report["problems"]) or "<li>None</li>"
     degradations = "".join(f"<li>{html.escape(issue)}</li>" for issue in report.get("degradations", [])) or "<li>None</li>"
@@ -612,5 +777,5 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
         f"<li>{html.escape(item['pipeline'])}: <a href=\"{html.escape(item['url'])}\">{html.escape(item['company'])} — {html.escape(item['title'])}</a> — {html.escape(item['reason'])}</li>"
         for item in report["unresolved_examples"]
     ) or "<li>None</li>"
-    page = f"""<!doctype html><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Pipeline health</title><style>body{{font:15px/1.45 system-ui;max-width:1250px;margin:40px auto;padding:0 20px;color:#172019}}table{{border-collapse:collapse;width:100%}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}}code{{background:#eee;padding:2px 4px}}li{{margin:5px 0}}</style><h1>Pipeline health: {report['overall']}</h1><p>Generated {html.escape(report['generated_at'])}. <a href=\"index.html\">Dashboard</a> · <a href=\"health.json\">current JSON</a> · <a href=\"health-history.json\">recent run and batch history</a></p><h2>Components</h2><table><tr><th>Pipeline/source</th><th>Status</th><th>Last good</th><th>Latest attempt</th><th>Consecutive degraded runs</th><th>Impact / detail</th></tr>{rows}</table><h2>Actionable problems</h2><ul>{issues}</ul><h2>Active warnings</h2><ul>{degradations}</ul><h2>Recovered behavior / known limitations</h2><ul>{limitations}</ul><h2>Enrichment funnel</h2><pre>{html.escape(json.dumps(report['enrichment'], indent=2))}</pre><h2>Unresolved JD examples</h2><ul>{examples}</ul>"""
+    page = f"""<!doctype html><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Pipeline health</title><style>body{{font:15px/1.45 system-ui;max-width:1250px;margin:40px auto;padding:0 20px;color:#172019}}table{{border-collapse:collapse;width:100%}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}}code{{background:#eee;padding:2px 4px}}li{{margin:5px 0}}</style><h1>Pipeline health: {report['overall']}</h1><p>Generated {html.escape(report['generated_at'])}. <a href=\"index.html\">Dashboard</a> · <a href=\"health.json\">current JSON</a> · <a href=\"health-history.json\">recent run and batch history</a></p><h2>Components</h2><table><tr><th>Source</th><th>Status</th><th>Jobs / JD / Pass</th><th>Updated</th><th>Issue</th><th>Consecutive failures</th></tr>{rows}</table><h2>Execution</h2><table><tr><th>Component</th><th>Status</th><th>Jobs processed</th><th>JDs recovered</th><th>Elapsed seconds</th></tr>{groups}</table><details><summary>Subcomponents and diagnostics</summary><pre>{html.escape(json.dumps(report.get('groups', {}), indent=2))}</pre><pre>{html.escape(json.dumps({key: item.get('detail') for key, item in report['components'].items()}, indent=2))}</pre></details><h2>Actionable problems</h2><ul>{issues}</ul><h2>Active warnings</h2><ul>{degradations}</ul><h2>Recovered behavior / known limitations</h2><ul>{limitations}</ul><h2>Enrichment funnel</h2><pre>{html.escape(json.dumps(report['enrichment'], indent=2))}</pre><h2>Unresolved JD examples</h2><ul>{examples}</ul>"""
     (public / "health.html").write_text(page, encoding="utf-8")

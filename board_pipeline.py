@@ -33,6 +33,7 @@ import html
 import json
 
 from state_io import atomic_write, encode_json_gzip, read_json
+import remote_recovery
 import os
 import re
 import time
@@ -133,6 +134,7 @@ RULE_EXCEPTIONAL_FOR_LLM = 72.0
 STRONG_SENIORITY_FITS = {"good", "strong", "realistic", "early_career"}
 
 LOCAL_SOURCES = ["linkedin", "indeed", "glassdoor"]
+LOCAL_SNAPSHOT_NAMES = [*LOCAL_SOURCES, "remote_recovery"]
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
@@ -392,13 +394,15 @@ def collect_sources(session: requests.Session, skip_network: bool = False) -> Tu
     meta: Dict[str, Any] = {"per_source": {}, "local_query_stats": {}, "errors": []}
 
     if not skip_network:
+        remote_started = time.monotonic()
         ats_res = ats.fetch_all_ats(session)
+        meta["remote_elapsed_seconds"] = round(time.monotonic() - remote_started, 3)
         jobs.extend(ats_res["jobs"])
         meta["per_source"].update(ats_res["per_board"])
         meta["errors"].extend(ats_res["errors"])
 
     # Ingest local snapshots committed by the launchd job.
-    for name in LOCAL_SOURCES:
+    for name in LOCAL_SNAPSHOT_NAMES:
         snapshot = read_source_snapshot_payload(name)
         rows = snapshot["jobs"]
         if rows:
@@ -644,7 +648,9 @@ def resolve_exposed_originals(
         source_url = str(job.get("source_url") or "")
         if looks_official(source_url):
             urls.append(source_url)
-        application_url = next((url for url in urls if urlsplit(url).scheme in {"http", "https"}), "")
+        application_url = next((url for url in urls
+                                if urlsplit(url).scheme in {"http", "https"}
+                                and not is_aggregator_url(url)), "")
         if not application_url:
             job["enrichment_status"] = "unresolved"
             reason = str(job.get("enrichment_failure_reason") or "no_direct_or_official_url")
@@ -3098,6 +3104,7 @@ def refresh_retained_entry_policy(
 
 
 def run() -> None:
+    run_started = time.monotonic()
     parser = argparse.ArgumentParser(description="Multi-source job board pipeline")
     parser.add_argument("--no-llm", action="store_true", help="Force rule-based scoring (local debug)")
     parser.add_argument("--skip-network", action="store_true", help="Ingest local job-board snapshots only (no ATS fetch)")
@@ -3190,6 +3197,60 @@ def run() -> None:
         [("official", official_peer_store), ("board", store), ("syncareer", syncareer_peer_store)],
     )
     direct_enrichment = resolve_exposed_originals(deduped, session, store)
+    online_recovery = {"jobs_processed": 0, "jds_recovered": 0,
+                       "search_requests": 0, "page_requests": 0}
+    # Cloud-safe company/title web recovery for unresolved records. The resolver
+    # rejects aggregator URLs. The shared run budget and deadline apply only here.
+    if not args.local_out and not args.skip_network:
+        from sources import official_jd_recovery
+
+        online_deadline = time.monotonic() + 15 * 60
+        online_resolver = official_jd_recovery.Resolver(deadline=online_deadline)
+        online_context = coverage_reconcile.load_official_context()
+        online_store = {
+            **{f"remote::{index}": {**row, "remote_recovery": True}
+               for index, row in enumerate(remote_recovery.read_snapshot(OUTPUT_DIR / "recovery" / "official.json.gz"))},
+            **store,
+        }
+        online_pending = []
+        for job in deduped:
+            if len(str(job.get("description") or "").strip()) >= THIN_JD_CHARS:
+                continue
+            previous = store.get(dedup_key(job), {})
+            if online_resolver.recover(job, previous=previous, context=online_context,
+                                       store=online_store, now=now, cheap_only=True) == "pending":
+                online_pending.append((job, previous))
+        online_pending.sort(key=lambda pair: str(pair[0].get("first_seen") or ""), reverse=True)
+        online_processed = 0
+        for job, previous in online_pending:
+            if (online_resolver.search_requests >= online_resolver.search_limit
+                    or online_resolver.page_requests >= online_resolver.page_limit
+                    or time.monotonic() >= online_deadline):
+                break
+            online_resolver.recover(job, previous=previous, context=online_context,
+                                    store=online_store, now=now)
+            online_processed += 1
+        online_recovery = {"jobs_processed": online_processed,
+                           "jds_recovered": sum(online_resolver.stats.get(key, 0) for key in (
+                               "dedicated_official", "remote_exact_peer", "ats_board_cache",
+                               "known_ats_board", "generic_1", "generic_2", "generic_3",
+                               "direct_ats_board", "direct_careers", "site_exact", "title_fallback")),
+                           "search_requests": online_resolver.search_requests,
+                           "page_requests": online_resolver.page_requests,
+                           "search_limit": online_resolver.search_limit,
+                           "page_limit": online_resolver.page_limit,
+                           "deadline_seconds": 15 * 60,
+                           "deadline_reached": time.monotonic() >= online_deadline}
+        remote_recovery.write_snapshot(
+            OUTPUT_DIR / "recovery" / "board.json.gz", "board",
+            (job for job in [*raw_jobs, *deduped]
+             if (str(job.get("source") or "").lower() not in LOCAL_SOURCES
+                 or job.get("enrichment_method") in {"dedicated_official", "remote_exact_peer",
+                                                     "ats_board_cache", "known_ats_board", "generic_1",
+                                                     "generic_2", "generic_3", "direct_ats_board",
+                                                     "direct_careers", "site_exact", "title_fallback"})
+             and not job.get("remote_recovery")),
+        )
     deduped = collapse_cross_source(deduped)
     coverage_reconcile.annotate_jobs(deduped, "board")
     new_jobs = finalize_new_jobs(deduped, store, seen_jobs, now_iso)
@@ -3351,6 +3412,7 @@ def run() -> None:
 
     stats = {
         "source_raw": source_raw,
+        "remote_elapsed_seconds": meta.get("remote_elapsed_seconds"),
         "funnel": {
             "after_dedup": initial_dedup_count,
             "after_company": len(after_company),
@@ -3404,9 +3466,10 @@ def run() -> None:
         },
         "direct_original_attempts": direct_enrichment.get("http_requests", 0) + direct_enrichment.get("scrapling_requests", 0),
         "peer_jds_resolved": peer_jds_resolved,
+        "online_recovery": online_recovery,
     }
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
-    run_payload = {"run_at": now_iso, **stats}
+    run_payload = {"run_at": now_iso, "elapsed_seconds": round(time.monotonic() - run_started, 3), **stats}
     stats_text = json.dumps(run_payload, indent=2, ensure_ascii=False) + "\n"
     (RUNS_DIR / f"{stamp}_stats.json").write_text(stats_text, encoding="utf-8")
     (BOARD_DIR / "latest_stats.json").write_text(stats_text, encoding="utf-8")

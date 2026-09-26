@@ -487,11 +487,11 @@ class DashboardPolicyTests(unittest.TestCase):
 
     def test_official_registry_has_search_link_only_targets(self) -> None:
         catalog = {entry["id"]: entry for entry in dashboard.official_search_catalog()}
-        for company_id in ("goldman-sachs", "citadel", "tesla", "wayfair"):
+        for company_id in ("goldman-sachs", "citadel", "tesla", "wayfair", "linkedin"):
             self.assertEqual("search_link_only", catalog[company_id]["automation"])
             self.assertTrue(catalog[company_id]["search_links"])
         for company_id in (
-            "disney", "qualcomm", "meta", "tiktok", "linkedin", "walmart",
+            "disney", "qualcomm", "meta", "tiktok", "walmart",
             "zoom", "pure-storage", "databricks", "roblox", "ebay", "amd",
             "mathworks", "netapp", "netflix", "two-sigma", "cvs",
             "wells-fargo", "yahoo", "ansys", "verizon",

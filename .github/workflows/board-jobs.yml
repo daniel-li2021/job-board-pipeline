@@ -24,6 +24,7 @@ on:
       - "output/sources/glassdoor.json"
       - "output/sources/indeed.json"
       - "output/sources/health.json"
+      - "output/sources/remote_recovery.json"
 
 permissions:
   actions: write
@@ -87,6 +88,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Only board artifacts + alerts. Local sources are owned by launchd.
           git add -A -- output/board/
+          if [ -f output/recovery/board.json.gz ]; then git add -- output/recovery/board.json.gz; fi
           python3 scripts/guard_github_blob_size.py
           if git diff --staged --quiet; then
             echo "No board changes to commit."

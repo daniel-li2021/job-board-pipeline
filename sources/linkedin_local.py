@@ -112,6 +112,30 @@ def _parse_cards(html: str) -> List[Dict[str, str]]:
     return rows
 
 
+def targeted_search(company: str, title: str, location: str,
+                    session: requests.Session | None = None) -> tuple[Dict[str, str] | None, bool]:
+    """One local-only guest search; accept only one company/title/location match."""
+    from coverage_reconcile import title_location_matches
+    from .schema import normalize_company_key
+
+    session = session or _make_session()
+    try:
+        response = session.get(GUEST_SEARCH_URL, params={
+            "keywords": f'"{title}" "{company}" "{location}"', "location": location or "United States",
+            "geoId": US_GEO_ID, "start": 0,
+        }, timeout=REQUEST_TIMEOUT)
+        _check_blocked(response)
+    except SourceUnavailable as exc:
+        return None, "429" in str(exc)
+    except requests.RequestException:
+        return None, False
+    matches = title_location_matches({"title": title, "location": location}, [
+        row for row in _parse_cards(response.text)
+        if normalize_company_key(str(row.get("company") or "")) == normalize_company_key(company)
+    ])
+    return (matches[0] if len(matches) == 1 else None), False
+
+
 def _external_apply_url(soup: BeautifulSoup) -> str:
     """Return an off-site Apply URL only when the guest detail actually exposes one.
 
