@@ -2,6 +2,205 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-09-26T21:14:55.076656+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 2,
+      "cache_reused": 239,
+      "peer_reused": 0,
+      "same_content_reused": 2,
+      "non_material_change_reused": 0,
+      "new_or_changed": 2,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 2
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 698,
+      "requests": 2,
+      "input_tokens": 5678,
+      "cached_input_tokens": 0,
+      "output_tokens": 515,
+      "reasoning_tokens": 363,
+      "estimated_usd": 0.000826,
+      "latency_seconds": 7.044,
+      "latency_measured": true,
+      "effective_rpm": 17.04,
+      "effective_tpm": 52751.28,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 2,
+      "funnel": {
+        "after_dedup": 5713,
+        "after_company": 5491,
+        "after_hard_filter": 5055,
+        "after_prefilter": 1438,
+        "official_duplicates_suppressed": 499,
+        "retry_only_carried": 0,
+        "dropped": 4202
+      },
+      "output": {
+        "tier_a": 33,
+        "tier_b": 168,
+        "ab_before_cap": 201,
+        "shown": 201,
+        "new_jobs": 15,
+        "new_jobs_added": 4,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 0,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 15,
+            "added": 4
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 1587,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 1706,
+          "http_requests": 137,
+          "scrapling_requests": 15,
+          "identity_needed": 119,
+          "identities_resolved": 119,
+          "cache_reused": 8,
+          "jds_resolved": 54,
+          "direct_http_resolved": 54,
+          "remaining_no_jd": 1576,
+          "failure_reasons": {
+            "no_direct_or_official_url": 1148,
+            "scrapling_http_404": 2,
+            "structured_jd_not_found": 13,
+            "official_detail_deferred": 31,
+            "linkedin_rate_limited": 8,
+            "glassdoor_detail_http_403_static_card_only": 374
+          }
+        },
+        "remaining_no_jd": 1573,
+        "failure_reasons": {
+          "no_direct_or_official_url": 1148,
+          "scrapling_http_404": 2,
+          "structured_jd_not_found": 10,
+          "official_detail_deferred": 31,
+          "linkedin_rate_limited": 8,
+          "glassdoor_detail_http_403_static_card_only": 374
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4462181473",
+              "company": "Microsoft",
+              "title": "Software Engineer II"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.925,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2762,
+            "cached_input_tokens": 0,
+            "output_tokens": 257,
+            "reasoning_tokens": 184,
+            "estimated_usd": 0.000405
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4462181473",
+              "match_score": 67.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production software engineering",
+                "Testing and reliability"
+              ],
+              "main_gaps": [
+                "C++ development experience",
+                "Windows client software"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/scaleai/jobs/4736426005",
+              "company": "Scale AI",
+              "title": "Software Engineer, Public Sector - New Grad"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.119,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2916,
+            "cached_input_tokens": 0,
+            "output_tokens": 258,
+            "reasoning_tokens": 179,
+            "estimated_usd": 0.000421
+          },
+          "decisions": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/scaleai/jobs/4736426005",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production agent and RAG systems",
+                "LLM evaluation infrastructure"
+              ],
+              "main_gaps": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-09-26T15:21:20.757961+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -32460,158 +32659,6 @@
               "main_gaps": [
                 "Robotic programming",
                 "Abrasive process expertise"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-09-22T23:35:29.062267+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-5.6-terra",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 1,
-      "cache_reused": 213,
-      "peer_reused": 0,
-      "same_content_reused": 0,
-      "non_material_change_reused": 0,
-      "new_or_changed": 1,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 514,
-      "requests": 1,
-      "input_tokens": 3926,
-      "cached_input_tokens": 0,
-      "output_tokens": 82,
-      "reasoning_tokens": 0,
-      "estimated_usd": 0.008836,
-      "latency_seconds": 2.823,
-      "latency_measured": true,
-      "effective_rpm": 21.25,
-      "effective_tpm": 85185.97,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 1,
-      "primary_batches_total": 1,
-      "batches_attempted": 1,
-      "batches_succeeded": 1,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 1,
-      "funnel": {
-        "after_dedup": 4876,
-        "after_company": 4685,
-        "after_hard_filter": 4297,
-        "after_prefilter": 1045,
-        "official_duplicates_suppressed": 317,
-        "retry_only_carried": 0,
-        "dropped": 3770
-      },
-      "output": {
-        "tier_a": 50,
-        "tier_b": 238,
-        "ab_before_cap": 288,
-        "shown": 288,
-        "new_jobs": 12,
-        "new_jobs_added": 0,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 12,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 0,
-            "added": 0
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 1260,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 1369,
-          "http_requests": 207,
-          "jds_resolved": 107,
-          "direct_http_resolved": 107,
-          "scrapling_requests": 45,
-          "identity_needed": 109,
-          "identities_resolved": 109,
-          "remaining_no_jd": 1207,
-          "failure_reasons": {
-            "no_direct_or_official_url": 790,
-            "structured_jd_not_found": 45,
-            "glassdoor_detail_http_403_static_card_only": 372
-          }
-        },
-        "remaining_no_jd": 1202,
-        "failure_reasons": {
-          "no_direct_or_official_url": 790,
-          "structured_jd_not_found": 40,
-          "glassdoor_detail_http_403_static_card_only": 372
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5285250008",
-              "company": "Anthropic",
-              "title": "Research Scientist, Life Sciences (Experimental Biology)"
-            }
-          ],
-          "model": "gpt-5.6-terra",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 2.823,
-          "usage": {
-            "model": "gpt-5.6-terra",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 3926,
-            "cached_input_tokens": 0,
-            "output_tokens": 82,
-            "reasoning_tokens": 0,
-            "estimated_usd": 0.008836
-          },
-          "decisions": [
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5285250008",
-              "match_score": 22.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python and ML practices",
-                "LLM evaluation systems"
-              ],
-              "main_gaps": [
-                "Ph.D. biological science",
-                "experimental biology expertise"
               ]
             }
           ]
