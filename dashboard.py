@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -203,18 +204,46 @@ def sponsorship_label(entry: Dict[str, Any], company_profile: Optional[Dict[str,
 
 
 def pending_company_profiles(
-    seen_companies: Iterable[str], company_profiles: Iterable[Dict[str, Any]]
+    seen_jobs: Iterable[Dict[str, Any] | str], company_profiles: Iterable[Dict[str, Any]]
 ) -> List[Dict[str, Any]]:
-    """Accumulate every seen unprofiled company and drop newly profiled names."""
+    """Accumulate distinct raw jobs for unprofiled companies across runs."""
     stored = read_json(LOCAL_PENDING_COMPANY_PROFILES_JSON, {})
     existing = stored.get("companies", []) if isinstance(stored, dict) else []
-    pending = {}
+    pending: Dict[str, Dict[str, Any]] = {}
+    job_keys: Dict[str, set[str]] = {}
     for raw in (existing if isinstance(existing, list) else []):
         if entry := pending_entry(raw):
-            pending[normalize_company_key(entry["name"])] = entry
-    for company in seen_companies:
+            key = company_key(entry["name"])
+            if key in pending:
+                old = pending[key]
+                for field in ("size", "maturity", "sponsor", "type"):
+                    if old[field] == "unknown":
+                        old[field] = entry[field]
+                old["aliases"] = sorted(set(old["aliases"] + entry["aliases"] + [entry["name"]]) - {old["name"]})
+                job_keys[key].update(entry["seen_job_keys"])
+            else:
+                pending[key] = entry
+                job_keys[key] = set(entry["seen_job_keys"])
+    for job in seen_jobs:
+        company = job if isinstance(job, str) else job.get("company")
         if entry := pending_entry(company):
-            pending.setdefault(normalize_company_key(entry["name"]), entry)
+            key = company_key(entry["name"])
+            if not key:
+                continue
+            if key not in pending:
+                pending[key] = entry
+                job_keys[key] = set()
+            elif entry["name"] != pending[key]["name"]:
+                pending[key]["aliases"] = sorted(set(pending[key]["aliases"] + [entry["name"]]))
+            if isinstance(job, dict):
+                identity = str(job.get("duplicate_of") or job.get("canonical_job_key") or "")
+                if not identity and (job.get("official_url") or job.get("job_id") or job.get("title")):
+                    identity = coverage_reconcile.canonical_job_key(job)
+                if identity:
+                    job_keys[key].add(hashlib.sha256(identity.encode("utf-8")).hexdigest()[:24])
+    for key, entry in pending.items():
+        entry["seen_job_keys"] = sorted(job_keys[key])
+        entry["seen_count"] = len(job_keys[key])
     profiled = {
         company_key(alias)
         for profile in company_profiles
@@ -656,12 +685,12 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
     coverage_by_key = {record.get("canonical_job_key", ""): record for record in coverage.get("records", [])}
     snapshots: Dict[str, str] = {}
     all_rows: List[Dict[str, Any]] = []
-    seen_companies: List[str] = []
+    seen_jobs: List[Dict[str, Any]] = []
     for pipeline, path in STORE_PATHS.items():
         store, entries = _load_entries(path)
         snapshots[pipeline] = str(store.get("updated_at") or store.get("scraped_at") or "")
         for entry in entries:
-            seen_companies.append(str(entry.get("company") or ""))
+            seen_jobs.append(entry)
             practical = config_company_match(
                 str(entry.get("company") or ""), str(entry.get("title") or ""), practical_skips
             )
@@ -702,7 +731,7 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
     candidates = dedup_canonical_rows(
         row for row in eligible_rows if visible_candidate(row, hard_excludes)
     )
-    company_profiles_pending = pending_company_profiles(seen_companies, company_profiles)
+    company_profiles_pending = pending_company_profiles(seen_jobs, company_profiles)
     current = candidates
     fresh, fresh_basis = alert_fresh_rows(eligible_rows, now, hard_excludes)
     fresh = append_board_c_fallback(fresh, eligible_rows, minimum_ab=10, target=20, window="fresh")

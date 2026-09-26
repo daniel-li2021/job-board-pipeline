@@ -192,7 +192,7 @@ class DashboardPolicyTests(unittest.TestCase):
             self.assertEqual("New Title", main["history_details"]["same"][2])
             self.assertEqual(["A", 91], main["history_details"]["same"][5:])
             self.assertEqual({"generated_at": payload["generated_at"], "count": 2, "companies": [
-                {"name": name, "aliases": [], "size": "unknown", "maturity": "unknown", "sponsor": "unknown", "type": "unknown", "tags": []}
+                {"name": name, "aliases": [], "size": "unknown", "maturity": "unknown", "sponsor": "unknown", "type": "unknown", "tags": [], "seen_job_keys": [], "seen_count": 0}
                 for name in ("A Co", "B Co")
             ]}, pending)
             self.assertEqual(pending, json.loads(local_pending.read_text(encoding="utf-8")))
@@ -207,8 +207,8 @@ class DashboardPolicyTests(unittest.TestCase):
             with patch.object(dashboard, "LOCAL_PENDING_COMPANY_PROFILES_JSON", stored):
                 self.assertEqual(
                     [
-                        {"name": "Legacy Co", "aliases": [], "size": "50-200", "maturity": "unknown", "sponsor": "likely", "type": "unknown", "tags": []},
-                        {"name": "New Co", "aliases": [], "size": "unknown", "maturity": "unknown", "sponsor": "unknown", "type": "unknown", "tags": []},
+                        {"name": "Legacy Co", "aliases": [], "size": "50-200", "maturity": "unknown", "sponsor": "likely", "type": "unknown", "tags": [], "seen_job_keys": [], "seen_count": 0},
+                        {"name": "New Co", "aliases": [], "size": "unknown", "maturity": "unknown", "sponsor": "unknown", "type": "unknown", "tags": [], "seen_job_keys": [], "seen_count": 0},
                     ],
                     dashboard.pending_company_profiles(["New Co", "Profiled Co"], profiles),
                 )
@@ -220,6 +220,24 @@ class DashboardPolicyTests(unittest.TestCase):
             profiles = prepare_alias_entries([{"name": "Point", "aliases": []}])
             with patch.object(dashboard, "LOCAL_PENDING_COMPANY_PROFILES_JSON", stored):
                 self.assertEqual(["Strong Point"], [entry["name"] for entry in dashboard.pending_company_profiles([], profiles)])
+
+    def test_pending_seen_count_tracks_distinct_jobs_across_runs(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            stored = Path(tmpdir) / "company_profiles_pending.json"
+            stored.write_text(json.dumps({"companies": ["Example Co"]}), encoding="utf-8")
+            first = {"company": "Example Co", "job_id": "1", "source": "indeed", "title": "Engineer"}
+            same_from_official = {"company": "Example Co LLC", "job_id": "99", "source": "official",
+                                  "duplicate_of": "id::indeed::1", "title": "Engineer"}
+            second = {"company": "Example Co", "job_id": "2", "source": "indeed", "title": "Engineer"}
+            with patch.object(dashboard, "LOCAL_PENDING_COMPANY_PROFILES_JSON", stored):
+                result = dashboard.pending_company_profiles([first, first, same_from_official], [])
+                self.assertEqual(1, result[0]["seen_count"])
+                stored.write_text(json.dumps({"companies": result}), encoding="utf-8")
+                self.assertEqual(1, dashboard.pending_company_profiles([first], [])[0]["seen_count"])
+                result = dashboard.pending_company_profiles([second], [])
+                self.assertEqual(2, result[0]["seen_count"])
+                stored.write_text(json.dumps({"companies": result}), encoding="utf-8")
+                self.assertEqual(2, dashboard.pending_company_profiles([], [])[0]["seen_count"])
 
     def test_pending_company_capture_precedes_dashboard_filtering(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

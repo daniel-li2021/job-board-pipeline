@@ -1,10 +1,15 @@
 import unittest
 from collections import Counter
+import json
+import tempfile
+from pathlib import Path
 
 from scripts.enrich_company_profiles import (
-    apply_evidence, company_key, import_findings, names_index, prune_profile_tags, resolve,
+    apply_evidence, company_key, import_findings, load_pending, names_index, prune_profile_tags, resolve,
+    validate_findings,
 )
 from sources.company_aliases import match_company_entry, prepare_alias_entries
+from sources.company_pending import pending_entry
 
 
 class CompanyEnrichmentTests(unittest.TestCase):
@@ -85,6 +90,25 @@ class CompanyEnrichmentTests(unittest.TestCase):
         review = []
         self.assertEqual(1, import_findings([profile], [finding], review)["existing_matched"])
         self.assertIn("HP", profile["aliases"])
+
+    def test_batch_count_and_pending_job_keys_survive_import(self):
+        finding = {"name": "Profiled", "aliases": [], "size": "50-200", "maturity": "growth",
+                   "sponsor": "unknown", "type": "tech", "tags": []}
+        self.assertEqual([finding], validate_findings({"canonical_profile_count": 1, "companies": [finding]}))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "pending.json"
+            key = "a" * 24
+            path.write_text(json.dumps({"companies": [
+                {"name": "Profiled", "seen_job_keys": [key]},
+                {"name": "Still Pending", "seen_job_keys": [key]},
+            ]}), encoding="utf-8")
+            pending = load_pending(path, [finding])
+            self.assertEqual(["Still Pending"], [row["name"] for row in pending])
+            self.assertEqual(1, pending[0]["seen_count"])
+
+    def test_pending_rejects_inconsistent_job_count(self):
+        with self.assertRaises(ValueError):
+            pending_entry({"name": "Example", "seen_job_keys": ["a" * 24], "seen_count": 2})
 
 
 if __name__ == "__main__":

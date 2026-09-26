@@ -28,9 +28,16 @@ def pending_entry(value: Any) -> dict[str, Any] | None:
         return None
     aliases = value.get("aliases") or []
     tags = value.get("tags") or []
+    keys = value.get("seen_job_keys") or []
     if not isinstance(aliases, list) or not isinstance(tags, list):
         return None
+    if not isinstance(keys, list) or any(not isinstance(key, str) or not re.fullmatch(r"[0-9a-f]{24}", key) for key in keys):
+        raise ValueError(f"invalid pending job keys for {name}")
+    if "seen_count" in value and value["seen_count"] != len(set(keys)):
+        raise ValueError(f"pending seen_count disagrees with job keys for {name}")
     entry = {"name": name, "aliases": [str(a).strip() for a in aliases if str(a).strip()]}
     entry.update({field: str(value.get(field) or "unknown") for field in SCREENING_FIELDS})
     entry["tags"] = [str(tag).strip() for tag in tags if str(tag).strip()]
+    entry["seen_job_keys"] = sorted(set(keys))
+    entry["seen_count"] = len(entry["seen_job_keys"])
     return entry

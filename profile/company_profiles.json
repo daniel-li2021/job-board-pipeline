@@ -1,8 +1,8 @@
 {
   "_meta": {
     "purpose": "Canonical employer profiles for company-level application ranking. priority is an employer/application signal, not a job-fit or role-family score.",
-    "generated": "2026-09-25",
-    "company_count": 1868,
+    "generated": "2026-09-26",
+    "company_count": 2141,
     "source_scope": [
       "config/official_careers.json",
       "config/target_companies.json",
@@ -9324,7 +9324,8 @@
     {
       "name": "NVIDIA",
       "aliases": [
-        "nvidia corporation"
+        "nvidia corporation",
+        "NVIDIA AI"
       ],
       "size": "20k+",
       "type": "tech",
@@ -18786,7 +18787,8 @@
     {
       "name": "insitro",
       "aliases": [
-        "Insitro, Inc."
+        "Insitro, Inc.",
+        "insitro.com"
       ],
       "size": "200-1k",
       "maturity": "growth",
@@ -23115,6 +23117,3126 @@
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-25"
+    },
+    {
+      "name": "a16z",
+      "aliases": [
+        "Andreessen Horowitz"
+      ],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Airwallex",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "AI Fund",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Allen Institute",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "AnySignal",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "type": "industrial",
+      "tags": [
+        "clearance_heavy",
+        "defense"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Aquatic Capital Management",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Arcade.dev",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "BackOps AI",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "early_startup",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Base Power",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Bretton AI",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "early_startup",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "campfire",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Cardless",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Cognitiv",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Collinear AI",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "early_startup",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Constrafor",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Dark Matter Technologies",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Eulerity",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Flagship Pioneering",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Flatiron Health",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Function Health",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Glassdoor",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Gridware",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Hammerspace",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "HomeLight",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Identity Digital",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Imagen Technologies",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "iManage",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Invisible Technologies",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Intuitive Machines",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "industrial",
+      "tags": [
+        "defense"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Kensho Technologies",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "LiveRamp",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Matter Intelligence",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [
+        "defense"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Mistral AI",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Nymbus, Inc.",
+      "aliases": [
+        "Nymbus, Inc."
+      ],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Opentrons Labworks",
+      "aliases": [
+        "Opentrons Labworks"
+      ],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Persona AI",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Plaud",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Qumulo",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Quantcast",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Real-Time Innovations",
+      "aliases": [
+        "RTI"
+      ],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Rhombus Power",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [
+        "clearance_heavy",
+        "defense"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Rivian and Volkswagen Group Technologies",
+      "aliases": [
+        "RV Tech"
+      ],
+      "size": "1k-5k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Shield AI",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [
+        "clearance_heavy",
+        "defense"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "SingleStore",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "SnapLogic",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Spotter",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Sunday Robotics",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "early_startup",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Syntiant Corp",
+      "aliases": [
+        "Syntiant Corp"
+      ],
+      "size": "1k-5k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "TAE Power Solutions",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Traversal",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "early_startup",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Trunk Tools",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Tulip Interfaces",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "webAI",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Workiva",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "WorkOS",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Worldpay",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Zynga",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Boston Consulting Group",
+      "aliases": [
+        "BCG"
+      ],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "consulting",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Barclays",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Sanofi",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "The Coca-Cola Company",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Eaton",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Edwards Lifesciences",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Extreme Networks",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Gen Digital Inc.",
+      "aliases": [
+        "Gen Digital Inc."
+      ],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Genpact",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "consulting",
+      "tags": [
+        "tech_service"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Skyworks Solutions",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Sonos",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Steris",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Tapestry",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "retail",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "American Electric Power",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Applied Industrial Technologies",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "DaVita",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Dentsply Sirona",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Fastenal",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "FormFactor, Inc.",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Hasbro",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Hub Group",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "LendingTree",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Newell Brands",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Republic Services",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Ryder System",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Cushman & Wakefield",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Iron Mountain",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Kuehne+Nagel",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Nestlé USA",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Penguin Random House",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Sony Pictures Entertainment",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Staples",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "retail",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Sherwin-Williams",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Toshiba Global Commerce Solutions",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Schweitzer Engineering Laboratories",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Barracuda Networks",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "CDK Global",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Deltek",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "DreamHost",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "eGain",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Granicus",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "GuidePoint Security",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "HealthEdge Software, Inc.",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "IPC Systems",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Logicalis",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "consulting",
+      "tags": [
+        "tech_service"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "National Instruments",
+      "aliases": [
+        "NI"
+      ],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Object Computing",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [
+        "tech_service"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Renaissance Learning",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Zelis Healthcare",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "The University of Chicago",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Harvard University",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Purdue University",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Texas A&M University",
+      "aliases": [
+        "Texas A&M"
+      ],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Arizona State University",
+      "aliases": [
+        "ASU"
+      ],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Michigan State University",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Georgetown University",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Baylor College of Medicine",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Emory University",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Johns Hopkins Health System",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Fred Hutchinson Cancer Center",
+      "aliases": [
+        "Fred Hutch"
+      ],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Rush University Medical Center",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "University of California, Riverside",
+      "aliases": [
+        "UC Riverside",
+        "UCR"
+      ],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "University of Miami",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Stevens Institute of Technology",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Arthrex",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "CareDx",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "CommonSpirit Health",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "ChenMed",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Emory Healthcare",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Texas Children's Hospital",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Vitalant",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Avera Health",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Marathon Health",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "OneOncology",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Banner Health",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Beth Israel Lahey Health",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Bank OZK",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "BTIG",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Capstone Investment Advisors",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Bayview Asset Management, LLC",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "First Horizon Bank",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Federal Home Loan Bank of Des Moines",
+      "aliases": [
+        "FHLB Des Moines"
+      ],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Newrez",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "America First Credit Union",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Alliant Insurance Services",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Corebridge Financial",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Kemper",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Assurant",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Aflac",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Walker & Dunlop",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Luma Financial Technologies",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "American Medical Association",
+      "aliases": [
+        "AMA"
+      ],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Palantir Technologies",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [
+        "defense"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Thinking Machines Lab",
+      "aliases": [
+        "Thinking Machine Lab"
+      ],
+      "size": "<50",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "OneTrust",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Otter.ai",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Pendo",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Qdrant",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Pika",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Scale",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Wise",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Zoom Communications",
+      "aliases": [
+        "Zoom Video Communications",
+        "Zoom Video Communications, Inc."
+      ],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "ZoomInfo",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Zip",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Zuddl",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Tealium",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Tebra",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Tekmetric",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "OneImaging",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "NobleAI",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Numeral",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Nearmap",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Nearform",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "consulting",
+      "tags": [
+        "tech_service"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Nutrient",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Oxipital AI",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Parallel Domain",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Palona AI",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Segmental AI",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Sixfold",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "StudyFetch",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Tamarind Bio",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Take2 AI",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Teleskope",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Tennr",
+      "aliases": [
+        "tennr"
+      ],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Vikara AI",
+      "aliases": [
+        "Vikara.AI"
+      ],
+      "size": "<50",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Wand AI",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Visto360 AI",
+      "aliases": [
+        "Visto360 AI Inc."
+      ],
+      "size": "<50",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [
+        "defense"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "OXIO",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Observable Space",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Pallet",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Patch My PC",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Promise",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Prophetic",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Rillet",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Setpoint",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Shift4",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Spade",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Stacksync",
+      "aliases": [
+        "Stacksync - Integration Cloud"
+      ],
+      "size": "<50",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Standard Template Labs",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "early_startup",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Stuut",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "early_startup",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Tabs",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Teslar Software",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "TherapyNotes",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Two Barrels",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Valon",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Wonder",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "other",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "NTT DATA North America",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "consulting",
+      "tags": [
+        "tech_service"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "PTC",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "SOLIDWORKS",
+      "aliases": [
+        "SolidWorks"
+      ],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "SUSE",
+      "aliases": [
+        "SUSE Software Solutions Germany GmbH"
+      ],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Thales",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "industrial",
+      "tags": [
+        "clearance_heavy",
+        "defense"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "DTCC",
+      "aliases": [
+        "The Depository Trust & Clearing Corporation",
+        "The Depository Trust & Clearing Corporation (DTCC)"
+      ],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "The Clearing House",
+      "aliases": [
+        "The Clearing House Payments Company",
+        "The Clearing House"
+      ],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "RELX Group",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Quest Global",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "consulting",
+      "tags": [
+        "tech_service"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Reply",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "consulting",
+      "tags": [
+        "tech_service"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Reynolds and Reynolds",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "RF-SMART",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "RLDatix",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Revionics, an Aptos Company",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "RevSpring",
+      "aliases": [
+        "RevSpring, Inc"
+      ],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "SHAZAM",
+      "aliases": [
+        "SHAZAM Network",
+        "SHAZAM Network - ITS, Inc.",
+        "ITS, Inc."
+      ],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Smarty",
+      "aliases": [
+        "SMARTY"
+      ],
+      "size": "50-200",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "TeamDynamix",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Tenstreet",
+      "aliases": [
+        "Tenstreet, LLC"
+      ],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Universal Display Corporation",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Universal Electronics",
+      "aliases": [
+        "Universal Electronics, Inc"
+      ],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Valorem Reply",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "consulting",
+      "tags": [
+        "tech_service"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Visionet Systems",
+      "aliases": [
+        "Visionet Systems Inc."
+      ],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "consulting",
+      "tags": [
+        "tech_service"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Vodia Networks",
+      "aliases": [],
+      "size": "<50",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Yokogawa",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Zoro.com",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Novanta",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Net Health",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "NISC",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "OpenEye",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Phoenix Contact USA",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Qcells",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Samtec",
+      "aliases": [
+        "SAMTEC",
+        "SAMTEC, INC"
+      ],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "STACK Infrastructure",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "PNC Financial Services Group",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "T. Rowe Price",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "The Hartford",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Transamerica",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Pathward",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Patelco Credit Union",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "SchoolsFirst Federal Credit Union",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Space Coast Credit Union",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "UW Credit Union",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "WSFS Bank",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Vatic Labs",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Ninth Wave",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Snap Finance",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Smartleaf",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Symple Lending",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Thread Bank",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Perpay",
+      "aliases": [
+        "Perpay Inc."
+      ],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "likely",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "three+one",
+      "aliases": [
+        "Three+one"
+      ],
+      "size": "50-200",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "finance",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Scripps Research",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Salk Institute for Biological Studies",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Pacific Northwest National Laboratory",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [
+        "clearance_heavy"
+      ],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "The Jackson Laboratory",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "The Johns Hopkins University",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Stanford Medicine Children's Health",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "UCLA Health",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "UC San Diego Health",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "UC Irvine Health",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Duke Health",
+      "aliases": [],
+      "size": "20k+",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Nebraska Medicine",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Press Ganey",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Werfen",
+      "aliases": [],
+      "size": "5k-20k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "OXOS Medical",
+      "aliases": [],
+      "size": "50-200",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Nusano",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "growth",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Promega Corporation",
+      "aliases": [],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Thorlabs",
+      "aliases": [
+        "Thorlabs Inc"
+      ],
+      "size": "1k-5k",
+      "maturity": "established",
+      "sponsor": "likely",
+      "type": "industrial",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
+    },
+    {
+      "name": "UL Research Institutes",
+      "aliases": [],
+      "size": "200-1k",
+      "maturity": "established",
+      "sponsor": "unknown",
+      "type": "healthcare",
+      "tags": [],
+      "priority": "normal",
+      "last_verified": "2026-09-26"
     }
   ]
 }

@@ -63,7 +63,8 @@ def review_item(review: list[dict], name: str, field: str, existing: str, candid
 
 def validate_findings(payload: dict) -> list[dict]:
     entries = payload.get("companies")
-    if not isinstance(entries, list) or payload.get("count") != len(entries):
+    stated_count = payload.get("count", payload.get("canonical_profile_count"))
+    if not isinstance(entries, list) or stated_count != len(entries):
         raise ValueError("findings companies/count mismatch")
     seen = set()
     for entry in entries:
@@ -137,14 +138,17 @@ def load_pending(path: Path, profiles: list[dict]) -> list[dict]:
         entry = pending_entry(raw)
         if not entry:
             raise ValueError("invalid pending company")
-        if resolve(entry["name"], profile_index):
+        if any(resolve(alias, profile_index) for alias in [entry["name"], *entry["aliases"]]):
             continue
-        key = normalize_company_key(entry["name"])
+        key = company_key(entry["name"])
         old = pending.get(key)
         if old:
             for field in SCREENING_FIELDS:
                 if old[field] == "unknown":
                     old[field] = entry[field]
+            old["seen_job_keys"] = sorted(set(old["seen_job_keys"] + entry["seen_job_keys"]))
+            old["seen_count"] = len(old["seen_job_keys"])
+            old["aliases"] = sorted(set(old["aliases"] + entry["aliases"] + [entry["name"]]) - {old["name"]})
         else:
             pending[key] = entry
     return sorted(pending.values(), key=lambda entry: entry["name"].casefold())
@@ -317,34 +321,38 @@ def prune_profile_tags(profiles: list[dict]) -> int:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--findings", type=Path, help="Optional curated clean company JSON to import")
-    parser.add_argument("--data-dir", type=Path, required=True, help="Directory containing USCIS CSV, DOL XLSX, and SEC tickers JSON")
+    parser.add_argument("--findings", type=Path, action="append", default=[], help="Curated company JSON; repeat for multiple batches")
+    parser.add_argument("--data-dir", type=Path, help="Optional USCIS CSV, DOL XLSX, and SEC tickers directory")
     parser.add_argument("--profiles", type=Path, default=ROOT / "profile/company_profiles.json")
     parser.add_argument("--pending", type=Path, default=ROOT / "profile/company_profiles_pending.json")
     parser.add_argument("--review", type=Path, default=ROOT / "profile/company_profiles_manual_review.json")
     parser.add_argument("--apply", action="store_true", help="Atomically save profile, pending, and review JSON")
     args = parser.parse_args()
-    for path in [args.profiles, args.pending, args.data_dir / "Employer Information.csv",
-                 args.data_dir / "company_tickers.json", *(args.data_dir / name for name, _ in LCA_FILES)]:
+    if not args.findings and not args.data_dir:
+        parser.error("provide --findings and/or --data-dir")
+    data_paths = ([args.data_dir / "Employer Information.csv", args.data_dir / "company_tickers.json",
+                   *(args.data_dir / name for name, _ in LCA_FILES)] if args.data_dir else [])
+    for path in [args.profiles, args.pending, *args.findings, *data_paths]:
         if not path.is_file():
             parser.error(f"missing input: {path}")
     profiles_payload = json.loads(args.profiles.read_text(encoding="utf-8"))
     profiles = profiles_payload["companies"]
     review: list[dict] = []
     stats = Counter()
-    if args.findings:
-        stats.update(import_findings(profiles, validate_findings(json.loads(args.findings.read_text(encoding="utf-8"))), review))
+    for finding_path in args.findings:
+        stats.update(import_findings(profiles, validate_findings(json.loads(finding_path.read_text(encoding="utf-8"))), review))
     pending = load_pending(args.pending, profiles)
-    index = source_index(profiles, pending, review)
-    approvals, industries = read_uscis(args.data_dir / "Employer Information.csv", index)
-    lca = {year: read_lca(args.data_dir / filename, index) for filename, year in LCA_FILES}
-    public = read_sec(args.data_dir / "company_tickers.json", index, review)
-    stats.update(apply_evidence(profiles, pending, approvals, industries, lca, public, review))
+    if args.data_dir:
+        index = source_index(profiles, pending, review)
+        approvals, industries = read_uscis(args.data_dir / "Employer Information.csv", index)
+        lca = {year: read_lca(args.data_dir / filename, index) for filename, year in LCA_FILES}
+        public = read_sec(args.data_dir / "company_tickers.json", index, review)
+        stats.update(apply_evidence(profiles, pending, approvals, industries, lca, public, review))
     stats["tags_simplified"] = prune_profile_tags(profiles)
     profiles_payload["_meta"]["company_count"] = len(profiles)
     profiles_payload["_meta"]["generated"] = date.today().isoformat()
     sources = profiles_payload["_meta"].setdefault("source_scope", [])
-    for source in ("curated company findings", "local USCIS, DOL, and SEC datasets"):
+    for source in (["curated company findings"] if args.findings else []) + (["local USCIS, DOL, and SEC datasets"] if args.data_dir else []):
         if source not in sources:
             sources.append(source)
     profiles_payload["_meta"]["classification_notes"]["sponsor"] = (
@@ -352,6 +360,11 @@ def main() -> None:
         "Job-description evidence always overrides this company-level signal."
     )
     pending_payload = {"generated_at": date.today().isoformat(), "count": len(pending), "companies": pending}
+    old_review = json.loads(args.review.read_text(encoding="utf-8")) if args.review.exists() else {}
+    prior_items = old_review.get("items", []) if isinstance(old_review, dict) else []
+    if not isinstance(prior_items, list):
+        raise ValueError("manual review items must be a list")
+    review = list({json.dumps(item, sort_keys=True): item for item in [*prior_items, *review]}.values())
     review_payload = {"generated_at": date.today().isoformat(), "count": len(review),
                       "summary": dict(stats), "items": sorted(review, key=lambda row: (row["name"].casefold(), row["field"], row["reason"]))}
     if args.apply:

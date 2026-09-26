@@ -1,13 +1,10 @@
 {
-  "generated_at": "2026-09-25",
-  "count": 160,
+  "generated_at": "2026-09-26",
+  "count": 162,
   "summary": {
-    "added": 614,
-    "existing_matched": 6,
-    "sponsor_likely": 825,
-    "type_filled": 107,
-    "maturity_established": 111,
-    "tags_simplified": 841
+    "added": 273,
+    "existing_matched": 2,
+    "tags_simplified": 0
   },
   "items": [
     {
@@ -585,6 +582,13 @@
       "reason": "recent USCIS approvals=4, certified LCAs=3"
     },
     {
+      "name": "insitro",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "healthcare",
+      "reason": "curated finding conflicts with existing profile"
+    },
+    {
       "name": "Insulet Corporation",
       "field": "type",
       "existing": "healthcare",
@@ -730,6 +734,13 @@
       "existing": "tech",
       "candidate": "industrial",
       "reason": "USCIS NAICS conflicts with profile"
+    },
+    {
+      "name": "NVIDIA",
+      "field": "type",
+      "existing": "tech",
+      "candidate": "industrial",
+      "reason": "curated finding conflicts with existing profile"
     },
     {
       "name": "O'Neil Digital Solutions",
