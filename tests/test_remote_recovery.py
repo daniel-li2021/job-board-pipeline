@@ -31,8 +31,8 @@ class RemoteRecoveryTests(unittest.TestCase):
     def test_online_budget_is_separate_from_mac_recovery(self):
         self.assertEqual((100, 150), (official_jd_recovery.NORMAL_SEARCH_LIMIT,
                                     official_jd_recovery.NORMAL_PAGE_LIMIT))
-        self.assertEqual(float("inf"), local_sources.RECOVERY_SEARCH_LIMIT)
-        self.assertEqual(float("inf"), local_sources.RECOVERY_PAGE_LIMIT)
+        self.assertEqual(100, local_sources.RECOVERY_SEARCH_LIMIT)
+        self.assertEqual(150, local_sources.RECOVERY_PAGE_LIMIT)
         self.assertEqual(
             ["software engineer", "ai engineer", "backend engineer",
              "full-stack engineer", "machine learning engineer"],

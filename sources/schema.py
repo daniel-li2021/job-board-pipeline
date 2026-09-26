@@ -13,6 +13,7 @@ import html
 import json
 
 from state_io import atomic_write
+import recovery_policy
 import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -708,12 +709,41 @@ def combined_cache_key_from_hash(jd_digest: str, profile_fingerprint: str) -> st
 # --------------------------------------------------------------------------
 # Local source snapshot IO (used by local adapters + orchestrator ingest)
 # --------------------------------------------------------------------------
+def assign_source_first_seen(
+    jobs: List[Dict[str, Any]], previous_jobs: List[Dict[str, Any]], observed_at: str,
+    known_first_seen: Optional[Dict[str, str]] = None,
+) -> None:
+    """Stamp genuinely new cards before enrichment; never revive legacy unknowns."""
+    previous = {dedup_key(job): job for job in previous_jobs}
+    prior_ids = {
+        (str(job.get("source") or ""), str(job.get("job_id") or "")): job
+        for job in previous_jobs if job.get("job_id")
+    }
+    try:
+        ledger = json.loads((OUTPUT_DIR / "board" / "seen_jobs.json").read_text()).get("seen", {})
+    except (OSError, ValueError, AttributeError):
+        ledger = {}
+    for job in jobs:
+        key = dedup_key(job)
+        prior = previous.get(key) or prior_ids.get(
+            (str(job.get("source") or ""), str(job.get("job_id") or ""))
+        )
+        canonical = str(ledger.get(key) or "") if isinstance(ledger, dict) else ""
+        if prior is not None:
+            job["first_seen"] = str(prior.get("first_seen") or canonical or "")
+        elif known_first_seen is not None and recovery_policy.identity(job) in known_first_seen:
+            job["first_seen"] = str(known_first_seen[recovery_policy.identity(job)] or canonical or "")
+        else:
+            job["first_seen"] = canonical or str(job.get("first_seen") or observed_at)
+
+
 def write_source_snapshot(
     name: str,
     jobs: List[Dict[str, str]],
     meta: Optional[Dict[str, Any]] = None,
     *,
     merge_previous: bool = False,
+    observed_jobs: Optional[List[Dict[str, str]]] = None,
 ) -> Path:
     """Write output/sources/<name>.json. Sorted for stable git diffs.
 
@@ -726,7 +756,14 @@ def write_source_snapshot(
     path = SOURCES_DIR / f"{name}.json"
     previous_payload = read_source_snapshot_payload(name)
     previous = {dedup_key(job): job for job in previous_payload.get("jobs", [])}
+    first_seen_ledger = dict(previous_payload.get("first_seen_ledger") or {})
+    for prior in previous.values():
+        first_seen_ledger.setdefault(recovery_policy.identity(prior), str(prior.get("first_seen") or ""))
     verified_at = str((meta or {}).get("scraped_at") or "")
+    assign_source_first_seen(jobs, previous_payload.get("jobs", []),
+                             verified_at or datetime.now(timezone.utc).isoformat(), first_seen_ledger)
+    for job in observed_jobs if observed_jobs is not None else jobs:
+        first_seen_ledger.setdefault(recovery_policy.identity(job), str(job.get("first_seen") or ""))
     previous_verified_at = str(previous_payload.get("meta", {}).get("scraped_at") or "")
     retained = []
     for job in jobs:
@@ -753,10 +790,32 @@ def write_source_snapshot(
         "source": name,
         "count": len(ordered),
         "meta": meta or {},
+        "first_seen_ledger": first_seen_ledger,
         "jobs": ordered,
     }
     atomic_write(path, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
     return path
+
+
+def record_source_first_seen(name: str, observed_jobs: List[Dict[str, str]]) -> None:
+    """Persist identities even when every newly collected card is filtered."""
+    path = SOURCES_DIR / f"{name}.json"
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        payload = {"schema_version": SNAPSHOT_SCHEMA_VERSION, "source": name,
+                   "count": 0, "meta": {}, "jobs": []}
+    ledger = dict(payload.get("first_seen_ledger") or {})
+    before = len(ledger)
+    for prior in payload.get("jobs") or []:
+        if isinstance(prior, dict):
+            ledger.setdefault(recovery_policy.identity(prior), str(prior.get("first_seen") or ""))
+    for job in observed_jobs:
+        ledger.setdefault(recovery_policy.identity(job), str(job.get("first_seen") or ""))
+    if len(ledger) != before:
+        payload["first_seen_ledger"] = ledger
+        SOURCES_DIR.mkdir(parents=True, exist_ok=True)
+        atomic_write(path, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
 
 
 def read_source_snapshot_payload(name: str) -> Dict[str, Any]:
@@ -772,4 +831,5 @@ def read_source_snapshot_payload(name: str) -> Dict[str, Any]:
         "schema_version": data.get("schema_version", 0) if isinstance(data, dict) else 0,
         "jobs": [j for j in jobs if isinstance(j, dict)] if isinstance(jobs, list) else [],
         "meta": data.get("meta", {}) if isinstance(data, dict) and isinstance(data.get("meta"), dict) else {},
+        "first_seen_ledger": data.get("first_seen_ledger", {}) if isinstance(data, dict) and isinstance(data.get("first_seen_ledger"), dict) else {},
     }

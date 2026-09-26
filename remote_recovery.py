@@ -11,7 +11,9 @@ from typing import Iterable
 from state_io import atomic_write
 
 FIELDS = ("company", "title", "location", "source", "official_url", "source_url",
-          "job_id", "requisition_id", "description", "first_seen")
+          "job_id", "requisition_id", "description", "first_seen", "application_url",
+          "official_search_status", "official_search_attempted_at", "recovery_methods",
+          "recovery_candidates", "recovery_triage", "recovery_input_hash")
 
 
 def _record(row: dict, pipeline: str) -> dict | None:
@@ -44,12 +46,14 @@ def write_snapshot(path: Path, pipeline: str, rows: Iterable[dict]) -> None:
         return prefix + "|title|" + str(record.get("title") or "").casefold() + "|" + str(record.get("location") or "").casefold()
 
     records: dict[str, dict] = {}
+    unknown_prior: dict[str, dict] = {}
     for prior in read_snapshot(path):
         try:
             seen = datetime.fromisoformat(str(prior.get("first_seen") or "").replace("Z", "+00:00"))
             if seen.tzinfo is None:
                 seen = seen.replace(tzinfo=timezone.utc)
         except ValueError:
+            unknown_prior[identity(prior)] = prior  # retain only if seen again
             continue
         if seen >= now - timedelta(days=30):
             records[identity(prior)] = prior
@@ -57,9 +61,13 @@ def write_snapshot(path: Path, pipeline: str, rows: Iterable[dict]) -> None:
         record = _record(row, pipeline)
         if record is None:
             continue
-        record["first_seen"] = str(record.get("first_seen") or now.isoformat())
         key = identity(record)
-        prior = records.get(key)
+        prior = records.get(key) or unknown_prior.get(key)
+        record["first_seen"] = str((prior or {}).get("first_seen") or record.get("first_seen") or ("" if prior else now.isoformat()))
+        for field in ("recovery_methods", "recovery_candidates", "recovery_triage", "recovery_input_hash",
+                      "official_search_status", "official_search_attempted_at"):
+            if prior and not record.get(field):
+                record[field] = prior.get(field) or ""
         if prior and len(record["description"].strip()) < 200 and len(str(prior.get("description") or "").strip()) >= 200:
             record["description"] = prior["description"]
             record["recovery_status"] = "jd_available"

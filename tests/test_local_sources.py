@@ -179,7 +179,9 @@ class LocalSourceTests(unittest.TestCase):
             local_sources, "write_health",
         ):
             local_sources.main()
-        run.assert_called_once_with("glassdoor", {"commit": "test"}, force=True)
+        self.assertEqual(("glassdoor", {"commit": "test"}), run.call_args.args)
+        self.assertTrue(run.call_args.kwargs["force"])
+        self.assertEqual(100, run.call_args.kwargs["budget"].max_jobs)
 
     def test_new_job_telemetry_is_final_unique_and_credits_overlapping_sources(self) -> None:
         now = "2026-09-16T12:00:00+00:00"

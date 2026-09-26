@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import base64
+import hashlib
 import json
 import re
 import time
@@ -15,6 +16,8 @@ from bs4 import BeautifulSoup
 
 import board_pipeline as board
 import coverage_reconcile
+import recovery_policy
+import recovery_ai
 from . import ats
 from .schema import (
     SourceUnavailable, is_aggregator_url, is_outbound_tracker_url, looks_official,
@@ -25,7 +28,7 @@ from .schema import (
 SEARCH_URL = "https://html.duckduckgo.com/html/"
 BING_SEARCH_URL = "https://www.bing.com/search"
 CACHE_DAYS = 14
-NO_MATCH_HOURS = 24
+NO_MATCH_HOURS = 12
 NORMAL_SEARCH_LIMIT = 100
 NORMAL_PAGE_LIMIT = 150
 ATS_HOSTS = (
@@ -209,11 +212,14 @@ def _listing_urls(company: str, context: dict, store: dict) -> list[str]:
 
 class Resolver:
     def __init__(self, *, session: requests.Session | None = None, search_limit: int = NORMAL_SEARCH_LIMIT,
-                 page_limit: int = NORMAL_PAGE_LIMIT, deadline: float | None = None):
+                 page_limit: int = NORMAL_PAGE_LIMIT, deadline: float | None = None,
+                 budget: recovery_policy.RecoveryBudget | None = None):
         self.session = session or board.make_session()
         self.search_limit = search_limit
         self.page_limit = page_limit
         self.deadline = deadline
+        self.budget = budget
+        self.current_row: dict = {}
         self.search_requests = 0
         self.page_requests = 0
         self.last_search = 0.0
@@ -227,15 +233,23 @@ class Resolver:
         self.indeed_by_company: dict[str, list[dict]] | None = None
         self.remote_by_company: dict[str, list[dict]] | None = None
         self.dedicated_seen: set[tuple[str, str]] = set()
+        self.search_metadata: dict[str, dict] = {}
 
     def _available(self) -> bool:
-        return self.deadline is None or time.monotonic() < self.deadline
+        return (self.deadline is None or time.monotonic() < self.deadline) and (
+            self.budget is None or self.budget.available(self.current_row)
+        )
+
+    def _outbound(self) -> bool:
+        return self._available() and (self.budget is None or self.budget.claim(self.current_row))
 
     def search(self, query: str) -> tuple[list[str], str]:
         if self.search_requests >= self.search_limit or not self._available():
             return [], "budget"
         if self.search_provider == "disabled":
             return [], "network"
+        if not self._outbound():
+            return [], "budget"
         delay = 1.0 - (time.monotonic() - self.last_search)
         if delay > 0:
             time.sleep(delay)
@@ -262,12 +276,21 @@ class Resolver:
                 target = _bing_target(target)
             if urlsplit(target).scheme in {"http", "https"}:
                 urls.append(target)
+                parent = link.find_parent("li") or link.parent
+                snippet = parent.select_one(".result__snippet, .b_caption, p") if parent else None
+                self.search_metadata[target] = {
+                    "url": target, "domain": _host(target),
+                    "title": normalize_space(link.get_text(" "))[:100],
+                    "snippet": normalize_space(snippet.get_text(" ") if snippet else "")[:180],
+                }
         return list(dict.fromkeys(urls[:8])), "ok"
 
     def page(self, url: str, local: Counter) -> tuple[str, str, str]:
         if is_aggregator_url(url):
             return "", url, "unsupported"
         if self.page_requests >= self.page_limit or local["pages"] >= 4 or not self._available():
+            return "", url, "budget"
+        if not self._outbound():
             return "", url, "budget"
         self.page_requests += 1
         local["pages"] += 1
@@ -296,6 +319,8 @@ class Resolver:
             return self.ats_cache[board_key]
         if self.page_requests >= self.page_limit or local["pages"] >= 4 or not self._available():
             return [], "budget"
+        if not self._outbound():
+            return [], "budget"
         self.page_requests += 1
         local["pages"] += 1
         local["discovery_pages"] += 1
@@ -312,8 +337,26 @@ class Resolver:
         return result
 
     def recover(self, row: dict, *, previous: dict, context: dict, store: dict, now: datetime,
-                cheap_only: bool = False) -> str:
+                cheap_only: bool = False, defer_generic: bool = False) -> str:
         """Return resolution method or a deferred/no-match reason."""
+        self.current_row = row
+        row["recovery_methods"] = dict(row.get("recovery_methods") or previous.get("recovery_methods") or {})
+
+        def method_input(method: str, *extra: object) -> str:
+            return recovery_policy.evidence_hash(row, method, *extra)
+
+        def recently_failed(method: str, *extra: object) -> bool:
+            state = row["recovery_methods"].get(method) or {}
+            attempted = _stamp(state.get("attempted_at"))
+            return bool(state.get("outcome") == "no_match" and attempted and
+                        now - attempted < timedelta(hours=NO_MATCH_HOURS) and
+                        state.get("input_hash") == method_input(method, *extra))
+
+        def note_failure(method: str, *extra: object) -> None:
+            row["recovery_methods"][method] = {
+                "input_hash": method_input(method, *extra), "attempted_at": now.isoformat(),
+                "outcome": "no_match",
+            }
         if len(str(row.get("description") or "").strip()) >= board.THIN_JD_CHARS:
             return "already_resolved"
         tentative_at = _stamp(previous.get("jd_recovery_at"))
@@ -397,7 +440,9 @@ class Resolver:
             return method
 
         def accept(url: str, method: str, *, variant: bool = False) -> bool:
-            if not _credible(url, company, patterns) or local["candidates"] >= 2 or url in seen_candidates:
+            cache_method = f"candidate:{hashlib.sha1(url.encode()).hexdigest()[:10]}"
+            if (not _credible(url, company, patterns) or local["candidates"] >= 2
+                    or url in seen_candidates or recently_failed(cache_method, url)):
                 return False
             seen_candidates.add(url)
             local["candidates"] += 1
@@ -413,8 +458,10 @@ class Resolver:
                     local["deferred"] += 1
                 else:
                     local["errors"] += 1
+                    note_failure(cache_method, url)
                 return False
             if not _credible(final_url, company, patterns):
+                note_failure(cache_method, url)
                 return False
             description = _verified_posting(row, html, variant=variant)
             if not description:
@@ -425,6 +472,7 @@ class Resolver:
                     variant_description = _verified_posting(row, html, variant=True)
                     if variant_description:
                         variant_candidates.append((final_url, variant_description))
+                note_failure(cache_method, url)
                 return False
             resolved(final_url, description, method)
             return True
@@ -520,52 +568,80 @@ class Resolver:
         if cheap_only:
             return "pending"
 
-        prior_no_match = _stamp(previous.get("official_search_attempted_at"))
-        if previous.get("official_search_status") == "no_match" and prior_no_match and now - prior_no_match < timedelta(hours=NO_MATCH_HOURS):
-            row["official_search_status"] = "no_match"
-            row["official_search_attempted_at"] = previous["official_search_attempted_at"]
-            return "no_match_cached"
-
-        for listing_url in self.listing_cache[company_key][:2]:
-            _status, method = try_ats(listing_url, "known_ats_board")
-            if method:
-                return method
-
+        listing_urls = self.listing_cache[company_key][:2]
+        cached_skips = 0
+        if recently_failed("known_ats_board", *listing_urls):
+            cached_skips += 1
+        else:
+            before = (self.search_requests, self.page_requests)
+            for listing_url in listing_urls:
+                _status, method = try_ats(listing_url, "known_ats_board")
+                if method:
+                    return method
+            if listing_urls and not local["errors"] and not local["deferred"] and before != (self.search_requests, self.page_requests):
+                note_failure("known_ats_board", *listing_urls)
         title = str(row.get("title") or "").strip()
+        known_urls = list(dict.fromkeys(str(source.get(field) or "") for source in (row, previous)
+                                        for field in ("official_url", "application_url") if source.get(field)))
+        for url in known_urls:
+            if _likely_posting_url(url, title) and accept(url, "known_url"):
+                return "known_url"
+        if defer_generic:
+            return "generic_pending"
+
         location = str(row.get("location") or "").strip()
         queries = [f'"{title}" "{company}"', f'"{title}" "{company}" "{location}"',
                    f'"{company}" "{title}" careers jobs']
         discovered: list[str] = []
-        for index, query in enumerate(queries, 1):
-            urls, status = self.search(query)
-            if status != "ok":
-                local["deferred" if status == "budget" else "errors"] += 1
-                if status == "budget":
-                    break
-                continue
-            for url in urls:
-                if not _credible(url, company, patterns):
-                    continue
-                host = _host(url)
-                if host and host not in discovered:
-                    discovered.append(host)
-                if url not in discovered_urls:
-                    discovered_urls.append(url)
-                if not _likely_posting_url(url, title):
-                    continue
-                if accept(url, f"generic_{index}"):
-                    return f"generic_{index}"
+        if row.get("_ranked_candidates") is not None:
+            discovered_urls = list(row.pop("_ranked_candidates") or [])
+            for url in discovered_urls:
+                if _likely_posting_url(url, title) and accept(url, "generic_ranked"):
+                    return "generic_ranked"
                 if local["candidates"] >= 2:
                     break
-            if local["candidates"] >= 2:
-                local["deferred"] += 1
+            row["recovery_candidates"] = discovered_urls[:8]
+            if row.pop("_generic_searched", False) and not local["errors"] and not local["deferred"]:
+                note_failure("generic_search")
+        elif recently_failed("generic_search"):
+            cached_skips += 1
+            discovered_urls = list(row.get("recovery_candidates") or previous.get("recovery_candidates") or [])[:8]
+        else:
+            for index, query in enumerate(queries, 1):
+                urls, status = self.search(query)
+                if status != "ok":
+                    local["deferred" if status == "budget" else "errors"] += 1
+                    if status == "budget":
+                        break
+                    continue
+                for url in urls:
+                    if not _credible(url, company, patterns):
+                        continue
+                    host = _host(url)
+                    if host and host not in discovered:
+                        discovered.append(host)
+                    if url not in discovered_urls:
+                        discovered_urls.append(url)
+                    if not _likely_posting_url(url, title):
+                        continue
+                    if accept(url, f"generic_{index}"):
+                        return f"generic_{index}"
+                    if local["candidates"] >= 2:
+                        break
+            row["recovery_candidates"] = discovered_urls[:8]
+            if not local["errors"] and not local["deferred"]:
+                note_failure("generic_search")
 
         hosts = list(dict.fromkeys([*sorted(patterns), *discovered]))
         hosts.sort(key=lambda host: (host not in {"jobs.ashbyhq.com", "boards.greenhouse.io",
                                                   "job-boards.greenhouse.io", "jobs.lever.co"}, host))
         hosts = hosts[:2]
         # Inspect verified ATS board paths and employer career homepages.
-        for host in hosts:
+        direct_hosts = [] if recently_failed("direct_careers", *hosts) else hosts
+        if hosts and not direct_hosts:
+            cached_skips += 1
+        direct_before = self.page_requests
+        for host in direct_hosts:
             if local["discovery_pages"] >= 2 or local["candidates"] >= 2:
                 break
             starts = [url for url in [*self.listing_cache[company_key], *discovered_urls] if _host(url) == host]
@@ -602,16 +678,24 @@ class Resolver:
                     if accept(candidate, "direct_careers"):
                         return "direct_careers"
 
-        for host in hosts:
-            urls, status = self.search(f'site:{host} "{title}" "{company}"')
-            if status != "ok":
-                local["deferred" if status == "budget" else "errors"] += 1
-                continue
-            for url in urls:
-                if _host(url) != host or not _credible(url, company, patterns):
+        if direct_hosts and self.page_requests > direct_before and not local["errors"] and not local["deferred"]:
+            note_failure("direct_careers", *hosts)
+
+        if recently_failed("site_exact", *hosts):
+            cached_skips += 1
+        else:
+            for host in hosts:
+                urls, status = self.search(f'site:{host} "{title}" "{company}"')
+                if status != "ok":
+                    local["deferred" if status == "budget" else "errors"] += 1
                     continue
-                if accept(url, "site_exact"):
-                    return "site_exact"
+                for url in urls:
+                    if _host(url) != host or not _credible(url, company, patterns):
+                        continue
+                    if accept(url, "site_exact"):
+                        return "site_exact"
+            if hosts and not local["errors"] and not local["deferred"]:
+                note_failure("site_exact", *hosts)
         # The already-fetched candidate may use a deterministic title variant.
         # Do not choose one if the bounded evidence contains a second match.
         unique = {url: description for url, description in variant_candidates}
@@ -628,11 +712,68 @@ class Resolver:
             self.stats["tentative_official"] += 1
             return "tentative_official"
 
+        if cached_skips and not local["errors"] and not local["deferred"] and not self.search_requests and not self.page_requests:
+            row["official_search_status"] = "no_match"
+            row["official_search_attempted_at"] = str(previous.get("official_search_attempted_at") or "")
+            return "no_match_cached"
         row["official_search_attempted_at"] = now.isoformat()
-        if local["deferred"] or local["errors"] or local["candidates"] >= 2 or not self._available():
+        if local["deferred"] or local["errors"] or not self._available():
             row["official_search_status"] = "deferred"
             self.stats["deferred"] += 1
             return "deferred"
         row["official_search_status"] = "no_match"
         self.stats["no_match"] += 1
         return "no_match"
+
+
+def recover_pending(resolver: Resolver, pending: list[tuple[dict, dict]], *, context: dict,
+                    store: dict, now: datetime) -> list[str]:
+    """Run cheap and known paths, then rerank generic results across jobs."""
+    needs_generic: list[tuple[dict, dict]] = []
+    results: list[str] = []
+    for row, previous in pending:
+        if not resolver._available():
+            break
+        method = resolver.recover(row, previous=previous, context=context, store=store,
+                                  now=now, defer_generic=True)
+        if method == "generic_pending":
+            needs_generic.append((row, previous))
+        else:
+            results.append(method)
+    candidates_by_job: list[tuple[dict, list[dict]]] = []
+    for row, previous in needs_generic:
+        state = (row.get("recovery_methods") or {}).get("generic_search") or {}
+        at = _stamp(state.get("attempted_at"))
+        same_recent_search = bool(
+            state.get("outcome") == "no_match" and at and now - at < timedelta(hours=NO_MATCH_HOURS)
+            and state.get("input_hash") == recovery_policy.evidence_hash(row, "generic_search")
+        )
+        saved = row.get("recovery_candidates") or previous.get("recovery_candidates") or []
+        if saved and same_recent_search:
+            candidates_by_job.append((row, [{"url": url, "domain": _host(url)}
+                                             for url in saved if isinstance(url, str)][:4]))
+            continue
+        if same_recent_search:
+            continue
+        if not resolver.budget or resolver.budget.available(row):
+            resolver.current_row = row
+            company, title = str(row.get("company") or ""), str(row.get("title") or "")
+            urls, status = resolver.search(f'"{title}" "{company}"')
+            if status == "ok":
+                row["_generic_searched"] = True
+                row["_ranked_candidates"] = []
+                patterns = resolver.pattern_cache.get(normalize_company_key(company), set())
+                plausible = [url for url in urls if _credible(url, company, patterns)
+                             and _likely_posting_url(url, title)][:4]
+                candidates_by_job.append((row, [resolver.search_metadata.get(url, {"url": url, "domain": _host(url)})
+                                                for url in plausible]))
+            else:
+                row["_ranked_candidates"] = []
+    ranked = recovery_ai.rank_candidates([(row, options) for row, options in candidates_by_job if len(options) > 1])
+    for row, options in candidates_by_job:
+        row["_ranked_candidates"] = ranked.get(recovery_policy.identity(row), [c["url"] for c in options])
+    for row, previous in needs_generic:
+        if not resolver._available():
+            break
+        results.append(resolver.recover(row, previous=previous, context=context, store=store, now=now))
+    return results

@@ -275,8 +275,7 @@ class OfficialRecoveryTests(unittest.TestCase):
         prior = {"official_search_status": "no_match", "official_search_attempted_at": now.isoformat()}
         session = Mock()
         resolver = recovery.Resolver(session=session)
-        self.assertEqual("no_match_cached", resolver.recover(source, previous=prior, context={}, store={}, now=now))
-        session.get.assert_not_called()
+        self.assertNotEqual("no_match_cached", resolver.recover(source, previous=prior, context={}, store={}, now=now))
 
     def test_unique_wrong_city_is_tentative_without_official_identity(self):
         url = "https://jobs.ashbyhq.com/abridge/123"
@@ -413,9 +412,9 @@ class OfficialRecoveryTests(unittest.TestCase):
                                         "meta": snapshot["meta"], "jobs": [original]}))
             report = local_sources.recover_jds()
             saved = json.loads(path.read_text())
-        self.assertEqual(["linkedin", "indeed", "remote_recovery"], seen)
+        self.assertEqual(["linkedin", "remote_recovery", "indeed"], seen)
         self.assertEqual(1, report["before_total"])
-        self.assertEqual(0, report["after_total"])
+        self.assertEqual(1, report["after_total"])
         self.assertEqual(original["first_seen"], saved["jobs"][0]["first_seen"])
         self.assertEqual(original["last_seen"], saved["jobs"][0]["last_seen"])
         self.assertEqual(original["source_verified_at"], saved["jobs"][0]["source_verified_at"])

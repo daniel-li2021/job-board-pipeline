@@ -188,8 +188,8 @@ def recency(job: Dict[str, Any], now: datetime) -> Dict[str, Any]:
         "discovered": {"bucket": discovered_bucket, "age_hours": discovered_age, "at": first_seen.isoformat() if first_seen else ""},
         # Dashboard windows intentionally follow discovery/Issue activity, not
         # the employer's posting date. posted_date remains reference metadata.
-        "fresh_activity": first_seen is not None and now - first_seen <= timedelta(hours=24),
-        "rolling_activity": first_seen is not None and now - first_seen <= timedelta(hours=72),
+        "fresh_activity": first_seen is not None and timedelta(0) <= now - first_seen <= timedelta(hours=24),
+        "rolling_activity": first_seen is not None and timedelta(0) <= now - first_seen <= timedelta(hours=72),
     }
 
 
@@ -628,7 +628,8 @@ def alert_fresh_rows(
                 if not source_row:
                     continue
                 row = dict(source_row)
-                if not visible_candidate(row, hard_excludes) or not fresh_title_eligible(row):
+                if (not row["freshness"]["fresh_activity"] or
+                        not visible_candidate(row, hard_excludes) or not fresh_title_eligible(row)):
                     continue
                 row["alerted_at"] = emitted_at.isoformat()
                 row["alert_stamp"] = event.get("stamp", "")
@@ -745,8 +746,7 @@ def build_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
     referral_rows = _sort_rows(
         row for row in current
         if row.get("referral")
-        and row["freshness"]["discovered"]["age_hours"] is not None
-        and row["freshness"]["discovered"]["age_hours"] <= 168
+        and row["freshness"]["rolling_activity"]
     )
 
     def counts(rows: Iterable[Dict[str, Any]]) -> Dict[str, int]:

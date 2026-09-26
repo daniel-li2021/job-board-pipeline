@@ -34,6 +34,8 @@ import json
 
 from state_io import atomic_write, encode_json_gzip, read_json
 import remote_recovery
+import recovery_policy
+import recovery_ai
 import os
 import re
 import time
@@ -116,6 +118,7 @@ SCORE_LLM = "llm"
 SCORE_CACHED_LLM = "cached_llm"
 SCORE_OVERFLOW = "rule_overflow"
 SCORE_FALLBACK = "rule_fallback"
+SCORE_METADATA = "metadata_ai_fallback"
 SCORE_RECENCY = "rule_recency"
 SCORE_RULE = "rule"
 LLM_SCORE_SOURCES = {SCORE_LLM, SCORE_CACHED_LLM}
@@ -620,7 +623,8 @@ def _html_redirect_url(body: str) -> str:
 
 
 def resolve_exposed_originals(
-    jobs: List[Dict[str, Any]], session: requests.Session, store: Dict[str, Dict[str, Any]]
+    jobs: List[Dict[str, Any]], session: requests.Session, store: Dict[str, Dict[str, Any]],
+    budget: recovery_policy.RecoveryBudget | None = None,
 ) -> Dict[str, Any]:
     """Resolve thin JDs and ambiguous jobs that expose a direct application URL."""
     cached = {
@@ -632,6 +636,8 @@ def resolve_exposed_originals(
     blocked_http_domains: set[str] = set()
     last_request: Dict[str, float] = {}
     for job in jobs:
+        if job.get("_skip_recovery") or (budget and not recovery_policy.fresh(job, datetime.now(timezone.utc))):
+            continue
         needs_jd = len(str(job.get("description") or "").strip()) < THIN_JD_CHARS
         needs_identity = bool(job.get("application_url")) and not job.get("official_url") and (job.get("official_search_verified") or job.get("coverage_status") in {
             "official_ambiguous", "official_gap", "official_identity_unmatched",
@@ -698,6 +704,16 @@ def resolve_exposed_originals(
             if needs_jd and len(str(job.get("description") or "")) >= THIN_JD_CHARS:
                 stats["jds_resolved"] += 1
             continue
+        prior_state = (store.get(dedup_key(job), {}).get("recovery_methods") or {}).get("direct_url") or {}
+        direct_hash = recovery_policy.evidence_hash(job, "direct_url", application_url)
+        attempted_at = recovery_policy.stamp(prior_state.get("attempted_at"))
+        if (prior_state.get("input_hash") == direct_hash and attempted_at
+                and datetime.now(timezone.utc) - attempted_at < timedelta(hours=12)):
+            stats["negative_cache_reused"] += 1
+            continue
+        if budget and not budget.claim(job):
+            stats["budget_deferred"] += 1
+            continue
         host = urlsplit(application_url).netloc.lower()
         html = ""
         final_url = application_url
@@ -754,6 +770,10 @@ def resolve_exposed_originals(
                 job["enrichment_status"] = "unresolved"
                 job["enrichment_failure_reason"] = failure or "structured_jd_not_found"
                 reasons[job["enrichment_failure_reason"]] += 1
+                methods = dict(job.get("recovery_methods") or store.get(dedup_key(job), {}).get("recovery_methods") or {})
+                methods["direct_url"] = {"input_hash": direct_hash, "attempted_at": datetime.now(timezone.utc).isoformat(),
+                                         "outcome": "no_match"}
+                job["recovery_methods"] = methods
             else:
                 job["enrichment_status"] = "resolved" if job.get("official_url") else "unresolved"
                 if job["enrichment_status"] == "resolved":
@@ -1629,6 +1649,26 @@ def score_survivors(
     counts.update(llm_config.empty_usage())
     fp = profiles["fingerprint"]
     candidate_fp = profiles.get("candidate_fingerprint", "")
+    for job in candidates:
+        if len(str(job.get("description") or "").strip()) >= THIN_JD_CHARS:
+            job.pop("recovery_triage", None)
+            job.pop("recovery_input_hash", None)
+            continue
+        if job.get("recovery_triage"):
+            continue
+        prior = store.get(dedup_key(job), {})
+        if prior.get("recovery_input_hash") == recovery_policy.evidence_hash(job, candidate_fp):
+            job["recovery_triage"] = prior.get("recovery_triage") or {}
+
+    if use_llm and os.getenv("OPENAI_API_KEY"):
+        metadata_pending = [job for job in candidates
+                            if len(str(job.get("description") or "").strip()) < THIN_JD_CHARS
+                            and recovery_policy.fresh(job, datetime.now(timezone.utc))
+                            and not job.get("recovery_triage") and not job.get("_triage_attempted")]
+        metadata_decisions = recovery_ai.triage(metadata_pending, profiles.get("candidate", ""))
+        for job in metadata_pending:
+            job["recovery_triage"] = metadata_decisions.get(recovery_policy.identity(job), {})
+            job["_triage_attempted"] = True
 
     peer_context_index = _peer_identity_index(peer_stores)
     for job in candidates:
@@ -1659,11 +1699,23 @@ def score_survivors(
             _apply_peer_result(job, compatible_peer[0], compatible_peer[1])
             counts["reused"] += 1
             counts["peer_reused"] += 1
-        elif is_thin_local_discovery(job):
-            # A title-only local card is useful discovery evidence but poor LLM
-            # evidence. Do not call the API or reuse a prior title-only LLM
-            # result. An exact Official peer above is still authoritative.
+        elif len(str(job.get("description") or "").strip()) < THIN_JD_CHARS:
+            # Metadata-only cards are useful discovery evidence, never JD evidence.
+            # An exact peer above is still authoritative.
             _apply_rule_result(job, SCORE_FALLBACK, "Low-confidence title/metadata match (JD unavailable after enrichment)")
+            signature = recovery_policy.evidence_hash(job, candidate_fp)
+            if not job.get("recovery_triage") and prev and prev.get("recovery_input_hash") == signature:
+                job["recovery_triage"] = prev.get("recovery_triage")
+            decision = job.get("recovery_triage") or {}
+            if decision and float(decision.get("confidence", 0) or 0) >= .85:
+                job["match_score"] = max(1.0, min(100.0, job["match_score"] + max(-7, min(5, int(decision.get("delta", 0) or 0)))))
+                job["score_source"] = SCORE_METADATA
+                job["screen_method"] = SCORE_METADATA
+                job["score_model"] = "gpt-6-luna"
+                job["reasoning_effort"] = "medium"
+                job["scoring_version"] = "metadata-v1"
+                job["top_match_reasons"] = ["Low-evidence metadata fallback: " + str(decision.get("reason") or "title only")[:80]]
+                job["recovery_input_hash"] = signature
             counts["rule"] += 1
             counts["thin_source_rule"] += 1
         elif _is_reusable_llm_cache(prev or {}, job, fp):
@@ -1724,7 +1776,7 @@ def score_survivors(
     counts["new_or_changed"] = len(to_llm)
 
     if not to_llm:
-        return ("cache", errors, counts)
+        return ("rule" if counts["rule"] and not counts["reused"] else "cache", errors, counts)
 
     def llm_recency_eligible(job: Dict[str, str]) -> bool:
         if job.get("llm_retryable"):
@@ -2025,7 +2077,7 @@ def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
     deprioritized = bool(job.get("deprioritized"))
     src = (job.get("score_source") or "").strip()
     llm_scored = src in LLM_SCORE_SOURCES
-    rule_only = src in {SCORE_OVERFLOW, SCORE_FALLBACK, SCORE_RECENCY, SCORE_RULE, ""}
+    rule_only = src in {SCORE_OVERFLOW, SCORE_FALLBACK, SCORE_METADATA, SCORE_RECENCY, SCORE_RULE, ""}
     early = bool(EARLY_CAREER_TITLE_RE.search(job.get("title") or ""))
     family = (job.get("role_family") or "").lower()
     strong_family = family in ("swe", "ai", "ambiguous")
@@ -2300,6 +2352,7 @@ REMOTE_STORE_FIELDS = {
     "llm_retryable", "llm_retry_count", "llm_last_attempt_at", "llm_last_error",
     "official_search_verified", "official_jd_fetched_at", "official_search_status", "official_search_attempted_at",
     "jd_tentative", "tentative_official_url", "jd_recovery_at",
+    "recovery_triage", "recovery_methods", "recovery_candidates", "recovery_input_hash",
 }
 
 
@@ -2888,7 +2941,9 @@ def finalize_new_jobs(
     for job in jobs:
         key = dedup_key(job)
         preserve_job_dates(job, store.get(key) or {}, first_seen=seen_jobs.get(key))
-        job["first_seen"] = str(job.get("first_seen") or now_iso)
+        job["first_seen"] = str(job.get("first_seen") or (
+            now_iso if prev is None and str(job.get("source") or "").lower() not in LOCAL_SOURCES else ""
+        ))
         if not seen_jobs.get(key):
             seen_jobs[key] = job["first_seen"]
         if job.get("first_seen") == now_iso:
@@ -3108,10 +3163,12 @@ def refresh_retained_entry_policy(
         entry["suppress_alert"] = True
         return
     if (
-        is_thin_local_discovery(entry)
+        len(str(entry.get("description") or "").strip()) < THIN_JD_CHARS
         and not entry.get("description_available")
         and entry.get("match_source_pipeline") != "official"
     ):
+        if entry.get("score_source") == SCORE_METADATA and entry.get("recovery_input_hash"):
+            return
         entry["rule_score"] = rule_match_score(entry)
         _apply_rule_result(entry, SCORE_FALLBACK, "Low-confidence title/metadata match (JD unavailable after enrichment)")
         entry["tier"] = assign_tier(entry, False)
@@ -3190,7 +3247,10 @@ def run() -> None:
         key = dedup_key(job)
         prev = store.get(key)
         preserve_job_dates(job, prev or {}, first_seen=seen_jobs.get(key))
-        job["first_seen"] = str(job.get("first_seen") or now_iso)
+        job["first_seen"] = str(job.get("first_seen") or (
+            now_iso if prev is None and key not in seen_before_run
+            and str(job.get("source") or "").lower() not in LOCAL_SOURCES else ""
+        ))
         if not seen_jobs.get(key):
             seen_jobs[key] = job["first_seen"]
         job["last_seen"] = resolve_last_seen(job, prev, now_iso)
@@ -3210,7 +3270,33 @@ def run() -> None:
         deduped,
         [("official", official_peer_store), ("board", store), ("syncareer", syncareer_peer_store)],
     )
-    direct_enrichment = resolve_exposed_originals(deduped, session, store)
+    recovery_budget = recovery_policy.RecoveryBudget()
+    triage_candidates = []
+    for job in deduped:
+        if not recovery_policy.fresh(job, now) or len(str(job.get("description") or "").strip()) >= THIN_JD_CHARS:
+            continue
+        probe = dict(job)
+        company_action, _ = classify_company(job.get("company", ""), company_filters, job.get("title", ""))
+        if company_action in {"exclude", "drop"} or not hard_filter(probe)[0] or not role_seniority_prefilter(probe)[0]:
+            job["_skip_recovery"] = True
+            continue
+        signature = recovery_policy.evidence_hash(job, profiles.get("candidate_fingerprint", ""))
+        prior = store.get(dedup_key(job), {})
+        job["recovery_input_hash"] = signature
+        if prior.get("recovery_input_hash") == signature and isinstance(prior.get("recovery_triage"), dict):
+            job["recovery_triage"] = prior["recovery_triage"]
+        else:
+            triage_candidates.append(job)
+    if triage_candidates and not args.no_llm and not args.skip_network and not args.local_out:
+        decisions = recovery_ai.triage(triage_candidates, profiles.get("candidate", ""))
+        for job in triage_candidates:
+            job["recovery_triage"] = decisions.get(recovery_policy.identity(job), {})
+            job["_triage_attempted"] = True
+    for job in deduped:
+        if (job.get("recovery_triage") or {}).get("action") == "skip":
+            job["_skip_recovery"] = True
+    direct_enrichment = (resolve_exposed_originals(deduped, session, store, budget=recovery_budget)
+                         if not args.skip_network and not args.local_out else {})
     online_recovery = {"jobs_processed": 0, "jds_recovered": 0,
                        "search_requests": 0, "page_requests": 0}
     # Cloud-safe company/title web recovery for unresolved records. The resolver
@@ -3218,8 +3304,7 @@ def run() -> None:
     if not args.local_out and not args.skip_network:
         from sources import official_jd_recovery
 
-        online_deadline = time.monotonic() + 15 * 60
-        online_resolver = official_jd_recovery.Resolver(deadline=online_deadline)
+        online_resolver = official_jd_recovery.Resolver(budget=recovery_budget)
         online_context = coverage_reconcile.load_official_context()
         online_store = {
             **{f"remote::{index}": {**row, "remote_recovery": True}
@@ -3233,35 +3318,29 @@ def run() -> None:
             previous = store.get(dedup_key(job), {})
             if online_resolver.recover(job, previous=previous, context=online_context,
                                        store=online_store, now=now, cheap_only=True) == "pending":
-                online_pending.append((job, previous))
+                if recovery_policy.fresh(job, now) and not job.get("_skip_recovery"):
+                    online_pending.append((job, previous))
         online_pending.sort(key=lambda pair: str(pair[0].get("first_seen") or ""), reverse=True)
-        online_processed = 0
-        for job, previous in online_pending:
-            if (online_resolver.search_requests >= online_resolver.search_limit
-                    or online_resolver.page_requests >= online_resolver.page_limit
-                    or time.monotonic() >= online_deadline):
-                break
-            online_resolver.recover(job, previous=previous, context=online_context,
-                                    store=online_store, now=now)
-            online_processed += 1
-        online_recovery = {"jobs_processed": online_processed,
+        official_jd_recovery.recover_pending(online_resolver, online_pending,
+                                             context=online_context, store=online_store, now=now)
+        online_recovery = {"jobs_processed": len(recovery_budget.attempted),
                            "jds_recovered": sum(online_resolver.stats.get(key, 0) for key in (
                                "dedicated_official", "remote_exact_peer", "ats_board_cache",
-                               "known_ats_board", "generic_1", "generic_2", "generic_3",
+                               "known_ats_board", "known_url", "generic_1", "generic_2", "generic_3", "generic_ranked",
                                "direct_ats_board", "direct_careers", "site_exact", "title_fallback")),
                            "search_requests": online_resolver.search_requests,
                            "page_requests": online_resolver.page_requests,
                            "search_limit": online_resolver.search_limit,
                            "page_limit": online_resolver.page_limit,
-                           "deadline_seconds": 15 * 60,
-                           "deadline_reached": time.monotonic() >= online_deadline}
+                           "deadline_seconds": 20 * 60,
+                           "deadline_reached": recovery_budget.deadline_reached}
         remote_recovery.write_snapshot(
             OUTPUT_DIR / "recovery" / "board.json.gz", "board",
             (job for job in [*raw_jobs, *deduped]
              if (str(job.get("source") or "").lower() not in LOCAL_SOURCES
                  or job.get("enrichment_method") in {"dedicated_official", "remote_exact_peer",
-                                                     "ats_board_cache", "known_ats_board", "generic_1",
-                                                     "generic_2", "generic_3", "direct_ats_board",
+                                                     "ats_board_cache", "known_ats_board", "known_url", "generic_1",
+                                                     "generic_2", "generic_3", "generic_ranked", "direct_ats_board",
                                                      "direct_careers", "site_exact", "title_fallback"})
              and not job.get("remote_recovery")),
         )

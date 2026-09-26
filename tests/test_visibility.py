@@ -601,9 +601,8 @@ class DashboardPolicyTests(unittest.TestCase):
             bodies = {key: Path(tmp) / f"{key}.md" for key in paths}
             with patch.object(dashboard, "ALERT_HISTORY_PATHS", paths), patch.object(dashboard, "ISSUE_BODY_PATHS", bodies):
                 fresh, basis = dashboard.alert_fresh_rows([row], now)
-            self.assertEqual(1, len(fresh))
+            self.assertEqual(0, len(fresh))
             self.assertEqual("alerts_and_new_discoveries", basis["official"])
-            self.assertEqual(1, fresh[0]["activity_age_hours"])
 
     def test_official_fresh_includes_unalerted_discoveries_without_caps(self) -> None:
         now = datetime(2026, 9, 8, tzinfo=timezone.utc)
@@ -942,7 +941,7 @@ class MatchingPolicyTests(unittest.TestCase):
         old = make_job(
             source="test", company="Example Tech", title="Software Engineer",
             location="Seattle, WA", job_id="one",
-            description="Responsibilities Build APIs Required Qualifications 3+ years.",
+            description="Responsibilities Build APIs and maintain reliable services. Required Qualifications 3+ years of software engineering experience. " * 3,
         )
         old.update({
             "jd_hash": board_pipeline.jd_hash(old),
@@ -955,7 +954,7 @@ class MatchingPolicyTests(unittest.TestCase):
         store = {dedup_key(old): board_pipeline.build_store_entry(old, dedup_key(old))}
         current = {
             **old,
-            "description": "<p>Responsibilities</p><p>Build&nbsp; APIs</p><p>Required Qualifications</p><p>3+ years.</p>",
+            "description": "<p>" + old["description"] + "</p>",
         }
         current.pop("jd_hash")
         current.pop("match_content_hash")
@@ -1581,7 +1580,7 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         ):
             fresh, _ = dashboard.alert_fresh_rows(rows, now)
         self.assertEqual(
-            {dedup_key(new_b), dedup_key(promoted), dedup_key(carried)},
+            {dedup_key(new_b), dedup_key(carried)},
             {row["canonical_job_key"] for row in fresh},
         )
 
@@ -1932,7 +1931,7 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
             stored = json.loads((syncareer_dir / "watchlist.json").read_text())["entries"]
             self.assertEqual(1, len(stored))
             self.assertEqual("C", stored[0]["tier"])
-            self.assertEqual("rule", stored[0]["score_source"])
+            self.assertEqual(board_pipeline.SCORE_FALLBACK, stored[0]["score_source"])
             self.assertEqual(65, stored[0]["match_score"])
             self.assertEqual("sync-1", stored[0]["job_id"])
             self.assertTrue(stored[0]["first_seen"])

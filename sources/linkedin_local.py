@@ -233,6 +233,7 @@ def enrich_details(
     min_description_chars: int = 1,
     cooldown: bool = False,
     probe: bool = False,
+    budget: object | None = None,
 ) -> Dict[str, Any]:
     """Hydrate every unresolved LinkedIn row with the logged-out full JD.
 
@@ -348,6 +349,10 @@ def enrich_details(
 
     for index, row in enumerate(pending):
         if request_limit is not None and stats["requests"] >= request_limit:
+            stats["budget_exhausted"] = True
+            stats["budget_deferred"] = len(pending) - index
+            break
+        if budget is not None and not budget.claim(row):
             stats["budget_exhausted"] = True
             stats["budget_deferred"] = len(pending) - index
             break

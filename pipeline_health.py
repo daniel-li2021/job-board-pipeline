@@ -3,10 +3,11 @@
 from __future__ import annotations
 
 import html
+import recovery_policy
 import json
 import os
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from statistics import median
 from typing import Any
@@ -775,6 +776,42 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                                                  **local_sources.get("linkedin", {}).get("detail_enrichment", {})}}),
     }
 
+    current_rows: dict[str, dict[str, Any]] = {}
+    for key, (_label, folder, store_name) in PIPELINES.items():
+        payload = _read(base / "output" / folder / store_name, {}) or {}
+        for entry in payload.get("entries", []):
+            seen = recovery_policy.stamp(entry.get("first_seen"))
+            if not seen or not timedelta(0) <= now - seen <= timedelta(hours=72):
+                continue
+            identity = str(entry.get("canonical_job_key") or recovery_policy.identity(entry))
+            current_rows.setdefault(identity, entry)
+    no_jd = [entry for entry in current_rows.values()
+             if len(str(entry.get("description") or "").strip()) < 200]
+    recovery_summary = {
+        "discovered_this_run": sum(int((latest.get(key, {}).get("output") or {}).get("new_jobs", 0) or 0)
+                                   for key in PIPELINES),
+        "verified_this_run": sum(int((local_sources.get(key) or {}).get(
+                                     "partial_fresh_kept" if (local_sources.get(key) or {}).get("status") == "partial"
+                                     else "last_attempt_count", 0) or 0)
+                                 for key in ("linkedin", "indeed", "glassdoor")
+                                 if (local_sources.get(key) or {}).get("status") in {"ok", "partial"}),
+        "fallback_current": sum(str(entry.get("score_source") or "") in {"rule_fallback", "metadata_ai_fallback"}
+                                for entry in current_rows.values()),
+        "no_jd_current": len(no_jd),
+        "pending_fresh": sum(recovery_policy.fresh(entry, now)
+                             and not entry.get("recovery_methods")
+                             and not entry.get("official_search_attempted_at")
+                             and not entry.get("linkedin_detail_attempted_at")
+                             and (entry.get("recovery_triage") or {}).get("action") != "skip"
+                             for entry in no_jd),
+        "attempted_unresolved": sum(bool(entry.get("recovery_methods") or entry.get("official_search_attempted_at")
+                                         or entry.get("linkedin_detail_attempted_at")) for entry in no_jd),
+    }
+    if recovery_summary["pending_fresh"] >= 20:
+        limitations.append(f"Fresh JD recovery backlog: {recovery_summary['pending_fresh']} pending")
+    if (recovery.get("linkedin_rate_limited") or
+            (local_sources.get("linkedin", {}).get("search_collection") or {}).get("rate_limited")):
+        limitations.append("LinkedIn HTTP 429 stopped further LinkedIn requests")
     overall = max((components[name]["status"] for name in PIPELINES), key=SEVERITY.get)
     report = {
         "generated_at": now.isoformat(),
@@ -792,6 +829,7 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             "unresolved_thin_or_no_jd": sum(failure_reasons.values()),
             "failure_reasons": dict(failure_reasons.most_common()),
         },
+        "recovery_summary": recovery_summary,
         "unresolved_examples": unresolved,
     }
     return report, history
@@ -836,5 +874,9 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
             ("Next scheduled run", scheduler["next_scheduled_run_at"]),
         )
     )
-    page = f"""<!doctype html><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Pipeline health</title><style>body{{font:15px/1.45 system-ui;max-width:1250px;margin:40px auto;padding:0 20px;color:#172019}}table{{border-collapse:collapse;width:100%}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}}code{{background:#eee;padding:2px 4px}}li{{margin:5px 0}}</style><h1>Pipeline health: {report['overall']}</h1><p>Generated {html.escape(report['generated_at'])}. <a href=\"index.html\">Dashboard</a> · <a href=\"health.json\">current JSON</a> · <a href=\"health-history.json\">recent run and batch history</a></p><h2>Local Mac schedule</h2><table>{scheduler_rows}</table><p>{html.escape(scheduler['basis'])}</p><h2>Components</h2><table><tr><th>Source</th><th>Status</th><th>Jobs / JD / Pass</th><th>Updated</th><th>Issue</th><th>Consecutive failures</th></tr>{rows}</table><h2>Execution</h2><table><tr><th>Component</th><th>Status</th><th>Jobs processed</th><th>JDs recovered</th><th>Elapsed seconds</th></tr>{groups}</table><details><summary>Subcomponents and diagnostics</summary><pre>{html.escape(json.dumps(report.get('groups', {}), indent=2))}</pre><pre>{html.escape(json.dumps({key: item.get('detail') for key, item in report['components'].items()}, indent=2))}</pre></details><h2>Actionable problems</h2><ul>{issues}</ul><h2>Active warnings</h2><ul>{degradations}</ul><h2>Recovered behavior / known limitations</h2><ul>{limitations}</ul><h2>Enrichment funnel</h2><pre>{html.escape(json.dumps(report['enrichment'], indent=2))}</pre><h2>Unresolved JD examples</h2><ul>{examples}</ul>"""
+    summary_html = " · ".join(
+        f"{html.escape(key.replace('_', ' '))}: {int(value)}"
+        for key, value in report.get("recovery_summary", {}).items()
+    )
+    page = f"""<!doctype html><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Pipeline health</title><style>body{{font:15px/1.45 system-ui;max-width:1250px;margin:40px auto;padding:0 20px;color:#172019}}table{{border-collapse:collapse;width:100%}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}}code{{background:#eee;padding:2px 4px}}li{{margin:5px 0}}</style><h1>Pipeline health: {report['overall']}</h1><p>Generated {html.escape(report['generated_at'])}. <a href=\"index.html\">Dashboard</a> · <a href=\"health.json\">current JSON</a> · <a href=\"health-history.json\">recent run and batch history</a></p><p>{summary_html}</p><h2>Local Mac schedule</h2><table>{scheduler_rows}</table><p>{html.escape(scheduler['basis'])}</p><h2>Components</h2><table><tr><th>Source</th><th>Status</th><th>Jobs / JD / Pass</th><th>Updated</th><th>Issue</th><th>Consecutive failures</th></tr>{rows}</table><h2>Execution</h2><table><tr><th>Component</th><th>Status</th><th>Jobs processed</th><th>JDs recovered</th><th>Elapsed seconds</th></tr>{groups}</table><details><summary>Subcomponents and diagnostics</summary><pre>{html.escape(json.dumps(report.get('groups', {}), indent=2))}</pre><pre>{html.escape(json.dumps({key: item.get('detail') for key, item in report['components'].items()}, indent=2))}</pre></details><h2>Actionable problems</h2><ul>{issues}</ul><h2>Active warnings</h2><ul>{degradations}</ul><h2>Recovered behavior / known limitations</h2><ul>{limitations}</ul><h2>Enrichment funnel</h2><pre>{html.escape(json.dumps(report['enrichment'], indent=2))}</pre><h2>Unresolved JD examples</h2><ul>{examples}</ul>"""
     (public / "health.html").write_text(page, encoding="utf-8")
