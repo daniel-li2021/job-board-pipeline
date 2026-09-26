@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-26T05:19:48.402969+00:00",
+  "generated_at": "2026-09-26T11:05:33.803122+00:00",
   "collector": {
-    "commit": "c93b797dfd2c6e59c7ff87498316b85dc0e7e679",
+    "commit": "75807eb8557abebf7cff2617ee98fb0d091aa235",
     "dirty": false
   },
   "sources": {
@@ -11,14 +11,14 @@
       "healthy": false,
       "status": "partial",
       "reason": "focused query coverage",
-      "last_attempt_at": "2026-09-26T05:18:38.703332+00:00",
+      "last_attempt_at": "2026-09-26T10:55:35.629716+00:00",
       "last_success_at": "2026-09-22T18:01:45.946101+00:00",
-      "last_partial_at": "2026-09-26T05:18:38.703332+00:00",
-      "partial_collected_count": 118,
-      "partial_fresh_kept": 111,
-      "partial_carried_count": 1261,
+      "last_partial_at": "2026-09-26T10:55:35.629716+00:00",
+      "partial_collected_count": 123,
+      "partial_fresh_kept": 116,
+      "partial_carried_count": 1283,
       "last_attempt_collector": {
-        "commit": "c93b797dfd2c6e59c7ff87498316b85dc0e7e679",
+        "commit": "75807eb8557abebf7cff2617ee98fb0d091aa235",
         "dirty": false
       },
       "last_success_collector": {
@@ -31,8 +31,8 @@
       "last_success_source_provenance": {
         "implementation": "sources.linkedin_local"
       },
-      "last_attempt_count": 111,
-      "consecutive_failures": 16,
+      "last_attempt_count": 116,
+      "consecutive_failures": 0,
       "query_stats": [
         {
           "query": "software engineer",
@@ -43,10 +43,10 @@
           "raw_jobs": 50,
           "unique_jobs": 50,
           "unique_contribution": 47,
-          "first_pass_survivors": 43,
+          "first_pass_survivors": 42,
           "original_postings_resolved": 0,
           "jds_resolved": 16,
-          "elapsed_seconds": 8.47
+          "elapsed_seconds": 8.933
         },
         {
           "query": "ai engineer",
@@ -56,11 +56,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 30,
           "unique_jobs": 30,
-          "unique_contribution": 27,
-          "first_pass_survivors": 26,
+          "unique_contribution": 29,
+          "first_pass_survivors": 28,
           "original_postings_resolved": 0,
           "jds_resolved": 1,
-          "elapsed_seconds": 4.924
+          "elapsed_seconds": 5.414
         },
         {
           "query": "backend engineer",
@@ -74,7 +74,7 @@
           "first_pass_survivors": 19,
           "original_postings_resolved": 0,
           "jds_resolved": 0,
-          "elapsed_seconds": 3.243
+          "elapsed_seconds": 3.599
         },
         {
           "query": "full-stack engineer",
@@ -84,11 +84,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 20,
           "unique_jobs": 20,
-          "unique_contribution": 15,
+          "unique_contribution": 17,
           "first_pass_survivors": 18,
           "original_postings_resolved": 0,
           "jds_resolved": 1,
-          "elapsed_seconds": 3.282
+          "elapsed_seconds": 3.545
         },
         {
           "query": "machine learning engineer",
@@ -98,27 +98,27 @@
           "stop_reason": "page_budget",
           "raw_jobs": 20,
           "unique_jobs": 20,
-          "unique_contribution": 12,
+          "unique_contribution": 13,
           "first_pass_survivors": 20,
           "original_postings_resolved": 0,
           "jds_resolved": 0,
-          "elapsed_seconds": 3.279
+          "elapsed_seconds": 3.367
         }
       ],
       "detail_enrichment": {
-        "eligible": 110,
-        "cache_reused": 5,
+        "eligible": 1244,
+        "cache_reused": 0,
         "requests": 8,
         "responses": 8,
         "request_limit": 8,
-        "budget_deferred": 86,
+        "budget_deferred": 1170,
         "budget_exhausted": true,
         "retry_deferred": 0,
         "retry_attempts": 0,
-        "exact_official": 13,
-        "official_deferred": 11,
+        "exact_official": 79,
+        "official_deferred": 66,
         "rate_limited": false,
-        "jds_resolved": 13,
+        "jds_resolved": 8,
         "external_apply_urls": 0,
         "failed": 0,
         "detail_jds_fetched": 8,
@@ -127,31 +127,34 @@
         "scrapling_requests": 0,
         "scrapling_jds_resolved": 0,
         "scrapling_error": "",
-        "remaining_no_jd": 97,
+        "remaining_no_jd": 1236,
         "failure_reasons": {
-          "no_description": 86,
-          "official_detail_deferred": 11
+          "official_detail_deferred": 109,
+          "no_description": 1050,
+          "linkedin_rate_limited": 8
         },
         "cooldown_active": false,
         "probe": false,
         "status": "active"
       },
-      "last_good_count": 1372,
-      "detail_last_attempt_at": "2026-09-26T00:21:43.068211+00:00",
+      "last_good_count": 1399,
+      "detail_last_attempt_at": "2026-09-26T11:05:33.819338+00:00",
       "detail_429_streak": 0,
       "detail_cooldown_until": "",
       "official_enrichment": {
-        "exact_indeed_peer": 6,
+        "dedicated_matches": 11,
         "cache": 2,
-        "dedicated_matches": 14,
+        "exact_indeed_peer": 5,
         "search_provider_failures": 1,
-        "no_match": 2,
-        "ats_board_cache_hits": 2,
-        "deferred": 105,
-        "search_requests": 12,
+        "no_match": 105,
+        "ats_board_cache_hits": 3,
+        "tentative_official": 2,
+        "deferred": 5,
+        "dedicated_official": 1,
+        "search_requests": 469,
         "search_provider": "bing",
-        "official_page_requests": 12,
-        "remaining_no_jd": 110
+        "official_page_requests": 172,
+        "remaining_no_jd": 113
       },
       "search_collection": {
         "cooldown_active": false,
@@ -171,16 +174,19 @@
       "detail_status": "active",
       "runner_states": {
         "mac": {
-          "search_last_attempt_at": "2026-09-26T05:18:38.703332+00:00",
+          "search_last_attempt_at": "2026-09-26T10:55:35.629716+00:00",
           "search_429_streak": 0,
           "search_cooldown_until": "",
           "detail_status": "active",
-          "detail_last_attempt_at": "2026-09-26T05:18:38.703332+00:00",
+          "detail_last_attempt_at": "2026-09-26T10:55:35.629716+00:00",
           "detail_429_streak": 0,
           "detail_cooldown_until": "",
           "detail_cooldown_reason": ""
         }
-      }
+      },
+      "last_attempt_elapsed_seconds": 598.105,
+      "failure_cause": "",
+      "previous_failure": {}
     },
     "indeed": {
       "required": true,
@@ -534,5 +540,18 @@
       "official_enrichment": {},
       "search_collection": {}
     }
+  },
+  "local_recovery": {
+    "run_at": "2026-09-26T11:05:33.819338+00:00",
+    "elapsed_seconds": 5585.862,
+    "official_jds_recovered": 50,
+    "linkedin_detail_recoveries": 8,
+    "targeted_linkedin_search_requests": 0,
+    "targeted_linkedin_detail_jds": 0,
+    "targeted_linkedin_rate_limited": false,
+    "generic_jobs_processed": 1278,
+    "search_requests": 4669,
+    "official_page_requests": 1542,
+    "targeted_429_streak": 0
   }
 }
