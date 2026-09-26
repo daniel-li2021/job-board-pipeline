@@ -5,12 +5,20 @@ const vm = require('node:vm');
 const {execFileSync} = require('node:child_process');
 const html = execFileSync('python3', ['-c', 'import dashboard; print(dashboard.HTML_TEMPLATE)'], {encoding:'utf8'});
 const payload = {snapshots:{}, fresh_24h:[], rolling_3d:[], referrals:[], workflow_rows:[], history_details:{}, supabase:{}};
-const cache = {};
+const cache = {jobReviewSharedCacheV1: JSON.stringify({
+  stale: {canonical_job_key:'stale',status:'applied_complete',updated_at:'2099-01-01T00:00:00Z'}
+})};
+assert.match(html, /id="main-tab-applied"[^>]*disabled/);
+assert.match(html, /id="applied"><div class="empty">Loading review state/);
 let replacedUrl='';
 const context = vm.createContext({console, setTimeout, Date, URL, location:{href:'https://example.com/job-board/',replace:url=>{replacedUrl=url}}, window:{addEventListener(){}}, localStorage:{getItem:k=>cache[k],setItem:(k,v)=>cache[k]=v}, document:{lastModified:'Mon, 21 Sep 2026 10:00:00 GMT',visibilityState:'visible',addEventListener(){},getElementById:()=>({textContent:JSON.stringify(payload),classList:{add(){}},href:''})}});
 let script = html.split('</script><script>')[1].split('</script>')[0];
 script = script.slice(0, script.indexOf("window.addEventListener('online'"));
 vm.runInContext(script, context);
+assert.equal(vm.runInContext('reviewStates.stale.status', context), 'applied_complete');
+vm.runInContext('renderAll()', context); // No review-dependent DOM work while shared state is loading.
+vm.runInContext('reviewStates={}', context);
+assert.match(html, /window.addEventListener\('load',initializeSupabase\)/);
 const renderSummaryOwner = vm.runInContext('renderSummary', context);
 vm.runInContext(`
 activeMainView='fresh';
@@ -66,7 +74,7 @@ vm.runInContext(`searchQuery='';minScore='';sponsorshipFilters=new Set(sponsorsh
 const extensionSources = ['dashboard_applied_history.js','dashboard_last7.js'].map(file => fs.readFileSync(file,'utf8'));
 extensionSources.forEach(source => assert.doesNotMatch(source, /\bfunction\s+renderSummary\b|\brenderSummary\s*=/));
 let extension = extensionSources[0];
-extension = extension.slice(0, extension.indexOf('  // Existing tracked rows')) + 'globalThis.check={appliedRows,applicationHistorySummary,archiveStorageKey,decodeArchive,backfillTrackedArchives,expandedStates,syncArchiveRows,completeTrackedRow,archiveTrackedJob,getArchive:()=>archive};})();';
+extension = extension.slice(0, extension.indexOf('  // Wait for the initial shared load')) + 'globalThis.check={appliedRows,applicationHistorySummary,archiveStorageKey,decodeArchive,backfillTrackedArchives,expandedStates,syncArchiveRows,completeTrackedRow,archiveTrackedJob,getArchive:()=>archive};})();';
 vm.runInContext(extension, context);
 assert.equal(vm.runInContext('renderSummary', context), renderSummaryOwner);
 vm.runInContext(`
@@ -204,5 +212,21 @@ vm.runInContext("supabase={from(){throw new Error('offline')}}",context);
 await vm.runInContext('pushState(reviewStates.one)',context);
 assert.equal(vm.runInContext("pendingKeys.size",context),0);
 assert.equal(vm.runInContext("reviewStates.one.pending",context),true);
+vm.runInContext(`
+reviewStates={
+  stale:{canonical_job_key:'stale',status:'applied_complete',updated_at:'2099-01-01T00:00:00Z'},
+  pending:{canonical_job_key:'pending',status:'unreviewed',deleted:true,updated_at:'2099-01-01T00:00:00Z',pending:true}
+};
+supabase={from(){return {select(){return {order(){return {range:async()=>({data:[
+  {canonical_job_key:'stale',status:'unreviewed',deleted:false,updated_at:'2026-09-01T00:00:00Z'},
+  {canonical_job_key:'pending',status:'unreviewed',deleted:false,updated_at:'2026-09-01T00:00:00Z'}
+],error:null})}}}}}}};
+syncPending=async()=>{};
+`,context);
+await vm.runInContext('loadSharedStates()',context);
+assert.equal(vm.runInContext("reviewStates.stale.status",context),'unreviewed');
+assert.equal(vm.runInContext("reviewStates.stale.pending",context),false);
+assert.equal(vm.runInContext("reviewStates.pending.deleted",context),true);
+assert.equal(vm.runInContext("reviewStates.pending.pending",context),true);
 console.log('Dashboard runtime checks passed');
 })().catch(error=>{console.error(error);process.exitCode=1});

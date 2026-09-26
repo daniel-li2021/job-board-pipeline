@@ -408,6 +408,7 @@
   };
 
   renderAll = function() {
+    if (!sharedLoaded && !sharedError) return;
     syncArchiveRows();
     const rows = uniqueRows();
     renderSummary();
@@ -463,8 +464,8 @@
       });
     });
 
-    Object.values(reviewStates).forEach(local => {
-      expandedStates(local, Boolean(local.pending)).forEach(snapshot => {
+    Object.values(reviewStates).filter(local => local?.pending).forEach(local => {
+      expandedStates(local, true).forEach(snapshot => {
         const key = snapshot.canonical_job_key;
         const remote = merged[key];
         if (!remote || stateTime(snapshot) > stateTime(remote)) merged[key] = snapshot;
@@ -488,9 +489,5 @@
     await syncPending();
   };
 
-  // Existing tracked rows are immediately retained; old rows with already-pruned
-  // metadata remain visible as placeholders instead of silently disappearing.
-  syncArchiveRows();
-  backfillTrackedArchives();
-  renderAll();
+  // Wait for the initial shared load before deriving tracked rows from review state.
 })();
