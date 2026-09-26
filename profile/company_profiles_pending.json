@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-26T14:54:56.024842+00:00",
-  "count": 2460,
+  "generated_at": "2026-09-26T15:29:53.988009+00:00",
+  "count": 2477,
   "companies": [
     {
       "name": "1199SEIU Benefit and Pension Funds",
@@ -145,6 +145,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "A10 Networks",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "0045117b3185d6eb0ee7a619"
+      ],
       "seen_count": 1
     },
     {
@@ -1667,6 +1680,19 @@
       "seen_count": 1
     },
     {
+      "name": "Ant-Tech",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "557c14b389e1a69068126d4e"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Antera Software USA",
       "aliases": [],
       "size": "unknown",
@@ -2995,9 +3021,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "179a33dc34bc70a44dbef4bf"
+        "179a33dc34bc70a44dbef4bf",
+        "afa527f6258e04a01eb38545"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "BDO",
@@ -3513,6 +3540,19 @@
       "seen_count": 1
     },
     {
+      "name": "Blackstone",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "ed4960c79fb5b9d323ad7bf4"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Blacktop Omnimedia, LLC",
       "aliases": [],
       "size": "unknown",
@@ -3814,9 +3854,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "3bb0bf7f4b36bbdc21acf453"
+        "3bb0bf7f4b36bbdc21acf453",
+        "d4f58ff948b1d3efbce4766c"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Bot Auto",
@@ -4301,44 +4342,59 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "04bdb6776ef927fce4700603",
         "0d503a1ec1c4e6bbded073fd",
         "11f1445257b2bb6fb941f277",
+        "128e7392fcf2bc6b969a9a88",
         "147abb1dbd847fb5aa19f54b",
         "172f9be600ad6707f97791e4",
+        "1be4b7d69e38b0557752bf49",
+        "28606db3c21b10a50f24bbf7",
         "3b4904bfb49cbdb4d3a52502",
         "3b4bd9db05ea97feda621f27",
         "3f40e3b3485b9e7e3dae79af",
         "40ff953df73fc66e86fe24be",
         "430d724025687a04c4e00663",
         "4cc061a0cdce086aa25e85d5",
+        "551a6302e5a878e04aa5ab2b",
         "552a99e98bef66956ba9fa40",
         "555579d311b524cd22843ee2",
+        "627aef87074f84fc67473d18",
+        "6457f6914a13fc2e7b92a773",
         "69b11737d99046d7c6f0186c",
         "70a8151367aa446c0ea636f2",
         "77d518bae7fb12ea54f76946",
         "7bca300412142335dfa47a99",
+        "82d16438197c5cc4862fb492",
         "97b185f2ffea2befc6092da8",
         "97ca1bae8671421469cff573",
         "97e80933510239ad112362fc",
+        "9ccfb19fee0a86945ca75288",
         "a1b3a6f45eb85b34c62b9466",
         "a3e7dc6e49f93e9962fb9e76",
+        "a6882d9265ff7a7ec81c1282",
         "ae944f539960b6b778a626b3",
+        "b1f645f57da539d5aa37a3d8",
+        "bd80599deec9a88ad02e61b3",
         "bfe1b8b1c3b8657a7988209f",
         "bffa06283e46bafe6f37e707",
         "d20ca9cb0bc90a0f68cb9319",
         "d321a244cdc940d2de2fb9f8",
         "d427f439a2ac072124b09559",
+        "dad0a02922779ab645e3520a",
         "dad92498b82c3b0958d12290",
         "dddd0ca84bf3dc89210c34b0",
         "e03cbeb645f562f677253686",
+        "e8f4dc46a40f3d1d9353ffb9",
         "e9c0ebfa1e4d379793436727",
         "eb40bf888c1c4fcf3260542f",
         "ebe378fbb48261437eee076f",
         "f13f69747fc42ef017918b12",
+        "f2b71075f8cf76a69199c679",
         "fe5a0789e1dd632ac692a89e",
         "ffd21063f5cc81ac244e7df2"
       ],
-      "seen_count": 36
+      "seen_count": 51
     },
     {
       "name": "BY Recruiting",
@@ -4595,6 +4651,19 @@
         "d4b582fdb16197999d6c8325"
       ],
       "seen_count": 2
+    },
+    {
+      "name": "Capio Group",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "0bb34b44235abbbb91f85e44"
+      ],
+      "seen_count": 1
     },
     {
       "name": "Capital Blue Cross",
@@ -6109,9 +6178,10 @@
       "tags": [],
       "seen_job_keys": [
         "2e5b62e7c4537920dae74bce",
+        "9bf4dfa080980078576e72c6",
         "a75d1b59437e7b5be0ea8fc6"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "CommunityCare HMO Inc.",
@@ -6158,6 +6228,19 @@
       "tags": [],
       "seen_job_keys": [
         "813ccda09c646d17f1218d93"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Computer Services",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "1d6839c4a5bc0c5eb0e3acbb"
       ],
       "seen_count": 1
     },
@@ -7909,6 +7992,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "DMC Biotechnologies, Inc.",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "18719dcbb0d1177a6a95d600"
+      ],
       "seen_count": 1
     },
     {
@@ -10818,6 +10914,19 @@
       "seen_count": 1
     },
     {
+      "name": "FuntoRecruit",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "4ee81550cda28656ddaa9dda"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "FuriosaAI",
       "aliases": [],
       "size": "unknown",
@@ -11498,10 +11607,11 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "6a8de261edf61718ed01d8fd",
         "6f659f0cd7e4c1053e2797e4",
         "e7d231250f3a89281507f279"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Global Technical Talent",
@@ -15037,6 +15147,19 @@
       "seen_count": 1
     },
     {
+      "name": "JE Dunn Construction",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "c7d38670eefd79b9c768ef33"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Jefferson Capital Systems, LLC; a Jefferson Capital, Inc. Company",
       "aliases": [],
       "size": "unknown",
@@ -16084,6 +16207,19 @@
       "seen_count": 1
     },
     {
+      "name": "Laserfiche",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "681b1ee3671209331f02856e"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Lassen Associates, Inc.",
       "aliases": [],
       "size": "unknown",
@@ -17080,6 +17216,19 @@
       "seen_count": 1
     },
     {
+      "name": "Maayee INC",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "0190b462356d66bb86d05d7d"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "MAC FACE Marketplace Co.",
       "aliases": [],
       "size": "unknown",
@@ -17601,6 +17750,19 @@
       "tags": [],
       "seen_job_keys": [
         "80d559037eb7cd01d85ffbbd"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "MD Anderson Cancer Center",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "75fbb40dc2716a57020a8442"
       ],
       "seen_count": 1
     },
@@ -18552,7 +18714,9 @@
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "cfb2d805e1c2d5627d2051e4"
+      ],
       "seen_count": 1
     },
     {
@@ -18781,6 +18945,19 @@
       "tags": [],
       "seen_job_keys": [
         "b435edd686fc3f20615f1275"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "National Basketball Association",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "64182b3310fd3ec212a0591c"
       ],
       "seen_count": 1
     },
@@ -20977,6 +21154,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Pike Corporation",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "786e3bb5e69a6d2e2600b1da"
+      ],
       "seen_count": 1
     },
     {
@@ -23908,6 +24098,19 @@
       "seen_count": 1
     },
     {
+      "name": "Shield Analysis Technology, LLC",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "faab82cfe48b0012b5a3b13b"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Shields Group Search",
       "aliases": [],
       "size": "unknown",
@@ -26101,6 +26304,19 @@
       "seen_count": 1
     },
     {
+      "name": "TCI LLC",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "835e69d476f12983e1c59756"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "TDIndustries",
       "aliases": [],
       "size": "unknown",
@@ -28046,9 +28262,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "72ba7f2fc75dc423aea02b70",
         "7d841a964a33d9b6aef4991a"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "University of North Carolina at Chapel Hill",
@@ -28816,6 +29033,19 @@
       "seen_count": 1
     },
     {
+      "name": "Virginia Western Community College",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "d8ea6084d566f978c24c7d0c"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Viridien",
       "aliases": [],
       "size": "unknown",
@@ -29087,6 +29317,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "VSP Vision",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "beae3399a811fa866abf1cd6"
+      ],
       "seen_count": 1
     },
     {
