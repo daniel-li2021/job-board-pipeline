@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-26T14:47:03.665223+00:00",
-  "count": 2457,
+  "generated_at": "2026-09-26T14:54:56.024842+00:00",
+  "count": 2460,
   "companies": [
     {
       "name": "1199SEIU Benefit and Pension Funds",
@@ -1459,7 +1459,9 @@
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "388c9df907aa937c2d67770e"
+      ],
       "seen_count": 1
     },
     {
@@ -3801,6 +3803,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Boston Dynamics",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "3bb0bf7f4b36bbdc21acf453"
+      ],
       "seen_count": 1
     },
     {
@@ -8232,6 +8247,19 @@
       "seen_count": 1
     },
     {
+      "name": "EBSCO Industries",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "3c490564309184903cf490ca"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "eBusiness Solutions Inc.",
       "aliases": [],
       "size": "unknown",
@@ -10072,9 +10100,10 @@
         "3d17faba6ab043a4dd2f6a1e",
         "5a24cb9c952d4ea02d2941c0",
         "ace9deff7a238bf94d17870a",
+        "e224485747a27075dc245a89",
         "f8e30b1211b814e08b574506"
       ],
-      "seen_count": 4
+      "seen_count": 5
     },
     {
       "name": "First Community Credit Union - Houston, TX",
@@ -11038,7 +11067,9 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "342278f8b7fc6fd876c3c168",
         "555f771b0b31d55c5234b265",
+        "60900d3d622716271cd4b994",
         "8646d82ff3cd2c3efbd72730",
         "89b72926484df692e11d0854",
         "bb9852adabcae5515b80ec90",
@@ -11048,7 +11079,7 @@
         "e772b97c16877ecc4d87cb09",
         "f62286bd98e5a11a5fd6cf33"
       ],
-      "seen_count": 9
+      "seen_count": 11
     },
     {
       "name": "GEICO",
@@ -12995,12 +13026,16 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "0a61efe0e29ef62d738eb4cd",
+        "15f011b81c8d6cbc4a34dc94",
+        "213dd543e4941e92460ea7e0",
         "3d3babb5e0f38390e2817678",
         "4146bd92582723b3e0b99b38",
         "6b3a4e7775172ab77f3ca0b1",
-        "6d397f4aab19d6bc8693ffa3"
+        "6d397f4aab19d6bc8693ffa3",
+        "8e100bb7de825eb2bcfc8d16"
       ],
-      "seen_count": 4
+      "seen_count": 8
     },
     {
       "name": "Holistic Industries",
@@ -16557,16 +16592,19 @@
     },
     {
       "name": "Lincoln Financial",
-      "aliases": [],
+      "aliases": [
+        "Lincoln Financial Corporation"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "05599bb1746f3be6ee8464ef"
+        "05599bb1746f3be6ee8464ef",
+        "7825d31f800358b033aaa037"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Linstarsolution corporation",
@@ -22662,6 +22700,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Remitly",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "af5105dc5434daaf20b79f3a"
+      ],
       "seen_count": 1
     },
     {
