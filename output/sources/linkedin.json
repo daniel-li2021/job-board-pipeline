@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 1341,
+  "count": 1351,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-09-25T21:13:54.744102+00:00",
+    "scraped_at": "2026-09-26T00:21:43.068211+00:00",
     "collector": {
-      "commit": "537f41acc128f26cad2d5f1d7abe235767f2eec1",
+      "commit": "eb9cc022c6ec5ef8bbe004da4535802e03e26798",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 52.399,
+    "elapsed_seconds": 42.405,
     "query_stats": [
       {
         "query": "software engineer",
@@ -23,10 +23,10 @@
         "raw_jobs": 50,
         "unique_jobs": 50,
         "unique_contribution": 47,
-        "first_pass_survivors": 43,
+        "first_pass_survivors": 46,
         "original_postings_resolved": 0,
-        "jds_resolved": 15,
-        "elapsed_seconds": 9.893
+        "jds_resolved": 13,
+        "elapsed_seconds": 7.787
       },
       {
         "query": "ai engineer",
@@ -40,98 +40,56 @@
         "first_pass_survivors": 26,
         "original_postings_resolved": 0,
         "jds_resolved": 2,
-        "elapsed_seconds": 5.866
-      },
-      {
-        "query": "backend engineer",
-        "group": "primary",
-        "page_budget": 2,
-        "pages_fetched": 2,
-        "stop_reason": "page_budget",
-        "raw_jobs": 19,
-        "unique_jobs": 19,
-        "unique_contribution": 17,
-        "first_pass_survivors": 18,
-        "original_postings_resolved": 0,
-        "jds_resolved": 1,
-        "elapsed_seconds": 3.825
-      },
-      {
-        "query": "full-stack engineer",
-        "group": "primary",
-        "page_budget": 2,
-        "pages_fetched": 2,
-        "stop_reason": "page_budget",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 16,
-        "first_pass_survivors": 17,
-        "original_postings_resolved": 0,
-        "jds_resolved": 2,
-        "elapsed_seconds": 3.821
-      },
-      {
-        "query": "machine learning engineer",
-        "group": "primary",
-        "page_budget": 2,
-        "pages_fetched": 2,
-        "stop_reason": "page_budget",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 11,
-        "first_pass_survivors": 20,
-        "original_postings_resolved": 0,
-        "jds_resolved": 1,
-        "elapsed_seconds": 3.654
+        "elapsed_seconds": 4.569
       }
     ],
     "detail_enrichment": {
-      "eligible": 110,
-      "cache_reused": 6,
-      "requests": 8,
-      "responses": 8,
-      "request_limit": 8,
-      "budget_deferred": 89,
+      "eligible": 67,
+      "cache_reused": 8,
+      "requests": 1,
+      "responses": 1,
+      "request_limit": 1,
+      "budget_deferred": 49,
       "budget_exhausted": true,
       "retry_deferred": 0,
       "retry_attempts": 0,
-      "exact_official": 11,
-      "official_deferred": 7,
+      "exact_official": 10,
+      "official_deferred": 9,
       "rate_limited": false,
-      "jds_resolved": 14,
+      "jds_resolved": 9,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 8,
+      "detail_jds_fetched": 1,
       "intentional_skips": 0,
       "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 96,
+      "remaining_no_jd": 58,
       "failure_reasons": {
-        "no_description": 89,
-        "official_detail_deferred": 7
+        "no_description": 49,
+        "official_detail_deferred": 9
       },
       "cooldown_active": false,
-      "probe": false,
-      "status": "active"
+      "probe": true,
+      "status": "probe"
     },
     "official_enrichment": {
+      "dedicated_matches": 12,
       "cache": 2,
-      "exact_indeed_peer": 6,
-      "dedicated_matches": 11,
+      "exact_indeed_peer": 5,
       "search_provider_failures": 1,
       "no_match": 2,
-      "deferred": 106,
+      "deferred": 62,
       "search_requests": 12,
       "search_provider": "bing",
       "official_page_requests": 12,
-      "remaining_no_jd": 110
+      "remaining_no_jd": 67
     },
     "partial": true,
     "blocked_reason": "focused query coverage",
-    "collected_count": 118,
-    "carried_count": 1230
+    "collected_count": 74,
+    "carried_count": 1279
   },
   "jobs": [
     {
@@ -187,7 +145,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4341002791",
@@ -524,9 +482,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -695,9 +653,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -1685,13 +1643,12 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
-          "machine learning engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -1929,7 +1886,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468943230",
@@ -2007,7 +1964,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4467650300",
@@ -2084,6 +2041,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4471811526",
+      "source": "linkedin",
+      "company": "Amazon",
+      "title": "Software Dev Engineer II | Speed + AI , Speed + AI",
+      "location": "Bellevue, WA",
+      "posted_date": "2026-09-25",
+      "aggregator_posted_date": "2026-09-25",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-dev-engineer-ii-speed-%2B-ai-speed-%2B-ai-at-amazon-4471811526",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4470422349",
       "source": "linkedin",
       "company": "Amazon",
@@ -2156,11 +2141,11 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -2331,6 +2316,32 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-23T18:01:38.694486+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4471816403",
+      "source": "linkedin",
+      "company": "Amazon Web Services (AWS)",
+      "title": "Software Developer Engineer, Amazon WorkSpaces Core Managed Instances",
+      "location": "Seattle, WA",
+      "posted_date": "2026-09-25",
+      "aggregator_posted_date": "2026-09-25",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-developer-engineer-amazon-workspaces-core-managed-instances-at-amazon-web-services-aws-4471816403",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4461518267",
@@ -4002,7 +4013,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4451556708",
@@ -4496,7 +4507,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471634641",
@@ -4747,7 +4758,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4467697599",
@@ -4920,9 +4931,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -5048,9 +5059,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -5171,13 +5182,12 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
-          "machine learning engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -5198,13 +5208,12 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
-          "machine learning engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -5453,10 +5462,10 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T17:55:58.757959+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T17:55:58.757959+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4443444335",
@@ -5479,9 +5488,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -5856,7 +5865,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470222499",
@@ -7005,11 +7014,11 @@
           "ai engineer"
         ]
       },
-      "jd_recovery_at": "2026-09-25T21:13:54.744102+00:00",
+      "jd_recovery_at": "2026-09-26T00:21:43.068211+00:00",
       "enrichment_method": "exact_indeed_peer",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -7033,11 +7042,11 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -7423,7 +7432,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470942686",
@@ -7806,7 +7815,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4402753231",
@@ -7913,9 +7922,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -8041,7 +8050,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4344683557",
@@ -8088,14 +8097,14 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
       "linkedin_detail_fetched_at": "2026-09-25T17:56:40.935046+00:00",
       "linkedin_detail_resolved": true,
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -8119,9 +8128,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -8223,9 +8232,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -8741,7 +8750,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470948620",
@@ -8921,7 +8930,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4459251317",
@@ -11231,7 +11240,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4459982835",
@@ -11313,7 +11322,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468518267",
@@ -11463,7 +11472,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468585329",
@@ -11613,9 +11622,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -12344,13 +12353,12 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
-          "machine learning engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -12693,11 +12701,11 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -13236,7 +13244,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4451528889",
@@ -13304,13 +13312,12 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "full-stack engineer"
+          "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -13398,15 +13405,14 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "linkedin_detail_attempted_at": "2026-09-25T21:14:40.791955+00:00",
       "linkedin_detail_fetched_at": "2026-09-25T21:14:40.791955+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -13690,7 +13696,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-at-garmin-4471807924",
       "official_url": "",
-      "description": "Overview: We are seeking a full\\-time **Senior Software Engineer** at Garmin's U.S. headquarters in the Greater Kansas City area. In this role, you will be responsible for providing technical leadership and project planning for software development for products, applications, or systems new to Garmin as an individual contributor. Responsibilities: **Essential Functions*** Serves in a leadership capacity as an individual contributor for carrying out software development in C or C\\+\\+ * May serve as a Lead Software Engineer for complex software development project designs and/or reviews architected modules and software systems supporting new technology or improving capability/performance of existing functionality * Decomposes functional requirements into well\\-defined tasks * Researches fundamental problems and implements algorithm solutions that are appropriate * Offers peer technical assessments in areas of expertise, new technologies and software designs * Participates in project leadership and/or program planning including providing technical input to product development plans and concept documents * Makes substantial contributions toward determination of project goal/objective feasibility and applies good judgment in setting schedules/risk taking * Mentors and provides guidance to less experienced Software Engineers (1 \\& 2\\) * Offers process improvement suggestions and authors new procedures as appropriate * Provides reliable solutions to a wide range of difficult problems using sound problem solving techniques Qualifications: **Basic Qualifications*** Bachelor’s Degree in Computer Science, Computer Engineering, Software Engineering, Math, Physics or related field **AND** a minimum of 5 years relevant experience **OR** an equivalent combination of education and experience * Excellent academics (cumulative GPA greater than or equal to 3\\.0 as a general rule) * Demonstrated proficiency with designing well architectured software systems and modules that support new technology or improve capability/performance of existing functionality * Demonstrated competence with researching fundamental problems and implementing appropriate algorithmic solutions * Demonstrated ability to serve as a lead software engineer for a complex software project * Ability to decompose functional requirements into well\\-defined tasks while balancing quality, quantity, and complexity in work output * Demonstrated capability to offer peer technical assessments in areas of expertise, new technologies and software designs * Mastered proficiency in writing software in C or C\\+\\+ relevant experience and/or training in data structures or object\\-oriented design methodology * Demonstrated strong and effective verbal, written, and interpersonal communication skills * Must be positive, detail oriented, organized, team oriented and a driven problem solver, multi\\-tasker, and self\\-starter with the ability to prioritize and lead in a fast paced, deadline\\-driven environment **Desired Qualifications*** Outstanding academics (cumulative GPA greater than or equal to 3\\.5\\) *Garmin International is an equal opportunity employer. Qualified applicants will receive consideration for employment without regard to race, religion, color, national origin, citizenship, sex, sexual orientation, gender identity, veteran’s status, age or disability.* *This position is eligible for Garmin's benefit program. Details can be found here:* *Garmin Benefits*",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "",
@@ -13699,11 +13705,9 @@
           "software engineer"
         ]
       },
-      "jd_recovery_at": "2026-09-25T21:13:54.744102+00:00",
-      "enrichment_method": "exact_indeed_peer",
-      "enrichment_status": "resolved",
-      "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -14510,15 +14514,14 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "no_match",
-      "linkedin_detail_attempted_at": "2026-09-25T21:14:40.791955+00:00",
+      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "linkedin_detail_fetched_at": "2026-09-25T21:14:40.791955+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -14652,9 +14655,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
-      "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
+      "official_search_status": "no_match",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -14805,6 +14808,58 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4415704910",
+      "source": "linkedin",
+      "company": "GovWell",
+      "title": "Software Engineer",
+      "location": "New York, NY",
+      "posted_date": "2026-09-25",
+      "aggregator_posted_date": "2026-09-25",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-govwell-4415704910",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4472210395",
+      "source": "linkedin",
+      "company": "Grainger",
+      "title": "Senior Software Engineer, Backend",
+      "location": "Chicago, IL",
+      "posted_date": "2026-09-25",
+      "aggregator_posted_date": "2026-09-25",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-backend-at-grainger-4472210395",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4205335950",
@@ -15215,9 +15270,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -15618,14 +15673,14 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
       "linkedin_detail_fetched_at": "2026-09-25T07:49:35.464359+00:00",
       "linkedin_detail_resolved": true,
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -16112,7 +16167,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469487736",
@@ -16486,19 +16541,17 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "full-stack engineer"
+          "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
-      "official_search_status": "deferred",
-      "linkedin_detail_attempted_at": "2026-09-25T21:14:40.791955+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
+      "official_search_status": "no_match",
       "linkedin_detail_fetched_at": "2026-09-25T21:14:40.791955+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -16792,7 +16845,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4453093350",
@@ -16912,7 +16965,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -17118,9 +17171,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -17242,9 +17295,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -17945,7 +17998,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4443010619",
@@ -18126,7 +18179,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471617036",
@@ -18336,9 +18389,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -18564,10 +18617,10 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T17:55:58.757959+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T17:55:58.757959+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470171178",
@@ -18645,7 +18698,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4458899752",
@@ -19045,15 +19098,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "full-stack engineer"
+          "software engineer"
         ]
       },
-      "jd_recovery_at": "2026-09-25T21:13:54.744102+00:00",
+      "jd_recovery_at": "2026-09-26T00:21:43.068211+00:00",
       "enrichment_method": "exact_indeed_peer",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -19365,9 +19417,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -19613,7 +19665,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -19672,7 +19724,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -20256,11 +20308,11 @@
           "software engineer"
         ]
       },
-      "jd_recovery_at": "2026-09-25T21:13:54.744102+00:00",
+      "jd_recovery_at": "2026-09-26T00:21:43.068211+00:00",
       "enrichment_method": "exact_indeed_peer",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -20531,6 +20583,32 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4443534037",
+      "source": "linkedin",
+      "company": "NODA AI",
+      "title": "AI/ML Engineer",
+      "location": "Austin, TX",
+      "posted_date": "2026-09-25",
+      "aggregator_posted_date": "2026-09-25",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-ml-engineer-at-noda-ai-4443534037",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4422215905",
       "source": "linkedin",
       "company": "NRG Energy",
@@ -20783,11 +20861,11 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -21042,7 +21120,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468165385",
@@ -21147,9 +21225,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -21521,9 +21599,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -21547,9 +21625,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -21752,7 +21830,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469979843",
@@ -22071,7 +22149,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470100225",
@@ -22097,7 +22175,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4449841219",
@@ -22325,7 +22403,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4459227169",
@@ -22444,9 +22522,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -22522,6 +22600,32 @@
       },
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4470194092",
+      "source": "linkedin",
+      "company": "Oracle",
+      "title": "Senior Software Engineer, Platform",
+      "location": "Nashville, TN",
+      "posted_date": "2026-09-25",
+      "aggregator_posted_date": "2026-09-25",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-platform-at-oracle-4470194092",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4467625971",
@@ -22675,7 +22779,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4442679824",
@@ -23231,13 +23335,12 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
-          "machine learning engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -23264,7 +23367,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4463113390",
@@ -23287,9 +23390,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -23562,7 +23665,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469970529",
@@ -23717,7 +23820,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4452716569",
@@ -23740,9 +23843,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -24806,7 +24909,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469009469",
@@ -25631,15 +25734,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
-          "machine learning engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -26248,13 +26350,12 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "backend engineer"
+          "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -26433,7 +26534,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471443941",
@@ -26485,7 +26586,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469970518",
@@ -26604,15 +26705,14 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
-          "machine learning engineer"
+          "ai engineer"
         ]
       },
-      "jd_recovery_at": "2026-09-25T21:13:54.744102+00:00",
+      "jd_recovery_at": "2026-09-26T00:21:43.068211+00:00",
       "enrichment_method": "exact_indeed_peer",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -26670,6 +26770,34 @@
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-24T00:01:43.970475+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4470719853",
+      "source": "linkedin",
+      "company": "Roblox",
+      "title": "Software Engineer, GenAI Platform",
+      "location": "San Mateo, CA",
+      "posted_date": "2026-09-25",
+      "aggregator_posted_date": "2026-09-25",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-genai-platform-at-roblox-4470719853",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
+      "official_search_status": "deferred",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470465953",
@@ -27178,7 +27306,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469976298",
@@ -27572,9 +27700,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -27840,7 +27968,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468186210",
@@ -28301,7 +28429,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4462028962",
@@ -28433,7 +28561,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4423567242",
@@ -28684,7 +28812,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469954437",
@@ -28916,7 +29044,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4458280821",
@@ -28942,7 +29070,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470944939",
@@ -29165,13 +29293,12 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
-          "machine learning engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -29192,13 +29319,12 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
-          "machine learning engineer"
+          "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -29273,7 +29399,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470322564",
@@ -29682,7 +29808,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4422790195",
@@ -29708,7 +29834,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4459230646",
@@ -29930,9 +30056,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -30354,7 +30480,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468502888",
@@ -30455,7 +30581,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460613568",
@@ -30552,9 +30678,9 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -31651,7 +31777,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4451463158",
@@ -32241,7 +32367,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470314564",
@@ -32267,7 +32393,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469961670",
@@ -32607,6 +32733,32 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4470681167",
+      "source": "linkedin",
+      "company": "Vanguard",
+      "title": "AI/ML Engineer",
+      "location": "Malvern, PA",
+      "posted_date": "2026-09-25",
+      "aggregator_posted_date": "2026-09-25",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-ml-engineer-at-vanguard-4470681167",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4449819917",
       "source": "linkedin",
       "company": "Varsity Spirit",
@@ -32633,6 +32785,32 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4459085377",
+      "source": "linkedin",
+      "company": "Vast",
+      "title": "Senior Software Engineer, Mission Software",
+      "location": "Long Beach, CA",
+      "posted_date": "2026-09-25",
+      "aggregator_posted_date": "2026-09-25",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-mission-software-at-vast-4459085377",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4462097571",
       "source": "linkedin",
       "company": "Vast",
@@ -32653,9 +32831,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -32784,7 +32962,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4472062715",
@@ -32807,9 +32985,11 @@
           "ai engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -32836,6 +33016,34 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "verified_this_run": false
+    },
+    {
+      "job_id": "4470708559",
+      "source": "linkedin",
+      "company": "Vertafore",
+      "title": "Software Engineer II",
+      "location": "Denver, CO",
+      "posted_date": "2026-09-25",
+      "aggregator_posted_date": "2026-09-25",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-at-vertafore-4470708559",
+      "official_url": "",
+      "description": "$75,000 \\- $115,000 \\+ VIP Bonus Our fast\\-paced and collaborative environment inspires us to create, think, and challenge each other in ways that make our solutions and our teams better. Whether you’re interested in engineering or development, marketing or sales, or something else – if this sounds like you, then we’d love to hear from you! We are headquartered in Denver, Colorado, with offices in the US, Canada, and India. $75,000 \\- $115,000 / year The insurance industry runs on Vertafore. We equip agencies, MGAs, and carriers with the core digital systems, specialized AI, and data\\-driven foundation to eliminate distribution drag across the insurance lifecycle, spanning sales, servicing, and back\\-office operations. Underpinned by unmatched speed and performance power, we are the trusted backbone that’s taking the insurance industry from friction to flow with Distribution Velocity – speed, performance, and trust \\- to drive growth at scale. With over 95% of the top agencies and insurers and 50% of industry compliance transactions running through Vertafore, we lead at the intersection of innovation and trust, giving insurance professionals the confidence to transform and win in the AI era. Our reach is global, with headquarters in Denver, Colorado, and offices across the U.S., Canada, and India. As a Software Engineer II, you will be working within an energetic team implementing solutions that support a wide range of customers. You will develop high quality Windows based applications for new and existing features. You will also have opportunities to bring your creative ideas to the table to deliver better solutions to our users. If you love technology, have a passion for software, are hungry to learn, and are driven to contribute to a world\\-class team of engineers, you’re who we are looking for. **Core Requirements and Responsibilities:** Essential job functions included but are not limited to the following: * Contributes independently to multiple functional and technical areas within a product * Responsible for developing new features and supporting/bug fixing existing features * Unit and integration testing * Creates artifacts/documents that are valuable to the team * Create and maintain base platform features * Debugging issues across the whole stack \\- OS, DB, applications, and network * Continued ownership of technical growth including: * Product and business knowledge * Problem solving skills * Technical knowledge * Process knowledge * Share what they know by mentoring other team members * Closely follow industry trends and the open source community **Knowledge, Skills and Abilities:** * Ensures quality of code written or reviewed * Adheres to quality/technical team standards * Makes decisions in their area of responsibility that help maintainability, reuse, security, and performance * Able to diagnose issues and provide solutions for multiple functional and technical areas within a product * Can independently frame problems and perform relevant research * Communicate clearly to explain and defend design decisions * Self\\-motivated and excellent problem\\-solvers * Driven to improve, personally and professionally * Mentor and inspire others to raise the bar for everyone around them * Collaborate with their peers, designing pragmatic solutions * Operate best in a fast\\-paced, flexible work environment * Prepare technical training and information sessions for other staff **Why Vertafore is the place for you:** \\*Canada Only * The opportunity to work in a space where modern technology meets a stable and vital industry * Medical, vision \\& dental plans * Life, AD\\&D * Short Term and Long Term Disability * Pension Plan \\& Employer Match * Maternity, Paternity and Parental Leave * Employee and Family Assistance Program (EFAP) * Education Assistance * Additional programs \\- Employee Referral and Internal Recognition **Why Vertafore is the place for you:** \\*US Only * The opportunity to work in a space where modern technology meets a stable and vital industry * **We have a Flexible First work environment!** Our North America team members use our offices for collaboration, community and team\\-building, with members asked to sometimes come into an office and/or travel depending on job responsibilities. Other times, our teams work from home or a similar environment. * Medical, vision \\& dental plans + PPO \\& high\\-deductible options * Health Savings Account \\& Flexible Spending Accounts Options: + Health Care FSA + Dental \\& Vision FSA + Dependent Care FSA + Commuter FSA * Life, AD\\&D (Basic \\& Supplemental), and Disability * 401(k) Retirement Savings Plain \\& Employer Match * Supplemental Plans \\- Pet insurance, Hospital Indemnity, and Accident Insurance * Parental Leave \\& Adoption Assistance * Employee Assistance Program (EAP) * Education \\& Legal Assistance * Additional programs \\- Tuition Reimbursement, Employee Referral, Internal Recognition, and Wellness * Commuter Benefits (Denver) The selected candida ports equal employment opportunity for all applicants regardless of race, color, religion, sex, gender identity, pregnancy, national origin, ancestry, citizenship, age, marital status, physical disability, mental disability, medical condition, sexual orientation, genetic information, or any other characteristic protected by state or federal law. **The Professional Services (PS) and Customer Success (CX)** bonus plans are a quarterly monetary bonus plan based upon individual and practice performance against specific business metrics. Eligibility is determined by several factors including: start date, good standing in the company, and actives status at time of payout. **The Vertafore Incentive Plan (VIP)** is an annual monetary bonus for eligible employees based on both individual and company performance. Eligibility is determined by several factors including: start date, good standing in the company, and actives status at time of payout. **Commission plans** are tailored to each sales role but common components include quota, MBO's and ABPMs. Salespeople receive their formal compensation plan within 30 days of hire. ***Vertafore is a drug free workplace and conducts preemployment drug and background screenings.*** *We do not accept resumes from agencies, headhunters or other suppliers who have not signed a formal agreement with us.* *We want to make sure our recruiting process is accessible for everyone. if you would like to contact us regarding the accessibility of our website or need assistance completing the application process, please contact* *recruiting@vertafore.com* ***Just a note, this contact information is for accommodation requests only.*** **Qualifications:** * Bachelor’s degree in Computer Science (or related technical field) or equivalent practical experience * Design and architecture knowledge * Experience with Agile software development * Have an intense passion for innovating and crafting clean code * 2\\-3 years of professional experience with C\\# and common frameworks * Experience with User Interface Design * Understands the value of unit testing * Can work advanced database tuning with SQL databases * Are in\\-tune with high performance and high availability design/programming * Have experience in security best practices for software and data platforms * Enjoy solving problems through the entire application stack * Are interested and capable of learning other programming languages as needed. **Additional Requirements and Details:** * Travel required up to 10% of the time * Located and working from an office location * Occasional lifting and/or moving up to 10 pounds * Frequent repetitive hand and arm movements required to operate a computer * Specific vision abilities required by this job include close vision (working on a computer, etc.) * Frequent sitting and/or standing \\#LI\\-Hybrid Is this role not an exact fit for you? Keep an eye on our Careers Page for other positions! *Vertafore is a drug free workplace and conducts preemployment drug and background screenings**.* *The selected candidate must be legally authorized to work in the United States.* *The above statements are intended to describe the general nature and level of work being* *performed by people assigned to this job. They are not intended to be an exhaustive list of all the job responsibilities, duties, skill, or working conditions. In addition, this document does not create an employment contract, implied or otherwise, other than an \"at will\" relationship.* *Vertafore strongly supports equal employment opportunity for all applicants regardless of race, color, religion, sex, gender identity, pregnancy, national origin, ancestry, citizenship, age, marital status, physical disability, mental disability, medical condition, sexual orientation, genetic information, or any other characteristic protected by state or federal law.* *We do not accept resumes from agencies, headhunters, or other suppliers who have not signed a formal agreement with us.*",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "jd_recovery_at": "2026-09-26T00:21:43.068211+00:00",
+      "enrichment_method": "exact_indeed_peer",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -32914,7 +33122,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468905473",
@@ -32973,7 +33181,7 @@
       "title": "Full-Stack Engineer – React, Hasura, APIs, and Composable UI",
       "location": "Chicago, IL",
       "posted_date": "2026-09-21",
-      "aggregator_posted_date": "2026-09-21",
+      "aggregator_posted_date": "2026-09-25",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-%E2%80%93-react-hasura-apis-and-composable-ui-at-vizient-4468153635",
@@ -32987,8 +33195,10 @@
           "software engineer"
         ]
       },
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468163425",
@@ -32997,7 +33207,7 @@
       "title": "Full-Stack Engineer – React, Hasura, APIs, and Composable UI",
       "location": "Edina, MN",
       "posted_date": "2026-09-21",
-      "aggregator_posted_date": "2026-09-21",
+      "aggregator_posted_date": "2026-09-25",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-%E2%80%93-react-hasura-apis-and-composable-ui-at-vizient-4468163425",
@@ -33008,13 +33218,13 @@
       "first_seen": "",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "software engineer ii",
-          "full stack engineer"
+          "software engineer"
         ]
       },
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
+      "official_search_status": "deferred",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468171185",
@@ -33115,7 +33325,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470667482",
@@ -33164,9 +33374,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -33314,14 +33524,14 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "no_match",
+      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "linkedin_detail_fetched_at": "2026-09-25T17:56:40.935046+00:00",
       "linkedin_detail_resolved": true,
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -33501,9 +33711,9 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -33826,9 +34036,11 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -33852,14 +34064,14 @@
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
+      "official_search_attempted_at": "2026-09-26T00:21:43.068211+00:00",
       "official_search_status": "deferred",
       "linkedin_detail_fetched_at": "2026-09-25T11:28:48.944084+00:00",
       "linkedin_detail_resolved": true,
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
+      "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": true
     },
     {
@@ -34449,7 +34661,7 @@
       "official_search_attempted_at": "2026-09-25T21:13:54.744102+00:00",
       "official_search_status": "deferred",
       "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461261100",
