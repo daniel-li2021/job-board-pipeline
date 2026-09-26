@@ -337,7 +337,7 @@ class LocalSourceTests(unittest.TestCase):
     def test_codegraph_generated_data_is_ignored(self) -> None:
         self.assertIn(".codegraph/", (ROOT / ".gitignore").read_text(encoding="utf-8").splitlines())
 
-    def test_launchd_agent_runs_after_wake_and_uses_noninteractive_ssh_push(self) -> None:
+    def test_launchd_agent_checks_missed_slots_and_uses_noninteractive_ssh_push(self) -> None:
         with (ROOT / "scripts/macos/com.jobboard.local-sources.plist").open("rb") as handle:
             agent = plistlib.load(handle)
         self.assertEqual(600, agent["StartInterval"])
@@ -434,6 +434,24 @@ class LocalSourceTests(unittest.TestCase):
         ), patch.object(local_sources, "write_health"):
             with self.assertRaisesRegex(SystemExit, "No required local source succeeded"):
                 local_sources.main()
+
+    def test_mac_round_records_completion_even_with_usable_partial_source(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            health_path = root / "sources" / "health.json"
+            health_path.parent.mkdir(parents=True)
+            health_path.write_text(json.dumps({"sources": {"linkedin": {"status": "partial"}}}))
+            results = iter(({"source": "linkedin", "status": "partial"},
+                            {"source": "glassdoor", "status": "deferred"}))
+            with patch.object(sys, "argv", ["local_sources.py"]), patch.dict(os.environ, {"LOCAL_SOURCE_PROFILE": "mac"}), \
+                 patch.object(local_sources, "OUTPUT_DIR", root), patch.object(local_sources, "HEALTH_PATH", health_path), \
+                 patch.object(local_sources, "run_one", side_effect=lambda *_args, **_kwargs: next(results)), \
+                 patch.object(local_sources, "write_health"), patch.object(local_sources, "recover_jds"), \
+                 patch.object(local_sources, "collector_provenance", return_value={}):
+                local_sources.main()
+            health = json.loads(health_path.read_text(encoding="utf-8"))
+            self.assertIn("mac_last_completed_at", health)
+            self.assertEqual("partial", health["sources"]["linkedin"]["status"])
 
     def test_empty_attempt_updates_health_but_keeps_last_success(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir, patch.object(schema, "SOURCES_DIR", Path(tmpdir)), patch.object(

@@ -11,6 +11,7 @@ from pathlib import Path
 from statistics import median
 from typing import Any
 
+from scripts.macos.local_source_gate import decision as local_schedule_decision
 from state_io import decode_json_bytes
 
 PIPELINES = {
@@ -449,6 +450,18 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
 
     local_payload = _read(base / "output" / "sources" / "health.json", {})
     local = local_payload.get("sources", {})
+    mac_completed_at = str(local_payload.get("mac_last_completed_at") or "")
+    _, _, mac_schedule = local_schedule_decision(now, {"last_success_at": mac_completed_at})
+    local_scheduler = {
+        "last_successful_local_run_at": mac_completed_at,
+        "last_scheduled_slot_at": mac_schedule["last_scheduled_slot_at"],
+        "scheduled_slot_missed": mac_schedule["scheduled_slot_missed"] if mac_completed_at else None,
+        "catch_up_status": mac_schedule["catch_up_status"] if mac_completed_at else "unknown",
+        "catch_up_pending": mac_schedule["catch_up_pending"] if mac_completed_at else None,
+        "reason": mac_schedule["catch_up_reason"] if mac_completed_at else "No published Local round timestamp yet",
+        "next_scheduled_run_at": mac_schedule["next_scheduled_run_at"],
+        "basis": "last published Local round; Mac availability is not reported",
+    }
     for source in ("linkedin", "indeed", "glassdoor"):
         state = local.get(source, {})
         snapshot = _read(base / "output" / "sources" / f"{source}.json", {})
@@ -767,6 +780,7 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         "generated_at": now.isoformat(),
         "overall": overall,
         "components": components,
+        "local_scheduler": local_scheduler,
         "groups": groups,
         "problems": problems,
         "degradations": degradations,
@@ -809,5 +823,18 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
         f"<li>{html.escape(item['pipeline'])}: <a href=\"{html.escape(item['url'])}\">{html.escape(item['company'])} — {html.escape(item['title'])}</a> — {html.escape(item['reason'])}</li>"
         for item in report["unresolved_examples"]
     ) or "<li>None</li>"
-    page = f"""<!doctype html><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Pipeline health</title><style>body{{font:15px/1.45 system-ui;max-width:1250px;margin:40px auto;padding:0 20px;color:#172019}}table{{border-collapse:collapse;width:100%}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}}code{{background:#eee;padding:2px 4px}}li{{margin:5px 0}}</style><h1>Pipeline health: {report['overall']}</h1><p>Generated {html.escape(report['generated_at'])}. <a href=\"index.html\">Dashboard</a> · <a href=\"health.json\">current JSON</a> · <a href=\"health-history.json\">recent run and batch history</a></p><h2>Components</h2><table><tr><th>Source</th><th>Status</th><th>Jobs / JD / Pass</th><th>Updated</th><th>Issue</th><th>Consecutive failures</th></tr>{rows}</table><h2>Execution</h2><table><tr><th>Component</th><th>Status</th><th>Jobs processed</th><th>JDs recovered</th><th>Elapsed seconds</th></tr>{groups}</table><details><summary>Subcomponents and diagnostics</summary><pre>{html.escape(json.dumps(report.get('groups', {}), indent=2))}</pre><pre>{html.escape(json.dumps({key: item.get('detail') for key, item in report['components'].items()}, indent=2))}</pre></details><h2>Actionable problems</h2><ul>{issues}</ul><h2>Active warnings</h2><ul>{degradations}</ul><h2>Recovered behavior / known limitations</h2><ul>{limitations}</ul><h2>Enrichment funnel</h2><pre>{html.escape(json.dumps(report['enrichment'], indent=2))}</pre><h2>Unresolved JD examples</h2><ul>{examples}</ul>"""
+    scheduler = report["local_scheduler"]
+    scheduler_rows = "".join(
+        f"<tr><th>{html.escape(label)}</th><td>{html.escape(str(value))}</td></tr>"
+        for label, value in (
+            ("Last successful Local run", scheduler["last_successful_local_run_at"] or "unknown"),
+            ("Latest scheduled slot", scheduler["last_scheduled_slot_at"]),
+            ("Scheduled slot missed", scheduler["scheduled_slot_missed"]),
+            ("Catch-up status", scheduler["catch_up_status"]),
+            ("Catch-up pending", scheduler["catch_up_pending"]),
+            ("Reason", scheduler["reason"]),
+            ("Next scheduled run", scheduler["next_scheduled_run_at"]),
+        )
+    )
+    page = f"""<!doctype html><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Pipeline health</title><style>body{{font:15px/1.45 system-ui;max-width:1250px;margin:40px auto;padding:0 20px;color:#172019}}table{{border-collapse:collapse;width:100%}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}}code{{background:#eee;padding:2px 4px}}li{{margin:5px 0}}</style><h1>Pipeline health: {report['overall']}</h1><p>Generated {html.escape(report['generated_at'])}. <a href=\"index.html\">Dashboard</a> · <a href=\"health.json\">current JSON</a> · <a href=\"health-history.json\">recent run and batch history</a></p><h2>Local Mac schedule</h2><table>{scheduler_rows}</table><p>{html.escape(scheduler['basis'])}</p><h2>Components</h2><table><tr><th>Source</th><th>Status</th><th>Jobs / JD / Pass</th><th>Updated</th><th>Issue</th><th>Consecutive failures</th></tr>{rows}</table><h2>Execution</h2><table><tr><th>Component</th><th>Status</th><th>Jobs processed</th><th>JDs recovered</th><th>Elapsed seconds</th></tr>{groups}</table><details><summary>Subcomponents and diagnostics</summary><pre>{html.escape(json.dumps(report.get('groups', {}), indent=2))}</pre><pre>{html.escape(json.dumps({key: item.get('detail') for key, item in report['components'].items()}, indent=2))}</pre></details><h2>Actionable problems</h2><ul>{issues}</ul><h2>Active warnings</h2><ul>{degradations}</ul><h2>Recovered behavior / known limitations</h2><ul>{limitations}</ul><h2>Enrichment funnel</h2><pre>{html.escape(json.dumps(report['enrichment'], indent=2))}</pre><h2>Unresolved JD examples</h2><ul>{examples}</ul>"""
     (public / "health.html").write_text(page, encoding="utf-8")

@@ -9,7 +9,7 @@ with nothing). The other source and the downstream git sync proceed normally.
 LinkedIn search remains card-first. Glassdoor arrives through JobSpy. Indeed
 is collected on GitHub; its persisted snapshot is an exact JD peer here.
 
-This is invoked by launchd every 2-3 hours (see scripts/). It does NOT run the
+This is invoked by the Mac's fixed slots and missed-slot catch-up (see scripts/). It does NOT run the
 full board pipeline and does NOT touch jobs.json / latest.md — those are
 GitHub-Actions-owned to avoid local/CI git conflicts.
 
@@ -811,6 +811,12 @@ def main() -> None:
         r["status"] in ("ok", "partial") and r["source"] not in OPTIONAL_SOURCES for r in results
     ):
         raise SystemExit("No required local source succeeded; last-good snapshots were preserved.")
+    if not args.only and os.environ.get("LOCAL_SOURCE_PROFILE") == "mac":
+        # This travels with the source commit. A failed push cannot make a
+        # Local round appear successful in the published health report.
+        health = json.loads(HEALTH_PATH.read_text(encoding="utf-8"))
+        health["mac_last_completed_at"] = datetime.now(timezone.utc).isoformat()
+        atomic_write(HEALTH_PATH, (json.dumps(health, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
 
 
 if __name__ == "__main__":

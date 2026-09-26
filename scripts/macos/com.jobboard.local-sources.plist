@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  launchd agent: noon/3 PM/9 PM Pacific plus a ten-minute wake check.
+  launchd agent: noon/3 PM/9 PM Pacific plus a ten-minute missed-slot check.
 
   IMPORTANT: edit the absolute paths below to match your machine before
   installing. launchd requires absolute paths.
@@ -21,7 +21,7 @@
     launchctl kickstart gui/$(id -u)/com.jobboard.local-sources
 
   Notes:
-    - Calendar jobs missed during sleep are coalesced and run after wake.
+    - The gate checks missed calendar slots after sleep or agent load.
     - stdout/stderr go to output/logs/ (git-ignored).
     - If the repo lives under Desktop/Documents/Downloads, macOS TCC blocks
       launchd with "Operation not permitted". Fix: System Settings → Privacy &
@@ -62,7 +62,7 @@
         <string>0</string>
     </dict>
 
-    <!-- The heartbeat checks wake gaps; the gate coalesces overlapping starts. -->
+    <!-- The interval checks missed slots; the gate coalesces overlapping starts. -->
     <key>StartInterval</key>
     <integer>600</integer>
     <key>StartCalendarInterval</key>

@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Gate the Mac collector's calendar and post-wake launches.
-
-launchd supplies a ten-minute heartbeat and fixed calendar events. A gap in
-heartbeats identifies a wake/agent reload without depending on pmset log text.
-"""
+"""Gate fixed Mac collection slots and missed-slot catch-up checks."""
 
 from __future__ import annotations
 
@@ -12,7 +8,7 @@ import json
 import os
 import subprocess
 import sys
-from datetime import datetime, timedelta
+from datetime import datetime, time, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -20,7 +16,7 @@ PACIFIC = ZoneInfo("America/Los_Angeles")
 REPO = Path(__file__).resolve().parents[2]
 STATE = REPO / "output/logs/local_source_mac_gate.json"
 LOCK = REPO / "output/logs/local_source_mac_gate.lock"
-RESULT = REPO / "output/logs/local_sources_mac_latest.json"
+SCHEDULE_HOURS = (12, 15, 21)
 
 
 def _stamp(value: object) -> datetime | None:
@@ -31,31 +27,47 @@ def _stamp(value: object) -> datetime | None:
         return None
 
 
+def _slots(now: datetime) -> tuple[datetime, datetime]:
+    today = [datetime.combine(now.date(), time(hour), PACIFIC) for hour in SCHEDULE_HOURS]
+    previous = [slot for slot in today if slot <= now]
+    latest = previous[-1] if previous else datetime.combine(
+        now.date() - timedelta(days=1), time(SCHEDULE_HOURS[-1]), PACIFIC
+    )
+    upcoming = [slot for slot in today if slot > now]
+    following = upcoming[0] if upcoming else datetime.combine(
+        now.date() + timedelta(days=1), time(SCHEDULE_HOURS[0]), PACIFIC
+    )
+    return latest, following
+
+
 def decision(now: datetime, state: dict) -> tuple[bool, str, dict]:
-    """Pure scheduling decision; state updates on every heartbeat."""
+    """Run fixed slots; reconsider any missed slot on every ten-minute check."""
     now = now.astimezone(PACIFIC)
     result = dict(state)
-    last_check = _stamp(state.get("last_check_at"))
+    result.pop("deferred_evening", None)
+    result.pop("evening_success_date", None)
     last_success = _stamp(state.get("last_success_at"))
-    # An agent install/reload is not itself evidence that the Mac woke.
-    wake = last_check is not None and now - last_check > timedelta(minutes=17)
-    fixed = now.hour in {12, 15, 21} and now.minute < 10
+    latest, following = _slots(now)
+    missed = last_success is None or last_success.astimezone(timezone.utc) < latest.astimezone(timezone.utc)
+    fixed = now.hour in SCHEDULE_HOURS and now.minute < 10
     result["last_check_at"] = now.isoformat()
-    if now.hour == 17:
-        if wake:
-            result["deferred_evening"] = True
-        return False, "5-6 PM Mac quiet hour", result
-    if now.hour >= 18:
-        if state.get("evening_success_date") == now.date().isoformat():
-            return False, "evening LinkedIn already published", result
-        if fixed or wake or state.get("deferred_evening"):
-            return True, "evening fixed/wake catch-up", result
-        return False, "not due", result
-    if not (fixed or wake):
-        return False, "not due", result
-    if last_success and now - last_success < timedelta(hours=3):
-        return False, "three-hour minimum spacing", result
-    return True, "fixed/wake catch-up", result
+    result["last_scheduled_slot_at"] = latest.isoformat()
+    result["next_scheduled_run_at"] = following.isoformat()
+    result["scheduled_slot_missed"] = missed
+    if not missed:
+        status, reason, run = "not_needed", "latest slot completed", False
+    elif fixed:
+        status, reason, run = "scheduled", "fixed slot", True
+    elif now.hour == 17:
+        status, reason, run = "pending", "5-6 PM Pacific quiet hour", False
+    elif last_success and (now.astimezone(timezone.utc) - last_success.astimezone(timezone.utc)) < timedelta(hours=3):
+        status, reason, run = "skipped", "successful Local round within three hours", False
+    else:
+        status, reason, run = "due", "missed scheduled slot", True
+    result["catch_up_status"] = status
+    result["catch_up_pending"] = missed and not run
+    result["catch_up_reason"] = reason
+    return run, reason, result
 
 
 def _write(state: dict) -> None:
@@ -88,19 +100,14 @@ def main() -> int:
         completed = subprocess.run(["/bin/bash", str(REPO / "scripts/local_source_sync.sh")], cwd=REPO, env=env)
         if completed.returncode:
             state["last_failure_at"] = datetime.now(PACIFIC).isoformat()
+            state["last_run_status"] = "failed"
+            _, _, state = decision(datetime.now(PACIFIC), state)
             _write(state)
             return completed.returncode
         finished = datetime.now(PACIFIC)
         state["last_success_at"] = finished.isoformat()
-        state["deferred_evening"] = False
-        try:
-            receipt = json.loads(RESULT.read_text(encoding="utf-8"))
-            linkedin_usable = any(item.get("source") == "linkedin" and item.get("status") in {"ok", "partial"}
-                                  for item in receipt.get("sources", []))
-        except (OSError, ValueError):
-            linkedin_usable = False
-        if finished.hour >= 18 and linkedin_usable:
-            state["evening_success_date"] = finished.date().isoformat()
+        state["last_run_status"] = "success"
+        _, _, state = decision(finished, state)
         _write(state)
         return 0
 

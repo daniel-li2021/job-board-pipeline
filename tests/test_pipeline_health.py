@@ -31,6 +31,7 @@ class PipelineHealthTests(unittest.TestCase):
             sources = root / "output" / "sources"
             sources.mkdir(parents=True)
             sources.joinpath("health.json").write_text(json.dumps({
+                "mac_last_completed_at": now.isoformat(),
                 "sources": {name: {"healthy": True, "last_success_at": now.isoformat(),
                                    "last_attempt_elapsed_seconds": seconds}
                             for name, seconds in (("linkedin", 5), ("indeed", 10), ("glassdoor", 6))},
@@ -46,6 +47,12 @@ class PipelineHealthTests(unittest.TestCase):
             self.assertEqual(18, report["groups"]["Local Mac"]["elapsed_seconds"])
             self.assertEqual(9, report["groups"]["Local Mac"]["jds_recovered"])
             self.assertEqual(10, report["groups"]["Remote"]["subcomponents"]["Indeed"]["elapsed_seconds"])
+            scheduler = report["local_scheduler"]
+            self.assertEqual(now.isoformat(), scheduler["last_successful_local_run_at"])
+            self.assertFalse(scheduler["scheduled_slot_missed"])
+            self.assertEqual("not_needed", scheduler["catch_up_status"])
+            pipeline_health.write(root / "public", report, [])
+            self.assertIn("Next scheduled run", (root / "public" / "health.html").read_text())
 
     def test_official_cause_streak_and_last_good_updated_time(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
