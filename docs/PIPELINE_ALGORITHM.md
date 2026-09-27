@@ -47,8 +47,10 @@ All sources normalize into the schema in `sources/schema.py`. The important inva
 
 - Prefer a stable source job ID or canonical application URL for identity. Company + title + location is a conservative fallback, not a claim that similar-looking requisitions are identical.
 - `first_seen` records when this system first observed a job and survives rediscovery. `last_seen` records the latest successful observation.
+- Local source cards receive `first_seen` when first discovered, before Board consumes their snapshot. Board counts new jobs against the seen state from before the run. If a known source job later gains an official URL, its original discovery time survives the identity change and it is not counted as new again; legacy jobs with no trustworthy discovery time remain unknown.
 - A trusted source posting timestamp is used for posted-age ranking only when its confidence is high or medium. Low-confidence or missing posting dates fall back to discovery time and sort behind trusted first-three-day records.
 - Dashboard Fresh and Rolling windows use exact `first_seen` datetimes (`<=24h` and `<=72h`). They are discovery views and are intentionally separate from posted-age ranking.
+- In Board Online and Mac Local recovery, only Fresh jobs (`first_seen <=24h`) receive outbound JD requests. Rolling jobs remain visible until 72 hours, and missing a JD does not extend that window. Applied and In Progress history persists separately from discovery freshness.
 - Compact tracked stores retain display, match, provenance, coverage, and review fields. Full Indeed descriptions persist in its source snapshot; other full descriptions and raw source material remain in source snapshots, recovery handoffs, or local caches where available.
 - Every discovered canonical record receives an enrichment outcome and remains auditable even if it is later filtered or suppressed.
 
@@ -72,11 +74,13 @@ Each source has two distinct states:
 
 A failed or empty-unverified attempt does not overwrite a usable last-good snapshot. This distinction is fundamental: a current attempt can be degraded while the published data remains fresh and usable. An empty result replaces prior data only when the collector can verify that the empty result is authoritative.
 
-For LinkedIn, health keeps independent search and detail 429 streaks, cooldowns, and probes. A detail 429 stops all further LinkedIn detail requests; cache and official enrichment continue. The combined HTTP/Scrapling detail budget remains eight requests per normal run.
+For LinkedIn, health keeps independent search and detail 429 streaks, cooldowns, and probes. The first detail 429 starts a 12-hour detail cooldown and stops further LinkedIn detail requests. Search and non-LinkedIn recovery continue. After 12 hours, one successful detail probe clears the cooldown; another 429 restarts it. Cache and official-web enrichment continue while detail is paused. The combined HTTP/Scrapling detail budget remains eight requests per normal run.
 
 ### Publication
 
 The local sync script validates repository and push prerequisites, collects in an isolated checkout, stages only Mac-owned snapshots and health, and pushes the source commit. If `main` advances, it retries against the current remote state without mixing pipeline-owned output into the local commit. Board Actions sees Mac jobs only after this push succeeds. Its own workflow commits the GitHub-produced Indeed snapshot and full JDs.
+
+The Mac gate has fixed noon, 3 PM, and 9 PM Pacific slots. Every ten-minute check derives the latest missed slot from the schedule and last completed run; a missed slot can start a catch-up outside the 5:00–5:59 PM quiet hour, unless a successful Local run finished within the previous three hours. Health publishes the last and next slots plus pending or skipped catch-up state.
 
 ## Board pipeline
 
@@ -84,9 +88,9 @@ The local sync script validates repository and push prerequisites, collects in a
 
 1. Collect Indeed, collect public ATS jobs, and read committed LinkedIn and Glassdoor snapshots.
 2. Normalize, merge exact identities, verify exposed official URLs, and collapse cross-source duplicates again.
-3. Load the prior store, preserve `first_seen`, set `last_seen`, and compute recency before filtering.
+3. Load the prior store, preserve `first_seen` across source and official-URL identity changes, set `last_seen`, and compute recency before filtering. Keep a copy of the pre-run seen identities for new-job counts.
 4. Annotate cross-pipeline coverage.
-5. Enrich every discovered thin record from exact peers and direct/original URLs.
+5. Enrich thin records from exact peers. For Fresh, eligible records, apply deterministic filters and batched metadata triage before outbound direct-URL and web recovery; keep skipped or unresolved cards for later filtering and diagnostics.
 6. Apply company exclusions and flags. A company covered by Official Careers is not globally hidden; only an exact reconciled duplicate is suppressed.
 7. Apply hard eligibility filters such as non-US, explicit seniority, citizenship/clearance, and other material constraints.
 8. Apply the shared role/seniority prefilter to reduce obvious mismatches before an LLM call.
@@ -95,11 +99,15 @@ The local sync script validates repository and push prerequisites, collects in a
 
 `--no-digest` suppresses the user-facing digest only. It still persists stores, `first_seen`, scores, tiers, and `latest_stats.json`, which allows source-push runs to maintain state without generating duplicate notifications.
 
+The discovery count compares both source and final canonical identities with the pre-run seen state. A source job discovered by Indeed just before Board starts counts as new; a previously seen job that acquires an official URL does not. Reported new and added counts therefore refer to this run's discoveries rather than identity rekeys.
+
 ## Official Careers pipeline
 
 `official_careers.py` runs the company registry in `sources/careers/registry.py`. Adapters use public APIs, ATS endpoints, rendered listings, or company-specific parsers. Companies are isolated and collected with bounded concurrency, so one adapter failure does not discard successful companies.
 
 The raw cache records per-company completion and diagnostics. A successful full sweep may retire listings that disappeared; an incomplete or failed sweep carries prior records forward rather than treating missing data as verified removal. The normalized records then reuse Board's hard filters, role prefilter, matcher, tiering, ordering, stores, and alert logic. Exact Board and Syncareer peers may supply a missing description before scoring.
+
+Metadata-only Official listings pass location, title, seniority, and other safe metadata checks before detail retrieval. Clear survivors enter a recent-first queue rotated across companies; borderline titles can receive cached, batched GPT-6 Luna Medium `recover/skip` triage. A run makes at most 150 additional detail attempts. Targeted extractors handle Meta, Disney, Netflix, and Equinix, with a safe generic path for other eligible jobs. Detail identity is checked before adopting a JD. Equinix may use one bounded browser bootstrap when its HTTP response is a challenge; unresolved challenges retain last-good jobs or JDs. `output/official_careers/recovered_jds.json.gz` preserves selective JD and triage evidence for later runs. The scrape report gives eligible and usable JD counts, cache reuse, requests, elapsed time, deferrals, and failures. Unresolved jobs keep the thin-JD matching fallback.
 
 Official Careers is canonical for its covered requisitions, but its coverage list is not a company-wide exclusion rule. Reconciliation suppresses an external record only when exact identity evidence exists.
 
@@ -122,9 +130,9 @@ Enrichment is ordered to reuse reliable existing work before making network requ
 
 Requests retain bounded concurrency, per-domain pacing, timeouts, retry/backoff, and cache behavior already owned by each adapter. A 429 can disable the affected ordinary request path for the remainder of the run rather than amplifying the throttle.
 
-GitHub online JD recovery checks exact caches, Official/ATS, and the persisted Indeed snapshot before company/title web search. The normal web pass shares 100 search queries, 150 candidate-page fetches, and a 15-minute deadline. It saves full JDs and unresolved candidates in compressed recovery handoffs. Mac recovery reads those handoffs and the GitHub-produced Indeed snapshot as exact peers, then tries company/title web recovery without a global candidate, search, or page cap. For unresolved records it uses saved company, exact title, and location in targeted LinkedIn search; LinkedIn detail is the final fallback under separate LinkedIn request/cooldown controls. DuckDuckGo HTML search is preferred; transport failure switches to Bing HTML, and a second provider failure defers search rather than recording a confident no-match.
+GitHub online JD recovery checks exact caches, Official/ATS, and the persisted Indeed snapshot before company/title web search. The Mac reads the compressed Online handoff, including unresolved candidates, and the Indeed snapshot as exact peers. Both use `official_jd_recovery.Resolver` and `recover_pending`: each run stops after 100 distinct jobs with an outbound attempt or 20 elapsed minutes, with bounded search/page requests. Cheap cache and exact-peer checks do not spend the job quota. Fresh, thin-JD jobs pass safe filters and reusable batched GPT-6 Luna Medium metadata triage before costly requests; a triage `skip` defers recovery but does not remove the job. Jobs are prioritized by available evidence and discovery time. Per-method failed-attempt evidence avoids repeating unchanged work immediately. For Local LinkedIn, direct detail runs first when allowed; a 429 stops later LinkedIn detail requests but the shared official-web and title-search paths continue. DuckDuckGo HTML search is preferred; transport failure switches to Bing HTML, and a second provider failure defers search rather than recording a confident no-match.
 
-Failure to obtain a description does not delete a valid job card. The job keeps `enrichment_failure_reason`, uses title/metadata evidence conservatively, and remains visible for diagnostics. Explicit software/AI/data early-career titles remain useful review signals; generic `Engineer I` or `Entry Level` wording alone receives only a small title bonus. This is different from a hard eligibility failure.
+Failure to obtain a description does not delete a valid job card. The job keeps `enrichment_failure_reason`, uses title/metadata evidence conservatively, and remains visible for diagnostics. A cached metadata triage result can make only a small, bounded adjustment to the rule fallback; it is not a full-JD score and remains conservatively tiered. Explicit software/AI/data early-career titles remain useful review signals; generic `Engineer I` or `Entry Level` wording alone receives only a small title bonus. This is different from a hard eligibility failure.
 
 ## Filtering, scoring, and tiering
 
@@ -155,6 +163,8 @@ Tiering is an application decision layer; it does not rewrite the underlying fit
 
 `profile/company_profiles.json` is the canonical maintained source for company-ranking metadata. Each entry can supply canonical name/aliases, size, sponsor likelihood, company type, maturity, tags, priority, notes, and verification date. Matching reuses the same normalized alias logic as other company configuration.
 
+Unknown companies are accumulated before dashboard visibility filters in `profile/company_profiles_pending.json`. Each entry retains `seen_count` and compact distinct-job keys; repeat runs do not count the same job twice. For older entries without retained identity evidence, a count of one is a lower bound. `scripts/pending_company_subset.py` lists companies seen in at least a chosen number of distinct jobs. `scripts/enrich_company_profiles.py` imports curated batches and optional local USCIS/DOL/SEC evidence, keeps unknown values where evidence is absent, and sends conflicts to manual review. Explicit JD sponsorship evidence takes precedence over company metadata.
+
 Company metadata never changes `match_score`. Within the actionable tiers it helps application ordering:
 
 - generally prefer high-priority, sponsor-friendly larger employers, strong technology companies, and mature or growth-stage startups;
@@ -168,6 +178,8 @@ Recency is calibrated as an ordering constraint rather than a single mechanical 
 ## Coverage reconciliation
 
 `coverage_reconcile.py` reads all three canonical stores and assigns cross-pipeline coverage state. When both a local raw Official cache and the compact published Official store exist, it uses the candidate with the newest snapshot timestamp so a stale development cache cannot override fresh committed data. Identity uses, in order, exact canonical URL, stable job ID, and a conservative unique company/title/location match. Fuzzy similarity or mere company coverage is diagnostic only and never automatically suppresses a job.
+
+The published audit keeps the exact reconciliation rate and adds an exclusive loss funnel: external jobs in scope, supported company, comparable Official snapshot, Official candidate found, and exact identity matched. It separates unsupported companies, discovery misses, identity mismatches, newer source records, unverified or partial Official runs, and missing company names, with top contributing companies. Batched GPT-6 Luna Medium assessments of unresolved identity pairs are cached in `output/cross_pipeline/identity_ai_cache.json`. A `likely_same` answer is evidence only; the AI-assisted path promotes an exact match only after verifying a direct employer URL redirect. Ordinary exact matching still uses deterministic URL and stable-ID evidence.
 
 When an external record exactly matches Official Careers, the Official record remains canonical and the external copy is marked/suppressed. Multiple same-title/location Official candidates are recorded as `official_ambiguous` and remain visible rather than being attached arbitrarily. Unmatched LinkedIn, Indeed, Glassdoor, ATS, or Syncareer records remain eligible even at an officially covered company. Reconciliation retains all three snapshot timestamps, exact-match methods, pending refreshes, genuine gaps, expected unsupported sources, and review status. Every reconciliation/Pages build publishes the current Markdown audit as `coverage.md`, so it refreshes after any Board, Official, or Syncareer workflow rather than depending on a tracked report commit.
 
@@ -184,7 +196,7 @@ Each pipeline owns:
 - Board `matching_retry.json.gz`: only the JD context and retry state needed for failed LLM records; successful records leave the queue;
 - `runs/*_stats.json`: deeper local history when present; these files are intentionally gitignored.
 
-The dashboard build combines canonical jobs, coverage, alert history, company profiles, and browser review state into `public/dashboard.json` and `public/index.html`. It shows today's estimated LLM cost, bounded run history, batch/request/token/latency/JSON metrics, coverage and matching summaries, and per-job score reasons/gaps/provenance. Legacy run records without measured latency, JSON reliability, or batch outcomes display `Unknown`/`—`; new runs retain real measured zeroes through explicit telemetry flags. Health generation writes `public/health.json`, `public/health-history.json`, and `public/health.html`, and reconciliation also copies the current audit to `public/coverage.md`.
+The dashboard build combines canonical jobs, coverage, alert history, company profiles, and browser review state into `public/dashboard.json` and `public/index.html`. It shows today's estimated LLM cost, bounded run history, batch/request/token/latency/JSON metrics, coverage and matching summaries, and per-job score reasons/gaps/provenance. Review-dependent views and counts wait for the first Supabase review-state load. A successful load uses remote rows as the baseline and merges only pending local edits; a failed load explicitly labels the cached fallback. Source-expired Applied and In Progress history remains available. Legacy run records without measured latency, JSON reliability, or batch outcomes display `Unknown`/`—`; new runs retain real measured zeroes through explicit telemetry flags. Health generation writes `public/health.json`, `public/health-history.json`, and `public/health.html`, and reconciliation also copies the current audit to `public/coverage.md`.
 
 ## Automation and publication sequence
 
@@ -210,7 +222,9 @@ Overall health remains the worst component severity. Component details preserve 
 | Stale | A previously usable pipeline snapshot exists but is older than 36 hours, or has records without a usable update timestamp. |
 | Problem | No usable required snapshot exists, or a failed workflow leaves data unusable. |
 
-Mac sources use tighter collection expectations: up to six hours is healthy, six to twelve hours is warning, and more than twelve hours is stale. GitHub Indeed is warning after 18 hours and stale after 36 hours. A required source with no usable snapshot is a problem; optional Glassdoor is a warning. One isolated failed attempt with a fresh last-good snapshot, a LinkedIn detail 429 successfully recovered by Scrapling, or a very small unresolved-JD tail is reported as recovered behavior rather than an active Warning. The Health `Updated` column shows the last usable snapshot time; the latest attempt remains in diagnostics.
+Mac sources use tighter collection expectations: up to six hours is healthy, six to twelve hours is warning, and more than twelve hours is stale. GitHub Indeed is warning after 18 hours and stale after 36 hours. A required source with no usable snapshot is a problem; optional Glassdoor is a warning. One isolated failed attempt with a fresh last-good snapshot or a very small unresolved-JD tail can be reported as recovered behavior. An active LinkedIn detail 429 is a Warning while its saved jobs can remain usable; Scrapling recoveries are shown separately. The Health `Updated` column shows the last usable snapshot time; the latest attempt remains in diagnostics.
+
+The health page leads with the current LinkedIn warning and recovery counts, followed by components and a compact Local Mac schedule. Visible timestamps use Pacific time. LinkedIn detail requests, rate limits, recovered JDs before and after a rate limit, remaining missing JDs, and scheduled-slot status are separate diagnostics. The overall Board status can remain Healthy while Local LinkedIn detail is Warning.
 
 Health output separates:
 
@@ -228,6 +242,8 @@ Messages include source, impact, attempt age, last-good count/age, consecutive f
 | Local discovery fails or returns unverified empty | Last-good source snapshot remains published | Source status/reason, query stop reasons, last-success age |
 | LinkedIn search 429 | Existing snapshot remains usable; discovery coverage is degraded | Search/discovery status and retry/backoff evidence |
 | LinkedIn detail 429 | Discovered cards remain; cache/peer/Scrapling may fill descriptions | Detail request/429 counts, Scrapling resolutions, remaining no-JD |
+| Missed Mac Local slot | The ten-minute gate retries outside the quiet hour unless a recent successful run suppresses catch-up | Latest scheduled slot, last completed run, `scheduled_slot_missed`, `catch_up_status` |
+| Official detail or Equinix discovery challenge | Cached JD and last-good company records remain usable; unresolved work is deferred | Eligible/usable JD counts, detail attempts, browser requests, per-company failures |
 | One Official adapter fails | Other companies complete; prior data is carried when the sweep is not authoritative | Per-company errors and full-sweep status |
 | LLM call or response fails | Cached scores remain; affected records receive rule fallback | Failure details, score-source counts, model/prompt fingerprint |
 | LLM quota/balance is exhausted | First failed batch records the API code and available rate headers, later batches are skipped, and jobs remain retryable | `latest_stats.json`, `run_history.json`, then `board_pipeline.py --retry-llm-failures` after quota recovery |

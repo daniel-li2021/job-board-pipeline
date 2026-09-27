@@ -146,6 +146,9 @@ GitHub commits `output/sources/indeed.json` with full Indeed JDs and its health 
 the Mac reads that snapshot as an exact peer and never recollects Indeed.
 In-progress and applied jobs remain durable in the existing Supabase-backed review
 state, so pipelines do not contend on a shared `tracked_jobs.json` commit.
+The dashboard waits for that shared review state before showing review-dependent
+tabs and counts. A successful load uses Supabase as the baseline and merges only
+pending local edits; if it fails, the fallback is labeled `Cached review state`.
 
 User-facing digests are deduplicated so reruns, rescoring, and ordinary JD changes do not repeatedly alert the same job.
 
