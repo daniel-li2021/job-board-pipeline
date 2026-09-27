@@ -190,7 +190,8 @@ class LocalSourceTests(unittest.TestCase):
             source="linkedin", company="One", title="Software Engineer I",
             location="Austin, TX", job_id="one",
         )
-        added.update(first_seen=now, tier="A", discovered_via=["linkedin", "indeed"])
+        added.update(first_seen="2026-09-16T11:59:40+00:00", tier="A",
+                     discovered_via=["linkedin", "indeed"])
         filtered = schema.make_job(
             source="glassdoor", company="Two", title="Software Engineer Intern",
             location="Seattle, WA", job_id="two",
@@ -203,7 +204,9 @@ class LocalSourceTests(unittest.TestCase):
         known["first_seen"] = now
         seen = {schema.dedup_key(known): old}
 
-        new_jobs = board_pipeline.finalize_new_jobs([added, filtered, known], {}, seen, now)
+        new_jobs = board_pipeline.finalize_new_jobs(
+            [added, filtered, known], {}, seen, now, {schema.dedup_key(known)}
+        )
         telemetry = board_pipeline.new_job_telemetry(new_jobs, [added])
 
         self.assertEqual(2, telemetry["new_jobs"])
@@ -213,6 +216,35 @@ class LocalSourceTests(unittest.TestCase):
         self.assertEqual({"found": 1, "added": 0}, telemetry["new_jobs_by_source"]["glassdoor"])
         self.assertEqual({"found": 0, "added": 0}, telemetry["new_jobs_by_source"]["ats"])
         self.assertEqual(old, known["first_seen"])
+
+    def test_final_newness_uses_pre_run_seen_keys_and_keeps_legacy_unknown(self) -> None:
+        now = "2026-09-27T00:21:44+00:00"
+        source_time = "2026-09-27T00:21:23+00:00"
+        fresh = schema.make_job(source="indeed", company="NewCo", title="Software Engineer",
+                                location="Austin, TX", job_id="new")
+        fresh["first_seen"] = source_time
+        known = schema.make_job(source="indeed", company="KnownCo", title="Software Engineer",
+                                location="Austin, TX", job_id="known")
+        known["first_seen"] = now
+        legacy = schema.make_job(source="linkedin", company="LegacyCo", title="Software Engineer",
+                                 location="Austin, TX", job_id="legacy")
+        legacy["first_seen"] = source_time
+        ats_new = schema.make_job(source="greenhouse", company="ATSCo", title="Software Engineer",
+                                  location="Austin, TX", job_id="ats-new")
+        ats_new["first_seen"] = ""
+        seen_before = {schema.dedup_key(known), schema.dedup_key(legacy)}
+        seen = {key: "" for key in seen_before}
+
+        new = board_pipeline.finalize_new_jobs(
+            [fresh, known, legacy, ats_new], {}, seen, now, seen_before
+        )
+
+        self.assertEqual({schema.dedup_key(fresh), schema.dedup_key(ats_new)},
+                         {schema.dedup_key(job) for job in new})
+        self.assertEqual(source_time, fresh["first_seen"])
+        self.assertEqual("", known["first_seen"])
+        self.assertEqual("", legacy["first_seen"])
+        self.assertEqual(now, ats_new["first_seen"])
 
     def test_glassdoor_static_cards_preserve_partial_discovery(self) -> None:
         records = jobspy_local._parse_glassdoor_cards('''

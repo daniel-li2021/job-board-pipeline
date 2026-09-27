@@ -16,6 +16,7 @@ PACIFIC = ZoneInfo("America/Los_Angeles")
 REPO = Path(__file__).resolve().parents[2]
 STATE = REPO / "output/logs/local_source_mac_gate.json"
 LOCK = REPO / "output/logs/local_source_mac_gate.lock"
+RESULT = REPO / "output/logs/local_sources_mac_latest.json"
 SCHEDULE_HOURS = (12, 15, 21)
 
 

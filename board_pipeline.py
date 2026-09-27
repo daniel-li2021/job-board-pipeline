@@ -2935,18 +2935,24 @@ def finalize_new_jobs(
     store: Dict[str, Dict[str, Any]],
     seen_jobs: Dict[str, str],
     now_iso: str,
+    seen_before_run: set[str],
 ) -> List[Dict[str, Any]]:
-    """Resolve final canonical identities before deciding which jobs are new."""
+    """Count final canonical identities absent before this run."""
     new_jobs = []
     for job in jobs:
         key = dedup_key(job)
-        preserve_job_dates(job, store.get(key) or {}, first_seen=seen_jobs.get(key))
-        job["first_seen"] = str(job.get("first_seen") or (
-            now_iso if prev is None and str(job.get("source") or "").lower() not in LOCAL_SOURCES else ""
-        ))
-        if not seen_jobs.get(key):
+        prev = store.get(key)
+        preserve_job_dates(job, prev or {}, first_seen=seen_jobs.get(key))
+        if key in seen_before_run and not (seen_jobs.get(key) or (prev or {}).get("first_seen")):
+            job["first_seen"] = ""  # Legacy unknown stays unknown after rediscovery.
+        else:
+            job["first_seen"] = str(job.get("first_seen") or (
+                now_iso if prev is None and key not in seen_before_run
+                and str(job.get("source") or "").lower() not in LOCAL_SOURCES else ""
+            ))
+        if key not in seen_jobs:
             seen_jobs[key] = job["first_seen"]
-        if job.get("first_seen") == now_iso:
+        if key not in seen_before_run and job["first_seen"]:
             new_jobs.append(job)
     return new_jobs
 
@@ -3241,7 +3247,7 @@ def run() -> None:
             entry["first_seen"] = seen_jobs[key]
         elif entry.get("first_seen"):
             seen_jobs[key] = str(entry["first_seen"])
-    seen_before_run = set(seen_jobs)
+    seen_before_run = set(seen_jobs) | set(store)
     store = prune_store(store, now)
     for job in deduped:
         key = dedup_key(job)
@@ -3251,7 +3257,7 @@ def run() -> None:
             now_iso if prev is None and key not in seen_before_run
             and str(job.get("source") or "").lower() not in LOCAL_SOURCES else ""
         ))
-        if not seen_jobs.get(key):
+        if key not in seen_jobs:
             seen_jobs[key] = job["first_seen"]
         job["last_seen"] = resolve_last_seen(job, prev, now_iso)
         job["recency_bucket"] = recency_bucket(job, now=now)
@@ -3346,7 +3352,7 @@ def run() -> None:
         )
     deduped = collapse_cross_source(deduped)
     coverage_reconcile.annotate_jobs(deduped, "board")
-    new_jobs = finalize_new_jobs(deduped, store, seen_jobs, now_iso)
+    new_jobs = finalize_new_jobs(deduped, store, seen_jobs, now_iso, seen_before_run)
 
     # 5) Company filter. Only explicit exclusions are dropped here. Companies
     #    covered by a dedicated official adapter are reconciled exactly below;
@@ -3466,7 +3472,8 @@ def run() -> None:
     tier_b = [j for j in active_candidates if j["tier"] == "B"]
     ab_before_cap = len(tier_a) + len(tier_b)
     visible = tier_a + tier_b
-    added_jobs = [job for job in visible if job.get("first_seen") == now_iso]
+    new_keys = {dedup_key(job) for job in new_jobs}
+    added_jobs = [job for job in visible if dedup_key(job) in new_keys]
     staffing_capped_to_b = sum(
         1 for j in active_candidates
         if j.get("staffing_firm") and j["tier"] == "B"

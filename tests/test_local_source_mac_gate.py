@@ -2,6 +2,7 @@
 
 import unittest
 import fcntl
+import json
 import tempfile
 from datetime import datetime
 from pathlib import Path
@@ -70,6 +71,19 @@ class MacGateTests(unittest.TestCase):
                 with patch.object(gate.subprocess, "run") as runner:
                     self.assertEqual(0, gate.main())
                     runner.assert_not_called()
+
+    def test_due_slot_launches_sync_with_result_path(self):
+        with tempfile.TemporaryDirectory() as temp, patch.object(gate, "LOCK", Path(temp) / "lock"), \
+             patch.object(gate, "STATE", Path(temp) / "state.json"), \
+             patch.object(gate, "RESULT", Path(temp) / "result.json"), \
+             patch.object(gate, "decision", return_value=(True, "fixed slot", {})), \
+             patch.object(gate.subprocess, "run") as runner:
+            runner.return_value.returncode = 0
+            self.assertEqual(0, gate.main())
+            runner.assert_called_once()
+            self.assertEqual(str(Path(temp) / "result.json"),
+                             runner.call_args.kwargs["env"]["LOCAL_SOURCE_RESULT_PATH"])
+            self.assertEqual("success", json.loads(gate.STATE.read_text())["last_run_status"])
 
 
 if __name__ == "__main__":

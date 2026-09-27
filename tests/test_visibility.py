@@ -1723,7 +1723,7 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
         seen = {key: first_seen}
 
         self.assertEqual([], board_pipeline.finalize_new_jobs(
-            [current], {key: prior}, seen, "2026-09-03T12:00:00+00:00"
+            [current], {key: prior}, seen, "2026-09-03T12:00:00+00:00", {key}
         ))
         self.assertEqual(first_seen, current["first_seen"])
         self.assertEqual("2026-08-30", current["posted_date"])
@@ -1760,7 +1760,7 @@ class ComplementaryDiscoveryTests(unittest.TestCase):
             location="Austin, TX", job_id="job-1", posted_date="",
         )
         board_pipeline.finalize_new_jobs(
-            [missing_again], {key: stored}, seen, "2026-09-04T12:00:00+00:00"
+            [missing_again], {key: stored}, seen, "2026-09-04T12:00:00+00:00", {key}
         )
         self.assertEqual(first_seen, missing_again["first_seen"])
         self.assertEqual("2026-08-29", missing_again["posted_date"])
