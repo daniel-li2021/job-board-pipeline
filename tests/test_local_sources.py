@@ -871,7 +871,6 @@ class LocalSourceTests(unittest.TestCase):
         ), patch.object(local_sources, "HEALTH_PATH", Path(tmpdir) / "health.json"):
             collector = {"commit": "test", "dirty": False}
             first = "2026-09-18T00:00:00+00:00"
-            second = "2026-09-18T03:00:00+00:00"
             rate_limited = {"requests": 1, "responses": 1, "rate_limited": True}
             local_sources.write_health([{
                 "source": "linkedin", "status": "ok", "count": 1,
@@ -881,27 +880,25 @@ class LocalSourceTests(unittest.TestCase):
                 "source": "linkedin", "status": "partial", "count": 1,
                 "attempted_at": "2026-09-18T01:00:00+00:00", "detail_enrichment": {"requests": 0},
             }], collector)
-            local_sources.write_health([{
-                "source": "linkedin", "status": "ok", "count": 1,
-                "attempted_at": second, "detail_enrichment": rate_limited,
-            }], collector)
             before = local_sources._health_source("linkedin")
             local_sources.write_health([{
                 "source": "indeed", "status": "ok", "count": 1,
-                "attempted_at": second,
+                "attempted_at": "2026-09-18T03:00:00+00:00",
             }], collector)
             preserved = local_sources._health_source("linkedin")
-            active = local_sources._linkedin_detail_control(datetime(2026, 9, 18, 4, tzinfo=timezone.utc))
-            probe = local_sources._linkedin_detail_control(datetime(2026, 9, 19, 4, tzinfo=timezone.utc))
+            active = local_sources._linkedin_detail_control(datetime(2026, 9, 18, 11, 59, tzinfo=timezone.utc))
+            probe = local_sources._linkedin_detail_control(datetime(2026, 9, 18, 12, tzinfo=timezone.utc))
             local_sources.write_health([{
                 "source": "linkedin", "status": "ok", "count": 1,
-                "attempted_at": "2026-09-19T04:00:00+00:00",
-                "detail_enrichment": {"requests": 1, "responses": 1, "rate_limited": False,
+                "attempted_at": "2026-09-18T12:00:00+00:00",
+                "detail_enrichment": {"requests": 1, "responses": 1, "successful_responses": 1,
+                                      "rate_limited": False,
                                       "probe": True, "detail_jds_fetched": 1},
             }], collector)
             recovered = local_sources._health_source("linkedin")
 
-        self.assertEqual(2, before["detail_429_streak"])
+        self.assertEqual(1, before["detail_429_streak"])
+        self.assertEqual("2026-09-18T12:00:00+00:00", before["detail_cooldown_until"])
         self.assertEqual(before["detail_cooldown_until"], preserved["detail_cooldown_until"])
         self.assertEqual((0, True, False), active)
         self.assertEqual((1, False, True), probe)
@@ -986,7 +983,7 @@ class LocalSourceTests(unittest.TestCase):
         scrapling.assert_not_called()
         self.assertEqual(1, detail["requests"])
         self.assertEqual("cooldown", state["detail_status"])
-        self.assertGreater(datetime.fromisoformat(state["detail_cooldown_until"]), now)
+        self.assertEqual(now + timedelta(hours=12), datetime.fromisoformat(state["detail_cooldown_until"]))
         self.assertEqual(1, state["detail_429_streak"])
 
     def test_successful_detail_probe_restores_normal_budget(self) -> None:
@@ -1006,6 +1003,37 @@ class LocalSourceTests(unittest.TestCase):
         self.assertEqual("active", state["detail_status"])
         self.assertEqual("", state["detail_cooldown_until"])
         self.assertEqual(0, state["detail_429_streak"])
+
+    def test_successful_probe_without_usable_jd_also_clears_429_cooldown(self) -> None:
+        now = datetime.now(timezone.utc)
+        state = {"detail_cooldown_until": now.isoformat(), "detail_429_streak": 1}
+        local_sources._update_linkedin_detail_health(state, {
+            "requests": 1, "responses": 1, "successful_responses": 1,
+            "detail_jds_fetched": 0, "probe": True,
+        }, now)
+        self.assertEqual("", state["detail_cooldown_until"])
+        self.assertEqual(0, state["detail_429_streak"])
+
+    def test_legacy_mac_detail_state_uses_newer_recovery_429_and_twelve_hour_limit(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            local_sources, "HEALTH_PATH", Path(tmpdir) / "health.json",
+        ), patch.dict(os.environ, {"LOCAL_SOURCE_PROFILE": "mac"}):
+            attempted = datetime(2026, 9, 27, 4, tzinfo=timezone.utc)
+            local_sources.HEALTH_PATH.write_text(json.dumps({"sources": {"linkedin": {
+                "detail_last_attempt_at": attempted.isoformat(),
+                "detail_cooldown_until": (attempted + timedelta(hours=24)).isoformat(),
+                "detail_429_streak": 2,
+                "runner_states": {"mac": {
+                    "detail_last_attempt_at": (attempted - timedelta(minutes=1)).isoformat(),
+                    "detail_cooldown_until": "", "detail_429_streak": 0,
+                }},
+            }}}))
+            self.assertEqual((0, True, False), local_sources._linkedin_detail_control(
+                attempted + timedelta(hours=11)))
+            self.assertEqual(14, local_sources._linkedin_search_control(
+                attempted + timedelta(hours=11))[0])
+            self.assertEqual((1, False, True), local_sources._linkedin_detail_control(
+                attempted + timedelta(hours=12)))
 
     def test_runner_executes_collector_from_fetched_origin_main(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

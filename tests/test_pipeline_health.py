@@ -66,6 +66,10 @@ class PipelineHealthTests(unittest.TestCase):
             self.assertIn("4 title cards found", page)
             self.assertIn("1 JD on kept cards", page)
             self.assertIn("1 JD via LinkedIn before the 429; 0 JDs via other methods", page)
+            self.assertLess(page.index('class="linkedin-run"'), page.index("<h2>Components</h2>"))
+            self.assertLess(page.index("<h2>Components</h2>"), page.index("Local Mac schedule"))
+            self.assertIn("9:00 PM PT, 26 September", page)
+            self.assertNotIn("2026-09-27T04:00:00+00:00", page)
 
     def test_execution_elapsed_and_local_recovery_counts_do_not_overlap(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -150,7 +154,7 @@ class PipelineHealthTests(unittest.TestCase):
             public = root / "public"
             pipeline_health.write(public, report, history)
             page = (public / "health.html").read_text()
-            self.assertIn(good_at, page)
+            self.assertIn("9:00 AM PT, 25 September", page)
             self.assertNotIn(f"<td>{now.isoformat()}</td>", page)
 
     def test_llm_impact_keeps_specific_timeout_reason(self) -> None:

@@ -7,6 +7,8 @@ import json
 import time
 from datetime import datetime, timedelta, timezone
 
+LINKEDIN_DETAIL_COOLDOWN_HOURS = 12
+
 
 def stamp(value: object) -> datetime | None:
     try:

@@ -421,6 +421,50 @@ class OfficialRecoveryTests(unittest.TestCase):
         self.assertEqual(snapshot["meta"]["scraped_at"], saved["meta"]["scraped_at"])
         self.assertEqual(["schema_version", "source", "count", "meta", "jobs"], list(saved))
 
+    def test_local_429_still_runs_shared_official_recovery(self):
+        candidate = row()
+        candidate["first_seen"] = datetime.now(timezone.utc).isoformat()
+
+        class FakeResolver:
+            def __init__(self, **_kwargs):
+                self.stats = Counter()
+                self.pattern_cache = {}
+                self.search_requests = self.page_requests = 0
+                self.search_provider = "test"
+
+            def recover(self, _job, **_kwargs):
+                return "pending"
+
+        def shared_recovery(_resolver, pending, **_kwargs):
+            pending[0][0]["description"] = "Recovered from official careers. " * 12
+            return ["generic_1"]
+
+        with tempfile.TemporaryDirectory() as temp, patch.object(local_sources, "OUTPUT_DIR", Path(temp)), patch.object(
+            local_sources, "HEALTH_PATH", Path(temp) / "sources" / "health.json"
+        ), patch.object(local_sources, "read_source_snapshot_payload", side_effect=lambda name: {
+            "jobs": [dict(candidate)] if name == "linkedin" else [], "meta": {},
+        }), patch.object(local_sources.coverage_reconcile, "load_official_context", return_value={}), patch.object(
+            local_sources.board, "load_store", return_value={}
+        ), patch.object(local_sources.board, "load_profiles", return_value={}), patch.object(
+            local_sources.board, "hard_filter", return_value=(True, "")
+        ), patch.object(local_sources.board, "role_seniority_prefilter", return_value=(True, "")), patch.object(
+            local_sources.recovery_ai, "triage", return_value={}
+        ), patch.object(local_sources.official_jd_recovery, "Resolver", FakeResolver), patch.object(
+            local_sources.official_jd_recovery, "recover_pending", side_effect=shared_recovery
+        ) as recover_pending, patch.object(local_sources.linkedin_local, "enrich_details", return_value={
+            "requests": 1, "responses": 1, "rate_limited": True, "blocked": "HTTP 429",
+            "jds_resolved": 0,
+        }) as detail, patch.dict("os.environ", {"LOCAL_SOURCE_PROFILE": "mac"}):
+            report = local_sources.recover_jds()
+            state = json.loads(local_sources.HEALTH_PATH.read_text())["sources"]["linkedin"]
+
+        detail.assert_called_once()
+        recover_pending.assert_called_once()
+        self.assertEqual(1, report["official_jds_recovered"])
+        self.assertEqual(1, report["post_429_jds_recovered"])
+        self.assertTrue(report["linkedin_rate_limited"])
+        self.assertEqual("cooldown", state["runner_states"]["mac"]["detail_status"])
+
     def test_focused_search_order_adaptive_pages_429_and_cooldown_state(self):
         def cards(index, count=2):
             return "".join(

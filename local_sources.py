@@ -58,7 +58,7 @@ HEALTH_PATH = OUTPUT_DIR / "sources" / "health.json"
 HEALTH_SCHEMA_VERSION = 1
 LINKEDIN_DETAIL_LIMIT = 8
 MAC_SEARCH_PAGE_LIMIT = 14
-LINKEDIN_DETAIL_COOLDOWN_HOURS = 24
+LINKEDIN_DETAIL_COOLDOWN_HOURS = recovery_policy.LINKEDIN_DETAIL_COOLDOWN_HOURS
 GLASSDOOR_RECOVERY_HOURS = 24
 LINKEDIN_SEARCH_COOLDOWN_HOURS = 24
 RECOVERY_SEARCH_LIMIT = 100
@@ -80,7 +80,22 @@ def _linkedin_runner_state() -> Dict[str, object]:
         return state
     runners = state.get("runner_states", {})
     runner = runners.get("mac", {}) if isinstance(runners, dict) else {}
-    return dict(runner) if isinstance(runner, dict) else {}
+    runner = dict(runner) if isinstance(runner, dict) else {}
+    # Older follow-up recovery runs wrote detail state only at the top level.
+    # Prefer the newer attempt so a Mac run cannot bypass that cooldown.
+    detail_keys = ("detail_last_attempt_at", "detail_429_streak", "detail_cooldown_until",
+                   "detail_cooldown_reason", "detail_status")
+    top_attempt = recovery_policy.stamp(state.get("detail_last_attempt_at"))
+    mac_attempt = recovery_policy.stamp(runner.get("detail_last_attempt_at"))
+    if top_attempt and (not mac_attempt or top_attempt > mac_attempt):
+        runner.update({key: state[key] for key in detail_keys if key in state})
+    attempt = recovery_policy.stamp(runner.get("detail_last_attempt_at"))
+    until = recovery_policy.stamp(runner.get("detail_cooldown_until"))
+    if attempt and until:
+        runner["detail_cooldown_until"] = min(
+            until, attempt + timedelta(hours=LINKEDIN_DETAIL_COOLDOWN_HOURS)
+        ).isoformat()
+    return runner
 
 
 def _linkedin_detail_control(now: datetime) -> tuple[int, bool, bool]:
@@ -106,29 +121,16 @@ def _update_linkedin_detail_health(state: Dict[str, object], detail: Dict[str, o
     if not requests_made:
         return
     state["detail_last_attempt_at"] = attempted_at.isoformat()
-    if detail.get("probe"):
-        if int(detail.get("detail_jds_fetched", 0) or 0):
-            state["detail_429_streak"] = 0
-            state["detail_cooldown_until"] = ""
-            state["detail_cooldown_reason"] = ""
-            state["detail_status"] = "active"
-        else:
-            state["detail_cooldown_until"] = (attempted_at + timedelta(hours=LINKEDIN_DETAIL_COOLDOWN_HOURS)).isoformat()
-            state["detail_cooldown_reason"] = str(detail.get("blocked") or "detail probe returned no JD")
-            state["detail_status"] = "cooldown"
-            if detail.get("rate_limited"):
-                state["detail_429_streak"] = int(state.get("detail_429_streak", 0) or 0) + 1
-    elif detail.get("rate_limited"):
-        streak = int(state.get("detail_429_streak", 0) or 0) + 1
-        state["detail_429_streak"] = streak
-        if streak >= 2:
-            state["detail_cooldown_until"] = (attempted_at + timedelta(hours=LINKEDIN_DETAIL_COOLDOWN_HOURS)).isoformat()
-            state["detail_cooldown_reason"] = "repeated HTTP 429"
-            state["detail_status"] = "cooldown"
-    elif int(detail.get("responses", 0) or 0):
+    if detail.get("rate_limited"):
+        state["detail_429_streak"] = int(state.get("detail_429_streak", 0) or 0) + 1
+        state["detail_cooldown_until"] = (attempted_at + timedelta(hours=LINKEDIN_DETAIL_COOLDOWN_HOURS)).isoformat()
+        state["detail_cooldown_reason"] = "HTTP 429"
+        state["detail_status"] = "cooldown"
+    elif int(detail.get("successful_responses", 0) or 0):
         state["detail_429_streak"] = 0
         state["detail_cooldown_until"] = ""
         state["detail_cooldown_reason"] = ""
+        state["detail_status"] = "active"
 
 
 def _linkedin_search_control(now: datetime) -> tuple[int, bool, bool]:
@@ -366,7 +368,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
         )
         detail_enrichment["cooldown_active"] = cooldown_active
         detail_enrichment["probe"] = probe
-        detail_enrichment["status"] = "cooldown" if cooldown_active else "probe" if probe else "active"
+        detail_enrichment["status"] = "cooldown" if cooldown_active or detail_enrichment.get("rate_limited") else "probe" if probe else "active"
         if cooldown_active:
             detail_enrichment["cooldown_until"] = str(_linkedin_runner_state().get("detail_cooldown_until") or "")
 
@@ -548,7 +550,7 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
         })
         if name == "linkedin":
             mac = os.environ.get("LOCAL_SOURCE_PROFILE") == "mac"
-            prior_runtime = (prior.get("runner_states", {}).get("mac", {}) if mac else prior)
+            prior_runtime = _linkedin_runner_state() if mac else prior
             if not isinstance(prior_runtime, dict):
                 prior_runtime = {}
             runtime = dict(prior_runtime) if mac else state
@@ -577,6 +579,10 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
                 runners = dict(state.get("runner_states") or {})
                 runners["mac"] = runtime
                 state["runner_states"] = runners
+                for key in ("detail_last_attempt_at", "detail_429_streak", "detail_cooldown_until",
+                            "detail_cooldown_reason", "detail_status"):
+                    if key in runtime:
+                        state[key] = runtime[key]
         sources[name] = state
     HEALTH_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = {
@@ -669,7 +675,7 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
     after_detail_no_jd = sum(len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS
                              for name in names for row in snapshots[name]["jobs"])
     detail.update(cooldown_active=cooldown, probe=probe,
-                  status="cooldown" if cooldown else "probe" if probe else "active")
+                  status="cooldown" if cooldown or detail.get("rate_limited") else "probe" if probe else "active")
 
     pending: list[tuple[dict, dict]] = []
     for name in names:
@@ -757,7 +763,14 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
             health = {"schema_version": HEALTH_SCHEMA_VERSION, "sources": {}}
         state = health.setdefault("sources", {}).setdefault("linkedin", {})
         state["detail_enrichment"] = detail
-        _update_linkedin_detail_health(state, detail, now)
+        runtime = _linkedin_runner_state() if os.environ.get("LOCAL_SOURCE_PROFILE") == "mac" else state
+        _update_linkedin_detail_health(runtime, detail, now)
+        if runtime is not state:
+            state.setdefault("runner_states", {})["mac"] = runtime
+            for key in ("detail_last_attempt_at", "detail_429_streak", "detail_cooldown_until",
+                        "detail_cooldown_reason", "detail_status"):
+                if key in runtime:
+                    state[key] = runtime[key]
         atomic_write(HEALTH_PATH, (json.dumps(health, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
     after = {name: sum(len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS
                        for row in snapshots[name]["jobs"]) for name in names}

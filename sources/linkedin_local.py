@@ -259,6 +259,7 @@ def enrich_details(
         "cache_reused": 0,
         "requests": 0,
         "responses": 0,
+        "successful_responses": 0,
         "request_limit": request_limit,
         "budget_deferred": 0,
         "budget_exhausted": False,
@@ -387,6 +388,7 @@ def enrich_details(
                 row["enrichment_failure_reason"] = error or "scrapling_fetch_failed"
                 time.sleep(DETAIL_SLEEP_SECONDS)
                 continue
+            stats["successful_responses"] += 1
             detail = _parse_detail(html)
             method = "scrapling_fetcher"
         else:
@@ -414,6 +416,7 @@ def enrich_details(
                 stats["failed"] += 1
                 time.sleep(DETAIL_SLEEP_SECONDS)
                 continue
+            stats["successful_responses"] += 1
             detail = _parse_detail(response.text)
             method = "linkedin_http"
 
