@@ -11,14 +11,19 @@ from __future__ import annotations
 
 import argparse
 import gzip
+import hashlib
 import json
+import os
 import re
+import requests
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 from urllib.parse import urlsplit
+
+import compact_ai
 
 from sources.company_aliases import load_alias_file, match_company_alias, prepare_alias_entries
 from state_io import decode_json_bytes
@@ -48,6 +53,7 @@ REVIEW_STATE_PATH = BASE_DIR / "profile" / "review_state.json"
 OUTPUT_DIR = BASE_DIR / "output" / "cross_pipeline"
 COVERAGE_JSON_PATH = OUTPUT_DIR / "coverage.json"
 COVERAGE_MD_PATH = OUTPUT_DIR / "coverage.md"
+IDENTITY_AI_CACHE_PATH = OUTPUT_DIR / "identity_ai_cache.json"
 
 def snapshot_timestamp(payload: Dict[str, Any]) -> Optional[datetime]:
     for field in ("scraped_at", "updated_at", "generated_at"):
@@ -183,6 +189,7 @@ def load_official_context() -> Dict[str, Any]:
         "by_company": by_company,
         "scraped_company_ids": scraped_company_ids,
         "config": load_coverage_config(),
+        "company_runs": payload.get("coverage_company_runs") or {},
     }
 
 
@@ -481,12 +488,162 @@ def load_review_state() -> Dict[str, Any]:
     return payload.get("jobs", {}) if isinstance(payload, dict) else {}
 
 
-def build_coverage_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
+def _loss_reason(record: Dict[str, Any], context: Dict[str, Any], now: datetime) -> str:
+    status = str(record.get("coverage_status") or "")
+    if not str(record.get("company") or "").strip():
+        return "unclassifiable"
+    if status in {"not_dedicated", "official_unsupported"}:
+        return "unsupported_company"
+    if status == "official_duplicate":
+        return "exact_match"
+    cid = str(record.get("official_company_id") or "")
+    run = context.get("company_runs", {}).get(cid, {})
+    last_success = parse_datetime(run.get("last_success_at"))
+    last_comparable = parse_datetime(run.get("last_comparable_at"))
+    source_first = parse_datetime(record.get("first_seen") or record.get("fetched_at"))
+    if source_first and last_success and source_first > last_success:
+        return "source_timing"
+    if status == "pending_official_refresh" and source_first and context.get("snapshot_at") and source_first > context["snapshot_at"]:
+        return "source_timing"
+    if status in {"official_ambiguous", "official_identity_unmatched"} and record.get("coverage_candidate_count", 0):
+        return "identity_mismatch"
+    if not last_comparable or now - last_comparable > timedelta(days=3):
+        return "unverified_snapshot"
+    return "discovery_miss"
+
+
+def _identity_cases(record: Dict[str, Any], context: Dict[str, Any]) -> List[Tuple[Dict[str, Any], Dict[str, Any]]]:
+    cid = str(record.get("official_company_id") or "")
+    candidates = title_location_matches(record, context.get("by_company", {}).get(cid, []))
+    suggestion = record.get("coverage_suggestion") or {}
+    if not candidates and suggestion:
+        candidates = [job for job in context.get("by_company", {}).get(cid, [])
+                      if canonical_job_key(job) == suggestion.get("official_key")][:1]
+    if not candidates:
+        return []
+    def compact(job: Dict[str, Any]) -> Dict[str, Any]:
+        return {
+            "company": str(job.get("company") or "")[:80],
+            "title": str(job.get("title") or "")[:120],
+            "location": str(job.get("location") or "")[:100],
+            "date": str(job.get("posted_date") or job.get("first_seen") or "")[:30],
+            "ids": sorted(job_ids(job))[:3],
+            "url": str(job.get("official_url") or job.get("application_url") or job.get("source_url") or "")[:250],
+        }
+    cases = []
+    for candidate in candidates[:5]:
+        evidence = {"external": compact(record), "candidate": compact(candidate)}
+        digest = hashlib.sha256(json.dumps(evidence, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+        cases.append(({"case_id": digest, **evidence}, candidate))
+    return cases
+
+
+def _verify_employer_redirect(record: Dict[str, Any], candidate: Dict[str, Any]) -> Tuple[bool, bool]:
+    """Resolve one direct employer link; never contact aggregators from GitHub."""
+    target = normalize_url(str(candidate.get("official_url") or ""))
+    if not target:
+        return False, False
+    target_host = (urlsplit(target).hostname or "").lower()
+    for field in ("application_url", "official_url", "source_url"):
+        source = str(record.get(field) or "")
+        host = (urlsplit(source).hostname or "").lower()
+        if (not source.startswith("https://") or host != target_host
+                or is_aggregator_url(source) or is_outbound_tracker_url(source)
+                or normalize_url(source) == target):
+            continue
+        response = requests.get(source, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
+        return response.status_code < 400 and normalize_url(response.url) == target, True
+    return False, False
+
+
+def _identity_ai(records: List[Dict[str, Any]], context: Dict[str, Any], *, use_ai: bool) -> Dict[str, Any]:
+    try:
+        cache = json.loads(IDENTITY_AI_CACHE_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        cache = {}
+    if not isinstance(cache, dict):
+        cache = {}
+    entries = cache.get("entries", {}) if isinstance(cache.get("entries"), dict) else {}
+    new_cases: Dict[str, Dict[str, Any]] = {}
+    pairs: Dict[str, Tuple[Dict[str, Any], Dict[str, Any]]] = {}
+    for record in records:
+        if record.get("coverage_status") not in {"official_ambiguous", "official_identity_unmatched"}:
+            continue
+        for case, candidate in _identity_cases(record, context):
+            case_id = case["case_id"]
+            record.setdefault("identity_case_ids", []).append(case_id)
+            pairs[case_id] = (record, candidate)
+            if case_id not in entries:
+                new_cases[case_id] = case
+    errors: List[str] = []
+    verification_requests = 0
+    key = os.getenv("OPENAI_API_KEY", "")
+    if use_ai and key and new_cases:
+        try:
+            answered = compact_ai.decide(
+                task="identity_evidence: Are these postings the same employer requisition? Be conservative when IDs disagree or candidates are multiple.",
+                cases=new_cases.values(), choices=("likely_same", "ambiguous", "different"), api_key=key,
+            )
+            entries.update(answered)
+        except Exception as exc:
+            errors.append(f"{type(exc).__name__}: {exc}")
+    for record in records:
+        judgments = []
+        for case_id in record.get("identity_case_ids") or []:
+            decision = entries.get(case_id)
+            if isinstance(decision, dict):
+                judgments.append((case_id, decision))
+        likely = [(cid, d) for cid, d in judgments if d.get("decision") == "likely_same" and float(d.get("confidence") or 0) >= 0.9]
+        if len(likely) == 1:
+            case_id, decision = likely[0]
+            candidate = pairs[case_id][1]
+            if not decision.get("verified_url") and use_ai and verification_requests < 10:
+                try:
+                    verified, attempted = _verify_employer_redirect(record, candidate)
+                    if attempted:
+                        verification_requests += 1
+                    if verified:
+                        decision["verified_url"] = str(candidate.get("official_url") or "")
+                except requests.RequestException as exc:
+                    errors.append(f"redirect verification: {type(exc).__name__}")
+            if decision.get("verified_url") == candidate.get("official_url"):
+                hydrate_from_original(record, candidate)
+                record["coverage_match_method"] = "verified_redirect"
+                record["duplicate_of"] = canonical_job_key(candidate)
+                record["canonical_source"] = "official"
+                record["coverage_status"] = "official_duplicate"
+                record["suppress_alert"] = True
+                record["coverage_loss"] = "exact_match"
+        if judgments:
+            case_id, decision = max(judgments, key=lambda pair: (pair[1].get("decision") == "likely_same", float(pair[1].get("confidence") or 0)))
+            record["identity_ai"] = {
+                "decision": decision.get("decision"), "confidence": decision.get("confidence"),
+                "candidate_id": str(pairs[case_id][1].get("job_id") or ""),
+                "verification": "verified_redirect" if decision.get("verified_url") else "needs_independent_employer_url_or_id",
+            }
+    if use_ai and key and (new_cases or verification_requests):
+        try:
+            IDENTITY_AI_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+            IDENTITY_AI_CACHE_PATH.write_text(
+                json.dumps({"version": 1, "entries": entries}, sort_keys=True, separators=(",", ":")) + "\n",
+                encoding="utf-8",
+            )
+        except OSError as exc:
+            errors.append(f"cache write: {type(exc).__name__}: {exc}")
+    return {"cases": len(pairs),
+            "new_cases": len(new_cases), "api_requests": (len(new_cases) + compact_ai.BATCH_SIZE - 1) // compact_ai.BATCH_SIZE if use_ai and key and not errors else 0,
+            "verification_requests": verification_requests, "errors": errors}
+
+
+def build_coverage_payload(now: Optional[datetime] = None, *, use_ai: bool = False) -> Dict[str, Any]:
     now = now or datetime.now(timezone.utc)
     context = load_official_context()
     board_jobs = annotate_jobs(board_scope(now), "board", context)
     syncareer_jobs = annotate_jobs(syncareer_scope(now), "syncareer", context)
     records = board_jobs + syncareer_jobs
+    for record in records:
+        record["coverage_loss"] = _loss_reason(record, context, now)
+    identity_ai = _identity_ai(records, context, use_ai=use_ai)
     review = load_review_state()
     for record in records:
         state = review.get(record.get("canonical_job_key"), {})
@@ -533,7 +690,7 @@ def build_coverage_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
             "syncareer_jobs": counts["source_syncareer"],
             "exact_methods": {
                 method: counts[f"method_{method}"]
-                for method in ("url", "job_id", "title_location")
+                for method in ("url", "job_id", "title_location", "verified_redirect")
                 if counts[f"method_{method}"]
             },
         })
@@ -552,6 +709,20 @@ def build_coverage_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         + status_counts["official_gap"]
     )
     present = status_counts["official_duplicate"] + status_counts["official_ambiguous"]
+    losses = Counter(r["coverage_loss"] for r in records)
+    def loss_company(record: Dict[str, Any]) -> str:
+        cid = str(record.get("official_company_id") or "")
+        registry = context.get("registry_by_id", {}).get(cid, {})
+        return str(registry.get("name") or record.get("company") or "(missing company)")
+    top_loss_companies = {
+        reason: [
+            {"company": name, "count": count}
+            for name, count in Counter(
+                loss_company(r) for r in records if r["coverage_loss"] == reason
+            ).most_common(10)
+        ]
+        for reason in ("unsupported_company", "discovery_miss", "identity_mismatch", "source_timing", "unverified_snapshot", "unclassifiable")
+    }
     board_payload, _ = _load_store_entries(BOARD_STORE_PATH)
     sync_payload, _ = _load_store_entries(SYNCAREER_STORE_PATH)
     return {
@@ -563,6 +734,16 @@ def build_coverage_payload(now: Optional[datetime] = None) -> Dict[str, Any]:
         "syncareer_snapshot_at": str(sync_payload.get("updated_at") or sync_payload.get("scraped_at") or ""),
         "manual_validation_target": "100% exact observed in-scope coverage; user makes final validation decision",
         "counts": dict(status_counts),
+        "loss_funnel": {
+            "external_in_scope": len(records),
+            "supported_company": len(records) - losses["unsupported_company"] - losses["unclassifiable"],
+            "comparable_official": losses["exact_match"] + losses["identity_mismatch"] + losses["discovery_miss"],
+            "official_candidate_found": losses["exact_match"] + losses["identity_mismatch"],
+            "exact_identity_matched": losses["exact_match"],
+            "losses": dict(losses),
+        },
+        "top_loss_companies": top_loss_companies,
+        "identity_ai": identity_ai,
         "coverage_ratio": round(status_counts["official_duplicate"] / comparable, 4) if comparable else None,
         "observed_coverage_ratio": round(present / comparable, 4) if comparable else None,
         "identity_resolution_ratio": round(status_counts["official_duplicate"] / present, 4) if present else None,
@@ -606,11 +787,45 @@ def write_coverage_outputs(payload: Dict[str, Any]) -> None:
         f"{payload.get('counts', {}).get('official_identity_unmatched', 0)} stable-ID record(s) absent from the snapshot; all remain unsuppressed.",
         f"- Exact match methods: {payload.get('exact_match_methods') or 'none'}",
         "",
+        "## Loss funnel",
+        "",
+        "Counts use the same three-day external records as the existing rate. Official candidate presence is evidence, not a verified duplicate.",
+        "",
+        "| Stage or loss | Records |",
+        "|---|---:|",
+        f"| External in scope | {payload.get('loss_funnel', {}).get('external_in_scope', 0)} |",
+        f"| Supported company | {payload.get('loss_funnel', {}).get('supported_company', 0)} |",
+        f"| Comparable Official snapshot | {payload.get('loss_funnel', {}).get('comparable_official', 0)} |",
+        f"| Official candidate found | {payload.get('loss_funnel', {}).get('official_candidate_found', 0)} |",
+        f"| Exact identity matched | {payload.get('loss_funnel', {}).get('exact_identity_matched', 0)} |",
+    ]
+    loss_labels = {
+        "unsupported_company": "Unsupported company (add company)",
+        "discovery_miss": "Official discovery miss (improve scraper)",
+        "identity_mismatch": "Identity or alias mismatch (verify identifiers)",
+        "source_timing": "Source newer than Official run (refresh)",
+        "unverified_snapshot": "Official run absent, stale, failed, or partial (verify run)",
+        "unclassifiable": "Missing company (repair source metadata)",
+    }
+    for reason, label in loss_labels.items():
+        lines.append(f"| {label} | {payload.get('loss_funnel', {}).get('losses', {}).get(reason, 0)} |")
+    lines.extend(["", "### Largest contributors by loss", "",
+                  "| Loss | Companies (records) |", "|---|---|"])
+    for reason, label in loss_labels.items():
+        leaders = payload.get("top_loss_companies", {}).get(reason, [])[:5]
+        text = ", ".join(f"{str(item['company']).replace('|', '/')} ({item['count']})" for item in leaders) or "-"
+        lines.append(f"| {label} | {text} |")
+    lines.extend([
+        "", f"- AI identity evidence: {payload.get('identity_ai', {}).get('cases', 0)} candidate cases; "
+        f"{payload.get('identity_ai', {}).get('api_requests', 0)} batched request(s). "
+        "AI alone never suppresses a posting.",
+        "- AI errors: " + ("; ".join(payload.get("identity_ai", {}).get("errors", [])) or "none"),
+        "",
         "## Company coverage",
         "",
         "| Company | Manual state | Adapter | Board / Sync | In scope | Exact | Ambiguous | ID absent | No candidate | Pending | Unsupported | Exact rate | Presence |",
         "|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
-    ]
+    ])
     for company in payload.get("companies", []):
         exact_ratio = company.get("coverage_ratio")
         presence_ratio = company.get("official_presence_ratio")
@@ -630,8 +845,8 @@ def write_coverage_outputs(payload: Dict[str, Any]) -> None:
         "", f"## Identity evidence requiring review ({len(unresolved)})", "",
         f"- `official_ambiguous` ({payload.get('counts', {}).get('official_ambiguous', 0)}): Official candidates exist, but title/location does not identify one requisition.",
         f"- `official_identity_unmatched` ({payload.get('counts', {}).get('official_identity_unmatched', 0)}): a stable employer-side ID is absent from the Official snapshot; this is stronger adapter/snapshot-gap evidence.",
-        "", "| Status | Pipeline | Company | Title | Location | Stable IDs | Candidate IDs | Link |",
-        "|---|---|---|---|---|---|---|---|",
+        "", "| Status | Pipeline | Company | Title | Location | Stable IDs | Candidate IDs | AI evidence | Link |",
+        "|---|---|---|---|---|---|---|---|---|",
     ])
     for row in unresolved:
         link_url = row.get("application_url") or row.get("official_url") or row.get("source_url") or row.get("job_url") or ""
@@ -640,7 +855,9 @@ def write_coverage_outputs(payload: Dict[str, Any]) -> None:
             f"| {row.get('coverage_status')} | {row.get('source_pipeline')} | "
             f"{str(row.get('company') or '').replace('|','/')} | {str(row.get('title') or '').replace('|','/')[:90]} | "
             f"{str(row.get('location') or '').replace('|','/')} | {', '.join(row.get('coverage_stable_ids') or []) or '-'} | "
-            f"{', '.join(row.get('coverage_candidate_ids') or []) or '-'} | {link} |"
+            f"{', '.join(row.get('coverage_candidate_ids') or []) or '-'} | "
+            f"{(row.get('identity_ai') or {}).get('decision') or '-'} "
+            f"{(row.get('identity_ai') or {}).get('confidence') if (row.get('identity_ai') or {}).get('confidence') is not None else ''} | {link} |"
         )
     gaps = [r for r in payload.get("records", []) if r.get("coverage_status") in {"official_gap", "pending_official_refresh"}]
     lines.extend([
@@ -664,7 +881,9 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Reconcile Official vs ATS/Syncareer coverage")
     parser.add_argument("--json", action="store_true", help="Print summary JSON")
     args = parser.parse_args()
-    payload = build_coverage_payload()
+    import board_pipeline as board
+    board.load_env_file(BASE_DIR / ".env")
+    payload = build_coverage_payload(use_ai=True)
     write_coverage_outputs(payload)
     if args.json:
         print(json.dumps({"counts": payload["counts"], "companies": payload["companies"]}, indent=2))

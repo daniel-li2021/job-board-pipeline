@@ -22,6 +22,7 @@ import argparse
 import csv
 import gzip
 import json
+import os
 
 from state_io import atomic_write
 import remote_recovery
@@ -38,6 +39,7 @@ from sources.careers.http import (
     keep_us_or_unknown,
 )
 from sources.careers.registry import load_companies, scrape_enabled
+from sources.careers import jd_recovery
 from sources.schema import (
     OUTPUT_DIR,
     RECENCY_BUCKETS,
@@ -52,6 +54,7 @@ import llm_config
 
 BASE_DIR = Path(__file__).resolve().parent
 CAREERS_DIR = OUTPUT_DIR / "official_careers"
+RECOVERED_JDS_PATH = CAREERS_DIR / "recovered_jds.json.gz"
 RAW_PATH = OUTPUT_DIR / "cache" / "official_careers" / "raw.json.gz"
 LEGACY_RAW_PATH = CAREERS_DIR / "raw.json.gz"
 DEFAULT_STORE_PATH = CAREERS_DIR / "jobs.json"
@@ -93,6 +96,60 @@ def _workday_detail_title_filter(title: str) -> bool:
     return keep or reason == "prefilter:no_positive_family"
 
 
+def _metadata_detail_candidate_kind(job: Dict[str, Any]) -> str:
+    """Use only facts visible before the JD; never infer JD-only hard constraints."""
+    metadata = dict(job)
+    metadata["description"] = ""
+    keep, _ = official_discovery_filter(metadata)
+    if not keep:
+        return "skip"
+    title = str(job.get("title") or "")
+    if any(pattern.search(title) for pattern in (*board.CITIZEN_RES, *board.CLEARANCE_EXTRA_RES)):
+        return "skip"
+    keep, reason = board.role_seniority_prefilter(metadata)
+    if not keep:
+        return "borderline" if reason == "prefilter:no_positive_family" else "skip"
+    if re.search(r"\b(?:L[4-9]|Engineer [4-9]|Technical Leadership)\b", title, re.I):
+        return "borderline"
+    return "clear"
+
+
+def load_recovered_jds() -> List[Dict[str, Any]]:
+    try:
+        payload = json.loads(gzip.decompress(RECOVERED_JDS_PATH.read_bytes()))
+    except (OSError, ValueError, UnicodeDecodeError):
+        return []
+    rows = payload.get("entries") if isinstance(payload, dict) else None
+    return [row for row in rows if isinstance(row, dict)] if isinstance(rows, list) else []
+
+
+def save_recovered_jds(results: List[Dict[str, Any]], prior: List[Dict[str, Any]]) -> None:
+    """Persist only selective recovery/triage evidence across ephemeral runners."""
+    now = datetime.now(timezone.utc)
+    entries: Dict[Tuple[str, str], Dict[str, Any]] = {}
+    for row in prior:
+        seen = parse_datetime(row.get("recovery_seen_at"))
+        if seen and now - seen <= timedelta(days=30):
+            entries[(str(row.get("company") or ""), str(row.get("job_id") or row.get("official_url") or ""))] = row
+    fields = (
+        "company", "job_id", "official_url", "title", "posted_date", "updated_date",
+        "description", "detail_fetched_at", "listing_signature", "detail_triage_hash",
+        "detail_triage_decision", "detail_triage_priority", "detail_triage_confidence",
+    )
+    for result in results:
+        for job in result.get("jobs") or []:
+            if not (job.get("jd_recovery_source") or job.get("detail_triage_hash")):
+                continue
+            key = (str(job.get("company") or ""), str(job.get("job_id") or job.get("official_url") or ""))
+            current = {field: job.get(field) or "" for field in fields}
+            prior_entry = entries.get(key, {})
+            if any(current[field] != prior_entry.get(field, "") for field in fields):
+                entries[key] = {**current, "recovery_seen_at": now.isoformat()}
+    payload = {"version": 1, "entries": list(entries.values())[-1000:]}
+    CAREERS_DIR.mkdir(parents=True, exist_ok=True)
+    atomic_write(RECOVERED_JDS_PATH, gzip.compress(json.dumps(payload, separators=(",", ":")).encode(), mtime=0))
+
+
 def _sample_record(job: Dict[str, str]) -> Dict[str, str]:
     return {
         "company": job.get("company", ""),
@@ -109,12 +166,44 @@ def _sample_record(job: Dict[str, str]) -> Dict[str, str]:
     }
 
 
+def _coverage_company_runs(results: List[Dict[str, Any]], scraped_at: str) -> Dict[str, Dict[str, Any]]:
+    """Keep absence evidence separate from failed and intentionally bounded runs."""
+    try:
+        previous = json.loads(DEFAULT_STORE_PATH.read_text(encoding="utf-8")).get("coverage_company_runs", {})
+    except (OSError, ValueError, AttributeError):
+        previous = {}
+    registry = {str(c.get("id") or ""): c for c in load_companies().get("companies", [])}
+    runs = dict(previous)
+    for result in results:
+        cid = str(result.get("company_id") or "")
+        if not cid:
+            continue
+        prior = previous.get(cid, {}) if isinstance(previous.get(cid), dict) else {}
+        adapter = str(registry.get(cid, {}).get("adapter") or "")
+        status = str(result.get("status") or ("partial" if result.get("errors") else "ok"))
+        limited = any(
+            d.get("stop_reason") == "page_budget" and int(d.get("raw_jobs") or 0) > 0
+            for d in result.get("query_diagnostics") or [] if isinstance(d, dict)
+        )
+        comparable = status == "ok" and not result.get("errors") and (
+            result.get("full_listing_coverage") or adapter == "meta" or not limited
+        )
+        runs[cid] = {
+            "latest_at": scraped_at,
+            "latest_status": "limited" if status == "ok" and not comparable else status,
+            "last_success_at": scraped_at if status == "ok" and not result.get("errors") else prior.get("last_success_at", ""),
+            "last_comparable_at": scraped_at if comparable else prior.get("last_comparable_at", ""),
+        }
+    return runs
+
+
 def write_scrape_outputs(
     results: List[Dict[str, Any]],
     stamp: str,
     *,
     merge_previous: bool = True,
     wall_seconds: Optional[float] = None,
+    jd_recovery_stats: Optional[Dict[str, Any]] = None,
 ) -> List[Dict[str, str]]:
     CAREERS_DIR.mkdir(parents=True, exist_ok=True)
     scraped_companies = {(r.get("company") or "") for r in results}
@@ -160,6 +249,7 @@ def write_scrape_outputs(
         "detail_cache_reused": sum(int(r.get("detail_cache_reused") or 0) for r in results),
         "detail_prefilter_skipped": sum(int(r.get("detail_prefilter_skipped") or 0) for r in results),
         "detail_cache_status_counts": dict(sorted(cache_statuses.items())),
+        "jd_recovery": jd_recovery_stats or {},
     }
     lines = [
         f"# Official careers scrape report — {stamp}",
@@ -174,6 +264,10 @@ def write_scrape_outputs(
         f"{metrics['listing_pages']} / {metrics['detail_fetches']} / "
         f"{metrics['detail_cache_reused']} / {metrics['detail_prefilter_skipped']}",
         f"- Detail cache statuses: {metrics['detail_cache_status_counts'] or 'none'}",
+        f"- Relevant JD coverage: {(jd_recovery_stats or {}).get('usable_jd', 0)} / "
+        f"{(jd_recovery_stats or {}).get('eligible', 0)}; added detail requests "
+        f"{(jd_recovery_stats or {}).get('detail_requests', 0)} / {jd_recovery.DETAIL_REQUEST_CAP}; "
+        f"deferred {(jd_recovery_stats or {}).get('budget_deferred', 0)}",
         "",
     ]
     for result in results:
@@ -201,6 +295,7 @@ def write_scrape_outputs(
                 f"{result.get('detail_fetches', 0)} / {result.get('detail_cache_reused', 0)} / "
                 f"{result.get('detail_prefilter_skipped', 0)}",
                 f"- Detail cache statuses: {result.get('detail_cache_status_counts') or 'none'}",
+                f"- Relevant JD recovery: {result.get('jd_recovery') or 'none'}",
                 f"- Raw jobs found: {result.get('raw_jobs', 0)}",
                 f"- After US/location filtering: {len(jobs)}",
                 f"- With trustworthy posted_date: {trustworthy}",
@@ -231,8 +326,9 @@ def write_scrape_outputs(
         result_for_disk.pop("jobs", None)
         result["summary"] = result_for_disk
 
+    scraped_at = datetime.now(timezone.utc).isoformat()
     payload = {
-        "scraped_at": datetime.now(timezone.utc).isoformat(),
+        "scraped_at": scraped_at,
         "stamp": stamp,
         "count": len(all_jobs),
         "metrics": metrics,
@@ -240,6 +336,7 @@ def write_scrape_outputs(
             str(r.get("company_id") or "") for r in results if r.get("company_id")
         ),
         "per_company": [r.get("summary") for r in results],
+        "coverage_company_runs": _coverage_company_runs(results, scraped_at),
         "jobs": all_jobs,
     }
     atomic_write(RAW_PATH, gzip.compress((json.dumps(payload, ensure_ascii=False) + "\n").encode(), mtime=0))
@@ -470,15 +567,33 @@ def cmd_scrape(args: argparse.Namespace) -> List[Dict[str, str]]:
     max_pages = int(args.max_pages or registry.get("max_pages_default") or 50)
     print(f"Scraping official careers (only={args.only or 'all'}, max_pages={max_pages})...")
     started = time.monotonic()
+    recovered_jds = load_recovered_jds()
+    previous_jobs = [*load_raw_jobs(), *recovered_jds]
     results = scrape_enabled(
         only=args.only,
         max_pages=max_pages,
-        previous_jobs=load_raw_jobs(),
+        previous_jobs=previous_jobs,
         full_sweep=True if getattr(args, "full_sweep", False) else None,
         detail_title_filter=_workday_detail_title_filter,
     )
+    board.load_env_file(BASE_DIR / ".env")
+    thin = [job for result in results for job in result.get("jobs") or []
+            if len(str(job.get("description") or "").strip()) < board.THIN_JD_CHARS]
+    peer_stores = [
+        ("board", board.load_store_path(OUTPUT_DIR / "board" / "jobs.json",
+                                        cache_path=OUTPUT_DIR / "cache" / "board" / "jobs.json.gz")),
+        ("syncareer", board.load_syncareer_peer_store()),
+    ]
+    peer_reused = board.enrich_from_exact_peers(thin, peer_stores)
+    recovery_stats = jd_recovery.recover(
+        results, previous_jobs, _metadata_detail_candidate_kind,
+        api_key=os.getenv("OPENAI_API_KEY", ""),
+    )
+    recovery_stats["exact_peer_reused"] = peer_reused
+    save_recovered_jds(results, recovered_jds)
     wall_seconds = time.monotonic() - started
-    jobs = write_scrape_outputs(results, stamp, wall_seconds=wall_seconds)
+    jobs = write_scrape_outputs(results, stamp, wall_seconds=wall_seconds,
+                               jd_recovery_stats=recovery_stats)
     for result in results:
         jobs_n = len(result.get("jobs") or [])
         print(
@@ -650,10 +765,15 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
         board.ensure_entry_defaults(entry)
     new_store = board.prune_store(new_store, now)
     raw_payload = load_raw_payload()
+    try:
+        previous_metadata = json.loads(STORE_PATH.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        previous_metadata = {}
     coverage_fields = ("company", "title", "location", "job_id", "official_url", "source")
     save_careers_store(new_store, {
-        "scraped_company_ids": list(raw_payload.get("scraped_company_ids") or []),
-        "scraped_at": str(raw_payload.get("scraped_at") or now_iso),
+        "scraped_company_ids": list(raw_payload.get("scraped_company_ids") or previous_metadata.get("scraped_company_ids") or []),
+        "scraped_at": str(raw_payload.get("scraped_at") or previous_metadata.get("scraped_at") or now_iso),
+        "coverage_company_runs": raw_payload.get("coverage_company_runs") or previous_metadata.get("coverage_company_runs") or {},
         "coverage_fields": list(coverage_fields),
         "coverage_entries": [
             [job.get(field) or "" for field in coverage_fields]
@@ -719,6 +839,7 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
                 for job in raw_jobs
             ),
         },
+        "jd_recovery": (raw_payload.get("metrics") or {}).get("jd_recovery") or {},
     }
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
     run_payload = {"run_at": now_iso, "elapsed_seconds": round(time.monotonic() - match_started, 3),

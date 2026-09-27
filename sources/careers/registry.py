@@ -173,6 +173,7 @@ def scrape_company(
             session,
             company=name,
             search_url=rd["search_url"],
+            fetch_details=str(company.get("id") or "") != "equinix",
             max_pages=max_pages,
             queries=rd.get("queries"),
             query_param=rd.get("query_param", "query"),

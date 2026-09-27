@@ -60,6 +60,10 @@ Registry: [`config/official_careers.json`](config/official_careers.json)
 
 Per-company scrape diagnostics: [`output/official_careers/scrape_report.md`](output/official_careers/scrape_report.md)
 
+Metadata-only Official jobs are checked with the existing location, title, and seniority rules before detail retrieval; JD-dependent hard constraints wait for the JD. Clear survivors receive detail requests directly. Borderline titles can receive batched GPT-6 Luna Medium `recover/skip` triage. One run adds at most 150 detail requests, shared across companies; the queue favors recent jobs and rotates between companies. Meta, Disney, Netflix, and Equinix have targeted detail extraction, with safe generic extraction for other eligible thin-JD jobs. The report records relevant-job JD coverage, cache reuse, requests, deferrals, and failures. A job still missing its JD keeps the existing thin-JD matching fallback.
+
+Selective JD and triage results are retained in `output/official_careers/recovered_jds.json.gz` so later GitHub runs can reuse them without repeating page or AI requests.
+
 Official discovery is **role-targeted, not guaranteed to enumerate every posting at every company**. Many adapters search a shared set of SWE / AI / data / platform / FDE role families, with company-specific extra queries where useful. Generic ATS adapters may fetch the full board. Cross-pipeline coverage is used to identify observed jobs that Official may have missed.
 
 Outputs live under `output/official_careers/`.
@@ -85,6 +89,10 @@ Referral companies have one source of truth: [`config/target_companies.json`](co
 ## Official coverage reconciliation
 
 `coverage_reconcile.py` compares recent Board/Syncareer jobs with the latest Official snapshot.
+
+The coverage report keeps the existing exact reconciliation rate and adds a loss funnel for external in-scope records: supported company, comparable Official snapshot, Official candidate observed, and exact identity matched. It separates unsupported companies, discovery misses, identity mismatches, source timing, stale or partial Official comparisons, and missing company metadata, with the largest company contributors for each loss. The report uses each company's last successful and comparable Official run to avoid calling a failed or bounded scrape a discovery miss.
+
+Genuinely ambiguous identity pairs may receive batched GPT-6 Luna Medium assessments. Their compact decisions are cached in `output/cross_pipeline/identity_ai_cache.json`. AI evidence appears in the report but never suppresses a job by itself; only a separately verified direct employer URL redirect can promote an exact match. Scheduled reconciliation uses the API key when available and otherwise produces the deterministic report.
 
 Important states:
 
@@ -126,11 +134,11 @@ GitHub keeps only the small durable/current state each independent pipeline owns
 - `output/*/latest.md` — wider current view where available;
 - `output/*/seen_jobs.json` — permanent lightweight identity history;
 - `output/*/jobs.json` — compact current 7-day board state;
-- `output/cross_pipeline/` — coverage audit artifacts when generated;
+- `output/cross_pipeline/` — coverage audit artifacts and compact identity AI cache when generated;
 - `public/` — generated dashboard files.
 
-Full descriptions, source snippets, enrichment/LLM evidence, raw Official snapshots,
-and full scoring caches stay under gitignored `output/cache/`. Per-run diagnostics
+Most full descriptions, source snippets, enrichment/LLM evidence, raw Official snapshots,
+and full scoring caches stay under gitignored `output/cache/`; the selective Official JD cache above is a small committed exception. Per-run diagnostics
 under `output/*/runs/` are local or workflow artifacts, not repository history.
 GitHub commits `output/sources/indeed.json` with full Indeed JDs and its health state;
 the Mac reads that snapshot as an exact peer and never recollects Indeed.
