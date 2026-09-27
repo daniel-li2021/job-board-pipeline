@@ -32,7 +32,7 @@ def decide(
         prompt = {
             "task": instruction,
             "choices": sorted(allowed),
-            "instructions": "Return one short result per case. No explanations. Use only supplied evidence; uncertain cases remain ambiguous.",
+            "instructions": "Return JSON with one short result per case. No explanations. Use only supplied evidence; uncertain cases remain ambiguous.",
             "output": {"results": [{"case_id": "string", "decision": "choice", "confidence": "0..1", "priority": "high|medium|low (triage only)"}]},
         }
         response = requests.post(

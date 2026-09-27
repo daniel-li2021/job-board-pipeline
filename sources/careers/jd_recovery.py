@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import shutil
 import time
 from collections import Counter, defaultdict, deque
 from typing import Any, Callable, Dict, List, Optional, Tuple
@@ -20,6 +21,37 @@ from .incremental import DetailCache, annotate_detail
 THIN_JD_CHARS = 200
 DETAIL_REQUEST_CAP = 150
 PRIORITY_COMPANIES = ("Meta", "Disney", "Netflix", "Equinix")
+
+
+def _equinix_browser_detail(url: str, session: Any) -> Tuple[str, str, int]:
+    """Pass Equinix's short-lived browser challenge once, then reuse its cookie."""
+    from playwright.sync_api import sync_playwright
+
+    chrome = (shutil.which("google-chrome") or shutil.which("chromium") or
+              "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch(headless=True, executable_path=chrome)
+        try:
+            context = browser.new_context()
+            count = [0]
+            def route_request(route: Any) -> None:
+                request = route.request
+                host = urlsplit(request.url).hostname or ""
+                if request.resource_type == "document" or host.endswith("awswaf.com"):
+                    count[0] += 1
+                    route.continue_()
+                else:
+                    route.abort()
+            context.route("**/*", route_request)
+            page = context.new_page()
+            page.goto(url, wait_until="domcontentloaded", timeout=20000)
+            page.wait_for_selector("h1", timeout=12000)
+            for cookie in page.context.cookies():
+                session.cookies.set(cookie["name"], cookie["value"],
+                                    domain=cookie["domain"], path=cookie["path"])
+            return page.content(), page.url, count[0]
+        finally:
+            browser.close()
 
 
 def _posting(html: str) -> Dict[str, Any]:
@@ -183,6 +215,8 @@ def recover(
     order.extend(sorted(company for company in queues if company not in order))
     active = deque(order)
     sessions = {company: make_session() for company in order}
+    equinix_bootstrap_attempted = False
+    equinix_blocked = False
     try:
         while active and metrics["detail_requests"] < request_cap:
             company = active.popleft()
@@ -193,16 +227,40 @@ def recover(
             if not url.startswith("https://"):
                 per_company[company]["invalid_url"] += 1
                 continue
+            if company == "Equinix" and equinix_blocked:
+                per_company[company]["blocked_deferred"] += 1
+                continue
             begun = time.monotonic()
             metrics["detail_requests"] += 1
             per_company[company]["detail_requests"] += 1
             result["detail_fetches"] = int(result.get("detail_fetches") or 0) + 1
             try:
-                response = http_get(sessions[company], url, label=f"{company} career detail")
-                description, title, posted, identifier = extract_detail(response.text, company)
+                detail_url = url
+                headers = {"User-Agent": "Mozilla/5.0"} if company == "Meta" else None
+                if company == "Meta":
+                    detail_url = f"https://www.metacareers.com/profile/job_details/{job.get('job_id')}"
+                response = http_get(sessions[company], detail_url,
+                                    label=f"{company} career detail", headers=headers)
+                html, response_url = response.text, response.url
+                if company == "Equinix" and response.status_code == 202 and not response.content:
+                    if equinix_bootstrap_attempted or metrics["detail_requests"] >= request_cap:
+                        equinix_blocked = True
+                        raise ValueError("browser_challenge_unresolved")
+                    equinix_bootstrap_attempted = True
+                    metrics["detail_requests"] += 1
+                    per_company[company]["detail_requests"] += 1
+                    result["detail_fetches"] = int(result.get("detail_fetches") or 0) + 1
+                    try:
+                        html, response_url, browser_requests = _equinix_browser_detail(url, sessions[company])
+                        metrics["browser_http_requests"] += browser_requests
+                        result["http_requests"] = int(result.get("http_requests") or 0) + browser_requests
+                    except Exception:
+                        equinix_blocked = True
+                        raise
+                description, title, posted, identifier = extract_detail(html, company)
                 if len(description.strip()) < THIN_JD_CHARS:
                     raise ValueError("thin_detail")
-                if not _same_job(job, response.url, title, identifier):
+                if not _same_job(job, response_url, title, identifier):
                     raise ValueError("identity_mismatch")
                 job["description"] = description
                 job["jd_recovery_source"] = "detail"

@@ -137,6 +137,7 @@ class DetailRecoveryTests(unittest.TestCase):
 
     def test_request_cap_and_identity_validation(self) -> None:
         jobs = [self._job(company, n) for n, company in enumerate(("Meta", "Disney", "Netflix"), 1)]
+        jobs[0]["official_url"] = "https://www.metacareers.com/jobs/1"
         results = [{"company": job["company"], "jobs": [job], "http_requests": 0} for job in jobs]
         def fetch(_session, url, **_kwargs):
             number = int(url.rsplit("/", 1)[-1])
@@ -163,6 +164,25 @@ class DetailRecoveryTests(unittest.TestCase):
         self.assertEqual(1, stats["detail_requests"])
         self.assertGreaterEqual(len(job["description"]), 200)
         self.assertEqual(1, stats["usable_jd"])
+
+    def test_equinix_browser_challenge_counts_against_cap(self) -> None:
+        jobs = [self._job("Equinix", number) for number in (1, 2)]
+        result = {"company": "Equinix", "jobs": jobs, "http_requests": 0}
+        def fetch(_session, url, **_kwargs):
+            if url.endswith("/1"):
+                return SimpleNamespace(status_code=202, content=b"", text="", url=url)
+            return SimpleNamespace(status_code=200, content=b"detail", text=self._html(2), url=url)
+        with patch.object(jd_recovery, "http_get", side_effect=fetch), patch.object(
+            jd_recovery, "_equinix_browser_detail",
+            return_value=(self._html(1), jobs[0]["official_url"], 3),
+        ) as bootstrap, patch.object(
+            jd_recovery, "make_session", return_value=SimpleNamespace(close=lambda: None)
+        ):
+            stats = jd_recovery.recover([result], [], lambda _: "clear", request_cap=3)
+        bootstrap.assert_called_once()
+        self.assertEqual(3, stats["detail_requests"])
+        self.assertEqual(2, stats["usable_jd"])
+        self.assertEqual(3, stats["browser_http_requests"])
 
     def test_ai_skip_avoids_detail_and_keeps_scoring_fields(self) -> None:
         job = self._job("Netflix", 1)
