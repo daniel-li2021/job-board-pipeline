@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 1483,
+  "count": 1491,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-09-27T01:30:13.684053+00:00",
+    "scraped_at": "2026-09-27T04:00:08.411781+00:00",
     "collector": {
-      "commit": "43d109ec759891efd6c4a585b32ddd8723e8c579",
+      "commit": "042ffce395c3924cc830a8ddf6ed375129974671",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 30.505,
+    "elapsed_seconds": 31.222,
     "query_stats": [
       {
         "query": "software engineer",
@@ -25,8 +25,8 @@
         "unique_contribution": 48,
         "first_pass_survivors": 47,
         "original_postings_resolved": 0,
-        "jds_resolved": 18,
-        "elapsed_seconds": 8.221
+        "jds_resolved": 17,
+        "elapsed_seconds": 8.336
       },
       {
         "query": "ai engineer",
@@ -37,10 +37,10 @@
         "raw_jobs": 30,
         "unique_jobs": 30,
         "unique_contribution": 30,
-        "first_pass_survivors": 29,
+        "first_pass_survivors": 27,
         "original_postings_resolved": 0,
-        "jds_resolved": 6,
-        "elapsed_seconds": 4.715
+        "jds_resolved": 9,
+        "elapsed_seconds": 4.881
       },
       {
         "query": "backend engineer",
@@ -50,11 +50,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 11,
+        "unique_contribution": 12,
         "first_pass_survivors": 19,
         "original_postings_resolved": 0,
         "jds_resolved": 3,
-        "elapsed_seconds": 3.202
+        "elapsed_seconds": 3.224
       },
       {
         "query": "full-stack engineer",
@@ -68,7 +68,7 @@
         "first_pass_survivors": 20,
         "original_postings_resolved": 0,
         "jds_resolved": 1,
-        "elapsed_seconds": 3.327
+        "elapsed_seconds": 3.535
       },
       {
         "query": "machine learning engineer",
@@ -82,23 +82,23 @@
         "first_pass_survivors": 18,
         "original_postings_resolved": 0,
         "jds_resolved": 4,
-        "elapsed_seconds": 3.177
+        "elapsed_seconds": 3.25
       }
     ],
     "detail_enrichment": {
-      "eligible": 28,
-      "cache_reused": 4,
+      "eligible": 25,
+      "cache_reused": 9,
       "requests": 8,
       "responses": 8,
       "request_limit": 8,
-      "budget_deferred": 16,
+      "budget_deferred": 7,
       "budget_exhausted": true,
-      "retry_deferred": 0,
+      "retry_deferred": 1,
       "retry_attempts": 0,
       "exact_official": 0,
       "official_deferred": 0,
       "rate_limited": false,
-      "jds_resolved": 12,
+      "jds_resolved": 17,
       "external_apply_urls": 0,
       "failed": 0,
       "detail_jds_fetched": 8,
@@ -107,16 +107,17 @@
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 16,
+      "remaining_no_jd": 8,
       "failure_reasons": {
-        "no_description": 16
+        "linkedin_http_429": 1,
+        "no_description": 7
       },
       "cooldown_active": false,
       "probe": false,
       "status": "active"
     },
     "official_enrichment": {
-      "cache": 11,
+      "cache": 10,
       "exact_indeed_peer": 4,
       "tentative_cache": 2,
       "dedicated_matches": 1,
@@ -124,13 +125,13 @@
       "search_requests": 0,
       "search_provider": "duckduckgo",
       "official_page_requests": 0,
-      "remaining_no_jd": 102
+      "remaining_no_jd": 104
     },
     "partial": true,
     "blocked_reason": "focused query coverage",
-    "collected_count": 120,
-    "carried_count": 1366,
-    "jd_recovery_at": "2026-09-27T01:30:45.715295+00:00"
+    "collected_count": 121,
+    "carried_count": 1375,
+    "jd_recovery_at": "2026-09-27T04:00:39.788196+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -1617,7 +1618,15 @@
     "linkedin|id|4472402576": "2026-09-27T01:30:13.684053+00:00",
     "linkedin|id|4461169959": "2026-09-05T02:34:33.300648+00:00",
     "linkedin|id|4431995116": "2026-09-05T02:34:33.300648+00:00",
-    "linkedin|id|4451273218": "2026-09-27T01:30:13.684053+00:00"
+    "linkedin|id|4451273218": "2026-09-27T01:30:13.684053+00:00",
+    "linkedin|id|4406207726": "2026-09-06T03:50:27.645294+00:00",
+    "linkedin|id|4462823377": "2026-09-27T04:00:08.411781+00:00",
+    "linkedin|id|4472299393": "2026-09-27T04:00:08.411781+00:00",
+    "linkedin|id|4463636114": "2026-09-05T02:34:33.300648+00:00",
+    "linkedin|id|4444038458": "2026-09-05T02:34:33.300648+00:00",
+    "linkedin|id|4361235241": "2026-09-05T02:34:33.300648+00:00",
+    "linkedin|id|4462331235": "2026-09-05T02:34:33.300648+00:00",
+    "linkedin|id|4472411294": "2026-09-27T04:00:08.411781+00:00"
   },
   "jobs": [
     {
@@ -1702,7 +1711,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -1766,6 +1775,31 @@
       "linkedin_detail_resolved": true,
       "enrichment_method": "linkedin_http",
       "enrichment_status": "resolved"
+    },
+    {
+      "job_id": "4444038458",
+      "source": "linkedin",
+      "company": "AbbVie",
+      "title": "Senior Engineer, AI",
+      "location": "North Chicago, IL",
+      "posted_date": "2026-09-26",
+      "aggregator_posted_date": "2026-09-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-engineer-ai-at-abbvie-4444038458",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-05T02:34:33.300648+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469608799",
@@ -2216,7 +2250,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -2305,7 +2339,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -2330,7 +2364,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -2360,7 +2394,7 @@
       "jd_recovery_at": "2026-09-26T10:55:35.629716+00:00",
       "enrichment_method": "tentative_cache",
       "enrichment_status": "tentative",
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -4276,6 +4310,37 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4472299393",
+      "source": "linkedin",
+      "company": "Amazon Web Services (AWS)",
+      "title": "Software Development Engineer - Amazon Redshift, Query Processing",
+      "location": "East Palo Alto, CA",
+      "posted_date": "2026-09-26",
+      "aggregator_posted_date": "2026-09-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-amazon-redshift-query-processing-at-amazon-web-services-aws-4472299393",
+      "official_url": "",
+      "description": "Description Job Summary Amazon Redshift is one of the world’s most popular fully managed cloud data warehouse. Tens of thousands of enterprise customers use Redshift to crunch through exabytes of data in the cloud to make business critical decisions every day. To stay ahead in such a mission critical setting, at Redshift, we must always re-invent ourselves for customers. We are always looking for the innovative engineers to help shape the future of Redshift. We are actively hiring a talented Senior Software Engineer in the Query Processing team of Redshift. Query processing is at the heart of Redshift data plane and is responsible for the massive parallel execution engine. Work/Life Balance Our team puts a high value on work-life balance. It isn’t about how many hours you spend at home or at work; it’s about the flow you establish that brings energy to both parts of your life. We believe striking the right balance between your personal and professional life is critical to life-long happiness and fulfillment. We offer flexibility in working hours and encourage you to find your own balance between your work and personal lives. Mentorship & Career Growth Our team is dedicated to supporting new members. We have a broad mix of experience levels and tenures, and we’re building an environment that celebrates knowledge sharing and mentorship. Our senior members enjoy one-on-one mentoring and thorough, but kind, code reviews. We care about your career growth and strive to assign projects based on what will help each team member develop into a better-rounded engineer and enable them to take on more complex tasks in the future. 10031 Key job responsibilities As a Software Development Engineer in Redshift, you will build systems that benefit Redshift clusters across the world. You will take significant ownership on the overall product vision by defining new features and architecture. You will distill complex and ambiguous requirements, converting them into meaningful projects that provide immense customer value. You will own and code end-to-end deliverables from design, development, deployment, monitoring, and operations. You will lead engineers on substantial projects and help develop a flourishing team through active mentoring and hiring. This is a unique and rare opportunity to get in on the ground floor within a fast-growing business and help shape the technology powering analytical workloads for Fortune 500 companies, startups, and everything in between. You will bring deep technical, algorithmic and coding expertise with the ability to work within a fast moving and collaborative environment in the industry leading cloud company to deliver a broad business impact. About The Team Amazon Redshift is a fully managed, AI powered, petabyte-scale cloud data warehouse service. Tens of thousands of customers today depend on Redshift to revolutionize their data analytics processes, providing vital insights for their businesses. Our team works on the execution engine of Amazon Redshift and our key areas of focus are high scalability, performance, and overall extend the capabilities of the execution engine. Basic Qualifications 3+ years of non-internship professional software development experience 2+ years of non-internship design or architecture (design patterns, reliability and scaling) of new and existing systems experience Experience programming with at least one software programming language Preferred Qualifications 3+ years of full software development life cycle, including coding standards, code reviews, source control management, build processes, testing, and operations experience Bachelor's degree in computer science or equivalent Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability, or other legally protected status. Los Angeles County applicants: Job duties for this position include: work safely and cooperatively with other employees, supervisors, and staff; adhere to standards of excellence despite stressful conditions; communicate effectively and respectfully with employees, supervisors, and staff to ensure exceptional customer service; and follow all federal, state, and local laws and Company policies. Criminal history may have a direct, adverse, and negative relationship with some of the material job duties of this position. These include the duties and responsibilities listed above, as well as the abilities to adhere to company policies, exercise sound judgment, effectively manage stress and work safely and respectfully with others, exhibit trustworthiness and professionalism, and safeguard business operations and the Company’s reputation. Pursuant to the Los Angeles County Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records. Our inclusive culture empowers Amazonians to deliver the best results for our customers. If you have a disability and need a workplace accommodation or adjustment during the application and hiring process, including support for the interview or onboarding process, please visit https://amazon.jobs/content/en/how-we-hire/accommodations for more information. If the country/region you’re applying in isn’t listed, please contact your Recruiting Partner. The base salary range for this position is listed below. Your Amazon package will include sign-on payments and restricted stock units (RSUs). Final compensation will be determined based on factors including experience, qualifications, and location. Amazon also offers comprehensive benefits including health insurance (medical, dental, vision, prescription, Basic Life & AD&D insurance and option for Supplemental life plans, EAP, Mental Health Support, Medical Advice Line, Flexible Spending Accounts, Adoption and Surrogacy Reimbursement coverage), 401(k) matching, paid time off, and parental leave. Learn more about our benefits at https://amazon.jobs/en/benefits. USA, CA, East Palo Alto - 165,200.00 - 223,600.00 USD annually USA, OR, Corvallis - 143,700.00 - 194,400.00 USD annually USA, WA, SEATTLE - 143,700.00 - 194,400.00 USD annually USA, WA, Seattle - 143,700.00 - 194,400.00 USD annually Company - Amazon.com Services LLC Job ID: A3017401",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-27T04:00:08.411781+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "linkedin_detail_attempted_at": "2026-09-27T04:00:34.210462+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T04:00:34.210462+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4472407194",
       "source": "linkedin",
       "company": "Amazon Web Services (AWS)",
@@ -4297,13 +4362,12 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_attempted_at": "2026-09-27T01:30:38.583898+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T01:30:38.583898+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -4630,7 +4694,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -4904,7 +4968,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -5007,7 +5071,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -5214,7 +5278,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -5739,7 +5803,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -5764,7 +5828,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -7391,7 +7455,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -7442,7 +7506,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -7521,7 +7585,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -7574,7 +7638,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "linkedin_detail_attempted_at": "2026-09-27T01:30:46.937729+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T01:30:46.937729+00:00",
       "linkedin_detail_resolved": true,
@@ -7840,7 +7904,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -8074,7 +8138,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -9044,7 +9108,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -9070,13 +9134,12 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_attempted_at": "2026-09-27T01:30:38.583898+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T01:30:38.583898+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -10090,11 +10153,11 @@
         ]
       },
       "recovery_methods": {},
-      "jd_recovery_at": "2026-09-27T01:30:13.684053+00:00",
+      "jd_recovery_at": "2026-09-27T04:00:08.411781+00:00",
       "enrichment_method": "exact_indeed_peer",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -10263,7 +10326,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -10295,7 +10358,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -10847,7 +10910,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "linkedin_detail_attempted_at": "2026-09-27T01:30:46.937729+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T01:30:46.937729+00:00",
       "linkedin_detail_resolved": true,
@@ -10959,7 +11022,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -11492,7 +11555,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -11765,7 +11828,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -12289,7 +12352,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -12498,7 +12561,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -12797,7 +12860,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -12848,7 +12911,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -12873,7 +12936,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -12925,7 +12988,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -13441,21 +13504,20 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
-      "verified_this_run": true,
       "linkedin_detail_attempted_at": "2026-09-27T01:30:46.937729+00:00",
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_http_429",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
+      "verified_this_run": true,
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
-        "confidence": 0.84,
+        "confidence": 0.81,
         "delta": 0,
-        "reason": "Agentic AI engineering fits target role family"
+        "reason": "Agentic AI engineering matches target role family"
       },
       "recovery_input_hash": "8685b4223f84a304d840",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-27T01:30:45.715295+00:00",
+      "official_search_attempted_at": "2026-09-27T04:00:39.788196+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -13470,7 +13532,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/agentic-ai-engineer-%E2%80%94-healthcare-ai-at-deloitte-4426724829",
       "official_url": "",
-      "description": "",
+      "description": "Three hundred fifty million Americans rely on a healthcare system whose decision-making has become slow, costly, and adversarial - care delayed by prior authorization and paperwork, claims that misfire, clinical decisions made without the right information at the right moment, and patients who struggle to navigate or afford the care they need. Deloitte has a new AI-first effort, backed by $1B in committed investment, building the reasoning models and agentic systems to rebuild how that system decides - across payers, providers, and life sciences, and for the patients they serve - so that care is faster, fairer, and far less wasteful. This is not AI applied at the margins. It is a ground-up rebuild of the decision-making machinery behind American healthcare, at national scale. This is an early, well-funded build. You will own agent systems end to end - from architecture through production - and your work ships into live clinical and operational settings within your first months, not into a lab. As an Agentic AI Engineer, you will design, build, and operationalize the LLM- and SLM-powered systems behind real healthcare decisioning - the reasoning, orchestration, retrieval, memory, and control layers that let intelligent agents operate reliably across the hardest decisions in the industry: clinical reasoning, prior authorization and claims integrity, care navigation, and the operational workflows that run across payers, providers, and life sciences. This is not a prompt-only role. We are looking for builders who think deeply about system behavior, grounding, and reliability where a wrong action has real consequences for patients and the clinicians who serve them. You do not need a healthcare background. We pair every engineer with clinical and domain experts and teach you the domain - you bring the agentic engineering depth. We hire on demonstrated depth, not years - the level you join at is determined through our interview process, based on the depth and judgment you demonstrate, not your years in a title. Work you'll do Agent architecture & orchestration Design and implement agentic systems capable of multi-step reasoning, planning, tool use, and workflow execution against complex, regulated operational processes. Build stateful workflows using frameworks such as LangGraph and LangChain - including branching, retries, self-correction, human-in-the-loop checkpoints, and reusable orchestration patterns. Engineer for long-horizon reliability - multi-step task completion, recovery from compounding errors, planning under uncertainty, and robust tool use when individual steps fail. Build the reasoning behind regulated decisions - policy- and criteria-grounded outputs, structured proposer/critic/judge-style review, and auditable rationales for high-stakes decisions across the industry, from clinical review and prior authorization to claims integrity and care management. Retrieval, grounding & context engineering Develop end-to-end Retrieval-Augmented Generation (RAG) pipelines: ingestion, chunking, embeddings, vector and hybrid retrieval, reranking, contextual compression, and grounding strategies. Engineer memory and context management - conversational state, persistent memory, retrieval-aware context assembly, and token-efficient context selection. Apply modern context-delivery patterns (e.g., MCP-style tool/context interfaces) so agents access the right information at the right time. Reliability, evaluation & safety Implement observability and tracing for prompts, tool calls, retrieval quality, agent traces, failures, drift, latency, and production behavior. Apply guardrails, safety controls, and failure-handling to reduce hallucinations and unsafe actions. Evaluate agents at the trajectory and task level - multi-step task success, failure-mode and regression analysis, and sandboxed test environments - alongside retrieval- and generation-quality metrics, automated checks, and human review. Engineer healthcare-grade safety - deployment eval gates, human-oversight and escalation models, auditability and traceability for regulated decisions, and PHI/HIPAA-aware data handling. Integration & production craft Build integrations with internal and external tools, APIs, enterprise systems, databases, and model providers so agents operate safely within real business workflows. Deliver production-quality code with strong practices in testing, CI/CD, logging, versioning, and documentation; make architecture decisions that balance quality, safety, latency, cost, and model risk. Partner with our modeling and post-training engineers to improve model behavior for tool use, grounding, and long-horizon reasoning - through evaluation-driven feedback and, where it helps, fine-tuned or reasoning-optimized models. Translate ambiguous, high-complexity operational processes into robust system logic and reusable AI patterns; stay current with advances in agentic systems and translate research into practical engineering decisions. The team Deloitte brings together AI researchers, modeling and platform engineers, architects, clinical and domain specialists, and product leaders to build, deploy, and operate verticalized AI systems across software, data, models, and cloud infrastructure - engineered for one of the most complex operating environments in the world. The work spans the healthcare industry - payers, providers, and life sciences - and involves genuinely hard reasoning problems, nuanced operational workflows, and a high bar for reliability, with little tolerance for shallow or unreliable outputs. We pair frontier AI research with production-grade engineering, and we ship into real clinical and operational settings rather than leaving models in the lab. Required Qualifications Bachelor's degree in Computer Science, Engineering, Data Science, Computational Linguistics, or a related field. Demonstrated depth building and shipping production agentic systems - this is your primary craft, not a recent exploration. We weigh shipped systems, research, model releases, and open source over years in a title; expect strong software/ML fundamentals plus substantial, recent hands-on agentic work. Strong, hands-on experience building production agent systems with modern orchestration - LangGraph/LangChain or equivalent, including custom orchestration. Experience designing and optimizing end-to-end RAG systems: indexing, retrieval, reranking, grounding, and evaluation. Strong understanding of memory and context management, including context windows, retrieval-driven context assembly, persistent memory, and high-signal context selection. Deep, practical understanding of LLM behavior - strengths, limitations, hallucination risks, reasoning constraints, and latency/cost trade-offs - and the evaluation methods used to measure them. Experience evaluating and debugging agent behavior - task-success and trajectory analysis, not just output quality. Strong Python engineering skills and modern software practices: testing, CI/CD, version control, and API integration; experience implementing observability, tracing, and debugging for LLM-based systems in production. Hands-on experience with at least one frontier model platform (e.g., Anthropic, Google, OpenAI) and/or open-weight/self-hosted models (e.g., Llama via vLLM), including production tool use and agent capabilities. Ability to travel 0-50%, on average, based on the work you do and the clients and industries/sectors you serve. Limited immigration sponsorship may be available. Preferred Qualifications Experience with multi-agent systems and agent collaboration patterns. Familiarity with vector databases and retrieval infrastructure such as Pinecone, Weaviate, or Milvus. Exposure to model adaptation and fine-tuning techniques such as LoRA or QLoRA. Understanding of traditional NLP concepts: tokenization, semantic similarity, entity extraction, summarization, and transformer fundamentals. Experience operating in highly regulated, high-stakes, or operationally complex environments; healthcare exposure - clinical, payer, or life-sciences workflows, or standards such as FHIR - is a plus, not a requirement. Demonstrated habit of staying current with AI research, benchmarks, and emerging engineering patterns. Compensation Base salary is benchmarked to leading technology companies rather than traditional consulting scales, and the role carries a substantial performance-based incentive opportunity designed to grow with the value you help create - startup-style upside, with the backing of a committed, well-capitalized platform. The estimated base salary range is $110,700-$372,900 (not adjusted for geographic differential); actual base pay depends on your skills, experience, and level, and you may also be eligible for a discretionary annual incentive based on individual and organizational performance.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-26T21:14:55.076656+00:00",
@@ -13486,19 +13548,14 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
-      "verified_this_run": true,
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.84,
-        "delta": 0,
-        "reason": "Agentic AI engineering fits target role family"
-      },
-      "recovery_input_hash": "87f6edc75d9e4e2a18a1",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-27T01:30:45.715295+00:00",
-      "official_search_status": "no_match"
+      "linkedin_detail_attempted_at": "2026-09-27T04:00:34.210462+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T04:00:34.210462+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4426725811",
@@ -13654,7 +13711,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -13695,7 +13752,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/cyber-full-stack-technical-software-engineer-at-deloitte-4454348188",
       "official_url": "",
-      "description": "",
+      "description": "Deloitte Cyber understands the unique challenges and opportunities businesses face in cybersecurity. Deloitte's Cyber team helps our clients navigate the ever-changing threat landscape. We simplify complexity, and enable businesses to operate with resilience, grow with confidence, and proactively manage their security posture. Recruiting for this role ends on 12/31/2026. The Team: Deloitte's Cyber Engineering is a new team that is spearheading the buildout of Cybersecurity technology that will underpin the next generation of our Cybersecurity services. Join us as we work with technologies shaping the future of Cybersecurity to build future capabilities today. Position Summary You will be responsible for individually delivering high quality products within due timelines. Need-basis you will be mentoring and/or directing junior team members/liaising with onsite/offshore teams to understand the functional requirements. Work you will do: Working closely with business, solution engineers, team members and leadership to understand business requirements and deliver high quality technical solutions Analyzing, implementing user requirements/business needs as new and/or enhanced product functionality Identifying key drivers of a problem and proposes technical solutions using analysis, experience, and decision making Developing solutions to client problems through application of methods and tools; validating solutions to SMEs Understanding the benefits of using state of the art methods and tools and their application on a particular engagement contributes to continuous development of methods and tools Demonstrating accountability and contributions to the successful realization of client goals Required Qualifications We require 3-5 years of experience for all skill areas below: Hands-on experience in full stack software development across frontend and backend technologies. Experience designing, developing, deploying, implementing, or supporting AI, Generative AI, or Agentic AI solutions and architectures in enterprise applications on AWS, Azure, or GCP. Experience with object-oriented programming using languages such as Java, Python, or JavaScript/TypeScript. Experience with frontend development using Angular, React, or Next.js, and with JavaScript, TypeScript, HTML5, and CSS3 in production environments. Experience with at least one backend technology stack: Node.js, Python (Django or Flask), or Java (Spring Boot). Experience building and consuming REST APIs and microservices. Experience with relational databases such as MySQL, PostgreSQL, SQL Server, or Oracle, and with at least one NoSQL database such as MongoDB, Redis, Cassandra, or DynamoDB. Experience using Git and development lifecycle tools such as Azure DevOps. Experience with unit testing frameworks such as JUnit, Mockito, or equivalent, and with automated testing and CI/CD pipeline implementation. Experience deploying applications, APIs, or analytics workloads to AWS, Azure, or GCP. Experience working in Agile/Scrum delivery environments. Cloud certification in AWS, Azure, or GCP Bachelor's degree in computer science, Engineering, Information Technology, Data Science, Applied Mathematics, Physics, Statistics, or a related field. Limited immigration sponsorship may be available Preferred Qualifications Experience with Docker, container-based application development, and serverless architectures. Experience with secure development practices or cybersecurity-focused application development. Hands-on experience building and deploying GenAI/LLM-powered solutions in client or production environments. Experience with one of the following Frontier GenAI Platforms: Anthropic, Google or Open AI, including hands on experience with one of the following key platforms/products; Claude API, Claude for Enterprise, tool use, extended thinking, Claude Code, Gemini API, Vertex AI Agent Builder, Grounding, Google Workspace integration, GPT-4o, Assistants API, Responses API, OpenAI Agents SDK. Experience contributing to project planning, estimation, or risk tracking. Experience mentoring junior or mid-level developers, leading code reviews, and providing development feedback. Experience partnering with product managers, designers, and business stakeholders to translate requirements into technical solutions. Strong written and verbal communication skills in cross-functional team environments. Cloud certification in AWS, Azure, or GCP. Familiarity with OpenSearch or Elasticsearch. Exposure to graph databases such as Neo4j or Memgraph. Familiarity with build tools such as Maven or Gradle. Experience with Bootstrap, jQuery, or JSP in legacy or mixed-technology environments. Familiarity with DevOps or DevSecOps practices. Knowledge of web security, GitOps, and Kubernetes customization. Basic understanding of AI/ML frameworks such as TensorFlow or PyTorch. The wage range for this role takes into account the wide range of factors that are considered in making compensation decisions including but not limited to skill sets; experience and training; licensure and certifications; and other business and organizational needs. The disclosed range estimate has not been adjusted for the applicable geographic differential associated with the location at which the position may be filled. At Deloitte, it is not typical for an individual to be hired at or near the top of the range for their role and compensation decisions are dependent on the facts and circumstances of each case. A reasonable estimate of the current range is $122,000 to $240,500. You may also be eligible to participate in a discretionary annual incentive program, subject to the rules governing the program, whereby an award, if any, depends on various factors, including, without limitation, individual and organizational performance. #CyberCtBEngg",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T01:30:13.684053+00:00",
@@ -13711,19 +13768,13 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true,
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.78,
-        "delta": 0,
-        "reason": "Full-stack software engineering; cyber domain is relevant"
-      },
-      "recovery_input_hash": "f1c376e637e619905ae5",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-27T01:30:45.715295+00:00",
-      "official_search_status": "no_match"
+      "linkedin_detail_attempted_at": "2026-09-27T04:00:40.938701+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T04:00:40.938701+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4470212529",
@@ -14753,7 +14804,7 @@
       "title": "Senior Software Engineer, Backend",
       "location": "Boston, MA",
       "posted_date": "2026-09-25",
-      "aggregator_posted_date": "2026-09-25",
+      "aggregator_posted_date": "2026-09-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-backend-at-draftkings-inc-4434321883",
@@ -14761,16 +14812,15 @@
       "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
-      "first_seen": "",
+      "first_seen": "2026-09-25T21:15:53.196405+00:00",
       "discovery_queries": {
         "linkedin": [
           "backend engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
-      "official_search_status": "no_match",
-      "source_verified_at": "2026-09-25T21:13:54.744102+00:00",
-      "verified_this_run": false
+      "recovery_methods": {},
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468518267",
@@ -15695,7 +15745,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -16243,7 +16293,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -17080,7 +17130,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470438852",
@@ -17208,7 +17258,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -17695,7 +17745,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -17720,7 +17770,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -18133,7 +18183,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -18165,7 +18215,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -18346,7 +18396,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -18507,6 +18557,31 @@
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-25T11:28:01.704188+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4406207726",
+      "source": "linkedin",
+      "company": "Google",
+      "title": "Senior Software Engineer, Performance, Platforms Infrastructure Engineering",
+      "location": "Sunnyvale, CA",
+      "posted_date": "2026-09-26",
+      "aggregator_posted_date": "2026-09-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-performance-platforms-infrastructure-engineering-at-google-4406207726",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-06T03:50:27.645294+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4460041987",
@@ -18897,7 +18972,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -19216,7 +19291,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -19650,7 +19725,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468149041",
@@ -19868,6 +19943,31 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4463636114",
+      "source": "linkedin",
+      "company": "Huntington National Bank",
+      "title": "Junior Backend Java Developer- Enterprise Payments and Credit Card",
+      "location": "Columbus, OH",
+      "posted_date": "2026-09-26",
+      "aggregator_posted_date": "2026-09-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/junior-backend-java-developer-enterprise-payments-and-credit-card-at-huntington-national-bank-4463636114",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-05T02:34:33.300648+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4472267354",
       "source": "linkedin",
       "company": "Hyra",
@@ -20072,7 +20172,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -20811,7 +20911,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -21333,7 +21433,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -21676,7 +21776,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-generative-ai-engineer-at-joblet-ai-4472288860",
       "official_url": "",
-      "description": "",
+      "description": "Role : Senior Generative AI Engineer Location : Laveen, AZ, United States Job Type: Full-Time Payout : Competitive, based on experience Role Overview: We are seeking an Advanced GenAI Engineer to architect, fine-tune, and deploy cutting-edge generative AI models, agentic frameworks, and enterprise LLM solutions in Laveen, AZ. You will design retrieval-augmented generation (RAG) architectures, evaluate foundation models, and productionize intelligent autonomous systems. Key Responsibilities: Architect, implement, and optimize generative AI pipelines, LLM fine-tuning, and RAG architectures. Develop AI agents, multi-agent orchestrations, and prompt engineering frameworks for complex industrial applications. Benchmark model performance, latency, context utilization, hallucination rates, and inference costs. Integrate LLMs securely with enterprise knowledge bases, vector databases (Pinecone, Milvus, Qdrant), and APIs. Implement AI safety, guardrails, data governance, and compliance protocols across production endpoints. Required Skills & Qualifications: Master's or Bachelor's degree in Computer Science, Artificial Intelligence, Data Science, or related technical field. 4+ years of machine learning experience with 2+ years dedicated to Generative AI, LLMs, and NLP. Strong proficiency in Python, PyTorch, LangChain, LlamaIndex, Hugging Face, and vector search systems. Proven experience with fine-tuning techniques (LoRA, QLoRA) and RLHF/DPO methodologies. Excellent technical communication, system architecture design, and problem-solving abilities. More About the Opportunity: Be at the forefront of generative artificial intelligence with top-tier compensation, annual performance bonuses, comprehensive benefits, and 401(k) matching. Equal Opportunity Employer: We are an equal opportunity employer dedicated to building a diverse and collaborative workforce. Apply Now!",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-26T21:14:55.076656+00:00",
@@ -21686,9 +21786,14 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
-      "verified_this_run": true,
-      "recovery_status": "filtered"
+      "linkedin_detail_attempted_at": "2026-09-27T04:00:34.210462+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T04:00:34.210462+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469953854",
@@ -21928,13 +22033,12 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_attempted_at": "2026-09-27T01:30:38.583898+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T01:30:38.583898+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -22028,7 +22132,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-entry-level-at-jobright-ai-4471072365",
       "official_url": "",
-      "description": "",
+      "description": "Jobright is your personal AI job search agent that transforms the way you do job search from solo, time-consuming efforts to a fast, expert-guided journey, simplifying every job search step and accelerating your route to the best job outcomes. As an AI Engineer, Entry Level, you will work onsite with engineers, researchers, and product leaders to build and evaluate AI capabilities used by real job seekers. Why Join Us • Build real, production AI agents used by real users • High ownership and impact • Work at the intersection of AI, agents, and product • Shape how people experience AI-driven job search Responsibilities • Contribute to AI and machine-learning features for search, recommendations, and personalisation • Build data preparation, evaluation, and experimentation workflows • Work with prompts, embeddings, retrieval, structured outputs, and LLM APIs • Integrate AI capabilities into reliable product and backend systems • Investigate model quality, latency, and failure cases • Collaborate closely with engineering, product, and data teams onsite Qualification Required • Bachelor's or master's degree in Computer Science, Artificial Intelligence, Machine Learning, or a related field • Strong Python programming skills • Understanding of machine learning, NLP, or information retrieval fundamentals • Familiarity with APIs, Git, debugging, and basic software engineering practices • Ability to work onsite in the SF Bay Area Preferred • Experience with LLM applications, RAG, embeddings, or model evaluation • Familiarity with PyTorch, TensorFlow, scikit-learn, or cloud AI services • Experience building AI prototypes or data pipelines • Interest in AI agents, recommendation systems, or search technology",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T01:30:13.684053+00:00",
@@ -22044,19 +22148,14 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
-      "verified_this_run": true,
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.76,
-        "delta": 0,
-        "reason": "Entry-level AI engineering matches target seniority"
-      },
-      "recovery_input_hash": "16d1a1607518dbd1a804",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-27T01:30:45.715295+00:00",
-      "official_search_status": "no_match"
+      "linkedin_detail_attempted_at": "2026-09-27T04:00:34.210462+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T04:00:34.210462+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469007744",
@@ -23066,7 +23165,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -23092,7 +23191,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -23488,7 +23587,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -23513,7 +23612,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -23611,7 +23710,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-ai-ml-engineer-at-mantech-4470534436",
       "official_url": "",
-      "description": "",
+      "description": "MANTECH seeks a motivated, career and customer-oriented Senior AI ML Engineer . This is currently a hybrid position with two to three days onsite in Ashburn, VA . In this role, you will collaborate within a cross-functional team to develop new Artificial Intelligence/Machine Learning (AI/ML) based solutions into operational pipelines to deliver mission impact for U.S. Customs and Border Protection (CBP). The ideal candidate will have deep expertise and experience with predictive modeling lifecycles, hands-on experience with machine learning tools and frameworks, and a pragmatic, customer-centric approach to applying ML models to solve complex problems. Each day CBP oversees the massive flow of people, capital, and products that enter and depart the United States via air, land, sea, and cyberspace. The volume and complexity of both physical and virtual border crossings require the application of solutions to aid officers in detecting threats while promoting efficient trade and travel. Responsibilities Include But Are Not Limited To Lead the integration and deployment of trained AI/ML models into production environments (e.g., cloud, edge devices) using MLOps best practices. Develop and optimize model training & inference pipelines for real-time execution, and efficiently handle large-scale data processing. Work with data science teams to structure automated ML model health monitoring and refresh capabilities. Implement continuous integration, delivery and training (CI/CD/CT) workflows with commercial and open-source modeling platforms/services. Coordinate with Data Science and Engineering teams to build scalable feature stores for optimal model training & execution workflows. Research, evaluate and recommend new tools, applications, software packages for MLOps engineering that can be adopted and approved for use in the CBP environment. Collaborate with cross-functional teams (e.g., Software Engineering, Data Science) to integrate and test multiple candidate AI/ML models and applications for operational assessment. Required Qualifications HS Diploma/GED and 15-20 years of experience, AS/AA and 13-18 years, BS/BA and 7+ years or MS/MA/MBA and 5+ years or PhD/Doctorate and 3+ years. Hands-on experience with LLMs such as Gemini, Llama, Mistral, or other open-source and commercial models. Experience with LLM application frameworks such as LangChain, LlamaIndex, or equivalent custom frameworks. Ability to optimize LLM systems for latency, throughput, scalability, reliability, GPU utilization, and inference cost. Experience deploying machine learning or LLM services in AWS, Azure, or Google Cloud. Demonstrated experience designing and deploying LLM solutions, including the following: Retrieval-augmented generation (RAG) Agentic workflows and tool calling Prompt engineering and structured outputs Model fine-tuning, e.g. LoRA Embedding-based search and semantic retrieval Strong understanding of transformer architectures, tokenization, embeddings, context windows, inference parameters, and common LLM failure modes. Experience evaluating LLM applications for accuracy, relevance, hallucination, safety, latency, and cost. Experience with vector databases or search technologies such as OpenSearch, Elasticsearch, Milvus, Qdrant, Pinecone, Weaviate, or pgvector. Experience designing and integrating RESTful APIs and microservices using frameworks such as FastAPI. Working knowledge of SQL and experience with relational, document, or NoSQL databases. Familiarity with Docker, Kubernetes, CI/CD pipelines, monitoring, logging, and production incident troubleshooting.' Preferred Qualifications Master’s degree or Ph.D. in Computer Science, Machine Learning, Natural Language Processing, or a related discipline. Experience training, fine-tuning, quantizing, or serving open-source LLMs using tools such as PyTorch, Ollama, or TensorRT-LLM. Understanding of AI security risks, including prompt injection, data leakage, unsafe tool execution, model abuse, and adversarial inputs. Experience building multi-agent systems, multimodal applications, long-context workflows, or human-in-the-loop AI systems. Knowledge of advanced retrieval techniques, including hybrid search, reranking, query expansion, metadata filtering, and retrieval evaluation. Experience in LLM projects from initial requirements and proof of concept through production deployment and ongoing optimization. Strong knowledge of software engineering practices, including version control, code review, automated testing, system design, and technical documentation. Clearance Requirements Must be a U.S. Citizen and be able to obtain and maintain a CBP suitability prior to starting this position, Must be able to obtain and maintain a Top-Secret clearance. Physical Requirements The person in this position needs to occasionally move about inside the office to access file cabinets, office machinery, or to communicate with co-workers, management, and customers, which may involve delivering presentations.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-26T21:14:55.076656+00:00",
@@ -23622,8 +23721,13 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
-      "verified_this_run": true,
-      "recovery_status": "filtered"
+      "verified_this_run": false,
+      "recovery_status": "filtered",
+      "linkedin_detail_attempted_at": "2026-09-27T04:00:40.938701+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T04:00:40.938701+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4469336564",
@@ -23699,7 +23803,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -23724,7 +23828,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -24296,7 +24400,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -24322,7 +24426,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -24403,6 +24507,37 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4462823377",
+      "source": "linkedin",
+      "company": "Microsoft",
+      "title": "Senior Software Engineer",
+      "location": "Redmond, WA",
+      "posted_date": "2026-09-26",
+      "aggregator_posted_date": "2026-09-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-at-microsoft-4462823377",
+      "official_url": "",
+      "description": "Overview At Microsoft, our mission is to empower every person and every organization on the planet to achieve more. As AI becomes an increasingly important part of how people work, organizations need trusted ways to discover, manage, and govern AI-powered experiences at scale. The Agent Registry & Governance team builds and owns the foundational platform and administration experiences that enable organizations to discover, manage, and govern agents across Agent 365. The platform serves as the governed source of truth for agents and their associated artifacts, including tools, skills, and MCP servers, enabling lifecycle management, auditability, governance, analytics, and platform extensibility at scale. We are looking for a Senior Software Engineer to join our team! Our platform capabilities include APIs for agent registration, inventory, lifecycle management, and governance, as well as a governance rules engine and semantic registry capabilities. We provide administrators with the controls, insights, and governance capabilities they need to manage agents and their associated artifacts securely and responsibly at scale. This is an opportunity to build highly scalable cloud services, APIs, and administration experiences that form the foundation for agent management and governance across Agent 365. You will help shape platform capabilities that support the growth of the Agent 365 ecosystem while partnering across teams to deliver secure, reliable, and scalable solutions for AI-powered experiences. Responsibilities Design and develop scalable services and APIs that power the Agent Registry and governance experiences across Agent 365. Drive the design and implementation of capabilities for agent registration, inventory, lifecycle management, governance, and administration. Lead end-to-end delivery of platform features and services, from technical design through implementation, deployment, and live-site operations. Build reliable, secure, and extensible platform components that support first-party and third-party integrations. Design and implement governance capabilities such as policy evaluation, auditability, metadata management, lifecycle controls, and enforcement workflows. Improve the scalability, reliability, performance, security, and observability of production services. Collaborate with product managers, designers, architects, and partner engineering teams to translate customer and platform requirements into robust, well-designed solutions. Contribute to technical design reviews, architecture discussions, and engineering best practices, and mentor engineers through code reviews, design discussions, and technical guidance. Qualifications Required Qualifications: Bachelor's Degree in Computer Science or related technical field AND 4+ years technical engineering experience with coding in languages including, but not limited to, C, C++, C#, Java, JavaScript, or Python OR equivalent experience. Other Requirements Ability to meet Microsoft, customer and/or government security screening requirements are required for this role. These requirements include but are not limited to the following specialized security screenings: Microsoft Cloud Background Check: This position will be required to pass the Microsoft Cloud background check upon hire/transfer and every two years thereafter. Preferred Qualifications Bachelor's Degree in Computer Science, Engineering, or a related technical field, or equivalent practical experience. 7+ years of professional software engineering experience building scalable services, APIs, distributed systems, or cloud applications. Experience designing, developing, and operating production software and services. Experience driving technical design and delivering end-to-end solutions across multiple services or components. Experience with software engineering fundamentals, including coding, debugging, testing, performance optimization, and code quality. Experience with cloud platforms, distributed systems, data platforms, search technologies, or large-scale backend services. Ability to collaborate effectively across disciplines and influence technical decisions across teams. Passion for building reliable, scalable platforms that enable customers and partners to succeed. Experience developing cloud services and applications using C# and .NET. Experience with Azure, React, and modern web application development. Experience building scalable APIs, distributed systems, or large-scale backend services. #CAP #A365 #Agent365 Software Engineering IC4 - The typical base pay range for this role across the U.S. is USD $119,800 - $234,700 per year. There is a different range applicable to specific work locations, within the San Francisco Bay area and New York City metropolitan area, and the base pay range for this role in those locations is USD $160,200 - $261,000 per year. Certain roles may be eligible for benefits and other compensation. Find additional benefits and pay information here: https://careers.microsoft.com/us/en/us-corporate-pay This position will be open for a minimum of 5 days, with applications accepted on an ongoing basis until the position is filled. Microsoft is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to age, ancestry, citizenship, color, family or medical care leave, gender identity or expression, genetic information, immigration status, marital status, medical condition, national origin, physical or mental disability, political affiliation, protected veteran or military status, race, ethnicity, religion, sex (including pregnancy), sexual orientation, or any other characteristic protected by applicable local laws, regulations and ordinances. If you need assistance with religious accommodations and/or a reasonable accommodation due to a disability during the application process, read more about requesting accommodations.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-27T04:00:08.411781+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "linkedin_detail_attempted_at": "2026-09-27T04:00:34.210462+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T04:00:34.210462+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470424492",
@@ -24614,7 +24749,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -25373,7 +25508,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -25476,8 +25611,11 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true,
+      "linkedin_detail_attempted_at": "2026-09-27T04:00:40.938701+00:00",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "linkedin_http_429",
       "recovery_status": "filtered"
     },
     {
@@ -26727,7 +26865,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -26752,7 +26890,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -26861,7 +26999,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -26886,7 +27024,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true,
       "recovery_status": "filtered"
     },
@@ -26918,18 +27056,17 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true,
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
-        "confidence": 0.82,
-        "delta": 0,
-        "reason": "Python and React full-stack development fit"
+        "confidence": 0.86,
+        "delta": 4,
+        "reason": "Full-stack Python and React match target"
       },
       "recovery_input_hash": "0607893f12a9f27278ec",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-27T01:30:45.715295+00:00",
+      "official_search_attempted_at": "2026-09-27T04:00:39.788196+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -27695,7 +27832,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -27857,11 +27994,11 @@
         ]
       },
       "recovery_methods": {},
-      "jd_recovery_at": "2026-09-27T01:30:13.684053+00:00",
+      "jd_recovery_at": "2026-09-27T04:00:08.411781+00:00",
       "enrichment_method": "exact_indeed_peer",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -28139,7 +28276,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -28216,7 +28353,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -28501,7 +28638,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -28760,7 +28897,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -28923,7 +29060,7 @@
         }
       },
       "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -28933,7 +29070,7 @@
       },
       "recovery_input_hash": "7616e811a8257aabca99",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-27T01:30:45.715295+00:00",
+      "official_search_attempted_at": "2026-09-27T04:00:39.788196+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -28965,7 +29102,7 @@
         }
       },
       "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -28975,7 +29112,7 @@
       },
       "recovery_input_hash": "7a112ff65d22a30d2285",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-27T01:30:45.715295+00:00",
+      "official_search_attempted_at": "2026-09-27T04:00:39.788196+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -29007,7 +29144,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460221173",
@@ -29191,6 +29328,48 @@
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
+      "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4472411294",
+      "source": "linkedin",
+      "company": "Peregrine Advisors",
+      "title": "Full Stack Developer (Python, React.js)",
+      "location": "Washington, DC",
+      "posted_date": "2026-09-26",
+      "aggregator_posted_date": "2026-09-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-developer-python-react-js-at-peregrine-advisors-4472411294",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-27T04:00:08.411781+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "51d4e107793e55490fdd",
+          "attempted_at": "2026-09-27T04:00:39.788196+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
+      "verified_this_run": true,
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.86,
+        "delta": 4,
+        "reason": "Full-stack Python and React match target"
+      },
+      "recovery_input_hash": "fc131cd86733b6ba7498",
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-09-27T04:00:39.788196+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -29645,7 +29824,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -31038,7 +31217,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -32569,7 +32748,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -32621,7 +32800,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4266581967",
@@ -32641,12 +32820,11 @@
       "first_seen": "2026-09-08T05:31:55.312235+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "backend engineer"
+          "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -32793,7 +32971,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -33180,7 +33358,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -33637,7 +33815,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -34455,7 +34633,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -34485,7 +34663,7 @@
       "jd_recovery_at": "2026-09-26T19:10:11.295841+00:00",
       "enrichment_method": "tentative_cache",
       "enrichment_status": "tentative",
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -34742,7 +34920,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -34795,7 +34973,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -35107,11 +35285,11 @@
         ]
       },
       "recovery_methods": {},
-      "jd_recovery_at": "2026-09-27T01:30:13.684053+00:00",
+      "jd_recovery_at": "2026-09-27T04:00:08.411781+00:00",
       "enrichment_method": "exact_indeed_peer",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -35378,7 +35556,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -35403,7 +35581,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -35562,7 +35740,7 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4462041991",
@@ -35682,7 +35860,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -35708,7 +35886,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -37082,6 +37260,31 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4462331235",
+      "source": "linkedin",
+      "company": "Tata Consultancy Services",
+      "title": "Sr Full Stack Developer with ReactJS and Java Microservice",
+      "location": "Plano, TX",
+      "posted_date": "2026-09-26",
+      "aggregator_posted_date": "2026-09-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-full-stack-developer-with-reactjs-and-java-microservice-at-tata-consultancy-services-4462331235",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-05T02:34:33.300648+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4460063926",
       "source": "linkedin",
       "company": "Tata Consultancy Services",
@@ -37425,18 +37628,17 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true,
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
-        "confidence": 0.88,
+        "confidence": 0.97,
         "delta": 5,
-        "reason": "Software Engineer I directly matches target seniority"
+        "reason": "Software Engineer I directly fits early-career target"
       },
       "recovery_input_hash": "89d513ff284d44abfa32",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-27T01:30:45.715295+00:00",
+      "official_search_attempted_at": "2026-09-27T04:00:39.788196+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -37622,7 +37824,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -38493,7 +38695,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -39036,7 +39238,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -39315,7 +39517,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/usa-senior-software-engineer-at-vizio-4470541260",
       "official_url": "",
-      "description": "",
+      "description": "Position Summary...As a Senior Software Engineer at Walmart, you will lead the delivery of scalable, secure software solutions by collaborating with cross-functional teams. You will drive the full software development lifecycle, including design, coding, testing, and deployment, while integrating AI/ML components to enhance system intelligence. This role requires strong technical judgment, continuous improvement, and proactive problem-solving to meet business objectives. You will mentor peers, promote engineering excellence, and ensure high-quality outcomes aligned with Walmart’s standards, contributing to innovative and reliable platform development that supports customer and business needs. What you'll do...About the team: The team focuses on performance engineering within the VIZIO product line, ensuring all performance requirements are thoroughly validated. It utilizes an in-house developed reporting tool for comprehensive data analytics. Near-term objectives include benchmarking against competitor product lines to maintain competitive advantage. The team collaborates closely to deliver high-quality software solutions, emphasizing continuous development, debugging, and testing. Members apply strong technical skills in platform design, product strategy, and iterative development to drive innovation and maintain system reliability. This team plays a critical role in enhancing product performance and supporting business goals through data-driven insights. What you'll do: Own scoped feature and model delivery through collaboration with engineering teams, managing implementation, iteration, testing, and support. Write clean, efficient, and reliable code across multiple languages, driving full software development lifecycle including CI/CD and automated testing. Integrate AI and ML components to enhance software intelligence and leverage generative AI tools to improve development velocity. Assist in converting high-level designs into detailed, scalable, and maintainable solutions aligned with platform objectives. Conduct code reviews, debugging, and defect management to ensure software quality and performance. Monitor application performance and support continuous integration and delivery practices. Mentor peers, promote engineering best practices, and contribute to innovation and continuous improvement initiatives. What you'll bring: Extensive experience in software development with proficiency in languages such as JavaScript, Python, Java, Rust, Dart, and C++. Strong expertise in object-oriented programming, code review, debugging, and documentation-based coding practices. Proven ability to deliver scoped features and models through collaborative, iterative development and continuous integration. Demonstrated skills in AI/ML integration and leveraging generative AI tools to enhance development efficiency. Solid understanding of platform design, product strategy, and technical solution design aligned with business objectives. Commitment to engineering excellence, technical ownership, and proactive problem-solving in complex environments. Effective collaboration and communication skills to engage cross-functional teams and stakeholders. At Walmart, we offer competitive pay as well as performance-based bonus awards and other great benefits for a happier mind, body, and wallet. Health benefits include medical, vision and dental coverage. Financial benefits include 401(k), stock purchase and company-paid life insurance. Paid time off benefits include PTO (including sick leave), parental leave, family care leave, bereavement, jury duty, and voting. Other benefits include short-term and long-term disability, company discounts, Military Leave Pay, adoption and surrogacy expense reimbursement, and more. You will also receive PTO and/or PPTO that can be used for vacation, sick leave, holidays, or other purposes. The amount you receive depends on your job classification and length of employment. It will meet or exceed the requirements of paid sick leave laws, where applicable. For information about PTO, see https://one.walmart.com/notices. Live Better U is a Walmart-paid education benefit program for full-time and part-time associates in Walmart and Sam's Club facilities. Programs range from high school completion to bachelor's degrees, including English Language Learning and short-form certificates. Tuition, books, and fees are completely paid for by Walmart. Eligibility requirements apply to some benefits and may depend on your job classification and length of employment. Benefits are subject to change and may be subject to a specific plan or program terms. For Information About Benefits And Eligibility, See One.Walmart. The annual salary range for this position is $90,000.00 - $180,000.00 Additional compensation includes annual or quarterly performance bonuses. Additional compensation for certain positions may also include : Stock ㅤ ㅤ ㅤ ㅤ ‎ Minimum Qualifications... Outlined below are the required minimum qualifications for this position. If none are listed, there are no minimum qualifications. Option 1: Bachelor's degree in computer science, computer engineering, computer information systems, software engineering, or related area and 3 years’ experience in software engineering or related area. Option 2: 5 years’ experience in software engineering or related area. Preferred Qualifications... Outlined below are the optional preferred qualifications for this position. If none are listed, there are no preferred qualifications. Master’s degree in Computer Science, Computer Engineering, Computer Information Systems, Software Engineering, or related area and 1 year's experience in software engineering or related area., We value candidates with a background in creating inclusive digital experiences, demonstrating knowledge in implementing Web Content Accessibility Guidelines (WCAG) 2.2 AA standards, assistive technologies, and integrating digital accessibility seamlessly. The ideal candidate would have knowledge of accessibility best practices and join us as we continue to create accessible products and services following Walmart’s accessibility standards and guidelines for supporting an inclusive culture. Primary Location... 14901 QUORUM DR, DALLAS, TX 75254-7521, United States of America Walmart and its subsidiaries are committed to maintaining a drug-free workplace and has a no tolerance policy regarding the use of illegal drugs and alcohol on the job. This policy applies to all employees and aims to create a safe and productive work environment.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-26T05:20:14.173724+00:00",
@@ -39325,9 +39527,14 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
-      "verified_this_run": true,
-      "recovery_status": "filtered"
+      "linkedin_detail_attempted_at": "2026-09-27T04:00:34.210462+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T04:00:34.210462+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468906267",
@@ -39546,7 +39753,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -39597,11 +39804,11 @@
         ]
       },
       "recovery_methods": {},
-      "jd_recovery_at": "2026-09-27T01:30:13.684053+00:00",
+      "jd_recovery_at": "2026-09-27T04:00:08.411781+00:00",
       "enrichment_method": "exact_indeed_peer",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -40208,7 +40415,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -40259,13 +40466,12 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_attempted_at": "2026-09-27T01:30:38.583898+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T01:30:38.583898+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -40452,7 +40658,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true,
       "recovery_status": "filtered"
     },
@@ -40478,7 +40684,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -40539,7 +40745,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -40565,7 +40771,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -40702,7 +40908,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -40727,7 +40933,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -40752,7 +40958,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -41095,7 +41301,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -41213,7 +41419,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T01:30:13.684053+00:00",
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": true
     },
     {
@@ -41750,6 +41956,31 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4361235241",
+      "source": "linkedin",
+      "company": "Zoox",
+      "title": "Senior/Staff Software Engineer - Ride and Fleet Services",
+      "location": "Foster City, CA",
+      "posted_date": "2026-09-26",
+      "aggregator_posted_date": "2026-09-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-staff-software-engineer-ride-and-fleet-services-at-zoox-4361235241",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-05T02:34:33.300648+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468598243",
