@@ -1,10 +1,10 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-09-27 07:47 PDT
-- Snapshot (UTC): 2026-09-27T14:47:34.718893+00:00
-- Jobs: 10 (Tier A/B only)
+- Updated (PT): 2026-09-27 16:47 PDT
+- Snapshot (UTC): 2026-09-27T23:47:17.384610+00:00
+- Jobs: 9 (Tier A/B only)
 - Last 24 hours: 0
-- Last 3 days: 10
+- Last 3 days: 9
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
@@ -18,5 +18,4 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | B | 81 | official | Google | Software Engineer III, AI/ML, Google Cloud Platforms | Sunnyvale, CA, USA | 2026-09-25 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/126978429143655110-software-engineer-iii-ai-ml-google-cloud-platforms) |
 | B | 81 | official | Microsoft | Software Engineer I - CTJ - Poly | United States, Virginia, Reston | 2026-09-25 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556995496) |
 | B | 78 | official | CVS Health | Software Development Engineer | PA - Work from home | 2026-09-25 | 1to3d | CVS | unreviewed | official_canonical | [open](https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/PA---Work-from-home/Software-Development-Engineer_R1038482) |
-| B | 84 | official | ByteDance | Student Researcher - (Seed Model - LLM) - 2027 Start | San Jose, California, United States of America | - | 1to3d | ByteDance | unreviewed | official_canonical | [open](https://joinbytedance.com/search/7623541709721307445) |
 | B | 80 | official | Meta | Software Engineer, Systems | Bellevue, WA; Menlo Park, CA; Washington, DC; New York, NY | - | 1to3d | Meta | unreviewed | official_canonical | [open](https://www.metacareers.com/jobs/1104959738740874) |
