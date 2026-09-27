@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-27T15:21:00.530466+00:00",
+  "generated_at": "2026-09-27T20:50:57.616703+00:00",
   "collector": {
-    "commit": "825e064641963608569af11f620c5f89846b5191",
+    "commit": "5fefb0ea231a1256486d391f6ed9bcd9f1a809f0",
     "dirty": false
   },
   "sources": {
@@ -11,14 +11,14 @@
       "healthy": false,
       "status": "partial",
       "reason": "focused query coverage",
-      "last_attempt_at": "2026-09-27T04:00:08.411781+00:00",
+      "last_attempt_at": "2026-09-27T20:50:30.947234+00:00",
       "last_success_at": "2026-09-22T18:01:45.946101+00:00",
-      "last_partial_at": "2026-09-27T04:00:08.411781+00:00",
-      "partial_collected_count": 121,
-      "partial_fresh_kept": 116,
-      "partial_carried_count": 1375,
+      "last_partial_at": "2026-09-27T20:50:30.947234+00:00",
+      "partial_collected_count": 108,
+      "partial_fresh_kept": 106,
+      "partial_carried_count": 1490,
       "last_attempt_collector": {
-        "commit": "042ffce395c3924cc830a8ddf6ed375129974671",
+        "commit": "5fefb0ea231a1256486d391f6ed9bcd9f1a809f0",
         "dirty": false
       },
       "last_success_collector": {
@@ -31,7 +31,7 @@
       "last_success_source_provenance": {
         "implementation": "sources.linkedin_local"
       },
-      "last_attempt_count": 116,
+      "last_attempt_count": 106,
       "consecutive_failures": 0,
       "query_stats": [
         {
@@ -42,11 +42,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 50,
           "unique_jobs": 50,
-          "unique_contribution": 48,
-          "first_pass_survivors": 47,
+          "unique_contribution": 49,
+          "first_pass_survivors": 48,
           "original_postings_resolved": 0,
-          "jds_resolved": 17,
-          "elapsed_seconds": 8.336
+          "jds_resolved": 7,
+          "elapsed_seconds": 8.446
         },
         {
           "query": "ai engineer",
@@ -57,10 +57,10 @@
           "raw_jobs": 30,
           "unique_jobs": 30,
           "unique_contribution": 30,
-          "first_pass_survivors": 27,
+          "first_pass_survivors": 30,
           "original_postings_resolved": 0,
-          "jds_resolved": 9,
-          "elapsed_seconds": 4.881
+          "jds_resolved": 1,
+          "elapsed_seconds": 5.111
         },
         {
           "query": "backend engineer",
@@ -70,11 +70,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 20,
           "unique_jobs": 20,
-          "unique_contribution": 12,
+          "unique_contribution": 9,
           "first_pass_survivors": 19,
           "original_postings_resolved": 0,
-          "jds_resolved": 3,
-          "elapsed_seconds": 3.224
+          "jds_resolved": 0,
+          "elapsed_seconds": 3.429
         },
         {
           "query": "full-stack engineer",
@@ -84,11 +84,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 20,
           "unique_jobs": 20,
-          "unique_contribution": 20,
-          "first_pass_survivors": 20,
+          "unique_contribution": 12,
+          "first_pass_survivors": 17,
           "original_postings_resolved": 0,
           "jds_resolved": 1,
-          "elapsed_seconds": 3.535
+          "elapsed_seconds": 3.426
         },
         {
           "query": "machine learning engineer",
@@ -98,58 +98,57 @@
           "stop_reason": "page_budget",
           "raw_jobs": 20,
           "unique_jobs": 20,
-          "unique_contribution": 11,
-          "first_pass_survivors": 18,
+          "unique_contribution": 8,
+          "first_pass_survivors": 20,
           "original_postings_resolved": 0,
-          "jds_resolved": 4,
-          "elapsed_seconds": 3.25
+          "jds_resolved": 1,
+          "elapsed_seconds": 3.288
         }
       ],
       "detail_enrichment": {
-        "eligible": 11,
+        "eligible": 25,
         "cache_reused": 0,
-        "requests": 3,
-        "responses": 3,
+        "requests": 8,
+        "responses": 8,
+        "successful_responses": 8,
         "request_limit": 8,
-        "budget_deferred": 0,
-        "budget_exhausted": false,
+        "budget_deferred": 15,
+        "budget_exhausted": true,
         "retry_deferred": 1,
         "retry_attempts": 0,
-        "exact_official": 0,
-        "official_deferred": 0,
-        "rate_limited": true,
-        "jds_resolved": 2,
+        "exact_official": 1,
+        "official_deferred": 1,
+        "rate_limited": false,
+        "jds_resolved": 8,
         "external_apply_urls": 0,
         "failed": 0,
-        "detail_jds_fetched": 2,
+        "detail_jds_fetched": 8,
         "intentional_skips": 0,
-        "blocked": "blocked with HTTP 429",
+        "blocked": "",
         "scrapling_requests": 0,
         "scrapling_jds_resolved": 0,
         "scrapling_error": "",
-        "remaining_no_jd": 9,
+        "remaining_no_jd": 17,
         "failure_reasons": {
-          "linkedin_http_429": 2,
-          "no_description": 7
+          "linkedin_http_429": 1,
+          "no_description": 15,
+          "official_detail_deferred": 1
         },
         "cooldown_active": false,
         "probe": false,
         "status": "active"
       },
-      "last_good_count": 1491,
-      "detail_last_attempt_at": "2026-09-27T04:00:39.788196+00:00",
-      "detail_429_streak": 2,
-      "detail_cooldown_until": "2026-09-28T04:00:39.788196+00:00",
+      "last_good_count": 1596,
+      "detail_last_attempt_at": "2026-09-27T20:50:57.617778+00:00",
+      "detail_429_streak": 0,
+      "detail_cooldown_until": "",
       "official_enrichment": {
-        "cache": 10,
-        "exact_indeed_peer": 4,
-        "tentative_cache": 2,
-        "dedicated_matches": 1,
-        "remote_exact_peer": 1,
+        "dedicated_matches": 10,
+        "remote_exact_peer": 9,
         "search_requests": 0,
         "search_provider": "duckduckgo",
         "official_page_requests": 0,
-        "remaining_no_jd": 104
+        "remaining_no_jd": 99
       },
       "search_collection": {
         "cooldown_active": false,
@@ -165,21 +164,21 @@
       "search_query_cursor": 8,
       "search_429_streak": 0,
       "search_cooldown_until": "",
-      "detail_cooldown_reason": "repeated HTTP 429",
-      "detail_status": "cooldown",
+      "detail_cooldown_reason": "",
+      "detail_status": "active",
       "runner_states": {
         "mac": {
-          "search_last_attempt_at": "2026-09-27T04:00:08.411781+00:00",
+          "search_last_attempt_at": "2026-09-27T20:50:30.947234+00:00",
           "search_429_streak": 0,
           "search_cooldown_until": "",
           "detail_status": "active",
-          "detail_last_attempt_at": "2026-09-27T04:00:08.411781+00:00",
+          "detail_last_attempt_at": "2026-09-27T20:50:57.617778+00:00",
           "detail_429_streak": 0,
           "detail_cooldown_until": "",
           "detail_cooldown_reason": ""
         }
       },
-      "last_attempt_elapsed_seconds": 31.222,
+      "last_attempt_elapsed_seconds": 26.565,
       "failure_cause": "",
       "previous_failure": {}
     },
@@ -311,5 +310,20 @@
       "failure_cause": "403",
       "previous_failure": {}
     }
-  }
+  },
+  "local_recovery": {
+    "run_at": "2026-09-27T20:50:57.617778+00:00",
+    "elapsed_seconds": 25.954,
+    "official_jds_recovered": 4,
+    "linkedin_detail_recoveries": 8,
+    "post_429_jds_recovered": null,
+    "targeted_linkedin_search_requests": 0,
+    "targeted_linkedin_detail_jds": 0,
+    "targeted_linkedin_rate_limited": false,
+    "generic_jobs_processed": 22,
+    "search_requests": 14,
+    "official_page_requests": 0,
+    "linkedin_rate_limited": false
+  },
+  "mac_last_completed_at": "2026-09-27T20:51:23.602444+00:00"
 }
