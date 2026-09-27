@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 1596,
+  "count": 1598,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-09-27T20:50:30.947234+00:00",
+    "scraped_at": "2026-09-27T22:00:04.706488+00:00",
     "collector": {
-      "commit": "5fefb0ea231a1256486d391f6ed9bcd9f1a809f0",
+      "commit": "4df112f06d8e9a74ea2de44da341819a64cb0547",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 26.565,
+    "elapsed_seconds": 30.579,
     "query_stats": [
       {
         "query": "software engineer",
@@ -23,10 +23,10 @@
         "raw_jobs": 50,
         "unique_jobs": 50,
         "unique_contribution": 49,
-        "first_pass_survivors": 48,
+        "first_pass_survivors": 47,
         "original_postings_resolved": 0,
-        "jds_resolved": 7,
-        "elapsed_seconds": 8.446
+        "jds_resolved": 11,
+        "elapsed_seconds": 8.344
       },
       {
         "query": "ai engineer",
@@ -39,8 +39,8 @@
         "unique_contribution": 30,
         "first_pass_survivors": 30,
         "original_postings_resolved": 0,
-        "jds_resolved": 1,
-        "elapsed_seconds": 5.111
+        "jds_resolved": 5,
+        "elapsed_seconds": 4.914
       },
       {
         "query": "backend engineer",
@@ -53,8 +53,8 @@
         "unique_contribution": 9,
         "first_pass_survivors": 19,
         "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 3.429
+        "jds_resolved": 3,
+        "elapsed_seconds": 3.207
       },
       {
         "query": "full-stack engineer",
@@ -64,11 +64,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 12,
-        "first_pass_survivors": 17,
+        "unique_contribution": 11,
+        "first_pass_survivors": 16,
         "original_postings_resolved": 0,
-        "jds_resolved": 1,
-        "elapsed_seconds": 3.426
+        "jds_resolved": 3,
+        "elapsed_seconds": 3.284
       },
       {
         "query": "machine learning engineer",
@@ -81,55 +81,56 @@
         "unique_contribution": 8,
         "first_pass_survivors": 20,
         "original_postings_resolved": 0,
-        "jds_resolved": 1,
-        "elapsed_seconds": 3.288
+        "jds_resolved": 5,
+        "elapsed_seconds": 3.227
       }
     ],
     "detail_enrichment": {
-      "eligible": 21,
-      "cache_reused": 0,
-      "requests": 1,
-      "responses": 1,
-      "successful_responses": 1,
-      "request_limit": 1,
-      "budget_deferred": 19,
+      "eligible": 19,
+      "cache_reused": 9,
+      "requests": 8,
+      "responses": 8,
+      "successful_responses": 8,
+      "request_limit": 8,
+      "budget_deferred": 1,
       "budget_exhausted": true,
       "retry_deferred": 0,
       "retry_attempts": 0,
       "exact_official": 1,
       "official_deferred": 1,
       "rate_limited": false,
-      "jds_resolved": 1,
+      "jds_resolved": 17,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 1,
+      "detail_jds_fetched": 8,
       "intentional_skips": 0,
       "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 20,
+      "remaining_no_jd": 2,
       "failure_reasons": {
-        "no_description": 19,
-        "official_detail_deferred": 1
+        "official_detail_deferred": 1,
+        "no_description": 1
       },
       "cooldown_active": false,
-      "probe": true,
-      "status": "probe"
+      "probe": false,
+      "status": "active"
     },
     "official_enrichment": {
-      "dedicated_matches": 10,
-      "remote_exact_peer": 9,
+      "cache": 8,
+      "dedicated_matches": 2,
+      "remote_exact_peer": 1,
       "search_requests": 0,
       "search_provider": "duckduckgo",
       "official_page_requests": 0,
-      "remaining_no_jd": 99
+      "remaining_no_jd": 98
     },
     "partial": true,
     "blocked_reason": "focused query coverage",
-    "collected_count": 108,
-    "carried_count": 1490,
-    "jd_recovery_at": "2026-09-27T20:50:57.617778+00:00"
+    "collected_count": 107,
+    "carried_count": 1495,
+    "jd_recovery_at": "2026-09-27T22:00:35.375502+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -1731,7 +1732,9 @@
     "linkedin|id|4470812325": "2026-09-27T20:50:30.947234+00:00",
     "linkedin|id|4461812474": "2026-09-06T17:53:56.641470+00:00",
     "linkedin|id|4235568776": "2026-09-06T17:53:56.641470+00:00",
-    "linkedin|id|4426178293": "2026-09-06T03:50:27.645294+00:00"
+    "linkedin|id|4426178293": "2026-09-06T03:50:27.645294+00:00",
+    "linkedin|id|4471303489": "2026-09-27T22:00:04.706488+00:00",
+    "linkedin|id|4467330782": "2026-09-20T15:11:15.636652+00:00"
   },
   "jobs": [
     {
@@ -2205,15 +2208,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Software-Developer-Engineer_R164352",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "jd_recovery_at": "2026-09-27T20:50:30.947234+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -2239,7 +2240,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -3667,13 +3668,13 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
-      "linkedin_detail_attempted_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
-      "enrichment_status": "resolved"
+      "enrichment_method": "linkedin_cache",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4471842229",
@@ -5019,7 +5020,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -5292,7 +5293,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -5706,7 +5707,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -6294,7 +6295,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -7596,7 +7597,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -7727,7 +7728,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "linkedin_detail_attempted_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_resolved": true,
@@ -7756,7 +7757,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -7834,7 +7835,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "linkedin_detail_attempted_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_resolved": true,
@@ -8103,7 +8104,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -8623,7 +8624,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -9392,7 +9393,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -11048,13 +11049,13 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
-      "linkedin_detail_attempted_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
-      "enrichment_status": "resolved"
+      "enrichment_method": "linkedin_cache",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4461559895",
@@ -12231,7 +12232,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -12393,7 +12394,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -12942,7 +12943,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -12967,7 +12968,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -13149,13 +13150,13 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
-      "linkedin_detail_attempted_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
-      "enrichment_status": "resolved"
+      "enrichment_method": "linkedin_cache",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4454584730",
@@ -13180,7 +13181,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -13205,7 +13206,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -13413,7 +13414,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -13438,7 +13439,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -13464,7 +13465,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -13489,7 +13490,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -13514,7 +13515,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -13734,7 +13735,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -14046,7 +14047,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470419247",
@@ -14481,7 +14482,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -14532,7 +14533,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -14635,7 +14636,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -14660,7 +14661,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -16189,7 +16190,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -16769,7 +16770,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -17094,13 +17095,13 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
-      "linkedin_detail_attempted_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
-      "enrichment_status": "resolved"
+      "enrichment_method": "linkedin_cache",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469948238",
@@ -17677,7 +17678,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -17971,7 +17972,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -18260,7 +18261,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -18597,7 +18598,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -19300,13 +19301,13 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
-      "linkedin_detail_attempted_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
-      "enrichment_status": "resolved"
+      "enrichment_method": "linkedin_cache",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4460038226",
@@ -20318,7 +20319,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -21332,7 +21333,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -21972,7 +21973,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -22109,13 +22110,12 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_attempted_at": "2026-09-27T20:50:56.717548+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T20:50:56.717548+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -22173,15 +22173,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210780108",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "jd_recovery_at": "2026-09-27T20:50:30.947234+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -23308,13 +23306,13 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
-      "linkedin_detail_attempted_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T20:50:58.843001+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
-      "enrichment_status": "resolved"
+      "enrichment_method": "linkedin_cache",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470599370",
@@ -23328,7 +23326,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-engineer-python-django-at-jobot-4470599370",
       "official_url": "",
-      "description": "",
+      "description": "Want to learn more about this role and Jobot? Click our Jobot logo and follow our LinkedIn page! Job details: Groundbreaking SaaS Data Analytics platform for Healthcare Providers / Meaningful equity! This Jobot Job is hosted by: Craig Rosecrans Are you a fit? Easy Apply now by clicking the \"Easy Apply\" button and sending us your resume. Salary: $80,000 - $165,000 per year A bit about us: We are partnering with a rapidly growing AI-driven SaaS company that is transforming how organizations leverage data, analytics, and automation to drive business outcomes. Backed by strong recurring revenue growth and an award-winning product, the company is seeking a Senior Software Engineer to help scale its platform and contribute to key technical and product decisions. This is a highly visible role offering significant influence over architecture, product direction, engineering standards, and future hiring decisions. The ideal candidate enjoys working across the entire technology stack, thrives in fast-moving environments, and wants to build products that solve meaningful real-world problems at scale. Why join us? Competitive Base Salary Excellent health, dental and vision coverage Equity in high-growth start-up (not in lieu of a salary) Flexible Hours Very generous PTO 401k plan with 4% match Small team, autonomy Many more great perks! Job Details Responsibilities Design, develop, test, deploy, and support software across the full technology stack Build and maintain APIs, microservices, backend services, and data pipelines Contribute to system architecture, infrastructure, and database design decisions Partner closely with Product, Sales, Customer Success, and Leadership teams Review code and promote engineering best practices across the organization Support machine learning initiatives through experimentation, testing, and model iteration Help shape the future direction of the engineering organization through technical leadership and mentorship Qualifications 5+ years of professional software engineering experience Strong full-stack development experience Experience building and supporting distributed systems, APIs, microservices, and scalable cloud-based applications Hands-on experience with modern cloud infrastructure and deployment practices Strong problem-solving skills and meticulous attention to detail Excellent communication skills and ability to collaborate across technical and non-technical teams Experience with or willingness to work extensively in technologies such as Python, Django, Node.js, JavaScript frameworks, AWS, relational databases, and event-driven architectures AI-Assisted Development Requirements This organization embraces AI as a core part of the software development lifecycle. Engineers are expected to leverage modern AI coding tools to accelerate development, improve code quality, enhance testing, and increase overall productivity. The ideal candidate already uses tools such as Claude, ChatGPT, GitHub Copilot, Cursor, or similar AI-powered development platforms on a daily basis. Experience using Claude specifically for code generation, refactoring, debugging, architecture discussions, documentation, test creation, and problem solving is highly valued. Candidates who view AI as an essential engineering partner rather than an occasional experiment will be most successful in this environment. Curiosity, adaptability, and enthusiasm for AI-assisted software development are considered critical attributes for this role. Preferred Experience Machine Learning and AI frameworks Large-scale data processing and analytics platforms Telephony, messaging, or communication APIs Marketing technology integrations HIPAA-compliant applications and healthcare technology environments Interested in hearing more? Easy Apply now by clicking the \"Easy Apply\" button. Jobot is an Equal Opportunity Employer. We provide an inclusive work environment that celebrates diversity and all qualified candidates receive consideration for employment without regard to race, color, sex, sexual orientation, gender identity, religion, national origin, age (40 and over), disability, military status, genetic information or any other basis protected by applicable federal, state, or local laws. Jobot also prohibits harassment of applicants or employees based on any of these protected categories. It is Jobot’s policy to comply with all applicable federal, state and local laws respecting consideration of unemployment status in making hiring decisions. Sometimes Jobot is required to perform background checks with your authorization. Jobot will consider qualified candidates with criminal histories in a manner consistent with any applicable federal, state, or local law regarding criminal backgrounds, including but not limited to the Los Angeles Fair Chance Initiative for Hiring and the San Francisco Fair Chance Ordinance. Information collected and processed as part of your Jobot candidate profile, and any job applications, resumes, or other information you choose to submit is subject to Jobot's Privacy Policy, as well as the Jobot California Worker Privacy Notice and Jobot Notice Regarding Automated Employment Decision Tools which are available at jobot.com/legal. By applying for this job, you agree to receive calls, AI-generated calls, text messages, or emails from Jobot, and/or its agents and contracted partners. Frequency varies for text messages. Message and data rates may apply. Carriers are not liable for delayed or undelivered messages. You can reply STOP to cancel and HELP for help. You can access our privacy policy here: jobot.com/privacy-policy Want to learn more about this role and Jobot? Click our Jobot logo and follow our LinkedIn page!",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T20:50:30.947234+00:00",
@@ -23338,9 +23336,14 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
-      "recovery_status": "filtered"
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4458834669",
@@ -23464,7 +23467,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/ai-agent-engineer-at-jobright-ai-4471094454",
       "official_url": "",
-      "description": "",
+      "description": "This role is part of the Jobright Direct Hiring Network, where top companies like Cresta AI, Plaud, Mercor, OpenArt, and 1,500+ others hire top talent directly through our platform. This is not a mass job posting. Only select, high-signal candidates are invited and recommended directly to hiring teams Hiring Company: Creao AI One-liner: CREAO is redefining the relationship between people and software by empowering users to create custom, conversational AI applications using natural language. Salary: Why Join Us: Role Responsibilities • Design, develop, and deploy AI agents using LLMs (e.g., GPT, Claude, open-source models) • Build multi-step reasoning, planning, and tool-using agent workflows • Integrate AI agents with internal systems, APIs, databases, and third-party services • Implement evaluation frameworks to measure agent performance, reliability, and safety • Optimize prompts, memory systems, retrieval pipelines, and agent architectures • Collaborate with product, engineering, and design teams to translate real-world problems into AI-driven solutions • Improve system scalability, latency, and cost efficiency • Monitor agent behavior in production and continuously iterate based on feedback and data • Ensure responsible AI practices, including privacy, safety, and bias mitigation Qualitications Required • Strong software engineering skills in Python, TypeScript, or similar • Experience working with LLMs, AI frameworks, or ML systems • Understanding of agent architectures, such as: Tool use / function calling, Planning & reasoning, Memory & retrieval (RAG) • Experience integrating APIs, databases, and distributed systems • Ability to ship production-ready systems with reliability and observability in mind Preferred • Experience with frameworks such as LangChain, LlamaIndex, AutoGen, CrewAI, or similar • Experience with vector databases (Pinecone, FAISS, Milvus, etc.) • Knowledge of evaluation methods for generative AI systems • Experience deploying AI systems on cloud platforms (AWS, GCP, Azure) • Background in ML, NLP, or autonomous systems",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T20:50:30.947234+00:00",
@@ -23475,8 +23478,44 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
-      "recovery_status": "filtered"
+      "verified_this_run": false,
+      "recovery_status": "filtered",
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
+    },
+    {
+      "job_id": "4471303489",
+      "source": "linkedin",
+      "company": "Jobright.ai",
+      "title": "AI Agent Engineer",
+      "location": "Cupertino, CA",
+      "posted_date": "2026-09-27",
+      "aggregator_posted_date": "2026-09-27",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-agent-engineer-at-jobright-ai-4471303489",
+      "official_url": "",
+      "description": "This role is part of the Jobright Direct Hiring Network, where top companies like Cresta AI, Plaud, Mercor, OpenArt, and 1,500+ others hire top talent directly through our platform. This is not a mass job posting. Only select, high-signal candidates are invited and recommended directly to hiring teams Hiring Company: Creao AI One-liner: CREAO is redefining the relationship between people and software by empowering users to create custom, conversational AI applications using natural language. Salary: Why Join Us: Role Responsibilities • Design, develop, and deploy AI agents using LLMs (e.g., GPT, Claude, open-source models) • Build multi-step reasoning, planning, and tool-using agent workflows • Integrate AI agents with internal systems, APIs, databases, and third-party services • Implement evaluation frameworks to measure agent performance, reliability, and safety • Optimize prompts, memory systems, retrieval pipelines, and agent architectures • Collaborate with product, engineering, and design teams to translate real-world problems into AI-driven solutions • Improve system scalability, latency, and cost efficiency • Monitor agent behavior in production and continuously iterate based on feedback and data • Ensure responsible AI practices, including privacy, safety, and bias mitigation Qualitications Required • Strong software engineering skills in Python, TypeScript, or similar • Experience working with LLMs, AI frameworks, or ML systems • Understanding of agent architectures, such as: Tool use / function calling, Planning & reasoning, Memory & retrieval (RAG) • Experience integrating APIs, databases, and distributed systems • Ability to ship production-ready systems with reliability and observability in mind Preferred • Experience with frameworks such as LangChain, LlamaIndex, AutoGen, CrewAI, or similar • Experience with vector databases (Pinecone, FAISS, Milvus, etc.) • Knowledge of evaluation methods for generative AI systems • Experience deploying AI systems on cloud platforms (AWS, GCP, Azure) • Background in ML, NLP, or autonomous systems",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-27T22:00:04.706488+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469017179",
@@ -23579,7 +23618,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-entry-level-at-jobright-ai-4471308042",
       "official_url": "",
-      "description": "",
+      "description": "Jobright is your personal AI job search agent that transforms the way you do job search from solo, time-consuming efforts to a fast, expert-guided journey, simplifying every job search step and accelerating your route to the best job outcomes. As an AI Engineer, Entry Level, you will work onsite with engineers, researchers, and product leaders to build and evaluate AI capabilities used by real job seekers. Why Join Us • Build real, production AI agents used by real users • High ownership and impact • Work at the intersection of AI, agents, and product • Shape how people experience AI-driven job search Responsibilities • Contribute to AI and machine-learning features for search, recommendations, and personalisation • Build data preparation, evaluation, and experimentation workflows • Work with prompts, embeddings, retrieval, structured outputs, and LLM APIs • Integrate AI capabilities into reliable product and backend systems • Investigate model quality, latency, and failure cases • Collaborate closely with engineering, product, and data teams onsite Qualification Required • Bachelor's or master's degree in Computer Science, Artificial Intelligence, Machine Learning, or a related field • Strong Python programming skills • Understanding of machine learning, NLP, or information retrieval fundamentals • Familiarity with APIs, Git, debugging, and basic software engineering practices • Ability to work onsite in the SF Bay Area Preferred • Experience with LLM applications, RAG, embeddings, or model evaluation • Familiarity with PyTorch, TensorFlow, scikit-learn, or cloud AI services • Experience building AI prototypes or data pipelines • Interest in AI agents, recommendation systems, or search technology",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T20:50:30.947234+00:00",
@@ -23595,19 +23634,14 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.95,
-        "delta": 5,
-        "reason": "Entry-level AI engineering directly matches target"
-      },
-      "recovery_input_hash": "e79e1d7f335d6cc50677",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-27T20:50:57.617778+00:00",
-      "official_search_status": "no_match"
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469007744",
@@ -24161,7 +24195,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -24526,7 +24560,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-at-liftoff-mobile-4437647024",
       "official_url": "",
-      "description": "",
+      "description": "Liftoff is a leading AI-powered performance marketing platform for the mobile app economy. Our end-to-end technology stack helps app marketers acquire and retain high-value users, while enabling publishers to maximize revenue across programmatic and direct demand. Liftoff’s solutions, including Accelerate, Direct, Monetize, Intelligence, and Vungle Exchange, support over 6,600 mobile businesses across 74 countries in sectors such as gaming, social, finance, ecommerce, and entertainment. Founded in 2012 and headquartered in Redwood City, CA, Liftoff has a diverse, global presence. About The Revenue Engine Team The Revenue Engine team works to understand the fundamental economics of the mobile ad tech marketplace, including the elasticity of demand and the effects of competition. The team of machine learning engineers, software engineers, and data analysts develops theories, validates those theories with experiments and analyses, and uses the learnings to build production systems that improve outcomes for Liftoff and its advertisers. As a Machine Learning Engineer on the Revenue Engine team, you will: Build statistical models and production systems to balance advertiser performance with business goals. Tune optimization parameters, measure internal competition, and model dynamic environments. Design and run experiments to validate theories underpinning the mobile ad tech economy. Develop applications in the areas of advertiser budget retention and growth, optimal margin allocation, and bidding innovations. Collaborate with a team of world-class engineers with diverse backgrounds as well as peers across the broader company (e.g. Operations, GTM). Use strong communication skills (verbal and written) to explain statistical and machine learning concepts to both technical and non-technical audiences. Be part of an “engineering excellence” culture through state-of-the-art tools, risk-driven testing, explainable systems, and design/code review. Requirements: PhD in Computer Science, Machine Learning, Economics, or a related field. Industry experience applying economics or machine learning to large scale problems. Solid engineering and coding skills. Excellent team communication and collaboration skills. Experience with ad tech is a solid plus. Location: The preferred location for this role is within California. We are a remote-first company with US hubs in Redwood City, Los Angeles, and New York City. Travel Expectations: We offer several opportunities for in-person team gatherings, including but not limited to project meetings, regional meetups, and company-wide events. We expect our employees to attend these gatherings at least once per quarter. These gatherings provide essential opportunities for collaboration, communication, and team building. Compensation: Liftoff offers all employees a full compensation package that includes equity and health/vision/dental benefits associated with your country of residence. Base compensation will vary based on the candidate's location and experience. The following are our base salary ranges for this role: SF Bay Area, Los Angeles/Orange County, NYC, Seattle: $235,000 - $275,000 All other cities and towns in our approved states: $215,000 - $255,000 1 Liftoff offers a fast-paced, collaborative, and innovative work environment where employees are empowered to grow and make an impact. We’re shaping the future of the mobile app ecosystem—join us and help accelerate what’s next. Liftoff’s compensation strategy includes competitive salaries, equity, and benefits designed to support employee well-being and performance. We benchmark compensation based on role, level, and location to ensure fairness and market alignment. Benefits may include medical coverage, wellness stipends, and additional perks based on your country of residence. Liftoff is an equal opportunity employer. We are committed to creating an inclusive environment for all employees and applicants regardless of race, ethnicity, national origin, age, marital status, disability, sexual orientation, gender identity, religion, veteran status, or any other characteristic protected by applicable law. Agency and Third Party Recruiter Notice: Liftoff does not accept unsolicited resumes from individual recruiters or third-party recruiting agencies in response to job postings. No fee will be paid to third parties who submit unsolicited candidates directly to our hiring managers or Recruiting Team. All candidates must be submitted via our Applicant Tracking System by approved Liftoff vendors who have been expressly requested to make a submission by our Recruiting Team for a specific job opening. No placement fees will be paid to any firm unless such a request has been made by the Liftoff Recruiting Team and such a candidate was submitted to the Liftoff Recruiting Team via our Applicant Tracking System.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T20:50:30.947234+00:00",
@@ -24542,19 +24576,14 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.78,
-        "delta": 0,
-        "reason": "Machine learning engineering fits target; seniority unknown"
-      },
-      "recovery_input_hash": "8cedee76e0f821125e40",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-27T20:50:57.617778+00:00",
-      "official_search_status": "no_match"
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4466943272",
@@ -24568,7 +24597,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-at-liftoff-mobile-4466943272",
       "official_url": "",
-      "description": "",
+      "description": "Liftoff is a leading AI-powered performance marketing platform for the mobile app economy. Our end-to-end technology stack helps app marketers acquire and retain high-value users, while enabling publishers to maximize revenue across programmatic and direct demand. Liftoff’s solutions, including Accelerate, Direct, Monetize, Intelligence, and Vungle Exchange, support over 6,600 mobile businesses across 74 countries in sectors such as gaming, social, finance, ecommerce, and entertainment. Founded in 2012 and headquartered in Redwood City, CA, Liftoff has a diverse, global presence. As a Senior Machine Learning Engineer at Liftoff, you will: Develop and maintain machine learning models that are integral to our production decision-making system and directly influencing business outcomes. Adopt or build new technologies for training and serving ML models (e.g. support large models, increase developer velocity, etc) Monitor the latest ML research for functional ideas that the team could try. Optimize ML Pipelines – Build and scale efficient pipelines for real-time and batch processing. Model Monitoring & Improvement – Track performance, detect drift, and automate retraining. Use strong communication skills (verbal and written) to explain statistical and machine learning concepts to both technical and non-technical audiences Collaborate with a team of world-class engineers with diverse backgrounds. Be part of an “engineering excellence” culture through state-of-the-art tools, risk-driven testing, explainable systems, and code review. Requirement: 3+ years of industry experience applying Machine Learning (including neural networks) to large scale problems. Deep knowledge of machine learning, optimization, and data analysis techniques. Hands on experience with deep neural networks in production at scale. Solid engineering and coding skills. Track record of well-developed execution and timely delivery of projects. M.S. or higher in Machine Learning, Math, Physics or similar. PhD a plus. Experience in ad optimization stack, e.g. targeting, ranking, bidding, is a solid plus Location: This role is eligible for full-time remote work in one of our entities: CA, CO, ID, IL, FL, GA, MA, MI, MN, MO, NJ, NV, NY, OR, PA, TX, UT, and WA. We are a remote-first company with US hubs in Redwood City, Los Angeles, and New York City. Travel Expectations: We offer several opportunities for in-person team gatherings, including but not limited to project meetings, regional meetups, and company-wide events. We expect our employees to attend these gatherings at least once per quarter. These gatherings provide essential opportunities for collaboration, communication, and team building. Compensation: Liftoff offers all employees a full compensation package that includes equity and health/vision/dental benefits associated with your country of residence. Base compensation will vary based on the candidate's location and experience SF Bay Area, Los Angeles/Orange County, NYC, Seattle: $180,000 - $245,000 All other cities and towns in our approved states: $165,000 - $225,000 1 Liftoff offers a fast-paced, collaborative, and innovative work environment where employees are empowered to grow and make an impact. We’re shaping the future of the mobile app ecosystem—join us and help accelerate what’s next. Liftoff’s compensation strategy includes competitive salaries, equity, and benefits designed to support employee well-being and performance. We benchmark compensation based on role, level, and location to ensure fairness and market alignment. Benefits may include medical coverage, wellness stipends, and additional perks based on your country of residence. Liftoff is an equal opportunity employer. We are committed to creating an inclusive environment for all employees and applicants regardless of race, ethnicity, national origin, age, marital status, disability, sexual orientation, gender identity, religion, veteran status, or any other characteristic protected by applicable law. Agency and Third Party Recruiter Notice: Liftoff does not accept unsolicited resumes from individual recruiters or third-party recruiting agencies in response to job postings. No fee will be paid to third parties who submit unsolicited candidates directly to our hiring managers or Recruiting Team. All candidates must be submitted via our Applicant Tracking System by approved Liftoff vendors who have been expressly requested to make a submission by our Recruiting Team for a specific job opening. No placement fees will be paid to any firm unless such a request has been made by the Liftoff Recruiting Team and such a candidate was submitted to the Liftoff Recruiting Team via our Applicant Tracking System.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T20:50:30.947234+00:00",
@@ -24584,19 +24613,14 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.78,
-        "delta": 0,
-        "reason": "Machine learning engineering fits target; seniority unknown"
-      },
-      "recovery_input_hash": "fe794e03b3d6a111b09b",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-27T20:50:57.617778+00:00",
-      "official_search_status": "no_match"
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468783529",
@@ -25844,7 +25868,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -26894,7 +26918,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -27650,15 +27674,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer--CUDA-UMD---Graphs-and-GPU-Sharing_JR2014056",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "jd_recovery_at": "2026-09-27T20:50:30.947234+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -27684,15 +27706,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer--Graphics-Performance_JR2012523",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "jd_recovery_at": "2026-09-27T20:50:30.947234+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -28719,7 +28739,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-developer-python-react-js-at-opendatajobs-4472402576",
       "official_url": "",
-      "description": "",
+      "description": "About Peregrine Peregrine Advisors is a rapidly growing AI and data innovation hub helping government solve hard problems and deliver better outcomes. We work across the full lifecycle—from strategy and governance through architecture, engineering, analytics, AI, visualization, and training—for clients including the SEC, PCAOB, DDOT, and DCAA. Our clients describe our support as \"absolutely excellent\" and our people as \"instrumental to organization's success.\" Winner of the United Nations COP27 Datathon, our work has earned all Exceptional CPARS ratings, SEC Chair's Awards, the SEC Vision Award, and recognition from FDA leadership. We are also built differently. Peregrine is the first and only social enterprise organized as a Benefit Corporation and SBA 8(a) company focused on AI and data for government. We believe business success should create client value, social value, and opportunity for our people. As we enter our next stage of growth, we need dependable, motivated, and skilled people who have a combination of intellectual curiosity and intellectual courage. With new clients, larger programs, and expanding responsibilities, the people joining Peregrine now will have the opportunity to help shape the company we become. People first. Ownership always. We solve problems through people, process, and technology—in that order. Technology matters, but people make transformation happen. That principle defines our culture. Trust and motivation come before competence. We hire people we can trust, who care deeply about what they do, take ownership, learn quickly, help one another, and refuse to walk past a problem because it belongs to someone else. At Peregrine, you are not joining simply to fill a position. You are joining a team, taking ownership of a mission, and helping build a company. If that excites you, we should talk. At Peregrine Advisors, you will build and support cloud-native Python services on Amazon Web Services (AWS). But we hire people, not seats. As the work evolves, you will move to where the hardest problems are. This is a full-time W-2 position with a salary of $120,000 to $140,000 per year. It is a hybrid work arrangement based in the Washington, DC metropolitan area, and the commuting cadence varies by assignment. The initial engagement requires United States citizenship and the ability to obtain a Public Trust determination. Your first project Your first project will likely have you taking user stories from refinement through production. Depending on the assignment, you may: Turn user stories into back-end features in Python on a cloud-native AWS stack Build automated workflows with AWS Lambda, Amazon Simple Storage Service (S3), and related services Build the application programming interfaces (APIs) and integrations that connect internal systems and commercial products Write unit and integration tests, take part in code reviews, and fix the defects you find, all the way to production Help automate the continuous integration and continuous delivery (CI/CD) pipeline, write secure and accessible code, and support your services once they run Use artificial intelligence (AI)-assisted development tools in your daily work, and review and test everything they generate Support quality development practices, including test-driven development and automated testing You deliver tested, working code you own through production, including the defects you find and fix. You automate business operations that replace manual checks, validations, and spreadsheet workflows, and you build deployment pipelines that make releasing services routine. This is where you start, not the shape of your career here. Requirements 4+ years of professional hands-on software development experience, including back-end work in Python and front-end work in React.js Bachelor's degree Familiarity with AWS cloud development, including AWS Lambda and Amazon S3 Ability to turn a defined specification into working, tested code and own it all the way to production, applying object-oriented design, design patterns, and data modeling Experience with relational databases such as PostgreSQL, SQL Server, or Oracle Experience with NoSQL databases, for example MongoDB or DynamoDB Sound analytical judgment, with strong troubleshooting and problem-solving skills Experience delivering in an Agile framework such as Scrum or Kanban, with work tracked in a tool such as Jira Excellent communication skills, including the ability to work directly with non-technical client stakeholders and turn business requirements into technical solutions The ability to estimate your assigned tasks and work efforts accurately Proficiency in writing, PowerPoint, and Excel Preferred Hands-on delivery of production workloads on AWS, an AWS certification, or a Python certification Experience in federal information technology Client-facing consulting experience Familiarity with AI-assisted developer tools Familiarity with DevSecOps practices and CI/CD pipelines Who You Are You care about what you build and judge it by whether it works for the people who rely on it. As priorities move, you move with them, and you learn a new tool or domain deeply enough to make judgment calls in it rather than follow instructions. You experiment, fail, learn, and repeat quickly. You would rather own an outcome than be handed a task. What You Bring A practical command of modern cloud development, with the range to build something new or make an existing system work better The matching delivery habits, meaning version control, unit and integration testing, code review, secure coding, and accessibility Plain-language communication about your work with the people who depend on it, explaining clearly and listening for what they need The precision to work where accuracy and auditability are not optional You adapt your development workflow as AI tools evolve, using them to help implement, test, and improve the components you own. You give the tools clear context, review and test their output, and remain accountable for the code you deliver. When we talk Be prepared to discuss a difficult problem you worked through, the decisions you made, what happened, and what you learned. Benefits Medical, dental, and vision with the employee premium fully paid and half of dependent premiums; employer-paid life, accidental death, and short-term and long-term disability insurance; a 401(k) matched 100% up to 4% of salary, vesting immediately; unlimited paid time off; and sponsored professional certifications and continuing education. What We Offer You will work alongside developers, engineers, data scientists, architects, and strategists, on work ranging from strategy to implementation. We support your development across assignments and clients through extensive onboarding, sponsored professional certifications such as the Data Management Capability Assessment Model (DCAM) and AWS technical certifications, and rotation across functions to expand your skills and perspective. The mission is real, the problems are hard, and you own what you ship. What We Commit To As a Benefit Corporation, our commitment runs three ways: real, measurable value for our clients; government that works better for the public; and a team that makes everyone in it better. We hire people who want to help build the firm, not just work at it. If that is you, apply. Peregrine Advisors is an equal opportunity employer. Peregrine exclusively works with OPEN Data Jobs to recruit our team. Register with OPEN Data Jobs to be considered for this and future openings.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T01:30:13.684053+00:00",
@@ -28747,7 +28767,12 @@
       "recovery_input_hash": "0607893f12a9f27278ec",
       "official_search_attempted_at": "2026-09-27T20:50:57.617778+00:00",
       "official_search_status": "no_match",
-      "recovery_candidates": []
+      "recovery_candidates": [],
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4470703833",
@@ -29030,15 +29055,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://jobs.ashbyhq.com/openai/d4780eac-03ad-4dae-861f-99af22b4287e",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "jd_recovery_at": "2026-09-27T20:50:30.947234+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -29435,7 +29458,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -29565,15 +29588,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/279440",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "jd_recovery_at": "2026-09-27T20:50:30.947234+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -30816,7 +30837,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-iii-at-pearson-4470757665",
       "official_url": "",
-      "description": "",
+      "description": "Software Engineer III What You'll Do Design, build, and maintain Ruby on Rails services and APIs alongside modern JavaScript/React frontends, taking responsibility for their quality, performance, and reliability Lead the design and delivery of complex, well-scoped features and systems end to end Write clear, maintainable, well-tested code and reduce complexity by simplifying services, improving patterns, and paying down technical debt Mentor junior engineers and level up the team through code reviews, feedback, and knowledge sharing Evolve the platform to support new services and capabilities, including work across adjacent codebases and domains Partner with external vendors and stakeholders across Product and Customer Success to turn requirements into sound technical solutions Use AI-assisted development tools for coding, testing, and debugging Follow and promote best practices for secure, scalable, cloud-native web application development What We're Looking For 7+ years of professional software development experience Proficiency with our core stack: Ruby on Rails, React, AWS, and PostgreSQL Proven track record of making high-impact technical decisions in complex production environments, shipping well-tested code, and giving constructive code reviews Excellent cross-functional communication, equally effective with engineers and non-technical stakeholders Experience in software architecture, system design, and scalability with a strong hands-on background Experience mentoring or supporting junior engineers Experience with distributed or service-oriented systems and asynchronous, event-driven communication between services Comfort working across more than one codebase and ramping quickly into unfamiliar systems AI-Native Expectations You should be comfortable using AI tools to assist with coding, testing, documentation, and learning, and, importantly, exercising sound engineering judgment about their output. This means validating AI-generated code, knowing when to rely on it and when not to and staying curious about how AI can responsibly improve developer productivity across the team. Nice to Have Hands-on experience designing, deploying, and operating production workloads on AWS and Azure Experience building and improving CI/CD pipelines and automated deployment practices that raise delivery velocity across the team Experience integrating with, or building alongside, third-party or vendor-delivered services Strong understanding of web application security best practices with a track record of raising the security bar across a codebase Experience with design systems, component libraries, or advanced frontend tooling Experience with scalability, resilience, or performance work at scale Experience with messaging or event-streaming systems such as Apache Pulsar or Apache Kafka Applications will be accepted through October 1. This window may be extended depending on business needs. Compensation at Pearson is influenced by a wide array of factors including but not limited to skill set, level of experience, and specific location. As required by the California, Colorado, Hawaii, Illinois, Maryland, Minnesota, New Jersey, New York State, New York City, Vermont, Washington State, and Washington DC laws, the pay range for this position is as follows: The full-time salary range for this role is between $150,000 - $170,000 This position is eligible to participate in an annual incentive program, and information on benefits offered is here Who we are: At Pearson, our purpose is simple: to help people realize the life they imagine through learning. We believe that every learning opportunity is a chance for a personal breakthrough. We are the world's lifelong learning company. For us, learning isn't just what we do. It's who we are. To learn more: We are Pearson. Pearson is an Equal Opportunity Employer and a member of E-Verify. Employment decisions are based on qualifications, merit and business need. Qualified applicants will receive consideration for employment without regard to race, ethnicity, color, religion, sex, sexual orientation, gender identity, gender expression, age, national origin, protected veteran status, disability status or any other group protected by law. We actively seek qualified candidates who are protected veterans and individuals with disabilities as defined under VEVRAA and Section 503 of the Rehabilitation Act. If you are an individual with a disability and are unable or limited in your ability to use or access our career site as a result of your disability, you may request reasonable accommodations by emailing TalentExperienceGlobalTeam@grp.pearson.com. Job: Engineering Job Family: TECHNOLOGY Organization: Enterprise Learning & Skills Schedule: FULL_TIME Workplace Type: Remote Req ID: 26057 #location",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T01:30:13.684053+00:00",
@@ -30844,7 +30865,12 @@
       "recovery_input_hash": "7616e811a8257aabca99",
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-09-27T20:50:57.617778+00:00",
-      "official_search_status": "no_match"
+      "official_search_status": "no_match",
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4470760543",
@@ -31115,7 +31141,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-developer-python-react-js-at-peregrine-advisors-4472411294",
       "official_url": "",
-      "description": "",
+      "description": "Description About Peregrine Peregrine Advisors is a rapidly growing AI and data innovation hub helping government solve hard problems and deliver better outcomes. We work across the full lifecycle—from strategy and governance through architecture, engineering, analytics, AI, visualization, and training—for clients including the SEC, PCAOB, DDOT, and DCAA. Our clients describe our support as “absolutely excellent” and our people as “instrumental to organization’s success.” Winner of the United Nations COP27 Datathon, our work has earned all Exceptional CPARS ratings, SEC Chair’s Awards, the SEC Vision Award, and recognition from FDA leadership. We are also built differently. Peregrine is the first and only social enterprise organized as a Benefit Corporation and SBA 8(a) company focused on AI and data for government. We believe business success should create client value, social value, and opportunity for our people. As we enter our next stage of growth, we need dependable, motivated, and skilled people who have a combination of intellectual curiosity and intellectual courage. With new clients, larger programs, and expanding responsibilities, the people joining Peregrine now will have the opportunity to help shape the company we become. People first. Ownership always. We solve problems through people, process, and technology—in that order. Technology matters, but people make transformation happen. That principle defines our culture. Trust and motivation come before competence. We hire people we can trust, who care deeply about what they do, take ownership, learn quickly, help one another, and refuse to walk past a problem because it belongs to someone else. At Peregrine, you are not joining simply to fill a position. You are joining a team, taking ownership of a mission, and helping build a company. If that excites you, we should talk. At Peregrine Advisors, you will build and support cloud-native Python services on Amazon Web Services (AWS). But we hire people, not seats. As the work evolves, you will move to where the hardest problems are. This is a full-time W-2 position with a salary of $120,000 to $140,000 per year. It is a hybrid work arrangement based in the Washington, DC metropolitan area, and the commuting cadence varies by assignment. The initial engagement requires United States citizenship and the ability to obtain a Public Trust determination. Your first project Your first project will likely have you taking user stories from refinement through production. Depending on the assignment, you may: Turn user stories into back-end features in Python on a cloud-native AWS stack. Build automated workflows with AWS Lambda, Amazon Simple Storage Service (S3), and related services. Build the application programming interfaces (APIs) and integrations that connect internal systems and commercial products. Write unit and integration tests, take part in code reviews, and fix the defects you find, all the way to production. Help automate the continuous integration and continuous delivery (CI/CD) pipeline, write secure and accessible code, and support your services once they run. Use artificial intelligence (AI)-assisted development tools in your daily work, and review and test everything they generate. Support quality development practices, including test-driven development and automated testing. You deliver tested, working code you own through production, including the defects you find and fix. You automate business operations that replace manual checks, validations, and spreadsheet workflows, and you build deployment pipelines that make releasing services routine. This is where you start, not the shape of your career here. Requirements 4+ years of professional hands-on software development experience, including back-end work in Python and front-end work in React.js Bachelor's degree Familiarity with AWS cloud development, including AWS Lambda and Amazon S3 Ability to turn a defined specification into working, tested code and own it all the way to production, applying object-oriented design, design patterns, and data modeling Experience with relational databases such as PostgreSQL, SQL Server, or Oracle Experience with NoSQL databases, for example MongoDB or DynamoDB Sound analytical judgment, with strong troubleshooting and problem-solving skills Experience delivering in an Agile framework such as Scrum or Kanban, with work tracked in a tool such as Jira Excellent communication skills, including the ability to work directly with non-technical client stakeholders and turn business requirements into technical solutions The ability to estimate your assigned tasks and work efforts accurately Proficiency in writing, PowerPoint, and Excel Preferred Hands-on delivery of production workloads on AWS, an AWS certification, or a Python certification Experience in federal information technology Client-facing consulting experience Familiarity with AI-assisted developer tools Familiarity with DevSecOps practices and CI/CD pipelines Who You Are You care about what you build and judge it by whether it works for the people who rely on it. As priorities move, you move with them, and you learn a new tool or domain deeply enough to make judgment calls in it rather than follow instructions. You experiment, fail, learn, and repeat quickly. You would rather own an outcome than be handed a task. What You Bring A practical command of modern cloud development, with the range to build something new or make an existing system work better. The matching delivery habits, meaning version control, unit and integration testing, code review, secure coding, and accessibility. Plain-language communication about your work with the people who depend on it, explaining clearly and listening for what they need. The precision to work where accuracy and auditability are not optional. You adapt your development workflow as AI tools evolve, using them to help implement, test, and improve the components you own. You give the tools clear context, review and test their output, and remain accountable for the code you deliver. When we talk Be prepared to discuss a difficult problem you worked through, the decisions you made, what happened, and what you learned. Benefits Medical, dental, and vision with the employee premium fully paid and half of dependent premiums; employer-paid life, accidental death, and short-term and long-term disability insurance; a 401(k) matched 100% up to 4% of salary, vesting immediately; unlimited paid time off; and sponsored professional certifications and continuing education. What We Offer You will work alongside developers, engineers, data scientists, architects, and strategists, on work ranging from strategy to implementation. We support your development across assignments and clients through extensive onboarding, sponsored professional certifications such as the Data Management Capability Assessment Model (DCAM) and AWS technical certifications, and rotation across functions to expand your skills and perspective. The mission is real, the problems are hard, and you own what you ship. What We Commit To As a Benefit Corporation, our commitment runs three ways: real, measurable value for our clients; government that works better for the public; and a team that makes everyone in it better. We hire people who want to help build the firm, not just work at it. If that is you, apply. Peregrine Advisors is an equal opportunity employer. Peregrine exclusively works with OPEN Data Jobs to recruit our team. Register with OPEN Data Jobs to be considered for this and future openings.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T04:00:08.411781+00:00",
@@ -31132,7 +31158,7 @@
         }
       },
       "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -31143,7 +31169,12 @@
       "recovery_input_hash": "fc131cd86733b6ba7498",
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-09-27T20:50:57.617778+00:00",
-      "official_search_status": "no_match"
+      "official_search_status": "no_match",
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4472297778",
@@ -31157,7 +31188,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-peregrine-advisors-4472297778",
       "official_url": "",
-      "description": "",
+      "description": "Description Peregrine Advisors is a firm founded on a simple conviction: the best solutions come from the people closest to the problem, given real ownership and the tools to deliver. We are a data and technology innovation hub and a Benefit Corporation working at the center of the federal government's mission to deliver for client stakeholders and the US public, looking for highly motivated contributors who thrive when trusted to own a hard problem and equipped to deliver the solution. Your first assignment Your first assignment is to build the backend that powers how a federal agency processes its filer applications: the services and secure application programming interfaces (APIs) that move each submission through document processing, validation, and decisioning. The work is real, hard, and it matters. It is also where you start, not the shape of your career here: we hire people, not seats, and we move our best to where the hardest problems are. What you'll build Backend services and REST APIs in Python and FastAPI that turn a manual, document-heavy process into something fast, secure, and automated. The cloud behind them on Amazon Web Services (AWS): Lambda, Step Functions, API Gateway, and S3, with PostgreSQL for the data and identity handled the right way. In time, the firm itself: new capabilities, tools, and lines of business you help spin up. Who you are You have a hacker's mindset: you would rather ship a working prototype tonight than a perfect plan next week. You have built backends and APIs that hold up in production, and you move at the speed of the tools, not the clock. You experiment, fail, learn, and repeat, quickly. You would rather own an outcome than be handed a task. What you bring Strong Python and hands-on experience building secure REST APIs (FastAPI or similar) on AWS. The backend fundamentals behind them: PostgreSQL, authentication and access control, and clean, automated delivery. The judgment to build in a regulated federal environment where security and auditability are not optional. What you'll need Sole United States citizenship and the ability to obtain a Public Trust determination are required for this initial engagement. This is a hybrid role based in the Washington, DC metropolitan area, and it requires commuting into DC regularly. Everything else, the years, the certifications, the specific tools, we ask in the application and get into during the interview. What we offer A high-performing team of developers, engineers, data scientists, architects, and strategists solving complex, real-world problems, with work that runs from strategy formulation to hands-on implementation. We develop people across roles and clients, with extensive onboarding and sponsored training and professional development. And Peregrine has been a Benefit Corporation from day one: public value is built into the work itself, not bolted on afterward. Work worth your best years. What we commit to As a Benefit Corporation, our commitment runs three ways: real, measurable value for our clients; government that works better for the public; and a team that makes everyone in it better. We hire people who want to help build the firm, not just work at it. If that is you, apply. Peregrine Advisors is an equal opportunity employer. Peregrine exclusively works with OPEN Data Jobs to recruit our team. Register with OPEN Data Jobs to be considered for this opening and future roles. Requirements Bachelor's degree Basic proficiency in writing, PowerPoint, and Excel Benefits Medical, dental, and vision with the employee premium fully paid and half of dependent premiums; employer-paid life, accidental death, and short-term and long-term disability insurance; a 401(k) matched 100% up to 4% of salary, vesting immediately; unlimited paid time off; and sponsored professional certifications and continuing education.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T20:50:30.947234+00:00",
@@ -31174,7 +31205,7 @@
         }
       },
       "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -31185,7 +31216,12 @@
       "recovery_input_hash": "9da227a4101a901481e4",
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-09-27T20:50:57.617778+00:00",
-      "official_search_status": "no_match"
+      "official_search_status": "no_match",
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4470453364",
@@ -33655,7 +33691,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-application-engineering-d84b1ae-at-referment-4472457548",
       "official_url": "",
-      "description": "",
+      "description": "Referment is working with a global investment and technology firm to find a full-stack engineer for a team that builds internal developer tooling, shared libraries and firmwide web applications. You will work directly with users across the organisation, combining engineering depth with product judgement to improve how teams operate. This is an end-to-end role: you will help shape product direction, choose technical approaches, write production code and iterate with designers and users through deployment. The Role Partner with stakeholders to understand workflows and turn user needs into well-designed software. Lead and contribute to projects from discovery and product definition through production deployment. Build and maintain internal applications and APIs used across the organisation. Iterate with designers and end users through interviews, usability testing and feedback. Take ownership of both product decisions and full-stack technical execution. What We're Looking For Extensive experience building full-stack, user-facing applications and applying human-centred product design. Ability to work across languages and stacks such as JavaScript, Python, Java or Go. A record of taking concepts from inception through coding, testing, iteration and deployment. Strong communication, organisation and self-management, with a client-service mindset. Curiosity, initiative and the ability to solve open-ended problems without losing sight of important details. This could suit a product-minded software engineer who wants direct contact with users and ownership across the complete application lifecycle. #Referment",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T20:50:30.947234+00:00",
@@ -33671,19 +33707,14 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.84,
-        "delta": 0,
-        "reason": "Full-stack application engineering fits target"
-      },
-      "recovery_input_hash": "24a10195fa38a789fe7e",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-27T20:50:57.617778+00:00",
-      "official_search_status": "no_match"
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469935887",
@@ -34501,7 +34532,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -34527,7 +34558,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -35268,7 +35299,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -35611,7 +35642,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -36048,7 +36079,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -36105,7 +36136,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -36618,7 +36649,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -36727,7 +36758,7 @@
       "recovery_methods": {},
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true,
       "recovery_status": "filtered"
     },
@@ -36880,15 +36911,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://jobs.ashbyhq.com/snowflake/30e214f2-5853-4014-8def-c4284c0e99f8",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "jd_recovery_at": "2026-09-27T20:50:30.947234+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -37072,7 +37101,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -37253,7 +37282,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -37382,7 +37411,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -37514,7 +37543,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -38277,27 +38306,48 @@
       "title": "Core Java Developer",
       "location": "Alpharetta, GA",
       "posted_date": "2026-09-20",
-      "aggregator_posted_date": "2026-09-22",
+      "aggregator_posted_date": "2026-09-27",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/core-java-developer-at-synechron-4467329772",
       "official_url": "",
-      "description": "We are At Synechron, we believe in the power of digital to transform businesses for the better. Our global consulting firm combines creativity and innovative technology to deliver industry-leading digital solutions. Synechron’s progressive technologies and optimization strategies span end-to-end Artificial Intelligence, Consulting, Digital, Cloud & DevOps, Data, and Software Engineering, servicing an array of noteworthy financial services and technology firms. Through research and development initiatives in our FinLabs we develop solutions for modernization, from Artificial Intelligence and Blockchain to Data Science models, Digital Underwriting, mobile-first applications and more. Over the last 20+ years, our company has been honored with multiple employer awards, recognizing our commitment to our talented teams. With top clients to boast about, Synechron has a global workforce of 17,000+, and has 58 offices in 22 countries within key global markets. Our challenge We are seeking a highly skilled Core Java Developer to join our team. The ideal candidate will be a strong core Java developer with extensive experience in microservices, multithreading, Spring Boot, SQL, and large-scale databases. A background in financial services is highly preferred. Additional Information* The base salary for this position will vary based on geography and other factors. In accordance with law, the base salary for this role if filled within Alpharetta, GA is $105k - $115k/year & benefits (see below). The Role Responsibilities: Design, develop, test, and maintain robust Java applications and microservices that meet business requirements. Architect and implement scalable, high-performance microservices using Spring Boot and related technologies. Handle multi-threaded programming, concurrency control, and performance tuning to ensure low-latency, reliable systems. Collaborate with frontend, backend, and data teams to define APIs and data models; ensure secure, well-documented interfaces. Build and optimize SQL queries; work with large, complex databases and data structures. Implement CI/CD pipelines, code reviews, and automated testing to ensure quality and faster delivery. Participate in architectural discussions, provide technical leadership, and mentor junior developers. Adhere to best practices for security, reliability, and compliance within a financial services context. Troubleshoot production issues, perform root-cause analysis, and implement durable fixes. Requirements: Strong Core Java expertise (Java 8/11/17+ with a deep understanding of JVM internals, garbage collection, and performance tuning). Microservices architecture experience; design and implement scalable services. Multithreading and concurrency mastery; thread-safe programming and synchronization techniques. Spring Framework; extensive experience with Spring Boot, Spring Data, Spring Cloud, and related ecosystems. SQL proficiency with hands-on experience optimizing complex queries; familiarity with relational databases (e.g., Oracle, PostgreSQL, MS SQL). Experience working with large databases and data warehousing concepts. Financial services domain experience is highly preferred (trading, risk, settlements, market data, regulatory reporting, etc.). Strong problem-solving skills, attention to detail, and the ability to work in a fast-paced environment. Excellent communication and collaboration skills; comfortable in a multinational, matrixed environment. Preferred, but not required: Experience with containers and orchestration (Docker, Kubernetes). Familiarity with messaging systems (Kafka, RabbitMQ) and event-driven architectures. Exposure to cloud platforms (AWS, GCP, Azure) and related security practices. Knowledge of data security, encryption, and regulatory compliance in finance. Certification or coursework related to Java, Spring, or financial technologies. Prior consulting or client-facing experience. Contribution to open-source projects or internal tech communities. Advanced degree in Computer Science, Engineering, or a related field. We offer: A highly competitive compensation and benefits package. A multinational organization with 58 offices in 22 countries and the possibility to work abroad. 10 days of paid annual leave (plus sick leave and national holidays). Maternity & paternity leave plans. A comprehensive insurance plan including medical, dental, vision, life insurance, and long-/short-term disability (plans vary by region). Retirement savings plans. A higher education certification policy. Commuter benefits (varies by region). Extensive training opportunities, focused on skills, substantive knowledge, and personal development. On-demand Udemy for Business for all Synechron employees with free access to more than 5000 curated courses. Coaching opportunities with experienced colleagues from our Financial Innovation Labs (FinLabs) and Center of Excellences (CoE) groups. Cutting edge projects at the world’s leading tier-one banks, financial institutions and insurance firms. A flat and approachable organization. A truly diverse, fun-loving, and global work culture. SYNECHRON’S DIVERSITY & INCLUSION STATEMENT Diversity & Inclusion are fundamental to our culture, and Synechron is proud to be an equal opportunity workplace and is an affirmative action employer. Our Diversity, Equity, and Inclusion (DEI) initiative ‘Same Difference’ is committed to fostering an inclusive culture – promoting equality, diversity and an environment that is respectful to all. We strongly believe that a diverse workforce helps build stronger, successful businesses as a global company. We encourage applicants from across diverse backgrounds, race, ethnicities, religion, age, marital status, gender, sexual orientations, or disabilities to apply. We empower our global workforce by offering flexible workplace arrangements, mentoring, internal mobility, learning and development programs, and more. All employment decisions at Synechron are based on business needs, job requirements and individual qualifications, without regard to the applicant’s gender, gender identity, sexual orientation, race, ethnicity, disabled or veteran status, or any other characteristic protected by law.",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
-      "first_seen": "",
+      "first_seen": "2026-09-20T15:11:15.636652+00:00",
       "discovery_queries": {
         "linkedin": [
           "backend engineer"
         ]
       },
-      "linkedin_detail_fetched_at": "2026-09-20T15:04:23.394419+00:00",
-      "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_cache",
-      "enrichment_status": "resolved",
-      "direct_original_fetched": true,
-      "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
-      "verified_this_run": false
+      "recovery_methods": {},
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4467330782",
+      "source": "linkedin",
+      "company": "Synechron",
+      "title": "Core Java Developer",
+      "location": "Menlo Park, CA",
+      "posted_date": "2026-09-27",
+      "aggregator_posted_date": "2026-09-27",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/core-java-developer-at-synechron-4467330782",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-20T15:11:15.636652+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4363130447",
@@ -39245,7 +39295,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -39453,7 +39503,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -39861,7 +39911,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-i-at-the-fresh-market-4470798740",
       "official_url": "",
-      "description": "",
+      "description": "The Fresh Market & You Our mission is to make everyday eating extraordinary for our guests. We create a warm, welcoming, memorable experience with exceptional, personal service . We’re looking for a new team member who strives for excellence and brings positive energy, commitment, and a “can-do” attitude to work every day . We value teamwork and celebrate our successes as a team and will value your contribution! Added Benefits For Choosing The Fresh Market Team Team member discount up to 40% Health, Dental & Vision insurance available for individual, spouse, partner, and family. And much more! 401K contribution and match for part-time and full-time team members. Personal time off and additional time off purchase plans available About the Position: The Fresh Market currently has an opening for a Full Stack Software Engineer in our Store Support Center (099). The Software Engineer Level I candidate must have beginner-intermediate level experience with OOP (object-oriented programming) techniques and design patterns on the web and mobile application platforms. The ideal candidate should have exposure to enterprise-level applications using an n-tier approach to include high availability technologies and will have a beginner-level understanding of the .NET framework and related Microsoft technologies. This role provides an opportunity to work on enterprise applications supporting hundreds of stores, distribution operations, merchandising, and digital business initiatives. What You'll Do Provide support to the IT department and corporate office. Initiate code review process for each deployment within the team. Assist with implementing established architectural and design patterns and support the development of reusable components and libraries that benefit the company and software development team. Assist in documenting and defining solutions through technical documentation, flowcharts, layouts, diagrams, charts, code comments, and maintainable code. Assist with the maintenance, support, testing, documentation, and development of applications. Participate in unit testing, integration testing, and validation of software solutions. Help upgrade existing software or applications. Assist with writing and maintaining code. Work on minor bug fixes. Analyze user requirements and business needs. Aid in the design and documentation of formal solutions. Support development plans and procedures, and the implementation of new and/or enhanced applications. Continuous learning of technical skills by studying development tools and programming techniques; participating in educational opportunities; reading professional publications. Understanding of software development and implementation lifecycle. Ability to complete work assignments with guidance and mentoring from more advanced level team members. Qualifications: At a Minimum, What You’ll Need Bachelor’s Degree in Computer Science/related discipline or equivalent experience. Introductory level skills for application debugging and technical problem solving. Exposure to the following technologies: .NET/NET Core, ASP.NET, C#, Entity Framework, SQL JavaScript, HTML, CSS, and modern web development frameworks (React, Angular, Blazor, or similar). Experience with Git-based source control systems. Basic understanding of the MVC/MVVM design patterns. Exposure to Azure DevOps or other DevOps technologies. Ability to communicate ideas in both technical and user-friendly language. Enthusiastic and willing to work in a team-oriented, collaborative Agile SCRUM environment. Strong customer-service orientation and a professional demeanor. Excellent written and oral communication skills. Excellent listening and interpersonal skills. Excellent documentation skills. Highly self-motivated and directed. REASONABLE ACCOMMODATIONS: Consistent with applicable laws, TFM will make reasonable accommodations for qualified applicants and team members, unless doing so would result in an undue hardship to TFM. This guiding principle applies to all aspects of employment, including hiring and job assignment, compensation, discipline, termination, and access to benefits and training. We Are Proud To Be An Equal Opportunity Employer We are proud to be an Equal Opportunity employer. Qualified applicants will receive consideration for employment without regard race, color, creed, religion, age, sex, gender, sexual orientation, gender identity, pregnancy and related medical conditions, national origin, genetic information, uniformed service, veteran status, disability, or any other basis prohibited by federal or state law. The statements in this job description are provided to describe the general nature and level of work expected in this role. While these statements include the essential functions of the job, they are not intended to be a complete list of all responsibilities, duties and skills required. As we work as a team, there may be times team members are needed to perform duties outside of their normal responsibilities based on business needs.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T01:30:13.684053+00:00",
@@ -39889,7 +39939,12 @@
       "recovery_input_hash": "89d513ff284d44abfa32",
       "official_search_attempted_at": "2026-09-27T20:50:57.617778+00:00",
       "official_search_status": "no_match",
-      "recovery_candidates": []
+      "recovery_candidates": [],
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4469976904",
@@ -40099,7 +40154,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -40124,7 +40179,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -40301,15 +40356,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://lifeattiktok.com/search/7678846505734064437",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "jd_recovery_at": "2026-09-27T20:50:30.947234+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-09-27T20:50:30.947234+00:00",
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -40679,7 +40732,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -40720,7 +40773,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/backend-engineer-wfh-at-torentify-4472459410",
       "official_url": "",
-      "description": "",
+      "description": "# Backend Software Engineer ## About the Role Oneleet is a rapidly growing cybersecurity and compliance platform focused on making cybersecurity and compliance effective, easy, and painless. As a Series A company, Oneleet provides an opportunity to work closely with the founding team and cross-functional engineering groups while helping build a category-defining SaaS platform. The **Backend Software Engineer** will build and optimize backend services and infrastructure that support Oneleet's cybersecurity platform. This role is ideal for a self-starter who enjoys solving complex problems, working in a fast-moving startup environment, and taking ownership across a modern backend technology stack. ## Key Responsibilities * Develop and maintain backend services and REST APIs using **Go**. * Design and optimize **PostgreSQL** schemas and queries for high-volume data. * Build reliable orchestration and integration layers across internal and third-party systems. * Develop reliable integrations with third-party APIs and services. * Implement metrics, distributed tracing, and observability across backend services. * Apply security best practices throughout backend development and infrastructure. * Collaborate with the engineering team to improve the overall developer experience. * Work closely with frontend, full-stack, and broader engineering teams. * Architect, build, and maintain SaaS platform backends. * Adapt to shifting priorities and contribute across multiple areas of the engineering stack. ## Required Qualifications * 5+ years of experience with **Go**. * 5+ years of experience designing **REST APIs**. * Experience writing optimized **PostgreSQL queries**. * Experience building reliable integrations with third-party APIs and services. * Experience architecting, building, and maintaining **SaaS platform backends**. * Experience working in a fast-moving startup engineering environment. * Ability to work pragmatically and build solutions efficiently without unnecessary complexity. * Strong time-management skills and comfort working with globally distributed clients and teams. * Ability to operate outside a traditional 9-to-5 mindset without an expectation of working continuously. * Comfortable wearing multiple hats and adapting to changing priorities. * Excellent communication skills across different levels of technical proficiency. * Self-starter mindset, personal accountability, and ability to work effectively in an ambiguous environment. ## Preferred Qualifications * Experience with **gRPC** or a similar technology. * Experience with **TypeScript**. * Experience with workflow engines or queue-based job orchestration. * Experience in the information security field. * Bachelor's or Master's degree in Computer Science or a related field. * Prior startup experience. ## Core Technical Skills * Go / Golang * REST APIs * PostgreSQL * SQL Query Optimization * Backend Software Engineering * SaaS Platforms * API Integrations * Third-Party Integrations * Distributed Systems * Service Orchestration * Observability * Metrics * Distributed Tracing * Developer Experience * Application Security * gRPC * TypeScript * Workflow Engines * Queue-Based Job Orchestration ## Work Style & Environment * Remote-first work culture. * Global hiring across regions where Oneleet can legally engage talent directly or through an employer-of-record (EOR) partner. * Fast-moving startup environment with shifting priorities. * Close collaboration with founding, engineering, frontend, full-stack, and cross-functional teams. * Emphasis on autonomy, ownership, personal accountability, and practical problem-solving. ## Compensation & Benefits * Competitive compensation and equity. * Comprehensive health and wellness benefits. * 20 days PTO per year. * 8 floating holidays. * Remote work culture. * Team off-sites in locations such as Amsterdam and Italy. ### Compensation Structure Oneleet uses geographic pay bands and compensates competitively within each market. The posted compensation range represents a **U.S. national baseline**. Compensation may vary based on work location, skills and experience demonstrated during the interview process, and relevant education or training. The stated range reflects **base salary only** and does not include equity or benefits. Candidates in higher-cost markets may receive offers at or above the top of the posted range, while compensation in other markets is benchmarked to local standards. ## Global Hiring & U.S. Employment Eligibility Oneleet hires globally in regions where it can legally engage talent directly or through an EOR partner. For candidates outside the U.S., Oneleet will determine the appropriate compliant hiring arrangement for the candidate's location. For U.S.-based candidates, Oneleet participates in **E-Verify** to confirm employment eligibility in accordance with federal regulations. ## Equal Employment Opportunity Oneleet is an equal opportunity employer and makes hiring decisions based on merit, skills, and potential regardless of location. The company does not discriminate based on race, color, religion, sex, sexual orientation, gender identity, national origin, age, disability, veteran status, or any other characteristic protected by applicable law.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T20:50:30.947234+00:00",
@@ -40736,19 +40789,14 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.79,
-        "delta": 0,
-        "reason": "Backend engineering fits; seniority and scope unknown"
-      },
-      "recovery_input_hash": "ccadab16342546525768",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-27T20:50:57.617778+00:00",
-      "official_search_status": "no_match"
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469642406",
@@ -41123,7 +41171,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -41148,7 +41196,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -41199,7 +41247,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -41224,7 +41272,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -42087,7 +42135,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -42281,7 +42329,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -42307,7 +42355,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -42628,7 +42676,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -42679,7 +42727,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -42752,11 +42800,12 @@
       "first_seen": "2026-09-06T03:50:27.645294+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer"
+          "software engineer",
+          "full-stack engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -43096,7 +43145,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -43122,7 +43171,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -43355,7 +43404,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/usa-staff-machine-learning-engineer-at-walmart-4451273218",
       "official_url": "",
-      "description": "",
+      "description": "Position Summary...The Staff Machine Learning Engineer will lead the design and delivery of scalable, production-grade ML solutions that address critical business needs. This role involves overseeing the end-to-end ML lifecycle, including data sourcing, model development, deployment, and monitoring, while applying MLOps best practices. The engineer will build and maintain ML infrastructure, drive technical standards, and mentor team members. Collaboration across teams and continuous innovation are essential to advance Walmart’s ML capabilities and ensure high-quality, reliable solutions that support business objectives and operational excellence. About the team: The team develops foundational AI models and services that enhance Walmart’s customer-focused applications. Collaborating with Product, Business, Data, and Platform groups, they apply expertise in predictive analytics, machine learning, and data visualization. Key responsibilities include identifying data sources, building scalable models, and ensuring data quality to support informed decisions. Leveraging advanced techniques in natural language processing, computer vision, and deep learning, the team strengthens Walmart’s data strategy and analytics capabilities. They foster continuous learning and innovation to deliver impactful, scalable solutions that drive business value and operational excellence. What you'll do... Lead the design and deployment of scalable, production-grade machine learning solutions addressing critical business needs. Translate complex problems into clear technical requirements, architectural designs, and measurable success criteria. Oversee the full ML lifecycle, including data sourcing, feature engineering, model training, deployment, monitoring, and continuous improvement. Implement MLOps best practices such as CI/CD pipelines, model versioning, and monitoring to ensure operational excellence. Build and maintain reusable ML infrastructure components and manage large-scale operations across cloud environments using containerization and workflow automation. Provide technical leadership and mentorship, setting standards for code quality, testing, and deployment. Drive experimentation pipelines and explore advanced ML techniques to accelerate innovation and solution delivery. What you'll bring: Proven expertise in designing and delivering scalable, production-grade machine learning solutions aligned with business needs. Strong proficiency in ML frameworks such as TensorFlow, PyTorch, and Scikit-learn, and coding languages including Python and SQL. Experience with end-to-end ML lifecycle management, including data sourcing, feature engineering, model training, deployment, and monitoring. Knowledge of MLOps best practices, including CI/CD pipelines, model versioning, and telemetry-based monitoring. Familiarity with cloud platforms (AWS, GCP, Azure), containerization, Kubernetes, and workflow automation. Ability to implement robust model evaluation and validation frameworks. Demonstrated leadership in mentoring engineers and enforcing engineering standards. Strong collaboration and communication skills to work across teams and stakeholders. At Walmart, we offer competitive pay as well as performance-based bonus awards and other great benefits for a happier mind, body, and wallet. Health benefits include medical, vision and dental coverage. Financial benefits include 401(k), stock purchase and company-paid life insurance. Paid time off benefits include PTO (including sick leave), parental leave, family care leave, bereavement, jury duty, and voting. Other benefits include short-term and long-term disability, company discounts, Military Leave Pay, adoption and surrogacy expense reimbursement, and more. You will also receive PTO and/or PPTO that can be used for vacation, sick leave, holidays, or other purposes. The amount you receive depends on your job classification and length of employment. It will meet or exceed the requirements of paid sick leave laws, where applicable. For information about PTO, see https://one.walmart.com/notices. Live Better U is a Walmart-paid education benefit program for full-time and part-time associates in Walmart and Sam's Club facilities. Programs range from high school completion to bachelor's degrees, including English Language Learning and short-form certificates. Tuition, books, and fees are completely paid for by Walmart. Eligibility requirements apply to some benefits and may depend on your job classification and length of employment. Benefits are subject to change and may be subject to a specific plan or program terms. For Information About Benefits And Eligibility, See One.Walmart. The annual salary range for this position is $169,000.00 - $338,000.00 Additional compensation includes annual or quarterly performance bonuses. Additional compensation for certain positions may also include : Stock ㅤ ㅤ ㅤ ㅤ ‎ Minimum Qualifications... Outlined below are the required minimum qualifications for this position. If none are listed, there are no minimum qualifications. Option 1: Bachelor's degree in computer science, computer engineering, computer information systems, software engineering, or related area and 4 years’ experience in software engineering, machine learning engineering, AI systems or related area. Option 2: 6 years’ experience in software engineering, machine learning engineering, AI systems or related area. Preferred Qualifications... Outlined below are the optional preferred qualifications for this position. If none are listed, there are no preferred qualifications. Master’s degree in computer science, computer engineering, computer information systems, software engineering, or related area and 2 years' experience in software engineering, machine learning engineering, AI systems or related area., Prior work experience in accessibility best practices., Prior work experience in creating inclusive digital experiences, demonstrating knowledge in implementing Web Content Accessibility Guidelines (WCAG) 2.2 AA standards, assistive technologies, and integrating digital accessibility seamlessly. Primary Location... 1345 Crossman Ave, Sunnyvale, CA 94089-1114, United States of America Walmart and its subsidiaries are committed to maintaining a drug-free workplace and has a no tolerance policy regarding the use of illegal drugs and alcohol on the job. This policy applies to all employees and aims to create a safe and productive work environment.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T01:30:13.684053+00:00",
@@ -43367,7 +43416,12 @@
       "recovery_methods": {},
       "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": false,
-      "recovery_status": "filtered"
+      "recovery_status": "filtered",
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4405599209",
@@ -43381,7 +43435,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-python-at-walmart-4405599209",
       "official_url": "",
-      "description": "",
+      "description": "Position Summary... What you'll do...Walmart’s Marketing Technology Engineering Team aims to build tools and technologies that will enable Marketers to send highly Personalized Marketing communication to our customers. This team is part of the Marketing Services Core organization . As part of this team, you will be building highly scalable and reliable APIs, services and data pipelines which will drive the next generation of Marketing Communications. You’ll independently handle high impact, critical software/systems monitoring issues, troubleshoot business and production issues. As a member of this Rockstar team, you’ll be able to say that you work for the world’s largest retailer and contribute to innovation and development to best-in-class methodologies that impacted perception and drastically changed business as we know it. Role summary: As a Senior Software Engineer at Walmart, you will lead the design, development, and delivery of scalable software solutions that align with business objectives. This role requires expertise in software architecture, coding standards, and agile methodologies to create maintainable, high-quality components. You will collaborate with cross-functional teams to analyze requirements, address technical challenges, and implement innovative features while ensuring security and performance. Your contributions will drive continuous improvement and operational excellence, supporting Walmart’s commitment to delivering value through technology and innovation. About the team: The team develops a scalable, multi-tenant platform supporting Walmart U.S., International, Sam’s Club, and B2B operations. It creates autonomous AI-driven content systems for marketing across multiple channels, ensuring enterprise-grade governance and compliance. The group designs metadata-first, event-driven services for asset tracking and auditability, enabling seamless integration with internal and external solutions. Continuous feedback loops improve AI model quality and platform reliability. Collaborating with product, design, legal, and business teams, the team delivers secure, extensible systems that enhance consistency, speed, and innovation across Walmart’s global marketing operations. What you'll do: Analyze and classify requirements, ensuring alignment with business objectives and technical needs. Design scalable software solutions, applying architecture principles and design patterns. Develop, test, and maintain high-quality, secure, and maintainable code using appropriate languages and frameworks. Conduct code reviews and implement telemetry features to monitor application performance. Collaborate with stakeholders to identify risks and recommend corrective actions during development. Automate repetitive tasks within CI/CD pipelines to enhance delivery efficiency. Troubleshoot defects and optimize system performance through root cause analysis. Support continuous improvement by adopting emerging tools and technologies. What you'll bring: Bachelor’s Degree in Computer Science or related field and 5-7 years or master’s degree in Computer Science or related field and 3-5 years of experience building scalable ecommerce applications Proven expertise in software architecture, scalable distributed systems, and design patterns. Strong proficiency in object-oriented programming and coding standards across multiple languages such as JavaScript and Python. Experience with continuous integration and continuous delivery (CI/CD) pipelines, automation scripting, and telemetry implementation. Ability to analyze and translate business requirements into detailed technical designs and user stories. Skilled in debugging, defect management, and root cause analysis to ensure high-quality deliverables. Knowledge of secure coding practices and software development lifecycle (SDLC) methodologies. Demonstrated problem-solving skills and technical acumen in iterative development environments. Even Better if You Have: Designed, built, and maintained APIs, services of highly scalable platforms. Designed and built video streaming applications, with real time video analytics. Worked extensively with Kafka or other high volume-low latency messaging infrastructure and built real time and batch data driven applications Extensive knowledge of open-source libraries, design patterns and micro-service architecture. Familiarity with CI/CD and unit testing Experience in production system operations (logging, telemetry, alerting etc.) The keen eyes for detail and desire to learn, win, collaborate, and relish a challenge. Knowledge and/or experience in Data mining, Machine Learning, Image and Video Processing At Walmart, we offer competitive pay as well as performance-based bonus awards and other great benefits for a happier mind, body, and wallet. Health benefits include medical, vision and dental coverage. Financial benefits include 401(k), stock purchase and company-paid life insurance. Paid time off benefits include PTO (including sick leave), parental leave, family care leave, bereavement, jury duty, and voting. Other benefits include short-term and long-term disability, company discounts, Military Leave Pay, adoption and surrogacy expense reimbursement, and more. You will also receive PTO and/or PPTO that can be used for vacation, sick leave, holidays, or other purposes. The amount you receive depends on your job classification and length of employment. It will meet or exceed the requirements of paid sick leave laws, where applicable. For information about PTO, see https://one.walmart.com/notices. Live Better U is a Walmart-paid education benefit program for full-time and part-time associates in Walmart and Sam's Club facilities. Programs range from high school completion to bachelor's degrees, including English Language Learning and short-form certificates. Tuition, books, and fees are completely paid for by Walmart. Eligibility requirements apply to some benefits and may depend on your job classification and length of employment. Benefits are subject to change and may be subject to a specific plan or program terms. For Information About Benefits And Eligibility, See One.Walmart. The annual salary range for this position is $117,000.00 - $234,000.00 Additional compensation includes annual or quarterly performance bonuses. Additional compensation for certain positions may also include : Stock ㅤ ㅤ ㅤ ㅤ ‎ Minimum Qualifications... Outlined below are the required minimum qualifications for this position. If none are listed, there are no minimum qualifications. Option 1: Bachelor's degree in computer science, computer engineering, computer information systems, software engineering, or related area and 3 years’ experience in software engineering or related area. Option 2: 5 years’ experience in software engineering or related area. Preferred Qualifications... Outlined below are the optional preferred qualifications for this position. If none are listed, there are no preferred qualifications. Master’s degree in Computer Science, Computer Engineering, Computer Information Systems, Software Engineering, or related area and 1 year's experience in software engineering or related area., We value candidates with a background in creating inclusive digital experiences, demonstrating knowledge in implementing Web Content Accessibility Guidelines (WCAG) 2.2 AA standards, assistive technologies, and integrating digital accessibility seamlessly. The ideal candidate would have knowledge of accessibility best practices and join us as we continue to create accessible products and services following Walmart’s accessibility standards and guidelines for supporting an inclusive culture. Primary Location... 1345 Crossman Ave, Sunnyvale, CA 94089-1114, United States of America Walmart and its subsidiaries are committed to maintaining a drug-free workplace and has a no tolerance policy regarding the use of illegal drugs and alcohol on the job. This policy applies to all employees and aims to create a safe and productive work environment.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T20:50:30.947234+00:00",
@@ -43391,9 +43445,14 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": true,
-      "recovery_status": "filtered"
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4461437603",
@@ -43555,7 +43614,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -43580,7 +43639,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -43606,7 +43665,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -44310,7 +44369,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -44814,7 +44873,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -45081,7 +45140,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -45160,7 +45219,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -45186,7 +45245,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -45212,7 +45271,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true
     },
     {
@@ -45280,7 +45339,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/ai-ml-engineer-at-lululemon-4470812325",
       "official_url": "",
-      "description": "",
+      "description": "Requirements Description & Requirements Who we are lululemon is an innovative performance apparel company for yoga, running, training, and other athletic pursuits. Setting the bar in technical fabrics and functional design, we create transformational products and experiences that support people in moving, growing, connecting, and being well. We owe our success to our innovative product, emphasis on stores, commitment to our people, and the incredible connections we make in every community we're in. As a company, we focus on creating positive change to build a healthier, thriving future. In particular, that includes creating an equitable, inclusive and growth-focused environment for our people. About This Team The Enterprise Data & AI team is a strategic and operational driver of growth for lululemon, owning and building the data and AI platforms and products that enable the enterprise to operate with intelligence at scale. The team leads the design and delivery of a trusted unified data foundation, advanced analytics capabilities, and AI solutions across lululemon’s vertically integrated retail ecosystem, embedding strong data governance and responsible AI practices from the very beginning. By applying AI to critical business challenges and creating new, transformative AI solutions, the team helps reshape how lululemon operates. Through deep partnership with product, technology, and business teams, Enterprise Data & AI accelerates product innovation, unlocks measurable value, elevates guest and educator experiences, and drives enterprise efficiency. Core Responsibilities As an AI/ML Engineer, you will contribute to the design and implementation of AI/ML systems across the full model lifecycle from dataset curation, feature engineering, and model training through evaluation, deployment, and production monitoring. You will contribute to meaningful technical decisions on model architecture, training strategies, and serving infrastructure, working with minimal supervision to deliver reliable, high-quality AI capabilities aligned to business objectives. You will collaborate closely with research scientists, data scientists, and product engineers to translate model innovations into scalable production systems, and begin to develop mentorship and knowledge-sharing habits within the team. Select Responsibilities Include Design and implement end-to-end AI/ML systems covering dataset curation, feature engineering, model training, hyperparameter optimization, evaluation, deployment, and retraining Apply appropriate model architectures, training strategies, and optimization techniques for given tasks including classification, regression, ranking, generation, and retrieval Build and maintain scalable model training pipelines using distributed training frameworks (PyTorch Distributed, Horovod, Ray Train) and cloud ML platforms (SageMaker, Vertex AI, Azure ML) Deploy models to production using CI/CD automation including A/B testing, canary rollouts, shadow deployment, and automated rollback procedures Contribute to implementation of model serving infrastructure meeting latency, throughput, and cost requirements using serving frameworks (TorchServe, Triton, BentoML, or equivalent) Qualifications Bachelor's degree in Computer Science, Machine Learning, Statistics, or related technical field, or equivalent experience; Master's degree in ML or AI beneficial 4-8 years of AI/ML engineering experience designing and owning end-to-end ML systems including model training, evaluation, and production deployment, or equivalent, which includes educational experience (e.g., Master's degree) Proven ability to design and implement production-grade AI/ML application components applying best-practice software engineering including CI/CD integration, automated testing, and service reliability patterns Demonstrated experience with independently design model training strategies including architecture selection, optimization approach, and evaluation methodology aligned to business requirements Demonstrated experience owning full model deployment lifecycle including CI/CD automation, canary releases, A/B testing, and automated rollback Demonstrated ability to define ML Ops platform standards and reusable deployment templates adopted across the domain Experience with common ML tools and frameworks and implementation such as Python, Spark, Airflow, MLFlow, feature stores, cloud ML platforms Must haves Acknowledge the presence of choice in every moment and take personal responsibility for your life. Possess an entrepreneurial spirit and continuously innovate to achieve great results. Communicate with honesty and kindness and create the space for others to do the same. Lead with courage, knowing the possibility of greatness is bigger than the fear of failure. Foster connection by putting people first and building trusting relationships. Integrate fun and joy as a way of being and working, aka doesn’t take yourself too seriously. Additional Notes Please note: Applicants must be authorized to work for ANY employer in the U.S. We are unable to sponsor or take over sponsorship of employment visa at this time for this role. Compensation And Benefits Package lululemon’s compensation offerings are grounded in a pay-for-performance philosophy that recognizes exceptional individual and team performance. The typical hiring range for this position is from $146,830 - $192,720 annually ; the base pay offered is based on market location and may vary depending on job-related knowledge, skills, experience, and internal equity. As part of our total rewards offering, permanent employees in this position may be eligible for our competitive annual bonus program and equity offerings, subject to program eligibility requirements. At Lululemon, Investing In Our People Is a Top Priority. We Believe That When Life Works, Work Works. We Strive To Be The Place Where Inclusive Leaders Come To Develop And Enable All To Be Well. Recognizing Our Teams For Their Performance And Dedication, Other Components Of Our Total Rewards Offerings Include Support Of Career Development, Wellbeing, And Personal Growth Extended health and dental benefits, and mental health plans Paid time off Savings and retirement plan matching Generous employee discount Fitness & yoga classes Parenthood top-up Extensive catalog of development course offerings People networks, mentorship programs, and leadership series (to name a few) Note: The incentive programs, benefits, and perks have certain eligibility requirements. The Company reserves the right to alter these incentive programs, benefits, and perks in whole or in part at any time without advance notice. workplace arrangement In-person collaboration and connection is important to our culture. Work is performed onsite, minimum 4 days per week.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T20:50:30.947234+00:00",
@@ -45296,19 +45355,13 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
+      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
       "verified_this_run": true,
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.8,
-        "delta": 0,
-        "reason": "AI/ML engineering fits; seniority and scope unknown"
-      },
-      "recovery_input_hash": "6c9142c4cf3e3ce7e413",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-27T20:50:57.617778+00:00",
-      "official_search_status": "no_match"
+      "linkedin_detail_attempted_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_fetched_at": "2026-09-27T22:00:36.374428+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4468593718",
