@@ -246,6 +246,43 @@ class LocalSourceTests(unittest.TestCase):
         self.assertEqual("", legacy["first_seen"])
         self.assertEqual(now, ats_new["first_seen"])
 
+    def test_official_url_rekey_keeps_source_discovery_time(self) -> None:
+        old = "2026-09-25T00:00:00+00:00"
+        now = "2026-09-27T00:21:44+00:00"
+        known = schema.make_job(source="indeed", company="KnownCo", title="Engineer",
+                                location="Austin, TX", job_id="known")
+        source_key = schema.dedup_key(known)
+        known["official_url"] = "https://jobs.knownco.example/engineer"
+        known["first_seen"] = now
+        canonical_key = schema.dedup_key(known)
+        seen = {source_key: old, canonical_key: now}  # URL key added earlier in this run.
+
+        new = board_pipeline.finalize_new_jobs(
+            [known], {}, seen, now, {source_key}
+        )
+
+        self.assertEqual([], new)
+        self.assertEqual(old, known["first_seen"])
+        self.assertEqual(old, seen[canonical_key])
+
+    def test_official_url_rekey_preserves_legacy_unknown(self) -> None:
+        now = "2026-09-27T00:21:44+00:00"
+        legacy = schema.make_job(source="indeed", company="LegacyCo", title="Engineer",
+                                 location="Austin, TX", job_id="legacy")
+        source_key = schema.dedup_key(legacy)
+        legacy["official_url"] = "https://jobs.legacyco.example/engineer"
+        legacy["first_seen"] = now
+        canonical_key = schema.dedup_key(legacy)
+        seen = {source_key: "", canonical_key: now}
+
+        new = board_pipeline.finalize_new_jobs(
+            [legacy], {}, seen, now, {source_key}
+        )
+
+        self.assertEqual([], new)
+        self.assertEqual("", legacy["first_seen"])
+        self.assertEqual("", seen[canonical_key])
+
     def test_glassdoor_static_cards_preserve_partial_discovery(self) -> None:
         records = jobspy_local._parse_glassdoor_cards('''
           <div data-test="job-card-wrapper">

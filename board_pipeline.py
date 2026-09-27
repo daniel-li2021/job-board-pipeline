@@ -2930,6 +2930,18 @@ def resolve_last_seen(
     )
 
 
+def _pre_run_seen_key(job: Dict[str, Any], seen_before_run: set[str]) -> str:
+    """Keep a source identity seen when an official URL becomes its new key."""
+    key = dedup_key(job)
+    if key in seen_before_run:
+        return key
+    if job.get("official_url"):
+        source_key = dedup_key({**job, "official_url": ""})
+        if source_key in seen_before_run:
+            return source_key
+    return ""
+
+
 def finalize_new_jobs(
     jobs: List[Dict[str, Any]],
     store: Dict[str, Dict[str, Any]],
@@ -2941,18 +2953,20 @@ def finalize_new_jobs(
     new_jobs = []
     for job in jobs:
         key = dedup_key(job)
-        prev = store.get(key)
-        preserve_job_dates(job, prev or {}, first_seen=seen_jobs.get(key))
-        if key in seen_before_run and not (seen_jobs.get(key) or (prev or {}).get("first_seen")):
+        prior_key = _pre_run_seen_key(job, seen_before_run)
+        prev = store.get(key) or (store.get(prior_key) if prior_key else None)
+        prior_first_seen = str(seen_jobs.get(prior_key) or (prev or {}).get("first_seen") or "") if prior_key else ""
+        preserve_job_dates(job, prev or {}, first_seen=prior_first_seen or seen_jobs.get(key))
+        if prior_key and not prior_first_seen:
             job["first_seen"] = ""  # Legacy unknown stays unknown after rediscovery.
         else:
             job["first_seen"] = str(job.get("first_seen") or (
-                now_iso if prev is None and key not in seen_before_run
+                now_iso if prev is None and not prior_key
                 and str(job.get("source") or "").lower() not in LOCAL_SOURCES else ""
             ))
-        if key not in seen_jobs:
+        if key not in seen_jobs or (prior_key and prior_key != key and key not in seen_before_run):
             seen_jobs[key] = job["first_seen"]
-        if key not in seen_before_run and job["first_seen"]:
+        if not prior_key and job["first_seen"]:
             new_jobs.append(job)
     return new_jobs
 
@@ -3251,13 +3265,18 @@ def run() -> None:
     store = prune_store(store, now)
     for job in deduped:
         key = dedup_key(job)
-        prev = store.get(key)
-        preserve_job_dates(job, prev or {}, first_seen=seen_jobs.get(key))
-        job["first_seen"] = str(job.get("first_seen") or (
-            now_iso if prev is None and key not in seen_before_run
-            and str(job.get("source") or "").lower() not in LOCAL_SOURCES else ""
-        ))
-        if key not in seen_jobs:
+        prior_key = _pre_run_seen_key(job, seen_before_run)
+        prev = store.get(key) or (store.get(prior_key) if prior_key else None)
+        prior_first_seen = str(seen_jobs.get(prior_key) or (prev or {}).get("first_seen") or "") if prior_key else ""
+        preserve_job_dates(job, prev or {}, first_seen=prior_first_seen or seen_jobs.get(key))
+        if prior_key and not prior_first_seen:
+            job["first_seen"] = ""
+        else:
+            job["first_seen"] = str(job.get("first_seen") or (
+                now_iso if prev is None and not prior_key
+                and str(job.get("source") or "").lower() not in LOCAL_SOURCES else ""
+            ))
+        if key not in seen_jobs or (prior_key and prior_key != key and key not in seen_before_run):
             seen_jobs[key] = job["first_seen"]
         job["last_seen"] = resolve_last_seen(job, prev, now_iso)
         job["recency_bucket"] = recency_bucket(job, now=now)
