@@ -556,6 +556,9 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             cooldown_until = str(state.get("detail_cooldown_until") or "")
             intentional_pause = state.get("detail_cooldown_reason") == "intentional pause"
             blocked = str(enrichment.get("blocked") or "")
+            detail_rate_limited = bool(enrichment.get("rate_limited") or ("429" in blocked and not intentional_pause))
+            if status == "Healthy" and detail_rate_limited:
+                status = "Warning"
             scrapling_requests = int(enrichment.get("scrapling_requests", 0) or 0)
             scrapling_resolved = int(enrichment.get("scrapling_jds_resolved", 0) or 0)
             remaining = int(enrichment.get("remaining_no_jd", 0) or 0)
@@ -660,6 +663,39 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                 ("required source has no usable data" if not data_usable and state.get("required", source != "glassdoor") else "")
             ),
         }
+        if source == "linkedin":
+            attempt_at = str(state.get("last_attempt_at") or "")
+            snapshot_at = str((snapshot.get("meta") or {}).get("scraped_at") or "")
+            same_snapshot = bool(attempt_at and attempt_at == snapshot_at)
+            retained = ([job for job in snapshot_jobs
+                         if job.get("verified_this_run") and job.get("source_verified_at") == attempt_at]
+                        if is_partial else snapshot_jobs) if same_snapshot else []
+            recovery = local_payload.get("local_recovery") or {}
+            recovery_at = str(recovery.get("run_at") or "")
+            try:
+                recovery_delay = (datetime.fromisoformat(recovery_at.replace("Z", "+00:00"))
+                                  - datetime.fromisoformat(attempt_at.replace("Z", "+00:00")))
+                same_recovery = timedelta(0) <= recovery_delay <= timedelta(hours=1)
+            except ValueError:
+                same_recovery = False
+            components[source]["latest_run"] = {
+                "attempt_at": attempt_at,
+                "titles_found": (int(state.get("partial_collected_count", 0) or 0) if is_partial
+                                 else int(state.get("last_attempt_count", 0) or 0)) if same_snapshot else None,
+                "titles_kept": len(retained) if same_snapshot else None,
+                "jds_on_kept_titles": (sum(len(str(job.get("description") or "").strip()) >= 200
+                                           for job in retained) if same_snapshot else None),
+                "search_jds_resolved": (int(((snapshot.get("meta") or {}).get("detail_enrichment") or {})
+                                            .get("jds_resolved", 0) or 0) if same_snapshot else None),
+                "recovery_linkedin_jds": int(recovery.get("linkedin_detail_recoveries", 0) or 0) if same_recovery else None,
+                "recovery_other_jds": int(recovery.get("official_jds_recovered", 0) or 0) if same_recovery else None,
+                "detail_429": detail_rate_limited or bool(same_recovery and recovery.get("linkedin_rate_limited")),
+                "post_429_jds_recovered": (recovery.get("post_429_jds_recovered")
+                                           if same_recovery and recovery.get("post_429_jds_recovered") is not None
+                                           else 0 if same_recovery and recovery.get("linkedin_rate_limited")
+                                           and not recovery.get("official_jds_recovered") else None),
+                "detail_cooldown_until": cooldown_until,
+            }
 
     components["board"]["keywords"] = list(dict.fromkeys([
         *components["board"]["keywords"],
@@ -878,5 +914,32 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
         f"{html.escape(key.replace('_', ' '))}: {int(value)}"
         for key, value in report.get("recovery_summary", {}).items()
     )
-    page = f"""<!doctype html><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Pipeline health</title><style>body{{font:15px/1.45 system-ui;max-width:1250px;margin:40px auto;padding:0 20px;color:#172019}}table{{border-collapse:collapse;width:100%}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}}code{{background:#eee;padding:2px 4px}}li{{margin:5px 0}}</style><h1>Pipeline health: {report['overall']}</h1><p>Generated {html.escape(report['generated_at'])}. <a href=\"index.html\">Dashboard</a> · <a href=\"health.json\">current JSON</a> · <a href=\"health-history.json\">recent run and batch history</a></p><p>{summary_html}</p><h2>Local Mac schedule</h2><table>{scheduler_rows}</table><p>{html.escape(scheduler['basis'])}</p><h2>Components</h2><table><tr><th>Source</th><th>Status</th><th>Jobs / JD / Pass</th><th>Updated</th><th>Issue</th><th>Consecutive failures</th></tr>{rows}</table><h2>Execution</h2><table><tr><th>Component</th><th>Status</th><th>Jobs processed</th><th>JDs recovered</th><th>Elapsed seconds</th></tr>{groups}</table><details><summary>Subcomponents and diagnostics</summary><pre>{html.escape(json.dumps(report.get('groups', {}), indent=2))}</pre><pre>{html.escape(json.dumps({key: item.get('detail') for key, item in report['components'].items()}, indent=2))}</pre></details><h2>Actionable problems</h2><ul>{issues}</ul><h2>Active warnings</h2><ul>{degradations}</ul><h2>Recovered behavior / known limitations</h2><ul>{limitations}</ul><h2>Enrichment funnel</h2><pre>{html.escape(json.dumps(report['enrichment'], indent=2))}</pre><h2>Unresolved JD examples</h2><ul>{examples}</ul>"""
+    linkedin = report["components"]["linkedin"]
+    latest = linkedin.get("latest_run") or {}
+    def metric(key: str) -> str:
+        value = latest.get(key)
+        return "—" if value is None else str(int(value))
+    def jds(key: str) -> str:
+        return f"{metric(key)} {'JD' if latest.get(key) == 1 else 'JDs'}"
+    rate_limit_note = ("LinkedIn JD requests stopped at HTTP 429. Other recovery methods continued."
+                       if latest.get("detail_429") else "No LinkedIn detail 429 recorded in this run.")
+    after_429_note = (f"After the 429: {jds('post_429_jds_recovered')} recovered. "
+                      if latest.get("post_429_jds_recovered") is not None else
+                      "After the 429: recovery count was not recorded for this run. ")
+    linkedin_html = (
+        f"<section class=\"linkedin-run\"><h2>LinkedIn latest local run · {html.escape(linkedin['status'])}</h2>"
+        f"<p>Attempt {html.escape(str(latest.get('attempt_at') or 'unknown'))}. "
+        f"{html.escape(rate_limit_note)}</p>"
+        f"<p><strong>{metric('titles_found')} title cards found</strong> · "
+        f"{metric('titles_kept')} kept · <strong>{jds('jds_on_kept_titles')} on kept cards</strong> "
+        f"(description text ≥200 characters, including cached text).</p>"
+        f"<p>Initial enrichment: {jds('search_jds_resolved')}. "
+        f"Follow-up recovery: {jds('recovery_linkedin_jds')} via LinkedIn"
+        f"{' before the 429' if latest.get('detail_429') else ''}; "
+        f"{jds('recovery_other_jds')} via other methods. "
+        f"{after_429_note if latest.get('detail_429') else ''}"
+        f"{'No further LinkedIn detail requests were made after the 429.' if latest.get('detail_429') else ''}</p>"
+        f"</section>"
+    )
+    page = f"""<!doctype html><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Pipeline health</title><style>body{{font:15px/1.45 system-ui;max-width:1250px;margin:40px auto;padding:0 20px;color:#172019}}table{{border-collapse:collapse;width:100%}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}}code{{background:#eee;padding:2px 4px}}li{{margin:5px 0}}.linkedin-run{{border:1px solid #d9a234;background:#fff8e6;border-radius:10px;padding:4px 18px;margin:20px 0}}.linkedin-run h2{{margin-bottom:4px}}</style><h1>Pipeline health: {report['overall']}</h1><p>Generated {html.escape(report['generated_at'])}. <a href=\"index.html\">Dashboard</a> · <a href=\"health.json\">current JSON</a> · <a href=\"health-history.json\">recent run and batch history</a></p>{linkedin_html}<p>{summary_html}</p><h2>Local Mac schedule</h2><table>{scheduler_rows}</table><p>{html.escape(scheduler['basis'])}</p><h2>Components</h2><table><tr><th>Source</th><th>Status</th><th>Jobs / JD / Pass</th><th>Updated</th><th>Issue</th><th>Consecutive failures</th></tr>{rows}</table><h2>Execution</h2><table><tr><th>Component</th><th>Status</th><th>Jobs processed</th><th>JDs recovered</th><th>Elapsed seconds</th></tr>{groups}</table><details><summary>Subcomponents and diagnostics</summary><pre>{html.escape(json.dumps(report.get('groups', {}), indent=2))}</pre><pre>{html.escape(json.dumps({key: item.get('detail') for key, item in report['components'].items()}, indent=2))}</pre></details><h2>Actionable problems</h2><ul>{issues}</ul><h2>Active warnings</h2><ul>{degradations}</ul><h2>Recovered behavior / known limitations</h2><ul>{limitations}</ul><h2>Enrichment funnel</h2><pre>{html.escape(json.dumps(report['enrichment'], indent=2))}</pre><h2>Unresolved JD examples</h2><ul>{examples}</ul>"""
     (public / "health.html").write_text(page, encoding="utf-8")

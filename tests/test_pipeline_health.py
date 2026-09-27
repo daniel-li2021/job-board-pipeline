@@ -12,6 +12,61 @@ import board_pipeline
 
 
 class PipelineHealthTests(unittest.TestCase):
+    def test_linkedin_latest_run_counts_and_429_are_prominent(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            now = datetime(2026, 9, 27, 4, tzinfo=timezone.utc)
+            attempt = now.isoformat()
+            for _key, (_label, folder, store_name) in pipeline_health.PIPELINES.items():
+                out = root / "output" / folder
+                out.mkdir(parents=True)
+                out.joinpath(store_name).write_text(json.dumps({
+                    "updated_at": attempt, "entries": [{"title": "Engineer"}],
+                }))
+            sources = root / "output" / "sources"
+            sources.mkdir(parents=True)
+            sources.joinpath("health.json").write_text(json.dumps({
+                "sources": {
+                    "linkedin": {
+                        "status": "partial", "required": True, "last_attempt_at": attempt,
+                        "last_partial_at": attempt, "last_success_at": attempt,
+                        "partial_collected_count": 4, "partial_fresh_kept": 2,
+                        "detail_enrichment": {"rate_limited": True, "blocked": "HTTP 429"},
+                    },
+                    "indeed": {"last_success_at": attempt},
+                    "glassdoor": {"last_success_at": attempt, "required": False},
+                },
+                "local_recovery": {
+                    "run_at": (now + timedelta(minutes=1)).isoformat(),
+                    "linkedin_detail_recoveries": 1, "official_jds_recovered": 0,
+                    "linkedin_rate_limited": True,
+                },
+            }))
+            sources.joinpath("linkedin.json").write_text(json.dumps({
+                "meta": {"scraped_at": attempt, "detail_enrichment": {"jds_resolved": 1}},
+                "jobs": [
+                    {"title": "A", "description": "x" * 200, "verified_this_run": True,
+                     "source_verified_at": attempt},
+                    {"title": "B", "verified_this_run": True, "source_verified_at": attempt},
+                    {"title": "old", "description": "y" * 200, "verified_this_run": False},
+                ],
+            }))
+            for source in ("indeed", "glassdoor"):
+                sources.joinpath(f"{source}.json").write_text(json.dumps({"jobs": [{}]}))
+
+            report, history = pipeline_health.build(root, now)
+            linkedin = report["components"]["linkedin"]
+            self.assertEqual("Warning", linkedin["status"])
+            self.assertEqual(4, linkedin["latest_run"]["titles_found"])
+            self.assertEqual(2, linkedin["latest_run"]["titles_kept"])
+            self.assertEqual(1, linkedin["latest_run"]["jds_on_kept_titles"])
+            self.assertEqual(1, linkedin["latest_run"]["recovery_linkedin_jds"])
+            pipeline_health.write(root / "public", report, history)
+            page = (root / "public" / "health.html").read_text()
+            self.assertIn("4 title cards found", page)
+            self.assertIn("1 JD on kept cards", page)
+            self.assertIn("1 JD via LinkedIn before the 429; 0 JDs via other methods", page)
+
     def test_execution_elapsed_and_local_recovery_counts_do_not_overlap(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -321,13 +376,13 @@ class PipelineHealthTests(unittest.TestCase):
 
             report, _history = pipeline_health.build(root, now)
             linkedin = report["components"]["linkedin"]
-            self.assertEqual("Healthy", linkedin["status"])
+            self.assertEqual("Warning", linkedin["status"])
             self.assertIn("detail enrichment blocked: blocked with HTTP 429", linkedin["detail"])
             self.assertIn("Scrapling fallback recovered 5/8", linkedin["detail"])
             self.assertIn("rate-limited", linkedin["keywords"])
             self.assertNotIn("search/discovery attempt", linkedin["detail"])
 
-    def test_linkedin_detail_429_with_high_scrapling_recovery_is_not_warning(self) -> None:
+    def test_linkedin_detail_429_stays_visible_despite_high_scrapling_recovery(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             now = datetime(2026, 9, 12, 12, tzinfo=timezone.utc)
@@ -356,8 +411,8 @@ class PipelineHealthTests(unittest.TestCase):
 
             report, _history = pipeline_health.build(root, now)
 
-            self.assertEqual("Healthy", report["components"]["linkedin"]["status"])
-            self.assertFalse(report["degradations"])
+            self.assertEqual("Warning", report["components"]["linkedin"]["status"])
+            self.assertTrue(report["degradations"])
             self.assertTrue(any("recovered detail limitation" in item for item in report["limitations"]))
 
     def test_intentional_linkedin_detail_pause_is_reported_as_cooldown(self) -> None:

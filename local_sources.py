@@ -623,6 +623,7 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
     originals = {name: copy.deepcopy(snapshots[name]["jobs"]) for name in names}
     before = {name: sum(len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS
                         for row in originals[name]) for name in names}
+    blocked_before_recovery = linkedin_blocked
     context = coverage_reconcile.load_official_context()
     store = board.load_store()
     store = {
@@ -665,6 +666,8 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
         budget=budget,
     ) if linkedin_rows else {"requests": 0, "responses": 0, "rate_limited": False, "jds_resolved": 0}
     linkedin_blocked = linkedin_blocked or bool(detail.get("rate_limited"))
+    after_detail_no_jd = sum(len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS
+                             for name in names for row in snapshots[name]["jobs"])
     detail.update(cooldown_active=cooldown, probe=probe,
                   status="cooldown" if cooldown else "probe" if probe else "active")
 
@@ -758,6 +761,8 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
         atomic_write(HEALTH_PATH, (json.dumps(health, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
     after = {name: sum(len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS
                        for row in snapshots[name]["jobs"]) for name in names}
+    post_429_jds = (max(0, sum(before.values()) - sum(after.values())) if blocked_before_recovery else
+                    max(0, after_detail_no_jd - sum(after.values())) if detail.get("rate_limited") else None)
     report: Dict[str, object] = {
         "run_at": now.isoformat(), "before_no_jd": before, "after_no_jd": after,
         "elapsed_seconds": round(time.monotonic() - started, 3),
@@ -775,6 +780,7 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
         "generic_jobs_deferred": max(0, len(pending) - len(methods)),
         "search_provider": resolver.search_provider,
         "linkedin_rate_limited": linkedin_blocked, "changed_sources": changed,
+        "post_429_jds_recovered": post_429_jds,
         "glassdoor": "excluded",
     }
     log_path = OUTPUT_DIR / "logs" / "linkedin_jd_recovery_latest.json"
@@ -786,6 +792,7 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
         health = {"schema_version": HEALTH_SCHEMA_VERSION, "sources": {}}
     health["local_recovery"] = {key: report[key] for key in (
         "run_at", "elapsed_seconds", "official_jds_recovered", "linkedin_detail_recoveries",
+        "post_429_jds_recovered",
         "targeted_linkedin_search_requests", "targeted_linkedin_detail_jds",
         "targeted_linkedin_rate_limited", "generic_jobs_processed",
         "search_requests", "official_page_requests", "linkedin_rate_limited",
