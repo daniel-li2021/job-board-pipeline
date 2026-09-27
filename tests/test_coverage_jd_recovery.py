@@ -173,7 +173,7 @@ class DetailRecoveryTests(unittest.TestCase):
                 return SimpleNamespace(status_code=202, content=b"", text="", url=url)
             return SimpleNamespace(status_code=200, content=b"detail", text=self._html(2), url=url)
         with patch.object(jd_recovery, "http_get", side_effect=fetch), patch.object(
-            jd_recovery, "_equinix_browser_detail",
+            jd_recovery, "_equinix_browser_page",
             return_value=(self._html(1), jobs[0]["official_url"], 3),
         ) as bootstrap, patch.object(
             jd_recovery, "make_session", return_value=SimpleNamespace(close=lambda: None)
@@ -183,6 +183,19 @@ class DetailRecoveryTests(unittest.TestCase):
         self.assertEqual(3, stats["detail_requests"])
         self.assertEqual(2, stats["usable_jd"])
         self.assertEqual(3, stats["browser_http_requests"])
+
+    def test_fresh_cached_jd_survives_missing_listing_date(self) -> None:
+        job = self._job("Disney", 1)
+        job["posted_date"] = ""
+        cached = {**job, "posted_date": "2026-09-25",
+                  "description": "Complete description. " * 20,
+                  "detail_fetched_at": NOW.isoformat()}
+        result = {"company": "Disney", "jobs": [job]}
+        with patch.object(jd_recovery, "http_get") as fetch:
+            stats = jd_recovery.recover([result], [cached], lambda _: "clear")
+        fetch.assert_not_called()
+        self.assertEqual(1, stats["cache_reused"])
+        self.assertEqual(1, stats["usable_jd"])
 
     def test_ai_skip_avoids_detail_and_keeps_scoring_fields(self) -> None:
         job = self._job("Netflix", 1)

@@ -209,6 +209,17 @@ def write_scrape_outputs(
     scraped_companies = {(r.get("company") or "") for r in results}
     current_jobs = [j for r in results for j in (r.get("jobs") or []) if isinstance(j, dict)]
     previous_jobs = load_raw_jobs() if merge_previous else []
+    if merge_previous:
+        failed = {str(r.get("company") or "") for r in results
+                  if r.get("errors") or r.get("status") in {"blocked", "error", "partial"}}
+        missing = failed - {str(job.get("company") or "") for job in previous_jobs}
+        if missing:
+            try:
+                stored = json.loads(DEFAULT_STORE_PATH.read_text(encoding="utf-8"))
+                previous_jobs.extend(job for job in stored.get("jobs", [])
+                                     if isinstance(job, dict) and job.get("company") in missing)
+            except (OSError, ValueError, AttributeError):
+                pass
     previous_by_key = {dedup_key(job): job for job in previous_jobs}
     for job in current_jobs:
         board.preserve_job_dates(job, previous_by_key.get(dedup_key(job), {}))

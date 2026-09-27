@@ -91,6 +91,28 @@ class OfficialAdapterTests(unittest.TestCase):
                 self.assertEqual(4, payload["metrics"]["detail_prefilter_skipped"])
                 self.assertIn("Wall time: 1.250s", report.read_text(encoding="utf-8"))
 
+    def test_blocked_company_uses_last_good_store_when_raw_missing(self):
+        job = {"company": "Equinix", "job_id": "JR-1", "title": "Software Engineer",
+               "official_url": "https://careers.equinix.com/jobs/software-engineer"}
+        result = {"company": "Equinix", "company_id": "equinix", "jobs": [],
+                  "status": "blocked", "errors": ["HTTP 202 challenge"]}
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            store = root / "jobs.json"
+            store.write_text(json.dumps({"jobs": [job]}), encoding="utf-8")
+            raw = root / "raw.json.gz"
+            raw.write_bytes(gzip.compress(json.dumps({"jobs": [
+                {"company": "Example", "job_id": "2", "title": "Data Engineer"}
+            ]}).encode()))
+            with patch.object(official_careers, "RAW_PATH", raw), patch.object(
+                official_careers, "REPORT_PATH", root / "report.md"
+            ), patch.object(official_careers, "DEFAULT_STORE_PATH", store):
+                official_careers.write_scrape_outputs([result], "test")
+                saved = official_careers.load_raw_jobs()
+        equinix = [row for row in saved if row.get("company") == "Equinix"]
+        self.assertEqual(["JR-1"], [row["job_id"] for row in equinix])
+        self.assertEqual("carried_until_full_sweep", equinix[0]["listing_cache_status"])
+
     @patch("requests.Session.request")
     def test_measured_session_counts_requests_and_time(self, request):
         request.return_value = Response()
@@ -237,6 +259,24 @@ class OfficialAdapterTests(unittest.TestCase):
         )
         self.assertEqual(["JR-1"], [job["job_id"] for job in result["jobs"]])
         self.assertEqual("US", session.calls[0][2]["params"]["country_codes[]"])
+
+    def test_equinix_search_202_uses_bounded_browser_session(self):
+        html = """<table data-controller="jobs--table-results"><tbody>
+          <tr data-job-url="https://careers.equinix.com/jobs/software-engineer">
+            <td class="job-search-results-title"><a>Software Engineer</a></td>
+            <td class="job-search-results-requisition-identifiers">JR-1</td>
+            <td class="job-search-results-location">Dallas, Texas, United States</td>
+          </tr></tbody></table>"""
+        url = "https://careers.equinix.com/jobs/search"
+        response = Response(status=202)
+        response.url = url
+        session = Session(gets=[response])
+        with patch("sources.careers.jd_recovery._equinix_browser_page",
+                   return_value=(html, url, 6)) as bootstrap:
+            result = scrape_radancy(session, company="Equinix", search_url=url,
+                                    max_pages=1, queries=["software engineer"], fetch_details=False)
+        bootstrap.assert_called_once()
+        self.assertEqual(["JR-1"], [job["job_id"] for job in result["jobs"]])
 
     def test_radancy_supports_talentbrew_query_and_pagination_parameters(self):
         html = """<ul id="search-results-list"><li class="search-results-list__list-item">

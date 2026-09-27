@@ -9,7 +9,7 @@ from urllib.parse import urljoin
 
 import requests
 
-from ..schema import make_job, normalize_space
+from ..schema import SourceUnavailable, make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
 from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
@@ -90,6 +90,7 @@ def scrape_radancy(
     raw_count = pages = detail_fetches = 0
     errors: List[str] = []
     query_stats: List[Dict[str, Any]] = []
+    equinix_challenge_attempted = False
 
     for query in queries or ROLE_SEARCH_QUERIES:
         query_started = time.monotonic()
@@ -106,8 +107,20 @@ def scrape_radancy(
                 label=f"{company} career search",
                 params=params,
             )
+            page_html = result.text
+            if company == "Equinix" and result.status_code == 202:
+                if equinix_challenge_attempted:
+                    raise SourceUnavailable("Equinix career search challenge remained unresolved")
+                equinix_challenge_attempted = True
+                from .jd_recovery import _equinix_browser_page
+                try:
+                    page_html, _, browser_requests = _equinix_browser_page(result.url, session)
+                except Exception as exc:
+                    raise SourceUnavailable(f"Equinix career search challenge failed: {type(exc).__name__}: {exc}") from exc
+                if hasattr(session, "request_count"):
+                    session.request_count += browser_requests
             pages += 1
-            cards = _cards(result.text, search_url)
+            cards = _cards(page_html, search_url)
             if not cards:
                 break
             page_ids = [card[0] for card in cards]

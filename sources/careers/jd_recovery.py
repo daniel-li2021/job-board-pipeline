@@ -23,7 +23,7 @@ DETAIL_REQUEST_CAP = 150
 PRIORITY_COMPANIES = ("Meta", "Disney", "Netflix", "Equinix")
 
 
-def _equinix_browser_detail(url: str, session: Any) -> Tuple[str, str, int]:
+def _equinix_browser_page(url: str, session: Any) -> Tuple[str, str, int]:
     """Pass Equinix's short-lived browser challenge once, then reuse its cookie."""
     from playwright.sync_api import sync_playwright
 
@@ -150,6 +150,16 @@ def recover(
             if len(str(cached.get("description") or "").strip()) >= THIN_JD_CHARS:
                 job["description"] = cached["description"]
                 job["jd_recovery_source"] = "cache"
+                # Detail-derived posting dates should not invalidate a fresh JD
+                # when a listing omits dates on the next run.
+                detail_time = parse_datetime(cached.get("detail_fetched_at"))
+                if (decision.reason == "changed" and not job.get("posted_date")
+                    and not job.get("updated_date") and detail_time
+                    and 0 <= time.time() - detail_time.timestamp() <= 14 * 86400
+                    and normalize_title_key(str(cached.get("title") or "")) == normalize_title_key(str(job.get("title") or ""))
+                    and normalize_job_url(str(cached.get("official_url") or "")) == normalize_job_url(str(job.get("official_url") or ""))):
+                    decision.should_fetch = False
+                    decision.reason = "reused"
                 annotate_detail(job, decision, detail_fetched=False, listing_title=str(job.get("title") or ""),
                                 listing_posted_date=str(job.get("posted_date") or ""),
                                 listing_updated_date=str(job.get("updated_date") or ""))
@@ -236,6 +246,8 @@ def recover(
             result["detail_fetches"] = int(result.get("detail_fetches") or 0) + 1
             try:
                 detail_url = url
+                listing_posted_date = str(job.get("posted_date") or "")
+                listing_updated_date = str(job.get("updated_date") or "")
                 headers = {"User-Agent": "Mozilla/5.0"} if company == "Meta" else None
                 if company == "Meta":
                     detail_url = f"https://www.metacareers.com/profile/job_details/{job.get('job_id')}"
@@ -251,7 +263,7 @@ def recover(
                     per_company[company]["detail_requests"] += 1
                     result["detail_fetches"] = int(result.get("detail_fetches") or 0) + 1
                     try:
-                        html, response_url, browser_requests = _equinix_browser_detail(url, sessions[company])
+                        html, response_url, browser_requests = _equinix_browser_page(url, sessions[company])
                         metrics["browser_http_requests"] += browser_requests
                         result["http_requests"] = int(result.get("http_requests") or 0) + browser_requests
                     except Exception:
@@ -267,8 +279,8 @@ def recover(
                 if posted:
                     adopt_better_posted_date(job, {"posted_date": posted, "date_confidence": "high"})
                 annotate_detail(job, decision, detail_fetched=True, listing_title=str(job.get("title") or ""),
-                                listing_posted_date=str(job.get("posted_date") or ""),
-                                listing_updated_date=str(job.get("updated_date") or ""))
+                                listing_posted_date=listing_posted_date,
+                                listing_updated_date=listing_updated_date)
                 per_company[company]["detail_success"] += 1
                 metrics["detail_success"] += 1
             except Exception as exc:  # keep cached description if a detail fetch fails
