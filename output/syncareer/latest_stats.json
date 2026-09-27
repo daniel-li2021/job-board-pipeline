@@ -1,21 +1,21 @@
 {
-  "run_at": "2026-09-27T14:52:23.643518+00:00",
-  "elapsed_seconds": 74.599,
-  "remote_elapsed_seconds": 53.566,
+  "run_at": "2026-09-27T23:52:34.034165+00:00",
+  "elapsed_seconds": 84.641,
+  "remote_elapsed_seconds": 48.342,
   "funnel": {
-    "scoring_candidates": 96
+    "scoring_candidates": 85
   },
   "llm": {
-    "reused": 89,
-    "llm": 5,
-    "new_or_changed": 7,
-    "rule": 11,
-    "sent": 5,
-    "api_requests": 2,
-    "recency_skipped": 2,
+    "reused": 78,
+    "llm": 12,
+    "new_or_changed": 12,
+    "rule": 0,
+    "sent": 12,
+    "api_requests": 3,
+    "recency_skipped": 0,
     "overflow": 0,
-    "peer_reused": 0,
-    "thin_source_rule": 9,
+    "peer_reused": 5,
+    "thin_source_rule": 0,
     "retryable_fallbacks": 0,
     "historical_seen_skipped": 0,
     "historical_llm_retained": 0,
@@ -23,23 +23,22 @@
     "same_content_reused": 0,
     "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 1,
-      "material_jd_change": 1,
-      "prior_rule_result_now_eligible_for_llm": 5
+      "genuinely_new_job": 11,
+      "prior_rule_result_now_eligible_for_llm": 1
     },
     "batch_size": 10,
-    "primary_batches_total": 2,
-    "batches_total": 2,
-    "batches_succeeded": 2,
-    "batches_attempted": 2,
+    "primary_batches_total": 3,
+    "batches_total": 3,
+    "batches_succeeded": 3,
+    "batches_attempted": 3,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 11.648,
-    "json_results": 5,
+    "latency_seconds": 26.214,
+    "json_results": 12,
     "batches": [
       {
         "batch": 1,
@@ -47,161 +46,315 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://qiagen.wd502.myworkdayjobs.com/en-US/QIAGEN/job/Redwood-City/Software-Engineer--Data-Platform--QDI_JR00000923?startDate=bc33aa3152ec42d4995f4791a106ed09&startDate=6cb77610a8a543aea2d6bc10457e35d4&startDate=d903bb3fedad45039383f6de334ad4db&startDate=29247e57dbaf46fb855b224e03170bc7&startDate=d4afdeb461d446e4babd204bd102dba8&startDate=a30a87ed25634629aa6c3958aa2b91ea",
-            "company": "Qiagen",
-            "title": "Software Engineer, Data Platform, QDI"
+            "key": "url::https://job-boards.greenhouse.io/lendingtree/jobs/8234149",
+            "company": "LendingTree",
+            "title": "Software Engineer"
+          },
+          {
+            "key": "url::https://jobs.keysight.com/external/jobs/54663?lang=en-us",
+            "company": "Keysight",
+            "title": "Signal Processing Software Engineer (DSP & Communications Systems)"
+          },
+          {
+            "key": "url::https://jobs.siemens.com/en_US/externaljobs/JobDetail/523676",
+            "company": "Siemens",
+            "title": "Integration Test Software Engineer"
+          },
+          {
+            "key": "url::https://www.schwabjobs.com/job/austin/full-stack-java-angular-engineer/33727/94493378896",
+            "company": "Charles Schwab",
+            "title": "Full Stack Java/Angular Engineer"
+          },
+          {
+            "key": "url::https://careers.se.com/jobs/135295?lang=en-us&previousLocale=en-US",
+            "company": "Schneider Electric",
+            "title": "Software Test Engineer"
           },
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
             "company": "Kforce",
             "title": "Associate Software Developer"
+          },
+          {
+            "key": "url::https://bostonscientific.eightfold.ai/careers/job/563602813632578?domain=bostonscientific.com&hl=en&triggerGoButton=false",
+            "company": "Boston Scientific",
+            "title": "Software Test Engineer III - Electrophysiology"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 6.268,
+        "latency_seconds": 14.42,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 2,
-          "input_tokens": 3765,
-          "cached_input_tokens": 1851,
-          "output_tokens": 728,
-          "reasoning_tokens": 432,
-          "estimated_usd": 0.000574
+          "jobs_scored": 7,
+          "input_tokens": 9861,
+          "cached_input_tokens": 0,
+          "output_tokens": 1599,
+          "reasoning_tokens": 1062,
+          "estimated_usd": 0.001786
         },
         "decisions": [
           {
-            "key": "url::https://qiagen.wd502.myworkdayjobs.com/en-US/QIAGEN/job/Redwood-City/Software-Engineer--Data-Platform--QDI_JR00000923?startDate=bc33aa3152ec42d4995f4791a106ed09&startDate=6cb77610a8a543aea2d6bc10457e35d4&startDate=d903bb3fedad45039383f6de334ad4db&startDate=29247e57dbaf46fb855b224e03170bc7&startDate=d4afdeb461d446e4babd204bd102dba8&startDate=a30a87ed25634629aa6c3958aa2b91ea",
-            "match_score": 72.0,
+            "key": "url::https://job-boards.greenhouse.io/lendingtree/jobs/8234149",
+            "match_score": 70.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Data pipeline experience",
-              "AWS and CI/CD"
+              "Full-stack web applications",
+              "REST APIs and testing"
             ],
             "main_gaps": [
-              "3+ years industry experience",
-              "Cloud infrastructure and IaC depth"
+              "3+ years professional experience"
+            ]
+          },
+          {
+            "key": "url::https://jobs.keysight.com/external/jobs/54663?lang=en-us",
+            "match_score": 55.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Applied mathematics background",
+              "C++ and Python"
+            ],
+            "main_gaps": [
+              "DSP algorithm development",
+              "Communications systems experience"
+            ]
+          },
+          {
+            "key": "url::https://jobs.siemens.com/en_US/externaljobs/JobDetail/523676",
+            "match_score": 66.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python test automation",
+              "Automated testing and CI/CD"
+            ],
+            "main_gaps": [
+              "Embedded target-hardware validation",
+              "2+ years relevant experience"
+            ]
+          },
+          {
+            "key": "url::https://www.schwabjobs.com/job/austin/full-stack-java-angular-engineer/33727/94493378896",
+            "match_score": 66.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "End-to-end web development",
+              "REST APIs and automated tests"
+            ],
+            "main_gaps": [
+              "3+ years professional experience",
+              "Java and Angular production experience"
+            ]
+          },
+          {
+            "key": "url::https://careers.se.com/jobs/135295?lang=en-us&previousLocale=en-US",
+            "match_score": 62.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Automated and regression testing",
+              "Test documentation and validation"
+            ],
+            "main_gaps": [
+              "3+ years software testing",
+              "Performance testing experience"
             ]
           },
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 77.0,
+            "match_score": 83.0,
             "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "REST API development",
-              "Web application experience"
+              "Early-career developer role",
+              "Web applications and REST APIs"
             ],
             "main_gaps": [
-              "C#/.NET experience",
-              "SQL Server"
+              "NET production experience"
+            ]
+          },
+          {
+            "key": "url::https://bostonscientific.eightfold.ai/careers/job/563602813632578?domain=bostonscientific.com&hl=en&triggerGoButton=false",
+            "match_score": 64.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python test automation",
+              "Software testing and defect analysis"
+            ],
+            "main_gaps": [
+              "Required test-engineering experience"
             ]
           }
         ]
       },
       {
         "batch": 2,
-        "route": "both",
+        "route": "resume_ai",
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://careers.expediagroup.com/job/machine-learning-scientist-ii-agentic-experiences/seattle-wa/R-109446",
-            "company": "Expedia Group",
-            "title": "Machine Learning Scientist II - Agentic Experiences"
-          },
-          {
-            "key": "url::https://careers.expediagroup.com/job/machine-learning-scientist-ii-agentic-experiences/austin-tx/R-109446-1",
-            "company": "Expedia Group",
-            "title": "Machine Learning Scientist II - Agentic Experiences"
-          },
-          {
-            "key": "url::https://careers.expediagroup.com/job/machine-learning-scientist-ii-agentic-experiences/san-jose-ca/R-109446-2",
-            "company": "Expedia Group",
-            "title": "Machine Learning Scientist II - Agentic Experiences"
+            "key": "url::https://careers.withwaymo.com/jobs/2027-summer-intern-ms-phd-perception-machine-learning-mountain-view-california-united-states",
+            "company": "Waymo",
+            "title": "2027 Summer Intern, MS/PhD, Perception, Machine Learning"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 5.38,
+        "latency_seconds": 2.498,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 3,
-          "input_tokens": 7052,
-          "cached_input_tokens": 2724,
-          "output_tokens": 567,
-          "reasoning_tokens": 285,
-          "estimated_usd": 0.000744
+          "jobs_scored": 1,
+          "input_tokens": 2974,
+          "cached_input_tokens": 0,
+          "output_tokens": 242,
+          "reasoning_tokens": 138,
+          "estimated_usd": 0.000418
         },
         "decisions": [
           {
-            "key": "url::https://careers.expediagroup.com/job/machine-learning-scientist-ii-agentic-experiences/seattle-wa/R-109446",
+            "key": "url::https://careers.withwaymo.com/jobs/2027-summer-intern-ms-phd-perception-machine-learning-mountain-view-california-united-states",
+            "match_score": 56.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python and ML experience",
+              "Currently enrolled in MS"
+            ],
+            "main_gaps": [
+              "Perception/CV model experience",
+              "Strong ML publication record"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 3,
+        "route": "both",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "url::https://nuro.ai/careersitem?gh_jid=8221208",
+            "company": "Nuro",
+            "title": "Software Engineer, Cloud Infrastructure and Observability"
+          },
+          {
+            "key": "url::https://job-boards.greenhouse.io/heartflowinc/jobs/6207212004",
+            "company": "HeartFlow",
+            "title": "Software Engineer – Frontend"
+          },
+          {
+            "key": "url::https://careers.appliedmaterials.com/careers/job/790318622251?domain=appliedmaterials.com&hl=en&triggerGoButton=true",
+            "company": "Applied Materials",
+            "title": "Software Engineer"
+          },
+          {
+            "key": "url::https://jobs.jedunn.com/job/Kansas-City-IT-Data-Engineer-MO-64106/1434138300",
+            "company": "JE Dunn Construction",
+            "title": "IT Data Engineer"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 9.296,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 4,
+          "input_tokens": 6562,
+          "cached_input_tokens": 0,
+          "output_tokens": 1058,
+          "reasoning_tokens": 721,
+          "estimated_usd": 0.001185
+        },
+        "decisions": [
+          {
+            "key": "url::https://nuro.ai/careersitem?gh_jid=8221208",
             "match_score": 77.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Production agentic AI systems",
-              "LLM evaluation and deployment"
+              "AWS production deployments",
+              "Infrastructure automation experience"
             ],
             "main_gaps": [
-              "2+ years industry experience",
-              "PyTorch framework depth"
+              "Kubernetes/Terraform production ownership",
+              "Observability system design"
             ]
           },
           {
-            "key": "url::https://careers.expediagroup.com/job/machine-learning-scientist-ii-agentic-experiences/austin-tx/R-109446-1",
-            "match_score": 77.0,
+            "key": "url::https://job-boards.greenhouse.io/heartflowinc/jobs/6207212004",
+            "match_score": 68.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Production agentic AI systems",
-              "LLM evaluation and deployment"
+              "React application development",
+              "Cross-functional software delivery"
             ],
             "main_gaps": [
-              "2+ years industry experience",
-              "PyTorch framework depth"
+              "Three years frontend experience",
+              "Large-scale frontend ownership"
             ]
           },
           {
-            "key": "url::https://careers.expediagroup.com/job/machine-learning-scientist-ii-agentic-experiences/san-jose-ca/R-109446-2",
-            "match_score": 77.0,
+            "key": "url::https://careers.appliedmaterials.com/careers/job/790318622251?domain=appliedmaterials.com&hl=en&triggerGoButton=true",
+            "match_score": 49.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "C++ software development",
+              "Software testing experience"
+            ],
+            "main_gaps": [
+              "4–7 years related experience",
+              "C#/.NET and RPC"
+            ]
+          },
+          {
+            "key": "url::https://jobs.jedunn.com/job/Kansas-City-IT-Data-Engineer-MO-64106/1434138300",
+            "match_score": 71.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Production agentic AI systems",
-              "LLM evaluation and deployment"
+              "Python/Spark data pipelines",
+              "Data quality and validation"
             ],
             "main_gaps": [
-              "2+ years industry experience",
-              "PyTorch framework depth"
+              "Data mesh/medallion implementation",
+              "Microsoft Fabric experience"
             ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 5,
-    "input_tokens": 10817,
-    "cached_input_tokens": 4575,
-    "output_tokens": 1295,
-    "reasoning_tokens": 717,
-    "estimated_usd": 0.001318,
+    "jobs_scored": 12,
+    "input_tokens": 19397,
+    "cached_input_tokens": 0,
+    "output_tokens": 2899,
+    "reasoning_tokens": 1921,
+    "estimated_usd": 0.003389,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 5
+    "scored": 12
   },
   "output": {
-    "tier_a": 4,
-    "tier_b": 11,
-    "tier_c": 81,
-    "shown": 15,
-    "new_jobs": 14,
+    "tier_a": 3,
+    "tier_b": 9,
+    "tier_c": 73,
+    "shown": 12,
+    "new_jobs": 27,
     "new_jobs_added": 0
   },
   "screen_method": "cache+llm",
@@ -218,10 +371,10 @@
       "raw_jobs": 90,
       "unique_jobs": 90,
       "unique_contribution": 90,
-      "first_pass_survivors": 58,
-      "original_postings_resolved": 17,
-      "jds_resolved": 16,
-      "elapsed_seconds": 3.64
+      "first_pass_survivors": 59,
+      "original_postings_resolved": 19,
+      "jds_resolved": 18,
+      "elapsed_seconds": 3.746
     },
     {
       "query": "Full Stack",
@@ -231,25 +384,25 @@
       "stop_reason": "empty_page",
       "raw_jobs": 19,
       "unique_jobs": 19,
-      "unique_contribution": 17,
+      "unique_contribution": 18,
       "first_pass_survivors": 17,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 1.182
+      "elapsed_seconds": 1.089
     },
     {
       "query": "AI",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 6,
+      "pages_fetched": 5,
       "stop_reason": "empty_page",
-      "raw_jobs": 61,
-      "unique_jobs": 61,
-      "unique_contribution": 53,
-      "first_pass_survivors": 20,
-      "original_postings_resolved": 8,
-      "jds_resolved": 5,
-      "elapsed_seconds": 2.691
+      "raw_jobs": 53,
+      "unique_jobs": 53,
+      "unique_contribution": 45,
+      "first_pass_survivors": 16,
+      "original_postings_resolved": 5,
+      "jds_resolved": 4,
+      "elapsed_seconds": 2.054
     },
     {
       "query": "Machine Learning",
@@ -257,13 +410,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 11,
-      "unique_jobs": 11,
-      "unique_contribution": 9,
+      "raw_jobs": 13,
+      "unique_jobs": 13,
+      "unique_contribution": 10,
       "first_pass_survivors": 8,
-      "original_postings_resolved": 0,
-      "jds_resolved": 0,
-      "elapsed_seconds": 0.625
+      "original_postings_resolved": 3,
+      "jds_resolved": 3,
+      "elapsed_seconds": 0.566
     },
     {
       "query": "Infrastructure",
@@ -271,13 +424,13 @@
       "page_budget": 6,
       "pages_fetched": 3,
       "stop_reason": "empty_page",
-      "raw_jobs": 25,
-      "unique_jobs": 25,
-      "unique_contribution": 21,
-      "first_pass_survivors": 18,
-      "original_postings_resolved": 8,
-      "jds_resolved": 8,
-      "elapsed_seconds": 1.145
+      "raw_jobs": 18,
+      "unique_jobs": 18,
+      "unique_contribution": 13,
+      "first_pass_survivors": 14,
+      "original_postings_resolved": 7,
+      "jds_resolved": 7,
+      "elapsed_seconds": 1.153
     },
     {
       "query": "Forward Deployed",
@@ -285,13 +438,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 5,
-      "unique_jobs": 5,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
       "unique_contribution": 2,
-      "first_pass_survivors": 5,
-      "original_postings_resolved": 2,
+      "first_pass_survivors": 3,
+      "original_postings_resolved": 1,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.641
+      "elapsed_seconds": 0.676
     },
     {
       "query": "DevOps",
@@ -299,13 +452,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 5,
-      "unique_jobs": 5,
-      "unique_contribution": 5,
+      "raw_jobs": 7,
+      "unique_jobs": 7,
+      "unique_contribution": 6,
       "first_pass_survivors": 3,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.632
+      "elapsed_seconds": 0.595
     },
     {
       "query": "Backend",
@@ -313,13 +466,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
-      "unique_contribution": 2,
-      "first_pass_survivors": 4,
+      "raw_jobs": 2,
+      "unique_jobs": 2,
+      "unique_contribution": 1,
+      "first_pass_survivors": 2,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.655
+      "elapsed_seconds": 0.598
     },
     {
       "query": "Platform",
@@ -327,13 +480,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 12,
-      "unique_jobs": 12,
-      "unique_contribution": 5,
-      "first_pass_survivors": 7,
-      "original_postings_resolved": 5,
-      "jds_resolved": 5,
-      "elapsed_seconds": 0.619
+      "raw_jobs": 11,
+      "unique_jobs": 11,
+      "unique_contribution": 4,
+      "first_pass_survivors": 6,
+      "original_postings_resolved": 4,
+      "jds_resolved": 4,
+      "elapsed_seconds": 0.578
     },
     {
       "query": "New Grad",
@@ -341,13 +494,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 5,
-      "unique_jobs": 5,
-      "unique_contribution": 4,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 2,
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 1.233
+      "elapsed_seconds": 0.617
     },
     {
       "query": "LLM",
@@ -361,7 +514,7 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.652
+      "elapsed_seconds": 0.597
     },
     {
       "query": "Data Engineer",
@@ -369,13 +522,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 9,
-      "unique_jobs": 9,
-      "unique_contribution": 6,
-      "first_pass_survivors": 7,
+      "raw_jobs": 5,
+      "unique_jobs": 5,
+      "unique_contribution": 3,
+      "first_pass_survivors": 3,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.658
+      "elapsed_seconds": 0.59
     },
     {
       "query": "Site Reliability",
@@ -389,14 +542,14 @@
       "first_pass_survivors": 2,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.667
+      "elapsed_seconds": 0.596
     }
   ],
   "enrichment": {
-    "needed": 12,
+    "needed": 8,
     "detail_api_resolved": 131,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 12
+    "remaining_no_jd": 8
   }
 }
