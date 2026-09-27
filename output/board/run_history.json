@@ -2,6 +2,353 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-09-27T22:01:12.512163+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 9,
+      "cache_reused": 170,
+      "peer_reused": 0,
+      "same_content_reused": 9,
+      "non_material_change_reused": 0,
+      "new_or_changed": 9,
+      "new_or_changed_reasons": {
+        "prior_rule_result_now_eligible_for_llm": 9
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 813,
+      "requests": 3,
+      "input_tokens": 15806,
+      "cached_input_tokens": 0,
+      "output_tokens": 2504,
+      "reasoning_tokens": 1761,
+      "estimated_usd": 0.002833,
+      "latency_seconds": 21.881,
+      "latency_measured": true,
+      "effective_rpm": 8.23,
+      "effective_tpm": 50207.94,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 3,
+      "primary_batches_total": 3,
+      "batches_attempted": 3,
+      "batches_succeeded": 3,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 9,
+      "funnel": {
+        "after_dedup": 5493,
+        "after_company": 5285,
+        "after_hard_filter": 4844,
+        "after_prefilter": 1348,
+        "official_duplicates_suppressed": 356,
+        "retry_only_carried": 0,
+        "dropped": 4098
+      },
+      "output": {
+        "tier_a": 26,
+        "tier_b": 155,
+        "ab_before_cap": 181,
+        "shown": 181,
+        "new_jobs": 1,
+        "new_jobs_added": 0,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 0,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 1,
+            "added": 0
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 1682,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 4,
+          "identity_needed": 4,
+          "http_requests": 4,
+          "identities_resolved": 4,
+          "jds_resolved": 3,
+          "direct_http_resolved": 3,
+          "remaining_no_jd": 1682,
+          "failure_reasons": {}
+        },
+        "remaining_no_jd": 1670,
+        "failure_reasons": {
+          "no_enrichment_path": 1237,
+          "official_detail_deferred": 46,
+          "linkedin_http_429": 2,
+          "linkedin_rate_limited": 8,
+          "glassdoor_detail_http_403_static_card_only": 377
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4472457548",
+              "company": "Referment",
+              "title": "Full-Stack Software Engineer: Application Engineering (D84B1AE)"
+            },
+            {
+              "key": "id::linkedin::4472459410",
+              "company": "Torentify",
+              "title": "Backend Engineer - WFH"
+            },
+            {
+              "key": "id::linkedin::4472297778",
+              "company": "Peregrine Advisors",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "id::linkedin::4470798740",
+              "company": "The Fresh Market",
+              "title": "Software Engineer I"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 11.539,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 4,
+            "input_tokens": 4921,
+            "cached_input_tokens": 0,
+            "output_tokens": 1332,
+            "reasoning_tokens": 945,
+            "estimated_usd": 0.001158
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4472457548",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack production applications",
+                "End-to-end deployment ownership"
+              ],
+              "main_gaps": [
+                "Human-centered product design"
+              ]
+            },
+            {
+              "key": "id::linkedin::4472459410",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production REST APIs",
+                "Backend reliability and tracing"
+              ],
+              "main_gaps": [
+                "5+ years Go",
+                "5+ years REST APIs"
+              ]
+            },
+            {
+              "key": "id::linkedin::4472297778",
+              "match_score": 42.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "citizen_or_clearance",
+              "top_match_reasons": [
+                "Python and FastAPI",
+                "AWS backend deployment"
+              ],
+              "main_gaps": [
+                "U.S. citizenship and Public Trust",
+                "Authentication and access control"
+              ]
+            },
+            {
+              "key": "id::linkedin::4470798740",
+              "match_score": 77.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "OOP and web APIs"
+              ],
+              "main_gaps": [
+                "NET/C# application development"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4470812325",
+              "company": "lululemon",
+              "title": "AI/ML Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.114,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3234,
+            "cached_input_tokens": 0,
+            "output_tokens": 307,
+            "reasoning_tokens": 224,
+            "estimated_usd": 0.000477
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4470812325",
+              "match_score": 58.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production AI/ML systems",
+                "Model evaluation and deployment"
+              ],
+              "main_gaps": [
+                "4–8 years owning ML systems",
+                "Canary/A-B rollout ownership"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4466943272",
+              "company": "Liftoff Mobile",
+              "title": "Machine Learning Engineer"
+            },
+            {
+              "key": "id::linkedin::4472402576",
+              "company": "OPENDataJobs",
+              "title": "Full Stack Developer (Python, React.js)"
+            },
+            {
+              "key": "id::linkedin::4472411294",
+              "company": "Peregrine Advisors",
+              "title": "Full Stack Developer (Python, React.js)"
+            },
+            {
+              "key": "id::linkedin::4437647024",
+              "company": "Liftoff Mobile",
+              "title": "Machine Learning Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 7.228,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 4,
+            "input_tokens": 7651,
+            "cached_input_tokens": 0,
+            "output_tokens": 865,
+            "reasoning_tokens": 592,
+            "estimated_usd": 0.001198
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4466943272",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "production ML systems",
+                "model fine-tuning"
+              ],
+              "main_gaps": [
+                "3+ years ML industry experience",
+                "production-scale neural networks"
+              ]
+            },
+            {
+              "key": "id::linkedin::4472402576",
+              "match_score": 48.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "citizen_or_clearance",
+              "top_match_reasons": [
+                "Python and React full-stack",
+                "production AWS delivery"
+              ],
+              "main_gaps": [
+                "4+ years professional experience",
+                "AWS Lambda and S3"
+              ]
+            },
+            {
+              "key": "id::linkedin::4472411294",
+              "match_score": 48.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "citizen_or_clearance",
+              "top_match_reasons": [
+                "Python and React full-stack",
+                "production AWS delivery"
+              ],
+              "main_gaps": [
+                "4+ years professional experience",
+                "AWS Lambda and S3"
+              ]
+            },
+            {
+              "key": "id::linkedin::4437647024",
+              "match_score": 30.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "ML production systems",
+                "statistical modeling"
+              ],
+              "main_gaps": [
+                "PhD requirement",
+                "large-scale economics or ML"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-09-27T20:51:57.140837+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -22302,334 +22649,6 @@
               "main_gaps": [
                 "Enterprise architecture leadership",
                 "Data governance programs"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-09-24T04:44:33.938529+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 9,
-      "cache_reused": 214,
-      "peer_reused": 0,
-      "same_content_reused": 2,
-      "non_material_change_reused": 0,
-      "new_or_changed": 11,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 1,
-        "prior_rule_result_now_eligible_for_llm": 10
-      },
-      "rescored_within_24h": 8,
-      "fallback_count": 0,
-      "rule_count": 599,
-      "requests": 2,
-      "input_tokens": 14436,
-      "cached_input_tokens": 0,
-      "output_tokens": 2462,
-      "reasoning_tokens": 1796,
-      "estimated_usd": 0.002675,
-      "latency_seconds": 28.525,
-      "latency_measured": true,
-      "effective_rpm": 4.21,
-      "effective_tpm": 35543.56,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "primary_batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 9,
-      "funnel": {
-        "after_dedup": 5142,
-        "after_company": 4953,
-        "after_hard_filter": 4554,
-        "after_prefilter": 1163,
-        "official_duplicates_suppressed": 341,
-        "retry_only_carried": 0,
-        "dropped": 3914
-      },
-      "output": {
-        "tier_a": 63,
-        "tier_b": 272,
-        "ab_before_cap": 335,
-        "shown": 335,
-        "new_jobs": 10,
-        "new_jobs_added": 0,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 10,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 0,
-            "added": 0
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 1384,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 1458,
-          "http_requests": 167,
-          "scrapling_requests": 48,
-          "jds_resolved": 58,
-          "direct_http_resolved": 58,
-          "identity_needed": 74,
-          "identities_resolved": 74,
-          "remaining_no_jd": 1339,
-          "failure_reasons": {
-            "no_direct_or_official_url": 901,
-            "structured_jd_not_found": 47,
-            "official_detail_deferred": 16,
-            "scrapling_http_404": 1,
-            "glassdoor_detail_http_403_static_card_only": 374
-          }
-        },
-        "remaining_no_jd": 1334,
-        "failure_reasons": {
-          "no_direct_or_official_url": 901,
-          "structured_jd_not_found": 42,
-          "official_detail_deferred": 16,
-          "scrapling_http_404": 1,
-          "glassdoor_detail_http_403_static_card_only": 374
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://careers.roblox.com/jobs/8168881?gh_jid=8168881",
-              "company": "Roblox",
-              "title": "Software Engineer, Data Access"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 5.476,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 3145,
-            "cached_input_tokens": 0,
-            "output_tokens": 345,
-            "reasoning_tokens": 253,
-            "estimated_usd": 0.000487
-          },
-          "decisions": [
-            {
-              "key": "url::https://careers.roblox.com/jobs/8168881?gh_jid=8168881",
-              "match_score": 77.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Backend performance optimization",
-                "Production reliability and observability"
-              ],
-              "main_gaps": [
-                "Large-scale OLTP platform experience",
-                "Database and cache operations"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::indeed::in-2a0b48d5a0e1a740",
-              "company": "Commure",
-              "title": "Software Engineer, Scribe AI"
-            },
-            {
-              "key": "id::indeed::in-c92131957f36b211",
-              "company": "Commure",
-              "title": "Software Engineer, Voice Agents"
-            },
-            {
-              "key": "id::indeed::in-642a90a315a7851e",
-              "company": "Everpure",
-              "title": "Systems Software Engineer"
-            },
-            {
-              "key": "id::indeed::in-cd1733387da8261d",
-              "company": "FairSquare",
-              "title": "Software Engineer II"
-            },
-            {
-              "key": "id::indeed::in-7b468d5dbbf0d446",
-              "company": "Identity Digital",
-              "title": "Software Engineer II"
-            },
-            {
-              "key": "id::indeed::in-2fd41f8a4a17d7e0",
-              "company": "KorTerra",
-              "title": "Software Engineer"
-            },
-            {
-              "key": "id::indeed::in-ca1f90d133dd6c0e",
-              "company": "MetLife",
-              "title": "Software Development Engineer"
-            },
-            {
-              "key": "id::indeed::in-7db075c23e746f0a",
-              "company": "Qumulo",
-              "title": "Software Development Engineer (Seattle) - Internship 2027"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 23.049,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 8,
-            "input_tokens": 11291,
-            "cached_input_tokens": 0,
-            "output_tokens": 2117,
-            "reasoning_tokens": 1543,
-            "estimated_usd": 0.002188
-          },
-          "decisions": [
-            {
-              "key": "id::indeed::in-2a0b48d5a0e1a740",
-              "match_score": 73.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack production development",
-                "LLM application experience"
-              ],
-              "main_gaps": [
-                "iOS/mobile development"
-              ]
-            },
-            {
-              "key": "id::indeed::in-c92131957f36b211",
-              "match_score": 78.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production Python APIs",
-                "Async systems and LLM evaluation"
-              ],
-              "main_gaps": [
-                "Voice pipelines and EHR integrations"
-              ]
-            },
-            {
-              "key": "id::indeed::in-642a90a315a7851e",
-              "match_score": 42.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Reliability and deployment automation",
-                "Python development"
-              ],
-              "main_gaps": [
-                "Storage and hardware lifecycle",
-                "C++ systems software"
-              ]
-            },
-            {
-              "key": "id::indeed::in-cd1733387da8261d",
-              "match_score": 68.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "TypeScript and Node.js APIs",
-                "AWS and React experience"
-              ],
-              "main_gaps": [
-                "Three years backend Node.js",
-                "Jest testing"
-              ]
-            },
-            {
-              "key": "id::indeed::in-7b468d5dbbf0d446",
-              "match_score": 67.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python, SQL, and microservices",
-                "AWS and CI/CD"
-              ],
-              "main_gaps": [
-                "C#/.NET platform experience",
-                "Three years professional experience"
-              ]
-            },
-            {
-              "key": "id::indeed::in-2fd41f8a4a17d7e0",
-              "match_score": 53.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "REST APIs and backend services",
-                "Docker and Kubernetes"
-              ],
-              "main_gaps": [
-                "C#/.NET development",
-                "Azure cloud services"
-              ]
-            },
-            {
-              "key": "id::indeed::in-ca1f90d133dd6c0e",
-              "match_score": 89.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Early-career software development",
-                "AI, cloud, and SQL experience"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "id::indeed::in-7db075c23e746f0a",
-              "match_score": 75.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Distributed systems and Python",
-                "Testing and backend engineering"
-              ],
-              "main_gaps": [
-                "C/Rust systems programming",
-                "Operating systems experience"
               ]
             }
           ]
