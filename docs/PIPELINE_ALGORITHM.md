@@ -25,6 +25,8 @@ Mac collectors                      GitHub discovery workflows
 
 The three discovery pipelines are deliberately independent. A failure in one does not prevent the other stores from being reconciled and published. GitHub owns ATS, Indeed, Big Company Official, Syncareer, Board matching, and online JD recovery. The Mac owns LinkedIn, Glassdoor, and local JD recovery. Board consumes the latest committed Mac snapshots.
 
+Indeed query failures preserve results from completed queries. The collector reports succeeded, failed, and unrun queries; a partial run overlays its successful rows on the prior snapshot, deduplicates by source identity, and retains unobserved cached rows without advancing their verification time. Existing richer JDs are retained when a partial row is thinner. The last complete collection timestamp stays fixed. Board consumes the merged rows through its ordinary JD lookup, recovery, filtering, and matching stages, and records the Indeed error in `failures.discovery`. Indeed and Board Health show Partial, including fresh kept and cached reused counts. A later complete collection replaces the merged snapshot and advances the complete collection timestamp.
+
 ## Ownership and state
 
 | Owner | Responsibility | Durable artifacts |

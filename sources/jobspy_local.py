@@ -295,6 +295,8 @@ def scrape(
             stat = query_stat(keyword, group, page_budget)
             started = time.monotonic()
             errors.clear()
+            records = []
+            failed_reason = ""
             hours = 48 if source == "indeed" and group == "primary" else 24
             stat["hours_old"] = hours
             try:
@@ -338,15 +340,19 @@ def scrape(
                             "provenance": source_provenance,
                         }
                 else:
-                    stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
-                    stats.append(stat)
-                    return {
-                        "status": "blocked",
-                        "reason": f"{type(exc).__name__}: {exc}",
-                        "jobs": rows,
-                        "query_stats": stats,
-                        "provenance": source_provenance,
-                    }
+                    failed_reason = f"{type(exc).__name__}: {exc}"
+                    if stat["stop_reason"] == "page_budget":
+                        stat["stop_reason"] = "failed"
+                    if not (source == "indeed" and records):
+                        stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
+                        stats.append(stat)
+                        return {
+                            "status": "blocked", "reason": failed_reason,
+                            "jobs": rows, "query_stats": stats,
+                            "queries_total": len(specs), "queries_succeeded": index,
+                            "queries_failed": 1, "queries_not_run": len(specs) - index - 1,
+                            "provenance": source_provenance,
+                        }
 
             stat["raw_jobs"] = len(records)
             if not records:
@@ -390,7 +396,16 @@ def scrape(
             stat["unique_contribution"] = added
             stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
             stats.append(stat)
+            if failed_reason:
+                return {"status": "blocked", "reason": failed_reason,
+                        "jobs": rows, "query_stats": stats,
+                        "queries_total": len(specs), "queries_succeeded": index,
+                        "queries_failed": 1, "queries_not_run": len(specs) - index - 1,
+                        "provenance": source_provenance}
     finally:
         logger.removeHandler(handler)
 
-    return {"status": "ok", "jobs": rows, "query_stats": stats, "provenance": source_provenance}
+    return {"status": "ok", "jobs": rows, "query_stats": stats,
+            "queries_total": len(specs), "queries_succeeded": len(specs),
+            "queries_failed": 0, "queries_not_run": 0,
+            "provenance": source_provenance}

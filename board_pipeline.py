@@ -412,6 +412,16 @@ def collect_sources(session: requests.Session, skip_network: bool = False) -> Tu
             jobs.extend(rows)
             meta["per_source"][f"local:{name}"] = len(rows)
             meta["local_query_stats"][name] = list(snapshot["meta"].get("query_stats") or [])
+        if name == "indeed" and snapshot["meta"].get("partial"):
+            source_meta = snapshot["meta"]
+            meta["errors"].append(
+                f"Indeed discovery partial: {source_meta.get('blocked_reason') or 'collection failed'}; "
+                f"{source_meta.get('queries_succeeded', 0)} queries succeeded, "
+                f"{source_meta.get('queries_failed', 0)} failed, "
+                f"{source_meta.get('queries_not_run', 0)} not run; "
+                f"{source_meta.get('collected_count', 0)} fresh rows collected, "
+                f"{source_meta.get('carried_count', 0)} cached jobs reused"
+            )
 
     return jobs, meta
 

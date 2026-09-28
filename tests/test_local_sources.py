@@ -31,6 +31,40 @@ class Frame:
 
 
 class LocalSourceTests(unittest.TestCase):
+    def test_indeed_query_failure_returns_completed_queries_and_counts(self) -> None:
+        queries = [("primary", "software engineer", 1), ("primary", "ai engineer", 1),
+                   ("secondary", "backend engineer", 1)]
+        record = {"id": "new", "company": "NewCo", "title": "Software Engineer",
+                  "location": "Austin, TX", "job_url": "https://www.indeed.com/viewjob?jk=new",
+                  "description": "A full job description " * 15}
+        def scrape_jobs_func(**kwargs):
+            if kwargs["search_term"] == "ai engineer":
+                raise ConnectionResetError("connection reset")
+            return Frame([record])
+        with patch.object(jobspy_local, "source_queries", return_value=queries):
+            result = jobspy_local.scrape("indeed", scrape_jobs_func=scrape_jobs_func)
+        self.assertEqual("blocked", result["status"])
+        self.assertEqual(1, len(result["jobs"]))
+        self.assertEqual((3, 1, 1, 1),
+                         tuple(result[key] for key in ("queries_total", "queries_succeeded",
+                                                       "queries_failed", "queries_not_run")))
+        self.assertEqual("failed", result["query_stats"][-1]["stop_reason"])
+
+    def test_indeed_keeps_rows_returned_by_query_that_logged_an_error(self) -> None:
+        record = {"id": "within-query", "company": "NewCo", "title": "Software Engineer",
+                  "location": "Austin, TX", "job_url": "https://www.indeed.com/viewjob?jk=within-query",
+                  "description": "A full job description " * 15}
+        def scrape_jobs_func(**_kwargs):
+            logging.getLogger("JobSpy:Indeed").error("connection reset after first page")
+            return Frame([record])
+        with patch.object(jobspy_local, "source_queries", return_value=[("primary", "software engineer", 2),
+                                                                          ("primary", "ai engineer", 1)]):
+            result = jobspy_local.scrape("indeed", scrape_jobs_func=scrape_jobs_func)
+        self.assertEqual("blocked", result["status"])
+        self.assertEqual("within-query", result["jobs"][0]["job_id"])
+        self.assertEqual((0, 1, 1), (result["queries_succeeded"], result["queries_failed"],
+                                     result["queries_not_run"]))
+
     def test_glassdoor_known_us_location_skips_obsolete_lookup(self) -> None:
         try:
             from jobspy.glassdoor import Glassdoor
@@ -541,6 +575,58 @@ class LocalSourceTests(unittest.TestCase):
             self.assertEqual("0 first-pass survivors", health["reason"])
             self.assertEqual("old", health["last_success_collector"]["commit"])
             self.assertEqual(1, health["last_good_count"])
+
+    def test_indeed_network_failure_preserves_partial_jobs_and_full_snapshot_history(self) -> None:
+        collector = {"commit": "new", "dirty": False}
+        old = schema.make_job(source="indeed", company="OldCo", title="Software Engineer",
+                              location="Austin, TX", job_id="old", description="Old JD " * 50)
+        overlapping = schema.make_job(source="indeed", company="OverlapCo", title="Software Engineer",
+                                      location="Austin, TX", job_id="overlap", description="Cached JD " * 50)
+        fresh = schema.make_job(source="indeed", company="NewCo", title="Software Engineer",
+                                location="Austin, TX", job_id="fresh", description="New JD " * 50)
+        blocked = {"status": "blocked", "reason": "ConnectionResetError: connection reset",
+                   "jobs": [{**overlapping, "description": ""}, fresh],
+                   "query_stats": [{"query": "software engineer", "stop_reason": "page_budget"},
+                                   {"query": "ai engineer", "stop_reason": "failed"}],
+                   "queries_total": 3, "queries_succeeded": 1, "queries_failed": 1,
+                   "queries_not_run": 1}
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            schema, "SOURCES_DIR", Path(tmpdir)
+        ), patch.object(local_sources, "HEALTH_PATH", Path(tmpdir) / "health.json"):
+            schema.write_source_snapshot("indeed", [old, overlapping],
+                                         {"scraped_at": "2026-09-17T15:00:00+00:00"})
+            result = local_sources.run_one("indeed", collector, scraper=lambda: blocked,
+                                           recover_missing=False)
+            local_sources.write_health([result], collector)
+            payload = schema.read_source_snapshot_payload("indeed")
+            health = json.loads((Path(tmpdir) / "health.json").read_text())["sources"]["indeed"]
+            _, board_meta = board_pipeline.collect_sources(None, skip_network=True)
+            self.assertEqual("partial", result["status"])
+            self.assertEqual((2, 1, 3), (result["fresh_kept"], result["carried_count"], result["merged_count"]))
+            self.assertEqual({"old", "overlap", "fresh"}, {job["job_id"] for job in payload["jobs"]})
+            by_id = {job["job_id"]: job for job in payload["jobs"]}
+            self.assertEqual(overlapping["description"], by_id["overlap"]["description"])
+            self.assertFalse(by_id["old"]["verified_this_run"])
+            self.assertTrue(by_id["fresh"]["verified_this_run"])
+            self.assertEqual("2026-09-17T15:00:00+00:00", health["last_success_at"])
+            self.assertEqual((1, 1, 1), (health["queries_succeeded"], health["queries_failed"],
+                                       health["queries_not_run"]))
+            self.assertIn("Indeed discovery partial", board_meta["errors"][0])
+
+            complete = {"status": "ok", "jobs": [fresh], "query_stats": [],
+                        "queries_total": 3, "queries_succeeded": 3,
+                        "queries_failed": 0, "queries_not_run": 0}
+            success = local_sources.run_one("indeed", collector, scraper=lambda: complete,
+                                            recover_missing=False)
+            local_sources.write_health([success], collector)
+            payload = schema.read_source_snapshot_payload("indeed")
+            health = json.loads((Path(tmpdir) / "health.json").read_text())["sources"]["indeed"]
+            _, board_meta = board_pipeline.collect_sources(None, skip_network=True)
+            self.assertEqual("ok", success["status"])
+            self.assertEqual({"fresh"}, {job["job_id"] for job in payload["jobs"]})
+            self.assertFalse(payload["meta"].get("partial"))
+            self.assertEqual(success["succeeded_at"], health["last_success_at"])
+            self.assertEqual([], board_meta["errors"])
 
     @staticmethod
     def _linkedin_card(job_id: str, title: str = "Software Engineer", location: str = "Austin, TX") -> dict:

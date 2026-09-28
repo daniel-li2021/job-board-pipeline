@@ -12,6 +12,39 @@ import board_pipeline
 
 
 class PipelineHealthTests(unittest.TestCase):
+    def test_indeed_partial_counts_and_board_failure_are_visible(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            now = datetime(2026, 9, 28, 12, tzinfo=timezone.utc)
+            for key, (_label, folder, store_name) in pipeline_health.PIPELINES.items():
+                out = root / "output" / folder
+                out.mkdir(parents=True)
+                out.joinpath(store_name).write_text(json.dumps({
+                    "updated_at": now.isoformat(), "entries": [{"title": "Engineer"}],
+                }))
+                if key == "board":
+                    out.joinpath("run_history.json").write_text(json.dumps({"runs": [{
+                        "run_at": now.isoformat(),
+                        "failures": {"discovery": ["Indeed discovery partial: connection reset"]},
+                    }]}))
+            sources = root / "output" / "sources"
+            sources.mkdir(parents=True)
+            sources.joinpath("health.json").write_text(json.dumps({"sources": {
+                "indeed": {"status": "partial", "healthy": False, "required": True,
+                           "reason": "ConnectionResetError: connection reset",
+                           "last_attempt_at": now.isoformat(), "last_partial_at": now.isoformat(),
+                           "last_success_at": (now - timedelta(hours=2)).isoformat(),
+                           "partial_fresh_kept": 2, "partial_carried_count": 1,
+                           "queries_succeeded": 1, "queries_failed": 1, "queries_not_run": 1},
+            }}))
+            sources.joinpath("indeed.json").write_text(json.dumps({"jobs": [{}, {}, {}]}))
+            report, _ = pipeline_health.build(root, now)
+        self.assertEqual("Partial", report["components"]["indeed"]["status"])
+        self.assertEqual("Partial", report["components"]["board"]["status"])
+        self.assertEqual("Partial", report["overall"])
+        self.assertIn("1 queries succeeded · 1 failed / 1 not run · 2 fresh jobs kept · 1 cached jobs reused",
+                      report["components"]["indeed"]["detail"])
+
     def test_linkedin_latest_run_counts_and_429_are_prominent(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

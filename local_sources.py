@@ -282,8 +282,10 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
                           and search_collection["budget_exhausted"])
     focused_partial = bool(name == "linkedin" and result.get("status") == "ok"
                            and search_collection["coverage_limited"])
-    partial = bool(rows and (search_rate_limited or budget_partial or focused_partial))
-    partial_reason = (str(result.get("reason") or "rate limited") if search_rate_limited else
+    indeed_partial = name == "indeed" and result.get("status") != "ok" and bool(rows)
+    partial = bool(rows and (search_rate_limited or budget_partial or focused_partial or indeed_partial))
+    partial_reason = (str(result.get("reason") or "collection failed") if indeed_partial else
+                      str(result.get("reason") or "rate limited") if search_rate_limited else
                       "search page budget exhausted" if budget_partial else "focused query coverage")
     if result.get("status") != "ok" and not partial:
         reason = str(result.get("reason") or result.get("status"))
@@ -300,6 +302,12 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
     official_context: Dict[str, object] = {}
     board_store: Dict[str, dict] = {}
     previous = read_source_snapshot_payload(name) if name in {"linkedin", "indeed"} else {}
+    if indeed_partial:
+        previous_by_key = {board.dedup_key(job): job for job in previous.get("jobs") or []}
+        for row in rows:
+            prior = previous_by_key.get(board.dedup_key(row), {})
+            if len(str(prior.get("description") or "")) > len(str(row.get("description") or "")):
+                row["description"] = prior["description"]
     if recover_missing and name in {"linkedin", "indeed"} and rows and (name != "linkedin" or scraper is linkedin_local.scrape):
         try:
             official_context = coverage_reconcile.load_official_context()
@@ -420,6 +428,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
     carried_count = 0
     if partial:
         fresh_keys = {board.dedup_key(job) for job in survivors}
+        prior_meta = previous.get("meta") or {}
         carried_count = sum(
             1 for job in read_source_snapshot_payload(name).get("jobs") or []
             if board.dedup_key(job) not in fresh_keys
@@ -429,7 +438,16 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
             "blocked_reason": partial_reason,
             "collected_count": len(rows),
             "carried_count": carried_count,
+            "last_full_snapshot_at": (prior_meta.get("last_full_snapshot_at") if prior_meta.get("partial")
+                                      else prior_meta.get("scraped_at")) or "",
+            "last_full_collector": (prior_meta.get("last_full_collector") if prior_meta.get("partial")
+                                    else prior_meta.get("collector")) or {},
+            "last_full_source_provenance": (prior_meta.get("last_full_source_provenance") if prior_meta.get("partial")
+                                            else prior_meta.get("source_provenance")) or {},
         })
+    if name == "indeed":
+        meta.update({key: int(result.get(key, 0) or 0) for key in
+                     ("queries_total", "queries_succeeded", "queries_failed", "queries_not_run")})
     path = write_source_snapshot(name, survivors, meta=meta, merge_previous=partial,
                                  observed_jobs=rows)
     if partial:
@@ -444,6 +462,8 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
             "count": len(survivors), "collected_count": len(rows), "fresh_kept": len(survivors),
             "carried_count": carried_count, "merged_count": merged_count, "path": str(path),
             "query_stats": query_stats, "detail_enrichment": detail_enrichment, "official_enrichment": official_enrichment, "search_collection": search_collection,
+            "queries_total": meta.get("queries_total", 0), "queries_succeeded": meta.get("queries_succeeded", 0),
+            "queries_failed": meta.get("queries_failed", 0), "queries_not_run": meta.get("queries_not_run", 0),
             "elapsed_seconds": elapsed,
             "attempted_at": stamp, "partial_at": stamp, "collector": collector,
             "source_provenance": source_provenance,
@@ -459,6 +479,8 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
     return {
         "source": name, "status": "ok", "source_healthy": True, "count": len(survivors), "path": str(path),
         "query_stats": query_stats, "detail_enrichment": detail_enrichment, "official_enrichment": official_enrichment, "search_collection": search_collection,
+        "queries_total": meta.get("queries_total", 0), "queries_succeeded": meta.get("queries_succeeded", 0),
+        "queries_failed": meta.get("queries_failed", 0), "queries_not_run": meta.get("queries_not_run", 0),
         "elapsed_seconds": elapsed,
         "attempted_at": stamp, "succeeded_at": stamp, "collector": collector,
         "source_provenance": source_provenance,
@@ -519,7 +541,8 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
             "status": result.get("status", "unknown"),
             "reason": reason if partial or failure_cause else "",
             "last_attempt_at": result.get("attempted_at", ""),
-            "last_success_at": result.get("succeeded_at") or prior.get("last_success_at") or snapshot_full_success,
+            "last_success_at": (result.get("succeeded_at") or prior.get("last_success_at")
+                                or snapshot_meta.get("last_full_snapshot_at") or snapshot_full_success),
             "last_partial_at": result.get("partial_at") or prior.get("last_partial_at") or "",
             "partial_collected_count": int(
                 (result.get("collected_count") if partial else prior.get("partial_collected_count")) or 0
@@ -530,10 +553,14 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
             "partial_carried_count": int(
                 (result.get("carried_count") if partial else prior.get("partial_carried_count")) or 0
             ),
+            "queries_total": int(result.get("queries_total", 0) or 0),
+            "queries_succeeded": int(result.get("queries_succeeded", 0) or 0),
+            "queries_failed": int(result.get("queries_failed", 0) or 0),
+            "queries_not_run": int(result.get("queries_not_run", 0) or 0),
             "last_attempt_collector": collector,
-            "last_success_collector": collector if healthy else prior.get("last_success_collector") or snapshot_meta.get("collector", {}),
+            "last_success_collector": collector if healthy else prior.get("last_success_collector") or snapshot_meta.get("last_full_collector", {}) or snapshot_meta.get("collector", {}),
             "last_attempt_source_provenance": result.get("source_provenance", {}),
-            "last_success_source_provenance": result.get("source_provenance", {}) if healthy else prior.get("last_success_source_provenance") or snapshot_meta.get("source_provenance", {}),
+            "last_success_source_provenance": result.get("source_provenance", {}) if healthy else prior.get("last_success_source_provenance") or snapshot_meta.get("last_full_source_provenance", {}) or snapshot_meta.get("source_provenance", {}),
             "last_attempt_count": int(result.get("count", 0) or 0),
             "last_attempt_elapsed_seconds": result.get("elapsed_seconds"),
             "consecutive_failures": failure_streak,

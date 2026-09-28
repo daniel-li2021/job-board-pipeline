@@ -21,7 +21,7 @@ PIPELINES = {
     "official": ("Big Company Official (GitHub)", "official_careers", "jobs.json"),
     "syncareer": ("Syncareer (GitHub)", "syncareer", "jobs.json"),
 }
-SEVERITY = {"Healthy": 0, "Warning": 1, "Stale": 2, "Problem": 3}
+SEVERITY = {"Healthy": 0, "Partial": 1, "Warning": 1, "Stale": 2, "Problem": 3}
 
 
 def _read(path: Path, default: Any) -> Any:
@@ -349,6 +349,10 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             failures, known_limitations = _official_failure_partition(base, failures)
             limitations.extend(known_limitations)
         failure_count, failure_detail = _failure_summary(failures)
+        indeed_partial = key == "board" and any(
+            "Indeed discovery partial:" in str(item)
+            for item in _failure_items((failures.get("discovery") or []) if isinstance(failures, dict) else [])
+        )
         failed_scrapers = (
             {name: _failure_items(errors) for name, errors in (failures.get("scrape") or {}).items()}
             if key == "official" else {}
@@ -392,6 +396,8 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                 keywords.append("cached")
             qualifier = "degraded" if status != "Healthy" else "had recoverable issues"
             details.append(f"latest run {qualifier}: {llm_impact or f'{failure_count} failure(s): {failure_detail}'}")
+        if indeed_partial and status in {"Healthy", "Warning"}:
+            status = "Partial"
         workflow_token = {"board": "board", "official": "official", "syncareer": "syncareer"}[key]
         if workflow_conclusion and workflow_conclusion != "success" and workflow_token in workflow_name.lower():
             status = "Warning" if data_usable and data_age is not None and data_age <= 36 else "Problem"
@@ -524,6 +530,8 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                 status = "Warning"
         if status == "Healthy" and attempt_failed and consecutive_failures >= failure_threshold:
             status = "Warning"
+        if source == "indeed" and is_partial and status in {"Healthy", "Warning"}:
+            status = "Partial"
         verified_age = f"{age:.1f}h old" if age is not None else "never fully verified"
         details = [
             f"Usable last-good snapshot: {last_good_count} jobs, {verified_age}"
@@ -535,12 +543,21 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             collected = int(state.get("partial_collected_count", 0) or 0)
             fresh_kept = int(state.get("partial_fresh_kept", 0) or 0)
             carried = int(state.get("partial_carried_count", 0) or 0)
-            details.append(
-                f"latest {attempt_kind} attempt{attempt_when} had "
-                f"{'rate-limited' if rate_limited_partial else 'focused'} coverage "
-                f"({state.get('reason') or 'partial coverage'}): collected {collected} rows, kept {fresh_kept}; "
-                f"merged snapshot serves {last_good_count} ({carried} carried, last full collection {verified_age})"
-            )
+            if source == "indeed":
+                details.append(
+                    f"{int(state.get('queries_succeeded', 0) or 0)} queries succeeded · "
+                    f"{int(state.get('queries_failed', 0) or 0)} failed / "
+                    f"{int(state.get('queries_not_run', 0) or 0)} not run · "
+                    f"{fresh_kept} fresh jobs kept · {carried} cached jobs reused; "
+                    f"latest attempt{attempt_when}: {state.get('reason') or 'partial collection'}"
+                )
+            else:
+                details.append(
+                    f"latest {attempt_kind} attempt{attempt_when} had "
+                    f"{'rate-limited' if rate_limited_partial else 'focused'} coverage "
+                    f"({state.get('reason') or 'partial coverage'}): collected {collected} rows, kept {fresh_kept}; "
+                    f"merged snapshot serves {last_good_count} ({carried} carried, last full collection {verified_age})"
+                )
         elif attempt_failed:
             details.append(
                 f"latest {attempt_kind} attempt{attempt_when} failed ({state.get('status', 'unknown')}): "
@@ -557,11 +574,13 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         degradation_kinds: list[str] = []
         keywords = []
         if is_partial:
-            degradation_kinds.append("rate_limited_partial_collection" if rate_limited_partial else "focused_coverage")
-            keywords.extend(("partial", "rate-limited" if rate_limited_partial else "focused coverage", "cached"))
+            degradation_kinds.append("rate_limited_partial_collection" if rate_limited_partial else
+                                     "partial_collection" if source == "indeed" else "focused_coverage")
+            keywords.extend(("partial", "rate-limited" if rate_limited_partial else
+                             "partial collection" if source == "indeed" else "focused coverage", "cached"))
             limitations.append(
                 f"{'LinkedIn (local/general)' if source == 'linkedin' else source.title()}: "
-                f"{'rate-limited' if rate_limited_partial else 'focused'} partial "
+                f"{'rate-limited' if rate_limited_partial else 'focused' if source == 'linkedin' else 'failed'} partial "
                 f"collection; {last_good_count} jobs usable "
                 f"({int(state.get('partial_carried_count', 0) or 0)} carried from the last complete run)"
             )
@@ -641,7 +660,16 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             issue = (f"focused coverage · Recovered, previous {recovered.get('cause')} ×{recovered.get('count')}"
                      if recovered.get("cause") and recovered.get("count") else "focused coverage")
         elif cause:
-            issue = f"{source.title()} {cause} ×{consecutive_failures}"
+            issue = (
+                f"{int(state.get('queries_succeeded', 0) or 0)} queries succeeded · "
+                f"{int(state.get('queries_failed', 0) or 0)} failed / "
+                f"{int(state.get('queries_not_run', 0) or 0)} not run · "
+                f"{int(state.get('partial_fresh_kept', 0) or 0)} fresh jobs kept · "
+                f"{int(state.get('partial_carried_count', 0) or 0)} cached jobs reused · "
+                f"{state.get('reason') or cause}"
+                if source == "indeed" and is_partial else
+                f"{source.title()} {cause} ×{consecutive_failures}"
+            )
         elif attempt_failed:
             issue = f"{source.title()} {_short_cause(str(state.get('reason') or ''))} ×{consecutive_failures}"
         else:
@@ -737,7 +765,7 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         summary = f"{item['label']}: {item.get('issue') or item['detail']}"
         if item["status"] in {"Problem", "Stale"}:
             problems.append(summary)
-        elif item["status"] == "Warning":
+        elif item["status"] in {"Warning", "Partial"}:
             degradations.append(summary)
 
     local_state = local_payload
