@@ -53,6 +53,11 @@ def _display_time(value: object) -> str:
         return str(value or "unknown")
 
 
+def _pacific_day(value: object) -> object:
+    stamp = recovery_policy.stamp(value)
+    return stamp.astimezone(ZoneInfo("America/Los_Angeles")).date() if stamp else None
+
+
 def _normalize_run_telemetry(run: dict[str, Any]) -> dict[str, Any]:
     """Mark legacy placeholder zeroes as unavailable without hiding measured zeroes."""
     normalized = dict(run)
@@ -374,9 +379,8 @@ def _latest_run_panels(base: Path, latest: dict[str, dict[str, Any]],
                      f"Web recovery {int(linked_recovery_run.get('generic_jobs_processed', 0) or 0)} jobs / "
                      f"{int(linked_recovery_run.get('search_requests', 0) or 0)} searches / "
                      f"{int(linked_recovery_run.get('official_page_requests', 0) or 0)} pages"),
-        "sources": (f"LinkedIn search {'rate limited' if search.get('rate_limited') else 'healthy'} · "
-                    f"{'focused coverage · ' if search.get('coverage_limited') else ''}"
-                    f"{int(linkedin_state.get('partial_carried_count', 0) or 0):,} older jobs carried"),
+        "sources": (f"LinkedIn search {'rate limited' if search.get('rate_limited') else 'healthy'}"
+                    f"{' · focused coverage' if search.get('coverage_limited') else ''}"),
         "issue": (str(linkedin_state.get("reason") or components["linkedin"].get("issue") or "")
                   if components["linkedin"]["run_state"] != "Healthy" else ""),
         "note": ("Detail 429 · " if detail.get("rate_limited") else "No detail 429 · ")
@@ -394,9 +398,10 @@ def _latest_run_panels(base: Path, latest: dict[str, dict[str, Any]],
                   if "Indeed discovery partial:" not in error]
     board_panel = {
         "title": "Online Board", "status": components["board"]["run_state"],
-        "jobs": (f"{int((board.get('funnel') or {}).get('after_dedup', 0) or 0):,} discovered · "
-                 f"{int((board.get('output') or {}).get('new_jobs', 0) or 0):,} new canonical · "
-                 f"{int((board.get('output') or {}).get('new_jobs_added', 0) or 0):,} added to A/B"),
+        "jobs": (f"{int((board.get('funnel') or {}).get('after_dedup', 0) or 0):,} current source jobs · "
+                 f"{int((board.get('output') or {}).get('new_jobs', 0) or 0):,} new to Board · "
+                 f"{int((board.get('output') or {}).get('shown', 0) or 0):,} A/B shown · "
+                 f"{int((board.get('output') or {}).get('new_jobs_added', 0) or 0):,} newly added to A/B"),
         "jd": (f"{attempted:,} fresh jobs attempted · {direct_jds + later_jds:,} JDs resolved · "
                f"{max(0, attempted - direct_jds - later_jds):,} still missing; "
                f"{direct_jds:,} direct · {later_jds:,} follow-up recovery"),
@@ -405,7 +410,12 @@ def _latest_run_panels(base: Path, latest: dict[str, dict[str, Any]],
                      f"{int(online.get('page_requests', 0) or 0):,} official pages"),
         "sources": (f"ATS {'limited' if ats_errors else 'healthy'} · "
                     f"Indeed {components['indeed']['run_state'].lower()} · LinkedIn Local snapshot · "
-                    f"Glassdoor {'cached' if components['glassdoor']['run_state'] != 'Healthy' else 'available'}"),
+                    f"Glassdoor {'cached' if components['glassdoor']['run_state'] != 'Healthy' else 'available'}; "
+                    "current / new: " + " · ".join(
+                        f"{name} {int((board.get('source_raw') or {}).get(key, 0) or 0):,} / "
+                        f"{int((((board.get('output') or {}).get('new_jobs_by_source') or {}).get(key) or {}).get('found', 0) or 0):,}"
+                        for name, key in (("ATS", "ats"), ("LinkedIn", "linkedin"), ("Indeed", "indeed"), ("Glassdoor", "glassdoor"))
+                    )),
         "issue": (f"Indeed {indeed_state.get('reason')}" if indeed_state.get("status") == "partial" else
                   str(components["board"].get("issue") or "")) if components["board"]["run_state"] != "Healthy" else "",
         "note": ("Request budget or deadline hit" if online.get("deadline_reached") or
@@ -422,13 +432,15 @@ def _latest_run_panels(base: Path, latest: dict[str, dict[str, Any]],
                for stat in values if isinstance(stat, dict)]
     official_panel = {
         "title": "Big Company Official", "status": components["official"]["run_state"],
-        "jobs": (f"{int((official.get('enrichment') or {}).get('discovered', 0) or 0):,} discovered · "
+        "jobs": (f"{int((official.get('enrichment') or {}).get('discovered', 0) or 0):,} raw listings scanned · "
+                 f"{int((official.get('funnel') or {}).get('after_prefilter', 0) or 0):,} relevant after filters · "
                  f"{int((official.get('output') or {}).get('new_jobs', 0) or 0):,} new · "
-                 f"{int((official.get('funnel') or {}).get('after_prefilter', 0) or 0):,} relevant"),
-        "jd": (f"{usable_official:,}/{eligible_official:,} relevant jobs have JD "
-               f"({usable_official / eligible_official:.1%}) · {max(0, eligible_official - usable_official):,} still missing; "
+                 f"{int((official.get('output') or {}).get('shown', 0) or 0):,} passed · "
+                 f"{int((official.get('output') or {}).get('new_jobs_added', 0) or 0):,} newly added to A/B"),
+        "jd": (f"JD recovery pool: {eligible_official:,} candidates · {usable_official:,} have JD "
+               f"({usable_official / eligible_official:.1%}) · {max(0, eligible_official - usable_official):,} unresolved; "
                f"{int(jd.get('cache_reused', 0) or 0):,} reused from cache · "
-               f"{int(jd.get('detail_requests', 0) or 0):,} detail requests") if eligible_official else "Relevant JD coverage unavailable",
+               f"{int(jd.get('detail_requests', 0) or 0):,} detail requests") if eligible_official else "JD recovery pool unavailable",
         "requests": (f"{len(queries):,} searches · {sum(int(stat.get('pages_fetched', 0) or 0) for stat in queries):,} "
                      f"search pages · {int(jd.get('detail_requests', 0) or 0):,} detail requests"),
         "sources": "Official company career sites",
@@ -440,7 +452,10 @@ def _latest_run_panels(base: Path, latest: dict[str, dict[str, Any]],
     indeed_rows = list(indeed_snapshot.get("jobs") or [])
     indeed_observed = observed(indeed_snapshot, indeed_state)
     indeed_attempt = str(indeed_state.get("last_attempt_at") or "")
+    indeed_same_attempt = bool(indeed_attempt and indeed_attempt ==
+                               str((indeed_snapshot.get("meta") or {}).get("scraped_at") or ""))
     indeed_new = sum(str(row.get("first_seen") or "") == indeed_attempt for row in indeed_observed)
+    indeed_with_jd = sum(len(str(row.get("description") or "").strip()) >= 200 for row in indeed_observed)
     succeeded = int(indeed_state.get("queries_succeeded", 0) or 0)
     failed_queries = int(indeed_state.get("queries_failed", 0) or 0)
     not_run = int(indeed_state.get("queries_not_run", 0) or 0)
@@ -453,10 +468,10 @@ def _latest_run_panels(base: Path, latest: dict[str, dict[str, Any]],
                  f"{int(indeed_state.get('partial_fresh_kept', 0) or 0):,} fresh jobs preserved · "
                  f"{int(indeed_state.get('partial_carried_count', 0) or 0):,} previous jobs retained"
                  if indeed_state.get("status") == "partial" else f"{len(indeed_rows):,} cached jobs remain"),
-        "jd": (f"{sum(len(str(row.get('description') or '').strip()) >= 200 for row in indeed_rows):,}/"
-               f"{len(indeed_rows):,} current jobs have JD · "
-               f"{sum(len(str(row.get('description') or '').strip()) < 200 for row in indeed_rows):,} missing in Indeed snapshot; "
-               "Board handles missing JDs"),
+        "jd": (f"{indeed_with_jd:,}/{len(indeed_observed):,} "
+               f"{'fresh jobs kept' if indeed_state.get('status') == 'partial' else 'jobs collected'} have JD · "
+               f"{len(indeed_observed) - indeed_with_jd:,} missing; Board handles missing JDs"
+               if indeed_same_attempt else "Latest attempt JD counts unavailable"),
         "requests": f"{succeeded:,} searches completed · {failed_queries:,} failed · {not_run:,} not run",
         "sources": ("Partial fresh results + last-good snapshot" if indeed_state.get("status") == "partial"
                     else "Fresh Indeed collection" if indeed_state.get("status") == "ok"
@@ -467,6 +482,62 @@ def _latest_run_panels(base: Path, latest: dict[str, dict[str, Any]],
     }
     return {"board": board_panel, "linkedin": linkedin_panel,
             "official": official_panel, "indeed": indeed_panel}
+
+
+def _today_summary(base: Path, now: datetime, latest: dict[str, dict[str, Any]],
+                   history: list[dict[str, Any]], local: dict[str, Any],
+                   components: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    """Use recorded daily runs; expose unavailable Local history rather than inventing it."""
+    today = now.astimezone(ZoneInfo("America/Los_Angeles")).date()
+    rows: dict[str, dict[str, Any]] = {}
+    board_source_added: Counter[str] = Counter()
+    for key in PIPELINES:
+        runs = [item for item in history if item.get("pipeline") == key
+                and _pacific_day(item.get("run_at")) == today]
+        current = latest.get(key) or {}
+        if _pacific_day(current.get("run_at")) == today and not any(
+                item.get("run_at") == current.get("run_at") for item in runs):
+            runs.append({"pipeline": key, **current})
+        # A retained A/B list appears in every run. Only new additions may be summed.
+        for run in runs if key == "board" else []:
+            for source, counts in ((run.get("output") or {}).get("new_jobs_by_source") or {}).items():
+                board_source_added[source] += int((counts or {}).get("added", 0) or 0)
+        latest_run = max(runs, key=lambda item: str(item.get("run_at") or ""), default={})
+        outputs = [item.get("output") or {} for item in runs]
+        rows[key] = {
+            "status": components[key]["run_state"] if runs else "No run today",
+            "new": sum(int(output.get("new_jobs", 0) or 0) for output in outputs),
+            "new_added": sum(int(output.get("new_jobs_added", 0) or 0) for output in outputs),
+            "shown_latest": (latest_run.get("output") or {}).get("shown") if runs else None,
+            "runs": len(runs),
+            "failed_runs": sum(item.get("health") in {"degraded", "failed", "error"}
+                               for item in runs),
+            "consecutive_failures": components[key].get("consecutive_failures", 0),
+            "latest_run": max((str(item.get("run_at") or "") for item in runs), default=""),
+            "issue": components[key].get("issue") or "",
+        }
+    for key in ("linkedin", "indeed", "glassdoor"):
+        state = local.get(key) or {}
+        attempted_today = _pacific_day(state.get("last_attempt_at")) == today
+        snapshot = _read(base / "output" / "sources" / f"{key}.json", {}) or {}
+        same_snapshot = str(state.get("last_attempt_at") or "") == str(
+            (snapshot.get("meta") or {}).get("scraped_at") or "")
+        new_today = (sum(_pacific_day(item.get("first_seen")) == today
+                         for item in snapshot.get("jobs") or [])
+                     if attempted_today and same_snapshot else None if attempted_today else 0)
+        latest_failed = attempted_today and components[key]["run_state"] in {"Partial", "Failed"}
+        rows[key] = {
+            "status": components[key]["run_state"] if attempted_today else "No run today",
+            "new": new_today,
+            "new_added": board_source_added[key],
+            "shown_latest": None,
+            "runs": "≥1" if attempted_today else 0,
+            "failed_runs": "≥1" if latest_failed else "—" if attempted_today else 0,
+            "consecutive_failures": components[key].get("consecutive_failures", 0),
+            "latest_run": state.get("last_attempt_at") if attempted_today else "",
+            "issue": components[key].get("issue") or "",
+        }
+    return rows
 
 
 def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list[dict[str, Any]]]:
@@ -831,10 +902,8 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         elif source == "linkedin" and detail_streak:
             issue = f"LinkedIn detail 429 ×{detail_streak}"
         elif focused_partial:
-            recovered = state.get("previous_failure") or {}
-            issue = (f"focused coverage · Recovered, previous {recovered.get('cause')} ×{recovered.get('count')}"
-                     if recovered.get("cause") and recovered.get("count") else "focused coverage")
-        elif cause:
+            issue = ""
+        elif cause and attempt_failed:
             issue = (
                 f"{int(state.get('queries_succeeded', 0) or 0)} queries succeeded · "
                 f"{int(state.get('queries_failed', 0) or 0)} failed / "
@@ -848,15 +917,14 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         elif attempt_failed:
             issue = f"{source.title()} {_short_cause(str(state.get('reason') or ''))} ×{consecutive_failures}"
         else:
-            recovered = state.get("previous_failure") or {}
-            issue = (f"Recovered · previous {recovered.get('cause')} ×{recovered.get('count')}"
-                     if recovered.get("cause") and recovered.get("count") else "")
+            issue = ""
         components[source] = {
             "label": {"linkedin": "LinkedIn (Mac)", "indeed": "Indeed (GitHub)", "glassdoor": "Glassdoor (Mac)"}[source],
             "status": status,
             "detail_status": state.get("detail_status", "") if source == "linkedin" else "",
             "detail": detail,
             "issue": issue,
+            "recent_history": state.get("previous_failure") or {},
             "updated_at": state.get("last_success_at", ""),
             "data_usable": data_usable,
             "last_good_count": last_good_count,
@@ -1149,24 +1217,22 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         "using_fallback": recovery_summary["fallback_current"],
         "older_no_jd": older_no_jd,
     }
+    today = _today_summary(base, now, latest, history, local_sources, components)
     attention = []
     for name in ("board", "official", "syncareer", "linkedin", "indeed", "glassdoor"):
         item = components[name]
         if item["run_state"] != "Healthy":
             attention.append(f"{item['label']}: {item.get('issue') or item.get('detail') or item['run_state']}")
-    if coverage["board_still_missing"] or coverage["linkedin_still_missing"]:
-        attention.append(
-            f"Fresh JD gaps: Board {coverage['board_still_missing']:,} · "
-            f"LinkedIn {coverage['linkedin_still_missing']:,}"
-        )
-    if (local_sources.get("linkedin") or {}).get("status") == "partial" and components["linkedin"]["run_state"] == "Healthy":
-        attention.append(f"LinkedIn: focused collection expected · {int((local_sources.get('linkedin') or {}).get('partial_carried_count', 0) or 0):,} older jobs carried")
+    if recovery_summary["pending_fresh"] >= 20:
+        attention.append(f"Fresh JD backlog: {recovery_summary['pending_fresh']:,} pending")
     report = {
         "generated_at": now.isoformat(),
         "overall": overall,
         "overall_detail_status": overall_detail_status,
         "components": components,
         "latest_runs": latest_runs,
+        "today": today,
+        "latest_funnels": {key: latest.get(key, {}).get("funnel", {}) for key in PIPELINES},
         "coverage": coverage,
         "attention": attention,
         "local_scheduler": local_scheduler,
@@ -1224,21 +1290,25 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
             f'<dl>{rows}</dl></article>'
         )
 
-    component_rows = []
-    for name, item in report["components"].items():
-        issue = str(item.get("issue") or "")
-        if name == "linkedin" and item.get("latest_attempt_status") == "partial":
-            carried = int(item.get("partial_carried_count", 0) or 0)
-            last_full = _display_time(item.get("last_good_at"))
-            issue = f"{issue + ' · ' if issue else ''}{carried:,} carried · last full {last_full}"
-        component_rows.append(
-            f'<tr><th scope="row">{esc(item["label"])}</th>'
-            f'<td><span class="state state-{esc(item["run_state"]).lower()}">{esc(item["run_state"])}</span></td>'
-            f'<td class="num">{number(item.get("volumes", {}).get("jobs"))}</td>'
-            f'<td class="num">{number(item.get("volumes", {}).get("jd"))}</td>'
-            f'<td class="num">{number(item.get("volumes", {}).get("pass"))}</td>'
-            f'<td>{esc(_display_time(item.get("latest_attempt_at")))}</td>'
-            f'<td>{esc(issue) if issue else "—"}</td></tr>'
+    today_rows = []
+    for name in ("board", "official", "syncareer", "linkedin", "indeed", "glassdoor"):
+        item = report["today"][name]
+        status = str(item["status"])
+        status_html = (f'<span class="state state-{esc(status).lower()}">{esc(status)}</span>'
+                       if status != "No run today" else "No run today")
+        shown = item.get("shown_latest")
+        new_text = "—" if item["new"] is None else number(item["new"])
+        result = (f"{number(shown)} shown latest · " if shown is not None else "") + f"{number(item['new_added'])} new A/B today"
+        today_rows.append(
+            f'<tr><th scope="row">{esc(report["components"][name]["label"])}</th>'
+            f'<td>{status_html}</td>'
+            f'<td class="num">{new_text}</td>'
+            f'<td>{esc(result)}</td>'
+            f'<td class="num">{esc(item["runs"])}</td>'
+            f'<td class="num">{esc(item["failed_runs"])}</td>'
+            f'<td class="num">{number(item["consecutive_failures"])}</td>'
+            f'<td>{esc(_display_time(item["latest_run"])) if item["latest_run"] else "—"}</td>'
+            f'<td>{esc(item.get("issue")) if item.get("issue") else "—"}</td></tr>'
         )
 
     execution_rows = []
@@ -1259,12 +1329,6 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
     attention = report.get("attention") or []
     attention_html = "".join(f"<li>{esc(item)}</li>" for item in attention) or "<li>None</li>"
     headline_attention = " · ".join(attention[:2]) if attention else "None"
-    current = report["components"]
-    current_text = " · ".join(
-        f"{label} {number(current[name].get('volumes', {}).get('jobs'))}"
-        for name, label in (("board", "Board"), ("official", "Official"),
-                            ("linkedin", "LinkedIn"), ("indeed", "Indeed"))
-    )
     scheduler = report["local_scheduler"]
     schedule_text = " · ".join((
         f"Last run {_display_time(scheduler['last_successful_local_run_at'])}",
@@ -1276,10 +1340,13 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
     diagnostics = {
         "components": {key: {"status": item.get("status"), "detail": item.get("detail"),
                              "consecutive_failures": item.get("consecutive_failures"),
-                             "degradation_kinds": item.get("degradation_kinds")}
+                             "degradation_kinds": item.get("degradation_kinds"),
+                             "retained_inventory": item.get("volumes"),
+                             "recent_history": item.get("recent_history")}
                        for key, item in report["components"].items()},
         "groups": report["groups"], "enrichment": report["enrichment"],
         "recovery_summary": recovery, "coverage": coverage,
+        "latest_funnels": report.get("latest_funnels", {}),
         "problems": report.get("problems", []), "degradations": report.get("degradations", []),
         "limitations": report.get("limitations", []),
         "unresolved_examples": report.get("unresolved_examples", []),
@@ -1305,17 +1372,12 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
         f'<p class="muted">Generated {esc(_display_time(report["generated_at"]))} · '
         '<a href="index.html">Dashboard</a> · <a href="health.json">JSON</a> · '
         '<a href="health-history.json">History</a></p>'
-        f'<p class="strip"><strong>Current:</strong> {esc(current_text)}</p>'
         f'<p class="strip"><strong>Needs attention:</strong> {esc(headline_attention)}</p>'
         '<h2>Latest runs</h2><div class="run-grid">' + "".join(panels) + '</div>'
-        '<h2>Components</h2><div class="table-wrap"><table><thead><tr><th>Source</th><th>Status</th><th>Current jobs</th><th>With JD</th><th>Passed</th><th>Latest attempt</th><th>Issue</th></tr></thead><tbody>'
-        + "".join(component_rows) + '</tbody></table></div>'
-        '<h2>Coverage</h2><div class="metric-row">'
-        f'<div class="metric"><span>This run</span><strong>{number(recovery.get("discovered_this_run"))} discovered · {number(recovery.get("verified_this_run"))} verified</strong></div>'
-        f'<div class="metric"><span>Fresh JD backlog</span><strong>{number(coverage.get("board_still_missing"))} Board still missing · {number(coverage.get("linkedin_still_missing"))} LinkedIn still missing</strong>'
-        f'<small>{number(coverage.get("board_attempted"))} Board jobs attempted · {number(coverage.get("linkedin_fresh_needed"))} LinkedIn fresh jobs checked · {number(coverage.get("using_fallback"))} current jobs using fallback; source counts may overlap</small></div>'
-        f'<div class="metric"><span>Older stored jobs without JD</span><strong>{number(coverage.get("older_no_jd"))}</strong><small>Stored inventory first seen over 24 hours ago, separate from current recovery failures</small></div>'
-        '</div><h2>Needs attention</h2><ul>' + attention_html + '</ul>'
+        '<h2>Today</h2><div class="table-wrap"><table><thead><tr><th>Source</th><th>Status today</th><th>New today</th><th>A/B/pass today</th><th>Runs today</th><th>Failed runs</th><th>Consecutive failures</th><th>Latest run</th><th>Current issue</th></tr></thead><tbody>'
+        + "".join(today_rows) + '</tbody></table></div>'
+        '<p class="muted">Shown is the latest run result; new A/B is summed across today. Local source history only records the latest attempt, so its run and failure counts are lower bounds or unavailable.</p>'
+        '<h2>Needs attention</h2><ul>' + attention_html + '</ul>'
         '<h2>Execution</h2><div class="table-wrap"><table><thead><tr><th>Runner</th><th>Status</th><th>Jobs processed</th><th>New JDs this run</th><th>Time</th></tr></thead><tbody>'
         + "".join(execution_rows) + '</tbody></table></div>'
         '<details><summary>Technical details</summary>'

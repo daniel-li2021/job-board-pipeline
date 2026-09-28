@@ -31,7 +31,10 @@ class PipelineHealthTests(unittest.TestCase):
                 }))
             (root / "output" / "board" / "latest_stats.json").write_text(json.dumps({
                 "run_at": attempt, "funnel": {"after_dedup": 10},
-                "output": {"new_jobs": 2, "new_jobs_added": 1},
+                "source_raw": {"ats": 6, "linkedin": 2, "indeed": 2},
+                "output": {"new_jobs": 2, "new_jobs_added": 1, "shown": 4,
+                           "new_jobs_by_source": {"ats": {"found": 1, "added": 1},
+                                                  "linkedin": {"found": 1, "added": 0}}},
                 "enrichment": {"direct": {"http_requests": 2, "jds_resolved": 1}},
                 "online_recovery": {"jobs_processed": 3, "jds_recovered": 1,
                                     "search_requests": 1, "page_requests": 1},
@@ -39,7 +42,7 @@ class PipelineHealthTests(unittest.TestCase):
             }))
             (root / "output" / "official_careers" / "latest_stats.json").write_text(json.dumps({
                 "run_at": attempt, "enrichment": {"discovered": 20},
-                "output": {"new_jobs": 2}, "funnel": {"after_prefilter": 10},
+                "output": {"new_jobs": 2, "shown": 3}, "funnel": {"after_prefilter": 10},
                 "jd_recovery": {"eligible": 10, "usable_jd": 8, "cache_reused": 2,
                                 "detail_requests": 2, "per_company": {
                                     "Example": {"eligible": 10, "usable_jd": 8, "detail_success": 1}}},
@@ -91,15 +94,28 @@ class PipelineHealthTests(unittest.TestCase):
         self.assertIn("1 fresh jobs needed JD · 1 resolved", report["latest_runs"]["linkedin"]["jd"])
         self.assertEqual(1, report["groups"]["Local Mac"]["new_jds_this_run"])
         self.assertEqual("Partial", report["latest_runs"]["board"]["status"])
+        self.assertIn("10 current source jobs · 2 new to Board · 4 A/B shown · 1 newly added to A/B",
+                      report["latest_runs"]["board"]["jobs"])
+        self.assertIn("current / new: ATS 6 / 1 · LinkedIn 2 / 1 · Indeed 2 / 0",
+                      report["latest_runs"]["board"]["sources"])
+        self.assertIn("20 raw listings scanned · 10 relevant after filters · 2 new",
+                      report["latest_runs"]["official"]["jobs"])
+        self.assertIn("JD recovery pool: 10 candidates · 8 have JD (80.0%) · 2 unresolved",
+                      report["latest_runs"]["official"]["jd"])
+        self.assertEqual(2, report["today"]["board"]["new"])
+        self.assertEqual(1, report["today"]["board"]["new_added"])
         self.assertIn("ATS healthy · Indeed partial", report["latest_runs"]["board"]["sources"])
         self.assertIn("1 searches completed · 1 failed · 1 not run", report["latest_runs"]["indeed"]["requests"])
+        self.assertIn("1/1 fresh jobs kept have JD · 0 missing", report["latest_runs"]["indeed"]["jd"])
         self.assertLess(page.index("Online Board"), page.index("LinkedIn Local"))
         self.assertLess(page.index("LinkedIn Local"), page.index("Big Company Official"))
-        self.assertLess(page.index("Big Company Official"), page.index("<h2>Components</h2>"))
+        self.assertLess(page.index("Big Company Official"), page.index("<h2>Today</h2>"))
         self.assertEqual(4, page.count('<article class="run-card">'))
-        for heading in ("Latest runs", "Coverage", "Needs attention", "Execution", "Technical details"):
+        for heading in ("Latest runs", "Today", "Needs attention", "Execution", "Technical details"):
             self.assertIn(heading, page)
-        self.assertIn("<th>Latest attempt</th>", page)
+        self.assertIn("<th>Consecutive failures</th>", page)
+        self.assertNotIn("<h2>Components</h2>", page)
+        self.assertNotIn("<h2>Coverage</h2>", page)
         self.assertIn("<th>New JDs this run</th>", page)
         self.assertIn("1 fetched directly · 0 recovered later", page)
         self.assertNotIn("JDs recovered</th>", page)
@@ -196,8 +212,8 @@ class PipelineHealthTests(unittest.TestCase):
             self.assertIn("4 found · 2 kept", page)
             self.assertIn("1 recovered later", page)
             self.assertIn("Detail 429", page)
-            self.assertLess(page.index("LinkedIn Local"), page.index("<h2>Components</h2>"))
-            self.assertLess(page.index("<h2>Components</h2>"), page.index("Local Mac schedule"))
+            self.assertLess(page.index("LinkedIn Local"), page.index("<h2>Today</h2>"))
+            self.assertLess(page.index("<h2>Today</h2>"), page.index("Local Mac schedule"))
             self.assertIn("9:00 PM PT, 26 September", page)
             self.assertNotIn("2026-09-27T04:00:00+00:00", page)
 
@@ -356,6 +372,8 @@ class PipelineHealthTests(unittest.TestCase):
                 name: {
                     "healthy": True, "required": name != "glassdoor",
                     "last_success_at": now.isoformat(), "last_good_count": 10,
+                    **({"status": "ok", "previous_failure": {"cause": "collection", "count": 1}}
+                       if name == "indeed" else {}),
                     **({"status": "skipped_unavailable", "healthy": False,
                         "reason": "HTTP 403", "last_attempt_at": now.isoformat()}
                        if name == "glassdoor" else {}),
@@ -373,9 +391,48 @@ class PipelineHealthTests(unittest.TestCase):
             self.assertEqual("Healthy", report["overall"])
             self.assertEqual("Partial", report["components"]["glassdoor"]["run_state"])
             self.assertEqual("Healthy", report["groups"]["Local Mac"]["run_state"])
+            self.assertEqual("", report["components"]["indeed"]["issue"])
+            self.assertEqual({"cause": "collection", "count": 1},
+                             report["components"]["indeed"]["recent_history"])
             self.assertEqual(3, report["enrichment"]["unresolved_thin_or_no_jd"])
             self.assertEqual("https://example.test/job", report["unresolved_examples"][0]["url"])
             self.assertEqual(3, len(history))
+
+    def test_today_counts_new_additions_across_runs_without_summing_retained_shown(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            sources = root / "output" / "sources"
+            sources.mkdir(parents=True)
+            sources.joinpath("indeed.json").write_text(json.dumps({
+                "meta": {"scraped_at": "2026-09-28T18:40:00+00:00"}, "jobs": [
+                {"first_seen": "2026-09-28T16:00:00+00:00"},
+                {"first_seen": "2026-09-28T06:00:00+00:00"},
+            ]}))
+            now = datetime(2026, 9, 28, 20, tzinfo=timezone.utc)
+            history = [
+                {"pipeline": "board", "run_at": "2026-09-28T15:00:00+00:00", "health": "success",
+                 "output": {"new_jobs": 2, "new_jobs_added": 1, "shown": 100,
+                            "new_jobs_by_source": {"indeed": {"added": 1}}}},
+                {"pipeline": "board", "run_at": "2026-09-28T18:30:00+00:00", "health": "degraded",
+                 "output": {"new_jobs": 3, "new_jobs_added": 2, "shown": 101,
+                            "new_jobs_by_source": {"indeed": {"added": 2}}}},
+                {"pipeline": "board", "run_at": "2026-09-28T06:30:00+00:00", "health": "success",
+                 "output": {"new_jobs": 50, "new_jobs_added": 10, "shown": 99}},
+            ]
+            components = {key: {"run_state": "Healthy", "consecutive_failures": 0, "issue": ""}
+                          for key in (*pipeline_health.PIPELINES, "linkedin", "indeed", "glassdoor")}
+            today = pipeline_health._today_summary(
+                root, now, {"board": history[1]}, history,
+                {"indeed": {"last_attempt_at": "2026-09-28T18:40:00+00:00"}}, components)
+        self.assertEqual(5, today["board"]["new"])
+        self.assertEqual(3, today["board"]["new_added"])
+        self.assertEqual(101, today["board"]["shown_latest"])
+        self.assertEqual(2, today["board"]["runs"])
+        self.assertEqual(1, today["board"]["failed_runs"])
+        self.assertEqual(1, today["indeed"]["new"])
+        self.assertEqual(3, today["indeed"]["new_added"])
+        self.assertEqual("≥1", today["indeed"]["runs"])
+        self.assertEqual("—", today["indeed"]["failed_runs"])
 
     def test_isolated_failed_attempt_with_fresh_last_good_is_recovered_limitation(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
