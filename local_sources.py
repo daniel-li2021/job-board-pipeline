@@ -56,6 +56,7 @@ SOURCES: Dict[str, Callable[[], Dict[str, object]]] = {
 OPTIONAL_SOURCES = {"glassdoor"}
 HEALTH_PATH = OUTPUT_DIR / "sources" / "health.json"
 HEALTH_SCHEMA_VERSION = 1
+SOURCE_HISTORY_LIMIT = 120
 LINKEDIN_DETAIL_LIMIT = 8
 MAC_SEARCH_PAGE_LIMIT = 14
 LINKEDIN_DETAIL_COOLDOWN_HOURS = recovery_policy.LINKEDIN_DETAIL_COOLDOWN_HOURS
@@ -254,10 +255,10 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
             result = scraper()
     except SourceUnavailable as exc:
         print(f"[{name}] SKIP (blocked/unavailable): {exc} -> keeping last good snapshot")
-        return {"source": name, "status": "skipped_unavailable", "source_healthy": False, "reason": str(exc), "count": 0, "attempted_at": stamp, "collector": collector, "source_provenance": source_provenance}
+        return {"source": name, "status": "skipped_unavailable", "source_healthy": False, "reason": str(exc), "count": 0, "elapsed_seconds": round(time.monotonic() - started, 3), "attempted_at": stamp, "collector": collector, "source_provenance": source_provenance}
     except Exception as exc:  # noqa: BLE001
         print(f"[{name}] SKIP (unexpected {type(exc).__name__}): {exc} -> keeping last good snapshot")
-        return {"source": name, "status": "skipped_error", "source_healthy": False, "reason": str(exc), "count": 0, "attempted_at": stamp, "collector": collector, "source_provenance": source_provenance}
+        return {"source": name, "status": "skipped_error", "source_healthy": False, "reason": str(exc), "count": 0, "elapsed_seconds": round(time.monotonic() - started, 3), "attempted_at": stamp, "collector": collector, "source_provenance": source_provenance}
 
     rows = list(result.get("jobs") or [])
     if rows:
@@ -496,6 +497,7 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
         previous = {}
     previous_sources = previous.get("sources", {}) if isinstance(previous, dict) else {}
     sources = dict(previous_sources) if isinstance(previous_sources, dict) else {}
+    history = list(previous.get("run_history") or []) if isinstance(previous, dict) else []
     for result in results:
         if result.get("status") == "deferred":
             continue
@@ -611,12 +613,33 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
                     if key in runtime:
                         state[key] = runtime[key]
         sources[name] = state
+        attempt_at = str(result.get("attempted_at") or "")
+        if attempt_at:
+            snapshot_at = str(snapshot_meta.get("scraped_at") or "")
+            new_jobs = (sum(str(job.get("first_seen") or "") == attempt_at
+                            for job in snapshot.get("jobs") or [])
+                        if snapshot_at == attempt_at else
+                        None if result.get("status") in {"ok", "partial"} else 0)
+            detail = result.get("detail_enrichment") or {}
+            failure = bool(failure_cause or detail.get("rate_limited")
+                           or detail.get("budget_exhausted") or detail.get("failed"))
+            record = {
+                "source": name, "run_at": attempt_at, "status": result.get("status", "unknown"),
+                "new": new_jobs, "pass": result.get("pass"), "new_ab": result.get("new_ab"),
+                "failure": failure, "reason": (reason or str(detail.get("blocked") or "JD detail failed")) if failure else "",
+                "elapsed_seconds": result.get("elapsed_seconds"),
+            }
+            history = [item for item in history if not (
+                item.get("source") == name and item.get("run_at") == attempt_at)]
+            history.append(record)
+    history.sort(key=lambda item: str(item.get("run_at") or ""), reverse=True)
     HEALTH_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = {
         "schema_version": HEALTH_SCHEMA_VERSION,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "collector": collector,
         "sources": sources,
+        "run_history": history[:SOURCE_HISTORY_LIMIT],
     }
     atomic_write(HEALTH_PATH, (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
 

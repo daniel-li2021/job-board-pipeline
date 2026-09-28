@@ -487,10 +487,11 @@ def _latest_run_panels(base: Path, latest: dict[str, dict[str, Any]],
 def _today_summary(base: Path, now: datetime, latest: dict[str, dict[str, Any]],
                    history: list[dict[str, Any]], local: dict[str, Any],
                    components: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
-    """Use recorded daily runs; expose unavailable Local history rather than inventing it."""
+    """Sum Pacific-day run outcomes; leave unmeasured results unavailable."""
     today = now.astimezone(ZoneInfo("America/Los_Angeles")).date()
     rows: dict[str, dict[str, Any]] = {}
     board_source_added: Counter[str] = Counter()
+    board_attribution_complete = False
     for key in PIPELINES:
         runs = [item for item in history if item.get("pipeline") == key
                 and _pacific_day(item.get("run_at")) == today]
@@ -499,6 +500,9 @@ def _today_summary(base: Path, now: datetime, latest: dict[str, dict[str, Any]],
                 item.get("run_at") == current.get("run_at") for item in runs):
             runs.append({"pipeline": key, **current})
         # A retained A/B list appears in every run. Only new additions may be summed.
+        if key == "board":
+            board_attribution_complete = bool(runs) and all(
+                "new_jobs_by_source" in (run.get("output") or {}) for run in runs)
         for run in runs if key == "board" else []:
             for source, counts in ((run.get("output") or {}).get("new_jobs_by_source") or {}).items():
                 board_source_added[source] += int((counts or {}).get("added", 0) or 0)
@@ -506,8 +510,10 @@ def _today_summary(base: Path, now: datetime, latest: dict[str, dict[str, Any]],
         outputs = [item.get("output") or {} for item in runs]
         rows[key] = {
             "status": components[key]["run_state"] if runs else "No run today",
-            "new": sum(int(output.get("new_jobs", 0) or 0) for output in outputs),
-            "new_added": sum(int(output.get("new_jobs_added", 0) or 0) for output in outputs),
+            "new": (sum(int(output.get("new_jobs", 0) or 0) for output in outputs)
+                    if runs and all("new_jobs" in output for output in outputs) else None),
+            "new_added": (sum(int(output.get("new_jobs_added", 0) or 0) for output in outputs)
+                          if runs and all("new_jobs_added" in output for output in outputs) else None),
             "shown_latest": (latest_run.get("output") or {}).get("shown") if runs else None,
             "runs": len(runs),
             "failed_runs": sum(item.get("health") in {"degraded", "failed", "error"}
@@ -516,25 +522,27 @@ def _today_summary(base: Path, now: datetime, latest: dict[str, dict[str, Any]],
             "latest_run": max((str(item.get("run_at") or "") for item in runs), default=""),
             "issue": components[key].get("issue") or "",
         }
+    source_history = (_read(base / "output" / "sources" / "health.json", {}) or {}).get("run_history") or []
     for key in ("linkedin", "indeed", "glassdoor"):
         state = local.get(key) or {}
         attempted_today = _pacific_day(state.get("last_attempt_at")) == today
-        snapshot = _read(base / "output" / "sources" / f"{key}.json", {}) or {}
-        same_snapshot = str(state.get("last_attempt_at") or "") == str(
-            (snapshot.get("meta") or {}).get("scraped_at") or "")
-        new_today = (sum(_pacific_day(item.get("first_seen")) == today
-                         for item in snapshot.get("jobs") or [])
-                     if attempted_today and same_snapshot else None if attempted_today else 0)
-        latest_failed = attempted_today and components[key]["run_state"] in {"Partial", "Failed"}
+        runs = [item for item in source_history if item.get("source") == key
+                and _pacific_day(item.get("run_at")) == today]
+        latest_run = max(runs, key=lambda item: str(item.get("run_at") or ""), default={})
         rows[key] = {
-            "status": components[key]["run_state"] if attempted_today else "No run today",
-            "new": new_today,
-            "new_added": board_source_added[key],
+            "status": components[key]["run_state"] if runs or attempted_today else "No run today",
+            "new": (sum(int(item["new"] or 0) for item in runs)
+                    if runs and all("new" in item and item["new"] is not None for item in runs) else None),
+            "pass": (sum(int(item["pass"] or 0) for item in runs)
+                     if runs and all(item.get("pass") is not None for item in runs) else None),
+            "new_added": board_source_added[key] if runs and board_attribution_complete else None,
             "shown_latest": None,
-            "runs": "≥1" if attempted_today else 0,
-            "failed_runs": "≥1" if latest_failed else "—" if attempted_today else 0,
+            "runs": len(runs) if runs or not attempted_today else "—",
+            "failed_runs": (sum(bool(item.get("failure")) for item in runs)
+                            if runs and all("failure" in item for item in runs) else
+                            "—" if attempted_today else 0),
             "consecutive_failures": components[key].get("consecutive_failures", 0),
-            "latest_run": state.get("last_attempt_at") if attempted_today else "",
+            "latest_run": latest_run.get("run_at") or state.get("last_attempt_at") if attempted_today else "",
             "issue": components[key].get("issue") or "",
         }
     return rows
@@ -1232,6 +1240,7 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         "components": components,
         "latest_runs": latest_runs,
         "today": today,
+        "source_run_history": local_payload.get("run_history") or [],
         "latest_funnels": {key: latest.get(key, {}).get("funnel", {}) for key in PIPELINES},
         "coverage": coverage,
         "attention": attention,
@@ -1281,12 +1290,12 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
         rows = ""
         for label, value in lines:
             note_here = (label == "Requests" and name != "official") or (label == "Sources" and name == "official")
-            note = f'<small>{esc(item["note"])}</small>' if note_here and item.get("note") else ""
-            rows += f'<div class="run-line"><dt>{esc(label)}</dt><dd>{esc(value)}{note}</dd></div>'
+            note = f'<br><small class="run-note">{esc(item["note"])}</small>' if note_here and item.get("note") else ""
+            rows += f'<div class="run-line"><dt>{esc(label)}</dt><dd><span>{esc(value)}</span>{note}</dd></div>'
         if item.get("issue"):
             rows += f'<div class="run-line issue"><dt>Issue</dt><dd>{esc(item["issue"])}</dd></div>'
         panels.append(
-            f'<article class="run-card"><h3>{esc(item["title"])} <span class="state state-{esc(item["status"]).lower()}">{esc(item["status"])}</span></h3>'
+            f'<article class="run-card"><h3><span>{esc(item["title"])}</span><span aria-hidden="true">·</span><span class="state state-{esc(item["status"]).lower()}">{esc(item["status"])}</span></h3>'
             f'<dl>{rows}</dl></article>'
         )
 
@@ -1298,7 +1307,12 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
                        if status != "No run today" else "No run today")
         shown = item.get("shown_latest")
         new_text = "—" if item["new"] is None else number(item["new"])
-        result = (f"{number(shown)} shown latest · " if shown is not None else "") + f"{number(item['new_added'])} new A/B today"
+        result_parts = ([f"{number(shown)} shown latest"] if shown is not None else [])
+        if item.get("pass") is not None:
+            result_parts.append(f"{number(item['pass'])} passed today")
+        if item.get("new_added") is not None:
+            result_parts.append(f"{number(item['new_added'])} new A/B today")
+        result = " · ".join(result_parts) or "—"
         today_rows.append(
             f'<tr><th scope="row">{esc(report["components"][name]["label"])}</th>'
             f'<td>{status_html}</td>'
@@ -1316,11 +1330,12 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
         new = group.get("new_jds_this_run")
         new_text = "—" if new is None else number(new)
         note = str(group.get("new_jds_note") or "")
+        note_html = f'<br><small class="execution-note">Breakdown: {esc(note)}</small>' if note else ""
         execution_rows.append(
             f'<tr><th scope="row">{esc(name)}</th>'
             f'<td><span class="state state-{esc(group["run_state"]).lower()}">{esc(group["run_state"])}</span></td>'
             f'<td class="num">{number(group.get("jobs_processed"))}</td>'
-            f'<td class="num">{new_text}{f"<small>{esc(note)}</small>" if note else ""}</td>'
+            f'<td class="num">{new_text}{note_html}</td>'
             f'<td>{esc(duration(group.get("elapsed_seconds")))}</td></tr>'
         )
 
@@ -1346,6 +1361,7 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
                        for key, item in report["components"].items()},
         "groups": report["groups"], "enrichment": report["enrichment"],
         "recovery_summary": recovery, "coverage": coverage,
+        "source_run_history": report.get("source_run_history", []),
         "latest_funnels": report.get("latest_funnels", {}),
         "problems": report.get("problems", []), "degradations": report.get("degradations", []),
         "limitations": report.get("limitations", []),
@@ -1355,10 +1371,10 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
     :root{color-scheme:light}*{box-sizing:border-box}body{font:15px/1.5 system-ui,-apple-system,sans-serif;color:#1b2c25;background:#f8faf8;margin:0}
     main{max-width:1200px;margin:auto;padding:32px 20px 64px}h1{font-size:29px;margin:0}h2{font-size:21px;margin:34px 0 14px}h3{font-size:18px;margin:0 0 12px}
     p{margin:8px 0}a{color:#17654c}.muted,small{color:#607268}small{display:block;font-size:12px;margin-top:2px}
-    .top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.state{font-size:12px;font-weight:750;padding:3px 8px;border-radius:999px;background:#e7f4ed;color:#176341;white-space:nowrap}
+    .top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.state{display:inline-block;font-size:12px;font-weight:750;padding:3px 8px;border-radius:999px;background:#e7f4ed;color:#176341;white-space:nowrap}
     .state-partial{background:#fff0ce;color:#795309}.state-failed{background:#fae2df;color:#a22f2b}.strip{padding:11px 15px;background:white;border:1px solid #dbe6dd;border-radius:9px;margin-top:10px}
     .run-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.run-card{background:white;border:1px solid #dbe6dd;border-radius:12px;padding:18px 20px;box-shadow:0 3px 10px #1c3c2508}
-    .run-card h3{display:flex;gap:10px;align-items:center}.run-card dl{margin:0}.run-line{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px;padding:8px 0;border-top:1px solid #eef2ee}
+    .run-card h3{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.run-card dl{margin:0}.run-line{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px;padding:8px 0;border-top:1px solid #eef2ee}.run-note{margin-top:5px}.execution-note{white-space:normal;text-align:right;margin-top:5px}
     dt{font-weight:700;color:#415d4d}dd{margin:0}.issue dd{color:#9d3b25}.metric-row{display:flex;gap:12px;flex-wrap:wrap}.metric{flex:1;min-width:230px;background:white;border:1px solid #dbe6dd;border-radius:9px;padding:13px 16px}
     .metric strong{display:block;font-size:19px}table{border-collapse:collapse;width:100%;background:white}th,td{padding:9px 11px;text-align:left;border-bottom:1px solid #e4ebe5;vertical-align:top}thead th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:#61746a}
     .table-wrap{overflow-x:auto;border:1px solid #dbe6dd;border-radius:9px}.num{text-align:right;white-space:nowrap}ul{padding-left:22px}li{margin:6px 0}details{border:1px solid #dbe6dd;background:white;border-radius:9px;padding:13px 16px;margin-top:24px}summary{cursor:pointer;font-weight:700}
@@ -1376,14 +1392,13 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
         '<h2>Latest runs</h2><div class="run-grid">' + "".join(panels) + '</div>'
         '<h2>Today</h2><div class="table-wrap"><table><thead><tr><th>Source</th><th>Status today</th><th>New today</th><th>A/B/pass today</th><th>Runs today</th><th>Failed runs</th><th>Consecutive failures</th><th>Latest run</th><th>Current issue</th></tr></thead><tbody>'
         + "".join(today_rows) + '</tbody></table></div>'
-        '<p class="muted">Shown is the latest run result; new A/B is summed across today. Local source history only records the latest attempt, so its run and failure counts are lower bounds or unavailable.</p>'
+        '<p class="muted">Shown is the latest run result; new A/B is summed across today. A dash means no run or measured result is available for today. Source history begins with the first run after this update.</p>'
         '<h2>Needs attention</h2><ul>' + attention_html + '</ul>'
         '<h2>Execution</h2><div class="table-wrap"><table><thead><tr><th>Runner</th><th>Status</th><th>Jobs processed</th><th>New JDs this run</th><th>Time</th></tr></thead><tbody>'
         + "".join(execution_rows) + '</tbody></table></div>'
         '<details><summary>Technical details</summary>'
         f'<p><strong>Local Mac schedule:</strong> {esc(schedule_text)}</p>'
-        '<h3>Consecutive failures and raw diagnostics</h3>'
-        '<p>Subcomponents, request limits, enrichment, retry state, failure reasons, and recovery methods remain in the JSON report.</p>'
+        '<p><strong>Raw diagnostics</strong> · Subcomponents, request limits, enrichment, retry state, failure reasons, and recovery methods remain in the JSON report.</p>'
         f'<pre>{esc(json.dumps(diagnostics, indent=2, ensure_ascii=False))}</pre>'
         '</details></main></body></html>'
     )

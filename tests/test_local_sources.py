@@ -532,6 +532,35 @@ class LocalSourceTests(unittest.TestCase):
             self.assertEqual("HTTP 403", health["query_stats"][0]["stop_reason"])
             self.assertEqual(1, health["detail_enrichment"]["remaining_no_jd"])
 
+    def test_source_history_records_new_and_failed_runs_without_recounting_last_good(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(schema, "SOURCES_DIR", Path(tmpdir)), patch.object(
+            local_sources, "HEALTH_PATH", Path(tmpdir) / "health.json",
+        ):
+            first = "2026-09-28T16:00:00+00:00"
+            failed = "2026-09-28T18:00:00+00:00"
+            schema.write_source_snapshot("indeed", [
+                {"job_id": "new", "first_seen": first},
+                {"job_id": "old", "first_seen": "2026-09-20T00:00:00+00:00"},
+            ], {"scraped_at": first})
+            success = {"source": "indeed", "status": "ok", "source_healthy": True,
+                       "count": 2, "attempted_at": first, "succeeded_at": first,
+                       "elapsed_seconds": 1.5}
+            local_sources.write_health([success], {})
+            local_sources.write_health([success], {})  # Rewriting one attempt is idempotent.
+            local_sources.write_health([{
+                "source": "indeed", "status": "skipped_error", "source_healthy": False,
+                "reason": "connection reset", "count": 0, "attempted_at": failed,
+                "elapsed_seconds": 2.5,
+            }], {})
+            history = json.loads(local_sources.HEALTH_PATH.read_text())["run_history"]
+        self.assertEqual(2, len(history))
+        self.assertEqual([failed, first], [item["run_at"] for item in history])
+        self.assertEqual([0, 1], [item["new"] for item in history])
+        self.assertEqual([True, False], [item["failure"] for item in history])
+        self.assertEqual([2.5, 1.5], [item["elapsed_seconds"] for item in history])
+        self.assertIsNone(history[0]["pass"])
+        self.assertIsNone(history[0]["new_ab"])
+
     def test_collector_fails_when_no_required_source_succeeds(self) -> None:
         failed = {"source": "linkedin", "status": "skipped_unavailable"}
         with patch.object(sys, "argv", ["local_sources.py"]), patch.object(

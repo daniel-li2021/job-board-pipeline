@@ -118,6 +118,10 @@ class PipelineHealthTests(unittest.TestCase):
         self.assertNotIn("<h2>Coverage</h2>", page)
         self.assertIn("<th>New JDs this run</th>", page)
         self.assertIn("1 fetched directly · 0 recovered later", page)
+        self.assertIn("Online Board</span><span aria-hidden=\"true\">·</span>", page)
+        self.assertIn("<br><small class=\"run-note\">No request-budget", page)
+        self.assertIn("<br><small class=\"execution-note\">Breakdown: 1 fetched directly", page)
+        self.assertNotIn("<h3>Consecutive failures and raw diagnostics</h3>", page)
         self.assertNotIn("JDs recovered</th>", page)
 
     def test_indeed_partial_counts_and_board_failure_are_visible(self) -> None:
@@ -403,10 +407,19 @@ class PipelineHealthTests(unittest.TestCase):
             root = Path(tmp)
             sources = root / "output" / "sources"
             sources.mkdir(parents=True)
-            sources.joinpath("indeed.json").write_text(json.dumps({
-                "meta": {"scraped_at": "2026-09-28T18:40:00+00:00"}, "jobs": [
-                {"first_seen": "2026-09-28T16:00:00+00:00"},
-                {"first_seen": "2026-09-28T06:00:00+00:00"},
+            sources.joinpath("health.json").write_text(json.dumps({"run_history": [
+                {"source": "indeed", "run_at": "2026-09-28T15:00:00+00:00",
+                 "status": "partial", "new": 1, "pass": None, "failure": True,
+                 "elapsed_seconds": 3},
+                {"source": "indeed", "run_at": "2026-09-28T18:40:00+00:00",
+                 "status": "ok", "new": 1, "pass": None, "failure": False,
+                 "elapsed_seconds": 2},
+                {"source": "indeed", "run_at": "2026-09-28T06:00:00+00:00",
+                 "status": "ok", "new": 9, "pass": None, "failure": False,
+                 "elapsed_seconds": 2},
+                {"source": "glassdoor", "run_at": "2026-09-28T17:00:00+00:00",
+                 "status": "ok", "new": 0, "pass": None, "failure": False,
+                 "elapsed_seconds": 1},
             ]}))
             now = datetime(2026, 9, 28, 20, tzinfo=timezone.utc)
             history = [
@@ -429,10 +442,15 @@ class PipelineHealthTests(unittest.TestCase):
         self.assertEqual(101, today["board"]["shown_latest"])
         self.assertEqual(2, today["board"]["runs"])
         self.assertEqual(1, today["board"]["failed_runs"])
-        self.assertEqual(1, today["indeed"]["new"])
+        self.assertEqual(2, today["indeed"]["new"])
         self.assertEqual(3, today["indeed"]["new_added"])
-        self.assertEqual("≥1", today["indeed"]["runs"])
-        self.assertEqual("—", today["indeed"]["failed_runs"])
+        self.assertEqual(2, today["indeed"]["runs"])
+        self.assertEqual(1, today["indeed"]["failed_runs"])
+        self.assertIsNone(today["linkedin"]["new"])
+        self.assertIsNone(today["linkedin"]["new_added"])
+        self.assertEqual(0, today["linkedin"]["runs"])
+        self.assertEqual(0, today["glassdoor"]["new"])
+        self.assertEqual(0, today["glassdoor"]["failed_runs"])
 
     def test_isolated_failed_attempt_with_fresh_last_good_is_recovered_limitation(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
