@@ -13,14 +13,12 @@ Optimize for focused, token-efficient changes and keep Git state easy to reason 
 
 ## Rules
 - Keep this primary checkout for development. Run routine crawlers and other generated-output work from `/Users/daniel/Projects/job_scrape_feasibility-automation`.
-- Before editing, run `git fetch origin`, inspect `git status --short`, and compare `HEAD...origin/main`.
-- If the current checkout is clean and only behind `origin/main`, fast-forward it with `git pull --ff-only`; do not create a new worktree just because automation advanced `main`.
-- If the checkout is dirty or diverged, preserve it and create a clean `codex/<task>` branch/worktree from current `origin/main`. Never reset, clean, merge, or rebase unknown local changes.
+- Before editing, run `git fetch origin`, inspect `git status --short`, and compare `HEAD...origin/main` with `git rev-list --left-right --count`.
+- Start each task on a focused `codex/<task>` branch from current `origin/main`. If the primary checkout is dirty, behind, or diverged, leave it untouched and create a clean worktree from `origin/main`; if it is clean and current, create the branch there. Never reset, clean, merge, or rebase unknown local changes.
 - A dirty checkout during active editing is normal; do not leave stale uncommitted changes or temporary worktrees after the task is finished.
-- Start new code changes from current `origin/main`, not from an old reused task branch.
 - After the requested behavior is implemented and targeted validation passes, commit it and publish it to the latest `origin/main` by default without waiting for confirmation. Only stop before publishing for conflicts, failing tests, uncertain local changes, or another real safety issue.
 - After pushing a commit, do not wait for or continuously monitor GitHub Actions unless the task specifically requires deployment/CI verification or the push itself appears to have failed.
-- If a temporary task branch/worktree was used, integrate the validated commit into the latest `main`, push `main`, verify the remote commit, then remove the temporary local/remote task branch and worktree when no longer needed.
+- Immediately before publishing, fetch and compare with `origin/main` again. If it advanced, integrate the validated task commit on a clean branch or worktree based on the new tip. Push `main`, verify the remote commit, then remove any temporary task branch and worktree.
 - For any non-trivial investigation or multi-file change, if .codegraph/ exists, use CodeGraph before grep/rg/find or broad file reading to identify the relevant symbols and call paths.
 - Start with the responsible file above, then inspect only files required by the task.
 - Use targeted searches and line ranges; do not repeatedly reread whole files.
