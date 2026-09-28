@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 1693,
+  "count": 1722,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-09-28T19:00:11.871761+00:00",
+    "scraped_at": "2026-09-28T22:00:11.054208+00:00",
     "collector": {
-      "commit": "34d628322fbb5eb5decfa269d8f73d818c7d8813",
+      "commit": "f04d83e540d2065942119982bef98c46f632ac5f",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 34.853,
+    "elapsed_seconds": 26.649,
     "query_stats": [
       {
         "query": "software engineer",
@@ -23,10 +23,10 @@
         "raw_jobs": 50,
         "unique_jobs": 50,
         "unique_contribution": 48,
-        "first_pass_survivors": 47,
+        "first_pass_survivors": 48,
         "original_postings_resolved": 0,
-        "jds_resolved": 12,
-        "elapsed_seconds": 9.187
+        "jds_resolved": 11,
+        "elapsed_seconds": 8.888
       },
       {
         "query": "ai engineer",
@@ -39,8 +39,8 @@
         "unique_contribution": 25,
         "first_pass_survivors": 23,
         "original_postings_resolved": 0,
-        "jds_resolved": 10,
-        "elapsed_seconds": 5.421
+        "jds_resolved": 9,
+        "elapsed_seconds": 5.301
       },
       {
         "query": "backend engineer",
@@ -50,11 +50,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 19,
         "unique_jobs": 19,
-        "unique_contribution": 14,
+        "unique_contribution": 12,
         "first_pass_survivors": 18,
         "original_postings_resolved": 0,
-        "jds_resolved": 3,
-        "elapsed_seconds": 3.846
+        "jds_resolved": 2,
+        "elapsed_seconds": 3.424
       },
       {
         "query": "full-stack engineer",
@@ -64,11 +64,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 15,
-        "first_pass_survivors": 18,
+        "unique_contribution": 16,
+        "first_pass_survivors": 19,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.129
+        "elapsed_seconds": 3.431
       },
       {
         "query": "machine learning engineer",
@@ -78,63 +78,63 @@
         "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 9,
+        "unique_contribution": 10,
         "first_pass_survivors": 17,
         "original_postings_resolved": 0,
-        "jds_resolved": 2,
-        "elapsed_seconds": 3.558
+        "jds_resolved": 4,
+        "elapsed_seconds": 3.463
       }
     ],
     "detail_enrichment": {
-      "eligible": 48,
-      "cache_reused": 3,
-      "requests": 8,
-      "responses": 8,
-      "successful_responses": 8,
-      "request_limit": 8,
-      "budget_deferred": 35,
-      "budget_exhausted": true,
+      "eligible": 55,
+      "cache_reused": 10,
+      "requests": 0,
+      "responses": 0,
+      "successful_responses": 0,
+      "request_limit": 0,
+      "budget_deferred": 0,
+      "budget_exhausted": false,
       "retry_deferred": 0,
       "retry_attempts": 0,
-      "exact_official": 2,
-      "official_deferred": 2,
+      "exact_official": 1,
+      "official_deferred": 1,
       "rate_limited": false,
-      "jds_resolved": 11,
+      "jds_resolved": 10,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 8,
-      "intentional_skips": 0,
+      "detail_jds_fetched": 0,
+      "intentional_skips": 44,
       "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 37,
+      "remaining_no_jd": 45,
       "failure_reasons": {
-        "official_detail_deferred": 2,
-        "no_description": 35
+        "official_detail_deferred": 1
       },
-      "cooldown_active": false,
+      "cooldown_active": true,
       "probe": false,
-      "status": "active"
+      "status": "cooldown",
+      "cooldown_until": "2026-09-29T07:00:46.818716+00:00"
     },
     "official_enrichment": {
-      "dedicated_matches": 10,
-      "remote_exact_peer": 8,
-      "cache": 4,
+      "cache": 8,
+      "dedicated_matches": 2,
+      "remote_exact_peer": 1,
       "exact_indeed_peer": 2,
       "search_requests": 0,
       "search_provider": "duckduckgo",
       "official_page_requests": 0,
-      "remaining_no_jd": 97
+      "remaining_no_jd": 100
     },
     "partial": true,
     "blocked_reason": "focused query coverage",
     "collected_count": 111,
-    "carried_count": 1585,
+    "carried_count": 1614,
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-09-28T19:00:46.818716+00:00"
+    "jd_recovery_at": "2026-09-28T22:00:37.792703+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -1836,7 +1836,36 @@
     "linkedin|id|4471516069": "2026-09-28T19:00:11.871761+00:00",
     "linkedin|id|4472772286": "2026-09-28T19:00:11.871761+00:00",
     "linkedin|id|4472482058": "2026-09-28T19:00:11.871761+00:00",
-    "linkedin|id|4471335453": "2026-09-28T19:00:11.871761+00:00"
+    "linkedin|id|4471335453": "2026-09-28T19:00:11.871761+00:00",
+    "linkedin|id|4436451046": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4471537430": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4444391720": "2026-09-06T23:42:55.358104+00:00",
+    "linkedin|id|4472793615": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4395480457": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4473012469": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4472764913": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4471213140": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4471214281": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4458905253": "2026-09-18T21:05:07.442044+00:00",
+    "linkedin|id|4472795592": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4465108255": "2026-09-12T02:36:39.478299+00:00",
+    "linkedin|id|4473007050": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4471549210": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4473006211": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4450396586": "2026-09-19T18:04:19.520017+00:00",
+    "linkedin|id|4433416552": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4472798715": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4471215232": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4471202622": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4471527980": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4473000701": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4471549197": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4472788503": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4471204307": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4459454401": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4471551184": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4471200397": "2026-09-28T22:00:11.054208+00:00",
+    "linkedin|id|4471536824": "2026-09-28T22:00:11.054208+00:00"
   },
   "jobs": [
     {
@@ -2182,7 +2211,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "linkedin_detail_attempted_at": "2026-09-28T19:00:48.215702+00:00",
       "linkedin_detail_fetched_at": "2026-09-28T19:00:48.215702+00:00",
       "linkedin_detail_resolved": true,
@@ -2549,7 +2578,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -2599,7 +2628,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -2624,13 +2653,12 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_attempted_at": "2026-09-28T19:00:40.169173+00:00",
       "linkedin_detail_fetched_at": "2026-09-28T19:00:40.169173+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -3854,7 +3882,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -3907,13 +3935,13 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
-      "linkedin_detail_attempted_at": "2026-09-28T19:00:48.215702+00:00",
       "linkedin_detail_fetched_at": "2026-09-28T19:00:48.215702+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
-      "enrichment_status": "resolved"
+      "enrichment_method": "linkedin_cache",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4471356669",
@@ -3943,21 +3971,19 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
-      "linkedin_detail_attempted_at": "2026-09-28T19:00:48.215702+00:00",
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_http_429",
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
-        "confidence": 0.78,
+        "confidence": 0.72,
         "delta": 0,
-        "reason": "Backend engineering aligns with target roles"
+        "reason": "Backend engineering aligns; seniority unspecified"
       },
       "recovery_input_hash": "e4f82b7074b3be2529ba",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -3983,7 +4009,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4454831670",
@@ -3997,7 +4023,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-machine-learning-engineer-trust-at-airbnb-4454831670",
       "official_url": "",
-      "description": "Airbnb was born in 2007 when two hosts welcomed three guests to their San Francisco home, and has since grown to over 5 million hosts who have welcomed over 2 billion guest arrivals in almost every country across the globe. Every day, hosts offer unique stays and experiences that make it possible for guests to connect with communities in a more authentic way. The Community You Will Join Everyone at Airbnb thinks about trust, but our team obsesses over it daily. At the core of trust is safety, and thus we spend a significant amount of our time and energy keeping the community safe. The Trust team is responsible for developing the technology that helps protect our community and platform from fraud while also ensuring our hosts, guests, homes, and experiences meet our high standards. We constantly work to fight against online fraud (such as monetary loss, compromised accounts, spam and scam in messages, fake inventory, etc.) as well as offline fraud (theft, property damage, personal safety, etc.). We also work on onboarding and screening of users, and think about complex topics like identity and reputation to ensure that every interaction with Airbnb helps build trust in us and our community. The Trust Frontier AI team is where new AI technology for Trust gets invented and proven. We build specialized models for mission-critical trust and safety problems, develop the AI agents and agentic capabilities that automate trust decisions, and create the benchmarks and evaluation harnesses that keep decision quality high as those agents take on more autonomy. We work on problems before the answer is known — prototyping, experimenting, and iterating with our partner teams until a solution proves itself against real business and top line metrics. You'll work side-by-side with talented product managers, data scientists, software engineers, fraud intelligence, and operations teams. Together, you'll design and build ML solutions that have direct, meaningful impact on user trust, business success, and the global Airbnb community. The Difference You Will Make As a Senior Machine Learning Engineer on the Trust Frontier AI team, you will actively contribute code and ideas that shape the next generation of AI systems protecting millions of Airbnb users. You'll own and deliver ML projects end-to-end, from framing an ambiguous problem and prototyping a solution, to training and productionizing models, to proving impact on top line metrics with front line teams. You'll work on abuse behavior detection that spans multiple defenses, on AI agents that make trust decisions autonomously, and on the evaluation and benchmarking work that makes those decisions trustworthy. Much of this work is early: you will help decide what to build, not only how to build it, and you'll see it through to measurable impact on the platform. A Typical Day Frame and prototype ML and agentic solutions for problems that do not yet have an established approach, in partnership with product managers, data scientists, and front line defense teams. Design, build, and productionize end-to-end Machine Learning pipelines — including feature engineering, model training, evaluation, and deployment — for both batch and real-time use cases. Build and improve abuse behavior detection that generalizes across defenses. Design, launch, and iterate on AI agents that automate trust decisions, including orchestration, tool interfaces, and the guardrails that hold quality steady as autonomy increases. Build benchmarks, evaluation harnesses, and instrumentation that let us measure agentic and model decision quality objectively, and use them to drive real improvements. Develop specialized models for trust and safety use cases, and use LLMs and AI agents to accelerate how we build models. Write, review, and ship clean, testable code — whether training a new model, improving an existing pipeline, or optimizing a feature for scalability and reliability. Work with large-scale structured and unstructured data to continuously improve ML models for Airbnb product, business, and operational use cases. Partner with front line defense teams to validate solutions through experiments and holdouts, and quantify their impact on business and operational metrics. Participate in code reviews, design discussions, and cross-team collaborations to contribute to a high-quality ML engineering culture. Your Expertise 5-10 years of industry experience in applied Machine Learning, with a track record of building and productionizing models at scale. 1-2+ years of hands-on experience with LLMs and GenAI technologies, including building with agentic frameworks, orchestration, and evaluation. Strong programming skills in Python (required) and familiarity with Scala, Java, or equivalent. Solid understanding of Machine Learning best practices — e.g., training/serving skew minimization, A/B testing, feature engineering, model selection — and algorithms such as gradient boosted trees, neural networks, transformers, and deep learning. Experience with ML frameworks and tooling such as TensorFlow, PyTorch, or equivalent. Experience with data engineering and building end-to-end ML pipelines, including both batch and real-time systems. Experience designing evaluation methodology for ML or LLM systems — benchmarks, ground truth, offline/online metrics, calibration. Comfort with ambiguity and a bias toward action: you can take a loosely defined problem, scope it, prototype quickly, and drive it to a measurable outcome. Exposure to architectural patterns of large, high-scale software applications (e.g., well-designed APIs, high-volume data pipelines, efficient algorithms). Experience with test-driven development, incremental delivery, and deployment practices. Experience with multimodal models (vision, document, or speech) is a plus. Exposure to the Trust and Risk domain (e.g., fraud detection, anomaly detection, identity, account integrity) is a plus. A Bachelor's, Master's, or PhD in CS/ML or a related field. Your Location: This position is US - Remote Eligible. The role may include occasional work at an Airbnb office or attendance at offsites, as agreed to with your manager. While the position is Remote Eligible, you must live in a state where Airbnb, Inc. has a registered entity. Click here for the up-to-date list of excluded states. This list is continuously evolving, so please check back with us if the state you live in is on the exclusion list. If your position is employed by another Airbnb entity, your recruiter will inform you what states you are eligible to work from. Our Commitment To Inclusion & Belonging Airbnb is committed to working with the broadest talent pool possible. We believe diverse ideas foster innovation and engagement, and allow us to attract creatively-led people, and to develop the best products, services and solutions. All qualified individuals are encouraged to apply. We strive to also provide a disability inclusive application and interview process. If you are a candidate with a disability and require reasonable accommodation in order to submit an application, please contact us at: reasonableaccommodations@airbnb.com. Please include your full name, the role you’re applying for and the accommodation necessary to assist you with the recruiting process. We ask that you only reach out to us if you are a candidate whose disability prevents you from being able to complete our online application. Equal Employment Opportunity Airbnb values diversity & belonging and is proud to be an Equal Employment Opportunity employer. All individuals seeking employment at Airbnb are considered without regard to race, color, religion, national origin, age, gender, sex, marital status, ancestry, physical or mental disability, veteran status, gender identity, gender expression, sexual orientation, or any other legally protected characteristic. How We'll Take Care Of You Our job titles may span more than one career level. The actual base pay is dependent upon many factors, such as: training, transferable skills, work experience, business needs and market demands. The base pay range is subject to change and may be modified in the future. This role may also be eligible for bonus, equity, benefits, and Employee Travel Credits. Pay Range $200,000—$227,000 USD Reasonable Accommodations: We are committed to providing reasonable accommodations throughout the recruitment process for applicants with disabilities. If you need assistance, or an accommodation, please let your recruiter know once you are contacted about a role. A Note on Recruiting Scams: Scammers sometimes pose as Airbnb recruiters to get money or personal information from candidates. A few things that will always be true for Airbnb’s hiring process: our open roles are posted on Airbnb’s Career’s Page at careers.airbnb.com, and our recruiters correspond only from @airbnb.com or @ext.airbnb.com email addresses. Our recruiters will never ask for your Social Security number, bank account details, passport, or payment app information while you are interviewing. We’ll also never ask you to pay a fee, send money, deposit or cash a check, or purchase work-related equipment (such as a company laptop) during the interview process. We encourage candidates to remain vigilant of these recruiting scams and not share sensitive information if you do not believe an individual is actually affiliated with Airbnb.",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T20:50:30.947234+00:00",
@@ -4007,12 +4033,7 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_fetched_at": "2026-09-27T20:50:58.843001+00:00",
-      "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_cache",
-      "enrichment_status": "resolved",
-      "direct_original_fetched": true,
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -4037,7 +4058,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -4133,7 +4154,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -5283,18 +5304,19 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
-        "confidence": 0.82,
+        "confidence": 0.76,
         "delta": 0,
-        "reason": "Full-stack development aligns with target roles"
+        "reason": "Full-stack role aligns; seniority unspecified"
       },
       "recovery_input_hash": "0472939300a2a53c2e45",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -5423,7 +5445,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460630299",
@@ -5776,6 +5798,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4472788503",
+      "source": "linkedin",
+      "company": "Amplitude",
+      "title": "Full-Stack Senior Software Engineer",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-senior-software-engineer-at-amplitude-4472788503",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_status": "filtered"
+    },
+    {
       "job_id": "4470216015",
       "source": "linkedin",
       "company": "Analog Devices",
@@ -5958,18 +6008,19 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
-        "confidence": 0.8,
+        "confidence": 0.69,
         "delta": 0,
-        "reason": "Java software engineering aligns with target roles"
+        "reason": "Java software engineering is relevant"
       },
       "recovery_input_hash": "7d41f8e99ecd928d8473",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -6203,7 +6254,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -6505,8 +6556,10 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
-      "recovery_status": "filtered"
+      "verified_this_run": false,
+      "recovery_status": "filtered",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4470483355",
@@ -6844,7 +6897,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -7220,6 +7273,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4472795592",
+      "source": "linkedin",
+      "company": "Baxter International Inc.",
+      "title": "Principal Engineer, Software R&D,",
+      "location": "Raleigh, NC",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/principal-engineer-software-r-d-at-baxter-international-inc-4472795592",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_status": "filtered"
+    },
+    {
       "job_id": "4471824767",
       "source": "linkedin",
       "company": "Baxter International Inc.",
@@ -7324,13 +7405,12 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_attempted_at": "2026-09-28T19:00:40.169173+00:00",
       "linkedin_detail_fetched_at": "2026-09-28T19:00:40.169173+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -7607,18 +7687,19 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_triage": {
         "action": "recover",
         "priority": "low",
-        "confidence": 0.77,
-        "delta": 0,
-        "reason": "Relevant backend role, but middle-level seniority"
+        "confidence": 0.88,
+        "delta": -2,
+        "reason": "Middle-level backend title suggests greater experience"
       },
       "recovery_input_hash": "96b9758fb6ab622029a2",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -8540,7 +8621,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -9223,7 +9304,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -9299,7 +9380,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -10150,8 +10231,10 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
-      "recovery_status": "filtered"
+      "verified_this_run": false,
+      "recovery_status": "filtered",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4471811687",
@@ -11775,7 +11858,9 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_status": "filtered"
     },
@@ -12290,7 +12375,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -12899,7 +12984,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -13313,13 +13398,12 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_attempted_at": "2026-09-28T19:00:40.169173+00:00",
       "linkedin_detail_fetched_at": "2026-09-28T19:00:40.169173+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -13329,7 +13413,7 @@
       "title": "Sr Server Software Engineer",
       "location": "Alpharetta, GA",
       "posted_date": "2026-09-21",
-      "aggregator_posted_date": "2026-09-25",
+      "aggregator_posted_date": "2026-09-28",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/sr-server-software-engineer-at-clover-4403663614",
@@ -13337,16 +13421,15 @@
       "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
-      "first_seen": "",
+      "first_seen": "2026-09-10T00:00:56.028476+00:00",
       "discovery_queries": {
         "linkedin": [
           "backend engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-26T19:15:15.514315+00:00",
-      "official_search_status": "no_match",
-      "source_verified_at": "2026-09-26T05:18:38.703332+00:00",
-      "verified_this_run": false
+      "recovery_methods": {},
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4459251317",
@@ -13424,13 +13507,12 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_attempted_at": "2026-09-28T19:00:40.169173+00:00",
       "linkedin_detail_fetched_at": "2026-09-28T19:00:40.169173+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -14073,8 +14155,10 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
-      "recovery_status": "filtered"
+      "verified_this_run": false,
+      "recovery_status": "filtered",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4395472307",
@@ -14432,7 +14516,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -14457,7 +14541,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -14702,7 +14786,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -15793,7 +15877,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461506780",
@@ -16663,6 +16747,135 @@
       "enrichment_status": "resolved"
     },
     {
+      "job_id": "4471202622",
+      "source": "linkedin",
+      "company": "DoorDash",
+      "title": "Software Engineer, Full Stack - Experimentation Platform",
+      "location": "Sunnyvale, CA",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-experimentation-platform-at-doordash-4471202622",
+      "official_url": "",
+      "description": "<div class=\"content-intro\"><p><img style=\"display: none; max-width: 100%;\" src=\"https://click.appcast.io/greenhouse-te8/a31.png?ent=34&amp;e=22630&amp;t=1701374353806\" width=\"1px\"> <img style=\"display: none; max-width: 100%;\" src=\"https://track.jobadx.com/v1/i.gif?utm_pixel=224e990b-8ff4-4287-8d5d-2ff09647f181&amp;utm_ptz=EST&amp;utm_rqt=track\" alt=\"\" width=\"1\"></p></div><h2>About the Team</h2> <p>The Experimentation Platform Team develops a state-of-the-art platform in industry that enables Product Engineers, Data Scientists, ML Engineers and non-technical audiences to come up with hypotheses; design, configure and analyze experiments; and conduct exploratory and causal analysis. At DoorDash, where we run thousands of experiments per year, our mission is to equip all decision makers with rigorous, data-driven insights by democratizing experimentation with quality and velocity. The team consists of a mix of experienced veterans of backend, web, statistical and data infra engineers and work closely with the data science community.</p> <p>Some of the interesting work done in the team was published in articles such as:</p> <ul> <li><a href=\"https://doordash.engineering/2022/05/24/meet-dash-ab-the-statistics-engine-of-experimentation-at-doordash/\">Meet Dash-AB-The Statistics Engine of Experimentation at DoorDash</a></li> <li><a href=\"https://doordash.engineering/2020/09/09/experimentation-analysis-platform-mvp/\">Supporting Rapid Product Iteration with an Experimentation Analysis Platform</a></li> <li><a href=\"https://doordash.engineering/2021/09/21/the-4-principles-doordash-used-to-increase-its-logistics-experiment-capacity-by-1000/\">The 4 Principles DoorDash Used to Increase Its Logistics Experiment Capacity by 1000%</a></li> <li><a href=\"https://doordash.engineering/2020/10/07/improving-experiment-capacity-by-4x/\">Improving Online Experiment Capacity by 4X with Parallelization and Increased Sensitivity</a></li> </ul> <h2>About the Role</h2> <p>If you want to solve the toughest engineering challenges, build cutting-edge experimentation products under rigorous operational constraints (high volume, correctness guarantees) and work with some of the smartest people in the industry, DoorDash’s Experimentation Platform is the right place for you. As a full stack engineer, you’ll build across our backend services, SDKs, and the Decision Portal UI used by thousands of internal users. Come join us and be part of the mission.</p> <p>You will report into the engineering manager on our Decision Experience team as part of the Decision Systems team. We expect this role to be hybrid (San Francisco, Sunnyvale, Seattle, New York) with some time in-office and some time remote.</p> <h2>What You'll Do</h2> <ul> <li>Work on dramatically enhancing and simplifying the Experimentation platform which is used by almost every engineer in the company.</li> <li>Have the opportunity to build a new Experimentation platform from the ground up and make your mark on the system design as well as product experience.</li> <li>Own features end-to-end, from APIs and data models to the React UI in our Decision Portal, context switching between frontend, backend, and data as the need arises.</li> <li>Work alongside our Product Engineers, Data Analysts, Data Scientists, ML Engineers and Data Infrastructure engineers to collaborate on important projects that need user interfaces and tools needed for workflows, data discovery, integrations and visualizations of various analytics.</li> <li>Introduce cutting-edge technologies, including LLM-powered tools, into how DoorDash configures, launches, and reads out experiments.</li> <li>Evolve the platform to handle new statistical methodologies, machine learning and artificial intelligence technologies and advanced causal inference and data mining techniques.</li> </ul> <h2>What We're Looking For</h2> <ul> <li>B.S., M.S., or Ph.D. in Computer Science or equivalent.</li> <li>2+ years of industry experience building web applications end-to-end, using TypeScript with React on the frontend.</li> <li>Exceptionally strong knowledge of CS fundamental concepts and OOP languages.</li> <li>Deep understanding of REST/gRPC principles and experience designing, implementing, and consuming backend APIs.</li> <li>Great understanding of database technologies and choosing the right kind of storage layers for the problem at hand.</li> <li>Backend experience with Java, Kotlin, Python, or Go.</li> <li>Experience with documentation, unit, integration, and end-to-end testing across frontend and backend.</li> <li>A product mindset that you apply to how you build platform services and user-facing tools.</li> <li>Proficiency in using AI coding tools (e.g., Claude Code, Codex, Cursor) across the full software development lifecycle, including design, code generation, testing, monitoring, and release.</li> </ul> <h2>Nice to Have</h2> <ul> <li>Experience building internal tools, admin consoles, or developer platforms used across many teams.  to supporting employees’ happiness, healthiness, and overall well-being by providing comprehensive benefits and perks including premium healthcare, wellness expense reimbursement, paid parental leave and more.</p> <h2>Our Commitment to Diversity and Inclusion</h2> <p>We’re committed to growing and empowering a more inclusive community within our company, industry, and cities. That’s why we hire and cultivate diverse teams of people from all backgrounds, experiences, and perspectives. We believe that true innovation happens when everyone has room at the table and the tools, resources, and opportunity to excel.</p> <p>Statement of Non-Discrimination: In keeping with our beliefs and goals, no employee or applicant will face discrimination or harassment based on: race, color, ancestry, national origin, religion, age, gender, marital/domestic partner status, sexual orientation, gender identity or expression, disability status, or veteran status. Above and beyond discrimination and harassment based on “protected categories,” we also strive to prevent other subtler forms of inappropriate behavior (i.e., stereotyping) from ever gaining a foothold in our office. Whether blatant or hidden, barriers to success have no place at DoorDash. We value a diverse workforce – people who identify as women, non-binary or gender non-conforming, LGBTQIA+, American Indian or Native Alaskan, Black or African American, Hispanic or Latinx, Native Hawaiian or Other Pacific Islander, differently-abled, caretakers and parents, and veterans are strongly encouraged to apply. Thank you to the Level Playing Field Institute for this statement of non-discrimination.</p> <p>Pursuant to the San Francisco Fair Chance Ordinance, Los Angeles Fair Chance Initiative for Hiring Ordinance, and any other state or local hiring regulations, we will consider for employment any qualified applicant, including those with arrest and conviction records, in a manner consistent with the applicable regulation.</p> <p><strong>If you need any accommodations, please inform your recruiting contact upon initial connection.<br><br></strong></p> <p>Notice to Applicants for Jobs Located in NYC or Remote Jobs Associated With Office in NYC Only</p> <p>We used Covey as part of our hiring and/or promotional process for jobs in NYC and certain features may qualify it as an AEDT in NYC. As part of the hiring and/or promotion process, we provided Covey with job requirements and candidate submitted applications. We began using Covey Scout for Inbound from August 21, 2023, through December 21, 2023.&nbsp; We resumed using Covey Scout for Inbound again on June 29, 2024, and ceased using Covey Scout for Inbound on April 30, 2026.</p> <p>The Covey tool has been reviewed by an independent auditor. Results of the audit may be viewed here:<strong>&nbsp;<a href=\"https://getcovey.com/nyc-local-law-144\">https://getcovey.com/nyc-local-law-144</a>.<br></strong><em>Beware of recruitment scams: DoorDash, Deliveroo, and Wolt will never ask you to pay money or share sensitive financial information during hiring — learn more about our legitimate recruiting process at <span class=\"_80om1qgj _1e0c1nu9\" data-testid=\"smart-link-draggable-inline\"><span class=\"loader-wrapper\"><span class=\"hover-card-trigger-wrapper\" data-testid=\"hover-card-trigger-wrapper\"><a class=\"_1yt4x7n9 _2rko1ssi _v56415x0 _1e0c1nu9 _16d9qvcn _syaz13af _1rkwglyw _4cvx1w55 _19itia51 _bfhkhp5a _1a3b18uv _4fprglyw _5goinqa1 _9oik18uv _1bnxglyw _jf4cnqa1 _1nrm18uv _c2waglyw _1iohnqa1 _uizt1kdv _nt751r31 _49pcglyw _1hvw1o36 _1372tlke _7ehiw5lj _1j5pglyw _1di615s3\" href=\"https://careersatdoordash.com/recruitment-scam-awareness\" data-testid=\"inline-card-resolved-view\"><span class=\"_19itglyw _vchhusvi _r06hglyw _o5721jtm _1nmz9jpi _16d9qvcn _ca0qv77o _u5f31b66 _n3tdv77o _19bv1b66\" data-testid=\"inline-card-icon-and-title\"><span class=\"_19itglyw _vchhusvi _r06hglyw\">Recruitment Scam Awareness - DoorDash</span></span></a></span></span></span> .</em></p></div>",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "resolved",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.91,
+        "delta": 4,
+        "reason": "Full-stack platform engineering strongly aligns"
+      },
+      "recovery_input_hash": "5ce83489fc5bb38341ce",
+      "application_url": "https://job-boards.greenhouse.io/doordashusa/jobs/8236946",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-09-28T22:00:37.792703+00:00",
+      "jd_recovery_at": "2026-09-28T22:00:37.792703+00:00",
+      "enrichment_method": "known_ats_board",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-09-28T22:00:37.792703+00:00"
+    },
+    {
+      "job_id": "4471214281",
+      "source": "linkedin",
+      "company": "DoorDash",
+      "title": "Software Engineer, Full Stack - Experimentation Platform",
+      "location": "Seattle, WA",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-experimentation-platform-at-doordash-4471214281",
+      "official_url": "",
+      "description": "<div class=\"content-intro\"><p><img style=\"display: none; max-width: 100%;\" src=\"https://click.appcast.io/greenhouse-te8/a31.png?ent=34&amp;e=22630&amp;t=1701374353806\" width=\"1px\"> <img style=\"display: none; max-width: 100%;\" src=\"https://track.jobadx.com/v1/i.gif?utm_pixel=224e990b-8ff4-4287-8d5d-2ff09647f181&amp;utm_ptz=EST&amp;utm_rqt=track\" alt=\"\" width=\"1\"></p></div><h2>About the Team</h2> <p>The Experimentation Platform Team develops a state-of-the-art platform in industry that enables Product Engineers, Data Scientists, ML Engineers and non-technical audiences to come up with hypotheses; design, configure and analyze experiments; and conduct exploratory and causal analysis. At DoorDash, where we run thousands of experiments per year, our mission is to equip all decision makers with rigorous, data-driven insights by democratizing experimentation with quality and velocity. The team consists of a mix of experienced veterans of backend, web, statistical and data infra engineers and work closely with the data science community.</p> <p>Some of the interesting work done in the team was published in articles such as:</p> <ul> <li><a href=\"https://doordash.engineering/2022/05/24/meet-dash-ab-the-statistics-engine-of-experimentation-at-doordash/\">Meet Dash-AB-The Statistics Engine of Experimentation at DoorDash</a></li> <li><a href=\"https://doordash.engineering/2020/09/09/experimentation-analysis-platform-mvp/\">Supporting Rapid Product Iteration with an Experimentation Analysis Platform</a></li> <li><a href=\"https://doordash.engineering/2021/09/21/the-4-principles-doordash-used-to-increase-its-logistics-experiment-capacity-by-1000/\">The 4 Principles DoorDash Used to Increase Its Logistics Experiment Capacity by 1000%</a></li> <li><a href=\"https://doordash.engineering/2020/10/07/improving-experiment-capacity-by-4x/\">Improving Online Experiment Capacity by 4X with Parallelization and Increased Sensitivity</a></li> </ul> <h2>About the Role</h2> <p>If you want to solve the toughest engineering challenges, build cutting-edge experimentation products under rigorous operational constraints (high volume, correctness guarantees) and work with some of the smartest people in the industry, DoorDash’s Experimentation Platform is the right place for you. As a full stack engineer, you’ll build across our backend services, SDKs, and the Decision Portal UI used by thousands of internal users. Come join us and be part of the mission.</p> <p>You will report into the engineering manager on our Decision Experience team as part of the Decision Systems team. We expect this role to be hybrid (San Francisco, Sunnyvale, Seattle, New York) with some time in-office and some time remote.</p> <h2>What You'll Do</h2> <ul> <li>Work on dramatically enhancing and simplifying the Experimentation platform which is used by almost every engineer in the company.</li> <li>Have the opportunity to build a new Experimentation platform from the ground up and make your mark on the system design as well as product experience.</li> <li>Own features end-to-end, from APIs and data models to the React UI in our Decision Portal, context switching between frontend, backend, and data as the need arises.</li> <li>Work alongside our Product Engineers, Data Analysts, Data Scientists, ML Engineers and Data Infrastructure engineers to collaborate on important projects that need user interfaces and tools needed for workflows, data discovery, integrations and visualizations of various analytics.</li> <li>Introduce cutting-edge technologies, including LLM-powered tools, into how DoorDash configures, launches, and reads out experiments.</li> <li>Evolve the platform to handle new statistical methodologies, machine learning and artificial intelligence technologies and advanced causal inference and data mining techniques.</li> </ul> <h2>What We're Looking For</h2> <ul> <li>B.S., M.S., or Ph.D. in Computer Science or equivalent.</li> <li>2+ years of industry experience building web applications end-to-end, using TypeScript with React on the frontend.</li> <li>Exceptionally strong knowledge of CS fundamental concepts and OOP languages.</li> <li>Deep understanding of REST/gRPC principles and experience designing, implementing, and consuming backend APIs.</li> <li>Great understanding of database technologies and choosing the right kind of storage layers for the problem at hand.</li> <li>Backend experience with Java, Kotlin, Python, or Go.</li> <li>Experience with documentation, unit, integration, and end-to-end testing across frontend and backend.</li> <li>A product mindset that you apply to how you build platform services and user-facing tools.</li> <li>Proficiency in using AI coding tools (e.g., Claude Code, Codex, Cursor) across the full software development lifecycle, including design, code generation, testing, monitoring, and release.</li> </ul> <h2>Nice to Have</h2> <ul> <li>Experience building internal tools, admin consoles, or developer platforms used across many teams.  to supporting employees’ happiness, healthiness, and overall well-being by providing comprehensive benefits and perks including premium healthcare, wellness expense reimbursement, paid parental leave and more.</p> <h2>Our Commitment to Diversity and Inclusion</h2> <p>We’re committed to growing and empowering a more inclusive community within our company, industry, and cities. That’s why we hire and cultivate diverse teams of people from all backgrounds, experiences, and perspectives. We believe that true innovation happens when everyone has room at the table and the tools, resources, and opportunity to excel.</p> <p>Statement of Non-Discrimination: In keeping with our beliefs and goals, no employee or applicant will face discrimination or harassment based on: race, color, ancestry, national origin, religion, age, gender, marital/domestic partner status, sexual orientation, gender identity or expression, disability status, or veteran status. Above and beyond discrimination and harassment based on “protected categories,” we also strive to prevent other subtler forms of inappropriate behavior (i.e., stereotyping) from ever gaining a foothold in our office. Whether blatant or hidden, barriers to success have no place at DoorDash. We value a diverse workforce – people who identify as women, non-binary or gender non-conforming, LGBTQIA+, American Indian or Native Alaskan, Black or African American, Hispanic or Latinx, Native Hawaiian or Other Pacific Islander, differently-abled, caretakers and parents, and veterans are strongly encouraged to apply. Thank you to the Level Playing Field Institute for this statement of non-discrimination.</p> <p>Pursuant to the San Francisco Fair Chance Ordinance, Los Angeles Fair Chance Initiative for Hiring Ordinance, and any other state or local hiring regulations, we will consider for employment any qualified applicant, including those with arrest and conviction records, in a manner consistent with the applicable regulation.</p> <p><strong>If you need any accommodations, please inform your recruiting contact upon initial connection.<br><br></strong></p> <p>Notice to Applicants for Jobs Located in NYC or Remote Jobs Associated With Office in NYC Only</p> <p>We used Covey as part of our hiring and/or promotional process for jobs in NYC and certain features may qualify it as an AEDT in NYC. As part of the hiring and/or promotion process, we provided Covey with job requirements and candidate submitted applications. We began using Covey Scout for Inbound from August 21, 2023, through December 21, 2023.&nbsp; We resumed using Covey Scout for Inbound again on June 29, 2024, and ceased using Covey Scout for Inbound on April 30, 2026.</p> <p>The Covey tool has been reviewed by an independent auditor. Results of the audit may be viewed here:<strong>&nbsp;<a href=\"https://getcovey.com/nyc-local-law-144\">https://getcovey.com/nyc-local-law-144</a>.<br></strong><em>Beware of recruitment scams: DoorDash, Deliveroo, and Wolt will never ask you to pay money or share sensitive financial information during hiring — learn more about our legitimate recruiting process at <span class=\"_80om1qgj _1e0c1nu9\" data-testid=\"smart-link-draggable-inline\"><span class=\"loader-wrapper\"><span class=\"hover-card-trigger-wrapper\" data-testid=\"hover-card-trigger-wrapper\"><a class=\"_1yt4x7n9 _2rko1ssi _v56415x0 _1e0c1nu9 _16d9qvcn _syaz13af _1rkwglyw _4cvx1w55 _19itia51 _bfhkhp5a _1a3b18uv _4fprglyw _5goinqa1 _9oik18uv _1bnxglyw _jf4cnqa1 _1nrm18uv _c2waglyw _1iohnqa1 _uizt1kdv _nt751r31 _49pcglyw _1hvw1o36 _1372tlke _7ehiw5lj _1j5pglyw _1di615s3\" href=\"https://careersatdoordash.com/recruitment-scam-awareness\" data-testid=\"inline-card-resolved-view\"><span class=\"_19itglyw _vchhusvi _r06hglyw _o5721jtm _1nmz9jpi _16d9qvcn _ca0qv77o _u5f31b66 _n3tdv77o _19bv1b66\" data-testid=\"inline-card-icon-and-title\"><span class=\"_19itglyw _vchhusvi _r06hglyw\">Recruitment Scam Awareness - DoorDash</span></span></a></span></span></span> .</em></p></div>",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "resolved",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.91,
+        "delta": 4,
+        "reason": "Full-stack platform engineering strongly aligns"
+      },
+      "recovery_input_hash": "d8f53dc463e3cf35a6c6",
+      "application_url": "https://job-boards.greenhouse.io/doordashusa/jobs/8236946",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-09-28T22:00:37.792703+00:00",
+      "jd_recovery_at": "2026-09-28T22:00:37.792703+00:00",
+      "enrichment_method": "ats_board_cache",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-09-28T22:00:37.792703+00:00"
+    },
+    {
+      "job_id": "4471215232",
+      "source": "linkedin",
+      "company": "DoorDash",
+      "title": "Software Engineer, Full Stack - Experimentation Platform",
+      "location": "New York, NY",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-experimentation-platform-at-doordash-4471215232",
+      "official_url": "",
+      "description": "<div class=\"content-intro\"><p><img style=\"display: none; max-width: 100%;\" src=\"https://click.appcast.io/greenhouse-te8/a31.png?ent=34&amp;e=22630&amp;t=1701374353806\" width=\"1px\"> <img style=\"display: none; max-width: 100%;\" src=\"https://track.jobadx.com/v1/i.gif?utm_pixel=224e990b-8ff4-4287-8d5d-2ff09647f181&amp;utm_ptz=EST&amp;utm_rqt=track\" alt=\"\" width=\"1\"></p></div><h2>About the Team</h2> <p>The Experimentation Platform Team develops a state-of-the-art platform in industry that enables Product Engineers, Data Scientists, ML Engineers and non-technical audiences to come up with hypotheses; design, configure and analyze experiments; and conduct exploratory and causal analysis. At DoorDash, where we run thousands of experiments per year, our mission is to equip all decision makers with rigorous, data-driven insights by democratizing experimentation with quality and velocity. The team consists of a mix of experienced veterans of backend, web, statistical and data infra engineers and work closely with the data science community.</p> <p>Some of the interesting work done in the team was published in articles such as:</p> <ul> <li><a href=\"https://doordash.engineering/2022/05/24/meet-dash-ab-the-statistics-engine-of-experimentation-at-doordash/\">Meet Dash-AB-The Statistics Engine of Experimentation at DoorDash</a></li> <li><a href=\"https://doordash.engineering/2020/09/09/experimentation-analysis-platform-mvp/\">Supporting Rapid Product Iteration with an Experimentation Analysis Platform</a></li> <li><a href=\"https://doordash.engineering/2021/09/21/the-4-principles-doordash-used-to-increase-its-logistics-experiment-capacity-by-1000/\">The 4 Principles DoorDash Used to Increase Its Logistics Experiment Capacity by 1000%</a></li> <li><a href=\"https://doordash.engineering/2020/10/07/improving-experiment-capacity-by-4x/\">Improving Online Experiment Capacity by 4X with Parallelization and Increased Sensitivity</a></li> </ul> <h2>About the Role</h2> <p>If you want to solve the toughest engineering challenges, build cutting-edge experimentation products under rigorous operational constraints (high volume, correctness guarantees) and work with some of the smartest people in the industry, DoorDash’s Experimentation Platform is the right place for you. As a full stack engineer, you’ll build across our backend services, SDKs, and the Decision Portal UI used by thousands of internal users. Come join us and be part of the mission.</p> <p>You will report into the engineering manager on our Decision Experience team as part of the Decision Systems team. We expect this role to be hybrid (San Francisco, Sunnyvale, Seattle, New York) with some time in-office and some time remote.</p> <h2>What You'll Do</h2> <ul> <li>Work on dramatically enhancing and simplifying the Experimentation platform which is used by almost every engineer in the company.</li> <li>Have the opportunity to build a new Experimentation platform from the ground up and make your mark on the system design as well as product experience.</li> <li>Own features end-to-end, from APIs and data models to the React UI in our Decision Portal, context switching between frontend, backend, and data as the need arises.</li> <li>Work alongside our Product Engineers, Data Analysts, Data Scientists, ML Engineers and Data Infrastructure engineers to collaborate on important projects that need user interfaces and tools needed for workflows, data discovery, integrations and visualizations of various analytics.</li> <li>Introduce cutting-edge technologies, including LLM-powered tools, into how DoorDash configures, launches, and reads out experiments.</li> <li>Evolve the platform to handle new statistical methodologies, machine learning and artificial intelligence technologies and advanced causal inference and data mining techniques.</li> </ul> <h2>What We're Looking For</h2> <ul> <li>B.S., M.S., or Ph.D. in Computer Science or equivalent.</li> <li>2+ years of industry experience building web applications end-to-end, using TypeScript with React on the frontend.</li> <li>Exceptionally strong knowledge of CS fundamental concepts and OOP languages.</li> <li>Deep understanding of REST/gRPC principles and experience designing, implementing, and consuming backend APIs.</li> <li>Great understanding of database technologies and choosing the right kind of storage layers for the problem at hand.</li> <li>Backend experience with Java, Kotlin, Python, or Go.</li> <li>Experience with documentation, unit, integration, and end-to-end testing across frontend and backend.</li> <li>A product mindset that you apply to how you build platform services and user-facing tools.</li> <li>Proficiency in using AI coding tools (e.g., Claude Code, Codex, Cursor) across the full software development lifecycle, including design, code generation, testing, monitoring, and release.</li> </ul> <h2>Nice to Have</h2> <ul> <li>Experience building internal tools, admin consoles, or developer platforms used across many teams.  to supporting employees’ happiness, healthiness, and overall well-being by providing comprehensive benefits and perks including premium healthcare, wellness expense reimbursement, paid parental leave and more.</p> <h2>Our Commitment to Diversity and Inclusion</h2> <p>We’re committed to growing and empowering a more inclusive community within our company, industry, and cities. That’s why we hire and cultivate diverse teams of people from all backgrounds, experiences, and perspectives. We believe that true innovation happens when everyone has room at the table and the tools, resources, and opportunity to excel.</p> <p>Statement of Non-Discrimination: In keeping with our beliefs and goals, no employee or applicant will face discrimination or harassment based on: race, color, ancestry, national origin, religion, age, gender, marital/domestic partner status, sexual orientation, gender identity or expression, disability status, or veteran status. Above and beyond discrimination and harassment based on “protected categories,” we also strive to prevent other subtler forms of inappropriate behavior (i.e., stereotyping) from ever gaining a foothold in our office. Whether blatant or hidden, barriers to success have no place at DoorDash. We value a diverse workforce – people who identify as women, non-binary or gender non-conforming, LGBTQIA+, American Indian or Native Alaskan, Black or African American, Hispanic or Latinx, Native Hawaiian or Other Pacific Islander, differently-abled, caretakers and parents, and veterans are strongly encouraged to apply. Thank you to the Level Playing Field Institute for this statement of non-discrimination.</p> <p>Pursuant to the San Francisco Fair Chance Ordinance, Los Angeles Fair Chance Initiative for Hiring Ordinance, and any other state or local hiring regulations, we will consider for employment any qualified applicant, including those with arrest and conviction records, in a manner consistent with the applicable regulation.</p> <p><strong>If you need any accommodations, please inform your recruiting contact upon initial connection.<br><br></strong></p> <p>Notice to Applicants for Jobs Located in NYC or Remote Jobs Associated With Office in NYC Only</p> <p>We used Covey as part of our hiring and/or promotional process for jobs in NYC and certain features may qualify it as an AEDT in NYC. As part of the hiring and/or promotion process, we provided Covey with job requirements and candidate submitted applications. We began using Covey Scout for Inbound from August 21, 2023, through December 21, 2023.&nbsp; We resumed using Covey Scout for Inbound again on June 29, 2024, and ceased using Covey Scout for Inbound on April 30, 2026.</p> <p>The Covey tool has been reviewed by an independent auditor. Results of the audit may be viewed here:<strong>&nbsp;<a href=\"https://getcovey.com/nyc-local-law-144\">https://getcovey.com/nyc-local-law-144</a>.<br></strong><em>Beware of recruitment scams: DoorDash, Deliveroo, and Wolt will never ask you to pay money or share sensitive financial information during hiring — learn more about our legitimate recruiting process at <span class=\"_80om1qgj _1e0c1nu9\" data-testid=\"smart-link-draggable-inline\"><span class=\"loader-wrapper\"><span class=\"hover-card-trigger-wrapper\" data-testid=\"hover-card-trigger-wrapper\"><a class=\"_1yt4x7n9 _2rko1ssi _v56415x0 _1e0c1nu9 _16d9qvcn _syaz13af _1rkwglyw _4cvx1w55 _19itia51 _bfhkhp5a _1a3b18uv _4fprglyw _5goinqa1 _9oik18uv _1bnxglyw _jf4cnqa1 _1nrm18uv _c2waglyw _1iohnqa1 _uizt1kdv _nt751r31 _49pcglyw _1hvw1o36 _1372tlke _7ehiw5lj _1j5pglyw _1di615s3\" href=\"https://careersatdoordash.com/recruitment-scam-awareness\" data-testid=\"inline-card-resolved-view\"><span class=\"_19itglyw _vchhusvi _r06hglyw _o5721jtm _1nmz9jpi _16d9qvcn _ca0qv77o _u5f31b66 _n3tdv77o _19bv1b66\" data-testid=\"inline-card-icon-and-title\"><span class=\"_19itglyw _vchhusvi _r06hglyw\">Recruitment Scam Awareness - DoorDash</span></span></a></span></span></span> .</em></p></div>",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "resolved",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.91,
+        "delta": 4,
+        "reason": "Full-stack platform engineering strongly aligns"
+      },
+      "recovery_input_hash": "84189a5868a54626422a",
+      "application_url": "https://job-boards.greenhouse.io/doordashusa/jobs/8236946",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-09-28T22:00:37.792703+00:00",
+      "jd_recovery_at": "2026-09-28T22:00:37.792703+00:00",
+      "enrichment_method": "ats_board_cache",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-09-28T22:00:37.792703+00:00"
+    },
+    {
       "job_id": "4327194708",
       "source": "linkedin",
       "company": "DoorDash",
@@ -17107,6 +17320,50 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4471549210",
+      "source": "linkedin",
+      "company": "Eightpoint",
+      "title": "AI Engineer",
+      "location": "Fort Myers, FL",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-eightpoint-4471549210",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "ab4b1981a925c19294b1",
+          "attempted_at": "2026-09-28T22:00:37.792703+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.82,
+        "delta": 0,
+        "reason": "AI engineering directly matches target family"
+      },
+      "recovery_input_hash": "81712b427c8c758eccdc",
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
+      "official_search_status": "no_match"
+    },
+    {
       "job_id": "4470257124",
       "source": "linkedin",
       "company": "Elastic",
@@ -17442,7 +17699,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -17633,7 +17890,7 @@
         }
       },
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -17643,8 +17900,10 @@
       },
       "recovery_input_hash": "fe97395b9ba5952be34d",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
-      "official_search_status": "no_match"
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
+      "official_search_status": "no_match",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4434711466",
@@ -17830,7 +18089,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4434710449",
@@ -19031,7 +19290,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4426151719",
@@ -19081,7 +19340,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -19377,7 +19636,7 @@
         }
       },
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -19387,8 +19646,10 @@
       },
       "recovery_input_hash": "4191a021bed92d11633a",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
-      "official_search_status": "no_match"
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
+      "official_search_status": "no_match",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4428117191",
@@ -19904,7 +20165,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -20208,8 +20469,10 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
-      "recovery_status": "filtered"
+      "verified_this_run": false,
+      "recovery_status": "filtered",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4471134243",
@@ -20339,7 +20602,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -21077,15 +21340,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://www.google.com/about/careers/applications/jobs/results/121713962638025414-software-engineer-iii-ai-ml-genai-google-cloud-ai",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-28T19:00:11.871761+00:00",
-      "jd_recovery_at": "2026-09-28T19:00:11.871761+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-09-28T19:00:11.871761+00:00",
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -21145,15 +21406,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://www.google.com/about/careers/applications/jobs/results/118249122862899910-software-engineer-iii-ai-ml-core",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-28T19:00:11.871761+00:00",
-      "jd_recovery_at": "2026-09-28T19:00:11.871761+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-09-28T19:00:11.871761+00:00",
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -21271,13 +21530,12 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_attempted_at": "2026-09-28T19:00:40.169173+00:00",
       "linkedin_detail_fetched_at": "2026-09-28T19:00:40.169173+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -21303,15 +21561,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://www.google.com/about/careers/applications/jobs/results/77977290071253702-software-engineer-iii-infrastructure-youtube",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-28T19:00:11.871761+00:00",
-      "jd_recovery_at": "2026-09-28T19:00:11.871761+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-09-28T19:00:11.871761+00:00",
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -21572,8 +21828,10 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
-      "recovery_status": "filtered"
+      "verified_this_run": false,
+      "recovery_status": "filtered",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4470468459",
@@ -21625,7 +21883,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -22186,7 +22444,9 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_status": "filtered"
     },
@@ -22405,18 +22665,19 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
-        "confidence": 0.82,
+        "confidence": 0.78,
         "delta": 0,
-        "reason": "Full-stack engineering aligns with target roles"
+        "reason": "Full-stack engineering aligns; seniority unclear"
       },
       "recovery_input_hash": "ecc31a15632e335e70b6",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -22813,7 +23074,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4393988698",
@@ -23214,7 +23475,9 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_status": "filtered"
     },
@@ -23326,18 +23589,19 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_triage": {
         "action": "recover",
-        "priority": "normal",
+        "priority": "high",
         "confidence": 0.84,
         "delta": 0,
-        "reason": "Machine learning engineering fits target roles"
+        "reason": "Machine learning engineering directly matches"
       },
       "recovery_input_hash": "35bc5ace0852dd5d1d45",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -24559,6 +24823,35 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4471537430",
+      "source": "linkedin",
+      "company": "Jefferies",
+      "title": "Senior Java Software Engineer",
+      "location": "New York, NY",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-java-software-engineer-at-jefferies-4471537430",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer",
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_status": "filtered"
+    },
+    {
       "job_id": "4468508929",
       "source": "linkedin",
       "company": "Jobgether",
@@ -25248,7 +25541,7 @@
         }
       },
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
@@ -25258,8 +25551,10 @@
       },
       "recovery_input_hash": "dd302edc9ff7bc7a4d70",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
-      "official_search_status": "no_match"
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
+      "official_search_status": "no_match",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4469007744",
@@ -25522,6 +25817,31 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4444391720",
+      "source": "linkedin",
+      "company": "Jump Trading",
+      "title": "Software Engineer",
+      "location": "New York, NY",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-jump-trading-4444391720",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-06T23:42:55.358104+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469953370",
@@ -25918,7 +26238,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470379992",
@@ -25996,7 +26316,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -26022,8 +26342,10 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
-      "recovery_status": "filtered"
+      "verified_this_run": false,
+      "recovery_status": "filtered",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4471446405",
@@ -26218,12 +26540,12 @@
       "title": "Machine Learning Engineer",
       "location": "California, United States",
       "posted_date": "2026-09-27",
-      "aggregator_posted_date": "2026-09-27",
+      "aggregator_posted_date": "2026-09-28",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-at-liftoff-mobile-4437647024",
       "official_url": "",
-      "description": "Liftoff is a leading AI-powered performance marketing platform for the mobile app economy. Our end-to-end technology stack helps app marketers acquire and retain high-value users, while enabling publishers to maximize revenue across programmatic and direct demand. Liftoff’s solutions, including Accelerate, Direct, Monetize, Intelligence, and Vungle Exchange, support over 6,600 mobile businesses across 74 countries in sectors such as gaming, social, finance, ecommerce, and entertainment. Founded in 2012 and headquartered in Redwood City, CA, Liftoff has a diverse, global presence. About The Revenue Engine Team The Revenue Engine team works to understand the fundamental economics of the mobile ad tech marketplace, including the elasticity of demand and the effects of competition. The team of machine learning engineers, software engineers, and data analysts develops theories, validates those theories with experiments and analyses, and uses the learnings to build production systems that improve outcomes for Liftoff and its advertisers. As a Machine Learning Engineer on the Revenue Engine team, you will: Build statistical models and production systems to balance advertiser performance with business goals. Tune optimization parameters, measure internal competition, and model dynamic environments. Design and run experiments to validate theories underpinning the mobile ad tech economy. Develop applications in the areas of advertiser budget retention and growth, optimal margin allocation, and bidding innovations. Collaborate with a team of world-class engineers with diverse backgrounds as well as peers across the broader company (e.g. Operations, GTM). Use strong communication skills (verbal and written) to explain statistical and machine learning concepts to both technical and non-technical audiences. Be part of an “engineering excellence” culture through state-of-the-art tools, risk-driven testing, explainable systems, and design/code review. Requirements: PhD in Computer Science, Machine Learning, Economics, or a related field. Industry experience applying economics or machine learning to large scale problems. Solid engineering and coding skills. Excellent team communication and collaboration skills. Experience with ad tech is a solid plus. Location: The preferred location for this role is within California. We are a remote-first company with US hubs in Redwood City, Los Angeles, and New York City. Travel Expectations: We offer several opportunities for in-person team gatherings, including but not limited to project meetings, regional meetups, and company-wide events. We expect our employees to attend these gatherings at least once per quarter. These gatherings provide essential opportunities for collaboration, communication, and team building. Compensation: Liftoff offers all employees a full compensation package that includes equity and health/vision/dental benefits associated with your country of residence. Base compensation will vary based on the candidate's location and experience. The following are our base salary ranges for this role: SF Bay Area, Los Angeles/Orange County, NYC, Seattle: $235,000 - $275,000 All other cities and towns in our approved states: $215,000 - $255,000 1 Liftoff offers a fast-paced, collaborative, and innovative work environment where employees are empowered to grow and make an impact. We’re shaping the future of the mobile app ecosystem—join us and help accelerate what’s next. Liftoff’s compensation strategy includes competitive salaries, equity, and benefits designed to support employee well-being and performance. We benchmark compensation based on role, level, and location to ensure fairness and market alignment. Benefits may include medical coverage, wellness stipends, and additional perks based on your country of residence. Liftoff is an equal opportunity employer. We are committed to creating an inclusive environment for all employees and applicants regardless of race, ethnicity, national origin, age, marital status, disability, sexual orientation, gender identity, religion, veteran status, or any other characteristic protected by applicable law. Agency and Third Party Recruiter Notice: Liftoff does not accept unsolicited resumes from individual recruiters or third-party recruiting agencies in response to job postings. No fee will be paid to third parties who submit unsolicited candidates directly to our hiring managers or Recruiting Team. All candidates must be submitted via our Applicant Tracking System by approved Liftoff vendors who have been expressly requested to make a submission by our Recruiting Team for a specific job opening. No placement fees will be paid to any firm unless such a request has been made by the Liftoff Recruiting Team and such a candidate was submitted to the Liftoff Recruiting Team via our Applicant Tracking System.",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T20:50:30.947234+00:00",
@@ -26239,13 +26561,8 @@
           "outcome": "no_match"
         }
       },
-      "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
-      "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_cache",
-      "enrichment_status": "resolved",
-      "direct_original_fetched": true,
-      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4466943272",
@@ -26254,12 +26571,12 @@
       "title": "Machine Learning Engineer",
       "location": "United States",
       "posted_date": "2026-09-27",
-      "aggregator_posted_date": "2026-09-27",
+      "aggregator_posted_date": "2026-09-28",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-at-liftoff-mobile-4466943272",
       "official_url": "",
-      "description": "Liftoff is a leading AI-powered performance marketing platform for the mobile app economy. Our end-to-end technology stack helps app marketers acquire and retain high-value users, while enabling publishers to maximize revenue across programmatic and direct demand. Liftoff’s solutions, including Accelerate, Direct, Monetize, Intelligence, and Vungle Exchange, support over 6,600 mobile businesses across 74 countries in sectors such as gaming, social, finance, ecommerce, and entertainment. Founded in 2012 and headquartered in Redwood City, CA, Liftoff has a diverse, global presence. As a Senior Machine Learning Engineer at Liftoff, you will: Develop and maintain machine learning models that are integral to our production decision-making system and directly influencing business outcomes. Adopt or build new technologies for training and serving ML models (e.g. support large models, increase developer velocity, etc) Monitor the latest ML research for functional ideas that the team could try. Optimize ML Pipelines – Build and scale efficient pipelines for real-time and batch processing. Model Monitoring & Improvement – Track performance, detect drift, and automate retraining. Use strong communication skills (verbal and written) to explain statistical and machine learning concepts to both technical and non-technical audiences Collaborate with a team of world-class engineers with diverse backgrounds. Be part of an “engineering excellence” culture through state-of-the-art tools, risk-driven testing, explainable systems, and code review. Requirement: 3+ years of industry experience applying Machine Learning (including neural networks) to large scale problems. Deep knowledge of machine learning, optimization, and data analysis techniques. Hands on experience with deep neural networks in production at scale. Solid engineering and coding skills. Track record of well-developed execution and timely delivery of projects. M.S. or higher in Machine Learning, Math, Physics or similar. PhD a plus. Experience in ad optimization stack, e.g. targeting, ranking, bidding, is a solid plus Location: This role is eligible for full-time remote work in one of our entities: CA, CO, ID, IL, FL, GA, MA, MI, MN, MO, NJ, NV, NY, OR, PA, TX, UT, and WA. We are a remote-first company with US hubs in Redwood City, Los Angeles, and New York City. Travel Expectations: We offer several opportunities for in-person team gatherings, including but not limited to project meetings, regional meetups, and company-wide events. We expect our employees to attend these gatherings at least once per quarter. These gatherings provide essential opportunities for collaboration, communication, and team building. Compensation: Liftoff offers all employees a full compensation package that includes equity and health/vision/dental benefits associated with your country of residence. Base compensation will vary based on the candidate's location and experience SF Bay Area, Los Angeles/Orange County, NYC, Seattle: $180,000 - $245,000 All other cities and towns in our approved states: $165,000 - $225,000 1 Liftoff offers a fast-paced, collaborative, and innovative work environment where employees are empowered to grow and make an impact. We’re shaping the future of the mobile app ecosystem—join us and help accelerate what’s next. Liftoff’s compensation strategy includes competitive salaries, equity, and benefits designed to support employee well-being and performance. We benchmark compensation based on role, level, and location to ensure fairness and market alignment. Benefits may include medical coverage, wellness stipends, and additional perks based on your country of residence. Liftoff is an equal opportunity employer. We are committed to creating an inclusive environment for all employees and applicants regardless of race, ethnicity, national origin, age, marital status, disability, sexual orientation, gender identity, religion, veteran status, or any other characteristic protected by applicable law. Agency and Third Party Recruiter Notice: Liftoff does not accept unsolicited resumes from individual recruiters or third-party recruiting agencies in response to job postings. No fee will be paid to third parties who submit unsolicited candidates directly to our hiring managers or Recruiting Team. All candidates must be submitted via our Applicant Tracking System by approved Liftoff vendors who have been expressly requested to make a submission by our Recruiting Team for a specific job opening. No placement fees will be paid to any firm unless such a request has been made by the Liftoff Recruiting Team and such a candidate was submitted to the Liftoff Recruiting Team via our Applicant Tracking System.",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T20:50:30.947234+00:00",
@@ -26275,13 +26592,8 @@
           "outcome": "no_match"
         }
       },
-      "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
-      "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_cache",
-      "enrichment_status": "resolved",
-      "direct_original_fetched": true,
-      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468783529",
@@ -27320,11 +27632,11 @@
         ]
       },
       "recovery_methods": {},
-      "jd_recovery_at": "2026-09-28T19:00:11.871761+00:00",
+      "jd_recovery_at": "2026-09-28T22:00:11.054208+00:00",
       "enrichment_method": "exact_indeed_peer",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -27349,11 +27661,11 @@
         ]
       },
       "recovery_methods": {},
-      "jd_recovery_at": "2026-09-28T19:00:11.871761+00:00",
+      "jd_recovery_at": "2026-09-28T22:00:11.054208+00:00",
       "enrichment_method": "exact_indeed_peer",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -27781,7 +28093,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469969872",
@@ -27948,7 +28260,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -28463,6 +28775,50 @@
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
+      "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4472798715",
+      "source": "linkedin",
+      "company": "Mirage",
+      "title": "Software Engineer, Backend",
+      "location": "New York, NY",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-at-mirage-4472798715",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "a5397799f4eaa059d430",
+          "attempted_at": "2026-09-28T22:00:37.792703+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "normal",
+        "confidence": 0.77,
+        "delta": 0,
+        "reason": "Backend software engineering aligns"
+      },
+      "recovery_input_hash": "a4b645237ddd99d1c253",
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -29450,6 +29806,40 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "verified_this_run": false
+    },
+    {
+      "job_id": "4395480457",
+      "source": "linkedin",
+      "company": "NVIDIA",
+      "title": "Senior Software Engineer, Graphics Performance",
+      "location": "Santa Clara, CA",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-graphics-performance-at-nvidia-4395480457",
+      "official_url": "",
+      "description": "NVIDIA's invention of the GPU in 1999 fueled the growth of the PC gaming market, redefined modern computer graphics, and revolutionized parallel computing. More recently, GPU deep learning ignited modern AI - the next era of computing - with the GPU acting as the brain of computers, robots, and self-driving cars that can perceive and understand the world. Today, we are increasingly known as “the AI computing company”. We are growing our company and the team with the smartest people in the world. We are looking for you to join the Graphics driver team. You are expected to design, develop, and deliver driver solutions for new GPU designs on current and future Linux platforms. NVIDIA is searching for world-class software engineers to join the Linux Graphics driver team. This position involves architecture and development of new SW technologies to support Vulkan and OpenGL software for our GPUs as well as enhancements and maintenance of existing features. What you'll be doing: You will work on the definition, design, and development of pioneering professional and consumer Linux Vulkan and OpenGL graphics software performance features. Develop and maintain SW technologies targeted at enabling and supporting NVIDIA's GPU hardware on the Linux operating systems, ensuring the best performance and cross platform implementation. You will work with other worldwide internal teams, including software, hardware, architecture, and OEM support. What we need to see: A Bachelors or higher degree in electrical engineering, computer science, or computer engineering (or equivalent experience). 3+ years \"hands on\" experience developing graphics OpenGL/Vulkan system level software especially for the Linux OS. 3+ years’ experience in graphics rendering, shader programming, compilers, and optimizations. 8+ years of programming experience in C and C++. Low-level Linux operating system knowledge, specifically memory/resource management, scheduling and process control, and hardware virtualization. Very good oral and written communication skills. A self-motivated teammate with good attitude. Ways to stand out from the crowd: You have prior experience with shader compilers development. With competitive salaries and a generous benefits package, we are widely considered to be one of the technology world’s most desirable employers. We have some of the most forward-thinking and hardworking people in the world working for us and, due to outstanding growth, our exclusive engineering teams are rapidly growing. If you're a creative and autonomous engineer with a real passion for technology, we want to hear from you. Your base salary will be determined based on your location, experience, and the pay of employees in similar positions. The base salary range is 184,000 USD - 287,500 USD for Level 4, and 224,000 USD - 356,500 USD for Level 5. You will also be eligible for equity and benefits . Applications for this job will be accepted at least until February 17, 2026. This posting is for an existing vacancy. NVIDIA uses AI tools in its recruiting processes. NVIDIA is committed to fostering a diverse work environment and proud to be an equal opportunity employer. As we highly value diversity in our current and future employees, we do not discriminate (including in our hiring and promotion practices) on the basis of race, religion, color, national origin, gender, gender expression, sexual orientation, age, marital status, veteran status, disability status or any other characteristic protected by law.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer--Graphics-Performance_JR2012523",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-09-28T22:00:11.054208+00:00",
+      "jd_recovery_at": "2026-09-28T22:00:11.054208+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-09-28T22:00:11.054208+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -29482,7 +29872,7 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4467679794",
@@ -29939,7 +30329,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -30749,15 +31139,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://jobs.ashbyhq.com/openai/577e6673-0a4a-491b-9a0d-facbdd3bdf3c",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-28T19:00:11.871761+00:00",
-      "jd_recovery_at": "2026-09-28T19:00:11.871761+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-09-28T19:00:11.871761+00:00",
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -30792,7 +31180,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-09-28T19:00:11.871761+00:00",
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4452905145",
@@ -30884,15 +31272,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://jobs.ashbyhq.com/openai/240d459b-696d-43eb-8497-fab3e56ecd9b",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-28T19:00:11.871761+00:00",
-      "jd_recovery_at": "2026-09-28T19:00:11.871761+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-09-28T19:00:11.871761+00:00",
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -31249,8 +31635,10 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
-      "recovery_status": "filtered"
+      "verified_this_run": false,
+      "recovery_status": "filtered",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4438001469",
@@ -31573,7 +31961,9 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_status": "filtered"
     },
@@ -32043,7 +32433,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -32821,13 +33211,12 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_attempted_at": "2026-09-28T19:00:40.169173+00:00",
       "linkedin_detail_fetched_at": "2026-09-28T19:00:40.169173+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -32852,13 +33241,12 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_attempted_at": "2026-09-28T19:00:40.169173+00:00",
       "linkedin_detail_fetched_at": "2026-09-28T19:00:40.169173+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -33140,6 +33528,50 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4433416552",
+      "source": "linkedin",
+      "company": "Peraton",
+      "title": "Junior Software Data Engineer",
+      "location": "Fort Meade, MD",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/junior-software-data-engineer-at-peraton-4433416552",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "50014ba1500ef1c8e1ec",
+          "attempted_at": "2026-09-28T22:00:37.792703+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.93,
+        "delta": 5,
+        "reason": "Junior data engineering explicitly fits seniority"
+      },
+      "recovery_input_hash": "fe0dc2ee56fb005890ae",
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
+      "official_search_status": "no_match"
+    },
+    {
       "job_id": "4469933806",
       "source": "linkedin",
       "company": "Peraton",
@@ -33164,6 +33596,81 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4458905253",
+      "source": "linkedin",
+      "company": "Peraton",
+      "title": "Software Developer - Senior",
+      "location": "Herndon, VA",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-developer-senior-at-peraton-4458905253",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T21:05:07.442044+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4450396586",
+      "source": "linkedin",
+      "company": "Peraton Labs",
+      "title": "AI/ML Engineer",
+      "location": "Herndon, VA",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-ml-engineer-at-peraton-labs-4450396586",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-19T18:04:19.520017+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4465108255",
+      "source": "linkedin",
+      "company": "Peraton Labs",
+      "title": "Senior Full-Stack Software Engineer",
+      "location": "Red Bank, NJ",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-software-engineer-at-peraton-labs-4465108255",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T02:36:39.478299+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4472411294",
@@ -33375,18 +33882,19 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
-        "confidence": 0.79,
+        "confidence": 0.71,
         "delta": 0,
-        "reason": "Java backend development aligns with target roles"
+        "reason": "Java backend development is relevant"
       },
       "recovery_input_hash": "a5e099e85cce5933859c",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -33768,6 +34276,34 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4471549197",
+      "source": "linkedin",
+      "company": "Premier Global Links LLC",
+      "title": "Senior Full Stack Engineer",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-engineer-at-premier-global-links-llc-4471549197",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_status": "filtered"
+    },
+    {
       "job_id": "4468190711",
       "source": "linkedin",
       "company": "Premier Global Links LLC",
@@ -33849,7 +34385,7 @@
       },
       "recovery_input_hash": "5f5472c66109219f73de",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -33879,7 +34415,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -33928,7 +34464,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -33938,7 +34474,7 @@
       },
       "recovery_input_hash": "7e977f3895ddbca95a13",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -34969,15 +35505,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://careers.qualcomm.com/careers/job/446717859953",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-28T19:00:11.871761+00:00",
-      "jd_recovery_at": "2026-09-28T19:00:11.871761+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-09-28T19:00:11.871761+00:00",
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -36335,6 +36869,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4473012469",
+      "source": "linkedin",
+      "company": "Renesas Electronics",
+      "title": "Senior Software Engineer",
+      "location": "Austin, TX",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-at-renesas-electronics-4473012469",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_status": "filtered"
+    },
+    {
       "job_id": "4468783984",
       "source": "linkedin",
       "company": "Revature",
@@ -36463,6 +37025,34 @@
       "official_search_status": "no_match",
       "source_verified_at": "2026-09-25T11:28:01.704188+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4471213140",
+      "source": "linkedin",
+      "company": "Riot Games",
+      "title": "Senior Software Engineer, Riot Client - Publishing Platform",
+      "location": "Los Angeles, CA",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-riot-client-publishing-platform-at-riot-games-4471213140",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_status": "filtered"
     },
     {
       "job_id": "4470411870",
@@ -36853,8 +37443,10 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
-      "recovery_status": "filtered"
+      "verified_this_run": false,
+      "recovery_status": "filtered",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4470181203",
@@ -37184,6 +37776,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4473007050",
+      "source": "linkedin",
+      "company": "Robots & Pencils",
+      "title": "Senior AI Engineer",
+      "location": "Chicago, IL",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-ai-engineer-at-robots-pencils-4473007050",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_status": "filtered"
+    },
+    {
       "job_id": "4444396742",
       "source": "linkedin",
       "company": "Rockstar Games",
@@ -37205,7 +37825,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -38655,7 +39275,9 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_status": "filtered"
     },
@@ -38781,12 +39403,13 @@
       "first_seen": "2026-09-28T19:00:11.871761+00:00",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
-          "machine learning engineer"
+          "ai engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_status": "filtered"
     },
@@ -39105,6 +39728,35 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "verified_this_run": false,
+      "recovery_status": "filtered"
+    },
+    {
+      "job_id": "4436451046",
+      "source": "linkedin",
+      "company": "Snap Inc.",
+      "title": "Software Engineer, Backend, Level 5",
+      "location": "Seattle, WA",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-level-5-at-snap-inc-4436451046",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer",
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_status": "filtered"
     },
@@ -39503,18 +40155,19 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
-        "confidence": 0.85,
-        "delta": 3,
-        "reason": "Full-stack software engineering role"
+        "confidence": 0.78,
+        "delta": 0,
+        "reason": "Full-stack software role aligns"
       },
       "recovery_input_hash": "d5297fcca8aedde4bec3",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -39748,7 +40401,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4418451858",
@@ -39772,7 +40425,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -39853,6 +40506,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4473000701",
+      "source": "linkedin",
+      "company": "Spear AI",
+      "title": "Horizon: Full-Stack Engineer (Senior)",
+      "location": "Washington, DC",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/horizon-full-stack-engineer-senior-at-spear-ai-4473000701",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_status": "filtered"
+    },
+    {
       "job_id": "4443974085",
       "source": "linkedin",
       "company": "Speria",
@@ -39896,20 +40577,19 @@
       "first_seen": "2026-09-28T19:00:11.871761+00:00",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer"
+          "ai engineer",
+          "machine learning engineer"
         ]
       },
       "recovery_methods": {},
       "application_url": "https://jobs.lever.co/spotify/d7c43743-2240-45b6-bc31-33e50cbaba4a",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-28T19:00:11.871761+00:00",
-      "jd_recovery_at": "2026-09-28T19:00:11.871761+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-09-28T19:00:11.871761+00:00",
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -40183,18 +40863,19 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_triage": {
         "action": "recover",
         "priority": "low",
-        "confidence": 0.72,
+        "confidence": 0.73,
         "delta": 0,
-        "reason": "Relevant ML work; founding scope may be senior"
+        "reason": "ML role fits; founding scope may require experience"
       },
       "recovery_input_hash": "31c22f70c3351ed599a9",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -40324,7 +41005,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -40603,7 +41284,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -40629,7 +41310,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -40732,7 +41413,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -40784,7 +41465,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468581989",
@@ -40860,7 +41541,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4363130447",
@@ -41420,6 +42101,50 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4472770268",
+      "source": "linkedin",
+      "company": "TalentAlly",
+      "title": "Software Engineer",
+      "location": "Maryland Heights, MO",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-talentally-4472770268",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T19:00:11.871761+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "3789ea8bc42626e6c7f4",
+          "attempted_at": "2026-09-28T22:00:37.792703+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "normal",
+        "confidence": 0.7,
+        "delta": 0,
+        "reason": "Software engineering aligns; level unspecified"
+      },
+      "recovery_input_hash": "542b4761c4fe95ad24f1",
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
+      "official_search_status": "no_match"
+    },
+    {
       "job_id": "4468531844",
       "source": "linkedin",
       "company": "TalentHop",
@@ -41702,7 +42427,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -42118,7 +42843,9 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_status": "filtered"
     },
@@ -42826,7 +43553,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -42957,7 +43684,7 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4449531961",
@@ -43663,6 +44390,34 @@
       "direct_original_fetched_at": "2026-09-26T19:15:15.514315+00:00"
     },
     {
+      "job_id": "4471527980",
+      "source": "linkedin",
+      "company": "Trinity Solar",
+      "title": "Senior Full Stack Developer",
+      "location": "Iselin, NJ",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-developer-at-trinity-solar-4471527980",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_status": "filtered"
+    },
+    {
       "job_id": "4472223489",
       "source": "linkedin",
       "company": "Trinity Solar",
@@ -44004,6 +44759,50 @@
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-25T00:21:45.937548+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4472793615",
+      "source": "linkedin",
+      "company": "U.S. Bank",
+      "title": "Software Engineer 2 (ASP.NET Web API)",
+      "location": "Minneapolis, MN",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-2-asp-net-web-api-at-u-s-bank-4472793615",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "1c6d98fabd2021b6df1e",
+          "attempted_at": "2026-09-28T22:00:37.792703+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "normal",
+        "confidence": 0.8,
+        "delta": 0,
+        "reason": "Software Engineer 2 may fit early career"
+      },
+      "recovery_input_hash": "2e191543a9ac2aedb786",
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
+      "official_search_status": "no_match"
     },
     {
       "job_id": "4470659767",
@@ -44464,6 +45263,62 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4471536824",
+      "source": "linkedin",
+      "company": "Unity",
+      "title": "Senior Machine Learning Engineer, Ads Modeling",
+      "location": "Mountain View, CA",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-machine-learning-engineer-ads-modeling-at-unity-4471536824",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "machine learning engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_status": "filtered"
+    },
+    {
+      "job_id": "4471551184",
+      "source": "linkedin",
+      "company": "Unity",
+      "title": "Senior Machine Learning Engineer, Ads Modeling",
+      "location": "New York, NY",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-machine-learning-engineer-ads-modeling-at-unity-4471551184",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "machine learning engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_status": "filtered"
+    },
+    {
       "job_id": "4469961670",
       "source": "linkedin",
       "company": "Unity",
@@ -44646,8 +45501,10 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
-      "recovery_status": "filtered"
+      "verified_this_run": false,
+      "recovery_status": "filtered",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4470885737",
@@ -44671,7 +45528,9 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_status": "filtered"
     },
@@ -45267,6 +46126,34 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4472764913",
+      "source": "linkedin",
+      "company": "Verisk",
+      "title": "Sr Software Engineer I",
+      "location": "Lehi, UT",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-software-engineer-i-at-verisk-4472764913",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_status": "filtered"
+    },
+    {
       "job_id": "4472062715",
       "source": "linkedin",
       "company": "Verizon",
@@ -45717,7 +46604,7 @@
         }
       },
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -45727,8 +46614,10 @@
       },
       "recovery_input_hash": "9ea6964a2d714e8b6eeb",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
-      "official_search_status": "no_match"
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
+      "official_search_status": "no_match",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4449855029",
@@ -45830,7 +46719,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -45856,7 +46745,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -46182,7 +47071,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -46207,7 +47096,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -46318,7 +47207,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -46399,7 +47288,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -47031,7 +47920,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4426674083",
@@ -47055,7 +47944,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true
     },
     {
@@ -47261,18 +48150,19 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-28T19:00:11.871761+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": true,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
-        "confidence": 0.81,
+        "confidence": 0.76,
         "delta": 0,
-        "reason": "Full-stack development aligns with target roles"
+        "reason": "Full-stack development aligns; level unspecified"
       },
       "recovery_input_hash": "80dcab18d2ffc66fdcc4",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-28T19:00:46.818716+00:00",
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -47861,6 +48751,62 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4471200397",
+      "source": "linkedin",
+      "company": "adMarketplace",
+      "title": "Lead Machine Learning Engineer",
+      "location": "New York, NY",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/lead-machine-learning-engineer-at-admarketplace-4471200397",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "machine learning engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_status": "filtered"
+    },
+    {
+      "job_id": "4471204307",
+      "source": "linkedin",
+      "company": "adMarketplace",
+      "title": "Senior Machine Learning Engineer",
+      "location": "New York, NY",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-machine-learning-engineer-at-admarketplace-4471204307",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "machine learning engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_status": "filtered"
+    },
+    {
       "job_id": "4470238738",
       "source": "linkedin",
       "company": "adaption",
@@ -48043,6 +48989,50 @@
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
+      "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4473006211",
+      "source": "linkedin",
+      "company": "fal",
+      "title": "Machine Learning Engineer, Safety",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-safety-at-fal-4473006211",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T22:00:11.054208+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "4eeb7e00d3b7ff5978c6",
+          "attempted_at": "2026-09-28T22:00:37.792703+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
+      "verified_this_run": true,
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.85,
+        "delta": 4,
+        "reason": "Safety-focused ML engineering directly aligns"
+      },
+      "recovery_input_hash": "cc0cd2d9a9f803709ed7",
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-09-28T22:00:37.792703+00:00",
       "official_search_status": "no_match"
     },
     {
