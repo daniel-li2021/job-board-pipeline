@@ -1,25 +1,15 @@
-Syncareer alert — 2026-09-27_2351
+Syncareer alert — 2026-09-28_1451
 
-Updated (PT): 2026-09-27 16:52 PDT
-Snapshot (UTC): 2026-09-27T23:52:38.465443+00:00
+Updated (PT): 2026-09-28 07:52 PDT
+Snapshot (UTC): 2026-09-28T14:52:18.507920+00:00
 
-12 new matching job(s) this run (hard-filtered).
+2 new matching job(s) this run (hard-filtered).
 
 If you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.md` in the repo (last 3 days, one file).
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 94.0 | Syncareer | Fidelity Investments | January 2027 - Leap Software Engineer | Westlake, Texas, United States | 2026-09-25 | No sponsor | - | unreviewed | not_dedicated | [open](https://jobs.fidelity.com/en/jobs/2133859/january-2027-leap-software-engineer/) |
-| A | 92.0 | Syncareer | Lincoln Financial Corporation | Associate Data Engineer, AI Data Products | Radnor, Pennsylvania, United States | 2026-09-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lincolnfinancial.com/job/Radnor-Associate-Data-Engineer%2C-AI-Data-Products-PA/1433876400/) |
-| A | 88.0 | Syncareer | Bank OZK | Software Engineer II | St. Petersburg, Florida, United States | 2026-09-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ozk.com/career-home/jobs/6588?lang=en-us) |
-| B | 84.0 | Syncareer | HP | Software Quality Engineer | Fort Collins, Colorado, United States | 2026-09-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://apply.hp.com/careers/job/44605003?domain=hp.com) |
-| B | 83.0 | Syncareer | Kforce | Associate Software Developer | West Palm Beach, Florida, United States | 2026-09-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.kforce.com/find-work/search-jobs/#/detail/MTY5Nn5FUUd-MjE4OTQ0MVQxfjk5/) |
-| B | 79.0 | Syncareer | Abbott | Software Engineer I | La Jolla, California, United States | 2026-09-25 | No sponsor | - | unreviewed | not_dedicated | [open](https://abbott.wd5.myworkdayjobs.com/en-US/abbottcareers/job/United-States---California---La-Jolla/Software-Engineer-I_31162389-1?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=55273a1b49934d97ae15342ef51f6b95&Location_Country=a4e08b475d6a4176853c9d1cb9854e02&Location_Country=d4afdeb461d446e4babd204bd102dba8&jobFamilyGroup=77166004ab82108dbc36d45444ea5319&jobFamilyGroup=77166004ab82108dbc369f0685c75300&jobFamilyGroup=77166004ab82108dbc36ddc1741b531d&jobFamilyGroup=77166004ab82108dbc36c1aa703d530e&jobFamilyGroup=77166004ab82108dbc368b52e1f452f7&jobFamilyGroup=77166004ab82108dbc36c663b1735313&jobFamilyGroup=77166004ab82108dbc36a3f4c1f35302&jobFamilyGroup=77166004ab82108dbc36d8a13149531b&jobFamilyGroup=77166004ab82108dbc36ae7004d75306&jobFamilyGroup=77166004ab82108dbc36b387bcb25308&jobFamilyGroup=77166004ab82108dbc36bd400e63530c&jobFamilyGroup=77166004ab82108dbc36b8277206530a&jobFamilyGroup=77166004ab82108dbc36cf373cfb5317&jobFamilyGroup=77166004ab82108dbc3691dba9f452f9&jobFamilyGroup=77166004ab82108dbc36a9373a205304&jobFamilyGroup=77166004ab82108dbc3697ef47b552fb) |
 | B | 78.0 | Syncareer | Chewy | Software Engineer I | Bellevue, Washington, United States | 2026-09-25 | Sponsor | - | unreviewed | official_identity_unmatched | [open](https://careers.chewy.com/us/en/job/R31016/Software-Engineer-I) |
-| B | 78.0 | Syncareer | Snap Finance | Software Engineer - Applied AI | West Valley City, Utah, United States | 2026-09-25 | Sponsor | - | unreviewed | official_gap | [open](https://snapfinance.wd1.myworkdayjobs.com/en-US/Snap_External_Careers/job/Metro-9---West-Valley-City/Software-Engineer---Applied-AI_R-2928) |
-| B | 77.0 | Syncareer | Transamerica | Intermediate Software Engineer | Denver, Colorado, United States | 2026-09-25 | No sponsor | - | unreviewed | not_dedicated | [open](https://transamerica.wd5.myworkdayjobs.com/en-US/US/job/Denver-Colorado/Intermediate-Software-Engineer_R20062709) |
-| B | 77.0 | Syncareer | Remitly | AI Native Software Engineer | Seattle, Washington, United States | 2026-09-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://remitly.wd5.myworkdayjobs.com/en-US/Remitly_Careers/job/Seattle-Washington-United-States/AI-Native-Software-Engineer_R_106966) |
-| B | 74.0 | Syncareer | GCS | Machine Learning Engineer | Minneapolis, Minnesota, United States | 2026-09-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.gcstechtalent.com/job-search/2943/machine-learning-engineer/data/minneapolis/job) |
-| B | 74.0 | Syncareer | GCS | Machine Learning Engineer | Dallas, Texas, United States | 2026-09-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.gcstechtalent.com/job-search/2942/machine-learning-engineer/data/dallas/job) |
+| B | 72.0 | Syncareer | Kforce | Associate Software Developer | West Palm Beach, Florida, United States | 2026-09-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.kforce.com/find-work/search-jobs/#/detail/MTY5Nn5FUUd-MjE4OTQ0MVQxfjk5/) |
 
-Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-09-27_2351.csv`.
+Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-09-28_1451.csv`.
