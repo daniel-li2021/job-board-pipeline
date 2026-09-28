@@ -215,27 +215,15 @@ A successful collector or pipeline process is therefore not the same as successf
 
 ## Health semantics
 
-Overall health remains the worst component severity. Component details preserve the distinction between data usability and the latest attempt:
+The main Health page uses three run states. **Healthy** means required data is usable and expected steps completed without an active failure. **Partial** means an expected search, source, JD, or workflow step failed or became stale while fallback data remains usable. **Failed** means required data is unusable. Overall state is the worst state among Board, Official, Syncareer, LinkedIn, and Indeed; optional Glassdoor appears in Components and Needs attention but does not change Overall. The detailed `Healthy` / `Warning` / `Stale` / `Problem` component status remains in `health.json` for diagnostics alongside each component's `run_state`.
 
-| Status | Meaning |
-| --- | --- |
-| Healthy | A usable snapshot is within its freshness target and no material degradation is reported. |
-| Warning | Fresh last-good data remains usable, but failures are repeated/material, output collapsed, fallback recovery is poor, data loss is significant, or the component is approaching its stale threshold. |
-| Stale | A previously usable pipeline snapshot exists but is older than 36 hours, or has records without a usable update timestamp. |
-| Problem | No usable required snapshot exists, or a failed workflow leaves data unusable. |
+Latest runs use the same Jobs → JD & recovery → Requests → Sources → Issue order for Online Board, LinkedIn Local, Big Company Official, and Indeed. Issue appears only for an abnormal run. LinkedIn distinguishes jobs first discovered in the exact attempt, earlier on the same Pacific day, and older known jobs; its JD coverage uses fresh jobs that needed a JD rather than all carried rows. Board combines measured direct and follow-up JD recoveries and retains the breakdown. Official shows relevant-job JD coverage, cache reuse, request counts, and largest company gaps. Indeed distinguishes current fresh rows from last-good rows during a partial run. Counts come from each owner’s latest stats, source snapshot, and Health state; missing counters are not inferred from unrelated inventory.
 
-Mac sources use tighter collection expectations: up to six hours is healthy, six to twelve hours is warning, and more than twelve hours is stale. GitHub Indeed is warning after 18 hours and stale after 36 hours. A required source with no usable snapshot is a problem; optional Glassdoor is a warning. One isolated failed attempt with a fresh last-good snapshot or a very small unresolved-JD tail can be reported as recovered behavior. An active LinkedIn detail 429 is a Warning while its saved jobs can remain usable; Scrapling recoveries are shown separately. The Health `Updated` column shows the last usable snapshot time; the latest attempt remains in diagnostics.
+Components show current jobs, jobs with JD, passed jobs, and the **latest attempt** time. LinkedIn's last complete snapshot time remains separate in Issue/details when focused partial collection carries older rows. Mac sources use tighter collection expectations: up to six hours is healthy, six to twelve hours is warning, and more than twelve hours is stale. GitHub Indeed warns after 18 hours and becomes stale after 36 hours. The main state maps usable stale/fallback data to Partial and unusable required data to Failed. Focused LinkedIn coverage can remain Healthy when it is expected and its latest attempt succeeded without a rate limit or detail failure.
 
-The health page leads with the current LinkedIn warning and recovery counts, followed by components and a compact Local Mac schedule. Visible timestamps use Pacific time. LinkedIn detail requests, rate limits, recovered JDs before and after a rate limit, remaining missing JDs, and scheduled-slot status are separate diagnostics. The overall Board status can remain Healthy while Local LinkedIn detail is Warning.
+Coverage separates current Board and LinkedIn JD gaps from older stored jobs without JD. The fresh source counts are shown separately because they may overlap; older inventory uses the compact store's `description_available` flag rather than treating intentionally omitted JD text as missing. Legacy aggregate counters remain in technical JSON. Execution labels newly available JDs from measured direct and follow-up work; initial LinkedIn detail fetches are included. The Remote collector does not yet report a complete new-JD count, so the page displays an unavailable value instead of relabeling its current JD inventory as new work. The default page combines material items into Needs attention. Raw component statuses, source failures, consecutive failure counts, request limits, recovery methods, unresolved examples, and the Mac schedule remain under Technical details and in `health.json`. Visible times use Pacific time.
 
-Health output separates:
-
-- **Actionable problems**: unusable or stale required data that needs intervention.
-- **Active warnings**: unexpected or material degradation that merits investigation while last-good data remains usable.
-- **Recovered behavior / known limitations**: current data is usable because fallback succeeded, impact is small, or a source is intentionally link-only/non-scrapable.
-- **Unresolved enrichment**: counts and reasons for records still lacking descriptions.
-
-Messages include source, impact, attempt age, last-good count/age, consecutive failures, and available reasons. Repeated batch failures are collapsed into counts such as “1/1 attempted batches failed; 8 later batches skipped; 106 jobs remain retryable.” `LinkedIn (Mac)` search/discovery failures, its detail-enrichment 429s, Scrapling attempts/resolutions, and remaining no-JD records are independent from the `linkedin_company_official_adapter`. Configured Official `skip` adapters are expected limitations, not fresh scrape failures. `PIPELINE_WORKFLOW_*` values supplied by reconciliation identify whether the triggering workflow failed; a failed trigger yields Warning when a fresh store is still usable and Problem when it is not.
+`LinkedIn (Mac)` search/discovery failures, detail 429s, Scrapling attempts, and remaining no-JD records are independent from the `linkedin_company_official_adapter`. Configured Official `skip` adapters remain known limitations. `PIPELINE_WORKFLOW_*` values supplied by reconciliation identify a failed triggering workflow; a fresh usable store then yields Partial, and an unusable required store yields Failed.
 
 ## Failure recovery
 
@@ -249,7 +237,7 @@ Messages include source, impact, attempt age, last-good count/age, consecutive f
 | One Official adapter fails | Other companies complete; prior data is carried when the sweep is not authoritative | Per-company errors and full-sweep status |
 | LLM call or response fails | Cached scores remain; affected records receive rule fallback | Failure details, score-source counts, model/prompt fingerprint |
 | LLM quota/balance is exhausted | First failed batch records the API code and available rate headers, later batches are skipped, and jobs remain retryable | `latest_stats.json`, `run_history.json`, then `board_pipeline.py --retry-llm-failures` after quota recovery |
-| One discovery workflow fails | Other stores still reconcile; fresh last-good data can still publish with Warning | Workflow conclusion, store age/count, `latest_stats.json` |
+| One discovery workflow fails | Other stores still reconcile; fresh last-good data can still publish with Partial | Workflow conclusion, store age/count, `latest_stats.json` |
 | Concurrent output pushes race | Owning workflow rebases/retries its scoped output commit | Push attempt logs and current `origin/main` |
 | Reconciliation or Pages fails | Pipeline stores remain committed; public site may be stale | Source/output commit, reconcile run, deployment, live artifact timestamp |
 | State is corrupt | Reader rejects it instead of overwriting valid data | Error, file integrity, and last known committed snapshot |

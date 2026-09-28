@@ -294,6 +294,181 @@ def _official_scraper_count(base: Path, sources: list[str]) -> int:
     return len(actionable.get("scrape", {}))
 
 
+def _main_state(item: dict[str, Any]) -> str:
+    """Three user-facing run states; retain the detailed status in JSON."""
+    if not item.get("data_usable"):
+        return "Failed"
+    if (item.get("latest_attempt_status") in {"partial", "skipped_unavailable", "skipped_error", "blocked"}
+            and "focused_coverage" not in (item.get("degradation_kinds") or [])):
+        return "Partial"
+    if (item.get("status") != "Healthy" or item.get("failure_count")
+            or item.get("latest_attempt_status") in {"failed", "degraded", "limited"}):
+        return "Partial"
+    return "Healthy"
+
+
+def _latest_run_panels(base: Path, latest: dict[str, dict[str, Any]],
+                       components: dict[str, dict[str, Any]], local: dict[str, Any],
+                       recovery: dict[str, Any]) -> dict[str, dict[str, str]]:
+    """Build comparable summaries only from counters belonging to the latest attempts."""
+    board = latest.get("board") or {}
+    official = latest.get("official") or {}
+    linkedin_state = local.get("linkedin") or {}
+    indeed_state = local.get("indeed") or {}
+    linkedin_snapshot = _read(base / "output" / "sources" / "linkedin.json", {}) or {}
+    indeed_snapshot = _read(base / "output" / "sources" / "indeed.json", {}) or {}
+
+    def observed(snapshot: dict[str, Any], state: dict[str, Any]) -> list[dict[str, Any]]:
+        attempt = str(state.get("last_attempt_at") or "")
+        if not attempt or attempt != str((snapshot.get("meta") or {}).get("scraped_at") or ""):
+            return []
+        rows = list(snapshot.get("jobs") or [])
+        if state.get("status") == "partial":
+            return [row for row in rows if row.get("verified_this_run")
+                    and row.get("source_verified_at") == attempt]
+        return rows
+
+    linkedin_rows = observed(linkedin_snapshot, linkedin_state)
+    linkedin_attempt = recovery_policy.stamp(linkedin_state.get("last_attempt_at"))
+    recovery_at = recovery_policy.stamp(recovery.get("run_at"))
+    linked_recovery_run = (recovery if linkedin_attempt and recovery_at
+                           and timedelta(0) <= recovery_at - linkedin_attempt <= timedelta(hours=1) else {})
+    new_now = earlier_today = 0
+    for row in linkedin_rows:
+        seen = recovery_policy.stamp(row.get("first_seen"))
+        if seen and linkedin_attempt and seen >= linkedin_attempt:
+            new_now += 1
+        elif seen and linkedin_attempt and seen.astimezone(ZoneInfo("America/Los_Angeles")).date() == (
+                linkedin_attempt.astimezone(ZoneInfo("America/Los_Angeles")).date()):
+            earlier_today += 1
+    older = len(linkedin_rows) - new_now - earlier_today
+    detail = linkedin_state.get("detail_enrichment") or {}
+    search = linkedin_state.get("search_collection") or {}
+    linked_recovery = int(linked_recovery_run.get("linkedin_detail_recoveries", 0) or 0)
+    other_recovery = int(linked_recovery_run.get("official_jds_recovered", 0) or 0) + int(
+        linked_recovery_run.get("targeted_linkedin_detail_jds", 0) or 0)
+    eligible = int(detail.get("eligible", 0) or 0)
+    resolved = min(eligible, int(detail.get("jds_resolved", 0) or 0) + linked_recovery + other_recovery)
+    remaining = max(0, eligible - resolved)
+    deferred = min(remaining, sum(int(detail.get(key, 0) or 0) for key in
+                                  ("official_deferred", "budget_deferred", "retry_deferred")))
+    failed = min(remaining - deferred, int(detail.get("failed", 0) or 0))
+    linkedin_same_attempt = bool(linkedin_state.get("last_attempt_at") and
+                                 linkedin_state.get("last_attempt_at") ==
+                                 (linkedin_snapshot.get("meta") or {}).get("scraped_at"))
+    linkedin_jobs = (
+        f"{int(linkedin_state.get('partial_collected_count', 0) or 0) if linkedin_state.get('status') == 'partial' else int(linkedin_state.get('last_attempt_count', 0) or 0):,} found · "
+        f"{len(linkedin_rows):,} kept · {new_now:,} new this run · {earlier_today:,} seen earlier today · {older:,} already known"
+        if linkedin_same_attempt else "Latest attempt and snapshot do not match; counts unavailable"
+    )
+    linkedin_panel = {
+        "title": "LinkedIn Local", "status": components["linkedin"]["run_state"],
+        "jobs": linkedin_jobs,
+        "jd": (f"{eligible:,} fresh jobs needed JD · {resolved:,} resolved · {deferred:,} deferred · {failed:,} failed; "
+               f"{int(detail.get('cache_reused', 0) or 0):,} cache reused · "
+               f"{int(detail.get('detail_jds_fetched', 0) or 0):,} fetched from LinkedIn · "
+               f"{linked_recovery + other_recovery:,} recovered later") if "eligible" in detail else
+              f"Fresh JD need counts unavailable · {linked_recovery + other_recovery:,} recovered later",
+        "requests": (f"Search {int(search.get('responses', 0) or 0)}/{int(search.get('requests', 0) or 0)} · "
+                     f"LinkedIn detail {int(detail.get('responses', 0) or 0)}/{int(detail.get('requests', 0) or 0)} · "
+                     f"Web recovery {int(linked_recovery_run.get('generic_jobs_processed', 0) or 0)} jobs / "
+                     f"{int(linked_recovery_run.get('search_requests', 0) or 0)} searches / "
+                     f"{int(linked_recovery_run.get('official_page_requests', 0) or 0)} pages"),
+        "sources": (f"LinkedIn search {'rate limited' if search.get('rate_limited') else 'healthy'} · "
+                    f"{'focused coverage · ' if search.get('coverage_limited') else ''}"
+                    f"{int(linkedin_state.get('partial_carried_count', 0) or 0):,} older jobs carried"),
+        "issue": (str(linkedin_state.get("reason") or components["linkedin"].get("issue") or "")
+                  if components["linkedin"]["run_state"] != "Healthy" else ""),
+        "note": ("Detail 429 · " if detail.get("rate_limited") else "No detail 429 · ")
+                + ("cooldown active · " if detail.get("cooldown_active") else "no cooldown · ")
+                + ("budget/deadline hit" if detail.get("budget_exhausted") or linked_recovery_run.get("deadline_reached")
+                   else "no budget/deadline hit"),
+    }
+
+    online = board.get("online_recovery") or {}
+    direct = (board.get("enrichment") or {}).get("direct") or {}
+    attempted = int(online.get("jobs_processed", 0) or 0)
+    direct_jds = int(direct.get("jds_resolved", 0) or 0)
+    later_jds = int(online.get("jds_recovered", 0) or 0)
+    ats_errors = [error for error in _failure_items((board.get("failures") or {}).get("discovery"))
+                  if "Indeed discovery partial:" not in error]
+    board_panel = {
+        "title": "Online Board", "status": components["board"]["run_state"],
+        "jobs": (f"{int((board.get('funnel') or {}).get('after_dedup', 0) or 0):,} discovered · "
+                 f"{int((board.get('output') or {}).get('new_jobs', 0) or 0):,} new canonical · "
+                 f"{int((board.get('output') or {}).get('new_jobs_added', 0) or 0):,} added to A/B"),
+        "jd": (f"{attempted:,} fresh jobs attempted · {direct_jds + later_jds:,} JDs resolved · "
+               f"{max(0, attempted - direct_jds - later_jds):,} still missing; "
+               f"{direct_jds:,} direct · {later_jds:,} follow-up recovery"),
+        "requests": (f"{int(direct.get('http_requests', 0) or 0) + int(direct.get('scrapling_requests', 0) or 0):,} "
+                     f"direct attempts · {int(online.get('search_requests', 0) or 0):,} searches · "
+                     f"{int(online.get('page_requests', 0) or 0):,} official pages"),
+        "sources": (f"ATS {'limited' if ats_errors else 'healthy'} · "
+                    f"Indeed {components['indeed']['run_state'].lower()} · LinkedIn Local snapshot · "
+                    f"Glassdoor {'cached' if components['glassdoor']['run_state'] != 'Healthy' else 'available'}"),
+        "issue": (f"Indeed {indeed_state.get('reason')}" if indeed_state.get("status") == "partial" else
+                  str(components["board"].get("issue") or "")) if components["board"]["run_state"] != "Healthy" else "",
+        "note": ("Request budget or deadline hit" if online.get("deadline_reached") or
+                 attempted >= recovery_policy.RecoveryBudget().max_jobs else "No request-budget or deadline hit"),
+    }
+
+    jd = official.get("jd_recovery") or {}
+    eligible_official = int(jd.get("eligible", 0) or 0)
+    usable_official = int(jd.get("usable_jd", 0) or 0)
+    gaps = sorted(((name, max(0, int(row.get("eligible", 0) or 0) - int(row.get("usable_jd", 0) or 0)))
+                   for name, row in (jd.get("per_company") or {}).items()), key=lambda pair: pair[1], reverse=True)
+    gaps = [(name, count) for name, count in gaps if count][:4]
+    queries = [stat for values in (official.get("query_diagnostics") or {}).values()
+               for stat in values if isinstance(stat, dict)]
+    official_panel = {
+        "title": "Big Company Official", "status": components["official"]["run_state"],
+        "jobs": (f"{int((official.get('enrichment') or {}).get('discovered', 0) or 0):,} discovered · "
+                 f"{int((official.get('output') or {}).get('new_jobs', 0) or 0):,} new · "
+                 f"{int((official.get('funnel') or {}).get('after_prefilter', 0) or 0):,} relevant"),
+        "jd": (f"{usable_official:,}/{eligible_official:,} relevant jobs have JD "
+               f"({usable_official / eligible_official:.1%}) · {max(0, eligible_official - usable_official):,} still missing; "
+               f"{int(jd.get('cache_reused', 0) or 0):,} reused from cache · "
+               f"{int(jd.get('detail_requests', 0) or 0):,} detail requests") if eligible_official else "Relevant JD coverage unavailable",
+        "requests": (f"{len(queries):,} searches · {sum(int(stat.get('pages_fetched', 0) or 0) for stat in queries):,} "
+                     f"search pages · {int(jd.get('detail_requests', 0) or 0):,} detail requests"),
+        "sources": "Official company career sites",
+        "issue": str(components["official"].get("issue") or "") if components["official"]["run_state"] != "Healthy" else "",
+        "note": ("Remaining gaps: " + " · ".join(f"{name} {count}" for name, count in gaps) if gaps else "No remaining JD gaps")
+                + (" · request budget hit" if int(jd.get("budget_deferred", 0) or 0) else ""),
+    }
+
+    indeed_rows = list(indeed_snapshot.get("jobs") or [])
+    indeed_observed = observed(indeed_snapshot, indeed_state)
+    indeed_attempt = str(indeed_state.get("last_attempt_at") or "")
+    indeed_new = sum(str(row.get("first_seen") or "") == indeed_attempt for row in indeed_observed)
+    succeeded = int(indeed_state.get("queries_succeeded", 0) or 0)
+    failed_queries = int(indeed_state.get("queries_failed", 0) or 0)
+    not_run = int(indeed_state.get("queries_not_run", 0) or 0)
+    if not (succeeded or failed_queries or not_run):
+        succeeded = len(indeed_state.get("query_stats") or []) if indeed_state.get("status") == "ok" else 0
+    indeed_panel = {
+        "title": "Indeed", "status": components["indeed"]["run_state"],
+        "jobs": (f"{len(indeed_rows):,} current · {indeed_new:,} new this run" if indeed_state.get("status") == "ok" and indeed_observed else
+                 f"{len(indeed_rows):,} current · new-this-run count unavailable" if indeed_state.get("status") == "ok" else
+                 f"{int(indeed_state.get('partial_fresh_kept', 0) or 0):,} fresh jobs preserved · "
+                 f"{int(indeed_state.get('partial_carried_count', 0) or 0):,} previous jobs retained"
+                 if indeed_state.get("status") == "partial" else f"{len(indeed_rows):,} cached jobs remain"),
+        "jd": (f"{sum(len(str(row.get('description') or '').strip()) >= 200 for row in indeed_rows):,}/"
+               f"{len(indeed_rows):,} current jobs have JD · "
+               f"{sum(len(str(row.get('description') or '').strip()) < 200 for row in indeed_rows):,} missing in Indeed snapshot; "
+               "Board handles missing JDs"),
+        "requests": f"{succeeded:,} searches completed · {failed_queries:,} failed · {not_run:,} not run",
+        "sources": ("Partial fresh results + last-good snapshot" if indeed_state.get("status") == "partial"
+                    else "Fresh Indeed collection" if indeed_state.get("status") == "ok"
+                    else "Last-good Indeed snapshot"),
+        "issue": str(indeed_state.get("reason") or components["indeed"].get("issue") or "")
+                 if components["indeed"]["run_state"] != "Healthy" else "",
+        "note": "",
+    }
+    return {"board": board_panel, "linkedin": linkedin_panel,
+            "official": official_panel, "indeed": indeed_panel}
+
+
 def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     now = now or datetime.now(timezone.utc)
     latest, history = _run_history(base)
@@ -861,16 +1036,23 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
     }
 
     current_rows: dict[str, dict[str, Any]] = {}
+    stored_rows: dict[str, dict[str, Any]] = {}
     for key, (_label, folder, store_name) in PIPELINES.items():
         payload = _read(base / "output" / folder / store_name, {}) or {}
         for entry in payload.get("entries", []):
+            identity = str(entry.get("canonical_job_key") or recovery_policy.identity(entry))
+            stored_rows.setdefault(identity, entry)
             seen = recovery_policy.stamp(entry.get("first_seen"))
             if not seen or not timedelta(0) <= now - seen <= timedelta(hours=72):
                 continue
-            identity = str(entry.get("canonical_job_key") or recovery_policy.identity(entry))
             current_rows.setdefault(identity, entry)
     no_jd = [entry for entry in current_rows.values()
-             if len(str(entry.get("description") or "").strip()) < 200]
+             if not entry.get("description_available")
+             and len(str(entry.get("description") or "").strip()) < 200]
+    older_no_jd = sum(not entry.get("description_available")
+                      and len(str(entry.get("description") or "").strip()) < 200
+                      and not recovery_policy.fresh(entry, now)
+                      for entry in stored_rows.values())
     recovery_summary = {
         "discovered_this_run": sum(int((latest.get(key, {}).get("output") or {}).get("new_jobs", 0) or 0)
                                    for key in PIPELINES),
@@ -890,17 +1072,103 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                              for entry in no_jd),
         "attempted_unresolved": sum(bool(entry.get("recovery_methods") or entry.get("official_search_attempted_at")
                                          or entry.get("linkedin_detail_attempted_at")) for entry in no_jd),
+        "older_no_jd": older_no_jd,
     }
     if recovery_summary["pending_fresh"] >= 20:
         limitations.append(f"Fresh JD recovery backlog: {recovery_summary['pending_fresh']} pending")
     if (recovery.get("linkedin_rate_limited") or
             (local_sources.get("linkedin", {}).get("search_collection") or {}).get("rate_limited")):
         limitations.append("LinkedIn HTTP 429 stopped further LinkedIn requests")
-    overall = max((components[name]["status"] for name in PIPELINES), key=SEVERITY.get)
+    for item in components.values():
+        item["run_state"] = _main_state(item)
+    online_status = (latest.get("board") or {}).get("online_recovery") or {}
+    if (online_status.get("deadline_reached") or
+            int(online_status.get("jobs_processed", 0) or 0) >= recovery_policy.RecoveryBudget().max_jobs):
+        if components["board"]["run_state"] == "Healthy":
+            components["board"]["run_state"] = "Partial"
+            components["board"]["issue"] = "Online JD recovery budget or deadline reached"
+    official_jd_status = (latest.get("official") or {}).get("jd_recovery") or {}
+    if official_jd_status.get("errors") or int(official_jd_status.get("budget_deferred", 0) or 0):
+        if components["official"]["run_state"] == "Healthy":
+            components["official"]["run_state"] = "Partial"
+            components["official"]["issue"] = (
+                str((official_jd_status.get("errors") or [""])[0]) or
+                f"{int(official_jd_status.get('budget_deferred', 0) or 0)} detail jobs deferred by budget"
+            )
+    linkedin_jd_status = (local_sources.get("linkedin") or {}).get("detail_enrichment") or {}
+    if (linkedin_jd_status.get("rate_limited") or linkedin_jd_status.get("budget_exhausted")
+            or int(linkedin_jd_status.get("failed", 0) or 0)):
+        if components["linkedin"]["run_state"] == "Healthy":
+            components["linkedin"]["run_state"] = "Partial"
+            components["linkedin"]["issue"] = (
+                str(linkedin_jd_status.get("blocked") or "") or
+                ("LinkedIn JD request budget reached" if linkedin_jd_status.get("budget_exhausted") else
+                 "LinkedIn JD rate limited" if linkedin_jd_status.get("rate_limited") else
+                 f"{int(linkedin_jd_status.get('failed', 0) or 0)} LinkedIn JD requests failed")
+            )
+    required = ("board", "official", "syncareer", "linkedin", "indeed")
+    overall_detail_status = max((components[name]["status"] for name in PIPELINES), key=SEVERITY.get)
+    overall = ("Failed" if any(components[name]["run_state"] == "Failed" for name in required)
+               else "Partial" if any(components[name]["run_state"] == "Partial" for name in required)
+               else "Healthy")
+    for group_name, names in (("Remote", ("board", "official", "syncareer", "indeed")),
+                              ("GitHub Actions", tuple(PIPELINES)), ("Local Mac", ("linkedin",))):
+        groups[group_name]["run_state"] = (
+            "Failed" if any(components[name]["run_state"] == "Failed" for name in names) else
+            "Partial" if any(components[name]["run_state"] == "Partial" for name in names) else "Healthy"
+        )
+    # Remote collectors report current JD inventory, not a complete count of
+    # JDs newly fetched in that run. Do not relabel that inventory as new work.
+    board_direct = int((((latest.get("board") or {}).get("enrichment") or {}).get("direct") or {}).get("jds_resolved", 0) or 0)
+    board_followup = int(((latest.get("board") or {}).get("online_recovery") or {}).get("jds_recovered", 0) or 0)
+    official_detail = sum(int(row.get("detail_success", 0) or 0) for row in
+                          (((latest.get("official") or {}).get("jd_recovery") or {}).get("per_company") or {}).values())
+    syncareer_detail = int(((latest.get("syncareer") or {}).get("enrichment") or {}).get("detail_api_resolved", 0) or 0)
+    github_measured = board_direct + board_followup + official_detail + syncareer_detail
+    local_detail = int(((local_sources.get("linkedin") or {}).get("detail_enrichment") or {}).get("detail_jds_fetched", 0) or 0)
+    local_followup = (int(recovery.get("official_jds_recovered", 0) or 0)
+                      + int(recovery.get("linkedin_detail_recoveries", 0) or 0)
+                      + int(recovery.get("targeted_linkedin_detail_jds", 0) or 0))
+    groups["Remote"].update(new_jds_this_run=None, new_jds_note="Not measured across remote collectors")
+    groups["GitHub Actions"].update(new_jds_this_run=github_measured,
+                                    new_jds_note="Measured direct and follow-up JDs; source-supplied JDs are not counted")
+    groups["Local Mac"].update(new_jds_this_run=local_detail + local_followup,
+                               new_jds_note=f"{local_detail} fetched directly · {local_followup} recovered later")
+    latest_runs = _latest_run_panels(base, latest, components, local_sources, recovery)
+    board_recovery = (latest.get("board") or {}).get("online_recovery") or {}
+    board_direct = (((latest.get("board") or {}).get("enrichment") or {}).get("direct") or {})
+    board_attempted = int(board_recovery.get("jobs_processed", 0) or 0)
+    board_missing = max(0, board_attempted - int(board_direct.get("jds_resolved", 0) or 0)
+                        - int(board_recovery.get("jds_recovered", 0) or 0))
+    linkedin_detail = (local_sources.get("linkedin") or {}).get("detail_enrichment") or {}
+    coverage = {
+        "board_attempted": board_attempted,
+        "board_still_missing": board_missing,
+        "linkedin_fresh_needed": int(linkedin_detail.get("eligible", 0) or 0),
+        "linkedin_still_missing": int(linkedin_detail.get("remaining_no_jd", 0) or 0),
+        "using_fallback": recovery_summary["fallback_current"],
+        "older_no_jd": older_no_jd,
+    }
+    attention = []
+    for name in ("board", "official", "syncareer", "linkedin", "indeed", "glassdoor"):
+        item = components[name]
+        if item["run_state"] != "Healthy":
+            attention.append(f"{item['label']}: {item.get('issue') or item.get('detail') or item['run_state']}")
+    if coverage["board_still_missing"] or coverage["linkedin_still_missing"]:
+        attention.append(
+            f"Fresh JD gaps: Board {coverage['board_still_missing']:,} · "
+            f"LinkedIn {coverage['linkedin_still_missing']:,}"
+        )
+    if (local_sources.get("linkedin") or {}).get("status") == "partial" and components["linkedin"]["run_state"] == "Healthy":
+        attention.append(f"LinkedIn: focused collection expected · {int((local_sources.get('linkedin') or {}).get('partial_carried_count', 0) or 0):,} older jobs carried")
     report = {
         "generated_at": now.isoformat(),
         "overall": overall,
+        "overall_detail_status": overall_detail_status,
         "components": components,
+        "latest_runs": latest_runs,
+        "coverage": coverage,
+        "attention": attention,
         "local_scheduler": local_scheduler,
         "groups": groups,
         "problems": problems,
@@ -923,78 +1191,138 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
     public.mkdir(parents=True, exist_ok=True)
     (public / "health.json").write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (public / "health-history.json").write_text(json.dumps(history, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    rows = "".join(
-        f"<tr><td>{html.escape(item['label'])}</td><td>{html.escape(item['status'])}</td>"
-        f"<td>{int(item.get('volumes', {}).get('jobs', 0))} / {int(item.get('volumes', {}).get('jd', 0))} / "
-        f"{int(item.get('volumes', {}).get('pass', 0))}</td>"
-        f"<td>{html.escape(_display_time(item.get('last_good_at')))}</td>"
-        f"<td>{html.escape(item.get('issue') or '—')}</td>"
-        f"<td>{html.escape(str(item.get('consecutive_failures', 0)))}</td></tr>"
-        for item in report["components"].values()
+
+    def esc(value: object) -> str:
+        return html.escape(str(value or ""))
+
+    def number(value: object) -> str:
+        return f"{int(value or 0):,}"
+
+    def duration(value: object) -> str:
+        if value is None:
+            return "—"
+        seconds = round(float(value))
+        minutes, seconds = divmod(seconds, 60)
+        return f"{minutes}m {seconds:02d}s" if minutes else f"{seconds}s"
+
+    panels = []
+    for name in ("board", "linkedin", "official", "indeed"):
+        item = report["latest_runs"][name]
+        lines = [
+            ("Jobs", item["jobs"]), ("JD & recovery", item["jd"]),
+            ("Requests", item["requests"]), ("Sources", item["sources"]),
+        ]
+        rows = ""
+        for label, value in lines:
+            note_here = (label == "Requests" and name != "official") or (label == "Sources" and name == "official")
+            note = f'<small>{esc(item["note"])}</small>' if note_here and item.get("note") else ""
+            rows += f'<div class="run-line"><dt>{esc(label)}</dt><dd>{esc(value)}{note}</dd></div>'
+        if item.get("issue"):
+            rows += f'<div class="run-line issue"><dt>Issue</dt><dd>{esc(item["issue"])}</dd></div>'
+        panels.append(
+            f'<article class="run-card"><h3>{esc(item["title"])} <span class="state state-{esc(item["status"]).lower()}">{esc(item["status"])}</span></h3>'
+            f'<dl>{rows}</dl></article>'
+        )
+
+    component_rows = []
+    for name, item in report["components"].items():
+        issue = str(item.get("issue") or "")
+        if name == "linkedin" and item.get("latest_attempt_status") == "partial":
+            carried = int(item.get("partial_carried_count", 0) or 0)
+            last_full = _display_time(item.get("last_good_at"))
+            issue = f"{issue + ' · ' if issue else ''}{carried:,} carried · last full {last_full}"
+        component_rows.append(
+            f'<tr><th scope="row">{esc(item["label"])}</th>'
+            f'<td><span class="state state-{esc(item["run_state"]).lower()}">{esc(item["run_state"])}</span></td>'
+            f'<td class="num">{number(item.get("volumes", {}).get("jobs"))}</td>'
+            f'<td class="num">{number(item.get("volumes", {}).get("jd"))}</td>'
+            f'<td class="num">{number(item.get("volumes", {}).get("pass"))}</td>'
+            f'<td>{esc(_display_time(item.get("latest_attempt_at")))}</td>'
+            f'<td>{esc(issue) if issue else "—"}</td></tr>'
+        )
+
+    execution_rows = []
+    for name, group in report["groups"].items():
+        new = group.get("new_jds_this_run")
+        new_text = "—" if new is None else number(new)
+        note = str(group.get("new_jds_note") or "")
+        execution_rows.append(
+            f'<tr><th scope="row">{esc(name)}</th>'
+            f'<td><span class="state state-{esc(group["run_state"]).lower()}">{esc(group["run_state"])}</span></td>'
+            f'<td class="num">{number(group.get("jobs_processed"))}</td>'
+            f'<td class="num">{new_text}{f"<small>{esc(note)}</small>" if note else ""}</td>'
+            f'<td>{esc(duration(group.get("elapsed_seconds")))}</td></tr>'
+        )
+
+    recovery = report["recovery_summary"]
+    coverage = report.get("coverage") or {}
+    attention = report.get("attention") or []
+    attention_html = "".join(f"<li>{esc(item)}</li>" for item in attention) or "<li>None</li>"
+    headline_attention = " · ".join(attention[:2]) if attention else "None"
+    current = report["components"]
+    current_text = " · ".join(
+        f"{label} {number(current[name].get('volumes', {}).get('jobs'))}"
+        for name, label in (("board", "Board"), ("official", "Official"),
+                            ("linkedin", "LinkedIn"), ("indeed", "Indeed"))
     )
-    groups = "".join(
-        f"<tr><td>{html.escape(name)}</td><td>{html.escape(str(group['status']))}</td>"
-        f"<td>{group['jobs_processed']}</td><td>{group['jds_recovered']}</td>"
-        f"<td>{html.escape(str(group.get('elapsed_seconds') if group.get('elapsed_seconds') is not None else '—'))}</td></tr>"
-        for name, group in report.get("groups", {}).items()
-    )
-    issues = "".join(f"<li>{html.escape(issue)}</li>" for issue in report["problems"]) or "<li>None</li>"
-    degradations = "".join(f"<li>{html.escape(issue)}</li>" for issue in report.get("degradations", [])) or "<li>None</li>"
-    limitations = "".join(f"<li>{html.escape(issue)}</li>" for issue in report.get("limitations", [])) or "<li>None</li>"
-    examples = "".join(
-        f"<li>{html.escape(item['pipeline'])}: <a href=\"{html.escape(item['url'])}\">{html.escape(item['company'])} — {html.escape(item['title'])}</a> — {html.escape(item['reason'])}</li>"
-        for item in report["unresolved_examples"]
-    ) or "<li>None</li>"
     scheduler = report["local_scheduler"]
-    schedule_parts = [
-        f"Last run: {_display_time(scheduler['last_successful_local_run_at'])}",
-        f"Latest slot: {_display_time(scheduler['last_scheduled_slot_at'])}",
-        f"Next scheduled run: {_display_time(scheduler['next_scheduled_run_at'])}",
-        f"Catch-up: {str(scheduler['catch_up_status']).replace('_', ' ')}",
-    ]
-    if scheduler["scheduled_slot_missed"]:
-        schedule_parts.append("Scheduled slot missed")
-    if scheduler["catch_up_pending"]:
-        schedule_parts.append("Catch-up pending")
-    schedule_parts.append(str(scheduler["reason"]))
-    schedule_summary = " · ".join(schedule_parts)
-    scheduler_row = (f"<tr class=\"schedule-row\"><th>Local Mac schedule</th>"
-                     f"<td colspan=\"5\">{html.escape(schedule_summary)}</td></tr>")
-    summary_html = " · ".join(
-        f"{html.escape(key.replace('_', ' '))}: {int(value)}"
-        for key, value in report.get("recovery_summary", {}).items()
+    schedule_text = " · ".join((
+        f"Last run {_display_time(scheduler['last_successful_local_run_at'])}",
+        f"Latest slot {_display_time(scheduler['last_scheduled_slot_at'])}",
+        f"Next scheduled run {_display_time(scheduler['next_scheduled_run_at'])}",
+        f"Catch-up {str(scheduler['catch_up_status']).replace('_', ' ')}",
+        str(scheduler["reason"]),
+    ))
+    diagnostics = {
+        "components": {key: {"status": item.get("status"), "detail": item.get("detail"),
+                             "consecutive_failures": item.get("consecutive_failures"),
+                             "degradation_kinds": item.get("degradation_kinds")}
+                       for key, item in report["components"].items()},
+        "groups": report["groups"], "enrichment": report["enrichment"],
+        "recovery_summary": recovery, "coverage": coverage,
+        "problems": report.get("problems", []), "degradations": report.get("degradations", []),
+        "limitations": report.get("limitations", []),
+        "unresolved_examples": report.get("unresolved_examples", []),
+    }
+    style = """
+    :root{color-scheme:light}*{box-sizing:border-box}body{font:15px/1.5 system-ui,-apple-system,sans-serif;color:#1b2c25;background:#f8faf8;margin:0}
+    main{max-width:1200px;margin:auto;padding:32px 20px 64px}h1{font-size:29px;margin:0}h2{font-size:21px;margin:34px 0 14px}h3{font-size:18px;margin:0 0 12px}
+    p{margin:8px 0}a{color:#17654c}.muted,small{color:#607268}small{display:block;font-size:12px;margin-top:2px}
+    .top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.state{font-size:12px;font-weight:750;padding:3px 8px;border-radius:999px;background:#e7f4ed;color:#176341;white-space:nowrap}
+    .state-partial{background:#fff0ce;color:#795309}.state-failed{background:#fae2df;color:#a22f2b}.strip{padding:11px 15px;background:white;border:1px solid #dbe6dd;border-radius:9px;margin-top:10px}
+    .run-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.run-card{background:white;border:1px solid #dbe6dd;border-radius:12px;padding:18px 20px;box-shadow:0 3px 10px #1c3c2508}
+    .run-card h3{display:flex;gap:10px;align-items:center}.run-card dl{margin:0}.run-line{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px;padding:8px 0;border-top:1px solid #eef2ee}
+    dt{font-weight:700;color:#415d4d}dd{margin:0}.issue dd{color:#9d3b25}.metric-row{display:flex;gap:12px;flex-wrap:wrap}.metric{flex:1;min-width:230px;background:white;border:1px solid #dbe6dd;border-radius:9px;padding:13px 16px}
+    .metric strong{display:block;font-size:19px}table{border-collapse:collapse;width:100%;background:white}th,td{padding:9px 11px;text-align:left;border-bottom:1px solid #e4ebe5;vertical-align:top}thead th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:#61746a}
+    .table-wrap{overflow-x:auto;border:1px solid #dbe6dd;border-radius:9px}.num{text-align:right;white-space:nowrap}ul{padding-left:22px}li{margin:6px 0}details{border:1px solid #dbe6dd;background:white;border-radius:9px;padding:13px 16px;margin-top:24px}summary{cursor:pointer;font-weight:700}
+    pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;background:#f4f7f4;padding:12px;border-radius:6px}
+    @media(max-width:780px){.run-grid{grid-template-columns:1fr}.run-line{grid-template-columns:90px minmax(0,1fr)}main{padding:22px 14px}}
+    """
+    page = (
+        '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+        f'<title>Pipeline Health · {esc(report["overall"])}</title><style>{style}</style><body><main>'
+        f'<div class="top"><h1>Pipeline Health</h1><span class="state state-{esc(report["overall"]).lower()}">{esc(report["overall"])}</span></div>'
+        f'<p class="muted">Generated {esc(_display_time(report["generated_at"]))} · '
+        '<a href="index.html">Dashboard</a> · <a href="health.json">JSON</a> · '
+        '<a href="health-history.json">History</a></p>'
+        f'<p class="strip"><strong>Current:</strong> {esc(current_text)}</p>'
+        f'<p class="strip"><strong>Needs attention:</strong> {esc(headline_attention)}</p>'
+        '<h2>Latest runs</h2><div class="run-grid">' + "".join(panels) + '</div>'
+        '<h2>Components</h2><div class="table-wrap"><table><thead><tr><th>Source</th><th>Status</th><th>Current jobs</th><th>With JD</th><th>Passed</th><th>Latest attempt</th><th>Issue</th></tr></thead><tbody>'
+        + "".join(component_rows) + '</tbody></table></div>'
+        '<h2>Coverage</h2><div class="metric-row">'
+        f'<div class="metric"><span>This run</span><strong>{number(recovery.get("discovered_this_run"))} discovered · {number(recovery.get("verified_this_run"))} verified</strong></div>'
+        f'<div class="metric"><span>Fresh JD backlog</span><strong>{number(coverage.get("board_still_missing"))} Board still missing · {number(coverage.get("linkedin_still_missing"))} LinkedIn still missing</strong>'
+        f'<small>{number(coverage.get("board_attempted"))} Board jobs attempted · {number(coverage.get("linkedin_fresh_needed"))} LinkedIn fresh jobs checked · {number(coverage.get("using_fallback"))} current jobs using fallback; source counts may overlap</small></div>'
+        f'<div class="metric"><span>Older stored jobs without JD</span><strong>{number(coverage.get("older_no_jd"))}</strong><small>Stored inventory first seen over 24 hours ago, separate from current recovery failures</small></div>'
+        '</div><h2>Needs attention</h2><ul>' + attention_html + '</ul>'
+        '<h2>Execution</h2><div class="table-wrap"><table><thead><tr><th>Runner</th><th>Status</th><th>Jobs processed</th><th>New JDs this run</th><th>Time</th></tr></thead><tbody>'
+        + "".join(execution_rows) + '</tbody></table></div>'
+        '<details><summary>Technical details</summary>'
+        f'<p><strong>Local Mac schedule:</strong> {esc(schedule_text)}</p>'
+        '<h3>Consecutive failures and raw diagnostics</h3>'
+        '<p>Subcomponents, request limits, enrichment, retry state, failure reasons, and recovery methods remain in the JSON report.</p>'
+        f'<pre>{esc(json.dumps(diagnostics, indent=2, ensure_ascii=False))}</pre>'
+        '</details></main></body></html>'
     )
-    linkedin = report["components"]["linkedin"]
-    latest = linkedin.get("latest_run") or {}
-    def metric(key: str) -> str:
-        value = latest.get(key)
-        return "—" if value is None else str(int(value))
-    def jds(key: str) -> str:
-        return f"{metric(key)} {'JD' if latest.get(key) == 1 else 'JDs'}"
-    rate_limit_note = ("LinkedIn JD requests stopped at HTTP 429. Other recovery methods continued."
-                       if latest.get("detail_429") else "No LinkedIn detail 429 recorded in this run.")
-    probe_at = recovery_policy.stamp(latest.get("detail_cooldown_until"))
-    generated_at = recovery_policy.stamp(report.get("generated_at"))
-    probe_note = (f" Next detail probe after {_display_time(probe_at.isoformat())}."
-                  if probe_at and generated_at and probe_at > generated_at else
-                  " Detail probe eligible on the next Mac run." if probe_at else "")
-    after_429_note = (f"After the 429: {jds('post_429_jds_recovered')} recovered. "
-                      if latest.get("post_429_jds_recovered") is not None else
-                      "After the 429: recovery count was not recorded for this run. ")
-    linkedin_html = (
-        f"<section class=\"linkedin-run\"><h2>LinkedIn latest local run · {html.escape(linkedin['status'])}</h2>"
-        f"<p>Attempt {html.escape(_display_time(latest.get('attempt_at')))}. "
-        f"{html.escape(rate_limit_note + probe_note)}</p>"
-        f"<p><strong>{metric('titles_found')} title cards found</strong> · "
-        f"{metric('titles_kept')} kept · <strong>{jds('jds_on_kept_titles')} on kept cards</strong> "
-        f"(description text ≥200 characters, including cached text).</p>"
-        f"<p>Initial enrichment: {jds('search_jds_resolved')}. "
-        f"Follow-up recovery: {jds('recovery_linkedin_jds')} via LinkedIn"
-        f"{' before the 429' if latest.get('detail_429') else ''}; "
-        f"{jds('recovery_other_jds')} via other methods. "
-        f"{after_429_note if latest.get('detail_429') else ''}"
-        f"{'No further LinkedIn detail requests were made after the 429.' if latest.get('detail_429') else ''}</p>"
-        f"</section>"
-    )
-    page = f"""<!doctype html><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Pipeline health</title><style>body{{font:15px/1.45 system-ui;max-width:1250px;margin:40px auto;padding:0 20px;color:#172019}}table{{border-collapse:collapse;width:100%}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}}code{{background:#eee;padding:2px 4px}}li{{margin:5px 0}}.linkedin-run{{border:1px solid #d9a234;background:#fff8e6;border-radius:10px;padding:4px 18px;margin:20px 0}}.linkedin-run h2{{margin-bottom:4px}}.schedule-row{{background:#f5f7f5}}.schedule-row td{{line-height:1.6}}</style><h1>Pipeline health: {report['overall']}</h1><p>Generated {html.escape(_display_time(report['generated_at']))}. <a href=\"index.html\">Dashboard</a> · <a href=\"health.json\">current JSON</a> · <a href=\"health-history.json\">recent run and batch history</a></p>{linkedin_html}<h2>Components</h2><table><tr><th>Source</th><th>Status</th><th>Jobs / JD / Pass</th><th>Updated</th><th>Issue</th><th>Consecutive failures</th></tr>{rows}{scheduler_row}</table><p>{summary_html}</p><h2>Execution</h2><table><tr><th>Component</th><th>Status</th><th>Jobs processed</th><th>JDs recovered</th><th>Elapsed seconds</th></tr>{groups}</table><details><summary>Subcomponents and diagnostics</summary><pre>{html.escape(json.dumps(report.get('groups', {}), indent=2))}</pre><pre>{html.escape(json.dumps({key: item.get('detail') for key, item in report['components'].items()}, indent=2))}</pre></details><h2>Actionable problems</h2><ul>{issues}</ul><h2>Active warnings</h2><ul>{degradations}</ul><h2>Recovered behavior / known limitations</h2><ul>{limitations}</ul><h2>Enrichment funnel</h2><pre>{html.escape(json.dumps(report['enrichment'], indent=2))}</pre><h2>Unresolved JD examples</h2><ul>{examples}</ul>"""
     (public / "health.html").write_text(page, encoding="utf-8")
