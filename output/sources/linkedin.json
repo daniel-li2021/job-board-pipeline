@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 1598,
+  "count": 1604,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-09-27T22:00:04.706488+00:00",
+    "scraped_at": "2026-09-28T04:00:17.977240+00:00",
     "collector": {
-      "commit": "4df112f06d8e9a74ea2de44da341819a64cb0547",
+      "commit": "729fcae1468ee780f8f66a3f49bb72d16e5d5f62",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 30.579,
+    "elapsed_seconds": 31.196,
     "query_stats": [
       {
         "query": "software engineer",
@@ -25,8 +25,8 @@
         "unique_contribution": 49,
         "first_pass_survivors": 47,
         "original_postings_resolved": 0,
-        "jds_resolved": 11,
-        "elapsed_seconds": 8.344
+        "jds_resolved": 12,
+        "elapsed_seconds": 10.471
       },
       {
         "query": "ai engineer",
@@ -37,10 +37,10 @@
         "raw_jobs": 30,
         "unique_jobs": 30,
         "unique_contribution": 30,
-        "first_pass_survivors": 30,
+        "first_pass_survivors": 29,
         "original_postings_resolved": 0,
-        "jds_resolved": 5,
-        "elapsed_seconds": 4.914
+        "jds_resolved": 6,
+        "elapsed_seconds": 5.053
       },
       {
         "query": "backend engineer",
@@ -54,7 +54,7 @@
         "first_pass_survivors": 19,
         "original_postings_resolved": 0,
         "jds_resolved": 3,
-        "elapsed_seconds": 3.207
+        "elapsed_seconds": 3.229
       },
       {
         "query": "full-stack engineer",
@@ -64,11 +64,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 11,
+        "unique_contribution": 12,
         "first_pass_survivors": 16,
         "original_postings_resolved": 0,
         "jds_resolved": 3,
-        "elapsed_seconds": 3.284
+        "elapsed_seconds": 3.53
       },
       {
         "query": "machine learning engineer",
@@ -78,31 +78,31 @@
         "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 8,
-        "first_pass_survivors": 20,
+        "unique_contribution": 10,
+        "first_pass_survivors": 19,
         "original_postings_resolved": 0,
-        "jds_resolved": 5,
-        "elapsed_seconds": 3.227
+        "jds_resolved": 6,
+        "elapsed_seconds": 3.275
       }
     ],
     "detail_enrichment": {
-      "eligible": 19,
-      "cache_reused": 9,
-      "requests": 8,
-      "responses": 8,
-      "successful_responses": 8,
+      "eligible": 23,
+      "cache_reused": 16,
+      "requests": 5,
+      "responses": 5,
+      "successful_responses": 5,
       "request_limit": 8,
-      "budget_deferred": 1,
-      "budget_exhausted": true,
+      "budget_deferred": 0,
+      "budget_exhausted": false,
       "retry_deferred": 0,
       "retry_attempts": 0,
-      "exact_official": 1,
-      "official_deferred": 1,
+      "exact_official": 2,
+      "official_deferred": 2,
       "rate_limited": false,
-      "jds_resolved": 17,
+      "jds_resolved": 21,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 8,
+      "detail_jds_fetched": 5,
       "intentional_skips": 0,
       "blocked": "",
       "scrapling_requests": 0,
@@ -110,8 +110,7 @@
       "scrapling_error": "",
       "remaining_no_jd": 2,
       "failure_reasons": {
-        "official_detail_deferred": 1,
-        "no_description": 1
+        "official_detail_deferred": 2
       },
       "cooldown_active": false,
       "probe": false,
@@ -119,18 +118,18 @@
     },
     "official_enrichment": {
       "cache": 8,
-      "dedicated_matches": 2,
+      "dedicated_matches": 3,
       "remote_exact_peer": 1,
       "search_requests": 0,
       "search_provider": "duckduckgo",
       "official_page_requests": 0,
-      "remaining_no_jd": 98
+      "remaining_no_jd": 101
     },
     "partial": true,
     "blocked_reason": "focused query coverage",
-    "collected_count": 107,
-    "carried_count": 1495,
-    "jd_recovery_at": "2026-09-27T22:00:35.375502+00:00"
+    "collected_count": 110,
+    "carried_count": 1499,
+    "jd_recovery_at": "2026-09-28T04:00:50.267596+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -1734,7 +1733,14 @@
     "linkedin|id|4235568776": "2026-09-06T17:53:56.641470+00:00",
     "linkedin|id|4426178293": "2026-09-06T03:50:27.645294+00:00",
     "linkedin|id|4471303489": "2026-09-27T22:00:04.706488+00:00",
-    "linkedin|id|4467330782": "2026-09-20T15:11:15.636652+00:00"
+    "linkedin|id|4467330782": "2026-09-20T15:11:15.636652+00:00",
+    "linkedin|id|4472474542": "2026-09-28T04:00:17.977240+00:00",
+    "linkedin|id|4472479427": "2026-09-28T04:00:17.977240+00:00",
+    "linkedin|id|4471310299": "2026-09-28T04:00:17.977240+00:00",
+    "linkedin|id|4434371508": "2026-09-28T04:00:17.977240+00:00",
+    "linkedin|id|4455341444": "2026-09-14T01:09:47.071119+00:00",
+    "linkedin|id|4472481124": "2026-09-28T04:00:17.977240+00:00",
+    "linkedin|id|4472474363": "2026-09-28T04:00:17.977240+00:00"
   },
   "jobs": [
     {
@@ -2214,7 +2220,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -2240,7 +2246,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -3673,7 +3679,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -5020,7 +5026,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -5293,7 +5299,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -5707,7 +5713,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -6295,7 +6301,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -6666,6 +6672,37 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4472474542",
+      "source": "linkedin",
+      "company": "Baxter International Inc.",
+      "title": "Principal Engineer, Software R&D,",
+      "location": "Raleigh, NC",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/principal-engineer-software-r-d-at-baxter-international-inc-4472474542",
+      "official_url": "",
+      "description": "This is where your work makes a difference. At Baxter, we believe every person—regardless of who they are or where they are from—deserves a chance to live a healthy life. It was our founding belief in 1931 and continues to be our guiding principle. We are redefining healthcare delivery to make a greater impact today, tomorrow, and beyond. Our Baxter colleagues are united by our Mission to Save and Sustain Lives. Together, our community is driven by a culture of courage, trust, and collaboration. Every individual is empowered to take ownership and make a meaningful impact. We strive for efficient and effective operations, and we hold each other accountable for delivering exceptional results. Here, you will find more than just a job—you will find purpose and pride. Your Role at Baxter As a Principal Software Engineer, you will play a crucial role in designing, developing, and maintaining software applications using the .NET framework. You will work closely with cross-functional teams to deliver high-quality solutions that meet our clients’ needs. This position requires strong technical expertise, problem-solving skills, and a passion for continuous learning. What You'll Do Design, develop, test, and maintain scalable applications and services using C# and the .NET framework. Collaborate with product managers, architects, developers, and stakeholders to define technical requirements and solution designs. Develop and maintain RESTful APIs and GraphQL services that support modern application and integration needs. Write clean, maintainable, and high-quality code following established software engineering principles and best practices. Conduct code reviews, provide technical guidance, and contribute to the continuous improvement of development standards. Troubleshoot and resolve complex software defects, performance bottlenecks, and production issues. Partner with DevOps and engineering teams to support modern software delivery practices, including CI/CD and automated testing. Mentor and guide team members while fostering a culture of collaboration, innovation, and continuous learning. What You'll Bring 5+ years of experience in software development with a strong focus on the .NET ecosystem, including C#, Web APIs, and modern application development practices. Strong experience designing, developing, and optimizing applications using SQL Server or other relational database technologies. Experience building and consuming HTTP-based services, including RESTful APIs and GraphQL architectures. Hands-on experience with Object Relational Mapping (ORM) technologies such as Entity Framework, Dapper, or similar data access frameworks. Experience building and supporting cloud-based solutions within Microsoft Azure and/or AWS environments. Knowledge of microservices architecture, distributed systems, and scalable application design principles. Familiarity with DevOps practices, CI/CD pipelines, automated testing, and modern software delivery methodologies. Strong problem-solving, communication, and collaboration skills, with experience working effectively in Agile environments and contributing to technical leadership initiatives. Baxter is committed to supporting the needs for flexibility in the workplace. We do so through our flexible workplace policy which includes a required minimum number of days a week onsite. This policy provides the benefits of connecting and collaborating in-person in support of our Mission. The flexible workplace policy is subject to local laws and legal requirements. At its discretion, Baxter may decide to adjust, suspend, or discontinue as business needs change. We understand compensation is an important factor as you consider the next step in your career. At Baxter, we are committed to equitable pay for all employees, and we strive to be more transparent with our pay practices. The estimated base salary for this position is $120,000-$165,000 annually. The estimated range is meant to reflect an anticipated salary range for the position. We may pay more or less than of the anticipated range based upon market data and other factors, all of which are subject to change. Individual pay is based on upon location, skills and expertise, experience, and other relevant factors. This position may also be eligible for discretionary bonuses. For questions about this, our pay philosophy, and available benefits, please speak to the recruiter if you decide to apply and are selected for an interview. Applicants must be authorized to work for any employer in the U.S. We are unable to sponsor or take over sponsorship of an employment visa at this time. US Benefits At Baxter (except For Puerto Rico) This is where your well-being matters. Baxter offers comprehensive compensation and benefits packages for eligible roles. Our health and well-being benefits include medical and dental coverage that start on day one, as well as insurance coverage for basic life, accident, short-term and long-term disability, and business travel accident insurance. Financial and retirement benefits include the Employee Stock Purchase Plan (ESPP), with the ability to purchase company stock at a discount, and the 401(k) Retirement Savings Plan (RSP), with options for employee contributions and company matching. We also offer Flexible Spending Accounts, educational assistance programs, and time-off benefits such as paid holidays, paid time off ranging from 20 to 35 days based on length of service, family and medical leaves of absence, and paid parental leave. Additional benefits include commuting benefits, the Employee Discount Program, the Employee Assistance Program (EAP), and childcare benefits. Join us and enjoy the competitive compensation and benefits we offer to our employees. For additional information regarding Baxter US Benefits, please speak with your recruiter or visit our Benefits site: Benefits | Baxter Equal Employment Opportunity Baxter is an equal opportunity employer. Baxter evaluates qualified applicants without regard to race, color, religion, gender, national origin, age, sexual orientation, gender identity or expression, protected veteran status, disability/handicap status or any other legally protected characteristic. Know Your Rights: Workplace Discrimination is Illegal Reasonable Accommodations Baxter is committed to working with and providing reasonable accommodations to individuals with disabilities globally. If, because of a medical condition or disability, you need a reasonable accommodation for any part of the application or interview process, please click on the link here and let us know the nature of your request along with your contact information. Recruitment Fraud Notice Baxter has discovered incidents of employment scams, where fraudulent parties pose as Baxter employees, recruiters, or other agents, and engage with online job seekers in an attempt to steal personal and/or financial information. To learn how you can protect yourself, review our Recruitment Fraud Notice.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T04:00:17.977240+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "linkedin_detail_attempted_at": "2026-09-28T04:00:45.478945+00:00",
+      "linkedin_detail_fetched_at": "2026-09-28T04:00:45.478945+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4471824767",
@@ -7592,12 +7629,11 @@
       "first_seen": "2026-09-05T11:58:36.340966+00:00",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
-          "machine learning engineer"
+          "ai engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -7757,7 +7793,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -8099,12 +8135,11 @@
       "first_seen": "2026-09-05T11:58:36.340966+00:00",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
-          "machine learning engineer"
+          "ai engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -8625,7 +8660,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471174455",
@@ -9393,7 +9428,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -11054,7 +11089,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -12232,7 +12267,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -12395,7 +12430,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4448448654",
@@ -12943,7 +12978,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -12968,7 +13003,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -13155,7 +13190,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -13181,7 +13216,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -13206,7 +13241,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -13414,7 +13449,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -13439,7 +13474,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -13465,7 +13500,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -13490,7 +13525,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -13515,7 +13550,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -13735,7 +13770,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -14482,7 +14517,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -14533,7 +14568,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -14636,7 +14671,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -14661,7 +14696,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -16190,7 +16225,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -16770,7 +16805,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -17100,7 +17135,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -17678,7 +17713,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -17972,7 +18007,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -18261,7 +18296,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -18598,7 +18633,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -19306,7 +19341,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -20319,7 +20354,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -21333,7 +21368,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -21973,7 +22008,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -22115,7 +22150,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -22179,7 +22214,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -23311,7 +23346,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -23336,13 +23371,12 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_attempted_at": "2026-09-27T22:00:29.627882+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -23508,13 +23542,12 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_attempted_at": "2026-09-27T22:00:29.627882+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -23641,6 +23674,37 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "verified_this_run": false
+    },
+    {
+      "job_id": "4471310299",
+      "source": "linkedin",
+      "company": "Jobright.ai",
+      "title": "AI Engineer, Entry Level",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-09-27",
+      "aggregator_posted_date": "2026-09-27",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-entry-level-at-jobright-ai-4471310299",
+      "official_url": "",
+      "description": "Jobright is your personal AI job search agent that transforms the way you do job search from solo, time-consuming efforts to a fast, expert-guided journey, simplifying every job search step and accelerating your route to the best job outcomes. As an AI Engineer, Entry Level, you will work onsite with engineers, researchers, and product leaders to build and evaluate AI capabilities used by real job seekers. Why Join Us • Build real, production AI agents used by real users • High ownership and impact • Work at the intersection of AI, agents, and product • Shape how people experience AI-driven job search Responsibilities • Contribute to AI and machine-learning features for search, recommendations, and personalisation • Build data preparation, evaluation, and experimentation workflows • Work with prompts, embeddings, retrieval, structured outputs, and LLM APIs • Integrate AI capabilities into reliable product and backend systems • Investigate model quality, latency, and failure cases • Collaborate closely with engineering, product, and data teams onsite Qualification Required • Bachelor's or master's degree in Computer Science, Artificial Intelligence, Machine Learning, or a related field • Strong Python programming skills • Understanding of machine learning, NLP, or information retrieval fundamentals • Familiarity with APIs, Git, debugging, and basic software engineering practices • Ability to work onsite in the SF Bay Area Preferred • Experience with LLM applications, RAG, embeddings, or model evaluation • Familiarity with PyTorch, TensorFlow, scikit-learn, or cloud AI services • Experience building AI prototypes or data pipelines • Interest in AI agents, recommendation systems, or search technology",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T04:00:17.977240+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "linkedin_detail_attempted_at": "2026-09-28T04:00:45.478945+00:00",
+      "linkedin_detail_fetched_at": "2026-09-28T04:00:45.478945+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -24195,7 +24259,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -24576,13 +24640,12 @@
           "outcome": "no_match"
         }
       },
-      "linkedin_detail_attempted_at": "2026-09-27T22:00:29.627882+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -24613,13 +24676,12 @@
           "outcome": "no_match"
         }
       },
-      "linkedin_detail_attempted_at": "2026-09-27T22:00:29.627882+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -25868,7 +25930,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -26918,7 +26980,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -27680,7 +27742,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -27712,7 +27774,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -29061,7 +29123,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -29458,7 +29520,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -29594,7 +29656,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -31136,12 +31198,12 @@
       "title": "Full Stack Developer (Python, React.js)",
       "location": "Washington, DC",
       "posted_date": "2026-09-26",
-      "aggregator_posted_date": "2026-09-26",
+      "aggregator_posted_date": "2026-09-27",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-developer-python-react-js-at-peregrine-advisors-4472411294",
       "official_url": "",
-      "description": "Description About Peregrine Peregrine Advisors is a rapidly growing AI and data innovation hub helping government solve hard problems and deliver better outcomes. We work across the full lifecycle—from strategy and governance through architecture, engineering, analytics, AI, visualization, and training—for clients including the SEC, PCAOB, DDOT, and DCAA. Our clients describe our support as “absolutely excellent” and our people as “instrumental to organization’s success.” Winner of the United Nations COP27 Datathon, our work has earned all Exceptional CPARS ratings, SEC Chair’s Awards, the SEC Vision Award, and recognition from FDA leadership. We are also built differently. Peregrine is the first and only social enterprise organized as a Benefit Corporation and SBA 8(a) company focused on AI and data for government. We believe business success should create client value, social value, and opportunity for our people. As we enter our next stage of growth, we need dependable, motivated, and skilled people who have a combination of intellectual curiosity and intellectual courage. With new clients, larger programs, and expanding responsibilities, the people joining Peregrine now will have the opportunity to help shape the company we become. People first. Ownership always. We solve problems through people, process, and technology—in that order. Technology matters, but people make transformation happen. That principle defines our culture. Trust and motivation come before competence. We hire people we can trust, who care deeply about what they do, take ownership, learn quickly, help one another, and refuse to walk past a problem because it belongs to someone else. At Peregrine, you are not joining simply to fill a position. You are joining a team, taking ownership of a mission, and helping build a company. If that excites you, we should talk. At Peregrine Advisors, you will build and support cloud-native Python services on Amazon Web Services (AWS). But we hire people, not seats. As the work evolves, you will move to where the hardest problems are. This is a full-time W-2 position with a salary of $120,000 to $140,000 per year. It is a hybrid work arrangement based in the Washington, DC metropolitan area, and the commuting cadence varies by assignment. The initial engagement requires United States citizenship and the ability to obtain a Public Trust determination. Your first project Your first project will likely have you taking user stories from refinement through production. Depending on the assignment, you may: Turn user stories into back-end features in Python on a cloud-native AWS stack. Build automated workflows with AWS Lambda, Amazon Simple Storage Service (S3), and related services. Build the application programming interfaces (APIs) and integrations that connect internal systems and commercial products. Write unit and integration tests, take part in code reviews, and fix the defects you find, all the way to production. Help automate the continuous integration and continuous delivery (CI/CD) pipeline, write secure and accessible code, and support your services once they run. Use artificial intelligence (AI)-assisted development tools in your daily work, and review and test everything they generate. Support quality development practices, including test-driven development and automated testing. You deliver tested, working code you own through production, including the defects you find and fix. You automate business operations that replace manual checks, validations, and spreadsheet workflows, and you build deployment pipelines that make releasing services routine. This is where you start, not the shape of your career here. Requirements 4+ years of professional hands-on software development experience, including back-end work in Python and front-end work in React.js Bachelor's degree Familiarity with AWS cloud development, including AWS Lambda and Amazon S3 Ability to turn a defined specification into working, tested code and own it all the way to production, applying object-oriented design, design patterns, and data modeling Experience with relational databases such as PostgreSQL, SQL Server, or Oracle Experience with NoSQL databases, for example MongoDB or DynamoDB Sound analytical judgment, with strong troubleshooting and problem-solving skills Experience delivering in an Agile framework such as Scrum or Kanban, with work tracked in a tool such as Jira Excellent communication skills, including the ability to work directly with non-technical client stakeholders and turn business requirements into technical solutions The ability to estimate your assigned tasks and work efforts accurately Proficiency in writing, PowerPoint, and Excel Preferred Hands-on delivery of production workloads on AWS, an AWS certification, or a Python certification Experience in federal information technology Client-facing consulting experience Familiarity with AI-assisted developer tools Familiarity with DevSecOps practices and CI/CD pipelines Who You Are You care about what you build and judge it by whether it works for the people who rely on it. As priorities move, you move with them, and you learn a new tool or domain deeply enough to make judgment calls in it rather than follow instructions. You experiment, fail, learn, and repeat quickly. You would rather own an outcome than be handed a task. What You Bring A practical command of modern cloud development, with the range to build something new or make an existing system work better. The matching delivery habits, meaning version control, unit and integration testing, code review, secure coding, and accessibility. Plain-language communication about your work with the people who depend on it, explaining clearly and listening for what they need. The precision to work where accuracy and auditability are not optional. You adapt your development workflow as AI tools evolve, using them to help implement, test, and improve the components you own. You give the tools clear context, review and test their output, and remain accountable for the code you deliver. When we talk Be prepared to discuss a difficult problem you worked through, the decisions you made, what happened, and what you learned. Benefits Medical, dental, and vision with the employee premium fully paid and half of dependent premiums; employer-paid life, accidental death, and short-term and long-term disability insurance; a 401(k) matched 100% up to 4% of salary, vesting immediately; unlimited paid time off; and sponsored professional certifications and continuing education. What We Offer You will work alongside developers, engineers, data scientists, architects, and strategists, on work ranging from strategy to implementation. We support your development across assignments and clients through extensive onboarding, sponsored professional certifications such as the Data Management Capability Assessment Model (DCAM) and AWS technical certifications, and rotation across functions to expand your skills and perspective. The mission is real, the problems are hard, and you own what you ship. What We Commit To As a Benefit Corporation, our commitment runs three ways: real, measurable value for our clients; government that works better for the public; and a team that makes everyone in it better. We hire people who want to help build the firm, not just work at it. If that is you, apply. Peregrine Advisors is an equal opportunity employer. Peregrine exclusively works with OPEN Data Jobs to recruit our team. Register with OPEN Data Jobs to be considered for this and future openings.",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-27T04:00:08.411781+00:00",
@@ -31157,24 +31219,8 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-09-27T20:50:30.947234+00:00",
-      "verified_this_run": false,
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.87,
-        "delta": 3,
-        "reason": "Python and React full-stack development fits"
-      },
-      "recovery_input_hash": "fc131cd86733b6ba7498",
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-09-27T20:50:57.617778+00:00",
-      "official_search_status": "no_match",
-      "linkedin_detail_attempted_at": "2026-09-27T22:00:36.374428+00:00",
-      "linkedin_detail_fetched_at": "2026-09-27T22:00:36.374428+00:00",
-      "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
-      "enrichment_status": "resolved"
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4472297778",
@@ -31730,6 +31776,96 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4472474363",
+      "source": "linkedin",
+      "company": "Prime Video & Amazon MGM Studios",
+      "title": "Machine Learning Engineer, Prime Video Ads CX",
+      "location": "Seattle, WA",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-prime-video-ads-cx-at-prime-video-amazon-mgm-studios-4472474363",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T04:00:17.977240+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "machine learning engineer"
+        ]
+      },
+      "recovery_methods": {
+        "candidate:f7478035ea": {
+          "input_hash": "3f9ca5f853eb333a881c",
+          "attempted_at": "2026-09-28T04:00:50.267596+00:00",
+          "outcome": "no_match"
+        },
+        "generic_search": {
+          "input_hash": "585aa02f8847a18d0309",
+          "attempted_at": "2026-09-28T04:00:50.267596+00:00",
+          "outcome": "no_match"
+        },
+        "direct_careers": {
+          "input_hash": "e00e6f945cede5983f16",
+          "attempted_at": "2026-09-28T04:00:50.267596+00:00",
+          "outcome": "no_match"
+        },
+        "site_exact": {
+          "input_hash": "bc4580326174d9f80954",
+          "attempted_at": "2026-09-28T04:00:50.267596+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "official_detail_deferred",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
+      "verified_this_run": true,
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.78,
+        "delta": 0,
+        "reason": "Direct ML Engineer match; seniority unclear"
+      },
+      "recovery_input_hash": "5f5472c66109219f73de",
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-09-28T04:00:50.267596+00:00",
+      "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4472481124",
+      "source": "linkedin",
+      "company": "Prime Video & Amazon MGM Studios",
+      "title": "Machine Learning Engineer, Prime Video Ads CX",
+      "location": "Arlington, VA",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-prime-video-ads-cx-at-prime-video-amazon-mgm-studios-4472481124",
+      "official_url": "",
+      "description": "Description Are you interested in shaping the future of movies and television, and being part of a team that is helping Amazon redefine the future of video advertising? Prime Video is a premium streaming service that offers customers a vast collection of TV shows and movies - all with the ease of finding what they love to watch in one place. Video Advertising is rapidly evolving as customers shift their viewing experiences from traditional linear TV to streaming via connected devices, and Prime Video is a rising player in this space. PV Ads CX team owns personalizing Ads experience for a customer on Prime Video. We work on balancing customer satisfaction and engagement with monetization objectives by applying machine learning based solutions to customize the Ads experience. We work with millions of customer's data to understand customer behavior, business need, and formulate ML based solution to delight our customers. Successful candidates have a solid background in machine learning. They have experience working on big data, and neural network models. They have experience owning and maintaining highly-available, mission-critical systems. Experience in Advertising domain is a plus. You will need to have strong problem-solving and technical abilities, great communication skills, a motivation to learn, and achieve results in a fast-paced environment with excellent analytical reasoning skills. Key job responsibilities As a MLE-II on the team, you will be responsible for: Collaborating closely with Scientists to develop ML based solutions for Ads Customer Experience on Prime Video. Building solutions to process massive data, scale machine learning models, while defining and optimizing criteria critical to the success of the customer experience Driving cross-team initiatives and leading a team of developers on key initiatives. Mentoring engineers on the team. Basic Qualifications 3+ years of non-internship professional software development experience 2+ years of non-internship design or architecture (design patterns, reliability and scaling) of new and existing systems experience Experience programming with at least one software programming language Preferred Qualifications 3+ years of full software development life cycle, including coding standards, code reviews, source control management, build processes, testing, and operations experience Bachelor's degree in computer science or equivalent Experience with video ad serving and ad delivery Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability, or other legally protected status. Our inclusive culture empowers Amazonians to deliver the best results for our customers. If you have a disability and need a workplace accommodation or adjustment during the application and hiring process, including support for the interview or onboarding process, please visit https://amazon.jobs/content/en/how-we-hire/accommodations for more information. If the country/region you’re applying in isn’t listed, please contact your Recruiting Partner. The base salary range for this position is listed below. Your Amazon package will include sign-on payments and restricted stock units (RSUs). Final compensation will be determined based on factors including experience, qualifications, and location. Amazon also offers comprehensive benefits including health insurance (medical, dental, vision, prescription, Basic Life & AD&D insurance and option for Supplemental life plans, EAP, Mental Health Support, Medical Advice Line, Flexible Spending Accounts, Adoption and Surrogacy Reimbursement coverage), 401(k) matching, paid time off, and parental leave. Learn more about our benefits at https://amazon.jobs/en/benefits. USA, VA, Arlington - 143,700.00 - 194,400.00 USD annually USA, WA, SEATTLE - 143,700.00 - 194,400.00 USD annually Company - Amazon.com Services LLC Job ID: A10561030",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T04:00:17.977240+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "machine learning engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "linkedin_detail_attempted_at": "2026-09-28T04:00:45.478945+00:00",
+      "linkedin_detail_fetched_at": "2026-09-28T04:00:45.478945+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4462829044",
@@ -33707,13 +33843,12 @@
           "outcome": "no_match"
         }
       },
-      "linkedin_detail_attempted_at": "2026-09-27T22:00:29.627882+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -34532,7 +34667,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -34558,7 +34693,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -35299,7 +35434,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -35642,7 +35777,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -36079,7 +36214,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -36136,7 +36271,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -36649,7 +36784,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -36758,7 +36893,7 @@
       "recovery_methods": {},
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true,
       "recovery_status": "filtered"
     },
@@ -36917,7 +37052,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -37102,7 +37237,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4463729121",
@@ -37282,7 +37417,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -37411,7 +37546,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -37543,7 +37678,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -38321,7 +38456,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -38346,7 +38481,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -39168,6 +39303,31 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4455341444",
+      "source": "linkedin",
+      "company": "Talently",
+      "title": "Senior Full Stack Software Engineer",
+      "location": "Dallas, TX",
+      "posted_date": "2026-09-27",
+      "aggregator_posted_date": "2026-09-27",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-software-engineer-at-talently-4455341444",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-14T01:09:47.071119+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4469007513",
       "source": "linkedin",
       "company": "TaskVerse",
@@ -39295,7 +39455,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -39503,7 +39663,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -40154,7 +40314,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -40179,7 +40339,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -40233,6 +40393,38 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4472479427",
+      "source": "linkedin",
+      "company": "Thrive Market",
+      "title": "Principal Machine Learning Engineer",
+      "location": "Los Angeles, CA",
+      "posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-09-28",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/principal-machine-learning-engineer-at-thrive-market-4472479427",
+      "official_url": "",
+      "description": "About Thrive Market Thrive Market was founded in 2014 with a mission to make healthy and sustainable living easy and affordable for everyone. As an online, membership-based market, we deliver the highest quality healthy, and sustainable products at member-only prices, while matching every paid membership with a free one for someone in need. Every day, we leverage innovative technology and member-first thinking to help our over 1,700,000+ members find better products, support better brands, and build a better world in the process. We are also a Certified B Corporation, a Public Benefit Corporation, and a Climate Neutral Certified company. Join us as we bring healthy and sustainable living to millions of Americans in the years to come. THE ROLE As Principal Machine Learning Engineer, you'll bridge hands-on MLOps execution with research-level thinking, a combination that spans everything from infrastructure to publication-grade experimentation. You'll read and implement cutting-edge ML papers, debate architecture and statistical methodology with the engineering team, and translate model results into clear business impact at company All Hands. Given how much large language models have reshaped what's possible, you'll also help shape Thrive Market's long-term vision for search and discovery. It's a role that runs the full arc from research to production to business outcomes, with real latitude to define how that work gets done. Responsibilities Build new ML systems from the ground up, close data gaps as they arise, and maintain and improve the existing ML pipeline. Read and implement ML papers on alternative model architectures, then run training experiments to benchmark results against current production models. From your scopehelp define the long-term search vision, especially given how LLMs have shifted what's possible Stand up and manage infrastructure, such as a Redis cluster, to support ML workloads. Weigh in on and help drive architecture decisions and statistical methodology alongside the broader engineering team. Help shape Thrive Market's long-term vision for search and discovery, informed by how large language models have changed what's possible to build. From your scopehelp define the long-term search vision, especially given how LLMs have shifted what's possible Present model results and roadmap, including business and revenue impact Qualifications 8+ years of machine learning engineering spanning both MLOps and research-oriented work, with demonstrated principal-level impact across the full loop from research paper to production implementation to business impact presentation Hands-on experience reading and implementing ML papers, and running comparative training experiments to evaluate new model architectures against production baselines Experience building and operating ML infrastructure and pipelines, such as standing up a Redis cluster Experience with, or an informed perspective on, search and discovery systems, particularly how large language models have changed what's feasible to build in house versus buy Comfortable operating as a cross-functional driver, not just an individual contributor, able to debate architecture and statistical methodology across teams Experience presenting technical results and roadmaps, including business and revenue impact, to broad or executive audiences Preferred Hands-on experience with search, personalization, recommendations, ranking, or lifecycle modeling. Experience with MLOps best practices, including model versioning, CI/CD for ML, monitoring, and operating models in containerized and orchestrated environments (Docker, Kubernetes). Experience in e-commerce, marketplace, or subscription-based businesses. Familiarity with working in environments with moderate technical debt or evolving data foundations. Experience defining and owning metrics, experimentation frameworks, or model performance monitoring in production. Demonstrated ability to influence beyond immediate project scope, shaping best practices, standards, or strategy across teams. Belong To a Better Company Comprehensive health benefits (medical, dental, vision, life and disability) Competitive salary (DOE) + equity 401k Employer Match 9 Days of Observed Holidays Flexible Paid Time Off Subsidized ClassPass Membership with access to fitness classes and wellness and beauty experiences Ability to work in our beautiful office in Playa Vista Free Thrive Market membership with exclusive employee discount Coverage for Life Coaching & Therapy Sessions on our holistic mental health and well-being platform We're a community of more than 1 Million + members who are united by a singular belief: It should be easy to find better products, support better brands, make better choices, and build a better world in the process. At Thrive Market, we believe in building a diverse, inclusive, and authentic culture. If you are excited about this role along with our mission and values, we encourage you to apply. Thrive Market is an EEO/Veterans/Disabled/LGBTQ employer At Thrive Market, our goal is to be a diverse and inclusive workplace that is representative, at all job levels, of the members we serve and the communities we operate in. We’re proud to be an inclusive company and an Equal Opportunity Employer and we prohibit discrimination and harassment of any kind. We believe that diversity and inclusion among our teammates is critical to our success as a company, and we seek to recruit, develop and retain the most talented people from a diverse candidate pool. If you’re thinking about joining our team, we expect that you would agree! Employment with Thrive Market requires that employees be based in the United States. This is a condition of employment and must be maintained throughout the duration of employment. If you need assistance or accommodation due to a disability, please email us at eeo@thrivemarket.com and we’ll be happy to assist you. Ensure your Thrive Market job offer is legitimate and don't fall victim to fraud. Thrive Market never seeks payment from job applicants. Thrive Market recruiters will only reach out to applicants from an @thrivemarket.com email address. For added security, where possible, apply through our company website at www.thrivemarket.com. © Thrive Market 2026 All rights reserved. JOB INFORMATION Compensation Description - The base salary range for this position is $175,000 - $250,000/Per Year. Compensation may vary outside of this range depending on several factors, including a candidate’s qualifications, skills, competencies and experience, and geographic location. Total Compensation includes Base Salary, Stock Options, Health & Wellness Benefits, Flexible PTO, and more! This position requires traveling to our HQ office in Los Angeles, California, twice a year for all-company summits; once in the summer and once in the winter.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-28T04:00:17.977240+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer",
+          "machine learning engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "linkedin_detail_attempted_at": "2026-09-28T04:00:45.478945+00:00",
+      "linkedin_detail_fetched_at": "2026-09-28T04:00:45.478945+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468118268",
@@ -40350,8 +40542,7 @@
       "first_seen": "2026-09-27T20:50:30.947234+00:00",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
-          "machine learning engineer"
+          "ai engineer"
         ]
       },
       "recovery_methods": {},
@@ -40362,7 +40553,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -40732,7 +40923,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -40789,13 +40980,12 @@
           "outcome": "no_match"
         }
       },
-      "linkedin_detail_attempted_at": "2026-09-27T22:00:29.627882+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -41171,7 +41361,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -41196,7 +41386,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -41247,7 +41437,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -41272,7 +41462,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -42135,7 +42325,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -42329,7 +42519,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -42355,7 +42545,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -42676,7 +42866,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -42727,7 +42917,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -42800,12 +42990,11 @@
       "first_seen": "2026-09-06T03:50:27.645294+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "full-stack engineer"
+          "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -43145,7 +43334,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -43171,7 +43360,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -43445,13 +43634,12 @@
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_attempted_at": "2026-09-27T22:00:29.627882+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T22:00:29.627882+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -43614,7 +43802,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -43639,7 +43827,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -43665,7 +43853,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -44369,7 +44557,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -44868,12 +45056,11 @@
       "first_seen": "2026-09-06T17:53:56.641470+00:00",
       "discovery_queries": {
         "linkedin": [
-          "ai engineer",
           "machine learning engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -45140,7 +45327,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -45219,7 +45406,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -45245,7 +45432,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -45271,7 +45458,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
+      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
       "verified_this_run": true
     },
     {
@@ -45356,7 +45543,7 @@
         }
       },
       "source_verified_at": "2026-09-27T22:00:04.706488+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "linkedin_detail_attempted_at": "2026-09-27T22:00:36.374428+00:00",
       "linkedin_detail_fetched_at": "2026-09-27T22:00:36.374428+00:00",
       "linkedin_detail_resolved": true,
