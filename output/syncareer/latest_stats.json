@@ -1,21 +1,21 @@
 {
-  "run_at": "2026-09-28T14:52:14.850894+00:00",
-  "elapsed_seconds": 58.537,
-  "remote_elapsed_seconds": 39.357,
+  "run_at": "2026-09-28T23:51:39.059509+00:00",
+  "elapsed_seconds": 28.597,
+  "remote_elapsed_seconds": 19.555,
   "funnel": {
-    "scoring_candidates": 27
+    "scoring_candidates": 17
   },
   "llm": {
-    "reused": 21,
-    "llm": 7,
-    "new_or_changed": 7,
-    "rule": 0,
-    "sent": 7,
+    "reused": 16,
+    "llm": 1,
+    "new_or_changed": 1,
+    "rule": 1,
+    "sent": 1,
     "api_requests": 1,
     "recency_skipped": 0,
     "overflow": 0,
-    "peer_reused": 1,
-    "thin_source_rule": 0,
+    "peer_reused": 0,
+    "thin_source_rule": 1,
     "retryable_fallbacks": 0,
     "historical_seen_skipped": 0,
     "historical_llm_retained": 0,
@@ -23,8 +23,7 @@
     "same_content_reused": 0,
     "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 6,
-      "prior_rule_result_now_eligible_for_llm": 1
+      "genuinely_new_job": 1
     },
     "batch_size": 10,
     "primary_batches_total": 1,
@@ -37,8 +36,8 @@
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 11.247,
-    "json_results": 7,
+    "latency_seconds": 3.926,
+    "json_results": 1,
     "batches": [
       {
         "batch": 1,
@@ -46,175 +45,61 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://www.capitalonecareers.com/job/richmond/full-stack-engineer-4/1732/101237316256",
-            "company": "Capital One",
-            "title": "Full-stack Engineer 4"
-          },
-          {
-            "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4/1732/101237316016",
-            "company": "Capital One",
-            "title": "Full-stack Engineer 4"
-          },
-          {
-            "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101237315888",
-            "company": "Capital One",
-            "title": "Full-stack Engineer 4"
-          },
-          {
-            "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101237315840",
-            "company": "Capital One",
-            "title": "Full-stack Engineer 4"
-          },
-          {
-            "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4-intelligent-foundations-and-experiences-ifx/1732/101226320800",
-            "company": "Capital One",
-            "title": "Full-stack Engineer 4 - Intelligent Foundations and Experiences (IFX)"
-          },
-          {
-            "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "company": "Kforce",
-            "title": "Associate Software Developer"
-          },
-          {
-            "key": "url::https://joinbytedance.com/search/7688391015880083717",
-            "company": "ByteDance",
-            "title": "Organizational Effectiveness Graduate (RD Mid-Platform) - 2027 Start"
+            "key": "url::https://www.audiblecareers.com/job/newark/software-development-engineer-consumer-domains/27552/101154962624",
+            "company": "Audible",
+            "title": "Software Development Engineer, Consumer Domains"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 11.247,
+        "latency_seconds": 3.926,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 7,
-          "input_tokens": 9844,
+          "jobs_scored": 1,
+          "input_tokens": 2601,
           "cached_input_tokens": 0,
-          "output_tokens": 1034,
-          "reasoning_tokens": 484,
-          "estimated_usd": 0.001501
+          "output_tokens": 378,
+          "reasoning_tokens": 282,
+          "estimated_usd": 0.000449
         },
         "decisions": [
           {
-            "key": "url::https://www.capitalonecareers.com/job/richmond/full-stack-engineer-4/1732/101237316256",
-            "match_score": 48.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack development",
-              "AWS microservices"
-            ],
-            "main_gaps": [
-              "4 years non-internship experience",
-              "Technical leadership"
-            ]
-          },
-          {
-            "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4/1732/101237316016",
-            "match_score": 48.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack development",
-              "AWS microservices"
-            ],
-            "main_gaps": [
-              "4 years non-internship experience",
-              "Technical leadership"
-            ]
-          },
-          {
-            "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101237315888",
-            "match_score": 48.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack development",
-              "AWS microservices"
-            ],
-            "main_gaps": [
-              "4 years non-internship experience",
-              "Technical leadership"
-            ]
-          },
-          {
-            "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/101237315840",
-            "match_score": 48.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack development",
-              "AWS microservices"
-            ],
-            "main_gaps": [
-              "4 years non-internship experience",
-              "Technical leadership"
-            ]
-          },
-          {
-            "key": "url::https://www.capitalonecareers.com/job/new-york/full-stack-engineer-4-intelligent-foundations-and-experiences-ifx/1732/101226320800",
-            "match_score": 48.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack development",
-              "AWS microservices"
-            ],
-            "main_gaps": [
-              "4 years non-internship experience",
-              "Technical leadership"
-            ]
-          },
-          {
-            "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 72.0,
+            "key": "url::https://www.audiblecareers.com/job/newark/software-development-engineer-consumer-domains/27552/101154962624",
+            "match_score": 78.0,
             "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "REST API development",
-              "Web application experience"
+              "Production software development",
+              "Testing and operational reliability"
             ],
             "main_gaps": [
-              "C#/.NET experience"
-            ]
-          },
-          {
-            "key": "url::https://joinbytedance.com/search/7688391015880083717",
-            "match_score": 35.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "SQL and Python",
-              "Data analysis experience"
-            ],
-            "main_gaps": [
-              "Organizational effectiveness experience",
-              "People analytics focus"
+              "1+ year non-internship experience"
             ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 7,
-    "input_tokens": 9844,
+    "jobs_scored": 1,
+    "input_tokens": 2601,
     "cached_input_tokens": 0,
-    "output_tokens": 1034,
-    "reasoning_tokens": 484,
-    "estimated_usd": 0.001501,
+    "output_tokens": 378,
+    "reasoning_tokens": 282,
+    "estimated_usd": 0.000449,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 7
+    "scored": 1
   },
   "output": {
     "tier_a": 0,
-    "tier_b": 2,
-    "tier_c": 25,
-    "shown": 2,
-    "new_jobs": 7,
-    "new_jobs_added": 0
+    "tier_b": 1,
+    "tier_c": 16,
+    "shown": 1,
+    "new_jobs": 3,
+    "new_jobs_added": 1
   },
   "screen_method": "cache+llm",
   "failures": {
@@ -225,15 +110,15 @@
       "query": "Software",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 4,
+      "pages_fetched": 3,
       "stop_reason": "empty_page",
-      "raw_jobs": 42,
-      "unique_jobs": 42,
-      "unique_contribution": 42,
-      "first_pass_survivors": 26,
-      "original_postings_resolved": 12,
-      "jds_resolved": 11,
-      "elapsed_seconds": 2.691
+      "raw_jobs": 24,
+      "unique_jobs": 24,
+      "unique_contribution": 24,
+      "first_pass_survivors": 16,
+      "original_postings_resolved": 8,
+      "jds_resolved": 8,
+      "elapsed_seconds": 1.479
     },
     {
       "query": "Full Stack",
@@ -243,25 +128,25 @@
       "stop_reason": "empty_page",
       "raw_jobs": 7,
       "unique_jobs": 7,
-      "unique_contribution": 6,
-      "first_pass_survivors": 7,
+      "unique_contribution": 7,
+      "first_pass_survivors": 6,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.655
+      "elapsed_seconds": 0.622
     },
     {
       "query": "AI",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 3,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 21,
-      "unique_jobs": 21,
-      "unique_contribution": 19,
-      "first_pass_survivors": 6,
-      "original_postings_resolved": 3,
-      "jds_resolved": 3,
-      "elapsed_seconds": 1.922
+      "raw_jobs": 10,
+      "unique_jobs": 10,
+      "unique_contribution": 8,
+      "first_pass_survivors": 2,
+      "original_postings_resolved": 2,
+      "jds_resolved": 2,
+      "elapsed_seconds": 0.8
     },
     {
       "query": "Machine Learning",
@@ -269,13 +154,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 7,
-      "unique_jobs": 7,
-      "unique_contribution": 5,
-      "first_pass_survivors": 3,
+      "raw_jobs": 5,
+      "unique_jobs": 5,
+      "unique_contribution": 4,
+      "first_pass_survivors": 2,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.735
+      "elapsed_seconds": 0.616
     },
     {
       "query": "Infrastructure",
@@ -283,13 +168,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 5,
-      "unique_jobs": 5,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
       "unique_contribution": 1,
-      "first_pass_survivors": 4,
-      "original_postings_resolved": 2,
-      "jds_resolved": 2,
-      "elapsed_seconds": 0.825
+      "first_pass_survivors": 2,
+      "original_postings_resolved": 1,
+      "jds_resolved": 1,
+      "elapsed_seconds": 0.646
     },
     {
       "query": "Forward Deployed",
@@ -303,7 +188,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.242
+      "elapsed_seconds": 0.151
     },
     {
       "query": "DevOps",
@@ -317,7 +202,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 1.486
+      "elapsed_seconds": 0.631
     },
     {
       "query": "Backend",
@@ -331,7 +216,7 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.828
+      "elapsed_seconds": 0.622
     },
     {
       "query": "Platform",
@@ -339,27 +224,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
+      "raw_jobs": 4,
+      "unique_jobs": 4,
       "unique_contribution": 2,
-      "first_pass_survivors": 5,
-      "original_postings_resolved": 4,
-      "jds_resolved": 4,
-      "elapsed_seconds": 0.838
+      "first_pass_survivors": 4,
+      "original_postings_resolved": 3,
+      "jds_resolved": 3,
+      "elapsed_seconds": 0.617
     },
     {
       "query": "New Grad",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 1,
-      "unique_jobs": 1,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
       "unique_contribution": 0,
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.881
+      "elapsed_seconds": 0.146
     },
     {
       "query": "LLM",
@@ -373,7 +258,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.205
+      "elapsed_seconds": 0.155
     },
     {
       "query": "Data Engineer",
@@ -381,13 +266,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
+      "raw_jobs": 2,
+      "unique_jobs": 2,
       "unique_contribution": 2,
-      "first_pass_survivors": 1,
-      "original_postings_resolved": 0,
-      "jds_resolved": 0,
-      "elapsed_seconds": 0.811
+      "first_pass_survivors": 2,
+      "original_postings_resolved": 1,
+      "jds_resolved": 1,
+      "elapsed_seconds": 0.655
     },
     {
       "query": "Site Reliability",
@@ -401,14 +286,14 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.279
+      "elapsed_seconds": 0.147
     }
   ],
   "enrichment": {
-    "needed": 6,
-    "detail_api_resolved": 42,
+    "needed": 4,
+    "detail_api_resolved": 29,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 6
+    "remaining_no_jd": 4
   }
 }

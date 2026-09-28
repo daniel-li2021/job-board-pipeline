@@ -1,15 +1,16 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-09-28 07:52 PDT
-- Snapshot (UTC): 2026-09-28T14:52:18.507404+00:00
-- Jobs: 22
-- Last 24 hours: 0
-- Last 3 days: 22
+- Updated (PT): 2026-09-28 16:51 PDT
+- Snapshot (UTC): 2026-09-28T23:51:43.335120+00:00
+- Jobs: 23
+- Last 24 hours: 1
+- Last 3 days: 23
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| B | 78.0 | Syncareer | Audible | Software Development Engineer, Consumer Domains | Newark, New Jersey, United States | 2026-09-27 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.audiblecareers.com/job/newark/software-development-engineer-consumer-domains/27552/101154962624) |
 | B | 79.0 | Syncareer | Abbott | Software Engineer I | La Jolla, California, United States | 2026-09-25 | No sponsor | - | unreviewed | not_dedicated | [open](https://abbott.wd5.myworkdayjobs.com/en-US/abbottcareers/job/United-States---California---La-Jolla/Software-Engineer-I_31162389-1?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=55273a1b49934d97ae15342ef51f6b95&Location_Country=a4e08b475d6a4176853c9d1cb9854e02&Location_Country=d4afdeb461d446e4babd204bd102dba8&jobFamilyGroup=77166004ab82108dbc36d45444ea5319&jobFamilyGroup=77166004ab82108dbc369f0685c75300&jobFamilyGroup=77166004ab82108dbc36ddc1741b531d&jobFamilyGroup=77166004ab82108dbc36c1aa703d530e&jobFamilyGroup=77166004ab82108dbc368b52e1f452f7&jobFamilyGroup=77166004ab82108dbc36c663b1735313&jobFamilyGroup=77166004ab82108dbc36a3f4c1f35302&jobFamilyGroup=77166004ab82108dbc36d8a13149531b&jobFamilyGroup=77166004ab82108dbc36ae7004d75306&jobFamilyGroup=77166004ab82108dbc36b387bcb25308&jobFamilyGroup=77166004ab82108dbc36bd400e63530c&jobFamilyGroup=77166004ab82108dbc36b8277206530a&jobFamilyGroup=77166004ab82108dbc36cf373cfb5317&jobFamilyGroup=77166004ab82108dbc3691dba9f452f9&jobFamilyGroup=77166004ab82108dbc36a9373a205304&jobFamilyGroup=77166004ab82108dbc3697ef47b552fb) |
 | B | 72.0 | Syncareer | Kforce | Associate Software Developer | West Palm Beach, Florida, United States | 2026-09-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.kforce.com/find-work/search-jobs/#/detail/MTY5Nn5FUUd-MjE4OTQ0MVQxfjk5/) |
 | B | 78.0 | Syncareer | Chewy | Software Engineer I | Bellevue, Washington, United States | 2026-09-25 | Sponsor | - | unreviewed | official_identity_unmatched | [open](https://careers.chewy.com/us/en/job/R31016/Software-Engineer-I) |
