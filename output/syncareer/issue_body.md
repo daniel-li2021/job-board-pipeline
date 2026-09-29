@@ -1,9 +1,9 @@
-Syncareer alert — 2026-09-29_1451
+Syncareer alert — 2026-09-29_2351
 
-Updated (PT): 2026-09-29 07:53 PDT
-Snapshot (UTC): 2026-09-29T14:53:23.982011+00:00
+Updated (PT): 2026-09-29 16:53 PDT
+Snapshot (UTC): 2026-09-29T23:53:19.504223+00:00
 
-8 new matching job(s) this run (hard-filtered).
+12 new matching job(s) this run (hard-filtered).
 
 If you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.md` in the repo (last 3 days, one file).
 
@@ -14,8 +14,12 @@ If you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.
 | A | 91.0 | Syncareer | CGI | Software Developer – Entry Level | Reno, Nevada, United States | 2026-09-28 | Sponsor | - | unreviewed | not_dedicated | [open](https://cgi.njoyn.com/corp/xweb/xweb.asp?NTKN=c&clid=21001&Page=JobDetails&Jobid=J0926-2371&BRID=1336707&lang=1) |
 | A | 90.0 | Syncareer | Aaon | Software Developer I | Tulsa, Oklahoma, United States | 2026-09-28 | Sponsor | - | unreviewed | not_dedicated | [open](https://aaon.wd108.myworkdayjobs.com/en-US/AAON/job/Tulsa-OK/Software-Developer-I_JR103730) |
 | A | 87.0 | Syncareer | GlobalFoundries | AI/ML Analytics Engineer (2027 New College Graduate) | Malta, New York, United States | 2026-09-28 | Sponsor | - | unreviewed | not_dedicated | [open](https://globalfoundries.wd1.myworkdayjobs.com/en-US/External/job/USA---New-York---Malta/AI-ML-Analytics-Engineer--2027-New-College-Graduate-_JR-2604942) |
+| A | 86.0 | Syncareer | Allstate | Software Engineer (All Levels) | United States | 2026-09-28 | No sponsor | - | unreviewed | not_dedicated | [open](https://allstate.wd5.myworkdayjobs.com/en-US/allstate_careers/job/US---Remote/Software-Engineer--All-Levels-_R35582?Country=bc33aa3152ec42d4995f4791a106ed09&Country=a30a87ed25634629aa6c3958aa2b91ea&Country=29247e57dbaf46fb855b224e03170bc7&jobFamilyGroup=bf1cc5a85e0b1002ffcbbf16fc5d0001&jobFamilyGroup=bf1cc5a85e0b1002ffcbc04a1f4d0002&jobFamilyGroup=bf1cc5a85e0b1002ffcbbfb093dc0000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc217c2580000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc3e475410000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc17e3d280002&jobFamilyGroup=bf1cc5a85e0b1002ffcbc217c2580002&jobFamilyGroup=bf1cc5a85e0b1002ffcbc34af3f20000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc17e3d280000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc0e4b82f0000&jobFamilyGroup=bf1cc5a85e0b1002ffcbc04a1f4d0000) |
 | B | 84.0 | Syncareer | Mastercard | Software Engineer II | O'Fallon, Missouri, United States | 2026-09-28 | Sponsor | - | unreviewed | not_dedicated | [open](https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/OFallon-Missouri/Software-Engineer-II_R-290657?locations=8eab563831bf10acbe3d7c702f3b222a&locations=15854e620ab6014e5c345533ce3e0c5d&locations=bea842055ec0010f8fa2f063710e65dd&locations=abb6e89c39b847c49cb2958e421072b3&locations=8eab563831bf10acbe0b766b65242035&locations=fb7d771add6201c7c6d0d3914b4acc2f&locations=8eab563831bf10acbda112b729c11c9a&locations=13430a311dc746e1aa9200a749388d03&locations=8eab563831bf10acbd2183c3090f1a20&locations=efacbd97fd67011dbc0f236fbb007b75&locations=4345730331e1457585f99e8c7feb2c84&locations=8eab563831bf10acbcb35b24fcd616d7&locations=8eab563831bf10acbbdb817a833d0fa6&locations=8eab563831bf10acbba0ec70e0f00d06&locations=c9c1221064f54d28ae6ab893b99923cf&locations=b76624f2eeb110019afd21305a220000&locations=d98b53ce7a111038792c1575842cbfb5&locations=8eab563831bf10acb7f44286d1feeaf0&locations=38301974980c10d4a0770cdea411b718&locations=85482cdd21931001b922354af3a90000&locations=a52da795b81f100109d635958d730000&locations=3b2ad45f5eca10bd534be5fa946139c3&locations=8eab563831bf10acb54f0f21651ed219) |
 | B | 83.0 | Syncareer | First Citizens Bank | Data Engineer I - Data Platform | Raleigh, North Carolina, United States | 2026-09-28 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.firstcitizens.com/jobs/34606?lang=en-us) |
+| B | 78.0 | Syncareer | EvolutionIQ | Associate Data Engineer (Python / AI Insurance SaaS) | New York, New York, United States | 2026-09-28 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/evolutioniq/jobs/6210230004) |
+| B | 78.0 | Syncareer | PathAI | Machine Learning Intern/Co-op | Boston, Massachusetts, United States | 2026-09-28 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.pathai.com/careers/8843495002?gh_jid=8843495002) |
 | B | 78.0 | Syncareer | Audible | Software Development Engineer, Consumer Domains | Newark, New Jersey, United States | 2026-09-27 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.audiblecareers.com/job/newark/software-development-engineer-consumer-domains/27552/101154962624) |
+| B | 77.0 | Syncareer | PathAI | Software Development Engineer in Test (SDET) | Boston, Massachusetts, United States | 2026-09-28 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.pathai.com/careers/8769657002?gh_jid=8769657002) |
 
-Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-09-29_1451.csv`.
+Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-09-29_2351.csv`.
