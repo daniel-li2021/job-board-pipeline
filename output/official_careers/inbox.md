@@ -1,21 +1,30 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-09-29 07:48 PDT
-- Snapshot (UTC): 2026-09-29T14:48:06.484371+00:00
-- Jobs: 13 (Tier A/B only)
-- Last 24 hours: 3
-- Last 3 days: 13
+- Updated (PT): 2026-09-29 16:46 PDT
+- Snapshot (UTC): 2026-09-29T23:46:17.091127+00:00
+- Jobs: 22 (Tier A/B only)
+- Last 24 hours: 12
+- Last 3 days: 22
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 91 | official | Amazon | Software Development Engineer, Eva | Bellevue, Washington, USA | 2026-09-29 | 3to24h | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10563964/software-development-engineer-eva) |
+| A | 90 | official | Microsoft | Software Engineer | United States, Washington, Redmond | 2026-09-29 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557008566) |
 | A | 90 | official | Apple | Machine Learning Engineer - Apple News | Cupertino, United States of America | 2026-09-28 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200686238/machine-learning-engineer-apple-news) |
 | A | 85 | official | Visa | Software Engineer | US - Austin, TX | 2026-09-28 | 1to3d | Visa | unreviewed | official_canonical | [open](https://visa.wd5.myworkdayjobs.com/Visa/job/US---Austin-TX/SW-Engineer--Software-Engineering---Specialist---Associate_REF088773W) |
 | A | 87 | official | CVS Health | Software Development Engineer | IL - Work from home | 2026-09-28 | 1to3d | CVS | unreviewed | official_canonical | [open](https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/IL---Work-from-home/Software-Development-Engineer_R1051951) |
+| A | 88 | official | TikTok | Software Engineer, TikTok Agentic Creation - TTEP | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7690664722437474613) |
+| B | 83 | official | Apple | Software Engineer, Information Systems & Technology | Sunnyvale, United States of America | 2026-09-29 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200685186/software-engineer-information-systems-technology) |
+| B | 83 | official | Apple | Software Engineer, Information Systems & Technology | Austin, United States of America | 2026-09-29 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200685188/software-engineer-information-systems-technology) |
+| B | 82 | official | Amazon | Software Development Engineer, FinTech/Customer Service Tech | Newark, New Jersey, USA | 2026-09-29 | 3to24h | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10564323/software-development-engineer-fintech-customer-service-tech) |
+| B | 81 | official | Apple | Software Development Engineer - MultiCloud | Austin, United States of America | 2026-09-29 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200686299/software-development-engineer-multicloud) |
+| B | 81 | official | Microsoft | Software Engineer II | United States, Washington, Redmond | 2026-09-29 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557007934) |
 | B | 82 | official | Apple | Machine Learning Engineer (Search) | Cupertino, United States of America | 2026-09-29 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200669144/machine-learning-engineer-search) |
-| B | 75 | official | Microsoft | Software Engineer II | United States, Washington, Redmond | 2026-09-29 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556944958) |
-| B | 77 | official | Apple | Software Devlopment Engineer - Kubernetes | Austin, United States of America | 2026-09-29 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200686299/software-devlopment-engineer-kubernetes) |
+| B | 75 | official | OpenAI | Applied AI Engineer, Digital Natives | New York City; New York, New York, United States; Remote, United States | 2026-09-29 | 3to24h | OpenAI | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/openai/3254f6a7-6353-4a77-beec-f37b832c99ae) |
+| B | 75 | official | eBay | Platform Engineer, Java Frameworks | Austin | 2026-09-29 | 3to24h | eBay | unreviewed | official_canonical | [open](https://ebay.wd5.myworkdayjobs.com/apply/job/Austin/Platform-Engineer--Java-Frameworks_R0076323) |
+| B | 76 | official | HPE | DevOps Engineer (Sunnyvale, CA) | Sunnyvale, California, United States of America; All, California, United States of America | 2026-09-29 | 3to24h | - | unreviewed | official_canonical | [open](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Sunnyvale-California-United-States-of-America/DevOps-Engineer--Sunnyvale--CA-_1213659-2) |
 | B | 85 | official | Apple | ML Engineer - Automated Evaluation and Adversarial Design | Seattle, United States of America | 2026-09-28 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200657970/ml-engineer-automated-evaluation-and-adversarial-design) |
 | B | 84 | official | Google | Software Engineer III, AI/ML, Core | Kirkland, WA, USA | 2026-09-28 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/118249122862899910-software-engineer-iii-ai-ml-core) |
 | B | 75 | official | Microsoft | Azure Cloud Infrastructure Engineer | United States, Washington, Redmond; United States, California, Mountain View; United States, New York, New York | 2026-09-28 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556983222) |
