@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-29T15:21:18.465055+00:00",
+  "generated_at": "2026-09-29T22:24:07.816813+00:00",
   "collector": {
-    "commit": "2a5e6881a410481b1d930b9c3037ac20d0d24762",
+    "commit": "07c617e38ae45d39817ad3d2821b79456519f184",
     "dirty": false
   },
   "sources": {
@@ -10,15 +10,15 @@
       "required": true,
       "healthy": false,
       "status": "partial",
-      "reason": "blocked with HTTP 429",
-      "last_attempt_at": "2026-09-29T05:14:01.400356+00:00",
+      "reason": "focused query coverage",
+      "last_attempt_at": "2026-09-29T22:23:38.308407+00:00",
       "last_success_at": "2026-09-22T18:01:45.946101+00:00",
-      "last_partial_at": "2026-09-29T05:14:01.400356+00:00",
-      "partial_collected_count": 95,
-      "partial_fresh_kept": 93,
-      "partial_carried_count": 1648,
+      "last_partial_at": "2026-09-29T22:23:38.308407+00:00",
+      "partial_collected_count": 119,
+      "partial_fresh_kept": 117,
+      "partial_carried_count": 1714,
       "last_attempt_collector": {
-        "commit": "46f74c6752604b35b369098c6aa1ca1bcfdae8b6",
+        "commit": "07c617e38ae45d39817ad3d2821b79456519f184",
         "dirty": false
       },
       "last_success_collector": {
@@ -31,8 +31,8 @@
       "last_success_source_provenance": {
         "implementation": "sources.linkedin_local"
       },
-      "last_attempt_count": 93,
-      "consecutive_failures": 1,
+      "last_attempt_count": 117,
+      "consecutive_failures": 0,
       "query_stats": [
         {
           "query": "software engineer",
@@ -43,10 +43,10 @@
           "raw_jobs": 50,
           "unique_jobs": 50,
           "unique_contribution": 49,
-          "first_pass_survivors": 49,
+          "first_pass_survivors": 48,
           "original_postings_resolved": 0,
-          "jds_resolved": 11,
-          "elapsed_seconds": 8.547
+          "jds_resolved": 12,
+          "elapsed_seconds": 9.344
         },
         {
           "query": "ai engineer",
@@ -56,11 +56,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 30,
           "unique_jobs": 30,
-          "unique_contribution": 26,
-          "first_pass_survivors": 24,
+          "unique_contribution": 27,
+          "first_pass_survivors": 26,
           "original_postings_resolved": 0,
-          "jds_resolved": 8,
-          "elapsed_seconds": 5.012
+          "jds_resolved": 9,
+          "elapsed_seconds": 5.644
         },
         {
           "query": "backend engineer",
@@ -68,120 +68,123 @@
           "page_budget": 2,
           "pages_fetched": 2,
           "stop_reason": "page_budget",
-          "raw_jobs": 19,
-          "unique_jobs": 19,
-          "unique_contribution": 12,
+          "raw_jobs": 20,
+          "unique_jobs": 20,
+          "unique_contribution": 16,
           "first_pass_survivors": 18,
           "original_postings_resolved": 0,
-          "jds_resolved": 2,
-          "elapsed_seconds": 3.256
+          "jds_resolved": 4,
+          "elapsed_seconds": 3.618
         },
         {
           "query": "full-stack engineer",
           "group": "primary",
           "page_budget": 2,
-          "pages_fetched": 1,
-          "stop_reason": "blocked_http_429",
-          "raw_jobs": 10,
-          "unique_jobs": 0,
-          "unique_contribution": 0,
-          "first_pass_survivors": 10,
+          "pages_fetched": 2,
+          "stop_reason": "page_budget",
+          "raw_jobs": 20,
+          "unique_jobs": 20,
+          "unique_contribution": 16,
+          "first_pass_survivors": 20,
           "original_postings_resolved": 0,
-          "jds_resolved": 2,
-          "elapsed_seconds": 1.765
+          "jds_resolved": 1,
+          "elapsed_seconds": 3.814
         },
         {
           "query": "machine learning engineer",
           "group": "primary",
           "page_budget": 2,
-          "pages_fetched": 0,
-          "stop_reason": "source_unavailable",
-          "raw_jobs": 0,
-          "unique_jobs": 0,
-          "unique_contribution": 0,
-          "first_pass_survivors": 0,
+          "pages_fetched": 2,
+          "stop_reason": "page_budget",
+          "raw_jobs": 20,
+          "unique_jobs": 20,
+          "unique_contribution": 11,
+          "first_pass_survivors": 18,
           "original_postings_resolved": 0,
-          "jds_resolved": 0,
-          "elapsed_seconds": 0.0
+          "jds_resolved": 5,
+          "elapsed_seconds": 3.629
         }
       ],
       "detail_enrichment": {
-        "eligible": 40,
-        "cache_reused": 5,
-        "requests": 0,
-        "responses": 0,
-        "successful_responses": 0,
-        "request_limit": 0,
-        "budget_deferred": 0,
-        "budget_exhausted": false,
+        "eligible": 51,
+        "cache_reused": 0,
+        "requests": 8,
+        "responses": 8,
+        "successful_responses": 8,
+        "request_limit": 8,
+        "budget_deferred": 41,
+        "budget_exhausted": true,
         "retry_deferred": 0,
         "retry_attempts": 0,
-        "exact_official": 1,
-        "official_deferred": 1,
+        "exact_official": 2,
+        "official_deferred": 2,
         "rate_limited": false,
-        "jds_resolved": 5,
+        "jds_resolved": 8,
         "external_apply_urls": 0,
         "failed": 0,
-        "detail_jds_fetched": 0,
-        "intentional_skips": 34,
+        "detail_jds_fetched": 8,
+        "intentional_skips": 0,
         "blocked": "",
         "scrapling_requests": 0,
         "scrapling_jds_resolved": 0,
         "scrapling_error": "",
-        "remaining_no_jd": 35,
+        "remaining_no_jd": 43,
         "failure_reasons": {
-          "official_detail_deferred": 1
+          "official_detail_deferred": 2,
+          "no_description": 36
         },
-        "cooldown_active": true,
+        "cooldown_active": false,
         "probe": false,
-        "status": "cooldown",
-        "cooldown_until": "2026-09-29T07:00:46.818716+00:00"
+        "status": "active"
       },
-      "last_good_count": 1741,
-      "detail_last_attempt_at": "2026-09-28T19:00:46.818716+00:00",
-      "detail_429_streak": 1,
-      "detail_cooldown_until": "2026-09-29T07:00:46.818716+00:00",
+      "last_good_count": 1831,
+      "detail_last_attempt_at": "2026-09-29T22:24:07.817902+00:00",
+      "detail_429_streak": 0,
+      "detail_cooldown_until": "",
       "official_enrichment": {
-        "dedicated_matches": 5,
-        "remote_exact_peer": 4,
-        "cache": 11,
-        "exact_indeed_peer": 1,
+        "remote_exact_peer": 19,
+        "dedicated_matches": 19,
+        "exact_indeed_peer": 7,
+        "cache": 1,
         "search_requests": 0,
         "search_provider": "duckduckgo",
         "official_page_requests": 0,
-        "remaining_no_jd": 79
+        "remaining_no_jd": 92
       },
       "search_collection": {
         "cooldown_active": false,
         "probe": false,
-        "requests": 12,
-        "responses": 12,
-        "pages_fetched": 11,
-        "rate_limited": true,
+        "requests": 14,
+        "responses": 14,
+        "pages_fetched": 14,
+        "rate_limited": false,
         "budget_exhausted": false,
-        "coverage_limited": false
+        "coverage_limited": true
       },
       "search_last_attempt_at": "2026-09-26T00:21:43.068211+00:00",
       "search_query_cursor": 8,
       "search_429_streak": 0,
       "search_cooldown_until": "",
-      "detail_cooldown_reason": "HTTP 429",
-      "detail_status": "cooldown",
+      "detail_cooldown_reason": "",
+      "detail_status": "active",
       "runner_states": {
         "mac": {
-          "search_last_attempt_at": "2026-09-29T05:14:01.400356+00:00",
-          "search_429_streak": 1,
+          "search_last_attempt_at": "2026-09-29T22:23:38.308407+00:00",
+          "search_429_streak": 0,
           "search_cooldown_until": "",
-          "detail_status": "cooldown",
-          "detail_last_attempt_at": "2026-09-28T19:00:46.818716+00:00",
-          "detail_429_streak": 1,
-          "detail_cooldown_until": "2026-09-29T07:00:46.818716+00:00",
-          "detail_cooldown_reason": "HTTP 429"
+          "detail_status": "active",
+          "detail_last_attempt_at": "2026-09-29T22:24:07.817902+00:00",
+          "detail_429_streak": 0,
+          "detail_cooldown_until": "",
+          "detail_cooldown_reason": ""
         }
       },
-      "last_attempt_elapsed_seconds": 21.112,
-      "failure_cause": "429",
-      "previous_failure": {},
+      "last_attempt_elapsed_seconds": 29.398,
+      "failure_cause": "",
+      "previous_failure": {
+        "cause": "429",
+        "count": 1
+      },
       "queries_total": 0,
       "queries_succeeded": 0,
       "queries_failed": 0,
@@ -551,6 +554,17 @@
   },
   "run_history": [
     {
+      "source": "linkedin",
+      "run_at": "2026-09-29T22:23:38.308407+00:00",
+      "status": "partial",
+      "new": 58,
+      "pass": null,
+      "new_ab": null,
+      "failure": true,
+      "reason": "focused query coverage",
+      "elapsed_seconds": 29.398
+    },
+    {
       "source": "indeed",
       "run_at": "2026-09-29T15:20:48.363259+00:00",
       "status": "ok",
@@ -627,5 +641,20 @@
       "reason": "",
       "elapsed_seconds": 19.641
     }
-  ]
+  ],
+  "local_recovery": {
+    "run_at": "2026-09-29T22:24:07.817902+00:00",
+    "elapsed_seconds": 54.81,
+    "official_jds_recovered": 0,
+    "linkedin_detail_recoveries": 8,
+    "post_429_jds_recovered": null,
+    "targeted_linkedin_search_requests": 0,
+    "targeted_linkedin_detail_jds": 0,
+    "targeted_linkedin_rate_limited": false,
+    "generic_jobs_processed": 30,
+    "search_requests": 30,
+    "official_page_requests": 17,
+    "linkedin_rate_limited": false
+  },
+  "mac_last_completed_at": "2026-09-29T22:25:02.655431+00:00"
 }
