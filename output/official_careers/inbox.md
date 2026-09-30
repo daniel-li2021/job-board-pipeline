@@ -1,30 +1,33 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-09-29 16:46 PDT
-- Snapshot (UTC): 2026-09-29T23:46:17.091127+00:00
-- Jobs: 22 (Tier A/B only)
-- Last 24 hours: 12
-- Last 3 days: 22
+- Updated (PT): 2026-09-30 07:47 PDT
+- Snapshot (UTC): 2026-09-30T14:47:11.009714+00:00
+- Jobs: 25 (Tier A/B only)
+- Last 24 hours: 4
+- Last 3 days: 25
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 91 | official | Amazon | Software Development Engineer, Eva | Bellevue, Washington, USA | 2026-09-29 | 3to24h | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10563964/software-development-engineer-eva) |
-| A | 90 | official | Microsoft | Software Engineer | United States, Washington, Redmond | 2026-09-29 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557008566) |
+| A | 91 | official | Amazon | Software Development Engineer, Eva | Bellevue, Washington, USA | 2026-09-29 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10563964/software-development-engineer-eva) |
+| A | 90 | official | Microsoft | Software Engineer | United States, Washington, Redmond | 2026-09-29 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557008566) |
 | A | 90 | official | Apple | Machine Learning Engineer - Apple News | Cupertino, United States of America | 2026-09-28 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200686238/machine-learning-engineer-apple-news) |
 | A | 85 | official | Visa | Software Engineer | US - Austin, TX | 2026-09-28 | 1to3d | Visa | unreviewed | official_canonical | [open](https://visa.wd5.myworkdayjobs.com/Visa/job/US---Austin-TX/SW-Engineer--Software-Engineering---Specialist---Associate_REF088773W) |
 | A | 87 | official | CVS Health | Software Development Engineer | IL - Work from home | 2026-09-28 | 1to3d | CVS | unreviewed | official_canonical | [open](https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/IL---Work-from-home/Software-Development-Engineer_R1051951) |
 | A | 88 | official | TikTok | Software Engineer, TikTok Agentic Creation - TTEP | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7690664722437474613) |
-| B | 83 | official | Apple | Software Engineer, Information Systems & Technology | Sunnyvale, United States of America | 2026-09-29 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200685186/software-engineer-information-systems-technology) |
-| B | 83 | official | Apple | Software Engineer, Information Systems & Technology | Austin, United States of America | 2026-09-29 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200685188/software-engineer-information-systems-technology) |
-| B | 82 | official | Amazon | Software Development Engineer, FinTech/Customer Service Tech | Newark, New Jersey, USA | 2026-09-29 | 3to24h | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10564323/software-development-engineer-fintech-customer-service-tech) |
-| B | 81 | official | Apple | Software Development Engineer - MultiCloud | Austin, United States of America | 2026-09-29 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200686299/software-development-engineer-multicloud) |
-| B | 81 | official | Microsoft | Software Engineer II | United States, Washington, Redmond | 2026-09-29 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557007934) |
-| B | 82 | official | Apple | Machine Learning Engineer (Search) | Cupertino, United States of America | 2026-09-29 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200669144/machine-learning-engineer-search) |
-| B | 75 | official | OpenAI | Applied AI Engineer, Digital Natives | New York City; New York, New York, United States; Remote, United States | 2026-09-29 | 3to24h | OpenAI | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/openai/3254f6a7-6353-4a77-beec-f37b832c99ae) |
-| B | 75 | official | eBay | Platform Engineer, Java Frameworks | Austin | 2026-09-29 | 3to24h | eBay | unreviewed | official_canonical | [open](https://ebay.wd5.myworkdayjobs.com/apply/job/Austin/Platform-Engineer--Java-Frameworks_R0076323) |
-| B | 76 | official | HPE | DevOps Engineer (Sunnyvale, CA) | Sunnyvale, California, United States of America; All, California, United States of America | 2026-09-29 | 3to24h | - | unreviewed | official_canonical | [open](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Sunnyvale-California-United-States-of-America/DevOps-Engineer--Sunnyvale--CA-_1213659-2) |
+| B | 75 | official | Workday | Software Development Engineer | USA, CA, Pleasanton | 2026-09-30 | 3to24h | - | unreviewed | official_canonical | [open](https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Software-Development-Engineer_JR-0109889) |
+| B | 75 | official | Cisco | Solutions Architect | RTP, North Carolina, US | 2026-09-30 | 3to24h | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Solutions-Architect_2022705-1) |
+| B | 77 | official | Google | Cloud Data Engineer I, Professional Services, Google Cloud | Mountain View, CA, USA | 2026-09-30 | 3to24h | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/92258849825661638-cloud-data-engineer-i-professional-services-google-cloud) |
+| B | 83 | official | Apple | Software Engineer, Information Systems & Technology | Sunnyvale, United States of America | 2026-09-29 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200685186/software-engineer-information-systems-technology) |
+| B | 83 | official | Apple | Software Engineer, Information Systems & Technology | Austin, United States of America | 2026-09-29 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200685188/software-engineer-information-systems-technology) |
+| B | 82 | official | Amazon | Software Development Engineer, FinTech/Customer Service Tech | Newark, New Jersey, USA | 2026-09-29 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10564323/software-development-engineer-fintech-customer-service-tech) |
+| B | 81 | official | Apple | Software Development Engineer - MultiCloud | Austin, United States of America | 2026-09-29 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200686299/software-development-engineer-multicloud) |
+| B | 81 | official | Microsoft | Software Engineer II | United States, Washington, Redmond | 2026-09-29 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557007934) |
+| B | 82 | official | Apple | Machine Learning Engineer (Search) | Cupertino, United States of America | 2026-09-29 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200669144/machine-learning-engineer-search) |
+| B | 75 | official | OpenAI | Applied AI Engineer, Digital Natives | New York City; New York, New York, United States; Remote, United States | 2026-09-29 | 1to3d | OpenAI | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/openai/3254f6a7-6353-4a77-beec-f37b832c99ae) |
+| B | 75 | official | eBay | Platform Engineer, Java Frameworks | Austin | 2026-09-29 | 1to3d | eBay | unreviewed | official_canonical | [open](https://ebay.wd5.myworkdayjobs.com/apply/job/Austin/Platform-Engineer--Java-Frameworks_R0076323) |
+| B | 76 | official | HPE | DevOps Engineer (Sunnyvale, CA) | Sunnyvale, California, United States of America; All, California, United States of America | 2026-09-29 | 1to3d | - | unreviewed | official_canonical | [open](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Sunnyvale-California-United-States-of-America/DevOps-Engineer--Sunnyvale--CA-_1213659-2) |
 | B | 85 | official | Apple | ML Engineer - Automated Evaluation and Adversarial Design | Seattle, United States of America | 2026-09-28 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200657970/ml-engineer-automated-evaluation-and-adversarial-design) |
 | B | 84 | official | Google | Software Engineer III, AI/ML, Core | Kirkland, WA, USA | 2026-09-28 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/118249122862899910-software-engineer-iii-ai-ml-core) |
 | B | 75 | official | Microsoft | Azure Cloud Infrastructure Engineer | United States, Washington, Redmond; United States, California, Mountain View; United States, New York, New York | 2026-09-28 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556983222) |
