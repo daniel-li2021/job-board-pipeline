@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-30T14:50:50.532411+00:00",
-  "count": 2691,
+  "generated_at": "2026-09-30T14:55:45.529747+00:00",
+  "count": 2694,
   "companies": [
     {
       "name": "1199SEIU Benefit and Pension Funds",
@@ -1339,9 +1339,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "15c72f4d04a09ab409f6f223",
         "26efe755c25c844ce47888d5"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "America's Car-Mart",
@@ -2207,8 +2208,12 @@
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
-      "seen_count": 1
+      "seen_job_keys": [
+        "0d8a71268d8eb618785bc3bb",
+        "59ed70e3238b2845eb48a525",
+        "c87f9c2b544e2bb5564ffafe"
+      ],
+      "seen_count": 3
     },
     {
       "name": "Aquila Technology",
@@ -11068,11 +11073,12 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "5c34a5b8e55933153c850ac4",
         "aceade2d7cbee29da299eeda",
         "b9320e04bf4d815a9f4495d4",
         "f2fa387ccb1a66cb4ece16d5"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "FiberLight, LLC.",
@@ -12356,6 +12362,19 @@
       "seen_count": 1
     },
     {
+      "name": "Genentech",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "876dbfd6b4201a21f84aa6e4"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "General Dynamics Electric Boat",
       "aliases": [],
       "size": "unknown",
@@ -12813,6 +12832,20 @@
         "3e513f06c8a5acd4cb1b785c"
       ],
       "seen_count": 1
+    },
+    {
+      "name": "Globus Medical",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "0b59c04dbb28cdb4bba3f340",
+        "69f73c26d2a16a7715a2e3ab"
+      ],
+      "seen_count": 2
     },
     {
       "name": "Glocomms",
@@ -15991,10 +16024,12 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "085fe0b22044b7c49b8e9b4f",
         "55dd9e5bff01c833a206f58d",
+        "a41eafdacf65f48784643f4b",
         "d52439bf217344c269cc34b9"
       ],
-      "seen_count": 2
+      "seen_count": 4
     },
     {
       "name": "INTERCONNECT WIRING",
@@ -25712,9 +25747,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "596416ad7296cf5c3dd83278",
         "cf17c674751717431ced711b"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "S. Abraham & Sons, Inc.",
@@ -29214,7 +29250,9 @@
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "67abfb1edaab9229d0a1e204"
+      ],
       "seen_count": 1
     },
     {
@@ -30091,6 +30129,19 @@
         "76a98f5c725c360721fc4b97"
       ],
       "seen_count": 3
+    },
+    {
+      "name": "TP ICAP",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "e3adb34f240991f326290d3a"
+      ],
+      "seen_count": 1
     },
     {
       "name": "Transcor Data Services",
