@@ -2,6 +2,370 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-01T21:24:26.509394+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 11,
+      "cache_reused": 255,
+      "peer_reused": 0,
+      "same_content_reused": 11,
+      "non_material_change_reused": 0,
+      "new_or_changed": 11,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 11
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 882,
+      "requests": 2,
+      "input_tokens": 22920,
+      "cached_input_tokens": 0,
+      "output_tokens": 2209,
+      "reasoning_tokens": 1237,
+      "estimated_usd": 0.003396,
+      "latency_seconds": 23.199,
+      "latency_measured": true,
+      "effective_rpm": 5.17,
+      "effective_tpm": 64991.59,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 11,
+      "funnel": {
+        "after_dedup": 6150,
+        "after_company": 5916,
+        "after_hard_filter": 5437,
+        "after_prefilter": 1541,
+        "official_duplicates_suppressed": 393,
+        "retry_only_carried": 0,
+        "dropped": 4523
+      },
+      "output": {
+        "tier_a": 21,
+        "tier_b": 145,
+        "ab_before_cap": 166,
+        "shown": 166,
+        "new_jobs": 53,
+        "new_jobs_added": 3,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 53,
+            "added": 3
+          },
+          "linkedin": {
+            "found": 0,
+            "added": 0
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 1953,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 118,
+          "http_requests": 100,
+          "scrapling_requests": 1,
+          "jds_resolved": 39,
+          "direct_http_resolved": 39,
+          "identity_needed": 98,
+          "identities_resolved": 97,
+          "budget_deferred": 1,
+          "remaining_no_jd": 1951,
+          "failure_reasons": {
+            "linkedin_rate_limited": 17,
+            "structured_jd_not_found": 1
+          }
+        },
+        "remaining_no_jd": 1924,
+        "failure_reasons": {
+          "no_enrichment_path": 1402,
+          "linkedin_rate_limited": 94,
+          "official_detail_deferred": 48,
+          "structured_jd_not_found": 1,
+          "linkedin_http_429": 2,
+          "glassdoor_detail_http_403_static_card_only": 377
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.coinbase.com/careers/positions/8234278?gh_jid=8234278",
+              "company": "Coinbase",
+              "title": "Software Engineer, CDP - Stablecoin"
+            },
+            {
+              "key": "url::https://www.coinbase.com/careers/positions/8247397?gh_jid=8247397",
+              "company": "Coinbase",
+              "title": "Software Engineer, Backend - Payments Platform"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/reddit/jobs/8243443",
+              "company": "Reddit",
+              "title": "Software Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 7.567,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 6730,
+            "cached_input_tokens": 0,
+            "output_tokens": 540,
+            "reasoning_tokens": 315,
+            "estimated_usd": 0.000943
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.coinbase.com/careers/positions/8234278?gh_jid=8234278",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production backend services",
+                "Reliability and testing"
+              ],
+              "main_gaps": [
+                "Go proficiency",
+                "EVM blockchain experience"
+              ]
+            },
+            {
+              "key": "url::https://www.coinbase.com/careers/positions/8247397?gh_jid=8247397",
+              "match_score": 77.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend services delivery",
+                "Distributed systems reliability"
+              ],
+              "main_gaps": [
+                "Financial transaction systems"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/reddit/jobs/8243443",
+              "match_score": 54.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend APIs and microservices",
+                "AWS production operations"
+              ],
+              "main_gaps": [
+                "Four years of experience",
+                "Advertising systems"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.pinterestcareers.com/jobs?gh_jid=8140389",
+              "company": "Pinterest",
+              "title": "Master's University Grad Data Scientist (USA)"
+            },
+            {
+              "key": "url::https://www.pinterestcareers.com/jobs?gh_jid=8140219",
+              "company": "Pinterest",
+              "title": "Master's University Grad Machine Learning Engineer 2027 (USA)"
+            },
+            {
+              "key": "url::https://www.pinterestcareers.com/jobs?gh_jid=8157351",
+              "company": "Pinterest",
+              "title": "PhD University Grad Data Scientist 2027 (USA)"
+            },
+            {
+              "key": "url::https://www.pinterestcareers.com/jobs?gh_jid=8140363",
+              "company": "Pinterest",
+              "title": "PhD University Grad Machine Learning Engineer (USA)"
+            },
+            {
+              "key": "url::https://www.pinterestcareers.com/jobs?gh_jid=7838591",
+              "company": "Pinterest",
+              "title": "University Grad Software Engineer 2027 (USA)"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5440427008",
+              "company": "Anthropic",
+              "title": "Software Engineer, Sandboxing"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/reddit/jobs/8244082",
+              "company": "Reddit",
+              "title": "Machine Learning Engineer"
+            },
+            {
+              "key": "url::https://www.brex.com/careers/8783482002?gh_jid=8783482002",
+              "company": "Brex",
+              "title": "Data Scientist II, Applied ML"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 15.632,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 8,
+            "input_tokens": 16190,
+            "cached_input_tokens": 0,
+            "output_tokens": 1669,
+            "reasoning_tokens": 922,
+            "estimated_usd": 0.002453
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.pinterestcareers.com/jobs?gh_jid=8140389",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "SQL and Python",
+                "ML evaluation experience"
+              ],
+              "main_gaps": [
+                "A/B experimentation",
+                "Product analytics metrics"
+              ]
+            },
+            {
+              "key": "url::https://www.pinterestcareers.com/jobs?gh_jid=8140219",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Retrieval and ranking",
+                "Spark and PyTorch"
+              ],
+              "main_gaps": [
+                "Real-time streaming systems"
+              ]
+            },
+            {
+              "key": "url::https://www.pinterestcareers.com/jobs?gh_jid=8157351",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "SQL and Python",
+                "Quantitative ML experience"
+              ],
+              "main_gaps": [
+                "PhD degree",
+                "A/B experimentation"
+              ]
+            },
+            {
+              "key": "url::https://www.pinterestcareers.com/jobs?gh_jid=8140363",
+              "match_score": 53.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Applied ML systems",
+                "Retrieval and ranking"
+              ],
+              "main_gaps": [
+                "PhD degree",
+                "Real-time streaming systems"
+              ]
+            },
+            {
+              "key": "url::https://www.pinterestcareers.com/jobs?gh_jid=7838591",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production software engineering",
+                "Full-stack and backend"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5440427008",
+              "match_score": 41.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud infrastructure",
+                "Performance and reliability"
+              ],
+              "main_gaps": [
+                "Low-level Linux systems",
+                "Virtualization and isolation"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/reddit/jobs/8244082",
+              "match_score": 51.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "ML production systems",
+                "Python and API development"
+              ],
+              "main_gaps": [
+                "Five years of experience",
+                "Recommender systems at scale"
+              ]
+            },
+            {
+              "key": "url::https://www.brex.com/careers/8783482002?gh_jid=8783482002",
+              "match_score": 66.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "End-to-end ML deployment",
+                "Python and production APIs"
+              ],
+              "main_gaps": [
+                "3+ years data science/ML",
+                "Hypothesis and A/B testing"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-01T15:21:20.641338+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -22264,203 +22628,6 @@
       },
       "comparison": {},
       "batches": []
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-09-27T04:01:22.764640+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 2,
-      "cache_reused": 183,
-      "peer_reused": 0,
-      "same_content_reused": 2,
-      "non_material_change_reused": 0,
-      "new_or_changed": 2,
-      "new_or_changed_reasons": {
-        "prior_rule_result_now_eligible_for_llm": 2
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1003,
-      "requests": 2,
-      "input_tokens": 6442,
-      "cached_input_tokens": 0,
-      "output_tokens": 748,
-      "reasoning_tokens": 600,
-      "estimated_usd": 0.001019,
-      "latency_seconds": 7.648,
-      "latency_measured": true,
-      "effective_rpm": 15.69,
-      "effective_tpm": 56406.9,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "primary_batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 2,
-      "funnel": {
-        "after_dedup": 5403,
-        "after_company": 5221,
-        "after_hard_filter": 4815,
-        "after_prefilter": 1337,
-        "official_duplicates_suppressed": 149,
-        "retry_only_carried": 0,
-        "dropped": 4030
-      },
-      "output": {
-        "tier_a": 27,
-        "tier_b": 167,
-        "ab_before_cap": 194,
-        "shown": 194,
-        "new_jobs": 3,
-        "new_jobs_added": 1,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 0,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 3,
-            "added": 1
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 1607,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 153,
-          "identity_needed": 142,
-          "identities_resolved": 107,
-          "cache_reused": 7,
-          "http_requests": 100,
-          "jds_resolved": 44,
-          "direct_http_resolved": 44,
-          "budget_deferred": 35,
-          "remaining_no_jd": 1607,
-          "failure_reasons": {
-            "linkedin_http_429": 1,
-            "no_direct_or_official_url": 10
-          }
-        },
-        "remaining_no_jd": 1602,
-        "failure_reasons": {
-          "no_enrichment_path": 1157,
-          "official_detail_deferred": 48,
-          "linkedin_http_429": 2,
-          "linkedin_rate_limited": 8,
-          "no_direct_or_official_url": 10,
-          "glassdoor_detail_http_403_static_card_only": 377
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4454348188",
-              "company": "Deloitte",
-              "title": "Cyber Full-Stack Technical Software Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 2.923,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 2955,
-            "cached_input_tokens": 0,
-            "output_tokens": 266,
-            "reasoning_tokens": 190,
-            "estimated_usd": 0.000429
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4454348188",
-              "match_score": 73.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack production delivery",
-                "Cloud and AI implementation"
-              ],
-              "main_gaps": [
-                "3–5 years’ experience",
-                "Cloud certification"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4426724829",
-              "company": "Deloitte",
-              "title": "Agentic AI Engineer — Healthcare AI"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 4.725,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 3487,
-            "cached_input_tokens": 0,
-            "output_tokens": 482,
-            "reasoning_tokens": 410,
-            "estimated_usd": 0.00059
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4426724829",
-              "match_score": 79.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production LangGraph agents",
-                "End-to-end RAG systems"
-              ],
-              "main_gaps": [
-                "Agent trajectory evaluation"
-              ]
-            }
-          ]
-        }
-      ]
     }
   ]
 }
