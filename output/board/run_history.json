@@ -2,6 +2,224 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-01T21:45:16.318933+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 3,
+      "cache_reused": 267,
+      "peer_reused": 0,
+      "same_content_reused": 10,
+      "non_material_change_reused": 0,
+      "new_or_changed": 3,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 1,
+        "prior_rule_result_now_eligible_for_llm": 2
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 876,
+      "requests": 2,
+      "input_tokens": 7767,
+      "cached_input_tokens": 0,
+      "output_tokens": 746,
+      "reasoning_tokens": 517,
+      "estimated_usd": 0.00115,
+      "latency_seconds": 10.385,
+      "latency_measured": true,
+      "effective_rpm": 11.56,
+      "effective_tpm": 49184.4,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 3,
+      "funnel": {
+        "after_dedup": 6152,
+        "after_company": 5918,
+        "after_hard_filter": 5436,
+        "after_prefilter": 1539,
+        "official_duplicates_suppressed": 393,
+        "retry_only_carried": 0,
+        "dropped": 4527
+      },
+      "output": {
+        "tier_a": 21,
+        "tier_b": 140,
+        "ab_before_cap": 161,
+        "shown": 161,
+        "new_jobs": 2,
+        "new_jobs_added": 0,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 2,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 0,
+            "added": 0
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 1937,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 109,
+          "http_requests": 100,
+          "scrapling_requests": 1,
+          "jds_resolved": 39,
+          "direct_http_resolved": 39,
+          "identity_needed": 98,
+          "identities_resolved": 97,
+          "budget_deferred": 1,
+          "remaining_no_jd": 1935,
+          "failure_reasons": {
+            "structured_jd_not_found": 1,
+            "linkedin_rate_limited": 8
+          }
+        },
+        "remaining_no_jd": 1908,
+        "failure_reasons": {
+          "no_enrichment_path": 1402,
+          "official_detail_deferred": 48,
+          "structured_jd_not_found": 1,
+          "linkedin_rate_limited": 78,
+          "linkedin_http_429": 2,
+          "glassdoor_detail_http_403_static_card_only": 377
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://careers.airbnb.com/positions/8247303?gh_jid=8247303",
+              "company": "Airbnb",
+              "title": "Software Engineer, Passport & Commerce, Android"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.336,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3713,
+            "cached_input_tokens": 0,
+            "output_tokens": 267,
+            "reasoning_tokens": 176,
+            "estimated_usd": 0.000505
+          },
+          "decisions": [
+            {
+              "key": "url::https://careers.airbnb.com/positions/8247303?gh_jid=8247303",
+              "match_score": 42.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "API integration",
+                "Production feature delivery"
+              ],
+              "main_gaps": [
+                "3+ years Android experience",
+                "Kotlin and modern Android architecture"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4472656086",
+              "company": "Haystack",
+              "title": "Python Backend Developer"
+            },
+            {
+              "key": "id::linkedin::4442876386",
+              "company": "Frost",
+              "title": "Software Engineer II – Java & Microservices"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 6.049,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 4054,
+            "cached_input_tokens": 0,
+            "output_tokens": 479,
+            "reasoning_tokens": 341,
+            "estimated_usd": 0.000645
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4472656086",
+              "match_score": 54.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python FastAPI services",
+                "Cloud data ingestion"
+              ],
+              "main_gaps": [
+                "5+ years backend experience",
+                "Bloomberg API integration"
+              ]
+            },
+            {
+              "key": "id::linkedin::4442876386",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "REST APIs and microservices",
+                "Java and SQL"
+              ],
+              "main_gaps": [
+                "Production Java/Spring Boot experience",
+                "Kafka or RabbitMQ"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-01T21:34:50.143863+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -22518,159 +22736,6 @@
               "main_gaps": [
                 "PhD requirement",
                 "large-scale economics or ML"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-09-27T20:51:57.140837+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 1,
-      "cache_reused": 169,
-      "peer_reused": 0,
-      "same_content_reused": 9,
-      "non_material_change_reused": 0,
-      "new_or_changed": 1,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 821,
-      "requests": 1,
-      "input_tokens": 3072,
-      "cached_input_tokens": 0,
-      "output_tokens": 335,
-      "reasoning_tokens": 257,
-      "estimated_usd": 0.000475,
-      "latency_seconds": 3.955,
-      "latency_measured": true,
-      "effective_rpm": 15.17,
-      "effective_tpm": 51686.47,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 1,
-      "primary_batches_total": 1,
-      "batches_attempted": 1,
-      "batches_succeeded": 1,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 1,
-      "funnel": {
-        "after_dedup": 5491,
-        "after_company": 5284,
-        "after_hard_filter": 4843,
-        "after_prefilter": 1347,
-        "official_duplicates_suppressed": 356,
-        "retry_only_carried": 0,
-        "dropped": 4097
-      },
-      "output": {
-        "tier_a": 27,
-        "tier_b": 162,
-        "ab_before_cap": 189,
-        "shown": 189,
-        "new_jobs": 21,
-        "new_jobs_added": 6,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 1,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 20,
-            "added": 6
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 1695,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 16,
-          "identity_needed": 4,
-          "http_requests": 4,
-          "identities_resolved": 4,
-          "jds_resolved": 3,
-          "direct_http_resolved": 3,
-          "remaining_no_jd": 1695,
-          "failure_reasons": {
-            "linkedin_http_429": 1,
-            "no_direct_or_official_url": 11
-          }
-        },
-        "remaining_no_jd": 1683,
-        "failure_reasons": {
-          "no_enrichment_path": 1239,
-          "official_detail_deferred": 46,
-          "linkedin_http_429": 2,
-          "linkedin_rate_limited": 8,
-          "no_direct_or_official_url": 11,
-          "glassdoor_detail_http_403_static_card_only": 377
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4454553466",
-              "company": "JPMorganChase",
-              "title": "AWS Software Engineer III-Full Stack/Java/Spring Boot"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 3.955,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 3072,
-            "cached_input_tokens": 0,
-            "output_tokens": 335,
-            "reasoning_tokens": 257,
-            "estimated_usd": 0.000475
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4454553466",
-              "match_score": 62.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production backend APIs",
-                "AWS and CI/CD delivery"
-              ],
-              "main_gaps": [
-                "Java Spring Boot microservices",
-                "3+ years applied experience"
               ]
             }
           ]
