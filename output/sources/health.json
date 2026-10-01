@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-01T21:33:53.280346+00:00",
+  "generated_at": "2026-10-01T21:44:20.632525+00:00",
   "collector": {
-    "commit": "a0c1a505fe9c2eb7f6771f336372ee99e88c760e",
+    "commit": "b88177ac114e3fda2340822fe36b526cce6ababe",
     "dirty": false
   },
   "sources": {
@@ -11,14 +11,14 @@
       "healthy": false,
       "status": "skipped_unavailable",
       "reason": "search cooldown",
-      "last_attempt_at": "2026-10-01T21:33:53.265792+00:00",
+      "last_attempt_at": "2026-10-01T21:44:20.604870+00:00",
       "last_success_at": "2026-09-22T18:01:45.946101+00:00",
       "last_partial_at": "2026-10-01T05:00:16.668133+00:00",
       "partial_collected_count": 108,
       "partial_fresh_kept": 104,
       "partial_carried_count": 1849,
       "last_attempt_collector": {
-        "commit": "a0c1a505fe9c2eb7f6771f336372ee99e88c760e",
+        "commit": "b88177ac114e3fda2340822fe36b526cce6ababe",
         "dirty": false
       },
       "last_success_collector": {
@@ -32,16 +32,16 @@
         "implementation": "sources.linkedin_local"
       },
       "last_attempt_count": 0,
-      "consecutive_failures": 2,
+      "consecutive_failures": 3,
       "query_stats": [],
       "detail_enrichment": {
-        "eligible": 41,
+        "eligible": 33,
         "cache_reused": 0,
         "requests": 8,
         "responses": 8,
         "successful_responses": 8,
         "request_limit": 8,
-        "budget_deferred": 28,
+        "budget_deferred": 20,
         "budget_exhausted": true,
         "retry_deferred": 0,
         "retry_attempts": 0,
@@ -57,17 +57,17 @@
         "scrapling_requests": 0,
         "scrapling_jds_resolved": 0,
         "scrapling_error": "",
-        "remaining_no_jd": 33,
+        "remaining_no_jd": 25,
         "failure_reasons": {
           "official_detail_deferred": 5,
-          "linkedin_rate_limited": 28
+          "linkedin_rate_limited": 20
         },
         "cooldown_active": false,
         "probe": false,
         "status": "active"
       },
       "last_good_count": 1953,
-      "detail_last_attempt_at": "2026-10-01T21:33:53.281366+00:00",
+      "detail_last_attempt_at": "2026-10-01T21:44:20.633539+00:00",
       "detail_429_streak": 0,
       "detail_cooldown_until": "",
       "official_enrichment": {},
@@ -93,7 +93,7 @@
           "search_429_streak": 2,
           "search_cooldown_until": "2026-10-02T05:00:16.668133+00:00",
           "detail_status": "active",
-          "detail_last_attempt_at": "2026-10-01T21:33:53.281366+00:00",
+          "detail_last_attempt_at": "2026-10-01T21:44:20.633539+00:00",
           "detail_429_streak": 0,
           "detail_cooldown_until": "",
           "detail_cooldown_reason": ""
@@ -472,6 +472,17 @@
   "run_history": [
     {
       "source": "linkedin",
+      "run_at": "2026-10-01T21:44:20.604870+00:00",
+      "status": "skipped_unavailable",
+      "new": 0,
+      "pass": null,
+      "new_ab": null,
+      "failure": true,
+      "reason": "search cooldown",
+      "elapsed_seconds": 0.0
+    },
+    {
+      "source": "linkedin",
       "run_at": "2026-10-01T21:33:53.265792+00:00",
       "status": "skipped_unavailable",
       "new": 0,
@@ -681,8 +692,8 @@
     }
   ],
   "local_recovery": {
-    "run_at": "2026-10-01T21:33:53.281366+00:00",
-    "elapsed_seconds": 20.854,
+    "run_at": "2026-10-01T21:44:20.633539+00:00",
+    "elapsed_seconds": 20.577,
     "official_jds_recovered": 0,
     "linkedin_detail_recoveries": 8,
     "post_429_jds_recovered": null,

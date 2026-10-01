@@ -134,7 +134,7 @@
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-10-01T21:33:53.281366+00:00"
+    "jd_recovery_at": "2026-10-01T21:44:20.633539+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -5645,7 +5645,7 @@
       },
       "recovery_input_hash": "60713bf2f8104b286248",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
+      "official_search_attempted_at": "2026-10-01T21:44:20.633539+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -12231,7 +12231,7 @@
       },
       "recovery_input_hash": "f7c62846be9bb596b818",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
+      "official_search_attempted_at": "2026-10-01T21:44:20.633539+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -12290,7 +12290,7 @@
       },
       "recovery_input_hash": "97e6ab76e00ff0942ff8",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
+      "official_search_attempted_at": "2026-10-01T21:44:20.633539+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -17753,7 +17753,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-ii-at-deloitte-4473987460",
       "official_url": "",
-      "description": "",
+      "description": "Our Deloitte AI & Engineering team works to transform technology platforms, drive innovation, and help make a significant impact on our clients' success. You'll work alongside talented professionals reimagining and reengineering operations and processes that are critical to businesses. Your contributions can help clients improve financial performance, accelerate new digital ventures, and fuel growth through innovation. Work you'll do As an AI and Data Science Engineer II on the team, you will be responsible for: Design, build, test, and deploy machine learning and artificial intelligence solutions for business and client use cases Develop and maintain data pipelines, model training workflows, and production-grade application components that support AI-enabled products Analyze structured and unstructured data to identify patterns, generate insights, and support model development and validation Collaborate with engineers, data scientists, product stakeholders, and business teams to translate requirements into technical solutions Monitor model and application performance, troubleshoot issues, and implement enhancements to improve accuracy, reliability, and scalability Develops and maintains AI-enabled capabilities embedded within the AIE platform and software delivery lifecycle A successful candidate would possess these skills: Ability to work independently and collaborate as part of a team Effective written and verbal communication skills Meticulous attention to detail and quality of work product Ability to build and sustain professional relationships Ability to lead projects or workstreams Ability to manage and prioritize multiple tasks in a fast-paced and dynamic environment Strong interpersonal skills and professional demeanor Ability to meet deadlines Ability to provide clear guidance to others The team Deloitte's Government & Public Services (GPS) practice - our people, ideas, technology and outcomes - is designed for impact. Serving federal, state, & local government clients as well as public higher education institutions, our team of professionals brings fresh perspective to help clients anticipate disruption, reimagine the possible, and fulfill their mission promise. Our AI & Data offering provides a full spectrum of solutions for designing, developing, and operating cutting-edge Data and AI platforms, products, insights, and services. Our offerings help clients innovate, enhance and operate their data, AI, and analytics capabilities, ensuring they can mature and scale effectively with organizational intelligence programs and differentiated strategies to win in their chosen markets. Qualifications Required: Bachelor's degree in Computer Science, Data Science, Engineering, Mathematics, Statistics, or a quantitative field 3+ years of professional experience designing, developing, deploying, or supporting machine learning, artificial intelligence, or advanced analytics solutions Must possess an active U.S. Secret security clearance and be able to maintain it for the duration of employment and assignment Ability to travel 20%, on average, based on the work you do and the clients and industries/sectors you serve. Must be legally authorized to work in the United States without the need for employer sponsorship, now or at any time in the future. Preferred: Master's degree in Computer Science, Data Science, Engineering, Mathematics, Statistics, or a quantitative field 2+ years of experience deploying machine learning models into production environments 2+ years of experience working with large language models, natural language processing, or generative artificial intelligence solutions 1+ years of experience in Salesforce Agentforce 1+ years of experience supporting model monitoring, model governance, or machine learning operations processes The wage range for this role takes into account the wide range of factors that are considered in making compensation decisions including but not limited to skill sets; experience and training; licensure and certifications; and other business and organizational needs. The disclosed range estimate has not been adjusted for the applicable geographic differential associated with the location at which the position may be filled. At Deloitte, it is not typical for an individual to be hired at or near the top of the range for their role and compensation decisions are dependent on the facts and circumstances of each case. A reasonable estimate of the current range is $ 110,700 to $218,300. You may also be eligible to participate in a discretionary annual incentive program, subject to the rules governing the program, whereby an award, if any, depends on various factors, including, without limitation, individual and organizational performance. ai&e fy27 profile",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -17769,8 +17769,7 @@
           "outcome": "no_match"
         }
       },
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
       "recovery_triage": {
@@ -17783,7 +17782,11 @@
       "recovery_input_hash": "29a51c3dc906d5446764",
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
-      "official_search_status": "no_match"
+      "official_search_status": "no_match",
+      "linkedin_detail_attempted_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4426722919",
@@ -21277,7 +21280,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-developer-at-excelon-solutions-4472361480",
       "official_url": "",
-      "description": "",
+      "description": "Full stack developer with Python Location: Fort Mill, SC Employment Type: Full-Time Experience: 8-12 years Job Description We are seeking a Full Stack Developer with strong expertise in Front-End Development using Angular along with solid experience in Python and AWS Cloud technologies. The ideal candidate will be responsible for designing, developing, and maintaining scalable web applications, collaborating with cross-functional teams, and delivering high-quality software solutions. Key Responsibilities Design and develop responsive, high-performance user interfaces using Angular (v12+). Build and maintain scalable backend services and RESTful APIs using Python. Develop cloud-native applications leveraging AWS services. Collaborate with product owners, architects, and business stakeholders to understand requirements and translate them into technical solutions. Ensure application security, scalability, performance, and reliability. Participate in code reviews, testing, troubleshooting, and production support activities. Work within Agile/Scrum teams and contribute to continuous improvement initiatives. Required Skills 8+ years of software development experience. Strong hands-on experience with Angular (TypeScript, RxJS, NgRx, Angular Material). Strong proficiency in Python development (FastAPI, Flask, Django, or similar frameworks). Experience building and consuming REST APIs and microservices. Hands-on experience with AWS services such as: Lambda API Gateway ECS/EKS S3 RDS DynamoDB CloudWatch IAM Experience with CI/CD pipelines and DevOps practices. Proficiency with Git and source code management tools. Strong understanding of software design patterns and best practices.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -21287,11 +21290,14 @@
         ]
       },
       "recovery_methods": {},
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
-      "recovery_status": "filtered"
+      "recovery_status": "filtered",
+      "linkedin_detail_attempted_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4451909683",
@@ -22070,7 +22076,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-senior-software-engineer-remote-in-ca-at-first-american-4473978532",
       "official_url": "",
-      "description": "",
+      "description": "Who We Are Join a team that puts its People First! As a member of the First American family of companies, First American Trust is a federal savings bank that has provided banking, wealth management, and trust solutions on a national, full-service basis for more than five decades. Since 1889, First American (NYSE: FAF) has held an unwavering belief in its people. They are passionate about what they do, and we are equally passionate about fostering an environment where all feel welcome, supported, and empowered to be innovative and reach their full potential. Our inclusive, people-first culture has earned our company numerous accolades, including being named to the Fortune 100 Best Companies to Work For® list for eleven consecutive years. We have also earned awards as a best place to work for women, diversity and LGBTQ+ employees, and have been included on more than 50 regional best places to work lists. First American will always strive to be a great place to work, for all. For more information, please visit www.careers.firstam.com. What We Do We are seeking a highly skilled Full Stack Senior Software Engineer to design and implement secure, scalable, cloud-native software solutions that power next-generation financial applications. In this role, you will contribute hands-on development while supporting architecture and design decisions across modern web applications, APIs, and distributed services. If you are passionate about exploring new technologies and have a demonstrated track record of delivering innovative features and products, we would like to hear from you. You will collaborate with cross-functional teams, including Product, Architecture, UX, DevOps, and Security, to design, develop, and integrate AI-enabled capabilities such as intelligent automation, LLM-powered services, RAG-based solutions, and API-driven AI integrations. You will help translate emerging ideas into reliable, production-ready systems that deliver measurable business value. This position offers the opportunity to work with a talented team while operating autonomously with minimal supervision. A strong background in modern software development, cloud platforms, and agile methodologies is essential. Experience building, integrating, or operating AI-powered applications, and using AI-assisted development tools to improve delivery, is highly valued. What You'll Do Design, develop, test, deploy, and maintain secure, scalable applications in an Azure cloud environment. Build full-stack solutions using Python, React, JavaScript/TypeScript, REST APIs, and microservice architectures. Modify and enhance existing applications; contribute to product delivery through coding and pull request reviews. Design, develop, and integrate AI-powered capabilities, including LLM integrations, RAG, agentic workflows, and intelligent automation, using platforms such as Azure OpenAI. Implement and maintain AI orchestration and inference pipelines, ensuring performance, cost efficiency, observability, and responsible usage. Apply software engineering best practices (testing, monitoring, CI/CD, observability, secure SDLC) to production systems, including AI-driven applications. Evaluate and prototype emerging AI tools and frameworks; leverage AI-assisted development tools to accelerate design, coding, testing, and code review. Ensure data privacy, security, governance, and compliance when building and deploying AI-enabled functionality. Independently define and prioritize goals and tasks in a fast-paced agile product environment with small, focused teams. Collaborate with Solution Architects and stakeholders to align on design plans, troubleshoot production issues, and drive durable solutions. Mentor engineers on software engineering best practices, cloud-native architecture, and AI integration patterns. Propose solutions to complex problems, build consensus among the team, and influence technical direction. What You'll Bring 5+ years of software development experience using Python and building cloud-native applications in Azure (AWS experience also considered). Bachelor's degree in Computer Science or equivalent combination of education and experience. Experience developing modern web applications with React and JavaScript/TypeScript. Strong understanding of object-oriented programming, software design patterns, and application architecture. Experience designing and consuming REST APIs. Experience working with relational databases (PostgreSQL, SQL Server, MySQL). Experience conducting code reviews and mentoring other engineers. Experience working in Agile development environments. Familiarity with CI/CD, DevOps, and modern software development best practices. Experience integrating AI capabilities into applications, including Azure OpenAI, LLMs, RAG, or vector databases. Experience with Docker and Kubernetes preferred. Excellent communication skills and ability to collaborate across technical and business teams. Familiar with Ruby on Rails or willing to learn it. Experience with event-driven architecture and messaging platforms. Experience with application observability leveraging OpenTelemetry. TECHNOLOGY: Python, Azure (App Services, Functions, Azure OpenAI, AI Services), React, JavaScript/TypeScript, REST API, Relational Databases (PostgreSQL, MySQL, SQL Server), NoSQL Databases (MongoDB, Cosmos DB), LLMs, RAG, AI APIs. DEVELOPMENT TOOLS: Docker, Kubernetes, Linux, Windows, Azure, Git, GitLab, GitHub, Azure DevOps, NPM Package Management, CI/CD Pipelines. Note that the following statements only apply to candidates who will be working from an unincorporated area within Los Angeles County. ** First American will consider for employment all qualified applicants, including those with arrest or conviction records, in a manner consistent with the requirements of applicable state and local laws (e.g., the Los Angeles County Fair Chance Ordinance for Employers and the California Fair Chance Act). First American intends to conduct a review of an applicant’s criminal history in connection with a conditional offer. First American reasonably believes that a criminal history may have a direct, adverse and negative relationship with the following material job duties for this position potentially resulting in the withdrawal of the conditional offer of employment: handling of confidential, proprietary or trade secret information belonging to First American or its customers, administrating or facilitating financial transactions, and the ability to meet customer-imposed criminal history requirements. What We Offer By choice, we don’t simply accept individuality – we embrace it, we support it, and we thrive on it! Our People First culture is inclusive for all employees - not just because it's the right thing to do, but because it's the key to our success. We are proud to foster an authentic and inclusive workplace For All. You are free and encouraged to bring your entire, unique self to work. First American is an equal opportunity employer in every sense of the term. Based on eligibility, First American offers a comprehensive benefits package including medical, dental, vision, 401k, PTO/paid sick leave and other great benefits like an employee stock purchase plan. Pay Range: $129,300.00 - $172,300.00 Annually This hiring range is a reasonable estimate of the base pay range for this position at the time of posting. Pay is based on a number of factors which may include job-related knowledge, skills, experience, business requirements and geographic location.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -22080,11 +22086,14 @@
         ]
       },
       "recovery_methods": {},
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
-      "recovery_status": "filtered"
+      "recovery_status": "filtered",
+      "linkedin_detail_attempted_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4470483243",
@@ -22768,7 +22777,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-%E2%80%93-java-microservices-at-frost-4442876386",
       "official_url": "",
-      "description": "",
+      "description": "Unfortunately, we currently are not able to sponsor or transfer a sponsorship to Frost. This includes, H-1B, TN, OPT, O-1, H4EAD, F-1, L-1, all Student Visas The candidate for this exciting opportunity will need to be living in the San Antonio, Texas or the Austin, Texas or the Dallas, Texas areas. This role will require 2 to 3 days per month at the One Frost Corporate Campus office in San Antonio. Frost will help with relocation costs to move to Texas area if one is not currently living in those areas. Job Description It’s about creating solutions that help people. Do others often ask you for technology advice and assistance? Are you always looking for innovative ways to help people? Do you like having the autonomy to build new solutions from the ground up? If so, being a Software Engineer II at Frost could be the job for you. At Frost, it’s about more than a job. It’s about having a flourishing career where you can thrive, both in and out of work. At Frost, we’re committed to fostering an environment that reflects our values and encourages team members to be the best they can be. In joining our adaptable, integrity-driven team, you’ll become part of Frost’s over 150-year legacy of providing unparalleled banking services. Who You Are As a Software Engineer II – Java & Microservices at Frost, you are our code guru, not only configuring the systems but understanding the why’s behind them. Our software engineers believe in collaboration, ingenuity, and truly want to drive design and change in the IT realm. In this role, you will be responsible for designing, configuring, testing, implementing, supporting, and documenting solutions for assigned applications across the organization. You welcome a challenge and want to provide next level experiences to every individual that uses our systems. What You’ll Do Design, write, test, implement, and document solutions for assigned program modules Collaborate with project teams and other Software Engineers to provide technical support Support assigned IT systems/applications by troubleshooting and resolving defects Always take action using Integrity, Caring, and Excellence to achieve all-win outcomes What You’ll Need Bachelor’s degree in computer science, Engineering, in a related field, or equivalent experience Demonstrated ability to independently identify program issues and develop the appropriate solution, typically requiring at least 2 years of experience Strong understanding of software development principles, programming concepts, best practices, and development methodologies Demonstrated strong experience with Java and SQL Experience designing and building scalable enterprise applications using Spring Boot and Microservices architecture Ability to write clean, maintainable, and well-tested code using unit and integration testing frameworks such as JUnit and Mockito Strong experience designing, developing, and deploying RESTful microservices, including API design, Spring Security, JWT/OAuth2 authentication, service-to-service communication, and event-driven architectures using Kafka or RabbitMQ Experience working with relational and NoSQL databases, as well as containerization and orchestration technologies such as Docker, Kubernetes, or OpenShift Strong troubleshooting and debugging skills across application, infrastructure, and system layers Knowledge of resilient microservice patterns such as Circuit Breaker, Retry, Timeout, and Bulkhead to ensure system reliability and fault tolerance Excellent written and verbal communication skills with the ability to collaborate effectively across cross-functional teams Additional Preferred Skills Experience working with CI/CD pipelines using tools such as Jenkins, GitHub Actions Having knowledge on Banking and Financial is preferred Experience with API Gateway technologies Exposure to AI-assisted software development tools Exposure to front-end and mobile application development technologies such as Angular, Kotlin, Xcode, or similar frameworks is a plus. Our Benefits At Frost, we care about your health, your family, and your future and strive to have our benefits reflect that. This includes: Medical, dental, vision, long-term disability, and life insurance 401(k) matching Generous holiday and paid time off schedule Tuition reimbursement Extensive health and wellness programs, including our Employee Assistance Program Referral bonus program + more! Since 1868, Frost has dedicated their expertise to provide exceptional banking, investment, and insurance services to businesses and individuals throughout Texas. Frost is one of the 50 largest U.S. banks by asset size and is a leader in banking customer satisfaction. At Frost, it’s about being part of something bigger. If this sounds like you, we encourage you to apply and see what’s possible at Frost.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -22784,8 +22793,7 @@
           "outcome": "no_match"
         }
       },
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
       "recovery_triage": {
@@ -22798,7 +22806,11 @@
       "recovery_input_hash": "6998a9c169f114d1451e",
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
-      "official_search_status": "no_match"
+      "official_search_status": "no_match",
+      "linkedin_detail_attempted_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4468303656",
@@ -25842,7 +25854,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/python-backend-developer-at-haystack-4472656086",
       "official_url": "",
-      "description": "",
+      "description": "A leading financial technology client is seeking a talented engineer to build innovative cloud-native solutions for the investment management sector. This company is a premier provider of AI-driven platforms and financial technology services, working with top-tier clients to develop next-generation systems. The Role Design, develop, and maintain high-performance backend services using Python and FastAPI. Build scalable REST APIs for cloud-native financial applications, supporting real-time market data ingestion. Develop backend services and APIs for a greenfield Portfolio Management System. Integrate with Bloomberg and other third-party market data providers. Implement API throttling, rate limiting, caching, and fault-tolerant data ingestion mechanisms. Optimize application performance, cloud resource utilization, and system scalability, deploying on Microsoft Azure. What You'll Need 5+ years of experience in backend software development with strong Python programming skills. Proven experience developing REST APIs using FastAPI or similar Python frameworks. Hands-on experience with Bloomberg API integration. Strong understanding of backend application architecture and distributed systems. Expertise in SQL and PostgreSQL, with experience in designing scalable data models. Cloud development experience, particularly with Microsoft Azure, AWS, or Google Cloud Platform. What's On Offer Opportunity to work on a greenfield project, building a cloud-native Portfolio Management System. Engage with cutting-edge technologies in AI and financial technology. Be part of a highly collaborative engineering team, contributing to core architectural decisions. Direct collaboration with client engineering leads in a fast-paced, innovative environment. Apply via Haystack today!",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -25858,8 +25870,7 @@
           "outcome": "no_match"
         }
       },
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
       "recovery_triage": {
@@ -25872,7 +25883,11 @@
       "recovery_input_hash": "2f208b97133019904776",
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
-      "official_search_status": "no_match"
+      "official_search_status": "no_match",
+      "linkedin_detail_attempted_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4470598570",
@@ -26400,7 +26415,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/advanced-software-engineer-at-honeywell-technologies-4464643628",
       "official_url": "",
-      "description": "",
+      "description": "Job Description Honeywell’s Security and Access Solutions business provides high-value security products and services that are critical for buildings around the globe. Building operators and security teams across dynamically evolving verticals depend on our mobile- and cloud-enabled technologies for access control, intrusion detection, and locking solutions to help create safer and more efficient facilities. You will be joining one of our most strategic initiatives to build a cloud-based software-as-a-service unified security solution supporting access control, video, and monitoring capabilities. As part of the engineering team, you will work in a continuous delivery environment and contribute to features that directly impact our customers daily. You will report directly to our Sr. Software Engineering Manager, and you’ll work out of our Pittsford, NY or Atlanta, GA location on a Hybrid work schedule. The Advanced Software Engineer will participate in feature planning and design sessions, architect and implement software solutions, assist with test plans and documentation, and maintain those solutions. This position produces significant results through technical leadership and the building of strong coaching/mentoring peer relationships. The ideal candidate will demonstrate strong functional programming skills. Responsibilities KEY RESPONSIBILITIES Develop and implement robust multi-tenant cloud solutions Leverage persona-based development to ensure our products meet customers’ needs Work within a full stack cross-functional delivery team to deliver incremental customer-facing features Participate in peer review to both share and receive feedback Designing, developing, testing, and demoing as needed withing a delivery team Qualifications YOU MUST HAVE A minimum of five (5) years of experience developing modern web applications and/or cloud services Bachelor’s degree in Computer Science, Software Engineering, Computer Engineering or a related major; significant technical experience can be substituted. Expert knowledge of the JavaScript language and functional programming Mastery of modern JavaScript frameworks and tools such as Node.js, React.js, and Webpack Extensive experience building on RESTful web services Ability to organize large-scale codebases using common JavaScript patterns Excellent written and verbal communication skills Excellent troubleshooting and problem-solving skills Desire to learn new programming languages and technologies as requirements evolve WE VALUE Master’s degree desired A strong portfolio or GitHub profile showcasing web development experience Experience with cloud platforms (Azure, AWS, GCP) and serverless architecture Familiarity with continuous integration practices, unit testing, and automated integration testing Knowledge of distributed systems, network security, automation tools, and system analysis Experience building scalable solutions with zero-downtime deployment The annual base salary range for this position is $128,000.00 - $159,000.00 Please note that this salary information serves as a general guideline. Honeywell considers various factors when extending an offer, including but not limited to the scope and responsibilities of the position, the candidate's work experience, education and training, key skills, as well as market and business considerations. Benefits Of Working For Honeywell In addition to a competitive salary, leading-edge work, and developing solutions side-by-side with dedicated experts in their fields, Honeywell employees are eligible for a comprehensive benefits package. This package includes employer subsidized Medical, Dental, Vision, and Life Insurance; Short-Term and Long-Term Disability; 401(k) match, Flexible Spending Accounts, Health Savings Accounts, EAP, and Educational Assistance; Parental Leave, Paid Time Off (for vacation, personal business, sick time, and parental leave), and 12 Paid Holidays. Learn more (https://benefits.honeywell.com/) The application period for the job is estimated to be 40 days from the job posting date; however, this may be shortened or extended depending on business needs and the availability of qualified candidates. Job posting 9/02/2026 About Honeywell Honeywell International Inc. (Nasdaq: HON) invents and commercializes technologies that address some of the world's most critical challenges around energy, safety, security, productivity, and global urbanization. We are a leading software-industrial company committed to introducing state of the art technology solutions to improve efficiency, productivity, sustainability, and safety in high growth businesses in broad-based, attractive industrial end markets. Our products and solutions enable a safer, more comfortable, and more productive world, enhancing the quality of life of people around the globe. Learn more (https://www.honeywell.com/us/en) U.s. Person Requirements Due to compliance with U.S. export control laws and regulations, candidate must be a U.S. Person, which is defined as, a U.S. citizen, a U.S. permanent resident, or have protected status in the U.S. under asylum or refugee status or have the ability to obtain an export authorization. About Us Honeywell Technologies is a global, pure-play automation company with a legacy of innovating to help solve the world’s most mission-critical challenges, enhancing the quality of life for people and communities around the world. We serve the building, industrial and process sectors with a broad portfolio of services, solutions and products, underpinned by our Honeywell Technologies Accelerator operating system and Honeywell Technologies Forge intelligence layer. By combining the deep domain expertise of our more than 50,000 employees with decades of data from our global installed base, we are uniquely positioned to lead the industrial sector’s transition from automation to autonomy.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -26416,8 +26431,7 @@
           "outcome": "no_match"
         }
       },
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
       "recovery_triage": {
@@ -26430,7 +26444,11 @@
       "recovery_input_hash": "e6e8319d15bfe6ccaa2d",
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
-      "official_search_status": "no_match"
+      "official_search_status": "no_match",
+      "linkedin_detail_attempted_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4470486465",
@@ -30456,7 +30474,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/avp-senior-full-stack-software-engineer-ai-cloud-platforms-at-lpl-financial-4429197109",
       "official_url": "",
-      "description": "",
+      "description": "Lead with Purpose, Unlock Your Team’s Passion At LPL, people leaders hold the key to the employee experience — shaping culture, driving performance, and guiding individuals to new heights. Because when that happens, we all win – clients, LPL, and most importantly our, employees. If you're ready to lead with intention and discover what’s possible, LPL Financial invites you to apply today. Job Overview: As an AVP, Full Stack Developer at LPL Financial, you will be a key contributor to designing, developing, and maintaining robust and scalable financial technology solutions. You will work across the entire software development life cycle, from front-end user interfaces to back-end services and database interactions, ensuring high-quality and performant applications that meet business needs. Responsibilities : Develop and maintain full-stack applications using a variety of technologies, including front-end frameworks (e.g., React, Angular, Vue.js), back-end languages (e.g., Java, Python, C#), and database systems (e.g., SQL Server, Oracle, MongoDB). Collaborate with product owners, business analysts, and other developers to understand requirements, design technical solutions, and estimate effort. Write clean, efficient, well-documented, and testable code following best practices and architectural patterns. Participate in code reviews to ensure code quality, consistency, and adherence to standards. Design and implement RESTful APIs and microservices. Troubleshoot and debug production issues, providing timely resolutions and root cause analysis. Contribute to continuous improvement initiatives for development processes, tools, and methodologies. Mentor junior developers and share knowledge within the team. Stay up-to-date with emerging technologies and industry trends. AI Awareness & Design Expectations : Using AI copilots (GitHub Copilot, Cursor, Antigravity) to accelerate development Applying LLMs (ChatGPT, Claude, Gemini) for code generation, review, refactoring, debugging Familiarity with Figma for design collaboration Understanding responsible AI usage including data privacy and security Understanding how to deploy agents to production scale using AWS Bedrock, Vercel, etc. What are we looking for? We’re looking for strong collaborators who deliver exceptional client experiences and thrive in fast-paced, team-oriented environments. Our ideal candidates pursue greatness , act with integrity , and are driven to help our clients succeed . We value those who embrace creativity, continuous improvement, and contribute to a culture where we win together and create and share joy in our work. Requirements: Bachelor's degree in Computer Science, Engineering, or a related field. Minimum of 7 years of progressive experience in full-stack software development. Experience in at least one modern front-end framework (e.g., React, Angular, Vue.js) and associated technologies (HTML5, CSS3, JavaScript/TypeScript). Experience with at least one back-end programming language (e.g., Java, Python, C#) and relevant frameworks (e.g., Spring Boot, .NET Core, Django, Flask). Core Competencies: Solid understanding of relational and/or NoSQL databases, including schema design, querying, and optimization. Experience with cloud platforms (e.g., AWS, Azure, Google Cloud) and containerization technologies (e.g., Docker, Kubernetes) is highly desirable. Familiarity with CI/CD pipelines and DevOps practices. Demonstrated ability to work independently and collaboratively in a fast-paced, agile environment. Excellent problem-solving, analytical, and communication skills. Experience in the financial services industry is a plus. Pay Range: $147,500.00 - $245,900.00 Actual base salary varies based on factors, including but not limited to, relevant skill, prior experience, education, base salary of internal peers, demonstrated performance, and geographic location. Additionally, LPL Total Rewards package is highly competitive, designed to support your success at work, at home, and at play – such as 401K matching, health benefits, employee stock options, paid time off, volunteer time off, and more. Your recruiter will be happy to discuss all that LPL has to offer! Company Overview: LPL Financial Holdings Inc. (Nasdaq: LPLA) is among the fastest growing wealth management firms in the U.S. As a leader in the financial advisor-mediated marketplace(6) , LPL supports over 32,000 financial advisors and the wealth management practices of approximately 1,100 financial institutions, servicing and custodying approximately $2.3 trillion in brokerage and advisory assets on behalf of approximately 8 million Americans. The firm provides a wide range of advisor affiliation models, investment solutions, fintech tools and practice management services, ensuring that advisors and institutions have the flexibility to choose the business model, services, and technology resources they need to run thriving businesses. For further information about LPL, please visit www.lpl.com. At LPL, independence means that advisors and institution leaders have the freedom they deserve to choose the business model, services, and technology resources that allow them to run a thriving business. They have the flexibility to do business their way. And they have the freedom to manage their client relationships, because they know their clients best. Simply put, we take care of our advisors and institutions, so they can take care of their clients. For further information about LPL, please visit www.lpl.com. Join the LPL team and help us make a difference by turning life’s aspirations into financial realities. Please log in or create an account to apply to this position. Principals only. EOE. Information on Interviews: LPL will only communicate with a job applicant directly from an @lplfinancial.com email address and will never conduct an interview online or in a chatroom forum. During an interview, LPL will not request any form of payment from the applicant, or information regarding an applicant’s bank or credit card. Should you have any questions regarding the application process, please contact LPL’s Human Resources Solutions Center at (855) 575-6947. EAC 5.19.26",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -30466,11 +30484,14 @@
         ]
       },
       "recovery_methods": {},
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
-      "recovery_status": "filtered"
+      "recovery_status": "filtered",
+      "linkedin_detail_attempted_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4471928466",
@@ -35161,7 +35182,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/ai-ml-engineer-multiple-levels-cleared-at-noblis-4468670351",
       "official_url": "",
-      "description": "",
+      "description": "Responsibilities Noblis is seeking AI/ML Engineers at all experience levels with an active TS/SCI with a Polygraph to support mission-critical national security initiatives. In this role, you will design, develop, and deploy advanced machine learning and AI solutions while building the scalable infrastructure needed to operationalize AI capabilities in secure, production environments. Key Responsibilities Model Development & Deployment Design, develop, and containerize machine learning (ML) models using modern frameworks and tools, including PyTorch, Ray, Docker, and FastAPI Deploy, manage, and scale production ML workloads on Kubernetes Integrate AI/ML capabilities into full-stack applications using Python-based backend services and JavaScript frontend technologies Ensure model reliability, performance, and maintainability throughout the deployment lifecycle Infrastructure & Operations Architect and implement cloud-native ML infrastructure on AWS Develop and maintain DevOps and MLOps pipelines to streamline model development, testing, deployment, and monitoring Deploy and support AI/ML systems within secure, classified, and high-side environments Technical Leadership Evaluate and integrate state-of-the-art AI/ML models, frameworks, and emerging technologies to enhance mission capabilities and accelerate innovation Architect scalable, resilient, and secure infrastructure to support evolving AI/ML workloads, production deployments, and mission-critical requirements Establish and champion best practices for production-grade machine learning (ML) systems, including MLOps, security, observability, and governance Provide technical guidance and thought leadership across AI/ML initiatives and engineering teams Required Qualifications Active Top Secret/SCI (TS/SCI) with Polygraph S. Citizenship is required Travel up to 10% within US. Lift up to 30 lbs, walk, bend, drive. Junior level Bachelor's, Master's, or PhD degree with 0-3 years of related experience including exposure or coursework in machine learning concepts and frameworks; OR Associate's degree with 3 years of related experience; OR High School diploma/GED with 6 years of related experience Knowledge of machine learning frameworks and deploying ML models to production Compensation: $90,700 - $171,525 Mid-level Bachelor's degree with 5 years of related experience; OR Master's degree with 3 years of related experience; OR Associate's degree with 8 years of related experience; OR High School diploma/GED with 11 years of related experience Experience with machine learning frameworks and deploying ML models to production Compensation: $132,900 - $207,750 Senior level Bachelor's degree with 8 years of related experience; OR Master's degree with 6 years of related experience; OR Associate's degree with 11 years of related experience; OR High School diploma/GED with 14 years of related experience Experience with machine learning frameworks and deploying ML models to production Compensation: $160,800 - $251,325 Desired Qualifications Full-stack software development experience using Python and JavaScript Expert-level proficiency in Python with extensive experience across leading machine learning (ML) frameworks, including TensorFlow, PyTorch, and scikit-learn Proven ability to design and implement end-to-end machine learning (ML) pipelines, spanning data ingestion, feature engineering, model training, evaluation, deployment, and monitoring Extensive experience with large language models (LLMs), including fine-tuning, prompt engineering, retrieval-augmented generation (RAG), agentic workflows, and responsible AI practices Expertise in advanced machine learning (ML) techniques, including deep learning, reinforcement learning, generative models, ensemble methods, and modern model optimization approaches Proven track record of designing and implementing production-grade MLOps infrastructure, including automated model retraining, monitoring, drift detection, and CI/CD pipelines using tools such as MLflow, Kubeflow, and SageMaker Pipelines Hands-on experience architecting and deploying scalable machine learning (ML) solutions on cloud platforms (e.g., AWS SageMaker, Azure Machine Learning, Google Vertex AI) with a focus on scalability, reliability, and cost optimization Demonstrated experience leading technical architecture decisions and mentoring engineers on machine learning (ML) best practices, software engineering standards, experimentation, code quality, and research methodology Strong background in distributed computing and big data technologies such as Apache Spark, Ray, and Dask for efficient model training and inference Proficiency with containerization and orchestration technologies, including Docker and Kubernetes, to support scalable model serving, A/B testing, and canary releases/deployments Demonstrated ability to translate complex business problems into well-scoped ML solutions, communicating trade-offs, risks, and ROI to executive stakeholders Experience contributing to or publishing applied ML research, patents, conference presentations, or open-source projects Overview Overview Noblis and our wholly owned subsidiaries, Noblis ESI and Noblis MSD, take on some of the nation’s toughest challenges, delivering advanced solutions to our customers’ most critical missions. We bring together leading scientific, engineering, and management expertise in a culture grounded in objectivity and collaboration, ensuring our work creates lasting impact across federal missions. We work with a broad range of government agencies in the defense, intelligence, and federal civilian sectors. Learn more and find opportunities at careers.noblis.org Why Work at Noblis At Noblis, we share a passion for excellence and innovation, and we create an environment where people can do meaningful work while maintaining the balance that keeps them energized and fulfilled. We seek out individuals with a natural curiosity and desire to collaborate and learn. We believe our people are our greatest strength, and we consistently seek exceptionally skilled, mission‑driven professionals who care deeply about doing work that enriches lives and makes our nation safer. Noblis has earned numerous workplace awards for our culture, our commitment to employee well‑being, and our dedication to meaningful, impactful work. We also maintain a drug‑free workplace. Remote/hybrid status is subject to change based on Noblis and/or government requirements. Commitment to Non-Discrimination All qualified applicants will receive consideration for employment without regard to race, color, ethnicity, sex, age, national origin, religion, physical or mental disability, pregnancy/childbirth and related medical conditions, veteran or military status, or any other characteristics protected by applicable federal, state, or local law. If reasonable accommodation is needed to participate in the job application or interview process, to perform essential job functions, and/or to receive other benefits and privileges of employment, please contact us . EEO is the Law | E-Verify | Right to Work Total Rewards At Noblis we recognize and reward your contributions, provide you with growth opportunities, and support your total well-being. Our offerings include health, life, disability, financial, and retirement benefits, as well as paid leave, professional development, tuition assistance, and work-life programs. Our award programs acknowledge employees for exceptional performance and superior demonstration of our service standards. Full-time and part-time employees working at least 20 hours a week on a regular basis are eligible to participate in our benefit programs. Other offerings may be provided for employees not within this category. We encourage you to learn more about our total benefits by visiting the Benefits page on our Careers site. Compensation at Noblis is determined by various factors, including but not limited to, the combination of education, certifications, knowledge, skills, competencies, and experience, internal and external equity, location, clearance level, as well as contract-specific affordability, organizational requirements and applicable employment laws. The projected compensation range for this position is based on full time status. For part time or on-call staff, compensation is proportionately adjusted based on hours worked. While monetary compensation is important, it's just one component of Noblis’ total compensation package. Posted Salary Range USD $90,700.00 - USD $251,325.00 /Yr.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -35177,8 +35198,7 @@
           "outcome": "no_match"
         }
       },
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
       "recovery_triage": {
@@ -35191,7 +35211,11 @@
       "recovery_input_hash": "5f85b3e5c7371b522c08",
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
-      "official_search_status": "no_match"
+      "official_search_status": "no_match",
+      "linkedin_detail_attempted_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:44:22.087024+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4471124729",
@@ -41720,7 +41744,7 @@
       },
       "recovery_input_hash": "d56944879f545ec17b51",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
+      "official_search_attempted_at": "2026-10-01T21:44:20.633539+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -44779,7 +44803,7 @@
       },
       "recovery_input_hash": "90c07d7b00bf2067bfff",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
+      "official_search_attempted_at": "2026-10-01T21:44:20.633539+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -45992,7 +46016,7 @@
       },
       "recovery_input_hash": "350fb2fe42c65d36b890",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
+      "official_search_attempted_at": "2026-10-01T21:44:20.633539+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -46220,7 +46244,7 @@
       },
       "recovery_input_hash": "c8ae44b6bac5dea86579",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
+      "official_search_attempted_at": "2026-10-01T21:44:20.633539+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -46409,7 +46433,7 @@
       },
       "recovery_input_hash": "a290147e5fb08d07cfbc",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
+      "official_search_attempted_at": "2026-10-01T21:44:20.633539+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -47389,7 +47413,7 @@
       },
       "recovery_input_hash": "b307e84780c0734d6493",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
+      "official_search_attempted_at": "2026-10-01T21:44:20.633539+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -47812,7 +47836,7 @@
       },
       "recovery_input_hash": "bf9e068b0d2250771988",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
+      "official_search_attempted_at": "2026-10-01T21:44:20.633539+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -56652,7 +56676,7 @@
       },
       "recovery_input_hash": "78cb7f4519c80e8e1bae",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
+      "official_search_attempted_at": "2026-10-01T21:44:20.633539+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -56696,7 +56720,7 @@
       },
       "recovery_input_hash": "18a95df5e5d6c05d82f4",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
+      "official_search_attempted_at": "2026-10-01T21:44:20.633539+00:00",
       "official_search_status": "no_match"
     },
     {
