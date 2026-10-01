@@ -3086,152 +3086,11 @@
     }
   ],
   "meta": {
-    "jd_recovery_at": "2026-09-30T19:34:33.158144+00:00"
+    "jd_recovery_at": "2026-10-01T05:00:40.770249+00:00"
   },
   "source": "remote_recovery",
   "count": 143,
   "attempts": {
-    "meta_official_careers|id|29015018748105153": {
-      "source": "meta_official_careers",
-      "job_id": "29015018748105153",
-      "company": "Meta",
-      "title": "Director of Engineering",
-      "location": "Bellevue, WA; Menlo Park, CA; Seattle, WA",
-      "first_seen": "2026-09-29T23:46:17.944418+00:00"
-    },
-    "meta_official_careers|id|2006783006649548": {
-      "source": "meta_official_careers",
-      "job_id": "2006783006649548",
-      "company": "Meta",
-      "title": "Program Manager, Specialized Integrity Risk Assessments",
-      "location": "Menlo Park, CA; New York, NY",
-      "first_seen": "2026-09-29T23:46:17.944418+00:00"
-    },
-    "meta_official_careers|id|2170702880457707": {
-      "source": "meta_official_careers",
-      "job_id": "2170702880457707",
-      "company": "Meta",
-      "title": "Data Science Director - Infrastructure Data Center Analytics",
-      "location": "Bellevue, WA; Menlo Park, CA",
-      "first_seen": "2026-09-29T23:46:17.944418+00:00"
-    },
-    "meta_official_careers|id|1083634127930537": {
-      "source": "meta_official_careers",
-      "job_id": "1083634127930537",
-      "company": "Meta",
-      "title": "Research Engineer, Privacy Evals - Meta Superintelligence Labs",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-09-29T23:46:17.944418+00:00"
-    },
-    "meta_official_careers|id|1365880675303800": {
-      "source": "meta_official_careers",
-      "job_id": "1365880675303800",
-      "company": "Meta",
-      "title": "Software Engineer, XR Experiences",
-      "location": "Redmond, WA; Burlingame, CA",
-      "first_seen": "2026-09-29T23:46:17.944418+00:00",
-      "recovery_methods": {
-        "candidate:4b36eefc6a": {
-          "input_hash": "363b5296d5eb7d061345",
-          "attempted_at": "2026-09-30T19:34:33.158144+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "fa390956413ba9750e97",
-          "attempted_at": "2026-09-30T19:34:33.158144+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.75,
-        "delta": 0,
-        "reason": "Software engineering role; seniority unspecified"
-      },
-      "recovery_input_hash": "13c73460baae73f39fdb",
-      "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-09-30T19:34:33.158144+00:00"
-    },
-    "meta_official_careers|id|1041877494912459": {
-      "source": "meta_official_careers",
-      "job_id": "1041877494912459",
-      "company": "Meta",
-      "title": "Technical Program Manager, Business Engineering",
-      "location": "Menlo Park, CA; New York, NY",
-      "first_seen": "2026-09-29T23:46:17.944418+00:00"
-    },
-    "meta_official_careers|id|941261469037200": {
-      "source": "meta_official_careers",
-      "job_id": "941261469037200",
-      "company": "Meta",
-      "title": "Business Development Manager, Payments & FinTech",
-      "location": "Menlo Park, CA; New York, NY; San Francisco, CA",
-      "first_seen": "2026-09-29T23:46:17.944418+00:00"
-    },
-    "meta_official_careers|id|950282883997610": {
-      "source": "meta_official_careers",
-      "job_id": "950282883997610",
-      "company": "Meta",
-      "title": "Silicon Power Architect, Reality Labs",
-      "first_seen": "2026-09-29T23:46:17.944418+00:00"
-    },
-    "meta_official_careers|id|1393717199006353": {
-      "source": "meta_official_careers",
-      "job_id": "1393717199006353",
-      "company": "Meta",
-      "title": "Privacy Engineer, Red Team",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-09-29T23:46:17.944418+00:00"
-    },
-    "meta_official_careers|id|1475372737760099": {
-      "source": "meta_official_careers",
-      "job_id": "1475372737760099",
-      "company": "Meta",
-      "title": "Quality Program Manager, Data Center Design and Construction",
-      "location": "Denver, CO; Austin, TX; Reston, VA; Menlo Park, CA; Seattle, WA; New York, NY; San Francisco, CA; Chicago, IL",
-      "first_seen": "2026-09-29T23:46:17.944418+00:00"
-    },
-    "meta_official_careers|id|1427751379499342": {
-      "source": "meta_official_careers",
-      "job_id": "1427751379499342",
-      "company": "Meta",
-      "title": "Product Cost Engineer, Capital Equipment — Meta Reality Labs Product Operations",
-      "location": "Sunnyvale, CA",
-      "first_seen": "2026-09-29T23:46:17.944418+00:00"
-    },
-    "bloomberg_official_careers|id|44968": {
-      "source": "bloomberg_official_careers",
-      "job_id": "44968",
-      "company": "Bloomberg",
-      "title": "Index Sales Relationship Manager, Buyside - Financial Solutions",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-09-29T23:46:17.944418+00:00"
-    },
-    "bloomberg_official_careers|id|44960": {
-      "source": "bloomberg_official_careers",
-      "job_id": "44960",
-      "company": "Bloomberg",
-      "title": "Internal Communications Specialist",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-09-29T23:46:17.944418+00:00"
-    },
-    "disney_official_careers|id|10152989": {
-      "source": "disney_official_careers",
-      "job_id": "10152989",
-      "company": "Disney",
-      "title": "Sr Product Software Engineer",
-      "location": "Bristol, Connecticut",
-      "first_seen": "2026-09-29T23:46:17.944418+00:00"
-    },
-    "disney_official_careers|id|10145526": {
-      "source": "disney_official_careers",
-      "job_id": "10145526",
-      "company": "Disney",
-      "title": "Principal Software Development Engineer in Test",
-      "location": "New York, New York / Glendale, California",
-      "first_seen": "2026-09-29T23:46:17.944418+00:00"
-    },
     "meta_official_careers|id|1636221097847538": {
       "source": "meta_official_careers",
       "job_id": "1636221097847538",
@@ -3284,7 +3143,7 @@
       },
       "recovery_input_hash": "13e0cf955bb7f5ed6274",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-09-30T19:34:33.158144+00:00"
+      "official_search_attempted_at": "2026-10-01T05:00:40.770249+00:00"
     },
     "bloomberg_official_careers|id|44982": {
       "source": "bloomberg_official_careers",
@@ -3302,30 +3161,229 @@
       "location": "New York, New York / Bristol, Connecticut",
       "first_seen": "2026-09-30T14:47:11.530767+00:00"
     },
-    "syncareer|id|722869b046951b698d0977d84aa30248": {
-      "source": "syncareer",
-      "job_id": "722869b046951b698d0977d84aa30248",
-      "company": "Teledyne Technologies",
-      "title": "Embedded Software Engineer",
-      "location": "Goleta, California, United States",
-      "first_seen": "2026-09-29T23:51:14.528392+00:00",
+    "meta_official_careers|id|1106067155219316": {
+      "source": "meta_official_careers",
+      "job_id": "1106067155219316",
+      "company": "Meta",
+      "title": "Software Engineer, Network Routing",
+      "location": "Menlo Park, CA",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00",
       "recovery_methods": {
+        "candidate:d209d6a79d": {
+          "input_hash": "6ea24041bbe9fdd7db66",
+          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
+          "outcome": "no_match"
+        },
         "generic_search": {
-          "input_hash": "7a3454ebebb844e992cc",
-          "attempted_at": "2026-09-30T19:34:33.158144+00:00",
+          "input_hash": "aa44ef15fe7e916b4a9e",
+          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_triage": {
         "action": "recover",
-        "priority": "normal",
-        "confidence": 0.81,
+        "priority": "high",
+        "confidence": 0.84,
         "delta": 0,
-        "reason": "Embedded software engineering fits target family"
+        "reason": "Software engineering focused on network routing"
       },
-      "recovery_input_hash": "31b49f35561b22d4166a",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-09-30T19:34:33.158144+00:00"
+      "recovery_input_hash": "9f8a1840189a654411af",
+      "official_search_status": "deferred",
+      "official_search_attempted_at": "2026-10-01T05:00:40.770249+00:00"
+    },
+    "meta_official_careers|id|1405498381042864": {
+      "source": "meta_official_careers",
+      "job_id": "1405498381042864",
+      "company": "Meta",
+      "title": "Principal Software Engineer, Systems",
+      "location": "Remote, US",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00"
+    },
+    "meta_official_careers|id|1631242335025906": {
+      "source": "meta_official_careers",
+      "job_id": "1631242335025906",
+      "company": "Meta",
+      "title": "Research Scientist, Polymer Physicist",
+      "location": "Redmond, WA; Pasadena, CA",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00"
+    },
+    "meta_official_careers|id|3221791248029792": {
+      "source": "meta_official_careers",
+      "job_id": "3221791248029792",
+      "company": "Meta",
+      "title": "Software Engineer, Network Infrastructure",
+      "location": "Menlo Park, CA",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00",
+      "recovery_methods": {
+        "candidate:748298060c": {
+          "input_hash": "44ec17dab35dbfca2e04",
+          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
+          "outcome": "no_match"
+        },
+        "generic_search": {
+          "input_hash": "2fdfe4438ff1c72b77c8",
+          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.83,
+        "delta": 0,
+        "reason": "Software engineering focused on network infrastructure"
+      },
+      "recovery_input_hash": "ba3d7388a06bfb297aed",
+      "official_search_status": "deferred",
+      "official_search_attempted_at": "2026-10-01T05:00:40.770249+00:00"
+    },
+    "meta_official_careers|id|2245120489365403": {
+      "source": "meta_official_careers",
+      "job_id": "2245120489365403",
+      "company": "Meta",
+      "title": "Component Quality Engineer, Optics",
+      "location": "Menlo Park, CA; Fremont, CA",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00"
+    },
+    "meta_official_careers|id|28861751213421465": {
+      "source": "meta_official_careers",
+      "job_id": "28861751213421465",
+      "company": "Meta",
+      "title": "Component Quality Engineer, Thermal and Mechanical",
+      "location": "Menlo Park, CA",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00"
+    },
+    "meta_official_careers|id|1703535900748483": {
+      "source": "meta_official_careers",
+      "job_id": "1703535900748483",
+      "company": "Meta",
+      "title": "Technical Program Manager, Infrastructure Data Centers",
+      "location": "Menlo Park, CA",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00"
+    },
+    "meta_official_careers|id|1873038390772808": {
+      "source": "meta_official_careers",
+      "job_id": "1873038390772808",
+      "company": "Meta",
+      "title": "AI Research Scientist, AI Safety and Security",
+      "location": "Menlo Park, CA",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00",
+      "recovery_methods": {
+        "candidate:e6b4b77157": {
+          "input_hash": "85383781513d6139fada",
+          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
+          "outcome": "no_match"
+        },
+        "generic_search": {
+          "input_hash": "d91f428033d3746de315",
+          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "low",
+        "confidence": 0.61,
+        "delta": 0,
+        "reason": "AI-relevant research role; seniority unclear"
+      },
+      "recovery_input_hash": "ec5c3efb143dcd97cbfa",
+      "official_search_status": "deferred",
+      "official_search_attempted_at": "2026-10-01T05:00:40.770249+00:00"
+    },
+    "meta_official_careers|id|1095054769939445": {
+      "source": "meta_official_careers",
+      "job_id": "1095054769939445",
+      "company": "Meta",
+      "title": "DFX Engineering Intern",
+      "location": "Sunnyvale, CA; Seattle, WA",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00"
+    },
+    "meta_official_careers|id|1098246693202644": {
+      "source": "meta_official_careers",
+      "job_id": "1098246693202644",
+      "company": "Meta",
+      "title": "Cloud Production Systems Engineer",
+      "location": "Los Lunas, NM; Sarpy County, NE; Mesa, AZ; Ashburn, VA; Rayville, LA; Montgomery, AL; Prineville, OR; Lebanon, IN; Bowling Green, OH; Cedar Rapids, IA; DeKalb, IL; New Albany, OH; Tulsa, OK; Huntsville, AL; Eagle Mountain, UT",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00",
+      "recovery_methods": {
+        "candidate:72e7b6d5ba": {
+          "input_hash": "03553ac51b0cb1180925",
+          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
+          "outcome": "no_match"
+        },
+        "generic_search": {
+          "input_hash": "f03ba3ec223ac92c96be",
+          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "low",
+        "confidence": 0.57,
+        "delta": 0,
+        "reason": "Production systems scope may be infrastructure operations"
+      },
+      "recovery_input_hash": "f7218ed04c1df84aae95",
+      "official_search_status": "deferred",
+      "official_search_attempted_at": "2026-10-01T05:00:40.770249+00:00"
+    },
+    "bloomberg_official_careers|id|44991": {
+      "source": "bloomberg_official_careers",
+      "job_id": "44991",
+      "company": "Bloomberg",
+      "title": "Senior Software Engineer - RDF Infrastructure",
+      "location": "New York, New York, United States of America",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00"
+    },
+    "bloomberg_official_careers|id|22289": {
+      "source": "bloomberg_official_careers",
+      "job_id": "22289",
+      "company": "Bloomberg",
+      "title": "Senior Financial Specialist, Enterprise Products (Sell Side)",
+      "location": "New York, New York, United States of America",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00"
+    },
+    "bloomberg_official_careers|id|44971": {
+      "source": "bloomberg_official_careers",
+      "job_id": "44971",
+      "company": "Bloomberg",
+      "title": "Product Manager – Data and Platform Tools – Bloomberg Connects",
+      "location": "New York, New York, United States of America",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00"
+    },
+    "bloomberg_official_careers|id|44970": {
+      "source": "bloomberg_official_careers",
+      "job_id": "44970",
+      "company": "Bloomberg",
+      "title": "Engineering Team Lead – Bloomberg Connects, Visitor Experience",
+      "location": "New York, New York, United States of America",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00"
+    },
+    "disney_official_careers|id|10158488": {
+      "source": "disney_official_careers",
+      "job_id": "10158488",
+      "company": "Disney",
+      "title": "Sr Product Software Engineer",
+      "location": "New York, New York / Glendale, California / Seattle, Washington / Santa Monica, California",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00"
+    },
+    "disney_official_careers|id|10161638": {
+      "source": "disney_official_careers",
+      "job_id": "10161638",
+      "company": "Disney",
+      "title": "Sr Software Engineer",
+      "location": "Glendale, California",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00"
+    },
+    "equinix_official_careers|id|jr-163789": {
+      "source": "equinix_official_careers",
+      "job_id": "JR-163789",
+      "company": "Equinix",
+      "title": "Senior Director, Developer Experience",
+      "location": "Toronto, Ontario, Canada; Redwood City, California, United States; Dallas, Texas, United States",
+      "first_seen": "2026-09-30T23:45:45.492110+00:00"
     }
   }
 }
