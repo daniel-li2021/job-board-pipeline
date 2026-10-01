@@ -134,7 +134,7 @@
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-10-01T21:21:14.170763+00:00"
+    "jd_recovery_at": "2026-10-01T21:33:53.281366+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -2866,7 +2866,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-backend-online-storage-at-affirm-4472379307",
       "official_url": "",
-      "description": "",
+      "description": "At Affirm, we exist for the moments that matter—giving people a clear, predictable way to pay over time, with no hidden fees, no surprises, and no tradeoffs on what matters most. The Data and Storage Services team is responsible for Affirm's data infrastructure across OLTP and OLAP systems, spanning critical online checkout databases, batch orchestration, streaming infrastructure, event-driven frameworks, BI, analytics tooling, large-scale data platforms, and agentic data tools such as semantic layers and internal platform data applications. Our mission is to provide trustworthy, intuitive, and cost-efficient solutions for Affirmers to secure, store, analyze, and transform data at exceptional scale. The Online Storage team provides a set of managed databases as a platform, used to persist data for all Affirm services. Our platform enables self-service access to OLTP storage systems, including Relational DB(MySQL), KV(DynamoDB), Distributed SQL(TiDB) and Cache(Redis). As a team, we are responsible for various data and access patterns, including but not limited to mission-critical financial transactional data, data science models, and any new persistence use case. These responsibilities require us to learn and gain deep expertise in various database systems. We are looking for a talented Senior Software Engineer who can architect, build and scale Relational and Distributed SQL Databases identifying opportunities to improve how we build, productionize, operate and improve this mission-critical infrastructure to unlock substantial value within our business. You’ll have the opportunity to directly influence your team’s roadmap in close collaboration with your peers, share your knowledge and expertise with others and learn from some of the best on our shared mission to deliver honest financial products that improve lives. What You’ll Do You will build and operate the control plane for large-scale distributed SQL databases such as MySQL and TiDB, automating provisioning, failover, backups and upgrades end to end. You will design and execute reliability-focused schema and data migrations across multi-tenant database clusters, with zero downtime for the products that depend on them. You will own the networking stack that connects services to storage on Kubernetes, including connection proxies such as ProxySQL, and tune it for latency, resilience and failover. You will be responsible for owning and delivering quarterly goals for your team, leading engineers on your team through ambiguity to solve open-ended problems, and ensuring that everyone is supported throughout delivery. You will support your peers and stakeholders in the product development lifecycle by collaborating with product management, design & analytics by participating in ideation, articulating technical constraints, and partnering on decisions that properly consider risks and trade-offs. You will proactively identify project, process, technology or business issues, advocate for them, and lead in solving them. You will support the operations and availability of your team’s artifacts by creating and monitoring metrics, escalating when needed, and supporting “keep the lights on” & on-call efforts. You will foster a culture of quality and ownership on your team by setting or improving code review and design standards for your team, and advocating for them beyond your team through your writing and tech talks. You will help develop talent on your team by providing feedback and guidance, and leading by example. What We Look For You have a total of 5+ years of experience as a software engineer. You are experienced in designing, developing and launching backend systems at scale technologies like Python, Kotlin, AWS, MySQL, Terraform and Kubernetes. You have in-depth, hands-on experience with large-scale database deployments in a production environment. You have expertise in distributed databases and database technologies such as MySQL(Preferred), TiDB(Preferred), Postgres, Spanner, Vitess, CockroachDB etc. Solid understanding of distributed database architecture, data modeling, and performance tuning. Particularly, expertise in SQL tuning and performance optimization techniques. You have expertise in database benchmarking, load testing, and capacity planning. You are familiar with connection poolers and proxies such as ProxySQL, RDS Proxy, Pg Bouncer, PgDog etc. You have built control-plane or automation tooling for databases, such as provisioning, failover, upgrades or schema migrations, ideally on Kubernetes. You have executed zero-downtime migrations and major version upgrades on production databases, and have built CLI tooling or runbooks to make those procedures repeatable. You understand Kubernetes networking, service discovery and TLS well enough to debug connection and failover problems between services and databases. You have experience defining a technical plan for the delivery of a significant feature or system component with an elegant, simple and extensible design. You write high quality code that is easily understood and used by others. You are proficient at making significant changes in a large code base, and have developed a suite of tools and practices that enable you and your team to do so safely. Your experience demonstrates that you take ownership of your growth, proactively seeking feedback from your team, your manager, and your stakeholders. You have strong verbal and written communication skills that support effective collaboration with our global engineering team. This position requires either equivalent practical experience or a Bachelor’s degree in a related field. Pay Grade - N Equity Grade - 9 Employees new to Affirm typically come in at the start of the pay range. Affirm focuses on providing a simple and transparent pay structure which is based on a variety of factors, including location, experience and job-related skills. Base pay is part of a total compensation package that may include equity rewards, monthly stipends for health, wellness and tech spending, and benefits (including 100% subsidized medical coverage, dental and vision for you and your dependents.) USA base pay range (CA, WA, NY, NJ, CT) per year: $195,000 - 255,000 USA base pay range (all other U.S. states) per year: $173,000-233,000 Remote-first with flexibility built in Affirm is proud to be a remote-first company. Most roles can be done from almost anywhere within the country of employment. Some positions may occasionally require in-person work at an Affirm office, and a few are office-based due to the nature of the work. All new hires will be invited to attend an in-person onboarding experience. Benefits Designed For You Our benefits reflect our commitment to care, transparency, and flexibility. Here are a few highlights: Health coverage at no cost: We cover 100% of premiums for employees and their dependents. Spending stipends: Monthly stipends support your tech setup, and the ability to choose health and wellness options that are right for you. Time off to recharge: Flexible time off and generous holiday calendars help you rest when you need to. Own a piece of what you build: Our employee stock purchase plan (ESPP) lets you buy Affirm stock at a discount. We’re committed to providing an inclusive interview process, including accommodations for candidates with disabilities. If you need support, we’re happy to help. For positions based in San Francisco or Los Angeles: Affirm considers qualified applicants with arrest and conviction records, as required by law. By clicking \"Submit Application,\" you acknowledge that you have read Affirm's Global Candidate Privacy Notice and consent to the use of your personal information as described.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -2876,11 +2876,14 @@
         ]
       },
       "recovery_methods": {},
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
-      "recovery_status": "filtered"
+      "recovery_status": "filtered",
+      "linkedin_detail_attempted_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4444652872",
@@ -5064,7 +5067,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-amazon-core-shopping-buy-for-me-at-amazon-4473987295",
       "official_url": "",
-      "description": "",
+      "description": "Description Do you want to solve business challenges through innovative technology? Do you enjoy working on scalable services technology in a team environment? Do you like working on industry-defining projects that move the needle? At Amazon, we hire the best minds in technology to innovate and build on behalf of our customers. The focus we have on our customers is why we are one of the world's most beloved brands – customer obsession is part of our company DNA. Our Software Development Engineers (SDEs) use advanced technology to solve complex problems and get to see the impact of their work first-hand. The challenges SDEs solve for at Amazon are big and influence millions of customers, sellers, and products around the world. We are looking for individuals who are passionate about creating new products, features, and services from scratch while managing ambiguity and the pace of a company where development cycles are measured in weeks, not years. If this sounds interesting to you, apply and come chart your own path at Amazon. As a part of Core Shopping, our team is focused on building novel ways for customers to find and discover new products. If you love building new experiences from scratch with high impact for customers, this is the team for you. Key job responsibilities Collaborate with experienced cross-disciplinary Amazonians to conceive, design, and bring innovative products and services to market. Design and build innovative technologies in a large distributed computing environment and help lead fundamental changes in the industry. Deliver customer value in an iterative fashion while working towards longer term systems goals. Build distributed storage, index, and query systems that are scalable, fault-tolerant, low cost, and easy to manage/use. Design and code the right solutions starting with broadly defined problems. Work in an agile environment to deliver high-quality software. Basic Qualifications 3+ years of non-internship professional software development experience 2+ years of non-internship design or architecture (design patterns, reliability and scaling) of new and existing systems experience Experience programming with at least one software programming language Preferred Qualifications 3+ years of full software development life cycle, including coding standards, code reviews, source control management, build processes, testing, and operations experience Bachelor's degree in computer science or equivalent Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability, or other legally protected status. Los Angeles County applicants: Job duties for this position include: work safely and cooperatively with other employees, supervisors, and staff; adhere to standards of excellence despite stressful conditions; communicate effectively and respectfully with employees, supervisors, and staff to ensure exceptional customer service; and follow all federal, state, and local laws and Company policies. Criminal history may have a direct, adverse, and negative relationship with some of the material job duties of this position. These include the duties and responsibilities listed above, as well as the abilities to adhere to company policies, exercise sound judgment, effectively manage stress and work safely and respectfully with others, exhibit trustworthiness and professionalism, and safeguard business operations and the Company’s reputation. Pursuant to the Los Angeles County Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records. Our inclusive culture empowers Amazonians to deliver the best results for our customers. If you have a disability and need a workplace accommodation or adjustment during the application and hiring process, including support for the interview or onboarding process, please visit https://amazon.jobs/content/en/how-we-hire/accommodations for more information. If the country/region you’re applying in isn’t listed, please contact your Recruiting Partner. The base salary range for this position is listed below. Your Amazon package will include sign-on payments and restricted stock units (RSUs). Final compensation will be determined based on factors including experience, qualifications, and location. Amazon also offers comprehensive benefits including health insurance (medical, dental, vision, prescription, Basic Life & AD&D insurance and option for Supplemental life plans, EAP, Mental Health Support, Medical Advice Line, Flexible Spending Accounts, Adoption and Surrogacy Reimbursement coverage), 401(k) matching, paid time off, and parental leave. Learn more about our benefits at https://amazon.jobs/en/benefits. USA, CA, Santa Clara - 165,200.00 - 223,600.00 USD annually Company - Amazon.com Services LLC Job ID: A10565791",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -5090,8 +5093,7 @@
           "outcome": "no_match"
         }
       },
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
       "recovery_triage": {
@@ -5104,7 +5106,11 @@
       "recovery_input_hash": "931a167426df821a3981",
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
-      "official_search_status": "no_match"
+      "official_search_status": "no_match",
+      "linkedin_detail_attempted_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4471805625",
@@ -5639,7 +5645,7 @@
       },
       "recovery_input_hash": "60713bf2f8104b286248",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -7070,7 +7076,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-machine-learning-engineer-at-atlassian-4474105851",
       "official_url": "",
-      "description": "",
+      "description": "Overview Working at Atlassian Atlassians can choose where they work – whether in an office, from home, or a combination of the two. That way, Atlassians have more control over supporting their family, personal goals, and other priorities. We can hire people in any country where we have a legal entity. Responsibilities Senior Machine Learning Engineer — Agentic Search & Query Intelligence Atlassian is seeking a Senior Machine Learning Engineer to join our Query Intelligence team, working on Agentic Search and Search Relevance. You will build intelligent systems that help people and AI agents understand complex questions, discover relevant knowledge, and accomplish tasks across Atlassian products and connected tools. Your future team Our team is part of Search Relevance within Intelligence & Experience. We build the intelligence that connects what users and agents are trying to accomplish with the information they need. Our work spans query understanding, search planning, and agentic retrieval. We develop capabilities that interpret user intent, break complex requests into actionable searches, incorporate organizational context, and refine search strategies as new evidence becomes available. These capabilities support experiences across Rovo Search, Rovo Chat, and AI agents. We work closely with product, search infrastructure, modeling, and evaluation teams. We combine applied research with production engineering, using experimentation and customer feedback to improve search quality, reliability, and efficiency. What You’ll Do Develop machine learning and LLM capabilities for query intelligence, including intent understanding, query rewriting and decomposition, entity understanding, and translating natural language into structured search constraints. Build and improve agentic search planners that turn complex requests into search strategies, select appropriate sources and tools, and adapt based on retrieved evidence. Improve model and agent behavior through prompt development, model selection, training data improvements, and fine-tuning where appropriate. Own projects from problem definition and prototyping through experimentation, production deployment, and ongoing measurement. Build datasets and evaluation methods, partnering with evaluation teams to measure retrieval relevance, evidence coverage, task success, and grounding. Use offline analysis and online experiments to diagnose failures and validate improvements. Balance search quality with latency, inference cost, and reliability, building systems that operate effectively within enterprise permissions and data boundaries. Collaborate with search platform, relevance, Rovo Chat, and other AI teams to integrate query intelligence and agentic search capabilities into customer experiences. Contribute to technical design and code reviews, mentor junior engineers, and share learnings that strengthen the team’s engineering and ML practices. Your background On the first day, we’ll expect you to have A bachelor’s or master’s degree in Computer Science or a related field, or equivalent practical experience. 4+ years of relevant industry experience in machine learning, with experience delivering ML capabilities into production. Strong Python programming skills and the ability to write reliable, maintainable, production-quality code. Experience in one or more of natural language processing, information retrieval, search relevance, or LLM applications. Experience designing experiments, building evaluation datasets, analyzing model behavior, and using evidence to guide improvements. An understanding of the ML development lifecycle, from data preparation and modeling to deployment, monitoring, and iteration. The ability to take ownership of ambiguous problems, make practical technical tradeoffs, and communicate clearly with engineering and product partners. It’s Great, But Not Required, If You Have Experience building AI agents, tool-use workflows, multi-step search systems, or retrieval-augmented generation applications. Experience with query understanding, semantic or hybrid retrieval, ranking, personalization, or context-aware search. Experience with LLM fine-tuning or post-training, including supervised fine-tuning, preference optimization, or reinforcement learning. Experience developing evaluation approaches for agents, including trajectory analysis, human evaluation, or model-based judging. Experience with distributed data processing and cloud ML environments such as Spark, AWS, or Databricks. Compensation At Atlassian, we strive to design equitable, explainable, and competitive compensation programs. We follow consistent hiring practices and account for each candidate's skills, knowledge, and experience when setting base pay within the range. Please visit go.atlassian.com/payzones for more information on which locations are included in each of our geographic pay zones. However, please confirm the zone for your specific location with your recruiter. This role may also be eligible for benefits, bonuses, commissions, and equity. Pay Ranges Role In The United States , we have three geographic pay zones. For this role, our current base pay ranges for new hires in each zone are: Zone A : $206,100 - $269,075 Zone B : $185,490 - $242,168 Zone C : $171,063 - $223,332 Qualifications Benefits & Perks Atlassian offers a wide range of perks and benefits designed to support you, your family and to help you engage with your local community. Our offerings include health and wellbeing resources, paid volunteer days, and so much more. To learn more, visit go.atlassian.com/perksandbenefits . About Atlassian At Atlassian, we're motivated by a common goal: to unleash the potential of every team. Our software products help teams all over the planet and our solutions are designed for all types of work. Team collaboration through our tools makes what may be impossible alone, possible together. We believe that the unique contributions of all Atlassians create our success. To ensure that our products and culture continue to incorporate everyone's perspectives and experience, we never discriminate based on race, religion, national origin, gender identity or expression, sexual orientation, age, or marital, veteran, or disability status. All your information will be kept confidential according to EEO guidelines. To provide you the best experience, we can support with accommodations or adjustments at any stage of the recruitment process. Simply inform our Recruitment team during your conversation with them. To learn more about our culture and hiring process, visit go.atlassian.com/crh . In line with local law, identity verification (which may include use of biometric data) is a condition of employment with Atlassian for employment fraud purposes.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -7080,11 +7086,14 @@
         ]
       },
       "recovery_methods": {},
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
-      "recovery_status": "filtered"
+      "recovery_status": "filtered",
+      "linkedin_detail_attempted_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4474112421",
@@ -7098,7 +7107,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-machine-learning-engineer-at-atlassian-4474112421",
       "official_url": "",
-      "description": "",
+      "description": "Overview Working at Atlassian Atlassians can choose where they work – whether in an office, from home, or a combination of the two. That way, Atlassians have more control over supporting their family, personal goals, and other priorities. We can hire people in any country where we have a legal entity. Responsibilities Senior Machine Learning Engineer — Agentic Search & Query Intelligence Atlassian is seeking a Senior Machine Learning Engineer to join our Query Intelligence team, working on Agentic Search and Search Relevance. You will build intelligent systems that help people and AI agents understand complex questions, discover relevant knowledge, and accomplish tasks across Atlassian products and connected tools. Your future team Our team is part of Search Relevance within Intelligence & Experience. We build the intelligence that connects what users and agents are trying to accomplish with the information they need. Our work spans query understanding, search planning, and agentic retrieval. We develop capabilities that interpret user intent, break complex requests into actionable searches, incorporate organizational context, and refine search strategies as new evidence becomes available. These capabilities support experiences across Rovo Search, Rovo Chat, and AI agents. We work closely with product, search infrastructure, modeling, and evaluation teams. We combine applied research with production engineering, using experimentation and customer feedback to improve search quality, reliability, and efficiency. What You’ll Do Develop machine learning and LLM capabilities for query intelligence, including intent understanding, query rewriting and decomposition, entity understanding, and translating natural language into structured search constraints. Build and improve agentic search planners that turn complex requests into search strategies, select appropriate sources and tools, and adapt based on retrieved evidence. Improve model and agent behavior through prompt development, model selection, training data improvements, and fine-tuning where appropriate. Own projects from problem definition and prototyping through experimentation, production deployment, and ongoing measurement. Build datasets and evaluation methods, partnering with evaluation teams to measure retrieval relevance, evidence coverage, task success, and grounding. Use offline analysis and online experiments to diagnose failures and validate improvements. Balance search quality with latency, inference cost, and reliability, building systems that operate effectively within enterprise permissions and data boundaries. Collaborate with search platform, relevance, Rovo Chat, and other AI teams to integrate query intelligence and agentic search capabilities into customer experiences. Contribute to technical design and code reviews, mentor junior engineers, and share learnings that strengthen the team’s engineering and ML practices. Your background On the first day, we’ll expect you to have A bachelor’s or master’s degree in Computer Science or a related field, or equivalent practical experience. 4+ years of relevant industry experience in machine learning, with experience delivering ML capabilities into production. Strong Python programming skills and the ability to write reliable, maintainable, production-quality code. Experience in one or more of natural language processing, information retrieval, search relevance, or LLM applications. Experience designing experiments, building evaluation datasets, analyzing model behavior, and using evidence to guide improvements. An understanding of the ML development lifecycle, from data preparation and modeling to deployment, monitoring, and iteration. The ability to take ownership of ambiguous problems, make practical technical tradeoffs, and communicate clearly with engineering and product partners. It’s Great, But Not Required, If You Have Experience building AI agents, tool-use workflows, multi-step search systems, or retrieval-augmented generation applications. Experience with query understanding, semantic or hybrid retrieval, ranking, personalization, or context-aware search. Experience with LLM fine-tuning or post-training, including supervised fine-tuning, preference optimization, or reinforcement learning. Experience developing evaluation approaches for agents, including trajectory analysis, human evaluation, or model-based judging. Experience with distributed data processing and cloud ML environments such as Spark, AWS, or Databricks. Compensation At Atlassian, we strive to design equitable, explainable, and competitive compensation programs. We follow consistent hiring practices and account for each candidate's skills, knowledge, and experience when setting base pay within the range. Please visit go.atlassian.com/payzones for more information on which locations are included in each of our geographic pay zones. However, please confirm the zone for your specific location with your recruiter. This role may also be eligible for benefits, bonuses, commissions, and equity. Pay Ranges Role In The United States , we have three geographic pay zones. For this role, our current base pay ranges for new hires in each zone are: Zone A : $206,100 - $269,075 Zone B : $185,490 - $242,168 Zone C : $171,063 - $223,332 Qualifications Benefits & Perks Atlassian offers a wide range of perks and benefits designed to support you, your family and to help you engage with your local community. Our offerings include health and wellbeing resources, paid volunteer days, and so much more. To learn more, visit go.atlassian.com/perksandbenefits . About Atlassian At Atlassian, we're motivated by a common goal: to unleash the potential of every team. Our software products help teams all over the planet and our solutions are designed for all types of work. Team collaboration through our tools makes what may be impossible alone, possible together. We believe that the unique contributions of all Atlassians create our success. To ensure that our products and culture continue to incorporate everyone's perspectives and experience, we never discriminate based on race, religion, national origin, gender identity or expression, sexual orientation, age, or marital, veteran, or disability status. All your information will be kept confidential according to EEO guidelines. To provide you the best experience, we can support with accommodations or adjustments at any stage of the recruitment process. Simply inform our Recruitment team during your conversation with them. To learn more about our culture and hiring process, visit go.atlassian.com/crh . In line with local law, identity verification (which may include use of biometric data) is a condition of employment with Atlassian for employment fraud purposes.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -7108,11 +7117,14 @@
         ]
       },
       "recovery_methods": {},
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
-      "recovery_status": "filtered"
+      "recovery_status": "filtered",
+      "linkedin_detail_attempted_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4471638112",
@@ -10104,7 +10116,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-developer-at-booz-allen-hamilton-4455556575",
       "official_url": "",
-      "description": "",
+      "description": "Job Number: R0226707 Full Stack Software Developer The Opportunity: As a full stack developer, you can resolve a problem with a complete end-to-end solution in a fast, agile environment. If you’re looking for the chance to not just develop software, but to create a system that will make a difference, we need you on our team. We’re looking for an experienced developer like you with the skills needed to develop software and systems from vision to production-ready. This role is more than just coding. As a senior full stack developer at Booz Allen, you’ll use your passion to master new tools and techniques and identify needed system improvements. You’ll help clients overcome their most difficult challenges using the latest architectural approaches, tools, and technologies. You’ll make sure the solution developed by the team considers the current architecture and operating environment, as well as future functionality and enhancements. Work with us as we shape systems for the better. Join us. The world can’t wait. You Have: 4+ years of experience designing, modifying, developing, writing, and implementing software programming applications using Agile methods Experience with AWS Experience with Infrastructure as Code, including Serverless.js, CDK, or SAM Experience developing progressive web apps (PWA) using languages such as Vue.js, React, or Angular Experience using back-end and front-end languages to develop complete solutions Experience creating solutions to complex problems within a collaborative, cross-functional team TS/SCI clearance with a polygraph Bachelor's degree and 4+ years of experience in software engineering, or 8+ years of experience in software engineering in lieu of a degree Nice If You Have: Experience with Node.js Experience acquiring client requirements and resolving workflow problems through automation optimization Clearance: Applicants selected will be subject to a security investigation and may need to meet eligibility requirements for access to classified information; TS/SCI clearance with polygraph is required. Compensation At Booz Allen, we celebrate your contributions, provide you with opportunities and choices, and support your total well-being. Our offerings include health, life, disability, financial, and retirement benefits, as well as paid leave, professional development, tuition assistance, work-life programs, and dependent care. Our recognition awards program acknowledges employees for exceptional performance and superior demonstration of our values. Full-time and part-time employees working at least 20 hours a week on a regular basis are eligible to participate in Booz Allen’s benefit programs. Individuals that do not meet the threshold are only eligible for select offerings, not inclusive of health benefits. We encourage you to learn more about our total benefits by visiting the Resource page on our Careers site and reviewing Our Employee Benefits page. Salary at Booz Allen is determined by various factors, including but not limited to location, the individual’s particular combination of education, knowledge, skills, competencies, and experience, as well as contract-specific affordability and organizational requirements. The projected compensation range for this position is $86,800.00 to $198,000.00 (annualized USD). The estimate displayed represents the typical salary range for this position and is just one component of Booz Allen’s total compensation package for employees. This posting will close within 90 days from the Posting Date. Identity Statement As part of the hiring process, we will ask you to complete an identity verification process that leverages advanced biometrics and artificial intelligence to ensure authenticity and protect against identity fraud. You are expected to be on camera during interviews and assessments. We reserve the right to take your picture to verify your identity and prevent fraud. Candidate AI Usage Policy AI is a part of our daily work at Booz Allen, and we are committed to the responsible and ethical use of AI tools. However, we want to ensure a fair candidate process based on your own skills and knowledge. As part of this commitment, the use of artificial intelligence (AI) or other tools to assist with responses during interviews (whether in-person or virtual) is prohibited unless permission is explicitly provided . Work Model Our people-first culture prioritizes the benefits of collaboration, whether it occurs in person or virtually. To support engagement and effective communication, employees working virtually are generally expected to have their cameras on during meetings. Remote: If this position is listed as remote, there may still be occasions when you are required to work in person at a Booz Allen or customer facility. Hybrid: If this position is listed as hybrid, you will be expected to work from a Booz Allen facility frequently, in alignment with leadership expectations and the needs of the role. You may also be required to work from or visit a customer facility. Onsite: If this position is listed as onsite, work will primarily be performed at a Booz Allen office or customer facility, where employees will collaborate directly with colleagues and customers as required by the role. Commitment to Non-Discrimination All qualified applicants will receive consideration for employment without regard to disability, status as a protected veteran or any other status protected by applicable federal, state, local, or international law.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -10120,8 +10132,7 @@
           "outcome": "no_match"
         }
       },
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
       "recovery_triage": {
@@ -10134,7 +10145,11 @@
       "recovery_input_hash": "31936f490e517eb5473a",
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
-      "official_search_status": "no_match"
+      "official_search_status": "no_match",
+      "linkedin_detail_attempted_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4455359600",
@@ -10509,7 +10524,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-applied-ai-at-brain-co-4473989585",
       "official_url": "",
-      "description": "",
+      "description": "Our Mission Rebuild how the world works, to make institutions work better for the people they serve. About Brain Co. Brain Co. builds AI-native operating systems for large, regulated institutions. Each system is built for a specific industry, powered by agents that push real workflows forward. Underneath it all is Atlas, our proprietary platform that keeps customers in control, secure by design, and never locked into one model. Why Now Brain Co. is entering its next phase of production deployments on a national scale with an elite team built from Palantir, Google, Meta, and Nvidia, and a growing footprint across government, insurance, health, and financial services. Joining now means shaping both the company and a new category of applied AI. Every project here ships to production and is expected to create measurable customer value and impact. You'll work alongside exceptional peers on some of the hardest problems in applied AI. It’s the kind of work you'll still be proud of in ten years from now. Machine Learning Engineer, Applied AI About The Role So much of the work society depends on is still slower and harder than it should be. Permits take months. Claims sit unresolved. And AI hasn't changed that — because the bottleneck isn't the models. It's the institutional context AI needs to do the work: rules, history, relationships, and judgment scattered across people, documents, and legacy systems. BrainCo exists to fix that. We build agent-native operating systems for the institutions society depends on, and our products are the first of their kind in the world — we were the first, anywhere, to fully automate construction permitting, and we're now doing the same across insurance and other industries. There is no playbook here, because no one has built this before. As a Machine Learning Engineer on Applied AI, your work begins where the demo ends: getting a model to look impressive is the easy part; making it a production decision system an institution stakes its process on is the job. The problems come in every shape — custom vision model pipelines that check blueprints against building codes at 95%+ accuracy, agents that untangle policy stacks to reveal coverage gaps, systems that predict from clinical records whether a patient is on their care path — and you'll own them end-to-end, from ambiguous customer problem to the eval that catches a whole class of errors. This is frontier ML applied where it's hardest and matters most. The problems are underspecified, the documents are brutal, the accuracy bar is institutional-grade — and the feedback loops are real, because our systems move real workflows forward every day. Who We're Looking For You understand how machine learning actually works — not just the tooling, but the philosophy underneath: what a loss function really optimizes, how generalization breaks under distribution shift, why evaluation is where systems quietly go wrong. And you live at the bleeding edge of modern AI, with hard-won instincts for squeezing the most out of LLMs and agentic systems — prompting, fine-tuning, tool use, and reasoning. That combination is the job: you know when a fine-tuned segmentation model beats a VLM, when a rule engine beats both, and how to compose all three into a system more accurate than any single model. You treat frontier models as components to be measured, pushed, and engineered — never as magic. Most of all, you're energized by building things that have never existed, and comfortable when the problem, the data, and the definition of success all have to be invented at once. The Problems You'll Work On Composite AI systems and credit assignment. Our most demanding systems chain vision transformers, segmentation models, VLM reasoning, and rule engines. When the pipeline is wrong, which component failed? One of the most interesting open problems in applied ML. Document understanding beyond the frontier. Blueprints, site plans, policy stacks, contracts, clinical records — dense, multimodal documents that break off-the-shelf models. You'll build models that actually read them. Agents that learn from real work. Our deployments generate verified, ground-truth outcomes on every decision — reward signals most labs can only simulate. You'll help design the data, evals, and training loops to build and fine-tune agents on them. Evaluation as a product discipline. When a regulator has to trust your system, evals are the product. You'll build eval suites and failure-mode taxonomies rigorous enough to earn institutional sign-off. Institutional Intelligence that compounds. Every verified correction improves the system twice: the corrected fact percolates to every application, and the system that builds the intelligence learns to build it better. You'll work on both loops. In This Role, You Will Turn ambiguity into shipped systems — from no problem statement, no labeled data, and no agreed definition of success, to well-posed ML problems and production deployments. Own AI systems end-to-end. There is no handoff: the person who trains the model owns its behavior in production. Work at the research frontier with production stakes , applying LLMs, RL fine-tuning, and agentic systems where the output is a decision an institution acts on. Work directly with the institutions we serve — permit reviewers, underwriters, compliance officers — to understand how decisions actually get made and ensure your systems change how the work gets done. Engineer for production reality , navigating accuracy, latency, cost, and reliability in environments far messier than any benchmark. Raise the bar across the company through design reviews, our internal paper club, and the shared playbook for AI systems institutions can trust.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -10525,8 +10540,7 @@
           "outcome": "no_match"
         }
       },
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
       "recovery_triage": {
@@ -10539,7 +10553,11 @@
       "recovery_input_hash": "131ecc8fab6290793cbc",
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
-      "official_search_status": "no_match"
+      "official_search_status": "no_match",
+      "linkedin_detail_attempted_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4473513195",
@@ -12213,7 +12231,7 @@
       },
       "recovery_input_hash": "f7c62846be9bb596b818",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -12272,7 +12290,7 @@
       },
       "recovery_input_hash": "97e6ab76e00ff0942ff8",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -14957,7 +14975,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-at-citizens-4472652501",
       "official_url": "",
-      "description": "",
+      "description": "Description 4 Days in the office from any of our locations in Johnston RI, Iselin NJ, Westwood or Medford MA, or Phoenix AZ and couple other locations Role is not relocation eligible. Job Title: Senior Software Engineer Responsibilities As a software engineer, you will work alongside and mentor a group of talented engineers as you pursue a broad range of initiatives. By leveraging your technical skills and thirst for innovation, you will produce disruptive technologies that will ensure Citizens market leadership. As a future leader, you will work on multiple solutions spanning our consumer banking applications. The Senior Software Engineer Will Be Responsible For Designing, modifying, developing and implementing technology solutions. Building modern, architecturally sound components, tools and applications to meet mission-driven strategic business goals. Participating in an environment rapidly transforming to the Agile methodology, adhering to best practices and collaborating effectively with your team mates. Designing, modifying, developing and implementing software solutions. Building modern, architecturally sound components, tools and applications to meet mission-driven strategic business goals. Infusing quality of service characteristics, such as scalability, manageability and maintainability, into distributed service-based framework to create or expand business or technical capabilities. Contributing insight from prior experiences when considering design specifications, considering the goals of the consumer-facing product. Required Qualifications 5+ years of experience in software development, with a proven record of successfully launching commercial products 3+ years of experience with collecting requirements, creating software designs and developing efficient implementations Demonstrated ability to operate in a team environment, strong interpersonal and communication skills Understanding of multiple programming languages, including at least one front end framework (Angular/React/Vue), such as Python3, Java, JavaScript, Ruby, Golang, C, C++, etc. Desired Qualifications Understanding of flow and orchestration systems like Flowable Understanding of the banking industry, specifically the functions of custodial and consumer banking AWS/AZURE/GCP experience Bash and Linux experience Familiarity with full-stack development Experience with CICD pipeline (CircleCI, Jenkins, or equivalent) Cloud certifications such as AWS Solutions Architect Understand data structure concepts such as linked lists, dictionaries, arrays, custom object creation, etc. Education and Certifications Required: Bachelor's degree in Software Engineering, Computer Science, Engineering, Mathematics or related discipline Pay Transparency The salary range for this position is $ 107,360 - $ 161,000 per year plus an opportunity to earn an annual discretionary bonus. Actual pay is based on various factors including but not limited to the work location, and relevant skills and experience. We offer competitive pay, comprehensive medical, dental and vision coverage, retirement benefits, maternity/paternity leave, flexible work arrangements, education reimbursement, wellness programs and more. Note, Citizens’ paid time off policy exceeds the mandatory, paid sick or paid time-away policy of very local and state jurisdiction in the United States. For an overview of our benefits, visit https://jobs.citizensbank.com/benefits. Some job boards have started using jobseeker-reported data to estimate salary ranges for roles. If you apply and qualify for this role, a recruiter will discuss accurate pay guidance. Equal Employment Opportunity Citizens, its parent, subsidiaries, and related companies (Citizens) provide equal employment and advancement opportunities to all colleagues and applicants for employment without regard to age, ancestry, color, citizenship, physical or mental disability, perceived disability or history or record of a disability, ethnicity, gender, gender identity or expression, genetic information, genetic characteristic, marital or domestic partner status, victim of domestic violence, family status/parenthood, medical condition, military or veteran status, national origin, pregnancy/childbirth/lactation, colleague’s or a dependent’s reproductive health decision making, race, religion, sex, sexual orientation, or any other category protected by federal, state and/or local laws. At Citizens, we are committed to fostering an inclusive culture that enables all colleagues to bring their best selves to work every day and everyone is expected to be treated with respect and professionalism. Employment decisions are based solely on merit, qualifications, performance and capability. Why Work for Us At Citizens, you'll find a customer-centric culture built around helping our customers and giving back to our local communities. When you join our team, you are part of a supportive and collaborative workforce, with access to training and tools to accelerate your potential and maximize your career growth Posting End Date: 10/12/2026",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -14967,11 +14985,14 @@
         ]
       },
       "recovery_methods": {},
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
-      "recovery_status": "filtered"
+      "recovery_status": "filtered",
+      "linkedin_detail_attempted_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4453784407",
@@ -17685,7 +17706,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-ii-at-deloitte-4473984594",
       "official_url": "",
-      "description": "",
+      "description": "Our Deloitte AI & Engineering team works to transform technology platforms, drive innovation, and help make a significant impact on our clients' success. You'll work alongside talented professionals reimagining and reengineering operations and processes that are critical to businesses. Your contributions can help clients improve financial performance, accelerate new digital ventures, and fuel growth through innovation. Work you'll do As an AI and Data Science Engineer II on the team, you will be responsible for: Design, build, test, and deploy machine learning and artificial intelligence solutions for business and client use cases Develop and maintain data pipelines, model training workflows, and production-grade application components that support AI-enabled products Analyze structured and unstructured data to identify patterns, generate insights, and support model development and validation Collaborate with engineers, data scientists, product stakeholders, and business teams to translate requirements into technical solutions Monitor model and application performance, troubleshoot issues, and implement enhancements to improve accuracy, reliability, and scalability Develops and maintains AI-enabled capabilities embedded within the AIE platform and software delivery lifecycle A successful candidate would possess these skills: Ability to work independently and collaborate as part of a team Effective written and verbal communication skills Meticulous attention to detail and quality of work product Ability to build and sustain professional relationships Ability to lead projects or workstreams Ability to manage and prioritize multiple tasks in a fast-paced and dynamic environment Strong interpersonal skills and professional demeanor Ability to meet deadlines Ability to provide clear guidance to others The team Deloitte's Government & Public Services (GPS) practice - our people, ideas, technology and outcomes - is designed for impact. Serving federal, state, & local government clients as well as public higher education institutions, our team of professionals brings fresh perspective to help clients anticipate disruption, reimagine the possible, and fulfill their mission promise. Our AI & Data offering provides a full spectrum of solutions for designing, developing, and operating cutting-edge Data and AI platforms, products, insights, and services. Our offerings help clients innovate, enhance and operate their data, AI, and analytics capabilities, ensuring they can mature and scale effectively with organizational intelligence programs and differentiated strategies to win in their chosen markets. Qualifications Required: Bachelor's degree in Computer Science, Data Science, Engineering, Mathematics, Statistics, or a quantitative field 3+ years of professional experience designing, developing, deploying, or supporting machine learning, artificial intelligence, or advanced analytics solutions Must possess an active U.S. Secret security clearance and be able to maintain it for the duration of employment and assignment Ability to travel 20%, on average, based on the work you do and the clients and industries/sectors you serve. Must be legally authorized to work in the United States without the need for employer sponsorship, now or at any time in the future. Preferred: Master's degree in Computer Science, Data Science, Engineering, Mathematics, Statistics, or a quantitative field 2+ years of experience deploying machine learning models into production environments 2+ years of experience working with large language models, natural language processing, or generative artificial intelligence solutions 1+ years of experience in Salesforce Agentforce 1+ years of experience supporting model monitoring, model governance, or machine learning operations processes The wage range for this role takes into account the wide range of factors that are considered in making compensation decisions including but not limited to skill sets; experience and training; licensure and certifications; and other business and organizational needs. The disclosed range estimate has not been adjusted for the applicable geographic differential associated with the location at which the position may be filled. At Deloitte, it is not typical for an individual to be hired at or near the top of the range for their role and compensation decisions are dependent on the facts and circumstances of each case. A reasonable estimate of the current range is $ 110,700 to $218,300. You may also be eligible to participate in a discretionary annual incentive program, subject to the rules governing the program, whereby an award, if any, depends on various factors, including, without limitation, individual and organizational performance. ai&e fy27 profile",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-01T05:00:16.668133+00:00",
@@ -17701,8 +17722,7 @@
           "outcome": "no_match"
         }
       },
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": true,
       "recovery_triage": {
@@ -17715,7 +17735,11 @@
       "recovery_input_hash": "7e299fda4b81c2dbae33",
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
-      "official_search_status": "no_match"
+      "official_search_status": "no_match",
+      "linkedin_detail_attempted_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_fetched_at": "2026-10-01T21:33:54.911139+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4473987460",
@@ -17758,7 +17782,7 @@
       },
       "recovery_input_hash": "29a51c3dc906d5446764",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -22773,7 +22797,7 @@
       },
       "recovery_input_hash": "6998a9c169f114d1451e",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -25847,7 +25871,7 @@
       },
       "recovery_input_hash": "2f208b97133019904776",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -26405,7 +26429,7 @@
       },
       "recovery_input_hash": "e6e8319d15bfe6ccaa2d",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -35166,7 +35190,7 @@
       },
       "recovery_input_hash": "5f85b3e5c7371b522c08",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -41696,7 +41720,7 @@
       },
       "recovery_input_hash": "d56944879f545ec17b51",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -44755,7 +44779,7 @@
       },
       "recovery_input_hash": "90c07d7b00bf2067bfff",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -45968,7 +45992,7 @@
       },
       "recovery_input_hash": "350fb2fe42c65d36b890",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -46196,7 +46220,7 @@
       },
       "recovery_input_hash": "c8ae44b6bac5dea86579",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -46385,7 +46409,7 @@
       },
       "recovery_input_hash": "a290147e5fb08d07cfbc",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -47365,7 +47389,7 @@
       },
       "recovery_input_hash": "b307e84780c0734d6493",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -47788,7 +47812,7 @@
       },
       "recovery_input_hash": "bf9e068b0d2250771988",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -56628,7 +56652,7 @@
       },
       "recovery_input_hash": "78cb7f4519c80e8e1bae",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
@@ -56672,7 +56696,7 @@
       },
       "recovery_input_hash": "18a95df5e5d6c05d82f4",
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00",
+      "official_search_attempted_at": "2026-10-01T21:33:53.281366+00:00",
       "official_search_status": "no_match"
     },
     {
