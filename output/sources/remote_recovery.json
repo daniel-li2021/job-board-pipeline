@@ -2938,6 +2938,34 @@
       "enrichment_method": "remote_exact_peer"
     },
     {
+      "company": "Meta",
+      "title": "Software Engineer, Systems",
+      "location": "Menlo Park, CA",
+      "source": "meta_official_careers",
+      "official_url": "https://www.metacareers.com/jobs/2373766839819792",
+      "source_url": "https://www.metacareers.com/jobs/2373766839819792",
+      "job_id": "2373766839819792",
+      "requisition_id": "",
+      "description": "Meta is seeking talented engineers to join our Central Integrity team, which exists to keep billions of people safe on Meta's platforms. We design and deploy systems that detect and disrupt harm at an unprecedented global scale, making this one of the largest deployments of AI for positive real-world impact anywhere in the industry. Our work safeguards critical areas including child and youth safety, fraud and scams, identity and authenticity, and more while actively building defenses against novel frontier threats, such as autonomous AI agents and automated risk vectors. This represents some of the most technically demanding and high-stakes engineering and product at Meta, driven by a deeply mission-focused team. You'll combine strong engineering fundamentals with cutting-edge AI to build effective, adaptable solutions that stay ahead of evolving integrity and safety risks. If you are driven by hard technical challenges and want your work to deliver immediate, real-world impact, this is the right role for you.",
+      "first_seen": "2026-10-01T14:47:48.480859+00:00",
+      "application_url": "https://www.metacareers.com/jobs/1104959738740874",
+      "official_search_status": "resolved",
+      "official_search_attempted_at": "",
+      "recovery_methods": {},
+      "recovery_candidates": "",
+      "recovery_triage": "",
+      "recovery_input_hash": "",
+      "recovery_status": "candidate",
+      "remote_recovery": true,
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-01T21:21:14.170763+00:00",
+      "jd_recovery_at": "2026-10-01T21:21:14.170763+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-01T21:21:14.170763+00:00"
+    },
+    {
       "company": "Google",
       "title": "Software Engineer III, AI/ML GenAI, Google Cloud Compute Infrastructure",
       "location": "Sunnyvale, CA, USA",
@@ -3086,81 +3114,11 @@
     }
   ],
   "meta": {
-    "jd_recovery_at": "2026-10-01T05:00:40.770249+00:00"
+    "jd_recovery_at": "2026-10-01T21:21:14.170763+00:00"
   },
   "source": "remote_recovery",
-  "count": 143,
+  "count": 144,
   "attempts": {
-    "meta_official_careers|id|1636221097847538": {
-      "source": "meta_official_careers",
-      "job_id": "1636221097847538",
-      "company": "Meta",
-      "title": "Manager, Infrastructure Security and Compliance",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-09-30T14:47:11.530767+00:00"
-    },
-    "meta_official_careers|id|1683903403071591": {
-      "source": "meta_official_careers",
-      "job_id": "1683903403071591",
-      "company": "Meta",
-      "title": "DFX Engineering Intern",
-      "location": "Sunnyvale, CA; Seattle, WA",
-      "first_seen": "2026-09-30T14:47:11.530767+00:00"
-    },
-    "meta_official_careers|id|1613359540444032": {
-      "source": "meta_official_careers",
-      "job_id": "1613359540444032",
-      "company": "Meta",
-      "title": "Product Design Engineering Intern",
-      "location": "Redmond, WA",
-      "first_seen": "2026-09-30T14:47:11.530767+00:00"
-    },
-    "meta_official_careers|id|4322884088022032": {
-      "source": "meta_official_careers",
-      "job_id": "4322884088022032",
-      "company": "Meta",
-      "title": "Infrastructure Engineer, Automation & Tooling",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-09-30T14:47:11.530767+00:00",
-      "recovery_methods": {
-        "candidate:edd949b376": {
-          "input_hash": "f0631d97f6693c196968",
-          "attempted_at": "2026-09-30T19:34:33.158144+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "32dae74cd0df79cfa95c",
-          "attempted_at": "2026-09-30T19:34:33.158144+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.69,
-        "delta": 0,
-        "reason": "Relevant infrastructure tooling; seniority unspecified"
-      },
-      "recovery_input_hash": "13e0cf955bb7f5ed6274",
-      "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-01T05:00:40.770249+00:00"
-    },
-    "bloomberg_official_careers|id|44982": {
-      "source": "bloomberg_official_careers",
-      "job_id": "44982",
-      "company": "Bloomberg",
-      "title": "Senior Incident Response & Digital Forensics Analyst",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-09-30T14:47:11.530767+00:00"
-    },
-    "disney_official_careers|id|10150377": {
-      "source": "disney_official_careers",
-      "job_id": "10150377",
-      "company": "Disney",
-      "title": "Sr Product Mgr II",
-      "location": "New York, New York / Bristol, Connecticut",
-      "first_seen": "2026-09-30T14:47:11.530767+00:00"
-    },
     "meta_official_careers|id|1106067155219316": {
       "source": "meta_official_careers",
       "job_id": "1106067155219316",
@@ -3171,12 +3129,12 @@
       "recovery_methods": {
         "candidate:d209d6a79d": {
           "input_hash": "6ea24041bbe9fdd7db66",
-          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "aa44ef15fe7e916b4a9e",
-          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
           "outcome": "no_match"
         }
       },
@@ -3189,7 +3147,7 @@
       },
       "recovery_input_hash": "9f8a1840189a654411af",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-01T05:00:40.770249+00:00"
+      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00"
     },
     "meta_official_careers|id|1405498381042864": {
       "source": "meta_official_careers",
@@ -3217,12 +3175,12 @@
       "recovery_methods": {
         "candidate:748298060c": {
           "input_hash": "44ec17dab35dbfca2e04",
-          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "2fdfe4438ff1c72b77c8",
-          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
           "outcome": "no_match"
         }
       },
@@ -3235,7 +3193,7 @@
       },
       "recovery_input_hash": "ba3d7388a06bfb297aed",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-01T05:00:40.770249+00:00"
+      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00"
     },
     "meta_official_careers|id|2245120489365403": {
       "source": "meta_official_careers",
@@ -3271,12 +3229,12 @@
       "recovery_methods": {
         "candidate:e6b4b77157": {
           "input_hash": "85383781513d6139fada",
-          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "d91f428033d3746de315",
-          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
           "outcome": "no_match"
         }
       },
@@ -3289,7 +3247,7 @@
       },
       "recovery_input_hash": "ec5c3efb143dcd97cbfa",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-01T05:00:40.770249+00:00"
+      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00"
     },
     "meta_official_careers|id|1095054769939445": {
       "source": "meta_official_careers",
@@ -3309,12 +3267,12 @@
       "recovery_methods": {
         "candidate:72e7b6d5ba": {
           "input_hash": "03553ac51b0cb1180925",
-          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "f03ba3ec223ac92c96be",
-          "attempted_at": "2026-10-01T05:00:40.770249+00:00",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
           "outcome": "no_match"
         }
       },
@@ -3327,7 +3285,7 @@
       },
       "recovery_input_hash": "f7218ed04c1df84aae95",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-01T05:00:40.770249+00:00"
+      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00"
     },
     "bloomberg_official_careers|id|44991": {
       "source": "bloomberg_official_careers",
@@ -3384,6 +3342,258 @@
       "title": "Senior Director, Developer Experience",
       "location": "Toronto, Ontario, Canada; Redwood City, California, United States; Dallas, Texas, United States",
       "first_seen": "2026-09-30T23:45:45.492110+00:00"
+    },
+    "meta_official_careers|id|2024745352248061": {
+      "source": "meta_official_careers",
+      "job_id": "2024745352248061",
+      "company": "Meta",
+      "title": "Field Service Engineer, Robotics",
+      "location": "Burlingame, CA",
+      "first_seen": "2026-10-01T14:47:48.480859+00:00"
+    },
+    "meta_official_careers|id|1667531704771019": {
+      "source": "meta_official_careers",
+      "job_id": "1667531704771019",
+      "company": "Meta",
+      "title": "Systems Integration Engineer, Embedded Systems / Mechatronics",
+      "location": "Redmond, WA",
+      "first_seen": "2026-10-01T14:47:48.480859+00:00",
+      "recovery_methods": {
+        "candidate:a1d0b40361": {
+          "input_hash": "bdd3048aef373b303bd9",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
+          "outcome": "no_match"
+        },
+        "generic_search": {
+          "input_hash": "c5a26859871ea7b60afc",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "low",
+        "confidence": 0.76,
+        "delta": 0,
+        "reason": "Mechatronics integration is primarily hardware-focused"
+      },
+      "recovery_input_hash": "e9e98ca4db0962be7c03",
+      "official_search_status": "deferred",
+      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00"
+    },
+    "meta_official_careers|id|2150109118940484": {
+      "source": "meta_official_careers",
+      "job_id": "2150109118940484",
+      "company": "Meta",
+      "title": "Failure Analysis Engineer, Electromechanical Hardware",
+      "location": "Redmond, WA",
+      "first_seen": "2026-10-01T14:47:48.480859+00:00"
+    },
+    "meta_official_careers|id|3714429168698218": {
+      "source": "meta_official_careers",
+      "job_id": "3714429168698218",
+      "company": "Meta",
+      "title": "Robotics Verification & Validation Engineer",
+      "location": "Redmond, WA",
+      "first_seen": "2026-10-01T14:47:48.480859+00:00"
+    },
+    "meta_official_careers|id|1084577564537536": {
+      "source": "meta_official_careers",
+      "job_id": "1084577564537536",
+      "company": "Meta",
+      "title": "Research Scientist Manager, AI for Wearables and Health",
+      "location": "Burlingame, CA",
+      "first_seen": "2026-10-01T14:47:48.480859+00:00"
+    },
+    "meta_official_careers|id|2292850581449209": {
+      "source": "meta_official_careers",
+      "job_id": "2292850581449209",
+      "company": "Meta",
+      "title": "Battery Systems Engineer",
+      "location": "Sunnyvale, CA; Redmond, WA",
+      "first_seen": "2026-10-01T14:47:48.480859+00:00",
+      "recovery_triage": {
+        "action": "skip",
+        "priority": "low",
+        "confidence": 0.98,
+        "delta": -7,
+        "reason": "Battery systems engineering is outside target roles"
+      },
+      "recovery_input_hash": "38af429bdca3ae593c30"
+    },
+    "meta_official_careers|id|1084587480946081": {
+      "source": "meta_official_careers",
+      "job_id": "1084587480946081",
+      "company": "Meta",
+      "title": "Software Engineer, Network Routing",
+      "location": "Menlo Park, CA",
+      "first_seen": "2026-10-01T14:47:48.480859+00:00",
+      "recovery_methods": {
+        "candidate:634902db2e": {
+          "input_hash": "6224c2dc9d67d6f9aabf",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
+          "outcome": "no_match"
+        },
+        "generic_search": {
+          "input_hash": "0c47ca42042b89d3842a",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.94,
+        "delta": 5,
+        "reason": "Software engineering focused on network infrastructure"
+      },
+      "recovery_input_hash": "8d435512f41cfb951c50",
+      "official_search_status": "deferred",
+      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00"
+    },
+    "meta_official_careers|id|956114863585306": {
+      "source": "meta_official_careers",
+      "job_id": "956114863585306",
+      "company": "Meta",
+      "title": "Capacity Planning Optimization Lead - Fleet Economy and Planning",
+      "location": "Menlo Park, CA; Seattle, WA; Boston, MA; New York, NY",
+      "first_seen": "2026-10-01T14:47:48.480859+00:00"
+    },
+    "meta_official_careers|id|1116279877825234": {
+      "source": "meta_official_careers",
+      "job_id": "1116279877825234",
+      "company": "Meta",
+      "title": "Software Engineer, PAR Regulatory Readiness",
+      "location": "Menlo Park, CA",
+      "first_seen": "2026-10-01T14:47:48.480859+00:00",
+      "recovery_methods": {
+        "candidate:cf6d8aa7e7": {
+          "input_hash": "31d1e954f94f1b411ad8",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
+          "outcome": "no_match"
+        },
+        "generic_search": {
+          "input_hash": "d79a7ba439feb45eae45",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "normal",
+        "confidence": 0.71,
+        "delta": 0,
+        "reason": "Software role; regulatory focus needs description review"
+      },
+      "recovery_input_hash": "e32f48041ef5e8521d86",
+      "official_search_status": "deferred",
+      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00"
+    },
+    "meta_official_careers|id|1622733036193562": {
+      "source": "meta_official_careers",
+      "job_id": "1622733036193562",
+      "company": "Meta",
+      "title": "Embedded Software Engineer, Silicon Validation Firmware",
+      "location": "Sunnyvale, CA; Redmond, WA; Austin, TX",
+      "first_seen": "2026-10-01T14:47:48.480859+00:00",
+      "recovery_methods": {
+        "candidate:d76983b954": {
+          "input_hash": "1055926d73b70e35df64",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
+          "outcome": "no_match"
+        },
+        "generic_search": {
+          "input_hash": "3905327ca22938dbc120",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.9,
+        "delta": 4,
+        "reason": "Embedded firmware is directly relevant software work"
+      },
+      "recovery_input_hash": "46c12fef193682037d30",
+      "official_search_status": "deferred",
+      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00"
+    },
+    "meta_official_careers|id|3945997555696610": {
+      "source": "meta_official_careers",
+      "job_id": "3945997555696610",
+      "company": "Meta",
+      "title": "Software Engineer, Meta Horizon Engine - Reality Labs",
+      "location": "Los Angeles, CA; Redmond, WA; Burlingame, CA",
+      "first_seen": "2026-10-01T14:47:48.480859+00:00",
+      "recovery_methods": {
+        "candidate:02cee73626": {
+          "input_hash": "c56aac28d60774383bc5",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
+          "outcome": "no_match"
+        },
+        "generic_search": {
+          "input_hash": "078f48347e12dda83f83",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.9,
+        "delta": 4,
+        "reason": "Software engineering role building a realtime engine"
+      },
+      "recovery_input_hash": "f69cbfe7ecb9d434edb7",
+      "official_search_status": "deferred",
+      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00"
+    },
+    "meta_official_careers|id|1374214794794505": {
+      "source": "meta_official_careers",
+      "job_id": "1374214794794505",
+      "company": "Meta",
+      "title": "Software Engineer, Realtime Engine Technology - Reality Labs",
+      "location": "Los Angeles, CA; Redmond, WA; Burlingame, CA",
+      "first_seen": "2026-10-01T14:47:48.480859+00:00",
+      "recovery_methods": {
+        "candidate:41aaa6f007": {
+          "input_hash": "a04ecfab9710eb4b5bc1",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
+          "outcome": "no_match"
+        },
+        "generic_search": {
+          "input_hash": "47d91e777c30b42c80dd",
+          "attempted_at": "2026-10-01T21:21:14.170763+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.9,
+        "delta": 4,
+        "reason": "Realtime engine technology is software-focused"
+      },
+      "recovery_input_hash": "6458516bfa2bb7854dc5",
+      "official_search_status": "deferred",
+      "official_search_attempted_at": "2026-10-01T21:21:14.170763+00:00"
+    },
+    "disney_official_careers|id|10159088": {
+      "source": "disney_official_careers",
+      "job_id": "10159088",
+      "company": "Disney",
+      "title": "Lead Technical Program Mgr",
+      "location": "Seattle, Washington / Glendale, California",
+      "first_seen": "2026-10-01T14:47:48.480859+00:00"
+    },
+    "equinix_official_careers|id|jr-159474": {
+      "source": "equinix_official_careers",
+      "job_id": "JR-159474",
+      "company": "Equinix",
+      "title": "Principal Solutions Architect (Public Sector)",
+      "location": "Ashburn, Virginia, United States",
+      "first_seen": "2026-10-01T14:47:48.480859+00:00"
     }
   }
 }

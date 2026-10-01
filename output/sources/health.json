@@ -1,24 +1,24 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-01T15:21:20.308125+00:00",
+  "generated_at": "2026-10-01T21:21:14.168934+00:00",
   "collector": {
-    "commit": "26cff2d74b76325c9ad591a47bb7fc7c266abad0",
+    "commit": "5846e2940e31feec942a8681ee23aa86c9e2df1b",
     "dirty": false
   },
   "sources": {
     "linkedin": {
       "required": true,
       "healthy": false,
-      "status": "partial",
-      "reason": "blocked with HTTP 429",
-      "last_attempt_at": "2026-10-01T05:00:16.668133+00:00",
+      "status": "skipped_unavailable",
+      "reason": "search cooldown",
+      "last_attempt_at": "2026-10-01T21:21:05.398045+00:00",
       "last_success_at": "2026-09-22T18:01:45.946101+00:00",
       "last_partial_at": "2026-10-01T05:00:16.668133+00:00",
       "partial_collected_count": 108,
       "partial_fresh_kept": 104,
       "partial_carried_count": 1849,
       "last_attempt_collector": {
-        "commit": "4494fe3a7c6a53c0ff1c2942ffb40ebf46eb83d4",
+        "commit": "5846e2940e31feec942a8681ee23aa86c9e2df1b",
         "dirty": false
       },
       "last_success_collector": {
@@ -31,133 +31,53 @@
       "last_success_source_provenance": {
         "implementation": "sources.linkedin_local"
       },
-      "last_attempt_count": 104,
-      "consecutive_failures": 2,
-      "query_stats": [
-        {
-          "query": "software engineer",
-          "group": "primary",
-          "page_budget": 5,
-          "pages_fetched": 5,
-          "stop_reason": "page_budget",
-          "raw_jobs": 50,
-          "unique_jobs": 50,
-          "unique_contribution": 48,
-          "first_pass_survivors": 47,
-          "original_postings_resolved": 0,
-          "jds_resolved": 10,
-          "elapsed_seconds": 8.385
-        },
-        {
-          "query": "ai engineer",
-          "group": "primary",
-          "page_budget": 3,
-          "pages_fetched": 3,
-          "stop_reason": "page_budget",
-          "raw_jobs": 30,
-          "unique_jobs": 30,
-          "unique_contribution": 29,
-          "first_pass_survivors": 28,
-          "original_postings_resolved": 0,
-          "jds_resolved": 3,
-          "elapsed_seconds": 4.932
-        },
-        {
-          "query": "backend engineer",
-          "group": "primary",
-          "page_budget": 2,
-          "pages_fetched": 2,
-          "stop_reason": "page_budget",
-          "raw_jobs": 20,
-          "unique_jobs": 20,
-          "unique_contribution": 13,
-          "first_pass_survivors": 17,
-          "original_postings_resolved": 0,
-          "jds_resolved": 1,
-          "elapsed_seconds": 3.235
-        },
-        {
-          "query": "full-stack engineer",
-          "group": "primary",
-          "page_budget": 2,
-          "pages_fetched": 2,
-          "stop_reason": "page_budget",
-          "raw_jobs": 20,
-          "unique_jobs": 20,
-          "unique_contribution": 18,
-          "first_pass_survivors": 18,
-          "original_postings_resolved": 0,
-          "jds_resolved": 1,
-          "elapsed_seconds": 3.331
-        },
-        {
-          "query": "machine learning engineer",
-          "group": "primary",
-          "page_budget": 2,
-          "pages_fetched": 0,
-          "stop_reason": "blocked_http_429",
-          "raw_jobs": 0,
-          "unique_jobs": 0,
-          "unique_contribution": 0,
-          "first_pass_survivors": 0,
-          "original_postings_resolved": 0,
-          "jds_resolved": 0,
-          "elapsed_seconds": 0.087
-        }
-      ],
+      "last_attempt_count": 0,
+      "consecutive_failures": 1,
+      "query_stats": [],
       "detail_enrichment": {
-        "eligible": 57,
-        "cache_reused": 1,
-        "requests": 0,
-        "responses": 0,
-        "successful_responses": 0,
+        "eligible": 42,
+        "cache_reused": 0,
+        "requests": 1,
+        "responses": 1,
+        "successful_responses": 1,
         "request_limit": 1,
-        "budget_deferred": 0,
-        "budget_exhausted": false,
+        "budget_deferred": 36,
+        "budget_exhausted": true,
         "retry_deferred": 0,
         "retry_attempts": 0,
-        "exact_official": 4,
-        "official_deferred": 4,
+        "exact_official": 5,
+        "official_deferred": 5,
         "rate_limited": false,
         "jds_resolved": 1,
         "external_apply_urls": 0,
         "failed": 0,
-        "detail_jds_fetched": 0,
+        "detail_jds_fetched": 1,
         "intentional_skips": 0,
-        "blocked": "rate_limited_no_further_requests",
+        "blocked": "",
         "scrapling_requests": 0,
         "scrapling_jds_resolved": 0,
         "scrapling_error": "",
-        "remaining_no_jd": 56,
+        "remaining_no_jd": 41,
         "failure_reasons": {
-          "linkedin_rate_limited": 52,
-          "official_detail_deferred": 4
+          "linkedin_rate_limited": 36,
+          "official_detail_deferred": 5
         },
         "cooldown_active": false,
         "probe": true,
         "status": "probe"
       },
       "last_good_count": 1953,
-      "detail_last_attempt_at": "2026-09-30T05:11:21.825008+00:00",
-      "detail_429_streak": 1,
-      "detail_cooldown_until": "2026-09-30T17:11:21.825008+00:00",
-      "official_enrichment": {
-        "cache": 4,
-        "dedicated_matches": 12,
-        "remote_exact_peer": 5,
-        "exact_indeed_peer": 5,
-        "search_requests": 0,
-        "search_provider": "duckduckgo",
-        "official_page_requests": 0,
-        "remaining_no_jd": 94
-      },
+      "detail_last_attempt_at": "2026-10-01T21:21:14.170763+00:00",
+      "detail_429_streak": 0,
+      "detail_cooldown_until": "",
+      "official_enrichment": {},
       "search_collection": {
-        "cooldown_active": false,
+        "cooldown_active": true,
         "probe": false,
-        "requests": 13,
-        "responses": 13,
-        "pages_fetched": 12,
-        "rate_limited": true,
+        "requests": 0,
+        "responses": 0,
+        "pages_fetched": 0,
+        "rate_limited": false,
         "budget_exhausted": false,
         "coverage_limited": false
       },
@@ -165,22 +85,22 @@
       "search_query_cursor": 8,
       "search_429_streak": 0,
       "search_cooldown_until": "",
-      "detail_cooldown_reason": "HTTP 429",
-      "detail_status": "probe",
+      "detail_cooldown_reason": "",
+      "detail_status": "active",
       "runner_states": {
         "mac": {
           "search_last_attempt_at": "2026-10-01T05:00:16.668133+00:00",
           "search_429_streak": 2,
           "search_cooldown_until": "2026-10-02T05:00:16.668133+00:00",
-          "detail_status": "probe",
-          "detail_last_attempt_at": "2026-09-30T05:11:21.825008+00:00",
-          "detail_429_streak": 1,
-          "detail_cooldown_until": "2026-09-30T17:11:21.825008+00:00",
-          "detail_cooldown_reason": "HTTP 429"
+          "detail_status": "active",
+          "detail_last_attempt_at": "2026-10-01T21:21:14.170763+00:00",
+          "detail_429_streak": 0,
+          "detail_cooldown_until": "",
+          "detail_cooldown_reason": ""
         }
       },
-      "last_attempt_elapsed_seconds": 23.905,
-      "failure_cause": "429",
+      "last_attempt_elapsed_seconds": 0.0,
+      "failure_cause": "collection",
       "previous_failure": {},
       "queries_total": 0,
       "queries_succeeded": 0,
@@ -490,14 +410,14 @@
       "healthy": false,
       "status": "skipped_unavailable",
       "reason": "GlassdoorException: homepage HTTP 403",
-      "last_attempt_at": "2026-09-30T19:34:31.507916+00:00",
+      "last_attempt_at": "2026-10-01T21:21:05.398579+00:00",
       "last_success_at": "2026-09-15T07:02:44.646497+00:00",
       "last_partial_at": "",
       "partial_collected_count": 0,
       "partial_fresh_kept": 0,
       "partial_carried_count": 0,
       "last_attempt_collector": {
-        "commit": "8771d83846024897ed9df5d6b3a6358202f545cf",
+        "commit": "5846e2940e31feec942a8681ee23aa86c9e2df1b",
         "dirty": false
       },
       "last_success_collector": {
@@ -517,7 +437,7 @@
         "reliability": "best_effort_optional"
       },
       "last_attempt_count": 0,
-      "consecutive_failures": 39,
+      "consecutive_failures": 40,
       "query_stats": [
         {
           "query": "software engineer",
@@ -531,7 +451,7 @@
           "first_pass_survivors": 0,
           "original_postings_resolved": 0,
           "jds_resolved": 0,
-          "elapsed_seconds": 0.274,
+          "elapsed_seconds": 7.869,
           "hours_old": 24,
           "http_status": 403
         }
@@ -540,7 +460,7 @@
       "last_good_count": 380,
       "official_enrichment": {},
       "search_collection": {},
-      "last_attempt_elapsed_seconds": 1.608,
+      "last_attempt_elapsed_seconds": 8.722,
       "failure_cause": "403",
       "previous_failure": {},
       "queries_total": 0,
@@ -550,6 +470,28 @@
     }
   },
   "run_history": [
+    {
+      "source": "glassdoor",
+      "run_at": "2026-10-01T21:21:05.398579+00:00",
+      "status": "skipped_unavailable",
+      "new": 0,
+      "pass": null,
+      "new_ab": null,
+      "failure": true,
+      "reason": "GlassdoorException: homepage HTTP 403",
+      "elapsed_seconds": 8.722
+    },
+    {
+      "source": "linkedin",
+      "run_at": "2026-10-01T21:21:05.398045+00:00",
+      "status": "skipped_unavailable",
+      "new": 0,
+      "pass": null,
+      "new_ab": null,
+      "failure": true,
+      "reason": "search cooldown",
+      "elapsed_seconds": 0.0
+    },
     {
       "source": "indeed",
       "run_at": "2026-10-01T15:20:49.855095+00:00",
@@ -726,5 +668,19 @@
       "reason": "",
       "elapsed_seconds": 19.641
     }
-  ]
+  ],
+  "local_recovery": {
+    "run_at": "2026-10-01T21:21:14.170763+00:00",
+    "elapsed_seconds": 150.454,
+    "official_jds_recovered": 1,
+    "linkedin_detail_recoveries": 1,
+    "post_429_jds_recovered": null,
+    "targeted_linkedin_search_requests": 0,
+    "targeted_linkedin_detail_jds": 0,
+    "targeted_linkedin_rate_limited": false,
+    "generic_jobs_processed": 32,
+    "search_requests": 49,
+    "official_page_requests": 35,
+    "linkedin_rate_limited": false
+  }
 }
