@@ -1,24 +1,24 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-02T00:21:59.314552+00:00",
+  "generated_at": "2026-10-02T05:32:08.314409+00:00",
   "collector": {
-    "commit": "4aecb2ba358511b5f5b1759623189b546c7a1b0a",
+    "commit": "37affd08e1653524bc30f525547bf39a30c190a2",
     "dirty": false
   },
   "sources": {
     "linkedin": {
       "required": true,
       "healthy": false,
-      "status": "skipped_unavailable",
-      "reason": "search cooldown",
-      "last_attempt_at": "2026-10-01T21:44:20.604870+00:00",
+      "status": "partial",
+      "reason": "search page budget exhausted",
+      "last_attempt_at": "2026-10-02T05:31:59.887509+00:00",
       "last_success_at": "2026-09-22T18:01:45.946101+00:00",
-      "last_partial_at": "2026-10-01T05:00:16.668133+00:00",
-      "partial_collected_count": 108,
-      "partial_fresh_kept": 104,
-      "partial_carried_count": 1849,
+      "last_partial_at": "2026-10-02T05:31:59.887509+00:00",
+      "partial_collected_count": 10,
+      "partial_fresh_kept": 9,
+      "partial_carried_count": 1953,
       "last_attempt_collector": {
-        "commit": "b88177ac114e3fda2340822fe36b526cce6ababe",
+        "commit": "37affd08e1653524bc30f525547bf39a30c190a2",
         "dirty": false
       },
       "last_success_collector": {
@@ -31,22 +31,93 @@
       "last_success_source_provenance": {
         "implementation": "sources.linkedin_local"
       },
-      "last_attempt_count": 0,
-      "consecutive_failures": 3,
-      "query_stats": [],
+      "last_attempt_count": 9,
+      "consecutive_failures": 0,
+      "query_stats": [
+        {
+          "query": "software engineer",
+          "group": "primary",
+          "page_budget": 5,
+          "pages_fetched": 1,
+          "stop_reason": "global_page_budget",
+          "raw_jobs": 10,
+          "unique_jobs": 10,
+          "unique_contribution": 10,
+          "first_pass_survivors": 9,
+          "original_postings_resolved": 0,
+          "jds_resolved": 8,
+          "elapsed_seconds": 1.818
+        },
+        {
+          "query": "ai engineer",
+          "group": "primary",
+          "page_budget": 3,
+          "pages_fetched": 0,
+          "stop_reason": "global_page_budget",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
+          "original_postings_resolved": 0,
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.0
+        },
+        {
+          "query": "backend engineer",
+          "group": "primary",
+          "page_budget": 2,
+          "pages_fetched": 0,
+          "stop_reason": "global_page_budget",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
+          "original_postings_resolved": 0,
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.0
+        },
+        {
+          "query": "full-stack engineer",
+          "group": "primary",
+          "page_budget": 2,
+          "pages_fetched": 0,
+          "stop_reason": "global_page_budget",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
+          "original_postings_resolved": 0,
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.0
+        },
+        {
+          "query": "machine learning engineer",
+          "group": "primary",
+          "page_budget": 2,
+          "pages_fetched": 0,
+          "stop_reason": "global_page_budget",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
+          "original_postings_resolved": 0,
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.0
+        }
+      ],
       "detail_enrichment": {
-        "eligible": 33,
+        "eligible": 8,
         "cache_reused": 0,
         "requests": 8,
         "responses": 8,
         "successful_responses": 8,
         "request_limit": 8,
-        "budget_deferred": 20,
-        "budget_exhausted": true,
+        "budget_deferred": 0,
+        "budget_exhausted": false,
         "retry_deferred": 0,
         "retry_attempts": 0,
-        "exact_official": 5,
-        "official_deferred": 5,
+        "exact_official": 0,
+        "official_deferred": 0,
         "rate_limited": false,
         "jds_resolved": 8,
         "external_apply_urls": 0,
@@ -57,29 +128,32 @@
         "scrapling_requests": 0,
         "scrapling_jds_resolved": 0,
         "scrapling_error": "",
-        "remaining_no_jd": 25,
-        "failure_reasons": {
-          "official_detail_deferred": 5,
-          "linkedin_rate_limited": 20
-        },
+        "remaining_no_jd": 0,
+        "failure_reasons": {},
         "cooldown_active": false,
         "probe": false,
         "status": "active"
       },
-      "last_good_count": 1953,
-      "detail_last_attempt_at": "2026-10-01T21:44:20.633539+00:00",
+      "last_good_count": 1962,
+      "detail_last_attempt_at": "2026-10-02T05:31:59.887509+00:00",
       "detail_429_streak": 0,
       "detail_cooldown_until": "",
-      "official_enrichment": {},
+      "official_enrichment": {
+        "remote_exact_peer": 1,
+        "search_requests": 0,
+        "search_provider": "duckduckgo",
+        "official_page_requests": 0,
+        "remaining_no_jd": 9
+      },
       "search_collection": {
-        "cooldown_active": true,
-        "probe": false,
-        "requests": 0,
-        "responses": 0,
-        "pages_fetched": 0,
+        "cooldown_active": false,
+        "probe": true,
+        "requests": 1,
+        "responses": 1,
+        "pages_fetched": 1,
         "rate_limited": false,
-        "budget_exhausted": false,
-        "coverage_limited": false
+        "budget_exhausted": true,
+        "coverage_limited": true
       },
       "search_last_attempt_at": "2026-09-26T00:21:43.068211+00:00",
       "search_query_cursor": 8,
@@ -89,19 +163,22 @@
       "detail_status": "active",
       "runner_states": {
         "mac": {
-          "search_last_attempt_at": "2026-10-01T05:00:16.668133+00:00",
-          "search_429_streak": 2,
-          "search_cooldown_until": "2026-10-02T05:00:16.668133+00:00",
+          "search_last_attempt_at": "2026-10-02T05:31:59.887509+00:00",
+          "search_429_streak": 0,
+          "search_cooldown_until": "",
           "detail_status": "active",
-          "detail_last_attempt_at": "2026-10-01T21:44:20.633539+00:00",
+          "detail_last_attempt_at": "2026-10-02T05:31:59.887509+00:00",
           "detail_429_streak": 0,
           "detail_cooldown_until": "",
           "detail_cooldown_reason": ""
         }
       },
-      "last_attempt_elapsed_seconds": 0.0,
-      "failure_cause": "collection",
-      "previous_failure": {},
+      "last_attempt_elapsed_seconds": 8.295,
+      "failure_cause": "",
+      "previous_failure": {
+        "cause": "collection",
+        "count": 3
+      },
       "queries_total": 0,
       "queries_succeeded": 0,
       "queries_failed": 0,
@@ -471,6 +548,17 @@
   },
   "run_history": [
     {
+      "source": "linkedin",
+      "run_at": "2026-10-02T05:31:59.887509+00:00",
+      "status": "partial",
+      "new": 8,
+      "pass": null,
+      "new_ab": null,
+      "failure": false,
+      "reason": "",
+      "elapsed_seconds": 8.295
+    },
+    {
       "source": "indeed",
       "run_at": "2026-10-02T00:21:30.892457+00:00",
       "status": "ok",
@@ -701,5 +789,20 @@
       "reason": "",
       "elapsed_seconds": 19.641
     }
-  ]
+  ],
+  "local_recovery": {
+    "run_at": "2026-10-02T05:32:08.315624+00:00",
+    "elapsed_seconds": 15.402,
+    "official_jds_recovered": 1,
+    "linkedin_detail_recoveries": 0,
+    "post_429_jds_recovered": null,
+    "targeted_linkedin_search_requests": 0,
+    "targeted_linkedin_detail_jds": 0,
+    "targeted_linkedin_rate_limited": false,
+    "generic_jobs_processed": 15,
+    "search_requests": 9,
+    "official_page_requests": 8,
+    "linkedin_rate_limited": false
+  },
+  "mac_last_completed_at": "2026-10-02T05:32:23.759907+00:00"
 }

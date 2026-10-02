@@ -1,140 +1,133 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 1953,
+  "count": 1962,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-10-01T05:00:16.668133+00:00",
+    "scraped_at": "2026-10-02T05:31:59.887509+00:00",
     "collector": {
-      "commit": "4494fe3a7c6a53c0ff1c2942ffb40ebf46eb83d4",
+      "commit": "37affd08e1653524bc30f525547bf39a30c190a2",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 23.905,
+    "elapsed_seconds": 8.295,
     "query_stats": [
       {
         "query": "software engineer",
         "group": "primary",
         "page_budget": 5,
-        "pages_fetched": 5,
-        "stop_reason": "page_budget",
-        "raw_jobs": 50,
-        "unique_jobs": 50,
-        "unique_contribution": 48,
-        "first_pass_survivors": 47,
+        "pages_fetched": 1,
+        "stop_reason": "global_page_budget",
+        "raw_jobs": 10,
+        "unique_jobs": 10,
+        "unique_contribution": 10,
+        "first_pass_survivors": 9,
         "original_postings_resolved": 0,
-        "jds_resolved": 10,
-        "elapsed_seconds": 8.385
+        "jds_resolved": 8,
+        "elapsed_seconds": 1.818
       },
       {
         "query": "ai engineer",
         "group": "primary",
         "page_budget": 3,
-        "pages_fetched": 3,
-        "stop_reason": "page_budget",
-        "raw_jobs": 30,
-        "unique_jobs": 30,
-        "unique_contribution": 29,
-        "first_pass_survivors": 28,
-        "original_postings_resolved": 0,
-        "jds_resolved": 3,
-        "elapsed_seconds": 4.932
-      },
-      {
-        "query": "backend engineer",
-        "group": "primary",
-        "page_budget": 2,
-        "pages_fetched": 2,
-        "stop_reason": "page_budget",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 13,
-        "first_pass_survivors": 17,
-        "original_postings_resolved": 0,
-        "jds_resolved": 1,
-        "elapsed_seconds": 3.235
-      },
-      {
-        "query": "full-stack engineer",
-        "group": "primary",
-        "page_budget": 2,
-        "pages_fetched": 2,
-        "stop_reason": "page_budget",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 18,
-        "first_pass_survivors": 18,
-        "original_postings_resolved": 0,
-        "jds_resolved": 1,
-        "elapsed_seconds": 3.331
-      },
-      {
-        "query": "machine learning engineer",
-        "group": "primary",
-        "page_budget": 2,
         "pages_fetched": 0,
-        "stop_reason": "blocked_http_429",
+        "stop_reason": "global_page_budget",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.087
+        "elapsed_seconds": 0.0
+      },
+      {
+        "query": "backend engineer",
+        "group": "primary",
+        "page_budget": 2,
+        "pages_fetched": 0,
+        "stop_reason": "global_page_budget",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 0.0
+      },
+      {
+        "query": "full-stack engineer",
+        "group": "primary",
+        "page_budget": 2,
+        "pages_fetched": 0,
+        "stop_reason": "global_page_budget",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 0.0
+      },
+      {
+        "query": "machine learning engineer",
+        "group": "primary",
+        "page_budget": 2,
+        "pages_fetched": 0,
+        "stop_reason": "global_page_budget",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 0.0
       }
     ],
     "detail_enrichment": {
-      "eligible": 57,
-      "cache_reused": 1,
-      "requests": 0,
-      "responses": 0,
-      "successful_responses": 0,
-      "request_limit": 1,
+      "eligible": 8,
+      "cache_reused": 0,
+      "requests": 8,
+      "responses": 8,
+      "successful_responses": 8,
+      "request_limit": 8,
       "budget_deferred": 0,
       "budget_exhausted": false,
       "retry_deferred": 0,
       "retry_attempts": 0,
-      "exact_official": 4,
-      "official_deferred": 4,
+      "exact_official": 0,
+      "official_deferred": 0,
       "rate_limited": false,
-      "jds_resolved": 1,
+      "jds_resolved": 8,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 0,
+      "detail_jds_fetched": 8,
       "intentional_skips": 0,
-      "blocked": "rate_limited_no_further_requests",
+      "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 56,
-      "failure_reasons": {
-        "linkedin_rate_limited": 52,
-        "official_detail_deferred": 4
-      },
+      "remaining_no_jd": 0,
+      "failure_reasons": {},
       "cooldown_active": false,
-      "probe": true,
-      "status": "probe"
+      "probe": false,
+      "status": "active"
     },
     "official_enrichment": {
-      "cache": 4,
-      "dedicated_matches": 12,
-      "remote_exact_peer": 5,
-      "exact_indeed_peer": 5,
+      "remote_exact_peer": 1,
       "search_requests": 0,
       "search_provider": "duckduckgo",
       "official_page_requests": 0,
-      "remaining_no_jd": 94
+      "remaining_no_jd": 9
     },
     "partial": true,
-    "blocked_reason": "blocked with HTTP 429",
-    "collected_count": 108,
-    "carried_count": 1849,
+    "blocked_reason": "search page budget exhausted",
+    "collected_count": 10,
+    "carried_count": 1953,
     "last_full_snapshot_at": "",
     "last_full_collector": {},
-    "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-10-01T21:44:20.633539+00:00"
+    "last_full_source_provenance": {}
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -2103,7 +2096,17 @@
     "linkedin|id|4472354298": "2026-10-01T05:00:16.668133+00:00",
     "linkedin|id|4446106873": "2026-09-10T05:22:16.070493+00:00",
     "linkedin|id|4454449113": "2026-09-08T15:40:37.733686+00:00",
-    "linkedin|id|4422883940": "2026-09-09T09:05:33.449607+00:00"
+    "linkedin|id|4422883940": "2026-09-09T09:05:33.449607+00:00",
+    "linkedin|id|4472926121": "2026-10-02T05:31:59.887509+00:00",
+    "linkedin|id|4455911528": "2026-10-02T05:31:59.887509+00:00",
+    "linkedin|id|4472907874": "2026-10-02T05:31:59.887509+00:00",
+    "linkedin|id|4465379983": "2026-10-02T05:31:59.887509+00:00",
+    "linkedin|id|4455917869": "2026-10-02T05:31:59.887509+00:00",
+    "linkedin|id|4464128918": "2026-10-02T05:31:59.887509+00:00",
+    "linkedin|id|4379241675": "2026-09-10T05:22:16.070493+00:00",
+    "linkedin|id|4474527439": "2026-10-02T05:31:59.887509+00:00",
+    "linkedin|id|4464104608": "2026-10-02T05:31:59.887509+00:00",
+    "linkedin|id|4464127225": "2026-10-02T05:31:59.887509+00:00"
   },
   "jobs": [
     {
@@ -2847,7 +2850,7 @@
       "recovery_methods": {},
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered",
       "linkedin_detail_attempted_at": "2026-10-01T21:21:16.022659+00:00",
       "linkedin_detail_fetched_at": "2026-10-01T21:21:16.022659+00:00",
@@ -2878,7 +2881,7 @@
       "recovery_methods": {},
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered",
       "linkedin_detail_attempted_at": "2026-10-01T21:33:54.911139+00:00",
       "linkedin_detail_fetched_at": "2026-10-01T21:33:54.911139+00:00",
@@ -3010,6 +3013,68 @@
       "recovery_methods": {},
       "source_verified_at": "2026-09-29T05:14:01.400356+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4464104608",
+      "source": "linkedin",
+      "company": "Affirm",
+      "title": "Senior Software Engineer, Backend (Partner Merchant Interface)",
+      "location": "Boise, ID",
+      "posted_date": "2026-10-01",
+      "aggregator_posted_date": "2026-10-01",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-backend-partner-merchant-interface-at-affirm-4464104608",
+      "official_url": "",
+      "description": "At Affirm, we exist for the moments that matter—giving people a clear, predictable way to pay over time, with no hidden fees, no surprises, and no tradeoffs on what matters most. The Partner Merchant Interfaces - Integration team within Decisions Foundations is growing and we are looking for a Software Engineer. You will be part of a fast paced team which is responsible for the APIs that Partners and Merchants use to integrate with Affirm, and also power some of our top partners like Amazon and Stripe. What You'll Do With the support of your team, you will work on tasks that contribute to the team's projects and goals. You will work collaboratively and proactively with your team and stakeholders, bringing them along for your work and helping to create visibility and dialog regarding the risks and trade-offs related to your work. You will strike the right balance of speed and quality in your work, ensuring that we hit our business goals while protecting our systems from downtime. You will contribute to a sense of community on your team by engaging in growth and development activities. What We Look For You have previous work or internship experience designing, developing and launching backend systems at scale and are experienced using one of Python or Kotlin. You are familiar with the building blocks of distributed systems, and the technologies like AWS, MySQL and Kubernetes. You have mastered taking a simple problem or business scenario into a solution that interacts with multiple software components, and executing on it by writing clear, easily understood, well tested and extensible code. You are comfortable navigating a large code base, debugging others' code, and providing feedback to other engineers through code reviews. Your experience demonstrates that you take ownership of your growth, proactively seeking feedback from your team, your manager, and your stakeholders. You have strong verbal and written communication skills that support effective collaboration with our global engineering team. This position requires either equivalent practical experience or a Bachelor’s degree in a related field. Base Pay Grade - N Equity Grade - 9 Employees new to Affirm typically come in at the start of the pay range. Affirm focuses on providing a simple and transparent pay structure which is based on a variety of factors, including location, experience and job-related skills.Base pay is part of a total compensation package that may include equity rewards, monthly stipends for health, wellness and tech spending, and benefits (including 100% subsidized medical coverage, dental and vision for you and your dependents.) USA base pay range (CA, WA, NY, NJ, CT) per year: $195,000 - $255,000 USA base pay range (all other U.S. states) per year: $173,000 - $233,000 LI-Remote Remote-first with flexibility built in Affirm is proud to be a remote-first company. Most roles can be done from almost anywhere within the country of employment. Some positions may occasionally require in-person work at an Affirm office, and a few are office-based due to the nature of the work. All new hires will be invited to attend an in-person onboarding experience. Benefits Designed For You Our benefits reflect our commitment to care, transparency, and flexibility. Here are a few highlights: Health coverage at no cost: We cover 100% of premiums for employees and their dependents. Spending stipends: Monthly stipends support your tech setup, and the ability to choose health and wellness options that are right for you. Time off to recharge: Flexible time off and generous holiday calendars help you rest when you need to. Own a piece of what you build: Our employee stock purchase plan (ESPP) lets you buy Affirm stock at a discount. We’re committed to providing an inclusive interview process, including accommodations for candidates with disabilities. If you need support, we’re happy to help. For positions based in San Francisco or Los Angeles: Affirm considers qualified applicants with arrest and conviction records, as required by law. By clicking \"Submit Application,\" you acknowledge that you have read Affirm's Global Candidate Privacy Notice and consent to the use of your personal information as described.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-02T05:31:59.887509+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "linkedin_detail_attempted_at": "2026-10-02T05:32:02.580654+00:00",
+      "linkedin_detail_fetched_at": "2026-10-02T05:32:02.580654+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-02T05:31:59.887509+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4464127225",
+      "source": "linkedin",
+      "company": "Affirm",
+      "title": "Senior Software Engineer, Backend (Partner Merchant Interface)",
+      "location": "Washington, DC",
+      "posted_date": "2026-10-01",
+      "aggregator_posted_date": "2026-10-01",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-backend-partner-merchant-interface-at-affirm-4464127225",
+      "official_url": "",
+      "description": "At Affirm, we exist for the moments that matter—giving people a clear, predictable way to pay over time, with no hidden fees, no surprises, and no tradeoffs on what matters most. The Partner Merchant Interfaces - Integration team within Decisions Foundations is growing and we are looking for a Software Engineer. You will be part of a fast paced team which is responsible for the APIs that Partners and Merchants use to integrate with Affirm, and also power some of our top partners like Amazon and Stripe. What You'll Do With the support of your team, you will work on tasks that contribute to the team's projects and goals. You will work collaboratively and proactively with your team and stakeholders, bringing them along for your work and helping to create visibility and dialog regarding the risks and trade-offs related to your work. You will strike the right balance of speed and quality in your work, ensuring that we hit our business goals while protecting our systems from downtime. You will contribute to a sense of community on your team by engaging in growth and development activities. What We Look For You have previous work or internship experience designing, developing and launching backend systems at scale and are experienced using one of Python or Kotlin. You are familiar with the building blocks of distributed systems, and the technologies like AWS, MySQL and Kubernetes. You have mastered taking a simple problem or business scenario into a solution that interacts with multiple software components, and executing on it by writing clear, easily understood, well tested and extensible code. You are comfortable navigating a large code base, debugging others' code, and providing feedback to other engineers through code reviews. Your experience demonstrates that you take ownership of your growth, proactively seeking feedback from your team, your manager, and your stakeholders. You have strong verbal and written communication skills that support effective collaboration with our global engineering team. This position requires either equivalent practical experience or a Bachelor’s degree in a related field. Base Pay Grade - N Equity Grade - 9 Employees new to Affirm typically come in at the start of the pay range. Affirm focuses on providing a simple and transparent pay structure which is based on a variety of factors, including location, experience and job-related skills.Base pay is part of a total compensation package that may include equity rewards, monthly stipends for health, wellness and tech spending, and benefits (including 100% subsidized medical coverage, dental and vision for you and your dependents.) USA base pay range (CA, WA, NY, NJ, CT) per year: $195,000 - $255,000 USA base pay range (all other U.S. states) per year: $173,000 - $233,000 LI-Remote Remote-first with flexibility built in Affirm is proud to be a remote-first company. Most roles can be done from almost anywhere within the country of employment. Some positions may occasionally require in-person work at an Affirm office, and a few are office-based due to the nature of the work. All new hires will be invited to attend an in-person onboarding experience. Benefits Designed For You Our benefits reflect our commitment to care, transparency, and flexibility. Here are a few highlights: Health coverage at no cost: We cover 100% of premiums for employees and their dependents. Spending stipends: Monthly stipends support your tech setup, and the ability to choose health and wellness options that are right for you. Time off to recharge: Flexible time off and generous holiday calendars help you rest when you need to. Own a piece of what you build: Our employee stock purchase plan (ESPP) lets you buy Affirm stock at a discount. We’re committed to providing an inclusive interview process, including accommodations for candidates with disabilities. If you need support, we’re happy to help. For positions based in San Francisco or Los Angeles: Affirm considers qualified applicants with arrest and conviction records, as required by law. By clicking \"Submit Application,\" you acknowledge that you have read Affirm's Global Candidate Privacy Notice and consent to the use of your personal information as described.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-02T05:31:59.887509+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "linkedin_detail_attempted_at": "2026-10-02T05:32:02.580654+00:00",
+      "linkedin_detail_fetched_at": "2026-10-02T05:32:02.580654+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-02T05:31:59.887509+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4386865850",
@@ -5095,7 +5160,7 @@
       },
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
@@ -5310,6 +5375,37 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-30T19:34:21.706555+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4455911528",
+      "source": "linkedin",
+      "company": "Amazon Web Services (AWS)",
+      "title": "Senior Software Development Engineer, AWS IAM Data Plane, AWS Identity & Access Management - Data Plane",
+      "location": "Denver, CO",
+      "posted_date": "2026-10-01",
+      "aggregator_posted_date": "2026-10-01",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-development-engineer-aws-iam-data-plane-aws-identity-access-management-data-plane-at-amazon-web-services-aws-4455911528",
+      "official_url": "",
+      "description": "Description Application deadline: Oct 2, 2026 We are building the most secure, reliable, scalable, and performant authentication and authorization platform on the planet. We enable every AWS customer to securely access their resources while powering generative AI workloads at global scale. We are looking for a talented Senior Software Development Engineer who is passionate about transforming complex problems into simple, scalable, and maintainable solutions in the authentication and authorization space. You will own the design and delivery of systems that protect some of the most sensitive surfaces in AWS. If this sounds exciting to you, we'd love to connect. Key job responsibilities Sr. SDEs Collaborate Across Diverse Teams, Projects, And Environments To Have a Firsthand Impact On Our Global Customer Base. You’ll Bring a Passion For Innovation, Performance, Cloud Security, And Distributed Systems. You’ll Also Solve challenging technical problems, often ones not solved before, at every layer of the stack. Design, implement, test, deploy and maintain innovative software solutions to transform service performance, durability, cost, and security. Build high-quality, highly available, always-on products. Research implementations that deliver the best possible experiences for customers. Provide technical leadership for the team and collaborate across organizations. Coach and mentor junior engineers. About The Team AWS Identity and Access Management (IAM) is at the foundation of every AWS service and every customer interaction with the cloud. Our team builds the systems that customers and services rely on to authenticate and authorize access across the world's most widely adopted cloud platform. We operate at massive scale, processing billions of requests per day with extremely high availability requirements. Basic Qualifications 5+ years of non-internship professional software development experience 5+ years of programming with at least one software programming language experience 5+ years of leading design or architecture (design patterns, reliability and scaling) of new and existing systems experience Experience as a mentor, tech lead or leading an engineering team Preferred Qualifications 7+ years of full software development life cycle, including coding standards, code reviews, source control management, build processes, testing, and operations experience Bachelor's degree in computer science or equivalent Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability, or other legally protected status. Our inclusive culture empowers Amazonians to deliver the best results for our customers. If you have a disability and need a workplace accommodation or adjustment during the application and hiring process, including support for the interview or onboarding process, please visit https://amazon.jobs/content/en/how-we-hire/accommodations for more information. If the country/region you’re applying in isn’t listed, please contact your Recruiting Partner. The base salary range for this position is listed below. Your Amazon package will include sign-on payments and restricted stock units (RSUs). Final compensation will be determined based on factors including experience, qualifications, and location. Amazon also offers comprehensive benefits including health insurance (medical, dental, vision, prescription, Basic Life & AD&D insurance and option for Supplemental life plans, EAP, Mental Health Support, Medical Advice Line, Flexible Spending Accounts, Adoption and Surrogacy Reimbursement coverage), 401(k) matching, paid time off, and parental leave. Learn more about our benefits at https://amazon.jobs/en/benefits. USA, CO, Denver - 168,100.00 - 227,400.00 USD annually Company - Amazon Development Center U.S., Inc. Job ID: A10458373",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-02T05:31:59.887509+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "linkedin_detail_attempted_at": "2026-10-02T05:32:02.580654+00:00",
+      "linkedin_detail_fetched_at": "2026-10-02T05:32:02.580654+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-02T05:31:59.887509+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4462094675",
@@ -5533,7 +5629,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468136657",
@@ -5635,7 +5731,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
@@ -5763,6 +5859,37 @@
       "official_search_status": "no_match",
       "source_verified_at": "2026-09-22T18:01:45.946101+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4455917869",
+      "source": "linkedin",
+      "company": "Amazon Web Services (AWS)",
+      "title": "Software Development Engineer, AWS Resource Access Manager Team",
+      "location": "Arlington, VA",
+      "posted_date": "2026-10-01",
+      "aggregator_posted_date": "2026-10-01",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-aws-resource-access-manager-team-at-amazon-web-services-aws-4455917869",
+      "official_url": "",
+      "description": "Description The Amazon Web Services (AWS) Identity team builds, operates, and innovates the identity, authentication, and authorization stack for the AWS cloud. Our mission is to push the technical boundaries to enable AWS customers to run their business workloads confidently and securely. As part of this mission, AWS Resource Access Manager (RAM) enables customers to securely share their AWS resources across accounts, organizations, and organizational units — simplifying multi-account governance while maintaining fine-grained access controls. AWS RAM allows customers to centrally manage resource sharing at scale, eliminating the need to create duplicate resources in every account. As AWS grows and customers adopt increasingly complex multi-account strategies, RAM must evolve to support new resource types, richer sharing policies, and higher-order scalability demands. We are looking for strong software engineers to build the next generation of resource sharing infrastructure. Individuals interested in this position should have experience building high-performing, reliable systems in a distributed, multi-tenant environment at a fast pace. You'll thrive in this role if you are passionate about building highly available, fault-tolerant distributed systems that operate seamlessly across organizational boundaries. You care deeply about API design that makes complex sharing workflows intuitive — making \"the right thing, the easy thing.\" You think about the customer experience when weighing engineering trade-offs, whether that's designing retention behaviors for departing accounts, enabling resource discovery, or ensuring consistent state across asynchronous workflows. You value operational excellence — advocating for actionable alarms, eliminating toil, and squashing flaky tests before they erode confidence. You also believe that having fun and tackling hard problems go hand-in-hand: event-driven architectures, eventual consistency challenges, high-throughput resource indexing, and building APIs that scale to millions of shared resources — all while maintaining the security and reliability customers depend on. Basic Qualifications 3+ years of non-internship professional software development experience 2+ years of non-internship design or architecture (design patterns, reliability and scaling) of new and existing systems experience Experience programming with at least one software programming language Preferred Qualifications 3+ years of full software development life cycle, including coding standards, code reviews, source control management, build processes, testing, and operations experience Bachelor's degree in computer science or equivalent Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability, or other legally protected status. Our inclusive culture empowers Amazonians to deliver the best results for our customers. If you have a disability and need a workplace accommodation or adjustment during the application and hiring process, including support for the interview or onboarding process, please visit https://amazon.jobs/content/en/how-we-hire/accommodations for more information. If the country/region you’re applying in isn’t listed, please contact your Recruiting Partner. The base salary range for this position is listed below. Your Amazon package will include sign-on payments and restricted stock units (RSUs). Final compensation will be determined based on factors including experience, qualifications, and location. Amazon also offers comprehensive benefits including health insurance (medical, dental, vision, prescription, Basic Life & AD&D insurance and option for Supplemental life plans, EAP, Mental Health Support, Medical Advice Line, Flexible Spending Accounts, Adoption and Surrogacy Reimbursement coverage), 401(k) matching, paid time off, and parental leave. Learn more about our benefits at https://amazon.jobs/en/benefits. USA, VA, Arlington - 143,700.00 - 194,400.00 USD annually Company - Amazon Development Center U.S., Inc. Job ID: A10441293",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-02T05:31:59.887509+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "linkedin_detail_attempted_at": "2026-10-02T05:32:02.580654+00:00",
+      "linkedin_detail_fetched_at": "2026-10-02T05:32:02.580654+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-02T05:31:59.887509+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470216352",
@@ -6704,7 +6831,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -7088,7 +7215,7 @@
       "recovery_methods": {},
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered",
       "linkedin_detail_attempted_at": "2026-10-01T21:33:54.911139+00:00",
       "linkedin_detail_fetched_at": "2026-10-01T21:33:54.911139+00:00",
@@ -7119,7 +7246,7 @@
       "recovery_methods": {},
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered",
       "linkedin_detail_attempted_at": "2026-10-01T21:33:54.911139+00:00",
       "linkedin_detail_fetched_at": "2026-10-01T21:33:54.911139+00:00",
@@ -7647,7 +7774,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469988667",
@@ -9335,7 +9462,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461267969",
@@ -9782,7 +9909,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4454092565",
@@ -10134,7 +10261,7 @@
       },
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -10199,7 +10326,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4443002051",
@@ -10542,7 +10669,7 @@
       },
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
@@ -10985,7 +11112,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-10-01T05:00:16.668133+00:00",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470491262",
@@ -11523,7 +11650,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4453194394",
@@ -12221,7 +12348,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -12280,7 +12407,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -14851,7 +14978,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469016551",
@@ -14987,7 +15114,7 @@
       "recovery_methods": {},
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered",
       "linkedin_detail_attempted_at": "2026-10-01T21:33:54.911139+00:00",
       "linkedin_detail_fetched_at": "2026-10-01T21:33:54.911139+00:00",
@@ -16031,7 +16158,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -16953,7 +17080,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -17724,7 +17851,7 @@
       },
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -17771,7 +17898,7 @@
       },
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -19710,6 +19837,37 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4464128918",
+      "source": "linkedin",
+      "company": "Early Warning",
+      "title": "Sr. Software Engineer",
+      "location": "Scottsdale, AZ",
+      "posted_date": "2026-10-01",
+      "aggregator_posted_date": "2026-10-01",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-software-engineer-at-early-warning-4464128918",
+      "official_url": "",
+      "description": "At Early Warning, we’ve powered and protected the U.S. financial system for over thirty years with cutting-edge solutions like Zelle®, Paze®, and so much more. As a trusted name in payments, we partner with thousands of institutions to increase access to financial services and protect transactions for hundreds of millions of consumers and small businesses. Early Warning follows a hybrid work model to allow for a more collaborative working environment. Candidates responding to this posting must independently possess the eligibility to work in the United States, for any employer, at the date of hire. This position is ineligible for employment Visa sponsorship. Overall Purpose The Sr. Software Engineer designs, develops, tests, and maintains software applications and services with a primary focus on the Microsoft .NET technology stack. This position provides technical expertise throughout the software development lifecycle, develops complex software capabilities, supports reliable and secure application delivery, and collaborates with engineering and business partners to translate requirements into scalable technical solutions. Essential Functions Design, develop, document, test, deploy, and maintain software applications and services using C# and the .NET platform. Serve as a technical resource on software development projects, providing guidance on application design, development approaches, and engineering best practices. Drive activities throughout the software development lifecycle, including requirements analysis, technical design, development, testing, implementation, and production support. Develop and maintain APIs, services, and application components using modern .NET development practices. Translate business and functional requirements into technical designs and specifications. Design solutions that support maintainability, scalability, reliability, and application performance. Develop and maintain automated unit and integration tests as part of the software delivery process. Participate in code reviews and provide actionable feedback to maintain code quality, security, and engineering standards. Troubleshoot complex application defects and production issues, identify root causes, and implement sustainable solutions. Support and enhance existing applications while developing new capabilities based on business and customer needs. Evaluate technologies, frameworks, and engineering practices for potential implementation and continuous improvement. Collaborate with engineers, product partners, and other stakeholders to refine requirements, estimate work, and deliver software capabilities. Provide technical guidance and mentorship to Software Engineers and other team members as appropriate. Support automated build, deployment, and continuous integration/continuous delivery processes. Support the company’s commitment to risk management and protecting the integrity and confidentiality of systems and data. Minimum Qualifications Education and experience typically obtained through completion of a bachelor’s degree in Computer Science or a related field and/or equivalent relevant education, training, and work experience. Typically has 5 years of experience or demonstrated portfolio consistent with experience required of the role. Demonstrated software development experience using C# and .NET. Experience developing applications or services using modern .NET frameworks, such as .NET and ASP.NET Core. Experience designing, developing, and integrating RESTful APIs and web services. Working knowledge of SQL and relational database concepts. Experience with source code management and collaborative development practices using Git or a comparable source control platform. Experience developing automated unit and integration tests. Experience troubleshooting complex software issues across application components and environments. Understanding of object-oriented design, distributed application architecture, and component-based software design. Understanding of asynchronous programming, concurrency, and multithreaded application concepts. Experience participating in code reviews and applying secure software development practices. Experience with automated build, deployment, or CI/CD processes. Understanding of iterative software development and Agile/Lean methodologies. Ability to translate business and functional requirements into technical solutions. Ability to communicate technical information effectively and collaborate across engineering and business teams. Preferred Qualifications Experience with cloud-based application development and deployment. Experience with AWS Experience with containerization and orchestration technologies such as Docker and Kubernetes. Experience with event-driven or message-based application architectures. Experience with test-driven development (TDD) or behavior-driven development (BDD). Experience with automated functional, regression, performance, or integration testing frameworks. Experience supporting high-volume, distributed, or highly available applications. Experience with application monitoring, observability, and production troubleshooting tools. Experience modernizing or refactoring legacy .NET applications. Additional related education and/or experience. The above job description is not intended to be an all-inclusive list of duties and standards of the position. Incumbents will follow instructions and perform other related duties as assigned by their supervisor. Physical Requirements Working conditions consist of a normal office environment. Work is primarily sedentary and requires extensive use of a computer and involves sitting for periods of approximately four hours. Work may require occasional standing, walking, kneeling and reaching. Must be able to lift 10 pounds occasionally and/or negligible amount of force frequently. Requires visual acuity and dexterity to view, prepare, and manipulate documents and office equipment including personal computers. Requires the ability to communicate with internal and/or external customers. Employee must be able to perform essential functions and physical requirements of position with or without reasonable accommodation. The Base Pay Scale For This Position In Phoenix, AZ in USD per year is: $118,000 - $152,000. Additionally, candidates are eligible for a discretionary incentive plan and benefits. This pay scale is subject to change and is not necessarily reflective of actual compensation that may be earned, nor a promise of any specific pay for any specific candidate, which is always dependent on legitimate factors considered at the time of job offer. Early Warning Services takes into consideration a variety of factors when determining a competitive salary offer, including, but not limited to, the job scope, market rates and geographic location of a position, candidate’s education, experience, training, and specialized skills or certification(s) in relation to the job requirements and compared with internal equity (peers). The business actively supports and reviews wage equity to ensure that pay decisions are not based on gender, race, national origin, or any other protected classes. Some of the Ways We Prioritize Your Health and Happiness Healthcare Coverage – Competitive medical (PPO/HDHP), dental, and vision plans as well as company contributions to your Health Savings Account (HSA) or pre-tax savings through flexible spending accounts (FSA) for commuting, health & dependent care expenses. 401(k) Retirement Plan – Featuring a 100% Company Safe Harbor Match on your first 6% deferral immediately upon eligibility. Paid Time Off – Flexible Time Off for Exempt (salaried) employees, as well as generous PTO for Non-Exempt (hourly) employees, plus 11 paid company holidays and a paid volunteer day. 12 weeks of Paid Parental Leave Maven Family Planning – provides support through your Parenting journey including egg freezing, fertility, adoption, surrogacy, pregnancy, postpartum, early pediatrics, and returning to work. And SO much more! We continue to enhance our program, so be sure to check our Benefits page here for the latest. Our team can share more during the interview process! Early Warning Services, LLC (“Early Warning”) considers for employment, hires, retains and promotes qualified candidates on the basis of ability, potential, and valid qualifications without regard to race, religious creed, religion, color, sex, sexual orientation, genetic information, gender, gender identity, gender expression, age, national origin, ancestry, citizenship, protected veteran or disability status or any factor prohibited by law, and as such affirms in policy and practice to support and promote equal employment opportunity and affirmative action, in accordance with all applicable federal, state, and municipal laws. The company also prohibits discrimination on other bases such as medical condition, marital status or any other factor that is irrelevant to the performance of our employees. Early Warning Services LLC is a proud participant in E-Verify, a federal program to help ensure a legal and authorized workforce. As part of our hiring process, we electronically verify the employment eligibility of all new hires through E-Verify. For more information on your rights and responsibilities under E-Verify please visit Home | E-Verify.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-02T05:31:59.887509+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "linkedin_detail_attempted_at": "2026-10-02T05:32:02.580654+00:00",
+      "linkedin_detail_fetched_at": "2026-10-02T05:32:02.580654+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-02T05:31:59.887509+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4430588949",
       "source": "linkedin",
       "company": "EchoStar Corporation",
@@ -20609,7 +20767,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4455386760",
@@ -21292,7 +21450,7 @@
       "recovery_methods": {},
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered",
       "linkedin_detail_attempted_at": "2026-10-01T21:44:22.087024+00:00",
       "linkedin_detail_fetched_at": "2026-10-01T21:44:22.087024+00:00",
@@ -21759,7 +21917,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4361173628",
@@ -21932,7 +22090,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4378090699",
@@ -21982,7 +22140,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471123328",
@@ -22088,7 +22246,7 @@
       "recovery_methods": {},
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered",
       "linkedin_detail_attempted_at": "2026-10-01T21:44:22.087024+00:00",
       "linkedin_detail_fetched_at": "2026-10-01T21:44:22.087024+00:00",
@@ -22174,7 +22332,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4408447055",
@@ -22795,7 +22953,7 @@
       },
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -24193,7 +24351,7 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4472178009",
@@ -24225,7 +24383,7 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468790961",
@@ -25121,7 +25279,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4205335950",
@@ -25872,7 +26030,7 @@
       },
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
@@ -26097,7 +26255,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4416430090",
@@ -26122,7 +26280,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4416688800",
@@ -26433,7 +26591,7 @@
       },
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "low",
@@ -27523,7 +27681,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468796723",
@@ -27960,7 +28118,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-10-01T05:00:16.668133+00:00",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471702020",
@@ -28376,7 +28534,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "low",
@@ -28908,7 +29066,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470097966",
@@ -30166,7 +30324,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4451975420",
@@ -30486,7 +30644,7 @@
       "recovery_methods": {},
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered",
       "linkedin_detail_attempted_at": "2026-10-01T21:44:22.087024+00:00",
       "linkedin_detail_fetched_at": "2026-10-01T21:44:22.087024+00:00",
@@ -30862,7 +31020,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4437647024",
@@ -31192,7 +31350,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
@@ -31466,7 +31624,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4467125007",
@@ -31957,7 +32115,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4464984072",
@@ -31982,7 +32140,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470111764",
@@ -32979,7 +33137,7 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4473247545",
@@ -33704,7 +33862,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4459455068",
@@ -34313,7 +34471,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -35200,7 +35358,7 @@
       },
       "enrichment_status": "resolved",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -35482,7 +35640,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -37118,6 +37276,71 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4472907874",
+      "source": "linkedin",
+      "company": "Oracle",
+      "title": "Senior Software Engineer, Core Infrastructure",
+      "location": "Nashville, TN",
+      "posted_date": "2026-10-01",
+      "aggregator_posted_date": "2026-10-01",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-core-infrastructure-at-oracle-4472907874",
+      "official_url": "",
+      "description": "Job Description Observability org of OCI is on a continued mission of delivering a world-class Integrated Observability and Management platform for our customers, that can work seamlessly across OCI, other clouds, and on-premises to provide a uniform view. Our integrated Observability and Management platform combines Logging, Monitoring, Auditing, SIEM, Events, Inventory, and other services. We will continue to innovate on each of these services to make them feature-rich world-class services on their own and integrate them seamlessly to provide meaningful insights into your resources and data! The OCI Monitoring services enable customers to actively and passively monitor their cloud Responsibilities Responsibilities Design and develop full stack, cloud based, web services solutions with high degree of scalability, reliability and availability. Extensive collaboration with research and engineering teams to deliver complex large-scale projects Show initiative and enthusiasm in tackling challenging problems with innovative designs Qualifications 3+ years of experience in software design, development and operation of large scale distributed systems Solid programming skills in Java or C#/C++, and experience with scripting languages such as Python Experience in designing, implementing, and managing high scalable/available/reliable distributed service/system Experience with relational and non-relational (NoSQL) databases Effective communication skills and ability to work in a collaborative environment Advanced critical thinking and problem solving abilities BS or MS or PhD degree in Computer Science, or equivalent experience Qualifications Disclaimer: Certain U.S. based or U.S. customer or client-facing roles may be required to comply with applicable requirements, such as immunization/occupational health mandates, and/or drug testing requirements. Range and benefit information provided in this posting are specific to the stated locations only US: Hiring Range in USD from: $89,200 - $209,500 per year. May be eligible for bonus and equity. Oracle maintains broad salary ranges for its roles in order to account for variations in knowledge, skills, experience, market conditions and locations, as well as reflect Oracle's differing products, industries and lines of business. Candidates are typically placed into the range based on the preceding factors as well as internal peer equity. Oracle US offers a comprehensive benefits package which includes the following: Medical, dental, and vision insurance, including expert medical opinion Short term disability and long term disability Life insurance and AD&D Supplemental life insurance (Employee/Spouse/Child) Health care and dependent care Flexible Spending Accounts Pre-tax commuter and parking benefits 401(k) Savings and Investment Plan with company match Paid time off: Flexible Vacation is provided to all eligible employees assigned to a salaried (non-overtime eligible) position. Accrued Vacation is provided to all other employees eligible for vacation benefits. For employees working at least 35 hours per week, the vacation accrual rate is 13 days annually for the first three years of employment and 18 days annually for subsequent years of employment. Vacation accrual is prorated for employees working between 20 and 34 hours per week. Employees working fewer than 20 hours per week are not eligible for vacation. 11 paid holidays Paid sick leave: 72 hours of paid sick leave upon date of hire. Refreshes each calendar year. Unused balance will carry over each year up to a maximum cap of 112 hours. Paid parental leave Adoption assistance Employee Stock Purchase Plan Financial planning and group legal Voluntary benefits including auto, homeowner and pet insurance The role will generally accept applications for at least three calendar days from the posting date or as long as the job remains posted. Career Level - IC3 About Us Only Oracle brings together the data, infrastructure, applications, and expertise to power everything from industry innovations to life-saving care. And with AI embedded across our products and services, we help customers turn that promise into a better future for all. Discover your potential at a company leading the way in AI and cloud solutions that impact billions of lives. True innovation starts when everyone is empowered to contribute. That’s why we’re committed to growing a workforce that promotes opportunities for all with competitive benefits that support our people with flexible medical, life insurance, and retirement options. We also encourage employees to give back to their communities through our volunteer programs. We’re committed to including people with disabilities at all stages of the employment process. If you require accessibility assistance or accommodation for a disability at any point, let us know by emailing accommodation-request_mb@oracle.com or by calling 1-888-404-2494 in the United States. Oracle is an Equal Employment Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, national origin, sexual orientation, gender identity, disability and protected veterans’ status, or any other characteristic protected by law. Oracle will consider for employment qualified applicants with arrest and conviction records pursuant to applicable law.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-02T05:31:59.887509+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "linkedin_detail_attempted_at": "2026-10-02T05:32:02.580654+00:00",
+      "linkedin_detail_fetched_at": "2026-10-02T05:32:02.580654+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-02T05:31:59.887509+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4472926121",
+      "source": "linkedin",
+      "company": "Oracle",
+      "title": "Senior Software Engineer, Core Infrastructure",
+      "location": "Austin, TX",
+      "posted_date": "2026-10-01",
+      "aggregator_posted_date": "2026-10-01",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-core-infrastructure-at-oracle-4472926121",
+      "official_url": "",
+      "description": "Designs, implements, and optimizes components in distributed systems with an emphasis on scalability, resiliency, and operability. Delivers features and load/performance tests; leverages data plane platforms and distributed state tools for high-volume retrieval, storage, and processing; and reviews peers’ implementations for scalability compliance. Builds fault-tolerant paths (redundancy, replication, automatic failover), applies recovery‑oriented principles, and implements retries, circuit breakers, and timeouts. Proactively detects and mitigates issues via tests, alarms, dashboards, and telemetry; authors runbooks and participates in incident response and RCAs. Implements standard replication and synchronization, develops automation/IaC for troubleshooting and maintenance, and applies advanced security controls (encryption, access, remediation) while ensuring change, compliance, and documentation standards are met. Key Responsibilities System Design & Architecture - System Scalability: –Implements and contributes to the development for components of distributed systems that support horizontal and vertical scaling including leveraging distributed state management tools. –Optimizes code and/or systems for large-scale data processing in large-scale systems. –Implements scalability requirements for assigned components and reviews implementation of team members. –Leverages components of data plane platforms to handle large-scale data retrieval, storage, and processing. –Implements performance and load testing. System Design & Architecture - System Reliability Design: –Collaborates with team to build fault-tolerant components capable of withstanding in-service updates by implementing redundancy, replication, and automatic failover mechanisms. –Applies recovery oriented computing principles to design components that effectively handle service disruptions. –Implements retry mechanisms, circuit breakers, and timeouts to help handle network unreliability. System Design & Architecture - System Reliability Performance: –Implements tests and alarm configurations to proactively detect and address issues/failures. –Supports efforts to recover from failures by drafting and executing runbooks and operational procedures. –Builds and customizes dashboards, telemetry systems, and alerting mechanisms to monitor component health. System Design & Architecture - Correctness / Availability: –Designs and implements functional requirements and testing for assigned features within an existing system. –Implements tests scenarios (e.g., fault-injection, brown-out) to evaluate system correctness. –Implements standard data replication and synchronization techniques to maintain data integrity and availability. Operational Troubleshooting & Incident Management: –Diagnoses, debugs, and resolves issues in system components to support ongoing operation. –Implements basic strategies to prevent interruptions, ensuring no maintenance windows are required for customers and users when resolving issues. –Designs and implements automation scripts and tooling used to troubleshoot operational issues. –Participates in operational support rotations, assisting in incident responses and root cause investigations. Compliance & Security: –Applies advanced security measures to protect data and applications in multi-tenant environments, including encryption and access controls. –Implements remediation plans to continuously improve security. –Collaborates with the team to ensure cloud infrastructure complies with relevant industry standards and regulations and that documentation is up-to-date Automation & Change Management: –Maintains automation scripts and tools (e.g., Infrastructure as Code (IaC)) for managing cloud infrastructure. –Adheres to change management plans for patching, updating, and rolling back applications. Core Responsibilities Planning & Execution: –Track timelines with minimal supervision, ensuring work is completed in a timely manner and is in alignment with project requirements. –Prioritize and adjust work as resources or timelines change, with some guidance Collaboration & Partnership: –Collaborates across teams to align on expectations and achieve shared objectives. Builds and maintains a comprehensive understanding of business, stakeholder, and/or customer needs to build and support effective partnerships. Actively listens to diverse perspectives and asks questions to ensure understanding of others. Problem Solving: –Independently identifies and addresses standard and non-standard issues in accordance with standard practices, escalating more complex issues as appropriate. Analyzes data and/or information from multiple sources to troubleshoot standard and non-standard errors. Contributes to knowledge sharing and best practices Continuous Learning: –Embraces continuous learning by actively seeking to build knowledge and new skills and/or tools, and staying current with industry trends and best practices. Seeks out and leverages feedback and training to improve skills. Contributes to a culture of continuous learning and knowledge sharing with team members.. Continuous Improvement: –Develops ideas and recommends updates to increase the efficiency and effectiveness of processes, protocols, and workflows within a team. Seeks input from team members on alternative approaches and methods for improving work. Requirements: Bachelor's Degree in Computer Science, Computer Engineering, Software Engineering, Electrical/Electronics Engineering, Computer Information Systems, Information Systems, Information Technology, Telecommunications, Mathematics, Physics, or related field AND 4 years of experience in software development OR Master's Degree in Computer Science, Computer Engineering, Software Engineering, Electrical/Electronics Engineering, Computer Information Systems, Information Systems, Information Technology, Telecommunications, Mathematics, Physics, or related field AND 2 year of experience in software development Disclaimer: Certain U.S. based or U.S. customer or client-facing roles may be required to comply with applicable requirements, such as immunization/occupational health mandates, and/or drug testing requirements. Range and benefit information provided in this posting are specific to the stated locations only US: Hiring Range in USD from: $79,200 to $209,500 per annum. May be eligible for bonus and equity. Oracle maintains broad salary ranges for its roles in order to account for variations in knowledge, skills, experience, market conditions and locations, as well as reflect Oracle's differing products, industries and lines of business. Candidates are typically placed into the range based on the preceding factors as well as internal peer equity. Oracle US offers a comprehensive benefits package which includes the following: 1. Medical, dental, and vision insurance, including expert medical opinion 2. Short term disability and long term disability 3. Life insurance and AD&D 4. Supplemental life insurance (Employee/Spouse/Child) 5. Health care and dependent care Flexible Spending Accounts 6. Pre-tax commuter and parking benefits 7. 401(k) Savings and Investment Plan with company match 8. Paid time off: Flexible Vacation is provided to all eligible employees assigned to a salaried (non-overtime eligible) position. Accrued Vacation is provided to all other employees eligible for vacation benefits. For employees working at least 35 hours per week, the vacation accrual rate is 13 days annually for the first three years of employment and 18 days annually for subsequent years of employment. Vacation accrual is prorated for employees working between 20 and 34 hours per week. Employees working fewer than 20 hours per week are not eligible for vacation. 9. 11 paid holidays 10. Paid sick leave: 72 hours of paid sick leave upon date of hire. Refreshes each calendar year. Unused balance will carry over each year up to a maximum cap of 112 hours. 11. Paid parental leave 12. Adoption assistance 13. Employee Stock Purchase Plan 14. Financial planning and group legal 15. Voluntary benefits including auto, homeowner and pet insurance The role will generally accept applications for at least three calendar days from the posting date or as long as the job remains posted. Career Level - IC3",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-02T05:31:59.887509+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/340686",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-02T05:31:59.887509+00:00",
+      "jd_recovery_at": "2026-10-02T05:31:59.887509+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-02T05:31:59.887509+00:00",
+      "source_verified_at": "2026-10-02T05:31:59.887509+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468179285",
       "source": "linkedin",
       "company": "Oracle",
@@ -37475,7 +37698,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4434673602",
@@ -37629,7 +37852,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4415107917",
@@ -38124,6 +38347,31 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4379241675",
+      "source": "linkedin",
+      "company": "Paramount+",
+      "title": "Senior Software Engineer",
+      "location": "Burbank, CA",
+      "posted_date": "2026-10-01",
+      "aggregator_posted_date": "2026-10-01",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-at-paramount%2B-4379241675",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-10T05:22:16.070493+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-02T05:31:59.887509+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4406806929",
       "source": "linkedin",
       "company": "Paramount+",
@@ -38225,7 +38473,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4463127123",
@@ -38519,7 +38767,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -38580,7 +38828,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "low",
@@ -39140,7 +39388,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4462736571",
@@ -39604,7 +39852,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -39912,7 +40160,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -40019,7 +40267,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -40054,7 +40302,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -41356,7 +41604,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4464683680",
@@ -41381,7 +41629,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470448656",
@@ -41601,7 +41849,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -41734,7 +41982,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -43570,7 +43818,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4444396742",
@@ -44147,7 +44395,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4375479065",
@@ -44380,7 +44628,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4463562423",
@@ -44405,7 +44653,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470443476",
@@ -44793,7 +45041,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
@@ -44832,7 +45080,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -45569,7 +45817,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469939553",
@@ -45673,7 +45921,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -46006,7 +46254,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -46234,7 +46482,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -46423,7 +46671,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
@@ -46974,7 +47222,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -47051,7 +47299,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469954437",
@@ -47403,7 +47651,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
@@ -47691,7 +47939,7 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4458578088",
@@ -47826,7 +48074,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
@@ -49183,7 +49431,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461678331",
@@ -49287,7 +49535,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460919897",
@@ -49389,7 +49637,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460613568",
@@ -49935,7 +50183,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469990648",
@@ -50292,7 +50540,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-10-01T05:00:16.668133+00:00",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4448201186",
@@ -50326,7 +50574,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-10-01T05:00:16.668133+00:00",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4452355934",
@@ -50745,7 +50993,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
@@ -51399,7 +51647,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -51527,7 +51775,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470290141",
@@ -51995,7 +52243,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -53054,6 +53302,37 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
+      "verified_this_run": false
+    },
+    {
+      "job_id": "4465379983",
+      "source": "linkedin",
+      "company": "Venmo",
+      "title": "Senior Software Engineer - Python",
+      "location": "Austin, TX",
+      "posted_date": "2026-10-01",
+      "aggregator_posted_date": "2026-10-01",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-python-at-venmo-4465379983",
+      "official_url": "",
+      "description": "The Company PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personalized, and secure, PayPal empowers consumers and businesses in approximately 200 markets to join and thrive in the global economy. We operate a global, two-sided network at scale that connects hundreds of millions of merchants and consumers. We help merchants and consumers connect, transact, and complete payments, whether they are online or in person. PayPal is more than a connection to third-party payment networks. We provide proprietary payment solutions accepted by merchants that enable the completion of payments on our platform on behalf of our customers. We offer our customers the flexibility to use their accounts to purchase and receive payments for goods and services, as well as the ability to transfer and withdraw funds. We enable consumers to exchange funds more safely with merchants using a variety of funding sources, which may include a bank account, a PayPal or Venmo account balance, PayPal and Venmo branded credit products, a credit card, a debit card, certain cryptocurrencies, or other stored value products such as gift cards, and eligible credit card rewards. Our PayPal, Venmo, and Xoom products also make it safer and simpler for friends and family to transfer funds to each other. We offer merchants an end-to-end payments solution that provides authorization and settlement capabilities, as well as instant access to funds and payouts. We also help merchants connect with their customers, process exchanges and returns, and manage risk. We enable consumers to engage in cross-border shopping and merchants to extend their global reach while reducing the complexity and friction involved in enabling cross-border trade. Our beliefs are the foundation for how we conduct business every day. We live each day guided by our core values of Inclusion, Innovation, Collaboration, and Wellness. Together, our values ensure that we work together as one global team with our customers at the center of everything we do – and they push us to ensure we take care of ourselves, each other, and our communities. Job Summary: As a Backend Engineer on the Venmo Identity Engineering team, you will develop secure, scalable backend solutions that enable authentication and authorization for millions of customers. You’ll write clean, efficient code, collaborate with experienced engineers, and contribute to building high-performance systems that enhance customer trust and experience. This role is ideal for engineers eager to grow their technical expertise while working on mission-critical identity services. Job Description: Essential Responsibilities: Delivers complete solutions spanning all phases of the Software Development Lifecycle (SDLC) (design, implementation, testing, delivery and operations), based on definitions from more senior roles. Advises immediate management on project-level issues Guides junior engineers Operates with little day-to-day supervision, making technical decisions based on knowledge of internal conventions and industry best practices Applies knowledge of technical best practices in making decisions Expected Qualifications: 3+ years relevant experience and a Bachelor’s degree OR Any equivalent combination of education and experience. Additional Responsibilities & Preferred Qualifications: Additional Qualifications Strong foundation in programming concepts and data structures. Experience with backend development using Python and frameworks such as Django or Flask. Understanding of web services and Service-Oriented Architecture (SOA) principles. Exposure to version control systems (e.g., Git) and collaborative development workflows. Preferred Qualifications Interest in large-scale, high-performance distributed systems. Exposure to cloud platforms such as AWS, GCP, or Azure and Infrastructure as Code (Terraform). Hands-on experience with databases (SQL and/or NoSQL). Hands-on experience with low-latency in-memory databases such as Redis. Hands-on experience with event-driven architecture and messaging systems such as SQS/SNS/Kafka/RabbitMQ/Pulsar. Experience implementing CI/CD, automated testing, and observability to improve delivery quality and operational resilience. Contributions to open-source projects or participation in developer communities. Awareness of the payment processing industry and related compliance or regulatory standards. Subsidiary: Venmo Travel Percent: 0 The base pay for this role will depend on where you work and the relevant experience and expertise you bring. The expected range of pay for this role by location is: Primary Location : Pay Range: San Jose, California: ($143,500.00 - $212,850.00 Annually) Additional Location(s) : Pay Range: Austin, Texas: ($130,500.00 - $193,600.00 Annually) Additional compensation for this role may include an annual performance bonus, equity, or other incentive compensation, as applicable. PayPal does not charge candidates any fees for courses, applications, resume reviews, interviews, background checks, or onboarding. When making an application directly, we will never ask you to share passwords, one-time passcodes (OTP), or verification codes. Any such request is a red flag and likely part of a scam. All communication regarding your application will come from official PayPal email domains. If you suspect fraudulent activity, please report it immediately. To learn more about how to identify and avoid recruitment fraud please visit https://careers.pypl.com/contact-us. For the majority of employees, PayPal's balanced hybrid work model offers 3 days in the office for effective in-person collaboration and 2 days at your choice of either the PayPal office or your home workspace, ensuring that you equally have the benefits and conveniences of both locations. Our Benefits: At PayPal, we’re committed to building an equitable and inclusive global economy. And we can’t do this without our most important asset-you. That’s why we offer comprehensive, choice-based programs, to support all aspects of personal wellbeing—physical, emotional, and financial—delivering meaningful value where it matters most. We strive to create a flexible, balanced work culture with a holistic approach to benefits, including generous paid time off, healthcare coverage for you and your family, and resources to create financial security and support your mental health. Who We Are: Click Here to learn more about our culture and community. Commitment to Diversity and Inclusion PayPal provides equal employment opportunity (EEO) to all persons regardless of age, color, national origin, citizenship status, physical or mental disability, race, religion, creed, gender, sex, pregnancy, sexual orientation, gender identity and/or expression, genetic information, marital status, status with regard to public assistance, veteran status, or any other characteristic protected by federal, state, or local law. In addition, PayPal will provide reasonable accommodations for qualified individuals with disabilities. If you are unable to submit an application because of incompatible assistive technology or a disability, please contact us at paypalglobaltalentacquisition@paypal.com. Belonging at PayPal: Our employees are central to advancing our mission, and we strive to create an environment where everyone can do their best work with a sense of purpose and belonging. Belonging at PayPal means creating a workplace with a sense of acceptance and security where all employees feel included and valued. We are proud to have a diverse workforce reflective of the merchants, consumers, and communities that we serve, and we continue to take tangible actions to cultivate inclusivity and belonging at PayPal. Any general requests for consideration of your skills, please Join our Talent Community. We know the confidence gap and imposter syndrome can get in the way of meeting spectacular candidates. Please don’t hesitate to apply.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-02T05:31:59.887509+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "linkedin_detail_attempted_at": "2026-10-02T05:32:02.580654+00:00",
+      "linkedin_detail_fetched_at": "2026-10-02T05:32:02.580654+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-02T05:31:59.887509+00:00",
       "verified_this_run": true
     },
     {
@@ -53505,7 +53784,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -54563,7 +54842,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4473234474",
@@ -55440,7 +55719,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -55468,7 +55747,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -56526,7 +56805,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4387280011",
@@ -56578,7 +56857,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_status": "filtered"
     },
     {
@@ -56666,7 +56945,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
@@ -56710,7 +56989,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
