@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-01 17:21 PDT
-- Snapshot (UTC): 2026-10-02T00:21:59.764570+00:00
-- Jobs: 65 (Tier A/B only)
-- Last 24 hours: 44
-- Last 3 days: 65
+- Updated (PT): 2026-10-01 22:32 PDT
+- Snapshot (UTC): 2026-10-02T05:32:56.635502+00:00
+- Jobs: 63 (Tier A/B only)
+- Last 24 hours: 39
+- Last 3 days: 63
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -19,7 +19,6 @@ The 7-day dump is `latest.md`.
 | A | 92 | indeed | Komatsu | Software Engineer I | Mesa, AZ, US | 2026-09-15 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ca688ef327999ca4) |
 | A | 92 | indeed | Reliance IT, Inc | AI Software Engineer 1 | Chicago, IL, US | 2026-07-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e974f607d361166f) |
 | A | 91 | indeed | The Wistar Institute | Junior Application Developer - Information Technology | Philadelphia, PA, US | 2026-10-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=9a6a289c88af3020) |
-| A | 93 | linkedin | Lumion | Junior Full Stack Software Engineer | South Jordan, UT | 2026-09-28 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/junior-full-stack-software-engineer-at-lumion-4473028463) |
 | A | 93 | linkedin | OneImaging | Full Stack Associate Software Engineer (UMiami Only) | Miami, FL | 2026-09-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-associate-software-engineer-umiami-only-at-oneimaging-4471288667) |
 | A | 86 | indeed | Murphy USA | ML Ops Engineer I | El Dorado, AR, US | 2026-10-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=13256dd402d6bbc4) |
 | A | 88 | indeed | RTI International | Software Engineer - AI Applications | Raleigh, NC, US | 2026-10-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2c07ae378c3626bb) |
@@ -38,9 +37,8 @@ The 7-day dump is `latest.md`.
 | B | 83 | indeed | Mobility Route | Software Developer (Full Stack) | Dover, DE, US | 2026-10-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=9fb1faf7cf6717c2) |
 | B | 83 | indeed | Realign | FullStack Engineer-2 | Sunnyvale, CA, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2fddd499387457cf) |
 | B | 81 | indeed | First Bank & Trust | Software Development Intern | Sioux Falls, SD, US | 2026-10-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=14ea834f0be888d6) |
-| B | 80 | linkedin | iManage | Applied AI Engineer (New or Recent Grad) | Chicago, IL | 2026-09-30 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/applied-ai-engineer-new-or-recent-grad-at-imanage-4472369136) |
+| B | 80 | linkedin | iManage | Applied AI Engineer (New or Recent Grad) | Chicago, IL | 2026-09-30 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/applied-ai-engineer-new-or-recent-grad-at-imanage-4472369136) |
 | B | 84 | linkedin | Torc Robotics | Machine Learning Engineer II - Learned Planning (Reinforcement Learnin | Ann Arbor, MI | 2026-09-30 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-ii-learned-planning-reinforcement-learning-at-torc-robotics-4471977685) |
-| B | 80 | linkedin | Pendo.io Japan | Software Engineer, Full StackNew Raleigh, NC | Raleigh, NC | 2026-09-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-full-stacknew%0Araleigh-nc-at-pendo-io-japan-4471577524) |
 | B | 82 | indeed | USAA | Software Engineer I | San Antonio, TX, US | 2026-10-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=4b5f9d58e6e484d1) |
 | B | 82 | indeed | FiscalNote | Associate Software Engineer | Washington, DC, US | 2026-10-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=978451aa5034e122) |
 | B | 84 | indeed | NEURALINK | Software Engineer, Robot Manufacturing | Austin, TX, US | 2026-10-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=924e8a12d1c31850) |
@@ -48,17 +46,17 @@ The 7-day dump is `latest.md`.
 | B | 79 | linkedin | FieldAI | Software Engineer, Product | Irvine, CA | 2026-09-28 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-product-at-fieldai-4473019550) |
 | B | 79 | linkedin | Charles Schwab | Full Stack Java/Angular Engineer | Austin, TX | 2026-09-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-java-angular-engineer-at-charles-schwab-4448069191) |
 | B | 75 | linkedin | Optum | AI/ML Engineer | Minnetonka, MN | 2026-09-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-at-optum-4473209936) |
-| B | 75 | linkedin | Stripe | Backend Engineer, Developer & End-user Experience Platform | Seattle, WA | 2026-10-01 | newly_discovered | - | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/backend-engineer-developer-end-user-experience-platform-at-stripe-4474102622) |
+| B | 75 | linkedin | Stripe | Backend Engineer, Developer & End-user Experience Platform | Seattle, WA | 2026-10-01 | 1to3d | - | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/backend-engineer-developer-end-user-experience-platform-at-stripe-4474102622) |
 | B | 75 | linkedin | Coinbase | Software Engineer, CDP - Foundations | New York, NY | 2026-09-29 | 1to3d | - | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/software-engineer-cdp-foundations-at-coinbase-4473544881) |
 | B | 75 | linkedin | Early Warning | Software Engineer - Java, Paze | Scottsdale, AZ | 2026-09-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-java-paze-at-early-warning-4473547543) |
 | B | 75 | linkedin | Early Warning | Software Engineer - Java, Paze | Chicago, IL | 2026-09-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-java-paze-at-early-warning-4473558295) |
+| B | 79 | linkedin | Scribe | Backend Engineer, Core Product | San Francisco, CA | 2026-10-01 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-core-product-at-scribe-4472384142) |
 | B | 79 | linkedin | Evlo AI | Backend Engineer | Raleigh, NC | 2026-09-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-at-evlo-ai-4471942160) |
-| B | 75 | linkedin | Scribe | Backend Engineer, Core Product | San Francisco, CA | 2026-10-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-core-product-at-scribe-4472384142) |
 | B | 75 | linkedin | Evlo AI | LLM / GenAI Engineer | Raleigh, NC | 2026-09-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/llm-genai-engineer-at-evlo-ai-4471924808) |
 | B | 75 | linkedin | Evlo AI | Machine Learning Engineer | San Francisco, CA | 2026-09-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-evlo-ai-4471924805) |
 | B | 75 | linkedin | Farm Family | Full Stack Web Developer | Omaha, NE | 2026-09-29 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-web-developer-at-farm-family-4473514859) |
-| B | 75 | linkedin | Supernova Technology™ | Software Engineer | Chicago, IL | 2026-09-30 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-supernova-technology%E2%84%A2-4461319803) |
-| B | 75 | linkedin | iO Associates | Full Stack Engineer | Washington, DC | 2026-09-30 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-io-associates-4473910443) |
+| B | 79 | linkedin | iO Associates | Full Stack Engineer | Washington, DC | 2026-09-30 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-io-associates-4473910443) |
+| B | 75 | linkedin | Supernova Technology™ | Software Engineer | Chicago, IL | 2026-09-30 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-supernova-technology%E2%84%A2-4461319803) |
 | B | 75 | linkedin | Prophetic | Full Stack Software Engineer | Portland, OR | 2026-09-30 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-prophetic-4472173916) |
 | B | 75 | linkedin | CYVL | AI Engineer | San Francisco, CA | 2026-09-30 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-cyvl-4473586636) |
 | B | 75 | linkedin | CYVL | AI Engineer | Somerville, MA | 2026-09-30 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-cyvl-4473587630) |
