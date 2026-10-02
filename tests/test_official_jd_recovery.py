@@ -452,18 +452,18 @@ class OfficialRecoveryTests(unittest.TestCase):
         ), patch.object(local_sources.official_jd_recovery, "Resolver", FakeResolver), patch.object(
             local_sources.official_jd_recovery, "recover_pending", side_effect=shared_recovery
         ) as recover_pending, patch.object(local_sources.linkedin_local, "enrich_details", return_value={
-            "requests": 1, "responses": 1, "rate_limited": True, "blocked": "HTTP 429",
+            "requests": 0, "responses": 0, "rate_limited": False,
             "jds_resolved": 0,
         }) as detail, patch.dict("os.environ", {"LOCAL_SOURCE_PROFILE": "mac"}):
-            report = local_sources.recover_jds()
-            state = json.loads(local_sources.HEALTH_PATH.read_text())["sources"]["linkedin"]
+            report = local_sources.recover_jds(linkedin_blocked=True)
 
-        detail.assert_called_once()
+        self.assertEqual(2, detail.call_count)
+        self.assertTrue(detail.call_args_list[0].kwargs["cache_only"])
+        self.assertFalse(detail.call_args.kwargs["allow_requests"])
         recover_pending.assert_called_once()
         self.assertEqual(1, report["official_jds_recovered"])
         self.assertEqual(1, report["post_429_jds_recovered"])
         self.assertTrue(report["linkedin_rate_limited"])
-        self.assertEqual("cooldown", state["runner_states"]["mac"]["detail_status"])
 
     def test_focused_search_order_adaptive_pages_429_and_cooldown_state(self):
         def cards(index, count=2):

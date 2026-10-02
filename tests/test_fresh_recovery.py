@@ -12,6 +12,7 @@ import board_pipeline as board
 import dashboard
 import pipeline_health
 import recovery_ai
+import local_sources
 import recovery_policy
 import remote_recovery
 from sources import linkedin_local, schema
@@ -29,6 +30,155 @@ def job(**extra):
 
 
 class FreshRecoveryTests(unittest.TestCase):
+    def test_linkedin_detail_metadata_admission_is_conservative(self):
+        filters = {"exclude": board.prepare_alias_entries([{"name": "Excluded Corp", "aliases": ["excluded corp"]}])}
+        for title in ("Senior Software Engineer", "Staff Engineer", "Principal Engineer",
+                      "Lead Developer", "Engineering Manager", "Recruiter", "Sales Associate"):
+            with self.subTest(title=title):
+                self.assertTrue(local_sources._linkedin_metadata_skip(job(title=title), {}))
+        self.assertEqual("company_excluded", local_sources._linkedin_metadata_skip(job(company="Excluded Corp"), filters))
+        self.assertEqual("non_us_location", local_sources._linkedin_metadata_skip(job(location="Toronto, Canada"), {}))
+        for title in ("Software Engineer", "Engineer II", "Research Engineer", "Junior Engineer"):
+            self.assertEqual("", local_sources._linkedin_metadata_skip(job(title=title, location="Remote"), {}))
+
+    def test_linkedin_detail_triage_accepts_only_explicit_boolean(self):
+        rows = [job(job_id=str(i)) for i in range(4)]
+        with patch.object(recovery_ai, "_ask", return_value={"results": [
+            {"id": recovery_policy.identity(rows[0]), "needs_jd": True},
+            {"id": recovery_policy.identity(rows[1]), "needs_jd": False},
+            {"id": recovery_policy.identity(rows[2]), "needs_jd": "true"},
+            {"id": "unrequested", "needs_jd": True},
+        ]}) as ask:
+            decisions = recovery_ai.triage_linkedin_detail(rows)
+        self.assertEqual(2, len(decisions))
+        self.assertIs(True, decisions[recovery_policy.identity(rows[0])]["needs_jd"])
+        self.assertIs(False, decisions[recovery_policy.identity(rows[1])]["needs_jd"])
+        self.assertNotIn("description", ask.call_args.args[1][0])
+        with patch.object(recovery_ai, "_ask", side_effect=ValueError("bad JSON")):
+            self.assertEqual({}, recovery_ai.triage_linkedin_detail(rows))
+
+    def test_linkedin_detail_round_budget_and_cached_triage(self):
+        rows = [job(job_id=str(i)) for i in range(12)]
+        budget = recovery_policy.RecoveryBudget()
+        session = Mock()
+        session.get.return_value.status_code = 200
+        session.get.return_value.text = "page"
+        decisions = {recovery_policy.identity(row): {"needs_jd": True} for row in rows}
+        admission = {"cache_reused": 0}
+        with patch.object(local_sources, "_linkedin_detail_control", return_value=(8, False, False)), \
+             patch.object(board, "load_profiles", return_value={}), \
+             patch.object(recovery_ai, "triage_linkedin_detail", return_value=decisions) as triage, \
+             patch.object(linkedin_local, "_make_session", return_value=session), \
+             patch.object(linkedin_local, "_check_blocked"), \
+             patch.object(linkedin_local, "_parse_detail", return_value={"description": "", "application_url": ""}), \
+             patch.object(linkedin_local.time, "sleep"):
+            first = local_sources._finish_linkedin_detail(rows, [], dict(admission), budget, NOW)
+            second = local_sources._finish_linkedin_detail(rows, rows, dict(admission), budget, NOW)
+            self.assertEqual(8, first["requests"])
+            self.assertEqual(0, second["requests"])
+            self.assertEqual(8, budget.linkedin_detail_requests)
+            self.assertEqual(8, session.get.call_count)
+            triage.assert_called_once()
+            # A new round reuses unchanged metadata decisions without a new LLM call.
+            third = local_sources._finish_linkedin_detail(rows[8:], rows, dict(admission),
+                                                         recovery_policy.RecoveryBudget(), NOW)
+            triage.assert_called_once()
+            self.assertEqual(4, third["requests"])
+            probe_budget = recovery_policy.RecoveryBudget()
+            with patch.object(local_sources, "_linkedin_detail_control", return_value=(1, False, True)):
+                probe = local_sources._finish_linkedin_detail(rows[8:], rows, dict(admission), probe_budget, NOW)
+            later = local_sources._finish_linkedin_detail(rows[8:], rows, dict(admission), probe_budget, NOW)
+            self.assertEqual(1, probe["requests"])
+            self.assertEqual(0, later["requests"])
+            self.assertEqual(1, probe_budget.linkedin_detail_requests)
+        self.assertTrue(all(row.get("first_seen") == NOW.isoformat() for row in rows))
+
+    def test_linkedin_cache_only_precedes_outbound_and_rejects_tentative_cache(self):
+        now = datetime.now(timezone.utc)
+        rows = [job(job_id="cached", first_seen=now.isoformat()),
+                job(job_id="tentative", first_seen=now.isoformat())]
+        previous = [dict(row, description="Saved JD " * 30, linkedin_detail_fetched_at=now.isoformat(),
+                         jd_tentative=row["job_id"] == "tentative") for row in rows]
+        with patch.object(linkedin_local, "_make_session") as session:
+            candidates, admission = local_sources._prepare_linkedin_detail(rows, previous, now)
+        session.return_value.get.assert_not_called()
+        self.assertEqual(1, admission["cache_reused"])
+        self.assertEqual("linkedin_cache", candidates[0]["enrichment_method"])
+        self.assertFalse(candidates[1].get("description"))
+
+    def test_linkedin_detail_skip_or_unavailable_keeps_card(self):
+        rows = [job(job_id="skip"), job(job_id="missing")]
+        with patch.object(local_sources, "_linkedin_detail_control", return_value=(8, False, False)), \
+             patch.object(board, "load_profiles", return_value={}), \
+             patch.object(recovery_ai, "triage_linkedin_detail", return_value={
+                 recovery_policy.identity(rows[0]): {"needs_jd": False}}), \
+             patch.object(linkedin_local, "_make_session") as session:
+            detail = local_sources._finish_linkedin_detail(rows, [], {"cache_reused": 0},
+                                                          recovery_policy.RecoveryBudget(), NOW)
+        self.assertEqual(0, detail["requests"])
+        session.return_value.get.assert_not_called()
+        self.assertEqual("linkedin_detail_not_worthwhile", rows[0]["enrichment_deferred_reason"])
+        self.assertEqual("linkedin_detail_triage_unavailable", rows[1]["enrichment_deferred_reason"])
+        self.assertTrue(all(board.hard_filter(row)[0] for row in rows))
+
+    def test_linkedin_last_resort_order_in_both_local_phases(self):
+        now = datetime.now(timezone.utc)
+        rows = [job(job_id="senior", title="Senior Software Engineer", first_seen=now.isoformat()),
+                job(job_id="official", first_seen=now.isoformat()),
+                job(job_id="detail", first_seen=now.isoformat()),
+                job(job_id="old", first_seen=(now - timedelta(days=2)).isoformat())]
+        calls = []
+
+        def recover(_resolver, pending, **_kwargs):
+            calls.append("non_linkedin")
+            self.assertNotIn("senior", [row["job_id"] for row, _ in pending])
+            for row, _ in pending:
+                if row["job_id"] == "official":
+                    row["description"] = "Official JD " * 30
+            return []
+
+        def triage(candidates, _profile):
+            calls.append("triage")
+            self.assertEqual(["detail"], [row["job_id"] for row in candidates])
+            return {recovery_policy.identity(row): {"needs_jd": True} for row in candidates}
+
+        session = Mock()
+        session.get.return_value.status_code = 200
+        session.get.return_value.text = "page"
+        with tempfile.TemporaryDirectory() as tmp, \
+             patch.object(schema, "SOURCES_DIR", Path(tmp) / "sources"), \
+             patch.object(schema, "OUTPUT_DIR", Path(tmp)), \
+             patch.object(local_sources, "OUTPUT_DIR", Path(tmp)), \
+             patch.object(local_sources, "HEALTH_PATH", Path(tmp) / "health.json"), \
+             patch.object(local_sources, "_remote_handoff_rows", return_value=[]), \
+             patch.object(local_sources, "_linkedin_detail_control", return_value=(8, False, False)), \
+             patch.object(linkedin_local, "scrape", return_value={"status": "ok", "jobs": rows}), \
+             patch.object(board, "load_store", return_value={}), \
+             patch.object(board, "load_profiles", return_value={}), \
+             patch.object(local_sources.coverage_reconcile, "load_official_context", return_value={}), \
+             patch.object(local_sources.official_jd_recovery, "recover_pending", side_effect=recover), \
+             patch.object(recovery_ai, "triage_linkedin_detail", side_effect=triage), \
+             patch.object(linkedin_local, "_make_session", return_value=session), \
+             patch.object(linkedin_local, "_check_blocked"), \
+             patch.object(linkedin_local, "_parse_detail", return_value={"description": "Detail JD " * 30, "application_url": ""}), \
+             patch.object(linkedin_local.time, "sleep"):
+            schema.write_source_snapshot("linkedin", [dict(
+                rows[-1], description="Saved LinkedIn JD " * 30,
+                linkedin_detail_fetched_at=now.isoformat(),
+            )])
+            budget = recovery_policy.RecoveryBudget()
+            first = local_sources.run_one("linkedin", {"commit": "test"}, scraper=linkedin_local.scrape, budget=budget)
+            second = local_sources.recover_jds(budget=budget)
+            saved = schema.read_source_snapshot_payload("linkedin")["jobs"]
+        self.assertEqual(["non_linkedin", "triage", "non_linkedin"], calls)
+        self.assertEqual(1, first["detail_enrichment"]["requests"])
+        self.assertEqual(0, second["linkedin_detail"]["requests"])
+        self.assertEqual(1, session.get.call_count)
+        self.assertEqual(4, len(saved))
+        self.assertTrue(next(row for row in saved if row["job_id"] == "old")["description"])
+        self.assertEqual(1, first["detail_enrichment"]["admission"]["rules_skipped"])
+        self.assertEqual(1, first["detail_enrichment"]["admission"]["non_linkedin_resolved"])
+
     def test_exact_fresh_and_rolling_boundaries(self):
         at_24 = job(first_seen=(NOW - timedelta(hours=24)).isoformat())
         at_72 = job(first_seen=(NOW - timedelta(hours=72)).isoformat())

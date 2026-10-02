@@ -194,6 +194,129 @@ def _remote_handoff_rows() -> list[dict]:
     ]
 
 
+def _linkedin_metadata_skip(row: dict, filters: dict) -> str:
+    """Admission only: JD-dependent rejection and matching remain downstream."""
+    if board.classify_company(str(row.get("company") or ""), filters, str(row.get("title") or ""))[0] == "exclude":
+        return "company_excluded"
+    if board.classify_location_bucket(str(row.get("location") or "")) == "non_us":
+        return "non_us_location"
+    metadata = {"title": row.get("title", ""), "description": ""}
+    keep, reason = board.hard_filter(metadata)
+    if not keep:
+        return reason
+    keep, reason = board.role_seniority_prefilter(metadata)
+    if keep:
+        return ""
+    # Generic technical titles need JD evidence; lack of a software keyword is
+    # insufficient proof of irrelevance (e.g. Engineer II / Research Engineer).
+    title = str(row.get("title") or "")
+    if reason == "prefilter:no_positive_family" and (
+            board.TITLE_TECH_RE.search(title) or board.EARLY_CAREER_TITLE_RE.search(title)
+            or "engineer" in title.casefold()):
+        return ""
+    return reason
+
+
+def _prepare_linkedin_detail(rows: list[dict], previous: list[dict], now: datetime) -> tuple[list[dict], dict]:
+    candidates = [row for row in rows if recovery_policy.fresh(row, now)
+                  and (row.get("jd_tentative") or len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS)]
+    filters = board.load_company_filters()
+    eligible = []
+    reasons: Dict[str, int] = {}
+    for row in candidates:
+        reason = _linkedin_metadata_skip(row, filters)
+        if reason:
+            reasons[reason] = reasons.get(reason, 0) + 1
+            row["enrichment_deferred_reason"] = f"linkedin_detail_rules:{reason}"
+        else:
+            eligible.append(row)
+    cached = linkedin_local.enrich_details(eligible, previous_jobs=previous,
+                                           min_description_chars=board.THIN_JD_CHARS, cache_only=True)
+    return eligible, {"candidates": len(candidates), "rules_skipped": sum(reasons.values()),
+                      "rule_reasons": reasons, "cache_reused": cached.get("cache_reused", 0)}
+
+
+def _finish_linkedin_detail(rows: list[dict], previous: list[dict], admission: dict,
+                            budget: recovery_policy.RecoveryBudget, now: datetime,
+                            *, blocked: bool = False) -> dict:
+    """Last-resort admission and one Detail allowance for the whole Local round."""
+    unresolved = [row for row in rows if row.get("jd_tentative")
+                  or len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS]
+    for row in unresolved:
+        row.pop("_linkedin_official_defer", None)
+        row.pop("_linkedin_official_url", None)
+    admission["non_linkedin_resolved"] = len(rows) - len(unresolved) - admission["cache_reused"]
+    limit, cooldown, probe = _linkedin_detail_control(now)
+    if budget.linkedin_detail_limit is None:
+        budget.linkedin_detail_limit = limit
+    remaining = max(0, min(limit, budget.linkedin_detail_limit - budget.linkedin_detail_requests))
+    allowed = not blocked and not cooldown and budget.available() and remaining > 0
+    admitted = []
+    if allowed and unresolved:
+        try:
+            profile = board.load_profiles()
+        except (OSError, ValueError, KeyError):
+            profile = {}
+        prior_by_id = {str(row.get("job_id") or ""): row for row in previous}
+        to_triage = []
+        for row in unresolved:
+            fingerprint = recovery_policy.evidence_hash(
+                row, "linkedin-detail-v1", profile.get("candidate_fingerprint", ""),
+                json.dumps(row.get("recovery_methods") or {}, sort_keys=True),
+                json.dumps(row.get("recovery_candidates") or []), bool(row.get("jd_tentative")),
+            )
+            prior = prior_by_id.get(str(row.get("job_id") or ""), {})
+            if row.get("linkedin_detail_triage_hash") != fingerprint:
+                row["linkedin_detail_triage"] = (prior.get("linkedin_detail_triage") or {}
+                    if prior.get("linkedin_detail_triage_hash") == fingerprint else {})
+                row["linkedin_detail_triage_hash"] = fingerprint
+            if not row.get("linkedin_detail_triage"):
+                to_triage.append(row)
+        decisions = (recovery_ai.triage_linkedin_detail(to_triage, profile.get("candidate", ""))
+                     if to_triage else {})
+        for row in to_triage:
+            row["linkedin_detail_triage"] = decisions.get(recovery_policy.identity(row), {})
+        for row in unresolved:
+            decision = row.get("linkedin_detail_triage") or {}
+            if decision.get("needs_jd") is True:
+                admitted.append(row)
+                row.pop("enrichment_deferred_reason", None)
+            else:
+                row["enrichment_status"] = "tentative" if row.get("jd_tentative") else "deferred"
+                row["enrichment_deferred_reason"] = (
+                    "linkedin_detail_not_worthwhile" if decision.get("needs_jd") is False
+                    else "linkedin_detail_triage_unavailable")
+        admission["triage_evaluated"] = len(to_triage)
+        admission["triage_deferred"] = len(unresolved) - len(admitted)
+    admission["worth_detail"] = len(admitted)
+    admitted.sort(key=lambda row: (
+        {"high": 2, "normal": 1, "low": 0}.get(row["linkedin_detail_triage"].get("priority"), 1),
+        recovery_policy.stamp(row.get("first_seen")) or datetime.min.replace(tzinfo=timezone.utc),
+    ), reverse=True)
+    queue = [row for row in admitted if recovery_policy.identity(row) not in budget.linkedin_detail_attempted]
+    # Existing cooldown/429 diagnostics still annotate unresolved cards without
+    # spending requests or LLM calls while LinkedIn traffic is paused.
+    if not blocked and not cooldown and not allowed:
+        for row in unresolved:
+            row["enrichment_deferred_reason"] = "linkedin_detail_round_budget"
+    detail = linkedin_local.enrich_details(
+        queue if allowed else unresolved if blocked or cooldown else [], previous_jobs=previous,
+        allow_requests=allowed, request_limit=remaining, min_description_chars=board.THIN_JD_CHARS,
+        cooldown=cooldown, probe=probe, budget=budget,
+    )
+    budget.linkedin_detail_requests += int(detail.get("requests", 0) or 0)
+    budget.linkedin_detail_attempted.update(recovery_policy.identity(row) for row in queue
+                                           if row.get("linkedin_detail_attempted_at"))
+    detail.update(admission=admission, cooldown_active=cooldown, probe=probe,
+                  round_request_limit=budget.linkedin_detail_limit,
+                  round_requests=budget.linkedin_detail_requests,
+                  status="cooldown" if cooldown or detail.get("rate_limited") else "probe" if probe else "active")
+    detail["cache_reused"] = admission["cache_reused"]
+    if cooldown:
+        detail["cooldown_until"] = str(_linkedin_runner_state().get("detail_cooldown_until") or "")
+    return detail
+
+
 def collector_provenance() -> Dict[str, object]:
     commit = os.environ.get("COLLECTOR_COMMIT", "").strip()
     dirty_env = os.environ.get("COLLECTOR_DIRTY")
@@ -239,6 +362,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
                 "count": 0, "collector": collector, "source_provenance": source_provenance,
             }
     started = time.monotonic()
+    budget = budget or recovery_policy.RecoveryBudget()
     search_control: Dict[str, object] = {}
     if name == "linkedin" and scraper is linkedin_local.scrape:
         limit, cooldown, probe = _linkedin_search_control(datetime.fromisoformat(stamp))
@@ -308,6 +432,14 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
     official_context: Dict[str, object] = {}
     board_store: Dict[str, dict] = {}
     previous = read_source_snapshot_payload(name) if name in {"linkedin", "indeed"} else {}
+    if name == "linkedin":
+        old_cards = [row for row in rows if not recovery_policy.fresh(row, now)
+                     and len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS]
+        if old_cards:
+            linkedin_local.enrich_details(old_cards, previous_jobs=list(previous.get("jobs") or []),
+                                          min_description_chars=board.THIN_JD_CHARS, cache_only=True)
+    linkedin_candidates, detail_admission = (_prepare_linkedin_detail(rows, list(previous.get("jobs") or []), now)
+                                             if name == "linkedin" else ([], {}))
     if indeed_partial:
         previous_by_key = {board.dedup_key(job): job for job in previous.get("jobs") or []}
         for row in rows:
@@ -335,21 +467,31 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
         }
         resolver = official_jd_recovery.Resolver(
             search_limit=RECOVERY_SEARCH_LIMIT, page_limit=RECOVERY_PAGE_LIMIT,
-        ) if os.environ.get("LOCAL_SOURCE_PROFILE") == "mac" else official_jd_recovery.Resolver()
+            budget=budget if name == "linkedin" else None,
+        ) if os.environ.get("LOCAL_SOURCE_PROFILE") == "mac" else official_jd_recovery.Resolver(
+            budget=budget if name == "linkedin" else None,
+        )
         now = datetime.fromisoformat(stamp)
         pending = []
+        linkedin_eligible = {id(row) for row in linkedin_candidates}
         for row in rows:
             if len(str(row.get("description") or "").strip()) >= board.THIN_JD_CHARS:
                 continue
             prior = previous_by_id.get(str(row.get("job_id") or ""), {})
-            if resolver.recover(row, previous=prior, context=official_context, store=board_store,
-                                now=now, cheap_only=True) == "pending":
+            if (resolver.recover(row, previous=prior, context=official_context, store=board_store,
+                                 now=now, cheap_only=True) == "pending"
+                    and (name != "linkedin" or id(row) in linkedin_eligible)):
                 pending.append(row)
         pending.sort(key=lambda row: (
             bool(resolver.pattern_cache.get(official_jd_recovery.normalize_company_key(str(row.get("company") or "")))),
             official_jd_recovery._stamp(row.get("first_seen")) or datetime.min.replace(tzinfo=timezone.utc),
         ), reverse=True)
-        if name != "linkedin":
+        if name == "linkedin":
+            official_jd_recovery.recover_pending(
+                resolver, [(row, previous_by_id.get(str(row.get("job_id") or ""), {})) for row in pending],
+                context=official_context, store=board_store, now=now,
+            )
+        else:
             for row in pending:
                 prior = previous_by_id.get(str(row.get("job_id") or ""), {})
                 resolver.recover(row, previous=prior, context=official_context, store=board_store, now=now)
@@ -365,28 +507,12 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
                 row["enrichment_status"] = "unresolved"
                 row["enrichment_failure_reason"] = f"{name}_detail_missing_or_thin"
     if name == "linkedin" and rows:
-        detail_candidates = [row for row in rows if recovery_policy.fresh(row, now)
-                             and (row.get("jd_tentative") or len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS)]
-        detail_limit, cooldown_active, probe = _linkedin_detail_control(
-            datetime.fromisoformat(stamp)
+        detail_enrichment = _finish_linkedin_detail(
+            linkedin_candidates, list(previous.get("jobs") or []), detail_admission,
+            budget, now, blocked=search_rate_limited,
         )
-        detail_enrichment = linkedin_local.enrich_details(
-            detail_candidates,
-            previous_jobs=list(previous.get("jobs") or []),
-            allow_requests=not search_rate_limited and not cooldown_active,
-            request_limit=detail_limit,
-            min_description_chars=board.THIN_JD_CHARS,
-            cooldown=cooldown_active,
-            probe=probe,
-            budget=budget,
-        )
-        detail_enrichment["cooldown_active"] = cooldown_active
-        detail_enrichment["probe"] = probe
-        detail_enrichment["status"] = "cooldown" if cooldown_active or detail_enrichment.get("rate_limited") else "probe" if probe else "active"
-        if cooldown_active:
-            detail_enrichment["cooldown_until"] = str(_linkedin_runner_state().get("detail_cooldown_until") or "")
 
-    # Every discovered record reaches enrichment before filtering.
+    # Admission skips retain cards for the existing downstream filters.
     stage1_survivors = []
     for row in rows:
         keep, _reason = board.hard_filter(row)
@@ -704,9 +830,15 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
         name: {str(row.get("job_id") or ""): row for row in originals[name] if row.get("job_id")}
         for name in names
     }
+    linkedin_candidates, detail_admission = _prepare_linkedin_detail(
+        snapshots["linkedin"]["jobs"], originals["linkedin"], now,
+    )
+    linkedin_eligible = {id(row) for row in linkedin_candidates}
     cheap_counts: Dict[str, int] = {}
     for name in names:
         for row in snapshots[name]["jobs"]:
+            if name == "linkedin" and id(row) not in linkedin_eligible:
+                continue
             if (not recovery_policy.fresh(row, now)
                     or len(str(row.get("description") or "").strip()) >= board.THIN_JD_CHARS):
                 continue
@@ -716,27 +848,11 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
             if method != "pending":
                 cheap_counts[method] = cheap_counts.get(method, 0) + 1
 
-    # Exact LinkedIn IDs are already known. Detail precedes every generic web path.
-    linkedin_rows = [row for row in snapshots["linkedin"]["jobs"]
-                     if recovery_policy.fresh(row, now)
-                     and len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS]
-    detail_limit, cooldown, probe = _linkedin_detail_control(now)
-    detail = linkedin_local.enrich_details(
-        linkedin_rows, previous_jobs=originals["linkedin"],
-        allow_requests=not linkedin_blocked and not cooldown and budget.available(),
-        request_limit=min(detail_limit, LINKEDIN_DETAIL_LIMIT),
-        min_description_chars=board.THIN_JD_CHARS, cooldown=cooldown, probe=probe,
-        budget=budget,
-    ) if linkedin_rows else {"requests": 0, "responses": 0, "rate_limited": False, "jds_resolved": 0}
-    linkedin_blocked = linkedin_blocked or bool(detail.get("rate_limited"))
-    after_detail_no_jd = sum(len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS
-                             for name in names for row in snapshots[name]["jobs"])
-    detail.update(cooldown_active=cooldown, probe=probe,
-                  status="cooldown" if cooldown or detail.get("rate_limited") else "probe" if probe else "active")
-
     pending: list[tuple[dict, dict]] = []
     for name in names:
         for row in snapshots[name]["jobs"]:
+            if name == "linkedin" and id(row) not in linkedin_eligible:
+                continue
             if (not recovery_policy.fresh(row, now)
                     or len(str(row.get("description") or "").strip()) >= board.THIN_JD_CHARS):
                 continue
@@ -745,7 +861,7 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
                                 now=now, cheap_only=True) != "pending":
                 continue
             probe_row = dict(row)
-            if not board.hard_filter(probe_row)[0] or not board.role_seniority_prefilter(probe_row)[0]:
+            if name != "linkedin" and (not board.hard_filter(probe_row)[0] or not board.role_seniority_prefilter(probe_row)[0]):
                 row["recovery_status"] = "filtered"
                 continue
             pending.append((row, prior))
@@ -757,6 +873,8 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
         candidate_fp = candidate_text = ""
     to_triage = []
     for row, prior in pending:
+        if id(row) in linkedin_eligible:
+            continue
         fingerprint = recovery_policy.evidence_hash(row, candidate_fp)
         if row.get("recovery_input_hash") != fingerprint:
             row["recovery_triage"] = {}
@@ -767,7 +885,7 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
     for row in to_triage:
         row["recovery_triage"] = decisions.get(recovery_policy.identity(row), {})
     pending = [(row, prior) for row, prior in pending
-               if (row.get("recovery_triage") or {}).get("action") != "skip"]
+               if id(row) in linkedin_eligible or (row.get("recovery_triage") or {}).get("action") != "skip"]
     pending.sort(key=lambda item: (
         {"high": 2, "normal": 1, "low": 0}.get((item[0].get("recovery_triage") or {}).get("priority"), 1),
         official_jd_recovery._stamp(item[0].get("first_seen")) or datetime.min.replace(tzinfo=timezone.utc),
@@ -775,6 +893,11 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
     methods = official_jd_recovery.recover_pending(
         resolver, pending, context=context, store=store, now=now,
     )
+
+    detail = _finish_linkedin_detail(
+        linkedin_candidates, originals["linkedin"], detail_admission, budget, now, blocked=linkedin_blocked,
+    )
+    linkedin_blocked = linkedin_blocked or bool(detail.get("rate_limited"))
 
     changed = []
     attempts = {}
@@ -832,7 +955,7 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
     after = {name: sum(len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS
                        for row in snapshots[name]["jobs"]) for name in names}
     post_429_jds = (max(0, sum(before.values()) - sum(after.values())) if blocked_before_recovery else
-                    max(0, after_detail_no_jd - sum(after.values())) if detail.get("rate_limited") else None)
+                    0 if detail.get("rate_limited") else None)
     report: Dict[str, object] = {
         "run_at": now.isoformat(), "before_no_jd": before, "after_no_jd": after,
         "elapsed_seconds": round(time.monotonic() - started, 3),

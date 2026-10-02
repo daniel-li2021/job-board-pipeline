@@ -207,6 +207,8 @@ def _scrapling_fetch_html(url: str) -> tuple[str, int | None, str]:
 
 
 def _fresh_cached_detail(previous: Dict[str, Any], row: Dict[str, Any], now: datetime, min_description_chars: int = 1) -> bool:
+    if previous.get("jd_tentative"):
+        return False
     if len(str(previous.get("description") or "").strip()) < min_description_chars:
         return False
     if normalize_space(previous.get("title")) != normalize_space(row.get("title")):
@@ -233,6 +235,7 @@ def enrich_details(
     cooldown: bool = False,
     probe: bool = False,
     budget: object | None = None,
+    cache_only: bool = False,
 ) -> Dict[str, Any]:
     """Hydrate every unresolved LinkedIn row with the logged-out full JD.
 
@@ -241,6 +244,7 @@ def enrich_details(
     invalidate already-collected search cards.
 
     ``allow_requests=False`` serves a rate-limited run: cached details only.
+    ``cache_only=True`` reuses those details without annotating pending cards.
     Each eligible job gets one transport attempt; a later retry may use
     Scrapling after an ordinary non-429 HTTP failure. During ``cooldown``,
     unresolved cards are intentionally deferred; ``probe`` permits one fresh
@@ -301,6 +305,8 @@ def enrich_details(
             stats["jds_resolved"] += 1
             if row.get("application_url"):
                 stats["external_apply_urls"] += 1
+            continue
+        if cache_only:
             continue
         if row.pop("_linkedin_official_defer", False):
             stats["exact_official"] += 1

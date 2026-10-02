@@ -46,6 +46,9 @@ class RecoveryBudget:
         self.seconds = seconds
         self.deadline: float | None = None
         self.attempted: set[str] = set()
+        self.linkedin_detail_limit: int | None = None
+        self.linkedin_detail_requests = 0
+        self.linkedin_detail_attempted: set[str] = set()
 
     def available(self, row: dict | None = None) -> bool:
         if self.deadline is not None and time.monotonic() >= self.deadline:
