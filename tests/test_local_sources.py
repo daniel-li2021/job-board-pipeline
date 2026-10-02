@@ -1145,10 +1145,100 @@ class LocalSourceTests(unittest.TestCase):
             }}}))
             self.assertEqual((0, True, False), local_sources._linkedin_detail_control(
                 attempted + timedelta(hours=11)))
-            self.assertEqual(14, local_sources._linkedin_search_control(
+            self.assertEqual(10, local_sources._linkedin_search_control(
                 attempted + timedelta(hours=11))[0])
             self.assertEqual((1, False, True), local_sources._linkedin_detail_control(
                 attempted + timedelta(hours=12)))
+
+    def test_mac_search_rotates_three_queries_and_spaces_empty_pages(self) -> None:
+        expected = [
+            ["software engineer", "ai engineer", "backend engineer"],
+            ["ai engineer", "full-stack engineer", "software engineer"],
+            ["backend engineer", "software engineer", "ai engineer"],
+        ]
+        for cursor, queries in enumerate(expected):
+            session = Mock()
+            session.get.return_value = SimpleNamespace(status_code=200, text="")
+            with patch.object(linkedin_local.time, "sleep") as sleep:
+                result = linkedin_local.scrape(session=session, profile="mac", query_cursor=cursor,
+                                               page_limit=10)
+            self.assertEqual(queries, [call.kwargs["params"]["keywords"] for call in session.get.call_args_list])
+            self.assertEqual(3, result["requests"])
+            self.assertEqual([2.5, 2.5], [call.args[0] for call in sleep.call_args_list])
+
+    def test_search_cooldown_completes_mac_round_without_touching_snapshot(self) -> None:
+        from scripts.macos.local_source_gate import decision
+        now = datetime.now(timezone.utc)
+        with tempfile.TemporaryDirectory() as tmp, patch.object(schema, "SOURCES_DIR", Path(tmp) / "sources"), \
+             patch.object(local_sources, "OUTPUT_DIR", Path(tmp)), \
+             patch.object(local_sources, "HEALTH_PATH", Path(tmp) / "sources/health.json"), \
+             patch.dict(os.environ, {"LOCAL_SOURCE_PROFILE": "mac"}):
+            schema.write_source_snapshot("linkedin", [self._linkedin_card("saved")],
+                                         {"scraped_at": now.isoformat()})
+            snapshot = (schema.SOURCES_DIR / "linkedin.json").read_bytes()
+            local_sources.HEALTH_PATH.write_text(json.dumps({"sources": {"linkedin": {
+                "last_success_at": now.isoformat(), "runner_states": {"mac": {
+                    "search_429_streak": 2, "search_query_cursor": 4,
+                    "search_cooldown_until": (now + timedelta(hours=24)).isoformat(),
+                }},
+            }}}))
+            with patch.object(linkedin_local, "_make_session") as session:
+                result = local_sources.run_one("linkedin", {})
+                session.assert_not_called()
+            self.assertEqual("cooldown", result["status"])
+            self.assertTrue(result["data_usable"])
+            local_sources.write_health([result], {})
+            health = json.loads(local_sources.HEALTH_PATH.read_text())
+            self.assertFalse(health["run_history"][0]["failure"])
+            self.assertEqual(2, health["sources"]["linkedin"]["runner_states"]["mac"]["search_429_streak"])
+            self.assertEqual(4, health["sources"]["linkedin"]["runner_states"]["mac"]["search_query_cursor"])
+            with patch.object(sys, "argv", ["local_sources.py"]), \
+                 patch.object(local_sources, "run_one", side_effect=[result, {"source": "glassdoor", "status": "deferred"}]), \
+                 patch.object(local_sources, "recover_jds") as recover, \
+                 patch.object(local_sources, "collector_provenance", return_value={}):
+                local_sources.main()
+                recover.assert_called_once()  # Shared recovery still runs.
+            health = json.loads(local_sources.HEALTH_PATH.read_text())
+            completed = health["mac_last_completed_at"]
+            self.assertFalse(decision(datetime.fromisoformat(completed) + timedelta(minutes=10),
+                                      {"last_success_at": completed})[0])
+            self.assertEqual(snapshot, (schema.SOURCES_DIR / "linkedin.json").read_bytes())
+
+    def test_search_attempt_advances_rotation_and_freezes_independent_detail_streak(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp, patch.object(schema, "SOURCES_DIR", Path(tmp)), \
+             patch.object(local_sources, "HEALTH_PATH", Path(tmp) / "health.json"), \
+             patch.dict(os.environ, {"LOCAL_SOURCE_PROFILE": "mac"}):
+            local_sources.HEALTH_PATH.write_text(json.dumps({"sources": {"linkedin": {
+                "runner_states": {"mac": {"search_query_cursor": 4, "detail_429_streak": 1}},
+            }}}))
+            local_sources.write_health([{
+                "source": "linkedin", "status": "partial", "attempted_at": "2026-10-01T05:00:00+00:00",
+                "search_collection": {"query_cursor": 4, "requests": 2, "responses": 2, "rate_limited": True},
+                "detail_enrichment": {"requests": 0, "rate_limited": False},
+            }], {})
+            runtime = local_sources._linkedin_runner_state()
+            self.assertEqual(5, runtime["search_query_cursor"])
+            self.assertEqual(1, runtime["search_429_streak"])
+            self.assertEqual(1, runtime["detail_429_streak"])
+            record = json.loads(local_sources.HEALTH_PATH.read_text())["run_history"][0]
+            self.assertTrue(record["search_429"])
+            self.assertFalse(record["detail_429"])
+
+    def test_detail_http_counts_do_not_count_old_unresolved_reasons(self) -> None:
+        now = datetime.now(timezone.utc)
+        prior = dict(self._linkedin_card("old"), linkedin_detail_attempted_at=now.isoformat(),
+                     enrichment_failure_reason="linkedin_http_429")
+        rows = [dict(self._linkedin_card("old"), description=""),
+                dict(self._linkedin_card("new"), description="")]
+        session = Mock()
+        session.get.return_value = SimpleNamespace(status_code=200,
+            text='<div class="show-more-less-html__markup">' + 'Full description ' * 20 + '</div>')
+        with patch.object(linkedin_local.time, "sleep") as sleep:
+            detail = linkedin_local.enrich_details(rows, previous_jobs=[prior], session=session)
+        self.assertEqual({"200": 1}, detail["http_status_counts"])
+        self.assertEqual(1, detail["failure_reasons"]["linkedin_http_429"])
+        self.assertFalse(detail["rate_limited"])
+        sleep.assert_called_once_with(1.2)
 
     def test_runner_executes_collector_from_fetched_origin_main(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

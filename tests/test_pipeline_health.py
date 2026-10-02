@@ -124,6 +124,47 @@ class PipelineHealthTests(unittest.TestCase):
         self.assertNotIn("<h3>Consecutive failures and raw diagnostics</h3>", page)
         self.assertNotIn("JDs recovered</th>", page)
 
+    def test_linkedin_search_429_cooldown_and_recovered_probe_are_separate(self) -> None:
+        now = datetime(2026, 10, 1, 21, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            sources = root / "output/sources"
+            sources.mkdir(parents=True)
+            sources.joinpath("linkedin.json").write_text(json.dumps({"jobs": [{}]}))
+            for mode in ("search_429", "cooldown", "recovered"):
+                with self.subTest(mode=mode):
+                    search_429 = mode == "search_429"
+                    cooldown = mode == "cooldown"
+                    state = {"status": "cooldown" if cooldown else "partial", "healthy": False,
+                             "last_attempt_at": now.isoformat(), "last_success_at": now.isoformat(),
+                             "last_partial_at": now.isoformat(),
+                             "reason": "search cooldown" if cooldown else "HTTP 429" if search_429 else "focused query coverage",
+                             "search_collection": {"rate_limited": search_429, "cooldown_active": cooldown,
+                                                   "requests": 0 if cooldown else 1, "responses": 0 if cooldown else 1},
+                             "detail_enrichment": {"requests": 0, "rate_limited": False,
+                                                   "blocked": "rate_limited_no_further_requests" if search_429 else "",
+                                                   "failure_reasons": {"linkedin_http_429": 8}},
+                             "runner_states": {"mac": {"search_429_streak": 2 if search_429 or cooldown else 0,
+                                 "search_cooldown_until": (now + timedelta(hours=1)).isoformat() if cooldown else "",
+                                 "detail_429_streak": 0}}}
+                    recovery_detail = {"requests": 1, "responses": 1, "rate_limited": False}
+                    sources.joinpath("health.json").write_text(json.dumps({"sources": {"linkedin": state},
+                        "local_recovery": {"run_at": (now + timedelta(seconds=10)).isoformat(),
+                                           "linkedin_rate_limited": search_429,
+                                           "linkedin_detail": recovery_detail}}))
+                    report, history = pipeline_health.build(root, now)
+                    li = report["components"]["linkedin"]
+                    self.assertEqual(search_429, li["latest_run"]["search_429"])
+                    self.assertFalse(li["latest_run"]["detail_429"])
+                    self.assertEqual(cooldown, li["latest_run"]["search_cooldown_active"])
+                    self.assertEqual({"linkedin_http_429": 8}, li["latest_run"]["stored_unresolved_job_reasons"])
+                    self.assertIn("No Detail 429 this run", report["latest_runs"]["linkedin"]["note"])
+                    if mode == "recovered":
+                        self.assertEqual("Healthy", li["run_state"])
+                        self.assertEqual("", li["issue"])
+                    pipeline_health.write(root / "public", report, history)
+                    self.assertIn("Stored unresolved-job reasons are historical", (root / "public/health.html").read_text())
+
     def test_indeed_partial_counts_and_board_failure_are_visible(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

@@ -34,11 +34,10 @@ class RemoteRecoveryTests(unittest.TestCase):
         self.assertEqual(100, local_sources.RECOVERY_SEARCH_LIMIT)
         self.assertEqual(150, local_sources.RECOVERY_PAGE_LIMIT)
         self.assertEqual(
-            ["software engineer", "ai engineer", "backend engineer",
-             "full-stack engineer", "machine learning engineer"],
+            ["software engineer", "ai engineer", "backend engineer"],
             [spec[1] for spec in linkedin_local.MAC_SEARCH_SPECS],
         )
-        self.assertEqual(14, local_sources.MAC_SEARCH_PAGE_LIMIT)
+        self.assertEqual(10, local_sources.MAC_SEARCH_PAGE_LIMIT)
 
     def test_handoff_keeps_jd_and_unresolved_candidate(self):
         with tempfile.TemporaryDirectory() as tmp:

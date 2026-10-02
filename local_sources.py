@@ -58,7 +58,7 @@ HEALTH_PATH = OUTPUT_DIR / "sources" / "health.json"
 HEALTH_SCHEMA_VERSION = 1
 SOURCE_HISTORY_LIMIT = 120
 LINKEDIN_DETAIL_LIMIT = 8
-MAC_SEARCH_PAGE_LIMIT = 14
+MAC_SEARCH_PAGE_LIMIT = 10
 LINKEDIN_DETAIL_COOLDOWN_HOURS = recovery_policy.LINKEDIN_DETAIL_COOLDOWN_HOURS
 GLASSDOOR_RECOVERY_HOURS = 24
 LINKEDIN_SEARCH_COOLDOWN_HOURS = 24
@@ -242,14 +242,16 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
     search_control: Dict[str, object] = {}
     if name == "linkedin" and scraper is linkedin_local.scrape:
         limit, cooldown, probe = _linkedin_search_control(datetime.fromisoformat(stamp))
-        search_control = {"cooldown_active": cooldown, "probe": probe}
+        search_control = {"cooldown_active": cooldown, "probe": probe,
+                          "query_cursor": int(_linkedin_runner_state().get("search_query_cursor", 0) or 0)}
     try:
         if name == "linkedin" and scraper is linkedin_local.scrape:
             result = (
                 {"status": "blocked", "reason": "search cooldown", "jobs": [], "query_stats": [],
                  "requests": 0, "responses": 0, "http_status": 0}
                 if search_control["cooldown_active"] else
-                scraper(page_limit=limit, profile=os.environ.get("LOCAL_SOURCE_PROFILE", "github"))
+                scraper(page_limit=limit, profile=os.environ.get("LOCAL_SOURCE_PROFILE", "github"),
+                        query_cursor=search_control["query_cursor"])
             )
         else:
             result = scraper()
@@ -272,6 +274,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
         "requests": int(result.get("requests", 0) or 0),
         "responses": int(result.get("responses", 0) or 0),
         "pages_fetched": int(result.get("pages_fetched", 0) or 0),
+        "http_status": int(result.get("http_status") or 0),
         "rate_limited": int(result.get("http_status") or 0) == 429,
         "budget_exhausted": any(stat.get("stop_reason") == "global_page_budget" for stat in query_stats),
         "coverage_limited": bool(result.get("coverage_limited")),
@@ -292,7 +295,9 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
         reason = str(result.get("reason") or result.get("status"))
         print(f"[{name}] SKIP ({reason}) -> keeping last good snapshot")
         return {
-            "source": name, "status": "skipped_unavailable", "source_healthy": False, "reason": reason,
+            "source": name, "status": "cooldown" if search_control.get("cooldown_active") else "skipped_unavailable",
+            "source_healthy": False, "reason": reason,
+            "data_usable": bool(read_source_snapshot_payload(name).get("jobs")),
             "count": 0, "query_stats": query_stats, "search_collection": search_collection,
             "elapsed_seconds": round(time.monotonic() - started, 3),
             "attempted_at": stamp, "collector": collector, "source_provenance": source_provenance,
@@ -509,7 +514,8 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
         partial = result.get("status") == "partial"
         reason = str(result.get("reason") or "")
         search = result.get("search_collection") or {}
-        if name == "linkedin" and partial and not search.get("rate_limited"):
+        cooling = name == "linkedin" and result.get("status") == "cooldown"
+        if cooling or (name == "linkedin" and partial and not search.get("rate_limited")):
             failure_cause = ""
         elif "429" in reason or search.get("rate_limited"):
             failure_cause = "429"
@@ -541,7 +547,7 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
             "required": name not in OPTIONAL_SOURCES,
             "healthy": healthy,
             "status": result.get("status", "unknown"),
-            "reason": reason if partial or failure_cause else "",
+            "reason": reason if partial or failure_cause or cooling else "",
             "last_attempt_at": result.get("attempted_at", ""),
             "last_success_at": (result.get("succeeded_at") or prior.get("last_success_at")
                                 or snapshot_meta.get("last_full_snapshot_at") or snapshot_full_success),
@@ -587,6 +593,7 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
             search_requests = int(search.get("requests", 0) or 0)
             if search_requests:
                 runtime["search_last_attempt_at"] = result.get("attempted_at", "")
+                runtime["search_query_cursor"] = int(search.get("query_cursor", 0) or 0) + 1
                 if search.get("rate_limited"):
                     streak = int(prior_runtime.get("search_429_streak", 0) or 0) + 1
                     runtime["search_429_streak"] = streak
@@ -621,12 +628,12 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
                         if snapshot_at == attempt_at else
                         None if result.get("status") in {"ok", "partial"} else 0)
             detail = result.get("detail_enrichment") or {}
-            failure = bool(failure_cause or detail.get("rate_limited")
-                           or detail.get("budget_exhausted") or detail.get("failed"))
+            failure = bool(failure_cause or detail.get("rate_limited") or detail.get("failed"))
             record = {
                 "source": name, "run_at": attempt_at, "status": result.get("status", "unknown"),
                 "new": new_jobs, "pass": result.get("pass"), "new_ab": result.get("new_ab"),
-                "failure": failure, "reason": (reason or str(detail.get("blocked") or "JD detail failed")) if failure else "",
+                "failure": failure, "reason": (reason or str(detail.get("blocked") or "JD detail failed")) if failure or cooling else "",
+                "search_429": bool(search.get("rate_limited")), "detail_429": bool(detail.get("rate_limited")),
                 "elapsed_seconds": result.get("elapsed_seconds"),
             }
             history = [item for item in history if not (
@@ -858,7 +865,7 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
         "post_429_jds_recovered",
         "targeted_linkedin_search_requests", "targeted_linkedin_detail_jds",
         "targeted_linkedin_rate_limited", "generic_jobs_processed",
-        "search_requests", "official_page_requests", "linkedin_rate_limited",
+        "search_requests", "official_page_requests", "linkedin_rate_limited", "linkedin_detail",
     )}
     atomic_write(HEALTH_PATH, (json.dumps(health, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
     print(json.dumps(report, indent=2, ensure_ascii=False))
@@ -900,7 +907,8 @@ def main() -> None:
     print(f"\nDone. {len(ok)}/{len(results)} source(s) updated: "
           + ", ".join(f"{r['source']}={r['status']}" for r in results))
     if names != ["glassdoor"] and not any(
-        r["status"] in ("ok", "partial") and r["source"] not in OPTIONAL_SOURCES for r in results
+        (r["status"] in ("ok", "partial") or (r["status"] == "cooldown" and r.get("data_usable")))
+        and r["source"] not in OPTIONAL_SOURCES for r in results
     ):
         raise SystemExit("No required local source succeeded; last-good snapshots were preserved.")
     if not args.only and os.environ.get("LOCAL_SOURCE_PROFILE") == "mac":

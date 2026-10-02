@@ -38,16 +38,14 @@ GUEST_SEARCH_URL = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPosti
 GUEST_DETAIL_URL = "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{job_id}"
 US_GEO_ID = "103644278"
 SEARCH_SPECS = (("primary", "software engineer", 5, 2), ("primary", "ai engineer", 3, 1))
-MAC_SEARCH_SPECS = (*SEARCH_SPECS, ("primary", "backend engineer", 2, 1),
-                    ("primary", "full-stack engineer", 2, 1),
-                    ("primary", "machine learning engineer", 2, 1))
+MAC_SEARCH_SPECS = (*SEARCH_SPECS, ("primary", "backend engineer", 2, 1))
 DEFAULT_KEYWORDS = [query for _group, query, _maximum, _minimum in SEARCH_SPECS]
 EXPERIENCE_LEVEL_FILTER = "2,3"
 PAGE_SIZE = 10
 REQUEST_TIMEOUT = 25
-POLITE_SLEEP_SECONDS = 1.2
+POLITE_SLEEP_SECONDS = 2.5
 DETAIL_CACHE_DAYS = 14
-DETAIL_SLEEP_SECONDS = 0.4
+DETAIL_SLEEP_SECONDS = 1.2
 DETAIL_RETRY_HOURS = 24
 SEARCH_PAGE_LIMIT = 8
 
@@ -119,6 +117,7 @@ def targeted_search(company: str, title: str, location: str,
     from .schema import normalize_company_key
 
     session = session or _make_session()
+    time.sleep(POLITE_SLEEP_SECONDS)
     try:
         response = session.get(GUEST_SEARCH_URL, params={
             "keywords": f'"{title}" "{company}" "{location}"', "location": location or "United States",
@@ -260,6 +259,7 @@ def enrich_details(
         "requests": 0,
         "responses": 0,
         "successful_responses": 0,
+        "http_status_counts": {},
         "request_limit": request_limit,
         "budget_deferred": 0,
         "budget_exhausted": False,
@@ -362,6 +362,7 @@ def enrich_details(
         use_scrapling = not probe and prior_reason.startswith("linkedin_http_") and prior_reason not in {
             "linkedin_http_429", "linkedin_http_network_error",
         }
+        time.sleep(DETAIL_SLEEP_SECONDS)
         url = GUEST_DETAIL_URL.format(job_id=row["job_id"])
         if use_scrapling:
             html, status, error = _scrapling_fetch_html(url)
@@ -376,6 +377,8 @@ def enrich_details(
             row["linkedin_detail_attempted_at"] = now.isoformat()
             if status:
                 stats["responses"] += 1
+                counts = stats["http_status_counts"]
+                counts[str(status)] = counts.get(str(status), 0) + 1
             if status == 429:
                 stats["blocked"] = "blocked with HTTP 429"
                 stats["rate_limited"] = True
@@ -386,7 +389,6 @@ def enrich_details(
                 stats["failed"] += 1
                 row["enrichment_status"] = "unresolved"
                 row["enrichment_failure_reason"] = error or "scrapling_fetch_failed"
-                time.sleep(DETAIL_SLEEP_SECONDS)
                 continue
             stats["successful_responses"] += 1
             detail = _parse_detail(html)
@@ -400,9 +402,11 @@ def enrich_details(
                 stats["failed"] += 1
                 row["enrichment_status"] = "unresolved"
                 row["enrichment_failure_reason"] = "linkedin_http_network_error"
-                time.sleep(DETAIL_SLEEP_SECONDS)
                 continue
             stats["responses"] += 1
+            counts = stats["http_status_counts"]
+            code = str(response.status_code)
+            counts[code] = counts.get(code, 0) + 1
             try:
                 _check_blocked(response)
             except SourceUnavailable as exc:
@@ -414,7 +418,6 @@ def enrich_details(
                     stats["blocked"] = str(exc)
                     break
                 stats["failed"] += 1
-                time.sleep(DETAIL_SLEEP_SECONDS)
                 continue
             stats["successful_responses"] += 1
             detail = _parse_detail(response.text)
@@ -439,7 +442,6 @@ def enrich_details(
         if detail["application_url"]:
             row["application_url"] = detail["application_url"]
             stats["external_apply_urls"] += 1
-        time.sleep(DETAIL_SLEEP_SECONDS)
 
     for row in rows:
         row.pop("_linkedin_official_defer", None)
@@ -469,10 +471,12 @@ def scrape(
 ) -> Dict[str, Any]:
     """Return LinkedIn job rows. Raises SourceUnavailable on anti-bot/network."""
     session = session or _make_session()
-    # Keep query_cursor for older callers, but focused discovery always begins
-    # with software engineer. Older unqueried titles remain in partial snapshots.
-    del query_cursor
     specs = list(MAC_SEARCH_SPECS if profile == "mac" else SEARCH_SPECS)
+    if profile == "mac":
+        if query_cursor % 2:
+            specs[-1] = ("primary", "full-stack engineer", 2, 1)
+        offset = query_cursor % len(specs)
+        specs = specs[offset:] + specs[:offset]
     if keywords:
         wanted = set(keywords)
         specs = [spec for spec in specs if spec[1] in wanted]
@@ -499,6 +503,9 @@ def scrape(
                 "f_E": EXPERIENCE_LEVEL_FILTER,
                 "start": page * PAGE_SIZE,
             }
+            # Space every request, including transitions after low-yield/empty pages.
+            if requests_made:
+                time.sleep(POLITE_SLEEP_SECONDS)
             try:
                 requests_made += 1
                 resp = session.get(GUEST_SEARCH_URL, params=params, timeout=REQUEST_TIMEOUT)
@@ -559,7 +566,6 @@ def scrape(
             if added <= 1 and page + 1 >= minimum_pages:
                 stat["stop_reason"] = "low_unique_yield"
                 break
-            time.sleep(POLITE_SLEEP_SECONDS)
         stat["unique_jobs"] = len(query_seen)
         stat["unique_contribution"] = sum(
             1 for row in rows if (row.get("discovery_queries") or {}).get("linkedin", [None])[0] == keyword

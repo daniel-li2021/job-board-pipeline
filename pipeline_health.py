@@ -347,7 +347,12 @@ def _latest_run_panels(base: Path, latest: dict[str, dict[str, Any]],
                 linkedin_attempt.astimezone(ZoneInfo("America/Los_Angeles")).date()):
             earlier_today += 1
     older = len(linkedin_rows) - new_now - earlier_today
-    detail = linkedin_state.get("detail_enrichment") or {}
+    # Follow-up recovery can replace Health detail stats; the snapshot retains initial stats.
+    snapshot_meta = linkedin_snapshot.get("meta") or {}
+    detail = (snapshot_meta.get("detail_enrichment", linkedin_state.get("detail_enrichment")) or {}
+              if linkedin_state.get("last_attempt_at") == snapshot_meta.get("scraped_at") else {})
+    recovery_detail = linked_recovery_run.get("linkedin_detail") or {}
+    http_state = components["linkedin"].get("latest_run") or {}
     search = linkedin_state.get("search_collection") or {}
     linked_recovery = int(linked_recovery_run.get("linkedin_detail_recoveries", 0) or 0)
     other_recovery = int(linked_recovery_run.get("official_jds_recovered", 0) or 0) + int(
@@ -375,16 +380,21 @@ def _latest_run_panels(base: Path, latest: dict[str, dict[str, Any]],
                f"{linked_recovery + other_recovery:,} recovered later") if "eligible" in detail else
               f"Fresh JD need counts unavailable · {linked_recovery + other_recovery:,} recovered later",
         "requests": (f"Search {int(search.get('responses', 0) or 0)}/{int(search.get('requests', 0) or 0)} · "
-                     f"LinkedIn detail {int(detail.get('responses', 0) or 0)}/{int(detail.get('requests', 0) or 0)} · "
+                     f"LinkedIn detail {int(detail.get('responses', 0) or 0) + int(recovery_detail.get('responses', 0) or 0)}/"
+                     f"{int(detail.get('requests', 0) or 0) + int(recovery_detail.get('requests', 0) or 0)} · "
                      f"Web recovery {int(linked_recovery_run.get('generic_jobs_processed', 0) or 0)} jobs / "
                      f"{int(linked_recovery_run.get('search_requests', 0) or 0)} searches / "
                      f"{int(linked_recovery_run.get('official_page_requests', 0) or 0)} pages"),
-        "sources": (f"LinkedIn search {'rate limited' if search.get('rate_limited') else 'healthy'}"
+        "sources": (f"LinkedIn search {'cooldown/deferred' if http_state.get('search_cooldown_active') else 'rate limited' if http_state.get('search_429') else 'failed' if linkedin_state.get('status') in {'skipped_unavailable', 'skipped_error'} else 'healthy'}"
                     f"{' · focused coverage' if search.get('coverage_limited') else ''}"),
-        "issue": (str(linkedin_state.get("reason") or components["linkedin"].get("issue") or "")
+        "issue": (str(components["linkedin"].get("issue") or linkedin_state.get("reason") or "")
                   if components["linkedin"]["run_state"] != "Healthy" else ""),
-        "note": ("Detail 429 · " if detail.get("rate_limited") else "No detail 429 · ")
-                + ("cooldown active · " if detail.get("cooldown_active") else "no cooldown · ")
+        "note": ("Search 429 this run · " if http_state.get("search_429") else "No Search 429 this run · ")
+                + ("Detail 429 this run · " if http_state.get("detail_429") else "No Detail 429 this run · ")
+                + (f"search deferred until {_display_time(http_state.get('search_cooldown_until'))} · "
+                   if http_state.get("search_cooldown_active") else "")
+                + (f"detail cooldown until {_display_time(http_state.get('detail_cooldown_until'))} · "
+                   if http_state.get("detail_cooldown_active") else "")
                 + ("budget/deadline hit" if detail.get("budget_exhausted") or linked_recovery_run.get("deadline_reached")
                    else "no budget/deadline hit"),
     }
@@ -754,7 +764,8 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         focused_partial = bool(source == "linkedin" and is_partial and not rate_limited_partial)
         last_good_count = len(snapshot_jobs)
         data_usable = last_good_count > 0 and (age is not None or partial_age is not None)
-        attempt_failed = not state.get("healthy") and not focused_partial
+        cooling = source == "linkedin" and bool(search.get("cooldown_active"))
+        attempt_failed = not state.get("healthy") and not focused_partial and not cooling
         if not data_usable:
             status = "Problem" if state.get("required", source != "glassdoor") else "Warning"
         elif focused_partial and partial_age is not None and partial_age <= 12:
@@ -774,12 +785,18 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
         )
         if focused_partial:
             consecutive_failures = 0
-        runtime = (state.get("runner_states") or {}).get("mac", {}) if source == "linkedin" else {}
+        runtime = ((state.get("runner_states") or {}).get("mac") or state) if source == "linkedin" else {}
+        search_streak = int(runtime.get("search_429_streak", consecutive_failures if rate_limited_partial or search.get("rate_limited") else 0) or 0)
+        search_cooldown_until = str(runtime.get("search_cooldown_until") or "")
+        search_until = recovery_policy.stamp(search_cooldown_until)
+        search_cooldown_active = bool(source == "linkedin" and (cooling or (search_until and search_until > now)))
         targeted_streak = int((local_payload.get("local_recovery") or {}).get("targeted_429_streak", 0) or 0)
         detail_streak = int(runtime.get("detail_429_streak", state.get("detail_429_streak", 0)) or 0)
         failure_threshold = 3 if source == "linkedin" else 2
         if source == "linkedin":
-            consecutive_failures = max(consecutive_failures, targeted_streak, detail_streak)
+            consecutive_failures = max(search_streak, targeted_streak, detail_streak)
+            if status == "Healthy" and search_cooldown_active:
+                status = "Warning"
             if status == "Healthy" and consecutive_failures >= failure_threshold and (targeted_streak or detail_streak):
                 status = "Warning"
         if status == "Healthy" and attempt_failed and consecutive_failures >= failure_threshold:
@@ -812,6 +829,8 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                     f"({state.get('reason') or 'partial coverage'}): collected {collected} rows, kept {fresh_kept}; "
                     f"merged snapshot serves {last_good_count} ({carried} carried, last full collection {verified_age})"
                 )
+        elif cooling:
+            details.append("Search deferred during cooldown; no search HTTP request was made")
         elif attempt_failed:
             details.append(
                 f"latest {attempt_kind} attempt{attempt_when} failed ({state.get('status', 'unknown')}): "
@@ -823,7 +842,8 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                     f"{attempt_kind} failure; fresh last-good data remains usable"
                 )
         enrichment = state.get("detail_enrichment") or (
-            snapshot.get("meta", {}).get("detail_enrichment", {}) if isinstance(snapshot, dict) else {}
+            snapshot.get("meta", {}).get("detail_enrichment", {})
+            if source != "linkedin" or state.get("last_attempt_at") == (snapshot.get("meta") or {}).get("scraped_at") else {}
         )
         degradation_kinds: list[str] = []
         keywords = []
@@ -849,7 +869,9 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                 ).isoformat()
             intentional_pause = state.get("detail_cooldown_reason") == "intentional pause"
             blocked = str(enrichment.get("blocked") or "")
-            detail_rate_limited = bool(enrichment.get("rate_limited") or ("429" in blocked and not intentional_pause))
+            detail_rate_limited = bool(enrichment.get("rate_limited") or ("HTTP 429" in blocked and not intentional_pause))
+            detail_until = recovery_policy.stamp(cooldown_until)
+            detail_cooldown_active = bool(detail_until and detail_until > now)
             if status == "Healthy" and detail_rate_limited:
                 status = "Warning"
             scrapling_requests = int(enrichment.get("scrapling_requests", 0) or 0)
@@ -905,10 +927,23 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             )
         detail = "; ".join(details)
         cause = str(state.get("failure_cause") or "")
-        if source == "linkedin" and targeted_streak:
-            issue = f"LinkedIn targeted 429 ×{targeted_streak}"
-        elif source == "linkedin" and detail_streak:
-            issue = f"LinkedIn detail 429 ×{detail_streak}"
+        if source == "linkedin":
+            endpoint_issues = []
+            if search.get("rate_limited"):
+                endpoint_issues.append(f"Search 429 ×{max(1, search_streak)}")
+            if search_cooldown_active:
+                endpoint_issues.append(f"Search cooldown/deferred until {_display_time(search_cooldown_until)}")
+            if detail_rate_limited:
+                endpoint_issues.append(f"Detail 429 ×{max(1, detail_streak)}")
+            elif detail_cooldown_active:
+                endpoint_issues.append(f"Detail cooldown until {_display_time(cooldown_until)}")
+            elif detail_streak:
+                endpoint_issues.append("Detail probe pending")
+            if targeted_streak:
+                endpoint_issues.append(f"Targeted Search 429 ×{targeted_streak}")
+            issue = "; ".join(endpoint_issues)
+            if not issue and attempt_failed:
+                issue = str(state.get("reason") or "Search failed")
         elif focused_partial:
             issue = ""
         elif cause and attempt_failed:
@@ -947,7 +982,7 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
             "partial_carried_count": int(state.get("partial_carried_count", 0) or 0),
             "degradation_kinds": degradation_kinds,
             "consecutive_failures": consecutive_failures,
-            "failure_streaks": ({"search_429": int(runtime.get("search_429_streak", 0) or 0),
+            "failure_streaks": ({"search_429": search_streak,
                                  "targeted_429": targeted_streak, "detail_429": detail_streak}
                                 if source == "linkedin" else
                                 {str(state.get("failure_cause") or _short_cause(str(state.get("reason") or ""))): consecutive_failures}
@@ -988,7 +1023,14 @@ def build(base: Path, now: datetime | None = None) -> tuple[dict[str, Any], list
                                             .get("jds_resolved", 0) or 0) if same_snapshot else None),
                 "recovery_linkedin_jds": int(recovery.get("linkedin_detail_recoveries", 0) or 0) if same_recovery else None,
                 "recovery_other_jds": int(recovery.get("official_jds_recovered", 0) or 0) if same_recovery else None,
-                "detail_429": detail_rate_limited or bool(same_recovery and recovery.get("linkedin_rate_limited")),
+                "search_429": bool(search.get("rate_limited")),
+                "search_cooldown_active": search_cooldown_active,
+                "search_cooldown_until": search_cooldown_until,
+                "detail_cooldown_active": detail_cooldown_active,
+                "detail_429": detail_rate_limited or bool(same_recovery and (recovery.get("linkedin_detail") or {}).get("rate_limited")),
+                "search_http_status": search.get("http_status"),
+                "detail_http_status_counts": enrichment.get("http_status_counts", {}),
+                "stored_unresolved_job_reasons": enrichment.get("failure_reasons", {}),
                 "post_429_jds_recovered": (recovery.get("post_429_jds_recovered")
                                            if same_recovery and recovery.get("post_429_jds_recovered") is not None
                                            else 0 if same_recovery and recovery.get("linkedin_rate_limited")
@@ -1357,7 +1399,9 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
                              "consecutive_failures": item.get("consecutive_failures"),
                              "degradation_kinds": item.get("degradation_kinds"),
                              "retained_inventory": item.get("volumes"),
-                             "recent_history": item.get("recent_history")}
+                             "recent_history": item.get("recent_history"),
+                             "latest_http_and_stored_job_reasons": {key: value for key, value in (item.get("latest_run") or {}).items()
+                                                                   if key not in {"attempt_at", "search_cooldown_until", "detail_cooldown_until"}}}
                        for key, item in report["components"].items()},
         "groups": report["groups"], "enrichment": report["enrichment"],
         "recovery_summary": recovery, "coverage": coverage,
@@ -1398,7 +1442,7 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
         + "".join(execution_rows) + '</tbody></table></div>'
         '<details><summary>Technical details</summary>'
         f'<p><strong>Local Mac schedule:</strong> {esc(schedule_text)}</p>'
-        '<p><strong>Raw diagnostics</strong> · Subcomponents, request limits, enrichment, retry state, failure reasons, and recovery methods remain in the JSON report.</p>'
+        '<p><strong>Raw diagnostics</strong> · Subcomponents, request limits, enrichment, retry state, and recovery methods remain in the JSON report. Stored unresolved-job reasons are historical job outcomes, not HTTP failures in the current run.</p>'
         f'<pre>{esc(json.dumps(diagnostics, indent=2, ensure_ascii=False))}</pre>'
         '</details></main></body></html>'
     )
