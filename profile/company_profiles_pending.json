@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-02T23:51:21.676383+00:00",
-  "count": 2931,
+  "generated_at": "2026-10-02T23:55:05.811732+00:00",
+  "count": 2939,
   "companies": [
     {
       "name": "1199SEIU Benefit and Pension Funds",
@@ -1765,16 +1765,19 @@
     },
     {
       "name": "AMETEK",
-      "aliases": [],
+      "aliases": [
+        "Ametek"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "1e9f4dcbee4ef61b5a3fb7c5"
+        "1e9f4dcbee4ef61b5a3fb7c5",
+        "d7351105bbacf29fa2f0760b"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "AMH",
@@ -3025,6 +3028,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Atlas Energy Solutions",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "ee5e9487f27364ca09726c01"
+      ],
       "seen_count": 1
     },
     {
@@ -4409,13 +4425,17 @@
     },
     {
       "name": "BLEND",
-      "aliases": [],
+      "aliases": [
+        "Blend"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "0540bdaba5550fee19e94247"
+      ],
       "seen_count": 1
     },
     {
@@ -5214,9 +5234,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "5938907ba5e4d46b74876b5e"
+        "5938907ba5e4d46b74876b5e",
+        "904e70649abe08daa2f2e5b5"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Burger King",
@@ -6783,6 +6804,19 @@
       "tags": [],
       "seen_job_keys": [
         "6d85302a4f916c1d0739b42b"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Clay",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "553db9866f897e4b97a5c3d9"
       ],
       "seen_count": 1
     },
@@ -8357,13 +8391,14 @@
       "seen_job_keys": [
         "1e02afba134377819f9ed2d8",
         "4a65fdb603a0b8d498daafe6",
+        "699ffbda5a4def3038146f67",
         "a65ee5d6f74908e7bbe6279e",
         "b0e5dbe3f9d56629564e3736",
         "be0c05e2c095330307a4b7aa",
         "f313b20a1f889e04cf0ff025",
         "f97c971315105da7b939679c"
       ],
-      "seen_count": 7
+      "seen_count": 8
     },
     {
       "name": "Crum & Forster",
@@ -8667,6 +8702,20 @@
       "seen_count": 2
     },
     {
+      "name": "D.E.Shaw group",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "b6bace7787c4c2cff9dbad36",
+        "d8298d3ea7ec277bef18b384"
+      ],
+      "seen_count": 2
+    },
+    {
       "name": "D.R. Horton",
       "aliases": [],
       "size": "unknown",
@@ -8856,10 +8905,11 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "4463bd0402dfd0bb6a352404",
         "496c3b31cab31f101f5f184b",
         "85b81f6d5693ce0ef952ee6b"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "DataOne",
@@ -11645,6 +11695,19 @@
         "ab5dbd97a7ed468d213ed178"
       ],
       "seen_count": 2
+    },
+    {
+      "name": "Exzeo",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "ea9954fd0656b9d05a9d40a6"
+      ],
+      "seen_count": 1
     },
     {
       "name": "Ezee Fiber",
@@ -15902,6 +15965,19 @@
       "seen_count": 2
     },
     {
+      "name": "Hinge Health",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "ba8cc71cd2ea464df2695973"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Hire With Jarvis",
       "aliases": [],
       "size": "unknown",
@@ -16095,7 +16171,9 @@
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "899d59d5d1065811b88d524f"
+      ],
       "seen_count": 1
     },
     {
@@ -19263,12 +19341,13 @@
         "4311b658823ba36cbd9110f4",
         "7425eeda5c556a3664d28d16",
         "778e04a49ba2ccb6e7c40e8a",
+        "8a0a6d8c5eb1e997359c49c2",
         "bfd5a8d3ded3a12cce3c8c60",
         "da877fe0bb6718c470ee64a7",
         "e90161ccd18427d719594f23",
         "eabce9ffedae3ecc80250762"
       ],
-      "seen_count": 9
+      "seen_count": 10
     },
     {
       "name": "Koch Ag & Energy Solutions, LLC",
@@ -22347,6 +22426,19 @@
       "seen_count": 1
     },
     {
+      "name": "Mondelez International",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "219555fb13d269ed4b3df040"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "MONK",
       "aliases": [],
       "size": "unknown",
@@ -23781,6 +23873,19 @@
       "seen_count": 1
     },
     {
+      "name": "Notion Labs",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "b7c2ab4cdd3515f4189d9f24"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "NOV",
       "aliases": [],
       "size": "unknown",
@@ -25158,6 +25263,19 @@
       "tags": [],
       "seen_job_keys": [
         "e8306808f96501572ef223ab"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Paychex",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "33cae6e6fed814c9b156b54b"
       ],
       "seen_count": 1
     },
@@ -27691,9 +27809,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "af5105dc5434daaf20b79f3a"
+        "af5105dc5434daaf20b79f3a",
+        "e9320e92bad95a7a2717c893"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Remote Hive LLC",
@@ -32365,9 +32484,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "231df6c572f9e4611b438d23",
         "379ee5f5fe57470741ca9fd9"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "The Best Job Board",
@@ -32915,10 +33035,11 @@
         "3fc3d8db57a5a7d2c11ebdf6",
         "4c04771c030fff955555e692",
         "8609e48eb78e5ed2afbda86d",
+        "b42fb366ea6668e0e5b6e1ab",
         "b8f8227e239182956954f2c5",
         "d358f547ee88befcd30b69e3"
       ],
-      "seen_count": 5
+      "seen_count": 6
     },
     {
       "name": "Tide Rock",
@@ -33145,7 +33266,9 @@
       "sponsor": "likely",
       "type": "industrial",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "5b7496296ca972042fa2d2ce"
+      ],
       "seen_count": 1
     },
     {
