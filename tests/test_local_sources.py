@@ -827,11 +827,9 @@ class LocalSourceTests(unittest.TestCase):
         session.get.side_effect = AssertionError("no LinkedIn request after HTTP 429")
         row = self._linkedin_card("li-5")
         row["description"] = ""
-        with patch.object(linkedin_local, "_scrapling_fetch_html") as scrapling:
-            stats = linkedin_local.enrich_details(
-                [row], session=session, allow_requests=False,
-            )
-        scrapling.assert_not_called()
+        stats = linkedin_local.enrich_details(
+            [row], session=session, allow_requests=False,
+        )
         self.assertEqual([], session.mock_calls)
         self.assertEqual(0, stats["requests"])
         self.assertEqual("rate_limited_no_further_requests", stats["blocked"])
@@ -1087,15 +1085,13 @@ class LocalSourceTests(unittest.TestCase):
         response = SimpleNamespace(status_code=429, text="")
         session = Mock()
         session.get.return_value = response
-        with patch.object(linkedin_local, "_scrapling_fetch_html") as scrapling:
-            detail = linkedin_local.enrich_details([row], previous_jobs=[prior], session=session,
-                                                   request_limit=1, probe=True)
+        detail = linkedin_local.enrich_details([row], previous_jobs=[prior], session=session,
+                                               request_limit=1, probe=True)
         detail["probe"] = True
         state = {"detail_cooldown_until": datetime.now(timezone.utc).isoformat(), "detail_429_streak": 0}
         now = datetime.now(timezone.utc)
         local_sources._update_linkedin_detail_health(state, detail, now)
         session.get.assert_called_once()
-        scrapling.assert_not_called()
         self.assertEqual(1, detail["requests"])
         self.assertEqual("cooldown", state["detail_status"])
         self.assertEqual(now + timedelta(hours=12), datetime.fromisoformat(state["detail_cooldown_until"]))
@@ -1164,7 +1160,8 @@ class LocalSourceTests(unittest.TestCase):
                                                page_limit=10)
             self.assertEqual(queries, [call.kwargs["params"]["keywords"] for call in session.get.call_args_list])
             self.assertEqual(3, result["requests"])
-            self.assertEqual([2.5, 2.5], [call.args[0] for call in sleep.call_args_list])
+            self.assertEqual(2, sleep.call_count)
+            self.assertTrue(all(2.4 <= call.args[0] <= 3.25 for call in sleep.call_args_list))
 
     def test_search_cooldown_completes_mac_round_without_touching_snapshot(self) -> None:
         from scripts.macos.local_source_gate import decision
@@ -1238,7 +1235,7 @@ class LocalSourceTests(unittest.TestCase):
         self.assertEqual({"200": 1}, detail["http_status_counts"])
         self.assertEqual(1, detail["failure_reasons"]["linkedin_http_429"])
         self.assertFalse(detail["rate_limited"])
-        sleep.assert_called_once_with(1.2)
+        sleep.assert_not_called()  # No previous LinkedIn attempt to space against.
 
     def test_runner_executes_collector_from_fetched_origin_main(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

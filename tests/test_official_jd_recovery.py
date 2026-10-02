@@ -48,7 +48,7 @@ class OfficialRecoveryTests(unittest.TestCase):
                 "search_429_streak": 2,
                 "search_cooldown_until": (now + timedelta(hours=24)).isoformat(),
             }}}))
-            self.assertEqual(14, local_sources._linkedin_search_control(now)[0])
+            self.assertEqual(10, local_sources._linkedin_search_control(now)[0])
             local_sources.write_health([{"source": "linkedin", "status": "partial",
                 "attempted_at": now.isoformat(), "search_collection": {"requests": 1, "responses": 1, "rate_limited": True},
                 "detail_enrichment": {"requests": 0}}], {})
@@ -57,7 +57,7 @@ class OfficialRecoveryTests(unittest.TestCase):
             self.assertEqual(1, state["runner_states"]["mac"]["search_429_streak"])
 
     def test_linkedin_mac_and_github_query_profiles_have_independent_global_caps(self):
-        def fake_get(_url, *, params, timeout):
+        def fake_get(_url, *, params, timeout, allow_redirects):
             return response(_url, f"{params['keywords']}:{params['start']}")
 
         def fake_cards(text):
@@ -68,8 +68,7 @@ class OfficialRecoveryTests(unittest.TestCase):
 
         for profile, limit, names in (
             ("github", 8, ["software engineer", "ai engineer"]),
-            ("mac", 14, ["software engineer", "ai engineer", "backend engineer",
-                         "full-stack engineer", "machine learning engineer"]),
+            ("mac", 10, ["software engineer", "ai engineer", "backend engineer"]),
         ):
             with self.subTest(profile=profile):
                 session = Mock()
@@ -79,7 +78,7 @@ class OfficialRecoveryTests(unittest.TestCase):
                     result = linkedin_local.scrape(session=session, profile=profile, page_limit=limit)
                 self.assertEqual(limit, result["requests"])
                 self.assertEqual(names, [item["query"] for item in result["query_stats"]])
-                self.assertEqual([5, 3] if profile == "github" else [5, 3, 2, 2, 2],
+                self.assertEqual([5, 3] if profile == "github" else [5, 3, 2],
                                  [item["pages_fetched"] for item in result["query_stats"]])
 
     def test_generic_exact_match_reuses_fetched_jd_and_board_promotes_without_fetch(self):
@@ -516,7 +515,7 @@ class OfficialRecoveryTests(unittest.TestCase):
             state = json.loads(local_sources.HEALTH_PATH.read_text())["sources"]["linkedin"]
             self.assertEqual(2, state["search_429_streak"])
             self.assertEqual(0, state.get("detail_429_streak", 0))
-            self.assertEqual(0, state.get("search_query_cursor", 0))
+            self.assertEqual(1, state.get("search_query_cursor", 0))
             self.assertTrue(local_sources._linkedin_search_control(now + timedelta(minutes=2))[1])
             self.assertEqual(1, local_sources._linkedin_search_control(now + timedelta(hours=25))[0])
             local_sources.write_health([{"source": "linkedin", "status": "skipped_unavailable",

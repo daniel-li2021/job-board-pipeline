@@ -75,7 +75,7 @@ class LinkedInDetailTests(unittest.TestCase):
         self.assertEqual("Full AI JD", second["description"])
         session.get.assert_called_once_with(
             linkedin_local.GUEST_DETAIL_URL.format(job_id="2"),
-            timeout=linkedin_local.REQUEST_TIMEOUT,
+            timeout=linkedin_local.REQUEST_TIMEOUT, allow_redirects=False,
         )
 
     @patch("sources.linkedin_local.time.sleep")
@@ -88,25 +88,22 @@ class LinkedInDetailTests(unittest.TestCase):
         session = Mock()
         session.get.return_value = response
 
-        with patch.object(linkedin_local, "_scrapling_fetch_html", return_value=None):
-            stats = linkedin_local.enrich_details([row], session=session)
+        stats = linkedin_local.enrich_details([row], session=session)
 
         self.assertIn("HTTP 429", stats["blocked"])
         self.assertEqual("Backend Engineer", row["title"])
         self.assertFalse(row.get("description"))
 
     @patch("sources.linkedin_local.time.sleep")
-    def test_http_429_stops_before_scrapling(self, _sleep: Mock) -> None:
+    def test_http_429_stops_without_retry(self, _sleep: Mock) -> None:
         row = make_job(
             source="linkedin", company="Example", title="Junior Software Engineer",
             location="New York, NY", job_id="4",
         )
         session = Mock()
         session.get.return_value = Mock(status_code=429, text="rate limited")
-        with patch.object(linkedin_local, "_scrapling_fetch_html") as scrapling:
-            stats = linkedin_local.enrich_details([row], session=session)
+        stats = linkedin_local.enrich_details([row], session=session)
 
-        scrapling.assert_not_called()
         self.assertTrue(stats["rate_limited"])
         self.assertEqual(1, stats["requests"])
         self.assertFalse(row.get("description"))
@@ -140,23 +137,24 @@ class LinkedInDetailTests(unittest.TestCase):
         self.assertEqual(prior["linkedin_detail_attempted_at"], row["linkedin_detail_attempted_at"])
 
     @patch("sources.linkedin_local.time.sleep")
-    def test_later_retry_uses_one_scrapling_attempt(self, _sleep: Mock) -> None:
+    def test_later_retry_uses_one_ordinary_attempt(self, _sleep: Mock) -> None:
         prior = make_job(source="linkedin", company="Example", title="Engineer", location="Austin, TX", job_id="6")
         prior["linkedin_detail_attempted_at"] = (datetime.now(timezone.utc) - timedelta(hours=25)).isoformat()
         prior["enrichment_failure_reason"] = "linkedin_http_500"
         row = make_job(source="linkedin", company="Example", title="Engineer", location="Austin, TX", job_id="6")
         session = Mock()
         html = '<div class="description__text">Recovered JD</div>'
+        session.get.return_value = Mock(status_code=200, text=html)
 
-        with patch.object(linkedin_local, "_scrapling_fetch_html", return_value=(html, 200, "")):
-            stats = linkedin_local.enrich_details([row], previous_jobs=[prior], session=session)
+        stats = linkedin_local.enrich_details([row], previous_jobs=[prior], session=session)
 
-        session.get.assert_not_called()
+        session.get.assert_called_once()
         self.assertEqual(1, stats["requests"])
+        self.assertEqual(0, stats["scrapling_requests"])
         self.assertEqual(1, stats["retry_attempts"])
         self.assertEqual("Recovered JD", row["description"])
 
-    def test_scrapling_429_stops_the_remaining_batch(self) -> None:
+    def test_later_retry_429_stops_the_remaining_batch(self) -> None:
         prior_rows = []
         rows = []
         for job_id in ("9", "10"):
@@ -166,10 +164,11 @@ class LinkedInDetailTests(unittest.TestCase):
             prior_rows.append(prior)
             rows.append(make_job(source="linkedin", company="Example", title="Engineer", location="Austin, TX", job_id=job_id))
 
-        with patch.object(linkedin_local, "_scrapling_fetch_html", return_value=("", 429, "scrapling_http_429")) as scrapling:
-            stats = linkedin_local.enrich_details(rows, previous_jobs=prior_rows)
+        session = Mock()
+        session.get.return_value = Mock(status_code=429, text="", headers={})
+        stats = linkedin_local.enrich_details(rows, previous_jobs=prior_rows, session=session)
+        session.get.assert_called_once()
 
-        scrapling.assert_called_once()
         self.assertEqual(1, stats["requests"])
         self.assertTrue(stats["rate_limited"])
 

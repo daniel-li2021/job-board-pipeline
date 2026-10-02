@@ -31,6 +31,7 @@ import os
 import subprocess
 import time
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from typing import Callable, Dict
 
 import board_pipeline as board
@@ -57,6 +58,7 @@ OPTIONAL_SOURCES = {"glassdoor"}
 HEALTH_PATH = OUTPUT_DIR / "sources" / "health.json"
 HEALTH_SCHEMA_VERSION = 1
 SOURCE_HISTORY_LIMIT = 120
+
 LINKEDIN_DETAIL_LIMIT = 8
 MAC_SEARCH_PAGE_LIMIT = 10
 LINKEDIN_DETAIL_COOLDOWN_HOURS = recovery_policy.LINKEDIN_DETAIL_COOLDOWN_HOURS
@@ -64,6 +66,18 @@ GLASSDOOR_RECOVERY_HOURS = 24
 LINKEDIN_SEARCH_COOLDOWN_HOURS = 24
 RECOVERY_SEARCH_LIMIT = 100
 RECOVERY_PAGE_LIMIT = 150
+
+
+def _linkedin_transport():
+    return linkedin_local.LinkedInTransport(
+        HEALTH_PATH, os.environ.get("LINKEDIN_TRANSPORT_STATE_PATH"))
+
+
+def _persist_linkedin_runner_state(state):
+    path = os.environ.get("LINKEDIN_TRANSPORT_STATE_PATH")
+    if path:
+        data = linkedin_local.LinkedInTransport._read(path)
+        atomic_write(Path(path), (json.dumps({**data, "runner_state": state}, indent=2) + "\n").encode())
 
 
 def _health_source(name: str) -> Dict[str, object]:
@@ -82,10 +96,21 @@ def _linkedin_runner_state() -> Dict[str, object]:
     runners = state.get("runner_states", {})
     runner = runners.get("mac", {}) if isinstance(runners, dict) else {}
     runner = dict(runner) if isinstance(runner, dict) else {}
+    # A failed push can discard the collector's Health update, but not local cooldowns.
+    local = linkedin_local.LinkedInTransport._read(os.environ.get("LINKEDIN_TRANSPORT_STATE_PATH")).get("runner_state", {})
+    for endpoint, keys in (
+        ("search", ("search_last_attempt_at", "search_query_cursor", "search_429_streak", "search_cooldown_until")),
+        ("detail", ("detail_last_attempt_at", "detail_429_streak", "detail_cooldown_until",
+                    "detail_cooldown_reason", "detail_status", "detail_retry_after_until")),
+    ):
+        local_at = recovery_policy.stamp(local.get(f"{endpoint}_last_attempt_at"))
+        saved_at = recovery_policy.stamp(runner.get(f"{endpoint}_last_attempt_at"))
+        if local_at and (not saved_at or local_at > saved_at):
+            runner.update({key: local[key] for key in keys if key in local})
     # Older follow-up recovery runs wrote detail state only at the top level.
     # Prefer the newer attempt so a Mac run cannot bypass that cooldown.
     detail_keys = ("detail_last_attempt_at", "detail_429_streak", "detail_cooldown_until",
-                   "detail_cooldown_reason", "detail_status")
+                   "detail_cooldown_reason", "detail_status", "detail_retry_after_until")
     top_attempt = recovery_policy.stamp(state.get("detail_last_attempt_at"))
     mac_attempt = recovery_policy.stamp(runner.get("detail_last_attempt_at"))
     if top_attempt and (not mac_attempt or top_attempt > mac_attempt):
@@ -96,6 +121,9 @@ def _linkedin_runner_state() -> Dict[str, object]:
         runner["detail_cooldown_until"] = min(
             until, attempt + timedelta(hours=LINKEDIN_DETAIL_COOLDOWN_HOURS)
         ).isoformat()
+        retry_until = recovery_policy.stamp(runner.get("detail_retry_after_until"))
+        if retry_until:
+            runner["detail_cooldown_until"] = max(retry_until, recovery_policy.stamp(runner["detail_cooldown_until"])).isoformat()
     return runner
 
 
@@ -125,11 +153,16 @@ def _update_linkedin_detail_health(state: Dict[str, object], detail: Dict[str, o
     if detail.get("rate_limited"):
         state["detail_429_streak"] = int(state.get("detail_429_streak", 0) or 0) + 1
         state["detail_cooldown_until"] = (attempted_at + timedelta(hours=LINKEDIN_DETAIL_COOLDOWN_HOURS)).isoformat()
+        retry_until = recovery_policy.stamp((detail.get("rate_limit_event") or {}).get("retry_after_until"))
+        if retry_until:
+            state["detail_retry_after_until"] = retry_until.isoformat()
+            state["detail_cooldown_until"] = max(retry_until, recovery_policy.stamp(state["detail_cooldown_until"])).isoformat()
         state["detail_cooldown_reason"] = "HTTP 429"
         state["detail_status"] = "cooldown"
     elif int(detail.get("successful_responses", 0) or 0):
         state["detail_429_streak"] = 0
         state["detail_cooldown_until"] = ""
+        state["detail_retry_after_until"] = ""
         state["detail_cooldown_reason"] = ""
         state["detail_status"] = "active"
 
@@ -238,7 +271,8 @@ def _prepare_linkedin_detail(rows: list[dict], previous: list[dict], now: dateti
 
 def _finish_linkedin_detail(rows: list[dict], previous: list[dict], admission: dict,
                             budget: recovery_policy.RecoveryBudget, now: datetime,
-                            *, blocked: bool = False) -> dict:
+                            *, blocked: bool = False,
+                            transport: linkedin_local.LinkedInTransport | None = None) -> dict:
     """Last-resort admission and one Detail allowance for the whole Local round."""
     unresolved = [row for row in rows if row.get("jd_tentative")
                   or len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS]
@@ -250,7 +284,8 @@ def _finish_linkedin_detail(rows: list[dict], previous: list[dict], admission: d
     if budget.linkedin_detail_limit is None:
         budget.linkedin_detail_limit = limit
     remaining = max(0, min(limit, budget.linkedin_detail_limit - budget.linkedin_detail_requests))
-    allowed = not blocked and not cooldown and budget.available() and remaining > 0
+    allowed = (not blocked and not cooldown and budget.available() and remaining > 0
+               and (transport is None or transport.available("detail", probe=probe)))
     admitted = []
     if allowed and unresolved:
         try:
@@ -302,7 +337,7 @@ def _finish_linkedin_detail(rows: list[dict], previous: list[dict], admission: d
     detail = linkedin_local.enrich_details(
         queue if allowed else unresolved if blocked or cooldown else [], previous_jobs=previous,
         allow_requests=allowed, request_limit=remaining, min_description_chars=board.THIN_JD_CHARS,
-        cooldown=cooldown, probe=probe, budget=budget,
+        cooldown=cooldown, probe=probe, budget=budget, transport=transport,
     )
     budget.linkedin_detail_requests += int(detail.get("requests", 0) or 0)
     budget.linkedin_detail_attempted.update(recovery_policy.identity(row) for row in queue
@@ -337,7 +372,8 @@ def collector_provenance() -> Dict[str, object]:
 def run_one(name: str, collector: Dict[str, object] | None = None, *, force: bool = False,
             scraper: Callable[[], Dict[str, object]] | None = None,
             recover_missing: bool = True,
-            budget: recovery_policy.RecoveryBudget | None = None) -> Dict[str, object]:
+            budget: recovery_policy.RecoveryBudget | None = None,
+            transport: linkedin_local.LinkedInTransport | None = None) -> Dict[str, object]:
     scraper = scraper or SOURCES[name]
     now = datetime.now(timezone.utc)
     stamp = now.isoformat()
@@ -365,17 +401,26 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
     budget = budget or recovery_policy.RecoveryBudget()
     search_control: Dict[str, object] = {}
     if name == "linkedin" and scraper is linkedin_local.scrape:
+        transport = transport or _linkedin_transport()
+        previous_search = read_source_snapshot_payload(name)
+        known_identities = set(previous_search.get("first_seen_ledger") or {})
+        known_identities.update(recovery_policy.identity(row) for row in previous_search.get("jobs") or [])
         limit, cooldown, probe = _linkedin_search_control(datetime.fromisoformat(stamp))
+        transport_paused = not transport.available("search")
+        cooldown = cooldown or transport_paused
         search_control = {"cooldown_active": cooldown, "probe": probe,
                           "query_cursor": int(_linkedin_runner_state().get("search_query_cursor", 0) or 0)}
     try:
         if name == "linkedin" and scraper is linkedin_local.scrape:
             result = (
-                {"status": "blocked", "reason": "search cooldown", "jobs": [], "query_stats": [],
-                 "requests": 0, "responses": 0, "http_status": 0}
+                {"status": "blocked", "reason": transport.stop_reason if transport_paused else "search cooldown",
+                 "jobs": [], "query_stats": [],
+                 "requests": 0, "responses": 0, "http_status": 0,
+                 "transport_stop_reason": transport.stop_reason if transport_paused else ""}
                 if search_control["cooldown_active"] else
                 scraper(page_limit=limit, profile=os.environ.get("LOCAL_SOURCE_PROFILE", "github"),
-                        query_cursor=search_control["query_cursor"])
+                        query_cursor=search_control["query_cursor"], known_identities=known_identities,
+                        transport=transport)
             )
         else:
             result = scraper()
@@ -400,7 +445,13 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
         "pages_fetched": int(result.get("pages_fetched", 0) or 0),
         "http_status": int(result.get("http_status") or 0),
         "rate_limited": int(result.get("http_status") or 0) == 429,
-        "budget_exhausted": any(stat.get("stop_reason") == "global_page_budget" for stat in query_stats),
+        "budget_exhausted": any(stat.get("stop_reason") in {
+            "global_page_budget", "global_round_budget", "global_hour_budget", "global_day_budget",
+        } for stat in query_stats),
+        "rate_limit_event": result.get("rate_limit_event") or {},
+        "transport_stop_reason": result.get("transport_stop_reason") or "",
+        "new_to_ledger": sum(stat.get("new_to_ledger", 0) for stat in query_stats),
+        "rediscovered": sum(stat.get("rediscovered", 0) for stat in query_stats),
         "coverage_limited": bool(result.get("coverage_limited")),
     } if name == "linkedin" else {}
     # A bounded search cannot verify queries it never reached. Merge its
@@ -509,7 +560,7 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
     if name == "linkedin" and rows:
         detail_enrichment = _finish_linkedin_detail(
             linkedin_candidates, list(previous.get("jobs") or []), detail_admission,
-            budget, now, blocked=search_rate_limited,
+            budget, now, blocked=search_rate_limited, transport=transport,
         )
 
     # Admission skips retain cards for the existing downstream filters.
@@ -553,6 +604,8 @@ def run_one(name: str, collector: Dict[str, object] | None = None, *, force: boo
         "elapsed_seconds": elapsed,
         "query_stats": query_stats,
     }
+    if name == "linkedin":
+        meta["search_collection"] = search_collection
     if detail_enrichment:
         meta["detail_enrichment"] = detail_enrichment
     if official_enrichment:
@@ -726,6 +779,9 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
                     if streak >= 2:
                         attempted_at = datetime.fromisoformat(str(result.get("attempted_at") or "").replace("Z", "+00:00"))
                         runtime["search_cooldown_until"] = (attempted_at + timedelta(hours=LINKEDIN_SEARCH_COOLDOWN_HOURS)).isoformat()
+                    retry_until = recovery_policy.stamp((search.get("rate_limit_event") or {}).get("retry_after_until"))
+                    if retry_until:
+                        runtime["search_cooldown_until"] = max(retry_until, recovery_policy.stamp(runtime.get("search_cooldown_until")) or retry_until).isoformat()
                 elif int(search.get("responses", 0) or 0):
                     runtime["search_429_streak"] = 0
                     runtime["search_cooldown_until"] = ""
@@ -739,10 +795,11 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
             )
             if mac:
                 runners = dict(state.get("runner_states") or {})
+                _persist_linkedin_runner_state(runtime)
                 runners["mac"] = runtime
                 state["runner_states"] = runners
                 for key in ("detail_last_attempt_at", "detail_429_streak", "detail_cooldown_until",
-                            "detail_cooldown_reason", "detail_status"):
+                            "detail_cooldown_reason", "detail_status", "detail_retry_after_until"):
                     if key in runtime:
                         state[key] = runtime[key]
         sources[name] = state
@@ -761,6 +818,10 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
                 "failure": failure, "reason": (reason or str(detail.get("blocked") or "JD detail failed")) if failure or cooling else "",
                 "search_429": bool(search.get("rate_limited")), "detail_429": bool(detail.get("rate_limited")),
                 "elapsed_seconds": result.get("elapsed_seconds"),
+                "search_requests": int(search.get("requests", 0) or 0) if name == "linkedin" else None,
+                "initial_detail_requests": int(detail.get("requests", 0) or 0) if name == "linkedin" else None,
+                "new_to_ledger": search.get("new_to_ledger") if name == "linkedin" else None,
+                "rediscovered": search.get("rediscovered") if name == "linkedin" else None,
             }
             history = [item for item in history if not (
                 item.get("source") == name and item.get("run_at") == attempt_at)]
@@ -768,6 +829,7 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
     history.sort(key=lambda item: str(item.get("run_at") or ""), reverse=True)
     HEALTH_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = {
+        **previous,
         "schema_version": HEALTH_SCHEMA_VERSION,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "collector": collector,
@@ -778,9 +840,11 @@ def write_health(results: list[Dict[str, object]], collector: Dict[str, object])
 
 
 def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
-                linkedin_blocked: bool = False) -> Dict[str, object]:
+                linkedin_blocked: bool = False,
+                transport: linkedin_local.LinkedInTransport | None = None) -> Dict[str, object]:
     """Recover only Fresh unresolved cards, sharing the Mac outbound budget."""
     started = time.monotonic()
+    transport = transport or _linkedin_transport()
     budget = budget or recovery_policy.RecoveryBudget()
     now = datetime.now(timezone.utc)
     names = ("linkedin", "remote_recovery")
@@ -895,7 +959,7 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
     )
 
     detail = _finish_linkedin_detail(
-        linkedin_candidates, originals["linkedin"], detail_admission, budget, now, blocked=linkedin_blocked,
+        linkedin_candidates, originals["linkedin"], detail_admission, budget, now, blocked=linkedin_blocked, transport=transport,
     )
     linkedin_blocked = linkedin_blocked or bool(detail.get("rate_limited"))
 
@@ -946,9 +1010,10 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
         runtime = _linkedin_runner_state() if os.environ.get("LOCAL_SOURCE_PROFILE") == "mac" else state
         _update_linkedin_detail_health(runtime, detail, now)
         if runtime is not state:
+            _persist_linkedin_runner_state(runtime)
             state.setdefault("runner_states", {})["mac"] = runtime
             for key in ("detail_last_attempt_at", "detail_429_streak", "detail_cooldown_until",
-                        "detail_cooldown_reason", "detail_status"):
+                        "detail_cooldown_reason", "detail_status", "detail_retry_after_until"):
                 if key in runtime:
                     state[key] = runtime[key]
         atomic_write(HEALTH_PATH, (json.dumps(health, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
@@ -966,6 +1031,7 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
                                        - int(detail.get("jds_resolved", 0) or 0)),
         "linkedin_detail_recoveries": int(detail.get("jds_resolved", 0) or 0),
         "linkedin_detail": detail, "search_requests": resolver.search_requests,
+        "linkedin_transport": transport.summary(),
         "targeted_linkedin_search_requests": 0, "targeted_linkedin_matches": 0,
         "targeted_linkedin_detail_jds": 0, "targeted_linkedin_rate_limited": False,
         "official_page_requests": resolver.page_requests,
@@ -988,7 +1054,7 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
         "post_429_jds_recovered",
         "targeted_linkedin_search_requests", "targeted_linkedin_detail_jds",
         "targeted_linkedin_rate_limited", "generic_jobs_processed",
-        "search_requests", "official_page_requests", "linkedin_rate_limited", "linkedin_detail",
+        "search_requests", "official_page_requests", "linkedin_rate_limited", "linkedin_detail", "linkedin_transport",
     )}
     atomic_write(HEALTH_PATH, (json.dumps(health, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
     print(json.dumps(report, indent=2, ensure_ascii=False))
@@ -1000,14 +1066,15 @@ def main() -> None:
     parser.add_argument("--recover-jds", action="store_true", help="Recover JDs for LinkedIn and remote candidates")
     args = parser.parse_args()
 
+    transport = _linkedin_transport()
     if args.recover_jds:
-        recover_jds()
+        recover_jds(transport=transport)
         return
 
     names = [args.only] if args.only else list(SOURCES.keys())
     collector = collector_provenance()
     recovery_budget = recovery_policy.RecoveryBudget()
-    results = [run_one(name, collector, force=args.only == "glassdoor", budget=recovery_budget)
+    results = [run_one(name, collector, force=args.only == "glassdoor", budget=recovery_budget, transport=transport)
                for name in names]
     write_health(results, collector)
     if not args.only and os.environ.get("LOCAL_SOURCE_PROFILE") == "mac":
@@ -1017,12 +1084,12 @@ def main() -> None:
                 or (result.get("detail_enrichment") or {}).get("rate_limited")
             ) for result in results
         )
-        recover_jds(budget=recovery_budget, linkedin_blocked=linkedin_blocked)
+        recover_jds(budget=recovery_budget, linkedin_blocked=linkedin_blocked, transport=transport)
 
     diagnostics_path = OUTPUT_DIR / "logs" / "local_sources_latest.json"
     diagnostics_path.parent.mkdir(parents=True, exist_ok=True)
     diagnostics_path.write_text(
-        json.dumps({"run_at": datetime.now(timezone.utc).isoformat(), "sources": results}, indent=2) + "\n",
+        json.dumps({"run_at": datetime.now(timezone.utc).isoformat(), "sources": results, "linkedin_transport": transport.summary()}, indent=2) + "\n",
         encoding="utf-8",
     )
 

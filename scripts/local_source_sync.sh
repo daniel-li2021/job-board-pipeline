@@ -27,6 +27,8 @@ else
   PYTHON_BIN="${PYTHON_BIN:-python3}"
 fi
 LOG_DIR="$REPO_DIR/output/logs"
+# Durable allowance survives discarded collector worktrees and failed publication.
+export LINKEDIN_TRANSPORT_STATE_PATH="${LINKEDIN_TRANSPORT_STATE_PATH:-$LOG_DIR/linkedin_transport.json}"
 mkdir -p "$LOG_DIR"
 STAMP="$(date +%Y-%m-%d_%H%M)"
 if ! [ -x "$PYTHON_BIN" ] && ! command -v "$PYTHON_BIN" >/dev/null 2>&1; then

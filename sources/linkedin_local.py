@@ -33,6 +33,8 @@ from .schema import (
     normalize_space,
 )
 from .local_search import query_stat
+from .linkedin_transport import LinkedInTransport, RequestDeferred
+from recovery_policy import identity
 
 GUEST_SEARCH_URL = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
 GUEST_DETAIL_URL = "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{job_id}"
@@ -43,9 +45,7 @@ DEFAULT_KEYWORDS = [query for _group, query, _maximum, _minimum in SEARCH_SPECS]
 EXPERIENCE_LEVEL_FILTER = "2,3"
 PAGE_SIZE = 10
 REQUEST_TIMEOUT = 25
-POLITE_SLEEP_SECONDS = 2.5
 DETAIL_CACHE_DAYS = 14
-DETAIL_SLEEP_SECONDS = 1.2
 DETAIL_RETRY_HOURS = 24
 SEARCH_PAGE_LIMIT = 8
 
@@ -70,6 +70,8 @@ def _check_blocked(resp: requests.Response) -> None:
         raise SourceUnavailable(f"blocked with HTTP {resp.status_code}")
     if resp.status_code == 999:  # LinkedIn's anti-bot status
         raise SourceUnavailable("blocked with HTTP 999 (LinkedIn anti-bot)")
+    if 300 <= resp.status_code < 400:
+        raise SourceUnavailable(f"unexpected redirect HTTP {resp.status_code}")
     if resp.status_code >= 400:
         raise SourceUnavailable(f"HTTP {resp.status_code}")
     lowered = resp.text[:2000].lower()
@@ -111,22 +113,24 @@ def _parse_cards(html: str) -> List[Dict[str, str]]:
 
 
 def targeted_search(company: str, title: str, location: str,
-                    session: requests.Session | None = None) -> tuple[Dict[str, str] | None, bool]:
+                    session: requests.Session | None = None, *,
+                    transport: LinkedInTransport | None = None) -> tuple[Dict[str, str] | None, bool]:
     """One local-only guest search; accept only one company/title/location match."""
     from coverage_reconcile import title_location_matches
     from .schema import normalize_company_key
 
     session = session or _make_session()
-    time.sleep(POLITE_SLEEP_SECONDS)
+    transport = transport or LinkedInTransport()
+    query = f'"{title}" "{company}" "{location}"'
     try:
-        response = session.get(GUEST_SEARCH_URL, params={
-            "keywords": f'"{title}" "{company}" "{location}"', "location": location or "United States",
+        response = transport.get(session, GUEST_SEARCH_URL, endpoint="search", query=query, page=0, params={
+            "keywords": query, "location": location or "United States",
             "geoId": US_GEO_ID, "start": 0,
         }, timeout=REQUEST_TIMEOUT)
         _check_blocked(response)
     except SourceUnavailable as exc:
         return None, "429" in str(exc)
-    except requests.RequestException:
+    except (requests.RequestException, RequestDeferred):
         return None, False
     matches = title_location_matches({"title": title, "location": location}, [
         row for row in _parse_cards(response.text)
@@ -182,30 +186,6 @@ def _parse_detail(html: str) -> Dict[str, str]:
     }
 
 
-def _scrapling_fetch_html(url: str) -> tuple[str, int | None, str]:
-    """Return body, status, and error; a missing status means no request occurred."""
-    try:
-        from scrapling.fetchers import Fetcher
-    except ImportError:
-        return "", None, "Scrapling is not installed"
-    try:
-        response = Fetcher.get(
-            url,
-            impersonate="chrome",
-            stealthy_headers=True,
-            retries=0,
-            timeout=REQUEST_TIMEOUT,
-        )
-    except Exception:  # noqa: BLE001 - optional fallback must not fail collection
-        return "", 0, "scrapling_fetch_failed"
-    status = int(getattr(response, "status", 0) or 0)
-    if status != 200:
-        return "", status, f"scrapling_http_{status}"
-    body = getattr(response, "body", b"")
-    html = body.decode("utf-8", errors="replace") if isinstance(body, bytes) else str(body or "")
-    return html, status, ""
-
-
 def _fresh_cached_detail(previous: Dict[str, Any], row: Dict[str, Any], now: datetime, min_description_chars: int = 1) -> bool:
     if previous.get("jd_tentative"):
         return False
@@ -236,6 +216,7 @@ def enrich_details(
     probe: bool = False,
     budget: object | None = None,
     cache_only: bool = False,
+    transport: LinkedInTransport | None = None,
 ) -> Dict[str, Any]:
     """Hydrate every unresolved LinkedIn row with the logged-out full JD.
 
@@ -245,12 +226,12 @@ def enrich_details(
 
     ``allow_requests=False`` serves a rate-limited run: cached details only.
     ``cache_only=True`` reuses those details without annotating pending cards.
-    Each eligible job gets one transport attempt; a later retry may use
-    Scrapling after an ordinary non-429 HTTP failure. During ``cooldown``,
+    Each eligible job gets one ordinary HTTP attempt. During ``cooldown``,
     unresolved cards are intentionally deferred; ``probe`` permits one fresh
     HTTP attempt after the pause even if that job's retry timer is still active.
     """
     session = session or _make_session()
+    transport = transport or LinkedInTransport()
     now = datetime.now(timezone.utc)
     previous_by_id = {
         str(job.get("job_id") or ""): job
@@ -359,75 +340,48 @@ def enrich_details(
             stats["budget_exhausted"] = True
             stats["budget_deferred"] = len(pending) - index
             break
+        if not transport.available("detail", probe=probe):
+            stats["budget_exhausted"] = True
+            stats["budget_deferred"] = len(pending) - index
+            stats["transport_stop_reason"] = transport.stop_reason
+            break
         if budget is not None and not budget.claim(row):
             stats["budget_exhausted"] = True
             stats["budget_deferred"] = len(pending) - index
             break
-        prior = previous_by_id.get(str(row.get("job_id") or "")) or {}
-        prior_reason = str(prior.get("enrichment_failure_reason") or "")
-        use_scrapling = not probe and prior_reason.startswith("linkedin_http_") and prior_reason not in {
-            "linkedin_http_429", "linkedin_http_network_error",
-        }
-        time.sleep(DETAIL_SLEEP_SECONDS)
         url = GUEST_DETAIL_URL.format(job_id=row["job_id"])
-        if use_scrapling:
-            html, status, error = _scrapling_fetch_html(url)
-            if status is None:
-                stats["scrapling_error"] = error
-                row["enrichment_status"] = "unresolved"
-                row["enrichment_failure_reason"] = "scrapling_unavailable"
-                break
-            stats["requests"] += 1
-            stats["scrapling_requests"] += 1
+        stats["requests"] += 1
+        if (previous_by_id.get(str(row.get("job_id") or "")) or {}).get("linkedin_detail_attempted_at"):
             stats["retry_attempts"] += 1
-            row["linkedin_detail_attempted_at"] = now.isoformat()
-            if status:
-                stats["responses"] += 1
-                counts = stats["http_status_counts"]
-                counts[str(status)] = counts.get(str(status), 0) + 1
-            if status == 429:
-                stats["blocked"] = "blocked with HTTP 429"
+        row["linkedin_detail_attempted_at"] = now.isoformat()
+        try:
+            response = transport.get(session, url, endpoint="detail", probe=probe,
+                                     query=str(row.get("title") or ""), timeout=REQUEST_TIMEOUT)
+        except requests.RequestException:
+            stats["failed"] += 1
+            row["enrichment_status"] = "unresolved"
+            row["enrichment_failure_reason"] = "linkedin_http_network_error"
+            continue
+        stats["responses"] += 1
+        counts = stats["http_status_counts"]
+        code = str(response.status_code)
+        counts[code] = counts.get(code, 0) + 1
+        try:
+            _check_blocked(response)
+        except SourceUnavailable as exc:
+            row["enrichment_status"] = "unresolved"
+            row["enrichment_failure_reason"] = f"linkedin_http_{response.status_code}"
+            if response.status_code == 429:
                 stats["rate_limited"] = True
-                row["enrichment_status"] = "unresolved"
-                row["enrichment_failure_reason"] = "scrapling_http_429"
+                stats["rate_limit_event"] = transport.rate_limits[-1]
+            if response.status_code in (401, 403, 429, 999) or response.status_code < 400:
+                stats["blocked"] = str(exc)
                 break
-            if not html:
-                stats["failed"] += 1
-                row["enrichment_status"] = "unresolved"
-                row["enrichment_failure_reason"] = error or "scrapling_fetch_failed"
-                continue
-            stats["successful_responses"] += 1
-            detail = _parse_detail(html)
-            method = "scrapling_fetcher"
-        else:
-            stats["requests"] += 1
-            row["linkedin_detail_attempted_at"] = now.isoformat()
-            try:
-                response = session.get(url, timeout=REQUEST_TIMEOUT)
-            except requests.RequestException:
-                stats["failed"] += 1
-                row["enrichment_status"] = "unresolved"
-                row["enrichment_failure_reason"] = "linkedin_http_network_error"
-                continue
-            stats["responses"] += 1
-            counts = stats["http_status_counts"]
-            code = str(response.status_code)
-            counts[code] = counts.get(code, 0) + 1
-            try:
-                _check_blocked(response)
-            except SourceUnavailable as exc:
-                row["enrichment_status"] = "unresolved"
-                row["enrichment_failure_reason"] = f"linkedin_http_{response.status_code}"
-                if response.status_code == 429:
-                    stats["rate_limited"] = True
-                if response.status_code in (401, 403, 429, 999) or response.status_code < 400:
-                    stats["blocked"] = str(exc)
-                    break
-                stats["failed"] += 1
-                continue
-            stats["successful_responses"] += 1
-            detail = _parse_detail(response.text)
-            method = "linkedin_http"
+            stats["failed"] += 1
+            continue
+        stats["successful_responses"] += 1
+        detail = _parse_detail(response.text)
+        method = "linkedin_http"
 
         row["linkedin_detail_fetched_at"] = now.isoformat()
         if len(str(detail["description"] or "").strip()) >= min_description_chars:
@@ -440,8 +394,6 @@ def enrich_details(
             row.pop("enrichment_failure_reason", None)
             stats["jds_resolved"] += 1
             stats["detail_jds_fetched"] += 1
-            if use_scrapling:
-                stats["scrapling_jds_resolved"] += 1
         else:
             row["enrichment_status"] = "unresolved"
             row["enrichment_failure_reason"] = f"{method}_no_jd"
@@ -474,9 +426,14 @@ def scrape(
     query_cursor: int = 0,
     page_limit: int = SEARCH_PAGE_LIMIT,
     profile: str = "github",
+    known_identities: set[str] | None = None,
+    transport: LinkedInTransport | None = None,
 ) -> Dict[str, Any]:
     """Return LinkedIn job rows. Raises SourceUnavailable on anti-bot/network."""
     session = session or _make_session()
+    transport = transport or LinkedInTransport()
+    known_identities = known_identities or set()
+    observed_identities: set[str] = set()
     specs = list(MAC_SEARCH_SPECS if profile == "mac" else SEARCH_SPECS)
     if profile == "mac":
         if query_cursor % 2:
@@ -497,6 +454,8 @@ def scrape(
         stat = query_stat(keyword, group, page_budget)
         started = time.monotonic()
         query_seen: set[str] = set()
+        low_new_pages = 0
+        stat.update(new_to_ledger=0, rediscovered=0, page_yields=[])
         for page in range(page_budget):
             if requests_made >= page_limit:
                 stat["stop_reason"] = "global_page_budget"
@@ -509,12 +468,13 @@ def scrape(
                 "f_E": EXPERIENCE_LEVEL_FILTER,
                 "start": page * PAGE_SIZE,
             }
-            # Space every request, including transitions after low-yield/empty pages.
-            if requests_made:
-                time.sleep(POLITE_SLEEP_SECONDS)
+            if not transport.available("search"):
+                stat["stop_reason"] = transport.stop_reason
+                break
             try:
                 requests_made += 1
-                resp = session.get(GUEST_SEARCH_URL, params=params, timeout=REQUEST_TIMEOUT)
+                resp = transport.get(session, GUEST_SEARCH_URL, endpoint="search", query=keyword,
+                                     page=page, params=params, timeout=REQUEST_TIMEOUT)
             except requests.RequestException as exc:
                 stat["stop_reason"] = "network_error"
                 stat["elapsed_seconds"] = round(time.monotonic() - started, 3)
@@ -537,6 +497,7 @@ def scrape(
                 return {
                     "status": "blocked", "reason": str(exc), "jobs": rows,
                     "query_stats": stats, "http_status": resp.status_code,
+                    "rate_limit_event": transport.rate_limits[-1] if resp.status_code == 429 else {},
                     "queries_completed": index, "queries_total": len(specs),
                     "requests": requests_made, "responses": responses, "pages_fetched": pages_fetched,
                 }
@@ -547,6 +508,15 @@ def scrape(
             if not page_rows:
                 stat["stop_reason"] = "empty_page"
                 break
+            new_ids = {identity(row) for row in page_rows} - known_identities - observed_identities
+            known_ids = {identity(row) for row in page_rows} & known_identities
+            observed_identities.update(identity(row) for row in page_rows)
+            new_count = len(new_ids)
+            stat["new_to_ledger"] += new_count
+            stat["rediscovered"] += len(known_ids)
+            stat["page_yields"].append({"page": page, "raw": len(page_rows),
+                                        "new_to_ledger": new_count, "known": len(known_ids)})
+            low_new_pages = low_new_pages + 1 if new_count <= 1 else 0
             added = 0
             for row in page_rows:
                 key = row.get("job_id") or row.get("source_url")
@@ -569,6 +539,9 @@ def scrape(
                 if key:
                     by_key[key] = row
                 added += 1
+            if low_new_pages >= 2 and page + 1 >= minimum_pages:
+                stat["stop_reason"] = "low_new_to_ledger_yield"
+                break
             if added <= 1 and page + 1 >= minimum_pages:
                 stat["stop_reason"] = "low_unique_yield"
                 break
