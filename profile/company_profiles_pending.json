@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-03T14:48:38.491119+00:00",
-  "count": 3009,
+  "generated_at": "2026-10-03T14:54:41.398256+00:00",
+  "count": 3013,
   "companies": [
     {
       "name": "1199SEIU Benefit and Pension Funds",
@@ -10137,17 +10137,20 @@
     },
     {
       "name": "DOW",
-      "aliases": [],
+      "aliases": [
+        "Dow"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "14ea6733b4f7c873f963f842",
         "454509e370f2d80468133e6f",
         "69ba29b6e64a9c3ab48bdfd3"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "DRB Homes",
@@ -12462,13 +12465,14 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "5bf3059c90677eadb37abd50",
         "5c34a5b8e55933153c850ac4",
         "8cf583f5c0de0d1c28fa4b96",
         "aceade2d7cbee29da299eeda",
         "b9320e04bf4d815a9f4495d4",
         "f2fa387ccb1a66cb4ece16d5"
       ],
-      "seen_count": 5
+      "seen_count": 6
     },
     {
       "name": "Fetcherr",
@@ -13948,7 +13952,10 @@
         "555f771b0b31d55c5234b265",
         "60900d3d622716271cd4b994",
         "8646d82ff3cd2c3efbd72730",
+        "88cac7aec68ac30bfe09e37e",
         "89b72926484df692e11d0854",
+        "8cf48814ee8fcb8d6317d133",
+        "afd6c3ac46f988996d6f19e8",
         "bb9852adabcae5515b80ec90",
         "c08a5fd08b67f07745861544",
         "de7f030fcfb7e5831ae247a1",
@@ -13956,7 +13963,7 @@
         "e772b97c16877ecc4d87cb09",
         "f62286bd98e5a11a5fd6cf33"
       ],
-      "seen_count": 13
+      "seen_count": 16
     },
     {
       "name": "GE",
@@ -14052,9 +14059,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "876dbfd6b4201a21f84aa6e4"
+        "876dbfd6b4201a21f84aa6e4",
+        "cbb76e1246029ce248f12554"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "General Dynamics Electric Boat",
@@ -18121,6 +18129,19 @@
       "seen_count": 1
     },
     {
+      "name": "InterDigital",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "b51bef03fb2e6402d123ca79"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "InterEx Group",
       "aliases": [],
       "size": "unknown",
@@ -19868,10 +19889,11 @@
         "1120a6abc2242b3a9e4b2b8e",
         "259bda3b78241234eb5e2359",
         "3ff7ac6674f329342310b025",
+        "65330af95f0017e7eeb95f0c",
         "a7184c789053cc5cf78f5391",
         "e39d5ad4f2fdd298f4948b80"
       ],
-      "seen_count": 6
+      "seen_count": 7
     },
     {
       "name": "Komline",
@@ -24161,6 +24183,19 @@
       "seen_count": 1
     },
     {
+      "name": "New York Mets",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "cbde6cf0372090e45dff1bba"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Newpage Digital Healthcare solutions",
       "aliases": [],
       "size": "unknown",
@@ -25563,9 +25598,10 @@
       "tags": [],
       "seen_job_keys": [
         "0bf44c79a3cc2b908a935263",
-        "6d9a9f0e3a5db525f7bff445"
+        "6d9a9f0e3a5db525f7bff445",
+        "de0e21a9e91ffb0bc259a3c2"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Otomeshan technology",
@@ -29678,7 +29714,9 @@
     },
     {
       "name": "Scribd, Inc.",
-      "aliases": [],
+      "aliases": [
+        "Scribd Inc."
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
@@ -29689,6 +29727,7 @@
         "1bcff1788da746caccbb07d2",
         "52c2f9855a9f3c4706ade5db",
         "90fd1577cc128aee592b367f",
+        "9af8f2b26600e7852c508d21",
         "9f72785d6499437be2a6638a",
         "c4545168babbedb00fc4f2cf",
         "ce797fde7c38cef3d3aed3d7",
@@ -29697,7 +29736,7 @@
         "fc8575ecd926e6780d81bc19",
         "ff0125227723f7de60cd0e8c"
       ],
-      "seen_count": 11
+      "seen_count": 12
     },
     {
       "name": "ScriptPro",
@@ -31789,6 +31828,19 @@
       "tags": [],
       "seen_job_keys": [
         "041f759768430e3a09eca628"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Strata Decision Technology",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "2cff986ae58d627bbb57d340"
       ],
       "seen_count": 1
     },
@@ -34958,9 +35010,10 @@
       "tags": [],
       "seen_job_keys": [
         "6372695dd7d896b340a0a7ec",
+        "7593de3b35b97bffe9cb25be",
         "eeca77692f18ab01679e1ad7"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Unify Technologies",
@@ -34986,17 +35039,20 @@
     },
     {
       "name": "Union Bank & Trust Co.",
-      "aliases": [],
+      "aliases": [
+        "Union Bank & Trust"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "5f98897330404bfb614ced22",
         "73bf2cfc5adac5b0fc52063c",
         "a6eee32a55dba50946a4eb42"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "UNIS",
@@ -37523,6 +37579,19 @@
       "tags": [],
       "seen_job_keys": [
         "dcd94ea06b1692d3e1888a0b"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Yugabyte",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "84016401aea64743c42915b7"
       ],
       "seen_count": 1
     },
