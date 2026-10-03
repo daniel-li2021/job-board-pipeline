@@ -2,6 +2,199 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-03T04:59:52.641026+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 2,
+      "cache_reused": 276,
+      "peer_reused": 0,
+      "same_content_reused": 8,
+      "non_material_change_reused": 0,
+      "new_or_changed": 3,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 1,
+        "prior_rule_result_now_eligible_for_llm": 2
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 927,
+      "requests": 2,
+      "input_tokens": 5851,
+      "cached_input_tokens": 0,
+      "output_tokens": 532,
+      "reasoning_tokens": 384,
+      "estimated_usd": 0.000851,
+      "latency_seconds": 8.695,
+      "latency_measured": true,
+      "effective_rpm": 13.8,
+      "effective_tpm": 44046.0,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 2,
+      "funnel": {
+        "after_dedup": 6350,
+        "after_company": 6087,
+        "after_hard_filter": 5604,
+        "after_prefilter": 1600,
+        "official_duplicates_suppressed": 395,
+        "retry_only_carried": 0,
+        "dropped": 4660
+      },
+      "output": {
+        "tier_a": 20,
+        "tier_b": 124,
+        "ab_before_cap": 144,
+        "shown": 144,
+        "new_jobs": 12,
+        "new_jobs_added": 0,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 2,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 10,
+            "added": 0
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2008,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 61,
+          "identity_needed": 53,
+          "identities_resolved": 53,
+          "cache_reused": 2,
+          "http_requests": 51,
+          "remaining_no_jd": 2008,
+          "failure_reasons": {
+            "no_direct_or_official_url": 8
+          }
+        },
+        "remaining_no_jd": 1978,
+        "failure_reasons": {
+          "no_enrichment_path": 1464,
+          "official_detail_deferred": 49,
+          "linkedin_rate_limited": 78,
+          "no_direct_or_official_url": 8,
+          "linkedin_http_429": 2,
+          "glassdoor_detail_http_403_static_card_only": 377
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4474731508",
+              "company": "Rippling",
+              "title": "Software Engineer II, Backend - Platform Team"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.526,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2751,
+            "cached_input_tokens": 0,
+            "output_tokens": 242,
+            "reasoning_tokens": 169,
+            "estimated_usd": 0.000396
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4474731508",
+              "match_score": 77.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend services and APIs",
+                "Production deployment and reliability"
+              ],
+              "main_gaps": [
+                "2+ years professional backend experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4475073770",
+              "company": "Factory",
+              "title": "Software Engineer, AI"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 5.169,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3100,
+            "cached_input_tokens": 0,
+            "output_tokens": 290,
+            "reasoning_tokens": 215,
+            "estimated_usd": 0.000455
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4475073770",
+              "match_score": 77.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Agentic LLM systems",
+                "Production AI deployment"
+              ],
+              "main_gaps": [
+                "2+ years post-degree AI/ML"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-03T01:10:59.561550+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -30045,218 +30238,6 @@
               "main_gaps": [
                 "IBM z/OS experience",
                 "COBOL and mainframe systems"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-09-28T22:01:36.997593+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 4,
-      "cache_reused": 173,
-      "peer_reused": 0,
-      "same_content_reused": 1,
-      "non_material_change_reused": 0,
-      "new_or_changed": 4,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 4
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 784,
-      "requests": 1,
-      "input_tokens": 9311,
-      "cached_input_tokens": 0,
-      "output_tokens": 1430,
-      "reasoning_tokens": 999,
-      "estimated_usd": 0.001646,
-      "latency_seconds": 12.803,
-      "latency_measured": true,
-      "effective_rpm": 4.69,
-      "effective_tpm": 50336.64,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 1,
-      "primary_batches_total": 1,
-      "batches_attempted": 1,
-      "batches_succeeded": 1,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 4,
-      "funnel": {
-        "after_dedup": 5438,
-        "after_company": 5219,
-        "after_hard_filter": 4773,
-        "after_prefilter": 1348,
-        "official_duplicates_suppressed": 387,
-        "retry_only_carried": 0,
-        "dropped": 4024
-      },
-      "output": {
-        "tier_a": 21,
-        "tier_b": 118,
-        "ab_before_cap": 139,
-        "shown": 139,
-        "new_jobs": 33,
-        "new_jobs_added": 4,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 12,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 21,
-            "added": 4
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 1785,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 69,
-          "identity_needed": 48,
-          "identities_resolved": 48,
-          "cache_reused": 3,
-          "http_requests": 48,
-          "scrapling_requests": 3,
-          "jds_resolved": 13,
-          "direct_http_resolved": 13,
-          "remaining_no_jd": 1785,
-          "failure_reasons": {
-            "no_direct_or_official_url": 18,
-            "structured_jd_not_found": 3
-          }
-        },
-        "remaining_no_jd": 1763,
-        "failure_reasons": {
-          "no_enrichment_path": 1311,
-          "no_direct_or_official_url": 18,
-          "official_detail_deferred": 46,
-          "linkedin_http_429": 2,
-          "linkedin_rate_limited": 8,
-          "structured_jd_not_found": 1,
-          "glassdoor_detail_http_403_static_card_only": 377
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5436293008",
-              "company": "Anthropic",
-              "title": "Software Engineer, Account Abuse (Machine Learning)"
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/discord/jobs/8846732002",
-              "company": "Discord",
-              "title": "Software Engineer, Consumer Revenue"
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/doordashusa/jobs/8236946",
-              "company": "DoorDash",
-              "title": "Software Engineer, Full Stack - Experimentation Platform"
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5397654008",
-              "company": "Anthropic",
-              "title": "Product Designer, Claude Developer Platform"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 12.803,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 4,
-            "input_tokens": 9311,
-            "cached_input_tokens": 0,
-            "output_tokens": 1430,
-            "reasoning_tokens": 999,
-            "estimated_usd": 0.001646
-          },
-          "decisions": [
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5436293008",
-              "match_score": 64.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python and Spark data pipelines",
-                "Model evaluation experience"
-              ],
-              "main_gaps": [
-                "Production classical ML deployment",
-                "Point-in-time data correctness"
-              ]
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/discord/jobs/8846732002",
-              "match_score": 67.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "React and TypeScript product work",
-                "End-to-end API/UI ownership"
-              ],
-              "main_gaps": [
-                "3+ years engineering experience",
-                "React Native proficiency"
-              ]
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/doordashusa/jobs/8236946",
-              "match_score": 76.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack platform development",
-                "React, APIs, and testing"
-              ],
-              "main_gaps": [
-                "2+ years industry experience",
-                "AI coding tools lifecycle"
-              ]
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5397654008",
-              "match_score": 12.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "React product interfaces"
-              ],
-              "main_gaps": [
-                "Design portfolio",
-                "Figma proficiency"
               ]
             }
           ]

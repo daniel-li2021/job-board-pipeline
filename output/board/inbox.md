@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-02 18:10 PDT
-- Snapshot (UTC): 2026-10-03T01:10:59.561550+00:00
-- Jobs: 54 (Tier A/B only)
-- Last 24 hours: 39
-- Last 3 days: 54
+- Updated (PT): 2026-10-02 21:59 PDT
+- Snapshot (UTC): 2026-10-03T04:59:52.641026+00:00
+- Jobs: 52 (Tier A/B only)
+- Last 24 hours: 37
+- Last 3 days: 52
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -18,17 +18,15 @@ The 7-day dump is `latest.md`.
 | A | 88 | indeed | T.H.E LOGISTICS | Full Stack Engineer | Doral, FL, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=b6b85c9a49a65892) |
 | A | 88 | indeed | First Resonance | Forward Deployed Engineer (Ohio) | Columbus, OH, US | 2026-10-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=b4859e48ad955da2) |
 | B | 93 | indeed | Alchimetis | AI Engineer Intern | Remote, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a521ac61e0bb8634) |
+| B | 92 | linkedin | Boeing | Java Software Engineer (Associate/Experienced) | Herndon, VA | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-software-engineer-associate-experienced-at-boeing-4473159456) |
 | B | 87 | indeed | OPEN TECHNOLOGY SOLUTIONS | Associate Data Engineer | Englewood, CO, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2d7932aad68415bb) |
 | B | 85 | indeed | BANKPLUS | Automation Engineer - Ridgeland, MS | Ridgeland, MS, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e391988e2d81564f) |
 | B | 85 | indeed | Premera Blue Cross | Software Development Engineer II | Mountlake Terrace, WA, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a900a2e0b4c5726d) |
 | B | 86 | indeed | Realign | Full Stack Developer | PA, US | 2026-10-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6dbaf704b43492c4) |
 | B | 87 | indeed | SCG America Group Inc. | Software Engineer Intern - Property Management Data & AI | Remote, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=bdf7ee4dd283eeb2) |
-| B | 88 | linkedin | Boeing | Java Software Engineer (Associate/Experienced) | Herndon, VA | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-software-engineer-associate-experienced-at-boeing-4473159456) |
 | B | 86 | indeed | Crunchyroll | Forward Deployed Engineer | Los Angeles, CA, US | 2026-10-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d5f7a3a549c6c98f) |
 | B | 84 | indeed | Accuray | Software Engineer | Madison, WI, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=771031104ce2c03c) |
 | B | 84 | indeed | Hanes Industries Incorporated | Software Developer | Winston-Salem, NC, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=23e743dea2fe9193) |
-| B | 80 | linkedin | Rippling | Software Engineer II, Backend - Platform Team | New York, NY | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-platform-team-at-rippling-4474731508) |
-| B | 80 | linkedin | Rippling | Software Engineer II, Backend - Platform Team | Seattle, WA | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-platform-team-at-rippling-4474742062) |
 | B | 80 | linkedin | iManage | Applied AI Engineer (New or Recent Grad) | Chicago, IL | 2026-09-30 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/applied-ai-engineer-new-or-recent-grad-at-imanage-4472369136) |
 | B | 84 | linkedin | Torc Robotics | Machine Learning Engineer II - Learned Planning (Reinforcement Learnin | Ann Arbor, MI | 2026-09-30 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-ii-learned-planning-reinforcement-learning-at-torc-robotics-4471977685) |
 | B | 80 | linkedin | Scribd, Inc. | Software Engineer II (Fullstack), Growth Platform | Denver, CO | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-growth-platform-at-scribd-inc-4472847721) |
