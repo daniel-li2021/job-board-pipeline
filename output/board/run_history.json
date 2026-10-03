@@ -2,6 +2,217 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-03T19:02:39.827072+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 4,
+      "cache_reused": 204,
+      "peer_reused": 0,
+      "same_content_reused": 7,
+      "non_material_change_reused": 0,
+      "new_or_changed": 4,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 1,
+        "prior_rule_result_now_eligible_for_llm": 3
+      },
+      "rescored_within_24h": 3,
+      "fallback_count": 0,
+      "rule_count": 956,
+      "requests": 1,
+      "input_tokens": 5995,
+      "cached_input_tokens": 0,
+      "output_tokens": 1133,
+      "reasoning_tokens": 845,
+      "estimated_usd": 0.001166,
+      "latency_seconds": 15.337,
+      "latency_measured": true,
+      "effective_rpm": 3.91,
+      "effective_tpm": 27885.51,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 4,
+      "funnel": {
+        "after_dedup": 6448,
+        "after_company": 6183,
+        "after_hard_filter": 5698,
+        "after_prefilter": 1574,
+        "official_duplicates_suppressed": 410,
+        "retry_only_carried": 0,
+        "dropped": 4784
+      },
+      "output": {
+        "tier_a": 23,
+        "tier_b": 109,
+        "ab_before_cap": 132,
+        "shown": 132,
+        "new_jobs": 14,
+        "new_jobs_added": 0,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 0,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 14,
+            "added": 0
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2044,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 65,
+          "identity_needed": 54,
+          "identities_resolved": 54,
+          "cache_reused": 1,
+          "http_requests": 53,
+          "jds_resolved": 14,
+          "direct_http_resolved": 14,
+          "remaining_no_jd": 2044,
+          "failure_reasons": {
+            "no_direct_or_official_url": 11
+          }
+        },
+        "remaining_no_jd": 2013,
+        "failure_reasons": {
+          "no_enrichment_path": 1498,
+          "no_direct_or_official_url": 11,
+          "official_detail_deferred": 48,
+          "linkedin_rate_limited": 77,
+          "linkedin_http_429": 2,
+          "glassdoor_detail_http_403_static_card_only": 377
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4475318577",
+              "company": "Compass",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "id::indeed::in-4f4f85b06b9b2c27",
+              "company": "Farmers Insurance Group",
+              "title": "FBS Fullstack Java/Angular Engineer"
+            },
+            {
+              "key": "id::indeed::in-834f8fbe58be623e",
+              "company": "Fidelity Investments",
+              "title": "Full Stack Engineer"
+            },
+            {
+              "key": "id::indeed::in-7636a69c6913a419",
+              "company": "Madison Area Technical College",
+              "title": "Infrastructure Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 15.337,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 4,
+            "input_tokens": 5995,
+            "cached_input_tokens": 0,
+            "output_tokens": 1133,
+            "reasoning_tokens": 845,
+            "estimated_usd": 0.001166
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4475318577",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud microservices delivery",
+                "Production backend services"
+              ],
+              "main_gaps": [
+                "2+ years engineering experience",
+                "Java/Go production experience"
+              ]
+            },
+            {
+              "key": "id::indeed::in-4f4f85b06b9b2c27",
+              "match_score": 42.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java and Angular familiarity",
+                "Full-stack delivery experience"
+              ],
+              "main_gaps": [
+                "7+ years full-stack experience",
+                "Technical team leadership"
+              ]
+            },
+            {
+              "key": "id::indeed::in-834f8fbe58be623e",
+              "match_score": 57.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application delivery",
+                "Cloud and container experience"
+              ],
+              "main_gaps": [
+                "5+ years full-stack experience",
+                "Senior-level experience"
+              ]
+            },
+            {
+              "key": "id::indeed::in-7636a69c6913a419",
+              "match_score": 34.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Infrastructure reliability experience",
+                "Technical documentation"
+              ],
+              "main_gaps": [
+                "Enterprise desktop engineering",
+                "Endpoint management and security"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-03T15:21:18.132641+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -29132,161 +29343,6 @@
               "main_gaps": [
                 "Enterprise DevSecOps architecture",
                 "10+ years experience"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-09-29T05:15:23.273797+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 1,
-      "cache_reused": 258,
-      "peer_reused": 0,
-      "same_content_reused": 1,
-      "non_material_change_reused": 0,
-      "new_or_changed": 1,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 785,
-      "requests": 1,
-      "input_tokens": 3773,
-      "cached_input_tokens": 0,
-      "output_tokens": 251,
-      "reasoning_tokens": 161,
-      "estimated_usd": 0.000503,
-      "latency_seconds": 2.907,
-      "latency_measured": true,
-      "effective_rpm": 20.64,
-      "effective_tpm": 83054.7,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 1,
-      "primary_batches_total": 1,
-      "batches_attempted": 1,
-      "batches_succeeded": 1,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 1,
-      "funnel": {
-        "after_dedup": 5875,
-        "after_company": 5619,
-        "after_hard_filter": 5171,
-        "after_prefilter": 1432,
-        "official_duplicates_suppressed": 388,
-        "retry_only_carried": 0,
-        "dropped": 4356
-      },
-      "output": {
-        "tier_a": 31,
-        "tier_b": 121,
-        "ab_before_cap": 152,
-        "shown": 152,
-        "new_jobs": 20,
-        "new_jobs_added": 2,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 3,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 17,
-            "added": 2
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 1802,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 91,
-          "http_requests": 70,
-          "scrapling_requests": 2,
-          "identity_needed": 68,
-          "identities_resolved": 68,
-          "jds_resolved": 13,
-          "direct_http_resolved": 13,
-          "remaining_no_jd": 1802,
-          "failure_reasons": {
-            "no_direct_or_official_url": 21,
-            "structured_jd_not_found": 2
-          }
-        },
-        "remaining_no_jd": 1779,
-        "failure_reasons": {
-          "no_enrichment_path": 1324,
-          "no_direct_or_official_url": 21,
-          "official_detail_deferred": 46,
-          "linkedin_http_429": 2,
-          "linkedin_rate_limited": 8,
-          "structured_jd_not_found": 1,
-          "glassdoor_detail_http_403_static_card_only": 377
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5437172008",
-              "company": "Anthropic",
-              "title": "Applied AI Engineer, Beneficial Deployments (Life Sciences)"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 2.907,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 3773,
-            "cached_input_tokens": 0,
-            "output_tokens": 251,
-            "reasoning_tokens": 161,
-            "estimated_usd": 0.000503
-          },
-          "decisions": [
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5437172008",
-              "match_score": 68.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production LLM agents",
-                "MCP and evaluation tooling"
-              ],
-              "main_gaps": [
-                "4+ years shipping production systems",
-                "Life sciences research experience"
               ]
             }
           ]
