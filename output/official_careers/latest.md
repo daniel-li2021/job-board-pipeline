@@ -1,7 +1,7 @@
-# Big Tech official careers — 7-day view — 2026-10-03_1445
+# Big Tech official careers — 7-day view — 2026-10-03_2345
 
-- Updated (PT): 2026-10-03 07:48 PDT
-- Snapshot (UTC): 2026-10-03T14:48:00.576881+00:00
+- Updated (PT): 2026-10-03 16:48 PDT
+- Snapshot (UTC): 2026-10-03T23:48:06.373235+00:00
 - Last 24 hours: 0
 - Last 3 days: 37
 
@@ -9,13 +9,13 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 
 ## Run stats
 
-- Scraped companies: {'Walmart Global Tech': 405, 'Amazon': 729, 'Apple': 309, 'F5': 4, 'CVS Health': 134, 'Qualcomm': 141, 'JPMorgan Chase': 545, 'Cisco': 227, 'Meta': 671, 'Capital One': 270, 'Google': 296, 'eBay': 54, 'Microsoft': 212, 'Oracle': 488, 'Visa': 108, 'Salesforce': 172, 'Uber': 154, 'Intel': 146, 'NVIDIA': 471, 'Adobe': 181, 'TikTok': 707, 'DoorDash': 457, 'Snap': 100, 'Pinterest': 128, 'Snowflake': 252, 'ServiceNow': 398, 'Bloomberg': 31, 'Cloudflare': 401, 'Stripe': 415, 'Coinbase': 193, 'Robinhood': 147, 'Figma': 107, 'GitLab': 121, 'Discord': 51, 'Asana': 74, 'Brex': 275, 'Samsara': 204, 'Lyft': 99, 'Spotify': 67, 'Ramp': 139, 'Notion': 82, 'Linear': 28, 'Cohere': 108, 'HPE': 259, 'Disney': 121, 'AMD': 493, 'Zoom': 46, 'Pure Storage': 217, 'Databricks': 498, 'Roblox': 236, 'Airbnb': 94, 'Anthropic': 512, 'AppLovin': 30, 'ByteDance': 446, 'Chime': 66, 'Dell': 89, 'Dropbox': 32, 'Expedia Group': 48, 'HubSpot': 29, 'Instacart': 115, 'MathWorks': 34, 'MongoDB': 248, 'Morgan Stanley': 117, 'NetApp': 87, 'Netflix': 57, 'OpenAI': 676, 'Palantir': 246, 'PayPal': 47, 'Reddit': 134, 'Red Hat': 38, 'Roku': 191, 'Block / Square': 211, 'Two Sigma': 40, 'Verkada': 247, 'WeRide': 13, 'Workday': 113, 'Zillow': 35, 'Zscaler': 218, 'Chewy': 1, 'Duolingo': 54, 'Equinix': 60, 'IXL Learning': 104, 'Wells Fargo': 72, 'Yahoo': 64, 'Ansys': 22, 'Flex': 156, 'IQVIA': 27, 'Johnson & Johnson': 207, 'Nasdaq': 27, 'PointClickCare': 68, 'Stryker': 133, 'TransUnion': 32, 'Travelers': 95, 'Verizon': 16, 'Yext': 11}
-- Funnel: after dedup 17484 -> after company filter 17484 -> after hard filter 14260 -> after role+seniority prefilter 3030 | dropped 14454
-- LLM usage: scored 12 / API requests 3 / cache reused 443 (cross-pipeline 1) / rule fallback 2575
-- LLM cache causes: new 13 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 5 / rescored <24h 0
-- LLM cost: model gpt-6-luna / API requests 3 / jobs scored 12 / tokens input 19606 (cached 0) / output 2868 (reasoning 1847) / estimated cost $0.0034
-- New jobs discovered this run: 70
-- Output: Tier A 12 / Tier B 38 / shown 50
+- Scraped companies: {'Walmart Global Tech': 407, 'Amazon': 730, 'Apple': 309, 'F5': 4, 'CVS Health': 134, 'JPMorgan Chase': 545, 'Cisco': 225, 'Meta': 669, 'Qualcomm': 141, 'Capital One': 270, 'Google': 296, 'eBay': 54, 'Microsoft': 213, 'Oracle': 489, 'Visa': 108, 'Salesforce': 171, 'Uber': 155, 'Intel': 144, 'NVIDIA': 471, 'Adobe': 181, 'TikTok': 707, 'DoorDash': 457, 'Snap': 100, 'Pinterest': 128, 'Snowflake': 253, 'ServiceNow': 399, 'Bloomberg': 31, 'Cloudflare': 401, 'Stripe': 415, 'Coinbase': 193, 'Robinhood': 147, 'Figma': 107, 'GitLab': 121, 'Discord': 51, 'Asana': 74, 'Brex': 275, 'Samsara': 204, 'Lyft': 99, 'Spotify': 67, 'Ramp': 139, 'Notion': 82, 'Linear': 28, 'Cohere': 108, 'HPE': 260, 'Disney': 121, 'AMD': 492, 'Zoom': 46, 'Pure Storage': 217, 'Databricks': 498, 'Roblox': 236, 'Airbnb': 94, 'Anthropic': 511, 'AppLovin': 30, 'ByteDance': 444, 'Chime': 66, 'Dell': 89, 'Dropbox': 32, 'Expedia Group': 49, 'HubSpot': 29, 'Instacart': 115, 'MathWorks': 34, 'MongoDB': 248, 'Morgan Stanley': 117, 'NetApp': 87, 'Netflix': 57, 'OpenAI': 676, 'Palantir': 246, 'PayPal': 47, 'Reddit': 134, 'Red Hat': 38, 'Roku': 191, 'Block / Square': 211, 'Two Sigma': 40, 'Verkada': 247, 'WeRide': 13, 'Workday': 113, 'Zillow': 35, 'Zscaler': 218, 'Chewy': 1, 'Duolingo': 52, 'Equinix': 60, 'IXL Learning': 104, 'Wells Fargo': 73, 'Yahoo': 64, 'Ansys': 22, 'Flex': 156, 'IQVIA': 27, 'Johnson & Johnson': 207, 'Nasdaq': 27, 'PointClickCare': 68, 'Stryker': 133, 'TransUnion': 32, 'Travelers': 95, 'Verizon': 16, 'Yext': 11}
+- Funnel: after dedup 17482 -> after company filter 17482 -> after hard filter 14260 -> after role+seniority prefilter 3034 | dropped 14448
+- LLM usage: scored 6 / API requests 3 / cache reused 417 (cross-pipeline 1) / rule fallback 2611
+- LLM cache causes: new 5 / material JD 0 / matching context 0 / prior rule now eligible 1 / non-material reused 0 / same-content reused 5 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 3 / jobs scored 6 / tokens input 13048 (cached 0) / output 1275 (reasoning 817) / estimated cost $0.0019
+- New jobs discovered this run: 14
+- Output: Tier A 12 / Tier B 37 / shown 49
 
 ## Tier A - apply now / referral (12)
 
@@ -34,7 +34,7 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 90 | cached_llm | official | Apple | Machine Learning Engineer - Apple News | Cupertino, United States of America | 2026-09-28 | 3to7d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200686238/machine-learning-engineer-apple-news) |
 | 89 | cached_llm | official | Disney | Product Software Engineer I | New York, New York / San Francisco, California / Seattle, Washington | 2026-9-30 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://www.disneycareers.com/en/job/new-york/product-software-engineer-i/391/99357341552) |
 
-## Tier B - worth applying (38)
+## Tier B - worth applying (37)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -74,5 +74,4 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 81 | cached_llm | official | Apple | Software Development Engineer - MultiCloud | Austin, United States of America | 2026-09-29 | 3to7d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200686299/software-development-engineer-multicloud) |
 | 77 | cached_llm | official | Google | Cloud Data Engineer I, Professional Services, Google Cloud | Mountain View, CA, USA | 2026-09-30 | 3to7d | high | swe | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/92258849825661638-cloud-data-engineer-i-professional-services-google-cloud) |
 | 78 | cached_llm | official | Verizon | Junior Data Security Engineer | Alpharetta, Georgia | 2026-09-28 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://mycareer.verizon.com/jobs/r-1101423/junior-data-security-engineer/) |
-| 92 | cached_llm | official | Roblox | Software Engineer, GenAI Platform | San Mateo, CA, United States | 2026-09-25 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8171283?gh_jid=8171283) |
 | 85 | cached_llm | official | Amazon | Associate Solutions Architect, AGS-Tech, Early Career - 2027 | Seattle, Washington, USA | 2026-09-23 | gt7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10558472/associate-solutions-architect-ags-tech-early-career-2027) |
