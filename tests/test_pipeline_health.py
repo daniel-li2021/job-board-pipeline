@@ -7,6 +7,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import patch
 
+from bs4 import BeautifulSoup
+
 import pipeline_health
 import board_pipeline
 
@@ -113,7 +115,19 @@ class PipelineHealthTests(unittest.TestCase):
         self.assertEqual(4, page.count('<article class="run-card">'))
         for heading in ("Latest runs", "Today", "Needs attention", "Execution", "Technical details"):
             self.assertIn(heading, page)
-        self.assertIn("<th>Consecutive failures</th>", page)
+        self.assertIn('<th class="num">Consecutive failures</th>', page)
+        today_table = BeautifulSoup(page, "html.parser").find("h2", string="Today").find_next("table")
+        headers = today_table.select("thead th")
+        self.assertEqual(9, len(headers))
+        self.assertEqual([2, 4, 5, 6], [i for i, h in enumerate(headers) if "num" in h.get("class", [])])
+        for name, row in zip(("board", "official", "syncareer", "linkedin", "indeed", "glassdoor"),
+                             today_table.select("tbody tr")):
+            cells = row.find_all(["th", "td"], recursive=False)
+            self.assertEqual(len(headers), len(cells))
+            self.assertEqual(["num" in h.get("class", []) for h in headers],
+                             ["num" in c.get("class", []) for c in cells])
+            self.assertEqual(str(report["today"][name]["runs"]), cells[4].get_text())
+            self.assertEqual(str(report["today"][name]["failed_runs"]), cells[5].get_text())
         self.assertNotIn("<h2>Components</h2>", page)
         self.assertNotIn("<h2>Coverage</h2>", page)
         self.assertIn("<th>New JDs this run</th>", page)

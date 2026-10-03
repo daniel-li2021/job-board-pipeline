@@ -1360,8 +1360,8 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
             f'<td>{status_html}</td>'
             f'<td class="num">{new_text}</td>'
             f'<td>{esc(result)}</td>'
-            f'<td class="num">{esc(item["runs"])}</td>'
-            f'<td class="num">{esc(item["failed_runs"])}</td>'
+            f'<td class="num">{esc(str(item["runs"]))}</td>'
+            f'<td class="num">{esc(str(item["failed_runs"]))}</td>'
             f'<td class="num">{number(item["consecutive_failures"])}</td>'
             f'<td>{esc(_display_time(item["latest_run"])) if item["latest_run"] else "—"}</td>'
             f'<td>{esc(item.get("issue")) if item.get("issue") else "—"}</td></tr>'
@@ -1421,7 +1421,7 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
     .run-card h3{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.run-card dl{margin:0}.run-line{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px;padding:8px 0;border-top:1px solid #eef2ee}.run-note{margin-top:5px}.execution-note{white-space:normal;text-align:right;margin-top:5px}
     dt{font-weight:700;color:#415d4d}dd{margin:0}.issue dd{color:#9d3b25}.metric-row{display:flex;gap:12px;flex-wrap:wrap}.metric{flex:1;min-width:230px;background:white;border:1px solid #dbe6dd;border-radius:9px;padding:13px 16px}
     .metric strong{display:block;font-size:19px}table{border-collapse:collapse;width:100%;background:white}th,td{padding:9px 11px;text-align:left;border-bottom:1px solid #e4ebe5;vertical-align:top}thead th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:#61746a}
-    .table-wrap{overflow-x:auto;border:1px solid #dbe6dd;border-radius:9px}.num{text-align:right;white-space:nowrap}ul{padding-left:22px}li{margin:6px 0}details{border:1px solid #dbe6dd;background:white;border-radius:9px;padding:13px 16px;margin-top:24px}summary{cursor:pointer;font-weight:700}
+    .table-wrap{overflow-x:auto;border:1px solid #dbe6dd;border-radius:9px}.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}ul{padding-left:22px}li{margin:6px 0}details{border:1px solid #dbe6dd;background:white;border-radius:9px;padding:13px 16px;margin-top:24px}summary{cursor:pointer;font-weight:700}
     pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;background:#f4f7f4;padding:12px;border-radius:6px}
     @media(max-width:780px){.run-grid{grid-template-columns:1fr}.run-line{grid-template-columns:90px minmax(0,1fr)}main{padding:22px 14px}}
     """
@@ -1434,7 +1434,7 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
         '<a href="health-history.json">History</a></p>'
         f'<p class="strip"><strong>Needs attention:</strong> {esc(headline_attention)}</p>'
         '<h2>Latest runs</h2><div class="run-grid">' + "".join(panels) + '</div>'
-        '<h2>Today</h2><div class="table-wrap"><table><thead><tr><th>Source</th><th>Status today</th><th>New today</th><th>A/B/pass today</th><th>Runs today</th><th>Failed runs</th><th>Consecutive failures</th><th>Latest run</th><th>Current issue</th></tr></thead><tbody>'
+        '<h2>Today</h2><div class="table-wrap"><table><thead><tr><th>Source</th><th>Status today</th><th class="num">New today</th><th>A/B/pass today</th><th class="num">Runs today</th><th class="num">Failed runs</th><th class="num">Consecutive failures</th><th>Latest run</th><th>Current issue</th></tr></thead><tbody>'
         + "".join(today_rows) + '</tbody></table></div>'
         '<p class="muted">Shown is the latest run result; new A/B is summed across today. A dash means no run or measured result is available for today. Source history begins with the first run after this update.</p>'
         '<h2>Needs attention</h2><ul>' + attention_html + '</ul>'
