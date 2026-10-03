@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-03T15:21:17.820061+00:00",
+  "generated_at": "2026-10-03T19:01:34.251548+00:00",
   "collector": {
-    "commit": "007958cde5452c79fcffb4b5219f34da7389ec0e",
+    "commit": "bf11580b427fd488a37c0123f574f18ddada1754",
     "dirty": false
   },
   "sources": {
@@ -11,14 +11,14 @@
       "healthy": false,
       "status": "partial",
       "reason": "focused query coverage",
-      "last_attempt_at": "2026-10-03T04:58:16.344148+00:00",
+      "last_attempt_at": "2026-10-03T19:00:17.057219+00:00",
       "last_success_at": "2026-09-22T18:01:45.946101+00:00",
-      "last_partial_at": "2026-10-03T04:58:16.344148+00:00",
-      "partial_collected_count": 70,
-      "partial_fresh_kept": 64,
-      "partial_carried_count": 2003,
+      "last_partial_at": "2026-10-03T19:00:17.057219+00:00",
+      "partial_collected_count": 92,
+      "partial_fresh_kept": 83,
+      "partial_carried_count": 2042,
       "last_attempt_collector": {
-        "commit": "0168afe4211e6027ac2636583207fa2d595b914d",
+        "commit": "bf11580b427fd488a37c0123f574f18ddada1754",
         "dirty": false
       },
       "last_success_collector": {
@@ -31,72 +31,54 @@
       "last_success_source_provenance": {
         "implementation": "sources.linkedin_local"
       },
-      "last_attempt_count": 64,
+      "last_attempt_count": 83,
       "consecutive_failures": 0,
       "query_stats": [
         {
-          "query": "backend engineer",
+          "query": "software engineer",
           "group": "primary",
-          "page_budget": 2,
-          "pages_fetched": 2,
+          "page_budget": 5,
+          "pages_fetched": 5,
           "stop_reason": "page_budget",
-          "raw_jobs": 20,
-          "unique_jobs": 20,
-          "unique_contribution": 19,
-          "first_pass_survivors": 18,
+          "raw_jobs": 50,
+          "unique_jobs": 50,
+          "unique_contribution": 48,
+          "first_pass_survivors": 44,
           "original_postings_resolved": 0,
-          "jds_resolved": 4,
-          "elapsed_seconds": 3.361,
-          "new_to_ledger": 15,
-          "rediscovered": 5,
+          "jds_resolved": 15,
+          "elapsed_seconds": 12.409,
+          "new_to_ledger": 37,
+          "rediscovered": 13,
           "page_yields": [
             {
               "page": 0,
+              "raw": 10,
+              "new_to_ledger": 8,
+              "known": 2
+            },
+            {
+              "page": 1,
+              "raw": 10,
+              "new_to_ledger": 8,
+              "known": 2
+            },
+            {
+              "page": 2,
               "raw": 10,
               "new_to_ledger": 6,
               "known": 4
             },
             {
-              "page": 1,
+              "page": 3,
               "raw": 10,
-              "new_to_ledger": 9,
-              "known": 1
-            }
-          ]
-        },
-        {
-          "query": "software engineer",
-          "group": "primary",
-          "page_budget": 5,
-          "pages_fetched": 3,
-          "stop_reason": "low_new_to_ledger_yield",
-          "raw_jobs": 30,
-          "unique_jobs": 30,
-          "unique_contribution": 22,
-          "first_pass_survivors": 25,
-          "original_postings_resolved": 0,
-          "jds_resolved": 10,
-          "elapsed_seconds": 9.034,
-          "new_to_ledger": 4,
-          "rediscovered": 26,
-          "page_yields": [
-            {
-              "page": 0,
-              "raw": 10,
-              "new_to_ledger": 2,
-              "known": 8
+              "new_to_ledger": 7,
+              "known": 3
             },
             {
-              "page": 1,
+              "page": 4,
               "raw": 10,
-              "new_to_ledger": 1,
-              "known": 9
-            },
-            {
-              "page": 2,
-              "raw": 10,
-              "new_to_ledger": 1,
-              "known": 9
+              "new_to_ledger": 8,
+              "known": 2
             }
           ]
         },
@@ -105,80 +87,111 @@
           "group": "primary",
           "page_budget": 3,
           "pages_fetched": 3,
-          "stop_reason": "low_new_to_ledger_yield",
+          "stop_reason": "page_budget",
           "raw_jobs": 30,
           "unique_jobs": 30,
-          "unique_contribution": 29,
-          "first_pass_survivors": 25,
+          "unique_contribution": 28,
+          "first_pass_survivors": 23,
           "original_postings_resolved": 0,
-          "jds_resolved": 11,
-          "elapsed_seconds": 8.318,
-          "new_to_ledger": 5,
-          "rediscovered": 25,
+          "jds_resolved": 13,
+          "elapsed_seconds": 8.705,
+          "new_to_ledger": 14,
+          "rediscovered": 16,
           "page_yields": [
             {
               "page": 0,
               "raw": 10,
-              "new_to_ledger": 4,
-              "known": 6
+              "new_to_ledger": 3,
+              "known": 7
             },
             {
               "page": 1,
               "raw": 10,
-              "new_to_ledger": 1,
-              "known": 9
+              "new_to_ledger": 5,
+              "known": 5
             },
             {
               "page": 2,
               "raw": 10,
-              "new_to_ledger": 0,
-              "known": 10
+              "new_to_ledger": 6,
+              "known": 4
+            }
+          ]
+        },
+        {
+          "query": "full-stack engineer",
+          "group": "primary",
+          "page_budget": 2,
+          "pages_fetched": 2,
+          "stop_reason": "page_budget",
+          "raw_jobs": 20,
+          "unique_jobs": 20,
+          "unique_contribution": 16,
+          "first_pass_survivors": 17,
+          "original_postings_resolved": 0,
+          "jds_resolved": 6,
+          "elapsed_seconds": 6.117,
+          "new_to_ledger": 16,
+          "rediscovered": 2,
+          "page_yields": [
+            {
+              "page": 0,
+              "raw": 10,
+              "new_to_ledger": 8,
+              "known": 0
+            },
+            {
+              "page": 1,
+              "raw": 10,
+              "new_to_ledger": 8,
+              "known": 2
             }
           ]
         }
       ],
       "detail_enrichment": {
-        "eligible": 7,
-        "cache_reused": 0,
-        "requests": 1,
-        "responses": 1,
-        "successful_responses": 1,
+        "eligible": 11,
+        "cache_reused": 3,
+        "requests": 8,
+        "responses": 8,
+        "successful_responses": 8,
         "http_status_counts": {
-          "200": 1
+          "200": 8
         },
-        "request_limit": 1,
-        "budget_deferred": 6,
+        "request_limit": 8,
+        "budget_deferred": 3,
         "budget_exhausted": true,
         "retry_deferred": 0,
         "retry_attempts": 0,
         "exact_official": 0,
         "official_deferred": 0,
         "rate_limited": false,
-        "jds_resolved": 1,
+        "jds_resolved": 8,
         "external_apply_urls": 0,
         "failed": 0,
-        "detail_jds_fetched": 1,
+        "detail_jds_fetched": 8,
         "intentional_skips": 0,
         "blocked": "",
         "scrapling_requests": 0,
         "scrapling_jds_resolved": 0,
         "scrapling_error": "",
-        "remaining_no_jd": 6,
+        "remaining_no_jd": 3,
         "failure_reasons": {
-          "no_description": 6
+          "no_description": 3
         },
         "admission": {
-          "candidates": 32,
-          "rules_skipped": 23,
+          "candidates": 50,
+          "rules_skipped": 27,
           "rule_reasons": {
-            "prefilter:senior": 21,
-            "company_excluded": 2
+            "prefilter:senior": 25,
+            "citizen_or_clearance": 1,
+            "company_excluded": 1
           },
-          "cache_reused": 0,
-          "non_linkedin_resolved": 0,
-          "triage_evaluated": 0,
-          "triage_deferred": 1,
-          "worth_detail": 8
+          "cache_reused": 3,
+          "non_linkedin_resolved": 9,
+          "triage_evaluated": 11,
+          "triage_deferred": 0,
+          "worth_detail": 11
         },
         "cooldown_active": false,
         "probe": false,
@@ -186,34 +199,36 @@
         "round_requests": 8,
         "status": "active"
       },
-      "last_good_count": 2067,
-      "detail_last_attempt_at": "2026-10-03T04:59:07.125343+00:00",
+      "last_good_count": 2125,
+      "detail_last_attempt_at": "2026-10-03T19:00:17.057219+00:00",
       "detail_429_streak": 0,
       "detail_cooldown_until": "",
       "official_enrichment": {
-        "exact_indeed_peer": 4,
-        "cache": 13,
+        "dedicated_matches": 18,
+        "remote_exact_peer": 15,
+        "exact_indeed_peer": 7,
+        "cache": 6,
         "search_provider_failures": 1,
-        "no_match": 8,
-        "search_requests": 5,
+        "no_match": 11,
+        "search_requests": 14,
         "search_provider": "bing",
-        "official_page_requests": 0,
-        "remaining_no_jd": 49
+        "official_page_requests": 4,
+        "remaining_no_jd": 60
       },
       "search_collection": {
         "cooldown_active": false,
         "probe": false,
-        "query_cursor": 2,
-        "requests": 8,
-        "responses": 8,
-        "pages_fetched": 8,
+        "query_cursor": 3,
+        "requests": 10,
+        "responses": 10,
+        "pages_fetched": 10,
         "http_status": 0,
         "rate_limited": false,
         "budget_exhausted": false,
         "rate_limit_event": {},
         "transport_stop_reason": "",
-        "new_to_ledger": 24,
-        "rediscovered": 56,
+        "new_to_ledger": 67,
+        "rediscovered": 31,
         "coverage_limited": true
       },
       "search_last_attempt_at": "2026-09-26T00:21:43.068211+00:00",
@@ -224,19 +239,19 @@
       "detail_status": "active",
       "runner_states": {
         "mac": {
-          "search_last_attempt_at": "2026-10-03T04:58:16.344148+00:00",
+          "search_last_attempt_at": "2026-10-03T19:00:17.057219+00:00",
           "search_429_streak": 0,
           "search_cooldown_until": "",
           "detail_status": "active",
-          "detail_last_attempt_at": "2026-10-03T04:59:07.125343+00:00",
+          "detail_last_attempt_at": "2026-10-03T19:00:17.057219+00:00",
           "detail_429_streak": 0,
           "detail_cooldown_until": "",
           "detail_cooldown_reason": "",
-          "search_query_cursor": 3,
+          "search_query_cursor": 4,
           "detail_retry_after_until": ""
         }
       },
-      "last_attempt_elapsed_seconds": 50.461,
+      "last_attempt_elapsed_seconds": 77.07,
       "failure_cause": "",
       "previous_failure": {},
       "queries_total": 0,
@@ -609,6 +624,23 @@
   },
   "run_history": [
     {
+      "source": "linkedin",
+      "run_at": "2026-10-03T19:00:17.057219+00:00",
+      "status": "partial",
+      "new": 21,
+      "pass": null,
+      "new_ab": null,
+      "failure": false,
+      "reason": "",
+      "search_429": false,
+      "detail_429": false,
+      "elapsed_seconds": 77.07,
+      "search_requests": 10,
+      "initial_detail_requests": 8,
+      "new_to_ledger": 67,
+      "rediscovered": 31
+    },
+    {
       "source": "indeed",
       "run_at": "2026-10-03T15:20:46.757061+00:00",
       "status": "ok",
@@ -954,60 +986,54 @@
     }
   ],
   "local_recovery": {
-    "run_at": "2026-10-03T04:59:07.125343+00:00",
-    "elapsed_seconds": 9.966,
+    "run_at": "2026-10-03T19:01:34.252748+00:00",
+    "elapsed_seconds": 30.251,
     "official_jds_recovered": 0,
-    "linkedin_detail_recoveries": 1,
+    "linkedin_detail_recoveries": 0,
     "post_429_jds_recovered": null,
     "targeted_linkedin_search_requests": 0,
     "targeted_linkedin_detail_jds": 0,
     "targeted_linkedin_rate_limited": false,
-    "generic_jobs_processed": 15,
-    "search_requests": 8,
-    "official_page_requests": 7,
+    "generic_jobs_processed": 26,
+    "search_requests": 23,
+    "official_page_requests": 13,
     "linkedin_rate_limited": false,
     "linkedin_detail": {
-      "eligible": 7,
+      "eligible": 0,
       "cache_reused": 0,
-      "requests": 1,
-      "responses": 1,
-      "successful_responses": 1,
-      "http_status_counts": {
-        "200": 1
-      },
-      "request_limit": 1,
-      "budget_deferred": 6,
-      "budget_exhausted": true,
+      "requests": 0,
+      "responses": 0,
+      "successful_responses": 0,
+      "http_status_counts": {},
+      "request_limit": 0,
+      "budget_deferred": 0,
+      "budget_exhausted": false,
       "retry_deferred": 0,
       "retry_attempts": 0,
       "exact_official": 0,
       "official_deferred": 0,
       "rate_limited": false,
-      "jds_resolved": 1,
+      "jds_resolved": 0,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 1,
+      "detail_jds_fetched": 0,
       "intentional_skips": 0,
-      "blocked": "",
+      "blocked": "rate_limited_no_further_requests",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 6,
-      "failure_reasons": {
-        "no_description": 6
-      },
+      "remaining_no_jd": 0,
+      "failure_reasons": {},
       "admission": {
-        "candidates": 32,
-        "rules_skipped": 23,
+        "candidates": 35,
+        "rules_skipped": 24,
         "rule_reasons": {
-          "prefilter:senior": 21,
+          "prefilter:senior": 22,
           "company_excluded": 2
         },
         "cache_reused": 0,
         "non_linkedin_resolved": 0,
-        "triage_evaluated": 0,
-        "triage_deferred": 1,
-        "worth_detail": 8
+        "worth_detail": 0
       },
       "cooldown_active": false,
       "probe": false,
@@ -1016,9 +1042,9 @@
       "status": "active"
     },
     "linkedin_transport": {
-      "requests": 16,
+      "requests": 18,
       "endpoint_counts": {
-        "search": 8,
+        "search": 10,
         "detail": 8
       },
       "round_limit": 18,
@@ -1027,16 +1053,16 @@
       "day_detail_limit": 24,
       "rolling_counts": {
         "60": {
-          "search": 7,
+          "search": 0,
           "detail": 8
         },
         "3600": {
-          "search": 8,
+          "search": 10,
           "detail": 8
         },
         "86400": {
-          "search": 20,
-          "detail": 16
+          "search": 30,
+          "detail": 24
         }
       },
       "stop_reason": "",
@@ -1044,11 +1070,11 @@
       "rate_limits": []
     }
   },
-  "mac_last_completed_at": "2026-10-03T04:59:17.141016+00:00",
+  "mac_last_completed_at": "2026-10-03T19:02:04.532712+00:00",
   "linkedin_transport": {
-    "requests": 16,
+    "requests": 18,
     "endpoint_counts": {
-      "search": 8,
+      "search": 10,
       "detail": 8
     },
     "round_limit": 18,
@@ -1057,16 +1083,16 @@
     "day_detail_limit": 24,
     "rolling_counts": {
       "60": {
-        "search": 7,
+        "search": 4,
         "detail": 8
       },
       "3600": {
-        "search": 8,
+        "search": 10,
         "detail": 8
       },
       "86400": {
-        "search": 20,
-        "detail": 16
+        "search": 30,
+        "detail": 24
       }
     },
     "stop_reason": "",
@@ -1215,6 +1241,78 @@
       },
       {
         "at": "2026-10-03T04:59:16.617556+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-03T19:00:17.075446+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-03T19:00:20.022716+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-03T19:00:23.303262+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-03T19:00:26.076716+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-03T19:00:29.031250+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-03T19:00:31.858698+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-03T19:00:34.729579+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-03T19:00:37.729604+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-03T19:00:40.947304+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-03T19:00:43.870172+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-03T19:01:11.970887+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-03T19:01:14.945095+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-03T19:01:18.054448+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-03T19:01:20.792154+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-03T19:01:24.071059+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-03T19:01:27.410180+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-03T19:01:30.493185+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-03T19:01:33.804448+00:00",
         "endpoint": "detail"
       }
     ]

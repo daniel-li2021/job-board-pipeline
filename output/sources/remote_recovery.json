@@ -2940,7 +2940,7 @@
     {
       "company": "Meta",
       "title": "Security Engineer - Applied AI",
-      "location": "Menlo Park, CA",
+      "location": "Menlo Park, CA; New York, NY",
       "source": "meta_official_careers",
       "official_url": "https://www.metacareers.com/jobs/1383588067176943",
       "source_url": "https://www.metacareers.com/jobs/1383588067176943",
@@ -3152,145 +3152,11 @@
     }
   ],
   "meta": {
-    "jd_recovery_at": "2026-10-03T04:59:07.125343+00:00"
+    "jd_recovery_at": "2026-10-03T19:01:34.252748+00:00"
   },
   "source": "remote_recovery",
   "count": 146,
   "attempts": {
-    "meta_official_careers|id|1442662441082363": {
-      "source": "meta_official_careers",
-      "job_id": "1442662441082363",
-      "company": "Meta",
-      "title": "People Service Delivery Manager",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-02T14:48:18.846202+00:00"
-    },
-    "meta_official_careers|id|2097712830820463": {
-      "source": "meta_official_careers",
-      "job_id": "2097712830820463",
-      "company": "Meta",
-      "title": "Energy Analyst, Data Center Portfolio",
-      "location": "Bellevue, WA; Menlo Park, CA; Seattle, WA; New York, NY; San Francisco, CA; Chicago, IL",
-      "first_seen": "2026-10-02T14:48:18.846202+00:00"
-    },
-    "meta_official_careers|id|2464918144030553": {
-      "source": "meta_official_careers",
-      "job_id": "2464918144030553",
-      "company": "Meta",
-      "title": "Product Manager, Infrastructure Capacity",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-02T14:48:18.846202+00:00"
-    },
-    "meta_official_careers|id|921722064324989": {
-      "source": "meta_official_careers",
-      "job_id": "921722064324989",
-      "company": "Meta",
-      "title": "Mechanical Engineering Intern, Infrastructure",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-02T14:48:18.846202+00:00",
-      "recovery_triage": {
-        "action": "skip",
-        "priority": "low",
-        "confidence": 0.99,
-        "delta": -7,
-        "reason": "Mechanical infrastructure internship, not software or AI"
-      },
-      "recovery_input_hash": "5783c90db7a9ed26751a"
-    },
-    "meta_official_careers|id|1423772663152432": {
-      "source": "meta_official_careers",
-      "job_id": "1423772663152432",
-      "company": "Meta",
-      "title": "Executive Support Technician",
-      "location": "Burlingame, CA",
-      "first_seen": "2026-10-02T14:48:18.846202+00:00"
-    },
-    "meta_official_careers|id|1045713545186979": {
-      "source": "meta_official_careers",
-      "job_id": "1045713545186979",
-      "company": "Meta",
-      "title": "Executive Support Technician",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-02T14:48:18.846202+00:00"
-    },
-    "meta_official_careers|id|1401559394843193": {
-      "source": "meta_official_careers",
-      "job_id": "1401559394843193",
-      "company": "Meta",
-      "title": "Workday Integration Engineer",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-02T14:48:18.846202+00:00",
-      "recovery_methods": {
-        "candidate:856a1447fe": {
-          "input_hash": "4b6ddea18fa1e5f7d5e1",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "899eec8ed42b12af363e",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "low",
-        "confidence": 0.59,
-        "delta": 0,
-        "reason": "Workday integrations may involve software engineering"
-      },
-      "recovery_input_hash": "5db51a152da917fce74a",
-      "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-03T04:59:07.125343+00:00"
-    },
-    "bloomberg_official_careers|id|45035": {
-      "source": "bloomberg_official_careers",
-      "job_id": "45035",
-      "company": "Bloomberg",
-      "title": "Bloomberg On-Site Support Specialist",
-      "location": "San Francisco, California, United States of America",
-      "first_seen": "2026-10-02T14:48:18.846202+00:00"
-    },
-    "bloomberg_official_careers|id|45033": {
-      "source": "bloomberg_official_careers",
-      "job_id": "45033",
-      "company": "Bloomberg",
-      "title": "Product Manager, Private Markets - Enterprise Data Products",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-02T14:48:18.846202+00:00"
-    },
-    "disney_official_careers|id|10149375": {
-      "source": "disney_official_careers",
-      "job_id": "10149375",
-      "company": "Disney",
-      "title": "Sr Full Stack Software Engineer",
-      "location": "Orlando, Florida",
-      "first_seen": "2026-10-02T14:48:18.846202+00:00"
-    },
-    "disney_official_careers|id|10160008": {
-      "source": "disney_official_careers",
-      "job_id": "10160008",
-      "company": "Disney",
-      "title": "Senior Product Manager II",
-      "location": "Glendale, California / Bristol, Connecticut",
-      "first_seen": "2026-10-02T14:48:18.846202+00:00"
-    },
-    "disney_official_careers|id|10135762": {
-      "source": "disney_official_careers",
-      "job_id": "10135762",
-      "company": "Disney",
-      "title": "Executive Director of Product, Growth & Monetization",
-      "location": "San Francisco, California / Glendale, California",
-      "first_seen": "2026-10-02T14:48:18.846202+00:00"
-    },
-    "disney_official_careers|id|10160690": {
-      "source": "disney_official_careers",
-      "job_id": "10160690",
-      "company": "Disney",
-      "title": "Sr Site Reliability Engineer",
-      "location": "Bay Lake, Florida",
-      "first_seen": "2026-10-02T14:48:18.846202+00:00"
-    },
     "meta_official_careers|id|1607055701114374": {
       "source": "meta_official_careers",
       "job_id": "1607055701114374",
@@ -3341,12 +3207,12 @@
       "recovery_methods": {
         "candidate:2e6825b5cb": {
           "input_hash": "90be2c679df2114595a2",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
+          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "15d92b9580b58e520e46",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
+          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
           "outcome": "no_match"
         }
       },
@@ -3359,7 +3225,7 @@
       },
       "recovery_input_hash": "25be8405f6b1526bc193",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-03T04:59:07.125343+00:00"
+      "official_search_attempted_at": "2026-10-03T19:01:34.252748+00:00"
     },
     "meta_official_careers|id|1793791111815806": {
       "source": "meta_official_careers",
@@ -3379,12 +3245,12 @@
       "recovery_methods": {
         "candidate:497ea83f26": {
           "input_hash": "9a92176a4aa0321031f3",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
+          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "98c65a7578c898d0ff17",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
+          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
           "outcome": "no_match"
         }
       },
@@ -3397,7 +3263,7 @@
       },
       "recovery_input_hash": "1c9534e2c552846a7e80",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-03T04:59:07.125343+00:00"
+      "official_search_attempted_at": "2026-10-03T19:01:34.252748+00:00"
     },
     "meta_official_careers|id|957354176761521": {
       "source": "meta_official_careers",
@@ -3409,12 +3275,12 @@
       "recovery_methods": {
         "candidate:59b7db8f9a": {
           "input_hash": "5c04ed6e657820215f83",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
+          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "43d4caa4c0ee6bf5cc24",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
+          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
           "outcome": "no_match"
         }
       },
@@ -3427,7 +3293,7 @@
       },
       "recovery_input_hash": "718ba24079aea34dd946",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-03T04:59:07.125343+00:00"
+      "official_search_attempted_at": "2026-10-03T19:01:34.252748+00:00"
     },
     "meta_official_careers|id|1403870205235329": {
       "source": "meta_official_careers",
@@ -3447,12 +3313,12 @@
       "recovery_methods": {
         "candidate:ad8f3ee161": {
           "input_hash": "e8b9678631490b5ec0cc",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
+          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "05762d6d32c049c97089",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
+          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
           "outcome": "no_match"
         }
       },
@@ -3465,7 +3331,7 @@
       },
       "recovery_input_hash": "2c6bf5625e260bbad9fe",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-03T04:59:07.125343+00:00"
+      "official_search_attempted_at": "2026-10-03T19:01:34.252748+00:00"
     },
     "meta_official_careers|id|2585311065226798": {
       "source": "meta_official_careers",
@@ -3477,12 +3343,12 @@
       "recovery_methods": {
         "candidate:ced81f362f": {
           "input_hash": "e222617fb6d30142927c",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
+          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "fef0708f0fb7559cb522",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
+          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
           "outcome": "no_match"
         }
       },
@@ -3495,7 +3361,7 @@
       },
       "recovery_input_hash": "2728d52d10209022cdec",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-03T04:59:07.125343+00:00"
+      "official_search_attempted_at": "2026-10-03T19:01:34.252748+00:00"
     },
     "meta_official_careers|id|1630663895428889": {
       "source": "meta_official_careers",
@@ -3515,12 +3381,12 @@
       "recovery_methods": {
         "candidate:a0e98beecc": {
           "input_hash": "f2c514cef481dff4b824",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
+          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "4fadd49681af06dd0cd1",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
+          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
           "outcome": "no_match"
         }
       },
@@ -3533,7 +3399,7 @@
       },
       "recovery_input_hash": "cc7dd538375fb5f08b38",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-03T04:59:07.125343+00:00"
+      "official_search_attempted_at": "2026-10-03T19:01:34.252748+00:00"
     },
     "meta_official_careers|id|1486100426873744": {
       "source": "meta_official_careers",
@@ -3623,104 +3489,54 @@
       "location": "Redwood City, California, United States; Dallas, Texas, United States",
       "first_seen": "2026-10-02T23:46:05.903748+00:00"
     },
-    "syncareer|id|3afbd085f4593400c7d17438a872b230": {
+    "meta_official_careers|id|1124926043220059": {
+      "source": "meta_official_careers",
+      "job_id": "1124926043220059",
+      "company": "Meta",
+      "title": "Regulatory Escalations Manager",
+      "location": "Austin, TX",
+      "first_seen": "2026-10-03T14:45:11.070771+00:00"
+    },
+    "meta_official_careers|id|1426366322916678": {
+      "source": "meta_official_careers",
+      "job_id": "1426366322916678",
+      "company": "Meta",
+      "title": "ASIC Design Verification Engineer, DFT",
+      "location": "Sunnyvale, CA",
+      "first_seen": "2026-10-03T14:45:11.070771+00:00"
+    },
+    "disney_official_careers|id|10149987": {
+      "source": "disney_official_careers",
+      "job_id": "10149987",
+      "company": "Disney",
+      "title": "Principal Software Engineer",
+      "location": "San Francisco, California / Morrisville, North Carolina",
+      "first_seen": "2026-10-03T14:45:11.070771+00:00"
+    },
+    "syncareer|id|dc2cf0dc76fb42be589976a8ec9126f5": {
       "source": "syncareer",
-      "job_id": "3afbd085f4593400c7d17438a872b230",
-      "company": "First Bank & Trust",
-      "title": "Software Development Intern",
-      "location": "Sioux Falls, South Dakota, United States",
-      "first_seen": "2026-10-02T14:51:15.290375+00:00",
+      "job_id": "dc2cf0dc76fb42be589976a8ec9126f5",
+      "company": "Otis",
+      "title": "Embedded Software Engineering Intern",
+      "location": "Farmington, Connecticut, United States",
+      "first_seen": "2026-10-03T14:51:11.110123+00:00",
       "recovery_methods": {
         "generic_search": {
-          "input_hash": "f5ad871cfbed5365c85b",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
+          "input_hash": "e8ca19b40feb59287b96",
+          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_triage": {
         "action": "recover",
         "priority": "high",
-        "confidence": 0.95,
+        "confidence": 0.88,
         "delta": 5,
-        "reason": "Software development internship suits early-career search"
+        "reason": "Early-career software engineering internship"
       },
-      "recovery_input_hash": "9fe6c200f637f55cd06c",
+      "recovery_input_hash": "856f1cf7a9d21786cafa",
       "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-03T04:59:07.125343+00:00"
-    },
-    "syncareer|id|e365e4bb1d8a7768f6fa382334a1948a": {
-      "source": "syncareer",
-      "job_id": "e365e4bb1d8a7768f6fa382334a1948a",
-      "company": "Epitec",
-      "title": "Software Engineer II",
-      "location": "New York, New York, United States",
-      "first_seen": "2026-10-02T14:51:15.290375+00:00",
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "d89d52d71c0d8840528b",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.85,
-        "delta": 4,
-        "reason": "Software Engineer II fits target role family"
-      },
-      "recovery_input_hash": "bd74a4018346a01d7baa",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-03T04:59:07.125343+00:00"
-    },
-    "syncareer|id|c9b1f778a7292a42fe9098357fa157e5": {
-      "source": "syncareer",
-      "job_id": "c9b1f778a7292a42fe9098357fa157e5",
-      "company": "MANTECH",
-      "title": "Software Installation Technician",
-      "location": "Dahlgren, Virginia, United States",
-      "first_seen": "2026-10-02T14:51:15.290375+00:00",
-      "recovery_triage": {
-        "action": "skip",
-        "priority": "low",
-        "confidence": 0.97,
-        "delta": -7,
-        "reason": "Installation technician role is not software engineering"
-      },
-      "recovery_input_hash": "a34228f5d7ee5d7f59e8"
-    },
-    "syncareer|id|3346b59e3b7e95f4bb2572ba6872c024": {
-      "source": "syncareer",
-      "job_id": "3346b59e3b7e95f4bb2572ba6872c024",
-      "company": "Tempus AI",
-      "title": "Histology Assistant",
-      "location": "Chicago, Illinois, United States",
-      "first_seen": "2026-10-02T14:51:15.290375+00:00"
-    },
-    "syncareer|id|2e7930baaf863470c1c988ac22b2e88d": {
-      "source": "syncareer",
-      "job_id": "2e7930baaf863470c1c988ac22b2e88d",
-      "company": "MANTECH",
-      "title": "DevOps Engineer",
-      "location": "Herndon, Virginia, United States",
-      "first_seen": "2026-10-02T14:51:15.290375+00:00",
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "cfc33a6bac1cc546b488",
-          "attempted_at": "2026-10-03T01:09:54.868796+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.89,
-        "delta": 4,
-        "reason": "DevOps aligns with infrastructure and platform targets"
-      },
-      "recovery_input_hash": "90eb15d0c3208862816f",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-03T04:59:07.125343+00:00"
+      "official_search_attempted_at": "2026-10-03T19:01:34.252748+00:00"
     }
   }
 }
