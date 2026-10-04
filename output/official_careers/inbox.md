@@ -1,24 +1,16 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-10-03 16:45 PDT
-- Snapshot (UTC): 2026-10-03T23:45:39.423182+00:00
-- Jobs: 37 (Tier A/B only)
+- Updated (PT): 2026-10-04 07:46 PDT
+- Snapshot (UTC): 2026-10-04T14:46:20.582333+00:00
+- Jobs: 15 (Tier A/B only)
 - Last 24 hours: 0
-- Last 3 days: 37
+- Last 3 days: 15
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | A | 86 | official | AMD | Platform Engineer | San Jose, California | 2026-10-02 | 1to3d | AMD | unreviewed | official_canonical | [open](https://careers.amd.com/api/jobs) |
-| A | 91 | official | Microsoft | Software Engineer - Forward Deployed Engineer | United States, Washington, Redmond | 2026-10-01 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557004814) |
-| A | 90 | official | Apple | AI Software Engineer, Apple Cloud AI Platform | Seattle, United States of America | 2026-10-01 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200686380/ai-software-engineer-apple-cloud-ai-platform) |
-| A | 94 | official | Pinterest | University Grad Software Engineer 2027 (USA) | San Francisco, CA, US; Remote, US; San Francisco, CA, US | 2026-10-01 | 1to3d | Pinterest | unreviewed | official_canonical | [open](https://www.pinterestcareers.com/jobs/?gh_jid=7838591) |
-| A | 88 | official | Microsoft | Software Engineer | United States, Washington, Redmond | 2026-10-01 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557022395) |
-| A | 88 | official | Qualcomm | AI Software Developer | San Diego, California, United States of America | 2026-10-01 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446721360419) |
-| A | 87 | official | Amazon | Applied Scientist, PXT Central Science | Seattle, Washington, USA | 2026-10-01 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10567408/applied-scientist-pxt-central-science) |
-| A | 85 | official | Visa | Software Engineer | US - Austin, TX | 2026-10-01 | 1to3d | Visa | unreviewed | official_canonical | [open](https://visa.wd5.myworkdayjobs.com/Visa/job/US---Austin-TX/Software-Engineer_REF088720W) |
-| A | 86 | official | Cisco | Software Consulting Engineer I (Full Time) United States | RTP, North Carolina, US; Richardson, Texas, US | 2026-10-01 | 1to3d | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Software-Consulting-Engineer-I--Full-Time--United-States_2025887) |
 | B | 86 | official | Microsoft | Software Engineer | United States, Washington, Redmond | 2026-10-02 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557016400) |
 | B | 83 | official | Microsoft | Software Engineering | United States, Washington, Redmond | 2026-10-02 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556999325) |
 | B | 81 | official | Google | Software Engineer III, Full Stack, Google Cloud AI | Sunnyvale, CA, USA | 2026-10-02 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/124581886784611014-software-engineer-iii-full-stack-google-cloud-ai) |
@@ -33,17 +25,3 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | B | 75 | official | Capital One | Full-stack Engineer 4 (Python, Typescript) | New York, NY | 2026-10-02 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/Full-stack-Engineer-4--Python--Typescript-_R1001274-2) |
 | B | 74 | official | Apple | Software Engineer, Satellite Operations | San Diego, United States of America | 2026-10-02 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200687074/software-engineer-satellite-operations) |
 | B | 74 | official | Apple | Software Engineer, Applied ML Connected Experiences, Sensing & Connect | San Diego, United States of America | 2026-10-02 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200687049/software-engineer-applied-ml-connected-experiences-sensing-connectivity) |
-| B | 83 | official | Apple | People Analytics Full Stack Developer | Cupertino, United States of America | 2026-10-01 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200683761/people-analytics-full-stack-developer) |
-| B | 82 | official | Snap | Machine Learning Engineer, Level 3 | Palo Alto, California; San Francisco, California; Los Angeles, California; New York, New York; Bellevue, Washington | 2026-10-01 | 1to3d | - | unreviewed | official_canonical | [open](https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Palo-Alto-California/Machine-Learning-Engineer--Level-3_Q426SWEML1) |
-| B | 84 | official | Amazon | Software Development Engineer, ROBOTICS, Early Career - 2027 | North Reading, Massachusetts, USA | 2026-10-01 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10567489/software-development-engineer-robotics-early-career-2027) |
-| B | 84 | official | Apple | Machine Learning Engineer, ML/GenAI Evaluation | Austin, United States of America | 2026-10-01 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200671401/machine-learning-engineer-ml-genai-evaluation) |
-| B | 84 | official | Pinterest | Master's University Grad Machine Learning Engineer 2027 (USA) | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US; New York, NY, US; San Francisco, CA, US | 2026-10-01 | 1to3d | Pinterest | unreviewed | official_canonical | [open](https://www.pinterestcareers.com/jobs/?gh_jid=8140219) |
-| B | 81 | official | OpenAI | Frontend Software Engineer, Codex App | San Francisco; San Francisco, California, United States; Seattle; London, UK | 2026-10-01 | 1to3d | OpenAI | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/openai/5f6685ad-2fba-4e60-8982-fa142b33e194) |
-| B | 75 | official | Microsoft | Software Solution Engineer | United States, California, San Francisco; United States, California, San Jose; United States, California, Mountain View | 2026-10-01 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556982470) |
-| B | 75 | official | Microsoft | Software Engineer- CoreAI | United States, Washington, Redmond | 2026-10-01 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556989020) |
-| B | 75 | official | Zillow | Data Scientist | Remote-USA | 2026-10-01 | 1to3d | - | unreviewed | official_canonical | [open](https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Remote-USA/Data-Scientist_P751219-2) |
-| B | 75 | official | Capital One | Full-stack Engineer 5 ( Python, AWS) | McLean, VA | 2026-10-01 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-5---Python--AWS-_R1001359-2) |
-| B | 75 | official | Capital One | Data Engineer 4 (Python, AWS, SQL, GenAI) (Enterprise Platforms Techno | McLean, VA; Chicago, IL | 2026-10-01 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Data-Engineer-4--Python--AWS--SQL--GenAI---Enterprise-Platforms-Technology-_R1001761-1) |
-| B | 75 | official | Capital One | Data Engineer 5 (Python, SQL, Databricks, Snowflake) (Enterprise Platf | Richmond, VA; San Francisco, CA; McLean, VA; Chicago, IL; New York, NY; Plano, TX | 2026-10-01 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Data-Engineer-5--Python--SQL--Databricks--Snowflake---Enterprise-Platforms-Technology-_R1001467-1) |
-| B | 76 | official | Pinterest | Master's University Grad Data Scientist (USA) | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US; New York, NY, US; San Francisco, CA, US | 2026-10-01 | 1to3d | Pinterest | unreviewed | official_canonical | [open](https://www.pinterestcareers.com/jobs/?gh_jid=8140389) |
-| B | 72 | official | Google | Product Solutions Engineer, Consumer Payments Partner Engineering | Boulder, CO, USA; Sunnyvale, CA, USA | 2026-10-01 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/131849864802640582-product-solutions-engineer-consumer-payments-partner-engineering) |
