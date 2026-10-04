@@ -1,9 +1,9 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-03 17:21 PDT
-- Snapshot (UTC): 2026-10-04T00:21:55.928523+00:00
+- Updated (PT): 2026-10-03 21:02 PDT
+- Snapshot (UTC): 2026-10-04T04:02:06.046301+00:00
 - Jobs: 29 (Tier A/B only)
-- Last 24 hours: 24
+- Last 24 hours: 17
 - Last 3 days: 29
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
@@ -21,22 +21,22 @@ The 7-day dump is `latest.md`.
 | B | 92 | indeed | IDeaS | Software Developer in Test Intern | Bloomington, MN, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a74dbef62a44c636) |
 | B | 87 | indeed |  | Associate Developer | Remote, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=bb25e7af7d7c08e3) |
 | B | 87 | indeed | TerraClear | Jr Software Development / Tech Support Engineer | Issaquah, WA, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=15584b991dee0d04) |
-| B | 88 | linkedin | Boeing | Java Software Engineer (Associate/Experienced) | Herndon, VA | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-software-engineer-associate-experienced-at-boeing-4473159456) |
+| B | 88 | linkedin | Boeing | Java Software Engineer (Associate/Experienced) | Herndon, VA | 2026-10-02 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-software-engineer-associate-experienced-at-boeing-4473159456) |
 | B | 85 | indeed | Axyde Analytics | 26-0098-003 / LLM / RAG and Agent Evaluation Engineer — ICE AI / Data  | Washington, DC, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c89f43cdccb3460a) |
 | B | 87 | indeed | EY | Government and Infrastructure - AI and Data - AI Automation Engineer | McLean, VA, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5029f15b16df182e) |
 | B | 82 | indeed | Caterpillar | Simulation Quality Automation Engineer | Irving, TX, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=33bcf822c998bfed) |
 | B | 80 | linkedin | iManage | Applied AI Engineer (New or Recent Grad) | Chicago, IL | 2026-09-30 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/applied-ai-engineer-new-or-recent-grad-at-imanage-4472369136) |
-| B | 80 | linkedin | Scribd, Inc. | Software Engineer II (Fullstack), Growth Platform | Denver, CO | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-growth-platform-at-scribd-inc-4472847721) |
-| B | 80 | linkedin | Scribd, Inc. | Software Engineer II (Fullstack), Growth Platform | Chicago, IL | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-growth-platform-at-scribd-inc-4472855479) |
-| B | 80 | linkedin | Spectrum Equity | Software Engineer II (Fullstack), Growth Platform | New Boston, TX | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-growth-platform-at-spectrum-equity-4473364054) |
-| B | 80 | linkedin | Deloitte | Full Stack Software Engineer II | McLean, VA | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-ii-at-deloitte-4474599498) |
-| B | 80 | linkedin | Deloitte | Full Stack Software Engineer II | Arlington, VA | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-ii-at-deloitte-4474706198) |
+| B | 80 | linkedin | Scribd, Inc. | Software Engineer II (Fullstack), Growth Platform | Denver, CO | 2026-10-02 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-growth-platform-at-scribd-inc-4472847721) |
+| B | 80 | linkedin | Scribd, Inc. | Software Engineer II (Fullstack), Growth Platform | Chicago, IL | 2026-10-02 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-growth-platform-at-scribd-inc-4472855479) |
+| B | 80 | linkedin | Spectrum Equity | Software Engineer II (Fullstack), Growth Platform | New Boston, TX | 2026-10-02 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-growth-platform-at-spectrum-equity-4473364054) |
+| B | 80 | linkedin | Deloitte | Full Stack Software Engineer II | McLean, VA | 2026-10-02 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-ii-at-deloitte-4474599498) |
+| B | 80 | linkedin | Deloitte | Full Stack Software Engineer II | Arlington, VA | 2026-10-02 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-ii-at-deloitte-4474706198) |
 | B | 80 | indeed | Somatus | Machine Learning Engineer | McLean, VA, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c820a2cefe7b33ba) |
 | B | 84 | indeed | State of Idaho | IT SOFTWARE ENGINEER I | Boise, ID, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d9ead6bbaf438687) |
 | B | 75 | linkedin | Stripe | Backend Engineer, Developer & End-user Experience Platform | Seattle, WA | 2026-10-01 | 1to3d | - | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/backend-engineer-developer-end-user-experience-platform-at-stripe-4474102622) |
 | B | 79 | linkedin | Scribe | Backend Engineer, Core Product | San Francisco, CA | 2026-10-01 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-core-product-at-scribe-4472384142) |
 | B | 79 | linkedin | iO Associates | Full Stack Engineer | Washington, DC | 2026-09-30 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-io-associates-4473910443) |
 | B | 75 | linkedin | Supernova Technology™ | Software Engineer | Chicago, IL | 2026-09-30 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-supernova-technology%E2%84%A2-4461319803) |
-| B | 75 | linkedin | REI Systems | AI/ML & LLM Engineer | Sterling, VA | 2026-10-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-llm-engineer-at-rei-systems-4475083821) |
+| B | 79 | linkedin | REI Systems | AI/ML & LLM Engineer | Sterling, VA | 2026-10-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-llm-engineer-at-rei-systems-4475083821) |
 | B | 75 | indeed | Mutual of Omaha | Engineer I/II (Cloud Development and Data Warehouse) | Remote, US | 2026-10-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5b995752fcceb4b0) |
-| B | 77 | linkedin | CelesiumAI | Artificial Intelligence Engineer | Houston, TX | 2026-10-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/artificial-intelligence-engineer-at-celesiumai-4473354175) |
+| B | 77 | linkedin | CelesiumAI | Artificial Intelligence Engineer | Houston, TX | 2026-10-03 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/artificial-intelligence-engineer-at-celesiumai-4473354175) |
