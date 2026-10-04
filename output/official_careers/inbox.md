@@ -1,16 +1,17 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-10-04 07:46 PDT
-- Snapshot (UTC): 2026-10-04T14:46:20.582333+00:00
-- Jobs: 15 (Tier A/B only)
-- Last 24 hours: 0
-- Last 3 days: 15
+- Updated (PT): 2026-10-04 16:47 PDT
+- Snapshot (UTC): 2026-10-04T23:47:38.833633+00:00
+- Jobs: 16 (Tier A/B only)
+- Last 24 hours: 1
+- Last 3 days: 16
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | A | 86 | official | AMD | Platform Engineer | San Jose, California | 2026-10-02 | 1to3d | AMD | unreviewed | official_canonical | [open](https://careers.amd.com/api/jobs) |
+| B | 75 | official | Capital One | Full-stack Engineer 4 | New York, NY; McLean, VA; Richmond, VA | 2026-10-04 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/Full-stack-Engineer-4_R1001455-1) |
 | B | 86 | official | Microsoft | Software Engineer | United States, Washington, Redmond | 2026-10-02 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557016400) |
 | B | 83 | official | Microsoft | Software Engineering | United States, Washington, Redmond | 2026-10-02 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556999325) |
 | B | 81 | official | Google | Software Engineer III, Full Stack, Google Cloud AI | Sunnyvale, CA, USA | 2026-10-02 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/124581886784611014-software-engineer-iii-full-stack-google-cloud-ai) |
