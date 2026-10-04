@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-04T00:26:36.787876+00:00",
-  "count": 3059,
+  "generated_at": "2026-10-04T04:06:16.862117+00:00",
+  "count": 3060,
   "companies": [
     {
       "name": "1199SEIU Benefit and Pension Funds",
@@ -542,6 +542,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "ACV Auctions",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "6f5b6270f0d6a617641a1b2a"
+      ],
       "seen_count": 1
     },
     {
@@ -7851,9 +7864,10 @@
       "tags": [],
       "seen_job_keys": [
         "404d36481c653a6a02ee15ff",
-        "6a17292ece9f6e2039e9c99b"
+        "6a17292ece9f6e2039e9c99b",
+        "a9c375793abb483e87d018ea"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Compass Real Estate - Peninsula",
