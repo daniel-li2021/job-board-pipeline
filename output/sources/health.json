@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-04T15:21:08.246618+00:00",
+  "generated_at": "2026-10-04T20:39:53.795030+00:00",
   "collector": {
-    "commit": "6363060a3b24683f5144faad1ca68b559160af5b",
+    "commit": "b8d029248959a1db355161ecda031529dc3434f5",
     "dirty": false
   },
   "sources": {
@@ -11,14 +11,14 @@
       "healthy": false,
       "status": "partial",
       "reason": "focused query coverage",
-      "last_attempt_at": "2026-10-04T04:00:16.469096+00:00",
+      "last_attempt_at": "2026-10-04T20:38:30.474792+00:00",
       "last_success_at": "2026-09-22T18:01:45.946101+00:00",
-      "last_partial_at": "2026-10-04T04:00:16.469096+00:00",
-      "partial_collected_count": 94,
-      "partial_fresh_kept": 88,
-      "partial_carried_count": 2076,
+      "last_partial_at": "2026-10-04T20:38:30.474792+00:00",
+      "partial_collected_count": 87,
+      "partial_fresh_kept": 82,
+      "partial_carried_count": 2163,
       "last_attempt_collector": {
-        "commit": "8deeaf1fd0e02edbac212dfdf0f870f72de65579",
+        "commit": "b8d029248959a1db355161ecda031529dc3434f5",
         "dirty": false
       },
       "last_success_collector": {
@@ -31,39 +31,9 @@
       "last_success_source_provenance": {
         "implementation": "sources.linkedin_local"
       },
-      "last_attempt_count": 88,
+      "last_attempt_count": 82,
       "consecutive_failures": 0,
       "query_stats": [
-        {
-          "query": "full-stack engineer",
-          "group": "primary",
-          "page_budget": 2,
-          "pages_fetched": 2,
-          "stop_reason": "page_budget",
-          "raw_jobs": 20,
-          "unique_jobs": 20,
-          "unique_contribution": 19,
-          "first_pass_survivors": 16,
-          "original_postings_resolved": 0,
-          "jds_resolved": 4,
-          "elapsed_seconds": 3.101,
-          "new_to_ledger": 6,
-          "rediscovered": 14,
-          "page_yields": [
-            {
-              "page": 0,
-              "raw": 10,
-              "new_to_ledger": 1,
-              "known": 9
-            },
-            {
-              "page": 1,
-              "raw": 10,
-              "new_to_ledger": 5,
-              "known": 5
-            }
-          ]
-        },
         {
           "query": "software engineer",
           "group": "primary",
@@ -72,43 +42,43 @@
           "stop_reason": "page_budget",
           "raw_jobs": 50,
           "unique_jobs": 50,
-          "unique_contribution": 46,
-          "first_pass_survivors": 46,
+          "unique_contribution": 47,
+          "first_pass_survivors": 44,
           "original_postings_resolved": 0,
-          "jds_resolved": 12,
-          "elapsed_seconds": 14.634,
-          "new_to_ledger": 17,
-          "rediscovered": 33,
+          "jds_resolved": 11,
+          "elapsed_seconds": 12.723,
+          "new_to_ledger": 49,
+          "rediscovered": 1,
           "page_yields": [
             {
               "page": 0,
               "raw": 10,
-              "new_to_ledger": 0,
-              "known": 10
+              "new_to_ledger": 9,
+              "known": 1
             },
             {
               "page": 1,
               "raw": 10,
-              "new_to_ledger": 2,
-              "known": 8
+              "new_to_ledger": 10,
+              "known": 0
             },
             {
               "page": 2,
               "raw": 10,
-              "new_to_ledger": 1,
-              "known": 9
+              "new_to_ledger": 10,
+              "known": 0
             },
             {
               "page": 3,
               "raw": 10,
-              "new_to_ledger": 5,
-              "known": 5
+              "new_to_ledger": 10,
+              "known": 0
             },
             {
               "page": 4,
               "raw": 10,
-              "new_to_ledger": 9,
-              "known": 1
+              "new_to_ledger": 10,
+              "known": 0
             }
           ]
         },
@@ -120,25 +90,25 @@
           "stop_reason": "page_budget",
           "raw_jobs": 30,
           "unique_jobs": 30,
-          "unique_contribution": 29,
-          "first_pass_survivors": 28,
+          "unique_contribution": 28,
+          "first_pass_survivors": 26,
           "original_postings_resolved": 0,
-          "jds_resolved": 10,
-          "elapsed_seconds": 9.53,
-          "new_to_ledger": 18,
-          "rediscovered": 12,
+          "jds_resolved": 9,
+          "elapsed_seconds": 8.808,
+          "new_to_ledger": 30,
+          "rediscovered": 0,
           "page_yields": [
             {
               "page": 0,
               "raw": 10,
-              "new_to_ledger": 1,
-              "known": 9
+              "new_to_ledger": 10,
+              "known": 0
             },
             {
               "page": 1,
               "raw": 10,
-              "new_to_ledger": 7,
-              "known": 3
+              "new_to_ledger": 10,
+              "known": 0
             },
             {
               "page": 2,
@@ -147,49 +117,81 @@
               "known": 0
             }
           ]
+        },
+        {
+          "query": "backend engineer",
+          "group": "primary",
+          "page_budget": 2,
+          "pages_fetched": 2,
+          "stop_reason": "page_budget",
+          "raw_jobs": 20,
+          "unique_jobs": 20,
+          "unique_contribution": 12,
+          "first_pass_survivors": 18,
+          "original_postings_resolved": 0,
+          "jds_resolved": 5,
+          "elapsed_seconds": 5.456,
+          "new_to_ledger": 13,
+          "rediscovered": 0,
+          "page_yields": [
+            {
+              "page": 0,
+              "raw": 10,
+              "new_to_ledger": 4,
+              "known": 0
+            },
+            {
+              "page": 1,
+              "raw": 10,
+              "new_to_ledger": 9,
+              "known": 0
+            }
+          ]
         }
       ],
       "detail_enrichment": {
-        "eligible": 4,
-        "cache_reused": 0,
-        "requests": 1,
-        "responses": 1,
-        "successful_responses": 1,
+        "eligible": 10,
+        "cache_reused": 1,
+        "requests": 8,
+        "responses": 8,
+        "successful_responses": 8,
         "http_status_counts": {
-          "200": 1
+          "200": 8
         },
-        "request_limit": 1,
-        "budget_deferred": 3,
+        "request_limit": 8,
+        "budget_deferred": 2,
         "budget_exhausted": true,
         "retry_deferred": 0,
         "retry_attempts": 0,
         "exact_official": 0,
         "official_deferred": 0,
         "rate_limited": false,
-        "jds_resolved": 1,
+        "jds_resolved": 8,
         "external_apply_urls": 0,
         "failed": 0,
-        "detail_jds_fetched": 1,
+        "detail_jds_fetched": 8,
         "intentional_skips": 0,
         "blocked": "",
         "scrapling_requests": 0,
         "scrapling_jds_resolved": 0,
         "scrapling_error": "",
-        "remaining_no_jd": 3,
+        "remaining_no_jd": 2,
         "failure_reasons": {
-          "no_description": 3
+          "no_description": 2
         },
         "admission": {
-          "candidates": 20,
-          "rules_skipped": 15,
+          "candidates": 26,
+          "rules_skipped": 11,
           "rule_reasons": {
-            "prefilter:senior": 15
+            "prefilter:senior": 8,
+            "citizen_or_clearance": 1,
+            "company_excluded": 2
           },
-          "cache_reused": 0,
-          "non_linkedin_resolved": 0,
-          "triage_evaluated": 2,
-          "triage_deferred": 0,
-          "worth_detail": 5
+          "cache_reused": 1,
+          "non_linkedin_resolved": 2,
+          "triage_evaluated": 12,
+          "triage_deferred": 2,
+          "worth_detail": 10
         },
         "cooldown_active": false,
         "probe": false,
@@ -197,26 +199,24 @@
         "round_requests": 8,
         "status": "active"
       },
-      "last_good_count": 2164,
-      "detail_last_attempt_at": "2026-10-04T04:01:21.036347+00:00",
+      "last_good_count": 2245,
+      "detail_last_attempt_at": "2026-10-04T20:38:30.474792+00:00",
       "detail_429_streak": 0,
       "detail_cooldown_until": "",
       "official_enrichment": {
-        "exact_indeed_peer": 1,
-        "cache": 10,
-        "dedicated_matches": 10,
-        "remote_exact_peer": 8,
+        "dedicated_matches": 19,
+        "remote_exact_peer": 17,
         "search_provider_failures": 1,
-        "no_match": 7,
-        "search_requests": 7,
+        "no_match": 12,
+        "search_requests": 21,
         "search_provider": "bing",
-        "official_page_requests": 0,
-        "remaining_no_jd": 71
+        "official_page_requests": 16,
+        "remaining_no_jd": 69
       },
       "search_collection": {
         "cooldown_active": false,
         "probe": false,
-        "query_cursor": 5,
+        "query_cursor": 6,
         "requests": 10,
         "responses": 10,
         "pages_fetched": 10,
@@ -225,8 +225,8 @@
         "budget_exhausted": false,
         "rate_limit_event": {},
         "transport_stop_reason": "",
-        "new_to_ledger": 41,
-        "rediscovered": 59,
+        "new_to_ledger": 92,
+        "rediscovered": 1,
         "coverage_limited": true
       },
       "search_last_attempt_at": "2026-09-26T00:21:43.068211+00:00",
@@ -237,19 +237,19 @@
       "detail_status": "active",
       "runner_states": {
         "mac": {
-          "search_last_attempt_at": "2026-10-04T04:00:16.469096+00:00",
+          "search_last_attempt_at": "2026-10-04T20:38:30.474792+00:00",
           "search_429_streak": 0,
           "search_cooldown_until": "",
           "detail_status": "active",
-          "detail_last_attempt_at": "2026-10-04T04:01:21.036347+00:00",
+          "detail_last_attempt_at": "2026-10-04T20:38:30.474792+00:00",
           "detail_429_streak": 0,
           "detail_cooldown_until": "",
           "detail_cooldown_reason": "",
-          "search_query_cursor": 6,
+          "search_query_cursor": 7,
           "detail_retry_after_until": ""
         }
       },
-      "last_attempt_elapsed_seconds": 63.553,
+      "last_attempt_elapsed_seconds": 83.008,
       "failure_cause": "",
       "previous_failure": {},
       "queries_total": 0,
@@ -621,6 +621,23 @@
     }
   },
   "run_history": [
+    {
+      "source": "linkedin",
+      "run_at": "2026-10-04T20:38:30.474792+00:00",
+      "status": "partial",
+      "new": 20,
+      "pass": null,
+      "new_ab": null,
+      "failure": false,
+      "reason": "",
+      "search_429": false,
+      "detail_429": false,
+      "elapsed_seconds": 83.008,
+      "search_requests": 10,
+      "initial_detail_requests": 8,
+      "new_to_ledger": 92,
+      "rediscovered": 1
+    },
     {
       "source": "indeed",
       "run_at": "2026-10-04T15:20:46.909341+00:00",
@@ -1069,59 +1086,54 @@
     }
   ],
   "local_recovery": {
-    "run_at": "2026-10-04T04:01:21.036347+00:00",
-    "elapsed_seconds": 4.483,
+    "run_at": "2026-10-04T20:39:53.796562+00:00",
+    "elapsed_seconds": 5.808,
     "official_jds_recovered": 0,
-    "linkedin_detail_recoveries": 1,
+    "linkedin_detail_recoveries": 0,
     "post_429_jds_recovered": null,
     "targeted_linkedin_search_requests": 0,
     "targeted_linkedin_detail_jds": 0,
     "targeted_linkedin_rate_limited": false,
-    "generic_jobs_processed": 8,
-    "search_requests": 0,
+    "generic_jobs_processed": 13,
+    "search_requests": 2,
     "official_page_requests": 0,
     "linkedin_rate_limited": false,
     "linkedin_detail": {
-      "eligible": 4,
+      "eligible": 0,
       "cache_reused": 0,
-      "requests": 1,
-      "responses": 1,
-      "successful_responses": 1,
-      "http_status_counts": {
-        "200": 1
-      },
-      "request_limit": 1,
-      "budget_deferred": 3,
-      "budget_exhausted": true,
+      "requests": 0,
+      "responses": 0,
+      "successful_responses": 0,
+      "http_status_counts": {},
+      "request_limit": 0,
+      "budget_deferred": 0,
+      "budget_exhausted": false,
       "retry_deferred": 0,
       "retry_attempts": 0,
       "exact_official": 0,
       "official_deferred": 0,
       "rate_limited": false,
-      "jds_resolved": 1,
+      "jds_resolved": 0,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 1,
+      "detail_jds_fetched": 0,
       "intentional_skips": 0,
-      "blocked": "",
+      "blocked": "rate_limited_no_further_requests",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 3,
-      "failure_reasons": {
-        "no_description": 3
-      },
+      "remaining_no_jd": 0,
+      "failure_reasons": {},
       "admission": {
-        "candidates": 20,
-        "rules_skipped": 15,
+        "candidates": 15,
+        "rules_skipped": 11,
         "rule_reasons": {
-          "prefilter:senior": 15
+          "prefilter:senior": 10,
+          "company_excluded": 1
         },
         "cache_reused": 0,
         "non_linkedin_resolved": 0,
-        "triage_evaluated": 2,
-        "triage_deferred": 0,
-        "worth_detail": 5
+        "worth_detail": 0
       },
       "cooldown_active": false,
       "probe": false,
@@ -1141,7 +1153,7 @@
       "day_detail_limit": 24,
       "rolling_counts": {
         "60": {
-          "search": 6,
+          "search": 0,
           "detail": 8
         },
         "3600": {
@@ -1149,8 +1161,8 @@
           "detail": 8
         },
         "86400": {
-          "search": 30,
-          "detail": 24
+          "search": 22,
+          "detail": 16
         }
       },
       "stop_reason": "",
@@ -1158,7 +1170,7 @@
       "rate_limits": []
     }
   },
-  "mac_last_completed_at": "2026-10-04T04:01:25.545976+00:00",
+  "mac_last_completed_at": "2026-10-04T20:39:59.667788+00:00",
   "linkedin_transport": {
     "requests": 18,
     "endpoint_counts": {
@@ -1171,7 +1183,7 @@
     "day_detail_limit": 24,
     "rolling_counts": {
       "60": {
-        "search": 6,
+        "search": 2,
         "detail": 8
       },
       "3600": {
@@ -1179,150 +1191,14 @@
         "detail": 8
       },
       "86400": {
-        "search": 30,
-        "detail": 24
+        "search": 22,
+        "detail": 16
       }
     },
     "stop_reason": "",
     "blocked_until": "",
     "rate_limits": [],
     "events": [
-      {
-        "at": "2026-10-03T04:58:16.360402+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T04:58:19.356769+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T04:58:22.266766+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T04:58:25.239478+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T04:58:28.397698+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T04:58:31.129864+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T04:58:33.991115+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T04:58:36.694204+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T04:58:48.201181+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T04:58:51.186657+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T04:58:54.069876+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T04:58:57.327740+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T04:59:00.565497+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T04:59:03.782540+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T04:59:06.495757+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T04:59:16.617556+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T19:00:17.075446+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T19:00:20.022716+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T19:00:23.303262+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T19:00:26.076716+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T19:00:29.031250+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T19:00:31.858698+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T19:00:34.729579+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T19:00:37.729604+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T19:00:40.947304+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T19:00:43.870172+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T19:01:11.970887+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T19:01:14.945095+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T19:01:18.054448+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T19:01:20.792154+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T19:01:24.071059+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T19:01:27.410180+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T19:01:30.493185+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T19:01:33.804448+00:00",
-        "endpoint": "detail"
-      },
       {
         "at": "2026-10-03T22:00:10.561250+00:00",
         "endpoint": "search"
@@ -1401,6 +1277,78 @@
       },
       {
         "at": "2026-10-04T04:01:25.059589+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-04T20:38:30.495291+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T20:38:33.553880+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T20:38:36.803820+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T20:38:40.094943+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T20:38:42.849617+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T20:38:46.075441+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T20:38:48.840728+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T20:38:51.643325+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T20:38:54.256668+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T20:38:57.072729+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T20:39:32.850273+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-04T20:39:35.849310+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-04T20:39:38.874770+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-04T20:39:41.674391+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-04T20:39:44.692054+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-04T20:39:47.444549+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-04T20:39:50.332260+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-04T20:39:53.190361+00:00",
         "endpoint": "detail"
       }
     ]

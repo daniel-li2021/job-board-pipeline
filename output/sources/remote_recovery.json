@@ -3152,35 +3152,11 @@
     }
   ],
   "meta": {
-    "jd_recovery_at": "2026-10-04T04:01:21.036347+00:00"
+    "jd_recovery_at": "2026-10-04T20:39:53.796562+00:00"
   },
   "source": "remote_recovery",
   "count": 146,
   "attempts": {
-    "meta_official_careers|id|1124926043220059": {
-      "source": "meta_official_careers",
-      "job_id": "1124926043220059",
-      "company": "Meta",
-      "title": "Regulatory Escalations Manager",
-      "location": "Austin, TX",
-      "first_seen": "2026-10-03T14:45:11.070771+00:00"
-    },
-    "meta_official_careers|id|1426366322916678": {
-      "source": "meta_official_careers",
-      "job_id": "1426366322916678",
-      "company": "Meta",
-      "title": "ASIC Design Verification Engineer, DFT",
-      "location": "Sunnyvale, CA",
-      "first_seen": "2026-10-03T14:45:11.070771+00:00"
-    },
-    "disney_official_careers|id|10149987": {
-      "source": "disney_official_careers",
-      "job_id": "10149987",
-      "company": "Disney",
-      "title": "Principal Software Engineer",
-      "location": "San Francisco, California / Morrisville, North Carolina",
-      "first_seen": "2026-10-03T14:45:11.070771+00:00"
-    },
     "disney_official_careers|id|10153777": {
       "source": "disney_official_careers",
       "job_id": "10153777",
@@ -3197,29 +3173,29 @@
       "location": "Anaheim, California",
       "first_seen": "2026-10-03T23:45:40.227391+00:00"
     },
-    "syncareer|id|dc2cf0dc76fb42be589976a8ec9126f5": {
-      "source": "syncareer",
-      "job_id": "dc2cf0dc76fb42be589976a8ec9126f5",
-      "company": "Otis",
-      "title": "Embedded Software Engineering Intern",
-      "location": "Farmington, Connecticut, United States",
-      "first_seen": "2026-10-03T14:51:11.110123+00:00",
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "e8ca19b40feb59287b96",
-          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.88,
-        "delta": 5,
-        "reason": "Early-career software engineering internship"
-      },
-      "recovery_input_hash": "856f1cf7a9d21786cafa",
-      "official_search_status": "no_match"
+    "bloomberg_official_careers|id|22197": {
+      "source": "bloomberg_official_careers",
+      "job_id": "22197",
+      "company": "Bloomberg",
+      "title": "Senior Data Management Professional - Data Engineer - Commodities Data",
+      "location": "Princeton, New Jersey, United States of America",
+      "first_seen": "2026-10-04T14:46:21.035479+00:00"
+    },
+    "bloomberg_official_careers|id|22175": {
+      "source": "bloomberg_official_careers",
+      "job_id": "22175",
+      "company": "Bloomberg",
+      "title": "Bloomberg Economics US Economist",
+      "location": "New York, New York, United States of America",
+      "first_seen": "2026-10-04T14:46:21.035479+00:00"
+    },
+    "bloomberg_official_careers|id|21847": {
+      "source": "bloomberg_official_careers",
+      "job_id": "21847",
+      "company": "Bloomberg",
+      "title": "Senior Client Quant Specialist, Enterprise Sales - Bloomberg Financial Solutions",
+      "location": "New York, New York, United States of America",
+      "first_seen": "2026-10-04T14:46:21.035479+00:00"
     },
     "syncareer|id|d8d65ab53c7bb997ef0b8df38a1ccafe": {
       "source": "syncareer",
@@ -3228,6 +3204,31 @@
       "title": "AI Cybersecurity Specialist",
       "location": "Columbus, Ohio, United States",
       "first_seen": "2026-10-03T23:51:10.106386+00:00"
+    },
+    "syncareer|id|67ae2c8b273e94b2198041e7b1f52328": {
+      "source": "syncareer",
+      "job_id": "67ae2c8b273e94b2198041e7b1f52328",
+      "company": "Interclypse",
+      "title": "DevOps Engineer",
+      "location": "Annapolis Junction, Maryland, United States",
+      "first_seen": "2026-10-04T14:51:12.462841+00:00",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "00e8552fc86b6da4dda7",
+          "attempted_at": "2026-10-04T20:39:53.796562+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "normal",
+        "confidence": 0.55,
+        "delta": 0,
+        "reason": "DevOps aligns with infrastructure; seniority is unknown"
+      },
+      "recovery_input_hash": "c8f9b995a190d40b0ea4",
+      "official_search_status": "no_match",
+      "official_search_attempted_at": "2026-10-04T20:39:53.796562+00:00"
     }
   }
 }
