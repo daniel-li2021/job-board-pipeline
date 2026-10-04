@@ -1,28 +1,29 @@
-Syncareer alert — 2026-10-04_1451
+Syncareer alert — 2026-10-04_2351
 
-Updated (PT): 2026-10-04 07:53 PDT
-Snapshot (UTC): 2026-10-04T14:53:02.971455+00:00
+Updated (PT): 2026-10-04 16:52 PDT
+Snapshot (UTC): 2026-10-04T23:52:46.009143+00:00
 
-15 new matching job(s) this run (hard-filtered).
+16 new matching job(s) this run (hard-filtered).
 
 If you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.md` in the repo (last 3 days, one file).
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 96.0 | Syncareer | Koch | AI Solutions Engineer | Lisle, Illinois, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://koch.avature.net/en_US/careers/JobDetail/United-States-AI-Solutions-Engineer/195477) |
 | A | 89.0 | Syncareer | Teladoc Health | Junior Software Engineering Program - Associate Engineer | United States | 2026-10-02 | No sponsor | - | unreviewed | not_dedicated | [open](https://teladoc.wd503.myworkdayjobs.com/en-US/teladochealth_is_hiring/job/USA---Any-Location-Remote/Junior-Software-Engineering-Program---Associate-Engineer_JR21085) |
 | A | 88.0 | Syncareer | PARTech | Software Engineer | Champaign, Illinois, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/PAR%20Technology/79feb267-7ce4-4d52-ba73-8652c1ed2595) |
 | A | 88.0 | Syncareer | Emerson | Software Solutions Development Program (SDP) | Elyria, Ohio, United States | 2026-10-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://hdjq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26010904/?lastSelectedFacet=LOCATIONS&mode=location&selectedFlexFieldsFacets=%2522AttributeChar2%257CEntry-level%253BStudent+Internships%252FCo-ops%2522&selectedLocationsFacet=300000000229164%253B300000000228618%253B300000000229065%253B300000000229149) |
 | A | 87.0 | Syncareer | National Instruments | Software Solutions Development Program (SDP) | Elyria, Ohio, United States | 2026-10-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://hdjq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26010904/?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164%253B300000000228618%253B300000000229065%253B300000192461701&selectedTitlesFacet=INTERN+CO+OP%253BENGINEERING+SERVICES%253BDEVELOPMENT+ENGINEERING%253BSALES+SYSTEMS+ENGINEERING%253BMARKETING%253BMANUFACTURING+ENGINEERING%253BFinance%253BHUMAN_RESOURCES%253BPRJ_MGM%253BIT) |
 | B | 96.0 | Syncareer | ShopBack | Software Engineer Intern | San Francisco, California, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/shopback-2/640ac3fb-dae5-4738-95b9-9cb80cc7ad15) |
 | B | 96.0 | Syncareer | ShopBack | Software Engineer Intern | New York City, New York, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/shopback-2/e5f5e276-e7f7-43e0-a224-5259d242fe98) |
-| B | 88.0 | Syncareer | D.E.Shaw group | Full-Stack Software Engineer | New York, New York, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.deshaw.com/careers/full-stack-software-engineer-5871) |
-| B | 78.0 | Syncareer | UniFirst | Junior Azure Data Engineer - Hybrid Role | Wilmington, Massachusetts, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.unifirst.com/job/wilmington/junior-azure-data-engineer-hybrid-role/45421/101400979632) |
-| B | 78.0 | Syncareer | Broadridge | Junior Full Stack Software Engineer (Hybrid) | Newark, New Jersey, United States | 2026-10-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://broadridge.wd5.myworkdayjobs.com/en-US/Careers/job/Newark-NJ/Full-Stack-Software-Engineer--Hybrid-_JR1086388?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=6cb77610a8a543aea2d6bc10457e35d4) |
+| B | 85.0 | Syncareer | Natera | Software Engineering Intern | United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/natera/jobs/6188497004) |
 | B | 78.0 | Syncareer | Intercontinental Exchange | Associate Full Stack Developer | Jacksonville, Florida, United States | 2026-10-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ice.com/jobs/13433?lang=en-us) |
+| B | 78.0 | Syncareer | Broadridge | Junior Full Stack Software Engineer (Hybrid) | Newark, New Jersey, United States | 2026-10-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://broadridge.wd5.myworkdayjobs.com/en-US/Careers/job/Newark-NJ/Full-Stack-Software-Engineer--Hybrid-_JR1086388?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=6cb77610a8a543aea2d6bc10457e35d4) |
+| B | 78.0 | Syncareer | UniFirst | Junior Azure Data Engineer - Hybrid Role | Wilmington, Massachusetts, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.unifirst.com/job/wilmington/junior-azure-data-engineer-hybrid-role/45421/101400979632) |
 | B | 78.0 | Syncareer | UniFirst | Junior Azure Data Engineer - UniFirst | Wilmington, Massachusetts, United States | 2026-10-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.unifirst.com/job/wilmington/junior-azure-data-engineer-unifirst/45421/101400979632) |
+| B | 77.0 | Syncareer | OppFi | Software Engineer I | United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/opploans/jobs/8011770003) |
 | B | 77.0 | Syncareer | Citi | Digital Software Engineer Intermediate Analyst | Irving, Texas, United States | 2026-10-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.citi.com/job/irving/digital-software-engineer-intermediate-analyst/287/101451423616) |
 | B | 77.0 | Syncareer | Union Bank & Trust | Data Engineer | Lincoln, Nebraska, United States | 2026-10-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://myubt.rec.pro.ukg.net/UNI1120UBTC/JobBoard/56baf6a9-3cb4-4d34-922a-eb69f2137926/OpportunityDetail?opportunityId=c2c22805-54d8-4ff1-a9c2-f43d464b336f) |
 | B | 76.0 | Syncareer | Infosys | AI/ML Developer | Hartford, Connecticut, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/154363BR) |
-| B | 72.0 | Syncareer | Yugabyte | Software Engineer II | Sunnyvale, California, United States | 2026-10-02 | No sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/yugabyte/jobs/4683621006) |
 
-Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-10-04_1451.csv`.
+Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-10-04_2351.csv`.

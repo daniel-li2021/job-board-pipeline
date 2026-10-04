@@ -1,20 +1,23 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-10-04 07:53 PDT
-- Snapshot (UTC): 2026-10-04T14:53:02.970612+00:00
-- Jobs: 52
-- Last 24 hours: 9
-- Last 3 days: 52
+- Updated (PT): 2026-10-04 16:52 PDT
+- Snapshot (UTC): 2026-10-04T23:52:46.008292+00:00
+- Jobs: 42
+- Last 24 hours: 8
+- Last 3 days: 42
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 88.0 | Syncareer | PARTech | Software Engineer | Champaign, Illinois, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/PAR%20Technology/79feb267-7ce4-4d52-ba73-8652c1ed2595) |
-| B | 96.0 | Syncareer | ShopBack | Software Engineer Intern | San Francisco, California, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/shopback-2/640ac3fb-dae5-4738-95b9-9cb80cc7ad15) |
-| B | 96.0 | Syncareer | ShopBack | Software Engineer Intern | New York City, New York, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/shopback-2/e5f5e276-e7f7-43e0-a224-5259d242fe98) |
 | B | 76.0 | Syncareer | Infosys | AI/ML Developer | Hartford, Connecticut, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/154363BR) |
+| B | 96.0 | Syncareer | ShopBack | Software Engineer Intern | New York City, New York, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/shopback-2/e5f5e276-e7f7-43e0-a224-5259d242fe98) |
+| A | 88.0 | Syncareer | PARTech | Software Engineer | Champaign, Illinois, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/PAR%20Technology/79feb267-7ce4-4d52-ba73-8652c1ed2595) |
 | B | 78.0 | Syncareer | UniFirst | Junior Azure Data Engineer - Hybrid Role | Wilmington, Massachusetts, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.unifirst.com/job/wilmington/junior-azure-data-engineer-hybrid-role/45421/101400979632) |
+| B | 96.0 | Syncareer | ShopBack | Software Engineer Intern | San Francisco, California, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/shopback-2/640ac3fb-dae5-4738-95b9-9cb80cc7ad15) |
+| B | 85.0 | Syncareer | Natera | Software Engineering Intern | United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/natera/jobs/6188497004) |
+| B | 77.0 | Syncareer | OppFi | Software Engineer I | United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/opploans/jobs/8011770003) |
+| A | 96.0 | Syncareer | Koch | AI Solutions Engineer | Lisle, Illinois, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://koch.avature.net/en_US/careers/JobDetail/United-States-AI-Solutions-Engineer/195477) |
 | B | 78.0 | Syncareer | Intercontinental Exchange | Associate Full Stack Developer | Jacksonville, Florida, United States | 2026-10-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ice.com/jobs/13433?lang=en-us) |
 | A | 88.0 | Syncareer | Emerson | Software Solutions Development Program (SDP) | Elyria, Ohio, United States | 2026-10-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://hdjq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26010904/?lastSelectedFacet=LOCATIONS&mode=location&selectedFlexFieldsFacets=%2522AttributeChar2%257CEntry-level%253BStudent+Internships%252FCo-ops%2522&selectedLocationsFacet=300000000229164%253B300000000228618%253B300000000229065%253B300000000229149) |
 | B | 75.0 | Syncareer | Accuray | Software Engineer | Madison, Wisconsin, United States | 2026-10-02 | No sponsor | - | unreviewed | not_dedicated | [open](https://accuray.wd5.myworkdayjobs.com/en-US/External/job/Madison-WI/Software-Engineer_3258) |
@@ -49,16 +52,3 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 78.0 | Syncareer | First Bank & Trust | Software Development Intern | Sioux Falls, South Dakota, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://bankeasy.wd5.myworkdayjobs.com/en-US/bank-easy-job-openings/job/Sioux-Falls-SD-I-229/Software-Development-Intern_R-100829?_gl=1*10038pm*_gcl_au*NDMxNDM5NjI0LjE3Nzk3NjQ0MzY.*_ga*NTk2MDc3NjExLjE3Nzk3NjQ0MzY.*_ga_R9HPCD07E8*czE3Nzk3NjQ0MzUkbzEkZzAkdDE3Nzk3NjQ0NDMkajUyJGwwJGgw) |
 | B | 76.0 | Syncareer | ADT | Junior Software Engineer | Irving, Texas, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.adt.com/job/23650428/junior-software-engineer/) |
 | A | 91.0 | Syncareer | Emerson | Software Engineer - AI Enablement & Engineering Productivity | Austin, Texas, United States | 2026-10-01 | No sponsor | - | unreviewed | not_dedicated | [open](https://hdjq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26010922/?lastSelectedFacet=LOCATIONS&mode=location&selectedFlexFieldsFacets=%2522AttributeChar2%257CEntry-level%253BStudent+Internships%252FCo-ops%2522&selectedLocationsFacet=300000000229164%253B300000000228618%253B300000000229065%253B300000000229149) |
-| A | 87.0 | Syncareer | Linde India | Software Developer | Tonawanda, New York, United States | 2026-09-30 | Sponsor | - | unreviewed | not_dedicated | [open](https://linde.csod.com/ux/ats/careersite/23/home/requisition/33617?c=linde) |
-| A | 97.0 | Syncareer | EvenUp | Software Engineer (New Grad), AI Entities | San Francisco, California, United States | 2026-09-30 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/evenup/19eb22cd-9540-49ed-840b-6422714413b5) |
-| B | 78.0 | Syncareer | IMC Trading | Software Engineer, Early Career | Chicago, United States | 2026-09-30 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.eu.greenhouse.io/imc/jobs/4796143101) |
-| B | 84.0 | Syncareer | Otis | Software Engineer – Early Career Digital Technology Rising Leaders Pro | Farmington, Connecticut, United States | 2026-09-30 | Sponsor | - | unreviewed | not_dedicated | [open](https://otis.wd504.myworkdayjobs.com/zh-CN/REC_Ext_Gateway/job/OT494-5FS---Farmington-CT-5-Farm-Springs-Farmington-CT-06032-USA/Software-Engineer---Early-Career-Digital-Technology-Rising-Leaders-Program_20169121) |
-| B | 76.0 | Syncareer | Equifax | Generative AI Engineer / QA Engineer | Atlanta, Georgia, United States | 2026-09-30 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.equifax.com/en/jobs/j00179053/generative-ai-engineer-qa-engineer/) |
-| A | 86.0 | Syncareer | Cox Enterprises | Software Engineer II | Atlanta, Georgia, United States | 2026-09-30 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.coxenterprises.com/en/jobs/r202683103/software-engineer-ii/) |
-| A | 88.0 | Syncareer | Chainguard | Software Engineer (Repositories) | United States | 2026-09-30 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/chainguard/jobs/4714568006) |
-| A | 88.0 | Syncareer | Equifax | Generative AI Engineer | Alpharetta, Georgia, United States | 2026-09-30 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.equifax.com/en/jobs/j00179159/generative-ai-engineer/) |
-| A | 87.0 | Syncareer | Ripple | Software Engineer II | San Francisco, California, United States | 2026-09-30 | Sponsor | - | unreviewed | not_dedicated | [open](https://ripple.com/careers/all-jobs/job/8241603/) |
-| B | 78.0 | Syncareer | NCR Voyix | Site Reliability Engineer | Atlanta, Georgia, United States | 2026-09-30 | Sponsor | - | unreviewed | not_dedicated | [open](https://ncr.wd1.myworkdayjobs.com/en-US/ext_us/job/ATLANTA-GA-USA/Site-Reliability-Engineer_R0158645?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea) |
-| B | 83.0 | Syncareer | Addison Group | Python Full Stack Developer - 5 Days Onsite in Bethesda MD | Bethesda, Maryland, United States | 2026-09-30 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.addisongroup.com/jobs/job/python-full-stack-developer-5-days-onsite-in-bethesda-md-information-technology-bethesda-md-a1qjb000000vwnxqae/2b291d4b-bc56-11f1-ab76-02420a6c7775) |
-| B | 78.0 | Syncareer | NCR Voyix | Site Reliability Engineer | Atlanta, Georgia, United States | 2026-09-30 | Sponsor | - | unreviewed | not_dedicated | [open](https://ncr.wd1.myworkdayjobs.com/en-US/ext_us/job/ATLANTA-GA-USA/Site-Reliability-Engineer_R0158644?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea) |
-| B | 78.0 | Syncareer | Nimble Robotics | Associate, Business Operations (AI Tooling) | San Francisco, California, United States | 2026-09-30 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/nimblerobotics/jobs/4425197009) |
