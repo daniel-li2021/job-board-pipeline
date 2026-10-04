@@ -1,107 +1,159 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 2128,
+  "count": 2164,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-10-03T22:00:10.527976+00:00",
+    "scraped_at": "2026-10-04T04:00:16.469096+00:00",
     "collector": {
-      "commit": "1b05708e29c6cd6c596f40e4646969d41a265ea7",
+      "commit": "8deeaf1fd0e02edbac212dfdf0f870f72de65579",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 6.753,
+    "elapsed_seconds": 63.553,
     "query_stats": [
       {
-        "query": "ai engineer",
+        "query": "full-stack engineer",
         "group": "primary",
-        "page_budget": 3,
+        "page_budget": 2,
         "pages_fetched": 2,
-        "stop_reason": "global_day_budget",
+        "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
         "unique_contribution": 19,
-        "first_pass_survivors": 18,
+        "first_pass_survivors": 16,
         "original_postings_resolved": 0,
-        "jds_resolved": 9,
-        "elapsed_seconds": 3.189,
-        "new_to_ledger": 3,
-        "rediscovered": 17,
+        "jds_resolved": 4,
+        "elapsed_seconds": 3.101,
+        "new_to_ledger": 6,
+        "rediscovered": 14,
         "page_yields": [
           {
             "page": 0,
             "raw": 10,
-            "new_to_ledger": 3,
-            "known": 7
+            "new_to_ledger": 1,
+            "known": 9
           },
           {
             "page": 1,
             "raw": 10,
-            "new_to_ledger": 0,
-            "known": 10
+            "new_to_ledger": 5,
+            "known": 5
           }
         ]
-      },
-      {
-        "query": "backend engineer",
-        "group": "primary",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "global_day_budget",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0,
-        "new_to_ledger": 0,
-        "rediscovered": 0,
-        "page_yields": []
       },
       {
         "query": "software engineer",
         "group": "primary",
         "page_budget": 5,
-        "pages_fetched": 0,
-        "stop_reason": "global_day_budget",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
+        "pages_fetched": 5,
+        "stop_reason": "page_budget",
+        "raw_jobs": 50,
+        "unique_jobs": 50,
+        "unique_contribution": 46,
+        "first_pass_survivors": 46,
         "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0,
-        "new_to_ledger": 0,
-        "rediscovered": 0,
-        "page_yields": []
+        "jds_resolved": 12,
+        "elapsed_seconds": 14.634,
+        "new_to_ledger": 17,
+        "rediscovered": 33,
+        "page_yields": [
+          {
+            "page": 0,
+            "raw": 10,
+            "new_to_ledger": 0,
+            "known": 10
+          },
+          {
+            "page": 1,
+            "raw": 10,
+            "new_to_ledger": 2,
+            "known": 8
+          },
+          {
+            "page": 2,
+            "raw": 10,
+            "new_to_ledger": 1,
+            "known": 9
+          },
+          {
+            "page": 3,
+            "raw": 10,
+            "new_to_ledger": 5,
+            "known": 5
+          },
+          {
+            "page": 4,
+            "raw": 10,
+            "new_to_ledger": 9,
+            "known": 1
+          }
+        ]
+      },
+      {
+        "query": "ai engineer",
+        "group": "primary",
+        "page_budget": 3,
+        "pages_fetched": 3,
+        "stop_reason": "page_budget",
+        "raw_jobs": 30,
+        "unique_jobs": 30,
+        "unique_contribution": 29,
+        "first_pass_survivors": 28,
+        "original_postings_resolved": 0,
+        "jds_resolved": 10,
+        "elapsed_seconds": 9.53,
+        "new_to_ledger": 18,
+        "rediscovered": 12,
+        "page_yields": [
+          {
+            "page": 0,
+            "raw": 10,
+            "new_to_ledger": 1,
+            "known": 9
+          },
+          {
+            "page": 1,
+            "raw": 10,
+            "new_to_ledger": 7,
+            "known": 3
+          },
+          {
+            "page": 2,
+            "raw": 10,
+            "new_to_ledger": 10,
+            "known": 0
+          }
+        ]
       }
     ],
     "search_collection": {
       "cooldown_active": false,
       "probe": false,
-      "query_cursor": 4,
-      "requests": 2,
-      "responses": 2,
-      "pages_fetched": 2,
+      "query_cursor": 5,
+      "requests": 10,
+      "responses": 10,
+      "pages_fetched": 10,
       "http_status": 0,
       "rate_limited": false,
-      "budget_exhausted": true,
+      "budget_exhausted": false,
       "rate_limit_event": {},
       "transport_stop_reason": "",
-      "new_to_ledger": 3,
-      "rediscovered": 17,
+      "new_to_ledger": 41,
+      "rediscovered": 59,
       "coverage_limited": true
     },
     "detail_enrichment": {
-      "eligible": 0,
-      "cache_reused": 3,
-      "requests": 0,
-      "responses": 0,
-      "successful_responses": 0,
-      "http_status_counts": {},
+      "eligible": 7,
+      "cache_reused": 4,
+      "requests": 7,
+      "responses": 7,
+      "successful_responses": 7,
+      "http_status_counts": {
+        "200": 7
+      },
       "request_limit": 8,
       "budget_deferred": 0,
       "budget_exhausted": false,
@@ -110,51 +162,56 @@
       "exact_official": 0,
       "official_deferred": 0,
       "rate_limited": false,
-      "jds_resolved": 0,
+      "jds_resolved": 7,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 0,
+      "detail_jds_fetched": 7,
       "intentional_skips": 0,
-      "blocked": "rate_limited_no_further_requests",
+      "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
       "remaining_no_jd": 0,
       "failure_reasons": {},
       "admission": {
-        "candidates": 13,
-        "rules_skipped": 6,
+        "candidates": 33,
+        "rules_skipped": 18,
         "rule_reasons": {
-          "prefilter:senior": 6
+          "citizen_or_clearance": 2,
+          "prefilter:senior": 16
         },
-        "cache_reused": 3,
-        "non_linkedin_resolved": 2,
-        "worth_detail": 0
+        "cache_reused": 4,
+        "non_linkedin_resolved": 4,
+        "triage_evaluated": 7,
+        "triage_deferred": 0,
+        "worth_detail": 7
       },
       "cooldown_active": false,
       "probe": false,
       "round_request_limit": 8,
-      "round_requests": 0,
+      "round_requests": 7,
       "status": "active"
     },
     "official_enrichment": {
       "exact_indeed_peer": 1,
-      "cache": 5,
+      "cache": 10,
+      "dedicated_matches": 10,
+      "remote_exact_peer": 8,
       "search_provider_failures": 1,
-      "no_match": 2,
-      "search_requests": 3,
+      "no_match": 7,
+      "search_requests": 7,
       "search_provider": "bing",
       "official_page_requests": 0,
-      "remaining_no_jd": 9
+      "remaining_no_jd": 71
     },
     "partial": true,
-    "blocked_reason": "search page budget exhausted",
-    "collected_count": 19,
-    "carried_count": 2110,
+    "blocked_reason": "focused query coverage",
+    "collected_count": 94,
+    "carried_count": 2076,
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-10-03T22:00:17.423096+00:00"
+    "jd_recovery_at": "2026-10-04T04:01:21.036347+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -2307,7 +2364,45 @@
     "linkedin|id|4473176556": "2026-10-03T19:00:17.057219+00:00",
     "linkedin|id|4473878217": "2026-10-03T19:00:17.057219+00:00",
     "linkedin|id|4475081231": "2026-10-03T22:00:10.527976+00:00",
-    "linkedin|id|4457557392": "2026-09-12T10:03:53.346540+00:00"
+    "linkedin|id|4457557392": "2026-09-12T10:03:53.346540+00:00",
+    "linkedin|id|4470163877": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4475359319": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4464264867": "2026-09-12T10:03:53.346540+00:00",
+    "linkedin|id|4473860185": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4475347638": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4466087443": "2026-09-12T02:36:39.478299+00:00",
+    "linkedin|id|4475331972": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4457389217": "2026-09-13T10:07:55.952182+00:00",
+    "linkedin|id|4464255430": "2026-09-12T02:36:39.478299+00:00",
+    "linkedin|id|4464253743": "2026-09-12T02:36:39.478299+00:00",
+    "linkedin|id|4447081986": "2026-09-12T19:21:05.669988+00:00",
+    "linkedin|id|4408947164": "2026-09-12T02:36:39.478299+00:00",
+    "linkedin|id|4457022207": "2026-09-11T10:44:55.020036+00:00",
+    "linkedin|id|4434138603": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4475089589": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4466327745": "2026-09-12T02:36:39.478299+00:00",
+    "linkedin|id|4466353609": "2026-09-12T02:36:39.478299+00:00",
+    "linkedin|id|4466426596": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4457070187": "2026-09-12T02:36:39.478299+00:00",
+    "linkedin|id|4470596870": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4430164081": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4447733166": "2026-09-12T10:03:53.346540+00:00",
+    "linkedin|id|4457531070": "2026-09-12T19:21:05.669988+00:00",
+    "linkedin|id|4463925314": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4465111236": "2026-09-12T02:36:39.478299+00:00",
+    "linkedin|id|4446438625": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4466407162": "2026-09-12T02:36:39.478299+00:00",
+    "linkedin|id|4401363513": "2026-09-11T10:44:55.020036+00:00",
+    "linkedin|id|4463956947": "2026-09-11T10:44:55.020036+00:00",
+    "linkedin|id|4464249638": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4465166548": "2026-09-12T02:36:39.478299+00:00",
+    "linkedin|id|4475322965": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4463927298": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4469752806": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4464230418": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4475096668": "2026-10-04T04:00:16.469096+00:00",
+    "linkedin|id|4464222364": "2026-09-12T02:36:39.478299+00:00",
+    "linkedin|id|4380976636": "2026-09-12T19:21:05.669988+00:00"
   },
   "jobs": [
     {
@@ -2394,6 +2489,52 @@
       "recovery_methods": {},
       "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4475096668",
+      "source": "linkedin",
+      "company": "ACV Auctions",
+      "title": "Machine Learning Engineer III, Data",
+      "location": "Buffalo, NY",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-iii-data-at-acv-auctions-4475096668",
+      "official_url": "",
+      "description": "If you are looking for a career at a dynamic company with a people-first mindset and a deep culture of growth and autonomy, ACV is the right place for you! Competitive compensation packages and learning and development opportunities, ACV has what you need to advance to the next level in your career. We will continue to raise the bar every day by investing in our people and technology to help our customers succeed. We hire people who share our passion, bring innovative ideas to the table, and enjoy a collaborative atmosphere. Who we are: ACV is a technology company that has revolutionized how dealers buy and sell cars online. We are transforming the automotive industry. ACV Auctions Inc. (ACV), has applied innovation and user-designed, data driven applications and solutions. We are building the most trusted and efficient digital marketplace with data solutions for sourcing, selling and managing used vehicles with transparency and comprehensive insights that were once unimaginable. We are disruptors of the industry and we want you to join us on our journey. Our network of brands include ACV Auctions, ACV Transportation, ClearCar, MAX Digital and ACV Capital within its Marketplace Products, as well as, True360 and Data Services. At ACV we focus on the Health, Physical, Financial, Social and Emotional Wellness of our Teammates and, to support this, we offer: Multiple medical plans including a high deductible, low cost health plan Company-sponsored (paid) Short-Term Disability, Long-Term Disability, and Life Insurance Comprehensive optional benefits such as Dental, Vision, Supplemental Life/AD&D, Legal/ID Protection, and Accident and Critical Illness Insurance Generous paid time off options, including uncapped vacation days, the greater of 3 paid sick days or in accordance with the applicable state or local paid sick leave law, 6 paid company holidays, 2 floating holidays, parental leave, bereavement leave, jury duty leave, voting leave, and other forms of paid leave as required by applicable law or regulation Employee Stock Purchase Program with additional opportunities to earn stock in the Company Retirement planning through the Company’s 401(k) What you will do: ACV's Machine Learning organization is looking for a talented Machine Learning Engineer III to join our ML inspection team. In this role, you'll drive end-to-end computer vision solutions processing hundreds of thousands of vehicle inspections annually into reliable, actionable insights, directly reducing inspection turnaround time, improving valuation accuracy, and scaling the capabilities of our inspection platform. You'll design and train damage detection models while architecting the high-throughput serving infrastructure needed to keep those models performant under real production loads. As ACV continues to grow, you'll play a direct role in ensuring our inspection capabilities remain accurate, efficient, and resilient at scale. This role goes beyond executing on a defined roadmap. You'll identify opportunities, shape solutions end-to-end, and take ownership of outcomes. You connect the dots between stakeholder needs and what's technically feasible, bringing recommendations grounded in both theory and practical constraints. When you hear a narrow question, you think about the broader system it lives in and build toward that. The core responsibilities of this role are: Design and train high-performance computer vision models for automated damage detection, focusing on precision, recall, and model robustness. Architect and maintain high-throughput, containerized microservices for model serving using REST/gRPC to ensure low-latency performance. Collaborate with business stakeholders to translate complex inspection requirements into scalable, production-grade ML solutions. Own the end-to-end model lifecycle, from experimentation and design to deployment and optimization in high-traffic environments. Design and maintain robust data pipelines using Kafka to ensure high-fidelity inputs for model serving and inference. Perform additional duties as assigned. Required Qualifications: Graduate education (MS or PhD) in a computationally intensive domain or equivalent work experience. 3+ years of prior computer vision experience Advanced proficiency with Computer Vision frameworks (e.g., PyTorch, OpenCV, TensorFlow) and Python/SQL. Experience designing and maintaining visual data annotation pipelines and evaluation frameworks for complex, real-world image datasets. Experience optimizing high-latency models for real-time inference Backend software engineering experience in the cloud (AWS / GCP) with a focus on microservices (docker) and the ML model development lifecycle. Experience building and maintaining streaming data pipelines (e.g., Kafka) for real-time model serving. Preferred Qualifications: Knowledge of ML frameworks and libraries, such as Kubeflow, Databricks, KServe and so on Experience designing evaluation frameworks for complex visual data Our Values Trust & Transparency | People First | Positive Experiences | Calm Persistence | Never Settling At ACV, we are committed to an inclusive culture in which every individual is welcomed and empowered to celebrate their true selves. We achieve this by fostering a work environment of acceptance and understanding that is free from discrimination. ACV is committed to being an equal opportunity employer regardless of sex, race, creed, color, religion, marital status, national origin, age, pregnancy, sexual orientation, gender, gender identity, gender expression, genetic information, disability, military status, status as a veteran, or any other protected characteristic. We also consider qualified applicants regardless of criminal histories, consistent with legal requirements. If you have a disability or special need that requires reasonable accommodation, please let us know. For information on our collection and use of your personal information, please see our Privacy Notice. No immigration or work visa sponsorship provided for this position. Compensation : The compensation range for this position is listed in the \"Job Details\" section at the bottom of this posting. Please note that final compensation will be determined based upon the applicant's relevant experience, skill set, location, business needs, market demands, and other factors as permitted by law.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-04T04:00:16.469096+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "6ddf96dae88fc4b25652",
+          "attempted_at": "2026-10-04T04:00:16.469096+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-10-04T04:00:16.469096+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "low",
+        "reason": "ML engineering matches target roles, but Engineer III seniority may exceed early-career fit."
+      },
+      "linkedin_detail_triage_hash": "fd6bfe2ba28c0bb4c298",
+      "linkedin_detail_attempted_at": "2026-10-04T04:01:01.641427+00:00",
+      "linkedin_detail_fetched_at": "2026-10-04T04:01:01.641427+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4436399816",
@@ -2801,6 +2942,31 @@
       "linkedin_detail_fetched_at": "2026-09-26T12:47:03.640434+00:00",
       "linkedin_detail_resolved": true,
       "enrichment_method": "linkedin_http"
+    },
+    {
+      "job_id": "4465166548",
+      "source": "linkedin",
+      "company": "Adobe",
+      "title": "Machine Learning Engineer",
+      "location": "San Jose, CA",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-at-adobe-4465166548",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T02:36:39.478299+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4281554006",
@@ -3676,8 +3842,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4456262858",
@@ -3701,8 +3867,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4452388555",
@@ -5453,8 +5619,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4471811526",
@@ -5588,8 +5754,7 @@
       },
       "linkedin_detail_triage_hash": "90490fe641886e4d4795",
       "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "verified_this_run": false
     },
     {
       "job_id": "4473987295",
@@ -6276,6 +6441,31 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4466087443",
+      "source": "linkedin",
+      "company": "Amazon Web Services (AWS)",
+      "title": "Software Development Engineer, AWS OpenSearch",
+      "location": "Austin, TX",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-aws-opensearch-at-amazon-web-services-aws-4466087443",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T02:36:39.478299+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4470222111",
       "source": "linkedin",
       "company": "Amazon Web Services (AWS)",
@@ -6518,40 +6708,13 @@
           "software engineer"
         ]
       },
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "48cc77fee51c4976da9c",
-          "attempted_at": "2026-10-03T19:00:17.057219+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "29a912ef4bdb2a9ef0b8",
-          "attempted_at": "2026-10-03T19:00:17.057219+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "c3e8be83ff4daf5a822f",
-          "attempted_at": "2026-10-03T19:00:17.057219+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-03T19:00:17.057219+00:00",
-      "official_search_status": "no_match",
-      "linkedin_detail_triage": {
-        "needs_jd": true,
-        "priority": "high",
-        "reason": "Relevant distributed-systems role; requirements could clarify early-career fit."
-      },
-      "linkedin_detail_triage_hash": "dd132999dc430d37a866",
-      "linkedin_detail_attempted_at": "2026-10-03T19:01:11.969072+00:00",
       "linkedin_detail_fetched_at": "2026-10-03T19:01:11.969072+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470209507",
@@ -7257,7 +7420,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
       "verified_this_run": true
     },
     {
@@ -7339,6 +7502,57 @@
       "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": false,
       "recovery_status": "filtered"
+    },
+    {
+      "job_id": "4464222364",
+      "source": "linkedin",
+      "company": "Analog Devices",
+      "title": "Principal AI/ML Engineer, Deep Agentic Reasoning Engineer (Lorenz Labs)",
+      "location": "San Jose, CA",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/principal-ai-ml-engineer-deep-agentic-reasoning-engineer-lorenz-labs-at-analog-devices-4464222364",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T02:36:39.478299+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4464230418",
+      "source": "linkedin",
+      "company": "Analog Devices",
+      "title": "Senior Engineer, AI/ML Software",
+      "location": "Wilmington, MA",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-engineer-ai-ml-software-at-analog-devices-4464230418",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-04T04:00:16.469096+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470216015",
@@ -9410,8 +9624,7 @@
       },
       "linkedin_detail_triage_hash": "4b7180b9fc36026c445b",
       "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "verified_this_run": false
     },
     {
       "job_id": "4461682027",
@@ -10524,8 +10737,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469965618",
@@ -10677,7 +10890,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
       "verified_this_run": true
     },
     {
@@ -10692,7 +10905,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/ai-ml-engineer-at-booz-allen-hamilton-4475081231",
       "official_url": "",
-      "description": "",
+      "description": "Job Number: R0249508 AI/ML Engineer The Opportunity: As a machine learning (ML) engineer, you understand good software is more than just a good user experience. To compete in today’s technical landscape, mission-oriented ML solutions must be architected, designed, and built to handle fast-moving data, to seamlessly scale with infrastructure based on system usage, and to expand based on evolving mission requirements. We’re looking for an engineer like you to create artificial intelligence (AI) and ML-enabled solutions that help solve our toughest challenges facing the defense and intelligence sectors. On our team, you’ll design, create, and implement complete AI systems that will transform client operations, increase data accessibility, and optimize AI and ML systems. You’ll ensure that your team’s solutions consider the broader ecosystem and operating environment as well as future functionality and enhancements. Additionally, you’ll deepen your skillset in areas like software engineering, ML operations (MLOps), and software deployment and integration into a variety of different mission environments. Ready to transform the defense and intelligence sectors with software systems to aid data accessibility and AI and ML operationalization? Join us. The world can’t wait. You Have: 2+ years of experience as an ML engineer, data scientist, analyst, or researcher 2+ years of experience working within data science or data research in a professional or academic environment, and training or deploying models across multiple modalities of data Experience building production-grade ML solutions Experience with programming, including ML frameworks such as TensorFlow, PyTorch, llama.cpp, or vLLM Experience with project work in deep learning, computer vision, neural networks, NLP, or signal processing Ability to obtain a Secret clearance Bachelor’s degree Nice If You Have: 3+ years of experience working in cloud environments, including AWS and Azure 2+ years of experience deploying and integrating production-grade ML models using tools such as Docker and Kubernetes Experience with client engagements, client-facing project work, and business development Experience deploying and managing data brokering solutions, including Kafka, Red Panda, and Confluent Ability to adapt in a rapidly changing environment Possession of excellent verbal and written communication skills Possession of excellent interpersonal, analytical, problem-solving, and organizational skills Top Secret clearance Master's degree Clearance: Applicants selected will be subject to a security investigation and may need to meet eligibility requirements for access to classified information. Compensation At Booz Allen, we celebrate your contributions, provide you with opportunities and choices, and support your total well-being. Our offerings include health, life, disability, financial, and retirement benefits, as well as paid leave, professional development, tuition assistance, work-life programs, and dependent care. Our recognition awards program acknowledges employees for exceptional performance and superior demonstration of our values. Full-time and part-time employees working at least 20 hours a week on a regular basis are eligible to participate in Booz Allen’s benefit programs. Individuals that do not meet the threshold are only eligible for select offerings, not inclusive of health benefits. We encourage you to learn more about our total benefits by visiting the Resource page on our Careers site and reviewing Our Employee Benefits page. Salary at Booz Allen is determined by various factors, including but not limited to location, the individual’s particular combination of education, knowledge, skills, competencies, and experience, as well as contract-specific affordability and organizational requirements. The projected compensation range for this position is $77,600.00 to $176,000.00 (annualized USD). The estimate displayed represents the typical salary range for this position and is just one component of Booz Allen’s total compensation package for employees. This posting will close within 90 days from the Posting Date. Identity Statement As part of the hiring process, we will ask you to complete an identity verification process that leverages advanced biometrics and artificial intelligence to ensure authenticity and protect against identity fraud. You are expected to be on camera during interviews and assessments. We reserve the right to take your picture to verify your identity and prevent fraud. Candidate AI Usage Policy AI is a part of our daily work at Booz Allen, and we are committed to the responsible and ethical use of AI tools. However, we want to ensure a fair candidate process based on your own skills and knowledge. As part of this commitment, the use of artificial intelligence (AI) or other tools to assist with responses during interviews (whether in-person or virtual) is prohibited unless permission is explicitly provided . Work Model Our people-first culture prioritizes the benefits of collaboration. To support engagement and effective communication, employees working virtually are generally expected to have their cameras on during meetings. Remote: If this position is listed as remote, there may still be occasions when you are required to work in person at a Booz Allen or customer facility. Hybrid: If this position is listed as hybrid, you will be expected to work from a Booz Allen or customer facility, in alignment with your leadership's expectations and the needs of the role. Onsite: If this position is listed as onsite, work will primarily be performed full-time at a customer facility, where employees will collaborate directly with colleagues and customers as required by the role. Commitment to Non-Discrimination All qualified applicants will receive consideration for employment without regard to disability, status as a protected veteran or any other status protected by applicable federal, state, local, or international law.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-03T22:00:10.527976+00:00",
@@ -10711,9 +10924,19 @@
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-03T22:00:17.423096+00:00",
       "official_search_status": "no_match",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
       "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "Relevant AI/ML role; experience, clearance, and hands-on responsibilities could determine early-career fit."
+      },
+      "linkedin_detail_triage_hash": "7f7b45d68e12fd82d6e6",
+      "linkedin_detail_attempted_at": "2026-10-04T04:01:25.056101+00:00",
+      "linkedin_detail_fetched_at": "2026-10-04T04:01:25.056101+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved"
     },
     {
       "job_id": "4454092565",
@@ -11073,8 +11296,7 @@
       },
       "linkedin_detail_triage_hash": "9972a0f8ce81db01616e",
       "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "verified_this_run": false
     },
     {
       "job_id": "4455556575",
@@ -11225,6 +11447,31 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4447733166",
+      "source": "linkedin",
+      "company": "Booz Allen Hamilton",
+      "title": "Machine Learning Engineer",
+      "location": "Alexandria, VA",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-at-booz-allen-hamilton-4447733166",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T10:03:53.346540+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4456791787",
       "source": "linkedin",
       "company": "Booz Allen Hamilton",
@@ -11246,8 +11493,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4434768030",
@@ -11325,6 +11572,31 @@
       "official_search_status": "no_match",
       "source_verified_at": "2026-09-26T00:21:43.068211+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4457070187",
+      "source": "linkedin",
+      "company": "Booz Allen Hamilton",
+      "title": "Software Engineer",
+      "location": "Aurora, CO",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-booz-allen-hamilton-4457070187",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T02:36:39.478299+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4443444335",
@@ -11905,6 +12177,31 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4466327745",
+      "source": "linkedin",
+      "company": "Broadridge",
+      "title": "Sr Software Engineer (Hybrid - Newark, NJ, NYC or Edgewood, NY)",
+      "location": "Newark, NJ",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-software-engineer-hybrid-newark-nj-nyc-or-edgewood-ny-at-broadridge-4466327745",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T02:36:39.478299+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4469990432",
       "source": "linkedin",
       "company": "Brunswick Group",
@@ -12090,7 +12387,7 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4450206268",
@@ -12156,7 +12453,7 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470491262",
@@ -12271,6 +12568,32 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4469752806",
+      "source": "linkedin",
+      "company": "CACI International Inc",
+      "title": "Palantir Foundry AI Engineer - Senior",
+      "location": "Ashburn, VA",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/palantir-foundry-ai-engineer-senior-at-caci-international-inc-4469752806",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-04T04:00:16.469096+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469751816",
@@ -13220,8 +13543,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4451453360",
@@ -15314,6 +15637,31 @@
       "enrichment_status": "resolved"
     },
     {
+      "job_id": "4447081986",
+      "source": "linkedin",
+      "company": "Cboe Global Markets",
+      "title": "Senior Software Engineer (Java)",
+      "location": "New York, NY",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-java-at-cboe-global-markets-4447081986",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T19:21:05.669988+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4473354175",
       "source": "linkedin",
       "company": "CelesiumAI",
@@ -15585,6 +15933,31 @@
       "recovery_methods": {},
       "source_verified_at": "2026-09-29T05:14:01.400356+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4408947164",
+      "source": "linkedin",
+      "company": "Charlie Health",
+      "title": "Staff Software Engineer, Full Stack (Practice Management Team)",
+      "location": "New York, NY",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/staff-software-engineer-full-stack-practice-management-team-at-charlie-health-4408947164",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T02:36:39.478299+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4454592649",
@@ -17045,16 +17418,14 @@
       },
       "recovery_methods": {},
       "application_url": "https://jobs.ashbyhq.com/cohere/c12e3636-ed16-47e7-ba1f-82860f88d340",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "jd_recovery_at": "2026-10-03T19:00:17.057219+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4452437392",
@@ -17538,6 +17909,31 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4457022207",
+      "source": "linkedin",
+      "company": "Collins Aerospace",
+      "title": "Sr Software Engineer (Onsite)",
+      "location": "Fulton, MD",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-software-engineer-onsite-at-collins-aerospace-4457022207",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-11T10:44:55.020036+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4471559905",
       "source": "linkedin",
       "company": "Commerce",
@@ -17816,6 +18212,52 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4475331972",
+      "source": "linkedin",
+      "company": "Compass",
+      "title": "Software Engineer II",
+      "location": "Manhattan, NY",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-at-compass-4475331972",
+      "official_url": "",
+      "description": "At Compass, our mission is to help everyone find their place in the world. Founded in 2012, we’re revolutionizing the real estate industry with our end-to-end platform that empowers residential real estate agents to deliver exceptional service to seller and buyer clients. Software Engineer ll Compass envisions a world where the experience of selling or buying a home is simple and pleasant for everyone. Founded in 2012, Compass provides a cloud-based end-to-end platform that empowers residential real estate agents to deliver exceptional service to their seller and buyer clients, all in service of its mission to help everyone find their place in the world. As one of the fastest-growing technology companies in an industry of nearly $4 trillion, Compass has built a world-class engineering team operating the only end-to-end platform in the real estate industry. The platform gives Compass the edge to push the boundaries of value we can add for our customers. There is so much more Compass can do, and it needs your experience building modern cloud services to evolve and create products that improve every step of the real estate agents’ experience from the first contact with a client to the close of a deal. You will have the opportunity to work across the entire real estate journey, working with technology that aggregates millions to billions of interactions, listings, transactions, and other data. In this role you will be at the center of the Compass platform, providing our agents the tools they need to manage and engage with millions of residential real estate clients. What You Will Do Work in a startup-like environment building agile products and services Design and build distributed, event-driven microservices Independently define, decompose, and lead delivery of complex projects Perform code reviews, design reviews, and write high quality tests Become the subject matter expert for one or more services in your domain Create clear and concise documentation (diagrams, service descriptions, decisions, runbooks) Own and operationally improve services in your domain throughout their lifecycle Identify and remove bottlenecks to address inefficiencies in the developer experience What We Look For BS in CS or equivalent practical experience 2+ years of software engineering experience with languages such as Java or Golang Experience with Kafka and Ruby on Rails is a plus Experience designing and building cloud-based services Hands-on experience with cloud-based services (AWS, Azure, GCP), containerization, microservices architecture, and continuous integration and delivery Excellent verbal and written communication skills Compensation: The base pay range for this position is $126,990-$141,100; however, base pay offered may vary depending on job-related knowledge, skills, and experience. Bonuses and restricted stock units may be provided as part of the compensation package, in addition to a full range of benefits. Base pay is based on market location. Minimum wage for the position will always be met. Perks That You Need To Know About Participation in our incentive programs (which may include eligible cash, equity, or commissions). Plus paid vacation, holidays, sick time, parental leave, and recharge leave; medical, tele-health, dental and vision benefits; 401(k) plan; flexible spending accounts (FSAs); commuter program; life and disability insurance; Maven (a support system for new parents); Carrot (fertility benefits); UrbanSitter (caregiver referral network); Employee Assistance Program; and pet insurance. Do your best work, be your authentic self. At Compass, we believe that everyone deserves to find their place in the world — a place where they feel like they belong, where they can be their authentic selves, where they can thrive. Our collaborative, energetic culture is grounded in our Compass Entrepreneurship Principles and our commitment to diversity, equity, inclusion, growth and mobility. As an equal opportunity employer, we offer competitive compensation packages, robust benefits and professional growth opportunities aimed at helping to improve our employees' lives and careers. Notice for California Applicants Los Angeles County Fair Chance Notice",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-04T04:00:16.469096+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "3f6e4a856e4605d6dae2",
+          "attempted_at": "2026-10-04T04:00:16.469096+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-10-04T04:00:16.469096+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Software Engineer II may suit early career; requirements and scope are unknown."
+      },
+      "linkedin_detail_triage_hash": "48542d46bdaa4ba40f9e",
+      "linkedin_detail_attempted_at": "2026-10-04T04:01:01.641427+00:00",
+      "linkedin_detail_fetched_at": "2026-10-04T04:01:01.641427+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4471098113",
@@ -19921,7 +20363,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4464082317",
@@ -20681,6 +21123,31 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4457531070",
+      "source": "linkedin",
+      "company": "Direct Supply",
+      "title": "Senior AI Engineer",
+      "location": "Milwaukee, WI",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-ai-engineer-at-direct-supply-4457531070",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T19:21:05.669988+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4475337479",
       "source": "linkedin",
       "company": "Discord",
@@ -20704,16 +21171,14 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "application_url": "https://job-boards.greenhouse.io/discord/jobs/8369347002",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "jd_recovery_at": "2026-10-03T19:00:17.057219+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4443479715",
@@ -20796,6 +21261,31 @@
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T18:02:13.704987+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4465111236",
+      "source": "linkedin",
+      "company": "Docusign",
+      "title": "Senior Software Engineer - AI",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-ai-at-docusign-4465111236",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T02:36:39.478299+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4433415533",
@@ -22020,7 +22510,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
       "verified_this_run": true
     },
     {
@@ -22203,8 +22693,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469009063",
@@ -23181,30 +23671,13 @@
           "ai engineer"
         ]
       },
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "6d984039fe00634300ad",
-          "attempted_at": "2026-10-03T19:00:17.057219+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-03T19:00:17.057219+00:00",
-      "official_search_status": "no_match",
-      "linkedin_detail_triage": {
-        "needs_jd": true,
-        "priority": "high",
-        "reason": "Directly relevant machine-learning role; level and qualifications are unknown."
-      },
-      "linkedin_detail_triage_hash": "33e760d987e8315ea174",
-      "linkedin_detail_attempted_at": "2026-10-03T19:01:11.969072+00:00",
       "linkedin_detail_fetched_at": "2026-10-03T19:01:11.969072+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4473871429",
@@ -23232,7 +23705,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
       "verified_this_run": true
     },
     {
@@ -23341,30 +23814,13 @@
           "full-stack engineer"
         ]
       },
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "38b26e0257ce51ad1807",
-          "attempted_at": "2026-10-03T19:00:17.057219+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-03T19:00:17.057219+00:00",
-      "official_search_status": "no_match",
-      "linkedin_detail_triage": {
-        "needs_jd": true,
-        "priority": "high",
-        "reason": "Relevant full-stack role at an AI company; scope and qualifications are unknown."
-      },
-      "linkedin_detail_triage_hash": "552a1983e219f5fe4351",
-      "linkedin_detail_attempted_at": "2026-10-03T19:01:11.969072+00:00",
       "linkedin_detail_fetched_at": "2026-10-03T19:01:11.969072+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4472361480",
@@ -23682,6 +24138,31 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4380976636",
+      "source": "linkedin",
+      "company": "Extreme Networks",
+      "title": "AI Principal Machine Learning Engineer (10189)",
+      "location": "Seattle, WA",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-principal-machine-learning-engineer-10189-at-extreme-networks-4380976636",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T19:21:05.669988+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4461507032",
       "source": "linkedin",
       "company": "F5",
@@ -23729,8 +24210,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468128890",
@@ -23811,7 +24292,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4475326791",
@@ -23836,12 +24317,12 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "jd_recovery_at": "2026-10-03T19:00:17.057219+00:00",
+      "jd_recovery_at": "2026-10-04T04:00:16.469096+00:00",
       "enrichment_method": "exact_indeed_peer",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470481059",
@@ -23990,6 +24471,31 @@
       "official_search_status": "no_match",
       "source_verified_at": "2026-09-23T18:01:38.694486+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4466353609",
+      "source": "linkedin",
+      "company": "Fidelity Investments",
+      "title": "Principal Software Engineer (Java/SpringBoot)",
+      "location": "Jersey City, NJ",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/principal-software-engineer-java-springboot-at-fidelity-investments-4466353609",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T02:36:39.478299+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4472650579",
@@ -24922,6 +25428,32 @@
       "recovery_candidates": []
     },
     {
+      "job_id": "4475322965",
+      "source": "linkedin",
+      "company": "Ford Motor Company",
+      "title": "Senior AI Engineer",
+      "location": "Dearborn, MI",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-ai-engineer-at-ford-motor-company-4475322965",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-04T04:00:16.469096+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4428117191",
       "source": "linkedin",
       "company": "Ford Motor Company",
@@ -25619,8 +26151,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468024376",
@@ -25895,8 +26427,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4466406231",
@@ -25920,8 +26452,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4472748785",
@@ -26025,8 +26557,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4451461627",
@@ -26749,7 +27281,7 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461994359",
@@ -26831,16 +27363,14 @@
       },
       "recovery_methods": {},
       "application_url": "https://www.google.com/about/careers/applications/jobs/results/86454933179507398-senior-software-engineer-infrastructure-core",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "jd_recovery_at": "2026-10-03T19:00:17.057219+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4442043244",
@@ -27644,8 +28174,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4464673815",
@@ -28387,6 +28917,52 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4470596870",
+      "source": "linkedin",
+      "company": "Haystack",
+      "title": "Java Full Stack Developer",
+      "location": "Denver, CO",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/java-full-stack-developer-at-haystack-4470596870",
+      "official_url": "",
+      "description": "We are working with a global technology and business process services company that helps clients transform their businesses and achieve superior performance. The ideal candidate will have a strong emphasis on Java 11 and a passion for developing high-quality software solutions. The Role Design, develop, and maintain high-performance applications using Java 11. Collaborate with cross-functional teams to define, design, and ship new features. Participate in code reviews, ensuring adherence to best practices and coding standards. Identify and resolve performance bottlenecks and bugs in existing applications. Contribute to the architecture and design of scalable and maintainable systems. Provide technical guidance and mentorship to junior developers. What You'll Need 7-10 years of experience in software development. Strong proficiency in Java 11, including its features and libraries. Extensive experience with object-oriented programming and design patterns. Solid understanding of RESTful APIs and microservices architecture. Experience with version control systems, preferably Git. Familiarity with Agile methodologies and SDLC. What's On Offer Opportunity to work on building robust and scalable platforms and products. Dynamic team environment. Competitive salary between $110,000 and $115,000 per year. Apply via Haystack today!",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-04T04:00:16.469096+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "7f833e78f46f5a8f8158",
+          "attempted_at": "2026-10-04T04:00:16.469096+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-10-04T04:00:16.469096+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Java full-stack role; missing requirements could change fit."
+      },
+      "linkedin_detail_triage_hash": "59ae6f04580b10ce06be",
+      "linkedin_detail_attempted_at": "2026-10-04T04:01:01.641427+00:00",
+      "linkedin_detail_fetched_at": "2026-10-04T04:01:01.641427+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4466966957",
@@ -30686,16 +31262,14 @@
       },
       "recovery_methods": {},
       "application_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210778750",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "jd_recovery_at": "2026-10-03T19:00:17.057219+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470902689",
@@ -31426,8 +32000,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4455597270",
@@ -32002,6 +32576,31 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-27T04:00:08.411781+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4463956947",
+      "source": "linkedin",
+      "company": "Jobot",
+      "title": "Senior AI Software Engineer",
+      "location": "New York, NY",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-ai-software-engineer-at-jobot-4463956947",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-11T10:44:55.020036+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469953854",
@@ -33151,7 +33750,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4444211653",
@@ -33789,7 +34388,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
       "verified_this_run": true
     },
     {
@@ -36105,16 +36704,14 @@
       },
       "recovery_methods": {},
       "application_url": "https://apply.careers.microsoft.com/careers/job/1970393556982925",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "jd_recovery_at": "2026-10-03T19:00:17.057219+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4475309911",
@@ -36140,16 +36737,14 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "application_url": "https://apply.careers.microsoft.com/careers/job/1970393557022605",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "jd_recovery_at": "2026-10-03T19:00:17.057219+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470936363",
@@ -36648,6 +37243,41 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4430164081",
+      "source": "linkedin",
+      "company": "MongoDB",
+      "title": "Senior Software Engineer, Storage Layer Services",
+      "location": "New York, NY",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-storage-layer-services-at-mongodb-4430164081",
+      "official_url": "",
+      "description": "<p>MongoDB’s Storage Layer Services (SLS) team is re-architecting the MongoDB cloud storage layer and sits at the heart of our next-generation cloud storage architecture. This relatively new team is building performant, multi-tenant distributed storage services that both enhance today’s Atlas storage stack and enable more customer workloads to run more efficiently.</p> <p>We are looking for a talented Senior Software Engineer to join our team as we execute on a multi-year roadmap and prepare to launch and rapidly scale services that handle petabytes of data. Come do some of the most interesting work of your career as we Think Big and Go Far for our customers!</p> <p>This role can be based out of our New York City office (hybrid working model) or remotely in the North America region.</p> <h3>What you’ll do</h3> <ul> <li>Design, build, and operate control plane services powering an elastic and multi-tenant storage layer for thousands of database instances.</li> <li>Solve problems around maintaining high availability and performance during load spikes, hardware failures, cloud provider outages, and other disruptions.</li> <li>Contribute to a culture of operational excellence through dashboards, playbooks, and on-call improvements.</li> <li>Lead complex technical projects from planning through successful deployment with clear stakeholder updates.</li> <li>Partner closely with peers across database, cloud, and infrastructure engineering teams as well as project management to investigate incidents and develop long-term roadmaps.</li> <li>Mentor junior engineers and foster a collaborative team environment.</li> </ul> <h3>We’re looking for someone with</h3> <ul> <li>5+ years of professional software development experience building, deploying, and operating multi-tenant cloud services with a focus on operational excellence.</li> <li>Experience with large backend/compiled codebases, such as Rust or C/C++.</li> <li>Experience with containerization and orchestration platforms (e.g. Kubernetes).</li> <li>Experience with observability tooling (e.g. time series metrics, dashboards).</li> <li>Experience with distributed systems.</li> <li>Familiarity with database internals or experience building core components for data processing systems.</li> <li>Excellent verbal and written technical communication skills, with a strong desire to collaborate with colleagues.</li> <li>Strong time management skills and the ability to realistically assess project complexity.</li> <li>Demonstrated track record of going above and beyond for customers.</li> </ul> <h3>Strong candidates may also have</h3> <ul> <li>Experience writing and profiling highly performant Rust code.</li> <li>Experience improving reliability through chaos engineering and load testing.</li> <li>Experience building scalable cloud services on multiple cloud provider platforms (AWS, Azure, GCP).</li> <li>Interest in the theory and practice of high-availability systems (hands-on experience or an M.Sc./Ph.D. in the domain is a plus).</li> </ul> <h3>Success Measures</h3> <ul> <li>In 3 months, you'll have shipped code into production and collaborated with the team to solve tough problems.</li> <li>In 6 months, you'll have contributed to a large project.</li> <li>In 12 months, you'll have designed new features, led development work, and become a go-to expert on parts of the system.</li> </ul> <h3>About MongoDB</h3> <p>MongoDB is built for change, empowering our customers and our people to innovate at the speed of the market. We have redefined the data platform for the AI era, enabling builders to create, transform, and disrupt industries with software. MongoDB’s unified data platform, the most widely available, globally distributed data platform on the market, helps organizations modernize legacy workloads, embrace innovation, and unleash AI. Our cloud-native platform, MongoDB Atlas, is the only globally distributed, multi-cloud data platform and is available across AWS, Google Cloud, and Microsoft Azure.</p> <p>With offices worldwide and over 67,000 customers, including 75% of the Fortune 100 and AI-native startups, relying on MongoDB for their most important applications, we’re powering the next era of software.</p> <p>Our compass at MongoDB is our <a href=\"https://www.mongodb.com/company\">Leadership Commitment,</a> guiding how and why we make decisions, show up for each other, and win. It’s what makes us MongoDB.&nbsp;</p> <p>To drive the personal growth and business impact of our employees, we’re committed to developing a supportive and enriching culture for everyone. <a href=\"https://www.mongodb.com/company/blog/culture/employee-benefits-that-make-a-difference-at-mongodb\">From employee affinity groups, to fertility assistance and a generous parental leave policy</a>, we value our employees’ wellbeing and want to support them along every step of their professional and personal journeys.<a href=\"https://www.mongodb.com/blog/channel/culture\"> Learn more about what it’s like to work at MongoDB</a>, and help us make an impact on the world!</p> <p>MongoDB is committed to providing any necessary accommodations for individuals with disabilities within our application and interview process. To request an accommodation due to a disability, please inform your recruiter.</p> <p>MongoDB, Inc. provides equal employment opportunities to all employees and applicants for employment and prohibits discrimination and harassment of any type and makes all hiring decisions without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state or local laws.</p> <p>REQ ID: 2273451807</p><div class=\"content-pay-transparency\"><div class=\"pay-input\"><div class=\"description\"><p>MongoDB’s base salary range for this role is posted below. Compensation at the time of offer is unique to each candidate and based on a variety of factors such as skill set, experience, qualifications, and work location. Salary is one part of MongoDB’s total compensation and benefits package. Other benefits for eligible employees may include: equity, participation in the employee stock purchase program, flexible paid time off, 20 weeks fully-paid gender-neutral parental leave, fertility and adoption assistance, 401(k) plan, mental health counseling, access to transgender-inclusive health insurance coverage, and health benefits offerings. Please note, the base salary range listed below and the benefits in this paragraph are only applicable to U.S.-based candidates.</p></div><div class=\"title\">MongoDB’s base salary range for this role in the U.S. is:</div><div class=\"pay-range\"><span>$126,000</span><span class=\"divider\">&mdash;</span><span>$248,000 USD</span></div></div></div>",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-04T04:00:16.469096+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "application_url": "https://www.mongodb.com/careers/job/?gh_jid=7947560",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-04T04:00:16.469096+00:00",
+      "jd_recovery_at": "2026-10-04T04:00:16.469096+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-04T04:00:16.469096+00:00",
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4451833449",
       "source": "linkedin",
       "company": "MongoDB",
@@ -36702,6 +37332,40 @@
       "enrichment_failure_reason": "official_detail_deferred",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4457389217",
+      "source": "linkedin",
+      "company": "MongoDB",
+      "title": "Software Engineer 3, Atlas Clusters Platform",
+      "location": "New York, NY",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-3-atlas-clusters-platform-at-mongodb-4457389217",
+      "official_url": "",
+      "description": "<p>The worldwide data management software market is massive. At MongoDB we are transforming industries and empowering developers to build amazing apps that people use every day. We are the leading modern data platform and the first database provider to IPO in over 20 years. Join our team and be at the forefront of innovation and creativity.</p> <p>MongoDB is seeking a Software Engineer 3 to join the Atlas Clusters Platform team. The team is responsible for building MongoDB Atlas, our database as a service offering and fastest growing product. Atlas allows users to deploy fault-tolerant, secure, globally distributed MongoDB clusters in just minutes.</p> <p>The Atlas Clusters Platform team develops the foundational orchestration platform behind MongoDB Atlas. Our systems drive cluster planning and execution, evolve the Atlas control plane toward service-oriented architecture, and provide critical infrastructure that help Atlas run safely and efficiently across cloud environments.</p> <p>We are looking to speak to candidates who are based in New York City for our hybrid working model.</p> <h3>What you’ll do</h3> <ul> <li>Build and design new features for MongoDB Atlas</li> <li>Contribute to and lead complex technical projects</li> <li>Work closely with product and design teams, considering the user’s perspective while building technical solutions</li> <li>Work with customers and support engineers to fix issues</li> <li>Collaborate with team members to develop our codebase, best practices, and design principles</li> <li>Learn from and mentor other team members</li> </ul> <h3>We’re looking for someone who</h3> <ul> <li>Has at least 3 years of professional software development experience</li> <li>Is skilled at writing large-scale, distributed backend systems in a compiled language (Java, C#, Go, etc.)</li> <li>Is comfortable working across the stack of a modern web application (e.g. React, TypeScript, Kubernetes)</li> <li>Has experience with at least one major cloud provider technology (AWS, Azure, GCP)</li> <li>Has led the launch of a new feature and maintained it in production</li> <li>Is eager to solve tough problems</li> <li>Has excellent communication skills</li> <li>Is curious, collaborative, and motivated</li> </ul> <h3>Success Measures</h3> <ul> <li>In 3 months, you'll have shipped code into production and collaborated with the team to solve tough problems</li> <li>In 6 months, you'll have contributed to a large project</li> <li>In 12 months, you'll have designed new features, led development work, and become a go-to expert on parts of the system</li> </ul> <h3>About MongoDB</h3> <p>MongoDB is built for change, empowering our customers and our people to innovate at the speed of the market. We have redefined the data platform for the AI era, enabling builders to create, transform, and disrupt industries with software. MongoDB’s unified data platform, the most widely available, globally distributed data platform on the market, helps organizations modernize legacy workloads, embrace innovation, and unleash AI. Our cloud-native platform, MongoDB Atlas, is the only globally distributed, multi-cloud data platform and is available across AWS, Google Cloud, and Microsoft Azure.</p> <p>With offices worldwide and over 67,000 customers, including 75% of the Fortune 100 and AI-native startups, relying on MongoDB for their most important applications, we’re powering the next era of software.</p> <p>Our compass at MongoDB is our <a href=\"https://www.mongodb.com/company\">Leadership Commitment,</a> guiding how and why we make decisions, show up for each other, and win. It’s what makes us MongoDB.&nbsp;</p> <p>To drive the personal growth and business impact of our employees, we’re committed to developing a supportive and enriching culture for everyone. <a href=\"https://www.mongodb.com/company/blog/culture/employee-benefits-that-make-a-difference-at-mongodb\">From employee affinity groups, to fertility assistance and a generous parental leave policy</a>, we value our employees’ wellbeing and want to support them along every step of their professional and personal journeys.<a href=\"https://www.mongodb.com/blog/channel/culture\"> Learn more about what it’s like to work at MongoDB</a>, and help us make an impact on the world!</p> <p>MongoDB is committed to providing any necessary accommodations for individuals with disabilities within our application and interview process. To request an accommodation due to a disability, please inform your recruiter.</p> <p>MongoDB, Inc. provides equal employment opportunities to all employees and applicants for employment and prohibits discrimination and harassment of any type and makes all hiring decisions without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state or local laws.</p> <p>Req. ID: 2273504876</p><div class=\"content-pay-transparency\"><div class=\"pay-input\"><div class=\"description\"><p>MongoDB’s base salary range for this role is posted below. Compensation at the time of offer is unique to each candidate and based on a variety of factors such as skill set, experience, qualifications, and work location. Salary is one part of MongoDB’s total compensation and benefits package. Other benefits for eligible employees may include: equity, participation in the employee stock purchase program, flexible paid time off, 20 weeks fully-paid gender-neutral parental leave, fertility and adoption assistance, 401(k) plan, mental health counseling, access to transgender-inclusive health insurance coverage, and health benefits offerings. Please note, the base salary range listed below and the benefits in this paragraph are only applicable to U.S.-based candidates.</p></div><div class=\"title\">MongoDB’s base salary range for this role in the U.S. is:</div><div class=\"pay-range\"><span>$106,000</span><span class=\"divider\">&mdash;</span><span>$209,000 USD</span></div></div></div>",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-13T10:07:55.952182+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://www.mongodb.com/careers/job/?gh_jid=8089859",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-04T04:00:16.469096+00:00",
+      "jd_recovery_at": "2026-10-04T04:00:16.469096+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-04T04:00:16.469096+00:00",
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4406694620",
@@ -37530,7 +38194,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4442904978",
@@ -38542,6 +39206,31 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4464253743",
+      "source": "linkedin",
+      "company": "Northern Trust",
+      "title": "Senior Software Engineer - C++/Python",
+      "location": "Chicago, IL",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-c%2B%2B-python-at-northern-trust-4464253743",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T02:36:39.478299+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468597271",
       "source": "linkedin",
       "company": "Northern Trust",
@@ -39090,8 +39779,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4472087276",
@@ -39920,6 +40609,76 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4463925314",
+      "source": "linkedin",
+      "company": "Oracle",
+      "title": "Senior Machine Learning Engineer",
+      "location": "Nashville, TN",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-machine-learning-engineer-at-oracle-4463925314",
+      "official_url": "",
+      "description": "Implements machine learning (ML) models for production with minimal guidance. Contributes to the readiness of machine learning models for deployment in production. Contributes to the automation of machine learning workflows. Participates in the creation of infrastructure and frameworks to monitor the performance of machine learning models in deployment. Identifies potential data quality, security, and/or privacy issues and their impacts on modeling. Provides troubleshooting and debugging support. Contributes to addressing issues in machine learning infrastructure and workflows. Collaborates with stakeholders to integrate machine learning models into new or extant systems. Contributes to the development and maintenance of tools, platforms, and services for internal use. Develops low-complexity, efficient, bug-free code from scratch. Develops familiarity with current developments in the machine learning field and integrates knowledge into model development. Key Responsibilities Machine Learning and Data Modeling – Model Productionization: – Utilizes machine learning (ML) and software development knowledge to implement ML models for production with minimal guidance. – Contributes to transforming machine learning prototypes into production-ready models. – Supports collaboration with multiple stakeholders such as Development Leads, Product Management, Operations, and Release Management to make, adopt, and communicate technical decisions, and shape the development and delivery of software. Model Development and Deployment – Model Deployment: – Contributes to ML model readiness for deployment by scaling models, cleaning model code, and ensuring production quality standards are met. – Contributes to the automation of machine learning workflows, from data extraction, transformation, and loading (ETL) to model deployment and monitoring, to establish the continuous integration and continuous delivery of machine learning solutions. Model Development and Deployment – Model Performance: – Utilizes infrastructure and frameworks to monitor the performance and alignment with design criteria of trained models and/or systems. – Monitors the performance of deployed models and troubleshoots independently or in collaboration with Data Science. – Interprets novel metrics that provide analytical insights to non-technical stakeholders on how well machine learning models are operating. Model Development and Deployment – Data Quality: – Identifies potential issues related to data quality (e.g., bias, fairness), data security, and data privacy, and contributes to minimizing their impacts on data analyses and modeling. – Contributes to tasks such as data cleaning, preprocessing, and feature identification to prepare for and enable model training. Internal Collaborations and Impacts – Model Integration and Operation: – Contributes to collaboration with multiple stakeholders (e.g., data scientists, software developers) to integrate ML models into new or existing systems. – Supports the partnership between model development and operations, ensuring smooth deployment and continuous improvement of ML models. – Learns operational considerations of model deployment (e.g., performance, scalability, stability, maintenance). – Participates in troubleshooting and debugging support efforts, such as addressing issues in machine learning infrastructure and workflow, and helping to create robust solutions to prevent future problems. Internal Collaborations and Impacts – Tool Development: – Contributes to the development and maintenance of tools, platforms, environments, and services for internal use. Internal Collaborations and Impacts – Coding and Documentation: – Contributes to the development of efficient, bug-free, low-complexity code from scratch and properly maintains and organizes the existing codebase. – Adheres to best practices for version control, code review, and continuous integration in machine learning projects. – Updates and maintains professional documentation for technical processes (experimentation, data collection and analyses, model building). Machine Learning Expertise: – Develops familiarity with current developments in the machine learning field and integrates learnings into model development. – Builds familiarity with the usage and development of third-party machine learning frameworks, packages, and libraries (e.g., PyTorch, TensorFlow, Keras) to continuously evaluate their performance and scalability, and integrate them into production environments. Core Responsibilities Planning & Execution: – Independently manages work, monitoring timelines and deliverables to ensure projects or initiatives stay on track and meet requirements. – Proactively prioritizes work and adapts to resource or timeline shifts, suggesting adjustments to maintain project efficiency. Collaboration & Partnership: – Collaborates across teams to align on expectations and achieve shared objectives. – Builds and maintains a comprehensive understanding of business, stakeholder, and/or customer needs to build and support effective partnerships. – Actively listens to diverse perspectives and asks questions to ensure understanding of others. Problem Solving: – Independently identifies and addresses standard and non-standard issues in accordance with standard practices, escalating more complex issues as appropriate. – Analyzes data and/or information from multiple sources to troubleshoot standard and non-standard errors. – Contributes to knowledge sharing and best practices. Continuous Learning: – Embraces continuous learning by actively seeking to build knowledge and new skills and/or tools and staying current with industry trends and best practices. – Seeks out and leverages feedback and training to improve skills. – Contributes to a culture of continuous learning and knowledge sharing with team members. Continuous Improvement: – Develops ideas and recommends updates to increase the efficiency and effectiveness of processes, protocols, and workflows within a team. – Seeks input from team members on alternative approaches and methods for improving work. Disclaimer: Certain U.S. based or U.S. customer or client-facing roles may be required to comply with applicable requirements, such as immunization/occupational health mandates, and/or drug testing requirements. Range and benefit information provided in this posting are specific to the stated locations only US: Hiring Range in USD from: $114,600 to $234,600 per annum. May be eligible for bonus, equity, and compensation deferral. Oracle maintains broad salary ranges for its roles in order to account for variations in knowledge, skills, experience, market conditions and locations, as well as reflect Oracle's differing products, industries and lines of business. Candidates are typically placed into the range based on the preceding factors as well as internal peer equity. Oracle US offers a comprehensive benefits package which includes the following: 1. Medical, dental, and vision insurance, including expert medical opinion 2. Short term disability and long term disability 3. Life insurance and AD&D 4. Supplemental life insurance (Employee/Spouse/Child) 5. Health care and dependent care Flexible Spending Accounts 6. Pre-tax commuter and parking benefits 7. 401(k) Savings and Investment Plan with company match 8. Paid time off: Flexible Vacation is provided to all eligible employees assigned to a salaried (non-overtime eligible) position. Accrued Vacation is provided to all other employees eligible for vacation benefits. For employees working at least 35 hours per week, the vacation accrual rate is 13 days annually for the first three years of employment and 18 days annually for subsequent years of employment. Vacation accrual is prorated for employees working between 20 and 34 hours per week. Employees working fewer than 20 hours per week are not eligible for vacation. 9. 11 paid holidays 10. Paid sick leave: 72 hours of paid sick leave upon date of hire. Refreshes each calendar year. Unused balance will carry over each year up to a maximum cap of 112 hours. 11. Paid parental leave 12. Adoption assistance 13. Employee Stock Purchase Plan 14. Financial planning and group legal 15. Voluntary benefits including auto, homeowner and pet insurance The role will generally accept applications for at least three calendar days from the posting date or as long as the job remains posted. Career Level - IC3",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-04T04:00:16.469096+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "application_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/344281",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-04T04:00:16.469096+00:00",
+      "jd_recovery_at": "2026-10-04T04:00:16.469096+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-04T04:00:16.469096+00:00",
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4463927298",
+      "source": "linkedin",
+      "company": "Oracle",
+      "title": "Senior Machine Learning Engineer",
+      "location": "Austin, TX",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-machine-learning-engineer-at-oracle-4463927298",
+      "official_url": "",
+      "description": "Implements machine learning (ML) models for production with minimal guidance. Contributes to the readiness of machine learning models for deployment in production. Contributes to the automation of machine learning workflows. Participates in the creation of infrastructure and frameworks to monitor the performance of machine learning models in deployment. Identifies potential data quality, security, and/or privacy issues and their impacts on modeling. Provides troubleshooting and debugging support. Contributes to addressing issues in machine learning infrastructure and workflows. Collaborates with stakeholders to integrate machine learning models into new or extant systems. Contributes to the development and maintenance of tools, platforms, and services for internal use. Develops low-complexity, efficient, bug-free code from scratch. Develops familiarity with current developments in the machine learning field and integrates knowledge into model development. Key Responsibilities Machine Learning and Data Modeling – Model Productionization: – Utilizes machine learning (ML) and software development knowledge to implement ML models for production with minimal guidance. – Contributes to transforming machine learning prototypes into production-ready models. – Supports collaboration with multiple stakeholders such as Development Leads, Product Management, Operations, and Release Management to make, adopt, and communicate technical decisions, and shape the development and delivery of software. Model Development and Deployment – Model Deployment: – Contributes to ML model readiness for deployment by scaling models, cleaning model code, and ensuring production quality standards are met. – Contributes to the automation of machine learning workflows, from data extraction, transformation, and loading (ETL) to model deployment and monitoring, to establish the continuous integration and continuous delivery of machine learning solutions. Model Development and Deployment – Model Performance: – Utilizes infrastructure and frameworks to monitor the performance and alignment with design criteria of trained models and/or systems. – Monitors the performance of deployed models and troubleshoots independently or in collaboration with Data Science. – Interprets novel metrics that provide analytical insights to non-technical stakeholders on how well machine learning models are operating. Model Development and Deployment – Data Quality: – Identifies potential issues related to data quality (e.g., bias, fairness), data security, and data privacy, and contributes to minimizing their impacts on data analyses and modeling. – Contributes to tasks such as data cleaning, preprocessing, and feature identification to prepare for and enable model training. Internal Collaborations and Impacts – Model Integration and Operation: – Contributes to collaboration with multiple stakeholders (e.g., data scientists, software developers) to integrate ML models into new or existing systems. – Supports the partnership between model development and operations, ensuring smooth deployment and continuous improvement of ML models. – Learns operational considerations of model deployment (e.g., performance, scalability, stability, maintenance). – Participates in troubleshooting and debugging support efforts, such as addressing issues in machine learning infrastructure and workflow, and helping to create robust solutions to prevent future problems. Internal Collaborations and Impacts – Tool Development: – Contributes to the development and maintenance of tools, platforms, environments, and services for internal use. Internal Collaborations and Impacts – Coding and Documentation: – Contributes to the development of efficient, bug-free, low-complexity code from scratch and properly maintains and organizes the existing codebase. – Adheres to best practices for version control, code review, and continuous integration in machine learning projects. – Updates and maintains professional documentation for technical processes (experimentation, data collection and analyses, model building). Machine Learning Expertise: – Develops familiarity with current developments in the machine learning field and integrates learnings into model development. – Builds familiarity with the usage and development of third-party machine learning frameworks, packages, and libraries (e.g., PyTorch, TensorFlow, Keras) to continuously evaluate their performance and scalability, and integrate them into production environments. Core Responsibilities Planning & Execution: – Independently manages work, monitoring timelines and deliverables to ensure projects or initiatives stay on track and meet requirements. – Proactively prioritizes work and adapts to resource or timeline shifts, suggesting adjustments to maintain project efficiency. Collaboration & Partnership: – Collaborates across teams to align on expectations and achieve shared objectives. – Builds and maintains a comprehensive understanding of business, stakeholder, and/or customer needs to build and support effective partnerships. – Actively listens to diverse perspectives and asks questions to ensure understanding of others. Problem Solving: – Independently identifies and addresses standard and non-standard issues in accordance with standard practices, escalating more complex issues as appropriate. – Analyzes data and/or information from multiple sources to troubleshoot standard and non-standard errors. – Contributes to knowledge sharing and best practices. Continuous Learning: – Embraces continuous learning by actively seeking to build knowledge and new skills and/or tools and staying current with industry trends and best practices. – Seeks out and leverages feedback and training to improve skills. – Contributes to a culture of continuous learning and knowledge sharing with team members. Continuous Improvement: – Develops ideas and recommends updates to increase the efficiency and effectiveness of processes, protocols, and workflows within a team. – Seeks input from team members on alternative approaches and methods for improving work. Disclaimer: Certain U.S. based or U.S. customer or client-facing roles may be required to comply with applicable requirements, such as immunization/occupational health mandates, and/or drug testing requirements. Range and benefit information provided in this posting are specific to the stated locations only US: Hiring Range in USD from: $114,600 to $234,600 per annum. May be eligible for bonus, equity, and compensation deferral. Oracle maintains broad salary ranges for its roles in order to account for variations in knowledge, skills, experience, market conditions and locations, as well as reflect Oracle's differing products, industries and lines of business. Candidates are typically placed into the range based on the preceding factors as well as internal peer equity. Oracle US offers a comprehensive benefits package which includes the following: 1. Medical, dental, and vision insurance, including expert medical opinion 2. Short term disability and long term disability 3. Life insurance and AD&D 4. Supplemental life insurance (Employee/Spouse/Child) 5. Health care and dependent care Flexible Spending Accounts 6. Pre-tax commuter and parking benefits 7. 401(k) Savings and Investment Plan with company match 8. Paid time off: Flexible Vacation is provided to all eligible employees assigned to a salaried (non-overtime eligible) position. Accrued Vacation is provided to all other employees eligible for vacation benefits. For employees working at least 35 hours per week, the vacation accrual rate is 13 days annually for the first three years of employment and 18 days annually for subsequent years of employment. Vacation accrual is prorated for employees working between 20 and 34 hours per week. Employees working fewer than 20 hours per week are not eligible for vacation. 9. 11 paid holidays 10. Paid sick leave: 72 hours of paid sick leave upon date of hire. Refreshes each calendar year. Unused balance will carry over each year up to a maximum cap of 112 hours. 11. Paid parental leave 12. Adoption assistance 13. Employee Stock Purchase Plan 14. Financial planning and group legal 15. Voluntary benefits including auto, homeowner and pet insurance The role will generally accept applications for at least three calendar days from the posting date or as long as the job remains posted. Career Level - IC3",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-04T04:00:16.469096+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "application_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/344281",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-04T04:00:16.469096+00:00",
+      "jd_recovery_at": "2026-10-04T04:00:16.469096+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-04T04:00:16.469096+00:00",
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4432745398",
       "source": "linkedin",
       "company": "Oracle",
@@ -40299,8 +41058,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4467627951",
@@ -40510,6 +41269,31 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4464255430",
+      "source": "linkedin",
+      "company": "Oracle",
+      "title": "Senior Software Engineer, Platform",
+      "location": "Nashville, TN",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-platform-at-oracle-4464255430",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T02:36:39.478299+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4467647026",
@@ -41640,6 +42424,31 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4464264867",
+      "source": "linkedin",
+      "company": "PathAI",
+      "title": "Senior Software Engineer, Fullstack",
+      "location": "Boston, MA",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-fullstack-at-pathai-4464264867",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T10:03:53.346540+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4463127123",
       "source": "linkedin",
       "company": "Pave",
@@ -42667,7 +43476,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
       "verified_this_run": true
     },
     {
@@ -42693,16 +43502,14 @@
       },
       "recovery_methods": {},
       "application_url": "https://www.pinterestcareers.com/jobs/?gh_jid=6121464",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "jd_recovery_at": "2026-10-03T19:00:17.057219+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4121963767",
@@ -42865,12 +43672,13 @@
       "first_seen": "2026-09-12T02:36:39.478299+00:00",
       "discovery_queries": {
         "linkedin": [
+          "full-stack engineer",
           "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4410265188",
@@ -43814,8 +44622,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4443618147",
@@ -45027,9 +45835,14 @@
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-03T22:00:17.423096+00:00",
       "official_search_status": "no_match",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
       "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "Relevant AI/LLM role; seniority and implementation requirements could change fit assessment."
+      },
+      "linkedin_detail_triage_hash": "c22c9bb8d99f460caddb"
     },
     {
       "job_id": "4471637029",
@@ -46003,6 +46816,52 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4475347638",
+      "source": "linkedin",
+      "company": "Referment",
+      "title": "Full-Stack Software Engineer: Application Engineering (ED0EE55)",
+      "location": "New York, NY",
+      "posted_date": "2026-10-04",
+      "aggregator_posted_date": "2026-10-04",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-application-engineering-ed0ee55-at-referment-4475347638",
+      "official_url": "",
+      "description": "Referment is working with a global investment and technology firm to find a full-stack engineer for a team that builds internal developer tooling, shared libraries and firmwide web applications. You will work directly with users across the organisation, combining engineering depth with product judgement to improve how teams operate. This is an end-to-end role: you will help shape product direction, choose technical approaches, write production code and iterate with designers and users through deployment. The Role Partner with stakeholders to understand workflows and turn user needs into well-designed software. Lead and contribute to projects from discovery and product definition through production deployment. Build and maintain internal applications and APIs used across the organisation. Iterate with designers and end users through interviews, usability testing and feedback. Take ownership of both product decisions and full-stack technical execution. What We're Looking For Extensive experience building full-stack, user-facing applications and applying human-centred product design. Ability to work across languages and stacks such as JavaScript, Python, Java or Go. A record of taking concepts from inception through coding, testing, iteration and deployment. Strong communication, organisation and self-management, with a client-service mindset. Curiosity, initiative and the ability to solve open-ended problems without losing sight of important details. This could suit a product-minded software engineer who wants direct contact with users and ownership across the complete application lifecycle. #Referment",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-04T04:00:16.469096+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "0a07b8560f8b9f528e6b",
+          "attempted_at": "2026-10-04T04:00:16.469096+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-10-04T04:00:16.469096+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Full-stack engineering role; missing qualifications could change fit."
+      },
+      "linkedin_detail_triage_hash": "e606ba537ecd40d9fd38",
+      "linkedin_detail_attempted_at": "2026-10-04T04:01:01.641427+00:00",
+      "linkedin_detail_fetched_at": "2026-10-04T04:01:01.641427+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4470684747",
       "source": "linkedin",
       "company": "Referment",
@@ -46027,6 +46886,32 @@
       "official_search_status": "no_match",
       "source_verified_at": "2026-09-24T00:01:43.970475+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4475359319",
+      "source": "linkedin",
+      "company": "Referment",
+      "title": "Senior Full Stack Product Engineer (D0AAEE9)",
+      "location": "Denver, CO",
+      "posted_date": "2026-10-04",
+      "aggregator_posted_date": "2026-10-04",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-product-engineer-d0aaee9-at-referment-4475359319",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-04T04:00:16.469096+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470992973",
@@ -46846,8 +47731,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4466488198",
@@ -46871,8 +47756,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4461715752",
@@ -47354,16 +48239,14 @@
       },
       "recovery_methods": {},
       "application_url": "https://boards.greenhouse.io/robinhood/jobs/8008723?t=gh_src=&gh_jid=8008723",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "jd_recovery_at": "2026-10-03T19:00:17.057219+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-03T19:00:17.057219+00:00",
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4414034567",
@@ -48219,6 +49102,32 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4446438625",
+      "source": "linkedin",
+      "company": "SAP",
+      "title": "Senior AI/ML Engineer - Agentic AI",
+      "location": "Newport Beach, CA",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-ai-ml-engineer-agentic-ai-at-sap-4446438625",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-04T04:00:16.469096+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4460082343",
       "source": "linkedin",
       "company": "SAP",
@@ -48694,6 +49603,41 @@
       "enrichment_method": "remote_exact_peer",
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-09-26T19:15:15.514315+00:00"
+    },
+    {
+      "job_id": "4466426596",
+      "source": "linkedin",
+      "company": "Salesforce",
+      "title": "Senior Software Engineer",
+      "location": "New York, NY",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-at-salesforce-4466426596",
+      "official_url": "",
+      "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Software Engineering Job Details About Salesforce Salesforce is the #1 AI CRM, where humans with agents drive customer success together. Here, ambition meets action. Tech meets trust. And innovation isn’t a buzzword — it’s a way of life. The world of work as we know it is changing and we're looking for Trailblazers who are passionate about bettering business and the world through AI, driving innovation, and keeping Salesforce's core values at the heart of it all. Ready to level-up your career at the company leading workforce transformation in the agentic era? You’re in the right place! Agentforce is the future of AI, and you are the future of Salesforce. We are seeking a Senior Member of Technical Staff to drive the design and delivery of large-scale, distributed systems within Salesforce’s Security ecosystem. This is a hands-on technical role focused on building scalable, reliable, and secure backend services. The role includes end-to-end ownership of complex initiatives, influencing architectural decisions, and collaborating cross-functionally to deliver high-impact solutions at global scale. Team Overview Our team leads the development of Security Mesh, a new Salesforce product that connects and analyzes security signals across multiple systems and platforms. This enables detection of complex threats, such as impossible logins occurring simultaneously across non-Salesforce applications, indicating potential account compromise. Insights are surfaced through Security Center and proactively delivered via Agentforce. Ideal Candidate Profile AI-first mindset: Strong orientation toward leveraging AI-driven tools, automation, and intelligent workflows to improve developer productivity, system capabilities, and overall product value. Adaptable and results-driven: Comfortable working in a fast-evolving environment built on Salesforce Core and dependent on multiple teams (Data Cloud, Tableau Next, ATF, etc.). Strong collaboration skills: A proactive team player who engages across teams to drive solutions and improvements. Ownership and leadership: Takes full ownership of features end-to-end and actively contributes to design and architectural decisions. Unleash Your Potential When you join Salesforce, you’ll be limitless in all areas of your life. Our benefits and resources support you to find balance and be your best , and our AI agents accelerate your impact so you can do your best . Together, we’ll bring the power of Agentforce to organizations of all sizes and deliver amazing experiences that customers love. Apply today to not only shape the future — but to redefine what’s possible — for yourself, for AI, and the world. Accommodations If you need a reasonable accommodation during the application or the recruiting process, please submit a request via this Accommodations Request Form . Please note that Salesforce uses artificial intelligence (AI) tools to help our recruiters assess and evaluate candidates’ resumes and qualifications throughout the recruiting process. Humans will always make any candidate selection and hiring decisions. Please see our Candidate Privacy Statement for more information about how we use your personal data and your rights, including with regard to use of AI tools and opt out options. Posting Statement Salesforce is an equal opportunity employer and maintains a policy of non-discrimination with all employees and applicants for employment. What does that mean exactly? It means that at Salesforce, we believe in equality for all. And we believe we can lead the path to equality in part by creating a workplace that’s inclusive, and free from discrimination. Know your rights: workplace discrimination is illegal. Any employee or potential employee will be assessed on the basis of merit, competence and qualifications – without regard to race, religion, color, national origin, sex, sexual orientation, gender expression or identity, transgender status, age, disability, veteran or marital status, political viewpoint, or other classifications protected by law. This policy applies to current and prospective employees, no matter where they are in their Salesforce employment journey. It also applies to recruiting, hiring, job assignment, compensation, promotion, benefits, training, assessment of job performance, discipline, termination, and everything in between. Recruiting, hiring, and promotion decisions at Salesforce are fair and based on merit. The same goes for compensation, benefits, promotions, transfers, reduction in workforce, recall, training, and education. In the United States, compensation offered will be determined by factors such as location, job level, job-related knowledge, skills, and experience. Certain roles may be eligible for incentive compensation, equity, and benefits. Salesforce offers a variety of benefits to help you live well including: time off programs, medical, dental, vision, mental health support, paid parental leave, life and disability insurance, 401(k), and an employee stock purchasing program. More details about company benefits can be found at the following link: https://www.salesforcebenefits.com. At Salesforce, we believe in equitable compensation practices that reflect the dynamic nature of labor markets across various regions.&#xa;&#xa;The typical base salary range for this position is $148,500 - $223,900 annually. In select cities within the San Francisco and New York City metropolitan area, the base salary range for this role is $178,900 - $246,000 annually.&#xa;&#xa;The range represents base salary only, and does not include company bonus, incentive for sales roles, equity or benefits, as applicable.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-04T04:00:16.469096+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "application_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/New-York---New-York/Senior-Software-Engineer_JR357399",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-04T04:00:16.469096+00:00",
+      "jd_recovery_at": "2026-10-04T04:00:16.469096+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-04T04:00:16.469096+00:00",
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4446898553",
@@ -49408,6 +50352,32 @@
       "enrichment_method": "board_cache"
     },
     {
+      "job_id": "4475068459",
+      "source": "linkedin",
+      "company": "ServiceNow",
+      "title": "Sr Software Engineer, Platform Cryptography",
+      "location": "Santa Clara, CA",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-software-engineer-platform-cryptography-at-servicenow-4475068459",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-03T19:00:17.057219+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468153313",
       "source": "linkedin",
       "company": "ServiceNow",
@@ -49546,6 +50516,31 @@
       "source_verified_at": "2026-09-28T22:00:11.054208+00:00",
       "verified_this_run": false,
       "recovery_status": "filtered"
+    },
+    {
+      "job_id": "4401363513",
+      "source": "linkedin",
+      "company": "Signifyd",
+      "title": "Senior Machine Learning Engineer I // II",
+      "location": "Chicago, IL",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-machine-learning-engineer-i-ii-at-signifyd-4401363513",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-11T10:44:55.020036+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4473361863",
@@ -51247,8 +52242,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4453599999",
@@ -51529,7 +52524,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
       "verified_this_run": true
     },
     {
@@ -52612,6 +53607,52 @@
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-01T21:44:20.633539+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4475089589",
+      "source": "linkedin",
+      "company": "Swift",
+      "title": "Full Stack Software Engineer - Hybrid",
+      "location": "Tysons Corner, VA",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-hybrid-at-swift-4475089589",
+      "official_url": "",
+      "description": "About Us We’re the world’s leading provider of secure financial messaging services, headquartered in Belgium. We are the way the world moves value – across borders, through cities and overseas. No other organisation can address the scale, precision, pace and trust that this demands, and we’re proud to support the global economy. We’re unique too. We were established to find a better way for the global financial community to move value – a reliable, safe and secure approach that the community can trust, completely. We’re always striving to be better and are constantly evolving in an ever-changing landscape, without undermining that trust. Five decades on, our vibrant community reflects the complexity and diversity of the financial ecosystem. We innovate diligently, test exhaustively, then implement fast. In a connected and exciting era, our mission has never been more relevant. Swift now has a presence in 200+ countries and legal territories to serve a community of more than 12,000 banks and financial institutions. The Tracker team is responsible for developing and maintaining secure top-quality applications in the space of Payments preparation and tracking. In line with team objectives, policies and procedures and under guidance of a more senior team member, you will participate in design, coding, testing and maintenance of secure, high-quality application software/tools. Job Description Swift is unable to sponsor an employment authorization for this position now or in the future. About The Role What to Expect: In this role you will: Design, develop, and test new features and functionalities for applications, ensuring high quality, performance, responsiveness, and security Write clean, maintainable, and efficient code for back-end components based on Java with Springboot Develop and maintain APIs and integrate with third-party services Collaborate with product managers, UI/UX designers, and other engineers to understand requirements, define technical specifications, and deliver high-quality solutions Perform code reviews, provide constructive feedback, and ensure adherence to coding standards and quality & security best practices Debug and resolve technical issues, identify performance bottlenecks, and optimize application performance Participate in the entire software development lifecycle, including planning, design, development, testing, deployment, and maintenance Effectively use AI assistants during design, development and testing activities Stay up-to-date with emerging technologies and industry trends to continuously improve our technical stack and development processes Contribute to technical documentation and knowledge sharing within the team Evaluate and recommend technical feasibility and estimates of the proposed systems solutions What will make you successful: We are seeking professionals with: Bachelor’s Degree in Computer Science, Software Engineering or related field 3 to 5 years of experience as a Full Stack Software Engineer or similar role Proven hands on experience in Java including Springboot framework Hands on experience in APIs and systems integrations through REST APIs Experience in building HTTP, TCP/IP based applications Work Knowledge in XML, JSON parsing methods Experience in debugger, memory leaks, system performance tuning Working experience in databases, storage technologies & RHEL systems Experience in effectively using AI tools during design, coding and testing Conversant with Agile tools such as Jenkins, JIRA, Artifactory & Confluence Familiarity with cloud platforms (e.g., AWS, Azure, Google Cloud Platform) and DevOps practices Proficiency in at least one modern front-end framework (e.g., React, Angular, Vue.js) and associated technologies (HTML5, CSS3, JavaScript/TypeScript) is a plus Security technologies such as PKI, HMAC, AES, digest algorithms, SSL is a plus Excellent problem-solving skills and attention to detail Ability to work independently and collaboratively in a fast-paced environment The estimated salary range for a new hire in this position in Virginia is $82,361.00 USD Annual MINIMUM to $152,955.00 USD Annual MAXIMUM. Salary may vary depending on job-related factors which may include knowledge, skills, experience, and location. Our compensation packages include a competitive base salary and bonus opportunity for all employee’s contingent on personal and company performance. Our generous benefits program includes medical, dental, vision and life insurance with no premium costs for our employees and their families, and retirement plan plus matching 401k What We Offer We give you the freedom to be yourself. We are creating an environment of unique individuals – like you – with different perspectives on the financial industry and the world. A diverse and inclusive environment in which everyone’s voice counts and where you can reach your full potential. We are committed to an inclusive and accessible recruitment process. If you require a reasonable accommodation related to accessibility during your application or interview, please contact accessibility-Sysgroup@swift.com or indicate this in your application. Please note that this mailbox is not monitored for general recruitment enquiries and should only be used for accessibility or accommodation-related requests (for example related to vision, hearing or neurodiversity). All requests are confidential and will not affect your candidacy. Don’t meet every single requirement? At Swift, we are dedicated to building a workplace where people can bring their full selves and ideas to the team, so if you are excited about this role, we encourage you to apply even if you do not meet every single qualification.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-04T04:00:16.469096+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "d136478332ebf7b91ea2",
+          "attempted_at": "2026-10-04T04:00:16.469096+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-10-04T04:00:16.469096+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Full-stack software role; seniority and required skills could determine fit."
+      },
+      "linkedin_detail_triage_hash": "0a018328cbef9b319476",
+      "linkedin_detail_attempted_at": "2026-10-04T04:01:01.641427+00:00",
+      "linkedin_detail_fetched_at": "2026-10-04T04:01:01.641427+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470339014",
@@ -54212,8 +55253,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4460613568",
@@ -54448,8 +55489,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4408676642",
@@ -54473,8 +55514,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4451506165",
@@ -54885,8 +55926,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4456296203",
@@ -54910,8 +55951,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4473817939",
@@ -54941,7 +55982,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4473827653",
@@ -54967,7 +56008,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-03T22:00:10.527976+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4452741653",
@@ -55596,8 +56637,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468518247",
@@ -55773,8 +56814,8 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468100387",
@@ -59437,8 +60478,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4441838717",
@@ -59755,8 +60796,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4427398321",
@@ -60612,6 +61653,40 @@
       "recovery_methods": {},
       "source_verified_at": "2026-10-03T01:08:25.545414+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4464249638",
+      "source": "linkedin",
+      "company": "Workday",
+      "title": "Machine Learning Engineer",
+      "location": "Pleasanton, CA",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-at-workday-4464249638",
+      "official_url": "",
+      "description": "Your work days are brighter here. We’re obsessed with making hard work pay off, for our people, our customers, and the world around us. As a Fortune 500 company and a leading AI platform for managing people, money, and agents, we’re shaping the future of work so teams can reach their potential and focus on what matters most. The minute you join, you’ll feel it. Not just in the products we build, but in how we show up for each other. Our culture is rooted in integrity, empathy, and shared enthusiasm. We’re in this together, tackling big challenges with bold ideas and genuine care. We look for curious minds and courageous collaborators who bring sun-drenched optimism and drive. Whether you're building smarter solutions, supporting customers, or creating a space where everyone belongs, you’ll do meaningful work with Workmates who’ve got your back. In return, we’ll give you the trust to take risks, the tools to grow, the skills to develop and the support of a company invested in you for the long haul. So, if you want to inspire a brighter work day for everyone, including yourself, you’ve found a match in Workday, and we hope to be a match for you too. About the Team Do you want to build AI-powered software that impacts millions of people every day? The AI Foundations team, part of Workday’s AI Platform organization, tackles challenging problems at the intersection of machine learning, agentic reasoning, and enterprise-scale systems. Our work delivers critical AI platform capabilities and differentiated, deep-value agent applications. About the Role As a Machine Learning Engineer on the AI Platform team, you will develop tailored user experiences using advanced Agentic AI, LLMs and RAG. You will collaborate with other engineers to deliver ML solutions across Workday’s product ecosystem and use current software and data engineering stacks to enable training, deployment, and lifecycle management of a variety of ML models; supervised and unsupervised. Additionally, you will develop and deploy new APIs/services using Docker/Kubernetes at scale and leverage Workday’s vast computing resources on rich datasets to deliver transformative value to our customers. Sound like your kind of challenge? About You You are a strong technical leader with deep Python expertise and solid machine learning engineering skills, capable of writing beautiful, well-designed code while delivering solutions efficiently. Specifically, you will: Own exploration, design and implementation of features for our sophisticated ML platforms, pipelines and services. Be responsible for evaluation, scalability and observability of these features. Apply machine learning techniques including LLMs and natural language understanding to analyze large sets of HR and Finance-related text data, and design and launch pioneering cloud-based machine learning architectures Stay up to date with advancements in AI, LLMs, RAG, autonomous agents and orchestration frameworks to drive innovation Basic Qualifications: Bachelor’s (Master’s or PhD preferred) degree in engineering, data/computer science, physics, math or equivalent 3+ yrs full-time professional experience as a member of a data science, machine learning engineering, or other relevant software development team building machine learning products from the ground up at scale. This includes taking products through applied research, design, implementation, evaluation, and production. 3+ years of full-time hands-on professional experience in developing ETL pipelines and inference services that use large language models (LLMs) and text generation models in production. This includes the full machine learning life cycle - data processing, model fine-tuning, model deployment and model evaluation 3+ years of full-time professional experience with Python and supporting libraries in production 3+ years of full-time professional experience with data engineering and data wrangling using e.g. Pandas and PySpark and other industry tools used to build scalable machine learning systems, such as Kubernetes and Docker 3+ years of full-time professional experience with cloud computing platforms (e.g. AWS, GCP, etc.) 3+ years of being able to communicate clearly and effectively in a cross-functional setting with product managers, app teams, and leadership Other Qualifications: 3+ years of full-time professional experience in building information retrieval systems. 3+ years of full-time professional experience in machine learning and deep learning frameworks & toolkits such as Pytorch, TensorFlow, and Sklearn Deep understanding of statistical analysis, unsupervised and supervised machine learning algorithms, and natural language processing for information retrieval and/or recommendation system use cases Workday Pay Transparency Statement The annualized base salary ranges for the primary location and any additional locations are listed below. Workday pay ranges vary based on work location. As a part of the total compensation package, this role may be eligible for the Workday Bonus Plan or a role-specific commission/bonus, as well as annual refresh stock grants. Recruiters can share more detail during the hiring process. Each candidate’s compensation offer will be based on multiple factors including, but not limited to, geography, experience, skills, job duties, and business need, among other things. For more information regarding Workday’s comprehensive benefits, please click here . Primary Location: USA.CA.Pleasanton Primary Location Base Pay Range: $160,000 USD - $240,000 USD Additional US Location(s) Base Pay Range: $136,200 USD - $240,000 USD Our Approach to Flexible Work With Flex Work, we’re combining the best of both worlds: in-person time and remote. Our approach enables our teams to deepen connections, maintain a strong community, and do their best work. We know that flexibility can take shape in many ways, so rather than a number of required days in-office each week, we simply spend at least half (50%) of our time each quarter in the office or in the field with our customers, prospects, and partners (depending on role). This means you'll have the freedom to create a flexible schedule that caters to your business, team, and personal needs, while being intentional to make the most of time spent together. Those in our remote \"home office\" roles also have the opportunity to come together in our offices for important moments that matter. Pursuant to applicable Fair Chance law, Workday will consider for employment qualified applicants with arrest and conviction records. Workday is an Equal Opportunity Employer including individuals with disabilities and protected veterans. Workday is committed to providing reasonable accommodations for qualified individuals during our application process, in order to perform one or more essential functions of their job, as well as regarding the use of AI tools for employment decision-making to any degree. Please see below for more details including how to request an accommodation as a qualified veteran, due to a disability or for religious reasons, or as otherwise provided under applicable law. Workday prohibits taking adverse action against any candidate or employee for reporting a possible violation of this policy, requesting one or more work accommodations, exercising a privacy right, or cooperating in an investigation in accordance with applicable law. Any employee who retaliates against a candidate or employee for doing so may be subject to disciplinary action, up to and including termination of employment, to the fullest extent allowable under applicable law. If you require a reasonable accommodation, you may email accommodations@workday.com , as far in advance as possible. Are you being referred to one of our roles? If so, ask your connection at Workday about our Employee Referral process! At Workday, we value our candidates’ privacy and data security. Workday will never ask candidates to apply to jobs through websites that are not Workday Careers. Please be aware of sites that may ask for you to input your data in connection with a job posting that appears to be from Workday but is not. In addition, Workday will never ask candidates to pay a recruiting fee, or pay for consulting or coaching services, in order to apply for a job at Workday.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-04T04:00:16.469096+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Machine-Learning-Engineer-III_JR-0109848",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-04T04:00:16.469096+00:00",
+      "jd_recovery_at": "2026-10-04T04:00:16.469096+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-04T04:00:16.469096+00:00",
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4432331549",
@@ -61913,6 +62988,31 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4466407162",
+      "source": "linkedin",
+      "company": "iCapital",
+      "title": "AI Engineer - Assistant Vice President",
+      "location": "New York, NY",
+      "posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-03",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-assistant-vice-president-at-icapital-4466407162",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-12T02:36:39.478299+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4446142576",
       "source": "linkedin",
       "company": "iCapital",
@@ -62154,8 +63254,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4417250664",
@@ -62164,7 +63264,7 @@
       "title": "Intermediate Full Stack Software Engineer",
       "location": "Columbus, OH",
       "posted_date": "2026-09-27",
-      "aggregator_posted_date": "2026-09-27",
+      "aggregator_posted_date": "2026-10-03",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/intermediate-full-stack-software-engineer-at-impact-com-4417250664",
@@ -62175,13 +63275,13 @@
       "first_seen": "2026-09-15T17:09:12.592377+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "full-stack engineer"
+          "full-stack engineer",
+          "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4429415292",
@@ -62205,8 +63305,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-03T19:00:17.057219+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468507766",

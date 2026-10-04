@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-04T00:21:55.568762+00:00",
+  "generated_at": "2026-10-04T04:01:21.035277+00:00",
   "collector": {
-    "commit": "d6360447aab02ec66789cb31062a58fc322ffd6d",
+    "commit": "8deeaf1fd0e02edbac212dfdf0f870f72de65579",
     "dirty": false
   },
   "sources": {
@@ -10,15 +10,15 @@
       "required": true,
       "healthy": false,
       "status": "partial",
-      "reason": "search page budget exhausted",
-      "last_attempt_at": "2026-10-03T22:00:10.527976+00:00",
+      "reason": "focused query coverage",
+      "last_attempt_at": "2026-10-04T04:00:16.469096+00:00",
       "last_success_at": "2026-09-22T18:01:45.946101+00:00",
-      "last_partial_at": "2026-10-03T22:00:10.527976+00:00",
-      "partial_collected_count": 19,
-      "partial_fresh_kept": 18,
-      "partial_carried_count": 2110,
+      "last_partial_at": "2026-10-04T04:00:16.469096+00:00",
+      "partial_collected_count": 94,
+      "partial_fresh_kept": 88,
+      "partial_carried_count": 2076,
       "last_attempt_collector": {
-        "commit": "1b05708e29c6cd6c596f40e4646969d41a265ea7",
+        "commit": "8deeaf1fd0e02edbac212dfdf0f870f72de65579",
         "dirty": false
       },
       "last_success_collector": {
@@ -31,144 +31,202 @@
       "last_success_source_provenance": {
         "implementation": "sources.linkedin_local"
       },
-      "last_attempt_count": 18,
+      "last_attempt_count": 88,
       "consecutive_failures": 0,
       "query_stats": [
         {
-          "query": "ai engineer",
+          "query": "full-stack engineer",
           "group": "primary",
-          "page_budget": 3,
+          "page_budget": 2,
           "pages_fetched": 2,
-          "stop_reason": "global_day_budget",
+          "stop_reason": "page_budget",
           "raw_jobs": 20,
           "unique_jobs": 20,
           "unique_contribution": 19,
-          "first_pass_survivors": 18,
+          "first_pass_survivors": 16,
           "original_postings_resolved": 0,
-          "jds_resolved": 9,
-          "elapsed_seconds": 3.189,
-          "new_to_ledger": 3,
-          "rediscovered": 17,
+          "jds_resolved": 4,
+          "elapsed_seconds": 3.101,
+          "new_to_ledger": 6,
+          "rediscovered": 14,
           "page_yields": [
             {
               "page": 0,
               "raw": 10,
-              "new_to_ledger": 3,
-              "known": 7
+              "new_to_ledger": 1,
+              "known": 9
             },
             {
               "page": 1,
               "raw": 10,
-              "new_to_ledger": 0,
-              "known": 10
+              "new_to_ledger": 5,
+              "known": 5
             }
           ]
-        },
-        {
-          "query": "backend engineer",
-          "group": "primary",
-          "page_budget": 2,
-          "pages_fetched": 0,
-          "stop_reason": "global_day_budget",
-          "raw_jobs": 0,
-          "unique_jobs": 0,
-          "unique_contribution": 0,
-          "first_pass_survivors": 0,
-          "original_postings_resolved": 0,
-          "jds_resolved": 0,
-          "elapsed_seconds": 0.0,
-          "new_to_ledger": 0,
-          "rediscovered": 0,
-          "page_yields": []
         },
         {
           "query": "software engineer",
           "group": "primary",
           "page_budget": 5,
-          "pages_fetched": 0,
-          "stop_reason": "global_day_budget",
-          "raw_jobs": 0,
-          "unique_jobs": 0,
-          "unique_contribution": 0,
-          "first_pass_survivors": 0,
+          "pages_fetched": 5,
+          "stop_reason": "page_budget",
+          "raw_jobs": 50,
+          "unique_jobs": 50,
+          "unique_contribution": 46,
+          "first_pass_survivors": 46,
           "original_postings_resolved": 0,
-          "jds_resolved": 0,
-          "elapsed_seconds": 0.0,
-          "new_to_ledger": 0,
-          "rediscovered": 0,
-          "page_yields": []
+          "jds_resolved": 12,
+          "elapsed_seconds": 14.634,
+          "new_to_ledger": 17,
+          "rediscovered": 33,
+          "page_yields": [
+            {
+              "page": 0,
+              "raw": 10,
+              "new_to_ledger": 0,
+              "known": 10
+            },
+            {
+              "page": 1,
+              "raw": 10,
+              "new_to_ledger": 2,
+              "known": 8
+            },
+            {
+              "page": 2,
+              "raw": 10,
+              "new_to_ledger": 1,
+              "known": 9
+            },
+            {
+              "page": 3,
+              "raw": 10,
+              "new_to_ledger": 5,
+              "known": 5
+            },
+            {
+              "page": 4,
+              "raw": 10,
+              "new_to_ledger": 9,
+              "known": 1
+            }
+          ]
+        },
+        {
+          "query": "ai engineer",
+          "group": "primary",
+          "page_budget": 3,
+          "pages_fetched": 3,
+          "stop_reason": "page_budget",
+          "raw_jobs": 30,
+          "unique_jobs": 30,
+          "unique_contribution": 29,
+          "first_pass_survivors": 28,
+          "original_postings_resolved": 0,
+          "jds_resolved": 10,
+          "elapsed_seconds": 9.53,
+          "new_to_ledger": 18,
+          "rediscovered": 12,
+          "page_yields": [
+            {
+              "page": 0,
+              "raw": 10,
+              "new_to_ledger": 1,
+              "known": 9
+            },
+            {
+              "page": 1,
+              "raw": 10,
+              "new_to_ledger": 7,
+              "known": 3
+            },
+            {
+              "page": 2,
+              "raw": 10,
+              "new_to_ledger": 10,
+              "known": 0
+            }
+          ]
         }
       ],
       "detail_enrichment": {
-        "eligible": 0,
-        "cache_reused": 3,
-        "requests": 0,
-        "responses": 0,
-        "successful_responses": 0,
-        "http_status_counts": {},
-        "request_limit": 8,
-        "budget_deferred": 0,
-        "budget_exhausted": false,
+        "eligible": 4,
+        "cache_reused": 0,
+        "requests": 1,
+        "responses": 1,
+        "successful_responses": 1,
+        "http_status_counts": {
+          "200": 1
+        },
+        "request_limit": 1,
+        "budget_deferred": 3,
+        "budget_exhausted": true,
         "retry_deferred": 0,
         "retry_attempts": 0,
         "exact_official": 0,
         "official_deferred": 0,
         "rate_limited": false,
-        "jds_resolved": 0,
+        "jds_resolved": 1,
         "external_apply_urls": 0,
         "failed": 0,
-        "detail_jds_fetched": 0,
+        "detail_jds_fetched": 1,
         "intentional_skips": 0,
-        "blocked": "rate_limited_no_further_requests",
+        "blocked": "",
         "scrapling_requests": 0,
         "scrapling_jds_resolved": 0,
         "scrapling_error": "",
-        "remaining_no_jd": 0,
-        "failure_reasons": {},
+        "remaining_no_jd": 3,
+        "failure_reasons": {
+          "no_description": 3
+        },
         "admission": {
-          "candidates": 13,
-          "rules_skipped": 6,
+          "candidates": 20,
+          "rules_skipped": 15,
           "rule_reasons": {
-            "prefilter:senior": 6
+            "prefilter:senior": 15
           },
-          "cache_reused": 3,
-          "non_linkedin_resolved": 2,
-          "worth_detail": 0
+          "cache_reused": 0,
+          "non_linkedin_resolved": 0,
+          "triage_evaluated": 2,
+          "triage_deferred": 0,
+          "worth_detail": 5
         },
         "cooldown_active": false,
         "probe": false,
         "round_request_limit": 8,
-        "round_requests": 0,
+        "round_requests": 8,
         "status": "active"
       },
-      "last_good_count": 2128,
-      "detail_last_attempt_at": "2026-10-03T19:00:17.057219+00:00",
+      "last_good_count": 2164,
+      "detail_last_attempt_at": "2026-10-04T04:01:21.036347+00:00",
       "detail_429_streak": 0,
       "detail_cooldown_until": "",
       "official_enrichment": {
         "exact_indeed_peer": 1,
-        "cache": 5,
+        "cache": 10,
+        "dedicated_matches": 10,
+        "remote_exact_peer": 8,
         "search_provider_failures": 1,
-        "no_match": 2,
-        "search_requests": 3,
+        "no_match": 7,
+        "search_requests": 7,
         "search_provider": "bing",
         "official_page_requests": 0,
-        "remaining_no_jd": 9
+        "remaining_no_jd": 71
       },
       "search_collection": {
         "cooldown_active": false,
         "probe": false,
-        "query_cursor": 4,
-        "requests": 2,
-        "responses": 2,
-        "pages_fetched": 2,
+        "query_cursor": 5,
+        "requests": 10,
+        "responses": 10,
+        "pages_fetched": 10,
         "http_status": 0,
         "rate_limited": false,
-        "budget_exhausted": true,
+        "budget_exhausted": false,
         "rate_limit_event": {},
         "transport_stop_reason": "",
-        "new_to_ledger": 3,
-        "rediscovered": 17,
+        "new_to_ledger": 41,
+        "rediscovered": 59,
         "coverage_limited": true
       },
       "search_last_attempt_at": "2026-09-26T00:21:43.068211+00:00",
@@ -179,19 +237,19 @@
       "detail_status": "active",
       "runner_states": {
         "mac": {
-          "search_last_attempt_at": "2026-10-03T22:00:10.527976+00:00",
+          "search_last_attempt_at": "2026-10-04T04:00:16.469096+00:00",
           "search_429_streak": 0,
           "search_cooldown_until": "",
           "detail_status": "active",
-          "detail_last_attempt_at": "2026-10-03T19:00:17.057219+00:00",
+          "detail_last_attempt_at": "2026-10-04T04:01:21.036347+00:00",
           "detail_429_streak": 0,
           "detail_cooldown_until": "",
           "detail_cooldown_reason": "",
-          "search_query_cursor": 5,
+          "search_query_cursor": 6,
           "detail_retry_after_until": ""
         }
       },
-      "last_attempt_elapsed_seconds": 6.753,
+      "last_attempt_elapsed_seconds": 63.553,
       "failure_cause": "",
       "previous_failure": {},
       "queries_total": 0,
@@ -503,14 +561,14 @@
       "healthy": false,
       "status": "skipped_unavailable",
       "reason": "GlassdoorException: homepage HTTP 403",
-      "last_attempt_at": "2026-10-03T01:09:54.014920+00:00",
+      "last_attempt_at": "2026-10-04T04:01:20.185994+00:00",
       "last_success_at": "2026-09-15T07:02:44.646497+00:00",
       "last_partial_at": "",
       "partial_collected_count": 0,
       "partial_fresh_kept": 0,
       "partial_carried_count": 0,
       "last_attempt_collector": {
-        "commit": "379a1b886bf18c545c95dc1e2dd773b91918fbf5",
+        "commit": "8deeaf1fd0e02edbac212dfdf0f870f72de65579",
         "dirty": false
       },
       "last_success_collector": {
@@ -530,7 +588,7 @@
         "reliability": "best_effort_optional"
       },
       "last_attempt_count": 0,
-      "consecutive_failures": 41,
+      "consecutive_failures": 42,
       "query_stats": [
         {
           "query": "software engineer",
@@ -544,7 +602,7 @@
           "first_pass_survivors": 0,
           "original_postings_resolved": 0,
           "jds_resolved": 0,
-          "elapsed_seconds": 0.167,
+          "elapsed_seconds": 0.106,
           "hours_old": 24,
           "http_status": 403
         }
@@ -553,7 +611,7 @@
       "last_good_count": 380,
       "official_enrichment": {},
       "search_collection": {},
-      "last_attempt_elapsed_seconds": 0.822,
+      "last_attempt_elapsed_seconds": 0.825,
       "failure_cause": "403",
       "previous_failure": {},
       "queries_total": 0,
@@ -563,6 +621,40 @@
     }
   },
   "run_history": [
+    {
+      "source": "glassdoor",
+      "run_at": "2026-10-04T04:01:20.185994+00:00",
+      "status": "skipped_unavailable",
+      "new": 0,
+      "pass": null,
+      "new_ab": null,
+      "failure": true,
+      "reason": "GlassdoorException: homepage HTTP 403",
+      "search_429": false,
+      "detail_429": false,
+      "elapsed_seconds": 0.825,
+      "search_requests": null,
+      "initial_detail_requests": null,
+      "new_to_ledger": null,
+      "rediscovered": null
+    },
+    {
+      "source": "linkedin",
+      "run_at": "2026-10-04T04:00:16.469096+00:00",
+      "status": "partial",
+      "new": 15,
+      "pass": null,
+      "new_ab": null,
+      "failure": false,
+      "reason": "",
+      "search_429": false,
+      "detail_429": false,
+      "elapsed_seconds": 63.553,
+      "search_requests": 10,
+      "initial_detail_requests": 7,
+      "new_to_ledger": 41,
+      "rediscovered": 59
+    },
     {
       "source": "indeed",
       "run_at": "2026-10-04T00:21:28.071665+00:00",
@@ -960,66 +1052,71 @@
     }
   ],
   "local_recovery": {
-    "run_at": "2026-10-03T22:00:17.423096+00:00",
-    "elapsed_seconds": 10.014,
+    "run_at": "2026-10-04T04:01:21.036347+00:00",
+    "elapsed_seconds": 4.483,
     "official_jds_recovered": 0,
-    "linkedin_detail_recoveries": 0,
+    "linkedin_detail_recoveries": 1,
     "post_429_jds_recovered": null,
     "targeted_linkedin_search_requests": 0,
     "targeted_linkedin_detail_jds": 0,
     "targeted_linkedin_rate_limited": false,
     "generic_jobs_processed": 8,
-    "search_requests": 7,
-    "official_page_requests": 6,
+    "search_requests": 0,
+    "official_page_requests": 0,
     "linkedin_rate_limited": false,
     "linkedin_detail": {
-      "eligible": 0,
+      "eligible": 4,
       "cache_reused": 0,
-      "requests": 0,
-      "responses": 0,
-      "successful_responses": 0,
-      "http_status_counts": {},
-      "request_limit": 8,
-      "budget_deferred": 0,
-      "budget_exhausted": false,
+      "requests": 1,
+      "responses": 1,
+      "successful_responses": 1,
+      "http_status_counts": {
+        "200": 1
+      },
+      "request_limit": 1,
+      "budget_deferred": 3,
+      "budget_exhausted": true,
       "retry_deferred": 0,
       "retry_attempts": 0,
       "exact_official": 0,
       "official_deferred": 0,
       "rate_limited": false,
-      "jds_resolved": 0,
+      "jds_resolved": 1,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 0,
+      "detail_jds_fetched": 1,
       "intentional_skips": 0,
-      "blocked": "rate_limited_no_further_requests",
+      "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 0,
-      "failure_reasons": {},
+      "remaining_no_jd": 3,
+      "failure_reasons": {
+        "no_description": 3
+      },
       "admission": {
-        "candidates": 37,
-        "rules_skipped": 24,
+        "candidates": 20,
+        "rules_skipped": 15,
         "rule_reasons": {
-          "prefilter:senior": 22,
-          "company_excluded": 2
+          "prefilter:senior": 15
         },
         "cache_reused": 0,
         "non_linkedin_resolved": 0,
-        "worth_detail": 0
+        "triage_evaluated": 2,
+        "triage_deferred": 0,
+        "worth_detail": 5
       },
       "cooldown_active": false,
       "probe": false,
       "round_request_limit": 8,
-      "round_requests": 0,
+      "round_requests": 8,
       "status": "active"
     },
     "linkedin_transport": {
-      "requests": 2,
+      "requests": 18,
       "endpoint_counts": {
-        "search": 2,
-        "detail": 0
+        "search": 10,
+        "detail": 8
       },
       "round_limit": 18,
       "detail_limit": 8,
@@ -1027,29 +1124,29 @@
       "day_detail_limit": 24,
       "rolling_counts": {
         "60": {
-          "search": 2,
-          "detail": 0
+          "search": 6,
+          "detail": 8
         },
         "3600": {
-          "search": 2,
-          "detail": 0
+          "search": 10,
+          "detail": 8
         },
         "86400": {
           "search": 30,
           "detail": 24
         }
       },
-      "stop_reason": "global_day_budget",
+      "stop_reason": "",
       "blocked_until": "",
       "rate_limits": []
     }
   },
-  "mac_last_completed_at": "2026-10-03T22:00:27.471596+00:00",
+  "mac_last_completed_at": "2026-10-04T04:01:25.545976+00:00",
   "linkedin_transport": {
-    "requests": 2,
+    "requests": 18,
     "endpoint_counts": {
-      "search": 2,
-      "detail": 0
+      "search": 10,
+      "detail": 8
     },
     "round_limit": 18,
     "detail_limit": 8,
@@ -1057,12 +1154,12 @@
     "day_detail_limit": 24,
     "rolling_counts": {
       "60": {
-        "search": 2,
-        "detail": 0
+        "search": 6,
+        "detail": 8
       },
       "3600": {
-        "search": 2,
-        "detail": 0
+        "search": 10,
+        "detail": 8
       },
       "86400": {
         "search": 30,
@@ -1073,78 +1170,6 @@
     "blocked_until": "",
     "rate_limits": [],
     "events": [
-      {
-        "at": "2026-10-03T01:08:25.559801+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T01:08:28.796934+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T01:08:31.680097+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T01:08:34.480297+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T01:08:37.181824+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T01:08:40.270101+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T01:08:42.938880+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T01:08:46.128470+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T01:08:49.492732+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T01:08:52.149399+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-10-03T01:09:32.983104+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T01:09:35.950605+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T01:09:38.792664+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T01:09:41.966781+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T01:09:45.059755+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T01:09:47.884590+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T01:09:50.730505+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-10-03T01:09:53.613915+00:00",
-        "endpoint": "detail"
-      },
       {
         "at": "2026-10-03T04:58:16.360402+00:00",
         "endpoint": "search"
@@ -1288,6 +1313,78 @@
       {
         "at": "2026-10-03T22:00:13.371809+00:00",
         "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T04:00:16.487064+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T04:00:19.147358+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T04:00:22.045867+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T04:00:24.790997+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T04:00:28.100118+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T04:00:30.782124+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T04:00:33.825656+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T04:00:36.800521+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T04:00:40.073555+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T04:00:43.333778+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-10-04T04:01:01.645167+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-04T04:01:04.657428+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-04T04:01:07.341759+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-04T04:01:10.368334+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-04T04:01:13.639184+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-04T04:01:16.459990+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-04T04:01:19.574883+00:00",
+        "endpoint": "detail"
+      },
+      {
+        "at": "2026-10-04T04:01:25.059589+00:00",
+        "endpoint": "detail"
       }
     ]
   }

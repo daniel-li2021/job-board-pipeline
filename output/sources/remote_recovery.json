@@ -3152,343 +3152,11 @@
     }
   ],
   "meta": {
-    "jd_recovery_at": "2026-10-03T22:00:17.423096+00:00"
+    "jd_recovery_at": "2026-10-04T04:01:21.036347+00:00"
   },
   "source": "remote_recovery",
   "count": 146,
   "attempts": {
-    "meta_official_careers|id|1607055701114374": {
-      "source": "meta_official_careers",
-      "job_id": "1607055701114374",
-      "company": "Meta",
-      "title": "Security Engineering Manager, Applied AI",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "meta_official_careers|id|2867963683575119": {
-      "source": "meta_official_careers",
-      "job_id": "2867963683575119",
-      "company": "Meta",
-      "title": "Lead, Product Content Engineering",
-      "location": "Los Angeles, CA; Menlo Park, CA; New York, NY; San Francisco, CA",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "meta_official_careers|id|2247983762446649": {
-      "source": "meta_official_careers",
-      "job_id": "2247983762446649",
-      "company": "Meta",
-      "title": "ASIC Engineer, Foundry and IP",
-      "location": "Sunnyvale, CA; Austin, TX",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "meta_official_careers|id|1767013281213658": {
-      "source": "meta_official_careers",
-      "job_id": "1767013281213658",
-      "company": "Meta",
-      "title": "Technical Lead, Camera IQ Assessment and Design",
-      "location": "Burlingame, CA",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "meta_official_careers|id|1659289945607009": {
-      "source": "meta_official_careers",
-      "job_id": "1659289945607009",
-      "company": "Meta",
-      "title": "Business Development Manager",
-      "location": "Menlo Park, CA; Seattle, WA; New York, NY",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "meta_official_careers|id|1430875021942291": {
-      "source": "meta_official_careers",
-      "job_id": "1430875021942291",
-      "company": "Meta",
-      "title": "Software Engineer, Multimedia & Multimodal AI",
-      "location": "Bellevue, WA; Menlo Park, CA; New York, NY",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00",
-      "recovery_methods": {
-        "candidate:2e6825b5cb": {
-          "input_hash": "90be2c679df2114595a2",
-          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "15d92b9580b58e520e46",
-          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.88,
-        "delta": 5,
-        "reason": "Software role directly focused on multimodal AI"
-      },
-      "recovery_input_hash": "25be8405f6b1526bc193",
-      "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-03T22:00:17.423096+00:00"
-    },
-    "meta_official_careers|id|1793791111815806": {
-      "source": "meta_official_careers",
-      "job_id": "1793791111815806",
-      "company": "Meta",
-      "title": "Data Center Central Planning Lead",
-      "location": "Menlo Park, CA; San Francisco, CA",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "meta_official_careers|id|1373447398335175": {
-      "source": "meta_official_careers",
-      "job_id": "1373447398335175",
-      "company": "Meta",
-      "title": "Software Engineer, Multimedia & Multimodal AI",
-      "location": "Menlo Park, CA; New York, NY",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00",
-      "recovery_methods": {
-        "candidate:497ea83f26": {
-          "input_hash": "9a92176a4aa0321031f3",
-          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "98c65a7578c898d0ff17",
-          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.88,
-        "delta": 5,
-        "reason": "Software role directly focused on multimodal AI"
-      },
-      "recovery_input_hash": "1c9534e2c552846a7e80",
-      "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-03T22:00:17.423096+00:00"
-    },
-    "meta_official_careers|id|957354176761521": {
-      "source": "meta_official_careers",
-      "job_id": "957354176761521",
-      "company": "Meta",
-      "title": "Software Engineer, Multimedia & Multimodal AI",
-      "location": "Bellevue, WA; Menlo Park, CA; New York, NY",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00",
-      "recovery_methods": {
-        "candidate:59b7db8f9a": {
-          "input_hash": "5c04ed6e657820215f83",
-          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "43d4caa4c0ee6bf5cc24",
-          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.88,
-        "delta": 5,
-        "reason": "Software role directly focused on multimodal AI"
-      },
-      "recovery_input_hash": "718ba24079aea34dd946",
-      "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-03T22:00:17.423096+00:00"
-    },
-    "meta_official_careers|id|1403870205235329": {
-      "source": "meta_official_careers",
-      "job_id": "1403870205235329",
-      "company": "Meta",
-      "title": "Software Engineering Director, AI for Incident Response",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "meta_official_careers|id|1095542206195257": {
-      "source": "meta_official_careers",
-      "job_id": "1095542206195257",
-      "company": "Meta",
-      "title": "Data Center Infrastructure Management (DCIM) Engineer",
-      "location": "Reston, VA; Menlo Park, CA",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00",
-      "recovery_methods": {
-        "candidate:ad8f3ee161": {
-          "input_hash": "e8b9678631490b5ec0cc",
-          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "05762d6d32c049c97089",
-          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "low",
-        "confidence": 0.55,
-        "delta": 0,
-        "reason": "Data center infrastructure scope is uncertain"
-      },
-      "recovery_input_hash": "2c6bf5625e260bbad9fe",
-      "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-03T22:00:17.423096+00:00"
-    },
-    "meta_official_careers|id|2585311065226798": {
-      "source": "meta_official_careers",
-      "job_id": "2585311065226798",
-      "company": "Meta",
-      "title": "Global Production Platform Engineer",
-      "location": "Menlo Park, CA; New Albany, OH",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00",
-      "recovery_methods": {
-        "candidate:ced81f362f": {
-          "input_hash": "e222617fb6d30142927c",
-          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "fef0708f0fb7559cb522",
-          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.69,
-        "delta": 0,
-        "reason": "Production platform engineering aligns with infrastructure"
-      },
-      "recovery_input_hash": "2728d52d10209022cdec",
-      "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-03T22:00:17.423096+00:00"
-    },
-    "meta_official_careers|id|1630663895428889": {
-      "source": "meta_official_careers",
-      "job_id": "1630663895428889",
-      "company": "Meta",
-      "title": "Audio Electrical Engineer",
-      "location": "Sunnyvale, CA; Redmond, WA; Menlo Park, CA",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "meta_official_careers|id|1643131417152491": {
-      "source": "meta_official_careers",
-      "job_id": "1643131417152491",
-      "company": "Meta",
-      "title": "Infrastructure Security Monitoring Engineer",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00",
-      "recovery_methods": {
-        "candidate:a0e98beecc": {
-          "input_hash": "f2c514cef481dff4b824",
-          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "4fadd49681af06dd0cd1",
-          "attempted_at": "2026-10-03T19:01:34.252748+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.67,
-        "delta": 0,
-        "reason": "Security monitoring engineering may involve software infrastructure"
-      },
-      "recovery_input_hash": "cc7dd538375fb5f08b38",
-      "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-03T22:00:17.423096+00:00"
-    },
-    "meta_official_careers|id|1486100426873744": {
-      "source": "meta_official_careers",
-      "job_id": "1486100426873744",
-      "company": "Meta",
-      "title": "Associate General Counsel, Monetization Partnerships - Commerce",
-      "location": "Menlo Park, CA; Washington, DC; New York, NY; San Francisco, CA",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "bloomberg_official_careers|id|45046": {
-      "source": "bloomberg_official_careers",
-      "job_id": "45046",
-      "company": "Bloomberg",
-      "title": "Senior Full-Stack Qlik Sense Engineer",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "bloomberg_official_careers|id|45045": {
-      "source": "bloomberg_official_careers",
-      "job_id": "45045",
-      "company": "Bloomberg",
-      "title": "Financial Analyst – Electronic Markets Sales Finance",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "bloomberg_official_careers|id|45036": {
-      "source": "bloomberg_official_careers",
-      "job_id": "45036",
-      "company": "Bloomberg",
-      "title": "Project Manager – Financial Management Systems and Solutions – New York - Contractor",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "bloomberg_official_careers|id|44938": {
-      "source": "bloomberg_official_careers",
-      "job_id": "44938",
-      "company": "Bloomberg",
-      "title": "Change Manager – Financial Management Systems and Solutions - Contractor",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "bloomberg_official_careers|id|45011": {
-      "source": "bloomberg_official_careers",
-      "job_id": "45011",
-      "company": "Bloomberg",
-      "title": "Executive Administrative Assistant – Legal, Compliance & Risk",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "disney_official_careers|id|10158549": {
-      "source": "disney_official_careers",
-      "job_id": "10158549",
-      "company": "Disney",
-      "title": "Sr Product Software Engineer",
-      "location": "Glendale, California",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "two_sigma_official_careers|id|13891": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13891",
-      "company": "Two Sigma",
-      "title": "Quantitative Researcher - Execution Modeling",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "equinix_official_careers|id|jr-163213": {
-      "source": "equinix_official_careers",
-      "job_id": "JR-163213",
-      "company": "Equinix",
-      "title": "VP, Sales AMER AI Ecosystem & Digital Native",
-      "location": "Redwood City, California, United States; Bellevue, Washington, United States",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "equinix_official_careers|id|jr-811164": {
-      "source": "equinix_official_careers",
-      "job_id": "JR-811164",
-      "company": "Equinix",
-      "title": "SkillBridge, Data Center Critical Facilities Engineer - Trainee",
-      "location": "Ashburn, Virginia, United States",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
-    "equinix_official_careers|id|jr-163808": {
-      "source": "equinix_official_careers",
-      "job_id": "JR-163808",
-      "company": "Equinix",
-      "title": "Senior Manager, Product Software Arch and Eng",
-      "location": "Redwood City, California, United States; Dallas, Texas, United States",
-      "first_seen": "2026-10-02T23:46:05.903748+00:00"
-    },
     "meta_official_careers|id|1124926043220059": {
       "source": "meta_official_careers",
       "job_id": "1124926043220059",
@@ -3513,6 +3181,22 @@
       "location": "San Francisco, California / Morrisville, North Carolina",
       "first_seen": "2026-10-03T14:45:11.070771+00:00"
     },
+    "disney_official_careers|id|10153777": {
+      "source": "disney_official_careers",
+      "job_id": "10153777",
+      "company": "Disney",
+      "title": "Senior Product Software Engineer - Frontend",
+      "location": "Santa Monica, California / New York, New York / Seattle, Washington",
+      "first_seen": "2026-10-03T23:45:40.227391+00:00"
+    },
+    "disney_official_careers|id|10160502": {
+      "source": "disney_official_careers",
+      "job_id": "10160502",
+      "company": "Disney",
+      "title": "Finance & Data Intern, Spring 2027",
+      "location": "Anaheim, California",
+      "first_seen": "2026-10-03T23:45:40.227391+00:00"
+    },
     "syncareer|id|dc2cf0dc76fb42be589976a8ec9126f5": {
       "source": "syncareer",
       "job_id": "dc2cf0dc76fb42be589976a8ec9126f5",
@@ -3536,6 +3220,14 @@
       },
       "recovery_input_hash": "856f1cf7a9d21786cafa",
       "official_search_status": "no_match"
+    },
+    "syncareer|id|d8d65ab53c7bb997ef0b8df38a1ccafe": {
+      "source": "syncareer",
+      "job_id": "d8d65ab53c7bb997ef0b8df38a1ccafe",
+      "company": "American Electric Power",
+      "title": "AI Cybersecurity Specialist",
+      "location": "Columbus, Ohio, United States",
+      "first_seen": "2026-10-03T23:51:10.106386+00:00"
     }
   }
 }
