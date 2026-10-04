@@ -2,6 +2,197 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-04T22:01:12.444478+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 2,
+      "cache_reused": 137,
+      "peer_reused": 0,
+      "same_content_reused": 2,
+      "non_material_change_reused": 0,
+      "new_or_changed": 2,
+      "new_or_changed_reasons": {
+        "prior_rule_result_now_eligible_for_llm": 2
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1005,
+      "requests": 2,
+      "input_tokens": 5370,
+      "cached_input_tokens": 0,
+      "output_tokens": 497,
+      "reasoning_tokens": 351,
+      "estimated_usd": 0.000786,
+      "latency_seconds": 7.542,
+      "latency_measured": true,
+      "effective_rpm": 15.91,
+      "effective_tpm": 46674.62,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 2,
+      "funnel": {
+        "after_dedup": 6110,
+        "after_company": 5844,
+        "after_hard_filter": 5351,
+        "after_prefilter": 1536,
+        "official_duplicates_suppressed": 392,
+        "retry_only_carried": 0,
+        "dropped": 4495
+      },
+      "output": {
+        "tier_a": 18,
+        "tier_b": 94,
+        "ab_before_cap": 112,
+        "shown": 112,
+        "new_jobs": 3,
+        "new_jobs_added": 0,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 0,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 3,
+            "added": 0
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2143,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 23,
+          "http_requests": 23,
+          "jds_resolved": 10,
+          "direct_http_resolved": 10,
+          "identity_needed": 21,
+          "identities_resolved": 21,
+          "remaining_no_jd": 2141,
+          "failure_reasons": {}
+        },
+        "remaining_no_jd": 2108,
+        "failure_reasons": {
+          "no_enrichment_path": 1604,
+          "official_detail_deferred": 48,
+          "linkedin_rate_limited": 77,
+          "linkedin_http_429": 2,
+          "glassdoor_detail_http_403_static_card_only": 377
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4475367367",
+              "company": "AppLab Systems, Inc",
+              "title": "Server Side Developer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.357,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2169,
+            "cached_input_tokens": 0,
+            "output_tokens": 222,
+            "reasoning_tokens": 147,
+            "estimated_usd": 0.000328
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4475367367",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend APIs and microservices",
+                "Concurrency and distributed systems"
+              ],
+              "main_gaps": [
+                "AWS Lambda experience",
+                "Core Java depth"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4337701917",
+              "company": "Prestige Staffing",
+              "title": "AI Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.185,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3201,
+            "cached_input_tokens": 0,
+            "output_tokens": 275,
+            "reasoning_tokens": 204,
+            "estimated_usd": 0.000458
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4337701917",
+              "match_score": 77.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production LLM systems",
+                "AI model evaluation"
+              ],
+              "main_gaps": [
+                "2+ years industry experience"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-04T20:40:36.711042+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -21852,224 +22043,6 @@
               "main_gaps": [
                 "Performance/load testing",
                 "Capacity planning"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-09-30T19:35:56.997718+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 3,
-      "cache_reused": 290,
-      "peer_reused": 0,
-      "same_content_reused": 4,
-      "non_material_change_reused": 0,
-      "new_or_changed": 3,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 2,
-        "material_jd_change": 1
-      },
-      "rescored_within_24h": 1,
-      "fallback_count": 0,
-      "rule_count": 816,
-      "requests": 2,
-      "input_tokens": 8566,
-      "cached_input_tokens": 0,
-      "output_tokens": 910,
-      "reasoning_tokens": 652,
-      "estimated_usd": 0.001311,
-      "latency_seconds": 11.091,
-      "latency_measured": true,
-      "effective_rpm": 10.82,
-      "effective_tpm": 51263.19,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "primary_batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 3,
-      "funnel": {
-        "after_dedup": 6090,
-        "after_company": 5833,
-        "after_hard_filter": 5371,
-        "after_prefilter": 1524,
-        "official_duplicates_suppressed": 415,
-        "retry_only_carried": 0,
-        "dropped": 4455
-      },
-      "output": {
-        "tier_a": 50,
-        "tier_b": 136,
-        "ab_before_cap": 186,
-        "shown": 186,
-        "new_jobs": 34,
-        "new_jobs_added": 4,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 17,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 17,
-            "added": 4
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 1901,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 174,
-          "http_requests": 100,
-          "scrapling_requests": 2,
-          "identity_needed": 148,
-          "identities_resolved": 101,
-          "cache_reused": 3,
-          "jds_resolved": 54,
-          "direct_http_resolved": 54,
-          "budget_deferred": 50,
-          "remaining_no_jd": 1901,
-          "failure_reasons": {
-            "structured_jd_not_found": 2,
-            "linkedin_rate_limited": 21
-          }
-        },
-        "remaining_no_jd": 1864,
-        "failure_reasons": {
-          "no_enrichment_path": 1368,
-          "official_detail_deferred": 47,
-          "linkedin_rate_limited": 60,
-          "linkedin_http_429": 2,
-          "indeed_detail_missing_or_thin": 10,
-          "glassdoor_detail_http_403_static_card_only": 377
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5439830008",
-              "company": "Anthropic",
-              "title": "Applied AI Architect, International Policy"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 4.18,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 3824,
-            "cached_input_tokens": 0,
-            "output_tokens": 306,
-            "reasoning_tokens": 214,
-            "estimated_usd": 0.000535
-          },
-          "decisions": [
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5439830008",
-              "match_score": 56.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "LLM systems and evaluation",
-                "Python prototypes and integrations"
-              ],
-              "main_gaps": [
-                "Government/public-sector advisory experience",
-                "4+ years customer-facing delivery"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://www.capitalonecareers.com/job/-/-/1732/101318745984",
-              "company": "Capital One",
-              "title": "Full-stack Engineer 4, Agentic Orchestration"
-            },
-            {
-              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210788030",
-              "company": "JPMorganChase",
-              "title": "Software Engineer III (Java)"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 6.911,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 2,
-            "input_tokens": 4742,
-            "cached_input_tokens": 0,
-            "output_tokens": 604,
-            "reasoning_tokens": 438,
-            "estimated_usd": 0.000776
-          },
-          "decisions": [
-            {
-              "key": "url::https://www.capitalonecareers.com/job/-/-/1732/101318745984",
-              "match_score": 42.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Cloud microservices",
-                "Agentic AI systems"
-              ],
-              "main_gaps": [
-                "4 years non-internship experience",
-                "Technical leadership and mentoring"
-              ]
-            },
-            {
-              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210788030",
-              "match_score": 66.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production backend engineering",
-                "Secure, scalable systems"
-              ],
-              "main_gaps": [
-                "Production Java experience"
               ]
             }
           ]
