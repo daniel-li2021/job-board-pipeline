@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-04 08:21 PDT
-- Snapshot (UTC): 2026-10-04T15:21:08.582069+00:00
-- Jobs: 21 (Tier A/B only)
+- Updated (PT): 2026-10-04 13:40 PDT
+- Snapshot (UTC): 2026-10-04T20:40:36.711042+00:00
+- Jobs: 22 (Tier A/B only)
 - Last 24 hours: 6
-- Last 3 days: 21
+- Last 3 days: 22
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -28,7 +28,8 @@ The 7-day dump is `latest.md`.
 | B | 75 | indeed | Capital One | Full Stack Engineer 4 | New York, NY, US | 2026-10-02 | 1to3d | Capital One | unreviewed | official_identity_unmatched | [open](https://www.indeed.com/viewjob?jk=5a68879b2db22f8d) |
 | B | 75 | indeed | Capital One | Full-stack Engineer 4 (Java, Spring Boot, Python, CI/CD) | McLean, VA, US | 2026-10-02 | 1to3d | Capital One | unreviewed | official_identity_unmatched | [open](https://www.indeed.com/viewjob?jk=cd55268246c76b99) |
 | B | 75 | indeed | Capital One | Full-stack Engineer 4, Cyber Identity Security | McLean, VA, US | 2026-10-02 | 1to3d | Capital One | unreviewed | official_identity_unmatched | [open](https://www.indeed.com/viewjob?jk=5c73541ffb28ff13) |
-| B | 75 | linkedin | REI Systems | AI/ML & LLM Engineer | Sterling, VA | 2026-10-03 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-llm-engineer-at-rei-systems-4475083821) |
+| B | 75 | linkedin | Prestige Staffing | AI Engineer | Atlanta, GA | 2026-10-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-prestige-staffing-4337701917) |
+| B | 75 | linkedin | REI Systems | AI/ML & LLM Engineer | Sterling, VA | 2026-10-03 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-llm-engineer-at-rei-systems-4475083821) |
 | B | 75 | indeed | Mutual of Omaha | Engineer I/II (Cloud Development and Data Warehouse) | Remote, US | 2026-10-03 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5b995752fcceb4b0) |
 | B | 77 | linkedin | CelesiumAI | Artificial Intelligence Engineer | Houston, TX | 2026-10-03 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/artificial-intelligence-engineer-at-celesiumai-4473354175) |
 | B | 72 | indeed | Work From Home | Associate Application Developer ServiceNow | Nashville, TN, US | 2026-10-02 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=86b650fa488e7975) |
