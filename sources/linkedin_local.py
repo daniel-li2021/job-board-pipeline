@@ -244,6 +244,7 @@ def enrich_details(
         "requests": 0,
         "responses": 0,
         "successful_responses": 0,
+        "attempted_ids": [],
         "http_status_counts": {},
         "request_limit": request_limit,
         "budget_deferred": 0,
@@ -354,6 +355,7 @@ def enrich_details(
         if (previous_by_id.get(str(row.get("job_id") or "")) or {}).get("linkedin_detail_attempted_at"):
             stats["retry_attempts"] += 1
         row["linkedin_detail_attempted_at"] = now.isoformat()
+        stats["attempted_ids"].append(str(row["job_id"]))
         try:
             response = transport.get(session, url, endpoint="detail", probe=probe,
                                      query=str(row.get("title") or ""), timeout=REQUEST_TIMEOUT)
@@ -392,6 +394,7 @@ def enrich_details(
             row["enrichment_method"] = method
             row["enrichment_status"] = "resolved"
             row.pop("enrichment_failure_reason", None)
+            row.pop("enrichment_deferred_reason", None)
             stats["jds_resolved"] += 1
             stats["detail_jds_fetched"] += 1
         else:

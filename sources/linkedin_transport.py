@@ -10,10 +10,10 @@ from pathlib import Path
 from recovery_policy import stamp
 from state_io import atomic_write
 
-ROUND_LIMIT = 18
-DETAIL_LIMIT = 8
-DAY_LIMIT = 54
-DAY_DETAIL_LIMIT = 24
+ROUND_LIMIT = 22
+DETAIL_LIMIT = 12
+DAY_LIMIT = 72
+DAY_DETAIL_LIMIT = 36
 SPACING_SECONDS = 2.5
 
 
@@ -125,6 +125,7 @@ class LinkedInTransport:
     def summary(self):
         return {"requests": sum(self.counts.values()), "endpoint_counts": dict(self.counts),
                 "round_limit": ROUND_LIMIT, "detail_limit": DETAIL_LIMIT, "day_limit": DAY_LIMIT,
+                "hour_limit": ROUND_LIMIT, "hour_detail_limit": DETAIL_LIMIT,
                 "day_detail_limit": DAY_DETAIL_LIMIT,
                 "rolling_counts": self.rolling_counts(datetime.now(timezone.utc)),
                 "stop_reason": self.stop_reason,

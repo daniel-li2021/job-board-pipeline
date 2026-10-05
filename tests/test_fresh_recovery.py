@@ -58,7 +58,7 @@ class FreshRecoveryTests(unittest.TestCase):
             self.assertEqual({}, recovery_ai.triage_linkedin_detail(rows))
 
     def test_linkedin_detail_round_budget_and_cached_triage(self):
-        rows = [job(job_id=str(i)) for i in range(12)]
+        rows = [job(job_id=f"{i:02d}") for i in range(12)]
         budget = recovery_policy.RecoveryBudget()
         session = Mock()
         session.get.return_value.status_code = 200
@@ -168,8 +168,13 @@ class FreshRecoveryTests(unittest.TestCase):
             )])
             budget = recovery_policy.RecoveryBudget()
             first = local_sources.run_one("linkedin", {"commit": "test"}, scraper=linkedin_local.scrape, budget=budget)
-            second = local_sources.recover_jds(budget=budget)
+            second = local_sources.recover_jds(budget=budget, initial_detail=first["detail_enrichment"])
+            history = json.loads(local_sources.HEALTH_PATH.read_text())["local_recovery_history"]
             saved = schema.read_source_snapshot_payload("linkedin")["jobs"]
+        self.assertEqual(1, len(history))
+        self.assertEqual(["detail"], history[0]["initial_detail"]["attempted_ids"])
+        self.assertEqual(0, history[0]["linkedin_detail"]["requests"])
+        self.assertIn("queue_expired_without_attempt", history[0])
         self.assertEqual(["non_linkedin", "triage", "non_linkedin"], calls)
         self.assertEqual(1, first["detail_enrichment"]["requests"])
         self.assertEqual(0, second["linkedin_detail"]["requests"])

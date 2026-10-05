@@ -744,6 +744,7 @@ def write_source_snapshot(
     *,
     merge_previous: bool = False,
     observed_jobs: Optional[List[Dict[str, str]]] = None,
+    carried_updates: Optional[List[Dict[str, Any]]] = None,
 ) -> Path:
     """Write output/sources/<name>.json. Sorted for stable git diffs.
 
@@ -756,6 +757,7 @@ def write_source_snapshot(
     path = SOURCES_DIR / f"{name}.json"
     previous_payload = read_source_snapshot_payload(name)
     previous = {dedup_key(job): job for job in previous_payload.get("jobs", [])}
+    updates = {dedup_key(job): job for job in (carried_updates or [])}
     first_seen_ledger = dict(previous_payload.get("first_seen_ledger") or {})
     for prior in previous.values():
         first_seen_ledger.setdefault(recovery_policy.identity(prior), str(prior.get("first_seen") or ""))
@@ -778,12 +780,19 @@ def write_source_snapshot(
         for key, job in previous.items():
             if key in fresh_keys:
                 continue
-            carried = dict(job)
+            carried = dict(updates.get(key, job))
             carried["source_verified_at"] = str(
                 carried.get("source_verified_at") or previous_verified_at
             )
             carried["verified_this_run"] = False
             retained.append(carried)
+    elif updates:
+        # Recovery of a saved card is not a new discovery/verification.
+        fresh_keys = {dedup_key(record) for record in retained}
+        for key, job in updates.items():
+            if key not in fresh_keys:
+                retained.append({**job, "verified_this_run": False,
+                                 "source_verified_at": job.get("source_verified_at") or previous_verified_at})
     ordered = sorted(retained, key=lambda j: (j.get("company", ""), j.get("title", ""), j.get("job_id", "")))
     payload = {
         "schema_version": SNAPSHOT_SCHEMA_VERSION,

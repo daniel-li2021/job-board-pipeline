@@ -1,4 +1,162 @@
-# LinkedIn traffic investigation — 2026-10-02
+# LinkedIn transport and queue review — 2026-10-05
+
+## Current change and expectations
+
+The Oct 2–4 Pacific production sample supports a modest relaxation, not a claim
+that larger allowances are proven safe. Adopt the requested nearby configuration:
+
+| Scope | Previous | Current |
+| --- | ---: | ---: |
+| Search per round | 10 | 10 |
+| Detail per round / rolling hour | 8 | 12 |
+| Search + Detail per round / rolling hour | 18 | 22 |
+| Detail per rolling 24 hours | 24 | 36 |
+| Search + Detail per rolling 24 hours | 54 | 72 |
+
+Three fully utilized scheduled rounds can issue 66 total requests (30 Search,
+36 Detail); the 72-total rolling cap leaves six total requests of headroom for
+catch-up/manual traffic, but no extra Detail when all 36 daily Detail slots were
+used. Rolling windows, not Pacific midnight, enforce these allowances. The
+relaxation adds four Detail opportunities per full round; it does not guarantee
+four extra recovered JDs. For the frozen 18-worthwhile case, 12 slots would leave
+six deferred instead of ten if all requests succeeded. This is a capacity
+counterfactual, not a measured post-change production outcome. Keep the caps at
+these values until the two-day review; no Search-depth increase is justified.
+
+## Friday–Sunday production evidence
+
+Nine distinct Local round recovery reports in the installed automation
+checkout's `output/logs/local-sources.out.log`, cross-checked with committed
+source snapshot metadata, show:
+
+| Pacific day | Rounds | Search attempts | Detail attempts | Total | Recorded LinkedIn 429 events |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Friday Oct 2 | 3 | 20 | 16 | 36 | 0 |
+| Saturday Oct 3 | 3 | 22 | 16 | 38 | 0 |
+| Sunday Oct 4 | 3 | 22 | 13 | 35 | 0 |
+| Total | 9 | 64 | 45 | 109 | 0 |
+
+Actual run times were Friday 12:45/18:08/21:58, Saturday 12:00/15:00/21:00,
+and Sunday 13:38/15:00/22:24 Pacific. These are recorded Local attempts,
+not an account/IP-wide trace. Five rounds consumed all eight Detail requests.
+Saturday 15:00 stopped at `global_day_budget`, with 30 Search + 24 Detail in
+its rolling day; its two searches and zero Detail demonstrate capacity pressure
+rather than an HTTP failure. The small zero-429 sample supports a guarded
+experiment; it cannot establish LinkedIn's safe rate threshold.
+
+Committed source receipts: `2659674`, `d007581`, `c3b4994`, `0324a08`,
+`8c2408b`, `d21c9b7`, `7a8b432`, `f895d67`. Friday noon's recovery report
+is retained in the local log; it did not produce a new LinkedIn source snapshot.
+
+## The 18-worthwhile / 8-Detail cohort
+
+At Friday Oct 2 18:08 Pacific (`2659674`), initial admission recorded 58 Fresh
+thin candidates, 29 rules skips, 10 non-LinkedIn resolutions, 19 LLM evaluations,
+one triage deferral, and 18 explicit `needs_jd=true` admissions. Eight Detail
+attempts all returned 200 and recovered a JD; ten were budget-deferred. The ten
+non-LinkedIn resolutions happened **before** that 18-job admission and are a
+separate cohort from the ten Detail deferrals.
+
+Trace the deferred cohort by immutable LinkedIn job ID across all eight source
+snapshots through Sunday 22:24, plus current Board entries and recovery handoff:
+
+| Job ID | Employer / role | Later Detail | Outcome through Sunday |
+| --- | --- | --- | --- |
+| 4474564016 | AWS / Software Dev Engineer, IAM | Friday 21:59 follow-up | JD recovered |
+| 4474731508 | Rippling / Engineer II Backend | Friday 21:58 initial | JD recovered |
+| 4474742062 | Rippling / Engineer II Backend | Friday 21:58 initial | JD recovered |
+| 4473159456 | Boeing / Java Software Engineer | None | Unresolved; aged out of Fresh |
+| 4474599498 | Deloitte / Full Stack Engineer II | None | Unresolved; aged out of Fresh |
+| 4474706198 | Deloitte / Full Stack Engineer II | None | Unresolved; aged out of Fresh |
+| 4473197371 | Haystack / Mid-level Software Engineer | None | Unresolved; aged out of Fresh |
+| 4472847721 | Scribd / Engineer II Fullstack | None | Unresolved; aged out of Fresh |
+| 4472855479 | Scribd / Engineer II Fullstack | None | Unresolved; aged out of Fresh |
+| 4473364054 | Spectrum Equity / Engineer II Fullstack | None | Unresolved; aged out of Fresh |
+
+Totals: 3/10 later Detail recoveries, 0/10 recorded Official/ATS/peer/generic
+recoveries, 7/10 still unresolved, and those same 7/10 expired from Fresh without
+any Detail attempt. Their `first_seen` was Friday 18:08; Fresh ended Saturday
+18:08, before Saturday's evening round. These are ten distinct IDs, including
+similar-title pairs; no claim of ten distinct employer requisitions is made.
+
+Two causes are visible in code: equivalent LLM priorities were sorted newest
+first, and initial discovery consumed the shared allowance before follow-up
+could consider the entire saved snapshot. At Friday evening one follow-up slot
+remained and went to AWS; Saturday's initial eight again exhausted the allowance.
+The rows retained their positive triage but did not retain an explicit waiting
+age and were excluded from outbound recovery after Fresh expired.
+
+## Queue policy and preserved protections
+
+Use LLM high/normal/low priority first, then already budget-deferred and
+never-attempted cards, then oldest discovery time, then deterministic identity.
+Include saved admitted unresolved cards in initial recovery/admission alongside
+current discovery. Before Detail, retain the safe metadata rules, saved-JD cache,
+exact Official/ATS/Indeed/remote peers, and bounded non-LinkedIn recovery. The
+batched GPT-6 Luna Medium `needs_jd` and priority decision remains mandatory;
+its existing evidence/profile hash controls cache reuse. Fit scoring is unchanged.
+
+Persist first budget deferral (`linkedin_detail_deferred_at`) and actual
+`attempted_ids`; rediscovery of unchanged metadata carries that queue state
+forward. A never-attempted, already admitted budget waiter retains one Detail
+opportunity through 72 hours (the existing Rolling visibility window). This
+narrow Local Detail exception prevents automatic loss at 24 hours without
+refreshing `first_seen`, source verification, or generic outbound recovery
+eligibility. Old untriaged/negative rows and previously attempted rows do not
+receive the exception. Fresh retries still obey their existing retry timer.
+At 72 hours, report missed opportunities explicitly. Sustained overload or
+cooldowns can still prevent an attempt; the queue never bypasses transport or
+recovery budgets to promise coverage.
+
+Search max 10, new-to-ledger early stops, 2.5–3.25-second randomized spacing,
+immediate first-429 stop, Retry-After, independent Search/Detail cooldowns,
+guarded single probes, persistent request accounting, and last-good snapshots
+remain enforced. Carried JD recovery does not count as new discovery or refresh
+its verification timestamp. Normal scheduled collectors fetch `main` before
+running; no extra crawler or external LLM/API call was launched for validation.
+
+## Observability and two-day evaluation
+
+`health.json.local_recovery_history` retains 120 bounded reports, including
+`initial_detail` and follow-up `linkedin_detail`, each with `queue` job IDs,
+priority, admission, first-seen/first-deferral/attempt timestamps, current-phase
+attempt flags, resolution method, deferral reason, and past-Fresh status.
+Transport summaries now expose hour caps as well as round/day caps and counts.
+`queue_expired_without_attempt` names budget waiters still unresolved beyond
+72 hours. Generic provider failures, methods, cheap matches and job deferrals
+are retained separately. Existing console/latest JSON reports remain available.
+
+For the next two days, review normal published receipts and the durable local
+request journal without launching extra collectors. Check collector commit,
+per-round/rolling caps, both endpoint 429s and probe/cooldown state, attempted
+versus recovered JDs, saved-waiter resolution and maximum wait, unresolved
+past-Fresh/72-hour expirations, triage-unavailable cases, and non-LinkedIn
+methods/provider/budget failures. Report denominators and missing evidence.
+Compare with the nine-round 109-attempt / 45-Detail baseline above. Notify on a
+meaningful coverage change, any new 429, missed opportunity, execution failure,
+or required action; produce a final comparison at the end of the review period.
+A new 429 is evidence to review/revert the relaxation, never to raise caps or
+bypass the cooldown.
+
+Validation: 124 focused offline unittest checks passed (transport, Local source,
+Fresh recovery, Detail/cache, and Official recovery), plus Python compilation
+and `git diff --check`. Added checks cover high-priority precedence, saved-waiter
+and aging order, next-round catch-up after Fresh, rediscovery persistence, the
+one-opportunity/72-hour boundary, initial-phase saved queue inclusion, retained
+verification dates, both-phase history, and rolling-hour/day ceilings. The
+scheduled follow-up reviews run at 21:30 Pacific on Oct 5 and Oct 6 and then stop.
+
+## Separate recovery bottleneck
+
+Seven of nine weekend recovery reports recorded generic search-provider failures
+(eight failure events); Friday noon disabled both DuckDuckGo and Bing. Many
+`dedicated_matches` are matches to an Official card without a usable JD, so they
+must not be reported as recovered JDs. The observed generic job counts were
+below the 100-job ceiling; increasing LinkedIn Detail does not repair provider
+availability, failed exact postings, cached no-match evidence, or unavailable
+triage. Keep these outcomes separate from LinkedIn capacity in the next review.
+
+# Historical investigation — 2026-10-02
 
 This workstream changes transport and discovery scheduling limits. Software
 Engineer, AI Engineer, and alternating Backend Engineer / Full-Stack Engineer

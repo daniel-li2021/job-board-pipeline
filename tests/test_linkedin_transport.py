@@ -8,7 +8,9 @@ from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 import local_sources
+import recovery_policy
 from sources import linkedin_local
+from sources import schema
 from sources.linkedin_transport import LinkedInTransport, RequestDeferred
 from sources.schema import make_job
 
@@ -25,6 +27,89 @@ def response(status=200, headers=None):
 
 @patch("sources.linkedin_transport.time.sleep")
 class LinkedInTransportTests(unittest.TestCase):
+    def test_priority_then_saved_waiter_then_oldest_and_next_round(self, sleep):
+        now = datetime.now(timezone.utc)
+        jobs = [row(i) for i in range(5)]
+        for job, hours, priority in zip(jobs, (1, 22, 3, 23, 1), ("normal", "normal", "high", "normal", "low")):
+            job["first_seen"] = (now - timedelta(hours=hours)).isoformat()
+            job["linkedin_detail_triage"] = {"needs_jd": True, "priority": priority}
+        jobs[0]["linkedin_detail_deferred_at"] = (now - timedelta(minutes=30)).isoformat()
+        jobs[1]["linkedin_detail_deferred_at"] = (now - timedelta(hours=20)).isoformat()
+        session = Mock()
+        session.get.return_value = response()
+        decisions = {recovery_policy.identity(r): dict(r["linkedin_detail_triage"]) for r in jobs}
+        triage = lambda rows, _: {recovery_policy.identity(r): decisions[recovery_policy.identity(r)] for r in rows}
+        with patch.object(local_sources, "_linkedin_detail_control", return_value=(3, False, False)), \
+             patch.object(local_sources.board, "load_profiles", return_value={}), \
+             patch.object(local_sources.recovery_ai, "triage_linkedin_detail", side_effect=triage), \
+             patch.object(linkedin_local, "_make_session", return_value=session), \
+             patch.object(linkedin_local, "_parse_detail", return_value={"description": "JD " * 150, "application_url": ""}):
+            first = local_sources._finish_linkedin_detail(jobs, [], {"cache_reused": 0},
+                recovery_policy.RecoveryBudget(), now, transport=LinkedInTransport())
+            self.assertEqual(["2", "1", "0"], first["attempted_ids"])
+            self.assertEqual("linkedin_detail_round_budget", jobs[3]["enrichment_deferred_reason"])
+            next_now = now + timedelta(hours=3)
+            candidates, admission = local_sources._prepare_linkedin_detail(jobs, jobs, next_now)
+            second = local_sources._finish_linkedin_detail(candidates, jobs, admission,
+                recovery_policy.RecoveryBudget(), next_now, transport=LinkedInTransport())
+        self.assertEqual(["3", "4"], second["attempted_ids"])
+        self.assertTrue(next(q for q in second["queue"] if q["job_id"] == "3")["past_fresh"])
+        self.assertEqual((now - timedelta(hours=23)).isoformat(), jobs[3]["first_seen"])
+
+    def test_waiter_grace_is_one_opportunity_and_does_not_broaden_fresh(self, sleep):
+        now = datetime.now(timezone.utc)
+        waiter = dict(row(1), first_seen=(now - timedelta(hours=25)).isoformat(),
+                      linkedin_detail_triage={"needs_jd": True}, linkedin_detail_deferred_at=now.isoformat())
+        self.assertFalse(recovery_policy.fresh(waiter, now))
+        self.assertTrue(local_sources._linkedin_detail_eligible(waiter, now))
+        rediscovered = {k: v for k, v in waiter.items() if not k.startswith("linkedin_detail")}
+        prepared, _ = local_sources._prepare_linkedin_detail([rediscovered], [waiter], now)
+        self.assertEqual([rediscovered], prepared)
+        self.assertEqual(waiter["linkedin_detail_deferred_at"], rediscovered["linkedin_detail_deferred_at"])
+        self.assertFalse(local_sources._linkedin_detail_eligible(dict(waiter, linkedin_detail_attempted_at=now.isoformat()), now))
+        self.assertFalse(local_sources._linkedin_detail_eligible(dict(waiter, first_seen=(now - timedelta(hours=73)).isoformat()), now))
+        self.assertFalse(local_sources._linkedin_detail_eligible(dict(waiter, linkedin_detail_triage={"needs_jd": False}), now))
+
+    def test_initial_phase_includes_saved_queue_without_refreshing_verification(self, sleep):
+        now = datetime.now(timezone.utc)
+        old_seen = (now - timedelta(hours=23)).isoformat()
+        saved = dict(row("saved"), first_seen=old_seen, source_verified_at=old_seen,
+                     linkedin_detail_deferred_at=old_seen, linkedin_detail_triage={"needs_jd": True, "priority": "normal"})
+        discovered = dict(row("new"), first_seen=now.isoformat())
+        calls = []
+        def recovery(_resolver, pending, **kwargs):
+            calls.append("recovery")
+            self.assertIn("saved", [r["job_id"] for r, _ in pending])
+            return []
+        def triage(rows, _):
+            calls.append("triage")
+            return {recovery_policy.identity(r): {"needs_jd": True, "priority": "normal"} for r in rows}
+        session = Mock()
+        session.get.return_value = response()
+        with tempfile.TemporaryDirectory() as temp, \
+             patch.object(schema, "SOURCES_DIR", Path(temp) / "sources"), \
+             patch.object(local_sources, "HEALTH_PATH", Path(temp) / "health.json"), \
+             patch.object(local_sources, "_linkedin_detail_control", return_value=(1, False, False)), \
+             patch.object(linkedin_local, "scrape", return_value={"status": "ok", "jobs": [discovered], "coverage_limited": True}), \
+             patch.object(local_sources.board, "load_store", return_value={}), \
+             patch.object(local_sources.board, "load_profiles", return_value={}), \
+             patch.object(local_sources, "_remote_handoff_rows", return_value=[]), \
+             patch.object(local_sources.coverage_reconcile, "load_official_context", return_value={}), \
+             patch.object(local_sources.official_jd_recovery, "recover_pending", side_effect=recovery), \
+             patch.object(local_sources.recovery_ai, "triage_linkedin_detail", side_effect=triage), \
+             patch.object(linkedin_local, "_make_session", return_value=session), \
+             patch.object(linkedin_local, "_parse_detail", return_value={"description": "JD " * 150, "application_url": ""}):
+            schema.write_source_snapshot("linkedin", [saved], meta={"scraped_at": old_seen})
+            result = local_sources.run_one("linkedin", {}, scraper=linkedin_local.scrape)
+            snapshot = schema.read_source_snapshot_payload("linkedin")
+        self.assertEqual(["recovery", "triage"], calls)
+        self.assertEqual(["saved"], result["detail_enrichment"]["attempted_ids"])
+        retained = next(r for r in snapshot["jobs"] if r["job_id"] == "saved")
+        self.assertEqual(old_seen, retained["first_seen"])
+        self.assertEqual(old_seen, retained["source_verified_at"])
+        self.assertFalse(retained["verified_this_run"])
+        self.assertEqual("linkedin_http", retained["enrichment_method"])
+
     def test_discovery_and_both_detail_phases_share_limits(self, sleep):
         transport = LinkedInTransport()
         session = Mock()
@@ -32,9 +117,9 @@ class LinkedInTransportTests(unittest.TestCase):
         for page in range(10):
             transport.get(session, linkedin_local.GUEST_SEARCH_URL, endpoint="search", page=page)
         first = linkedin_local.enrich_details([row(i) for i in range(6)], session=session, transport=transport)
-        follow = linkedin_local.enrich_details([row(i) for i in range(6, 12)], session=session, transport=transport)
-        self.assertEqual((6, 2), (first["requests"], follow["requests"]))
-        self.assertEqual(18, session.get.call_count)
+        follow = linkedin_local.enrich_details([row(i) for i in range(6, 14)], session=session, transport=transport)
+        self.assertEqual((6, 6), (first["requests"], follow["requests"]))
+        self.assertEqual(22, session.get.call_count)
         self.assertFalse(transport.available("search"))
         self.assertTrue(follow["budget_exhausted"])
         self.assertTrue(all(2.4 < call.args[0] <= 3.25 for call in sleep.call_args_list))
@@ -49,22 +134,22 @@ class LinkedInTransportTests(unittest.TestCase):
             transport.get(session, "search", endpoint="search")
         triage = lambda rows, _profile: {recovery_policy.identity(r): {"needs_jd": True} for r in rows}
         now = datetime.now(timezone.utc)
-        with patch.object(local_sources, "_linkedin_detail_control", return_value=(8, False, False)), \
+        with patch.object(local_sources, "_linkedin_detail_control", return_value=(12, False, False)), \
              patch.object(local_sources.board, "load_profiles", return_value={}), \
              patch.object(local_sources.recovery_ai, "triage_linkedin_detail", side_effect=triage), \
              patch.object(linkedin_local, "_make_session", return_value=session):
             first = local_sources._finish_linkedin_detail([row(i) for i in range(6)], [],
                 {"cache_reused": 0}, budget, now, transport=transport)
-            follow = local_sources._finish_linkedin_detail([row(i) for i in range(6, 12)], [],
+            follow = local_sources._finish_linkedin_detail([row(i) for i in range(6, 14)], [],
                 {"cache_reused": 0}, budget, now, transport=transport)
-        self.assertEqual((6, 2, 8, 18),
+        self.assertEqual((6, 6, 12, 22),
                          (first["requests"], follow["requests"], budget.linkedin_detail_requests, session.get.call_count))
 
     def test_transport_pause_prevents_admission_work_without_changing_fit_decisions(self, sleep):
         import recovery_policy
         transport = LinkedInTransport()
         transport.closed = True
-        with patch.object(local_sources, "_linkedin_detail_control", return_value=(8, False, False)), \
+        with patch.object(local_sources, "_linkedin_detail_control", return_value=(12, False, False)), \
              patch.object(local_sources.recovery_ai, "triage_linkedin_detail") as triage, \
              patch.object(linkedin_local, "_make_session") as session:
             detail = local_sources._finish_linkedin_detail([row(1)], [], {"cache_reused": 0},
@@ -79,7 +164,7 @@ class LinkedInTransportTests(unittest.TestCase):
             transport = LinkedInTransport(health, journal)
             session = Mock()
             session.get.return_value = response()
-            for _ in range(8):
+            for _ in range(12):
                 transport.get(session, "detail", endpoint="detail")
             health.unlink()  # Collector worktree discarded after a failed push.
             resumed = LinkedInTransport(None, journal)
@@ -88,15 +173,20 @@ class LinkedInTransportTests(unittest.TestCase):
             self.assertTrue(resumed.available("search"))
             now = datetime.now(timezone.utc)
             resumed.events = [{"at": (now - timedelta(hours=2, seconds=i)).isoformat(), "endpoint": "search"}
-                              for i in range(54)]
+                              for i in range(72)]
             self.assertFalse(resumed.available("search"))
             self.assertEqual("global_day_budget", resumed.stop_reason)
             resumed.events = [{"at": (now - timedelta(hours=2, seconds=i)).isoformat(), "endpoint": "detail"}
-                              for i in range(24)]
+                              for i in range(36)]
             self.assertFalse(resumed.available("detail"))
             self.assertEqual("shared_detail_day_budget", resumed.stop_reason)
             resumed.events = [{"at": (now - timedelta(hours=25)).isoformat(), "endpoint": "search"}]
             self.assertTrue(resumed.available("search"))
+            resumed.events = [{"at": (now - timedelta(minutes=30, seconds=i)).isoformat(), "endpoint": "search"}
+                              for i in range(22)]
+            self.assertFalse(resumed.available("search"))
+            self.assertEqual("global_hour_budget", resumed.stop_reason)
+            self.assertFalse(resumed.available("detail"))
 
     def test_429_closes_both_endpoints_and_records_retry_context(self, sleep):
         with tempfile.TemporaryDirectory() as temp:
