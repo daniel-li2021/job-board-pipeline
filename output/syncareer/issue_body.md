@@ -1,7 +1,7 @@
-Syncareer alert — 2026-10-05_1451
+Syncareer alert — 2026-10-05_2351
 
-Updated (PT): 2026-10-05 07:52 PDT
-Snapshot (UTC): 2026-10-05T14:52:26.587714+00:00
+Updated (PT): 2026-10-05 16:52 PDT
+Snapshot (UTC): 2026-10-05T23:52:11.647709+00:00
 
 10 new matching job(s) this run (hard-filtered).
 
@@ -20,4 +20,4 @@ If you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.
 | B | 77.0 | Syncareer | OppFi | Software Engineer I | United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/opploans/jobs/8011770003) |
 | B | 76.0 | Syncareer | Infosys | AI/ML Developer | Hartford, Connecticut, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/154363BR) |
 
-Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-10-05_1451.csv`.
+Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-10-05_2351.csv`.

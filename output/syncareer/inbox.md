@@ -1,10 +1,10 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-10-05 07:52 PDT
-- Snapshot (UTC): 2026-10-05T14:52:26.586995+00:00
-- Jobs: 43
-- Last 24 hours: 5
-- Last 3 days: 43
+- Updated (PT): 2026-10-05 16:52 PDT
+- Snapshot (UTC): 2026-10-05T23:52:11.647033+00:00
+- Jobs: 19
+- Last 24 hours: 2
+- Last 3 days: 19
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
@@ -29,27 +29,3 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 77.0 | Syncareer | Union Bank & Trust | Data Engineer | Lincoln, Nebraska, United States | 2026-10-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://myubt.rec.pro.ukg.net/UNI1120UBTC/JobBoard/56baf6a9-3cb4-4d34-922a-eb69f2137926/OpportunityDetail?opportunityId=c2c22805-54d8-4ff1-a9c2-f43d464b336f) |
 | B | 72.0 | Syncareer | Yugabyte | Software Engineer II | Sunnyvale, California, United States | 2026-10-02 | No sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/yugabyte/jobs/4683621006) |
 | A | 87.0 | Syncareer | National Instruments | Software Solutions Development Program (SDP) | Elyria, Ohio, United States | 2026-10-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://hdjq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26010904/?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164%253B300000000228618%253B300000000229065%253B300000192461701&selectedTitlesFacet=INTERN+CO+OP%253BENGINEERING+SERVICES%253BDEVELOPMENT+ENGINEERING%253BSALES+SYSTEMS+ENGINEERING%253BMARKETING%253BMANUFACTURING+ENGINEERING%253BFinance%253BHUMAN_RESOURCES%253BPRJ_MGM%253BIT) |
-| B | 76.0 | Syncareer | Remitly | AI Native Software Engineer II | Seattle, Washington, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://remitly.wd5.myworkdayjobs.com/en-US/Remitly_Careers/job/Seattle-Washington-United-States/AI-Native-Software-Engineer-II_R_106995) |
-| B | 76.0 | Syncareer | Lennar | Data Engineer / Talent Community | Miami, Florida, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.lennar.com/job/1800/data_engineer_talent_community?change_lang=en) |
-| B | 84.0 | Syncareer | Blend | NC Career Fair Software Engineer | Raleigh, North Carolina, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://blend.com/company/careers/opening/?gh_id=6214287004) |
-| B | 88.0 | Syncareer | D.E.Shaw group | Full-Stack Software Engineer | New York, New York, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.deshaw.com/careers/full-stack-software-engineer-5871) |
-| B | 84.0 | Syncareer | Honeycomb Insurance | Software Engineer | Chicago, Illinois, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/honeycombinsurance/jobs/4739296005) |
-| A | 90.0 | Syncareer | Clay | Early Career Software Engineer | New York, New York, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/claylabs/16778e12-31cb-4ca1-a321-7f629a7cf273) |
-| B | 84.0 | Syncareer | Lennar | Software Engineer / Talent Community | Irving, Texas, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.lennar.com/job/1797/software_engineer_talent_community?change_lang=en) |
-| B | 84.0 | Syncareer | Lennar | Software Engineer / Talent Community | Miami, Florida, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.lennar.com/job/1796/software_engineer_talent_community?change_lang=en) |
-| A | 92.0 | Syncareer | Comcast | Entry Level Software Engineer- Englewood, CO- ONSITE 4 Days per Week-  | Englewood, Colorado, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.comcast.com/job/englewood/entry-level-software-engineer-englewood-co-onsite-4-days-per-week-freewheel/45483/101416618688) |
-| B | 72.0 | Syncareer | Ametek | Junior Software Engineer | Atlanta, Georgia, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ametek.com/job/Atlanta-Junior-Software-Engineer-GA-30339/1435994100/) |
-| B | 76.0 | Syncareer | Lennar | Data Engineer / Talent Community | Irving, Texas, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.lennar.com/job/1801/data_engineer_talent_community?change_lang=en) |
-| B | 83.0 | Syncareer | GE Vernova | GE Vernova OT Platform/Cyber Engineer 2 | Longmont, Colorado, United States | 2026-10-01 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.gevernova.com/ge-vernova-ot-platform-cyber-engineer-2/job/R5054299) |
-| B | 82.0 | Syncareer | Interclypse | Software Engineer | Annapolis Junction, Maryland, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://recruiting.paylocity.com/Recruiting/Jobs/Details/4547142) |
-| B | 82.0 | Syncareer | Interclypse | DevOps Engineer | Annapolis Junction, Maryland, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://recruiting.paylocity.com/Recruiting/Jobs/Details/4547155) |
-| A | 86.0 | Syncareer | Zions Bancorporation | AI Engineer (Data Scientist) | Midvale, Utah, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.zionsbancorp.com/jobs/ai-engineer-data-scientist-28535) |
-| A | 89.0 | Syncareer | Toyota | AI/ML Platform Engineer | Frisco, Texas, United States | 2026-10-01 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.toyota.com/us/en/job/10337203/AI-ML-Platform-Engineer) |
-| A | 87.0 | Syncareer | IBM | AI Foundations - Research Software Engineer | Cambridge, Massachusetts, United States | 2026-10-01 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=135522&source=WEB_Search_NA) |
-| B | 78.0 | Syncareer | Aquent Talent | Data Engineer (I) | Portland, Oregon, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://aquent.com/find-work/213437) |
-| A | 91.0 | Syncareer | National Instruments | Software Engineer - AI Enablement & Engineering Productivity | Austin, Texas, United States | 2026-10-01 | No sponsor | - | unreviewed | not_dedicated | [open](https://hdjq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26010922/?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164%253B300000000228618%253B300000000229065%253B300000192461701&selectedTitlesFacet=INTERN+CO+OP%253BENGINEERING+SERVICES%253BDEVELOPMENT+ENGINEERING%253BSALES+SYSTEMS+ENGINEERING%253BMARKETING%253BMANUFACTURING+ENGINEERING%253BFinance%253BHUMAN_RESOURCES%253BPRJ_MGM%253BIT) |
-| A | 91.0 | Syncareer | ResMed | Associate Software Engineer | San Diego, California, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://resmed.wd3.myworkdayjobs.com/en-US/ResMed_External_Careers/job/San-Diego-CA-United-States/Associate-Software-Engineer_JR_053889-1) |
-| A | 88.0 | Syncareer | Automation Anywhere | Software Engineer | San Jose, California, United States | 2026-10-01 | No sponsor | - | unreviewed | not_dedicated | [open](https://automationanywhere.wd5.myworkdayjobs.com/en-US/AutomationAnywhereJobs/job/San-Jose-California/Software-Engineer_JR1492) |
-| B | 78.0 | Syncareer | First Bank & Trust | Software Development Intern | Sioux Falls, South Dakota, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://bankeasy.wd5.myworkdayjobs.com/en-US/bank-easy-job-openings/job/Sioux-Falls-SD-I-229/Software-Development-Intern_R-100829?_gl=1*10038pm*_gcl_au*NDMxNDM5NjI0LjE3Nzk3NjQ0MzY.*_ga*NTk2MDc3NjExLjE3Nzk3NjQ0MzY.*_ga_R9HPCD07E8*czE3Nzk3NjQ0MzUkbzEkZzAkdDE3Nzk3NjQ0NDMkajUyJGwwJGgw) |
-| B | 76.0 | Syncareer | ADT | Junior Software Engineer | Irving, Texas, United States | 2026-10-01 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.adt.com/job/23650428/junior-software-engineer/) |
-| A | 91.0 | Syncareer | Emerson | Software Engineer - AI Enablement & Engineering Productivity | Austin, Texas, United States | 2026-10-01 | No sponsor | - | unreviewed | not_dedicated | [open](https://hdjq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26010922/?lastSelectedFacet=LOCATIONS&mode=location&selectedFlexFieldsFacets=%2522AttributeChar2%257CEntry-level%253BStudent+Internships%252FCo-ops%2522&selectedLocationsFacet=300000000229164%253B300000000228618%253B300000000229065%253B300000000229149) |
