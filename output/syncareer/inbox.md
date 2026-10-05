@@ -1,24 +1,25 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-10-04 16:52 PDT
-- Snapshot (UTC): 2026-10-04T23:52:46.008292+00:00
-- Jobs: 42
-- Last 24 hours: 8
-- Last 3 days: 42
+- Updated (PT): 2026-10-05 07:52 PDT
+- Snapshot (UTC): 2026-10-05T14:52:26.586995+00:00
+- Jobs: 43
+- Last 24 hours: 5
+- Last 3 days: 43
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| B | 81.0 | Syncareer | Interclypse | Software Integration Engineer (HPC) | Annapolis Junction, Maryland, United States | 2026-10-04 | Sponsor | - | unreviewed | not_dedicated | [open](https://recruiting.paylocity.com/Recruiting/Jobs/Details/4558885) |
+| B | 83.0 | Syncareer | Interclypse | Software Engineer (HPC) Linux & Scripting Emphasis | Annapolis Junction, Maryland, United States | 2026-10-04 | Sponsor | - | unreviewed | not_dedicated | [open](https://recruiting.paylocity.com/Recruiting/Jobs/Details/4558884) |
+| B | 77.0 | Syncareer | OppFi | Software Engineer I | United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/opploans/jobs/8011770003) |
+| B | 85.0 | Syncareer | Natera | Software Engineering Intern | United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/natera/jobs/6188497004) |
+| A | 96.0 | Syncareer | Koch | AI Solutions Engineer | Lisle, Illinois, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://koch.avature.net/en_US/careers/JobDetail/United-States-AI-Solutions-Engineer/195477) |
 | B | 76.0 | Syncareer | Infosys | AI/ML Developer | Hartford, Connecticut, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/154363BR) |
 | B | 96.0 | Syncareer | ShopBack | Software Engineer Intern | New York City, New York, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/shopback-2/e5f5e276-e7f7-43e0-a224-5259d242fe98) |
 | A | 88.0 | Syncareer | PARTech | Software Engineer | Champaign, Illinois, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/PAR%20Technology/79feb267-7ce4-4d52-ba73-8652c1ed2595) |
 | B | 78.0 | Syncareer | UniFirst | Junior Azure Data Engineer - Hybrid Role | Wilmington, Massachusetts, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.unifirst.com/job/wilmington/junior-azure-data-engineer-hybrid-role/45421/101400979632) |
 | B | 96.0 | Syncareer | ShopBack | Software Engineer Intern | San Francisco, California, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/shopback-2/640ac3fb-dae5-4738-95b9-9cb80cc7ad15) |
-| B | 85.0 | Syncareer | Natera | Software Engineering Intern | United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/natera/jobs/6188497004) |
-| B | 77.0 | Syncareer | OppFi | Software Engineer I | United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/opploans/jobs/8011770003) |
-| A | 96.0 | Syncareer | Koch | AI Solutions Engineer | Lisle, Illinois, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://koch.avature.net/en_US/careers/JobDetail/United-States-AI-Solutions-Engineer/195477) |
-| B | 78.0 | Syncareer | Intercontinental Exchange | Associate Full Stack Developer | Jacksonville, Florida, United States | 2026-10-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ice.com/jobs/13433?lang=en-us) |
 | A | 88.0 | Syncareer | Emerson | Software Solutions Development Program (SDP) | Elyria, Ohio, United States | 2026-10-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://hdjq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26010904/?lastSelectedFacet=LOCATIONS&mode=location&selectedFlexFieldsFacets=%2522AttributeChar2%257CEntry-level%253BStudent+Internships%252FCo-ops%2522&selectedLocationsFacet=300000000229164%253B300000000228618%253B300000000229065%253B300000000229149) |
 | B | 75.0 | Syncareer | Accuray | Software Engineer | Madison, Wisconsin, United States | 2026-10-02 | No sponsor | - | unreviewed | not_dedicated | [open](https://accuray.wd5.myworkdayjobs.com/en-US/External/job/Madison-WI/Software-Engineer_3258) |
 | B | 78.0 | Syncareer | Broadridge | Junior Full Stack Software Engineer (Hybrid) | Newark, New Jersey, United States | 2026-10-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://broadridge.wd5.myworkdayjobs.com/en-US/Careers/job/Newark-NJ/Full-Stack-Software-Engineer--Hybrid-_JR1086388?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=6cb77610a8a543aea2d6bc10457e35d4) |

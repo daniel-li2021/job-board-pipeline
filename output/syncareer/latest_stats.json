@@ -1,31 +1,30 @@
 {
-  "run_at": "2026-10-04T23:52:42.974565+00:00",
-  "elapsed_seconds": 79.78,
-  "remote_elapsed_seconds": 42.04,
+  "run_at": "2026-10-05T14:52:23.850025+00:00",
+  "elapsed_seconds": 71.728,
+  "remote_elapsed_seconds": 38.828,
   "funnel": {
-    "scoring_candidates": 88
+    "scoring_candidates": 57
   },
   "llm": {
-    "reused": 78,
-    "llm": 13,
-    "new_or_changed": 14,
-    "rule": 2,
-    "sent": 14,
+    "reused": 49,
+    "llm": 9,
+    "new_or_changed": 9,
+    "rule": 0,
+    "sent": 9,
     "api_requests": 2,
     "recency_skipped": 0,
     "overflow": 0,
-    "peer_reused": 4,
-    "thin_source_rule": 1,
-    "retryable_fallbacks": 1,
+    "peer_reused": 1,
+    "thin_source_rule": 0,
+    "retryable_fallbacks": 0,
     "historical_seen_skipped": 0,
     "historical_llm_retained": 0,
     "non_material_change_reused": 0,
-    "same_content_reused": 0,
-    "rescored_within_24h": 1,
+    "same_content_reused": 1,
+    "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 11,
-      "material_jd_change": 2,
-      "prior_rule_result_now_eligible_for_llm": 1
+      "genuinely_new_job": 7,
+      "material_jd_change": 2
     },
     "batch_size": 10,
     "primary_batches_total": 2,
@@ -38,8 +37,8 @@
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 27.997,
-    "json_results": 14,
+    "latency_seconds": 26.235,
+    "json_results": 9,
     "batches": [
       {
         "batch": 1,
@@ -47,29 +46,14 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://careers.zionsbank.com/jobs/software-engineer-cloud-and-devops-28817",
-            "company": "Zions Bank",
-            "title": "Software Engineer - Cloud and DevOps"
+            "key": "url::https://recruiting.paylocity.com/Recruiting/Jobs/Details/4558884",
+            "company": "Interclypse",
+            "title": "Software Engineer (HPC) Linux & Scripting Emphasis"
           },
           {
-            "key": "url::https://apply.deloitte.com/en_US/careers/JobDetail/Business-Analyst-Integrated-Eligibility-Modernization-Software-Engineer-II/369605",
-            "company": "Deloitte",
-            "title": "Business Analyst, Integrated Eligibility Modernization - Software Engineer II"
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/natera/jobs/6188497004",
-            "company": "Natera",
-            "title": "Software Engineering Intern"
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/opploans/jobs/8011770003",
-            "company": "OppFi",
-            "title": "Software Engineer I"
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/affirm/jobs/8011590003",
-            "company": "Affirm",
-            "title": "Software Engineer Intern (Summer 2027)"
+            "key": "url::https://recruiting.paylocity.com/Recruiting/Jobs/Details/4558882",
+            "company": "Interclypse",
+            "title": "Software Engineer supporting Red and Blue Teams"
           },
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
@@ -77,173 +61,97 @@
             "title": "GreenLake Cloud Platform Engineer"
           },
           {
-            "key": "url::https://personifyhealth.com/jobs/data-engineer-edi",
-            "company": "Personify Health",
-            "title": "Data Engineer, EDI"
+            "key": "url::https://recruiting.paylocity.com/Recruiting/Jobs/Details/4558862",
+            "company": "Interclypse",
+            "title": "Data Engineer"
           },
           {
-            "key": "url::https://www.tylertech.com/careers/job-listings/associate-software-support-specialist-26-oiltafwq-01",
-            "company": "Tyler Technologies",
-            "title": "Associate Software Support Specialist"
-          },
-          {
-            "key": "url::https://careers.blackrock.com/job/new-york/associate-investment-valuation-infrastructure-gip/45831/101457188832",
-            "company": "BlackRock",
-            "title": "Associate, Investment Valuation Infrastructure - GIP"
-          },
-          {
-            "key": "url::https://mtb.wd5.myworkdayjobs.com/en-US/MTB/job/Getzville-NY/Infrastructure-Support-Analyst_R90660?jobFamily=554435cdd16410020c45d8b8e0670000&jobFamily=e8f67fb24d7c10020c40db094b3f0000&jobFamily=8cc34509fd6910020c3ff017c2350000&jobFamily=a17eecbc178210020c46f45598750000&jobFamily=554435cdd16410020c45fafc04fd0000&jobFamily=e8f67fb24d7c10020c420e50e6b70000&jobFamily=e8f67fb24d7c10020c42cd74a1470000&jobFamily=a17eecbc178210020c48de932f840000&jobFamily=8cc34509fd6910020c42798cfc960000&jobFamily=554435cdd16410020c457e9c7f7e0000&jobFamily=554435cdd16410020c4807977fb00000&jobFamily=e8f67fb24d7c10020c3f8e02d4630000&jobFamily=0765fb7811f201e60fd3b5ab24104703&jobFamily=e8f67fb24d7c10020c4294ed32c20000&jobFamily=8cc34509fd6910020c41cc5e13880000&jobFamily=e8f67fb24d7c10020c41e01009e90000&jobFamily=e8f67fb24d7c10020c431508753e0000&jobFamily=8cc34509fd6910020c41297cb0b70000&jobFamily=8cc34509fd6910020c3eee3502990000&jobFamily=554435cdd16410020c452cdb82780000&jobFamily=0765fb7811f201a16a7127ac24108903&jobFamily=0765fb7811f201502dafcdab24105503&jobFamily=554435cdd16410020c475ecd2d460000&jobFamily=8cc34509fd6910020c3eff1b87d80000&jobFamily=554435cdd16410020c44f539de210000&jobFamily=0765fb7811f2010ee6a581ab24102703&jobFamily=e8f67fb24d7c10020c3fdc2a92cb0000&jobFamily=8cc34509fd6910020c414e39b4380000&jobFamily=a17eecbc178210020c45f1af38bd0000&jobFamily=e8f67fb24d7c10020c40c091f93f0000&jobFamily=8cc34509fd6910020c40cfd031240000&jobFamily=e8f67fb24d7c10020c4278107b110000&jobFamily=8cc34509fd6910020c41f54c78ad0000&jobFamily=e8f67fb24d7c10020c41293124cc0000&jobFamily=8cc34509fd6910020c415ad86bdd0000&jobFamily=554435cdd16410020c45be48cd860000&jobFamily=1c1735feefef01f39138b01003028985&jobFamily=4522629f45bd016afe60c4af04025f70&jobFamily=af779e67c5c101dc3be5bd6f02022073&jobFamily=0765fb7811f201ee544b3dac24109503&jobFamily=e8f67fb24d7c10020c40cf0211760000&jobFamily=a17eecbc178210020c4566faa95f0000&jobFamily=a17eecbc178210020c451f75bf9f0000&jobFamily=8cc34509fd6910020c4076c5b5610000&jobFamily=0765fb7811f2011a803cb2ae24100104&jobFamily=e65a3684dd6201695576626b02020679",
-            "company": "M&T Bank",
-            "title": "Infrastructure Support Analyst"
+            "key": "url::https://recruiting.paylocity.com/Recruiting/Jobs/Details/4558885",
+            "company": "Interclypse",
+            "title": "Software Integration Engineer (HPC)"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 21.242,
+        "latency_seconds": 12.268,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 10,
-          "input_tokens": 12578,
+          "jobs_scored": 5,
+          "input_tokens": 7505,
           "cached_input_tokens": 0,
-          "output_tokens": 2677,
-          "reasoning_tokens": 791,
-          "estimated_usd": 0.002596
+          "output_tokens": 1289,
+          "reasoning_tokens": 926,
+          "estimated_usd": 0.001395
         },
         "decisions": [
           {
-            "key": "url::https://careers.zionsbank.com/jobs/software-engineer-cloud-and-devops-28817",
+            "key": "url::https://recruiting.paylocity.com/Recruiting/Jobs/Details/4558884",
+            "match_score": 83.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python automation",
+              "ETL and data pipelines"
+            ],
+            "main_gaps": [
+              "HPC/Linux administration"
+            ]
+          },
+          {
+            "key": "url::https://recruiting.paylocity.com/Recruiting/Jobs/Details/4558882",
             "match_score": 66.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "AWS cloud deployments",
-              "Full-stack and API troubleshooting"
+              "Python/C++ development",
+              "CI/CD workflows"
             ],
             "main_gaps": [
-              "4+ years engineering experience",
-              "Pipeline security automation"
+              "Cybersecurity analysis"
             ]
-          },
-          {
-            "key": "url::https://apply.deloitte.com/en_US/careers/JobDetail/Business-Analyst-Integrated-Eligibility-Modernization-Software-Engineer-II/369605",
-            "match_score": 51.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "SDLC testing and deployment",
-              "Java, APIs, and cloud"
-            ],
-            "main_gaps": [
-              "Business requirements documentation",
-              "Business analysis experience"
-            ]
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/natera/jobs/6188497004",
-            "match_score": 85.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Python automation and debugging",
-              "Production data workflows"
-            ],
-            "main_gaps": [
-              "MySQL administration"
-            ]
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/opploans/jobs/8011770003",
-            "match_score": 77.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "AWS ECS deployment",
-              "REST APIs and backend services"
-            ],
-            "main_gaps": [
-              "1+ year AWS development",
-              "Test-driven development"
-            ]
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/affirm/jobs/8011590003",
-            "match_score": 91.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Shipped production software",
-              "APIs, testing, and AWS"
-            ],
-            "main_gaps": []
           },
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 24.0,
+            "match_score": 48.0,
             "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Terraform and container exposure",
-              "Cloud deployment automation"
+              "Terraform automation",
+              "Kubernetes and Docker"
             ],
             "main_gaps": [
               "VMware vSphere administration",
-              "Advanced Linux systems administration"
+              "Air-gapped deployments"
             ]
           },
           {
-            "key": "url::https://personifyhealth.com/jobs/data-engineer-edi",
-            "match_score": 23.0,
+            "key": "url::https://recruiting.paylocity.com/Recruiting/Jobs/Details/4558862",
+            "match_score": 66.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "SQL and production troubleshooting",
-              "Testing and technical documentation"
+              "Data pipelines and ETL",
+              "Spark/Databricks workflows"
             ],
             "main_gaps": [
-              "Healthcare X12 transaction experience",
-              "EDI trading partner troubleshooting"
+              "Three years data engineering",
+              "Data architecture"
             ]
           },
           {
-            "key": "url::https://www.tylertech.com/careers/job-listings/associate-software-support-specialist-26-oiltafwq-01",
-            "match_score": 30.0,
+            "key": "url::https://recruiting.paylocity.com/Recruiting/Jobs/Details/4558885",
+            "match_score": 81.0,
             "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Technical issue troubleshooting",
-              "Clear technical communication"
+              "Integration testing and automation",
+              "Containerized platform deployment"
             ],
             "main_gaps": [
-              "Client-facing software support"
-            ]
-          },
-          {
-            "key": "url::https://careers.blackrock.com/job/new-york/associate-investment-valuation-infrastructure-gip/45831/101457188832",
-            "match_score": 12.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Database and reporting infrastructure"
-            ],
-            "main_gaps": [
-              "Financial valuation modeling",
-              "Infrastructure investment analysis"
-            ]
-          },
-          {
-            "key": "url::https://mtb.wd5.myworkdayjobs.com/en-US/MTB/job/Getzville-NY/Infrastructure-Support-Analyst_R90660?jobFamily=554435cdd16410020c45d8b8e0670000&jobFamily=e8f67fb24d7c10020c40db094b3f0000&jobFamily=8cc34509fd6910020c3ff017c2350000&jobFamily=a17eecbc178210020c46f45598750000&jobFamily=554435cdd16410020c45fafc04fd0000&jobFamily=e8f67fb24d7c10020c420e50e6b70000&jobFamily=e8f67fb24d7c10020c42cd74a1470000&jobFamily=a17eecbc178210020c48de932f840000&jobFamily=8cc34509fd6910020c42798cfc960000&jobFamily=554435cdd16410020c457e9c7f7e0000&jobFamily=554435cdd16410020c4807977fb00000&jobFamily=e8f67fb24d7c10020c3f8e02d4630000&jobFamily=0765fb7811f201e60fd3b5ab24104703&jobFamily=e8f67fb24d7c10020c4294ed32c20000&jobFamily=8cc34509fd6910020c41cc5e13880000&jobFamily=e8f67fb24d7c10020c41e01009e90000&jobFamily=e8f67fb24d7c10020c431508753e0000&jobFamily=8cc34509fd6910020c41297cb0b70000&jobFamily=8cc34509fd6910020c3eee3502990000&jobFamily=554435cdd16410020c452cdb82780000&jobFamily=0765fb7811f201a16a7127ac24108903&jobFamily=0765fb7811f201502dafcdab24105503&jobFamily=554435cdd16410020c475ecd2d460000&jobFamily=8cc34509fd6910020c3eff1b87d80000&jobFamily=554435cdd16410020c44f539de210000&jobFamily=0765fb7811f2010ee6a581ab24102703&jobFamily=e8f67fb24d7c10020c3fdc2a92cb0000&jobFamily=8cc34509fd6910020c414e39b4380000&jobFamily=a17eecbc178210020c45f1af38bd0000&jobFamily=e8f67fb24d7c10020c40c091f93f0000&jobFamily=8cc34509fd6910020c40cfd031240000&jobFamily=e8f67fb24d7c10020c4278107b110000&jobFamily=8cc34509fd6910020c41f54c78ad0000&jobFamily=8cc34509fd6910020c41293124cc0000&jobFamily=8cc34509fd6910020c415ad86bdd0000&jobFamily=554435cdd16410020c45be48cd860000&jobFamily=1c1735feefef01f39138b01003028985&jobFamily=4522629f45bd016afe60c4af04025f70&jobFamily=af779e67c5c101dc3be5bd6f02022073&jobFamily=0765fb7811f201ee544b3dac24109503&jobFamily=e8f67fb24d7c10020c40cf0211760000&jobFamily=a17eecbc178210020c4566faa95f0000&jobFamily=a17eecbc178210020c451f75bf9f0000&jobFamily=8cc34509fd6910020c4076c5b5610000&jobFamily=0765fb7811f2011a803cb2ae24100104&jobFamily=e65a3684dd6201695576626b02020679",
-            "match_score": 35.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Technical troubleshooting",
-              "Technology-related education"
-            ],
-            "main_gaps": [
-              "Mac and iOS support experience"
+              "HPC/Linux systems administration"
             ]
           }
         ]
@@ -254,112 +162,117 @@
         "attempt": "initial",
         "jobs": [
           {
+            "key": "url::https://www.capitalonecareers.com/job/new-york/data-engineer-4/1732/101546597968",
+            "company": "Capital One",
+            "title": "Data Engineer 4"
+          },
+          {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
             "company": "Kforce",
             "title": "Data Engineer"
           },
           {
-            "key": "url::https://job-boards.greenhouse.io/affirm/jobs/8008645003",
-            "company": "Affirm",
-            "title": "Software Engineer (Machine Learning) Intern (Summer 2027)"
+            "key": "url::https://bmo.wd3.myworkdayjobs.com/en-US/External/job/Houston-TX-USA/Equity-Research-Associate---Energy-Transition---Infrastructure_R260028186-1",
+            "company": "BMO Financial Group",
+            "title": "Equity Research Associate – Energy Transition & Infrastructure"
           },
           {
-            "key": "url::https://koch.avature.net/en_US/careers/JobDetail/United-States-AI-Solutions-Engineer/195477",
-            "company": "Koch",
-            "title": "AI Solutions Engineer"
-          },
-          {
-            "key": "url::https://jobs.lever.co/appen-2/61d18244-84c0-401a-984c-14fc88a1b1da",
-            "company": "Appen",
-            "title": "Forward Deployed Engineer"
+            "key": "url::https://bmo.wd3.myworkdayjobs.com/en-US/External/job/New-York-NY-USA/Equity-Research-Associate---Energy-Transition---Infrastructure_R260028184",
+            "company": "BMO Financial Group",
+            "title": "Equity Research Associate – Energy Transition & Infrastructure"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 6.755,
+        "latency_seconds": 13.967,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
           "jobs_scored": 4,
-          "input_tokens": 6398,
+          "input_tokens": 8189,
           "cached_input_tokens": 0,
-          "output_tokens": 751,
-          "reasoning_tokens": 456,
-          "estimated_usd": 0.001015
+          "output_tokens": 1155,
+          "reasoning_tokens": 681,
+          "estimated_usd": 0.001396
         },
         "decisions": [
           {
+            "key": "url::https://www.capitalonecareers.com/job/new-york/data-engineer-4/1732/101546597968",
+            "match_score": 45.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python and Spark",
+              "Cloud data pipelines"
+            ],
+            "main_gaps": [
+              "4+ years application development",
+              "Independent data-platform architecture"
+            ]
+          },
+          {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 59.0,
+            "match_score": 56.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
               "Python data pipelines",
-              "ETL and data troubleshooting"
+              "SQL and data workflows"
             ],
             "main_gaps": [
-              "Snowflake enterprise experience",
-              "4+ years experience"
+              "4+ years data engineering",
+              "Snowflake and Azure Data Factory"
             ]
           },
           {
-            "key": "url::https://job-boards.greenhouse.io/affirm/jobs/8008645003",
-            "match_score": 92.0,
-            "seniority_fit": "good",
+            "key": "url::https://bmo.wd3.myworkdayjobs.com/en-US/External/job/Houston-TX-USA/Equity-Research-Associate---Energy-Transition---Infrastructure_R260028186-1",
+            "match_score": 8.0,
+            "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Production software delivery",
-              "AWS APIs and testing"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://koch.avature.net/en_US/careers/JobDetail/United-States-AI-Solutions-Engineer/195477",
-            "match_score": 96.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "End-to-end AI solutions",
-              "Production deployment and evaluation"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://jobs.lever.co/appen-2/61d18244-84c0-401a-984c-14fc88a1b1da",
-            "match_score": 68.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "GenAI evaluation systems",
-              "Scalable data pipelines"
+              "Quantitative education"
             ],
             "main_gaps": [
-              "3+ years customer-facing technical experience"
+              "Equity research experience",
+              "Financial modeling and licensing"
+            ]
+          },
+          {
+            "key": "url::https://bmo.wd3.myworkdayjobs.com/en-US/External/job/New-York-NY-USA/Equity-Research-Associate---Energy-Transition---Infrastructure_R260028184",
+            "match_score": 8.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Quantitative education"
+            ],
+            "main_gaps": [
+              "Equity research experience",
+              "Financial modeling and licensing"
             ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 13,
-    "input_tokens": 18976,
+    "jobs_scored": 9,
+    "input_tokens": 15694,
     "cached_input_tokens": 0,
-    "output_tokens": 3428,
-    "reasoning_tokens": 1247,
-    "estimated_usd": 0.003611,
+    "output_tokens": 2444,
+    "reasoning_tokens": 1607,
+    "estimated_usd": 0.002791,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 13
+    "scored": 9
   },
   "output": {
-    "tier_a": 5,
-    "tier_b": 11,
-    "tier_c": 72,
-    "shown": 16,
-    "new_jobs": 26,
-    "new_jobs_added": 3
+    "tier_a": 2,
+    "tier_b": 8,
+    "tier_c": 47,
+    "shown": 10,
+    "new_jobs": 11,
+    "new_jobs_added": 2
   },
   "screen_method": "cache+llm",
   "failures": {
@@ -371,14 +284,14 @@
       "group": "syncareer",
       "page_budget": 6,
       "pages_fetched": 6,
-      "stop_reason": "page_budget",
-      "raw_jobs": 90,
-      "unique_jobs": 90,
-      "unique_contribution": 90,
-      "first_pass_survivors": 64,
-      "original_postings_resolved": 18,
-      "jds_resolved": 16,
-      "elapsed_seconds": 3.054
+      "stop_reason": "empty_page",
+      "raw_jobs": 67,
+      "unique_jobs": 67,
+      "unique_contribution": 67,
+      "first_pass_survivors": 44,
+      "original_postings_resolved": 14,
+      "jds_resolved": 12,
+      "elapsed_seconds": 3.262
     },
     {
       "query": "Full Stack",
@@ -386,27 +299,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 11,
-      "unique_jobs": 11,
-      "unique_contribution": 6,
-      "first_pass_survivors": 10,
-      "original_postings_resolved": 2,
-      "jds_resolved": 1,
-      "elapsed_seconds": 1.428
+      "raw_jobs": 5,
+      "unique_jobs": 5,
+      "unique_contribution": 2,
+      "first_pass_survivors": 4,
+      "original_postings_resolved": 1,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.725
     },
     {
       "query": "AI",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 5,
+      "pages_fetched": 4,
       "stop_reason": "empty_page",
-      "raw_jobs": 59,
-      "unique_jobs": 59,
-      "unique_contribution": 55,
-      "first_pass_survivors": 18,
-      "original_postings_resolved": 5,
-      "jds_resolved": 4,
-      "elapsed_seconds": 1.886
+      "raw_jobs": 38,
+      "unique_jobs": 38,
+      "unique_contribution": 35,
+      "first_pass_survivors": 12,
+      "original_postings_resolved": 2,
+      "jds_resolved": 1,
+      "elapsed_seconds": 2.036
     },
     {
       "query": "Machine Learning",
@@ -414,27 +327,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 7,
-      "unique_jobs": 7,
-      "unique_contribution": 3,
-      "first_pass_survivors": 3,
-      "original_postings_resolved": 2,
-      "jds_resolved": 2,
-      "elapsed_seconds": 0.532
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 1,
+      "first_pass_survivors": 2,
+      "original_postings_resolved": 1,
+      "jds_resolved": 1,
+      "elapsed_seconds": 1.091
     },
     {
       "query": "Infrastructure",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 3,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 23,
-      "unique_jobs": 23,
-      "unique_contribution": 21,
-      "first_pass_survivors": 15,
-      "original_postings_resolved": 5,
-      "jds_resolved": 4,
-      "elapsed_seconds": 0.95
+      "raw_jobs": 10,
+      "unique_jobs": 10,
+      "unique_contribution": 9,
+      "first_pass_survivors": 5,
+      "original_postings_resolved": 1,
+      "jds_resolved": 1,
+      "elapsed_seconds": 0.666
     },
     {
       "query": "Forward Deployed",
@@ -448,7 +361,7 @@
       "first_pass_survivors": 4,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.535
+      "elapsed_seconds": 0.736
     },
     {
       "query": "DevOps",
@@ -456,13 +369,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 5,
-      "unique_jobs": 5,
-      "unique_contribution": 3,
+      "raw_jobs": 6,
+      "unique_jobs": 6,
+      "unique_contribution": 4,
       "first_pass_survivors": 4,
-      "original_postings_resolved": 1,
-      "jds_resolved": 1,
-      "elapsed_seconds": 0.516
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.654
     },
     {
       "query": "Backend",
@@ -476,7 +389,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.536
+      "elapsed_seconds": 0.797
     },
     {
       "query": "Platform",
@@ -484,13 +397,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 11,
-      "unique_jobs": 11,
-      "unique_contribution": 6,
-      "first_pass_survivors": 6,
+      "raw_jobs": 4,
+      "unique_jobs": 4,
+      "unique_contribution": 3,
+      "first_pass_survivors": 3,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.493
+      "elapsed_seconds": 0.672
     },
     {
       "query": "New Grad",
@@ -498,13 +411,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
-      "unique_contribution": 3,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 0,
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.531
+      "elapsed_seconds": 0.666
     },
     {
       "query": "LLM",
@@ -518,7 +431,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.537
+      "elapsed_seconds": 0.665
     },
     {
       "query": "Data Engineer",
@@ -526,13 +439,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
-      "unique_contribution": 6,
-      "first_pass_survivors": 6,
+      "raw_jobs": 5,
+      "unique_jobs": 5,
+      "unique_contribution": 5,
+      "first_pass_survivors": 5,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.519
+      "elapsed_seconds": 0.654
     },
     {
       "query": "Site Reliability",
@@ -540,20 +453,20 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 3,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
       "first_pass_survivors": 1,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.514
+      "elapsed_seconds": 0.663
     }
   ],
   "enrichment": {
-    "needed": 6,
-    "detail_api_resolved": 132,
+    "needed": 5,
+    "detail_api_resolved": 77,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 6
+    "remaining_no_jd": 5
   }
 }
