@@ -3152,27 +3152,11 @@
     }
   ],
   "meta": {
-    "jd_recovery_at": "2026-10-04T22:00:29.693705+00:00"
+    "jd_recovery_at": "2026-10-05T05:25:32.746997+00:00"
   },
   "source": "remote_recovery",
   "count": 146,
   "attempts": {
-    "disney_official_careers|id|10153777": {
-      "source": "disney_official_careers",
-      "job_id": "10153777",
-      "company": "Disney",
-      "title": "Senior Product Software Engineer - Frontend",
-      "location": "Santa Monica, California / New York, New York / Seattle, Washington",
-      "first_seen": "2026-10-03T23:45:40.227391+00:00"
-    },
-    "disney_official_careers|id|10160502": {
-      "source": "disney_official_careers",
-      "job_id": "10160502",
-      "company": "Disney",
-      "title": "Finance & Data Intern, Spring 2027",
-      "location": "Anaheim, California",
-      "first_seen": "2026-10-03T23:45:40.227391+00:00"
-    },
     "bloomberg_official_careers|id|22197": {
       "source": "bloomberg_official_careers",
       "job_id": "22197",
@@ -3197,14 +3181,6 @@
       "location": "New York, New York, United States of America",
       "first_seen": "2026-10-04T14:46:21.035479+00:00"
     },
-    "syncareer|id|d8d65ab53c7bb997ef0b8df38a1ccafe": {
-      "source": "syncareer",
-      "job_id": "d8d65ab53c7bb997ef0b8df38a1ccafe",
-      "company": "American Electric Power",
-      "title": "AI Cybersecurity Specialist",
-      "location": "Columbus, Ohio, United States",
-      "first_seen": "2026-10-03T23:51:10.106386+00:00"
-    },
     "syncareer|id|67ae2c8b273e94b2198041e7b1f52328": {
       "source": "syncareer",
       "job_id": "67ae2c8b273e94b2198041e7b1f52328",
@@ -3227,7 +3203,33 @@
         "reason": "DevOps aligns with infrastructure; seniority is unknown"
       },
       "recovery_input_hash": "c8f9b995a190d40b0ea4",
-      "official_search_status": "no_match"
+      "official_search_status": "no_match",
+      "official_search_attempted_at": "2026-10-05T05:25:32.746997+00:00"
+    },
+    "syncareer|id|8a994793fd7ed1685d67cfc2d6697543": {
+      "source": "syncareer",
+      "job_id": "8a994793fd7ed1685d67cfc2d6697543",
+      "company": "Natera",
+      "title": "Software Engineering Intern",
+      "location": "United States",
+      "first_seen": "2026-10-04T23:51:23.196811+00:00",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "69c7cceb268e087fb541",
+          "attempted_at": "2026-10-05T05:25:32.746997+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.99,
+        "delta": 5,
+        "reason": "Software engineering internship fits early-career target"
+      },
+      "recovery_input_hash": "c53e64b833224d513632",
+      "official_search_status": "no_match",
+      "official_search_attempted_at": "2026-10-05T05:25:32.746997+00:00"
     }
   }
 }

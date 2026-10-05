@@ -1,76 +1,46 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 2260,
+  "count": 2261,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-10-04T22:00:07.759820+00:00",
+    "scraped_at": "2026-10-05T05:25:02.062366+00:00",
     "collector": {
-      "commit": "7055049752f9dab82b13a15624f09ed0e99f54b6",
+      "commit": "cc06284a75dca16d253a133e37efc3b5ae58636a",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 21.757,
+    "elapsed_seconds": 28.619,
     "query_stats": [
       {
-        "query": "ai engineer",
-        "group": "primary",
-        "page_budget": 3,
-        "pages_fetched": 2,
-        "stop_reason": "low_new_to_ledger_yield",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 19,
-        "first_pass_survivors": 17,
-        "original_postings_resolved": 0,
-        "jds_resolved": 7,
-        "elapsed_seconds": 2.985,
-        "new_to_ledger": 1,
-        "rediscovered": 19,
-        "page_yields": [
-          {
-            "page": 0,
-            "raw": 10,
-            "new_to_ledger": 0,
-            "known": 10
-          },
-          {
-            "page": 1,
-            "raw": 10,
-            "new_to_ledger": 1,
-            "known": 9
-          }
-        ]
-      },
-      {
-        "query": "full-stack engineer",
+        "query": "backend engineer",
         "group": "primary",
         "page_budget": 2,
         "pages_fetched": 2,
         "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 19,
-        "first_pass_survivors": 18,
+        "unique_contribution": 17,
+        "first_pass_survivors": 17,
         "original_postings_resolved": 0,
-        "jds_resolved": 1,
-        "elapsed_seconds": 6.073,
-        "new_to_ledger": 17,
-        "rediscovered": 3,
+        "jds_resolved": 5,
+        "elapsed_seconds": 3.308,
+        "new_to_ledger": 3,
+        "rediscovered": 17,
         "page_yields": [
           {
             "page": 0,
             "raw": 10,
-            "new_to_ledger": 9,
-            "known": 1
+            "new_to_ledger": 1,
+            "known": 9
           },
           {
             "page": 1,
             "raw": 10,
-            "new_to_ledger": 8,
-            "known": 2
+            "new_to_ledger": 2,
+            "known": 8
           }
         ]
       },
@@ -82,18 +52,48 @@
         "stop_reason": "low_new_to_ledger_yield",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 18,
+        "unique_contribution": 17,
         "first_pass_survivors": 16,
         "original_postings_resolved": 0,
-        "jds_resolved": 7,
-        "elapsed_seconds": 6.0,
+        "jds_resolved": 6,
+        "elapsed_seconds": 6.103,
         "new_to_ledger": 1,
         "rediscovered": 18,
         "page_yields": [
           {
             "page": 0,
             "raw": 10,
+            "new_to_ledger": 1,
+            "known": 9
+          },
+          {
+            "page": 1,
+            "raw": 10,
             "new_to_ledger": 0,
+            "known": 9
+          }
+        ]
+      },
+      {
+        "query": "ai engineer",
+        "group": "primary",
+        "page_budget": 3,
+        "pages_fetched": 2,
+        "stop_reason": "low_new_to_ledger_yield",
+        "raw_jobs": 20,
+        "unique_jobs": 20,
+        "unique_contribution": 19,
+        "first_pass_survivors": 17,
+        "original_postings_resolved": 0,
+        "jds_resolved": 8,
+        "elapsed_seconds": 5.715,
+        "new_to_ledger": 2,
+        "rediscovered": 18,
+        "page_yields": [
+          {
+            "page": 0,
+            "raw": 10,
+            "new_to_ledger": 1,
             "known": 9
           },
           {
@@ -108,7 +108,7 @@
     "search_collection": {
       "cooldown_active": false,
       "probe": false,
-      "query_cursor": 7,
+      "query_cursor": 8,
       "requests": 6,
       "responses": 6,
       "pages_fetched": 6,
@@ -117,18 +117,18 @@
       "budget_exhausted": false,
       "rate_limit_event": {},
       "transport_stop_reason": "",
-      "new_to_ledger": 19,
-      "rediscovered": 40,
+      "new_to_ledger": 6,
+      "rediscovered": 53,
       "coverage_limited": true
     },
     "detail_enrichment": {
-      "eligible": 1,
-      "cache_reused": 5,
-      "requests": 1,
-      "responses": 1,
-      "successful_responses": 1,
+      "eligible": 2,
+      "cache_reused": 4,
+      "requests": 2,
+      "responses": 2,
+      "successful_responses": 2,
       "http_status_counts": {
-        "200": 1
+        "200": 2
       },
       "request_limit": 8,
       "budget_deferred": 0,
@@ -138,10 +138,10 @@
       "exact_official": 0,
       "official_deferred": 0,
       "rate_limited": false,
-      "jds_resolved": 1,
+      "jds_resolved": 2,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 1,
+      "detail_jds_fetched": 2,
       "intentional_skips": 0,
       "blocked": "",
       "scrapling_requests": 0,
@@ -150,44 +150,43 @@
       "remaining_no_jd": 0,
       "failure_reasons": {},
       "admission": {
-        "candidates": 18,
-        "rules_skipped": 9,
+        "candidates": 14,
+        "rules_skipped": 4,
         "rule_reasons": {
-          "prefilter:senior": 7,
-          "company_excluded": 1,
-          "citizen_or_clearance": 1
+          "prefilter:senior": 3,
+          "company_excluded": 1
         },
-        "cache_reused": 5,
-        "non_linkedin_resolved": 1,
-        "triage_evaluated": 1,
+        "cache_reused": 4,
+        "non_linkedin_resolved": 2,
+        "triage_evaluated": 2,
         "triage_deferred": 2,
-        "worth_detail": 1
+        "worth_detail": 2
       },
       "cooldown_active": false,
       "probe": false,
       "round_request_limit": 8,
-      "round_requests": 1,
+      "round_requests": 2,
       "status": "active"
     },
     "official_enrichment": {
+      "cache": 14,
       "dedicated_matches": 4,
-      "cache": 10,
       "remote_exact_peer": 2,
       "search_provider_failures": 1,
-      "no_match": 3,
-      "search_requests": 2,
+      "no_match": 4,
+      "search_requests": 3,
       "search_provider": "bing",
       "official_page_requests": 0,
-      "remaining_no_jd": 39
+      "remaining_no_jd": 33
     },
     "partial": true,
     "blocked_reason": "focused query coverage",
-    "collected_count": 56,
-    "carried_count": 2209,
+    "collected_count": 53,
+    "carried_count": 2212,
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-10-04T22:00:29.693705+00:00"
+    "jd_recovery_at": "2026-10-05T05:25:32.746997+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -2480,7 +2479,8 @@
     "linkedin|id|4475348823": "2026-10-04T22:00:07.759820+00:00",
     "linkedin|id|4436610159": "2026-10-04T22:00:07.759820+00:00",
     "linkedin|id|4454798332": "2026-09-12T19:21:05.669988+00:00",
-    "linkedin|id|4447221113": "2026-09-12T13:04:55.284183+00:00"
+    "linkedin|id|4447221113": "2026-09-12T13:04:55.284183+00:00",
+    "linkedin|id|4474229441": "2026-10-05T05:25:02.062366+00:00"
   },
   "jobs": [
     {
@@ -3207,7 +3207,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -3953,7 +3953,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -4003,7 +4003,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -5460,7 +5460,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -6315,7 +6315,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -6543,7 +6543,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -7847,7 +7847,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4366269825",
@@ -7898,7 +7898,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470242170",
@@ -8095,29 +8095,13 @@
           "backend engineer"
         ]
       },
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "516699075d3780dba41b",
-          "attempted_at": "2026-10-04T20:38:30.474792+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-04T20:39:53.796562+00:00",
-      "official_search_status": "no_match",
-      "linkedin_detail_triage": {
-        "needs_jd": true,
-        "priority": "normal",
-        "reason": "Server-side development may fit backend targets; duties and qualifications remain unclear."
-      },
-      "linkedin_detail_triage_hash": "8e2a600c4c97c1367dfc",
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false,
-      "linkedin_detail_attempted_at": "2026-10-04T22:00:30.844078+00:00",
       "linkedin_detail_fetched_at": "2026-10-04T22:00:30.844078+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
-      "enrichment_status": "resolved"
+      "enrichment_method": "linkedin_cache",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4436261665",
@@ -8491,8 +8475,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4460204070",
@@ -10933,6 +10917,52 @@
       "enrichment_status": "resolved"
     },
     {
+      "job_id": "4474229441",
+      "source": "linkedin",
+      "company": "BlueCargo",
+      "title": "AI Engineer",
+      "location": "Los Angeles, CA",
+      "posted_date": "2026-10-05",
+      "aggregator_posted_date": "2026-10-05",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-bluecargo-4474229441",
+      "official_url": "",
+      "description": "About BlueCargo BlueCargo is a fast-growing, VC-backed technology company transforming the logistics and supply chain industry. As the leader in container visibility and freight audit automation, our platform integrates fragmented data from terminals, carriers, and ports to deliver a single, intelligent interface that empowers shippers and logistics providers to make better, faster decisions. Our mission is to bring transparency, efficiency, and automation to global trade—one container at a time. Backed by Y Combinator (W18) and leading investors, we raised our Series A in 2022 and are entering an exciting growth stage. Our platform is already trusted by hundreds of active customers and is helping them eliminate millions in unnecessary freight costs each year. As we scale, we’re investing deeply in engineering leadership to evolve our architecture, expand product capabilities, and lead the industry in data-driven logistics. Mission/Responsibilities Responsibilities As an AI Engineer at BlueCargo, you'll own and mature our AI infrastructure and agentic systems — building on existing work in document parsing, rules creation, and evaluation pipelines. Your work will directly automate freight audit decisions, turning AI into a core competitive moat for BlueCargo. Your responsibilities will include: Design and improve AI-driven systems that automate freight audit decisions, defending against invalid charges for our users — your work will have a large financial impact on the day-to-day of the industry. Extend our document parsing and rules-creation pipelines to handle the intricacies of multiple modes of audit. Build and mature our evaluation pipeline to measure, monitor, and improve model and agent performance over time. Design and build agentic systems, evolving them from rules-based automation toward more autonomous, reliable workflows. Work within our Python/AWS ecosystem (e.g., pydantic) to ship AI systems that integrate cleanly with the broader platform. Become a near-expert in the freight industry over time. Qualifications In addition to the following technical skills, we are looking for PROBLEM SOLVERS with an entrepreneurial mindset. Experience: Experience building and shipping production AI/ML systems. Open to both earlier-career and senior engineers — this is not a staff/principal-level role. Technical Skills: Strong Python experience, ideally with tools like pydantic. Experience with LLMs, agentic systems, and evaluation pipelines for AI/ML systems. Cloud: Experience with a popular cloud provider (AWS preferred). Attention to Detail: High attention to detail, able to execute at a high level with minimal supervision. Curiosity: A relentless desire to grow technically and learn about the freight industry.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-05T05:25:02.062366+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "313a7ca9649be8c6d428",
+          "attempted_at": "2026-10-05T05:25:02.062366+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-10-05T05:25:02.062366+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "AI Engineer is a target role; seniority, responsibilities, and requirements could change fit."
+      },
+      "linkedin_detail_triage_hash": "b4b3dad930def63a0227",
+      "linkedin_detail_attempted_at": "2026-10-05T05:25:27.496698+00:00",
+      "linkedin_detail_fetched_at": "2026-10-05T05:25:27.496698+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4445203309",
       "source": "linkedin",
       "company": "Boehringer Ingelheim",
@@ -11129,7 +11159,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4464227034",
@@ -11306,7 +11336,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -11934,7 +11964,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -14112,7 +14142,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470250852",
@@ -15111,7 +15141,7 @@
           "outcome": "no_match"
         }
       },
-      "official_search_attempted_at": "2026-10-04T22:00:07.759820+00:00",
+      "official_search_attempted_at": "2026-10-05T05:25:32.746997+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": false,
@@ -15121,7 +15151,7 @@
       "linkedin_detail_triage_hash": "7e2267c38b00d436cffe",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_not_worthwhile",
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -15167,7 +15197,7 @@
           "outcome": "no_match"
         }
       },
-      "official_search_attempted_at": "2026-10-04T22:00:07.759820+00:00",
+      "official_search_attempted_at": "2026-10-05T05:25:32.746997+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": false,
@@ -15177,7 +15207,7 @@
       "linkedin_detail_triage_hash": "10b79926c172dafd5e17",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_not_worthwhile",
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -18915,7 +18945,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471098113",
@@ -20066,7 +20096,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4451253302",
@@ -20168,7 +20198,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4383060180",
@@ -22072,16 +22102,14 @@
       },
       "recovery_methods": {},
       "application_url": "https://job-boards.greenhouse.io/doordashusa/jobs/5630445",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-04T20:38:30.474792+00:00",
-      "jd_recovery_at": "2026-10-04T20:38:30.474792+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-04T20:38:30.474792+00:00",
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4471202622",
@@ -23890,7 +23918,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -26536,8 +26564,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4417363745",
@@ -27387,7 +27415,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -28816,7 +28844,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -28848,7 +28876,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -29461,8 +29489,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4399454448",
@@ -29827,7 +29855,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4402229660",
@@ -29851,7 +29879,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -29971,7 +29999,7 @@
       "title": "Senior Backend Engineer",
       "location": "Bellevue, WA",
       "posted_date": "2026-09-23",
-      "aggregator_posted_date": "2026-09-30",
+      "aggregator_posted_date": "2026-10-05",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-backend-engineer-at-harrison-clarke-4445938510",
@@ -29986,8 +30014,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-30T05:10:49.340469+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4344971308",
@@ -31944,7 +31972,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4422883940",
@@ -32905,7 +32933,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -33293,7 +33321,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -35278,7 +35306,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -38070,8 +38098,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4475307861",
@@ -38336,7 +38364,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468161569",
@@ -38856,22 +38884,19 @@
       "first_seen": "2026-09-14T01:09:47.071119+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "backend engineer"
         ]
       },
       "recovery_methods": {},
       "application_url": "https://www.mongodb.com/careers/job/?gh_jid=7235322",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-04T20:38:30.474792+00:00",
-      "jd_recovery_at": "2026-10-04T20:38:30.474792+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-04T20:38:30.474792+00:00",
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4471710250",
@@ -39224,7 +39249,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -39877,7 +39902,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -40286,8 +40311,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4219576591",
@@ -40311,8 +40336,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4354112406",
@@ -41519,7 +41544,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -41678,16 +41703,14 @@
       },
       "recovery_methods": {},
       "application_url": "https://jobs.ashbyhq.com/openai/bd190cad-99ec-4fe7-8f8f-de96b5aa5969",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-04T20:38:30.474792+00:00",
-      "jd_recovery_at": "2026-10-04T20:38:30.474792+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-04T20:38:30.474792+00:00",
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4424661267",
@@ -42447,7 +42470,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -43727,7 +43750,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4405398234",
@@ -45228,7 +45251,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -45325,7 +45348,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -47519,7 +47542,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -48728,7 +48751,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470684747",
@@ -48780,7 +48803,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470992973",
@@ -51726,7 +51749,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -52481,13 +52504,12 @@
       "first_seen": "2026-09-12T13:04:55.284183+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "backend engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4454797312",
@@ -52537,7 +52559,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4454906217",
@@ -52562,7 +52584,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4454908191",
@@ -52640,7 +52662,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4444202355",
@@ -52690,8 +52712,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4471506051",
@@ -52768,7 +52790,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -53722,7 +53744,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4449827301",
@@ -55279,7 +55301,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470412911",
@@ -58230,8 +58252,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4446909570",
@@ -58251,11 +58273,12 @@
       "first_seen": "2026-09-12T19:21:05.669988+00:00",
       "discovery_queries": {
         "linkedin": [
+          "backend engineer",
           "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -58840,7 +58863,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -58996,16 +59019,14 @@
       },
       "recovery_methods": {},
       "application_url": "https://lifeattiktok.com/search/7483343729630202130",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-04T20:38:30.474792+00:00",
-      "jd_recovery_at": "2026-10-04T20:38:30.474792+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-04T20:38:30.474792+00:00",
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4449531961",
@@ -59141,7 +59162,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -61651,7 +61672,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470681167",
@@ -62097,7 +62118,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
       "verified_this_run": true
     },
     {
@@ -62739,7 +62760,7 @@
       "source": "linkedin",
       "company": "WEX",
       "title": "Staff Software Engineer, Backend & APIs",
-      "location": "Dallas, TX",
+      "location": "Boston, MA",
       "posted_date": "2026-10-04",
       "aggregator_posted_date": "2026-10-04",
       "updated_date": "",
@@ -62752,13 +62773,12 @@
       "first_seen": "2026-09-14T01:09:47.071119+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "backend engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4444964123",
@@ -62885,8 +62905,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4444951743",
@@ -65817,7 +65837,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4387280011",
