@@ -2,6 +2,152 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-05T05:26:20.907290+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 1,
+      "cache_reused": 136,
+      "peer_reused": 0,
+      "same_content_reused": 1,
+      "non_material_change_reused": 0,
+      "new_or_changed": 1,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 1
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1007,
+      "requests": 1,
+      "input_tokens": 3307,
+      "cached_input_tokens": 0,
+      "output_tokens": 181,
+      "reasoning_tokens": 114,
+      "estimated_usd": 0.000421,
+      "latency_seconds": 3.131,
+      "latency_measured": true,
+      "effective_rpm": 19.16,
+      "effective_tpm": 66841.26,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 1,
+      "funnel": {
+        "after_dedup": 6111,
+        "after_company": 5845,
+        "after_hard_filter": 5352,
+        "after_prefilter": 1527,
+        "official_duplicates_suppressed": 383,
+        "retry_only_carried": 0,
+        "dropped": 4504
+      },
+      "output": {
+        "tier_a": 23,
+        "tier_b": 93,
+        "ab_before_cap": 116,
+        "shown": 116,
+        "new_jobs": 2,
+        "new_jobs_added": 1,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 1,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 1,
+            "added": 1
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2143,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 20,
+          "http_requests": 20,
+          "jds_resolved": 3,
+          "direct_http_resolved": 3,
+          "identity_needed": 18,
+          "identities_resolved": 18,
+          "remaining_no_jd": 2141,
+          "failure_reasons": {}
+        },
+        "remaining_no_jd": 2109,
+        "failure_reasons": {
+          "no_enrichment_path": 1605,
+          "official_detail_deferred": 48,
+          "linkedin_rate_limited": 77,
+          "linkedin_http_429": 2,
+          "glassdoor_detail_http_403_static_card_only": 377
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4474229441",
+              "company": "BlueCargo",
+              "title": "AI Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.131,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3307,
+            "cached_input_tokens": 0,
+            "output_tokens": 181,
+            "reasoning_tokens": 114,
+            "estimated_usd": 0.000421
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4474229441",
+              "match_score": 93.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production agentic AI systems",
+                "LLM evaluation pipelines"
+              ],
+              "main_gaps": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-05T00:21:35.936268+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -19101,116 +19247,6 @@
           ]
         }
       ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-10-01T05:02:21.509629+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "",
-      "reasoning_effort": "",
-      "jobs_scored": 0,
-      "cache_reused": 331,
-      "peer_reused": 0,
-      "same_content_reused": 8,
-      "non_material_change_reused": 0,
-      "new_or_changed": 0,
-      "new_or_changed_reasons": {},
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 864,
-      "requests": 0,
-      "input_tokens": 0,
-      "cached_input_tokens": 0,
-      "output_tokens": 0,
-      "reasoning_tokens": 0,
-      "estimated_usd": 0.0,
-      "latency_seconds": 0.0,
-      "latency_measured": true,
-      "effective_rpm": null,
-      "effective_tpm": null,
-      "json_reliability": null,
-      "json_reliability_measured": true,
-      "batches_total": 0,
-      "primary_batches_total": 0,
-      "batches_attempted": 0,
-      "batches_succeeded": 0,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 0,
-      "funnel": {
-        "after_dedup": 6232,
-        "after_company": 5965,
-        "after_hard_filter": 5497,
-        "after_prefilter": 1592,
-        "official_duplicates_suppressed": 397,
-        "retry_only_carried": 0,
-        "dropped": 4541
-      },
-      "output": {
-        "tier_a": 79,
-        "tier_b": 158,
-        "ab_before_cap": 237,
-        "shown": 237,
-        "new_jobs": 45,
-        "new_jobs_added": 10,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 2,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 43,
-            "added": 10
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 1960,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 101,
-          "http_requests": 69,
-          "scrapling_requests": 2,
-          "identity_needed": 66,
-          "identities_resolved": 66,
-          "cache_reused": 1,
-          "jds_resolved": 10,
-          "direct_http_resolved": 10,
-          "remaining_no_jd": 1960,
-          "failure_reasons": {
-            "linkedin_rate_limited": 31,
-            "structured_jd_not_found": 2
-          }
-        },
-        "remaining_no_jd": 1930,
-        "failure_reasons": {
-          "no_enrichment_path": 1404,
-          "linkedin_rate_limited": 97,
-          "official_detail_deferred": 48,
-          "structured_jd_not_found": 1,
-          "linkedin_http_429": 2,
-          "indeed_detail_missing_or_thin": 1,
-          "glassdoor_detail_http_403_static_card_only": 377
-        }
-      },
-      "comparison": {},
-      "batches": []
     }
   ]
 }

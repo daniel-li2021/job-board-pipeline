@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-04 17:21 PDT
-- Snapshot (UTC): 2026-10-05T00:21:35.936268+00:00
-- Jobs: 25 (Tier A/B only)
-- Last 24 hours: 7
-- Last 3 days: 25
+- Updated (PT): 2026-10-04 22:26 PDT
+- Snapshot (UTC): 2026-10-05T05:26:20.907290+00:00
+- Jobs: 26 (Tier A/B only)
+- Last 24 hours: 8
+- Last 3 days: 26
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -14,6 +14,7 @@ The 7-day dump is `latest.md`.
 | A | 95 | indeed |  | Associate Software Engineer - 2027 Start Dates | Boston, MA, US | 2026-10-03 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=fd48351f30893b34) |
 | A | 92 | indeed | Cisco | Associate Software Engineer - 2027 Start Dates | Boston, MA, US | 2026-10-04 | newly_discovered | - | unreviewed | pending_official_refresh | [open](https://www.indeed.com/viewjob?jk=69812b9df176de89) |
 | A | 90 | indeed | Comcast | Entry Level Software Engineer- Englewood, CO- ONSITE 4 Days per Week-  | Englewood, CO, US | 2026-10-01 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d8e48730c5f8279f) |
+| A | 93 | linkedin | BlueCargo | AI Engineer | Los Angeles, CA | 2026-10-05 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-bluecargo-4474229441) |
 | A | 93 | indeed | SOFTWARE WARRANTY | Associate Software Engineer | Boston, MA, US | 2026-10-03 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e3a20e7407721d2a) |
 | A | 92 | indeed | Neto Capital | Junior Software Developer | Sunny Isles Beach, FL, US | 2026-10-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=30ee6e07904214d8) |
 | A | 91 | indeed | Devo Technology | Associate Software Engineer - 2027 Start Dates | Boston, MA, US | 2026-10-04 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1c51c3c3db5bcd83) |
