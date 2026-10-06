@@ -2,6 +2,314 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-06T05:45:14.672070+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 7,
+      "cache_reused": 282,
+      "peer_reused": 0,
+      "same_content_reused": 3,
+      "non_material_change_reused": 0,
+      "new_or_changed": 7,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 7
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1022,
+      "requests": 3,
+      "input_tokens": 12209,
+      "cached_input_tokens": 0,
+      "output_tokens": 2047,
+      "reasoning_tokens": 1360,
+      "estimated_usd": 0.002244,
+      "latency_seconds": 28.116,
+      "latency_measured": true,
+      "effective_rpm": 6.4,
+      "effective_tpm": 30422.54,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 3,
+      "primary_batches_total": 3,
+      "batches_attempted": 3,
+      "batches_succeeded": 3,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 7,
+      "funnel": {
+        "after_dedup": 6571,
+        "after_company": 6273,
+        "after_hard_filter": 5774,
+        "after_prefilter": 1704,
+        "official_duplicates_suppressed": 393,
+        "retry_only_carried": 0,
+        "dropped": 4753
+      },
+      "output": {
+        "tier_a": 25,
+        "tier_b": 114,
+        "ab_before_cap": 139,
+        "shown": 139,
+        "new_jobs": 70,
+        "new_jobs_added": 15,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 8,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 62,
+            "added": 15
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2205,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 69,
+          "http_requests": 52,
+          "scrapling_requests": 1,
+          "identity_needed": 53,
+          "identities_resolved": 53,
+          "cache_reused": 2,
+          "jds_resolved": 4,
+          "direct_http_resolved": 4,
+          "remaining_no_jd": 2205,
+          "failure_reasons": {
+            "structured_jd_not_found": 1,
+            "no_direct_or_official_url": 15
+          }
+        },
+        "remaining_no_jd": 2169,
+        "failure_reasons": {
+          "no_enrichment_path": 1653,
+          "official_detail_deferred": 46,
+          "no_direct_or_official_url": 15,
+          "linkedin_rate_limited": 76,
+          "linkedin_http_429": 2,
+          "glassdoor_detail_http_403_static_card_only": 377
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4474667653",
+              "company": "Harmony Educational Services",
+              "title": "Full-Stack Product Engineer"
+            },
+            {
+              "key": "url::https://careers.nationwide.com/engineer-software-engineer-post-issue-optimization-java-angular-and-aws-entry-level/job/6CDCFB04F1EF187C2D65295F3D208F3C",
+              "company": "Nationwide",
+              "title": "Engineer, Software Engineer (Post Issue Optimization) - Java, Angular, and AWS - Entry Level"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 6.076,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 3702,
+            "cached_input_tokens": 0,
+            "output_tokens": 398,
+            "reasoning_tokens": 222,
+            "estimated_usd": 0.000569
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4474667653",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production full-stack applications",
+                "Relational databases and APIs"
+              ],
+              "main_gaps": [
+                "4+ years full-stack experience",
+                "UX discovery and roadmap ownership"
+              ]
+            },
+            {
+              "key": "url::https://careers.nationwide.com/engineer-software-engineer-post-issue-optimization-java-angular-and-aws-entry-level/job/6CDCFB04F1EF187C2D65295F3D208F3C",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Entry-level software engineering",
+                "Java and AWS experience"
+              ],
+              "main_gaps": [
+                "Angular experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4474561090",
+              "company": "EarnIn",
+              "title": "Machine Learning Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 5.11,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2802,
+            "cached_input_tokens": 0,
+            "output_tokens": 306,
+            "reasoning_tokens": 234,
+            "estimated_usd": 0.000433
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4474561090",
+              "match_score": 77.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production agent workflows",
+                "End-to-end AI evaluation"
+              ],
+              "main_gaps": [
+                "3+ years software engineering"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4474611221",
+              "company": "LSEG",
+              "title": "Real-Time Software Engineer - Early Career"
+            },
+            {
+              "key": "url::https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/United-States-of-America-McLean-Virginia/Generative-AI---Machine-Learning-Engineer_JREQ193871?Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=6cb77610a8a543aea2d6bc10457e35d4",
+              "company": "Thomson Reuters",
+              "title": "Generative AI & Machine Learning Engineer"
+            },
+            {
+              "key": "id::linkedin::4474640834",
+              "company": "Autonomize AI",
+              "title": "AI Engineer( Austin based)"
+            },
+            {
+              "key": "id::linkedin::4473659673",
+              "company": "Robson Bale",
+              "title": "Applied AI Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 16.93,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 4,
+            "input_tokens": 5705,
+            "cached_input_tokens": 0,
+            "output_tokens": 1343,
+            "reasoning_tokens": 904,
+            "estimated_usd": 0.001242
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4474611221",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production software engineering",
+                "APIs, testing, CI/CD"
+              ],
+              "main_gaps": [
+                "2+ years professional experience",
+                "AI-assisted development tools"
+              ]
+            },
+            {
+              "key": "url::https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/United-States-of-America-McLean-Virginia/Generative-AI---Machine-Learning-Engineer_JREQ193871?Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=6cb77610a8a543aea2d6bc10457e35d4",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production GenAI systems",
+                "ML deployment and evaluation"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "id::linkedin::4474640834",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production RAG and agents",
+                "Fine-tuning and evaluation"
+              ],
+              "main_gaps": [
+                "2+ years applied ML/LLMs"
+              ]
+            },
+            {
+              "key": "id::linkedin::4473659673",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production LLM applications",
+                "AI APIs and pipelines"
+              ],
+              "main_gaps": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-06T00:21:48.684096+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -21459,161 +21767,6 @@
               "main_gaps": [
                 "Production Java/Spring Boot experience",
                 "Kafka or RabbitMQ"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-10-01T21:34:50.143863+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 1,
-      "cache_reused": 266,
-      "peer_reused": 0,
-      "same_content_reused": 10,
-      "non_material_change_reused": 0,
-      "new_or_changed": 1,
-      "new_or_changed_reasons": {
-        "prior_rule_result_now_eligible_for_llm": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 880,
-      "requests": 1,
-      "input_tokens": 3936,
-      "cached_input_tokens": 0,
-      "output_tokens": 293,
-      "reasoning_tokens": 215,
-      "estimated_usd": 0.00054,
-      "latency_seconds": 4.497,
-      "latency_measured": true,
-      "effective_rpm": 13.34,
-      "effective_tpm": 56424.28,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 1,
-      "primary_batches_total": 1,
-      "batches_attempted": 1,
-      "batches_succeeded": 1,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 1,
-      "funnel": {
-        "after_dedup": 6150,
-        "after_company": 5916,
-        "after_hard_filter": 5436,
-        "after_prefilter": 1540,
-        "official_duplicates_suppressed": 393,
-        "retry_only_carried": 0,
-        "dropped": 4524
-      },
-      "output": {
-        "tier_a": 21,
-        "tier_b": 143,
-        "ab_before_cap": 164,
-        "shown": 164,
-        "new_jobs": 0,
-        "new_jobs_added": 0,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 0,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 0,
-            "added": 0
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 1945,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 114,
-          "http_requests": 100,
-          "scrapling_requests": 1,
-          "jds_resolved": 39,
-          "direct_http_resolved": 39,
-          "identity_needed": 98,
-          "identities_resolved": 97,
-          "budget_deferred": 1,
-          "remaining_no_jd": 1943,
-          "failure_reasons": {
-            "structured_jd_not_found": 1,
-            "linkedin_rate_limited": 13
-          }
-        },
-        "remaining_no_jd": 1916,
-        "failure_reasons": {
-          "no_enrichment_path": 1402,
-          "official_detail_deferred": 48,
-          "structured_jd_not_found": 1,
-          "linkedin_rate_limited": 86,
-          "linkedin_http_429": 2,
-          "glassdoor_detail_http_403_static_card_only": 377
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4473989585",
-              "company": "Brain Co.",
-              "title": "Machine Learning Engineer, Applied AI"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 4.497,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 3936,
-            "cached_input_tokens": 0,
-            "output_tokens": 293,
-            "reasoning_tokens": 215,
-            "estimated_usd": 0.00054
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4473989585",
-              "match_score": 76.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production LLM systems",
-                "Evaluation and fine-tuning"
-              ],
-              "main_gaps": [
-                "Custom vision and segmentation",
-                "RL and deeper ML modeling"
               ]
             }
           ]
