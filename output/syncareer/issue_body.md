@@ -1,23 +1,24 @@
-Syncareer alert — 2026-10-05_2351
+Syncareer alert — 2026-10-06_1451
 
-Updated (PT): 2026-10-05 16:52 PDT
-Snapshot (UTC): 2026-10-05T23:52:11.647709+00:00
+Updated (PT): 2026-10-06 07:53 PDT
+Snapshot (UTC): 2026-10-06T14:53:46.647795+00:00
 
-10 new matching job(s) this run (hard-filtered).
+11 new matching job(s) this run (hard-filtered).
 
 If you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.md` in the repo (last 3 days, one file).
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | A | 96.0 | Syncareer | Koch | AI Solutions Engineer | Lisle, Illinois, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://koch.avature.net/en_US/careers/JobDetail/United-States-AI-Solutions-Engineer/195477) |
-| A | 88.0 | Syncareer | PARTech | Software Engineer | Champaign, Illinois, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/PAR%20Technology/79feb267-7ce4-4d52-ba73-8652c1ed2595) |
-| B | 96.0 | Syncareer | ShopBack | Software Engineer Intern | San Francisco, California, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/shopback-2/640ac3fb-dae5-4738-95b9-9cb80cc7ad15) |
-| B | 96.0 | Syncareer | ShopBack | Software Engineer Intern | New York City, New York, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/shopback-2/e5f5e276-e7f7-43e0-a224-5259d242fe98) |
+| A | 94.0 | Syncareer | Corning | Engineer, Software Developer | Corning, New York, United States | 2026-10-05 | No sponsor | - | unreviewed | not_dedicated | [open](https://corningjobs.corning.com/job/Corning-Engineer%2C-Software-Developer-NY-14831/1436741900/) |
+| A | 89.0 | Syncareer | Nationwide | Engineer, Software Engineer (Post Issue Optimization) - Java, Angular, | Columbus, Ohio, United States | 2026-10-05 | Sponsor | - | unreviewed | not_dedicated | [open](https://nationwide.wd1.myworkdayjobs.com/en-US/Nationwide_Career/job/Ohio---Columbus-Three-Nationwide-Plaza/Engineer--Software-Engineer--Post-Issue-Optimization----Java--Angular--and-AWS---Entry-Level_100567?jobFamilyGroup=3eb794f2234901a1ead22609558af817&jobFamilyGroup=3eb794f22349010b4ad8f008558aec17&jobFamilyGroup=3eb794f223490110b63e3b09558a0018&jobFamilyGroup=010fc97c79ef01958999113ce9018de3&jobFamilyGroup=010fc97c79ef0177fae34ddee801c8e2&jobFamilyGroup=5a4038b043df01a5b35178dbc700fb73) |
+| A | 88.0 | Syncareer | ElevenLabs | Forward Deployed Engineer - Software Engineer - USA | San Francisco, California, United States | 2026-10-05 | Sponsor | - | unreviewed | not_dedicated | [open](https://elevenlabs.io/careers/6c4c57c1-ec72-42ba-af3a-eb7aebbde2e6/forward-deployed-engineer-software-engineer-usa) |
+| A | 86.0 | Syncareer | GEICO | Machine Learning Engineer I (MLE I), Fraud Risk Modeling | Palo Alto, California, United States | 2026-10-05 | No sponsor | - | unreviewed | not_dedicated | [open](https://geico.wd1.myworkdayjobs.com/en-US/External/job/Palo-Alto-CA/Machine-Learning-Engineer-I--MLE-I---Fraud-Risk-Modeling_R0066205?jobFamilyGroup=da128ce5a1dc103e7c09aaa3fe312266&jobFamilyGroup=da128ce5a1dc103e7c09883b6a69225e&jobFamilyGroup=da128ce5a1dc103e7c09d5b25f9b2270&jobFamilyGroup=a35ed0a458b310010910c29142fd0000&jobFamilyGroup=da128ce5a1dc103e7c0a4c431ef0228c&jobFamilyGroup=da128ce5a1dc103e7c09681bd6362254&jobFamilyGroup=da128ce5a1dc103e7c095dff8c072252&jobFamilyGroup=ae79925ebd2b0102286d7567eb01d3a6&jobFamilyGroup=0364bd6484100136135f34e6dc236dc6&jobFamilyGroup=da128ce5a1dc103e7c0a19e2d9b42280&jobFamilyGroup=ef62153ec48201538d885fb59b013d62&jobFamilyGroup=27e713fec23c0105408911130e0135ee&jobFamilyGroup=da128ce5a1dc103e7c0a12caa2d7227e&jobFamilyGroup=da128ce5a1dc103e7c0a64d74f712290&jobFamilyGroup=da128ce5a1dc103e7c0a3ed6ad582288&jobFamilyGroup=da128ce5a1dc103e7c0a0a42b49d227c&jobFamilyGroup=da128ce5a1dc103e7c09360126b82250&jobFamilyGroup=da128ce5a1dc103e7c092f21218e224e&jobFamilyGroup=da128ce5a1dc103e7c09250222d4224c&jobFamilyGroup=da128ce5a1dc103e7c091e289d24224a) |
 | B | 85.0 | Syncareer | Natera | Software Engineering Intern | United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/natera/jobs/6188497004) |
+| B | 84.0 | Syncareer | Fidelity Investments | Software Engineer | Boston, Massachusetts, United States | 2026-10-05 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.fidelity.com/en/jobs/2136288/software-engineer/) |
 | B | 83.0 | Syncareer | Interclypse | Software Engineer (HPC) Linux & Scripting Emphasis | Annapolis Junction, Maryland, United States | 2026-10-04 | Sponsor | - | unreviewed | not_dedicated | [open](https://recruiting.paylocity.com/Recruiting/Jobs/Details/4558884) |
 | B | 81.0 | Syncareer | Interclypse | Software Integration Engineer (HPC) | Annapolis Junction, Maryland, United States | 2026-10-04 | Sponsor | - | unreviewed | not_dedicated | [open](https://recruiting.paylocity.com/Recruiting/Jobs/Details/4558885) |
-| B | 78.0 | Syncareer | UniFirst | Junior Azure Data Engineer - Hybrid Role | Wilmington, Massachusetts, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.unifirst.com/job/wilmington/junior-azure-data-engineer-hybrid-role/45421/101400979632) |
+| B | 77.0 | Syncareer | Planet Pharma | Software Engineer I | Lafayette, Colorado, United States | 2026-10-05 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.planet-pharma.com/job/631482-software-engineer-i-lafayette-co/) |
 | B | 77.0 | Syncareer | OppFi | Software Engineer I | United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/opploans/jobs/8011770003) |
-| B | 76.0 | Syncareer | Infosys | AI/ML Developer | Hartford, Connecticut, United States | 2026-10-03 | Sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/154363BR) |
 
-Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-10-05_2351.csv`.
+Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-10-06_1451.csv`.
