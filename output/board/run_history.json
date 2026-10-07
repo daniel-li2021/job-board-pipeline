@@ -2,6 +2,274 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-07T04:50:14.101458+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 6,
+      "cache_reused": 284,
+      "peer_reused": 1,
+      "same_content_reused": 10,
+      "non_material_change_reused": 0,
+      "new_or_changed": 8,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 5,
+        "prior_rule_result_now_eligible_for_llm": 3
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1046,
+      "requests": 2,
+      "input_tokens": 9459,
+      "cached_input_tokens": 0,
+      "output_tokens": 1836,
+      "reasoning_tokens": 1167,
+      "estimated_usd": 0.001864,
+      "latency_seconds": 17.377,
+      "latency_measured": true,
+      "effective_rpm": 6.91,
+      "effective_tpm": 38999.83,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 6,
+      "funnel": {
+        "after_dedup": 6758,
+        "after_company": 6440,
+        "after_hard_filter": 5932,
+        "after_prefilter": 1744,
+        "official_duplicates_suppressed": 408,
+        "retry_only_carried": 0,
+        "dropped": 4883
+      },
+      "output": {
+        "tier_a": 24,
+        "tier_b": 123,
+        "ab_before_cap": 147,
+        "shown": 147,
+        "new_jobs": 53,
+        "new_jobs_added": 10,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 7,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 46,
+            "added": 10
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2260,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 82,
+          "http_requests": 52,
+          "scrapling_requests": 2,
+          "identity_needed": 53,
+          "identities_resolved": 53,
+          "cache_reused": 3,
+          "jds_resolved": 9,
+          "direct_http_resolved": 9,
+          "remaining_no_jd": 2260,
+          "failure_reasons": {
+            "no_direct_or_official_url": 27,
+            "scrapling_http_404": 1,
+            "structured_jd_not_found": 1
+          }
+        },
+        "remaining_no_jd": 2225,
+        "failure_reasons": {
+          "no_enrichment_path": 1697,
+          "no_direct_or_official_url": 27,
+          "official_detail_deferred": 45,
+          "scrapling_http_404": 1,
+          "linkedin_rate_limited": 76,
+          "linkedin_http_429": 2,
+          "glassdoor_detail_http_403_static_card_only": 377
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://iheartmedia.wd5.myworkdayjobs.com/en-US/External_iHM/job/Austin-TX-5001-Plaza-On-the-Lake-Suite-105-78746/Full-Stack-Software-Developer_Req39448-2?jobFamilyGroup=bf84075fd30b10a65b8927ae81d15fad&jobFamilyGroup=bf84075fd30b10a65b891cdd01a15fa3&jobFamilyGroup=040c04aae0cd1001c3a6f1b229a90000&jobFamilyGroup=bf84075fd30b10a65b89153d16395f9d&jobFamilyGroup=bf84075fd30b10a65b8932d1eac15fb9&jobFamilyGroup=bf84075fd30b10a65b89082fc3515f8f",
+              "company": "iHeartMedia",
+              "title": "Full-Stack Software Developer"
+            },
+            {
+              "key": "id::linkedin::4474986948",
+              "company": "Affirm",
+              "title": "Software Engineer II, Backend (Decisions Orchestration)"
+            },
+            {
+              "key": "id::linkedin::4475123420",
+              "company": "Cambia Health Solutions",
+              "title": "Software Development Engineer I - III (Healthcare)"
+            },
+            {
+              "key": "id::linkedin::4474029158",
+              "company": "Mastercard",
+              "title": "Software Engineer II"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 12.853,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 4,
+            "input_tokens": 6092,
+            "cached_input_tokens": 0,
+            "output_tokens": 1397,
+            "reasoning_tokens": 857,
+            "estimated_usd": 0.001308
+          },
+          "decisions": [
+            {
+              "key": "url::https://iheartmedia.wd5.myworkdayjobs.com/en-US/External_iHM/job/Austin-TX-5001-Plaza-On-the-Lake-Suite-105-78746/Full-Stack-Software-Developer_Req39448-2?jobFamilyGroup=bf84075fd30b10a65b8927ae81d15fad&jobFamilyGroup=bf84075fd30b10a65b891cdd01a15fa3&jobFamilyGroup=040c04aae0cd1001c3a6f1b229a90000&jobFamilyGroup=bf84075fd30b10a65b89153d16395f9d&jobFamilyGroup=bf84075fd30b10a65b8932d1eac15fb9&jobFamilyGroup=bf84075fd30b10a65b89082fc3515f8f",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React and TypeScript",
+                "Node.js backend services"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "id::linkedin::4474986948",
+              "match_score": 77.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend APIs and microservices",
+                "Python, Redis, AWS"
+              ],
+              "main_gaps": [
+                "Checkout-scale system ownership"
+              ]
+            },
+            {
+              "key": "id::linkedin::4475123420",
+              "match_score": 85.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Application development and testing",
+                "Python, SQL, cloud workflows"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "id::linkedin::4474029158",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React and TypeScript",
+                "Spark and Databricks workflows"
+              ],
+              "main_gaps": [
+                "Java/Spring Boot production experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4475815961",
+              "company": "Harnham",
+              "title": "AI Engineer"
+            },
+            {
+              "key": "id::linkedin::4475865911",
+              "company": "Stelvio Inc.",
+              "title": "Artificial Intelligence Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.524,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 3367,
+            "cached_input_tokens": 0,
+            "output_tokens": 439,
+            "reasoning_tokens": 310,
+            "estimated_usd": 0.000556
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4475815961",
+              "match_score": 69.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production LLM systems",
+                "AI evaluation frameworks"
+              ],
+              "main_gaps": [
+                "Healthcare data domain"
+              ]
+            },
+            {
+              "key": "id::linkedin::4475865911",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Model fine-tuning",
+                "Production inference"
+              ],
+              "main_gaps": [
+                "5+ years AI/ML experience",
+                "Distributed GPU optimization"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-07T00:21:58.562038+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -24862,110 +25130,6 @@
           ]
         }
       ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-10-02T05:32:56.635502+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "",
-      "reasoning_effort": "",
-      "jobs_scored": 0,
-      "cache_reused": 270,
-      "peer_reused": 0,
-      "same_content_reused": 10,
-      "non_material_change_reused": 0,
-      "new_or_changed": 0,
-      "new_or_changed_reasons": {},
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 876,
-      "requests": 0,
-      "input_tokens": 0,
-      "cached_input_tokens": 0,
-      "output_tokens": 0,
-      "reasoning_tokens": 0,
-      "estimated_usd": 0.0,
-      "latency_seconds": 0.0,
-      "latency_measured": true,
-      "effective_rpm": null,
-      "effective_tpm": null,
-      "json_reliability": null,
-      "json_reliability_measured": true,
-      "batches_total": 0,
-      "primary_batches_total": 0,
-      "batches_attempted": 0,
-      "batches_succeeded": 0,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 0,
-      "funnel": {
-        "after_dedup": 6187,
-        "after_company": 5954,
-        "after_hard_filter": 5471,
-        "after_prefilter": 1529,
-        "official_duplicates_suppressed": 383,
-        "retry_only_carried": 0,
-        "dropped": 4583
-      },
-      "output": {
-        "tier_a": 26,
-        "tier_b": 133,
-        "ab_before_cap": 159,
-        "shown": 159,
-        "new_jobs": 11,
-        "new_jobs_added": 0,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 4,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 7,
-            "added": 0
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 1938,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 44,
-          "identity_needed": 44,
-          "identities_resolved": 44,
-          "cache_reused": 1,
-          "http_requests": 43,
-          "jds_resolved": 6,
-          "direct_http_resolved": 6,
-          "remaining_no_jd": 1938,
-          "failure_reasons": {}
-        },
-        "remaining_no_jd": 1911,
-        "failure_reasons": {
-          "no_enrichment_path": 1403,
-          "official_detail_deferred": 51,
-          "linkedin_rate_limited": 78,
-          "linkedin_http_429": 2,
-          "glassdoor_detail_http_403_static_card_only": 377
-        }
-      },
-      "comparison": {},
-      "batches": []
     }
   ]
 }
