@@ -2,6 +2,337 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-07T23:09:50.088838+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 8,
+      "cache_reused": 348,
+      "peer_reused": 1,
+      "same_content_reused": 2,
+      "non_material_change_reused": 0,
+      "new_or_changed": 8,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 4,
+        "prior_rule_result_now_eligible_for_llm": 4
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1060,
+      "requests": 3,
+      "input_tokens": 15627,
+      "cached_input_tokens": 0,
+      "output_tokens": 1797,
+      "reasoning_tokens": 1175,
+      "estimated_usd": 0.002461,
+      "latency_seconds": 17.963,
+      "latency_measured": true,
+      "effective_rpm": 10.02,
+      "effective_tpm": 58199.63,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 3,
+      "primary_batches_total": 3,
+      "batches_attempted": 3,
+      "batches_succeeded": 3,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 8,
+      "funnel": {
+        "after_dedup": 6892,
+        "after_company": 6617,
+        "after_hard_filter": 6097,
+        "after_prefilter": 1815,
+        "official_duplicates_suppressed": 399,
+        "retry_only_carried": 0,
+        "dropped": 4960
+      },
+      "output": {
+        "tier_a": 28,
+        "tier_b": 120,
+        "ab_before_cap": 148,
+        "shown": 148,
+        "new_jobs": 36,
+        "new_jobs_added": 1,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 27,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 9,
+            "added": 1
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2300,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 87,
+          "identity_needed": 68,
+          "identities_resolved": 68,
+          "cache_reused": 2,
+          "http_requests": 66,
+          "jds_resolved": 26,
+          "direct_http_resolved": 26,
+          "remaining_no_jd": 2300,
+          "failure_reasons": {
+            "no_direct_or_official_url": 19
+          }
+        },
+        "remaining_no_jd": 2265,
+        "failure_reasons": {
+          "no_enrichment_path": 1746,
+          "official_detail_deferred": 44,
+          "no_direct_or_official_url": 19,
+          "linkedin_rate_limited": 75,
+          "linkedin_http_429": 2,
+          "linkedin_http_network_error": 2,
+          "glassdoor_detail_http_403_static_card_only": 377
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/reddit/jobs/8263406",
+              "company": "Reddit",
+              "title": "Android Software Engineer, Consumer Engineering"
+            },
+            {
+              "key": "id::linkedin::4476117968",
+              "company": "JPMorganChase",
+              "title": "Java GraphQL Software Engineer II"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 5.29,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 5034,
+            "cached_input_tokens": 0,
+            "output_tokens": 468,
+            "reasoning_tokens": 326,
+            "estimated_usd": 0.000737
+          },
+          "decisions": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/reddit/jobs/8263406",
+              "match_score": 38.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "API-backed product experience",
+                "Performance and reliability"
+              ],
+              "main_gaps": [
+                "Native Android with Kotlin",
+                "Android architecture"
+              ]
+            },
+            {
+              "key": "id::linkedin::4476117968",
+              "match_score": 64.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend APIs and microservices",
+                "AWS deployment and testing"
+              ],
+              "main_gaps": [
+                "Production Java/Spring",
+                "GraphQL experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5446657008",
+              "company": "Anthropic",
+              "title": "Applied AI Architect, Beneficial Deployments (Life Sciences Community & Enablement)"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.33,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3832,
+            "cached_input_tokens": 0,
+            "output_tokens": 290,
+            "reasoning_tokens": 204,
+            "estimated_usd": 0.000528
+          },
+          "decisions": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5446657008",
+              "match_score": 57.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Applied AI implementation",
+                "Pharmaceutical AI experience"
+              ],
+              "main_gaps": [
+                "Scientific research credibility",
+                "Scientist community enablement"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4475475279",
+              "company": "Ascendion",
+              "title": "Java API developer"
+            },
+            {
+              "key": "id::linkedin::4473681620",
+              "company": "Saragossa",
+              "title": "Java Developer - Middle Office - NYC"
+            },
+            {
+              "key": "id::linkedin::4456579232",
+              "company": "Camunda",
+              "title": "Software Engineer, Backend - Data Layer"
+            },
+            {
+              "key": "id::linkedin::4441210431",
+              "company": "TheGuarantors",
+              "title": "Software Engineer - Deal Flow & Underwriting Experience"
+            },
+            {
+              "key": "id::linkedin::4474415952",
+              "company": "Wolfe, LLC",
+              "title": "Software Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 9.343,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 5,
+            "input_tokens": 6761,
+            "cached_input_tokens": 0,
+            "output_tokens": 1039,
+            "reasoning_tokens": 645,
+            "estimated_usd": 0.001196
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4475475279",
+              "match_score": 54.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java backend stack",
+                "AWS ECS deployment"
+              ],
+              "main_gaps": [
+                "7+ years experience"
+              ]
+            },
+            {
+              "key": "id::linkedin::4473681620",
+              "match_score": 75.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Distributed systems",
+                "Data-intensive backend"
+              ],
+              "main_gaps": [
+                "Java production depth"
+              ]
+            },
+            {
+              "key": "id::linkedin::4456579232",
+              "match_score": 64.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend data services",
+                "Relational databases"
+              ],
+              "main_gaps": [
+                "4+ years backend",
+                "Query performance diagnosis"
+              ]
+            },
+            {
+              "key": "id::linkedin::4441210431",
+              "match_score": 49.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Node.js and TypeScript",
+                "Backend API development"
+              ],
+              "main_gaps": [
+                "5+ years experience",
+                "Monolith migration"
+              ]
+            },
+            {
+              "key": "id::linkedin::4474415952",
+              "match_score": 87.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack product development",
+                "Early-career engineering"
+              ],
+              "main_gaps": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-07T19:03:25.717180+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -21778,240 +22109,6 @@
               ],
               "main_gaps": [
                 "2+ years post-degree AI/ML"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-10-03T01:10:59.561550+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 4,
-      "cache_reused": 271,
-      "peer_reused": 0,
-      "same_content_reused": 8,
-      "non_material_change_reused": 0,
-      "new_or_changed": 5,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 5
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 926,
-      "requests": 2,
-      "input_tokens": 8123,
-      "cached_input_tokens": 0,
-      "output_tokens": 1291,
-      "reasoning_tokens": 1024,
-      "estimated_usd": 0.001458,
-      "latency_seconds": 15.684,
-      "latency_measured": true,
-      "effective_rpm": 7.65,
-      "effective_tpm": 36013.77,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "primary_batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 4,
-      "funnel": {
-        "after_dedup": 6331,
-        "after_company": 6068,
-        "after_hard_filter": 5586,
-        "after_prefilter": 1596,
-        "official_duplicates_suppressed": 395,
-        "retry_only_carried": 0,
-        "dropped": 4645
-      },
-      "output": {
-        "tier_a": 20,
-        "tier_b": 126,
-        "ab_before_cap": 146,
-        "shown": 146,
-        "new_jobs": 41,
-        "new_jobs_added": 9,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 3,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 38,
-            "added": 9
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 1997,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 64,
-          "http_requests": 52,
-          "scrapling_requests": 1,
-          "identity_needed": 53,
-          "identities_resolved": 53,
-          "cache_reused": 2,
-          "remaining_no_jd": 1997,
-          "failure_reasons": {
-            "structured_jd_not_found": 1,
-            "no_direct_or_official_url": 10
-          }
-        },
-        "remaining_no_jd": 1967,
-        "failure_reasons": {
-          "no_enrichment_path": 1450,
-          "official_detail_deferred": 49,
-          "structured_jd_not_found": 1,
-          "linkedin_rate_limited": 78,
-          "no_direct_or_official_url": 10,
-          "linkedin_http_429": 2,
-          "glassdoor_detail_http_403_static_card_only": 377
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4473152530",
-              "company": "Charles Schwab",
-              "title": "Full Stack Java Developer"
-            },
-            {
-              "key": "id::linkedin::4475008530",
-              "company": "TogetherWork",
-              "title": "Full Stack Software Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 7.971,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 2,
-            "input_tokens": 4279,
-            "cached_input_tokens": 0,
-            "output_tokens": 644,
-            "reasoning_tokens": 512,
-            "estimated_usd": 0.00075
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4473152530",
-              "match_score": 48.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "REST API development",
-                "Automated testing"
-              ],
-              "main_gaps": [
-                "4+ years Java/Spring",
-                "Messaging and authentication protocols"
-              ]
-            },
-            {
-              "key": "id::linkedin::4475008530",
-              "match_score": 85.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [
-                "Full-stack SaaS development",
-                "Cloud and CI/CD"
-              ],
-              "main_gaps": [
-                "Daily AI-tool experience"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4473354175",
-              "company": "CelesiumAI",
-              "title": "Artificial Intelligence Engineer"
-            },
-            {
-              "key": "id::linkedin::4473129758",
-              "company": "Stealth Startup",
-              "title": "Founding Machine Learning Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 7.713,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 2,
-            "input_tokens": 3844,
-            "cached_input_tokens": 0,
-            "output_tokens": 647,
-            "reasoning_tokens": 512,
-            "estimated_usd": 0.000708
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4473354175",
-              "match_score": 77.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production RAG and NLP",
-                "AI systems deployment"
-              ],
-              "main_gaps": [
-                "Neural-network model design",
-                "Pattern recognition experience"
-              ]
-            },
-            {
-              "key": "id::linkedin::4473129758",
-              "match_score": 68.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production ML and AI",
-                "Search and retrieval systems"
-              ],
-              "main_gaps": [
-                "3+ years production ML",
-                "Marketplace ranking experience"
               ]
             }
           ]
