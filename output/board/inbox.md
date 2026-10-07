@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-07 08:21 PDT
-- Snapshot (UTC): 2026-10-07T15:21:27.894101+00:00
-- Jobs: 56 (Tier A/B only)
-- Last 24 hours: 44
-- Last 3 days: 56
+- Updated (PT): 2026-10-07 12:03 PDT
+- Snapshot (UTC): 2026-10-07T19:03:25.717180+00:00
+- Jobs: 58 (Tier A/B only)
+- Last 24 hours: 47
+- Last 3 days: 58
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -39,7 +39,6 @@ The 7-day dump is `latest.md`.
 | B | 84 | indeed | Innovate Tech IT LLC | Software Engineer | Sheridan, WY, US | 2026-10-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=b478fd52cc625f4f) |
 | B | 82 | indeed | Infosys | AWS Java Full Stack Engineer | Raleigh, NC, US | 2026-10-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=787f679ef52b1866) |
 | B | 80 | linkedin | JPMorganChase | Java GraphQL Software Engineer II | Jersey City, NJ | 2026-10-06 | 1to3d | J.P. Morgan | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/java-graphql-software-engineer-ii-at-jpmorganchase-4476117968) |
-| B | 80 | linkedin | OpenEye | Software Engineer II | Liberty Lake, WA | 2026-10-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-openeye-4475808974) |
 | B | 80 | linkedin | Collins Aerospace | Software Engineer II (ONSITE) | Fulton, MD | 2026-10-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-onsite-at-collins-aerospace-4475880448) |
 | B | 83 | indeed | Rubrik | Software Engineer - Product Platform Security | Palo Alto, CA, US | 2026-10-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5a5014d2307c9bed) |
 | B | 84 | indeed | Smart Apply Test Company | Forward Deployed Engineer | San Francisco, CA, US | 2026-10-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d3c2bbd746e97383) |
@@ -49,15 +48,18 @@ The 7-day dump is `latest.md`.
 | B | 83 | indeed | David Joseph & Company | Forward Deployed Engineer | San Francisco, CA, US | 2026-10-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=4a23c04662d4ba87) |
 | B | 77 | indeed | Kohl's | Software Engineer (Remote) | Menomonee Falls, WI, US | 2026-10-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1faee74f392b5bd0) |
 | B | 78 | indeed | Infosys | Java Full Stack Engineer | Raleigh, NC, US | 2026-10-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=195b2cbd6bcdd3ab) |
-| B | 75 | linkedin | LinkedIn | AI Engineer | Mountain View, CA | 2026-10-06 | newly_discovered | LinkedIn | unreviewed | official_unsupported | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-linkedin-4476329946) |
 | B | 75 | linkedin | CoffeeSpace | Software Engineer, Backend Systems ($185K - $300K + Equity) Real-time  | New York, United States | 2026-10-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-backend-systems-%24185k-%24300k-%2B-equity-real-time-trading-platform-at-coffeespace-4474967364) |
+| B | 75 | linkedin | GliaCell Technologies | Fullstack Software Engineer Web Applications | Laurel, MD | 2026-10-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/fullstack-software-engineer-web-applications-at-gliacell-technologies-4476734086) |
 | B | 75 | linkedin | Kratos Defense and Security Solutions | Software Engineer | Colorado Springs, CO | 2026-10-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-kratos-defense-and-security-solutions-4467273712) |
 | B | 75 | linkedin | Saragossa | AI Engineer- agentic startup- $300,000-$350,000 base + bonus! | Chicago, IL | 2026-10-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-agentic-startup-%24300-000-%24350-000-base-%2B-bonus%21-at-saragossa-4474059757) |
 | B | 75 | linkedin | TheGuarantors | Software Engineer - Deal Flow & Underwriting Experience | New York, NY | 2026-10-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-deal-flow-underwriting-experience-at-theguarantors-4441210431) |
 | B | 75 | linkedin | Wolfe, LLC | Software Engineer | Pittsburgh, PA | 2026-10-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-wolfe-llc-4474415952) |
 | B | 75 | linkedin | ScoutBetter | Software Engineer(Nationwide) | Columbus, OH | 2026-10-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-nationwide-at-scoutbetter-4475855900) |
 | B | 75 | linkedin | VBeyond Corporation | Full-Stack TypeScript Developer | Dallas, TX | 2026-10-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-typescript-developer-at-vbeyond-corporation-4475871283) |
+| B | 75 | linkedin | Forage | Fullstack Software Engineer | San Francisco, CA | 2026-10-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/fullstack-software-engineer-at-forage-4475139608) |
+| B | 75 | linkedin | Forage | Fullstack Software Engineer | New York, NY | 2026-10-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/fullstack-software-engineer-at-forage-4475145374) |
 | B | 75 | linkedin | Photon | Java Backend Developer | Dallas, TX | 2026-10-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-backend-developer-at-photon-4475116790) |
+| B | 75 | linkedin | Deloitte | Cyber Full-Stack Software Engineer | Gilbert, AZ | 2026-10-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/cyber-full-stack-software-engineer-at-deloitte-4418042966) |
 | B | 75 | linkedin | Vantor | Full Stack Software Engineer | Herndon, VA | 2026-10-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-vantor-4475853124) |
 | B | 78 | linkedin | iCapital | Artificial Intelligence / Machine Learning Engineer - Associate | New York, NY | 2026-10-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/artificial-intelligence-machine-learning-engineer-associate-at-icapital-4476316761) |
 | B | 78 | indeed | icapital | Artificial Intelligence / Machine Learning Engineer - Associate | New York, NY, US | 2026-10-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=7333d6f9197a18d3) |
