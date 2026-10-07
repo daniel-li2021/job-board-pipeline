@@ -1,94 +1,46 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 2489,
+  "count": 2505,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-10-07T19:00:16.149681+00:00",
+    "scraped_at": "2026-10-07T22:07:43.786460+00:00",
     "collector": {
-      "commit": "a040c1d7c44acaf9217b49e91be5c73c503300d1",
+      "commit": "34f847bde6db118c204da0d9fe1c2ae43ebdc8cd",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 125.988,
+    "elapsed_seconds": 88.983,
     "query_stats": [
-      {
-        "query": "full-stack engineer",
-        "group": "primary",
-        "page_budget": 2,
-        "pages_fetched": 2,
-        "stop_reason": "page_budget",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 18,
-        "first_pass_survivors": 16,
-        "original_postings_resolved": 0,
-        "jds_resolved": 3,
-        "elapsed_seconds": 3.074,
-        "new_to_ledger": 15,
-        "rediscovered": 5,
-        "page_yields": [
-          {
-            "page": 0,
-            "raw": 10,
-            "new_to_ledger": 7,
-            "known": 3
-          },
-          {
-            "page": 1,
-            "raw": 10,
-            "new_to_ledger": 8,
-            "known": 2
-          }
-        ]
-      },
       {
         "query": "software engineer",
         "group": "primary",
         "page_budget": 5,
-        "pages_fetched": 5,
-        "stop_reason": "page_budget",
-        "raw_jobs": 50,
-        "unique_jobs": 50,
-        "unique_contribution": 48,
-        "first_pass_survivors": 48,
+        "pages_fetched": 2,
+        "stop_reason": "low_new_to_ledger_yield",
+        "raw_jobs": 20,
+        "unique_jobs": 20,
+        "unique_contribution": 20,
+        "first_pass_survivors": 20,
         "original_postings_resolved": 0,
-        "jds_resolved": 17,
-        "elapsed_seconds": 15.048,
-        "new_to_ledger": 32,
-        "rediscovered": 18,
+        "jds_resolved": 5,
+        "elapsed_seconds": 3.781,
+        "new_to_ledger": 0,
+        "rediscovered": 20,
         "page_yields": [
           {
             "page": 0,
             "raw": 10,
-            "new_to_ledger": 8,
-            "known": 2
+            "new_to_ledger": 0,
+            "known": 10
           },
           {
             "page": 1,
             "raw": 10,
-            "new_to_ledger": 6,
-            "known": 4
-          },
-          {
-            "page": 2,
-            "raw": 10,
-            "new_to_ledger": 3,
-            "known": 7
-          },
-          {
-            "page": 3,
-            "raw": 10,
-            "new_to_ledger": 6,
-            "known": 4
-          },
-          {
-            "page": 4,
-            "raw": 10,
-            "new_to_ledger": 9,
-            "known": 1
+            "new_to_ledger": 0,
+            "known": 10
           }
         ]
       },
@@ -96,35 +48,59 @@
         "query": "ai engineer",
         "group": "primary",
         "page_budget": 3,
-        "pages_fetched": 3,
-        "stop_reason": "page_budget",
-        "raw_jobs": 30,
-        "unique_jobs": 30,
-        "unique_contribution": 30,
-        "first_pass_survivors": 29,
+        "pages_fetched": 2,
+        "stop_reason": "low_new_to_ledger_yield",
+        "raw_jobs": 20,
+        "unique_jobs": 20,
+        "unique_contribution": 20,
+        "first_pass_survivors": 19,
         "original_postings_resolved": 0,
-        "jds_resolved": 8,
-        "elapsed_seconds": 9.86,
-        "new_to_ledger": 22,
-        "rediscovered": 8,
+        "jds_resolved": 6,
+        "elapsed_seconds": 6.013,
+        "new_to_ledger": 2,
+        "rediscovered": 18,
         "page_yields": [
           {
             "page": 0,
             "raw": 10,
-            "new_to_ledger": 7,
-            "known": 3
+            "new_to_ledger": 1,
+            "known": 9
           },
           {
             "page": 1,
             "raw": 10,
-            "new_to_ledger": 7,
-            "known": 3
-          },
+            "new_to_ledger": 1,
+            "known": 9
+          }
+        ]
+      },
+      {
+        "query": "backend engineer",
+        "group": "primary",
+        "page_budget": 2,
+        "pages_fetched": 2,
+        "stop_reason": "page_budget",
+        "raw_jobs": 20,
+        "unique_jobs": 20,
+        "unique_contribution": 17,
+        "first_pass_survivors": 20,
+        "original_postings_resolved": 0,
+        "jds_resolved": 7,
+        "elapsed_seconds": 6.604,
+        "new_to_ledger": 14,
+        "rediscovered": 6,
+        "page_yields": [
           {
-            "page": 2,
+            "page": 0,
             "raw": 10,
             "new_to_ledger": 8,
             "known": 2
+          },
+          {
+            "page": 1,
+            "raw": 10,
+            "new_to_ledger": 6,
+            "known": 4
           }
         ]
       }
@@ -132,168 +108,65 @@
     "search_collection": {
       "cooldown_active": false,
       "probe": false,
-      "query_cursor": 11,
-      "requests": 10,
-      "responses": 10,
-      "pages_fetched": 10,
+      "query_cursor": 12,
+      "requests": 6,
+      "responses": 6,
+      "pages_fetched": 6,
       "http_status": 0,
       "rate_limited": false,
       "budget_exhausted": false,
       "rate_limit_event": {},
       "transport_stop_reason": "",
-      "new_to_ledger": 69,
-      "rediscovered": 31,
+      "new_to_ledger": 16,
+      "rediscovered": 44,
       "coverage_limited": true
     },
     "detail_enrichment": {
-      "eligible": 35,
-      "cache_reused": 3,
+      "eligible": 26,
+      "cache_reused": 4,
       "requests": 12,
-      "responses": 12,
-      "successful_responses": 12,
+      "responses": 10,
+      "successful_responses": 10,
       "attempted_ids": [
-        "4390662549",
-        "4420663892",
-        "4476193051",
-        "4476329946",
-        "4476339840",
-        "4476395884",
-        "4448672505",
-        "4474449166",
-        "4420492781",
-        "4457709142",
-        "4474666197",
-        "4475808974"
+        "4456579232",
+        "4475475279",
+        "4475853124",
+        "4475855900",
+        "4475871283",
+        "4475880448",
+        "4476117968",
+        "4441210431",
+        "4448395585",
+        "4467273712",
+        "4473681620",
+        "4474415952"
       ],
       "http_status_counts": {
-        "200": 12
+        "200": 10
       },
       "request_limit": 12,
-      "budget_deferred": 23,
+      "budget_deferred": 14,
       "budget_exhausted": true,
       "retry_deferred": 0,
       "retry_attempts": 0,
       "exact_official": 0,
       "official_deferred": 0,
       "rate_limited": false,
-      "jds_resolved": 12,
+      "jds_resolved": 10,
       "external_apply_urls": 0,
-      "failed": 0,
-      "detail_jds_fetched": 12,
+      "failed": 2,
+      "detail_jds_fetched": 10,
       "intentional_skips": 0,
       "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 23,
+      "remaining_no_jd": 16,
       "failure_reasons": {
-        "no_description": 23
+        "linkedin_http_network_error": 2,
+        "no_description": 14
       },
       "queue": [
-        {
-          "job_id": "4475139608",
-          "first_seen": "2026-10-07T19:00:16.149681+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4476385651",
-          "first_seen": "2026-10-07T19:00:16.149681+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "exact_indeed_peer",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4475145374",
-          "first_seen": "2026-10-07T19:00:16.149681+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4448666881",
-          "first_seen": "2026-10-07T19:00:16.149681+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4448392703",
-          "first_seen": "2026-10-07T19:00:16.149681+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4476734086",
-          "first_seen": "2026-10-07T19:00:16.149681+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4418042966",
-          "first_seen": "2026-10-07T19:00:16.149681+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4467932914",
-          "first_seen": "2026-10-07T19:00:16.149681+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
         {
           "job_id": "4474476083",
           "first_seen": "2026-10-07T19:00:16.149681+00:00",
@@ -327,114 +200,10 @@
           "needs_jd": true,
           "deferred_at": "2026-10-07T04:46:48.535112+00:00",
           "attempted_at": "2026-10-07T19:01:49.285327+00:00",
-          "attempted_this_phase": true,
-          "resolved": true,
-          "method": "linkedin_http",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4474986948",
-          "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "high",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": "2026-10-07T04:48:39.126209+00:00",
           "attempted_this_phase": false,
           "resolved": true,
           "method": "linkedin_cache",
           "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4474402164",
-          "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "exact_indeed_peer",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4432906408",
-          "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "low",
-          "needs_jd": false,
-          "deferred_at": "2026-10-07T04:46:48.535112+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_not_worthwhile",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4467942289",
-          "first_seen": "2026-10-07T19:00:16.149681+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "remote_exact_peer",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4475104329",
-          "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "high",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": "2026-10-07T04:48:39.126209+00:00",
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "linkedin_cache",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4474466353",
-          "first_seen": "2026-10-07T19:00:16.149681+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4475129234",
-          "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "exact_indeed_peer",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4474415952",
-          "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T04:46:48.535112+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
           "past_fresh": false
         },
         {
@@ -457,22 +226,9 @@
           "needs_jd": true,
           "deferred_at": null,
           "attempted_at": "2026-10-07T19:01:49.285327+00:00",
-          "attempted_this_phase": true,
-          "resolved": true,
-          "method": "linkedin_http",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4474992950",
-          "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": true,
-          "method": "official_cache",
+          "method": "linkedin_cache",
           "deferred_reason": null,
           "past_fresh": false
         },
@@ -485,7 +241,7 @@
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": true,
-          "method": "remote_exact_peer",
+          "method": "official_cache",
           "deferred_reason": null,
           "past_fresh": false
         },
@@ -498,7 +254,7 @@
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": true,
-          "method": "remote_exact_peer",
+          "method": "official_cache",
           "deferred_reason": null,
           "past_fresh": false
         },
@@ -516,28 +272,15 @@
           "past_fresh": false
         },
         {
-          "job_id": "4448395585",
-          "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T04:46:48.535112+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
-        {
           "job_id": "4448672505",
           "first_seen": "2026-10-07T19:00:16.149681+00:00",
           "priority": "high",
           "needs_jd": true,
           "deferred_at": null,
           "attempted_at": "2026-10-07T19:01:49.285327+00:00",
-          "attempted_this_phase": true,
+          "attempted_this_phase": false,
           "resolved": true,
-          "method": "linkedin_http",
+          "method": "linkedin_cache",
           "deferred_reason": null,
           "past_fresh": false
         },
@@ -555,12 +298,103 @@
           "past_fresh": false
         },
         {
-          "job_id": "4476193051",
+          "job_id": "4474448165",
+          "first_seen": "2026-10-07T22:07:43.786460+00:00",
+          "priority": "normal",
+          "needs_jd": null,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": true,
+          "method": "known_ats_board",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4476904409",
+          "first_seen": "2026-10-07T22:07:43.786460+00:00",
+          "priority": "normal",
+          "needs_jd": null,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": true,
+          "method": "remote_exact_peer",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4476794745",
+          "first_seen": "2026-10-07T22:07:43.786460+00:00",
+          "priority": "normal",
+          "needs_jd": null,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": true,
+          "method": "remote_exact_peer",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4474450103",
+          "first_seen": "2026-10-07T22:07:43.786460+00:00",
+          "priority": "normal",
+          "needs_jd": null,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": true,
+          "method": "ats_board_cache",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4475116790",
           "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "high",
+          "priority": "normal",
           "needs_jd": true,
           "deferred_at": "2026-10-07T04:46:48.535112+00:00",
-          "attempted_at": "2026-10-07T19:01:49.285327+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4475483929",
+          "first_seen": "2026-10-07T22:07:43.786460+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-10-07T22:07:43.786460+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4456579232",
+          "first_seen": "2026-10-07T22:07:43.786460+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": null,
+          "attempted_at": "2026-10-07T22:08:12.952928+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4475475279",
+          "first_seen": "2026-10-07T22:07:43.786460+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": null,
+          "attempted_at": "2026-10-07T22:08:12.952928+00:00",
           "attempted_this_phase": true,
           "resolved": true,
           "method": "linkedin_http",
@@ -581,56 +415,17 @@
           "past_fresh": false
         },
         {
-          "job_id": "4476339840",
-          "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "high",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T04:46:48.535112+00:00",
-          "attempted_at": "2026-10-07T19:01:49.285327+00:00",
-          "attempted_this_phase": true,
-          "resolved": true,
-          "method": "linkedin_http",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4474666197",
-          "first_seen": "2026-10-06T05:42:20.415919+00:00",
+          "job_id": "4474466353",
+          "first_seen": "2026-10-07T19:00:16.149681+00:00",
           "priority": "normal",
           "needs_jd": true,
-          "deferred_at": "2026-10-06T05:42:20.415919+00:00",
-          "attempted_at": "2026-10-07T19:01:49.285327+00:00",
-          "attempted_this_phase": true,
-          "resolved": true,
-          "method": "linkedin_http",
-          "deferred_reason": null,
-          "past_fresh": true
-        },
-        {
-          "job_id": "4420663892",
-          "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "high",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T04:46:48.535112+00:00",
-          "attempted_at": "2026-10-07T19:01:49.285327+00:00",
-          "attempted_this_phase": true,
-          "resolved": true,
-          "method": "linkedin_http",
-          "deferred_reason": null,
+          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
           "past_fresh": false
-        },
-        {
-          "job_id": "4457709142",
-          "first_seen": "2026-10-06T05:42:20.415919+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-06T05:42:20.415919+00:00",
-          "attempted_at": "2026-10-07T19:01:49.285327+00:00",
-          "attempted_this_phase": true,
-          "resolved": true,
-          "method": "linkedin_http",
-          "deferred_reason": null,
-          "past_fresh": true
         },
         {
           "job_id": "4475880448",
@@ -638,12 +433,90 @@
           "priority": "normal",
           "needs_jd": true,
           "deferred_at": "2026-10-06T05:42:20.415919+00:00",
+          "attempted_at": "2026-10-07T22:08:12.952928+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
+          "past_fresh": true
+        },
+        {
+          "job_id": "4418042966",
+          "first_seen": "2026-10-07T19:00:16.149681+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
           "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": true
+          "past_fresh": false
+        },
+        {
+          "job_id": "4475139608",
+          "first_seen": "2026-10-07T19:00:16.149681+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4475145374",
+          "first_seen": "2026-10-07T19:00:16.149681+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4448392703",
+          "first_seen": "2026-10-07T19:00:16.149681+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4448395585",
+          "first_seen": "2026-10-07T04:46:48.535112+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-10-07T04:46:48.535112+00:00",
+          "attempted_at": "2026-10-07T22:08:12.952928+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4476734086",
+          "first_seen": "2026-10-07T19:00:16.149681+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": false
         },
         {
           "job_id": "4476117968",
@@ -651,25 +524,12 @@
           "priority": "normal",
           "needs_jd": true,
           "deferred_at": "2026-10-06T05:42:20.415919+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
+          "attempted_at": "2026-10-07T22:08:12.952928+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
           "past_fresh": true
-        },
-        {
-          "job_id": "4476313634",
-          "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "low",
-          "needs_jd": false,
-          "deferred_at": "2026-10-07T04:46:48.535112+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_not_worthwhile",
-          "past_fresh": false
         },
         {
           "job_id": "4467273712",
@@ -677,20 +537,7 @@
           "priority": "normal",
           "needs_jd": true,
           "deferred_at": "2026-10-07T04:46:48.535112+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4476329946",
-          "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "high",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T04:46:48.535112+00:00",
-          "attempted_at": "2026-10-07T19:01:49.285327+00:00",
+          "attempted_at": "2026-10-07T22:08:12.952928+00:00",
           "attempted_this_phase": true,
           "resolved": true,
           "method": "linkedin_http",
@@ -711,42 +558,16 @@
           "past_fresh": false
         },
         {
-          "job_id": "4475808974",
-          "first_seen": "2026-10-06T05:42:20.415919+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-06T05:42:20.415919+00:00",
-          "attempted_at": "2026-10-07T19:01:49.285327+00:00",
-          "attempted_this_phase": true,
-          "resolved": true,
-          "method": "linkedin_http",
-          "deferred_reason": null,
-          "past_fresh": true
-        },
-        {
-          "job_id": "4475116790",
-          "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T04:46:48.535112+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
-        {
           "job_id": "4473681620",
           "first_seen": "2026-10-07T04:46:48.535112+00:00",
           "priority": "normal",
           "needs_jd": true,
           "deferred_at": "2026-10-07T04:46:48.535112+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
+          "attempted_at": "2026-10-07T22:08:12.952928+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
           "past_fresh": false
         },
         {
@@ -755,37 +576,37 @@
           "priority": "normal",
           "needs_jd": true,
           "deferred_at": "2026-10-06T05:42:20.415919+00:00",
+          "attempted_at": "2026-10-07T22:08:12.952928+00:00",
+          "attempted_this_phase": true,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": null,
+          "past_fresh": true
+        },
+        {
+          "job_id": "4448666881",
+          "first_seen": "2026-10-07T19:00:16.149681+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
           "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": true
+          "past_fresh": false
         },
         {
-          "job_id": "4420492781",
-          "first_seen": "2026-10-06T05:42:20.415919+00:00",
+          "job_id": "4467932914",
+          "first_seen": "2026-10-07T19:00:16.149681+00:00",
           "priority": "normal",
           "needs_jd": true,
-          "deferred_at": "2026-10-06T05:42:20.415919+00:00",
-          "attempted_at": "2026-10-07T19:01:49.285327+00:00",
-          "attempted_this_phase": true,
-          "resolved": true,
-          "method": "linkedin_http",
-          "deferred_reason": null,
-          "past_fresh": true
-        },
-        {
-          "job_id": "4390662549",
-          "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "high",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T04:46:48.535112+00:00",
-          "attempted_at": "2026-10-07T19:01:49.285327+00:00",
-          "attempted_this_phase": true,
-          "resolved": true,
-          "method": "linkedin_http",
-          "deferred_reason": null,
+          "deferred_at": "2026-10-07T19:00:16.149681+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
           "past_fresh": false
         },
         {
@@ -794,11 +615,11 @@
           "priority": "normal",
           "needs_jd": true,
           "deferred_at": "2026-10-07T04:46:48.535112+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
+          "attempted_at": "2026-10-07T22:08:12.952928+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
           "past_fresh": false
         },
         {
@@ -815,29 +636,16 @@
           "past_fresh": false
         },
         {
-          "job_id": "4475118225",
-          "first_seen": "2026-10-07T04:46:48.535112+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-07T04:46:48.535112+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "exact_indeed_peer",
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
-        {
           "job_id": "4475871283",
           "first_seen": "2026-10-06T05:42:20.415919+00:00",
           "priority": "normal",
           "needs_jd": true,
           "deferred_at": "2026-10-06T05:42:20.415919+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
+          "attempted_at": "2026-10-07T22:08:12.952928+00:00",
+          "attempted_this_phase": true,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
+          "deferred_reason": null,
           "past_fresh": true
         },
         {
@@ -846,27 +654,39 @@
           "priority": "normal",
           "needs_jd": true,
           "deferred_at": "2026-10-06T05:42:20.415919+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
+          "attempted_at": "2026-10-07T22:08:12.952928+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
           "past_fresh": true
+        },
+        {
+          "job_id": "4474415952",
+          "first_seen": "2026-10-07T04:46:48.535112+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-10-07T04:46:48.535112+00:00",
+          "attempted_at": "2026-10-07T22:08:12.952928+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
+          "past_fresh": false
         }
       ],
       "admission": {
-        "candidates": 78,
-        "rules_skipped": 27,
+        "candidates": 57,
+        "rules_skipped": 18,
         "rule_reasons": {
-          "prefilter:senior": 20,
-          "citizen_or_clearance": 2,
-          "company_excluded": 5
+          "company_excluded": 4,
+          "prefilter:senior": 14
         },
-        "cache_reused": 3,
-        "non_linkedin_resolved": 10,
-        "triage_evaluated": 29,
-        "triage_deferred": 3,
-        "worth_detail": 35
+        "cache_reused": 4,
+        "non_linkedin_resolved": 8,
+        "triage_evaluated": 3,
+        "triage_deferred": 1,
+        "worth_detail": 26
       },
       "cooldown_active": false,
       "probe": false,
@@ -875,26 +695,27 @@
       "status": "active"
     },
     "official_enrichment": {
-      "exact_indeed_peer": 8,
-      "dedicated_matches": 16,
-      "remote_exact_peer": 12,
-      "cache": 4,
+      "cache": 6,
+      "dedicated_matches": 2,
+      "exact_indeed_peer": 1,
+      "remote_exact_peer": 3,
+      "known_ats_board": 1,
+      "ats_board_cache": 1,
       "search_provider_failures": 1,
-      "no_match": 28,
-      "deferred": 1,
-      "search_requests": 36,
+      "no_match": 22,
+      "search_requests": 4,
       "search_provider": "bing",
-      "official_page_requests": 11,
-      "remaining_no_jd": 70
+      "official_page_requests": 1,
+      "remaining_no_jd": 41
     },
     "partial": true,
     "blocked_reason": "focused query coverage",
-    "collected_count": 96,
-    "carried_count": 2398,
+    "collected_count": 57,
+    "carried_count": 2449,
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-10-07T19:02:23.586270+00:00"
+    "jd_recovery_at": "2026-10-07T23:09:05.133312+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -3429,7 +3250,23 @@
     "linkedin|id|4404323471": "2026-09-13T13:09:14.081862+00:00",
     "linkedin|id|4467917927": "2026-09-16T18:12:41.296197+00:00",
     "linkedin|id|4466836190": "2026-09-16T18:12:41.296197+00:00",
-    "linkedin|id|4457406634": "2026-09-15T17:09:12.592377+00:00"
+    "linkedin|id|4457406634": "2026-09-15T17:09:12.592377+00:00",
+    "linkedin|id|4476933506": "2026-10-07T22:07:43.786460+00:00",
+    "linkedin|id|4475487762": "2026-10-07T22:07:43.786460+00:00",
+    "linkedin|id|4474448165": "2026-10-07T22:07:43.786460+00:00",
+    "linkedin|id|4426738992": "2026-09-05T02:34:33.300648+00:00",
+    "linkedin|id|4475705228": "2026-10-07T22:07:43.786460+00:00",
+    "linkedin|id|4426762020": "2026-09-05T02:34:33.300648+00:00",
+    "linkedin|id|4476904409": "2026-10-07T22:07:43.786460+00:00",
+    "linkedin|id|4476794745": "2026-10-07T22:07:43.786460+00:00",
+    "linkedin|id|4474450103": "2026-10-07T22:07:43.786460+00:00",
+    "linkedin|id|4476918015": "2026-10-07T22:07:43.786460+00:00",
+    "linkedin|id|4475446709": "2026-10-07T22:07:43.786460+00:00",
+    "linkedin|id|4466563631": "2026-09-16T18:12:41.296197+00:00",
+    "linkedin|id|4476771180": "2026-10-07T22:07:43.786460+00:00",
+    "linkedin|id|4475483929": "2026-10-07T22:07:43.786460+00:00",
+    "linkedin|id|4456579232": "2026-10-07T22:07:43.786460+00:00",
+    "linkedin|id|4475475279": "2026-10-07T22:07:43.786460+00:00"
   },
   "jobs": [
     {
@@ -3669,6 +3506,32 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "verified_this_run": false
+    },
+    {
+      "job_id": "4476771180",
+      "source": "linkedin",
+      "company": "Abacus Group, LLC",
+      "title": "Senior Backend Engineer (Rust) - Full Time SF",
+      "location": "San Francisco Bay Area",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-backend-engineer-rust-full-time-sf-at-abacus-group-llc-4476771180",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-07T22:07:43.786460+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -4104,7 +3967,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -4847,7 +4710,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4474997530",
@@ -4929,7 +4792,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470012847",
@@ -7407,7 +7270,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -7987,7 +7850,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -8251,38 +8114,13 @@
       },
       "linkedin_detail_triage_hash": "a3d8fc5b533e5618a1c9",
       "linkedin_detail_deferred_at": "2026-10-07T04:46:48.535112+00:00",
-      "recovery_methods": {
-        "candidate:3b3a6c5b6c": {
-          "input_hash": "a409f48c9903c774ff12",
-          "attempted_at": "2026-10-07T19:00:16.149681+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "eccbecf7f21d56778854",
-          "attempted_at": "2026-10-07T19:00:16.149681+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "d1c671807aff672f61e7",
-          "attempted_at": "2026-10-07T19:00:16.149681+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "cda963badb8d09c90809",
-          "attempted_at": "2026-10-07T19:00:16.149681+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:00:16.149681+00:00",
-      "official_search_status": "no_match",
       "linkedin_detail_attempted_at": "2026-10-07T19:01:49.285327+00:00",
       "linkedin_detail_fetched_at": "2026-10-07T19:01:49.285327+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -9512,7 +9350,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4467917927",
@@ -9537,7 +9375,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470242170",
@@ -9924,6 +9762,52 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4475475279",
+      "source": "linkedin",
+      "company": "Ascendion",
+      "title": "Java API developer",
+      "location": "New York, NY",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/java-api-developer-at-ascendion-4475475279",
+      "official_url": "",
+      "description": "About Ascendion Ascendion is an AI-native software engineering disruptor helping businesses innovate faster, smarter, and with greater impact. We partner with enterprise clients across North America, the UK, Europe, and APAC to solve complex challenges in data, experience design, software product engineering, and workforce transformation. Powered by expert engineers, thousands of AI agents, and our Engineering to the Power of AI (EngineeringAI) method, we deliver measurable outcomes that build trust, unlock value, and accelerate growth. Learn more at https://ascendion.com/. Engineering to the Power of AI&trade;, AAVA&trade;, Engineering AI , Engineering to Elevate Life&trade;, Enterprise Platforms AI , Data & Insights AI , Experience AI , GCC AI , Operations AI , Platform Engineering AI , Product AI , and Quality Engineering AI are trademarks or service marks of Ascendion ® . AAVA&trade; is pending registration. Unauthorized use is strictly prohibited. Ascendion | Engineering to elevate life We have a culture built on opportunity, inclusion, and a spirit of partnership. Come, change the world with us: Build the coolest tech for the world’s leading brands Solve complex problems - and learn new skills Experience the power of transforming digital engineering for Fortune 500 clients Master your craft with leading training programs and hands-on experience Experience a community of change makers! Join a culture of high-performing innovators with endless ideas and a passion for tech. Our culture is the fabric of our company, and it is what makes us unique and diverse. The way we share ideas, learning, experiences, successes, and joy allows everyone to be their best at Ascendion. Position Details: Job Title: Java Developer Client Domain: Banking Location: Manhattan, NY or Jersey City, NJ (100% onsite) Job Overview: We are seeking a highly motivated Java Developer with strong backend expertise in Java. The ideal candidate will have hands-on experience building scalable microservices, developing cloud-native applications on AWS, and working with relational databases in enterprise environments. Key Responsibilities: Design, develop, and maintain scalable backend services using Java, Spring Boot, and Microservices architecture. Develop and optimize applications leveraging Aurora PostgreSQL and relational database design principles. Deploy, manage, and support cloud-native applications on AWS. Utilize ECS and Terraform for container orchestration and infrastructure automation. Collaborate with cross-functional teams to deliver high-quality software solutions. Participate in code reviews, testing, troubleshooting, and performance optimization initiatives. Contribute to system design discussions and architectural decisions. Required Qualifications: 7+ years of professional software development experience. Strong hands-on experience with Java, Spring Boot, and Microservices. Experience working with relational databases, preferably Aurora PostgreSQL. Strong understanding of AWS cloud services. Hands-on experience with ECS and Terraform. Experience building and supporting distributed applications in production environments. Strong problem-solving, communication, and collaboration skills. Preferred Qualifications: Experience with Kafka or other messaging/event-streaming platforms. Exposure to Spring AI and Model Context Protocol (MCP). Experience with CI/CD pipelines and DevOps best practices. Familiarity with Agile development methodologies. Technical Stack: Backend: Core Java, Spring Boot, Microservices Cloud: AWS Messaging: Kafka (Preferred) Salary and Other Compensation: The annual salary for this position is between $110,000-$140,000 annually. Factors which may affect pay within this range may include geography/market, skills, education, experience and other qualifications of the successful candidate. Benefits: The Company offers the following benefits for this position, subject to applicable eligibility requirements: [medical insurance] [dental insurance] [vision insurance] [401(k) retirement plan] [life insurance] [long-term disability insurance] [short-term disability insurance] [paid parking/public transportation]. Want to change the world? Let us know. Tell us about your experiences, education, and ambitions. Bring your knowledge, unique viewpoint, and creativity to the table. Let’s talk!",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-07T22:07:43.786460+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "8c2211a5428088e4edd4",
+          "attempted_at": "2026-10-07T22:07:43.786460+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-10-07T22:07:43.786460+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "Java API development is relevant; required experience and responsibilities could change fit."
+      },
+      "linkedin_detail_triage_hash": "406c99963d56545b42ea",
+      "linkedin_detail_attempted_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_fetched_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4471934503",
       "source": "linkedin",
       "company": "Atlas Consulting Group, LLC.",
@@ -9952,6 +9836,32 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-09-30T05:10:49.340469+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4476933506",
+      "source": "linkedin",
+      "company": "Atlas Tech",
+      "title": "Senior Applied AI-Machine Learning Engineer",
+      "location": "Louisville, KY",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-applied-ai-machine-learning-engineer-at-atlas-tech-4476933506",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-07T22:07:43.786460+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4454867046",
@@ -10215,7 +10125,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -10345,7 +10255,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471118682",
@@ -10654,6 +10564,49 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4475483929",
+      "source": "linkedin",
+      "company": "Avante",
+      "title": "Software Engineer",
+      "location": "Seattle, WA",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-avante-4475483929",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-07T22:07:43.786460+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "592301c7625a600f253f",
+          "attempted_at": "2026-10-07T22:07:43.786460+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Software engineering role; seniority, responsibilities, and required skills could alter fit."
+      },
+      "linkedin_detail_triage_hash": "baeee6278e0a49f1602d",
+      "linkedin_detail_deferred_at": "2026-10-07T22:07:43.786460+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4378704273",
       "source": "linkedin",
       "company": "Avathon",
@@ -10816,7 +10769,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -10826,9 +10779,9 @@
       "linkedin_detail_triage_hash": "7c44112235806d3a7400",
       "linkedin_detail_deferred_at": "2026-10-07T19:00:16.149681+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4469988667",
@@ -12521,7 +12474,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -12546,7 +12499,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -12572,7 +12525,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4474423147",
@@ -12598,7 +12551,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4472639790",
@@ -14443,16 +14396,6 @@
           "ai engineer"
         ]
       },
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "88a84b200f8ba113886a",
-          "attempted_at": "2026-10-07T19:00:16.149681+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:00:16.149681+00:00",
-      "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "high",
@@ -14462,10 +14405,10 @@
       "linkedin_detail_attempted_at": "2026-10-07T19:01:49.285327+00:00",
       "linkedin_detail_fetched_at": "2026-10-07T19:01:49.285327+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -14710,7 +14653,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4281883251",
@@ -14735,7 +14678,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468157010",
@@ -16008,7 +15951,7 @@
       "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -16038,7 +15981,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471919246",
@@ -16259,6 +16202,52 @@
       "official_search_status": "no_match",
       "source_verified_at": "2026-09-24T00:01:43.970475+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4456579232",
+      "source": "linkedin",
+      "company": "Camunda",
+      "title": "Software Engineer, Backend - Data Layer",
+      "location": "New York, NY",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-data-layer-at-camunda-4456579232",
+      "official_url": "",
+      "description": "Camunda is the enterprise platform for agentic orchestration , enabling organizations to coordinate AI agents, people, and systems across complex, end-to-end business processes. With built-in governance, auditability, and human oversight, Camunda gives enterprises the control they need to move AI from pilots to production — safely and at scale. Trusted by over 700 organizations worldwide , including 9 of top 10 US banks, Camunda helps enterprises boost operational efficiency, accelerate time-to-value, and deliver better customer experiences. Fully remote and global, we are in the middle of something bigger: transforming into an AI-first organisation, built on our own platform . We use Agentic AI to automate, orchestrate intelligent processes, and elevate human contribution across every team. Named GP Bullhound’s Top 100 Next Unicorn list, 2025 Great Place to Work certified. Visionary in 2025 Gartner® Magic Quadrant™ for Business Orchestration and Automation Technologies. ranked 3rd in Flexa's 2026 Most Flexible Companies , We’re growing fast and looking for top talent to join our team. If you want meaningful work, visible impact and put something genuinely rare on your CV, keep reading. About The Role As a Backend Software Engineer on the Data Layer team, you'll help build and evolve the storage and query layer that keeps Camunda 8's process data fast, accurate, and available at scale. Spanning both relational databases and Elasticsearch/OpenSearch, the data layer and its data pipelines power everything from process monitoring to the new agent-driven automation capabilities we're rolling out. As part of the Data Layer team, you will work on both technically challenging and rewarding projects, such as reshaping how we store and retain process data, streaming data to external systems, and evolving our secondary storage systems to perform at ever greater scale. At Camunda, we approach engineering in a holistic manner. As such, you will form strong partnerships with product management, design, QA, and support, and work with your peers to not only deliver but directly influence how our data layer evolves to meet our customers' needs. Curious about the kind of challenges you'll work on at Camunda? Watch this quick 30-minute talk from our engineers to learn more about the new Camunda Exporter and how we’re solving complex problems at scale. What You’ll Be Doing Design, build, and maintain backend services for the data layer that stores and serves Camunda 8's process data, spanning relational databases and Elasticsearch/OpenSearch, with an eye toward correctness, performance, and scale. Own the end-to-end delivery of engineering initiatives, working with Product Management and senior colleagues to break down requirements into concrete solution designs, driving projects to timely and high-quality delivery. Help evolve how we process, retain, and expose process data, so customers can work with their data the way they need to. Invest in making our secondary storage systems more performant and scalable as usage grows, and build tooling that makes it easier to understand, troubleshoot, and safely operate the data layer in production. Participate in L3 support and on-call rotations, partnering with Support and SRE to investigate data layer production issues, and feeding what you learn back into the product. Must Haves What You Will Bring to the Role: At least 4 years of experience as a backend engineer, with a strong focus on backend systems and production data stores Hands-on experience with at least one of PostgreSQL, MySQL, MariaDB, MSSQL, or Elasticsearch/OpenSearch, with a practical understanding of query performance, indexing, and data modeling trade-offs Experience contributing to complex engineering initiatives: breaking down requirements into concrete tasks, writing clear technical designs for your piece of the work, and delivering reliably Comfortable investigating slow queries, execution plans, and index usage to root-cause data-related production issues. Strong communication and collaboration skills in a remote-first environment: you translate requirements into actionable technical work with Product, and give and receive clear, direct feedback in code review. Nice To Haves Experience building workflow automation or process orchestration software. Experience working with both relational databases and Elasticsearch/OpenSearch. Experience building or maintaining CI pipelines. Understanding of database migration tooling (e.g. Liquibase, Flyway) and schema evolution in a live system. This role is an existing vacancy #USEAST Compensation What We Have to Offer: We offer competitive, fair, and transparent compensation. Salary ranges are location-based, with Standard and Major markets (global tech hubs) reflecting local competition. The Annual Total Target Cash (base salary + 100% variable target, where applicable) shown below spans from the minimum in a Standard market to the maximum in a Major market. Final offers depend on skills , experience , and location , and we typically hire in the first half of the range to allow room for growth: United States: $119,900.00 to $193,200.00 United Kingdom: £75,300.00 to £123,800.00 Singapore: S$148,900.00 to S$223,300.00 Canada: C$127,300.00 to C$209,300.00 If you’re based elsewhere, you’ll be hired via Remote.com (our global employer partner), and your Talent Acquisition Partner will provide a personalized Total Rewards Calculator after your first interview. Equity: We also offer equity (where applicable) through our Virtual Stock Option Plan (VSOP) . Benefits & Perks We invest in your wellbeing, growth, and ability to connect, along with perks that support you no matter where you’re based. Our benefits are globally designed and locally delivered where applicable. Remote & Flexible: Work from anywhere with the setup that suits you, home office budget, co-working space support, and flexible time off to recharge when you need it. In Person Connection: We invest in meaningful face time through our Annual Kickoff (Vienna in 2025, Madrid in 2026!), team offsites, and Camundi Connection Budgets, including contributing to meetups while travelling,, and local gatherings with fellow Camundi. Health & Wellbeing: Access locally tailored healthcare, Modern Health for global mental wellbeing, and our Live Well Lifestyle Spending Account (LSA), a flexible, global benefit that puts you in control of your whole life, not just work, from: staying active, to caring for family, exploring personal passions, meaningful experiences, and investing in your financial wellbeing. The Live Well program launches in 2026 and scales to €1,000 annually from 2027. Financial Security: Retirement and pension plans (often with company contributions), plus life and disability insurance where relevant. Professional Growth: Up to $/€/£1,000 per year for self-driven learning: courses, certifications, books, you decide! AI in our hiring process : Camunda may use AI tools to aid the screening of applications and during the interview process. You can learn more here ”Everyone is welcome at Camunda” — it’s a celebrated component of our culture. We strive to create an inclusive environment that empowers our people. At Camunda, we honour diverse cultures and backgrounds and are proud to be an equal opportunity employer. All qualified applicants will receive consideration without regard to gender, race, ethnicity, religion, belief, sexual orientation, age, disability or any other protected characteristics under applicable law. We are looking forward to your application! Come join us and be part of Camunda’s incredible journey: Make an impact at a pivotal moment in our story! Please be aware that scammers may impersonate Camunda by reaching out about job opportunities. Camunda will only contact candidates from an email address ending in @ camunda.com or @ talent.camunda.com . We will never ask candidates for bank account details, checks, payment, or other sensitive financial information as part of our hiring process. If you receive a suspicious message, please do not respond, click any links, or share personal information. Note for recruiting and placement agencies: Camunda does not accept unsolicited agency resumes. Please do not forward resumes to our careers site, employees, or any other Camunda contact unless we have specifically engaged your firm for that search. Camunda will not pay fees related to unsolicited resumes.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-07T22:07:43.786460+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "52ad25b64f32e4c6a45c",
+          "attempted_at": "2026-10-07T22:07:43.786460+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-10-07T22:07:43.786460+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "Backend data-layer work aligns; requirements and seniority could determine fit."
+      },
+      "linkedin_detail_triage_hash": "6d8867b96922dc15d4b4",
+      "linkedin_detail_attempted_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_fetched_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4418858553",
@@ -17339,15 +17328,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/San-Jose-CA/AI-Engineer-5--Gen-AI-Platform-Services--Agentic-AI-_R1003179-1",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-07T19:00:16.149681+00:00",
-      "jd_recovery_at": "2026-10-07T19:00:16.149681+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-07T19:00:16.149681+00:00",
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -17373,15 +17360,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/AI-Engineer-5--Gen-AI-Platform-Services--Agentic-Systems-_R1003178-1",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-07T19:00:16.149681+00:00",
-      "jd_recovery_at": "2026-10-07T19:00:16.149681+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-07T19:00:16.149681+00:00",
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -19103,7 +19088,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-10-07T19:00:16.149681+00:00",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460616370",
@@ -19547,7 +19532,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461659955",
@@ -19845,7 +19830,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4411774413",
@@ -20002,6 +19987,13 @@
           "software engineer"
         ]
       },
+      "linkedin_detail_triage": {
+        "needs_jd": false,
+        "priority": "low",
+        "reason": "Engineer III title signals a likely seniority mismatch for early-career targeting."
+      },
+      "linkedin_detail_triage_hash": "a2224c65e1573c7b6e0b",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget",
       "recovery_methods": {
         "generic_search": {
           "input_hash": "bd9fd41ce14e462a2d1c",
@@ -20009,18 +20001,10 @@
           "outcome": "no_match"
         }
       },
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
-      "linkedin_detail_triage": {
-        "needs_jd": false,
-        "priority": "low",
-        "reason": "Engineer III title signals a likely seniority mismatch for early-career targeting."
-      },
-      "linkedin_detail_triage_hash": "a2224c65e1573c7b6e0b",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -20130,16 +20114,6 @@
           "ai engineer"
         ]
       },
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "d0250c95b61d2f0cde20",
-          "attempted_at": "2026-10-07T19:00:16.149681+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:00:16.149681+00:00",
-      "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "high",
@@ -20149,10 +20123,10 @@
       "linkedin_detail_attempted_at": "2026-10-07T19:01:49.285327+00:00",
       "linkedin_detail_fetched_at": "2026-10-07T19:01:49.285327+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "enrichment_method": "linkedin_cache",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -20327,6 +20301,32 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4475705228",
+      "source": "linkedin",
+      "company": "Clover",
+      "title": "Senior Software Engineer",
+      "location": "Sunnyvale, CA",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-at-clover-4475705228",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-07T22:07:43.786460+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4403663614",
       "source": "linkedin",
       "company": "Clover",
@@ -20477,8 +20477,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T04:46:48.535112+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4471505300",
@@ -20537,7 +20537,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": false,
@@ -21148,6 +21148,74 @@
       "enrichment_failure_reason": "linkedin_rate_limited"
     },
     {
+      "job_id": "4476794745",
+      "source": "linkedin",
+      "company": "Coinbase",
+      "title": "Software Engineer, Backend - Payments Platform",
+      "location": "Seattle, WA",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-payments-platform-at-coinbase-4476794745",
+      "official_url": "",
+      "description": "<div class=\"content-intro\"><p>Ready to do the most impactful work of your career? At&nbsp;<a href=\"https://www.coinbase.com/?utm_campaign=mt_o_m_w_m_m__coi_0_jd-onchain&amp;utm_source=coinbase\">Coinbase</a>, we are uncompromising on our mission to increase economic freedom. The bar is high, the environment is intense, and we like it that way. This isn't a place for complacency, it’s a place to be pushed past your perceived limits. If you're ready to build the future of finance alongside people who refuse to settle for \"good enough,\" you belong here. Coinbase is a remote-first, but not remote-only company. Expect to get together quarterly for intense in-person working sessions called “surges.”&nbsp;<a href=\"https://www.coinbase.com/careers\">learn more about working at Coinbase</a>.</p></div><p>As a Software Engineer on the Payments Platform team within the <a href=\"https://www.coinbase.com/careers/product-groups\">Platform</a> group, you'll build the backend services that power fiat on- and off-ramps for millions of Coinbase customers. This team owns the payment rails, routing, and funds-flow infrastructure that connects Coinbase products to global payment methods and financial partners. You'll deliver features and services where every transaction must be correct, secure, and reliable, working across the stack to help scale one of the most critical systems in crypto.</p> <p><strong>What You'll Do:</strong></p> <ul> <li>Build and ship backend payment services in Go that process high-volume fiat transactions across multiple payment rails, ensuring correctness and reliability at every step</li> <li>Deliver well-scoped projects end-to-end, from technical design through production deployment, contributing to services that handle real money movement for consumer and institutional customers</li> <li>Contribute to the design and evolution of Payments Platform's distributed systems, participating in architecture discussions and code reviews that improve system reliability and scalability</li> <li>Partner with product managers, senior engineers, and cross-functional teams to translate product requirements into technical implementations on a quarterly roadmap cadence</li> </ul> <p><strong>Required Skills and Experience:</strong></p> <ul> <li>2+ years building and operating backend services in production, with proficiency in Go, Python, Java, or similar backend languages</li> <li>Experience with relational databases (Postgres or similar), service-oriented architectures, and cloud-native development patterns</li> <li>Demonstrated ability to deliver projects end-to-end with production-quality, well-tested code in systems where correctness and reliability matter</li> <li>Familiarity with financial systems, payment processing, or high-reliability transactional infrastructure</li> <li>Utilizes generative AI responsibly, maintaining human oversight to deliver business-ready outputs and drive measurable improvements in workflow efficiency, cost, and quality</li> </ul><div class=\"content-pay-transparency\"><div class=\"pay-input\"><div class=\"description\"><p><strong>Pay Transparency Notice:</strong><strong><em> </em></strong>Base salary varies by location (see range below). Total compensation may also include equity and bonus eligibility, and benefits (medical, dental, vision, 401(k)).&nbsp;</p> <p>&nbsp;</p></div><div class=\"title\">Annual base salary range (excluding equity and bonus):</div><div class=\"pay-range\"><span>$152,405</span><span class=\"divider\">&mdash;</span><span>$179,300 USD</span></div></div></div><div class=\"content-conclusion\"><ul> <li style=\"font-style: italic; font-size: 8pt;\"><strong><em>Application Limit: </em></strong>Candidates may submit a maximum of 3 applications within a 6-month period.</li> <li style=\"font-style: italic; font-size: 8pt;\"><span style=\"font-size: 8pt;\"><em><strong>Equal Opportunity Employer: </strong>Coinbase is an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, protected veteran status, or genetic information. Applicants with criminal histories will be considered consistent with applicable federal, state, and local laws.</em></span></li> <li style=\"font-style: italic; font-size: 8pt;\"><span style=\"font-size: 8pt;\"><em><strong>US Applicants: </strong>View<a href=\"https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/eppac.pdf\"> Employee Rights</a>,<a href=\"https://www.eeoc.gov/sites/default/files/2023-06/22-088_EEOC_KnowYourRights6.12.pdf\"> Know Your Rights</a>, and<a href=\"https://static-assets.coinbase.com/e-verify.pdf\"> E-Verify</a> Notice of Participation.</em></span></li> <li style=\"font-style: italic; font-size: 8pt;\"><span style=\"font-size: 8pt;\"><em><strong>Accommodations: </strong>If you are an individual with a disability who needs a reasonable accommodation, email us your request and contact info at accommodations[at]coinbase.com.&nbsp;Need screen reading technology?<a href=\"https://chromewebstore.google.com/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn\"> Click here</a> to download a free compatible screen reader and view the<a href=\"http://www.chromevox.com/tutorial/\"><strong> </strong>tutorial</a>.</em></span></li> <li style=\"font-style: italic; font-size: 8pt;\"><span style=\"font-size: 8pt;\"><em><strong>Data Privacy &amp; Arbitration: </strong>By submitting your application, you agree to our<a href=\"https://www.coinbase.com/legal/applicant_privacy_notice\"> Candidate Privacy Notice</a>. US applicants: By submitting your application, you agree to<a href=\"https://www.coinbase.com/legal/application-arbitration-agreement\"> Arbitration of Disputes</a>.<br></em></span></li> </ul> <div id=\"fortidlp-input-element-parent\"></div></div>",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-07T22:07:43.786460+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://www.coinbase.com/careers/positions/8247397?gh_jid=8247397",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-07T22:07:43.786460+00:00",
+      "jd_recovery_at": "2026-10-07T22:07:43.786460+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-07T22:07:43.786460+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4476904409",
+      "source": "linkedin",
+      "company": "Coinbase",
+      "title": "Software Engineer, Backend - Payments Platform",
+      "location": "New York, NY",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-payments-platform-at-coinbase-4476904409",
+      "official_url": "",
+      "description": "<div class=\"content-intro\"><p>Ready to do the most impactful work of your career? At&nbsp;<a href=\"https://www.coinbase.com/?utm_campaign=mt_o_m_w_m_m__coi_0_jd-onchain&amp;utm_source=coinbase\">Coinbase</a>, we are uncompromising on our mission to increase economic freedom. The bar is high, the environment is intense, and we like it that way. This isn't a place for complacency, it’s a place to be pushed past your perceived limits. If you're ready to build the future of finance alongside people who refuse to settle for \"good enough,\" you belong here. Coinbase is a remote-first, but not remote-only company. Expect to get together quarterly for intense in-person working sessions called “surges.”&nbsp;<a href=\"https://www.coinbase.com/careers\">learn more about working at Coinbase</a>.</p></div><p>As a Software Engineer on the Payments Platform team within the <a href=\"https://www.coinbase.com/careers/product-groups\">Platform</a> group, you'll build the backend services that power fiat on- and off-ramps for millions of Coinbase customers. This team owns the payment rails, routing, and funds-flow infrastructure that connects Coinbase products to global payment methods and financial partners. You'll deliver features and services where every transaction must be correct, secure, and reliable, working across the stack to help scale one of the most critical systems in crypto.</p> <p><strong>What You'll Do:</strong></p> <ul> <li>Build and ship backend payment services in Go that process high-volume fiat transactions across multiple payment rails, ensuring correctness and reliability at every step</li> <li>Deliver well-scoped projects end-to-end, from technical design through production deployment, contributing to services that handle real money movement for consumer and institutional customers</li> <li>Contribute to the design and evolution of Payments Platform's distributed systems, participating in architecture discussions and code reviews that improve system reliability and scalability</li> <li>Partner with product managers, senior engineers, and cross-functional teams to translate product requirements into technical implementations on a quarterly roadmap cadence</li> </ul> <p><strong>Required Skills and Experience:</strong></p> <ul> <li>2+ years building and operating backend services in production, with proficiency in Go, Python, Java, or similar backend languages</li> <li>Experience with relational databases (Postgres or similar), service-oriented architectures, and cloud-native development patterns</li> <li>Demonstrated ability to deliver projects end-to-end with production-quality, well-tested code in systems where correctness and reliability matter</li> <li>Familiarity with financial systems, payment processing, or high-reliability transactional infrastructure</li> <li>Utilizes generative AI responsibly, maintaining human oversight to deliver business-ready outputs and drive measurable improvements in workflow efficiency, cost, and quality</li> </ul><div class=\"content-pay-transparency\"><div class=\"pay-input\"><div class=\"description\"><p><strong>Pay Transparency Notice:</strong><strong><em> </em></strong>Base salary varies by location (see range below). Total compensation may also include equity and bonus eligibility, and benefits (medical, dental, vision, 401(k)).&nbsp;</p> <p>&nbsp;</p></div><div class=\"title\">Annual base salary range (excluding equity and bonus):</div><div class=\"pay-range\"><span>$152,405</span><span class=\"divider\">&mdash;</span><span>$179,300 USD</span></div></div></div><div class=\"content-conclusion\"><ul> <li style=\"font-style: italic; font-size: 8pt;\"><strong><em>Application Limit: </em></strong>Candidates may submit a maximum of 3 applications within a 6-month period.</li> <li style=\"font-style: italic; font-size: 8pt;\"><span style=\"font-size: 8pt;\"><em><strong>Equal Opportunity Employer: </strong>Coinbase is an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, protected veteran status, or genetic information. Applicants with criminal histories will be considered consistent with applicable federal, state, and local laws.</em></span></li> <li style=\"font-style: italic; font-size: 8pt;\"><span style=\"font-size: 8pt;\"><em><strong>US Applicants: </strong>View<a href=\"https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/eppac.pdf\"> Employee Rights</a>,<a href=\"https://www.eeoc.gov/sites/default/files/2023-06/22-088_EEOC_KnowYourRights6.12.pdf\"> Know Your Rights</a>, and<a href=\"https://static-assets.coinbase.com/e-verify.pdf\"> E-Verify</a> Notice of Participation.</em></span></li> <li style=\"font-style: italic; font-size: 8pt;\"><span style=\"font-size: 8pt;\"><em><strong>Accommodations: </strong>If you are an individual with a disability who needs a reasonable accommodation, email us your request and contact info at accommodations[at]coinbase.com.&nbsp;Need screen reading technology?<a href=\"https://chromewebstore.google.com/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn\"> Click here</a> to download a free compatible screen reader and view the<a href=\"http://www.chromevox.com/tutorial/\"><strong> </strong>tutorial</a>.</em></span></li> <li style=\"font-style: italic; font-size: 8pt;\"><span style=\"font-size: 8pt;\"><em><strong>Data Privacy &amp; Arbitration: </strong>By submitting your application, you agree to our<a href=\"https://www.coinbase.com/legal/applicant_privacy_notice\"> Candidate Privacy Notice</a>. US applicants: By submitting your application, you agree to<a href=\"https://www.coinbase.com/legal/application-arbitration-agreement\"> Arbitration of Disputes</a>.<br></em></span></li> </ul> <div id=\"fortidlp-input-element-parent\"></div></div>",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-07T22:07:43.786460+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://www.coinbase.com/careers/positions/8247397?gh_jid=8247397",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-07T22:07:43.786460+00:00",
+      "jd_recovery_at": "2026-10-07T22:07:43.786460+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-07T22:07:43.786460+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4473544881",
       "source": "linkedin",
       "company": "Coinbase",
@@ -21275,7 +21343,7 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -21343,7 +21411,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-onsite-at-collins-aerospace-4475880448",
       "official_url": "",
-      "description": "",
+      "description": "Date Posted: 2026-10-05 Country: United States of America Location: US-MD-FULTON-8170 ~ 8170 Maple Lawn Blvd ~ MAPLE LAWN, Ste 190, 200 & 300 Position Role Type: Onsite U.S. Citizen, U.S. Person, or Immigration Status Requirements: The ability to obtain and maintain a U.S. government issued security clearance is required. U.S. citizenship is required, as only U.S. citizens are eligible for a security clearance Security Clearance Type: DoD Clearance: Secret Security Clearance Status: Active and existing security clearance required after day 1 Solipsys, Managed by Collins Aerospace Collins Aerospace, an RTX company, is a leader in technologically advanced and intelligent solutions for the global aerospace and defense industry. Collins Aerospace has the capabilities, comprehensive portfolio, and expertise to solve customers’ toughest challenges and to meet the demands of a rapidly evolving global market. Solipsys is a wholly owned subsidiary of Collins Aerospace/RTX and is currently seeking a Software Engineer who is enthusiastic, hardworking, and proactive in writing and developing code using programming languages and related technologies such as Java, C++, Angular, GraphQL, REST, KafKa, and Typescript (among many others). The successful candidate will work in an exciting environment, directly contributing to the development of new software capabilities and products. Solipsys is an industry leader in the development of command and control software systems and operates in a dynamic, complex, fast-paced business environment with both commercial and Government customers, including a mix of domestic and international pursuits and programs. What You Will Do Design, architect and code critical capabilities in an active Agile environment. Develop innovative new features for a new real-time situational awareness Command & Control (C2) systems. Work in a highly collaborate team environment to design, architect and innovate software solutions. Engage & build positive relationships with both customers as well as internal & external employees. Travel to customer sites for demos, integration and support. Ability to travel up to 25% Qualifications You Must Have Relevant work experience in software development using object-oriented programming languages such as Java or C++. Strong computer science fundamentals such as data structures, algorithms, distributed systems, information retrieval. Relevant work experience with full life cycle development including exposure to software requirements, design, development, debug and test. Typically requires a degree in Science, Technology, Engineering or Mathematics (STEM) and minimum 2 years of prior relevant experience or an Advanced Degree in a related field. Qualifications We Prefer Direct hands on individual experience with GraphQL, REST, Kafka, RabbitMQ, Redis, Postgresql, Docker, Kubernetes, Angular, Typescript, HTML/CSS, among many other programming languages and related technologies. Relevant work experience in software development using object oriented paradigms and multithreaded systems. Experience with Container Orchestration implementation such as Docker, Kubernetes, OpenShift What We Offer Benefits Some of our competitive benefits package includes: Medical, dental, and vision insurance Three weeks of vacation for newly hired employees Generous 401(k) plan that includes employer matching funds and separate employer retirement contribution, including a Lifetime Income Strategy option Tuition reimbursement program Student Loan Repayment Program Life insurance and disability coverage Optional coverages you can buy pet insurance, home and auto insurance, additional life and accident insurance, critical illness insurance, group legal, ID theft protection Birth, adoption, parental leave benefits Ovia Health, fertility, and family planning Adoption Assistance Autism Benefit Employee Assistance Plan, including up to 10 free counseling sessions Healthy You Incentives, wellness rewards program Doctor on Demand, virtual doctor visits Bright Horizons, child and elder care services Teladoc Medical Experts, second opinion program And more! Eligible for relocation Learn More & Apply Now! Do you want to be a part of something bigger? A team whose impact stretches across the world, and even beyond? At Collins Aerospace, our Mission Systems team helps civilian, military and government customers complete their most complex missions — whatever and wherever they may be. Our customers depend on us for intelligent and secure communications, missionized systems for specialized aircraft and spacecraft and collaborative space solutions. By joining our team, you’ll have your own critical part to play in ensuring our customer succeeds today while anticipating their needs for tomorrow. Are you up for the challenge? Join our mission today. Please ensure the role type (defined below) is appropriate for your needs before applying to this role. Onsite: Employees who are working in Onsite roles will work primarily onsite. This includes all production and maintenance employees, as they are essential to the development of our products. At Collins, the paths we pave together lead to limitless possibility. And the bonds we form – with our customers and with each other -- propel us all higher, again and again. Apply now and be part of the team that’s redefining aerospace, every day. As part of our commitment to maintaining a secure hiring process, candidates may be asked to attend select steps of the interview process in-person at one of our office locations, regardless of whether the role is designated as on-site, hybrid or remote. The salary range for this role is 75,800 USD - 144,200 USD. The salary range provided is a good faith estimate representative of all experience levels. RTX considers several factors when extending an offer, including but not limited to, the role, function and associated responsibilities, a candidate’s work experience, location, education/training, and key skills. Hired applicants may be eligible for benefits, including but not limited to, medical, dental, vision, life insurance, short-term disability, long-term disability, 401(k) match, flexible spending accounts, flexible work schedules, employee assistance program, Employee Scholar Program, parental leave, paid time off, and holidays. Specific benefits are dependent upon the specific business unit as well as whether or not the position is covered by a collective-bargaining agreement. Hired applicants may be eligible for annual short-term and/or long-term incentive compensation programs depending on the level of the position and whether or not it is covered by a collective-bargaining agreement. Payments under these annual programs are not guaranteed and are dependent upon a variety of factors including, but not limited to, individual performance, business unit performance, and/or the company’s performance. This role is a U.S.-based role. If the successful candidate resides in a U.S. territory, the appropriate pay structure and benefits will apply. RTX anticipates the application window closing approximately 40 days from the date the notice was posted. However, factors such as candidate flow and business necessity may require RTX to shorten or extend the application window. RTX is an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, age, disability or veteran status, or any other applicable state or federal protected class. RTX provides affirmative action in employment for qualified Individuals with a Disability and Protected Veterans in compliance with Section 503 of the Rehabilitation Act and the Vietnam Era Veterans’ Readjustment Assistance Act. Privacy Policy and Terms: Click on this link to read the Policy and Terms",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-06T05:42:20.415919+00:00",
@@ -21369,10 +21437,13 @@
       },
       "linkedin_detail_triage_hash": "929d015fc665abe3b0e0",
       "linkedin_detail_deferred_at": "2026-10-06T05:42:20.415919+00:00",
-      "enrichment_status": "deferred",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-06T05:42:20.415919+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "linkedin_detail_attempted_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_fetched_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4445318625",
@@ -21553,7 +21624,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4455439792",
@@ -21578,7 +21649,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461408513",
@@ -23729,7 +23800,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -23739,9 +23810,9 @@
       "linkedin_detail_triage_hash": "7b99bd86adb5024a717b",
       "linkedin_detail_deferred_at": "2026-10-07T19:00:16.149681+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4434994842",
@@ -26999,7 +27070,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -27259,7 +27330,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -28170,6 +28241,32 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4476918015",
+      "source": "linkedin",
+      "company": "ExtraHop",
+      "title": "Senior Software Engineer | Middleware",
+      "location": "Seattle, WA",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-middleware-at-extrahop-4476918015",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-07T22:07:43.786460+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4380976636",
       "source": "linkedin",
       "company": "Extreme Networks",
@@ -28681,7 +28778,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -29684,7 +29781,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -29694,9 +29791,9 @@
       "linkedin_detail_triage_hash": "4962d128a3f6e55f3f8f",
       "linkedin_detail_deferred_at": "2026-10-07T19:00:16.149681+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4475145374",
@@ -29727,7 +29824,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -29737,9 +29834,9 @@
       "linkedin_detail_triage_hash": "0a771989efbf1796b3fb",
       "linkedin_detail_deferred_at": "2026-10-07T19:00:16.149681+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4475322965",
@@ -29873,7 +29970,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -29883,9 +29980,9 @@
       "linkedin_detail_triage_hash": "bf1c4d70f8fe6b87500d",
       "linkedin_detail_deferred_at": "2026-10-07T19:00:16.149681+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4448395585",
@@ -29899,7 +29996,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-727-at-freedom-technology-solutions-group-llc-4448395585",
       "official_url": "",
-      "description": "",
+      "description": "Freedom Technology Solutions Group is seeking a Machine Learning Engineer to develop, deploy, and optimize production AI/ML capabilities supporting mission-critical geospatial and intelligence systems. You will work at the intersection of software engineering, cloud architecture, and data science to build scalable machine learning pipelines capable of operating within secure government environments. This is a hands-on engineering position focused on moving models from research into reliable production systems. Responsibilities: Da Design, train, validate, and deploy machine learning models Build production inference pipelines Develop feature engineering workflows Optimize model performance and resource utilization Implement MLOps pipelines supporting continuous integration and deployment Build scalable APIs exposing AI capabilities Monitor model drift and operational performance Collaborate with Data Scientists and Software Engineers Deploy AI workloads into AWS cloud environments Support computer vision, NLP, and geospatial AI initiatives Collaborate with architects, data scientists, and mission stakeholders to gather, document, and refine customer requirements, including data mapping and integration needs Assist in implementing integration solutions in collaboration with development team members Facilitate communication between stakeholders to ensure timely and effective requirements execution Ensure activities align with established processes, standards, and mission objectives Contribute to documentation of processes, procedures, integration patterns, and lessons learned Key Technologies A Python PyTorch TensorFlow Scikit-learn Hugging Face MLflow Docker/Podman Kubernetes/EKS ECS Lambda SageMaker GitLab CI/CD Linux PostgreSQL/PostGIS, Aurora, Oracle (w/Spatial) Redis, Elasticache GDAL, Rasterio, OGR Required Qualifications Active TS/SCI clearance (eligible for CI Poly) 1-3(Junior), 3–7(Journeyman), 8-11 (Senior), >12 (Principal) years of experience in software development, system integration, or technical support roles Experience working directly with customers or stakeholders in a technical or mission environment Strong communication and coordination skills across technical and non-technical teams Experience gathering and documenting requirements Ability to manage multiple tasks and priorities in a dynamic environment Familiarity with Agile development practices Experience using GitLab or similar tools for collaboration and tracking Desired Qualifications Experience deploying production AI systems Experience with computer vision Experience with large language models Geospatial AI experience AWS AI services Experience processing satellite imagery Familiarity secure data movement environments Experience working with enterprise service processes such as Service+ Development or scripting experience (Python, JavaScript, or similar) Geospatial/GIS development a plus Experience with data mapping or integration workflows (using JSON or other object notation) Familiarity with operational dashboards and metrics reporting Experience supporting customer requirement implementation and/or system integration efforts What’s in It for You? Flexible work environment A team mentality – work with friendly, like-minded professionals Work with innovative, cutting edge technologies Enjoy Extremely Competitive Compensation And Benefits A work-life balance you can count on Opportunities to grow and advance your career on our dime The Benefits You Get with Freedom Amazing benefits including matching 401k, fully paid medical, and more Generous paid time off – including paid site closure days Competitive salary offerings Paid training and tuition reimbursement Referral bonuses Fully paid life and disability Annual logo wear allowance Company sponsored events (game nights, holiday party, summer party, happy hours) Interested in learning more about Freedom and our culture? Contact us today! We’re constantly hosting hiring events in our office and elsewhere, to help you get a sense of what life is like at Freedom before joining the team. As an Equal Opportunity Employer, we do not discriminate on the basis of race, color, religion, sex, age, marital status, disability or veteran status Applicant Federal & E-Verify Postings VEVRAA Federal Contractor Accessibility: If you need an accommodation as part of the employment process, please contact Human Resources at Phone: 410-290-9035 Email: recruiting@goftsg.com Equal Opportunity Employer, including disabled and veterans. If you want to view the EEO Law poster, please choose your language: English - Spanish - Arabic - Chinese If you want to view the EEO Law Supplement poster, please choose your language: English - Spanish - Chinese If you want to view the Pay Transparency Policy Statement, please click the link: English",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-07T04:46:48.535112+00:00",
@@ -29923,12 +30020,15 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T22:07:43.786460+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "linkedin_detail_attempted_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_fetched_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4448611192",
@@ -29951,16 +30051,6 @@
           "ai engineer"
         ]
       },
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "6795cb1b5bec658ddd4a",
-          "attempted_at": "2026-10-07T19:00:16.149681+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
-      "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "normal",
@@ -29968,9 +30058,18 @@
       },
       "linkedin_detail_triage_hash": "986fd0a1285718c26211",
       "linkedin_detail_deferred_at": "2026-10-07T19:00:16.149681+00:00",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "6795cb1b5bec658ddd4a",
+          "attempted_at": "2026-10-07T19:00:16.149681+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
+      "official_search_status": "no_match",
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_round_budget",
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -30439,7 +30538,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4445280135",
@@ -31176,7 +31275,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -31201,7 +31300,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -31423,7 +31522,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -31433,9 +31532,9 @@
       "linkedin_detail_triage_hash": "3c38864e24c82314aa71",
       "linkedin_detail_deferred_at": "2026-10-07T19:00:16.149681+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4471675285",
@@ -31594,7 +31693,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -31652,11 +31751,11 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "jd_recovery_at": "2026-10-07T19:00:16.149681+00:00",
+      "jd_recovery_at": "2026-10-07T22:07:43.786460+00:00",
       "enrichment_method": "exact_indeed_peer",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -32427,7 +32526,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -33047,7 +33146,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-10-07T19:00:16.149681+00:00",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460060165",
@@ -36410,7 +36509,7 @@
       "title": "Staff Software Engineer, Backend",
       "location": "San Francisco, CA",
       "posted_date": "2026-09-29",
-      "aggregator_posted_date": "2026-09-29",
+      "aggregator_posted_date": "2026-10-07",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/staff-software-engineer-backend-at-ivo-4471725898",
@@ -36425,11 +36524,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-30T05:10:49.340469+00:00",
-      "verified_this_run": false,
-      "recovery_status": "filtered",
-      "enrichment_status": "unresolved",
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4369769068",
@@ -36763,7 +36859,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/java-graphql-software-engineer-ii-at-jpmorganchase-4476117968",
       "official_url": "",
-      "description": "",
+      "description": "Job Description You're ready to gain the skills and experience needed to grow within your role and advance your career — and we have the perfect software engineering opportunity for you. As a Software Engineer II at JPMorganChase within Commercial & Investment Bank - Market Monitor team, you are part of an agile team that works to enhance, design, and deliver software components of the firm's state-of-the-art technology products in a secure, stable, and scalable way. As an emerging member of a software engineering team, you execute software solutions through the design, development, and technical troubleshooting of multiple components within a technical product, application, or system, while gaining the skills and experience needed to grow within your role. Job Responsibilities Executes standard software solution design, development, and technical troubleshooting across multiple components within a product/application/system. Writes secure, high-quality code primarily in Java (Spring/Spring Boot) and continuously improves code quality through modern engineering practices. Designs, develops, and supports microservices with strong consideration for distributed systems concerns (performance, resilience, scalability, and operability). Builds and maintains API layers with strong GraphQL experience (schema design, resolver patterns, authorization, pagination, error handling, and performance tuning) and complementary REST experience where needed. Builds and operates AWS-based solutions using cloud-native patterns (identity and access management, encryption, networking, deployment patterns, monitoring, and cost/performance considerations). Applies modern SDLC practices including CI/CD, code quality gates, automated security testing, and production observability (logs/metrics/traces) to improve reliability and delivery speed. Uses enterprise-authorized AI capabilities as a core part of daily engineering, including code generation/refactoring, automated test creation, debugging assistance, documentation, and incident triage support, while rigorously validating outputs through review, automated testing, and secure coding standards. Engineers AI-ready services and integrations with emphasis on current best practices, including structured inputs/outputs, schema validation, deterministic post-processing, idempotency, rate limiting, and safe degradation for AI-dependent flows. Applies responsible and secure AI engineering: protects sensitive data, avoids leaking confidential information into prompts/logs, designs for injection resistance, and follows governance expectations for AI usage in code and runtime workflows. Contributes to AI quality and reliability practices such as automated evaluations/regression testing for AI behaviors, prompt/version management where applicable, telemetry for AI interactions, and measurable quality gates to prevent AI-driven regressions. Writes and maintains robust automated tests using current testing technologies (e.g., JUnit 5, Mockito, Testcontainers, contract testing, API mocking, and CI-integrated test automation) to ensure coverage, reliability, and rapid feedback. Required Qualifications, Capabilities, And Skills Formal training or certification on software engineering concepts and 2+ years applied experience. Hands-on practical experience in system design, application development, testing, and operational stability. Experience developing, debugging, and maintaining code in a large corporate environment with modern programming languages and database querying languages. Strong hands-on Java experience with Spring/Spring Boot in production environments. Strong GraphQL experience (schema-first design, resolver patterns, security/authorization, performance considerations). Strong AWS cloud knowledge designing, deploying, and supporting production systems (e.g., ECS/EKS or Kubernetes patterns, Lambda, API Gateway/ALB, S3, RDS/Aurora/DynamoDB, IAM/KMS, CloudWatch). Demonstrable, hands-on experience with AI-assisted software engineering using enterprise-authorized tools, including the ability to validate and harden AI-generated code/tests, and to apply AI effectively in debugging and delivery workflows. Working knowledge of AI engineering best practices relevant to product development (structured outputs, evaluation/testing approaches for AI behavior, basic model/tool integration concepts, and secure prompt/input handling). Demonstrable experience with modern automated testing practices and tooling (unit, integration, contract, and end-to-end testing; CI automation; test reliability and maintainability). Experience across the SDLC, including agile delivery, CI/CD, application resiliency, and security. Preferred Qualifications, Capabilities, And Skills Experience with Infrastructure as Code (IaC) using Terraform (or equivalent). Experience with observability and production diagnostics (e.g., OpenTelemetry, distributed tracing, actionable alerting). Familiarity with AI integration patterns such as tool-calling/agentic workflows, retrieval patterns, structured outputs, and automated evaluation/regression approaches (as applicable). Familiarity with full-stack application development. Strong communication skills and the ability to work effectively in a team environment. ABOUT US JPMorganChase, one of the oldest financial institutions, offers innovative financial solutions to millions of consumers, small businesses and many of the world's most prominent corporate, institutional and government clients under the J.P. Morgan and Chase brands. Our history spans over 200 years and today we are a leader in investment banking, consumer and small business banking, commercial banking, financial transaction processing and asset management. We offer a competitive total rewards package including base salary determined based on the role, experience, skill set and location. Those in eligible roles may receive commission-based pay and/or discretionary incentive compensation, paid in the form of cash and/or forfeitable equity, awarded in recognition of individual achievements and contributions. We also offer a range of benefits and programs to meet employee needs, based on eligibility. These benefits include comprehensive health care coverage, on-site health and wellness centers, a retirement savings plan, backup childcare, tuition reimbursement, mental health support, financial coaching and more. Additional details about total compensation and benefits will be provided during the hiring process. We recognize that our people are our strength and the diverse talents they bring to our global workforce are directly linked to our success. We are an equal opportunity employer and place a high value on diversity and inclusion at our company. We do not discriminate on the basis of any protected attribute, including race, religion, color, national origin, gender, sexual orientation, gender identity, gender expression, age, marital or veteran status, pregnancy or disability, or any other basis protected under applicable law. We also make reasonable accommodations for applicants' and employees' religious practices and beliefs, as well as mental health or physical disability needs. Visit our FAQs for more information about requesting an accommodation. JPMorgan Chase & Co. is an Equal Opportunity Employer, including Disability/Veterans About The Team J.P. Morgan's Commercial & Investment Bank is a global leader across banking, markets, securities services and payments. Corporations, governments and institutions throughout the world entrust us with their business in more than 100 countries. The Commercial & Investment Bank provides strategic advice, raises capital, manages risk and extends liquidity in markets around the world.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-06T05:42:20.415919+00:00",
@@ -36799,10 +36895,13 @@
       },
       "linkedin_detail_triage_hash": "549187aab7814f21bee2",
       "linkedin_detail_deferred_at": "2026-10-06T05:42:20.415919+00:00",
-      "enrichment_status": "deferred",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-06T05:42:20.415919+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "linkedin_detail_attempted_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_fetched_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4456493210",
@@ -37172,7 +37271,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-10-07T19:00:16.149681+00:00",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4456432894",
@@ -37431,7 +37530,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": false,
@@ -37650,20 +37749,19 @@
       "first_seen": "2026-09-15T17:09:12.592377+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer"
+          "software engineer",
+          "backend engineer"
         ]
       },
       "recovery_methods": {},
       "application_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210785425",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-07T19:00:16.149681+00:00",
-      "jd_recovery_at": "2026-10-07T19:00:16.149681+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-07T19:00:16.149681+00:00",
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -38004,7 +38102,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460253097",
@@ -38054,7 +38152,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -39826,7 +39924,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-kratos-defense-and-security-solutions-4467273712",
       "official_url": "",
-      "description": "",
+      "description": "Job Description At Kratos, we encourage an entrepreneurial spirit balanced with fiscal and operational discipline. We work hard, we solve hard problems, and we look out for and take care of our customers, each other, and our families. Protecting and enabling our nation and global customers through innovative aerospace solutions is what motivates us. We continually build trusted relationships with our peers, our partners, and customers, and we take ownership for our actions—always doing the right thing. Kratos is seeking a Software Engineer to join our team in Colorado Springs, CO for SATCOM and Space Ground System project support. The Software Engineer will be involved in full-stack development on Linux based systems in support of customer driven software development deliverables. This position requires an individual with experience working with Python, Typescript back-end and Angular web framework front-end to develop software while managing priorities and communication with multiple teams of software developers within an AGILE process. Job Duties: Developing full-stack software using Python and Typescript with Angular web framework. Mentorship of junior engineers. Supporting new feature development as well as sustainment work of existing code base, including bug investigation and resolution. Peer reviewing fellow team member’s work. Participating in planning, prioritization, design, test, and deployment of SATCOM software. Developing test cases and unit tests to support software level validation efforts. Supporting documentation of design architecture, implementation, and requirements traceability. Influencing future development activities, including participation in trade studies related to hardware and software updates and improvements. Experience And Skills US Citizen with TS/SCI eligibility The successful candidate must have advanced software development experience from school or industry to be proficient in the following: Experience with front end development tools (such as Angular web framework) Experience with Python and Typescript programming on Linux / RHEL platforms Experience using debugging tools Ability to understand ICDs, Specifications, and Datasheets Ability to drive prioritization discussions based on customer needs and team workflow Ability to design solutions to complex engineering problems Preferred Skills/Experience: Experience with SATCOM systems, Antenna systems, and RF components Experience with Angular web framework Languages/Tools: Python, Typescript, Angular, C/C++, Docker, Git, GitLab, JIRA/Confluence. Scripting: Python, Shell Testing: Unit, regression, and performance testing expertise. Certifications: Security+ The grade-based pay range for this job is listed below. Individual salaries within that range are determined through a wide variety of factors including but not limited to education, experience, knowledge, and skills. Competitive salary based on experience and education Salary Range: $130,000-$150,000 Kratos is valued for our ability to design and deliver leading edge, resilient solutions for aerospace communication, control, awareness and mission success across a continuum of offerings—from commercial to tailored custom solutions and integrated programs. Customers trust us to stay relevant and know we are in it for the long-haul. We bring both the capability and confidence that our customers value and depend on. And we always deliver. This posting will close within 90 days from the Posting Date. Job Benefits Medical, Dental & Vision Insurance Coverage Life/ADD & Short/Long Term Disability Insurance 401(k) Savings Plan Employee Stock Purchase Plan (ESPP) Paid Time-Off (PTO) Holidays Education Reimbursement Kratos Defense is an Equal Opportunity Affirmative Action Employer. EOE, Minorities, Females, Vet, Disabled, Sexual Orientation, Gender Identity or any other protected class. All qualified job seekers are encouraged to apply. Kratos Defense is committed to America's veterans by providing opportunities for them to continue contributing after service to our nation. We also work to provide reasonable accommodations to individuals with disabilities. EEO Is The Law Disability Accessibility Accommodation If you require an accommodation to navigate or apply to our careers site, please send your request to HRAccessibility@kratosdefense.com or call 858-964-2916. Any inquires not related to requesting an accommodation will be discarded. Pay Transparency The company will not discharge or in any other manner discriminate against employees or applicants because they have inquired about, discussed, or disclosed their own pay or the pay of another employee or applicant. Job Applicant Privacy Notice For applicants in the EU and California residents, please review our privacy notice.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-07T04:46:48.535112+00:00",
@@ -39843,7 +39941,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T22:07:43.786460+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -39852,10 +39950,13 @@
       },
       "linkedin_detail_triage_hash": "d8aa6517f97748e788e6",
       "linkedin_detail_deferred_at": "2026-10-07T04:46:48.535112+00:00",
-      "enrichment_status": "deferred",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-07T04:46:48.535112+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "linkedin_detail_attempted_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_fetched_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4470415824",
@@ -40919,7 +41020,7 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:company_excluded",
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -41077,7 +41178,7 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:company_excluded",
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -42893,15 +42994,13 @@
       },
       "recovery_methods": {},
       "application_url": "https://apply.careers.microsoft.com/careers/job/1970393556928923",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-07T19:00:16.149681+00:00",
-      "jd_recovery_at": "2026-10-07T19:00:16.149681+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-07T19:00:16.149681+00:00",
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -44130,7 +44229,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -44245,7 +44344,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468776528",
@@ -44590,7 +44689,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -44826,7 +44925,7 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -45912,12 +46011,13 @@
       "first_seen": "2026-10-07T19:00:16.149681+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer"
+          "software engineer",
+          "backend engineer"
         ]
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -46197,7 +46297,7 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:company_excluded",
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -46275,7 +46375,7 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:company_excluded",
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -47392,7 +47492,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470412019",
@@ -48052,7 +48152,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4441551240",
@@ -48194,7 +48294,7 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -49018,6 +49118,31 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4466563631",
+      "source": "linkedin",
+      "company": "Otter.ai",
+      "title": "Software Engineer, Backend (Infrastructure)",
+      "location": "Mountain View, CA",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-infrastructure-at-otter-ai-4466563631",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-16T18:12:41.296197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4373085544",
       "source": "linkedin",
       "company": "Otter.ai",
@@ -49583,7 +49708,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4459258749",
@@ -50562,7 +50687,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:company_excluded",
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4433416552",
@@ -50916,7 +51041,7 @@
       "title": "Java Backend Developer",
       "location": "Dallas, TX",
       "posted_date": "2026-10-06",
-      "aggregator_posted_date": "2026-10-06",
+      "aggregator_posted_date": "2026-10-07",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/java-backend-developer-at-photon-4475116790",
@@ -50930,16 +51055,6 @@
           "backend engineer"
         ]
       },
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "281e62fb2158bbabbbbb",
-          "attempted_at": "2026-10-07T19:00:16.149681+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
-      "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "normal",
@@ -50947,10 +51062,19 @@
       },
       "linkedin_detail_triage_hash": "b92d49119b89e0a54110",
       "linkedin_detail_deferred_at": "2026-10-07T04:46:48.535112+00:00",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "281e62fb2158bbabbbbb",
+          "attempted_at": "2026-10-07T19:00:16.149681+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
+      "official_search_status": "no_match",
       "enrichment_status": "deferred",
-      "source_verified_at": "2026-10-07T04:46:48.535112+00:00",
-      "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469970529",
@@ -53982,7 +54106,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468157620",
@@ -56044,7 +56168,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4458544125",
@@ -56584,7 +56708,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-10-07T19:00:16.149681+00:00",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4463470511",
@@ -56610,6 +56734,74 @@
       "recovery_methods": {},
       "source_verified_at": "2026-10-03T04:58:16.344148+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4474448165",
+      "source": "linkedin",
+      "company": "Robinhood",
+      "title": "Software Engineer, Web3 Backend",
+      "location": "New York, NY",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-web3-backend-at-robinhood-4474448165",
+      "official_url": "",
+      "description": "<div class=\"content-intro\"><h2>Join us in building the future of finance.</h2> <p>Our mission is to democratize finance for all. <a href=\"https://www.cerulli.com/press-releases/cerulli-anticipates-124-trillion-in-wealth-will-transfer-through-2048\" target=\"_blank\">An estimated $124 trillion of assets</a> will be inherited by younger generations in the next two decades. The largest transfer of wealth in human history. If you’re ready to be at the epicenter of this historic cultural and financial shift, keep reading.</p></div><h3><strong>About the team + role</strong></h3> <p>We are building an elite team, applying frontier technologies to the world’s biggest financial problems. We’re looking for bold thinkers. Sharp problem-solvers. Builders who are wired to make an impact. Robinhood isn’t a place for complacency, it’s where ambitious people do the best work of their careers. We’re a high-performing, fast-moving team with ethics at the center of everything we do. Expectations are high, and so are the rewards.</p> <p>As a <strong>Software Engineer</strong>, you’ll build and own backend services, infrastructure, and data systems that support Robinhood’s next-generation crypto, web3, and wallet offerings. You’ll develop innovative solutions to deliver a best-in-class trading experience for cryptocurrencies and tokenized assets—including perpetual futures—to customers worldwide, while solving complex scalability and correctness challenges in an environment where the systems you build move real customer assets continuously around the clock.</p> <p>The <strong>Robinhood Wallet</strong> team’s mission is to democratize access to financial services worldwide by leveraging DeFi protocols and Robinhood Chain. The team builds non-custodial consumer products, self-custody experiences, and seamless cross-chain trading capabilities.</p> <p>The <strong>Tokenization</strong> team’s mission is to bring both public and private equity to be tradable 24/7 on decentralized exchanges (DEXs) across the Robinhood Chain. Equity markets have been closed nights and weekends for a century; the team builds the connective tissue between traditional market infrastructure and on-chain systems—issuance, custody, and settlement—to change that.</p> <p>The <strong>Robinhood Chain </strong>team designs and scales the underlying decentralized infrastructure across Robinhood. The team continuously improves Robinhood Chain to provide a best-in-class decentralized platform for trading real-world assets, builds specialized smart contracts, and provides infrastructure services for other Robinhood teams that rely on DeFi.</p> <p>These roles are based in either our <strong>Menlo Park, or New York City</strong> offices, with in-person attendance expected at least 3 days per week.</p> <p>At Robinhood, we believe in the power of in-person work to accelerate progress, spark innovation, and strengthen community. Our office experience is intentional, energizing, and designed to fully support high-performing teams.</p> <h3><strong>What you’ll do</strong></h3> <ul> <li>Design, build, test, and deploy scalable backend services and infrastructure across Robinhood Wallet, Tokenization, and Web3 platform systems, with correctness and auditability as hard requirements.</li> <li>Build the connective tissue between traditional market infrastructure (brokerage, ledgers, corporate actions) and on-chain systems, including smart contract integrations, chain indexers, and DEX trade flows.</li> <li>Develop product-facing features and platform enhancements that meet strict correctness and scalability standards.</li> <li>Identify and implement improvements to system performance, engineering productivity, and risk reduction.</li> <li>Collaborate closely with product, compliance, client, platform teams, and external partners to deliver impactful technical solutions.</li> </ul> <h3><strong>What you bring</strong></h3> <ul> <li>2+ years of experience in software development.</li> <li>Expertise in backend development using languages such as Go, Python, or Java, with a solid grasp of cloud-native architectures.</li> <li>Strong grasp of system design, data modeling, and software engineering fundamentals.</li> <li>Care for correctness-critical systems—idempotency, reconciliation, and reasoning carefully about failure modes when money is at stake.</li> <li>Strong ownership mindset, with a track record of delivering high-quality projects end to end in cross-functional environments and raising team-wide technical standards.</li> <li>Proven ability to simplify complex problems, make sound tradeoffs, and drive alignment across diverse stakeholders.</li> <li>Interest in blockchain fundamentals—EVM, smart contracts, wallets, on-chain settlement—or a strong appetite to go deep quickly.</li> </ul> <h3><strong>What we offer</strong></h3> <ul> <li>Challenging, high-impact work to grow your career</li> <li>Performance driven compensation with multipliers for outsized impact, bonus programs, equity ownership, and 401(k) matching</li> <li>Best in class benefits to fuel your work, including 100% paid health insurance for employees with 90% coverage for dependents</li> <li>Lifestyle wallet — a highly flexible benefits spending account for wellness, learning, and more</li> <li>Employer-paid life &amp; disability insurance, fertility benefits, and mental health benefits</li> <li>Time off to recharge including company holidays, paid time off, sick time, parental leave, and more!</li> <li>Exceptional office experience with catered meals, events, and comfortable workspaces</li> </ul><div class=\"content-pay-transparency\"><div class=\"pay-input\"><div class=\"description\"><p><strong>In addition to the base pay range listed below, this role is also eligible for bonus opportunities + equity + benefits.</strong></p> <p>Base pay for the successful applicant will depend on a variety of job-related factors, which may include education, training, experience, location, business needs, or market demands. The expected base pay range for this role is based on the location where the work will be performed and is aligned to one of 3 compensation zones. For other locations not listed, compensation can be discussed with your recruiter during the interview process.</p> <p><span style=\"text-decoration: underline;\">Base Pay Range:</span></p></div><div class=\"title\">Zone 1 (Menlo Park, CA; New York, NY; Bellevue, WA; Washington, DC)</div><div class=\"pay-range\"><span>$166,000</span><span class=\"divider\">&mdash;</span><span>$195,000 USD</span></div></div><div class=\"pay-input\"><div class=\"title\">Zone 2 (Denver, CO; Westlake, TX; Chicago, IL)</div><div class=\"pay-range\"><span>$147,000</span><span class=\"divider\">&mdash;</span><span>$172,000 USD</span></div></div><div class=\"pay-input\"><div class=\"title\">Zone 3 (Lake Mary, FL; Clearwater, FL; Gainesville, FL)</div><div class=\"pay-range\"><span>$130,000</span><span class=\"divider\">&mdash;</span><span>$152,000 USD</span></div></div></div><div class=\"content-conclusion\"><p>Click <a href=\"https://careers.robinhood.com/benefits\" target=\"_blank\">here</a> to learn more about our Total Rewards, which vary by region and entity.</p> <p>If our mission energizes you and you’re ready to build the future of finance, we look forward to seeing your application.</p> <p><strong>AI Usage Disclosure:</strong> Robinhood uses artificial intelligence (AI) tools to support parts of our recruiting process. These tools enhance the efficiency and consistency of our hiring process; however, all hiring decisions are made by our hiring teams.</p> <p>Robinhood provides equal opportunity for all applicants, offers reasonable accommodations upon request, and complies with applicable equal employment and privacy laws. Inclusion is built into how we hire and work—welcoming different backgrounds, perspectives, and experiences so everyone can do their best. Please review the&nbsp;<a href=\"https://careers.robinhood.com/applicantprivacypolicy\" target=\"_blank\">Privacy Policy</a> for your country of application.</p></div>",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-07T22:07:43.786460+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://boards.greenhouse.io/robinhood/jobs/8258305?t=gh_src=&gh_jid=8258305",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-07T22:07:43.786460+00:00",
+      "jd_recovery_at": "2026-10-07T22:07:43.786460+00:00",
+      "enrichment_method": "known_ats_board",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-07T22:07:43.786460+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4474450103",
+      "source": "linkedin",
+      "company": "Robinhood",
+      "title": "Software Engineer, Web3 Backend",
+      "location": "Menlo Park, CA",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-web3-backend-at-robinhood-4474450103",
+      "official_url": "",
+      "description": "<div class=\"content-intro\"><h2>Join us in building the future of finance.</h2> <p>Our mission is to democratize finance for all. <a href=\"https://www.cerulli.com/press-releases/cerulli-anticipates-124-trillion-in-wealth-will-transfer-through-2048\" target=\"_blank\">An estimated $124 trillion of assets</a> will be inherited by younger generations in the next two decades. The largest transfer of wealth in human history. If you’re ready to be at the epicenter of this historic cultural and financial shift, keep reading.</p></div><h3><strong>About the team + role</strong></h3> <p>We are building an elite team, applying frontier technologies to the world’s biggest financial problems. We’re looking for bold thinkers. Sharp problem-solvers. Builders who are wired to make an impact. Robinhood isn’t a place for complacency, it’s where ambitious people do the best work of their careers. We’re a high-performing, fast-moving team with ethics at the center of everything we do. Expectations are high, and so are the rewards.</p> <p>As a <strong>Software Engineer</strong>, you’ll build and own backend services, infrastructure, and data systems that support Robinhood’s next-generation crypto, web3, and wallet offerings. You’ll develop innovative solutions to deliver a best-in-class trading experience for cryptocurrencies and tokenized assets—including perpetual futures—to customers worldwide, while solving complex scalability and correctness challenges in an environment where the systems you build move real customer assets continuously around the clock.</p> <p>The <strong>Robinhood Wallet</strong> team’s mission is to democratize access to financial services worldwide by leveraging DeFi protocols and Robinhood Chain. The team builds non-custodial consumer products, self-custody experiences, and seamless cross-chain trading capabilities.</p> <p>The <strong>Tokenization</strong> team’s mission is to bring both public and private equity to be tradable 24/7 on decentralized exchanges (DEXs) across the Robinhood Chain. Equity markets have been closed nights and weekends for a century; the team builds the connective tissue between traditional market infrastructure and on-chain systems—issuance, custody, and settlement—to change that.</p> <p>The <strong>Robinhood Chain </strong>team designs and scales the underlying decentralized infrastructure across Robinhood. The team continuously improves Robinhood Chain to provide a best-in-class decentralized platform for trading real-world assets, builds specialized smart contracts, and provides infrastructure services for other Robinhood teams that rely on DeFi.</p> <p>These roles are based in either our <strong>Menlo Park, or New York City</strong> offices, with in-person attendance expected at least 3 days per week.</p> <p>At Robinhood, we believe in the power of in-person work to accelerate progress, spark innovation, and strengthen community. Our office experience is intentional, energizing, and designed to fully support high-performing teams.</p> <h3><strong>What you’ll do</strong></h3> <ul> <li>Design, build, test, and deploy scalable backend services and infrastructure across Robinhood Wallet, Tokenization, and Web3 platform systems, with correctness and auditability as hard requirements.</li> <li>Build the connective tissue between traditional market infrastructure (brokerage, ledgers, corporate actions) and on-chain systems, including smart contract integrations, chain indexers, and DEX trade flows.</li> <li>Develop product-facing features and platform enhancements that meet strict correctness and scalability standards.</li> <li>Identify and implement improvements to system performance, engineering productivity, and risk reduction.</li> <li>Collaborate closely with product, compliance, client, platform teams, and external partners to deliver impactful technical solutions.</li> </ul> <h3><strong>What you bring</strong></h3> <ul> <li>2+ years of experience in software development.</li> <li>Expertise in backend development using languages such as Go, Python, or Java, with a solid grasp of cloud-native architectures.</li> <li>Strong grasp of system design, data modeling, and software engineering fundamentals.</li> <li>Care for correctness-critical systems—idempotency, reconciliation, and reasoning carefully about failure modes when money is at stake.</li> <li>Strong ownership mindset, with a track record of delivering high-quality projects end to end in cross-functional environments and raising team-wide technical standards.</li> <li>Proven ability to simplify complex problems, make sound tradeoffs, and drive alignment across diverse stakeholders.</li> <li>Interest in blockchain fundamentals—EVM, smart contracts, wallets, on-chain settlement—or a strong appetite to go deep quickly.</li> </ul> <h3><strong>What we offer</strong></h3> <ul> <li>Challenging, high-impact work to grow your career</li> <li>Performance driven compensation with multipliers for outsized impact, bonus programs, equity ownership, and 401(k) matching</li> <li>Best in class benefits to fuel your work, including 100% paid health insurance for employees with 90% coverage for dependents</li> <li>Lifestyle wallet — a highly flexible benefits spending account for wellness, learning, and more</li> <li>Employer-paid life &amp; disability insurance, fertility benefits, and mental health benefits</li> <li>Time off to recharge including company holidays, paid time off, sick time, parental leave, and more!</li> <li>Exceptional office experience with catered meals, events, and comfortable workspaces</li> </ul><div class=\"content-pay-transparency\"><div class=\"pay-input\"><div class=\"description\"><p><strong>In addition to the base pay range listed below, this role is also eligible for bonus opportunities + equity + benefits.</strong></p> <p>Base pay for the successful applicant will depend on a variety of job-related factors, which may include education, training, experience, location, business needs, or market demands. The expected base pay range for this role is based on the location where the work will be performed and is aligned to one of 3 compensation zones. For other locations not listed, compensation can be discussed with your recruiter during the interview process.</p> <p><span style=\"text-decoration: underline;\">Base Pay Range:</span></p></div><div class=\"title\">Zone 1 (Menlo Park, CA; New York, NY; Bellevue, WA; Washington, DC)</div><div class=\"pay-range\"><span>$166,000</span><span class=\"divider\">&mdash;</span><span>$195,000 USD</span></div></div><div class=\"pay-input\"><div class=\"title\">Zone 2 (Denver, CO; Westlake, TX; Chicago, IL)</div><div class=\"pay-range\"><span>$147,000</span><span class=\"divider\">&mdash;</span><span>$172,000 USD</span></div></div><div class=\"pay-input\"><div class=\"title\">Zone 3 (Lake Mary, FL; Clearwater, FL; Gainesville, FL)</div><div class=\"pay-range\"><span>$130,000</span><span class=\"divider\">&mdash;</span><span>$152,000 USD</span></div></div></div><div class=\"content-conclusion\"><p>Click <a href=\"https://careers.robinhood.com/benefits\" target=\"_blank\">here</a> to learn more about our Total Rewards, which vary by region and entity.</p> <p>If our mission energizes you and you’re ready to build the future of finance, we look forward to seeing your application.</p> <p><strong>AI Usage Disclosure:</strong> Robinhood uses artificial intelligence (AI) tools to support parts of our recruiting process. These tools enhance the efficiency and consistency of our hiring process; however, all hiring decisions are made by our hiring teams.</p> <p>Robinhood provides equal opportunity for all applicants, offers reasonable accommodations upon request, and complies with applicable equal employment and privacy laws. Inclusion is built into how we hire and work—welcoming different backgrounds, perspectives, and experiences so everyone can do their best. Please review the&nbsp;<a href=\"https://careers.robinhood.com/applicantprivacypolicy\" target=\"_blank\">Privacy Policy</a> for your country of application.</p></div>",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-07T22:07:43.786460+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://boards.greenhouse.io/robinhood/jobs/8258305?t=gh_src=&gh_jid=8258305",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-07T22:07:43.786460+00:00",
+      "jd_recovery_at": "2026-10-07T22:07:43.786460+00:00",
+      "enrichment_method": "ats_board_cache",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-07T22:07:43.786460+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4443650351",
@@ -58107,7 +58299,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": false,
@@ -58132,7 +58324,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/java-developer-middle-office-nyc-at-saragossa-4473681620",
       "official_url": "",
-      "description": "",
+      "description": "One of the world's largest fixed-income managers, investing heavily in modernizing its middle-office technology. This is a greenfield engineering effort at a firm managing around $2 trillion in assets. You are working on a genuinely hard problem: building a real-time view of positions and P&L across bonds, derivatives, and private loans, each with its own pricing logic and its own complexity. That is not a maintenance project. That is real engineering at scale. The private credit book is growing fast, and that growth is exactly why this rebuild is happening now. You are not patching legacy systems. You are architecting something designed to last, using modern cloud infrastructure, distributed systems, and AI coding tools as part of your everyday workflow. You will work across the full stack of middle office data. Positions, transactions, P&L, performance. You will build data-intensive, cloud-ready applications that can handle the volume and complexity this book demands. You will use Kafka, REST APIs, relational and NoSQL databases, AWS, Snowflake, and tools like Claude or Copilot to move faster and build better. This is a hybrid role based with one of the deepest fixed-income teams in the world. They specialize across global credit, derivatives, asset-backed finance, real estate, and corporate credit. Compensation is $110,000 to $200,000 depending on where you sit in your career, plus bonus. You bring solid Java, strong fundamentals in OOP and design patterns, and comfort in fast-paced environments where the problems are real and the stakes are high. Ready to build something that actually matters? Get in touch. No up-to-date CV required.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-07T04:46:48.535112+00:00",
@@ -58149,7 +58341,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T22:07:43.786460+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -58158,10 +58350,13 @@
       },
       "linkedin_detail_triage_hash": "283a558e02c76d716ee9",
       "linkedin_detail_deferred_at": "2026-10-07T04:46:48.535112+00:00",
-      "enrichment_status": "deferred",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-07T04:46:48.535112+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "linkedin_detail_attempted_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_fetched_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4415591378",
@@ -58413,10 +58608,11 @@
       },
       "linkedin_detail_triage_hash": "a7e310244b55d4925601",
       "linkedin_detail_deferred_at": "2026-10-06T05:42:20.415919+00:00",
-      "enrichment_status": "deferred",
+      "enrichment_status": "unresolved",
       "source_verified_at": "2026-10-06T05:42:20.415919+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "linkedin_detail_attempted_at": "2026-10-07T22:08:12.952928+00:00",
+      "enrichment_failure_reason": "linkedin_http_network_error"
     },
     {
       "job_id": "4472847721",
@@ -59245,7 +59441,32 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4426762020",
+      "source": "linkedin",
+      "company": "Sigma",
+      "title": "Senior Software Engineer - Backend",
+      "location": "New York, NY",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-backend-at-sigma-4426762020",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-05T02:34:33.300648+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -59270,7 +59491,32 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4426738992",
+      "source": "linkedin",
+      "company": "Sigma",
+      "title": "Staff Software Engineer - Backend",
+      "location": "New York, NY",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/staff-software-engineer-backend-at-sigma-4426738992",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-05T02:34:33.300648+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -59325,7 +59571,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4401363513",
@@ -60507,7 +60753,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -60517,9 +60763,9 @@
       "linkedin_detail_triage_hash": "4d2313897d9dbfcfcfd4",
       "linkedin_detail_deferred_at": "2026-10-07T19:00:16.149681+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4453352643",
@@ -61137,7 +61383,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -61147,9 +61393,9 @@
       "linkedin_detail_triage_hash": "8b8db8bab1e29b91505f",
       "linkedin_detail_deferred_at": "2026-10-07T19:00:16.149681+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4416750353",
@@ -61549,7 +61795,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4473281642",
@@ -61648,7 +61894,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-10-07T19:00:16.149681+00:00",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4408562717",
@@ -61771,7 +62017,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469943670",
@@ -62873,7 +63119,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4474999693",
@@ -62899,7 +63145,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4459238484",
@@ -64157,7 +64403,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471707223",
@@ -64217,7 +64463,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469007513",
@@ -64776,7 +65022,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460077780",
@@ -65207,11 +65453,11 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
       "enrichment_status": "deferred",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4395369602",
@@ -65238,6 +65484,32 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4475487762",
+      "source": "linkedin",
+      "company": "The Estée Lauder Companies Inc.",
+      "title": "Staff Machine Learning Engineer",
+      "location": "New York, NY",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/staff-machine-learning-engineer-at-the-est%C3%A9e-lauder-companies-inc-4475487762",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-07T22:07:43.786460+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469001725",
@@ -65532,7 +65804,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-deal-flow-underwriting-experience-at-theguarantors-4441210431",
       "official_url": "",
-      "description": "",
+      "description": "TheGuarantors is a fintech company helping multifamily owners and operators mitigate leasing risk while expanding access for renters. With a deep understanding of owner, operator, and renter needs, we believe renters deserve better access to the home of their choice and operators deserve greater protection and growth opportunities. That’s why we’re leveraging our real estate expertise and using AI-driven renter underwriting to help operators qualify renters faster while mitigating the financial risk of renter default. With $7B+ in lease value protected, we work with 9 of the country’s top 10 operators, are the #1 lease guarantee provider nationwide, and have consistently been named one of Inc. 5000’s fastest-growing companies, one of Forbes’ Best Startup Employers, and one of Deloitte’s Technology Fast 500 The Role The Senior Software Engineer is responsible for designing, building, and operating mission-critical systems that power our deal and application lifecycle. This role supports our engineering organization by building scalable backend services and modernizing our platform from a monolithic architecture to micro-services. The ideal candidate will bring 5+ years of software engineering experience with strong backend expertise (Node.js/NestJS, TypeScript) and solid distributed-systems fundamentals and will be expected to own features end-to-end from requirements through development, QA, and production, lead technical design discussions, and mentor other engineers. Location This is a hybrid role based in NYC . What You’ll Do Own a slice of the product end-to-end — from requirements through development, QA, and production. Execute day-to-day responsibilities related to building and extending backend services and React frontends within a micro-service architecture with accuracy, timeliness, and consistency. Analyze, review, or maintain services, APIs, and data models to support business needs. Partner with product managers, QA, designers, and engineers across teams to support shared priorities and cross-team projects and ensure alignment. Communicate updates, risks, blockers, and recommendations clearly and proactively. Identify opportunities to improve system reliability, scalability, and developer experience. Use data, judgment, and business context to inform decisions and recommendations. Manage assigned work independently and follow through on commitments, deadlines, and deliverables. Ensure work is completed in accordance with applicable policies, procedures, standards, and regulatory requirements. Perform other role-related responsibilities as assigned and aligned with business needs. Requirements 5+ years of experience in software engineering, with a strong backend focus. Experience with Node.js, NestJS, TypeScript, Go in production, including designing and operating APIs (REST/GraphQL) and relational data models (PostgreSQL). Strong understanding of distributed systems and micro-service architecture, including experience decomposing or migrating away from monolithic systems. Demonstrated ability to manage complex features end-to-end, partner with product and cross-functional stakeholders, and deliver high-quality work in a dynamic business environment. Bachelor's degree in Computer Science or a related field (Master's degree preferred), or equivalent practical experience. Nice to Have Experience working in a fast-paced, high-growth, cross-functional environment. Experience using Node.js, Go, GraphQL, AWS products, Redis, and React. Master's degree in Computer Science or additional training in distributed systems or software architecture. Prior experience in fintech, insurance, or real estate technology. Benefits Opportunities to make an impact within a fast growing company Medical, dental, & vision insurance, beginning day one Health savings account with employer contribution Generous PTO and paid holidays Flexible working hours 401(k) Paid parental leave Company sponsored short and long term disability Flexible spending accounts (healthcare, dependent care, commuter) Competitive salary Base Salary This is an individual contributor role, internally leveled as IC4. The annual U.S. base salary range is $170,000–$205,000. Base salary does not include other forms of compensation or benefits. Individual pay is determined by work location, skills, experience, and other job-related factors, which will be discussed during the hiring process. Stay in Touch Does this role not quite match your skills, but you’re still interested in what we're doing? Stay In Touch and apply to our Dream Job to be one of the first to hear about future opportunities! TheGuarantors is an Equal Opportunity Employer. We celebrate diversity and are committed to an inclusive environment for all.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-07T04:46:48.535112+00:00",
@@ -65549,7 +65821,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T22:07:43.786460+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -65558,10 +65830,13 @@
       },
       "linkedin_detail_triage_hash": "09def40135015886da75",
       "linkedin_detail_deferred_at": "2026-10-07T04:46:48.535112+00:00",
-      "enrichment_status": "deferred",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-07T04:46:48.535112+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "linkedin_detail_attempted_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_fetched_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4456292196",
@@ -66180,7 +66455,7 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4474216587",
@@ -66697,7 +66972,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4467683876",
@@ -66900,7 +67175,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -67500,7 +67775,7 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471527980",
@@ -68999,10 +69274,11 @@
       },
       "linkedin_detail_triage_hash": "dce0200485157afb7b6c",
       "linkedin_detail_deferred_at": "2026-10-06T05:42:20.415919+00:00",
-      "enrichment_status": "deferred",
+      "enrichment_status": "unresolved",
       "source_verified_at": "2026-10-06T05:42:20.415919+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "linkedin_detail_attempted_at": "2026-10-07T22:08:12.952928+00:00",
+      "enrichment_failure_reason": "linkedin_http_network_error"
     },
     {
       "job_id": "4468125296",
@@ -69318,7 +69594,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-vantor-4475853124",
       "official_url": "",
-      "description": "",
+      "description": "Vantor is forging the new frontier of spatial intelligence, helping decision makers and operators navigate what’s happening now and shape what’s coming next. Vantor is a place for problem solvers, changemakers, and go-getters—where people are working together to help our customers see the world differently, and in doing so, be seen differently. Come be part of a mission, not just a job, where you can: Shape your own future, build the next big thing, and change the world. To be eligible for this position, you must be a U.S. Citizen. This position requires an active U.S. Government security clearance, applicants who do not currently hold the required clearance will not be eligible for consideration. Employment for cleared roles is contingent upon verification of clearance status. Export Control/ITAR: Certain roles may be subject to U.S. export control laws, requiring U.S. person status as defined by 8 U.S.C. 1324b(a)(3). Please review the job details below. This position requires the ability to obtain a U.S. Government Security Clearance at the TS/SCI level. Vantor has an immediate opening for a Full Stack Software Developer/Engineer to join our team supporting a mission to solve unique and challenging problems for national security. We are seeking an engineer who embraces technology and thrives on the art of the possible. The ideal candidate will be part of a small multi-disciplinary software team and will have the unique opportunity to interact directly with users and other technologists to ensure solutions, development and tools meet the needs of the customer. Responsibilities Develop enabling software solutions using a variety of languages that address real world user requirements; writes and debugs custom code and creates user documentation. Develop, test, and maintain robust, scalable, high-quality software for our technology stack. Collaborate with the program manager, engineers, and other stakeholders to define software requirements and specifications. Collaborate with cross-functional teams to define, design, and demo new features. Design and implement efficient, flexible solutions that can scale for mission critical applications. Ensure the performance, quality, and responsiveness of applications. Communicate with multidisciplinary teams and articulate technical concepts and ideas effectively. Work closely with the DevSecOps team to deploy new features and maintain system stability. Identify and correct bottlenecks and fix bugs. Write robust test suites to ensure high-quality code. Participate in code reviews and mentor junior developers. Minimum Qualifications U.S. citizenship with ability to obtain and maintain a TS/SCI clearance. Bachelor's degree in computer science, engineering or a related field with 5+ years of dDeveloping custom software solutions, performing data extraction, manipulation, and visualization with proficiency in Javascript, Java, and/or Python. Strong proficiency in JavaScript/TypeScript and experience with front-end frameworks such as React or Angular Understanding of fundamental design principles behind a scalable application. Ability to implement automated testing platforms and unit tests. Proficient understanding of code versioning tools, such as Git. Capable of working effectively with a geographically distributed ops & development team Communicates effectively with customers and team in written and oral forums Willingness to work onsite 50% or as needs dictate Preferred Qualifications Strong Linux skills and familiarity with cloud architectures, AWS, C2S, Openstack, etc Familiarity with Docker and Kubernetes An adaptable and solution centric mindset that embraces technology enablers Familiarity with common industry software tools, concepts, and DevSecOps Experience working with open-source resources in a government computing environment #cjpost Pay Transparency: To support pay transparency, Vantor includes salary ranges in all U.S. job postings. Starting pay for this role will fall within the listed range and will be based on factors such as experience, qualifications, skills, location, and market conditions. Candidates who meet the minimum requirements for the role should not expect to receive compensation at the top of the range. The listed range reflects the expected pay for this position, and final offers will be determined based on each candidate’s experience, expertise, and alignment with the role. The base pay for this position within the Washington, DC metropolitan area is: $116,000.00 - $154,000.00 - $169,400.00 annually. For all other states, we use geographic cost of labor as an input to develop market-driven ranges for our roles, and as such, each location where we hire may have a different range. Benefits: Vantor offers a competitive total rewards package that goes beyond the standard, including a robust 401(k) with company match, mental health resources, and unique perks like student loan repayment assistance, adoption reimbursement and pet insurance to support all aspects of your life. You can find more information on our benefits at: https://www.Vantor.com/careers The application window is three days from the date the job is posted and will remain posted until a qualified candidate has been identified for hire. If the job is reposted regardless of reason, it will remain posted three days from the date the job is reposted and will remain reposted until a qualified candidate has been identified for hire. The date of posting can be found on Vantor's Career page at the top of each job posting. To apply, submit your application via Vantor's Career page. EEO Policy: Vantor is an equal opportunity employer committed to an inclusive workplace. We believe in fostering an environment where all team members feel respected, valued, and encouraged to share their ideas. All qualified applicants will receive consideration for employment without regard to race, color, religion, national origin, sex, gender identity, sexual orientation, disability, protected veteran status, age, or any other characteristic protected by law.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-06T05:42:20.415919+00:00",
@@ -69344,10 +69620,13 @@
       },
       "linkedin_detail_triage_hash": "3be64c2acfa12578036d",
       "linkedin_detail_deferred_at": "2026-10-06T05:42:20.415919+00:00",
-      "enrichment_status": "deferred",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-06T05:42:20.415919+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "linkedin_detail_attempted_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_fetched_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4454843059",
@@ -70784,7 +71063,33 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4475446709",
+      "source": "linkedin",
+      "company": "WaferWire Cloud Technologies",
+      "title": "Senior Backend Software Engineer | (Salt Lake City, UT or Phoenix, AZ or Sunrise, FL)",
+      "location": "Salt Lake City, UT",
+      "posted_date": "2026-10-07",
+      "aggregator_posted_date": "2026-10-07",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-backend-software-engineer-salt-lake-city-ut-or-phoenix-az-or-sunrise-fl-at-waferwire-cloud-technologies-4475446709",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-07T22:07:43.786460+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -71788,7 +72093,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4296093604",
@@ -71917,7 +72222,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4472098262",
@@ -72249,7 +72554,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-wolfe-llc-4474415952",
       "official_url": "",
-      "description": "",
+      "description": "Wolfe is a Pittsburgh-based FinTech company building the next generation of financial products, and we are actively embedding AI across our product, our internal processes, and the way our teams work day-to-day. As a Software Engineer on our Merchant Solutions team, you'll build and maintain the front-end and back-end features that power the products our merchants and their customers rely on, turning UI/UX designs into fast, dependable web experiences. You'll work alongside engineers who use AI-assisted tooling as a daily part of how we ship, and you'll grow your craft with guidance from senior engineers on the team. We're looking for an early-career engineer who is eager to learn, takes ownership of well-defined work, and cares about writing clean, maintainable code. A 5-day on-site presence at our Pittsburgh, PA office is strongly preferred. The job title at hire will be either Associate Software Engineer or Software Engineer, depending on your experience and expertise.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-07T04:46:48.535112+00:00",
@@ -72273,12 +72578,15 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-07T19:02:23.586270+00:00",
+      "official_search_attempted_at": "2026-10-07T22:07:43.786460+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "linkedin_detail_attempted_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_fetched_at": "2026-10-07T22:08:12.952928+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4453734725",
@@ -72617,12 +72925,13 @@
       "first_seen": "2026-10-07T19:00:16.149681+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer"
+          "software engineer",
+          "backend engineer"
         ]
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
+      "source_verified_at": "2026-10-07T22:07:43.786460+00:00",
       "verified_this_run": true
     },
     {
@@ -73782,7 +74091,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4475846850",
