@@ -208,12 +208,14 @@ For every discovery run, the publication chain is:
 
 1. The owning workflow checks out current `main` and runs its owned source collection and pipeline.
 2. It commits its output tree and source/recovery artifacts, then retries a non-fast-forward push against current `main`.
-3. `reconcile-pages.yml` runs on relevant output/config pushes and after discovery workflows complete, including failed workflows.
-4. Reconciliation reads the latest committed stores, rebuilds coverage, dashboard, and health, and deploys `public/` to Pages.
+3. `reconcile-pages.yml` runs on relevant code/config pushes and after Board, Official, or Syncareer workflows complete on main, including failures. Board does not dispatch or wait for publishing. A two-hour publication recovery schedule reads committed data without scraper runs, LLM scoring, or paid identity assessments.
+4. Reconciliation reads the latest committed stores and rebuilds coverage, dashboard, and health outside the Pages environment, with a 20-minute job limit. It uploads `public/` and attempts bounded, best-effort pending-company/identity cache persistence before a separate Pages deployment job. An auxiliary cache push failure is visible in the build log and does not block deployment of a valid artifact. Deployment has a 10-minute job limit and a five-minute action limit. The publication-only `reconcile-pages` concurrency group uses `cancel-in-progress: true`; newer triggers cancel an older run, including environment waits before runner allocation. Runner/action timeouts alone cannot bound those pre-runner waits. Scraping keeps separate concurrency groups and never waits for Pages.
 
 A successful collector or pipeline process is therefore not the same as successful publication. Verify the source/output commit, reconciliation run, Pages deployment, and live JSON when diagnosing missing jobs or stale presentation.
 
 ## Health semantics
+
+Publication freshness is distinct from source health. Both HTML pages embed the same browser-clock check at load, every minute, and on focus/visibility changes. A missing, invalid, more than five minutes future, or more than four hours old build timestamp yields **Stale publication**, an explicit unverified-current-health banner, and snapshot labels instead of green healthy badges. Crossing a Pacific date boundary relabels the Health Today heading as the snapshot day. This check works even when deployment stops and the old page remains served. JSON health values remain the recorded build-time assessment; consumers must check `generated_at`.
 
 The main Health page uses three run states. **Healthy** means required data is usable and expected steps completed without an active failure. **Partial** means an expected search, source, JD, or workflow step failed or became stale while fallback data remains usable. **Failed** means required data is unusable. Overall state is the worst state among Board, Official, Syncareer, LinkedIn, and Indeed; optional Glassdoor appears in Today and Needs attention but does not change Overall. The detailed `Healthy` / `Warning` / `Stale` / `Problem` component status remains in `health.json` for diagnostics alongside each component's `run_state`.
 
@@ -257,3 +259,11 @@ LinkedIn Local shows **Search 429 this run** and **Detail 429 this run** indepen
 ## Matching regression guard
 
 `tests/fixtures/matching_regression_round2.json` records the recent Board 429 population baseline and representative strong early-career, 70s/stretch, Level II, staffing/tech-service, internship, thin/no-JD, and non-software Engineer I cases. `matching_model_comparison_v7_2026-09-13.md` records the apples-to-apples Terra/Sol quality, cost, and latency comparison for the current prompt. Offline sequential-run tests verify cache reuse across prompt/model changes, changed-JD scoring, safe failure fallback, retryability, and failed-only recovery behavior.
+
+### October 6–8, 2026 publication incident
+
+Run #517 (37482834857) created a `github-pages` deployment at 2026-10-06 14:55:26 UTC. Its deployment status remained `waiting`, with no runner steps, until cancellation on October 8 at 19:26:12 UTC. Runs #518–534 were replaced while pending; #535 started at 19:26:16 UTC and successfully deployed by 19:27:24 UTC. Live `health.json` then reported `generated_at=2026-10-08T19:27:11.888727+00:00`. The blockage preceded dashboard generation and the deploy-pages action, while scrapers continued committing stores.
+
+The confirmed amplification cause was workflow-level `cancel-in-progress: false`: #517 retained the concurrency slot while newer runs replaced only the pending run. Environment API inspection showed only a main-branch policy, no required reviewers or wait timer. The evidence does not establish GitHub's internal cause for the initial environment wait. Do not claim an approval/configuration problem or scraper failure. The fix isolates environment waiting to deployment, replaces obsolete publication runs, and retries independently of scraping.
+
+If a future run survives normal cancellation, use `gh run cancel RUN_ID --force` and inspect the environment/deployment statuses before dispatching recovery. Repeated pre-runner waits despite replacement need GitHub-side investigation; a job timeout cannot guarantee recovery from a platform outage. Verify the live JSON timestamp as well as the successful deployment.

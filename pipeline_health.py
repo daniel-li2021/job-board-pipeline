@@ -1427,8 +1427,9 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
     """
     page = (
         '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-        f'<title>Pipeline Health · {esc(report["overall"])}</title><style>{style}</style><body><main>'
-        f'<div class="top"><h1>Pipeline Health</h1><span class="state state-{esc(report["overall"]).lower()}">{esc(report["overall"])}</span></div>'
+        f'<title>Pipeline Health · {esc(report["overall"])}</title><style>{style}</style><body data-generated-at="{esc(report["generated_at"])}"><main>'
+        f'<div class="top"><h1>Pipeline Health</h1><span id="healthOverall" class="state state-{esc(report["overall"]).lower()}">{esc(report["overall"])}</span></div>'
+        '<p id="publicationFreshness" class="strip" role="status" aria-live="polite"></p>'
         f'<p class="muted">Generated {esc(_display_time(report["generated_at"]))} · '
         '<a href="index.html">Dashboard</a> · <a href="health.json">JSON</a> · '
         '<a href="health-history.json">History</a></p>'
@@ -1444,6 +1445,8 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
         f'<p><strong>Local Mac schedule:</strong> {esc(schedule_text)}</p>'
         '<p><strong>Raw diagnostics</strong> · Subcomponents, request limits, enrichment, retry state, and recovery methods remain in the JSON report. Stored unresolved-job reasons are historical job outcomes, not HTTP failures in the current run.</p>'
         f'<pre>{esc(json.dumps(diagnostics, indent=2, ensure_ascii=False))}</pre>'
-        '</details></main></body></html>'
+        '</details></main><script>'
+        + Path(__file__).with_name("dashboard_freshness.js").read_text(encoding="utf-8")
+        + '</script></body></html>'
     )
     (public / "health.html").write_text(page, encoding="utf-8")

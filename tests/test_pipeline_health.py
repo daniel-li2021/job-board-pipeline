@@ -274,7 +274,8 @@ class PipelineHealthTests(unittest.TestCase):
             self.assertLess(page.index("LinkedIn Local"), page.index("<h2>Today</h2>"))
             self.assertLess(page.index("<h2>Today</h2>"), page.index("Local Mac schedule"))
             self.assertIn("9:00 PM PT, 26 September", page)
-            self.assertNotIn("2026-09-27T04:00:00+00:00", page)
+            self.assertIn('data-generated-at="2026-09-27T04:00:00+00:00"', page)
+            self.assertNotIn("2026-09-27T04:00:00+00:00", page.replace('data-generated-at="2026-09-27T04:00:00+00:00"', ""))
 
     def test_execution_elapsed_and_local_recovery_counts_do_not_overlap(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

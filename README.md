@@ -134,7 +134,7 @@ AWS EventBridge Scheduler dispatches the independent workflows at these
 | Official Careers | 7:30 AM | 4:30 PM |
 
 Reconcile + Pages runs after every completed discovery workflow so failures are visible in health reporting.
-Its push and manual triggers remain available; it has no redundant timer.
+Its push and manual triggers remain available. A publication-only recovery build runs every two hours from committed snapshots, with no scraper or LLM scoring run and no paid identity assessments. Publication uses its own latest-run-wins concurrency group: a newer trigger cancels an older waiting run. Generation has a 20-minute limit and runs outside the Pages environment; the separate deployment has a 10-minute job limit and a five-minute Pages action limit. Browser clocks mark dashboard and Health publication stale after four hours, even if no new build succeeds. Saved healthy badges then become snapshot results, and current scraper health is explicitly unverified.
 
 Each discovery workflow is independently runnable with `workflow_dispatch`.
 

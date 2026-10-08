@@ -10,6 +10,31 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class WorkflowContractTests(unittest.TestCase):
+    def test_publication_can_replace_waiting_deployments_without_blocking_scrapers(self):
+        import yaml
+
+        pages = yaml.load((ROOT / ".github/workflows/reconcile-pages.yml").read_text(), Loader=yaml.BaseLoader)
+        self.assertEqual("true", pages["concurrency"]["cancel-in-progress"])
+        build, deploy = pages["jobs"]["reconcile"], pages["jobs"]["deploy"]
+        self.assertNotIn("environment", build)
+        self.assertEqual("reconcile", deploy["needs"])
+        self.assertEqual("github-pages", deploy["environment"]["name"])
+        self.assertEqual("20", build["timeout-minutes"])
+        self.assertEqual("10", deploy["timeout-minutes"])
+        self.assertEqual("300000", deploy["steps"][-1]["with"]["timeout"])
+        self.assertEqual(["completed"], pages["on"]["workflow_run"]["types"])
+        self.assertEqual(["main"], pages["on"]["workflow_run"]["branches"])
+        self.assertIn("Board job alert", pages["on"]["workflow_run"]["workflows"])
+        self.assertEqual("17 */2 * * *", pages["on"]["schedule"][0]["cron"])
+        generation = next(step for step in build["steps"] if step["name"] == "Reconcile coverage and generate dashboard")
+        self.assertIn("github.event_name != 'schedule'", generation["env"]["OPENAI_API_KEY"])
+        for name in ("board-jobs.yml", "official-careers.yml", "daily-jobs.yml"):
+            workflow = yaml.load((ROOT / ".github/workflows" / name).read_text(), Loader=yaml.BaseLoader)
+            self.assertNotEqual(pages["concurrency"]["group"], workflow["concurrency"]["group"])
+            for job in workflow["jobs"].values():
+                self.assertNotIn("environment", job)
+                self.assertFalse(any("deploy-pages" in step.get("uses", "") for step in job["steps"]))
+
     def test_board_dispatch_collects_indeed_before_matching_and_persists_snapshot(self):
         workflow = (ROOT / ".github/workflows/board-jobs.yml").read_text()
         self.assertLess(workflow.index("python3 remote_indeed.py"),
