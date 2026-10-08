@@ -3,28 +3,6 @@
   "jobs": [
     {
       "company": "JPMorgan Chase",
-      "title": "Software Engineer III (Full Stack Java)",
-      "location": "New York, NY, United States",
-      "source": "jpmorgan_chase_official_careers",
-      "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210749510",
-      "source_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210749510",
-      "job_id": "210749510",
-      "requisition_id": "",
-      "description": "Job Description\nWe have an exciting and rewarding opportunity for you to take your software engineering career to the next level.\nAs a Software Engineer III at JPMorganChase within the Business Banking Tech, Consumer & Community Banking line of business, you serve as a seasoned member of an agile team to design and deliver trusted market-leading technology products in a secure, stable, and scalable way. You are responsible for carrying out critical technology solutions across multiple technical areas within various business functions in support of the firm’s business objectives.\nJob responsibilities\nExecutes software solutions, design, development, and technical troubleshooting with ability to think beyond routine or conventional approaches to build solutions or breakdown technical problems\nCreates secure and high-quality production code and maintains algorithms that run synchronously with appropriate systems\nLeverages enterprise-authorized AI coding assist tools within the work environment to improve code quality, delivery speed, and productivity across complex deliverables (e.g., code generation/refactoring, unit test creation, documentation), while validating outputs through peer review, automated testing, and secure coding standards; contributes learnings and reusable patterns to improve broader team effectiveness.\nApplies knowledge of tools within the Software Development Life Cycle toolchain, including enterprise-authorized AI-assisted development and automation capabilities, to improve the value realized by automation.\nProduces architecture and design artifacts for complex applications while being accountable for ensuring design constraints are met by software code development\nGathers, analyzes, synthesizes, and develops visualizations and reporting from large, diverse data sets in service of continuous improvement of software applications and systems\nProactively identifies hidden problems and patterns in data and uses these insights to drive improvements to coding hygiene and system architecture",
-      "first_seen": "2026-09-24T23:45:15.190111+00:00",
-      "application_url": "",
-      "official_search_status": "",
-      "official_search_attempted_at": "",
-      "recovery_methods": "",
-      "recovery_candidates": "",
-      "recovery_triage": "",
-      "recovery_input_hash": "",
-      "recovery_status": "candidate",
-      "remote_recovery": true,
-      "enrichment_method": "remote_exact_peer"
-    },
-    {
-      "company": "JPMorgan Chase",
       "title": "Software Engineer III - Full Stack/Java/ React",
       "location": "Palo Alto, CA, United States",
       "source": "jpmorgan_chase_official_careers",
@@ -1202,7 +1180,7 @@
     {
       "company": "Netflix",
       "title": "AI Engineer 6 - AI Foundation & Tooling, Ads Platform",
-      "location": "Remote, United States",
+      "location": "Los Gatos,California,United States of America",
       "source": "netflix_official_careers",
       "official_url": "https://explore.jobs.netflix.net/careers/job/790298014263",
       "source_url": "https://explore.jobs.netflix.net/careers/job/790298014263",
@@ -2874,7 +2852,7 @@
     {
       "company": "Meta",
       "title": "Security Engineer - Applied AI",
-      "location": "Menlo Park, CA; New York, NY",
+      "location": "Menlo Park, CA; Washington, DC; New York, NY",
       "source": "meta_official_careers",
       "official_url": "https://www.metacareers.com/jobs/1383588067176943",
       "source_url": "https://www.metacareers.com/jobs/1383588067176943",
@@ -3054,6 +3032,34 @@
       "enrichment_method": "dedicated_official"
     },
     {
+      "company": "Meta",
+      "title": "Software Engineer, AI Kernels & Performance Optimization — MTIA Software",
+      "location": "Menlo Park, CA",
+      "source": "meta_official_careers",
+      "official_url": "https://www.metacareers.com/jobs/1442149171184618",
+      "source_url": "https://www.metacareers.com/jobs/1442149171184618",
+      "job_id": "1442149171184618",
+      "requisition_id": "",
+      "description": "Meta designs and deploys its own AI systems. MTIA — the Meta Training and Inference Accelerator — is Meta's family of in-house AI accelerator ASICs, running recommendation and ranking workloads in production across Meta's data centers today and expanding into generative AI inference and training as successive silicon generations land (see [https://bit.ly/metamtia](https://bit.ly/metamtia)). The MTIA Software team is part of the **AI & Compute Foundation (ACF)** organization within Meta Infrastructure. Because the hardware is ours, the software is ours too: we build the entire stack a chip vendor would normally supply — compiler and LLVM toolchain, runtime, kernel authoring frameworks and libraries, developer tooling, and deep PyTorch integration — and we co-design it with the silicon teams generation over generation. Within that stack, the AI kernel and optimization software development team drives the layer where architecture meets arithmetic. Our mission is performance *and* programmability at scale: hit roofline enablements on the workloads that matter, and make kernel authoring accessible enough that the whole organization can close coverage gaps without funneling every problem through a handful of experts. We do this by shipping high-performance kernel libraries with broad PyTorch operator coverage, by building the C++ and Python kernel authoring frameworks and DSL surfaces that others build on, and by writing production kernels against new architectures long before first silicon — turning hardware proposals into measured roofline evidence while the design can still change. We are hiring an experienced kernel and performance engineer to take on this work at a senior level. You will own the performance of workloads that serve billions of people, from the innermost loop of a fused attention kernel to the numerics decisions that determine whether a model converges. You will read hardware specifications and RTL-adjacent documentation as easily as you read code, and you will be expected to say clearly when the hardware — not the software — is the problem. Your findings will change what gets built next. This is a hands-on engineering role with wide latitude. The problems are not incremental. ## What you'll work on - **Roofline-level kernels.** GEMM and attention variants, normalization, collectives, elementwise and reduction fusions, sparse and quantized paths — implemented against novel architectural features (matrix engines, on-chip reduction fabrics, software-managed memory hierarchies) and tuned until the remaining gap to the machine's limit is explainable in a sentence. - **Numerics under precision constraints.** Low-precision formats (FP8, MX-style block-scaled types, integer quantization) where the difference between a correct scale choice and a plausible one is several dB of signal, and where the fix has to work on silicon that has already been taped out. - **Kernel authoring frameworks.** Templateized, composable C++ kernel SDKs in the spirit of CUTLASS, Python DSLs in the spirit of Triton and CuTe, and the compiler-facing interfaces that let automated codegen reach performance that used to require a specialist. - **Pre-silicon and bring-up.** Kernels on simulators and emulators, validating architectural features and rooflines before tapeout, then first-light bring-up on real parts. - **Software mitigations for hardware reality.** Every chip ships with something you wish were different. Finding the workaround that recovers most of the lost performance — and generalizing it so nobody rediscovers it — is core to the job.",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00",
+      "application_url": "https://www.metacareers.com/jobs/1477723764162264",
+      "official_search_status": "resolved",
+      "official_search_attempted_at": "",
+      "recovery_methods": {},
+      "recovery_candidates": "",
+      "recovery_triage": "",
+      "recovery_input_hash": "",
+      "recovery_status": "candidate",
+      "remote_recovery": true,
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-08T06:34:00.762458+00:00",
+      "jd_recovery_at": "2026-10-08T06:34:00.762458+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-08T06:34:00.762458+00:00"
+    },
+    {
       "company": "Google",
       "title": "Software Engineer III, AI/ML GenAI, Google Cloud Compute Infrastructure",
       "location": "Sunnyvale, CA, USA",
@@ -3202,252 +3208,11 @@
     }
   ],
   "meta": {
-    "jd_recovery_at": "2026-10-07T23:09:05.133312+00:00"
+    "jd_recovery_at": "2026-10-08T06:34:00.762458+00:00"
   },
   "source": "remote_recovery",
   "count": 148,
   "attempts": {
-    "meta_official_careers|id|3627905054044796": {
-      "source": "meta_official_careers",
-      "job_id": "3627905054044796",
-      "company": "Meta",
-      "title": "Product Risk Program Manager",
-      "location": "Austin, TX; Menlo Park, CA; Seattle, WA; New York, NY",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "meta_official_careers|id|3662984760522531": {
-      "source": "meta_official_careers",
-      "job_id": "3662984760522531",
-      "company": "Meta",
-      "title": "Product Risk Program Manager",
-      "location": "Austin, TX; Menlo Park, CA; New York, NY; Remote, US",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "meta_official_careers|id|1640437477742870": {
-      "source": "meta_official_careers",
-      "job_id": "1640437477742870",
-      "company": "Meta",
-      "title": "Product Policy Manager, GenAI",
-      "location": "Austin, TX; Menlo Park, CA; Washington, DC; New York, NY; San Francisco, CA",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "meta_official_careers|id|1483569256948762": {
-      "source": "meta_official_careers",
-      "job_id": "1483569256948762",
-      "company": "Meta",
-      "title": "Digital Design Engineer, SoC Chassis",
-      "location": "Sunnyvale, CA; Redmond, WA; Austin, TX",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "meta_official_careers|id|2180490782513668": {
-      "source": "meta_official_careers",
-      "job_id": "2180490782513668",
-      "company": "Meta",
-      "title": "Software Engineer Intern, Machine Learning (PhD)",
-      "location": "Sunnyvale, CA; Bellevue, WA; Redmond, WA; Menlo Park, CA; Seattle, WA; Burlingame, CA; New York, NY",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00",
-      "recovery_methods": {
-        "candidate:b5cfe4fff8": {
-          "input_hash": "17fd3e8be510f258356e",
-          "attempted_at": "2026-10-07T19:02:23.586270+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "4cd05db54ee5d2c8caed",
-          "attempted_at": "2026-10-07T19:02:23.586270+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.68,
-        "delta": 0,
-        "reason": "ML internship fits; PhD eligibility is uncertain."
-      },
-      "recovery_input_hash": "654a5df40350d53ee394",
-      "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00"
-    },
-    "meta_official_careers|id|945520495299801": {
-      "source": "meta_official_careers",
-      "job_id": "945520495299801",
-      "company": "Meta",
-      "title": "Software Engineer Intern, Systems and Infrastructure (PhD)",
-      "location": "Sunnyvale, CA; Bellevue, WA; Redmond, WA; Menlo Park, CA; Seattle, WA; Burlingame, CA; New York, NY",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00",
-      "recovery_methods": {
-        "candidate:fbf79f34b5": {
-          "input_hash": "d31a6f1ae89ac0db596f",
-          "attempted_at": "2026-10-07T19:02:23.586270+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "01e76c3b640a6fbf157a",
-          "attempted_at": "2026-10-07T19:02:23.586270+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.67,
-        "delta": 0,
-        "reason": "Systems internship fits; PhD eligibility is uncertain."
-      },
-      "recovery_input_hash": "112114db9ac4556dfbc4",
-      "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00"
-    },
-    "meta_official_careers|id|1633096478817942": {
-      "source": "meta_official_careers",
-      "job_id": "1633096478817942",
-      "company": "Meta",
-      "title": "Data Scientist Intern, Product Analytics (Summer 2027)",
-      "location": "Menlo Park, CA; New York, NY",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "meta_official_careers|id|1077907561662629": {
-      "source": "meta_official_careers",
-      "job_id": "1077907561662629",
-      "company": "Meta",
-      "title": "Partner Solutions Manager, Tech Provider Ecosystem",
-      "location": "Menlo Park, CA; New York, NY",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "meta_official_careers|id|1944758836212483": {
-      "source": "meta_official_careers",
-      "job_id": "1944758836212483",
-      "company": "Meta",
-      "title": "Silicon Partnerships Manager",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "meta_official_careers|id|1081419701178346": {
-      "source": "meta_official_careers",
-      "job_id": "1081419701178346",
-      "company": "Meta",
-      "title": "Program Manager, Product Immersion & Testing",
-      "location": "Austin, TX; Menlo Park, CA; New York, NY; San Francisco, CA",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "meta_official_careers|id|1462005355845876": {
-      "source": "meta_official_careers",
-      "job_id": "1462005355845876",
-      "company": "Meta",
-      "title": "Associate General Counsel, Product (Business Agents - Paid Messaging)",
-      "location": "San Francisco, CA",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "meta_official_careers|id|5071333019759608": {
-      "source": "meta_official_careers",
-      "job_id": "5071333019759608",
-      "company": "Meta",
-      "title": "Mechatronics Engineer, Robotics (Mechanical)",
-      "location": "Redmond, WA",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "meta_official_careers|id|1389166646706027": {
-      "source": "meta_official_careers",
-      "job_id": "1389166646706027",
-      "company": "Meta",
-      "title": "Contract Manufacturing Sourcing Manager, Reality Labs",
-      "location": "Sunnyvale, CA; Redmond, WA",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "meta_official_careers|id|1952991802037374": {
-      "source": "meta_official_careers",
-      "job_id": "1952991802037374",
-      "company": "Meta",
-      "title": "Software Engineering Intern",
-      "location": "Bellevue, WA; Menlo Park, CA; Seattle, WA; New York, NY",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00",
-      "recovery_methods": {
-        "candidate:30bb3e92c4": {
-          "input_hash": "2df4f3e84502ae6d5d52",
-          "attempted_at": "2026-10-07T19:02:23.586270+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "5e1df74f81c9c9cc9329",
-          "attempted_at": "2026-10-07T19:02:23.586270+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.92,
-        "delta": 5,
-        "reason": "Software engineering internship strongly fits early career."
-      },
-      "recovery_input_hash": "aa03cf54b0e6f655f1cf",
-      "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00"
-    },
-    "bloomberg_official_careers|id|45112": {
-      "source": "bloomberg_official_careers",
-      "job_id": "45112",
-      "company": "Bloomberg",
-      "title": "Senior Data Management Professional - Data Engineering (Data AI)",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "bloomberg_official_careers|id|45069": {
-      "source": "bloomberg_official_careers",
-      "job_id": "45069",
-      "company": "Bloomberg",
-      "title": "Senior Software Engineer - CSP Voice Platform",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "bloomberg_official_careers|id|45073": {
-      "source": "bloomberg_official_careers",
-      "job_id": "45073",
-      "company": "Bloomberg",
-      "title": "Senior Software Engineer - Customer Distribution Infrastructure",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "disney_official_careers|id|10161120": {
-      "source": "disney_official_careers",
-      "job_id": "10161120",
-      "company": "Disney",
-      "title": "Lead Data Analyst, UX Analytics",
-      "location": "Santa Monica, California / San Francisco, California",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "disney_official_careers|id|10161704": {
-      "source": "disney_official_careers",
-      "job_id": "10161704",
-      "company": "Disney",
-      "title": "Creative Product Solutions Manager",
-      "location": "New York, New York / Santa Monica, California",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
-    "netflix_official_careers|id|jr42434": {
-      "source": "netflix_official_careers",
-      "job_id": "JR42434",
-      "company": "Netflix",
-      "title": "Software Engineer (L5) - Traffic Engineering",
-      "location": "Los Gatos,California,United States of America",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00",
-      "recovery_triage": {
-        "action": "skip",
-        "priority": "low",
-        "confidence": 0.96,
-        "delta": -7,
-        "reason": "L5 title indicates senior-level scope."
-      },
-      "recovery_input_hash": "19b770a9028b2833dbc2"
-    },
-    "two_sigma_official_careers|id|14298": {
-      "source": "two_sigma_official_careers",
-      "job_id": "14298",
-      "company": "Two Sigma",
-      "title": "Quantitative Researcher - Quantitative Macro & Fixed Income",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-06T23:46:56.384399+00:00"
-    },
     "meta_official_careers|id|1418193360437179": {
       "source": "meta_official_careers",
       "job_id": "1418193360437179",
@@ -3484,7 +3249,7 @@
       },
       "recovery_input_hash": "f393236cee427c9e8763",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00"
+      "official_search_attempted_at": "2026-10-08T06:34:00.762458+00:00"
     },
     "meta_official_careers|id|1467085388659048": {
       "source": "meta_official_careers",
@@ -3550,30 +3315,209 @@
       },
       "recovery_input_hash": "214a8ae73feff111fab7"
     },
-    "syncareer|id|8e55d556222da27a707831b7f6f30104": {
-      "source": "syncareer",
-      "job_id": "8e55d556222da27a707831b7f6f30104",
-      "company": "Capgemini",
-      "title": "Autonomous Vehicle Embedded Software Engineer",
-      "location": "Mendon, Utah, United States",
-      "first_seen": "2026-10-06T23:51:12.997625+00:00",
+    "apple_official_careers|id|200687803-3401": {
+      "source": "apple_official_careers",
+      "job_id": "200687803-3401",
+      "company": "Apple",
+      "title": "Process Technician",
+      "location": "San Francisco Bay Area, United States of America",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
+    },
+    "meta_official_careers|id|1721414708926696": {
+      "source": "meta_official_careers",
+      "job_id": "1721414708926696",
+      "company": "Meta",
+      "title": "Software Engineer, Embedded Systems",
+      "location": "Menlo Park, CA; New York, NY",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00",
       "recovery_methods": {
+        "candidate:1f2e89def8": {
+          "input_hash": "70211babeab25a5fa77d",
+          "attempted_at": "2026-10-08T06:34:00.762458+00:00",
+          "outcome": "no_match"
+        },
         "generic_search": {
-          "input_hash": "27bc2247b42de843ee71",
-          "attempted_at": "2026-10-07T19:02:23.586270+00:00",
+          "input_hash": "b1074670206305dc01fe",
+          "attempted_at": "2026-10-08T06:34:00.762458+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.87,
+        "delta": 4,
+        "reason": "Software engineering role; embedded systems are relevant"
+      },
+      "recovery_input_hash": "606a3a9edefb239e2152",
+      "official_search_status": "deferred",
+      "official_search_attempted_at": "2026-10-08T06:34:00.762458+00:00"
+    },
+    "meta_official_careers|id|2419224192216550": {
+      "source": "meta_official_careers",
+      "job_id": "2419224192216550",
+      "company": "Meta",
+      "title": "Software Engineer, HW/SW Co-Design",
+      "location": "Bellevue, WA; Menlo Park, CA; New York, NY",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00",
+      "recovery_methods": {
+        "candidate:369bc3f750": {
+          "input_hash": "92e95bc0798fb20af601",
+          "attempted_at": "2026-10-08T06:34:00.762458+00:00",
+          "outcome": "no_match"
+        },
+        "generic_search": {
+          "input_hash": "2b1a57a911d2594a6601",
+          "attempted_at": "2026-10-08T06:34:00.762458+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_triage": {
         "action": "recover",
         "priority": "normal",
-        "confidence": 0.73,
+        "confidence": 0.76,
         "delta": 0,
-        "reason": "Embedded software is relevant; seniority unspecified."
+        "reason": "Software role with hardware co-design specialization"
       },
-      "recovery_input_hash": "fe8d5ff7957dec9618be",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-07T23:09:05.133312+00:00"
+      "recovery_input_hash": "01147a95e37f7b23eac9",
+      "official_search_status": "deferred",
+      "official_search_attempted_at": "2026-10-08T06:34:00.762458+00:00"
+    },
+    "meta_official_careers|id|2619300371824985": {
+      "source": "meta_official_careers",
+      "job_id": "2619300371824985",
+      "company": "Meta",
+      "title": "Strategic Partner Manager, Wearables",
+      "location": "Menlo Park, CA; New York, NY",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
+    },
+    "meta_official_careers|id|4624255451136138": {
+      "source": "meta_official_careers",
+      "job_id": "4624255451136138",
+      "company": "Meta",
+      "title": "Program Manager, Product Data Operations",
+      "location": "Menlo Park, CA; Remote, US",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
+    },
+    "meta_official_careers|id|1115947154295986": {
+      "source": "meta_official_careers",
+      "job_id": "1115947154295986",
+      "company": "Meta",
+      "title": "Product Manager, Central Security",
+      "location": "Bellevue, WA; Menlo Park, CA; Washington, DC; New York, NY",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
+    },
+    "meta_official_careers|id|1951742679122711": {
+      "source": "meta_official_careers",
+      "job_id": "1951742679122711",
+      "company": "Meta",
+      "title": "Research Scientist, Server Demand",
+      "location": "Bellevue, WA; Menlo Park, CA; Seattle, WA",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
+    },
+    "meta_official_careers|id|1124800666774637": {
+      "source": "meta_official_careers",
+      "job_id": "1124800666774637",
+      "company": "Meta",
+      "title": "Hardware Systems Engineer",
+      "location": "Austin, TX; Menlo Park, CA",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00",
+      "recovery_triage": {
+        "action": "skip",
+        "priority": "low",
+        "confidence": 0.91,
+        "delta": -7,
+        "reason": "Hardware systems role, not software or AI"
+      },
+      "recovery_input_hash": "48c1b545dfc73c71a3c4"
+    },
+    "meta_official_careers|id|1850153969751238": {
+      "source": "meta_official_careers",
+      "job_id": "1850153969751238",
+      "company": "Meta",
+      "title": "Digital Design Engineer, Interconnect",
+      "location": "Sunnyvale, CA; Redmond, WA; Austin, TX",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
+    },
+    "meta_official_careers|id|933743939458082": {
+      "source": "meta_official_careers",
+      "job_id": "933743939458082",
+      "company": "Meta",
+      "title": "Battery Product Design Engineer",
+      "location": "Sunnyvale, CA; Redmond, WA",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
+    },
+    "meta_official_careers|id|936328242521628": {
+      "source": "meta_official_careers",
+      "job_id": "936328242521628",
+      "company": "Meta",
+      "title": "Associate General Counsel, Product (WhatsApp)",
+      "location": "Menlo Park, CA; San Francisco, CA",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
+    },
+    "meta_official_careers|id|1413600470222789": {
+      "source": "meta_official_careers",
+      "job_id": "1413600470222789",
+      "company": "Meta",
+      "title": "Gigawatt Site Project Director, Data Centers",
+      "location": "Menlo Park, CA; Bowling Green, OH; New Albany, OH",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
+    },
+    "meta_official_careers|id|2185283202380208": {
+      "source": "meta_official_careers",
+      "job_id": "2185283202380208",
+      "company": "Meta",
+      "title": "Data Center Technician, Intern",
+      "location": "Los Lunas, NM; Rayville, LA; Fort Worth, TX; New Albany, OH; Huntsville, AL",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
+    },
+    "meta_official_careers|id|944334121595970": {
+      "source": "meta_official_careers",
+      "job_id": "944334121595970",
+      "company": "Meta",
+      "title": "Fleet Operations Manager, Data Center Infrastructure",
+      "location": "Los Lunas, NM; Sarpy County, NE; Mesa, AZ; Ashburn, VA; Rayville, LA; Montgomery, AL; Prineville, OR; Lebanon, IN; Bowling Green, OH; Cedar Rapids, IA; DeKalb, IL; New Albany, OH; Tulsa, OK; Huntsville, AL; Eagle Mountain, UT",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
+    },
+    "meta_official_careers|id|1990053158370397": {
+      "source": "meta_official_careers",
+      "job_id": "1990053158370397",
+      "company": "Meta",
+      "title": "Automation Reliability & Sustaining Operations Engineer",
+      "location": "Kansas City, MO",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
+    },
+    "meta_official_careers|id|2623937954716288": {
+      "source": "meta_official_careers",
+      "job_id": "2623937954716288",
+      "company": "Meta",
+      "title": "Foundation Labs Engineer, Production Systems",
+      "location": "Austin, TX; Prineville, OR; Fremont, CA; Huntsville, AL",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
+    },
+    "disney_official_careers|id|10160048": {
+      "source": "disney_official_careers",
+      "job_id": "10160048",
+      "company": "Disney",
+      "title": "Sr Manager Product Management",
+      "location": "Glendale, California",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
+    },
+    "disney_official_careers|id|10154956": {
+      "source": "disney_official_careers",
+      "job_id": "10154956",
+      "company": "Disney",
+      "title": "Principal Enterprise Architect (Disney Experiences)",
+      "location": "Orlando, Florida",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
+    },
+    "disney_official_careers|id|10160054": {
+      "source": "disney_official_careers",
+      "job_id": "10160054",
+      "company": "Disney",
+      "title": "Media Engineer II",
+      "location": "The Woodlands, Texas",
+      "first_seen": "2026-10-07T23:46:02.956453+00:00"
     },
     "syncareer|id|2b1a082f4274f847f9afc9bdc87c467c": {
       "source": "syncareer",
@@ -3590,6 +3534,87 @@
         "reason": "Business analyst role, not software engineering"
       },
       "recovery_input_hash": "4185a518306fe072013b"
+    },
+    "syncareer|id|6598b2c414a7d8694b4378750d0db2a2": {
+      "source": "syncareer",
+      "job_id": "6598b2c414a7d8694b4378750d0db2a2",
+      "company": "ITW",
+      "title": "Software Engineer II",
+      "location": "Hopkinton, Massachusetts, United States",
+      "first_seen": "2026-10-07T23:51:16.271712+00:00",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "c7cf90cd10086797b87c",
+          "attempted_at": "2026-10-08T06:34:00.762458+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "normal",
+        "confidence": 0.84,
+        "delta": 0,
+        "reason": "Software Engineer II fits early-career target"
+      },
+      "recovery_input_hash": "c0f15d95e5f9794f299f",
+      "official_search_status": "no_match",
+      "official_search_attempted_at": "2026-10-08T06:34:00.762458+00:00"
+    },
+    "syncareer|id|a2b18ec609141bb1ef8d983a7fad774d": {
+      "source": "syncareer",
+      "job_id": "a2b18ec609141bb1ef8d983a7fad774d",
+      "company": "Nokia",
+      "title": "AI Engineering Co-op",
+      "location": "Sunnyvale, California, United States",
+      "first_seen": "2026-10-07T23:51:16.271712+00:00"
+    },
+    "syncareer|id|6509516a6b7a63aa75369c1ba3b950ef": {
+      "source": "syncareer",
+      "job_id": "6509516a6b7a63aa75369c1ba3b950ef",
+      "company": "Nokia",
+      "title": "AI Engineering Co-op",
+      "location": "Sunnyvale, California, United States",
+      "first_seen": "2026-10-07T23:51:16.271712+00:00"
+    },
+    "syncareer|id|becd818cc1060739392dcd674fbcddf5": {
+      "source": "syncareer",
+      "job_id": "becd818cc1060739392dcd674fbcddf5",
+      "company": "Nokia",
+      "title": "AI Engineering Co-op",
+      "location": "Sunnyvale, California, United States",
+      "first_seen": "2026-10-07T23:51:16.271712+00:00"
+    },
+    "syncareer|id|dcb898e2b7d25d94bc4a911a89f5d15a": {
+      "source": "syncareer",
+      "job_id": "dcb898e2b7d25d94bc4a911a89f5d15a",
+      "company": "Nokia",
+      "title": "AI Engineering Co-op",
+      "location": "Sunnyvale, California, United States",
+      "first_seen": "2026-10-07T23:51:16.271712+00:00"
+    },
+    "syncareer|id|6cfe6ee74be65d26930f477078150eed": {
+      "source": "syncareer",
+      "job_id": "6cfe6ee74be65d26930f477078150eed",
+      "company": "Nokia",
+      "title": "AI Engineering Co-op",
+      "location": "Sunnyvale, California, United States",
+      "first_seen": "2026-10-07T23:51:16.271712+00:00"
+    },
+    "syncareer|id|910b49612543158fb4630d2bb39b5116": {
+      "source": "syncareer",
+      "job_id": "910b49612543158fb4630d2bb39b5116",
+      "company": "Nokia",
+      "title": "AI Engineering Co-op",
+      "location": "Sunnyvale, California, United States",
+      "first_seen": "2026-10-07T23:51:16.271712+00:00"
+    },
+    "syncareer|id|c58553d390b6728205b52839b85ae979": {
+      "source": "syncareer",
+      "job_id": "c58553d390b6728205b52839b85ae979",
+      "company": "Nokia",
+      "title": "AI Engineering Co-op",
+      "location": "Sunnyvale, California, United States",
+      "first_seen": "2026-10-07T23:51:16.271712+00:00"
     }
   }
 }
