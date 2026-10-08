@@ -1,14 +1,14 @@
-# Official careers scrape report — 2026-10-08_1431
+# Official careers scrape report — 2026-10-08_2331
 
 Discovery only. Matching/ranking is applied afterwards by the shared board pipeline.
 
 ## Runtime metrics
 
-- Wall time: 1046.318s
-- HTTP requests/cumulative request time: 7062 / 3513.686s
-- Listing pages/detail fetched/cache reused/prefilter skipped: 1270 / 5721 / 249 / 729
-- Detail cache statuses: {'fetched:missing_detail': 162, 'fetched:new': 5315, 'reuse_after_error:changed': 1, 'reused': 248}
-- Relevant JD coverage: 5221 / 5313; added detail requests 92 / 150; deferred 0
+- Wall time: 919.665s
+- HTTP requests/cumulative request time: 7234 / 2988.521s
+- Listing pages/detail fetched/cache reused/prefilter skipped: 1296 / 5898 / 244 / 733
+- Detail cache statuses: {'fetched:changed': 1, 'fetched:missing_detail': 154, 'fetched:new': 5485, 'reused': 243}
+- Relevant JD coverage: 5275 / 5378; added detail requests 104 / 150; deferred 0
 
 ## Google
 
@@ -17,30 +17,30 @@ Discovery only. Matching/ranking is applied afterwards by the shared board pipel
 - Search URL/API: `https://www.google.com/about/careers/applications/jobs/results?sort_by=date&q=%22Ai+Engineer%22&location=United+States&page=1&target_level=MID&target_level=EARLY&target_level=INTERN_AND_APPRENTICE`
 - Pagination: newest-first; minimum 2 pages, then two seen pages + one overlap page; otherwise total/cap
 - Pages/requests fetched: 44
-- HTTP requests/cumulative request time: 44 / 11.838s
-- Company elapsed time: 27.750s
+- HTTP requests/cumulative request time: 44 / 13.835s
+- Company elapsed time: 30.710s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 145, 'usable_jd': 145}
-- Raw jobs found: 842
-- After US/location filtering: 289
-- With trustworthy posted_date: 289
+- Relevant JD recovery: {'eligible': 142, 'usable_jd': 142}
+- Raw jobs found: 841
+- After US/location filtering: 283
+- With trustworthy posted_date: 283
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 3.997, "first_pass_survivors": 120, "group": "official", "jds_resolved": 120, "original_postings_resolved": 120, "page_budget": 6, "pages_fetched": 6, "query": "\"Ai Engineer\"", "raw_jobs": 120, "stop_reason": "page_budget", "unique_contribution": 120, "unique_jobs": 120}
-- Query diagnostic: {"elapsed_seconds": 1.937, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "\"Machine Learning Engineer\"", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 1.937, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "\"Data Scientist\"", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 0.193, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "\"Solutions Architect\"", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 2}
-- Query diagnostic: {"elapsed_seconds": 0.225, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "\"Data Engineer\"", "raw_jobs": 3, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 3}
-- Query diagnostic: {"elapsed_seconds": 1.975, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 3, "query": "\"Platform Engineer\"", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 5, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.274, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "\"Full Stack Engineer\"", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.034, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 3, "query": "\"Forward Deployed Engineer\"", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 22, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 6.228, "first_pass_survivors": 112, "group": "official", "jds_resolved": 112, "original_postings_resolved": 112, "page_budget": 12, "pages_fetched": 10, "query": "\"Software Engineer\"", "raw_jobs": 200, "stop_reason": "early_stop", "unique_contribution": 112, "unique_jobs": 200}
-- Query diagnostic: {"elapsed_seconds": 1.931, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "\"Infrastructure Engineer\"", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.373, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 5, "pages_fetched": 4, "query": "\"Software Engineer III\"", "raw_jobs": 77, "stop_reason": "early_stop", "unique_contribution": 6, "unique_jobs": 77}
-- Query diagnostic: {"elapsed_seconds": 1.338, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 2, "pages_fetched": 2, "query": "\"Web Solutions Engineer\"", "raw_jobs": 40, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 40}
-- Query diagnostic: {"elapsed_seconds": 1.307, "first_pass_survivors": 20, "group": "official", "jds_resolved": 20, "original_postings_resolved": 20, "page_budget": 2, "pages_fetched": 2, "query": "\"DeepMind\"", "raw_jobs": 40, "stop_reason": "page_budget", "unique_contribution": 20, "unique_jobs": 40}
+- Query diagnostic: {"elapsed_seconds": 4.501, "first_pass_survivors": 120, "group": "official", "jds_resolved": 120, "original_postings_resolved": 120, "page_budget": 6, "pages_fetched": 6, "query": "\"Ai Engineer\"", "raw_jobs": 120, "stop_reason": "page_budget", "unique_contribution": 120, "unique_jobs": 120}
+- Query diagnostic: {"elapsed_seconds": 2.247, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "\"Machine Learning Engineer\"", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.169, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "\"Data Scientist\"", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 0.226, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "\"Solutions Architect\"", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 0.314, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "\"Data Engineer\"", "raw_jobs": 3, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 3}
+- Query diagnostic: {"elapsed_seconds": 2.182, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 3, "query": "\"Platform Engineer\"", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.454, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "\"Full Stack Engineer\"", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.153, "first_pass_survivors": 20, "group": "official", "jds_resolved": 20, "original_postings_resolved": 20, "page_budget": 3, "pages_fetched": 3, "query": "\"Forward Deployed Engineer\"", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 20, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 6.851, "first_pass_survivors": 110, "group": "official", "jds_resolved": 110, "original_postings_resolved": 110, "page_budget": 12, "pages_fetched": 10, "query": "\"Software Engineer\"", "raw_jobs": 200, "stop_reason": "early_stop", "unique_contribution": 110, "unique_jobs": 200}
+- Query diagnostic: {"elapsed_seconds": 2.197, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "\"Infrastructure Engineer\"", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.617, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 5, "pages_fetched": 4, "query": "\"Software Engineer III\"", "raw_jobs": 77, "stop_reason": "early_stop", "unique_contribution": 6, "unique_jobs": 77}
+- Query diagnostic: {"elapsed_seconds": 1.413, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 2, "pages_fetched": 2, "query": "\"Web Solutions Engineer\"", "raw_jobs": 40, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 40}
+- Query diagnostic: {"elapsed_seconds": 1.384, "first_pass_survivors": 20, "group": "official", "jds_resolved": 20, "original_postings_resolved": 20, "page_budget": 2, "pages_fetched": 2, "query": "\"DeepMind\"", "raw_jobs": 40, "stop_reason": "page_budget", "unique_contribution": 20, "unique_jobs": 40}
 
 Sample normalized records:
 
@@ -49,13 +49,52 @@ Sample normalized records:
   {
     "company": "Google",
     "source": "google_official_careers",
-    "job_id": "81250748788024006",
-    "title": "Software Engineer III, Google Cloud Compute Infrastructure",
-    "location": "Kirkland, WA, USA",
-    "official_url": "https://www.google.com/about/careers/applications/jobs/results/81250748788024006-software-engineer-iii-google-cloud-compute-infrastructure",
-    "posted_date": "2026-08-06",
+    "job_id": "77065023347663558",
+    "title": "Senior Software Engineer, AI/ML GenAI, Google Cloud AI",
+    "location": "Sunnyvale, CA, USA; Kirkland, WA, USA",
+    "official_url": "https://www.google.com/about/careers/applications/jobs/results/77065023347663558-senior-software-engineer-ai-ml-genai-google-cloud-ai",
+    "posted_date": "2026-05-20",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:31:13.787961+00:00",
+    "fetched_at": "2026-10-08T23:31:10.102896+00:00",
+    "date_confidence": "high",
+    "description": "Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products"
+  },
+  {
+    "company": "Google",
+    "source": "google_official_careers",
+    "job_id": "110496342526042822",
+    "title": "Software Engineer III, AI/ML Recommendations, Rankings, Predictions, YouTube",
+    "location": "San Bruno, CA, USA; Mountain View, CA, USA",
+    "official_url": "https://www.google.com/about/careers/applications/jobs/results/110496342526042822-software-engineer-iii-ai-ml-recommendations-rankings-predictions-youtube",
+    "posted_date": "2025-11-07",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:31:10.102896+00:00",
+    "date_confidence": "high",
+    "description": "Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products"
+  },
+  {
+    "company": "Google",
+    "source": "google_official_careers",
+    "job_id": "107457688966701766",
+    "title": "Senior Security Software Engineer, Emerging On-prem AI infrastructure",
+    "location": "Reston, VA, USA",
+    "official_url": "https://www.google.com/about/careers/applications/jobs/results/107457688966701766-senior-security-software-engineer-emerging-on-prem-ai-infrastructure",
+    "posted_date": "2026-10-08",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:31:10.102896+00:00",
+    "date_confidence": "high",
+    "description": "Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products"
+  },
+  {
+    "company": "Google",
+    "source": "google_official_careers",
+    "job_id": "87457161382109894",
+    "title": "Software Engineer III, AI/ML, Google Cloud AI",
+    "location": "Sunnyvale, CA, USA; Mountain View, CA, USA",
+    "official_url": "https://www.google.com/about/careers/applications/jobs/results/87457161382109894-software-engineer-iii-ai-ml-google-cloud-ai",
+    "posted_date": "2025-12-17",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:31:10.102896+00:00",
     "date_confidence": "high",
     "description": "Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products"
   },
@@ -68,48 +107,9 @@ Sample normalized records:
     "official_url": "https://www.google.com/about/careers/applications/jobs/results/130946349712450246-senior-software-engineer-ai-ml-genai-google-cloud-data-management",
     "posted_date": "2026-10-07",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:31:13.787961+00:00",
+    "fetched_at": "2026-10-08T23:31:10.102896+00:00",
     "date_confidence": "high",
     "description": "Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products"
-  },
-  {
-    "company": "Google",
-    "source": "google_official_careers",
-    "job_id": "86689633378673350",
-    "title": "Senior Software Engineer, AI/ML GenAI, YouTube",
-    "location": "Mountain View, CA, USA",
-    "official_url": "https://www.google.com/about/careers/applications/jobs/results/86689633378673350-senior-software-engineer-ai-ml-genai-youtube",
-    "posted_date": "2026-08-20",
-    "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:31:13.787961+00:00",
-    "date_confidence": "high",
-    "description": "Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products"
-  },
-  {
-    "company": "Google",
-    "source": "google_official_careers",
-    "job_id": "110629862690955974",
-    "title": "Senior Software Engineer, AI/ML GenAI, Core",
-    "location": "New York, NY, USA; San Jose, CA, USA",
-    "official_url": "https://www.google.com/about/careers/applications/jobs/results/110629862690955974-senior-software-engineer-ai-ml-genai-core",
-    "posted_date": "2026-08-12",
-    "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:31:13.787961+00:00",
-    "date_confidence": "high",
-    "description": "Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products"
-  },
-  {
-    "company": "Google",
-    "source": "google_official_careers",
-    "job_id": "109173244933612230",
-    "title": "Business Data Scientist, Trust and Safety, YouTube",
-    "location": "San Bruno, CA, USA; Mountain View, CA, USA",
-    "official_url": "https://www.google.com/about/careers/applications/jobs/results/109173244933612230-business-data-scientist-trust-and-safety-youtube",
-    "posted_date": "2026-10-07",
-    "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:31:13.787961+00:00",
-    "date_confidence": "high",
-    "description": "At YouTube, we believe that everyone deserves to have a voice, and that the world is a better place when we listen, share, and build community through our stories. We work together"
   }
 ]
 ```
@@ -121,35 +121,61 @@ Sample normalized records:
 - Search URL/API: `https://www.amazon.jobs/en/search?base_query=software+engineer&country=USA&offset=0&result_limit=10&sort=recent`
 - Pagination: newest-first offset by 20; minimum 2 pages, then two seen pages + one overlap page; otherwise hits/cap
 - Pages/requests fetched: 44
-- HTTP requests/cumulative request time: 44 / 15.697s
-- Company elapsed time: 27.825s
+- HTTP requests/cumulative request time: 44 / 14.454s
+- Company elapsed time: 27.603s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 444, 'usable_jd': 444}
-- Raw jobs found: 810
+- Relevant JD recovery: {'eligible': 449, 'usable_jd': 449}
+- Raw jobs found: 809
 - After US/location filtering: 711
 - With trustworthy posted_date: 711
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 3.992, "first_pass_survivors": 120, "group": "official", "jds_resolved": 120, "original_postings_resolved": 120, "page_budget": 6, "pages_fetched": 6, "query": "ai engineer", "raw_jobs": 120, "stop_reason": "page_budget", "unique_contribution": 120, "unique_jobs": 120}
-- Query diagnostic: {"elapsed_seconds": 1.755, "first_pass_survivors": 41, "group": "official", "jds_resolved": 41, "original_postings_resolved": 41, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 43, "stop_reason": "page_budget", "unique_contribution": 41, "unique_jobs": 43}
-- Query diagnostic: {"elapsed_seconds": 1.938, "first_pass_survivors": 60, "group": "official", "jds_resolved": 60, "original_postings_resolved": 60, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 60, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 1.742, "first_pass_survivors": 60, "group": "official", "jds_resolved": 60, "original_postings_resolved": 60, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 60, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 1.967, "first_pass_survivors": 60, "group": "official", "jds_resolved": 60, "original_postings_resolved": 60, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 60, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 1.329, "first_pass_survivors": 39, "group": "official", "jds_resolved": 39, "original_postings_resolved": 39, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 42, "stop_reason": "page_budget", "unique_contribution": 39, "unique_jobs": 42}
-- Query diagnostic: {"elapsed_seconds": 0.921, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 10, "stop_reason": "early_stop", "unique_contribution": 10, "unique_jobs": 10}
-- Query diagnostic: {"elapsed_seconds": 0.92, "first_pass_survivors": 14, "group": "official", "jds_resolved": 14, "original_postings_resolved": 14, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 14, "stop_reason": "early_stop", "unique_contribution": 14, "unique_jobs": 14}
-- Query diagnostic: {"elapsed_seconds": 8.158, "first_pass_survivors": 213, "group": "official", "jds_resolved": 213, "original_postings_resolved": 213, "page_budget": 12, "pages_fetched": 12, "query": "software engineer", "raw_jobs": 240, "stop_reason": "page_budget", "unique_contribution": 213, "unique_jobs": 240}
-- Query diagnostic: {"elapsed_seconds": 1.576, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "software development engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.163, "first_pass_survivors": 56, "group": "official", "jds_resolved": 56, "original_postings_resolved": 56, "page_budget": 3, "pages_fetched": 3, "query": "systems development engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 56, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 0.193, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "site reliability engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 1.17, "first_pass_survivors": 37, "group": "official", "jds_resolved": 37, "original_postings_resolved": 37, "page_budget": 2, "pages_fetched": 2, "query": "applied scientist", "raw_jobs": 40, "stop_reason": "page_budget", "unique_contribution": 37, "unique_jobs": 40}
+- Query diagnostic: {"elapsed_seconds": 4.546, "first_pass_survivors": 120, "group": "official", "jds_resolved": 120, "original_postings_resolved": 120, "page_budget": 6, "pages_fetched": 6, "query": "ai engineer", "raw_jobs": 120, "stop_reason": "page_budget", "unique_contribution": 120, "unique_jobs": 120}
+- Query diagnostic: {"elapsed_seconds": 1.616, "first_pass_survivors": 41, "group": "official", "jds_resolved": 41, "original_postings_resolved": 41, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 43, "stop_reason": "page_budget", "unique_contribution": 41, "unique_jobs": 43}
+- Query diagnostic: {"elapsed_seconds": 1.843, "first_pass_survivors": 60, "group": "official", "jds_resolved": 60, "original_postings_resolved": 60, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 60, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.001, "first_pass_survivors": 60, "group": "official", "jds_resolved": 60, "original_postings_resolved": 60, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 60, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.167, "first_pass_survivors": 60, "group": "official", "jds_resolved": 60, "original_postings_resolved": 60, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 60, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 1.569, "first_pass_survivors": 38, "group": "official", "jds_resolved": 38, "original_postings_resolved": 38, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 42, "stop_reason": "page_budget", "unique_contribution": 38, "unique_jobs": 42}
+- Query diagnostic: {"elapsed_seconds": 0.348, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 9, "stop_reason": "early_stop", "unique_contribution": 9, "unique_jobs": 9}
+- Query diagnostic: {"elapsed_seconds": 0.408, "first_pass_survivors": 14, "group": "official", "jds_resolved": 14, "original_postings_resolved": 14, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 14, "stop_reason": "early_stop", "unique_contribution": 14, "unique_jobs": 14}
+- Query diagnostic: {"elapsed_seconds": 7.935, "first_pass_survivors": 214, "group": "official", "jds_resolved": 214, "original_postings_resolved": 214, "page_budget": 12, "pages_fetched": 12, "query": "software engineer", "raw_jobs": 240, "stop_reason": "page_budget", "unique_contribution": 214, "unique_jobs": 240}
+- Query diagnostic: {"elapsed_seconds": 1.661, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "software development engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 1.98, "first_pass_survivors": 57, "group": "official", "jds_resolved": 57, "original_postings_resolved": 57, "page_budget": 3, "pages_fetched": 3, "query": "systems development engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 57, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 0.263, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "site reliability engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 1.263, "first_pass_survivors": 37, "group": "official", "jds_resolved": 37, "original_postings_resolved": 37, "page_budget": 2, "pages_fetched": 2, "query": "applied scientist", "raw_jobs": 40, "stop_reason": "page_budget", "unique_contribution": 37, "unique_jobs": 40}
 
 Sample normalized records:
 
 ```json
 [
+  {
+    "company": "Amazon",
+    "source": "amazon_official_careers",
+    "job_id": "10573921",
+    "title": "Software Development Engineer, Agentic AI, Velocity Labs",
+    "location": "Seattle, Washington, USA",
+    "official_url": "https://www.amazon.jobs/en/jobs/10573921/software-development-engineer-agentic-ai-velocity-labs",
+    "posted_date": "2026-10-08",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:31:10.103929+00:00",
+    "date_confidence": "high",
+    "description": "The Velocity Labs team mission is to think beyond the confines of the normal product-orientated approach and to discover new ways to apply and embrace agentic AI. We have noticed h"
+  },
+  {
+    "company": "Amazon",
+    "source": "amazon_official_careers",
+    "job_id": "10573900",
+    "title": "Sr. Software Development Engineer, Agentic AI, Velocity Labs",
+    "location": "Seattle, Washington, USA",
+    "official_url": "https://www.amazon.jobs/en/jobs/10573900/sr-software-development-engineer-agentic-ai-velocity-labs",
+    "posted_date": "2026-10-08",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:31:10.103929+00:00",
+    "date_confidence": "high",
+    "description": "The Velocity Labs team mission is to think beyond the confines of the normal product-orientated approach and to discover new ways to apply and embrace agentic AI. We have noticed h"
+  },
   {
     "company": "Amazon",
     "source": "amazon_official_careers",
@@ -159,7 +185,7 @@ Sample normalized records:
     "official_url": "https://www.amazon.jobs/en/jobs/10570504/software-development-engineer-ads-ai-core-infrastructure-aci-ads-ai-core-infrastructure",
     "posted_date": "2026-10-06",
     "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:31:13.788616+00:00",
+    "fetched_at": "2026-10-08T23:31:10.103929+00:00",
     "date_confidence": "high",
     "description": "At Amazon Ads, we're re-imagining the advertising landscape through advanced generative AI technologies and AI agents, revolutionizing how millions of customers discover products a"
   },
@@ -171,8 +197,8 @@ Sample normalized records:
     "location": "New York, New York, USA",
     "official_url": "https://www.amazon.jobs/en/jobs/10571769/sr-software-dev-engineer-ai-security",
     "posted_date": "2026-10-07",
-    "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:31:13.788616+00:00",
+    "updated_date": "2026-10-07",
+    "fetched_at": "2026-10-08T23:31:10.103929+00:00",
     "date_confidence": "high",
     "description": "We are looking for a Senior Software Development Engineer who thrives at the forefront of technology, science, and security to join Artificial Intelligence Security (AISec), workin"
   },
@@ -185,35 +211,9 @@ Sample normalized records:
     "official_url": "https://www.amazon.jobs/en/jobs/10570357/sr-software-dev-engineer-ai-security",
     "posted_date": "2026-10-06",
     "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:31:13.788616+00:00",
+    "fetched_at": "2026-10-08T23:31:10.103929+00:00",
     "date_confidence": "high",
     "description": "We are looking for a Senior Software Development Engineer who thrives at the forefront of technology, science, and security to join Artificial Intelligence Security (AISec), workin"
-  },
-  {
-    "company": "Amazon",
-    "source": "amazon_official_careers",
-    "job_id": "10569497",
-    "title": "Sr. Software Dev Engineer, AI Security",
-    "location": "New York, New York, USA",
-    "official_url": "https://www.amazon.jobs/en/jobs/10569497/sr-software-dev-engineer-ai-security",
-    "posted_date": "2026-10-05",
-    "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:31:13.788616+00:00",
-    "date_confidence": "high",
-    "description": "We are looking for a Senior Software Development Engineer who thrives at the forefront of technology, science, and security to join Artificial Intelligence Security (AISec), workin"
-  },
-  {
-    "company": "Amazon",
-    "source": "amazon_official_careers",
-    "job_id": "10568156",
-    "title": "Software Development Engineer, AWS Agentic AI",
-    "location": "Bellevue, Washington, USA",
-    "official_url": "https://www.amazon.jobs/en/jobs/10568156/software-development-engineer-aws-agentic-ai",
-    "posted_date": "2026-10-02",
-    "updated_date": "2026-10-02",
-    "fetched_at": "2026-10-08T14:31:13.788616+00:00",
-    "date_confidence": "high",
-    "description": "Come shape the future with us! As a major Agentic AI agent creation and execution provider, our technology powers many of Amazon's internal organizations via AgentZ and external or"
   }
 ]
 ```
@@ -225,27 +225,27 @@ Sample normalized records:
 - Search URL/API: `https://jobs.apple.com/en-us/search?search=ai+engineer&location=united-states-USA&sort=newest&page=1`
 - Pagination: newest-first; minimum 2 pages, then two seen pages + one overlap page; otherwise total/cap
 - Pages/requests fetched: 42
-- HTTP requests/cumulative request time: 42 / 15.216s
-- Company elapsed time: 30.313s
+- HTTP requests/cumulative request time: 42 / 15.937s
+- Company elapsed time: 31.180s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 1
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 163, 'ai_skip': 1, 'usable_jd': 163}
+- Relevant JD recovery: {'eligible': 162, 'ai_skip': 1, 'usable_jd': 162}
 - Raw jobs found: 840
-- After US/location filtering: 269
-- With trustworthy posted_date: 269
+- After US/location filtering: 271
+- With trustworthy posted_date: 271
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 4.463, "first_pass_survivors": 120, "group": "official", "jds_resolved": 120, "original_postings_resolved": 120, "page_budget": 6, "pages_fetched": 6, "query": "ai engineer", "raw_jobs": 120, "stop_reason": "page_budget", "unique_contribution": 120, "unique_jobs": 120}
-- Query diagnostic: {"elapsed_seconds": 2.112, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.122, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.129, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.14, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.13, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.229, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.295, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 8.559, "first_pass_survivors": 120, "group": "official", "jds_resolved": 120, "original_postings_resolved": 120, "page_budget": 12, "pages_fetched": 12, "query": "software engineer", "raw_jobs": 240, "stop_reason": "page_budget", "unique_contribution": 120, "unique_jobs": 240}
-- Query diagnostic: {"elapsed_seconds": 2.134, "first_pass_survivors": 21, "group": "official", "jds_resolved": 21, "original_postings_resolved": 21, "page_budget": 3, "pages_fetched": 3, "query": "apps-and-frameworks-SFTWR-AF", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 21, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 4.703, "first_pass_survivors": 120, "group": "official", "jds_resolved": 120, "original_postings_resolved": 120, "page_budget": 6, "pages_fetched": 6, "query": "ai engineer", "raw_jobs": 120, "stop_reason": "page_budget", "unique_contribution": 120, "unique_jobs": 120}
+- Query diagnostic: {"elapsed_seconds": 2.235, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 8, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.097, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.159, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.196, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.188, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.182, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.16, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 8.738, "first_pass_survivors": 121, "group": "official", "jds_resolved": 121, "original_postings_resolved": 121, "page_budget": 12, "pages_fetched": 12, "query": "software engineer", "raw_jobs": 240, "stop_reason": "page_budget", "unique_contribution": 121, "unique_jobs": 240}
+- Query diagnostic: {"elapsed_seconds": 2.521, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 3, "query": "apps-and-frameworks-SFTWR-AF", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 22, "unique_jobs": 60}
 
 Sample normalized records:
 
@@ -254,67 +254,67 @@ Sample normalized records:
   {
     "company": "Apple",
     "source": "apple_official_careers",
-    "job_id": "200687779-3543",
-    "title": "Software Integrity Engineer, Test Engineering & Engineering Efficiency",
-    "location": "San Diego, United States of America",
-    "official_url": "https://jobs.apple.com/en-us/details/200687779/software-integrity-engineer-test-engineering-engineering-efficiency",
-    "posted_date": "2026-10-08",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:13.788943+00:00",
-    "date_confidence": "high",
-    "description": "Apple is where individual imaginations gather together, committing to the values that lead to great work. Every new product we build, service we create, or Apple Store experience w"
-  },
-  {
-    "company": "Apple",
-    "source": "apple_official_careers",
-    "job_id": "200687779-0836",
-    "title": "Software Integrity Engineer, Test Engineering & Engineering Efficiency",
+    "job_id": "200680312-0836",
+    "title": "Hardware Polymers Materials Engineer",
     "location": "Cupertino, United States of America",
-    "official_url": "https://jobs.apple.com/en-us/details/200687779/software-integrity-engineer-test-engineering-engineering-efficiency",
+    "official_url": "https://jobs.apple.com/en-us/details/200680312/hardware-polymers-materials-engineer",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:13.788943+00:00",
+    "fetched_at": "2026-10-08T23:31:10.104588+00:00",
     "date_confidence": "high",
-    "description": "Apple is where individual imaginations gather together, committing to the values that lead to great work. Every new product we build, service we create, or Apple Store experience w"
+    "description": "Here at Apple, the development and integration of revolutionary materials into our products is essential to the mechanical and electrical integrity, aesthetics, and overall feel ou"
   },
   {
     "company": "Apple",
     "source": "apple_official_careers",
-    "job_id": "200687367-0157",
-    "title": "Sr. Software Engineer (Data Solutions), IS&T Ai & Data Platforms",
+    "job_id": "200687215-3401",
+    "title": "Retail Network Engineer, Infrastructure Services",
+    "location": "San Francisco Bay Area, United States of America",
+    "official_url": "https://jobs.apple.com/en-us/details/200687215/retail-network-engineer-infrastructure-services",
+    "posted_date": "2026-10-06",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:31:10.104588+00:00",
+    "date_confidence": "high",
+    "description": "Do you want to help build some of the largest and most consequential enterprise and customer technology systems in the world? Join Apple’s Information Systems and Technology (IS&T)"
+  },
+  {
+    "company": "Apple",
+    "source": "apple_official_careers",
+    "job_id": "200688068-0836",
+    "title": "Senior Machine Learning Engineer - Automation for Translation and Multilingual Intelligence",
+    "location": "Cupertino, United States of America",
+    "official_url": "https://jobs.apple.com/en-us/details/200688068/senior-machine-learning-engineer-automation-for-translation-and-multilingual-intelligence",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:31:10.104588+00:00",
+    "date_confidence": "high",
+    "description": "Play a part in the next revolution in human-computer interaction. Build groundbreaking technology for large scale systems, spoken language, big data, and artificial intelligence. T"
+  },
+  {
+    "company": "Apple",
+    "source": "apple_official_careers",
+    "job_id": "200687992-0157",
+    "title": "Digital ASIC Architect",
     "location": "Austin, United States of America",
-    "official_url": "https://jobs.apple.com/en-us/details/200687367/sr-software-engineer-data-solutions-is-t-ai-data-platforms",
+    "official_url": "https://jobs.apple.com/en-us/details/200687992/digital-asic-architect",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:13.788943+00:00",
+    "fetched_at": "2026-10-08T23:31:10.104588+00:00",
     "date_confidence": "high",
-    "description": "Do you want to help build some of the largest and most consequential enterprise and customer technology systems in the world? Join Apple’s Information Systems and Technology (IS&T)"
+    "description": "Define the digital architecture behind Apple's next generation of motion-aware experiences. The Motion Sensing Hardware organization designs the IMUs, magnetometers, pressure senso"
   },
   {
     "company": "Apple",
     "source": "apple_official_careers",
-    "job_id": "200687367-3956",
-    "title": "Sr. Software Engineer (Data Solutions), IS&T Ai & Data Platforms",
-    "location": "Sunnyvale, United States of America",
-    "official_url": "https://jobs.apple.com/en-us/details/200687367/sr-software-engineer-data-solutions-is-t-ai-data-platforms",
+    "job_id": "200687992-3543",
+    "title": "Digital ASIC Architect",
+    "location": "San Diego, United States of America",
+    "official_url": "https://jobs.apple.com/en-us/details/200687992/digital-asic-architect",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:13.788943+00:00",
+    "fetched_at": "2026-10-08T23:31:10.104588+00:00",
     "date_confidence": "high",
-    "description": "Do you want to help build some of the largest and most consequential enterprise and customer technology systems in the world? Join Apple’s Information Systems and Technology (IS&T)"
-  },
-  {
-    "company": "Apple",
-    "source": "apple_official_careers",
-    "job_id": "200687852-0953",
-    "title": "CDN Capacity & Infrastructure Manager, Infrastructure Services",
-    "location": "Denver, United States of America",
-    "official_url": "https://jobs.apple.com/en-us/details/200687852/cdn-capacity-infrastructure-manager-infrastructure-services",
-    "posted_date": "2026-10-08",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:13.788943+00:00",
-    "date_confidence": "high",
-    "description": "Do you want to help build some of the largest and most consequential enterprise and customer technology systems in the world? Join Apple’s Information Systems and Technology (IS&T)"
+    "description": "Define the digital architecture behind Apple's next generation of motion-aware experiences. The Motion Sensing Hardware organization designs the IMUs, magnetometers, pressure senso"
   }
 ]
 ```
@@ -326,26 +326,26 @@ Sample normalized records:
 - Search URL/API: `https://apply.careers.microsoft.com/api/pcsx/search?domain=microsoft.com&query=software+engineer&location=United+States&sort_by=timestamp&start=0&num=10`
 - Pagination: newest-first; minimum 2 pages, then two seen pages + one overlap page; otherwise count/cap
 - Pages/requests fetched: 39
-- HTTP requests/cumulative request time: 238 / 67.882s
-- Company elapsed time: 102.318s
+- HTTP requests/cumulative request time: 244 / 56.710s
+- Company elapsed time: 92.327s
 - Incremental mode/page cap: incremental / 12
-- Detail pages fetched/cache reused/prefilter skipped: 198 / 0 / 0
-- Detail cache statuses: {'fetched:new': 179, 'fetched:missing_detail': 19}
-- Relevant JD recovery: {'eligible': 42, 'usable_jd': 42}
+- Detail pages fetched/cache reused/prefilter skipped: 204 / 0 / 0
+- Detail cache statuses: {'fetched:new': 188, 'fetched:missing_detail': 16}
+- Relevant JD recovery: {'eligible': 43, 'usable_jd': 43}
 - Raw jobs found: 390
-- After US/location filtering: 198
-- With trustworthy posted_date: 198
+- After US/location filtering: 204
+- With trustworthy posted_date: 204
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 26.52, "first_pass_survivors": 60, "group": "official", "jds_resolved": 60, "original_postings_resolved": 60, "page_budget": 6, "pages_fetched": 6, "query": "ai engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 60, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 5.848, "first_pass_survivors": 11, "group": "official", "jds_resolved": 11, "original_postings_resolved": 11, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 11, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 11.108, "first_pass_survivors": 24, "group": "official", "jds_resolved": 24, "original_postings_resolved": 24, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 24, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 10.753, "first_pass_survivors": 16, "group": "official", "jds_resolved": 16, "original_postings_resolved": 16, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 16, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 1.371, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 1.457, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 7.295, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 9, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 11.602, "first_pass_survivors": 26, "group": "official", "jds_resolved": 26, "original_postings_resolved": 26, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 26, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 25.694, "first_pass_survivors": 52, "group": "official", "jds_resolved": 52, "original_postings_resolved": 52, "page_budget": 12, "pages_fetched": 12, "query": "software engineer", "raw_jobs": 120, "stop_reason": "page_budget", "unique_contribution": 52, "unique_jobs": 120}
+- Query diagnostic: {"elapsed_seconds": 26.795, "first_pass_survivors": 60, "group": "official", "jds_resolved": 60, "original_postings_resolved": 60, "page_budget": 6, "pages_fetched": 6, "query": "ai engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 60, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 5.748, "first_pass_survivors": 14, "group": "official", "jds_resolved": 14, "original_postings_resolved": 14, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 14, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 11.258, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 7.009, "first_pass_survivors": 17, "group": "official", "jds_resolved": 17, "original_postings_resolved": 17, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 17, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 1.527, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 1.217, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 5.779, "first_pass_survivors": 14, "group": "official", "jds_resolved": 14, "original_postings_resolved": 14, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 14, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 9.377, "first_pass_survivors": 25, "group": "official", "jds_resolved": 25, "original_postings_resolved": 25, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 25, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 23.34, "first_pass_survivors": 50, "group": "official", "jds_resolved": 50, "original_postings_resolved": 50, "page_budget": 12, "pages_fetched": 12, "query": "software engineer", "raw_jobs": 120, "stop_reason": "page_budget", "unique_contribution": 50, "unique_jobs": 119}
 
 Sample normalized records:
 
@@ -354,67 +354,67 @@ Sample normalized records:
   {
     "company": "Microsoft",
     "source": "microsoft_official_careers",
-    "job_id": "200058983",
-    "title": "Sr. Signal Integrity Lab Engineer",
-    "location": "United States, Washington, Redmond",
-    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393557019466",
-    "posted_date": "2026-10-08",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:13.789393+00:00",
-    "date_confidence": "high",
-    "description": "Overview M icrosoft Silicon, Cloud Hardware, and Infrastructure Engineering (SCHIE) is the team behind Microsoft’s expanding Cloud Infrastructure and responsible for powering Micro"
-  },
-  {
-    "company": "Microsoft",
-    "source": "microsoft_official_careers",
-    "job_id": "200056676",
-    "title": "Software Engineering, CoreAI",
-    "location": "United States, California, Mountain View",
-    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393557001458",
-    "posted_date": "2026-10-08",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:13.789393+00:00",
-    "date_confidence": "high",
-    "description": "Overview You will work in a group focusing on advancing Azure Content Understanding, a multimodal AI capability that enables organizations to transform unstructured data—such as te"
-  },
-  {
-    "company": "Microsoft",
-    "source": "microsoft_official_careers",
-    "job_id": "200045486",
-    "title": "Senior Software Engineer",
-    "location": "United States, Washington, Redmond",
-    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393556944960",
-    "posted_date": "2026-10-08",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:13.789393+00:00",
-    "date_confidence": "high",
-    "description": "Overview Microsoft is a company where passionate innovators come to collaborate, envision what can be and take their careers further. This is a world of more possibilities, more in"
-  },
-  {
-    "company": "Microsoft",
-    "source": "microsoft_official_careers",
-    "job_id": "200045864",
+    "job_id": "200061002",
     "title": "Principal Software Engineer",
+    "location": "United States, Washington, Redmond",
+    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393557027454",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:31:10.106584+00:00",
+    "date_confidence": "high",
+    "description": "Overview Join the Intelligent Conversation and Communications Cloud (IC3), the platform powering Microsoft Teams, Microsoft 365 Copilot, and next-generation AI experiences for mill"
+  },
+  {
+    "company": "Microsoft",
+    "source": "microsoft_official_careers",
+    "job_id": "200059893",
+    "title": "Signal and Power Integrity Engineer",
+    "location": "United States, North Carolina, Raleigh; United States, Texas, Austin; United States, California, Mountain View; United States, Washington, Redmond; United States, Oregon, Hillsboro",
+    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393557024788",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:31:10.106584+00:00",
+    "date_confidence": "high",
+    "description": "Overview Microsoft Silicon, Cloud Hardware, and Infrastructure Engineering ( SCHIE ) is the team behind Microsoft’s expanding Cloud Infrastructure and responsible for powering Micr"
+  },
+  {
+    "company": "Microsoft",
+    "source": "microsoft_official_careers",
+    "job_id": "200026681",
+    "title": "Critical Environment Technician Manager",
+    "location": "United States, Georgia, Atlanta; United States, Georgia, Fayetteville",
+    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393556753639",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:31:10.106584+00:00",
+    "date_confidence": "high",
+    "description": "Overview In alignment with our Microsoft values, we are committed to cultivating an inclusive work environment for all employees to positively impact our culture every day and we n"
+  },
+  {
+    "company": "Microsoft",
+    "source": "microsoft_official_careers",
+    "job_id": "200056717",
+    "title": "AI Security Engineer",
     "location": "United States, Multiple Locations, Multiple Locations",
-    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393556947940",
+    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393557001498",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:13.789393+00:00",
+    "fetched_at": "2026-10-08T23:31:10.106584+00:00",
     "date_confidence": "high",
-    "description": "Overview Microsoft 365 powers some of the world's largest productivity, collaboration, and AI experiences, including Copilot, Agents, PAC, and the Substrate platform. As these expe"
+    "description": "Overview The Cloud & AI organization accelerates Microsoft's mission to secure digital technology platforms, devices, clouds, and AI systems across customers' heterogeneous environ"
   },
   {
     "company": "Microsoft",
     "source": "microsoft_official_careers",
-    "job_id": "200058402",
-    "title": "Principal Software Engineer",
-    "location": "United States, Washington, Redmond",
-    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393557008794",
+    "job_id": "200059695",
+    "title": "Critical Environment Electrical Engineer",
+    "location": "United States, Iowa, Des Moines",
+    "official_url": "https://apply.careers.microsoft.com/careers/job/1970393557023253",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:13.789393+00:00",
+    "fetched_at": "2026-10-08T23:31:10.106584+00:00",
     "date_confidence": "high",
-    "description": "Overview Microsoft Advertising empowers the world’s largest advertisers to reach their maximum potential through digital advertising solutions on the Microsoft Advertising platform"
+    "description": "Overview In alignment with our Microsoft values, we are committed to cultivating an inclusive work environment for all employees to positively impact our culture every day and we n"
   }
 ]
 ```
@@ -426,32 +426,45 @@ Sample normalized records:
 - Search URL/API: `https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 32
-- HTTP requests/cumulative request time: 504 / 311.554s
-- Company elapsed time: 377.847s
+- HTTP requests/cumulative request time: 504 / 265.175s
+- Company elapsed time: 332.214s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 471 / 0 / 0
-- Detail cache statuses: {'fetched:new': 465, 'fetched:missing_detail': 6}
-- Relevant JD recovery: {'eligible': 66, 'usable_jd': 66}
+- Detail cache statuses: {'fetched:new': 467, 'fetched:missing_detail': 4}
+- Relevant JD recovery: {'eligible': 67, 'usable_jd': 67}
 - Raw jobs found: 640
 - After US/location filtering: 471
 - With trustworthy posted_date: 471
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 68.191, "first_pass_survivors": 80, "group": "official", "jds_resolved": 80, "original_postings_resolved": 80, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 80, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 34.568, "first_pass_survivors": 51, "group": "official", "jds_resolved": 51, "original_postings_resolved": 51, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 51, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 39.919, "first_pass_survivors": 46, "group": "official", "jds_resolved": 46, "original_postings_resolved": 46, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 46, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 32.388, "first_pass_survivors": 47, "group": "official", "jds_resolved": 47, "original_postings_resolved": 47, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 47, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 32.781, "first_pass_survivors": 42, "group": "official", "jds_resolved": 42, "original_postings_resolved": 42, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 42, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 34.92, "first_pass_survivors": 48, "group": "official", "jds_resolved": 48, "original_postings_resolved": 48, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 48, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 32.075, "first_pass_survivors": 40, "group": "official", "jds_resolved": 40, "original_postings_resolved": 40, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 40, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 29.823, "first_pass_survivors": 31, "group": "official", "jds_resolved": 31, "original_postings_resolved": 31, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 31, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 45.844, "first_pass_survivors": 54, "group": "official", "jds_resolved": 54, "original_postings_resolved": 54, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 54, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 25.445, "first_pass_survivors": 32, "group": "official", "jds_resolved": 32, "original_postings_resolved": 32, "page_budget": 3, "pages_fetched": 3, "query": "infrastructure engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 32, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 48.099, "first_pass_survivors": 80, "group": "official", "jds_resolved": 80, "original_postings_resolved": 80, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 80, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 29.848, "first_pass_survivors": 51, "group": "official", "jds_resolved": 51, "original_postings_resolved": 51, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 51, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 27.709, "first_pass_survivors": 46, "group": "official", "jds_resolved": 46, "original_postings_resolved": 46, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 46, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 27.701, "first_pass_survivors": 47, "group": "official", "jds_resolved": 47, "original_postings_resolved": 47, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 47, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 36.465, "first_pass_survivors": 42, "group": "official", "jds_resolved": 42, "original_postings_resolved": 42, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 42, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 44.235, "first_pass_survivors": 48, "group": "official", "jds_resolved": 48, "original_postings_resolved": 48, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 48, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 30.951, "first_pass_survivors": 39, "group": "official", "jds_resolved": 39, "original_postings_resolved": 39, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 39, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 27.68, "first_pass_survivors": 30, "group": "official", "jds_resolved": 30, "original_postings_resolved": 30, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 30, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 34.139, "first_pass_survivors": 54, "group": "official", "jds_resolved": 54, "original_postings_resolved": 54, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 54, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 23.348, "first_pass_survivors": 34, "group": "official", "jds_resolved": 34, "original_postings_resolved": 34, "page_budget": 3, "pages_fetched": 3, "query": "infrastructure engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 34, "unique_jobs": 60}
 
 Sample normalized records:
 
 ```json
 [
+  {
+    "company": "NVIDIA",
+    "source": "nvidia_official_careers",
+    "job_id": "JR2025254",
+    "title": "Senior Applied AI Engineer",
+    "location": "US, CA, Santa Clara",
+    "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Applied-AI-Engineer_JR2025254-1",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:31:10.108016+00:00",
+    "date_confidence": "high",
+    "description": "NVIDIA is looking for a Senior Applied AI Engineer to help build intelligent software systems that improve engineering productivity and software quality at scale. In this role, you"
+  },
   {
     "company": "NVIDIA",
     "source": "nvidia_official_careers",
@@ -461,7 +474,7 @@ Sample normalized records:
     "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/AI-Engineering-Manager---Finance_JR2026233",
     "posted_date": "2026-10-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:13.790520+00:00",
+    "fetched_at": "2026-10-08T23:31:10.108016+00:00",
     "date_confidence": "high",
     "description": "NVIDIA has been transforming computer graphics, PC gaming, and accelerated computing for more than 25 years. It’s a unique legacy of innovation that’s fueled by great technology—an"
   },
@@ -474,7 +487,7 @@ Sample normalized records:
     "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Manager--Data-and-AI-Engineering_JR2016861",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:13.790520+00:00",
+    "fetched_at": "2026-10-08T23:31:10.108016+00:00",
     "date_confidence": "high",
     "description": "We are looking for a Manager of Data & AI Engineering who combines deep technical expertise with strong delivery leadership and people management. This role will drive the build-ou"
   },
@@ -487,7 +500,7 @@ Sample normalized records:
     "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Applied-AI-Engineer---VLSI-Design_JR2019190",
     "posted_date": "2026-08-17",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:13.790520+00:00",
+    "fetched_at": "2026-10-08T23:31:10.108016+00:00",
     "date_confidence": "high",
     "description": "NVIDIA has been transforming computer graphics, PC gaming, and accelerated computing for more than 25 years. It’s a unique legacy of innovation that’s fueled by great technology—an"
   },
@@ -500,22 +513,9 @@ Sample normalized records:
     "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-SOCD-Applied-AI-Engineer_JR2020550",
     "posted_date": "2026-09-02",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:13.790520+00:00",
+    "fetched_at": "2026-10-08T23:31:10.108016+00:00",
     "date_confidence": "high",
     "description": "Nvidia's SOC Design (SOCD) team is looking for an Applied AI Engineer who is passionate about eliminating bottlenecks in SOC integration workflows through intelligent automation. I"
-  },
-  {
-    "company": "NVIDIA",
-    "source": "nvidia_official_careers",
-    "job_id": "JR2025164",
-    "title": "Senior High Performance AI Engineer, Agentic AI",
-    "location": "US, CA, Santa Clara; US, GA, Remote; US, TX, Austin; US, TX, Remote; US, CA, Remote; US, WA, Redmond",
-    "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-High-Performance-AI-Engineer--Agentic-AI_JR2025164",
-    "posted_date": "2026-09-11",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:13.790520+00:00",
-    "date_confidence": "high",
-    "description": "We are looking for outstanding Senior High Performance AI Engineers to build the next generation of agentic AI systems for the CUDA ecosystem. Our team works across the full agenti"
   }
 ]
 ```
@@ -527,27 +527,27 @@ Sample normalized records:
 - Search URL/API: `https://salesforce.wd12.myworkdayjobs.com/External_Career_Site`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 26
-- HTTP requests/cumulative request time: 189 / 63.899s
-- Company elapsed time: 89.629s
+- HTTP requests/cumulative request time: 189 / 52.371s
+- Company elapsed time: 78.623s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 162 / 0 / 0
-- Detail cache statuses: {'fetched:new': 158, 'fetched:missing_detail': 4}
-- Relevant JD recovery: {'eligible': 42, 'usable_jd': 42}
+- Detail cache statuses: {'fetched:new': 159, 'fetched:missing_detail': 3}
+- Relevant JD recovery: {'eligible': 38, 'usable_jd': 38}
 - Raw jobs found: 436
 - After US/location filtering: 162
 - With trustworthy posted_date: 162
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 33.802, "first_pass_survivors": 73, "group": "official", "jds_resolved": 73, "original_postings_resolved": 73, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 73, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 4.785, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 15, "stop_reason": "early_stop", "unique_contribution": 9, "unique_jobs": 15}
-- Query diagnostic: {"elapsed_seconds": 3.548, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 15, "stop_reason": "early_stop", "unique_contribution": 7, "unique_jobs": 15}
-- Query diagnostic: {"elapsed_seconds": 14.407, "first_pass_survivors": 29, "group": "official", "jds_resolved": 29, "original_postings_resolved": 29, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 29, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.308, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.732, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 9.481, "first_pass_survivors": 16, "group": "official", "jds_resolved": 16, "original_postings_resolved": 16, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 29, "stop_reason": "page_budget", "unique_contribution": 16, "unique_jobs": 29}
-- Query diagnostic: {"elapsed_seconds": 7.444, "first_pass_survivors": 11, "group": "official", "jds_resolved": 11, "original_postings_resolved": 11, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 24, "stop_reason": "page_budget", "unique_contribution": 11, "unique_jobs": 24}
-- Query diagnostic: {"elapsed_seconds": 8.342, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 2.074, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 1, "query": "software engineering mts", "raw_jobs": 13, "stop_reason": "early_stop", "unique_contribution": 4, "unique_jobs": 13}
+- Query diagnostic: {"elapsed_seconds": 29.912, "first_pass_survivors": 74, "group": "official", "jds_resolved": 74, "original_postings_resolved": 74, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 74, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 3.824, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 15, "stop_reason": "early_stop", "unique_contribution": 9, "unique_jobs": 15}
+- Query diagnostic: {"elapsed_seconds": 3.446, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 16, "stop_reason": "early_stop", "unique_contribution": 8, "unique_jobs": 16}
+- Query diagnostic: {"elapsed_seconds": 13.085, "first_pass_survivors": 29, "group": "official", "jds_resolved": 29, "original_postings_resolved": 29, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 29, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.139, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.127, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 6.703, "first_pass_survivors": 14, "group": "official", "jds_resolved": 14, "original_postings_resolved": 14, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 28, "stop_reason": "page_budget", "unique_contribution": 14, "unique_jobs": 28}
+- Query diagnostic: {"elapsed_seconds": 7.986, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 24, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 24}
+- Query diagnostic: {"elapsed_seconds": 7.364, "first_pass_survivors": 13, "group": "official", "jds_resolved": 13, "original_postings_resolved": 13, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 13, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 1.476, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 1, "query": "software engineering mts", "raw_jobs": 13, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 13}
 
 Sample normalized records:
 
@@ -556,67 +556,67 @@ Sample normalized records:
   {
     "company": "Salesforce",
     "source": "salesforce_official_careers",
-    "job_id": "JR362133",
-    "title": "Strategic Partner Account Sr. Manager",
-    "location": "California - San Francisco; Washington - Seattle; California - Remote",
-    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Strategic-Partner-Account-Sr-Manager_JR362133",
+    "job_id": "JR363047",
+    "title": "Sr Manager/Director/Sr Director of Product Management, Life Sciences Cloud (Evergreen)",
+    "location": "California - San Francisco; New York - New York; Indiana - Indianapolis; Washington - Bellevue",
+    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Sr-Manager-Director-Sr-Director-of-Product-Management--Life-Sciences-Cloud--Evergreen-_JR363047",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:41.538959+00:00",
+    "fetched_at": "2026-10-08T23:31:37.707509+00:00",
     "date_confidence": "high",
-    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Sales Job Details A"
+    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Product Job Details"
   },
   {
     "company": "Salesforce",
     "source": "salesforce_official_careers",
-    "job_id": "JR361263",
-    "title": "VP, COO, Strategic Technology and Consulting Partners",
-    "location": "California - San Francisco; Illinois - Chicago; New York - New York; Washington - Seattle",
-    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/VP--COO--Strategic-Technology-and-Consulting-Partners_JR361263",
+    "job_id": "JR361910",
+    "title": "Director of Product Management, Agentforce Voice Models",
+    "location": "California - San Francisco; Washington - Bellevue",
+    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Director-of-Product-Management--Agentforce-Voice-Models_JR361910",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:41.538959+00:00",
+    "fetched_at": "2026-10-08T23:31:37.707509+00:00",
     "date_confidence": "high",
-    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Operations Job Deta"
+    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Product Job Details"
   },
   {
     "company": "Salesforce",
     "source": "salesforce_official_careers",
-    "job_id": "JR345444",
-    "title": "Critical Incident Communications, Senior Specialist",
-    "location": "Georgia - Atlanta; Indiana - Indianapolis; Illinois - Chicago",
-    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Georgia---Atlanta/Critical-Incident-Communications--Senior-Specialist_JR345444",
+    "job_id": "JR359981",
+    "title": "Senior Director, Product Design - Ecosystem",
+    "location": "New York - New York; California - San Francisco",
+    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/New-York---New-York/Senior-Director--Product-Design---Ecosystem_JR359981-1",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:41.538959+00:00",
+    "fetched_at": "2026-10-08T23:31:37.707509+00:00",
     "date_confidence": "high",
-    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Program & Project M"
+    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category User Experience Job"
   },
   {
     "company": "Salesforce",
     "source": "salesforce_official_careers",
-    "job_id": "JR359292",
-    "title": "Associate, Product Marketing Manager",
-    "location": "Georgia - Atlanta; Indiana - Indianapolis",
-    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Georgia---Atlanta/Associate--Product-Marketing-Manager_JR359292",
+    "job_id": "JR359754",
+    "title": "Principal Design Engineer, Mobile (iOS)",
+    "location": "California - San Francisco; New York - New York",
+    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Principal-Design-Engineer--Mobile--iOS-_JR359754-1",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:41.538959+00:00",
+    "fetched_at": "2026-10-08T23:31:37.707509+00:00",
     "date_confidence": "high",
-    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Program & Project M"
+    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category User Experience Job"
   },
   {
     "company": "Salesforce",
     "source": "salesforce_official_careers",
-    "job_id": "JR362497",
-    "title": "Senior Director, Forward Deployed Engineering",
-    "location": "California - San Francisco; Illinois - Chicago; New York - New York",
-    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Director-Sr-Director-Expert-Agent-Builder--Forward-Deployed-Engineering_JR362497",
+    "job_id": "JR358007",
+    "title": "Director of Product Management, Developer Experience",
+    "location": "California - San Francisco; Washington - Seattle; Washington - Bellevue",
+    "official_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Product-Management-Director_JR358007",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:41.538959+00:00",
+    "fetched_at": "2026-10-08T23:31:37.707509+00:00",
     "date_confidence": "high",
-    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Software Engineerin"
+    "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Product Job Details"
   }
 ]
 ```
@@ -628,27 +628,27 @@ Sample normalized records:
 - Search URL/API: `https://adobe.wd5.myworkdayjobs.com/external_experienced`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 32
-- HTTP requests/cumulative request time: 177 / 107.788s
-- Company elapsed time: 133.283s
+- HTTP requests/cumulative request time: 171 / 75.553s
+- Company elapsed time: 100.735s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 144 / 0 / 0
-- Detail cache statuses: {'fetched:new': 142, 'fetched:missing_detail': 2}
+- Detail pages fetched/cache reused/prefilter skipped: 138 / 0 / 0
+- Detail cache statuses: {'fetched:new': 136, 'fetched:missing_detail': 2}
 - Relevant JD recovery: {'eligible': 47, 'usable_jd': 47}
-- Raw jobs found: 534
-- After US/location filtering: 144
-- With trustworthy posted_date: 144
+- Raw jobs found: 529
+- After US/location filtering: 138
+- With trustworthy posted_date: 138
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 61.193, "first_pass_survivors": 80, "group": "official", "jds_resolved": 80, "original_postings_resolved": 80, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 80, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 14.156, "first_pass_survivors": 15, "group": "official", "jds_resolved": 15, "original_postings_resolved": 15, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 39, "stop_reason": "page_budget", "unique_contribution": 15, "unique_jobs": 39}
-- Query diagnostic: {"elapsed_seconds": 8.274, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 22, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 22}
-- Query diagnostic: {"elapsed_seconds": 22.265, "first_pass_survivors": 28, "group": "official", "jds_resolved": 28, "original_postings_resolved": 28, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 59, "stop_reason": "page_budget", "unique_contribution": 28, "unique_jobs": 59}
-- Query diagnostic: {"elapsed_seconds": 3.737, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.747, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 4.272, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 22, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 22}
-- Query diagnostic: {"elapsed_seconds": 5.065, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 52, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 52}
-- Query diagnostic: {"elapsed_seconds": 7.882, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 2.86, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "software development engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 44.941, "first_pass_survivors": 80, "group": "official", "jds_resolved": 80, "original_postings_resolved": 80, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 80, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 10.625, "first_pass_survivors": 15, "group": "official", "jds_resolved": 15, "original_postings_resolved": 15, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 39, "stop_reason": "page_budget", "unique_contribution": 15, "unique_jobs": 39}
+- Query diagnostic: {"elapsed_seconds": 5.248, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 22, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 22}
+- Query diagnostic: {"elapsed_seconds": 14.757, "first_pass_survivors": 24, "group": "official", "jds_resolved": 24, "original_postings_resolved": 24, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 56, "stop_reason": "page_budget", "unique_contribution": 24, "unique_jobs": 56}
+- Query diagnostic: {"elapsed_seconds": 3.276, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.403, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.95, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 21, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 21}
+- Query diagnostic: {"elapsed_seconds": 6.009, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 51, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 51}
+- Query diagnostic: {"elapsed_seconds": 6.883, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 2.788, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "software development engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 60}
 
 Sample normalized records:
 
@@ -663,7 +663,7 @@ Sample normalized records:
     "official_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/AI-Engineer-4_R170716-1",
     "posted_date": "2026-09-23",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:41.617705+00:00",
+    "fetched_at": "2026-10-08T23:31:40.813562+00:00",
     "date_confidence": "high",
     "description": "We build the agentic AI platform that Adobe teams use to get real work done — OneAI , our unified intelligence layer, along with the reusable skills, agents, and dashboards that ru"
   },
@@ -676,7 +676,7 @@ Sample normalized records:
     "official_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Francisco/Sr-Applied-AI-Engineer_R171752",
     "posted_date": "2026-09-18",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:41.617705+00:00",
+    "fetched_at": "2026-10-08T23:31:40.813562+00:00",
     "date_confidence": "high",
     "description": "The Opportunity The GTM Agentic AI Operations team is leading the shift to an Agentic operating model for Adobe GTM and Sales. This function is the orchestration layer that operati"
   },
@@ -689,7 +689,7 @@ Sample normalized records:
     "official_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Job-Posting-Title-AI--DevOps-Engineer_R170387-1",
     "posted_date": "2026-09-18",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:41.617705+00:00",
+    "fetched_at": "2026-10-08T23:31:40.813562+00:00",
     "date_confidence": "high",
     "description": "Senior SRE — RTCDP Datastores & AI/ML Ops Adobe’s Real-Time Customer Data Platform (RTCDP) powers personalized experiences for some of the world’s largest brands. As a Senior SRE o"
   },
@@ -702,7 +702,7 @@ Sample normalized records:
     "official_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Forward-Deployed-AI-Engineer--Marketing-Intelligence---Consumer-Insights_R172095",
     "posted_date": "2026-10-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:41.617705+00:00",
+    "fetched_at": "2026-10-08T23:31:40.813562+00:00",
     "date_confidence": "high",
     "description": "The Opportunity Adobe's Growth Marketing & Insights (GMI) organization is in the middle of a ground-up reinvention of how marketing teams operate. We're no longer adding AI tools t"
   },
@@ -715,7 +715,7 @@ Sample normalized records:
     "official_url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Principal-AI-Systems-Engineer---C-----Applied-AI_R170076",
     "posted_date": "2026-09-18",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:41.617705+00:00",
+    "fetched_at": "2026-10-08T23:31:40.813562+00:00",
     "date_confidence": "high",
     "description": "The Opportunity We are looking for a Senior AI Systems Engineer with deep C++ expertise to help build the next generation of AI-enabled product and platform capabilities. This role"
   }
@@ -729,26 +729,26 @@ Sample normalized records:
 - Search URL/API: `https://www.metacareers.com/jobsearch/`
 - Pagination: one complete Relay payload per role query
 - Pages/requests fetched: 9
-- HTTP requests/cumulative request time: 74 / 46.328s
-- Company elapsed time: 47.269s
+- HTTP requests/cumulative request time: 85 / 59.398s
+- Company elapsed time: 60.365s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 62 / 154 / 490
-- Detail cache statuses: {'reused': 154}
-- Relevant JD recovery: {'deterministic_skip': 327, 'cache_reused': 154, 'eligible': 216, 'ai_skip': 163, 'ai_recover': 16, 'detail_requests': 62, 'detail_failure': 62, 'budget_deferred': 0, 'usable_jd': 154}
-- Raw jobs found: 2329
-- After US/location filtering: 706
+- Detail pages fetched/cache reused/prefilter skipped: 73 / 151 / 493
+- Detail cache statuses: {'reused': 151}
+- Relevant JD recovery: {'cache_reused': 151, 'eligible': 224, 'deterministic_skip': 330, 'ai_skip': 163, 'ai_recover': 19, 'detail_requests': 73, 'detail_failure': 73, 'budget_deferred': 0, 'usable_jd': 151}
+- Raw jobs found: 2368
+- After US/location filtering: 717
 - With trustworthy posted_date: 0
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 0.906, "first_pass_survivors": 424, "group": "official", "jds_resolved": 0, "original_postings_resolved": 424, "page_budget": 1, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 524, "stop_reason": "page_budget", "unique_contribution": 424, "unique_jobs": 524}
-- Query diagnostic: {"elapsed_seconds": 1.174, "first_pass_survivors": 28, "group": "official", "jds_resolved": 0, "original_postings_resolved": 28, "page_budget": 1, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 106, "stop_reason": "page_budget", "unique_contribution": 28, "unique_jobs": 106}
-- Query diagnostic: {"elapsed_seconds": 0.623, "first_pass_survivors": 39, "group": "official", "jds_resolved": 0, "original_postings_resolved": 39, "page_budget": 1, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 120, "stop_reason": "page_budget", "unique_contribution": 39, "unique_jobs": 120}
-- Query diagnostic: {"elapsed_seconds": 1.183, "first_pass_survivors": 28, "group": "official", "jds_resolved": 0, "original_postings_resolved": 28, "page_budget": 1, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 175, "stop_reason": "page_budget", "unique_contribution": 28, "unique_jobs": 175}
-- Query diagnostic: {"elapsed_seconds": 1.611, "first_pass_survivors": 148, "group": "official", "jds_resolved": 0, "original_postings_resolved": 148, "page_budget": 1, "pages_fetched": 1, "query": "data engineer", "raw_jobs": 622, "stop_reason": "page_budget", "unique_contribution": 148, "unique_jobs": 622}
-- Query diagnostic: {"elapsed_seconds": 1.04, "first_pass_survivors": 26, "group": "official", "jds_resolved": 0, "original_postings_resolved": 26, "page_budget": 1, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 365, "stop_reason": "page_budget", "unique_contribution": 26, "unique_jobs": 365}
-- Query diagnostic: {"elapsed_seconds": 0.797, "first_pass_survivors": 1, "group": "official", "jds_resolved": 0, "original_postings_resolved": 1, "page_budget": 1, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 44, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 44}
-- Query diagnostic: {"elapsed_seconds": 0.521, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 1, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 24, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 24}
-- Query diagnostic: {"elapsed_seconds": 1.341, "first_pass_survivors": 12, "group": "official", "jds_resolved": 0, "original_postings_resolved": 12, "page_budget": 1, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 349, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 349}
+- Query diagnostic: {"elapsed_seconds": 0.784, "first_pass_survivors": 426, "group": "official", "jds_resolved": 0, "original_postings_resolved": 426, "page_budget": 1, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 526, "stop_reason": "page_budget", "unique_contribution": 426, "unique_jobs": 526}
+- Query diagnostic: {"elapsed_seconds": 0.727, "first_pass_survivors": 29, "group": "official", "jds_resolved": 0, "original_postings_resolved": 29, "page_budget": 1, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 110, "stop_reason": "page_budget", "unique_contribution": 29, "unique_jobs": 110}
+- Query diagnostic: {"elapsed_seconds": 0.389, "first_pass_survivors": 42, "group": "official", "jds_resolved": 0, "original_postings_resolved": 42, "page_budget": 1, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 125, "stop_reason": "page_budget", "unique_contribution": 42, "unique_jobs": 125}
+- Query diagnostic: {"elapsed_seconds": 0.401, "first_pass_survivors": 29, "group": "official", "jds_resolved": 0, "original_postings_resolved": 29, "page_budget": 1, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 179, "stop_reason": "page_budget", "unique_contribution": 29, "unique_jobs": 179}
+- Query diagnostic: {"elapsed_seconds": 0.927, "first_pass_survivors": 151, "group": "official", "jds_resolved": 0, "original_postings_resolved": 151, "page_budget": 1, "pages_fetched": 1, "query": "data engineer", "raw_jobs": 629, "stop_reason": "page_budget", "unique_contribution": 151, "unique_jobs": 629}
+- Query diagnostic: {"elapsed_seconds": 0.726, "first_pass_survivors": 27, "group": "official", "jds_resolved": 0, "original_postings_resolved": 27, "page_budget": 1, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 369, "stop_reason": "page_budget", "unique_contribution": 27, "unique_jobs": 369}
+- Query diagnostic: {"elapsed_seconds": 0.635, "first_pass_survivors": 1, "group": "official", "jds_resolved": 0, "original_postings_resolved": 1, "page_budget": 1, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 47, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 47}
+- Query diagnostic: {"elapsed_seconds": 0.35, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 1, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 24, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 24}
+- Query diagnostic: {"elapsed_seconds": 0.586, "first_pass_survivors": 12, "group": "official", "jds_resolved": 0, "original_postings_resolved": 12, "page_budget": 1, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 359, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 359}
 
 Sample normalized records:
 
@@ -757,65 +757,65 @@ Sample normalized records:
   {
     "company": "Meta",
     "source": "meta_official_careers",
-    "job_id": "1734358140739006",
-    "title": "Network Engineer, Deployment & Support",
-    "location": "Los Lunas, NM; Mesa, AZ; Aiken, SC; Kansas City, MO; Temple, TX; Rayville, LA; Menlo Park, CA; Papillion, NE; Aurora, IL; Lebanon, IN; Garland, TX; El Paso, TX; Cedar Rapids, IA; DeKalb, IL; New Albany, OH; Altoona, IA; Huntsville, AL; Eagle Mountain, UT; Houston, TX",
-    "official_url": "https://www.metacareers.com/jobs/1734358140739006",
+    "job_id": "1187958502273564",
+    "title": "Software Engineer (Technical Leadership)",
+    "location": "Sunnyvale, CA; Bellevue, WA; Menlo Park, CA; Seattle, WA; New York, NY; San Francisco, CA",
+    "official_url": "https://www.metacareers.com/jobs/1187958502273564",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:44.102658+00:00",
+    "fetched_at": "2026-10-08T23:31:41.285887+00:00",
     "date_confidence": "unknown",
     "description": ""
   },
   {
     "company": "Meta",
     "source": "meta_official_careers",
-    "job_id": "1640437477742870",
-    "title": "Product Policy Manager, GenAI",
-    "location": "Austin, TX; Menlo Park, CA; Washington, DC; New York, NY; San Francisco, CA",
-    "official_url": "https://www.metacareers.com/jobs/1640437477742870",
+    "job_id": "704019139159184",
+    "title": "Software Engineer (Leadership) - Infrastructure",
+    "location": "Sunnyvale, CA; Remote, US; Bellevue, WA; Redmond, WA; Menlo Park, CA; Seattle, WA; Burlingame, CA; New York, NY",
+    "official_url": "https://www.metacareers.com/jobs/704019139159184",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:44.102658+00:00",
+    "fetched_at": "2026-10-08T23:31:41.285887+00:00",
     "date_confidence": "unknown",
-    "description": ""
-  },
-  {
-    "company": "Meta",
-    "source": "meta_official_careers",
-    "job_id": "1346637694687934",
-    "title": "Software Engineer, Systems ML",
-    "location": "Sunnyvale, CA; Bellevue, WA; Menlo Park, CA; New York, NY",
-    "official_url": "https://www.metacareers.com/jobs/1346637694687934",
-    "posted_date": "",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:44.102658+00:00",
-    "date_confidence": "unknown",
-    "description": "Meta is seeking a Software Engineer to join our Systems ML Engineering team, focused on building and optimizing the machine learning infrastructure that powers Meta's products at m"
-  },
-  {
-    "company": "Meta",
-    "source": "meta_official_careers",
-    "job_id": "1793791111815806",
-    "title": "Data Center Central Planning Lead",
-    "location": "Menlo Park, CA; San Francisco, CA",
-    "official_url": "https://www.metacareers.com/jobs/1793791111815806",
-    "posted_date": "",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:44.102658+00:00",
-    "date_confidence": "unknown",
-    "description": ""
+    "description": "Meta is seeking talented principal engineers to join our teams in building cutting-edge products that connect billions of people around the world. As a member of our team, you will"
   },
   {
     "company": "Meta",
     "source": "meta_official_careers",
     "job_id": "1858344791964854",
-    "title": "Production Systems Engineer, Hardware Analytics",
+    "title": "Production Systems Engineer, Fleet Strategy",
     "location": "Menlo Park, CA",
     "official_url": "https://www.metacareers.com/jobs/1858344791964854",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:44.102658+00:00",
+    "fetched_at": "2026-10-08T23:31:41.285887+00:00",
+    "date_confidence": "unknown",
+    "description": ""
+  },
+  {
+    "company": "Meta",
+    "source": "meta_official_careers",
+    "job_id": "4647361298838627",
+    "title": "Data Engineer, Analytics (Ranking, AI)",
+    "location": "Sunnyvale, CA; Menlo Park, CA",
+    "official_url": "https://www.metacareers.com/jobs/4647361298838627",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:31:41.285887+00:00",
+    "date_confidence": "unknown",
+    "description": "Ranking AI is the central core machine learning org within Meta’s Monetization group, powering Meta’s revenue and business growth by advancing and deploying state-of-the-art Recomm"
+  },
+  {
+    "company": "Meta",
+    "source": "meta_official_careers",
+    "job_id": "1643093490566645",
+    "title": "Product Risk Program Manager",
+    "location": "Austin, TX; Menlo Park, CA; New York, NY; Remote, US",
+    "official_url": "https://www.metacareers.com/jobs/1643093490566645",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:31:41.285887+00:00",
     "date_confidence": "unknown",
     "description": ""
   }
@@ -829,26 +829,26 @@ Sample normalized records:
 - Search URL/API: `https://api.lifeattiktok.com/api/v1/public/supplier/search/job/posts`
 - Pagination: offset=0,50,...; limit=50; US city filter
 - Pages/requests fetched: 26
-- HTTP requests/cumulative request time: 26 / 23.263s
-- Company elapsed time: 27.526s
+- HTTP requests/cumulative request time: 26 / 19.937s
+- Company elapsed time: 24.355s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 418, 'usable_jd': 418}
+- Relevant JD recovery: {'eligible': 422, 'usable_jd': 422}
 - Raw jobs found: 1243
-- After US/location filtering: 711
+- After US/location filtering: 710
 - With trustworthy posted_date: 0
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 4.953, "first_pass_survivors": 200, "group": "official", "jds_resolved": 200, "original_postings_resolved": 200, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 200, "stop_reason": "page_budget", "unique_contribution": 200, "unique_jobs": 200}
-- Query diagnostic: {"elapsed_seconds": 2.822, "first_pass_survivors": 131, "group": "official", "jds_resolved": 131, "original_postings_resolved": 131, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 131, "unique_jobs": 150}
-- Query diagnostic: {"elapsed_seconds": 2.834, "first_pass_survivors": 109, "group": "official", "jds_resolved": 109, "original_postings_resolved": 109, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 109, "unique_jobs": 150}
-- Query diagnostic: {"elapsed_seconds": 3.178, "first_pass_survivors": 80, "group": "official", "jds_resolved": 80, "original_postings_resolved": 80, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 80, "unique_jobs": 150}
-- Query diagnostic: {"elapsed_seconds": 4.006, "first_pass_survivors": 63, "group": "official", "jds_resolved": 63, "original_postings_resolved": 63, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 63, "unique_jobs": 150}
-- Query diagnostic: {"elapsed_seconds": 2.972, "first_pass_survivors": 62, "group": "official", "jds_resolved": 62, "original_postings_resolved": 62, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 62, "unique_jobs": 150}
-- Query diagnostic: {"elapsed_seconds": 2.122, "first_pass_survivors": 25, "group": "official", "jds_resolved": 25, "original_postings_resolved": 25, "page_budget": 3, "pages_fetched": 2, "query": "full stack engineer", "raw_jobs": 92, "stop_reason": "early_stop", "unique_contribution": 25, "unique_jobs": 92}
-- Query diagnostic: {"elapsed_seconds": 0.601, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 4.036, "first_pass_survivors": 41, "group": "official", "jds_resolved": 41, "original_postings_resolved": 41, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 200, "stop_reason": "page_budget", "unique_contribution": 41, "unique_jobs": 200}
+- Query diagnostic: {"elapsed_seconds": 4.574, "first_pass_survivors": 200, "group": "official", "jds_resolved": 200, "original_postings_resolved": 200, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 200, "stop_reason": "page_budget", "unique_contribution": 200, "unique_jobs": 200}
+- Query diagnostic: {"elapsed_seconds": 2.572, "first_pass_survivors": 131, "group": "official", "jds_resolved": 131, "original_postings_resolved": 131, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 131, "unique_jobs": 150}
+- Query diagnostic: {"elapsed_seconds": 2.763, "first_pass_survivors": 109, "group": "official", "jds_resolved": 109, "original_postings_resolved": 109, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 109, "unique_jobs": 150}
+- Query diagnostic: {"elapsed_seconds": 2.941, "first_pass_survivors": 80, "group": "official", "jds_resolved": 80, "original_postings_resolved": 80, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 80, "unique_jobs": 150}
+- Query diagnostic: {"elapsed_seconds": 2.544, "first_pass_survivors": 60, "group": "official", "jds_resolved": 60, "original_postings_resolved": 60, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 60, "unique_jobs": 150}
+- Query diagnostic: {"elapsed_seconds": 2.745, "first_pass_survivors": 64, "group": "official", "jds_resolved": 64, "original_postings_resolved": 64, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 64, "unique_jobs": 150}
+- Query diagnostic: {"elapsed_seconds": 1.464, "first_pass_survivors": 25, "group": "official", "jds_resolved": 25, "original_postings_resolved": 25, "page_budget": 3, "pages_fetched": 2, "query": "full stack engineer", "raw_jobs": 92, "stop_reason": "early_stop", "unique_contribution": 25, "unique_jobs": 92}
+- Query diagnostic: {"elapsed_seconds": 1.057, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 3.693, "first_pass_survivors": 41, "group": "official", "jds_resolved": 41, "original_postings_resolved": 41, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 200, "stop_reason": "page_budget", "unique_contribution": 41, "unique_jobs": 200}
 
 Sample normalized records:
 
@@ -863,7 +863,7 @@ Sample normalized records:
     "official_url": "https://lifeattiktok.com/search/7668578318295386373",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:54.258016+00:00",
+    "fetched_at": "2026-10-08T23:31:47.567008+00:00",
     "date_confidence": "unknown",
     "description": "Our team focuses on the R&D of algorithm for TikTok international advertising customer growth. We leverage deep learning and large language model technologies to build an algorithm"
   },
@@ -876,7 +876,7 @@ Sample normalized records:
     "official_url": "https://lifeattiktok.com/search/7688211031676979509",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:54.258016+00:00",
+    "fetched_at": "2026-10-08T23:31:47.567008+00:00",
     "date_confidence": "unknown",
     "description": "Team Introduction: The AIGE (AI-Generated Effects) team is building AI-native creative tools that enable TikTok creators to turn natural-language and multimodal ideas into high-qua"
   },
@@ -889,7 +889,7 @@ Sample normalized records:
     "official_url": "https://lifeattiktok.com/search/7678497203258919221",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:54.258016+00:00",
+    "fetched_at": "2026-10-08T23:31:47.567008+00:00",
     "date_confidence": "unknown",
     "description": "The AIGE (AI-Generated Effects) team is building AI-native creative tools that enable TikTok creators to turn natural-language and multimodal ideas into high-quality, interactive e"
   },
@@ -902,7 +902,7 @@ Sample normalized records:
     "official_url": "https://lifeattiktok.com/search/7669702702763018501",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:54.258016+00:00",
+    "fetched_at": "2026-10-08T23:31:47.567008+00:00",
     "date_confidence": "unknown",
     "description": "The Commercial AI-CRM and Transaction team focuses on TikTok advertiser growth algorithms. Leveraging deep learning and large language model technologies, the team builds an algori"
   },
@@ -915,7 +915,7 @@ Sample normalized records:
     "official_url": "https://lifeattiktok.com/search/7667935568626043141",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:31:54.258016+00:00",
+    "fetched_at": "2026-10-08T23:31:47.567008+00:00",
     "date_confidence": "unknown",
     "description": "TikTok is an international short video platform available in over 150 countries and regions, where we aim to inspire creativity and bring joy by helping people discover authentic a"
   }
@@ -928,27 +928,27 @@ Sample normalized records:
 - Scraping method: HTTP GET Oracle HCM recruitingCEJobRequisitions on iaziqy.fa.ocs.oraclecloud.com (offset pagination) + recruitingCEJobRequisitionDetails
 - Search URL/API: `https://jobs.uber.com/en/jobs/?search=software%20engineer&page=1&pagesize=10`
 - Pagination: HCM finder offset=(page-1)*limit ; limit=20; stop on empty/repeat or TotalJobsCount (do not stop at pages 1–7)
-- Pages/requests fetched: 27
-- HTTP requests/cumulative request time: 187 / 62.978s
-- Company elapsed time: 88.868s
+- Pages/requests fetched: 28
+- HTTP requests/cumulative request time: 188 / 61.320s
+- Company elapsed time: 87.870s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 160 / 0 / 0
-- Detail cache statuses: {'fetched:new': 157, 'fetched:missing_detail': 3}
-- Relevant JD recovery: {'eligible': 24, 'usable_jd': 24}
-- Raw jobs found: 526
+- Detail cache statuses: {'fetched:new': 156, 'fetched:missing_detail': 4}
+- Relevant JD recovery: {'eligible': 27, 'usable_jd': 27}
+- Raw jobs found: 527
 - After US/location filtering: 160
 - With trustworthy posted_date: 160
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 34.195, "first_pass_survivors": 73, "group": "official", "jds_resolved": 73, "original_postings_resolved": 73, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 73, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 13.849, "first_pass_survivors": 25, "group": "official", "jds_resolved": 25, "original_postings_resolved": 25, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 25, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.087, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 19, "stop_reason": "early_stop", "unique_contribution": 4, "unique_jobs": 19}
-- Query diagnostic: {"elapsed_seconds": 8.444, "first_pass_survivors": 17, "group": "official", "jds_resolved": 17, "original_postings_resolved": 17, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 50, "stop_reason": "page_budget", "unique_contribution": 17, "unique_jobs": 50}
-- Query diagnostic: {"elapsed_seconds": 6.96, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 4.317, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 5, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 6.978, "first_pass_survivors": 11, "group": "official", "jds_resolved": 11, "original_postings_resolved": 11, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 11, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 5.146, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 57, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 57}
-- Query diagnostic: {"elapsed_seconds": 6.89, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 8, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 35.345, "first_pass_survivors": 73, "group": "official", "jds_resolved": 73, "original_postings_resolved": 73, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 73, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 12.136, "first_pass_survivors": 26, "group": "official", "jds_resolved": 26, "original_postings_resolved": 26, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 26, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 3.018, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 2, "query": "data scientist", "raw_jobs": 21, "stop_reason": "early_stop", "unique_contribution": 5, "unique_jobs": 21}
+- Query diagnostic: {"elapsed_seconds": 8.654, "first_pass_survivors": 17, "group": "official", "jds_resolved": 17, "original_postings_resolved": 17, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 50, "stop_reason": "page_budget", "unique_contribution": 17, "unique_jobs": 50}
+- Query diagnostic: {"elapsed_seconds": 6.022, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 9, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 4.926, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 6.245, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 9, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 5.773, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 56, "stop_reason": "page_budget", "unique_contribution": 9, "unique_jobs": 56}
+- Query diagnostic: {"elapsed_seconds": 5.751, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 80}
 
 Sample normalized records:
 
@@ -963,7 +963,7 @@ Sample normalized records:
     "official_url": "https://jobs.uber.com/en/jobs/155034",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:32:21.784924+00:00",
+    "fetched_at": "2026-10-08T23:32:11.922813+00:00",
     "date_confidence": "high",
     "description": "About the Role As a Senior Staff Engineer at Uber, you will serve at the highest level of technical leadership, defining strategic direction, system architecture, and technical vis"
   },
@@ -976,7 +976,7 @@ Sample normalized records:
     "official_url": "https://jobs.uber.com/en/jobs/152899",
     "posted_date": "2026-06-19",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:32:21.784924+00:00",
+    "fetched_at": "2026-10-08T23:32:11.922813+00:00",
     "date_confidence": "high",
     "description": "About the Role Uber’s Customer Obsession team builds the platform and AI that powers world‑class support across mobile, web, and voice at global scale. We are now hiring a Staff ML"
   },
@@ -989,7 +989,7 @@ Sample normalized records:
     "official_url": "https://jobs.uber.com/en/jobs/145860",
     "posted_date": "2026-07-17",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:32:21.784924+00:00",
+    "fetched_at": "2026-10-08T23:32:11.922813+00:00",
     "date_confidence": "high",
     "description": "About the Team: The Applied AI team collaborates with product teams across Uber to deliver innovative AI solutions for core business problems. We work closely with engineering, pro"
   },
@@ -1002,7 +1002,7 @@ Sample normalized records:
     "official_url": "https://jobs.uber.com/en/jobs/146988",
     "posted_date": "2026-06-19",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:32:21.784924+00:00",
+    "fetched_at": "2026-10-08T23:32:11.922813+00:00",
     "date_confidence": "high",
     "description": "About the Team The Applied AI team collaborates with product teams across Uber to deliver innovative AI solutions for core business problems. We work closely with engineering, prod"
   },
@@ -1015,7 +1015,7 @@ Sample normalized records:
     "official_url": "https://jobs.uber.com/en/jobs/300982",
     "posted_date": "2026-08-06",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:32:21.784924+00:00",
+    "fetched_at": "2026-10-08T23:32:11.922813+00:00",
     "date_confidence": "high",
     "description": "Uber AI Solutions (UAIS) is a startup inside Uber, building the data and evaluation infrastructure behind the next generation of AI. The models making headlines are only as good as"
   }
@@ -1029,15 +1029,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/doordashusa/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.286s
-- Company elapsed time: 2.510s
+- HTTP requests/cumulative request time: 1 / 0.376s
+- Company elapsed time: 3.629s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 114, 'usable_jd': 114}
-- Raw jobs found: 471
-- After US/location filtering: 469
-- With trustworthy posted_date: 469
+- Relevant JD recovery: {'eligible': 113, 'usable_jd': 113}
+- Raw jobs found: 466
+- After US/location filtering: 465
+- With trustworthy posted_date: 465
 - Errors/403s: none
 
 Sample normalized records:
@@ -1047,26 +1047,13 @@ Sample normalized records:
   {
     "company": "DoorDash",
     "source": "doordash_official_careers",
-    "job_id": "7858932",
-    "title": "Account Executive",
-    "location": "Charlotte, NC; Raleigh, NC; Tampa, FL; Orlando, FL; Pittsburgh, PA; Richmond, VA; Jacksonville, FL; Columbus, OH; Dallas, TX; Houston, TX; Minneapolis, MN; Nashville, TN; Kansas City, MO; St. Louis, MO; Tempe, AZ; Indianapolis, IN; Oklahoma City, OK; New Orleans, LA; Charleston, SC; Atlanta, GA; Tempe, AZ",
-    "official_url": "https://job-boards.greenhouse.io/doordashusa/jobs/7858932",
-    "posted_date": "2026-04-27",
-    "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:32:56.108265+00:00",
-    "date_confidence": "high",
-    "description": "<div class=\"content-intro\"><p><img style=\"display: none; max-width: 100%;\" src=\"https://click.appcast.io/greenhouse-te8/a31.png?ent=34&amp;e=22630&amp;t=1701374353806\" width=\"1px\">"
-  },
-  {
-    "company": "DoorDash",
-    "source": "doordash_official_careers",
     "job_id": "8139265",
     "title": "Account Executive",
     "location": "Seattle, WA; Washington",
     "official_url": "https://job-boards.greenhouse.io/doordashusa/jobs/8139265",
     "posted_date": "2026-10-07",
     "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:32:56.108265+00:00",
+    "fetched_at": "2026-10-08T23:32:42.434447+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><img style=\"display: none; max-width: 100%;\" src=\"https://click.appcast.io/greenhouse-te8/a31.png?ent=34&amp;e=22630&amp;t=1701374353806\" width=\"1px\">"
   },
@@ -1079,7 +1066,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/doordashusa/jobs/7490373",
     "posted_date": "2026-01-05",
     "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:32:56.108265+00:00",
+    "fetched_at": "2026-10-08T23:32:42.434447+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><img style=\"display: none; max-width: 100%;\" src=\"https://click.appcast.io/greenhouse-te8/a31.png?ent=34&amp;e=22630&amp;t=1701374353806\" width=\"1px\">"
   },
@@ -1092,7 +1079,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/doordashusa/jobs/8160362",
     "posted_date": "2026-08-26",
     "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:32:56.108265+00:00",
+    "fetched_at": "2026-10-08T23:32:42.434447+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><img style=\"display: none; max-width: 100%;\" src=\"https://click.appcast.io/greenhouse-te8/a31.png?ent=34&amp;e=22630&amp;t=1701374353806\" width=\"1px\">"
   },
@@ -1105,7 +1092,20 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/doordashusa/jobs/7951406",
     "posted_date": "2026-05-27",
     "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:32:56.108265+00:00",
+    "fetched_at": "2026-10-08T23:32:42.434447+00:00",
+    "date_confidence": "high",
+    "description": "<div class=\"content-intro\"><p><img style=\"display: none; max-width: 100%;\" src=\"https://click.appcast.io/greenhouse-te8/a31.png?ent=34&amp;e=22630&amp;t=1701374353806\" width=\"1px\">"
+  },
+  {
+    "company": "DoorDash",
+    "source": "doordash_official_careers",
+    "job_id": "7958917",
+    "title": "Account Manager, Platform Innovation",
+    "location": "Chicago, IL; Detroit, MI; New York, NY; Philadelphia, PA; Washington, DC; San Francisco, CA",
+    "official_url": "https://job-boards.greenhouse.io/doordashusa/jobs/7958917",
+    "posted_date": "2026-05-27",
+    "updated_date": "2026-10-06",
+    "fetched_at": "2026-10-08T23:32:42.434447+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><img style=\"display: none; max-width: 100%;\" src=\"https://click.appcast.io/greenhouse-te8/a31.png?ent=34&amp;e=22630&amp;t=1701374353806\" width=\"1px\">"
   }
@@ -1119,26 +1119,26 @@ Sample normalized records:
 - Search URL/API: `https://wd1.myworkdaysite.com/recruiting/snapchat/snap`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 23
-- HTTP requests/cumulative request time: 126 / 43.066s
-- Company elapsed time: 60.361s
+- HTTP requests/cumulative request time: 126 / 55.707s
+- Company elapsed time: 73.280s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 102 / 0 / 0
 - Detail cache statuses: {'fetched:new': 101, 'fetched:missing_detail': 1}
 - Relevant JD recovery: {'eligible': 17, 'usable_jd': 17}
-- Raw jobs found: 361
+- Raw jobs found: 364
 - After US/location filtering: 102
 - With trustworthy posted_date: 102
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 25.865, "first_pass_survivors": 59, "group": "official", "jds_resolved": 59, "original_postings_resolved": 59, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 73, "stop_reason": "page_budget", "unique_contribution": 59, "unique_jobs": 73}
-- Query diagnostic: {"elapsed_seconds": 4.322, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 38, "stop_reason": "page_budget", "unique_contribution": 5, "unique_jobs": 38}
-- Query diagnostic: {"elapsed_seconds": 1.019, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 11}
-- Query diagnostic: {"elapsed_seconds": 5.169, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 22, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 22}
-- Query diagnostic: {"elapsed_seconds": 6.774, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 6.274, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 9, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 1.778, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 15, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 15}
-- Query diagnostic: {"elapsed_seconds": 0.61, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 2}
-- Query diagnostic: {"elapsed_seconds": 7.881, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 31.73, "first_pass_survivors": 60, "group": "official", "jds_resolved": 60, "original_postings_resolved": 60, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 74, "stop_reason": "page_budget", "unique_contribution": 60, "unique_jobs": 74}
+- Query diagnostic: {"elapsed_seconds": 4.432, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 38, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 38}
+- Query diagnostic: {"elapsed_seconds": 0.67, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 11}
+- Query diagnostic: {"elapsed_seconds": 5.618, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 23, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 23}
+- Query diagnostic: {"elapsed_seconds": 8.246, "first_pass_survivors": 13, "group": "official", "jds_resolved": 13, "original_postings_resolved": 13, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 13, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 8.159, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 9, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 1.927, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 16, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 16}
+- Query diagnostic: {"elapsed_seconds": 5.088, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 2}
+- Query diagnostic: {"elapsed_seconds": 6.627, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 80}
 
 Sample normalized records:
 
@@ -1153,7 +1153,7 @@ Sample normalized records:
     "official_url": "https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Los-Angeles-California/Staff-Machine-Learning-Engineer--Generative-AI-Modeling-and-Inference_R0046467",
     "posted_date": "2026-09-25",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:32:58.620143+00:00",
+    "fetched_at": "2026-10-08T23:32:46.064622+00:00",
     "date_confidence": "high",
     "description": "Snap Inc is a technology company. We believe the camera presents the greatest opportunity to improve the way people live and communicate. Snap contributes to human progress by empo"
   },
@@ -1166,7 +1166,7 @@ Sample normalized records:
     "official_url": "https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Los-Angeles-California/Staff-Software-Engineer--Platform-Engineering_R0045781-1",
     "posted_date": "2026-09-25",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:32:58.620143+00:00",
+    "fetched_at": "2026-10-08T23:32:46.064622+00:00",
     "date_confidence": "high",
     "description": "Snap Inc is a technology company. We believe the camera presents the greatest opportunity to improve the way people live and communicate. Snap contributes to human progress by empo"
   },
@@ -1179,7 +1179,7 @@ Sample normalized records:
     "official_url": "https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Los-Angeles-California/Privacy-Engineer--Level-4_R0046612-1",
     "posted_date": "2026-09-25",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:32:58.620143+00:00",
+    "fetched_at": "2026-10-08T23:32:46.064622+00:00",
     "date_confidence": "high",
     "description": "Snap Inc is a technology company. We believe the camera presents the greatest opportunity to improve the way people live and communicate. Snap contributes to human progress by empo"
   },
@@ -1192,7 +1192,7 @@ Sample normalized records:
     "official_url": "https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Los-Angeles-California/Manager--Privacy-Engineering_R0046161-1",
     "posted_date": "2026-09-25",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:32:58.620143+00:00",
+    "fetched_at": "2026-10-08T23:32:46.064622+00:00",
     "date_confidence": "high",
     "description": "Snap Inc is a technology company. We believe the camera presents the greatest opportunity to improve the way people live and communicate. Snap contributes to human progress by empo"
   },
@@ -1205,7 +1205,7 @@ Sample normalized records:
     "official_url": "https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Los-Angeles-California/Manager--Software-Engineering_H226EM8-1",
     "posted_date": "2026-09-30",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:32:58.620143+00:00",
+    "fetched_at": "2026-10-08T23:32:46.064622+00:00",
     "date_confidence": "high",
     "description": "Snap Inc is a technology company. We believe the camera presents the greatest opportunity to improve the way people live and communicate. Snap contributes to human progress by empo"
   }
@@ -1219,15 +1219,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/pinterest/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.114s
-- Company elapsed time: 0.643s
+- HTTP requests/cumulative request time: 1 / 0.139s
+- Company elapsed time: 0.926s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 20, 'usable_jd': 20}
+- Relevant JD recovery: {'eligible': 21, 'usable_jd': 21}
 - Raw jobs found: 180
-- After US/location filtering: 137
-- With trustworthy posted_date: 137
+- After US/location filtering: 138
+- With trustworthy posted_date: 138
 - Errors/403s: none
 
 Sample normalized records:
@@ -1242,8 +1242,8 @@ Sample normalized records:
     "location": "San Francisco, CA, US; Palo Alto, CA, US; San Francisco, CA, US",
     "official_url": "https://www.pinterestcareers.com/jobs/?gh_jid=8103612",
     "posted_date": "2026-08-14",
-    "updated_date": "2026-10-02",
-    "fetched_at": "2026-10-08T14:33:11.169241+00:00",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:32:56.331472+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>About Pinterest:</strong></p> <p>Millions of people around the world come to our platform to find creative ideas, dream about new possibilitie"
   },
@@ -1256,7 +1256,7 @@ Sample normalized records:
     "official_url": "https://www.pinterestcareers.com/jobs/?gh_jid=8242487",
     "posted_date": "2026-10-07",
     "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:33:11.169241+00:00",
+    "fetched_at": "2026-10-08T23:32:56.331472+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>About Pinterest:</strong></p> <p>Millions of people around the world come to our platform to find creative ideas, dream about new possibilitie"
   },
@@ -1269,7 +1269,7 @@ Sample normalized records:
     "official_url": "https://www.pinterestcareers.com/jobs/?gh_jid=8202207",
     "posted_date": "2026-09-17",
     "updated_date": "2026-10-02",
-    "fetched_at": "2026-10-08T14:33:11.169241+00:00",
+    "fetched_at": "2026-10-08T23:32:56.331472+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>About Pinterest:</strong></p> <p>Millions of people around the world come to our platform to find creative ideas, dream about new possibilitie"
   },
@@ -1282,7 +1282,7 @@ Sample normalized records:
     "official_url": "https://www.pinterestcareers.com/jobs/?gh_jid=8130612",
     "posted_date": "2026-09-11",
     "updated_date": "2026-10-02",
-    "fetched_at": "2026-10-08T14:33:11.169241+00:00",
+    "fetched_at": "2026-10-08T23:32:56.331472+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>About Pinterest:</strong></p> <p>Millions of people around the world come to our platform to find creative ideas, dream about new possibilitie"
   },
@@ -1295,7 +1295,7 @@ Sample normalized records:
     "official_url": "https://www.pinterestcareers.com/jobs/?gh_jid=8223489",
     "posted_date": "2026-10-01",
     "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:33:11.169241+00:00",
+    "fetched_at": "2026-10-08T23:32:56.331472+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>About Pinterest:</strong></p> <p>Millions of people around the world come to our platform to find creative ideas, dream about new possibilitie"
   }
@@ -1309,15 +1309,15 @@ Sample normalized records:
 - Search URL/API: `https://api.ashbyhq.com/posting-api/job-board/snowflake`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.257s
-- Company elapsed time: 0.727s
+- HTTP requests/cumulative request time: 1 / 0.337s
+- Company elapsed time: 0.993s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 40, 'usable_jd': 40}
-- Raw jobs found: 358
-- After US/location filtering: 259
-- With trustworthy posted_date: 259
+- Relevant JD recovery: {'eligible': 41, 'usable_jd': 41}
+- Raw jobs found: 360
+- After US/location filtering: 261
+- With trustworthy posted_date: 261
 - Errors/403s: none
 
 Sample normalized records:
@@ -1333,7 +1333,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/snowflake/db1375f0-ea5d-404a-b640-259f94dbc995",
     "posted_date": "2026-07-28",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:11.813612+00:00",
+    "fetched_at": "2026-10-08T23:32:57.258907+00:00",
     "date_confidence": "high",
     "description": "At Snowflake, we are powering the era of the agentic enterprise. To usher in this new era, we seek AI-native thinkers across every function who are energized by the opportunity to "
   },
@@ -1346,7 +1346,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/snowflake/3eb872af-0ab1-4986-8f72-e7321fcd1538",
     "posted_date": "2026-02-06",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:11.813612+00:00",
+    "fetched_at": "2026-10-08T23:32:57.258907+00:00",
     "date_confidence": "high",
     "description": "At Snowflake, we are powering the era of the agentic enterprise. To usher in this new era, we seek AI-native thinkers across every function who are energized by the opportunity to "
   },
@@ -1359,7 +1359,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/snowflake/58aeb127-c600-4dc7-861f-6924f4125dce",
     "posted_date": "2026-09-24",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:11.813612+00:00",
+    "fetched_at": "2026-10-08T23:32:57.258907+00:00",
     "date_confidence": "high",
     "description": "At Snowflake, we are powering the era of the agentic enterprise. To usher in this new era, we seek AI-native thinkers across every function who are energized by the opportunity to "
   },
@@ -1372,7 +1372,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/snowflake/e2739aab-b0a2-4583-92c1-13bbd4fd9672",
     "posted_date": "2026-03-23",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:11.813612+00:00",
+    "fetched_at": "2026-10-08T23:32:57.258907+00:00",
     "date_confidence": "high",
     "description": "At Snowflake, we are powering the era of the agentic enterprise. To usher in this new era, we seek AI-native thinkers across every function who are energized by the opportunity to "
   },
@@ -1385,7 +1385,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/snowflake/97813cac-e55c-4631-94fe-5eda15c7eaed",
     "posted_date": "2026-04-01",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:11.813612+00:00",
+    "fetched_at": "2026-10-08T23:32:57.258907+00:00",
     "date_confidence": "high",
     "description": "At Snowflake, we are powering the era of the agentic enterprise. To usher in this new era, we seek AI-native thinkers across every function who are energized by the opportunity to "
   }
@@ -1399,26 +1399,26 @@ Sample normalized records:
 - Search URL/API: `https://careers.smartrecruiters.com/ServiceNow`
 - Pagination: offset=0,100,... ; country=us; stop on empty/repeat or totalFound
 - Pages/requests fetched: 22
-- HTTP requests/cumulative request time: 426 / 175.664s
-- Company elapsed time: 228.968s
+- HTTP requests/cumulative request time: 427 / 198.227s
+- Company elapsed time: 252.581s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 404 / 0 / 0
-- Detail cache statuses: {'fetched:new': 404}
-- Relevant JD recovery: {'eligible': 49, 'usable_jd': 49}
-- Raw jobs found: 1843
-- After US/location filtering: 404
-- With trustworthy posted_date: 404
+- Detail pages fetched/cache reused/prefilter skipped: 405 / 0 / 0
+- Detail cache statuses: {'fetched:new': 405}
+- Relevant JD recovery: {'eligible': 48, 'usable_jd': 48}
+- Raw jobs found: 1865
+- After US/location filtering: 405
+- With trustworthy posted_date: 405
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 170.585, "first_pass_survivors": 313, "group": "official", "jds_resolved": 313, "original_postings_resolved": 313, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 313, "stop_reason": "page_budget", "unique_contribution": 313, "unique_jobs": 313}
-- Query diagnostic: {"elapsed_seconds": 1.007, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 2, "query": "machine learning engineer", "raw_jobs": 109, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 109}
-- Query diagnostic: {"elapsed_seconds": 6.93, "first_pass_survivors": 11, "group": "official", "jds_resolved": 11, "original_postings_resolved": 11, "page_budget": 3, "pages_fetched": 2, "query": "data scientist", "raw_jobs": 173, "stop_reason": "early_stop", "unique_contribution": 11, "unique_jobs": 173}
-- Query diagnostic: {"elapsed_seconds": 40.716, "first_pass_survivors": 73, "group": "official", "jds_resolved": 73, "original_postings_resolved": 73, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 268, "stop_reason": "page_budget", "unique_contribution": 73, "unique_jobs": 268}
-- Query diagnostic: {"elapsed_seconds": 1.624, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 292, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 292}
-- Query diagnostic: {"elapsed_seconds": 4.524, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 300, "stop_reason": "page_budget", "unique_contribution": 5, "unique_jobs": 300}
-- Query diagnostic: {"elapsed_seconds": 0.403, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 72, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 72}
-- Query diagnostic: {"elapsed_seconds": 0.387, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 52, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 52}
-- Query diagnostic: {"elapsed_seconds": 2.792, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 4, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 264, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 264}
+- Query diagnostic: {"elapsed_seconds": 189.095, "first_pass_survivors": 315, "group": "official", "jds_resolved": 315, "original_postings_resolved": 315, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 315, "stop_reason": "page_budget", "unique_contribution": 315, "unique_jobs": 315}
+- Query diagnostic: {"elapsed_seconds": 1.097, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 2, "query": "machine learning engineer", "raw_jobs": 113, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 113}
+- Query diagnostic: {"elapsed_seconds": 8.072, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 3, "pages_fetched": 2, "query": "data scientist", "raw_jobs": 177, "stop_reason": "early_stop", "unique_contribution": 12, "unique_jobs": 177}
+- Query diagnostic: {"elapsed_seconds": 44.961, "first_pass_survivors": 73, "group": "official", "jds_resolved": 73, "original_postings_resolved": 73, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 272, "stop_reason": "page_budget", "unique_contribution": 73, "unique_jobs": 272}
+- Query diagnostic: {"elapsed_seconds": 1.838, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 298, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 298}
+- Query diagnostic: {"elapsed_seconds": 3.76, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 300, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 300}
+- Query diagnostic: {"elapsed_seconds": 0.457, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 68, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 68}
+- Query diagnostic: {"elapsed_seconds": 0.439, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 53, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 53}
+- Query diagnostic: {"elapsed_seconds": 2.86, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 4, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 269, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 269}
 
 Sample normalized records:
 
@@ -1427,65 +1427,65 @@ Sample normalized records:
   {
     "company": "ServiceNow",
     "source": "servicenow_official_careers",
-    "job_id": "JB0076130",
-    "title": "Distinguished Product Manager, Ai Agent Products",
-    "location": "San Diego, California, United States",
-    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000154195449-distinguished-product-manager-ai-agent-products",
-    "posted_date": "2026-10-07",
+    "job_id": "JB0076060",
+    "title": "Senior Staff Product Manager",
+    "location": "New York City, New York, United States",
+    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000154532199-senior-staff-product-manager",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:12.542092+00:00",
+    "fetched_at": "2026-10-08T23:32:58.253456+00:00",
     "date_confidence": "high",
     "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
   },
   {
     "company": "ServiceNow",
     "source": "servicenow_official_careers",
-    "job_id": "JB0076118",
+    "job_id": "JB0075766",
+    "title": "Sr. Staff Product Designer, AI/ML",
+    "location": "Kirkland, Washington, United States",
+    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000154513541-sr-staff-product-designer-ai-ml",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:32:58.253456+00:00",
+    "date_confidence": "high",
+    "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
+  },
+  {
+    "company": "ServiceNow",
+    "source": "servicenow_official_careers",
+    "job_id": "JB0075633",
+    "title": "Manager, Emerging TA Capabilities & Pilots",
+    "location": "Austin, Texas, United States",
+    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000154506638-manager-emerging-ta-capabilities-pilots",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:32:58.253456+00:00",
+    "date_confidence": "high",
+    "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
+  },
+  {
+    "company": "ServiceNow",
+    "source": "servicenow_official_careers",
+    "job_id": "JB0074787",
+    "title": "Director, Customer Excellence Product Marketing",
+    "location": "Santa Clara, California, United States",
+    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000154497304-director-customer-excellence-product-marketing",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:32:58.253456+00:00",
+    "date_confidence": "high",
+    "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
+  },
+  {
+    "company": "ServiceNow",
+    "source": "servicenow_official_careers",
+    "job_id": "JB0075974",
     "title": "Staff Software Engineer",
-    "location": "San Diego, California, United States",
-    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000154188579-staff-software-engineer",
-    "posted_date": "2026-10-07",
+    "location": "Santa Clara, California, United States",
+    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000154493219-staff-software-engineer",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:12.542092+00:00",
-    "date_confidence": "high",
-    "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
-  },
-  {
-    "company": "ServiceNow",
-    "source": "servicenow_official_careers",
-    "job_id": "JB0075470",
-    "title": "Staff Software Engineer",
-    "location": "Chicago, Illinois, United States",
-    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000154177445-staff-software-engineer",
-    "posted_date": "2026-10-07",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:12.542092+00:00",
-    "date_confidence": "high",
-    "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
-  },
-  {
-    "company": "ServiceNow",
-    "source": "servicenow_official_careers",
-    "job_id": "JB0075170",
-    "title": "Senior Manager, Platform Engineering",
-    "location": "Santa Clara, CALIFORNIA, United States",
-    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000154174169-senior-manager-platform-engineering",
-    "posted_date": "2026-10-07",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:12.542092+00:00",
-    "date_confidence": "high",
-    "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
-  },
-  {
-    "company": "ServiceNow",
-    "source": "servicenow_official_careers",
-    "job_id": "JB0075170",
-    "title": "Senior Manager, Platform Engineering",
-    "location": "San Diego, CALIFORNIA, United States",
-    "official_url": "https://jobs.smartrecruiters.com/ServiceNow/744000154173739-senior-manager-platform-engineering",
-    "posted_date": "2026-10-07",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:12.542092+00:00",
+    "fetched_at": "2026-10-08T23:32:58.253456+00:00",
     "date_confidence": "high",
     "description": "It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company tha"
   }
@@ -1517,8 +1517,8 @@ Sample normalized records:
 - Search URL/API: `https://bloomberg.avature.net/careers/SearchJobs?q=software+engineer&jobRecordsPerPage=12&jobOffset=0`
 - Pagination: jobOffset=0,12,... ; stop on empty/repeat or short page
 - Pages/requests fetched: 29
-- HTTP requests/cumulative request time: 47 / 53.389s
-- Company elapsed time: 64.908s
+- HTTP requests/cumulative request time: 47 / 54.534s
+- Company elapsed time: 66.334s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 18 / 3 / 21
 - Detail cache statuses: {'fetched:new': 18, 'reused': 3}
@@ -1528,15 +1528,15 @@ Sample normalized records:
 - With trustworthy posted_date: 0
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 25.427, "first_pass_survivors": 21, "group": "official", "jds_resolved": 21, "original_postings_resolved": 21, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 48, "stop_reason": "page_budget", "unique_contribution": 21, "unique_jobs": 48}
-- Query diagnostic: {"elapsed_seconds": 4.861, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
-- Query diagnostic: {"elapsed_seconds": 4.613, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
-- Query diagnostic: {"elapsed_seconds": 4.811, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
-- Query diagnostic: {"elapsed_seconds": 4.752, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
-- Query diagnostic: {"elapsed_seconds": 4.865, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
-- Query diagnostic: {"elapsed_seconds": 4.742, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
-- Query diagnostic: {"elapsed_seconds": 4.612, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
-- Query diagnostic: {"elapsed_seconds": 6.225, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 48, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 48}
+- Query diagnostic: {"elapsed_seconds": 26.821, "first_pass_survivors": 21, "group": "official", "jds_resolved": 21, "original_postings_resolved": 21, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 48, "stop_reason": "page_budget", "unique_contribution": 21, "unique_jobs": 48}
+- Query diagnostic: {"elapsed_seconds": 4.865, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
+- Query diagnostic: {"elapsed_seconds": 4.968, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
+- Query diagnostic: {"elapsed_seconds": 4.795, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
+- Query diagnostic: {"elapsed_seconds": 4.747, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
+- Query diagnostic: {"elapsed_seconds": 4.649, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
+- Query diagnostic: {"elapsed_seconds": 4.621, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
+- Query diagnostic: {"elapsed_seconds": 4.601, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
+- Query diagnostic: {"elapsed_seconds": 6.266, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 48, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 48}
 
 Sample normalized records:
 
@@ -1545,15 +1545,28 @@ Sample normalized records:
   {
     "company": "Bloomberg",
     "source": "bloomberg_official_careers",
-    "job_id": "45159",
-    "title": "Associate Cyber Threat Intelligence Analyst",
+    "job_id": "45165",
+    "title": "Financial Regulatory Counsel",
     "location": "New York, New York, United States of America",
-    "official_url": "https://bloomberg.avature.net/careers/JobDetail/Associate-Cyber-Threat-Intelligence-Analyst/45159",
+    "official_url": "https://bloomberg.avature.net/careers/JobDetail/Financial-Regulatory-Counsel/45165",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:50.653655+00:00",
+    "fetched_at": "2026-10-08T23:33:21.550200+00:00",
     "date_confidence": "unknown",
-    "description": "Associate Cyber Threat Intelligence Analyst"
+    "description": "Financial Regulatory Counsel"
+  },
+  {
+    "company": "Bloomberg",
+    "source": "bloomberg_official_careers",
+    "job_id": "45109",
+    "title": "Security & Data Management Specialist",
+    "location": "New York, New York, United States of America",
+    "official_url": "https://bloomberg.avature.net/careers/JobDetail/Security-Data-Management-Specialist/45109",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:33:21.550200+00:00",
+    "date_confidence": "unknown",
+    "description": "Security & Data Management Specialist"
   },
   {
     "company": "Bloomberg",
@@ -1564,7 +1577,7 @@ Sample normalized records:
     "official_url": "https://bloomberg.avature.net/careers/JobDetail/Training-Specialist-Financial-Solutions-Knowledge-Group-FSKG/45129",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:50.653655+00:00",
+    "fetched_at": "2026-10-08T23:33:21.550200+00:00",
     "date_confidence": "unknown",
     "description": "Training Specialist - Financial Solutions Knowledge Group (FSKG)"
   },
@@ -1577,7 +1590,7 @@ Sample normalized records:
     "official_url": "https://bloomberg.avature.net/careers/JobDetail/Bloomberg-On-Site-Support-Specialist-BOS/45125",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:50.653655+00:00",
+    "fetched_at": "2026-10-08T23:33:21.550200+00:00",
     "date_confidence": "unknown",
     "description": "Bloomberg On-Site Support Specialist (BOS)"
   },
@@ -1590,22 +1603,9 @@ Sample normalized records:
     "official_url": "https://bloomberg.avature.net/careers/JobDetail/Senior-Data-Management-Professional-Data-Engineering-Data-AI/45112",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:50.653655+00:00",
+    "fetched_at": "2026-10-08T23:33:21.550200+00:00",
     "date_confidence": "unknown",
     "description": "Senior Data Management Professional - Data Engineering (Data AI)"
-  },
-  {
-    "company": "Bloomberg",
-    "source": "bloomberg_official_careers",
-    "job_id": "45110",
-    "title": "Bloomberg Economics US Senior Economist",
-    "location": "New York, New York, United States of America",
-    "official_url": "https://bloomberg.avature.net/careers/JobDetail/Bloomberg-Economics-US-Senior-Economist/45110",
-    "posted_date": "",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:50.653655+00:00",
-    "date_confidence": "unknown",
-    "description": "Bloomberg Economics US Senior Economist"
   }
 ]
 ```
@@ -1617,41 +1617,41 @@ Sample normalized records:
 - Search URL/API: `https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions?keyword=software+engineer`
 - Pagination: finder offset=0,20,... ; limit=20; stop on empty/repeat or TotalJobsCount
 - Pages/requests fetched: 64
-- HTTP requests/cumulative request time: 592 / 152.674s
-- Company elapsed time: 233.672s
+- HTTP requests/cumulative request time: 599 / 124.774s
+- Company elapsed time: 207.578s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 528 / 0 / 0
-- Detail cache statuses: {'fetched:new': 507, 'fetched:missing_detail': 21}
-- Relevant JD recovery: {'eligible': 109, 'usable_jd': 109}
+- Detail pages fetched/cache reused/prefilter skipped: 535 / 0 / 0
+- Detail cache statuses: {'fetched:new': 515, 'fetched:missing_detail': 20}
+- Relevant JD recovery: {'eligible': 110, 'usable_jd': 110}
 - Raw jobs found: 1264
-- After US/location filtering: 528
-- With trustworthy posted_date: 528
+- After US/location filtering: 535
+- With trustworthy posted_date: 535
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 19.093, "first_pass_survivors": 50, "group": "official", "jds_resolved": 50, "original_postings_resolved": 50, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 50, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 14.524, "first_pass_survivors": 38, "group": "official", "jds_resolved": 38, "original_postings_resolved": 38, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 38, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 14.633, "first_pass_survivors": 36, "group": "official", "jds_resolved": 36, "original_postings_resolved": 36, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 36, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 12.325, "first_pass_survivors": 32, "group": "official", "jds_resolved": 32, "original_postings_resolved": 32, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 32, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 12.583, "first_pass_survivors": 28, "group": "official", "jds_resolved": 28, "original_postings_resolved": 28, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 28, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 12.162, "first_pass_survivors": 29, "group": "official", "jds_resolved": 29, "original_postings_resolved": 29, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 29, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 9.777, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 22, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 8.223, "first_pass_survivors": 17, "group": "official", "jds_resolved": 17, "original_postings_resolved": 17, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 17, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 7.011, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 13.456, "first_pass_survivors": 34, "group": "official", "jds_resolved": 34, "original_postings_resolved": 34, "page_budget": 3, "pages_fetched": 3, "query": "full stack", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 34, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 9.874, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "python react", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 9.103, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 3, "query": "pyspark databricks", "raw_jobs": 44, "stop_reason": "page_budget", "unique_contribution": 22, "unique_jobs": 44}
-- Query diagnostic: {"elapsed_seconds": 8.688, "first_pass_survivors": 18, "group": "official", "jds_resolved": 18, "original_postings_resolved": 18, "page_budget": 3, "pages_fetched": 3, "query": "experienced software engineer java python", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 18, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 9.854, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 3, "query": "agentic ai", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 22, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 14.889, "first_pass_survivors": 32, "group": "official", "jds_resolved": 32, "original_postings_resolved": 32, "page_budget": 3, "pages_fetched": 3, "query": "site reliability engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 32, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 9.341, "first_pass_survivors": 13, "group": "official", "jds_resolved": 13, "original_postings_resolved": 13, "page_budget": 3, "pages_fetched": 3, "query": "software engineer ii", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 13, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 15.857, "first_pass_survivors": 33, "group": "official", "jds_resolved": 33, "original_postings_resolved": 33, "page_budget": 3, "pages_fetched": 3, "query": "infrastructure engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 33, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 9.45, "first_pass_survivors": 20, "group": "official", "jds_resolved": 20, "original_postings_resolved": 20, "page_budget": 3, "pages_fetched": 3, "query": "security engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 20, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 10.11, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "quantitative developer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 3.076, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 1, "pages_fetched": 1, "query": "software engineer java spring", "raw_jobs": 20, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 20}
-- Query diagnostic: {"elapsed_seconds": 1.902, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 1, "pages_fetched": 1, "query": "software engineer python authe", "raw_jobs": 20, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 20}
-- Query diagnostic: {"elapsed_seconds": 1.539, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 1, "pages_fetched": 1, "query": "aws data platform engineer", "raw_jobs": 20, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 20}
-- Query diagnostic: {"elapsed_seconds": 2.14, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 1, "pages_fetched": 1, "query": "data engineer applied ai", "raw_jobs": 20, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 20}
-- Query diagnostic: {"elapsed_seconds": 4.062, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 1, "pages_fetched": 1, "query": "asset management technology", "raw_jobs": 20, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 20}
+- Query diagnostic: {"elapsed_seconds": 17.873, "first_pass_survivors": 50, "group": "official", "jds_resolved": 50, "original_postings_resolved": 50, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 50, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 13.409, "first_pass_survivors": 39, "group": "official", "jds_resolved": 39, "original_postings_resolved": 39, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 39, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 11.934, "first_pass_survivors": 35, "group": "official", "jds_resolved": 35, "original_postings_resolved": 35, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 35, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 11.831, "first_pass_survivors": 34, "group": "official", "jds_resolved": 34, "original_postings_resolved": 34, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 34, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 10.656, "first_pass_survivors": 28, "group": "official", "jds_resolved": 28, "original_postings_resolved": 28, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 28, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 10.445, "first_pass_survivors": 29, "group": "official", "jds_resolved": 29, "original_postings_resolved": 29, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 29, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 8.879, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 6.873, "first_pass_survivors": 16, "group": "official", "jds_resolved": 16, "original_postings_resolved": 16, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 16, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 6.783, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 12.476, "first_pass_survivors": 35, "group": "official", "jds_resolved": 35, "original_postings_resolved": 35, "page_budget": 3, "pages_fetched": 3, "query": "full stack", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 35, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 8.976, "first_pass_survivors": 24, "group": "official", "jds_resolved": 24, "original_postings_resolved": 24, "page_budget": 3, "pages_fetched": 3, "query": "python react", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 24, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 8.096, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 3, "query": "pyspark databricks", "raw_jobs": 44, "stop_reason": "page_budget", "unique_contribution": 22, "unique_jobs": 44}
+- Query diagnostic: {"elapsed_seconds": 7.286, "first_pass_survivors": 17, "group": "official", "jds_resolved": 17, "original_postings_resolved": 17, "page_budget": 3, "pages_fetched": 3, "query": "experienced software engineer java python", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 17, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 8.551, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 3, "query": "agentic ai", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 22, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 11.177, "first_pass_survivors": 31, "group": "official", "jds_resolved": 31, "original_postings_resolved": 31, "page_budget": 3, "pages_fetched": 3, "query": "site reliability engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 31, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 6.352, "first_pass_survivors": 13, "group": "official", "jds_resolved": 13, "original_postings_resolved": 13, "page_budget": 3, "pages_fetched": 3, "query": "software engineer ii", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 13, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 13.251, "first_pass_survivors": 32, "group": "official", "jds_resolved": 32, "original_postings_resolved": 32, "page_budget": 3, "pages_fetched": 3, "query": "infrastructure engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 32, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 7.88, "first_pass_survivors": 19, "group": "official", "jds_resolved": 19, "original_postings_resolved": 19, "page_budget": 3, "pages_fetched": 3, "query": "security engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 19, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 11.295, "first_pass_survivors": 28, "group": "official", "jds_resolved": 28, "original_postings_resolved": 28, "page_budget": 3, "pages_fetched": 3, "query": "quantitative developer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 28, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.917, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 1, "pages_fetched": 1, "query": "software engineer java spring", "raw_jobs": 20, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 20}
+- Query diagnostic: {"elapsed_seconds": 1.758, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 1, "pages_fetched": 1, "query": "software engineer python authe", "raw_jobs": 20, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 20}
+- Query diagnostic: {"elapsed_seconds": 1.44, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 1, "pages_fetched": 1, "query": "aws data platform engineer", "raw_jobs": 20, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 20}
+- Query diagnostic: {"elapsed_seconds": 3.885, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 1, "pages_fetched": 1, "query": "data engineer applied ai", "raw_jobs": 20, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 20}
+- Query diagnostic: {"elapsed_seconds": 3.555, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 1, "pages_fetched": 1, "query": "asset management technology", "raw_jobs": 20, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 20}
 
 Sample normalized records:
 
@@ -1666,7 +1666,7 @@ Sample normalized records:
     "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210795270",
     "posted_date": "2026-10-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:54.901459+00:00",
+    "fetched_at": "2026-10-08T23:33:39.793594+00:00",
     "date_confidence": "high",
     "description": "Be an integral part of an agile team that's constantly pushing the envelope to enhance, build, and deliver top-notch technology products. Job Summary As a Senior Lead Software Engi"
   },
@@ -1679,7 +1679,7 @@ Sample normalized records:
     "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210760835",
     "posted_date": "2026-10-06",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:54.901459+00:00",
+    "fetched_at": "2026-10-08T23:33:39.793594+00:00",
     "date_confidence": "high",
     "description": "Take on a crucial role where you'll be a key part of a high-performing team delivering secure software solutions. Make a real impact as you help shape the future of software securi"
   },
@@ -1692,7 +1692,7 @@ Sample normalized records:
     "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210779849",
     "posted_date": "2026-08-14",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:54.901459+00:00",
+    "fetched_at": "2026-10-08T23:33:39.793594+00:00",
     "date_confidence": "high",
     "description": "We have an opportunity to impact your career and provide an adventure where you can push the limits of what's possible. As a Lead Software Engineer at JPMorganChase within the Corp"
   },
@@ -1705,7 +1705,7 @@ Sample normalized records:
     "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210782895",
     "posted_date": "2026-08-26",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:54.901459+00:00",
+    "fetched_at": "2026-10-08T23:33:39.793594+00:00",
     "date_confidence": "high",
     "description": "We have an opportunity to impact your career and provide an adventure where you can push the limits of what's possible. As a Lead Software Engineer at JPMorgan Chase, within the Co"
   },
@@ -1718,7 +1718,7 @@ Sample normalized records:
     "official_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210782981",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:54.901459+00:00",
+    "fetched_at": "2026-10-08T23:33:39.793594+00:00",
     "date_confidence": "high",
     "description": "As a Senior Lead Software Engineer at JPMorganChase within Corporate Technology – Chief Technology Office, you serve as a senior individual contributor and technical leader on an a"
   }
@@ -1732,26 +1732,26 @@ Sample normalized records:
 - Search URL/API: `https://capitalone.wd12.myworkdayjobs.com/Capital_One`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 27
-- HTTP requests/cumulative request time: 179 / 76.080s
-- Company elapsed time: 101.595s
+- HTTP requests/cumulative request time: 183 / 78.258s
+- Company elapsed time: 104.776s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 151 / 0 / 0
-- Detail cache statuses: {'fetched:new': 122, 'fetched:missing_detail': 29}
-- Relevant JD recovery: {'eligible': 56, 'usable_jd': 56}
+- Detail pages fetched/cache reused/prefilter skipped: 155 / 0 / 0
+- Detail cache statuses: {'fetched:new': 125, 'fetched:missing_detail': 30}
+- Relevant JD recovery: {'eligible': 63, 'usable_jd': 63}
 - Raw jobs found: 527
-- After US/location filtering: 151
-- With trustworthy posted_date: 151
+- After US/location filtering: 155
+- With trustworthy posted_date: 155
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 45.346, "first_pass_survivors": 73, "group": "official", "jds_resolved": 73, "original_postings_resolved": 73, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 73, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 12.027, "first_pass_survivors": 20, "group": "official", "jds_resolved": 20, "original_postings_resolved": 20, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 20, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 19.71, "first_pass_survivors": 32, "group": "official", "jds_resolved": 32, "original_postings_resolved": 32, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 32, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 6.1, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 8, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 5.122, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.218, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 1.635, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 3.988, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 7, "stop_reason": "early_stop", "unique_contribution": 5, "unique_jobs": 7}
-- Query diagnostic: {"elapsed_seconds": 5.143, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 50.075, "first_pass_survivors": 75, "group": "official", "jds_resolved": 75, "original_postings_resolved": 75, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 75, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 14.397, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 20.166, "first_pass_survivors": 34, "group": "official", "jds_resolved": 34, "original_postings_resolved": 34, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 34, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 6.476, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 3.577, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 1.421, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 1.945, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 3.003, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 7, "stop_reason": "early_stop", "unique_contribution": 5, "unique_jobs": 7}
+- Query diagnostic: {"elapsed_seconds": 3.391, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 80}
 
 Sample normalized records:
 
@@ -1760,67 +1760,67 @@ Sample normalized records:
   {
     "company": "Capital One",
     "source": "capital_one_official_careers",
-    "job_id": "R1001287",
-    "title": "Mobile Engineer 4 (Android, Kotlin, JetPack Compose)",
+    "job_id": "R1003342",
+    "title": "Full-Stack Engineer 4 (Python, AWS) (Cloud Operations Resilience Engineering)",
+    "location": "McLean, VA; Plano, TX; Richmond, VA",
+    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-Stack-Engineer-4--Python--AWS---Cloud-Operations-Resilience-Engineering-_R1003342-1",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:33:59.345734+00:00",
+    "date_confidence": "high",
+    "description": "Full-Stack Engineer 4 (Python, AWS) (Cloud Operations Resilience Engineering) Do you love building and pioneering in the technology space? Do you enjoy solving complex business pro"
+  },
+  {
+    "company": "Capital One",
+    "source": "capital_one_official_careers",
+    "job_id": "R1003213",
+    "title": "Front-end Engineer 4",
     "location": "McLean, VA",
-    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Mobile-Engineer-4--Android--Kotlin--JetPack-Compose-_R1001287-1",
+    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Front-end-Engineer-4_R1003213-1",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:58.982131+00:00",
+    "fetched_at": "2026-10-08T23:33:59.345734+00:00",
     "date_confidence": "high",
-    "description": "Mobile Engineer 4 (Android, Kotlin, JetPack Compose) Do you love building and pioneering in the technology space? Do you enjoy solving complex business problems in a fast-paced, co"
+    "description": "Front-end Engineer 4 Do you love building and pioneering in the technology space? Do you enjoy solving complex business problems in a fast-paced, collaborative, inclusive and itera"
   },
   {
     "company": "Capital One",
     "source": "capital_one_official_careers",
-    "job_id": "R1001186",
-    "title": "Full-stack Engineer 4 (Manager, IC)",
+    "job_id": "R1003355",
+    "title": "Data Engineer 4 (Manager, IC)",
     "location": "New York, NY; McLean, VA; Cambridge, MA; Richmond, VA",
-    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/Full-stack-Engineer-4--Manager--IC-_R1001186-2",
+    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/Data-Engineer-4--Manager--IC-_R1003355-1",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:58.982131+00:00",
+    "fetched_at": "2026-10-08T23:33:59.345734+00:00",
     "date_confidence": "high",
-    "description": "Full-stack Engineer 4 (Manager, IC) In Risk Tech, we provide the foundation for Capital One to thrive in an uncertain world. Our engaged, empowered, and intelligent people produce "
+    "description": "Data Engineer 4 (Manager, IC) Do you love building and pioneering in the technology space? Do you enjoy solving complex business problems in a fast-paced, collaborative, inclusive "
   },
   {
     "company": "Capital One",
     "source": "capital_one_official_careers",
-    "job_id": "R1002252",
-    "title": "Director, Full-Stack Engineer",
-    "location": "McLean, VA; Cambridge, MA; Richmond, VA",
-    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Director--Full-Stack-Engineer_R1002252-1",
+    "job_id": "R1003263",
+    "title": "Full-Stack Engineer 4 (Python, React, AWS)",
+    "location": "Cambridge, MA; McLean, VA; Richmond, VA; New York, NY",
+    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Cambridge-MA/Full-Stack-Engineer-4--Python--React--AWS-_R1003263",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:58.982131+00:00",
+    "fetched_at": "2026-10-08T23:33:59.345734+00:00",
     "date_confidence": "high",
-    "description": "Director, Full-Stack Engineer As a Director, Full-stack Engineer at Capital One, you will lead high-performing engineering teams working to define the future of banking in the clou"
+    "description": "Full-Stack Engineer 4 (Python, React, AWS) Do you love building and pioneering in the technology space? Do you enjoy solving complex business problems in a fast-paced, collaborativ"
   },
   {
     "company": "Capital One",
     "source": "capital_one_official_careers",
-    "job_id": "R1003244",
-    "title": "Machine Learning Engineer 4",
-    "location": "McLean, VA; Cambridge, MA; Richmond, VA",
-    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Machine-Learning-Engineer-4_R1003244",
+    "job_id": "R1003312",
+    "title": "Full-stack Engineer 4 (Python/AWS)",
+    "location": "Richmond, VA; McLean, VA; Cambridge, MA; New York, NY",
+    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Full-stack-Engineer-4--Python-AWS-_R1003312",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:58.982131+00:00",
+    "fetched_at": "2026-10-08T23:33:59.345734+00:00",
     "date_confidence": "high",
-    "description": "Machine Learning Engineer 4 Do you love building and pioneering in the AI and technology space? Do you enjoy solving complex business problems in a fast-paced, collaborative, inclu"
-  },
-  {
-    "company": "Capital One",
-    "source": "capital_one_official_careers",
-    "job_id": "R1003246",
-    "title": "Full-stack Engineer 4",
-    "location": "McLean, VA; Cambridge, MA; Richmond, VA",
-    "official_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1003246-1",
-    "posted_date": "2026-10-08",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:33:58.982131+00:00",
-    "date_confidence": "high",
-    "description": "Full-stack Engineer 4 Do you love building and pioneering in the technology space? Do you enjoy solving complex business problems in a fast-paced, collaborative, inclusive and iter"
+    "description": "Full-stack Engineer 4 (Python/AWS) Do you love building and pioneering in the technology space? Do you enjoy solving complex business problems in a fast-paced, collaborative, inclu"
   }
 ]
 ```
@@ -1832,30 +1832,30 @@ Sample normalized records:
 - Search URL/API: `https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_45001/requisitions?keyword=software+engineer`
 - Pagination: finder offset=0,20,... ; limit=20; stop on empty/repeat or TotalJobsCount
 - Pages/requests fetched: 41
-- HTTP requests/cumulative request time: 543 / 181.784s
-- Company elapsed time: 254.806s
+- HTTP requests/cumulative request time: 537 / 224.804s
+- Company elapsed time: 298.748s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 502 / 0 / 0
-- Detail cache statuses: {'fetched:new': 497, 'fetched:missing_detail': 5}
-- Relevant JD recovery: {'eligible': 59, 'usable_jd': 59}
-- Raw jobs found: 815
-- After US/location filtering: 502
-- With trustworthy posted_date: 502
+- Detail pages fetched/cache reused/prefilter skipped: 496 / 0 / 0
+- Detail cache statuses: {'fetched:new': 491, 'fetched:missing_detail': 5}
+- Relevant JD recovery: {'eligible': 61, 'usable_jd': 61}
+- Raw jobs found: 811
+- After US/location filtering: 496
+- With trustworthy posted_date: 496
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 37.52, "first_pass_survivors": 79, "group": "official", "jds_resolved": 79, "original_postings_resolved": 79, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 79, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 22.678, "first_pass_survivors": 48, "group": "official", "jds_resolved": 48, "original_postings_resolved": 48, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 48, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 11.98, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 57, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 57}
-- Query diagnostic: {"elapsed_seconds": 22.121, "first_pass_survivors": 45, "group": "official", "jds_resolved": 45, "original_postings_resolved": 45, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 45, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 27.084, "first_pass_survivors": 55, "group": "official", "jds_resolved": 55, "original_postings_resolved": 55, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 55, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 21.94, "first_pass_survivors": 44, "group": "official", "jds_resolved": 44, "original_postings_resolved": 44, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 44, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 15.205, "first_pass_survivors": 29, "group": "official", "jds_resolved": 29, "original_postings_resolved": 29, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 29, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 15.904, "first_pass_survivors": 31, "group": "official", "jds_resolved": 31, "original_postings_resolved": 31, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 59, "stop_reason": "page_budget", "unique_contribution": 31, "unique_jobs": 59}
-- Query diagnostic: {"elapsed_seconds": 14.741, "first_pass_survivors": 27, "group": "official", "jds_resolved": 27, "original_postings_resolved": 27, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 27, "unique_jobs": 78}
-- Query diagnostic: {"elapsed_seconds": 24.107, "first_pass_survivors": 46, "group": "official", "jds_resolved": 46, "original_postings_resolved": 46, "page_budget": 3, "pages_fetched": 3, "query": "core infrastructure", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 46, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 16.509, "first_pass_survivors": 33, "group": "official", "jds_resolved": 33, "original_postings_resolved": 33, "page_budget": 3, "pages_fetched": 3, "query": "cleared site reliability engineer database", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 33, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 9.66, "first_pass_survivors": 13, "group": "official", "jds_resolved": 13, "original_postings_resolved": 13, "page_budget": 3, "pages_fetched": 3, "query": "software developer", "raw_jobs": 59, "stop_reason": "page_budget", "unique_contribution": 13, "unique_jobs": 57}
-- Query diagnostic: {"elapsed_seconds": 15.358, "first_pass_survivors": 29, "group": "official", "jds_resolved": 29, "original_postings_resolved": 29, "page_budget": 3, "pages_fetched": 3, "query": "applications developer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 29, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 42.801, "first_pass_survivors": 78, "group": "official", "jds_resolved": 78, "original_postings_resolved": 78, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 78, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 22.302, "first_pass_survivors": 49, "group": "official", "jds_resolved": 49, "original_postings_resolved": 49, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 49, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 9.967, "first_pass_survivors": 18, "group": "official", "jds_resolved": 18, "original_postings_resolved": 18, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 54, "stop_reason": "page_budget", "unique_contribution": 18, "unique_jobs": 54}
+- Query diagnostic: {"elapsed_seconds": 23.387, "first_pass_survivors": 45, "group": "official", "jds_resolved": 45, "original_postings_resolved": 45, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 45, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 34.657, "first_pass_survivors": 55, "group": "official", "jds_resolved": 55, "original_postings_resolved": 55, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 55, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 29.761, "first_pass_survivors": 43, "group": "official", "jds_resolved": 43, "original_postings_resolved": 43, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 43, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 14.263, "first_pass_survivors": 31, "group": "official", "jds_resolved": 31, "original_postings_resolved": 31, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 31, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 24.761, "first_pass_survivors": 31, "group": "official", "jds_resolved": 31, "original_postings_resolved": 31, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 59, "stop_reason": "page_budget", "unique_contribution": 31, "unique_jobs": 59}
+- Query diagnostic: {"elapsed_seconds": 16.859, "first_pass_survivors": 26, "group": "official", "jds_resolved": 26, "original_postings_resolved": 26, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 79, "stop_reason": "page_budget", "unique_contribution": 26, "unique_jobs": 79}
+- Query diagnostic: {"elapsed_seconds": 41.541, "first_pass_survivors": 46, "group": "official", "jds_resolved": 46, "original_postings_resolved": 46, "page_budget": 3, "pages_fetched": 3, "query": "core infrastructure", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 46, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 15.632, "first_pass_survivors": 35, "group": "official", "jds_resolved": 35, "original_postings_resolved": 35, "page_budget": 3, "pages_fetched": 3, "query": "cleared site reliability engineer database", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 35, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 7.707, "first_pass_survivors": 11, "group": "official", "jds_resolved": 11, "original_postings_resolved": 11, "page_budget": 3, "pages_fetched": 3, "query": "software developer", "raw_jobs": 59, "stop_reason": "page_budget", "unique_contribution": 11, "unique_jobs": 59}
+- Query diagnostic: {"elapsed_seconds": 15.11, "first_pass_survivors": 28, "group": "official", "jds_resolved": 28, "original_postings_resolved": 28, "page_budget": 3, "pages_fetched": 3, "query": "applications developer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 28, "unique_jobs": 60}
 
 Sample normalized records:
 
@@ -1870,7 +1870,7 @@ Sample normalized records:
     "official_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/343962",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:34:55.562464+00:00",
+    "fetched_at": "2026-10-08T23:34:27.885816+00:00",
     "date_confidence": "high",
     "description": "Oracle Hardware Platform Development Engineering is seeking a highly driven AI Systems Engineer to evaluate and characterize next-generation GPU and AI accelerator platforms for Or"
   },
@@ -1883,7 +1883,7 @@ Sample normalized records:
     "official_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/342202",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:34:55.562464+00:00",
+    "fetched_at": "2026-10-08T23:34:27.885816+00:00",
     "date_confidence": "high",
     "description": "AI Acceleration is a product research initiative within the firm, building practical AI capability for the way work gets done. Its broader goal is to research, prototype, and scale"
   },
@@ -1896,7 +1896,7 @@ Sample normalized records:
     "official_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/341967",
     "posted_date": "2026-08-12",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:34:55.562464+00:00",
+    "fetched_at": "2026-10-08T23:34:27.885816+00:00",
     "date_confidence": "high",
     "description": "Oracle Health is seeking a Senior AI Agent Engineer to build production AI agents and workflow automation capabilities that accelerate analytics delivery, improve insight generatio"
   },
@@ -1909,7 +1909,7 @@ Sample normalized records:
     "official_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/336795",
     "posted_date": "2026-09-29",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:34:55.562464+00:00",
+    "fetched_at": "2026-10-08T23:34:27.885816+00:00",
     "date_confidence": "high",
     "description": "You will work at the intersection of distributed systems, networking, and AI infrastructure, driving architecture, design, implementation, and performance optimization across softw"
   },
@@ -1922,7 +1922,7 @@ Sample normalized records:
     "official_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/335707",
     "posted_date": "2026-09-22",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:34:55.562464+00:00",
+    "fetched_at": "2026-10-08T23:34:27.885816+00:00",
     "date_confidence": "high",
     "description": "Oracle Health is seeking an AI Platform Reliability Engineer to ensure our AI agent platform and AI-enabled analytics workflows are reliable, observable, measurable, and safe in pr"
   }
@@ -1936,27 +1936,27 @@ Sample normalized records:
 - Search URL/API: `https://walmart.wd504.myworkdayjobs.com/WalmartExternal`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 28
-- HTTP requests/cumulative request time: 402 / 335.898s
-- Company elapsed time: 390.769s
+- HTTP requests/cumulative request time: 403 / 241.071s
+- Company elapsed time: 297.991s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 373 / 0 / 0
-- Detail cache statuses: {'fetched:new': 366, 'fetched:missing_detail': 7}
-- Relevant JD recovery: {'eligible': 54, 'usable_jd': 54}
+- Detail pages fetched/cache reused/prefilter skipped: 374 / 0 / 0
+- Detail cache statuses: {'fetched:new': 366, 'fetched:missing_detail': 8}
+- Relevant JD recovery: {'eligible': 53, 'usable_jd': 53}
 - Raw jobs found: 545
-- After US/location filtering: 373
-- With trustworthy posted_date: 373
+- After US/location filtering: 374
+- With trustworthy posted_date: 374
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 67.917, "first_pass_survivors": 80, "group": "official", "jds_resolved": 80, "original_postings_resolved": 80, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 80, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 39.9, "first_pass_survivors": 47, "group": "official", "jds_resolved": 47, "original_postings_resolved": 47, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 47, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 63.211, "first_pass_survivors": 60, "group": "official", "jds_resolved": 60, "original_postings_resolved": 60, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 60, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 34.938, "first_pass_survivors": 41, "group": "official", "jds_resolved": 41, "original_postings_resolved": 41, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 41, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 46.084, "first_pass_survivors": 25, "group": "official", "jds_resolved": 25, "original_postings_resolved": 25, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 25, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 31.973, "first_pass_survivors": 39, "group": "official", "jds_resolved": 39, "original_postings_resolved": 39, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 39, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 58.192, "first_pass_survivors": 44, "group": "official", "jds_resolved": 44, "original_postings_resolved": 44, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 44, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 4.508, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 5, "stop_reason": "early_stop", "unique_contribution": 4, "unique_jobs": 5}
-- Query diagnostic: {"elapsed_seconds": 26.555, "first_pass_survivors": 25, "group": "official", "jds_resolved": 25, "original_postings_resolved": 25, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 25, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 15.523, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 1, "pages_fetched": 1, "query": "usa software engineer ii", "raw_jobs": 20, "stop_reason": "page_budget", "unique_contribution": 8, "unique_jobs": 20}
+- Query diagnostic: {"elapsed_seconds": 68.073, "first_pass_survivors": 80, "group": "official", "jds_resolved": 80, "original_postings_resolved": 80, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 80, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 36.51, "first_pass_survivors": 47, "group": "official", "jds_resolved": 47, "original_postings_resolved": 47, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 47, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 40.009, "first_pass_survivors": 60, "group": "official", "jds_resolved": 60, "original_postings_resolved": 60, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 60, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 27.924, "first_pass_survivors": 42, "group": "official", "jds_resolved": 42, "original_postings_resolved": 42, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 42, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 17.783, "first_pass_survivors": 25, "group": "official", "jds_resolved": 25, "original_postings_resolved": 25, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 25, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 29.497, "first_pass_survivors": 40, "group": "official", "jds_resolved": 40, "original_postings_resolved": 40, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 40, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 42.106, "first_pass_survivors": 43, "group": "official", "jds_resolved": 43, "original_postings_resolved": 43, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 43, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 5.148, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 5, "stop_reason": "early_stop", "unique_contribution": 4, "unique_jobs": 5}
+- Query diagnostic: {"elapsed_seconds": 20.733, "first_pass_survivors": 25, "group": "official", "jds_resolved": 25, "original_postings_resolved": 25, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 25, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 8.21, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 1, "pages_fetched": 1, "query": "usa software engineer ii", "raw_jobs": 20, "stop_reason": "page_budget", "unique_contribution": 8, "unique_jobs": 20}
 
 Sample normalized records:
 
@@ -1971,7 +1971,7 @@ Sample normalized records:
     "official_url": "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Crossman-Excellence-Building-CA-SUNNYVALE-Home-Office/Distinguished--Software-Engineer--AI-ML-Engineer---Agentic-Systems_R-2451270-1",
     "posted_date": "2026-09-03",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:35:40.578309+00:00",
+    "fetched_at": "2026-10-08T23:35:44.123139+00:00",
     "date_confidence": "high",
     "description": "Position Summary... What you'll do... As a Distinguished AI/ML Engineer within Walmart Global Tech’s Reliability Engineering Organization , you will lead the technical development "
   },
@@ -1984,22 +1984,9 @@ Sample normalized records:
     "official_url": "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Crossman-Respect-Building-CA-SUNNYVALE-Home-Office/Group-Director--Software-Engineering---Applied-AI_R-2599274",
     "posted_date": "2026-08-10",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:35:40.578309+00:00",
+    "fetched_at": "2026-10-08T23:35:44.123139+00:00",
     "date_confidence": "high",
     "description": "Position Summary... What you'll do... Role summary: As the Group Director, Applied AI & Engineering you will lead an elite, high-caliber applied AI and engineering team dedicated t"
-  },
-  {
-    "company": "Walmart Global Tech",
-    "source": "walmart_global_tech_official_careers",
-    "job_id": "R-2612602",
-    "title": "Principal, Data Scientist, Agentic AI Systems Engineering & Model Post-Training",
-    "location": "(USA) Supply Chain Optimization AR Bentonville Home Office",
-    "official_url": "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Supply-Chain-Optimization-AR-Bentonville-Home-Office/Principal--Data-Scientist--Agentic-AI-Systems-Engineering---Model-Post-Training_R-2612602",
-    "posted_date": "2026-08-22",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:35:40.578309+00:00",
-    "date_confidence": "high",
-    "description": "Position Summary... What you'll do... The Opportunity: Walmart’s Supply Chain AI Lab & Innovation Factory is building a new generation of production-grade agentic AI systems that r"
   },
   {
     "company": "Walmart Global Tech",
@@ -2010,9 +1997,22 @@ Sample normalized records:
     "official_url": "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Crossman-Excellence-Building-CA-SUNNYVALE-Home-Office/XMLNAME--USA--Distinguished--Software-Engineer-AI-ML-Engineer---Agentic-Systems---Site-Reliability-Engineering_R-2533229-1",
     "posted_date": "2026-06-25",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:35:40.578309+00:00",
+    "fetched_at": "2026-10-08T23:35:44.123139+00:00",
     "date_confidence": "high",
     "description": "Position Summary... As a Distinguished AI/ML Engineer within Walmart Global Tech's Site Reliability Engineering organization, you will lead the technical development of next-genera"
+  },
+  {
+    "company": "Walmart Global Tech",
+    "source": "walmart_global_tech_official_careers",
+    "job_id": "R-2612602",
+    "title": "Principal, Data Scientist, Agentic AI Systems Engineering & Model Post-Training",
+    "location": "(USA) Supply Chain Optimization AR Bentonville Home Office",
+    "official_url": "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Supply-Chain-Optimization-AR-Bentonville-Home-Office/Principal--Data-Scientist--Agentic-AI-Systems-Engineering---Model-Post-Training_R-2612602",
+    "posted_date": "2026-08-22",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:35:44.123139+00:00",
+    "date_confidence": "high",
+    "description": "Position Summary... What you'll do... The Opportunity: Walmart’s Supply Chain AI Lab & Innovation Factory is building a new generation of production-grade agentic AI systems that r"
   },
   {
     "company": "Walmart Global Tech",
@@ -2023,7 +2023,7 @@ Sample normalized records:
     "official_url": "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Supply-Chain-Optimization-AR-Bentonville-Home-Office/XMLNAME--USA--Distinguished--Data-Scientist---Agentic-AI-Systems-Engineering---Model-Post-Training_R-2613286",
     "posted_date": "2026-08-20",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:35:40.578309+00:00",
+    "fetched_at": "2026-10-08T23:35:44.123139+00:00",
     "date_confidence": "high",
     "description": "Position Summary... What you'll do... The Opportunity: Walmart’s Supply Chain AI Lab & Innovation Factory is building a new generation of production-grade agentic AI systems that r"
   }
@@ -2037,15 +2037,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/cloudflare/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.312s
-- Company elapsed time: 1.671s
+- HTTP requests/cumulative request time: 1 / 0.344s
+- Company elapsed time: 2.339s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 81, 'usable_jd': 81}
-- Raw jobs found: 427
-- After US/location filtering: 423
-- With trustworthy posted_date: 423
+- Relevant JD recovery: {'eligible': 82, 'usable_jd': 82}
+- Raw jobs found: 424
+- After US/location filtering: 420
+- With trustworthy posted_date: 420
 - Errors/403s: none
 
 Sample normalized records:
@@ -2061,7 +2061,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/cloudflare/jobs/7695702?gh_jid=7695702",
     "posted_date": "2026-03-09",
     "updated_date": "2026-10-02",
-    "fetched_at": "2026-10-08T14:37:01.513683+00:00",
+    "fetched_at": "2026-10-08T23:36:42.323493+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3>About Us</h3> <p>At Cloudflare, we are on a mission to help build a better Internet. Today the company runs one of the world’s largest networks that "
   },
@@ -2074,7 +2074,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/cloudflare/jobs/8172582?gh_jid=8172582",
     "posted_date": "2026-09-07",
     "updated_date": "2026-10-02",
-    "fetched_at": "2026-10-08T14:37:01.513683+00:00",
+    "fetched_at": "2026-10-08T23:36:42.323493+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3>About Us</h3> <p>At Cloudflare, we are on a mission to help build a better Internet. Today the company runs one of the world’s largest networks that "
   },
@@ -2087,7 +2087,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/cloudflare/jobs/8097321?gh_jid=8097321",
     "posted_date": "2026-08-10",
     "updated_date": "2026-10-02",
-    "fetched_at": "2026-10-08T14:37:01.513683+00:00",
+    "fetched_at": "2026-10-08T23:36:42.323493+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3>About Us</h3> <p>At Cloudflare, we are on a mission to help build a better Internet. Today the company runs one of the world’s largest networks that "
   },
@@ -2100,7 +2100,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/cloudflare/jobs/8144669?gh_jid=8144669",
     "posted_date": "2026-08-21",
     "updated_date": "2026-10-02",
-    "fetched_at": "2026-10-08T14:37:01.513683+00:00",
+    "fetched_at": "2026-10-08T23:36:42.323493+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3>About Us</h3> <p>At Cloudflare, we are on a mission to help build a better Internet. Today the company runs one of the world’s largest networks that "
   },
@@ -2113,7 +2113,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/cloudflare/jobs/6696709?gh_jid=6696709",
     "posted_date": "2025-03-10",
     "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:37:01.513683+00:00",
+    "fetched_at": "2026-10-08T23:36:42.323493+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3>About Us</h3> <p>At Cloudflare, we are on a mission to help build a better Internet. Today the company runs one of the world’s largest networks that "
   }
@@ -2127,15 +2127,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/stripe/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.237s
-- Company elapsed time: 1.238s
+- HTTP requests/cumulative request time: 1 / 0.273s
+- Company elapsed time: 1.713s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 133, 'usable_jd': 133}
-- Raw jobs found: 729
-- After US/location filtering: 417
-- With trustworthy posted_date: 417
+- Relevant JD recovery: {'eligible': 131, 'usable_jd': 131}
+- Raw jobs found: 727
+- After US/location filtering: 413
+- With trustworthy posted_date: 413
 - Errors/403s: none
 
 Sample normalized records:
@@ -2151,7 +2151,7 @@ Sample normalized records:
     "official_url": "https://stripe.com/jobs/search?gh_jid=8172510",
     "posted_date": "2026-09-09",
     "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:37:03.184645+00:00",
+    "fetched_at": "2026-10-08T23:36:44.663874+00:00",
     "date_confidence": "high",
     "description": "<h2><strong>Who we are </strong></h2> <h3><strong>About Stripe</strong></h3> <p><span style=\"font-weight: 400;\">Stripe is a financial infrastructure platform for businesses. Millio"
   },
@@ -2164,7 +2164,7 @@ Sample normalized records:
     "official_url": "https://stripe.com/jobs/search?gh_jid=8172503",
     "posted_date": "2026-09-09",
     "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:37:03.184645+00:00",
+    "fetched_at": "2026-10-08T23:36:44.663874+00:00",
     "date_confidence": "high",
     "description": "<h2>Who we are</h2> <h3>About Stripe</h3> <p><span style=\"font-weight: 400;\">Stripe is a financial infrastructure platform for businesses. Millions of companies—from the world’s la"
   },
@@ -2177,22 +2177,9 @@ Sample normalized records:
     "official_url": "https://stripe.com/jobs/search?gh_jid=8138044",
     "posted_date": "2026-09-18",
     "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:37:03.184645+00:00",
+    "fetched_at": "2026-10-08T23:36:44.663874+00:00",
     "date_confidence": "high",
     "description": "<div class=\"JobPostPage-content ⚙ ⚙1opjj73\"> <h3 id=\"about-stripe\">About Stripe</h3> <p>Stripe is a financial infrastructure platform for businesses. Millions of companies - from t"
-  },
-  {
-    "company": "Stripe",
-    "source": "stripe_official_careers",
-    "job_id": "8204645",
-    "title": "Account Executive, AI Startups - Grower",
-    "location": "New York; US",
-    "official_url": "https://stripe.com/jobs/search?gh_jid=8204645",
-    "posted_date": "2026-09-15",
-    "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:37:03.184645+00:00",
-    "date_confidence": "high",
-    "description": "<h2>Who we are</h2> <h3>About Stripe</h3> <p>Stripe is a financial infrastructure platform for businesses. Millions of companies—from the world’s largest enterprises to the most am"
   },
   {
     "company": "Stripe",
@@ -2203,7 +2190,20 @@ Sample normalized records:
     "official_url": "https://stripe.com/jobs/search?gh_jid=8238731",
     "posted_date": "2026-10-02",
     "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:37:03.184645+00:00",
+    "fetched_at": "2026-10-08T23:36:44.663874+00:00",
+    "date_confidence": "high",
+    "description": "<h2>Who we are</h2> <h3>About Stripe</h3> <p>Stripe is a financial infrastructure platform for businesses. Millions of companies—from the world’s largest enterprises to the most am"
+  },
+  {
+    "company": "Stripe",
+    "source": "stripe_official_careers",
+    "job_id": "8204645",
+    "title": "Account Executive, AI Startups - Grower",
+    "location": "New York; US",
+    "official_url": "https://stripe.com/jobs/search?gh_jid=8204645",
+    "posted_date": "2026-09-15",
+    "updated_date": "2026-10-07",
+    "fetched_at": "2026-10-08T23:36:44.663874+00:00",
     "date_confidence": "high",
     "description": "<h2>Who we are</h2> <h3>About Stripe</h3> <p>Stripe is a financial infrastructure platform for businesses. Millions of companies—from the world’s largest enterprises to the most am"
   }
@@ -2217,15 +2217,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/coinbase/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.199s
-- Company elapsed time: 0.823s
+- HTTP requests/cumulative request time: 1 / 0.119s
+- Company elapsed time: 1.004s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 50, 'usable_jd': 50}
-- Raw jobs found: 223
-- After US/location filtering: 189
-- With trustworthy posted_date: 189
+- Relevant JD recovery: {'eligible': 48, 'usable_jd': 48}
+- Raw jobs found: 219
+- After US/location filtering: 185
+- With trustworthy posted_date: 185
 - Errors/403s: none
 
 Sample normalized records:
@@ -2241,7 +2241,7 @@ Sample normalized records:
     "official_url": "https://www.coinbase.com/careers/positions/8175363?gh_jid=8175363",
     "posted_date": "2026-09-08",
     "updated_date": "2026-09-22",
-    "fetched_at": "2026-10-08T14:37:04.423239+00:00",
+    "fetched_at": "2026-10-08T23:36:46.377810+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Ready to do the most impactful work of your career? At&nbsp;<a href=\"https://www.coinbase.com/?utm_campaign=mt_o_m_w_m_m__coi_0_jd-onchain&amp;utm_sou"
   },
@@ -2254,7 +2254,7 @@ Sample normalized records:
     "official_url": "https://www.coinbase.com/careers/positions/8053751?gh_jid=8053751",
     "posted_date": "2026-07-09",
     "updated_date": "2026-09-24",
-    "fetched_at": "2026-10-08T14:37:04.423239+00:00",
+    "fetched_at": "2026-10-08T23:36:46.377810+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Ready to do the most impactful work of your career? At&nbsp;<a href=\"https://www.coinbase.com/?utm_campaign=mt_o_m_w_m_m__coi_0_jd-onchain&amp;utm_sou"
   },
@@ -2267,7 +2267,7 @@ Sample normalized records:
     "official_url": "https://www.coinbase.com/careers/positions/8173991?gh_jid=8173991",
     "posted_date": "2026-09-08",
     "updated_date": "2026-09-08",
-    "fetched_at": "2026-10-08T14:37:04.423239+00:00",
+    "fetched_at": "2026-10-08T23:36:46.377810+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Ready to do the most impactful work of your career? At&nbsp;<a href=\"https://www.coinbase.com/?utm_campaign=mt_o_m_w_m_m__coi_0_jd-onchain&amp;utm_sou"
   },
@@ -2280,7 +2280,7 @@ Sample normalized records:
     "official_url": "https://www.coinbase.com/careers/positions/8093264?gh_jid=8093264",
     "posted_date": "2026-07-28",
     "updated_date": "2026-09-28",
-    "fetched_at": "2026-10-08T14:37:04.423239+00:00",
+    "fetched_at": "2026-10-08T23:36:46.377810+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Ready to do the most impactful work of your career? At&nbsp;<a href=\"https://www.coinbase.com/?utm_campaign=mt_o_m_w_m_m__coi_0_jd-onchain&amp;utm_sou"
   },
@@ -2293,7 +2293,7 @@ Sample normalized records:
     "official_url": "https://www.coinbase.com/careers/positions/7532645?gh_jid=7532645",
     "posted_date": "2026-01-12",
     "updated_date": "2026-09-03",
-    "fetched_at": "2026-10-08T14:37:04.423239+00:00",
+    "fetched_at": "2026-10-08T23:36:46.377810+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Ready to do the most impactful work of your career? At&nbsp;<a href=\"https://www.coinbase.com/?utm_campaign=mt_o_m_w_m_m__coi_0_jd-onchain&amp;utm_sou"
   }
@@ -2307,15 +2307,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/robinhood/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.123s
-- Company elapsed time: 0.755s
+- HTTP requests/cumulative request time: 1 / 0.122s
+- Company elapsed time: 1.062s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 46, 'usable_jd': 46}
-- Raw jobs found: 163
-- After US/location filtering: 148
-- With trustworthy posted_date: 148
+- Relevant JD recovery: {'eligible': 47, 'usable_jd': 47}
+- Raw jobs found: 169
+- After US/location filtering: 154
+- With trustworthy posted_date: 154
 - Errors/403s: none
 
 Sample normalized records:
@@ -2331,7 +2331,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/robinhood/jobs/6669758?t=gh_src=&gh_jid=6669758",
     "posted_date": "2025-05-08",
     "updated_date": "2026-10-02",
-    "fetched_at": "2026-10-08T14:37:05.248224+00:00",
+    "fetched_at": "2026-10-08T23:36:47.383383+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2>Join us in building the future of finance.</h2> <p>Our mission is to democratize finance for all. <a href=\"https://www.cerulli.com/press-releases/cer"
   },
@@ -2344,7 +2344,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/robinhood/jobs/7350823?t=gh_src=&gh_jid=7350823",
     "posted_date": "2025-10-22",
     "updated_date": "2026-10-02",
-    "fetched_at": "2026-10-08T14:37:05.248224+00:00",
+    "fetched_at": "2026-10-08T23:36:47.383383+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2>Join us in building the future of finance.</h2> <p>Our mission is to democratize finance for all. <a href=\"https://www.cerulli.com/press-releases/cer"
   },
@@ -2357,7 +2357,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/robinhood/jobs/8202874?t=gh_src=&gh_jid=8202874",
     "posted_date": "2026-09-14",
     "updated_date": "2026-09-25",
-    "fetched_at": "2026-10-08T14:37:05.248224+00:00",
+    "fetched_at": "2026-10-08T23:36:47.383383+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2>Join us in building the future of finance.</h2> <p>Our mission is to democratize finance for all. <a href=\"https://www.cerulli.com/press-releases/cer"
   },
@@ -2370,7 +2370,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/robinhood/jobs/7943204?t=gh_src=&gh_jid=7943204",
     "posted_date": "2026-06-01",
     "updated_date": "2026-10-02",
-    "fetched_at": "2026-10-08T14:37:05.248224+00:00",
+    "fetched_at": "2026-10-08T23:36:47.383383+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2>Join us in building the future of finance.</h2> <p>Our mission is to democratize finance for all. <a href=\"https://www.cerulli.com/press-releases/cer"
   },
@@ -2383,7 +2383,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/robinhood/jobs/8199973?t=gh_src=&gh_jid=8199973",
     "posted_date": "2026-09-14",
     "updated_date": "2026-09-29",
-    "fetched_at": "2026-10-08T14:37:05.248224+00:00",
+    "fetched_at": "2026-10-08T23:36:47.383383+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2>Join us in building the future of finance.</h2> <p>Our mission is to democratize finance for all. <a href=\"https://www.cerulli.com/press-releases/cer"
   }
@@ -2397,15 +2397,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/figma/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.161s
-- Company elapsed time: 0.597s
+- HTTP requests/cumulative request time: 1 / 0.135s
+- Company elapsed time: 0.768s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 42, 'usable_jd': 42}
-- Raw jobs found: 151
-- After US/location filtering: 102
-- With trustworthy posted_date: 102
+- Relevant JD recovery: {'eligible': 43, 'usable_jd': 43}
+- Raw jobs found: 153
+- After US/location filtering: 104
+- With trustworthy posted_date: 104
 - Errors/403s: none
 
 Sample normalized records:
@@ -2421,7 +2421,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/figma/jobs/5426468004?gh_jid=5426468004",
     "posted_date": "2025-01-28",
     "updated_date": "2026-07-22",
-    "fetched_at": "2026-10-08T14:37:06.003140+00:00",
+    "fetched_at": "2026-10-08T23:36:48.447150+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Figma is growing our team of passionate creatives and builders on a mission to make design accessible to all. Figma’s platform helps teams bring ideas"
   },
@@ -2434,7 +2434,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/figma/jobs/5422236004?gh_jid=5422236004",
     "posted_date": "2025-01-22",
     "updated_date": "2026-08-20",
-    "fetched_at": "2026-10-08T14:37:06.003140+00:00",
+    "fetched_at": "2026-10-08T23:36:48.447150+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Figma is growing our team of passionate creatives and builders on a mission to make design accessible to all. Figma’s platform helps teams bring ideas"
   },
@@ -2447,7 +2447,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/figma/jobs/5694259004?gh_jid=5694259004",
     "posted_date": "2025-11-01",
     "updated_date": "2026-07-22",
-    "fetched_at": "2026-10-08T14:37:06.003140+00:00",
+    "fetched_at": "2026-10-08T23:36:48.447150+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Figma is growing our team of passionate creatives and builders on a mission to make design accessible to all. Figma’s platform helps teams bring ideas"
   },
@@ -2460,7 +2460,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/figma/jobs/5558737004?gh_jid=5558737004",
     "posted_date": "2025-06-16",
     "updated_date": "2026-07-22",
-    "fetched_at": "2026-10-08T14:37:06.003140+00:00",
+    "fetched_at": "2026-10-08T23:36:48.447150+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Figma is growing our team of passionate creatives and builders on a mission to make design accessible to all. Figma’s platform helps teams bring ideas"
   },
@@ -2473,7 +2473,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/figma/jobs/5707966004?gh_jid=5707966004",
     "posted_date": "2025-12-17",
     "updated_date": "2026-07-22",
-    "fetched_at": "2026-10-08T14:37:06.003140+00:00",
+    "fetched_at": "2026-10-08T23:36:48.447150+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Figma is growing our team of passionate creatives and builders on a mission to make design accessible to all. Figma’s platform helps teams bring ideas"
   }
@@ -2487,15 +2487,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/gitlab/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.132s
-- Company elapsed time: 0.718s
+- HTTP requests/cumulative request time: 1 / 0.189s
+- Company elapsed time: 1.061s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
 - Relevant JD recovery: {'eligible': 15, 'usable_jd': 15}
-- Raw jobs found: 216
-- After US/location filtering: 127
-- With trustworthy posted_date: 127
+- Raw jobs found: 220
+- After US/location filtering: 129
+- With trustworthy posted_date: 129
 - Errors/403s: none
 
 Sample normalized records:
@@ -2511,7 +2511,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/gitlab/jobs/8638232002",
     "posted_date": "2026-07-22",
     "updated_date": "2026-09-29",
-    "fetched_at": "2026-10-08T14:37:06.601319+00:00",
+    "fetched_at": "2026-10-08T23:36:49.216610+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational e"
   },
@@ -2524,7 +2524,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/gitlab/jobs/8716179002",
     "posted_date": "2026-08-19",
     "updated_date": "2026-09-29",
-    "fetched_at": "2026-10-08T14:37:06.601319+00:00",
+    "fetched_at": "2026-10-08T23:36:49.216610+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational e"
   },
@@ -2537,7 +2537,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/gitlab/jobs/8857185002",
     "posted_date": "2026-09-29",
     "updated_date": "2026-09-30",
-    "fetched_at": "2026-10-08T14:37:06.601319+00:00",
+    "fetched_at": "2026-10-08T23:36:49.216610+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational e"
   },
@@ -2550,20 +2550,20 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/gitlab/jobs/8698314002",
     "posted_date": "2026-08-20",
     "updated_date": "2026-09-29",
-    "fetched_at": "2026-10-08T14:37:06.601319+00:00",
+    "fetched_at": "2026-10-08T23:36:49.216610+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational e"
   },
   {
     "company": "GitLab",
     "source": "gitlab_official_careers",
-    "job_id": "8532272002",
+    "job_id": "8532274002",
     "title": "Business Development Representative",
-    "location": "Remote, North America",
-    "official_url": "https://job-boards.greenhouse.io/gitlab/jobs/8532272002",
+    "location": "Remote, EMEA; Remote, France; Remote, Germany; Remote, Ireland; Remote, Netherlands; Remote, United Kingdom",
+    "official_url": "https://job-boards.greenhouse.io/gitlab/jobs/8532274002",
     "posted_date": "2026-05-01",
     "updated_date": "2026-09-29",
-    "fetched_at": "2026-10-08T14:37:06.601319+00:00",
+    "fetched_at": "2026-10-08T23:36:49.216610+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational e"
   }
@@ -2577,15 +2577,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/discord/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.129s
-- Company elapsed time: 0.259s
+- HTTP requests/cumulative request time: 1 / 0.078s
+- Company elapsed time: 0.261s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
 - Relevant JD recovery: {'eligible': 7, 'usable_jd': 7}
-- Raw jobs found: 47
-- After US/location filtering: 46
-- With trustworthy posted_date: 46
+- Raw jobs found: 48
+- After US/location filtering: 47
+- With trustworthy posted_date: 47
 - Errors/403s: none
 
 Sample normalized records:
@@ -2601,7 +2601,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/discord/jobs/8806482002",
     "posted_date": "2026-09-15",
     "updated_date": "2026-09-15",
-    "fetched_at": "2026-10-08T14:37:07.320240+00:00",
+    "fetched_at": "2026-10-08T23:36:50.283448+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Discord has a highly engaged community of millions of daily active users who use the platform for many different reasons, but there’s one thing that n"
   },
@@ -2614,7 +2614,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/discord/jobs/8840756002",
     "posted_date": "2026-09-24",
     "updated_date": "2026-09-24",
-    "fetched_at": "2026-10-08T14:37:07.320240+00:00",
+    "fetched_at": "2026-10-08T23:36:50.283448+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Discord has a highly engaged community of millions of daily active users who use the platform for many different reasons, but there’s one thing that n"
   },
@@ -2627,7 +2627,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/discord/jobs/8722538002",
     "posted_date": "2026-08-20",
     "updated_date": "2026-09-22",
-    "fetched_at": "2026-10-08T14:37:07.320240+00:00",
+    "fetched_at": "2026-10-08T23:36:50.283448+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Discord has a highly engaged community of millions of daily active users who use the platform for many different reasons, but there’s one thing that n"
   },
@@ -2640,7 +2640,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/discord/jobs/8649856002",
     "posted_date": "2026-07-27",
     "updated_date": "2026-10-01",
-    "fetched_at": "2026-10-08T14:37:07.320240+00:00",
+    "fetched_at": "2026-10-08T23:36:50.283448+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Discord has a highly engaged community of millions of daily active users who use the platform for many different reasons, but there’s one thing that n"
   },
@@ -2653,7 +2653,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/discord/jobs/8637688002",
     "posted_date": "2026-07-29",
     "updated_date": "2026-09-29",
-    "fetched_at": "2026-10-08T14:37:07.320240+00:00",
+    "fetched_at": "2026-10-08T23:36:50.283448+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Discord has a highly engaged community of millions of daily active users who use the platform for many different reasons, but there’s one thing that n"
   }
@@ -2667,15 +2667,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/asana/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.095s
-- Company elapsed time: 0.420s
+- HTTP requests/cumulative request time: 1 / 0.101s
+- Company elapsed time: 0.564s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
 - Relevant JD recovery: {'eligible': 17, 'usable_jd': 17}
-- Raw jobs found: 103
-- After US/location filtering: 77
-- With trustworthy posted_date: 77
+- Raw jobs found: 101
+- After US/location filtering: 75
+- With trustworthy posted_date: 75
 - Errors/403s: none
 
 Sample normalized records:
@@ -2691,7 +2691,7 @@ Sample normalized records:
     "official_url": "https://www.asana.com/jobs/apply/8194380?gh_jid=8194380",
     "posted_date": "2026-10-07",
     "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:37:07.580232+00:00",
+    "fetched_at": "2026-10-08T23:36:50.545705+00:00",
     "date_confidence": "high",
     "description": "<p id=\"p-rc_e5a03211173e7566-174\" data-path-to-node=\"0\"><span data-path-to-node=\"0,0\">We're looking for a commercially driven, AI-fluent sales professional to join Asana's AI GTM S"
   },
@@ -2704,7 +2704,7 @@ Sample normalized records:
     "official_url": "https://www.asana.com/jobs/apply/8092044?gh_jid=8092044",
     "posted_date": "2026-07-30",
     "updated_date": "2026-09-15",
-    "fetched_at": "2026-10-08T14:37:07.580232+00:00",
+    "fetched_at": "2026-10-08T23:36:50.545705+00:00",
     "date_confidence": "high",
     "description": "<p>The Data Science &amp; Analytics team at Asana is how the company turns data into decisions — defining the questions that matter, surfacing the answers, and making sure insight "
   },
@@ -2717,7 +2717,7 @@ Sample normalized records:
     "official_url": "https://www.asana.com/jobs/apply/8221174?gh_jid=8221174",
     "posted_date": "2026-10-07",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:37:07.580232+00:00",
+    "fetched_at": "2026-10-08T23:36:50.545705+00:00",
     "date_confidence": "high",
     "description": "<p>As a Developer Support Engineer, you’ll be a trusted technical partner for developers and customers integrating with the Asana platform. You’ll focus on API-related troubleshoot"
   },
@@ -2730,7 +2730,7 @@ Sample normalized records:
     "official_url": "https://www.asana.com/jobs/apply/7964297?gh_jid=7964297",
     "posted_date": "2026-07-22",
     "updated_date": "2026-09-15",
-    "fetched_at": "2026-10-08T14:37:07.580232+00:00",
+    "fetched_at": "2026-10-08T23:36:50.545705+00:00",
     "date_confidence": "high",
     "description": "<p>We’re looking for an experienced backend engineer with a passion for learning and working on systems. You will work with a world-class team of engineers on deploying and operati"
   },
@@ -2743,7 +2743,7 @@ Sample normalized records:
     "official_url": "https://www.asana.com/jobs/apply/8137748?gh_jid=8137748",
     "posted_date": "2026-08-31",
     "updated_date": "2026-09-15",
-    "fetched_at": "2026-10-08T14:37:07.580232+00:00",
+    "fetched_at": "2026-10-08T23:36:50.545705+00:00",
     "date_confidence": "high",
     "description": "<p id=\"p-rc_10838ec6a95bc2d4-72\" data-path-to-node=\"3\"><span data-path-to-node=\"3,0\">We are looking for a detail-oriented, strategic team player to join as a Benefits Manager on As"
   }
@@ -2757,15 +2757,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/brex/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.162s
-- Company elapsed time: 1.006s
+- HTTP requests/cumulative request time: 1 / 0.137s
+- Company elapsed time: 1.387s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
 - Relevant JD recovery: {'eligible': 45, 'usable_jd': 45}
-- Raw jobs found: 281
-- After US/location filtering: 272
-- With trustworthy posted_date: 272
+- Raw jobs found: 284
+- After US/location filtering: 274
+- With trustworthy posted_date: 274
 - Errors/403s: none
 
 Sample normalized records:
@@ -2781,7 +2781,7 @@ Sample normalized records:
     "official_url": "https://www.brex.com/careers/8871793002?gh_jid=8871793002",
     "posted_date": "2026-10-06",
     "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:37:08.006562+00:00",
+    "fetched_at": "2026-10-08T23:36:51.110748+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>Why join us</strong></p> <p>Brex is the intelligent finance platform that enables companies to spend smarter and move faster in more than 200 "
   },
@@ -2794,20 +2794,7 @@ Sample normalized records:
     "official_url": "https://www.brex.com/careers/8871800002?gh_jid=8871800002",
     "posted_date": "2026-10-06",
     "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:37:08.006562+00:00",
-    "date_confidence": "high",
-    "description": "<div class=\"content-intro\"><p><strong>Why join us</strong></p> <p>Brex is the intelligent finance platform that enables companies to spend smarter and move faster in more than 200 "
-  },
-  {
-    "company": "Brex",
-    "source": "brex_official_careers",
-    "job_id": "8871795002",
-    "title": "Accounting Partner Growth Manager",
-    "location": "San Francisco, California, United States; New York, New York, United States",
-    "official_url": "https://www.brex.com/careers/8871795002?gh_jid=8871795002",
-    "posted_date": "2026-10-06",
-    "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:37:08.006562+00:00",
+    "fetched_at": "2026-10-08T23:36:51.110748+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>Why join us</strong></p> <p>Brex is the intelligent finance platform that enables companies to spend smarter and move faster in more than 200 "
   },
@@ -2820,7 +2807,20 @@ Sample normalized records:
     "official_url": "https://www.brex.com/careers/8871796002?gh_jid=8871796002",
     "posted_date": "2026-10-06",
     "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:37:08.006562+00:00",
+    "fetched_at": "2026-10-08T23:36:51.110748+00:00",
+    "date_confidence": "high",
+    "description": "<div class=\"content-intro\"><p><strong>Why join us</strong></p> <p>Brex is the intelligent finance platform that enables companies to spend smarter and move faster in more than 200 "
+  },
+  {
+    "company": "Brex",
+    "source": "brex_official_careers",
+    "job_id": "8871795002",
+    "title": "Accounting Partner Growth Manager",
+    "location": "San Francisco, California, United States; New York, New York, United States",
+    "official_url": "https://www.brex.com/careers/8871795002?gh_jid=8871795002",
+    "posted_date": "2026-10-06",
+    "updated_date": "2026-10-06",
+    "fetched_at": "2026-10-08T23:36:51.110748+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>Why join us</strong></p> <p>Brex is the intelligent finance platform that enables companies to spend smarter and move faster in more than 200 "
   },
@@ -2833,7 +2833,7 @@ Sample normalized records:
     "official_url": "https://www.brex.com/careers/8795500002?gh_jid=8795500002",
     "posted_date": "2026-09-10",
     "updated_date": "2026-09-10",
-    "fetched_at": "2026-10-08T14:37:08.006562+00:00",
+    "fetched_at": "2026-10-08T23:36:51.110748+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>Why join us</strong></p> <p>Brex is the intelligent finance platform that enables companies to spend smarter and move faster in more than 200 "
   }
@@ -2847,15 +2847,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/samsara/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.255s
-- Company elapsed time: 1.198s
+- HTTP requests/cumulative request time: 1 / 0.158s
+- Company elapsed time: 1.555s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
 - Relevant JD recovery: {'eligible': 44, 'usable_jd': 44}
-- Raw jobs found: 239
-- After US/location filtering: 201
-- With trustworthy posted_date: 201
+- Raw jobs found: 237
+- After US/location filtering: 200
+- With trustworthy posted_date: 200
 - Errors/403s: none
 
 Sample normalized records:
@@ -2871,7 +2871,7 @@ Sample normalized records:
     "official_url": "https://www.samsara.com/company/careers/roles/8094367?gh_jid=8094367",
     "posted_date": "2026-08-12",
     "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:37:09.012698+00:00",
+    "fetched_at": "2026-10-08T23:36:52.498988+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: arial, helvetica, sans-serif;\"><strong>Who we are</strong></span></p> <p><span style=\"font-weight: 300; font-family: arial, "
   },
@@ -2884,7 +2884,7 @@ Sample normalized records:
     "official_url": "https://www.samsara.com/company/careers/roles/8094314?gh_jid=8094314",
     "posted_date": "2026-09-02",
     "updated_date": "2026-10-01",
-    "fetched_at": "2026-10-08T14:37:09.012698+00:00",
+    "fetched_at": "2026-10-08T23:36:52.498988+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: arial, helvetica, sans-serif;\"><strong>Who we are</strong></span></p> <p><span style=\"font-weight: 300; font-family: arial, "
   },
@@ -2897,7 +2897,7 @@ Sample normalized records:
     "official_url": "https://www.samsara.com/company/careers/roles/8103119?gh_jid=8103119",
     "posted_date": "2026-08-21",
     "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:37:09.012698+00:00",
+    "fetched_at": "2026-10-08T23:36:52.498988+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: arial, helvetica, sans-serif;\"><strong>Who we are</strong></span></p> <p><span style=\"font-weight: 300; font-family: arial, "
   },
@@ -2910,7 +2910,7 @@ Sample normalized records:
     "official_url": "https://www.samsara.com/company/careers/roles/8099799?gh_jid=8099799",
     "posted_date": "2026-08-21",
     "updated_date": "2026-10-01",
-    "fetched_at": "2026-10-08T14:37:09.012698+00:00",
+    "fetched_at": "2026-10-08T23:36:52.498988+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: arial, helvetica, sans-serif;\"><strong>Who we are</strong></span></p> <p><span style=\"font-weight: 300; font-family: arial, "
   },
@@ -2923,7 +2923,7 @@ Sample normalized records:
     "official_url": "https://www.samsara.com/company/careers/roles/8162034?gh_jid=8162034",
     "posted_date": "2026-09-03",
     "updated_date": "2026-09-25",
-    "fetched_at": "2026-10-08T14:37:09.012698+00:00",
+    "fetched_at": "2026-10-08T23:36:52.498988+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: arial, helvetica, sans-serif;\"><strong>Who we are</strong></span></p> <p><span style=\"font-weight: 300; font-family: arial, "
   }
@@ -2937,13 +2937,13 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/lyft/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.107s
-- Company elapsed time: 0.403s
+- HTTP requests/cumulative request time: 1 / 0.124s
+- Company elapsed time: 0.539s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 25, 'usable_jd': 25}
-- Raw jobs found: 191
+- Relevant JD recovery: {'eligible': 26, 'usable_jd': 26}
+- Raw jobs found: 190
 - After US/location filtering: 97
 - With trustworthy posted_date: 97
 - Errors/403s: none
@@ -2961,7 +2961,7 @@ Sample normalized records:
     "official_url": "https://app.careerpuck.com/job-board/lyft/job/8791500002?gh_jid=8791500002",
     "posted_date": "2026-09-10",
     "updated_date": "2026-09-17",
-    "fetched_at": "2026-10-08T14:37:10.212098+00:00",
+    "fetched_at": "2026-10-08T23:36:54.055068+00:00",
     "date_confidence": "high",
     "description": "<p>At Lyft, our purpose is to serve and connect. We aim to achieve this by cultivating a work environment where all team members belong and have the opportunity to thrive.</p> <p>L"
   },
@@ -2974,7 +2974,7 @@ Sample normalized records:
     "official_url": "https://app.careerpuck.com/job-board/lyft/job/8792050002?gh_jid=8792050002",
     "posted_date": "2026-09-10",
     "updated_date": "2026-09-17",
-    "fetched_at": "2026-10-08T14:37:10.212098+00:00",
+    "fetched_at": "2026-10-08T23:36:54.055068+00:00",
     "date_confidence": "high",
     "description": "<p>At Lyft, our purpose is to serve and connect. We aim to achieve this by cultivating a work environment where all team members belong and have the opportunity to thrive.</p> <p>L"
   },
@@ -2987,7 +2987,7 @@ Sample normalized records:
     "official_url": "https://app.careerpuck.com/job-board/lyft/job/8868958002?gh_jid=8868958002",
     "posted_date": "2026-10-05",
     "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:37:10.212098+00:00",
+    "fetched_at": "2026-10-08T23:36:54.055068+00:00",
     "date_confidence": "high",
     "description": "<p>At Lyft, our purpose is to serve and connect. We aim to achieve this by cultivating a work environment where all team members belong and have the opportunity to thrive.</p> <p>T"
   },
@@ -3000,7 +3000,7 @@ Sample normalized records:
     "official_url": "https://app.careerpuck.com/job-board/lyft/job/8503985002?gh_jid=8503985002",
     "posted_date": "2026-04-14",
     "updated_date": "2026-09-18",
-    "fetched_at": "2026-10-08T14:37:10.212098+00:00",
+    "fetched_at": "2026-10-08T23:36:54.055068+00:00",
     "date_confidence": "high",
     "description": "<p>At Lyft, our purpose is to serve and connect. We aim to achieve this by cultivating a work environment where all team members belong and have the opportunity to thrive.</p> <p>T"
   },
@@ -3013,7 +3013,7 @@ Sample normalized records:
     "official_url": "https://app.careerpuck.com/job-board/lyft/job/8843341002?gh_jid=8843341002",
     "posted_date": "2026-09-28",
     "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:37:10.212098+00:00",
+    "fetched_at": "2026-10-08T23:36:54.055068+00:00",
     "date_confidence": "high",
     "description": "<p>At Lyft, our purpose is to serve and connect. We aim to achieve this by cultivating a work environment where all team members belong and have the opportunity to thrive.</p> <p>T"
   }
@@ -3027,15 +3027,15 @@ Sample normalized records:
 - Search URL/API: `https://api.lever.co/v0/postings/spotify`
 - Pagination: single JSON payload
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.896s
-- Company elapsed time: 0.992s
+- HTTP requests/cumulative request time: 1 / 0.229s
+- Company elapsed time: 0.390s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
 - Relevant JD recovery: {'eligible': 15, 'usable_jd': 15}
-- Raw jobs found: 76
-- After US/location filtering: 61
-- With trustworthy posted_date: 61
+- Raw jobs found: 78
+- After US/location filtering: 63
+- With trustworthy posted_date: 63
 - Errors/403s: none
 
 Sample normalized records:
@@ -3051,7 +3051,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/spotify/2193db3f-77c5-43b8-b030-8f92c9882bf1",
     "posted_date": "2026-06-23",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:10.616850+00:00",
+    "fetched_at": "2026-10-08T23:36:54.596324+00:00",
     "date_confidence": "high",
     "description": "Develop and maintain mobile client components that capture and report listening and user behavior signals across Spotify. Build high-quality, well-tested, and well-documented Kotli"
   },
@@ -3064,7 +3064,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/spotify/d87833d0-fb78-4794-b45d-3fe5c8274bc8",
     "posted_date": "2026-08-27",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:10.616850+00:00",
+    "fetched_at": "2026-10-08T23:36:54.596324+00:00",
     "date_confidence": "high",
     "description": "Maintain positive partnerships across artist and label communities within Vietnam. Support our key partners in Vietnam on Spotify tools, resources and insights. Work closely with o"
   },
@@ -3077,7 +3077,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/spotify/4310f31c-90e1-4e8d-bdcf-dce39c145b8c",
     "posted_date": "2026-07-09",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:10.616850+00:00",
+    "fetched_at": "2026-10-08T23:36:54.596324+00:00",
     "date_confidence": "high",
     "description": "Identify and evaluate audiobook catalogs from independent authors, hybrid publishers, independent presses, and distribution partners that will resonate with Spotify listeners. Nego"
   },
@@ -3090,7 +3090,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/spotify/926149ab-6999-4058-b35d-41e302b70e05",
     "posted_date": "2026-10-01",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:10.616850+00:00",
+    "fetched_at": "2026-10-08T23:36:54.596324+00:00",
     "date_confidence": "high",
     "description": "Build and evolve the lakehouse: Help build the foundations that let data workflows read and write Iceberg tables directly, from this cycle's MVP to a production-grade platform. Dri"
   },
@@ -3103,7 +3103,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/spotify/71eb64a0-ce99-4166-8462-bad3901a967c",
     "posted_date": "2026-10-06",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:10.616850+00:00",
+    "fetched_at": "2026-10-08T23:36:54.596324+00:00",
     "date_confidence": "high",
     "description": "Design and build backend products, services, and infrastructure that strengthen Spotify’s technical security Governance, Risk, and Compliance strategy. Build scalable infrastructur"
   }
@@ -3117,15 +3117,15 @@ Sample normalized records:
 - Search URL/API: `https://api.ashbyhq.com/posting-api/job-board/ramp`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.091s
-- Company elapsed time: 0.406s
+- HTTP requests/cumulative request time: 1 / 0.158s
+- Company elapsed time: 0.628s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
 - Relevant JD recovery: {'eligible': 67, 'usable_jd': 67}
-- Raw jobs found: 161
-- After US/location filtering: 143
-- With trustworthy posted_date: 143
+- Raw jobs found: 163
+- After US/location filtering: 145
+- With trustworthy posted_date: 145
 - Errors/403s: none
 
 Sample normalized records:
@@ -3141,7 +3141,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/ramp/34413f8d-26bf-4bbc-8ade-eb309a0e2245",
     "posted_date": "2026-04-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:11.609815+00:00",
+    "fetched_at": "2026-10-08T23:36:54.987181+00:00",
     "date_confidence": "high",
     "description": "ABOUT RAMP Ramp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized"
   },
@@ -3154,7 +3154,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/ramp/f564dcf9-9390-4a3f-896f-8047a5086040",
     "posted_date": "2025-07-31",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:11.609815+00:00",
+    "fetched_at": "2026-10-08T23:36:54.987181+00:00",
     "date_confidence": "high",
     "description": "ABOUT RAMP Ramp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized"
   },
@@ -3167,7 +3167,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/ramp/4e64ab86-4e30-403b-b1b9-41dc052570ce",
     "posted_date": "2023-03-09",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:11.609815+00:00",
+    "fetched_at": "2026-10-08T23:36:54.987181+00:00",
     "date_confidence": "high",
     "description": "ABOUT RAMP Ramp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized"
   },
@@ -3180,7 +3180,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/ramp/4745807e-82f4-4b1a-857c-dc8dadc73076",
     "posted_date": "2026-08-12",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:11.609815+00:00",
+    "fetched_at": "2026-10-08T23:36:54.987181+00:00",
     "date_confidence": "high",
     "description": "ABOUT RAMP Ramp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized"
   },
@@ -3193,7 +3193,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/ramp/707d5f91-bcf7-42b2-a0e6-8130bf13e56b",
     "posted_date": "2026-08-11",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:11.609815+00:00",
+    "fetched_at": "2026-10-08T23:36:54.987181+00:00",
     "date_confidence": "high",
     "description": "ABOUT RAMP Ramp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized"
   }
@@ -3207,15 +3207,15 @@ Sample normalized records:
 - Search URL/API: `https://api.ashbyhq.com/posting-api/job-board/notion`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.082s
-- Company elapsed time: 0.284s
+- HTTP requests/cumulative request time: 1 / 0.131s
+- Company elapsed time: 0.397s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 36, 'usable_jd': 36}
-- Raw jobs found: 135
-- After US/location filtering: 79
-- With trustworthy posted_date: 79
+- Relevant JD recovery: {'eligible': 34, 'usable_jd': 34}
+- Raw jobs found: 133
+- After US/location filtering: 77
+- With trustworthy posted_date: 77
 - Errors/403s: none
 
 Sample normalized records:
@@ -3231,7 +3231,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/notion/1fc309c8-da20-4ff2-84c7-8b863ece2b0a",
     "posted_date": "2026-08-24",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.017271+00:00",
+    "fetched_at": "2026-10-08T23:36:55.616981+00:00",
     "date_confidence": "high",
     "description": "WHO WE ARE Notion is the collaborative AI workspace where teams and agents think together https://www.youtube.com/watch?v=vkpYpWfEK5s. We're building one place where your knowledge"
   },
@@ -3244,7 +3244,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/notion/05e14247-17c4-4e98-9a13-53828a4e2f13",
     "posted_date": "2026-04-02",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.017271+00:00",
+    "fetched_at": "2026-10-08T23:36:55.616981+00:00",
     "date_confidence": "high",
     "description": "WHO WE ARE Notion is the collaborative AI workspace where teams and agents think together https://www.youtube.com/watch?v=vkpYpWfEK5s. We're building one place where your knowledge"
   },
@@ -3257,7 +3257,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/notion/b21fef72-4864-4a3e-a627-91557a0f8a36",
     "posted_date": "2026-04-01",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.017271+00:00",
+    "fetched_at": "2026-10-08T23:36:55.616981+00:00",
     "date_confidence": "high",
     "description": "WHO WE ARE Notion is the collaborative AI workspace where teams and agents think together https://www.youtube.com/watch?v=vkpYpWfEK5s. We're building one place where your knowledge"
   },
@@ -3270,7 +3270,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/notion/d177d052-ef57-4900-acf2-d58e9eded620",
     "posted_date": "2026-07-02",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.017271+00:00",
+    "fetched_at": "2026-10-08T23:36:55.616981+00:00",
     "date_confidence": "high",
     "description": "WHO WE ARE Notion is the collaborative AI workspace where teams and agents think together https://www.youtube.com/watch?v=vkpYpWfEK5s. We're building one place where your knowledge"
   },
@@ -3283,7 +3283,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/notion/10437426-14c8-4c45-8075-67959ce80393",
     "posted_date": "2025-08-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.017271+00:00",
+    "fetched_at": "2026-10-08T23:36:55.616981+00:00",
     "date_confidence": "high",
     "description": "WHO WE ARE Notion is the collaborative AI workspace where teams and agents think together https://www.youtube.com/watch?v=vkpYpWfEK5s. We're building one place where your knowledge"
   }
@@ -3297,8 +3297,8 @@ Sample normalized records:
 - Search URL/API: `https://api.ashbyhq.com/posting-api/job-board/linear`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.046s
-- Company elapsed time: 0.098s
+- HTTP requests/cumulative request time: 1 / 0.065s
+- Company elapsed time: 0.135s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
@@ -3321,7 +3321,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/linear/d3bc1ced-3ce4-4086-a050-555055dbb1ff",
     "posted_date": "2021-04-27",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.301962+00:00",
+    "fetched_at": "2026-10-08T23:36:56.016023+00:00",
     "date_confidence": "high",
     "description": "At Linear, we're building the product development system for teams and agents. AI is fundamentally changing how software gets built, and we’re shaping the tools this new era requir"
   },
@@ -3334,7 +3334,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/linear/cd5ae036-0223-427a-b038-ba16ef9dcb32",
     "posted_date": "2021-08-18",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.301962+00:00",
+    "fetched_at": "2026-10-08T23:36:56.016023+00:00",
     "date_confidence": "high",
     "description": "At Linear, we're building the product development system for teams and agents. AI is fundamentally changing how software gets built, and we’re shaping the tools this new era requir"
   },
@@ -3347,7 +3347,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/linear/069c4628-88d7-4e4d-b393-c996fc7f3076",
     "posted_date": "2022-01-22",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.301962+00:00",
+    "fetched_at": "2026-10-08T23:36:56.016023+00:00",
     "date_confidence": "high",
     "description": "At Linear, we're building the product development system for teams and agents. AI is fundamentally changing how software gets built, and we’re shaping the tools this new era requir"
   },
@@ -3360,7 +3360,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/linear/f04f398b-6320-499d-8a60-290239d62da8",
     "posted_date": "2026-09-15",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.301962+00:00",
+    "fetched_at": "2026-10-08T23:36:56.016023+00:00",
     "date_confidence": "high",
     "description": "At Linear, we're building the product development system for teams and agents. AI is fundamentally changing how software gets built, and we’re shaping the tools this new era requir"
   },
@@ -3373,7 +3373,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/linear/ea0b5868-6d7a-46fa-99d8-207cd19357a6",
     "posted_date": "2026-09-15",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.301962+00:00",
+    "fetched_at": "2026-10-08T23:36:56.016023+00:00",
     "date_confidence": "high",
     "description": "At Linear, we're building the product development system for teams and agents. AI is fundamentally changing how software gets built, and we’re shaping the tools this new era requir"
   }
@@ -3387,15 +3387,15 @@ Sample normalized records:
 - Search URL/API: `https://api.ashbyhq.com/posting-api/job-board/cohere`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.094s
-- Company elapsed time: 0.322s
+- HTTP requests/cumulative request time: 1 / 0.113s
+- Company elapsed time: 0.419s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 32, 'usable_jd': 32}
-- Raw jobs found: 123
-- After US/location filtering: 102
-- With trustworthy posted_date: 102
+- Relevant JD recovery: {'eligible': 31, 'usable_jd': 31}
+- Raw jobs found: 120
+- After US/location filtering: 99
+- With trustworthy posted_date: 99
 - Errors/403s: none
 
 Sample normalized records:
@@ -3411,7 +3411,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/cohere/3136a5a5-06fd-4c82-8b72-a43467e6b128",
     "posted_date": "2024-11-01",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.402677+00:00",
+    "fetched_at": "2026-10-08T23:36:56.151948+00:00",
     "date_confidence": "high",
     "description": "Who are we? Cohere is the leading security-first enterprise AI company. We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world bus"
   },
@@ -3424,7 +3424,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/cohere/595a2d50-46a5-4ff9-af1c-d58cea9d8e68",
     "posted_date": "2026-09-20",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.402677+00:00",
+    "fetched_at": "2026-10-08T23:36:56.151948+00:00",
     "date_confidence": "high",
     "description": "Who are we? Cohere is the leading security-first enterprise AI company. We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world bus"
   },
@@ -3437,7 +3437,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/cohere/443368a3-6276-4b90-9671-27fed40fd6d2",
     "posted_date": "2024-12-03",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.402677+00:00",
+    "fetched_at": "2026-10-08T23:36:56.151948+00:00",
     "date_confidence": "high",
     "description": "Who are we? Cohere is the leading security-first enterprise AI company. We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world bus"
   },
@@ -3450,7 +3450,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/cohere/bde93d36-4a41-4c8c-bd98-b4e44f9061e4",
     "posted_date": "2026-09-03",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.402677+00:00",
+    "fetched_at": "2026-10-08T23:36:56.151948+00:00",
     "date_confidence": "high",
     "description": "Who are we? Cohere is the leading security-first enterprise AI company. We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world bus"
   },
@@ -3463,7 +3463,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/cohere/d42f5fd4-1ffc-45b9-957c-f09862db6af6",
     "posted_date": "2025-02-20",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.402677+00:00",
+    "fetched_at": "2026-10-08T23:36:56.151948+00:00",
     "date_confidence": "high",
     "description": "Who are we? Cohere is the leading security-first enterprise AI company. We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world bus"
   }
@@ -3476,39 +3476,91 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://cisco.wd5.myworkdayjobs.com/Cisco_Careers`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 44
-- HTTP requests/cumulative request time: 242 / 82.270s
-- Company elapsed time: 116.940s
+- Pages/requests fetched: 45
+- HTTP requests/cumulative request time: 249 / 61.036s
+- Company elapsed time: 97.247s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 198 / 0 / 0
-- Detail cache statuses: {'fetched:new': 189, 'fetched:missing_detail': 9}
-- Relevant JD recovery: {'eligible': 69, 'usable_jd': 69}
-- Raw jobs found: 832
-- After US/location filtering: 198
-- With trustworthy posted_date: 198
+- Detail pages fetched/cache reused/prefilter skipped: 204 / 0 / 0
+- Detail cache statuses: {'fetched:new': 192, 'fetched:missing_detail': 12}
+- Relevant JD recovery: {'eligible': 72, 'usable_jd': 72}
+- Raw jobs found: 834
+- After US/location filtering: 204
+- With trustworthy posted_date: 204
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 24.776, "first_pass_survivors": 48, "group": "official", "jds_resolved": 48, "original_postings_resolved": 48, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 48, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 16.349, "first_pass_survivors": 31, "group": "official", "jds_resolved": 31, "original_postings_resolved": 31, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 31, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 4.431, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 3, "pages_fetched": 2, "query": "data scientist", "raw_jobs": 24, "stop_reason": "early_stop", "unique_contribution": 8, "unique_jobs": 24}
-- Query diagnostic: {"elapsed_seconds": 3.293, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 1.9, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 1.967, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 11.884, "first_pass_survivors": 21, "group": "official", "jds_resolved": 21, "original_postings_resolved": 21, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 21, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 10.909, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 2, "query": "forward deployed engineer", "raw_jobs": 35, "stop_reason": "early_stop", "unique_contribution": 22, "unique_jobs": 35}
-- Query diagnostic: {"elapsed_seconds": 4.353, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 3.091, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 2, "query": "full stack backend", "raw_jobs": 40, "stop_reason": "early_stop", "unique_contribution": 5, "unique_jobs": 40}
-- Query diagnostic: {"elapsed_seconds": 11.28, "first_pass_survivors": 20, "group": "official", "jds_resolved": 20, "original_postings_resolved": 20, "page_budget": 3, "pages_fetched": 3, "query": "site reliability engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 20, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 4.074, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 3, "query": "cloud engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 5, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 11.568, "first_pass_survivors": 21, "group": "official", "jds_resolved": 21, "original_postings_resolved": 21, "page_budget": 3, "pages_fetched": 3, "query": "security engineer remote", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 21, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.272, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 2, "query": "software engineer collaboration devices", "raw_jobs": 31, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 31}
-- Query diagnostic: {"elapsed_seconds": 4.067, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 3, "pages_fetched": 3, "query": "splunk engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 0.726, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "software engineer solution test iq platform", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 2}
+- Query diagnostic: {"elapsed_seconds": 20.004, "first_pass_survivors": 50, "group": "official", "jds_resolved": 50, "original_postings_resolved": 50, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 50, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 13.249, "first_pass_survivors": 32, "group": "official", "jds_resolved": 32, "original_postings_resolved": 32, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 32, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 3.967, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 2, "query": "data scientist", "raw_jobs": 23, "stop_reason": "early_stop", "unique_contribution": 9, "unique_jobs": 23}
+- Query diagnostic: {"elapsed_seconds": 2.178, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 1.507, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 1.829, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 9.83, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 8.316, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 2, "query": "forward deployed engineer", "raw_jobs": 36, "stop_reason": "early_stop", "unique_contribution": 22, "unique_jobs": 36}
+- Query diagnostic: {"elapsed_seconds": 4.043, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 5.794, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 3, "query": "full stack backend", "raw_jobs": 42, "stop_reason": "page_budget", "unique_contribution": 5, "unique_jobs": 42}
+- Query diagnostic: {"elapsed_seconds": 8.536, "first_pass_survivors": 21, "group": "official", "jds_resolved": 21, "original_postings_resolved": 21, "page_budget": 3, "pages_fetched": 3, "query": "site reliability engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 21, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.993, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 3, "query": "cloud engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 9.271, "first_pass_survivors": 21, "group": "official", "jds_resolved": 21, "original_postings_resolved": 21, "page_budget": 3, "pages_fetched": 3, "query": "security engineer remote", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 21, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.021, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 2, "query": "software engineer collaboration devices", "raw_jobs": 31, "stop_reason": "early_stop", "unique_contribution": 4, "unique_jobs": 31}
+- Query diagnostic: {"elapsed_seconds": 3.179, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 3, "query": "splunk engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 5, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 0.529, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "software engineer solution test iq platform", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 2}
 
 Sample normalized records:
 
 ```json
 [
+  {
+    "company": "Cisco",
+    "source": "cisco_official_careers",
+    "job_id": "2022755",
+    "title": "Engineering Product Manager",
+    "location": "Houston, Texas, US; Boulder, Colorado, US; Denver, Colorado, US; Chicago, Illinois, US; Austin, Texas, US; Portland, Oregon, US; Dallas, Texas, US; Miami, Florida, US; Ann Arbor, Michigan, US; Cary, North Carolina, US; Plano, Texas, US; Colorado Springs, Colorado, US; Durham, North Carolina, US",
+    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Houston-Texas-US/Engineering-Product-Manager_2022755-1",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:36:56.572429+00:00",
+    "date_confidence": "high",
+    "description": "The application window is expected to close on: 10/21/2026 Meet the Team Splunk, a Cisco company, helps the world’s most complex organizations turn machine data into action. The Da"
+  },
+  {
+    "company": "Cisco",
+    "source": "cisco_official_careers",
+    "job_id": "2027863",
+    "title": "Principal Machine Learning Engineer, AISWP (Hybrid)",
+    "location": "San Jose, California, US; Vancouver, British Columbia, Canada",
+    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Jose-California-US/Principal-Machine-Learning-Engineer---AISWP--Hybrid-_2027863",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:36:56.572429+00:00",
+    "date_confidence": "high",
+    "description": "The application window is expected to close on: 10/18/2026 Meet the Team AI Platform Group Office of the CTO: We are the Forward Deployed Engineering team for Cisco’s AI-native por"
+  },
+  {
+    "company": "Cisco",
+    "source": "cisco_official_careers",
+    "job_id": "2014523",
+    "title": "Hardware Engineering Technical Leader",
+    "location": "San Jose, California, US; San Francisco, California, US",
+    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Jose-California-US/Hardware-Engineering-Technical-Leader_2014523-1",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:36:56.572429+00:00",
+    "date_confidence": "high",
+    "description": "The application window is expected to close on: 12/07/2026 Meet the Team The Silicon One team creates innovative hardware platforms central to the AI era, powering Cisco’s core Swi"
+  },
+  {
+    "company": "Cisco",
+    "source": "cisco_official_careers",
+    "job_id": "2024896",
+    "title": "Software Engineer",
+    "location": "Milpitas, California, US",
+    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Milpitas-California-US/Software-Engineer_2024896",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:36:56.572429+00:00",
+    "date_confidence": "high",
+    "description": "The application window is expected to close on: 10/14/2026 Meet the Team Cisco Cloud Security is a leading provider of network security services, enabling the world to connect to t"
+  },
   {
     "company": "Cisco",
     "source": "cisco_official_careers",
@@ -3518,61 +3570,9 @@ Sample normalized records:
     "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Jose-California-US/Hardware-Engineer--Transceiver-Module-Group-_2016228",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.724964+00:00",
+    "fetched_at": "2026-10-08T23:36:56.572429+00:00",
     "date_confidence": "high",
     "description": "The application window is expected to close on: 11/06/2026 This is an onsite position and the employee will be required to work out of San Jose, CA location. Meet the Team The Comm"
-  },
-  {
-    "company": "Cisco",
-    "source": "cisco_official_careers",
-    "job_id": "2018189",
-    "title": "Lead Site Reliability Engineer, Engineering Enablement (Remote)",
-    "location": "Boston, Massachusetts, US",
-    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Boston-Massachusetts-US/Lead-Site-Reliability-Engineer--Engineering-Enablement--Remote-_2018189",
-    "posted_date": "2026-10-07",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.724964+00:00",
-    "date_confidence": "high",
-    "description": "The application window is expected to close on: 10/08/2026 ++This is a remote role based out of the United States.++ ++This position will perform work that the U.S. government has "
-  },
-  {
-    "company": "Cisco",
-    "source": "cisco_official_careers",
-    "job_id": "2021748",
-    "title": "Functional Safety Technical Leader (Hybrid)",
-    "location": "Ann Arbor, Michigan, US; Austin, Texas, US",
-    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Ann-Arbor-Michigan-US/Functional-Safety-Technical-Leader--Hybrid-_2021748",
-    "posted_date": "2026-10-07",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.724964+00:00",
-    "date_confidence": "high",
-    "description": "The application window is expected to close on: 11/29/2026 This is a hybrid role with two days per week at Cisco’s Ann Arbor or Austin office Meet the Team The Cisco Common Hardwar"
-  },
-  {
-    "company": "Cisco",
-    "source": "cisco_official_careers",
-    "job_id": "2020301",
-    "title": "IC Package Layout Team Leader",
-    "location": "San Jose, California, US",
-    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Jose-California-US/IC-Package-Layout-Team-Leader_2020301",
-    "posted_date": "2026-10-07",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.724964+00:00",
-    "date_confidence": "high",
-    "description": "The application window is expected to close on: 11/29/2026 Meet the Team The Common Hardware Group (CHG) creates innovative hardware platforms central to the AI era, powering Cisco"
-  },
-  {
-    "company": "Cisco",
-    "source": "cisco_official_careers",
-    "job_id": "2012219",
-    "title": "ASIC High Speed AMS Technical Leader",
-    "location": "Carlsbad, California, US; Allentown, Pennsylvania, US",
-    "official_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Carlsbad-California-US/ASIC-High-Speed-AMS-Technical-Leader_2012219",
-    "posted_date": "2026-10-06",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:12.724964+00:00",
-    "date_confidence": "high",
-    "description": "The application window is expected to close on: 01/18/2027 Meet the Team The Silicon One team creates innovative hardware platforms central to the AI era, powering Cisco’s core Swi"
   }
 ]
 ```
@@ -3584,8 +3584,8 @@ Sample normalized records:
 - Search URL/API: `https://jobs.sap.com/search/?q=software+engineer&locationsearch=United+States`
 - Pagination: startrow=0,25,... ; stop on empty/repeat or short page
 - Pages/requests fetched: 10
-- HTTP requests/cumulative request time: 10 / 3.579s
-- Company elapsed time: 3.807s
+- HTTP requests/cumulative request time: 10 / 6.032s
+- Company elapsed time: 6.428s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
@@ -3595,16 +3595,16 @@ Sample normalized records:
 - With trustworthy posted_date: 0
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 0.494, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.333, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.301, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.318, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.302, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.523, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.482, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.386, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.363, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.304, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "cloud developer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.763, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.846, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.542, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.653, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.582, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.642, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.794, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.557, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.508, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.541, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "cloud developer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
 
 ## HPE
 
@@ -3613,27 +3613,27 @@ Sample normalized records:
 - Search URL/API: `https://hpe.wd5.myworkdayjobs.com/Jobsathpe`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 26
-- HTTP requests/cumulative request time: 301 / 240.185s
-- Company elapsed time: 281.000s
+- HTTP requests/cumulative request time: 302 / 119.556s
+- Company elapsed time: 161.621s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 274 / 0 / 0
-- Detail cache statuses: {'fetched:new': 258, 'fetched:missing_detail': 16}
-- Relevant JD recovery: {'eligible': 114, 'usable_jd': 114}
+- Detail pages fetched/cache reused/prefilter skipped: 275 / 0 / 0
+- Detail cache statuses: {'fetched:new': 261, 'fetched:missing_detail': 14}
+- Relevant JD recovery: {'eligible': 113, 'usable_jd': 113}
 - Raw jobs found: 475
-- After US/location filtering: 274
-- With trustworthy posted_date: 274
+- After US/location filtering: 275
+- With trustworthy posted_date: 275
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 89.349, "first_pass_survivors": 80, "group": "official", "jds_resolved": 80, "original_postings_resolved": 80, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 80, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 61.083, "first_pass_survivors": 34, "group": "official", "jds_resolved": 34, "original_postings_resolved": 34, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 49, "stop_reason": "page_budget", "unique_contribution": 34, "unique_jobs": 49}
-- Query diagnostic: {"elapsed_seconds": 2.879, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 12, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 12}
-- Query diagnostic: {"elapsed_seconds": 35.035, "first_pass_survivors": 47, "group": "official", "jds_resolved": 47, "original_postings_resolved": 47, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 47, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 30.139, "first_pass_survivors": 34, "group": "official", "jds_resolved": 34, "original_postings_resolved": 34, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 34, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 21.507, "first_pass_survivors": 32, "group": "official", "jds_resolved": 32, "original_postings_resolved": 32, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 32, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 15.129, "first_pass_survivors": 19, "group": "official", "jds_resolved": 19, "original_postings_resolved": 19, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 19, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 4.959, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 10, "stop_reason": "early_stop", "unique_contribution": 5, "unique_jobs": 10}
-- Query diagnostic: {"elapsed_seconds": 16.291, "first_pass_survivors": 19, "group": "official", "jds_resolved": 19, "original_postings_resolved": 19, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 19, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 3.121, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "ai workflow specialist", "raw_jobs": 4, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 4}
+- Query diagnostic: {"elapsed_seconds": 45.75, "first_pass_survivors": 80, "group": "official", "jds_resolved": 80, "original_postings_resolved": 80, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 80, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 18.797, "first_pass_survivors": 34, "group": "official", "jds_resolved": 34, "original_postings_resolved": 34, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 48, "stop_reason": "page_budget", "unique_contribution": 34, "unique_jobs": 48}
+- Query diagnostic: {"elapsed_seconds": 1.863, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 12, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 12}
+- Query diagnostic: {"elapsed_seconds": 23.351, "first_pass_survivors": 46, "group": "official", "jds_resolved": 46, "original_postings_resolved": 46, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 46, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 19.916, "first_pass_survivors": 34, "group": "official", "jds_resolved": 34, "original_postings_resolved": 34, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 34, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 17.125, "first_pass_survivors": 31, "group": "official", "jds_resolved": 31, "original_postings_resolved": 31, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 31, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 15.228, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 3.596, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 5, "unique_jobs": 11}
+- Query diagnostic: {"elapsed_seconds": 12.625, "first_pass_survivors": 18, "group": "official", "jds_resolved": 18, "original_postings_resolved": 18, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 18, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 1.936, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "ai workflow specialist", "raw_jobs": 4, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 4}
 
 Sample normalized records:
 
@@ -3648,7 +3648,7 @@ Sample normalized records:
     "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/Senior-AI-Engineer-Developer_1209445-2",
     "posted_date": "2026-08-24",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:35.446615+00:00",
+    "fetched_at": "2026-10-08T23:37:10.835851+00:00",
     "date_confidence": "high",
     "description": "Senior AI Engineer Developer This role has been designed as ‘’Onsite’ with an expectation that you will primarily work from an HPE office. Who We Are: Hewlett Packard Enterprise is"
   },
@@ -3661,7 +3661,7 @@ Sample normalized records:
     "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/San-Jose-California-United-States-of-America/AI-ML-Engineer---Agentic_1202938-2",
     "posted_date": "2026-07-14",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:35.446615+00:00",
+    "fetched_at": "2026-10-08T23:37:10.835851+00:00",
     "date_confidence": "high",
     "description": "AI/ML Engineer - Agentic This role has been designed as ‘Hybrid’ with an expectation that you will work on average 2 days per week from an HPE office. Who We Are: Hewlett Packard E"
   },
@@ -3674,7 +3674,7 @@ Sample normalized records:
     "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Bloomington-Minnesota-United-States-of-America/HPC---AI-Performance-Engineer_1206826-3",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:35.446615+00:00",
+    "fetched_at": "2026-10-08T23:37:10.835851+00:00",
     "date_confidence": "high",
     "description": "HPC & AI Performance Engineer This role has been designed as 'Hybrid' with a requirement that you will work on average 2 days per week from an HPE office. Who We Are: Hewlett Packa"
   },
@@ -3687,7 +3687,7 @@ Sample normalized records:
     "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Houston-Texas-United-States-of-America/HPC---AI-Performance-Engineer_1215573-2",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:35.446615+00:00",
+    "fetched_at": "2026-10-08T23:37:10.835851+00:00",
     "date_confidence": "high",
     "description": "HPC & AI Performance Engineer This role has been designed as 'Hybrid' with a requirement that you will work on average 2 days per week from an HPE office. Who We Are: Hewlett Packa"
   },
@@ -3700,7 +3700,7 @@ Sample normalized records:
     "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/AI-Performance-Engineering-Intern_1213417",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:35.446615+00:00",
+    "fetched_at": "2026-10-08T23:37:10.835851+00:00",
     "date_confidence": "high",
     "description": "AI Performance Engineering Intern This role has been designed as ‘’Onsite’ with an expectation that you will primarily work from an HPE office. Who We Are: Hewlett Packard Enterpri"
   }
@@ -3714,26 +3714,26 @@ Sample normalized records:
 - Search URL/API: `https://www.disneycareers.com/en/search-jobs/software%20engineer/United%20States/391/1/2/6252001/39x76/-98x5/100/2`
 - Pagination: ?p=1,2,3 per role query (intentional request cap)
 - Pages/requests fetched: 27
-- HTTP requests/cumulative request time: 27 / 11.520s
-- Company elapsed time: 17.900s
+- HTTP requests/cumulative request time: 27 / 14.139s
+- Company elapsed time: 22.287s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 0 / 18 / 105
+- Detail pages fetched/cache reused/prefilter skipped: 0 / 18 / 106
 - Detail cache statuses: {'reused': 18}
-- Relevant JD recovery: {'deterministic_skip': 103, 'cache_reused': 18, 'eligible': 18, 'ai_skip': 2, 'usable_jd': 18}
+- Relevant JD recovery: {'deterministic_skip': 103, 'cache_reused': 18, 'eligible': 18, 'ai_skip': 3, 'usable_jd': 18}
 - Raw jobs found: 270
-- After US/location filtering: 123
+- After US/location filtering: 124
 - With trustworthy posted_date: 0
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 2.028, "first_pass_survivors": 29, "group": "official", "jds_resolved": 0, "original_postings_resolved": 29, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 29, "unique_jobs": 29}
-- Query diagnostic: {"elapsed_seconds": 1.876, "first_pass_survivors": 14, "group": "official", "jds_resolved": 0, "original_postings_resolved": 14, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 14, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 2.102, "first_pass_survivors": 17, "group": "official", "jds_resolved": 0, "original_postings_resolved": 17, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 17, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 2.423, "first_pass_survivors": 21, "group": "official", "jds_resolved": 0, "original_postings_resolved": 21, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 21, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 1.785, "first_pass_survivors": 7, "group": "official", "jds_resolved": 0, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 1.845, "first_pass_survivors": 14, "group": "official", "jds_resolved": 0, "original_postings_resolved": 14, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 14, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 2.129, "first_pass_survivors": 10, "group": "official", "jds_resolved": 0, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 1.883, "first_pass_survivors": 7, "group": "official", "jds_resolved": 0, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 1.829, "first_pass_survivors": 4, "group": "official", "jds_resolved": 0, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 2.721, "first_pass_survivors": 30, "group": "official", "jds_resolved": 0, "original_postings_resolved": 30, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 30, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 2.619, "first_pass_survivors": 14, "group": "official", "jds_resolved": 0, "original_postings_resolved": 14, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 14, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 2.196, "first_pass_survivors": 16, "group": "official", "jds_resolved": 0, "original_postings_resolved": 16, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 16, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 2.32, "first_pass_survivors": 21, "group": "official", "jds_resolved": 0, "original_postings_resolved": 21, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 21, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 2.96, "first_pass_survivors": 7, "group": "official", "jds_resolved": 0, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 2.634, "first_pass_survivors": 15, "group": "official", "jds_resolved": 0, "original_postings_resolved": 15, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 15, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 2.137, "first_pass_survivors": 10, "group": "official", "jds_resolved": 0, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 2.422, "first_pass_survivors": 7, "group": "official", "jds_resolved": 0, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 29}
+- Query diagnostic: {"elapsed_seconds": 2.276, "first_pass_survivors": 4, "group": "official", "jds_resolved": 0, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 30}
 
 Sample normalized records:
 
@@ -3748,7 +3748,7 @@ Sample normalized records:
     "official_url": "https://www.disneycareers.com/en/job/burbank/manager-applied-ai/391/95395074208",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:48.574932+00:00",
+    "fetched_at": "2026-10-08T23:37:13.803917+00:00",
     "date_confidence": "high",
     "description": ""
   },
@@ -3761,7 +3761,7 @@ Sample normalized records:
     "official_url": "https://www.disneycareers.com/en/job/new-york/software-engineer-ii-ai-performance/391/100828809776",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:48.574932+00:00",
+    "fetched_at": "2026-10-08T23:37:13.803917+00:00",
     "date_confidence": "high",
     "description": "Disney Entertainment and ESPN Product & Technology Technology is at the heart of Disney’s past, present, and future. Disney Entertainment and ESPN Product & Technology is a global "
   },
@@ -3774,7 +3774,7 @@ Sample normalized records:
     "official_url": "https://www.disneycareers.com/en/job/burbank/director-ai-enablement-and-legal-engineering/391/101107920944",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:48.574932+00:00",
+    "fetched_at": "2026-10-08T23:37:13.803917+00:00",
     "date_confidence": "high",
     "description": ""
   },
@@ -3787,7 +3787,7 @@ Sample normalized records:
     "official_url": "https://www.disneycareers.com/en/job/orlando/senior-manager-ai-and-machine-learning-engineering/391/101125079440",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:48.574932+00:00",
+    "fetched_at": "2026-10-08T23:37:13.803917+00:00",
     "date_confidence": "high",
     "description": ""
   },
@@ -3800,7 +3800,7 @@ Sample normalized records:
     "official_url": "https://www.disneycareers.com/en/job/orlando/lead-software-engineer-ai-licensing-and-publishing-systems/391/87032371952",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:37:48.574932+00:00",
+    "fetched_at": "2026-10-08T23:37:13.803917+00:00",
     "date_confidence": "high",
     "description": ""
   }
@@ -3814,26 +3814,26 @@ Sample normalized records:
 - Search URL/API: `https://ebay.wd5.myworkdayjobs.com/apply`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 20
-- HTTP requests/cumulative request time: 80 / 49.090s
-- Company elapsed time: 59.878s
+- HTTP requests/cumulative request time: 80 / 38.563s
+- Company elapsed time: 49.462s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 59 / 0 / 0
 - Detail cache statuses: {'fetched:new': 54, 'fetched:missing_detail': 5}
 - Relevant JD recovery: {'eligible': 17, 'usable_jd': 17}
-- Raw jobs found: 281
+- Raw jobs found: 280
 - After US/location filtering: 59
 - With trustworthy posted_date: 59
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 41.55, "first_pass_survivors": 56, "group": "official", "jds_resolved": 56, "original_postings_resolved": 56, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 56, "stop_reason": "page_budget", "unique_contribution": 56, "unique_jobs": 56}
-- Query diagnostic: {"elapsed_seconds": 0.766, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 7, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 7}
-- Query diagnostic: {"elapsed_seconds": 0.726, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 7, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 7}
-- Query diagnostic: {"elapsed_seconds": 2.721, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 15, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 15}
-- Query diagnostic: {"elapsed_seconds": 2.814, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 57, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 57}
-- Query diagnostic: {"elapsed_seconds": 3.009, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 57, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 57}
-- Query diagnostic: {"elapsed_seconds": 3.082, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 57, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 57}
-- Query diagnostic: {"elapsed_seconds": 0.774, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 3.567, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 25, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 25}
+- Query diagnostic: {"elapsed_seconds": 32.785, "first_pass_survivors": 56, "group": "official", "jds_resolved": 56, "original_postings_resolved": 56, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 56, "stop_reason": "page_budget", "unique_contribution": 56, "unique_jobs": 56}
+- Query diagnostic: {"elapsed_seconds": 0.696, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 7, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 7}
+- Query diagnostic: {"elapsed_seconds": 0.792, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 5, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 5}
+- Query diagnostic: {"elapsed_seconds": 2.141, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 15, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 15}
+- Query diagnostic: {"elapsed_seconds": 2.848, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 57, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 57}
+- Query diagnostic: {"elapsed_seconds": 2.474, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 57, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 57}
+- Query diagnostic: {"elapsed_seconds": 2.714, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 57, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 57}
+- Query diagnostic: {"elapsed_seconds": 1.13, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 2.994, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 26, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 26}
 
 Sample normalized records:
 
@@ -3848,7 +3848,7 @@ Sample normalized records:
     "official_url": "https://ebay.wd5.myworkdayjobs.com/apply/job/Austin/Data-Scientist---AI---Automation_R0075757",
     "posted_date": "2026-09-03",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:38:06.476368+00:00",
+    "fetched_at": "2026-10-08T23:37:36.091914+00:00",
     "date_confidence": "high",
     "description": "At eBay, we're more than a global ecommerce leader — we’re changing the way the world shops and sells. Our platform empowers millions of buyers and sellers in more than 190 markets"
   },
@@ -3861,7 +3861,7 @@ Sample normalized records:
     "official_url": "https://ebay.wd5.myworkdayjobs.com/apply/job/Remote-United-States/Senior-Python-Engineer--AI_R0073091",
     "posted_date": "2026-09-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:38:06.476368+00:00",
+    "fetched_at": "2026-10-08T23:37:36.091914+00:00",
     "date_confidence": "high",
     "description": "At eBay, we're more than a global ecommerce leader — we’re changing the way the world shops and sells. Our platform empowers millions of buyers and sellers in more than 190 markets"
   },
@@ -3874,7 +3874,7 @@ Sample normalized records:
     "official_url": "https://ebay.wd5.myworkdayjobs.com/apply/job/Austin/Sr-MTS--AI---Agentic-Architect_R0076460",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:38:06.476368+00:00",
+    "fetched_at": "2026-10-08T23:37:36.091914+00:00",
     "date_confidence": "high",
     "description": "At eBay, we're more than a global ecommerce leader — we’re changing the way the world shops and sells. Our platform empowers millions of buyers and sellers in more than 190 markets"
   },
@@ -3887,7 +3887,7 @@ Sample normalized records:
     "official_url": "https://ebay.wd5.myworkdayjobs.com/apply/job/Austin/Software-Engineer--IAM---Cloud-Security_R0073561",
     "posted_date": "2026-10-06",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:38:06.476368+00:00",
+    "fetched_at": "2026-10-08T23:37:36.091914+00:00",
     "date_confidence": "high",
     "description": "At eBay, we're more than a global ecommerce leader — we’re changing the way the world shops and sells. Our platform empowers millions of buyers and sellers in more than 190 markets"
   },
@@ -3900,7 +3900,7 @@ Sample normalized records:
     "official_url": "https://ebay.wd5.myworkdayjobs.com/apply/job/Austin/Traffic-Engineer_R0072744",
     "posted_date": "2026-09-22",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:38:06.476368+00:00",
+    "fetched_at": "2026-10-08T23:37:36.091914+00:00",
     "date_confidence": "high",
     "description": "At eBay, we're more than a global ecommerce leader — we’re changing the way the world shops and sells. Our platform empowers millions of buyers and sellers in more than 190 markets"
   }
@@ -3914,26 +3914,26 @@ Sample normalized records:
 - Search URL/API: `https://careers.qualcomm.com/api/pcsx/search?domain=qualcomm.com&query=software+engineer&location=United+States&sort_by=timestamp&start=0&num=10`
 - Pagination: newest-first; minimum 2 pages, then two seen pages + one overlap page; otherwise count/cap
 - Pages/requests fetched: 26
-- HTTP requests/cumulative request time: 150 / 40.097s
-- Company elapsed time: 61.971s
+- HTTP requests/cumulative request time: 154 / 24.769s
+- Company elapsed time: 47.342s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 123 / 0 / 0
-- Detail cache statuses: {'fetched:new': 115, 'fetched:missing_detail': 8}
-- Relevant JD recovery: {'eligible': 40, 'usable_jd': 40}
+- Detail pages fetched/cache reused/prefilter skipped: 127 / 0 / 0
+- Detail cache statuses: {'fetched:new': 120, 'fetched:missing_detail': 7}
+- Relevant JD recovery: {'eligible': 39, 'usable_jd': 39}
 - Raw jobs found: 259
-- After US/location filtering: 123
-- With trustworthy posted_date: 123
+- After US/location filtering: 127
+- With trustworthy posted_date: 127
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 12.282, "first_pass_survivors": 30, "group": "official", "jds_resolved": 30, "original_postings_resolved": 30, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 30, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 8.977, "first_pass_survivors": 20, "group": "official", "jds_resolved": 20, "original_postings_resolved": 20, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 20, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 7.268, "first_pass_survivors": 16, "group": "official", "jds_resolved": 16, "original_postings_resolved": 16, "page_budget": 3, "pages_fetched": 2, "query": "data scientist", "raw_jobs": 19, "stop_reason": "early_stop", "unique_contribution": 16, "unique_jobs": 19}
-- Query diagnostic: {"elapsed_seconds": 9.126, "first_pass_survivors": 20, "group": "official", "jds_resolved": 20, "original_postings_resolved": 20, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 20, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 4.18, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 5.746, "first_pass_survivors": 11, "group": "official", "jds_resolved": 11, "original_postings_resolved": 11, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 11, "unique_jobs": 29}
-- Query diagnostic: {"elapsed_seconds": 8.56, "first_pass_survivors": 17, "group": "official", "jds_resolved": 17, "original_postings_resolved": 17, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 17, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 3.745, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 1.785, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 9.121, "first_pass_survivors": 30, "group": "official", "jds_resolved": 30, "original_postings_resolved": 30, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 30, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 6.386, "first_pass_survivors": 20, "group": "official", "jds_resolved": 20, "original_postings_resolved": 20, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 20, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 4.635, "first_pass_survivors": 16, "group": "official", "jds_resolved": 16, "original_postings_resolved": 16, "page_budget": 3, "pages_fetched": 2, "query": "data scientist", "raw_jobs": 19, "stop_reason": "early_stop", "unique_contribution": 16, "unique_jobs": 19}
+- Query diagnostic: {"elapsed_seconds": 6.31, "first_pass_survivors": 19, "group": "official", "jds_resolved": 19, "original_postings_resolved": 19, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 19, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 6.034, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 8, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 5.248, "first_pass_survivors": 13, "group": "official", "jds_resolved": 13, "original_postings_resolved": 13, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 13, "unique_jobs": 29}
+- Query diagnostic: {"elapsed_seconds": 5.853, "first_pass_survivors": 17, "group": "official", "jds_resolved": 17, "original_postings_resolved": 17, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 17, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 2.301, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 1.169, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 30}
 
 Sample normalized records:
 
@@ -3942,67 +3942,67 @@ Sample normalized records:
   {
     "company": "Qualcomm",
     "source": "qualcomm_official_careers",
-    "job_id": "3095243",
-    "title": "Senior Leader, Signal and Power Integrity/Systems Architecture (High-Speed Interconnects)",
+    "job_id": "3096471",
+    "title": "Graphics Software Engineer, Senior",
     "location": "San Diego, California, United States of America",
-    "official_url": "https://careers.qualcomm.com/careers/job/446720476829",
-    "posted_date": "2026-10-07",
+    "official_url": "https://careers.qualcomm.com/careers/job/446721061573",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:06.354868+00:00",
+    "fetched_at": "2026-10-08T23:38:25.555504+00:00",
     "date_confidence": "high",
-    "description": "Company: Qualcomm Technologies, Inc. Job Area: Engineering Group, Engineering Group > Packaging Engineering General Summary: The Qualcomm Central Hardware Systems (CHS) team is see"
+    "description": "Company: Qualcomm Technologies, Inc. Job Area: Engineering Group, Engineering Group > Graphics Software Engineering General Summary: As a leading technology innovator, Qualcomm pus"
   },
   {
     "company": "Qualcomm",
     "source": "qualcomm_official_careers",
-    "job_id": "3097482",
-    "title": "Staff Product Manager, Product Planning",
-    "location": "San Diego, California, United States of America",
-    "official_url": "https://careers.qualcomm.com/careers/job/446721445233",
-    "posted_date": "2026-10-07",
+    "job_id": "3097255",
+    "title": "DDR Validation Lead, Staff (AI Accelerator Platform)",
+    "location": "San Diego, California, United States of America; Austin, Texas, United States of America",
+    "official_url": "https://careers.qualcomm.com/careers/job/446721330851",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:06.354868+00:00",
+    "fetched_at": "2026-10-08T23:38:25.555504+00:00",
     "date_confidence": "high",
-    "description": "Company: Qualcomm Technologies, Inc. Job Area: Sales, Business Development & Marketing Group, Sales, Business Development & Marketing Group > Product Marketing General Summary: The"
+    "description": "Company: Qualcomm Technologies, Inc. Job Area: Engineering Group, Engineering Group > ASICS Engineering General Summary: Qualcomm’s System Validation & Emulation (SVE) team is part"
   },
   {
     "company": "Qualcomm",
     "source": "qualcomm_official_careers",
-    "job_id": "3097586",
-    "title": "Principal Software Engineer – Mobile Software Architecture",
+    "job_id": "3097629",
+    "title": "Senior Director, Engineering Mobile Handset AI Software",
     "location": "San Diego, California, United States of America",
-    "official_url": "https://careers.qualcomm.com/careers/job/446721451304",
-    "posted_date": "2026-10-07",
+    "official_url": "https://careers.qualcomm.com/careers/job/446721467284",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:06.354868+00:00",
+    "fetched_at": "2026-10-08T23:38:25.555504+00:00",
     "date_confidence": "high",
-    "description": "Company: Qualcomm Technologies, Inc. Job Area: Engineering Group, Engineering Group > Software Engineering General Summary: The Mobile Software Architecture team is responsible for"
+    "description": "Company: Qualcomm Technologies, Inc. Job Area: Engineering Group, Engineering Group > Mobile Chipset PE, MDM & MSM General Summary: Seeking an experienced Embedded ML SW Architect "
   },
   {
     "company": "Qualcomm",
     "source": "qualcomm_official_careers",
-    "job_id": "3096876",
-    "title": "#Wireless Software Engineer",
-    "location": "Boulder, Colorado, United States of America",
-    "official_url": "https://careers.qualcomm.com/careers/job/446721159585",
-    "posted_date": "2026-10-07",
+    "job_id": "3096133",
+    "title": "#Engineer",
+    "location": "Santa Clara, California, United States of America",
+    "official_url": "https://careers.qualcomm.com/careers/job/446720993760",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:06.354868+00:00",
+    "fetched_at": "2026-10-08T23:38:25.555504+00:00",
     "date_confidence": "high",
-    "description": "Company: Qualcomm Technologies, Inc. Job Area: Engineering Group, Engineering Group > Modem Technologies Software General Summary: *** This position is not eligible for Qualcomm im"
+    "description": "Company: Qualcomm Atheros, Inc. Job Area: Engineering Group, Engineering Group > Software Engineering General Summary: As a leading technology innovator, Qualcomm pushes the bounda"
   },
   {
     "company": "Qualcomm",
     "source": "qualcomm_official_careers",
-    "job_id": "3097316",
-    "title": "FPGA Design & Firmware Engineer, Staff",
+    "job_id": "3097248",
+    "title": "Camera Systems Engineer",
     "location": "San Diego, California, United States of America",
-    "official_url": "https://careers.qualcomm.com/careers/job/446721375989",
-    "posted_date": "2026-10-07",
+    "official_url": "https://careers.qualcomm.com/careers/job/446721365985",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:06.354868+00:00",
+    "fetched_at": "2026-10-08T23:38:25.555504+00:00",
     "date_confidence": "high",
-    "description": "Company: Qualcomm Technologies, Inc. Job Area: Engineering Group, Engineering Group > ASICS Engineering General Summary: As a leading technology innovator, Qualcomm pushes the boun"
+    "description": "Company: Qualcomm Technologies, Inc. Job Area: Engineering Group, Engineering Group > Camera Engineering General Summary: Qualcomm Camera System Team is seeking a passionate camera"
   }
 ]
 ```
@@ -4014,22 +4014,22 @@ Sample normalized records:
 - Search URL/API: `https://careers.amd.com/api/jobs`
 - Pagination: page=1,2,... per role query; stop on total/empty/repeat/short page
 - Pages/requests fetched: 14
-- HTTP requests/cumulative request time: 14 / 15.872s
-- Company elapsed time: 17.696s
+- HTTP requests/cumulative request time: 14 / 8.543s
+- Company elapsed time: 10.642s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 207, 'usable_jd': 207}
-- Raw jobs found: 1294
-- After US/location filtering: 506
-- With trustworthy posted_date: 506
+- Relevant JD recovery: {'eligible': 206, 'usable_jd': 206}
+- Raw jobs found: 1287
+- After US/location filtering: 501
+- With trustworthy posted_date: 501
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 7.854, "first_pass_survivors": 339, "group": "official", "jds_resolved": 339, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 339, "stop_reason": "page_budget", "unique_contribution": 339, "unique_jobs": 339}
-- Query diagnostic: {"elapsed_seconds": 0.673, "first_pass_survivors": 34, "group": "official", "jds_resolved": 34, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning", "raw_jobs": 100, "stop_reason": "early_stop", "unique_contribution": 34, "unique_jobs": 100}
-- Query diagnostic: {"elapsed_seconds": 2.675, "first_pass_survivors": 77, "group": "official", "jds_resolved": 77, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 300, "stop_reason": "page_budget", "unique_contribution": 77, "unique_jobs": 300}
-- Query diagnostic: {"elapsed_seconds": 2.11, "first_pass_survivors": 43, "group": "official", "jds_resolved": 43, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "AI research", "raw_jobs": 255, "stop_reason": "page_budget", "unique_contribution": 43, "unique_jobs": 255}
-- Query diagnostic: {"elapsed_seconds": 4.383, "first_pass_survivors": 13, "group": "official", "jds_resolved": 13, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 300, "stop_reason": "page_budget", "unique_contribution": 13, "unique_jobs": 300}
+- Query diagnostic: {"elapsed_seconds": 3.642, "first_pass_survivors": 337, "group": "official", "jds_resolved": 337, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 337, "stop_reason": "page_budget", "unique_contribution": 337, "unique_jobs": 337}
+- Query diagnostic: {"elapsed_seconds": 0.647, "first_pass_survivors": 33, "group": "official", "jds_resolved": 33, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning", "raw_jobs": 100, "stop_reason": "early_stop", "unique_contribution": 33, "unique_jobs": 100}
+- Query diagnostic: {"elapsed_seconds": 2.256, "first_pass_survivors": 77, "group": "official", "jds_resolved": 77, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 300, "stop_reason": "page_budget", "unique_contribution": 77, "unique_jobs": 300}
+- Query diagnostic: {"elapsed_seconds": 1.854, "first_pass_survivors": 42, "group": "official", "jds_resolved": 42, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "AI research", "raw_jobs": 250, "stop_reason": "page_budget", "unique_contribution": 42, "unique_jobs": 250}
+- Query diagnostic: {"elapsed_seconds": 2.243, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 300, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 300}
 
 Sample normalized records:
 
@@ -4044,7 +4044,7 @@ Sample normalized records:
     "official_url": "",
     "posted_date": "2026-06-17",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:39:09.666072+00:00",
+    "fetched_at": "2026-10-08T23:38:33.820944+00:00",
     "date_confidence": "high",
     "description": "WHAT YOU DO AT AMD CHANGES EVERYTHING At AMD, our mission is to build great products that accelerate next-generation computing experiences—from AI and data centers, to PCs, gaming "
   },
@@ -4057,7 +4057,7 @@ Sample normalized records:
     "official_url": "",
     "posted_date": "2026-09-09",
     "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:39:09.666072+00:00",
+    "fetched_at": "2026-10-08T23:38:33.820944+00:00",
     "date_confidence": "high",
     "description": "ADVANCE YOUR CAREER. ADVANCE THE WORLD. At AMD, we believe technology has the power to solve the world’s most important challenges. From advancing healthcare and scientific discove"
   },
@@ -4070,20 +4070,7 @@ Sample normalized records:
     "official_url": "",
     "posted_date": "2026-10-05",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:39:09.666072+00:00",
-    "date_confidence": "high",
-    "description": "ADVANCE YOUR CAREER. ADVANCE THE WORLD. At AMD, we believe technology has the power to solve the world’s most important challenges. From advancing healthcare and scientific discove"
-  },
-  {
-    "company": "AMD",
-    "source": "amd_official_careers",
-    "job_id": "92754",
-    "title": "Staff Software Development Engineer: GPU, AI/ML Ops & Quality Engineering",
-    "location": "Santa Clara, California",
-    "official_url": "",
-    "posted_date": "2026-09-23",
-    "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:39:09.666072+00:00",
+    "fetched_at": "2026-10-08T23:38:33.820944+00:00",
     "date_confidence": "high",
     "description": "ADVANCE YOUR CAREER. ADVANCE THE WORLD. At AMD, we believe technology has the power to solve the world’s most important challenges. From advancing healthcare and scientific discove"
   },
@@ -4096,7 +4083,20 @@ Sample normalized records:
     "official_url": "",
     "posted_date": "2026-09-15",
     "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:39:09.666072+00:00",
+    "fetched_at": "2026-10-08T23:38:33.820944+00:00",
+    "date_confidence": "high",
+    "description": "ADVANCE YOUR CAREER. ADVANCE THE WORLD. At AMD, we believe technology has the power to solve the world’s most important challenges. From advancing healthcare and scientific discove"
+  },
+  {
+    "company": "AMD",
+    "source": "amd_official_careers",
+    "job_id": "92355",
+    "title": "Senior Software Engineer, FPGA Device Modeling",
+    "location": "Longmont, Colorado",
+    "official_url": "",
+    "posted_date": "2026-09-21",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:38:33.820944+00:00",
     "date_confidence": "high",
     "description": "ADVANCE YOUR CAREER. ADVANCE THE WORLD. At AMD, we believe technology has the power to solve the world’s most important challenges. From advancing healthcare and scientific discove"
   }
@@ -4110,31 +4110,44 @@ Sample normalized records:
 - Search URL/API: `https://zoom.wd5.myworkdayjobs.com/Zoom`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 19
-- HTTP requests/cumulative request time: 72 / 27.673s
-- Company elapsed time: 37.142s
+- HTTP requests/cumulative request time: 72 / 21.275s
+- Company elapsed time: 30.797s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 52 / 0 / 0
 - Detail cache statuses: {'fetched:new': 48, 'fetched:missing_detail': 4}
-- Relevant JD recovery: {'eligible': 27, 'usable_jd': 27}
+- Relevant JD recovery: {'eligible': 26, 'usable_jd': 26}
 - Raw jobs found: 220
 - After US/location filtering: 52
 - With trustworthy posted_date: 52
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 16.91, "first_pass_survivors": 34, "group": "official", "jds_resolved": 34, "original_postings_resolved": 34, "page_budget": 4, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 34, "stop_reason": "early_stop", "unique_contribution": 34, "unique_jobs": 34}
-- Query diagnostic: {"elapsed_seconds": 0.895, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 15, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 15}
-- Query diagnostic: {"elapsed_seconds": 0.688, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 8.311, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 4.355, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 51, "stop_reason": "page_budget", "unique_contribution": 5, "unique_jobs": 51}
-- Query diagnostic: {"elapsed_seconds": 2.181, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 52, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 52}
-- Query diagnostic: {"elapsed_seconds": 0.505, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 8, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 8}
-- Query diagnostic: {"elapsed_seconds": 0.49, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 2.217, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 28, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 28}
+- Query diagnostic: {"elapsed_seconds": 13.643, "first_pass_survivors": 34, "group": "official", "jds_resolved": 34, "original_postings_resolved": 34, "page_budget": 4, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 34, "stop_reason": "early_stop", "unique_contribution": 34, "unique_jobs": 34}
+- Query diagnostic: {"elapsed_seconds": 0.778, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 15, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 15}
+- Query diagnostic: {"elapsed_seconds": 0.425, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 6.357, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 31, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 31}
+- Query diagnostic: {"elapsed_seconds": 3.809, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 51, "stop_reason": "page_budget", "unique_contribution": 5, "unique_jobs": 51}
+- Query diagnostic: {"elapsed_seconds": 2.306, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 52, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 52}
+- Query diagnostic: {"elapsed_seconds": 0.426, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 7, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 7}
+- Query diagnostic: {"elapsed_seconds": 0.432, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 2.071, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 28, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 28}
 
 Sample normalized records:
 
 ```json
 [
+  {
+    "company": "Zoom",
+    "source": "zoom_official_careers",
+    "job_id": "R19605",
+    "title": "Lead Technical SEO Manager",
+    "location": "Remote (US)",
+    "official_url": "https://zoom.wd5.myworkdayjobs.com/Zoom/job/Remote--US/Lead-Technical-SEO-Manager_R19605",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:38:44.464282+00:00",
+    "date_confidence": "high",
+    "description": "What You Can Expect This is a hands-on technical leadership role at the center of how Zoom gets found, understood, and surfaced across both traditional search engines and emerging "
+  },
   {
     "company": "Zoom",
     "source": "zoom_official_careers",
@@ -4144,7 +4157,7 @@ Sample normalized records:
     "official_url": "https://zoom.wd5.myworkdayjobs.com/Zoom/job/Remote--CA/Premier-Support-Manager_R19678-1",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:10.369834+00:00",
+    "fetched_at": "2026-10-08T23:38:44.464282+00:00",
     "date_confidence": "high",
     "description": "What You Can Expect Lead a team of Technical Account Managers at the center of Zoom's most strategic enterprise relationships, directly shaping customer outcomes and the long-term "
   },
@@ -4157,22 +4170,9 @@ Sample normalized records:
     "official_url": "https://zoom.wd5.myworkdayjobs.com/Zoom/job/Remote-US/Premier-Support-Manager_R19679-1",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:10.369834+00:00",
+    "fetched_at": "2026-10-08T23:38:44.464282+00:00",
     "date_confidence": "high",
     "description": "What You Can Expect As a Premier Support Manager, you will lead a team of Technical Account Managers delivering high-touch support for Zoom's most strategic enterprise accounts, wi"
-  },
-  {
-    "company": "Zoom",
-    "source": "zoom_official_careers",
-    "job_id": "R19560",
-    "title": "Software Engineer",
-    "location": "Remote (US)",
-    "official_url": "https://zoom.wd5.myworkdayjobs.com/Zoom/job/Remote--US/Software-Engineer_R19560-1",
-    "posted_date": "2026-10-07",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:10.369834+00:00",
-    "date_confidence": "high",
-    "description": "Immigration sponsorship is not available for this position What you can expect Your ability to quickly learn about the product, business, and technology are your superpowers. You o"
   },
   {
     "company": "Zoom",
@@ -4183,7 +4183,7 @@ Sample normalized records:
     "official_url": "https://zoom.wd5.myworkdayjobs.com/Zoom/job/Remote--US/Product-Growth-Marketing-Manager_R19676-1",
     "posted_date": "2026-10-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:10.369834+00:00",
+    "fetched_at": "2026-10-08T23:38:44.464282+00:00",
     "date_confidence": "high",
     "description": "What You Can Expect Zoom's AI products are growing fast - and we need someone equally fast to help fuel that growth. We're hiring a Product Growth Marketing Manager who thinks like"
   },
@@ -4196,7 +4196,7 @@ Sample normalized records:
     "official_url": "https://zoom.wd5.myworkdayjobs.com/Zoom/job/San-Jose-CA/Full-Stack-Developer_R19731-1",
     "posted_date": "2026-10-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:10.369834+00:00",
+    "fetched_at": "2026-10-08T23:38:44.464282+00:00",
     "date_confidence": "high",
     "description": "What You Can Expect As a Full Stack Developer at Zoom, you will take end-to-end ownership of features and services that reach users worldwide, from design through deployment, monit"
   }
@@ -4228,15 +4228,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/purestorage/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.171s
-- Company elapsed time: 0.956s
+- HTTP requests/cumulative request time: 1 / 0.240s
+- Company elapsed time: 1.388s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 65, 'usable_jd': 65}
-- Raw jobs found: 356
-- After US/location filtering: 211
-- With trustworthy posted_date: 211
+- Relevant JD recovery: {'eligible': 66, 'usable_jd': 66}
+- Raw jobs found: 360
+- After US/location filtering: 216
+- With trustworthy posted_date: 216
 - Errors/403s: none
 
 Sample normalized records:
@@ -4252,7 +4252,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/purestorage/jobs/8145906",
     "posted_date": "2026-08-24",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-10-08T14:39:27.362985+00:00",
+    "fetched_at": "2026-10-08T23:39:12.898757+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quart"
   },
@@ -4265,7 +4265,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/purestorage/jobs/8180695",
     "posted_date": "2026-09-21",
     "updated_date": "2026-09-21",
-    "fetched_at": "2026-10-08T14:39:27.362985+00:00",
+    "fetched_at": "2026-10-08T23:39:12.898757+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quart"
   },
@@ -4278,7 +4278,20 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/purestorage/jobs/8059788",
     "posted_date": "2026-07-13",
     "updated_date": "2026-08-11",
-    "fetched_at": "2026-10-08T14:39:27.362985+00:00",
+    "fetched_at": "2026-10-08T23:39:12.898757+00:00",
+    "date_confidence": "high",
+    "description": "<div class=\"content-intro\"><p>Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quart"
+  },
+  {
+    "company": "Pure Storage",
+    "source": "pure_storage_official_careers",
+    "job_id": "8261565",
+    "title": "Account Executive, Everpure Data Intelligence Sales",
+    "location": "Chicago, Illinois; New York, New York; Santa Clara, California; North America; New York, United States",
+    "official_url": "https://job-boards.greenhouse.io/purestorage/jobs/8261565",
+    "posted_date": "2026-10-08",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:39:12.898757+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quart"
   },
@@ -4291,20 +4304,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/purestorage/jobs/8226648",
     "posted_date": "2026-09-24",
     "updated_date": "2026-09-24",
-    "fetched_at": "2026-10-08T14:39:27.362985+00:00",
-    "date_confidence": "high",
-    "description": "<div class=\"content-intro\"><p>Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quart"
-  },
-  {
-    "company": "Pure Storage",
-    "source": "pure_storage_official_careers",
-    "job_id": "8257814",
-    "title": "Account Executive, SLED (Colorado)",
-    "location": "Remote, Colorado; Colorado, United States",
-    "official_url": "https://job-boards.greenhouse.io/purestorage/jobs/8257814",
-    "posted_date": "2026-10-07",
-    "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:39:27.362985+00:00",
+    "fetched_at": "2026-10-08T23:39:12.898757+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quart"
   }
@@ -4318,15 +4318,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/databricks/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.333s
-- Company elapsed time: 2.214s
+- HTTP requests/cumulative request time: 1 / 0.303s
+- Company elapsed time: 3.046s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 72, 'usable_jd': 72}
-- Raw jobs found: 895
-- After US/location filtering: 501
-- With trustworthy posted_date: 501
+- Relevant JD recovery: {'eligible': 73, 'usable_jd': 73}
+- Raw jobs found: 892
+- After US/location filtering: 503
+- With trustworthy posted_date: 503
 - Errors/403s: none
 
 Sample normalized records:
@@ -4342,7 +4342,7 @@ Sample normalized records:
     "official_url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7726495002",
     "posted_date": "2025-05-09",
     "updated_date": "2026-09-21",
-    "fetched_at": "2026-10-08T14:39:28.319709+00:00",
+    "fetched_at": "2026-10-08T23:39:14.287507+00:00",
     "date_confidence": "high",
     "description": "<p class=\"p1\">As we continue to increase our presence in the world of Unified Data Analytics and AI, we're looking for a creative, driven, and execution-oriented Enterprise Account"
   },
@@ -4355,7 +4355,7 @@ Sample normalized records:
     "official_url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8756154002",
     "posted_date": "2026-09-22",
     "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:39:28.319709+00:00",
+    "fetched_at": "2026-10-08T23:39:14.287507+00:00",
     "date_confidence": "high",
     "description": "<p data-pm-slice=\"1 1 []\">GAQ327R240</p> <p data-renderer-start-pos=\"1648\">While candidates in the listed location(s) are encouraged for this role, candidates in other locations wi"
   },
@@ -4368,7 +4368,7 @@ Sample normalized records:
     "official_url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8546367002",
     "posted_date": "2026-05-13",
     "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:39:28.319709+00:00",
+    "fetched_at": "2026-10-08T23:39:14.287507+00:00",
     "date_confidence": "high",
     "description": "<p><strong>AI Engineer – Forward Deployed Engineering (AI FDE) (ALL LEVELS)</strong></p> <p><strong>CSQ327R177</strong></p> <p><strong>Mission</strong></p> <p>The AI Forward Deploy"
   },
@@ -4381,7 +4381,7 @@ Sample normalized records:
     "official_url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8760167002",
     "posted_date": "2026-08-28",
     "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:39:28.319709+00:00",
+    "fetched_at": "2026-10-08T23:39:14.287507+00:00",
     "date_confidence": "high",
     "description": "<p><span style=\"text-decoration: underline;\"><strong>PLEASE NOTE</strong></span><strong>: <br></strong>Due to federal contract requirements and client site access obligations, <str"
   },
@@ -4394,7 +4394,7 @@ Sample normalized records:
     "official_url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7803651002",
     "posted_date": "2026-08-25",
     "updated_date": "2026-09-21",
-    "fetched_at": "2026-10-08T14:39:28.319709+00:00",
+    "fetched_at": "2026-10-08T23:39:14.287507+00:00",
     "date_confidence": "high",
     "description": "<p data-renderer-start-pos=\"1648\">With the most complete data &amp; AI stack on the market, Databricks is well suited to be the strategic partner for our customers’ AI transformati"
   }
@@ -4408,15 +4408,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/roblox/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.143s
-- Company elapsed time: 0.862s
+- HTTP requests/cumulative request time: 1 / 2.077s
+- Company elapsed time: 3.138s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
 - Relevant JD recovery: {'eligible': 29, 'usable_jd': 29}
-- Raw jobs found: 259
-- After US/location filtering: 243
-- With trustworthy posted_date: 243
+- Raw jobs found: 261
+- After US/location filtering: 245
+- With trustworthy posted_date: 245
 - Errors/403s: none
 
 Sample normalized records:
@@ -4426,13 +4426,26 @@ Sample normalized records:
   {
     "company": "Roblox",
     "source": "roblox_official_careers",
+    "job_id": "8242621",
+    "title": "[2027] Applied Scientist - PhD Intern",
+    "location": "San Mateo, CA, United States",
+    "official_url": "https://careers.roblox.com/jobs/8242621?gh_jid=8242621",
+    "posted_date": "2026-10-08",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:39:15.267599+00:00",
+    "date_confidence": "high",
+    "description": "<div class=\"content-intro\"><p><span style=\"font-weight: 400;\">Every day, tens of millions of people come to Roblox to explore, create, play, learn, and connect with friends in 3D i"
+  },
+  {
+    "company": "Roblox",
+    "source": "roblox_official_careers",
     "job_id": "8143982",
     "title": "[2027] Associate Product Designer, Early Career",
     "location": "San Mateo, CA, United States",
     "official_url": "https://careers.roblox.com/jobs/8143982?gh_jid=8143982",
     "posted_date": "2026-09-02",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:39:30.534659+00:00",
+    "fetched_at": "2026-10-08T23:39:15.267599+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-weight: 400;\">Every day, tens of millions of people come to Roblox to explore, create, play, learn, and connect with friends in 3D i"
   },
@@ -4445,46 +4458,33 @@ Sample normalized records:
     "official_url": "https://careers.roblox.com/jobs/8143976?gh_jid=8143976",
     "posted_date": "2026-09-02",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:39:30.534659+00:00",
+    "fetched_at": "2026-10-08T23:39:15.267599+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-weight: 400;\">Every day, tens of millions of people come to Roblox to explore, create, play, learn, and connect with friends in 3D i"
   },
   {
     "company": "Roblox",
     "source": "roblox_official_careers",
-    "job_id": "8072244",
-    "title": "[2027] Software Engineer, Early Career",
+    "job_id": "8242619",
+    "title": "[2027] Data Scientist - PhD Intern",
     "location": "San Mateo, CA, United States",
-    "official_url": "https://careers.roblox.com/jobs/8072244?gh_jid=8072244",
-    "posted_date": "2026-08-05",
+    "official_url": "https://careers.roblox.com/jobs/8242619?gh_jid=8242619",
+    "posted_date": "2026-10-08",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:39:30.534659+00:00",
+    "fetched_at": "2026-10-08T23:39:15.267599+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-weight: 400;\">Every day, tens of millions of people come to Roblox to explore, create, play, learn, and connect with friends in 3D i"
   },
   {
     "company": "Roblox",
     "source": "roblox_official_careers",
-    "job_id": "8120368",
-    "title": "Business Operations Associate",
+    "job_id": "8242623",
+    "title": "[2027] Senior Machine Learning Engineer - PhD Early Career",
     "location": "San Mateo, CA, United States",
-    "official_url": "https://careers.roblox.com/jobs/8120368?gh_jid=8120368",
-    "posted_date": "2026-08-13",
+    "official_url": "https://careers.roblox.com/jobs/8242623?gh_jid=8242623",
+    "posted_date": "2026-10-08",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:39:30.534659+00:00",
-    "date_confidence": "high",
-    "description": "<div class=\"content-intro\"><p><span style=\"font-weight: 400;\">Every day, tens of millions of people come to Roblox to explore, create, play, learn, and connect with friends in 3D i"
-  },
-  {
-    "company": "Roblox",
-    "source": "roblox_official_careers",
-    "job_id": "8167425",
-    "title": "Creative Director",
-    "location": "San Mateo, CA, United States",
-    "official_url": "https://careers.roblox.com/jobs/8167425?gh_jid=8167425",
-    "posted_date": "2026-09-09",
-    "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:39:30.534659+00:00",
+    "fetched_at": "2026-10-08T23:39:15.267599+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-weight: 400;\">Every day, tens of millions of people come to Roblox to explore, create, play, learn, and connect with friends in 3D i"
   }
@@ -4498,15 +4498,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/airbnb/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.134s
-- Company elapsed time: 0.585s
+- HTTP requests/cumulative request time: 1 / 1.096s
+- Company elapsed time: 1.703s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
 - Relevant JD recovery: {'eligible': 6, 'usable_jd': 6}
-- Raw jobs found: 161
-- After US/location filtering: 100
-- With trustworthy posted_date: 100
+- Raw jobs found: 159
+- After US/location filtering: 97
+- With trustworthy posted_date: 97
 - Errors/403s: none
 
 Sample normalized records:
@@ -4522,7 +4522,7 @@ Sample normalized records:
     "official_url": "https://careers.airbnb.com/positions/8231416?gh_jid=8231416",
     "posted_date": "2026-09-24",
     "updated_date": "2026-09-29",
-    "fetched_at": "2026-10-08T14:39:31.397681+00:00",
+    "fetched_at": "2026-10-08T23:39:17.334840+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: helvetica, arial, sans-serif; font-size: 12pt;\">Airbnb was born in 2007 when two hosts welcomed three guests to their San Fr"
   },
@@ -4535,7 +4535,7 @@ Sample normalized records:
     "official_url": "https://careers.airbnb.com/positions/7839229?gh_jid=7839229",
     "posted_date": "2026-04-24",
     "updated_date": "2026-09-29",
-    "fetched_at": "2026-10-08T14:39:31.397681+00:00",
+    "fetched_at": "2026-10-08T23:39:17.334840+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: helvetica, arial, sans-serif; font-size: 12pt;\">Airbnb was born in 2007 when two hosts welcomed three guests to their San Fr"
   },
@@ -4548,7 +4548,7 @@ Sample normalized records:
     "official_url": "https://careers.airbnb.com/positions/8153094?gh_jid=8153094",
     "posted_date": "2026-08-24",
     "updated_date": "2026-09-29",
-    "fetched_at": "2026-10-08T14:39:31.397681+00:00",
+    "fetched_at": "2026-10-08T23:39:17.334840+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: helvetica, arial, sans-serif; font-size: 12pt;\">Airbnb was born in 2007 when two hosts welcomed three guests to their San Fr"
   },
@@ -4561,7 +4561,7 @@ Sample normalized records:
     "official_url": "https://careers.airbnb.com/positions/8152131?gh_jid=8152131",
     "posted_date": "2026-08-24",
     "updated_date": "2026-09-29",
-    "fetched_at": "2026-10-08T14:39:31.397681+00:00",
+    "fetched_at": "2026-10-08T23:39:17.334840+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: helvetica, arial, sans-serif; font-size: 12pt;\">Airbnb was born in 2007 when two hosts welcomed three guests to their San Fr"
   },
@@ -4574,7 +4574,7 @@ Sample normalized records:
     "official_url": "https://careers.airbnb.com/positions/8031901?gh_jid=8031901",
     "posted_date": "2026-06-28",
     "updated_date": "2026-10-02",
-    "fetched_at": "2026-10-08T14:39:31.397681+00:00",
+    "fetched_at": "2026-10-08T23:39:17.334840+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><span style=\"font-family: helvetica, arial, sans-serif; font-size: 12pt;\">Airbnb was born in 2007 when two hosts welcomed three guests to their San Fr"
   }
@@ -4588,15 +4588,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/anthropic/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.290s
-- Company elapsed time: 2.630s
+- HTTP requests/cumulative request time: 1 / 0.677s
+- Company elapsed time: 4.216s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 154, 'usable_jd': 154}
-- Raw jobs found: 646
-- After US/location filtering: 519
-- With trustworthy posted_date: 519
+- Relevant JD recovery: {'eligible': 153, 'usable_jd': 153}
+- Raw jobs found: 645
+- After US/location filtering: 518
+- With trustworthy posted_date: 518
 - Errors/403s: none
 
 Sample normalized records:
@@ -4612,7 +4612,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/anthropic/jobs/4461450008",
     "posted_date": "2024-12-20",
     "updated_date": "2026-08-21",
-    "fetched_at": "2026-10-08T14:39:31.984157+00:00",
+    "fetched_at": "2026-10-08T23:39:18.406927+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2><strong>About Anthropic</strong></h2> <p>Anthropic’s mission is to create reliable, interpretable, and steerable AI systems. We want AI to be safe an"
   },
@@ -4625,7 +4625,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/anthropic/jobs/5400138008",
     "posted_date": "2026-08-24",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-10-08T14:39:31.984157+00:00",
+    "fetched_at": "2026-10-08T23:39:18.406927+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2><strong>About Anthropic</strong></h2> <p>Anthropic’s mission is to create reliable, interpretable, and steerable AI systems. We want AI to be safe an"
   },
@@ -4638,7 +4638,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/anthropic/jobs/5398438008",
     "posted_date": "2026-09-11",
     "updated_date": "2026-09-28",
-    "fetched_at": "2026-10-08T14:39:31.984157+00:00",
+    "fetched_at": "2026-10-08T23:39:18.406927+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2><strong>About Anthropic</strong></h2> <p>Anthropic’s mission is to create reliable, interpretable, and steerable AI systems. We want AI to be safe an"
   },
@@ -4651,7 +4651,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/anthropic/jobs/5382750008",
     "posted_date": "2026-08-11",
     "updated_date": "2026-08-21",
-    "fetched_at": "2026-10-08T14:39:31.984157+00:00",
+    "fetched_at": "2026-10-08T23:39:18.406927+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2><strong>About Anthropic</strong></h2> <p>Anthropic’s mission is to create reliable, interpretable, and steerable AI systems. We want AI to be safe an"
   },
@@ -4664,7 +4664,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/anthropic/jobs/5391151008",
     "posted_date": "2026-08-14",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-10-08T14:39:31.984157+00:00",
+    "fetched_at": "2026-10-08T23:39:18.406927+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2><strong>About Anthropic</strong></h2> <p>Anthropic’s mission is to create reliable, interpretable, and steerable AI systems. We want AI to be safe an"
   }
@@ -4678,15 +4678,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/applovin/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.071s
-- Company elapsed time: 0.215s
+- HTTP requests/cumulative request time: 1 / 0.759s
+- Company elapsed time: 1.180s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 10, 'usable_jd': 10}
-- Raw jobs found: 43
-- After US/location filtering: 30
-- With trustworthy posted_date: 30
+- Relevant JD recovery: {'eligible': 11, 'usable_jd': 11}
+- Raw jobs found: 44
+- After US/location filtering: 31
+- With trustworthy posted_date: 31
 - Errors/403s: none
 
 Sample normalized records:
@@ -4702,7 +4702,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/applovin/jobs/4705316006?gh_jid=4705316006",
     "posted_date": "2026-08-14",
     "updated_date": "2026-09-16",
-    "fetched_at": "2026-10-08T14:39:34.615925+00:00",
+    "fetched_at": "2026-10-08T23:39:19.039236+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><span style=\"font-weight: 400;\"><strong>About AppLovin</strong></span></h3> <p><a href=\"https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%"
   },
@@ -4715,33 +4715,7 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/applovin/jobs/4686202006?gh_jid=4686202006",
     "posted_date": "2026-06-02",
     "updated_date": "2026-09-22",
-    "fetched_at": "2026-10-08T14:39:34.615925+00:00",
-    "date_confidence": "high",
-    "description": "<div class=\"content-intro\"><h3><span style=\"font-weight: 400;\"><strong>About AppLovin</strong></span></h3> <p><a href=\"https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%"
-  },
-  {
-    "company": "AppLovin",
-    "source": "applovin_official_careers",
-    "job_id": "4622998006",
-    "title": "Business Development Associate",
-    "location": "Los Angeles/Santa Monica, CA; Remote - United States",
-    "official_url": "https://boards.greenhouse.io/applovin/jobs/4622998006?gh_jid=4622998006",
-    "posted_date": "2026-01-07",
-    "updated_date": "2026-09-16",
-    "fetched_at": "2026-10-08T14:39:34.615925+00:00",
-    "date_confidence": "high",
-    "description": "<div class=\"content-intro\"><h3><span style=\"font-weight: 400;\"><strong>About AppLovin</strong></span></h3> <p><a href=\"https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%"
-  },
-  {
-    "company": "AppLovin",
-    "source": "applovin_official_careers",
-    "job_id": "4611567006",
-    "title": "Business Development Associate",
-    "location": "New York",
-    "official_url": "https://boards.greenhouse.io/applovin/jobs/4611567006?gh_jid=4611567006",
-    "posted_date": "2025-10-25",
-    "updated_date": "2026-09-02",
-    "fetched_at": "2026-10-08T14:39:34.615925+00:00",
+    "fetched_at": "2026-10-08T23:39:19.039236+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><span style=\"font-weight: 400;\"><strong>About AppLovin</strong></span></h3> <p><a href=\"https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%"
   },
@@ -4754,7 +4728,33 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/applovin/jobs/4705311006?gh_jid=4705311006",
     "posted_date": "2026-08-14",
     "updated_date": "2026-09-02",
-    "fetched_at": "2026-10-08T14:39:34.615925+00:00",
+    "fetched_at": "2026-10-08T23:39:19.039236+00:00",
+    "date_confidence": "high",
+    "description": "<div class=\"content-intro\"><h3><span style=\"font-weight: 400;\"><strong>About AppLovin</strong></span></h3> <p><a href=\"https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%"
+  },
+  {
+    "company": "AppLovin",
+    "source": "applovin_official_careers",
+    "job_id": "4622998006",
+    "title": "Business Development Associate",
+    "location": "Los Angeles/Santa Monica, CA; Remote - United States",
+    "official_url": "https://boards.greenhouse.io/applovin/jobs/4622998006?gh_jid=4622998006",
+    "posted_date": "2026-01-07",
+    "updated_date": "2026-09-16",
+    "fetched_at": "2026-10-08T23:39:19.039236+00:00",
+    "date_confidence": "high",
+    "description": "<div class=\"content-intro\"><h3><span style=\"font-weight: 400;\"><strong>About AppLovin</strong></span></h3> <p><a href=\"https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%"
+  },
+  {
+    "company": "AppLovin",
+    "source": "applovin_official_careers",
+    "job_id": "4611567006",
+    "title": "Business Development Associate",
+    "location": "New York",
+    "official_url": "https://boards.greenhouse.io/applovin/jobs/4611567006?gh_jid=4611567006",
+    "posted_date": "2025-10-25",
+    "updated_date": "2026-09-02",
+    "fetched_at": "2026-10-08T23:39:19.039236+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><span style=\"font-weight: 400;\"><strong>About AppLovin</strong></span></h3> <p><a href=\"https://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%"
   }
@@ -4768,26 +4768,26 @@ Sample normalized records:
 - Search URL/API: `https://jobs.bytedance.com/api/v1/public/supplier/search/job/posts`
 - Pagination: offset=0,50,...; limit=50; US city filter
 - Pages/requests fetched: 24
-- HTTP requests/cumulative request time: 24 / 30.230s
-- Company elapsed time: 33.844s
+- HTTP requests/cumulative request time: 24 / 24.969s
+- Company elapsed time: 28.673s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
 - Relevant JD recovery: {'eligible': 228, 'usable_jd': 228}
 - Raw jobs found: 1063
-- After US/location filtering: 445
+- After US/location filtering: 446
 - With trustworthy posted_date: 0
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 6.573, "first_pass_survivors": 145, "group": "official", "jds_resolved": 145, "original_postings_resolved": 145, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 145, "unique_jobs": 149}
-- Query diagnostic: {"elapsed_seconds": 4.374, "first_pass_survivors": 99, "group": "official", "jds_resolved": 99, "original_postings_resolved": 99, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 99, "unique_jobs": 150}
-- Query diagnostic: {"elapsed_seconds": 3.258, "first_pass_survivors": 58, "group": "official", "jds_resolved": 58, "original_postings_resolved": 58, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 104, "stop_reason": "page_budget", "unique_contribution": 58, "unique_jobs": 104}
-- Query diagnostic: {"elapsed_seconds": 5.091, "first_pass_survivors": 59, "group": "official", "jds_resolved": 59, "original_postings_resolved": 59, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 59, "unique_jobs": 150}
-- Query diagnostic: {"elapsed_seconds": 3.802, "first_pass_survivors": 48, "group": "official", "jds_resolved": 48, "original_postings_resolved": 48, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 48, "unique_jobs": 148}
-- Query diagnostic: {"elapsed_seconds": 3.429, "first_pass_survivors": 20, "group": "official", "jds_resolved": 20, "original_postings_resolved": 20, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 20, "unique_jobs": 149}
-- Query diagnostic: {"elapsed_seconds": 2.465, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 2, "query": "full stack engineer", "raw_jobs": 56, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 56}
-- Query diagnostic: {"elapsed_seconds": 0.941, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 3, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 3}
-- Query diagnostic: {"elapsed_seconds": 3.91, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 149}
+- Query diagnostic: {"elapsed_seconds": 5.286, "first_pass_survivors": 146, "group": "official", "jds_resolved": 146, "original_postings_resolved": 146, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 146, "unique_jobs": 150}
+- Query diagnostic: {"elapsed_seconds": 3.284, "first_pass_survivors": 101, "group": "official", "jds_resolved": 101, "original_postings_resolved": 101, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 101, "unique_jobs": 148}
+- Query diagnostic: {"elapsed_seconds": 3.186, "first_pass_survivors": 55, "group": "official", "jds_resolved": 55, "original_postings_resolved": 55, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 104, "stop_reason": "page_budget", "unique_contribution": 55, "unique_jobs": 104}
+- Query diagnostic: {"elapsed_seconds": 3.898, "first_pass_survivors": 59, "group": "official", "jds_resolved": 59, "original_postings_resolved": 59, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 59, "unique_jobs": 150}
+- Query diagnostic: {"elapsed_seconds": 3.724, "first_pass_survivors": 50, "group": "official", "jds_resolved": 50, "original_postings_resolved": 50, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 50, "unique_jobs": 149}
+- Query diagnostic: {"elapsed_seconds": 3.159, "first_pass_survivors": 19, "group": "official", "jds_resolved": 19, "original_postings_resolved": 19, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 19, "unique_jobs": 149}
+- Query diagnostic: {"elapsed_seconds": 2.19, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 2, "query": "full stack engineer", "raw_jobs": 56, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 56}
+- Query diagnostic: {"elapsed_seconds": 0.814, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 3, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 3}
+- Query diagnostic: {"elapsed_seconds": 3.132, "first_pass_survivors": 13, "group": "official", "jds_resolved": 13, "original_postings_resolved": 13, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 150, "stop_reason": "page_budget", "unique_contribution": 13, "unique_jobs": 149}
 
 Sample normalized records:
 
@@ -4802,7 +4802,7 @@ Sample normalized records:
     "official_url": "https://joinbytedance.com/search/7668212952030841093",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:34.832522+00:00",
+    "fetched_at": "2026-10-08T23:39:20.226288+00:00",
     "date_confidence": "unknown",
     "description": "The AI Platform team is a team focusing on building advanced end-to-end AI production pipelines, including deep learning model training, optimization, deployment and applications. "
   },
@@ -4815,7 +4815,7 @@ Sample normalized records:
     "official_url": "https://joinbytedance.com/search/7669859743775000885",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:34.832522+00:00",
+    "fetched_at": "2026-10-08T23:39:20.226288+00:00",
     "date_confidence": "unknown",
     "description": "The Intelligent Creation - AI Platform team is a team focusing on building advanced end-to-end AI production pipelines, including deep learning model training, optimization, deploy"
   },
@@ -4828,7 +4828,7 @@ Sample normalized records:
     "official_url": "https://joinbytedance.com/search/7571650125270370613",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:34.832522+00:00",
+    "fetched_at": "2026-10-08T23:39:20.226288+00:00",
     "date_confidence": "unknown",
     "description": "About the team: TRAE (The Real AI Engineer) is an intelligent engineer capable of understanding requirements, orchestrating tools, and independently completing development tasks, p"
   },
@@ -4841,7 +4841,7 @@ Sample normalized records:
     "official_url": "https://joinbytedance.com/search/7542987377129457938",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:34.832522+00:00",
+    "fetched_at": "2026-10-08T23:39:20.226288+00:00",
     "date_confidence": "unknown",
     "description": "About the Team Join ByteDance’s database R&D team, where you’ll build and own cutting-edge database products supporting Bytedance’s global infrastructure. Our diverse portfolio inc"
   },
@@ -4854,7 +4854,7 @@ Sample normalized records:
     "official_url": "https://joinbytedance.com/search/7499641201977723143",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:34.832522+00:00",
+    "fetched_at": "2026-10-08T23:39:20.226288+00:00",
     "date_confidence": "unknown",
     "description": "About the Team Join ByteDance’s database R&D team, where you’ll build and own cutting-edge database products supporting ByteDance’s global infrastructure. Our diverse portfolio inc"
   }
@@ -4868,8 +4868,8 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/chime/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.071s
-- Company elapsed time: 0.417s
+- HTTP requests/cumulative request time: 1 / 0.134s
+- Company elapsed time: 0.605s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
@@ -4886,28 +4886,28 @@ Sample normalized records:
   {
     "company": "Chime",
     "source": "chime_official_careers",
+    "job_id": "8869627002",
+    "title": "AEO Content Strategist",
+    "location": "San Francisco, CA, USA; San Francisco, California, United States",
+    "official_url": "https://boards.greenhouse.io/chime/jobs/8869627002?gh_jid=8869627002",
+    "posted_date": "2026-10-08",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:39:22.624400+00:00",
+    "date_confidence": "high",
+    "description": "<h2><strong>About the Role</strong></h2> <p>People increasingly find financial products by asking ChatGPT, Gemini, and Google's AI Overviews and AI Mode instead of scrolling search"
+  },
+  {
+    "company": "Chime",
+    "source": "chime_official_careers",
     "job_id": "8569366002",
     "title": "AI/ML Engineer",
     "location": "Chicago, IL, USA; New York, NY, USA; San Francisco, CA, USA; San Francisco, California, United States",
     "official_url": "https://boards.greenhouse.io/chime/jobs/8569366002?gh_jid=8569366002",
     "posted_date": "2026-06-08",
     "updated_date": "2026-10-02",
-    "fetched_at": "2026-10-08T14:39:47.512674+00:00",
+    "fetched_at": "2026-10-08T23:39:22.624400+00:00",
     "date_confidence": "high",
     "description": "<h2>About the role</h2> <p>Chime's Data Science &amp; Machine Learning team builds the models, services, and platforms behind how millions of members manage and grow their financia"
-  },
-  {
-    "company": "Chime",
-    "source": "chime_official_careers",
-    "job_id": "8853166002",
-    "title": "Business Control Manager",
-    "location": "San Francisco, CA, USA; Chicago, Illinois, United States; New York Office; San Francisco, California, United States",
-    "official_url": "https://boards.greenhouse.io/chime/jobs/8853166002?gh_jid=8853166002",
-    "posted_date": "2026-10-07",
-    "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:39:47.512674+00:00",
-    "date_confidence": "high",
-    "description": "<h2><strong>About the role</strong></h2> <p>We are hiring a Business Control Manager to join Chime’s Compliance Business Control Management team, with a primary focus on control de"
   },
   {
     "company": "Chime",
@@ -4918,35 +4918,35 @@ Sample normalized records:
     "official_url": "https://boards.greenhouse.io/chime/jobs/8584952002?gh_jid=8584952002",
     "posted_date": "2026-06-18",
     "updated_date": "2026-10-01",
-    "fetched_at": "2026-10-08T14:39:47.512674+00:00",
+    "fetched_at": "2026-10-08T23:39:22.624400+00:00",
     "date_confidence": "high",
     "description": "<h2>About the role</h2> <p>We are hiring a <strong>Business Control Manager</strong> to join our Compliance team at Chime, where you will be responsible for strengthening the first"
   },
   {
     "company": "Chime",
     "source": "chime_official_careers",
-    "job_id": "8840795002",
-    "title": "Creative Director, Campaigns",
-    "location": "New York, NY, USA; San Francisco, CA, USA; New York Office",
-    "official_url": "https://boards.greenhouse.io/chime/jobs/8840795002?gh_jid=8840795002",
-    "posted_date": "2026-09-23",
-    "updated_date": "2026-10-01",
-    "fetched_at": "2026-10-08T14:39:47.512674+00:00",
+    "job_id": "8877396002",
+    "title": "Business Control Manager",
+    "location": "Chicago, IL, USA; New York, NY, USA; San Francisco, CA, USA; San Francisco, California, United States",
+    "official_url": "https://boards.greenhouse.io/chime/jobs/8877396002?gh_jid=8877396002",
+    "posted_date": "2026-10-08",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:39:22.624400+00:00",
     "date_confidence": "high",
-    "description": "<h2>About the role</h2> <p>Chime is looking for a Creative Director to shape what our brand looks, sounds and feels like — and to turn that into work people actually talk about.</p"
+    "description": "<h2><span style=\"font-family: helvetica, arial, sans-serif;\"><strong>About the Role</strong></span></h2> <p><span style=\"font-family: helvetica, arial, sans-serif;\">We are hiring a"
   },
   {
     "company": "Chime",
     "source": "chime_official_careers",
-    "job_id": "8529549002",
-    "title": "Director, Corporate Strategy",
-    "location": "San Francisco, CA, USA; San Francisco, California, United States",
-    "official_url": "https://boards.greenhouse.io/chime/jobs/8529549002?gh_jid=8529549002",
-    "posted_date": "2026-05-13",
-    "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:39:47.512674+00:00",
+    "job_id": "8853166002",
+    "title": "Business Control Manager",
+    "location": "San Francisco, CA, USA; Chicago, Illinois, United States; New York Office; San Francisco, California, United States",
+    "official_url": "https://boards.greenhouse.io/chime/jobs/8853166002?gh_jid=8853166002",
+    "posted_date": "2026-10-07",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:39:22.624400+00:00",
     "date_confidence": "high",
-    "description": "<h2><strong>About the role</strong></h2> <p>We are hiring for a Director, Strategy and Growth Initiatives to help define and drive the long-term strategy and growth of the company."
+    "description": "<h2><strong>About the role</strong></h2> <p>We are hiring a Business Control Manager to join Chime’s Compliance Business Control Management team, with a primary focus on control de"
   }
 ]
 ```
@@ -4976,26 +4976,26 @@ Sample normalized records:
 - Search URL/API: `https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions?keyword=software+engineer`
 - Pagination: finder offset=0,20,... ; limit=20; stop on empty/repeat or TotalJobsCount
 - Pages/requests fetched: 25
-- HTTP requests/cumulative request time: 120 / 38.888s
-- Company elapsed time: 56.427s
+- HTTP requests/cumulative request time: 121 / 28.689s
+- Company elapsed time: 46.550s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 95 / 0 / 0
-- Detail cache statuses: {'fetched:new': 95}
+- Detail pages fetched/cache reused/prefilter skipped: 96 / 0 / 0
+- Detail cache statuses: {'fetched:new': 96}
 - Relevant JD recovery: {'eligible': 28, 'usable_jd': 28}
-- Raw jobs found: 479
-- After US/location filtering: 95
-- With trustworthy posted_date: 95
+- Raw jobs found: 480
+- After US/location filtering: 96
+- With trustworthy posted_date: 96
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 11.67, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 5.507, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 9, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 0.82, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 9, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 9}
-- Query diagnostic: {"elapsed_seconds": 8.016, "first_pass_survivors": 16, "group": "official", "jds_resolved": 16, "original_postings_resolved": 16, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 16, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 8.369, "first_pass_survivors": 16, "group": "official", "jds_resolved": 16, "original_postings_resolved": 16, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 16, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 4.831, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 7.946, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 6.327, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 50, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 50}
-- Query diagnostic: {"elapsed_seconds": 2.941, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 9.25, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 5.0, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 0.674, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 9, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 9}
+- Query diagnostic: {"elapsed_seconds": 7.03, "first_pass_survivors": 16, "group": "official", "jds_resolved": 16, "original_postings_resolved": 16, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 16, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 7.058, "first_pass_survivors": 17, "group": "official", "jds_resolved": 17, "original_postings_resolved": 17, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 17, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 4.138, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 5.034, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 5.565, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 51, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 51}
+- Query diagnostic: {"elapsed_seconds": 2.799, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 60}
 
 Sample normalized records:
 
@@ -5010,7 +5010,7 @@ Sample normalized records:
     "official_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/298110",
     "posted_date": "2026-10-02",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:47.931013+00:00",
+    "fetched_at": "2026-10-08T23:39:23.231023+00:00",
     "date_confidence": "high",
     "description": "Technical Support Engineer 2 – Dell & Nvidia AI Networking At Dell Technologies, world-class service doesn’t end when a customer purchases our innovative products. Our Technical Su"
   },
@@ -5023,7 +5023,7 @@ Sample normalized records:
     "official_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/299014",
     "posted_date": "2026-09-18",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:47.931013+00:00",
+    "fetched_at": "2026-10-08T23:39:23.231023+00:00",
     "date_confidence": "high",
     "description": "SUMMARY Agentic Context Engineering Architect & AI Practitioner Join us to do the best work of your career and make a profound social impact as an Agentic Context Engineering Archi"
   },
@@ -5036,7 +5036,7 @@ Sample normalized records:
     "official_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/296687",
     "posted_date": "2026-09-25",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:47.931013+00:00",
+    "fetched_at": "2026-10-08T23:39:23.231023+00:00",
     "date_confidence": "high",
     "description": "Principal Engineer - Enterprise DevOps & ALM Platforms Software Engineering delivers innovative platforms, tools, and services that enable teams across Dell Technologies to acceler"
   },
@@ -5049,7 +5049,7 @@ Sample normalized records:
     "official_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/295521",
     "posted_date": "2026-09-28",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:47.931013+00:00",
+    "fetched_at": "2026-10-08T23:39:23.231023+00:00",
     "date_confidence": "high",
     "description": "Senior ServiceNow Developer (ServiceNow Technical Architect) Be a part of a team that’s ensuring Dell Technologies' product integrity and customer satisfaction. Our IT Software Eng"
   },
@@ -5062,7 +5062,7 @@ Sample normalized records:
     "official_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/295590",
     "posted_date": "2026-09-24",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:39:47.931013+00:00",
+    "fetched_at": "2026-10-08T23:39:23.231023+00:00",
     "date_confidence": "high",
     "description": "AI Development & Agent Ops — Senior Principal Software Security Engineer Why This Role This is not a support role. Dell's AI Development & Agents Ops organization is operating at t"
   }
@@ -5076,15 +5076,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/dropbox/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.090s
-- Company elapsed time: 0.190s
+- HTTP requests/cumulative request time: 1 / 0.083s
+- Company elapsed time: 0.218s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
 - Relevant JD recovery: {'usable_jd': 0}
-- Raw jobs found: 31
-- After US/location filtering: 23
-- With trustworthy posted_date: 23
+- Raw jobs found: 32
+- After US/location filtering: 24
+- With trustworthy posted_date: 24
 - Errors/403s: none
 
 Sample normalized records:
@@ -5100,22 +5100,9 @@ Sample normalized records:
     "official_url": "https://jobs.dropbox.com/listing/8159652?gh_jid=8159652",
     "posted_date": "2026-09-01",
     "updated_date": "2026-09-08",
-    "fetched_at": "2026-10-08T14:40:08.327858+00:00",
+    "fetched_at": "2026-10-08T23:39:26.635224+00:00",
     "date_confidence": "high",
     "description": "<h2 class=\"p1\"><span class=\"s1\">Role Description</span></h2> <p><span class=\" author-d-iz88z86z86za0dz67zz78zz78zz74zz68zjz80zz71z9iz90z95gas6hz75zjz77zz90zpz71zz80zeoz80zz68zlz66z"
-  },
-  {
-    "company": "Dropbox",
-    "source": "dropbox_official_careers",
-    "job_id": "8048848",
-    "title": "Business Development Manager, Strategic Partnerships",
-    "location": "Remote - Canada: Select locations; Canada; US",
-    "official_url": "https://jobs.dropbox.com/listing/8048848?gh_jid=8048848",
-    "posted_date": "2026-07-22",
-    "updated_date": "2026-09-03",
-    "fetched_at": "2026-10-08T14:40:08.327858+00:00",
-    "date_confidence": "high",
-    "description": "<h2 class=\"p1\"><span class=\"s1\">Role Description</span></h2> <p><span class=\" author-d-1gg9uz65z1iz85zgdz68zmqkz84zo2qowz80zsz81z8nqz122zdfz68z5coz87zsz73zz76zipqu3z86zmz88zz81zcth"
   },
   {
     "company": "Dropbox",
@@ -5126,7 +5113,20 @@ Sample normalized records:
     "official_url": "https://jobs.dropbox.com/listing/8048847?gh_jid=8048847",
     "posted_date": "2026-07-22",
     "updated_date": "2026-09-03",
-    "fetched_at": "2026-10-08T14:40:08.327858+00:00",
+    "fetched_at": "2026-10-08T23:39:26.635224+00:00",
+    "date_confidence": "high",
+    "description": "<h2 class=\"p1\"><span class=\"s1\">Role Description</span></h2> <p><span class=\" author-d-1gg9uz65z1iz85zgdz68zmqkz84zo2qowz80zsz81z8nqz122zdfz68z5coz87zsz73zz76zipqu3z86zmz88zz81zcth"
+  },
+  {
+    "company": "Dropbox",
+    "source": "dropbox_official_careers",
+    "job_id": "8048848",
+    "title": "Business Development Manager, Strategic Partnerships",
+    "location": "Remote - Canada: Select locations; Canada; US",
+    "official_url": "https://jobs.dropbox.com/listing/8048848?gh_jid=8048848",
+    "posted_date": "2026-07-22",
+    "updated_date": "2026-09-03",
+    "fetched_at": "2026-10-08T23:39:26.635224+00:00",
     "date_confidence": "high",
     "description": "<h2 class=\"p1\"><span class=\"s1\">Role Description</span></h2> <p><span class=\" author-d-1gg9uz65z1iz85zgdz68zmqkz84zo2qowz80zsz81z8nqz122zdfz68z5coz87zsz73zz76zipqu3z86zmz88zz81zcth"
   },
@@ -5139,7 +5139,7 @@ Sample normalized records:
     "official_url": "https://jobs.dropbox.com/listing/8137896?gh_jid=8137896",
     "posted_date": "2026-09-14",
     "updated_date": "2026-09-14",
-    "fetched_at": "2026-10-08T14:40:08.327858+00:00",
+    "fetched_at": "2026-10-08T23:39:26.635224+00:00",
     "date_confidence": "high",
     "description": "<h2 class=\"p1\"><span class=\"s1\">Role Description</span></h2> <p>Dropbox is hiring a Customer Evidence Manager to<span class=\"thread-482953488634939485839339\"> own</span> <span clas"
   },
@@ -5152,7 +5152,7 @@ Sample normalized records:
     "official_url": "https://jobs.dropbox.com/listing/8137895?gh_jid=8137895",
     "posted_date": "2026-09-14",
     "updated_date": "2026-09-14",
-    "fetched_at": "2026-10-08T14:40:08.327858+00:00",
+    "fetched_at": "2026-10-08T23:39:26.635224+00:00",
     "date_confidence": "high",
     "description": "<h2 class=\"p1\"><span class=\"s1\">Role Description</span></h2> <p>Dropbox is hiring a Customer Evidence Manager to<span class=\"thread-482953488634939485839339\"> own</span> <span clas"
   }
@@ -5166,26 +5166,26 @@ Sample normalized records:
 - Search URL/API: `https://expedia.wd108.myworkdayjobs.com/search`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 22
-- HTTP requests/cumulative request time: 82 / 27.115s
-- Company elapsed time: 39.129s
+- HTTP requests/cumulative request time: 86 / 25.645s
+- Company elapsed time: 38.320s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 60 / 0 / 0
-- Detail cache statuses: {'fetched:new': 58, 'fetched:missing_detail': 2}
-- Relevant JD recovery: {'eligible': 24, 'usable_jd': 24}
-- Raw jobs found: 395
-- After US/location filtering: 60
-- With trustworthy posted_date: 60
+- Detail pages fetched/cache reused/prefilter skipped: 64 / 0 / 0
+- Detail cache statuses: {'fetched:new': 62, 'fetched:missing_detail': 2}
+- Relevant JD recovery: {'eligible': 26, 'usable_jd': 26}
+- Raw jobs found: 397
+- After US/location filtering: 64
+- With trustworthy posted_date: 64
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 17.685, "first_pass_survivors": 33, "group": "official", "jds_resolved": 33, "original_postings_resolved": 33, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 33, "unique_jobs": 59}
-- Query diagnostic: {"elapsed_seconds": 9.981, "first_pass_survivors": 19, "group": "official", "jds_resolved": 19, "original_postings_resolved": 19, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 56, "stop_reason": "page_budget", "unique_contribution": 19, "unique_jobs": 56}
-- Query diagnostic: {"elapsed_seconds": 1.035, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 2, "query": "data scientist", "raw_jobs": 21, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 21}
-- Query diagnostic: {"elapsed_seconds": 2.165, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.03, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 3.089, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 0.916, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 18, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 18}
+- Query diagnostic: {"elapsed_seconds": 17.722, "first_pass_survivors": 37, "group": "official", "jds_resolved": 37, "original_postings_resolved": 37, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 37, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 9.546, "first_pass_survivors": 19, "group": "official", "jds_resolved": 19, "original_postings_resolved": 19, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 57, "stop_reason": "page_budget", "unique_contribution": 19, "unique_jobs": 57}
+- Query diagnostic: {"elapsed_seconds": 0.813, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 2, "query": "data scientist", "raw_jobs": 21, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 21}
+- Query diagnostic: {"elapsed_seconds": 2.836, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.009, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.017, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 1.058, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 19, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 19}
 - Query diagnostic: {"elapsed_seconds": 0.246, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 1.982, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.073, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 60}
 
 Sample normalized records:
 
@@ -5194,65 +5194,65 @@ Sample normalized records:
   {
     "company": "Expedia Group",
     "source": "expedia_group_official_careers",
-    "job_id": "R-109705",
-    "title": "Director, Software Development Engineering - Experience Management Platform",
+    "job_id": "R-109076",
+    "title": "Data Scientist III, Media & Paid Social Analytics",
     "location": "Washington - Seattle Campus",
-    "official_url": "https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Director--Software-Development-Engineering---Experience-Management-Platform_R-109705-1",
-    "posted_date": "2026-10-07",
+    "official_url": "https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Data-Scientist-III--Media---Paid-Social-Analytics_R-109076",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:08.518451+00:00",
+    "fetched_at": "2026-10-08T23:39:26.854316+00:00",
     "date_confidence": "high",
     "description": "At Expedia Group, we help travelers explore the world, one journey at a time. As a global travel company powered by passionate people, trusted partnerships, and leading technology,"
   },
   {
     "company": "Expedia Group",
     "source": "expedia_group_official_careers",
-    "job_id": "R-108774",
-    "title": "AI Engineer III",
+    "job_id": "R-110495",
+    "title": "Senior Manager, Merchandising and Customer Growth",
+    "location": "Austin Domain 11 - HomeAway; USA - Texas - Dallas; Washington - Seattle Campus",
+    "official_url": "https://expedia.wd108.myworkdayjobs.com/search/job/Austin-Domain-11---HomeAway/Senior-Manager--Merchandising-and-Customer-Growth_R-110495",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:39:26.854316+00:00",
+    "date_confidence": "high",
+    "description": "At Expedia Group, we help travelers explore the world, one journey at a time. As a global travel company powered by passionate people, trusted partnerships, and leading technology,"
+  },
+  {
+    "company": "Expedia Group",
+    "source": "expedia_group_official_careers",
+    "job_id": "R-110299",
+    "title": "Principal Software Development Engineer, ML-Powered Flight Search",
+    "location": "Washington - Seattle Campus",
+    "official_url": "https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Principal-Software-Development-Engineer--ML-Powered-Flight-Search_R-110299-1",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:39:26.854316+00:00",
+    "date_confidence": "high",
+    "description": "At Expedia Group, we help travelers explore the world, one journey at a time. As a global travel company powered by passionate people, trusted partnerships, and leading technology,"
+  },
+  {
+    "company": "Expedia Group",
+    "source": "expedia_group_official_careers",
+    "job_id": "R-110294",
+    "title": "Software Development Engineer II",
     "location": "Austin Domain 11 - HomeAway",
-    "official_url": "https://expedia.wd108.myworkdayjobs.com/search/job/Austin-Domain-11---HomeAway/AI-Engineer-III_R-108774-1",
-    "posted_date": "2026-10-07",
+    "official_url": "https://expedia.wd108.myworkdayjobs.com/search/job/Austin-Domain-11---HomeAway/Software-Development-Engineer-II_R-110294",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:08.518451+00:00",
+    "fetched_at": "2026-10-08T23:39:26.854316+00:00",
     "date_confidence": "high",
     "description": "At Expedia Group, we help travelers explore the world, one journey at a time. As a global travel company powered by passionate people, trusted partnerships, and leading technology,"
   },
   {
     "company": "Expedia Group",
     "source": "expedia_group_official_careers",
-    "job_id": "R-110010",
-    "title": "Senior Manager, Software Development Engineering: BEX Engineering Home",
-    "location": "USA - Illinois - Chicago",
-    "official_url": "https://expedia.wd108.myworkdayjobs.com/search/job/USA---Illinois---Chicago/Senior-Manager--Software-Development-Engineering--BEX-Engineering-Home_R-110010-2",
-    "posted_date": "2026-10-07",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:08.518451+00:00",
-    "date_confidence": "high",
-    "description": "At Expedia Group, we help travelers explore the world, one journey at a time. As a global travel company powered by passionate people, trusted partnerships, and leading technology,"
-  },
-  {
-    "company": "Expedia Group",
-    "source": "expedia_group_official_careers",
-    "job_id": "R-107935",
-    "title": "Android Engineer III",
+    "job_id": "R-105347",
+    "title": "Mobile Engineer III, iOS",
     "location": "Washington - Seattle Campus",
-    "official_url": "https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Mobile-Engineer-III_R-107935-1",
-    "posted_date": "2026-10-07",
+    "official_url": "https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Mobile-Engineer-III--iOS_R-105347-1",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:08.518451+00:00",
-    "date_confidence": "high",
-    "description": "At Expedia Group, we help travelers explore the world, one journey at a time. As a global travel company powered by passionate people, trusted partnerships, and leading technology,"
-  },
-  {
-    "company": "Expedia Group",
-    "source": "expedia_group_official_careers",
-    "job_id": "R-105042",
-    "title": "Infrastructure and Enterprise Engineer II",
-    "location": "Czech Republic - Prague",
-    "official_url": "https://expedia.wd108.myworkdayjobs.com/search/job/Czech-Republic---Prague/Infrastructure-and-Enterprise-Engineer-II_R-105042",
-    "posted_date": "2026-10-06",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:08.518451+00:00",
+    "fetched_at": "2026-10-08T23:39:26.854316+00:00",
     "date_confidence": "high",
     "description": "At Expedia Group, we help travelers explore the world, one journey at a time. As a global travel company powered by passionate people, trusted partnerships, and leading technology,"
   }
@@ -5266,8 +5266,8 @@ Sample normalized records:
 - Search URL/API: `-`
 - Pagination: -
 - Pages/requests fetched: 0
-- HTTP requests/cumulative request time: 1 / 0.051s
-- Company elapsed time: 0.051s
+- HTTP requests/cumulative request time: 1 / 0.066s
+- Company elapsed time: 0.066s
 - Incremental mode/page cap: - / -
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
@@ -5284,15 +5284,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/instacart/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.087s
-- Company elapsed time: 0.506s
+- HTTP requests/cumulative request time: 1 / 0.107s
+- Company elapsed time: 0.672s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
 - Relevant JD recovery: {'eligible': 9, 'usable_jd': 9}
-- Raw jobs found: 126
-- After US/location filtering: 112
-- With trustworthy posted_date: 112
+- Raw jobs found: 120
+- After US/location filtering: 110
+- With trustworthy posted_date: 110
 - Errors/403s: none
 
 Sample normalized records:
@@ -5308,7 +5308,7 @@ Sample normalized records:
     "official_url": "https://instacart.careers/job/?gh_jid=8250324",
     "posted_date": "2026-10-02",
     "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:40:08.729482+00:00",
+    "fetched_at": "2026-10-08T23:39:48.967646+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>We're transforming the grocery industry</strong></p> <p><span class=\"im\">At Instacart, we invite the world to share love through food because "
   },
@@ -5321,7 +5321,7 @@ Sample normalized records:
     "official_url": "https://instacart.careers/job/?gh_jid=7144697",
     "posted_date": "2025-08-07",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-10-08T14:40:08.729482+00:00",
+    "fetched_at": "2026-10-08T23:39:48.967646+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>We're transforming the grocery industry</strong></p> <p><span class=\"im\">At Instacart, we invite the world to share love through food because "
   },
@@ -5334,7 +5334,7 @@ Sample normalized records:
     "official_url": "https://instacart.careers/job/?gh_jid=8145998",
     "posted_date": "2026-08-20",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-10-08T14:40:08.729482+00:00",
+    "fetched_at": "2026-10-08T23:39:48.967646+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>We're transforming the grocery industry</strong></p> <p><span class=\"im\">At Instacart, we invite the world to share love through food because "
   },
@@ -5347,7 +5347,7 @@ Sample normalized records:
     "official_url": "https://instacart.careers/job/?gh_jid=8146070",
     "posted_date": "2026-08-20",
     "updated_date": "2026-08-24",
-    "fetched_at": "2026-10-08T14:40:08.729482+00:00",
+    "fetched_at": "2026-10-08T23:39:48.967646+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>We're transforming the grocery industry</strong></p> <p><span class=\"im\">At Instacart, we invite the world to share love through food because "
   },
@@ -5360,7 +5360,7 @@ Sample normalized records:
     "official_url": "https://instacart.careers/job/?gh_jid=8212434",
     "posted_date": "2026-09-17",
     "updated_date": "2026-09-17",
-    "fetched_at": "2026-10-08T14:40:08.729482+00:00",
+    "fetched_at": "2026-10-08T23:39:48.967646+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p><strong>We're transforming the grocery industry</strong></p> <p><span class=\"im\">At Instacart, we invite the world to share love through food because "
   }
@@ -5374,26 +5374,26 @@ Sample normalized records:
 - Search URL/API: `https://intel.wd1.myworkdayjobs.com/External`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 27
-- HTTP requests/cumulative request time: 174 / 84.086s
-- Company elapsed time: 108.520s
+- HTTP requests/cumulative request time: 176 / 80.193s
+- Company elapsed time: 105.213s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 146 / 0 / 0
-- Detail cache statuses: {'fetched:new': 142, 'fetched:missing_detail': 4}
-- Relevant JD recovery: {'eligible': 86, 'usable_jd': 86}
+- Detail pages fetched/cache reused/prefilter skipped: 148 / 0 / 0
+- Detail cache statuses: {'fetched:new': 146, 'fetched:missing_detail': 2}
+- Relevant JD recovery: {'eligible': 87, 'usable_jd': 87}
 - Raw jobs found: 492
-- After US/location filtering: 146
-- With trustworthy posted_date: 146
+- After US/location filtering: 148
+- With trustworthy posted_date: 148
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 29.69, "first_pass_survivors": 47, "group": "official", "jds_resolved": 47, "original_postings_resolved": 47, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 47, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 9.374, "first_pass_survivors": 15, "group": "official", "jds_resolved": 15, "original_postings_resolved": 15, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 15, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 7.136, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 23, "stop_reason": "page_budget", "unique_contribution": 9, "unique_jobs": 22}
-- Query diagnostic: {"elapsed_seconds": 16.339, "first_pass_survivors": 15, "group": "official", "jds_resolved": 15, "original_postings_resolved": 15, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 15, "unique_jobs": 55}
-- Query diagnostic: {"elapsed_seconds": 14.603, "first_pass_survivors": 26, "group": "official", "jds_resolved": 26, "original_postings_resolved": 26, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 26, "unique_jobs": 59}
-- Query diagnostic: {"elapsed_seconds": 12.824, "first_pass_survivors": 14, "group": "official", "jds_resolved": 14, "original_postings_resolved": 14, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 14, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 8.909, "first_pass_survivors": 11, "group": "official", "jds_resolved": 11, "original_postings_resolved": 11, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 11, "unique_jobs": 58}
-- Query diagnostic: {"elapsed_seconds": 1.301, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 9, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 9}
-- Query diagnostic: {"elapsed_seconds": 7.273, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 8, "unique_jobs": 79}
+- Query diagnostic: {"elapsed_seconds": 28.116, "first_pass_survivors": 47, "group": "official", "jds_resolved": 47, "original_postings_resolved": 47, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 47, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 10.692, "first_pass_survivors": 15, "group": "official", "jds_resolved": 15, "original_postings_resolved": 15, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 15, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 7.822, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 23, "stop_reason": "page_budget", "unique_contribution": 9, "unique_jobs": 22}
+- Query diagnostic: {"elapsed_seconds": 11.666, "first_pass_survivors": 16, "group": "official", "jds_resolved": 16, "original_postings_resolved": 16, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 16, "unique_jobs": 55}
+- Query diagnostic: {"elapsed_seconds": 16.342, "first_pass_survivors": 26, "group": "official", "jds_resolved": 26, "original_postings_resolved": 26, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 26, "unique_jobs": 59}
+- Query diagnostic: {"elapsed_seconds": 9.16, "first_pass_survivors": 13, "group": "official", "jds_resolved": 13, "original_postings_resolved": 13, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 13, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 9.713, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 58}
+- Query diagnostic: {"elapsed_seconds": 1.359, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 9, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 9}
+- Query diagnostic: {"elapsed_seconds": 9.299, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 9, "unique_jobs": 79}
 
 Sample normalized records:
 
@@ -5408,22 +5408,9 @@ Sample normalized records:
     "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-California-Santa-Clara/AI-Frameworks-Engineer_JR0287723",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:09.243480+00:00",
+    "fetched_at": "2026-10-08T23:39:49.641027+00:00",
     "date_confidence": "high",
     "description": "Job Details: Job Description: The world is transforming - and so is Intel. Intel is a company of bold and curious inventors and problem solvers who create some of the most astoundi"
-  },
-  {
-    "company": "Intel",
-    "source": "intel_official_careers",
-    "job_id": "JR0281978",
-    "title": "AI Performance Library Architect",
-    "location": "US, Oregon, Hillsboro; US, California, Folsom",
-    "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/AI-Performance-Library-Architect_JR0281978-1",
-    "posted_date": "2026-09-17",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:09.243480+00:00",
-    "date_confidence": "high",
-    "description": "Job Details: Job Description: Software and AI (SAI) organization is looking for a software development engineer to work on oneDNN project ( https://github.com/uxlfoundation/oneDNN "
   },
   {
     "company": "Intel",
@@ -5434,7 +5421,7 @@ Sample normalized records:
     "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-California-Santa-Clara/AI-Solution-Architect---Graduate-Intern_JR0287524",
     "posted_date": "2026-10-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:09.243480+00:00",
+    "fetched_at": "2026-10-08T23:39:49.641027+00:00",
     "date_confidence": "high",
     "description": "Job Details: Job Description: Intel is seeking an AI Infrastructure Solution Architect Intern to join our AI Platforms team. As an intern, you will work alongside experienced engin"
   },
@@ -5447,7 +5434,7 @@ Sample normalized records:
     "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-California-Santa-Clara/AI-Solution-Architect-Graduate-Intern_JR0287530",
     "posted_date": "2026-10-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:09.243480+00:00",
+    "fetched_at": "2026-10-08T23:39:49.641027+00:00",
     "date_confidence": "high",
     "description": "Job Details: Job Description: Intel is seeking an AI Infrastructure Solution Architect Intern to join our AI Platforms team. As an intern, you will work alongside experienced engin"
   },
@@ -5460,9 +5447,22 @@ Sample normalized records:
     "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/AI-Solution-Architect---Undergraduate-Intern_JR0287931",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:09.243480+00:00",
+    "fetched_at": "2026-10-08T23:39:49.641027+00:00",
     "date_confidence": "high",
     "description": "Job Details: Job Description: Intel is seeking an AI Solution Architect Intern to join our AI Platforms team. As an intern, you will work alongside experienced engineers to support"
+  },
+  {
+    "company": "Intel",
+    "source": "intel_official_careers",
+    "job_id": "JR0281978",
+    "title": "AI Performance Library Architect",
+    "location": "US, Oregon, Hillsboro; US, California, Folsom",
+    "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/AI-Performance-Library-Architect_JR0281978-1",
+    "posted_date": "2026-09-17",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:39:49.641027+00:00",
+    "date_confidence": "high",
+    "description": "Job Details: Job Description: Software and AI (SAI) organization is looking for a software development engineer to work on oneDNN project ( https://github.com/uxlfoundation/oneDNN "
   }
 ]
 ```
@@ -5474,26 +5474,26 @@ Sample normalized records:
 - Search URL/API: `https://www.mathworks.com/company/jobs/opportunities/search/`
 - Pagination: page=2,3,... after the unnumbered first page; stop on empty/repeat/short page
 - Pages/requests fetched: 10
-- HTTP requests/cumulative request time: 43 / 6.841s
-- Company elapsed time: 8.140s
+- HTTP requests/cumulative request time: 46 / 16.382s
+- Company elapsed time: 18.576s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 33 / 0 / 0
+- Detail pages fetched/cache reused/prefilter skipped: 36 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 6, 'usable_jd': 6}
-- Raw jobs found: 88
-- After US/location filtering: 33
-- With trustworthy posted_date: 33
+- Relevant JD recovery: {'eligible': 9, 'usable_jd': 9}
+- Raw jobs found: 97
+- After US/location filtering: 36
+- With trustworthy posted_date: 36
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 2.28, "first_pass_survivors": 14, "group": "official", "jds_resolved": 14, "original_postings_resolved": 14, "page_budget": 3, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 14, "stop_reason": "early_stop", "unique_contribution": 14, "unique_jobs": 14}
-- Query diagnostic: {"elapsed_seconds": 0.265, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 14, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 14}
-- Query diagnostic: {"elapsed_seconds": 0.606, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 3, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 3}
-- Query diagnostic: {"elapsed_seconds": 1.596, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 6, "unique_jobs": 6}
-- Query diagnostic: {"elapsed_seconds": 0.922, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 3, "pages_fetched": 1, "query": "data engineer", "raw_jobs": 14, "stop_reason": "early_stop", "unique_contribution": 6, "unique_jobs": 14}
-- Query diagnostic: {"elapsed_seconds": 0.816, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 16, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 16}
-- Query diagnostic: {"elapsed_seconds": 0.23, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.517, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.909, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 2, "query": "software engineer", "raw_jobs": 21, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 21}
+- Query diagnostic: {"elapsed_seconds": 6.453, "first_pass_survivors": 17, "group": "official", "jds_resolved": 17, "original_postings_resolved": 17, "page_budget": 3, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 17, "stop_reason": "early_stop", "unique_contribution": 17, "unique_jobs": 17}
+- Query diagnostic: {"elapsed_seconds": 0.515, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 17, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 17}
+- Query diagnostic: {"elapsed_seconds": 1.436, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 3, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 3}
+- Query diagnostic: {"elapsed_seconds": 2.789, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 6, "unique_jobs": 6}
+- Query diagnostic: {"elapsed_seconds": 2.463, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 3, "pages_fetched": 1, "query": "data engineer", "raw_jobs": 14, "stop_reason": "early_stop", "unique_contribution": 6, "unique_jobs": 14}
+- Query diagnostic: {"elapsed_seconds": 1.446, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 16, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 16}
+- Query diagnostic: {"elapsed_seconds": 0.49, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.504, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 2.48, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 2, "query": "software engineer", "raw_jobs": 24, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 24}
 
 Sample normalized records:
 
@@ -5508,7 +5508,7 @@ Sample normalized records:
     "official_url": "https://www.mathworks.com/company/jobs/opportunities/16217-multiple-openings-engineering-development-group-u-s?keywords=ai+engineer",
     "posted_date": "2026-09-01",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:44.359351+00:00",
+    "fetched_at": "2026-10-08T23:39:52.457974+00:00",
     "date_confidence": "high",
     "description": "<p>About this Program</p> &lt;p&gt;MathWorks has a hybrid work model that enables staff members to split their time between office and home. The hybrid model provides the advantage"
   },
@@ -5521,7 +5521,7 @@ Sample normalized records:
     "official_url": "https://www.mathworks.com/company/jobs/opportunities/37011-senior-applied-ai-engineer?keywords=ai+engineer",
     "posted_date": "2026-04-23",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:44.359351+00:00",
+    "fetched_at": "2026-10-08T23:39:52.457974+00:00",
     "date_confidence": "high",
     "description": "<p>Job Summary</p> &lt;p&gt;MathWorks has a hybrid work model that enables staff members to split their time between office and home. The hybrid model provides the advantage of hav"
   },
@@ -5534,7 +5534,7 @@ Sample normalized records:
     "official_url": "https://www.mathworks.com/company/jobs/opportunities/37010-senior-applied-ai-engineer?keywords=ai+engineer",
     "posted_date": "2026-04-23",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:44.359351+00:00",
+    "fetched_at": "2026-10-08T23:39:52.457974+00:00",
     "date_confidence": "high",
     "description": "<p>Job Summary</p> &lt;p&gt;MathWorks has a hybrid work model that enables staff members to split their time between office and home. The hybrid model provides the advantage of hav"
   },
@@ -5547,7 +5547,7 @@ Sample normalized records:
     "official_url": "https://www.mathworks.com/company/jobs/opportunities/37377-senior-application-engineer-ai-and-embedded-systems?keywords=ai+engineer",
     "posted_date": "2026-10-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:44.359351+00:00",
+    "fetched_at": "2026-10-08T23:39:52.457974+00:00",
     "date_confidence": "high",
     "description": "<p>Job Summary</p> &lt;p&gt;MathWorks has a hybrid work model that enables staff members to split their time between office and home. The hybrid model provides the advantage of hav"
   },
@@ -5560,7 +5560,7 @@ Sample normalized records:
     "official_url": "https://www.mathworks.com/company/jobs/opportunities/37334-sr-product-marketing-engineer-agentic-ai?keywords=ai+engineer",
     "posted_date": "2026-07-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:44.359351+00:00",
+    "fetched_at": "2026-10-08T23:39:52.457974+00:00",
     "date_confidence": "high",
     "description": "<p>Job Summary</p> &lt;p&gt;MathWorks has a hybrid work model that enables staff members to split their time between office and home. The hybrid model provides the advantage of hav"
   }
@@ -5574,15 +5574,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/mongodb/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.202s
-- Company elapsed time: 1.068s
+- HTTP requests/cumulative request time: 1 / 0.209s
+- Company elapsed time: 1.434s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 43, 'usable_jd': 43}
-- Raw jobs found: 391
-- After US/location filtering: 248
-- With trustworthy posted_date: 248
+- Relevant JD recovery: {'eligible': 44, 'usable_jd': 44}
+- Raw jobs found: 395
+- After US/location filtering: 253
+- With trustworthy posted_date: 253
 - Errors/403s: none
 
 Sample normalized records:
@@ -5597,8 +5597,8 @@ Sample normalized records:
     "location": "Boston; Boston, MA, United States",
     "official_url": "https://www.mongodb.com/careers/job/?gh_jid=7310552",
     "posted_date": "2025-10-22",
-    "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:40:47.648337+00:00",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:40:05.175386+00:00",
     "date_confidence": "high",
     "description": "<p>At MongoDB, our Account Development team works closely with our partners in both Sales and Marketing to build fanatical customer enthusiasm around MongoDB. ADR reps are responsi"
   },
@@ -5610,8 +5610,8 @@ Sample normalized records:
     "location": "Gurugram; Gurugram, Haryana, India",
     "official_url": "https://www.mongodb.com/careers/job/?gh_jid=7318558",
     "posted_date": "2026-07-27",
-    "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:40:47.648337+00:00",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:40:05.175386+00:00",
     "date_confidence": "high",
     "description": "<p>An Account Development Representative at MongoDB is the starting point for building a serious career in technology sales.&nbsp;</p> <p>This role is the foundation of our sales o"
   },
@@ -5623,8 +5623,8 @@ Sample normalized records:
     "location": "Kuala Lumpur; MYS_KualaLumpur",
     "official_url": "https://www.mongodb.com/careers/job/?gh_jid=8079914",
     "posted_date": "2026-07-23",
-    "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:40:47.648337+00:00",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:40:05.175386+00:00",
     "date_confidence": "high",
     "description": "<p>An Account Development Representative at MongoDB is the starting point for building a serious career in technology sales.&nbsp;</p> <p>This role is the foundation of our sales o"
   },
@@ -5636,8 +5636,8 @@ Sample normalized records:
     "location": "Tel Aviv; Tel Aviv-Yafo, Israel",
     "official_url": "https://www.mongodb.com/careers/job/?gh_jid=7334938",
     "posted_date": "2025-10-21",
-    "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:40:47.648337+00:00",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:40:05.175386+00:00",
     "date_confidence": "high",
     "description": "<p>At MongoDB, our Account Development team works closely with our partners in both Sales and Marketing to build fanatical customer enthusiasm around MongoDB. ADR reps are responsi"
   },
@@ -5649,8 +5649,8 @@ Sample normalized records:
     "location": "Zurich; Zürich, Zürich, Switzerland",
     "official_url": "https://www.mongodb.com/careers/job/?gh_jid=7217822",
     "posted_date": "2025-10-07",
-    "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:40:47.648337+00:00",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:40:05.175386+00:00",
     "date_confidence": "high",
     "description": "<p>We’re looking for a hardworking, driven individual with superb energy, passion and initiative for new business acquisition. The Enterprise Account Executive role focuses exclusi"
   }
@@ -5664,31 +5664,44 @@ Sample normalized records:
 - Search URL/API: `https://morganstanley.eightfold.ai/api/pcsx/search?domain=morganstanley.com&query=software+engineer&location=United+States&sort_by=timestamp&start=0&num=10`
 - Pagination: newest-first; minimum 2 pages, then two seen pages + one overlap page; otherwise count/cap
 - Pages/requests fetched: 24
-- HTTP requests/cumulative request time: 143 / 43.092s
-- Company elapsed time: 63.085s
+- HTTP requests/cumulative request time: 139 / 22.225s
+- Company elapsed time: 42.020s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 118 / 0 / 0
-- Detail cache statuses: {'fetched:new': 115, 'fetched:missing_detail': 3}
-- Relevant JD recovery: {'eligible': 45, 'usable_jd': 45}
-- Raw jobs found: 232
-- After US/location filtering: 118
-- With trustworthy posted_date: 118
+- Detail pages fetched/cache reused/prefilter skipped: 114 / 0 / 0
+- Detail cache statuses: {'fetched:new': 112, 'fetched:missing_detail': 2}
+- Relevant JD recovery: {'eligible': 41, 'usable_jd': 41}
+- Raw jobs found: 231
+- After US/location filtering: 114
+- With trustworthy posted_date: 114
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 14.543, "first_pass_survivors": 30, "group": "official", "jds_resolved": 30, "original_postings_resolved": 30, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 30, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 9.888, "first_pass_survivors": 20, "group": "official", "jds_resolved": 20, "original_postings_resolved": 20, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 20, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 5.353, "first_pass_survivors": 11, "group": "official", "jds_resolved": 11, "original_postings_resolved": 11, "page_budget": 3, "pages_fetched": 2, "query": "data scientist", "raw_jobs": 17, "stop_reason": "early_stop", "unique_contribution": 11, "unique_jobs": 17}
-- Query diagnostic: {"elapsed_seconds": 8.584, "first_pass_survivors": 17, "group": "official", "jds_resolved": 17, "original_postings_resolved": 17, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 29, "stop_reason": "page_budget", "unique_contribution": 17, "unique_jobs": 29}
-- Query diagnostic: {"elapsed_seconds": 4.786, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 2.922, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 12.373, "first_pass_survivors": 25, "group": "official", "jds_resolved": 25, "original_postings_resolved": 25, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 25, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 1.966, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 4, "unique_jobs": 6}
-- Query diagnostic: {"elapsed_seconds": 2.314, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 9.533, "first_pass_survivors": 30, "group": "official", "jds_resolved": 30, "original_postings_resolved": 30, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 30, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 6.212, "first_pass_survivors": 20, "group": "official", "jds_resolved": 20, "original_postings_resolved": 20, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 20, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 5.647, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 2, "query": "data scientist", "raw_jobs": 16, "stop_reason": "early_stop", "unique_contribution": 9, "unique_jobs": 16}
+- Query diagnostic: {"elapsed_seconds": 5.379, "first_pass_survivors": 17, "group": "official", "jds_resolved": 17, "original_postings_resolved": 17, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 29, "stop_reason": "page_budget", "unique_contribution": 17, "unique_jobs": 29}
+- Query diagnostic: {"elapsed_seconds": 2.898, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 2.057, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 7.311, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 1.26, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 4, "unique_jobs": 6}
+- Query diagnostic: {"elapsed_seconds": 1.447, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 30}
 
 Sample normalized records:
 
 ```json
 [
+  {
+    "company": "Morgan Stanley",
+    "source": "morgan_stanley_official_careers",
+    "job_id": "PT-JR044061",
+    "title": "Lead GCP Security Controls Engineer - VP",
+    "location": "Alpharetta, Georgia, United States of America",
+    "official_url": "https://morganstanley.eightfold.ai/careers/job/549800356261",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:40:06.613364+00:00",
+    "date_confidence": "high",
+    "description": "In the Technology division, we leverage innovation to build the connections and capabilities that power our Firm, enabling our clients and colleagues to redefine markets and shape "
+  },
   {
     "company": "Morgan Stanley",
     "source": "morgan_stanley_official_careers",
@@ -5698,7 +5711,20 @@ Sample normalized records:
     "official_url": "https://morganstanley.eightfold.ai/careers/job/549798154774",
     "posted_date": "2026-10-06",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:48.717819+00:00",
+    "fetched_at": "2026-10-08T23:40:06.613364+00:00",
+    "date_confidence": "high",
+    "description": "In the Technology division, we leverage innovation to build the connections and capabilities that power our Firm, enabling our clients and colleagues to redefine markets and shape "
+  },
+  {
+    "company": "Morgan Stanley",
+    "source": "morgan_stanley_official_careers",
+    "job_id": "PT-JR041991",
+    "title": "Technical Program Manager - Vice President",
+    "location": "New York, New York, United States of America",
+    "official_url": "https://morganstanley.eightfold.ai/careers/job/549799519552",
+    "posted_date": "2026-10-05",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:40:06.613364+00:00",
     "date_confidence": "high",
     "description": "In the Technology division, we leverage innovation to build the connections and capabilities that power our Firm, enabling our clients and colleagues to redefine markets and shape "
   },
@@ -5711,46 +5737,20 @@ Sample normalized records:
     "official_url": "https://morganstanley.eightfold.ai/careers/job/549798077475",
     "posted_date": "2026-10-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:48.717819+00:00",
+    "fetched_at": "2026-10-08T23:40:06.613364+00:00",
     "date_confidence": "high",
     "description": "Morgan Stanley Human Resources is seeking an experienced Strat/Engineer in New York to build and own internal HR applications, data services, and workflow solutions that improve ho"
   },
   {
     "company": "Morgan Stanley",
     "source": "morgan_stanley_official_careers",
-    "job_id": "PT-JR041991",
-    "title": "Technical Program Manager - Vice President",
+    "job_id": "PT-JR041902",
+    "title": "AI Engineer - VP",
     "location": "New York, New York, United States of America",
-    "official_url": "https://morganstanley.eightfold.ai/careers/job/549799519552",
-    "posted_date": "2026-10-05",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:48.717819+00:00",
-    "date_confidence": "high",
-    "description": "In the Technology division, we leverage innovation to build the connections and capabilities that power our Firm, enabling our clients and colleagues to redefine markets and shape "
-  },
-  {
-    "company": "Morgan Stanley",
-    "source": "morgan_stanley_official_careers",
-    "job_id": "JR042832",
-    "title": "Associate, Software Engineer",
-    "location": "New York, New York, United States of America",
-    "official_url": "https://morganstanley.eightfold.ai/careers/job/549800007925",
+    "official_url": "https://morganstanley.eightfold.ai/careers/job/549799501420",
     "posted_date": "2026-10-01",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:48.717819+00:00",
-    "date_confidence": "high",
-    "description": "Company Profile: Morgan Stanley is a leading global financial services firm providing a wide range of investment banking, securities, investment, and wealth management services. Th"
-  },
-  {
-    "company": "Morgan Stanley",
-    "source": "morgan_stanley_official_careers",
-    "job_id": "PT-JR041494",
-    "title": "VP, Generative AI, Backend Engineer",
-    "location": "New York, New York, United States of America",
-    "official_url": "https://morganstanley.eightfold.ai/careers/job/549799388181",
-    "posted_date": "2026-10-01",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:48.717819+00:00",
+    "fetched_at": "2026-10-08T23:40:06.613364+00:00",
     "date_confidence": "high",
     "description": "In the Technology division, we leverage innovation to build the connections and capabilities that power our Firm, enabling our clients and colleagues to redefine markets and shape "
   }
@@ -5764,8 +5764,8 @@ Sample normalized records:
 - Search URL/API: `https://careers.netapp.com/en/search-jobs`
 - Pagination: p=1,2,...; stop on empty/repeat/short page
 - Pages/requests fetched: 29
-- HTTP requests/cumulative request time: 109 / 23.917s
-- Company elapsed time: 40.674s
+- HTTP requests/cumulative request time: 109 / 34.453s
+- Company elapsed time: 53.454s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 80 / 0 / 0
 - Detail cache statuses: none
@@ -5775,15 +5775,15 @@ Sample normalized records:
 - With trustworthy posted_date: 80
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 12.111, "first_pass_survivors": 25, "group": "official", "jds_resolved": 25, "original_postings_resolved": 25, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 25, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 5.294, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 45}
-- Query diagnostic: {"elapsed_seconds": 3.699, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 9, "unique_jobs": 45}
-- Query diagnostic: {"elapsed_seconds": 5.646, "first_pass_survivors": 14, "group": "official", "jds_resolved": 14, "original_postings_resolved": 14, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 14, "unique_jobs": 45}
-- Query diagnostic: {"elapsed_seconds": 1.988, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 45}
-- Query diagnostic: {"elapsed_seconds": 3.475, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 45}
-- Query diagnostic: {"elapsed_seconds": 3.564, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 45}
-- Query diagnostic: {"elapsed_seconds": 3.286, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 45}
-- Query diagnostic: {"elapsed_seconds": 1.611, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 15.742, "first_pass_survivors": 24, "group": "official", "jds_resolved": 24, "original_postings_resolved": 24, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 24, "unique_jobs": 59}
+- Query diagnostic: {"elapsed_seconds": 8.177, "first_pass_survivors": 13, "group": "official", "jds_resolved": 13, "original_postings_resolved": 13, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 13, "unique_jobs": 45}
+- Query diagnostic: {"elapsed_seconds": 5.602, "first_pass_survivors": 11, "group": "official", "jds_resolved": 11, "original_postings_resolved": 11, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 11, "unique_jobs": 45}
+- Query diagnostic: {"elapsed_seconds": 6.88, "first_pass_survivors": 13, "group": "official", "jds_resolved": 13, "original_postings_resolved": 13, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 13, "unique_jobs": 44}
+- Query diagnostic: {"elapsed_seconds": 3.416, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 45}
+- Query diagnostic: {"elapsed_seconds": 3.839, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 45}
+- Query diagnostic: {"elapsed_seconds": 5.195, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 8, "unique_jobs": 45}
+- Query diagnostic: {"elapsed_seconds": 2.536, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 44}
+- Query diagnostic: {"elapsed_seconds": 2.067, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
 
 Sample normalized records:
 
@@ -5798,7 +5798,7 @@ Sample normalized records:
     "official_url": "https://careers.netapp.com/en/job/san-jose/distinguished-engineer-ai/27600/92333022944",
     "posted_date": "2026-09-03",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:52.500387+00:00",
+    "fetched_at": "2026-10-08T23:40:09.782454+00:00",
     "date_confidence": "high",
     "description": "Job Summary Distinguished Engineer - AI Infrastructure We are seeking a Distinguished Engineer with unrivaled depth in AI/ML inferencing at scale and the distributed systems founda"
   },
@@ -5811,7 +5811,7 @@ Sample normalized records:
     "official_url": "https://careers.netapp.com/en/job/morrisville/director-of-engineering-ai-solutions/27600/100127712432",
     "posted_date": "2026-09-03",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:52.500387+00:00",
+    "fetched_at": "2026-10-08T23:40:09.782454+00:00",
     "date_confidence": "high",
     "description": "Executive Summary We are looking for an innovative Director of Engineering – AI Solutions for Developer Productivity to transform how our software engineers build, test, and deploy"
   },
@@ -5824,7 +5824,7 @@ Sample normalized records:
     "official_url": "https://careers.netapp.com/en/job/morrisville/director-data-and-ai/27600/100664059424",
     "posted_date": "2026-09-15",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:52.500387+00:00",
+    "fetched_at": "2026-10-08T23:40:09.782454+00:00",
     "date_confidence": "high",
     "description": "Job Summary As Director, Data & AI readiness you will own the strategy to enable data & intelligence layer powering NetApp’s most critical corporate functions — Sales, HR, Finance,"
   },
@@ -5837,7 +5837,7 @@ Sample normalized records:
     "official_url": "https://careers.netapp.com/en/job/morrisville/manager-workforce-intelligence-and-ai-products/27600/100011358592",
     "posted_date": "2026-09-03",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:52.500387+00:00",
+    "fetched_at": "2026-10-08T23:40:09.782454+00:00",
     "date_confidence": "high",
     "description": "Job Summary NetApp is transforming Workforce Analytics from a dashboarding function into an AI-powered Workforce Intelligence capability. At NetApp, we are working towards building"
   },
@@ -5850,7 +5850,7 @@ Sample normalized records:
     "official_url": "https://careers.netapp.com/en/job/united-states/senior-solutions-architect-ai-hpc-and-lustre/27600/96197921600",
     "posted_date": "2026-09-03",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:40:52.500387+00:00",
+    "fetched_at": "2026-10-08T23:40:09.782454+00:00",
     "date_confidence": "high",
     "description": "LOCATION This is a remote position and can sit anywhere in the United States. All candidates must be willing to very frequently travel across the United States. JOB SUMMARY NetApp’"
   }
@@ -5864,44 +5864,31 @@ Sample normalized records:
 - Search URL/API: `https://explore.jobs.netflix.net/careers`
 - Pagination: first 10 embedded positions per focused role query; PCSX remains disabled
 - Pages/requests fetched: 9
-- HTTP requests/cumulative request time: 9 / 2.294s
-- Company elapsed time: 3.298s
+- HTTP requests/cumulative request time: 10 / 1.993s
+- Company elapsed time: 3.037s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 0 / 49 / 9
-- Detail cache statuses: {'reused': 48, 'reuse_after_error:changed': 1}
-- Relevant JD recovery: {'cache_reused': 49, 'eligible': 48, 'deterministic_skip': 3, 'ai_skip': 6, 'usable_jd': 48}
+- Detail pages fetched/cache reused/prefilter skipped: 1 / 47 / 9
+- Detail cache statuses: {'reused': 46, 'fetched:changed': 1}
+- Relevant JD recovery: {'cache_reused': 47, 'eligible': 47, 'deterministic_skip': 5, 'ai_skip': 4, 'detail_requests': 1, 'detail_success': 1, 'budget_deferred': 0, 'usable_jd': 47}
 - Raw jobs found: 90
-- After US/location filtering: 57
-- With trustworthy posted_date: 57
+- After US/location filtering: 56
+- With trustworthy posted_date: 56
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 0.574, "first_pass_survivors": 10, "group": "official", "jds_resolved": 0, "original_postings_resolved": 10, "page_budget": 1, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 10}
-- Query diagnostic: {"elapsed_seconds": 0.365, "first_pass_survivors": 10, "group": "official", "jds_resolved": 0, "original_postings_resolved": 10, "page_budget": 1, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 10}
-- Query diagnostic: {"elapsed_seconds": 0.383, "first_pass_survivors": 6, "group": "official", "jds_resolved": 0, "original_postings_resolved": 6, "page_budget": 1, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 10}
-- Query diagnostic: {"elapsed_seconds": 0.377, "first_pass_survivors": 7, "group": "official", "jds_resolved": 0, "original_postings_resolved": 7, "page_budget": 1, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 10}
-- Query diagnostic: {"elapsed_seconds": 0.298, "first_pass_survivors": 8, "group": "official", "jds_resolved": 0, "original_postings_resolved": 8, "page_budget": 1, "pages_fetched": 1, "query": "data engineer", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 8, "unique_jobs": 10}
-- Query diagnostic: {"elapsed_seconds": 0.312, "first_pass_survivors": 6, "group": "official", "jds_resolved": 0, "original_postings_resolved": 6, "page_budget": 1, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 10}
-- Query diagnostic: {"elapsed_seconds": 0.362, "first_pass_survivors": 5, "group": "official", "jds_resolved": 0, "original_postings_resolved": 5, "page_budget": 1, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 5, "unique_jobs": 10}
-- Query diagnostic: {"elapsed_seconds": 0.31, "first_pass_survivors": 1, "group": "official", "jds_resolved": 0, "original_postings_resolved": 1, "page_budget": 1, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 10}
-- Query diagnostic: {"elapsed_seconds": 0.316, "first_pass_survivors": 4, "group": "official", "jds_resolved": 0, "original_postings_resolved": 4, "page_budget": 1, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 10}
+- Query diagnostic: {"elapsed_seconds": 0.403, "first_pass_survivors": 10, "group": "official", "jds_resolved": 0, "original_postings_resolved": 10, "page_budget": 1, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 10}
+- Query diagnostic: {"elapsed_seconds": 0.277, "first_pass_survivors": 10, "group": "official", "jds_resolved": 0, "original_postings_resolved": 10, "page_budget": 1, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 10}
+- Query diagnostic: {"elapsed_seconds": 0.319, "first_pass_survivors": 6, "group": "official", "jds_resolved": 0, "original_postings_resolved": 6, "page_budget": 1, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 10}
+- Query diagnostic: {"elapsed_seconds": 0.305, "first_pass_survivors": 7, "group": "official", "jds_resolved": 0, "original_postings_resolved": 7, "page_budget": 1, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 10}
+- Query diagnostic: {"elapsed_seconds": 0.317, "first_pass_survivors": 8, "group": "official", "jds_resolved": 0, "original_postings_resolved": 8, "page_budget": 1, "pages_fetched": 1, "query": "data engineer", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 8, "unique_jobs": 10}
+- Query diagnostic: {"elapsed_seconds": 0.267, "first_pass_survivors": 6, "group": "official", "jds_resolved": 0, "original_postings_resolved": 6, "page_budget": 1, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 10}
+- Query diagnostic: {"elapsed_seconds": 0.293, "first_pass_survivors": 5, "group": "official", "jds_resolved": 0, "original_postings_resolved": 5, "page_budget": 1, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 5, "unique_jobs": 10}
+- Query diagnostic: {"elapsed_seconds": 0.247, "first_pass_survivors": 1, "group": "official", "jds_resolved": 0, "original_postings_resolved": 1, "page_budget": 1, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 10}
+- Query diagnostic: {"elapsed_seconds": 0.31, "first_pass_survivors": 3, "group": "official", "jds_resolved": 0, "original_postings_resolved": 3, "page_budget": 1, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 10, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 10}
 
 Sample normalized records:
 
 ```json
 [
-  {
-    "company": "Netflix",
-    "source": "netflix_official_careers",
-    "job_id": "AJRT30201",
-    "title": "AI Engineer 6 - AI Foundation & Tooling, Ads Platform",
-    "location": "Los Gatos,California,United States of America",
-    "official_url": "https://explore.jobs.netflix.net/careers/job/790298014263",
-    "posted_date": "2024-07-23",
-    "updated_date": "2026-05-19",
-    "fetched_at": "2026-10-08T14:41:33.175980+00:00",
-    "date_confidence": "high",
-    "description": ""
-  },
   {
     "company": "Netflix",
     "source": "netflix_official_careers",
@@ -5911,9 +5898,22 @@ Sample normalized records:
     "official_url": "https://explore.jobs.netflix.net/careers/job/790317717814",
     "posted_date": "2026-08-08",
     "updated_date": "2026-08-08",
-    "fetched_at": "2026-10-08T14:41:33.175980+00:00",
+    "fetched_at": "2026-10-08T23:40:11.034457+00:00",
     "date_confidence": "high",
     "description": "At Netflix, our mission is to entertain the world. Together, we are writing the next episode - pushing the boundaries of storytelling, global fandom and making the unimaginable a r"
+  },
+  {
+    "company": "Netflix",
+    "source": "netflix_official_careers",
+    "job_id": "JR42956",
+    "title": "Senior Game Engineer, Gen AI - Games",
+    "location": "Remote, United States",
+    "official_url": "https://explore.jobs.netflix.net/careers/job/790318858893",
+    "posted_date": "2026-10-08",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:40:11.034457+00:00",
+    "date_confidence": "high",
+    "description": ""
   },
   {
     "company": "Netflix",
@@ -5924,7 +5924,7 @@ Sample normalized records:
     "official_url": "https://explore.jobs.netflix.net/careers/job/790318510397",
     "posted_date": "2026-09-16",
     "updated_date": "2026-09-16",
-    "fetched_at": "2026-10-08T14:41:33.175980+00:00",
+    "fetched_at": "2026-10-08T23:40:11.034457+00:00",
     "date_confidence": "high",
     "description": "At Netflix, our mission is to entertain the world. Together, we are writing the next episode - pushing the boundaries of storytelling, global fandom and making the unimaginable a r"
   },
@@ -5937,7 +5937,7 @@ Sample normalized records:
     "official_url": "https://explore.jobs.netflix.net/careers/job/790316292023",
     "posted_date": "2026-06-09",
     "updated_date": "2026-07-13",
-    "fetched_at": "2026-10-08T14:41:33.175980+00:00",
+    "fetched_at": "2026-10-08T23:40:11.034457+00:00",
     "date_confidence": "high",
     "description": "At Netflix, our mission is to entertain the world. Together, we are writing the next episode - pushing the boundaries of storytelling, global fandom and making the unimaginable a r"
   },
@@ -5950,7 +5950,7 @@ Sample normalized records:
     "official_url": "https://explore.jobs.netflix.net/careers/job/790316165312",
     "posted_date": "2026-06-01",
     "updated_date": "2026-06-01",
-    "fetched_at": "2026-10-08T14:41:33.175980+00:00",
+    "fetched_at": "2026-10-08T23:40:11.034457+00:00",
     "date_confidence": "high",
     "description": "At Netflix, our mission is to entertain the world. Together, we are writing the next episode - pushing the boundaries of storytelling, global fandom and making the unimaginable a r"
   }
@@ -5964,12 +5964,12 @@ Sample normalized records:
 - Search URL/API: `https://api.ashbyhq.com/posting-api/job-board/openai`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.413s
-- Company elapsed time: 1.919s
+- HTTP requests/cumulative request time: 1 / 0.559s
+- Company elapsed time: 2.753s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 364, 'usable_jd': 364}
+- Relevant JD recovery: {'eligible': 362, 'usable_jd': 362}
 - Raw jobs found: 816
 - After US/location filtering: 659
 - With trustworthy posted_date: 659
@@ -5988,7 +5988,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/openai/8fb1615c-34bf-47c4-a1d1-b7b2f836bbd3",
     "posted_date": "2026-03-12",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:36.474948+00:00",
+    "fetched_at": "2026-10-08T23:40:13.773802+00:00",
     "date_confidence": "high",
     "description": "ABOUT THE TEAM The compute infrastructure team runs the GPU fleet and large-scale compute clusters that serve the models backing ChatGPT and the API, while also supporting training"
   },
@@ -6001,7 +6001,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/openai/240d459b-696d-43eb-8497-fab3e56ecd9b",
     "posted_date": "2025-04-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:36.474948+00:00",
+    "fetched_at": "2026-10-08T23:40:13.773802+00:00",
     "date_confidence": "high",
     "description": "By applying to this role, you will be considered for Research Engineer roles across all teams at OpenAI. About the Role As a Research Engineer here, you will be responsible for bui"
   },
@@ -6014,7 +6014,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8",
     "posted_date": "2024-03-20",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:36.474948+00:00",
+    "fetched_at": "2026-10-08T23:40:13.773802+00:00",
     "date_confidence": "high",
     "description": "About the Team We bring OpenAI's technology to the world through products like ChatGPT and the OpenAI API. We seek to learn from deployment and distribute the benefits of AI, while"
   },
@@ -6027,7 +6027,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/openai/2560ed50-5535-42b8-b069-9ebc28ce7493",
     "posted_date": "2023-05-25",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:36.474948+00:00",
+    "fetched_at": "2026-10-08T23:40:13.773802+00:00",
     "date_confidence": "high",
     "description": "ABOUT THE TEAM The Safety Systems team https://openai.com/safety/safety-systems is responsible for various safety work to ensure our best models can be safely deployed to the real "
   },
@@ -6040,7 +6040,7 @@ Sample normalized records:
     "official_url": "https://jobs.ashbyhq.com/openai/3c67f712-697d-48d8-b05c-01be896e61da",
     "posted_date": "2026-06-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:36.474948+00:00",
+    "fetched_at": "2026-10-08T23:40:13.773802+00:00",
     "date_confidence": "high",
     "description": "ABOUT THE TEAM The Applied team safely brings OpenAI's technology to the world. We released ChatGPT; Plugins; DALL·E; and the APIs for GPT-5, embeddings, and fine-tuning. We also o"
   }
@@ -6054,8 +6054,8 @@ Sample normalized records:
 - Search URL/API: `https://api.lever.co/v0/postings/palantir`
 - Pagination: single JSON payload
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 2.745s
-- Company elapsed time: 3.057s
+- HTTP requests/cumulative request time: 1 / 1.261s
+- Company elapsed time: 1.781s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 2 / 0
 - Detail cache statuses: {'reused': 2}
@@ -6078,7 +6078,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/palantir/a237973c-cb29-41fe-9c80-416e6f42e087",
     "posted_date": "2026-06-18",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:38.395233+00:00",
+    "fetched_at": "2026-10-08T23:40:16.527998+00:00",
     "date_confidence": "high",
     "description": "Own calendar management and deconfliction across multiple workstream leads — onsites, supplier visits, internal syncs, and Navy stakeholder meetings Schedule and track supplier eng"
   },
@@ -6091,7 +6091,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/palantir/a5f93bb6-4f13-4451-80a4-f63090830269",
     "posted_date": "2026-06-18",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:38.395233+00:00",
+    "fetched_at": "2026-10-08T23:40:16.527998+00:00",
     "date_confidence": "high",
     "description": "Own calendar management and deconfliction across multiple workstream leads — onsites, supplier visits, internal syncs, and Navy stakeholder meetings Schedule and track supplier eng"
   },
@@ -6104,7 +6104,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/palantir/ab7e3425-81d5-4705-a7b5-cd60c8a45cdb",
     "posted_date": "2024-03-11",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:38.395233+00:00",
+    "fetched_at": "2026-10-08T23:40:16.527998+00:00",
     "date_confidence": "high",
     "description": "Architecting, developing, and maintaining high-performance, scalable backend services that underpin our our operational data and AI systems Maintaining high coding standards throug"
   },
@@ -6117,7 +6117,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/palantir/1345438c-ebfc-4fa5-b545-30c1414f317c",
     "posted_date": "2025-02-24",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:38.395233+00:00",
+    "fetched_at": "2026-10-08T23:40:16.527998+00:00",
     "date_confidence": "high",
     "description": "Build for high-scale, collaborative, geospatial workflows ( Gaia ) Design sophisticated frameworks to enable complex workflows across applications in a single workspace Develop the"
   },
@@ -6130,7 +6130,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/palantir/a8174f9c-6f46-46b4-8e15-d1ff9e37c9eb",
     "posted_date": "2025-02-24",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:38.395233+00:00",
+    "fetched_at": "2026-10-08T23:40:16.527998+00:00",
     "date_confidence": "high",
     "description": "Build for high-scale, collaborative, geospatial workflows ( Gaia ) Design sophisticated frameworks to enable complex workflows across applications in a single workspace Develop the"
   }
@@ -6144,26 +6144,26 @@ Sample normalized records:
 - Search URL/API: `https://paypal.eightfold.ai/api/pcsx/search?domain=paypal.com&query=software+engineer&location=United+States&sort_by=timestamp&start=0&num=10`
 - Pagination: newest-first; minimum 2 pages, then two seen pages + one overlap page; otherwise count/cap
 - Pages/requests fetched: 19
-- HTTP requests/cumulative request time: 67 / 21.903s
-- Company elapsed time: 30.864s
+- HTTP requests/cumulative request time: 68 / 9.451s
+- Company elapsed time: 18.680s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 47 / 0 / 0
-- Detail cache statuses: {'fetched:new': 47}
+- Detail pages fetched/cache reused/prefilter skipped: 48 / 0 / 0
+- Detail cache statuses: {'fetched:new': 48}
 - Relevant JD recovery: {'eligible': 7, 'usable_jd': 7}
-- Raw jobs found: 149
-- After US/location filtering: 47
-- With trustworthy posted_date: 47
+- Raw jobs found: 150
+- After US/location filtering: 48
+- With trustworthy posted_date: 48
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 11.67, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 23, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 23}
-- Query diagnostic: {"elapsed_seconds": 1.226, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 7, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 7}
-- Query diagnostic: {"elapsed_seconds": 1.437, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 4, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 4}
-- Query diagnostic: {"elapsed_seconds": 3.181, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 2, "query": "solutions architect", "raw_jobs": 14, "stop_reason": "early_stop", "unique_contribution": 5, "unique_jobs": 14}
-- Query diagnostic: {"elapsed_seconds": 5.39, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 28, "stop_reason": "page_budget", "unique_contribution": 8, "unique_jobs": 28}
-- Query diagnostic: {"elapsed_seconds": 4.528, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 0.971, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 2, "query": "full stack engineer", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 11}
-- Query diagnostic: {"elapsed_seconds": 0.306, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 2}
-- Query diagnostic: {"elapsed_seconds": 1.762, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 7.246, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 23, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 23}
+- Query diagnostic: {"elapsed_seconds": 0.697, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 7, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 7}
+- Query diagnostic: {"elapsed_seconds": 0.97, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 4, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 4}
+- Query diagnostic: {"elapsed_seconds": 1.789, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 2, "query": "solutions architect", "raw_jobs": 14, "stop_reason": "early_stop", "unique_contribution": 5, "unique_jobs": 14}
+- Query diagnostic: {"elapsed_seconds": 3.042, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 28, "stop_reason": "page_budget", "unique_contribution": 8, "unique_jobs": 28}
+- Query diagnostic: {"elapsed_seconds": 2.635, "first_pass_survivors": 6, "group": "official", "jds_resolved": 6, "original_postings_resolved": 6, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 6, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 0.563, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 2, "query": "full stack engineer", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 11}
+- Query diagnostic: {"elapsed_seconds": 0.343, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 3, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 3}
+- Query diagnostic: {"elapsed_seconds": 1.168, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 30}
 
 Sample normalized records:
 
@@ -6178,7 +6178,7 @@ Sample normalized records:
     "official_url": "https://paypal.eightfold.ai/careers/job/274922740164",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:41.452940+00:00",
+    "fetched_at": "2026-10-08T23:40:18.310394+00:00",
     "date_confidence": "high",
     "description": "The Company PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personal"
   },
@@ -6191,7 +6191,7 @@ Sample normalized records:
     "official_url": "https://paypal.eightfold.ai/careers/job/274922555804",
     "posted_date": "2026-10-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:41.452940+00:00",
+    "fetched_at": "2026-10-08T23:40:18.310394+00:00",
     "date_confidence": "high",
     "description": "The Company PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personal"
   },
@@ -6204,7 +6204,7 @@ Sample normalized records:
     "official_url": "https://paypal.eightfold.ai/careers/job/274922716047",
     "posted_date": "2026-10-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:41.452940+00:00",
+    "fetched_at": "2026-10-08T23:40:18.310394+00:00",
     "date_confidence": "high",
     "description": "The Company PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personal"
   },
@@ -6217,20 +6217,20 @@ Sample normalized records:
     "official_url": "https://paypal.eightfold.ai/careers/job/274922353695",
     "posted_date": "2026-10-01",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:41.452940+00:00",
+    "fetched_at": "2026-10-08T23:40:18.310394+00:00",
     "date_confidence": "high",
     "description": "The Company PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personal"
   },
   {
     "company": "PayPal",
     "source": "paypal_official_careers",
-    "job_id": "R0138185",
-    "title": "Sr Manager, Software Engineering",
-    "location": "San Jose, California, United States of America; Austin, Texas, United States of America",
-    "official_url": "https://paypal.eightfold.ai/careers/job/274922547411",
+    "job_id": "R0137742",
+    "title": "Staff Software Engineer - Platform & Infrastructure",
+    "location": "San Jose, California, United States of America",
+    "official_url": "https://paypal.eightfold.ai/careers/job/274922449285",
     "posted_date": "2026-09-25",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:41.452940+00:00",
+    "fetched_at": "2026-10-08T23:40:18.310394+00:00",
     "date_confidence": "high",
     "description": "The Company PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personal"
   }
@@ -6244,15 +6244,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/reddit/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.215s
-- Company elapsed time: 0.766s
+- HTTP requests/cumulative request time: 1 / 0.194s
+- Company elapsed time: 0.987s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
 - Relevant JD recovery: {'eligible': 15, 'usable_jd': 15}
-- Raw jobs found: 153
-- After US/location filtering: 136
-- With trustworthy posted_date: 136
+- Raw jobs found: 155
+- After US/location filtering: 138
+- With trustworthy posted_date: 138
 - Errors/403s: none
 
 Sample normalized records:
@@ -6268,7 +6268,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/reddit/jobs/8089959",
     "posted_date": "2026-07-29",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:41:51.804165+00:00",
+    "fetched_at": "2026-10-08T23:40:36.991348+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><div class=\"c-message_kit__blocks c-message_kit__blocks--rich_text\"> <div class=\"c-message__message_blocks c-message__message_blocks--rich_text\" data-qa="
   },
@@ -6281,7 +6281,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/reddit/jobs/7792848",
     "posted_date": "2026-04-14",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:41:51.804165+00:00",
+    "fetched_at": "2026-10-08T23:40:36.991348+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><div class=\"c-message_kit__blocks c-message_kit__blocks--rich_text\"> <div class=\"c-message__message_blocks c-message__message_blocks--rich_text\" data-qa="
   },
@@ -6294,7 +6294,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/reddit/jobs/8263406",
     "posted_date": "2026-10-07",
     "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:41:51.804165+00:00",
+    "fetched_at": "2026-10-08T23:40:36.991348+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><div class=\"c-message_kit__blocks c-message_kit__blocks--rich_text\"> <div class=\"c-message__message_blocks c-message__message_blocks--rich_text\" data-qa="
   },
@@ -6307,20 +6307,20 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/reddit/jobs/8189317",
     "posted_date": "2026-09-10",
     "updated_date": "2026-10-07",
-    "fetched_at": "2026-10-08T14:41:51.804165+00:00",
+    "fetched_at": "2026-10-08T23:40:36.991348+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><div class=\"c-message_kit__blocks c-message_kit__blocks--rich_text\"> <div class=\"c-message__message_blocks c-message__message_blocks--rich_text\" data-qa="
   },
   {
     "company": "Reddit",
     "source": "reddit_official_careers",
-    "job_id": "8187521",
+    "job_id": "8249259",
     "title": "Chief of Staff, Global Sales",
-    "location": "New York City, NY; London, England, United Kingdom; New York, NY, United States",
-    "official_url": "https://job-boards.greenhouse.io/reddit/jobs/8187521",
+    "location": "London, United Kingdom; London, England, United Kingdom; New York, NY, United States",
+    "official_url": "https://job-boards.greenhouse.io/reddit/jobs/8249259",
     "posted_date": "2026-10-02",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:41:51.804165+00:00",
+    "fetched_at": "2026-10-08T23:40:36.991348+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><div class=\"c-message_kit__blocks c-message_kit__blocks--rich_text\"> <div class=\"c-message__message_blocks c-message__message_blocks--rich_text\" data-qa="
   }
@@ -6334,8 +6334,8 @@ Sample normalized records:
 - Search URL/API: `https://redhat.wd5.myworkdayjobs.com/jobs`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 11
-- HTTP requests/cumulative request time: 46 / 20.919s
-- Company elapsed time: 25.671s
+- HTTP requests/cumulative request time: 46 / 15.058s
+- Company elapsed time: 19.906s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 34 / 0 / 0
 - Detail cache statuses: {'fetched:new': 33, 'fetched:missing_detail': 1}
@@ -6345,15 +6345,15 @@ Sample normalized records:
 - With trustworthy posted_date: 34
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 7.289, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 4, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 12, "stop_reason": "early_stop", "unique_contribution": 12, "unique_jobs": 12}
-- Query diagnostic: {"elapsed_seconds": 0.52, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 1.077, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 2}
-- Query diagnostic: {"elapsed_seconds": 12.314, "first_pass_survivors": 19, "group": "official", "jds_resolved": 19, "original_postings_resolved": 19, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 26, "stop_reason": "page_budget", "unique_contribution": 19, "unique_jobs": 26}
-- Query diagnostic: {"elapsed_seconds": 1.019, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data engineer", "raw_jobs": 8, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 8}
-- Query diagnostic: {"elapsed_seconds": 0.879, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 13, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 13}
-- Query diagnostic: {"elapsed_seconds": 0.452, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 0.458, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 1.017, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 4, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 20}
+- Query diagnostic: {"elapsed_seconds": 6.2, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 4, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 12, "stop_reason": "early_stop", "unique_contribution": 12, "unique_jobs": 12}
+- Query diagnostic: {"elapsed_seconds": 0.393, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.739, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 2}
+- Query diagnostic: {"elapsed_seconds": 9.309, "first_pass_survivors": 19, "group": "official", "jds_resolved": 19, "original_postings_resolved": 19, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 26, "stop_reason": "page_budget", "unique_contribution": 19, "unique_jobs": 26}
+- Query diagnostic: {"elapsed_seconds": 0.388, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data engineer", "raw_jobs": 8, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 8}
+- Query diagnostic: {"elapsed_seconds": 0.758, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 13, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 13}
+- Query diagnostic: {"elapsed_seconds": 0.386, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 0.392, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.771, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 4, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 20}
 
 Sample normalized records:
 
@@ -6368,7 +6368,7 @@ Sample normalized records:
     "official_url": "https://redhat.wd5.myworkdayjobs.com/jobs/job/Boston/Security-Technical-Account-Manager---Project-Lightwell_R-057804-1",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:52.570869+00:00",
+    "fetched_at": "2026-10-08T23:40:37.979412+00:00",
     "date_confidence": "high",
     "description": "The Global Services Cross-Platform Team is looking for a Security Technical Account Manager dedicated to supporting customers in the recently announced Project Lightwell. In this r"
   },
@@ -6381,7 +6381,7 @@ Sample normalized records:
     "official_url": "https://redhat.wd5.myworkdayjobs.com/jobs/job/Boston/Global-Specialist-Solution-Architect---Lightwell_R-059026-2",
     "posted_date": "2026-10-02",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:52.570869+00:00",
+    "fetched_at": "2026-10-08T23:40:37.979412+00:00",
     "date_confidence": "high",
     "description": "About the role: The Red Hat Technology Sales team is looking for a Lightwell Specialist Solution Architect (SSA) to join our team. This position assumes a crucial role in providing"
   },
@@ -6394,7 +6394,7 @@ Sample normalized records:
     "official_url": "https://redhat.wd5.myworkdayjobs.com/jobs/job/Raleigh/Software-Engineer_R-059799",
     "posted_date": "2026-09-24",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:52.570869+00:00",
+    "fetched_at": "2026-10-08T23:40:37.979412+00:00",
     "date_confidence": "high",
     "description": "*Telecommuting permitted: work may be performed within normal commuting distance from the Red Hat, LLC office in Raleigh, NC. Contribute to the architecture, design, development, a"
   },
@@ -6407,7 +6407,7 @@ Sample normalized records:
     "official_url": "https://redhat.wd5.myworkdayjobs.com/jobs/job/Boston/Global-Specialist-Solution-Architect---Lightwell_R-059025-1",
     "posted_date": "2026-09-17",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:52.570869+00:00",
+    "fetched_at": "2026-10-08T23:40:37.979412+00:00",
     "date_confidence": "high",
     "description": "About the role: The Red Hat Technology Sales team is looking for a Lightwell Specialist Solution Architect (SSA) to join our team. This position assumes a crucial role in providing"
   },
@@ -6420,7 +6420,7 @@ Sample normalized records:
     "official_url": "https://redhat.wd5.myworkdayjobs.com/jobs/job/Boston/Global-Telco-Specialist-Solution-Architect---Lightwell_R-059027-2",
     "posted_date": "2026-09-14",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:52.570869+00:00",
+    "fetched_at": "2026-10-08T23:40:37.979412+00:00",
     "date_confidence": "high",
     "description": "About the role: The Red Hat Technology Sales team is looking for a Lightwell Specialist Solution Architect (SSA) with Telco experience to join our team. This position assumes a cru"
   }
@@ -6434,15 +6434,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/roku/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.198s
-- Company elapsed time: 0.895s
+- HTTP requests/cumulative request time: 1 / 0.129s
+- Company elapsed time: 1.070s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 16, 'usable_jd': 16}
-- Raw jobs found: 180
-- After US/location filtering: 143
-- With trustworthy posted_date: 143
+- Relevant JD recovery: {'eligible': 14, 'usable_jd': 14}
+- Raw jobs found: 168
+- After US/location filtering: 131
+- With trustworthy posted_date: 131
 - Errors/403s: none
 
 Sample normalized records:
@@ -6458,20 +6458,33 @@ Sample normalized records:
     "official_url": "https://www.weareroku.com/jobs/8077965?gh_jid=8077965",
     "posted_date": "2026-07-22",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:41:57.765234+00:00",
+    "fetched_at": "2026-10-08T23:40:42.114871+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2 style=\"font-family: GothamBold,Helvetica,Arial,sans-serif; color: #662d91;\">Teamwork makes the stream work.</h2> <p>&nbsp;</p> <h3 style=\"font-family"
   },
   {
     "company": "Roku",
     "source": "roku_official_careers",
-    "job_id": "8186852",
-    "title": "Account Executive, Media & Entertainment",
-    "location": "Santa Monica, California; Santa Monica, California, United States",
-    "official_url": "https://www.weareroku.com/jobs/8186852?gh_jid=8186852",
-    "posted_date": "2026-09-08",
+    "job_id": "8265641",
+    "title": "Account Executive, Media and Entertainment",
+    "location": "New York, New York; Santa Monica, California, United States",
+    "official_url": "https://www.weareroku.com/jobs/8265641?gh_jid=8265641",
+    "posted_date": "2026-10-08",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:41:57.765234+00:00",
+    "fetched_at": "2026-10-08T23:40:42.114871+00:00",
+    "date_confidence": "high",
+    "description": "<div class=\"content-intro\"><h2 style=\"font-family: GothamBold,Helvetica,Arial,sans-serif; color: #662d91;\">Teamwork makes the stream work.</h2> <p>&nbsp;</p> <h3 style=\"font-family"
+  },
+  {
+    "company": "Roku",
+    "source": "roku_official_careers",
+    "job_id": "8078092",
+    "title": "Account Executive, Media and Entertainment",
+    "location": "Santa Monica, California; Santa Monica, California, United States",
+    "official_url": "https://www.weareroku.com/jobs/8078092?gh_jid=8078092",
+    "posted_date": "2026-07-29",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:40:42.114871+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2 style=\"font-family: GothamBold,Helvetica,Arial,sans-serif; color: #662d91;\">Teamwork makes the stream work.</h2> <p>&nbsp;</p> <h3 style=\"font-family"
   },
@@ -6484,7 +6497,7 @@ Sample normalized records:
     "official_url": "https://www.weareroku.com/jobs/8154533?gh_jid=8154533",
     "posted_date": "2026-08-24",
     "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:41:57.765234+00:00",
+    "fetched_at": "2026-10-08T23:40:42.114871+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2 style=\"font-family: GothamBold,Helvetica,Arial,sans-serif; color: #662d91;\">Teamwork makes the stream work.</h2> <p>&nbsp;</p> <h3 style=\"font-family"
   },
@@ -6497,20 +6510,7 @@ Sample normalized records:
     "official_url": "https://www.weareroku.com/jobs/7677767?gh_jid=7677767",
     "posted_date": "2026-03-04",
     "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:41:57.765234+00:00",
-    "date_confidence": "high",
-    "description": "<div class=\"content-intro\"><h2 style=\"font-family: GothamBold,Helvetica,Arial,sans-serif; color: #662d91;\">Teamwork makes the stream work.</h2> <p>&nbsp;</p> <h3 style=\"font-family"
-  },
-  {
-    "company": "Roku",
-    "source": "roku_official_careers",
-    "job_id": "8167560",
-    "title": "Ad Marketing Coordinator",
-    "location": "New York, New York; New York, New York, U.S.",
-    "official_url": "https://www.weareroku.com/jobs/8167560?gh_jid=8167560",
-    "posted_date": "2026-08-31",
-    "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:41:57.765234+00:00",
+    "fetched_at": "2026-10-08T23:40:42.114871+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h2 style=\"font-family: GothamBold,Helvetica,Arial,sans-serif; color: #662d91;\">Teamwork makes the stream work.</h2> <p>&nbsp;</p> <h3 style=\"font-family"
   }
@@ -6524,15 +6524,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/block/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.214s
-- Company elapsed time: 1.146s
+- HTTP requests/cumulative request time: 1 / 0.179s
+- Company elapsed time: 1.568s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 25, 'usable_jd': 25}
-- Raw jobs found: 225
-- After US/location filtering: 211
-- With trustworthy posted_date: 211
+- Relevant JD recovery: {'eligible': 24, 'usable_jd': 24}
+- Raw jobs found: 228
+- After US/location filtering: 213
+- With trustworthy posted_date: 213
 - Errors/403s: none
 
 Sample normalized records:
@@ -6547,21 +6547,8 @@ Sample normalized records:
     "location": "Sydney, Australia; AU - NSW - Remote",
     "official_url": "http://block.xyz/careers/jobs/5317296008?gh_jid=5317296008",
     "posted_date": "2026-07-09",
-    "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:41:58.661028+00:00",
-    "date_confidence": "high",
-    "description": "<p>Since we opened our doors in 2009, the world of commerce has evolved immensely, and so has Square. After enabling anyone to take payments and never miss a sale, we saw sellers s"
-  },
-  {
-    "company": "Block / Square",
-    "source": "block_/_square_official_careers",
-    "job_id": "5258372008",
-    "title": "Account Manager, SMB",
-    "location": "Melbourne, Australia; AU - NSW - Remote",
-    "official_url": "http://block.xyz/careers/jobs/5258372008?gh_jid=5258372008",
-    "posted_date": "2026-06-15",
-    "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:41:58.661028+00:00",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:40:43.185382+00:00",
     "date_confidence": "high",
     "description": "<p>Since we opened our doors in 2009, the world of commerce has evolved immensely, and so has Square. After enabling anyone to take payments and never miss a sale, we saw sellers s"
   },
@@ -6573,8 +6560,21 @@ Sample normalized records:
     "location": "Brisbane, Australia; AU - NSW - Remote",
     "official_url": "http://block.xyz/careers/jobs/5317297008?gh_jid=5317297008",
     "posted_date": "2026-07-09",
-    "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:41:58.661028+00:00",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:40:43.185382+00:00",
+    "date_confidence": "high",
+    "description": "<p>Since we opened our doors in 2009, the world of commerce has evolved immensely, and so has Square. After enabling anyone to take payments and never miss a sale, we saw sellers s"
+  },
+  {
+    "company": "Block / Square",
+    "source": "block_/_square_official_careers",
+    "job_id": "5258372008",
+    "title": "Account Manager, SMB",
+    "location": "Melbourne, Australia; AU - NSW - Remote",
+    "official_url": "http://block.xyz/careers/jobs/5258372008?gh_jid=5258372008",
+    "posted_date": "2026-06-15",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:40:43.185382+00:00",
     "date_confidence": "high",
     "description": "<p>Since we opened our doors in 2009, the world of commerce has evolved immensely, and so has Square. After enabling anyone to take payments and never miss a sale, we saw sellers s"
   },
@@ -6586,8 +6586,8 @@ Sample normalized records:
     "location": "Bay Area, CA, United States of America; US - CA - Bay Area - Remote",
     "official_url": "http://block.xyz/careers/jobs/5434157008?gh_jid=5434157008",
     "posted_date": "2026-09-30",
-    "updated_date": "2026-10-05",
-    "fetched_at": "2026-10-08T14:41:58.661028+00:00",
+    "updated_date": "2026-10-08",
+    "fetched_at": "2026-10-08T23:40:43.185382+00:00",
     "date_confidence": "high",
     "description": "<p>It all started with an idea at Block in 2013. Initially built to take the pain out of peer-to-peer payments, Cash App has gone from a simple product with a single purpose to a d"
   },
@@ -6600,7 +6600,7 @@ Sample normalized records:
     "official_url": "http://block.xyz/careers/jobs/5108007008?gh_jid=5108007008",
     "posted_date": "2026-06-09",
     "updated_date": "2026-09-29",
-    "fetched_at": "2026-10-08T14:41:58.661028+00:00",
+    "fetched_at": "2026-10-08T23:40:43.185382+00:00",
     "date_confidence": "high",
     "description": "<p><strong>Team:</strong> Apollo — Block Applied R&amp;D<br><strong>Location:</strong> Remote (US / Canada)<br><strong>Duration:</strong> Fall/Winter 2026 co-op — 8 months, flexibl"
   }
@@ -6632,26 +6632,26 @@ Sample normalized records:
 - Search URL/API: `https://careers.twosigma.com/careers/OpenRoles?search=software+engineer&jobRecordsPerPage=10&jobOffset=0`
 - Pagination: jobOffset=0,10,... ; stop on empty/repeat or short page
 - Pages/requests fetched: 17
-- HTTP requests/cumulative request time: 76 / 90.843s
-- Company elapsed time: 97.807s
+- HTTP requests/cumulative request time: 75 / 88.154s
+- Company elapsed time: 95.500s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 59 / 13 / 12
-- Detail cache statuses: {'fetched:new': 29, 'reused': 13}
-- Relevant JD recovery: {'deterministic_skip': 6, 'eligible': 30, 'ai_recover': 7, 'ai_skip': 6, 'detail_requests': 30, 'detail_failure': 30, 'budget_deferred': 0, 'usable_jd': 0}
+- Detail pages fetched/cache reused/prefilter skipped: 58 / 13 / 11
+- Detail cache statuses: {'fetched:new': 28, 'reused': 13}
+- Relevant JD recovery: {'deterministic_skip': 5, 'eligible': 30, 'ai_recover': 7, 'ai_skip': 6, 'detail_requests': 30, 'detail_failure': 30, 'budget_deferred': 0, 'usable_jd': 0}
 - Raw jobs found: 114
-- After US/location filtering: 42
+- After US/location filtering: 41
 - With trustworthy posted_date: 0
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 13.723, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 4, "pages_fetched": 2, "query": "ai engineer", "raw_jobs": 13, "stop_reason": "early_stop", "unique_contribution": 12, "unique_jobs": 13}
-- Query diagnostic: {"elapsed_seconds": 6.773, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 2, "query": "machine learning engineer", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 7, "unique_jobs": 11}
-- Query diagnostic: {"elapsed_seconds": 2.407, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 8, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 8}
-- Query diagnostic: {"elapsed_seconds": 6.177, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 7, "stop_reason": "early_stop", "unique_contribution": 4, "unique_jobs": 7}
-- Query diagnostic: {"elapsed_seconds": 18.523, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 30}
-- Query diagnostic: {"elapsed_seconds": 5.704, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 2, "query": "platform engineer", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 11}
-- Query diagnostic: {"elapsed_seconds": 1.377, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 0.867, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 6.915, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 33, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 33}
+- Query diagnostic: {"elapsed_seconds": 14.434, "first_pass_survivors": 11, "group": "official", "jds_resolved": 11, "original_postings_resolved": 11, "page_budget": 4, "pages_fetched": 2, "query": "ai engineer", "raw_jobs": 12, "stop_reason": "early_stop", "unique_contribution": 11, "unique_jobs": 12}
+- Query diagnostic: {"elapsed_seconds": 6.586, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 2, "query": "machine learning engineer", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 7, "unique_jobs": 11}
+- Query diagnostic: {"elapsed_seconds": 2.376, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 8, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 8}
+- Query diagnostic: {"elapsed_seconds": 6.076, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 7, "stop_reason": "early_stop", "unique_contribution": 4, "unique_jobs": 7}
+- Query diagnostic: {"elapsed_seconds": 17.287, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 30, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 30}
+- Query diagnostic: {"elapsed_seconds": 5.329, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 2, "query": "platform engineer", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 11}
+- Query diagnostic: {"elapsed_seconds": 1.07, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 0.824, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 6.52, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 34, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 34}
 
 Sample normalized records:
 
@@ -6666,7 +6666,7 @@ Sample normalized records:
     "official_url": "https://careers.twosigma.com/careers/JobDetail/New-York-City-United-States-Quantitative-Software-Engineer-Generative-AI/13079",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:59.807854+00:00",
+    "fetched_at": "2026-10-08T23:40:44.754584+00:00",
     "date_confidence": "unknown",
     "description": "Quantitative Software Engineer: Generative AI Location NY New York United States"
   },
@@ -6679,22 +6679,9 @@ Sample normalized records:
     "official_url": "https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-AI-Solutions-Developer/14102",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:59.807854+00:00",
+    "fetched_at": "2026-10-08T23:40:44.754584+00:00",
     "date_confidence": "unknown",
     "description": "AI Solutions Developer Location NY New York United States"
-  },
-  {
-    "company": "Two Sigma",
-    "source": "two_sigma_official_careers",
-    "job_id": "14291",
-    "title": "AI Fluency: Program Manager",
-    "location": "United States - NY New York",
-    "official_url": "https://careers.twosigma.com/careers/JobDetail/New-York-United-States-AI-Fluency-Program-Manager/14291",
-    "posted_date": "",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:59.807854+00:00",
-    "date_confidence": "unknown",
-    "description": "AI Fluency: Program Manager Location NY New York United States"
   },
   {
     "company": "Two Sigma",
@@ -6705,7 +6692,7 @@ Sample normalized records:
     "official_url": "https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-AI-Research-Scientist-Intern-2027-Summer/14096",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:59.807854+00:00",
+    "fetched_at": "2026-10-08T23:40:44.754584+00:00",
     "date_confidence": "unknown",
     "description": "AI Research Scientist - Intern [2027 Summer] Location NY New York United States"
   },
@@ -6718,9 +6705,22 @@ Sample normalized records:
     "official_url": "https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-AI-Research-Scientist-Campus-Full-Time/13671",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:41:59.807854+00:00",
+    "fetched_at": "2026-10-08T23:40:44.754584+00:00",
     "date_confidence": "unknown",
     "description": "AI Research Scientist - Campus Full-Time Location NY New York United States"
+  },
+  {
+    "company": "Two Sigma",
+    "source": "two_sigma_official_careers",
+    "job_id": "13080",
+    "title": "Quantitative Software Engineer: Techniques Engineering",
+    "location": "United States - NY New York",
+    "official_url": "https://careers.twosigma.com/careers/JobDetail/New-York-City-United-States-Quantitative-Software-Engineer-Techniques-Engineering/13080",
+    "posted_date": "",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:40:44.754584+00:00",
+    "date_confidence": "unknown",
+    "description": "Quantitative Software Engineer: Techniques Engineering Location NY New York United States"
   }
 ]
 ```
@@ -6732,15 +6732,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/verkada/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.135s
-- Company elapsed time: 0.907s
+- HTTP requests/cumulative request time: 1 / 0.236s
+- Company elapsed time: 1.313s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 38, 'usable_jd': 38}
-- Raw jobs found: 310
-- After US/location filtering: 249
-- With trustworthy posted_date: 249
+- Relevant JD recovery: {'eligible': 37, 'usable_jd': 37}
+- Raw jobs found: 309
+- After US/location filtering: 247
+- With trustworthy posted_date: 247
 - Errors/403s: none
 
 Sample normalized records:
@@ -6756,7 +6756,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/verkada/jobs/4866484007",
     "posted_date": "2025-09-22",
     "updated_date": "2026-09-28",
-    "fetched_at": "2026-10-08T14:42:11.348551+00:00",
+    "fetched_at": "2026-10-08T23:40:48.634768+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><strong>Who We Are</strong></h3> <p>Verkada is transforming how organizations protect their people and places with an integrated, privacy-sensitive A"
   },
@@ -6769,7 +6769,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/verkada/jobs/4248001007",
     "posted_date": "2025-02-21",
     "updated_date": "2026-09-28",
-    "fetched_at": "2026-10-08T14:42:11.348551+00:00",
+    "fetched_at": "2026-10-08T23:40:48.634768+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><strong>Who We Are</strong></h3> <p>Verkada is transforming how organizations protect their people and places with an integrated, privacy-sensitive A"
   },
@@ -6782,7 +6782,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/verkada/jobs/4248006007",
     "posted_date": "2026-07-28",
     "updated_date": "2026-09-28",
-    "fetched_at": "2026-10-08T14:42:11.348551+00:00",
+    "fetched_at": "2026-10-08T23:40:48.634768+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><strong>Who We Are</strong></h3> <p>Verkada is transforming how organizations protect their people and places with an integrated, privacy-sensitive A"
   },
@@ -6795,7 +6795,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/verkada/jobs/4247993007",
     "posted_date": "2026-03-31",
     "updated_date": "2026-09-28",
-    "fetched_at": "2026-10-08T14:42:11.348551+00:00",
+    "fetched_at": "2026-10-08T23:40:48.634768+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><strong>Who We Are</strong></h3> <p>Verkada is transforming how organizations protect their people and places with an integrated, privacy-sensitive A"
   },
@@ -6808,7 +6808,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/verkada/jobs/4247996007",
     "posted_date": "2025-09-23",
     "updated_date": "2026-09-28",
-    "fetched_at": "2026-10-08T14:42:11.348551+00:00",
+    "fetched_at": "2026-10-08T23:40:48.634768+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><h3><strong>Who We Are</strong></h3> <p>Verkada is transforming how organizations protect their people and places with an integrated, privacy-sensitive A"
   }
@@ -6822,31 +6822,70 @@ Sample normalized records:
 - Search URL/API: `https://visa.wd5.myworkdayjobs.com/Visa`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 23
-- HTTP requests/cumulative request time: 126 / 76.839s
-- Company elapsed time: 94.406s
+- HTTP requests/cumulative request time: 127 / 48.699s
+- Company elapsed time: 66.607s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 102 / 0 / 0
-- Detail cache statuses: {'fetched:new': 100, 'fetched:missing_detail': 2}
-- Relevant JD recovery: {'eligible': 18, 'usable_jd': 18}
-- Raw jobs found: 359
-- After US/location filtering: 102
-- With trustworthy posted_date: 102
+- Detail pages fetched/cache reused/prefilter skipped: 103 / 0 / 0
+- Detail cache statuses: {'fetched:new': 101, 'fetched:missing_detail': 2}
+- Relevant JD recovery: {'eligible': 19, 'usable_jd': 19}
+- Raw jobs found: 358
+- After US/location filtering: 103
+- With trustworthy posted_date: 103
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 42.359, "first_pass_survivors": 60, "group": "official", "jds_resolved": 60, "original_postings_resolved": 60, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 60, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 9.143, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 22, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 22}
-- Query diagnostic: {"elapsed_seconds": 5.634, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 23, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 23}
-- Query diagnostic: {"elapsed_seconds": 18.824, "first_pass_survivors": 21, "group": "official", "jds_resolved": 21, "original_postings_resolved": 21, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 21, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 5.545, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 4.04, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 4.227, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 12, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 12}
-- Query diagnostic: {"elapsed_seconds": 0.697, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 2}
-- Query diagnostic: {"elapsed_seconds": 3.161, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 29.257, "first_pass_survivors": 60, "group": "official", "jds_resolved": 60, "original_postings_resolved": 60, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 60, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 5.493, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 22, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 22}
+- Query diagnostic: {"elapsed_seconds": 4.159, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 22, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 22}
+- Query diagnostic: {"elapsed_seconds": 12.709, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 22, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 4.434, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 3.786, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 1.858, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 12, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 12}
+- Query diagnostic: {"elapsed_seconds": 0.523, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 2}
+- Query diagnostic: {"elapsed_seconds": 3.571, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 60}
 
 Sample normalized records:
 
 ```json
 [
+  {
+    "company": "Visa",
+    "source": "visa_official_careers",
+    "job_id": "REF080722W",
+    "title": "Sr. Product Manager, Global Token Services",
+    "location": "US - Foster City, CA",
+    "official_url": "https://visa.wd5.myworkdayjobs.com/Visa/job/US---Foster-City-CA/Sr-Product-Manager_REF080722W",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:40:49.953581+00:00",
+    "date_confidence": "high",
+    "description": "About Us Visa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 "
+  },
+  {
+    "company": "Visa",
+    "source": "visa_official_careers",
+    "job_id": "REF089084W",
+    "title": "Staff Systems Engineer, Middleware Engineering",
+    "location": "US - Austin, TX",
+    "official_url": "https://visa.wd5.myworkdayjobs.com/Visa/job/US---Austin-TX/Staff-Systems-Engineer--Middleware-Engineering_REF089084W",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:40:49.953581+00:00",
+    "date_confidence": "high",
+    "description": "About Us Visa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 "
+  },
+  {
+    "company": "Visa",
+    "source": "visa_official_careers",
+    "job_id": "REF088549W",
+    "title": "Software Engineer",
+    "location": "US - Foster City, CA; US - Austin, TX",
+    "official_url": "https://visa.wd5.myworkdayjobs.com/Visa/job/US---Foster-City-CA/Software-Engineer_REF088549W",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:40:49.953581+00:00",
+    "date_confidence": "high",
+    "description": "About Us Visa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 "
+  },
   {
     "company": "Visa",
     "source": "visa_official_careers",
@@ -6856,7 +6895,7 @@ Sample normalized records:
     "official_url": "https://visa.wd5.myworkdayjobs.com/Visa/job/US---Bellevue-WA/Lead-Software-Engineer_REF084840W",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:12.256454+00:00",
+    "fetched_at": "2026-10-08T23:40:49.953581+00:00",
     "date_confidence": "high",
     "description": "About Us Visa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 "
   },
@@ -6869,46 +6908,7 @@ Sample normalized records:
     "official_url": "https://visa.wd5.myworkdayjobs.com/Visa/job/US---Austin-TX/Senior-Software-Engineer--Product-Reliability-Engineering_REF089234W-1",
     "posted_date": "2026-10-06",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:12.256454+00:00",
-    "date_confidence": "high",
-    "description": "About Us Visa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 "
-  },
-  {
-    "company": "Visa",
-    "source": "visa_official_careers",
-    "job_id": "REF088989W",
-    "title": "Director- Strategy & Ops for CMS Agentic Commerce",
-    "location": "US - Foster City, CA; San Francisco, CA",
-    "official_url": "https://visa.wd5.myworkdayjobs.com/Visa/job/US---Foster-City-CA/Director--Strategy---Ops-for-CMS-Agentic-Commerce_REF088989W",
-    "posted_date": "2026-10-06",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:12.256454+00:00",
-    "date_confidence": "high",
-    "description": "About Us Visa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 "
-  },
-  {
-    "company": "Visa",
-    "source": "visa_official_careers",
-    "job_id": "REF089125W",
-    "title": "Software Engineer, Sr. Consultant Level",
-    "location": "US - Bellevue, WA",
-    "official_url": "https://visa.wd5.myworkdayjobs.com/Visa/job/US---Bellevue-WA/Software-Engineer--Sr-Consultant-Level_REF089125W",
-    "posted_date": "2026-10-06",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:12.256454+00:00",
-    "date_confidence": "high",
-    "description": "About Us Visa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 "
-  },
-  {
-    "company": "Visa",
-    "source": "visa_official_careers",
-    "job_id": "REF081637W",
-    "title": "Software Development Engineer- Product Reliability Engineering",
-    "location": "US - Austin, TX",
-    "official_url": "https://visa.wd5.myworkdayjobs.com/Visa/job/US---Austin-TX/Software-Development-Engineer--Product-Reliability-Engineering_REF081637W",
-    "posted_date": "2026-10-06",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:12.256454+00:00",
+    "fetched_at": "2026-10-08T23:40:49.953581+00:00",
     "date_confidence": "high",
     "description": "About Us Visa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 "
   }
@@ -6922,15 +6922,15 @@ Sample normalized records:
 - Search URL/API: `https://api.lever.co/v0/postings/weride`
 - Pagination: single JSON payload
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.578s
-- Company elapsed time: 0.594s
+- HTTP requests/cumulative request time: 1 / 0.269s
+- Company elapsed time: 0.288s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
-- Relevant JD recovery: {'eligible': 10, 'usable_jd': 10}
-- Raw jobs found: 17
-- After US/location filtering: 13
-- With trustworthy posted_date: 13
+- Relevant JD recovery: {'eligible': 9, 'usable_jd': 9}
+- Raw jobs found: 16
+- After US/location filtering: 12
+- With trustworthy posted_date: 12
 - Errors/403s: none
 
 Sample normalized records:
@@ -6946,7 +6946,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/weride/82955de9-485d-4db0-8fd9-1c018489fc8d",
     "posted_date": "2019-01-17",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:12.318051+00:00",
+    "fetched_at": "2026-10-08T23:40:57.886120+00:00",
     "date_confidence": "high",
     "description": "Role Responsibilities: System Bringup & Deployment Deploy and integrate autonomous driving software onto vehicle platforms and embedded computing systems. Validate system functiona"
   },
@@ -6959,7 +6959,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/weride/fecb0fd0-7f66-4010-af00-b6500e0ef680",
     "posted_date": "2026-06-16",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:12.318051+00:00",
+    "fetched_at": "2026-10-08T23:40:57.886120+00:00",
     "date_confidence": "high",
     "description": "Data Annotation (DA) Label and annotate data (text, image, audio, or video) based on project guidelines. Categorize and structure raw data into machine-readable formats. Follow str"
   },
@@ -6972,7 +6972,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/weride/012c818d-4ad8-4096-80b0-386cdf79f8d5",
     "posted_date": "2024-03-27",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:12.318051+00:00",
+    "fetched_at": "2026-10-08T23:40:57.886120+00:00",
     "date_confidence": "high",
     "description": "Act as a frontline technical owner for the deployment and operation of L4 autonomous driving systems in real-world environments Lead and execute system-level testing and validation"
   },
@@ -6985,7 +6985,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/weride/2f22df18-e019-450e-bcfa-9b1c7b94334f",
     "posted_date": "2020-05-02",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:12.318051+00:00",
+    "fetched_at": "2026-10-08T23:40:57.886120+00:00",
     "date_confidence": "high",
     "description": "BS/MS/PhD degree in Robotics, Computer Science, Electrical Engineering or equivalent practical experience. Experience in data structures and advanced algorithms Experience programm"
   },
@@ -6998,7 +6998,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/weride/109627b8-e5d0-4ca0-812d-15aaea6c6478",
     "posted_date": "2024-07-09",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:12.318051+00:00",
+    "fetched_at": "2026-10-08T23:40:57.886120+00:00",
     "date_confidence": "high",
     "description": "Own end-to-end project delivery as the single accountable owner (DRI), ensuring success across scope, schedule, cost, and quality Lead the full project lifecycle from pre-sales thr"
   }
@@ -7012,26 +7012,26 @@ Sample normalized records:
 - Search URL/API: `https://workday.wd5.myworkdayjobs.com/Workday`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 23
-- HTTP requests/cumulative request time: 146 / 132.926s
-- Company elapsed time: 153.380s
+- HTTP requests/cumulative request time: 143 / 81.501s
+- Company elapsed time: 101.974s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 122 / 0 / 0
-- Detail cache statuses: {'fetched:new': 122}
-- Relevant JD recovery: {'eligible': 26, 'usable_jd': 26}
-- Raw jobs found: 440
-- After US/location filtering: 122
-- With trustworthy posted_date: 122
+- Detail pages fetched/cache reused/prefilter skipped: 119 / 0 / 0
+- Detail cache statuses: {'fetched:new': 119}
+- Relevant JD recovery: {'eligible': 23, 'usable_jd': 23}
+- Raw jobs found: 436
+- After US/location filtering: 119
+- With trustworthy posted_date: 119
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 76.626, "first_pass_survivors": 79, "group": "official", "jds_resolved": 79, "original_postings_resolved": 79, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 79, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 3.978, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 18, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 18}
-- Query diagnostic: {"elapsed_seconds": 3.351, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 13, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 13}
-- Query diagnostic: {"elapsed_seconds": 29.845, "first_pass_survivors": 30, "group": "official", "jds_resolved": 30, "original_postings_resolved": 30, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 30, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 8.426, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 9.246, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 7.304, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 2.479, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 9, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 9}
-- Query diagnostic: {"elapsed_seconds": 10.044, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 43.978, "first_pass_survivors": 79, "group": "official", "jds_resolved": 79, "original_postings_resolved": 79, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 79, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 3.041, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 16, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 16}
+- Query diagnostic: {"elapsed_seconds": 2.363, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 12, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 12}
+- Query diagnostic: {"elapsed_seconds": 20.284, "first_pass_survivors": 29, "group": "official", "jds_resolved": 29, "original_postings_resolved": 29, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 29, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 6.633, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 7.298, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 5.804, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.204, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 8, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 8}
+- Query diagnostic: {"elapsed_seconds": 8.267, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 80}
 
 Sample normalized records:
 
@@ -7041,12 +7041,12 @@ Sample normalized records:
     "company": "Workday",
     "source": "workday_official_careers",
     "job_id": "JR-0110689",
-    "title": "Senior AI Engineer",
+    "title": "Senior AI Engineer/AI Engineer III",
     "location": "USA, GA, Atlanta",
     "official_url": "https://workday.wd5.myworkdayjobs.com/Workday/job/USA-GA-Atlanta/Senior-AI-Engineer_JR-0110689",
-    "posted_date": "2026-10-05",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:12.912770+00:00",
+    "fetched_at": "2026-10-08T23:40:58.175601+00:00",
     "date_confidence": "high",
     "description": "Your work days are brighter here. We’re obsessed with making hard work pay off, for our people, our customers, and the world around us. As a Fortune 500 company and a leading AI pl"
   },
@@ -7059,20 +7059,7 @@ Sample normalized records:
     "official_url": "https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Principal-AI-UX-Lead_JR-0109765-1",
     "posted_date": "2026-09-30",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:12.912770+00:00",
-    "date_confidence": "high",
-    "description": "Your work days are brighter here. We’re obsessed with making hard work pay off, for our people, our customers, and the world around us. As a Fortune 500 company and a leading AI pl"
-  },
-  {
-    "company": "Workday",
-    "source": "workday_official_careers",
-    "job_id": "JR-0109463",
-    "title": "Senior AI Engineer - Agent Factory",
-    "location": "USA, CO, Boulder; Canada, BC, Vancouver",
-    "official_url": "https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CO-Boulder/Senior-AI-Engineer---Agent-Factory_JR-0109463",
-    "posted_date": "2026-09-14",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:12.912770+00:00",
+    "fetched_at": "2026-10-08T23:40:58.175601+00:00",
     "date_confidence": "high",
     "description": "Your work days are brighter here. We’re obsessed with making hard work pay off, for our people, our customers, and the world around us. As a Fortune 500 company and a leading AI pl"
   },
@@ -7085,7 +7072,20 @@ Sample normalized records:
     "official_url": "https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Principal-AI-Researcher_JR-0107313",
     "posted_date": "2026-09-28",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:12.912770+00:00",
+    "fetched_at": "2026-10-08T23:40:58.175601+00:00",
+    "date_confidence": "high",
+    "description": "Your work days are brighter here. We’re obsessed with making hard work pay off, for our people, our customers, and the world around us. As a Fortune 500 company and a leading AI pl"
+  },
+  {
+    "company": "Workday",
+    "source": "workday_official_careers",
+    "job_id": "JR-0105599",
+    "title": "Principal/Senior AI Engineer",
+    "location": "USA, GA, Atlanta",
+    "official_url": "https://workday.wd5.myworkdayjobs.com/Workday/job/USA-GA-Atlanta/Senior-Principal-Machine-Learning-Engineer_JR-0105599",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:40:58.175601+00:00",
     "date_confidence": "high",
     "description": "Your work days are brighter here. We’re obsessed with making hard work pay off, for our people, our customers, and the world around us. As a Fortune 500 company and a leading AI pl"
   },
@@ -7098,7 +7098,7 @@ Sample normalized records:
     "official_url": "https://workday.wd5.myworkdayjobs.com/Workday/job/USA-IL-Chicago/Senior-Technical-Delivery-Consultant---AI-Practice_JR-0107977",
     "posted_date": "2026-09-30",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:12.912770+00:00",
+    "fetched_at": "2026-10-08T23:40:58.175601+00:00",
     "date_confidence": "high",
     "description": "Your work days are brighter here. We’re obsessed with making hard work pay off, for our people, our customers, and the world around us. As a Fortune 500 company and a leading AI pl"
   }
@@ -7112,26 +7112,26 @@ Sample normalized records:
 - Search URL/API: `https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 15
-- HTTP requests/cumulative request time: 50 / 29.464s
-- Company elapsed time: 35.237s
+- HTTP requests/cumulative request time: 51 / 24.001s
+- Company elapsed time: 29.968s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 34 / 0 / 0
-- Detail cache statuses: {'fetched:new': 33, 'fetched:missing_detail': 1}
+- Detail pages fetched/cache reused/prefilter skipped: 35 / 0 / 0
+- Detail cache statuses: {'fetched:new': 34, 'fetched:missing_detail': 1}
 - Relevant JD recovery: {'eligible': 4, 'usable_jd': 4}
-- Raw jobs found: 156
-- After US/location filtering: 34
-- With trustworthy posted_date: 34
+- Raw jobs found: 160
+- After US/location filtering: 35
+- With trustworthy posted_date: 35
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 20.938, "first_pass_survivors": 31, "group": "official", "jds_resolved": 31, "original_postings_resolved": 31, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 31, "stop_reason": "page_budget", "unique_contribution": 31, "unique_jobs": 31}
-- Query diagnostic: {"elapsed_seconds": 0.901, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 9, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 9}
-- Query diagnostic: {"elapsed_seconds": 0.864, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 11}
-- Query diagnostic: {"elapsed_seconds": 1.238, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 6}
-- Query diagnostic: {"elapsed_seconds": 4.696, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 33, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 33}
-- Query diagnostic: {"elapsed_seconds": 3.048, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 34, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 34}
-- Query diagnostic: {"elapsed_seconds": 0.848, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 4, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 4}
-- Query diagnostic: {"elapsed_seconds": 0.807, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 11}
-- Query diagnostic: {"elapsed_seconds": 0.895, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 17, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 17}
+- Query diagnostic: {"elapsed_seconds": 17.414, "first_pass_survivors": 32, "group": "official", "jds_resolved": 32, "original_postings_resolved": 32, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 32, "stop_reason": "page_budget", "unique_contribution": 32, "unique_jobs": 32}
+- Query diagnostic: {"elapsed_seconds": 0.671, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 9, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 9}
+- Query diagnostic: {"elapsed_seconds": 0.677, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 11}
+- Query diagnostic: {"elapsed_seconds": 1.336, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 6}
+- Query diagnostic: {"elapsed_seconds": 3.695, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 34, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 34}
+- Query diagnostic: {"elapsed_seconds": 2.745, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 35, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 35}
+- Query diagnostic: {"elapsed_seconds": 0.847, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 4, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 4}
+- Query diagnostic: {"elapsed_seconds": 0.944, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 12, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 12}
+- Query diagnostic: {"elapsed_seconds": 0.764, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 17, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 17}
 
 Sample normalized records:
 
@@ -7146,7 +7146,7 @@ Sample normalized records:
     "official_url": "https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Remote-USA/Senior-AI-Native-Product-Engineer--Mobile_P751267-1",
     "posted_date": "2026-10-02",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:16.447512+00:00",
+    "fetched_at": "2026-10-08T23:41:03.237452+00:00",
     "date_confidence": "high",
     "description": "About the team The Mercury Mobile team builds Zillow Instant Messaging (ZIM) — the conversation layer where millions of movers participate in a multiplayer, integrated experience t"
   },
@@ -7159,7 +7159,7 @@ Sample normalized records:
     "official_url": "https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Remote-USA/Principal-Machine-Learning-Engineer--Agentic-AI_P747954",
     "posted_date": "2026-09-17",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:16.447512+00:00",
+    "fetched_at": "2026-10-08T23:41:03.237452+00:00",
     "date_confidence": "high",
     "description": "About the team The Agentic AI team at Zillow is at the forefront of transforming the real estate industry by helping millions of people use AI technologies to find their next home."
   },
@@ -7172,7 +7172,7 @@ Sample normalized records:
     "official_url": "https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Remote-USA/Senior-Applied-Scientist_P751403",
     "posted_date": "2026-10-02",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:16.447512+00:00",
+    "fetched_at": "2026-10-08T23:41:03.237452+00:00",
     "date_confidence": "high",
     "description": "About the team The Shopping AI team is at the heart of Zillow Group’s mission to create a seamless digital real estate marketplace. We build and own the machine learning systems th"
   },
@@ -7185,7 +7185,7 @@ Sample normalized records:
     "official_url": "https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Remote-USA/Principal-Software-Development-Engineer--Full-Stack_P751216-1",
     "posted_date": "2026-09-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:16.447512+00:00",
+    "fetched_at": "2026-10-08T23:41:03.237452+00:00",
     "date_confidence": "high",
     "description": "About the team The Data Engineering & Enterprise Tools team powers Zillow Rentals by delivering mission-critical analytics tools, AI enablement solutions, and high fidelity data pr"
   },
@@ -7198,7 +7198,7 @@ Sample normalized records:
     "official_url": "https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Remote-USA/Principal-Full-Stack-Software-Development-Engineer_P751226-2",
     "posted_date": "2026-10-01",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:16.447512+00:00",
+    "fetched_at": "2026-10-08T23:41:03.237452+00:00",
     "date_confidence": "high",
     "description": "About the team At Zillow our mission is to give people the power to unlock life’s next chapter. Zillow’s AI Org plays an important part in delivering unique AI-powered experiences "
   }
@@ -7212,15 +7212,15 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/zscaler/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.159s
-- Company elapsed time: 1.097s
+- HTTP requests/cumulative request time: 1 / 0.220s
+- Company elapsed time: 1.531s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
 - Relevant JD recovery: {'eligible': 21, 'usable_jd': 21}
-- Raw jobs found: 373
-- After US/location filtering: 223
-- With trustworthy posted_date: 223
+- Raw jobs found: 375
+- After US/location filtering: 226
+- With trustworthy posted_date: 226
 - Errors/403s: none
 
 Sample normalized records:
@@ -7236,7 +7236,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/zscaler/jobs/5197814007",
     "posted_date": "2026-07-31",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:42:18.243304+00:00",
+    "fetched_at": "2026-10-08T23:41:33.206946+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p data-pm-slice=\"1 1 []\">Zscaler (NASDAQ: ZS) accelerates digital transformation so customers can be more agile, efficient, resilient, and secure. The Z"
   },
@@ -7249,7 +7249,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/zscaler/jobs/5236995007",
     "posted_date": "2026-09-14",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:42:18.243304+00:00",
+    "fetched_at": "2026-10-08T23:41:33.206946+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p data-pm-slice=\"1 1 []\">Zscaler (NASDAQ: ZS) accelerates digital transformation so customers can be more agile, efficient, resilient, and secure. The Z"
   },
@@ -7262,7 +7262,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/zscaler/jobs/5179814007",
     "posted_date": "2026-07-13",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:42:18.243304+00:00",
+    "fetched_at": "2026-10-08T23:41:33.206946+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p data-pm-slice=\"1 1 []\">Zscaler (NASDAQ: ZS) accelerates digital transformation so customers can be more agile, efficient, resilient, and secure. The Z"
   },
@@ -7275,7 +7275,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/zscaler/jobs/5221105007",
     "posted_date": "2026-09-01",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:42:18.243304+00:00",
+    "fetched_at": "2026-10-08T23:41:33.206946+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p data-pm-slice=\"1 1 []\">Zscaler (NASDAQ: ZS) accelerates digital transformation so customers can be more agile, efficient, resilient, and secure. The Z"
   },
@@ -7288,7 +7288,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/zscaler/jobs/5159494007",
     "posted_date": "2026-07-13",
     "updated_date": "2026-10-08",
-    "fetched_at": "2026-10-08T14:42:18.243304+00:00",
+    "fetched_at": "2026-10-08T23:41:33.206946+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p data-pm-slice=\"1 1 []\">Zscaler (NASDAQ: ZS) accelerates digital transformation so customers can be more agile, efficient, resilient, and secure. The Z"
   }
@@ -7302,8 +7302,8 @@ Sample normalized records:
 - Search URL/API: `https://wd5.myworkdaysite.com/recruiting/chewy/External`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 9
-- HTTP requests/cumulative request time: 11 / 5.527s
-- Company elapsed time: 5.652s
+- HTTP requests/cumulative request time: 11 / 4.761s
+- Company elapsed time: 4.888s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 1 / 0 / 0
 - Detail cache statuses: {'fetched:new': 1}
@@ -7313,15 +7313,15 @@ Sample normalized records:
 - With trustworthy posted_date: 1
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 1.291, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 4, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 0.452, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.503, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.481, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 0.422, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.49, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 0.46, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.454, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.441, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 0.75, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 4, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 0.566, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.382, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.395, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 0.373, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.41, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 0.472, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.408, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.45, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
 
 Sample normalized records:
 
@@ -7336,7 +7336,7 @@ Sample normalized records:
     "official_url": "https://wd5.myworkdaysite.com/recruiting/chewy/External/job/USA---MA---Boston---BOS1/Software-Engineer-II_R29015",
     "posted_date": "2026-08-21",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:19.341412+00:00",
+    "fetched_at": "2026-10-08T23:41:34.738946+00:00",
     "date_confidence": "high",
     "description": "Job Description: Our Opportunity Chewy is growing! We're looking for a Software Engineer III to help define and scale the frontend foundations that power consistent, accessible, an"
   }
@@ -7349,27 +7349,27 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 20
-- HTTP requests/cumulative request time: 151 / 115.357s
-- Company elapsed time: 135.637s
+- Pages/requests fetched: 21
+- HTTP requests/cumulative request time: 155 / 77.540s
+- Company elapsed time: 98.835s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 130 / 0 / 0
-- Detail cache statuses: {'fetched:new': 128, 'fetched:missing_detail': 2}
-- Relevant JD recovery: {'eligible': 14, 'usable_jd': 14}
-- Raw jobs found: 361
-- After US/location filtering: 130
-- With trustworthy posted_date: 130
+- Detail pages fetched/cache reused/prefilter skipped: 133 / 0 / 0
+- Detail cache statuses: {'fetched:new': 131, 'fetched:missing_detail': 2}
+- Relevant JD recovery: {'eligible': 12, 'usable_jd': 12}
+- Raw jobs found: 367
+- After US/location filtering: 133
+- With trustworthy posted_date: 133
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 62.084, "first_pass_survivors": 60, "group": "official", "jds_resolved": 60, "original_postings_resolved": 60, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 60, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 6.867, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 19, "stop_reason": "early_stop", "unique_contribution": 10, "unique_jobs": 19}
-- Query diagnostic: {"elapsed_seconds": 5.19, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 18, "stop_reason": "early_stop", "unique_contribution": 8, "unique_jobs": 18}
-- Query diagnostic: {"elapsed_seconds": 33.839, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 22, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 6.384, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 9, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 4.458, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 5, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 8.067, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 3, "pages_fetched": 2, "query": "full stack engineer", "raw_jobs": 23, "stop_reason": "early_stop", "unique_contribution": 8, "unique_jobs": 23}
-- Query diagnostic: {"elapsed_seconds": 1.055, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 7.363, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 39.287, "first_pass_survivors": 59, "group": "official", "jds_resolved": 59, "original_postings_resolved": 59, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 59, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 5.786, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 10, "unique_jobs": 20}
+- Query diagnostic: {"elapsed_seconds": 6.039, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 2, "query": "data scientist", "raw_jobs": 21, "stop_reason": "early_stop", "unique_contribution": 10, "unique_jobs": 21}
+- Query diagnostic: {"elapsed_seconds": 15.341, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 5.923, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 8, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 12.346, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 5, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 7.008, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 2, "query": "full stack engineer", "raw_jobs": 25, "stop_reason": "early_stop", "unique_contribution": 10, "unique_jobs": 25}
+- Query diagnostic: {"elapsed_seconds": 0.932, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 5.859, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 60}
 
 Sample normalized records:
 
@@ -7378,65 +7378,65 @@ Sample normalized records:
   {
     "company": "CVS Health",
     "source": "cvs_health_official_careers",
-    "job_id": "R1059507",
-    "title": "Digital Web Product Manager",
-    "location": "MA - Wellesley; Woonsocket-1 CVS Drive; New York-161 Ave of the Americas; New York-101 Park Ave; Hartford-Farmington Ave Atrium",
-    "official_url": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/MA---Wellesley/Digital-Web-Product-Manager_R1059507",
+    "job_id": "R1045855",
+    "title": "Staff Data Engineer - UniVerse",
+    "location": "NY - Work from hom; Work At Home-Kansas; Work At Home-Ohio; Work At Home-Missouri; Work At Home-Illinois; Work At Home-Michigan",
+    "official_url": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---Work-from-hom/Staff-Data-Engineer_R1045855",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:24.994920+00:00",
+    "fetched_at": "2026-10-08T23:41:34.855248+00:00",
     "date_confidence": "high",
     "description": "We’re building a world of health around every individual — shaping a more connected, convenient and compassionate health experience. At CVS Health®, you’ll be surrounded by passion"
   },
   {
     "company": "CVS Health",
     "source": "cvs_health_official_careers",
-    "job_id": "R0944077",
-    "title": "Senior Software Development Engineer - Operational Analytics",
-    "location": "CT - Hartford",
-    "official_url": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/CT---Hartford/Sr-Software-Development-Engineer---Operational-Analytics_R0944077-1",
-    "posted_date": "2026-10-07",
+    "job_id": "R1014559",
+    "title": "Lead Director - Retail Analytics Technical Product",
+    "location": "NY - New York",
+    "official_url": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Lead-Director--Retail-Analytics-Technical-Product_R1014559",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:24.994920+00:00",
+    "fetched_at": "2026-10-08T23:41:34.855248+00:00",
     "date_confidence": "high",
     "description": "We’re building a world of health around every individual — shaping a more connected, convenient and compassionate health experience. At CVS Health®, you’ll be surrounded by passion"
   },
   {
     "company": "CVS Health",
     "source": "cvs_health_official_careers",
-    "job_id": "R0944066",
-    "title": "Software Development Engineer - Operational Analytics",
-    "location": "CT - Hartford",
-    "official_url": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/CT---Hartford/Software-Development-Engineer---Operational-Analytics_R0944066-1",
-    "posted_date": "2026-10-07",
+    "job_id": "R1063008",
+    "title": "Senior AI Engineer",
+    "location": "CT - Work from home; Work At Home-Arizona; Work At Home-Florida; Work At Home-Texas; Work At Home-Illinois",
+    "official_url": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/CT---Work-from-home/Senior-AI-Engineer_R1063008",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:24.994920+00:00",
+    "fetched_at": "2026-10-08T23:41:34.855248+00:00",
     "date_confidence": "high",
     "description": "We’re building a world of health around every individual — shaping a more connected, convenient and compassionate health experience. At CVS Health®, you’ll be surrounded by passion"
   },
   {
     "company": "CVS Health",
     "source": "cvs_health_official_careers",
-    "job_id": "R1068111",
-    "title": "Senior Data Scientist - Commercial Product Strategy",
-    "location": "NY - New York; MA - Wellesley",
-    "official_url": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Senior-Data-Scientist---Commercial-Product-Strategy_R1068111",
-    "posted_date": "2026-10-07",
+    "job_id": "R0994513",
+    "title": "Senior Machine Learning Engineer",
+    "location": "NY - New York",
+    "official_url": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Senior-Machine-Learning-Engineer_R0994513",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:24.994920+00:00",
+    "fetched_at": "2026-10-08T23:41:34.855248+00:00",
     "date_confidence": "high",
     "description": "We’re building a world of health around every individual — shaping a more connected, convenient and compassionate health experience. At CVS Health®, you’ll be surrounded by passion"
   },
   {
     "company": "CVS Health",
     "source": "cvs_health_official_careers",
-    "job_id": "R1054295",
-    "title": "Product Manager - Intelligent Reporting & BI Modernization",
-    "location": "NY - New York; Work At Home-Arkansas; Work At Home-Idaho; Work At Home-Texas; Work At Home-Georgia; Work At Home-Montana; Work At Home-Iowa; Work At Home-Wisconsin; Work At Home-Oregon; Work At Home-Washington; Work At Home-New York; Work At Home-District of Columbia; Work At Home-Connecticut; Work At Home-Nebraska; Work At Home-Rhode Island; Work At Home-Tennessee; Work At Home-Kentucky; Work At Home-Ohio; Work At Home-West Virginia; Work At Home-Maryland; Work At Home-Massachusetts; Work At Home-South Carolina; Work At Home-Missouri; Work At Home - Utah; Work At Home-Arizona; Work At Home-South Dakota; Work At Home-Pennsylvania; Work At Home-New Hampshire; Work At Home-Vermont; Work At Home-Minnesota; Work At Home-New Mexico; Work At Home-Michigan; Work At Home-California; Work At Home-Maine; Work At Home-North Dakota; Work At Home-Kansas; Work At Home-Indiana; Work At Home-New Jersey; Work At Home-Nevada; Work At Home-Louisiana; Work At Home-Mississippi; Work At Home-Oklahoma; Work At Home-Alabama; Work At Home-Virginia; Work At Home-Illinois; Work At Home-North Carolina; Work At Home-Colorado; Work At Home-Florida; Work At Home-Wyoming; Work At Home-Delaware",
-    "official_url": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/NY---New-York/Product-Manager---Intelligent-Reporting---BI-Modernization_R1054295",
-    "posted_date": "2026-10-06",
+    "job_id": "R1052600",
+    "title": "Manager, Omnichannel Data Strategy, Insights & Reporting",
+    "location": "RI - Woonsocket; Boston-116 Huntington Avenue; Wellesley-93 Worcester St; New York-161 Ave of the Americas; Hartford-Farmington Ave Atrium",
+    "official_url": "https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/RI---Woonsocket/Manager--Omnichannel-Data-Strategy--Insights---Reporting_R1052600-1",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:24.994920+00:00",
+    "fetched_at": "2026-10-08T23:41:34.855248+00:00",
     "date_confidence": "high",
     "description": "We’re building a world of health around every individual — shaping a more connected, convenient and compassionate health experience. At CVS Health®, you’ll be surrounded by passion"
   }
@@ -7450,8 +7450,8 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/duolingo/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.070s
-- Company elapsed time: 0.243s
+- HTTP requests/cumulative request time: 1 / 0.357s
+- Company elapsed time: 0.637s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
@@ -7474,7 +7474,7 @@ Sample normalized records:
     "official_url": "https://careers.duolingo.com/jobs/8851677002?gh_jid=8851677002",
     "posted_date": "2026-09-28",
     "updated_date": "2026-09-28",
-    "fetched_at": "2026-10-08T14:42:51.685682+00:00",
+    "fetched_at": "2026-10-08T23:41:39.627761+00:00",
     "date_confidence": "high",
     "description": "<p>Our mission at Duolingo is to develop the best education in the world and make it universally available. It’s a big mission, and that’s where you come in!</p> <p>At Duolingo, yo"
   },
@@ -7487,7 +7487,7 @@ Sample normalized records:
     "official_url": "https://careers.duolingo.com/jobs/8705196002?gh_jid=8705196002",
     "posted_date": "2026-08-13",
     "updated_date": "2026-09-03",
-    "fetched_at": "2026-10-08T14:42:51.685682+00:00",
+    "fetched_at": "2026-10-08T23:41:39.627761+00:00",
     "date_confidence": "high",
     "description": "<p>Our mission at Duolingo is to develop the best education in the world and make it universally available. It’s a big mission, and that’s where you come in!</p> <p>At Duolingo, yo"
   },
@@ -7500,7 +7500,7 @@ Sample normalized records:
     "official_url": "https://careers.duolingo.com/jobs/8625579002?gh_jid=8625579002",
     "posted_date": "2026-07-08",
     "updated_date": "2026-07-29",
-    "fetched_at": "2026-10-08T14:42:51.685682+00:00",
+    "fetched_at": "2026-10-08T23:41:39.627761+00:00",
     "date_confidence": "high",
     "description": "<p>Our mission at Duolingo is to develop the best education in the world and make it universally available. It’s a big mission, and that’s where you come in!</p> <p>At Duolingo, yo"
   },
@@ -7513,7 +7513,7 @@ Sample normalized records:
     "official_url": "https://careers.duolingo.com/jobs/8576434002?gh_jid=8576434002",
     "posted_date": "2026-06-03",
     "updated_date": "2026-07-28",
-    "fetched_at": "2026-10-08T14:42:51.685682+00:00",
+    "fetched_at": "2026-10-08T23:41:39.627761+00:00",
     "date_confidence": "high",
     "description": "<p>Our mission at Duolingo is to develop the best education in the world and make it universally available. It’s a big mission, and that’s where you come in!</p> <p>At Duolingo, yo"
   },
@@ -7526,7 +7526,7 @@ Sample normalized records:
     "official_url": "https://careers.duolingo.com/jobs/8658654002?gh_jid=8658654002",
     "posted_date": "2026-07-30",
     "updated_date": "2026-08-20",
-    "fetched_at": "2026-10-08T14:42:51.685682+00:00",
+    "fetched_at": "2026-10-08T23:41:39.627761+00:00",
     "date_confidence": "high",
     "description": "<p>Our mission at Duolingo is to develop the best education in the world and make it universally available. It’s a big mission, and that’s where you come in!</p> <p>At Duolingo, yo"
   }
@@ -7540,26 +7540,26 @@ Sample normalized records:
 - Search URL/API: `https://careers.equinix.com/jobs/search`
 - Pagination: page=1,2,...; stop on empty/repeat/short page
 - Pages/requests fetched: 16
-- HTTP requests/cumulative request time: 22 / 18.727s
-- Company elapsed time: 35.503s
+- HTTP requests/cumulative request time: 22 / 18.745s
+- Company elapsed time: 26.164s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 0 / 6 / 54
+- Detail pages fetched/cache reused/prefilter skipped: 0 / 6 / 55
 - Detail cache statuses: {'reused': 6}
-- Relevant JD recovery: {'cache_reused': 6, 'eligible': 6, 'deterministic_skip': 32, 'ai_skip': 22, 'usable_jd': 6}
-- Raw jobs found: 301
-- After US/location filtering: 60
+- Relevant JD recovery: {'cache_reused': 6, 'eligible': 6, 'deterministic_skip': 33, 'ai_skip': 22, 'usable_jd': 6}
+- Raw jobs found: 302
+- After US/location filtering: 61
 - With trustworthy posted_date: 1
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 2.808, "first_pass_survivors": 38, "group": "official", "jds_resolved": 0, "original_postings_resolved": 38, "page_budget": 2, "pages_fetched": 2, "query": "ai engineer", "raw_jobs": 38, "stop_reason": "page_budget", "unique_contribution": 38, "unique_jobs": 38}
-- Query diagnostic: {"elapsed_seconds": 2.595, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 2, "pages_fetched": 2, "query": "machine learning engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
-- Query diagnostic: {"elapsed_seconds": 1.041, "first_pass_survivors": 15, "group": "official", "jds_resolved": 0, "original_postings_resolved": 15, "page_budget": 2, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 23, "stop_reason": "early_stop", "unique_contribution": 15, "unique_jobs": 23}
-- Query diagnostic: {"elapsed_seconds": 1.164, "first_pass_survivors": 4, "group": "official", "jds_resolved": 0, "original_postings_resolved": 4, "page_budget": 2, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 5, "stop_reason": "early_stop", "unique_contribution": 4, "unique_jobs": 5}
-- Query diagnostic: {"elapsed_seconds": 16.125, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 2, "pages_fetched": 2, "query": "data engineer", "raw_jobs": 51, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 51}
-- Query diagnostic: {"elapsed_seconds": 3.263, "first_pass_survivors": 2, "group": "official", "jds_resolved": 0, "original_postings_resolved": 2, "page_budget": 2, "pages_fetched": 2, "query": "platform engineer", "raw_jobs": 38, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 38}
-- Query diagnostic: {"elapsed_seconds": 2.891, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 2, "pages_fetched": 2, "query": "full stack engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
-- Query diagnostic: {"elapsed_seconds": 3.145, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 2, "pages_fetched": 2, "query": "forward deployed engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
-- Query diagnostic: {"elapsed_seconds": 2.471, "first_pass_survivors": 1, "group": "official", "jds_resolved": 0, "original_postings_resolved": 1, "page_budget": 2, "pages_fetched": 2, "query": "software engineer", "raw_jobs": 38, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 38}
+- Query diagnostic: {"elapsed_seconds": 4.067, "first_pass_survivors": 38, "group": "official", "jds_resolved": 0, "original_postings_resolved": 38, "page_budget": 2, "pages_fetched": 2, "query": "ai engineer", "raw_jobs": 38, "stop_reason": "page_budget", "unique_contribution": 38, "unique_jobs": 38}
+- Query diagnostic: {"elapsed_seconds": 2.464, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 2, "pages_fetched": 2, "query": "machine learning engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 35}
+- Query diagnostic: {"elapsed_seconds": 1.148, "first_pass_survivors": 15, "group": "official", "jds_resolved": 0, "original_postings_resolved": 15, "page_budget": 2, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 23, "stop_reason": "early_stop", "unique_contribution": 15, "unique_jobs": 23}
+- Query diagnostic: {"elapsed_seconds": 1.061, "first_pass_survivors": 4, "group": "official", "jds_resolved": 0, "original_postings_resolved": 4, "page_budget": 2, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 5, "stop_reason": "early_stop", "unique_contribution": 4, "unique_jobs": 5}
+- Query diagnostic: {"elapsed_seconds": 5.449, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 2, "pages_fetched": 2, "query": "data engineer", "raw_jobs": 51, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 51}
+- Query diagnostic: {"elapsed_seconds": 2.993, "first_pass_survivors": 2, "group": "official", "jds_resolved": 0, "original_postings_resolved": 2, "page_budget": 2, "pages_fetched": 2, "query": "platform engineer", "raw_jobs": 38, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 38}
+- Query diagnostic: {"elapsed_seconds": 2.402, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 2, "pages_fetched": 2, "query": "full stack engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
+- Query diagnostic: {"elapsed_seconds": 3.316, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 2, "pages_fetched": 2, "query": "forward deployed engineer", "raw_jobs": 36, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 36}
+- Query diagnostic: {"elapsed_seconds": 3.264, "first_pass_survivors": 2, "group": "official", "jds_resolved": 0, "original_postings_resolved": 2, "page_budget": 2, "pages_fetched": 2, "query": "software engineer", "raw_jobs": 39, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 39}
 
 Sample normalized records:
 
@@ -7574,7 +7574,7 @@ Sample normalized records:
     "official_url": "https://careers.equinix.com/jobs/ai-engineer-product-software-redwood-city-california-united-states",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:51.929333+00:00",
+    "fetched_at": "2026-10-08T23:41:40.266102+00:00",
     "date_confidence": "unknown",
     "description": "Who are we? Equinix is the world’s digital infrastructure company®, shortening the path to connectivity to enable the innovations that enrich our work, life and planet. A place whe"
   },
@@ -7587,7 +7587,7 @@ Sample normalized records:
     "official_url": "https://careers.equinix.com/jobs/senior-principal-engineer-enterprise-networking-architecture-automation-and-ai-dallas-texas-united-states-redwood-city-california-toronto-ontario-canada",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:51.929333+00:00",
+    "fetched_at": "2026-10-08T23:41:40.266102+00:00",
     "date_confidence": "unknown",
     "description": ""
   },
@@ -7600,7 +7600,7 @@ Sample normalized records:
     "official_url": "https://careers.equinix.com/jobs/chief-of-staff-enterprise-ai-redwood-city-california-united-states-dallas-texas-toronto-ontario-canada",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:51.929333+00:00",
+    "fetched_at": "2026-10-08T23:41:40.266102+00:00",
     "date_confidence": "unknown",
     "description": ""
   },
@@ -7613,7 +7613,7 @@ Sample normalized records:
     "official_url": "https://careers.equinix.com/jobs/vp-sales-amer-ai-ecosystem-digital-native-redwood-city-california-united-states-bellevue-washington",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:51.929333+00:00",
+    "fetched_at": "2026-10-08T23:41:40.266102+00:00",
     "date_confidence": "unknown",
     "description": ""
   },
@@ -7626,7 +7626,7 @@ Sample normalized records:
     "official_url": "https://careers.equinix.com/jobs/devops-engineer-dallas-texas-united-states",
     "posted_date": "",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:42:51.929333+00:00",
+    "fetched_at": "2026-10-08T23:41:40.266102+00:00",
     "date_confidence": "unknown",
     "description": "Who are we? Equinix is the world’s digital infrastructure company®, shortening the path to connectivity to enable the innovations that enrich our work, life and planet. A place whe"
   }
@@ -7640,8 +7640,8 @@ Sample normalized records:
 - Search URL/API: `https://ffive.wd5.myworkdayjobs.com/f5jobs`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 14
-- HTTP requests/cumulative request time: 16 / 9.271s
-- Company elapsed time: 10.651s
+- HTTP requests/cumulative request time: 16 / 6.747s
+- Company elapsed time: 8.137s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 1 / 0 / 0
 - Detail cache statuses: {'fetched:new': 1}
@@ -7651,15 +7651,15 @@ Sample normalized records:
 - With trustworthy posted_date: 1
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 1.897, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 4, "pages_fetched": 2, "query": "ai engineer", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 0.475, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 0.476, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 1.452, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 2, "query": "solutions architect", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 1.463, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 2, "query": "data engineer", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 1.377, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 2, "query": "platform engineer", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 0.754, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 5, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 0.591, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 1.596, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 2, "query": "software engineer", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 1.414, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 4, "pages_fetched": 2, "query": "ai engineer", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 0.406, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 0.406, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 1.04, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 2, "query": "solutions architect", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 1.082, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 2, "query": "data engineer", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 1.082, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 2, "query": "platform engineer", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 0.52, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 5, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 0.491, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 1.126, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 2, "query": "software engineer", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
 
 Sample normalized records:
 
@@ -7668,13 +7668,13 @@ Sample normalized records:
   {
     "company": "F5",
     "source": "f5_official_careers",
-    "job_id": "RP1038890",
-    "title": "Principal Product Manager, Sales & Partner",
-    "location": "San Jose; Seattle",
-    "official_url": "https://ffive.wd5.myworkdayjobs.com/f5jobs/job/San-Jose/Principal-Product-Manager---Partner-Channel_RP1038890",
-    "posted_date": "2026-10-07",
+    "job_id": "RP1039088",
+    "title": "Account Executive",
+    "location": "Field-CA",
+    "official_url": "https://ffive.wd5.myworkdayjobs.com/f5jobs/job/Field-CA/Account-Executive_RP1039088",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:02.274334+00:00",
+    "fetched_at": "2026-10-08T23:41:45.261416+00:00",
     "date_confidence": "high",
     "description": "At F5, we strive to bring a better digital world to life. Our teams empower organizations across the globe to create, secure, and run applications that enhance how we experience ou"
   }
@@ -7688,8 +7688,8 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/ixllearning/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.328s
-- Company elapsed time: 0.597s
+- HTTP requests/cumulative request time: 1 / 0.129s
+- Company elapsed time: 0.465s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
@@ -7712,7 +7712,7 @@ Sample normalized records:
     "official_url": "https://www.ixl.com/company/jobs?gh_jid=8859221002",
     "posted_date": "2026-09-30",
     "updated_date": "2026-09-30",
-    "fetched_at": "2026-10-08T14:43:12.927081+00:00",
+    "fetched_at": "2026-10-08T23:41:53.399083+00:00",
     "date_confidence": "high",
     "description": "<p>IXL Learning, developer of personalized learning products used by millions of people globally, is seeking Account Managers to join our growing team. The ideal candidate will hav"
   },
@@ -7725,7 +7725,7 @@ Sample normalized records:
     "official_url": "https://www.ixl.com/company/jobs?gh_jid=8734156002",
     "posted_date": "2026-08-20",
     "updated_date": "2026-08-20",
-    "fetched_at": "2026-10-08T14:43:12.927081+00:00",
+    "fetched_at": "2026-10-08T23:41:53.399083+00:00",
     "date_confidence": "high",
     "description": "<p>IXL Learning, developer of personalized learning products used by millions of people globally, is looking for an Administrative Assistant to support IXL’s RFP and proposals stra"
   },
@@ -7738,7 +7738,7 @@ Sample normalized records:
     "official_url": "https://www.ixl.com/company/jobs?gh_jid=8765546002",
     "posted_date": "2026-09-01",
     "updated_date": "2026-10-06",
-    "fetched_at": "2026-10-08T14:43:12.927081+00:00",
+    "fetched_at": "2026-10-08T23:41:53.399083+00:00",
     "date_confidence": "high",
     "description": "<p><span style=\"font-weight: 400;\">IXL Learning, developer of personalized learning products used by millions of people globally, is seeking a US English Language Tutor to join our"
   },
@@ -7751,7 +7751,7 @@ Sample normalized records:
     "official_url": "https://www.ixl.com/company/jobs?gh_jid=8531284002",
     "posted_date": "2026-04-30",
     "updated_date": "2026-07-10",
-    "fetched_at": "2026-10-08T14:43:12.927081+00:00",
+    "fetched_at": "2026-10-08T23:41:53.399083+00:00",
     "date_confidence": "high",
     "description": "<p>IXL Learning, developer of personalized learning products used by millions of people globally, is seeking an Associate Curriculum Alignment Specialist to join our curriculum dev"
   },
@@ -7764,7 +7764,7 @@ Sample normalized records:
     "official_url": "https://www.ixl.com/company/jobs?gh_jid=8611944002",
     "posted_date": "2026-06-29",
     "updated_date": "2026-07-30",
-    "fetched_at": "2026-10-08T14:43:12.927081+00:00",
+    "fetched_at": "2026-10-08T23:41:53.399083+00:00",
     "date_confidence": "high",
     "description": "<p>IXL Learning, developer of personalized learning products used by millions of people globally, is seeking an enthusiastic, highly motivated Associate Digital Designer to join ou"
   }
@@ -7796,26 +7796,26 @@ Sample normalized records:
 - Search URL/API: `https://wf.wd1.myworkdayjobs.com/WellsFargoJobs`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 19
-- HTTP requests/cumulative request time: 91 / 61.872s
-- Company elapsed time: 74.336s
+- HTTP requests/cumulative request time: 93 / 59.252s
+- Company elapsed time: 72.042s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 71 / 0 / 0
-- Detail cache statuses: {'fetched:new': 71}
-- Relevant JD recovery: {'eligible': 6, 'usable_jd': 6}
-- Raw jobs found: 251
-- After US/location filtering: 71
-- With trustworthy posted_date: 71
+- Detail pages fetched/cache reused/prefilter skipped: 73 / 0 / 0
+- Detail cache statuses: {'fetched:new': 73}
+- Relevant JD recovery: {'eligible': 5, 'usable_jd': 5}
+- Raw jobs found: 256
+- After US/location filtering: 73
+- With trustworthy posted_date: 73
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 22.071, "first_pass_survivors": 29, "group": "official", "jds_resolved": 29, "original_postings_resolved": 29, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 29, "stop_reason": "page_budget", "unique_contribution": 29, "unique_jobs": 29}
-- Query diagnostic: {"elapsed_seconds": 5.468, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 9, "stop_reason": "early_stop", "unique_contribution": 5, "unique_jobs": 9}
-- Query diagnostic: {"elapsed_seconds": 0.929, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 20.642, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 46, "stop_reason": "page_budget", "unique_contribution": 22, "unique_jobs": 46}
-- Query diagnostic: {"elapsed_seconds": 11.952, "first_pass_survivors": 13, "group": "official", "jds_resolved": 13, "original_postings_resolved": 13, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 13, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 4.363, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 55, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 55}
-- Query diagnostic: {"elapsed_seconds": 1.097, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 6}
-- Query diagnostic: {"elapsed_seconds": 3.155, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 3.237, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 45}
+- Query diagnostic: {"elapsed_seconds": 22.859, "first_pass_survivors": 29, "group": "official", "jds_resolved": 29, "original_postings_resolved": 29, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 29, "stop_reason": "page_budget", "unique_contribution": 29, "unique_jobs": 29}
+- Query diagnostic: {"elapsed_seconds": 4.303, "first_pass_survivors": 5, "group": "official", "jds_resolved": 5, "original_postings_resolved": 5, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 10, "stop_reason": "early_stop", "unique_contribution": 5, "unique_jobs": 10}
+- Query diagnostic: {"elapsed_seconds": 0.925, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 18.234, "first_pass_survivors": 25, "group": "official", "jds_resolved": 25, "original_postings_resolved": 25, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 49, "stop_reason": "page_budget", "unique_contribution": 25, "unique_jobs": 49}
+- Query diagnostic: {"elapsed_seconds": 14.311, "first_pass_survivors": 12, "group": "official", "jds_resolved": 12, "original_postings_resolved": 12, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 12, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 4.318, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 56, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 56}
+- Query diagnostic: {"elapsed_seconds": 1.117, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 5, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 5}
+- Query diagnostic: {"elapsed_seconds": 1.047, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 3.389, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 46, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 46}
 
 Sample normalized records:
 
@@ -7830,7 +7830,7 @@ Sample normalized records:
     "official_url": "https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/BOSTON-MA/Principal-Enigneer_R-569594",
     "posted_date": "2026-09-23",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:13.525240+00:00",
+    "fetched_at": "2026-10-08T23:41:53.865755+00:00",
     "date_confidence": "high",
     "description": "About this role: Wells Fargo is seeking a Principal AI Engineer to join the CCIBT Gen AI team, which is responsible for building AI frameworks, intelligent agents, and technology p"
   },
@@ -7843,7 +7843,7 @@ Sample normalized records:
     "official_url": "https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CHARLOTTE-NC/Lead-AI-Engineer_R-577897",
     "posted_date": "2026-09-28",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:13.525240+00:00",
+    "fetched_at": "2026-10-08T23:41:53.865755+00:00",
     "date_confidence": "high",
     "description": "Wells Fargo is seeking a Lead Ai Engineer in Technology as part of Commercial and Corporate & Investment Banking Technology (CCIBT).). The primary focus of this group will be to le"
   },
@@ -7856,7 +7856,7 @@ Sample normalized records:
     "official_url": "https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CHARLOTTE-NC/Principal-Engineer---AI-Engineering-Productivity-Lead_R-576649",
     "posted_date": "2026-10-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:13.525240+00:00",
+    "fetched_at": "2026-10-08T23:41:53.865755+00:00",
     "date_confidence": "high",
     "description": "About this role: Wells Fargo is seeking a Principal Engineer who will function as the Chief Operating Office's (COO) Technology Group's AI Engineering Productivity Lead. This indiv"
   },
@@ -7869,7 +7869,7 @@ Sample normalized records:
     "official_url": "https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CHANDLER-AZ/Lead-Specialty-Software-Engineer---Agentic-AI_R-573354-1",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:13.525240+00:00",
+    "fetched_at": "2026-10-08T23:41:53.865755+00:00",
     "date_confidence": "high",
     "description": "About this role: Wells Fargo is seeking a Lead Specialty Software Engineer to support the design and delivery of technology solutions focused on modernizing and accelerating credit"
   },
@@ -7882,7 +7882,7 @@ Sample normalized records:
     "official_url": "https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CHARLOTTE-NC/Senior-Lead-Technology-Risk-Officer--Application-Domain--SDLC--DevOps-and-AI-_R-573422-1",
     "posted_date": "2026-10-03",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:13.525240+00:00",
+    "fetched_at": "2026-10-08T23:41:53.865755+00:00",
     "date_confidence": "high",
     "description": "About this role: The Application Risk Domain Officer operates within Technology Risk Management (TRM), part of Corporate Risk, providing independent second line oversight across ap"
   }
@@ -7896,8 +7896,8 @@ Sample normalized records:
 - Search URL/API: `https://ouryahoo.wd5.myworkdayjobs.com/careers`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 19
-- HTTP requests/cumulative request time: 84 / 45.913s
-- Company elapsed time: 57.196s
+- HTTP requests/cumulative request time: 84 / 45.075s
+- Company elapsed time: 56.547s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 64 / 0 / 0
 - Detail cache statuses: {'fetched:new': 62, 'fetched:missing_detail': 2}
@@ -7907,15 +7907,15 @@ Sample normalized records:
 - With trustworthy posted_date: 64
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 38.431, "first_pass_survivors": 58, "group": "official", "jds_resolved": 58, "original_postings_resolved": 58, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 58, "stop_reason": "page_budget", "unique_contribution": 58, "unique_jobs": 58}
-- Query diagnostic: {"elapsed_seconds": 0.776, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 18, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 18}
-- Query diagnostic: {"elapsed_seconds": 1.181, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 8, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 8}
-- Query diagnostic: {"elapsed_seconds": 4.078, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 29, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 29}
-- Query diagnostic: {"elapsed_seconds": 3.904, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 3.062, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 52, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 52}
-- Query diagnostic: {"elapsed_seconds": 0.933, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 8, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 8}
-- Query diagnostic: {"elapsed_seconds": 0.75, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 2}
-- Query diagnostic: {"elapsed_seconds": 2.908, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 25, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 25}
+- Query diagnostic: {"elapsed_seconds": 39.855, "first_pass_survivors": 58, "group": "official", "jds_resolved": 58, "original_postings_resolved": 58, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 58, "stop_reason": "page_budget", "unique_contribution": 58, "unique_jobs": 58}
+- Query diagnostic: {"elapsed_seconds": 0.65, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 18, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 18}
+- Query diagnostic: {"elapsed_seconds": 1.32, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 8, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 8}
+- Query diagnostic: {"elapsed_seconds": 4.3, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 29, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 29}
+- Query diagnostic: {"elapsed_seconds": 3.166, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.305, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 52, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 52}
+- Query diagnostic: {"elapsed_seconds": 0.663, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 8, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 8}
+- Query diagnostic: {"elapsed_seconds": 0.713, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 2}
+- Query diagnostic: {"elapsed_seconds": 2.686, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 25, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 25}
 
 Sample normalized records:
 
@@ -7930,7 +7930,7 @@ Sample normalized records:
     "official_url": "https://ouryahoo.wd5.myworkdayjobs.com/careers/job/United-States-of-America/Director--Software-Apps-Engineering_JR0027165",
     "posted_date": "2026-09-21",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:27.433204+00:00",
+    "fetched_at": "2026-10-08T23:41:56.561873+00:00",
     "date_confidence": "high",
     "description": "Yahoo Mail is the ultimate consumer inbox with hundreds of millions of users. It’s the best way to access your email and stay organized from a computer, phone or tablet. With its b"
   },
@@ -7943,7 +7943,7 @@ Sample normalized records:
     "official_url": "https://ouryahoo.wd5.myworkdayjobs.com/careers/job/United-States-of-America/Principal-Applied-Research-Scientist---Generative-AI-and-NLP_JR0027182",
     "posted_date": "2026-08-28",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:27.433204+00:00",
+    "fetched_at": "2026-10-08T23:41:56.561873+00:00",
     "date_confidence": "high",
     "description": "Yahoo Mail is the ultimate consumer inbox with hundreds of millions of users. It’s the best way to access your email and stay organized from a computer, phone or tablet. With its b"
   },
@@ -7956,7 +7956,7 @@ Sample normalized records:
     "official_url": "https://ouryahoo.wd5.myworkdayjobs.com/careers/job/United-States-of-America/Senior-Manager--HR-AI-Strategy---Governance_JR0027479",
     "posted_date": "2026-09-15",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:27.433204+00:00",
+    "fetched_at": "2026-10-08T23:41:56.561873+00:00",
     "date_confidence": "high",
     "description": "Yahoo serves as a trusted guide for hundreds of millions of people globally, helping them achieve their goals online through our portfolio of iconic products. For advertisers, Yaho"
   },
@@ -7969,7 +7969,7 @@ Sample normalized records:
     "official_url": "https://ouryahoo.wd5.myworkdayjobs.com/careers/job/United-States-of-America/Senior-Principal-AI-ML-Architect--Yahoo-Mail_JR0026993",
     "posted_date": "2026-09-11",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:27.433204+00:00",
+    "fetched_at": "2026-10-08T23:41:56.561873+00:00",
     "date_confidence": "high",
     "description": "Yahoo Mail is the ultimate consumer inbox with hundreds of millions of users. It’s the best way to access your email and stay organized from a computer, phone or tablet. With its b"
   },
@@ -7982,7 +7982,7 @@ Sample normalized records:
     "official_url": "https://ouryahoo.wd5.myworkdayjobs.com/careers/job/United-States-of-America/Director-of-Engineering--Search-Query-Understanding-and-Guidance_JR0027452",
     "posted_date": "2026-09-28",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:27.433204+00:00",
+    "fetched_at": "2026-10-08T23:41:56.561873+00:00",
     "date_confidence": "high",
     "description": "Yahoo serves as a trusted guide for hundreds of millions of people globally, helping them achieve their goals online through our portfolio of iconic products. For advertisers, Yaho"
   }
@@ -7996,8 +7996,8 @@ Sample normalized records:
 - Search URL/API: `https://careers.synopsys.com/search-jobs`
 - Pagination: p=1,2,...; stop on empty/repeat/short page
 - Pages/requests fetched: 3
-- HTTP requests/cumulative request time: 25 / 2.397s
-- Company elapsed time: 5.794s
+- HTTP requests/cumulative request time: 25 / 12.000s
+- Company elapsed time: 15.837s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 22 / 0 / 0
 - Detail cache statuses: none
@@ -8007,7 +8007,7 @@ Sample normalized records:
 - With trustworthy posted_date: 22
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 5.794, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 3, "query": "Ansys", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 22, "unique_jobs": 45}
+- Query diagnostic: {"elapsed_seconds": 15.837, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 3, "query": "Ansys", "raw_jobs": 45, "stop_reason": "page_budget", "unique_contribution": 22, "unique_jobs": 45}
 
 Sample normalized records:
 
@@ -8022,7 +8022,7 @@ Sample normalized records:
     "official_url": "https://careers.synopsys.com/job/waltham/senior-application-engineer/44408/100992954016",
     "posted_date": "2026-06-29",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:46.663752+00:00",
+    "fetched_at": "2026-10-08T23:42:06.431499+00:00",
     "date_confidence": "high",
     "description": "THIS POSITION IS ELIGIBLE UNDER THE TERMS OF THE EMPLOYEE REFERRAL PROGRAM (ERP): SUMMARY ANSYS, Inc. seeks Senior Application Engineer to work in Waltham, MA RESPONSIBILITIES Lead"
   },
@@ -8035,7 +8035,7 @@ Sample normalized records:
     "official_url": "https://careers.synopsys.com/job/canonsburg/academic-outreach-sr-associate/44408/100032391312",
     "posted_date": "2026-09-01",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:46.663752+00:00",
+    "fetched_at": "2026-10-08T23:42:06.431499+00:00",
     "date_confidence": "high",
     "description": "We Are Synopsys is the leader in engineering solutions from silicon to systems, enabling customers to rapidly innovate AI-powered products. We deliver industry-leading silicon desi"
   },
@@ -8048,7 +8048,7 @@ Sample normalized records:
     "official_url": "https://careers.synopsys.com/job/chalandri/technical-support-engineer-optics-and-photonics/44408/96518777376",
     "posted_date": "2026-06-16",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:46.663752+00:00",
+    "fetched_at": "2026-10-08T23:42:06.431499+00:00",
     "date_confidence": "high",
     "description": "We Are Synopsys is the leader in engineering solutions from silicon to systems, enabling customers to rapidly innovate AI-powered products. We deliver industry-leading silicon desi"
   },
@@ -8061,7 +8061,7 @@ Sample normalized records:
     "official_url": "https://careers.synopsys.com/job/dc/mission-systems-engineer/44408/101056156880",
     "posted_date": "2026-09-23",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:46.663752+00:00",
+    "fetched_at": "2026-10-08T23:42:06.431499+00:00",
     "date_confidence": "high",
     "description": "We Are: At Synopsys, we drive the innovations that shape the way we live and connect. Our technology is central to the Era of Pervasive Intelligence, from self-driving cars to lear"
   },
@@ -8074,7 +8074,7 @@ Sample normalized records:
     "official_url": "https://careers.synopsys.com/job/chalandri/technical-support-engineer-high-frequency-electromagnetics/44408/99804907584",
     "posted_date": "2026-08-27",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:46.663752+00:00",
+    "fetched_at": "2026-10-08T23:42:06.431499+00:00",
     "date_confidence": "high",
     "description": "We Are Synopsys is the leader in engineering solutions from silicon to systems, enabling customers to rapidly innovate AI-powered products. We deliver industry-leading silicon desi"
   }
@@ -8105,27 +8105,27 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://flextronics.wd1.myworkdayjobs.com/Careers`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 21
-- HTTP requests/cumulative request time: 179 / 83.786s
-- Company elapsed time: 106.983s
+- Pages/requests fetched: 23
+- HTTP requests/cumulative request time: 185 / 84.405s
+- Company elapsed time: 108.941s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 157 / 0 / 0
-- Detail cache statuses: {'fetched:new': 156, 'fetched:missing_detail': 1}
-- Relevant JD recovery: {'eligible': 102, 'usable_jd': 102}
-- Raw jobs found: 308
-- After US/location filtering: 157
-- With trustworthy posted_date: 157
+- Detail pages fetched/cache reused/prefilter skipped: 161 / 0 / 0
+- Detail cache statuses: {'fetched:new': 160, 'fetched:missing_detail': 1}
+- Relevant JD recovery: {'eligible': 106, 'usable_jd': 106}
+- Raw jobs found: 311
+- After US/location filtering: 161
+- With trustworthy posted_date: 161
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 42.86, "first_pass_survivors": 80, "group": "official", "jds_resolved": 80, "original_postings_resolved": 80, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 80, "unique_jobs": 80}
-- Query diagnostic: {"elapsed_seconds": 4.395, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 10, "stop_reason": "early_stop", "unique_contribution": 8, "unique_jobs": 10}
-- Query diagnostic: {"elapsed_seconds": 1.201, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 6.013, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 27, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 27}
-- Query diagnostic: {"elapsed_seconds": 18.859, "first_pass_survivors": 25, "group": "official", "jds_resolved": 25, "original_postings_resolved": 25, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 25, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 6.242, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 33, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 33}
-- Query diagnostic: {"elapsed_seconds": 5.831, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 16, "stop_reason": "early_stop", "unique_contribution": 10, "unique_jobs": 16}
-- Query diagnostic: {"elapsed_seconds": 1.33, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 18.034, "first_pass_survivors": 27, "group": "official", "jds_resolved": 27, "original_postings_resolved": 27, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 27, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 44.189, "first_pass_survivors": 80, "group": "official", "jds_resolved": 80, "original_postings_resolved": 80, "page_budget": 4, "pages_fetched": 4, "query": "ai engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 80, "unique_jobs": 80}
+- Query diagnostic: {"elapsed_seconds": 4.896, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 10, "stop_reason": "early_stop", "unique_contribution": 8, "unique_jobs": 10}
+- Query diagnostic: {"elapsed_seconds": 1.339, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 5.8, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 25, "stop_reason": "page_budget", "unique_contribution": 3, "unique_jobs": 25}
+- Query diagnostic: {"elapsed_seconds": 15.047, "first_pass_survivors": 25, "group": "official", "jds_resolved": 25, "original_postings_resolved": 25, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 25, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 6.251, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 33, "stop_reason": "page_budget", "unique_contribution": 4, "unique_jobs": 33}
+- Query diagnostic: {"elapsed_seconds": 10.821, "first_pass_survivors": 14, "group": "official", "jds_resolved": 14, "original_postings_resolved": 14, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 21, "stop_reason": "page_budget", "unique_contribution": 14, "unique_jobs": 21}
+- Query diagnostic: {"elapsed_seconds": 1.206, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 17.571, "first_pass_survivors": 27, "group": "official", "jds_resolved": 27, "original_postings_resolved": 27, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 80, "stop_reason": "page_budget", "unique_contribution": 27, "unique_jobs": 80}
 
 Sample normalized records:
 
@@ -8140,7 +8140,7 @@ Sample normalized records:
     "official_url": "https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-MA-Littleton/Sales-Engineer_WD218757",
     "posted_date": "2026-10-01",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:52.458509+00:00",
+    "fetched_at": "2026-10-08T23:42:22.270105+00:00",
     "date_confidence": "high",
     "description": "At JetCool, a Flex company, we’re at the forefront of liquid cooling innovation, delivering advanced solutions that empower our partners in AI and high-performance computing. Unite"
   },
@@ -8153,7 +8153,7 @@ Sample normalized records:
     "official_url": "https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-TX-Austin/Associate-Principal-Engineer--Mechanical-Engineering_WD228496",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:52.458509+00:00",
+    "fetched_at": "2026-10-08T23:42:22.270105+00:00",
     "date_confidence": "high",
     "description": "Flex is the diversified manufacturing partner of choice that helps market-leading brands design, build and deliver innovative products that improve the world. A career at Flex offe"
   },
@@ -8166,7 +8166,7 @@ Sample normalized records:
     "official_url": "https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-TX-Austin/Associate-Principal-Engineer--Electrical-Engineering_WD228495",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:52.458509+00:00",
+    "fetched_at": "2026-10-08T23:42:22.270105+00:00",
     "date_confidence": "high",
     "description": "Flex is the diversified manufacturing partner of choice that helps market-leading brands design, build and deliver innovative products that improve the world. A career at Flex offe"
   },
@@ -8179,7 +8179,7 @@ Sample normalized records:
     "official_url": "https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-TX-Austin/Principal-Engineer--Systems-Architecture-Engineering_WD228345",
     "posted_date": "2026-10-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:52.458509+00:00",
+    "fetched_at": "2026-10-08T23:42:22.270105+00:00",
     "date_confidence": "high",
     "description": "Flex is the diversified manufacturing partner of choice that helps market-leading brands design, build and deliver innovative products that improve the world. A career at Flex offe"
   },
@@ -8192,7 +8192,7 @@ Sample normalized records:
     "official_url": "https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-TX-Austin/Principal-Engineer--Advanced-Power-Engineering_WD228344",
     "posted_date": "2026-10-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:43:52.458509+00:00",
+    "fetched_at": "2026-10-08T23:42:22.270105+00:00",
     "date_confidence": "high",
     "description": "Flex is the diversified manufacturing partner of choice that helps market-leading brands design, build and deliver innovative products that improve the world. A career at Flex offe"
   }
@@ -8206,8 +8206,8 @@ Sample normalized records:
 - Search URL/API: `https://iqvia.wd1.myworkdayjobs.com/IQVIA`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 9
-- HTTP requests/cumulative request time: 16 / 12.633s
-- Company elapsed time: 13.382s
+- HTTP requests/cumulative request time: 16 / 12.032s
+- Company elapsed time: 12.795s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 6 / 0 / 0
 - Detail cache statuses: {'fetched:new': 6}
@@ -8217,15 +8217,15 @@ Sample normalized records:
 - With trustworthy posted_date: 6
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 4.237, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 4, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 4, "stop_reason": "early_stop", "unique_contribution": 4, "unique_jobs": 4}
-- Query diagnostic: {"elapsed_seconds": 0.878, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 0.789, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 1.885, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 2}
-- Query diagnostic: {"elapsed_seconds": 0.95, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data engineer", "raw_jobs": 5, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 5}
-- Query diagnostic: {"elapsed_seconds": 0.834, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 3, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 3}
-- Query diagnostic: {"elapsed_seconds": 1.003, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.853, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.967, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 3, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 3}
+- Query diagnostic: {"elapsed_seconds": 3.151, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 4, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 4, "stop_reason": "early_stop", "unique_contribution": 4, "unique_jobs": 4}
+- Query diagnostic: {"elapsed_seconds": 0.957, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 1.041, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 1.866, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 2}
+- Query diagnostic: {"elapsed_seconds": 0.96, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data engineer", "raw_jobs": 5, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 5}
+- Query diagnostic: {"elapsed_seconds": 0.848, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 3, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 3}
+- Query diagnostic: {"elapsed_seconds": 0.929, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 1.023, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.939, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 3, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 3}
 
 Sample normalized records:
 
@@ -8240,7 +8240,7 @@ Sample normalized records:
     "official_url": "https://iqvia.wd1.myworkdayjobs.com/IQVIA/job/Greenwich-CT-United-States-of-America/Healthcare-Analytics--AI-Product---Methodology-Analyst_R1562238",
     "posted_date": "2026-09-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:24.630452+00:00",
+    "fetched_at": "2026-10-08T23:42:40.151086+00:00",
     "date_confidence": "high",
     "description": "About Cedar Gate Technologies Cedar Gate Technologies, an IQVIA business, enables payers, providers, employers, and service administrators to excel at value-based care with a unifi"
   },
@@ -8253,7 +8253,7 @@ Sample normalized records:
     "official_url": "https://iqvia.wd1.myworkdayjobs.com/IQVIA/job/Carlsbad-CA-United-States-of-America/MedTech-Field-Service-Technician-Device-Upgrade-or-Engineer_R1566486",
     "posted_date": "2026-09-24",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:24.630452+00:00",
+    "fetched_at": "2026-10-08T23:42:40.151086+00:00",
     "date_confidence": "high",
     "description": "Our MedTech Field Service Technicians and Engineers experience a unique opportunity employ their technical experience by collaborating with healthcare professionals and leading tec"
   },
@@ -8266,7 +8266,7 @@ Sample normalized records:
     "official_url": "https://iqvia.wd1.myworkdayjobs.com/IQVIA/job/Wayne-PA-United-States-of-America/Director-of-Product--Media-OS-Activation--IQVIA-Digital_R1563204",
     "posted_date": "2026-08-28",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:24.630452+00:00",
+    "fetched_at": "2026-10-08T23:42:40.151086+00:00",
     "date_confidence": "high",
     "description": "About IQVIA Digital IQVIA Digital powers exceptional brand experiences, delivering innovative solutions based on a customer-first, insights-driven, and integrated omnichannel visio"
   },
@@ -8279,7 +8279,7 @@ Sample normalized records:
     "official_url": "https://iqvia.wd1.myworkdayjobs.com/IQVIA/job/Carlsbad-CA-United-States-of-America/Director--Key-Account-Management---IQVIA-Clinical-Technology_R1539066",
     "posted_date": "2026-06-05",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:24.630452+00:00",
+    "fetched_at": "2026-10-08T23:42:40.151086+00:00",
     "date_confidence": "high",
     "description": "Join us on our exciting journey! IQVIA™ is The Human Data Science Company™, focused on using data and science to help healthcare clients find better solutions for their patients. F"
   },
@@ -8292,7 +8292,7 @@ Sample normalized records:
     "official_url": "https://iqvia.wd1.myworkdayjobs.com/IQVIA/job/Houston-Texas-United-States-of-America/SQL-Server-Architect_R1548883",
     "posted_date": "2026-07-20",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:24.630452+00:00",
+    "fetched_at": "2026-10-08T23:42:40.151086+00:00",
     "date_confidence": "high",
     "description": "About Cedar Gate Technologies Cedar Gate Technologies, an IQVIA business, enables payers, providers, employers, and service administrators to excel at value-based care with a unifi"
   }
@@ -8305,27 +8305,27 @@ Sample normalized records:
 - Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
 - Search URL/API: `https://jj.wd5.myworkdayjobs.com/JJ`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
-- Pages/requests fetched: 22
-- HTTP requests/cumulative request time: 215 / 141.594s
-- Company elapsed time: 170.496s
+- Pages/requests fetched: 23
+- HTTP requests/cumulative request time: 219 / 88.309s
+- Company elapsed time: 118.396s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 192 / 0 / 0
-- Detail cache statuses: {'fetched:new': 191, 'fetched:missing_detail': 1}
-- Relevant JD recovery: {'eligible': 58, 'usable_jd': 58}
-- Raw jobs found: 420
-- After US/location filtering: 192
-- With trustworthy posted_date: 192
+- Detail pages fetched/cache reused/prefilter skipped: 195 / 0 / 0
+- Detail cache statuses: {'fetched:new': 194, 'fetched:missing_detail': 1}
+- Relevant JD recovery: {'eligible': 55, 'usable_jd': 55}
+- Raw jobs found: 423
+- After US/location filtering: 195
+- With trustworthy posted_date: 195
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 44.645, "first_pass_survivors": 57, "group": "official", "jds_resolved": 57, "original_postings_resolved": 57, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 57, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 16.182, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 2, "query": "machine learning engineer", "raw_jobs": 39, "stop_reason": "early_stop", "unique_contribution": 22, "unique_jobs": 39}
-- Query diagnostic: {"elapsed_seconds": 29.703, "first_pass_survivors": 37, "group": "official", "jds_resolved": 37, "original_postings_resolved": 37, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 37, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 18.583, "first_pass_survivors": 25, "group": "official", "jds_resolved": 25, "original_postings_resolved": 25, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 25, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 15.335, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 22, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 20.555, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 9, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 6.924, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 10, "unique_jobs": 20}
-- Query diagnostic: {"elapsed_seconds": 0.349, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
-- Query diagnostic: {"elapsed_seconds": 17.871, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 32.181, "first_pass_survivors": 56, "group": "official", "jds_resolved": 56, "original_postings_resolved": 56, "page_budget": 3, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 56, "unique_jobs": 59}
+- Query diagnostic: {"elapsed_seconds": 14.657, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "machine learning engineer", "raw_jobs": 42, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 42}
+- Query diagnostic: {"elapsed_seconds": 21.478, "first_pass_survivors": 37, "group": "official", "jds_resolved": 37, "original_postings_resolved": 37, "page_budget": 3, "pages_fetched": 3, "query": "data scientist", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 37, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 16.408, "first_pass_survivors": 27, "group": "official", "jds_resolved": 27, "original_postings_resolved": 27, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 27, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 14.128, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 6.045, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 5.451, "first_pass_survivors": 11, "group": "official", "jds_resolved": 11, "original_postings_resolved": 11, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 11, "unique_jobs": 20}
+- Query diagnostic: {"elapsed_seconds": 0.479, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 7.233, "first_pass_survivors": 11, "group": "official", "jds_resolved": 11, "original_postings_resolved": 11, "page_budget": 3, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 11, "unique_jobs": 60}
 
 Sample normalized records:
 
@@ -8334,65 +8334,65 @@ Sample normalized records:
   {
     "company": "Johnson & Johnson",
     "source": "johnson_&_johnson_official_careers",
-    "job_id": "R-103083",
-    "title": "Manager, Laboratory Systems & Data",
-    "location": "Raynham, Massachusetts, United States of America; West Chester, Pennsylvania, United States of America; Leeds, West Yorkshire, United Kingdom; Warsaw, Indiana, United States of America; Oberdorf, Basel-Country, Switzerland",
-    "official_url": "https://jj.wd5.myworkdayjobs.com/JJ/job/Raynham-Massachusetts-United-States-of-America/Manager--Laboratory-Systems---Data_R-103083-1",
+    "job_id": "R-099283",
+    "title": "Senior Scientist, Data (AI) Scientist, Translational Safety",
+    "location": "Spring House, Pennsylvania, United States of America; Horsham, Pennsylvania, United States of America; New Brunswick, New Jersey, United States of America; Cambridge, Massachusetts, United States of America; Raritan, New Jersey, United States of America; Titusville, New Jersey, United States of America",
+    "official_url": "https://jj.wd5.myworkdayjobs.com/JJ/job/Spring-House-Pennsylvania-United-States-of-America/Senior-Scientist--Data--AI--Scientist--Translational-Safety_R-099283-2",
     "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:27.862612+00:00",
+    "fetched_at": "2026-10-08T23:42:52.946635+00:00",
     "date_confidence": "high",
     "description": "At Johnson & Johnson, we believe health is everything. Our strength in healthcare innovation empowers us to build a world where complex diseases are prevented, treated, and cured, "
   },
   {
     "company": "Johnson & Johnson",
     "source": "johnson_&_johnson_official_careers",
-    "job_id": "R-102812",
-    "title": "Associate Director, Lab Automation & Intelligent Orchestration",
-    "location": "Spring House, Pennsylvania, United States of America",
-    "official_url": "https://jj.wd5.myworkdayjobs.com/JJ/job/Spring-House-Pennsylvania-United-States-of-America/Associate-Director--Lab-Automation---Intelligent-Orchestration_R-102812-1",
-    "posted_date": "2026-10-07",
+    "job_id": "R-102895",
+    "title": "Technical Product Owner",
+    "location": "Irvine, California, United States of America",
+    "official_url": "https://jj.wd5.myworkdayjobs.com/JJ/job/Irvine-California-United-States-of-America/Technical-Product-Owner_R-102895",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:27.862612+00:00",
+    "fetched_at": "2026-10-08T23:42:52.946635+00:00",
     "date_confidence": "high",
     "description": "At Johnson & Johnson, we believe health is everything. Our strength in healthcare innovation empowers us to build a world where complex diseases are prevented, treated, and cured, "
   },
   {
     "company": "Johnson & Johnson",
     "source": "johnson_&_johnson_official_careers",
-    "job_id": "R-092765",
-    "title": "Finance SAP Transformation Leader",
+    "job_id": "R-103073",
+    "title": "Manager, Data Science - Finance Advanced Analytics & Reporting",
     "location": "New Brunswick, New Jersey, United States of America",
-    "official_url": "https://jj.wd5.myworkdayjobs.com/JJ/job/New-Brunswick-New-Jersey-United-States-of-America/Finance-SAP-Transformation-Leader_R-092765-1",
-    "posted_date": "2026-10-07",
+    "official_url": "https://jj.wd5.myworkdayjobs.com/JJ/job/New-Brunswick-New-Jersey-United-States-of-America/Manager--Data-Science---Finance-Advanced-Analytics---Reporting_R-103073-1",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:27.862612+00:00",
+    "fetched_at": "2026-10-08T23:42:52.946635+00:00",
     "date_confidence": "high",
     "description": "At Johnson & Johnson, we believe health is everything. Our strength in healthcare innovation empowers us to build a world where complex diseases are prevented, treated, and cured, "
   },
   {
     "company": "Johnson & Johnson",
     "source": "johnson_&_johnson_official_careers",
-    "job_id": "R-096933",
-    "title": "Senior Director, Medical AI and Data",
-    "location": "Raritan, New Jersey, United States of America",
-    "official_url": "https://jj.wd5.myworkdayjobs.com/JJ/job/Raritan-New-Jersey-United-States-of-America/Senior-Director--Medical-AI-and-Data_R-096933-1",
-    "posted_date": "2026-10-07",
+    "job_id": "R-087040",
+    "title": "Manager, HR Data & Integrations",
+    "location": "New Brunswick, New Jersey, United States of America",
+    "official_url": "https://jj.wd5.myworkdayjobs.com/JJ/job/New-Brunswick-New-Jersey-United-States-of-America/Manager--HR-Data---Integrations_R-087040-1",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:27.862612+00:00",
+    "fetched_at": "2026-10-08T23:42:52.946635+00:00",
     "date_confidence": "high",
     "description": "At Johnson & Johnson, we believe health is everything. Our strength in healthcare innovation empowers us to build a world where complex diseases are prevented, treated, and cured, "
   },
   {
     "company": "Johnson & Johnson",
     "source": "johnson_&_johnson_official_careers",
-    "job_id": "R-102108",
-    "title": "Manager, Product Manager - MedTech Polyphonic Surgery",
-    "location": "Santa Clara, California, United States of America",
-    "official_url": "https://jj.wd5.myworkdayjobs.com/JJ/job/Santa-Clara-California-United-States-of-America/Manager--Product-Manager---MedTech-Polyphonic-Surgery_R-102108-1",
-    "posted_date": "2026-10-07",
+    "job_id": "R-101057",
+    "title": "IT Manager, Global Platforms TPO",
+    "location": "Titusville, New Jersey, United States of America; Horsham, Pennsylvania, United States of America",
+    "official_url": "https://jj.wd5.myworkdayjobs.com/JJ/job/Titusville-New-Jersey-United-States-of-America/IT-Manager--Global-Platforms-TPO_R-101057-1",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:27.862612+00:00",
+    "fetched_at": "2026-10-08T23:42:52.946635+00:00",
     "date_confidence": "high",
     "description": "At Johnson & Johnson, we believe health is everything. Our strength in healthcare innovation empowers us to build a world where complex diseases are prevented, treated, and cured, "
   }
@@ -8406,8 +8406,8 @@ Sample normalized records:
 - Search URL/API: `https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 13
-- HTTP requests/cumulative request time: 40 / 30.744s
-- Company elapsed time: 34.975s
+- HTTP requests/cumulative request time: 40 / 20.995s
+- Company elapsed time: 25.274s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 26 / 0 / 0
 - Detail cache statuses: {'fetched:new': 26}
@@ -8417,15 +8417,15 @@ Sample normalized records:
 - With trustworthy posted_date: 26
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 17.969, "first_pass_survivors": 15, "group": "official", "jds_resolved": 15, "original_postings_resolved": 15, "page_budget": 4, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 15, "stop_reason": "early_stop", "unique_contribution": 15, "unique_jobs": 15}
-- Query diagnostic: {"elapsed_seconds": 1.056, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 3, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 3}
-- Query diagnostic: {"elapsed_seconds": 0.679, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 2}
-- Query diagnostic: {"elapsed_seconds": 2.159, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 9, "stop_reason": "early_stop", "unique_contribution": 4, "unique_jobs": 9}
-- Query diagnostic: {"elapsed_seconds": 6.579, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 24, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 24}
-- Query diagnostic: {"elapsed_seconds": 1.068, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 18, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 18}
-- Query diagnostic: {"elapsed_seconds": 0.937, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 9, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 9}
-- Query diagnostic: {"elapsed_seconds": 0.736, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 3.097, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 21, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 21}
+- Query diagnostic: {"elapsed_seconds": 8.968, "first_pass_survivors": 15, "group": "official", "jds_resolved": 15, "original_postings_resolved": 15, "page_budget": 4, "pages_fetched": 1, "query": "ai engineer", "raw_jobs": 15, "stop_reason": "early_stop", "unique_contribution": 15, "unique_jobs": 15}
+- Query diagnostic: {"elapsed_seconds": 0.695, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 3, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 3}
+- Query diagnostic: {"elapsed_seconds": 0.727, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 2}
+- Query diagnostic: {"elapsed_seconds": 2.956, "first_pass_survivors": 4, "group": "official", "jds_resolved": 4, "original_postings_resolved": 4, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 9, "stop_reason": "early_stop", "unique_contribution": 4, "unique_jobs": 9}
+- Query diagnostic: {"elapsed_seconds": 6.213, "first_pass_survivors": 7, "group": "official", "jds_resolved": 7, "original_postings_resolved": 7, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 24, "stop_reason": "page_budget", "unique_contribution": 7, "unique_jobs": 24}
+- Query diagnostic: {"elapsed_seconds": 0.706, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 18, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 18}
+- Query diagnostic: {"elapsed_seconds": 0.686, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 9, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 9}
+- Query diagnostic: {"elapsed_seconds": 0.671, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 2.893, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 3, "query": "software engineer", "raw_jobs": 21, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 21}
 
 Sample normalized records:
 
@@ -8440,7 +8440,7 @@ Sample normalized records:
     "official_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/USA---New-York-City---New-York/AI-Product-Owner---Corporate-Finance_R0025386",
     "posted_date": "2026-06-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:38.013918+00:00",
+    "fetched_at": "2026-10-08T23:42:53.109991+00:00",
     "date_confidence": "high",
     "description": "As a Director, AI Engineering & Automation , you will be accountable for leading the execution of the AI strategy within our Corporate Finance Division. This role requires a proven"
   },
@@ -8453,7 +8453,7 @@ Sample normalized records:
     "official_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/USA---Atlanta---Georgia/AI-Engineer_R0024206-1",
     "posted_date": "2026-09-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:38.013918+00:00",
+    "fetched_at": "2026-10-08T23:42:53.109991+00:00",
     "date_confidence": "high",
     "description": "We're looking for a Senior AI Application Engineer (.NET) to design, build, and scale intelligent enterprise applications powered by modern AI technologies. This role is ideal for "
   },
@@ -8466,7 +8466,7 @@ Sample normalized records:
     "official_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/USA---New-York-City---New-York/AI---DevOps-Engineer---Agentic-Systems---Automation_R0026613",
     "posted_date": "2026-09-23",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:38.013918+00:00",
+    "fetched_at": "2026-10-08T23:42:53.109991+00:00",
     "date_confidence": "high",
     "description": "s a Lead DevOps Engineer reporting to the AVP – Systems and Network Administration, you'll play a critical role in building and operating intelligent automation platforms, AI agent"
   },
@@ -8479,7 +8479,7 @@ Sample normalized records:
     "official_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/Washington-DC/Investigative-Data-Scientist-AI-Engineer_R0026342",
     "posted_date": "2026-08-25",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:38.013918+00:00",
+    "fetched_at": "2026-10-08T23:42:53.109991+00:00",
     "date_confidence": "high",
     "description": "As a Markets Investigator , you'll play a critical role in protecting market integrity by combining investigative analysis with AI and data science to support Nasdaq's Investigatio"
   },
@@ -8492,7 +8492,7 @@ Sample normalized records:
     "official_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/USA---Boston---Massachusetts/Software-Engineer---Cloud-Solutions---AI_R0026782",
     "posted_date": "2026-09-11",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:38.013918+00:00",
+    "fetched_at": "2026-10-08T23:42:53.109991+00:00",
     "date_confidence": "high",
     "description": "As a Software Engineer reporting to the Senior Director of Software Engineering, you'll play a key role in building and improving the Nasdaq Questionnaires platform — a SaaS soluti"
   }
@@ -8506,15 +8506,15 @@ Sample normalized records:
 - Search URL/API: `https://api.lever.co/v0/postings/pointclickcare`
 - Pagination: single JSON payload
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 4.714s
-- Company elapsed time: 4.755s
+- HTTP requests/cumulative request time: 1 / 0.290s
+- Company elapsed time: 0.352s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 4 / 37
 - Detail cache statuses: {'reused': 4}
 - Relevant JD recovery: {'deterministic_skip': 32, 'eligible': 11, 'cache_reused': 4, 'ai_skip': 5, 'usable_jd': 11}
-- Raw jobs found: 69
-- After US/location filtering: 62
-- With trustworthy posted_date: 62
+- Raw jobs found: 71
+- After US/location filtering: 64
+- With trustworthy posted_date: 64
 - Errors/403s: none
 
 Sample normalized records:
@@ -8530,9 +8530,22 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/pointclickcare/ccdecc93-aef2-4b2b-a981-6843f3c16221",
     "posted_date": "2026-08-13",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:40.632711+00:00",
+    "fetched_at": "2026-10-08T23:43:05.912927+00:00",
     "date_confidence": "high",
     "description": ""
+  },
+  {
+    "company": "PointClickCare",
+    "source": "pointclickcare_official_careers",
+    "job_id": "e4dfc6fd-3cd8-46e1-8c30-717fb77b450c",
+    "title": "(Canada) Sales Development Representative",
+    "location": "Mississauga",
+    "official_url": "https://jobs.lever.co/pointclickcare/e4dfc6fd-3cd8-46e1-8c30-717fb77b450c",
+    "posted_date": "2026-10-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:43:05.912927+00:00",
+    "date_confidence": "high",
+    "description": "Develop strong content knowledge of the healthcare industry Research potential prospects Create a strategic outreach plan with Vice President of Sales to target prospective custome"
   },
   {
     "company": "PointClickCare",
@@ -8543,7 +8556,7 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/pointclickcare/6b7f5c7a-372b-4a4a-8187-b2c347157e14",
     "posted_date": "2026-07-09",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:40.632711+00:00",
+    "fetched_at": "2026-10-08T23:43:05.912927+00:00",
     "date_confidence": "high",
     "description": "Principal implementation liaison on the project team documenting customer requirements, translating technical requirements into configuration setup, business processes and goals Le"
   },
@@ -8556,56 +8569,125 @@ Sample normalized records:
     "official_url": "https://jobs.lever.co/pointclickcare/423445e1-953c-45e2-a9ac-ce46598c89d7",
     "posted_date": "2026-08-13",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:40.632711+00:00",
+    "fetched_at": "2026-10-08T23:43:05.912927+00:00",
     "date_confidence": "high",
     "description": ""
   },
   {
     "company": "PointClickCare",
     "source": "pointclickcare_official_careers",
-    "job_id": "e6fd28a0-e062-499d-8004-ea3280e62f4e",
-    "title": "(US) Software Implementation Consultant - Clinical",
+    "job_id": "5aaaf912-ca44-4ccf-a307-9178e6a152ab",
+    "title": "(US) Sales Development Representative",
     "location": "Remote, USA",
-    "official_url": "https://jobs.lever.co/pointclickcare/e6fd28a0-e062-499d-8004-ea3280e62f4e",
-    "posted_date": "2026-07-09",
+    "official_url": "https://jobs.lever.co/pointclickcare/5aaaf912-ca44-4ccf-a307-9178e6a152ab",
+    "posted_date": "2026-10-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:40.632711+00:00",
+    "fetched_at": "2026-10-08T23:43:05.912927+00:00",
     "date_confidence": "high",
-    "description": "Principal implementation liaison on the project team documenting customer requirements, translating technical requirements into configuration setup, business processes and goals Le"
-  },
-  {
-    "company": "PointClickCare",
-    "source": "pointclickcare_official_careers",
-    "job_id": "4ef6a183-4c22-4103-9278-26b07185bc8e",
-    "title": "Accounts Receivable Specialist (6 month contract)",
-    "location": "Mississauga, Ontario",
-    "official_url": "https://jobs.lever.co/pointclickcare/4ef6a183-4c22-4103-9278-26b07185bc8e",
-    "posted_date": "2026-08-20",
-    "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:40.632711+00:00",
-    "date_confidence": "high",
-    "description": "Collection’s activities relating to mixed portfolio of customer accounts, including communication with clients regarding collections issues, actions, payment inquiries and invoicin"
+    "description": "Develop strong content knowledge of the healthcare industry Research potential prospects Create a strategic outreach plan with Vice President of Sales to target prospective custome"
   }
 ]
 ```
 
 ## Stryker
 
-- Status: blocked
-- Scraping method: workday
-- Search URL/API: `-`
-- Pagination: -
-- Pages/requests fetched: 0
-- HTTP requests/cumulative request time: 32 / 17.535s
-- Company elapsed time: 21.303s
-- Incremental mode/page cap: - / -
-- Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
-- Detail cache statuses: none
-- Relevant JD recovery: {'usable_jd': 0}
-- Raw jobs found: 0
-- After US/location filtering: 0
-- With trustworthy posted_date: 0
-- Errors/403s: ['Stryker workday HTTP 502']
+- Status: ok
+- Scraping method: HTTP POST Workday CXS /wday/cxs/{tenant}/{site}/jobs (+ optional job detail GET)
+- Search URL/API: `https://stryker.wd1.myworkdayjobs.com/StrykerCareers`
+- Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
+- Pages/requests fetched: 20
+- HTTP requests/cumulative request time: 152 / 65.490s
+- Company elapsed time: 85.386s
+- Incremental mode/page cap: incremental / 4
+- Detail pages fetched/cache reused/prefilter skipped: 131 / 0 / 0
+- Detail cache statuses: {'fetched:new': 131}
+- Relevant JD recovery: {'eligible': 52, 'usable_jd': 52}
+- Raw jobs found: 229
+- After US/location filtering: 131
+- With trustworthy posted_date: 131
+- Errors/403s: none
+
+- Query diagnostic: {"elapsed_seconds": 15.176, "first_pass_survivors": 24, "group": "official", "jds_resolved": 24, "original_postings_resolved": 24, "page_budget": 4, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 27, "stop_reason": "early_stop", "unique_contribution": 24, "unique_jobs": 27}
+- Query diagnostic: {"elapsed_seconds": 1.192, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 2}
+- Query diagnostic: {"elapsed_seconds": 0.728, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 12.652, "first_pass_survivors": 20, "group": "official", "jds_resolved": 20, "original_postings_resolved": 20, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 27, "stop_reason": "page_budget", "unique_contribution": 20, "unique_jobs": 27}
+- Query diagnostic: {"elapsed_seconds": 20.917, "first_pass_survivors": 39, "group": "official", "jds_resolved": 39, "original_postings_resolved": 39, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 39, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 7.76, "first_pass_survivors": 10, "group": "official", "jds_resolved": 10, "original_postings_resolved": 10, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 34, "stop_reason": "page_budget", "unique_contribution": 10, "unique_jobs": 34}
+- Query diagnostic: {"elapsed_seconds": 4.379, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "full stack engineer", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 0.726, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 20.775, "first_pass_survivors": 36, "group": "official", "jds_resolved": 36, "original_postings_resolved": 36, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 78, "stop_reason": "page_budget", "unique_contribution": 36, "unique_jobs": 78}
+
+Sample normalized records:
+
+```json
+[
+  {
+    "company": "Stryker",
+    "source": "stryker_official_careers",
+    "job_id": "R573258",
+    "title": "Senior Manager, Cybersecurity, AI SOC & Crisis Management - Remote",
+    "location": "Michigan, Kalamazoo 4100 East Milham Rd",
+    "official_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/Michigan-Kalamazoo-4100-East-Milham-Rd/Senior-Manager--Cybersecurity--AI-SOC---Crisis-Management---Remote_R573258-1",
+    "posted_date": "2026-09-14",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:43:06.266392+00:00",
+    "date_confidence": "high",
+    "description": "Work Flexibility: Remote Preference will be given to candidates residing in the Eastern or Central time zones. As a Senior Manager, AI Security Operations & Crisis Management, you "
+  },
+  {
+    "company": "Stryker",
+    "source": "stryker_official_careers",
+    "job_id": "R571251",
+    "title": "Senior Staff Product Owner, Voice Intelligence",
+    "location": "San Jose, California",
+    "official_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/San-Jose-California/Senior-Staff-Product-Owner--Voice-Intelligence_R571251",
+    "posted_date": "2026-08-27",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:43:06.266392+00:00",
+    "date_confidence": "high",
+    "description": "Work Flexibility: Hybrid It's Time to Join Stryker! Stryker is seeking a Senior Staff Product Owner, Voice Intelligence to help shape the next generation of intelligent caregiver c"
+  },
+  {
+    "company": "Stryker",
+    "source": "stryker_official_careers",
+    "job_id": "R571646",
+    "title": "Senior Manager - R&D",
+    "location": "San Diego, California",
+    "official_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/San-Diego-California/Senior-Manager---R-D_R571646",
+    "posted_date": "2026-09-02",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:43:06.266392+00:00",
+    "date_confidence": "high",
+    "description": "Work Flexibility: Hybrid Stryker is seeking a Senior Engineering Manager to lead the development and support of the SmartCare platform, including cloud services, web applications, "
+  },
+  {
+    "company": "Stryker",
+    "source": "stryker_official_careers",
+    "job_id": "R572870",
+    "title": "Summer 2027 Internship - Interaction Design - Washington",
+    "location": "Redmond, Washington",
+    "official_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/Redmond-Washington/Summer-2027-Internship---Interaction-Design---Washington_R572870",
+    "posted_date": "2026-09-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:43:06.266392+00:00",
+    "date_confidence": "high",
+    "description": "Work Flexibility: Onsite As an Interaction Designer for Emergency Care, you will collaborate with our existing team of experienced designers in their process to define, design, and"
+  },
+  {
+    "company": "Stryker",
+    "source": "stryker_official_careers",
+    "job_id": "R572941",
+    "title": "Summer 2027 Internship - Software Engineering, Commercial Operations - Texas",
+    "location": "Flower Mound, Texas",
+    "official_url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/Flower-Mound-Texas/Commercial-Operations-Software-Engineering-Intern---Flower-Mound--TX_R572941",
+    "posted_date": "2026-09-08",
+    "updated_date": "",
+    "fetched_at": "2026-10-08T23:43:06.266392+00:00",
+    "date_confidence": "high",
+    "description": "Work Flexibility: Onsite What You Get Out of the Internship ​​ At Stryker, we believe that developing the next generation of talent is just as important as developing life-changing"
+  }
+]
+```
 
 ## TransUnion
 
@@ -8614,26 +8696,26 @@ Sample normalized records:
 - Search URL/API: `https://transunion.wd5.myworkdayjobs.com/TransUnion`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 15
-- HTTP requests/cumulative request time: 48 / 26.586s
-- Company elapsed time: 32.098s
+- HTTP requests/cumulative request time: 47 / 18.289s
+- Company elapsed time: 23.753s
 - Incremental mode/page cap: incremental / 4
-- Detail pages fetched/cache reused/prefilter skipped: 32 / 0 / 0
-- Detail cache statuses: {'fetched:new': 31, 'fetched:missing_detail': 1}
-- Relevant JD recovery: {'eligible': 12, 'usable_jd': 12}
-- Raw jobs found: 137
-- After US/location filtering: 32
-- With trustworthy posted_date: 32
+- Detail pages fetched/cache reused/prefilter skipped: 31 / 0 / 0
+- Detail cache statuses: {'fetched:new': 30, 'fetched:missing_detail': 1}
+- Relevant JD recovery: {'eligible': 11, 'usable_jd': 11}
+- Raw jobs found: 135
+- After US/location filtering: 31
+- With trustworthy posted_date: 31
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 20.469, "first_pass_survivors": 29, "group": "official", "jds_resolved": 29, "original_postings_resolved": 29, "page_budget": 4, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 29, "stop_reason": "early_stop", "unique_contribution": 29, "unique_jobs": 29}
-- Query diagnostic: {"elapsed_seconds": 0.518, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 6}
-- Query diagnostic: {"elapsed_seconds": 0.9, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 8, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 8}
-- Query diagnostic: {"elapsed_seconds": 1.596, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 11}
-- Query diagnostic: {"elapsed_seconds": 2.366, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 24, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 24}
-- Query diagnostic: {"elapsed_seconds": 0.558, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 20}
-- Query diagnostic: {"elapsed_seconds": 2.29, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 28, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 28}
-- Query diagnostic: {"elapsed_seconds": 0.532, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
-- Query diagnostic: {"elapsed_seconds": 0.511, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 11}
+- Query diagnostic: {"elapsed_seconds": 12.896, "first_pass_survivors": 28, "group": "official", "jds_resolved": 28, "original_postings_resolved": 28, "page_budget": 4, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 28, "stop_reason": "early_stop", "unique_contribution": 28, "unique_jobs": 28}
+- Query diagnostic: {"elapsed_seconds": 0.46, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 6}
+- Query diagnostic: {"elapsed_seconds": 0.977, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 8, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 8}
+- Query diagnostic: {"elapsed_seconds": 1.571, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "solutions architect", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 11}
+- Query diagnostic: {"elapsed_seconds": 2.834, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 24, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 24}
+- Query diagnostic: {"elapsed_seconds": 1.158, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "platform engineer", "raw_jobs": 20, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 20}
+- Query diagnostic: {"elapsed_seconds": 2.359, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 27, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 27}
+- Query diagnostic: {"elapsed_seconds": 0.463, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 1, "query": "forward deployed engineer", "raw_jobs": 0, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 0}
+- Query diagnostic: {"elapsed_seconds": 0.435, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 4, "pages_fetched": 1, "query": "software engineer", "raw_jobs": 11, "stop_reason": "early_stop", "unique_contribution": 0, "unique_jobs": 11}
 
 Sample normalized records:
 
@@ -8648,7 +8730,7 @@ Sample normalized records:
     "official_url": "https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Chicago-Illinois/Vice-President--Global-Network-Engineering_19041689",
     "posted_date": "2026-08-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:46.294280+00:00",
+    "fetched_at": "2026-10-08T23:43:13.691130+00:00",
     "date_confidence": "high",
     "description": "TransUnion's Job Applicant Privacy Notice Personal Information We Collect Your Privacy Choices Team Overview The Global Infrastructure, Engineering & Operations (GIO) organization "
   },
@@ -8661,7 +8743,7 @@ Sample normalized records:
     "official_url": "https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Chicago-Illinois/Lead-Java-Engineer_19042110-1",
     "posted_date": "2026-09-09",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:46.294280+00:00",
+    "fetched_at": "2026-10-08T23:43:13.691130+00:00",
     "date_confidence": "high",
     "description": "TransUnion's Job Applicant Privacy Notice Personal Information We Collect Your Privacy Choices Team Overview The Core Online team is responsible for building and supporting global "
   },
@@ -8674,7 +8756,7 @@ Sample normalized records:
     "official_url": "https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Chicago-Illinois/Security-Automation-Engineer_19041837",
     "posted_date": "2026-08-31",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:46.294280+00:00",
+    "fetched_at": "2026-10-08T23:43:13.691130+00:00",
     "date_confidence": "high",
     "description": "TransUnion's Job Applicant Privacy Notice Personal Information We Collect Your Privacy Choices Team Overview The SOAR Development team designs and delivers automation capabilities "
   },
@@ -8687,7 +8769,7 @@ Sample normalized records:
     "official_url": "https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Chicago-Illinois/Vice-President--Global-Operations-Management---AIOps_19041688",
     "posted_date": "2026-08-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:46.294280+00:00",
+    "fetched_at": "2026-10-08T23:43:13.691130+00:00",
     "date_confidence": "high",
     "description": "TransUnion's Job Applicant Privacy Notice Personal Information We Collect Your Privacy Choices Team Overview The Global Infrastructure, Engineering & Operations (GIO) organization "
   },
@@ -8700,7 +8782,7 @@ Sample normalized records:
     "official_url": "https://transunion.wd5.myworkdayjobs.com/TransUnion/job/Chicago-Illinois/AI-Research---Innovation-Lead_19042097",
     "posted_date": "2026-09-25",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:44:46.294280+00:00",
+    "fetched_at": "2026-10-08T23:43:13.691130+00:00",
     "date_confidence": "high",
     "description": "TransUnion's Job Applicant Privacy Notice Personal Information We Collect Your Privacy Choices Team Overview This role reports directly to Senior Manager, Data Science & Analytics "
   }
@@ -8714,26 +8796,26 @@ Sample normalized records:
 - Search URL/API: `https://travelers.wd5.myworkdayjobs.com/External`
 - Pagination: offset=0,20,40,... ; limit=20; stop on empty/repeat or total
 - Pages/requests fetched: 24
-- HTTP requests/cumulative request time: 116 / 78.953s
-- Company elapsed time: 94.988s
+- HTTP requests/cumulative request time: 116 / 50.718s
+- Company elapsed time: 67.040s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 91 / 0 / 0
-- Detail cache statuses: {'fetched:new': 88, 'fetched:missing_detail': 3}
-- Relevant JD recovery: {'eligible': 45, 'usable_jd': 45}
-- Raw jobs found: 336
+- Detail cache statuses: {'fetched:new': 89, 'fetched:missing_detail': 2}
+- Relevant JD recovery: {'eligible': 47, 'usable_jd': 47}
+- Raw jobs found: 337
 - After US/location filtering: 91
 - With trustworthy posted_date: 91
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 24.989, "first_pass_survivors": 39, "group": "official", "jds_resolved": 39, "original_postings_resolved": 39, "page_budget": 4, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 39, "stop_reason": "early_stop", "unique_contribution": 39, "unique_jobs": 39}
-- Query diagnostic: {"elapsed_seconds": 4.992, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 19, "stop_reason": "early_stop", "unique_contribution": 8, "unique_jobs": 19}
-- Query diagnostic: {"elapsed_seconds": 2.432, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 4, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 4}
-- Query diagnostic: {"elapsed_seconds": 14.499, "first_pass_survivors": 16, "group": "official", "jds_resolved": 16, "original_postings_resolved": 16, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 53, "stop_reason": "page_budget", "unique_contribution": 16, "unique_jobs": 53}
-- Query diagnostic: {"elapsed_seconds": 32.62, "first_pass_survivors": 23, "group": "official", "jds_resolved": 23, "original_postings_resolved": 23, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 23, "unique_jobs": 60}
-- Query diagnostic: {"elapsed_seconds": 3.497, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 52, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 52}
-- Query diagnostic: {"elapsed_seconds": 3.087, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 22, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 22}
-- Query diagnostic: {"elapsed_seconds": 3.414, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 31, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 31}
-- Query diagnostic: {"elapsed_seconds": 4.538, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 56, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 56}
+- Query diagnostic: {"elapsed_seconds": 25.177, "first_pass_survivors": 40, "group": "official", "jds_resolved": 40, "original_postings_resolved": 40, "page_budget": 4, "pages_fetched": 3, "query": "ai engineer", "raw_jobs": 40, "stop_reason": "early_stop", "unique_contribution": 40, "unique_jobs": 40}
+- Query diagnostic: {"elapsed_seconds": 4.175, "first_pass_survivors": 8, "group": "official", "jds_resolved": 8, "original_postings_resolved": 8, "page_budget": 3, "pages_fetched": 1, "query": "machine learning engineer", "raw_jobs": 19, "stop_reason": "early_stop", "unique_contribution": 8, "unique_jobs": 19}
+- Query diagnostic: {"elapsed_seconds": 2.623, "first_pass_survivors": 3, "group": "official", "jds_resolved": 3, "original_postings_resolved": 3, "page_budget": 3, "pages_fetched": 1, "query": "data scientist", "raw_jobs": 4, "stop_reason": "early_stop", "unique_contribution": 3, "unique_jobs": 4}
+- Query diagnostic: {"elapsed_seconds": 9.628, "first_pass_survivors": 15, "group": "official", "jds_resolved": 15, "original_postings_resolved": 15, "page_budget": 3, "pages_fetched": 3, "query": "solutions architect", "raw_jobs": 52, "stop_reason": "page_budget", "unique_contribution": 15, "unique_jobs": 52}
+- Query diagnostic: {"elapsed_seconds": 12.224, "first_pass_survivors": 22, "group": "official", "jds_resolved": 22, "original_postings_resolved": 22, "page_budget": 3, "pages_fetched": 3, "query": "data engineer", "raw_jobs": 60, "stop_reason": "page_budget", "unique_contribution": 22, "unique_jobs": 60}
+- Query diagnostic: {"elapsed_seconds": 2.69, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 3, "query": "platform engineer", "raw_jobs": 52, "stop_reason": "page_budget", "unique_contribution": 1, "unique_jobs": 52}
+- Query diagnostic: {"elapsed_seconds": 2.512, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "full stack engineer", "raw_jobs": 22, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 22}
+- Query diagnostic: {"elapsed_seconds": 2.697, "first_pass_survivors": 0, "group": "official", "jds_resolved": 0, "original_postings_resolved": 0, "page_budget": 3, "pages_fetched": 3, "query": "forward deployed engineer", "raw_jobs": 31, "stop_reason": "page_budget", "unique_contribution": 0, "unique_jobs": 31}
+- Query diagnostic: {"elapsed_seconds": 4.523, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 4, "pages_fetched": 4, "query": "software engineer", "raw_jobs": 57, "stop_reason": "page_budget", "unique_contribution": 2, "unique_jobs": 57}
 
 Sample normalized records:
 
@@ -8748,7 +8830,7 @@ Sample normalized records:
     "official_url": "https://travelers.wd5.myworkdayjobs.com/External/job/GA---Atlanta/Gen-AI---Data-Engineer-II_R-51257",
     "posted_date": "2026-08-19",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:45:06.692491+00:00",
+    "fetched_at": "2026-10-08T23:43:18.385449+00:00",
     "date_confidence": "high",
     "description": "Who Are We? Taking care of our customers, our communities and each other. That’s the Travelers Promise. By honoring this commitment, we have maintained our reputation as one of the"
   },
@@ -8761,7 +8843,7 @@ Sample normalized records:
     "official_url": "https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Software-Engineer-II--AI--Python--Typescript-_R-51344",
     "posted_date": "2026-07-08",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:45:06.692491+00:00",
+    "fetched_at": "2026-10-08T23:43:18.385449+00:00",
     "date_confidence": "high",
     "description": "Who Are We? Taking care of our customers, our communities and each other. That’s the Travelers Promise. By honoring this commitment, we have maintained our reputation as one of the"
   },
@@ -8774,7 +8856,7 @@ Sample normalized records:
     "official_url": "https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Software-Engineer-II---Enterprise-AI-Products_R-51656",
     "posted_date": "2026-08-04",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:45:06.692491+00:00",
+    "fetched_at": "2026-10-08T23:43:18.385449+00:00",
     "date_confidence": "high",
     "description": "Who Are We? Taking care of our customers, our communities and each other. That’s the Travelers Promise. By honoring this commitment, we have maintained our reputation as one of the"
   },
@@ -8787,7 +8869,7 @@ Sample normalized records:
     "official_url": "https://travelers.wd5.myworkdayjobs.com/External/job/GA---Atlanta/Software-Engineer-II---AI-Agents---Harnesses_R-51887",
     "posted_date": "2026-09-21",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:45:06.692491+00:00",
+    "fetched_at": "2026-10-08T23:43:18.385449+00:00",
     "date_confidence": "high",
     "description": "Who Are We? Taking care of our customers, our communities and each other. That’s the Travelers Promise. By honoring this commitment, we have maintained our reputation as one of the"
   },
@@ -8800,7 +8882,7 @@ Sample normalized records:
     "official_url": "https://travelers.wd5.myworkdayjobs.com/External/job/GA---Atlanta/Senior-Software-Engineer---Enterprise-Artificial-Intelligence--AI-_R-51005",
     "posted_date": "2026-06-22",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:45:06.692491+00:00",
+    "fetched_at": "2026-10-08T23:43:18.385449+00:00",
     "date_confidence": "high",
     "description": "Who Are We? Taking care of our customers, our communities and each other. That’s the Travelers Promise. By honoring this commitment, we have maintained our reputation as one of the"
   }
@@ -8814,23 +8896,23 @@ Sample normalized records:
 - Search URL/API: `https://mycareer.verizon.com/api/jobs/search/`
 - Pagination: page=1,2,... with pagesize=100; stop on total/empty/repeat
 - Pages/requests fetched: 6
-- HTTP requests/cumulative request time: 23 / 2.855s
-- Company elapsed time: 3.124s
+- HTTP requests/cumulative request time: 23 / 3.736s
+- Company elapsed time: 4.151s
 - Incremental mode/page cap: incremental / 4
 - Detail pages fetched/cache reused/prefilter skipped: 17 / 0 / 0
 - Detail cache statuses: none
 - Relevant JD recovery: {'eligible': 7, 'usable_jd': 7}
-- Raw jobs found: 30
+- Raw jobs found: 29
 - After US/location filtering: 17
 - With trustworthy posted_date: 17
 - Errors/403s: none
 
-- Query diagnostic: {"elapsed_seconds": 0.591, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 2}
-- Query diagnostic: {"elapsed_seconds": 0.307, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 6}
-- Query diagnostic: {"elapsed_seconds": 0.713, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 6}
-- Query diagnostic: {"elapsed_seconds": 1.091, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 1, "query": "", "raw_jobs": 13, "stop_reason": "early_stop", "unique_contribution": 9, "unique_jobs": 13}
-- Query diagnostic: {"elapsed_seconds": 0.196, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 2}
-- Query diagnostic: {"elapsed_seconds": 0.226, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 0.817, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "", "raw_jobs": 2, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 2}
+- Query diagnostic: {"elapsed_seconds": 0.546, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 6}
+- Query diagnostic: {"elapsed_seconds": 0.588, "first_pass_survivors": 2, "group": "official", "jds_resolved": 2, "original_postings_resolved": 2, "page_budget": 3, "pages_fetched": 1, "query": "", "raw_jobs": 6, "stop_reason": "early_stop", "unique_contribution": 2, "unique_jobs": 6}
+- Query diagnostic: {"elapsed_seconds": 1.535, "first_pass_survivors": 9, "group": "official", "jds_resolved": 9, "original_postings_resolved": 9, "page_budget": 3, "pages_fetched": 1, "query": "", "raw_jobs": 13, "stop_reason": "early_stop", "unique_contribution": 9, "unique_jobs": 13}
+- Query diagnostic: {"elapsed_seconds": 0.393, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 1}
+- Query diagnostic: {"elapsed_seconds": 0.272, "first_pass_survivors": 1, "group": "official", "jds_resolved": 1, "original_postings_resolved": 1, "page_budget": 3, "pages_fetched": 1, "query": "", "raw_jobs": 1, "stop_reason": "early_stop", "unique_contribution": 1, "unique_jobs": 1}
 
 Sample normalized records:
 
@@ -8845,7 +8927,7 @@ Sample normalized records:
     "official_url": "https://mycareer.verizon.com/jobs/r-1100142/principal-engineer-software-development/",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:45:12.989510+00:00",
+    "fetched_at": "2026-10-08T23:43:37.445517+00:00",
     "date_confidence": "high",
     "description": "When you join Verizon You want more out of a career. A place to share your ideas freely — even if they’re daring or different. Where the true you can learn, grow, and thrive. At Ve"
   },
@@ -8858,7 +8940,7 @@ Sample normalized records:
     "official_url": "https://mycareer.verizon.com/jobs/r-1101425/principal-firmware-engineer/",
     "posted_date": "2026-09-30",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:45:12.989510+00:00",
+    "fetched_at": "2026-10-08T23:43:37.445517+00:00",
     "date_confidence": "high",
     "description": "When you join Verizon You want more out of a career. A place to share your ideas freely — even if they’re daring or different. Where the true you can learn, grow, and thrive. At Ve"
   },
@@ -8871,7 +8953,7 @@ Sample normalized records:
     "official_url": "https://mycareer.verizon.com/jobs/r-1101085/associate-director-responsible-ai/",
     "posted_date": "2026-09-20",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:45:12.989510+00:00",
+    "fetched_at": "2026-10-08T23:43:37.445517+00:00",
     "date_confidence": "high",
     "description": "When you join Verizon You want more out of a career. A place to share your ideas freely — even if they’re daring or different. Where the true you can learn, grow, and thrive. At Ve"
   },
@@ -8884,7 +8966,7 @@ Sample normalized records:
     "official_url": "https://mycareer.verizon.com/jobs/r-1101071/senior-agentic-ai-engineer/",
     "posted_date": "2026-09-25",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:45:12.989510+00:00",
+    "fetched_at": "2026-10-08T23:43:37.445517+00:00",
     "date_confidence": "high",
     "description": "When you join Verizon You want more out of a career. A place to share your ideas freely — even if they’re daring or different. Where the true you can learn, grow, and thrive. At Ve"
   },
@@ -8897,7 +8979,7 @@ Sample normalized records:
     "official_url": "https://mycareer.verizon.com/jobs/r-1101033/ai-workflow-engineer/",
     "posted_date": "2026-10-07",
     "updated_date": "",
-    "fetched_at": "2026-10-08T14:45:12.989510+00:00",
+    "fetched_at": "2026-10-08T23:43:37.445517+00:00",
     "date_confidence": "high",
     "description": "When you join Verizon You want more out of a career. A place to share your ideas freely — even if they’re daring or different. Where the true you can learn, grow, and thrive. At Ve"
   }
@@ -8911,8 +8993,8 @@ Sample normalized records:
 - Search URL/API: `https://boards-api.greenhouse.io/v1/boards/yext/jobs`
 - Pagination: single JSON payload (no paging)
 - Pages/requests fetched: 1
-- HTTP requests/cumulative request time: 1 / 0.105s
-- Company elapsed time: 0.145s
+- HTTP requests/cumulative request time: 1 / 0.134s
+- Company elapsed time: 0.188s
 - Incremental mode/page cap: incremental / 12
 - Detail pages fetched/cache reused/prefilter skipped: 0 / 0 / 0
 - Detail cache statuses: none
@@ -8935,7 +9017,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/yext/jobs/8046381",
     "posted_date": "2026-09-18",
     "updated_date": "2026-09-29",
-    "fetched_at": "2026-10-08T14:45:16.114364+00:00",
+    "fetched_at": "2026-10-08T23:43:41.597182+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Yext (NYSE: YEXT) is the enterprise agentic marketing platform. Built on the world's most comprehensive structured data platform for local businesses,"
   },
@@ -8948,7 +9030,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/yext/jobs/8237972",
     "posted_date": "2026-10-01",
     "updated_date": "2026-10-02",
-    "fetched_at": "2026-10-08T14:45:16.114364+00:00",
+    "fetched_at": "2026-10-08T23:43:41.597182+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Yext (NYSE: YEXT) is the enterprise agentic marketing platform. Built on the world's most comprehensive structured data platform for local businesses,"
   },
@@ -8961,7 +9043,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/yext/jobs/657947",
     "posted_date": "2020-02-24",
     "updated_date": "2026-09-29",
-    "fetched_at": "2026-10-08T14:45:16.114364+00:00",
+    "fetched_at": "2026-10-08T23:43:41.597182+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Yext (NYSE: YEXT) is the enterprise agentic marketing platform. Built on the world's most comprehensive structured data platform for local businesses,"
   },
@@ -8974,7 +9056,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/yext/jobs/8002946",
     "posted_date": "2026-06-22",
     "updated_date": "2026-09-29",
-    "fetched_at": "2026-10-08T14:45:16.114364+00:00",
+    "fetched_at": "2026-10-08T23:43:41.597182+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Yext (NYSE: YEXT) is the enterprise agentic marketing platform. Built on the world's most comprehensive structured data platform for local businesses,"
   },
@@ -8987,7 +9069,7 @@ Sample normalized records:
     "official_url": "https://job-boards.greenhouse.io/yext/jobs/8138243",
     "posted_date": "2026-08-18",
     "updated_date": "2026-09-29",
-    "fetched_at": "2026-10-08T14:45:16.114364+00:00",
+    "fetched_at": "2026-10-08T23:43:41.597182+00:00",
     "date_confidence": "high",
     "description": "<div class=\"content-intro\"><p>Yext (NYSE: YEXT) is the enterprise agentic marketing platform. Built on the world's most comprehensive structured data platform for local businesses,"
   }
