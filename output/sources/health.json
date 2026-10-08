@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-07T23:09:05.129460+00:00",
+  "generated_at": "2026-10-08T00:21:51.490640+00:00",
   "collector": {
-    "commit": "34f847bde6db118c204da0d9fe1c2ae43ebdc8cd",
+    "commit": "f730f2b6edbc9a1da03b268f89926e45e4f92b1c",
     "dirty": false
   },
   "sources": {
@@ -766,18 +766,18 @@
       "healthy": true,
       "status": "ok",
       "reason": "",
-      "last_attempt_at": "2026-10-07T15:20:51.686027+00:00",
-      "last_success_at": "2026-10-07T15:20:51.686027+00:00",
+      "last_attempt_at": "2026-10-08T00:21:17.690009+00:00",
+      "last_success_at": "2026-10-08T00:21:17.690009+00:00",
       "last_partial_at": "",
       "partial_collected_count": 0,
       "partial_fresh_kept": 0,
       "partial_carried_count": 0,
       "last_attempt_collector": {
-        "commit": "091025810e9a0c5713cb095c64a99901e8892d11",
+        "commit": "f730f2b6edbc9a1da03b268f89926e45e4f92b1c",
         "dirty": false
       },
       "last_success_collector": {
-        "commit": "091025810e9a0c5713cb095c64a99901e8892d11",
+        "commit": "f730f2b6edbc9a1da03b268f89926e45e4f92b1c",
         "dirty": false
       },
       "last_attempt_source_provenance": {
@@ -788,7 +788,7 @@
         "implementation": "python-jobspy",
         "version": "1.1.82"
       },
-      "last_attempt_count": 987,
+      "last_attempt_count": 936,
       "consecutive_failures": 0,
       "query_stats": [
         {
@@ -799,11 +799,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 300,
           "unique_jobs": 300,
-          "unique_contribution": 293,
-          "first_pass_survivors": 215,
+          "unique_contribution": 297,
+          "first_pass_survivors": 165,
           "original_postings_resolved": 0,
-          "jds_resolved": 215,
-          "elapsed_seconds": 4.758,
+          "jds_resolved": 165,
+          "elapsed_seconds": 3.887,
           "hours_old": 48
         },
         {
@@ -814,11 +814,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 300,
           "unique_jobs": 300,
-          "unique_contribution": 243,
-          "first_pass_survivors": 247,
+          "unique_contribution": 232,
+          "first_pass_survivors": 244,
           "original_postings_resolved": 0,
-          "jds_resolved": 247,
-          "elapsed_seconds": 4.439,
+          "jds_resolved": 244,
+          "elapsed_seconds": 4.236,
           "hours_old": 48
         },
         {
@@ -827,13 +827,13 @@
           "page_budget": 1,
           "pages_fetched": 1,
           "stop_reason": "exhausted",
-          "raw_jobs": 95,
-          "unique_jobs": 95,
-          "unique_contribution": 82,
-          "first_pass_survivors": 57,
+          "raw_jobs": 94,
+          "unique_jobs": 94,
+          "unique_contribution": 77,
+          "first_pass_survivors": 61,
           "original_postings_resolved": 0,
-          "jds_resolved": 57,
-          "elapsed_seconds": 1.63,
+          "jds_resolved": 61,
+          "elapsed_seconds": 1.447,
           "hours_old": 24
         },
         {
@@ -844,11 +844,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 63,
-          "first_pass_survivors": 57,
+          "unique_contribution": 72,
+          "first_pass_survivors": 70,
           "original_postings_resolved": 0,
-          "jds_resolved": 57,
-          "elapsed_seconds": 1.518,
+          "jds_resolved": 70,
+          "elapsed_seconds": 1.419,
           "hours_old": 24
         },
         {
@@ -859,11 +859,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 63,
-          "first_pass_survivors": 74,
+          "unique_contribution": 78,
+          "first_pass_survivors": 81,
           "original_postings_resolved": 0,
-          "jds_resolved": 74,
-          "elapsed_seconds": 1.599,
+          "jds_resolved": 81,
+          "elapsed_seconds": 1.637,
           "hours_old": 24
         },
         {
@@ -872,13 +872,13 @@
           "page_budget": 1,
           "pages_fetched": 1,
           "stop_reason": "exhausted",
-          "raw_jobs": 81,
-          "unique_jobs": 81,
-          "unique_contribution": 68,
-          "first_pass_survivors": 59,
+          "raw_jobs": 91,
+          "unique_jobs": 91,
+          "unique_contribution": 77,
+          "first_pass_survivors": 56,
           "original_postings_resolved": 0,
-          "jds_resolved": 59,
-          "elapsed_seconds": 1.472,
+          "jds_resolved": 56,
+          "elapsed_seconds": 1.291,
           "hours_old": 24
         },
         {
@@ -889,11 +889,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 59,
-          "first_pass_survivors": 77,
+          "unique_contribution": 70,
+          "first_pass_survivors": 86,
           "original_postings_resolved": 0,
-          "jds_resolved": 77,
-          "elapsed_seconds": 1.384,
+          "jds_resolved": 86,
+          "elapsed_seconds": 1.401,
           "hours_old": 24
         },
         {
@@ -904,11 +904,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 50,
-          "first_pass_survivors": 73,
+          "unique_contribution": 57,
+          "first_pass_survivors": 76,
           "original_postings_resolved": 0,
-          "jds_resolved": 73,
-          "elapsed_seconds": 1.524,
+          "jds_resolved": 76,
+          "elapsed_seconds": 1.292,
           "hours_old": 24
         },
         {
@@ -919,11 +919,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 29,
-          "first_pass_survivors": 83,
+          "unique_contribution": 25,
+          "first_pass_survivors": 64,
           "original_postings_resolved": 0,
-          "jds_resolved": 83,
-          "elapsed_seconds": 1.532,
+          "jds_resolved": 64,
+          "elapsed_seconds": 1.519,
           "hours_old": 24
         },
         {
@@ -934,11 +934,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 42,
-          "first_pass_survivors": 86,
+          "unique_contribution": 50,
+          "first_pass_survivors": 81,
           "original_postings_resolved": 0,
-          "jds_resolved": 86,
-          "elapsed_seconds": 1.528,
+          "jds_resolved": 81,
+          "elapsed_seconds": 1.385,
           "hours_old": 24
         },
         {
@@ -949,11 +949,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 13,
-          "first_pass_survivors": 80,
+          "unique_contribution": 34,
+          "first_pass_survivors": 74,
           "original_postings_resolved": 0,
-          "jds_resolved": 80,
-          "elapsed_seconds": 1.408,
+          "jds_resolved": 74,
+          "elapsed_seconds": 1.486,
           "hours_old": 24
         },
         {
@@ -964,11 +964,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 37,
-          "first_pass_survivors": 78,
+          "unique_contribution": 28,
+          "first_pass_survivors": 79,
           "original_postings_resolved": 0,
-          "jds_resolved": 78,
-          "elapsed_seconds": 1.499,
+          "jds_resolved": 79,
+          "elapsed_seconds": 1.405,
           "hours_old": 24
         },
         {
@@ -979,11 +979,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 27,
-          "first_pass_survivors": 82,
+          "unique_contribution": 26,
+          "first_pass_survivors": 81,
           "original_postings_resolved": 0,
-          "jds_resolved": 82,
-          "elapsed_seconds": 1.51,
+          "jds_resolved": 81,
+          "elapsed_seconds": 1.454,
           "hours_old": 24
         },
         {
@@ -994,11 +994,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 39,
-          "first_pass_survivors": 77,
+          "unique_contribution": 1,
+          "first_pass_survivors": 38,
           "original_postings_resolved": 0,
-          "jds_resolved": 77,
-          "elapsed_seconds": 1.489,
+          "jds_resolved": 38,
+          "elapsed_seconds": 1.411,
           "hours_old": 24
         },
         {
@@ -1009,11 +1009,11 @@
           "stop_reason": "exhausted",
           "raw_jobs": 15,
           "unique_jobs": 15,
-          "unique_contribution": 11,
-          "first_pass_survivors": 13,
+          "unique_contribution": 14,
+          "first_pass_survivors": 10,
           "original_postings_resolved": 0,
-          "jds_resolved": 13,
-          "elapsed_seconds": 0.437,
+          "jds_resolved": 10,
+          "elapsed_seconds": 0.323,
           "hours_old": 24
         },
         {
@@ -1024,11 +1024,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 81,
-          "first_pass_survivors": 98,
+          "unique_contribution": 87,
+          "first_pass_survivors": 91,
           "original_postings_resolved": 0,
-          "jds_resolved": 98,
-          "elapsed_seconds": 1.32,
+          "jds_resolved": 91,
+          "elapsed_seconds": 1.346,
           "hours_old": 24
         },
         {
@@ -1039,19 +1039,19 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 61,
-          "first_pass_survivors": 83,
+          "unique_contribution": 59,
+          "first_pass_survivors": 76,
           "original_postings_resolved": 0,
-          "jds_resolved": 83,
-          "elapsed_seconds": 1.333,
+          "jds_resolved": 76,
+          "elapsed_seconds": 1.351,
           "hours_old": 24
         }
       ],
       "detail_enrichment": {},
-      "last_good_count": 987,
+      "last_good_count": 936,
       "official_enrichment": {},
       "search_collection": {},
-      "last_attempt_elapsed_seconds": 35.655,
+      "last_attempt_elapsed_seconds": 33.607,
       "failure_cause": "",
       "previous_failure": {},
       "queries_total": 17,
@@ -1124,6 +1124,23 @@
     }
   },
   "run_history": [
+    {
+      "source": "indeed",
+      "run_at": "2026-10-08T00:21:17.690009+00:00",
+      "status": "ok",
+      "new": 803,
+      "pass": null,
+      "new_ab": null,
+      "failure": false,
+      "reason": "",
+      "search_429": false,
+      "detail_429": false,
+      "elapsed_seconds": 33.607,
+      "search_requests": null,
+      "initial_detail_requests": null,
+      "new_to_ledger": null,
+      "rediscovered": null
+    },
     {
       "source": "linkedin",
       "run_at": "2026-10-07T22:07:43.786460+00:00",
