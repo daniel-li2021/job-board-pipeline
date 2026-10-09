@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-08 17:21 PDT
-- Snapshot (UTC): 2026-10-09T00:21:42.554104+00:00
-- Jobs: 76 (Tier A/B only)
-- Last 24 hours: 54
-- Last 3 days: 76
+- Updated (PT): 2026-10-08 21:45 PDT
+- Snapshot (UTC): 2026-10-09T04:45:32.379007+00:00
+- Jobs: 78 (Tier A/B only)
+- Last 24 hours: 56
+- Last 3 days: 78
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -12,6 +12,7 @@ The 7-day dump is `latest.md`.
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | A | 95 | indeed | Proofpoint | AI Engineer II | TX, US | 2026-10-07 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=30b61d3e2a7507ff) |
+| A | 96 | linkedin | FurtherAI | Forward Deployed Engineer | San Francisco, CA | 2026-10-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-engineer-at-furtherai-4476237580) |
 | A | 96 | indeed | Shepherd's House Ministries | Software Engineer | Bend, OR, US | 2026-10-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=7e8464a5c2a3f7d1) |
 | A | 95 | linkedin | Lightcast | Software Engineer - 1092 - (Moscow, ID) | Moscow, ID | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-1092-moscow-id-at-lightcast-4474485936) |
 | A | 94 | indeed | MetLife | Junior AI Engineer | Cary, NC, US | 2026-10-06 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=48c9906598dd507a) |
@@ -45,6 +46,7 @@ The 7-day dump is `latest.md`.
 | B | 86 | indeed | Best Logistics Group | Junior Developer | Kernersville, NC, US | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=799c897c0efb4c03) |
 | B | 86 | indeed | TrueCar, Inc. | Software Engineer 2 | Santa Monica, CA, US | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=efe2b864c5d0370c) |
 | B | 85 | indeed | McKesson | AI Full stack Software Engineer | Columbus, OH, US | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=3590af910c1daec6) |
+| B | 85 | linkedin | McKesson | AI Full stack Software Engineer | Columbus, OH | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-full-stack-software-engineer-at-mckesson-4477419341) |
 | B | 87 | indeed | Optimum | Automation Engineer | Bethpage, NY, US | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=f6d4c3963dc4d046) |
 | B | 89 | indeed | RA Capital Management | Software Engineer, Data/AI | Boston, MA, US | 2026-10-07 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a4d90c76abc9ca44) |
 | B | 84 | linkedin | Thomson Reuters | Generative AI & Machine Learning Engineer | McLean, VA | 2026-10-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/generative-ai-machine-learning-engineer-at-thomson-reuters-4349250403) |
@@ -54,19 +56,19 @@ The 7-day dump is `latest.md`.
 | B | 83 | indeed |  | Web Developer | Los Angeles, CA, US | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=17b163cd47a4741c) |
 | B | 82 | indeed | Harbor Wholesale | WMS Software Developer I | Lacey, WA, US | 2026-10-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d7bb46438639c63f) |
 | B | 84 | indeed | State of North Dakota | Software Engineer | Bismarck, ND, US | 2026-10-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=32623c9209c43c28) |
-| B | 80 | linkedin | McKesson | AI Full stack Software Engineer | Columbus, OH | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-full-stack-software-engineer-at-mckesson-4477419341) |
-| B | 84 | linkedin | Leonardo DRS | Software Engineer II - Front-End / Full-Stack Applications | Germantown, MD | 2026-10-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-front-end-full-stack-applications-at-leonardo-drs-4474482918) |
-| B | 82 | linkedin | Leonardo DRS | Software Engineer II | Germantown, MD | 2026-10-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-leonardo-drs-4474471279) |
+| B | 80 | linkedin | Leonardo DRS | Software Engineer II | Germantown, MD | 2026-10-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-leonardo-drs-4474471279) |
+| B | 80 | linkedin | Leonardo DRS | Software Engineer II - Front-End / Full-Stack Applications | Germantown, MD | 2026-10-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-front-end-full-stack-applications-at-leonardo-drs-4474482918) |
 | B | 83 | indeed | Handshake | Machine Learning Engineer | San Francisco, CA, US | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d7491a225eef9941) |
 | B | 82 | indeed | Milwaukee Tool | Quality Assurance Engineer I- Digital Platforms | Milwaukee, WI, US | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c059e9f9d1739f77) |
 | B | 82 | indeed | Harness | Customer Experience Engineer I/II | Remote, US | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=61f4e87a87d62e7a) |
 | B | 82 | linkedin | TixTrack | Software Engineer (Remote - US) | New York, NY | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-remote-us-at-tixtrack-4475959299) |
 | B | 84 | indeed | NuAxis Innovations | Mid-Level Full Stack Developer | Remote, US | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=dc6b653d44bec4b5) |
+| B | 75 | linkedin | TikTok | Backend Software Engineer, Global E-commerce - Seller Business - Globa | Seattle, WA | 2026-10-09 | newly_discovered | TikTok | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/backend-software-engineer-global-e-commerce-seller-business-global-e-commerce-us-at-tiktok-4476221998) |
 | B | 75 | linkedin | CoffeeSpace | Software Engineer, Backend Systems ($185K - $300K + Equity) Real-time  | New York, United States | 2026-10-06 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-backend-systems-%24185k-%24300k-%2B-equity-real-time-trading-platform-at-coffeespace-4474967364) |
-| B | 79 | linkedin | Thomas To | Machine Learning Engineer | Santa Clara, CA | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-thomas-to-4477152649) |
-| B | 78 | linkedin | RAPSYS TECHNOLOGIES PTE LTD | Full Stack Developer (Laravel / Vue.js / Node.js) | Orlando, FL | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-laravel-vue-js-node-js-at-rapsys-technologies-pte-ltd-4475975133) |
-| B | 78 | linkedin | Raydar | Software Engineer | San Francisco, CA | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-raydar-4477427268) |
-| B | 78 | linkedin | Tap Growth ai | Full Stack Developer (Laravel / Vue.js / Node.js) | Orlando, FL | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-laravel-vue-js-node-js-at-tap-growth-ai-4475977018) |
+| B | 75 | linkedin | Jobs Web3 | Software Engineer, Web3 Backend | New York, NY | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-web3-backend-at-jobs-web3-4476213027) |
+| B | 75 | linkedin | RAPSYS TECHNOLOGIES PTE LTD | Full Stack Developer (Laravel / Vue.js / Node.js) | Orlando, FL | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-laravel-vue-js-node-js-at-rapsys-technologies-pte-ltd-4475975133) |
+| B | 75 | linkedin | Tap Growth ai | Full Stack Developer (Laravel / Vue.js / Node.js) | Orlando, FL | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-laravel-vue-js-node-js-at-tap-growth-ai-4475977018) |
+| B | 75 | linkedin | Thomas To | Machine Learning Engineer | Santa Clara, CA | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-thomas-to-4477152649) |
 | B | 75 | linkedin | GliaCell Technologies | Fullstack Software Engineer Web Applications | Laurel, MD | 2026-10-07 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/fullstack-software-engineer-web-applications-at-gliacell-technologies-4476734086) |
 | B | 75 | linkedin | Saragossa | AI Engineer- agentic startup- $300,000-$350,000 base + bonus! | Chicago, IL | 2026-10-06 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-agentic-startup-%24300-000-%24350-000-base-%2B-bonus%21-at-saragossa-4474059757) |
 | B | 75 | linkedin | ScoutBetter | Software Engineer(Nationwide) | Columbus, OH | 2026-10-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-nationwide-at-scoutbetter-4475855900) |
