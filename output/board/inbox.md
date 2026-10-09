@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-09 08:21 PDT
-- Snapshot (UTC): 2026-10-09T15:21:27.745847+00:00
-- Jobs: 70 (Tier A/B only)
-- Last 24 hours: 55
-- Last 3 days: 70
+- Updated (PT): 2026-10-09 12:04 PDT
+- Snapshot (UTC): 2026-10-09T19:04:56.246460+00:00
+- Jobs: 71 (Tier A/B only)
+- Last 24 hours: 56
+- Last 3 days: 71
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -28,6 +28,7 @@ The 7-day dump is `latest.md`.
 | A | 85 | indeed |  | Software Engineer I | King of Prussia, PA, US | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=9f50644c9b6feaa2) |
 | B | 91 | indeed | Verizon | AI Engineer - Go To Market | Temple Terrace, FL, US | 2026-10-08 | newly_discovered | - | unreviewed | official_identity_unmatched | [open](https://mycareer.verizon.com/jobs/r-1101812/ai-engineer-go-to-market/?source=jb-indeed) |
 | B | 86 | indeed | Micron Technology | AI Engineer | Boise, ID, US | 2026-09-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2896efcf20f6d63a) |
+| B | 85 | linkedin | Handshake | Machine Learning Engineer | San Francisco, CA | 2026-10-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-handshake-4477621256) |
 | B | 85 | indeed | Handshake | Machine Learning Engineer | San Francisco, CA, US | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c3e3f04065b70e9e) |
 | B | 87 | indeed | Affirm | Software Engineer II, Backend (Batch Developer Experience) | San Francisco, CA, US | 2026-10-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=73c70d9921fc1aca) |
 | B | 87 | indeed | Bot Auto | Software Engineer, Core Platforms | Houston, TX, US | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c10cdbcee7e892fd) |
@@ -59,11 +60,11 @@ The 7-day dump is `latest.md`.
 | B | 75 | linkedin | Jobs Web3 | Software Engineer, Web3 Backend | New York, NY | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-web3-backend-at-jobs-web3-4476213027) |
 | B | 75 | linkedin | RAPSYS TECHNOLOGIES PTE LTD | Full Stack Developer (Laravel / Vue.js / Node.js) | Orlando, FL | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-laravel-vue-js-node-js-at-rapsys-technologies-pte-ltd-4475975133) |
 | B | 75 | linkedin | Tap Growth ai | Full Stack Developer (Laravel / Vue.js / Node.js) | Orlando, FL | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-laravel-vue-js-node-js-at-tap-growth-ai-4475977018) |
-| B | 75 | linkedin | Thomas To | Machine Learning Engineer | Santa Clara, CA | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-thomas-to-4477152649) |
 | B | 75 | linkedin | GliaCell Technologies | Fullstack Software Engineer Web Applications | Laurel, MD | 2026-10-07 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/fullstack-software-engineer-web-applications-at-gliacell-technologies-4476734086) |
 | B | 75 | linkedin | Saragossa | AI Engineer- agentic startup- $300,000-$350,000 base + bonus! | Chicago, IL | 2026-10-06 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-agentic-startup-%24300-000-%24350-000-base-%2B-bonus%21-at-saragossa-4474059757) |
 | B | 75 | linkedin | Forage | Fullstack Software Engineer | San Francisco, CA | 2026-10-07 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/fullstack-software-engineer-at-forage-4475139608) |
 | B | 75 | linkedin | Forage | Fullstack Software Engineer | New York, NY | 2026-10-07 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/fullstack-software-engineer-at-forage-4475145374) |
+| B | 75 | linkedin | Deloitte | Cyber Full-Stack Software Engineer | Arlington, VA | 2026-10-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/cyber-full-stack-software-engineer-at-deloitte-4459134059) |
 | B | 78 | linkedin | iCapital | Artificial Intelligence / Machine Learning Engineer - Associate | New York, NY | 2026-10-06 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/artificial-intelligence-machine-learning-engineer-associate-at-icapital-4476316761) |
 | B | 78 | indeed | Twitch | Software Engineer I | San Francisco, CA, US | 2026-10-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=4c79c226875974fc) |
 | B | 76 | indeed | Milwaukee Tool | Software Engineer(Agentic AI Automation) | Menomonee Falls, WI, US | 2026-10-08 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=53b8308bcd3f490e) |
