@@ -23,28 +23,25 @@ on:
       - "profile/company_profiles.json"
       - "requirements.txt"
   workflow_run:
-    workflows: ["Board job alert", "Official careers", "Syncareer job alert"]
+    workflows: ["Official careers", "Syncareer job alert"]
     types: [completed]
-    branches: [main]
   workflow_dispatch:
-  # Retry publication from committed snapshots even if no scraper finishes.
-  schedule:
-    - cron: "17 */2 * * *"
 
 permissions:
-  contents: read
+  contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: reconcile-pages
-  # A job waiting on the Pages environment must not hold this slot indefinitely.
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   reconcile:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    permissions:
-      contents: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout latest main
         uses: actions/checkout@v4
@@ -63,8 +60,7 @@ jobs:
 
       - name: Reconcile coverage and generate dashboard
         env:
-          # Recovery builds reuse saved data without paid identity assessments.
-          OPENAI_API_KEY: ${{ github.event_name != 'schedule' && secrets.OPENAI_API_KEY || '' }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           PIPELINE_WORKFLOW_NAME: ${{ github.event.workflow_run.name }}
           PIPELINE_WORKFLOW_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
           PIPELINE_WORKFLOW_URL: ${{ github.event.workflow_run.html_url }}
@@ -93,14 +89,19 @@ jobs:
           path.write_text(html, encoding="utf-8")
           PY
 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: public
 
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
       - name: Persist pending company profiles and identity evidence cache
-        # Auxiliary cache persistence must not prevent a valid artifact deploying.
-        continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -126,22 +127,3 @@ jobs:
               sleep $((attempt * 5))
             done
           fi
-
-  deploy:
-    needs: reconcile
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-      - name: Deploy GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          timeout: 300000

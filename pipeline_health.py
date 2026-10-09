@@ -1428,8 +1428,8 @@ def write(public: Path, report: dict[str, Any], history: list[dict[str, Any]]) -
     page = (
         '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
         f'<title>Pipeline Health · {esc(report["overall"])}</title><style>{style}</style><body data-generated-at="{esc(report["generated_at"])}"><main>'
-        f'<div class="top"><h1>Pipeline Health</h1><span id="healthOverall" class="state state-{esc(report["overall"]).lower()}">{esc(report["overall"])}</span></div>'
-        '<p id="publicationFreshness" class="strip" role="status" aria-live="polite"></p>'
+        f'<div class="top"><h1>Pipeline Health</h1><span class="state state-{esc(report["overall"]).lower()}">{esc(report["overall"])}</span></div>'
+        '<p id="publicationFreshness" class="strip" role="status" hidden></p>'
         f'<p class="muted">Generated {esc(_display_time(report["generated_at"]))} · '
         '<a href="index.html">Dashboard</a> · <a href="health.json">JSON</a> · '
         '<a href="health-history.json">History</a></p>'
