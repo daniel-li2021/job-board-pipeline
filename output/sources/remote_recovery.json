@@ -2944,1152 +2944,11 @@
     }
   ],
   "meta": {
-    "jd_recovery_at": "2026-10-10T05:55:15.992177+00:00"
+    "jd_recovery_at": "2026-10-10T19:43:12.163628+00:00"
   },
   "source": "remote_recovery",
   "count": 136,
   "attempts": {
-    "meta_official_careers|id|1283568050445825": {
-      "source": "meta_official_careers",
-      "job_id": "1283568050445825",
-      "company": "Meta",
-      "title": "Product Quality Engineer, MTIA",
-      "location": "Austin, TX; Seattle, WA; Fremont, CA",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "meta_official_careers|id|2152805521966105": {
-      "source": "meta_official_careers",
-      "job_id": "2152805521966105",
-      "company": "Meta",
-      "title": "Product Security Engineer - Team Lead",
-      "location": "Bellevue, WA; Menlo Park, CA; Washington, DC; New York, NY",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "meta_official_careers|id|1379798307122102": {
-      "source": "meta_official_careers",
-      "job_id": "1379798307122102",
-      "company": "Meta",
-      "title": "Electrical Engineer, Robotics Hardware Engineering",
-      "location": "Redmond, WA; Burlingame, CA",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "meta_official_careers|id|1066842002987759": {
-      "source": "meta_official_careers",
-      "job_id": "1066842002987759",
-      "company": "Meta",
-      "title": "CAD and Integration Engineer, Silicon",
-      "location": "Sunnyvale, CA",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "meta_official_careers|id|1343564164433660": {
-      "source": "meta_official_careers",
-      "job_id": "1343564164433660",
-      "company": "Meta",
-      "title": "Software Engineer, Data Infrastructure (Technical Leadership)",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_triage": {
-        "action": "skip",
-        "priority": "low",
-        "confidence": 0.91,
-        "delta": -7,
-        "reason": "Technical leadership signals senior scope"
-      },
-      "recovery_input_hash": "3ff976e9de70244c6e0b"
-    },
-    "meta_official_careers|id|2211974449401350": {
-      "source": "meta_official_careers",
-      "job_id": "2211974449401350",
-      "company": "Meta",
-      "title": "Research Scientist Intern, Audio, Machine Learning and Computer Vision (PhD)",
-      "location": "Redmond, WA; Burlingame, CA",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_triage": {
-        "action": "skip",
-        "priority": "low",
-        "confidence": 0.96,
-        "delta": -7,
-        "reason": "PhD research scientist internship, not engineering"
-      },
-      "recovery_input_hash": "f6ff15db145396f31bdd"
-    },
-    "meta_official_careers|id|2212648559310403": {
-      "source": "meta_official_careers",
-      "job_id": "2212648559310403",
-      "company": "Meta",
-      "title": "Product Manager, Facebook",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "meta_official_careers|id|1783206972852520": {
-      "source": "meta_official_careers",
-      "job_id": "1783206972852520",
-      "company": "Meta",
-      "title": "Commercial Sourcing Manager, Network Systems and Optics",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "meta_official_careers|id|1098243699820857": {
-      "source": "meta_official_careers",
-      "job_id": "1098243699820857",
-      "company": "Meta",
-      "title": "Product Marketing Manager, Pricing (Subscriptions)",
-      "location": "Menlo Park, CA; New York, NY; San Francisco, CA",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "meta_official_careers|id|1462488322594576": {
-      "source": "meta_official_careers",
-      "job_id": "1462488322594576",
-      "company": "Meta",
-      "title": "Technical Program Manager, Infrastructure Software Systems",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "disney_official_careers|id|10159279": {
-      "source": "disney_official_careers",
-      "job_id": "10159279",
-      "company": "Disney",
-      "title": "Manager, Software Engineering",
-      "location": "Celebration, Florida",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "disney_official_careers|id|10159285": {
-      "source": "disney_official_careers",
-      "job_id": "10159285",
-      "company": "Disney",
-      "title": "Lead Security Engineer",
-      "location": "Bay Lake, Florida",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "disney_official_careers|id|10161090": {
-      "source": "disney_official_careers",
-      "job_id": "10161090",
-      "company": "Disney",
-      "title": "Copy Coordinator",
-      "location": "Glendale, California",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "disney_official_careers|id|10154464": {
-      "source": "disney_official_careers",
-      "job_id": "10154464",
-      "company": "Disney",
-      "title": "Manager, Product Software Engineering - Apple App Foundation",
-      "location": "New York, New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "disney_official_careers|id|10157838": {
-      "source": "disney_official_careers",
-      "job_id": "10157838",
-      "company": "Disney",
-      "title": "Senior Product Software Engineer - Golang",
-      "location": "Glendale, California",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "two_sigma_official_careers|id|13079": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13079",
-      "company": "Two Sigma",
-      "title": "Quantitative Software Engineer: Generative AI",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:157fe43686": {
-          "input_hash": "dfb2b739e0090329e866",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "61df7b2a29e29548664f",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "e535455bf442bfa5fe4e",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "e2f5d50cab3f40181777",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.88,
-        "delta": 5,
-        "reason": "Generative AI software engineering directly matches"
-      },
-      "recovery_input_hash": "a31b2e7873fae81a8032",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|14102": {
-      "source": "two_sigma_official_careers",
-      "job_id": "14102",
-      "company": "Two Sigma",
-      "title": "AI Solutions Developer",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:3a1b43fee5": {
-          "input_hash": "fd7d73b8385b2d00a446",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "8da2740d24a3881b0edf",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "ba7551b7192571404e39",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "0a14b7773e4de962544b",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.74,
-        "delta": 0,
-        "reason": "AI solutions development may involve hands-on implementation"
-      },
-      "recovery_input_hash": "bf7ffc04d6acae9245e9",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|14096": {
-      "source": "two_sigma_official_careers",
-      "job_id": "14096",
-      "company": "Two Sigma",
-      "title": "AI Research Scientist - Intern [2027 Summer]",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_triage": {
-        "action": "skip",
-        "priority": "low",
-        "confidence": 0.94,
-        "delta": -7,
-        "reason": "AI research scientist internship, not engineering"
-      },
-      "recovery_input_hash": "892c0af16a24c71bcb92"
-    },
-    "two_sigma_official_careers|id|13671": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13671",
-      "company": "Two Sigma",
-      "title": "AI Research Scientist - Campus Full-Time",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:971f416125": {
-          "input_hash": "64359a2af7820f5bd228",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "b032eeb49dfc3ef28eae",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "fa870618fff04ede0bc3",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "cad73df661275ab680aa",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "low",
-        "confidence": 0.61,
-        "delta": 0,
-        "reason": "Campus AI research role; research scope uncertain"
-      },
-      "recovery_input_hash": "5670e6789ffcfed19abc",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|13080": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13080",
-      "company": "Two Sigma",
-      "title": "Quantitative Software Engineer: Techniques Engineering",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:5da8b07b2d": {
-          "input_hash": "b696ca60c489c79a0619",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "db3609323b5af4a38ffe",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "33962da849957330c18f",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "210621cf40987555895c",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.72,
-        "delta": 0,
-        "reason": "Software engineering role with specialized quant focus"
-      },
-      "recovery_input_hash": "e60197632f3855f719bf",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|14104": {
-      "source": "two_sigma_official_careers",
-      "job_id": "14104",
-      "company": "Two Sigma",
-      "title": "GPU Performance Engineer",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:bf816df52f": {
-          "input_hash": "d5eefdbe91b84ef24d7e",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "0b2ab34d423b65d157e3",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "4445f5856ecd17fb5df3",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "1c16514ed2f2c6e2361b",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.72,
-        "delta": 0,
-        "reason": "GPU performance aligns with systems engineering"
-      },
-      "recovery_input_hash": "d99ee650fea7ee97ee21",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|13516": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13516",
-      "company": "Two Sigma",
-      "title": "Software Engineer, Enterprise Platform Engineering",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:197da4bf10": {
-          "input_hash": "9de9795b320bd7e18867",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "2a4b5222174338a60e89",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "1025ce5ce8b4eb8201a9",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "e677e25cbf6c83f81cb1",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.87,
-        "delta": 4,
-        "reason": "Enterprise platform software engineering directly matches"
-      },
-      "recovery_input_hash": "0513fb4c19d2622387f2",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|14103": {
-      "source": "two_sigma_official_careers",
-      "job_id": "14103",
-      "company": "Two Sigma",
-      "title": "Modeling Workflow Specialist",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "two_sigma_official_careers|id|14105": {
-      "source": "two_sigma_official_careers",
-      "job_id": "14105",
-      "company": "Two Sigma",
-      "title": "Post-Training Research Scientist",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "two_sigma_official_careers|id|13766": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13766",
-      "company": "Two Sigma",
-      "title": "Quantitative Researcher: Machine Learning",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:7cfddcb7fc": {
-          "input_hash": "3f95712d3a7c993906ef",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "f44c1e0f199d73233ab9",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "0da7eef95149da3f469a",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "3b4715cdbe4a20f52564",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "low",
-        "confidence": 0.68,
-        "delta": 0,
-        "reason": "ML-adjacent, but quantitative research focus"
-      },
-      "recovery_input_hash": "5fe609cf44034c14bcbe",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|13045": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13045",
-      "company": "Two Sigma",
-      "title": "Quantitative Software Engineer",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:c750d6676f": {
-          "input_hash": "31c4d44a245a92046064",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "d15cb79bd2b6270f4ed9",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "candidate:157fe43686": {
-          "input_hash": "4599a3babc70f9d831a0",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "1674a43544b968e48051",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "af7ecac981d60a7c0045",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.77,
-        "delta": 0,
-        "reason": "Software engineering role; quant domain specialization"
-      },
-      "recovery_input_hash": "d3e02274493c133c72c1",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|13854": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13854",
-      "company": "Two Sigma",
-      "title": "Technical Program Manager",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "two_sigma_official_careers|id|13765": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13765",
-      "company": "Two Sigma",
-      "title": "Quantitative Researcher - Experienced Hire",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "two_sigma_official_careers|id|13945": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13945",
-      "company": "Two Sigma",
-      "title": "Quantitative Researcher - Intern [2027 Summer]",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "two_sigma_official_careers|id|13946": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13946",
-      "company": "Two Sigma",
-      "title": "Quantitative Researcher - Full-Time Campus Hire",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "two_sigma_official_careers|id|13195": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13195",
-      "company": "Two Sigma",
-      "title": "Experienced Quantitative Investing Recruiter",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "two_sigma_official_careers|id|13522": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13522",
-      "company": "Two Sigma",
-      "title": "Software Engineer, Technology Security & Risk",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:ae15f8bb8f": {
-          "input_hash": "a97b69f67718c66c5a0f",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "523a729e31ec98b37e2e",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "5d6cf1b170a9c10d4d20",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "b553e3a5225204d1639a",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.7,
-        "delta": 0,
-        "reason": "Software engineering fit, specialized security domain"
-      },
-      "recovery_input_hash": "55d7462c8ef9b9d23e3b",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|13548": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13548",
-      "company": "Two Sigma",
-      "title": "Senior Software Engineer, Technology Security & Risk",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "two_sigma_official_careers|id|13083": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13083",
-      "company": "Two Sigma",
-      "title": "Quantitative Software Engineer: Quantitative Components",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:b02ebd8f65": {
-          "input_hash": "3e94f11c3df5638fd0d6",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "78205f6a7194fc7cbd43",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "6336a48a99799d3c724a",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "e323dac2cf5d1084b0ef",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.72,
-        "delta": 0,
-        "reason": "Software engineering role with quant specialization"
-      },
-      "recovery_input_hash": "6efb1476e511ab512528",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|13077": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13077",
-      "company": "Two Sigma",
-      "title": "Quantitative Architect / Software Engineer: Macro Engineering",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:63ea360f65": {
-          "input_hash": "ede560e3220db0daf199",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "75b6b5fe394cbbb164eb",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "effcbcda5f050fd3b0d8",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "f986dadc237042817b5c",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "low",
-        "confidence": 0.56,
-        "delta": 0,
-        "reason": "Software role, but architect scope may be senior"
-      },
-      "recovery_input_hash": "3ffc067db479406249f5",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|13081": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13081",
-      "company": "Two Sigma",
-      "title": "Quantitative Software Engineer: Portfolio Research Acceleration",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:b5c5dd167d": {
-          "input_hash": "08fbe4273cdc1fc8a041",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "018b06ad239a2524728d",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "f23fd204e971f7a1bd27",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "805ffb08d75bd6288add",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.69,
-        "delta": 0,
-        "reason": "Software engineering role supporting research systems"
-      },
-      "recovery_input_hash": "ea90690977cbf64c91b2",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|14016": {
-      "source": "two_sigma_official_careers",
-      "job_id": "14016",
-      "company": "Two Sigma",
-      "title": "Software Engineering Internship (Summer 2027)",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:d796e14f62": {
-          "input_hash": "d20b54cdd188d0b5e6de",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "4d8c4e6861f3ceae33da",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "3dff937c9d2ce7fb0dc2",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "3c3e09fe895f93ecaf8a",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.9,
-        "delta": 3,
-        "reason": "Software internship fits early-career target"
-      },
-      "recovery_input_hash": "b7e5ff8c195b62508398",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|13515": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13515",
-      "company": "Two Sigma",
-      "title": "Software Engineer, Modeling Engineering",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:3a6753e4fe": {
-          "input_hash": "bfe183daeb159a77d747",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "81050056bbb6eb63bd71",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "e5dd4aaa6d87e2c66efb",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "37ee452a3a3767614759",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.75,
-        "delta": 0,
-        "reason": "Software engineering role in modeling systems"
-      },
-      "recovery_input_hash": "c83b72f44e85239ea05d",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|14021": {
-      "source": "two_sigma_official_careers",
-      "job_id": "14021",
-      "company": "Two Sigma",
-      "title": "Reliability Engineer",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "two_sigma_official_careers|id|13462": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13462",
-      "company": "Two Sigma",
-      "title": "Software Engineer, Trading Engineering",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:58628d3f7b": {
-          "input_hash": "36e0a2cad4751ecbb1bb",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "d766a1c126e2f024d28a",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "815ac304dfb0a9e67c4b",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "2022caee9b4b2f1a4330",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.75,
-        "delta": 0,
-        "reason": "Software engineering role in trading systems"
-      },
-      "recovery_input_hash": "ad8787002a3495eaac3c",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|14014": {
-      "source": "two_sigma_official_careers",
-      "job_id": "14014",
-      "company": "Two Sigma",
-      "title": "Software Engineering Full-Time Campus Hire (NYC)",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:12d6632f35": {
-          "input_hash": "c04c94a87637c77349d7",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "c3ca98aead1472388542",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "4011bec0fcad72ce9530",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "35a6a70d8a2885de43de",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.96,
-        "delta": 5,
-        "reason": "Full-time campus software engineering hire"
-      },
-      "recovery_input_hash": "7aceed6e487078f3b6b6",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|13078": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13078",
-      "company": "Two Sigma",
-      "title": "Quantitative Software Engineer: Fast Engineering",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:7fbc81389f": {
-          "input_hash": "fc435600f7832acf9ebc",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "bf836b741b66ff46316c",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "3355b66149061f87bc58",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "cef9175e93d6dbe27575",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.72,
-        "delta": 0,
-        "reason": "Software engineering role with performance focus"
-      },
-      "recovery_input_hash": "0f00fbe2d082aa1c984b",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|14018": {
-      "source": "two_sigma_official_careers",
-      "job_id": "14018",
-      "company": "Two Sigma",
-      "title": "Software Engineering Full-Time Campus Hire (Houston)",
-      "location": "United States - TX Houston",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:38e550392d": {
-          "input_hash": "2f2cc46dc46eae65f599",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "83fb5d201bad5d788444",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "0491820cb05a4696e491",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "23a98e142fc9c57ff5de",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.96,
-        "delta": 5,
-        "reason": "Full-time campus software engineering hire"
-      },
-      "recovery_input_hash": "a244a6ded0b658b3a355",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|13082": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13082",
-      "company": "Two Sigma",
-      "title": "Quantitative Software Architect: Quantitative Components",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:f426a3c60d": {
-          "input_hash": "b8163da69cba8dc5851d",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "c6047e5a4a8cc8bdfa12",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "b286ceb58955b8eba056",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "d85d86f5b01d1a5d5594",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "low",
-        "confidence": 0.55,
-        "delta": 0,
-        "reason": "Architect title may indicate senior scope"
-      },
-      "recovery_input_hash": "8fccd2eb2af9fffc9ef7",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|13992": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13992",
-      "company": "Two Sigma",
-      "title": "Two Sigma Securities, Software Engineer",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:b52c2d42b6": {
-          "input_hash": "b94d93af383341dfc0c4",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "4ca0d841492c19f009ca",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "28b180ef3b4958646bbf",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "7dc8c0824bc5c35e924d",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.76,
-        "delta": 0,
-        "reason": "Software engineer role in securities technology"
-      },
-      "recovery_input_hash": "ebe217ebef62da2f1ce5",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|13981": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13981",
-      "company": "Two Sigma",
-      "title": "Infrastructure Engineer - Linux",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00",
-      "recovery_methods": {
-        "candidate:28228890ea": {
-          "input_hash": "26dc08c5a85c969a3e4d",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "4d59796d9ebd5257bbb1",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "e71a09ae8d69f6638173",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "6063e10b0ea9d94d19a0",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.75,
-        "delta": 0,
-        "reason": "Linux infrastructure engineering matches platform target"
-      },
-      "recovery_input_hash": "8f49d71ba42fa8d58717",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
-    },
-    "two_sigma_official_careers|id|12945": {
-      "source": "two_sigma_official_careers",
-      "job_id": "12945",
-      "company": "Two Sigma",
-      "title": "Reliability Engineer - Trading",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "two_sigma_official_careers|id|13975": {
-      "source": "two_sigma_official_careers",
-      "job_id": "13975",
-      "company": "Two Sigma",
-      "title": "Quantitative Researcher - Systematic Macro Portfolio Management",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "equinix_official_careers|id|jr-161053": {
-      "source": "equinix_official_careers",
-      "job_id": "JR-161053",
-      "company": "Equinix",
-      "title": "Software Development Engineer Staff",
-      "location": "Redwood City, California, United States",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "equinix_official_careers|id|jr-158170": {
-      "source": "equinix_official_careers",
-      "job_id": "JR-158170",
-      "company": "Equinix",
-      "title": "SkillBridge Critical Facilities Engineer - Trainee",
-      "location": "Dallas, Texas, United States",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "equinix_official_careers|id|jr-161456": {
-      "source": "equinix_official_careers",
-      "job_id": "JR-161456",
-      "company": "Equinix",
-      "title": "GTM Engineer: Customer Experience & Lifecycle",
-      "location": "Toronto, Ontario, Canada; Redwood City, California, United States; Denver, Colorado, United States; Tampa, Florida, United States; New York, United States; Dallas, Texas, United States; Toronto, Ontario, Canada; Redwood City, California, United States; Denver, Colorado, United States",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "equinix_official_careers|id|jr-162111": {
-      "source": "equinix_official_careers",
-      "job_id": "JR-162111",
-      "company": "Equinix",
-      "title": "Data Center Critical Facilities Engineer",
-      "location": "Kent, Washington, United States",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "equinix_official_careers|id|jr-162551": {
-      "source": "equinix_official_careers",
-      "job_id": "JR-162551",
-      "company": "Equinix",
-      "title": "Data Center Critical Facilities Engineer",
-      "location": "San Jose, California, United States",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "equinix_official_careers|id|jr-163012": {
-      "source": "equinix_official_careers",
-      "job_id": "JR-163012",
-      "company": "Equinix",
-      "title": "Data Center Critical Facilities Engineer",
-      "location": "Torrance, California, United States",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
-    "equinix_official_careers|id|jr-161454": {
-      "source": "equinix_official_careers",
-      "job_id": "JR-161454",
-      "company": "Equinix",
-      "title": "GTM Engineer: Pipeline and Revenue Generation",
-      "location": "Toronto, Ontario, Canada; Redwood City, California, United States; Denver, Colorado, United States; Tampa, Florida, United States; New York, United States; Dallas, Texas, United States; Toronto, Ontario, Canada; Redwood City, California, United States; Denver, Colorado, United States",
-      "first_seen": "2026-10-09T14:46:37.809568+00:00"
-    },
     "meta_official_careers|id|1530919698792460": {
       "source": "meta_official_careers",
       "job_id": "1530919698792460",
@@ -4108,12 +2967,12 @@
       "recovery_methods": {
         "candidate:c8ac6890c2": {
           "input_hash": "20a87406bf678eb369f6",
-          "attempted_at": "2026-10-10T02:41:11.345022+00:00",
+          "attempted_at": "2026-10-10T19:43:12.163628+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "941e9d81b19ea8cf6ccd",
-          "attempted_at": "2026-10-10T02:41:11.345022+00:00",
+          "attempted_at": "2026-10-10T19:43:12.163628+00:00",
           "outcome": "no_match"
         }
       },
@@ -4126,7 +2985,7 @@
       },
       "recovery_input_hash": "0c7b691a8ad053feb509",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
+      "official_search_attempted_at": "2026-10-10T19:43:12.163628+00:00"
     },
     "meta_official_careers|id|1139619051753971": {
       "source": "meta_official_careers",
@@ -4138,12 +2997,12 @@
       "recovery_methods": {
         "candidate:542d11717d": {
           "input_hash": "cf1f94cc05f6a701404b",
-          "attempted_at": "2026-10-10T02:41:11.345022+00:00",
+          "attempted_at": "2026-10-10T19:43:12.163628+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "0c1aae64bfc5f5b50286",
-          "attempted_at": "2026-10-10T02:41:11.345022+00:00",
+          "attempted_at": "2026-10-10T19:43:12.163628+00:00",
           "outcome": "no_match"
         }
       },
@@ -4156,7 +3015,7 @@
       },
       "recovery_input_hash": "991e6d0fac7d6290b0b9",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
+      "official_search_attempted_at": "2026-10-10T19:43:12.163628+00:00"
     },
     "meta_official_careers|id|1772445513807075": {
       "source": "meta_official_careers",
@@ -4192,12 +3051,12 @@
       "recovery_methods": {
         "candidate:0dc8ec4326": {
           "input_hash": "90676f201fe00a613993",
-          "attempted_at": "2026-10-10T02:41:11.345022+00:00",
+          "attempted_at": "2026-10-10T19:43:12.163628+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "a823c3887ff758627895",
-          "attempted_at": "2026-10-10T02:41:11.345022+00:00",
+          "attempted_at": "2026-10-10T19:43:12.163628+00:00",
           "outcome": "no_match"
         }
       },
@@ -4210,7 +3069,7 @@
       },
       "recovery_input_hash": "8b384baa704117a6953a",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
+      "official_search_attempted_at": "2026-10-10T19:43:12.163628+00:00"
     },
     "meta_official_careers|id|1465153895722806": {
       "source": "meta_official_careers",
@@ -4254,12 +3113,12 @@
       "recovery_methods": {
         "candidate:9856b25d9f": {
           "input_hash": "24d1de8befa6a8dcd2f1",
-          "attempted_at": "2026-10-10T02:41:11.345022+00:00",
+          "attempted_at": "2026-10-10T19:43:12.163628+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "4774d4fc91ad809cd73a",
-          "attempted_at": "2026-10-10T02:41:11.345022+00:00",
+          "attempted_at": "2026-10-10T19:43:12.163628+00:00",
           "outcome": "no_match"
         }
       },
@@ -4272,7 +3131,7 @@
       },
       "recovery_input_hash": "d8397064a0392fa2d3a6",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
+      "official_search_attempted_at": "2026-10-10T19:43:12.163628+00:00"
     },
     "meta_official_careers|id|1576370460392944": {
       "source": "meta_official_careers",
@@ -4324,12 +3183,12 @@
       "recovery_methods": {
         "candidate:b96acb88f1": {
           "input_hash": "65f52e62fbd3e73a0e4c",
-          "attempted_at": "2026-10-10T02:41:11.345022+00:00",
+          "attempted_at": "2026-10-10T19:43:12.163628+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "64425ccc18b8f81d4a54",
-          "attempted_at": "2026-10-10T02:41:11.345022+00:00",
+          "attempted_at": "2026-10-10T19:43:12.163628+00:00",
           "outcome": "no_match"
         }
       },
@@ -4342,7 +3201,7 @@
       },
       "recovery_input_hash": "7d7278a04a268f749496",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
+      "official_search_attempted_at": "2026-10-10T19:43:12.163628+00:00"
     },
     "meta_official_careers|id|1379555217714628": {
       "source": "meta_official_careers",
@@ -4432,55 +3291,85 @@
       "location": "Remote, USA",
       "first_seen": "2026-10-09T23:46:01.644631+00:00"
     },
-    "syncareer|id|a247ecb81033662fa259da97d717b4e5": {
-      "source": "syncareer",
-      "job_id": "a247ecb81033662fa259da97d717b4e5",
-      "company": "Truist",
-      "title": "Software Engineer",
-      "location": "Atlanta, Georgia, United States",
-      "first_seen": "2026-10-09T14:51:13.237557+00:00",
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "09819ecba655fa7f867d",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.45,
-        "delta": 0,
-        "reason": "Software Engineer role; seniority and scope unknown"
-      },
-      "recovery_input_hash": "f5d92a0f8e40acda013f",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
+    "meta_official_careers|id|1769900794137147": {
+      "source": "meta_official_careers",
+      "job_id": "1769900794137147",
+      "company": "Meta",
+      "title": "Technical Program Manager — Developer Productivity",
+      "location": "Sunnyvale, CA; Bellevue, WA; Menlo Park, CA",
+      "first_seen": "2026-10-10T14:46:09.233774+00:00"
     },
-    "syncareer|id|ebedd89136c38c897bd6af1e8f27af8e": {
-      "source": "syncareer",
-      "job_id": "ebedd89136c38c897bd6af1e8f27af8e",
-      "company": "National Instruments",
-      "title": "Software Engineer",
-      "location": "Shakopee, Minnesota, United States",
-      "first_seen": "2026-10-09T14:51:13.237557+00:00",
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "a9ca5c09946788e6d614",
-          "attempted_at": "2026-10-09T19:01:56.381921+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.45,
-        "delta": 0,
-        "reason": "Software Engineer role; seniority and scope unknown"
-      },
-      "recovery_input_hash": "4d7a434b40e2a4cb3353",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
+    "meta_official_careers|id|1116121644406167": {
+      "source": "meta_official_careers",
+      "job_id": "1116121644406167",
+      "company": "Meta",
+      "title": "Visiting Hardware Engineer",
+      "location": "Menlo Park, CA",
+      "first_seen": "2026-10-10T14:46:09.233774+00:00"
+    },
+    "meta_official_careers|id|1546957273366413": {
+      "source": "meta_official_careers",
+      "job_id": "1546957273366413",
+      "company": "Meta",
+      "title": "Engineering Manager, Data Systems Hardware & Site Engineering",
+      "location": "Remote, US; Pittsburgh, PA",
+      "first_seen": "2026-10-10T14:46:09.233774+00:00"
+    },
+    "meta_official_careers|id|4372804292960620": {
+      "source": "meta_official_careers",
+      "job_id": "4372804292960620",
+      "company": "Meta",
+      "title": "Developer Marketing Manager",
+      "location": "Menlo Park, CA; Burlingame, CA; New York, NY; San Francisco, CA",
+      "first_seen": "2026-10-10T14:46:09.233774+00:00"
+    },
+    "meta_official_careers|id|1074729828277769": {
+      "source": "meta_official_careers",
+      "job_id": "1074729828277769",
+      "company": "Meta",
+      "title": "PCB Manufacturing Technical Program Manager",
+      "location": "Redmond, WA",
+      "first_seen": "2026-10-10T14:46:09.233774+00:00"
+    },
+    "meta_official_careers|id|2245964885941213": {
+      "source": "meta_official_careers",
+      "job_id": "2245964885941213",
+      "company": "Meta",
+      "title": "Data Center Strategy & Planning Manager",
+      "location": "Bellevue, WA; Menlo Park, CA",
+      "first_seen": "2026-10-10T14:46:09.233774+00:00"
+    },
+    "disney_official_careers|id|10159874": {
+      "source": "disney_official_careers",
+      "job_id": "10159874",
+      "company": "Disney",
+      "title": "Lead Software Engineer",
+      "location": "Lake Buena Vista, Florida",
+      "first_seen": "2026-10-10T14:46:09.233774+00:00"
+    },
+    "disney_official_careers|id|10157158": {
+      "source": "disney_official_careers",
+      "job_id": "10157158",
+      "company": "Disney",
+      "title": "Senior Network Engineer (Project Hire)",
+      "location": "Burbank, California",
+      "first_seen": "2026-10-10T14:46:09.233774+00:00"
+    },
+    "disney_official_careers|id|10159576": {
+      "source": "disney_official_careers",
+      "job_id": "10159576",
+      "company": "Disney",
+      "title": "Manager, Data Engineering",
+      "location": "Orlando, Florida / Glendale, California / Seattle, Washington / Anaheim, California",
+      "first_seen": "2026-10-10T14:46:09.233774+00:00"
+    },
+    "disney_official_careers|id|10159289": {
+      "source": "disney_official_careers",
+      "job_id": "10159289",
+      "company": "Disney",
+      "title": "Senior Manager, Data Product Management",
+      "location": "Orlando, Florida / Glendale, California / Anaheim, California",
+      "first_seen": "2026-10-10T14:46:09.233774+00:00"
     },
     "syncareer|id|1406ec44af3a5f9d7c15f1f15d23e26e": {
       "source": "syncareer",
@@ -4500,7 +3389,7 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "f4202ad18363dbd6c2c5",
-          "attempted_at": "2026-10-10T02:41:11.345022+00:00",
+          "attempted_at": "2026-10-10T19:43:12.163628+00:00",
           "outcome": "no_match"
         }
       },
@@ -4513,7 +3402,7 @@
       },
       "recovery_input_hash": "8b405c36f52dceab8f39",
       "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-10T05:55:15.992177+00:00"
+      "official_search_attempted_at": "2026-10-10T19:43:12.163628+00:00"
     },
     "syncareer|id|77b9ee567e8671811dcb36269c5dede2": {
       "source": "syncareer",
@@ -4522,6 +3411,56 @@
       "title": "Implementation Specialist I",
       "location": "Augusta, Georgia, United States",
       "first_seen": "2026-10-09T23:51:18.811410+00:00"
+    },
+    "syncareer|id|98631e7a6378448c5abd43d1cf58a132": {
+      "source": "syncareer",
+      "job_id": "98631e7a6378448c5abd43d1cf58a132",
+      "company": "National Fuel Gas",
+      "title": "ERP Software Developer",
+      "location": "Buffalo, New York, United States",
+      "first_seen": "2026-10-10T14:51:15.402654+00:00",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "db3d6aa8f8342bd95908",
+          "attempted_at": "2026-10-10T19:43:12.163628+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "normal",
+        "confidence": 0.82,
+        "delta": 0,
+        "reason": "Software development role; ERP domain remains relevant"
+      },
+      "recovery_input_hash": "3043a658c7d2ea75d029",
+      "official_search_status": "no_match",
+      "official_search_attempted_at": "2026-10-10T19:43:12.163628+00:00"
+    },
+    "syncareer|id|1502e648b76f577f7ccee212e6c0fd5f": {
+      "source": "syncareer",
+      "job_id": "1502e648b76f577f7ccee212e6c0fd5f",
+      "company": "MANTECH",
+      "title": "Junior Software Developer",
+      "location": "Doral, Florida, United States",
+      "first_seen": "2026-10-10T14:51:15.402654+00:00",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "33066c95b62fff8e48e3",
+          "attempted_at": "2026-10-10T19:43:12.163628+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.97,
+        "delta": 5,
+        "reason": "Junior software developer directly matches target seniority"
+      },
+      "recovery_input_hash": "79ae2d61975bed0555ad",
+      "official_search_status": "no_match",
+      "official_search_attempted_at": "2026-10-10T19:43:12.163628+00:00"
     }
   }
 }
