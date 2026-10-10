@@ -2,6 +2,325 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-10T02:42:16.482434+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 7,
+      "cache_reused": 343,
+      "peer_reused": 1,
+      "same_content_reused": 6,
+      "non_material_change_reused": 0,
+      "new_or_changed": 8,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 4,
+        "material_jd_change": 1,
+        "prior_rule_result_now_eligible_for_llm": 3
+      },
+      "rescored_within_24h": 1,
+      "fallback_count": 0,
+      "rule_count": 1113,
+      "requests": 3,
+      "input_tokens": 13035,
+      "cached_input_tokens": 0,
+      "output_tokens": 2082,
+      "reasoning_tokens": 1579,
+      "estimated_usd": 0.002345,
+      "latency_seconds": 20.57,
+      "latency_measured": true,
+      "effective_rpm": 8.75,
+      "effective_tpm": 44094.31,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 3,
+      "primary_batches_total": 3,
+      "batches_attempted": 3,
+      "batches_succeeded": 3,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 7,
+      "funnel": {
+        "after_dedup": 6980,
+        "after_company": 6687,
+        "after_hard_filter": 6138,
+        "after_prefilter": 1882,
+        "official_duplicates_suppressed": 419,
+        "retry_only_carried": 0,
+        "dropped": 5011
+      },
+      "output": {
+        "tier_a": 27,
+        "tier_b": 156,
+        "ab_before_cap": 183,
+        "shown": 183,
+        "new_jobs": 25,
+        "new_jobs_added": 10,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 4,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 21,
+            "added": 10
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2455,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 76,
+          "http_requests": 55,
+          "scrapling_requests": 2,
+          "identity_needed": 55,
+          "identities_resolved": 55,
+          "cache_reused": 2,
+          "jds_resolved": 9,
+          "direct_http_resolved": 9,
+          "remaining_no_jd": 2455,
+          "failure_reasons": {
+            "no_direct_or_official_url": 19,
+            "structured_jd_not_found": 2
+          }
+        },
+        "remaining_no_jd": 2404,
+        "failure_reasons": {
+          "no_enrichment_path": 1886,
+          "no_direct_or_official_url": 18,
+          "official_detail_deferred": 44,
+          "linkedin_rate_limited": 74,
+          "linkedin_http_429": 2,
+          "linkedin_http_network_error": 2,
+          "indeed_detail_missing_or_thin": 1,
+          "glassdoor_detail_http_403_static_card_only": 377
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4475139608",
+              "company": "Forage",
+              "title": "Fullstack Software Engineer"
+            },
+            {
+              "key": "id::linkedin::4477879368",
+              "company": "Choice Hotels International",
+              "title": "Software Engineer 1 – Finance Technology"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 7.052,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 4486,
+            "cached_input_tokens": 0,
+            "output_tokens": 726,
+            "reasoning_tokens": 584,
+            "estimated_usd": 0.000812
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4475139608",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack production applications",
+                "React, TypeScript, Python APIs"
+              ],
+              "main_gaps": [
+                "4+ years professional experience"
+              ]
+            },
+            {
+              "key": "id::linkedin::4477879368",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Software Engineer 1",
+                "Spring Boot, REST, AWS"
+              ],
+              "main_gaps": [
+                "ERP/EPM integration experience",
+                "AWS security services"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://jobs.ashbyhq.com/handshake/42aca7f5-2f58-40ef-a6ce-19027d32a12f",
+              "company": "Handshake",
+              "title": "Machine Learning Engineer"
+            },
+            {
+              "key": "id::linkedin::4477872932",
+              "company": "Tala Health",
+              "title": "Machine Learning Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 7.516,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 3905,
+            "cached_input_tokens": 0,
+            "output_tokens": 672,
+            "reasoning_tokens": 506,
+            "estimated_usd": 0.000727
+          },
+          "decisions": [
+            {
+              "key": "url::https://jobs.ashbyhq.com/handshake/42aca7f5-2f58-40ef-a6ce-19027d32a12f",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Agentic workflow deployment",
+                "ML evaluation experience"
+              ],
+              "main_gaps": [
+                "PyTorch/TensorFlow experience",
+                "Ranking model development"
+              ]
+            },
+            {
+              "key": "id::linkedin::4477872932",
+              "match_score": 57.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM fine-tuning",
+                "Generative model evaluation"
+              ],
+              "main_gaps": [
+                "Distributed training",
+                "GPU/TPU orchestration"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4475975133",
+              "company": "RAPSYS TECHNOLOGIES PTE LTD",
+              "title": "Full Stack Developer (Laravel / Vue.js / Node.js)"
+            },
+            {
+              "key": "id::linkedin::4477806745",
+              "company": "JPMorganChase",
+              "title": "Java Software Engineer III"
+            },
+            {
+              "key": "id::linkedin::4477870323",
+              "company": "PermitFlow",
+              "title": "Applied Machine Learning Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 6.002,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 4644,
+            "cached_input_tokens": 0,
+            "output_tokens": 684,
+            "reasoning_tokens": 489,
+            "estimated_usd": 0.000806
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4475975133",
+              "match_score": 66.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack production applications",
+                "REST APIs and data pipelines"
+              ],
+              "main_gaps": [
+                "PHP/Laravel",
+                "Vue.js/Inertia.js"
+              ]
+            },
+            {
+              "key": "id::linkedin::4477806745",
+              "match_score": 64.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React and AWS experience",
+                "Full software development lifecycle"
+              ],
+              "main_gaps": [
+                "Applied Java development",
+                "Enterprise AI-tool experience"
+              ]
+            },
+            {
+              "key": "id::linkedin::4477870323",
+              "match_score": 57.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production LLM and RAG systems",
+                "Document processing and extraction"
+              ],
+              "main_gaps": [
+                "5+ years ML engineering"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-10T00:21:54.378665+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -36187,152 +36506,6 @@
                 "Microsoft ecosystem integrations",
                 "2–5 years relevant experience"
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-10-05T05:26:20.907290+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 1,
-      "cache_reused": 136,
-      "peer_reused": 0,
-      "same_content_reused": 1,
-      "non_material_change_reused": 0,
-      "new_or_changed": 1,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1007,
-      "requests": 1,
-      "input_tokens": 3307,
-      "cached_input_tokens": 0,
-      "output_tokens": 181,
-      "reasoning_tokens": 114,
-      "estimated_usd": 0.000421,
-      "latency_seconds": 3.131,
-      "latency_measured": true,
-      "effective_rpm": 19.16,
-      "effective_tpm": 66841.26,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 1,
-      "primary_batches_total": 1,
-      "batches_attempted": 1,
-      "batches_succeeded": 1,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 1,
-      "funnel": {
-        "after_dedup": 6111,
-        "after_company": 5845,
-        "after_hard_filter": 5352,
-        "after_prefilter": 1527,
-        "official_duplicates_suppressed": 383,
-        "retry_only_carried": 0,
-        "dropped": 4504
-      },
-      "output": {
-        "tier_a": 23,
-        "tier_b": 93,
-        "ab_before_cap": 116,
-        "shown": 116,
-        "new_jobs": 2,
-        "new_jobs_added": 1,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 1,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 1,
-            "added": 1
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 2143,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 20,
-          "http_requests": 20,
-          "jds_resolved": 3,
-          "direct_http_resolved": 3,
-          "identity_needed": 18,
-          "identities_resolved": 18,
-          "remaining_no_jd": 2141,
-          "failure_reasons": {}
-        },
-        "remaining_no_jd": 2109,
-        "failure_reasons": {
-          "no_enrichment_path": 1605,
-          "official_detail_deferred": 48,
-          "linkedin_rate_limited": 77,
-          "linkedin_http_429": 2,
-          "glassdoor_detail_http_403_static_card_only": 377
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4474229441",
-              "company": "BlueCargo",
-              "title": "AI Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 3.131,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 3307,
-            "cached_input_tokens": 0,
-            "output_tokens": 181,
-            "reasoning_tokens": 114,
-            "estimated_usd": 0.000421
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4474229441",
-              "match_score": 93.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production agentic AI systems",
-                "LLM evaluation pipelines"
-              ],
-              "main_gaps": []
             }
           ]
         }
