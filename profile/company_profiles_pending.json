@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-10T23:48:53.360996+00:00",
-  "count": 3608,
+  "generated_at": "2026-10-10T23:54:36.272266+00:00",
+  "count": 3610,
   "companies": [
     {
       "name": "1199SEIU Benefit and Pension Funds",
@@ -1440,6 +1440,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Alexandria Real Estate Equities",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "f54a4ab137f992aa86d8e4b5"
+      ],
       "seen_count": 1
     },
     {
@@ -14720,10 +14733,11 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "5f951c8cb2d612122112297c",
         "d79988c73186fb7c2527e44c",
         "f6a21a4ff44c106fdf6d71fe"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Expand Energy",
@@ -15720,6 +15734,7 @@
       "seen_job_keys": [
         "017151b993dedd8aaffcca3c",
         "04fc24e081a1f8d2aec5dd4e",
+        "06a215d3d0aae022da74653b",
         "3d17faba6ab043a4dd2f6a1e",
         "49144999fb56a341eedb483a",
         "5a24cb9c952d4ea02d2941c0",
@@ -15732,7 +15747,7 @@
         "e224485747a27075dc245a89",
         "f8e30b1211b814e08b574506"
       ],
-      "seen_count": 13
+      "seen_count": 14
     },
     {
       "name": "First Community Credit Union - Houston, TX",
@@ -20977,14 +20992,19 @@
     },
     {
       "name": "IDEX Corporation",
-      "aliases": [],
+      "aliases": [
+        "IDEX"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
-      "seen_count": 1
+      "seen_job_keys": [
+        "32118e4f0e6e1aee5bfc3ab1",
+        "c41e59fea3bbe7e786a2e4a8"
+      ],
+      "seen_count": 2
     },
     {
       "name": "IDI Distributors",
@@ -34916,6 +34936,19 @@
       "tags": [],
       "seen_job_keys": [
         "c175974147a46c8838b94dcb"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Restaurant Brands International",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "62c7bf11c98a7a6dc6aae84c"
       ],
       "seen_count": 1
     },
