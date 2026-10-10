@@ -1,7 +1,7 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-10-10 07:46 PDT
-- Snapshot (UTC): 2026-10-10T14:46:08.300268+00:00
+- Updated (PT): 2026-10-10 16:45 PDT
+- Snapshot (UTC): 2026-10-10T23:45:59.029748+00:00
 - Jobs: 40 (Tier A/B only)
 - Last 24 hours: 3
 - Last 3 days: 40
@@ -20,8 +20,8 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | A | 86 | official | MathWorks | Software Engineer in Test - EDG (Graduate Comp Sci) | US-MA-Natick | 2026-10-08 | 1to3d | - | unreviewed | official_canonical | [open](https://www.mathworks.com/company/jobs/opportunities/26222-software-engineer-in-test-edg-graduate-comp-sci?keywords=ai+engineer) |
 | A | 85 | official | MathWorks | Associate Software Engineer in Test - EDG (Ugrad Engineers) | US-MA-Natick | 2026-10-08 | 1to3d | - | unreviewed | official_canonical | [open](https://www.mathworks.com/company/jobs/opportunities/37818-associate-software-engineer-in-test-edg-ugrad-engineers?keywords=ai+engineer) |
 | A | 85 | official | MathWorks | Associate Software Engineer in Test - EDG (Ugrad Comp Sci) | US-MA-Natick | 2026-10-08 | 1to3d | - | unreviewed | official_canonical | [open](https://www.mathworks.com/company/jobs/opportunities/30606-associate-software-engineer-in-test-edg-ugrad-comp-sci?keywords=ai+engineer) |
-| A | 94 | official | TikTok | Machine Learning Engineer Graduate (Conversational AI) - 2027 Start | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7670686314588801333) |
 | A | 94 | official | TikTok | Machine Learning Engineer Graduate (Conversational AI) - 2027 Start | Seattle, Washington, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7670685495206857013) |
+| A | 94 | official | TikTok | Machine Learning Engineer Graduate (Conversational AI) - 2027 Start | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7670686314588801333) |
 | B | 91 | official | Microsoft | Software Engineer | United States, Washington, Redmond | 2026-10-10 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557037774) |
 | B | 82 | official | Google | Software Engineer III, Performance, AI and Infrastructure | Sunnyvale, CA, USA | 2026-10-09 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/128713001078268614-software-engineer-iii-performance-ai-and-infrastructure) |
 | B | 75 | official | Salesforce | Software Engineering MTS | California - San Francisco | 2026-10-09 | 1to3d | Salesforce | unreviewed | official_canonical | [open](https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Software-Engineering-MTS_JR354592) |
