@@ -1,49 +1,19 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 2830,
+  "count": 2853,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-10-10T22:00:08.921672+00:00",
+    "scraped_at": "2026-10-11T05:04:13.978383+00:00",
     "collector": {
-      "commit": "a965b709adb34d799f28a09c300e0ef2d4238eed",
+      "commit": "20b86313481cc8d04367f0934be20132b6953488",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 33.17,
+    "elapsed_seconds": 32.014,
     "query_stats": [
-      {
-        "query": "software engineer",
-        "group": "primary",
-        "page_budget": 5,
-        "pages_fetched": 2,
-        "stop_reason": "low_new_to_ledger_yield",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 20,
-        "first_pass_survivors": 20,
-        "original_postings_resolved": 0,
-        "jds_resolved": 6,
-        "elapsed_seconds": 3.145,
-        "new_to_ledger": 0,
-        "rediscovered": 20,
-        "page_yields": [
-          {
-            "page": 0,
-            "raw": 10,
-            "new_to_ledger": 0,
-            "known": 10
-          },
-          {
-            "page": 1,
-            "raw": 10,
-            "new_to_ledger": 0,
-            "known": 10
-          }
-        ]
-      },
       {
         "query": "ai engineer",
         "group": "primary",
@@ -53,12 +23,12 @@
         "raw_jobs": 20,
         "unique_jobs": 20,
         "unique_contribution": 20,
-        "first_pass_survivors": 18,
+        "first_pass_survivors": 20,
         "original_postings_resolved": 0,
         "jds_resolved": 3,
-        "elapsed_seconds": 6.329,
-        "new_to_ledger": 2,
-        "rediscovered": 18,
+        "elapsed_seconds": 3.622,
+        "new_to_ledger": 1,
+        "rediscovered": 19,
         "page_yields": [
           {
             "page": 0,
@@ -69,38 +39,86 @@
           {
             "page": 1,
             "raw": 10,
-            "new_to_ledger": 1,
-            "known": 9
+            "new_to_ledger": 0,
+            "known": 10
           }
         ]
       },
       {
-        "query": "full-stack engineer",
+        "query": "backend engineer",
         "group": "primary",
         "page_budget": 2,
         "pages_fetched": 2,
         "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 15,
-        "first_pass_survivors": 17,
+        "unique_contribution": 20,
+        "first_pass_survivors": 19,
         "original_postings_resolved": 0,
-        "jds_resolved": 4,
-        "elapsed_seconds": 5.321,
-        "new_to_ledger": 13,
-        "rediscovered": 7,
+        "jds_resolved": 1,
+        "elapsed_seconds": 6.085,
+        "new_to_ledger": 10,
+        "rediscovered": 10,
         "page_yields": [
           {
             "page": 0,
             "raw": 10,
-            "new_to_ledger": 7,
-            "known": 3
+            "new_to_ledger": 3,
+            "known": 7
           },
           {
             "page": 1,
             "raw": 10,
-            "new_to_ledger": 6,
-            "known": 4
+            "new_to_ledger": 7,
+            "known": 3
+          }
+        ]
+      },
+      {
+        "query": "software engineer",
+        "group": "primary",
+        "page_budget": 5,
+        "pages_fetched": 5,
+        "stop_reason": "page_budget",
+        "raw_jobs": 50,
+        "unique_jobs": 50,
+        "unique_contribution": 41,
+        "first_pass_survivors": 49,
+        "original_postings_resolved": 0,
+        "jds_resolved": 8,
+        "elapsed_seconds": 15.644,
+        "new_to_ledger": 14,
+        "rediscovered": 34,
+        "page_yields": [
+          {
+            "page": 0,
+            "raw": 10,
+            "new_to_ledger": 0,
+            "known": 10
+          },
+          {
+            "page": 1,
+            "raw": 10,
+            "new_to_ledger": 2,
+            "known": 8
+          },
+          {
+            "page": 2,
+            "raw": 10,
+            "new_to_ledger": 0,
+            "known": 9
+          },
+          {
+            "page": 3,
+            "raw": 10,
+            "new_to_ledger": 3,
+            "known": 7
+          },
+          {
+            "page": 4,
+            "raw": 10,
+            "new_to_ledger": 9,
+            "known": 0
           }
         ]
       }
@@ -108,116 +126,63 @@
     "search_collection": {
       "cooldown_active": false,
       "probe": false,
-      "query_cursor": 21,
-      "requests": 6,
-      "responses": 6,
-      "pages_fetched": 6,
+      "query_cursor": 22,
+      "requests": 9,
+      "responses": 9,
+      "pages_fetched": 9,
       "http_status": 0,
       "rate_limited": false,
       "budget_exhausted": false,
       "rate_limit_event": {},
       "transport_stop_reason": "",
-      "new_to_ledger": 15,
-      "rediscovered": 45,
+      "new_to_ledger": 25,
+      "rediscovered": 63,
       "coverage_limited": true
     },
     "detail_enrichment": {
-      "eligible": 20,
+      "eligible": 17,
       "cache_reused": 0,
-      "requests": 3,
-      "responses": 3,
-      "successful_responses": 2,
-      "attempted_ids": [
-        "4478018248",
-        "4476876471",
-        "4476885162"
-      ],
-      "http_status_counts": {
-        "200": 2,
-        "429": 1
-      },
-      "request_limit": 12,
+      "requests": 0,
+      "responses": 0,
+      "successful_responses": 0,
+      "attempted_ids": [],
+      "http_status_counts": {},
+      "request_limit": 0,
       "budget_deferred": 0,
       "budget_exhausted": false,
       "retry_deferred": 0,
       "retry_attempts": 0,
       "exact_official": 0,
       "official_deferred": 0,
-      "rate_limited": true,
-      "jds_resolved": 2,
+      "rate_limited": false,
+      "jds_resolved": 0,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 2,
-      "intentional_skips": 0,
-      "blocked": "blocked with HTTP 429",
+      "detail_jds_fetched": 0,
+      "intentional_skips": 17,
+      "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 18,
-      "failure_reasons": {
-        "linkedin_http_429": 1,
-        "linkedin_rate_limited": 2,
-        "no_description": 15
-      },
-      "rate_limit_event": {
-        "at": "2026-10-10T22:00:42.014707+00:00",
-        "endpoint": "detail",
-        "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4476885162",
-        "query": "Software Engineer II, Fullstack (Ads Platform)",
-        "page": null,
-        "retry_after": "",
-        "retry_after_until": "2026-10-10T22:00:42.014707+00:00",
-        "request_ordinal": 9,
-        "endpoint_ordinal": 3,
-        "round_counts": {
-          "search": 6,
-          "detail": 3
-        },
-        "rolling_counts": {
-          "60": {
-            "search": 6,
-            "detail": 3
-          },
-          "3600": {
-            "search": 6,
-            "detail": 3
-          },
-          "86400": {
-            "search": 27,
-            "detail": 27
-          }
-        }
-      },
+      "remaining_no_jd": 17,
+      "failure_reasons": {},
       "queue": [
         {
-          "job_id": "4476876471",
-          "first_seen": "2026-10-10T02:39:30.958223+00:00",
+          "job_id": "4478065950",
+          "first_seen": "2026-10-11T05:04:13.978383+00:00",
           "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-10T02:39:30.958223+00:00",
-          "attempted_at": "2026-10-10T22:00:35.917834+00:00",
-          "attempted_this_phase": true,
-          "resolved": true,
-          "method": "linkedin_http",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4476885162",
-          "first_seen": "2026-10-10T02:39:30.958223+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-10T02:39:30.958223+00:00",
-          "attempted_at": "2026-10-10T22:00:35.917834+00:00",
-          "attempted_this_phase": true,
+          "needs_jd": null,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
+          "deferred_reason": "linkedin_detail_cooldown",
           "past_fresh": false
         },
         {
-          "job_id": "4477880898",
-          "first_seen": "2026-10-10T02:39:30.958223+00:00",
+          "job_id": "4478065468",
+          "first_seen": "2026-10-10T19:41:32.116368+00:00",
           "priority": "normal",
           "needs_jd": true,
           "deferred_at": "2026-10-10T19:41:32.116368+00:00",
@@ -225,46 +190,7 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4477899057",
-          "first_seen": "2026-10-10T02:39:30.958223+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-10T02:39:30.958223+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "exact_indeed_peer",
-          "deferred_reason": "global_429_pause",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4477858481",
-          "first_seen": "2026-10-10T02:39:30.958223+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-10T02:39:30.958223+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4477858480",
-          "first_seen": "2026-10-10T02:39:30.958223+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-10T02:39:30.958223+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
+          "deferred_reason": "linkedin_detail_cooldown",
           "past_fresh": false
         },
         {
@@ -277,7 +203,7 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
+          "deferred_reason": "linkedin_detail_cooldown",
           "past_fresh": false
         },
         {
@@ -294,42 +220,29 @@
           "past_fresh": false
         },
         {
-          "job_id": "4478018248",
+          "job_id": "4447215161",
           "first_seen": "2026-10-10T19:41:32.116368+00:00",
-          "priority": "high",
+          "priority": "normal",
           "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": "2026-10-10T22:00:35.917834+00:00",
-          "attempted_this_phase": true,
-          "resolved": true,
-          "method": "linkedin_http",
-          "deferred_reason": null,
+          "deferred_at": "2026-10-10T19:41:32.116368+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_cooldown",
           "past_fresh": false
         },
         {
-          "job_id": "4476883598",
-          "first_seen": "2026-10-10T19:41:32.116368+00:00",
+          "job_id": "4478051401",
+          "first_seen": "2026-10-11T05:04:13.978383+00:00",
           "priority": "normal",
           "needs_jd": null,
           "deferred_at": null,
           "attempted_at": null,
           "attempted_this_phase": false,
-          "resolved": true,
-          "method": "official_cache",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4476889058",
-          "first_seen": "2026-10-10T22:00:08.921672+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
+          "deferred_reason": "linkedin_detail_cooldown",
           "past_fresh": false
         },
         {
@@ -342,11 +255,11 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
+          "deferred_reason": "linkedin_detail_cooldown",
           "past_fresh": false
         },
         {
-          "job_id": "4476854489",
+          "job_id": "4476889058",
           "first_seen": "2026-10-10T22:00:08.921672+00:00",
           "priority": "normal",
           "needs_jd": true,
@@ -355,20 +268,7 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4475260915",
-          "first_seen": "2026-10-10T22:00:08.921672+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
+          "deferred_reason": "linkedin_detail_cooldown",
           "past_fresh": false
         },
         {
@@ -381,8 +281,8 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
+          "deferred_reason": "linkedin_detail_cooldown",
+          "past_fresh": true
         },
         {
           "job_id": "4478001134",
@@ -394,8 +294,8 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
+          "deferred_reason": "linkedin_detail_cooldown",
+          "past_fresh": true
         },
         {
           "job_id": "4477636981",
@@ -407,8 +307,8 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
+          "deferred_reason": "linkedin_detail_cooldown",
+          "past_fresh": true
         },
         {
           "job_id": "4478029047",
@@ -418,22 +318,22 @@
           "deferred_at": "2026-10-10T19:41:32.116368+00:00",
           "attempted_at": null,
           "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
+          "resolved": true,
+          "method": "exact_indeed_peer",
+          "deferred_reason": "linkedin_detail_cooldown",
           "past_fresh": false
         },
         {
-          "job_id": "4447215161",
-          "first_seen": "2026-10-10T19:41:32.116368+00:00",
+          "job_id": "4475260915",
+          "first_seen": "2026-10-10T22:00:08.921672+00:00",
           "priority": "normal",
           "needs_jd": true,
-          "deferred_at": "2026-10-10T19:41:32.116368+00:00",
+          "deferred_at": null,
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
+          "deferred_reason": "linkedin_detail_cooldown",
           "past_fresh": false
         },
         {
@@ -446,21 +346,21 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
+          "deferred_reason": "linkedin_detail_cooldown",
           "past_fresh": false
         },
         {
-          "job_id": "4478065468",
-          "first_seen": "2026-10-10T19:41:32.116368+00:00",
+          "job_id": "4477880898",
+          "first_seen": "2026-10-10T02:39:30.958223+00:00",
           "priority": "normal",
           "needs_jd": true,
           "deferred_at": "2026-10-10T19:41:32.116368+00:00",
           "attempted_at": null,
           "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
+          "resolved": true,
+          "method": "exact_indeed_peer",
+          "deferred_reason": "linkedin_detail_cooldown",
+          "past_fresh": true
         },
         {
           "job_id": "4477844671",
@@ -472,8 +372,8 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
+          "deferred_reason": "linkedin_detail_cooldown",
+          "past_fresh": true
         },
         {
           "job_id": "4477858192",
@@ -485,50 +385,86 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
+          "deferred_reason": "linkedin_detail_cooldown",
+          "past_fresh": true
+        },
+        {
+          "job_id": "4477858480",
+          "first_seen": "2026-10-10T02:39:30.958223+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-10-10T02:39:30.958223+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_cooldown",
+          "past_fresh": true
+        },
+        {
+          "job_id": "4477858481",
+          "first_seen": "2026-10-10T02:39:30.958223+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-10-10T02:39:30.958223+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_cooldown",
+          "past_fresh": true
+        },
+        {
+          "job_id": "4476854489",
+          "first_seen": "2026-10-10T22:00:08.921672+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_cooldown",
           "past_fresh": false
         }
       ],
       "admission": {
-        "candidates": 30,
-        "rules_skipped": 7,
+        "candidates": 22,
+        "rules_skipped": 2,
         "rule_reasons": {
-          "prefilter:senior": 5,
-          "citizen_or_clearance": 1,
-          "prefilter:no_positive_family": 1
+          "prefilter:senior": 2
         },
         "cache_reused": 0,
         "non_linkedin_resolved": 3,
-        "triage_evaluated": 5,
-        "triage_deferred": 0,
-        "worth_detail": 20
+        "worth_detail": 15
       },
-      "cooldown_active": false,
+      "cooldown_active": true,
       "probe": false,
-      "round_request_limit": 12,
-      "round_requests": 3,
-      "status": "cooldown"
+      "round_request_limit": 0,
+      "round_requests": 0,
+      "status": "cooldown",
+      "cooldown_until": "2026-10-11T10:00:08.921672+00:00"
     },
     "official_enrichment": {
-      "cache": 7,
-      "exact_indeed_peer": 1,
-      "dedicated_matches": 3,
-      "remote_exact_peer": 1,
+      "cache": 10,
+      "dedicated_matches": 6,
+      "remote_exact_peer": 3,
+      "exact_indeed_peer": 2,
       "search_provider_failures": 1,
-      "no_match": 20,
-      "search_requests": 6,
+      "no_match": 10,
+      "search_requests": 4,
       "search_provider": "bing",
-      "official_page_requests": 0,
-      "remaining_no_jd": 45
+      "official_page_requests": 2,
+      "remaining_no_jd": 68
     },
     "partial": true,
     "blocked_reason": "focused query coverage",
-    "collected_count": 55,
-    "carried_count": 2778,
+    "collected_count": 81,
+    "carried_count": 2773,
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-10-10T22:00:42.456236+00:00"
+    "jd_recovery_at": "2026-10-11T05:04:47.541384+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -3418,7 +3354,31 @@
     "linkedin|id|4475260915": "2026-10-10T22:00:08.921672+00:00",
     "linkedin|id|4478020479": "2026-10-10T22:00:08.921672+00:00",
     "linkedin|id|4478075241": "2026-10-10T22:00:08.921672+00:00",
-    "linkedin|id|4466963442": "2026-10-10T22:00:08.921672+00:00"
+    "linkedin|id|4466963442": "2026-10-10T22:00:08.921672+00:00",
+    "linkedin|id|4450627700": "2026-09-19T18:04:19.520017+00:00",
+    "linkedin|id|4478065950": "2026-10-11T05:04:13.978383+00:00",
+    "linkedin|id|4469295116": "2026-09-19T21:14:22.901035+00:00",
+    "linkedin|id|4448461067": "2026-09-18T21:05:07.442044+00:00",
+    "linkedin|id|4459896844": "2026-09-18T15:15:15.914241+00:00",
+    "linkedin|id|4432135014": "2026-09-19T18:04:19.520017+00:00",
+    "linkedin|id|4441692482": "2026-09-19T21:14:22.901035+00:00",
+    "linkedin|id|4440979016": "2026-10-11T05:04:13.978383+00:00",
+    "linkedin|id|4467876631": "2026-09-18T21:05:07.442044+00:00",
+    "linkedin|id|4432404782": "2026-09-18T15:15:15.914241+00:00",
+    "linkedin|id|4242097297": "2026-09-19T18:04:19.520017+00:00",
+    "linkedin|id|4460337283": "2026-09-19T15:02:29.261831+00:00",
+    "linkedin|id|4466907848": "2026-09-18T21:05:07.442044+00:00",
+    "linkedin|id|4478051401": "2026-10-11T05:04:13.978383+00:00",
+    "linkedin|id|4460335262": "2026-09-18T15:15:15.914241+00:00",
+    "linkedin|id|4460128906": "2026-09-18T21:05:07.442044+00:00",
+    "linkedin|id|4448069561": "2026-09-18T21:05:07.442044+00:00",
+    "linkedin|id|4448719221": "2026-09-18T15:15:15.914241+00:00",
+    "linkedin|id|4448726106": "2026-09-18T15:15:15.914241+00:00",
+    "linkedin|id|4389598631": "2026-09-19T18:04:19.520017+00:00",
+    "linkedin|id|4468408227": "2026-09-19T18:04:19.520017+00:00",
+    "linkedin|id|4469268437": "2026-09-19T18:04:19.520017+00:00",
+    "linkedin|id|4469235338": "2026-09-18T21:05:07.442044+00:00",
+    "linkedin|id|4440300478": "2026-09-18T15:15:15.914241+00:00"
   },
   "jobs": [
     {
@@ -3586,12 +3546,13 @@
       "first_seen": "2026-09-18T15:15:15.914241+00:00",
       "discovery_queries": {
         "linkedin": [
+          "backend engineer",
           "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4475096668",
@@ -4481,7 +4442,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4453740875",
@@ -5518,7 +5479,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4476882191",
@@ -5549,7 +5510,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-10T22:00:42.456236+00:00",
+      "official_search_attempted_at": "2026-10-11T05:04:13.978383+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -5558,7 +5519,7 @@
       },
       "linkedin_detail_triage_hash": "9656cea11d9feca32ab0",
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
@@ -5602,7 +5563,7 @@
       "linkedin_detail_attempted_at": "2026-10-10T22:00:35.917834+00:00",
       "enrichment_status": "deferred",
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
@@ -5634,7 +5595,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-10T22:00:42.456236+00:00",
+      "official_search_attempted_at": "2026-10-11T05:04:13.978383+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -5643,7 +5604,7 @@
       },
       "linkedin_detail_triage_hash": "54b9a1ccf951388208c4",
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
@@ -7576,6 +7537,31 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4460128906",
+      "source": "linkedin",
+      "company": "Amazon",
+      "title": "Senior Software Engineer - Fauna Robotics Inc, Fauna Robotics",
+      "location": "Bellevue, WA",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-fauna-robotics-inc-fauna-robotics-at-amazon-4460128906",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T21:05:07.442044+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4471811526",
       "source": "linkedin",
       "company": "Amazon",
@@ -8137,6 +8123,31 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4469268437",
+      "source": "linkedin",
+      "company": "Amazon",
+      "title": "Sr. Software Development Engineer, Denied Party Screening",
+      "location": "Seattle, WA",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-software-development-engineer-denied-party-screening-at-amazon-4469268437",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-19T18:04:19.520017+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4476339840",
       "source": "linkedin",
       "company": "Amazon Web Services (AWS)",
@@ -8406,6 +8417,52 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4478051401",
+      "source": "linkedin",
+      "company": "Amazon Web Services (AWS)",
+      "title": "Software Development Engineer",
+      "location": "Austin, TX",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-at-amazon-web-services-aws-4478051401",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-11T05:04:13.978383+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "ab5ce285948f3d7f0721",
+          "attempted_at": "2026-10-11T05:04:13.978383+00:00",
+          "outcome": "no_match"
+        },
+        "direct_careers": {
+          "input_hash": "d92142d6b1d284667aae",
+          "attempted_at": "2026-10-11T05:04:13.978383+00:00",
+          "outcome": "no_match"
+        },
+        "site_exact": {
+          "input_hash": "40120fe320c1b68309c1",
+          "attempted_at": "2026-10-11T05:04:13.978383+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-10-11T05:04:13.978383+00:00",
+      "official_search_status": "no_match",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4461518267",
       "source": "linkedin",
       "company": "Amazon Web Services (AWS)",
@@ -8622,7 +8679,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -11269,7 +11326,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -11322,7 +11379,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4454867046",
@@ -12271,7 +12328,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -12369,6 +12426,31 @@
       "linkedin_detail_fetched_at": "2026-10-09T04:43:49.678971+00:00",
       "linkedin_detail_resolved": true,
       "enrichment_method": "linkedin_http"
+    },
+    {
+      "job_id": "4448069561",
+      "source": "linkedin",
+      "company": "BAE Systems, Inc.",
+      "title": "Software Developer, Senior",
+      "location": "Herndon, VA",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-developer-senior-at-bae-systems-inc-4448069561",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T21:05:07.442044+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469988667",
@@ -12852,8 +12934,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468504534",
@@ -13477,7 +13559,7 @@
       "linkedin_detail_attempted_at": "2026-10-08T22:54:54.799888+00:00",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461682027",
@@ -15395,6 +15477,31 @@
       "enrichment_method": "linkedin_http"
     },
     {
+      "job_id": "4450627700",
+      "source": "linkedin",
+      "company": "Booz Allen Hamilton",
+      "title": "Applied AI Engineer",
+      "location": "Fort Belvoir, VA",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/applied-ai-engineer-at-booz-allen-hamilton-4450627700",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-19T18:04:19.520017+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4442267410",
       "source": "linkedin",
       "company": "Booz Allen Hamilton",
@@ -16027,7 +16134,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -16215,7 +16322,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -16444,8 +16551,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4461264783",
@@ -18257,7 +18364,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -19236,7 +19343,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -19261,7 +19368,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -21481,7 +21588,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-cboe-global-markets-4478029047",
       "official_url": "",
-      "description": "",
+      "description": "**Job Description:** -------------------- **Building trusted markets — powered by our people** At Cboe Global Markets, we inspire our people to solve complex challenges together because what we do matters. We provide the financial infrastructure that powers the global economy. As a leading provider of market infrastructure and tradable products, Cboe delivers cutting\\-edge trading, clearing and investment solutions to market participants around the world. We’re building meaningful ways to support professional and personal development while strengthening the trust we’ve earned as a global market leader. Our teams are empowered to share ideas, actively pursue them and bring on a challenge. As champions of internal mobility and access to opportunity, we encourage our people to “go for it” and equip our managers with the training to coach their teams to the next level. We strive to provide employees a safe space to network, share ideas and create opportunities. To support strong partnership and team connection, this role follows a four day in office work model. Location Overview Cboe Global Markets operates a key office in the Overland Park Xchange (OPx), located in Overland Park, Kansas, a bustling suburb of Kansas City. The OPx business park is strategically positioned to provide convenient access to the Kansas City metropolitan area, offering modern infrastructure and a collaborative environment ideal for the financial services and technology industries. This location benefits from proximity to major highways, making it easily accessible for employees The OPx site provides a bala**The Real\\-time Software Engineering team is hiring for a Software Engineer.** Software engineers at Cboe design, develop, deploy, and support real\\-time systems. We care deeply about system reliability, testability, recoverability, fault tolerance, throughput, and latency. We measure times in microseconds and nanoseconds. Our engineers have a strong understanding of computer science fundamentals and software engineering. We are analytical thinkers. We are always learning our craft. If it’s broken, we fix it. If it needs refactoring, we refactor it. If it’s hard to test, we make it testable. We like statistics. We love automation. We are pragmatic. We ship code weekly. We’re looking for like\\-minded individuals to join us. **Your responsibilities will be:** * Implement performant, reliable, and maintainable solutions to technical projects within the Cboe Titanium exchange platform – with guidance and support from peers and mentors. * Ensure your solutions are well tested, both by your own testing and in collaboration with our QA team. * Participate in reviews of both your solutions and those of other engineers. **The ideal candidate has:** * 2\\+ years of experience with C\\+\\+ or experience in another programming language with a strong desire to learn C\\+\\+. * Strong knowledge of data structures and algorithms. * Experience with Linux or UNIX\\-like systems and familiarity with at least one scripting language such as Python. * Experience with database systems and familiarity with SQL. * A self\\-directed, self\\-motivated attitude with enthusiasm for continuous learning, especially from constructive feedback. **You’ll really stand out with:** * Knowledge of financial exchanges. * Knowledge of network programming fundamentals. **Minimum Education Requirement:** * Bachelor’s degree in Computer Science, Computer Engineering, or a related discipline. Benefits and Perks of working for Cboe Global Markets We value the total wellbeing of our people – including health, financial, personal and social wellness. We believe standard benefits like health insurance and fair pay are a given at any organization. Still, you should know we offer: * Fair and competitive salary and incentive compensation packages with an upside for overachievement * Generous paid time off, including vacation, personal days, sick days and annual community service days * Health, dental and vision benefits, including access to telemedicine and mental health services * 2:1 401(k) match, up to 8% match immediately upon hire * Discounted Employee Stock Purchase Plan * Tax Savings Accounts for health, dependent and transportation * Employee referral bonus program * Volunteer opportunities to help you give back to your communities Some of our associates’ favorite benefits and perks include: * Complimentary lunch, snacks and coffee in any Cboe office * Paid Tuition assistance and education opportunities * Generous charitable giving company match * Paid parental leave and fertility benefits * On\\-site gyms and discounts to other fitness centers More About Cboe Global Markets We’re reimagining the future of the workplace by focusing on what matters most, our people. Our journey is an inclusive one. We’re investing deeply in leadership programs and career development initiatives that ensure everyone has an equal chance to succeed. We work with purpose, solving problems with ingenuity, collaboration, and a lot of passion. We’re an engaged and excited team connecting markets across borders and embracing growth in all its forms to achieve incredible outcomes. Equal Employment Opportunity We're proud to be an equal opportunity employer who does not discriminate against any employee or applicant for employment based on any legally protected characteristic, including race, color, religion, sex, sexual orientation, gender identity, national origin, age, disability, genetic information, or veteran status. We are committed to fostering a workplace where all individuals are valued and respected. **This position is not eligible for visa sponsorship. Candidates must be legally authorized to work in the United States without the need for employer sponsorship now or in the future.** **Salary Ranges (applicable for US locations only)** At Cboe, we are committed to providing a competitive, transparent, and market‑informed total rewards program. The anticipated base salary range for this role is $97,750\\-$126,500, with actual compensation determined by job‑related factors such as skills, relevant experience, education, internal alignment, and location. This role may also be eligible for annual incentive compensation and, where applicable, participation in Cboe's long\\-term equity programs. Additional information about Cboe's total rewards program, including benefits and other compensation components, can be found here: Total Rewards at CBOE. *Any communication from Cboe regarding this position will only come from a Cboe recruiter who has a @cboe.com email or via LinkedIn Recruiter. Cboe does not use any other third party communication tools for recruiting purposes.*",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-10T19:41:32.116368+00:00",
@@ -21507,10 +21614,12 @@
       },
       "linkedin_detail_triage_hash": "670f17d3bb29f33ad44c",
       "linkedin_detail_deferred_at": "2026-10-10T19:41:32.116368+00:00",
-      "enrichment_status": "deferred",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_cooldown"
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "jd_recovery_at": "2026-10-11T05:04:13.978383+00:00",
+      "enrichment_method": "exact_indeed_peer"
     },
     {
       "job_id": "4473354175",
@@ -21613,7 +21722,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-10T22:00:42.456236+00:00",
+      "official_search_attempted_at": "2026-10-11T05:04:13.978383+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -21622,7 +21731,7 @@
       },
       "linkedin_detail_triage_hash": "f7c7dbfaa275874e2309",
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
@@ -22356,8 +22465,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470253132",
@@ -22639,7 +22748,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -22885,6 +22994,31 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4467876631",
+      "source": "linkedin",
+      "company": "Citi",
+      "title": "Java Microservices Developer Vice President",
+      "location": "Jersey City, NJ",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/java-microservices-developer-vice-president-at-citi-4467876631",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T21:05:07.442044+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4469016551",
       "source": "linkedin",
       "company": "Citi",
@@ -23054,6 +23188,31 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4468408227",
+      "source": "linkedin",
+      "company": "Citi",
+      "title": "Senior Java Engineer-Assistant Vice President",
+      "location": "Irving, TX",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-java-engineer-assistant-vice-president-at-citi-4468408227",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-19T18:04:19.520017+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4411774413",
@@ -23650,7 +23809,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -24845,7 +25004,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471559905",
@@ -25514,11 +25673,12 @@
       "first_seen": "2026-09-18T18:02:33.092306+00:00",
       "discovery_queries": {
         "linkedin": [
+          "backend engineer",
           "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -26069,8 +26229,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4425315828",
@@ -26582,8 +26742,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4451616486",
@@ -27625,8 +27785,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4456103120",
@@ -27646,11 +27806,11 @@
       "first_seen": "2026-09-10T05:22:16.070493+00:00",
       "discovery_queries": {
         "linkedin": [
-          "full-stack engineer"
+          "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -29138,8 +29298,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4434321883",
@@ -30519,7 +30679,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4410951493",
@@ -32097,12 +32257,13 @@
       "first_seen": "2026-09-19T15:02:29.261831+00:00",
       "discovery_queries": {
         "linkedin": [
+          "backend engineer",
           "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4417554282",
@@ -32921,8 +33082,7 @@
       "first_seen": "2026-09-18T15:15:15.914241+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "full-stack engineer"
+          "software engineer"
         ]
       },
       "recovery_methods": {},
@@ -32933,7 +33093,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -36711,7 +36871,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -37187,7 +37347,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -37893,8 +38053,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4476292717",
@@ -38617,7 +38777,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -38770,8 +38930,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469969065",
@@ -38992,6 +39152,31 @@
       "direct_original_fetched_at": "2026-10-10T02:39:30.958223+00:00",
       "source_verified_at": "2026-10-10T02:39:30.958223+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4469295116",
+      "source": "linkedin",
+      "company": "Handshake",
+      "title": "Senior Software Engineer, Backend Platform",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-backend-platform-at-handshake-4469295116",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-19T21:14:22.901035+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4328157133",
@@ -40150,6 +40335,31 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4440300478",
+      "source": "linkedin",
+      "company": "Hone Health",
+      "title": "Senior Software Developer - .NET",
+      "location": "New York, NY",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-developer-net-at-hone-health-4440300478",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T15:15:15.914241+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4470209501",
       "source": "linkedin",
       "company": "Honeywell Aerospace",
@@ -40753,8 +40963,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4436373959",
@@ -42004,7 +42214,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-10-10T22:00:08.921672+00:00",
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4473591666",
@@ -42058,8 +42268,7 @@
       "first_seen": "2026-10-10T19:41:32.116368+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "full-stack engineer"
+          "software engineer"
         ]
       },
       "recovery_methods": {},
@@ -42070,7 +42279,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -45647,7 +45856,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -47498,8 +47707,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4416261558",
@@ -47550,8 +47759,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4476298727",
@@ -48118,7 +48327,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -48533,16 +48742,6 @@
           "software engineer"
         ]
       },
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "80bb510800c0a5381e87",
-          "attempted_at": "2026-10-10T19:41:32.116368+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-10T22:00:42.456236+00:00",
-      "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "normal",
@@ -48550,10 +48749,19 @@
       },
       "linkedin_detail_triage_hash": "8728c3dc72c8a7b3dcea",
       "linkedin_detail_deferred_at": "2026-10-10T19:41:32.116368+00:00",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "80bb510800c0a5381e87",
+          "attempted_at": "2026-10-10T19:41:32.116368+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "official_search_attempted_at": "2026-10-11T05:04:13.978383+00:00",
+      "official_search_status": "no_match",
       "enrichment_status": "deferred",
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_cooldown"
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470821912",
@@ -48885,7 +49093,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -49102,7 +49310,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -49339,8 +49547,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470424492",
@@ -50314,6 +50522,7 @@
       },
       "linkedin_detail_triage_hash": "dedfbb07243ae2a9d6e7",
       "linkedin_detail_deferred_at": "2026-10-10T19:41:32.116368+00:00",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "recovery_methods": {
         "generic_search": {
           "input_hash": "5ae8c077ac40ea94a061",
@@ -50321,12 +50530,11 @@
           "outcome": "no_match"
         }
       },
-      "official_search_attempted_at": "2026-10-10T22:00:42.456236+00:00",
+      "official_search_attempted_at": "2026-10-11T05:04:13.978383+00:00",
       "official_search_status": "no_match",
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true,
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_cooldown"
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4451815670",
@@ -51081,7 +51289,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4466416625",
@@ -51536,7 +51744,7 @@
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -51562,16 +51770,14 @@
       },
       "recovery_methods": {},
       "application_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Context-Fusion-AI-Engineer---Autonomous-Vehicles_JR2025163",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-10T19:41:32.116368+00:00",
-      "jd_recovery_at": "2026-10-10T19:41:32.116368+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-10T19:41:32.116368+00:00",
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4460680708",
@@ -52112,6 +52318,32 @@
       "official_search_status": "no_match",
       "source_verified_at": "2026-09-24T00:01:43.970475+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4432404782",
+      "source": "linkedin",
+      "company": "Navan",
+      "title": "Senior Software Engineer, Flights",
+      "location": "New York, NY",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-flights-at-navan-4432404782",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T15:15:15.914241+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer",
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469937493",
@@ -52727,6 +52959,31 @@
       "recovery_methods": {},
       "source_verified_at": "2026-09-30T05:10:49.340469+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4389598631",
+      "source": "linkedin",
+      "company": "NewtonX",
+      "title": "Senior Staff Software Engineer",
+      "location": "New York, NY",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-staff-software-engineer-at-newtonx-4389598631",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-19T18:04:19.520017+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469004128",
@@ -54663,7 +54920,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -56280,8 +56537,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4442679824",
@@ -58951,6 +59208,56 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4448719221",
+      "source": "linkedin",
+      "company": "Pivotal Health",
+      "title": "Senior Software Engineer - Platform Engineering",
+      "location": "Brooklyn, NY",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-platform-engineering-at-pivotal-health-4448719221",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T15:15:15.914241+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4448726106",
+      "source": "linkedin",
+      "company": "Pivotal Health",
+      "title": "Senior Software Engineer - Platform Engineering",
+      "location": "Santa Monica, CA",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-platform-engineering-at-pivotal-health-4448726106",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T15:15:15.914241+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4410273031",
       "source": "linkedin",
       "company": "Plaid",
@@ -59030,7 +59337,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-10T22:00:42.456236+00:00",
+      "official_search_attempted_at": "2026-10-11T05:04:13.978383+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -63791,6 +64098,56 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4460335262",
+      "source": "linkedin",
+      "company": "Rippling",
+      "title": "Senior Software Engineer, Backend Full Stack - Emerging Products",
+      "location": "New York, NY",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-backend-full-stack-emerging-products-at-rippling-4460335262",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T15:15:15.914241+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4460337283",
+      "source": "linkedin",
+      "company": "Rippling",
+      "title": "Senior Software Engineer, Backend Full Stack - Emerging Products",
+      "location": "Seattle, WA",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-backend-full-stack-emerging-products-at-rippling-4460337283",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-19T15:02:29.261831+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4336077196",
       "source": "linkedin",
       "company": "Rippling",
@@ -63853,7 +64210,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-backend-it-product-at-rippling-4477880898",
       "official_url": "",
-      "description": "",
+      "description": "**About Rippling** ------------------ Rippling gives businesses one place to run HR, IT, and Finance. It brings together all of the workforce systems that are normally scattered across a company, like payroll, expenses, benefits, and computers. For the first time ever, you can manage and automate every part of the employee lifecycle in a single system. Take onboarding, for example. With Rippling, you can hire a new employee anywhere in the world and set up their payroll, corporate card, computer, benefits, and even third\\-party apps like Slack and Microsoft 365—all within 90 seconds. Based in San Francisco, CA, Rippling has raised $1\\.4B\\+ from the world’s top investors—including Kleiner Perkins, Founders Fund, Sequoia, Greenoaks, and Bedrock—and was named one of America's best startup employers by Forbes. We prioritize candidate safety. Please be aware that all official communication will only be sent from @Rippling.com addresses. **About the IT Product Team** ----------------------------- The IT Product Engineering team is critical to unifying Rippling's workforce management system, bridging the gap between HR and traditional IT administration. Our mission is to build software that enables businesses to manage employee devices, applications, and access security automatically, leveraging Rippling's single source of employee truth (the HRIS). We automate the complexity of IT management from the moment a new employee is hired to the moment they offboard. ### **What We Build** We build the mission\\-critical software that simplifies IT for organizations, turning complex, manual processes into simple, one\\-click solutions. Our core product domains include: * **Device Management (MDM):** Developing systems to securely enroll, configure, manage, and inventory corporate devices (macOS, Windows, iOS, etc.), including policy enforcement and remote wipe capabilities. * **App Management \\& Identity:** Creating the centralized platform for provisioning and de\\-provisioning employee access to hundreds of third\\-party SaaS applications, ensuring instant security and compliance through integrated identity and access management (IAM). * **Inventory \\& Asset Management:** Building the core financial and logistical systems to track physical assets, manage software licenses, and automate IT procurement from device ordering to deployment. * **Security \\& Compliance:** Developing the mechanisms for setting, managing, and enforcing security policies across all devices and applications, ensuring employee and corporate data remain protected. **What you will do** -------------------- * Design, implement, and test reliable backend services and APIs that power core product features and business logic at scale. * Work across key technical domains, including API design, data modeling, event modeling, and optimizing service performance. * Own the development lifecycle for defined features, from implementation and testing to deployment, monitoring, and support in a production environment. * Effectively integrate into cross\\-functional teams, contribute to technical discovery, and rapidly learn from code and system feedback. **What you will need** ---------------------- * 2\\+ years of professional experience as a backend engineer, preferably with Python, Go, or a similar production language, and strong experience with relational databases (e.g., PostgreSQL). * Care about business impact, balancing technical craft with speed and the bottom line to deliver value quickly. * Ability to thrive in fast\\-paced, dynamic environments, demonstrating resilience and agility in the face of changing product needs. * Excellent skills in communicating complex technical ideas with clarity to enable effective collaboration with peers and stakeholders. **Additional Information** -------------------------- Rippling is an equal opportunity employer. We are committed to building a diverse and inclusive workforce and do not discriminate based on race, religion, color, national origin, ancestry, physical disability, mental disability, medical condition, genetic information, marital status, sex, gender, gender identity, gender expression, age, sexual orientation, veteran or military status, or any other legally protected characteristics, Rippling is committed to providing reasonable accommodations for candidates with disabilities who need assistance during the hiring process. To request a reasonable accommodation, please email accomodations@rippling.com Rippling highly values having employees working in\\-office to foster a collaborative work environment and company culture. For office\\-based employees (employees who live within a defined radius of a Rippling office), Rippling considers working in the office, at least three days a week under current policy, to be an essential function of the employee's role. This role will receive a competitive salary \\+ benefits \\+ equity. The salary for US\\-based employees will be aligned with one of the ranges below based on location; see which tier applies to your location here. A variety of factors are considered when determining someone’s compensation–including a candidate’s professional background, experience, and location. Final offer amounts may vary from the amounts listed below. **The pay range for this role is:** 152,000 \\- 225,000 USD per year(US Tier 1\\)",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-10T02:39:30.958223+00:00",
@@ -63879,9 +64236,11 @@
       "official_search_attempted_at": "2026-10-10T22:00:42.456236+00:00",
       "official_search_status": "no_match",
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true,
-      "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_cooldown"
+      "verified_this_run": false,
+      "enrichment_status": "resolved",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "jd_recovery_at": "2026-10-11T05:04:13.978383+00:00",
+      "enrichment_method": "exact_indeed_peer"
     },
     {
       "job_id": "4477899057",
@@ -63924,7 +64283,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4463786876",
@@ -64145,6 +64504,32 @@
       "recovery_methods": {},
       "source_verified_at": "2026-10-07T04:46:48.535112+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4440979016",
+      "source": "linkedin",
+      "company": "Rippling",
+      "title": "Staff Software Engineer, Backend - RQL",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/staff-software-engineer-backend-rql-at-rippling-4440979016",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-11T05:04:13.978383+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470179403",
@@ -66371,6 +66756,31 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4466907848",
+      "source": "linkedin",
+      "company": "Sandvik",
+      "title": "Software Engineer",
+      "location": "Detroit, MI",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-sandvik-4466907848",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T21:05:07.442044+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4474059757",
       "source": "linkedin",
       "company": "Saragossa",
@@ -67028,11 +67438,12 @@
       "first_seen": "2026-09-18T18:02:33.092306+00:00",
       "discovery_queries": {
         "linkedin": [
+          "backend engineer",
           "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -67078,11 +67489,12 @@
       "first_seen": "2026-09-18T18:02:33.092306+00:00",
       "discovery_queries": {
         "linkedin": [
+          "backend engineer",
           "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -67133,7 +67545,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -67895,16 +68307,6 @@
           "backend engineer"
         ]
       },
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "c988f4d0fed60951f82c",
-          "attempted_at": "2026-10-10T19:41:32.116368+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-10T22:00:42.456236+00:00",
-      "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "normal",
@@ -67912,10 +68314,19 @@
       },
       "linkedin_detail_triage_hash": "140714499b574ce22ef3",
       "linkedin_detail_deferred_at": "2026-10-10T19:41:32.116368+00:00",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "c988f4d0fed60951f82c",
+          "attempted_at": "2026-10-10T19:41:32.116368+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "official_search_attempted_at": "2026-10-11T05:04:13.978383+00:00",
+      "official_search_status": "no_match",
       "enrichment_status": "deferred",
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_cooldown"
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4473361863",
@@ -68713,6 +69124,31 @@
       "source_verified_at": "2026-09-29T05:14:01.400356+00:00",
       "verified_this_run": false,
       "recovery_status": "filtered"
+    },
+    {
+      "job_id": "4441692482",
+      "source": "linkedin",
+      "company": "Snap Inc.",
+      "title": "Software Engineer, Backend, Level 5 – Ads Delivery",
+      "location": "Bellevue, WA",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-backend-level-5-%E2%80%93-ads-delivery-at-snap-inc-4441692482",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-19T21:14:22.901035+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4453006505",
@@ -70650,8 +71086,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4465918050",
@@ -75464,7 +75900,7 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4476896118",
@@ -76083,7 +76519,7 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -76593,6 +77029,31 @@
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4242097297",
+      "source": "linkedin",
+      "company": "Together AI",
+      "title": "Senior Software Engineer - Together Cloud Platform",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-together-cloud-platform-at-together-ai-4242097297",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-19T18:04:19.520017+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4475008530",
@@ -77761,7 +78222,7 @@
       "official_search_attempted_at": "2026-10-10T22:00:42.456236+00:00",
       "official_search_status": "no_match",
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
@@ -77803,7 +78264,7 @@
       "official_search_attempted_at": "2026-10-10T22:00:42.456236+00:00",
       "official_search_status": "no_match",
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
@@ -78332,6 +78793,40 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T19:15:15.514315+00:00",
       "official_search_status": "deferred"
+    },
+    {
+      "job_id": "4469235338",
+      "source": "linkedin",
+      "company": "Uber",
+      "title": "Sr Software Engineer - Engineer",
+      "location": "Seattle, WA",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-software-engineer-engineer-at-uber-4469235338",
+      "official_url": "",
+      "description": "About the team The AM&D (Autonomous Mobility & Delivery) team owns the autonomous future of Uber’s Rides and Eats business, which is one of Uber’s most important bets as a public company that sets the world in motion. Our goal is to eventually enable mass-scale AV commercialization globally in all 10000+ cities Uber operates. We are just getting started. As we gradually but surely move towards this future, there are a full spectrum of engineering challenges that need to be tackled. For Autonomous Mobility Product Engineering team, specifically: How do we drive AV adoptions with informative, trustworthy and exciting experiences? How do we make sure a rider's autonomous ride share experience is still safe, informative and trustworthy without a human driver to interact with? From pickup, to on trip to drop off. We are solving problems that have never been solved before. Creating solutions that will shape the world’s future in autonomous transportation. Therefore we are looking for the best software engineering talents to join us to write this future chapter for humanity. What You’ll Do As a Senior Software Engineer, you will be expected to lead key projects that contribute to one or several top line KPIs for the team. You will work closely with cross functional partners to develop product requirements and technical designs, and push these plans into fruition. Develop a strategic roadmap that helps Uber to achieve specific business goals that forwards its strategic goals that strengthens Uber’s position as the Autonomous Vehicle rideshare platform of choice. Lead and guide end to end execution of multiple projects concurrently across multiple lines of businesses with deep knowledge and intuitions around experience, marketplace dynamics and platform versatility to drive key metrics from projects to projects. Ship new products and paradigms that move KPIs quarter over quarter while ensuring platform stability. Develop tech that future proofs Uber’s tech stack for Autonomous Vehicle use cases while making broader company-wide impact where applicable. Basic Qualifications PhD or equivalent in Computer Science, Engineering, Mathematics or related field AND 2-years full-time Software Engineering work experience OR 5-years full-time Software Engineering work experience, WHICH INCLUDES 3-years total technical software engineering experience in one or more of the following areas: Programming language (e.g. C, C++, Java, Python, or Go) Note the 3-years total of specialized software engineering experience may have been gained through education and full-time work experience, additional training, coursework, research, or similar (OR some combination of these). The years of specialized experience are not necessarily in addition to the years of Education & full-time work experience indicated. Preferred Qualifications 5+ years of total software development experience Prefer background in autonomous vehicles (AV), with hands-on experience in developing, testing, or optimizing AV systems or related technologies. Strong product engineering background and technical skillset. Business-driven mindset to lead cross-functional and inter-company collaborations, driving key projects that directly impact team KPIs. Ability to anticipate opportunities and technical challenges coming with business expansions, while developing future-proof solutions for Autonomous Vehicle use cases. Extensive experience with fast-pace metrics-driven and business-driven product iterations with strong reliability guardrails Experience in crafting and developing large scale distributed systems and scalable backend services that powers fast-pace product iterations using a microservices architecture Extensive experience working in a fast changing, groundbreaking domain. Background in transportation and / or autonomous vehicle industry Extensive experience building modular and scalable solutions that caters to a variety of clients and use cases. Extensive experience with product engineering applications of Operations Research. Extensive experience navigating complex cross functional collaboration: Aside from day to day collaboration with product and design counterparts, extensive experience working with business, legal, operations, technical project management, etc to drive consensus. Extensive experience working closely with external partner engineering teams and their cross-functional partners. Any level of enterprise mobile engineering experience For San Francisco, CA-based roles: The base salary range for this role is USD $202,000 per year - USD $224,000 per year. For Seattle, WA-based roles: The base salary range for this role is USD $202,000 per year - USD $224,000 per year. For all US locations, you will be eligible to participate in Uber's bonus program, and may be offered an equity award & other types of comp. All full-time employees are eligible to participate in a 401(k) plan. You will also be eligible for various benefits.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T21:05:07.442044+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://jobs.uber.com/en/jobs/302275",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-11T05:04:13.978383+00:00",
+      "jd_recovery_at": "2026-10-11T05:04:13.978383+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-11T05:04:13.978383+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4450688320",
@@ -79222,6 +79717,31 @@
       "enrichment_method": "linkedin_http"
     },
     {
+      "job_id": "4432135014",
+      "source": "linkedin",
+      "company": "Vantor",
+      "title": "Senior Software Engineer",
+      "location": "Arlington, VA",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-at-vantor-4432135014",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-19T18:04:19.520017+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4454843059",
       "source": "linkedin",
       "company": "Vantor",
@@ -79396,12 +79916,11 @@
       "first_seen": "2026-09-05T02:34:33.300648+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "full-stack engineer"
+          "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -80045,7 +80564,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-10T22:00:42.456236+00:00",
+      "official_search_attempted_at": "2026-10-11T05:04:13.978383+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -80054,7 +80573,7 @@
       },
       "linkedin_detail_triage_hash": "3fcbd1a98e9f9e64258e",
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "enrichment_status": "deferred",
       "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
@@ -80189,7 +80708,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:no_positive_family",
       "recovery_methods": {},
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4384550743",
@@ -80448,7 +80967,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -80474,7 +80993,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469974973",
@@ -82468,7 +82987,7 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -82564,8 +83083,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4366219229",
@@ -82815,16 +83334,14 @@
       },
       "recovery_methods": {},
       "application_url": "https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CO-Boulder/Software-Engineer-Senior-Software-Engineer---AI-Platform--Agent-Runtime-_JR-0109507",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-10T19:41:32.116368+00:00",
-      "jd_recovery_at": "2026-10-10T19:41:32.116368+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-10T19:41:32.116368+00:00",
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4466631363",
@@ -82849,16 +83366,14 @@
       },
       "recovery_methods": {},
       "application_url": "https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CO-Boulder/Software-Engineer-Senior-Software-Engineer---AI-Platform--Agent-Runtime-_JR-0109507",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-10T19:41:32.116368+00:00",
-      "jd_recovery_at": "2026-10-10T19:41:32.116368+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-10T19:41:32.116368+00:00",
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4453463735",
@@ -83136,16 +83651,14 @@
       },
       "recovery_methods": {},
       "application_url": "https://job-boards.greenhouse.io/yext/jobs/8224109",
-      "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-10T19:41:32.116368+00:00",
-      "jd_recovery_at": "2026-10-10T19:41:32.116368+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "official_search_verified": true,
+      "enrichment_method": "official_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "direct_original_fetched_at": "2026-10-10T19:41:32.116368+00:00",
-      "source_verified_at": "2026-10-10T19:41:32.116368+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4370841654",
@@ -83898,6 +84411,40 @@
       "direct_original_fetched_at": "2026-10-06T05:42:20.415919+00:00",
       "source_verified_at": "2026-10-06T05:42:20.415919+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4459896844",
+      "source": "linkedin",
+      "company": "Zscaler",
+      "title": "Staff Software Development Engineer (Microservices)",
+      "location": "San Jose, CA",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/staff-software-development-engineer-microservices-at-zscaler-4459896844",
+      "official_url": "",
+      "description": "<div class=\"content-intro\"><p data-pm-slice=\"1 1 []\">Zscaler (NASDAQ: ZS) accelerates digital transformation so customers can be more agile, efficient, resilient, and secure. The Zscaler Zero Trust Exchange platform protects thousands of customers from cyberattacks and data loss by securely connecting users, devices, and applications in any location. Distributed across 200+ public data centers globally and thousands of private sites at the edge, the SASE-based Zero Trust Exchange is the world’s largest in-line cloud security platform.</p> <p>We believe the future of work is Human + AI and are building an AI-native enterprise where human potential is amplified by machine intelligence to solve the world’s hardest security challenges. Driven by deep customer obsession, we are committed to the mission, outcome, and to each other. We bring these commitments to life through three core behaviors: ownership and collaboration, trust through outcomes and impact, and a challenge culture with ongoing feedback. Ready to make an impact at the company pioneering security transformation in the AI era? Join us at Zscaler.</p></div><p><a style=\"display: block; overflow: hidden; position: relative;\" href=\"https://share.synthesia.io/c57d35c1-5686-4e34-bec6-bba734f90ab1\" target=\"_blank\"> <img style=\"width: 100%; display: block; max-width: 100%;\" src=\"https://image.synthesia.io/c57d35c1-5686-4e34-bec6-bba734f90ab1/thumbnail.gif\" alt=\"Software Developer\"> </a></p> <p data-path-to-node=\"0\"><strong data-path-to-node=\"0\" data-index-in-node=\"0\">Role</strong></p> <p data-path-to-node=\"0\">We are looking for a Staff Software Development Engineer (Microservices) to join our team. This is a hybrid role based in San Jose, CA (3 days a week in office) role, reporting to the Senior Director of Engineering in the ZIA Engineering department. You will work on the control plane for the Zscaler Internet Access (ZIA) product, which has redefined how security services are delivered in the cloud. Because our platform has redefined cloud security, our underlying technology must continuously evolve to meet massive scale. We are seeking engineers experienced in designing and navigating complex distributed architectures to help us innovate and elevate our foundational tech stack.</p> <p data-path-to-node=\"1\"><strong data-path-to-node=\"1\" data-index-in-node=\"0\">What you’ll do (Role Expectations)</strong></p> <ul data-path-to-node=\"2\"> <li> <p data-path-to-node=\"2,0,0\">Execute the technical roadmap to modernize enterprise platforms using API-first design and microservices architecture</p> </li> <li> <p data-path-to-node=\"2,1,0\">Design, develop, and deploy highly resilient, low-latency, event-driven solutions while maintaining ownership from API tiers to back-end services</p> </li> <li> <p data-path-to-node=\"2,2,0\">Role model a culture of quality by adhering to coding standards, performing code reviews, and championing TDD/BDD practices</p> </li> <li> <p data-path-to-node=\"2,3,0\">Partner with Product, DevOps, and System Architects to translate complex business needs into scalable, high-performance technical solutions</p> </li> <li> <p data-path-to-node=\"2,4,0\">Utilize containerization (Docker) and orchestration platforms (Kubernetes) to manage service lifecycles within hybrid or public cloud environments (AWS/Azure/GCP) and use AI-powered tools for advanced problem solving and engineering efficiency</p> </li> </ul> <p data-path-to-node=\"3\"><strong data-path-to-node=\"3\" data-index-in-node=\"0\">Who You Are (Success Profile)</strong></p> <ul data-path-to-node=\"4\"> <li> <p data-path-to-node=\"4,0,0\">You thrive in ambiguity. You're comfortable building the path as you walk it. You thrive in a dynamic environment, seeing ambiguity not as a hindrance, but as the raw material to build something meaningful.</p> </li> <li> <p data-path-to-node=\"4,1,0\">You act like an owner. Your passion for the mission fuels your bias for action. You operate with integrity because you genuinely care about the outcome. True ownership involves leveraging dynamic range: the ability to navigate seamlessly between high-level strategy and hands-on execution.</p> </li> <li> <p data-path-to-node=\"4,2,0\">You are a problem-solver. You love running towards the challenges because you are laser-focused on finding the solution, knowing that solving the hard problems delivers the biggest impact.</p> </li> <li> <p data-path-to-node=\"4,3,0\">You are a high-trust collaborator. You are ambitious for the team, not just yourself. You embrace our challenge culture by giving and receiving ongoing feedback—knowing that candor delivered with clarity and respect is the truest form of teamwork and the fastest way to earn trust.</p> </li> <li> <p data-path-to-node=\"4,4,0\">You are a learner. You have a true growth mindset and are obsessed with your own development, actively seeking feedback to become a better partner and a stronger teammate. You love what you do and you do it with purpose.</p> </li> </ul> <p data- <strong data-path-to-node=\"7\" data-index-in-node=\"0\">What Will Make You Stand Out (Preferred Qualifications)</strong></p> <ul data-path-to-node=\"8\"> <li> <p data-path-to-node=\"8,0,0\">Experience implementing AI-driven automated testing or using generative AI tools to optimize microservice code performance and code generation workflows</p> </li> <li> <p data-path-to-node=\"8,1,0\">Experience with Service Mesh technologies such as Istio or Linkerd</p> </li> <li> <p data-path-to-node=\"8,2,0\">Practical knowledge of chaos engineering and advanced performance testing tools</p> </li> </ul> <p data-path-to-node=\"9\">#LI-Hybrid #LI-KM9</p><div class=\"content-pay-transparency\"><div class=\"pay-input\"><div class=\"description\"><p>Zscaler’s salary ranges are benchmarked and are determined by role and level. The range displayed on each job posting reflects the minimum and maximum target for new hire salaries for the position across all US locations and could be higher or lower based on a multitude of factors, including job-related skills, experience, and relevant education or training.</p> <p>The base salary range listed for this full-time position excludes commission/ bonus/ equity (if applicable) + benefits.</p></div><div class=\"title\">Base Pay Range</div><div class=\"pay-range\"><span>$133,000</span><span class=\"divider\">&mdash;</span><span>$190,000 USD</span></div></div></div><div class=\"content-conclusion\"><p data-pm-slice=\"1 3 []\">At Zscaler, we are committed to building a team that reflects the communities we serve and the customers we work with. We foster an inclusive environment that values all backgrounds and perspectives, emphasizing collaboration and belonging. Join us in our mission to make doing business seamless and secure.</p> <p>Our Benefits program is one of the most important ways we support our employees. Zscaler proudly offers comprehensive and inclusive benefits to meet the diverse needs of our employees and their families throughout their life stages, including:</p> <div class=\"has-nudge\" data-nudge-id=\"5eb9419b-6a4d-4451-bfa6-e2eb96084be0\"> <ul> <li>Various health plans</li> <li>Time off plans for vacation and sick time</li> <li>Parental leave options</li> <li>Retirement options</li> <li>Education reimbursement</li> <li>In-office perks, and more!</li> </ul> <div class=\"has-nudge\" data-nudge-id=\"5eb9419b-6a4d-4451-bfa6-e2eb96084be0\"> <p data-pm-slice=\"1 1 []\">Learn more about Zscaler's hybrid working model and benefits&nbsp;<a href=\"https://www.zscaler.com/candidate-resource-hub\" target=\"_blank\">here</a>.</p> </div> </div> <p>By applying for this role, you adhere to applicable laws, regulations, and Zscaler policies, including those related to security and privacy standards and guidelines.</p> <p class=\"p1\">Zscaler is committed to providing equal employment opportunities to all individuals. We strive to create a workplace where employees are treated with respect and have the chance to succeed. All qualified applicants will be considered for employment without regard to race, color, religion, sex (including pregnancy or related medical conditions), age, national origin, sexual orientation, gender identity or expression, genetic information, disability status, protected veteran status, or any other characteristic protected by federal, state, or local laws. <em>See more information by clicking on the </em><a href=\"https://www.eeoc.gov/sites/default/files/2023-06/22-088_EEOC_KnowYourRights6.12ScreenRdr.pdf\"><em>Know Your Rights: Workplace Discrimination is Illegal </em></a><em>link.</em></p> <p>Pay Transparency</p> <p>Zscaler complies with all applicable federal, state, and local pay transparency rules.</p> <p>Zscaler is committed to providing reasonable support (called accommodations or adjustments) in our recruiting processes for candidates who are differently abled, have long term conditions, mental health conditions or sincerely held religious beliefs, or who are neurodivergent or require pregnancy-related support.</p></div>",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T15:15:15.914241+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://job-boards.greenhouse.io/zscaler/jobs/5105258007",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-11T05:04:13.978383+00:00",
+      "jd_recovery_at": "2026-10-11T05:04:13.978383+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-11T05:04:13.978383+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4476103912",
@@ -84789,11 +85336,11 @@
       "first_seen": "2026-09-18T15:15:15.914241+00:00",
       "discovery_queries": {
         "linkedin": [
-          "full-stack engineer"
+          "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-10T22:00:08.921672+00:00",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": true
     },
     {
@@ -84803,7 +85350,7 @@
       "title": "Intermediate Full Stack Software Engineer",
       "location": "Columbus, OH",
       "posted_date": "2026-09-27",
-      "aggregator_posted_date": "2026-10-03",
+      "aggregator_posted_date": "2026-10-10",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/intermediate-full-stack-software-engineer-at-impact-com-4417250664",
@@ -84814,13 +85361,12 @@
       "first_seen": "2026-09-15T17:09:12.592377+00:00",
       "discovery_queries": {
         "linkedin": [
-          "full-stack engineer",
           "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4429415292",
@@ -84987,6 +85533,43 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4478065950",
+      "source": "linkedin",
+      "company": "onXmaps, Inc.",
+      "title": "Backend Engineer III - Growth",
+      "location": "Salt Lake City, UT",
+      "posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-10-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/backend-engineer-iii-growth-at-onxmaps-inc-4478065950",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-11T05:04:13.978383+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "backend engineer",
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "693d747a42cc42508e79",
+          "attempted_at": "2026-10-11T05:04:13.978383+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-10-11T05:04:13.978383+00:00",
+      "official_search_status": "no_match",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468597547",
