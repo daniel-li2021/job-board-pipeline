@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-11T14:51:09.732031+00:00",
-  "count": 3615,
+  "generated_at": "2026-10-11T14:53:42.791048+00:00",
+  "count": 3618,
   "companies": [
     {
       "name": "1199SEIU Benefit and Pension Funds",
@@ -6506,9 +6506,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "69a54568156435988f6eea54",
         "784e873ff9267410c9594bfb"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Brightview",
@@ -12010,6 +12011,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "DEPT",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "f24453a950443e11772101e4"
+      ],
       "seen_count": 1
     },
     {
@@ -25963,10 +25977,14 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "13fa09398358a7a0bdb67d00",
+        "19ca85d099e407701b656ec1",
         "5aed977e0356a2e97736118b",
+        "5bd5f7cf1211deaa45a691c0",
+        "826bb092331ca863779af560",
         "be3f2b17429b05957df1cc09"
       ],
-      "seen_count": 2
+      "seen_count": 6
     },
     {
       "name": "Lufthansa Technik",
@@ -26231,6 +26249,19 @@
       "tags": [],
       "seen_job_keys": [
         "636557114f9ac8d5db99b204"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Magnet Forensics",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "e540c6a1a9afd83da9d2cb7b"
       ],
       "seen_count": 1
     },
@@ -34007,16 +34038,19 @@
     },
     {
       "name": "Quarterhill Inc.",
-      "aliases": [],
+      "aliases": [
+        "Quarterhill"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "5fce4802b67e5e17d9066899",
         "e223fdd767210062b512b6d9"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Quartermaster",
@@ -36612,6 +36646,19 @@
         "baf211a78ea71880ed585c64"
       ],
       "seen_count": 4
+    },
+    {
+      "name": "Sentry (CA)",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "380f57a0de3446816541ed5c"
+      ],
+      "seen_count": 1
     },
     {
       "name": "Sequence Holdings",
