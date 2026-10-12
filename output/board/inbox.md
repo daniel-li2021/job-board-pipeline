@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-11 18:15 PDT
-- Snapshot (UTC): 2026-10-12T01:15:11.154532+00:00
-- Jobs: 46 (Tier A/B only)
-- Last 24 hours: 11
-- Last 3 days: 46
+- Updated (PT): 2026-10-11 21:01 PDT
+- Snapshot (UTC): 2026-10-12T04:01:40.397499+00:00
+- Jobs: 37 (Tier A/B only)
+- Last 24 hours: 9
+- Last 3 days: 37
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -28,27 +28,18 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed | Perr&Knight | Associate Programmer | Charlotte, NC, US | 2026-10-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2acb3d8b41a89db6) |
 | B | 84 | indeed | Infosys | AI Engineer | San Ramon, CA, US | 2026-10-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d94ceb8c5bf90107) |
 | B | 83 | indeed | Shield AI | Engineer I, Software Integration (R6214) | San Diego, CA, US | 2026-10-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=acbc3d77eb4d9abe) |
-| B | 80 | linkedin | Mojang Studios | Software Engineer II, Minecraft | Redmond, WA | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-minecraft-at-mojang-studios-4478039951) |
-| B | 80 | linkedin | Mastercard | Software Engineer II - Decision Management Program | O'Fallon, MO | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-decision-management-program-at-mastercard-4447215161) |
-| B | 80 | linkedin | U.S. Bank | Software Engineer 2 (.NET Core / C# web applications) | Hopkins, MN | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-2-net-core-c%23-web-applications-at-u-s-bank-4477858480) |
 | B | 80 | linkedin | U.S. Bank | Software Engineer 2 (.NET Core / C# web applications) | Gresham, OR | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-2-net-core-c%23-web-applications-at-u-s-bank-4477858481) |
 | B | 80 | linkedin | Affirm | Software Engineer II, Fullstack (Ads Platform) | Salt Lake City, UT | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-ads-platform-at-affirm-4476882191) |
 | B | 80 | linkedin | Affirm | Software Engineer II, Fullstack (Ads Platform) | Las Vegas, NV | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-ads-platform-at-affirm-4476889058) |
 | B | 80 | linkedin | Affirm | Software Engineer II, Fullstack (Ads Platform) | Madison, WI | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-ads-platform-at-affirm-4476885162) |
-| B | 80 | linkedin | Fonzi AI | Applied AI Engineer | San Francisco Bay Area | 2026-10-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/applied-ai-engineer-at-fonzi-ai-4477268687) |
-| B | 80 | linkedin | Fonzi AI | ML Engineer | San Francisco Bay Area | 2026-10-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ml-engineer-at-fonzi-ai-4477259936) |
 | B | 84 | indeed | Bitdeer Technologies Group | AI Engineering – New College Graduate 2027 | San Jose, CA, US | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e296ec36a16413f6) |
 | B | 82 | indeed |  | Founding Research Engineer | San Francisco, CA, US | 2026-10-10 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=0f945fc2feaabf5c) |
 | B | 75 | indeed | Capital One | Full-stack Engineer 4 | New York, NY, US | 2026-10-09 | 1to3d | Capital One | unreviewed | official_identity_unmatched | [open](https://www.indeed.com/viewjob?jk=d868e21430b8d97c) |
 | B | 77 | indeed | Elemental Machines | Embedded Software Engineer | Cambridge, MA, US | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=0b386d26d7e05c33) |
-| B | 75 | linkedin | Truist | Software Engineer---Java and Cloud | Atlanta, GA | 2026-10-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-java-and-cloud-at-truist-4477844671) |
-| B | 75 | linkedin | Truist | Software Engineer---Java and Cloud | Charlotte, NC | 2026-10-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-java-and-cloud-at-truist-4477858192) |
 | B | 75 | linkedin | Chalk | Full Stack Software Engineer | San Francisco, CA | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-chalk-4475260915) |
-| B | 75 | linkedin | Plaud | Backend Engineer - Concumer & Commerce | East Palo Alto, CA | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-concumer-commerce-at-plaud-4476890615) |
-| B | 78 | linkedin | Bandelier Technologies | Full Stack Engineer | Santa Fe, NM | 2026-10-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-bandelier-technologies-4477265846) |
+| B | 75 | linkedin | Bandelier Technologies | Full Stack Engineer | Santa Fe, NM | 2026-10-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-bandelier-technologies-4477265846) |
 | B | 75 | linkedin | Veteran Benefits Guide | Full Stack Developer II | Las Vegas, NV | 2026-10-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-ii-at-veteran-benefits-guide-4476854489) |
 | B | 75 | linkedin | Silo Markets | Backend Engineer | New York, NY | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-at-silo-markets-4478065468) |
-| B | 75 | linkedin | Atmosphere TV | Software Engineer | Austin, TX | 2026-10-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-atmosphere-tv-4477636981) |
 | B | 78 | indeed | Paytm One97 Communications | Software Engineer | Storden, MN, US | 2026-10-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=de54c7ef6aacffc8) |
 | B | 77 | indeed | State of Iowa | Computer Systems Developer | Des Moines, IA, US | 2026-10-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=298c0a19f5984445) |
 | B | 77 | indeed | California Society of Certified Public Accountants | Full-Stack Developer | Remote, US | 2026-10-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e5b9511f468f5578) |

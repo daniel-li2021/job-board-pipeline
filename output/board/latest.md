@@ -1,24 +1,24 @@
-# ATS / LinkedIn board — 7-day view — 2026-10-12_0115
+# ATS / LinkedIn board — 7-day view — 2026-10-12_0401
 
-- Updated (PT): 2026-10-11 18:18 PDT
-- Snapshot (UTC): 2026-10-12T01:18:31.517671+00:00
-- Last 24 hours: 11
-- Last 3 days: 46
+- Updated (PT): 2026-10-11 21:05 PDT
+- Snapshot (UTC): 2026-10-12T04:05:09.447157+00:00
+- Last 24 hours: 9
+- Last 3 days: 37
 
 If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) instead of this file.
 
 ## Run stats
 
-- Source raw: ATS 3024 / Linkedin 2939 / Indeed 364 / Glassdoor 380 (Big Company Official runs separately)
-- Funnel: after dedup 6707 -> after company filter 6398 -> after hard filter 5840 -> after role+seniority prefilter 1772 | dropped 4838
-- LLM usage: jobs scored 1 / API requests 1 / cache reused 189 (cross-pipeline 1) / rule fallback+overflow 1165 (thin local cards 954, recency-gated 0, overflow 0, new/changed 1)
-- LLM cache causes: new 1 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 3 / rescored <24h 0
-- LLM cost: model gpt-6-luna / API requests 1 / jobs scored 1 / tokens input 2357 (cached 0) / output 234 (reasoning 158) / estimated cost $0.0004
-- New jobs discovered this run: 10
-- Output sizing: Tier A 25 / Tier B 130 / A+B actionable 155 / Shown in latest.md 155 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 101 / newly-disc 42 / 3-7d 69 / >7d 1143
-- LinkedIn vs Indeed exact coverage: overlap 2 / LinkedIn unique 2724 of 2726 / Indeed unique 338 of 339
-- Linkedin top exact-unique queries: software engineer=963, ai engineer=656, full-stack engineer=283
+- Source raw: ATS 3024 / Linkedin 2946 / Indeed 364 / Glassdoor 380 (Big Company Official runs separately)
+- Funnel: after dedup 6714 -> after company filter 6404 -> after hard filter 5845 -> after role+seniority prefilter 1772 | dropped 4844
+- LLM usage: jobs scored 6 / API requests 3 / cache reused 187 (cross-pipeline 1) / rule fallback+overflow 1162 (thin local cards 946, recency-gated 0, overflow 0, new/changed 7)
+- LLM cache causes: new 0 / material JD 0 / matching context 0 / prior rule now eligible 7 / non-material reused 0 / same-content reused 4 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 3 / jobs scored 6 / tokens input 12140 (cached 0) / output 1304 (reasoning 895) / estimated cost $0.0019
+- New jobs discovered this run: 2
+- Output sizing: Tier A 25 / Tier B 121 / A+B actionable 146 / Shown in latest.md 146 (no hard cap)
+- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 100 / newly-disc 42 / 3-7d 69 / >7d 1144
+- LinkedIn vs Indeed exact coverage: overlap 2 / LinkedIn unique 2731 of 2733 / Indeed unique 338 of 339
+- Linkedin top exact-unique queries: software engineer=958, ai engineer=656, backend engineer=347
 - Indeed top exact-unique queries: software engineer=203, platform engineer=71, infrastructure engineer=60, ai engineer=57, software engineer ii=42
 
 ## Tier A - apply now / referral (25)
@@ -51,7 +51,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 93 | rule_fallback | linkedin | Kareer Basycs | Junior Python Developer | United States | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-python-developer-at-kareer-basycs-4468572925) |
 | 93 | rule_fallback | linkedin | IBM | Entry Level Software Developer-Tucson-AZ | Tucson, AZ | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/entry-level-software-developer-tucson-az-at-ibm-4468180871) |
 
-## Tier B - worth applying (130)
+## Tier B - worth applying (121)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -62,27 +62,18 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 82 | cached_llm | indeed | Perr&Knight | Associate Programmer | Charlotte, NC, US | 2026-10-09 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=2acb3d8b41a89db6) |
 | 84 | cached_llm | indeed | Infosys | AI Engineer | San Ramon, CA, US | 2026-10-09 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=d94ceb8c5bf90107) |
 | 83 | cached_llm | indeed | Shield AI | Engineer I, Software Integration (R6214) | San Diego, CA, US | 2026-10-09 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=acbc3d77eb4d9abe) |
-| 80 | rule_fallback | linkedin | Mojang Studios | Software Engineer II, Minecraft | Redmond, WA | 2026-10-10 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-minecraft-at-mojang-studios-4478039951) |
-| 80 | rule_fallback | linkedin | Mastercard | Software Engineer II - Decision Management Program | O'Fallon, MO | 2026-10-10 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-decision-management-program-at-mastercard-4447215161) |
-| 80 | rule_fallback | linkedin | U.S. Bank | Software Engineer 2 (.NET Core / C# web applications) | Hopkins, MN | 2026-10-10 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-2-net-core-c%23-web-applications-at-u-s-bank-4477858480) |
 | 80 | rule_fallback | linkedin | U.S. Bank | Software Engineer 2 (.NET Core / C# web applications) | Gresham, OR | 2026-10-10 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-2-net-core-c%23-web-applications-at-u-s-bank-4477858481) |
 | 80 | rule_fallback | linkedin | Affirm | Software Engineer II, Fullstack (Ads Platform) | Salt Lake City, UT | 2026-10-10 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-ads-platform-at-affirm-4476882191) |
 | 80 | rule_fallback | linkedin | Affirm | Software Engineer II, Fullstack (Ads Platform) | Las Vegas, NV | 2026-10-10 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-ads-platform-at-affirm-4476889058) |
 | 80 | rule_fallback | linkedin | Affirm | Software Engineer II, Fullstack (Ads Platform) | Madison, WI | 2026-10-10 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-ads-platform-at-affirm-4476885162) |
-| 80 | metadata_ai_fallback | linkedin | Fonzi AI | Applied AI Engineer | San Francisco Bay Area | 2026-10-11 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/applied-ai-engineer-at-fonzi-ai-4477268687) |
-| 80 | metadata_ai_fallback | linkedin | Fonzi AI | ML Engineer | San Francisco Bay Area | 2026-10-11 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/ml-engineer-at-fonzi-ai-4477259936) |
 | 84 | cached_llm | indeed | Bitdeer Technologies Group | AI Engineering – New College Graduate 2027 | San Jose, CA, US | 2026-10-10 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=e296ec36a16413f6) |
 | 82 | cached_llm | indeed |  | Founding Research Engineer | San Francisco, CA, US | 2026-10-10 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=0f945fc2feaabf5c) |
 | 75 | rule | indeed | Capital One | Full-stack Engineer 4 | New York, NY, US | 2026-10-09 | 1to3d | low | swe | Capital One | unreviewed | official_identity_unmatched | - | [open](https://www.indeed.com/viewjob?jk=d868e21430b8d97c) |
 | 77 | cached_llm | indeed | Elemental Machines | Embedded Software Engineer | Cambridge, MA, US | 2026-10-10 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=0b386d26d7e05c33) |
-| 75 | rule_fallback | linkedin | Truist | Software Engineer---Java and Cloud | Atlanta, GA | 2026-10-09 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-java-and-cloud-at-truist-4477844671) |
-| 75 | rule_fallback | linkedin | Truist | Software Engineer---Java and Cloud | Charlotte, NC | 2026-10-09 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-java-and-cloud-at-truist-4477858192) |
 | 75 | rule_fallback | linkedin | Chalk | Full Stack Software Engineer | San Francisco, CA | 2026-10-10 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-chalk-4475260915) |
-| 75 | rule_fallback | linkedin | Plaud | Backend Engineer - Concumer & Commerce | East Palo Alto, CA | 2026-10-10 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/backend-engineer-concumer-commerce-at-plaud-4476890615) |
-| 78 | metadata_ai_fallback | linkedin | Bandelier Technologies | Full Stack Engineer | Santa Fe, NM | 2026-10-11 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-bandelier-technologies-4477265846) |
+| 75 | rule_fallback | linkedin | Bandelier Technologies | Full Stack Engineer | Santa Fe, NM | 2026-10-11 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-bandelier-technologies-4477265846) |
 | 75 | rule_fallback | linkedin | Veteran Benefits Guide | Full Stack Developer II | Las Vegas, NV | 2026-10-09 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-developer-ii-at-veteran-benefits-guide-4476854489) |
 | 75 | rule_fallback | linkedin | Silo Markets | Backend Engineer | New York, NY | 2026-10-10 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/backend-engineer-at-silo-markets-4478065468) |
-| 75 | rule_fallback | linkedin | Atmosphere TV | Software Engineer | Austin, TX | 2026-10-09 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-at-atmosphere-tv-4477636981) |
 | 78 | cached_llm | indeed | Paytm One97 Communications | Software Engineer | Storden, MN, US | 2026-10-11 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=de54c7ef6aacffc8) |
 | 77 | cached_llm | indeed | State of Iowa | Computer Systems Developer | Des Moines, IA, US | 2026-10-09 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=298c0a19f5984445) |
 | 77 | cached_llm | indeed | California Society of Certified Public Accountants | Full-Stack Developer | Remote, US | 2026-10-09 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=e5b9511f468f5578) |

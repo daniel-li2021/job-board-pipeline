@@ -2,6 +2,299 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-12T04:01:40.397499+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 6,
+      "cache_reused": 187,
+      "peer_reused": 1,
+      "same_content_reused": 4,
+      "non_material_change_reused": 0,
+      "new_or_changed": 7,
+      "new_or_changed_reasons": {
+        "prior_rule_result_now_eligible_for_llm": 7
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1162,
+      "requests": 3,
+      "input_tokens": 12140,
+      "cached_input_tokens": 0,
+      "output_tokens": 1304,
+      "reasoning_tokens": 895,
+      "estimated_usd": 0.001866,
+      "latency_seconds": 15.372,
+      "latency_measured": true,
+      "effective_rpm": 11.71,
+      "effective_tpm": 52474.63,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 3,
+      "primary_batches_total": 3,
+      "batches_attempted": 3,
+      "batches_succeeded": 3,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 6,
+      "funnel": {
+        "after_dedup": 6714,
+        "after_company": 6404,
+        "after_hard_filter": 5845,
+        "after_prefilter": 1772,
+        "official_duplicates_suppressed": 417,
+        "retry_only_carried": 0,
+        "dropped": 4844
+      },
+      "output": {
+        "tier_a": 25,
+        "tier_b": 121,
+        "ab_before_cap": 146,
+        "shown": 146,
+        "new_jobs": 2,
+        "new_jobs_added": 0,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 0,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 2,
+            "added": 0
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2597,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 13,
+          "identity_needed": 9,
+          "http_requests": 9,
+          "identities_resolved": 9,
+          "remaining_no_jd": 2597,
+          "failure_reasons": {
+            "no_direct_or_official_url": 4
+          }
+        },
+        "remaining_no_jd": 2545,
+        "failure_reasons": {
+          "no_enrichment_path": 2042,
+          "official_detail_deferred": 44,
+          "no_direct_or_official_url": 4,
+          "linkedin_rate_limited": 74,
+          "linkedin_http_429": 2,
+          "linkedin_http_network_error": 2,
+          "glassdoor_detail_http_403_static_card_only": 377
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4477636981",
+              "company": "Atmosphere TV",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "id::linkedin::4447215161",
+              "company": "Mastercard",
+              "title": "Software Engineer II - Decision Management Program"
+            },
+            {
+              "key": "id::linkedin::4478039951",
+              "company": "Mojang Studios",
+              "title": "Software Engineer II, Minecraft"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 6.191,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 4952,
+            "cached_input_tokens": 0,
+            "output_tokens": 593,
+            "reasoning_tokens": 393,
+            "estimated_usd": 0.000792
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4477636981",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack product development",
+                "AWS ECS/Fargate deployment"
+              ],
+              "main_gaps": [
+                "3+ years product experience",
+                "Daily AI coding-tool use"
+              ]
+            },
+            {
+              "key": "id::linkedin::4447215161",
+              "match_score": 73.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "REST API and microservices",
+                "Reliability and automated testing"
+              ],
+              "main_gaps": [
+                "Java/Spring Boot experience",
+                "Event-driven systems"
+              ]
+            },
+            {
+              "key": "id::linkedin::4478039951",
+              "match_score": 56.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming knowledge",
+                "Performance and debugging experience"
+              ],
+              "main_gaps": [
+                "C++ engine development",
+                "Cross-platform game systems"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4477268687",
+              "company": "Fonzi AI",
+              "title": "Applied AI Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.065,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2560,
+            "cached_input_tokens": 0,
+            "output_tokens": 308,
+            "reasoning_tokens": 236,
+            "estimated_usd": 0.00041
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4477268687",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production LLM systems",
+                "RAG and evaluation"
+              ],
+              "main_gaps": [
+                "2–8 years experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4476890615",
+              "company": "Plaud",
+              "title": "Backend Engineer - Concumer & Commerce"
+            },
+            {
+              "key": "id::linkedin::4477844671",
+              "company": "Truist",
+              "title": "Software Engineer---Java and Cloud"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 5.116,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 4628,
+            "cached_input_tokens": 0,
+            "output_tokens": 403,
+            "reasoning_tokens": 266,
+            "estimated_usd": 0.000664
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4476890615",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI-serving backend experience",
+                "Production API and cloud deployment"
+              ],
+              "main_gaps": [
+                "Production Go proficiency",
+                "Multi-region streaming services"
+              ]
+            },
+            {
+              "key": "id::linkedin::4477844671",
+              "match_score": 46.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend and cloud fundamentals",
+                "Java and Spring listed"
+              ],
+              "main_gaps": [
+                "5+ years experience",
+                "Production Java/Spring experience"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-12T01:15:11.154532+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -21122,235 +21415,6 @@
               "main_gaps": [
                 "4–5 years data science",
                 "Predictive modeling depth"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-10-08T06:34:49.934329+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 4,
-      "cache_reused": 326,
-      "peer_reused": 2,
-      "same_content_reused": 6,
-      "non_material_change_reused": 0,
-      "new_or_changed": 4,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 1,
-        "prior_rule_result_now_eligible_for_llm": 3
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1062,
-      "requests": 2,
-      "input_tokens": 6666,
-      "cached_input_tokens": 0,
-      "output_tokens": 1411,
-      "reasoning_tokens": 971,
-      "estimated_usd": 0.001372,
-      "latency_seconds": 14.541,
-      "latency_measured": true,
-      "effective_rpm": 8.25,
-      "effective_tpm": 33327.83,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "primary_batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 4,
-      "funnel": {
-        "after_dedup": 6868,
-        "after_company": 6590,
-        "after_hard_filter": 6069,
-        "after_prefilter": 1799,
-        "official_duplicates_suppressed": 407,
-        "retry_only_carried": 0,
-        "dropped": 4970
-      },
-      "output": {
-        "tier_a": 27,
-        "tier_b": 130,
-        "ab_before_cap": 157,
-        "shown": 157,
-        "new_jobs": 28,
-        "new_jobs_added": 7,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 4,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 24,
-            "added": 7
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 2317,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 70,
-          "identity_needed": 52,
-          "identities_resolved": 52,
-          "cache_reused": 4,
-          "http_requests": 48,
-          "jds_resolved": 11,
-          "direct_http_resolved": 11,
-          "remaining_no_jd": 2317,
-          "failure_reasons": {
-            "no_direct_or_official_url": 18
-          }
-        },
-        "remaining_no_jd": 2281,
-        "failure_reasons": {
-          "no_enrichment_path": 1763,
-          "official_detail_deferred": 44,
-          "linkedin_rate_limited": 75,
-          "no_direct_or_official_url": 18,
-          "linkedin_http_429": 2,
-          "linkedin_http_network_error": 2,
-          "glassdoor_detail_http_403_static_card_only": 377
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/United-States-of-America-McLean-Virginia/Software-Engineer_JREQ193870?Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=6cb77610a8a543aea2d6bc10457e35d4",
-              "company": "Thomson Reuters",
-              "title": "Software Engineer"
-            },
-            {
-              "key": "id::linkedin::4476399050",
-              "company": "Motion Recruitment",
-              "title": "Backend Software Engineer"
-            },
-            {
-              "key": "id::linkedin::4418042966",
-              "company": "Deloitte",
-              "title": "Cyber Full-Stack Software Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 9.843,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 3,
-            "input_tokens": 3605,
-            "cached_input_tokens": 0,
-            "output_tokens": 1037,
-            "reasoning_tokens": 673,
-            "estimated_usd": 0.000879
-          },
-          "decisions": [
-            {
-              "key": "url::https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/United-States-of-America-McLean-Virginia/Software-Engineer_JREQ193870?Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=6cb77610a8a543aea2d6bc10457e35d4",
-              "match_score": 83.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Search and retrieval systems",
-                "Full-stack application development"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "id::linkedin::4476399050",
-              "match_score": 87.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Backend APIs and services",
-                "Cloud SaaS experience"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "id::linkedin::4418042966",
-              "match_score": 78.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack production development",
-                "Cloud APIs and microservices"
-              ],
-              "main_gaps": [
-                "Enterprise AI deployment"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4475105798",
-              "company": "Tinder",
-              "title": "Software Engineer III, Backend"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 4.698,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 3061,
-            "cached_input_tokens": 0,
-            "output_tokens": 374,
-            "reasoning_tokens": 298,
-            "estimated_usd": 0.000493
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4475105798",
-              "match_score": 74.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Backend APIs and services",
-                "Production reliability and scaling"
-              ],
-              "main_gaps": [
-                "Experimentation platform experience",
-                "High-scale platform ownership"
               ]
             }
           ]
