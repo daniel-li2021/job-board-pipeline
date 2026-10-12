@@ -1,30 +1,30 @@
 {
-  "run_at": "2026-10-11T23:52:40.491852+00:00",
-  "elapsed_seconds": 92.308,
-  "remote_elapsed_seconds": 55.302,
+  "run_at": "2026-10-12T14:52:28.189291+00:00",
+  "elapsed_seconds": 71.067,
+  "remote_elapsed_seconds": 40.666,
   "funnel": {
-    "scoring_candidates": 92
+    "scoring_candidates": 61
   },
   "llm": {
-    "reused": 83,
-    "llm": 13,
-    "new_or_changed": 13,
-    "rule": 1,
-    "sent": 13,
+    "reused": 58,
+    "llm": 6,
+    "new_or_changed": 7,
+    "rule": 0,
+    "sent": 6,
     "api_requests": 2,
     "recency_skipped": 0,
     "overflow": 0,
-    "peer_reused": 4,
-    "thin_source_rule": 1,
+    "peer_reused": 3,
+    "thin_source_rule": 0,
     "retryable_fallbacks": 0,
     "historical_seen_skipped": 0,
     "historical_llm_retained": 0,
     "non_material_change_reused": 0,
-    "same_content_reused": 0,
-    "rescored_within_24h": 1,
+    "same_content_reused": 1,
+    "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 9,
-      "prior_rule_result_now_eligible_for_llm": 4
+      "genuinely_new_job": 4,
+      "prior_rule_result_now_eligible_for_llm": 3
     },
     "batch_size": 10,
     "primary_batches_total": 2,
@@ -37,8 +37,8 @@
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 28.081,
-    "json_results": 11,
+    "latency_seconds": 21.747,
+    "json_results": 4,
     "batches": [
       {
         "batch": 1,
@@ -46,39 +46,14 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://jobs.ashbyhq.com/ironcladhq/9af62746-1c31-44d7-b2a7-faf6eefeffc1",
-            "company": "Ironclad (software)",
-            "title": "Software Engineer II, Developer Productivity"
-          },
-          {
-            "key": "url::https://mtb.wd5.myworkdayjobs.com/en-US/MTB/job/Buffalo-NY/Software-Engineer---Oracle-Cloud-Applicatoins_R90957?jobFamily=554435cdd16410020c45d8b8e0670000&jobFamily=e8f67fb24d7c10020c40db094b3f0000&jobFamily=8cc34509fd6910020c3ff017c2350000&jobFamily=a17eecbc178210020c46f45598750000&jobFamily=554435cdd16410020c45fafc04fd0000&jobFamily=e8f67fb24d7c10020c420e50e6b70000&jobFamily=e8f67fb24d7c10020c42cd74a1470000&jobFamily=a17eecbc178210020c48de932f840000&jobFamily=8cc34509fd6910020c42798cfc960000&jobFamily=554435cdd16410020c457e9c7f7e0000&jobFamily=554435cdd16410020c4807977fb00000&jobFamily=e8f67fb24d7c10020c3f8e02d4630000&jobFamily=0765fb7811f201e60fd3b5ab24104703&jobFamily=e8f67fb24d7c10020c4294ed32c20000&jobFamily=8cc34509fd6910020c41cc5e13880000&jobFamily=e8f67fb24d7c10020c41e01009e90000&jobFamily=e8f67fb24d7c10020c431508753e0000&jobFamily=8cc34509fd6910020c41297cb0b70000&jobFamily=8cc34509fd6910020c3eee3502990000&jobFamily=554435cdd16410020c452cdb82780000&jobFamily=0765fb7811f201a16a7127ac24108903&jobFamily=0765fb7811f201502dafcdab24105503&jobFamily=554435cdd16410020c475ecd2d460000&jobFamily=8cc34509fd6910020c3eff1b87d80000&jobFamily=554435cdd16410020c44f539de210000&jobFamily=0765fb7811f2010ee6a581ab24102703&jobFamily=e8f67fb24d7c10020c3fdc2a92cb0000&jobFamily=8cc34509fd6910020c414e39b4380000&jobFamily=a17eecbc178210020c45f1af38bd0000&jobFamily=e8f67fb24d7c10020c40c091f93f0000&jobFamily=8cc34509fd6910020c40cfd031240000&jobFamily=e8f67fb24d7c10020c4278107b110000&jobFamily=8cc34509fd6910020c41f54c78ad0000&jobFamily=e8f67fb24d7c10020c41293124cc0000&jobFamily=8cc34509fd6910020c415ad86bdd0000&jobFamily=554435cdd16410020c45be48cd860000&jobFamily=1c1735feefef01f39138b01003028985&jobFamily=4522629f45bd016afe60c4af04025f70&jobFamily=af779e67c5c101dc3be5bd6f02022073&jobFamily=0765fb7811f201ee544b3dac24109503&jobFamily=e8f67fb24d7c10020c40cf0211760000&jobFamily=a17eecbc178210020c4566faa95f0000&jobFamily=a17eecbc178210020c451f75bf9f0000&jobFamily=8cc34509fd6910020c4076c5b5610000&jobFamily=0765fb7811f2011a803cb2ae24100104&jobFamily=e65a3684dd6201695576626b02020679",
-            "company": "M&T Bank",
-            "title": "Software Engineer - Oracle Cloud Applicatoins"
-          },
-          {
-            "key": "url::https://careers.acuityinc.com/job/Atlanta-Specialist-Growth-&-Transformation-Software-Engineering-BUILD-Program-GA-30309/1429282700",
-            "company": "Acuity Brands Lighting",
-            "title": "Specialist Growth & Transformation Software Engineering BUILD Program"
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/affirm/jobs/8016866003",
-            "company": "Affirm",
-            "title": "Software Engineer II, Fullstack (Ads Platform)"
-          },
-          {
-            "key": "url::https://careers.garmin.com/jobs/20265?lang=en-us&previousLocale=en-US",
-            "company": "Garmin",
-            "title": "Software Engineer 2 (Data and Embedded SWE)"
+            "key": "url::https://job-boards.greenhouse.io/tailscale/jobs/4733404005",
+            "company": "Tailscale",
+            "title": "Infrastructure Engineer"
           },
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
             "company": "Kforce",
             "title": "DevOps Engineer"
-          },
-          {
-            "key": "url::https://job-boards.eu.greenhouse.io/michelscorporation/jobs/5002872101",
-            "company": "Michels",
-            "title": "Project Engineer - Michels Infrastructure Solutions, Inc."
           },
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
@@ -95,106 +70,44 @@
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 20.743,
+        "latency_seconds": 13.798,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 7,
-          "input_tokens": 10681,
+          "jobs_scored": 2,
+          "input_tokens": 4719,
           "cached_input_tokens": 0,
-          "output_tokens": 2649,
-          "reasoning_tokens": 1024,
-          "estimated_usd": 0.002393
+          "output_tokens": 1404,
+          "reasoning_tokens": 983,
+          "estimated_usd": 0.001174
         },
         "decisions": [
           {
-            "key": "url::https://jobs.ashbyhq.com/ironcladhq/9af62746-1c31-44d7-b2a7-faf6eefeffc1",
-            "match_score": 85.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Developer tooling and infrastructure",
-              "TypeScript, Python, CI/CD"
-            ],
-            "main_gaps": [
-              "Build and test systems",
-              "Backstage or Kubernetes tooling"
-            ]
-          },
-          {
-            "key": "url::https://mtb.wd5.myworkdayjobs.com/en-US/MTB/job/Buffalo-NY/Software-Engineer---Oracle-Cloud-Applicatoins_R90957?jobFamily=554435cdd16410020c45d8b8e0670000&jobFamily=e8f67fb24d7c10020c40db094b3f0000&jobFamily=8cc34509fd6910020c3ff017c2350000&jobFamily=a17eecbc178210020c46f45598750000&jobFamily=554435cdd16410020c45fafc04fd0000&jobFamily=e8f67fb24d7c10020c420e50e6b70000&jobFamily=e8f67fb24d7c10020c42cd74a1470000&jobFamily=a17eecbc178210020c48de932f840000&jobFamily=8cc34509fd6910020c42798cfc960000&jobFamily=554435cdd16410020c457e9c7f7e0000&jobFamily=554435cdd16410020c4807977fb00000&jobFamily=e8f67fb24d7c10020c3f8e02d4630000&jobFamily=0765fb7811f201e60fd3b5ab24104703&jobFamily=e8f67fb24d7c10020c4294ed32c20000&jobFamily=8cc34509fd6910020c41cc5e13880000&jobFamily=e8f67fb24d7c10020c41e01009e90000&jobFamily=e8f67fb24d7c10020c431508753e0000&jobFamily=8cc34509fd6910020c41297cb0b70000&jobFamily=8cc34509fd6910020c3eee3502990000&jobFamily=554435cdd16410020c452cdb82780000&jobFamily=0765fb7811f201a16a7127ac24108903&jobFamily=0765fb7811f201502dafcdab24105503&jobFamily=554435cdd16410020c475ecd2d460000&jobFamily=8cc34509fd6910020c3eff1b87d80000&jobFamily=554435cdd16410020c44f539de210000&jobFamily=0765fb7811f2010ee6a581ab24102703&jobFamily=e8f67fb24d7c10020c3fdc2a92cb0000&jobFamily=8cc34509fd6910020c414e39b4380000&jobFamily=a17eecbc178210020c45f1af38bd0000&jobFamily=e8f67fb24d7c10020c40c091f93f0000&jobFamily=8cc34509fd6910020c40cfd031240000&jobFamily=e8f67fb24d7c10020c4278107b110000&jobFamily=8cc34509fd6910020c41f54c78ad0000&jobFamily=e8f67fb24d7c10020c41293124cc0000&jobFamily=8cc34509fd6910020c415ad86bdd0000&jobFamily=554435cdd16410020c45be48cd860000&jobFamily=1c1735feefef01f39138b01003028985&jobFamily=4522629f45bd016afe60c4af04025f70&jobFamily=af779e67c5c101dc3be5bd6f02022073&jobFamily=0765fb7811f201ee544b3dac24109503&jobFamily=e8f67fb24d7c10020c40cf0211760000&jobFamily=a17eecbc178210020c4566faa95f0000&jobFamily=a17eecbc178210020c451f75bf9f0000&jobFamily=8cc34509fd6910020c4076c5b5610000&jobFamily=0765fb7811f2011a803cb2ae24100104&jobFamily=e65a3684dd6201695576626b02020679",
-            "match_score": 53.0,
+            "key": "url::https://job-boards.greenhouse.io/tailscale/jobs/4733404005",
+            "match_score": 75.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Application development fundamentals",
-              "REST APIs and SQL"
+              "AWS service deployment",
+              "CI/CD and observability"
             ],
             "main_gaps": [
-              "Oracle APEX and PL/SQL",
-              "Oracle ATP and OIC"
-            ]
-          },
-          {
-            "key": "url::https://careers.acuityinc.com/job/Atlanta-Specialist-Growth-&-Transformation-Software-Engineering-BUILD-Program-GA-30309/1429282700",
-            "match_score": 89.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Early-career software rotations",
-              "Full-stack, cloud, and DevOps"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/affirm/jobs/8016866003",
-            "match_score": 90.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "React and API development",
-              "Production software ownership"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://careers.garmin.com/jobs/20265?lang=en-us&previousLocale=en-US",
-            "match_score": 63.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Math and Python background",
-              "C++ and PyTorch exposure"
-            ],
-            "main_gaps": [
-              "Embedded systems development",
-              "Biomedical signal processing"
+              "Production infrastructure operations",
+              "Secrets management and networking"
             ]
           },
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 78.0,
+            "match_score": 72.0,
             "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Python and Kubernetes exposure",
-              "Cloud deployment and CI/CD"
+              "AWS deployment experience",
+              "Python and CI/CD"
             ],
             "main_gaps": [
-              "Terraform implementation experience"
-            ]
-          },
-          {
-            "key": "url::https://job-boards.eu.greenhouse.io/michelscorporation/jobs/5002872101",
-            "match_score": 8.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Hyperscale infrastructure context"
-            ],
-            "main_gaps": [
-              "Construction project delivery",
-              "Scheduling and contract administration"
+              "Hands-on Terraform experience",
+              "Production Kubernetes operations"
             ]
           }
         ]
@@ -205,119 +118,78 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://abnormal.ai/careers/jobs/8015189003?gh_jid=8015189003",
-            "company": "Abnormal AI",
-            "title": "Software Engineer 2 - Development Infrastructure"
+            "key": "url::https://vizient.wd1.myworkdayjobs.com/en-US/Vizient_Careers/job/Irving-TX-75062-Vizient-Corporate-HQ/Quality-Software-Engineer_35367R",
+            "company": "Vizient",
+            "title": "Quality Software Engineer"
           },
           {
-            "key": "url::https://jobs.ashbyhq.com/ThinkingMachines/1d875087-b68d-4292-abed-7641a1e94fd8",
-            "company": "Thinking Machine Lab",
-            "title": "Software Engineer, Production Inference (Distributed Inference)"
-          },
-          {
-            "key": "url::https://jobs.ashbyhq.com/Plaud/0bc163e4-f8a6-427a-aaeb-c98104df2997",
-            "company": "Plaud.ai",
-            "title": "Backend Engineer - Concumer & Commerce"
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/xai/jobs/5262880007",
-            "company": "xAI",
-            "title": "Infrastructure Security Engineer (Bare Metal & Platform)"
+            "key": "url::https://lifeattiktok.com/search/7694352871949682997",
+            "company": "TikTok",
+            "title": "Machine Learning Engineer Graduate (E-Commerce User Growth) - 2027 Start"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 7.338,
+        "latency_seconds": 7.949,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 4,
-          "input_tokens": 6656,
+          "jobs_scored": 2,
+          "input_tokens": 4365,
           "cached_input_tokens": 0,
-          "output_tokens": 768,
-          "reasoning_tokens": 442,
-          "estimated_usd": 0.00105
+          "output_tokens": 639,
+          "reasoning_tokens": 459,
+          "estimated_usd": 0.000756
         },
         "decisions": [
           {
-            "key": "url::https://abnormal.ai/careers/jobs/8015189003?gh_jid=8015189003",
+            "key": "url::https://vizient.wd1.myworkdayjobs.com/en-US/Vizient_Careers/job/Irving-TX-75062-Vizient-Corporate-HQ/Quality-Software-Engineer_35367R",
             "match_score": 68.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Python cloud services",
-              "GitHub Actions deployment"
+              "API and integration testing",
+              "CI/CD and regression testing"
             ],
             "main_gaps": [
-              "Production CI/CD ownership",
-              "On-call incident response"
+              "web test-automation framework",
+              "2+ years QA experience"
             ]
           },
           {
-            "key": "url::https://jobs.ashbyhq.com/ThinkingMachines/1d875087-b68d-4292-abed-7641a1e94fd8",
-            "match_score": 66.0,
-            "seniority_fit": "stretch",
+            "key": "url::https://lifeattiktok.com/search/7694352871949682997",
+            "match_score": 82.0,
+            "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "vLLM model serving",
-              "Production inference systems"
+              "Python, C++, and Spark",
+              "ML and retrieval experience"
             ],
-            "main_gaps": [
-              "Distributed inference at scale",
-              "GPU performance optimization"
-            ]
-          },
-          {
-            "key": "url::https://jobs.ashbyhq.com/Plaud/0bc163e4-f8a6-427a-aaeb-c98104df2997",
-            "match_score": 55.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "AI-serving backend",
-              "Production API development"
-            ],
-            "main_gaps": [
-              "Go production services",
-              "Multi-region streaming APIs"
-            ]
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/xai/jobs/5262880007",
-            "match_score": 18.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Python automation",
-              "Terraform exposure"
-            ],
-            "main_gaps": [
-              "Bare-metal infrastructure security",
-              "Puppet fleet hardening"
-            ]
+            "main_gaps": []
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 13,
-    "input_tokens": 17337,
+    "jobs_scored": 6,
+    "input_tokens": 9084,
     "cached_input_tokens": 0,
-    "output_tokens": 3417,
-    "reasoning_tokens": 1466,
-    "estimated_usd": 0.003443,
+    "output_tokens": 2043,
+    "reasoning_tokens": 1442,
+    "estimated_usd": 0.00193,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 13
+    "scored": 6
   },
   "output": {
-    "tier_a": 11,
-    "tier_b": 15,
-    "tier_c": 66,
-    "shown": 26,
-    "new_jobs": 28,
-    "new_jobs_added": 6
+    "tier_a": 5,
+    "tier_b": 11,
+    "tier_c": 45,
+    "shown": 16,
+    "new_jobs": 9,
+    "new_jobs_added": 2
   },
   "screen_method": "cache+llm",
   "failures": {
@@ -330,13 +202,13 @@
       "page_budget": 6,
       "pages_fetched": 6,
       "stop_reason": "page_budget",
-      "raw_jobs": 90,
-      "unique_jobs": 90,
-      "unique_contribution": 90,
-      "first_pass_survivors": 66,
-      "original_postings_resolved": 16,
+      "raw_jobs": 77,
+      "unique_jobs": 77,
+      "unique_contribution": 77,
+      "first_pass_survivors": 53,
+      "original_postings_resolved": 19,
       "jds_resolved": 14,
-      "elapsed_seconds": 4.238
+      "elapsed_seconds": 4.023
     },
     {
       "query": "Full Stack",
@@ -344,27 +216,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 12,
-      "unique_jobs": 12,
-      "unique_contribution": 10,
-      "first_pass_survivors": 9,
-      "original_postings_resolved": 2,
-      "jds_resolved": 2,
-      "elapsed_seconds": 0.625
+      "raw_jobs": 4,
+      "unique_jobs": 4,
+      "unique_contribution": 3,
+      "first_pass_survivors": 2,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.694
     },
     {
       "query": "AI",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 4,
+      "pages_fetched": 3,
       "stop_reason": "empty_page",
-      "raw_jobs": 44,
-      "unique_jobs": 44,
-      "unique_contribution": 32,
-      "first_pass_survivors": 18,
-      "original_postings_resolved": 6,
-      "jds_resolved": 4,
-      "elapsed_seconds": 1.71
+      "raw_jobs": 28,
+      "unique_jobs": 28,
+      "unique_contribution": 17,
+      "first_pass_survivors": 13,
+      "original_postings_resolved": 2,
+      "jds_resolved": 0,
+      "elapsed_seconds": 1.41
     },
     {
       "query": "Machine Learning",
@@ -372,13 +244,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 14,
-      "unique_jobs": 14,
-      "unique_contribution": 14,
-      "first_pass_survivors": 14,
-      "original_postings_resolved": 6,
-      "jds_resolved": 6,
-      "elapsed_seconds": 0.867
+      "raw_jobs": 10,
+      "unique_jobs": 10,
+      "unique_contribution": 10,
+      "first_pass_survivors": 9,
+      "original_postings_resolved": 3,
+      "jds_resolved": 3,
+      "elapsed_seconds": 0.848
     },
     {
       "query": "Infrastructure",
@@ -386,13 +258,13 @@
       "page_budget": 6,
       "pages_fetched": 3,
       "stop_reason": "empty_page",
-      "raw_jobs": 26,
-      "unique_jobs": 26,
-      "unique_contribution": 21,
-      "first_pass_survivors": 18,
-      "original_postings_resolved": 8,
-      "jds_resolved": 3,
-      "elapsed_seconds": 1.282
+      "raw_jobs": 18,
+      "unique_jobs": 18,
+      "unique_contribution": 11,
+      "first_pass_survivors": 13,
+      "original_postings_resolved": 5,
+      "jds_resolved": 0,
+      "elapsed_seconds": 1.151
     },
     {
       "query": "Forward Deployed",
@@ -400,13 +272,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 2,
-      "unique_jobs": 2,
-      "unique_contribution": 2,
-      "first_pass_survivors": 1,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
+      "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.631
+      "elapsed_seconds": 0.68
     },
     {
       "query": "DevOps",
@@ -414,13 +286,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
-      "unique_contribution": 6,
-      "first_pass_survivors": 5,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 3,
+      "first_pass_survivors": 3,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.691
+      "elapsed_seconds": 0.662
     },
     {
       "query": "Backend",
@@ -434,7 +306,7 @@
       "first_pass_survivors": 2,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.623
+      "elapsed_seconds": 0.655
     },
     {
       "query": "Platform",
@@ -442,13 +314,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 15,
-      "unique_jobs": 15,
-      "unique_contribution": 7,
-      "first_pass_survivors": 13,
-      "original_postings_resolved": 3,
-      "jds_resolved": 3,
-      "elapsed_seconds": 0.611
+      "raw_jobs": 9,
+      "unique_jobs": 9,
+      "unique_contribution": 4,
+      "first_pass_survivors": 8,
+      "original_postings_resolved": 1,
+      "jds_resolved": 1,
+      "elapsed_seconds": 0.66
     },
     {
       "query": "New Grad",
@@ -462,7 +334,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.624
+      "elapsed_seconds": 0.662
     },
     {
       "query": "LLM",
@@ -470,13 +342,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 2,
-      "unique_jobs": 2,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
       "unique_contribution": 1,
-      "first_pass_survivors": 1,
-      "original_postings_resolved": 1,
-      "jds_resolved": 1,
-      "elapsed_seconds": 0.619
+      "first_pass_survivors": 0,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.68
     },
     {
       "query": "Data Engineer",
@@ -484,34 +356,34 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 4,
-      "unique_jobs": 4,
-      "unique_contribution": 4,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 3,
       "first_pass_survivors": 3,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.624
+      "elapsed_seconds": 0.646
     },
     {
       "query": "Site Reliability",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 2,
-      "unique_jobs": 2,
-      "unique_contribution": 2,
-      "first_pass_survivors": 2,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.629
+      "elapsed_seconds": 0.157
     }
   ],
   "enrichment": {
-    "needed": 6,
-    "detail_api_resolved": 141,
+    "needed": 7,
+    "detail_api_resolved": 87,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 6
+    "remaining_no_jd": 7
   }
 }
