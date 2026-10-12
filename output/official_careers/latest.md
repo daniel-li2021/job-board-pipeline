@@ -1,30 +1,31 @@
-# Big Tech official careers — 7-day view — 2026-10-12_1449
+# Big Tech official careers — 7-day view — 2026-10-12_2346
 
-- Updated (PT): 2026-10-12 07:50 PDT
-- Snapshot (UTC): 2026-10-12T14:50:57.631386+00:00
-- Last 24 hours: 0
-- Last 3 days: 4
+- Updated (PT): 2026-10-12 16:51 PDT
+- Snapshot (UTC): 2026-10-12T23:51:17.838151+00:00
+- Last 24 hours: 5
+- Last 3 days: 7
 
 Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scoring/ranking.
 
 ## Run stats
 
-- Scraped companies: {'NVIDIA': 480, 'Cisco': 211, 'JPMorgan Chase': 561, 'HPE': 275, 'Walmart Global Tech': 362, 'Amazon': 718, 'Oracle': 495, 'Meta': 720, 'Google': 309, 'Wells Fargo': 49, 'Capital One': 186, 'Apple': 263, 'Flex': 1, 'CVS Health': 123, 'Microsoft': 218, 'Verizon': 19, 'NetApp': 85, 'Zoom': 45, 'Disney': 119, 'Salesforce': 164, 'Netflix': 57, 'F5': 2, 'Intel': 142, 'Adobe': 123, 'TikTok': 711, 'Uber': 162, 'DoorDash': 463, 'Snap': 105, 'Pinterest': 138, 'Snowflake': 260, 'ServiceNow': 405, 'Bloomberg': 16, 'Cloudflare': 420, 'Stripe': 412, 'Coinbase': 189, 'Robinhood': 166, 'Figma': 102, 'GitLab': 130, 'Discord': 48, 'Asana': 75, 'Brex': 265, 'Samsara': 200, 'Lyft': 95, 'Spotify': 68, 'Ramp': 148, 'Notion': 76, 'Linear': 27, 'Cohere': 100, 'eBay': 58, 'Qualcomm': 128, 'AMD': 497, 'Pure Storage': 215, 'Databricks': 505, 'Roblox': 250, 'Airbnb': 98, 'Anthropic': 521, 'AppLovin': 30, 'ByteDance': 449, 'Chime': 67, 'Dell': 101, 'Dropbox': 24, 'Expedia Group': 57, 'Instacart': 109, 'MathWorks': 38, 'MongoDB': 252, 'Morgan Stanley': 117, 'OpenAI': 655, 'Palantir': 241, 'PayPal': 49, 'Reddit': 130, 'Red Hat': 34, 'Roku': 118, 'Block / Square': 216, 'Two Sigma': 41, 'Verkada': 246, 'Visa': 102, 'WeRide': 12, 'Workday': 114, 'Zillow': 38, 'Zscaler': 232, 'Chewy': 1, 'Duolingo': 51, 'Equinix': 63, 'IXL Learning': 106, 'Yahoo': 63, 'Ansys': 21, 'IQVIA': 7, 'Johnson & Johnson': 199, 'Nasdaq': 24, 'PointClickCare': 66, 'Stryker': 132, 'TransUnion': 30, 'Travelers': 86, 'Yext': 11}
-- Funnel: after dedup 17044 -> after company filter 17044 -> after hard filter 13790 -> after role+seniority prefilter 2896 | dropped 14148
-- LLM usage: scored 9 / API requests 3 / cache reused 402 (cross-pipeline 0) / rule fallback 2485
-- LLM cache causes: new 9 / material JD 1 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 9 / rescored <24h 0
-- LLM cost: model gpt-6-luna / API requests 3 / jobs scored 9 / tokens input 14521 (cached 0) / output 2297 (reasoning 1406) / estimated cost $0.0026
-- New jobs discovered this run: 80
-- Output: Tier A 13 / Tier B 19 / shown 32
+- Scraped companies: {'Amazon': 736, 'JPMorgan Chase': 565, 'NVIDIA': 482, 'Cisco': 217, 'HPE': 281, 'Walmart Global Tech': 363, 'Google': 312, 'Oracle': 495, 'Meta': 732, 'Wells Fargo': 52, 'Capital One': 186, 'Apple': 284, 'CVS Health': 129, 'Microsoft': 210, 'Verizon': 19, 'NetApp': 84, 'Zoom': 47, 'Disney': 118, 'Salesforce': 167, 'Netflix': 57, 'F5': 2, 'Adobe': 119, 'TikTok': 713, 'Uber': 166, 'DoorDash': 461, 'Snap': 105, 'Pinterest': 139, 'Snowflake': 260, 'ServiceNow': 403, 'Bloomberg': 17, 'Cloudflare': 431, 'Stripe': 410, 'Coinbase': 190, 'Robinhood': 167, 'Figma': 102, 'GitLab': 130, 'Discord': 48, 'Asana': 74, 'Brex': 261, 'Samsara': 203, 'Lyft': 93, 'Spotify': 68, 'Ramp': 146, 'Notion': 75, 'Linear': 27, 'Cohere': 99, 'eBay': 56, 'Qualcomm': 114, 'AMD': 497, 'Pure Storage': 215, 'Databricks': 507, 'Roblox': 245, 'Airbnb': 100, 'Anthropic': 520, 'AppLovin': 30, 'ByteDance': 449, 'Chime': 67, 'Dell': 106, 'Dropbox': 24, 'Expedia Group': 61, 'Instacart': 111, 'Intel': 139, 'MathWorks': 38, 'MongoDB': 254, 'Morgan Stanley': 115, 'OpenAI': 654, 'Palantir': 243, 'PayPal': 50, 'Reddit': 128, 'Red Hat': 34, 'Roku': 113, 'Block / Square': 216, 'Two Sigma': 41, 'Verkada': 245, 'Visa': 102, 'WeRide': 13, 'Workday': 119, 'Zillow': 38, 'Zscaler': 231, 'Chewy': 1, 'Duolingo': 52, 'Equinix': 63, 'IXL Learning': 106, 'Yahoo': 62, 'Ansys': 21, 'Flex': 154, 'IQVIA': 9, 'Johnson & Johnson': 198, 'Nasdaq': 24, 'PointClickCare': 66, 'Stryker': 132, 'TransUnion': 31, 'Travelers': 86, 'Yext': 11}
+- Funnel: after dedup 17276 -> after company filter 17276 -> after hard filter 14005 -> after role+seniority prefilter 2947 | dropped 14329
+- LLM usage: scored 82 / API requests 9 / cache reused 385 (cross-pipeline 2) / rule fallback 2480
+- LLM cache causes: new 81 / material JD 3 / matching context 0 / prior rule now eligible 0 / non-material reused 1 / same-content reused 8 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 9 / jobs scored 82 / tokens input 95737 (cached 13725) / output 16507 (reasoning 9296) / estimated cost $0.0166
+- New jobs discovered this run: 389
+- Output: Tier A 14 / Tier B 22 / shown 36
 
-## Tier A - apply now / referral (13)
+## Tier A - apply now / referral (14)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 94 | cached_llm | official | TikTok | Machine Learning Engineer Graduate (Conversational AI) - 2027 Start | Seattle, Washington, United States of America | - | 1to3d | unknown | ai | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7670685495206857013) |
-| 94 | cached_llm | official | TikTok | Machine Learning Engineer Graduate (Conversational AI) - 2027 Start | San Jose, California, United States of America | - | 1to3d | unknown | ai | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7670686314588801333) |
+| 87 | llm | official | Microsoft | Software Engineer | United States, Washington, Redmond | 2026-10-12 | 3to24h | high | swe | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557023170) |
 | 96 | cached_llm | official | IXL Learning | Software Engineer, New Grad | San Mateo, CA; San Mateo, California, United States | 2026-10-07 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://www.ixl.com/company/jobs?gh_jid=8862043002) |
 | 96 | cached_llm | official | IXL Learning | Software Engineer, New Grad | Raleigh, NC; Morrisville, North Carolina, United States | 2026-10-07 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://www.ixl.com/company/jobs?gh_jid=8862049002) |
+| 94 | cached_llm | official | TikTok | Machine Learning Engineer Graduate (Conversational AI) - 2027 Start | Seattle, Washington, United States of America | - | 3to7d | unknown | ai | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7670685495206857013) |
+| 94 | cached_llm | official | TikTok | Machine Learning Engineer Graduate (Conversational AI) - 2027 Start | San Jose, California, United States of America | - | 3to7d | unknown | ai | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7670686314588801333) |
 | 91 | cached_llm | official | NVIDIA | C++ Software Engineer, Infrastructure Tools - New College Grad 2027 | US, CA, Santa Clara | 2026-10-09 | 3to7d | high | swe | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/C---Software-Engineer--Infrastructure-Tools---New-College-Grad-2027_JR2027431) |
 | 91 | cached_llm | official | Oracle | Application Software Engineer 2 | United States | 2026-10-07 | 3to7d | high | swe | Oracle | unreviewed | official_canonical | [open](https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/340958) |
 | 92 | cached_llm | official | Roblox | Software Engineer, Test Frameworks & Tooling | San Mateo, CA, United States | 2026-10-06 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8229705?gh_jid=8229705) |
@@ -35,10 +36,14 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 85 | cached_llm | official | MathWorks | Associate Software Engineer in Test - EDG (Ugrad Comp Sci) | US-MA-Natick | 2026-10-08 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://www.mathworks.com/company/jobs/opportunities/30606-associate-software-engineer-in-test-edg-ugrad-comp-sci?keywords=ai+engineer) |
 | 93 | cached_llm | official | HPE | Graduate Systems/Software Engineer I | Bloomington, Minnesota, United States of America | 2026-10-05 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Bloomington-Minnesota-United-States-of-America/Graduate-Systems-Software-Engineer-I_1213439) |
 
-## Tier B - worth applying (19)
+## Tier B - worth applying (22)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 83 | llm | official | Apple | Data Engineer (Data Products - Apple Ads) | Cupertino, United States of America | 2026-10-12 | 3to24h | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200687054/data-engineer-data-products-apple-ads) |
+| 80 | llm | official | Microsoft | Software Engineering | United States, Washington, Redmond | 2026-10-12 | 3to24h | high | swe | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556999878) |
+| 82 | llm | official | NVIDIA | Deep Learning Software Engineer, TensorRT Performance - New College Gr | US, CA, Santa Clara; US, CA, Remote | 2026-10-12 | 3to24h | high | swe | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Deep-Learning-Software-Engineer--TensorRT-Performance---New-College-Grad-2027_JR2027083) |
+| 75 | rule | official | Microsoft | Security Engineer | United States, Washington, Redmond | 2026-10-12 | 3to24h | high | swe | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557002604) |
 | 75 | rule | official | Capital One | Full-stack Engineer 5 | McLean, VA; Richmond, VA; Chicago, IL; New York, NY; Plano, TX | 2026-10-11 | 1to3d | high | swe | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-5_R1001301-2) |
 | 91 | cached_llm | official | Microsoft | Software Engineer | United States, Washington, Redmond | 2026-10-10 | 1to3d | high | swe | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557037774) |
 | 91 | cached_llm | official | Qualcomm | #Machine Learning Engineer - Generative AI | San Diego, California, United States of America | 2026-10-08 | 3to7d | high | swe | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446721429496) |
@@ -56,5 +61,4 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 82 | cached_llm | official | HPE | Storage Systems/Software Engineer | Andover, Massachusetts, United States of America | 2026-10-08 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Andover-Massachusetts-United-States-of-America/Storage-Systems-Software-Engineer_1215626-2) |
 | 83 | cached_llm | official | MathWorks | Software Engineer in Test - EDG (Graduate Engineers) | US-MA-Natick | 2026-10-08 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://www.mathworks.com/company/jobs/opportunities/37817-software-engineer-in-test-edg-graduate-engineers?keywords=ai+engineer) |
 | 84 | cached_llm | official | Visa | Software Development Engineer- Product Reliability Engineering | US - Austin, TX | 2026-10-06 | 3to7d | high | swe | Visa | unreviewed | official_canonical | [open](https://visa.wd5.myworkdayjobs.com/Visa/job/US---Austin-TX/Software-Development-Engineer--Product-Reliability-Engineering_REF081637W) |
-| 80 | llm | official | Amazon | Software Development Engineer I, AWS IoT Fleet Management | Seattle, Washington, USA | 2026-10-07 | 3to7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10571756/software-development-engineer-i-aws-iot-fleet-management) |
 | 78 | cached_llm | official | Amazon | Software Engineer I | San Francisco, California, USA | 2026-10-08 | 3to7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10573768/software-engineer-i) |
