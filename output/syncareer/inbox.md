@@ -1,20 +1,20 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-10-12 07:52 PDT
-- Snapshot (UTC): 2026-10-12T14:52:30.224666+00:00
+- Updated (PT): 2026-10-12 16:52 PDT
+- Snapshot (UTC): 2026-10-12T23:52:22.690745+00:00
 - Jobs: 41
-- Last 24 hours: 8
+- Last 24 hours: 5
 - Last 3 days: 41
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 91.0 | Syncareer | Acuity Brands Lighting | Specialist Software Engineering BUILD Program | United States | 2026-10-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.acuityinc.com/job/Conyers-Specialist-Software-Engineering-BUILD-Program-GA-30012/1429302100/) |
+| A | 91.0 | Syncareer | Acuity Brands Lighting | Specialist Software Engineering BUILD Program | United States | 2026-10-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.acuityinc.com/job/Conyers-Specialist-Software-Engineering-BUILD-Program-GA-30012/1429301800/) |
+| A | 91.0 | Syncareer | Acuity Brands Lighting | Specialist Software Engineering BUILD Program | United States | 2026-10-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.acuityinc.com/job/Conyers-Specialist-Software-Engineering-BUILD-Program-GA-30012/1429301900/) |
 | A | 85.0 | Syncareer | Ironclad (software) | Software Engineer II, Developer Productivity | San Francisco, California, United States | 2026-10-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/ironcladhq/9af62746-1c31-44d7-b2a7-faf6eefeffc1) |
-| B | 72.0 | Syncareer | Kforce | DevOps Engineer | Long Island City, New York, United States | 2026-10-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.kforce.com/find-work/search-jobs/#/detail/MTY5Nn5BUUd-MjE5MTA1OVQxfjk5/) |
-| B | 72.0 | Syncareer | Kforce | Data Engineer | Denver, Colorado, United States | 2026-10-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.kforce.com/find-work/search-jobs/#/detail/MTY5Nn5XUUd-MjE5MTAyM1Qxfjk5/) |
 | A | 90.0 | Syncareer | Affirm | Software Engineer II, Fullstack (Ads Platform) | United States | 2026-10-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/affirm/jobs/8016866003) |
-| B | 72.0 | Syncareer | Kforce | DevOps II | Greenwood Village, Colorado, United States | 2026-10-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.kforce.com/find-work/search-jobs/#/detail/MTY5Nn5UVlR-MjE5MTA0MFQxfjk5/) |
 | A | 89.0 | Syncareer | Acuity Brands Lighting | Specialist Growth & Transformation Software Engineering BUILD Program | Atlanta, Georgia, United States | 2026-10-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.acuityinc.com/job/Atlanta-Specialist-Growth-&-Transformation-Software-Engineering-BUILD-Program-GA-30309/1429282700/) |
 | B | 79.0 | Syncareer | Shield AI | Engineer I, Flight Test (R6219) | San Diego, California, United States | 2026-10-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/shieldai/0cdcb67f-0550-4f14-987f-82cc6d17ea6e) |
 | A | 87.0 | Syncareer | Shield AI | Engineer I, Software Test and Automation (R6216) | Washington, Washington, D.C., United States | 2026-10-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/shieldai/d80f9bad-a014-475a-a018-a676eb6fbad7) |
@@ -48,6 +48,6 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 83.0 | Syncareer | CGI | DevOps Engineer | Lafayette, Louisiana, United States | 2026-10-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://cgi.njoyn.com/corp/xweb/xweb.asp?NTKN=c&clid=21001&Page=JobDetails&Jobid=J1026-0771&BRID=1339957&lang=1) |
 | B | 87.0 | Syncareer | CGI | Site Reliability Engineer | Lafayette, Louisiana, United States | 2026-10-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://cgi.njoyn.com/corp/xweb/xweb.asp?NTKN=c&clid=21001&Page=JobDetails&Jobid=J1026-0767&BRID=1339953&lang=1) |
 | A | 86.0 | Syncareer | Universal Health Services, Inc. | Software Engineer I | King of Prussia, Pennsylvania, United States | 2026-10-08 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.uhsinc.com/careers/jobs/369266?lang=en-us&previousLocale=en-US) |
-| B | 82.0 | Syncareer | TikTok | Machine Learning Engineer Graduate (E-Commerce User Growth) - 2027 Sta | San Jose, California, United States | 2026-10-11 | Sponsor | YES (TikTok) | unreviewed | official_identity_unmatched | [open](https://lifeattiktok.com/search/7694352871949682997) |
 | B | 82.0 | Syncareer | TikTok | Machine Learning Engineer Graduate (E-Commerce User Growth) - 2027 Sta | Seattle, Washington, United States | 2026-10-11 | Sponsor | YES (TikTok) | unreviewed | official_identity_unmatched | [open](https://lifeattiktok.com/search/7694353236283935029) |
+| B | 82.0 | Syncareer | TikTok | Machine Learning Engineer Graduate (E-Commerce User Growth) - 2027 Sta | San Jose, California, United States | 2026-10-11 | Sponsor | YES (TikTok) | unreviewed | official_identity_unmatched | [open](https://lifeattiktok.com/search/7694352871949682997) |
 | B | 78.0 | Syncareer | Tesla | Fullstack Software Engineer | Palo Alto, California, United States | 2026-10-10 | Sponsor | YES (Tesla) | unreviewed | official_unsupported | [open](https://www.tesla.com/careers/search/job/258309) |
