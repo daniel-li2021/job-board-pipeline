@@ -2944,186 +2944,11 @@
     }
   ],
   "meta": {
-    "jd_recovery_at": "2026-10-12T04:01:00.093931+00:00"
+    "jd_recovery_at": "2026-10-12T19:24:41.129087+00:00"
   },
   "source": "remote_recovery",
   "count": 136,
   "attempts": {
-    "meta_official_careers|id|1277009131113341": {
-      "source": "meta_official_careers",
-      "job_id": "1277009131113341",
-      "company": "Meta",
-      "title": "NPI Program Manager",
-      "location": "Menlo Park, CA; Fremont, CA",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00"
-    },
-    "meta_official_careers|id|2273509843425444": {
-      "source": "meta_official_careers",
-      "job_id": "2273509843425444",
-      "company": "Meta",
-      "title": "Thermal/Mechanical Engineer, NPI Technical Readiness",
-      "location": "Austin, TX; Menlo Park, CA",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00"
-    },
-    "meta_official_careers|id|1551558416207586": {
-      "source": "meta_official_careers",
-      "job_id": "1551558416207586",
-      "company": "Meta",
-      "title": "Accountant, Reality Labs",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00"
-    },
-    "meta_official_careers|id|2199596633919539": {
-      "source": "meta_official_careers",
-      "job_id": "2199596633919539",
-      "company": "Meta",
-      "title": "Business Development Manager, Enterprise",
-      "location": "Menlo Park, CA; New York, NY",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00"
-    },
-    "meta_official_careers|id|2028166681174140": {
-      "source": "meta_official_careers",
-      "job_id": "2028166681174140",
-      "company": "Meta",
-      "title": "Commercial Sourcing Manager",
-      "location": "Menlo Park, CA; Fremont, CA",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00"
-    },
-    "meta_official_careers|id|28556962977230411": {
-      "source": "meta_official_careers",
-      "job_id": "28556962977230411",
-      "company": "Meta",
-      "title": "Research Scientist, AI (Technical Leadership)",
-      "location": "Burlingame, CA; New York, NY",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00",
-      "recovery_triage": {
-        "action": "skip",
-        "priority": "low",
-        "confidence": 0.94,
-        "delta": -7,
-        "reason": "Research leadership role, unlikely early-career compatible"
-      },
-      "recovery_input_hash": "da5c25ea5b11091dec82"
-    },
-    "meta_official_careers|id|1969235800437950": {
-      "source": "meta_official_careers",
-      "job_id": "1969235800437950",
-      "company": "Meta",
-      "title": "SOC Architect, Reality Labs Silicon",
-      "location": "Sunnyvale, CA; Redmond, WA; Austin, TX; San Diego, CA",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00"
-    },
-    "meta_official_careers|id|1704822071642848": {
-      "source": "meta_official_careers",
-      "job_id": "1704822071642848",
-      "company": "Meta",
-      "title": "Research Scientist, Multi-Modal Human Understanding",
-      "location": "Pittsburgh, PA; Burlingame, CA",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00"
-    },
-    "meta_official_careers|id|1981338825764645": {
-      "source": "meta_official_careers",
-      "job_id": "1981338825764645",
-      "company": "Meta",
-      "title": "Supply Chain Capacity Engineer",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00"
-    },
-    "meta_official_careers|id|1070865265322507": {
-      "source": "meta_official_careers",
-      "job_id": "1070865265322507",
-      "company": "Meta",
-      "title": "Mechanical Engineer, Data Center Operations Engineering",
-      "location": "Reston, VA; Menlo Park, CA",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00"
-    },
-    "meta_official_careers|id|2278965319592702": {
-      "source": "meta_official_careers",
-      "job_id": "2278965319592702",
-      "company": "Meta",
-      "title": "Data Governance Lead, Infrastructure",
-      "location": "Bellevue, WA; Menlo Park, CA; Seattle, WA",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00"
-    },
-    "bloomberg_official_careers|id|44910": {
-      "source": "bloomberg_official_careers",
-      "job_id": "44910",
-      "company": "Bloomberg",
-      "title": "ITSM Specialist - Operations Analyst",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00"
-    },
-    "bloomberg_official_careers|id|22199": {
-      "source": "bloomberg_official_careers",
-      "job_id": "22199",
-      "company": "Bloomberg",
-      "title": "IT Service Desk Analyst",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00"
-    },
-    "bloomberg_official_careers|id|22156": {
-      "source": "bloomberg_official_careers",
-      "job_id": "22156",
-      "company": "Bloomberg",
-      "title": "Account Manager, Core Terminal Sales",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00"
-    },
-    "disney_official_careers|id|10157637": {
-      "source": "disney_official_careers",
-      "job_id": "10157637",
-      "company": "Disney",
-      "title": "Sr Product Software Engineer (iOS)",
-      "location": "New York, New York / Glendale, California",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00"
-    },
-    "disney_official_careers|id|10157633": {
-      "source": "disney_official_careers",
-      "job_id": "10157633",
-      "company": "Disney",
-      "title": "Sr Product Software Engineer (iOS)",
-      "location": "New York, New York / Glendale, California",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00"
-    },
-    "two_sigma_official_careers|id|14215": {
-      "source": "two_sigma_official_careers",
-      "job_id": "14215",
-      "company": "Two Sigma",
-      "title": "Software Engineer, Technology Risk",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-11T14:48:10.970719+00:00",
-      "recovery_methods": {
-        "candidate:cf73c9fefa": {
-          "input_hash": "d69a773f6e1e621326f8",
-          "attempted_at": "2026-10-12T01:14:22.292814+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "7413dd1414dea9e193e7",
-          "attempted_at": "2026-10-12T01:14:22.292814+00:00",
-          "outcome": "no_match"
-        },
-        "direct_careers": {
-          "input_hash": "819ff5bf503b239d76cc",
-          "attempted_at": "2026-10-12T01:14:22.292814+00:00",
-          "outcome": "no_match"
-        },
-        "site_exact": {
-          "input_hash": "3844fb5e946dc19afe74",
-          "attempted_at": "2026-10-12T01:14:22.292814+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.77,
-        "delta": 0,
-        "reason": "Software engineering role; technology risk scope uncertain"
-      },
-      "recovery_input_hash": "56bf8deb4058dd9a214f",
-      "official_search_status": "no_match"
-    },
     "meta_official_careers|id|2330934470984938": {
       "source": "meta_official_careers",
       "job_id": "2330934470984938",
@@ -3171,6 +2996,160 @@
       "title": "Sr Data Engineer",
       "location": "Seattle, Washington / Glendale, California",
       "first_seen": "2026-10-11T23:48:58.471929+00:00"
+    },
+    "meta_official_careers|id|1140635698290634": {
+      "source": "meta_official_careers",
+      "job_id": "1140635698290634",
+      "company": "Meta",
+      "title": "Project Manager, Paid-Content Support Horizontal, Integrity Operations",
+      "location": "Austin, TX",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "meta_official_careers|id|838149832659606": {
+      "source": "meta_official_careers",
+      "job_id": "838149832659606",
+      "company": "Meta",
+      "title": "Pre/Post Silicon Validation Engineer",
+      "location": "Sunnyvale, CA; Austin, TX; Menlo Park, CA",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "meta_official_careers|id|1582886596654565": {
+      "source": "meta_official_careers",
+      "job_id": "1582886596654565",
+      "company": "Meta",
+      "title": "Commercial Sourcing Manager, Power and Cooling Infrastructure Equipment",
+      "location": "Bellevue, WA; Menlo Park, CA; Fremont, CA",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "meta_official_careers|id|901822029240594": {
+      "source": "meta_official_careers",
+      "job_id": "901822029240594",
+      "company": "Meta",
+      "title": "Product Designer, Subscriptions",
+      "location": "Menlo Park, CA; New York, NY; San Francisco, CA",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "meta_official_careers|id|28164394276510854": {
+      "source": "meta_official_careers",
+      "job_id": "28164394276510854",
+      "company": "Meta",
+      "title": "NPI Operations Program Manager",
+      "location": "Sunnyvale, CA",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "meta_official_careers|id|1743817316836705": {
+      "source": "meta_official_careers",
+      "job_id": "1743817316836705",
+      "company": "Meta",
+      "title": "Network Engineer, Deployment & Support",
+      "location": "Temple, TX; Papillion, NE; Aurora, IL; Garland, TX; Huntsville, AL; Houston, TX",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "meta_official_careers|id|3291967294322817": {
+      "source": "meta_official_careers",
+      "job_id": "3291967294322817",
+      "company": "Meta",
+      "title": "Network Engineer, Deployment & Support",
+      "location": "Temple, TX; Papillion, NE; Aurora, IL; Garland, TX; Huntsville, AL; Houston, TX",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "meta_official_careers|id|2214413832463698": {
+      "source": "meta_official_careers",
+      "job_id": "2214413832463698",
+      "company": "Meta",
+      "title": "Technical Program Manager, Capacity Planning and Delivery",
+      "location": "Menlo Park, CA; Seattle, WA",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "meta_official_careers|id|3380721448984218": {
+      "source": "meta_official_careers",
+      "job_id": "3380721448984218",
+      "company": "Meta",
+      "title": "Application Engineer, Salesforce",
+      "location": "Menlo Park, CA",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "meta_official_careers|id|1364695832515523": {
+      "source": "meta_official_careers",
+      "job_id": "1364695832515523",
+      "company": "Meta",
+      "title": "Compensation Business Partner, Sales",
+      "location": "Bellevue, WA; Menlo Park, CA; Seattle, WA; New York, NY",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "meta_official_careers|id|1108081798559974": {
+      "source": "meta_official_careers",
+      "job_id": "1108081798559974",
+      "company": "Meta",
+      "title": "Software Engineering Manager",
+      "location": "Bellevue, WA; Menlo Park, CA",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "meta_official_careers|id|1773516363840036": {
+      "source": "meta_official_careers",
+      "job_id": "1773516363840036",
+      "company": "Meta",
+      "title": "Corporate Development Associate",
+      "location": "Menlo Park, CA",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "meta_official_careers|id|914881927910885": {
+      "source": "meta_official_careers",
+      "job_id": "914881927910885",
+      "company": "Meta",
+      "title": "Analytics Program Manager",
+      "location": "Menlo Park, CA",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "bloomberg_official_careers|id|45224": {
+      "source": "bloomberg_official_careers",
+      "job_id": "45224",
+      "company": "Bloomberg",
+      "title": "Product Manager - Commodities, Enterprise Data",
+      "location": "New York, New York, United States of America",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "disney_official_careers|id|10158431": {
+      "source": "disney_official_careers",
+      "job_id": "10158431",
+      "company": "Disney",
+      "title": "Lead Data Scientist",
+      "location": "Glendale, California",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "disney_official_careers|id|10158432": {
+      "source": "disney_official_careers",
+      "job_id": "10158432",
+      "company": "Disney",
+      "title": "Senior Data Scientist",
+      "location": "Glendale, California",
+      "first_seen": "2026-10-12T14:49:14.015035+00:00"
+    },
+    "syncareer|id|b381d24acd6400b088b8ce70a320f41d": {
+      "source": "syncareer",
+      "job_id": "b381d24acd6400b088b8ce70a320f41d",
+      "company": "Vizient",
+      "title": "Quality Software Engineer",
+      "location": "Irving, Texas, United States",
+      "first_seen": "2026-10-12T14:51:17.123914+00:00",
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "low",
+        "confidence": 0.42,
+        "delta": 0,
+        "reason": "Software-related title; seniority and engineering scope unknown"
+      },
+      "recovery_input_hash": "df3a1b9eb6e484f84af2",
+      "official_search_status": "no_match",
+      "official_search_attempted_at": "2026-10-12T19:24:41.129087+00:00"
+    },
+    "syncareer|id|fc566a85a50afbbaf04072982a346729": {
+      "source": "syncareer",
+      "job_id": "fc566a85a50afbbaf04072982a346729",
+      "company": "Highmark Health",
+      "title": "Associate Software Engineer",
+      "location": "Pennsylvania, United States",
+      "first_seen": "2026-10-12T14:51:17.123914+00:00"
     }
   }
 }
