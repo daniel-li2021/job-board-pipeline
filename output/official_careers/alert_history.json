@@ -3,33 +3,6 @@
   "events": [
     {
       "pipeline": "official",
-      "stamp": "2026-09-28_1450",
-      "emitted_at": "2026-09-28T14:53:18.112304+00:00",
-      "event_kind": "new_or_promoted_ab",
-      "count": 1,
-      "jobs": [
-        {
-          "canonical_job_key": "url::https://www.google.com/about/careers/applications/jobs/results/118249122862899910-software-engineer-iii-ai-ml-core",
-          "job_id": "118249122862899910",
-          "tier": "B",
-          "match_score": 84.0,
-          "company": "Google",
-          "title": "Software Engineer III, AI/ML, Core",
-          "location": "Kirkland, WA, USA",
-          "posted_date": "2026-09-28",
-          "date_confidence": "high",
-          "first_seen": "2026-09-28T14:50:07.819106+00:00",
-          "referral_name": "Google",
-          "review_status": "unreviewed",
-          "official_url": "https://www.google.com/about/careers/applications/jobs/results/118249122862899910-software-engineer-iii-ai-ml-core",
-          "source_url": "https://www.google.com/about/careers/applications/jobs/results/118249122862899910-software-engineer-iii-ai-ml-core",
-          "source": "google_official_careers",
-          "url": "https://www.google.com/about/careers/applications/jobs/results/118249122862899910-software-engineer-iii-ai-ml-core"
-        }
-      ]
-    },
-    {
-      "pipeline": "official",
       "stamp": "2026-09-29_1448",
       "emitted_at": "2026-09-29T14:51:59.160242+00:00",
       "event_kind": "new_or_promoted_ab",
@@ -2024,6 +1997,33 @@
           "source_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Dallas-Texas-United-States-of-America/Site-Reliability-Engineer-I---Sales-Operations_1203341-1",
           "source": "hpe_official_careers",
           "url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Dallas-Texas-United-States-of-America/Site-Reliability-Engineer-I---Sales-Operations_1203341-1"
+        }
+      ]
+    },
+    {
+      "pipeline": "official",
+      "stamp": "2026-10-12_1449",
+      "emitted_at": "2026-10-12T14:50:57.633892+00:00",
+      "event_kind": "new_or_promoted_ab",
+      "count": 1,
+      "jobs": [
+        {
+          "canonical_job_key": "url::https://www.amazon.jobs/en/jobs/10571756/software-development-engineer-i-aws-iot-fleet-management",
+          "job_id": "10571756",
+          "tier": "B",
+          "match_score": 80.0,
+          "company": "Amazon",
+          "title": "Software Development Engineer I, AWS IoT Fleet Management",
+          "location": "Seattle, Washington, USA",
+          "posted_date": "2026-10-07",
+          "date_confidence": "high",
+          "first_seen": "2026-10-12T14:49:13.580900+00:00",
+          "referral_name": "Amazon",
+          "review_status": "unreviewed",
+          "official_url": "https://www.amazon.jobs/en/jobs/10571756/software-development-engineer-i-aws-iot-fleet-management",
+          "source_url": "https://www.amazon.jobs/en/jobs/10571756/software-development-engineer-i-aws-iot-fleet-management",
+          "source": "amazon_official_careers",
+          "url": "https://www.amazon.jobs/en/jobs/10571756/software-development-engineer-i-aws-iot-fleet-management"
         }
       ]
     }
