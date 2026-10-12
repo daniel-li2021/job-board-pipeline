@@ -2944,7 +2944,7 @@
     }
   ],
   "meta": {
-    "jd_recovery_at": "2026-10-12T19:24:41.129087+00:00"
+    "jd_recovery_at": "2026-10-12T22:00:31.021088+00:00"
   },
   "source": "remote_recovery",
   "count": 136,
@@ -3132,6 +3132,13 @@
       "title": "Quality Software Engineer",
       "location": "Irving, Texas, United States",
       "first_seen": "2026-10-12T14:51:17.123914+00:00",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "965d8dc5f0f9cb687033",
+          "attempted_at": "2026-10-12T22:00:31.021088+00:00",
+          "outcome": "no_match"
+        }
+      },
       "recovery_triage": {
         "action": "recover",
         "priority": "low",
@@ -3141,7 +3148,7 @@
       },
       "recovery_input_hash": "df3a1b9eb6e484f84af2",
       "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-12T19:24:41.129087+00:00"
+      "official_search_attempted_at": "2026-10-12T22:00:31.021088+00:00"
     },
     "syncareer|id|fc566a85a50afbbaf04072982a346729": {
       "source": "syncareer",
