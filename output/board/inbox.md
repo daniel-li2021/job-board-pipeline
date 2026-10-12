@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-11 17:21 PDT
-- Snapshot (UTC): 2026-10-12T00:21:40.416176+00:00
-- Jobs: 43 (Tier A/B only)
-- Last 24 hours: 8
-- Last 3 days: 43
+- Updated (PT): 2026-10-11 18:15 PDT
+- Snapshot (UTC): 2026-10-12T01:15:11.154532+00:00
+- Jobs: 46 (Tier A/B only)
+- Last 24 hours: 11
+- Last 3 days: 46
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -35,6 +35,8 @@ The 7-day dump is `latest.md`.
 | B | 80 | linkedin | Affirm | Software Engineer II, Fullstack (Ads Platform) | Salt Lake City, UT | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-ads-platform-at-affirm-4476882191) |
 | B | 80 | linkedin | Affirm | Software Engineer II, Fullstack (Ads Platform) | Las Vegas, NV | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-ads-platform-at-affirm-4476889058) |
 | B | 80 | linkedin | Affirm | Software Engineer II, Fullstack (Ads Platform) | Madison, WI | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-ads-platform-at-affirm-4476885162) |
+| B | 80 | linkedin | Fonzi AI | Applied AI Engineer | San Francisco Bay Area | 2026-10-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/applied-ai-engineer-at-fonzi-ai-4477268687) |
+| B | 80 | linkedin | Fonzi AI | ML Engineer | San Francisco Bay Area | 2026-10-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ml-engineer-at-fonzi-ai-4477259936) |
 | B | 84 | indeed | Bitdeer Technologies Group | AI Engineering – New College Graduate 2027 | San Jose, CA, US | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e296ec36a16413f6) |
 | B | 82 | indeed |  | Founding Research Engineer | San Francisco, CA, US | 2026-10-10 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=0f945fc2feaabf5c) |
 | B | 75 | indeed | Capital One | Full-stack Engineer 4 | New York, NY, US | 2026-10-09 | 1to3d | Capital One | unreviewed | official_identity_unmatched | [open](https://www.indeed.com/viewjob?jk=d868e21430b8d97c) |
@@ -43,6 +45,7 @@ The 7-day dump is `latest.md`.
 | B | 75 | linkedin | Truist | Software Engineer---Java and Cloud | Charlotte, NC | 2026-10-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-java-and-cloud-at-truist-4477858192) |
 | B | 75 | linkedin | Chalk | Full Stack Software Engineer | San Francisco, CA | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-chalk-4475260915) |
 | B | 75 | linkedin | Plaud | Backend Engineer - Concumer & Commerce | East Palo Alto, CA | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-concumer-commerce-at-plaud-4476890615) |
+| B | 78 | linkedin | Bandelier Technologies | Full Stack Engineer | Santa Fe, NM | 2026-10-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-bandelier-technologies-4477265846) |
 | B | 75 | linkedin | Veteran Benefits Guide | Full Stack Developer II | Las Vegas, NV | 2026-10-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-ii-at-veteran-benefits-guide-4476854489) |
 | B | 75 | linkedin | Silo Markets | Backend Engineer | New York, NY | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-at-silo-markets-4478065468) |
 | B | 75 | linkedin | Atmosphere TV | Software Engineer | Austin, TX | 2026-10-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-atmosphere-tv-4477636981) |
