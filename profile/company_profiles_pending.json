@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-12T15:25:15.049316+00:00",
-  "count": 3651,
+  "generated_at": "2026-10-12T19:47:11.461502+00:00",
+  "count": 3654,
   "companies": [
     {
       "name": "1199SEIU Benefit and Pension Funds",
@@ -6028,6 +6028,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Blue Yonder",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "ddd126bc83ab178badc3e53c"
+      ],
       "seen_count": 1
     },
     {
@@ -18116,6 +18129,19 @@
       "tags": [],
       "seen_job_keys": [
         "a32f60c811e9f09390e8d877"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Glasslake (Formerly Luzid)",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "6de9ccab7d0dede213f27d70"
       ],
       "seen_count": 1
     },
@@ -30311,7 +30337,9 @@
     },
     {
       "name": "Nox Metals",
-      "aliases": [],
+      "aliases": [
+        "NOX METALS"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
@@ -30320,9 +30348,10 @@
       "seen_job_keys": [
         "3d16f3650a483f21284bcb19",
         "5aac927a2dbde072fac56793",
+        "cae7be40f7a84998158ee907",
         "da23a82826517efbcedd723b"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "NRA Group, LLC",
@@ -31323,7 +31352,9 @@
       "sponsor": "likely",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "d4063169990712b792b8e34b"
+      ],
       "seen_count": 1
     },
     {
@@ -42745,6 +42776,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "TriNet",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "e068c2ba4cfc9510689fb3f7"
+      ],
       "seen_count": 1
     },
     {
