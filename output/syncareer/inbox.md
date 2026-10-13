@@ -1,19 +1,24 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-10-13 07:53 PDT
-- Snapshot (UTC): 2026-10-13T14:53:17.938090+00:00
-- Jobs: 24
-- Last 24 hours: 7
-- Last 3 days: 24
+- Updated (PT): 2026-10-13 16:53 PDT
+- Snapshot (UTC): 2026-10-13T23:53:33.665850+00:00
+- Jobs: 23
+- Last 24 hours: 9
+- Last 3 days: 23
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| B | 73.0 | Syncareer | Thomson Reuters | Software Engineer | Eagan, Minnesota, United States | 2026-10-12 | Sponsor | - | unreviewed | not_dedicated | [open](https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/United-States-of-America-Eagan-Minnesota/Software-Engineer_JREQ204005?Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=6cb77610a8a543aea2d6bc10457e35d4) |
 | A | 87.0 | Syncareer | Publicis Groupe | Software Engineer 2, Digital Marketing | Agoura Hills, California, United States | 2026-10-12 | No sponsor | - | unreviewed | not_dedicated | [open](https://publicisgroupe.jibeapply.com/jobs/176310?lang=en-us&previousLocale=en-US) |
-| B | 76.0 | Syncareer | Carnegie Mellon University | Software Engineer | Pittsburgh, Pennsylvania, United States | 2026-10-12 | Sponsor | - | unreviewed | not_dedicated | [open](https://cmu.wd115.myworkdayjobs.com/en-US/CMU/job/Pittsburgh-PA/Software-Engineer_2024794) |
 | B | 78.0 | Syncareer | CME Group | Platform Engineer II – Data Platform Engineering | Chicago, Illinois, United States | 2026-10-12 | Sponsor | - | unreviewed | not_dedicated | [open](https://cmegroup.wd1.myworkdayjobs.com/en-US/cme_careers/job/Chicago---20-S-Wacker/Cloud-Data-Platform-Engineering-Lead_33968-1) |
+| B | 73.0 | Syncareer | Thomson Reuters | Software Engineer | Eagan, Minnesota, United States | 2026-10-12 | Sponsor | - | unreviewed | not_dedicated | [open](https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/United-States-of-America-Eagan-Minnesota/Software-Engineer_JREQ204005?Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=6cb77610a8a543aea2d6bc10457e35d4) |
+| B | 76.0 | Syncareer | Carnegie Mellon University | Software Engineer | Pittsburgh, Pennsylvania, United States | 2026-10-12 | Sponsor | - | unreviewed | not_dedicated | [open](https://cmu.wd115.myworkdayjobs.com/en-US/CMU/job/Pittsburgh-PA/Software-Engineer_2024794) |
+| A | 89.0 | Syncareer | TriNet | Software Engineer | Atlanta, Georgia, United States | 2026-10-12 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.trinet.com/careers/job/44419046?domain=trinet.com&triggerGoButton=false) |
+| A | 91.0 | Syncareer | Duke Energy | Associate IT Software Engineer | Charlotte, North Carolina, United States | 2026-10-12 | No sponsor | - | unreviewed | not_dedicated | [open](https://dukeenergy.wd1.myworkdayjobs.com/en-US/search/job/Charlotte-NC/Associate-IT-Software-Engineer_R41973) |
+| B | 84.0 | Syncareer | Tandem Diabetes | Software Test Engineer I | Del Mar, California, United States | 2026-10-12 | No sponsor | - | unreviewed | not_dedicated | [open](https://tandemdiabetes.wd12.myworkdayjobs.com/en-US/tandemdiabetes/job/California---Barnes/Software-Test-Engineer-I_JR101601) |
+| B | 78.0 | Syncareer | CGI | Jr.-Level Full-Stack AI Engineer | Knoxville, Tennessee, United States | 2026-10-12 | Sponsor | - | unreviewed | not_dedicated | [open](https://cgi.njoyn.com/corp/xweb/xweb.asp?NTKN=c&clid=21001&Page=JobDetails&Jobid=J1026-0867&BRID=1340550&lang=1) |
+| B | 77.0 | Syncareer | Regeneron | Assoc IOPS AI Engineer | United States | 2026-10-12 | Sponsor | - | unreviewed | not_dedicated | [open](https://regeneron.wd1.myworkdayjobs.com/en-US/Careers/job/RENSS---GLOBAL-VIEW/Assoc-IOPS-AI-Engineer_R51390) |
 | A | 91.0 | Syncareer | Acuity Brands Lighting | Specialist Software Engineering BUILD Program | United States | 2026-10-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.acuityinc.com/job/Conyers-Specialist-Software-Engineering-BUILD-Program-GA-30012/1429301900/) |
 | A | 91.0 | Syncareer | Acuity Brands Lighting | Specialist Software Engineering BUILD Program | United States | 2026-10-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.acuityinc.com/job/Conyers-Specialist-Software-Engineering-BUILD-Program-GA-30012/1429301800/) |
 | A | 91.0 | Syncareer | Acuity Brands Lighting | Specialist Software Engineering BUILD Program | United States | 2026-10-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.acuityinc.com/job/Conyers-Specialist-Software-Engineering-BUILD-Program-GA-30012/1429302100/) |
@@ -25,12 +30,6 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 84.0 | Syncareer | Shield AI | Engineer II, Software Test and Automation (R6221) | Washington, District of Columbia, United States | 2026-10-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/shieldai/ebf49595-032b-493d-a80e-3ac00eb4d0ab) |
 | B | 82.0 | Syncareer | Infosys | AI Engineer | San Ramon, California, United States | 2026-10-10 | No sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/154356BR) |
 | B | 76.0 | Syncareer | Shield AI | Engineer I, Software Integration (R6214) | Washington, District of Columbia, United States | 2026-10-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/shieldai/7c8aaf63-ab92-4c0f-8a54-9cf1ce07ca69) |
-| B | 81.0 | Syncareer | Cboe | Software Engineer | Kansas City, Missouri, United States | 2026-10-09 | No sponsor | - | unreviewed | not_dedicated | [open](https://cboe.wd1.myworkdayjobs.com/en-US/External_Career_CBOE/job/Kansas-City-MO/Software-Engineer_R-4656-1) |
-| B | 84.0 | Syncareer | Cognizant | Quantitative Investment Solutions (QIS) Platform Analyst | New York, New York, United States | 2026-10-09 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.cognizant.com/global-en/jobs/00070835431/quantitative-investment-solutions-qis-platform-analyst/) |
-| A | 92.0 | Syncareer | Cboe | Associate Software Engineer, Web | Kansas City, Missouri, United States | 2026-10-09 | No sponsor | - | unreviewed | not_dedicated | [open](https://cboe.wd1.myworkdayjobs.com/en-US/External_Career_CBOE/job/Kansas-City-MO/Associate-Software-Engineer--Web_R-4582-2) |
-| A | 94.0 | Syncareer | Snowflake | Software Engineer - Customer Experience Engineering | Menlo Park, California, United States | 2026-10-09 | Sponsor | - | unreviewed | official_identity_unmatched | [open](https://careers.snowflake.com/us/en/job/SNCOUS662176BDC1D94EA3B22A9B602CEBA771EXTERNALENUS5CA0FA749E4344688F1C0A3AA0A993EC/Software-Engineer-Customer-Experience-Engineering) |
-| B | 84.0 | Syncareer | Micron Technology | AI Engineer | Boise, Idaho, United States | 2026-10-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.micron.com/careers/job/44515232?domain=micron.com) |
-| A | 89.0 | Syncareer | GlobalFoundries | Software Engineer (2027 New College Graduate) | Austin, Texas, United States | 2026-10-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://globalfoundries.wd1.myworkdayjobs.com/en-US/External/job/USA---Texas---Austin/Software-Engineer--2027-New-College-Graduate-_JR-2604100) |
 | B | 82.0 | Syncareer | TikTok | Machine Learning Engineer Graduate (E-Commerce User Growth) - 2027 Sta | Seattle, Washington, United States | 2026-10-11 | Sponsor | YES (TikTok) | unreviewed | official_identity_unmatched | [open](https://lifeattiktok.com/search/7694353236283935029) |
 | B | 82.0 | Syncareer | TikTok | Machine Learning Engineer Graduate (E-Commerce User Growth) - 2027 Sta | San Jose, California, United States | 2026-10-11 | Sponsor | YES (TikTok) | unreviewed | official_identity_unmatched | [open](https://lifeattiktok.com/search/7694352871949682997) |
 | B | 78.0 | Syncareer | Tesla | Fullstack Software Engineer | Palo Alto, California, United States | 2026-10-10 | Sponsor | YES (Tesla) | unreviewed | official_unsupported | [open](https://www.tesla.com/careers/search/job/258309) |
