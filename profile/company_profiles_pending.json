@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-13T14:53:59.995754+00:00",
-  "count": 3714,
+  "generated_at": "2026-10-13T15:29:27.265688+00:00",
+  "count": 3748,
   "companies": [
     {
       "name": "1199SEIU Benefit and Pension Funds",
@@ -1398,6 +1398,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Alaris Acquisitions",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "3cb7e1846051149a6b42e372"
+      ],
       "seen_count": 1
     },
     {
@@ -3704,16 +3717,19 @@
     },
     {
       "name": "Aspire Technology Partners, LLC.",
-      "aliases": [],
+      "aliases": [
+        "Aspire Technology Partners"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "6051d73b3bf53cb3ad556a26"
+        "6051d73b3bf53cb3ad556a26",
+        "6c7ea0ad37a9bc3213529f69"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "ASPnix",
@@ -4793,6 +4809,19 @@
       "seen_count": 1
     },
     {
+      "name": "Bamboo Health",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "06fbe785d594242537b083a9"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "BANCO DE CREDITO E INVERSIONES",
       "aliases": [],
       "size": "unknown",
@@ -4979,6 +5008,19 @@
       "tags": [],
       "seen_job_keys": [
         "b6495bc0e887f7dd326d33bf"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Baxter",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "23e47c73fd5dd245cb076f54"
       ],
       "seen_count": 1
     },
@@ -5625,6 +5667,19 @@
       "tags": [],
       "seen_job_keys": [
         "f552381ceda7185a798aa846"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "BioLite",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "95f7bca62ea27a2d138e76ec"
       ],
       "seen_count": 1
     },
@@ -7146,6 +7201,7 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "02f4f6268bb867528cf1450e",
         "048a43bb208271b6be30a3f4",
         "04bdb6776ef927fce4700603",
         "0647e462520b844cb95f7d7d",
@@ -7185,6 +7241,7 @@
         "3b4bd9db05ea97feda621f27",
         "3e9dcf47cb90d473a7692f77",
         "3f40e3b3485b9e7e3dae79af",
+        "3fa8f47a3ff61eab6950d55e",
         "3fd197781e278976ac0f31a0",
         "40ff953df73fc66e86fe24be",
         "4102a84e02c5f2645e7ed3ba",
@@ -7323,7 +7380,7 @@
         "fe5a0789e1dd632ac692a89e",
         "ffd21063f5cc81ac244e7df2"
       ],
-      "seen_count": 176
+      "seen_count": 178
     },
     {
       "name": "BY Recruiting",
@@ -7575,6 +7632,19 @@
       "tags": [],
       "seen_job_keys": [
         "7cffdac855b7425c2a21130e"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "CALLISTOFUSION",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "588979328f0abac99fcffcf1"
       ],
       "seen_count": 1
     },
@@ -8759,6 +8829,19 @@
       "seen_count": 4
     },
     {
+      "name": "Church of the King",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "f7aa5f72cf7ff7f541d2e978"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "CI Azumano",
       "aliases": [],
       "size": "unknown",
@@ -8767,6 +8850,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Cielo Projects",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "492ec1e87408bd51dcf4e266"
+      ],
       "seen_count": 1
     },
     {
@@ -9489,9 +9585,10 @@
       "tags": [],
       "seen_job_keys": [
         "3b0dfcbe87bd207861c7fc5b",
-        "d2db14ee5dc57a463ad21ff5"
+        "d2db14ee5dc57a463ad21ff5",
+        "fde5f63960f2670256dc10d5"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Cloud Infrastructure",
@@ -10255,9 +10352,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "1d6839c4a5bc0c5eb0e3acbb"
+        "1d6839c4a5bc0c5eb0e3acbb",
+        "2c2e22838f9593dc7086f855"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Concentra",
@@ -10473,12 +10571,13 @@
       "seen_job_keys": [
         "5e88a2bf4047112f2f940bd7",
         "635e546bad086191ae2300f6",
+        "70366086bc1a0854db91cff8",
         "7dee5989180e433a5b0bf857",
         "911acd9c368eff57910482af",
         "ac4cc18e14697f647f87fefd",
         "d5642e63dcd18b30bb9480d8"
       ],
-      "seen_count": 6
+      "seen_count": 7
     },
     {
       "name": "Consulting US",
@@ -10895,6 +10994,19 @@
         "d961161f3be5bba3964cb5f6"
       ],
       "seen_count": 2
+    },
+    {
+      "name": "COUNTY OF VOLUSIA",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "5d4109a96bb8cff9796a71c1"
+      ],
+      "seen_count": 1
     },
     {
       "name": "Courier Health",
@@ -11744,6 +11856,19 @@
       "seen_count": 1
     },
     {
+      "name": "Daily Draft Inc.",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "737f72c1b50a2c015bd96b9d"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Daimler Truck North America",
       "aliases": [],
       "size": "unknown",
@@ -11754,9 +11879,10 @@
       "seen_job_keys": [
         "1e4e1f04cb77ab1257fb3eff",
         "36c8b1f18608aca0c392d864",
+        "3c3f840ac9150fea25916e80",
         "d3f8b1313fe80e67f1f61cb4"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "DAKCS Software Systems and PDCflow",
@@ -12156,8 +12282,15 @@
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
-      "seen_count": 1
+      "seen_job_keys": [
+        "22dde038106651066088b676",
+        "498fc37cfc17316486b7bee4",
+        "4a610d9e9d4df6f4dea95f81",
+        "4e341b0749c6c463b8143773",
+        "c25f69955bd4494182b1123c",
+        "f5128c37173e051c7bdf71c2"
+      ],
+      "seen_count": 6
     },
     {
       "name": "DeepFin Research",
@@ -13332,6 +13465,19 @@
       "seen_count": 1
     },
     {
+      "name": "DTN",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "c408ac2c8eb3a567a507d60e"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "DuCharme, McMillen & Associates, Inc.",
       "aliases": [],
       "size": "unknown",
@@ -13577,9 +13723,10 @@
       "seen_job_keys": [
         "6bc8793dfbf9f24a6288edb5",
         "7125bef9fade3258f4f361c8",
-        "b49ac620bc8c03c1d11336b9"
+        "b49ac620bc8c03c1d11336b9",
+        "dc1232df234dabcd0b404d21"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "EBSCO Industries",
@@ -15400,6 +15547,19 @@
       "seen_count": 1
     },
     {
+      "name": "Expertshub",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "aaf597822fe51448ca4bea78"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Exponent",
       "aliases": [],
       "size": "unknown",
@@ -17173,6 +17333,20 @@
       "seen_count": 3
     },
     {
+      "name": "Freemind solutions",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "240726f55cd40135603e88ed",
+        "46dd4bd16219dca23ceff7fe"
+      ],
+      "seen_count": 2
+    },
+    {
       "name": "Freese and Nichols",
       "aliases": [],
       "size": "unknown",
@@ -17539,6 +17713,19 @@
       "tags": [],
       "seen_job_keys": [
         "8e9efe033e4e63e3b60b1ed2"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Fusion Health",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "2d72b07767322df944cf405d"
       ],
       "seen_count": 1
     },
@@ -27031,6 +27218,19 @@
       "seen_count": 1
     },
     {
+      "name": "MALTA",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "aedccccd1c66536906743627"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "MAMSYS Consulting Services Ltd",
       "aliases": [],
       "size": "unknown",
@@ -27082,6 +27282,19 @@
       "seen_count": 1
     },
     {
+      "name": "Management Council of the Ohio Education Computer Network",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "791dfba02f44898fb2ccdbb9"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Mango Global Technologies",
       "aliases": [],
       "size": "unknown",
@@ -27091,6 +27304,19 @@
       "tags": [],
       "seen_job_keys": [
         "8c6cd6755606e0c9e012758e"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Manifest OS",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "dce5eec067af2e36b12a9ce5"
       ],
       "seen_count": 1
     },
@@ -27722,6 +27948,19 @@
         "fae7b587e6faae32e62888ce"
       ],
       "seen_count": 3
+    },
+    {
+      "name": "McGuireWoods LLP",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "390b7462b1276cfdeb12aac6"
+      ],
+      "seen_count": 1
     },
     {
       "name": "McLane Company",
@@ -28616,6 +28855,19 @@
       "tags": [],
       "seen_job_keys": [
         "8730918ef3ccc7472d576173"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Mitchell Hamline School of Law",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "a54563af321b7fc75ee27a0b"
       ],
       "seen_count": 1
     },
@@ -29734,7 +29986,9 @@
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "6ce4812d5db0cfbbbd0f5f21"
+      ],
       "seen_count": 1
     },
     {
@@ -30866,10 +31120,12 @@
       "seen_job_keys": [
         "3d16f3650a483f21284bcb19",
         "5aac927a2dbde072fac56793",
+        "5f6c4d69d746db2783f5a2a3",
         "cae7be40f7a84998158ee907",
+        "d12efe64f474c11fd0529bc7",
         "da23a82826517efbcedd723b"
       ],
-      "seen_count": 4
+      "seen_count": 6
     },
     {
       "name": "NRA Group, LLC",
@@ -32115,6 +32371,19 @@
       "seen_count": 1
     },
     {
+      "name": "osp labs hiring for us based mnc",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "b06786eb6bbabaed98b457b5"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "OTIS",
       "aliases": [
         "Otis"
@@ -32966,6 +33235,19 @@
       "tags": [],
       "seen_job_keys": [
         "b19c2352dbe808e0317fed5c"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "PharmaEssentia",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "e866d8141709c23c0e0f8e68"
       ],
       "seen_count": 1
     },
@@ -34260,6 +34542,19 @@
       "seen_count": 1
     },
     {
+      "name": "Progthrive Tech Pvt. Ltd.",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "e6b3a374badad5dc5970c14b"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "PROLIM Global Corporation",
       "aliases": [],
       "size": "unknown",
@@ -35215,6 +35510,19 @@
       "seen_count": 1
     },
     {
+      "name": "Rainmaker Technology",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "03320c9c99cf75f98c54ecde"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Ramboll",
       "aliases": [],
       "size": "unknown",
@@ -35576,6 +35884,19 @@
       "tags": [],
       "seen_job_keys": [
         "dbb380d45362d0b8808f81fc"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Regeneron",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "aff055abb5bcc6b4c87385a9"
       ],
       "seen_count": 1
     },
@@ -37581,6 +37902,19 @@
       "seen_count": 1
     },
     {
+      "name": "Selligent Marketing Cloud",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "9a9323ccf19c381317b60f88"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "SendcutSend",
       "aliases": [
         "SendCutSend"
@@ -38028,6 +38362,19 @@
       "tags": [],
       "seen_job_keys": [
         "faab82cfe48b0012b5a3b13b"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Shield Healthcare",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "96c15b01997ba2d825e8fb62"
       ],
       "seen_count": 1
     },
@@ -38570,9 +38917,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "42c348521f1a6f9b65b15934"
+        "42c348521f1a6f9b65b15934",
+        "e0c994215c97cbb35112a619"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Slalom Consulting",
@@ -39511,9 +39859,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "11da41dd1f4e208c4634adc7",
         "a41e32aee292e4c3f7cd16a1"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Spur",
@@ -39587,6 +39936,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "St. Jude Children's Research Hospital",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "6e1ac0d85ed9992a90ae9862"
+      ],
       "seen_count": 1
     },
     {
@@ -39907,11 +40269,12 @@
       "seen_job_keys": [
         "3b3ddc9c2a3cd55db8ac49f2",
         "418f35e4289f0af5eb3317b8",
+        "79f9657fec83aaeefcc1bad6",
         "93d60fdc2a2467a7bfbcc131",
         "a79109cfce42b7c15638c50e",
         "ad960a7f5c1f0086cc27d5a5"
       ],
-      "seen_count": 5
+      "seen_count": 6
     },
     {
       "name": "State of Utah",
@@ -40721,9 +41084,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "5bc33caabc75498dcb4eaa36",
         "f45cdc67a97957696c72695f"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "SwitchThink Solutions LLC",
@@ -41447,9 +41811,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "88a512d0147e023cba4aba61",
         "aa2c6ae728689c4bcd3a7767"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "TechData",
@@ -41521,6 +41886,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Technology Solutions Partners",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "a576cae440c09d626baa0cab"
+      ],
       "seen_count": 1
     },
     {
@@ -41615,6 +41993,19 @@
       "tags": [],
       "seen_job_keys": [
         "7b7e301487c3dfd686a75fc6"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "TEEMA",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "d2bef4ea01ad16a21773b424"
       ],
       "seen_count": 1
     },
@@ -41767,7 +42158,21 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "03f2b2d67401caae58f23ec0"
+        "03f2b2d67401caae58f23ec0",
+        "313a143dfffc416ec52d7cb7"
+      ],
+      "seen_count": 2
+    },
+    {
+      "name": "Tempus",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "e31552a1e06bd2abc0dcb893"
       ],
       "seen_count": 1
     },
@@ -42985,6 +43390,20 @@
       "seen_count": 2
     },
     {
+      "name": "Titan",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "330232c128355b56e524002c",
+        "c2f58b76b71cf0c9a14d7bf2"
+      ],
+      "seen_count": 2
+    },
+    {
       "name": "TixTrack",
       "aliases": [
         "Tixtrack"
@@ -43337,9 +43756,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "7c016004e6bf07b8549ea118"
+        "7c016004e6bf07b8549ea118",
+        "90026f464cef0796a6786b6e"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Trean Corporation",
@@ -43571,10 +43991,12 @@
       "tags": [],
       "seen_job_keys": [
         "829fc0945fa18aaa5cd3e8a1",
+        "90992f459096ad3678679ecc",
         "9f896440bb5a24068d04f487",
-        "b4bbdb9732955908be11b5ec"
+        "b4bbdb9732955908be11b5ec",
+        "f30682860a67350194e27130"
       ],
-      "seen_count": 3
+      "seen_count": 5
     },
     {
       "name": "TripleTen",
@@ -44331,6 +44753,19 @@
       "seen_count": 1
     },
     {
+      "name": "United Nations",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "fb045479d88d981277b4d10a"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "United States Steel",
       "aliases": [],
       "size": "unknown",
@@ -44615,6 +45050,19 @@
       "seen_count": 1
     },
     {
+      "name": "University of Tennessee Health Science Center",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "e23f5e4393dc2a8ca1976f5d"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "University of Wisconsin-Green Bay",
       "aliases": [],
       "size": "unknown",
@@ -44733,7 +45181,9 @@
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "d180cacc73d438b9f2ae089c"
+      ],
       "seen_count": 1
     },
     {
@@ -45798,9 +46248,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "4325e2f9d138ddca3c7cf20f"
+        "4325e2f9d138ddca3c7cf20f",
+        "dc51f4d13b61b69a94d01438"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Visio Lending",
@@ -45935,6 +46386,7 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "083c2ac807c1ad0e8279518f",
         "09ce0f55e9b55e0234069d38",
         "158b637a8067a147b54456c8",
         "425017725cc5d333fd35f8b3",
@@ -45944,7 +46396,7 @@
         "fc26237e015183f19d55b6ae",
         "fe03768ae5af70977dc02253"
       ],
-      "seen_count": 8
+      "seen_count": 9
     },
     {
       "name": "Vivid Resourcing",
@@ -46202,9 +46654,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "869d2a7cd32718d639a2adc7"
+        "869d2a7cd32718d639a2adc7",
+        "c7fef9c29a133a9f234822e1"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Walgreens",
@@ -47180,9 +47633,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "1719d89fae99d15a9a5a5b67"
+        "1719d89fae99d15a9a5a5b67",
+        "ee39491e5e1061a773cc76d4"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Worthington Steel",
@@ -47410,6 +47864,19 @@
       "seen_count": 1
     },
     {
+      "name": "Yas networks",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "013a8ecb0662700cf4fda803"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Yelp",
       "aliases": [],
       "size": "unknown",
@@ -47470,6 +47937,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Young Living Essential Oils",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "1d207c1de71a2e74900421b7"
+      ],
       "seen_count": 1
     },
     {
