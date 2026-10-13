@@ -1,7 +1,7 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-12 22:06 PDT
-- Snapshot (UTC): 2026-10-13T05:06:11.122351+00:00
+- Updated (PT): 2026-10-12 22:16 PDT
+- Snapshot (UTC): 2026-10-13T05:16:22.330403+00:00
 - Jobs: 56 (Tier A/B only)
 - Last 24 hours: 47
 - Last 3 days: 56
@@ -32,7 +32,6 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed |  | Entry Level Java Devloper | San Bruno, CA, US | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=35e1abe0328bb334) |
 | B | 82 | indeed | Blue Yonder | Software Engineer (Java backend) | Dallas, TX, US | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=9b4c46868f6281bc) |
 | B | 82 | linkedin | Blue Yonder | Software Engineer (Java backend) | Dallas, TX | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-java-backend-at-blue-yonder-4477907064) |
-| B | 80 | linkedin | U.S. Bank | Software Engineer 2 (.NET Core / C# web applications) | Atlanta, GA | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-2-net-core-c%23-web-applications-at-u-s-bank-4477850675) |
 | B | 80 | linkedin | Affirm | Software Engineer II, Fullstack (Ads Platform) | Salt Lake City, UT | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-ads-platform-at-affirm-4476882191) |
 | B | 80 | linkedin | Affirm | Software Engineer II, Fullstack (Ads Platform) | Las Vegas, NV | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-fullstack-ads-platform-at-affirm-4476889058) |
 | B | 82 | indeed | Synopsys Software Integrity | Data Engineer - Talent Acquisition Operations | San Francisco, CA, US | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=53ccca96f0095ca0) |
@@ -42,18 +41,19 @@ The 7-day dump is `latest.md`.
 | B | 80 | indeed | Tandem Diabetes Care, Inc. | Software Test Engineer I | San Diego, CA, US | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=9d8c249e7b05c624) |
 | B | 82 | indeed | University of Arizona | Applications Development Programmer Analyst I | Tucson, AZ, US | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ed3dedad49f70365) |
 | B | 78 | indeed |  | Machine Learning Engineer | Tampa, FL, US | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=8e1daeaceb2d78ef) |
+| B | 79 | linkedin | U.S. Bank | Software Engineer 2 (.NET Core / C# web applications) | Atlanta, GA | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-2-net-core-c%23-web-applications-at-u-s-bank-4477850675) |
 | B | 75 | linkedin | Chalk | Full Stack Software Engineer | San Francisco, CA | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-chalk-4475260915) |
-| B | 77 | linkedin | Haystack | Software Engineer | Milwaukee, WI | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-haystack-4473401171) |
-| B | 77 | linkedin | AceStack | Java Software Engineer | Tampa, FL | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-software-engineer-at-acestack-4477917782) |
-| B | 77 | linkedin | Bright Vision Technologies | Backend Software Engineer | Wildwood, MO | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-software-engineer-at-bright-vision-technologies-4478576870) |
+| B | 75 | linkedin | Haystack | Software Engineer | Milwaukee, WI | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-haystack-4473401171) |
+| B | 75 | linkedin | AceStack | Java Software Engineer | Tampa, FL | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-software-engineer-at-acestack-4477917782) |
+| B | 75 | linkedin | Bright Vision Technologies | Backend Software Engineer | Wildwood, MO | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-software-engineer-at-bright-vision-technologies-4478576870) |
 | B | 75 | linkedin | Glasslake (Formerly Luzid) | Software Engineer (SWE) | San Francisco, CA | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-swe-at-glasslake-formerly-luzid-4477507021) |
 | B | 75 | linkedin | TriNet | Software Engineer | Atlanta, GA | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-trinet-4478573082) |
 | B | 75 | linkedin | Bandelier Technologies | Full Stack Engineer | Santa Fe, NM | 2026-10-11 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-bandelier-technologies-4477265846) |
 | B | 75 | linkedin | Veteran Benefits Guide | Full Stack Developer II | Las Vegas, NV | 2026-10-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-ii-at-veteran-benefits-guide-4476854489) |
 | B | 75 | linkedin | Silo Markets | Backend Engineer | New York, NY | 2026-10-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-at-silo-markets-4478065468) |
-| B | 77 | linkedin | Ladders | Full Stack Software Engineer | United States | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-ladders-4476005404) |
-| B | 77 | linkedin | HiredBuddy | Java Software Engineer | Seattle, WA | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-software-engineer-at-hiredbuddy-4477587830) |
-| B | 77 | linkedin | Guidehouse | Full-Stack Cloud Developer | Arlington, VA | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-cloud-developer-at-guidehouse-4478545786) |
+| B | 75 | linkedin | Ladders | Full Stack Software Engineer | United States | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-ladders-4476005404) |
+| B | 75 | linkedin | HiredBuddy | Java Software Engineer | Seattle, WA | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/java-software-engineer-at-hiredbuddy-4477587830) |
+| B | 75 | linkedin | Guidehouse | Full-Stack Cloud Developer | Arlington, VA | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-cloud-developer-at-guidehouse-4478545786) |
 | B | 78 | indeed | Mastercard | Software Engineer II | O'Fallon, MO, US | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c9c3d1ebb5b991ae) |
 | B | 79 | indeed |  | Solutions Engineer | Remote, US | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=7c3193a61fb98b58) |
 | B | 79 | indeed |  | Full Stack Developer | El Paso, TX, US | 2026-10-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=aed15eb60f15f6e3) |
