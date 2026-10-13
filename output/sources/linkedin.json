@@ -341,7 +341,7 @@
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-10-13T05:15:42.170931+00:00"
+    "jd_recovery_at": "2026-10-13T20:34:13.756764+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -4132,17 +4132,24 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "1633568052accefce94c",
-          "attempted_at": "2026-10-12T22:00:12.775149+00:00",
+          "attempted_at": "2026-10-13T20:34:13.756764+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-13T05:15:42.170931+00:00",
+      "official_search_attempted_at": "2026-10-13T20:34:13.756764+00:00",
       "official_search_status": "no_match",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-10-12T22:00:12.775149+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Java software role is relevant; seniority and required skills could change fit."
+      },
+      "linkedin_detail_triage_hash": "826a4d7f260dfde49e50",
+      "linkedin_detail_deferred_at": "2026-10-13T20:34:13.756764+00:00",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4470476028",
@@ -13322,7 +13329,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-at-bandelier-technologies-4477265846",
       "official_url": "",
-      "description": "",
+      "description": "Full Stack Engineer Role Overview Bandelier Technologies is seeking a Full Stack Software Engineer to design, build, and maintain the software behind our commercial products. You will own features end to end, from databases and backend services to APIs and the web interfaces customers use, and build systems that ingest, process, store, and serve large volumes of data reliably. The role will initially support Bandelier’s event-based camera and 3D reconstruction products for infrastructure and utility customers — bridge and grid inspection, structural monitoring, and site change detection. These products generate large, high-rate datasets, and the software must turn that data into fast, usable applications for customers. This is a hands-on engineering role for someone who writes production-quality code across the stack and cares about performance, reliability, and maintainability. Experience with sensing or machine learning is helpful but not required; strong software engineering fundamentals are the priority. Key Responsibilities ● Design, develop, and maintain full stack web applications, from database and backend services through APIs to front-end user interfaces ● Build responsive, intuitive front-end interfaces for data visualization, reporting, and change detection (e.g., asset inspection dashboards) ● Develop scalable backend services and RESTful or GraphQL APIs ● Design and optimize data pipelines and storage for large datasets, including ingestion, processing, indexing, querying, and efficient delivery to the front end ● Design database schemas and tune query performance across relational and non-relational data stores ● Deploy and operate applications in cloud environments, including CI/CD, containerization, monitoring, and logging ● Integrate third-party platforms (drone platforms, GIS, asset-management systems) and internal data-processing components into a cohesive product ● Write tests, review code, and maintain documentation and engineering best practices ● Collaborate with scientists, engineers, and commercial partners to translate product requirements into shipped features ● Contribute to software architecture, technical planning, and product roadmap Preferred Experience and Education ● BS or MS in Computer Science, Software Engineering, or a related field, or equivalent industry experience ● Professional experience building and maintaining production web applications across the full stack ● Front-end experience with modern JavaScript/TypeScript frameworks (React, Vue, Angular, or similar), HTML, and CSS ● Back-end experience with Python, Node.js, Go, Java, or similar, including designing and building APIs ● Experience working with large datasets: database design, query optimization, and data processing at scale (e.g., PostgreSQL, MongoDB, Spark, Parquet, or similar) ● Experience with cloud platforms (AWS, Azure, or GCP), containerization (Docker, Kubernetes), and CI/CD pipelines ● Proficiency with Linux environments, version control (Git), automated testing, and debugging ● Experience with data visualization libraries (D3.js, Plotly, Three.js, or similar) ● Comfortable in an early-stage startup environment where requirements evolve alongside the technology ● Bonus: experience with geospatial, 3D, or point-cloud data, drone/UAV data pipelines, or infrastructure inspection workflows Why Bandelier Technologies Bandelier Technologies is developing next generation sensing technologies at the intersection of quantum science, neuromorphic imaging, advanced instrumentation, and intelligent software systems. Our mission is to transform emerging sensing capabilities into practical solutions for timing integrity, situational awareness, imaging, and national security applications. You will work directly with national laboratory scientists, technology partners, and company leadership to help shape foundational software capabilities across multiple sensing platforms. This is an opportunity to work on technically challenging problems, contribute to novel technologies, and build systems that bridge cutting edge research and real-world deployment. Please be aware that many of our positions require the ability to obtain a security clearance. Security clearances may only be granted to U.S. citizens. In addition, applicants who accept a conditional offer of employment may be subject to government security investigation(s) and must meet eligibility requirements for access to classified information.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-12T01:13:39.957682+00:00",
@@ -13334,9 +13341,9 @@
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "normal",
-        "reason": "Full-stack software role is relevant; seniority and required stack could change fit."
+        "reason": "Full-stack role is relevant; scope and qualifications could change fit."
       },
-      "linkedin_detail_triage_hash": "5776a73e83b83aab55f2",
+      "linkedin_detail_triage_hash": "d1de5f54213fec02dadb",
       "linkedin_detail_deferred_at": "2026-10-12T01:13:39.957682+00:00",
       "recovery_methods": {
         "generic_search": {
@@ -13350,8 +13357,11 @@
       "official_search_status": "no_match",
       "source_verified_at": "2026-10-12T19:03:27.780454+00:00",
       "verified_this_run": false,
-      "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_cooldown"
+      "enrichment_status": "resolved",
+      "linkedin_detail_attempted_at": "2026-10-13T20:34:43.641525+00:00",
+      "linkedin_detail_fetched_at": "2026-10-13T20:34:43.641525+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4461286746",
@@ -17964,17 +17974,24 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "42d1607d448f5350619f",
-          "attempted_at": "2026-10-12T22:00:12.775149+00:00",
+          "attempted_at": "2026-10-13T20:34:13.756764+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-13T05:15:42.170931+00:00",
+      "official_search_attempted_at": "2026-10-13T20:34:13.756764+00:00",
       "official_search_status": "no_match",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-10-12T22:00:12.775149+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Backend software role is relevant; seniority and requirements could change fit."
+      },
+      "linkedin_detail_triage_hash": "107c958dd0b47df42d03",
+      "linkedin_detail_deferred_at": "2026-10-13T20:34:13.756764+00:00",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4471174455",
