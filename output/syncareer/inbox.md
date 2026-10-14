@@ -1,21 +1,29 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-10-14 07:54 PDT
-- Snapshot (UTC): 2026-10-14T14:54:15.404561+00:00
-- Jobs: 23
-- Last 24 hours: 11
-- Last 3 days: 23
+- Updated (PT): 2026-10-14 16:54 PDT
+- Snapshot (UTC): 2026-10-14T23:54:11.331524+00:00
+- Jobs: 28
+- Last 24 hours: 14
+- Last 3 days: 28
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| B | 82.0 | Syncareer | ElevenLabs | Full-Stack Engineer (Backend-Leaning) - CoreMusic | New York, New York, United States | 2026-10-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://elevenlabs.io/careers/a03536c8-8728-4007-aef2-460def03173e/full-stack-engineer-backend-leaning-coremusic) |
+| B | 79.0 | Syncareer | Motion Recruitment | Full Stack AI Engineer / Distributed Systems / Building with AI | San Francisco, California, United States | 2026-10-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://motionrecruitment.com/tech-jobs/san-fransisco/direct-hire/full-stack-ai-engineer-distributed-systems-building-with-ai/892302) |
+| A | 85.0 | Syncareer | ElevenLabs | Full-Stack Engineer - ElevenAPI | United States | 2026-10-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://elevenlabs.io/careers/108c99e6-ba2b-44a0-b830-7d535e14a152/full-stack-engineer-elevenapi) |
 | A | 94.0 | Syncareer | Eightfold | Software Engineer - AI Agentic Product Dev Team (US) | Santa Clara, California, United States | 2026-10-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://app.eightfold.ai/careers/job/68763808021?domain=volkscience.com&hl=en&triggerGoButton=false) |
 | A | 93.0 | Syncareer | AVEVA | Software Developer Graduate (AI Proficient) USA | Lake Forest, California, United States | 2026-10-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://aveva.wd3.myworkdayjobs.com/en-US/AVEVA_careers/job/Lake-Forest-California-United-States-of-America/Software-Developer-Graduate--AI-Proficient--USA_R014947) |
-| A | 85.0 | Syncareer | ElevenLabs | Full-Stack Engineer - ElevenAPI | United States | 2026-10-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://elevenlabs.io/careers/108c99e6-ba2b-44a0-b830-7d535e14a152/full-stack-engineer-elevenapi) |
-| B | 79.0 | Syncareer | Motion Recruitment | Full Stack AI Engineer / Distributed Systems / Building with AI | San Francisco, California, United States | 2026-10-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://motionrecruitment.com/tech-jobs/san-fransisco/direct-hire/full-stack-ai-engineer-distributed-systems-building-with-ai/892302) |
-| B | 82.0 | Syncareer | ElevenLabs | Full-Stack Engineer (Backend-Leaning) - CoreMusic | New York, New York, United States | 2026-10-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://elevenlabs.io/careers/a03536c8-8728-4007-aef2-460def03173e/full-stack-engineer-backend-leaning-coremusic) |
 | B | 77.0 | Syncareer | ElevenLabs | Full-Stack Engineer (Frontend Leaning) - Studio | United States | 2026-10-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://elevenlabs.io/careers/e6924f60-c8cc-42b3-9d05-2442ec30e12d/full-stack-engineer-frontend-leaning-studio) |
+| B | 84.0 | Syncareer | Column | Software Engineer (Travel Heavy) | San Francisco, California, United States | 2026-10-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/column/5d465c7c-9e05-4ec0-83fc-4bb3ea6105d0) |
+| A | 92.0 | Syncareer | Healthpeak Properties | Forward Deployed Software Engineer | New York City, New York, United States | 2026-10-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://healthpeak.applytojob.com/apply/JcxzlDrgWk/Forward-Deployed-Software-Engineer) |
+| B | 82.0 | Syncareer | Extra Space Storage | Software Engineer, Internal Applications | Salt Lake City, Utah, United States | 2026-10-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://extraspace.wd5.myworkdayjobs.com/en-US/ESS_External/job/Salt-Lake-City-UT-United-States/Software-Engineer--Internal-Applications_R-82305?jobFamilyGroup=d6816e04dd2144df8b10c1fe3b9c5cd0&jobFamilyGroup=24827b9bd0604390a24a0607a884dfda&jobFamilyGroup=078a8d9e6e994c4ab23ad1b7ae474c72&jobFamilyGroup=2c127315f4be4de9a49db1d9e3e53a6c&jobFamilyGroup=1088610a1a464bd0b823a8655336adec&jobFamilyGroup=261836d7829b4d3bbd97fee8b19fb92c&jobFamilyGroup=95179ab1b64641eea62e3144a88ce6e1&jobFamilyGroup=06a773557abc4f4f818d24351a87c443&jobFamilyGroup=c5461b9b44a54888bd5872c96f14e2ad) |
+| A | 94.0 | Syncareer | CGI | AI Full Stack Developer | Arlington, Virginia, United States | 2026-10-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://cgi.njoyn.com/corp/xweb/xweb.asp?NTKN=c&clid=21001&Page=JobDetails&Jobid=J1026-0860&BRID=1340733&lang=1) |
+| B | 72.0 | Syncareer | CGI | Java Developer (Junior) - AI-Enabled - Local to Pittsburgh, Dallas, Ph | Pittsburgh, Pennsylvania, United States | 2026-10-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://cgi.njoyn.com/corp/xweb/xweb.asp?NTKN=c&clid=21001&Page=JobDetails&Jobid=J1026-1247&BRID=1340823&lang=1) |
+| B | 89.0 | Syncareer | Boston Scientific | Forward Deployment AI Engineer | Arden Hills, Minnesota, United States | 2026-10-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://bostonscientific.eightfold.ai/careers/job/563602813765676?domain=bostonscientific.com&hl=en&triggerGoButton=false) |
+| B | 72.0 | Syncareer | General Motors | R&D Researcher – AI and Machine Learning | Warren, Michigan, United States | 2026-10-13 | No sponsor | - | unreviewed | not_dedicated | [open](https://search-careers.gm.com/en/jobs/jr-202621474/r-d-researcher-ai-and-machine-learning/) |
+| A | 94.0 | Syncareer | Thales | AI Engineer - Graduate | Orlando, Florida, United States | 2026-10-13 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.thalesgroup.com/global/en/job/R0341851/AI-Engineer-Graduate) |
 | A | 91.0 | Syncareer | Duke Energy | Associate IT Software Engineer | Charlotte, North Carolina, United States | 2026-10-12 | No sponsor | - | unreviewed | not_dedicated | [open](https://dukeenergy.wd1.myworkdayjobs.com/en-US/search/job/Charlotte-NC/Associate-IT-Software-Engineer_R41973) |
 | B | 78.0 | Syncareer | CGI | Jr.-Level Full-Stack AI Engineer | Knoxville, Tennessee, United States | 2026-10-12 | Sponsor | - | unreviewed | not_dedicated | [open](https://cgi.njoyn.com/corp/xweb/xweb.asp?NTKN=c&clid=21001&Page=JobDetails&Jobid=J1026-0867&BRID=1340550&lang=1) |
 | B | 77.0 | Syncareer | Regeneron | Assoc IOPS AI Engineer | United States | 2026-10-12 | Sponsor | - | unreviewed | not_dedicated | [open](https://regeneron.wd1.myworkdayjobs.com/en-US/Careers/job/RENSS---GLOBAL-VIEW/Assoc-IOPS-AI-Engineer_R51390) |
@@ -28,8 +36,5 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | A | 91.0 | Syncareer | Acuity Brands Lighting | Specialist Software Engineering BUILD Program | United States | 2026-10-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.acuityinc.com/job/Conyers-Specialist-Software-Engineering-BUILD-Program-GA-30012/1429301900/) |
 | A | 91.0 | Syncareer | Acuity Brands Lighting | Specialist Software Engineering BUILD Program | United States | 2026-10-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.acuityinc.com/job/Conyers-Specialist-Software-Engineering-BUILD-Program-GA-30012/1429301800/) |
 | A | 91.0 | Syncareer | Acuity Brands Lighting | Specialist Software Engineering BUILD Program | United States | 2026-10-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.acuityinc.com/job/Conyers-Specialist-Software-Engineering-BUILD-Program-GA-30012/1429302100/) |
-| B | 85.0 | Syncareer | Ironclad (software) | Software Engineer II, Developer Productivity | San Francisco, California, United States | 2026-10-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/ironcladhq/9af62746-1c31-44d7-b2a7-faf6eefeffc1) |
-| A | 90.0 | Syncareer | Affirm | Software Engineer II, Fullstack (Ads Platform) | United States | 2026-10-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/affirm/jobs/8016866003) |
-| B | 89.0 | Syncareer | Acuity Brands Lighting | Specialist Growth & Transformation Software Engineering BUILD Program | Atlanta, Georgia, United States | 2026-10-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.acuityinc.com/job/Atlanta-Specialist-Growth-&-Transformation-Software-Engineering-BUILD-Program-GA-30309/1429282700/) |
 | B | 82.0 | Syncareer | TikTok | Machine Learning Engineer Graduate (E-Commerce User Growth) - 2027 Sta | Seattle, Washington, United States | 2026-10-11 | Sponsor | YES (TikTok) | unreviewed | official_identity_unmatched | [open](https://lifeattiktok.com/search/7694353236283935029) |
 | B | 82.0 | Syncareer | TikTok | Machine Learning Engineer Graduate (E-Commerce User Growth) - 2027 Sta | San Jose, California, United States | 2026-10-11 | Sponsor | YES (TikTok) | unreviewed | official_identity_unmatched | [open](https://lifeattiktok.com/search/7694352871949682997) |
