@@ -1,7 +1,7 @@
-# ATS / LinkedIn board — 7-day view — 2026-10-14_0618
+# ATS / LinkedIn board — 7-day view — 2026-10-14_0628
 
-- Updated (PT): 2026-10-13 23:21 PDT
-- Snapshot (UTC): 2026-10-14T06:21:38.005030+00:00
+- Updated (PT): 2026-10-13 23:31 PDT
+- Snapshot (UTC): 2026-10-14T06:31:57.400353+00:00
 - Last 24 hours: 34
 - Last 3 days: 64
 
@@ -14,7 +14,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 - LLM usage: jobs scored 0 / API requests 0 / cache reused 410 (cross-pipeline 1) / rule fallback+overflow 1208 (thin local cards 963, recency-gated 0, overflow 0, new/changed 0)
 - LLM cache causes: new 0 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 2 / rescored <24h 0
 - LLM cost: model gpt-6-luna / API requests 0 / jobs scored 0 / tokens input 0 (cached 0) / output 0 (reasoning 0) / estimated cost $0.0000
-- New jobs discovered this run: 6
+- New jobs discovered this run: 0
 - Output sizing: Tier A 35 / Tier B 134 / A+B actionable 169 / Shown in latest.md 169 (no hard cap)
 - Recency (kept): <3h 0 / 3-24h 0 / 1-3d 96 / newly-disc 255 / 3-7d 67 / >7d 1200
 - LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 2807 of 2808 / Indeed unique 866 of 866
