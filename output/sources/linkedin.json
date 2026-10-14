@@ -341,7 +341,7 @@
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-10-14T06:17:02.930592+00:00"
+    "jd_recovery_at": "2026-10-14T06:27:41.086548+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -4139,7 +4139,7 @@
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-13T20:34:13.756764+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "unresolved",
+      "enrichment_status": "deferred",
       "source_verified_at": "2026-10-12T22:00:12.775149+00:00",
       "verified_this_run": true,
       "linkedin_detail_triage": {
@@ -4149,7 +4149,7 @@
       },
       "linkedin_detail_triage_hash": "826a4d7f260dfde49e50",
       "linkedin_detail_deferred_at": "2026-10-13T20:34:13.756764+00:00",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "enrichment_deferred_reason": "global_429_pause",
       "enrichment_failure_reason": "linkedin_rate_limited"
     },
     {
@@ -17982,7 +17982,7 @@
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-13T20:34:13.756764+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "unresolved",
+      "enrichment_status": "deferred",
       "source_verified_at": "2026-10-12T22:00:12.775149+00:00",
       "verified_this_run": true,
       "linkedin_detail_triage": {
@@ -17992,7 +17992,7 @@
       },
       "linkedin_detail_triage_hash": "107c958dd0b47df42d03",
       "linkedin_detail_deferred_at": "2026-10-13T20:34:13.756764+00:00",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "enrichment_deferred_reason": "global_429_pause",
       "enrichment_failure_reason": "linkedin_rate_limited"
     },
     {
