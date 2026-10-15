@@ -2,7 +2,7 @@
 
 A Python job-discovery and review system that brings postings from company career sites, applicant tracking systems (ATS), and job boards into one prioritized dashboard. Built for my own job search, it combines data ingestion, identity reconciliation, AI-assisted matching, and scheduled automation in a complete workflow.
 
-**For recruiters:** this project demonstrates backend integration, reliable state management, bounded AI use, and operational visibility. The dashboard lets me find recent roles, inspect match explanations, and track applications across sources.
+This project demonstrates backend integration, reliable state management, bounded AI use, and operational visibility. The dashboard lets me find recent roles, inspect match explanations, and track applications across sources.
 
 **Stack:** Python · GitHub Actions / Pages · AWS EventBridge Scheduler, Lambda, and SQS · Supabase · JavaScript · macOS launchd.
 
