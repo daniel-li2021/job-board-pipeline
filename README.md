@@ -1,5 +1,45 @@
 # Job board pipeline
 
+A Python job-discovery and review system that brings postings from company career sites, applicant tracking systems (ATS), and job boards into one prioritized dashboard. Built for my own job search, it combines data ingestion, identity reconciliation, AI-assisted matching, and scheduled automation in a complete workflow.
+
+**For recruiters:** this project demonstrates backend integration, reliable state management, bounded AI use, and operational visibility. The dashboard lets me find recent roles, inspect match explanations, and track applications across sources.
+
+**Stack:** Python · GitHub Actions / Pages · AWS EventBridge Scheduler, Lambda, and SQS · Supabase · JavaScript · macOS launchd.
+
+[Live dashboard](https://daniel-li2021.github.io/job-board-pipeline/) · [Implementation and operations](#implementation-and-operations) · [Detailed pipeline reference](docs/PIPELINE_ALGORITHM.md)
+
+## Dashboard preview
+
+![Sanitized dashboard showing source summaries, review tabs, filters, and six fictional job listings](docs/assets/dashboard-sanitized.jpg)
+
+*Sanitized capture of the actual dashboard template, rendered locally with six fictional jobs and empty review history. Companies, scores, counts, timestamps, and health/cost displays are illustrative; account sync was disabled. This image contains no live application history or candidate profile data.*
+
+## Pipeline at a glance
+
+```mermaid
+flowchart LR
+    sources["Company careers, ATS, and job boards"] --> collect["Three discovery pipelines"]
+    collect --> reconcile["Normalize, deduplicate, and recover job descriptions"]
+    reconcile --> match["Shared filters and cached AI matching"]
+    match --> review["Dashboard and job alerts"]
+    review --> track["Application tracking in Supabase"]
+```
+
+GitHub Actions runs the online pipelines; a local Mac owns LinkedIn and Glassdoor collection. All three pipelines share matching rules and publish into one review experience. Detailed ownership, scheduling, and recovery paths are documented below.
+
+## Reliability highlights
+
+- **Preserve usable data:** last-good snapshots survive collection failures; atomic file replacement protects complete state, and corrupt owned state stops the run instead of silently resetting history.
+- **Handle partial failure:** independent pipelines keep separate stores. Health reporting distinguishes partial and failed runs, retained inventory, and unavailable measurements.
+- **Bound external work:** request budgets, caches, cooldowns, and recovery deadlines limit repeated network and AI work. LinkedIn rate limits pause requests while other recovery methods can continue.
+- **Keep identity and alerts stable:** canonical identities and preserved discovery times prevent ordinary reruns or URL enrichment from creating duplicate discoveries and alerts.
+- **Constrain AI decisions:** deterministic filters and tier assignment surround cached AI scoring, with rule-based fallback. Ambiguous AI identity assessments alone never suppress jobs.
+- **Keep review state durable:** Supabase stores application status; the dashboard merges pending local edits after loading shared state and labels cached fallback when shared state is unavailable.
+
+These are implemented safeguards, not an uptime or matching-accuracy guarantee. Discovery is targeted and bounded; source coverage and job-description availability vary. See [state and validation](#state-and-validation) for the offline checks and [transport measurements](docs/LINKEDIN_TRANSPORT.md) for collection limits.
+
+## Implementation and operations
+
 Three independent job-discovery pipelines feed one public dashboard and share the same filtering/matching stack.
 
 | Pipeline | Script | Main inbox |
@@ -10,13 +50,13 @@ Three independent job-discovery pipelines feed one public dashboard and share th
 
 Each inbox is the rolling **last 3 days** of actionable jobs. `latest.md` is the wider 7-day view.
 
-Public dashboard: **https://daniel-li2021.github.io/job-board-pipeline/**
+Public dashboard: [Open the dashboard](https://daniel-li2021.github.io/job-board-pipeline/).
 
 Detailed current flow and ownership: [`docs/PIPELINE_ALGORITHM.md`](docs/PIPELINE_ALGORITHM.md)
 
-## Architecture
+### Architecture
 
-### 1. Syncareer
+#### 1. Syncareer
 
 Searches Syncareer, applies the shared hard filters and matching policy, maintains a rolling watchlist, and opens a GitHub Issue when a run finds new actionable jobs.
 
@@ -26,7 +66,7 @@ python3 daily_pipeline.py --alert --time last3days
 
 Outputs live under `output/syncareer/`.
 
-### 2. ATS / broad job boards
+#### 2. ATS / broad job boards
 
 `board_pipeline.py` combines:
 
@@ -65,7 +105,7 @@ Board run stats report exact LinkedIn/Indeed/Glassdoor overlap, each source's un
 
 Outputs live under `output/board/`.
 
-### 3. Official Careers
+#### 3. Official Careers
 
 `official_careers.py` discovers relevant US jobs directly from large-company career sites and then sends them through the same matching stack as the other pipelines.
 
@@ -87,7 +127,7 @@ Official discovery is **role-targeted, not guaranteed to enumerate every posting
 
 Outputs live under `output/official_careers/`.
 
-## Shared matching
+### Shared matching
 
 All three pipelines reuse `board_pipeline.py` rather than maintaining separate ranking logic:
 
@@ -105,7 +145,7 @@ Tier A/B/C is deterministic after scoring. Referral status affects action/rankin
 
 Referral companies have one source of truth: [`config/target_companies.json`](config/target_companies.json).
 
-## Official coverage reconciliation
+### Official coverage reconciliation
 
 `coverage_reconcile.py` compares recent Board/Syncareer jobs with the latest Official snapshot.
 
@@ -122,7 +162,7 @@ Important states:
 
 Manual validation lives in [`profile/official_coverage.json`](profile/official_coverage.json) for coverage auditing. Unmatched external jobs are never hidden just because a company has an Official adapter.
 
-## Schedule
+### Schedule
 
 AWS EventBridge Scheduler dispatches the independent workflows at these
 **America/Los_Angeles** times:
@@ -143,7 +183,7 @@ fixed Pacific wall-clock schedules, retry policies, and an SQS failure queue. Gi
 cron blocks were removed after end-to-end verification. The optional `scheduler_probe`
 dispatch input verifies trigger receipt without crawling or scoring.
 
-## Alerts and outputs
+### Alerts and outputs
 
 Each pipeline keeps its own state and output directory. A failure in one pipeline does not block the others.
 
@@ -169,7 +209,7 @@ pending local edits; if it fails, the fallback is labeled `Cached review state`.
 
 User-facing digests are deduplicated so reruns, rescoring, and ordinary JD changes do not repeatedly alert the same job.
 
-## Main configuration
+### Main configuration
 
 - `config/official_careers.json` — Official company registry and adapter configuration;
 - `config/ats_boards.json` — reusable ATS sources;
@@ -186,7 +226,7 @@ python3 scripts/enrich_company_profiles.py --findings /path/to/batch1.json --fin
 
 Add `--data-dir /path/to/downloads` when USCIS/DOL/SEC enrichment is needed; it reads `Employer Information.csv`, the FY2024–FY2026 LCA workbooks, and `company_tickers.json`. Omit `--apply` to preview counts. The script does not crawl or use an API. It keeps unknown values when evidence is absent, preserves existing size and conflicting classifications, and writes uncertain matches to `profile/company_profiles_manual_review.json`. JD sponsorship remains authoritative over company-level values. Raw downloads are local inputs, not committed artifacts.
 
-## State and validation
+### State and validation
 
 Owned job stores, watchlists, digest histories and the optional committed review overlay reject corrupt data rather than resetting it. Writes use atomic replacement to retain the previous complete file if writing fails. Missing files can initialize empty state; unavailable optional peer caches do not block another pipeline. Supported legacy record formats remain readable.
 
