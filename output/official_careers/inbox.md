@@ -1,32 +1,44 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-10-15 07:48 PDT
-- Snapshot (UTC): 2026-10-15T14:48:47.978848+00:00
-- Jobs: 28 (Tier A/B only)
-- Last 24 hours: 3
-- Last 3 days: 28
+- Updated (PT): 2026-10-15 16:51 PDT
+- Snapshot (UTC): 2026-10-15T23:51:30.239200+00:00
+- Jobs: 40 (Tier A/B only)
+- Last 24 hours: 16
+- Last 3 days: 40
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | A | 91 | official | Microsoft | Software Engineer | United States, Washington, Redmond | 2026-10-15 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557026652) |
+| A | 91 | official | Visa | Software Engineer | US - Denver, CO | 2026-10-15 | 3to24h | Visa | unreviewed | official_canonical | [open](https://visa.wd5.myworkdayjobs.com/Visa/job/US---Denver-CO/Software-Engineer_REF089009W) |
 | A | 93 | official | Cisco | Site Reliability Engineer I (Full Time) — United States | RTP, North Carolina, US; San Jose, California, US; Knoxville, Tennessee, US | 2026-10-14 | 1to3d | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Site-Reliability-Engineer-I--Full-Time----United-States_2028788) |
 | A | 85 | official | Apple | Software Engineer, ASE Commerce Engineering | New York City, United States of America | 2026-10-14 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200688902/software-engineer-ase-commerce-engineering) |
 | A | 87 | official | Cisco | Data Engineer II (Full Time) - United States | RTP, North Carolina, US | 2026-10-14 | 1to3d | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Data-Engineer-II--Full-Time----United-States_2028790) |
-| A | 85 | official | HPE | Graduate Cloud Developer | San Jose, California, United States of America | 2026-10-14 | 1to3d | - | unreviewed | official_canonical | [open](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/San-Jose-California-United-States-of-America/Graduate-Cloud-Developer_1214989) |
 | A | 88 | official | Microsoft | Software Engineer | United States, Washington, Redmond | 2026-10-13 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556985571) |
+| B | 84 | official | Amazon | Software Development Engineer, Audible AI Voice Production | Cambridge, Massachusetts, USA | 2026-10-15 | 3to24h | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10580035/software-development-engineer-audible-ai-voice-production) |
+| B | 81 | official | Apple | Cloud Infrastructure Engineer | Sunnyvale, United States of America | 2026-10-15 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200689205/cloud-infrastructure-engineer) |
+| B | 81 | official | Apple | Backend Engineer, QoS Apple Services Engineering | San Diego, United States of America | 2026-10-15 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200689191/backend-engineer-qos-apple-services-engineering) |
+| B | 82 | official | Amazon | Software Development Engineer , DC Console/InfraMap | Denver, Colorado, USA | 2026-10-15 | 3to24h | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10580062/software-development-engineer-dc-console-inframap) |
+| B | 75 | official | Microsoft | Software Engineer II | United States, Massachusetts, Cambridge | 2026-10-15 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557002230) |
 | B | 75 | official | Workday | Software Development Engineer | USA, CA, Pleasanton | 2026-10-15 | 3to24h | - | unreviewed | official_canonical | [open](https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Software-Development-Engineer_JR-0109889) |
+| B | 75 | official | Capital One | Full-stack Engineer 4 | McLean, VA; Richmond, VA | 2026-10-15 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4--Python--AWS-_R1001336-2) |
+| B | 75 | official | Capital One | Full Stack Engineer 4 (Global Payment Network) | Chicago, IL; Riverwoods, IL | 2026-10-15 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Chicago-IL/Full-Stack-Engineer-4_R1002519-1) |
+| B | 75 | official | Capital One | Full-stack Engineer 4 - RiskTech | McLean, VA; Richmond, VA | 2026-10-15 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4---RiskTech_R1001603-1) |
+| B | 75 | official | Zoom | Full Stack Developer | San Jose (CA) | 2026-10-15 | 3to24h | - | unreviewed | official_canonical | [open](https://zoom.wd5.myworkdayjobs.com/Zoom/job/San-Jose-CA/Full-Stack-Developer_R19731-1) |
+| B | 75 | official | Zoom | Workday Extend Developer | Remote (US); San Jose (CA) | 2026-10-15 | 3to24h | - | unreviewed | official_canonical | [open](https://zoom.wd5.myworkdayjobs.com/Zoom/job/Remote--US/Workday-Extend-Developer_R19716-1) |
+| B | 77 | official | Apple | Machine Learning Engineer, Creative Intelligence Systems | Cupertino, United States of America | 2026-10-15 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200687729/machine-learning-engineer-creative-intelligence-systems) |
 | B | 72 | official | Amazon | Data Engineer, Robotics Delivery and Packaging Innovation | Bellevue, Washington, USA | 2026-10-15 | 3to24h | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10579596/data-engineer-robotics-delivery-and-packaging-innovation) |
+| B | 70 | official | Flex | Manufacturing Data Engineer - Medical Devices | USA, IL, Buffalo Grove | 2026-10-15 | 3to24h | - | unreviewed | official_canonical | [open](https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-IL-Buffalo-Grove/Manufacturing-Data-Engineer---Medical-Devices_WD231346) |
 | B | 85 | official | Apple | Software Engineer, Apple Services Engineering, iCloud Platform | Seattle, United States of America | 2026-10-14 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200689325/software-engineer-apple-services-engineering-icloud-platform) |
 | B | 84 | official | Google | Software Engineer III, AI/ML, Ads Quality | Mountain View, CA, USA | 2026-10-14 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/85552389389460166-software-engineer-iii-ai-ml-ads-quality) |
 | B | 81 | official | Microsoft | Software Engineer II | United States, Washington, Redmond | 2026-10-14 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556627708) |
 | B | 83 | official | Apple | Software Engineer, Apple Services Engineering | Seattle, United States of America | 2026-10-14 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200689298/software-engineer-apple-services-engineering) |
+| B | 79 | official | Qualcomm | Compiler Toolchain Engineer | Austin, Texas, United States of America | 2026-10-14 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446721572291) |
 | B | 75 | official | Qualcomm | #Windows Driver Developer | San Diego, California, United States of America | 2026-10-14 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446720806622) |
 | B | 75 | official | Capital One | Full-stack Engineer 4 | McLean, VA; New York, NY | 2026-10-14 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1002477-1) |
 | B | 75 | official | Capital One | Full-stack Engineer 4 (Go & Kubernetes) (Enterprise Platforms Technolo | Plano, TX | 2026-10-14 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-stack-Engineer-4--Go---Kubernetes---Cloud-Operations-Resilience-Engineering-_R1002300-1) |
 | B | 75 | official | Capital One | Data Engineer 4 (Python, AWS) | Richmond, VA; Plano, TX | 2026-10-14 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Data-Engineer-4--Python--AWS-_R1001519-1) |
-| B | 78 | official | Amazon | Software Engineer I | San Francisco, California, USA | 2026-10-14 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10578558/software-engineer-i) |
 | B | 76 | official | Apple | Machine Learning Engineer - Intelligent Quality Systems | Cupertino, United States of America | 2026-10-14 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200689061/machine-learning-engineer-intelligent-quality-systems) |
 | B | 85 | official | AMD | Forward Deployed AI Research Scientist | Santa Clara, California | 2026-10-13 | 1to3d | AMD | unreviewed | official_canonical | [open](https://careers.amd.com/api/jobs) |
 | B | 84 | official | Apple | Forward Deployed Engineer | Cupertino, United States of America | 2026-10-13 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200668208/forward-deployed-engineer) |
