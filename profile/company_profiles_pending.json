@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-16T23:51:19.074309+00:00",
-  "count": 4027,
+  "generated_at": "2026-10-16T23:55:22.092110+00:00",
+  "count": 4032,
   "companies": [
     {
       "name": "1199SEIU Benefit and Pension Funds",
@@ -831,9 +831,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "5277d68ceaaa8813c70a35f7",
         "8332cd715fd3ca8c2f3ed2d5"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Addison Group",
@@ -11134,11 +11135,15 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "021196160a0e451d578aaf12",
+        "17625aa937af9a70d19fe8fd",
+        "31625d63a643342182129624",
+        "3ea098ae42bd92494b4f68a8",
         "404d36481c653a6a02ee15ff",
         "6a17292ece9f6e2039e9c99b",
         "a9c375793abb483e87d018ea"
       ],
-      "seen_count": 3
+      "seen_count": 7
     },
     {
       "name": "Compass International Holdings",
@@ -13923,6 +13928,19 @@
       "tags": [],
       "seen_job_keys": [
         "01e4f0ebd88d1e5d66823960"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Digi-Key Electronics",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "db58549226c2ae1647c2d243"
       ],
       "seen_count": 1
     },
@@ -25669,6 +25687,19 @@
       "seen_count": 2
     },
     {
+      "name": "J.R. Simplot Company",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "a4147123b7668086aa52e484"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "J2B GLOBAL LLC",
       "aliases": [],
       "size": "unknown",
@@ -29905,6 +29936,19 @@
       "seen_count": 1
     },
     {
+      "name": "Matroid",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "76374cf63dabd74061807245"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Matson",
       "aliases": [],
       "size": "unknown",
@@ -32359,9 +32403,11 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "b368453353c6bf2542a2c340"
+        "4d9a696e8d1c3fc4de536840",
+        "b368453353c6bf2542a2c340",
+        "dc6c7cdf1a9fdefb184252d2"
       ],
-      "seen_count": 1
+      "seen_count": 3
     },
     {
       "name": "NCSA College Recruiting",
@@ -33128,16 +33174,19 @@
     },
     {
       "name": "NIKE",
-      "aliases": [],
+      "aliases": [
+        "Nike"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "0b1df329174808b9d54672b0",
         "7076e91ba0658e772ea93526"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "NIMBUSAITECH LLC",
@@ -38194,6 +38243,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Quora, Inc.",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "e80b7f9fecb10abbf59013f3"
+      ],
       "seen_count": 1
     },
     {
@@ -46717,6 +46779,7 @@
         "6d74424b4b300fbc47ba4690",
         "81838f8604287aad34a21361",
         "8609e48eb78e5ed2afbda86d",
+        "8887bef15c3010b4386c23f4",
         "a592e2a05cb2dec9030553b7",
         "aab51fcf3472b5fae500911d",
         "b42fb366ea6668e0e5b6e1ab",
@@ -46726,7 +46789,7 @@
         "d358f547ee88befcd30b69e3",
         "fb021ecc837df3b0bea88742"
       ],
-      "seen_count": 16
+      "seen_count": 17
     },
     {
       "name": "Tia",
@@ -47933,11 +47996,12 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "182d5631873c0e80f16e4c28",
         "1ecb1246c43a11ff4a0f58f1",
         "4e440608dd68dee4d7b8966d",
         "8a4b295861793689597c94c4"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "TYTON LLC",
@@ -49274,6 +49338,20 @@
       "seen_job_keys": [
         "424d4055c8056d561fd3fd15",
         "cf7564d7699bd034c6e4d25b"
+      ],
+      "seen_count": 2
+    },
+    {
+      "name": "VAST Data",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "260680e4aa2ff4d01b1d6c7c",
+        "d1eafb5d4b135e63bf7fd31c"
       ],
       "seen_count": 2
     },
