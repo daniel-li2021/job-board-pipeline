@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-16T15:21:22.088941+00:00",
+  "generated_at": "2026-10-16T19:00:47.704701+00:00",
   "collector": {
-    "commit": "1c0b66b4007516314e19512a436a7dfc2d73d5ea",
+    "commit": "d83ec0173366a8e7870a628aafa6643ef2895371",
     "dirty": false
   },
   "sources": {
@@ -10,15 +10,15 @@
       "required": true,
       "healthy": false,
       "status": "cooldown",
-      "reason": "global_429_pause",
-      "last_attempt_at": "2026-10-16T05:16:24.704994+00:00",
+      "reason": "search cooldown",
+      "last_attempt_at": "2026-10-16T19:00:46.519260+00:00",
       "last_success_at": "2026-09-22T18:01:45.946101+00:00",
       "last_partial_at": "2026-10-12T22:00:12.775149+00:00",
       "partial_collected_count": 10,
       "partial_fresh_kept": 10,
       "partial_carried_count": 3020,
       "last_attempt_collector": {
-        "commit": "038003ac4cf307ab3ab8b503d5c26e920c3b9121",
+        "commit": "d83ec0173366a8e7870a628aafa6643ef2895371",
         "dirty": false
       },
       "last_success_collector": {
@@ -51,7 +51,7 @@
         "rate_limited": false,
         "budget_exhausted": false,
         "rate_limit_event": {},
-        "transport_stop_reason": "global_429_pause",
+        "transport_stop_reason": "",
         "new_to_ledger": 0,
         "rediscovered": 0,
         "coverage_limited": false
@@ -76,11 +76,11 @@
           "detail_retry_after_until": "2026-10-15T05:41:07.588476+00:00"
         }
       },
-      "last_attempt_elapsed_seconds": 0.124,
+      "last_attempt_elapsed_seconds": 0.061,
       "failure_cause": "",
       "previous_failure": {
         "cause": "429",
-        "count": 1
+        "count": 4
       },
       "queries_total": 0,
       "queries_succeeded": 0,
@@ -391,14 +391,14 @@
       "healthy": false,
       "status": "skipped_unavailable",
       "reason": "GlassdoorException: homepage HTTP 403",
-      "last_attempt_at": "2026-10-15T05:40:42.985623+00:00",
+      "last_attempt_at": "2026-10-16T19:00:46.581391+00:00",
       "last_success_at": "2026-09-15T07:02:44.646497+00:00",
       "last_partial_at": "",
       "partial_collected_count": 0,
       "partial_fresh_kept": 0,
       "partial_carried_count": 0,
       "last_attempt_collector": {
-        "commit": "d339a0b51e9bff2e59c86727f2cda5747115c735",
+        "commit": "d83ec0173366a8e7870a628aafa6643ef2895371",
         "dirty": false
       },
       "last_success_collector": {
@@ -418,7 +418,7 @@
         "reliability": "best_effort_optional"
       },
       "last_attempt_count": 0,
-      "consecutive_failures": 51,
+      "consecutive_failures": 52,
       "query_stats": [
         {
           "query": "software engineer",
@@ -432,7 +432,7 @@
           "first_pass_survivors": 0,
           "original_postings_resolved": 0,
           "jds_resolved": 0,
-          "elapsed_seconds": 0.264,
+          "elapsed_seconds": 0.265,
           "hours_old": 24,
           "http_status": 403
         }
@@ -441,7 +441,7 @@
       "last_good_count": 380,
       "official_enrichment": {},
       "search_collection": {},
-      "last_attempt_elapsed_seconds": 1.672,
+      "last_attempt_elapsed_seconds": 1.048,
       "failure_cause": "403",
       "previous_failure": {},
       "queries_total": 0,
@@ -451,6 +451,40 @@
     }
   },
   "run_history": [
+    {
+      "source": "glassdoor",
+      "run_at": "2026-10-16T19:00:46.581391+00:00",
+      "status": "skipped_unavailable",
+      "new": 0,
+      "pass": null,
+      "new_ab": null,
+      "failure": true,
+      "reason": "GlassdoorException: homepage HTTP 403",
+      "search_429": false,
+      "detail_429": false,
+      "elapsed_seconds": 1.048,
+      "search_requests": null,
+      "initial_detail_requests": null,
+      "new_to_ledger": null,
+      "rediscovered": null
+    },
+    {
+      "source": "linkedin",
+      "run_at": "2026-10-16T19:00:46.519260+00:00",
+      "status": "cooldown",
+      "new": 0,
+      "pass": null,
+      "new_ab": null,
+      "failure": false,
+      "reason": "search cooldown",
+      "search_429": false,
+      "detail_429": false,
+      "elapsed_seconds": 0.061,
+      "search_requests": 0,
+      "initial_detail_requests": 0,
+      "new_to_ledger": 0,
+      "rediscovered": 0
+    },
     {
       "source": "indeed",
       "run_at": "2026-10-16T15:20:52.562900+00:00",
@@ -1970,17 +2004,17 @@
     }
   ],
   "local_recovery": {
-    "run_at": "2026-10-16T05:16:24.990250+00:00",
-    "elapsed_seconds": 5.963,
+    "run_at": "2026-10-16T19:00:47.715932+00:00",
+    "elapsed_seconds": 17.479,
     "official_jds_recovered": 0,
     "linkedin_detail_recoveries": 0,
     "post_429_jds_recovered": null,
     "targeted_linkedin_search_requests": 0,
     "targeted_linkedin_detail_jds": 0,
     "targeted_linkedin_rate_limited": false,
-    "generic_jobs_processed": 2,
-    "search_requests": 3,
-    "official_page_requests": 2,
+    "generic_jobs_processed": 5,
+    "search_requests": 9,
+    "official_page_requests": 6,
     "linkedin_rate_limited": false,
     "linkedin_detail": {
       "eligible": 0,
@@ -2003,7 +2037,7 @@
       "failed": 0,
       "detail_jds_fetched": 0,
       "intentional_skips": 0,
-      "blocked": "rate_limited_no_further_requests",
+      "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
@@ -2042,15 +2076,15 @@
           "detail": 0
         },
         "3600": {
-          "search": 1,
+          "search": 0,
           "detail": 0
         },
         "86400": {
           "search": 1,
-          "detail": 1
+          "detail": 0
         }
       },
-      "stop_reason": "global_429_pause",
+      "stop_reason": "",
       "blocked_until": "2026-10-16T06:05:56.764610+00:00",
       "rate_limits": [
         {
@@ -2328,15 +2362,16 @@
       "4473364054"
     ],
     "methods": {
-      "dedicated_matches": 31,
+      "dedicated_matches": 45,
       "search_provider_failures": 1,
-      "deferred": 2
+      "no_match": 2,
+      "deferred": 3
     },
     "cheap_matches": {},
     "generic_jobs_deferred": 0,
     "search_provider": "bing"
   },
-  "mac_last_completed_at": "2026-10-16T05:16:31.066591+00:00",
+  "mac_last_completed_at": "2026-10-16T19:01:05.268509+00:00",
   "linkedin_transport": {
     "requests": 1,
     "endpoint_counts": {
@@ -21822,6 +21857,374 @@
         "dedicated_matches": 31,
         "search_provider_failures": 1,
         "deferred": 2
+      },
+      "cheap_matches": {},
+      "generic_jobs_deferred": 0,
+      "search_provider": "bing"
+    },
+    {
+      "run_at": "2026-10-16T19:00:47.715932+00:00",
+      "elapsed_seconds": 17.479,
+      "official_jds_recovered": 0,
+      "linkedin_detail_recoveries": 0,
+      "post_429_jds_recovered": null,
+      "targeted_linkedin_search_requests": 0,
+      "targeted_linkedin_detail_jds": 0,
+      "targeted_linkedin_rate_limited": false,
+      "generic_jobs_processed": 5,
+      "search_requests": 9,
+      "official_page_requests": 6,
+      "linkedin_rate_limited": false,
+      "linkedin_detail": {
+        "eligible": 0,
+        "cache_reused": 0,
+        "requests": 0,
+        "responses": 0,
+        "successful_responses": 0,
+        "attempted_ids": [],
+        "http_status_counts": {},
+        "request_limit": 1,
+        "budget_deferred": 0,
+        "budget_exhausted": false,
+        "retry_deferred": 0,
+        "retry_attempts": 0,
+        "exact_official": 0,
+        "official_deferred": 0,
+        "rate_limited": false,
+        "jds_resolved": 0,
+        "external_apply_urls": 0,
+        "failed": 0,
+        "detail_jds_fetched": 0,
+        "intentional_skips": 0,
+        "blocked": "",
+        "scrapling_requests": 0,
+        "scrapling_jds_resolved": 0,
+        "scrapling_error": "",
+        "remaining_no_jd": 0,
+        "failure_reasons": {},
+        "queue": [],
+        "admission": {
+          "candidates": 0,
+          "rules_skipped": 0,
+          "rule_reasons": {},
+          "cache_reused": 0,
+          "non_linkedin_resolved": 0,
+          "worth_detail": 0
+        },
+        "cooldown_active": false,
+        "probe": true,
+        "round_request_limit": 1,
+        "round_requests": 0,
+        "status": "probe"
+      },
+      "linkedin_transport": {
+        "requests": 0,
+        "endpoint_counts": {
+          "search": 0,
+          "detail": 0
+        },
+        "round_limit": 22,
+        "detail_limit": 12,
+        "day_limit": 72,
+        "hour_limit": 22,
+        "hour_detail_limit": 12,
+        "day_detail_limit": 36,
+        "rolling_counts": {
+          "60": {
+            "search": 0,
+            "detail": 0
+          },
+          "3600": {
+            "search": 0,
+            "detail": 0
+          },
+          "86400": {
+            "search": 1,
+            "detail": 0
+          }
+        },
+        "stop_reason": "",
+        "blocked_until": "2026-10-16T06:05:56.764610+00:00",
+        "rate_limits": [
+          {
+            "at": "2026-10-08T06:34:00.347210+00:00",
+            "endpoint": "detail",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4448392703",
+            "query": "Full Stack Developer 729",
+            "page": null,
+            "retry_after": "",
+            "retry_after_until": "2026-10-08T06:34:00.347210+00:00",
+            "request_ordinal": 19,
+            "endpoint_ordinal": 9,
+            "round_counts": {
+              "search": 10,
+              "detail": 9
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 3,
+                "detail": 9
+              },
+              "3600": {
+                "search": 10,
+                "detail": 9
+              },
+              "86400": {
+                "search": 26,
+                "detail": 33
+              }
+            }
+          },
+          {
+            "at": "2026-10-10T05:45:00.054829+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "ai engineer",
+            "page": 0,
+            "retry_after": "",
+            "retry_after_until": "2026-10-10T05:45:00.054829+00:00",
+            "request_ordinal": 1,
+            "endpoint_ordinal": 1,
+            "round_counts": {
+              "search": 1,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 1,
+                "detail": 0
+              },
+              "3600": {
+                "search": 1,
+                "detail": 0
+              },
+              "86400": {
+                "search": 21,
+                "detail": 23
+              }
+            }
+          },
+          {
+            "at": "2026-10-10T22:00:42.014707+00:00",
+            "endpoint": "detail",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4476885162",
+            "query": "Software Engineer II, Fullstack (Ads Platform)",
+            "page": null,
+            "retry_after": "",
+            "retry_after_until": "2026-10-10T22:00:42.014707+00:00",
+            "request_ordinal": 9,
+            "endpoint_ordinal": 3,
+            "round_counts": {
+              "search": 6,
+              "detail": 3
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 6,
+                "detail": 3
+              },
+              "3600": {
+                "search": 6,
+                "detail": 3
+              },
+              "86400": {
+                "search": 27,
+                "detail": 27
+              }
+            }
+          },
+          {
+            "at": "2026-10-12T19:24:32.869708+00:00",
+            "endpoint": "detail",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4478065468",
+            "query": "Backend Engineer",
+            "page": null,
+            "retry_after": "",
+            "retry_after_until": "2026-10-12T19:24:32.869708+00:00",
+            "request_ordinal": 22,
+            "endpoint_ordinal": 12,
+            "round_counts": {
+              "search": 10,
+              "detail": 12
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 0,
+                "detail": 3
+              },
+              "3600": {
+                "search": 10,
+                "detail": 12
+              },
+              "86400": {
+                "search": 26,
+                "detail": 25
+              }
+            }
+          },
+          {
+            "at": "2026-10-12T22:00:15.767092+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "backend engineer",
+            "page": 1,
+            "retry_after": "",
+            "retry_after_until": "2026-10-12T22:00:15.767092+00:00",
+            "request_ordinal": 2,
+            "endpoint_ordinal": 2,
+            "round_counts": {
+              "search": 2,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 2,
+                "detail": 0
+              },
+              "3600": {
+                "search": 2,
+                "detail": 0
+              },
+              "86400": {
+                "search": 28,
+                "detail": 25
+              }
+            }
+          },
+          {
+            "at": "2026-10-13T05:05:02.754013+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "software engineer",
+            "page": 0,
+            "retry_after": "",
+            "retry_after_until": "2026-10-13T05:05:02.754013+00:00",
+            "request_ordinal": 1,
+            "endpoint_ordinal": 1,
+            "round_counts": {
+              "search": 1,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 1,
+                "detail": 0
+              },
+              "3600": {
+                "search": 1,
+                "detail": 0
+              },
+              "86400": {
+                "search": 13,
+                "detail": 12
+              }
+            }
+          },
+          {
+            "at": "2026-10-14T06:17:02.784644+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "ai engineer",
+            "page": 0,
+            "retry_after": "",
+            "retry_after_until": "2026-10-14T06:17:02.784644+00:00",
+            "request_ordinal": 1,
+            "endpoint_ordinal": 1,
+            "round_counts": {
+              "search": 1,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 1,
+                "detail": 0
+              },
+              "3600": {
+                "search": 1,
+                "detail": 0
+              },
+              "86400": {
+                "search": 1,
+                "detail": 1
+              }
+            }
+          },
+          {
+            "at": "2026-10-15T05:41:07.588476+00:00",
+            "endpoint": "detail",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4477917782",
+            "query": "Java Software Engineer",
+            "page": null,
+            "retry_after": "",
+            "retry_after_until": "2026-10-15T05:41:07.588476+00:00",
+            "request_ordinal": 1,
+            "endpoint_ordinal": 1,
+            "round_counts": {
+              "search": 0,
+              "detail": 1
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 0,
+                "detail": 1
+              },
+              "3600": {
+                "search": 0,
+                "detail": 1
+              },
+              "86400": {
+                "search": 1,
+                "detail": 1
+              }
+            }
+          },
+          {
+            "at": "2026-10-16T05:05:56.764610+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "full-stack engineer",
+            "page": 0,
+            "retry_after": "",
+            "retry_after_until": "2026-10-16T05:05:56.764610+00:00",
+            "request_ordinal": 1,
+            "endpoint_ordinal": 1,
+            "round_counts": {
+              "search": 1,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 1,
+                "detail": 0
+              },
+              "3600": {
+                "search": 1,
+                "detail": 0
+              },
+              "86400": {
+                "search": 1,
+                "detail": 1
+              }
+            }
+          }
+        ]
+      },
+      "initial_detail": {},
+      "queue_expired_without_attempt": [
+        "4473159456",
+        "4478576870",
+        "4474599498",
+        "4474706198",
+        "4473197371",
+        "4472847721",
+        "4472855479",
+        "4473364054"
+      ],
+      "methods": {
+        "dedicated_matches": 45,
+        "search_provider_failures": 1,
+        "no_match": 2,
+        "deferred": 3
       },
       "cheap_matches": {},
       "generic_jobs_deferred": 0,

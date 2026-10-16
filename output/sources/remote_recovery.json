@@ -2556,7 +2556,7 @@
     {
       "company": "Meta",
       "title": "Network Production Engineer, Design",
-      "location": "Menlo Park, CA",
+      "location": "",
       "source": "meta_official_careers",
       "official_url": "https://www.metacareers.com/jobs/2181413352716132",
       "source_url": "https://www.metacareers.com/jobs/2181413352716132",
@@ -3010,107 +3010,11 @@
     }
   ],
   "meta": {
-    "jd_recovery_at": "2026-10-16T05:16:24.990250+00:00"
+    "jd_recovery_at": "2026-10-16T19:00:47.715932+00:00"
   },
   "source": "remote_recovery",
   "count": 139,
   "attempts": {
-    "meta_official_careers|id|2386855915053811": {
-      "source": "meta_official_careers",
-      "job_id": "2386855915053811",
-      "company": "Meta",
-      "title": "Software Engineer (Technical Leadership) - Central Growth",
-      "location": "Menlo Park, CA; New York, NY; Remote, US",
-      "first_seen": "2026-10-15T14:48:48.465009+00:00",
-      "recovery_triage": {
-        "action": "skip",
-        "priority": "low",
-        "confidence": 0.91,
-        "delta": -7,
-        "reason": "Technical leadership signals senior-level scope"
-      },
-      "recovery_input_hash": "4c9eebe9fd57bcd6e180"
-    },
-    "meta_official_careers|id|2129912721269758": {
-      "source": "meta_official_careers",
-      "job_id": "2129912721269758",
-      "company": "Meta",
-      "title": "Data Center Capacity Manager",
-      "location": "Kansas City, MO; Rayville, LA; Jeffersonville, IN; Beaver Dam, WI; Lebanon, IN; Bowling Green, OH; Cedar Rapids, IA; DeKalb, IL; New Albany, OH; Altoona, IA",
-      "first_seen": "2026-10-15T14:48:48.465009+00:00"
-    },
-    "meta_official_careers|id|1100895608956124": {
-      "source": "meta_official_careers",
-      "job_id": "1100895608956124",
-      "company": "Meta",
-      "title": "Health Tech Sourcing & Partnerships Manager",
-      "location": "Sunnyvale, CA",
-      "first_seen": "2026-10-15T14:48:48.465009+00:00"
-    },
-    "meta_official_careers|id|939416365875204": {
-      "source": "meta_official_careers",
-      "job_id": "939416365875204",
-      "company": "Meta",
-      "title": "Data Platform & Governance Manager",
-      "location": "Austin, TX; Menlo Park, CA",
-      "first_seen": "2026-10-15T14:48:48.465009+00:00"
-    },
-    "meta_official_careers|id|1666793541675340": {
-      "source": "meta_official_careers",
-      "job_id": "1666793541675340",
-      "company": "Meta",
-      "title": "Enterprise Marketing Manager, AI",
-      "location": "Menlo Park, CA; New York, NY; San Francisco, CA",
-      "first_seen": "2026-10-15T14:48:48.465009+00:00"
-    },
-    "meta_official_careers|id|2275029323066913": {
-      "source": "meta_official_careers",
-      "job_id": "2275029323066913",
-      "company": "Meta",
-      "title": "Commercial Sourcing Manager, Network Systems",
-      "location": "Austin, TX; Fremont, CA",
-      "first_seen": "2026-10-15T14:48:48.465009+00:00"
-    },
-    "bloomberg_official_careers|id|45271": {
-      "source": "bloomberg_official_careers",
-      "job_id": "45271",
-      "company": "Bloomberg",
-      "title": "Senior Cybersecurity Solutions Architect (NYC)",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-15T14:48:48.465009+00:00"
-    },
-    "disney_official_careers|id|101946668384": {
-      "source": "disney_official_careers",
-      "job_id": "101946668384",
-      "company": "Disney",
-      "title": "Sr Tech Project Mgr",
-      "location": "Orlando, Florida",
-      "first_seen": "2026-10-15T14:48:48.465009+00:00"
-    },
-    "disney_official_careers|id|10157758": {
-      "source": "disney_official_careers",
-      "job_id": "10157758",
-      "company": "Disney",
-      "title": "Principal Product Software Engineer - Java",
-      "location": "Glendale, California",
-      "first_seen": "2026-10-15T14:48:48.465009+00:00"
-    },
-    "disney_official_careers|id|101968517248": {
-      "source": "disney_official_careers",
-      "job_id": "101968517248",
-      "company": "Disney",
-      "title": "Lead Product Designer (Ad Platforms)",
-      "location": "San Francisco, California / Glendale, California",
-      "first_seen": "2026-10-15T14:48:48.465009+00:00"
-    },
-    "equinix_official_careers|id|jr-163969": {
-      "source": "equinix_official_careers",
-      "job_id": "JR-163969",
-      "company": "Equinix",
-      "title": "Senior Manager, Data Center Technical Deployment",
-      "location": "Secaucus, New Jersey, United States; Ashburn, Virginia, United States; Culpeper, Virginia, United States",
-      "first_seen": "2026-10-15T14:48:48.465009+00:00"
-    },
     "meta_official_careers|id|2900159320366567": {
       "source": "meta_official_careers",
       "job_id": "2900159320366567",
@@ -3129,12 +3033,12 @@
       "recovery_methods": {
         "candidate:4f885986cf": {
           "input_hash": "cd7e4049bfd953e807e0",
-          "attempted_at": "2026-10-16T05:05:56.880524+00:00",
+          "attempted_at": "2026-10-16T19:00:47.715932+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "c1d97e82a218660e0274",
-          "attempted_at": "2026-10-16T05:05:56.880524+00:00",
+          "attempted_at": "2026-10-16T19:00:47.715932+00:00",
           "outcome": "no_match"
         }
       },
@@ -3147,7 +3051,7 @@
       },
       "recovery_input_hash": "41d6c2e16c038898a599",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-16T05:16:24.990250+00:00"
+      "official_search_attempted_at": "2026-10-16T19:00:47.715932+00:00"
     },
     "meta_official_careers|id|1349022433577870": {
       "source": "meta_official_careers",
@@ -3191,12 +3095,12 @@
       "recovery_methods": {
         "candidate:2fadb5d116": {
           "input_hash": "296d2a5550a56f3ac488",
-          "attempted_at": "2026-10-16T05:05:56.880524+00:00",
+          "attempted_at": "2026-10-16T19:00:47.715932+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "0188298d2fe87044ada0",
-          "attempted_at": "2026-10-16T05:05:56.880524+00:00",
+          "attempted_at": "2026-10-16T19:00:47.715932+00:00",
           "outcome": "no_match"
         }
       },
@@ -3209,7 +3113,7 @@
       },
       "recovery_input_hash": "6257a15e368ff9f49f96",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-16T05:16:24.990250+00:00"
+      "official_search_attempted_at": "2026-10-16T19:00:47.715932+00:00"
     },
     "meta_official_careers|id|2932188393806515": {
       "source": "meta_official_careers",
@@ -3347,6 +3251,212 @@
       "location": "Mississauga, Ontario",
       "first_seen": "2026-10-15T23:51:31.107098+00:00"
     },
+    "meta_official_careers|id|1033184163096349": {
+      "source": "meta_official_careers",
+      "job_id": "1033184163096349",
+      "company": "Meta",
+      "title": "Network Engineer, Deployment & Support",
+      "location": "Boston, MA",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "meta_official_careers|id|1117584847382488": {
+      "source": "meta_official_careers",
+      "job_id": "1117584847382488",
+      "company": "Meta",
+      "title": "Manager, Network Deployment & Support",
+      "location": "Menlo Park, CA",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "meta_official_careers|id|1484707404718609": {
+      "source": "meta_official_careers",
+      "job_id": "1484707404718609",
+      "company": "Meta",
+      "title": "Data Center Central Planning Manager",
+      "location": "Bellevue, WA; Menlo Park, CA; San Francisco, CA",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "meta_official_careers|id|1136294922414308": {
+      "source": "meta_official_careers",
+      "job_id": "1136294922414308",
+      "company": "Meta",
+      "title": "Supply Chain Capacity Engineer - Business Enablement",
+      "location": "Bellevue, WA; Menlo Park, CA",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "meta_official_careers|id|1462872442652848": {
+      "source": "meta_official_careers",
+      "job_id": "1462872442652848",
+      "company": "Meta",
+      "title": "Global Supply Chain Manager - Data Center Power and Cooling",
+      "location": "Menlo Park, CA",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "meta_official_careers|id|2514920742338257": {
+      "source": "meta_official_careers",
+      "job_id": "2514920742338257",
+      "company": "Meta",
+      "title": "Data Center Lead- PNB",
+      "location": "Papillion, NE",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "meta_official_careers|id|1102679629112744": {
+      "source": "meta_official_careers",
+      "job_id": "1102679629112744",
+      "company": "Meta",
+      "title": "Commercial Sourcing Manager, Memory and Storage",
+      "location": "Fremont, CA",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "meta_official_careers|id|1047646281369403": {
+      "source": "meta_official_careers",
+      "job_id": "1047646281369403",
+      "company": "Meta",
+      "title": "Data Center Lead- NHA",
+      "location": "Huntsville, AL",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "meta_official_careers|id|3098596960328769": {
+      "source": "meta_official_careers",
+      "job_id": "3098596960328769",
+      "company": "Meta",
+      "title": "Product Marketing Manager, Generative AI",
+      "location": "Menlo Park, CA; San Francisco, CA",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "meta_official_careers|id|2010995136240732": {
+      "source": "meta_official_careers",
+      "job_id": "2010995136240732",
+      "company": "Meta",
+      "title": "Research Scientist, Multi-Modal Understanding & Synthesis",
+      "location": "Pittsburgh, PA; Redmond, WA",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "meta_official_careers|id|2549001132281569": {
+      "source": "meta_official_careers",
+      "job_id": "2549001132281569",
+      "company": "Meta",
+      "title": "NPI Operations Program Manager",
+      "location": "Sunnyvale, CA",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "meta_official_careers|id|1769785610932303": {
+      "source": "meta_official_careers",
+      "job_id": "1769785610932303",
+      "company": "Meta",
+      "title": "Enterprise AI Technical Product Marketing Manager",
+      "location": "Menlo Park, CA; New York, NY; San Francisco, CA",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "meta_official_careers|id|1382825436728337": {
+      "source": "meta_official_careers",
+      "job_id": "1382825436728337",
+      "company": "Meta",
+      "title": "Design Systems Product Designer",
+      "location": "San Francisco, CA",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "meta_official_careers|id|2241075696733448": {
+      "source": "meta_official_careers",
+      "job_id": "2241075696733448",
+      "company": "Meta",
+      "title": "Project Manager, Verification Operations",
+      "location": "Austin, TX; New York, NY",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "meta_official_careers|id|1810961883657738": {
+      "source": "meta_official_careers",
+      "job_id": "1810961883657738",
+      "company": "Meta",
+      "title": "Software Engineer, Embedded Systems",
+      "location": "Burlingame, CA",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00",
+      "recovery_methods": {
+        "candidate:cf173ecdf8": {
+          "input_hash": "79787d53660fdcc46d29",
+          "attempted_at": "2026-10-16T19:00:47.715932+00:00",
+          "outcome": "no_match"
+        },
+        "generic_search": {
+          "input_hash": "af9a7c1edd1ce4bca8e9",
+          "attempted_at": "2026-10-16T19:00:47.715932+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "normal",
+        "confidence": 0.76,
+        "delta": 0,
+        "reason": "Software role; seniority and requirements unknown"
+      },
+      "recovery_input_hash": "56041e2ec8e094dc3eff",
+      "official_search_status": "deferred",
+      "official_search_attempted_at": "2026-10-16T19:00:47.715932+00:00"
+    },
+    "meta_official_careers|id|1615382236689607": {
+      "source": "meta_official_careers",
+      "job_id": "1615382236689607",
+      "company": "Meta",
+      "title": "Communications Director, Enterprise Business",
+      "location": "Los Angeles, CA; Menlo Park, CA; Seattle, WA; New York, NY; San Francisco, CA",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "disney_official_careers|id|102011638032": {
+      "source": "disney_official_careers",
+      "job_id": "102011638032",
+      "company": "Disney",
+      "title": "Principal Data Engineer",
+      "location": "New York, New York / San Francisco, California",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "disney_official_careers|id|102011639680": {
+      "source": "disney_official_careers",
+      "job_id": "102011639680",
+      "company": "Disney",
+      "title": "Sr Data Engineer",
+      "location": "Anaheim, California",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "netflix_official_careers|id|jr41144": {
+      "source": "netflix_official_careers",
+      "job_id": "JR41144",
+      "company": "Netflix",
+      "title": "Staff ML Software Engineer (L6) — Platform Systems, AIMS Engineering",
+      "location": "Remote, United States",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "netflix_official_careers|id|jr41034": {
+      "source": "netflix_official_careers",
+      "job_id": "JR41034",
+      "company": "Netflix",
+      "title": "Senior Software Engineer - Design Systems",
+      "location": "Remote, United States",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "two_sigma_official_careers|id|14272": {
+      "source": "two_sigma_official_careers",
+      "job_id": "14272",
+      "company": "Two Sigma",
+      "title": "Data Scientist - Campus Full-Time",
+      "location": "United States - NY New York",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "equinix_official_careers|id|jr-163191": {
+      "source": "equinix_official_careers",
+      "job_id": "JR-163191",
+      "company": "Equinix",
+      "title": "Supervisor, Data Center Critical Facilities",
+      "location": "Dallas, Texas, United States",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
+    "pointclickcare_official_careers|id|1fe34f68-4df8-4709-b387-e15f80ab0f2c": {
+      "source": "pointclickcare_official_careers",
+      "job_id": "1fe34f68-4df8-4709-b387-e15f80ab0f2c",
+      "company": "PointClickCare",
+      "title": "Solutions Analyst (Acute and Payer-General Support)",
+      "location": "Remote, USA",
+      "first_seen": "2026-10-16T14:50:50.226980+00:00"
+    },
     "syncareer|id|e1cfc72a6cdfa3906388dd445a98894b": {
       "source": "syncareer",
       "job_id": "e1cfc72a6cdfa3906388dd445a98894b",
@@ -3357,7 +3467,7 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "0f65bacab67adf9465e4",
-          "attempted_at": "2026-10-16T05:05:56.880524+00:00",
+          "attempted_at": "2026-10-16T19:00:47.715932+00:00",
           "outcome": "no_match"
         }
       },
@@ -3369,7 +3479,33 @@
         "reason": "Software development aligns with target roles"
       },
       "recovery_input_hash": "ab934aee06a8aefd6460",
-      "official_search_status": "no_match"
+      "official_search_status": "no_match",
+      "official_search_attempted_at": "2026-10-16T19:00:47.715932+00:00"
+    },
+    "syncareer|id|8c536c8db16e655433c7c04813fd09d3": {
+      "source": "syncareer",
+      "job_id": "8c536c8db16e655433c7c04813fd09d3",
+      "company": "MANTECH",
+      "title": "DevOps Engineer",
+      "location": "Doral, Florida, United States",
+      "first_seen": "2026-10-16T14:51:15.419675+00:00",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "1fdc240583999d1c5986",
+          "attempted_at": "2026-10-16T19:00:47.715932+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "normal",
+        "confidence": 0.68,
+        "delta": 0,
+        "reason": "DevOps fits platform; seniority unknown"
+      },
+      "recovery_input_hash": "0cfdeca74aa6dc6fa718",
+      "official_search_status": "no_match",
+      "official_search_attempted_at": "2026-10-16T19:00:47.715932+00:00"
     }
   }
 }
