@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-17T15:28:11.275379+00:00",
-  "count": 4111,
+  "generated_at": "2026-10-17T23:37:14.080248+00:00",
+  "count": 4114,
   "companies": [
     {
       "name": "1199SEIU Benefit and Pension Funds",
@@ -1117,6 +1117,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "AEG",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "03e6b86310764a2f07be2f74"
+      ],
       "seen_count": 1
     },
     {
@@ -4719,6 +4732,19 @@
       "tags": [],
       "seen_job_keys": [
         "9a55227fbf6a50aff0787d0c"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Aurora",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "b2a888a2465b6bba3604d6e5"
       ],
       "seen_count": 1
     },
@@ -27264,6 +27290,20 @@
       "seen_count": 1
     },
     {
+      "name": "KAYAK",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "9cee8c7149a63431c28602e9",
+        "b1ac104cd3bcef42816fa3b8"
+      ],
+      "seen_count": 2
+    },
+    {
       "name": "KCC Companies",
       "aliases": [],
       "size": "unknown",
@@ -39415,9 +39455,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "7214652ac4028bcae8a39de5",
         "af89533fc7239086b7c2ec99"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "REBAR",
