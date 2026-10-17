@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-17 08:21 PDT
-- Snapshot (UTC): 2026-10-17T15:21:19.984012+00:00
-- Jobs: 55 (Tier A/B only)
-- Last 24 hours: 41
-- Last 3 days: 55
+- Updated (PT): 2026-10-17 16:32 PDT
+- Snapshot (UTC): 2026-10-17T23:32:54.590029+00:00
+- Jobs: 63 (Tier A/B only)
+- Last 24 hours: 49
+- Last 3 days: 63
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -17,6 +17,7 @@ The 7-day dump is `latest.md`.
 | A | 92 | indeed | Liberty Mutual Insurance | Software Engineer, Investments Technology | Boston, MA, US | 2026-10-14 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c05ae89ef7749ffc) |
 | A | 93 | indeed | Morningstar | Associate Software Engineer | Chicago, IL, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=384f685ebddb8fe6) |
 | A | 92 | indeed | Affirm | Software Engineer I, Fullstack (Search) | San Francisco, CA, US | 2026-10-15 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=b9f0a6a8134453db) |
+| A | 92 | linkedin | Navy Federal Credit Union | AI Engineer (Agentic AI) | Vienna, VA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/nfcu/job/33120/?mode=job-location) |
 | A | 94 | indeed |  | Software Engineer | Los Angeles, CA, US | 2026-10-15 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=216e827c48493b4a) |
 | A | 93 | indeed | Amalgamated Bank | AI Engineer | New York, NY, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1768a151daf35242) |
 | A | 88 | indeed | S&P Global | Machine Learning Operations Engineer I | Cambridge, MA, US | 2026-10-15 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c40e5a35bad5f64a) |
@@ -40,6 +41,7 @@ The 7-day dump is `latest.md`.
 | B | 85 | indeed | Kwik Trip | Data Engineer | La Crosse, WI, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=10570c3f659e99f5) |
 | B | 85 | indeed | Lennar | Software Engineer II | Miami, FL, US | 2026-10-15 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=61b0a048cc2eccbd) |
 | B | 85 | indeed | Worthington Enterprises | AI Engineer | Columbus, OH, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=8dfae650e8ca4706) |
+| B | 86 | linkedin | Bank of America | AI Engineer - Data Scientist I | Charlotte, NC | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-data-scientist-i-at-bank-of-america-4480802987) |
 | B | 89 | indeed | Keck Medicine of USC | Data Scientist (ITS) | Los Angeles, CA, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=697b06d38d4865a9) |
 | B | 84 | indeed | Audible | Software Development Engineer, Audible AI Voice Production | Cambridge, MA, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=0a9352eadd5d19f7) |
 | B | 84 | indeed | T-Mobile | Associate Engineer, Software - Mobile App Development | Frisco, TX, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6f8f9db2eee9e660) |
@@ -50,13 +52,19 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed | Caption Call | Software Engineer II | Salt Lake City, UT, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=026670f4925b2ffb) |
 | B | 82 | indeed | Larson Automation | Software Engineer | San Jose, CA, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=886f437102da18ee) |
 | B | 81 | indeed | Innovecture | MERN Full Stack Engineer – Legacy Modernization & AI | Phoenix, AZ, US | 2026-10-15 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=aa520ef83833eb46) |
-| B | 80 | linkedin | Expedia Group | Software Development Engineer II | Austin, TX | 2026-10-17 | newly_discovered | - | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/software-development-engineer-ii-at-expedia-group-4479683118) |
 | B | 82 | indeed | Bridgeway Benefit Technologies | Associate Platform Engineer | Tampa, FL, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c259fc0701937e3e) |
 | B | 82 | indeed |  | Software Developer / AI-Assisted Development | Fairfield, CA, US | 2026-10-15 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=9aaba498f0dcd281) |
 | B | 82 | indeed | TikTok USDS JV | Associate Machine Learning Engineer, Recommendations | San Jose, CA, US | 2026-10-16 | newly_discovered | TikTok | unreviewed | official_identity_unmatched | [open](https://careers.tiktokusds.com/usds/position/7696997620665174325/detail) |
 | B | 82 | indeed | GM Financial | Data Engineer | Arlington, TX, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=84b2991361adabe1) |
 | B | 83 | indeed |  | Junior Software Developer – Paid Training Provided | Detroit, MI, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=06dc38b009b1bb1a) |
 | B | 83 | indeed | Cognizant | Full Stack Software Developer | Plano, TX, US | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1c454c23621c84ae) |
+| B | 75 | linkedin | Autodesk | Software Engineer | San Francisco, CA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-autodesk-4471019245) |
+| B | 75 | linkedin | Q2 | Software Engineer | Cary, NC | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-q2-4460741206) |
+| B | 75 | linkedin | Hewlett Packard Enterprise | Software Engineer | Andover, MA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-hewlett-packard-enterprise-4480174295) |
+| B | 79 | linkedin | AEG | Full Stack Engineer - WRSTBND | New Orleans, LA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-wrstbnd-at-aeg-4461665785) |
+| B | 75 | linkedin | KAYAK | Software Engineer, Ads (Backend) | Concord, MA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ads-backend-at-kayak-4434055995) |
+| B | 75 | linkedin | KAYAK | Software Engineer, Ads (Backend) | Cambridge, MA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ads-backend-at-kayak-4434079004) |
+| B | 75 | linkedin | Deloitte | Agentic AI Engineer — Healthcare AI | Minneapolis, MN | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/agentic-ai-engineer-%E2%80%94-healthcare-ai-at-deloitte-4426743454) |
 | B | 76 | indeed |  | Software Engineer | New York, NY, US | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=14cf27428677bce3) |
 | B | 76 | indeed |  | Full-Stack Developer (Backend Focus) | Los Angeles, CA, US | 2026-10-15 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ee5d21db9fd47431) |
 | B | 76 | indeed | Accenture Federal Services | Application Developer | Arlington, VA, US | 2026-10-15 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=225adb688002bcd1) |
