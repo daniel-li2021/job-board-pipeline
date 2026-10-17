@@ -2988,217 +2988,11 @@
     }
   ],
   "meta": {
-    "jd_recovery_at": "2026-10-17T09:39:42.762226+00:00"
+    "jd_recovery_at": "2026-10-17T23:32:01.239362+00:00"
   },
   "source": "remote_recovery",
   "count": 138,
   "attempts": {
-    "meta_official_careers|id|1033184163096349": {
-      "source": "meta_official_careers",
-      "job_id": "1033184163096349",
-      "company": "Meta",
-      "title": "Network Engineer, Deployment & Support",
-      "location": "Boston, MA",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "meta_official_careers|id|1117584847382488": {
-      "source": "meta_official_careers",
-      "job_id": "1117584847382488",
-      "company": "Meta",
-      "title": "Manager, Network Deployment & Support",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "meta_official_careers|id|1484707404718609": {
-      "source": "meta_official_careers",
-      "job_id": "1484707404718609",
-      "company": "Meta",
-      "title": "Data Center Central Planning Manager",
-      "location": "Bellevue, WA; Menlo Park, CA; San Francisco, CA",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "meta_official_careers|id|1136294922414308": {
-      "source": "meta_official_careers",
-      "job_id": "1136294922414308",
-      "company": "Meta",
-      "title": "Supply Chain Capacity Engineer - Business Enablement",
-      "location": "Bellevue, WA; Menlo Park, CA",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "meta_official_careers|id|1462872442652848": {
-      "source": "meta_official_careers",
-      "job_id": "1462872442652848",
-      "company": "Meta",
-      "title": "Global Supply Chain Manager - Data Center Power and Cooling",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "meta_official_careers|id|2514920742338257": {
-      "source": "meta_official_careers",
-      "job_id": "2514920742338257",
-      "company": "Meta",
-      "title": "Data Center Lead- PNB",
-      "location": "Papillion, NE",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "meta_official_careers|id|1102679629112744": {
-      "source": "meta_official_careers",
-      "job_id": "1102679629112744",
-      "company": "Meta",
-      "title": "Commercial Sourcing Manager, Memory and Storage",
-      "location": "Fremont, CA",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "meta_official_careers|id|1047646281369403": {
-      "source": "meta_official_careers",
-      "job_id": "1047646281369403",
-      "company": "Meta",
-      "title": "Data Center Lead- NHA",
-      "location": "Huntsville, AL",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "meta_official_careers|id|3098596960328769": {
-      "source": "meta_official_careers",
-      "job_id": "3098596960328769",
-      "company": "Meta",
-      "title": "Product Marketing Manager, Generative AI",
-      "location": "Menlo Park, CA; San Francisco, CA",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "meta_official_careers|id|2010995136240732": {
-      "source": "meta_official_careers",
-      "job_id": "2010995136240732",
-      "company": "Meta",
-      "title": "Research Scientist, Multi-Modal Understanding & Synthesis",
-      "location": "Pittsburgh, PA; Redmond, WA",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "meta_official_careers|id|2549001132281569": {
-      "source": "meta_official_careers",
-      "job_id": "2549001132281569",
-      "company": "Meta",
-      "title": "NPI Operations Program Manager",
-      "location": "Sunnyvale, CA",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "meta_official_careers|id|1769785610932303": {
-      "source": "meta_official_careers",
-      "job_id": "1769785610932303",
-      "company": "Meta",
-      "title": "Enterprise AI Technical Product Marketing Manager",
-      "location": "Menlo Park, CA; New York, NY; San Francisco, CA",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "meta_official_careers|id|1382825436728337": {
-      "source": "meta_official_careers",
-      "job_id": "1382825436728337",
-      "company": "Meta",
-      "title": "Design Systems Product Designer",
-      "location": "San Francisco, CA",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "meta_official_careers|id|2241075696733448": {
-      "source": "meta_official_careers",
-      "job_id": "2241075696733448",
-      "company": "Meta",
-      "title": "Project Manager, Verification Operations",
-      "location": "Austin, TX; New York, NY",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "meta_official_careers|id|1810961883657738": {
-      "source": "meta_official_careers",
-      "job_id": "1810961883657738",
-      "company": "Meta",
-      "title": "Software Engineer, Embedded Systems",
-      "location": "Burlingame, CA",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00",
-      "recovery_methods": {
-        "candidate:cf173ecdf8": {
-          "input_hash": "79787d53660fdcc46d29",
-          "attempted_at": "2026-10-17T09:39:42.762226+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "af9a7c1edd1ce4bca8e9",
-          "attempted_at": "2026-10-17T09:39:42.762226+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.76,
-        "delta": 0,
-        "reason": "Software role; seniority and requirements unknown"
-      },
-      "recovery_input_hash": "56041e2ec8e094dc3eff",
-      "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-17T09:39:42.762226+00:00"
-    },
-    "meta_official_careers|id|1615382236689607": {
-      "source": "meta_official_careers",
-      "job_id": "1615382236689607",
-      "company": "Meta",
-      "title": "Communications Director, Enterprise Business",
-      "location": "Los Angeles, CA; Menlo Park, CA; Seattle, WA; New York, NY; San Francisco, CA",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "disney_official_careers|id|102011638032": {
-      "source": "disney_official_careers",
-      "job_id": "102011638032",
-      "company": "Disney",
-      "title": "Principal Data Engineer",
-      "location": "New York, New York / San Francisco, California",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "disney_official_careers|id|102011639680": {
-      "source": "disney_official_careers",
-      "job_id": "102011639680",
-      "company": "Disney",
-      "title": "Sr Data Engineer",
-      "location": "Anaheim, California",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "netflix_official_careers|id|jr41144": {
-      "source": "netflix_official_careers",
-      "job_id": "JR41144",
-      "company": "Netflix",
-      "title": "Staff ML Software Engineer (L6) — Platform Systems, AIMS Engineering",
-      "location": "Remote, United States",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "netflix_official_careers|id|jr41034": {
-      "source": "netflix_official_careers",
-      "job_id": "JR41034",
-      "company": "Netflix",
-      "title": "Senior Software Engineer - Design Systems",
-      "location": "Remote, United States",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "two_sigma_official_careers|id|14272": {
-      "source": "two_sigma_official_careers",
-      "job_id": "14272",
-      "company": "Two Sigma",
-      "title": "Data Scientist - Campus Full-Time",
-      "location": "United States - NY New York",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "equinix_official_careers|id|jr-163191": {
-      "source": "equinix_official_careers",
-      "job_id": "JR-163191",
-      "company": "Equinix",
-      "title": "Supervisor, Data Center Critical Facilities",
-      "location": "Dallas, Texas, United States",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
-    "pointclickcare_official_careers|id|1fe34f68-4df8-4709-b387-e15f80ab0f2c": {
-      "source": "pointclickcare_official_careers",
-      "job_id": "1fe34f68-4df8-4709-b387-e15f80ab0f2c",
-      "company": "PointClickCare",
-      "title": "Solutions Analyst (Acute and Payer-General Support)",
-      "location": "Remote, USA",
-      "first_seen": "2026-10-16T14:50:50.226980+00:00"
-    },
     "meta_official_careers|id|1476493301035580": {
       "source": "meta_official_careers",
       "job_id": "1476493301035580",
@@ -3320,12 +3114,12 @@
       "recovery_methods": {
         "candidate:bced6e739b": {
           "input_hash": "db5f257a1bdad27c9837",
-          "attempted_at": "2026-10-17T09:39:42.762226+00:00",
+          "attempted_at": "2026-10-17T23:32:01.239362+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "10cb818b83d7738552e1",
-          "attempted_at": "2026-10-17T09:39:42.762226+00:00",
+          "attempted_at": "2026-10-17T23:32:01.239362+00:00",
           "outcome": "no_match"
         }
       },
@@ -3338,7 +3132,7 @@
       },
       "recovery_input_hash": "409c390a74d8dc14597b",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-17T09:39:42.762226+00:00"
+      "official_search_attempted_at": "2026-10-17T23:32:01.239362+00:00"
     },
     "meta_official_careers|id|1404071541713403": {
       "source": "meta_official_careers",
@@ -3350,12 +3144,12 @@
       "recovery_methods": {
         "candidate:2a0fd94737": {
           "input_hash": "c3ae3b5f516aae57038b",
-          "attempted_at": "2026-10-17T09:39:42.762226+00:00",
+          "attempted_at": "2026-10-17T23:32:01.239362+00:00",
           "outcome": "no_match"
         },
         "generic_search": {
           "input_hash": "918e2a5427eb5cf49738",
-          "attempted_at": "2026-10-17T09:39:42.762226+00:00",
+          "attempted_at": "2026-10-17T23:32:01.239362+00:00",
           "outcome": "no_match"
         }
       },
@@ -3368,7 +3162,7 @@
       },
       "recovery_input_hash": "0d642b72aa1e057b517c",
       "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-17T09:39:42.762226+00:00"
+      "official_search_attempted_at": "2026-10-17T23:32:01.239362+00:00"
     },
     "meta_official_careers|id|1772218837316602": {
       "source": "meta_official_careers",
@@ -3466,30 +3260,85 @@
       "location": "Mississauga, Ontario",
       "first_seen": "2026-10-16T23:46:22.468738+00:00"
     },
-    "syncareer|id|8c536c8db16e655433c7c04813fd09d3": {
-      "source": "syncareer",
-      "job_id": "8c536c8db16e655433c7c04813fd09d3",
-      "company": "MANTECH",
-      "title": "DevOps Engineer",
-      "location": "Doral, Florida, United States",
-      "first_seen": "2026-10-16T14:51:15.419675+00:00",
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "1fdc240583999d1c5986",
-          "attempted_at": "2026-10-17T09:39:42.762226+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.68,
-        "delta": 0,
-        "reason": "DevOps fits platform; seniority unknown"
-      },
-      "recovery_input_hash": "0cfdeca74aa6dc6fa718",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-17T09:39:42.762226+00:00"
+    "meta_official_careers|id|1112920251290763": {
+      "source": "meta_official_careers",
+      "job_id": "1112920251290763",
+      "company": "Meta",
+      "title": "Business Support Engineer - AdTech",
+      "location": "Bellevue, WA; Menlo Park, CA",
+      "first_seen": "2026-10-17T14:45:03.775071+00:00"
+    },
+    "meta_official_careers|id|1052405687689876": {
+      "source": "meta_official_careers",
+      "job_id": "1052405687689876",
+      "company": "Meta",
+      "title": "Planning & Capacity Engineer Lead, Server Rack Components Supply Chain",
+      "location": "Menlo Park, CA",
+      "first_seen": "2026-10-17T14:45:03.775071+00:00"
+    },
+    "meta_official_careers|id|2092291905494339": {
+      "source": "meta_official_careers",
+      "job_id": "2092291905494339",
+      "company": "Meta",
+      "title": "Mechanical Engineer, Infrastructure",
+      "location": "Austin, TX; Menlo Park, CA",
+      "first_seen": "2026-10-17T14:45:03.775071+00:00"
+    },
+    "meta_official_careers|id|2076926089596128": {
+      "source": "meta_official_careers",
+      "job_id": "2076926089596128",
+      "company": "Meta",
+      "title": "Performance & Capacity Engineer - Capacity Planning Optimization(Technical Leadership)",
+      "location": "Menlo Park, CA; Seattle, WA; Boston, MA; New York, NY",
+      "first_seen": "2026-10-17T14:45:03.775071+00:00"
+    },
+    "meta_official_careers|id|1786694942756620": {
+      "source": "meta_official_careers",
+      "job_id": "1786694942756620",
+      "company": "Meta",
+      "title": "Application Manager, Procurement",
+      "location": "Menlo Park, CA; Fremont, CA",
+      "first_seen": "2026-10-17T14:45:03.775071+00:00"
+    },
+    "meta_official_careers|id|1558754689628941": {
+      "source": "meta_official_careers",
+      "job_id": "1558754689628941",
+      "company": "Meta",
+      "title": "Product Manager, Enterprise AI",
+      "location": "Menlo Park, CA",
+      "first_seen": "2026-10-17T14:45:03.775071+00:00"
+    },
+    "disney_official_careers|id|102054967616": {
+      "source": "disney_official_careers",
+      "job_id": "102054967616",
+      "company": "Disney",
+      "title": "Senior Site Reliability Engineer",
+      "location": "Burbank, California",
+      "first_seen": "2026-10-17T14:45:03.775071+00:00"
+    },
+    "disney_official_careers|id|10154769": {
+      "source": "disney_official_careers",
+      "job_id": "10154769",
+      "company": "Disney",
+      "title": "Staff Software Engineer",
+      "location": "Burbank, California",
+      "first_seen": "2026-10-17T14:45:03.775071+00:00"
+    },
+    "disney_official_careers|id|102054967344": {
+      "source": "disney_official_careers",
+      "job_id": "102054967344",
+      "company": "Disney",
+      "title": "Lead Data Analyst",
+      "location": "New York, New York / Santa Monica, California / San Francisco, California",
+      "first_seen": "2026-10-17T14:45:03.775071+00:00"
+    },
+    "equinix_official_careers|id|jr-163188": {
+      "source": "equinix_official_careers",
+      "job_id": "JR-163188",
+      "company": "Equinix",
+      "title": "Senior Principal Engineer, Enterprise Networking Architecture, Automation and AI",
+      "location": "Toronto, Ontario, Canada; Redwood City, California, United States; Dallas, Texas, United States",
+      "first_seen": "2026-10-17T14:45:03.775071+00:00"
     },
     "syncareer|id|56b03bc2f874a24e2324747bdffb19d0": {
       "source": "syncareer",
@@ -3509,7 +3358,7 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "f9b0db34c527abd6c295",
-          "attempted_at": "2026-10-17T09:39:42.762226+00:00",
+          "attempted_at": "2026-10-17T23:32:01.239362+00:00",
           "outcome": "no_match"
         }
       },
@@ -3522,7 +3371,107 @@
       },
       "recovery_input_hash": "673657c48f866f602965",
       "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-17T09:39:42.762226+00:00"
+      "official_search_attempted_at": "2026-10-17T23:32:01.239362+00:00"
+    },
+    "syncareer|id|0b622aa955dd5a988144d815a42cadff": {
+      "source": "syncareer",
+      "job_id": "0b622aa955dd5a988144d815a42cadff",
+      "company": "T-Mobile",
+      "title": "Associate Engineer, Software - Mobile App Development",
+      "location": "Overland Park, Kansas, United States",
+      "first_seen": "2026-10-17T14:51:10.915174+00:00",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "8929ff39480f17f159d8",
+          "attempted_at": "2026-10-17T23:32:01.239362+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.94,
+        "delta": 4,
+        "reason": "Associate software role; mobile app development"
+      },
+      "recovery_input_hash": "ee3bd3aadef7d8de2b9d",
+      "official_search_status": "no_match",
+      "official_search_attempted_at": "2026-10-17T23:32:01.239362+00:00"
+    },
+    "syncareer|id|02976f9c887cec6647dc678c0aa610fa": {
+      "source": "syncareer",
+      "job_id": "02976f9c887cec6647dc678c0aa610fa",
+      "company": "T-Mobile",
+      "title": "Software Engineer",
+      "location": "Bellevue, Washington, United States",
+      "first_seen": "2026-10-17T14:51:10.915174+00:00",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "cce1140c7712a33b74ac",
+          "attempted_at": "2026-10-17T23:32:01.239362+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "high",
+        "confidence": 0.82,
+        "delta": 0,
+        "reason": "Software engineering aligns; seniority unclear"
+      },
+      "recovery_input_hash": "275302d08cb3c4653bb5",
+      "official_search_status": "no_match",
+      "official_search_attempted_at": "2026-10-17T23:32:01.239362+00:00"
+    },
+    "syncareer|id|342c25440eee25acfe797763b2437346": {
+      "source": "syncareer",
+      "job_id": "342c25440eee25acfe797763b2437346",
+      "company": "Addison Group",
+      "title": "Data Engineer",
+      "location": "Arlington, Virginia, United States",
+      "first_seen": "2026-10-17T14:51:10.915174+00:00",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "431776e830c4506ac489",
+          "attempted_at": "2026-10-17T23:32:01.239362+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "normal",
+        "confidence": 0.78,
+        "delta": 0,
+        "reason": "Data engineering is a target family"
+      },
+      "recovery_input_hash": "d3c83036d13b98b1208a",
+      "official_search_status": "no_match",
+      "official_search_attempted_at": "2026-10-17T23:32:01.239362+00:00"
+    },
+    "syncareer|id|92c510831afb488a9f68a28a6ccf157e": {
+      "source": "syncareer",
+      "job_id": "92c510831afb488a9f68a28a6ccf157e",
+      "company": "MANTECH",
+      "title": "Data Engineer",
+      "location": "Chantilly, Virginia, United States",
+      "first_seen": "2026-10-17T14:51:10.915174+00:00",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "6b583767bb779dc81c95",
+          "attempted_at": "2026-10-17T23:32:01.239362+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "normal",
+        "confidence": 0.78,
+        "delta": 0,
+        "reason": "Data engineering is a target family"
+      },
+      "recovery_input_hash": "88276ba5b3203d0cc326",
+      "official_search_status": "no_match",
+      "official_search_attempted_at": "2026-10-17T23:32:01.239362+00:00"
     }
   }
 }
