@@ -1,7 +1,7 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-10-17 07:45 PDT
-- Snapshot (UTC): 2026-10-17T14:45:02.921310+00:00
+- Updated (PT): 2026-10-17 16:45 PDT
+- Snapshot (UTC): 2026-10-17T23:45:21.676278+00:00
 - Jobs: 29 (Tier A/B only)
 - Last 24 hours: 1
 - Last 3 days: 29
