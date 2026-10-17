@@ -1,49 +1,49 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 3030,
+  "count": 3035,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-10-12T22:00:12.775149+00:00",
+    "scraped_at": "2026-10-17T09:39:29.454708+00:00",
     "collector": {
-      "commit": "7f9b12dd429e369b0ecc0bf37106b511127ea66d",
+      "commit": "744819fae7eaeb1fd7c5ae15359b79bef4b12b50",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 18.021,
+    "elapsed_seconds": 12.859,
     "query_stats": [
-      {
-        "query": "backend engineer",
-        "group": "primary",
-        "page_budget": 2,
-        "pages_fetched": 1,
-        "stop_reason": "blocked_http_429",
-        "raw_jobs": 10,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 10,
-        "original_postings_resolved": 0,
-        "jds_resolved": 1,
-        "elapsed_seconds": 2.993,
-        "new_to_ledger": 6,
-        "rediscovered": 4,
-        "page_yields": [
-          {
-            "page": 0,
-            "raw": 10,
-            "new_to_ledger": 6,
-            "known": 4
-          }
-        ]
-      },
       {
         "query": "software engineer",
         "group": "primary",
         "page_budget": 5,
+        "pages_fetched": 1,
+        "stop_reason": "global_page_budget",
+        "raw_jobs": 10,
+        "unique_jobs": 10,
+        "unique_contribution": 10,
+        "first_pass_survivors": 10,
+        "original_postings_resolved": 0,
+        "jds_resolved": 4,
+        "elapsed_seconds": 0.488,
+        "new_to_ledger": 5,
+        "rediscovered": 5,
+        "page_yields": [
+          {
+            "page": 0,
+            "raw": 10,
+            "new_to_ledger": 5,
+            "known": 5
+          }
+        ]
+      },
+      {
+        "query": "ai engineer",
+        "group": "primary",
+        "page_budget": 3,
         "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
+        "stop_reason": "global_page_budget",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
@@ -53,11 +53,11 @@
         "elapsed_seconds": 0.0
       },
       {
-        "query": "ai engineer",
+        "query": "backend engineer",
         "group": "primary",
-        "page_budget": 3,
+        "page_budget": 2,
         "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
+        "stop_reason": "global_page_budget",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
@@ -69,279 +69,154 @@
     ],
     "search_collection": {
       "cooldown_active": false,
-      "probe": false,
-      "query_cursor": 26,
-      "requests": 2,
-      "responses": 2,
+      "probe": true,
+      "query_cursor": 30,
+      "requests": 1,
+      "responses": 1,
       "pages_fetched": 1,
-      "http_status": 429,
-      "rate_limited": true,
-      "budget_exhausted": false,
-      "rate_limit_event": {
-        "at": "2026-10-12T22:00:15.767092+00:00",
-        "endpoint": "search",
-        "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
-        "query": "backend engineer",
-        "page": 1,
-        "retry_after": "",
-        "retry_after_until": "2026-10-12T22:00:15.767092+00:00",
-        "request_ordinal": 2,
-        "endpoint_ordinal": 2,
-        "round_counts": {
-          "search": 2,
-          "detail": 0
-        },
-        "rolling_counts": {
-          "60": {
-            "search": 2,
-            "detail": 0
-          },
-          "3600": {
-            "search": 2,
-            "detail": 0
-          },
-          "86400": {
-            "search": 28,
-            "detail": 25
-          }
-        }
-      },
+      "http_status": 0,
+      "rate_limited": false,
+      "budget_exhausted": true,
+      "rate_limit_event": {},
       "transport_stop_reason": "",
-      "new_to_ledger": 6,
-      "rediscovered": 4,
-      "coverage_limited": false
+      "new_to_ledger": 5,
+      "rediscovered": 5,
+      "coverage_limited": true
     },
     "detail_enrichment": {
-      "eligible": 13,
+      "eligible": 3,
       "cache_reused": 0,
-      "requests": 0,
-      "responses": 0,
-      "successful_responses": 0,
-      "attempted_ids": [],
-      "http_status_counts": {},
-      "request_limit": 0,
-      "budget_deferred": 0,
-      "budget_exhausted": false,
+      "requests": 1,
+      "responses": 1,
+      "successful_responses": 1,
+      "attempted_ids": [
+        "4480806450"
+      ],
+      "http_status_counts": {
+        "200": 1
+      },
+      "request_limit": 1,
+      "budget_deferred": 2,
+      "budget_exhausted": true,
       "retry_deferred": 0,
       "retry_attempts": 0,
       "exact_official": 0,
       "official_deferred": 0,
       "rate_limited": false,
-      "jds_resolved": 0,
+      "jds_resolved": 1,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 0,
-      "intentional_skips": 13,
+      "detail_jds_fetched": 1,
+      "intentional_skips": 0,
       "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 13,
-      "failure_reasons": {},
+      "remaining_no_jd": 2,
+      "failure_reasons": {
+        "no_description": 2
+      },
       "queue": [
         {
-          "job_id": "4477917782",
-          "first_seen": "2026-10-12T22:00:12.775149+00:00",
+          "job_id": "4470015756",
+          "first_seen": "2026-10-17T09:39:29.454708+00:00",
           "priority": "normal",
           "needs_jd": null,
           "deferred_at": null,
           "attempted_at": null,
           "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
+          "resolved": true,
+          "method": "remote_exact_peer",
+          "deferred_reason": null,
           "past_fresh": false
         },
         {
-          "job_id": "4478576870",
-          "first_seen": "2026-10-12T22:00:12.775149+00:00",
+          "job_id": "4479602490",
+          "first_seen": "2026-10-17T09:39:29.454708+00:00",
           "priority": "normal",
           "needs_jd": null,
           "deferred_at": null,
           "attempted_at": null,
           "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
+          "resolved": true,
+          "method": "exact_indeed_peer",
+          "deferred_reason": null,
           "past_fresh": false
         },
         {
-          "job_id": "4477265846",
-          "first_seen": "2026-10-12T01:13:39.957682+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-10-12T01:13:39.957682+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4477907064",
-          "first_seen": "2026-10-12T19:03:27.780454+00:00",
-          "priority": "normal",
+          "job_id": "4480806450",
+          "first_seen": "2026-10-17T09:39:29.454708+00:00",
+          "priority": "high",
           "needs_jd": true,
           "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
+          "attempted_at": "2026-10-17T09:39:41.976823+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
           "past_fresh": false
         },
         {
-          "job_id": "4477507021",
-          "first_seen": "2026-10-12T19:03:27.780454+00:00",
+          "job_id": "4479683118",
+          "first_seen": "2026-10-17T09:39:29.454708+00:00",
           "priority": "normal",
           "needs_jd": true,
-          "deferred_at": null,
+          "deferred_at": "2026-10-17T09:39:29.454708+00:00",
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
+          "deferred_reason": "linkedin_detail_round_budget",
           "past_fresh": false
         },
         {
-          "job_id": "4478545786",
-          "first_seen": "2026-10-12T19:03:27.780454+00:00",
+          "job_id": "4480521935",
+          "first_seen": "2026-10-17T09:39:29.454708+00:00",
           "priority": "normal",
           "needs_jd": true,
-          "deferred_at": null,
+          "deferred_at": "2026-10-17T09:39:29.454708+00:00",
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4473183815",
-          "first_seen": "2026-10-12T19:03:27.780454+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4473401171",
-          "first_seen": "2026-10-12T19:03:27.780454+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4477587830",
-          "first_seen": "2026-10-12T19:03:27.780454+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4476005404",
-          "first_seen": "2026-10-12T19:03:27.780454+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4476026071",
-          "first_seen": "2026-10-12T19:03:27.780454+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4478573082",
-          "first_seen": "2026-10-12T19:03:27.780454+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4477850675",
-          "first_seen": "2026-10-12T19:03:27.780454+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
+          "deferred_reason": "linkedin_detail_round_budget",
           "past_fresh": false
         }
       ],
       "admission": {
-        "candidates": 16,
-        "rules_skipped": 3,
-        "rule_reasons": {
-          "prefilter:senior": 3
-        },
+        "candidates": 5,
+        "rules_skipped": 0,
+        "rule_reasons": {},
         "cache_reused": 0,
-        "non_linkedin_resolved": 0,
-        "worth_detail": 11
+        "non_linkedin_resolved": 2,
+        "triage_evaluated": 3,
+        "triage_deferred": 0,
+        "worth_detail": 3
       },
-      "cooldown_active": true,
-      "probe": false,
-      "round_request_limit": 0,
-      "round_requests": 0,
-      "status": "cooldown",
-      "cooldown_until": "2026-10-13T07:03:27.780454+00:00"
+      "cooldown_active": false,
+      "probe": true,
+      "round_request_limit": 1,
+      "round_requests": 1,
+      "status": "probe"
     },
     "official_enrichment": {
+      "remote_exact_peer": 2,
+      "exact_indeed_peer": 1,
       "search_provider_failures": 1,
-      "no_match": 13,
-      "search_requests": 14,
+      "no_match": 3,
+      "search_requests": 6,
       "search_provider": "bing",
-      "official_page_requests": 0,
-      "remaining_no_jd": 9
+      "official_page_requests": 3,
+      "remaining_no_jd": 7
     },
     "partial": true,
-    "blocked_reason": "blocked with HTTP 429",
+    "blocked_reason": "search page budget exhausted",
     "collected_count": 10,
-    "carried_count": 3020,
+    "carried_count": 3025,
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-10-15T05:40:44.747337+00:00"
+    "jd_recovery_at": "2026-10-17T09:39:42.762226+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -3435,7 +3310,12 @@
     "linkedin|id|4477917967": "2026-10-12T22:00:12.775149+00:00",
     "linkedin|id|4476050061": "2026-10-12T22:00:12.775149+00:00",
     "linkedin|id|4478576870": "2026-10-12T22:00:12.775149+00:00",
-    "linkedin|id|4374067349": "2026-09-21T15:02:52.933788+00:00"
+    "linkedin|id|4374067349": "2026-09-21T15:02:52.933788+00:00",
+    "linkedin|id|4470015756": "2026-10-17T09:39:29.454708+00:00",
+    "linkedin|id|4479602490": "2026-10-17T09:39:29.454708+00:00",
+    "linkedin|id|4480806450": "2026-10-17T09:39:29.454708+00:00",
+    "linkedin|id|4479683118": "2026-10-17T09:39:29.454708+00:00",
+    "linkedin|id|4480521935": "2026-10-17T09:39:29.454708+00:00"
   },
   "jobs": [
     {
@@ -4141,7 +4021,7 @@
       "official_search_status": "no_match",
       "enrichment_status": "unresolved",
       "source_verified_at": "2026-10-12T22:00:12.775149+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "normal",
@@ -5550,36 +5430,73 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4470015756",
+      "source": "linkedin",
+      "company": "Affirm",
+      "title": "Software Engineer II, Backend (Identity Decisioning)",
+      "location": "Atlanta, GA",
+      "posted_date": "2026-10-16",
+      "aggregator_posted_date": "2026-10-16",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-backend-identity-decisioning-at-affirm-4470015756",
+      "official_url": "",
+      "description": "At Affirm, we exist for the moments that matter—giving people a clear, predictable way to pay over time, with no hidden fees, no surprises, and no tradeoffs on what matters most.\nWe are looking for a Software Engineer to join the Identity Decisioning team, responsible for building backend systems that validates consumer identity in all of Affirm’s products by satisfying regulatory protocols like KYC. The team partners closely with Product, Compliance, Auth, Fraud, and other engineering teams to deliver honest and transparent financial products that help consumers make their purchasing decisions. As we scale the company to be a cornerstone of all e-commerce and offline retail, it is an exciting time to join the team which sits at the core of this mission.\nWhat you'll do\nWith the support of your team’s tech lead and manager, you will break down larger projects into individual tasks, deliver them in multiple phases, and collaborate with others to ensure timely delivery of your work.\nYou will support your peers and stakeholders in the product development lifecycle by collaborating with product management, design & analytics by participating in ideation, articulating technical constraints, and partnering on decisions that properly consider risks and trade-offs.\nYou will support the operations and availability of your team’s artifacts by creating and monitoring metrics, escalating when needed, and supporting “keep the lights on” & on-call efforts.\nYou will contribute to a sense of community on your team by engaging in growth and development activities such as participation in the interview process.\nWhat we look for\nYou have a total of 1.5+ years of experience as a software engineer.\nYou have experience designing, developing and launching backend systems and are proficient in one of Python or Kotlin.\nYou are familiar with the building blocks of distributed systems, and the technologies like AWS, MySQL and Kubernetes.\nYou have mastered taking a simple problem or business scenario into a solution that interacts with multiple software components, and executing on it by writing clear, easily understood, well tested and extensible code.\nYou are comfortable navigating a large code base, debugging others' code, and providing feedback to other engineers through code reviews.\nYour experience demonstrates that you take ownership of your growth, proactively seeking feedback from your team, your manager, and your stakeholders.\nYou have strong verbal and written communication skills that support effective collaboration with our global engineering team.\nThis position requires either equivalent practical experience or a Bachelor’s degree in a related field\nBase Pay Grade - L\nEquity Grade - USA 6\nEmployees new to Affirm typically come in at the start of the pay range. Affirm focuses on providing a simple and transparent pay structure which is based on a variety of factors, including location, experience and job-related skills.\nBase pay is part of a total compensation package that may include equity rewards, monthly stipends for health, wellness and tech spending, and benefits (including 100% subsidized medical coverage, dental and vision for you and your dependents.)\nUSA Pacific base pay range (CA, WA, NY, NJ, CT):\n$165,000 - $225,000 USD.\nUSA Sapphire base pay range (all other U.S. states):\n$146,000 - $206,000 USD.\n#LI-Remote\nRemote-first with flexibility built in\nAffirm is proud to be a remote-first company. Most roles can be done from almost anywhere within the country of employment. Some positions may occasionally require in-person work at an Affirm office, and a few are office-based due to the nature of the work. All new hires will be invited to attend an in-person onboarding experience.\nBenefits designed for you\nOur benefits reflect our commitment to care, transparency, and flexibility. Here are a few highlights:\nHealth coverage at no cost: We cover 100% of premiums for employees and their dependents.\nSpending stipends: Monthly stipends support your tech setup, and the ability to choose health and wellness options that are right for you.\nTime off to recharge: Flexible time off and generous holiday calendars help you rest when you need to.\nOwn a piece of what you build: Our employee stock purchase plan (ESPP) lets you buy Affirm stock at a discount.\nWe’re committed to providing an inclusive interview process, including accommodations for candidates with disabilities. If you need support, we’re happy to help.\nFor positions based in San Francisco or Los Angeles: Affirm considers qualified applicants with arrest and conviction records, as required by law.\nBy clicking \"Submit Application,\" you acknowledge that you have read Affirm's\nGlobal Candidate Privacy Notice\nand consent to the use of your personal information as described.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-17T09:39:29.454708+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://job-boards.greenhouse.io/affirm/jobs/7985860003",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-17T09:39:29.454708+00:00",
+      "jd_recovery_at": "2026-10-17T09:39:29.454708+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-17T09:39:29.454708+00:00",
+      "source_verified_at": "2026-10-17T09:39:29.454708+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4470016722",
       "source": "linkedin",
       "company": "Affirm",
       "title": "Software Engineer II, Backend (Identity Decisioning)",
       "location": "Salt Lake City, UT",
       "posted_date": "2026-09-24",
-      "aggregator_posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-10-16",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-backend-identity-decisioning-at-affirm-4470016722",
       "official_url": "",
-      "description": "At Affirm, we exist for the moments that matter—giving people a clear, predictable way to pay over time, with no hidden fees, no surprises, and no tradeoffs on what matters most. We are looking for a Software Engineer to join the Identity Decisioning team, responsible for building backend systems that validates consumer identity in all of Affirm’s products by satisfying regulatory protocols like KYC. The team partners closely with Product, Compliance, Auth, Fraud, and other engineering teams to deliver honest and transparent financial products that help consumers make their purchasing decisions. As we scale the company to be a cornerstone of all e-commerce and offline retail, it is an exciting time to join the team which sits at the core of this mission. What You'll Do With the support of your team’s tech lead and manager, you will break down larger projects into individual tasks, deliver them in multiple phases, and collaborate with others to ensure timely delivery of your work. You will support your peers and stakeholders in the product development lifecycle by collaborating with product management, design & analytics by participating in ideation, articulating technical constraints, and partnering on decisions that properly consider risks and trade-offs. You will support the operations and availability of your team’s artifacts by creating and monitoring metrics, escalating when needed, and supporting “keep the lights on” & on-call efforts. You will contribute to a sense of community on your team by engaging in growth and development activities such as participation in the interview process. What We Look For You have a total of 1.5+ years of experience as a software engineer. You have experience designing, developing and launching backend systems and are proficient in one of Python or Kotlin. You are familiar with the building blocks of distributed systems, and the technologies like AWS, MySQL and Kubernetes. You have mastered taking a simple problem or business scenario into a solution that interacts with multiple software components, and executing on it by writing clear, easily understood, well tested and extensible code. You are comfortable navigating a large code base, debugging others' code, and providing feedback to other engineers through code reviews. Your experience demonstrates that you take ownership of your growth, proactively seeking feedback from your team, your manager, and your stakeholders. You have strong verbal and written communication skills that support effective collaboration with our global engineering team. This position requires either equivalent practical experience or a Bachelor’s degree in a related field Base Pay Grade - L Equity Grade - USA 6 Employees new to Affirm typically come in at the start of the pay range. Affirm focuses on providing a simple and transparent pay structure which is based on a variety of factors, including location, experience and job-related skills. Base pay is part of a total compensation package that may include equity rewards, monthly stipends for health, wellness and tech spending, and benefits (including 100% subsidized medical coverage, dental and vision for you and your dependents.) USA Pacific base pay range (CA, WA, NY, NJ, CT): $165,000 - $225,000 USD. USA Sapphire base pay range (all other U.S. states): $146,000 - $206,000 USD. Remote-first with flexibility built in Affirm is proud to be a remote-first company. Most roles can be done from almost anywhere within the country of employment. Some positions may occasionally require in-person work at an Affirm office, and a few are office-based due to the nature of the work. All new hires will be invited to attend an in-person onboarding experience. Benefits Designed For You Our benefits reflect our commitment to care, transparency, and flexibility. Here are a few highlights: Health coverage at no cost: We cover 100% of premiums for employees and their dependents. Spending stipends: Monthly stipends support your tech setup, and the ability to choose health and wellness options that are right for you. Time off to recharge: Flexible time off and generous holiday calendars help you rest when you need to. Own a piece of what you build: Our employee stock purchase plan (ESPP) lets you buy Affirm stock at a discount. We’re committed to providing an inclusive interview process, including accommodations for candidates with disabilities. If you need support, we’re happy to help. For positions based in San Francisco or Los Angeles: Affirm considers qualified applicants with arrest and conviction records, as required by law. By clicking \"Submit Application,\" you acknowledge that you have read Affirm's Global Candidate Privacy Notice and consent to the use of your personal information as described.",
+      "description": "At Affirm, we exist for the moments that matter—giving people a clear, predictable way to pay over time, with no hidden fees, no surprises, and no tradeoffs on what matters most.\nWe are looking for a Software Engineer to join the Identity Decisioning team, responsible for building backend systems that validates consumer identity in all of Affirm’s products by satisfying regulatory protocols like KYC. The team partners closely with Product, Compliance, Auth, Fraud, and other engineering teams to deliver honest and transparent financial products that help consumers make their purchasing decisions. As we scale the company to be a cornerstone of all e-commerce and offline retail, it is an exciting time to join the team which sits at the core of this mission.\nWhat you'll do\nWith the support of your team’s tech lead and manager, you will break down larger projects into individual tasks, deliver them in multiple phases, and collaborate with others to ensure timely delivery of your work.\nYou will support your peers and stakeholders in the product development lifecycle by collaborating with product management, design & analytics by participating in ideation, articulating technical constraints, and partnering on decisions that properly consider risks and trade-offs.\nYou will support the operations and availability of your team’s artifacts by creating and monitoring metrics, escalating when needed, and supporting “keep the lights on” & on-call efforts.\nYou will contribute to a sense of community on your team by engaging in growth and development activities such as participation in the interview process.\nWhat we look for\nYou have a total of 1.5+ years of experience as a software engineer.\nYou have experience designing, developing and launching backend systems and are proficient in one of Python or Kotlin.\nYou are familiar with the building blocks of distributed systems, and the technologies like AWS, MySQL and Kubernetes.\nYou have mastered taking a simple problem or business scenario into a solution that interacts with multiple software components, and executing on it by writing clear, easily understood, well tested and extensible code.\nYou are comfortable navigating a large code base, debugging others' code, and providing feedback to other engineers through code reviews.\nYour experience demonstrates that you take ownership of your growth, proactively seeking feedback from your team, your manager, and your stakeholders.\nYou have strong verbal and written communication skills that support effective collaboration with our global engineering team.\nThis position requires either equivalent practical experience or a Bachelor’s degree in a related field\nBase Pay Grade - L\nEquity Grade - USA 6\nEmployees new to Affirm typically come in at the start of the pay range. Affirm focuses on providing a simple and transparent pay structure which is based on a variety of factors, including location, experience and job-related skills.\nBase pay is part of a total compensation package that may include equity rewards, monthly stipends for health, wellness and tech spending, and benefits (including 100% subsidized medical coverage, dental and vision for you and your dependents.)\nUSA Pacific base pay range (CA, WA, NY, NJ, CT):\n$165,000 - $225,000 USD.\nUSA Sapphire base pay range (all other U.S. states):\n$146,000 - $206,000 USD.\n#LI-Remote\nRemote-first with flexibility built in\nAffirm is proud to be a remote-first company. Most roles can be done from almost anywhere within the country of employment. Some positions may occasionally require in-person work at an Affirm office, and a few are office-based due to the nature of the work. All new hires will be invited to attend an in-person onboarding experience.\nBenefits designed for you\nOur benefits reflect our commitment to care, transparency, and flexibility. Here are a few highlights:\nHealth coverage at no cost: We cover 100% of premiums for employees and their dependents.\nSpending stipends: Monthly stipends support your tech setup, and the ability to choose health and wellness options that are right for you.\nTime off to recharge: Flexible time off and generous holiday calendars help you rest when you need to.\nOwn a piece of what you build: Our employee stock purchase plan (ESPP) lets you buy Affirm stock at a discount.\nWe’re committed to providing an inclusive interview process, including accommodations for candidates with disabilities. If you need support, we’re happy to help.\nFor positions based in San Francisco or Los Angeles: Affirm considers qualified applicants with arrest and conviction records, as required by law.\nBy clicking \"Submit Application,\" you acknowledge that you have read Affirm's\nGlobal Candidate Privacy Notice\nand consent to the use of your personal information as described.",
       "sponsorship": "Unknown",
       "fetched_at": "",
-      "first_seen": "",
+      "first_seen": "2026-09-25T00:23:12.021854+00:00",
       "discovery_queries": {
         "linkedin": [
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T17:55:58.757959+00:00",
-      "official_search_status": "deferred",
       "linkedin_detail_attempted_at": "2026-09-25T17:56:40.935046+00:00",
-      "linkedin_detail_fetched_at": "2026-09-25T17:56:40.935046+00:00",
-      "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
+      "recovery_methods": {},
+      "application_url": "https://job-boards.greenhouse.io/affirm/jobs/7985860003",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-17T09:39:29.454708+00:00",
+      "jd_recovery_at": "2026-10-17T09:39:29.454708+00:00",
+      "enrichment_method": "remote_exact_peer",
       "enrichment_status": "resolved",
+      "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T17:55:58.757959+00:00",
-      "verified_this_run": false
+      "direct_original_fetched_at": "2026-10-17T09:39:29.454708+00:00",
+      "source_verified_at": "2026-10-17T09:39:29.454708+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4462338791",
@@ -9190,6 +9107,59 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4480521935",
+      "source": "linkedin",
+      "company": "Amazon Web Services (AWS)",
+      "title": "Software Development Engineer, AWS Artifact, AWS Compliance & Security Assurance",
+      "location": "Herndon, VA",
+      "posted_date": "2026-10-16",
+      "aggregator_posted_date": "2026-10-16",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-aws-artifact-aws-compliance-security-assurance-at-amazon-web-services-aws-4480521935",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-17T09:39:29.454708+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "9123755407b2a57cb524",
+          "attempted_at": "2026-10-17T09:39:29.454708+00:00",
+          "outcome": "no_match"
+        },
+        "direct_careers": {
+          "input_hash": "f6c4b362d2aa3b061383",
+          "attempted_at": "2026-10-17T09:39:29.454708+00:00",
+          "outcome": "no_match"
+        },
+        "site_exact": {
+          "input_hash": "03eaaab5bb1fc65675c5",
+          "attempted_at": "2026-10-17T09:39:29.454708+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-10-17T09:39:42.762226+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Software development role is plausible; level and technical requirements are unknown."
+      },
+      "linkedin_detail_triage_hash": "e574d151d738715dfcb8",
+      "linkedin_detail_deferred_at": "2026-10-17T09:39:29.454708+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "source_verified_at": "2026-10-17T09:39:29.454708+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4462723016",
       "source": "linkedin",
       "company": "Amazon Web Services (AWS)",
@@ -9869,29 +9839,23 @@
       "title": "Sr. Software Dev Engineer, CloudTrail",
       "location": "Arlington, VA",
       "posted_date": "2026-09-24",
-      "aggregator_posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-10-16",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/sr-software-dev-engineer-cloudtrail-at-amazon-web-services-aws-4462716056",
       "official_url": "",
-      "description": "Description The CloudTrail team builds and manages one of the largest audit logging systems in the world, providing our users visibility into user activity and resources changes in AWS. Our data is a vital part of how AWS customers demonstrate compliance with internal policies or regulatory standards, create event-based workflows and alarming, perform security analysis, and troubleshoot operational issues. Every single AWS customer has CloudTrail enabled by default, which means we work with nearly every other AWS service and build scalable systems that process massive amounts of data. We have many interesting problems to solve. Customers want us to be broader, deeper, faster, and smarter. This is a full-stack, experienced development position, leaning towards back-end work. Key job responsibilities Help define the system architecture, own and implement specific components, and help shape the overall experience Build highly available, secure, scalable, distributed and event-driven systems. Contribute to planning, architecture design, implementation, testing, and process improvement. This position involves on-call responsibilities, typically for one week every two months. A day in the life Be part of something really big, as you are working on a key pillar of AWS’s extensive service portfolio. Learn from the best, as you are working on challenging engineering tasks in a team of very experienced experts that are close to support you. Be part of a great team, as we invest a lot to create an inclusive environment that allows you to perform at your best, while maintaining a fun atmosphere. About The Team Our team is intentional about attracting, developing, and retaining amazing talent from diverse backgrounds. Yes we do get to build a really cool service, but we also think a big reason for that is the inclusive and welcoming culture we try to cultivate every day. We’re looking for a new teammate who is enthusiastic, empathetic, curious, motivated, reliable, and able to work effectively with a diverse team of peers; someone who will help us amplify the positive & inclusive team culture we’ve been building. Basic Qualifications 5+ years of non-internship professional software development experience 5+ years of programming with at least one software programming language experience 5+ years of leading design or architecture (design patterns, reliability and scaling) of new and existing systems experience Experience as a mentor, tech lead or leading an engineering team Preferred Qualifications 5+ years of full software development life cycle, including coding standards, code reviews, source control management, build processes, testing, and operations experience Bachelor's degree in computer science or equivalent Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability, or other legally protected status. Our inclusive culture empowers Amazonians to deliver the best results for our customers. If you have a disability and need a workplace accommodation or adjustment during the application and hiring process, including support for the interview or onboarding process, please visit https://amazon.jobs/content/en/how-we-hire/accommodations for more information. If the country/region you’re applying in isn’t listed, please contact your Recruiting Partner. The base salary range for this position is listed below. Your Amazon package will include sign-on payments and restricted stock units (RSUs). Final compensation will be determined based on factors including experience, qualifications, and location. Amazon also offers comprehensive benefits including health insurance (medical, dental, vision, prescription, Basic Life & AD&D insurance and option for Supplemental life plans, EAP, Mental Health Support, Medical Advice Line, Flexible Spending Accounts, Adoption and Surrogacy Reimbursement coverage), 401(k) matching, paid time off, and parental leave. Learn more about our benefits at https://amazon.jobs/en/benefits. USA, VA, Arlington - 168,100.00 - 227,400.00 USD annually Company - Amazon Development Center U.S., Inc. Job ID: A10526602",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
-      "first_seen": "",
+      "first_seen": "2026-09-25T00:23:12.021854+00:00",
       "discovery_queries": {
         "linkedin": [
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T15:21:10.627483+00:00",
-      "official_search_status": "no_match",
-      "linkedin_detail_fetched_at": "2026-09-25T11:28:48.944084+00:00",
-      "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_cache",
-      "enrichment_status": "resolved",
-      "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T15:21:10.627483+00:00",
-      "verified_this_run": false
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-17T09:39:29.454708+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470203725",
@@ -10519,6 +10483,35 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-07T04:46:48.535112+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4479602490",
+      "source": "linkedin",
+      "company": "American Express",
+      "title": "Software Engineer III, Full Stack - Global Servicing Technology",
+      "location": "Sunrise, FL",
+      "posted_date": "2026-10-17",
+      "aggregator_posted_date": "2026-10-17",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-iii-full-stack-global-servicing-technology-at-american-express-4479602490",
+      "official_url": "",
+      "description": "Joining Amex Tech means discovering and shaping your contribution to something big. Here, you can work alongside talented tech teams and build a unique career with the Powerful Backing of American Express. With a range of opportunities to work with the latest technologies, and a commitment to back the broader engineering community through open source, our mission is to power your success. Because Amex Tech is powered by our technology, our culture, and our colleagues. The Technology organization enables and accelerates the company’s growth strategies, delivering global capabilities and services in support of Amex’s customers and colleagues, while maintaining 24/7 servicing and availability to ensure an uninterrupted, high\\-quality customer experience. Technology provides the foundation for everything we do in the company while driving differentiation through building and leveraging innovative technology and data insights. The Servicing Experiences Technology (SET) organization enhances Servicing Experiences by building smarter platforms with seamless automation and AI\\-driven insights\\- empowering Colleagues and Customers alike. We are seeking a Full Stack Software Engineer with expertise in Java, JavaScript, React.js, Python, and Cloud Engineering to design, develop, and deploy scalable, secure, and high\\-performance web applications. The ideal candidate will have experience in microservices architecture, RESTful API development, cloud\\-native applications, DevOps practices, and CI/CD automation. * Bachelor’s or Master’s degree in Computer Science, Information Technology, Software Engineering, or related field. * 5\\+ years of experience in full stack software development. * Strong programming experience in: + Java (Spring Boot, Spring MVC, Hibernate) JavaScript (ES6\\+) React.js Python * Experience with REST APIs, JSON, and microservices architecture. * Experience with SQL and NoSQL databases. * Knowledge of Cloud Storage, Cloud SQL or BigQuery. * Hands\\-on experience with AWS, Azure, or GCP cloud services. * Experience with Docker, Kubernetes, and container\\-based deployments. * Knowledge of CI/CD pipelines and DevOps methodologies. * Proficiency in Git version control. Preferred Qualifications: * Experience with serverless architecture (AWS Lambda, Azure Functions). * Experience with Amex Enterprise Platforms like OneApp, OneData, RTF, ELF, etc is a plus. * Knowledge of message queues (Kafka, RabbitMQ). * Experience with API Gateway and cloud networking. * Cloud certifications (AWS Certified Developer, Azure Developer Associate, GCP Professional Cloud Developer). * Employment eligibility to work with American Express in the United States is required as the company will not pursue visa sponsorship for these positions. At American Express, our culture is built on a 175\\-year history of innovation, shared values and Leadership Behaviors, and an unwavering commitment to back our customers, communities, and colleagues. From delivering differentiated products to providing world\\-class customer service, we operate with a strong risk mindset, ensuring we continue to uphold our brand promise of trust, security, and service. As part of Team Amex, you’ll experience our powerful backing with comprehensive support for your holistic well\\-being and many opportunities to learn new skills, develop as a leader, and grow your career. Here, your voice and ideas matter, your work makes an impact, and together, you will help us define the future of American Express. We back you with benefits that support your holistic well\\-being so you can be and deliver your best. This means caring for you and your loved ones' physical, financial, and mental health, as well as providing the flexibility you need to thrive personally and professionally: * Competitive base salaries * Bonus incentives * 6% Company Match on retirement savings plan * Free financial coaching and financial well\\-being support * Comprehensive medical, dental, vision, life insurance, and disability benefits * Flexible working model with hybrid, onsite or virtual arrangements depending on role and business need * 20\\+ weeks paid parental leave for all parents, regardless of gender, offered for pregnancy, adoption or surrogacy * Free access to global on\\-site wellness centers staffed with nurses and doctors (depending on location) * Free and confidential counseling support through our Healthy Minds program * Career development and training opportunities For a full list of Team Amex benefits, visit our Colleague Benefits Site . American Express is an equal opportunity employer and makes employment decisions without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, veteran status, disability status, age, or any other status protected by law. American Express will consider for employment all qualified applicants, including those with arrest or conviction records, in accordance with the requirements of applicable state and local laws, including the California Fair Chance Act, the Los Angeles County Fair Chance Ordinance for Employers, and the City of Los Angeles’ Fair Chance Initiative for Hiring Ordinance. For positions covered by federal and/or state banking regulations, American Express will comply with such regulations as it relates to the consideration of applicants with criminal convictions. We back our colleagues with the support they need to thrive, professionally and personally. That's why we have Amex Flex, our enterprise working model that provides greater flexibility to colleagues while ensuring we preserve the important aspects of our unique in\\-person culture. Depending on role and business needs, colleagues will either work onsite, in a hybrid model (combination of in\\-office and virtual days) or fully virtually. US Job Seekers \\- Click to view the “ Know Your Rights ” poster. If the link does not work, you may access the poster by copying and pasting the following URL in a new browser window: https://www.eeoc.gov/poster.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-17T09:39:29.454708+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "jd_recovery_at": "2026-10-17T09:39:29.454708+00:00",
+      "enrichment_method": "exact_indeed_peer",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-17T09:39:29.454708+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4453755191",
@@ -14251,7 +14244,7 @@
         }
       },
       "source_verified_at": "2026-10-12T22:00:12.775149+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4408940437",
@@ -17984,7 +17977,7 @@
       "official_search_status": "no_match",
       "enrichment_status": "deferred",
       "source_verified_at": "2026-10-12T22:00:12.775149+00:00",
-      "verified_this_run": true,
+      "verified_this_run": false,
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "normal",
@@ -19284,29 +19277,23 @@
       "title": "Software Development Engineer III",
       "location": "New York, NY",
       "posted_date": "2026-09-24",
-      "aggregator_posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-10-16",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-iii-at-clear-4471641260",
       "official_url": "",
-      "description": "CLEAR is building THE secure identity company of the future. Our mission is to make experiences safer and easier—physically and digitally. With more than 43 million Members and a growing network of partners across the world, CLEAR's secure identity platform is transforming the way people live, work, and travel. Whether it’s at the airport, stadium, or throughout your everyday life, CLEAR unlocks the magic of frictionless experiences. CLEAR is building THE secure identity company of the future. Our mission is to make experiences safer and easier—physically and digitally. With more than 43 million Members and a growing network of partners across the world, CLEAR's secure identity platform is transforming the way people live, work, and travel. Whether it’s at the airport, stadium, or throughout your everyday life, CLEAR unlocks the magic of frictionless experiences. We're looking for Senior Fullstack Software Engineers to help build the next generation of CLEAR's mission and vision. Beyond verifying identity, we're creating a secure, networked digital identity that enables seamless experiences across travel, enterprise, healthcare, financial services, and beyond. As a Senior Software Engineer III, you'll own complex technical problems from design through deployment, partnering closely with Product, Design, Security, and Operations to deliver reliable, scalable solutions. We're looking for engineers with a strong builder mindset who thrive in ambiguity, take ownership, and enjoy turning ideas into production systems. Level and team matching (open roles across the three pillars that make up Technology at CLEAR: Core Identity, CLEAR1, and CLEAR Travel) will occur towards the end of our interview process. Tech stack overview: A brief highlight of our tech stack: Java / Kafka / Postgres AWS cloud What you'll do: Advance our capabilities across a wide array of industries and domains and gain hands-on experience with privacy, security, data modeling and architecture Develop and deliver code across the full stack, driving engineering excellence by defining to best practices in testing, documentation and observability Partner with product and other stakeholders to uncover requirements, to innovate, and to solve complex problems Have a strong sense of ownership, responsible for architectural decision-making and striving for continuous improvement in technology and processes at CLEAR What you’re great at: 6+ years of backend software development experience in Java Working with cloud-based application development, and being fluent in at least a few of: Cloud service providers like AWS Containerization technologies like Docker and Kubernetes Collaboration, integration, and deployment tools like Github, Argo, and Jenkins Articulating technical concepts to a mixed audience of technical and non-technical stakeholders Collaborating and mentoring less experienced members of the team Comfort with ambiguity Curiosity about technology, belief in constant learning, and athe bility to be autonomous to figure out what's important How You’ll be Rewarded: At CLEAR, we help YOU move forward - because when you’re at your best, we’re at our best. You’ll work with talented team members motivated by our mission of making experiences safer and easier. Our offices are bright and energetic with an open concept and plenty of conference rooms and casual co-working spaces. We also offer catered lunches every day and have fully stocked kitchens. Outside of the office, we invest in your well-being and learning & development with stipends and reimbursement programs. We offer holistic total rewards, including comprehensive healthcare plans, family-building benefits (fertility and adoption/surrogacy support), flexible time off, annual wellness stipend, free OneMedical memberships for you and your dependents, a CLEAR Plus membership, and a 401(k) retirement plan with employer match. The total compensation range for this role is $220,000 to $290,000 , depending on levels of skills and experience. This range represents the combined base salary, annual bonus incentive, and new hire equity package (in Restricted Stock Units) for this position at CLEAR. Additionally, this role will be eligible for refresh equity grants as part of our ongoing compensation program. Actual compensation will vary based on factors including, but not limited to, location, education, skills, experience, and performance. All stock based compensation will be subject to the terms and conditions of applicable agreements. Qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, protected veteran status or other characteristics protected by law. CLEAR provides reasonable accommodation to qualified individuals with disabilities or protected needs. Please let us know if you require a reasonable accommodation to apply for a job or perform your job. Examples of reasonable accommodation include, but are not limited to, time off, extra breaks, making a change to the application process or work procedures, policy exceptions, providing documents in an alternative format, live captioning or using a sign language interpreter, or using specialized equipment. We are committed to a transparent and secure hiring process. All communications related to this role will come directly from a CLEAR employee through valid CLEAR channels (e.g., a valid @clearme.com email address or verified CLEAR LinkedIn profile). We encourage candidates to remain alert to job scams and to report any suspicious activity.",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
-      "first_seen": "",
+      "first_seen": "2026-09-25T00:23:12.021854+00:00",
       "discovery_queries": {
         "linkedin": [
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T17:55:58.757959+00:00",
-      "official_search_status": "deferred",
-      "linkedin_detail_fetched_at": "2026-09-25T11:28:48.944084+00:00",
-      "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_cache",
-      "enrichment_status": "resolved",
-      "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T17:55:58.757959+00:00",
-      "verified_this_run": false
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-17T09:39:29.454708+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4447333568",
@@ -30076,6 +30063,52 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4480806450",
+      "source": "linkedin",
+      "company": "Dexcom",
+      "title": "SW Development Engineer 1",
+      "location": "Portland, OR",
+      "posted_date": "2026-10-17",
+      "aggregator_posted_date": "2026-10-17",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sw-development-engineer-1-at-dexcom-4480806450",
+      "official_url": "",
+      "description": "The Company Dexcom Corporation (NASDAQ DXCM) is a pioneer and global leader in continuous glucose monitoring (CGM). Dexcom began as a small company with a big dream: To forever change how diabetes is managed. To unlock information and insights that drive better health outcomes. Here we are 25 years later, having pioneered an industry. And we're just getting started. We are broadening our vision beyond diabetes to empower people to take control of health. That means personalized, actionable insights aimed at solving important health challenges. To continue what we've started: Improving human health. We are driven by thousands of ambitious, passionate people worldwide who are willing to fight like warriors to earn the trust of our customers by listening, serving with integrity, thinking big, and being dependable. We've already changed millions of lives and we're ready to change millions more. Our future ambition is to become a leading consumer health technology company while continuing to develop solutions for serious health conditions. We'll get there by constantly reinventing unique biosensing-technology experiences. Though we've come a long way from our small company days, our dreams are bigger than ever. The opportunity to improve health on a global scale stands before us. Meet The Team Are you excited about the potential of technology to transform the lives of people with diabetes? Join our dedicated and forward-thinking engineering team at Dexcom – a leading company committed to revolutionizing diabetes management. We're on a mission to empower healthcare professionals and individuals with diabetes and improve health and quality of life. We value curiosity, ownership, continuous learning, and thoughtful problem-solving. This is an opportunity to grow your engineering career while helping build software that improves lives. Where You Come In You participate in end-to-end development, including coding, testing, debugging, and deployments You collaborate with testers, designers, and our product owner You evaluate the tradeoffs of technical choices, and participate in decision making You participate in daily stand-ups, and biweekly retrospectives You explore & grow in our weekly Learning Labs You embrace developer autonomy in our biweekly hackathons You improve the lives of people with diabetes across the globe You empower doctors and patients through your work on Dexcom Clarity What Makes You Successful You have and a desire to learn the key parts of our tech stack: Typescript, Node.js, Ruby, PostgreSQL, Redis, Kubernetes. You prefer working in a collaborative, highly communicative, team environment You’re excited to make iterative improvements to our product every day You are eager to learn and love to stay up to date with the latest technology You’re comfortable asking for help to solve tough problems You believe that good testing is critical to creating good software You are comfortable supporting and coaching others What You’ll Get A front row seat to life changing CGM technology. Learn about our brave #dexcomwarriors community. A full and comprehensive benefits program. Growth opportunities on a global scale. Access to career development through in-house learning programs and/or qualified tuition reimbursement. An exciting and innovative, industry-leading organization committed to our employees, customers, and the communities we serve. Travel Required 0-5% Experience And Education Requirements Typically requires a Bachelor’s degree in a technical discipline, and a minimum of 0-2 years related experience. Please note: The information contained herein is not intended to be an all-inclusive list of the duties and responsibilities of the job, nor are they intended to be an all-inclusive list of the skills and abilities required to do the job. Management may, at its discretion, assign or reassign duties and responsibilities to this job at any time. The duties and responsibilities in this job description may be subject to change at any time due to reasonable accommodation or other reasons. Reasonable accommodations may be made to enable individuals with disabilities to perform essential functions. An Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, age, national origin, or protected veteran status and will not be discriminated against on the basis of disability. Dexcom’s AAP may be viewed upon request by contacting Talent Acquisition at talentacquisition@dexcom.com. If you are an individual with a disability and would like to request a reasonable accommodation as part of the employment selection process, please contact Dexcom Talent Acquisition at talentacquisition@dexcom.com. Meritain, an Aetna Company, creates and publishes the Machine-Readable Files on behalf of Dexcom. To link to the Machine-Readable Files, please click on the URL provided: https://health1.meritain.com/app/public/#/one/insurerCode=MERITAIN_I&brandCode=MERITAINOVER/machine-readable-transparency-in-coverage?reportingEntityType=TPA_19874&lock=true To all Staffing and Recruiting Agencies: Our Careers Site is only for individuals seeking a job at Dexcom. Only authorized staffing and recruiting agencies may use this site or to submit profiles, applications or resumes on specific requisitions. Dexcom does not accept unsolicited resumes or applications from agencies. Please do not forward resumes to the Talent Acquisition team, Dexcom employees or any other company location. Dexcom is not responsible for any fees related to unsolicited resumes/applications. AI in Hiring Notice: We may use AI supported tools to help make our hiring process more efficient, consistent, and accessible for candidates around the world. All hiring decisions are made by people. Salary $68,200.00 - $113,600.00 #DexcomUS",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-17T09:39:29.454708+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "b5b783005022b834f8a6",
+          "attempted_at": "2026-10-17T09:39:29.454708+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-10-17T09:39:29.454708+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "SDE I is early-career aligned; responsibilities and requirements could affect fit."
+      },
+      "linkedin_detail_triage_hash": "17a77828d4ddc5f08924",
+      "linkedin_detail_attempted_at": "2026-10-17T09:39:41.976823+00:00",
+      "linkedin_detail_fetched_at": "2026-10-17T09:39:41.976823+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-10-17T09:39:29.454708+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4469988512",
       "source": "linkedin",
       "company": "DigitalOcean",
@@ -33872,6 +33905,59 @@
       "linkedin_detail_fetched_at": "2026-10-08T22:54:54.799888+00:00",
       "linkedin_detail_resolved": true,
       "enrichment_method": "linkedin_http"
+    },
+    {
+      "job_id": "4479683118",
+      "source": "linkedin",
+      "company": "Expedia Group",
+      "title": "Software Development Engineer II",
+      "location": "Austin, TX",
+      "posted_date": "2026-10-17",
+      "aggregator_posted_date": "2026-10-17",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-ii-at-expedia-group-4479683118",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-10-17T09:39:29.454708+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "95c752030458c76a768e",
+          "attempted_at": "2026-10-17T09:39:29.454708+00:00",
+          "outcome": "no_match"
+        },
+        "direct_careers": {
+          "input_hash": "0e0d2f7a6c8116b67262",
+          "attempted_at": "2026-10-17T09:39:29.454708+00:00",
+          "outcome": "no_match"
+        },
+        "site_exact": {
+          "input_hash": "a3e1df99a04b6a324bb3",
+          "attempted_at": "2026-10-17T09:39:29.454708+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-10-17T09:39:42.762226+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "SDE II may fit with relevant experience; requirements could change the decision."
+      },
+      "linkedin_detail_triage_hash": "365437e2758e2751e161",
+      "linkedin_detail_deferred_at": "2026-10-17T09:39:29.454708+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "source_verified_at": "2026-10-17T09:39:29.454708+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470088171",
@@ -37747,29 +37833,23 @@
       "title": "Senior Backend Software Engineer - GM Energy",
       "location": "Sunnyvale, CA",
       "posted_date": "2026-09-24",
-      "aggregator_posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-10-16",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-backend-software-engineer-gm-energy-at-general-motors-4443945149",
       "official_url": "",
-      "description": "Job Description The Role: As a Senior Software Engineer focused on backend platform and API ownership, you will design, build, and operate scalable backend services that power critical product and business capabilities. You will be responsible for developing secure, reliable, and maintainable APIs and platform services, improving system performance and observability, and helping raise the engineering bar across the team. What You’ll Do: This position sits within the Energy Solutions organization and is aligned to a senior individual contributor software engineering scope. The role is expected to partner closely with product, frontend, platform, QA, DevOps, and adjacent engineering teams to deliver backend systems that are scalable, reliable, and production-ready. Design, develop, test, deploy, and support backend services and APIs for internal and customer-facing applications Own service architecture and technical design decisions for backend platform capabilities Build secure and reusable APIs, service integrations, and shared backend components Improve system scalability, performance, resilience, and operational excellence across services Lead implementation of logging, monitoring, alerting, and observability best practices Partner with product and engineering stakeholders to translate requirements into robust technical solutions Drive code quality through code reviews, testing strategy, documentation, and engineering standards Troubleshoot production issues, perform root cause analysis, and implement preventive fixes Mentor other engineers and contribute to stronger backend development practices across the team Support CI/CD, release readiness, and automation efforts that improve delivery speed and reliability Own backend service development across the software development lifecycle Define and enforce API design standards, versioning practices, and service reliability expectations Build integrations with internal and external systems using modern service-based patterns Write efficient, maintainable, and well-tested code with a strong focus on security and scalability Collaborate across teams to reduce technical debt and improve platform consistency Contribute to architectural reviews and influence backend technical direction Help establish measurable service health indicators and operational guardrails Your Skills & Abilities (Required Qualifications): Bachelor’s degree in Computer Science, Software Engineering, Computer Engineering, or a related technical field, or equivalent practical experience 5+ years of professional software engineering experience Strong hands-on experience building backend applications and production APIs Proficiency in one or more backend programming languages such as Java, Kotlin, Python, Go, or similar Experience designing and consuming RESTful APIs and service-to-service integrations Experience working with cloud platforms and distributed systems Strong understanding of software engineering fundamentals including testing, debugging, version control, and code review Experience with relational and/or NoSQL databases, data modeling, and performance tuning Demonstrated ability to independently solve moderately complex engineering problems and deliver production-quality software Strong collaboration and communication skills What Will Give You A Competitive Edge (Preferred Qualifications): Experience building platform services or shared backend capabilities used by multiple teams Experience with Azure and cloud-native architecture patterns Experience with containerization and orchestration technologies such as Docker and Kubernetes Experience with event-driven systems, messaging, or asynchronous processing Experience with CI/CD pipelines, infrastructure automation, and DevOps practices Experience with observability tooling, service monitoring, and operational support Experience improving nonfunctional requirements such as security, scalability, reliability, and maintainability Familiarity with regulated, enterprise, or large-scale product environments Compensation: The compensation information is a good faith estimate only. It is based on what a successful applicant might be paid in accordance with applicable state laws. The actual base salary a successful candidate will be offered within this range will vary based on factors relevant to the position, as well as geography of the selected candidate. The salary range for this role is $129,400 - $198,400. The actual base salary a successful candidate will be offered within this range will vary based on factors relevant to the position. Bonus Potential: An incentive pay program offers payouts based on company performance, job level, and individual performance. Benefits: Benefits: GM offers a variety of health and wellbeing benefit programs. Benefit options include medical, dental, vision, Health Savings Account, Flexible Spending Accounts, retirement savings plan, sickness and accident benefits, life insurance, paid vacation & holidays, tuition assistance programs, employee assistance program, GM vehicle discounts and more. GM does not provide immigration-related sponsorship for this role. Do not apply for this role if you will need GM immigration sponsorship now or in the future. This includes direct company sponsorship, entry of GM as the immigration employer of record on a government form, and any work authorization requiring a written submission or other immigration support from the company (e.g., H1-B, OPT, STEM OPT, CPT, TN, J-1, etc). This role is categorized as hybrid. This means the selected candidate is expected to report to a specific location at least 3 times a week {or other frequency dictated by their manager}. This job may be eligible for relocation benefits. About GM Our vision is a world with Zero Crashes, Zero Emissions and Zero Congestion and we embrace the responsibility to lead the change that will make our world better, safer and more equitable for all. Why Join Us We believe we all must make a choice every day – individually and collectively – to drive meaningful change through our words, our deeds and our culture. Every day, we want every employee to feel they belong to one General Motors team. Benefits Overview From day one, we're looking out for your well-being–at work and at home–so you can focus on realizing your ambitions. Learn how GM supports a rewarding career that rewards you personally by visiting Total Rewards resources . Non-Discrimination and Equal Employment Opportunities (U.S.) General Motors is committed to being a workplace that is not only free of unlawful discrimination, but one that genuinely fosters inclusion and belonging. We strongly believe that providing an inclusive workplace creates an environment in which our employees can thrive and develop better products for our customers. All employment decisions are made on a non-discriminatory basis without regard to sex, race, color, national origin, citizenship status, religion, age, disability, pregnancy or maternity status, sexual orientation, gender identity, status as a veteran or protected veteran, or any other similarly protected status in accordance with federal, state and local laws. We encourage interested candidates to review the key responsibilities and qualifications for each role and apply for any positions that match their skills and capabilities. Applicants in the recruitment process may be required, where applicable, to successfully complete a role-related assessment(s) and/or a pre-employment screening prior to beginning employment. To learn more, visit How we Hire . Accommodations General Motors offers opportunities to all job seekers including individuals with disabilities. If you need a reasonable accommodation to assist with your job search or application for employment, email us or call us at 1-800-865-7580. In your email, please include a description of the specific accommodation you are requesting as well as the job title and requisition number of the position for which you are applying.",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
-      "first_seen": "",
+      "first_seen": "2026-09-25T00:23:12.021854+00:00",
       "discovery_queries": {
         "linkedin": [
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T11:28:01.704188+00:00",
-      "official_search_status": "deferred",
-      "linkedin_detail_fetched_at": "2026-09-25T07:49:35.464359+00:00",
-      "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_cache",
-      "enrichment_status": "resolved",
-      "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T11:28:01.704188+00:00",
-      "verified_this_run": false
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-17T09:39:29.454708+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4443948088",
@@ -38637,7 +38717,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-12T22:00:12.775149+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4450755506",
@@ -49277,7 +49357,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-12T22:00:12.775149+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471928466",
@@ -62493,7 +62573,7 @@
       "linkedin_detail_attempted_at": "2026-10-08T22:54:54.799888+00:00",
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-12T22:00:12.775149+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469970529",
@@ -63805,7 +63885,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-12T22:00:12.775149+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4472474363",
@@ -76041,7 +76121,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-12T22:00:12.775149+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470412911",
@@ -83784,7 +83864,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-12T22:00:12.775149+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4475051101",
@@ -88269,30 +88349,24 @@
       "title": "Software Development Engineer",
       "location": "Mason, OH",
       "posted_date": "2026-09-24",
-      "aggregator_posted_date": "2026-09-24",
+      "aggregator_posted_date": "2026-10-16",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-at-workday-4432331549",
       "official_url": "",
-      "description": "Your work days are brighter here. We’re obsessed with making hard work pay off, for our people, our customers, and the world around us. As a Fortune 500 company and a leading AI platform for managing people, money, and agents, we’re shaping the future of work so teams can reach their potential and focus on what matters most. The minute you join, you’ll feel it. Not just in the products we build, but in how we show up for each other. Our culture is rooted in integrity, empathy, and shared enthusiasm. We’re in this together, tackling big challenges with bold ideas and genuine care. We look for curious minds and courageous collaborators who bring sun-drenched optimism and drive. Whether you're building smarter solutions, supporting customers, or creating a space where everyone belongs, you’ll do meaningful work with Workmates who’ve got your back. In return, we’ll give you the trust to take risks, the tools to grow, the skills to develop and the support of a company invested in you for the long haul. So, if you want to inspire a brighter work day for everyone, including yourself, you’ve found a match in Workday, and we hope to be a match for you too. About The Team About the Role Work on our VNDLY Platform space which is primarily responsible for settings, notifications and reporting areas of the application inctuding feature development, testing, bug fixing, maintenance, and support. Collaborate with a team to demonstrate full project life cycle plans for complex projects. Write well-designed, testable, and efficient code to ensure customer satisfaction. Work and grow on all aspects of our technology pipeline. Salary Range: $139,027 - $185,900 About You Basic Qualifications Bachelor's degree in Software Engineering, Computer Science, Information Systems, or related field and 5 years of experience in the job offered or in a Software Development Engineer-related occupation. 5 years (60 months) of experience in Software Development; 5 years (60 months) of experience in writing RESTful web services; 5 years (60 months) of experience with code versioning tools such as Git using Bitbucket or GitHub; 5 years (60 months) of experience in JavaScript Frameworks; 5 years (60 months) of experience in Python, with knowledge of at least one Python web framework such as Django or Flask; 5 years (60 months) of experience in SaaS applications, SaaS deployment models, and SaaS DevOps; 5 years (60 months) of experience in Amazon Web Services (AWS); and 5 years (60 months) of experience with ability to debug and review complex codes. Workday Pay Transparency Statement Workday pay ranges vary based on work location. As a part of the total compensation package, this role may be eligible for the Workday Bonus Plan or a role-specific commission/bonus, as well as annual refresh stock grants. Recruiters can share more detail during the hiring process. Each candidate’s compensation offer will be based on multiple factors including, but not limited to, geography, experience, skills, job duties, and business need, among other things. For more information regarding Workday’s comprehensive benefits, please click here. Primary Location: USA.OH.Mason Our Approach to Flexible Work Workday uses a hybrid Flex Work Model. Most roles require at least 50% in-person time each quarter in a Workday office or with customers, prospects, or partners, with specific expectations varying by role, team, country, and business needs. Pursuant to applicable Fair Chance law, Workday will consider for employment qualified applicants with arrest and conviction records. Workday is an Equal Opportunity Employer including individuals with disabilities and protected veterans. Workday is committed to providing reasonable accommodations for qualified individuals during our application process, in order to perform one or more essential functions of their job, as well as regarding the use of AI tools for employment decision-making to any degree. Please see below for more details including how to request an accommodation as a qualified veteran, due to a disability or for religious reasons, or as otherwise provided under applicable law. Workday prohibits taking adverse action against any candidate or employee for reporting a possible violation of this policy, requesting one or more work accommodations, exercising a privacy right, or cooperating in an investigation in accordance with applicable law. Any employee who retaliates against a candidate or employee for doing so may be subject to disciplinary action, up to and including termination of employment, to the fullest extent allowable under applicable law. If you require a reasonable accommodation, you should open a People Guide Request (current employees only), or you may email accommodations@workday.com, as far in advance as possible. Are you being referred to one of our roles? If so, ask your connection at Workday about our Employee Referral process! At Workday, we value our candidates’ privacy and data security. Workday will never ask candidates to apply to jobs through websites that are not Workday Careers. Please be aware of sites that may ask for you to input your data in connection with a job posting that appears to be from Workday but is not. In addition, Workday will never ask candidates to pay a recruiting fee, or pay for consulting or coaching services, in order to apply for a job at Workday.",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
-      "first_seen": "",
+      "first_seen": "2026-09-25T00:23:12.021854+00:00",
       "discovery_queries": {
         "linkedin": [
           "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-25T11:28:01.704188+00:00",
-      "official_search_status": "no_match",
       "linkedin_detail_attempted_at": "2026-09-25T11:28:48.944084+00:00",
-      "linkedin_detail_fetched_at": "2026-09-25T11:28:48.944084+00:00",
-      "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http",
-      "enrichment_status": "resolved",
-      "direct_original_fetched": true,
-      "source_verified_at": "2026-09-25T11:28:01.704188+00:00",
-      "verified_this_run": false
+      "recovery_methods": {},
+      "source_verified_at": "2026-10-17T09:39:29.454708+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468195212",
@@ -88639,7 +88713,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-10-12T22:00:12.775149+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4473902415",
