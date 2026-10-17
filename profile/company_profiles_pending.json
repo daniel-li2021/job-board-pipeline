@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-17T14:48:43.430190+00:00",
-  "count": 4085,
+  "generated_at": "2026-10-17T14:55:23.571878+00:00",
+  "count": 4089,
   "companies": [
     {
       "name": "1199SEIU Benefit and Pension Funds",
@@ -846,15 +846,17 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "0ca596c7440607bca52c3135",
         "0dff9b8c113d14a3ad27ff3a",
         "0eac03c4307fd1fa4685a240",
         "0f8692bfb36f715a4ee8e6f9",
         "27b535c5a14954c1fc8c46d8",
+        "307e6f370e703c15bcc4dc66",
         "4ce365f4c98633cf97761664",
         "67ba542ff9092dd2d5dfe566",
         "e288864d57856d8105bdc0a3"
       ],
-      "seen_count": 7
+      "seen_count": 9
     },
     {
       "name": "Adelphi Data",
@@ -4539,6 +4541,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Atto Trading Technologies",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "6c9926ee72a575f184d4d33c"
+      ],
       "seen_count": 1
     },
     {
@@ -9096,6 +9111,19 @@
       "seen_count": 1
     },
     {
+      "name": "Celestica",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "7319572f51a5890cd1f1787e"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Celink",
       "aliases": [],
       "size": "unknown",
@@ -10518,6 +10546,19 @@
         "ba382f3c1013d40a7a47294e"
       ],
       "seen_count": 3
+    },
+    {
+      "name": "Client Server",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "3e5934016af957e1a98e7512"
+      ],
+      "seen_count": 1
     },
     {
       "name": "Clinical Ink",
@@ -17864,21 +17905,25 @@
       "tags": [],
       "seen_job_keys": [
         "0037626e73d4618c6338887a",
+        "3e72dbc8c981ebba05e3393a",
         "456dca74c5c6459d58f2a920",
         "4d3f1fc5e5ce30b7419db8bd",
         "5bf3059c90677eadb37abd50",
         "5c34a5b8e55933153c850ac4",
+        "6bfded6123d79c5b411cccdf",
         "6d53adadc45392cccfcd418a",
         "7f7e360c33a4d5fdf107fee4",
         "8cf583f5c0de0d1c28fa4b96",
+        "9dbfda1d025d3711085221bb",
         "a662c31655a20558418e0bfe",
+        "ac241f180d5d3d504bd440b4",
         "aceade2d7cbee29da299eeda",
         "b9320e04bf4d815a9f4495d4",
         "c1b76d0933427202ccf0cc5a",
         "f2fa387ccb1a66cb4ece16d5",
         "f6ae422c61acdf336994cd10"
       ],
-      "seen_count": 14
+      "seen_count": 18
     },
     {
       "name": "Fetcherr",
@@ -21992,9 +22037,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "0c4fd2b32eb42449fc01378a",
         "50a72cc0afdab053388f8401"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Handi Quilter",
@@ -26299,7 +26345,9 @@
       "sponsor": "likely",
       "type": "industrial",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "f196fb5a52f400aafd6275eb"
+      ],
       "seen_count": 1
     },
     {
@@ -26830,6 +26878,19 @@
       "tags": [],
       "seen_job_keys": [
         "51557a98a58e90569c53541b"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Kainos",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "218b17e117015a75df1396a1"
       ],
       "seen_count": 1
     },
@@ -46336,7 +46397,9 @@
       "sponsor": "likely",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "a66f6e19fc97427f8d5870e7"
+      ],
       "seen_count": 1
     },
     {
@@ -47458,10 +47521,11 @@
         "b5596cbc3a6f291442e33420",
         "b572888543f0efaf2ffcc9b2",
         "b8f8227e239182956954f2c5",
+        "ceaa26579535d2f905dd1204",
         "d358f547ee88befcd30b69e3",
         "fb021ecc837df3b0bea88742"
       ],
-      "seen_count": 17
+      "seen_count": 18
     },
     {
       "name": "Tia",
