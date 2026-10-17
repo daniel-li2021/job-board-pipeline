@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-16 17:21 PDT
-- Snapshot (UTC): 2026-10-17T00:21:58.167632+00:00
-- Jobs: 64 (Tier A/B only)
-- Last 24 hours: 41
-- Last 3 days: 64
+- Updated (PT): 2026-10-17 02:40 PDT
+- Snapshot (UTC): 2026-10-17T09:40:40.550954+00:00
+- Jobs: 66 (Tier A/B only)
+- Last 24 hours: 42
+- Last 3 days: 66
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -37,6 +37,7 @@ The 7-day dump is `latest.md`.
 | A | 86 | indeed | Abuv The Par | Full-Stack Engineer, Platform and Automations | Remote, US | 2026-10-15 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d3ab73b5d34810a9) |
 | A | 89 | indeed | UST | Software Engineer | Atlanta, GA, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=171e2cef2c5eed52) |
 | A | 86 | indeed | Infosys | Full Stack Developer | Phoenix, AZ, US | 2026-10-14 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=db36b84cd2d4226a) |
+| B | 76 | greenhouse | Lyft | Software Engineer | San Francisco, CA | 2026-10-16 | 1to3d | - | unreviewed | official_identity_unmatched | [open](https://app.careerpuck.com/job-board/lyft/job/8896679002?gh_jid=8896679002) |
 | B | 87 | indeed | Emplify Health | AI Software Engineer | Green Bay, WI, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=7510b55c2667eb70) |
 | B | 87 | indeed | Internet Soft | Full Stack Developer | San Jose, CA, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d71e36758d340a05) |
 | B | 85 | indeed | Innovare Technologies | Application Developer | San Jose, CA, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c5e21d470eb89738) |
@@ -57,6 +58,7 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed |  | Software Engineer I | Houston, TX, US | 2026-10-15 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d44b9b45330fee0b) |
 | B | 80 | indeed |  | Software Engineer | Birmingham, AL, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=245181197a246f14) |
 | B | 81 | indeed | Innovecture | MERN Full Stack Engineer – Legacy Modernization & AI | Phoenix, AZ, US | 2026-10-15 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=aa520ef83833eb46) |
+| B | 84 | linkedin | Expedia Group | Software Development Engineer II | Austin, TX | 2026-10-17 | newly_discovered | - | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/software-development-engineer-ii-at-expedia-group-4479683118) |
 | B | 83 | indeed |  | Junior Software Developer – Paid Training Provided | Detroit, MI, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2896e741e62936ba) |
 | B | 82 | indeed |  | Software Developer / AI-Assisted Development | Fairfield, CA, US | 2026-10-15 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=9aaba498f0dcd281) |
 | B | 81 | indeed | ERMCO | Software Design Engineer II | Dyersburg, TN, US | 2026-10-14 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=b29f1ed340e7a12c) |

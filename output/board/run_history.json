@@ -2,6 +2,255 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-17T09:40:40.550954+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 5,
+      "cache_reused": 353,
+      "peer_reused": 0,
+      "same_content_reused": 4,
+      "non_material_change_reused": 0,
+      "new_or_changed": 5,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 5
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1270,
+      "requests": 2,
+      "input_tokens": 9553,
+      "cached_input_tokens": 0,
+      "output_tokens": 1172,
+      "reasoning_tokens": 745,
+      "estimated_usd": 0.001541,
+      "latency_seconds": 15.339,
+      "latency_measured": true,
+      "effective_rpm": 7.82,
+      "effective_tpm": 41951.89,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 5,
+      "funnel": {
+        "after_dedup": 7342,
+        "after_company": 7061,
+        "after_hard_filter": 6517,
+        "after_prefilter": 2029,
+        "official_duplicates_suppressed": 401,
+        "retry_only_carried": 0,
+        "dropped": 5230
+      },
+      "output": {
+        "tier_a": 39,
+        "tier_b": 129,
+        "ab_before_cap": 168,
+        "shown": 168,
+        "new_jobs": 16,
+        "new_jobs_added": 2,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 11,
+            "added": 1
+          },
+          "linkedin": {
+            "found": 5,
+            "added": 1
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2666,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 28,
+          "identity_needed": 26,
+          "identities_resolved": 26,
+          "cache_reused": 1,
+          "http_requests": 25,
+          "remaining_no_jd": 2666,
+          "failure_reasons": {
+            "no_direct_or_official_url": 2
+          }
+        },
+        "remaining_no_jd": 2618,
+        "failure_reasons": {
+          "no_enrichment_path": 2111,
+          "linkedin_http_429": 4,
+          "official_detail_deferred": 49,
+          "no_direct_or_official_url": 2,
+          "linkedin_rate_limited": 74,
+          "linkedin_http_network_error": 2,
+          "glassdoor_detail_http_403_static_card_only": 376
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://app.careerpuck.com/job-board/lyft/job/8896679002?gh_jid=8896679002",
+              "company": "Lyft",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/affirm/jobs/7985860003",
+              "company": "Affirm",
+              "title": "Software Engineer II, Backend (Identity Decisioning)"
+            },
+            {
+              "key": "url::https://app.careerpuck.com/job-board/lyft/job/8896654002?gh_jid=8896654002",
+              "company": "Lyft",
+              "title": "Business Systems Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 11.332,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 4913,
+            "cached_input_tokens": 0,
+            "output_tokens": 800,
+            "reasoning_tokens": 551,
+            "estimated_usd": 0.000891
+          },
+          "decisions": [
+            {
+              "key": "url::https://app.careerpuck.com/job-board/lyft/job/8896679002?gh_jid=8896679002",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React and TypeScript delivery",
+                "Python backend development"
+              ],
+              "main_gaps": [
+                "Flask, DynamoDB, and SQS"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/affirm/jobs/7985860003",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend systems and APIs",
+                "AWS and MySQL experience"
+              ],
+              "main_gaps": [
+                "1.5+ years engineering experience"
+              ]
+            },
+            {
+              "key": "url::https://app.careerpuck.com/job-board/lyft/job/8896654002?gh_jid=8896654002",
+              "match_score": 34.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "SQL and cloud workflows"
+              ],
+              "main_gaps": [
+                "Oracle Fusion ERP",
+                "OTBI and BICC reporting"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://app.careerpuck.com/job-board/lyft/job/8896675002?gh_jid=8896675002",
+              "company": "Lyft",
+              "title": "Data Scientist"
+            },
+            {
+              "key": "url::https://app.careerpuck.com/job-board/lyft/job/8896671002?gh_jid=8896671002",
+              "company": "Lyft",
+              "title": "Data Scientist"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.007,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 4640,
+            "cached_input_tokens": 0,
+            "output_tokens": 372,
+            "reasoning_tokens": 194,
+            "estimated_usd": 0.00065
+          },
+          "decisions": [
+            {
+              "key": "url::https://app.careerpuck.com/job-board/lyft/job/8896675002?gh_jid=8896675002",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "ML pipeline experience",
+                "Production Python systems"
+              ],
+              "main_gaps": [
+                "Causal inference and experimentation",
+                "Statistical forecasting and optimization"
+              ]
+            },
+            {
+              "key": "url::https://app.careerpuck.com/job-board/lyft/job/8896671002?gh_jid=8896671002",
+              "match_score": 55.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Data pipeline experience",
+                "Model evaluation experience"
+              ],
+              "main_gaps": [
+                "Experiment design and analysis",
+                "Forecasting and growth metrics"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-17T00:21:58.167632+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -29617,356 +29866,6 @@
       },
       "comparison": {},
       "batches": []
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-10-12T19:42:51.336255+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 9,
-      "cache_reused": 173,
-      "peer_reused": 1,
-      "same_content_reused": 5,
-      "non_material_change_reused": 0,
-      "new_or_changed": 9,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 9
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1172,
-      "requests": 3,
-      "input_tokens": 14279,
-      "cached_input_tokens": 0,
-      "output_tokens": 2228,
-      "reasoning_tokens": 1505,
-      "estimated_usd": 0.002542,
-      "latency_seconds": 24.902,
-      "latency_measured": true,
-      "effective_rpm": 7.23,
-      "effective_tpm": 39772.71,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 3,
-      "primary_batches_total": 3,
-      "batches_attempted": 3,
-      "batches_succeeded": 3,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 9,
-      "funnel": {
-        "after_dedup": 6692,
-        "after_company": 6411,
-        "after_hard_filter": 5846,
-        "after_prefilter": 1759,
-        "official_duplicates_suppressed": 405,
-        "retry_only_carried": 0,
-        "dropped": 4838
-      },
-      "output": {
-        "tier_a": 19,
-        "tier_b": 122,
-        "ab_before_cap": 141,
-        "shown": 141,
-        "new_jobs": 41,
-        "new_jobs_added": 11,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 6,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 35,
-            "added": 11
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 2656,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 16,
-          "identity_needed": 4,
-          "http_requests": 4,
-          "identities_resolved": 4,
-          "jds_resolved": 1,
-          "direct_http_resolved": 1,
-          "remaining_no_jd": 2656,
-          "failure_reasons": {
-            "no_direct_or_official_url": 12
-          }
-        },
-        "remaining_no_jd": 2599,
-        "failure_reasons": {
-          "no_enrichment_path": 2090,
-          "official_detail_deferred": 44,
-          "linkedin_rate_limited": 72,
-          "no_direct_or_official_url": 12,
-          "linkedin_http_429": 3,
-          "linkedin_http_network_error": 2,
-          "glassdoor_detail_http_403_static_card_only": 376
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4477565982",
-              "company": "Wolverine Trading",
-              "title": "C++ Software Engineer (Early Career)"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 5.255,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 2590,
-            "cached_input_tokens": 0,
-            "output_tokens": 310,
-            "reasoning_tokens": 229,
-            "estimated_usd": 0.000414
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4477565982",
-              "match_score": 78.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Early-career software role",
-                "C++ and DSA fundamentals"
-              ],
-              "main_gaps": [
-                "Production C++ experience",
-                "Multithreaded performance systems"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4475678211",
-              "company": "CyberCoders",
-              "title": "AI/ML Engineer - Computer Vision"
-            },
-            {
-              "key": "id::linkedin::4476053016",
-              "company": "SoTalent",
-              "title": "Artificial Intelligence Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 6.645,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 2,
-            "input_tokens": 3742,
-            "cached_input_tokens": 0,
-            "output_tokens": 596,
-            "reasoning_tokens": 469,
-            "estimated_usd": 0.000672
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4475678211",
-              "match_score": 54.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production AI systems",
-                "Python model deployment"
-              ],
-              "main_gaps": [
-                "Computer vision models",
-                "Object detection and tracking"
-              ]
-            },
-            {
-              "key": "id::linkedin::4476053016",
-              "match_score": 76.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production LLM systems",
-                "AI evaluation frameworks"
-              ],
-              "main_gaps": [
-                "4+ years AI experience"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 3,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4475740088",
-              "company": "Chalk",
-              "title": "Software Engineer - New Grad"
-            },
-            {
-              "key": "id::linkedin::4477906248",
-              "company": "Optomi",
-              "title": "Artificial Intelligence Engineer"
-            },
-            {
-              "key": "id::linkedin::4478385502",
-              "company": "CoverMyMeds",
-              "title": "AI Full stack Software Engineer"
-            },
-            {
-              "key": "id::linkedin::4478371946",
-              "company": "Dassault Systèmes",
-              "title": "AI Scientific Software Engineer - Marie"
-            },
-            {
-              "key": "id::linkedin::4478392809",
-              "company": "Harnham",
-              "title": "AI Engineer"
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5450099008",
-              "company": "Anthropic",
-              "title": "Data Engineer, Billing & Payments"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 13.002,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 6,
-            "input_tokens": 7947,
-            "cached_input_tokens": 0,
-            "output_tokens": 1322,
-            "reasoning_tokens": 807,
-            "estimated_usd": 0.001456
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4475740088",
-              "match_score": 77.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "backend systems",
-                "distributed data systems"
-              ],
-              "main_gaps": [
-                "query planning or compilers",
-                "graduation-date requirement"
-              ]
-            },
-            {
-              "key": "id::linkedin::4477906248",
-              "match_score": 71.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "production RAG pipelines",
-                "Python LLM applications"
-              ],
-              "main_gaps": [
-                "3+ years Python",
-                "OpenTelemetry"
-              ]
-            },
-            {
-              "key": "id::linkedin::4478385502",
-              "match_score": 78.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "AI full-stack development",
-                "production agents and RAG"
-              ],
-              "main_gaps": [
-                "2+ years AI software development"
-              ]
-            },
-            {
-              "key": "id::linkedin::4478371946",
-              "match_score": 76.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "agentic AI and MCP",
-                "RAG evaluation and safety"
-              ],
-              "main_gaps": [
-                "3+ years AI software development"
-              ]
-            },
-            {
-              "key": "id::linkedin::4478392809",
-              "match_score": 54.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "production agentic AI",
-                "enterprise RAG systems"
-              ],
-              "main_gaps": [
-                "5+ years engineering",
-                "client-facing consulting"
-              ]
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5450099008",
-              "match_score": 43.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python data pipelines",
-                "SQL and data quality"
-              ],
-              "main_gaps": [
-                "dbt data modeling",
-                "billing and revenue data"
-              ]
-            }
-          ]
-        }
-      ]
     }
   ]
 }
