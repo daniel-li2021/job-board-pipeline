@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-17 17:21 PDT
-- Snapshot (UTC): 2026-10-18T00:21:44.352386+00:00
-- Jobs: 61 (Tier A/B only)
-- Last 24 hours: 40
-- Last 3 days: 61
+- Updated (PT): 2026-10-17 21:01 PDT
+- Snapshot (UTC): 2026-10-18T04:01:18.988947+00:00
+- Jobs: 62 (Tier A/B only)
+- Last 24 hours: 41
+- Last 3 days: 62
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -63,9 +63,10 @@ The 7-day dump is `latest.md`.
 | B | 75 | linkedin | Autodesk | Software Engineer | San Francisco, CA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-autodesk-4471019245) |
 | B | 75 | linkedin | Q2 | Software Engineer | Cary, NC | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-q2-4460741206) |
 | B | 75 | linkedin | Hewlett Packard Enterprise | Software Engineer | Andover, MA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-hewlett-packard-enterprise-4480174295) |
+| B | 79 | linkedin | Edra | Software Engineer - Back End (New York) | New York, NY | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-back-end-new-york-at-edra-4385013703) |
+| B | 79 | linkedin | AEG | Full Stack Engineer - WRSTBND | New Orleans, LA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-wrstbnd-at-aeg-4461665785) |
 | B | 79 | linkedin | KAYAK | Software Engineer, Ads (Backend) | Concord, MA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ads-backend-at-kayak-4434055995) |
 | B | 79 | linkedin | KAYAK | Software Engineer, Ads (Backend) | Cambridge, MA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ads-backend-at-kayak-4434079004) |
-| B | 75 | linkedin | AEG | Full Stack Engineer - WRSTBND | New Orleans, LA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-wrstbnd-at-aeg-4461665785) |
 | B | 75 | linkedin | Deloitte | Agentic AI Engineer — Healthcare AI | Minneapolis, MN | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/agentic-ai-engineer-%E2%80%94-healthcare-ai-at-deloitte-4426743454) |
 | B | 78 | indeed | Bolder Apps | Full Stack Developer | Miami, FL, US | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=dce0d7f89cc44ca1) |
 | B | 78 | indeed | EMERLINE | Full Stack Developer | Miami, FL, US | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6ff425f4ffe5e511) |
