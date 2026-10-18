@@ -1,24 +1,24 @@
-# ATS / LinkedIn board — 7-day view — 2026-10-18_1521
+# ATS / LinkedIn board — 7-day view — 2026-10-18_2044
 
-- Updated (PT): 2026-10-18 08:25 PDT
-- Snapshot (UTC): 2026-10-18T15:25:56.897847+00:00
-- Last 24 hours: 37
-- Last 3 days: 57
+- Updated (PT): 2026-10-18 13:48 PDT
+- Snapshot (UTC): 2026-10-18T20:48:13.272556+00:00
+- Last 24 hours: 45
+- Last 3 days: 65
 
 If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) instead of this file.
 
 ## Run stats
 
-- Source raw: ATS 2993 / Linkedin 3090 / Indeed 492 / Glassdoor 380 (Big Company Official runs separately)
-- Funnel: after dedup 6955 -> after company filter 6676 -> after hard filter 6131 -> after role+seniority prefilter 1906 | dropped 4962
-- LLM usage: jobs scored 37 / API requests 4 / cache reused 153 (cross-pipeline 0) / rule fallback+overflow 1320 (thin local cards 976, recency-gated 0, overflow 0, new/changed 39)
-- LLM cache causes: new 39 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 9 / rescored <24h 0
-- LLM cost: model gpt-6-luna / API requests 4 / jobs scored 37 / tokens input 38054 (cached 3702) / output 7019 (reasoning 4407) / estimated cost $0.0070
-- New jobs discovered this run: 157
-- Output sizing: Tier A 33 / Tier B 125 / A+B actionable 158 / Shown in latest.md 158 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 98 / newly-disc 89 / 3-7d 27 / >7d 1296
-- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 2861 of 2862 / Indeed unique 474 of 474
-- Linkedin top exact-unique queries: software engineer=1015, ai engineer=693, backend engineer=369
+- Source raw: ATS 2970 / Linkedin 3311 / Indeed 492 / Glassdoor 384 (Big Company Official runs separately)
+- Funnel: after dedup 7122 -> after company filter 6749 -> after hard filter 6200 -> after role+seniority prefilter 1944 | dropped 4999
+- LLM usage: jobs scored 1 / API requests 1 / cache reused 187 (cross-pipeline 0) / rule fallback+overflow 1371 (thin local cards 991, recency-gated 4, overflow 0, new/changed 5)
+- LLM cache causes: new 4 / material JD 0 / matching context 0 / prior rule now eligible 1 / non-material reused 0 / same-content reused 3 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 1 / jobs scored 1 / tokens input 3491 (cached 0) / output 533 (reasoning 459) / estimated cost $0.0006
+- New jobs discovered this run: 22
+- Output sizing: Tier A 33 / Tier B 135 / A+B actionable 168 / Shown in latest.md 168 (no hard cap)
+- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 99 / newly-disc 98 / 3-7d 27 / >7d 1335
+- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 2925 of 2926 / Indeed unique 474 of 474
+- Linkedin top exact-unique queries: software engineer=1031, ai engineer=710, full-stack engineer=314
 - Indeed top exact-unique queries: software engineer=222, ai engineer=131, platform engineer=80, infrastructure engineer=77, new grad software engineer=62
 
 ## Tier A - apply now / referral (33)
@@ -28,6 +28,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 96 | cached_llm | indeed | Lenovo | AI Engineer | Morrisville, NC, US | 2026-10-16 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=74c4527858607032) |
 | 92 | cached_llm | linkedin | Navy Federal Credit Union | AI Engineer (Agentic AI) | Vienna, VA | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | yes | [open](https://fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/nfcu/job/33120/?mode=job-location) |
 | 93 | cached_llm | indeed | Amalgamated Bank | AI Engineer | New York, NY, US | 2026-10-16 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=1768a151daf35242) |
+| 93 | metadata_ai_fallback | linkedin | Atlassian | Machine Learning Engineer, 2027 Graduate U.S. | Seattle, WA | 2026-10-18 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-2027-graduate-u-s-at-atlassian-4472265615) |
 | 87 | cached_llm | indeed | American Honda Motor | Engineer- Software, AI and Data Analytics | East Liberty, OH, US | 2026-10-17 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=73b6de841a3a14d0) |
 | 89 | cached_llm | indeed | TSMC Technology Inc. | Software Development Engineer | San Jose, CA, US | 2026-10-16 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ae479fae6fd3edfb) |
 | 89 | cached_llm | indeed | Book of the Month | Associate Product Engineer | New York, NY, US | 2026-10-16 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=d4c9316c05d21565) |
@@ -35,7 +36,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 89 | cached_llm | indeed | Children's Hospital Los Angeles | Integration Engineer I | Los Angeles, CA, US | 2026-10-16 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=8ba51485d4a56f0f) |
 | 89 | cached_llm | indeed | ClearSale | Software Engineer | Miami, FL, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=7bbcca881cb2b641) |
 | 89 | cached_llm | indeed | JOURNIES | AI Application Developer | San Jose, CA, US | 2026-10-16 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=4c1b195f8218add7) |
-| 88 | llm | indeed | Custom Software Development | Software Developer | Miami, FL, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=098ff0d1970b23fc) |
+| 88 | cached_llm | indeed | Custom Software Development | Software Developer | Miami, FL, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=098ff0d1970b23fc) |
 | 88 | cached_llm | indeed | Alpha Bravo Development | Application Developer | Miami, FL, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ebc15f486e932a32) |
 | 88 | cached_llm | indeed | BurjSoft | Application Developer | Miami, FL, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=e4a451709a50e8a9) |
 | 88 | cached_llm | indeed | Ensign Services | Junior Software Developer - Automation Solutions | San Juan Capistrano, CA, US | 2026-10-16 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=443197d82f28db4e) |
@@ -45,7 +46,6 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 85 | cached_llm | indeed | OSI Systems, Inc | Software Engineer 1 | Billerica, MA, US | 2026-10-16 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=3d435b0fd10b9007) |
 | 85 | cached_llm | indeed | Innovare Technologies | Application Developer | San Jose, CA, US | 2026-10-16 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=c5e21d470eb89738) |
 | 89 | cached_llm | indeed | UST | Software Engineer | Atlanta, GA, US | 2026-10-16 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=171e2cef2c5eed52) |
-| 94 | cached_llm | linkedin | Cboe Global Markets | Associate Software Engineer, Web | Kansas City, MO | 2026-10-10 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/associate-software-engineer-web-at-cboe-global-markets-4478018338) |
 | 93 | rule_fallback | linkedin | Zappos | Data Engineer I, Zappos Analytics | New York, NY | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/data-engineer-i-zappos-analytics-at-zappos-4468526196) |
 | 93 | rule_fallback | linkedin | Helic & Co | Junior Software Developer | United States | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-software-developer-at-helic-co-4470462132) |
 | 93 | rule_fallback | linkedin | Sonepar USA | Junior Applications Developer | Broomfield, CO | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-applications-developer-at-sonepar-usa-4449827301) |
@@ -59,17 +59,18 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 93 | rule_fallback | linkedin | Kareer Basycs | Junior Python Developer | United States | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-python-developer-at-kareer-basycs-4468572925) |
 | 93 | rule_fallback | linkedin | IBM | Entry Level Software Developer-Tucson-AZ | Tucson, AZ | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/entry-level-software-developer-tucson-az-at-ibm-4468180871) |
 
-## Tier B - worth applying (125)
+## Tier B - worth applying (135)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 87 | llm | indeed | E8 Labs | Software Developer | San Jose, CA, US | 2026-10-16 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=904f1ac212271519) |
-| 87 | llm | indeed | Innovare Technologies | Software Developer | San Jose, CA, US | 2026-10-16 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=d728d2632c1c5833) |
-| 87 | llm | indeed | eLink Design | Full-Time Web / Mobile Application Developer | Lexington, KY, US | 2026-10-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=a298c3f6737ad8f0) |
+| 90 | llm | linkedin | Deloitte | Agentic AI Engineer — Healthcare AI | Minneapolis, MN | 2026-10-17 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/agentic-ai-engineer-%E2%80%94-healthcare-ai-at-deloitte-4426743454) |
+| 87 | cached_llm | indeed | E8 Labs | Software Developer | San Jose, CA, US | 2026-10-16 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=904f1ac212271519) |
+| 87 | cached_llm | indeed | Innovare Technologies | Software Developer | San Jose, CA, US | 2026-10-16 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=d728d2632c1c5833) |
+| 87 | cached_llm | indeed | eLink Design | Full-Time Web / Mobile Application Developer | Lexington, KY, US | 2026-10-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=a298c3f6737ad8f0) |
 | 87 | cached_llm | indeed | Sanmol Software | Full Stack Developer | Doral, FL, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=08c8f543f6117ad8) |
-| 86 | llm | indeed |  | Software Developer | Miami, FL, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=5ddf2c924620f208) |
-| 86 | llm | indeed |  | Software Developer | Miami, FL, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=87128eb945c60319) |
-| 85 | llm | indeed | Internet Soft | Software Developer | San Jose, CA, US | 2026-10-16 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=0a362fd18d7113f5) |
+| 86 | cached_llm | indeed |  | Software Developer | Miami, FL, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=5ddf2c924620f208) |
+| 86 | cached_llm | indeed |  | Software Developer | Miami, FL, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=87128eb945c60319) |
+| 85 | cached_llm | indeed | Internet Soft | Software Developer | San Jose, CA, US | 2026-10-16 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=0a362fd18d7113f5) |
 | 85 | cached_llm | indeed |  | Software Developer | Miami, FL, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=3f513e92e0417313) |
 | 85 | cached_llm | indeed | VATES | Software Engineer | Miami, FL, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=94385fe806757d38) |
 | 85 | cached_llm | indeed | Webtronic Labs | Software Engineer | Miami, FL, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=fe4f5adc3419d0d6) |
@@ -77,7 +78,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 86 | cached_llm | linkedin | Bank of America | AI Engineer - Data Scientist I | Charlotte, NC | 2026-10-17 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/ai-engineer-data-scientist-i-at-bank-of-america-4480802987) |
 | 84 | cached_llm | indeed | Audible | Software Development Engineer, Audible AI Voice Production | Cambridge, MA, US | 2026-10-16 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=0a9352eadd5d19f7) |
 | 83 | cached_llm | indeed | Zions Bancorporation | Software Engineer | Midvale, UT, US | 2026-10-16 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=3dd2178c576c7207) |
-| 84 | llm | indeed | AZERRA | Software Developer | San Jose, CA, US | 2026-10-16 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=3a0828fbe69a0276) |
+| 84 | cached_llm | indeed | AZERRA | Software Developer | San Jose, CA, US | 2026-10-16 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=3a0828fbe69a0276) |
 | 84 | cached_llm | indeed | Diffco US, Inc | Software Developer | San Jose, CA, US | 2026-10-16 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ac101ff838ea927f) |
 | 84 | cached_llm | indeed |  | React Developer | California City, CA, US | 2026-10-17 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=88723c5124d02f8e) |
 | 84 | cached_llm | indeed |  | Junior Software Developer – Paid Training Provided | Detroit, MI, US | 2026-10-16 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=2896e741e62936ba) |
@@ -85,20 +86,26 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 82 | cached_llm | indeed | Neuro-Vision & Rehabilitation Center of Northern California | Job Title: Software Developer (Part-Time / Flexible) – Help Grow a Hea | Folsom, CA, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=5bacc5884c98179f) |
 | 82 | cached_llm | indeed | Caption Call | Software Engineer II | Salt Lake City, UT, US | 2026-10-16 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=026670f4925b2ffb) |
 | 82 | cached_llm | indeed | Larson Automation | Software Engineer | San Jose, CA, US | 2026-10-16 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=886f437102da18ee) |
-| 81 | llm | indeed | The Personnel Board of Jefferson County | Programmer Analyst | AL, US | 2026-10-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=4a81d24159a89790) |
-| 83 | llm | indeed | Kargo | Software Engineer, Edge | San Francisco, CA, US | 2026-10-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=a1023ce8ee068678) |
+| 81 | cached_llm | indeed | The Personnel Board of Jefferson County | Programmer Analyst | AL, US | 2026-10-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=4a81d24159a89790) |
+| 83 | cached_llm | indeed | Kargo | Software Engineer, Edge | San Francisco, CA, US | 2026-10-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=a1023ce8ee068678) |
+| 75 | rule_fallback | linkedin | Autodesk | Software Engineer | San Francisco, CA | 2026-10-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-at-autodesk-4471012607) |
 | 75 | rule_fallback | linkedin | Autodesk | Software Engineer | San Francisco, CA | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-at-autodesk-4471019245) |
 | 75 | rule_fallback | linkedin | Q2 | Software Engineer | Cary, NC | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-at-q2-4460741206) |
+| 79 | metadata_ai_fallback | linkedin | Optum | AI/ML Engineer | Minnetonka, MN | 2026-10-18 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-at-optum-4480870115) |
+| 79 | metadata_ai_fallback | linkedin | U.S. Bank | Software Engineer -2 (Full - Stack : Vue.js and .Net ) | Atlanta, GA | 2026-10-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-2-full-stack-vue-js-and-net-at-u-s-bank-4480859864) |
+| 79 | metadata_ai_fallback | linkedin | U.S. Bank | Software Engineer -2 (Full - Stack : Vue.js and .Net ) | Hopkins, MN | 2026-10-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-2-full-stack-vue-js-and-net-at-u-s-bank-4480873365) |
+| 79 | metadata_ai_fallback | linkedin | Cisco | Software Engineer - BackEnd | Triangle, NC | 2026-10-18 | newly_discovered | low | swe | - | unreviewed | pending_official_refresh | - | [open](https://www.linkedin.com/jobs/view/software-engineer-backend-at-cisco-4480856774) |
 | 75 | rule_fallback | linkedin | Hewlett Packard Enterprise | Software Engineer | Andover, MA | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-at-hewlett-packard-enterprise-4480174295) |
-| 79 | metadata_ai_fallback | linkedin | Edra | Software Engineer - Back End (New York) | New York, NY | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-back-end-new-york-at-edra-4385013703) |
 | 79 | metadata_ai_fallback | linkedin | KAYAK | Software Engineer, Ads (Backend) | Concord, MA | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ads-backend-at-kayak-4434055995) |
 | 79 | metadata_ai_fallback | linkedin | KAYAK | Software Engineer, Ads (Backend) | Cambridge, MA | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ads-backend-at-kayak-4434079004) |
+| 75 | rule_fallback | linkedin | Edra | Software Engineer - Back End (New York) | New York, NY | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-back-end-new-york-at-edra-4385013703) |
 | 75 | rule_fallback | linkedin | AEG | Full Stack Engineer - WRSTBND | New Orleans, LA | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-wrstbnd-at-aeg-4461665785) |
-| 75 | rule_fallback | linkedin | Deloitte | Agentic AI Engineer — Healthcare AI | Minneapolis, MN | 2026-10-17 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/agentic-ai-engineer-%E2%80%94-healthcare-ai-at-deloitte-4426743454) |
-| 78 | llm | indeed | Aderant | Associate Software Engineer | Atlanta, GA, US | 2026-10-16 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=19a2361ca851e890) |
+| 79 | metadata_ai_fallback | linkedin | Deloitte | Agentic AI Engineer — Healthcare AI | Detroit, MI | 2026-10-18 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/agentic-ai-engineer-%E2%80%94-healthcare-ai-at-deloitte-4426727893) |
+| 75 | rule_fallback | linkedin | Deloitte | Cyber Full-Stack Technical Software Engineer | Portland, OR | 2026-10-18 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/cyber-full-stack-technical-software-engineer-at-deloitte-4435104557) |
+| 78 | cached_llm | indeed | Aderant | Associate Software Engineer | Atlanta, GA, US | 2026-10-16 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=19a2361ca851e890) |
 | 78 | cached_llm | indeed | Bolder Apps | Full Stack Developer | Miami, FL, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=dce0d7f89cc44ca1) |
 | 78 | cached_llm | indeed | EMERLINE | Full Stack Developer | Miami, FL, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=6ff425f4ffe5e511) |
-| 74 | llm | indeed | Realign | React Developer | Jersey City, NJ, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=474039409a1e69cf) |
+| 74 | cached_llm | indeed | Realign | React Developer | Jersey City, NJ, US | 2026-10-17 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=474039409a1e69cf) |
 | 73 | cached_llm | indeed | VIVA | AI/ML Engineer | Remote, US | 2026-10-16 | 1to3d | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=40372428c6856e10) |
 | 86 | cached_llm | linkedin | NOX METALS | Full Stack Engineer | Los Angeles, CA | 2026-10-12 | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-nox-metals-4478360930) |
 | 82 | cached_llm | linkedin | Blue Yonder | Software Engineer (Java backend) | Dallas, TX | 2026-10-12 | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-java-backend-at-blue-yonder-4477907064) |
@@ -136,6 +143,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 83 | rule_fallback | linkedin | Honeywell Technologies | Software Engineer I | Duluth, GA | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-i-at-honeywell-technologies-4470486465) |
 | 83 | rule_fallback | linkedin | Penguin Random House | Junior AI Engineer (Open to remote) | New York, NY | 2026-09-21 | gt7d | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-ai-engineer-open-to-remote-at-penguin-random-house-4469991590) |
 | 83 | rule_fallback | linkedin | Huntington National Bank | Junior Backend Java Developer- Enterprise Payments and Credit Card | Columbus, OH | 2026-09-26 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-backend-java-developer-enterprise-payments-and-credit-card-at-huntington-national-bank-4463636114) |
+| 83 | rule_fallback | linkedin | Huntington National Bank | Junior Backend Java Developer- Enterprise Payments and Credit Card | Minnetonka, MN | 2026-10-18 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-backend-java-developer-enterprise-payments-and-credit-card-at-huntington-national-bank-4463641021) |
 | 83 | rule_fallback | linkedin | Pacific Life | Software Engineer I | Newport Beach, CA | 2026-09-21 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-i-at-pacific-life-4468131746) |
 | 83 | rule_fallback | linkedin | DV Trading LLC | 2027 Graduate Software Engineer (DV Commodities) | New York, NY | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/2027-graduate-software-engineer-dv-commodities-at-dv-trading-llc-4451616486) |
 | 83 | rule_fallback | linkedin | Perpay Inc. | Software Engineer, New Grad | Philadelphia, PA | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-new-grad-at-perpay-inc-4470453364) |
@@ -154,6 +162,8 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 83 | rule_fallback | linkedin | Varsity Spirit | Software Engineer I | Memphis, TN | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-i-at-varsity-spirit-4449819917) |
 | 83 | rule_fallback | linkedin | Millennial Software | Entry Level Full Stack Developer- $65K-$116K + 15% 401k | Chantilly, VA | 2026-09-21 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/entry-level-full-stack-developer-%2465k-%24116k-%2B-15%25-401k-at-millennial-software-4468161569) |
 | 83 | rule_fallback | linkedin | Lodestar | Software Engineer I: Perception | El Segundo, CA | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-i-perception-at-lodestar-4464304928) |
+| 83 | rule_fallback | linkedin | Crowe | Machine Learning Software Engineer 1 | Cleveland, OH | 2026-10-18 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/machine-learning-software-engineer-1-at-crowe-4454818358) |
+| 83 | rule_fallback | linkedin | Crowe | Machine Learning Software Engineer 1 | Knoxville, TN | 2026-10-18 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/machine-learning-software-engineer-1-at-crowe-4454821308) |
 | 83 | rule_fallback | linkedin | TalentHop | Software Engineer - New Grad, 2027 | United States | 2026-09-23 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-new-grad-2027-at-talenthop-4469355076) |
 | 83 | rule_fallback | linkedin | TalentHop | Software Engineer - New Grad, 2027 | United States | 2026-09-23 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-new-grad-2027-at-talenthop-4468989467) |
 | 83 | rule_fallback | linkedin | TalentHop | Software Engineer - New Grad, 2027 | United States | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-new-grad-2027-at-talenthop-4468939188) |

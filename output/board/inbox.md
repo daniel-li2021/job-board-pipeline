@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-18 08:21 PDT
-- Snapshot (UTC): 2026-10-18T15:21:07.394200+00:00
-- Jobs: 57 (Tier A/B only)
-- Last 24 hours: 37
-- Last 3 days: 57
+- Updated (PT): 2026-10-18 13:44 PDT
+- Snapshot (UTC): 2026-10-18T20:44:37.331020+00:00
+- Jobs: 65 (Tier A/B only)
+- Last 24 hours: 45
+- Last 3 days: 65
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -14,6 +14,7 @@ The 7-day dump is `latest.md`.
 | A | 96 | indeed | Lenovo | AI Engineer | Morrisville, NC, US | 2026-10-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=74c4527858607032) |
 | A | 92 | linkedin | Navy Federal Credit Union | AI Engineer (Agentic AI) | Vienna, VA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/nfcu/job/33120/?mode=job-location) |
 | A | 93 | indeed | Amalgamated Bank | AI Engineer | New York, NY, US | 2026-10-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1768a151daf35242) |
+| A | 93 | linkedin | Atlassian | Machine Learning Engineer, 2027 Graduate U.S. | Seattle, WA | 2026-10-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-2027-graduate-u-s-at-atlassian-4472265615) |
 | A | 87 | indeed | American Honda Motor | Engineer- Software, AI and Data Analytics | East Liberty, OH, US | 2026-10-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=73b6de841a3a14d0) |
 | A | 89 | indeed | TSMC Technology Inc. | Software Development Engineer | San Jose, CA, US | 2026-10-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ae479fae6fd3edfb) |
 | A | 89 | indeed | Book of the Month | Associate Product Engineer | New York, NY, US | 2026-10-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d4c9316c05d21565) |
@@ -31,6 +32,7 @@ The 7-day dump is `latest.md`.
 | A | 85 | indeed | OSI Systems, Inc | Software Engineer 1 | Billerica, MA, US | 2026-10-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=3d435b0fd10b9007) |
 | A | 85 | indeed | Innovare Technologies | Application Developer | San Jose, CA, US | 2026-10-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c5e21d470eb89738) |
 | A | 89 | indeed | UST | Software Engineer | Atlanta, GA, US | 2026-10-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=171e2cef2c5eed52) |
+| B | 90 | linkedin | Deloitte | Agentic AI Engineer — Healthcare AI | Minneapolis, MN | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/agentic-ai-engineer-%E2%80%94-healthcare-ai-at-deloitte-4426743454) |
 | B | 87 | indeed | E8 Labs | Software Developer | San Jose, CA, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=904f1ac212271519) |
 | B | 87 | indeed | Innovare Technologies | Software Developer | San Jose, CA, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d728d2632c1c5833) |
 | B | 87 | indeed | eLink Design | Full-Time Web / Mobile Application Developer | Lexington, KY, US | 2026-10-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a298c3f6737ad8f0) |
@@ -55,14 +57,20 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed | Larson Automation | Software Engineer | San Jose, CA, US | 2026-10-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=886f437102da18ee) |
 | B | 81 | indeed | The Personnel Board of Jefferson County | Programmer Analyst | AL, US | 2026-10-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=4a81d24159a89790) |
 | B | 83 | indeed | Kargo | Software Engineer, Edge | San Francisco, CA, US | 2026-10-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a1023ce8ee068678) |
+| B | 75 | linkedin | Autodesk | Software Engineer | San Francisco, CA | 2026-10-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-autodesk-4471012607) |
 | B | 75 | linkedin | Autodesk | Software Engineer | San Francisco, CA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-autodesk-4471019245) |
 | B | 75 | linkedin | Q2 | Software Engineer | Cary, NC | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-q2-4460741206) |
+| B | 79 | linkedin | Optum | AI/ML Engineer | Minnetonka, MN | 2026-10-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-at-optum-4480870115) |
+| B | 79 | linkedin | U.S. Bank | Software Engineer -2 (Full - Stack : Vue.js and .Net ) | Atlanta, GA | 2026-10-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-2-full-stack-vue-js-and-net-at-u-s-bank-4480859864) |
+| B | 79 | linkedin | U.S. Bank | Software Engineer -2 (Full - Stack : Vue.js and .Net ) | Hopkins, MN | 2026-10-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-2-full-stack-vue-js-and-net-at-u-s-bank-4480873365) |
+| B | 79 | linkedin | Cisco | Software Engineer - BackEnd | Triangle, NC | 2026-10-18 | newly_discovered | - | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/software-engineer-backend-at-cisco-4480856774) |
 | B | 75 | linkedin | Hewlett Packard Enterprise | Software Engineer | Andover, MA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-hewlett-packard-enterprise-4480174295) |
-| B | 79 | linkedin | Edra | Software Engineer - Back End (New York) | New York, NY | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-back-end-new-york-at-edra-4385013703) |
 | B | 79 | linkedin | KAYAK | Software Engineer, Ads (Backend) | Concord, MA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ads-backend-at-kayak-4434055995) |
 | B | 79 | linkedin | KAYAK | Software Engineer, Ads (Backend) | Cambridge, MA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ads-backend-at-kayak-4434079004) |
+| B | 75 | linkedin | Edra | Software Engineer - Back End (New York) | New York, NY | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-back-end-new-york-at-edra-4385013703) |
 | B | 75 | linkedin | AEG | Full Stack Engineer - WRSTBND | New Orleans, LA | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-wrstbnd-at-aeg-4461665785) |
-| B | 75 | linkedin | Deloitte | Agentic AI Engineer — Healthcare AI | Minneapolis, MN | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/agentic-ai-engineer-%E2%80%94-healthcare-ai-at-deloitte-4426743454) |
+| B | 79 | linkedin | Deloitte | Agentic AI Engineer — Healthcare AI | Detroit, MI | 2026-10-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/agentic-ai-engineer-%E2%80%94-healthcare-ai-at-deloitte-4426727893) |
+| B | 75 | linkedin | Deloitte | Cyber Full-Stack Technical Software Engineer | Portland, OR | 2026-10-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/cyber-full-stack-technical-software-engineer-at-deloitte-4435104557) |
 | B | 78 | indeed | Aderant | Associate Software Engineer | Atlanta, GA, US | 2026-10-16 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=19a2361ca851e890) |
 | B | 78 | indeed | Bolder Apps | Full Stack Developer | Miami, FL, US | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=dce0d7f89cc44ca1) |
 | B | 78 | indeed | EMERLINE | Full Stack Developer | Miami, FL, US | 2026-10-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6ff425f4ffe5e511) |

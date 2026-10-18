@@ -2,6 +2,161 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-18T20:44:37.331020+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 1,
+      "cache_reused": 187,
+      "peer_reused": 0,
+      "same_content_reused": 3,
+      "non_material_change_reused": 0,
+      "new_or_changed": 5,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 4,
+        "prior_rule_result_now_eligible_for_llm": 1
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1371,
+      "requests": 1,
+      "input_tokens": 3491,
+      "cached_input_tokens": 0,
+      "output_tokens": 533,
+      "reasoning_tokens": 459,
+      "estimated_usd": 0.000616,
+      "latency_seconds": 6.524,
+      "latency_measured": true,
+      "effective_rpm": 9.2,
+      "effective_tpm": 37007.97,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 1,
+      "funnel": {
+        "after_dedup": 7122,
+        "after_company": 6749,
+        "after_hard_filter": 6200,
+        "after_prefilter": 1944,
+        "official_duplicates_suppressed": 385,
+        "retry_only_carried": 0,
+        "dropped": 4999
+      },
+      "output": {
+        "tier_a": 33,
+        "tier_b": 135,
+        "ab_before_cap": 168,
+        "shown": 168,
+        "new_jobs": 22,
+        "new_jobs_added": 8,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 4,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 18,
+            "added": 8
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2729,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 26,
+          "http_requests": 6,
+          "scrapling_requests": 2,
+          "identity_needed": 6,
+          "identities_resolved": 2,
+          "cache_reused": 2,
+          "remaining_no_jd": 2729,
+          "failure_reasons": {
+            "no_direct_or_official_url": 18,
+            "structured_jd_not_found": 2
+          }
+        },
+        "remaining_no_jd": 2691,
+        "failure_reasons": {
+          "no_enrichment_path": 2169,
+          "no_direct_or_official_url": 18,
+          "linkedin_http_429": 4,
+          "official_detail_deferred": 45,
+          "structured_jd_not_found": 2,
+          "linkedin_rate_limited": 75,
+          "linkedin_http_network_error": 2,
+          "glassdoor_detail_http_403_static_card_only": 376
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4426743454",
+              "company": "Deloitte",
+              "title": "Agentic AI Engineer — Healthcare AI"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 6.524,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3491,
+            "cached_input_tokens": 0,
+            "output_tokens": 533,
+            "reasoning_tokens": 459,
+            "estimated_usd": 0.000616
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4426743454",
+              "match_score": 90.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production agent orchestration",
+                "End-to-end RAG and evaluation"
+              ],
+              "main_gaps": [
+                "Trajectory-level agent evaluation"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-18T15:21:07.394200+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -26908,116 +27063,6 @@
           ]
         }
       ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-10-13T20:35:28.490475+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "",
-      "reasoning_effort": "",
-      "jobs_scored": 0,
-      "cache_reused": 393,
-      "peer_reused": 1,
-      "same_content_reused": 2,
-      "non_material_change_reused": 0,
-      "new_or_changed": 0,
-      "new_or_changed_reasons": {},
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1186,
-      "requests": 0,
-      "input_tokens": 0,
-      "cached_input_tokens": 0,
-      "output_tokens": 0,
-      "reasoning_tokens": 0,
-      "estimated_usd": 0.0,
-      "latency_seconds": 0.0,
-      "latency_measured": true,
-      "effective_rpm": null,
-      "effective_tpm": null,
-      "json_reliability": null,
-      "json_reliability_measured": true,
-      "batches_total": 0,
-      "primary_batches_total": 0,
-      "batches_attempted": 0,
-      "batches_succeeded": 0,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 0,
-      "funnel": {
-        "after_dedup": 7232,
-        "after_company": 6938,
-        "after_hard_filter": 6367,
-        "after_prefilter": 2000,
-        "official_duplicates_suppressed": 421,
-        "retry_only_carried": 0,
-        "dropped": 5133
-      },
-      "output": {
-        "tier_a": 31,
-        "tier_b": 147,
-        "ab_before_cap": 178,
-        "shown": 178,
-        "new_jobs": 23,
-        "new_jobs_added": 0,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 23,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 0,
-            "added": 0
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 2661,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 41,
-          "identity_needed": 38,
-          "http_requests": 39,
-          "identities_resolved": 38,
-          "jds_resolved": 2,
-          "direct_http_resolved": 2,
-          "scrapling_requests": 1,
-          "remaining_no_jd": 2661,
-          "failure_reasons": {
-            "no_direct_or_official_url": 2,
-            "structured_jd_not_found": 1
-          }
-        },
-        "remaining_no_jd": 2603,
-        "failure_reasons": {
-          "no_enrichment_path": 2104,
-          "no_direct_or_official_url": 2,
-          "official_detail_deferred": 43,
-          "linkedin_rate_limited": 72,
-          "linkedin_http_429": 3,
-          "linkedin_http_network_error": 2,
-          "structured_jd_not_found": 1,
-          "glassdoor_detail_http_403_static_card_only": 376
-        }
-      },
-      "comparison": {},
-      "batches": []
     }
   ]
 }
