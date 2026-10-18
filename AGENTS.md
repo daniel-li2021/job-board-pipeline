@@ -14,6 +14,7 @@ Optimize for focused, token-efficient changes and keep Git state easy to reason 
 ## Rules
 - Keep this primary checkout for development. Run routine crawlers and other generated-output work from `/Users/daniel/Projects/job_scrape_feasibility-automation`.
 - Before editing, run `git fetch origin`, inspect `git status --short`, and compare `HEAD...origin/main` with `git rev-list --left-right --count`.
+- On a clean local `main`, run both `git fetch origin` and `git pull --ff-only origin main` before starting work and after publishing; stop if fast-forwarding fails.
 - Start each task on a focused `codex/<task>` branch from current `origin/main`. If the primary checkout is dirty, behind, or diverged, leave it untouched and create a clean worktree from `origin/main`; if it is clean and current, create the branch there. Never reset, clean, merge, or rebase unknown local changes.
 - A dirty checkout during active editing is normal; do not leave stale uncommitted changes or temporary worktrees after the task is finished.
 - After the requested behavior is implemented and targeted validation passes, commit it and publish it to the latest `origin/main` by default without waiting for confirmation. Only stop before publishing for conflicts, failing tests, uncertain local changes, or another real safety issue.
