@@ -15,6 +15,11 @@ const context = vm.createContext({console, setTimeout, Date, URL, location:{href
 let script = html.split('</script><script>')[1].split('</script>')[0];
 script = script.slice(0, script.indexOf("window.addEventListener('online'"));
 vm.runInContext(script, context);
+const notice = vm.runInContext(`evidenceNotice({evidence_warnings:['Employer unverified','Suggested/proposed JD; verify original','<unsafe>']})`, context);
+assert.match(notice, /Verify details:/);
+assert.match(notice, /Employer unverified.*Suggested\/proposed JD/);
+assert.ok(notice.includes('&lt;unsafe&gt;') && !notice.includes('<unsafe>'));
+assert.match(vm.runInContext(`evidenceNotice({_variants:[{evidence_warnings:[]},{evidence_warnings:['Suggested/proposed JD; verify original']}]})`, context), /Suggested\/proposed JD/);
 assert.equal(vm.runInContext('reviewStates.stale.status', context), 'applied_complete');
 vm.runInContext('renderAll()', context); // No review-dependent DOM work while shared state is loading.
 vm.runInContext('reviewStates={}', context);

@@ -145,3 +145,14 @@ def recover_missing_company(job: Dict[str, Any], profiles: Iterable[Dict[str, An
     name, evidence = next(iter(matches.items()))
     job.update(company=name, company_identity_method="curated_ats_tenant", company_identity_url=evidence)
     return True
+
+
+def preserve_source_company(job: Dict[str, Any], previous: Dict[str, Any]) -> None:
+    """A temporarily missing employer must not erase a name on the same source ID."""
+    if (not str(job.get("company") or "").strip() and previous.get("company")
+            and job.get("job_id") and job.get("job_id") == previous.get("job_id")
+            and job.get("source") == previous.get("source")):
+        job["company"] = previous["company"]
+        job["company_identity_method"] = previous.get("company_identity_method") or "previous_source_id"
+        if previous.get("company_identity_url"):
+            job["company_identity_url"] = previous["company_identity_url"]

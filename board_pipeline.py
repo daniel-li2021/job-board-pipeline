@@ -56,7 +56,8 @@ import coverage_reconcile
 import llm_config
 from sources import ats
 from sources.careers.incremental import DETAIL_STALE_DAYS
-from sources.company_aliases import company_risk_rank, load_alias_file, match_company_alias, match_company_entry, prepare_alias_entries, recover_missing_company
+from sources.company_aliases import company_risk_rank, load_alias_file, match_company_alias, match_company_entry, prepare_alias_entries, recover_missing_company, preserve_source_company
+from sources.job_quality import evidence_warnings, JD_UNVERIFIED, COHORT_UNVERIFIED
 from sources.schema import (
     OUTPUT_DIR,
     adopt_better_posted_date,
@@ -2255,7 +2256,9 @@ def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
     a_floor = (early_a_floor if early else normal_a_floor).get(bucket, 97.0)
     b_floor = (early_b_floor if early else normal_b_floor).get(bucket, 90.0)
 
-    if score >= a_floor and a_quality:
+    if score >= a_floor and a_quality and not (
+        {JD_UNVERIFIED, COHORT_UNVERIFIED} & set(evidence_warnings(job))
+    ):
         if llm_scored:
             return "A"
         if rule_only and early and strong_family:
@@ -2278,6 +2281,9 @@ def apply_referral_action(job: Dict[str, str]) -> None:
     hard_status = str(job.get("hard_constraint_status") or "ok").strip().lower()
     if hard_status not in {"", "ok"} or job.get("tier") == "C":
         job["recommended_action"] = "skip"
+        return
+    elif evidence_warnings(job):
+        job["recommended_action"] = "verify_details"
         return
     elif INTERNSHIP_TITLE_RE.search(job.get("title") or "") or job.get("staffing_firm"):
         job["recommended_action"] = "apply_if_time"
@@ -2476,7 +2482,7 @@ def enrich_from_exact_peers(
 
 
 REMOTE_STORE_FIELDS = {
-    "key", "job_id", "company", "company_identity_method", "company_identity_url", "title", "location", "posted_date", "date_confidence",
+    "key", "job_id", "company", "company_identity_method", "company_identity_url", "evidence_warnings", "title", "location", "posted_date", "date_confidence",
     "official_url", "application_url", "source", "source_url", "sponsorship", "filter_status", "referral_name",
     "company_flag", "staffing_firm", "clearance_risk_company", "role_family", "role_relevance",
     "tier", "recency_bucket", "cache_key", "jd_hash", "match_content_hash", "match_score", "resume_profile_used",
@@ -2505,6 +2511,9 @@ def compact_store_entry(entry: Dict[str, Any]) -> Dict[str, Any]:
         or len(str(entry.get("description") or "").strip()) >= THIN_JD_CHARS
     )
     compact["main_gaps_count"] = main_gaps_count(entry)
+    compact["evidence_warnings"] = evidence_warnings(entry)
+    if not compact["evidence_warnings"]:
+        compact.pop("evidence_warnings", None)
     reasons = [str(item)[:180] for item in entry.get("top_match_reasons") or []][:2]
     gaps = [str(item)[:180] for item in entry.get("main_gaps") or []][:2]
     if reasons:
@@ -3213,6 +3222,7 @@ def build_store_entry(
     job = dict(job)
     if previous:
         preserve_job_dates(job, previous)
+        preserve_source_company(job, previous)
     return {
         # identity + display
         "key": key,
@@ -3220,6 +3230,7 @@ def build_store_entry(
         "company": job.get("company", ""),
         "company_identity_method": job.get("company_identity_method", ""),
         "company_identity_url": job.get("company_identity_url", ""),
+        "evidence_warnings": evidence_warnings(job),
         "title": job.get("title", ""),
         "location": job.get("location", ""),
         "posted_date": job.get("posted_date", ""),
@@ -3303,6 +3314,16 @@ def build_store_entry(
     }
 
 
+def refresh_evidence_policy(entry: Dict[str, Any]) -> None:
+    """Update evidence/action annotations without invalidating technical scores."""
+    recover_missing_company(entry, load_company_profiles())
+    entry["evidence_warnings"] = evidence_warnings(entry)
+    if entry.get("tier") == "A" and {JD_UNVERIFIED, COHORT_UNVERIFIED} & set(entry["evidence_warnings"]):
+        entry["tier"] = "B"
+    if (entry["evidence_warnings"] or entry.get("recommended_action") == "verify_details") and entry.get("tier") in {"A", "B"}:
+        apply_referral_action(entry)
+
+
 def refresh_retained_entry_policy(
     entry: Dict[str, Any], company_filters: Dict[str, List[Dict[str, Any]]]
 ) -> None:
@@ -3325,10 +3346,12 @@ def refresh_retained_entry_policy(
         and entry.get("match_source_pipeline") != "official"
     ):
         if entry.get("score_source") == SCORE_METADATA and entry.get("recovery_input_hash"):
+            refresh_evidence_policy(entry)
             return
         entry["rule_score"] = rule_match_score(entry)
         _apply_rule_result(entry, SCORE_FALLBACK, "Low-confidence title/metadata match (JD unavailable after enrichment)")
         entry["tier"] = assign_tier(entry, False)
+    refresh_evidence_policy(entry)
 
 
 def run() -> None:
@@ -3404,6 +3427,7 @@ def run() -> None:
         key = dedup_key(job)
         prior_key = _pre_run_seen_key(job, seen_before_run)
         prev = store.get(key) or (store.get(prior_key) if prior_key else None)
+        preserve_source_company(job, prev or {})
         prior_first_seen = str(seen_jobs.get(prior_key) or (prev or {}).get("first_seen") or "") if prior_key else ""
         preserve_job_dates(job, prev or {}, first_seen=prior_first_seen or seen_jobs.get(key))
         if prior_key and not prior_first_seen:

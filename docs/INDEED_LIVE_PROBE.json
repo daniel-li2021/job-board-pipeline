@@ -1,0 +1,248 @@
+{
+  "at": "2026-10-18T22:23:24.645193+00:00",
+  "version": "1.1.82",
+  "query": "software engineer",
+  "hours_old": 48,
+  "distance": 50,
+  "page_limit": 1,
+  "earlier_invalid_probe_http_status": 400,
+  "parser_sha256": "f68ed2c1c6676378bcb0b69d5e2cfb2e8e1d3f3a11d62193ea2c55556529ebdb",
+  "http_statuses": [
+    200
+  ],
+  "raw_rows": 100,
+  "parsed_rows": 100,
+  "blank_employers": [
+    {
+      "job_id": "in-9efcc0e597d8a8de",
+      "employer_is_null": false,
+      "employer_keys": [
+        "dossier",
+        "name",
+        "relativeCompanyPageUrl"
+      ],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-e1fe1d5adac24fef",
+      "employer_is_null": false,
+      "employer_keys": [
+        "dossier",
+        "name",
+        "relativeCompanyPageUrl"
+      ],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-3e8312d7a3774ffc",
+      "employer_is_null": false,
+      "employer_keys": [
+        "dossier",
+        "name",
+        "relativeCompanyPageUrl"
+      ],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-88723c5124d02f8e",
+      "employer_is_null": false,
+      "employer_keys": [
+        "dossier",
+        "name",
+        "relativeCompanyPageUrl"
+      ],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-39641d5cf5c787c6",
+      "employer_is_null": false,
+      "employer_keys": [
+        "dossier",
+        "name",
+        "relativeCompanyPageUrl"
+      ],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-4738557a44d3fbcf",
+      "employer_is_null": true,
+      "employer_keys": [],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-6fbe434b0de23f9a",
+      "employer_is_null": false,
+      "employer_keys": [
+        "dossier",
+        "name",
+        "relativeCompanyPageUrl"
+      ],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-5ddf2c924620f208",
+      "employer_is_null": false,
+      "employer_keys": [
+        "dossier",
+        "name",
+        "relativeCompanyPageUrl"
+      ],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-879de711e6081296",
+      "employer_is_null": false,
+      "employer_keys": [
+        "dossier",
+        "name",
+        "relativeCompanyPageUrl"
+      ],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-3f513e92e0417313",
+      "employer_is_null": false,
+      "employer_keys": [
+        "dossier",
+        "name",
+        "relativeCompanyPageUrl"
+      ],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-9ab0d96ab684d1e1",
+      "employer_is_null": false,
+      "employer_keys": [
+        "dossier",
+        "name",
+        "relativeCompanyPageUrl"
+      ],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-87128eb945c60319",
+      "employer_is_null": false,
+      "employer_keys": [
+        "dossier",
+        "name",
+        "relativeCompanyPageUrl"
+      ],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-51d685d8c7c2b909",
+      "employer_is_null": false,
+      "employer_keys": [
+        "dossier",
+        "name",
+        "relativeCompanyPageUrl"
+      ],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-43e6fbbd48a7432d",
+      "employer_is_null": false,
+      "employer_keys": [
+        "dossier",
+        "name",
+        "relativeCompanyPageUrl"
+      ],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-613763cb0cfc45dd",
+      "employer_is_null": false,
+      "employer_keys": [
+        "dossier",
+        "name",
+        "relativeCompanyPageUrl"
+      ],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-232b0e754a65df06",
+      "employer_is_null": true,
+      "employer_keys": [],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    },
+    {
+      "job_id": "in-5e3035bf0c6a00c4",
+      "employer_is_null": false,
+      "employer_keys": [
+        "dossier",
+        "name",
+        "relativeCompanyPageUrl"
+      ],
+      "response_name": null,
+      "parsed_name": null,
+      "other_top_level_company_fields": [
+        "employer"
+      ]
+    }
+  ],
+  "parser_mismatches": 0
+}

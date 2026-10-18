@@ -15,6 +15,8 @@ from urllib.parse import parse_qs, quote, urljoin, urlsplit
 from bs4 import BeautifulSoup
 
 from .local_search import query_stat, source_queries
+from .company_aliases import preserve_source_company
+from .job_quality import evidence_warnings
 from .schema import is_aggregator_url, is_us_location, make_job, normalize_space
 
 JOBSPY_SITE = {
@@ -229,7 +231,7 @@ def _normalize(source: str, record: Dict[str, Any], fetched_at: str) -> Dict[str
     posted = _value(record.get("date_posted"))
     row = make_job(
         source=source,
-        company=_value(record.get("company")),
+        company=_value(record.get("company")) or _value(record.get("company_name")),
         title=_value(record.get("title")),
         location=_value(record.get("location")),
         job_id=_value(record.get("id")),
@@ -248,6 +250,7 @@ def _normalize(source: str, record: Dict[str, Any], fetched_at: str) -> Dict[str
         row["enrichment_failure_reason"] = _value(record["enrichment_failure_reason"])
     if record.get("source_snippet"):
         row["source_snippet"] = _value(record["source_snippet"])
+    row["evidence_warnings"] = evidence_warnings(row)
     return row
 
 
@@ -379,6 +382,8 @@ def scrape(
                 if key and key in seen:
                     prior = by_key.get(key)
                     if prior:
+                        preserve_source_company(prior, row)
+                        prior["evidence_warnings"] = evidence_warnings(prior)
                         prior["discovery_queries"][source] = list(dict.fromkeys([
                             *prior["discovery_queries"][source], keyword,
                         ]))

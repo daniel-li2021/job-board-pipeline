@@ -1,0 +1,1866 @@
+{
+  "board_population": 1831,
+  "snapshot_population": 492,
+  "snapshot_usable_length_jds": 492,
+  "snapshot_anonymous": 27,
+  "board_anonymous_before": 135,
+  "board_anonymous_ab_before": 41,
+  "board_anonymous_after": 133,
+  "board_anonymous_ab_after": 39,
+  "recovered": [
+    {
+      "key": "id::indeed::in-216e827c48493b4a",
+      "job_id": "in-216e827c48493b4a",
+      "title": "Software Engineer",
+      "changes": {
+        "company": {
+          "before": null,
+          "after": "Dialogue AI"
+        }
+      },
+      "evidence_warnings": [],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-8bbb13ae6d5c30fb",
+      "job_id": "in-8bbb13ae6d5c30fb",
+      "title": "Forward Deployed Engineer",
+      "changes": {
+        "company": {
+          "before": null,
+          "after": "Autoscience"
+        }
+      },
+      "evidence_warnings": [],
+      "snapshot_jd_joined": false
+    }
+  ],
+  "explicit_placeholder_jds": [
+    {
+      "job_id": "in-3f513e92e0417313",
+      "title": "Software Developer"
+    },
+    {
+      "job_id": "in-5ddf2c924620f208",
+      "title": "Software Developer"
+    },
+    {
+      "job_id": "in-87128eb945c60319",
+      "title": "Software Developer"
+    },
+    {
+      "job_id": "in-ebc15f486e932a32",
+      "title": "Application Developer"
+    },
+    {
+      "job_id": "in-dce0d7f89cc44ca1",
+      "title": "Full Stack Developer"
+    },
+    {
+      "job_id": "in-e4a451709a50e8a9",
+      "title": "Application Developer"
+    },
+    {
+      "job_id": "in-098ff0d1970b23fc",
+      "title": "Software Developer"
+    },
+    {
+      "job_id": "in-2e8ecf04a055dd35",
+      "title": "Application Developer"
+    },
+    {
+      "job_id": "in-6ff425f4ffe5e511",
+      "title": "Full Stack Developer"
+    },
+    {
+      "job_id": "in-67903dab403d719a",
+      "title": "Software QA Engineer"
+    },
+    {
+      "job_id": "in-f54733566fdd9d60",
+      "title": "Salesforce Developer"
+    },
+    {
+      "job_id": "in-1f42cd854d33c842",
+      "title": "Cloud Software Engineer"
+    },
+    {
+      "job_id": "in-38585d14c2da6e9f",
+      "title": "Mobile App Developer"
+    },
+    {
+      "job_id": "in-94385fe806757d38",
+      "title": "Software Engineer"
+    },
+    {
+      "job_id": "in-fe4f5adc3419d0d6",
+      "title": "Software Engineer"
+    }
+  ],
+  "tier_transitions": {
+    "A->B": 4
+  },
+  "action_changes": 48,
+  "immutable_field_checks": 1831,
+  "assertions_passed": true,
+  "affected_or_warned_records": [
+    {
+      "key": "id::linkedin::4472265615",
+      "job_id": "4472265615",
+      "title": "Machine Learning Engineer, 2027 Graduate U.S.",
+      "changes": {
+        "tier": {
+          "before": "A",
+          "after": "B"
+        },
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Graduation eligibility unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-f54733566fdd9d60",
+      "job_id": "in-f54733566fdd9d60",
+      "title": "Salesforce Developer",
+      "changes": {},
+      "evidence_warnings": [
+        "Suggested/proposed JD; verify original"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-87128eb945c60319",
+      "job_id": "in-87128eb945c60319",
+      "title": "Software Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified",
+        "Suggested/proposed JD; verify original"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-67903dab403d719a",
+      "job_id": "in-67903dab403d719a",
+      "title": "Software QA Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Suggested/proposed JD; verify original"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-613763cb0cfc45dd",
+      "job_id": "in-613763cb0cfc45dd",
+      "title": "Software Developer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-5ddf2c924620f208",
+      "job_id": "in-5ddf2c924620f208",
+      "title": "Software Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified",
+        "Suggested/proposed JD; verify original"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-4738557a44d3fbcf",
+      "job_id": "in-4738557a44d3fbcf",
+      "title": "DevOps Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-098ff0d1970b23fc",
+      "job_id": "in-098ff0d1970b23fc",
+      "title": "Software Developer",
+      "changes": {
+        "tier": {
+          "before": "A",
+          "after": "B"
+        },
+        "recommended_action": {
+          "before": "apply_now",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Suggested/proposed JD; verify original"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-fe4f5adc3419d0d6",
+      "job_id": "in-fe4f5adc3419d0d6",
+      "title": "Software Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Suggested/proposed JD; verify original"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-ebc15f486e932a32",
+      "job_id": "in-ebc15f486e932a32",
+      "title": "Application Developer",
+      "changes": {
+        "tier": {
+          "before": "A",
+          "after": "B"
+        },
+        "recommended_action": {
+          "before": "apply_now",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Suggested/proposed JD; verify original"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-e4a451709a50e8a9",
+      "job_id": "in-e4a451709a50e8a9",
+      "title": "Application Developer",
+      "changes": {
+        "tier": {
+          "before": "A",
+          "after": "B"
+        },
+        "recommended_action": {
+          "before": "apply_now",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Suggested/proposed JD; verify original"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-dce0d7f89cc44ca1",
+      "job_id": "in-dce0d7f89cc44ca1",
+      "title": "Full Stack Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Suggested/proposed JD; verify original"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-9ab0d96ab684d1e1",
+      "job_id": "in-9ab0d96ab684d1e1",
+      "title": "Software Engineer, AI Training",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-94385fe806757d38",
+      "job_id": "in-94385fe806757d38",
+      "title": "Software Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Suggested/proposed JD; verify original"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-840424c4153a06a8",
+      "job_id": "in-840424c4153a06a8",
+      "title": "Application Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_now",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-6ff425f4ffe5e511",
+      "job_id": "in-6ff425f4ffe5e511",
+      "title": "Full Stack Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Suggested/proposed JD; verify original"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-6ce73f5351fc6a95",
+      "job_id": "in-6ce73f5351fc6a95",
+      "title": "AI Software Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_now",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-3f513e92e0417313",
+      "job_id": "in-3f513e92e0417313",
+      "title": "Software Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified",
+        "Suggested/proposed JD; verify original"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-38585d14c2da6e9f",
+      "job_id": "in-38585d14c2da6e9f",
+      "title": "Mobile App Developer",
+      "changes": {},
+      "evidence_warnings": [
+        "Suggested/proposed JD; verify original"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-2e8ecf04a055dd35",
+      "job_id": "in-2e8ecf04a055dd35",
+      "title": "Application Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Suggested/proposed JD; verify original"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-1f42cd854d33c842",
+      "job_id": "in-1f42cd854d33c842",
+      "title": "Cloud Software Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Suggested/proposed JD; verify original"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-88723c5124d02f8e",
+      "job_id": "in-88723c5124d02f8e",
+      "title": "React Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-14cf27428677bce3",
+      "job_id": "in-14cf27428677bce3",
+      "title": "Software Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-06dc38b009b1bb1a",
+      "job_id": "in-06dc38b009b1bb1a",
+      "title": "Junior Software Developer – Paid Training Provided",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-e6b4e0a6185b7602",
+      "job_id": "in-e6b4e0a6185b7602",
+      "title": "Embedded Firmware Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-ace5b788dd3a6b7c",
+      "job_id": "in-ace5b788dd3a6b7c",
+      "title": "Integration Software Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-55164ce44d104ae9",
+      "job_id": "in-55164ce44d104ae9",
+      "title": "Software Engineer, Platform Engineering",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-546660ecf309ef2e",
+      "job_id": "in-546660ecf309ef2e",
+      "title": "AI Infrastructure Operations Engineer - Compute & Storage",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-36d9187bc5fc104d",
+      "job_id": "in-36d9187bc5fc104d",
+      "title": "Cloud Security Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-2896e741e62936ba",
+      "job_id": "in-2896e741e62936ba",
+      "title": "Junior Software Developer – Paid Training Provided",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": true
+    },
+    {
+      "key": "id::indeed::in-245181197a246f14",
+      "job_id": "in-245181197a246f14",
+      "title": "Software Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-2158d945530afc85",
+      "job_id": "in-2158d945530afc85",
+      "title": "Automation Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-eecca30edf4c8052",
+      "job_id": "in-eecca30edf4c8052",
+      "title": "AI Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_now",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-def8280d9a4fc501",
+      "job_id": "in-def8280d9a4fc501",
+      "title": "Software Engineer Generalist",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-ddbb4041d8d3b3c4",
+      "job_id": "in-ddbb4041d8d3b3c4",
+      "title": "Junior Software Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_now",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-a86a466c73d34872",
+      "job_id": "in-a86a466c73d34872",
+      "title": "ERP Application Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_now",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-7cb7b0b50c2ceae7",
+      "job_id": "in-7cb7b0b50c2ceae7",
+      "title": "Machine Learning Systems Administrator / DevOps Engineer: Training Clusters & Inference Cloud",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-342cf45bed6aa014",
+      "job_id": "in-342cf45bed6aa014",
+      "title": "Cloud Infrastructure Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-216e827c48493b4a",
+      "job_id": "in-216e827c48493b4a",
+      "title": "Software Engineer",
+      "changes": {
+        "company": {
+          "before": null,
+          "after": "Dialogue AI"
+        }
+      },
+      "evidence_warnings": [],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-1354c45425061265",
+      "job_id": "in-1354c45425061265",
+      "title": "Data Warehouse Programmer/Analyst",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-f3e5bb047cff2cc7",
+      "job_id": "in-f3e5bb047cff2cc7",
+      "title": "Software Test Equipment Engineer 2",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-ee5d21db9fd47431",
+      "job_id": "in-ee5d21db9fd47431",
+      "title": "Full-Stack Developer (Backend Focus)",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-9aaba498f0dcd281",
+      "job_id": "in-9aaba498f0dcd281",
+      "title": "Software Developer | AI-Assisted Development",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-93c46f2787797b7c",
+      "job_id": "in-93c46f2787797b7c",
+      "title": "Software Architect, AI-Native Development",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-6b1e391e5ce9ea5f",
+      "job_id": "in-6b1e391e5ce9ea5f",
+      "title": "Cloud Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-5e34cb10f7bfc6f5",
+      "job_id": "in-5e34cb10f7bfc6f5",
+      "title": "Cloud Platform Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-4d38260ec231202a",
+      "job_id": "in-4d38260ec231202a",
+      "title": "ServiceNow SAM Developer-Secret",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-32f767500fa94704",
+      "job_id": "in-32f767500fa94704",
+      "title": "Infrastructure Engineer (Contract)",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-2459fc2ce1249241",
+      "job_id": "in-2459fc2ce1249241",
+      "title": "Firmware Embedded Systems Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-1a47a362e0f8dbd5",
+      "job_id": "in-1a47a362e0f8dbd5",
+      "title": "Cloud Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-17b38c0d65fa9695",
+      "job_id": "in-17b38c0d65fa9695",
+      "title": "Platform Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-df2fc2444f013bb5",
+      "job_id": "in-df2fc2444f013bb5",
+      "title": "Research Engineer -- Vision and Vision-Language Models",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-d44b9b45330fee0b",
+      "job_id": "in-d44b9b45330fee0b",
+      "title": "Software Engineer I",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-9f24facc6e2c3f6f",
+      "job_id": "in-9f24facc6e2c3f6f",
+      "title": "Backend Developer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-9c758e98927efca3",
+      "job_id": "in-9c758e98927efca3",
+      "title": "Software Engineer (Early Career) – C++ & Systems",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-86ed229395da9ad6",
+      "job_id": "in-86ed229395da9ad6",
+      "title": "Frontend Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-42e167aacdf7365c",
+      "job_id": "in-42e167aacdf7365c",
+      "title": "Forward Deployed Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-3799f023c9183e3a",
+      "job_id": "in-3799f023c9183e3a",
+      "title": "Embedded Systems Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-2fb342a3b80b3cff",
+      "job_id": "in-2fb342a3b80b3cff",
+      "title": "Automation Developer / Automation Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-2eb55ef6c36a3da5",
+      "job_id": "in-2eb55ef6c36a3da5",
+      "title": "Game Programmer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-22d78d95383388fb",
+      "job_id": "in-22d78d95383388fb",
+      "title": "Full Stack Developer (Python, React.js)",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-1ed1819539a1a517",
+      "job_id": "in-1ed1819539a1a517",
+      "title": "Data Platform Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-1504232dc11cd110",
+      "job_id": "in-1504232dc11cd110",
+      "title": "Hyper Converged Infrastructure Engineer (Job ID 3022416)",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-cca5f01c8154a9f9",
+      "job_id": "in-cca5f01c8154a9f9",
+      "title": "Developer - Atlassian Process Engineering",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-b908b59309fff889",
+      "job_id": "in-b908b59309fff889",
+      "title": "Data Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-724d061e4772f245",
+      "job_id": "in-724d061e4772f245",
+      "title": "IT Systems Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-68c457cbd2475f5f",
+      "job_id": "in-68c457cbd2475f5f",
+      "title": "Data Solution Architect",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-0d46f06ebba1faa3",
+      "job_id": "in-0d46f06ebba1faa3",
+      "title": "IT STATEWIDE ASSOCIATE ENGINEER 1-4 (DCO/OTS)",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-fdf72a975806ce37",
+      "job_id": "in-fdf72a975806ce37",
+      "title": "Web Application Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-f01d33f572b2baf0",
+      "job_id": "in-f01d33f572b2baf0",
+      "title": "Data Engineer - Materials Discovery Research Institute",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-eb76694f90612875",
+      "job_id": "in-eb76694f90612875",
+      "title": "Software Support Technician",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-c813cfb93009a0e1",
+      "job_id": "in-c813cfb93009a0e1",
+      "title": "AI Research Engineer - NLP",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-a921abd13034d2e1",
+      "job_id": "in-a921abd13034d2e1",
+      "title": "Cloud Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-77f0620a8878eb8b",
+      "job_id": "in-77f0620a8878eb8b",
+      "title": "MID Level AI Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-46a2fef6f8f3074f",
+      "job_id": "in-46a2fef6f8f3074f",
+      "title": "Robotics Software Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-2ebb1e90244a23f3",
+      "job_id": "in-2ebb1e90244a23f3",
+      "title": "Data Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-1f8d5e2becb41cac",
+      "job_id": "in-1f8d5e2becb41cac",
+      "title": "A I animation and video, creating analysts / computer Science Software Developer.",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-09cb91572573b3cb",
+      "job_id": "in-09cb91572573b3cb",
+      "title": "Software Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_now",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-faa880f230d4d7ff",
+      "job_id": "in-faa880f230d4d7ff",
+      "title": "Automation Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-f1db19d0f36ccb88",
+      "job_id": "in-f1db19d0f36ccb88",
+      "title": "Backend Engineer — High-Volume Data Processing",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-db3edf4e084376c3",
+      "job_id": "in-db3edf4e084376c3",
+      "title": "Application Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-d4091599f0490494",
+      "job_id": "in-d4091599f0490494",
+      "title": "Java Developer with Python Exp.",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-d212972fe97364ca",
+      "job_id": "in-d212972fe97364ca",
+      "title": "Software Engineer, Product",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-c8dba861c4fdb3ee",
+      "job_id": "in-c8dba861c4fdb3ee",
+      "title": "Software Engineer (Early Career)",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_now",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-c84cdef82e2db0c9",
+      "job_id": "in-c84cdef82e2db0c9",
+      "title": "Software Engineer, Backend Systems - Crypto Trading",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-bbf9bfd089ca9e4c",
+      "job_id": "in-bbf9bfd089ca9e4c",
+      "title": "Databricks Platform Engineer / AI-MLOps Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-b2408980f6a71a4d",
+      "job_id": "in-b2408980f6a71a4d",
+      "title": "Software Engineer - Customer Solutions",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-a9a3fe8fdef6b896",
+      "job_id": "in-a9a3fe8fdef6b896",
+      "title": "Platform Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-9065f01f6d0d4981",
+      "job_id": "in-9065f01f6d0d4981",
+      "title": "Software Engineer - Customer Solutions",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-7962fa5b92f2a426",
+      "job_id": "in-7962fa5b92f2a426",
+      "title": "Junior Software Engineer — Remote AI Code Review",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_now",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-562f211fdbb66d39",
+      "job_id": "in-562f211fdbb66d39",
+      "title": "iSeries Developer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-14b30aec029a3ce7",
+      "job_id": "in-14b30aec029a3ce7",
+      "title": "AI Data Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-11eac930bdc06aa8",
+      "job_id": "in-11eac930bdc06aa8",
+      "title": "Software Developer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-0dbd3c232810d7b9",
+      "job_id": "in-0dbd3c232810d7b9",
+      "title": "Mobile Developer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-0725a0650ace2f63",
+      "job_id": "in-0725a0650ace2f63",
+      "title": "Entry Level Application Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_now",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-d7bb2fe0d9f0571b",
+      "job_id": "in-d7bb2fe0d9f0571b",
+      "title": "Junior Software Developer, Construction Tech",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-c822521bb5a9fe4b",
+      "job_id": "in-c822521bb5a9fe4b",
+      "title": "Flight Systems Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-c7e0d207454e7ca5",
+      "job_id": "in-c7e0d207454e7ca5",
+      "title": "ML/AI Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-c0cdbc5f7ae04480",
+      "job_id": "in-c0cdbc5f7ae04480",
+      "title": "Mobile iOS Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-b64093b85ef71918",
+      "job_id": "in-b64093b85ef71918",
+      "title": "Facilities Infrastructure Engineer, Data Center Infrastructure - Memphis",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-8bbb13ae6d5c30fb",
+      "job_id": "in-8bbb13ae6d5c30fb",
+      "title": "Forward Deployed Engineer",
+      "changes": {
+        "company": {
+          "before": null,
+          "after": "Autoscience"
+        }
+      },
+      "evidence_warnings": [],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-7949e6fc9064688b",
+      "job_id": "in-7949e6fc9064688b",
+      "title": "SharePoint Developer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-57d51df0c58e30f7",
+      "job_id": "in-57d51df0c58e30f7",
+      "title": "Software Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-2cbd167ea3e3ccdc",
+      "job_id": "in-2cbd167ea3e3ccdc",
+      "title": "Electrical Reliability Engineer, Data Center Infrastructure - Memphis",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-28e65dfb1b860c0c",
+      "job_id": "in-28e65dfb1b860c0c",
+      "title": "Site Reliability Engineer, Data Center - Memphis",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-205b89fc770b409f",
+      "job_id": "in-205b89fc770b409f",
+      "title": "Software Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-143875a87e39d40b",
+      "job_id": "in-143875a87e39d40b",
+      "title": "10070 - Software Engineer II",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-f629a48551085a93",
+      "job_id": "in-f629a48551085a93",
+      "title": "Data Scientist",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-cea8adac691d82ec",
+      "job_id": "in-cea8adac691d82ec",
+      "title": "Software Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-c9d63b91aa17f5bf",
+      "job_id": "in-c9d63b91aa17f5bf",
+      "title": "AI/ML Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-c3bda141c5c41bee",
+      "job_id": "in-c3bda141c5c41bee",
+      "title": "Gen AI/ML Architect",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-ab0c19318fc8cdfb",
+      "job_id": "in-ab0c19318fc8cdfb",
+      "title": "Controls Systems Engineer — Material Handling & Intralogistics",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-9d263ba7c3d79def",
+      "job_id": "in-9d263ba7c3d79def",
+      "title": "AI Engineer- Open Source LLMs",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-9cb61044827ee780",
+      "job_id": "in-9cb61044827ee780",
+      "title": "Cloud Infrastructure Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-8fd9ee1bcaf851ef",
+      "job_id": "in-8fd9ee1bcaf851ef",
+      "title": "AI Research Scientist",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-8e1daeaceb2d78ef",
+      "job_id": "in-8e1daeaceb2d78ef",
+      "title": "Machine Learning Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-849adf60d1645bf4",
+      "job_id": "in-849adf60d1645bf4",
+      "title": "Software Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-7c3193a61fb98b58",
+      "job_id": "in-7c3193a61fb98b58",
+      "title": "Solutions Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-70cd2e9714ac05b0",
+      "job_id": "in-70cd2e9714ac05b0",
+      "title": "Software Engineer – Query Engines",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-6edb0d33b610d67b",
+      "job_id": "in-6edb0d33b610d67b",
+      "title": "Industrial Automation Engineer, Wire & Cable Systems",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-35e1abe0328bb334",
+      "job_id": "in-35e1abe0328bb334",
+      "title": "Entry Level Java Devloper",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-16b3bd6c85b2b0ca",
+      "job_id": "in-16b3bd6c85b2b0ca",
+      "title": "Forward Deployed Software Engineer - US Government",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-03be11eb7e009c67",
+      "job_id": "in-03be11eb7e009c67",
+      "title": "Software Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_now",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-b1f17c928237e162",
+      "job_id": "in-b1f17c928237e162",
+      "title": "AI Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-aed15eb60f15f6e3",
+      "job_id": "in-aed15eb60f15f6e3",
+      "title": "Full Stack Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-ad8a4df59cca6b38",
+      "job_id": "in-ad8a4df59cca6b38",
+      "title": "Informatica B2B Data Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-99e90eef4109ceb4",
+      "job_id": "in-99e90eef4109ceb4",
+      "title": "ML Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-9170396d6f727886",
+      "job_id": "in-9170396d6f727886",
+      "title": "Salesforce Developer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-77bdb01f8a995695",
+      "job_id": "in-77bdb01f8a995695",
+      "title": "Salesforce Developer - Remote",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-1def90a100b712b3",
+      "job_id": "in-1def90a100b712b3",
+      "title": "Java Fullstack Developer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-ed76974bd37c739a",
+      "job_id": "in-ed76974bd37c739a",
+      "title": "Developer, Mobile Applications",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-2391e290706cc0a4",
+      "job_id": "in-2391e290706cc0a4",
+      "title": "Consulting Software Developer - APEX - Oracle Health",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-198b49e18128b0ea",
+      "job_id": "in-198b49e18128b0ea",
+      "title": "Junior Software Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_now",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-de9aa64978bf64ba",
+      "job_id": "in-de9aa64978bf64ba",
+      "title": "Founding Robotics Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-d077a28041bf5242",
+      "job_id": "in-d077a28041bf5242",
+      "title": "Systems Engineer (Identity & Cloud) 00053",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-c0400b9bac9c62fb",
+      "job_id": "in-c0400b9bac9c62fb",
+      "title": "Software Engineers: Share Your AI Coding Sessions for Model Evaluation",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-a4a829ad97972780",
+      "job_id": "in-a4a829ad97972780",
+      "title": "Cloud Solution Architect – Security",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-90ec600f124a088b",
+      "job_id": "in-90ec600f124a088b",
+      "title": "Web Developer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-4f2e7bf36057af4a",
+      "job_id": "in-4f2e7bf36057af4a",
+      "title": "Systems Engineer (Infrastructure) 00440",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-0f945fc2feaabf5c",
+      "job_id": "in-0f945fc2feaabf5c",
+      "title": "Founding Research Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-d07f7469bfdd316e",
+      "job_id": "in-d07f7469bfdd316e",
+      "title": "DevOps Engineer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-ae286c0da0308932",
+      "job_id": "in-ae286c0da0308932",
+      "title": "SOFTWARE ENGINEER - L&A",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-828decec44fd534b",
+      "job_id": "in-828decec44fd534b",
+      "title": "Software Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-57e6299c33ad35bf",
+      "job_id": "in-57e6299c33ad35bf",
+      "title": "Software & Firmware Engineering Experts — AI Code Evaluation",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-41dfe1ae6e281294",
+      "job_id": "in-41dfe1ae6e281294",
+      "title": "Robotics Engineer / Applied Research Scientist — Embodied AI",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-30dd24d54acd85ca",
+      "job_id": "in-30dd24d54acd85ca",
+      "title": "Automation Engineer",
+      "changes": {
+        "recommended_action": {
+          "before": "apply_if_time",
+          "after": "verify_details"
+        }
+      },
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-2d837dcb6cd66f00",
+      "job_id": "in-2d837dcb6cd66f00",
+      "title": "Junior Developer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    },
+    {
+      "key": "id::indeed::in-13176a0d1a629cea",
+      "job_id": "in-13176a0d1a629cea",
+      "title": "Game Developer - AI Trainer",
+      "changes": {},
+      "evidence_warnings": [
+        "Employer unverified"
+      ],
+      "snapshot_jd_joined": false
+    }
+  ],
+  "limits": "In-memory policy replay using exact source/ID joins to current saved JDs; not a rescore, adjudication, or production write. Historical compact JDs outside the snapshot cannot be assessed for placeholders.",
+  "inputs": [
+    {
+      "path": "output/sources/indeed.json",
+      "sha256": "26d60e0df9494d8f8589cf85407c5be54cb6f69b2c0b232595fa7c11dad1365c",
+      "updated_at": "2026-10-18T15:20:47.013042+00:00"
+    },
+    {
+      "path": "output/board/jobs.json",
+      "sha256": "bc85d12eb715ff88a81caae0afde8930c0d0358ce22227a9d5729ad7d38bddc9",
+      "updated_at": "2026-10-18T22:03:24.386168+00:00"
+    }
+  ]
+}
