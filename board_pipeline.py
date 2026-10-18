@@ -70,6 +70,7 @@ from sources.schema import (
     is_outbound_tracker_url,
     looks_official,
     normalize_company_key,
+    jd_is_tentative,
     normalize_location_key,
     normalize_job_url,
     normalize_space,
@@ -567,7 +568,55 @@ def verify_official(jobs: List[Dict[str, str]]) -> None:
                 job["official_url"] = next(iter(hits))
 
 
-def _job_posting_json(html: str) -> Dict[str, Any]:
+def _posting_matches_job(job: Dict[str, Any], posting: Dict[str, Any],
+                         requested_url: str, response_url: str) -> bool:
+    """Require consistent requisition identity or unambiguous employer/title/location."""
+    from sources.official_jd_recovery import _posting_location
+
+    org = posting.get("hiringOrganization") or {}
+    company = str(org.get("name") or "") if isinstance(org, dict) else str(org)
+    if company and job.get("company") and normalize_company_key(company) != normalize_company_key(job["company"]):
+        return False
+    identifier = posting.get("identifier") or ""
+    if isinstance(identifier, dict):
+        identifier = identifier.get("value") or identifier.get("name") or ""
+    def ids(value: str, *, url: bool = False) -> set[str]:
+        if url:
+            if is_aggregator_url(value) or is_outbound_tracker_url(value):
+                return set()
+            value = urlsplit(value).path.rstrip("/").rsplit("/", 1)[-1]
+        value = value.lower()
+        # Reuse the shared numeric/UUID extraction, including IDs in title slugs.
+        extracted = coverage_reconcile.job_ids({"official_url": "https://id.example/" + value})
+        if re.fullmatch(r"(?:[a-z]+[-_]?)?\d+", value):
+            extracted.add(value)
+        return extracted
+    expected_ids = ids(str(job.get("requisition_id") or job.get("req_id") or "")) or ids(requested_url, url=True)
+    response_ids = ids(response_url, url=True)
+    posting_ids = ids(str(identifier))
+    if expected_ids and any(values and not expected_ids.intersection(values) for values in (response_ids, posting_ids)):
+        return False
+    stable_id = bool(expected_ids.intersection(response_ids | posting_ids))
+    expected_title = normalize_title_key(str(job.get("title") or ""))
+    title = normalize_title_key(str(posting.get("title") or ""))
+    if title != expected_title:
+        # A stable requisition may add an Engineer II suffix, never a different role.
+        base = lambda value: re.sub(r"\s+(?:i|ii|iii|[123])$", "", value)
+        expected_words, words = set(base(expected_title).split()), set(base(title).split())
+        if not stable_id or min(len(expected_words), len(words)) < 2 or not (
+            expected_words <= words or words <= expected_words
+        ):
+            return False
+    if stable_id:
+        return True
+    candidate = {"title": posting.get("title"), "location": _posting_location(posting)}
+    if str(posting.get("jobLocationType") or "").upper() == "TELECOMMUTE":
+        candidate["location"] = "Remote"
+    return bool(company and job.get("company") and coverage_reconcile.title_location_matches(job, [candidate]))
+
+
+def _job_posting_json(html: str, job: Optional[Dict[str, Any]] = None,
+                      requested_url: str = "", response_url: str = "") -> Dict[str, Any]:
     from bs4 import BeautifulSoup
 
     soup = BeautifulSoup(html, "html.parser")
@@ -590,15 +639,18 @@ def _job_posting_json(html: str) -> Dict[str, Any]:
                 found.extend(postings(child))
         return found
 
+    found = []
     for node in nodes:
         try:
             payload = json.loads(node.get_text())
         except (TypeError, json.JSONDecodeError):
             continue
-        found = postings(payload)
-        if found:
-            return found[0]
-    return {}
+        found.extend(postings(payload))
+    if job is None:
+        return found[0] if found else {}
+    matches = [posting for posting in found if _posting_matches_job(job, posting, requested_url, response_url)]
+    unique = {json.dumps(posting, sort_keys=True): posting for posting in matches}
+    return next(iter(unique.values())) if len(unique) == 1 else {}
 
 
 def _scrapling_fetch(url: str) -> Tuple[str, str, str]:
@@ -637,6 +689,8 @@ def resolve_exposed_originals(
     budget: recovery_policy.RecoveryBudget | None = None,
 ) -> Dict[str, Any]:
     """Resolve thin JDs and ambiguous jobs that expose a direct application URL."""
+    from sources.official_jd_recovery import _likely_posting_url
+
     cached = {
         (str(entry.get("source") or ""), str(entry.get("job_id") or "")): entry
         for entry in store.values() if entry.get("direct_original_fetched")
@@ -674,7 +728,7 @@ def resolve_exposed_originals(
             reasons[reason] += 1
             continue
         fetched_at = parse_datetime(job.get("official_jd_fetched_at"))
-        if (job.get("official_search_verified") and not job.get("jd_tentative") and fetched_at
+        if (job.get("official_search_verified") and not jd_is_tentative(job) and fetched_at
                 and datetime.now(timezone.utc) - fetched_at <= timedelta(days=DETAIL_STALE_DAYS)
                 and len(str(job.get("description") or "").strip()) >= THIN_JD_CHARS
                 and not is_aggregator_url(application_url)
@@ -695,7 +749,7 @@ def resolve_exposed_originals(
             fresh = datetime.now(timezone.utc) - fetched_at.astimezone(timezone.utc) <= timedelta(days=DETAIL_STALE_DAYS)
         except (TypeError, ValueError):
             fresh = False
-        if prior and prior.get("official_url") and fresh and (
+        if prior and not jd_is_tentative(prior) and prior.get("official_url") and fresh and (
             not needs_jd or len(str(prior.get("description") or "").strip()) >= THIN_JD_CHARS
         ):
             for field in (
@@ -750,25 +804,31 @@ def resolve_exposed_originals(
                 failure = "http_network_error"
         else:
             failure = "http_domain_blocked_after_429"
-        posting = _job_posting_json(html) if html else {}
+        posting = _job_posting_json(html, job, application_url, final_url) if html else {}
+        mismatch = bool(html and _job_posting_json(html) and not posting)
+        if mismatch:
+            failure = "identity_mismatch"
         method = "direct_http"
-        if not posting and needs_jd:
+        if not posting and needs_jd and not mismatch:
             scrapling_html, scrapling_url, scrapling_failure = _scrapling_fetch(application_url)
             stats["scrapling_requests"] += 1
-            posting = _job_posting_json(scrapling_html) if scrapling_html else {}
             if scrapling_html:
                 html = scrapling_html
                 final_url = _html_redirect_url(scrapling_html) or final_url
             scrapling_tracker = is_outbound_tracker_url(scrapling_url)
             if scrapling_html and scrapling_url and not is_aggregator_url(scrapling_url) and not scrapling_tracker:
                 final_url = scrapling_url
+            posting = _job_posting_json(scrapling_html, job, application_url, final_url) if scrapling_html else {}
+            mismatch = bool(scrapling_html and _job_posting_json(scrapling_html) and not posting)
             method = "scrapling_fetcher"
-            failure = scrapling_failure or ("structured_jd_not_found" if not posting else "")
+            failure = "identity_mismatch" if mismatch else scrapling_failure or ("structured_jd_not_found" if not posting else "")
         final_host = urlsplit(final_url).netloc.lower()
         tracker = is_outbound_tracker_url(final_url)
         if not final_host or is_aggregator_url(final_url) or tracker:
             failure = failure or "redirect_remained_aggregator"
-        elif final_url:
+            posting = {}
+        elif posting or (html and not failure and not mismatch and not needs_jd
+                         and _likely_posting_url(final_url, job.get("title", ""))):
             job["official_url"] = final_url
             job["original_resolved"] = True
             job["direct_original_fetched"] = True
@@ -797,6 +857,8 @@ def resolve_exposed_originals(
             )
             job["enrichment_method"] = method
             job["enrichment_status"] = "resolved"
+            job.pop("jd_tentative", None)
+            job.pop("tentative_official_url", None)
             job.pop("enrichment_failure_reason", None)
             stats["jds_resolved"] += 1
             stats[f"{method}_resolved"] += 1
@@ -1116,6 +1178,43 @@ def is_sales_heavy(job: Dict[str, str]) -> bool:
     return bool(SALES_HEAVY_RE.search(title))
 
 
+def _requires_high_experience(text: str) -> bool:
+    """Only explicit candidate requirements may hard-reject on experience."""
+    requirement = r"\b(requires?|required|minimum|at least|must have|you have|you bring|qualifications|requirements)\b"
+    preference = r"\b(preferred|preferably|nice to have|bonus|ideally)\b"
+    required_section = False
+    for clause in re.split(r"[.!?;\n]", text):
+        heading = re.search(r"\b((?:minimum|basic|required|preferred)\s+)?(qualifications|requirements)\b", clause, re.I)
+        if heading:
+            required_section = not bool(re.search(preference, heading.group(), re.I))
+        elif re.search(r"\b(about us|about the company|benefits|responsibilities|what we offer)\b", clause, re.I):
+            required_section = False
+        years = []
+        for match in YOE_RE.finditer(clause):
+            prefix = clause[:match.start()]
+            suffix = re.split(r"\b(?:and|or)\b|,", clause[match.end():], maxsplit=1, flags=re.I)[0]
+            required = list(re.finditer(requirement, prefix, re.I))
+            if re.search(r"\b(?:for|has|have)\s+at least\s*$", prefix, re.I) and not re.search(r"\byou\b", prefix, re.I):
+                continue
+            preferred = list(re.finditer(preference, prefix, re.I))
+            explicit = list(re.finditer(r"\b(requires?|required|minimum|at least|must have)\b", prefix, re.I))
+            if preferred and (not explicit or preferred[-1].start() > explicit[-1].start()):
+                continue
+            if re.search(preference, suffix, re.I):
+                continue
+            if required_section or required:
+                years.append(match)
+        groups = []
+        for index, match in enumerate(years):
+            if index and re.search(r"\bor\b", clause[years[index - 1].end():match.start()], re.I):
+                groups[-1].append(int(match.group(1)))
+            else:
+                groups.append([int(match.group(1))])
+        if any(min(group) >= 6 for group in groups):
+            return True
+    return False
+
+
 def role_seniority_prefilter(job: Dict[str, str]) -> Tuple[bool, str]:
     """Tighten the LLM candidate pool after the hard filter.
 
@@ -1142,8 +1241,7 @@ def role_seniority_prefilter(job: Dict[str, str]) -> Tuple[bool, str]:
         return False, "prefilter:hardware"
     if SENIOR_TITLE_RE.search(title):
         return False, "prefilter:senior"
-    m = YOE_RE.search(text)
-    if m and int(m.group(1)) >= 6:
+    if _requires_high_experience(text):
         return False, "prefilter:high_yoe"
     # Title must look like an engineering role. JD keywords cannot rescue
     # Content Designer / BizOps / asset-management titles.
@@ -2315,7 +2413,7 @@ def enrich_from_exact_peers(
     for pipeline, store in peer_stores:
         by_company: Dict[str, List[Dict[str, Any]]] = {}
         for peer in store.values():
-            if len(str(peer.get("description") or "").strip()) < THIN_JD_CHARS:
+            if jd_is_tentative(peer) or len(str(peer.get("description") or "").strip()) < THIN_JD_CHARS:
                 continue
             company = normalize_company_key(peer.get("company", ""))
             if company:

@@ -9,11 +9,12 @@ from pathlib import Path
 from typing import Iterable
 
 from state_io import atomic_write
+from sources.schema import JD_EVIDENCE_FIELDS, copy_jd_evidence, jd_is_tentative
 
 FIELDS = ("company", "title", "location", "source", "official_url", "source_url",
           "job_id", "requisition_id", "description", "first_seen", "application_url",
           "official_search_status", "official_search_attempted_at", "recovery_methods",
-          "recovery_candidates", "recovery_triage", "recovery_input_hash")
+          "recovery_candidates", "recovery_triage", "recovery_input_hash", *JD_EVIDENCE_FIELDS)
 
 
 def _record(row: dict, pipeline: str) -> dict | None:
@@ -29,7 +30,9 @@ def _record(row: dict, pipeline: str) -> dict | None:
     record["source_url"] = str(row.get("source_url") or row.get("job_url") or row.get("url") or "")
     record["description"] = str(row.get("description") or row.get("requirements") or row.get("snippet") or "")
     record["requisition_id"] = str(row.get("requisition_id") or row.get("req_id") or "")
-    record["recovery_status"] = "jd_available" if len(record["description"].strip()) >= 200 else "candidate"
+    copy_jd_evidence(record, {**row, "description": record["description"]})
+    record["recovery_status"] = ("tentative" if jd_is_tentative(record) else
+                                 "jd_available" if len(record["description"].strip()) >= 200 else "candidate")
     return record
 
 
@@ -69,8 +72,8 @@ def write_snapshot(path: Path, pipeline: str, rows: Iterable[dict]) -> None:
             if prior and not record.get(field):
                 record[field] = prior.get(field) or ""
         if prior and len(record["description"].strip()) < 200 and len(str(prior.get("description") or "").strip()) >= 200:
-            record["description"] = prior["description"]
-            record["recovery_status"] = "jd_available"
+            copy_jd_evidence(record, prior)
+            record["recovery_status"] = "tentative" if jd_is_tentative(record) else "jd_available"
         records[key] = record
     payload = {"schema_version": 1, "pipeline": pipeline,
                "updated_at": datetime.now(timezone.utc).isoformat(),
@@ -84,4 +87,9 @@ def read_snapshot(path: Path) -> list[dict]:
         payload = json.loads(gzip.decompress(path.read_bytes()))
     except (OSError, ValueError, EOFError):
         return []
-    return [row for row in payload.get("jobs", []) if isinstance(row, dict)]
+    rows = [row for row in payload.get("jobs", []) if isinstance(row, dict)]
+    for row in rows:
+        if jd_is_tentative(row):
+            copy_jd_evidence(row, dict(row))
+            row["recovery_status"] = "tentative"
+    return rows

@@ -57,6 +57,17 @@ def _cards(html: str) -> List[Tuple[str, str, str, str]]:
     return out
 
 
+def extract_description(html: str) -> str:
+    """Prefer description fields; Avature also uses articles for tiny metadata blocks."""
+    soup = _soup(html)
+    nodes = soup.select(".job-description, #job-description, [itemprop='description']")
+    if not nodes:
+        nodes = soup.select("article.article--details, .cms-content, .jobdetail")
+    if not nodes:
+        nodes = soup.select("article")
+    return max((html_to_text(str(node)) for node in nodes), key=len, default="")
+
+
 def scrape_avature(
     session: requests.Session,
     *,
@@ -122,6 +133,9 @@ def scrape_avature(
                 )
                 description = str((decision.cached or {}).get("description") or "")
                 posted = str((decision.cached or {}).get("posted_date") or "")
+                if len(description.strip()) < 200:
+                    decision.should_fetch = True
+                    decision.reason = "missing_detail"
                 if decision.cached and not decision.should_fetch:
                     location = str(decision.cached.get("location") or location)
                     detail_reused += 1
@@ -130,11 +144,10 @@ def scrape_avature(
                     try:
                         det = http_get(session, official, label=f"{company} avature detail")
                         soup = _soup(det.text)
-                        desc_el = (
-                            soup.select_one(".job-description, #job-description, [itemprop='description'], article")
-                            or soup.select_one(".cms-content, .jobdetail")
-                        )
-                        description = html_to_text(str(desc_el) if desc_el else det.text)
+                        recovered = extract_description(det.text)
+                        if len(recovered.strip()) < 200:
+                            raise ValueError("thin_detail")
+                        description = recovered
                         date_el = soup.select_one("[itemprop='datePosted'], time")
                         if date_el:
                             posted = date_el.get("datetime") or date_el.get_text(" ", strip=True)

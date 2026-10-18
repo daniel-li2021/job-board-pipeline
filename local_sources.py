@@ -43,6 +43,7 @@ from sources import jobspy_local, linkedin_local, official_jd_recovery
 from sources.linkedin_transport import DETAIL_LIMIT
 from sources.schema import (
     OUTPUT_DIR,
+    copy_jd_evidence,
     SNAPSHOT_SCHEMA_VERSION,
     SourceUnavailable,
     read_source_snapshot_payload,
@@ -940,8 +941,8 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
                 row[field] = prior[field]
         if (len(str(prior.get("description") or "").strip()) >= board.THIN_JD_CHARS
                 and len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS):
-            row["description"] = prior["description"]
-            row["enrichment_method"] = prior.get("enrichment_method", "local_cache")
+            copy_jd_evidence(row, prior)
+            row.setdefault("enrichment_method", "local_cache")
     snapshots["remote_recovery"]["jobs"] = remote_rows
     originals = {name: copy.deepcopy(snapshots[name]["jobs"]) for name in names}
     before = {name: sum(len(str(row.get("description") or "").strip()) < board.THIN_JD_CHARS

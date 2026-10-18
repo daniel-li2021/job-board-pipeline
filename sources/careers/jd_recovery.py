@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import shutil
 import time
 from collections import Counter, defaultdict, deque
@@ -75,7 +76,11 @@ def _posting(html: str) -> Dict[str, Any]:
 def extract_detail(html: str, company: str) -> Tuple[str, str, str, str]:
     """Return JD, title, posted date, and employer-side identifier."""
     posting = _posting(html)
-    description = html_to_text(str(posting.get("description") or ""))
+    fields = ("description", "responsibilities", "qualifications") if company == "Meta" else ("description",)
+    description = "\n\n".join(filter(None, (html_to_text(str(posting.get(field) or "")) for field in fields)))
+    if company == "Two Sigma" and len(description) < THIN_JD_CHARS:
+        from .avature import extract_description
+        description = extract_description(html)
     if len(description) < THIN_JD_CHARS:
         soup = BeautifulSoup(html, "html.parser")
         selectors = (
@@ -100,16 +105,22 @@ def _same_job(job: Dict[str, Any], response_url: str, title: str, identifier: st
     expected_id = str(job.get("job_id") or "")
     if not expected_url or urlsplit(response_url).hostname != urlsplit(expected_url).hostname:
         return False
+    same_url = normalize_job_url(response_url) == normalize_job_url(expected_url)
+    # Meta publishes a separate schema identifier for the same numeric URL ID.
+    meta_paths = [re.fullmatch(r"/(?:jobs|profile/job_details)/(\d+)/?", urlsplit(url).path)
+                  for url in (expected_url, response_url)]
+    meta_alias = (urlsplit(expected_url).hostname == "www.metacareers.com"
+                  and all(meta_paths) and all(match.group(1) == expected_id for match in meta_paths))
     if identifier and expected_id and identifier.lower() != expected_id.lower():
         # Some portals expose a second display ID; the canonical URL can still
         # establish identity if its employer-side path has not changed.
-        if normalize_job_url(response_url) != normalize_job_url(expected_url):
+        if not (same_url or meta_alias):
             return False
     if title and normalize_title_key(title) != normalize_title_key(str(job.get("title") or "")):
         return False
-    if normalize_job_url(response_url) == normalize_job_url(expected_url):
+    if same_url or meta_alias:
         return True
-    return bool(expected_id and expected_id.lower() in urlsplit(response_url).path.lower())
+    return bool(expected_id and expected_id.lower() in urlsplit(response_url).path.lower().split("/"))
 
 
 def _triage_hash(job: Dict[str, Any]) -> str:

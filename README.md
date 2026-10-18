@@ -240,4 +240,4 @@ python3 infra/scheduler/test_scheduler.py
 bash -n scripts/local_source_sync.sh
 ```
 
-These cover matching/cache invariants, adapters, state recovery, repeated runs, dashboard rendering and the local runner. Cleanup decisions and validation are recorded in [CLEANUP_PROGRESS.md](CLEANUP_PROGRESS.md).
+These cover matching/cache invariants, adapters, state recovery, repeated runs, dashboard rendering and the local runner. Cleanup decisions and validation are recorded in [CLEANUP_PROGRESS.md](CLEANUP_PROGRESS.md). [Batch 1 correctness validation](docs/BATCH1_VALIDATION.md) records saved-record before/after behavior, parser fixtures, cache checks, and independent regression review.

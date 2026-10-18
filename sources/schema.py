@@ -580,6 +580,34 @@ def normalize_sponsorship(job: Dict[str, Any]) -> str:
     return "Unknown"
 
 
+JD_EVIDENCE_FIELDS = (
+    "enrichment_method", "enrichment_status", "jd_tentative", "tentative_official_url",
+    "jd_recovery_at", "official_search_status", "official_search_verified",
+    "official_jd_fetched_at", "direct_original_fetched", "direct_original_fetched_at",
+)
+
+
+def jd_is_tentative(job: Dict[str, Any]) -> bool:
+    # Older handoffs lost the flag but retained the method.
+    return bool(job.get("jd_tentative") or
+                str(job.get("enrichment_method") or "").startswith("tentative_") or
+                job.get("enrichment_status") == "tentative")
+
+
+def copy_jd_evidence(target: Dict[str, Any], source: Dict[str, Any]) -> None:
+    """Keep the description and its confidence/provenance inseparable on reuse."""
+    target["description"] = source.get("description") or ""
+    for field in JD_EVIDENCE_FIELDS:
+        target.pop(field, None)
+        if field in source:
+            target[field] = source[field]
+    if jd_is_tentative(source):
+        target.update(jd_tentative=True, enrichment_status="tentative", official_search_status="tentative")
+        for field in ("official_search_verified", "official_jd_fetched_at",
+                      "direct_original_fetched", "direct_original_fetched_at"):
+            target.pop(field, None)
+
+
 def retain_description(description: str) -> str:
     text = normalize_space(description)
     if len(text) <= JD_HEAD_CHARS + JD_TAIL_CHARS:

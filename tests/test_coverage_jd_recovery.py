@@ -191,7 +191,9 @@ class DetailRecoveryTests(unittest.TestCase):
                   "description": "Complete description. " * 20,
                   "detail_fetched_at": NOW.isoformat()}
         result = {"company": "Disney", "jobs": [job]}
-        with patch.object(jd_recovery, "http_get") as fetch:
+        with patch.object(jd_recovery, "http_get") as fetch, patch.object(
+            jd_recovery.time, "time", return_value=NOW.timestamp()
+        ):
             stats = jd_recovery.recover([result], [cached], lambda _: "clear")
         fetch.assert_not_called()
         self.assertEqual(1, stats["cache_reused"])

@@ -20,7 +20,7 @@ import recovery_policy
 import recovery_ai
 from . import ats
 from .schema import (
-    SourceUnavailable, is_aggregator_url, is_outbound_tracker_url, looks_official,
+    SourceUnavailable, copy_jd_evidence, jd_is_tentative, is_aggregator_url, is_outbound_tracker_url, looks_official,
     normalize_company_key, normalize_location_key, normalize_space,
     normalize_title_key, unwrap_redirect_url,
 )
@@ -358,20 +358,22 @@ class Resolver:
                 "outcome": "no_match",
             }
         if len(str(row.get("description") or "").strip()) >= board.THIN_JD_CHARS:
+            if jd_is_tentative(row):
+                copy_jd_evidence(row, dict(row))
+                return "tentative_cache"
             return "already_resolved"
         tentative_at = _stamp(previous.get("jd_recovery_at"))
-        if (previous.get("jd_tentative") and tentative_at and now - tentative_at <= timedelta(days=CACHE_DAYS)
+        if (jd_is_tentative(previous) and tentative_at and now - tentative_at <= timedelta(days=CACHE_DAYS)
                 and normalize_title_key(str(previous.get("title") or "")) == normalize_title_key(str(row.get("title") or ""))
                 and len(str(previous.get("description") or "").strip()) >= board.THIN_JD_CHARS):
-            for field in ("description", "jd_tentative", "tentative_official_url", "jd_recovery_at"):
-                row[field] = previous[field]
+            copy_jd_evidence(row, previous)
             row["enrichment_method"] = "tentative_cache"
             row["enrichment_status"] = "tentative"
             self.stats["tentative_cache"] += 1
             return "tentative_cache"
         if normalize_title_key(str(previous.get("title") or "")) == normalize_title_key(str(row.get("title") or "")):
             cached_at = _stamp(previous.get("official_jd_fetched_at"))
-            if cached_at and now - cached_at <= timedelta(days=CACHE_DAYS) and len(str(previous.get("description") or "").strip()) >= board.THIN_JD_CHARS:
+            if not jd_is_tentative(previous) and cached_at and now - cached_at <= timedelta(days=CACHE_DAYS) and len(str(previous.get("description") or "").strip()) >= board.THIN_JD_CHARS:
                 for field in ("description", "application_url", "official_jd_fetched_at", "official_search_verified"):
                     if previous.get(field):
                         row[field] = previous[field]
@@ -388,8 +390,8 @@ class Resolver:
             }
         for entry in [self.store_by_id.get(key, {})]:
             if normalize_title_key(str(entry.get("title") or "")) == normalize_title_key(str(row.get("title") or "")) and len(str(entry.get("description") or "").strip()) >= board.THIN_JD_CHARS:
-                row["description"] = entry["description"]
-                if entry.get("jd_tentative"):
+                copy_jd_evidence(row, entry)
+                if jd_is_tentative(entry):
                     row["jd_tentative"] = True
                     row["tentative_official_url"] = entry.get("tentative_official_url", "")
                     row["jd_recovery_at"] = entry.get("jd_recovery_at", "")
@@ -519,7 +521,7 @@ class Resolver:
         if self.remote_by_company is None:
             peers: dict[str, list[dict]] = {}
             for entry in store.values():
-                if not entry.get("remote_recovery") or len(str(entry.get("description") or "").strip()) < board.THIN_JD_CHARS:
+                if jd_is_tentative(entry) or not entry.get("remote_recovery") or len(str(entry.get("description") or "").strip()) < board.THIN_JD_CHARS:
                     continue
                 peers.setdefault(normalize_company_key(str(entry.get("company") or "")), []).append(entry)
             self.remote_by_company = peers
@@ -548,7 +550,7 @@ class Resolver:
             if self.indeed_by_company is None:
                 peers: dict[str, list[dict]] = {}
                 for entry in store.values():
-                    if "indeed" not in str(entry.get("source") or "").lower():
+                    if jd_is_tentative(entry) or "indeed" not in str(entry.get("source") or "").lower():
                         continue
                     if len(str(entry.get("description") or "").strip()) < board.THIN_JD_CHARS:
                         continue
