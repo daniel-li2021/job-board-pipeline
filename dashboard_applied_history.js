@@ -6,6 +6,7 @@
   let archive = {};
   try { archive = JSON.parse(localStorage.getItem(archiveCacheKey) || '{}'); } catch (e) { archive = {}; }
   const archivePending = new Set();
+  let sharedArchiveRows = new Map();
   const trackedStatuses = new Set(['in_progress', 'applied_complete']);
   // Verified pre-snapshot records remain here until their metadata reaches shared history.
   const legacyDetails = {
@@ -210,10 +211,20 @@
     }
     return 0;
   };
+  let appliedHistoryByCompany = null;
+  function indexAppliedHistory() {
+    appliedHistoryByCompany = new Map();
+    for (const item of Object.values(archive)) {
+      if (statusOf(item) !== 'applied_complete' || isDeleted(item)) continue;
+      const company = normalizeHistoryCompany(item.company);
+      if (!company) continue;
+      if (!appliedHistoryByCompany.has(company)) appliedHistoryByCompany.set(company, []);
+      appliedHistoryByCompany.get(company).push(item);
+    }
+  }
   const applicationHistorySummary = row => {
     const company = normalizeHistoryCompany(row?.company);
-    // ponytail: archives are hundreds of rows; index by company only if rendering becomes measurable.
-    const history = company ? [...new Map(Object.values(archive)
+    const history = appliedHistoryByCompany ? (appliedHistoryByCompany.get(company) || []) : company ? [...new Map(Object.values(archive)
       .filter(item => statusOf(item) === 'applied_complete' && !isDeleted(item)
         && normalizeHistoryCompany(item.company) === company)
       .map(item => [item.canonical_job_key, item])).values()] : [];
@@ -274,6 +285,13 @@
       renderReviewMessage();
       return;
     }
+    const remote = sharedArchiveRows.get(storageKey);
+    if (remote && remote.status === (snapshot._tracked_status || 'applied_complete') && !remote.deleted) {
+      snapshot.pending = false;
+      snapshot._archive_updated_at = remote.updated_at || '';
+      persistAppliedArchive();
+      return;
+    }
     archivePending.add(jobKey);
     const updatedAt = snapshot._archive_updated_at || new Date().toISOString();
     const payload = { canonical_job_key: storageKey, status: snapshot._tracked_status || 'applied_complete', deleted: false, updated_at: updatedAt };
@@ -285,6 +303,7 @@
     if (error) {
       sharedError = `Could not sync applied history: ${error.message}`;
     } else if (current && archiveTime(current) <= Date.parse(updatedAt)) {
+      sharedArchiveRows.set(storageKey, payload);
       current.pending = false;
       current._archive_updated_at = updatedAt;
       sharedError = '';
@@ -358,6 +377,7 @@
   }
 
   function renderLastSevenDays(rows = uniqueRows()) {
+    if (!sharedLoaded && !sharedError) return;
     const panel = ensureLastSevenDaysPanel();
     if (!panel) return;
     const sourceChoices = [
@@ -409,25 +429,28 @@
 
   renderAll = function() {
     if (!sharedLoaded && !sharedError) return;
-    syncArchiveRows();
-    const rows = uniqueRows();
-    renderSummary();
-    tabs('fresh', D.fresh_24h);
-    tabs('rolling', D.rolling_3d);
-    renderBox('referrals', normalRows(D.referrals));
-    renderBox('inProgress', searchedRows(rows.filter(r => statusOf(r) === 'in_progress' && !isDeleted(r))));
-    renderBox('applied', appliedRows(rows));
-    document.querySelectorAll('#applied .repair-archive').forEach(button => button.onclick = () => {
-      const key = button.dataset.key, row = completeTrackedRow(key, recoveredRow(key), true);
-      if (row) { archiveTrackedJob(key, 'applied_complete', row._applied_at, row); renderAll(); }
-    });
-    renderLastSevenDays(rows);
-    const box = document.getElementById('deleted');
-    box.innerHTML = jobs(rows.filter(isDeleted), true);
-    bindStatus(box);
-    renderHiddenCompanies(rows);
-    renderMainViewTabs(rows);
-    renderSearchState(rows);
+    indexAppliedHistory();
+    try {
+      syncArchiveRows();
+      const rows = uniqueRows();
+      renderSummary();
+      tabs('fresh', D.fresh_24h);
+      tabs('rolling', D.rolling_3d);
+      renderBox('referrals', normalRows(D.referrals));
+      renderBox('inProgress', searchedRows(rows.filter(r => statusOf(r) === 'in_progress' && !isDeleted(r))));
+      renderBox('applied', appliedRows(rows));
+      document.querySelectorAll('#applied .repair-archive').forEach(button => button.onclick = () => {
+        const key = button.dataset.key, row = completeTrackedRow(key, recoveredRow(key), true);
+        if (row) { archiveTrackedJob(key, 'applied_complete', row._applied_at, row); renderAll(); }
+      });
+      renderLastSevenDays(rows);
+      const box = document.getElementById('deleted');
+      box.innerHTML = jobs(rows.filter(isDeleted), true);
+      bindStatus(box);
+      renderHiddenCompanies(rows);
+      renderMainViewTabs(rows);
+      renderSearchState(rows);
+    } finally { appliedHistoryByCompany = null; }
   };
 
   syncPending = async function() {
@@ -450,6 +473,7 @@
       if (page.length < 1000) break;
     }
 
+    sharedArchiveRows = new Map(rows.filter(row => String(row.canonical_job_key || '').startsWith(archivePrefix)).map(row => [row.canonical_job_key, row]));
     const merged = {}, remoteArchive = {};
     rows.forEach(row => {
       const snapshot = decodeArchive(row);

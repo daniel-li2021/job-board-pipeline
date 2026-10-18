@@ -9,6 +9,7 @@ on:
       - "config/official_careers.json"
       - "config/target_companies.json"
       - "dashboard.py"
+      - "job_identity.py"
       - "pipeline_health.py"
       - "dashboard_applied_history.js"
       - "dashboard_last7.js"

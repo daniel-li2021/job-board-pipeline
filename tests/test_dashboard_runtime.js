@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const {execFileSync} = require('node:child_process');
 const html = execFileSync('python3', ['-c', 'import dashboard; print(dashboard.HTML_TEMPLATE)'], {encoding:'utf8'});
-const payload = {snapshots:{}, fresh_24h:[], rolling_3d:[], referrals:[], workflow_rows:[], history_details:{}, supabase:{}};
+const payload = {snapshots:{}, fresh_24h:[], rolling_3d:[], referrals:[], workflow_rows:[], history_details:{}, review_alias_groups:[["legacy-alias","current-alias","source-alias"]], supabase:{}};
 const cache = {jobReviewSharedCacheV1: JSON.stringify({
   stale: {canonical_job_key:'stale',status:'applied_complete',updated_at:'2099-01-01T00:00:00Z'}
 })};
@@ -74,7 +74,7 @@ vm.runInContext(`searchQuery='';minScore='';sponsorshipFilters=new Set(sponsorsh
 const extensionSources = ['dashboard_applied_history.js','dashboard_last7.js'].map(file => fs.readFileSync(file,'utf8'));
 extensionSources.forEach(source => assert.doesNotMatch(source, /\bfunction\s+renderSummary\b|\brenderSummary\s*=/));
 let extension = extensionSources[0];
-extension = extension.slice(0, extension.indexOf('  // Wait for the initial shared load')) + 'globalThis.check={appliedRows,applicationHistorySummary,archiveStorageKey,decodeArchive,backfillTrackedArchives,expandedStates,syncArchiveRows,completeTrackedRow,archiveTrackedJob,getArchive:()=>archive};})();';
+extension = extension.slice(0, extension.indexOf('  // Wait for the initial shared load')) + 'globalThis.check={pushAppliedArchive,rememberSharedArchive:row=>sharedArchiveRows.set(row.canonical_job_key,row),indexAppliedHistory,resetHistoryIndex:()=>{appliedHistoryByCompany=null},appliedRows,applicationHistorySummary,archiveStorageKey,decodeArchive,backfillTrackedArchives,expandedStates,syncArchiveRows,completeTrackedRow,archiveTrackedJob,getArchive:()=>archive};})();';
 vm.runInContext(extension, context);
 assert.equal(vm.runInContext('renderSummary', context), renderSummaryOwner);
 vm.runInContext(`
@@ -228,5 +228,36 @@ assert.equal(vm.runInContext("reviewStates.stale.status",context),'unreviewed');
 assert.equal(vm.runInContext("reviewStates.stale.pending",context),false);
 assert.equal(vm.runInContext("reviewStates.pending.deleted",context),true);
 assert.equal(vm.runInContext("reviewStates.pending.pending",context),true);
+let archiveWrites=0;
+context.recordArchiveWrite=()=>{archiveWrites++};
+vm.runInContext(`
+const identicalArchive={...check.getArchive().one,_tracked_status:'applied_complete',pending:true};
+check.rememberSharedArchive({canonical_job_key:check.archiveStorageKey(identicalArchive),status:'applied_complete',deleted:false,updated_at:'2026-09-01T00:00:00Z'});
+supabase={from(){return {upsert:async()=>{recordArchiveWrite();return {error:null}}}}};
+`,context);
+await vm.runInContext('check.pushAppliedArchive(identicalArchive)',context);
+assert.equal(archiveWrites,0);
+assert.equal(vm.runInContext('identicalArchive.pending',context),false);
+assert.equal(vm.runInContext('identicalArchive._archive_updated_at',context),'2026-09-01T00:00:00Z');
+await vm.runInContext("check.pushAppliedArchive({...identicalArchive,title:'Changed archive metadata',pending:true})",context);
+assert.equal(archiveWrites,1);
+const originalBadges=vm.runInContext('allRows.slice(0,25).map(applicationHistoryBadges).join()',context);
+vm.runInContext('check.indexAppliedHistory()',context);
+assert.equal(vm.runInContext('allRows.slice(0,25).map(applicationHistoryBadges).join()',context),originalBadges);
+vm.runInContext('check.resetHistoryIndex()',context);
+vm.runInContext(`
+supabase=null;
+reviewStates={'legacy-alias':{canonical_job_key:'legacy-alias',status:'applied_complete',deleted:true,updated_at:'2026-10-18T00:00:00Z'}};
+`,context);
+assert.equal(vm.runInContext("statusOf({canonical_job_key:'current-alias'})",context),'applied_complete');
+assert.equal(vm.runInContext("isDeleted({canonical_job_key:'current-alias'})",context),true);
+assert.equal(vm.runInContext("Object.keys(reviewStates).length",context),1); // Read-only alias resolution.
+vm.runInContext("saveStates(['current-alias'],{deleted:false})",context);
+assert.equal(vm.runInContext("isDeleted({canonical_job_key:'source-alias'})",context),false);
+assert.equal(vm.runInContext("Object.keys(reviewStates).length",context),1); // Update existing key; no alias migration.
+assert.equal(vm.runInContext("identityRows([{canonical_job_key:'legacy-alias'},{canonical_job_key:'current-alias'},{canonical_job_key:'distinct'}]).length",context),2);
+assert.equal(vm.runInContext("safeJobUrl('javascript:alert(1)')",context),'#');
+assert.equal(vm.runInContext("safeJobUrl('data:text/html,unsafe')",context),'#');
+assert.equal(vm.runInContext("safeJobUrl('https://example.com/job/1')",context),'https://example.com/job/1');
 console.log('Dashboard runtime checks passed');
 })().catch(error=>{console.error(error);process.exitCode=1});

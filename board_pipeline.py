@@ -51,6 +51,7 @@ from zoneinfo import ZoneInfo
 import requests
 
 import alert_history
+import job_identity
 import coverage_reconcile
 import llm_config
 from sources import ats
@@ -235,19 +236,35 @@ def digest_alert_jobs(
     last_tier = state.get("alerted_tier") or {}
     if not isinstance(last_tier, dict):
         last_tier = {}
+    alerted_details = {}
+    for old_key in already_keys | set(last_tier):
+        token = job_identity.detail_identity(str(old_key).removeprefix("url::")) if str(old_key).startswith("url::") else ""
+        if token:
+            alerted_details.setdefault(token, []).append(last_tier.get(old_key) or "A")
     out: List[Dict[str, str]] = []
-    for job in visible:
+    emitted_identities = set()
+    for job in sorted(visible, key=lambda row: row.get("tier") != "A"):
         tier = job.get("tier")
         if tier not in ("A", "B"):
             continue
         key = dedup_key(job)
-        last = last_tier.get(key)
-        if last is None and key in already_keys:
-            last = "A"
-        if last is None and (eligible_new_keys is None or key in eligible_new_keys):
-            out.append(job)
-        elif last == "B" and tier == "A":
-            out.append(job)
+        keys = {key}
+        if job.get("source") and job.get("job_id"):
+            keys.add(f"id::{job['source']}::{job['job_id']}")
+        prior_tiers = [last_tier.get(alias) or "A" for alias in keys if alias in already_keys or alias in last_tier]
+        token = job_identity.detail_identity(job.get("official_url") or "")
+        prior_tiers.extend(alerted_details.get(token, []))
+        last = "A" if "A" in prior_tiers else "B" if "B" in prior_tiers else None
+        admitted = last is None and (eligible_new_keys is None or key in eligible_new_keys)
+        if not (admitted or (last == "B" and tier == "A")):
+            continue
+        identities = keys - {""}
+        if token:
+            identities.add("detail::" + token)
+        if identities & emitted_identities:
+            continue
+        emitted_identities.update(identities)
+        out.append(job)
     return out
 
 

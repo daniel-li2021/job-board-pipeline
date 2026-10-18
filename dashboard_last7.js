@@ -101,6 +101,7 @@
   }
 
   function renderEnhancedLastSevenDays(rows = uniqueRows()) {
+    if (!sharedLoaded && !sharedError) return;
     const panel = ensureEnhancedLastSevenDaysPanel();
     if (!panel) return;
 

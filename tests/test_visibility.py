@@ -703,7 +703,7 @@ class DashboardPolicyTests(unittest.TestCase):
         self.assertIn("<th>Sponsorship</th>", dashboard.HTML_TEMPLATE)
         self.assertIn("'Amazon','Meta','TikTok'", dashboard.HTML_TEMPLATE)
         self.assertIn("const companyStatePrefix='company::'", dashboard.HTML_TEMPLATE)
-        self.assertIn("const normalRows=rows=>rows.filter(r=>statusOf(r)==='unreviewed'&&!isDeleted(r)&&!isCompanyHidden(r))", dashboard.HTML_TEMPLATE)
+        self.assertIn("const normalRows=rows=>identityRows(rows).filter(r=>statusOf(r)==='unreviewed'&&!isDeleted(r)&&!isCompanyHidden(r))", dashboard.HTML_TEMPLATE)
         self.assertIn("renderBox('referrals',normalRows(D.referrals))", dashboard.HTML_TEMPLATE)
         self.assertIn("renderSummary()", dashboard.HTML_TEMPLATE)
         self.assertIn("<summary>Hidden companies", dashboard.HTML_TEMPLATE)

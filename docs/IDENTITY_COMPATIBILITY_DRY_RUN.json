@@ -1,0 +1,88 @@
+{
+  "mode": "additive_alias_dry_run",
+  "applied": false,
+  "backup_sha256": "85193e73661e7b69deb6f50678485a5b9a44e8cb43f296bf2850f54348b6bced",
+  "backup_rows": 4681,
+  "local_review_keys": 0,
+  "stored_records": 3126,
+  "proposed_key_changes": 613,
+  "key_changes_covered_by_safe_aliases": 135,
+  "key_changes_deferred": 478,
+  "alias_groups": 761,
+  "alias_keys": 1669,
+  "remote_direct_statuses_by_state": {
+    "applied_complete": 981,
+    "in_progress": 12,
+    "unreviewed": 40,
+    "unreviewed deleted": 884,
+    "in_progress deleted": 82
+  },
+  "remote_alias_keys_present": 21,
+  "groups_with_different_saved_statuses": 0,
+  "all_original_records_keys_statuses_dates_preserved": true,
+  "browser_runtime_rehearsal": {
+    "actual_runtime_reader_exercised": true,
+    "expanded_status_rows": 1990,
+    "original_state_projection_preserved": true,
+    "alias_statuses_agree": true,
+    "history_badges_100_rows_ms": 72.043,
+    "index_and_history_badges_100_rows_ms": 1.17,
+    "preexisting_archive_backfills": 0,
+    "new_automatic_writes": 0,
+    "simulated_explicit_delete_updates_existing_key": 1,
+    "network_requests": 0
+  },
+  "archived_metadata_records_retained": 2682,
+  "archive_application_dates_retained": 1867,
+  "first_seen_policy": "Stored first_seen remains untouched; new source-ID/URL aliases inherit prior discovery date.",
+  "ledgers": {
+    "output/board/alert_history.json": {
+      "sha256": "0bcb4babb52db55946088b7e185c59a3548df1b58bbc11dca89b1d4db3ad6aa9",
+      "alias_keys_referenced": 6,
+      "retained_verbatim": true
+    },
+    "output/board/digest_state.json": {
+      "sha256": "42f53725ba8cfed2416df0819945fc028bad9573650575d236c9a163d682a7e1",
+      "alias_keys_referenced": 6,
+      "retained_verbatim": true
+    },
+    "output/board/seen_jobs.json": {
+      "sha256": "a695d0d79022eb666f5173775723d39ff38b9fb9d0d943fa4c00edc575758855",
+      "alias_keys_referenced": 414,
+      "retained_verbatim": true
+    },
+    "output/syncareer/alert_history.json": {
+      "sha256": "a9ab27a2e1dac4f2d722083d144f46e94f1f5998fce656dfc681780ce0b68489",
+      "alias_keys_referenced": 32,
+      "retained_verbatim": true
+    },
+    "output/syncareer/seen_jobs.json": {
+      "sha256": "79d4b8960fbcc4c3b633aeae3b995d88793ea861f1c66c91eca4b7fd8317ddfb",
+      "alias_keys_referenced": 0,
+      "retained_verbatim": true
+    },
+    "output/official_careers/alert_history.json": {
+      "sha256": "a580b736c4b745c08c7edfa157601dcc568432bb79a794cc3f58002f362125ac",
+      "alias_keys_referenced": 58,
+      "retained_verbatim": true
+    },
+    "output/official_careers/digest_state.json": {
+      "sha256": "d12d51b5cf5b791f507b5c985e7aee3317e073c722426b89cb2670b2517c9e04",
+      "alias_keys_referenced": 62,
+      "retained_verbatim": true
+    },
+    "output/official_careers/seen_jobs.json": {
+      "sha256": "31c15b1b35dc985ca6b59509cb2cf75df49b0f503d8e8b67de818a915723a8d4",
+      "alias_keys_referenced": 623,
+      "retained_verbatim": true
+    }
+  },
+  "browser_pending_edits_inspected": false,
+  "rollback": "Remove additive aliases; restore no database rows because no database mutation occurs.",
+  "blocking_limits": [
+    "Unrecognized posting URLs remain separate; no mass rekey.",
+    "Public REST export is paginated and not a transactional database backup.",
+    "Browser-only pending edits and historical status events absent from the table cannot be exported here.",
+    "Live rekey/merge requires owner approval and a consistent database backup."
+  ]
+}

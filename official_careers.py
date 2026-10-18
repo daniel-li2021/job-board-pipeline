@@ -50,6 +50,7 @@ from sources.schema import (
 
 import notification_outbox
 import board_pipeline as board
+import job_identity
 import coverage_reconcile
 import llm_config
 
@@ -654,14 +655,26 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
         elif entry.get("first_seen"):
             seen_jobs[key] = str(entry["first_seen"])
     seen_before_run = set(seen_jobs)
+    by_source_id = {}
+    for entry in store.values():
+        identity = (entry.get("source"), entry.get("job_id"))
+        if all(identity):
+            previous = by_source_id.get(identity)
+            if previous is None or str(entry.get("first_seen") or "~") < str(previous.get("first_seen") or "~"):
+                by_source_id[identity] = entry
     store = board.prune_store(store, now)
     new_keys: set[str] = set()
     for job in deduped:
         key = dedup_key(job)
         prev = store.get(key)
-        board.preserve_job_dates(job, prev or {}, first_seen=seen_jobs.get(key))
-        job["first_seen"] = str(job.get("first_seen") or now_iso)
-        is_new = not (prev or seen_jobs.get(key))
+        peer = by_source_id.get((job.get("source"), job.get("job_id")))
+        token = job_identity.detail_identity(job.get("official_url"))
+        if not prev and peer and token and token == job_identity.detail_identity(peer.get("official_url")):
+            prev = peer
+        known_alias, alias_date = (True, seen_jobs[key]) if key in seen_jobs else job_identity.discovery_alias_date(job, seen_jobs)
+        board.preserve_job_dates(job, prev or {}, first_seen=seen_jobs.get(key) or (prev or {}).get("first_seen") or alias_date)
+        job["first_seen"] = str(job.get("first_seen") or ("" if known_alias else now_iso))
+        is_new = not (prev or known_alias or key in seen_jobs)
         if is_new:
             new_keys.add(key)
         if not seen_jobs.get(key):

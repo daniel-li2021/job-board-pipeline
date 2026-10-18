@@ -1,4 +1,6 @@
--- Run once in the Supabase SQL editor. Anyone using the public dashboard can edit.
+-- LEGACY PUBLIC-WRITE SETUP: anyone using the public key can edit.
+-- Do not rerun on an existing project: this removes allowlist protections.
+-- See job_review_hardening.sql for the approval-gated replacement proposal.
 create table if not exists public.job_review_status (
   canonical_job_key text primary key check (length(canonical_job_key) between 1 and 2048),
   status text not null default 'unreviewed'
