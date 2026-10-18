@@ -1,19 +1,25 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-10-18 07:53 PDT
-- Snapshot (UTC): 2026-10-18T14:53:21.036885+00:00
+- Updated (PT): 2026-10-18 16:53 PDT
+- Snapshot (UTC): 2026-10-18T23:53:10.728575+00:00
 - Jobs: 40
-- Last 24 hours: 16
+- Last 24 hours: 10
 - Last 3 days: 40
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 88.0 | Syncareer | Choice Hotels | Software Engineer 1 | Scottsdale, Arizona, United States | 2026-10-17 | No sponsor | - | unreviewed | not_dedicated | [open](https://choicehotels.wd5.myworkdayjobs.com/en-US/External/job/Scottsdale-AZ---Technology--Digital-Commerce-Center/Software-Engineer-1_R22450) |
-| A | 87.0 | Syncareer | Zions Bancorporation | Software Engineer | Midvale, Utah, United States | 2026-10-17 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.zionsbancorp.com/jobs/software-engineer-28961) |
-| A | 89.0 | Syncareer | Liberty Mutual Insurance | Software Engineer, Investments Technology | Boston, Massachusetts, United States | 2026-10-17 | No sponsor | - | unreviewed | not_dedicated | [open](https://libertymutual.eightfold.ai/careers?pid=618520262972&domain=libertymutual.com&sort_by=relevance) |
 | B | 84.0 | Syncareer | Justworks | Software Engineer, Solutions Engineering | New York, New York, United States | 2026-10-17 | Sponsor | - | unreviewed | not_dedicated | [open](https://boards.greenhouse.io/justworks/jobs/8286381?gh_jid=8286381) |
+| A | 88.0 | Syncareer | Choice Hotels | Software Engineer 1 | Scottsdale, Arizona, United States | 2026-10-17 | No sponsor | - | unreviewed | not_dedicated | [open](https://choicehotels.wd5.myworkdayjobs.com/en-US/External/job/Scottsdale-AZ---Technology--Digital-Commerce-Center/Software-Engineer-1_R22450) |
+| A | 89.0 | Syncareer | Liberty Mutual Insurance | Software Engineer, Investments Technology | Boston, Massachusetts, United States | 2026-10-17 | No sponsor | - | unreviewed | not_dedicated | [open](https://libertymutual.eightfold.ai/careers?pid=618520262972&domain=libertymutual.com&sort_by=relevance) |
+| A | 87.0 | Syncareer | Zions Bancorporation | Software Engineer | Midvale, Utah, United States | 2026-10-17 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.zionsbancorp.com/jobs/software-engineer-28961) |
+| B | 76.0 | Syncareer | Abnormal AI | Software Engineer 1 - Cloud Infrastructure | United States | 2026-10-17 | Sponsor | - | unreviewed | not_dedicated | [open](https://abnormal.ai/careers/jobs/8015179003?gh_jid=8015179003) |
+| A | 86.0 | Syncareer | Zions Bank | Software Engineer | Midvale, Utah, United States | 2026-10-17 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.zionsbank.com/jobs/software-engineer-28961) |
+| B | 77.0 | Syncareer | CoStar Group | Software Engineer I- CoStar Suite- Arlington, VA | Arlington, Virginia, United States | 2026-10-17 | No sponsor | - | unreviewed | not_dedicated | [open](https://costar.wd1.myworkdayjobs.com/en-US/CoStarCareers/job/US-VA-Arlington/Software-Engineer-I--CoStar-Suite--Arlington--VA_R40122?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db) |
+| B | 84.0 | Syncareer | Axon | Software Engineer I | Seattle, Washington, United States | 2026-10-17 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/axon/jobs/7703668003) |
+| B | 74.0 | Syncareer | BlackRock | Associate, Frontend Software Engineer (React) - SpiderRock Advisors | Chicago, Illinois, United States | 2026-10-17 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.blackrock.com/job/chicago/associate-frontend-software-engineer-react-spiderrock-advisors/45831/102005317984) |
+| B | 76.0 | Syncareer | Bayer | Reliability Systems Engineer (On-Site, Muscatine, IA) | Muscatine, Iowa, United States | 2026-10-17 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.bayer.com/job/Muscatine-Reliability-Systems-Engineer-%28On-Site%2C-Muscatine%2C-IA%29-Iowa/1439087133/) |
 | A | 96.0 | Syncareer | Morningstar | Associate Software Engineer | Chicago, Illinois, United States | 2026-10-16 | Sponsor | - | unreviewed | not_dedicated | [open](https://morningstar.wd5.myworkdayjobs.com/en-US/morningstar/job/Chicago/Associate-Software-Engineer_REQ-058508-1?locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db) |
 | B | 92.0 | Syncareer | Healthpeak Properties | Forward Deployed Software Engineer Internship | Irvine, California, United States | 2026-10-16 | Sponsor | - | unreviewed | not_dedicated | [open](https://healthpeak.applytojob.com/apply/RTf9TfJE4h/Forward-Deployed-Software-Engineer-Internship) |
 | B | 77.0 | Syncareer | OSI Systems | Software Engineer 1 | Billerica, Massachusetts, United States | 2026-10-16 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.osi-systems.jobs/careers-home/jobs/37830?lang=en-us) |
@@ -42,11 +48,5 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 83.0 | Syncareer | Comcast | Junior Software Engineer- 4 Days Onsite- Englewood, CO- FreeWheel | Englewood, Colorado, United States | 2026-10-15 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.comcast.com/job/englewood/junior-software-engineer-4-days-onsite-englewood-co-freewheel/45483/101993544896) |
 | A | 91.0 | Syncareer | CLEAR | Software Development Engineer I | Austin, Texas, United States | 2026-10-15 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/clear/jobs/8241829) |
 | B | 72.0 | Syncareer | Infosys | Full Stack Developer | Phoenix, Arizona, United States | 2026-10-15 | Sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/154060BR) |
-| A | 91.0 | Syncareer | Cvent | Software Engineer I | Tysons Corner, Virginia, United States | 2026-10-14 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.cvent.com/jobs/8265?lang=en-us) |
-| A | 88.0 | Syncareer | Twitch | Software Engineer I | San Francisco, California, United States | 2026-10-14 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/twitch/jobs/8887222002) |
-| A | 91.0 | Syncareer | Sonos | Software Engineer | Boston, Massachusetts, United States | 2026-10-14 | No sponsor | - | unreviewed | not_dedicated | [open](https://sonos.wd1.myworkdayjobs.com/en-US/sonos/job/Boston-MA/Software-Engineer_R2853) |
-| B | 88.0 | Syncareer | Clayco | Applied AI Engineer | St. Louis, Missouri, United States | 2026-10-14 | Sponsor | - | unreviewed | not_dedicated | [open](https://app.crelate.com/portal/clayco/job/y6x8q6e3fja3gd6c7ixpe4brrc) |
-| B | 83.0 | Syncareer | SS&C Technologies | AI Engineer – Marketing Intelligence & Automation | Massachusetts, United States | 2026-10-14 | Sponsor | - | unreviewed | not_dedicated | [open](https://wd1.myworkdaysite.com/en-US/recruiting/ssctech/SSCTechnologies/job/Remote---Massachussets-US/AI-Engineer---Marketing-Intelligence---Automation_R46060) |
-| B | 83.0 | Syncareer | acceldata | Software Engineer - Observability (Pulse) | Campbell, California, United States | 2026-10-14 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.lever.co/acceldata/c12c39cb-68c1-45ae-9a88-601e297957b1) |
 | B | 72.0 | Syncareer | TikTok | Backend Engineer Graduate (Account) - 2027 Start | San Jose, California, United States | 2026-10-16 | Sponsor | YES (TikTok) | unreviewed | official_identity_unmatched | [open](https://lifeattiktok.com/search/7696779797359233333) |
 | B | 77.0 | Syncareer | TikTok | Backend Engineer Graduate (Social Foundation) - 2027 Start | San Jose, California, United States | 2026-10-16 | Sponsor | YES (TikTok) | unreviewed | official_identity_unmatched | [open](https://lifeattiktok.com/search/7696782198126545157) |
