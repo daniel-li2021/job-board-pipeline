@@ -1,6 +1,6 @@
 """SAP SuccessFactors RMK HTML search adapter.
 
-Method: GET ``https://jobs.sap.com/search/`` with ``locationsearch=United+States``
+Method: GET ``https://careers.sap.com/search/`` with ``locationsearch=United+States``
 and ``startrow`` pagination (25/page). Job details from the public job HTML.
 """
 
@@ -9,16 +9,16 @@ from __future__ import annotations
 import re
 import time
 from typing import Any, Dict, List, Optional, Tuple
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 
 import requests
 
-from ..schema import make_job, normalize_space
+from ..schema import SourceUnavailable, make_job, normalize_space
 from .http import html_to_text, http_get, keep_us_or_unknown, now_iso
 from .incremental import DetailCache, annotate_detail
 from .query_terms import ROLE_SEARCH_QUERIES, query_diagnostic, query_page_budget
 
-SEARCH = "https://jobs.sap.com/search/"
+SEARCH = "https://careers.sap.com/search/"
 SLEEP_S = 0.3
 DETAIL_SLEEP_S = 0.12
 PAGE_SIZE = 25
@@ -103,6 +103,9 @@ def scrape_sap(
             )
             pages += 1
             cards = _cards(payload.text)
+            final_url = getattr(payload, "url", "")
+            if not cards and isinstance(final_url, str) and final_url and not urlsplit(final_url).path.startswith("/search"):
+                raise SourceUnavailable("SAP search redirected outside the supported public search interface")
             if not cards:
                 break
             page_ids = [c[0] for c in cards]
@@ -116,7 +119,7 @@ def scrape_sap(
                 seen.add(jid)
                 if location and not keep_us_or_unknown(location):
                     continue
-                official = urljoin("https://jobs.sap.com", href)
+                official = urljoin("https://careers.sap.com", href)
                 decision = detail_cache.decide(
                     company=company, job_id=jid, url=official, title=title,
                 )
@@ -137,7 +140,7 @@ def scrape_sap(
                         if desc_el:
                             description = html_to_text(str(desc_el))
                         else:
-                            description = html_to_text(det.text)
+                            raise SourceUnavailable("SAP detail missing job description")
                         date_el = soup.select_one("[itemprop='datePosted'], time")
                         if date_el:
                             posted = date_el.get("datetime") or date_el.get_text(" ", strip=True)
@@ -180,7 +183,7 @@ def scrape_sap(
         "company": company,
         "source": source,
         "method": "HTTP GET jobs.sap.com/search HTML + job detail HTML",
-        "search_url": "https://jobs.sap.com/search/?q=software+engineer&locationsearch=United+States",
+        "search_url": "https://careers.sap.com/search/?q=software+engineer&locationsearch=United+States",
         "search_urls": [SEARCH],
         "pagination": f"startrow=0,{PAGE_SIZE},... ; stop on empty/repeat or short page",
         "pages_fetched": pages,

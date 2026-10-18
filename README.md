@@ -206,6 +206,9 @@ state, so pipelines do not contend on a shared `tracked_jobs.json` commit.
 The dashboard waits for that shared review state before showing review-dependent
 tabs and counts. A successful load uses Supabase as the baseline and merges only
 pending local edits; if it fails, the fallback is labeled `Cached review state`.
+Known posting aliases now preserve review lookup and collapse duplicate displays without rekeying application history.
+The existing shared-status setup uses public writes; it must not be treated as an authenticated editor boundary.
+See the [security findings and approval-gated hardening proposal](docs/REMAINING_VALIDATION.md#application-state-security-approval-needed).
 
 User-facing digests are deduplicated so reruns, rescoring, and ordinary JD changes do not repeatedly alert the same job.
 
@@ -240,4 +243,4 @@ python3 infra/scheduler/test_scheduler.py
 bash -n scripts/local_source_sync.sh
 ```
 
-These cover matching/cache invariants, adapters, state recovery, repeated runs, dashboard rendering and the local runner. Cleanup decisions and validation are recorded in [CLEANUP_PROGRESS.md](CLEANUP_PROGRESS.md). [Batch 1 correctness validation](docs/BATCH1_VALIDATION.md) records saved-record before/after behavior, parser fixtures, cache checks, and independent regression review. [Batch 2 validation and migration preview](docs/BATCH2_VALIDATION.md) cover priority repairs, durable digest retries, offline CI, and the identity changes still awaiting application-history safeguards. [Batch 3 validation](docs/BATCH3_VALIDATION.md) covers protected cooldown deferrals, limited employer recovery, and the frozen 40-case selective-review pilot; production review remains disabled pending human adjudication and held-out evidence.
+These cover matching/cache invariants, adapters, state recovery, repeated runs, dashboard rendering and the local runner. Cleanup decisions and validation are recorded in [CLEANUP_PROGRESS.md](CLEANUP_PROGRESS.md). [Batch 1 correctness validation](docs/BATCH1_VALIDATION.md) records saved-record before/after behavior, parser fixtures, cache checks, and independent regression review. [Batch 2 validation and migration preview](docs/BATCH2_VALIDATION.md) cover priority repairs, durable digest retries, offline CI, and the identity changes still awaiting application-history safeguards. [Batch 3 validation](docs/BATCH3_VALIDATION.md) covers protected cooldown deferrals, limited employer recovery, and the frozen 40-case selective-review pilot; production review remains disabled. The [completed selective-review evaluation](docs/SELECTIVE_REVIEW_EVALUATION.md) records frozen held-out results against AI-only assessments and does not recommend production integration. [Remaining-work validation](docs/REMAINING_VALIDATION.md) covers additive identity compatibility, the application-history backup/dry run, measured dashboard optimization, security limits and scheduled-run evidence. [SAP/HubSpot follow-up](docs/SAP_ADAPTER_VALIDATION.md) records bounded live adapter results.

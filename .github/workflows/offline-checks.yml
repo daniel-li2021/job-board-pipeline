@@ -30,7 +30,7 @@ jobs:
         run: |
           python3 -m pytest -q -p no:cacheprovider \
             tests/test_batch1_correctness.py tests/test_batch2_correctness.py \
-            tests/test_batch3_correctness.py tests/test_linkedin_transport.py \
+            tests/test_batch3_correctness.py tests/test_remaining_improvements.py tests/test_selective_review_eval.py tests/test_sap_compatibility.py tests/test_linkedin_transport.py \
             tests/test_company_enrichment.py \
             tests/test_matching_incremental.py tests/test_remote_recovery.py \
             tests/test_official_jd_recovery.py tests/test_coverage_jd_recovery.py \
