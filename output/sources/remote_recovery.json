@@ -2988,278 +2988,11 @@
     }
   ],
   "meta": {
-    "jd_recovery_at": "2026-10-17T23:32:01.239362+00:00"
+    "jd_recovery_at": "2026-10-18T04:00:36.649175+00:00"
   },
   "source": "remote_recovery",
   "count": 138,
   "attempts": {
-    "meta_official_careers|id|1476493301035580": {
-      "source": "meta_official_careers",
-      "job_id": "1476493301035580",
-      "company": "Meta",
-      "title": "Research Scientist, Machine Learning & Signal Processing [Technical Leadership]",
-      "location": "Burlingame, CA",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00",
-      "recovery_triage": {
-        "action": "skip",
-        "priority": "low",
-        "confidence": 0.95,
-        "delta": -6,
-        "reason": "Technical leadership research role likely senior"
-      },
-      "recovery_input_hash": "ddfbc3586dab384a6888"
-    },
-    "meta_official_careers|id|4440645012852214": {
-      "source": "meta_official_careers",
-      "job_id": "4440645012852214",
-      "company": "Meta",
-      "title": "Lead Counsel, Monetization",
-      "location": "Los Angeles, CA; Austin, TX; Atlanta, GA; Menlo Park, CA; Seattle, WA; Burlingame, CA; Washington, DC; New York, NY; San Francisco, CA; Chicago, IL",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "meta_official_careers|id|1950497786328676": {
-      "source": "meta_official_careers",
-      "job_id": "1950497786328676",
-      "company": "Meta",
-      "title": "Signal Integrity Intern",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "meta_official_careers|id|1123150353629934": {
-      "source": "meta_official_careers",
-      "job_id": "1123150353629934",
-      "company": "Meta",
-      "title": "Product Manager (Leadership) - Central Security",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "meta_official_careers|id|2571889979891130": {
-      "source": "meta_official_careers",
-      "job_id": "2571889979891130",
-      "company": "Meta",
-      "title": "Program Manager, Compliance Assurance",
-      "location": "Menlo Park, CA; Washington, DC; New York, NY",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "meta_official_careers|id|1113155727752607": {
-      "source": "meta_official_careers",
-      "job_id": "1113155727752607",
-      "company": "Meta",
-      "title": "Content Policy Associate Manager, Actor & Behavioral Policy",
-      "location": "New York, NY",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "meta_official_careers|id|4536253699919879": {
-      "source": "meta_official_careers",
-      "job_id": "4536253699919879",
-      "company": "Meta",
-      "title": "Production Systems Engineering Intern",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "meta_official_careers|id|1141752241867684": {
-      "source": "meta_official_careers",
-      "job_id": "1141752241867684",
-      "company": "Meta",
-      "title": "Research Scientist Intern, Multimodal Behavioral Modeling, Hearing Science (PhD)",
-      "location": "Redmond, WA",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "meta_official_careers|id|2480258975833929": {
-      "source": "meta_official_careers",
-      "job_id": "2480258975833929",
-      "company": "Meta",
-      "title": "Product Manager, WhatsApp - India",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "meta_official_careers|id|1125569583326581": {
-      "source": "meta_official_careers",
-      "job_id": "1125569583326581",
-      "company": "Meta",
-      "title": "Associate General Counsel, Product (Integrity)",
-      "location": "Los Angeles, CA; Menlo Park, CA; Washington, DC; New York, NY; San Francisco, CA",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "meta_official_careers|id|1432026545801796": {
-      "source": "meta_official_careers",
-      "job_id": "1432026545801796",
-      "company": "Meta",
-      "title": "KYC Program Manager",
-      "location": "Menlo Park, CA; Seattle, WA; Washington, DC; New York, NY",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "meta_official_careers|id|1454834049803298": {
-      "source": "meta_official_careers",
-      "job_id": "1454834049803298",
-      "company": "Meta",
-      "title": "Business Operations, Infrastructure",
-      "location": "Menlo Park, CA; New York, NY; San Francisco, CA",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00",
-      "recovery_triage": {
-        "action": "skip",
-        "priority": "low",
-        "confidence": 0.98,
-        "delta": -7,
-        "reason": "Business operations, not software engineering"
-      },
-      "recovery_input_hash": "54a2fc8c5b82f99ab379"
-    },
-    "meta_official_careers|id|1061970113523061": {
-      "source": "meta_official_careers",
-      "job_id": "1061970113523061",
-      "company": "Meta",
-      "title": "Production Systems Engineer, Edge",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00",
-      "recovery_methods": {
-        "candidate:bced6e739b": {
-          "input_hash": "db5f257a1bdad27c9837",
-          "attempted_at": "2026-10-17T23:32:01.239362+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "10cb818b83d7738552e1",
-          "attempted_at": "2026-10-17T23:32:01.239362+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.76,
-        "delta": 0,
-        "reason": "Production systems engineering fits infrastructure target"
-      },
-      "recovery_input_hash": "409c390a74d8dc14597b",
-      "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-17T23:32:01.239362+00:00"
-    },
-    "meta_official_careers|id|1404071541713403": {
-      "source": "meta_official_careers",
-      "job_id": "1404071541713403",
-      "company": "Meta",
-      "title": "Production Systems Engineer, Edge",
-      "location": "Menlo Park, CA",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00",
-      "recovery_methods": {
-        "candidate:2a0fd94737": {
-          "input_hash": "c3ae3b5f516aae57038b",
-          "attempted_at": "2026-10-17T23:32:01.239362+00:00",
-          "outcome": "no_match"
-        },
-        "generic_search": {
-          "input_hash": "918e2a5427eb5cf49738",
-          "attempted_at": "2026-10-17T23:32:01.239362+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "normal",
-        "confidence": 0.76,
-        "delta": 0,
-        "reason": "Production systems engineering fits infrastructure target"
-      },
-      "recovery_input_hash": "0d642b72aa1e057b517c",
-      "official_search_status": "deferred",
-      "official_search_attempted_at": "2026-10-17T23:32:01.239362+00:00"
-    },
-    "meta_official_careers|id|1772218837316602": {
-      "source": "meta_official_careers",
-      "job_id": "1772218837316602",
-      "company": "Meta",
-      "title": "Director of Engineering, Capacity Management (Ads)",
-      "location": "Bellevue, WA; Menlo Park, CA",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "bloomberg_official_careers|id|45713": {
-      "source": "bloomberg_official_careers",
-      "job_id": "45713",
-      "company": "Bloomberg",
-      "title": "Program Manager, Team Lead - Business Programs, Programs & Governance, Engineering COO",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "bloomberg_official_careers|id|45712": {
-      "source": "bloomberg_official_careers",
-      "job_id": "45712",
-      "company": "Bloomberg",
-      "title": "Head of Product Operations & Strategy - Core Terminal",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "bloomberg_official_careers|id|45691": {
-      "source": "bloomberg_official_careers",
-      "job_id": "45691",
-      "company": "Bloomberg",
-      "title": "Senior Accounting Analyst, Tax Accounting",
-      "location": "New York, New York, United States of America",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "disney_official_careers|id|102045619904": {
-      "source": "disney_official_careers",
-      "job_id": "102045619904",
-      "company": "Disney",
-      "title": "Lead Software Engineer",
-      "location": "Lake Buena Vista, Florida",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "disney_official_careers|id|10154423": {
-      "source": "disney_official_careers",
-      "job_id": "10154423",
-      "company": "Disney",
-      "title": "Principal Data Scientist - Games",
-      "location": "Glendale, California",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "disney_official_careers|id|102045624880": {
-      "source": "disney_official_careers",
-      "job_id": "102045624880",
-      "company": "Disney",
-      "title": "Mgr, Software Engineering - Enterprise Architecture (Disney Experiences)",
-      "location": "Orlando, Florida",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00",
-      "recovery_triage": {
-        "action": "skip",
-        "priority": "low",
-        "confidence": 0.98,
-        "delta": -7,
-        "reason": "Manager role is likely beyond target seniority"
-      },
-      "recovery_input_hash": "93cf1be8f59d3ae51e2b"
-    },
-    "equinix_official_careers|id|jr-164106": {
-      "source": "equinix_official_careers",
-      "job_id": "JR-164106",
-      "company": "Equinix",
-      "title": "Distinguished Engineer, AI Infrastructure",
-      "location": "Toronto, Ontario, Canada; Redwood City, California, United States; Denver, Colorado, United States; Tampa, Florida, United States; New York, United States; Dallas, Texas, United States; Toronto, Ontario, Canada; Redwood City, California, United States; Denver, Colorado, United States",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "equinix_official_careers|id|jr-164103": {
-      "source": "equinix_official_careers",
-      "job_id": "JR-164103",
-      "company": "Equinix",
-      "title": "Principal Software Engineer, AI Infrastructure",
-      "location": "Burnaby, British Columbia, Canada; Toronto, Ontario, Canada; Montreal, Quebec, Canada; Redwood City, California, United States; Denver, Colorado, United States; Tampa, Florida, United States; New York, United States; Dallas, Texas, United States; Frisco, Texas, United States; Burnaby, British Columbia, Canada; Toronto, Ontario, Canada; Montreal, Quebec, Canada",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "pointclickcare_official_careers|id|b4a227cd-e023-4966-a809-6291b0061a85": {
-      "source": "pointclickcare_official_careers",
-      "job_id": "b4a227cd-e023-4966-a809-6291b0061a85",
-      "company": "PointClickCare",
-      "title": "Director, Billing to Cash",
-      "location": "Mississauga, Ontario",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
-    "pointclickcare_official_careers|id|c9e4c36c-27f6-48ae-b0d0-f5464b19c6a5": {
-      "source": "pointclickcare_official_careers",
-      "job_id": "c9e4c36c-27f6-48ae-b0d0-f5464b19c6a5",
-      "company": "PointClickCare",
-      "title": "Director, People Strategy and HR Portfolio (Project) Management",
-      "location": "Mississauga, Ontario",
-      "first_seen": "2026-10-16T23:46:22.468738+00:00"
-    },
     "meta_official_careers|id|1112920251290763": {
       "source": "meta_official_careers",
       "job_id": "1112920251290763",
@@ -3340,38 +3073,29 @@
       "location": "Toronto, Ontario, Canada; Redwood City, California, United States; Dallas, Texas, United States",
       "first_seen": "2026-10-17T14:45:03.775071+00:00"
     },
-    "syncareer|id|56b03bc2f874a24e2324747bdffb19d0": {
-      "source": "syncareer",
-      "job_id": "56b03bc2f874a24e2324747bdffb19d0",
-      "company": "Kforce",
-      "title": "Software Asset Manager",
-      "location": "Brookhaven, Georgia, United States",
-      "first_seen": "2026-10-16T23:51:19.033010+00:00"
+    "meta_official_careers|id|1675985624113483": {
+      "source": "meta_official_careers",
+      "job_id": "1675985624113483",
+      "company": "Meta",
+      "title": "Capacity Planning Optimization Lead",
+      "location": "Bellevue, WA; Menlo Park, CA; Boston, MA; New York, NY",
+      "first_seen": "2026-10-17T23:45:22.552943+00:00"
     },
-    "syncareer|id|a65d2f450c4635ea1cc44bca5d620189": {
-      "source": "syncareer",
-      "job_id": "a65d2f450c4635ea1cc44bca5d620189",
-      "company": "Lennar",
-      "title": "Software Engineer II",
-      "location": "Miami, Florida, United States",
-      "first_seen": "2026-10-16T23:51:19.033010+00:00",
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "f9b0db34c527abd6c295",
-          "attempted_at": "2026-10-17T23:32:01.239362+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.83,
-        "delta": 0,
-        "reason": "Software Engineer II fits early-career target"
-      },
-      "recovery_input_hash": "673657c48f866f602965",
-      "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-17T23:32:01.239362+00:00"
+    "meta_official_careers|id|1819186165919536": {
+      "source": "meta_official_careers",
+      "job_id": "1819186165919536",
+      "company": "Meta",
+      "title": "Program Manager, Compliance Assurance",
+      "location": "Menlo Park, CA; New York, NY",
+      "first_seen": "2026-10-17T23:45:22.552943+00:00"
+    },
+    "meta_official_careers|id|1059552996675674": {
+      "source": "meta_official_careers",
+      "job_id": "1059552996675674",
+      "company": "Meta",
+      "title": "Head of Facebook Product Marketing",
+      "location": "Los Angeles, CA; Menlo Park, CA; New York, NY; San Francisco, CA",
+      "first_seen": "2026-10-17T23:45:22.552943+00:00"
     },
     "syncareer|id|0b622aa955dd5a988144d815a42cadff": {
       "source": "syncareer",
@@ -3396,7 +3120,7 @@
       },
       "recovery_input_hash": "ee3bd3aadef7d8de2b9d",
       "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-17T23:32:01.239362+00:00"
+      "official_search_attempted_at": "2026-10-18T04:00:36.649175+00:00"
     },
     "syncareer|id|02976f9c887cec6647dc678c0aa610fa": {
       "source": "syncareer",
@@ -3421,7 +3145,7 @@
       },
       "recovery_input_hash": "275302d08cb3c4653bb5",
       "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-17T23:32:01.239362+00:00"
+      "official_search_attempted_at": "2026-10-18T04:00:36.649175+00:00"
     },
     "syncareer|id|342c25440eee25acfe797763b2437346": {
       "source": "syncareer",
@@ -3446,7 +3170,7 @@
       },
       "recovery_input_hash": "d3c83036d13b98b1208a",
       "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-17T23:32:01.239362+00:00"
+      "official_search_attempted_at": "2026-10-18T04:00:36.649175+00:00"
     },
     "syncareer|id|92c510831afb488a9f68a28a6ccf157e": {
       "source": "syncareer",
@@ -3471,7 +3195,32 @@
       },
       "recovery_input_hash": "88276ba5b3203d0cc326",
       "official_search_status": "no_match",
-      "official_search_attempted_at": "2026-10-17T23:32:01.239362+00:00"
+      "official_search_attempted_at": "2026-10-18T04:00:36.649175+00:00"
+    },
+    "syncareer|id|60d6dcfc512cc2b359e8fbafc4261872": {
+      "source": "syncareer",
+      "job_id": "60d6dcfc512cc2b359e8fbafc4261872",
+      "company": "Tyler Technologies",
+      "title": "Software Engineer",
+      "location": "Madison, Wisconsin, United States",
+      "first_seen": "2026-10-17T23:51:12.272129+00:00",
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "6866bd9153a4446a08fb",
+          "attempted_at": "2026-10-18T04:00:36.649175+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_triage": {
+        "action": "recover",
+        "priority": "normal",
+        "confidence": 0.58,
+        "delta": 0,
+        "reason": "Software engineering role; seniority and scope unknown"
+      },
+      "recovery_input_hash": "1b08799a259d88b5e213",
+      "official_search_status": "no_match",
+      "official_search_attempted_at": "2026-10-18T04:00:36.649175+00:00"
     }
   }
 }
