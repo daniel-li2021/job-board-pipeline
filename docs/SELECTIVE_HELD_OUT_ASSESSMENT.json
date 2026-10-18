@@ -1,0 +1,461 @@
+{
+  "assessment_version": "independent-held-out-silver-v1",
+  "packet_sha256": "858370c65f77991cf7ce9f873bb9bc4ea0c3b3d1a538c7242be395fdf2d430b1",
+  "partition": "held_out",
+  "case_count": 20,
+  "provenance": "ai_independent_assessment",
+  "human_verified": false,
+  "blind_to": [
+    "docs/SELECTIVE_V2_HELD_OUT.json",
+    "held-out model outputs",
+    "baseline scores and tiers"
+  ],
+  "policy_freeze": {
+    "frozen_at": "2026-10-18T14:26:28.647545+00:00",
+    "policy_sha256": "6592ad0071d512505ef5a4983584996dcfd6ed2c3e0d6d750e6e8194dc7a0743",
+    "runner_sha256": "531286d001710c3f43d52575a36c1c9ad6055e6aa24e2171a4d4d1f6bc2e0867",
+    "assessment_started_after_freeze": true
+  },
+  "rubric": {
+    "tier": "Technical fit and experience compatibility only: A strong demonstrated fit; B plausible fit with material uncertainty/stretch; C demonstrated core discipline/seniority mismatch; unknown insufficient JD evidence. Opportunity availability, staffing identity, pay and internship preference do not independently change technical tier.",
+    "eligibility": "supported requires supplied evidence for applicable role constraints and candidate permission; blocked requires a demonstrated conflict; unknown when candidate authorization, sponsorship need, enrollment, location availability or material role rules are unestablished. Technical seniority gaps are tier findings, not legal permission findings.",
+    "confidence": "Qualitative assessment certainty, not calibrated probability. A summary can support broad discipline mismatch while omitting job-specific eligibility."
+  },
+  "identity_audit": {
+    "method": "Exact source-scoped IDs plus recognized Greenhouse posting aliases; never company/title alone. Packet lacks original detail URLs for many source records, so unrepresented aliases cannot be resolved.",
+    "cross_partition_exact_posting_collisions": [],
+    "within_partition_exact_posting_collisions": [
+      {
+        "first_case_id": "16bb4f863c4f5253",
+        "first_partition": "development",
+        "second_case_id": "440ca05c2a73c554",
+        "second_partition": "development",
+        "shared_exact_posting_aliases": [
+          "greenhouse:figma:6131089004"
+        ]
+      }
+    ],
+    "cohort_unchanged": true
+  },
+  "limitations": [
+    "AI silver labels only; no human ground truth, independent human adjudication or production accuracy claim.",
+    "Assessor stayed blind to model outputs and baselines, but historical fixture summaries contain prior evaluative wording.",
+    "Development policy tuning used two Figma records from the same opportunity; no exact cross-partition collision was found in the available aliases, which does not prove absence of all real-world duplicates.",
+    "Same-company/title Meta Edge records have distinct Indeed IDs and materially different seniority/responsibilities; they were not collapsed by title.",
+    "Two held-out historical summaries only prescribe how to judge a role rather than provide implementation requirements; they are unknown.",
+    "Empty or truncated records limit fit assessment. No live JD or job-availability verification was performed.",
+    "Candidate authorization/sponsorship need is absent, so all eligibility labels are unknown; this cohort cannot validate performance on known permission conflicts.",
+    "Frozen policy and packet were not modified; this is a one-pass held-out assessment after policy freeze."
+  ],
+  "labels": {
+    "1fcaa8b6e210ef77": {
+      "id": "1fcaa8b6e210ef77",
+      "tier": "A",
+      "eligibility": "unknown",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "jd_quote": "Junior hands-on builder role developing AI agents, prompts, workflow automations, integrations, internal tools, and cloud-backed systems.",
+          "resume_quote": "Built production enterprise knowledge agent for support/implementation teams using LangChain/LangGraph, MCP tool calling, memory",
+          "assessment": "Explicit junior scope and hands-on agent, API, tool and cloud responsibilities closely match demonstrated work. Specific no-code platform is preferred. This is a historical interpretation rather than a full JD; unreported requirements remain unknown."
+        }
+      ],
+      "rationale": "Explicit junior scope and hands-on agent, API, tool and cloud responsibilities closely match demonstrated work. Specific no-code platform is preferred. This is a historical interpretation rather than a full JD; unreported requirements remain unknown.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "c9e284ea04837b96e6e3a007054f52f02b8611303faa13bddc99fa049bdedd6b",
+      "evidence_quality": "historical_interpretive_summary",
+      "authorization_unknown": true
+    },
+    "0116c55e5d6eba9e": {
+      "id": "0116c55e5d6eba9e",
+      "tier": "C",
+      "eligibility": "unknown",
+      "confidence": "high",
+      "evidence": [
+        {
+          "jd_quote": "New-grad product-design role requiring visual and interaction-design fundamentals, user-centered design process, a design portfolio and high-fidelity prototyping.",
+          "resume_quote": "Built production full-stack knowledge app for support/implementation teams with React, TypeScript, FastAPI, Node.js",
+          "assessment": "Software implementation experience does not establish a product-design portfolio, interaction-design process or high-fidelity prototyping expertise. AI as a design tool does not turn the core discipline into AI/software engineering."
+        }
+      ],
+      "rationale": "Software implementation experience does not establish a product-design portfolio, interaction-design process or high-fidelity prototyping expertise. AI as a design tool does not turn the core discipline into AI/software engineering.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "b7d3a483781030164e7014cfb4b5694015e6c4b745db090b026f218f012f27d2",
+      "evidence_quality": "historical_interpretive_summary",
+      "authorization_unknown": true
+    },
+    "89bcb710d06f3bc3": {
+      "id": "89bcb710d06f3bc3",
+      "tier": "B",
+      "eligibility": "unknown",
+      "confidence": "low",
+      "evidence": [
+        {
+          "jd_quote": "Full-time W-2 entry-level software engineering role developing, testing, maintaining, and improving applications and services while learning from experienced engineers.",
+          "resume_quote": "Built production full-stack knowledge app for support/implementation teams with React, TypeScript, FastAPI, Node.js",
+          "assessment": "Early-career application engineering responsibilities plausibly match, but this generic summary omits stack and minimum qualifications. It supports a possible fit rather than a demonstrated strong match."
+        }
+      ],
+      "rationale": "Early-career application engineering responsibilities plausibly match, but this generic summary omits stack and minimum qualifications. It supports a possible fit rather than a demonstrated strong match.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "8b57bbc1858d72a28dbad0c7507fcd8dcc15fa518ddd240b4fc49cca620a4955",
+      "evidence_quality": "historical_interpretive_summary",
+      "authorization_unknown": true
+    },
+    "bfd83140e2ebbddf": {
+      "id": "bfd83140e2ebbddf",
+      "tier": "unknown",
+      "eligibility": "unknown",
+      "confidence": "low",
+      "evidence": [
+        {
+          "jd_quote": "Software Engineer 2 role on a performance-marketing platform; requires assessment of the actual implementation scope and production requirements rather than the level token alone.",
+          "resume_quote": "",
+          "assessment": "This historical summary provides an evaluation instruction rather than actual duties, implementation scope or requirements. Do not use the title/level token or admonition as evidence for an actionable technical tier."
+        }
+      ],
+      "rationale": "This historical summary provides an evaluation instruction rather than actual duties, implementation scope or requirements. Do not use the title/level token or admonition as evidence for an actionable technical tier.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "39fcc07aa8464f92ffb5c3f547f4881a9dccad5e67cf7e08d7de00fc96d7db32",
+      "evidence_quality": "historical_interpretive_summary",
+      "authorization_unknown": true
+    },
+    "06bf05646d804170": {
+      "id": "06bf05646d804170",
+      "tier": "unknown",
+      "eligibility": "unknown",
+      "confidence": "low",
+      "evidence": [
+        {
+          "jd_quote": "Software Developer Engineer II role at a connectivity provider; judge the engineering scope and material requirements as a reasonable stretch rather than imposing a fixed level hierarchy.",
+          "resume_quote": "",
+          "assessment": "The summary asserts an interpretation but supplies no actual responsibilities or material requirements. A reasonable-stretch label cannot be independently verified from this text."
+        }
+      ],
+      "rationale": "The summary asserts an interpretation but supplies no actual responsibilities or material requirements. A reasonable-stretch label cannot be independently verified from this text.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "389bac6ba54f5f4b3fd9529bcf05a506e89ac702781ca9c5cc72099293b24c05",
+      "evidence_quality": "historical_interpretive_summary",
+      "authorization_unknown": true
+    },
+    "721a187e357a6281": {
+      "id": "721a187e357a6281",
+      "tier": "B",
+      "eligibility": "unknown",
+      "confidence": "low",
+      "evidence": [
+        {
+          "jd_quote": "Hands-on Python and GCP data-pipeline role",
+          "resume_quote": "Built resilient Python pharmaceutical-news ingestion processing 10K+ articles/day at 94% parsing reliability",
+          "assessment": "Python ingestion and cloud/data skills overlap, but seniority and full GCP requirements are omitted. Permanent authorization and no current/future sponsorship are explicit role rules; candidate permission/sponsorship need is absent, so eligibility cannot be supported or blocked."
+        },
+        {
+          "jd_quote": "explicitly requires permanent US work authorization and says no current or future sponsorship.",
+          "resume_quote": "",
+          "assessment": "Explicit role permission/sponsorship condition. Candidate authorization and sponsorship need are not supplied, so no demonstrated conflict or satisfaction can be inferred."
+        }
+      ],
+      "rationale": "Python ingestion and cloud/data skills overlap, but seniority and full GCP requirements are omitted. Permanent authorization and no current/future sponsorship are explicit role rules; candidate permission/sponsorship need is absent, so eligibility cannot be supported or blocked.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "66429d68ff227c4cff04aef177bcaf17507da3db350d218e9720937f0a749424",
+      "evidence_quality": "historical_interpretive_summary",
+      "authorization_unknown": true
+    },
+    "d5c1f46d5a9ceb71": {
+      "id": "d5c1f46d5a9ceb71",
+      "tier": "C",
+      "eligibility": "unknown",
+      "confidence": "high",
+      "evidence": [
+        {
+          "jd_quote": "developing rack power distribution, embedded control systems, and infrastructure monitoring for AI data centers; hardware and electrical work are central.",
+          "resume_quote": "Languages: Python, Java, TypeScript/JavaScript, SQL, C++, Bash",
+          "assessment": "Electrical and embedded hardware work is central, while the resume establishes software/backend/AI engineering. AI data-center context and generic programming do not demonstrate the required hardware discipline; co-op enrollment rules are also unreported."
+        }
+      ],
+      "rationale": "Electrical and embedded hardware work is central, while the resume establishes software/backend/AI engineering. AI data-center context and generic programming do not demonstrate the required hardware discipline; co-op enrollment rules are also unreported.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "a1f8b806e4cb7018b84fa7ac334f03cde87915dcccae8ce76690baee21d07004",
+      "evidence_quality": "historical_interpretive_summary",
+      "authorization_unknown": true
+    },
+    "7067143b9cc32f3d": {
+      "id": "7067143b9cc32f3d",
+      "tier": "unknown",
+      "eligibility": "unknown",
+      "confidence": "low",
+      "evidence": [],
+      "rationale": "Empty JD provides no responsibilities or requirements. Do not infer clearance, citizenship, or technical fit from federal-sounding employer or AI title.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "91bd2e897d959a78d71f821d7f54dd5e1ca5a1ceafdd7ccea6c337d0a2177b6b",
+      "evidence_quality": "historical_interpretive_summary",
+      "authorization_unknown": true
+    },
+    "cb9db8c2a10703c3": {
+      "id": "cb9db8c2a10703c3",
+      "tier": "C",
+      "eligibility": "unknown",
+      "confidence": "high",
+      "evidence": [
+        {
+          "jd_quote": "Experience with server or network hardware components including switches, routers, NICs, and compute platforms",
+          "resume_quote": "Deployed Dockerized FastAPI to AWS ECS/Fargate via GitHub Actions",
+          "assessment": "Core job is server qualification, physical component failure analysis, firmware and hardware lifecycle management across the edge fleet. Application/cloud deployment and Python overlap do not establish hands-on hardware operations expertise or the explicit two-year infrastructure/hardware requirement."
+        }
+      ],
+      "rationale": "Core job is server qualification, physical component failure analysis, firmware and hardware lifecycle management across the edge fleet. Application/cloud deployment and Python overlap do not establish hands-on hardware operations expertise or the explicit two-year infrastructure/hardware requirement.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "ba5eb284a1b988d4eefa530b250d01ed5a04f30c6faa0cb3f9697eeac89829fd",
+      "evidence_quality": "saved_jd",
+      "authorization_unknown": true
+    },
+    "a47597b44be2d8b7": {
+      "id": "a47597b44be2d8b7",
+      "tier": "B",
+      "eligibility": "unknown",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "jd_quote": "Microsoft certifications or demonstrated self\\-directed learning in the Microsoft technology stack",
+          "resume_quote": "Backend/Data: FastAPI, Node.js/Express, Spring Boot, REST APIs, PostgreSQL, MySQL, MongoDB, Redis, Spark, Databricks, data pipelines, caching",
+          "assessment": "Early-career APIs, relational data, testing and foundational programming fit well; D365/X++/Power Platform are preferred, not mandatory. However Microsoft certification or demonstrated self-directed Microsoft-stack learning is listed among qualifications and not evidenced, so material uncertainty remains. Employer identity is recoverable from JD mentions but not independently verified."
+        }
+      ],
+      "rationale": "Early-career APIs, relational data, testing and foundational programming fit well; D365/X++/Power Platform are preferred, not mandatory. However Microsoft certification or demonstrated self-directed Microsoft-stack learning is listed among qualifications and not evidenced, so material uncertainty remains. Employer identity is recoverable from JD mentions but not independently verified.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "a492359abe41e8c13f2a3d3de4565d1c60cebbeab65891ef8b8a3bf503efe111",
+      "evidence_quality": "saved_jd",
+      "authorization_unknown": true
+    },
+    "2e19456ab716cd83": {
+      "id": "2e19456ab716cd83",
+      "tier": "A",
+      "eligibility": "unknown",
+      "confidence": "high",
+      "evidence": [
+        {
+          "jd_quote": "1\\-3 years of professional experience in software engineering, data engineering, machine learning, artificial intelligence, or a related technical discipline.",
+          "resume_quote": "Productionized Dataiku/Databricks workflows",
+          "assessment": "Early-career scope and core Python/SQL, enterprise agent/RAG, Databricks, API, evaluation and governance responsibilities closely match multiple demonstrated accomplishments. Explicit no-work-visa sponsorship must remain a separate unresolved permission constraint."
+        },
+        {
+          "jd_quote": "Amalgamated Bank does not sponsor applicants for work visas.",
+          "resume_quote": "",
+          "assessment": "Explicit role permission/sponsorship condition. Candidate authorization and sponsorship need are not supplied, so no demonstrated conflict or satisfaction can be inferred."
+        }
+      ],
+      "rationale": "Early-career scope and core Python/SQL, enterprise agent/RAG, Databricks, API, evaluation and governance responsibilities closely match multiple demonstrated accomplishments. Explicit no-work-visa sponsorship must remain a separate unresolved permission constraint.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "867373e2b1c07f96e833f9ced026a1c9ca091b4b5653e8c427afac58ac641fca",
+      "evidence_quality": "saved_jd",
+      "authorization_unknown": true
+    },
+    "266cd0d7545e22ea": {
+      "id": "266cd0d7545e22ea",
+      "tier": "B",
+      "eligibility": "unknown",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "jd_quote": "Minimum of 3 years eight years of experience building and shipping production software.",
+          "resume_quote": "Built production enterprise knowledge agent for support/implementation teams using LangChain/LangGraph, MCP tool calling, memory",
+          "assessment": "Full-stack product and agent/RAG/evaluation responsibilities overlap strongly. The saved minimum-experience text is malformed and truncated, but at least a three-year production history is requested and not clearly evidenced. Preserve this stretch and extraction uncertainty; do not silently normalize it to eight years or zero. Explicit no-current/future sponsorship remains unresolved without candidate permission evidence."
+        },
+        {
+          "jd_quote": "Applicants for employment in the US must have work authorization that does not now or in the future require sponsorship of a visa for employment authorization in the United States.",
+          "resume_quote": "",
+          "assessment": "Explicit role permission/sponsorship condition. Candidate authorization and sponsorship need are not supplied, so no demonstrated conflict or satisfaction can be inferred."
+        }
+      ],
+      "rationale": "Full-stack product and agent/RAG/evaluation responsibilities overlap strongly. The saved minimum-experience text is malformed and truncated, but at least a three-year production history is requested and not clearly evidenced. Preserve this stretch and extraction uncertainty; do not silently normalize it to eight years or zero. Explicit no-current/future sponsorship remains unresolved without candidate permission evidence.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "79e4f9f51f25957c0afc128c5f627cf438284eb6570a028efec0df73921cfbdd",
+      "evidence_quality": "saved_jd",
+      "authorization_unknown": true
+    },
+    "0e45ac5931bcc66f": {
+      "id": "0e45ac5931bcc66f",
+      "tier": "unknown",
+      "eligibility": "unknown",
+      "confidence": "low",
+      "evidence": [
+        {
+          "jd_quote": "Contribute to the design, development, and testing of C++ applications that drive our trading platforms",
+          "resume_quote": "Languages: Python, Java, TypeScript/JavaScript, SQL, C++, Bash",
+          "assessment": "The 178-character JD ends mid-sentence. Listed C++ knowledge and a generic duty do not establish actual trading-systems requirements, C++ depth, or experience compatibility. Sponsorship metadata alone is not an explicit role permission finding."
+        }
+      ],
+      "rationale": "The 178-character JD ends mid-sentence. Listed C++ knowledge and a generic duty do not establish actual trading-systems requirements, C++ depth, or experience compatibility. Sponsorship metadata alone is not an explicit role permission finding.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "4d70bc4c9e0686c252676f1dd89b96a5df05c2f02b18efbee326b346dd256f50",
+      "evidence_quality": "short_or_truncated",
+      "authorization_unknown": true
+    },
+    "95b9dbd6da9cf507": {
+      "id": "95b9dbd6da9cf507",
+      "tier": "A",
+      "eligibility": "unknown",
+      "confidence": "high",
+      "evidence": [
+        {
+          "jd_quote": "0\\-2 years of experience developing websites or web applications; internship, academic, or personal project experience is welcomed",
+          "resume_quote": "Built production full-stack knowledge app for support/implementation teams with React, TypeScript, FastAPI, Node.js",
+          "assessment": "Explicitly accepts early-career/internship/project evidence. Python/React/Next, SQL, Linux, scalable services and testing closely match; Django is preferred framework rather than a mandate to exclude other MVC experience. Explicit no-current/future sponsorship is unresolvable without candidate authorization evidence."
+        },
+        {
+          "jd_quote": "Candidates must be legally authorized to work in the United States without the need for employer sponsorship now or in the future.",
+          "resume_quote": "",
+          "assessment": "Explicit role permission/sponsorship condition. Candidate authorization and sponsorship need are not supplied, so no demonstrated conflict or satisfaction can be inferred."
+        }
+      ],
+      "rationale": "Explicitly accepts early-career/internship/project evidence. Python/React/Next, SQL, Linux, scalable services and testing closely match; Django is preferred framework rather than a mandate to exclude other MVC experience. Explicit no-current/future sponsorship is unresolvable without candidate authorization evidence.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "a512e410294a83c6c158a2775bab01f799baa26c77e686ee9004ca8cae20f10f",
+      "evidence_quality": "saved_jd",
+      "authorization_unknown": true
+    },
+    "16c539349f04926e": {
+      "id": "16c539349f04926e",
+      "tier": "A",
+      "eligibility": "unknown",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "jd_quote": "Strong backend engineering in TypeScript or Python.",
+          "resume_quote": "Built production full-stack knowledge app for support/implementation teams with React, TypeScript, FastAPI, Node.js",
+          "assessment": "Core full-stack Python/TypeScript/Postgres, messy-document ingestion, reliable AI outputs and end-to-end implementation align with demonstrated work. No minimum years or accounting prerequisite is imposed; accounting experience is helpful. Customer-facing ownership, travel and financial-domain rigor require interview verification. CPT/OPT acceptance with no H1B sponsorship is explicit, but candidate status and future sponsorship need are unknown."
+        },
+        {
+          "jd_quote": "We can accept CPT/OPT but unfortunately cannot sponsor H1B",
+          "resume_quote": "",
+          "assessment": "Explicit role permission/sponsorship condition. Candidate authorization and sponsorship need are not supplied, so no demonstrated conflict or satisfaction can be inferred."
+        }
+      ],
+      "rationale": "Core full-stack Python/TypeScript/Postgres, messy-document ingestion, reliable AI outputs and end-to-end implementation align with demonstrated work. No minimum years or accounting prerequisite is imposed; accounting experience is helpful. Customer-facing ownership, travel and financial-domain rigor require interview verification. CPT/OPT acceptance with no H1B sponsorship is explicit, but candidate status and future sponsorship need are unknown.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "db1f143836c840488bc3b8b136898ffd9609b69412e0502c37fecb6668a62ff4",
+      "evidence_quality": "saved_jd",
+      "authorization_unknown": true
+    },
+    "3524d27119a2d25d": {
+      "id": "3524d27119a2d25d",
+      "tier": "B",
+      "eligibility": "unknown",
+      "confidence": "high",
+      "evidence": [
+        {
+          "jd_quote": "2\\+ years of professional software development experience.",
+          "resume_quote": "Added 90+ unit/integration tests, structured-output validation, caching, retries",
+          "assessment": "React/TypeScript, REST, test automation and delivery overlap directly. Two years of professional development are not clearly demonstrated after overlapping dates are respected. Named Playwright/K6 testing depth is absent; the posting places those in both preferred and knowledge sections, so this remains a plausible stretch rather than an automatic rejection."
+        },
+        {
+          "jd_quote": "Visa sponsorship is not available for this role",
+          "resume_quote": "",
+          "assessment": "Explicit role permission/sponsorship condition. Candidate authorization and sponsorship need are not supplied, so no demonstrated conflict or satisfaction can be inferred."
+        }
+      ],
+      "rationale": "React/TypeScript, REST, test automation and delivery overlap directly. Two years of professional development are not clearly demonstrated after overlapping dates are respected. Named Playwright/K6 testing depth is absent; the posting places those in both preferred and knowledge sections, so this remains a plausible stretch rather than an automatic rejection.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "864eafdd7aaa0d10cc5ba854c1964180bf4056a9cce95b320fbea9fd56fa3d5d",
+      "evidence_quality": "saved_jd",
+      "authorization_unknown": true
+    },
+    "28bc1084cb8b033e": {
+      "id": "28bc1084cb8b033e",
+      "tier": "B",
+      "eligibility": "unknown",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "jd_quote": "2\\+ years of professional experience building and shipping web applications",
+          "resume_quote": "Built async REST/retrieval services with typed contracts, caching, hybrid search, reranking",
+          "assessment": "Production full-stack/service, SQL/databases, tests and reliability work overlap. Clear two-year professional shipping history is not established from short overlapping roles. Ruby/Rails, ClickHouse and very-high-scale experience are bonuses rather than mandatory exclusions."
+        }
+      ],
+      "rationale": "Production full-stack/service, SQL/databases, tests and reliability work overlap. Clear two-year professional shipping history is not established from short overlapping roles. Ruby/Rails, ClickHouse and very-high-scale experience are bonuses rather than mandatory exclusions.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "3a72e6f3f5b43e725366df9f1a0feb9702d72d83aa5620e381c0061027bc7107",
+      "evidence_quality": "saved_jd",
+      "authorization_unknown": true
+    },
+    "59cc649c8f9b2bf5": {
+      "id": "59cc649c8f9b2bf5",
+      "tier": "unknown",
+      "eligibility": "unknown",
+      "confidence": "low",
+      "evidence": [
+        {
+          "jd_quote": "Work with project stakeholders (product owners, QA, designers, and the team lead) to understand and clarify functional and non-functional",
+          "resume_quote": "",
+          "assessment": "Truncated generic stakeholder duty omits technical responsibilities, stack and minimum requirements. Engineer II title and Sponsor metadata cannot establish a defensible technical tier or permission."
+        }
+      ],
+      "rationale": "Truncated generic stakeholder duty omits technical responsibilities, stack and minimum requirements. Engineer II title and Sponsor metadata cannot establish a defensible technical tier or permission.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "43e88f8057be239dab44254a1d8b8f36e15dd766038f2ba323881d8c0b1d3cc5",
+      "evidence_quality": "short_or_truncated",
+      "authorization_unknown": true
+    },
+    "ac1a296f6229acc9": {
+      "id": "ac1a296f6229acc9",
+      "tier": "A",
+      "eligibility": "unknown",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "jd_quote": "Design, develop, test, and debug software applications",
+          "resume_quote": "Built CounselReflect full-stack evaluation platform",
+          "assessment": "Graduate application-development scope and demonstrated software delivery, AI agents, testing and collaboration align closely. Resume GPA and specific coding-assistant workflow use are not supplied, so desired qualifications are not all verified. Explicit full-time US permission is unresolved; asking about sponsorship does not itself mean sponsorship is available or unavailable."
+        },
+        {
+          "jd_quote": "This application is intended for candidates that are eligible for full-time work authorization in the United States upon completing their education.",
+          "resume_quote": "",
+          "assessment": "Explicit role permission/sponsorship condition. Candidate authorization and sponsorship need are not supplied, so no demonstrated conflict or satisfaction can be inferred."
+        }
+      ],
+      "rationale": "Graduate application-development scope and demonstrated software delivery, AI agents, testing and collaboration align closely. Resume GPA and specific coding-assistant workflow use are not supplied, so desired qualifications are not all verified. Explicit full-time US permission is unresolved; asking about sponsorship does not itself mean sponsorship is available or unavailable.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "e35ffa087f5b9cf57d09a24892028adf71935ecd4719d20ef67a39a0d2dbe7c6",
+      "evidence_quality": "saved_jd",
+      "authorization_unknown": true
+    },
+    "38dd567d2bbd576a": {
+      "id": "38dd567d2bbd576a",
+      "tier": "C",
+      "eligibility": "unknown",
+      "confidence": "high",
+      "evidence": [
+        {
+          "jd_quote": "12\\+ years of experience in AI or machine learning research, including experience leading research teams or large\\-scale research programs",
+          "resume_quote": "USC — AI Research Engineer, LLM Evaluation | May 2025–Feb 2026",
+          "assessment": "Twelve years of research/team leadership, biosignal research strategy and talent development are far beyond demonstrated early-career AI implementation/evaluation work. ML keyword overlap does not establish scientific leadership or sensor-domain specialization."
+        }
+      ],
+      "rationale": "Twelve years of research/team leadership, biosignal research strategy and talent development are far beyond demonstrated early-career AI implementation/evaluation work. ML keyword overlap does not establish scientific leadership or sensor-domain specialization.",
+      "provenance": "ai_independent_assessment",
+      "human_verified": false,
+      "evidence_sha256": "70209235e8ddf7eeea740c15e4d3681138fb27150cbcccbac101e03faa63940c",
+      "evidence_quality": "saved_jd",
+      "authorization_unknown": true
+    }
+  }
+}

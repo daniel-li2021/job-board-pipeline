@@ -1,0 +1,199 @@
+{
+  "partition": "development",
+  "basis": "AI silver assessment; no verified human ground truth",
+  "counts": {
+    "cases": 20,
+    "valid_reviews": 20,
+    "review_missing": 0,
+    "assessment_unknown": 2,
+    "baseline_tier_missing": 9,
+    "review_abstentions": 2,
+    "baseline_assessable": 9,
+    "review_assessable": 18,
+    "baseline_false_positives": 0,
+    "review_false_positives": 0,
+    "comparable_tiers": 9,
+    "corrected_tiers": 2,
+    "harmed_tiers": 1,
+    "rescued_opportunities": 2,
+    "lost_opportunities": 0,
+    "eligibility_assessable": 0,
+    "eligibility_errors": 0,
+    "unsupported_eligibility_claims": 2,
+    "blocked_review_priorities": 0
+  },
+  "usage": {
+    "prompt_tokens": 28526,
+    "completion_tokens": 12072,
+    "total_tokens": 40598
+  },
+  "requests": 6,
+  "first_attempt_valid": 18,
+  "eligibility_error_rate": null,
+  "precision_at_10": null,
+  "ranking_limit": "Purposive small case packet; missing comparable tiers and no complete production ranking or human relevance judgments",
+  "production_enabled": false,
+  "recommendation": "Do not integrate: benefit is promising but insufficiently established; human adjudication and eligibility evidence required",
+  "cases": [
+    {
+      "id": "2223bed330c052a4",
+      "baseline_tier": null,
+      "review_tier": "A",
+      "assessment_tier": "A",
+      "eligibility_assessment": "unknown",
+      "comparable": false
+    },
+    {
+      "id": "1c9c20bc30962d98",
+      "baseline_tier": null,
+      "review_tier": "B",
+      "assessment_tier": "B",
+      "eligibility_assessment": "unknown",
+      "comparable": false
+    },
+    {
+      "id": "a18e8c6f5c0d9469",
+      "baseline_tier": null,
+      "review_tier": "B",
+      "assessment_tier": "B",
+      "eligibility_assessment": "unknown",
+      "comparable": false
+    },
+    {
+      "id": "dfeb57578082726e",
+      "baseline_tier": null,
+      "review_tier": "C",
+      "assessment_tier": "C",
+      "eligibility_assessment": "unknown",
+      "comparable": false
+    },
+    {
+      "id": "711d39669db85cb0",
+      "baseline_tier": null,
+      "review_tier": "C",
+      "assessment_tier": "C",
+      "eligibility_assessment": "unknown",
+      "comparable": false
+    },
+    {
+      "id": "259c0f8a9a5d4f79",
+      "baseline_tier": null,
+      "review_tier": "A",
+      "assessment_tier": "A",
+      "eligibility_assessment": "unknown",
+      "comparable": false
+    },
+    {
+      "id": "16bb4f863c4f5253",
+      "baseline_tier": null,
+      "review_tier": "A",
+      "assessment_tier": "A",
+      "eligibility_assessment": "unknown",
+      "comparable": false
+    },
+    {
+      "id": "ea2f68d1b77d44f2",
+      "baseline_tier": "C",
+      "review_tier": "A",
+      "assessment_tier": "B",
+      "eligibility_assessment": "unknown",
+      "comparable": true
+    },
+    {
+      "id": "5e5afbfb7e40bf3d",
+      "baseline_tier": "B",
+      "review_tier": "B",
+      "assessment_tier": "A",
+      "eligibility_assessment": "unknown",
+      "comparable": true
+    },
+    {
+      "id": "1282be49394a018a",
+      "baseline_tier": "B",
+      "review_tier": "A",
+      "assessment_tier": "B",
+      "eligibility_assessment": "unknown",
+      "comparable": true
+    },
+    {
+      "id": "8725f0f13f7a0f1e",
+      "baseline_tier": "C",
+      "review_tier": "C",
+      "assessment_tier": "C",
+      "eligibility_assessment": "unknown",
+      "comparable": true
+    },
+    {
+      "id": "3701da1f844a5be0",
+      "baseline_tier": "B",
+      "review_tier": "unknown",
+      "assessment_tier": "unknown",
+      "eligibility_assessment": "unknown",
+      "comparable": false
+    },
+    {
+      "id": "440ca05c2a73c554",
+      "baseline_tier": "C",
+      "review_tier": "A",
+      "assessment_tier": "A",
+      "eligibility_assessment": "unknown",
+      "comparable": true
+    },
+    {
+      "id": "5569d6171dfd36d7",
+      "baseline_tier": "ignored",
+      "review_tier": "C",
+      "assessment_tier": "C",
+      "eligibility_assessment": "unknown",
+      "comparable": false
+    },
+    {
+      "id": "9c73ca4609bccd04",
+      "baseline_tier": "B",
+      "review_tier": "A",
+      "assessment_tier": "A",
+      "eligibility_assessment": "unknown",
+      "comparable": true
+    },
+    {
+      "id": "c6adad1a76362071",
+      "baseline_tier": "B",
+      "review_tier": "B",
+      "assessment_tier": "B",
+      "eligibility_assessment": "unknown",
+      "comparable": true
+    },
+    {
+      "id": "77aef476cbb76908",
+      "baseline_tier": "B",
+      "review_tier": "B",
+      "assessment_tier": "B",
+      "eligibility_assessment": "unknown",
+      "comparable": true
+    },
+    {
+      "id": "ee97453514a64ac0",
+      "baseline_tier": "C",
+      "review_tier": "unknown",
+      "assessment_tier": "unknown",
+      "eligibility_assessment": "unknown",
+      "comparable": false
+    },
+    {
+      "id": "00601d5272430d54",
+      "baseline_tier": "A",
+      "review_tier": "A",
+      "assessment_tier": "A",
+      "eligibility_assessment": "unknown",
+      "comparable": true
+    },
+    {
+      "id": "716e5afde651521e",
+      "baseline_tier": "ignored",
+      "review_tier": "C",
+      "assessment_tier": "C",
+      "eligibility_assessment": "unknown",
+      "comparable": false
+    }
+  ]
+}

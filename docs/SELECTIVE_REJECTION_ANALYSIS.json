@@ -1,0 +1,98 @@
+{
+  "old_receipt_limitation": "Original raw responses and rejection reasons were discarded; exact causes of the seven original rejections cannot be reconstructed. No claim that they were all quotation failures.",
+  "original_rejections": [
+    {
+      "id": "1282be49394a018a",
+      "company": "Deloitte",
+      "jd_chars": 154,
+      "original_failure_reason": "unavailable",
+      "v2_validated": true,
+      "v2_tier": "A"
+    },
+    {
+      "id": "3701da1f844a5be0",
+      "company": "TikTok",
+      "jd_chars": 0,
+      "original_failure_reason": "unavailable",
+      "v2_validated": true,
+      "v2_tier": "unknown"
+    },
+    {
+      "id": "5569d6171dfd36d7",
+      "company": "Meta",
+      "jd_chars": 6927,
+      "original_failure_reason": "unavailable",
+      "v2_validated": true,
+      "v2_tier": "C"
+    },
+    {
+      "id": "9c73ca4609bccd04",
+      "company": "",
+      "jd_chars": 6314,
+      "original_failure_reason": "unavailable",
+      "v2_validated": true,
+      "v2_tier": "A"
+    },
+    {
+      "id": "c6adad1a76362071",
+      "company": "Worthington Enterprises",
+      "jd_chars": 7495,
+      "original_failure_reason": "unavailable",
+      "v2_validated": true,
+      "v2_tier": "B"
+    },
+    {
+      "id": "ee97453514a64ac0",
+      "company": "D.E.Shaw group",
+      "jd_chars": 191,
+      "original_failure_reason": "unavailable",
+      "v2_validated": true,
+      "v2_tier": "unknown"
+    },
+    {
+      "id": "716e5afde651521e",
+      "company": "Meta",
+      "jd_chars": 5753,
+      "original_failure_reason": "unavailable",
+      "v2_validated": true,
+      "v2_tier": "C"
+    }
+  ],
+  "v2_first_attempt_rejections": [
+    {
+      "id": "2223bed330c052a4",
+      "cause": "out_of_range_reference",
+      "invalid_references": [
+        {
+          "field": "resume_ref",
+          "value": 19,
+          "available": 15
+        }
+      ],
+      "bounded_retry_valid": true
+    },
+    {
+      "id": "77aef476cbb76908",
+      "cause": "out_of_range_reference",
+      "invalid_references": [
+        {
+          "field": "jd_ref",
+          "value": 25,
+          "available": 24
+        }
+      ],
+      "bounded_retry_valid": true
+    }
+  ],
+  "freeze_audit": {
+    "runner_matches_freeze": true,
+    "packet_matches_freeze": true,
+    "same_dev_heldout_model": true,
+    "same_dev_heldout_reasoning": true,
+    "model": "gpt-6-luna",
+    "reasoning_effort": "medium",
+    "first_heldout_response_at": "2026-10-18T14:26:50.664056+00:00",
+    "frozen_at": "2026-10-18T14:26:28.647545+00:00",
+    "limit": "Original freeze did not pin imported validation/configuration files; git verifies they are unchanged from task baseline. Final metrics use separate audited offline code without retuning/requerying held-out cases."
+  }
+}
