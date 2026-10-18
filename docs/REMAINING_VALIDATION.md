@@ -33,7 +33,7 @@ Repeated application-history badge rendering was measurable: the final offline r
 
 A real browser showed Last 7 Days rendering jobs before shared status finished loading, while the main views correctly waited. Both Last 7 Days render paths now obey the same loading guard. Existing tabs, search, filters, exports, application tracking and layout are retained. Job links are constrained to HTTP(S), including archive-recovered links, preventing `javascript:`/`data:` URLs from executing as dashboard-origin code. This client protection does not secure the database's write boundary.
 
-## Application-state security: approval needed
+## Application-state security: deferred
 
 The deployed bundle initializes Supabase with its public key and no sign-in. Anonymous REST reads succeed. The checked-in legacy setup explicitly grants anonymous insert/update with unconditional policies and removes prior allowlist objects. **A deployment using those policies allows unauthorized visitors to change statuses, soft-delete jobs and write archive metadata directly through REST; hiding buttons or the public key cannot prevent that.** The current database policies cannot be introspected with the available public credentials; no admin credential was configured and no live mutation probe was performed. Therefore this review cannot claim to have verified the exact currently installed RLS policy definitions.
 
@@ -41,7 +41,7 @@ The deployed bundle initializes Supabase with its public key and no sign-in. Ano
 
 **Browser-check exception:** opening the unmodified production page triggered its pre-existing automatic archive backfill at **7:24:23 AM Pacific**. A read-only comparison against the backup confirmed one existing archive row changed only `updated_at`; its key, status, Deleted flag, embedded metadata and application date were identical. Before/after records remain in the private backup folder. No unapproved rollback was attempted. The production tab was closed and all later interaction checks used a local simulated backend. An exact remote archive-key/status guard now avoids redundant backfill upserts and preserves the remote timestamp; changed metadata still saves normally. Its Node regression verifies zero writes for identical archives and one for changed metadata.
 
-**Owner decision:** approve a coordinated Supabase Auth/sign-in and allowlist rollout, specifying the editor account(s). Sign-in must be available and tested before applying the SQL so existing editing access is preserved. Applying the SQL alone would block the current anonymous editing client. A consistent database backup and an authenticated/anonymous acceptance check belong to that approved rollout. Client-only safeguards cannot close anonymous REST writes.
+**Owner decision — October 18, 2026:** defer access-control and permission changes while use is limited to Daniel and trusted people. Before any future public release, untrusted visitors should see only a template with demo data; all real job listings, application history and personal data should remain private, including in downloadable data and unauthenticated endpoints. The existing SQL proposal preserves public reads, so it would need revisiting for that future privacy requirement. No access settings were changed.
 
 ## Scheduled-run verification and evidence limits
 

@@ -210,7 +210,7 @@ tabs and counts. A successful load uses Supabase as the baseline and merges only
 pending local edits; if it fails, the fallback is labeled `Cached review state`.
 Known posting aliases now preserve review lookup and collapse duplicate displays without rekeying application history.
 The existing shared-status setup uses public writes; it must not be treated as an authenticated editor boundary.
-See the [security findings and approval-gated hardening proposal](docs/REMAINING_VALIDATION.md#application-state-security-approval-needed).
+See the [security findings and deferred public-access plan](docs/REMAINING_VALIDATION.md#application-state-security-deferred).
 
 User-facing digests are deduplicated so reruns, rescoring, and ordinary JD changes do not repeatedly alert the same job.
 
