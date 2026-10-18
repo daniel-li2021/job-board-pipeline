@@ -1905,6 +1905,33 @@
           "url": "https://www.amazon.jobs/en/jobs/10581898/associate-startup-solution-architect-sup-us-east-migrate"
         }
       ]
+    },
+    {
+      "pipeline": "official",
+      "stamp": "2026-10-18_1447",
+      "emitted_at": "2026-10-18T14:50:30.225209+00:00",
+      "event_kind": "new_or_promoted_ab",
+      "count": 1,
+      "jobs": [
+        {
+          "canonical_job_key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/SoC-Software-Engineer---New-College-Graduate-2026_JR2027552-1",
+          "job_id": "JR2027552",
+          "tier": "B",
+          "match_score": 72.0,
+          "company": "NVIDIA",
+          "title": "SoC Software Engineer – New College Graduate 2026",
+          "location": "US, CA, Santa Clara",
+          "posted_date": "2026-10-13",
+          "date_confidence": "high",
+          "first_seen": "2026-10-18T14:47:40.376562+00:00",
+          "referral_name": "NVIDIA",
+          "review_status": "unreviewed",
+          "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/SoC-Software-Engineer---New-College-Graduate-2026_JR2027552-1",
+          "source_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/SoC-Software-Engineer---New-College-Graduate-2026_JR2027552-1",
+          "source": "nvidia_official_careers",
+          "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/SoC-Software-Engineer---New-College-Graduate-2026_JR2027552-1"
+        }
+      ]
     }
   ]
 }
