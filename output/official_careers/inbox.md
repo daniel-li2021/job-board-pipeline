@@ -1,10 +1,10 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-10-18 07:47 PDT
-- Snapshot (UTC): 2026-10-18T14:47:40.376562+00:00
-- Jobs: 15 (Tier A/B only)
-- Last 24 hours: 0
-- Last 3 days: 15
+- Updated (PT): 2026-10-18 16:46 PDT
+- Snapshot (UTC): 2026-10-18T23:46:37.060508+00:00
+- Jobs: 16 (Tier A/B only)
+- Last 24 hours: 1
+- Last 3 days: 16
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
@@ -25,3 +25,4 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | B | 76 | official | Amazon | Data engineer, Decision Intelligence Technology | Bellevue, Washington, USA | 2026-10-16 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10581756/data-engineer-decision-intelligence-technology) |
 | B | 78 | official | Visa | Software Development Engineer- Product Reliability Engineering | US - Denver, CO | 2026-10-16 | 1to3d | Visa | unreviewed | official_canonical | [open](https://visa.wd5.myworkdayjobs.com/Visa/job/US---Denver-CO/Software-Development-Engineer--Product-Reliability-Engineering_REF089580W) |
 | B | 74 | official | Amazon | Associate Startup Solution Architect, SUP US East - Migrate | New York, New York, USA | 2026-10-16 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10581898/associate-startup-solution-architect-sup-us-east-migrate) |
+| B | 89 | official | SAP | SAP iXp Intern - Full Stack Developer | Newtown Square, PA, US, 19073 | - | newly_discovered | SAP | unreviewed | official_canonical | [open](https://careers.sap.com/job/Newtown-Square-SAP-iXp-Intern-Full-Stack-Developer-PA-19073/1441089733/) |

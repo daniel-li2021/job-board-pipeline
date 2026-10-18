@@ -1,21 +1,21 @@
-# Big Tech official careers — 7-day view — 2026-10-18_1447
+# Big Tech official careers — 7-day view — 2026-10-18_2346
 
-- Updated (PT): 2026-10-18 07:50 PDT
-- Snapshot (UTC): 2026-10-18T14:50:30.221326+00:00
-- Last 24 hours: 0
-- Last 3 days: 15
+- Updated (PT): 2026-10-18 16:49 PDT
+- Snapshot (UTC): 2026-10-18T23:49:18.098723+00:00
+- Last 24 hours: 1
+- Last 3 days: 16
 
 Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scoring/ranking.
 
 ## Run stats
 
-- Scraped companies: {'Google': 324, 'Amazon': 717, 'Apple': 257, 'Microsoft': 203, 'NVIDIA': 588, 'Salesforce': 278, 'Adobe': 127, 'Meta': 764, 'TikTok': 712, 'Uber': 192, 'DoorDash': 455, 'Snap': 102, 'Pinterest': 119, 'Snowflake': 263, 'ServiceNow': 409, 'Bloomberg': 68, 'JPMorgan Chase': 621, 'Capital One': 266, 'Oracle': 597, 'Walmart Global Tech': 341, 'Cloudflare': 431, 'Stripe': 417, 'Coinbase': 194, 'Robinhood': 143, 'Figma': 93, 'GitLab': 126, 'Discord': 46, 'Asana': 76, 'Brex': 248, 'Samsara': 222, 'Lyft': 93, 'Spotify': 66, 'Ramp': 149, 'Notion': 73, 'Linear': 25, 'Cohere': 98, 'Cisco': 218, 'HPE': 359, 'Disney': 122, 'eBay': 44, 'Qualcomm': 112, 'AMD': 499, 'Zoom': 28, 'Pure Storage': 222, 'Databricks': 498, 'Roblox': 248, 'Airbnb': 104, 'Anthropic': 534, 'AppLovin': 31, 'ByteDance': 449, 'Chime': 72, 'Dell': 123, 'Dropbox': 14, 'Expedia Group': 65, 'Instacart': 119, 'Intel': 184, 'MathWorks': 39, 'MongoDB': 251, 'Morgan Stanley': 103, 'NetApp': 93, 'Netflix': 51, 'OpenAI': 658, 'Palantir': 246, 'PayPal': 49, 'Reddit': 129, 'Red Hat': 31, 'Roku': 100, 'Block / Square': 205, 'Two Sigma': 41, 'Verkada': 254, 'Visa': 109, 'WeRide': 13, 'Workday': 131, 'Zillow': 42, 'Zscaler': 224, 'Chewy': 1, 'CVS Health': 123, 'Duolingo': 55, 'Equinix': 65, 'F5': 1, 'IXL Learning': 104, 'Wells Fargo': 68, 'Yahoo': 59, 'Ansys': 19, 'Flex': 218, 'IQVIA': 9, 'Johnson & Johnson': 187, 'Nasdaq': 22, 'PointClickCare': 72, 'Stryker': 140, 'TransUnion': 33, 'Travelers': 82, 'Verizon': 18, 'Yext': 14}
-- Funnel: after dedup 17958 -> after company filter 17958 -> after hard filter 14650 -> after role+seniority prefilter 2854 | dropped 15104
-- LLM usage: scored 11 / API requests 2 / cache reused 412 (cross-pipeline 5) / rule fallback 2431
-- LLM cache causes: new 7 / material JD 0 / matching context 0 / prior rule now eligible 8 / non-material reused 0 / same-content reused 9 / rescored <24h 0
-- LLM cost: model gpt-6-luna / API requests 2 / jobs scored 11 / tokens input 16905 (cached 0) / output 2705 (reasoning 1507) / estimated cost $0.0030
-- New jobs discovered this run: 74
-- Output: Tier A 6 / Tier B 26 / shown 32
+- Scraped companies: {'Salesforce': 7, 'Google': 324, 'Amazon': 717, 'Apple': 257, 'Microsoft': 203, 'NVIDIA': 590, 'Adobe': 127, 'Meta': 764, 'TikTok': 715, 'Uber': 191, 'DoorDash': 455, 'Snap': 102, 'Pinterest': 119, 'Snowflake': 263, 'ServiceNow': 409, 'Bloomberg': 68, 'JPMorgan Chase': 621, 'Capital One': 266, 'Oracle': 599, 'Walmart Global Tech': 341, 'Cloudflare': 430, 'Stripe': 417, 'Coinbase': 194, 'Robinhood': 144, 'Figma': 93, 'GitLab': 126, 'Discord': 46, 'Asana': 76, 'Brex': 248, 'Samsara': 222, 'Lyft': 93, 'Spotify': 66, 'Ramp': 149, 'Notion': 73, 'Linear': 25, 'Cohere': 98, 'Cisco': 218, 'SAP': 136, 'HPE': 359, 'Disney': 121, 'eBay': 44, 'Qualcomm': 110, 'AMD': 499, 'Zoom': 28, 'Pure Storage': 222, 'Databricks': 498, 'Roblox': 248, 'Airbnb': 104, 'Anthropic': 534, 'AppLovin': 31, 'ByteDance': 449, 'Chime': 72, 'Dell': 123, 'Dropbox': 14, 'Expedia Group': 66, 'Instacart': 119, 'Intel': 183, 'MathWorks': 39, 'MongoDB': 251, 'Morgan Stanley': 104, 'NetApp': 92, 'Netflix': 51, 'OpenAI': 658, 'Palantir': 246, 'PayPal': 48, 'Reddit': 128, 'Red Hat': 31, 'Roku': 100, 'Block / Square': 205, 'Two Sigma': 41, 'Verkada': 254, 'Visa': 109, 'WeRide': 13, 'Workday': 130, 'Zillow': 42, 'Zscaler': 224, 'Chewy': 1, 'CVS Health': 123, 'Duolingo': 55, 'Equinix': 65, 'F5': 1, 'IXL Learning': 104, 'Wells Fargo': 68, 'Yahoo': 59, 'Ansys': 19, 'Flex': 218, 'IQVIA': 9, 'Johnson & Johnson': 188, 'Nasdaq': 22, 'PointClickCare': 70, 'Stryker': 140, 'TransUnion': 33, 'Travelers': 82, 'Verizon': 18, 'Yext': 14}
+- Funnel: after dedup 17822 -> after company filter 17822 -> after hard filter 14553 -> after role+seniority prefilter 2847 | dropped 14975
+- LLM usage: scored 6 / API requests 2 / cache reused 414 (cross-pipeline 1) / rule fallback 2427
+- LLM cache causes: new 10 / material JD 0 / matching context 0 / prior rule now eligible 1 / non-material reused 0 / same-content reused 5 / rescored <24h 1
+- LLM cost: model gpt-6-luna / API requests 2 / jobs scored 6 / tokens input 11594 (cached 0) / output 1266 (reasoning 774) / estimated cost $0.0018
+- New jobs discovered this run: 33
+- Output: Tier A 6 / Tier B 27 / shown 33
 
 ## Tier A - apply now / referral (6)
 
@@ -28,7 +28,7 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 91 | cached_llm | official | Visa | Software Engineer | US - Denver, CO | 2026-10-15 | 3to7d | high | swe | Visa | unreviewed | official_canonical | [open](https://visa.wd5.myworkdayjobs.com/Visa/job/US---Denver-CO/Software-Engineer_REF089009W) |
 | 93 | cached_llm | official | Cisco | Site Reliability Engineer I (Full Time) — United States | RTP, North Carolina, US; San Jose, California, US; Knoxville, Tennessee, US | 2026-10-14 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Site-Reliability-Engineer-I--Full-Time----United-States_2028788) |
 
-## Tier B - worth applying (26)
+## Tier B - worth applying (27)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -44,6 +44,7 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 76 | cached_llm | official | Amazon | Data engineer, Decision Intelligence Technology | Bellevue, Washington, USA | 2026-10-16 | 1to3d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10581756/data-engineer-decision-intelligence-technology) |
 | 78 | cached_llm | official | Visa | Software Development Engineer- Product Reliability Engineering | US - Denver, CO | 2026-10-16 | 1to3d | high | swe | Visa | unreviewed | official_canonical | [open](https://visa.wd5.myworkdayjobs.com/Visa/job/US---Denver-CO/Software-Development-Engineer--Product-Reliability-Engineering_REF089580W) |
 | 74 | cached_llm | official | Amazon | Associate Startup Solution Architect, SUP US East - Migrate | New York, New York, USA | 2026-10-16 | 1to3d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10581898/associate-startup-solution-architect-sup-us-east-migrate) |
+| 89 | llm | official | SAP | SAP iXp Intern - Full Stack Developer | Newtown Square, PA, US, 19073 | - | newly_discovered | unknown | swe | SAP | unreviewed | official_canonical | [open](https://careers.sap.com/job/Newtown-Square-SAP-iXp-Intern-Full-Stack-Developer-PA-19073/1441089733/) |
 | 85 | cached_llm | official | Apple | Software Engineer, ASE Commerce Engineering | New York City, United States of America | 2026-10-14 | 3to7d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200688902/software-engineer-ase-commerce-engineering) |
 | 87 | cached_llm | official | Cisco | Data Engineer II (Full Time) - United States | RTP, North Carolina, US | 2026-10-14 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Data-Engineer-II--Full-Time----United-States_2028790) |
 | 84 | cached_llm | official | Amazon | Software Development Engineer, Audible AI Voice Production | Cambridge, Massachusetts, USA | 2026-10-15 | 3to7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10580035/software-development-engineer-audible-ai-voice-production) |
@@ -54,7 +55,7 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 82 | cached_llm | official | NVIDIA | Deep Learning Software Engineer, TensorRT Performance - New College Gr | US, CA, Santa Clara; US, CA, Remote | 2026-10-12 | 3to7d | high | swe | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Deep-Learning-Software-Engineer--TensorRT-Performance---New-College-Grad-2027_JR2027083) |
 | 81 | cached_llm | official | Microsoft | Software Engineer II | United States, Washington, Redmond | 2026-10-14 | 3to7d | high | swe | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556627708) |
 | 78 | cached_llm | official | TikTok | Research Scientist Graduate (E-Commerce Recommendation Region) - 2027  | Seattle, Washington, United States of America | - | 3to7d | unknown | ai | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7695929967028750645) |
-| 72 | llm | official | NVIDIA | SoC Software Engineer – New College Graduate 2026 | US, CA, Santa Clara | 2026-10-13 | 3to7d | high | swe | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/SoC-Software-Engineer---New-College-Graduate-2026_JR2027552-1) |
-| 82 | llm | official | NVIDIA | Software Engineer, DL Kernel Libraries - New College Grad 2027 | US, CA, Santa Clara | 2026-10-11 | gt7d | high | swe | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Software-Engineer--DL-Kernel-Libraries---New-College-Grad-2027_JR2027337) |
+| 72 | cached_llm | official | NVIDIA | SoC Software Engineer – New College Graduate 2026 | US, CA, Santa Clara | 2026-10-13 | 3to7d | high | swe | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/SoC-Software-Engineer---New-College-Graduate-2026_JR2027552-1) |
+| 82 | cached_llm | official | NVIDIA | Software Engineer, DL Kernel Libraries - New College Grad 2027 | US, CA, Santa Clara | 2026-10-11 | gt7d | high | swe | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Software-Engineer--DL-Kernel-Libraries---New-College-Grad-2027_JR2027337) |
 | 79 | cached_llm | official | Robinhood | Software Engineer 1, Backend | Menlo Park, CA; New York, NY; Menlo Park, CA | 2025-09-27 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://boards.greenhouse.io/robinhood/jobs/7263578?t=gh_src=&gh_jid=7263578) |
-| 76 | llm | official | HPE | Site Reliability Engineer I - Sales Operations | Dallas, Texas, United States of America; Herndon, Virginia, United States of America | 2026-10-07 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Dallas-Texas-United-States-of-America/Site-Reliability-Engineer-I---Sales-Operations_1203341-1) |
+| 76 | cached_llm | official | HPE | Site Reliability Engineer I - Sales Operations | Dallas, Texas, United States of America; Herndon, Virginia, United States of America | 2026-10-07 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Dallas-Texas-United-States-of-America/Site-Reliability-Engineer-I---Sales-Operations_1203341-1) |
