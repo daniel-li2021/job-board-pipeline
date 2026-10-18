@@ -45,16 +45,29 @@ The deployed bundle initializes Supabase with its public key and no sign-in. Ano
 
 ## Scheduled-run verification and evidence limits
 
-A bounded GitHub run listing showed successful Batch 1–3 Pages publication and offline checks. Latest discovery receipts remained **before** the fixes: Official October 17 4:45 PM Pacific, Syncareer 4:53 PM, Board 9:01 PM. Batch 1 was committed at 11:00 PM, Batch 2 at 11:42 PM and Batch 3 at 11:55 PM. Consequently these saved runs cannot establish post-fix JD recovery, protected Detail successes, employer attribution, duplicate-alert prevention or outbox delivery.
+Normal scheduled runs completed during finalization; none was triggered for this task. The new Official run started **October 18 7:30 AM Pacific** on `44ff25e`, which contains Batch 1–3, and recorded matching at **7:47 AM**. Syncareer recorded its run at **7:53 AM**. Their data/acknowledgement commits and subsequent pending-profile update were preserved when integrating the task. [The saved operational receipt](POSTFIX_SCHEDULED_EVIDENCE.json) pins source revisions, input hashes, denominators and notification IDs.
 
-- Saved deterministic replay: **0 further derived repairs across 3,126 records** for gap totals, tier and action, using the Batch 2 preview. This checks consistency, not suitability.
-- Saved JD baseline remains 5,141/5,258 usable Official descriptions under the ≥200-character rule, with 2/150 added detail successes. It predates Batch 1; it is not the new recovery rate.
-- Latest local receipt is October 17 9:00 PM Pacific with a LinkedIn search 429 and zero Detail requests; it predates Batch 3 and contains no protected-request counters. Glassdoor remains a cached older source; no bypass was attempted.
-- No post-fix notification outbox receipt/acknowledgement was available. Retry/idempotence has offline regression evidence, not newly measured production Issue delivery. No Issue or digest was sent for this task.
-- Latest saved adapter statuses: 94 OK, SAP empty, HubSpot blocked, six intentional link-only limitations. A bounded Stryker CXS query returned HTTP 200 and total 184, consistent with its latest healthy saved run; its earlier error did not justify changing a working adapter.
-- The deployed dashboard was rebuilt at October 17 11:56 PM Pacific and showed the saved source clocks above. A fresh compiled page does not imply a new crawl. Committed `public/dashboard.json` remains an old generated artifact; it was not used as current operational evidence.
+| Real scheduled observation | Previous Official run | First observed post-fix Official run |
+|---|---:|---:|
+| Added detail successes / requests | 2 / 150 | 143 / 150 |
+| Meta detail successes / requests | 0 / 111 | 141 / 141 |
+| Relevant usable JDs / eligible records | 5,141 / 5,258 | 5,480 / 5,482 |
+| Meta relevant usable JDs / eligible records | 129 / 214 | 214 / 214 |
+| Two Sigma relevant usable JDs / eligible records | 0 / 30 | 36 / 36 |
 
-No full crawl, bulk rescoring, live application-history migration, production permission change or production AI policy change occurred. Normal scheduled discovery must provide the next operational denominators; this task does not manufacture them by rerunning crawlers.
+These are **different cohorts**, not a controlled accuracy or suitability experiment. The ≥200-character JD rule does not establish complete requirements. A stricter join of the two compact Official recovery caches finds **18 thin→usable descriptions among 420 shared Meta source IDs**. Two Sigma's native adapter now supplies the 36 usable descriptions; its older generic-recovery cache is not the evidence for that gain. No independent suitable-recommendation gain is asserted from these counts.
+
+Official's persisted outbox records delivered receipt `07e3e0b9a49bbf9f95f994b49735af6848f08e3605c16e40b49b38debcb5e18f`, and [Issue 198](https://github.com/daniel-li2021/job-board-pipeline/issues/198) contains the exact receipt marker. Syncareer's delivered receipt `664e7498fd9cdf8d2a7f09dcc066e91d7f42cee5cd2c520acdd49fd68b68b697` is likewise verified in [Issue 199](https://github.com/daniel-li2021/job-board-pipeline/issues/199). This establishes ordinary scheduled outbox delivery/acknowledgement, while failure/retry remains offline regression evidence. The task itself sent no Issue or digest.
+
+The supplemental private backup `output/logs/remaining-backup-2026-10-18-final/` pins the newer stores and ledgers and reuses the valid 4,681-row application export from the post-Official backup (SHA-256 `6d81d0b8506fb4f3d0c9f54154626963e809b0f11478b40487fba682fe4e220e`, including the disclosed timestamp refresh). [The supplemental runtime rehearsal](IDENTITY_POSTSCHEDULED_DRY_RUN.json) repeats the actual-reader/status/archive checks against these **3,043 records / 602 proposed key changes**; 132 proposals have supported aliases, while 470 remain deferred. It preserves all expanded statuses and archive rows and adds zero automatic writes. The original backup/report remain unchanged, so natural pruning/discovery is not confused with a task migration.
+
+- Both the original **3,126-record** snapshot and the newer **3,043-record** snapshot show **zero further derived repairs** for gap totals, tier and action. This checks deterministic consistency, not suitability.
+- Official's normal run observed 74 discoveries and one new A/B addition; Syncareer observed 35 discoveries and four new A/B additions. Its 23 shown A/B rows are a different denominator. These are saved pipeline telemetry, not independently adjudicated successful opportunities.
+- Board's newest observed run remains October 17 9:01 PM Pacific. The local LinkedIn receipt at 9:00 PM predates Batch 3, with a search 429 and zero Detail requests. Protected Detail successes and limited employer recovery therefore remain unobserved operationally. Glassdoor stays cached; no bypass was attempted.
+- SAP is still empty and HubSpot returns 404 in that scheduled run, which predates this task's SAP adapter change. SAP's 25-card/two-JD check is bounded development-machine evidence; hosted gains await its next normal run. The Stryker probe returned 200 / total 184 and did not justify changing its healthy latest adapter.
+- The initially observed deployed page was rebuilt October 17 11:56 PM Pacific. Later scheduled publication followed the new discovery runs. A current compiled page and current source snapshot are separate clocks; committed `public/dashboard.json` is not treated as current operational evidence.
+
+No full crawl, bulk rescoring, live identity migration, production permission change or production AI scoring-policy change was performed by the task. The one incidental existing archive timestamp refresh is disclosed above. Further protected-recovery/suitability/retry denominators require future normal runs; no extra crawl is manufactured for them.
 
 ## Validation and independent review
 

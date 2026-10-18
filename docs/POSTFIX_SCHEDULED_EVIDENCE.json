@@ -1,0 +1,987 @@
+{
+  "source_main": "0b472c19eb31264cf698845a9337401e8449a8de",
+  "before_main": "44ff25e",
+  "before_official": {
+    "run_at": "2026-10-17T23:45:21.676278+00:00",
+    "output": {
+      "tier_a": 8,
+      "tier_b": 33,
+      "shown": 41,
+      "new_jobs": 12,
+      "new_jobs_added": 0
+    },
+    "failures": {
+      "scrape": {
+        "hubspot": [
+          "HubSpot greenhouse HTTP 404"
+        ]
+      },
+      "llm": []
+    },
+    "jd_recovery": {
+      "cache_reused": 197,
+      "ai_requests": 1,
+      "detail_requests": 150,
+      "detail_success": 2,
+      "eligible": 5258,
+      "usable_jd": 5141,
+      "budget_deferred": 103,
+      "ai_skip": 238,
+      "deterministic_skip": 579,
+      "elapsed_seconds": 127.987,
+      "errors": [],
+      "per_company": {
+        "Google": {
+          "eligible": 167,
+          "usable_jd": 167
+        },
+        "Amazon": {
+          "eligible": 454,
+          "usable_jd": 454
+        },
+        "Apple": {
+          "eligible": 137,
+          "usable_jd": 137
+        },
+        "Microsoft": {
+          "eligible": 43,
+          "usable_jd": 43
+        },
+        "NVIDIA": {
+          "eligible": 66,
+          "usable_jd": 66
+        },
+        "Salesforce": {
+          "eligible": 44,
+          "usable_jd": 44
+        },
+        "Adobe": {
+          "eligible": 38,
+          "usable_jd": 38
+        },
+        "Meta": {
+          "deterministic_skip": 379,
+          "cache_reused": 132,
+          "ai_recover": 41,
+          "eligible": 214,
+          "ai_skip": 172,
+          "detail_requests": 111,
+          "detail_failure": 111,
+          "last_good_reused": 26,
+          "budget_deferred": 103,
+          "usable_jd": 129
+        },
+        "TikTok": {
+          "eligible": 424,
+          "usable_jd": 424
+        },
+        "Uber": {
+          "eligible": 27,
+          "usable_jd": 27
+        },
+        "DoorDash": {
+          "eligible": 109,
+          "usable_jd": 109
+        },
+        "Snap": {
+          "eligible": 16,
+          "usable_jd": 16
+        },
+        "Pinterest": {
+          "eligible": 19,
+          "usable_jd": 19
+        },
+        "Snowflake": {
+          "eligible": 44,
+          "usable_jd": 44
+        },
+        "ServiceNow": {
+          "eligible": 53,
+          "usable_jd": 53
+        },
+        "Bloomberg": {
+          "deterministic_skip": 13,
+          "ai_skip": 5,
+          "usable_jd": 0
+        },
+        "JPMorgan Chase": {
+          "eligible": 101,
+          "usable_jd": 101
+        },
+        "Capital One": {
+          "eligible": 60,
+          "usable_jd": 60
+        },
+        "Oracle": {
+          "eligible": 52,
+          "usable_jd": 52
+        },
+        "Walmart Global Tech": {
+          "eligible": 34,
+          "usable_jd": 34
+        },
+        "Cloudflare": {
+          "eligible": 89,
+          "usable_jd": 89
+        },
+        "Stripe": {
+          "eligible": 136,
+          "usable_jd": 136
+        },
+        "Coinbase": {
+          "eligible": 51,
+          "usable_jd": 51
+        },
+        "Robinhood": {
+          "eligible": 37,
+          "usable_jd": 37
+        },
+        "Figma": {
+          "eligible": 38,
+          "usable_jd": 38
+        },
+        "GitLab": {
+          "eligible": 13,
+          "usable_jd": 13
+        },
+        "Discord": {
+          "eligible": 4,
+          "usable_jd": 4
+        },
+        "Asana": {
+          "eligible": 17,
+          "usable_jd": 17
+        },
+        "Brex": {
+          "eligible": 38,
+          "usable_jd": 38
+        },
+        "Samsara": {
+          "eligible": 44,
+          "usable_jd": 44
+        },
+        "Lyft": {
+          "eligible": 33,
+          "usable_jd": 33
+        },
+        "Spotify": {
+          "eligible": 15,
+          "usable_jd": 15
+        },
+        "Ramp": {
+          "eligible": 64,
+          "usable_jd": 64
+        },
+        "Notion": {
+          "eligible": 33,
+          "usable_jd": 33
+        },
+        "Linear": {
+          "eligible": 9,
+          "usable_jd": 9
+        },
+        "Cohere": {
+          "eligible": 29,
+          "usable_jd": 29
+        },
+        "Cisco": {
+          "eligible": 62,
+          "usable_jd": 62
+        },
+        "HPE": {
+          "eligible": 128,
+          "usable_jd": 128
+        },
+        "Disney": {
+          "deterministic_skip": 105,
+          "cache_reused": 12,
+          "eligible": 14,
+          "ai_recover": 2,
+          "ai_skip": 2,
+          "detail_requests": 7,
+          "detail_failure": 7,
+          "last_good_reused": 5,
+          "budget_deferred": 0,
+          "usable_jd": 12
+        },
+        "eBay": {
+          "eligible": 10,
+          "usable_jd": 10
+        },
+        "Qualcomm": {
+          "eligible": 34,
+          "usable_jd": 34
+        },
+        "AMD": {
+          "eligible": 201,
+          "usable_jd": 201
+        },
+        "Zoom": {
+          "eligible": 7,
+          "usable_jd": 7
+        },
+        "Pure Storage": {
+          "eligible": 65,
+          "usable_jd": 65
+        },
+        "Databricks": {
+          "eligible": 72,
+          "usable_jd": 72
+        },
+        "Roblox": {
+          "eligible": 29,
+          "usable_jd": 29
+        },
+        "Airbnb": {
+          "eligible": 7,
+          "usable_jd": 7
+        },
+        "Anthropic": {
+          "eligible": 152,
+          "usable_jd": 152
+        },
+        "AppLovin": {
+          "eligible": 10,
+          "usable_jd": 10
+        },
+        "ByteDance": {
+          "eligible": 230,
+          "usable_jd": 230
+        },
+        "Chime": {
+          "eligible": 12,
+          "usable_jd": 12
+        },
+        "Dell": {
+          "eligible": 31,
+          "usable_jd": 31
+        },
+        "Expedia Group": {
+          "eligible": 27,
+          "usable_jd": 27
+        },
+        "Instacart": {
+          "eligible": 5,
+          "usable_jd": 5
+        },
+        "Intel": {
+          "eligible": 86,
+          "usable_jd": 86
+        },
+        "MathWorks": {
+          "eligible": 11,
+          "usable_jd": 11
+        },
+        "MongoDB": {
+          "eligible": 36,
+          "usable_jd": 36
+        },
+        "Morgan Stanley": {
+          "eligible": 31,
+          "usable_jd": 31
+        },
+        "NetApp": {
+          "eligible": 37,
+          "usable_jd": 37
+        },
+        "Netflix": {
+          "cache_reused": 40,
+          "deterministic_skip": 7,
+          "eligible": 22,
+          "ai_skip": 22,
+          "ai_recover": 2,
+          "detail_requests": 2,
+          "detail_success": 2,
+          "budget_deferred": 0,
+          "usable_jd": 22
+        },
+        "OpenAI": {
+          "eligible": 368,
+          "usable_jd": 368
+        },
+        "Palantir": {
+          "eligible": 192,
+          "cache_reused": 2,
+          "ai_skip": 2,
+          "usable_jd": 192
+        },
+        "PayPal": {
+          "eligible": 6,
+          "usable_jd": 6
+        },
+        "Reddit": {
+          "eligible": 14,
+          "usable_jd": 14
+        },
+        "Red Hat": {
+          "eligible": 16,
+          "usable_jd": 16
+        },
+        "Roku": {
+          "eligible": 8,
+          "usable_jd": 8
+        },
+        "Block / Square": {
+          "eligible": 25,
+          "usable_jd": 25
+        },
+        "Two Sigma": {
+          "deterministic_skip": 5,
+          "eligible": 30,
+          "ai_recover": 7,
+          "ai_skip": 6,
+          "detail_requests": 30,
+          "detail_failure": 30,
+          "budget_deferred": 0,
+          "usable_jd": 0
+        },
+        "Verkada": {
+          "eligible": 42,
+          "usable_jd": 42
+        },
+        "Visa": {
+          "eligible": 22,
+          "usable_jd": 22
+        },
+        "WeRide": {
+          "eligible": 9,
+          "usable_jd": 9
+        },
+        "Workday": {
+          "eligible": 24,
+          "usable_jd": 24
+        },
+        "Zillow": {
+          "eligible": 6,
+          "usable_jd": 6
+        },
+        "Zscaler": {
+          "eligible": 21,
+          "usable_jd": 21
+        },
+        "Chewy": {
+          "eligible": 1,
+          "usable_jd": 1
+        },
+        "CVS Health": {
+          "eligible": 16,
+          "usable_jd": 16
+        },
+        "Duolingo": {
+          "eligible": 6,
+          "usable_jd": 6
+        },
+        "Equinix": {
+          "cache_reused": 6,
+          "eligible": 6,
+          "deterministic_skip": 35,
+          "ai_skip": 24,
+          "usable_jd": 6
+        },
+        "IXL Learning": {
+          "eligible": 54,
+          "usable_jd": 54
+        },
+        "Wells Fargo": {
+          "eligible": 4,
+          "usable_jd": 4
+        },
+        "Yahoo": {
+          "eligible": 9,
+          "usable_jd": 9
+        },
+        "Ansys": {
+          "eligible": 5,
+          "usable_jd": 5
+        },
+        "Flex": {
+          "eligible": 106,
+          "usable_jd": 106
+        },
+        "IQVIA": {
+          "eligible": 2,
+          "usable_jd": 2
+        },
+        "Johnson & Johnson": {
+          "eligible": 65,
+          "usable_jd": 65
+        },
+        "Nasdaq": {
+          "eligible": 5,
+          "usable_jd": 5
+        },
+        "PointClickCare": {
+          "deterministic_skip": 35,
+          "eligible": 14,
+          "cache_reused": 5,
+          "ai_skip": 5,
+          "usable_jd": 14
+        },
+        "Stryker": {
+          "eligible": 52,
+          "usable_jd": 52
+        },
+        "TransUnion": {
+          "eligible": 11,
+          "usable_jd": 11
+        },
+        "Travelers": {
+          "eligible": 39,
+          "usable_jd": 39
+        },
+        "Verizon": {
+          "eligible": 6,
+          "usable_jd": 6
+        },
+        "Yext": {
+          "eligible": 3,
+          "usable_jd": 3
+        },
+        "LinkedIn": {
+          "usable_jd": 0
+        },
+        "SAP": {
+          "usable_jd": 0
+        },
+        "Goldman Sachs": {
+          "usable_jd": 0
+        },
+        "Citadel": {
+          "usable_jd": 0
+        },
+        "Dropbox": {
+          "usable_jd": 0
+        },
+        "HubSpot": {
+          "usable_jd": 0
+        },
+        "Tesla": {
+          "usable_jd": 0
+        },
+        "F5": {
+          "usable_jd": 0
+        },
+        "Wayfair": {
+          "usable_jd": 0
+        },
+        "Blizzard Entertainment": {
+          "usable_jd": 0
+        }
+      },
+      "exact_peer_reused": 0
+    }
+  },
+  "after_official": {
+    "run_at": "2026-10-18T14:47:40.376562+00:00",
+    "output": {
+      "tier_a": 6,
+      "tier_b": 26,
+      "shown": 32,
+      "new_jobs": 74,
+      "new_jobs_added": 1
+    },
+    "failures": {
+      "scrape": {
+        "hubspot": [
+          "HubSpot greenhouse HTTP 404"
+        ]
+      },
+      "llm": []
+    },
+    "jd_recovery": {
+      "cache_reused": 197,
+      "detail_requests": 150,
+      "detail_success": 143,
+      "eligible": 5482,
+      "usable_jd": 5480,
+      "budget_deferred": 73,
+      "ai_skip": 225,
+      "deterministic_skip": 561,
+      "elapsed_seconds": 101.579,
+      "errors": [],
+      "per_company": {
+        "Google": {
+          "eligible": 167,
+          "usable_jd": 167
+        },
+        "Amazon": {
+          "eligible": 454,
+          "usable_jd": 454
+        },
+        "Apple": {
+          "eligible": 130,
+          "usable_jd": 130
+        },
+        "Microsoft": {
+          "eligible": 42,
+          "usable_jd": 42
+        },
+        "NVIDIA": {
+          "eligible": 75,
+          "usable_jd": 75
+        },
+        "Salesforce": {
+          "eligible": 68,
+          "usable_jd": 68
+        },
+        "Adobe": {
+          "eligible": 40,
+          "usable_jd": 40
+        },
+        "Meta": {
+          "deterministic_skip": 378,
+          "cache_reused": 132,
+          "ai_recover": 41,
+          "eligible": 214,
+          "ai_skip": 172,
+          "detail_requests": 141,
+          "detail_success": 141,
+          "budget_deferred": 73,
+          "usable_jd": 214
+        },
+        "TikTok": {
+          "eligible": 424,
+          "usable_jd": 424
+        },
+        "Uber": {
+          "eligible": 28,
+          "usable_jd": 28
+        },
+        "DoorDash": {
+          "eligible": 109,
+          "usable_jd": 109
+        },
+        "Snap": {
+          "eligible": 16,
+          "usable_jd": 16
+        },
+        "Pinterest": {
+          "eligible": 19,
+          "usable_jd": 19
+        },
+        "Snowflake": {
+          "eligible": 44,
+          "usable_jd": 44
+        },
+        "ServiceNow": {
+          "eligible": 53,
+          "usable_jd": 53
+        },
+        "Bloomberg": {
+          "eligible": 21,
+          "usable_jd": 21
+        },
+        "JPMorgan Chase": {
+          "eligible": 114,
+          "usable_jd": 114
+        },
+        "Capital One": {
+          "eligible": 117,
+          "usable_jd": 117
+        },
+        "Oracle": {
+          "eligible": 56,
+          "usable_jd": 56
+        },
+        "Walmart Global Tech": {
+          "eligible": 32,
+          "usable_jd": 32
+        },
+        "Cloudflare": {
+          "eligible": 89,
+          "usable_jd": 89
+        },
+        "Stripe": {
+          "eligible": 136,
+          "usable_jd": 136
+        },
+        "Coinbase": {
+          "eligible": 51,
+          "usable_jd": 51
+        },
+        "Robinhood": {
+          "eligible": 37,
+          "usable_jd": 37
+        },
+        "Figma": {
+          "eligible": 38,
+          "usable_jd": 38
+        },
+        "GitLab": {
+          "eligible": 13,
+          "usable_jd": 13
+        },
+        "Discord": {
+          "eligible": 4,
+          "usable_jd": 4
+        },
+        "Asana": {
+          "eligible": 17,
+          "usable_jd": 17
+        },
+        "Brex": {
+          "eligible": 38,
+          "usable_jd": 38
+        },
+        "Samsara": {
+          "eligible": 45,
+          "usable_jd": 45
+        },
+        "Lyft": {
+          "eligible": 33,
+          "usable_jd": 33
+        },
+        "Spotify": {
+          "eligible": 15,
+          "usable_jd": 15
+        },
+        "Ramp": {
+          "eligible": 64,
+          "usable_jd": 64
+        },
+        "Notion": {
+          "eligible": 33,
+          "usable_jd": 33
+        },
+        "Linear": {
+          "eligible": 9,
+          "usable_jd": 9
+        },
+        "Cohere": {
+          "eligible": 29,
+          "usable_jd": 29
+        },
+        "Cisco": {
+          "eligible": 69,
+          "usable_jd": 69
+        },
+        "HPE": {
+          "eligible": 151,
+          "usable_jd": 151
+        },
+        "Disney": {
+          "deterministic_skip": 106,
+          "cache_reused": 12,
+          "eligible": 14,
+          "ai_recover": 2,
+          "ai_skip": 2,
+          "detail_requests": 7,
+          "detail_failure": 7,
+          "last_good_reused": 5,
+          "budget_deferred": 0,
+          "usable_jd": 12
+        },
+        "eBay": {
+          "eligible": 10,
+          "usable_jd": 10
+        },
+        "Qualcomm": {
+          "eligible": 34,
+          "usable_jd": 34
+        },
+        "AMD": {
+          "eligible": 201,
+          "usable_jd": 201
+        },
+        "Zoom": {
+          "eligible": 7,
+          "usable_jd": 7
+        },
+        "Pure Storage": {
+          "eligible": 65,
+          "usable_jd": 65
+        },
+        "Databricks": {
+          "eligible": 72,
+          "usable_jd": 72
+        },
+        "Roblox": {
+          "eligible": 29,
+          "usable_jd": 29
+        },
+        "Airbnb": {
+          "eligible": 7,
+          "usable_jd": 7
+        },
+        "Anthropic": {
+          "eligible": 152,
+          "usable_jd": 152
+        },
+        "AppLovin": {
+          "eligible": 10,
+          "usable_jd": 10
+        },
+        "ByteDance": {
+          "eligible": 230,
+          "usable_jd": 230
+        },
+        "Chime": {
+          "eligible": 12,
+          "usable_jd": 12
+        },
+        "Dell": {
+          "eligible": 31,
+          "usable_jd": 31
+        },
+        "Expedia Group": {
+          "eligible": 27,
+          "usable_jd": 27
+        },
+        "Instacart": {
+          "eligible": 5,
+          "usable_jd": 5
+        },
+        "Intel": {
+          "eligible": 108,
+          "usable_jd": 108
+        },
+        "MathWorks": {
+          "eligible": 11,
+          "usable_jd": 11
+        },
+        "MongoDB": {
+          "eligible": 36,
+          "usable_jd": 36
+        },
+        "Morgan Stanley": {
+          "eligible": 31,
+          "usable_jd": 31
+        },
+        "NetApp": {
+          "eligible": 38,
+          "usable_jd": 38
+        },
+        "Netflix": {
+          "cache_reused": 40,
+          "deterministic_skip": 7,
+          "eligible": 24,
+          "ai_skip": 20,
+          "ai_recover": 2,
+          "detail_requests": 2,
+          "detail_success": 2,
+          "budget_deferred": 0,
+          "usable_jd": 24
+        },
+        "OpenAI": {
+          "eligible": 368,
+          "usable_jd": 368
+        },
+        "Palantir": {
+          "eligible": 192,
+          "cache_reused": 2,
+          "ai_skip": 2,
+          "usable_jd": 192
+        },
+        "PayPal": {
+          "eligible": 6,
+          "usable_jd": 6
+        },
+        "Reddit": {
+          "eligible": 14,
+          "usable_jd": 14
+        },
+        "Red Hat": {
+          "eligible": 16,
+          "usable_jd": 16
+        },
+        "Roku": {
+          "eligible": 8,
+          "usable_jd": 8
+        },
+        "Block / Square": {
+          "eligible": 25,
+          "usable_jd": 25
+        },
+        "Two Sigma": {
+          "eligible": 36,
+          "usable_jd": 36
+        },
+        "Verkada": {
+          "eligible": 42,
+          "usable_jd": 42
+        },
+        "Visa": {
+          "eligible": 22,
+          "usable_jd": 22
+        },
+        "WeRide": {
+          "eligible": 9,
+          "usable_jd": 9
+        },
+        "Workday": {
+          "eligible": 27,
+          "usable_jd": 27
+        },
+        "Zillow": {
+          "eligible": 6,
+          "usable_jd": 6
+        },
+        "Zscaler": {
+          "eligible": 21,
+          "usable_jd": 21
+        },
+        "Chewy": {
+          "eligible": 1,
+          "usable_jd": 1
+        },
+        "CVS Health": {
+          "eligible": 17,
+          "usable_jd": 17
+        },
+        "Duolingo": {
+          "eligible": 6,
+          "usable_jd": 6
+        },
+        "Equinix": {
+          "cache_reused": 6,
+          "eligible": 6,
+          "deterministic_skip": 35,
+          "ai_skip": 24,
+          "usable_jd": 6
+        },
+        "IXL Learning": {
+          "eligible": 54,
+          "usable_jd": 54
+        },
+        "Wells Fargo": {
+          "eligible": 4,
+          "usable_jd": 4
+        },
+        "Yahoo": {
+          "eligible": 9,
+          "usable_jd": 9
+        },
+        "Ansys": {
+          "eligible": 5,
+          "usable_jd": 5
+        },
+        "Flex": {
+          "eligible": 140,
+          "usable_jd": 140
+        },
+        "IQVIA": {
+          "eligible": 2,
+          "usable_jd": 2
+        },
+        "Johnson & Johnson": {
+          "eligible": 65,
+          "usable_jd": 65
+        },
+        "Nasdaq": {
+          "eligible": 5,
+          "usable_jd": 5
+        },
+        "PointClickCare": {
+          "deterministic_skip": 35,
+          "eligible": 14,
+          "cache_reused": 5,
+          "ai_skip": 5,
+          "usable_jd": 14
+        },
+        "Stryker": {
+          "eligible": 55,
+          "usable_jd": 55
+        },
+        "TransUnion": {
+          "eligible": 11,
+          "usable_jd": 11
+        },
+        "Travelers": {
+          "eligible": 39,
+          "usable_jd": 39
+        },
+        "Verizon": {
+          "eligible": 6,
+          "usable_jd": 6
+        },
+        "Yext": {
+          "eligible": 3,
+          "usable_jd": 3
+        },
+        "LinkedIn": {
+          "usable_jd": 0
+        },
+        "SAP": {
+          "usable_jd": 0
+        },
+        "Goldman Sachs": {
+          "usable_jd": 0
+        },
+        "Citadel": {
+          "usable_jd": 0
+        },
+        "Dropbox": {
+          "usable_jd": 0
+        },
+        "HubSpot": {
+          "usable_jd": 0
+        },
+        "Tesla": {
+          "usable_jd": 0
+        },
+        "F5": {
+          "usable_jd": 0
+        },
+        "Wayfair": {
+          "usable_jd": 0
+        },
+        "Blizzard Entertainment": {
+          "usable_jd": 0
+        }
+      },
+      "exact_peer_reused": 0
+    }
+  },
+  "syncareer": {
+    "run_at": "2026-10-18T14:53:18.592560+00:00",
+    "output": {
+      "tier_a": 13,
+      "tier_b": 10,
+      "tier_c": 92,
+      "shown": 23,
+      "new_jobs": 35,
+      "new_jobs_added": 4
+    },
+    "failures": {
+      "llm": []
+    }
+  },
+  "notifications": [
+    {
+      "id": "07e3e0b9a49bbf9f95f994b49735af6848f08e3605c16e40b49b38debcb5e18f",
+      "pipeline": "official",
+      "stamp": "2026-10-18_1447",
+      "title": "Official careers digest 2026-10-18_1447 (1 new/promoted A/B)",
+      "status": "delivered",
+      "issue_url": "https://github.com/daniel-li2021/job-board-pipeline/issues/198",
+      "delivered_at": "2026-10-18T14:50:40.655828+00:00",
+      "exact_issue_marker_verified": true
+    },
+    {
+      "id": "664e7498fd9cdf8d2a7f09dcc066e91d7f42cee5cd2c520acdd49fd68b68b697",
+      "pipeline": "syncareer",
+      "stamp": "2026-10-18_1451",
+      "title": "Syncareer alert 2026-10-18_1451 (23 new A/B)",
+      "status": "delivered",
+      "issue_url": "https://github.com/daniel-li2021/job-board-pipeline/issues/199",
+      "delivered_at": "2026-10-18T14:53:27.590902+00:00",
+      "exact_issue_marker_verified": true
+    }
+  ],
+  "official_cache_join": {
+    "shared_meta_source_ids": 420,
+    "meta_thin_to_usable": 18,
+    "threshold_chars": 200
+  },
+  "limits": [
+    "Different scheduled cohorts; JD length is not semantic completeness or suitability.",
+    "Successful ordinary delivery does not prove failure/retry behavior.",
+    "Board/LinkedIn protected recovery has no new post-fix run in this observation."
+  ],
+  "input_sha256": {
+    "44ff25e:output/official_careers/latest_stats.json": "e05885e33216fe16de2a11d7dc2013f9d51acd857874ad8a972a980a3b768472",
+    "44ff25e:output/official_careers/recovered_jds.json.gz": "5ed599baa8b1d667d7e534ff3f0da96ed2f903fd9c582e948aba799f9fcbe3be",
+    "0b472c19eb31264cf698845a9337401e8449a8de:output/official_careers/latest_stats.json": "841844a2ecd71dd14868a3293d4c0b9b2c4315d4bc0e87140573b230980c1d9e",
+    "0b472c19eb31264cf698845a9337401e8449a8de:output/official_careers/recovered_jds.json.gz": "2c88eac0f4d9a62692a7c81490f17a442de4266eb70bec05b1c5ab380b09fef4"
+  }
+}
