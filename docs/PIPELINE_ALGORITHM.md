@@ -267,3 +267,7 @@ LinkedIn Local shows **Search 429 this run** and **Detail 429 this run** indepen
 ## Matching regression guard
 
 `tests/fixtures/matching_regression_round2.json` records the recent Board 429 population baseline and representative strong early-career, 70s/stretch, Level II, staffing/tech-service, internship, thin/no-JD, and non-software Engineer I cases. `matching_model_comparison_v7_2026-09-13.md` records the apples-to-apples Terra/Sol quality, cost, and latency comparison for the current prompt. Offline sequential-run tests verify cache reuse across prompt/model changes, changed-JD scoring, safe failure fallback, retryability, and failed-only recovery behavior.
+
+## Batch 3 bounded follow-up
+
+Already-admitted, never-attempted LinkedIn Detail cards deferred by cooldown/429 share the existing budget-deferral opportunity through 72 hours from original discovery. Traffic controls and generic Fresh-only recovery remain unchanged. Detail receipts expose protected attempt/yield counters and per-card IDs. Board ingestion may fill an anonymous employer from an exact curated Ashby tenant, preserving source-ID identity and recording provenance; it does not verify the posting. The standalone selective-review experiment has no production call path and remains disabled pending human adjudication and untouched held-out validation. See [Batch 3 validation](BATCH3_VALIDATION.md) for the frozen packet, metered development receipt, replay counts, and limits.

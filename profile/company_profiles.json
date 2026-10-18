@@ -2,7 +2,7 @@
   "_meta": {
     "purpose": "Canonical employer profiles for company-level application ranking. priority is an employer/application signal, not a job-fit or role-family score.",
     "generated": "2026-09-26",
-    "company_count": 2141,
+    "company_count": 2143,
     "source_scope": [
       "config/official_careers.json",
       "config/target_companies.json",
@@ -26237,6 +26237,34 @@
       "tags": [],
       "priority": "normal",
       "last_verified": "2026-09-26"
+    },
+    {
+      "name": "Dialogue AI",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "career_board_url": "https://jobs.ashbyhq.com/dialogueai",
+      "last_verified": "2026-10-17",
+      "notes": "Employer identity and software/AI business verified from https://www.dialogueai.com/ and the named Ashby posting; no company size, maturity, or sponsorship inference."
+    },
+    {
+      "name": "Autoscience",
+      "aliases": [
+        "Autoscience Institute"
+      ],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "tech",
+      "tags": [],
+      "priority": "normal",
+      "career_board_url": "https://jobs.ashbyhq.com/autoscience",
+      "last_verified": "2026-10-17",
+      "notes": "Employer identity and software/AI business verified from https://www.autoscience.ai/ and the named Ashby posting; no company size, maturity, or sponsorship inference."
     }
   ]
 }

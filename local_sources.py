@@ -256,11 +256,13 @@ def _linkedin_detail_waiting(row: dict) -> bool:
     return ((row.get("linkedin_detail_triage") or {}).get("needs_jd") is True
             and not row.get("linkedin_detail_attempted_at")
             and bool(row.get("linkedin_detail_deferred_at") or
-                     row.get("enrichment_deferred_reason") == "linkedin_detail_round_budget"))
+                     row.get("enrichment_deferred_reason") in {"linkedin_detail_round_budget",
+                         "linkedin_detail_cooldown"} or
+                     row.get("enrichment_failure_reason") == "linkedin_rate_limited"))
 
 
 def _linkedin_detail_eligible(row: dict, now: datetime) -> bool:
-    # A budget-deferred, already admitted card retains one opportunity through
+    # An admitted transport- or budget-deferred card retains one opportunity through
     # Rolling. This does not refresh first_seen or broaden generic recovery.
     seen = recovery_policy.stamp(row.get("first_seen"))
     return recovery_policy.fresh(row, now) or bool(
@@ -383,16 +385,24 @@ def _finish_linkedin_detail(rows: list[dict], previous: list[dict], admission: d
     waiting = []
     for row in admitted:
         if (str(row.get("job_id")) not in attempted_ids and not row.get("linkedin_detail_attempted_at")
-                and not blocked and not cooldown and not detail.get("rate_limited")
-                and (detail.get("budget_exhausted") or not allowed)):
+                and (detail.get("budget_exhausted") or detail.get("rate_limited") or not allowed)):
             row.setdefault("linkedin_detail_deferred_at", now.isoformat())
             row["enrichment_status"] = "deferred"
-            row["enrichment_deferred_reason"] = deferred_reason
+            row["enrichment_deferred_reason"] = (
+                "linkedin_detail_cooldown" if cooldown else "linkedin_rate_limited"
+                if blocked or detail.get("rate_limited") else deferred_reason)
             waiting.append(row)
-    if not allowed and waiting:
+    if not allowed and waiting and not (blocked or cooldown):
         detail["budget_deferred"] = len(waiting)
         detail["budget_exhausted"] = True
         detail["transport_stop_reason"] = deferred_reason
+    protected = [row for row in queue if not recovery_policy.fresh(row, now)
+                 and str(row.get("job_id")) in attempted_ids]
+    detail["protected_requests"] = len(protected)
+    detail["protected_jds_resolved"] = sum(
+        not row.get("jd_tentative") and len(str(row.get("description") or "").strip()) >= board.THIN_JD_CHARS
+        for row in protected)
+    detail["protected_deferred"] = len(waiting)
     detail["queue"] = [{
         "job_id": str(row.get("job_id") or ""), "first_seen": row.get("first_seen"),
         "priority": (row.get("linkedin_detail_triage") or {}).get("priority", "normal"),

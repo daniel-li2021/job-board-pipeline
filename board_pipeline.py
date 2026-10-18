@@ -55,7 +55,7 @@ import coverage_reconcile
 import llm_config
 from sources import ats
 from sources.careers.incremental import DETAIL_STALE_DAYS
-from sources.company_aliases import company_risk_rank, load_alias_file, match_company_alias, match_company_entry, prepare_alias_entries
+from sources.company_aliases import company_risk_rank, load_alias_file, match_company_alias, match_company_entry, prepare_alias_entries, recover_missing_company
 from sources.schema import (
     OUTPUT_DIR,
     adopt_better_posted_date,
@@ -316,7 +316,7 @@ def match_target_company(company_name: str, targets: List[Dict[str, Any]]) -> Op
 
 @lru_cache(maxsize=1)
 def load_company_profiles() -> Tuple[Dict[str, Any], ...]:
-    """Load the canonical employer metadata used only for application ranking."""
+    """Load curated employer metadata for ranking and exact tenant identity."""
     return tuple(load_alias_file(COMPANY_PROFILES_PATH))
 
 
@@ -425,6 +425,8 @@ def collect_sources(session: requests.Session, skip_network: bool = False) -> Tu
                 f"{source_meta.get('carried_count', 0)} cached jobs reused"
             )
 
+    profiles = load_company_profiles()
+    meta["employers_recovered"] = sum(recover_missing_company(job, profiles) for job in jobs)
     return jobs, meta
 
 
@@ -2457,7 +2459,7 @@ def enrich_from_exact_peers(
 
 
 REMOTE_STORE_FIELDS = {
-    "key", "job_id", "company", "title", "location", "posted_date", "date_confidence",
+    "key", "job_id", "company", "company_identity_method", "company_identity_url", "title", "location", "posted_date", "date_confidence",
     "official_url", "application_url", "source", "source_url", "sponsorship", "filter_status", "referral_name",
     "company_flag", "staffing_firm", "clearance_risk_company", "role_family", "role_relevance",
     "tier", "recency_bucket", "cache_key", "jd_hash", "match_content_hash", "match_score", "resume_profile_used",
@@ -3199,6 +3201,8 @@ def build_store_entry(
         "key": key,
         "job_id": job.get("job_id", ""),
         "company": job.get("company", ""),
+        "company_identity_method": job.get("company_identity_method", ""),
+        "company_identity_url": job.get("company_identity_url", ""),
         "title": job.get("title", ""),
         "location": job.get("location", ""),
         "posted_date": job.get("posted_date", ""),

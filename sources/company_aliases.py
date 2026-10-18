@@ -11,6 +11,7 @@ import json
 import re
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional
+from urllib.parse import urlsplit
 
 from .schema import normalize_company_key
 
@@ -115,3 +116,32 @@ def company_risk_rank(entry: Dict[str, Any]) -> int:
     }:
         return 2
     return int("cybersecurity" in tags)
+
+
+def recover_missing_company(job: Dict[str, Any], profiles: Iterable[Dict[str, Any]]) -> bool:
+    """Name an anonymous source-ID card from a curated, exact Ashby tenant.
+
+    Tenant identity does not verify the posting, its JD, or role sponsorship.
+    """
+    if job.get("company") or not job.get("job_id") or job.get("source") not in {"indeed", "linkedin", "glassdoor"}:
+        return False
+    tenants: Dict[str, set[str]] = {}
+    for profile in profiles:
+        board = urlsplit(str(profile.get("career_board_url") or ""))
+        if board.scheme == "https" and board.netloc == "jobs.ashbyhq.com" and re.fullmatch(r"/[A-Za-z0-9_-]+/?", board.path):
+            tenants.setdefault(board.path.strip("/").casefold(), set()).add(profile["name"])
+    matches = {}
+    for field in ("official_url", "application_url"):
+        url = urlsplit(str(job.get(field) or ""))
+        path = re.fullmatch(r"/([A-Za-z0-9_-]+)/([a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12})/?", url.path)
+        if url.scheme != "https" or url.netloc != "jobs.ashbyhq.com" or not path:
+            continue
+        names = tenants.get(path[1].casefold(), set())
+        if len(names) != 1:
+            return False
+        matches[next(iter(names))] = f"https://jobs.ashbyhq.com/{path[1]}"
+    if len(matches) != 1:
+        return False
+    name, evidence = next(iter(matches.items()))
+    job.update(company=name, company_identity_method="curated_ats_tenant", company_identity_url=evidence)
+    return True
