@@ -1,0 +1,38 @@
+name: Offline source checks
+
+on:
+  pull_request:
+    paths: ["**.py", "sources/**", "scripts/**", "tests/**", "dashboard*.js", "requirements.txt", ".github/workflows/**"]
+  push:
+    branches: [main]
+    paths: ["**.py", "sources/**", "scripts/**", "tests/**", "dashboard*.js", "requirements.txt", ".github/workflows/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ""
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install dependencies
+        run: pip install -r requirements.txt pytest
+      - name: Check saved evidence, decisions, state, and workflow contracts
+        run: |
+          python3 -m pytest -q -p no:cacheprovider \
+            tests/test_batch1_correctness.py tests/test_batch2_correctness.py \
+            tests/test_matching_incremental.py tests/test_remote_recovery.py \
+            tests/test_official_jd_recovery.py tests/test_coverage_jd_recovery.py \
+            tests/test_official_careers_adapters.py tests/test_fresh_recovery.py \
+            tests/test_visibility.py tests/test_state_io.py tests/test_workflow_contracts.py
+          node tests/test_dashboard_runtime.js
+          node tests/test_dashboard_freshness.js

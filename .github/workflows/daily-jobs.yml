@@ -59,6 +59,7 @@ jobs:
           python3 daily_pipeline.py --alert --time "${{ inputs.time_window || 'last3days' }}"
 
       - name: Commit Syncareer inbox and watchlist
+        id: publish
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -95,18 +96,28 @@ jobs:
             output/syncareer/runs/${{ steps.pipeline.outputs.stamp }}.txt
           if-no-files-found: ignore
 
-      - name: Open GitHub Issue for this run
-        if: ${{ steps.pipeline.outputs.new_count != '0' && steps.pipeline.outputs.new_count != '' }}
+      - name: Deliver pending Issue digests
+        id: delivery
+        if: ${{ success() }}
         env:
           GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: python3 notification_outbox.py syncareer --repo "$GH_REPO"
+
+      - name: Persist delivery acknowledgements
+        if: ${{ always() && steps.publish.outcome == 'success' && steps.delivery.outcome != 'skipped' }}
         run: |
-          BODY_PATH="${{ steps.pipeline.outputs.issue_body_path }}"
-          if [ -f "$BODY_PATH" ]; then
-            gh issue create \
-              --title "${{ steps.pipeline.outputs.issue_title }}" \
-              --body-file "$BODY_PATH" \
-              --label "syncareer-alert" || \
-            gh issue create \
-              --title "${{ steps.pipeline.outputs.issue_title }}" \
-              --body-file "$BODY_PATH"
-          fi
+          RECEIPT="output/syncareer/notification_outbox.json"
+          if [ ! -f "$RECEIPT" ]; then exit 0; fi
+          git add -- "$RECEIPT"
+          if git diff --staged --quiet; then exit 0; fi
+          git commit -m "chore: acknowledge syncareer digest delivery"
+          for attempt in 1 2 3; do
+            git fetch origin "$GITHUB_REF_NAME"
+            if git rebase "origin/$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME"; then
+              exit 0
+            fi
+            git rebase --abort || true
+            if [ "$attempt" -eq 3 ]; then exit 1; fi
+            sleep $((attempt * 5))
+          done

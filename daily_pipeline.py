@@ -36,6 +36,7 @@ import requests
 from bs4 import BeautifulSoup
 
 import alert_history
+import notification_outbox
 import board_pipeline as board
 import coverage_reconcile
 from sources.company_aliases import load_alias_file, match_company_alias
@@ -479,9 +480,7 @@ def compact_watchlist_entry(entry: Dict[str, Any]) -> Dict[str, Any]:
         or len("\n".join(str(entry.get(field) or "") for field in ("description", "requirements", "snippet")).strip())
         >= board.THIN_JD_CHARS
     )
-    compact["main_gaps_count"] = int(
-        entry.get("main_gaps_count", len(entry.get("main_gaps") or [])) or 0
-    )
+    compact["main_gaps_count"] = board.main_gaps_count(entry)
     reasons = [str(item)[:180] for item in entry.get("top_match_reasons") or []][:2]
     gaps = [str(item)[:180] for item in entry.get("main_gaps") or []][:2]
     if reasons:
@@ -874,6 +873,7 @@ def assign_shared_scores(
     for job in jobs:
         job["tier"] = board.assign_tier(job, referrals.get(board.dedup_key(job), False))
         board.apply_referral_action(job)
+        job["main_gaps_count"] = board.main_gaps_count(job)
         result = {field: job.get(field) for field in SHARED_SCORE_FIELDS}
         # fit_score remains a compatibility alias, now on the shared 0-100 scale.
         result["fit_score"] = job.get("match_score", "")
@@ -1402,11 +1402,20 @@ def run() -> None:
                     drop_reason="exclude_shared_hard_or_scope", suppress_alert=True,
                 )
                 continue
+            entry["main_gaps_count"] = board.main_gaps_count(entry)
             entry["tier"] = board.assign_tier(entry, bool(entry.get("target_company_match")))
+            board.apply_referral_action(entry)
             historical_rows.append(entry)
         coverage_reconcile.annotate_jobs(historical_rows, "syncareer")
         for entry in historical_rows:
             apply_external_company_policy(entry, company_filters)
+        if alert_rows:
+            alert_paths = write_alert_outputs(alert_rows, stamp, with_tiers=True)
+            notification_outbox.enqueue(
+                SYNCAREER_DIR / "notification_outbox.json", pipeline="syncareer", stamp=stamp,
+                title=f"Syncareer alert {stamp} ({len(alert_rows)} new A/B)",
+                body=alert_paths["issue_body"].read_text(encoding="utf-8"),
+            )
         save_watchlist(watchlist)
         seen_ids.update(id_to_summary.keys())
         save_seen_ids(seen_ids)
@@ -1418,7 +1427,6 @@ def run() -> None:
         ]
         write_syncareer_inbox(inbox_rows, stamp, with_tiers=True)
         if alert_rows:
-            alert_paths = write_alert_outputs(alert_rows, stamp, with_tiers=True)
             alert_history.append_event(
                 ALERT_HISTORY_PATH,
                 pipeline="syncareer",

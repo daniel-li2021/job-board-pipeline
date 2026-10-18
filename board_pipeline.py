@@ -34,6 +34,7 @@ import json
 
 from state_io import atomic_write, encode_json_gzip, read_json
 import remote_recovery
+import notification_outbox
 import recovery_policy
 import recovery_ai
 import os
@@ -1506,6 +1507,7 @@ def _apply_rule_result(job: Dict[str, str], score_source: str, note: str) -> Non
     job["hard_constraint_status"] = "ok"
     job["top_match_reasons"] = [note]
     job["main_gaps"] = []
+    job["main_gaps_count"] = 0
     job["recommended_action"] = "apply_if_time"
     job["score_source"] = score_source
     job["screen_method"] = score_source
@@ -1524,7 +1526,7 @@ def _apply_cached_result(job: Dict[str, str], entry: Dict[str, Any]) -> None:
     job["hard_constraint_status"] = entry.get("hard_constraint_status", "ok")
     job["top_match_reasons"] = list(entry.get("top_match_reasons") or [])
     job["main_gaps"] = list(entry.get("main_gaps") or [])
-    job["main_gaps_count"] = int(entry.get("main_gaps_count", len(job["main_gaps"])) or 0)
+    job["main_gaps_count"] = main_gaps_count(entry)
     job["recommended_action"] = entry.get("recommended_action", "apply_if_time")
     job["score_source"] = SCORE_CACHED_LLM
     job["screen_method"] = SCORE_CACHED_LLM
@@ -2076,6 +2078,7 @@ def score_survivors(
             job["hard_constraint_status"] = d["hard_constraint_status"]
             job["top_match_reasons"] = d["top_match_reasons"]
             job["main_gaps"] = d["main_gaps"]
+            job["main_gaps_count"] = len(d["main_gaps"])
             job["recommended_action"] = "apply_if_time"
             job["score_source"] = SCORE_LLM if direct_result else SCORE_CACHED_LLM
             job["screen_method"] = job["score_source"]
@@ -2168,6 +2171,11 @@ def _strong_seniority(job: Dict[str, str]) -> bool:
     return seniority_fit_ok(job)
 
 
+def main_gaps_count(job: Dict[str, Any]) -> int:
+    """Compact stores retain only two gap examples; preserve the total count."""
+    return max(len(job.get("main_gaps") or []), int(job.get("main_gaps_count") or 0))
+
+
 def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
     """Quality-gated tiering with smooth, confidence-aware recency decay.
 
@@ -2177,10 +2185,14 @@ def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
     clearly strong family match.
     """
     del is_referral  # ranking/action only; never a match_score or A-gate.
+    hard_status = str(job.get("hard_constraint_status") or "ok").strip().lower()
+    sfit = str(job.get("seniority_fit") or "").strip().lower()
+    if hard_status not in {"", "ok"} or sfit in {"mismatch", "senior", "over"}:
+        return "C"
     score = float(job.get("match_score", 0) or 0)
     bucket = job.get("recency_bucket") or recency_bucket(job)
     strong_sen = _strong_seniority(job)
-    gaps = int(job.get("main_gaps_count", len(job.get("main_gaps") or [])) or 0)
+    gaps = main_gaps_count(job)
     few_gaps = gaps <= MAX_A_GAPS
     deprioritized = bool(job.get("deprioritized"))
     src = (job.get("score_source") or "").strip()
@@ -2230,10 +2242,6 @@ def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
         if rule_only and early and strong_family:
             return "A"
         # rule-only otherwise caps at B
-    hard_status = str(job.get("hard_constraint_status") or "ok").lower()
-    sfit = str(job.get("seniority_fit") or "").lower()
-    if hard_status not in {"", "ok"} or sfit in {"mismatch", "senior", "over"}:
-        return "C"
     if gaps > MAX_B_GAPS:
         return "C"
     # Stretch/mid-level jobs need materially stronger evidence and almost no
@@ -2248,18 +2256,20 @@ def assign_tier(job: Dict[str, str], is_referral: bool) -> str:
 def apply_referral_action(job: Dict[str, str]) -> None:
     """Derive application action from tier and priority flags, outside the LLM."""
     score = float(job.get("match_score", 0) or 0)
-    hard_status = str(job.get("hard_constraint_status") or "ok").lower()
+    hard_status = str(job.get("hard_constraint_status") or "ok").strip().lower()
     if hard_status not in {"", "ok"} or job.get("tier") == "C":
         job["recommended_action"] = "skip"
+        return
     elif INTERNSHIP_TITLE_RE.search(job.get("title") or "") or job.get("staffing_firm"):
         job["recommended_action"] = "apply_if_time"
     elif job.get("tier") == "A":
         job["recommended_action"] = "apply_now"
     else:
         job["recommended_action"] = "apply_if_time"
-    if job.get("referral_name") and (job.get("tier") == "A" or score >= TIER_A_MIN):
+    referral = job.get("referral_name") or job.get("target_company_match")
+    if referral and (job.get("tier") == "A" or score >= TIER_A_MIN):
         job["recommended_action"] = "referral_now"
-    elif job.get("referral_name") and job.get("tier") == "B":
+    elif referral and job.get("tier") == "B":
         job["recommended_action"] = "apply_now"
 
 
@@ -2278,7 +2288,7 @@ def user_facing_sort_key(job: Dict[str, str]) -> Tuple:
             "newly_discovered": 3, "1to3d": 3, "3to7d": 4, "gt7d": 5,
         }.get(bucket, 6)
     score = float(job.get("match_score", 0) or 0)
-    gaps = min(2, int(job.get("main_gaps_count", len(job.get("main_gaps") or [])) or 0))
+    gaps = min(2, main_gaps_count(job))
     profile = match_company_entry(str(job.get("company") or ""), load_company_profiles()) or {}
     risk_rank = company_risk_rank(profile)
     priority_rank = {"high": 0, "normal": 1, "low": 2}.get(str(profile.get("priority") or "normal"), 1)
@@ -2475,9 +2485,7 @@ def compact_store_entry(entry: Dict[str, Any]) -> Dict[str, Any]:
         entry.get("description_available")
         or len(str(entry.get("description") or "").strip()) >= THIN_JD_CHARS
     )
-    compact["main_gaps_count"] = int(
-        entry.get("main_gaps_count", len(entry.get("main_gaps") or [])) or 0
-    )
+    compact["main_gaps_count"] = main_gaps_count(entry)
     reasons = [str(item)[:180] for item in entry.get("top_match_reasons") or []][:2]
     gaps = [str(item)[:180] for item in entry.get("main_gaps") or []][:2]
     if reasons:
@@ -3241,7 +3249,7 @@ def build_store_entry(
         "hard_constraint_status": job.get("hard_constraint_status", ""),
         "top_match_reasons": list(job.get("top_match_reasons") or []),
         "main_gaps": list(job.get("main_gaps") or []),
-        "main_gaps_count": int(job.get("main_gaps_count", len(job.get("main_gaps") or [])) or 0),
+        "main_gaps_count": main_gaps_count(job),
         "recommended_action": job.get("recommended_action", ""),
         "screen_method": job.get("screen_method", ""),
         "score_source": job.get("score_source", ""),
@@ -3719,6 +3727,11 @@ def run() -> None:
             stamp=stamp,
             jobs=digest_jobs,
             event_kind="new_or_promoted_ab",
+        )
+        notification_outbox.enqueue(
+            BOARD_DIR / "notification_outbox.json", pipeline="board", stamp=stamp,
+            title=f"ATS/LinkedIn alert {stamp} ({len(digest_jobs)} new/promoted A/B)",
+            body=alert_paths["issue_body"].read_text(encoding="utf-8"),
         )
         apply_digest_state(digest_state, digest_jobs, digest_day)
         digest_count = len(digest_jobs)

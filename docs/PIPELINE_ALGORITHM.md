@@ -164,7 +164,7 @@ Internship and co-op status does not lower `match_score`: a technically excellen
 - Thin evidence, material gaps, senior mismatches, staffing, internships, and hard constraints can cap or lower the actionable tier even when a raw score is high.
 - Rule-only matches are conservative and normally cannot claim the same confidence as a full JD-based LLM score.
 
-Tiering is an application decision layer; it does not rewrite the underlying fit score.
+Tiering is an application decision layer; it does not rewrite the underlying fit score. Negative hard-constraint status is terminal before Tier A, and Tier C/negative-status actions cannot be promoted by referrals. Gap counts follow the evidence through fresh scoring, cache/peer reuse, historical tiering, and compaction; the total can exceed the two retained gap examples.
 
 ## Application ordering and company metadata
 
@@ -196,7 +196,8 @@ Each pipeline owns:
 
 - `jobs.json`: compact canonical store used by reconciliation and the dashboard;
 - `seen_jobs.json`: durable first-seen identity state;
-- `alert_history.json` and `digest_state.json`: notification history and daily digest control;
+- `alert_history.json` and `digest_state.json`: reserved digest history and daily digest control;
+- `notification_outbox.json`: immutable pending digest bodies, idempotency markers, and delivery acknowledgements; pending receipts survive failures and delivered receipts are retained for 14 days;
 - `latest.md`, inbox files, and alert bodies: human-facing pipeline views;
 - `latest_stats.json`: tracked latest-attempt counts, failures, funnel, enrichment, and output totals;
 - `run_history.json`: bounded tracked history with per-run cost/model/cache/fallback/token/funnel/output data and compact per-batch decisions/errors for Pages drill-down;
@@ -206,6 +207,8 @@ Each pipeline owns:
 The dashboard build combines canonical jobs, coverage, alert history, company profiles, and browser review state into `public/dashboard.json` and `public/index.html`. It shows today's estimated LLM cost, bounded run history, batch/request/token/latency/JSON metrics, coverage and matching summaries, and per-job score reasons/gaps/provenance. Review-dependent views and counts wait for the first Supabase review-state load. A successful load uses remote rows as the baseline and merges only pending local edits; a failed load explicitly labels the cached fallback. Source-expired Applied and In Progress history remains available. Legacy run records without measured latency, JSON reliability, or batch outcomes display `Unknown`/`—`; new runs retain real measured zeroes through explicit telemetry flags. Health generation writes `public/health.json`, `public/health-history.json`, and `public/health.html`, and reconciliation also copies the current audit to `public/coverage.md`.
 
 ## Automation and publication sequence
+
+All three discovery workflows publish pending Issue receipts alongside their owned outputs, then deliver and acknowledge them. Pending receipts are retried even when no new jobs qualify. Issue lookup uses the exact marker across open and closed Issues before creation; failures leave the receipt pending. Pages runs on discovery-workflow completion independently of Issue delivery. Source changes run the credential-free offline checks in `.github/workflows/offline-checks.yml`. [Batch 2 validation](BATCH2_VALIDATION.md) records the saved repairs, identity migration preview, and limits.
 
 The cloud schedule is defined in `infra/scheduler/` and dispatches the three GitHub workflows in Pacific time. Refer to its README for deployment and timing rather than duplicating those operator instructions here.
 

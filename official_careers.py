@@ -48,6 +48,7 @@ from sources.schema import (
     recency_bucket,
 )
 
+import notification_outbox
 import board_pipeline as board
 import coverage_reconcile
 import llm_config
@@ -885,6 +886,11 @@ def cmd_match(args: argparse.Namespace, jobs: Optional[List[Dict[str, str]]] = N
             stamp=stamp,
             jobs=digest_jobs,
             event_kind="new_or_promoted_ab",
+        )
+        notification_outbox.enqueue(
+            CAREERS_DIR / "notification_outbox.json", pipeline="official", stamp=stamp,
+            title=f"Official careers digest {stamp} ({len(digest_jobs)} new/promoted A/B)",
+            body=alert_paths["issue_body"].read_text(encoding="utf-8"),
         )
         board.apply_digest_state(digest_state, digest_jobs, digest_day)
         digest_count = len(digest_jobs)
