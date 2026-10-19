@@ -3,51 +3,6 @@
   "events": [
     {
       "pipeline": "official",
-      "stamp": "2026-10-05_1448",
-      "emitted_at": "2026-10-05T14:51:14.647624+00:00",
-      "event_kind": "new_or_promoted_ab",
-      "count": 2,
-      "jobs": [
-        {
-          "canonical_job_key": "url::https://www.google.com/about/careers/applications/jobs/results/84647572924179142-software-engineer-iii-ai-ml-platforms-and-devices",
-          "job_id": "84647572924179142",
-          "tier": "B",
-          "match_score": 81.0,
-          "company": "Google",
-          "title": "Software Engineer III, AI/ML, Platforms and Devices",
-          "location": "Kirkland, WA, USA",
-          "posted_date": "2026-10-05",
-          "date_confidence": "high",
-          "first_seen": "2026-10-05T14:48:08.120719+00:00",
-          "referral_name": "Google",
-          "review_status": "unreviewed",
-          "official_url": "https://www.google.com/about/careers/applications/jobs/results/84647572924179142-software-engineer-iii-ai-ml-platforms-and-devices",
-          "source_url": "https://www.google.com/about/careers/applications/jobs/results/84647572924179142-software-engineer-iii-ai-ml-platforms-and-devices",
-          "source": "google_official_careers",
-          "url": "https://www.google.com/about/careers/applications/jobs/results/84647572924179142-software-engineer-iii-ai-ml-platforms-and-devices"
-        },
-        {
-          "canonical_job_key": "url::https://www.google.com/about/careers/applications/jobs/results/122785508123124422-software-engineer-iii-agentic-ai-systems-cloud-security",
-          "job_id": "122785508123124422",
-          "tier": "B",
-          "match_score": 84.0,
-          "company": "Google",
-          "title": "Software Engineer III, Agentic AI Systems, Cloud Security",
-          "location": "San Francisco, CA, USA",
-          "posted_date": "2026-10-05",
-          "date_confidence": "high",
-          "first_seen": "2026-10-05T14:48:08.120719+00:00",
-          "referral_name": "Google",
-          "review_status": "unreviewed",
-          "official_url": "https://www.google.com/about/careers/applications/jobs/results/122785508123124422-software-engineer-iii-agentic-ai-systems-cloud-security",
-          "source_url": "https://www.google.com/about/careers/applications/jobs/results/122785508123124422-software-engineer-iii-agentic-ai-systems-cloud-security",
-          "source": "google_official_careers",
-          "url": "https://www.google.com/about/careers/applications/jobs/results/122785508123124422-software-engineer-iii-agentic-ai-systems-cloud-security"
-        }
-      ]
-    },
-    {
-      "pipeline": "official",
       "stamp": "2026-10-06_1447",
       "emitted_at": "2026-10-06T14:51:08.869347+00:00",
       "event_kind": "new_or_promoted_ab",
@@ -1930,6 +1885,67 @@
           "source_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/SoC-Software-Engineer---New-College-Graduate-2026_JR2027552-1",
           "source": "nvidia_official_careers",
           "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/SoC-Software-Engineer---New-College-Graduate-2026_JR2027552-1"
+        }
+      ]
+    },
+    {
+      "pipeline": "official",
+      "stamp": "2026-10-19_1447",
+      "emitted_at": "2026-10-19T14:49:48.237661+00:00",
+      "event_kind": "new_or_promoted_ab",
+      "count": 3,
+      "jobs": [
+        {
+          "canonical_job_key": "url::https://www.google.com/about/careers/applications/jobs/results/119312524553134790-software-engineer-knowledge-catalog-for-ai",
+          "job_id": "119312524553134790",
+          "tier": "A",
+          "match_score": 87.0,
+          "company": "Google",
+          "title": "Software Engineer, Knowledge Catalog For AI",
+          "location": "Kirkland, WA, USA; Sunnyvale, CA, USA",
+          "posted_date": "2026-10-19",
+          "date_confidence": "high",
+          "first_seen": "2026-10-19T14:47:04.428626+00:00",
+          "referral_name": "Google",
+          "review_status": "unreviewed",
+          "official_url": "https://www.google.com/about/careers/applications/jobs/results/119312524553134790-software-engineer-knowledge-catalog-for-ai",
+          "source_url": "https://www.google.com/about/careers/applications/jobs/results/119312524553134790-software-engineer-knowledge-catalog-for-ai",
+          "source": "google_official_careers",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/119312524553134790-software-engineer-knowledge-catalog-for-ai"
+        },
+        {
+          "canonical_job_key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5456453008",
+          "job_id": "5456453008",
+          "tier": "B",
+          "match_score": 83.0,
+          "company": "Anthropic",
+          "title": "Software Engineer, Memory & Search",
+          "location": "New York City, NY; New York City, NY | Seattle, WA; Remote-Friendly, United States; San Francisco, CA | New York City, NY | Seattle, WA; San Francisco, California, United States",
+          "posted_date": "2026-10-19",
+          "date_confidence": "high",
+          "first_seen": "2026-10-19T14:47:04.428626+00:00",
+          "review_status": "unreviewed",
+          "official_url": "https://job-boards.greenhouse.io/anthropic/jobs/5456453008",
+          "source_url": "https://job-boards.greenhouse.io/anthropic/jobs/5456453008",
+          "source": "anthropic_official_careers",
+          "url": "https://job-boards.greenhouse.io/anthropic/jobs/5456453008"
+        },
+        {
+          "canonical_job_key": "url::https://careers.sap.com/job/Newtown-Square-SAP-iXp-Intern-Full-Stack-Developer-PA-19073/1441089733",
+          "job_id": "1441089733",
+          "tier": "B",
+          "match_score": 89.0,
+          "company": "SAP",
+          "title": "SAP iXp Intern - Full Stack Developer",
+          "location": "Newtown Square, PA, US, 19073",
+          "date_confidence": "unknown",
+          "first_seen": "2026-10-18T23:46:37.060508+00:00",
+          "referral_name": "SAP",
+          "review_status": "unreviewed",
+          "official_url": "https://careers.sap.com/job/Newtown-Square-SAP-iXp-Intern-Full-Stack-Developer-PA-19073/1441089733/",
+          "source_url": "https://careers.sap.com/job/Newtown-Square-SAP-iXp-Intern-Full-Stack-Developer-PA-19073/1441089733/",
+          "source": "sap_official_careers",
+          "url": "https://careers.sap.com/job/Newtown-Square-SAP-iXp-Intern-Full-Stack-Developer-PA-19073/1441089733/"
         }
       ]
     }
