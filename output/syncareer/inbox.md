@@ -1,10 +1,10 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-10-19 07:52 PDT
-- Snapshot (UTC): 2026-10-19T14:52:01.596111+00:00
-- Jobs: 40
-- Last 24 hours: 6
-- Last 3 days: 40
+- Updated (PT): 2026-10-19 16:51 PDT
+- Snapshot (UTC): 2026-10-19T23:51:50.754594+00:00
+- Jobs: 34
+- Last 24 hours: 0
+- Last 3 days: 34
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
@@ -42,11 +42,5 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 82.0 | Syncareer | Base Power | Forward Deployed Engineer | Austin, Texas, United States | 2026-10-15 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/base-power/f0f024b0-2c68-44fe-a6dd-3095bfbbccb6) |
 | B | 80.0 | Syncareer | NCR Atleos | Associate QA Test Engineer – ATM Software & Hardware | Atlanta, Georgia, United States | 2026-10-15 | Sponsor | - | unreviewed | not_dedicated | [open](https://ncratleos.wd1.myworkdayjobs.com/en-US/ext_atleos_us/job/ATLANTA-GA-USA/Associate-QA-Test-Engineer---ATM-Software---Hardwar_R1154951-2?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea) |
 | B | 76.0 | Syncareer | United Airlines | Associate Software Developer | Houston, Texas, United States | 2026-10-15 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.united.com/us/en/job/HSC00001080/Associate-Software-Developer) |
-| A | 90.0 | Syncareer | ElevenLabs | Full-Stack Engineer (Backend Leaning) | New York, New York, United States | 2026-10-15 | Sponsor | - | unreviewed | not_dedicated | [open](https://elevenlabs.io/careers/c7d59014-b918-4c15-ae33-79f5c9f2cf9f/full-stack-engineer-backend-leaning) |
-| B | 84.0 | Syncareer | Mastercard | Software Engineer II | O'Fallon, Missouri, United States | 2026-10-15 | Sponsor | - | unreviewed | not_dedicated | [open](https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/OFallon-Missouri/Software-Engineer-II_R-293662?locations=8eab563831bf10acbe3d7c702f3b222a&locations=15854e620ab6014e5c345533ce3e0c5d&locations=bea842055ec0010f8fa2f063710e65dd&locations=abb6e89c39b847c49cb2958e421072b3&locations=8eab563831bf10acbe0b766b65242035&locations=fb7d771add6201c7c6d0d3914b4acc2f&locations=8eab563831bf10acbda112b729c11c9a&locations=13430a311dc746e1aa9200a749388d03&locations=8eab563831bf10acbd2183c3090f1a20&locations=efacbd97fd67011dbc0f236fbb007b75&locations=4345730331e1457585f99e8c7feb2c84&locations=8eab563831bf10acbcb35b24fcd616d7&locations=8eab563831bf10acbbdb817a833d0fa6&locations=8eab563831bf10acbba0ec70e0f00d06&locations=c9c1221064f54d28ae6ab893b99923cf&locations=b76624f2eeb110019afd21305a220000&locations=d98b53ce7a111038792c1575842cbfb5&locations=8eab563831bf10acb7f44286d1feeaf0&locations=38301974980c10d4a0770cdea411b718&locations=85482cdd21931001b922354af3a90000&locations=a52da795b81f100109d635958d730000&locations=3b2ad45f5eca10bd534be5fa946139c3&locations=8eab563831bf10acb54f0f21651ed219) |
-| A | 89.0 | Syncareer | Bureau Veritas | Full Stack Software Engineer II | Indianapolis, Indiana, United States | 2026-10-15 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.bureauveritas.com/job/Indianapolis-Full-Stack-Software-Engineer-II-Indi/1437744433/) |
-| B | 83.0 | Syncareer | Comcast | Junior Software Engineer- 4 Days Onsite- Englewood, CO- FreeWheel | Englewood, Colorado, United States | 2026-10-15 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.comcast.com/job/englewood/junior-software-engineer-4-days-onsite-englewood-co-freewheel/45483/101993544896) |
-| A | 91.0 | Syncareer | CLEAR | Software Development Engineer I | Austin, Texas, United States | 2026-10-15 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/clear/jobs/8241829) |
-| B | 72.0 | Syncareer | Infosys | Full Stack Developer | Phoenix, Arizona, United States | 2026-10-15 | Sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/154060BR) |
 | B | 72.0 | Syncareer | TikTok | Backend Engineer Graduate (Account) - 2027 Start | San Jose, California, United States | 2026-10-16 | Sponsor | YES (TikTok) | unreviewed | official_identity_unmatched | [open](https://lifeattiktok.com/search/7696779797359233333) |
 | B | 77.0 | Syncareer | TikTok | Backend Engineer Graduate (Social Foundation) - 2027 Start | San Jose, California, United States | 2026-10-16 | Sponsor | YES (TikTok) | unreviewed | official_identity_unmatched | [open](https://lifeattiktok.com/search/7696782198126545157) |

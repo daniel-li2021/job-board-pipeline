@@ -1,18 +1,18 @@
 {
-  "run_at": "2026-10-19T14:51:59.583646+00:00",
-  "elapsed_seconds": 46.042,
-  "remote_elapsed_seconds": 29.073,
+  "run_at": "2026-10-19T23:51:49.025402+00:00",
+  "elapsed_seconds": 37.467,
+  "remote_elapsed_seconds": 24.355,
   "funnel": {
-    "scoring_candidates": 69
+    "scoring_candidates": 39
   },
   "llm": {
-    "reused": 67,
-    "llm": 3,
-    "new_or_changed": 4,
-    "rule": 1,
-    "sent": 3,
-    "api_requests": 2,
-    "recency_skipped": 1,
+    "reused": 40,
+    "llm": 1,
+    "new_or_changed": 1,
+    "rule": 0,
+    "sent": 1,
+    "api_requests": 1,
+    "recency_skipped": 0,
     "overflow": 0,
     "peer_reused": 2,
     "thin_source_rule": 0,
@@ -23,33 +23,27 @@
     "same_content_reused": 0,
     "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 1,
-      "prior_rule_result_now_eligible_for_llm": 3
+      "prior_rule_result_now_eligible_for_llm": 1
     },
     "batch_size": 10,
-    "primary_batches_total": 2,
-    "batches_total": 2,
-    "batches_succeeded": 2,
-    "batches_attempted": 2,
+    "primary_batches_total": 1,
+    "batches_total": 1,
+    "batches_succeeded": 1,
+    "batches_attempted": 1,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 9.118,
-    "json_results": 2,
+    "latency_seconds": 4.671,
+    "json_results": 1,
     "batches": [
       {
         "batch": 1,
         "route": "resume_swe",
         "attempt": "initial",
         "jobs": [
-          {
-            "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "company": "Kforce",
-            "title": "Mid-Level Full Stack Developer"
-          },
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
             "company": "Kforce",
@@ -60,95 +54,52 @@
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 4.76,
+        "latency_seconds": 4.671,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
           "jobs_scored": 1,
-          "input_tokens": 2637,
+          "input_tokens": 2229,
           "cached_input_tokens": 0,
-          "output_tokens": 296,
-          "reasoning_tokens": 158,
-          "estimated_usd": 0.000412
+          "output_tokens": 267,
+          "reasoning_tokens": 188,
+          "estimated_usd": 0.000356
         },
         "decisions": [
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 68.0,
+            "match_score": 70.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "CS fundamentals",
+              "Production software development",
               "Testing and troubleshooting"
             ],
             "main_gaps": [
-              "Large-system software design",
-              "Legacy production systems"
-            ]
-          }
-        ]
-      },
-      {
-        "batch": 2,
-        "route": "both",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://jobs.lever.co/shieldai/a3eae89e-5a2b-4e6a-8e9c-e315923b0c71",
-            "company": "Shield AI",
-            "title": "Data Engineer, Finance (R6329)"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 4.358,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 1,
-          "input_tokens": 3228,
-          "cached_input_tokens": 0,
-          "output_tokens": 294,
-          "reasoning_tokens": 182,
-          "estimated_usd": 0.00047
-        },
-        "decisions": [
-          {
-            "key": "url::https://jobs.lever.co/shieldai/a3eae89e-5a2b-4e6a-8e9c-e315923b0c71",
-            "match_score": 76.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Python and Databricks pipelines",
-              "Production data and AI services"
-            ],
-            "main_gaps": [
-              "Governed semantic-layer infrastructure",
-              "Data orchestration and modeling"
+              "Legacy systems experience",
+              "2-4 years experience"
             ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 3,
-    "input_tokens": 5865,
+    "jobs_scored": 1,
+    "input_tokens": 2229,
     "cached_input_tokens": 0,
-    "output_tokens": 590,
-    "reasoning_tokens": 340,
-    "estimated_usd": 0.000882,
+    "output_tokens": 267,
+    "reasoning_tokens": 188,
+    "estimated_usd": 0.000356,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 3
+    "scored": 1
   },
   "output": {
-    "tier_a": 10,
-    "tier_b": 11,
-    "tier_c": 48,
-    "shown": 21,
-    "new_jobs": 3,
+    "tier_a": 4,
+    "tier_b": 6,
+    "tier_c": 29,
+    "shown": 10,
+    "new_jobs": 0,
     "new_jobs_added": 0
   },
   "screen_method": "cache+llm",
@@ -160,15 +111,15 @@
       "query": "Software",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 6,
+      "pages_fetched": 4,
       "stop_reason": "empty_page",
-      "raw_jobs": 70,
-      "unique_jobs": 70,
-      "unique_contribution": 70,
-      "first_pass_survivors": 54,
-      "original_postings_resolved": 8,
-      "jds_resolved": 6,
-      "elapsed_seconds": 2.531
+      "raw_jobs": 39,
+      "unique_jobs": 39,
+      "unique_contribution": 39,
+      "first_pass_survivors": 33,
+      "original_postings_resolved": 6,
+      "jds_resolved": 4,
+      "elapsed_seconds": 1.835
     },
     {
       "query": "Full Stack",
@@ -176,27 +127,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 8,
-      "unique_jobs": 8,
-      "unique_contribution": 4,
-      "first_pass_survivors": 8,
+      "raw_jobs": 5,
+      "unique_jobs": 5,
+      "unique_contribution": 2,
+      "first_pass_survivors": 5,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.535
+      "elapsed_seconds": 0.71
     },
     {
       "query": "AI",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 4,
+      "pages_fetched": 3,
       "stop_reason": "empty_page",
-      "raw_jobs": 40,
-      "unique_jobs": 40,
-      "unique_contribution": 36,
-      "first_pass_survivors": 16,
-      "original_postings_resolved": 4,
-      "jds_resolved": 2,
-      "elapsed_seconds": 1.396
+      "raw_jobs": 19,
+      "unique_jobs": 19,
+      "unique_contribution": 17,
+      "first_pass_survivors": 6,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 1.102
     },
     {
       "query": "Machine Learning",
@@ -210,7 +161,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.51
+      "elapsed_seconds": 0.581
     },
     {
       "query": "Infrastructure",
@@ -218,27 +169,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 7,
-      "unique_jobs": 7,
-      "unique_contribution": 4,
-      "first_pass_survivors": 4,
+      "raw_jobs": 4,
+      "unique_jobs": 4,
+      "unique_contribution": 2,
+      "first_pass_survivors": 2,
       "original_postings_resolved": 1,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.508
+      "elapsed_seconds": 0.556
     },
     {
       "query": "Forward Deployed",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 5,
-      "unique_jobs": 5,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
       "unique_contribution": 0,
-      "first_pass_survivors": 3,
+      "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.509
+      "elapsed_seconds": 0.146
     },
     {
       "query": "DevOps",
@@ -252,7 +203,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.081
+      "elapsed_seconds": 0.128
     },
     {
       "query": "Backend",
@@ -260,13 +211,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 2,
-      "unique_jobs": 2,
-      "unique_contribution": 2,
-      "first_pass_survivors": 2,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
+      "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.501
+      "elapsed_seconds": 0.582
     },
     {
       "query": "Platform",
@@ -274,13 +225,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 5,
-      "unique_jobs": 5,
-      "unique_contribution": 5,
+      "raw_jobs": 4,
+      "unique_jobs": 4,
+      "unique_contribution": 4,
       "first_pass_survivors": 3,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.504
+      "elapsed_seconds": 0.549
     },
     {
       "query": "New Grad",
@@ -288,13 +239,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 2,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.494
+      "elapsed_seconds": 1.159
     },
     {
       "query": "LLM",
@@ -308,7 +259,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.092
+      "elapsed_seconds": 0.119
     },
     {
       "query": "Data Engineer",
@@ -316,13 +267,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
-      "unique_contribution": 5,
-      "first_pass_survivors": 5,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 2,
+      "first_pass_survivors": 3,
       "original_postings_resolved": 2,
       "jds_resolved": 2,
-      "elapsed_seconds": 0.503
+      "elapsed_seconds": 0.61
     },
     {
       "query": "Site Reliability",
@@ -330,20 +281,20 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 2,
-      "unique_jobs": 2,
-      "unique_contribution": 2,
-      "first_pass_survivors": 2,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
+      "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.496
+      "elapsed_seconds": 0.553
     }
   ],
   "enrichment": {
-    "needed": 6,
-    "detail_api_resolved": 84,
+    "needed": 3,
+    "detail_api_resolved": 48,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 6
+    "remaining_no_jd": 3
   }
 }
