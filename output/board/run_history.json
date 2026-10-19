@@ -2,6 +2,158 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-19T04:01:20.312092+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 1,
+      "cache_reused": 140,
+      "peer_reused": 0,
+      "same_content_reused": 2,
+      "non_material_change_reused": 0,
+      "new_or_changed": 1,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 1
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1364,
+      "requests": 1,
+      "input_tokens": 4418,
+      "cached_input_tokens": 0,
+      "output_tokens": 246,
+      "reasoning_tokens": 157,
+      "estimated_usd": 0.000565,
+      "latency_seconds": 3.527,
+      "latency_measured": true,
+      "effective_rpm": 17.01,
+      "effective_tpm": 79342.22,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 1,
+      "funnel": {
+        "after_dedup": 7025,
+        "after_company": 6631,
+        "after_hard_filter": 6081,
+        "after_prefilter": 1895,
+        "official_duplicates_suppressed": 390,
+        "retry_only_carried": 0,
+        "dropped": 4948
+      },
+      "output": {
+        "tier_a": 27,
+        "tier_b": 141,
+        "ab_before_cap": 168,
+        "shown": 168,
+        "new_jobs": 5,
+        "new_jobs_added": 1,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 4,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 1,
+            "added": 1
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2730,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 17,
+          "identity_needed": 7,
+          "identities_resolved": 5,
+          "cache_reused": 1,
+          "http_requests": 6,
+          "remaining_no_jd": 2730,
+          "failure_reasons": {
+            "no_direct_or_official_url": 10
+          }
+        },
+        "remaining_no_jd": 2692,
+        "failure_reasons": {
+          "no_enrichment_path": 2180,
+          "linkedin_http_429": 4,
+          "official_detail_deferred": 45,
+          "linkedin_rate_limited": 75,
+          "no_direct_or_official_url": 10,
+          "linkedin_http_network_error": 2,
+          "glassdoor_detail_http_403_static_card_only": 376
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/reddit/jobs/8275745",
+              "company": "Reddit",
+              "title": "Software Engineer, Agent Optimization & Evaluation"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.527,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 4418,
+            "cached_input_tokens": 0,
+            "output_tokens": 246,
+            "reasoning_tokens": 157,
+            "estimated_usd": 0.000565
+          },
+          "decisions": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/reddit/jobs/8275745",
+              "match_score": 56.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM evaluation platforms",
+                "Agent routing and optimization"
+              ],
+              "main_gaps": [
+                "5+ years engineering experience",
+                "Strategic technical leadership at scale"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-19T00:21:35.104564+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -24294,110 +24446,6 @@
           ]
         }
       ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-10-14T06:28:30.074512+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "",
-      "reasoning_effort": "",
-      "jobs_scored": 0,
-      "cache_reused": 410,
-      "peer_reused": 1,
-      "same_content_reused": 2,
-      "non_material_change_reused": 0,
-      "new_or_changed": 0,
-      "new_or_changed_reasons": {},
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1208,
-      "requests": 0,
-      "input_tokens": 0,
-      "cached_input_tokens": 0,
-      "output_tokens": 0,
-      "reasoning_tokens": 0,
-      "estimated_usd": 0.0,
-      "latency_seconds": 0.0,
-      "latency_measured": true,
-      "effective_rpm": null,
-      "effective_tpm": null,
-      "json_reliability": null,
-      "json_reliability_measured": true,
-      "batches_total": 0,
-      "primary_batches_total": 0,
-      "batches_attempted": 0,
-      "batches_succeeded": 0,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 0,
-      "funnel": {
-        "after_dedup": 7288,
-        "after_company": 7004,
-        "after_hard_filter": 6451,
-        "after_prefilter": 2043,
-        "official_duplicates_suppressed": 425,
-        "retry_only_carried": 0,
-        "dropped": 5150
-      },
-      "output": {
-        "tier_a": 35,
-        "tier_b": 134,
-        "ab_before_cap": 169,
-        "shown": 169,
-        "new_jobs": 0,
-        "new_jobs_added": 0,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 0,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 0,
-            "added": 0
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 2660,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 34,
-          "identity_needed": 34,
-          "http_requests": 34,
-          "identities_resolved": 34,
-          "jds_resolved": 5,
-          "direct_http_resolved": 5,
-          "remaining_no_jd": 2660,
-          "failure_reasons": {}
-        },
-        "remaining_no_jd": 2602,
-        "failure_reasons": {
-          "no_enrichment_path": 2104,
-          "linkedin_rate_limited": 74,
-          "official_detail_deferred": 43,
-          "linkedin_http_429": 3,
-          "linkedin_http_network_error": 2,
-          "glassdoor_detail_http_403_static_card_only": 376
-        }
-      },
-      "comparison": {},
-      "batches": []
     }
   ]
 }
