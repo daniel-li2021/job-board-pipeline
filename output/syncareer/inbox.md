@@ -1,20 +1,27 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-10-20 07:53 PDT
-- Snapshot (UTC): 2026-10-20T14:53:00.328372+00:00
-- Jobs: 26
-- Last 24 hours: 5
-- Last 3 days: 26
+- Updated (PT): 2026-10-20 16:53 PDT
+- Snapshot (UTC): 2026-10-20T23:53:46.779298+00:00
+- Jobs: 33
+- Last 24 hours: 12
+- Last 3 days: 33
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | B | 92.0 | Syncareer | Cognex | Software Engineering Intern | Wauwatosa, Wisconsin, United States | 2026-10-19 | Sponsor | - | unreviewed | not_dedicated | [open](https://cognex.wd1.myworkdayjobs.com/en-US/External_Career_Site/job/Wauwatosa-Wisconsin/Software-Engineering-Intern_R0012549?jobFamily=bc33aa3152ec42d4995f4791a106ed09&jobFamily=6cb77610a8a543aea2d6bc10457e35d4&jobFamily=29247e57dbaf46fb855b224e03170bc7&jobFamily=a4e08b475d6a4176853c9d1cb9854e02&jobFamily=80938777cac5440fab50d729f9634969) |
-| A | 90.0 | Syncareer | Akamai | Software Engineer | Cambridge, Massachusetts, United States | 2026-10-19 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.akamai.com/en/sites/CX_1/job/2678/?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000469666%253B300000000469201%253B300000000469084) |
-| A | 96.0 | Syncareer | Citizens Financial Group | Software Engineer I | Johnston, Rhode Island, United States | 2026-10-19 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.citizensbank.com/job/johnston/software-engineer-i/288/102162281600) |
 | A | 94.0 | Syncareer | Cognizant | Gen AI Developer | Bentonville, Arkansas, United States | 2026-10-19 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.cognizant.com/global-en/jobs/00070820491/gen-ai-developer/) |
+| A | 96.0 | Syncareer | Citizens Financial Group | Software Engineer I | Johnston, Rhode Island, United States | 2026-10-19 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.citizensbank.com/job/johnston/software-engineer-i/288/102162281600) |
+| A | 90.0 | Syncareer | Akamai | Software Engineer | Cambridge, Massachusetts, United States | 2026-10-19 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.akamai.com/en/sites/CX_1/job/2678/?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000469666%253B300000000469201%253B300000000469084) |
 | A | 95.0 | Syncareer | Cognizant | Native AI Engineer | Bentonville, Arkansas, United States | 2026-10-19 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.cognizant.com/global-en/jobs/00070820443/native-ai-engineer/) |
+| A | 87.0 | Syncareer | Rivian | Software Engineer | Palo Alto, California, United States | 2026-10-19 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.rivian.com/careers-home/jobs/34249?lang=en-us&previousLocale=en-US) |
+| A | 95.0 | Syncareer | John Deere | Software Developer | East Moline, Illinois, United States | 2026-10-19 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.deere.com/careers?domain=johndeere.com&hl=en&triggerGoButton=false&start=0&pid=137483152431&sort_by=relevance) |
+| B | 85.0 | Syncareer | Mastercard | Software Engineer II | Arlington, Virginia, United States | 2026-10-19 | No sponsor | - | unreviewed | not_dedicated | [open](https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/Arlington-Virginia/Software-Engineer-II_R-293167?locations=8eab563831bf10acbe3d7c702f3b222a&locations=15854e620ab6014e5c345533ce3e0c5d&locations=bea842055ec0010f8fa2f063710e65dd&locations=abb6e89c39b847c49cb2958e421072b3&locations=8eab563831bf10acbe0b766b65242035&locations=fb7d771add6201c7c6d0d3914b4acc2f&locations=8eab563831bf10acbda112b729c11c9a&locations=13430a311dc746e1aa9200a749388d03&locations=8eab563831bf10acbd2183c3090f1a20&locations=efacbd97fd67011dbc0f236fbb007b75&locations=4345730331e1457585f99e8c7feb2c84&locations=8eab563831bf10acbcb35b24fcd616d7&locations=8eab563831bf10acbbdb817a833d0fa6&locations=8eab563831bf10acbba0ec70e0f00d06&locations=c9c1221064f54d28ae6ab893b99923cf&locations=b76624f2eeb110019afd21305a220000&locations=d98b53ce7a111038792c1575842cbfb5&locations=8eab563831bf10acb7f44286d1feeaf0&locations=38301974980c10d4a0770cdea411b718&locations=85482cdd21931001b922354af3a90000&locations=a52da795b81f100109d635958d730000&locations=3b2ad45f5eca10bd534be5fa946139c3&locations=8eab563831bf10acb54f0f21651ed219) |
+| A | 92.0 | Syncareer | NRG Energy | Data Science Analyst - Agentic AI Developer | Houston, Texas, United States | 2026-10-19 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.nrgenergy.com/nrg/job/Houston-Data-Science-Analyst-Agentic-AI-Developer-TX-77010/1441481900/) |
+| A | 97.0 | Syncareer | Nordstrom | Engineer 1: Agentic AI - Inventory Solutions (Hybrid - Seattle, WA) | Seattle, Washington, United States | 2026-10-19 | Sponsor | - | unreviewed | not_dedicated | [open](https://nordstrom.wd501.myworkdayjobs.com/en-US/nordstrom_careers/job/Seattle-WA/Engineer-1_R-889191?jobFamilyGroup=c8fdb73683a5013c39dcb3613d1b72b5&jobFamilyGroup=c8fdb73683a501e6581614613d1b58b5&jobFamilyGroup=c8fdb73683a501e66ea005613d1b56b5&jobFamilyGroup=c8fdb73683a5019ae5e7fc603d1b54b5&jobFamilyGroup=c8fdb73683a50186b9f257613d1b62b5) |
+| A | 89.0 | Syncareer | Infosys | Python AI Developer | Irving, Texas, United States | 2026-10-19 | No sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/154598BR) |
+| B | 78.0 | Syncareer | Definitive Healthcare | Data Engineer | Framingham, Massachusetts, United States | 2026-10-19 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/definitivehc/jobs/6219665004) |
 | B | 84.0 | Syncareer | Axon | Software Engineer I | Seattle, Washington, United States | 2026-10-17 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/axon/jobs/7703668003) |
 | B | 76.0 | Syncareer | Bayer | Reliability Systems Engineer (On-Site, Muscatine, IA) | Muscatine, Iowa, United States | 2026-10-17 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.bayer.com/job/Muscatine-Reliability-Systems-Engineer-%28On-Site%2C-Muscatine%2C-IA%29-Iowa/1439087133/) |
 | B | 86.0 | Syncareer | Zions Bank | Software Engineer | Midvale, Utah, United States | 2026-10-17 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.zionsbank.com/jobs/software-engineer-28961) |
