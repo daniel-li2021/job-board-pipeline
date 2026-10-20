@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-20T07:02:38.574299+00:00",
+  "generated_at": "2026-10-20T15:21:18.875387+00:00",
   "collector": {
-    "commit": "a4a91d69c139b98f6bca3fb2faf3b9c21ac646c6",
+    "commit": "b4d0f857eaf60361765f309835df030e7a065fe3",
     "dirty": false
   },
   "sources": {
@@ -623,18 +623,18 @@
       "healthy": true,
       "status": "ok",
       "reason": "",
-      "last_attempt_at": "2026-10-20T00:21:14.454873+00:00",
-      "last_success_at": "2026-10-20T00:21:14.454873+00:00",
+      "last_attempt_at": "2026-10-20T15:20:50.162398+00:00",
+      "last_success_at": "2026-10-20T15:20:50.162398+00:00",
       "last_partial_at": "",
       "partial_collected_count": 0,
       "partial_fresh_kept": 0,
       "partial_carried_count": 0,
       "last_attempt_collector": {
-        "commit": "96e768c9cc819517c18d685650027c018f5ef058",
+        "commit": "b4d0f857eaf60361765f309835df030e7a065fe3",
         "dirty": false
       },
       "last_success_collector": {
-        "commit": "96e768c9cc819517c18d685650027c018f5ef058",
+        "commit": "b4d0f857eaf60361765f309835df030e7a065fe3",
         "dirty": false
       },
       "last_attempt_source_provenance": {
@@ -645,7 +645,7 @@
         "implementation": "python-jobspy",
         "version": "1.1.82"
       },
-      "last_attempt_count": 672,
+      "last_attempt_count": 797,
       "consecutive_failures": 0,
       "query_stats": [
         {
@@ -657,25 +657,25 @@
           "raw_jobs": 300,
           "unique_jobs": 300,
           "unique_contribution": 300,
-          "first_pass_survivors": 248,
+          "first_pass_survivors": 247,
           "original_postings_resolved": 0,
-          "jds_resolved": 248,
-          "elapsed_seconds": 3.582,
+          "jds_resolved": 247,
+          "elapsed_seconds": 3.313,
           "hours_old": 48
         },
         {
           "query": "ai engineer",
           "group": "primary",
           "page_budget": 3,
-          "pages_fetched": 2,
+          "pages_fetched": 3,
           "stop_reason": "exhausted",
-          "raw_jobs": 143,
-          "unique_jobs": 143,
-          "unique_contribution": 115,
-          "first_pass_survivors": 110,
+          "raw_jobs": 221,
+          "unique_jobs": 221,
+          "unique_contribution": 185,
+          "first_pass_survivors": 175,
           "original_postings_resolved": 0,
-          "jds_resolved": 110,
-          "elapsed_seconds": 1.924,
+          "jds_resolved": 175,
+          "elapsed_seconds": 3.077,
           "hours_old": 48
         },
         {
@@ -684,13 +684,13 @@
           "page_budget": 1,
           "pages_fetched": 1,
           "stop_reason": "exhausted",
-          "raw_jobs": 43,
-          "unique_jobs": 43,
-          "unique_contribution": 34,
-          "first_pass_survivors": 28,
+          "raw_jobs": 67,
+          "unique_jobs": 67,
+          "unique_contribution": 54,
+          "first_pass_survivors": 41,
           "original_postings_resolved": 0,
-          "jds_resolved": 28,
-          "elapsed_seconds": 0.7,
+          "jds_resolved": 41,
+          "elapsed_seconds": 0.88,
           "hours_old": 24
         },
         {
@@ -701,11 +701,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 2,
-          "first_pass_survivors": 79,
+          "unique_contribution": 10,
+          "first_pass_survivors": 77,
           "original_postings_resolved": 0,
-          "jds_resolved": 79,
-          "elapsed_seconds": 1.179,
+          "jds_resolved": 77,
+          "elapsed_seconds": 1.195,
           "hours_old": 24
         },
         {
@@ -720,7 +720,7 @@
           "first_pass_survivors": 75,
           "original_postings_resolved": 0,
           "jds_resolved": 75,
-          "elapsed_seconds": 1.294,
+          "elapsed_seconds": 1.242,
           "hours_old": 24
         },
         {
@@ -735,7 +735,7 @@
           "first_pass_survivors": 80,
           "original_postings_resolved": 0,
           "jds_resolved": 80,
-          "elapsed_seconds": 1.126,
+          "elapsed_seconds": 1.13,
           "hours_old": 24
         },
         {
@@ -746,11 +746,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 41,
-          "first_pass_survivors": 90,
+          "unique_contribution": 32,
+          "first_pass_survivors": 82,
           "original_postings_resolved": 0,
-          "jds_resolved": 90,
-          "elapsed_seconds": 1.243,
+          "jds_resolved": 82,
+          "elapsed_seconds": 1.174,
           "hours_old": 24
         },
         {
@@ -759,13 +759,13 @@
           "page_budget": 1,
           "pages_fetched": 1,
           "stop_reason": "exhausted",
-          "raw_jobs": 76,
-          "unique_jobs": 76,
-          "unique_contribution": 22,
-          "first_pass_survivors": 56,
+          "raw_jobs": 99,
+          "unique_jobs": 99,
+          "unique_contribution": 43,
+          "first_pass_survivors": 75,
           "original_postings_resolved": 0,
-          "jds_resolved": 56,
-          "elapsed_seconds": 0.946,
+          "jds_resolved": 75,
+          "elapsed_seconds": 1.275,
           "hours_old": 24
         },
         {
@@ -776,11 +776,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 64,
-          "first_pass_survivors": 77,
+          "unique_contribution": 60,
+          "first_pass_survivors": 76,
           "original_postings_resolved": 0,
-          "jds_resolved": 77,
-          "elapsed_seconds": 1.292,
+          "jds_resolved": 76,
+          "elapsed_seconds": 1.778,
           "hours_old": 24
         },
         {
@@ -795,7 +795,7 @@
           "first_pass_survivors": 77,
           "original_postings_resolved": 0,
           "jds_resolved": 77,
-          "elapsed_seconds": 1.32,
+          "elapsed_seconds": 1.246,
           "hours_old": 24
         },
         {
@@ -806,11 +806,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 39,
-          "first_pass_survivors": 84,
+          "unique_contribution": 47,
+          "first_pass_survivors": 81,
           "original_postings_resolved": 0,
-          "jds_resolved": 84,
-          "elapsed_seconds": 1.416,
+          "jds_resolved": 81,
+          "elapsed_seconds": 1.319,
           "hours_old": 24
         },
         {
@@ -821,11 +821,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 21,
+          "unique_contribution": 28,
           "first_pass_survivors": 75,
           "original_postings_resolved": 0,
           "jds_resolved": 75,
-          "elapsed_seconds": 1.334,
+          "elapsed_seconds": 1.296,
           "hours_old": 24
         },
         {
@@ -836,11 +836,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 31,
-          "first_pass_survivors": 89,
+          "unique_contribution": 33,
+          "first_pass_survivors": 85,
           "original_postings_resolved": 0,
-          "jds_resolved": 89,
-          "elapsed_seconds": 1.238,
+          "jds_resolved": 85,
+          "elapsed_seconds": 1.334,
           "hours_old": 24
         },
         {
@@ -851,11 +851,11 @@
           "stop_reason": "page_budget",
           "raw_jobs": 100,
           "unique_jobs": 100,
-          "unique_contribution": 57,
-          "first_pass_survivors": 81,
+          "unique_contribution": 71,
+          "first_pass_survivors": 75,
           "original_postings_resolved": 0,
-          "jds_resolved": 81,
-          "elapsed_seconds": 1.265,
+          "jds_resolved": 75,
+          "elapsed_seconds": 1.316,
           "hours_old": 24
         },
         {
@@ -864,13 +864,13 @@
           "page_budget": 1,
           "pages_fetched": 1,
           "stop_reason": "exhausted",
-          "raw_jobs": 6,
-          "unique_jobs": 6,
+          "raw_jobs": 8,
+          "unique_jobs": 8,
           "unique_contribution": 4,
-          "first_pass_survivors": 5,
+          "first_pass_survivors": 7,
           "original_postings_resolved": 0,
-          "jds_resolved": 5,
-          "elapsed_seconds": 0.407,
+          "jds_resolved": 7,
+          "elapsed_seconds": 0.27,
           "hours_old": 24
         },
         {
@@ -879,13 +879,13 @@
           "page_budget": 1,
           "pages_fetched": 1,
           "stop_reason": "exhausted",
-          "raw_jobs": 40,
-          "unique_jobs": 40,
-          "unique_contribution": 15,
-          "first_pass_survivors": 32,
+          "raw_jobs": 52,
+          "unique_jobs": 52,
+          "unique_contribution": 29,
+          "first_pass_survivors": 40,
           "original_postings_resolved": 0,
-          "jds_resolved": 32,
-          "elapsed_seconds": 0.693,
+          "jds_resolved": 40,
+          "elapsed_seconds": 1.247,
           "hours_old": 24
         },
         {
@@ -893,22 +893,22 @@
           "group": "specialty",
           "page_budget": 1,
           "pages_fetched": 1,
-          "stop_reason": "exhausted",
-          "raw_jobs": 77,
-          "unique_jobs": 77,
-          "unique_contribution": 44,
-          "first_pass_survivors": 67,
+          "stop_reason": "page_budget",
+          "raw_jobs": 100,
+          "unique_jobs": 100,
+          "unique_contribution": 61,
+          "first_pass_survivors": 88,
           "original_postings_resolved": 0,
-          "jds_resolved": 67,
-          "elapsed_seconds": 1.038,
+          "jds_resolved": 88,
+          "elapsed_seconds": 1.428,
           "hours_old": 24
         }
       ],
       "detail_enrichment": {},
-      "last_good_count": 672,
+      "last_good_count": 797,
       "official_enrichment": {},
       "search_collection": {},
-      "last_attempt_elapsed_seconds": 24.966,
+      "last_attempt_elapsed_seconds": 28.433,
       "failure_cause": "",
       "previous_failure": {},
       "queries_total": 17,
@@ -981,6 +981,23 @@
     }
   },
   "run_history": [
+    {
+      "source": "indeed",
+      "run_at": "2026-10-20T15:20:50.162398+00:00",
+      "status": "ok",
+      "new": 370,
+      "pass": null,
+      "new_ab": null,
+      "failure": false,
+      "reason": "",
+      "search_429": false,
+      "detail_429": false,
+      "elapsed_seconds": 28.433,
+      "search_requests": null,
+      "initial_detail_requests": null,
+      "new_to_ledger": null,
+      "rediscovered": null
+    },
     {
       "source": "glassdoor",
       "run_at": "2026-10-20T07:02:37.675128+00:00",
