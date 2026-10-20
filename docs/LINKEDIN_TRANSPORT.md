@@ -1,6 +1,14 @@
 # LinkedIn transport and queue review — 2026-10-05
 
-## Current change and expectations
+## October 20 — Local rate-limit review and weekend schedule
+
+Installed Local logs record October 18 (Pacific) traffic of **20 Search + 7 Detail = 27 requests** across three rounds, with one Detail 429 and one Search 429. October 19's noon, 15:06 and 21:15 launches failed GitHub DNS/fetch before collection. The missed evening slot completed at October 20 00:02 with **6 Search + 0 Detail**; request six returned Search 429, with just six attempts in the preceding rolling 24 hours. These are collector attempts, not applications or account/IP-wide traffic. The persisted journal also records Search 429 on the first request of the October 13 and 15 late-evening rounds despite only two combined rolling-day attempts.
+
+Low daily volume does not establish a safe upstream rate. Requests are still grouped at a 2.5–3.25-second minimum start interval; IP/network reputation and upstream anti-automation decisions are possible explanations, not established causes. Retry-After was absent on these saved 429s. The shared budgets, stop-on-429, one-hour global pause, independent endpoint cooldowns and probes already bound retry traffic. A ten-minute gate check is not a collector request; fetch failures did not produce LinkedIn calls.
+
+Saturday/Sunday now have one scheduled Local round at **12:00 Pacific**, versus three previously; weekdays retain noon/15:00/21:00. This lowers weekend scheduled capacity from 66 to 22 combined attempts per day, not a measured 429 reduction. Existing missed-slot catch-up coalesces overdue slots and may run before noon after an unfinished Friday/Saturday slot, so a weekend can still have a catch-up plus its noon round. Intentional cooldowns with usable data complete their gate slot. Search window, scoring, recovery, transport caps and pacing are unchanged. Fewer rounds can delay discovery or miss short-lived postings; ordinary later receipts are needed to assess the tradeoff without extra probes.
+
+## October 5 change and expectations
 
 The Oct 2–4 Pacific production sample supports a modest relaxation, not a claim
 that larger allowances are proven safe. Adopt the requested nearby configuration:
@@ -13,7 +21,7 @@ that larger allowances are proven safe. Adopt the requested nearby configuration
 | Detail per rolling 24 hours | 24 | 36 |
 | Search + Detail per rolling 24 hours | 54 | 72 |
 
-Three fully utilized scheduled rounds can issue 66 total requests (30 Search,
+Three fully utilized weekday scheduled rounds can issue 66 total requests (30 Search,
 36 Detail); the 72-total rolling cap leaves six total requests of headroom for
 catch-up/manual traffic, but no extra Detail when all 36 daily Detail slots were
 used. Rolling windows, not Pacific midnight, enforce these allowances. The

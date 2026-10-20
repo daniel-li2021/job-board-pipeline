@@ -63,6 +63,43 @@ class MacGateTests(unittest.TestCase):
         self.assertFalse(state["scheduled_slot_missed"])
         self.assertEqual("not_needed", state["catch_up_status"])
 
+    def test_weekend_has_only_noon_slot(self):
+        for day in (17, 18):
+            noon = datetime(2026, 10, day, 12, tzinfo=PACIFIC)
+            self.assertTrue(decision(noon, {"last_success_at": noon.replace(hour=9).isoformat()})[0])
+            for hour in (15, 21):
+                with self.subTest(day=day, hour=hour):
+                    run, _, state = decision(noon.replace(hour=hour), {"last_success_at": noon.isoformat()})
+                    self.assertFalse(run)
+                    self.assertFalse(state["scheduled_slot_missed"])
+
+    def test_slots_cross_weekday_and_weekend_boundaries(self):
+        cases = (
+            ((16, 22), (16, 21), (17, 12)),
+            ((17, 10), (16, 21), (17, 12)),
+            ((18, 10), (17, 12), (18, 12)),
+            ((19, 10), (18, 12), (19, 12)),
+            ((19, 16), (19, 15), (19, 21)),
+        )
+        for current, previous, following in cases:
+            with self.subTest(current=current):
+                dt = lambda pair: datetime(2026, 10, *pair, tzinfo=PACIFIC)
+                self.assertEqual((dt(previous), dt(following)), gate._slots(dt(current)))
+
+    def test_weekend_missed_noon_catches_up_once_after_wake(self):
+        now = datetime(2026, 10, 18, 16, tzinfo=PACIFIC)
+        run, _, state = decision(now, {"last_success_at": now.replace(day=17, hour=12).isoformat()})
+        self.assertTrue(run)
+        self.assertEqual("due", state["catch_up_status"])
+        state["last_success_at"] = now.isoformat()
+        self.assertFalse(decision(now.replace(hour=21), state)[0])
+
+    def test_weekend_slots_keep_pacific_dst_offsets(self):
+        now = datetime(2026, 11, 1, 1, 30, tzinfo=PACIFIC)
+        latest, following = gate._slots(now)
+        self.assertEqual("2026-10-31T12:00:00-07:00", latest.isoformat())
+        self.assertEqual("2026-11-01T12:00:00-08:00", following.isoformat())
+
     def test_active_lock_coalesces_another_launch(self):
         with tempfile.TemporaryDirectory() as temp, patch.object(gate, "LOCK", Path(temp) / "lock"), \
              patch.object(gate, "STATE", Path(temp) / "state.json"):
