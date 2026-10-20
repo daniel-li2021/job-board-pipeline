@@ -1161,7 +1161,7 @@ class LocalSourceTests(unittest.TestCase):
             self.assertEqual(queries, [call.kwargs["params"]["keywords"] for call in session.get.call_args_list])
             self.assertEqual(3, result["requests"])
             self.assertEqual(2, sleep.call_count)
-            self.assertTrue(all(2.4 <= call.args[0] <= 3.25 for call in sleep.call_args_list))
+        self.assertTrue(all(9.9 <= call.args[0] <= 15 for call in sleep.call_args_list))
 
     def test_search_cooldown_completes_mac_round_without_touching_snapshot(self) -> None:
         from scripts.macos.local_source_gate import decision

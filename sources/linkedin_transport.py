@@ -14,7 +14,9 @@ ROUND_LIMIT = 22
 DETAIL_LIMIT = 12
 DAY_LIMIT = 72
 DAY_DETAIL_LIMIT = 36
-SPACING_SECONDS = 2.5
+# Temporary pacing trial; review normal-run receipts on October 26, 2026.
+SPACING_SECONDS = 10.0
+MAX_SPACING_SECONDS = 15.0
 
 
 class RequestDeferred(Exception):
@@ -88,7 +90,7 @@ class LinkedInTransport:
         if self.events:
             latest = max(stamp(event["at"]) for event in self.events)
             elapsed = (datetime.now(timezone.utc) - latest).total_seconds()
-            delay = SPACING_SECONDS + random.uniform(0, 0.75) - elapsed
+            delay = random.uniform(SPACING_SECONDS, MAX_SPACING_SECONDS) - elapsed
             if delay > 0:
                 time.sleep(delay)
         now = datetime.now(timezone.utc)
@@ -124,6 +126,7 @@ class LinkedInTransport:
 
     def summary(self):
         return {"requests": sum(self.counts.values()), "endpoint_counts": dict(self.counts),
+                "spacing_seconds_min": SPACING_SECONDS, "spacing_seconds_max": MAX_SPACING_SECONDS,
                 "round_limit": ROUND_LIMIT, "detail_limit": DETAIL_LIMIT, "day_limit": DAY_LIMIT,
                 "hour_limit": ROUND_LIMIT, "hour_detail_limit": DETAIL_LIMIT,
                 "day_detail_limit": DAY_DETAIL_LIMIT,

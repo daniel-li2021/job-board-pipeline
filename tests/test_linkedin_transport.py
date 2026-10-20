@@ -122,7 +122,30 @@ class LinkedInTransportTests(unittest.TestCase):
         self.assertEqual(22, session.get.call_count)
         self.assertFalse(transport.available("search"))
         self.assertTrue(follow["budget_exhausted"])
-        self.assertTrue(all(2.4 < call.args[0] <= 3.25 for call in sleep.call_args_list))
+        self.assertTrue(all(9.9 < call.args[0] <= 15 for call in sleep.call_args_list))
+
+    def test_trial_pacing_survives_restart_and_counts_intervening_work(self, sleep):
+        now = datetime(2026, 10, 20, 20, tzinfo=timezone.utc)
+        session = Mock()
+        session.get.return_value = response()
+        with tempfile.TemporaryDirectory() as temp:
+            journal = Path(temp) / "transport.json"
+            journal.write_text(json.dumps({"events": [
+                {"at": (now - timedelta(seconds=3)).isoformat(), "endpoint": "search"}
+            ]}))
+            with patch("sources.linkedin_transport.datetime", wraps=datetime) as clock, \
+                 patch("sources.linkedin_transport.random.uniform", return_value=15):
+                clock.now.return_value = now
+                transport = LinkedInTransport(local_path=journal)
+                transport.get(session, "detail", endpoint="detail")
+                sleep.assert_called_once_with(12.0)
+                receipt = json.loads(journal.read_text())
+                self.assertEqual((10.0, 15.0),
+                                 (receipt["spacing_seconds_min"], receipt["spacing_seconds_max"]))
+                sleep.reset_mock()
+                clock.now.return_value = now + timedelta(seconds=20)
+                transport.get(session, "search", endpoint="search")
+                sleep.assert_not_called()
 
     def test_workstream_a_admission_shares_transport_across_both_phases(self, sleep):
         import recovery_policy
