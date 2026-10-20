@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-19T23:52:30.224586+00:00",
-  "count": 4210,
+  "generated_at": "2026-10-20T00:31:26.822995+00:00",
+  "count": 4273,
   "companies": [
     {
       "name": "1-800 CONTACTS",
@@ -97,6 +97,19 @@
       "tags": [],
       "seen_job_keys": [
         "5db14b84f5ace117f298eda6"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "3D Systems Integrators",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "bc9684336c8bfaef24f47d89"
       ],
       "seen_count": 1
     },
@@ -4695,6 +4708,20 @@
       "seen_count": 2
     },
     {
+      "name": "AtmosZero",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "11c7b535d144261cc7c2bc8b",
+        "e0a904ae695fbff709cff023"
+      ],
+      "seen_count": 2
+    },
+    {
       "name": "Atrium AI",
       "aliases": [],
       "size": "unknown",
@@ -4754,6 +4781,19 @@
       "tags": [],
       "seen_job_keys": [
         "c200fa2cdd6770e61ec7f2ae"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Atwell",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "156ff63d78bd963322f54387"
       ],
       "seen_count": 1
     },
@@ -6321,6 +6361,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Betis Group, Inc.",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "19fdd9f2701f3f9cf92e4d6a"
+      ],
       "seen_count": 1
     },
     {
@@ -8020,6 +8073,19 @@
       "seen_count": 1
     },
     {
+      "name": "BTEK Software",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "df6ddf49eec2960d2fb325bc"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Bud Clary Auto Group",
       "aliases": [],
       "size": "unknown",
@@ -8261,6 +8327,7 @@
         "02f4f6268bb867528cf1450e",
         "048a43bb208271b6be30a3f4",
         "04bdb6776ef927fce4700603",
+        "0620103a285041b32a984d0d",
         "0647e462520b844cb95f7d7d",
         "08256fa41e82cfbe4ef3c4ca",
         "08c1bc1045ce5906d9f0adad",
@@ -8289,9 +8356,13 @@
         "259e82ce4b422d3774ded4f7",
         "2809aab848ea9bb3dda1295b",
         "28606db3c21b10a50f24bbf7",
+        "2a5fcb3c599924af75c67caa",
         "2b4de043b58500a1233d5c9a",
+        "2c5d5395cb4f307fc8c782b9",
+        "2c5ff9fbe197a0a08d4bd488",
         "2dc4a572d0aa31823fe9da77",
         "2f581358f6ced34742e8adcd",
+        "31762aab4064a3c140836e68",
         "31ad6197729c1a4de197a7e3",
         "348908d4528ee2316d966a1c",
         "35e36feaf890907a337908da",
@@ -8321,6 +8392,7 @@
         "4cd41cc78bf13f35591de307",
         "4e809e7ee3ff2919b1704b7c",
         "501cdcb97acbbfa9ee5bf5bf",
+        "50bba996670e94ce96814f4c",
         "513ae04438175b9df9f8b868",
         "51f4846574c296670c1fec4a",
         "52207566553aacf4dc32ab0a",
@@ -8332,10 +8404,12 @@
         "55f7ae64a89021e276b2e2e8",
         "56270735857f9855b223db34",
         "564b19c4daf2857383364400",
+        "5656c2a0059c5dba1a709cae",
         "5b6961c85d921e5731efedfb",
         "5bf7e4ea0de875775c837081",
         "5d46a3dfe7bb6229abcbbc28",
         "5f56021fcf5173bf67a14baa",
+        "61cc61b4e47f83f3b7a2834c",
         "627aef87074f84fc67473d18",
         "62f13971bb61c7a89e69507a",
         "6346ce10c75cfd0456c9aa31",
@@ -8474,7 +8548,7 @@
         "fe5a0789e1dd632ac692a89e",
         "ffd21063f5cc81ac244e7df2"
       ],
-      "seen_count": 215
+      "seen_count": 223
     },
     {
       "name": "BY Recruiting",
@@ -8518,13 +8592,14 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "0efe1f97a1744afa7985a4a8",
         "50edf3fc47cea51dd9202ffa",
         "8823431c8e93081f1a259560",
         "882baaa8b0726922ba5535e3",
         "88f03079db8ec6f1234cd25d",
         "f3d4e7ff0fc528ad51f74bca"
       ],
-      "seen_count": 5
+      "seen_count": 6
     },
     {
       "name": "Cabana",
@@ -8619,6 +8694,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Calendly",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "39bab8179081e97355274b5c"
+      ],
       "seen_count": 1
     },
     {
@@ -9267,9 +9355,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "b1bb561a5997fbe12763bbb9",
         "c8bc8b7c9ace4692cc057dfe"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "CATHEXIS (VA)",
@@ -9482,6 +9571,20 @@
         "0e6474badc041b6dcb72a291"
       ],
       "seen_count": 1
+    },
+    {
+      "name": "Cell Signaling Technology, Inc",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "4c2ab8bae1dd35b50c9a9bdb",
+        "fea1891a3999a773b561c0ec"
+      ],
+      "seen_count": 2
     },
     {
       "name": "CELLA",
@@ -11499,9 +11602,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "89dfa64a8354ec796adcd6f0"
+        "89dfa64a8354ec796adcd6f0",
+        "b87225c753c7964542cbe56f"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Collegis Education",
@@ -12210,6 +12314,19 @@
       "seen_count": 1
     },
     {
+      "name": "Contact Discovery Services",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "b162110dcf014923dc6e6434"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Contentful",
       "aliases": [],
       "size": "unknown",
@@ -12566,6 +12683,19 @@
       "seen_count": 1
     },
     {
+      "name": "Cornerstone Building Brands",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "d80df652c36ed4fdc27a3c0d"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "CORNERSTONE UNIVERSITY",
       "aliases": [],
       "size": "unknown",
@@ -12830,6 +12960,20 @@
       "seen_count": 2
     },
     {
+      "name": "Crazy Maple Studio",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "956e65b03b94194183b131f1",
+        "c4ddd56a77367bedaba0e48b"
+      ],
+      "seen_count": 2
+    },
+    {
       "name": "CRB",
       "aliases": [],
       "size": "unknown",
@@ -12879,6 +13023,19 @@
       "tags": [],
       "seen_job_keys": [
         "861ef58fd4fdadc40f14c23a"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Credence",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "4d9916de551b1436ee50b885"
       ],
       "seen_count": 1
     },
@@ -12938,6 +13095,19 @@
       "tags": [],
       "seen_job_keys": [
         "26cff6a2e474edc069235cdf"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Crescent Energy",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "6112cd1c70eb4a25f1add19f"
       ],
       "seen_count": 1
     },
@@ -13347,12 +13517,13 @@
         "1c9eb00209be0152586d4bed",
         "2bd4d8048236a5eb2acdf64a",
         "2f75f33a2fa7137068f1aee9",
+        "811b4c711a0ee7e0b449e8d6",
         "885a7b16c5619efe58677fad",
         "92101d8caf1f66a5a9c358f2",
         "9fb179b80a807b8a9e3dc589",
         "c6e3498f1a1fc34e10c9f4e8"
       ],
-      "seen_count": 7
+      "seen_count": 8
     },
     {
       "name": "Cyber Advisors",
@@ -13669,9 +13840,11 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "175366b0b019f2caecbfcea1",
+        "7293dccae22b92bf28c5de5c",
         "737f72c1b50a2c015bd96b9d"
       ],
-      "seen_count": 1
+      "seen_count": 3
     },
     {
       "name": "Daimler Truck North America",
@@ -14970,6 +15143,19 @@
       "seen_count": 1
     },
     {
+      "name": "Direct Companies",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "b0cf143f7494f2e4836fe9d3"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Direct Travel",
       "aliases": [],
       "size": "unknown",
@@ -15098,6 +15284,19 @@
       "tags": [],
       "seen_job_keys": [
         "0d8794dc94babc3e3f995e04"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Diversity Nexus",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "9d62ac5cd69b440c46921d2c"
       ],
       "seen_count": 1
     },
@@ -15272,6 +15471,19 @@
       "seen_count": 2
     },
     {
+      "name": "Dot Com Development",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "f1903fe49177816577783599"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Dotmatics Ltd.",
       "aliases": [],
       "size": "unknown",
@@ -15377,6 +15589,20 @@
         "58829ec53c5a1f7187f77ea8"
       ],
       "seen_count": 1
+    },
+    {
+      "name": "Dream Labs",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "a062916c736a71ea0bb53734",
+        "b94dafe3fb8c2686b278e27b"
+      ],
+      "seen_count": 2
     },
     {
       "name": "Drew Marine",
@@ -15774,6 +16000,19 @@
       "seen_count": 1
     },
     {
+      "name": "Easterseals Southern California",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "d5afeae74723febd22d8e21f"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Eastridge Labs",
       "aliases": [],
       "size": "unknown",
@@ -15900,8 +16139,11 @@
       "sponsor": "likely",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
-      "seen_count": 1
+      "seen_job_keys": [
+        "c763cdf04bfeb358d28c9eb9",
+        "da8b05ff7bfb65b0750c04c8"
+      ],
+      "seen_count": 2
     },
     {
       "name": "Econolite Group, Inc.",
@@ -15947,6 +16189,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "EDB",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "f16a37dc7b12108a9b31fc81"
+      ],
       "seen_count": 1
     },
     {
@@ -16095,6 +16350,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Egen Solutions Inc",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "927f7e47fca016603fcb0dd2"
+      ],
       "seen_count": 1
     },
     {
@@ -17223,6 +17491,19 @@
       "seen_count": 1
     },
     {
+      "name": "Ephibian",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "067529f94a762236489d2336"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "EPIC AIRCRAFT",
       "aliases": [],
       "size": "unknown",
@@ -17497,9 +17778,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "11556a56b9356fbb0dd2a196",
         "963453b523ac45df6ad057f4"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Essential Software",
@@ -17862,6 +18144,19 @@
       "tags": [],
       "seen_job_keys": [
         "af09de0dbd36da1b3ad14a51"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Expel",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "862244d41d2471ecac536788"
       ],
       "seen_count": 1
     },
@@ -18826,9 +19121,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "3ea708b7ba2aa1cfbcacb60e"
+        "3ea708b7ba2aa1cfbcacb60e",
+        "9d80c7273b42580a19d89529"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Firestorm",
@@ -20166,6 +20462,19 @@
       "seen_count": 1
     },
     {
+      "name": "FullSteam LLC",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "5083dd80caffa0d13c93ea6c"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "fullthrottle.ai®",
       "aliases": [],
       "size": "unknown",
@@ -20757,10 +21066,11 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "39b9caf714c08ba8e47ed124",
         "876dbfd6b4201a21f84aa6e4",
         "cbb76e1246029ce248f12554"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Geneoscopy LLC",
@@ -21198,6 +21508,19 @@
       "tags": [],
       "seen_job_keys": [
         "1c2250c7e10e95ef68617eb0"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Girikon Inc.",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "aa979fe2175034c7841d0332"
       ],
       "seen_count": 1
     },
@@ -21670,6 +21993,19 @@
       "seen_count": 5
     },
     {
+      "name": "Gormat",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "89ece026c5ca64d95d242f14"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Goshen Engineering, Inc.",
       "aliases": [],
       "size": "unknown",
@@ -21718,6 +22054,19 @@
       "seen_count": 1
     },
     {
+      "name": "GPL Technologies",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "6d2181548ef6b07853e02771"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "GPS Information Guidance, LLC",
       "aliases": [],
       "size": "unknown",
@@ -21726,6 +22075,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Grace Health",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "242984599802910997dd6c2b"
+      ],
       "seen_count": 1
     },
     {
@@ -21787,9 +22149,10 @@
       "seen_job_keys": [
         "2a15fbb3bd64b791b90f63c7",
         "b73d698405f02d5763101492",
+        "c16beaf42c6ffb282a5c6c11",
         "eb4d5131d6692d090764e325"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "Grambling State University",
@@ -22068,6 +22431,19 @@
       "tags": [],
       "seen_job_keys": [
         "b7919e69c89e365cb0471c59"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Greenwood Industries",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "5111cb520815a86ac789924c"
       ],
       "seen_count": 1
     },
@@ -22802,6 +23178,20 @@
         "c61151e25c1b4814fb8a3764"
       ],
       "seen_count": 1
+    },
+    {
+      "name": "Hankook Tire",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "dc7fc56d1cb437770ecbdcc6",
+        "fc3bf1955ab889f5d3794e4f"
+      ],
+      "seen_count": 2
     },
     {
       "name": "Hansen Technologies",
@@ -24101,6 +24491,19 @@
       "seen_count": 1
     },
     {
+      "name": "Home Chef",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "ed195a35762c68ff137862fb"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Homes.com",
       "aliases": [],
       "size": "unknown",
@@ -24799,6 +25202,19 @@
       "seen_count": 1
     },
     {
+      "name": "Ideatek Telcom LLC",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "e864c45fd0ec03c4244a327b"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "ideatrix Cogn AI Lab Corp",
       "aliases": [],
       "size": "unknown",
@@ -25011,6 +25427,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Illinois Tollway",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "71fff322bc6500448597d1c4"
+      ],
       "seen_count": 1
     },
     {
@@ -25397,6 +25826,19 @@
       "tags": [],
       "seen_job_keys": [
         "b5ed4fd785a68a3be8d6c1bb"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "INEOS Group",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "98064d78aa4db14dacd5039e"
       ],
       "seen_count": 1
     },
@@ -26176,10 +26618,11 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "167cac675f5676cfc36b8b42",
         "4f95cef4708fc93f7203942b",
         "6ac69173761b6ceb6e5cba73"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Internet Soft",
@@ -26427,9 +26870,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "1314c5785704ed13a78bfa5c"
+        "1314c5785704ed13a78bfa5c",
+        "b9128959309b494ae6e0d7e9"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "IR Labs",
@@ -26738,6 +27182,19 @@
       "tags": [],
       "seen_job_keys": [
         "4f1ec55fd74919dd76fef6f1"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "ITT Inc.",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "00aee079c0c29ada19facd88"
       ],
       "seen_count": 1
     },
@@ -27166,6 +27623,19 @@
       "seen_count": 1
     },
     {
+      "name": "JCB",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "7d6b5fc812b7d4527e4922b9"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "JCSSolutions",
       "aliases": [],
       "size": "unknown",
@@ -27514,6 +27984,19 @@
       "tags": [],
       "seen_job_keys": [
         "cdb2675d573e7d5d2e665610"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "JP LABORATORIES, INC",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "abffbe489470775131b6c2b4"
       ],
       "seen_count": 1
     },
@@ -28871,6 +29354,19 @@
       "seen_count": 2
     },
     {
+      "name": "Kyros Digital",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "e0e226ef9f4220e8a55af046"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Kyverna Therapeutics",
       "aliases": [],
       "size": "unknown",
@@ -29393,7 +29889,9 @@
       "sponsor": "likely",
       "type": "industrial",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "23f298590dd8ca36ac6e77df"
+      ],
       "seen_count": 1
     },
     {
@@ -29956,9 +30454,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "1a67afab7b91d601601a2117",
         "d06b2e505b4f74f5d3f8c65d"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Linxon",
@@ -30137,6 +30636,7 @@
         "0bf194b77b7fd799805bb68c",
         "0e1a17a8a92eec0b0c9aa5ed",
         "130402f8e6e9512bb00880f0",
+        "1881087220cf606b1bf3ea84",
         "22e04513adda8feb28eb70ca",
         "43bf734415074225abff684c",
         "503a6340485a732d16781122",
@@ -30152,7 +30652,7 @@
         "c91793d94432b777e16b5b8e",
         "fe282e484637f865969f1132"
       ],
-      "seen_count": 19
+      "seen_count": 20
     },
     {
       "name": "Lone Star National Bank",
@@ -30352,6 +30852,19 @@
       "tags": [],
       "seen_job_keys": [
         "34327a55ad66711e570fc15f"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "LP Analyst",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "d6fe418a828e2d54aeabc629"
       ],
       "seen_count": 1
     },
@@ -30851,6 +31364,19 @@
       "seen_count": 1
     },
     {
+      "name": "MAKE",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "afe689d727ea767b978a427e"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Makeen Technologies",
       "aliases": [],
       "size": "unknown",
@@ -31054,6 +31580,19 @@
       "seen_count": 2
     },
     {
+      "name": "Marcus Thomas",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "060daf1600b062967781f79b"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Maritime Tactical Systems",
       "aliases": [],
       "size": "unknown",
@@ -31214,6 +31753,19 @@
       "seen_count": 1
     },
     {
+      "name": "Martek Automation",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "844df24ff558ec6efbefeedf"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Martian Wall",
       "aliases": [],
       "size": "unknown",
@@ -31342,6 +31894,19 @@
       "seen_count": 2
     },
     {
+      "name": "Masterapp Labs",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "956b0003fca1d6f58d9675f2"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Mastermind.com",
       "aliases": [],
       "size": "unknown",
@@ -31368,6 +31933,19 @@
         "de74804cf0b333cb12f7a841"
       ],
       "seen_count": 2
+    },
+    {
+      "name": "Mathnasium",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "cb1282d9a946dc8c92bddcff"
+      ],
+      "seen_count": 1
     },
     {
       "name": "Matic",
@@ -31613,7 +32191,9 @@
     },
     {
       "name": "McCarthy Holdings, Inc.",
-      "aliases": [],
+      "aliases": [
+        "McCarthy Holdings"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
@@ -31622,9 +32202,10 @@
       "seen_job_keys": [
         "46458eb1553dc1bc0f9f8ebe",
         "567024b08fad1d86cf557e02",
+        "80ed487e0f8d06afb8fd4c42",
         "fae7b587e6faae32e62888ce"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "McGuireWoods LLP",
@@ -31779,7 +32360,9 @@
       "sponsor": "likely",
       "type": "finance",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "6cace6a4d7c0991aace680dc"
+      ],
       "seen_count": 1
     },
     {
@@ -32233,6 +32816,19 @@
       "seen_count": 2
     },
     {
+      "name": "MHC Kenworth",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "d0a0c6a5df0581e44f145348"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Miami Behavioral Services LLC.",
       "aliases": [],
       "size": "unknown",
@@ -32578,9 +33174,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "8ceb713344f484b305384b83",
         "c7ecfa27804a0635cd75416b"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Mint Dentistry",
@@ -33056,6 +33653,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Morgan Lewis",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "73056c8ed5756f23311df54b"
+      ],
       "seen_count": 1
     },
     {
@@ -33623,12 +34233,13 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "6b03e3a03b069f59deec239e",
         "77a62243b7cd5be090ee55f3",
         "87a9a92c338577d7eccb5202",
         "999323cd7ca52980c0286f50",
         "d9da5d03d27e67082954a254"
       ],
-      "seen_count": 4
+      "seen_count": 5
     },
     {
       "name": "Nash",
@@ -33784,9 +34395,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "8a90eda8794569db69ccaecb"
+        "8a90eda8794569db69ccaecb",
+        "e23857c102152e8640794892"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "National Livestock Credit Corp.",
@@ -33810,6 +34422,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "National Registry of Emergency",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "64547c35e9549d02b1428b16"
+      ],
       "seen_count": 1
     },
     {
@@ -34729,6 +35354,21 @@
       "seen_count": 1
     },
     {
+      "name": "NEXXA",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "271b79331a24dd4f1e8d0163",
+        "309b30c8b989df9925ceac82",
+        "82caf8558e2fae615e73b970"
+      ],
+      "seen_count": 3
+    },
+    {
       "name": "Nexzentek",
       "aliases": [],
       "size": "unknown",
@@ -35091,9 +35731,10 @@
       "tags": [],
       "seen_job_keys": [
         "450651822c86c9042e3b3806",
-        "ca3f98e0d74771057f46b11e"
+        "ca3f98e0d74771057f46b11e",
+        "f08d7b63f659e05b6302f670"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Northwind Technical Services",
@@ -35296,6 +35937,19 @@
       "tags": [],
       "seen_job_keys": [
         "933884c15ebc3292258b35d3"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "NRG Energy",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "bf2b0c183c147a1794b35423"
       ],
       "seen_count": 1
     },
@@ -36718,6 +37372,19 @@
       "seen_count": 1
     },
     {
+      "name": "OSF HealthCare",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "383fce45d4caa1db35e676c2"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "OSI Digital",
       "aliases": [],
       "size": "unknown",
@@ -37708,6 +38375,19 @@
       "seen_count": 1
     },
     {
+      "name": "Pharming Group",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "b18c435cfbbf29ee8e1fdf33"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Philadelphia District Attorney's Office",
       "aliases": [],
       "size": "unknown",
@@ -38117,6 +38797,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "PK Tech",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "ddabd776b865e4f64d97c539"
+      ],
       "seen_count": 1
     },
     {
@@ -38748,7 +39441,9 @@
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "d3dbde18006bfdc51efdcfff"
+      ],
       "seen_count": 1
     },
     {
@@ -38916,7 +39611,9 @@
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "77afc27b5ae1e8dbe12e706c"
+      ],
       "seen_count": 1
     },
     {
@@ -39849,9 +40546,10 @@
       "type": "industrial",
       "tags": [],
       "seen_job_keys": [
-        "28334e88a99fc3528a3dab21"
+        "28334e88a99fc3528a3dab21",
+        "2d1786d0170e196baa6450bd"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Quantic",
@@ -41152,20 +41850,25 @@
       "seen_job_keys": [
         "0e287ddfe2ca51424776a0ab",
         "130b70606c1f85c0eb6feb09",
+        "2bea524edaf76555073a8a9e",
         "30b58f7dc751b3ca3a0bebf9",
         "3dbec98f0b062a7546a106f6",
         "4dd0c9169561bf9ebc09b072",
         "4e6228689b5d911213cd25c7",
         "571fde440aa4a751da0866a9",
+        "6a5679577027de0c9a0c6b7c",
         "7f87238af50b34ca6003fe24",
         "80fbcce96d60fed31d8d74a5",
         "a881b21631de5edee81ad233",
         "ab9ac7178f3ee4eb0c4eb686",
+        "c421cddd14d93963ce9f9099",
+        "c4dff647de6eca3b39706caa",
+        "c8dd370950dcc868a34ea4f6",
         "ca8e01cd07649b368da25257",
         "d1245952eaceb5a7410185fc",
         "fcbfcea83b60a639899a9382"
       ],
-      "seen_count": 14
+      "seen_count": 19
     },
     {
       "name": "Revvity",
@@ -41253,9 +41956,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "8501f91067e9982c13445cc8"
+        "8501f91067e9982c13445cc8",
+        "b66e805a46da17a09445478f"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "RHP Properties",
@@ -41524,9 +42228,11 @@
       "seen_job_keys": [
         "73faa4ca8cd6568764289e4a",
         "79c41aa55995ae7599042bbe",
+        "a3b830debe7439b136cd7ffe",
+        "e2a56b0319ec56aba2feb93b",
         "e777c88077fc351ad2ba8f49"
       ],
-      "seen_count": 3
+      "seen_count": 5
     },
     {
       "name": "Robin Coin",
@@ -41589,6 +42295,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Rohirrim",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "356e1dce776a22046ccbab3f"
+      ],
       "seen_count": 1
     },
     {
@@ -42292,6 +43011,19 @@
       "seen_count": 1
     },
     {
+      "name": "Saturn petcare",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "92c347a26af77db07a55347f"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Savannah Chatham County Public School System",
       "aliases": [],
       "size": "unknown",
@@ -42518,9 +43250,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "10a22d05685f2d34466cf3a6",
         "5f7ec2614f8038c91097793e"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Sciforium",
@@ -43220,6 +43953,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Settlor",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "dab508c47508ad8a0e61a046"
+      ],
       "seen_count": 1
     },
     {
@@ -44468,6 +45214,19 @@
       "seen_count": 1
     },
     {
+      "name": "Software Solutions",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "0aba4e643eebb002caf70d46"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "SOFTWARE WARRANTY",
       "aliases": [],
       "size": "unknown",
@@ -44594,6 +45353,19 @@
       "seen_count": 1
     },
     {
+      "name": "Sonatafy Technology",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "a7fea2c278970dc2c344efaa"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "SONIFI",
       "aliases": [],
       "size": "unknown",
@@ -44603,6 +45375,19 @@
       "tags": [],
       "seen_job_keys": [
         "0dd2c4ebb586f96ec267dcd2"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Sonora Software",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "f9bb5377edfb4ea0ee71b84f"
       ],
       "seen_count": 1
     },
@@ -45951,6 +46736,19 @@
       "seen_count": 1
     },
     {
+      "name": "Storable",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "baee5d4e9f52c9cc38a6586f"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Storm2",
       "aliases": [],
       "size": "unknown",
@@ -46590,9 +47388,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "6e19999262e65bc38a8f24a8",
         "85149e7802781c0c13f50e6d"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "SWM International",
@@ -47230,6 +48029,19 @@
       "seen_count": 1
     },
     {
+      "name": "TAS Energy",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "c66f2f53f7699cb8eadda5c5"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "TaskVerse",
       "aliases": [],
       "size": "unknown",
@@ -47447,6 +48259,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "TechFabric",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "f7126f31b3e930be58d8f82c"
+      ],
       "seen_count": 1
     },
     {
@@ -47838,9 +48663,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "23996c59b8bf20737e17df02",
         "53420c6202498eae6afcbb3b"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Tennant",
@@ -48148,6 +48974,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "The AIRO Group",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "9a3677787c3d7ac50d51c981"
+      ],
       "seen_count": 1
     },
     {
@@ -49198,10 +50037,11 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "342dab0872f1db8b93b67fbc",
         "a378069c9ece34b3d2ebb45d",
         "d7241b07640913612488c190"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Toccata",
@@ -49260,16 +50100,19 @@
     },
     {
       "name": "TogetherWork",
-      "aliases": [],
+      "aliases": [
+        "Togetherwork"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "5e70947d8657a46a48a16d1f"
+        "5e70947d8657a46a48a16d1f",
+        "9c761380899f6be4935e96a5"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Toll Brothers",
@@ -49696,11 +50539,12 @@
         "3bef63fc8c386906bbc6f30c",
         "3d4ad0a885205671decc7aa3",
         "70c999248ae5dfd4c0cfc6ef",
+        "712cc0b34e6a6407a50005a7",
         "92d25ad6d7415aeb779369e8",
         "c1a95503ecea3318744cf6d6",
         "dfcb284c1a21c9e4877d543e"
       ],
-      "seen_count": 8
+      "seen_count": 9
     },
     {
       "name": "TRIBUS",
@@ -52124,6 +52968,19 @@
       "seen_count": 1
     },
     {
+      "name": "VIA Metropolitan Transit",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "845e7c8fb710a2f51801e86d"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "VIABILITY, INC",
       "aliases": [],
       "size": "unknown",
@@ -52480,6 +53337,7 @@
         "30a2acccf09a5fb68cad183b",
         "5e212969c318e9bfa6a4dd34",
         "7a2f58f3f51aed20bebbc15f",
+        "7b444d646563337f2d2de3f3",
         "9b2b50e6d8cb0b43de2d6fa3",
         "cf027b2eea2f8803cdae75bd",
         "cfc8778e3b7697d56d683352",
@@ -52487,7 +53345,7 @@
         "ef0ec967cf197fc816aa462b",
         "f738f19b9e60e1edf6f82e6d"
       ],
-      "seen_count": 10
+      "seen_count": 11
     },
     {
       "name": "Visual Comfort & Co.",
@@ -52653,6 +53511,19 @@
       "seen_count": 1
     },
     {
+      "name": "Vocatio",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "b557e42f4488e41c5c1c8ea1"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Volke Consulting Ltd.",
       "aliases": [],
       "size": "unknown",
@@ -52761,6 +53632,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Vylor",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "cf2c501df41a0ec9c01fa2f7"
+      ],
       "seen_count": 1
     },
     {
