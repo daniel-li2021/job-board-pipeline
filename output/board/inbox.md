@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-19 17:21 PDT
-- Snapshot (UTC): 2026-10-20T00:21:39.979362+00:00
-- Jobs: 85 (Tier A/B only)
-- Last 24 hours: 48
-- Last 3 days: 85
+- Updated (PT): 2026-10-20 00:03 PDT
+- Snapshot (UTC): 2026-10-20T07:03:26.626276+00:00
+- Jobs: 92 (Tier A/B only)
+- Last 24 hours: 54
+- Last 3 days: 92
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -21,6 +21,8 @@ The 7-day dump is `latest.md`.
 | A | 90 | indeed | A3 Technologies | Software Engineer | Charlotte, NC, US | 2026-10-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=621af8790ef630a0) |
 | A | 94 | indeed | Capgemini | AI Engineer | Waltham, MA, US | 2026-10-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=8db1bc1277f95f80) |
 | A | 93 | indeed | Cognizant | Native AI Engineer | Bentonville, AR, US | 2026-10-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=05696667e38481ab) |
+| A | 93 | linkedin | Otter.ai | Software Engineer, Backend (New Grad) | Mountain View, CA | 2026-10-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-backend-new-grad-at-otter-ai-4481514329) |
+| A | 92 | linkedin | Collins Aerospace | Software Engineer I - Aircraft Interiors (ONSITE) | Winston-Salem, NC | 2026-10-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-i-aircraft-interiors-onsite-at-collins-aerospace-4481269690) |
 | A | 86 | indeed | Citi | Angular Developer / Frontend Engineer (Entry-Level) | Irving, TX, US | 2026-10-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2d8af6090249e7c3) |
 | A | 89 | indeed | BTEK Software | Software Developer | Phoenix, AZ, US | 2026-10-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=9117ea06c9c1685c) |
 | A | 89 | indeed | Settlor | Jr Web Application Developer | Denver, CO, US | 2026-10-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=262685206a7b01c2) |
@@ -59,6 +61,9 @@ The 7-day dump is `latest.md`.
 | B | 83 | indeed | TechFabric | Software Development Engineer | Phoenix, AZ, US | 2026-10-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=737fbe49d21a1881) |
 | B | 82 | indeed | Virago Search | Full Stack Developer - Angular / Python (P&C Insurance) | Hartford, CT, US | 2026-10-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d6e45724452f4295) |
 | B | 82 | indeed | GreenLoop IT Solutions | Software Engineer | Phoenix, AZ, US | 2026-10-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e63c04c3877dfc2b) |
+| B | 80 | linkedin | Mastercard | Software Engineer II | O'Fallon, MO | 2026-10-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-mastercard-4478648631) |
+| B | 80 | linkedin | Cambia Health Solutions | Member Experience Software Development Engineer II - III | Salt Lake City, UT | 2026-10-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/member-experience-software-development-engineer-ii-iii-at-cambia-health-solutions-4478645576) |
+| B | 80 | linkedin | Cambia Health Solutions | Member Experience Software Development Engineer II - III | Boise, ID | 2026-10-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/member-experience-software-development-engineer-ii-iii-at-cambia-health-solutions-4478646581) |
 | B | 84 | indeed | Vision Square Inc | Devops Engineer | McLean, VA, US | 2026-10-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=46ff378f83c7d5f4) |
 | B | 82 | indeed | Rivian | Software Engineer | Palo Alto, CA, US | 2026-10-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=8843b425aab3c705) |
 | B | 84 | indeed | NRG Energy | Data Science Analyst - Agentic AI Developer | Houston, TX, US | 2026-10-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5ad45363da5c6530) |
@@ -67,13 +72,15 @@ The 7-day dump is `latest.md`.
 | B | 75 | linkedin | Autodesk | Software Engineer | San Francisco, CA | 2026-10-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-autodesk-4471012607) |
 | B | 75 | linkedin | Autodesk | Software Engineer | San Francisco, CA | 2026-10-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-autodesk-4471019245) |
 | B | 75 | linkedin | Q2 | Software Engineer | Cary, NC | 2026-10-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-q2-4460741206) |
+| B | 75 | linkedin | John Deere | 2026017 - Software Engineer | Chicago, IL | 2026-10-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/2026017-software-engineer-at-john-deere-4480277814) |
 | B | 75 | linkedin | Optum | AI/ML Engineer | Minnetonka, MN | 2026-10-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-at-optum-4480870115) |
 | B | 75 | linkedin | U.S. Bank | Software Engineer -2 (Full - Stack : Vue.js and .Net ) | Atlanta, GA | 2026-10-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-2-full-stack-vue-js-and-net-at-u-s-bank-4480859864) |
 | B | 75 | linkedin | U.S. Bank | Software Engineer -2 (Full - Stack : Vue.js and .Net ) | Hopkins, MN | 2026-10-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-2-full-stack-vue-js-and-net-at-u-s-bank-4480873365) |
+| B | 75 | linkedin | Stripe | Software Engineer, Secrets Infrastructure | Seattle, WA | 2026-10-20 | newly_discovered | - | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/software-engineer-secrets-infrastructure-at-stripe-4480406560) |
 | B | 75 | linkedin | Cisco | Software Engineer - BackEnd | Triangle, NC | 2026-10-18 | 1to3d | - | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/software-engineer-backend-at-cisco-4480856774) |
 | B | 75 | linkedin | Hewlett Packard Enterprise | Software Engineer | Andover, MA | 2026-10-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-hewlett-packard-enterprise-4480174295) |
 | B | 75 | linkedin | Atlassian | Backend Software Engineer, DX | United States | 2026-10-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-software-engineer-dx-at-atlassian-4480917468) |
-| B | 75 | linkedin | Atoms | Full-Stack Engineer - Fleet Management | San Francisco, CA | 2026-10-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-fleet-management-at-atoms-4479932992) |
+| B | 75 | linkedin | Atoms | Full-Stack Engineer - Fleet Management | San Francisco, CA | 2026-10-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-fleet-management-at-atoms-4479932992) |
 | B | 75 | linkedin | Edra | Software Engineer - Back End (New York) | New York, NY | 2026-10-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-back-end-new-york-at-edra-4385013703) |
 | B | 75 | linkedin | AEG | Full Stack Engineer - WRSTBND | New Orleans, LA | 2026-10-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-wrstbnd-at-aeg-4461665785) |
 | B | 75 | linkedin | KAYAK | Software Engineer, Ads (Backend) | Concord, MA | 2026-10-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ads-backend-at-kayak-4434055995) |

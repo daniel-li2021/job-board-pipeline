@@ -2,6 +2,111 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-20T07:03:26.626276+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "",
+      "reasoning_effort": "",
+      "jobs_scored": 0,
+      "cache_reused": 277,
+      "peer_reused": 0,
+      "same_content_reused": 4,
+      "non_material_change_reused": 0,
+      "new_or_changed": 0,
+      "new_or_changed_reasons": {},
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1366,
+      "requests": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0,
+      "estimated_usd": 0.0,
+      "latency_seconds": 0.0,
+      "latency_measured": true,
+      "effective_rpm": null,
+      "effective_tpm": null,
+      "json_reliability": null,
+      "json_reliability_measured": true,
+      "batches_total": 0,
+      "primary_batches_total": 0,
+      "batches_attempted": 0,
+      "batches_succeeded": 0,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 0,
+      "funnel": {
+        "after_dedup": 7357,
+        "after_company": 6964,
+        "after_hard_filter": 6421,
+        "after_prefilter": 2034,
+        "official_duplicates_suppressed": 391,
+        "retry_only_carried": 0,
+        "dropped": 5146
+      },
+      "output": {
+        "tier_a": 42,
+        "tier_b": 151,
+        "ab_before_cap": 193,
+        "shown": 193,
+        "new_jobs": 35,
+        "new_jobs_added": 7,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 7,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 28,
+            "added": 7
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2755,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 53,
+          "identity_needed": 42,
+          "identities_resolved": 31,
+          "cache_reused": 2,
+          "http_requests": 40,
+          "remaining_no_jd": 2755,
+          "failure_reasons": {
+            "linkedin_rate_limited": 11
+          }
+        },
+        "remaining_no_jd": 2715,
+        "failure_reasons": {
+          "no_enrichment_path": 2188,
+          "linkedin_rate_limited": 100,
+          "linkedin_http_429": 4,
+          "official_detail_deferred": 45,
+          "linkedin_http_network_error": 2,
+          "glassdoor_detail_http_403_static_card_only": 376
+        }
+      },
+      "comparison": {},
+      "batches": []
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-20T00:21:39.979362+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -22918,110 +23023,6 @@
           ]
         }
       ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-10-15T05:41:47.397556+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "",
-      "reasoning_effort": "",
-      "jobs_scored": 0,
-      "cache_reused": 403,
-      "peer_reused": 0,
-      "same_content_reused": 2,
-      "non_material_change_reused": 0,
-      "new_or_changed": 0,
-      "new_or_changed_reasons": {},
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1223,
-      "requests": 0,
-      "input_tokens": 0,
-      "cached_input_tokens": 0,
-      "output_tokens": 0,
-      "reasoning_tokens": 0,
-      "estimated_usd": 0.0,
-      "latency_seconds": 0.0,
-      "latency_measured": true,
-      "effective_rpm": null,
-      "effective_tpm": null,
-      "json_reliability": null,
-      "json_reliability_measured": true,
-      "batches_total": 0,
-      "primary_batches_total": 0,
-      "batches_attempted": 0,
-      "batches_succeeded": 0,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 0,
-      "funnel": {
-        "after_dedup": 7317,
-        "after_company": 7030,
-        "after_hard_filter": 6482,
-        "after_prefilter": 2041,
-        "official_duplicates_suppressed": 415,
-        "retry_only_carried": 0,
-        "dropped": 5177
-      },
-      "output": {
-        "tier_a": 37,
-        "tier_b": 146,
-        "ab_before_cap": 183,
-        "shown": 183,
-        "new_jobs": 4,
-        "new_jobs_added": 0,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 4,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 0,
-            "added": 0
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 2660,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 33,
-          "identity_needed": 33,
-          "http_requests": 33,
-          "identities_resolved": 33,
-          "jds_resolved": 13,
-          "direct_http_resolved": 13,
-          "remaining_no_jd": 2660,
-          "failure_reasons": {}
-        },
-        "remaining_no_jd": 2604,
-        "failure_reasons": {
-          "no_enrichment_path": 2103,
-          "linkedin_http_429": 4,
-          "official_detail_deferred": 46,
-          "linkedin_rate_limited": 73,
-          "linkedin_http_network_error": 2,
-          "glassdoor_detail_http_403_static_card_only": 376
-        }
-      },
-      "comparison": {},
-      "batches": []
     }
   ]
 }
