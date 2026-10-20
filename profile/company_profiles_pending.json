@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-20T14:53:49.156013+00:00",
-  "count": 4278,
+  "generated_at": "2026-10-20T15:29:43.401309+00:00",
+  "count": 4314,
   "companies": [
     {
       "name": "1-800 CONTACTS",
@@ -206,6 +206,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "84 Lumber",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "912c9e7eaddd186ba1b96eff"
+      ],
       "seen_count": 1
     },
     {
@@ -552,7 +565,21 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "c661a08aad60b58fc4275a37",
         "e5020d9ef116a1b8e7bcf1a0"
+      ],
+      "seen_count": 2
+    },
+    {
+      "name": "Abt",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "d100b06d08fe1008079a47ad"
       ],
       "seen_count": 1
     },
@@ -1518,9 +1545,10 @@
       "seen_job_keys": [
         "6b7b22b9ae303133457c5018",
         "dd997f7339552ef223cac941",
-        "e56484c1f9128afd52096416"
+        "e56484c1f9128afd52096416",
+        "f8d78fe4c20d2edb70101375"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "AHOLD Delhaize",
@@ -1569,6 +1597,19 @@
       "tags": [],
       "seen_job_keys": [
         "d51703e24b2c7350138e5e1d"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Air Line Pilots Association, International",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "e64a6da523fa168b43ef526e"
       ],
       "seen_count": 1
     },
@@ -1823,6 +1864,19 @@
       "seen_count": 1
     },
     {
+      "name": "ALEX COMPANY",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "b2e2727e0a5d7fdc29add146"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Alexander Chapman",
       "aliases": [],
       "size": "unknown",
@@ -1947,6 +2001,19 @@
         "fff96d60523a6dae702bee13"
       ],
       "seen_count": 12
+    },
+    {
+      "name": "All Lines Technology",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "2a3b32a3df78be9b62e7f48c"
+      ],
+      "seen_count": 1
     },
     {
       "name": "Allegiance Crane & Equipment",
@@ -2544,9 +2611,10 @@
         "50efcee7ef845a5e03a7a361",
         "6d6b4f3935112a92e8d9e858",
         "a88df5a7fced0c71849f4a68",
-        "b2367625ada7055256b6b2ac"
+        "b2367625ada7055256b6b2ac",
+        "fca2ca88c12ed0473b45c85b"
       ],
-      "seen_count": 9
+      "seen_count": 10
     },
     {
       "name": "American Cancer Society",
@@ -3817,11 +3885,12 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "1b2d0205236a5c4bd5033e4e",
         "894ee32dc86f8e708865a228",
         "94ef0ded6c5b1b97e70f2eb1",
         "c52167c647f14d2cb2e46697"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "Arcesium",
@@ -4835,6 +4904,20 @@
         "6d028cf7dc1b5cf5643db327"
       ],
       "seen_count": 1
+    },
+    {
+      "name": "Augeo Affinity Marketing, Inc.",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "1c62841ccece311b86c200b5",
+        "77652b324eaf594f5580157b"
+      ],
+      "seen_count": 2
     },
     {
       "name": "Auger",
@@ -6287,6 +6370,19 @@
       "seen_count": 1
     },
     {
+      "name": "Bernhardt Furniture Company",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "16f1adbf88c97c7f12f17980"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Bertrandt",
       "aliases": [],
       "size": "unknown",
@@ -7682,13 +7778,17 @@
     },
     {
       "name": "Breeze Airways™",
-      "aliases": [],
+      "aliases": [
+        "Breeze Airways"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "08820183c5fc27f18f94e885"
+      ],
       "seen_count": 1
     },
     {
@@ -8168,9 +8268,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "143fcf1d3ef099561b523e1b"
+        "143fcf1d3ef099561b523e1b",
+        "c70b38b58b4931d02159861c"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Buildwell Talent",
@@ -8683,6 +8784,19 @@
       "type": "industrial",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Cal Solar Inc",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "72aa400bd7375b065a4f10e8"
+      ],
       "seen_count": 1
     },
     {
@@ -11805,6 +11919,19 @@
       "seen_count": 1
     },
     {
+      "name": "Communications Engineering Company",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "4f99285cc2083aa1e74af842"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Community Care (WI)",
       "aliases": [],
       "size": "unknown",
@@ -12053,6 +12180,19 @@
       "tags": [],
       "seen_job_keys": [
         "0d057014e2f4ab7d4f2b19b6"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Comtech Telecommunications Corp.",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "a8fede9871e58f3666375437"
       ],
       "seen_count": 1
     },
@@ -13519,6 +13659,19 @@
       "seen_count": 1
     },
     {
+      "name": "Currency Technics and Metrics",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "2cc42bd42915e3ad6b6d189b"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Custom Software Development",
       "aliases": [],
       "size": "unknown",
@@ -13792,9 +13945,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "12d99af4f2685407a9639ec6",
         "97d4817d9de381439b1e5dd4"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "D3 Embedded",
@@ -13856,6 +14010,19 @@
       "tags": [],
       "seen_job_keys": [
         "e0e9ec266f06d0d424901926"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "DAIKIN COMFORT TECHNOLOGIES MFG INC",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "9230fd707ecad1ec2239ca96"
       ],
       "seen_count": 1
     },
@@ -14317,6 +14484,20 @@
       "seen_count": 1
     },
     {
+      "name": "Debevoise & Plimpton LLP",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "266ed29c890e771bf0b2131b",
+        "dc56c6c2892abac8dd5f27ac"
+      ],
+      "seen_count": 2
+    },
+    {
       "name": "Decagon",
       "aliases": [],
       "size": "unknown",
@@ -14586,9 +14767,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "3741f436d2b48c6c2a843f3c",
         "f91fadc59f0c085c835d57a2"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Delta Dental of Missouri",
@@ -15379,6 +15561,19 @@
       "seen_count": 1
     },
     {
+      "name": "DKBInnovative",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "c4fe38c279ccb00020b556c8"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "DKKD Staffing",
       "aliases": [],
       "size": "unknown",
@@ -15854,6 +16049,19 @@
       "seen_count": 4
     },
     {
+      "name": "Dynanet Corporation",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "ff5a4a72e532debf65b3d6fe"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Dynasty Financial Partners",
       "aliases": [],
       "size": "unknown",
@@ -16118,6 +16326,19 @@
       "tags": [],
       "seen_job_keys": [
         "3c490564309184903cf490ca"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "EBSCO Information Services",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "e034539b94d43ed420ca6465"
       ],
       "seen_count": 1
     },
@@ -17818,9 +18039,10 @@
       "tags": [],
       "seen_job_keys": [
         "11556a56b9356fbb0dd2a196",
+        "74ca7b47ab0643242514dbfd",
         "963453b523ac45df6ad057f4"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Essential Software",
@@ -18547,6 +18769,19 @@
       "tags": [],
       "seen_job_keys": [
         "6825e811e32e04fa381d06a4"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "FAMILY SERVICE LEAGUE",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "cfc6716e1e7f043a43048ab8"
       ],
       "seen_count": 1
     },
@@ -23276,6 +23511,19 @@
       "seen_count": 1
     },
     {
+      "name": "Happy Returns, Inc.",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "3634315f47158d6cfe552f50"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Harbor Freight Tools",
       "aliases": [],
       "size": "unknown",
@@ -23677,9 +23925,11 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "695179abb383a9a6c8aee4bb",
+        "a252b9c40c8a4af0df06b79b",
         "f01940a767c8835dd05db222"
       ],
-      "seen_count": 1
+      "seen_count": 3
     },
     {
       "name": "HCL Global Systems Inc",
@@ -25202,6 +25452,19 @@
       "tags": [],
       "seen_job_keys": [
         "cc8b5b60046cfd3c3a787e0f"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "iConvergenceSolutions",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "09d98ba83cb647a982781e4d"
       ],
       "seen_count": 1
     },
@@ -27698,9 +27961,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "31fda43530fef3c9c87e9727",
         "7d6b5fc812b7d4527e4922b9"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "JCSSolutions",
@@ -28699,6 +28963,19 @@
       "seen_count": 1
     },
     {
+      "name": "Kettering Health",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "23b1032ffbf99ffca3a6c456"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "KEV Group",
       "aliases": [],
       "size": "unknown",
@@ -29078,6 +29355,19 @@
       "tags": [],
       "seen_job_keys": [
         "df78ae9bc8fab3952775f788"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Known",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "6b27b2f3ff9b4769e3bf5919"
       ],
       "seen_count": 1
     },
@@ -30303,6 +30593,20 @@
         "3905f1e85406d543e134ae3d"
       ],
       "seen_count": 1
+    },
+    {
+      "name": "LifeLens Technologies Inc.",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "028f8ddb4c50867ed0e761e1",
+        "bf6bfa1ba5ed0264c94eb3c3"
+      ],
+      "seen_count": 2
     },
     {
       "name": "Lifeshape",
@@ -31756,6 +32060,20 @@
       "tags": [],
       "seen_job_keys": [],
       "seen_count": 1
+    },
+    {
+      "name": "Marki River City",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "8b95a1646019fc175768db2f",
+        "e7d558ec17375e0e1ab11a50"
+      ],
+      "seen_count": 2
     },
     {
       "name": "Markon",
@@ -33450,9 +33768,12 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "a0b0cf724a758ae678c87c00"
+        "2ec8090823026e8f94782e87",
+        "8e1e1afc9048816a5f5a3a5d",
+        "a0b0cf724a758ae678c87c00",
+        "a90adcb80b9570ca3d1af682"
       ],
-      "seen_count": 1
+      "seen_count": 4
     },
     {
       "name": "Mobility Route",
@@ -33731,9 +34052,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "73056c8ed5756f23311df54b"
+        "73056c8ed5756f23311df54b",
+        "8d976413df5eb3e0fbf882fe"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Morpheus Talent Solutions",
@@ -34744,6 +35066,19 @@
       "tags": [],
       "seen_job_keys": [
         "626cde190a670be072585094"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Nelson Mullins Riley & Scarborough LLP",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "a944ace219398e306aec6f2b"
       ],
       "seen_count": 1
     },
@@ -36016,9 +36351,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "0b1cfacc2cc1cd6239fe2c4e",
         "bf2b0c183c147a1794b35423"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "NSD International",
@@ -36776,6 +37112,20 @@
         "49f2852972e32a8cfe569836"
       ],
       "seen_count": 1
+    },
+    {
+      "name": "One Federal Solution",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "0b0b7e05168c5571d223ab9b",
+        "20a99f69ac3e5ad408fbabd5"
+      ],
+      "seen_count": 2
     },
     {
       "name": "One Way Mirror",
@@ -39264,6 +39614,19 @@
       "seen_count": 1
     },
     {
+      "name": "Power Home Remodeling",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "83f5ebd6a8b902b65cce3f74"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Power Partners",
       "aliases": [],
       "size": "unknown",
@@ -40060,6 +40423,19 @@
       "tags": [],
       "seen_job_keys": [
         "a3220150cccd26493af37399"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "ProService Hawaii",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "9377e637dc01c42758261e44"
       ],
       "seen_count": 1
     },
@@ -41917,6 +42293,7 @@
       "seen_job_keys": [
         "0e287ddfe2ca51424776a0ab",
         "130b70606c1f85c0eb6feb09",
+        "2a4553eda1555fcf3c01570a",
         "2bea524edaf76555073a8a9e",
         "30b58f7dc751b3ca3a0bebf9",
         "3dbec98f0b062a7546a106f6",
@@ -41933,9 +42310,11 @@
         "c8dd370950dcc868a34ea4f6",
         "ca8e01cd07649b368da25257",
         "d1245952eaceb5a7410185fc",
+        "dacbe327b4d6c6dde66c80f6",
+        "f3ab1ac257622c6e20a5a775",
         "fcbfcea83b60a639899a9382"
       ],
-      "seen_count": 19
+      "seen_count": 22
     },
     {
       "name": "Revvity",
@@ -42848,6 +43227,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Sallie Mae",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "1df9e736ebb534a4b90a1754"
+      ],
       "seen_count": 1
     },
     {
@@ -44058,6 +44450,19 @@
       "tags": [],
       "seen_job_keys": [
         "0f956d514856a8d3cc8efa7e"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "SF MOTORS, INC.",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "c8c4871e52fb4dba761f36e8"
       ],
       "seen_count": 1
     },
@@ -45593,6 +45998,19 @@
       "seen_count": 3
     },
     {
+      "name": "Southern New Hampshire University",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "a31d40992f3fc0ee73678711"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Southern Scripts",
       "aliases": [],
       "size": "unknown",
@@ -46269,6 +46687,19 @@
       "seen_count": 3
     },
     {
+      "name": "State Affairs",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "022ad59223958616e6ecbea5"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "State Bar of Wisconsin",
       "aliases": [],
       "size": "unknown",
@@ -46590,6 +47021,19 @@
       "seen_count": 1
     },
     {
+      "name": "Station 66",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "f3811196fb17b6526c56f216"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Station Casinos",
       "aliases": [],
       "size": "unknown",
@@ -46835,9 +47279,11 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "38dc13df5e62fcd16e55c876"
+        "34103dee50d517dc17c02d4a",
+        "38dc13df5e62fcd16e55c876",
+        "96bff1d383dfccd9637abbb9"
       ],
-      "seen_count": 1
+      "seen_count": 3
     },
     {
       "name": "Storyblok",
@@ -48156,6 +48602,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Taxgpt",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "97ef3ae66ed559e23f810bab"
+      ],
       "seen_count": 1
     },
     {
@@ -50394,6 +50853,19 @@
       "seen_count": 1
     },
     {
+      "name": "Transaxle Manufacturing of America",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "e935848e6db95ee9c5091286"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Transcor Data Services",
       "aliases": [],
       "size": "unknown",
@@ -50867,6 +51339,19 @@
       "tags": [],
       "seen_job_keys": [
         "58c7dedc9fbdd46138499eb6"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Trucordia",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "8b09e7e1c76a92f6adbe303e"
       ],
       "seen_count": 1
     },
@@ -53415,6 +53900,19 @@
       "seen_count": 11
     },
     {
+      "name": "Vistance Networks",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "9d371ee80478afee448b200d"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Visual Comfort & Co.",
       "aliases": [],
       "size": "unknown",
@@ -54211,11 +54709,12 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "1234d48ad7c2bc4bfba7ab42",
         "9489ee4d58597b6336ef2eac",
         "c091f2a431ec7ff1a56424fe",
         "eac180ed0abfc5b698723b45"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "West 4th Strategy",
@@ -55208,9 +55707,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "034d55082f26509752b457f5"
+        "034d55082f26509752b457f5",
+        "227c044291fd14259ec01649"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "YAMATO TRANSPORT USA INC",
