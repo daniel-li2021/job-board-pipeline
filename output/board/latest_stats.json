@@ -1,29 +1,29 @@
 {
-  "run_at": "2026-10-21T03:47:38.595676+00:00",
-  "elapsed_seconds": 156.923,
+  "run_at": "2026-10-21T04:00:49.840850+00:00",
+  "elapsed_seconds": 219.953,
   "source_raw": {
-    "ats": 3005,
-    "linkedin": 3368,
+    "ats": 3004,
+    "linkedin": 3370,
     "indeed": 968,
-    "glassdoor": 384
+    "glassdoor": 382
   },
-  "remote_elapsed_seconds": 28.535,
+  "remote_elapsed_seconds": 18.689,
   "funnel": {
-    "after_dedup": 7687,
+    "after_dedup": 7686,
     "after_company": 7310,
-    "after_hard_filter": 6766,
-    "after_prefilter": 2143,
+    "after_hard_filter": 6767,
+    "after_prefilter": 2144,
     "official_duplicates_suppressed": 384,
     "retry_only_carried": 0,
-    "dropped": 5365
+    "dropped": 5364
   },
   "llm": {
-    "reused": 355,
-    "llm": 1,
-    "new_or_changed": 1,
+    "reused": 357,
+    "llm": 0,
+    "new_or_changed": 0,
     "rule": 1403,
-    "sent": 1,
-    "api_requests": 1,
+    "sent": 0,
+    "api_requests": 0,
     "recency_skipped": 0,
     "overflow": 0,
     "peer_reused": 0,
@@ -34,91 +34,43 @@
     "non_material_change_reused": 0,
     "same_content_reused": 2,
     "rescored_within_24h": 0,
-    "new_or_changed_reasons": {
-      "prior_rule_result_now_eligible_for_llm": 1
-    },
+    "new_or_changed_reasons": {},
     "batch_size": 10,
-    "primary_batches_total": 1,
-    "batches_total": 1,
-    "batches_succeeded": 1,
-    "batches_attempted": 1,
+    "primary_batches_total": 0,
+    "batches_total": 0,
+    "batches_succeeded": 0,
+    "batches_attempted": 0,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 4.491,
-    "json_results": 1,
-    "batches": [
-      {
-        "batch": 1,
-        "route": "resume_swe",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "id::linkedin::4480917468",
-            "company": "Atlassian",
-            "title": "Backend Software Engineer, DX"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 4.491,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 1,
-          "input_tokens": 2129,
-          "cached_input_tokens": 0,
-          "output_tokens": 303,
-          "reasoning_tokens": 227,
-          "estimated_usd": 0.000364
-        },
-        "decisions": [
-          {
-            "key": "id::linkedin::4480917468",
-            "match_score": 76.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "REST APIs and integrations",
-              "CI/CD and backend reliability"
-            ],
-            "main_gaps": [
-              "3+ years experience",
-              "Enterprise content management"
-            ]
-          }
-        ]
-      }
-    ],
+    "latency_seconds": 0.0,
+    "json_results": 0,
+    "batches": [],
     "model": "gpt-6-luna",
-    "jobs_scored": 1,
-    "input_tokens": 2129,
+    "jobs_scored": 0,
+    "input_tokens": 0,
     "cached_input_tokens": 0,
-    "output_tokens": 303,
-    "reasoning_tokens": 227,
-    "estimated_usd": 0.000364,
-    "scoring_version": "v7-compact-early-career",
-    "reasoning_effort": "medium",
+    "output_tokens": 0,
+    "reasoning_tokens": 0,
+    "estimated_usd": 0.0,
     "persisted_retry_jobs": 0,
     "retry_only_carried": 0,
-    "scored": 1,
+    "scored": 0,
     "retryable": 0
   },
   "output": {
     "tier_a": 48,
-    "tier_b": 150,
-    "ab_before_cap": 198,
-    "shown": 198,
-    "new_jobs": 4,
+    "tier_b": 149,
+    "ab_before_cap": 197,
+    "shown": 197,
+    "new_jobs": 0,
     "new_jobs_added": 0,
     "new_jobs_by_source": {
       "ats": {
-        "found": 4,
+        "found": 0,
         "added": 0
       },
       "linkedin": {
@@ -140,10 +92,10 @@
     "3to24h": 0,
     "1to3d": 83,
     "newly_discovered": 279,
-    "3to7d": 22,
+    "3to7d": 23,
     "gt7d": 1375
   },
-  "screen_method": "cache+llm",
+  "screen_method": "cache",
   "failures": {
     "discovery": [],
     "llm": []
@@ -151,7 +103,7 @@
   "drops": {
     "company_hidden_external": 108,
     "company_excluded": 90,
-    "citizen_or_clearance": 314,
+    "citizen_or_clearance": 313,
     "non_us_location": 55,
     "ineligible_current_student_requirement": 34,
     "ineligible_2027_graduate_requirement": 21,
@@ -175,8 +127,8 @@
         "unique_jobs": 50,
         "unique_contribution": 49,
         "first_pass_survivors": 49,
-        "original_postings_resolved": 90,
-        "jds_resolved": 77,
+        "original_postings_resolved": 91,
+        "jds_resolved": 78,
         "elapsed_seconds": 12.007,
         "new_to_ledger": 39,
         "rediscovered": 11,
@@ -782,8 +734,8 @@
         "unique_jobs": 30,
         "unique_contribution": 21,
         "first_pass_survivors": 24,
-        "original_postings_resolved": 2,
-        "jds_resolved": 2,
+        "original_postings_resolved": 1,
+        "jds_resolved": 1,
         "elapsed_seconds": 1.556,
         "hours_old": 24,
         "fallback_reason": "JobSpy failed before results: GlassdoorException: location lookup HTTP 404",
@@ -801,8 +753,8 @@
         "unique_jobs": 30,
         "unique_contribution": 19,
         "first_pass_survivors": 22,
-        "original_postings_resolved": 2,
-        "jds_resolved": 2,
+        "original_postings_resolved": 1,
+        "jds_resolved": 1,
         "elapsed_seconds": 1.491,
         "hours_old": 24,
         "fallback_reason": "JobSpy failed before results: GlassdoorException: location lookup HTTP 404",
@@ -839,8 +791,8 @@
         "unique_jobs": 30,
         "unique_contribution": 26,
         "first_pass_survivors": 25,
-        "original_postings_resolved": 1,
-        "jds_resolved": 1,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
         "elapsed_seconds": 1.797,
         "hours_old": 24,
         "fallback_reason": "JobSpy failed before results: GlassdoorException: location lookup HTTP 404",
@@ -902,26 +854,56 @@
         "unique_contribution": 937
       },
       "glassdoor": {
-        "identified_jobs": 376,
-        "unique_contribution": 375
+        "identified_jobs": 374,
+        "unique_contribution": 373
       }
     },
     "queries": {
       "linkedin": {
+        "site reliability engineer": {
+          "identified_jobs": 40,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 40
+        },
+        "ml engineer": {
+          "identified_jobs": 7,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 7
+        },
         "applied ai engineer": {
           "identified_jobs": 28,
           "cross_source_overlap": 0,
           "cross_source_unique": 28
         },
-        "software engineer": {
-          "identified_jobs": 1054,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 1054
+        "ai engineer": {
+          "identified_jobs": 713,
+          "cross_source_overlap": 1,
+          "cross_source_unique": 712
         },
-        "software engineer ii": {
-          "identified_jobs": 82,
+        "data engineer": {
+          "identified_jobs": 37,
           "cross_source_overlap": 0,
-          "cross_source_unique": 82
+          "cross_source_unique": 37
+        },
+        "associate software engineer": {
+          "identified_jobs": 32,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 32
+        },
+        "llm engineer": {
+          "identified_jobs": 71,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 71
+        },
+        "full stack engineer": {
+          "identified_jobs": 89,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 89
+        },
+        "new grad software engineer": {
+          "identified_jobs": 52,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 52
         },
         "full-stack engineer": {
           "identified_jobs": 314,
@@ -933,107 +915,62 @@
           "cross_source_overlap": 0,
           "cross_source_unique": 38
         },
-        "ml engineer": {
-          "identified_jobs": 7,
+        "machine learning engineer": {
+          "identified_jobs": 115,
           "cross_source_overlap": 0,
-          "cross_source_unique": 7
-        },
-        "llm engineer": {
-          "identified_jobs": 71,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 71
-        },
-        "new grad software engineer": {
-          "identified_jobs": 52,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 52
-        },
-        "backend engineer": {
-          "identified_jobs": 376,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 376
-        },
-        "associate software engineer": {
-          "identified_jobs": 32,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 32
-        },
-        "data engineer": {
-          "identified_jobs": 37,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 37
-        },
-        "ai engineer": {
-          "identified_jobs": 713,
-          "cross_source_overlap": 1,
-          "cross_source_unique": 712
+          "cross_source_unique": 115
         },
         "platform engineer": {
           "identified_jobs": 115,
           "cross_source_overlap": 0,
           "cross_source_unique": 115
         },
-        "software engineer i": {
-          "identified_jobs": 67,
+        "software engineer": {
+          "identified_jobs": 1054,
           "cross_source_overlap": 0,
-          "cross_source_unique": 67
-        },
-        "full stack engineer": {
-          "identified_jobs": 89,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 89
-        },
-        "machine learning engineer": {
-          "identified_jobs": 115,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 115
-        },
-        "site reliability engineer": {
-          "identified_jobs": 40,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 40
+          "cross_source_unique": 1054
         },
         "forward deployed engineer": {
           "identified_jobs": 32,
           "cross_source_overlap": 0,
           "cross_source_unique": 32
+        },
+        "software engineer i": {
+          "identified_jobs": 67,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 67
+        },
+        "backend engineer": {
+          "identified_jobs": 376,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 376
+        },
+        "software engineer ii": {
+          "identified_jobs": 82,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 82
         }
       },
       "indeed": {
-        "applied ai engineer": {
-          "identified_jobs": 87,
+        "site reliability engineer": {
+          "identified_jobs": 14,
           "cross_source_overlap": 0,
-          "cross_source_unique": 87
-        },
-        "software engineer": {
-          "identified_jobs": 219,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 219
-        },
-        "infrastructure engineer": {
-          "identified_jobs": 65,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 65
+          "cross_source_unique": 14
         },
         "ml engineer": {
           "identified_jobs": 78,
           "cross_source_overlap": 0,
           "cross_source_unique": 78
         },
-        "llm engineer": {
-          "identified_jobs": 86,
+        "software engineer ii": {
+          "identified_jobs": 75,
           "cross_source_overlap": 0,
-          "cross_source_unique": 86
+          "cross_source_unique": 75
         },
-        "new grad software engineer": {
-          "identified_jobs": 79,
+        "ai engineer": {
+          "identified_jobs": 246,
           "cross_source_overlap": 0,
-          "cross_source_unique": 79
-        },
-        "backend engineer": {
-          "identified_jobs": 83,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 83
+          "cross_source_unique": 246
         },
         "associate software engineer": {
           "identified_jobs": 72,
@@ -1045,89 +982,74 @@
           "cross_source_overlap": 0,
           "cross_source_unique": 84
         },
-        "ai engineer": {
-          "identified_jobs": 246,
+        "llm engineer": {
+          "identified_jobs": 86,
           "cross_source_overlap": 0,
-          "cross_source_unique": 246
-        },
-        "software engineer ii": {
-          "identified_jobs": 75,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 75
-        },
-        "platform engineer": {
-          "identified_jobs": 73,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 73
-        },
-        "software engineer i": {
-          "identified_jobs": 57,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 57
+          "cross_source_unique": 86
         },
         "full stack engineer": {
           "identified_jobs": 77,
           "cross_source_overlap": 0,
           "cross_source_unique": 77
         },
+        "new grad software engineer": {
+          "identified_jobs": 79,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 79
+        },
+        "infrastructure engineer": {
+          "identified_jobs": 65,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 65
+        },
         "machine learning engineer": {
           "identified_jobs": 83,
           "cross_source_overlap": 0,
           "cross_source_unique": 83
         },
-        "site reliability engineer": {
-          "identified_jobs": 14,
+        "platform engineer": {
+          "identified_jobs": 73,
           "cross_source_overlap": 0,
-          "cross_source_unique": 14
+          "cross_source_unique": 73
+        },
+        "software engineer": {
+          "identified_jobs": 219,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 219
         },
         "forward deployed engineer": {
           "identified_jobs": 37,
           "cross_source_overlap": 0,
           "cross_source_unique": 37
+        },
+        "software engineer i": {
+          "identified_jobs": 57,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 57
+        },
+        "backend engineer": {
+          "identified_jobs": 83,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 83
+        },
+        "applied ai engineer": {
+          "identified_jobs": 87,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 87
         }
       },
       "glassdoor": {
-        "applied ai engineer": {
-          "identified_jobs": 27,
+        "site reliability engineer": {
+          "identified_jobs": 22,
           "cross_source_overlap": 0,
-          "cross_source_unique": 27
-        },
-        "software engineer": {
-          "identified_jobs": 28,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 28
-        },
-        "infrastructure engineer": {
-          "identified_jobs": 28,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 28
+          "cross_source_unique": 22
         },
         "ml engineer": {
           "identified_jobs": 23,
           "cross_source_overlap": 0,
           "cross_source_unique": 23
         },
-        "new grad software engineer": {
-          "identified_jobs": 28,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 28
-        },
-        "llm engineer": {
-          "identified_jobs": 22,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 22
-        },
-        "backend engineer": {
-          "identified_jobs": 29,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 29
-        },
-        "associate software engineer": {
-          "identified_jobs": 26,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 26
-        },
-        "data engineer": {
+        "applied ai engineer": {
           "identified_jobs": 27,
           "cross_source_overlap": 0,
           "cross_source_unique": 27
@@ -1137,10 +1059,45 @@
           "cross_source_overlap": 0,
           "cross_source_unique": 27
         },
-        "software engineer ii": {
-          "identified_jobs": 29,
+        "data engineer": {
+          "identified_jobs": 27,
           "cross_source_overlap": 0,
-          "cross_source_unique": 29
+          "cross_source_unique": 27
+        },
+        "associate software engineer": {
+          "identified_jobs": 26,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 26
+        },
+        "llm engineer": {
+          "identified_jobs": 22,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 22
+        },
+        "software engineer": {
+          "identified_jobs": 28,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 28
+        },
+        "new grad software engineer": {
+          "identified_jobs": 28,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 28
+        },
+        "full stack engineer": {
+          "identified_jobs": 22,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 22
+        },
+        "infrastructure engineer": {
+          "identified_jobs": 28,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 28
+        },
+        "machine learning engineer": {
+          "identified_jobs": 26,
+          "cross_source_overlap": 1,
+          "cross_source_unique": 25
         },
         "platform engineer": {
           "identified_jobs": 29,
@@ -1152,31 +1109,26 @@
           "cross_source_overlap": 0,
           "cross_source_unique": 30
         },
-        "full stack engineer": {
-          "identified_jobs": 22,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 22
-        },
-        "machine learning engineer": {
-          "identified_jobs": 26,
-          "cross_source_overlap": 1,
-          "cross_source_unique": 25
-        },
-        "site reliability engineer": {
-          "identified_jobs": 22,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 22
-        },
         "forward deployed engineer": {
           "identified_jobs": 28,
           "cross_source_overlap": 0,
           "cross_source_unique": 28
+        },
+        "backend engineer": {
+          "identified_jobs": 29,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 29
+        },
+        "software engineer ii": {
+          "identified_jobs": 29,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 29
         }
       }
     }
   },
   "enrichment": {
-    "needed": 2750,
+    "needed": 2751,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
     "direct": {
@@ -1187,16 +1139,17 @@
       "http_requests": 35,
       "jds_resolved": 5,
       "direct_http_resolved": 5,
-      "remaining_no_jd": 2750,
+      "remaining_no_jd": 2751,
       "failure_reasons": {
-        "linkedin_rate_limited": 10
+        "linkedin_rate_limited": 9,
+        "linkedin_http_429": 1
       }
     },
     "remaining_no_jd": 2717,
     "failure_reasons": {
       "no_enrichment_path": 2191,
-      "linkedin_rate_limited": 99,
-      "linkedin_http_429": 4,
+      "linkedin_rate_limited": 98,
+      "linkedin_http_429": 5,
       "official_detail_deferred": 45,
       "linkedin_http_network_error": 2,
       "glassdoor_detail_http_403_static_card_only": 376
@@ -1206,7 +1159,7 @@
   "peer_jds_resolved": 0,
   "online_recovery": {
     "jobs_processed": 35,
-    "jds_recovered": 16,
+    "jds_recovered": 17,
     "search_requests": 0,
     "page_requests": 0,
     "search_limit": 100,

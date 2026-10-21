@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-20 20:47 PDT
-- Snapshot (UTC): 2026-10-21T03:47:38.595676+00:00
-- Jobs: 95 (Tier A/B only)
+- Updated (PT): 2026-10-20 21:00 PDT
+- Snapshot (UTC): 2026-10-21T04:00:49.840850+00:00
+- Jobs: 94 (Tier A/B only)
 - Last 24 hours: 65
-- Last 3 days: 95
+- Last 3 days: 94
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -90,7 +90,6 @@ The 7-day dump is `latest.md`.
 | B | 75 | linkedin | Stripe | Software Engineer, Secrets Infrastructure | Seattle, WA | 2026-10-20 | newly_discovered | - | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/software-engineer-secrets-infrastructure-at-stripe-4480406560) |
 | B | 75 | linkedin | Cisco | Software Engineer - BackEnd | Triangle, NC | 2026-10-18 | 1to3d | - | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/software-engineer-backend-at-cisco-4480856774) |
 | B | 75 | linkedin | Atoms | Full-Stack Engineer - Fleet Management | San Francisco, CA | 2026-10-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-fleet-management-at-atoms-4479932992) |
-| B | 75 | linkedin | Edra | Software Engineer - Back End (New York) | New York, NY | 2026-10-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-back-end-new-york-at-edra-4385013703) |
 | B | 75 | linkedin | Deloitte | Cyber Full-Stack Technical Software Engineer | Portland, OR | 2026-10-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/cyber-full-stack-technical-software-engineer-at-deloitte-4435104557) |
 | B | 79 | indeed | Natuvion GmbH | AI Developer | Malvern, PA, US | 2026-10-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=8673ccd4fe9d739d) |
 | B | 78 | indeed | Knapp | Software Systems Engineer I | Kennesaw, GA, US | 2026-10-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=91d0a29c9b453405) |

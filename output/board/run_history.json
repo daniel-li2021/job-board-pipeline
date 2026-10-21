@@ -2,6 +2,114 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-21T04:00:49.840850+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "",
+      "reasoning_effort": "",
+      "jobs_scored": 0,
+      "cache_reused": 357,
+      "peer_reused": 0,
+      "same_content_reused": 2,
+      "non_material_change_reused": 0,
+      "new_or_changed": 0,
+      "new_or_changed_reasons": {},
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1403,
+      "requests": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0,
+      "estimated_usd": 0.0,
+      "latency_seconds": 0.0,
+      "latency_measured": true,
+      "effective_rpm": null,
+      "effective_tpm": null,
+      "json_reliability": null,
+      "json_reliability_measured": true,
+      "batches_total": 0,
+      "primary_batches_total": 0,
+      "batches_attempted": 0,
+      "batches_succeeded": 0,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 0,
+      "funnel": {
+        "after_dedup": 7686,
+        "after_company": 7310,
+        "after_hard_filter": 6767,
+        "after_prefilter": 2144,
+        "official_duplicates_suppressed": 384,
+        "retry_only_carried": 0,
+        "dropped": 5364
+      },
+      "output": {
+        "tier_a": 48,
+        "tier_b": 149,
+        "ab_before_cap": 197,
+        "shown": 197,
+        "new_jobs": 0,
+        "new_jobs_added": 0,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 0,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 0,
+            "added": 0
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2751,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 46,
+          "identity_needed": 36,
+          "identities_resolved": 31,
+          "cache_reused": 1,
+          "http_requests": 35,
+          "jds_resolved": 5,
+          "direct_http_resolved": 5,
+          "remaining_no_jd": 2751,
+          "failure_reasons": {
+            "linkedin_rate_limited": 9,
+            "linkedin_http_429": 1
+          }
+        },
+        "remaining_no_jd": 2717,
+        "failure_reasons": {
+          "no_enrichment_path": 2191,
+          "linkedin_rate_limited": 98,
+          "linkedin_http_429": 5,
+          "official_detail_deferred": 45,
+          "linkedin_http_network_error": 2,
+          "glassdoor_detail_http_403_static_card_only": 376
+        }
+      },
+      "comparison": {},
+      "batches": []
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-21T03:47:38.595676+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -23402,110 +23510,6 @@
           ]
         }
       ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-10-16T05:17:05.328240+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "",
-      "reasoning_effort": "",
-      "jobs_scored": 0,
-      "cache_reused": 380,
-      "peer_reused": 0,
-      "same_content_reused": 2,
-      "non_material_change_reused": 0,
-      "new_or_changed": 0,
-      "new_or_changed_reasons": {},
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1239,
-      "requests": 0,
-      "input_tokens": 0,
-      "cached_input_tokens": 0,
-      "output_tokens": 0,
-      "reasoning_tokens": 0,
-      "estimated_usd": 0.0,
-      "latency_seconds": 0.0,
-      "latency_measured": true,
-      "effective_rpm": null,
-      "effective_tpm": null,
-      "json_reliability": null,
-      "json_reliability_measured": true,
-      "batches_total": 0,
-      "primary_batches_total": 0,
-      "batches_attempted": 0,
-      "batches_succeeded": 0,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 0,
-      "funnel": {
-        "after_dedup": 7328,
-        "after_company": 7034,
-        "after_hard_filter": 6485,
-        "after_prefilter": 2030,
-        "official_duplicates_suppressed": 411,
-        "retry_only_carried": 0,
-        "dropped": 5211
-      },
-      "output": {
-        "tier_a": 35,
-        "tier_b": 135,
-        "ab_before_cap": 170,
-        "shown": 170,
-        "new_jobs": 0,
-        "new_jobs_added": 0,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 0,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 0,
-            "added": 0
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 2660,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 37,
-          "identity_needed": 37,
-          "http_requests": 37,
-          "identities_resolved": 37,
-          "jds_resolved": 7,
-          "direct_http_resolved": 7,
-          "remaining_no_jd": 2660,
-          "failure_reasons": {}
-        },
-        "remaining_no_jd": 2608,
-        "failure_reasons": {
-          "no_enrichment_path": 2106,
-          "linkedin_http_429": 4,
-          "official_detail_deferred": 46,
-          "linkedin_rate_limited": 74,
-          "linkedin_http_network_error": 2,
-          "glassdoor_detail_http_403_static_card_only": 376
-        }
-      },
-      "comparison": {},
-      "batches": []
     }
   ]
 }
