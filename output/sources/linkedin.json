@@ -572,7 +572,7 @@
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-10-20T07:02:38.590317+00:00"
+    "jd_recovery_at": "2026-10-21T03:46:27.188297+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -9553,27 +9553,35 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "7bbd4462d3212ee89c22",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         },
         "direct_careers": {
           "input_hash": "68dd59af5aef26bbd406",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         },
         "site_exact": {
           "input_hash": "3c2b2ee2f9de4135b094",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-20T07:02:38.590317+00:00",
+      "official_search_attempted_at": "2026-10-21T03:46:27.188297+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "unresolved",
+      "enrichment_status": "deferred",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-20T07:02:05.435297+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "SDE networking role is relevant; experience requirements could determine early-career fit."
+      },
+      "linkedin_detail_triage_hash": "2ef91effa8ee0c3ba1f6",
+      "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4462713072",
@@ -12721,7 +12729,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/backend-software-engineer-dx-at-atlassian-4480917468",
       "official_url": "",
-      "description": "",
+      "description": "In this role, you will:\nBuild REST APIs that power core customer experiences\nConfigure monitoring for backend services\nBuild CI/CD pipelines\nDevelop integrations with our content management system\nBuild features and services with reliability in mind\nYour background:\n3+ years experience with one or more prominent languages such as Java, Python, Kotlin, Go, or Rails is required.\nBachelor's or Master's degree (preferably a Computer Science degree or equivalent experience).\nExperience performing platform integrations using REST.\nA background in working with GIT in a collaborative team setting.\nFamiliarity with server technologies (NPM, Docker, NGINX, Express/Node).\nA love for working collaboratively on a team with varied strengths.\nExperience working with an enterprise content management system - Experience working with cloud platforms like AWS\nBenefits & Perks\nAtlassian offers a wide range of perks and benefits designed to support you, your family and to help you engage with your local community. Our offerings include health and wellbeing resources, paid volunteer days, and so much more.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-18T22:00:09.153867+00:00",
@@ -12739,7 +12747,7 @@
       },
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-19T04:00:32.707631+00:00",
-      "official_search_status": "no_match",
+      "official_search_status": "resolved",
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "normal",
@@ -12747,11 +12755,17 @@
       },
       "linkedin_detail_triage_hash": "bc42fd8e028b923179c6",
       "linkedin_detail_deferred_at": "2026-10-18T22:00:09.153867+00:00",
-      "enrichment_status": "deferred",
+      "enrichment_status": "resolved",
       "enrichment_deferred_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-18T22:00:09.153867+00:00",
       "verified_this_run": false,
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "application_url": "https://www.atlassian.com/company/careers/details/27728",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-21T03:46:27.188297+00:00",
+      "jd_recovery_at": "2026-10-21T03:46:27.188297+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-10-21T03:46:27.188297+00:00"
     },
     {
       "job_id": "4472265615",
@@ -12765,7 +12779,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-2027-graduate-u-s-at-atlassian-4472265615",
       "official_url": "",
-      "description": "",
+      "description": "Overview Working at Atlassian Atlassians have the flexibility to work where they can collaborate most effectively with their team, whether at home, one of our global offices, or both. As a distributed-first company, all interviews are conducted virtually. We hire in any country where we have a legal entity. Learn how we work at go.atlassian.com/distributed . Your Future Org Atlassian’s Grad++ program combines hands-on technical training, professional growth opportunities, dedicated mentorship, and strong social connections. This holistic approach empowers students to hit the ground running and sets them up for a successful and impactful career at Atlassian! This role is located in the Seattle hub. You must be able to work from this hub to qualify. This position is not eligible for F1 and J1 students. It is not available for any work sponsorship. Your future team Atlassian’s machine learning teams tackle product and business challenges across the company. Working with partners across Product, Engineering, Growth, GTM, Finance, and Sales, we build machine learning infrastructure and intelligent product experiences. Our teams include machine learning and software engineers who value collaboration, knowledge sharing, rapid experimentation, and measurable impact. This role offers opportunities to work on areas such as search, recommendation, personalization, Generative AI applications, and large language models. Responsibilities Responsibilities Build and evaluate machine learning models and Generative AI applications Use data, experimentation, and feedback to improve model and product quality Translate customer and business problems into technical solutions with cross-functional partners Contribute across the machine learning lifecycle, from prototyping and evaluation to deployment and monitoring Develop agentic workflows that combine LLMs, tools, and relevant product context to solve complex, multi-step problems Compensation Minimum Qualifications Currently pursuing a bachelor’s or master’s degree in Computer Science, Machine Learning, Statistics, Mathematics, Operations Research, or a related quantitative field, and graduating by August 2027 Experience writing reliable software in Python or Scala; familiarity with SQL or Spark is a plus Experience applying machine learning through coursework, research, projects, or a relevant internship Strong problem-solving and data-driven analytical skills Qualifications Currently pursuing a bachelor’s or master’s degree in Computer Science, Machine Learning, Statistics, Mathematics, Operations Research, or a related quantitative field, and graduating by August 2027 Experience writing reliable software in Python or Scala; familiarity with SQL or Spark is a plus Experience applying machine learning through coursework, research, projects, or a relevant internship Strong problem-solving and data-driven analytical skills Compensation At Atlassian, we strive to design equitable, explainable, and competitive compensation programs. To support this goal, the baseline of our range is higher than that of the typical market range, but in turn we expect to hire most candidates near this baseline. Base pay within the range is ultimately determined by a candidate's skills, expertise, or experience. Pay Ranges In The United States , We Have Three Geographic Pay Zones. For This Role, Our Current Base Pay Ranges For New Hires In Each Zone Are: Zone A : $146,700 - $191,525 Zone B : $132,030 - $172,373 Zone C : $121,761 - $158,966 Qualifications Benefits & Perks Atlassian offers a wide range of perks and benefits designed to support you, your family and to help you engage with your local community. Our offerings include health and wellbeing resources, paid volunteer days, and so much more. To learn more, visit go.atlassian.com/perksandbenefits . About Atlassian At Atlassian, we're motivated by a common goal: to unleash the potential of every team. Our software products help teams all over the planet and our solutions are designed for all types of work. Team collaboration through our tools makes what may be impossible alone, possible together. We believe that the unique contributions of all Atlassians create our success. To ensure that our products and culture continue to incorporate everyone's perspectives and experience, we never discriminate based on race, religion, national origin, gender identity or expression, sexual orientation, age, or marital, veteran, or disability status. All your information will be kept confidential according to EEO guidelines. To provide you the best experience, we can support with accommodations or adjustments at any stage of the recruitment process. Simply inform our Recruitment team during your conversation with them. To learn more about our culture and hiring process, visit go.atlassian.com/crh . In line with local law, identity verification (which may include use of biometric data) is a condition of employment with Atlassian for employment fraud purposes.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-18T20:42:36.809475+00:00",
@@ -12791,11 +12805,13 @@
       },
       "linkedin_detail_triage_hash": "fe9dd0f7676a35ea09e2",
       "linkedin_detail_deferred_at": "2026-10-18T20:42:36.809475+00:00",
-      "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-10-18T20:42:36.809475+00:00",
       "verified_this_run": false,
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "linkedin_detail_attempted_at": "2026-10-21T03:47:03.239554+00:00",
+      "linkedin_detail_fetched_at": "2026-10-21T03:47:03.239554+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4469174884",
@@ -13798,8 +13814,8 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-10-18T20:42:36.809475+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_rate_limited",
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4471019245",
@@ -21176,17 +21192,25 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "224b50cac2fcb29d6163",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-20T07:02:38.590317+00:00",
+      "official_search_attempted_at": "2026-10-21T03:46:27.188297+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "unresolved",
+      "enrichment_status": "deferred",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-20T07:02:05.435297+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "SDE II–III may fit; responsibilities and level requirements could change fit."
+      },
+      "linkedin_detail_triage_hash": "1958ab00d0860fbab316",
+      "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4478646581",
@@ -21212,17 +21236,25 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "ab21d33d090c381d4983",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-20T07:02:38.590317+00:00",
+      "official_search_attempted_at": "2026-10-21T03:46:27.188297+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "unresolved",
+      "enrichment_status": "deferred",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-20T07:02:05.435297+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "SDE II–III may fit; responsibilities and level requirements could change fit."
+      },
+      "linkedin_detail_triage_hash": "c5153cc0d30db0b74ec6",
+      "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4475123420",
@@ -25565,8 +25597,8 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-10-18T20:42:36.809475+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_rate_limited",
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4461561135",
@@ -28164,17 +28196,25 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "b197b2320c3398a295c0",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-20T07:02:38.590317+00:00",
+      "official_search_attempted_at": "2026-10-21T03:46:27.188297+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "unresolved",
+      "enrichment_status": "deferred",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-20T07:02:05.435297+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "Engineer I is early-career aligned; software responsibilities and required skills matter."
+      },
+      "linkedin_detail_triage_hash": "384cfc8c10950510f639",
+      "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4475880448",
@@ -30308,8 +30348,8 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-10-18T20:42:36.809475+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_rate_limited",
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4451253302",
@@ -31554,7 +31594,6 @@
       },
       "linkedin_detail_triage_hash": "3427c5bc31af1464cc9e",
       "linkedin_detail_deferred_at": "2026-10-18T20:42:36.809475+00:00",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
       "recovery_methods": {
         "generic_search": {
           "input_hash": "fe00f9df9b1bcc630373",
@@ -31567,7 +31606,8 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-10-19T04:00:20.814811+00:00",
       "verified_this_run": false,
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4435105558",
@@ -49941,17 +49981,24 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "01c76d58d1844b10390f",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-20T07:02:38.590317+00:00",
+      "official_search_attempted_at": "2026-10-21T03:46:27.188297+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "unresolved",
+      "enrichment_status": "deferred",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-20T07:02:05.435297+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "linkedin_detail_triage": {
+        "needs_jd": false,
+        "priority": "low",
+        "reason": "Engineer III suggests a more senior role, making full-JD enrichment low-value."
+      },
+      "linkedin_detail_triage_hash": "c16ba9b880ef1b23817b",
+      "enrichment_deferred_reason": "linkedin_detail_not_worthwhile"
     },
     {
       "job_id": "4480281265",
@@ -51363,17 +51410,25 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "7689fe962707d664506f",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-20T07:02:38.590317+00:00",
+      "official_search_attempted_at": "2026-10-21T03:46:27.188297+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "unresolved",
+      "enrichment_status": "deferred",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-20T07:02:05.435297+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Unleveled software engineer role is plausible; qualifications could clarify early-career fit."
+      },
+      "linkedin_detail_triage_hash": "851a9b708642060a8d5b",
+      "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4467130152",
@@ -55353,17 +55408,25 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "922fd8611a89bb62eb0b",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-20T07:02:38.590317+00:00",
+      "official_search_attempted_at": "2026-10-21T03:46:27.188297+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "unresolved",
+      "enrichment_status": "deferred",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-20T07:02:05.435297+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Software Engineer II is plausible; required experience and responsibilities could change fit."
+      },
+      "linkedin_detail_triage_hash": "57bbe7301c08df870dcc",
+      "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4447215161",
@@ -63717,27 +63780,35 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "c2405677fe225e7d11e5",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         },
         "direct_careers": {
           "input_hash": "6e779ef677545e09689c",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         },
         "site_exact": {
           "input_hash": "4a666006999128fd1c0f",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-20T07:02:38.590317+00:00",
+      "official_search_attempted_at": "2026-10-21T03:46:27.188297+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "unresolved",
+      "enrichment_status": "deferred",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-20T07:02:05.435297+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Developer 3 may be reachable; experience requirements and software scope could change fit."
+      },
+      "linkedin_detail_triage_hash": "d8e1784e6e5400bfccd6",
+      "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4471779659",
@@ -64310,17 +64381,25 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "8376158f59905469d659",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-20T07:02:38.590317+00:00",
+      "official_search_attempted_at": "2026-10-21T03:46:27.188297+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "unresolved",
+      "enrichment_status": "deferred",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-20T07:02:05.435297+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "New Grad backend role directly matches target seniority and role family."
+      },
+      "linkedin_detail_triage_hash": "136c3c59c49edaf17b79",
+      "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4373085544",
@@ -65675,7 +65754,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-iii-at-pearson-4480416049",
       "official_url": "",
-      "description": "",
+      "description": "Software Engineer \\- Abigail Description This Software Engineer position is responsible for analysis, design, implementation, unit testing, and quality engineering to produce and maintain high\\-quality software solutions. This is an opportunity to develop a new platform, using a new technology stack and new processes, from the early stages. This is a role that requires rapid learning of new tools and technologies: new languages, new domains (data science, collaboration with psychometrics), and new processes (LLM codegen, agentic AI development). The ideal engineer is willing to take high\\-level ownership of functionality, filling in the gaps and eliciting requirements without fully relying on a business analyst, and executing quality processes without fully relying on a QA engineer. The ideal candidate is willing to adapt to and adopt new ways of working, excited about new challenges, and able to show past work and successes that relate to the role. You will: Develop and support a new web application stack Leverage and refine LLM\\-codegen processes to balance agility and quality Develop and leverage agent\\-driven AI architectures Work closely with customers and adapt tools to their needs Develop psychometrics and data science\\-focused tools in R Operate, extend and create cloud\\-based solutions in AWS Develop and maintain code using best practices for maintainability, performance, security, and verifiability Possess the ability to quickly learn new processes, tools, and business domains Work with engineering leadership to deliver timely, robust software adhering to best practices Required Education and Experience * Bachelor’s degree in Computer Science, MIS, or equivalent technology discipline, or equivalent on\\-the\\-job training * A willingness to learn new technologies and new domains (R, data science, agentic AI cloud applications) * 3\\-5 years relevant full\\-stack software development experience * Experience with development, maintenance, and testing of software, following industry best practices * Experience with highly available, highly concurrent cloud\\-based Web applications * Some background in statistics is not required but is a big plus Current Tech Stack * AWS hosted applications * Go, Postgres, TypeScript, Vue.js, PrimeVue, D3 * R and R data science libraries * Github and Github\\-driven CI/CD * Heavily LLM\\-driven development Desired Experience * Experience working in an Agile environment * Desire to expand knowledge in many development languages, applications, and tools * Able to think technically and analytically * Ability to understand the philosophy of architecture * Must assimilate information, distill knowledge, apply experience and provide solution alternatives and recommendations * Must have strong time management skills \\- including the ability to work well under pressure, plan, set priorities, adapt to change, and meet established timelines * Must be a self\\-starter and detail\\-oriented * Effective written and verbal communication skills * Proven ability to work and excel within a team Compensation at Pearson is influenced by a wide array of factors including but not limited to skill set, level of experience, and specific location. As required by the California, Colorado, Hawaii, Illinois, Maryland, Minnesota, New Jersey, New York State, New York City, Vermont, Washington State, and Washington DC laws, the pay range for this position is as follows: The full\\-time salary range for this position is between $100,000 \\- $130,000\\. This position is eligible to participate in an annual incentive program, and information on benefits offered ishere. Applications will be taken until 11/2\\. \\#LI\\-EB1 **Who we are:** At Pearson, our purpose is simple: to help people realize the life they imagine through learning. We believe that every learning opportunity is a chance for a personal breakthrough. We are the world's lifelong learning company. For us, learning isn't just what we do. It's who we are. To learn more: We are Pearson. Pearson is an Equal Opportunity Employer and a member of E\\-Verify. Employment decisions are based on qualifications, merit and business need. Qualified applicants will receive consideration for employment without regard to race, ethnicity, color, religion, sex, sexual orientation, gender identity, gender expression, age, national origin, protected veteran status, disability status or any other group protected by law. We actively seek qualified candidates who are protected veterans and individuals with disabilities as defined under VEVRAA and Section 503 of the Rehabilitation Act. If you are an individual with a disability and are unable or limited in your ability to use or access our career site as a result of your disability, you may request reasonable accommodations by emailing TalentExperienceGlobalTeam@grp.pearson.com. **Job:** Engineering **Job Family:** TECHNOLOGY **Organization:** Assessment \\& Qualifications **Schedule:** FULL\\_TIME **Workplace Type:** Remote **Req ID:** 26369 \\#LI\\-REMOTE",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-20T07:02:05.435297+00:00",
@@ -65694,10 +65773,12 @@
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-20T07:02:38.590317+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "unresolved",
+      "enrichment_status": "resolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-20T07:02:05.435297+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "jd_recovery_at": "2026-10-21T03:46:27.188297+00:00",
+      "enrichment_method": "exact_indeed_peer"
     },
     {
       "job_id": "4460221173",
@@ -81259,27 +81340,35 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "6bd46ed945ae70c5fb5e",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         },
         "direct_careers": {
           "input_hash": "fea9e55e6397b8bc4561",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         },
         "site_exact": {
           "input_hash": "1143a94999a7cabb4b48",
-          "attempted_at": "2026-10-20T07:02:05.435297+00:00",
+          "attempted_at": "2026-10-21T03:46:27.188297+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-20T07:02:38.590317+00:00",
+      "official_search_attempted_at": "2026-10-21T03:46:27.188297+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "unresolved",
+      "enrichment_status": "deferred",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-10-20T07:02:05.435297+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Secrets infrastructure is relevant; level and required experience are unknown."
+      },
+      "linkedin_detail_triage_hash": "067f98d6daa958142e45",
+      "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4458578088",
@@ -87613,8 +87702,8 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-10-18T20:42:36.809475+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_rate_limited",
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4480873365",
@@ -87644,7 +87733,6 @@
       },
       "linkedin_detail_triage_hash": "19cd34a74d7b40857a0f",
       "linkedin_detail_deferred_at": "2026-10-18T20:42:36.809475+00:00",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
       "recovery_methods": {
         "generic_search": {
           "input_hash": "61adec1481f801b7a6cb",
@@ -87657,7 +87745,8 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-10-19T04:00:20.814811+00:00",
       "verified_this_run": false,
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4471172418",
