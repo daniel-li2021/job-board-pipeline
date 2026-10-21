@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-21T14:56:10.538140+00:00",
-  "count": 4386,
+  "generated_at": "2026-10-21T14:57:42.595537+00:00",
+  "count": 4390,
   "companies": [
     {
       "name": "1-800 CONTACTS",
@@ -994,13 +994,15 @@
         "0dff9b8c113d14a3ad27ff3a",
         "0eac03c4307fd1fa4685a240",
         "0f8692bfb36f715a4ee8e6f9",
+        "244a2f81e62487fdfcabebb8",
         "27b535c5a14954c1fc8c46d8",
         "307e6f370e703c15bcc4dc66",
         "4ce365f4c98633cf97761664",
+        "5b908478398c314ea392706b",
         "67ba542ff9092dd2d5dfe566",
         "e288864d57856d8105bdc0a3"
       ],
-      "seen_count": 9
+      "seen_count": 11
     },
     {
       "name": "Adelphi Data",
@@ -3847,11 +3849,12 @@
         "2496a740fc4a5bcfef4d1efa",
         "3ed4a0b85d6c7305ffcafb4f",
         "59ed70e3238b2845eb48a525",
+        "5ed81ff61f27b751fbbbe510",
         "96f4ffb55f97f4c93c6b8815",
         "c87f9c2b544e2bb5564ffafe",
         "d55ab63f5bd1aef9b5e0745f"
       ],
-      "seen_count": 7
+      "seen_count": 8
     },
     {
       "name": "Aquila Technology",
@@ -9531,6 +9534,19 @@
       "tags": [],
       "seen_job_keys": [
         "2cf72bbce9e15dac77b29cb7"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Carl Zeiss Meditec",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "536eabb104e060d0adf12e59"
       ],
       "seen_count": 1
     },
@@ -18195,9 +18211,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "0a92d37e17675d53fd7c3ac6"
+        "0a92d37e17675d53fd7c3ac6",
+        "5dae08a3a38ee115c7f19384"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "EquipmentShare",
@@ -19550,6 +19567,7 @@
         "6bfded6123d79c5b411cccdf",
         "6d53adadc45392cccfcd418a",
         "7f7e360c33a4d5fdf107fee4",
+        "8575e1f8b200b3a1b910462b",
         "8cf583f5c0de0d1c28fa4b96",
         "9dbfda1d025d3711085221bb",
         "a662c31655a20558418e0bfe",
@@ -19560,7 +19578,7 @@
         "f2fa387ccb1a66cb4ece16d5",
         "f6ae422c61acdf336994cd10"
       ],
-      "seen_count": 18
+      "seen_count": 19
     },
     {
       "name": "Fetcherr",
@@ -20854,6 +20872,19 @@
       "seen_count": 1
     },
     {
+      "name": "Fresenius Medical Care",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "92e082c477bdd01ed67b2a34"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Fresh Consulting",
       "aliases": [],
       "size": "unknown",
@@ -21627,6 +21658,7 @@
       "seen_job_keys": [
         "342278f8b7fc6fd876c3c168",
         "387648cffff0ad7ff97da330",
+        "44e5027aa44e98d88cc61482",
         "4f77ba9dfd2443bcbad0d09c",
         "555f771b0b31d55c5234b265",
         "60900d3d622716271cd4b994",
@@ -21635,6 +21667,7 @@
         "89b72926484df692e11d0854",
         "8cf48814ee8fcb8d6317d133",
         "afd6c3ac46f988996d6f19e8",
+        "baef15e3712edb27baff6c66",
         "bb9852adabcae5515b80ec90",
         "bdff2a9f8477487775d05975",
         "c08a5fd08b67f07745861544",
@@ -21643,7 +21676,7 @@
         "e772b97c16877ecc4d87cb09",
         "f62286bd98e5a11a5fd6cf33"
       ],
-      "seen_count": 17
+      "seen_count": 19
     },
     {
       "name": "GE",
@@ -27279,9 +27312,10 @@
         "f06c84294666ce069be878f2",
         "f1b54328c61bc9eea056ac47",
         "f3c2ae741c24665bbd539390",
+        "f78e81f08c3856ee4f7bdfdd",
         "f958a3050e5ea470add7e18a"
       ],
-      "seen_count": 18
+      "seen_count": 19
     },
     {
       "name": "INTERCONNECT WIRING",
@@ -38444,6 +38478,19 @@
       "seen_count": 1
     },
     {
+      "name": "Oshkosh Corporation",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "f59c8e0c4cb7a630d1f8f0a9"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "OSI Digital",
       "aliases": [],
       "size": "unknown",
@@ -41411,12 +41458,14 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "0103b3bd2ea4c165f80444f6",
         "3aec34bcd502459817bc7ded",
         "962d7e582330f5b2d3781c17",
+        "a8af927328a87635bd000db5",
         "afef6161e5f5d1786216de40",
         "ee31624e876c3da756c58f23"
       ],
-      "seen_count": 4
+      "seen_count": 6
     },
     {
       "name": "Pure Food UK",
@@ -44583,6 +44632,19 @@
         "b0b429df2d4261e60826193a"
       ],
       "seen_count": 2
+    },
+    {
+      "name": "Scopely",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "15bdde466cf3403598788636"
+      ],
+      "seen_count": 1
     },
     {
       "name": "ScoutBetter",
