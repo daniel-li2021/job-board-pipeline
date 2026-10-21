@@ -572,7 +572,7 @@
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-10-21T03:46:27.188297+00:00"
+    "jd_recovery_at": "2026-10-21T04:00:09.290766+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -9581,7 +9581,7 @@
       },
       "linkedin_detail_triage_hash": "2ef91effa8ee0c3ba1f6",
       "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "linkedin_rate_limited"
     },
     {
       "job_id": "4462713072",
@@ -13815,7 +13815,7 @@
       "source_verified_at": "2026-10-18T20:42:36.809475+00:00",
       "verified_this_run": false,
       "enrichment_failure_reason": "linkedin_rate_limited",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "linkedin_rate_limited"
     },
     {
       "job_id": "4471019245",
@@ -21210,7 +21210,7 @@
       },
       "linkedin_detail_triage_hash": "1958ab00d0860fbab316",
       "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "linkedin_rate_limited"
     },
     {
       "job_id": "4478646581",
@@ -21254,7 +21254,7 @@
       },
       "linkedin_detail_triage_hash": "c5153cc0d30db0b74ec6",
       "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "linkedin_rate_limited"
     },
     {
       "job_id": "4475123420",
@@ -25598,7 +25598,7 @@
       "source_verified_at": "2026-10-18T20:42:36.809475+00:00",
       "verified_this_run": false,
       "enrichment_failure_reason": "linkedin_rate_limited",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "linkedin_rate_limited"
     },
     {
       "job_id": "4461561135",
@@ -28203,8 +28203,8 @@
       "recovery_candidates": [],
       "official_search_attempted_at": "2026-10-21T03:46:27.188297+00:00",
       "official_search_status": "no_match",
-      "enrichment_status": "deferred",
-      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_status": "unresolved",
+      "enrichment_failure_reason": "linkedin_http_429",
       "source_verified_at": "2026-10-20T07:02:05.435297+00:00",
       "verified_this_run": true,
       "linkedin_detail_triage": {
@@ -28214,7 +28214,7 @@
       },
       "linkedin_detail_triage_hash": "384cfc8c10950510f639",
       "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "linkedin_detail_attempted_at": "2026-10-21T04:00:11.589194+00:00"
     },
     {
       "job_id": "4475880448",
@@ -30349,7 +30349,7 @@
       "source_verified_at": "2026-10-18T20:42:36.809475+00:00",
       "verified_this_run": false,
       "enrichment_failure_reason": "linkedin_rate_limited",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "linkedin_rate_limited"
     },
     {
       "job_id": "4451253302",
@@ -31607,7 +31607,7 @@
       "source_verified_at": "2026-10-19T04:00:20.814811+00:00",
       "verified_this_run": false,
       "enrichment_failure_reason": "linkedin_rate_limited",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "linkedin_rate_limited"
     },
     {
       "job_id": "4435105558",
@@ -51428,7 +51428,7 @@
       },
       "linkedin_detail_triage_hash": "851a9b708642060a8d5b",
       "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "linkedin_rate_limited"
     },
     {
       "job_id": "4467130152",
@@ -55426,7 +55426,7 @@
       },
       "linkedin_detail_triage_hash": "57bbe7301c08df870dcc",
       "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "linkedin_rate_limited"
     },
     {
       "job_id": "4447215161",
@@ -63808,7 +63808,7 @@
       },
       "linkedin_detail_triage_hash": "d8e1784e6e5400bfccd6",
       "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "linkedin_rate_limited"
     },
     {
       "job_id": "4471779659",
@@ -64399,7 +64399,7 @@
       },
       "linkedin_detail_triage_hash": "136c3c59c49edaf17b79",
       "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "linkedin_rate_limited"
     },
     {
       "job_id": "4373085544",
@@ -81368,7 +81368,7 @@
       },
       "linkedin_detail_triage_hash": "067f98d6daa958142e45",
       "linkedin_detail_deferred_at": "2026-10-21T03:46:27.188297+00:00",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "linkedin_rate_limited"
     },
     {
       "job_id": "4458578088",
@@ -87703,7 +87703,7 @@
       "source_verified_at": "2026-10-18T20:42:36.809475+00:00",
       "verified_this_run": false,
       "enrichment_failure_reason": "linkedin_rate_limited",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "linkedin_rate_limited"
     },
     {
       "job_id": "4480873365",
@@ -87746,7 +87746,7 @@
       "source_verified_at": "2026-10-19T04:00:20.814811+00:00",
       "verified_this_run": false,
       "enrichment_failure_reason": "linkedin_rate_limited",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "linkedin_rate_limited"
     },
     {
       "job_id": "4471172418",
