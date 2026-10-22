@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-22T05:14:52.410670+00:00",
-  "count": 4486,
+  "generated_at": "2026-10-22T15:03:30.935238+00:00",
+  "count": 4490,
   "companies": [
     {
       "name": "1-800 CONTACTS",
@@ -997,12 +997,13 @@
         "244a2f81e62487fdfcabebb8",
         "27b535c5a14954c1fc8c46d8",
         "307e6f370e703c15bcc4dc66",
+        "3875450d9829dea2c99b5332",
         "4ce365f4c98633cf97761664",
         "5b908478398c314ea392706b",
         "67ba542ff9092dd2d5dfe566",
         "e288864d57856d8105bdc0a3"
       ],
-      "seen_count": 11
+      "seen_count": 12
     },
     {
       "name": "Adelphi Data",
@@ -6335,9 +6336,10 @@
       "tags": [],
       "seen_job_keys": [
         "4e7c028a07bb09b1a9074d36",
-        "5305de9ce900f7cf17d68e87"
+        "5305de9ce900f7cf17d68e87",
+        "b2d17c1817bcb9c633fd567f"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Beacon Bank",
@@ -7416,6 +7418,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Bloomberg Industry Group",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "fbe0cd3a91ab259a0c314673"
+      ],
       "seen_count": 1
     },
     {
@@ -17020,9 +17035,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "3c490564309184903cf490ca"
+        "3c490564309184903cf490ca",
+        "81c79b7f37543b695b8eab70"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "EBSCO Information Services",
@@ -22024,6 +22040,19 @@
       "seen_count": 1
     },
     {
+      "name": "Gate City Bank",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "6021683f673fe0138f5d1944"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "GAUMARD SCIENTIFIC",
       "aliases": [],
       "size": "unknown",
@@ -22071,12 +22100,15 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "184fc6b6478ff32b591aaa34",
         "342278f8b7fc6fd876c3c168",
         "387648cffff0ad7ff97da330",
         "44e5027aa44e98d88cc61482",
         "4f77ba9dfd2443bcbad0d09c",
         "555f771b0b31d55c5234b265",
         "60900d3d622716271cd4b994",
+        "63a03fb20fb1c2d68fdd600c",
+        "8283b7876a4f1ad2a71636d9",
         "8646d82ff3cd2c3efbd72730",
         "88cac7aec68ac30bfe09e37e",
         "89b72926484df692e11d0854",
@@ -22091,7 +22123,7 @@
         "e772b97c16877ecc4d87cb09",
         "f62286bd98e5a11a5fd6cf33"
       ],
-      "seen_count": 19
+      "seen_count": 22
     },
     {
       "name": "GE",
@@ -23885,6 +23917,7 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "0bfd80edb7250234342c6059",
         "33b9bf8df9a73c1b9b1ecb0a",
         "7a496753c004131c7d6c1bd9",
         "81fe705a9154b80cbf00b04d",
@@ -23892,7 +23925,7 @@
         "bf281023e46b957030c53015",
         "c3cb630a67120f7ce36e54c8"
       ],
-      "seen_count": 6
+      "seen_count": 7
     },
     {
       "name": "Guild Technology Group",
@@ -25633,6 +25666,19 @@
       "seen_count": 1
     },
     {
+      "name": "Hitachi",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "1628f38032fd98da710b7e99"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Hitachi Rail",
       "aliases": [],
       "size": "unknown",
@@ -26864,9 +26910,10 @@
       "tags": [],
       "seen_job_keys": [
         "5d8256978be8dfd3d9ce3635",
-        "630854b802c8ae1ed61cb8f8"
+        "630854b802c8ae1ed61cb8f8",
+        "ce2519d302f4acec92405368"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "IMG Academy",
@@ -31190,13 +31237,14 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "2ca3ff0384a2cae0b0a04664",
         "350e53e81f3f368f88fb96cc",
         "5b142f1f08e3a59210412d16",
         "a856064f9e506057e7be45fe",
         "cc85cae84908300470402ef3",
         "ffd41a037ba885590c732208"
       ],
-      "seen_count": 5
+      "seen_count": 6
     },
     {
       "name": "Laritech Inc",
@@ -42580,6 +42628,19 @@
       "seen_count": 1
     },
     {
+      "name": "Q2 Software",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "7005dbf1f2650afa0fb7cc5e"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "QA & QC Learning",
       "aliases": [],
       "size": "unknown",
@@ -44877,9 +44938,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "a3b6f2f6014a4a2fff66f9a9",
         "bb1609efe51e8a530e489eec"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "RTC",
