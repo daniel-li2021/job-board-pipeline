@@ -2,6 +2,555 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-10-23T14:46:53.642398+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 21,
+      "cache_reused": 472,
+      "peer_reused": 1,
+      "same_content_reused": 7,
+      "non_material_change_reused": 0,
+      "new_or_changed": 23,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 23
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 2533,
+      "requests": 4,
+      "input_tokens": 30901,
+      "cached_input_tokens": 2724,
+      "output_tokens": 4808,
+      "reasoning_tokens": 3094,
+      "estimated_usd": 0.005249,
+      "latency_seconds": 54.847,
+      "latency_measured": true,
+      "effective_rpm": 4.38,
+      "effective_tpm": 39063.94,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 4,
+      "primary_batches_total": 4,
+      "batches_attempted": 4,
+      "batches_succeeded": 4,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 21,
+      "funnel": {
+        "after_dedup": 17576,
+        "after_company": 17576,
+        "after_hard_filter": 14237,
+        "after_prefilter": 3026,
+        "dropped": 14550
+      },
+      "output": {
+        "tier_a": 7,
+        "tier_b": 37,
+        "shown": 44,
+        "new_jobs": 170,
+        "new_jobs_added": 4
+      },
+      "enrichment": {
+        "discovered": 17645,
+        "needed": 999,
+        "source_jds_available": 16646,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 999
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10587420/software-dev-engineer-ii-zamboni",
+              "company": "Amazon",
+              "title": "Software Dev Engineer II, Zamboni"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210801811",
+              "company": "JPMorgan Chase",
+              "title": "Security Engineer III"
+            },
+            {
+              "key": "url::https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-ISD-Office---DGTC-AR-BENTONVILLE-Home-Office/XMLNAME--USA--Software-Engineer-III_R-2678751-1",
+              "company": "Walmart Global Tech",
+              "title": "(USA) Software Engineer III"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Westford-Massachusetts-United-States-of-America/Software-Engineer_1215856-2",
+              "company": "HPE",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200691134/bim-systems-engineer-data-center-operations",
+              "company": "Apple",
+              "title": "BIM Systems Engineer, Data Center Operations"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10585300/data-engineer-ii-amz26680-2",
+              "company": "Amazon",
+              "title": "Data Engineer II - AMZ26680.2"
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200690343/database-systems-sre-ase-coordination-sre",
+              "company": "Apple",
+              "title": "Database Systems SRE, ASE Coordination SRE"
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Hardware-Security-Engineer---Hyperscaler-Security-Hybrid_2026304",
+              "company": "Cisco",
+              "title": "Hardware Security Engineer - Hyperscaler Security Hybrid"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 17.641,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 8,
+            "input_tokens": 9144,
+            "cached_input_tokens": 0,
+            "output_tokens": 1677,
+            "reasoning_tokens": 1013,
+            "estimated_usd": 0.001753
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10587420/software-dev-engineer-ii-zamboni",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Distributed backend services",
+                "AWS production deployments"
+              ],
+              "main_gaps": [
+                "3+ years professional experience",
+                "Fleet hardware operations"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210801811",
+              "match_score": 28.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java and Spring Boot",
+                "AWS application development"
+              ],
+              "main_gaps": [
+                "10+ years security engineering",
+                "Security solution development"
+              ]
+            },
+            {
+              "key": "url::https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-ISD-Office---DGTC-AR-BENTONVILLE-Home-Office/XMLNAME--USA--Software-Engineer-III_R-2678751-1",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production software delivery",
+                "CI/CD and testing"
+              ],
+              "main_gaps": [
+                "Two years software engineering"
+              ]
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Westford-Massachusetts-United-States-of-America/Software-Engineer_1215856-2",
+              "match_score": 75.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Software development and debugging",
+                "Testing and integration"
+              ],
+              "main_gaps": [
+                "2-4 years experience"
+              ]
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200691134/bim-systems-engineer-data-center-operations",
+              "match_score": 25.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Data center systems context"
+              ],
+              "main_gaps": [
+                "BIM and CAD systems expertise"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10585300/data-engineer-ii-amz26680-2",
+              "match_score": 56.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Data pipeline experience",
+                "SQL and Databricks"
+              ],
+              "main_gaps": [
+                "Oracle BI data structures",
+                "OLAP experience"
+              ]
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200690343/database-systems-sre-ase-coordination-sre",
+              "match_score": 67.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Distributed systems experience",
+                "Production reliability practices"
+              ],
+              "main_gaps": [
+                "ZooKeeper or etcd operations"
+              ]
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Hardware-Security-Engineer---Hyperscaler-Security-Hybrid_2026304",
+              "match_score": 15.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud infrastructure exposure"
+              ],
+              "main_gaps": [
+                "Hardware security experience",
+                "Required years of experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5461873008",
+              "company": "Anthropic",
+              "title": "Applied AI Security Architect - Healthcare & Life Sciences"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.207,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3669,
+            "cached_input_tokens": 0,
+            "output_tokens": 248,
+            "reasoning_tokens": 159,
+            "estimated_usd": 0.000491
+          },
+          "decisions": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5461873008",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production AI systems",
+                "Healthcare/life sciences exposure"
+              ],
+              "main_gaps": [
+                "Enterprise security and compliance",
+                "8+ years' experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10587264/software-development-engineer-neuron-collectives-annapurna-labs",
+              "company": "Amazon",
+              "title": "Software Development Engineer, Neuron Collectives, Annapurna Labs"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/132867596763439814-machine-learning-engineer-ai-ml-expert-for-agents-and-trustgraph-google-ads",
+              "company": "Google",
+              "title": "Machine Learning Engineer, AI/ML Expert for Agents and TrustGraph, Google Ads"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/102589245557744326-software-engineer-iii-infrastructure",
+              "company": "Google",
+              "title": "Software Engineer III, Infrastructure"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10587403/software-development-engineer-agentic-ai-velocity-labs",
+              "company": "Amazon",
+              "title": "Software Development Engineer, Agentic AI, Velocity Labs"
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200690744/ai-ml-engineer-system-rf-data-ecosystem",
+              "company": "Apple",
+              "title": "AI/ML Engineer: System RF Data Ecosystem"
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557040468",
+              "company": "Microsoft",
+              "title": "Software Engineer II - Finance Data & Experiences"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8179659",
+              "company": "Pure Storage",
+              "title": "DevOps Engineer"
+            },
+            {
+              "key": "url::https://careers.netapp.com/en/job/san-jose/software-engineer-cloud-volumes/27600/102319759728",
+              "company": "NetApp",
+              "title": "Software Engineer - Cloud Volumes"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10587268/data-engineer-ii-sales-data-services-sds",
+              "company": "Amazon",
+              "title": "Data Engineer II, Sales Data Services (SDS)"
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/AI-Infrastructure-Technical-Systems-Engineer_2026031",
+              "company": "Cisco",
+              "title": "AI Infrastructure Technical Systems Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 24.774,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 13287,
+            "cached_input_tokens": 0,
+            "output_tokens": 2312,
+            "reasoning_tokens": 1536,
+            "estimated_usd": 0.002485
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10587264/software-development-engineer-neuron-collectives-annapurna-labs",
+              "match_score": 66.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Distributed systems",
+                "C/C++ experience"
+              ],
+              "main_gaps": [
+                "Collective communication algorithms",
+                "Hardware/software integration"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/132867596763439814-machine-learning-engineer-ai-ml-expert-for-agents-and-trustgraph-google-ads",
+              "match_score": 85.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production LLM systems",
+                "Evaluation pipelines"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/102589245557744326-software-engineer-iii-infrastructure",
+              "match_score": 60.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Infrastructure engineering",
+                "Linux systems"
+              ],
+              "main_gaps": [
+                "Linux kernel development",
+                "IOMMU experience"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10587403/software-development-engineer-agentic-ai-velocity-labs",
+              "match_score": 62.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Agentic AI systems",
+                "Full software lifecycle"
+              ],
+              "main_gaps": [
+                "3+ years non-internship experience"
+              ]
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200690744/ai-ml-engineer-system-rf-data-ecosystem",
+              "match_score": 55.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI solution development",
+                "Scalable software systems"
+              ],
+              "main_gaps": [
+                "Senior-level architecture scope",
+                "RF manufacturing data"
+              ]
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557040468",
+              "match_score": 83.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud-based data solutions",
+                "End-to-end software ownership"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8179659",
+              "match_score": 43.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "non_us",
+              "top_match_reasons": [
+                "CI/CD automation",
+                "Containerized deployments"
+              ],
+              "main_gaps": [
+                "UAT environment ownership",
+                "SaaS and on-prem releases"
+              ]
+            },
+            {
+              "key": "url::https://careers.netapp.com/en/job/san-jose/software-engineer-cloud-volumes/27600/102319759728",
+              "match_score": 82.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud-native services",
+                "Production reliability"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10587268/data-engineer-ii-sales-data-services-sds",
+              "match_score": 53.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Data pipeline experience",
+                "SQL and Spark"
+              ],
+              "main_gaps": [
+                "Data warehouse and OLAP",
+                "Redshift analytics stack"
+              ]
+            },
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/AI-Infrastructure-Technical-Systems-Engineer_2026031",
+              "match_score": 28.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud infrastructure",
+                "Automation tooling"
+              ],
+              "main_gaps": [
+                "GPU/HPC infrastructure operations",
+                "5+ years systems engineering"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Data-Engineer-Remote_2027223",
+              "company": "Cisco",
+              "title": "Data Engineer Remote"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/130979185542734534-research-data-scientist-core-metrics",
+              "company": "Google",
+              "title": "Research Data Scientist, Core Metrics"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 8.225,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 4801,
+            "cached_input_tokens": 2724,
+            "output_tokens": 571,
+            "reasoning_tokens": 386,
+            "estimated_usd": 0.00052
+          },
+          "decisions": [
+            {
+              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Data-Engineer-Remote_2027223",
+              "match_score": 83.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production data ingestion pipelines",
+                "Python, SQL, and CI/CD"
+              ],
+              "main_gaps": [
+                "Security asset attribution"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/130979185542734534-research-data-scientist-core-metrics",
+              "match_score": 64.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Quantitative computing education",
+                "Python, SQL, and model evaluation"
+              ],
+              "main_gaps": [
+                "Three years analytics experience",
+                "Product metrics research"
+              ]
+            }
+          ]
+        }
+      ],
+      "scrape_failure_sources": [],
+      "scrape_failure_causes": {}
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-10-22T23:45:29.362960+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -19370,667 +19919,6 @@
       "scrape_failure_causes": {
         "hubspot": "404",
         "cvs": "error"
-      }
-    },
-    {
-      "pipeline": "official",
-      "run_at": "2026-10-13T14:48:53.314887+00:00",
-      "mode": "pipeline",
-      "health": "limited",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 26,
-      "cache_reused": 442,
-      "peer_reused": 2,
-      "same_content_reused": 10,
-      "non_material_change_reused": 0,
-      "new_or_changed": 28,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 26,
-        "prior_rule_result_recency_gated": 2
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 2412,
-      "requests": 4,
-      "input_tokens": 36893,
-      "cached_input_tokens": 2724,
-      "output_tokens": 5440,
-      "reasoning_tokens": 3338,
-      "estimated_usd": 0.006164,
-      "latency_seconds": 58.554,
-      "latency_measured": true,
-      "effective_rpm": 4.1,
-      "effective_tpm": 43378.42,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 4,
-      "primary_batches_total": 4,
-      "batches_attempted": 4,
-      "batches_succeeded": 4,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 26,
-      "funnel": {
-        "after_dedup": 16767,
-        "after_company": 16767,
-        "after_hard_filter": 13557,
-        "after_prefilter": 2880,
-        "dropped": 13887
-      },
-      "output": {
-        "tier_a": 13,
-        "tier_b": 25,
-        "shown": 38,
-        "new_jobs": 168,
-        "new_jobs_added": 3
-      },
-      "enrichment": {
-        "discovered": 16828,
-        "needed": 1024,
-        "source_jds_available": 15803,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 1025
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556985571",
-              "company": "Microsoft",
-              "title": "Software Engineer"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/88708593351566022-network-implementation-engineer-iii",
-              "company": "Google",
-              "title": "Network Implementation Engineer III"
-            },
-            {
-              "key": "url::https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Software-Development-Engineer-II_R-110488",
-              "company": "Expedia Group",
-              "title": "Software Development Engineer II"
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10576584/data-engineer-ii-aws-analytics-engineering",
-              "company": "Amazon",
-              "title": "Data Engineer II, AWS Analytics Engineering"
-            },
-            {
-              "key": "url::https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/Ethernet-System-Integration-Engineer_JR0287502",
-              "company": "Intel",
-              "title": "Ethernet System Integration Engineer"
-            },
-            {
-              "key": "url::https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/Ethernet-System-Integration-Engineer_JR0287496",
-              "company": "Intel",
-              "title": "Ethernet System Integration Engineer"
-            },
-            {
-              "key": "url::https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Treasury-Analyst--Banking-Infrastructure_R-110518",
-              "company": "Expedia Group",
-              "title": "Treasury Analyst, Banking Infrastructure"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 12.571,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 7,
-            "input_tokens": 10650,
-            "cached_input_tokens": 0,
-            "output_tokens": 1239,
-            "reasoning_tokens": 656,
-            "estimated_usd": 0.001685
-          },
-          "decisions": [
-            {
-              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393556985571",
-              "match_score": 88.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack product engineering",
-                "Cloud services and AI"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/88708593351566022-network-implementation-engineer-iii",
-              "match_score": 28.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Linux scripting",
-                "Technical troubleshooting"
-              ],
-              "main_gaps": [
-                "Network operations experience",
-                "Telecommunications field operations"
-              ]
-            },
-            {
-              "key": "url::https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Software-Development-Engineer-II_R-110488",
-              "match_score": 78.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Backend services and APIs",
-                "Production reliability and testing"
-              ],
-              "main_gaps": [
-                "2+ years professional experience"
-              ]
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10576584/data-engineer-ii-aws-analytics-engineering",
-              "match_score": 44.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Data pipelines and Spark",
-                "Data quality and processing"
-              ],
-              "main_gaps": [
-                "5+ years data engineering",
-                "AWS analytics services"
-              ]
-            },
-            {
-              "key": "url::https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/Ethernet-System-Integration-Engineer_JR0287502",
-              "match_score": 20.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python and C/C++",
-                "Docker and scripting"
-              ],
-              "main_gaps": [
-                "8+ years hardware test development",
-                "IP validation and lab debugging"
-              ]
-            },
-            {
-              "key": "url::https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/Ethernet-System-Integration-Engineer_JR0287496",
-              "match_score": 47.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python/C++ software development",
-                "Linux and testing"
-              ],
-              "main_gaps": [
-                "Hardware lab validation",
-                "Firmware test environments"
-              ]
-            },
-            {
-              "key": "url::https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Treasury-Analyst--Banking-Infrastructure_R-110518",
-              "match_score": 16.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python and SQL",
-                "Automation and analytics"
-              ],
-              "main_gaps": [
-                "Banking or treasury experience",
-                "Finance controls and reporting"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10576942/applied-scientist-ii-international-and-emerging-stores-payments",
-              "company": "Amazon",
-              "title": "Applied Scientist II, International and Emerging Stores Payments"
-            },
-            {
-              "key": "url::https://lifeattiktok.com/search/7695929967028750645",
-              "company": "TikTok",
-              "title": "Research Scientist Graduate (E-Commerce Recommendation Region) - 2027 Start"
-            },
-            {
-              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210797488",
-              "company": "JPMorgan Chase",
-              "title": "Data Scientist [Multiple Positions Available]"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 9.837,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 3,
-            "input_tokens": 4924,
-            "cached_input_tokens": 0,
-            "output_tokens": 926,
-            "reasoning_tokens": 679,
-            "estimated_usd": 0.000955
-          },
-          "decisions": [
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10576942/applied-scientist-ii-international-and-emerging-stores-payments",
-              "match_score": 49.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production AI systems",
-                "ML model development"
-              ],
-              "main_gaps": [
-                "3+ years modeling experience",
-                "Large-scale personalization and experimentation"
-              ]
-            },
-            {
-              "key": "url::https://lifeattiktok.com/search/7695929967028750645",
-              "match_score": 78.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "LLM agents and retrieval",
-                "Production AI implementation"
-              ],
-              "main_gaps": [
-                "Hands-on PyTorch experience"
-              ]
-            },
-            {
-              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210797488",
-              "match_score": 42.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python and SQL",
-                "Applied ML experience"
-              ],
-              "main_gaps": [
-                "3 years of relevant experience",
-                "Transaction forecasting and targeting"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 3,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/93217840860930758-software-engineer-generative-ai-geo-data",
-              "company": "Google",
-              "title": "Software Engineer, Generative AI, Geo Data"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/88041202678407878-software-engineer-ai-infrastructure-core",
-              "company": "Google",
-              "title": "Software Engineer, AI Infrastructure, Core"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/84794894597399238-forward-deployed-engineer-enterprise-context-layer-agentic-data-cloud",
-              "company": "Google",
-              "title": "Forward Deployed Engineer, Enterprise Context Layer, Agentic Data Cloud"
-            },
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Wilmington-DE/Data-Engineer-4_R1001669-2",
-              "company": "Capital One",
-              "title": "Data Engineer 4"
-            },
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Chicago-IL/Data-Engineer-5_R1003431-2",
-              "company": "Capital One",
-              "title": "Data Engineer 5"
-            },
-            {
-              "key": "url::https://morganstanley.eightfold.ai/careers/job/549798643526",
-              "company": "Morgan Stanley",
-              "title": "AI Full Stack Engineer (Prime Brokerage Technology)"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/93430046605091526-software-engineer-consumer-devai",
-              "company": "Google",
-              "title": "Software Engineer, Consumer DevAI"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/103782360897462982-software-engineer-iii-feed-recommendation-infrastructure",
-              "company": "Google",
-              "title": "Software Engineer III, Feed Recommendation Infrastructure"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/136126282134889158-packaging-design-engineer-platforms-infrastructure-engineering",
-              "company": "Google",
-              "title": "Packaging Design Engineer, Platforms Infrastructure Engineering"
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10576928/software-development-engineer-special-projects",
-              "company": "Amazon",
-              "title": "Software Development Engineer, Special Projects"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 19.507,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 10,
-            "input_tokens": 11691,
-            "cached_input_tokens": 0,
-            "output_tokens": 1818,
-            "reasoning_tokens": 997,
-            "estimated_usd": 0.002078
-          },
-          "decisions": [
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/93217840860930758-software-engineer-generative-ai-geo-data",
-              "match_score": 82.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production GenAI systems",
-                "ML deployment and evaluation"
-              ],
-              "main_gaps": [
-                "Two years software development"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/88041202678407878-software-engineer-ai-infrastructure-core",
-              "match_score": 38.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Agent workflows and evaluation",
-                "Production AI deployment"
-              ],
-              "main_gaps": [
-                "Five years Java development",
-                "Machine learning infrastructure"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/84794894597399238-forward-deployed-engineer-enterprise-context-layer-agentic-data-cloud",
-              "match_score": 48.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Hands-on agent implementation",
-                "Customer-focused AI systems"
-              ],
-              "main_gaps": [
-                "Five years software development",
-                "Three years software architecture"
-              ]
-            },
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Wilmington-DE/Data-Engineer-4_R1001669-2",
-              "match_score": 44.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python and Spark pipelines",
-                "Distributed data experience"
-              ],
-              "main_gaps": [
-                "Four years application development",
-                "End-to-end data modeling"
-              ]
-            },
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Chicago-IL/Data-Engineer-5_R1003431-2",
-              "match_score": 32.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python and Spark pipelines",
-                "Cloud data solutions"
-              ],
-              "main_gaps": [
-                "Six years application development",
-                "Four years distributed data"
-              ]
-            },
-            {
-              "key": "url::https://morganstanley.eightfold.ai/careers/job/549798643526",
-              "match_score": 43.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack AI applications",
-                "RAG and agent workflows"
-              ],
-              "main_gaps": [
-                "Financial services experience",
-                "Four years software engineering"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/93430046605091526-software-engineer-consumer-devai",
-              "match_score": 76.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Launched GenAI applications",
-                "ML deployment and evaluation"
-              ],
-              "main_gaps": [
-                "Two years generative AI experience"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/103782360897462982-software-engineer-iii-feed-recommendation-infrastructure",
-              "match_score": 66.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Retrieval backend optimization",
-                "Production cloud infrastructure"
-              ],
-              "main_gaps": [
-                "Two years large-scale infrastructure",
-                "Two years software development"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/136126282134889158-packaging-design-engineer-platforms-infrastructure-engineering",
-              "match_score": 5.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [],
-              "main_gaps": [
-                "Mechanical packaging design",
-                "CAD and reliability testing"
-              ]
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10576928/software-development-engineer-special-projects",
-              "match_score": 55.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "ML inference platform work",
-                "Production software lifecycle"
-              ],
-              "main_gaps": [
-                "Three years software development",
-                "Three years AWS experience"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 4,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://jobs.uber.com/en/jobs/156028",
-              "company": "Uber",
-              "title": "Software Engineer II, Merchant Intel 5"
-            },
-            {
-              "key": "url::https://careers.netapp.com/en/job/san-jose/software-engineer/27600/101895070496",
-              "company": "NetApp",
-              "title": "Software Engineer"
-            },
-            {
-              "key": "url::https://careers.qualcomm.com/careers/job/446717979995",
-              "company": "Qualcomm",
-              "title": "Solution Engineer (U.S. Remote work eligible)"
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5450479008",
-              "company": "Anthropic",
-              "title": "IT Systems Engineer, M&A"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/138871900108399302-agentic-ai-security-consultant",
-              "company": "Google",
-              "title": "Agentic AI Security Consultant"
-            },
-            {
-              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557027308",
-              "company": "Microsoft",
-              "title": "Digital Security Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 16.639,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 6,
-            "input_tokens": 9628,
-            "cached_input_tokens": 2724,
-            "output_tokens": 1457,
-            "reasoning_tokens": 1006,
-            "estimated_usd": 0.001446
-          },
-          "decisions": [
-            {
-              "key": "url::https://jobs.uber.com/en/jobs/156028",
-              "match_score": 71.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "React and TypeScript development",
-                "Full-stack service delivery"
-              ],
-              "main_gaps": [
-                "Technical team leadership",
-                "2+ years web experience"
-              ]
-            },
-            {
-              "key": "url::https://careers.netapp.com/en/job/san-jose/software-engineer/27600/101895070496",
-              "match_score": 57.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python automation and CI/CD",
-                "Cloud deployment experience"
-              ],
-              "main_gaps": [
-                "Golang",
-                "4+ years relevant experience"
-              ]
-            },
-            {
-              "key": "url::https://careers.qualcomm.com/careers/job/446717979995",
-              "match_score": 63.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Applied machine learning",
-                "Python model deployment"
-              ],
-              "main_gaps": [
-                "Embedded or device-aware ML",
-                "3+ years software experience"
-              ]
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5450479008",
-              "match_score": 22.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Automation development"
-              ],
-              "main_gaps": [
-                "Corporate IT administration",
-                "8+ years hands-on experience"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/138871900108399302-agentic-ai-security-consultant",
-              "match_score": 62.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Agentic AI and tool calling",
-                "Production LLM evaluation"
-              ],
-              "main_gaps": [
-                "Cybersecurity or SOC experience",
-                "5 years Python experience"
-              ]
-            },
-            {
-              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557027308",
-              "match_score": 33.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Technical solution implementation",
-                "Cloud software experience"
-              ],
-              "main_gaps": [
-                "Technical presales experience",
-                "Cloud security expertise"
-              ]
-            }
-          ]
-        }
-      ],
-      "scrape_failure_sources": [
-        "oracle",
-        "amd",
-        "hubspot",
-        "intel"
-      ],
-      "scrape_failure_causes": {
-        "oracle": "timeout",
-        "amd": "timeout",
-        "hubspot": "404",
-        "intel": "error"
       }
     }
   ]
