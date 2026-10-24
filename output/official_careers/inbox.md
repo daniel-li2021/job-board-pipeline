@@ -1,10 +1,10 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-10-24 07:44 PDT
-- Snapshot (UTC): 2026-10-24T14:44:55.194575+00:00
-- Jobs: 29 (Tier A/B only)
-- Last 24 hours: 0
-- Last 3 days: 29
+- Updated (PT): 2026-10-24 16:44 PDT
+- Snapshot (UTC): 2026-10-24T23:44:44.214701+00:00
+- Jobs: 30 (Tier A/B only)
+- Last 24 hours: 1
+- Last 3 days: 30
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
@@ -15,6 +15,7 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | A | 85 | official | Google | Machine Learning Engineer, AI/ML Expert for Agents and TrustGraph, Goo | Mountain View, CA, USA | 2026-10-23 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/132867596763439814-machine-learning-engineer-ai-ml-expert-for-agents-and-trustgraph-google-ads) |
 | A | 88 | official | Roblox | Software Engineer, Reliability | San Mateo, CA, United States | 2026-10-23 | 1to3d | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8283707?gh_jid=8283707) |
 | A | 89 | official | Expedia Group | Software Development Engineer II | Washington - Seattle Campus | 2026-10-22 | 1to3d | - | unreviewed | official_canonical | [open](https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Software-Development-Engineer-II_R-110595-1) |
+| B | 75 | official | Capital One | Full-stack Engineer 4 | Plano, TX | 2026-10-24 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-stack-Engineer-4_R1001592-1) |
 | B | 83 | official | Microsoft | Software Engineer II - Finance Data & Experiences | United States, Washington, Redmond | 2026-10-23 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557040468) |
 | B | 82 | official | NetApp | Software Engineer - Cloud Volumes | San Jose, California, United States | 2026-10-23 | 1to3d | - | unreviewed | official_canonical | [open](https://careers.netapp.com/en/job/san-jose/software-engineer-cloud-volumes/27600/102319759728) |
 | B | 82 | official | Microsoft | Software Engineering IC2 | United States, Washington, Redmond | 2026-10-23 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557044842) |
