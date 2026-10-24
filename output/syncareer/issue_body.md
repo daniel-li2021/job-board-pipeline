@@ -1,36 +1,27 @@
-Syncareer alert — 2026-10-23_2351
+Syncareer alert — 2026-10-24_1451
 
-Updated (PT): 2026-10-23 16:53 PDT
-Snapshot (UTC): 2026-10-23T23:53:07.298877+00:00
+Updated (PT): 2026-10-24 07:52 PDT
+Snapshot (UTC): 2026-10-24T14:52:52.920721+00:00
 
-23 new matching job(s) this run (hard-filtered).
+14 new matching job(s) this run (hard-filtered).
 
 If you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.md` in the repo (last 3 days, one file).
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 97.0 | Syncareer | IBM | Entry Level AI Software Engineer | Durham, North Carolina, United States | 2026-10-21 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=137790&source=WEB_Search_NA) |
-| A | 97.0 | Syncareer | IBM | Entry Level AI Software Engineer | POUGHKEEPSIE, New York, United States | 2026-10-21 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=137787&source=WEB_Search_NA) |
-| A | 96.0 | Syncareer | Thomson Reuters | Software Engineer | Eagan, Minnesota, United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/United-States-of-America-Eagan-Minnesota/Software-Engineer_JREQ204694?Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=6cb77610a8a543aea2d6bc10457e35d4) |
-| A | 95.0 | Syncareer | NCR Voyix | Software Engineer – NCR Voyix for Department and Specialty Retail | Atlanta, Georgia, United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://ncr.wd1.myworkdayjobs.com/en-US/ext_us/job/ATLANTA-GA-USA/Software-Engineer---NCR-Voyix-for-Department-and-Specialty-Retail_R0159033?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea) |
 | A | 95.0 | Syncareer | Intuitive | Full-Stack Engineer | Sunnyvale, California, United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.intuitive.com/en/jobs/744000156658124/JOB219489/full-stack-engineer/) |
 | A | 91.0 | Syncareer | Twitch | Software Engineer I | Seattle, Washington, United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/twitch/jobs/8906750002) |
 | A | 90.0 | Syncareer | Publix | Associate Software Engineer – Finance Systems (Hybrid) | Lakeland, Florida, United States | 2026-10-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.publix.com/job-opening/associate-software-engineer-finance-systems-hybrid/?fromsearch=1) |
 | A | 89.0 | Syncareer | Etsy | Software Engineer I, Marketplace Makers | Brooklyn, New York, United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.etsy.com/jobs/software-engineer-i-marketplace-makers-brooklyn-new-york-united-states) |
 | A | 85.0 | Syncareer | Intuit | Software Engineer 2 | Mountain View, California, United States | 2026-10-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.intuit.com/job/mountain-view/software-engineer-2/27595/102253948768) |
-| B | 87.0 | Syncareer | Guidewire | Junior AI Engineer- Applied AI | United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://guidewire.wd5.myworkdayjobs.com/en-US/external/job/United-States---Remote/Junior-AI-Engineer--Applied-AI_JR_15319-1) |
+| B | 86.0 | Syncareer | Garmin | Software Engineer 1 (C++ MEC MapTech) | Olathe, Kansas, United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.garmin.com/jobs/20439?lang=en-us&previousLocale=en-US) |
 | B | 84.0 | Syncareer | EvenUp | Machine Learning Engineer | San Francisco, California, United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/evenup/affdd14d-7563-49c4-8a78-dce44daf5c37) |
-| B | 83.0 | Syncareer | Manitowoc | Software Engineer I | Shady Grove, Pennsylvania, United States | 2026-10-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://fda.fa.us1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/3369/?lastSelectedFacet=CATEGORIES&mode=location&selectedCategoriesFacet=100000000133128%253B100000000133120%253B100000000133122%253B100000000133124%253B100000000133126%253B100000000133129%253B100000000133123%253B100000000133127) |
 | B | 83.0 | Syncareer | Q2 Software | Data Engineer | Austin, Texas, United States | 2026-10-22 | No sponsor | - | unreviewed | not_dedicated | [open](https://q2ebanking.wd5.myworkdayjobs.com/en-US/Q2/job/Austin-TX/Data-Engineer_REQ-12855-1?jobFamilies=8b86f00a4a2a01e03cacfbdc0288b96a&jobFamilies=8b86f00a4a2a0161c8f6dbdc0288ab6a&jobFamilies=54838d87026b0142d4a0dd78070250f5&jobFamilies=54838d87026b019304a74a65070243f5&jobFamilies=8b86f00a4a2a0105bcc1d3dc0288a76a) |
+| B | 83.0 | Syncareer | Manitowoc | Software Engineer I | Shady Grove, Pennsylvania, United States | 2026-10-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://fda.fa.us1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/3369/?lastSelectedFacet=CATEGORIES&mode=location&selectedCategoriesFacet=100000000133128%253B100000000133120%253B100000000133122%253B100000000133124%253B100000000133126%253B100000000133129%253B100000000133123%253B100000000133127) |
 | B | 83.0 | Syncareer | WinCo Foods | Software Developer | Boise, Idaho, United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://internaljobs.wincofoods.com/internal/jobs/156307-internal?lang=en-us) |
 | B | 82.0 | Syncareer | Everpure | Junior DevOps Engineer | Santa Clara, California, United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/purestorage/jobs/8282746) |
-| B | 81.0 | Syncareer | IBM | AI Foundations - Research Engineer | Cambridge, Massachusetts, United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=136453&source=WEB_Search_NA) |
-| B | 78.0 | Syncareer | Intuitive | Full-Stack Software Engineer | Sunnyvale, California, United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.intuitive.com/en/jobs/744000156658099/JOB219490/full-stack-software-engineer/) |
-| B | 78.0 | Syncareer | CLA (CliftonLarsonAllen) | Backend Software Engineer II | Austin, Texas, United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://cliftonlarsonallen.wd115.myworkdayjobs.com/en-US/CLA/job/Austin-TX/Backend-Software-Engineer-II_R18338) |
-| B | 78.0 | Syncareer | Interactive Brokers | Software Engineer - Compliance Tech | Greenwich, Connecticut, United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.dayforcehcm.com/en-US/ibgllc/CANDIDATEPORTAL/jobs/2701) |
-| B | 78.0 | Syncareer | BDO | Software Engineer I, AI | Grand Rapids, Michigan, United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://ebqb.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/BDOExperiencedCareers/job/14501/?mode=location) |
+| B | 79.0 | Syncareer | Copart | Software Engineering Intern | Dallas, Texas, United States | 2026-10-23 | Sponsor | - | unreviewed | not_dedicated | [open](https://copart.wd12.myworkdayjobs.com/en-US/Copart/job/Dallas-TX---Headquarters/Software-Engineering-Intern_JR111861) |
 | B | 77.0 | Syncareer | Mozilla | Contract Software Engineer - WebCompat Tooling (Dashboards and Reporti | United States | 2026-10-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.mozilla.org/en-US/careers/position/gh/8306479/) |
-| B | 77.0 | Syncareer | Intuitive | Full-Stack Software Engineer | Sunnyvale, California, United States | 2026-10-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.intuitive.com/en/jobs/744000156656129/JOB219491/full-stack-software-engineer/) |
 | B | 73.0 | Syncareer | Infosys | Java Full Stack Engineer with Python and AWS | Hartford, Connecticut, United States | 2026-10-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/154866BR) |
 
-Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-10-23_2351.csv`.
+Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-10-24_1451.csv`.
