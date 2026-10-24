@@ -2,6 +2,323 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-24T19:06:09.574100+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 7,
+      "cache_reused": 347,
+      "peer_reused": 0,
+      "same_content_reused": 5,
+      "non_material_change_reused": 0,
+      "new_or_changed": 7,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 5,
+        "prior_rule_result_now_eligible_for_llm": 2
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1395,
+      "requests": 3,
+      "input_tokens": 12947,
+      "cached_input_tokens": 0,
+      "output_tokens": 2163,
+      "reasoning_tokens": 1670,
+      "estimated_usd": 0.002376,
+      "latency_seconds": 26.068,
+      "latency_measured": true,
+      "effective_rpm": 6.91,
+      "effective_tpm": 34778.27,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 3,
+      "primary_batches_total": 3,
+      "batches_attempted": 3,
+      "batches_succeeded": 3,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 7,
+      "funnel": {
+        "after_dedup": 7692,
+        "after_company": 7280,
+        "after_hard_filter": 6729,
+        "after_prefilter": 2162,
+        "official_duplicates_suppressed": 413,
+        "retry_only_carried": 0,
+        "dropped": 5342
+      },
+      "output": {
+        "tier_a": 57,
+        "tier_b": 163,
+        "ab_before_cap": 220,
+        "shown": 220,
+        "new_jobs": 26,
+        "new_jobs_added": 2,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 1,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 25,
+            "added": 2
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2875,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 38,
+          "identity_needed": 20,
+          "identities_resolved": 17,
+          "cache_reused": 4,
+          "http_requests": 18,
+          "scrapling_requests": 1,
+          "jds_resolved": 4,
+          "direct_http_resolved": 4,
+          "remaining_no_jd": 2875,
+          "failure_reasons": {
+            "linkedin_rate_limited": 12,
+            "no_direct_or_official_url": 4,
+            "identity_mismatch": 1,
+            "structured_jd_not_found": 1
+          }
+        },
+        "remaining_no_jd": 2826,
+        "failure_reasons": {
+          "no_enrichment_path": 2289,
+          "linkedin_rate_limited": 105,
+          "linkedin_http_429": 5,
+          "official_detail_deferred": 44,
+          "no_direct_or_official_url": 4,
+          "linkedin_http_network_error": 2,
+          "structured_jd_not_found": 1,
+          "glassdoor_detail_http_403_static_card_only": 376
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://careers.usbank.com/global/en/job/2026-0032458/Software-Engineer-2-NET-Developer-Finance-Technology",
+              "company": "U.S. Bank",
+              "title": "Software Engineer 2 (.NET Developer - Finance Technology)"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/reddit/jobs/8319655",
+              "company": "Reddit",
+              "title": "Software Engineer, Ad Signals"
+            },
+            {
+              "key": "id::linkedin::4483157327",
+              "company": "Walgreens",
+              "title": "Software Engineer (Java, Backend)"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 10.526,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 5046,
+            "cached_input_tokens": 0,
+            "output_tokens": 793,
+            "reasoning_tokens": 561,
+            "estimated_usd": 0.000901
+          },
+          "decisions": [
+            {
+              "key": "url::https://careers.usbank.com/global/en/job/2026-0032458/Software-Engineer-2-NET-Developer-Finance-Technology",
+              "match_score": 68.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend application development",
+                "REST APIs and SQL"
+              ],
+              "main_gaps": [
+                "NET/C# experience",
+                "SQL Server experience"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/reddit/jobs/8319655",
+              "match_score": 43.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Scalable ingestion services",
+                "Production backend systems"
+              ],
+              "main_gaps": [
+                "Senior backend experience",
+                "App ads signals"
+              ]
+            },
+            {
+              "key": "id::linkedin::4483157327",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend APIs and services",
+                "Java and SQL"
+              ],
+              "main_gaps": [
+                "Two years of experience",
+                "Demonstrated Java backend depth"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4481943303",
+              "company": "RSM US LLP",
+              "title": "AI Machine Learning Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 8.439,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3115,
+            "cached_input_tokens": 0,
+            "output_tokens": 698,
+            "reasoning_tokens": 621,
+            "estimated_usd": 0.00066
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4481943303",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Production AI/ML deployment",
+                "Model evaluation and experimentation"
+              ],
+              "main_gaps": [
+                "ML framework experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4473372532",
+              "company": "Lenovo",
+              "title": "AI Application Developer"
+            },
+            {
+              "key": "id::linkedin::4473386667",
+              "company": "Cognizant",
+              "title": "Conversational AI Platform Engineer"
+            },
+            {
+              "key": "id::linkedin::4481014465",
+              "company": "Virtusa",
+              "title": "AI Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 7.103,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 4786,
+            "cached_input_tokens": 0,
+            "output_tokens": 672,
+            "reasoning_tokens": 488,
+            "estimated_usd": 0.000815
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4473372532",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI backend services",
+                "Production LLM applications"
+              ],
+              "main_gaps": [
+                "5+ years software development"
+              ]
+            },
+            {
+              "key": "id::linkedin::4473386667",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Agentic LLM systems",
+                "RAG and evaluation"
+              ],
+              "main_gaps": [
+                "Bedrock/Lex conversational platforms",
+                "Voice bot design and NLU"
+              ]
+            },
+            {
+              "key": "id::linkedin::4481014465",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production agentic AI",
+                "Python and ML implementation"
+              ],
+              "main_gaps": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-24T15:21:24.006080+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -33712,112 +34029,6 @@
           ]
         }
       ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-10-18T22:01:28.433517+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "",
-      "reasoning_effort": "",
-      "jobs_scored": 0,
-      "cache_reused": 189,
-      "peer_reused": 0,
-      "same_content_reused": 4,
-      "non_material_change_reused": 0,
-      "new_or_changed": 0,
-      "new_or_changed_reasons": {},
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1373,
-      "requests": 0,
-      "input_tokens": 0,
-      "cached_input_tokens": 0,
-      "output_tokens": 0,
-      "reasoning_tokens": 0,
-      "estimated_usd": 0.0,
-      "latency_seconds": 0.0,
-      "latency_measured": true,
-      "effective_rpm": null,
-      "effective_tpm": null,
-      "json_reliability": null,
-      "json_reliability_measured": true,
-      "batches_total": 0,
-      "primary_batches_total": 0,
-      "batches_attempted": 0,
-      "batches_succeeded": 0,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 0,
-      "funnel": {
-        "after_dedup": 7127,
-        "after_company": 6754,
-        "after_hard_filter": 6205,
-        "after_prefilter": 1947,
-        "official_duplicates_suppressed": 385,
-        "retry_only_carried": 0,
-        "dropped": 5001
-      },
-      "output": {
-        "tier_a": 33,
-        "tier_b": 136,
-        "ab_before_cap": 169,
-        "shown": 169,
-        "new_jobs": 2,
-        "new_jobs_added": 1,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 0,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 2,
-            "added": 1
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 2734,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 23,
-          "identity_needed": 6,
-          "identities_resolved": 2,
-          "cache_reused": 2,
-          "http_requests": 4,
-          "remaining_no_jd": 2734,
-          "failure_reasons": {
-            "no_direct_or_official_url": 17
-          }
-        },
-        "remaining_no_jd": 2692,
-        "failure_reasons": {
-          "no_enrichment_path": 2173,
-          "no_direct_or_official_url": 17,
-          "linkedin_http_429": 4,
-          "official_detail_deferred": 45,
-          "linkedin_rate_limited": 75,
-          "linkedin_http_network_error": 2,
-          "glassdoor_detail_http_403_static_card_only": 376
-        }
-      },
-      "comparison": {},
-      "batches": []
     }
   ]
 }

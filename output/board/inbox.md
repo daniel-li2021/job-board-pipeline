@@ -1,18 +1,20 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-24 08:21 PDT
-- Snapshot (UTC): 2026-10-24T15:21:24.006080+00:00
-- Jobs: 115 (Tier A/B only)
+- Updated (PT): 2026-10-24 12:06 PDT
+- Snapshot (UTC): 2026-10-24T19:06:09.574100+00:00
+- Jobs: 114 (Tier A/B only)
 - Last 24 hours: 79
-- Last 3 days: 115
+- Last 3 days: 114
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 96 | linkedin | Applied Underwriters | AI Engineer - Application Development | New York, NY | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-application-development-at-applied-underwriters-4480689981) |
 | A | 96 | indeed | Applied Underwriters | AI Engineer - Application Development | New York, NY, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=174d8b577fafff7a) |
 | A | 95 | indeed | Fuel Cycle | Associate AI Engineer | Los Angeles, CA, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1ddcb6860feaea0b) |
+| A | 95 | linkedin | Fuel Cycle | Associate AI Engineer | Los Angeles, CA | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-ai-engineer-at-fuel-cycle-4481976976) |
 | A | 95 | indeed | HomeSmart | Forward Deployed Engineer — Applied AI | Scottsdale, AZ, US | 2026-10-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c0a754fd25b5f6d5) |
 | A | 91 | linkedin | Equifax | Generative AI Engineer | Alpharetta, GA | 2026-10-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://careers.equifax.com/en/jobs/j00179159/generative-ai-engineer/) |
 | A | 91 | linkedin | Equifax | Generative AI Engineer | Alpharetta, GA | 2026-10-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/generative-ai-engineer-at-equifax-4473979895) |
@@ -28,6 +30,7 @@ The 7-day dump is `latest.md`.
 | A | 91 | indeed | Formlabs | Software Engineer, API & Automation | Boston, MA, US | 2026-10-22 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=121773951965d825) |
 | A | 91 | indeed | Sciens Building Solutions | Associate Digital Solutions Engineer | Tallahassee, FL, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=f9fc5bb411f4eddd) |
 | A | 94 | indeed | David Joseph & Company | AI Backend Engineer | San Francisco, CA, US | 2026-10-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=cff476e3da54d217) |
+| A | 92 | linkedin | Virtusa | AI Engineer | Dallas, TX | 2026-10-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-virtusa-4481014465) |
 | A | 94 | indeed | Fortinet | AI Automation Engineer | Sunnyvale, CA, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=22ecc464eab28580) |
 | A | 93 | indeed | Shield AI | Software Engineer I - New Grad (R6052) | Seattle, WA, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5136ef69f94a1544) |
 | A | 89 | indeed | Comcast | Junior Backend Software Engineer (Python or PHP) - Chicago - ONSITE 2X | Chicago, IL, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c563c85c98cbe97a) |
@@ -50,7 +53,7 @@ The 7-day dump is `latest.md`.
 | A | 86 | indeed | Event Drape Rental | Web Developer | Turlock, CA, US | 2026-10-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=891bb8c89db9e4f3) |
 | A | 86 | indeed | Kryptauri | Software Engineer Level 1 AI Cloud Platform | Columbia, MD, US | 2026-10-12 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=30fdaa03a1ba1786) |
 | A | 85 | indeed |  | Software Engineer | San Francisco, CA, US | 2026-10-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=f0d00e5d83d97842) |
-| B | 93 | linkedin | Fuel Cycle | Associate AI Engineer | Los Angeles, CA | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-ai-engineer-at-fuel-cycle-4481976976) |
+| B | 92 | linkedin | Boeing | Software Engineer (Associate or Experienced) | Chantilly, VA | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-associate-or-experienced-at-boeing-4480683200) |
 | B | 85 | indeed | HP | Software Systems Engineer | Spring, TX, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e629ced9af5eb6a6) |
 | B | 89 | indeed | Genuineit Llc | Application Developer | Houston, TX, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=711f98d569ae4196) |
 | B | 87 | linkedin | Bunge | Full Stack Software Engineer (Omaha, NE) | Omaha, NE | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://jobs.bunge.com/job/Omaha-Full-Stack-Software-Engineer-%28Omaha%2C-NE%29-NE-68102/1443517133/) |
@@ -60,7 +63,6 @@ The 7-day dump is `latest.md`.
 | B | 85 | indeed |  | Product Engineer | Santa Clara, CA, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=42e53f74ed17fda4) |
 | B | 85 | indeed | PelicanSoft, LLC | Full Stack Developer | Houston, TX, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=61161b4bedfff9b8) |
 | B | 85 | indeed | Revel Solutions, LLC | Software Developer | Houston, TX, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=f80c0f25b77a0a8d) |
-| B | 88 | linkedin | Boeing | Software Engineer (Associate or Experienced) | Chantilly, VA | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-associate-or-experienced-at-boeing-4480683200) |
 | B | 85 | indeed | Mastercard | Software Engineer II | Arlington, VA, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=4e4fa36093ac042d) |
 | B | 89 | indeed | Yahara Software | Software Development Engineer | Madison, WI, US | 2026-10-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=720469d75918846f) |
 | B | 88 | indeed |  | AI Engineer / PAM Health Corporate | Plano, TX, US | 2026-08-10 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=0532e26f9d130a17) |
@@ -78,12 +80,10 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed | MiniMed | AI/Data Science Engineer II | Minneapolis, MN, US | 2026-10-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6f16dd245d4c6765) |
 | B | 84 | linkedin | Deloitte | Generative AI Engineer II - Federal Health & State & Local | Atlanta, GA | 2026-10-21 | 1to3d | - | unreviewed | not_dedicated | [open](https://apply.deloitte.com/en_US/careers/JobDetail/Generative-AI-Engineer-II-Federal-Health-State-Local/372159) |
 | B | 84 | linkedin | Deloitte | Generative AI Engineer II - Federal Health & State & Local | Atlanta, GA | 2026-10-21 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/generative-ai-engineer-ii-federal-health-state-local-at-deloitte-4482050309) |
-| B | 80 | linkedin | U.S. Bank | Software Engineer 2 (.NET Developer - Finance Technology) | Cincinnati, OH | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-2-net-developer-finance-technology-at-u-s-bank-4483145091) |
 | B | 80 | linkedin | American Express | Software Engineer II - Java/Python, Vertx, SpringBoot, Microservices - | Phoenix, AZ | 2026-10-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-java-python-vertx-springboot-microservices-gmnst-at-american-express-4481192629) |
-| B | 80 | linkedin | Archer | Software Engineer II - C# .Net | Irvine, CA | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-c%23-net-at-archer-4481676872) |
-| B | 80 | linkedin | Compass | Software Engineer II | Aventura, FL | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-compass-4450682951) |
-| B | 80 | linkedin | Compass | Software Engineer II | New York, NY | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-compass-4474326414) |
-| B | 80 | linkedin | Deloitte | Generative AI Engineer II - Federal Health & State & Local | Nashville, TN | 2026-10-21 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/generative-ai-engineer-ii-federal-health-state-local-at-deloitte-4482054192) |
+| B | 82 | linkedin | Archer | Software Engineer II - C# .Net | Irvine, CA | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-c%23-net-at-archer-4481676872) |
+| B | 82 | linkedin | Compass | Software Engineer II | Aventura, FL | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-compass-4450682951) |
+| B | 82 | linkedin | Compass | Software Engineer II | New York, NY | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-compass-4474326414) |
 | B | 82 | indeed | Caterpillar | Data Engineer | Chicago, IL, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=26c477c5df823760) |
 | B | 82 | indeed | Lightcast | Associate Applied ML Scientist - 1087 | Moscow, ID, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ed570f956df61444) |
 | B | 82 | indeed | Sierra Space | Database Engineer I | Louisville, CO, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=bf3a3ea1744f55b1) |
@@ -92,17 +92,16 @@ The 7-day dump is `latest.md`.
 | B | 75 | linkedin | Yext | Software Engineer | New York, NY | 2026-10-22 | 1to3d | - | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/software-engineer-at-yext-4481362650) |
 | B | 75 | indeed | Beckman Coulter Life Sciences | Software Engineer II | Indianapolis, IN, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=f4438cf0613b43dc) |
 | B | 77 | indeed | Infosys | Python AI engineer | Austin, TX, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ddc16dc69c7afa99) |
-| B | 75 | linkedin | RVO Health | Software Engineer, Golang | Minneapolis, MN | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-golang-at-rvo-health-4474518924) |
-| B | 75 | linkedin | RVO Health | Software Engineer, Golang | Denver, CO | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-golang-at-rvo-health-4474531199) |
+| B | 78 | linkedin | RVO Health | Software Engineer, Golang | Minneapolis, MN | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-golang-at-rvo-health-4474518924) |
+| B | 78 | linkedin | RVO Health | Software Engineer, Golang | Denver, CO | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-golang-at-rvo-health-4474531199) |
+| B | 77 | linkedin | RVO Health | Software Engineer, Red Platform | Minneapolis, MN | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-red-platform-at-rvo-health-4483163180) |
 | B | 75 | linkedin | Dell Technologies | Software Engineer - Data Protection Software Engineering | Santa Clara, CA | 2026-10-22 | 1to3d | Dell | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/software-engineer-data-protection-software-engineering-at-dell-technologies-4481300867) |
-| B | 75 | linkedin | Evlo AI | Machine Learning Engineer | Denver, CO | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-evlo-ai-4481919538) |
-| B | 75 | linkedin | Evlo AI | Machine Learning Engineer | San Diego, CA | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-evlo-ai-4481922388) |
-| B | 75 | linkedin | Walgreens | Software Engineer (Java, Backend) | Deerfield, IL | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-java-backend-at-walgreens-4483157327) |
+| B | 78 | linkedin | Evlo AI | Machine Learning Engineer | Denver, CO | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-evlo-ai-4481919538) |
+| B | 78 | linkedin | Evlo AI | Machine Learning Engineer | San Diego, CA | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-evlo-ai-4481922388) |
 | B | 75 | linkedin | Regal | Backend Engineer | Knoxville, TN | 2026-10-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-at-regal-4463057377) |
 | B | 75 | linkedin | Regal | Software Engineer | Knoxville, TN | 2026-10-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-regal-4463054409) |
 | B | 75 | linkedin | IBM | Confluent - Distributed Systems Software Engineer - WarpStream | Lowell, MA | 2026-10-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/confluent-distributed-systems-software-engineer-warpstream-at-ibm-4472641183) |
 | B | 75 | linkedin | IBM | Confluent - Distributed Systems Software Engineer - WarpStream | Armonk, NY | 2026-10-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/confluent-distributed-systems-software-engineer-warpstream-at-ibm-4472642126) |
-| B | 75 | linkedin | Virtusa | AI Engineer | Dallas, TX | 2026-10-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-virtusa-4481014465) |
 | B | 77 | indeed | iManage | AI Integration Engineer | Chicago, IL, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=fb314e97ee375c35) |
 | B | 78 | indeed | Context Labs | Data Scientist | Houston, TX, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e2dcb008618b061a) |
 | B | 78 | indeed | Meijer | Software Engineer | Grand Rapids, MI, US | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=0fa588a3bd320c4c) |
