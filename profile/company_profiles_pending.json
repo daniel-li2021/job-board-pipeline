@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-24T00:31:11.461693+00:00",
-  "count": 4677,
+  "generated_at": "2026-10-24T07:28:07.012551+00:00",
+  "count": 4678,
   "companies": [
     {
       "name": "1-800 CONTACTS",
@@ -4299,6 +4299,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Archer",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "599db19d301de66f187143ee"
+      ],
       "seen_count": 1
     },
     {
@@ -9139,9 +9152,10 @@
       "tags": [],
       "seen_job_keys": [
         "5938907ba5e4d46b74876b5e",
-        "904e70649abe08daa2f2e5b5"
+        "904e70649abe08daa2f2e5b5",
+        "af8118c1e75716dc6ee9411e"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Burger King",
@@ -13305,9 +13319,11 @@
         "3ea098ae42bd92494b4f68a8",
         "404d36481c653a6a02ee15ff",
         "6a17292ece9f6e2039e9c99b",
+        "6d471227b7fa482977a76795",
+        "6fd1fc991ef9eb9991a10aaf",
         "a9c375793abb483e87d018ea"
       ],
-      "seen_count": 7
+      "seen_count": 9
     },
     {
       "name": "Compass International Holdings",
@@ -22520,9 +22536,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "bcc1bc882a57c8bbe1e52312",
         "f645d1bcebee2a42e03de5c9"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "FuelCell Energy",
@@ -59280,10 +59297,11 @@
       "tags": [],
       "seen_job_keys": [
         "1d5f52faa5f56b2523334278",
+        "80613a03673fba1e6071985f",
         "9878a09d1af99133120abcb2",
         "c912fe8f897f5055b37fc38d"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "Walletgyde",
