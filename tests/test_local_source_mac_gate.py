@@ -122,6 +122,38 @@ class MacGateTests(unittest.TestCase):
                              runner.call_args.kwargs["env"]["LOCAL_SOURCE_RESULT_PATH"])
             self.assertEqual("success", json.loads(gate.STATE.read_text())["last_run_status"])
 
+    def test_network_failure_is_recorded_without_completing_the_slot(self):
+        with tempfile.TemporaryDirectory() as temp, patch.object(gate, "LOCK", Path(temp) / "lock"), \
+             patch.object(gate, "STATE", Path(temp) / "state.json"), \
+             patch.object(gate, "NETWORK_RESULT", Path(temp) / "network.json"), \
+             patch.object(gate, "decision", side_effect=lambda now, state: (True, "due", state)), \
+             patch.object(gate.subprocess, "run") as runner:
+            def failure(*args, **kwargs):
+                gate.NETWORK_RESULT.write_text(json.dumps({"finished_at": datetime.now(PACIFIC).isoformat(),
+                    "status": "failed", "stage": "fetch", "reason": "timeout", "attempts": 3}))
+                runner.return_value.returncode = 1
+                return runner.return_value
+            runner.side_effect = failure
+            self.assertEqual(1, gate.main())
+            state = json.loads(gate.STATE.read_text())
+            self.assertNotIn("last_success_at", state)
+            self.assertEqual(("fetch", "timeout", 3),
+                             (state["last_failure_stage"], state["last_failure_reason"], state["last_failure_attempts"]))
+
+    def test_stale_or_malformed_network_receipt_cannot_label_an_unrelated_failure(self):
+        for receipt in ([], {"status": "failed", "stage": "fetch", "reason": "timeout",
+                             "finished_at": "2000-01-01T00:00:00+00:00"}):
+            with self.subTest(receipt=receipt), tempfile.TemporaryDirectory() as temp, \
+                 patch.object(gate, "LOCK", Path(temp) / "lock"), \
+                 patch.object(gate, "STATE", Path(temp) / "state.json"), \
+                 patch.object(gate, "NETWORK_RESULT", Path(temp) / "network.json"), \
+                 patch.object(gate, "decision", side_effect=lambda now, state: (True, "due", state)), \
+                 patch.object(gate.subprocess, "run") as runner:
+                gate.NETWORK_RESULT.write_text(json.dumps(receipt))
+                runner.return_value.returncode = 1
+                self.assertEqual(1, gate.main())
+                self.assertNotIn("last_failure_stage", json.loads(gate.STATE.read_text()))
+
 
 if __name__ == "__main__":
     unittest.main()

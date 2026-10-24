@@ -208,6 +208,10 @@ The dashboard build combines canonical jobs, coverage, alert history, company pr
 
 ## Automation and publication sequence
 
+Local Git fetch/preflight/publication calls have a 45-second per-attempt deadline and at most three attempts for transient network failures, with 5/10-second backoffs. Authentication/other Git failures and rejected pushes return immediately. Public production fetches do not invoke credential helpers; pushes keep owner SSH credentials. Network receipts under `output/logs/git_network_*.json` retain classified stage/reason/timing without raw errors. Failed launches leave the gate slot incomplete and never run stale collector code.
+
+LinkedIn shared transport recovery after a 429 starts at 2 Search + 2 Detail requests per round/rolling hour, then 4 + 4, then the existing normal caps after two completed clean request-bearing rounds. Ceilings are fixed for each round; existing endpoint probes/cooldowns and global limits can lower them further. Idle, failed and interrupted rounds do not advance recovery. Progress survives collector restarts and failed publication in the durable transport journal and Health. The 10–15-second pacing remains provisional after the October 24 review.
+
 All three discovery workflows publish pending Issue receipts alongside their owned outputs, then deliver and acknowledge them. Pending receipts are retried even when no new jobs qualify. Issue lookup uses the exact marker across open and closed Issues before creation; failures leave the receipt pending. Pages runs on discovery-workflow completion independently of Issue delivery. Source changes run the credential-free offline checks in `.github/workflows/offline-checks.yml`. [Batch 2 validation](BATCH2_VALIDATION.md) records the saved repairs, identity migration preview, and limits.
 
 The cloud schedule is defined in `infra/scheduler/` and dispatches the three GitHub workflows in Pacific time. Refer to its README for deployment and timing rather than duplicating those operator instructions here.

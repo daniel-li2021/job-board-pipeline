@@ -1279,8 +1279,9 @@ class LocalSourceTests(unittest.TestCase):
             env.update({"PYTHON_BIN": sys.executable, "SKIP_PUSH": "1", "TMPDIR": str(base)})
             run = subprocess.run(
                 ["bash", "scripts/local_source_sync.sh"], cwd=repo, env=env,
-                check=True, capture_output=True, text=True,
+                capture_output=True, text=True,
             )
+            self.assertEqual(0, run.returncode, run.stdout + run.stderr)
             self.assertIn("current runner logic", run.stdout)
             self.assertIn(f"current collector {current}", run.stdout)
             self.assertIn(f"collector commit: {current}", run.stdout)

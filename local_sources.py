@@ -1102,6 +1102,7 @@ def recover_jds(*, budget: recovery_policy.RecoveryBudget | None = None,
                        for row in snapshots[name]["jobs"]) for name in names}
     post_429_jds = (max(0, sum(before.values()) - sum(after.values())) if blocked_before_recovery else
                     0 if detail.get("rate_limited") else None)
+    transport.finish_round()
     report: Dict[str, object] = {
         "run_at": now.isoformat(), "before_no_jd": before, "after_no_jd": after,
         "elapsed_seconds": round(time.monotonic() - started, 3),
@@ -1178,6 +1179,7 @@ def main() -> None:
                     initial_detail=next((result.get("detail_enrichment") for result in results
                                          if result.get("source") == "linkedin"), None))
 
+    transport.finish_round()
     diagnostics_path = OUTPUT_DIR / "logs" / "local_sources_latest.json"
     diagnostics_path.parent.mkdir(parents=True, exist_ok=True)
     diagnostics_path.write_text(

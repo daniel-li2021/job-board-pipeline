@@ -14,9 +14,10 @@ ROUND_LIMIT = 22
 DETAIL_LIMIT = 12
 DAY_LIMIT = 72
 DAY_DETAIL_LIMIT = 36
-# Temporary pacing trial; review normal-run receipts on October 26, 2026.
+# Retained provisionally after the October 24 review.
 SPACING_SECONDS = 10.0
 MAX_SPACING_SECONDS = 15.0
+RECOVERY_LIMITS = ({"search": 2, "detail": 2}, {"search": 4, "detail": 4})
 
 
 class RequestDeferred(Exception):
@@ -34,9 +35,16 @@ class LinkedInTransport:
         self.closed = False
         self.detail_probe_used = False
         self.stop_reason = ""
+        self.recovery = {}
+        self.failed = False
+        self.finished = False
         for path in (self.health_path, self.local_path):
             data = self._read(path)
             state = data.get("linkedin_transport", {}) if path == self.health_path else data
+            saved = state.get("recovery") or {}
+            if isinstance(saved, dict) and stamp(saved.get("triggered_at")) and stamp(saved.get("updated_at")) and (
+                    not self.recovery or stamp(saved["updated_at"]) > stamp(self.recovery["updated_at"])):
+                self.recovery = dict(saved)
             for event in state.get("events", []):
                 at = stamp(event.get("at"))
                 if at and datetime.now(timezone.utc) - timedelta(hours=24) < at:
@@ -48,6 +56,18 @@ class LinkedInTransport:
             for event in state.get("rate_limits", []):
                 if event not in self.rate_limits:
                     self.rate_limits.append(event)
+        latest_429 = max((at for e in self.rate_limits if (at := stamp(e.get("at")))), default=None)
+        if latest_429 and (not self.recovery or latest_429 > stamp(self.recovery.get("triggered_at"))):
+            self.recovery = {"triggered_at": latest_429.isoformat(), "updated_at": latest_429.isoformat(),
+                             "clean_rounds": 0}
+        try:
+            stage = min(2, max(0, int(self.recovery.get("clean_rounds", 0)))) if self.recovery else 2
+        except (ValueError, TypeError):
+            stage = 0
+        if self.recovery:
+            self.recovery["clean_rounds"] = stage
+        # Freeze this round's allowance; a successful probe cannot expand it mid-run.
+        self.recovery_limits = dict(RECOVERY_LIMITS[stage]) if stage < 2 else {}
 
     @staticmethod
     def _read(path):
@@ -80,6 +100,9 @@ class LinkedInTransport:
                   "shared_detail_budget" if endpoint == "detail" and self.counts[endpoint] >= DETAIL_LIMIT else
                   "shared_detail_hour_budget" if endpoint == "detail" and rolling["3600"]["detail"] >= DETAIL_LIMIT else
                   "shared_detail_day_budget" if endpoint == "detail" and rolling["86400"]["detail"] >= DAY_DETAIL_LIMIT else
+                  f"recovery_{endpoint}_budget" if endpoint in self.recovery_limits and (
+                      self.counts[endpoint] >= self.recovery_limits[endpoint]
+                      or rolling["3600"][endpoint] >= self.recovery_limits[endpoint]) else
                   "single_detail_probe" if endpoint == "detail" and self.detail_probe_used else "")
         self.stop_reason = reason
         return not reason
@@ -99,7 +122,12 @@ class LinkedInTransport:
         if endpoint == "detail" and probe:
             self.detail_probe_used = True
         self._save()  # Count attempts even if the network call or collector fails.
-        response = session.get(url, allow_redirects=False, **kwargs)
+        try:
+            response = session.get(url, allow_redirects=False, **kwargs)
+        except Exception:
+            self.failed = True
+            raise
+        self.failed |= response.status_code != 200
         if response.status_code == 429:
             now = datetime.now(timezone.utc)
             raw = getattr(response, "headers", {}).get("Retry-After", "")
@@ -113,6 +141,7 @@ class LinkedInTransport:
                     retry_at = now
             self.closed = True
             self.blocked_until = max(now + timedelta(hours=1), retry_at)
+            self.recovery = {"triggered_at": now.isoformat(), "updated_at": now.isoformat(), "clean_rounds": 0}
             self.rate_limits.append({
                 "at": now.isoformat(), "endpoint": endpoint, "url": url,
                 "query": query, "page": page, "retry_after": raw,
@@ -124,9 +153,21 @@ class LinkedInTransport:
             self._save()
         return response
 
+    def finish_round(self):
+        """Promote only a completed, request-bearing round with no HTTP/network error."""
+        if self.finished:
+            return
+        self.finished = True
+        if (self.recovery and sum(self.counts.values()) and not self.failed and not self.closed
+                and self.recovery["clean_rounds"] < 2):
+            self.recovery.update(clean_rounds=self.recovery["clean_rounds"] + 1,
+                                 updated_at=datetime.now(timezone.utc).isoformat())
+            self._save()
+
     def summary(self):
         return {"requests": sum(self.counts.values()), "endpoint_counts": dict(self.counts),
                 "spacing_seconds_min": SPACING_SECONDS, "spacing_seconds_max": MAX_SPACING_SECONDS,
+                "recovery": dict(self.recovery), "recovery_limits": dict(self.recovery_limits),
                 "round_limit": ROUND_LIMIT, "detail_limit": DETAIL_LIMIT, "day_limit": DAY_LIMIT,
                 "hour_limit": ROUND_LIMIT, "hour_detail_limit": DETAIL_LIMIT,
                 "day_detail_limit": DAY_DETAIL_LIMIT,

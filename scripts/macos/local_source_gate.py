@@ -17,6 +17,7 @@ REPO = Path(__file__).resolve().parents[2]
 STATE = REPO / "output/logs/local_source_mac_gate.json"
 LOCK = REPO / "output/logs/local_source_mac_gate.lock"
 RESULT = REPO / "output/logs/local_sources_mac_latest.json"
+NETWORK_RESULT = REPO / "output/logs/git_network_latest.json"
 SCHEDULE_HOURS = (12, 15, 21)
 WEEKEND_HOURS = (12,)
 
@@ -109,6 +110,20 @@ def main() -> int:
         if completed.returncode:
             state["last_failure_at"] = datetime.now(PACIFIC).isoformat()
             state["last_run_status"] = "failed"
+            try:
+                network = json.loads(NETWORK_RESULT.read_text())
+            except (OSError, ValueError):
+                network = {}
+            if not isinstance(network, dict):
+                network = {}
+            finished_at = _stamp(network.get("finished_at"))
+            if network.get("status") == "failed" and finished_at and finished_at >= now:
+                state["last_failure_stage"] = network.get("stage")
+                state["last_failure_reason"] = network.get("reason")
+                state["last_failure_attempts"] = network.get("attempts")
+            else:
+                for key in ("last_failure_stage", "last_failure_reason", "last_failure_attempts"):
+                    state.pop(key, None)
             _, _, state = decision(datetime.now(PACIFIC), state)
             _write(state)
             return completed.returncode

@@ -71,8 +71,12 @@ fi
 
 # Use the repository owner's SSH credential even when the wrapper is run
 # manually outside the launchd environment. Leave non-production remotes alone.
+# Bash 3.2 needs the guarded array expansions below under set -u.
+FETCH_ARGS=()
 case "$(git remote get-url origin 2>/dev/null)" in
   *github.com/daniel-li2021/job-board-pipeline*)
+    # This public repository needs no credential helper for read-only fetches.
+    FETCH_ARGS=(-c credential.helper=)
     export GIT_CONFIG_COUNT="${GIT_CONFIG_COUNT:-1}"
     export GIT_CONFIG_KEY_0="${GIT_CONFIG_KEY_0:-remote.origin.pushurl}"
     export GIT_CONFIG_VALUE_0="${GIT_CONFIG_VALUE_0:-git@github.com:daniel-li2021/job-board-pipeline.git}"
@@ -81,11 +85,76 @@ case "$(git remote get-url origin 2>/dev/null)" in
     ;;
 esac
 
+# Keep the bootstrap self-contained: a stale checkout need not contain a new helper module.
+git_network() {
+  "$PYTHON_BIN" - "$LOG_DIR/git_network_latest.json" "$@" <<'PY_GIT_NETWORK'
+import json
+import os
+import signal
+import subprocess
+import sys
+import tempfile
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+
+TRANSIENT = ("could not resolve", "timed out", "failed to connect", "connection reset",
+             "connection refused", "recv failure", "early eof", "unexpected disconnect",
+             "remote end hung up", "tls connection", "error: 502", "error: 503", "error: 504")
+
+
+def save_receipt(path, receipt):
+    with tempfile.NamedTemporaryFile(mode="w", dir=path.parent, delete=False) as out:
+        json.dump(receipt, out, indent=2)
+        out.write("\n")
+    os.replace(out.name, path)
+
+
+def run(path, stage, args):
+    started = time.monotonic()
+    started_at = datetime.now(timezone.utc).isoformat()
+    for attempt in range(1, 4):
+        proc = subprocess.Popen(["git", *args], stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                text=True, start_new_session=True)
+        timed_out = False
+        try:
+            stdout, stderr = proc.communicate(timeout=45)
+        except subprocess.TimeoutExpired:
+            timed_out = True
+            try:
+                os.killpg(proc.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            stdout, stderr = proc.communicate()
+        sys.stdout.write(stdout)
+        sys.stderr.write(stderr)
+        code = 124 if timed_out else proc.returncode
+        reason = ("timeout" if timed_out else "transient_network" if code and any(
+            text in stderr.lower() for text in TRANSIENT) else "git_failed" if code else "")
+        receipt = {"stage": stage, "status": "failed" if code else "success", "reason": reason,
+                   "attempts": attempt, "exit_code": code, "started_at": started_at,
+                   "finished_at": datetime.now(timezone.utc).isoformat(),
+                   "elapsed_seconds": round(time.monotonic() - started, 3)}
+        save_receipt(path, receipt)
+        if not code:
+            return 0
+        if attempt == 3 or reason == "git_failed":
+            save_receipt(path.with_name("git_network_last_failure.json"), receipt)
+            return code
+        print(f"Git {stage}: {reason}; retry {attempt + 1}/3", file=sys.stderr, flush=True)
+        time.sleep(5 * attempt)
+
+
+if __name__ == "__main__":
+    raise SystemExit(run(Path(sys.argv[1]), sys.argv[2], sys.argv[3:]))
+PY_GIT_NETWORK
+}
+
 TARGET_BRANCH="${TARGET_BRANCH:-main}"
 # Bootstrap the runner itself from the fetched target. The long-lived checkout
 # may be stale or dirty; neither its runner nor its collector code should run.
 if [ "${LOCAL_SOURCE_BOOTSTRAPPED:-0}" != "1" ]; then
-  if ! git fetch origin "$TARGET_BRANCH"; then
+  if ! git_network fetch ${FETCH_ARGS[@]+"${FETCH_ARGS[@]}"} fetch origin "$TARGET_BRANCH"; then
     echo "[$STAMP] fetch failed; snapshots remain local and will retry next run."
     exit 1
   fi
@@ -103,14 +172,14 @@ if [ "${LOCAL_SOURCE_BOOTSTRAPPED:-0}" != "1" ]; then
 fi
 TARGET_COMMIT="${LOCAL_SOURCE_TARGET_COMMIT:-}"
 if [ -z "$TARGET_COMMIT" ]; then
-  git fetch origin "$TARGET_BRANCH" || exit 1
+  git_network fetch ${FETCH_ARGS[@]+"${FETCH_ARGS[@]}"} fetch origin "$TARGET_BRANCH" || exit 1
   TARGET_COMMIT="$(git rev-parse "origin/$TARGET_BRANCH")" || exit 1
 fi
 
 # A public fetch can succeed with the wrong cached GitHub account. Check write
 # authentication before spending several minutes scraping.
-if [ "${SKIP_PUSH:-0}" != "1" ] && ! git push --dry-run origin "origin/$TARGET_BRANCH:$TARGET_BRANCH" >/dev/null; then
-  echo "[$STAMP] Git push authentication failed before collection; fix the credential for this repo owner."
+if [ "${SKIP_PUSH:-0}" != "1" ] && ! git_network push_preflight push --dry-run origin "origin/$TARGET_BRANCH:$TARGET_BRANCH" >/dev/null; then
+  echo "[$STAMP] Git push preflight failed before collection; see output/logs/git_network_latest.json."
   exit 1
 fi
 
@@ -204,7 +273,7 @@ git -C "$SYNC_TREE" commit -m "chore: local job sources ${STAMP}" || {
 }
 
 echo "[$STAMP] pushing source-only commit to ${TARGET_BRANCH}..."
-if git -C "$SYNC_TREE" push origin "HEAD:${TARGET_BRANCH}"; then
+if git_network publish -C "$SYNC_TREE" push origin "HEAD:${TARGET_BRANCH}"; then
   echo "[$STAMP] pushed. GitHub Actions will ingest the updated sources."
   finish_publication
   exit $?
@@ -212,7 +281,7 @@ fi
 
 # Re-scrape once if main advanced. Rebasing would publish artifacts produced by
 # old code alongside newer code, recreating the provenance bug.
-git -C "$SYNC_TREE" fetch origin "$TARGET_BRANCH" || exit 1
+git_network fetch -C "$SYNC_TREE" ${FETCH_ARGS[@]+"${FETCH_ARGS[@]}"} fetch origin "$TARGET_BRANCH" || exit 1
 LATEST_TARGET="$(git -C "$SYNC_TREE" rev-parse "origin/$TARGET_BRANCH")"
 if [ "$LATEST_TARGET" != "$COLLECTOR_COMMIT" ] && [ "${LOCAL_SOURCE_RETRY:-0}" != "1" ]; then
   echo "[$STAMP] main advanced during collection; restarting once on $LATEST_TARGET."

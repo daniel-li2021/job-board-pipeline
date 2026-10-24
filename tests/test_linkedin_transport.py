@@ -27,6 +27,86 @@ def response(status=200, headers=None):
 
 @patch("sources.linkedin_transport.time.sleep")
 class LinkedInTransportTests(unittest.TestCase):
+    def test_recovery_limits_both_endpoints_and_promotes_only_between_clean_rounds(self, sleep):
+        now = datetime.now(timezone.utc)
+        with tempfile.TemporaryDirectory() as temp:
+            journal = Path(temp) / "transport.json"
+            journal.write_text(json.dumps({"rate_limits": [{"at": (now - timedelta(hours=2)).isoformat()}]}))
+            session = Mock()
+            session.get.return_value = response()
+            for limit in (2, 4):
+                transport = LinkedInTransport(local_path=journal)
+                self.assertEqual({"search": limit, "detail": limit}, transport.summary()["recovery_limits"])
+                # Separate calendar rounds here; hourly accounting is tested below.
+                transport.events = []
+                for endpoint in ("search", "detail"):
+                    for _ in range(limit):
+                        transport.get(session, endpoint, endpoint=endpoint)
+                    self.assertFalse(transport.available(endpoint))
+                transport.finish_round()
+                transport.finish_round()  # Initial/follow-up callers cannot double-promote.
+            self.assertEqual(2, transport.recovery["clean_rounds"])
+            self.assertEqual({}, LinkedInTransport(local_path=journal).recovery_limits)
+
+    def test_recovery_probe_does_not_restore_full_budget_and_idle_or_failed_rounds_do_not_promote(self, sleep):
+        now = datetime.now(timezone.utc)
+        with tempfile.TemporaryDirectory() as temp:
+            journal = Path(temp) / "transport.json"
+            state = {"triggered_at": (now - timedelta(hours=2)).isoformat(),
+                     "updated_at": now.isoformat(), "clean_rounds": 0}
+            journal.write_text(json.dumps({"recovery": state}))
+            idle = LinkedInTransport(local_path=journal)
+            idle.finish_round()
+            self.assertEqual(0, idle.recovery["clean_rounds"])
+            session = Mock()
+            session.get.return_value = response()
+            probe = LinkedInTransport(local_path=journal)
+            probe.get(session, "detail", endpoint="detail", probe=True)
+            self.assertFalse(probe.available("detail"))
+            probe.finish_round()
+            resumed = LinkedInTransport(local_path=journal)
+            self.assertEqual({"search": 4, "detail": 4}, resumed.recovery_limits)
+            session.get.side_effect = OSError("network failed")
+            with self.assertRaises(OSError):
+                resumed.get(session, "search", endpoint="search")
+            resumed.finish_round()
+            self.assertEqual(1, resumed.recovery["clean_rounds"])
+
+    def test_new_429_resets_persisted_recovery_and_rolling_hour_still_bounds_catch_up(self, sleep):
+        now = datetime.now(timezone.utc)
+        with tempfile.TemporaryDirectory() as temp:
+            health, journal = Path(temp) / "health.json", Path(temp) / "journal.json"
+            state = {"triggered_at": (now - timedelta(days=2)).isoformat(),
+                     "updated_at": (now - timedelta(days=1)).isoformat(), "clean_rounds": 2}
+            health.write_text(json.dumps({"linkedin_transport": {"recovery": state}}))
+            transport = LinkedInTransport(health, journal)
+            session = Mock()
+            session.get.return_value = response(429, {"Retry-After": "7200"})
+            transport.get(session, "search", endpoint="search")
+            transport.finish_round()
+            resumed = LinkedInTransport(health, journal)
+            self.assertEqual(0, resumed.recovery["clean_rounds"])
+            self.assertFalse(resumed.available("detail"))
+            self.assertEqual("global_429_pause", resumed.stop_reason)
+            resumed.blocked_until = now - timedelta(seconds=1)
+            resumed.events = [{"at": (now - timedelta(minutes=20)).isoformat(), "endpoint": "search"}] * 2
+            self.assertFalse(resumed.available("search"))
+            self.assertEqual("recovery_search_budget", resumed.stop_reason)
+            self.assertTrue(resumed.available("detail"))
+
+    def test_malformed_recovery_counter_restarts_conservatively_and_newer_journal_wins(self, sleep):
+        now = datetime.now(timezone.utc)
+        with tempfile.TemporaryDirectory() as temp:
+            health, journal = Path(temp) / "health.json", Path(temp) / "journal.json"
+            old = {"triggered_at": (now - timedelta(days=1)).isoformat(),
+                   "updated_at": (now - timedelta(hours=1)).isoformat(), "clean_rounds": 0}
+            health.write_text(json.dumps({"linkedin_transport": {"recovery": old}}))
+            current = dict(old, updated_at=now.isoformat(), clean_rounds=1)
+            journal.write_text(json.dumps({"recovery": current}))
+            self.assertEqual({"search": 4, "detail": 4}, LinkedInTransport(health, journal).recovery_limits)
+            journal.write_text(json.dumps({"recovery": dict(current, clean_rounds="invalid")}))
+            self.assertEqual({"search": 2, "detail": 2}, LinkedInTransport(health, journal).recovery_limits)
+
     def test_priority_then_saved_waiter_then_oldest_and_next_round(self, sleep):
         now = datetime.now(timezone.utc)
         jobs = [row(i) for i in range(5)]
