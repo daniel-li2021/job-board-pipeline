@@ -1,18 +1,19 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-25 08:21 PDT
-- Snapshot (UTC): 2026-10-25T15:21:10.409903+00:00
-- Jobs: 90 (Tier A/B only)
+- Updated (PT): 2026-10-25 13:29 PDT
+- Snapshot (UTC): 2026-10-25T20:29:39.159016+00:00
+- Jobs: 92 (Tier A/B only)
 - Last 24 hours: 15
-- Last 3 days: 90
+- Last 3 days: 92
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 96 | linkedin | Applied Underwriters | AI Engineer - Application Development | New York, NY | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-application-development-at-applied-underwriters-4480689981) |
+| A | 96 | linkedin | Applied Underwriters | AI Engineer - Application Development | New York, NY | 2026-10-23 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-application-development-at-applied-underwriters-4480689981) |
 | A | 96 | indeed | Applied Underwriters | AI Engineer - Application Development | New York, NY, US | 2026-10-23 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=174d8b577fafff7a) |
+| A | 95 | linkedin | RemoteJobsOne | Software Engineer, New Grad – Remote (Worldwide) | Jacksonville, FL | 2026-10-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-new-grad-%E2%80%93-remote-worldwide-at-remotejobsone-4482694167) |
 | A | 95 | indeed | Fuel Cycle | Associate AI Engineer | Los Angeles, CA, US | 2026-10-23 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1ddcb6860feaea0b) |
 | A | 95 | linkedin | Fuel Cycle | Associate AI Engineer | Los Angeles, CA | 2026-10-23 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-ai-engineer-at-fuel-cycle-4481976976) |
 | A | 91 | linkedin | Equifax | Generative AI Engineer | Alpharetta, GA | 2026-10-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://careers.equifax.com/en/jobs/j00179159/generative-ai-engineer/) |
@@ -82,10 +83,11 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed | Minerva | Applied AI Engineer, Internal Systems | New York, NY, US | 2026-10-23 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=869c94defd6f6e0e) |
 | B | 75 | linkedin | Yext | Software Engineer | New York, NY | 2026-10-22 | 1to3d | - | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/software-engineer-at-yext-4481362650) |
 | B | 77 | indeed | Infosys | Python AI engineer | Austin, TX, US | 2026-10-23 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ddc16dc69c7afa99) |
-| B | 75 | linkedin | RVO Health | Software Engineer, Red Platform | Minneapolis, MN | 2026-10-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-red-platform-at-rvo-health-4483163180) |
+| B | 75 | linkedin | RVO Health | Software Engineer, Red Platform | Minneapolis, MN | 2026-10-23 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-red-platform-at-rvo-health-4483163180) |
 | B | 75 | linkedin | RVO Health | Software Engineer, Golang | Minneapolis, MN | 2026-10-23 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-golang-at-rvo-health-4474518924) |
 | B | 75 | linkedin | RVO Health | Software Engineer, Golang | Denver, CO | 2026-10-23 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-golang-at-rvo-health-4474531199) |
 | B | 75 | linkedin | Dell Technologies | Software Engineer - Data Protection Software Engineering | Santa Clara, CA | 2026-10-22 | 1to3d | Dell | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/software-engineer-data-protection-software-engineering-at-dell-technologies-4481300867) |
+| B | 75 | linkedin | Evlo AI | Software Engineer - Full Stack | San Diego, CA | 2026-10-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-evlo-ai-4482697252) |
 | B | 75 | linkedin | Evlo AI | Machine Learning Engineer | Denver, CO | 2026-10-23 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-evlo-ai-4481919538) |
 | B | 75 | linkedin | Evlo AI | Machine Learning Engineer | San Diego, CA | 2026-10-23 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-evlo-ai-4481922388) |
 | B | 75 | linkedin | Regal | Backend Engineer | Knoxville, TN | 2026-10-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-at-regal-4463057377) |
