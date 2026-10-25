@@ -3,32 +3,6 @@
   "events": [
     {
       "pipeline": "official",
-      "stamp": "2026-10-11_1448",
-      "emitted_at": "2026-10-11T14:50:26.628474+00:00",
-      "event_kind": "new_or_promoted_ab",
-      "count": 1,
-      "jobs": [
-        {
-          "canonical_job_key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Dallas-Texas-United-States-of-America/Site-Reliability-Engineer-I---Sales-Operations_1203341-1",
-          "job_id": "1203341",
-          "tier": "B",
-          "match_score": 73.0,
-          "company": "HPE",
-          "title": "Site Reliability Engineer I - Sales Operations",
-          "location": "Dallas, Texas, United States of America; Herndon, Virginia, United States of America",
-          "posted_date": "2026-10-07",
-          "date_confidence": "high",
-          "first_seen": "2026-10-11T14:48:10.184639+00:00",
-          "review_status": "unreviewed",
-          "official_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Dallas-Texas-United-States-of-America/Site-Reliability-Engineer-I---Sales-Operations_1203341-1",
-          "source_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Dallas-Texas-United-States-of-America/Site-Reliability-Engineer-I---Sales-Operations_1203341-1",
-          "source": "hpe_official_careers",
-          "url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Dallas-Texas-United-States-of-America/Site-Reliability-Engineer-I---Sales-Operations_1203341-1"
-        }
-      ]
-    },
-    {
-      "pipeline": "official",
       "stamp": "2026-10-12_1449",
       "emitted_at": "2026-10-12T14:50:57.633892+00:00",
       "event_kind": "new_or_promoted_ab",
@@ -1887,6 +1861,33 @@
           "source_url": "https://jobs.apple.com/en-us/details/200691391/software-engineer-evaluation",
           "source": "apple_official_careers",
           "url": "https://jobs.apple.com/en-us/details/200691391/software-engineer-evaluation"
+        }
+      ]
+    },
+    {
+      "pipeline": "official",
+      "stamp": "2026-10-25_1447",
+      "emitted_at": "2026-10-25T14:49:12.192781+00:00",
+      "event_kind": "new_or_promoted_ab",
+      "count": 1,
+      "jobs": [
+        {
+          "canonical_job_key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/301413",
+          "job_id": "301413",
+          "tier": "B",
+          "match_score": 72.0,
+          "company": "Dell",
+          "title": "Services Data Science Graduate Intern",
+          "location": "TX, United States",
+          "posted_date": "2026-10-25",
+          "date_confidence": "high",
+          "first_seen": "2026-10-25T14:47:11.444489+00:00",
+          "referral_name": "Dell",
+          "review_status": "unreviewed",
+          "official_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/301413",
+          "source_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/301413",
+          "source": "dell_official_careers",
+          "url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/301413"
         }
       ]
     }
