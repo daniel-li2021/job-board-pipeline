@@ -1,7 +1,7 @@
-# Big Tech official careers — 7-day view — 2026-10-25_1447
+# Big Tech official careers — 7-day view — 2026-10-25_2346
 
-- Updated (PT): 2026-10-25 07:49 PDT
-- Snapshot (UTC): 2026-10-25T14:49:12.183027+00:00
+- Updated (PT): 2026-10-25 16:48 PDT
+- Snapshot (UTC): 2026-10-25T23:48:39.691737+00:00
 - Last 24 hours: 1
 - Last 3 days: 21
 
@@ -9,12 +9,12 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 
 ## Run stats
 
-- Scraped companies: {'Google': 275, 'Amazon': 718, 'Apple': 247, 'Microsoft': 198, 'NVIDIA': 585, 'Salesforce': 272, 'Adobe': 126, 'Meta': 808, 'TikTok': 718, 'Uber': 201, 'DoorDash': 457, 'Snap': 101, 'Pinterest': 122, 'Snowflake': 260, 'ServiceNow': 414, 'Bloomberg': 64, 'JPMorgan Chase': 612, 'Capital One': 268, 'Oracle': 568, 'Walmart Global Tech': 337, 'Cloudflare': 451, 'Stripe': 414, 'Coinbase': 195, 'Robinhood': 149, 'Figma': 89, 'GitLab': 134, 'Discord': 45, 'Asana': 78, 'Brex': 246, 'Samsara': 244, 'Lyft': 96, 'Spotify': 67, 'Ramp': 149, 'Notion': 78, 'Linear': 26, 'Cohere': 94, 'Cisco': 242, 'SAP': 137, 'HPE': 369, 'Disney': 124, 'eBay': 50, 'Qualcomm': 125, 'AMD': 482, 'Zoom': 31, 'Pure Storage': 226, 'Databricks': 497, 'Roblox': 254, 'Airbnb': 110, 'Anthropic': 548, 'AppLovin': 31, 'ByteDance': 455, 'Chime': 73, 'Dell': 125, 'Dropbox': 17, 'Expedia Group': 74, 'HubSpot': 11, 'Instacart': 106, 'Intel': 181, 'MathWorks': 40, 'MongoDB': 239, 'Morgan Stanley': 105, 'NetApp': 89, 'Netflix': 52, 'OpenAI': 637, 'Palantir': 245, 'PayPal': 56, 'Reddit': 141, 'Red Hat': 30, 'Roku': 71, 'Block / Square': 191, 'Two Sigma': 40, 'Verkada': 263, 'Visa': 117, 'WeRide': 12, 'Workday': 130, 'Zillow': 50, 'Zscaler': 212, 'Chewy': 1, 'CVS Health': 138, 'Duolingo': 52, 'Equinix': 76, 'F5': 1, 'IXL Learning': 107, 'Wells Fargo': 63, 'Yahoo': 56, 'Ansys': 16, 'Flex': 230, 'IQVIA': 11, 'Johnson & Johnson': 192, 'Nasdaq': 19, 'PointClickCare': 72, 'Stryker': 141, 'TransUnion': 36, 'Travelers': 88, 'Verizon': 13, 'Yext': 14}
-- Funnel: after dedup 18167 -> after company filter 18167 -> after hard filter 14734 -> after role+seniority prefilter 2889 | dropped 15278
-- LLM usage: scored 16 / API requests 3 / cache reused 432 (cross-pipeline 4) / rule fallback 2441
-- LLM cache causes: new 11 / material JD 0 / matching context 0 / prior rule now eligible 9 / non-material reused 0 / same-content reused 14 / rescored <24h 0
-- LLM cost: model gpt-6-luna / API requests 3 / jobs scored 16 / tokens input 26840 (cached 0) / output 3319 (reasoning 1836) / estimated cost $0.0043
-- New jobs discovered this run: 71
+- Scraped companies: {'Google': 275, 'Amazon': 718, 'Apple': 275, 'Microsoft': 198, 'NVIDIA': 584, 'Salesforce': 272, 'Adobe': 126, 'Meta': 807, 'TikTok': 717, 'Uber': 201, 'DoorDash': 457, 'Snap': 101, 'Pinterest': 122, 'Snowflake': 260, 'ServiceNow': 414, 'Bloomberg': 64, 'JPMorgan Chase': 609, 'Capital One': 268, 'Oracle': 566, 'Walmart Global Tech': 337, 'Cloudflare': 451, 'Stripe': 413, 'Coinbase': 195, 'Robinhood': 149, 'Figma': 89, 'GitLab': 134, 'Discord': 45, 'Asana': 78, 'Brex': 246, 'Samsara': 244, 'Lyft': 96, 'Spotify': 67, 'Ramp': 149, 'Notion': 78, 'Linear': 26, 'Cohere': 94, 'Cisco': 242, 'SAP': 137, 'HPE': 368, 'Disney': 124, 'eBay': 50, 'Qualcomm': 124, 'AMD': 482, 'Zoom': 31, 'Pure Storage': 226, 'Databricks': 497, 'Roblox': 254, 'Airbnb': 110, 'Anthropic': 547, 'AppLovin': 31, 'ByteDance': 456, 'Chime': 73, 'Dell': 125, 'Dropbox': 17, 'Expedia Group': 74, 'HubSpot': 11, 'Instacart': 104, 'Intel': 181, 'MathWorks': 40, 'MongoDB': 239, 'Morgan Stanley': 105, 'NetApp': 88, 'Netflix': 52, 'OpenAI': 636, 'Palantir': 245, 'PayPal': 56, 'Reddit': 141, 'Red Hat': 30, 'Roku': 71, 'Block / Square': 191, 'Two Sigma': 40, 'Verkada': 263, 'Visa': 117, 'WeRide': 12, 'Workday': 130, 'Zillow': 50, 'Zscaler': 212, 'Chewy': 1, 'CVS Health': 137, 'Duolingo': 52, 'Equinix': 76, 'F5': 1, 'IXL Learning': 107, 'Wells Fargo': 63, 'Yahoo': 56, 'Ansys': 16, 'Flex': 229, 'IQVIA': 11, 'Johnson & Johnson': 192, 'Nasdaq': 19, 'PointClickCare': 72, 'Stryker': 141, 'TransUnion': 36, 'Travelers': 88, 'Verizon': 13, 'Yext': 14}
+- Funnel: after dedup 18175 -> after company filter 18175 -> after hard filter 14744 -> after role+seniority prefilter 2893 | dropped 15282
+- LLM usage: scored 3 / API requests 2 / cache reused 441 (cross-pipeline 0) / rule fallback 2449
+- LLM cache causes: new 3 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 11 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 2 / jobs scored 3 / tokens input 7421 (cached 0) / output 625 (reasoning 353) / estimated cost $0.0011
+- New jobs discovered this run: 10
 - Output: Tier A 6 / Tier B 31 / shown 37
 
 ## Tier A - apply now / referral (6)
@@ -32,7 +32,7 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 72 | llm | official | Dell | Services Data Science Graduate Intern | TX, United States | 2026-10-25 | 3to24h | high | swe | Dell | unreviewed | official_canonical | [open](https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/301413) |
+| 72 | cached_llm | official | Dell | Services Data Science Graduate Intern | TX, United States | 2026-10-25 | 3to24h | high | swe | Dell | unreviewed | official_canonical | [open](https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/301413) |
 | 75 | rule | official | Capital One | Full-stack Engineer 4 | Plano, TX | 2026-10-24 | 1to3d | high | swe | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-stack-Engineer-4_R1001592-1) |
 | 83 | cached_llm | official | Microsoft | Software Engineer II - Finance Data & Experiences | United States, Washington, Redmond | 2026-10-23 | 1to3d | high | swe | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557040468) |
 | 82 | cached_llm | official | NetApp | Software Engineer - Cloud Volumes | San Jose, California, United States | 2026-10-23 | 1to3d | high | swe | - | unreviewed | official_canonical | [open](https://careers.netapp.com/en/job/san-jose/software-engineer-cloud-volumes/27600/102319759728) |
