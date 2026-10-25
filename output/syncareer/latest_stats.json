@@ -1,21 +1,21 @@
 {
-  "run_at": "2026-10-25T14:52:13.801890+00:00",
-  "elapsed_seconds": 61.208,
-  "remote_elapsed_seconds": 50.207,
+  "run_at": "2026-10-25T23:52:16.758455+00:00",
+  "elapsed_seconds": 58.018,
+  "remote_elapsed_seconds": 34.065,
   "funnel": {
-    "scoring_candidates": 48
+    "scoring_candidates": 49
   },
   "llm": {
-    "reused": 50,
-    "llm": 1,
-    "new_or_changed": 1,
-    "rule": 0,
-    "sent": 1,
-    "api_requests": 1,
+    "reused": 43,
+    "llm": 6,
+    "new_or_changed": 6,
+    "rule": 1,
+    "sent": 6,
+    "api_requests": 2,
     "recency_skipped": 0,
     "overflow": 0,
-    "peer_reused": 3,
-    "thin_source_rule": 0,
+    "peer_reused": 0,
+    "thin_source_rule": 1,
     "retryable_fallbacks": 0,
     "historical_seen_skipped": 0,
     "historical_llm_retained": 0,
@@ -23,21 +23,21 @@
     "same_content_reused": 0,
     "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 1
+      "genuinely_new_job": 6
     },
     "batch_size": 10,
-    "primary_batches_total": 1,
-    "batches_total": 1,
-    "batches_succeeded": 1,
-    "batches_attempted": 1,
+    "primary_batches_total": 2,
+    "batches_total": 2,
+    "batches_succeeded": 2,
+    "batches_attempted": 2,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 3.719,
-    "json_results": 1,
+    "latency_seconds": 15.885,
+    "json_results": 6,
     "batches": [
       {
         "batch": 1,
@@ -45,62 +45,178 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://hntb.jobs/tallahassee-fl/new-grad-gis-analyst-i-for-currentprevious-hntb-interns-only/709FBEE6CE744AA69E0DBAC8194C8603/job",
-            "company": "HNTB",
-            "title": "New Grad GIS Analyst I (For Current/Previous HNTB Interns ONLY)"
+            "key": "url::https://a16z.com/about/jobs?gh_jid=8043464003",
+            "company": "Andreessen Horowitz",
+            "title": "Software Engineer, Systems (Partner 16, Partner 18)"
+          },
+          {
+            "key": "url::https://jobs.lever.co/penumbrainc/42be630d-d9d1-41fd-b9f7-ffae5a08844c",
+            "company": "Penumbra",
+            "title": "IT Full Stack Developer"
+          },
+          {
+            "key": "url::https://pc00.paycomonline.com/v4/ats/web.php/portal/A38173AIE92874820ALRE20847CDE927PIW76526/jobs/570247",
+            "company": "Paycom",
+            "title": "Software Developer"
+          },
+          {
+            "key": "url::https://careers.newscorp.com/virtual-usa/data-engineer-remote-us/33899421D27C452FAFC4E3964246E9E5/job",
+            "company": "News Corp",
+            "title": "Data Engineer (remote US)"
+          },
+          {
+            "key": "url::https://careers.dxc.com/job/24049117/analyst-ii-infrastructure-services-cockeysville-md",
+            "company": "DXC Technology",
+            "title": "Analyst II Infrastructure Services"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 3.719,
+        "latency_seconds": 10.787,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 5,
+          "input_tokens": 6581,
+          "cached_input_tokens": 0,
+          "output_tokens": 990,
+          "reasoning_tokens": 451,
+          "estimated_usd": 0.001153
+        },
+        "decisions": [
+          {
+            "key": "url::https://a16z.com/about/jobs?gh_jid=8043464003",
+            "match_score": 74.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Cloud service deployment",
+              "Internal tooling experience"
+            ],
+            "main_gaps": [
+              "3+ years professional experience",
+              "Developer platform ownership"
+            ]
+          },
+          {
+            "key": "url::https://jobs.lever.co/penumbrainc/42be630d-d9d1-41fd-b9f7-ffae5a08844c",
+            "match_score": 67.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "React and Node.js",
+              "End-to-end application development"
+            ],
+            "main_gaps": [
+              "Power Apps and Power Automate",
+              "3+ years application development"
+            ]
+          },
+          {
+            "key": "url::https://pc00.paycomonline.com/v4/ats/web.php/portal/A38173AIE92874820ALRE20847CDE927PIW76526/jobs/570247",
+            "match_score": 83.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Object-oriented programming",
+              "SQL and application development"
+            ],
+            "main_gaps": []
+          },
+          {
+            "key": "url::https://careers.newscorp.com/virtual-usa/data-engineer-remote-us/33899421D27C452FAFC4E3964246E9E5/job",
+            "match_score": 64.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python data pipelines",
+              "Spark and Databricks"
+            ],
+            "main_gaps": [
+              "Azure Data Factory and Fabric",
+              "SQL Server and T-SQL"
+            ]
+          },
+          {
+            "key": "url::https://careers.dxc.com/job/24049117/analyst-ii-infrastructure-services-cockeysville-md",
+            "match_score": 55.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Cloud infrastructure exposure",
+              "Production monitoring and troubleshooting"
+            ],
+            "main_gaps": [
+              "Infrastructure technology analysis",
+              "Infrastructure services support"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 2,
+        "route": "both",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "url::https://job-boards.greenhouse.io/figureai/jobs/4724521006",
+            "company": "Figure AI",
+            "title": "Developer Productivity Intern [Winter 2027]"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 5.098,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
           "jobs_scored": 1,
-          "input_tokens": 2333,
-          "cached_input_tokens": 1851,
-          "output_tokens": 260,
-          "reasoning_tokens": 144,
-          "estimated_usd": 0.000197
+          "input_tokens": 3145,
+          "cached_input_tokens": 0,
+          "output_tokens": 479,
+          "reasoning_tokens": 393,
+          "estimated_usd": 0.000554
         },
         "decisions": [
           {
-            "key": "url::https://hntb.jobs/tallahassee-fl/new-grad-gis-analyst-i-for-currentprevious-hntb-interns-only/709FBEE6CE744AA69E0DBAC8194C8603/job",
-            "match_score": 38.0,
+            "key": "url::https://job-boards.greenhouse.io/figureai/jobs/4724521006",
+            "match_score": 81.0,
             "seniority_fit": "good",
-            "hard_constraint_status": "other",
+            "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Computer science degree",
-              "Entry-level role"
+              "CI/CD and cloud deployment",
+              "Docker and systems experience"
             ],
             "main_gaps": [
-              "GIS/ArcGIS experience",
-              "HNTB intern eligibility"
+              "Build infrastructure experience",
+              "Linux systems fundamentals"
             ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 1,
-    "input_tokens": 2333,
-    "cached_input_tokens": 1851,
-    "output_tokens": 260,
-    "reasoning_tokens": 144,
-    "estimated_usd": 0.000197,
+    "jobs_scored": 6,
+    "input_tokens": 9726,
+    "cached_input_tokens": 0,
+    "output_tokens": 1469,
+    "reasoning_tokens": 844,
+    "estimated_usd": 0.001707,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 1
+    "scored": 6
   },
   "output": {
     "tier_a": 2,
     "tier_b": 6,
-    "tier_c": 40,
+    "tier_c": 41,
     "shown": 8,
-    "new_jobs": 13,
-    "new_jobs_added": 0
+    "new_jobs": 16,
+    "new_jobs_added": 1
   },
   "screen_method": "cache+llm",
   "failures": {
@@ -113,13 +229,13 @@
       "page_budget": 6,
       "pages_fetched": 6,
       "stop_reason": "empty_page",
-      "raw_jobs": 69,
-      "unique_jobs": 69,
-      "unique_contribution": 69,
-      "first_pass_survivors": 46,
-      "original_postings_resolved": 17,
-      "jds_resolved": 11,
-      "elapsed_seconds": 3.185
+      "raw_jobs": 66,
+      "unique_jobs": 66,
+      "unique_contribution": 66,
+      "first_pass_survivors": 40,
+      "original_postings_resolved": 12,
+      "jds_resolved": 12,
+      "elapsed_seconds": 3.088
     },
     {
       "query": "Full Stack",
@@ -127,13 +243,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 1,
-      "unique_jobs": 1,
-      "unique_contribution": 0,
-      "first_pass_survivors": 1,
+      "raw_jobs": 2,
+      "unique_jobs": 2,
+      "unique_contribution": 1,
+      "first_pass_survivors": 2,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.65
+      "elapsed_seconds": 0.636
     },
     {
       "query": "AI",
@@ -141,13 +257,13 @@
       "page_budget": 6,
       "pages_fetched": 4,
       "stop_reason": "empty_page",
-      "raw_jobs": 34,
-      "unique_jobs": 34,
-      "unique_contribution": 29,
-      "first_pass_survivors": 10,
-      "original_postings_resolved": 7,
+      "raw_jobs": 32,
+      "unique_jobs": 32,
+      "unique_contribution": 30,
+      "first_pass_survivors": 7,
+      "original_postings_resolved": 3,
       "jds_resolved": 3,
-      "elapsed_seconds": 1.647
+      "elapsed_seconds": 1.658
     },
     {
       "query": "Machine Learning",
@@ -161,7 +277,7 @@
       "first_pass_survivors": 2,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 1.155
+      "elapsed_seconds": 0.626
     },
     {
       "query": "Infrastructure",
@@ -169,13 +285,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 4,
-      "unique_jobs": 4,
-      "unique_contribution": 4,
-      "first_pass_survivors": 1,
+      "raw_jobs": 5,
+      "unique_jobs": 5,
+      "unique_contribution": 5,
+      "first_pass_survivors": 2,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 1.185
+      "elapsed_seconds": 0.619
     },
     {
       "query": "Forward Deployed",
@@ -189,7 +305,7 @@
       "first_pass_survivors": 3,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 1.266
+      "elapsed_seconds": 0.645
     },
     {
       "query": "DevOps",
@@ -203,7 +319,7 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.94
+      "elapsed_seconds": 0.646
     },
     {
       "query": "Backend",
@@ -217,7 +333,7 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 1.246
+      "elapsed_seconds": 0.621
     },
     {
       "query": "Platform",
@@ -225,13 +341,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
-      "unique_contribution": 4,
-      "first_pass_survivors": 5,
+      "raw_jobs": 5,
+      "unique_jobs": 5,
+      "unique_contribution": 3,
+      "first_pass_survivors": 4,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.613
+      "elapsed_seconds": 0.622
     },
     {
       "query": "New Grad",
@@ -239,13 +355,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 2,
-      "unique_jobs": 2,
-      "unique_contribution": 2,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 3,
       "first_pass_survivors": 2,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.572
+      "elapsed_seconds": 0.616
     },
     {
       "query": "LLM",
@@ -259,7 +375,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.419
+      "elapsed_seconds": 0.151
     },
     {
       "query": "Data Engineer",
@@ -273,7 +389,7 @@
       "first_pass_survivors": 5,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 1.356
+      "elapsed_seconds": 1.1
     },
     {
       "query": "Site Reliability",
@@ -287,14 +403,14 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.577
+      "elapsed_seconds": 0.619
     }
   ],
   "enrichment": {
-    "needed": 10,
-    "detail_api_resolved": 78,
+    "needed": 2,
+    "detail_api_resolved": 70,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 10
+    "remaining_no_jd": 2
   }
 }
