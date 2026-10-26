@@ -1,21 +1,21 @@
 {
-  "run_at": "2026-10-25T23:52:16.758455+00:00",
-  "elapsed_seconds": 58.018,
-  "remote_elapsed_seconds": 34.065,
+  "run_at": "2026-10-26T14:51:58.748962+00:00",
+  "elapsed_seconds": 45.906,
+  "remote_elapsed_seconds": 27.584,
   "funnel": {
-    "scoring_candidates": 49
+    "scoring_candidates": 35
   },
   "llm": {
-    "reused": 43,
-    "llm": 6,
-    "new_or_changed": 6,
-    "rule": 1,
-    "sent": 6,
+    "reused": 35,
+    "llm": 2,
+    "new_or_changed": 2,
+    "rule": 0,
+    "sent": 2,
     "api_requests": 2,
     "recency_skipped": 0,
     "overflow": 0,
-    "peer_reused": 0,
-    "thin_source_rule": 1,
+    "peer_reused": 2,
+    "thin_source_rule": 0,
     "retryable_fallbacks": 0,
     "historical_seen_skipped": 0,
     "historical_llm_retained": 0,
@@ -23,7 +23,7 @@
     "same_content_reused": 0,
     "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 6
+      "genuinely_new_job": 2
     },
     "batch_size": 10,
     "primary_batches_total": 2,
@@ -36,8 +36,8 @@
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 15.885,
-    "json_results": 6,
+    "latency_seconds": 11.201,
+    "json_results": 2,
     "batches": [
       {
         "batch": 1,
@@ -45,112 +45,38 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://a16z.com/about/jobs?gh_jid=8043464003",
-            "company": "Andreessen Horowitz",
-            "title": "Software Engineer, Systems (Partner 16, Partner 18)"
-          },
-          {
-            "key": "url::https://jobs.lever.co/penumbrainc/42be630d-d9d1-41fd-b9f7-ffae5a08844c",
-            "company": "Penumbra",
-            "title": "IT Full Stack Developer"
-          },
-          {
-            "key": "url::https://pc00.paycomonline.com/v4/ats/web.php/portal/A38173AIE92874820ALRE20847CDE927PIW76526/jobs/570247",
-            "company": "Paycom",
-            "title": "Software Developer"
-          },
-          {
-            "key": "url::https://careers.newscorp.com/virtual-usa/data-engineer-remote-us/33899421D27C452FAFC4E3964246E9E5/job",
-            "company": "News Corp",
-            "title": "Data Engineer (remote US)"
-          },
-          {
-            "key": "url::https://careers.dxc.com/job/24049117/analyst-ii-infrastructure-services-cockeysville-md",
-            "company": "DXC Technology",
-            "title": "Analyst II Infrastructure Services"
+            "key": "url::https://recruiting2.ultipro.com/SAL1016SALO/JobBoard/3347ce03-ba60-4bdc-8af2-26369c80b18f/OpportunityDetail?opportunityId=3c32576b-ac60-45ee-9f84-feea1b92e990",
+            "company": "Salas O'Brien",
+            "title": "Software Engineer"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 10.787,
+        "latency_seconds": 4.949,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 5,
-          "input_tokens": 6581,
-          "cached_input_tokens": 0,
-          "output_tokens": 990,
-          "reasoning_tokens": 451,
-          "estimated_usd": 0.001153
+          "jobs_scored": 1,
+          "input_tokens": 2888,
+          "cached_input_tokens": 1851,
+          "output_tokens": 398,
+          "reasoning_tokens": 258,
+          "estimated_usd": 0.000321
         },
         "decisions": [
           {
-            "key": "url::https://a16z.com/about/jobs?gh_jid=8043464003",
-            "match_score": 74.0,
+            "key": "url::https://recruiting2.ultipro.com/SAL1016SALO/JobBoard/3347ce03-ba60-4bdc-8af2-26369c80b18f/OpportunityDetail?opportunityId=3c32576b-ac60-45ee-9f84-feea1b92e990",
+            "match_score": 77.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Cloud service deployment",
-              "Internal tooling experience"
+              "Python application development",
+              "APIs, React, and testing"
             ],
             "main_gaps": [
-              "3+ years professional experience",
-              "Developer platform ownership"
-            ]
-          },
-          {
-            "key": "url::https://jobs.lever.co/penumbrainc/42be630d-d9d1-41fd-b9f7-ffae5a08844c",
-            "match_score": 67.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "React and Node.js",
-              "End-to-end application development"
-            ],
-            "main_gaps": [
-              "Power Apps and Power Automate",
-              "3+ years application development"
-            ]
-          },
-          {
-            "key": "url::https://pc00.paycomonline.com/v4/ats/web.php/portal/A38173AIE92874820ALRE20847CDE927PIW76526/jobs/570247",
-            "match_score": 83.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Object-oriented programming",
-              "SQL and application development"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://careers.newscorp.com/virtual-usa/data-engineer-remote-us/33899421D27C452FAFC4E3964246E9E5/job",
-            "match_score": 64.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Python data pipelines",
-              "Spark and Databricks"
-            ],
-            "main_gaps": [
-              "Azure Data Factory and Fabric",
-              "SQL Server and T-SQL"
-            ]
-          },
-          {
-            "key": "url::https://careers.dxc.com/job/24049117/analyst-ii-infrastructure-services-cockeysville-md",
-            "match_score": 55.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Cloud infrastructure exposure",
-              "Production monitoring and troubleshooting"
-            ],
-            "main_gaps": [
-              "Infrastructure technology analysis",
-              "Infrastructure services support"
+              "3–5 years Python experience"
             ]
           }
         ]
@@ -161,62 +87,62 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://job-boards.greenhouse.io/figureai/jobs/4724521006",
-            "company": "Figure AI",
-            "title": "Developer Productivity Intern [Winter 2027]"
+            "key": "url::https://elevenlabs.io/careers/34dbe44c-9815-40b2-81f4-91c607fd84b2/full-stack-engineer-elevencreative-enterprise",
+            "company": "ElevenLabs",
+            "title": "Full-Stack Engineer - ElevenCreative Enterprise"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 5.098,
+        "latency_seconds": 6.252,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
           "jobs_scored": 1,
-          "input_tokens": 3145,
-          "cached_input_tokens": 0,
-          "output_tokens": 479,
-          "reasoning_tokens": 393,
-          "estimated_usd": 0.000554
+          "input_tokens": 3773,
+          "cached_input_tokens": 2724,
+          "output_tokens": 390,
+          "reasoning_tokens": 275,
+          "estimated_usd": 0.000327
         },
         "decisions": [
           {
-            "key": "url::https://job-boards.greenhouse.io/figureai/jobs/4724521006",
-            "match_score": 81.0,
-            "seniority_fit": "good",
+            "key": "url::https://elevenlabs.io/careers/34dbe44c-9815-40b2-81f4-91c607fd84b2/full-stack-engineer-elevencreative-enterprise",
+            "match_score": 72.0,
+            "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "CI/CD and cloud deployment",
-              "Docker and systems experience"
+              "End-to-end product engineering",
+              "Production APIs and integrations"
             ],
             "main_gaps": [
-              "Build infrastructure experience",
-              "Linux systems fundamentals"
+              "Enterprise customer-facing engineering",
+              "SSO and security reviews"
             ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 6,
-    "input_tokens": 9726,
-    "cached_input_tokens": 0,
-    "output_tokens": 1469,
-    "reasoning_tokens": 844,
-    "estimated_usd": 0.001707,
+    "jobs_scored": 2,
+    "input_tokens": 6661,
+    "cached_input_tokens": 4575,
+    "output_tokens": 788,
+    "reasoning_tokens": 533,
+    "estimated_usd": 0.000648,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 6
+    "scored": 2
   },
   "output": {
-    "tier_a": 2,
-    "tier_b": 6,
-    "tier_c": 41,
-    "shown": 8,
-    "new_jobs": 16,
-    "new_jobs_added": 1
+    "tier_a": 1,
+    "tier_b": 4,
+    "tier_c": 30,
+    "shown": 5,
+    "new_jobs": 5,
+    "new_jobs_added": 0
   },
   "screen_method": "cache+llm",
   "failures": {
@@ -227,15 +153,15 @@
       "query": "Software",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 6,
+      "pages_fetched": 5,
       "stop_reason": "empty_page",
-      "raw_jobs": 66,
-      "unique_jobs": 66,
-      "unique_contribution": 66,
-      "first_pass_survivors": 40,
-      "original_postings_resolved": 12,
-      "jds_resolved": 12,
-      "elapsed_seconds": 3.088
+      "raw_jobs": 49,
+      "unique_jobs": 49,
+      "unique_contribution": 49,
+      "first_pass_survivors": 29,
+      "original_postings_resolved": 9,
+      "jds_resolved": 9,
+      "elapsed_seconds": 2.697
     },
     {
       "query": "Full Stack",
@@ -243,27 +169,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 2,
-      "unique_jobs": 2,
-      "unique_contribution": 1,
-      "first_pass_survivors": 2,
+      "raw_jobs": 4,
+      "unique_jobs": 4,
+      "unique_contribution": 3,
+      "first_pass_survivors": 3,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.636
+      "elapsed_seconds": 0.709
     },
     {
       "query": "AI",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 4,
+      "pages_fetched": 3,
       "stop_reason": "empty_page",
-      "raw_jobs": 32,
-      "unique_jobs": 32,
-      "unique_contribution": 30,
-      "first_pass_survivors": 7,
+      "raw_jobs": 26,
+      "unique_jobs": 26,
+      "unique_contribution": 24,
+      "first_pass_survivors": 5,
       "original_postings_resolved": 3,
       "jds_resolved": 3,
-      "elapsed_seconds": 1.658
+      "elapsed_seconds": 1.166
     },
     {
       "query": "Machine Learning",
@@ -277,7 +203,7 @@
       "first_pass_survivors": 2,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.626
+      "elapsed_seconds": 0.637
     },
     {
       "query": "Infrastructure",
@@ -287,11 +213,11 @@
       "stop_reason": "empty_page",
       "raw_jobs": 5,
       "unique_jobs": 5,
-      "unique_contribution": 5,
-      "first_pass_survivors": 2,
+      "unique_contribution": 4,
+      "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.619
+      "elapsed_seconds": 0.673
     },
     {
       "query": "Forward Deployed",
@@ -299,13 +225,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 1,
-      "first_pass_survivors": 3,
+      "raw_jobs": 2,
+      "unique_jobs": 2,
+      "unique_contribution": 0,
+      "first_pass_survivors": 2,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.645
+      "elapsed_seconds": 0.681
     },
     {
       "query": "DevOps",
@@ -319,21 +245,21 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.646
+      "elapsed_seconds": 0.655
     },
     {
       "query": "Backend",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 1,
-      "unique_jobs": 1,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
       "unique_contribution": 0,
-      "first_pass_survivors": 1,
-      "original_postings_resolved": 1,
-      "jds_resolved": 1,
-      "elapsed_seconds": 0.621
+      "first_pass_survivors": 0,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.171
     },
     {
       "query": "Platform",
@@ -341,13 +267,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 5,
-      "unique_jobs": 5,
-      "unique_contribution": 3,
-      "first_pass_survivors": 4,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 2,
+      "first_pass_survivors": 3,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.622
+      "elapsed_seconds": 0.664
     },
     {
       "query": "New Grad",
@@ -355,13 +281,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 3,
-      "first_pass_survivors": 2,
+      "raw_jobs": 2,
+      "unique_jobs": 2,
+      "unique_contribution": 2,
+      "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.616
+      "elapsed_seconds": 0.647
     },
     {
       "query": "LLM",
@@ -375,21 +301,21 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.151
+      "elapsed_seconds": 0.155
     },
     {
       "query": "Data Engineer",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 3,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 16,
-      "unique_jobs": 16,
-      "unique_contribution": 16,
-      "first_pass_survivors": 5,
+      "raw_jobs": 14,
+      "unique_jobs": 14,
+      "unique_contribution": 14,
+      "first_pass_survivors": 4,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 1.1
+      "elapsed_seconds": 0.628
     },
     {
       "query": "Site Reliability",
@@ -403,14 +329,14 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.619
+      "elapsed_seconds": 0.643
     }
   ],
   "enrichment": {
-    "needed": 2,
-    "detail_api_resolved": 70,
+    "needed": 0,
+    "detail_api_resolved": 47,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 2
+    "remaining_no_jd": 0
   }
 }
