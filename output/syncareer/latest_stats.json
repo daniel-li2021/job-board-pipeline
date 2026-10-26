@@ -1,21 +1,21 @@
 {
-  "run_at": "2026-10-26T14:51:58.748962+00:00",
-  "elapsed_seconds": 45.906,
-  "remote_elapsed_seconds": 27.584,
+  "run_at": "2026-10-26T23:51:37.449986+00:00",
+  "elapsed_seconds": 25.227,
+  "remote_elapsed_seconds": 14.397,
   "funnel": {
-    "scoring_candidates": 35
+    "scoring_candidates": 10
   },
   "llm": {
-    "reused": 35,
-    "llm": 2,
-    "new_or_changed": 2,
-    "rule": 0,
-    "sent": 2,
-    "api_requests": 2,
+    "reused": 9,
+    "llm": 1,
+    "new_or_changed": 1,
+    "rule": 1,
+    "sent": 1,
+    "api_requests": 1,
     "recency_skipped": 0,
     "overflow": 0,
-    "peer_reused": 2,
-    "thin_source_rule": 0,
+    "peer_reused": 0,
+    "thin_source_rule": 1,
     "retryable_fallbacks": 0,
     "historical_seen_skipped": 0,
     "historical_llm_retained": 0,
@@ -23,21 +23,21 @@
     "same_content_reused": 0,
     "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 2
+      "genuinely_new_job": 1
     },
     "batch_size": 10,
-    "primary_batches_total": 2,
-    "batches_total": 2,
-    "batches_succeeded": 2,
-    "batches_attempted": 2,
+    "primary_batches_total": 1,
+    "batches_total": 1,
+    "batches_succeeded": 1,
+    "batches_attempted": 1,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 11.201,
-    "json_results": 2,
+    "latency_seconds": 5.914,
+    "json_results": 1,
     "batches": [
       {
         "batch": 1,
@@ -45,103 +45,61 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://recruiting2.ultipro.com/SAL1016SALO/JobBoard/3347ce03-ba60-4bdc-8af2-26369c80b18f/OpportunityDetail?opportunityId=3c32576b-ac60-45ee-9f84-feea1b92e990",
-            "company": "Salas O'Brien",
-            "title": "Software Engineer"
+            "key": "url::https://careers.deere.com/careers?domain=johndeere.com&hl=en&triggerGoButton=false&start=0&pid=137483675505&sort_by=relevance",
+            "company": "John Deere",
+            "title": "Embedded Software Engineer"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 4.949,
+        "latency_seconds": 5.914,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
           "jobs_scored": 1,
-          "input_tokens": 2888,
+          "input_tokens": 2692,
           "cached_input_tokens": 1851,
-          "output_tokens": 398,
-          "reasoning_tokens": 258,
-          "estimated_usd": 0.000321
+          "output_tokens": 350,
+          "reasoning_tokens": 237,
+          "estimated_usd": 0.000278
         },
         "decisions": [
           {
-            "key": "url::https://recruiting2.ultipro.com/SAL1016SALO/JobBoard/3347ce03-ba60-4bdc-8af2-26369c80b18f/OpportunityDetail?opportunityId=3c32576b-ac60-45ee-9f84-feea1b92e990",
-            "match_score": 77.0,
-            "seniority_fit": "stretch",
+            "key": "url::https://careers.deere.com/careers?domain=johndeere.com&hl=en&triggerGoButton=false&start=0&pid=137483675505&sort_by=relevance",
+            "match_score": 69.0,
+            "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Python application development",
-              "APIs, React, and testing"
+              "C++ and OOP fundamentals",
+              "Concurrent software and APIs"
             ],
             "main_gaps": [
-              "3–5 years Python experience"
-            ]
-          }
-        ]
-      },
-      {
-        "batch": 2,
-        "route": "both",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://elevenlabs.io/careers/34dbe44c-9815-40b2-81f4-91c607fd84b2/full-stack-engineer-elevencreative-enterprise",
-            "company": "ElevenLabs",
-            "title": "Full-Stack Engineer - ElevenCreative Enterprise"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 6.252,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 1,
-          "input_tokens": 3773,
-          "cached_input_tokens": 2724,
-          "output_tokens": 390,
-          "reasoning_tokens": 275,
-          "estimated_usd": 0.000327
-        },
-        "decisions": [
-          {
-            "key": "url::https://elevenlabs.io/careers/34dbe44c-9815-40b2-81f4-91c607fd84b2/full-stack-engineer-elevencreative-enterprise",
-            "match_score": 72.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "End-to-end product engineering",
-              "Production APIs and integrations"
-            ],
-            "main_gaps": [
-              "Enterprise customer-facing engineering",
-              "SSO and security reviews"
+              "Embedded Linux development",
+              "IPC and real-time systems"
             ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 2,
-    "input_tokens": 6661,
-    "cached_input_tokens": 4575,
-    "output_tokens": 788,
-    "reasoning_tokens": 533,
-    "estimated_usd": 0.000648,
+    "jobs_scored": 1,
+    "input_tokens": 2692,
+    "cached_input_tokens": 1851,
+    "output_tokens": 350,
+    "reasoning_tokens": 237,
+    "estimated_usd": 0.000278,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 2
+    "scored": 1
   },
   "output": {
-    "tier_a": 1,
-    "tier_b": 4,
-    "tier_c": 30,
-    "shown": 5,
-    "new_jobs": 5,
+    "tier_a": 0,
+    "tier_b": 1,
+    "tier_c": 9,
+    "shown": 1,
+    "new_jobs": 4,
     "new_jobs_added": 0
   },
   "screen_method": "cache+llm",
@@ -153,15 +111,15 @@
       "query": "Software",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 5,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 49,
-      "unique_jobs": 49,
-      "unique_contribution": 49,
-      "first_pass_survivors": 29,
-      "original_postings_resolved": 9,
-      "jds_resolved": 9,
-      "elapsed_seconds": 2.697
+      "raw_jobs": 15,
+      "unique_jobs": 15,
+      "unique_contribution": 15,
+      "first_pass_survivors": 7,
+      "original_postings_resolved": 3,
+      "jds_resolved": 3,
+      "elapsed_seconds": 0.871
     },
     {
       "query": "Full Stack",
@@ -169,27 +127,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 4,
-      "unique_jobs": 4,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
       "unique_contribution": 3,
-      "first_pass_survivors": 3,
+      "first_pass_survivors": 2,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.709
+      "elapsed_seconds": 0.591
     },
     {
       "query": "AI",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 3,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 26,
-      "unique_jobs": 26,
-      "unique_contribution": 24,
-      "first_pass_survivors": 5,
-      "original_postings_resolved": 3,
-      "jds_resolved": 3,
-      "elapsed_seconds": 1.166
+      "raw_jobs": 12,
+      "unique_jobs": 12,
+      "unique_contribution": 11,
+      "first_pass_survivors": 3,
+      "original_postings_resolved": 2,
+      "jds_resolved": 2,
+      "elapsed_seconds": 0.588
     },
     {
       "query": "Machine Learning",
@@ -197,13 +155,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 2,
-      "unique_jobs": 2,
-      "unique_contribution": 1,
-      "first_pass_survivors": 2,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 0,
+      "first_pass_survivors": 1,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.637
+      "elapsed_seconds": 0.559
     },
     {
       "query": "Infrastructure",
@@ -217,35 +175,35 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.673
+      "elapsed_seconds": 0.631
     },
     {
       "query": "Forward Deployed",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 2,
-      "unique_jobs": 2,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
       "unique_contribution": 0,
-      "first_pass_survivors": 2,
-      "original_postings_resolved": 1,
-      "jds_resolved": 1,
-      "elapsed_seconds": 0.681
+      "first_pass_survivors": 0,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.158
     },
     {
       "query": "DevOps",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 1,
-      "unique_jobs": 1,
-      "unique_contribution": 1,
-      "first_pass_survivors": 1,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.655
+      "elapsed_seconds": 0.133
     },
     {
       "query": "Backend",
@@ -259,21 +217,21 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.171
+      "elapsed_seconds": 0.111
     },
     {
       "query": "Platform",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 2,
-      "first_pass_survivors": 3,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.664
+      "elapsed_seconds": 0.109
     },
     {
       "query": "New Grad",
@@ -287,7 +245,7 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.647
+      "elapsed_seconds": 0.618
     },
     {
       "query": "LLM",
@@ -301,7 +259,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.155
+      "elapsed_seconds": 0.137
     },
     {
       "query": "Data Engineer",
@@ -309,13 +267,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 14,
-      "unique_jobs": 14,
-      "unique_contribution": 14,
-      "first_pass_survivors": 4,
+      "raw_jobs": 2,
+      "unique_jobs": 2,
+      "unique_contribution": 2,
+      "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.628
+      "elapsed_seconds": 0.566
     },
     {
       "query": "Site Reliability",
@@ -326,15 +284,15 @@
       "raw_jobs": 1,
       "unique_jobs": 1,
       "unique_contribution": 1,
-      "first_pass_survivors": 1,
+      "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.643
+      "elapsed_seconds": 0.561
     }
   ],
   "enrichment": {
     "needed": 0,
-    "detail_api_resolved": 47,
+    "detail_api_resolved": 17,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
     "remaining_no_jd": 0

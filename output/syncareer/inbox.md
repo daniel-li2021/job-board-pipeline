@@ -1,10 +1,10 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-10-26 07:52 PDT
-- Snapshot (UTC): 2026-10-26T14:52:00.602879+00:00
-- Jobs: 17
-- Last 24 hours: 1
-- Last 3 days: 17
+- Updated (PT): 2026-10-26 16:51 PDT
+- Snapshot (UTC): 2026-10-26T23:51:38.930554+00:00
+- Jobs: 14
+- Last 24 hours: 0
+- Last 3 days: 14
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
@@ -24,6 +24,3 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 83.0 | Syncareer | Manitowoc | Software Engineer I | Shady Grove, Pennsylvania, United States | 2026-10-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://fda.fa.us1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/3369/?lastSelectedFacet=CATEGORIES&mode=location&selectedCategoriesFacet=100000000133128%253B100000000133120%253B100000000133122%253B100000000133124%253B100000000133126%253B100000000133129%253B100000000133123%253B100000000133127) |
 | B | 85.0 | Syncareer | Intuit | Software Engineer 2 | Mountain View, California, United States | 2026-10-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.intuit.com/job/mountain-view/software-engineer-2/27595/102253948768) |
 | A | 90.0 | Syncareer | Publix | Associate Software Engineer – Finance Systems (Hybrid) | Lakeland, Florida, United States | 2026-10-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.publix.com/job-opening/associate-software-engineer-finance-systems-hybrid/?fromsearch=1) |
-| B | 77.0 | Syncareer | Mozilla | Contract Software Engineer - WebCompat Tooling (Dashboards and Reporti | United States | 2026-10-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.mozilla.org/en-US/careers/position/gh/8306479/) |
-| B | 73.0 | Syncareer | Infosys | Java Full Stack Engineer with Python and AWS | Hartford, Connecticut, United States | 2026-10-22 | Sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/154866BR) |
-| B | 83.0 | Syncareer | Q2 Software | Data Engineer | Austin, Texas, United States | 2026-10-22 | No sponsor | - | unreviewed | not_dedicated | [open](https://q2ebanking.wd5.myworkdayjobs.com/en-US/Q2/job/Austin-TX/Data-Engineer_REQ-12855-1?jobFamilies=8b86f00a4a2a01e03cacfbdc0288b96a&jobFamilies=8b86f00a4a2a0161c8f6dbdc0288ab6a&jobFamilies=54838d87026b0142d4a0dd78070250f5&jobFamilies=54838d87026b019304a74a65070243f5&jobFamilies=8b86f00a4a2a0105bcc1d3dc0288a76a) |
