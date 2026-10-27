@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-26 17:21 PDT
-- Snapshot (UTC): 2026-10-27T00:21:40.128344+00:00
-- Jobs: 69 (Tier A/B only)
-- Last 24 hours: 35
-- Last 3 days: 69
+- Updated (PT): 2026-10-26 22:26 PDT
+- Snapshot (UTC): 2026-10-27T05:26:07.683428+00:00
+- Jobs: 75 (Tier A/B only)
+- Last 24 hours: 41
+- Last 3 days: 75
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -24,6 +24,9 @@ The 7-day dump is `latest.md`.
 | A | 90 | indeed | New Jersey Office of Legislative Services | Programmer Analyst 1 | Trenton, NJ, US | 2026-10-26 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a92d7c04fe83d29d) |
 | A | 90 | indeed | Net Solutions | Application Developer | Los Angeles, CA, US | 2026-10-25 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=0f740b6aef5de21b) |
 | A | 92 | linkedin | Virtusa | AI Engineer | Dallas, TX | 2026-10-24 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-virtusa-4481014465) |
+| A | 91 | linkedin | Wellabe | Software Engineer 1/2/3-Hybrid, Des Moines, Iowa | Des Moines, IA | 2026-10-26 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-1-2-3-hybrid-des-moines-iowa-at-wellabe-4483703175) |
+| A | 89 | linkedin | T-Mobile | Associate Software Engineer- Billing Platform | Atlanta, GA | 2026-10-26 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-software-engineer-billing-platform-at-t-mobile-4483761473) |
+| A | 89 | linkedin | T-Mobile | Associate Software Engineer- Billing Platform | Frisco, TX | 2026-10-27 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-software-engineer-billing-platform-at-t-mobile-4483773383) |
 | A | 89 | indeed | Field Nimble | Web Application Developer | Buffalo, NY, US | 2026-10-26 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1e9d1a5b85357522) |
 | A | 88 | indeed | YUM! Brands, Inc. | Site Reliability Engineer | Louisville, KY, US | 2026-10-26 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=20a3b6f096b020de) |
 | A | 89 | indeed | Birchwood Technologies | AI Engineer | Remote, US | 2026-10-26 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6259999556267f2b) |
@@ -53,9 +56,12 @@ The 7-day dump is `latest.md`.
 | B | 87 | indeed | Lunon | Forward Deployed AI Engineer | New York, NY, US | 2026-10-26 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=171a0bb47f1ca180) |
 | B | 88 | indeed | Synacor | Software Engineer | Buffalo, NY, US | 2026-10-26 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c332da6f9ad71ba8) |
 | B | 85 | indeed |  | Web Developer | Houston, TX, US | 2026-10-26 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=88ff5b7a19bf789d) |
+| B | 85 | linkedin | CNH | Software Engineer I | Oak Brook, IL | 2026-10-26 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-i-at-cnh-4483576816) |
 | B | 83 | indeed | Precision Point Diagnostics | Computer Programmer | Atlanta, GA, US | 2026-10-26 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=f563988f4c462a13) |
 | B | 84 | indeed | Headsbase LLC | Software Engineer | Remote, US | 2026-10-26 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=213adf410b032c49) |
 | B | 82 | indeed | Bud K Worldwide, Inc | IT Developer | Moultrie, GA, US | 2026-10-26 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=27892554dab72b35) |
+| B | 83 | linkedin | Flywire | Software Engineer II | Chicago, IL | 2026-10-26 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-flywire-4483223269) |
+| B | 83 | linkedin | DHL Express | Software Engineer II | Tempe, AZ | 2026-10-27 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-dhl-express-4483768694) |
 | B | 80 | linkedin | Archer | Software Engineer II - C# .Net | Irvine, CA | 2026-10-23 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-c%23-net-at-archer-4481676872) |
 | B | 80 | linkedin | Compass | Software Engineer II | Aventura, FL | 2026-10-23 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-compass-4450682951) |
 | B | 80 | linkedin | Compass | Software Engineer II | New York, NY | 2026-10-23 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-compass-4474326414) |
