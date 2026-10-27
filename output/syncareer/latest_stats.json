@@ -1,43 +1,43 @@
 {
-  "run_at": "2026-10-26T23:51:37.449986+00:00",
-  "elapsed_seconds": 25.227,
-  "remote_elapsed_seconds": 14.397,
+  "run_at": "2026-10-27T14:52:46.853315+00:00",
+  "elapsed_seconds": 89.887,
+  "remote_elapsed_seconds": 26.421,
   "funnel": {
-    "scoring_candidates": 10
+    "scoring_candidates": 30
   },
   "llm": {
     "reused": 9,
-    "llm": 1,
-    "new_or_changed": 1,
-    "rule": 1,
-    "sent": 1,
-    "api_requests": 1,
+    "llm": 21,
+    "new_or_changed": 21,
+    "rule": 0,
+    "sent": 21,
+    "api_requests": 3,
     "recency_skipped": 0,
     "overflow": 0,
     "peer_reused": 0,
-    "thin_source_rule": 1,
+    "thin_source_rule": 0,
     "retryable_fallbacks": 0,
     "historical_seen_skipped": 0,
     "historical_llm_retained": 0,
     "non_material_change_reused": 0,
-    "same_content_reused": 0,
+    "same_content_reused": 1,
     "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 1
+      "genuinely_new_job": 21
     },
     "batch_size": 10,
-    "primary_batches_total": 1,
-    "batches_total": 1,
-    "batches_succeeded": 1,
-    "batches_attempted": 1,
+    "primary_batches_total": 3,
+    "batches_total": 3,
+    "batches_succeeded": 3,
+    "batches_attempted": 3,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 5.914,
-    "json_results": 1,
+    "latency_seconds": 60.216,
+    "json_results": 21,
     "batches": [
       {
         "batch": 1,
@@ -45,62 +45,480 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://careers.deere.com/careers?domain=johndeere.com&hl=en&triggerGoButton=false&start=0&pid=137483675505&sort_by=relevance",
-            "company": "John Deere",
-            "title": "Embedded Software Engineer"
+            "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210801292",
+            "company": "JPMorgan Chase",
+            "title": "Software Engineer [Multiple Positions Available]"
+          },
+          {
+            "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/102482506800",
+            "company": "Capital One",
+            "title": "Full-stack Engineer 4"
+          },
+          {
+            "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210796026",
+            "company": "JPMorgan Chase",
+            "title": "Software Engineer III - AWS, Databricks, Python, Cognos"
+          },
+          {
+            "key": "url::https://wd1.myworkdaysite.com/en-US/recruiting/onto/ONTO_Careers/job/Milpitas-CA/Software-Engineer-1_R-6520",
+            "company": "Onto Innovation",
+            "title": "Software Engineer 1"
+          },
+          {
+            "key": "url::https://job-boards.greenhouse.io/gleanwork/jobs/4746919005",
+            "company": "Glean",
+            "title": "Software Engineer"
+          },
+          {
+            "key": "url::https://careers.t-mobile.com/associate-software-engineer-billing-platform/job/EAE17AC6C71760025ED2BFB9064E908A",
+            "company": "T-Mobile",
+            "title": "Associate Software Engineer- Billing Platform"
+          },
+          {
+            "key": "url::https://job-boards.greenhouse.io/gleanwork/jobs/4746918005",
+            "company": "Glean",
+            "title": "Software Engineer"
+          },
+          {
+            "key": "url::https://job-boards.greenhouse.io/gleanwork/jobs/4746910005",
+            "company": "Glean",
+            "title": "Software Engineer"
+          },
+          {
+            "key": "url::https://recruiting2.ultipro.com/IVE1000IVEC/JobBoard/ec3e4530-b925-46c7-8da5-602b6abf81e7/OpportunityDetail?opportunityId=926104a5-2aea-42d0-b258-a974f99a34d1",
+            "company": "i3 Verticals",
+            "title": "Software Support Analyst Tier I"
+          },
+          {
+            "key": "url::https://careers.blackrock.com/job/new-york/forward-deployed-business-analyst-associate-bto/45831/102486523888",
+            "company": "BlackRock",
+            "title": "Forward Deployed Business Analyst, Associate - BTO"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 5.914,
+        "latency_seconds": 30.166,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 10,
+          "input_tokens": 10342,
+          "cached_input_tokens": 1851,
+          "output_tokens": 2631,
+          "reasoning_tokens": 1564,
+          "estimated_usd": 0.002183
+        },
+        "decisions": [
+          {
+            "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210801292",
+            "match_score": 48.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "React and TypeScript",
+              "Accessible web applications"
+            ],
+            "main_gaps": [
+              "Three years’ experience",
+              "Component-library governance"
+            ]
+          },
+          {
+            "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/102482506800",
+            "match_score": 38.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Full-stack development",
+              "AWS and Kubernetes"
+            ],
+            "main_gaps": [
+              "Four years’ experience",
+              "Technical team leadership"
+            ]
+          },
+          {
+            "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210796026",
+            "match_score": 50.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python and Databricks",
+              "Production data workflows"
+            ],
+            "main_gaps": [
+              "Three years’ AWS experience",
+              "ETL pipelines from scratch"
+            ]
+          },
+          {
+            "key": "url::https://wd1.myworkdaysite.com/en-US/recruiting/onto/ONTO_Careers/job/Milpitas-CA/Software-Engineer-1_R-6520",
+            "match_score": 44.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "C++ programming",
+              "Software lifecycle experience"
+            ],
+            "main_gaps": [
+              "Semiconductor tool control",
+              "C#/.NET on Windows"
+            ]
+          },
+          {
+            "key": "url::https://job-boards.greenhouse.io/gleanwork/jobs/4746919005",
+            "match_score": 86.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Enterprise retrieval systems",
+              "Search performance optimization"
+            ],
+            "main_gaps": [
+              "Large-scale fault-tolerance evidence"
+            ]
+          },
+          {
+            "key": "url::https://careers.t-mobile.com/associate-software-engineer-billing-platform/job/EAE17AC6C71760025ED2BFB9064E908A",
+            "match_score": 84.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Software development",
+              "Scalable service environments"
+            ],
+            "main_gaps": []
+          },
+          {
+            "key": "url::https://job-boards.greenhouse.io/gleanwork/jobs/4746918005",
+            "match_score": 88.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "React and TypeScript",
+              "Full-stack API development"
+            ],
+            "main_gaps": [
+              "Flask experience"
+            ]
+          },
+          {
+            "key": "url::https://job-boards.greenhouse.io/gleanwork/jobs/4746910005",
+            "match_score": 73.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Search and retrieval systems",
+              "Python and PyTorch"
+            ],
+            "main_gaps": [
+              "MLOps and anomaly detection",
+              "TensorFlow or scikit-learn"
+            ]
+          },
+          {
+            "key": "url::https://recruiting2.ultipro.com/IVE1000IVEC/JobBoard/ec3e4530-b925-46c7-8da5-602b6abf81e7/OpportunityDetail?opportunityId=926104a5-2aea-42d0-b258-a974f99a34d1",
+            "match_score": 26.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Technical troubleshooting",
+              "Software application familiarity"
+            ],
+            "main_gaps": [
+              "Software support experience"
+            ]
+          },
+          {
+            "key": "url::https://careers.blackrock.com/job/new-york/forward-deployed-business-analyst-associate-bto/45831/102486523888",
+            "match_score": 39.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Hands-on software prototyping",
+              "Cross-functional delivery"
+            ],
+            "main_gaps": [
+              "Business architecture",
+              "Operating-model design"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 2,
+        "route": "resume_swe",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "url::https://abbott.wd5.myworkdayjobs.com/en-US/abbottcareers/job/United-States---Texas---Irving/Software-Test-Engineer_31165591-1?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=55273a1b49934d97ae15342ef51f6b95&Location_Country=a4e08b475d6a4176853c9d1cb9854e02&Location_Country=d4afdeb461d446e4babd204bd102dba8&jobFamilyGroup=77166004ab82108dbc36d45444ea5319&jobFamilyGroup=77166004ab82108dbc369f0685c75300&jobFamilyGroup=77166004ab82108dbc36ddc1741b531d&jobFamilyGroup=77166004ab82108dbc36c1aa703d530e&jobFamilyGroup=77166004ab82108dbc368b52e1f452f7&jobFamilyGroup=77166004ab82108dbc36c663b1735313&jobFamilyGroup=77166004ab82108dbc36a3f4c1f35302&jobFamilyGroup=77166004ab82108dbc36d8a13149531b&jobFamilyGroup=77166004ab82108dbc36ae7004d75306&jobFamilyGroup=77166004ab82108dbc36b387bcb25308&jobFamilyGroup=77166004ab82108dbc36bd400e63530c&jobFamilyGroup=77166004ab82108dbc36b8277206530a&jobFamilyGroup=77166004ab82108dbc36cf373cfb5317&jobFamilyGroup=77166004ab82108dbc3691dba9f452f9&jobFamilyGroup=77166004ab82108dbc36a9373a205304&jobFamilyGroup=77166004ab82108dbc3697ef47b552fb",
+            "company": "Abbott",
+            "title": "Software Test Engineer"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 11.019,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
           "jobs_scored": 1,
-          "input_tokens": 2692,
+          "input_tokens": 3374,
           "cached_input_tokens": 1851,
-          "output_tokens": 350,
-          "reasoning_tokens": 237,
-          "estimated_usd": 0.000278
+          "output_tokens": 925,
+          "reasoning_tokens": 299,
+          "estimated_usd": 0.000633
         },
         "decisions": [
           {
-            "key": "url::https://careers.deere.com/careers?domain=johndeere.com&hl=en&triggerGoButton=false&start=0&pid=137483675505&sort_by=relevance",
-            "match_score": 69.0,
+            "key": "url::https://abbott.wd5.myworkdayjobs.com/en-US/abbottcareers/job/United-States---Texas---Irving/Software-Test-Engineer_31165591-1?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=55273a1b49934d97ae15342ef51f6b95&Location_Country=a4e08b475d6a4176853c9d1cb9854e02&Location_Country=d4afdeb461d446e4babd204bd102dba8&jobFamilyGroup=77166004ab82108dbc36d45444ea5319&jobFamilyGroup=77166004ab82108dbc369f0685c75300&jobFamilyGroup=77166004ab82108dbc36ddc1741b531d&jobFamilyGroup=77166004ab82108dbc36c1aa703d530e&jobFamilyGroup=77166004ab82108dbc368b52e1f452f7&jobFamilyGroup=77166004ab82108dbc36c663b1735313&jobFamilyGroup=77166004ab82108dbc36a3f4c1f35302&jobFamilyGroup=77166004ab82108dbc36d8a13149531b&jobFamilyGroup=77166004ab82108dbc36ae7004d75306&jobFamilyGroup=77166004ab82108dbc36b387bcb25308&jobFamilyGroup=77166004ab82108dbc36bd400e63530c&jobFamilyGroup=77166004ab82108dbc36b8277206530a&jobFamilyGroup=77166004ab82108dbc36cf373cfb5317&jobFamilyGroup=77166004ab82108dbc3691dba9f452f9&jobFamilyGroup=77166004ab82108dbc36a9373a205304&jobFamilyGroup=77166004ab82108dbc3697ef47b552fb",
+            "match_score": 73.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Automated testing and regression",
+              "CI/CD and test coverage"
+            ],
+            "main_gaps": [
+              "Formal V&V test planning",
+              "2+ years professional experience"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 3,
+        "route": "both",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/102462448704",
+            "company": "Capital One",
+            "title": "Full-stack Engineer 4"
+          },
+          {
+            "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4/1732/102471617072",
+            "company": "Capital One",
+            "title": "Full-stack Engineer 4"
+          },
+          {
+            "key": "url::https://www.capitalonecareers.com/job/riverwoods/data-engineer-4-python-oracle-database/1732/102488895952",
+            "company": "Capital One",
+            "title": "Data Engineer 4 (Python, Oracle Database)"
+          },
+          {
+            "key": "url::https://careers.ibm.com/en_US/careers/JobDetail?jobId=136419",
+            "company": "IBM",
+            "title": "Entry Level Software Developer - 2027 - Lowell"
+          },
+          {
+            "key": "url::https://careers.ibm.com/en_US/careers/JobDetail?jobId=137674",
+            "company": "IBM",
+            "title": "Software Engineering Intern - Quantum Information Science 2027"
+          },
+          {
+            "key": "url::https://www.tesla.com/careers/search/job/287669",
+            "company": "Tesla",
+            "title": "Embedded Software Engineer, Hands, Optimus"
+          },
+          {
+            "key": "url::https://careers.unitedhealthgroup.com/job/eden-prairie/software-engineer/34088/102482783536",
+            "company": "UnitedHealth Group",
+            "title": "Software Engineer"
+          },
+          {
+            "key": "url::https://careers.t-mobile.com/embedded-software-engineer-broadband-cpe/job/A8C4C0B4771F37B0D2E280962F98F9BF",
+            "company": "T-Mobile",
+            "title": "Embedded Software Engineer - Broadband CPE"
+          },
+          {
+            "key": "url::https://cursor.com/careers/software-engineer-compute-infra",
+            "company": "Anysphere",
+            "title": "Software Engineer, Compute Infra"
+          },
+          {
+            "key": "url::https://www.onetrust.com/careers/ai-systems-engineer-8301165",
+            "company": "OneTrust",
+            "title": "AI Systems Engineer"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 19.031,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 10,
+          "input_tokens": 14469,
+          "cached_input_tokens": 2724,
+          "output_tokens": 1515,
+          "reasoning_tokens": 748,
+          "estimated_usd": 0.001959
+        },
+        "decisions": [
+          {
+            "key": "url::https://www.capitalonecareers.com/job/mclean/full-stack-engineer-4/1732/102462448704",
+            "match_score": 44.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Full-stack development",
+              "Cloud deployment experience"
+            ],
+            "main_gaps": [
+              "4+ years software engineering",
+              "Technical leadership experience"
+            ]
+          },
+          {
+            "key": "url::https://www.capitalonecareers.com/job/plano/full-stack-engineer-4/1732/102471617072",
+            "match_score": 44.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Full-stack development",
+              "Cloud deployment experience"
+            ],
+            "main_gaps": [
+              "4+ years software engineering",
+              "Technical leadership experience"
+            ]
+          },
+          {
+            "key": "url::https://www.capitalonecareers.com/job/riverwoods/data-engineer-4-python-oracle-database/1732/102488895952",
+            "match_score": 47.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python and Spark",
+              "Data pipeline experience"
+            ],
+            "main_gaps": [
+              "4+ years application development",
+              "End-to-end data modeling"
+            ]
+          },
+          {
+            "key": "url::https://careers.ibm.com/en_US/careers/JobDetail?jobId=136419",
+            "match_score": 96.0,
             "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "C++ and OOP fundamentals",
-              "Concurrent software and APIs"
+              "Early-career software development",
+              "Full-stack and cloud experience"
+            ],
+            "main_gaps": []
+          },
+          {
+            "key": "url::https://careers.ibm.com/en_US/careers/JobDetail?jobId=137674",
+            "match_score": 56.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python software engineering",
+              "Testing and debugging"
+            ],
+            "main_gaps": [
+              "Rust development",
+              "Quantum computing experience"
+            ]
+          },
+          {
+            "key": "url::https://www.tesla.com/careers/search/job/287669",
+            "match_score": 22.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "C++ programming",
+              "Automated testing"
+            ],
+            "main_gaps": [
+              "Embedded systems experience",
+              "Microcontroller and RTOS"
+            ]
+          },
+          {
+            "key": "url::https://careers.unitedhealthgroup.com/job/eden-prairie/software-engineer/34088/102482783536",
+            "match_score": 58.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Full-stack application development",
+              "Automated testing experience"
+            ],
+            "main_gaps": [
+              "Java and Spring Boot",
+              "Frontend and CI testing"
+            ]
+          },
+          {
+            "key": "url::https://careers.t-mobile.com/embedded-software-engineer-broadband-cpe/job/A8C4C0B4771F37B0D2E280962F98F9BF",
+            "match_score": 35.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "C++ programming",
+              "Microservice development"
             ],
             "main_gaps": [
               "Embedded Linux development",
-              "IPC and real-time systems"
+              "Networking and device protocols"
+            ]
+          },
+          {
+            "key": "url::https://cursor.com/careers/software-engineer-compute-infra",
+            "match_score": 57.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Cloud infrastructure experience",
+              "Distributed systems background"
+            ],
+            "main_gaps": [
+              "VM virtualization experience",
+              "Linux kernel and orchestration"
+            ]
+          },
+          {
+            "key": "url::https://www.onetrust.com/careers/ai-systems-engineer-8301165",
+            "match_score": 72.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production AI platform experience",
+              "AI integration and troubleshooting"
+            ],
+            "main_gaps": [
+              "Enterprise SaaS administration"
             ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 1,
-    "input_tokens": 2692,
-    "cached_input_tokens": 1851,
-    "output_tokens": 350,
-    "reasoning_tokens": 237,
-    "estimated_usd": 0.000278,
+    "jobs_scored": 21,
+    "input_tokens": 28185,
+    "cached_input_tokens": 6426,
+    "output_tokens": 5071,
+    "reasoning_tokens": 2611,
+    "estimated_usd": 0.004775,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 1
+    "scored": 21
   },
   "output": {
-    "tier_a": 0,
-    "tier_b": 1,
-    "tier_c": 9,
-    "shown": 1,
-    "new_jobs": 4,
-    "new_jobs_added": 0
+    "tier_a": 1,
+    "tier_b": 5,
+    "tier_c": 24,
+    "shown": 6,
+    "new_jobs": 41,
+    "new_jobs_added": 5
   },
   "screen_method": "cache+llm",
   "failures": {
@@ -111,15 +529,15 @@
       "query": "Software",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 4,
       "stop_reason": "empty_page",
-      "raw_jobs": 15,
-      "unique_jobs": 15,
-      "unique_contribution": 15,
-      "first_pass_survivors": 7,
-      "original_postings_resolved": 3,
-      "jds_resolved": 3,
-      "elapsed_seconds": 0.871
+      "raw_jobs": 34,
+      "unique_jobs": 34,
+      "unique_contribution": 34,
+      "first_pass_survivors": 29,
+      "original_postings_resolved": 10,
+      "jds_resolved": 10,
+      "elapsed_seconds": 2.027
     },
     {
       "query": "Full Stack",
@@ -127,13 +545,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 3,
-      "first_pass_survivors": 2,
+      "raw_jobs": 5,
+      "unique_jobs": 5,
+      "unique_contribution": 5,
+      "first_pass_survivors": 4,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.591
+      "elapsed_seconds": 0.637
     },
     {
       "query": "AI",
@@ -141,13 +559,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 12,
-      "unique_jobs": 12,
-      "unique_contribution": 11,
-      "first_pass_survivors": 3,
+      "raw_jobs": 10,
+      "unique_jobs": 10,
+      "unique_contribution": 10,
+      "first_pass_survivors": 4,
       "original_postings_resolved": 2,
       "jds_resolved": 2,
-      "elapsed_seconds": 0.588
+      "elapsed_seconds": 0.693
     },
     {
       "query": "Machine Learning",
@@ -155,13 +573,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 1,
-      "unique_jobs": 1,
-      "unique_contribution": 0,
-      "first_pass_survivors": 1,
+      "raw_jobs": 2,
+      "unique_jobs": 2,
+      "unique_contribution": 2,
+      "first_pass_survivors": 2,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.559
+      "elapsed_seconds": 0.856
     },
     {
       "query": "Infrastructure",
@@ -169,27 +587,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 5,
-      "unique_jobs": 5,
-      "unique_contribution": 4,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 3,
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.631
+      "elapsed_seconds": 0.733
     },
     {
       "query": "Forward Deployed",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 1,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 0,
-      "unique_jobs": 0,
-      "unique_contribution": 0,
-      "first_pass_survivors": 0,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
+      "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.158
+      "elapsed_seconds": 0.62
     },
     {
       "query": "DevOps",
@@ -203,35 +621,35 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.133
+      "elapsed_seconds": 0.155
     },
     {
       "query": "Backend",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 1,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 0,
-      "unique_jobs": 0,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
       "unique_contribution": 0,
-      "first_pass_survivors": 0,
-      "original_postings_resolved": 0,
-      "jds_resolved": 0,
-      "elapsed_seconds": 0.111
+      "first_pass_survivors": 1,
+      "original_postings_resolved": 1,
+      "jds_resolved": 1,
+      "elapsed_seconds": 0.628
     },
     {
       "query": "Platform",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 1,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 0,
-      "unique_jobs": 0,
-      "unique_contribution": 0,
-      "first_pass_survivors": 0,
-      "original_postings_resolved": 0,
-      "jds_resolved": 0,
-      "elapsed_seconds": 0.109
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 1,
+      "first_pass_survivors": 3,
+      "original_postings_resolved": 2,
+      "jds_resolved": 2,
+      "elapsed_seconds": 0.619
     },
     {
       "query": "New Grad",
@@ -239,13 +657,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 2,
-      "unique_jobs": 2,
-      "unique_contribution": 2,
-      "first_pass_survivors": 1,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
+      "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.618
+      "elapsed_seconds": 0.607
     },
     {
       "query": "LLM",
@@ -259,10 +677,24 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.137
+      "elapsed_seconds": 0.132
     },
     {
       "query": "Data Engineer",
+      "group": "syncareer",
+      "page_budget": 6,
+      "pages_fetched": 2,
+      "stop_reason": "empty_page",
+      "raw_jobs": 4,
+      "unique_jobs": 4,
+      "unique_contribution": 4,
+      "first_pass_survivors": 2,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.598
+    },
+    {
+      "query": "Site Reliability",
       "group": "syncareer",
       "page_budget": 6,
       "pages_fetched": 2,
@@ -271,30 +703,16 @@
       "unique_jobs": 2,
       "unique_contribution": 2,
       "first_pass_survivors": 1,
-      "original_postings_resolved": 0,
-      "jds_resolved": 0,
-      "elapsed_seconds": 0.566
-    },
-    {
-      "query": "Site Reliability",
-      "group": "syncareer",
-      "page_budget": 6,
-      "pages_fetched": 2,
-      "stop_reason": "empty_page",
-      "raw_jobs": 1,
-      "unique_jobs": 1,
-      "unique_contribution": 1,
-      "first_pass_survivors": 0,
-      "original_postings_resolved": 0,
-      "jds_resolved": 0,
-      "elapsed_seconds": 0.561
+      "original_postings_resolved": 1,
+      "jds_resolved": 1,
+      "elapsed_seconds": 0.592
     }
   ],
   "enrichment": {
-    "needed": 0,
-    "detail_api_resolved": 17,
+    "needed": 1,
+    "detail_api_resolved": 51,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 0
+    "remaining_no_jd": 1
   }
 }
