@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-28T14:52:38.622545+00:00",
-  "count": 4936,
+  "generated_at": "2026-10-28T14:56:52.421263+00:00",
+  "count": 4940,
   "companies": [
     {
       "name": "1-800 CONTACTS",
@@ -11019,7 +11019,9 @@
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "4fcb7f928a616db59552fe9a"
+      ],
       "seen_count": 1
     },
     {
@@ -11929,9 +11931,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "27adcb3f734d1319644bca31"
+        "27adcb3f734d1319644bca31",
+        "e85b909d9e2b73271edc965a"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Chattanooga-Hamilton County Air Pollution Control Bureau",
@@ -12275,6 +12278,7 @@
     {
       "name": "Church & Dwight Co.",
       "aliases": [
+        "Church & Dwight",
         "Church & Dwight Co., Inc."
       ],
       "size": "unknown",
@@ -12284,10 +12288,11 @@
       "tags": [],
       "seen_job_keys": [
         "10d216c860589a2fc88ee50c",
+        "126cd1982772b12e094da55e",
         "505cb90af16654111e52fff8",
         "71928b7e556aa423e245337d"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "Church of the King",
@@ -15776,10 +15781,11 @@
         "83f02011858bddf498748670",
         "98689a6087b083727c7dbf47",
         "a4c92adab434f1dcf0b43665",
+        "b4b56775c15b970ec168f426",
         "c742e6cfd24f76fccee9c695",
         "d259202369641010e7ec6e91"
       ],
-      "seen_count": 5
+      "seen_count": 6
     },
     {
       "name": "Crystal Practice Management",
@@ -16298,10 +16304,14 @@
       "tags": [],
       "seen_job_keys": [
         "471ab27f8415305ba461038f",
+        "7aaa310a3d988ebed484c9ea",
+        "7d9a95fba623e29552135a40",
+        "a03bb262f207a02a7dede4dc",
         "b6bace7787c4c2cff9dbad36",
+        "ce10e6986229f3ca6fe8dacc",
         "d8298d3ea7ec277bef18b384"
       ],
-      "seen_count": 3
+      "seen_count": 7
     },
     {
       "name": "D.R. Horton",
@@ -18550,6 +18560,19 @@
       "tags": [],
       "seen_job_keys": [
         "87f8acae6f1f5ff0f8b03457"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Dupont",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "ccf88f4214108c1248c795d4"
       ],
       "seen_count": 1
     },
@@ -24511,6 +24534,7 @@
         "88cac7aec68ac30bfe09e37e",
         "89b72926484df692e11d0854",
         "8cf48814ee8fcb8d6317d133",
+        "9890c61b9d867d626e0a1717",
         "afd6c3ac46f988996d6f19e8",
         "baef15e3712edb27baff6c66",
         "bb9852adabcae5515b80ec90",
@@ -24522,7 +24546,7 @@
         "f62286bd98e5a11a5fd6cf33",
         "f9137f89309e15af09e2113f"
       ],
-      "seen_count": 23
+      "seen_count": 24
     },
     {
       "name": "GE",
@@ -33444,6 +33468,19 @@
         "daa98a4e569bd6e9bbbbeb8e"
       ],
       "seen_count": 4
+    },
+    {
+      "name": "Kimball Electronics",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "1b1317a9c00c43abf59f9810"
+      ],
+      "seen_count": 1
     },
     {
       "name": "Kimley-Horn",
@@ -45401,9 +45438,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "c1cdb106b40059c5370c0d4c",
         "fcb28ea5851116af2c311026"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Planet Pharma",
@@ -64405,6 +64443,19 @@
       "seen_count": 1
     },
     {
+      "name": "Yash & Lujan Consulting",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "65c8ebf7ecb00351a5d11d51"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Yelp",
       "aliases": [],
       "size": "unknown",
@@ -64714,6 +64765,19 @@
       "tags": [],
       "seen_job_keys": [
         "12a26b21d4f9636a0aa57e9d"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Zip HQ",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "965f3a20397253d2616e628c"
       ],
       "seen_count": 1
     },
