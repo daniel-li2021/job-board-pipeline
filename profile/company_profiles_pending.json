@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-29T23:51:21.677600+00:00",
-  "count": 5127,
+  "generated_at": "2026-10-29T23:54:50.095345+00:00",
+  "count": 5131,
   "companies": [
     {
       "name": "01.com",
@@ -1192,13 +1192,14 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "0e7b66f73871f42f5c0f5523",
         "5277d68ceaaa8813c70a35f7",
         "8332cd715fd3ca8c2f3ed2d5",
         "934aedf7c2ed715008782755",
         "ae166f3afc80d018706f2959",
         "aeec7b43f47e8586d0649c5b"
       ],
-      "seen_count": 5
+      "seen_count": 6
     },
     {
       "name": "Addison Group",
@@ -13962,7 +13963,9 @@
     },
     {
       "name": "Coca-Cola Consolidated, Inc.",
-      "aliases": [],
+      "aliases": [
+        "Coca-Cola Consolidated"
+      ],
       "size": "unknown",
       "maturity": "established",
       "sponsor": "unknown",
@@ -13971,9 +13974,10 @@
       "seen_job_keys": [
         "7543bcee3e88e27ddf5a7833",
         "bcea0d4e105cccd99512d669",
+        "c94aefde6b50feac32821683",
         "ff665618d46f4bc8708c905e"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "COCC",
@@ -29457,6 +29461,7 @@
         "21f13d486e07fead6c6be420",
         "28ed466b8dbcda6ae7d6e294",
         "2fa4c5c73bf4c35bce0e74e7",
+        "345ade9320a9e80fd967be93",
         "38824a05e20faa0617ceee95",
         "3968de1f158e6e7bfa58a544",
         "3d3babb5e0f38390e2817678",
@@ -29464,15 +29469,17 @@
         "6838b8ee35f8ec4e608fa9a0",
         "6b3a4e7775172ab77f3ca0b1",
         "6d397f4aab19d6bc8693ffa3",
+        "73c651f0f806957e80b40ba8",
         "78de531ccbbd2160deae0c81",
         "7ef52bd8628916dc4792f6d2",
         "8e100bb7de825eb2bcfc8d16",
         "8f5770465bfa140f28e9380a",
+        "92cee4d43366a27a5451884b",
         "cc0e456594c2a7abddbd34b8",
         "cc902e34d7299294719ada62",
         "e89a4c1791995afac76fce9f"
       ],
-      "seen_count": 22
+      "seen_count": 25
     },
     {
       "name": "Hofstra University",
@@ -30305,6 +30312,19 @@
       "tags": [],
       "seen_job_keys": [
         "0d1a51fc0db6d05dab95a0f7"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Iberdrola",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "4af52dbf4ad4df14cc1b832f"
       ],
       "seen_count": 1
     },
@@ -31733,6 +31753,19 @@
         "a1caf9d644192d83f6f08d55"
       ],
       "seen_count": 2
+    },
+    {
+      "name": "Inspire Medical Systems",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "485789abdd53f727c05f54f0"
+      ],
+      "seen_count": 1
     },
     {
       "name": "Institute of Foundation Models",
@@ -46563,6 +46596,19 @@
       "seen_count": 1
     },
     {
+      "name": "Phantom",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "dad9ed8b4a3bdff3b16f3625"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Pharmacy Data Management, Inc.",
       "aliases": [],
       "size": "unknown",
@@ -55933,9 +55979,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "25625cd4c87d8a842bd0eb24"
+        "25625cd4c87d8a842bd0eb24",
+        "d549074b2eef002ea3eb7f79"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Spring Venture Group",
@@ -57839,6 +57886,19 @@
         "907811aa29a2446dba37b493"
       ],
       "seen_count": 2
+    },
+    {
+      "name": "Syros Pharmaceuticals",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "972e9730049d987fd71cd2c0"
+      ],
+      "seen_count": 1
     },
     {
       "name": "Sysintelli",
