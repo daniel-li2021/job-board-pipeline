@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-29T14:53:09.673049+00:00",
-  "count": 5076,
+  "generated_at": "2026-10-29T14:55:38.254921+00:00",
+  "count": 5079,
   "companies": [
     {
       "name": "01.com",
@@ -2959,13 +2959,17 @@
     },
     {
       "name": "ALSTOM",
-      "aliases": [],
+      "aliases": [
+        "Alstom"
+      ],
       "size": "unknown",
       "maturity": "established",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "cb2979e6d25a86c5971b99ce"
+      ],
       "seen_count": 1
     },
     {
@@ -8190,9 +8194,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "0fcf59f2fca3cb8d2132ff76"
+        "0fcf59f2fca3cb8d2132ff76",
+        "cbfe25a11b2fcba6b333bbf4"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "BIOVIA",
@@ -11707,6 +11712,19 @@
       "tags": [],
       "seen_job_keys": [
         "909154e16763b2303d68bf13"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Celonis",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "c0e2853a412a0ec62a15c675"
       ],
       "seen_count": 1
     },
@@ -16246,9 +16264,10 @@
         "b4b56775c15b970ec168f426",
         "c548a0246b6cc9cf1201e07f",
         "c742e6cfd24f76fccee9c695",
-        "d259202369641010e7ec6e91"
+        "d259202369641010e7ec6e91",
+        "eafaf5f2c77f3c2782e7ee2d"
       ],
-      "seen_count": 7
+      "seen_count": 8
     },
     {
       "name": "Crystal Practice Management",
@@ -18752,9 +18771,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "94e7e555d2b71debb0b884c8",
         "fa9af99f0e0b268dc0655da7"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Dolphin Education Inc.",
@@ -23302,6 +23322,19 @@
       "seen_count": 1
     },
     {
+      "name": "First Majestic Silver",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "e6c2d84b879e5bf205d6383c"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "First National of Nebraska",
       "aliases": [],
       "size": "unknown",
@@ -26587,9 +26620,10 @@
         "b73d698405f02d5763101492",
         "c16beaf42c6ffb282a5c6c11",
         "eb4d5131d6692d090764e325",
+        "ef5383e7fb7a9b88b1f14cf3",
         "ff51d00bf19ffdaac73f43a4"
       ],
-      "seen_count": 6
+      "seen_count": 7
     },
     {
       "name": "Grambling State University",
@@ -43440,6 +43474,19 @@
       "tags": [],
       "seen_job_keys": [
         "1f50012d6ff7247845ba6aa6"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "O'Reilly Auto Parts",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "517005f231b0f34aac0ab989"
       ],
       "seen_count": 1
     },
@@ -61533,9 +61580,10 @@
         "1ecb1246c43a11ff4a0f58f1",
         "4e440608dd68dee4d7b8966d",
         "6e7a540765f1fb653f516bc3",
-        "8a4b295861793689597c94c4"
+        "8a4b295861793689597c94c4",
+        "b3d22cef5d4499b379b9aa9a"
       ],
-      "seen_count": 5
+      "seen_count": 6
     },
     {
       "name": "TYTON LLC",
