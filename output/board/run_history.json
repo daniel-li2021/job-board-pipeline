@@ -2,6 +2,301 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-10-29T19:21:14.270300+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 6,
+      "cache_reused": 423,
+      "peer_reused": 0,
+      "same_content_reused": 1,
+      "non_material_change_reused": 0,
+      "new_or_changed": 7,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 5,
+        "prior_rule_result_now_eligible_for_llm": 2
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1435,
+      "requests": 3,
+      "input_tokens": 11310,
+      "cached_input_tokens": 0,
+      "output_tokens": 1818,
+      "reasoning_tokens": 1383,
+      "estimated_usd": 0.00204,
+      "latency_seconds": 21.254,
+      "latency_measured": true,
+      "effective_rpm": 8.47,
+      "effective_tpm": 37060.32,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 3,
+      "primary_batches_total": 3,
+      "batches_attempted": 3,
+      "batches_succeeded": 3,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 6,
+      "funnel": {
+        "after_dedup": 8131,
+        "after_company": 7647,
+        "after_hard_filter": 7071,
+        "after_prefilter": 2302,
+        "official_duplicates_suppressed": 438,
+        "retry_only_carried": 0,
+        "dropped": 5615
+      },
+      "output": {
+        "tier_a": 50,
+        "tier_b": 178,
+        "ab_before_cap": 228,
+        "shown": 228,
+        "new_jobs": 55,
+        "new_jobs_added": 11,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 22,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 33,
+            "added": 11
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 2997,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 58,
+          "identity_needed": 37,
+          "identities_resolved": 28,
+          "cache_reused": 2,
+          "http_requests": 35,
+          "jds_resolved": 2,
+          "direct_http_resolved": 2,
+          "remaining_no_jd": 2997,
+          "failure_reasons": {
+            "no_direct_or_official_url": 21
+          }
+        },
+        "remaining_no_jd": 2959,
+        "failure_reasons": {
+          "no_enrichment_path": 2404,
+          "linkedin_rate_limited": 103,
+          "linkedin_http_429": 5,
+          "official_detail_deferred": 48,
+          "no_direct_or_official_url": 21,
+          "linkedin_http_network_error": 2,
+          "glassdoor_detail_http_403_static_card_only": 376
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.client-server.com/job/software-engineer-c-net-fintech-7",
+              "company": "Client Server",
+              "title": "Software Engineer C# .Net - FinTech"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.206,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2063,
+            "cached_input_tokens": 0,
+            "output_tokens": 198,
+            "reasoning_tokens": 120,
+            "estimated_usd": 0.000305
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.client-server.com/job/software-engineer-c-net-fintech-7",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend services",
+                "Distributed systems"
+              ],
+              "main_gaps": [
+                "C#/.NET experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4484214797",
+              "company": "Church & Dwight Co., Inc.",
+              "title": "AI Engineer, Commercial"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.541,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3420,
+            "cached_input_tokens": 0,
+            "output_tokens": 322,
+            "reasoning_tokens": 246,
+            "estimated_usd": 0.000503
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4484214797",
+              "match_score": 77.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production RAG and agentic workflows",
+                "LLM evaluation and deployment"
+              ],
+              "main_gaps": [
+                "3+ years relevant experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4476749457",
+              "company": "CLEAR",
+              "title": "Forward Deployed AI Engineer I"
+            },
+            {
+              "key": "id::linkedin::4476248379",
+              "company": "Trucker Path",
+              "title": "Backend Engineer"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210722115",
+              "company": "JPMorganChase",
+              "title": "Software Engineering III - .Net Core, AI, React, (Multiple roles)"
+            },
+            {
+              "key": "id::linkedin::4484980459",
+              "company": "New Relic",
+              "title": "Associate Software Engineer - Java (Distributed Systems and Databases)"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 14.507,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 4,
+            "input_tokens": 5827,
+            "cached_input_tokens": 0,
+            "output_tokens": 1298,
+            "reasoning_tokens": 1017,
+            "estimated_usd": 0.001232
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4476749457",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production AI systems",
+                "RAG, agents, and evaluation"
+              ],
+              "main_gaps": [
+                "Privacy and model governance"
+              ]
+            },
+            {
+              "key": "id::linkedin::4476248379",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend API development",
+                "Production reliability"
+              ],
+              "main_gaps": [
+                "Java/Spring Boot production experience",
+                "3–4 years backend experience"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210722115",
+              "match_score": 56.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack software development",
+                "Production testing and delivery"
+              ],
+              "main_gaps": [
+                "NET Core experience",
+                "Senior-level architecture ownership"
+              ]
+            },
+            {
+              "key": "id::linkedin::4484980459",
+              "match_score": 77.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Distributed backend systems",
+                "Cloud and database experience"
+              ],
+              "main_gaps": [
+                "Professional Java experience",
+                "2+ years distributed SaaS experience"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-10-29T15:21:20.386502+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -33300,406 +33595,6 @@
                 "2+ years DevOps experience",
                 "Production Terraform module ownership"
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-10-23T05:27:02.401179+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 12,
-      "cache_reused": 314,
-      "peer_reused": 0,
-      "same_content_reused": 3,
-      "non_material_change_reused": 0,
-      "new_or_changed": 14,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 8,
-        "prior_rule_result_now_eligible_for_llm": 6
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1376,
-      "requests": 3,
-      "input_tokens": 19471,
-      "cached_input_tokens": 0,
-      "output_tokens": 3618,
-      "reasoning_tokens": 2695,
-      "estimated_usd": 0.003757,
-      "latency_seconds": 34.388,
-      "latency_measured": true,
-      "effective_rpm": 5.23,
-      "effective_tpm": 40285.56,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 3,
-      "primary_batches_total": 3,
-      "batches_attempted": 3,
-      "batches_succeeded": 3,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 12,
-      "funnel": {
-        "after_dedup": 7614,
-        "after_company": 7212,
-        "after_hard_filter": 6667,
-        "after_prefilter": 2111,
-        "official_duplicates_suppressed": 409,
-        "retry_only_carried": 0,
-        "dropped": 5320
-      },
-      "output": {
-        "tier_a": 39,
-        "tier_b": 142,
-        "ab_before_cap": 181,
-        "shown": 181,
-        "new_jobs": 49,
-        "new_jobs_added": 9,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 5,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 44,
-            "added": 9
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 2804,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 41,
-          "identity_needed": 29,
-          "identities_resolved": 24,
-          "cache_reused": 3,
-          "http_requests": 26,
-          "remaining_no_jd": 2804,
-          "failure_reasons": {
-            "no_direct_or_official_url": 12
-          }
-        },
-        "remaining_no_jd": 2759,
-        "failure_reasons": {
-          "no_enrichment_path": 2236,
-          "linkedin_rate_limited": 85,
-          "linkedin_http_429": 5,
-          "no_direct_or_official_url": 12,
-          "official_detail_deferred": 43,
-          "linkedin_http_network_error": 2,
-          "glassdoor_detail_http_403_static_card_only": 376
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://careers.bankofamerica.com/en-us/job-detail/26036012/software-engineer-iii-flutter-engineer-multiple-locations",
-              "company": "Bank of America",
-              "title": "Software Engineer III - Flutter Engineer"
-            },
-            {
-              "key": "id::linkedin::4478645576",
-              "company": "Cambia Health Solutions",
-              "title": "Member Experience Software Development Engineer II - III"
-            },
-            {
-              "key": "id::linkedin::4478648631",
-              "company": "Mastercard",
-              "title": "Software Engineer II"
-            },
-            {
-              "key": "id::linkedin::4481622219",
-              "company": "Cambia Health Solutions",
-              "title": "Software Development Engineer I or II (Customer Acquisition)"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 8.815,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 4,
-            "input_tokens": 6357,
-            "cached_input_tokens": 0,
-            "output_tokens": 1000,
-            "reasoning_tokens": 734,
-            "estimated_usd": 0.001136
-          },
-          "decisions": [
-            {
-              "key": "url::https://careers.bankofamerica.com/en-us/job-detail/26036012/software-engineer-iii-flutter-engineer-multiple-locations",
-              "match_score": 44.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production software engineering",
-                "Full-stack development"
-              ],
-              "main_gaps": [
-                "Flutter development",
-                "Engineer III experience"
-              ]
-            },
-            {
-              "key": "id::linkedin::4478645576",
-              "match_score": 68.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "TypeScript and Python",
-                "API and cloud delivery"
-              ],
-              "main_gaps": [
-                "3+ years experience",
-                "Secure coding practices"
-              ]
-            },
-            {
-              "key": "id::linkedin::4478648631",
-              "match_score": 68.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "API and microservices",
-                "Testing and reliability"
-              ],
-              "main_gaps": [
-                "Java Spring Boot experience",
-                "AI-assisted development tools"
-              ]
-            },
-            {
-              "key": "id::linkedin::4481622219",
-              "match_score": 85.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack application development",
-                "Cloud and API delivery"
-              ],
-              "main_gaps": []
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4482470014",
-              "company": "Ahold Delhaize USA",
-              "title": "AI/ML Engineer, Enterprise AI"
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5455627008",
-              "company": "Anthropic",
-              "title": "Applied AI Architect, Public Sector (Federal Civilan)"
-            },
-            {
-              "key": "id::linkedin::4482050309",
-              "company": "Deloitte",
-              "title": "Generative AI Engineer II - Federal Health & State & Local"
-            },
-            {
-              "key": "id::linkedin::4482467068",
-              "company": "Ahold Delhaize USA",
-              "title": "AI/ML Engineer"
-            },
-            {
-              "key": "id::linkedin::4481617993",
-              "company": "Commence",
-              "title": "AI/ML Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 13.528,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 5,
-            "input_tokens": 6772,
-            "cached_input_tokens": 0,
-            "output_tokens": 1425,
-            "reasoning_tokens": 1074,
-            "estimated_usd": 0.00139
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4482470014",
-              "match_score": 57.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production LLM and agentic systems",
-                "Model serving and evaluation"
-              ],
-              "main_gaps": [
-                "5+ years AI/ML engineering",
-                "Expert PySpark/distributed computing"
-              ]
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5455627008",
-              "match_score": 38.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "LLM architecture and evaluation",
-                "Production AI implementation"
-              ],
-              "main_gaps": [
-                "Federal/state/local agency experience",
-                "5+ years customer-facing architecture"
-              ]
-            },
-            {
-              "key": "id::linkedin::4482050309",
-              "match_score": 84.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production AI solutions",
-                "Model pipelines and workflows"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "id::linkedin::4482467068",
-              "match_score": 62.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "ML model development and evaluation",
-                "Production AI integration"
-              ],
-              "main_gaps": [
-                "5+ years AI/ML engineering"
-              ]
-            },
-            {
-              "key": "id::linkedin::4481617993",
-              "match_score": 65.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production ML and AI workflows",
-                "RAG and inference APIs"
-              ],
-              "main_gaps": [
-                "Healthcare datasets (EHR/claims/FHIR)",
-                "Scikit-learn/TensorFlow/PyTorch experience"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 3,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4478639119",
-              "company": "Oracle",
-              "title": "Software Developer 3"
-            },
-            {
-              "key": "id::linkedin::4482037533",
-              "company": "Optum",
-              "title": "Associate AI/ML Engineer"
-            },
-            {
-              "key": "url::https://careers.equifax.com/en/jobs/j00179159/generative-ai-engineer",
-              "company": "Equifax",
-              "title": "Generative AI Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 12.045,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 3,
-            "input_tokens": 6342,
-            "cached_input_tokens": 0,
-            "output_tokens": 1193,
-            "reasoning_tokens": 887,
-            "estimated_usd": 0.001231
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4478639119",
-              "match_score": 65.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "REST API development",
-                "Distributed systems and AWS"
-              ],
-              "main_gaps": [
-                "3 years' experience",
-                "Kafka and streaming platforms"
-              ]
-            },
-            {
-              "key": "id::linkedin::4482037533",
-              "match_score": 74.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production LLM and RAG",
-                "Python APIs and Kubernetes"
-              ],
-              "main_gaps": [
-                "2+ years enterprise ML",
-                "Advanced SQL and data science libraries"
-              ]
-            },
-            {
-              "key": "url::https://careers.equifax.com/en/jobs/j00179159/generative-ai-engineer",
-              "match_score": 91.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production GenAI and RAG",
-                "Python, FastAPI, and cloud"
-              ],
-              "main_gaps": []
             }
           ]
         }
