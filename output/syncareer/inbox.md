@@ -1,19 +1,19 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-10-30 07:54 PDT
-- Snapshot (UTC): 2026-10-30T14:54:02.316685+00:00
-- Jobs: 59
-- Last 24 hours: 13
-- Last 3 days: 59
+- Updated (PT): 2026-10-30 16:53 PDT
+- Snapshot (UTC): 2026-10-30T23:53:50.362165+00:00
+- Jobs: 53
+- Last 24 hours: 6
+- Last 3 days: 53
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 87.0 | Syncareer | Rubrik | Software Engineer - Entra ID | Palo Alto, California, United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.rubrik.com/company/careers/departments/job.8267709.1929?reqId=11547) |
-| A | 93.0 | Syncareer | Principal Financial Group | Software Engineer I | Des Moines, Iowa, United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.principal.com/careers-home/jobs/53906?lang=en-us&previousLocale=en-US) |
-| B | 78.0 | Syncareer | T-Mobile | Engineer, Software - Core & IP Services Automation | Bellevue, Washington, United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.t-mobile.com/engineer-software-core-ip-services-automation/job/F70500EA80BAB394CB59AAE6E3050DB8) |
 | A | 92.0 | Syncareer | Exelixis | Associate Engineer- AI and Agentics | Alameda, California, United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://exelixis.wd1.myworkdayjobs.com/en-US/Exel/job/Alameda-CA/Associate-Engineer--AI-and-Agentics_JR7183) |
+| A | 93.0 | Syncareer | Principal Financial Group | Software Engineer I | Des Moines, Iowa, United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.principal.com/careers-home/jobs/53906?lang=en-us&previousLocale=en-US) |
+| A | 87.0 | Syncareer | Rubrik | Software Engineer - Entra ID | Palo Alto, California, United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.rubrik.com/company/careers/departments/job.8267709.1929?reqId=11547) |
+| B | 78.0 | Syncareer | T-Mobile | Engineer, Software - Core & IP Services Automation | Bellevue, Washington, United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.t-mobile.com/engineer-software-core-ip-services-automation/job/F70500EA80BAB394CB59AAE6E3050DB8) |
 | A | 98.0 | Syncareer | Exelixis | Associate AI and Agentic Engineer | Alameda, California, United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://exelixis.wd1.myworkdayjobs.com/en-US/Exel/job/Alameda-CA/Associate-AI-and-Agentic-Engineer_JR7184) |
 | B | 85.0 | Syncareer | Comcast | Junior Backend Software Engineer (Python or PHP) - Chicago - ONSITE 2X | Chicago, Illinois, United States | 2026-10-28 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.comcast.com/job/chicago/junior-backend-software-engineer-python-or-php-chicago-onsite-2x-week-freewheel/45483/102559627504) |
 | A | 91.0 | Syncareer | Atlassian | Backend Software Engineer | San Francisco, California, United States | 2026-10-28 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.atlassian.com/company/careers/details/27823) |
@@ -60,12 +60,6 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | A | 97.0 | Syncareer | IBM | Entry Level AI Software Engineer | Durham, North Carolina, United States | 2026-10-27 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=137789&source=WEB_Search_NA) |
 | B | 84.0 | Syncareer | Point72 | Quantitative Software Developer | New York, New York, United States | 2026-10-27 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.point72.com/CSJobDetail?jobName=quantitative-software-developer&jobCode=CSS-0012945&location=New%20York&locale=English&retURL=/CSCareerSearch) |
 | B | 74.0 | Syncareer | Chatham Financial | Data Engineer | Kennett Square, Pennsylvania, United States | 2026-10-27 | Sponsor | - | unreviewed | not_dedicated | [open](https://chathamfinancial.wd501.myworkdayjobs.com/en-US/ChathamFinancial/job/Kennett-Square/Data-Engineer_R-100347) |
-| B | 78.0 | Syncareer | Fortinet | Early Careers: Software Development Engineer | Sunnyvale, California, United States | 2026-10-26 | No sponsor | - | unreviewed | not_dedicated | [open](https://edel.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/24770/?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000361862%253B300000000361286) |
-| B | 86.0 | Syncareer | Glean | Software Engineer | Mountain View, California, United States | 2026-10-26 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/gleanwork/jobs/4746919005) |
-| B | 72.0 | Syncareer | OneTrust | AI Systems Engineer | Atlanta, Georgia, United States | 2026-10-26 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.onetrust.com/careers/ai-systems-engineer-8301165/) |
-| A | 96.0 | Syncareer | IBM | Entry Level Software Developer - 2027 - Lowell | Lowell, Massachusetts, United States | 2026-10-26 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=136419&source=WEB_Search_NA) |
-| B | 84.0 | Syncareer | T-Mobile | Associate Software Engineer- Billing Platform | Frisco, Texas, United States | 2026-10-26 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.t-mobile.com/associate-software-engineer-billing-platform/job/EAE17AC6C71760025ED2BFB9064E908A) |
-| B | 88.0 | Syncareer | Glean | Software Engineer | Mountain View, California, United States | 2026-10-26 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/gleanwork/jobs/4746918005) |
 | B | 83.0 | Syncareer | Oracle | Platform Software Engineer 2 | United States | 2026-10-29 | Sponsor | YES (Oracle) | unreviewed | official_identity_unmatched | [open](https://careers.oracle.com/en/sites/jobsearch/job/348196/?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000149325%253B300000000106863) |
 | B | 83.0 | Syncareer | Oracle | Platform Software Engineer 2 | United States | 2026-10-28 | Sponsor | YES (Oracle) | unreviewed | official_identity_unmatched | [open](https://careers.oracle.com/en/sites/jobsearch/job/348221/?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000149325%253B300000000106863) |
 | B | 83.0 | Syncareer | Oracle | Platform Software Engineer 2 | United States | 2026-10-27 | Sponsor | YES (Oracle) | unreviewed | official_identity_unmatched | [open](https://careers.oracle.com/en/sites/jobsearch/job/348228/?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000149325%253B300000000106863) |
