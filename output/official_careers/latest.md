@@ -1,44 +1,56 @@
-# Big Tech official careers — 7-day view — 2026-10-30_1446
+# Big Tech official careers — 7-day view — 2026-10-30_2345
 
-- Updated (PT): 2026-10-30 07:49 PDT
-- Snapshot (UTC): 2026-10-30T14:49:29.661095+00:00
-- Last 24 hours: 2
-- Last 3 days: 37
+- Updated (PT): 2026-10-30 16:50 PDT
+- Snapshot (UTC): 2026-10-30T23:50:14.802813+00:00
+- Last 24 hours: 15
+- Last 3 days: 49
 
 Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scoring/ranking.
 
 ## Run stats
 
-- Scraped companies: {'Apple': 347, 'Cisco': 225, 'Amazon': 745, 'Workday': 123, 'Wells Fargo': 68, 'Walmart Global Tech': 370, 'Intel': 149, 'Oracle': 416, 'CVS Health': 139, 'Capital One': 189, 'Meta': 839, 'Google': 282, 'Red Hat': 28, 'JPMorgan Chase': 572, 'Microsoft': 213, 'Qualcomm': 119, 'SAP': 118, 'HPE': 294, 'Snap': 99, 'TransUnion': 34, 'Salesforce': 193, 'Expedia Group': 45, 'Disney': 123, 'Dell': 127, 'AMD': 492, 'Uber': 178, 'eBay': 43, 'NVIDIA': 472, 'Adobe': 103, 'TikTok': 714, 'DoorDash': 443, 'Pinterest': 124, 'Snowflake': 262, 'ServiceNow': 416, 'Bloomberg': 21, 'Cloudflare': 458, 'Stripe': 424, 'Coinbase': 196, 'Robinhood': 158, 'Figma': 95, 'GitLab': 132, 'Discord': 42, 'Asana': 77, 'Brex': 251, 'Samsara': 275, 'Lyft': 92, 'Spotify': 66, 'Ramp': 149, 'Notion': 77, 'Linear': 24, 'Cohere': 98, 'Zoom': 23, 'Pure Storage': 222, 'Databricks': 503, 'Roblox': 254, 'Airbnb': 111, 'Anthropic': 537, 'AppLovin': 34, 'ByteDance': 454, 'Chime': 72, 'Dropbox': 14, 'HubSpot': 13, 'Instacart': 85, 'MathWorks': 39, 'MongoDB': 236, 'Morgan Stanley': 103, 'NetApp': 85, 'Netflix': 54, 'OpenAI': 655, 'Palantir': 240, 'PayPal': 57, 'Reddit': 145, 'Roku': 67, 'Block / Square': 187, 'Two Sigma': 39, 'Verkada': 270, 'Visa': 131, 'WeRide': 11, 'Zillow': 51, 'Zscaler': 222, 'Chewy': 2, 'Duolingo': 50, 'Equinix': 70, 'F5': 1, 'IXL Learning': 104, 'Yahoo': 50, 'Ansys': 18, 'Flex': 184, 'IQVIA': 12, 'Johnson & Johnson': 178, 'Nasdaq': 18, 'PointClickCare': 65, 'Stryker': 138, 'Travelers': 90, 'Verizon': 18, 'Yext': 13}
-- Funnel: after dedup 17582 -> after company filter 17582 -> after hard filter 14204 -> after role+seniority prefilter 3044 | dropped 14538
-- LLM usage: scored 16 / API requests 3 / cache reused 458 (cross-pipeline 2) / rule fallback 2570
-- LLM cache causes: new 17 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 10 / rescored <24h 0
-- LLM cost: model gpt-6-luna / API requests 3 / jobs scored 16 / tokens input 20755 (cached 0) / output 3643 (reasoning 1958) / estimated cost $0.0039
-- New jobs discovered this run: 149
-- Output: Tier A 5 / Tier B 39 / shown 44
+- Scraped companies: {'Google': 284, 'Amazon': 743, 'Walmart Global Tech': 369, 'NVIDIA': 150, 'JPMorgan Chase': 575, 'Apple': 329, 'Cisco': 246, 'Workday': 122, 'Wells Fargo': 70, 'Oracle': 412, 'CVS Health': 138, 'Capital One': 191, 'Meta': 844, 'Red Hat': 29, 'Microsoft': 217, 'Qualcomm': 117, 'Salesforce': 195, 'HPE': 298, 'SAP': 119, 'Zoom': 28, 'Snap': 100, 'Intel': 145, 'TransUnion': 33, 'Expedia Group': 47, 'Disney': 123, 'Dell': 128, 'AMD': 488, 'Adobe': 103, 'TikTok': 713, 'Uber': 178, 'DoorDash': 437, 'Pinterest': 130, 'Snowflake': 265, 'ServiceNow': 409, 'Bloomberg': 21, 'Cloudflare': 462, 'Stripe': 423, 'Coinbase': 196, 'Robinhood': 152, 'Figma': 94, 'GitLab': 133, 'Discord': 40, 'Asana': 76, 'Brex': 249, 'Samsara': 280, 'Lyft': 88, 'Spotify': 66, 'Ramp': 152, 'Notion': 78, 'Linear': 23, 'Cohere': 99, 'eBay': 40, 'Pure Storage': 221, 'Databricks': 505, 'Roblox': 256, 'Airbnb': 111, 'Anthropic': 543, 'AppLovin': 33, 'ByteDance': 456, 'Chime': 72, 'Dropbox': 14, 'HubSpot': 13, 'Instacart': 89, 'MathWorks': 38, 'MongoDB': 234, 'Morgan Stanley': 105, 'NetApp': 86, 'Netflix': 55, 'OpenAI': 657, 'Palantir': 237, 'PayPal': 55, 'Reddit': 144, 'Roku': 65, 'Block / Square': 187, 'Two Sigma': 39, 'Verkada': 270, 'Visa': 132, 'WeRide': 11, 'Zillow': 52, 'Zscaler': 225, 'Chewy': 2, 'Duolingo': 49, 'Equinix': 69, 'F5': 1, 'IXL Learning': 104, 'Yahoo': 50, 'Ansys': 17, 'Flex': 184, 'IQVIA': 12, 'Johnson & Johnson': 184, 'Nasdaq': 18, 'Stryker': 139, 'Travelers': 90, 'Verizon': 18, 'Yext': 13}
+- Funnel: after dedup 17235 -> after company filter 17235 -> after hard filter 13866 -> after role+seniority prefilter 2999 | dropped 14236
+- LLM usage: scored 57 / API requests 8 / cache reused 433 (cross-pipeline 2) / rule fallback 2509
+- LLM cache causes: new 61 / material JD 1 / matching context 0 / prior rule now eligible 2 / non-material reused 0 / same-content reused 10 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 8 / jobs scored 57 / tokens input 79123 (cached 11874) / output 13128 (reasoning 7568) / estimated cost $0.0134
+- New jobs discovered this run: 411
+- Output: Tier A 7 / Tier B 48 / shown 55
 
-## Tier A - apply now / referral (5)
+## Tier A - apply now / referral (7)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 88 | llm | official | Google | Software Engineer III, AI/ML, Google Labs | Mountain View, CA, USA; Boulder, CO, USA | 2026-10-30 | 3to24h | high | swe | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/133763672970273478-software-engineer-iii-ai-ml-google-labs) |
+| 91 | llm | official | Amazon | Software Development Engineer (Database) Early Career- 2027 (US) | Seattle, Washington, USA | 2026-10-30 | 3to24h | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10593902/software-development-engineer-database-early-career-2027-us) |
+| 88 | cached_llm | official | Google | Software Engineer III, AI/ML, Google Labs | Mountain View, CA, USA; Boulder, CO, USA | 2026-10-30 | 3to24h | high | swe | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/133763672970273478-software-engineer-iii-ai-ml-google-labs) |
+| 86 | llm | official | AMD | Software Development Engineer | Santa Clara, California | 2026-10-30 | 3to24h | high | swe | AMD | unreviewed | official_canonical | [open](https://careers.amd.com/api/jobs) |
 | 86 | cached_llm | official | Apple | Software Engineer, Employee Experience & Productivity | Culver City, United States of America | 2026-10-29 | 1to3d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200678553/software-engineer-employee-experience-productivity) |
 | 89 | cached_llm | official | OpenAI | Software Engineer, IP Infrastructure | San Francisco; San Francisco, California, United States; Remote, United States | 2026-10-29 | 1to3d | high | swe | OpenAI | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/openai/33acf0e2-5c11-46d7-9dc9-417f5537139b) |
 | 86 | cached_llm | official | Apple | Applied AI Engineer | Cupertino, United States of America | 2026-10-28 | 1to3d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200689594/applied-ai-engineer) |
 | 85 | cached_llm | official | Apple | Machine Learning Engineer, Agentic AI- Worldwide Product Marketing | Cupertino, United States of America | 2026-10-28 | 1to3d | high | ai | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200657395/machine-learning-engineer-agentic-ai-worldwide-product-marketing) |
 
-## Tier B - worth applying (39)
+## Tier B - worth applying (48)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 80 | llm | official | Apple | Applied AI Engineer - Health | Cupertino, United States of America | 2026-10-30 | 3to24h | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200691732/applied-ai-engineer-health) |
+| 84 | cached_llm | official | Roblox | Software Engineer, Discovery UX | San Mateo, CA, United States | 2026-10-30 | 3to24h | high | swe | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8304210?gh_jid=8304210) |
+| 75 | rule | official | Microsoft | Software Engineer - Forward Deployed Engineer | United States, Washington, Redmond | 2026-10-30 | 3to24h | high | swe | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557004814) |
+| 75 | rule | official | NVIDIA | Solutions Architect, AI Models | US, CA, Santa Clara | 2026-10-30 | 3to24h | high | swe | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Solutions-Architect--Applied-AI_JR2002944) |
+| 75 | rule | official | Workday | Software Development Engineer - UI and Tooling - Java, Go or Kotlin | USA, CA, Pleasanton | 2026-10-30 | 3to24h | high | swe | - | unreviewed | official_canonical | [open](https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Software-Development-Engineer_JR-0109889) |
+| 75 | rule | official | Capital One | Full Stack Engineer 4 | Richmond, VA | 2026-10-30 | 3to24h | high | swe | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Full-Stack-Engineer-4_R1001376) |
+| 75 | rule | official | Capital One | Full-stack Engineer 4 | Chicago, IL | 2026-10-30 | 3to24h | high | swe | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Chicago-IL/Full-stack-Engineer-4_R1001741-2) |
+| 75 | rule | official | Capital One | Full-Stack Engineer 4 (Mobile) | Richmond, VA | 2026-10-30 | 3to24h | high | swe | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Full-Stack-Engineer-4--Mobile-_R1002855-2) |
+| 75 | rule | official | Capital One | Full-stack Engineer 4 | McLean, VA; New York, NY | 2026-10-30 | 3to24h | high | swe | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1002960-1) |
 | 75 | rule | official | Capital One | Full-Stack Engineer 4 (Golang, AWS) | McLean, VA; Chicago, IL | 2026-10-30 | 3to24h | high | swe | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-Stack-Engineer-4--Golang--AWS-_R1001284-1) |
+| 75 | rule | official | Verizon | AI Platform Engineer | Irving, Texas; Hilliard, Ohio; Alpharetta, Georgia; Ashburn, Virginia; Temple Terrace, Florida; Basking Ridge, New Jersey; Miami, Florida | 2026-10-30 | 3to24h | high | swe | - | unreviewed | official_canonical | [open](https://mycareer.verizon.com/jobs/r-1101077/ai-platform-engineer/) |
+| 73 | llm | official | Snowflake | Software Engineer - Trust & Platform Security | US-WA-Bellevue; Bellevue, Washington, United States | 2026-10-30 | 3to24h | high | swe | - | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/snowflake/2887def2-f6d8-44fb-b6c4-976329de7d5f) |
 | 84 | cached_llm | official | Amazon | Software Development Engineer, Audible AI Voice Production | Culver City, California, USA | 2026-10-29 | 1to3d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10592978/software-development-engineer-audible-ai-voice-production) |
 | 81 | cached_llm | official | Apple | DevOps Engineer - Retail Engineering Apps & Services | Austin, United States of America | 2026-10-29 | 1to3d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200690998/devops-engineer-retail-engineering-apps-services) |
 | 82 | cached_llm | official | JPMorgan Chase | Software Engineer III | Wilmington, DE, United States | 2026-10-29 | 1to3d | high | swe | J.P. Morgan | unreviewed | official_canonical | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210799379) |
 | 75 | rule | official | JPMorgan Chase | Site Reliability Engineer II | Chicago, IL, United States | 2026-10-29 | 1to3d | high | swe | J.P. Morgan | unreviewed | official_canonical | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210747513) |
 | 75 | rule | official | Capital One | Full-Stack Engineer 5 | Plano, TX | 2026-10-29 | 1to3d | high | swe | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-Stack-Engineer-5_R1001713-1) |
 | 75 | rule | official | Capital One | Data Engineer 5 | McLean, VA; Richmond, VA; Chicago, IL; New York, NY | 2026-10-29 | 1to3d | high | swe | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Data-Engineer-5_R1001168-1) |
-| 75 | rule | official | Capital One | Full-stack Engineer 4 | Chicago, IL | 2026-10-29 | 1to3d | high | swe | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Chicago-IL/Full-stack-Engineer-4_R1001741-2) |
 | 75 | rule | official | Capital One | Full Stack Engineer 4 (Java, AWS) | McLean, VA | 2026-10-29 | 1to3d | high | swe | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-Stack-Engineer-4--GoLang--AWS-_R1003153) |
 | 75 | rule | official | Capital One | Full Stack Engineer 4 (Go, AWS) | McLean, VA | 2026-10-29 | 1to3d | high | swe | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-Stack-Engineer-4--Go--AWS-_R1001156-1) |
 | 75 | rule | official | Capital One | Machine Learning Engineer 4 | McLean, VA; Plano, TX | 2026-10-29 | 1to3d | high | swe | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Machine-Learning-Engineer-4_R1001564-1) |
@@ -69,4 +81,3 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 84 | cached_llm | official | HPE | AI/ML Software Engineer | Ft. Collins, Colorado, United States of America | 2026-10-26 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Ft-Collins-Colorado-United-States-of-America/AI-ML-Software-Engineer_1217299-2) |
 | 80 | cached_llm | official | Microsoft | Software Engineer | United States, California, Mountain View | 2026-10-27 | 3to7d | high | swe | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557045516) |
 | 72 | cached_llm | official | Dell | Services Data Science Graduate Intern | TX, United States | 2026-10-25 | 3to7d | high | swe | Dell | unreviewed | official_canonical | [open](https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/301413) |
-| 91 | cached_llm | official | OpenAI | Software Engineer | San Francisco; San Francisco, California, United States; Remote, United States | 2026-10-23 | gt7d | high | swe | OpenAI | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/openai/d95a5b8b-35fb-4ae2-9f6c-594ed24e49f7) |

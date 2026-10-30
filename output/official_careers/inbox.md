@@ -1,28 +1,40 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-10-30 07:46 PDT
-- Snapshot (UTC): 2026-10-30T14:46:44.144500+00:00
-- Jobs: 37 (Tier A/B only)
-- Last 24 hours: 2
-- Last 3 days: 37
+- Updated (PT): 2026-10-30 16:45 PDT
+- Snapshot (UTC): 2026-10-30T23:45:01.981598+00:00
+- Jobs: 49 (Tier A/B only)
+- Last 24 hours: 15
+- Last 3 days: 49
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 91 | official | Amazon | Software Development Engineer (Database) Early Career- 2027 (US) | Seattle, Washington, USA | 2026-10-30 | 3to24h | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10593902/software-development-engineer-database-early-career-2027-us) |
 | A | 88 | official | Google | Software Engineer III, AI/ML, Google Labs | Mountain View, CA, USA; Boulder, CO, USA | 2026-10-30 | 3to24h | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/133763672970273478-software-engineer-iii-ai-ml-google-labs) |
+| A | 86 | official | AMD | Software Development Engineer | Santa Clara, California | 2026-10-30 | 3to24h | AMD | unreviewed | official_canonical | [open](https://careers.amd.com/api/jobs) |
 | A | 86 | official | Apple | Software Engineer, Employee Experience & Productivity | Culver City, United States of America | 2026-10-29 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200678553/software-engineer-employee-experience-productivity) |
 | A | 89 | official | OpenAI | Software Engineer, IP Infrastructure | San Francisco; San Francisco, California, United States; Remote, United States | 2026-10-29 | 1to3d | OpenAI | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/openai/33acf0e2-5c11-46d7-9dc9-417f5537139b) |
 | A | 86 | official | Apple | Applied AI Engineer | Cupertino, United States of America | 2026-10-28 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200689594/applied-ai-engineer) |
 | A | 85 | official | Apple | Machine Learning Engineer, Agentic AI- Worldwide Product Marketing | Cupertino, United States of America | 2026-10-28 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200657395/machine-learning-engineer-agentic-ai-worldwide-product-marketing) |
+| B | 80 | official | Apple | Applied AI Engineer - Health | Cupertino, United States of America | 2026-10-30 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200691732/applied-ai-engineer-health) |
+| B | 84 | official | Roblox | Software Engineer, Discovery UX | San Mateo, CA, United States | 2026-10-30 | 3to24h | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8304210?gh_jid=8304210) |
+| B | 75 | official | Microsoft | Software Engineer - Forward Deployed Engineer | United States, Washington, Redmond | 2026-10-30 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557004814) |
+| B | 75 | official | NVIDIA | Solutions Architect, AI Models | US, CA, Santa Clara | 2026-10-30 | 3to24h | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Solutions-Architect--Applied-AI_JR2002944) |
+| B | 75 | official | Workday | Software Development Engineer - UI and Tooling - Java, Go or Kotlin | USA, CA, Pleasanton | 2026-10-30 | 3to24h | - | unreviewed | official_canonical | [open](https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Software-Development-Engineer_JR-0109889) |
+| B | 75 | official | Capital One | Full Stack Engineer 4 | Richmond, VA | 2026-10-30 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Full-Stack-Engineer-4_R1001376) |
+| B | 75 | official | Capital One | Full-stack Engineer 4 | Chicago, IL | 2026-10-30 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Chicago-IL/Full-stack-Engineer-4_R1001741-2) |
+| B | 75 | official | Capital One | Full-Stack Engineer 4 (Mobile) | Richmond, VA | 2026-10-30 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Full-Stack-Engineer-4--Mobile-_R1002855-2) |
+| B | 75 | official | Capital One | Full-stack Engineer 4 | McLean, VA; New York, NY | 2026-10-30 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1002960-1) |
 | B | 75 | official | Capital One | Full-Stack Engineer 4 (Golang, AWS) | McLean, VA; Chicago, IL | 2026-10-30 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-Stack-Engineer-4--Golang--AWS-_R1001284-1) |
+| B | 75 | official | Verizon | AI Platform Engineer | Irving, Texas; Hilliard, Ohio; Alpharetta, Georgia; Ashburn, Virginia; Temple Terrace, Florida; Basking Ridge, New Jersey; Miami, Florida | 2026-10-30 | 3to24h | - | unreviewed | official_canonical | [open](https://mycareer.verizon.com/jobs/r-1101077/ai-platform-engineer/) |
+| B | 73 | official | Snowflake | Software Engineer - Trust & Platform Security | US-WA-Bellevue; Bellevue, Washington, United States | 2026-10-30 | 3to24h | - | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/snowflake/2887def2-f6d8-44fb-b6c4-976329de7d5f) |
 | B | 84 | official | Amazon | Software Development Engineer, Audible AI Voice Production | Culver City, California, USA | 2026-10-29 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10592978/software-development-engineer-audible-ai-voice-production) |
 | B | 81 | official | Apple | DevOps Engineer - Retail Engineering Apps & Services | Austin, United States of America | 2026-10-29 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200690998/devops-engineer-retail-engineering-apps-services) |
 | B | 82 | official | JPMorgan Chase | Software Engineer III | Wilmington, DE, United States | 2026-10-29 | 1to3d | J.P. Morgan | unreviewed | official_canonical | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210799379) |
 | B | 75 | official | JPMorgan Chase | Site Reliability Engineer II | Chicago, IL, United States | 2026-10-29 | 1to3d | J.P. Morgan | unreviewed | official_canonical | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210747513) |
 | B | 75 | official | Capital One | Full-Stack Engineer 5 | Plano, TX | 2026-10-29 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-Stack-Engineer-5_R1001713-1) |
 | B | 75 | official | Capital One | Data Engineer 5 | McLean, VA; Richmond, VA; Chicago, IL; New York, NY | 2026-10-29 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Data-Engineer-5_R1001168-1) |
-| B | 75 | official | Capital One | Full-stack Engineer 4 | Chicago, IL | 2026-10-29 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Chicago-IL/Full-stack-Engineer-4_R1001741-2) |
 | B | 75 | official | Capital One | Full Stack Engineer 4 (Java, AWS) | McLean, VA | 2026-10-29 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-Stack-Engineer-4--GoLang--AWS-_R1003153) |
 | B | 75 | official | Capital One | Full Stack Engineer 4 (Go, AWS) | McLean, VA | 2026-10-29 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-Stack-Engineer-4--Go--AWS-_R1001156-1) |
 | B | 75 | official | Capital One | Machine Learning Engineer 4 | McLean, VA; Plano, TX | 2026-10-29 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Machine-Learning-Engineer-4_R1001564-1) |
