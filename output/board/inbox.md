@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-10-29 17:21 PDT
-- Snapshot (UTC): 2026-10-30T00:21:52.737417+00:00
-- Jobs: 99 (Tier A/B only)
-- Last 24 hours: 44
-- Last 3 days: 99
+- Updated (PT): 2026-10-29 22:14 PDT
+- Snapshot (UTC): 2026-10-30T05:14:33.849625+00:00
+- Jobs: 97 (Tier A/B only)
+- Last 24 hours: 43
+- Last 3 days: 97
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -18,6 +18,7 @@ The 7-day dump is `latest.md`.
 | A | 90 | indeed | Vituity | Software Engineer I - Remote - Nationwide | Sacramento, CA, US | 2026-10-28 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=df5234a91bf9977d) |
 | A | 92 | indeed | Memorial Sloan Kettering Cancer Center | Software Engineer II, Integrated Genomics | New York, NY, US | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=fc26ea2187c5dfd6) |
 | A | 92 | indeed | Furnitureland South, Inc. | AI Web Developer | Jamestown, NC, US | 2026-10-27 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=52cf0ba85d129600) |
+| A | 91 | linkedin | Corgi | Full Stack Software Engineer | Columbus, OH | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-corgi-4484526998) |
 | A | 91 | indeed | Weber State University | Associate Web Developer | Ogden, UT, US | 2026-10-28 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=0030b3aedb8d0470) |
 | A | 91 | indeed | Servco Pacific Inc. | Data Engineer I | Honolulu, HI, US | 2026-10-28 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=12b9478e16db15c9) |
 | A | 90 | indeed | 626 | Full Stack Developer | Boca Raton, FL, US | 2026-10-30 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e3fc4856ebc72aa8) |
@@ -50,8 +51,6 @@ The 7-day dump is `latest.md`.
 | B | 92 | linkedin | CLEAR | Forward Deployed AI Engineer I | New York, NY | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/forward-deployed-ai-engineer-i-at-clear-4476749457) |
 | B | 86 | indeed | Atlas Copco Group | Applied AI Engineer | Rock Hill, SC, US | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=499344844fd4eaf2) |
 | B | 85 | indeed |  | Software Engineer | Chicago, IL, US | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=14997410fe129795) |
-| B | 85 | linkedin | Microsoft | Software Engineer II | Redmond, WA | 2026-10-29 | newly_discovered | Microsoft | unreviewed | official_ambiguous | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-microsoft-4484966983) |
-| B | 85 | linkedin | Rippling | Software Engineer II, Backend Full Stack - HR Product | Seattle, WA | 2026-10-28 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-full-stack-hr-product-at-rippling-4484760549) |
 | B | 85 | linkedin | CNH | Software Engineer I | Oak Brook, IL | 2026-10-26 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-i-at-cnh-4483576816) |
 | B | 84 | indeed | Alarm.com | Software Engineer | Needham, MA, US | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ac01f71e9ba472ff) |
 | B | 83 | indeed | Alarm.com | Software Engineer II | Tysons Corner, VA, US | 2026-10-28 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=b102437e908b5daf) |
@@ -71,23 +70,22 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed | Backstop Solutions Group | Software Developer | Chicago, IL, US | 2026-10-28 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a8b1f5ba60aef620) |
 | B | 82 | indeed | SIRI Software Solutions | SOFTWARE ENGINEER I | North Brunswick, NJ, US | 2026-04-01 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d7b30c5610044190) |
 | B | 81 | indeed | G2 | Software Enginee | Chicago, IL, US | 2026-10-28 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=bb981ad5347905d4) |
-| B | 80 | linkedin | Stripe | Machine Learning Engineer, Radar | New York, United States | 2026-10-29 | newly_discovered | - | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-radar-at-stripe-4476969830) |
-| B | 80 | linkedin | Instrumental Inc. | Backend Engineer | Palo Alto, CA | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-at-instrumental-inc-4484937678) |
-| B | 82 | linkedin | Cambia Health Solutions | Software Development Engineer II – IV (Customer Acquisition) | Salt Lake City, UT | 2026-10-28 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-development-engineer-ii-%E2%80%93-iv-customer-acquisition-at-cambia-health-solutions-4481625023) |
+| B | 84 | linkedin | Microsoft | Software Engineer II | Redmond, WA | 2026-10-29 | newly_discovered | Microsoft | unreviewed | official_ambiguous | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-microsoft-4484966983) |
+| B | 84 | linkedin | Rippling | Software Engineer II, Backend Full Stack - HR Product | Seattle, WA | 2026-10-28 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-full-stack-hr-product-at-rippling-4484760549) |
+| B | 80 | linkedin | Collins Aerospace | Software Engineer II (Onsite) | Huntsville, AL | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-onsite-at-collins-aerospace-4485242772) |
 | B | 82 | indeed | Lenovo | On-Device AI Developer (Software Engineer) | Morrisville, NC, US | 2026-10-28 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=539a03b4c27bcc63) |
 | B | 84 | indeed |  | AI/ML Engineer | Irving, TX, US | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1dd494b6ec335717) |
 | B | 82 | linkedin | AbilityLinks | AI Engineer | Birmingham, AL | 2026-10-27 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-abilitylinks-4483636389) |
 | B | 82 | linkedin | AbilityLinks | AI Engineer | Atlanta, GA | 2026-10-27 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-abilitylinks-4483640200) |
 | B | 84 | indeed | Clean Power Research | Software Engineer, PowerClerk | Bellevue, WA, US | 2026-10-27 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a5b89c10c91a14bf) |
 | B | 83 | indeed | Undercover Installers | Forward Deployed Engineer | New York, NY, US | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=dc17b2ffedd970cd) |
-| B | 78 | linkedin | M3 USA | Software Engineer (Remote) | Creve Coeur, MO | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-remote-at-m3-usa-4484968634) |
-| B | 78 | linkedin | Venmo | Software Engineer - Android | Austin, TX | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-android-at-venmo-4476935325) |
+| B | 75 | linkedin | Stripe | Machine Learning Engineer, Radar | New York, United States | 2026-10-29 | newly_discovered | - | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-radar-at-stripe-4476969830) |
+| B | 79 | linkedin | Instrumental Inc. | Backend Engineer | Palo Alto, CA | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-at-instrumental-inc-4484937678) |
 | B | 78 | linkedin | Western Express | Full Stack Developer | Nashville, TN | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-at-western-express-4484763929) |
 | B | 78 | linkedin | Wilcore Technologies, Inc. | Full Stack Engineer | Stafford, VA | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-wilcore-technologies-inc-4484926861) |
-| B | 75 | linkedin | Delta Dental Ins. | Software Engineer - Microservices | Alpharetta, GA | 2026-10-27 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-microservices-at-delta-dental-ins-4484273587) |
+| B | 75 | linkedin | Venmo | Software Engineer - Android | Austin, TX | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-android-at-venmo-4476935325) |
 | B | 78 | linkedin | Deloitte | Cyber Full-Stack Software Engineer | Las Vegas, NV | 2026-10-29 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/cyber-full-stack-software-engineer-at-deloitte-4418045895) |
-| B | 78 | linkedin | General Dynamics Mission Systems | Cleared Full Stack Engineer - (Java/React) Multiple Levels | Dedham, MA | 2026-10-28 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/cleared-full-stack-engineer-java-react-multiple-levels-at-general-dynamics-mission-systems-4484112251) |
-| B | 78 | linkedin | Collins Aerospace | Software Engineer - ARINC661 Graphics | Cedar Rapids, IA | 2026-10-28 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-arinc661-graphics-at-collins-aerospace-4476383496) |
+| B | 75 | linkedin | General Dynamics Mission Systems | Cleared Full Stack Engineer - (Java/React) Multiple Levels | Dedham, MA | 2026-10-28 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/cleared-full-stack-engineer-java-react-multiple-levels-at-general-dynamics-mission-systems-4484112251) |
 | B | 76 | indeed | RevSpring, Inc | Developer | Nashville, TN, US | 2026-10-28 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e6e37e7c8c33908b) |
 | B | 78 | indeed | GSK | AI/ML Engineer | San Francisco, CA, US | 2026-10-28 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=bbd2918aca9963ae) |
 | B | 76 | indeed | Park Place Technologies | Associate Artificial Intelligence Engineer | Highland Heights, OH, US | 2026-10-28 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5e7b1e172a54dd05) |
