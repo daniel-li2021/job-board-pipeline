@@ -1,20 +1,26 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-10-30 16:53 PDT
-- Snapshot (UTC): 2026-10-30T23:53:50.362165+00:00
-- Jobs: 53
+- Updated (PT): 2026-10-31 07:54 PDT
+- Snapshot (UTC): 2026-10-31T14:54:29.166130+00:00
+- Jobs: 59
 - Last 24 hours: 6
-- Last 3 days: 53
+- Last 3 days: 59
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 98.0 | Syncareer | Exelixis | Associate AI and Agentic Engineer | Alameda, California, United States | 2026-10-30 | Sponsor | - | unreviewed | not_dedicated | [open](https://exelixis.wd1.myworkdayjobs.com/en-US/Exel/job/Alameda-CA/Associate-AI-and-Agentic-Engineer_JR7185) |
+| A | 92.0 | Syncareer | TSMC | TSMC Arizona - AI Forward Deployed Engineer | Phoenix, Arizona, United States | 2026-10-30 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.tsmc.com/en_US/careers/JobDetail?jobId=22978&source=External%2BCareer%2BSite) |
+| B | 77.0 | Syncareer | American Express | Infrastructure Engineer | Richmond, Virginia, United States | 2026-10-30 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.americanexpress.com/en/sites/CX_1/job/26014668/?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164) |
 | A | 92.0 | Syncareer | Exelixis | Associate Engineer- AI and Agentics | Alameda, California, United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://exelixis.wd1.myworkdayjobs.com/en-US/Exel/job/Alameda-CA/Associate-Engineer--AI-and-Agentics_JR7183) |
 | A | 93.0 | Syncareer | Principal Financial Group | Software Engineer I | Des Moines, Iowa, United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.principal.com/careers-home/jobs/53906?lang=en-us&previousLocale=en-US) |
 | A | 87.0 | Syncareer | Rubrik | Software Engineer - Entra ID | Palo Alto, California, United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.rubrik.com/company/careers/departments/job.8267709.1929?reqId=11547) |
 | B | 78.0 | Syncareer | T-Mobile | Engineer, Software - Core & IP Services Automation | Bellevue, Washington, United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.t-mobile.com/engineer-software-core-ip-services-automation/job/F70500EA80BAB394CB59AAE6E3050DB8) |
 | A | 98.0 | Syncareer | Exelixis | Associate AI and Agentic Engineer | Alameda, California, United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://exelixis.wd1.myworkdayjobs.com/en-US/Exel/job/Alameda-CA/Associate-AI-and-Agentic-Engineer_JR7184) |
+| B | 86.0 | Syncareer | Alarm.com | Software Engineer | Needham, Massachusetts, United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/alarmcom/jobs/8900284002) |
+| A | 87.0 | Syncareer | Skylo Technologies | Applied AI Engineer, Agentic Systems & Identity | Mountain View, California, United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/skylo/9b5da713-5c9d-4639-b1cd-8632e01e6d5d) |
+| A | 89.0 | Syncareer | Twilio | Machine Learning Engineer 2 | United States | 2026-10-29 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/twilio/jobs/8240487) |
 | B | 85.0 | Syncareer | Comcast | Junior Backend Software Engineer (Python or PHP) - Chicago - ONSITE 2X | Chicago, Illinois, United States | 2026-10-28 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.comcast.com/job/chicago/junior-backend-software-engineer-python-or-php-chicago-onsite-2x-week-freewheel/45483/102559627504) |
 | A | 91.0 | Syncareer | Atlassian | Backend Software Engineer | San Francisco, California, United States | 2026-10-28 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.atlassian.com/company/careers/details/27823) |
 | B | 86.0 | Syncareer | Transamerica | Intermediate Software Engineer | Cedar Rapids, Iowa, United States | 2026-10-28 | No sponsor | - | unreviewed | not_dedicated | [open](https://transamerica.wd5.myworkdayjobs.com/en-US/US/job/Cedar-Rapids-Iowa/Intermediate-Software-Engineer_R20063037) |
