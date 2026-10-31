@@ -1,10 +1,10 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-10-31 07:44 PDT
-- Snapshot (UTC): 2026-10-31T14:44:21.047567+00:00
-- Jobs: 42 (Tier A/B only)
+- Updated (PT): 2026-10-31 16:44 PDT
+- Snapshot (UTC): 2026-10-31T23:44:24.998808+00:00
+- Jobs: 43 (Tier A/B only)
 - Last 24 hours: 2
-- Last 3 days: 42
+- Last 3 days: 43
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
@@ -19,6 +19,7 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | B | 75 | official | Cisco | Solutions Engineer - Splunk (Remote) | New York, New York, US | 2026-10-31 | 3to24h | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/New-York-New-York-US/Solutions-Engineer---Splunk--Remote-_2024727-1) |
 | B | 80 | official | Apple | Applied AI Engineer - Health | Cupertino, United States of America | 2026-10-30 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200691732/applied-ai-engineer-health) |
 | B | 84 | official | Roblox | Software Engineer, Discovery UX | San Mateo, CA, United States | 2026-10-30 | 1to3d | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8304210?gh_jid=8304210) |
+| B | 75 | official | Apple | Software Engineer, Safari Extensions | San Diego, United States of America | 2026-10-30 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200676418/software-engineer-safari-extensions) |
 | B | 75 | official | Microsoft | Software Engineer - Forward Deployed Engineer | United States, Washington, Redmond | 2026-10-30 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557004814) |
 | B | 75 | official | NVIDIA | Solutions Architect, AI Models | US, CA, Santa Clara | 2026-10-30 | 1to3d | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Solutions-Architect--Applied-AI_JR2002944) |
 | B | 75 | official | NVIDIA | Software R&D Engineer, RTL Optimization Tools | US, CA, Santa Clara; US, TX, Austin | 2026-10-30 | 1to3d | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Software-R-D-Engineer--RTL-Optimization-Tools_JR2019332) |
