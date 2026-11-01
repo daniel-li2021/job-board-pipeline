@@ -3,33 +3,6 @@
   "events": [
     {
       "pipeline": "official",
-      "stamp": "2026-10-18_1447",
-      "emitted_at": "2026-10-18T14:50:30.225209+00:00",
-      "event_kind": "new_or_promoted_ab",
-      "count": 1,
-      "jobs": [
-        {
-          "canonical_job_key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/SoC-Software-Engineer---New-College-Graduate-2026_JR2027552-1",
-          "job_id": "JR2027552",
-          "tier": "B",
-          "match_score": 72.0,
-          "company": "NVIDIA",
-          "title": "SoC Software Engineer – New College Graduate 2026",
-          "location": "US, CA, Santa Clara",
-          "posted_date": "2026-10-13",
-          "date_confidence": "high",
-          "first_seen": "2026-10-18T14:47:40.376562+00:00",
-          "referral_name": "NVIDIA",
-          "review_status": "unreviewed",
-          "official_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/SoC-Software-Engineer---New-College-Graduate-2026_JR2027552-1",
-          "source_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/SoC-Software-Engineer---New-College-Graduate-2026_JR2027552-1",
-          "source": "nvidia_official_careers",
-          "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/SoC-Software-Engineer---New-College-Graduate-2026_JR2027552-1"
-        }
-      ]
-    },
-    {
-      "pipeline": "official",
       "stamp": "2026-10-19_1447",
       "emitted_at": "2026-10-19T14:49:48.237661+00:00",
       "event_kind": "new_or_promoted_ab",
@@ -1921,6 +1894,33 @@
           "source_url": "https://jobs.ashbyhq.com/snowflake/2887def2-f6d8-44fb-b6c4-976329de7d5f",
           "source": "snowflake_official_careers",
           "url": "https://jobs.ashbyhq.com/snowflake/2887def2-f6d8-44fb-b6c4-976329de7d5f"
+        }
+      ]
+    },
+    {
+      "pipeline": "official",
+      "stamp": "2026-11-01_1547",
+      "emitted_at": "2026-11-01T15:50:18.337694+00:00",
+      "event_kind": "new_or_promoted_ab",
+      "count": 1,
+      "jobs": [
+        {
+          "canonical_job_key": "url::https://intel.wd1.myworkdayjobs.com/External/job/US-Arizona-Phoenix/Software-Application-Development-Engineer_JR0288523",
+          "job_id": "JR0288523",
+          "tier": "B",
+          "match_score": 87.0,
+          "company": "Intel",
+          "title": "Software Application Development Engineer",
+          "location": "US, Arizona, Phoenix; US, Oregon, Hillsboro",
+          "posted_date": "2026-10-30",
+          "date_confidence": "high",
+          "first_seen": "2026-11-01T15:47:28.762894+00:00",
+          "referral_name": "Intel",
+          "review_status": "unreviewed",
+          "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Arizona-Phoenix/Software-Application-Development-Engineer_JR0288523",
+          "source_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Arizona-Phoenix/Software-Application-Development-Engineer_JR0288523",
+          "source": "intel_official_careers",
+          "url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Arizona-Phoenix/Software-Application-Development-Engineer_JR0288523"
         }
       ]
     }
