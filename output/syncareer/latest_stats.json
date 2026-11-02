@@ -1,21 +1,21 @@
 {
-  "run_at": "2026-11-01T15:52:36.789303+00:00",
-  "elapsed_seconds": 86.183,
-  "remote_elapsed_seconds": 47.017,
+  "run_at": "2026-11-02T00:52:20.177961+00:00",
+  "elapsed_seconds": 66.417,
+  "remote_elapsed_seconds": 38.97,
   "funnel": {
-    "scoring_candidates": 80
+    "scoring_candidates": 71
   },
   "llm": {
-    "reused": 78,
-    "llm": 9,
-    "new_or_changed": 9,
+    "reused": 67,
+    "llm": 5,
+    "new_or_changed": 6,
     "rule": 1,
-    "sent": 9,
+    "sent": 5,
     "api_requests": 2,
-    "recency_skipped": 0,
+    "recency_skipped": 1,
     "overflow": 0,
-    "peer_reused": 7,
-    "thin_source_rule": 1,
+    "peer_reused": 2,
+    "thin_source_rule": 0,
     "retryable_fallbacks": 0,
     "historical_seen_skipped": 0,
     "historical_llm_retained": 0,
@@ -23,7 +23,7 @@
     "same_content_reused": 0,
     "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 8,
+      "genuinely_new_job": 5,
       "material_jd_change": 1
     },
     "batch_size": 10,
@@ -37,8 +37,8 @@
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 29.542,
-    "json_results": 9,
+    "latency_seconds": 19.136,
+    "json_results": 5,
     "batches": [
       {
         "batch": 1,
@@ -46,19 +46,14 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://jobs.grainger.com/job/LAKE-FOREST-Data-Engineer-III-%28Finance%29-IL-60045-5202/1446606600",
-            "company": "Grainger",
-            "title": "Data Engineer III (Finance)"
+            "key": "url::https://jobs.ashbyhq.com/handshake/c2cea12b-4dba-4782-ac2d-279c6865a4b7",
+            "company": "Handshake",
+            "title": "Software Engineer I, Promotions"
           },
           {
-            "key": "url::https://polaris.wd5.myworkdayjobs.com/en-US/PolarisJobs/job/Fernley-NV-USA/IT-Infrastructure-Support-Specialist_R31684",
-            "company": "Polaris",
-            "title": "IT Infrastructure Support Specialist"
-          },
-          {
-            "key": "url::https://careers.bv.com/job/Overland-Park-Transactions-Consultant-Digital-Infrastructure-KS-66062/1372887533",
-            "company": "Black & Veatch",
-            "title": "Transactions Consultant Digital Infrastructure"
+            "key": "url::https://careers.itw.com/us/en/job/JR10913/Software-Engineer",
+            "company": "ITW",
+            "title": "Software Engineer"
           },
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
@@ -70,72 +65,55 @@
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 8.51,
+        "latency_seconds": 12.279,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 4,
-          "input_tokens": 4363,
+          "jobs_scored": 3,
+          "input_tokens": 3904,
           "cached_input_tokens": 0,
-          "output_tokens": 870,
-          "reasoning_tokens": 438,
-          "estimated_usd": 0.000871
+          "output_tokens": 739,
+          "reasoning_tokens": 512,
+          "estimated_usd": 0.00076
         },
         "decisions": [
           {
-            "key": "url::https://jobs.grainger.com/job/LAKE-FOREST-Data-Engineer-III-%28Finance%29-IL-60045-5202/1446606600",
-            "match_score": 74.0,
-            "seniority_fit": "stretch",
+            "key": "url::https://jobs.ashbyhq.com/handshake/c2cea12b-4dba-4782-ac2d-279c6865a4b7",
+            "match_score": 92.0,
+            "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Data pipeline development",
-              "Spark and Databricks"
+              "Full-stack product ownership",
+              "Distributed systems reliability"
             ],
-            "main_gaps": [
-              "3+ years related experience",
-              "Finance data integration"
-            ]
+            "main_gaps": []
           },
           {
-            "key": "url::https://polaris.wd5.myworkdayjobs.com/en-US/PolarisJobs/job/Fernley-NV-USA/IT-Infrastructure-Support-Specialist_R31684",
-            "match_score": 30.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Enterprise technology support",
-              "Troubleshooting experience"
-            ],
-            "main_gaps": [
-              "Enterprise help desk experience",
-              "Windows and Active Directory"
-            ]
-          },
-          {
-            "key": "url::https://careers.bv.com/job/Overland-Park-Transactions-Consultant-Digital-Infrastructure-KS-66062/1372887533",
-            "match_score": 27.0,
+            "key": "url::https://careers.itw.com/us/en/job/JR10913/Software-Engineer",
+            "match_score": 55.0,
             "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Technical analysis",
-              "Written reporting"
+              "Production software development",
+              "Object-oriented programming"
             ],
             "main_gaps": [
-              "Data center industry expertise",
-              "4+ years consulting experience"
+              "3+ years development",
+              "Software team technical direction"
             ]
           },
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 43.0,
+            "match_score": 32.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Application lifecycle practices",
-              "Enterprise integrations"
+              "Production support experience",
+              "Deployment and lifecycle practices"
             ],
             "main_gaps": [
               "Power Platform administration",
-              "Platform governance and security"
+              "Power Apps and Dataverse"
             ]
           }
         ]
@@ -146,130 +124,78 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://cmu.wd115.myworkdayjobs.com/en-US/CMU/job/Pittsburgh-PA/Full-Stack-Software-Development-Intern_2025287-1",
-            "company": "Carnegie Mellon University",
-            "title": "Full-Stack Software Development Intern"
-          },
-          {
-            "key": "url::https://careers.humana.com/us/en/job/R-434202/Software-Engineer",
-            "company": "Humana",
+            "key": "url::https://www.optiver.com/join-us/jobs/technology/austin/software-engineer-2",
+            "company": "Optiver",
             "title": "Software Engineer"
           },
           {
-            "key": "url::https://jobs.ametek.com/job/Mount-Prospect-Software-Engineer-AIML-IL-60056/1426573500",
-            "company": "Ametek",
-            "title": "Software Engineer - AI/ML"
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/tenableinc/jobs/5468272008",
-            "company": "Tenable",
-            "title": "AI Information Security Engineer"
-          },
-          {
-            "key": "url::https://bristolmyerssquibb.wd5.myworkdayjobs.com/en-US/BMS/job/Princeton---NJ---US/Associate-Engineer--Analytical-AI-Engineering_R1608005?locationHierarchy2=ffa8c2081af30164724e86a90924d982&locationHierarchy2=c251ba463070100141966eb4f9ef0000&locationHierarchy2=ffa8c2081af3014bbc1caea909249c83&locationHierarchy2=ffa8c2081af30158f001a0a909248d83&locationHierarchy2=ffa8c2081af301d3d5569fa909248883&locationHierarchy2=ffa8c2081af3015570d098a909245b83&locationHierarchy2=36a5da557afd1001d7b9018e3b4d0000&locationHierarchy2=682031bc229e10010d2097821a500000&locationHierarchy2=682031bc229e10010d06e8c468540000&locationHierarchy2=bb816e268a0301bece1791d9be16cdf9&locationHierarchy2=ffa8c2081af30110667491a909242983&locationHierarchy2=ffa8c2081af301eb90628ca909240683&locationHierarchy2=7b0045a3289810548a4113a9c0db9053&locationHierarchy2=7b0045a3289810548a4111f045539051&locationHierarchy2=7b0045a3289810548a411ffa3c039061&locationHierarchy2=7b0045a3289810548a412a8719e3906d&locationHierarchy2=7b0045a3289810548a411ea3e74b905f",
-            "company": "Bristol-Myers Squibb",
-            "title": "Associate Engineer, Analytical AI Engineering"
+            "key": "url::https://livex.ai/careers/solution-engineer",
+            "company": "LiveX AI",
+            "title": "Solution Engineer"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 21.032,
+        "latency_seconds": 6.857,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 5,
-          "input_tokens": 7631,
+          "jobs_scored": 2,
+          "input_tokens": 5043,
           "cached_input_tokens": 0,
-          "output_tokens": 1858,
-          "reasoning_tokens": 973,
-          "estimated_usd": 0.001692
+          "output_tokens": 507,
+          "reasoning_tokens": 362,
+          "estimated_usd": 0.000758
         },
         "decisions": [
           {
-            "key": "url::https://cmu.wd115.myworkdayjobs.com/en-US/CMU/job/Pittsburgh-PA/Full-Stack-Software-Development-Intern_2025287-1",
-            "match_score": 86.0,
+            "key": "url::https://www.optiver.com/join-us/jobs/technology/austin/software-engineer-2",
+            "match_score": 67.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Strong software fundamentals",
+              "Performance optimization experience"
+            ],
+            "main_gaps": [
+              "Low-latency C++ systems"
+            ]
+          },
+          {
+            "key": "url::https://livex.ai/careers/solution-engineer",
+            "match_score": 76.0,
             "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Full-stack web development",
-              "Automated testing"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://careers.humana.com/us/en/job/R-434202/Software-Engineer",
-            "match_score": 60.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production application development",
-              "Testing and CI/CD"
+              "Production AI agent experience",
+              "End-to-end software deployment"
             ],
             "main_gaps": [
-              "3–5 years’ experience",
-              "AI coding assistant experience"
+              "Physical hardware deployments"
             ]
-          },
-          {
-            "key": "url::https://jobs.ametek.com/job/Mount-Prospect-Software-Engineer-AIML-IL-60056/1426573500",
-            "match_score": 77.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production LLM applications",
-              "AI evaluation and deployment"
-            ],
-            "main_gaps": [
-              "2+ years AI/ML experience"
-            ]
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/tenableinc/jobs/5468272008",
-            "match_score": 48.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Hands-on AI engineering",
-              "Python and cloud experience"
-            ],
-            "main_gaps": [
-              "Information or application security",
-              "AI security threat modeling"
-            ]
-          },
-          {
-            "key": "url::https://bristolmyerssquibb.wd5.myworkdayjobs.com/en-US/BMS/job/Princeton---NJ---US/Associate-Engineer--Analytical-AI-Engineering_R1608005?locationHierarchy2=ffa8c2081af30164724e86a90924d982&locationHierarchy2=c251ba463070100141966eb4f9ef0000&locationHierarchy2=ffa8c2081af3014bbc1caea909249c83&locationHierarchy2=ffa8c2081af30158f001a0a909248d83&locationHierarchy2=ffa8c2081af301d3d5569fa909248883&locationHierarchy2=ffa8c2081af3015570d098a909245b83&locationHierarchy2=36a5da557afd1001d7b9018e3b4d0000&locationHierarchy2=682031bc229e10010d2097821a500000&locationHierarchy2=682031bc229e10010d06e8c468540000&locationHierarchy2=bb816e268a0301bece1791d9be16cdf9&locationHierarchy2=ffa8c2081af30110667491a909242983&locationHierarchy2=ffa8c2081af301eb90628ca909240683&locationHierarchy2=7b0045a3289810548a4113a9c0db9053&locationHierarchy2=7b0045a3289810548a4111f045539051&locationHierarchy2=7b0045a3289810548a411ffa3c039061&locationHierarchy2=7b0045a3289810548a412a8719e3906d&locationHierarchy2=7b0045a3289810548a411ea3e74b905f",
-            "match_score": 90.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Python data pipelines",
-              "ML workflows and evaluation"
-            ],
-            "main_gaps": []
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 9,
-    "input_tokens": 11994,
+    "jobs_scored": 5,
+    "input_tokens": 8947,
     "cached_input_tokens": 0,
-    "output_tokens": 2728,
-    "reasoning_tokens": 1411,
-    "estimated_usd": 0.002563,
+    "output_tokens": 1246,
+    "reasoning_tokens": 874,
+    "estimated_usd": 0.001518,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 9
+    "scored": 5
   },
   "output": {
     "tier_a": 4,
-    "tier_b": 12,
-    "tier_c": 64,
-    "shown": 16,
-    "new_jobs": 20,
+    "tier_b": 2,
+    "tier_c": 65,
+    "shown": 6,
+    "new_jobs": 13,
     "new_jobs_added": 2
   },
   "screen_method": "cache+llm",
@@ -283,13 +209,13 @@
       "page_budget": 6,
       "pages_fetched": 6,
       "stop_reason": "page_budget",
-      "raw_jobs": 90,
-      "unique_jobs": 90,
-      "unique_contribution": 90,
-      "first_pass_survivors": 61,
-      "original_postings_resolved": 20,
-      "jds_resolved": 15,
-      "elapsed_seconds": 3.482
+      "raw_jobs": 87,
+      "unique_jobs": 87,
+      "unique_contribution": 87,
+      "first_pass_survivors": 62,
+      "original_postings_resolved": 24,
+      "jds_resolved": 19,
+      "elapsed_seconds": 3.051
     },
     {
       "query": "Full Stack",
@@ -297,13 +223,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 8,
-      "unique_jobs": 8,
+      "raw_jobs": 9,
+      "unique_jobs": 9,
       "unique_contribution": 5,
       "first_pass_survivors": 6,
       "original_postings_resolved": 2,
-      "jds_resolved": 1,
-      "elapsed_seconds": 0.636
+      "jds_resolved": 2,
+      "elapsed_seconds": 0.579
     },
     {
       "query": "AI",
@@ -311,13 +237,13 @@
       "page_budget": 6,
       "pages_fetched": 6,
       "stop_reason": "empty_page",
-      "raw_jobs": 68,
-      "unique_jobs": 68,
-      "unique_contribution": 57,
-      "first_pass_survivors": 29,
-      "original_postings_resolved": 13,
-      "jds_resolved": 9,
-      "elapsed_seconds": 2.563
+      "raw_jobs": 65,
+      "unique_jobs": 65,
+      "unique_contribution": 53,
+      "first_pass_survivors": 28,
+      "original_postings_resolved": 15,
+      "jds_resolved": 11,
+      "elapsed_seconds": 2.45
     },
     {
       "query": "Machine Learning",
@@ -325,13 +251,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 7,
-      "unique_jobs": 7,
-      "unique_contribution": 7,
-      "first_pass_survivors": 7,
+      "raw_jobs": 6,
+      "unique_jobs": 6,
+      "unique_contribution": 6,
+      "first_pass_survivors": 6,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.605
+      "elapsed_seconds": 0.519
     },
     {
       "query": "Infrastructure",
@@ -339,13 +265,13 @@
       "page_budget": 6,
       "pages_fetched": 3,
       "stop_reason": "empty_page",
-      "raw_jobs": 23,
-      "unique_jobs": 23,
-      "unique_contribution": 20,
-      "first_pass_survivors": 12,
-      "original_postings_resolved": 5,
-      "jds_resolved": 4,
-      "elapsed_seconds": 1.039
+      "raw_jobs": 20,
+      "unique_jobs": 20,
+      "unique_contribution": 19,
+      "first_pass_survivors": 8,
+      "original_postings_resolved": 2,
+      "jds_resolved": 1,
+      "elapsed_seconds": 0.998
     },
     {
       "query": "Forward Deployed",
@@ -359,7 +285,7 @@
       "first_pass_survivors": 4,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.573
+      "elapsed_seconds": 0.53
     },
     {
       "query": "DevOps",
@@ -367,13 +293,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
-      "unique_contribution": 6,
-      "first_pass_survivors": 3,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 3,
+      "first_pass_survivors": 2,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.649
+      "elapsed_seconds": 0.608
     },
     {
       "query": "Backend",
@@ -387,35 +313,35 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.61
+      "elapsed_seconds": 0.527
     },
     {
       "query": "Platform",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 3,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 18,
-      "unique_jobs": 18,
-      "unique_contribution": 14,
-      "first_pass_survivors": 12,
-      "original_postings_resolved": 2,
-      "jds_resolved": 2,
-      "elapsed_seconds": 1.126
+      "raw_jobs": 14,
+      "unique_jobs": 14,
+      "unique_contribution": 10,
+      "first_pass_survivors": 9,
+      "original_postings_resolved": 1,
+      "jds_resolved": 1,
+      "elapsed_seconds": 0.516
     },
     {
       "query": "New Grad",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 1,
-      "unique_jobs": 1,
-      "unique_contribution": 1,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.574
+      "elapsed_seconds": 0.102
     },
     {
       "query": "LLM",
@@ -429,7 +355,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.121
+      "elapsed_seconds": 0.111
     },
     {
       "query": "Data Engineer",
@@ -443,7 +369,7 @@
       "first_pass_survivors": 2,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.573
+      "elapsed_seconds": 0.549
     },
     {
       "query": "Site Reliability",
@@ -457,14 +383,14 @@
       "first_pass_survivors": 2,
       "original_postings_resolved": 1,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.6
+      "elapsed_seconds": 0.521
     }
   ],
   "enrichment": {
-    "needed": 8,
-    "detail_api_resolved": 124,
+    "needed": 7,
+    "detail_api_resolved": 114,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 8
+    "remaining_no_jd": 7
   }
 }
