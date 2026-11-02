@@ -1,39 +1,16 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-11-01 07:47 PST
-- Snapshot (UTC): 2026-11-01T15:47:28.762894+00:00
-- Jobs: 27 (Tier A/B only)
+- Updated (PT): 2026-11-01 16:45 PST
+- Snapshot (UTC): 2026-11-02T00:45:57.482918+00:00
+- Jobs: 4 (Tier A/B only)
 - Last 24 hours: 0
-- Last 3 days: 27
+- Last 3 days: 4
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 91 | official | Amazon | Software Development Engineer (Database) Early Career- 2027 (US) | Seattle, Washington, USA | 2026-10-30 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10593902/software-development-engineer-database-early-career-2027-us) |
-| A | 88 | official | Google | Software Engineer III, AI/ML, Google Labs | Mountain View, CA, USA; Boulder, CO, USA | 2026-10-30 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/133763672970273478-software-engineer-iii-ai-ml-google-labs) |
-| A | 86 | official | AMD | Software Development Engineer | Santa Clara, California | 2026-10-30 | 1to3d | AMD | unreviewed | official_canonical | [open](https://careers.amd.com/api/jobs) |
 | B | 75 | official | Capital One | Full-stack Engineer 5 | McLean, VA; Richmond, VA; Chicago, IL; New York, NY; Plano, TX | 2026-10-31 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-5_R1001301-2) |
 | B | 75 | official | Capital One | Full-stack Engineer 4 | McLean, VA; Richmond, VA; Chicago, IL; New York, NY; Plano, TX | 2026-10-31 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1001331-3) |
 | B | 75 | official | Cisco | Solutions Engineer - Splunk (Remote) | San Jose, California, US | 2026-10-31 | 1to3d | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Jose-California-US/Solutions-Engineer---Splunk--Remote-_2024724-1) |
 | B | 75 | official | Cisco | Solutions Engineer - Splunk (Remote) | New York, New York, US | 2026-10-31 | 1to3d | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/New-York-New-York-US/Solutions-Engineer---Splunk--Remote-_2024727-1) |
-| B | 87 | official | Intel | Software Application Development Engineer | US, Arizona, Phoenix; US, Oregon, Hillsboro | 2026-10-30 | 1to3d | Intel | unreviewed | official_canonical | [open](https://intel.wd1.myworkdayjobs.com/External/job/US-Arizona-Phoenix/Software-Application-Development-Engineer_JR0288523) |
-| B | 80 | official | Apple | Applied AI Engineer - Health | Cupertino, United States of America | 2026-10-30 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200691732/applied-ai-engineer-health) |
-| B | 84 | official | Roblox | Software Engineer, Discovery UX | San Mateo, CA, United States | 2026-10-30 | 1to3d | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8304210?gh_jid=8304210) |
-| B | 75 | official | Apple | Software Engineer, Safari Extensions | San Diego, United States of America | 2026-10-30 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200676418/software-engineer-safari-extensions) |
-| B | 75 | official | Microsoft | Software Engineer - Forward Deployed Engineer | United States, Washington, Redmond | 2026-10-30 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557004814) |
-| B | 75 | official | NVIDIA | Solutions Architect, AI Models | US, CA, Santa Clara | 2026-10-30 | 1to3d | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Solutions-Architect--Applied-AI_JR2002944) |
-| B | 75 | official | NVIDIA | Software R&D Engineer, RTL Optimization Tools | US, CA, Santa Clara; US, TX, Austin | 2026-10-30 | 1to3d | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Software-R-D-Engineer--RTL-Optimization-Tools_JR2019332) |
-| B | 75 | official | NVIDIA | Solutions Architect, Financial Services Capital Markets | US, NY, Remote; US, CA, Santa Clara | 2026-10-30 | 1to3d | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-NY-Remote/Solutions-Architect--Financial-Services-Capital-Markets_JR2019386) |
-| B | 75 | official | NVIDIA | Solutions Architect, LLM Model Builder | US, CA, Santa Clara | 2026-10-30 | 1to3d | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Solutions-Architect--LLM-Model-Builder_JR2015831) |
-| B | 75 | official | NVIDIA | Solutions Architect, Executive Briefing Center | US, CA, Santa Clara | 2026-10-30 | 1to3d | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Solutions-Architect--Executive-Briefing-Center_JR2023764-1) |
-| B | 75 | official | NVIDIA | Software Engineer, OpenShell | US, Remote | 2026-10-30 | 1to3d | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-Remote/Software-Engineer--OpenShell_JR2020825) |
-| B | 75 | official | NVIDIA | Software Engineer, Hardware Tools and Methodology - New College Grad 2 | US, CA, Santa Clara | 2026-10-30 | 1to3d | NVIDIA | unreviewed | official_canonical | [open](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Software-Engineer--Hardware-Tools-and-Methodology---New-College-Grad-2026_JR2018659) |
-| B | 75 | official | Workday | Software Development Engineer - UI and Tooling - Java, Go or Kotlin | USA, CA, Pleasanton | 2026-10-30 | 1to3d | - | unreviewed | official_canonical | [open](https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Software-Development-Engineer_JR-0109889) |
-| B | 75 | official | Capital One | Full Stack Engineer 4 | Richmond, VA | 2026-10-30 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Full-Stack-Engineer-4_R1001376) |
-| B | 75 | official | Capital One | Full-stack Engineer 4 | Chicago, IL | 2026-10-30 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Chicago-IL/Full-stack-Engineer-4_R1001741-2) |
-| B | 75 | official | Capital One | Full-Stack Engineer 4 (Mobile) | Richmond, VA | 2026-10-30 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Full-Stack-Engineer-4--Mobile-_R1002855-2) |
-| B | 75 | official | Capital One | Full-stack Engineer 4 | McLean, VA; New York, NY | 2026-10-30 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1002960-1) |
-| B | 75 | official | Capital One | Full-Stack Engineer 4 (Golang, AWS) | McLean, VA; Chicago, IL | 2026-10-30 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-Stack-Engineer-4--Golang--AWS-_R1001284-1) |
-| B | 75 | official | Verizon | AI Platform Engineer | Irving, Texas; Hilliard, Ohio; Alpharetta, Georgia; Ashburn, Virginia; Temple Terrace, Florida; Basking Ridge, New Jersey; Miami, Florida | 2026-10-30 | 1to3d | - | unreviewed | official_canonical | [open](https://mycareer.verizon.com/jobs/r-1101077/ai-platform-engineer/) |
-| B | 73 | official | Snowflake | Software Engineer - Trust & Platform Security | US-WA-Bellevue; Bellevue, Washington, United States | 2026-10-30 | 1to3d | - | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/snowflake/2887def2-f6d8-44fb-b6c4-976329de7d5f) |
