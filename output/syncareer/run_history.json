@@ -2,6 +2,115 @@
   "runs": [
     {
       "pipeline": "syncareer",
+      "run_at": "2026-11-02T15:51:53.895364+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 1,
+      "cache_reused": 39,
+      "peer_reused": 2,
+      "same_content_reused": 0,
+      "non_material_change_reused": 0,
+      "new_or_changed": 1,
+      "new_or_changed_reasons": {
+        "material_jd_change": 1
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 0,
+      "requests": 1,
+      "input_tokens": 2300,
+      "cached_input_tokens": 0,
+      "output_tokens": 175,
+      "reasoning_tokens": 96,
+      "estimated_usd": 0.000318,
+      "latency_seconds": 3.24,
+      "latency_measured": true,
+      "effective_rpm": 18.52,
+      "effective_tpm": 45833.33,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 1,
+      "funnel": {
+        "scoring_candidates": 38
+      },
+      "output": {
+        "tier_a": 2,
+        "tier_b": 2,
+        "tier_c": 34,
+        "shown": 4,
+        "new_jobs": 1,
+        "new_jobs_added": 0
+      },
+      "enrichment": {
+        "needed": 5,
+        "detail_api_resolved": 49,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 5
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "company": "Kforce",
+              "title": "Collaboration Administrator - Power Platform"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.24,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2300,
+            "cached_input_tokens": 0,
+            "output_tokens": 175,
+            "reasoning_tokens": 96,
+            "estimated_usd": 0.000318
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "match_score": 47.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production deployment experience",
+                "Application lifecycle practices"
+              ],
+              "main_gaps": [
+                "Power Platform administration",
+                "Power Apps and Dataverse"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
       "run_at": "2026-11-02T00:52:20.177961+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -11359,331 +11468,6 @@
               "main_gaps": [
                 "Hadoop/Cloudera production experience",
                 "Airflow or Autosys orchestration"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "syncareer",
-      "run_at": "2026-10-23T14:53:00.534999+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 10,
-      "cache_reused": 104,
-      "peer_reused": 12,
-      "same_content_reused": 0,
-      "non_material_change_reused": 0,
-      "new_or_changed": 10,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 9,
-        "prior_rule_result_now_eligible_for_llm": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1,
-      "requests": 3,
-      "input_tokens": 16047,
-      "cached_input_tokens": 6563,
-      "output_tokens": 3031,
-      "reasoning_tokens": 1945,
-      "estimated_usd": 0.002529,
-      "latency_seconds": 33.702,
-      "latency_measured": true,
-      "effective_rpm": 5.34,
-      "effective_tpm": 33964.75,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 3,
-      "primary_batches_total": 3,
-      "batches_attempted": 3,
-      "batches_succeeded": 3,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 10,
-      "funnel": {
-        "scoring_candidates": 102
-      },
-      "output": {
-        "tier_a": 9,
-        "tier_b": 15,
-        "tier_c": 78,
-        "shown": 24,
-        "new_jobs": 45,
-        "new_jobs_added": 3
-      },
-      "enrichment": {
-        "needed": 23,
-        "detail_api_resolved": 177,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 23
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://synd.io/careers?gh_jid=6231512004",
-              "company": "Syndio",
-              "title": "Software Engineer, Integrations (US + Calgary)"
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/clear/jobs/8201085",
-              "company": "CLEAR",
-              "title": "Hardware Infrastructure Engineer II"
-            },
-            {
-              "key": "url::https://q2ebanking.wd5.myworkdayjobs.com/en-US/Q2/job/Austin-TX/Data-Engineer_REQ-12855-1?jobFamilies=8b86f00a4a2a01e03cacfbdc0288b96a&jobFamilies=8b86f00a4a2a0161c8f6dbdc0288ab6a&jobFamilies=54838d87026b0142d4a0dd78070250f5&jobFamilies=54838d87026b019304a74a65070243f5&jobFamilies=8b86f00a4a2a0105bcc1d3dc0288a76a",
-              "company": "Q2 Software",
-              "title": "Data Engineer"
-            },
-            {
-              "key": "url::https://www.tesla.com/careers/search/job/287001",
-              "company": "Tesla",
-              "title": "Software Release Integration Engineer, Factory Firmware, Optimus"
-            },
-            {
-              "key": "url::https://careers.fm.com/careers-home/jobs/2861?lang=en-us&previousLocale=en-US",
-              "company": "FM",
-              "title": "Project & Platform Specialist"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 16.414,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 5,
-            "input_tokens": 7509,
-            "cached_input_tokens": 1851,
-            "output_tokens": 1591,
-            "reasoning_tokens": 1087,
-            "estimated_usd": 0.00138
-          },
-          "decisions": [
-            {
-              "key": "url::https://synd.io/careers?gh_jid=6231512004",
-              "match_score": 75.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "backend data workflows",
-                "Python APIs and pipelines"
-              ],
-              "main_gaps": [
-                "4+ years production experience",
-                "third-party API integrations"
-              ]
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/clear/jobs/8201085",
-              "match_score": 38.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python systems experience",
-                "reliability and observability"
-              ],
-              "main_gaps": [
-                "embedded Linux and OTA updates",
-                "serial hardware integration"
-              ]
-            },
-            {
-              "key": "url::https://q2ebanking.wd5.myworkdayjobs.com/en-US/Q2/job/Austin-TX/Data-Engineer_REQ-12855-1?jobFamilies=8b86f00a4a2a01e03cacfbdc0288b96a&jobFamilies=8b86f00a4a2a0161c8f6dbdc0288ab6a&jobFamilies=54838d87026b0142d4a0dd78070250f5&jobFamilies=54838d87026b019304a74a65070243f5&jobFamilies=8b86f00a4a2a0105bcc1d3dc0288a76a",
-              "match_score": 83.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "production data pipelines",
-                "Spark and Databricks"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://www.tesla.com/careers/search/job/287001",
-              "match_score": 56.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "CI/CD deployment experience",
-                "software integration background"
-              ],
-              "main_gaps": [
-                "firmware and factory releases",
-                "cross-functional release leadership"
-              ]
-            },
-            {
-              "key": "url::https://careers.fm.com/careers-home/jobs/2861?lang=en-us&previousLocale=en-US",
-              "match_score": 34.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "platform configuration experience",
-                "cross-functional collaboration"
-              ],
-              "main_gaps": [
-                "project management delivery",
-                "portfolio platform administration"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://crowdstrike.wd5.myworkdayjobs.com/en-US/crowdstrikecareers/job/USA---Remote-WA/Threat-Analyst--Machine-Learning-Operations---Detection-Efficacy--Remote-_R29964?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
-              "company": "CrowdStrike",
-              "title": "Threat Analyst, Machine Learning Operations & Detection Efficacy (Remote)"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 4.092,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 2789,
-            "cached_input_tokens": 1988,
-            "output_tokens": 381,
-            "reasoning_tokens": 120,
-            "estimated_usd": 0.00029
-          },
-          "decisions": [
-            {
-              "key": "url::https://crowdstrike.wd5.myworkdayjobs.com/en-US/crowdstrikecareers/job/USA---Remote-WA/Threat-Analyst--Machine-Learning-Operations---Detection-Efficacy--Remote-_R29964?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
-              "match_score": 49.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python automation",
-                "AI evaluation workflows"
-              ],
-              "main_gaps": [
-                "Malware reverse engineering",
-                "Binary file analysis"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 3,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://jobs.ashbyhq.com/PAR%20Technology/16201e0e-82f0-4491-b10d-3107107e0c89",
-              "company": "PARTech",
-              "title": "Machine Learning Ops Engineer"
-            },
-            {
-              "key": "url::https://www.kforce.com/find-work/search-jobs",
-              "company": "Kforce",
-              "title": "Software Developer in Test"
-            },
-            {
-              "key": "url::https://www.mozilla.org/en-US/careers/position/gh/8306479",
-              "company": "Mozilla",
-              "title": "Contract Software Engineer - WebCompat Tooling (Dashboards and Reporting), Firefox"
-            },
-            {
-              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/154866BR",
-              "company": "Infosys",
-              "title": "Java Full Stack Engineer with Python and AWS"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 13.196,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 4,
-            "input_tokens": 5749,
-            "cached_input_tokens": 2724,
-            "output_tokens": 1059,
-            "reasoning_tokens": 738,
-            "estimated_usd": 0.000859
-          },
-          "decisions": [
-            {
-              "key": "url::https://jobs.ashbyhq.com/PAR%20Technology/16201e0e-82f0-4491-b10d-3107107e0c89",
-              "match_score": 77.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Spark and Databricks troubleshooting",
-                "ML pipeline testing and observability"
-              ],
-              "main_gaps": [
-                "Workflow orchestration",
-                "Production AWS data services"
-              ]
-            },
-            {
-              "key": "url::https://www.kforce.com/find-work/search-jobs",
-              "match_score": 56.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python testing and integration coverage",
-                "CI/CD and regression testing"
-              ],
-              "main_gaps": [
-                "SDET automation framework experience",
-                "Playwright test automation"
-              ]
-            },
-            {
-              "key": "url::https://www.mozilla.org/en-US/careers/position/gh/8306479",
-              "match_score": 77.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack web tooling",
-                "Python services and automation"
-              ],
-              "main_gaps": [
-                "Django"
-              ]
-            },
-            {
-              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/154866BR",
-              "match_score": 73.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Java and Python development",
-                "AWS application deployment"
-              ],
-              "main_gaps": [
-                "Angular implementation experience",
-                "AWS core services"
               ]
             }
           ]

@@ -1,18 +1,18 @@
 {
-  "run_at": "2026-11-02T00:52:20.177961+00:00",
-  "elapsed_seconds": 66.417,
-  "remote_elapsed_seconds": 38.97,
+  "run_at": "2026-11-02T15:51:53.895364+00:00",
+  "elapsed_seconds": 37.834,
+  "remote_elapsed_seconds": 26.721,
   "funnel": {
-    "scoring_candidates": 71
+    "scoring_candidates": 38
   },
   "llm": {
-    "reused": 67,
-    "llm": 5,
-    "new_or_changed": 6,
-    "rule": 1,
-    "sent": 5,
-    "api_requests": 2,
-    "recency_skipped": 1,
+    "reused": 39,
+    "llm": 1,
+    "new_or_changed": 1,
+    "rule": 0,
+    "sent": 1,
+    "api_requests": 1,
+    "recency_skipped": 0,
     "overflow": 0,
     "peer_reused": 2,
     "thin_source_rule": 0,
@@ -23,38 +23,27 @@
     "same_content_reused": 0,
     "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 5,
       "material_jd_change": 1
     },
     "batch_size": 10,
-    "primary_batches_total": 2,
-    "batches_total": 2,
-    "batches_succeeded": 2,
-    "batches_attempted": 2,
+    "primary_batches_total": 1,
+    "batches_total": 1,
+    "batches_succeeded": 1,
+    "batches_attempted": 1,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 19.136,
-    "json_results": 5,
+    "latency_seconds": 3.24,
+    "json_results": 1,
     "batches": [
       {
         "batch": 1,
         "route": "resume_swe",
         "attempt": "initial",
         "jobs": [
-          {
-            "key": "url::https://jobs.ashbyhq.com/handshake/c2cea12b-4dba-4782-ac2d-279c6865a4b7",
-            "company": "Handshake",
-            "title": "Software Engineer I, Promotions"
-          },
-          {
-            "key": "url::https://careers.itw.com/us/en/job/JR10913/Software-Engineer",
-            "company": "ITW",
-            "title": "Software Engineer"
-          },
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
             "company": "Kforce",
@@ -65,51 +54,26 @@
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 12.279,
+        "latency_seconds": 3.24,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 3,
-          "input_tokens": 3904,
+          "jobs_scored": 1,
+          "input_tokens": 2300,
           "cached_input_tokens": 0,
-          "output_tokens": 739,
-          "reasoning_tokens": 512,
-          "estimated_usd": 0.00076
+          "output_tokens": 175,
+          "reasoning_tokens": 96,
+          "estimated_usd": 0.000318
         },
         "decisions": [
           {
-            "key": "url::https://jobs.ashbyhq.com/handshake/c2cea12b-4dba-4782-ac2d-279c6865a4b7",
-            "match_score": 92.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack product ownership",
-              "Distributed systems reliability"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://careers.itw.com/us/en/job/JR10913/Software-Engineer",
-            "match_score": 55.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production software development",
-              "Object-oriented programming"
-            ],
-            "main_gaps": [
-              "3+ years development",
-              "Software team technical direction"
-            ]
-          },
-          {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 32.0,
+            "match_score": 47.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Production support experience",
-              "Deployment and lifecycle practices"
+              "Production deployment experience",
+              "Application lifecycle practices"
             ],
             "main_gaps": [
               "Power Platform administration",
@@ -117,86 +81,26 @@
             ]
           }
         ]
-      },
-      {
-        "batch": 2,
-        "route": "both",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://www.optiver.com/join-us/jobs/technology/austin/software-engineer-2",
-            "company": "Optiver",
-            "title": "Software Engineer"
-          },
-          {
-            "key": "url::https://livex.ai/careers/solution-engineer",
-            "company": "LiveX AI",
-            "title": "Solution Engineer"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 6.857,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 2,
-          "input_tokens": 5043,
-          "cached_input_tokens": 0,
-          "output_tokens": 507,
-          "reasoning_tokens": 362,
-          "estimated_usd": 0.000758
-        },
-        "decisions": [
-          {
-            "key": "url::https://www.optiver.com/join-us/jobs/technology/austin/software-engineer-2",
-            "match_score": 67.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Strong software fundamentals",
-              "Performance optimization experience"
-            ],
-            "main_gaps": [
-              "Low-latency C++ systems"
-            ]
-          },
-          {
-            "key": "url::https://livex.ai/careers/solution-engineer",
-            "match_score": 76.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production AI agent experience",
-              "End-to-end software deployment"
-            ],
-            "main_gaps": [
-              "Physical hardware deployments"
-            ]
-          }
-        ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 5,
-    "input_tokens": 8947,
+    "jobs_scored": 1,
+    "input_tokens": 2300,
     "cached_input_tokens": 0,
-    "output_tokens": 1246,
-    "reasoning_tokens": 874,
-    "estimated_usd": 0.001518,
+    "output_tokens": 175,
+    "reasoning_tokens": 96,
+    "estimated_usd": 0.000318,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 5
+    "scored": 1
   },
   "output": {
-    "tier_a": 4,
+    "tier_a": 2,
     "tier_b": 2,
-    "tier_c": 65,
-    "shown": 6,
-    "new_jobs": 13,
-    "new_jobs_added": 2
+    "tier_c": 34,
+    "shown": 4,
+    "new_jobs": 1,
+    "new_jobs_added": 0
   },
   "screen_method": "cache+llm",
   "failures": {
@@ -207,15 +111,15 @@
       "query": "Software",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 6,
-      "stop_reason": "page_budget",
-      "raw_jobs": 87,
-      "unique_jobs": 87,
-      "unique_contribution": 87,
-      "first_pass_survivors": 62,
-      "original_postings_resolved": 24,
-      "jds_resolved": 19,
-      "elapsed_seconds": 3.051
+      "pages_fetched": 4,
+      "stop_reason": "empty_page",
+      "raw_jobs": 45,
+      "unique_jobs": 45,
+      "unique_contribution": 45,
+      "first_pass_survivors": 33,
+      "original_postings_resolved": 6,
+      "jds_resolved": 3,
+      "elapsed_seconds": 2.297
     },
     {
       "query": "Full Stack",
@@ -223,55 +127,55 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 9,
-      "unique_jobs": 9,
-      "unique_contribution": 5,
-      "first_pass_survivors": 6,
-      "original_postings_resolved": 2,
-      "jds_resolved": 2,
-      "elapsed_seconds": 0.579
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 2,
+      "first_pass_survivors": 1,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.73
     },
     {
       "query": "AI",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 6,
+      "pages_fetched": 3,
       "stop_reason": "empty_page",
-      "raw_jobs": 65,
-      "unique_jobs": 65,
-      "unique_contribution": 53,
-      "first_pass_survivors": 28,
-      "original_postings_resolved": 15,
-      "jds_resolved": 11,
-      "elapsed_seconds": 2.45
+      "raw_jobs": 26,
+      "unique_jobs": 26,
+      "unique_contribution": 21,
+      "first_pass_survivors": 12,
+      "original_postings_resolved": 5,
+      "jds_resolved": 2,
+      "elapsed_seconds": 1.25
     },
     {
       "query": "Machine Learning",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
-      "unique_contribution": 6,
-      "first_pass_survivors": 6,
-      "original_postings_resolved": 1,
-      "jds_resolved": 1,
-      "elapsed_seconds": 0.519
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.172
     },
     {
       "query": "Infrastructure",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 3,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 20,
-      "unique_jobs": 20,
-      "unique_contribution": 19,
-      "first_pass_survivors": 8,
-      "original_postings_resolved": 2,
-      "jds_resolved": 1,
-      "elapsed_seconds": 0.998
+      "raw_jobs": 7,
+      "unique_jobs": 7,
+      "unique_contribution": 6,
+      "first_pass_survivors": 3,
+      "original_postings_resolved": 1,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.684
     },
     {
       "query": "Forward Deployed",
@@ -279,30 +183,16 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 5,
-      "unique_jobs": 5,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
       "unique_contribution": 2,
-      "first_pass_survivors": 4,
+      "first_pass_survivors": 3,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.53
+      "elapsed_seconds": 0.687
     },
     {
       "query": "DevOps",
-      "group": "syncareer",
-      "page_budget": 6,
-      "pages_fetched": 2,
-      "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 3,
-      "first_pass_survivors": 2,
-      "original_postings_resolved": 0,
-      "jds_resolved": 0,
-      "elapsed_seconds": 0.608
-    },
-    {
-      "query": "Backend",
       "group": "syncareer",
       "page_budget": 6,
       "pages_fetched": 2,
@@ -313,7 +203,21 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.527
+      "elapsed_seconds": 0.676
+    },
+    {
+      "query": "Backend",
+      "group": "syncareer",
+      "page_budget": 6,
+      "pages_fetched": 1,
+      "stop_reason": "empty_page",
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.16
     },
     {
       "query": "Platform",
@@ -321,13 +225,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 14,
-      "unique_jobs": 14,
-      "unique_contribution": 10,
-      "first_pass_survivors": 9,
-      "original_postings_resolved": 1,
-      "jds_resolved": 1,
-      "elapsed_seconds": 0.516
+      "raw_jobs": 5,
+      "unique_jobs": 5,
+      "unique_contribution": 2,
+      "first_pass_survivors": 5,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.688
     },
     {
       "query": "New Grad",
@@ -341,7 +245,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.102
+      "elapsed_seconds": 0.168
     },
     {
       "query": "LLM",
@@ -355,7 +259,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.111
+      "elapsed_seconds": 0.187
     },
     {
       "query": "Data Engineer",
@@ -363,34 +267,34 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
-      "unique_contribution": 6,
-      "first_pass_survivors": 2,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 3,
+      "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.549
+      "elapsed_seconds": 0.667
     },
     {
       "query": "Site Reliability",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 2,
-      "unique_jobs": 2,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
       "unique_contribution": 0,
-      "first_pass_survivors": 2,
-      "original_postings_resolved": 1,
+      "first_pass_survivors": 0,
+      "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.521
+      "elapsed_seconds": 0.176
     }
   ],
   "enrichment": {
-    "needed": 7,
-    "detail_api_resolved": 114,
+    "needed": 5,
+    "detail_api_resolved": 49,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 7
+    "remaining_no_jd": 5
   }
 }
