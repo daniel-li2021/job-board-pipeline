@@ -1,16 +1,6 @@
 {
   "receipts": [
     {
-      "id": "297f5233cf1ead8dc1cfb3722aa5e7c01ced6bd1a686ceeceb4068f5aff020a7",
-      "pipeline": "official",
-      "stamp": "2026-10-19_1447",
-      "title": "Official careers digest 2026-10-19_1447 (3 new/promoted A/B)",
-      "body": "Big Tech official careers digest - 2026-10-19_1447\n\nUpdated (PT): 2026-10-19 07:49 PDT\nSnapshot (UTC): 2026-10-19T14:49:48.237567+00:00\n\n3 new or promoted (B→A) Tier A/B job(s).\n\nAt most one digest is sent per Pacific day. Score/JD-only changes are not re-alerted.\n\n| Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| A | 87 | official | Google | Software Engineer, Knowledge Catalog For AI | Kirkland, WA, USA; Sunnyvale, CA, USA | 2026-10-19 | 3to24h | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/119312524553134790-software-engineer-knowledge-catalog-for-ai) |\n| B | 83 | official | Anthropic | Software Engineer, Memory & Search | New York City, NY; New York City, NY / Seattle, WA; Remote-Friendly, United States; San Francisco, CA / New York City, NY / Seattle, WA; San Francisco, California, United States | 2026-10-19 | 3to24h | - | unreviewed | official_canonical | [open](https://job-boards.greenhouse.io/anthropic/jobs/5456453008) |\n| B | 89 | official | SAP | SAP iXp Intern - Full Stack Developer | Newtown Square, PA, US, 19073 | - | newly_discovered | SAP | unreviewed | official_canonical | [open](https://careers.sap.com/job/Newtown-Square-SAP-iXp-Intern-Full-Stack-Developer-PA-19073/1441089733/) |",
-      "status": "delivered",
-      "issue_url": "https://github.com/daniel-li2021/job-board-pipeline/issues/202",
-      "delivered_at": "2026-10-19T14:49:59.835902+00:00"
-    },
-    {
       "id": "7ab999f983eb1b903a27d277ecbfa25de5d506126b76cedda13813cc224cdaa7",
       "pipeline": "official",
       "stamp": "2026-10-20_1447",
@@ -139,6 +129,14 @@
       "status": "delivered",
       "issue_url": "https://github.com/daniel-li2021/job-board-pipeline/issues/253",
       "delivered_at": "2026-11-01T15:50:30.046360+00:00"
+    },
+    {
+      "id": "a1424aeaa39c962dc5805aacdfe3217eb58e127c27c9cf1dd26a5dbb9b95c853",
+      "pipeline": "official",
+      "stamp": "2026-11-02_1548",
+      "title": "Official careers digest 2026-11-02_1548 (4 new/promoted A/B)",
+      "body": "Big Tech official careers digest - 2026-11-02_1548\n\nUpdated (PT): 2026-11-02 07:51 PST\nSnapshot (UTC): 2026-11-02T15:51:34.696633+00:00\n\n4 new or promoted (B→A) Tier A/B job(s).\n\nAt most one digest is sent per Pacific day. Score/JD-only changes are not re-alerted.\n\n| Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| A | 91 | official | Yext | Software Engineer | New York, NY; New York, NY, United States | 2026-11-02 | 3to24h | - | unreviewed | official_canonical | [open](https://job-boards.greenhouse.io/yext/jobs/8334973) |\n| A | 85 | official | Google | Software Engineer, Generative Media AI, Apparel ML | Mountain View, CA, USA; Seattle, WA, USA; New York, NY, USA | 2026-11-02 | 3to24h | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/101544438928417478-software-engineer-generative-media-ai-apparel-ml) |\n| B | 95 | official | Google | Software Engineer II, Early Career | Mountain View, CA, USA; Kirkland, WA, USA; Los Angeles, CA, USA; Madison, WI, USA; New York, NY, USA; Palo Alto, CA, USA; Pittsburgh, PA, USA; Raleigh, NC, USA; Durham, NC, USA; San Bruno, CA, USA; Seattle, WA, USA; Sunnyvale, CA, USA | 2026-11-02 | 3to24h | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/109116638069957318-software-engineer-ii-early-career) |\n| B | 76 | official | Amazon | Applied Scientist, PXT Central Science | Seattle, Washington, USA | 2026-11-02 | 3to24h | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10594131/applied-scientist-pxt-central-science) |",
+      "status": "pending"
     }
   ]
 }
