@@ -1,20 +1,20 @@
 {
-  "run_at": "2026-11-02T15:51:53.895364+00:00",
-  "elapsed_seconds": 37.834,
-  "remote_elapsed_seconds": 26.721,
+  "run_at": "2026-11-03T00:51:43.406088+00:00",
+  "elapsed_seconds": 29.825,
+  "remote_elapsed_seconds": 16.846,
   "funnel": {
-    "scoring_candidates": 38
+    "scoring_candidates": 15
   },
   "llm": {
-    "reused": 39,
-    "llm": 1,
-    "new_or_changed": 1,
-    "rule": 0,
-    "sent": 1,
-    "api_requests": 1,
-    "recency_skipped": 0,
+    "reused": 12,
+    "llm": 2,
+    "new_or_changed": 3,
+    "rule": 1,
+    "sent": 2,
+    "api_requests": 2,
+    "recency_skipped": 1,
     "overflow": 0,
-    "peer_reused": 2,
+    "peer_reused": 0,
     "thin_source_rule": 0,
     "retryable_fallbacks": 0,
     "historical_seen_skipped": 0,
@@ -23,21 +23,22 @@
     "same_content_reused": 0,
     "rescored_within_24h": 0,
     "new_or_changed_reasons": {
+      "genuinely_new_job": 2,
       "material_jd_change": 1
     },
     "batch_size": 10,
-    "primary_batches_total": 1,
-    "batches_total": 1,
-    "batches_succeeded": 1,
-    "batches_attempted": 1,
+    "primary_batches_total": 2,
+    "batches_total": 2,
+    "batches_succeeded": 2,
+    "batches_attempted": 2,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 3.24,
-    "json_results": 1,
+    "latency_seconds": 10.412,
+    "json_results": 2,
     "batches": [
       {
         "batch": 1,
@@ -45,61 +46,102 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "company": "Kforce",
-            "title": "Collaboration Administrator - Power Platform"
+            "key": "url::https://jobs.bechtel.com/us/en/job/297247/27-New-Grad-US-Mech-Field-Eng",
+            "company": "Bechtel",
+            "title": "27 New Grad | US | Mech Field Eng"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 3.24,
+        "latency_seconds": 4.361,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
           "jobs_scored": 1,
-          "input_tokens": 2300,
+          "input_tokens": 2710,
           "cached_input_tokens": 0,
-          "output_tokens": 175,
-          "reasoning_tokens": 96,
-          "estimated_usd": 0.000318
+          "output_tokens": 397,
+          "reasoning_tokens": 310,
+          "estimated_usd": 0.000469
         },
         "decisions": [
           {
-            "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 47.0,
+            "key": "url::https://jobs.bechtel.com/us/en/job/297247/27-New-Grad-US-Mech-Field-Eng",
+            "match_score": 12.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "New-grad program"
+            ],
+            "main_gaps": [
+              "Mechanical engineering degree",
+              "Construction field engineering"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 2,
+        "route": "both",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "url::https://www.audiblecareers.com/job/culver-city/software-development-engineer-audible-ai-voice-production/27552/102618191760",
+            "company": "Audible",
+            "title": "Software Development Engineer, Audible AI Voice Production"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 6.051,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 1,
+          "input_tokens": 4302,
+          "cached_input_tokens": 0,
+          "output_tokens": 633,
+          "reasoning_tokens": 530,
+          "estimated_usd": 0.000747
+        },
+        "decisions": [
+          {
+            "key": "url::https://www.audiblecareers.com/job/culver-city/software-development-engineer-audible-ai-voice-production/27552/102618191760",
+            "match_score": 78.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Production deployment experience",
-              "Application lifecycle practices"
+              "Production backend services",
+              "Full-stack platform delivery"
             ],
             "main_gaps": [
-              "Power Platform administration",
-              "Power Apps and Dataverse"
+              "Developer mentoring and leadership"
             ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 1,
-    "input_tokens": 2300,
+    "jobs_scored": 2,
+    "input_tokens": 7012,
     "cached_input_tokens": 0,
-    "output_tokens": 175,
-    "reasoning_tokens": 96,
-    "estimated_usd": 0.000318,
+    "output_tokens": 1030,
+    "reasoning_tokens": 840,
+    "estimated_usd": 0.001216,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 1
+    "scored": 2
   },
   "output": {
     "tier_a": 2,
-    "tier_b": 2,
-    "tier_c": 34,
-    "shown": 4,
-    "new_jobs": 1,
+    "tier_b": 1,
+    "tier_c": 12,
+    "shown": 3,
+    "new_jobs": 3,
     "new_jobs_added": 0
   },
   "screen_method": "cache+llm",
@@ -111,15 +153,15 @@
       "query": "Software",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 4,
+      "pages_fetched": 3,
       "stop_reason": "empty_page",
-      "raw_jobs": 45,
-      "unique_jobs": 45,
-      "unique_contribution": 45,
-      "first_pass_survivors": 33,
-      "original_postings_resolved": 6,
+      "raw_jobs": 18,
+      "unique_jobs": 18,
+      "unique_contribution": 18,
+      "first_pass_survivors": 12,
+      "original_postings_resolved": 4,
       "jds_resolved": 3,
-      "elapsed_seconds": 2.297
+      "elapsed_seconds": 1.519
     },
     {
       "query": "Full Stack",
@@ -127,27 +169,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 2,
+      "raw_jobs": 2,
+      "unique_jobs": 2,
+      "unique_contribution": 1,
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.73
+      "elapsed_seconds": 0.814
     },
     {
       "query": "AI",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 3,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 26,
-      "unique_jobs": 26,
-      "unique_contribution": 21,
-      "first_pass_survivors": 12,
-      "original_postings_resolved": 5,
-      "jds_resolved": 2,
-      "elapsed_seconds": 1.25
+      "raw_jobs": 11,
+      "unique_jobs": 11,
+      "unique_contribution": 8,
+      "first_pass_survivors": 7,
+      "original_postings_resolved": 2,
+      "jds_resolved": 1,
+      "elapsed_seconds": 0.627
     },
     {
       "query": "Machine Learning",
@@ -161,7 +203,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.172
+      "elapsed_seconds": 0.183
     },
     {
       "query": "Infrastructure",
@@ -169,41 +211,41 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 7,
-      "unique_jobs": 7,
-      "unique_contribution": 6,
-      "first_pass_survivors": 3,
-      "original_postings_resolved": 1,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 3,
+      "first_pass_survivors": 2,
+      "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.684
+      "elapsed_seconds": 0.682
     },
     {
       "query": "Forward Deployed",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 2,
-      "first_pass_survivors": 3,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.687
+      "elapsed_seconds": 0.189
     },
     {
       "query": "DevOps",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 1,
-      "unique_jobs": 1,
-      "unique_contribution": 1,
-      "first_pass_survivors": 1,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.676
+      "elapsed_seconds": 0.156
     },
     {
       "query": "Backend",
@@ -217,7 +259,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.16
+      "elapsed_seconds": 0.152
     },
     {
       "query": "Platform",
@@ -225,27 +267,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 5,
-      "unique_jobs": 5,
-      "unique_contribution": 2,
-      "first_pass_survivors": 5,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
+      "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.688
+      "elapsed_seconds": 0.625
     },
     {
       "query": "New Grad",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 1,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 0,
-      "unique_jobs": 0,
-      "unique_contribution": 0,
-      "first_pass_survivors": 0,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
+      "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.168
+      "elapsed_seconds": 0.631
     },
     {
       "query": "LLM",
@@ -259,7 +301,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.187
+      "elapsed_seconds": 0.143
     },
     {
       "query": "Data Engineer",
@@ -267,13 +309,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 3,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.667
+      "elapsed_seconds": 0.619
     },
     {
       "query": "Site Reliability",
@@ -287,14 +329,14 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.176
+      "elapsed_seconds": 0.157
     }
   ],
   "enrichment": {
-    "needed": 5,
-    "detail_api_resolved": 49,
+    "needed": 1,
+    "detail_api_resolved": 21,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 5
+    "remaining_no_jd": 1
   }
 }

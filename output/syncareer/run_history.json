@@ -2,6 +2,157 @@
   "runs": [
     {
       "pipeline": "syncareer",
+      "run_at": "2026-11-03T00:51:43.406088+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 2,
+      "cache_reused": 12,
+      "peer_reused": 0,
+      "same_content_reused": 0,
+      "non_material_change_reused": 0,
+      "new_or_changed": 3,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 2,
+        "material_jd_change": 1
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1,
+      "requests": 2,
+      "input_tokens": 7012,
+      "cached_input_tokens": 0,
+      "output_tokens": 1030,
+      "reasoning_tokens": 840,
+      "estimated_usd": 0.001216,
+      "latency_seconds": 10.412,
+      "latency_measured": true,
+      "effective_rpm": 11.53,
+      "effective_tpm": 46342.68,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 2,
+      "funnel": {
+        "scoring_candidates": 15
+      },
+      "output": {
+        "tier_a": 2,
+        "tier_b": 1,
+        "tier_c": 12,
+        "shown": 3,
+        "new_jobs": 3,
+        "new_jobs_added": 0
+      },
+      "enrichment": {
+        "needed": 1,
+        "detail_api_resolved": 21,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 1
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://jobs.bechtel.com/us/en/job/297247/27-New-Grad-US-Mech-Field-Eng",
+              "company": "Bechtel",
+              "title": "27 New Grad | US | Mech Field Eng"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.361,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2710,
+            "cached_input_tokens": 0,
+            "output_tokens": 397,
+            "reasoning_tokens": 310,
+            "estimated_usd": 0.000469
+          },
+          "decisions": [
+            {
+              "key": "url::https://jobs.bechtel.com/us/en/job/297247/27-New-Grad-US-Mech-Field-Eng",
+              "match_score": 12.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "New-grad program"
+              ],
+              "main_gaps": [
+                "Mechanical engineering degree",
+                "Construction field engineering"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.audiblecareers.com/job/culver-city/software-development-engineer-audible-ai-voice-production/27552/102618191760",
+              "company": "Audible",
+              "title": "Software Development Engineer, Audible AI Voice Production"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 6.051,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 4302,
+            "cached_input_tokens": 0,
+            "output_tokens": 633,
+            "reasoning_tokens": 530,
+            "estimated_usd": 0.000747
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.audiblecareers.com/job/culver-city/software-development-engineer-audible-ai-voice-production/27552/102618191760",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production backend services",
+                "Full-stack platform delivery"
+              ],
+              "main_gaps": [
+                "Developer mentoring and leadership"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
       "run_at": "2026-11-02T15:51:53.895364+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -11081,393 +11232,6 @@
               "main_gaps": [
                 "Security AI agents",
                 "Application security experience"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "syncareer",
-      "run_at": "2026-10-23T23:53:05.852913+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 15,
-      "cache_reused": 90,
-      "peer_reused": 9,
-      "same_content_reused": 0,
-      "non_material_change_reused": 0,
-      "new_or_changed": 15,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 14,
-        "prior_rule_result_now_eligible_for_llm": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1,
-      "requests": 2,
-      "input_tokens": 19215,
-      "cached_input_tokens": 4575,
-      "output_tokens": 4524,
-      "reasoning_tokens": 2525,
-      "estimated_usd": 0.003772,
-      "latency_seconds": 42.884,
-      "latency_measured": true,
-      "effective_rpm": 2.8,
-      "effective_tpm": 33213.79,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "primary_batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 15,
-      "funnel": {
-        "scoring_candidates": 96
-      },
-      "output": {
-        "tier_a": 9,
-        "tier_b": 14,
-        "tier_c": 73,
-        "shown": 23,
-        "new_jobs": 32,
-        "new_jobs_added": 3
-      },
-      "enrichment": {
-        "needed": 19,
-        "detail_api_resolved": 158,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 19
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://fda.fa.us1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/3369?lastSelectedFacet=CATEGORIES&mode=location&selectedCategoriesFacet=100000000133128%253B100000000133120%253B100000000133122%253B100000000133124%253B100000000133126%253B100000000133129%253B100000000133123%253B100000000133127",
-              "company": "Manitowoc",
-              "title": "Software Engineer I"
-            },
-            {
-              "key": "url::https://recruiting2.ultipro.com/QUA1014QUAM/JobBoard/ca0ab154-0d7f-47e3-af84-cd9bd79768dc/OpportunityDetail?opportunityId=dd37269b-01a5-4a94-90ad-2924ef771d2a",
-              "company": "Quantum Corporation",
-              "title": "Systems Software Engineer - Object Storage"
-            },
-            {
-              "key": "url::https://jobs.publix.com/job-opening/associate-software-engineer-finance-systems-hybrid?fromsearch=1",
-              "company": "Publix",
-              "title": "Associate Software Engineer – Finance Systems (Hybrid)"
-            },
-            {
-              "key": "url::https://fiserv.wd5.myworkdayjobs.com/en-US/EXT/job/Berkeley-Heights-New-Jersey/DevOps-Engineer_R-10404826?jobFamilyGroup=c6b68e57f5a3108c46905c3fec6c7c24&jobFamilyGroup=c6b68e57f5a3108c4614399740ec75a9&jobFamilyGroup=c6b68e57f5a3108c44f805c8e51cad33&jobFamilyGroup=8f0515f038cd1001a957b5c1ee150000&jobFamilyGroup=c6b68e57f5a3108c3d89bc494834372e&jobFamilyGroup=c6b68e57f5a3108c3d6d14a3b2fc364e&jobFamilyGroup=44409066be6e100bc7ae2749089cfefe&jobFamilyGroup=21bcd77223041071e07ff73c582100ef&jobFamilyGroup=6f67259a71870133b9dcd8251c388f00&jobFamilyGroup=38bf46e31e7b0169f3ec86df1b38b900&jobFamilyGroup=95a96e85f0f61038722586f805eedbd8&jobFamilyGroup=9845595a26eb106110383d65898dba33&jobFamilyGroup=9845595a26eb106110383b1e0a8dba31&jobFamilyGroup=21bcd77223041071e02bc8a65c56fdc0&jobFamilyGroup=9845595a26eb1061103835a68d05ba2d&jobFamilyGroup=21bcd77223041071dff3e2dd2d6cfbe0&jobFamilyGroup=21bcd77223041072203ef3586f45f716&jobFamilyGroup=2ffe4a0bcac71000cc3f08874a9b0000&jobFamilyGroup=44409066be6e100bc7b5dc43cfa7ff47&jobFamilyGroup=c6b68e57f5a3108c3da4397d1eec3825",
-              "company": "Fiserv",
-              "title": "DevOps Engineer"
-            },
-            {
-              "key": "url::https://polaris.wd5.myworkdayjobs.com/en-US/PolarisJobs/job/Tempe-AZ-USA/DevOps-Administrator--Remote-_R31582-1",
-              "company": "Polaris",
-              "title": "DevOps Administrator (Remote)"
-            },
-            {
-              "key": "url::https://higher.gs.com/roles/187508",
-              "company": "Goldman Sachs",
-              "title": "Asset & Wealth Management, Alternative Investment Platform, GP Coverage & Sourcing, Associate - New York City"
-            },
-            {
-              "key": "url::https://huron.wd1.myworkdayjobs.com/en-US/huroncareers/job/Chicago---550-Van-Buren/Platform-Analyst-Research-Office-Managed-Services_JR-0016995",
-              "company": "Huron Consulting Group",
-              "title": "Platform Analyst-Research Office Managed Services"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 22.804,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 7,
-            "input_tokens": 8957,
-            "cached_input_tokens": 1851,
-            "output_tokens": 2279,
-            "reasoning_tokens": 1101,
-            "estimated_usd": 0.001869
-          },
-          "decisions": [
-            {
-              "key": "url::https://fda.fa.us1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/3369?lastSelectedFacet=CATEGORIES&mode=location&selectedCategoriesFacet=100000000133128%253B100000000133120%253B100000000133122%253B100000000133124%253B100000000133126%253B100000000133129%253B100000000133123%253B100000000133127",
-              "match_score": 83.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "C++ software fundamentals",
-                "Linux software development"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://recruiting2.ultipro.com/QUA1014QUAM/JobBoard/ca0ab154-0d7f-47e3-af84-cd9bd79768dc/OpportunityDetail?opportunityId=dd37269b-01a5-4a94-90ad-2924ef771d2a",
-              "match_score": 68.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Distributed backend services",
-                "Concurrency and performance"
-              ],
-              "main_gaps": [
-                "3–5 years systems experience",
-                "Object storage systems"
-              ]
-            },
-            {
-              "key": "url::https://jobs.publix.com/job-opening/associate-software-engineer-finance-systems-hybrid?fromsearch=1",
-              "match_score": 90.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production software development",
-                "APIs, testing, and CI/CD"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://fiserv.wd5.myworkdayjobs.com/en-US/EXT/job/Berkeley-Heights-New-Jersey/DevOps-Engineer_R-10404826?jobFamilyGroup=c6b68e57f5a3108c46905c3fec6c7c24&jobFamilyGroup=c6b68e57f5a3108c4614399740ec75a9&jobFamilyGroup=c6b68e57f5a3108c44f805c8e51cad33&jobFamilyGroup=8f0515f038cd1001a957b5c1ee150000&jobFamilyGroup=c6b68e57f5a3108c3d89bc494834372e&jobFamilyGroup=c6b68e57f5a3108c3d6d14a3b2fc364e&jobFamilyGroup=44409066be6e100bc7ae2749089cfefe&jobFamilyGroup=21bcd77223041071e07ff73c582100ef&jobFamilyGroup=6f67259a71870133b9dcd8251c388f00&jobFamilyGroup=38bf46e31e7b0169f3ec86df1b38b900&jobFamilyGroup=95a96e85f0f61038722586f805eedbd8&jobFamilyGroup=9845595a26eb106110383d65898dba33&jobFamilyGroup=9845595a26eb106110383b1e0a8dba31&jobFamilyGroup=21bcd77223041071e02bc8a65c56fdc0&jobFamilyGroup=9845595a26eb1061103835a68d05ba2d&jobFamilyGroup=21bcd77223041071dff3e2dd2d6cfbe0&jobFamilyGroup=21bcd77223041072203ef3586f45f716&jobFamilyGroup=2ffe4a0bcac71000cc3f08874a9b0000&jobFamilyGroup=44409066be6e100bc7b5dc43cfa7ff47&jobFamilyGroup=c6b68e57f5a3108c3da4397d1eec3825",
-              "match_score": 56.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "AWS deployment experience",
-                "CI/CD and Terraform"
-              ],
-              "main_gaps": [
-                "4+ years DevOps experience",
-                "Production cloud operations"
-              ]
-            },
-            {
-              "key": "url::https://polaris.wd5.myworkdayjobs.com/en-US/PolarisJobs/job/Tempe-AZ-USA/DevOps-Administrator--Remote-_R31582-1",
-              "match_score": 58.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Cloud deployment experience",
-                "CI/CD and infrastructure as code"
-              ],
-              "main_gaps": [
-                "4+ years CI/CD and cloud",
-                "Infrastructure administration and on-call"
-              ]
-            },
-            {
-              "key": "url::https://higher.gs.com/roles/187508",
-              "match_score": 8.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Quantitative analytical background"
-              ],
-              "main_gaps": [
-                "Investment management experience",
-                "Alternative investment expertise"
-              ]
-            },
-            {
-              "key": "url::https://huron.wd1.myworkdayjobs.com/en-US/huroncareers/job/Chicago---550-Van-Buren/Platform-Analyst-Research-Office-Managed-Services_JR-0016995",
-              "match_score": 38.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Data pipeline experience",
-                "Technical stakeholder collaboration"
-              ],
-              "main_gaps": [
-                "Power BI reporting proficiency",
-                "3–5 years analyst experience"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://www.kforce.com/find-work/search-jobs",
-              "company": "Kforce",
-              "title": "Software Developer in Test"
-            },
-            {
-              "key": "url::https://careers.appliedmaterials.com/careers/job/790318616168?domain=appliedmaterials.com&hl=en&triggerGoButton=true",
-              "company": "Applied Materials",
-              "title": "Software Engineer"
-            },
-            {
-              "key": "url::https://jobs.intuit.com/job/mountain-view/software-engineer-2/27595/102253948768",
-              "company": "Intuit",
-              "title": "Software Engineer 2"
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/quince/jobs/5458651008",
-              "company": "Quince",
-              "title": "Software Engineer II - Growth"
-            },
-            {
-              "key": "url::https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Falls-Church-VA/Robotics-Software-Engineer---Construction_JR102983",
-              "company": "HITT Contracting",
-              "title": "Robotics Software Engineer - Construction"
-            },
-            {
-              "key": "url::https://eoja.fa.ap1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/5439?mode=location",
-              "company": "Hansen Technologies",
-              "title": "DevOps Engineer"
-            },
-            {
-              "key": "url::https://search-careers.gm.com/en/jobs/jr-202622372/gvhe-hardware-software-co-optimization-architect",
-              "company": "General Motors",
-              "title": "GVHE Hardware-Software Co-Optimization Architect"
-            },
-            {
-              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155063BR",
-              "company": "Infosys",
-              "title": "Hadoop and PySpark Data Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 20.08,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 8,
-            "input_tokens": 10258,
-            "cached_input_tokens": 2724,
-            "output_tokens": 2245,
-            "reasoning_tokens": 1424,
-            "estimated_usd": 0.001903
-          },
-          "decisions": [
-            {
-              "key": "url::https://www.kforce.com/find-work/search-jobs",
-              "match_score": 65.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python test automation",
-                "CI/CD and AWS"
-              ],
-              "main_gaps": [
-                "SDET framework ownership",
-                "Playwright automation"
-              ]
-            },
-            {
-              "key": "url::https://careers.appliedmaterials.com/careers/job/790318616168?domain=appliedmaterials.com&hl=en&triggerGoButton=true",
-              "match_score": 43.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "SQL and data pipelines",
-                "Database performance exposure"
-              ],
-              "main_gaps": [
-                "Oracle and PL/SQL",
-                "KDB+/time-series databases"
-              ]
-            },
-            {
-              "key": "url::https://jobs.intuit.com/job/mountain-view/software-engineer-2/27595/102253948768",
-              "match_score": 85.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production web applications",
-                "REST APIs and testing"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/quince/jobs/5458651008",
-              "match_score": 76.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "User-facing product engineering",
-                "Full-stack feature delivery"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Falls-Church-VA/Robotics-Software-Engineer---Construction_JR102983",
-              "match_score": 35.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "C++ and Python",
-                "Docker and CI/CD"
-              ],
-              "main_gaps": [
-                "Field robotics experience",
-                "Autonomy and sensor integration"
-              ]
-            },
-            {
-              "key": "url::https://eoja.fa.ap1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/5439?mode=location",
-              "match_score": 74.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Agentic AI deployment exposure",
-                "Docker, AWS, and CI/CD"
-              ],
-              "main_gaps": [
-                "4+ years DevOps/MLOps",
-                "Hybrid-cloud operations"
-              ]
-            },
-            {
-              "key": "url::https://search-careers.gm.com/en/jobs/jr-202622372/gvhe-hardware-software-co-optimization-architect",
-              "match_score": 30.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Software systems experience",
-                "Cross-functional engineering"
-              ],
-              "main_gaps": [
-                "Vehicle hardware integration",
-                "Hardware co-simulation"
-              ]
-            },
-            {
-              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155063BR",
-              "match_score": 70.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Spark and Databricks pipelines",
-                "Python and SQL"
-              ],
-              "main_gaps": [
-                "Hadoop/Cloudera production experience",
-                "Airflow or Autosys orchestration"
               ]
             }
           ]
