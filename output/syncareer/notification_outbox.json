@@ -266,7 +266,9 @@
       "stamp": "2026-11-03_1551",
       "title": "Syncareer alert 2026-11-03_1551 (3 new A/B)",
       "body": "Syncareer alert — 2026-11-03_1551\n\nUpdated (PT): 2026-11-03 07:53 PST\nSnapshot (UTC): 2026-11-03T15:53:23.290228+00:00\n\n3 new matching job(s) this run (hard-filtered).\n\nIf you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.md` in the repo (last 3 days, one file).\n\n| Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| A | 92.0 | Syncareer | Handshake | Software Engineer I, Promotions | San Francisco, California, United States | 2026-10-31 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/handshake/c2cea12b-4dba-4782-ac2d-279c6865a4b7) |\n| B | 88.0 | Syncareer | IBM | Confluent - Software Developer - Intern Conversion | Austin, Texas, United States | 2026-11-02 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=138657&source=WEB_Search_NA) |\n| B | 88.0 | Syncareer | IBM | Confluent - Software Developer - Intern Conversion | Austin, Texas, United States | 2026-11-02 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=138654&source=WEB_Search_NA) |\n\nInbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-11-03_1551.csv`.",
-      "status": "pending"
+      "status": "delivered",
+      "issue_url": "https://github.com/daniel-li2021/job-board-pipeline/issues/261",
+      "delivered_at": "2026-11-03T15:53:40.343767+00:00"
     }
   ]
 }
