@@ -1,20 +1,23 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-11-02 16:45 PST
-- Snapshot (UTC): 2026-11-03T00:45:38.996856+00:00
-- Jobs: 17 (Tier A/B only)
-- Last 24 hours: 0
-- Last 3 days: 17
+- Updated (PT): 2026-11-03 07:49 PST
+- Snapshot (UTC): 2026-11-03T15:49:31.798019+00:00
+- Jobs: 20 (Tier A/B only)
+- Last 24 hours: 3
+- Last 3 days: 20
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 92 | official | Amazon | Software Development Engineer, Eva Development Team | Bellevue, Washington, USA | 2026-11-03 | 3to24h | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10594998/software-development-engineer-eva-development-team) |
 | A | 91 | official | Yext | Software Engineer | New York, NY; New York, NY, United States | 2026-11-02 | 1to3d | - | unreviewed | official_canonical | [open](https://job-boards.greenhouse.io/yext/jobs/8334973) |
 | A | 87 | official | Microsoft | Software Engineer II | United States, Washington, Redmond | 2026-11-02 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557047921) |
 | A | 85 | official | Google | Software Engineer, Generative Media AI, Apparel ML | Mountain View, CA, USA; Seattle, WA, USA; New York, NY, USA | 2026-11-02 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/101544438928417478-software-engineer-generative-media-ai-apparel-ml) |
 | A | 85 | official | Microsoft | Software Engineering IC2 | United States, Washington, Redmond | 2026-11-02 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557050639) |
 | A | 89 | official | Verkada | Backend Software Engineer - University Graduate 2027 | San Mateo, CA United States; San Mateo, California, United States | 2026-11-02 | 1to3d | - | unreviewed | official_canonical | [open](https://job-boards.greenhouse.io/verkada/jobs/5280545007) |
+| B | 82 | official | Apple | Frontend Engineer (AI Experiences), Retail and Marcom Engineering | Austin, United States of America | 2026-11-03 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200692940/frontend-engineer-ai-experiences-retail-and-marcom-engineering) |
+| B | 75 | official | Capital One | Full Stack Engineer 4 | McLean, VA | 2026-11-03 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-Stack-Engineer-4_R1001808-2) |
 | B | 95 | official | Google | Software Engineer II, Early Career | Mountain View, CA, USA; Kirkland, WA, USA; Los Angeles, CA, USA; Madison, WI, USA; New York, NY, USA; Palo Alto, CA, USA; Pittsburgh, PA, USA; Raleigh, NC, USA; Durham, NC, USA; San Bruno, CA, USA; Seattle, WA, USA; Sunnyvale, CA, USA | 2026-11-02 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/109116638069957318-software-engineer-ii-early-career) |
 | B | 75 | official | Microsoft | Software Engineer- CoreAI | United States, Washington, Redmond | 2026-11-02 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556989020) |
 | B | 75 | official | Salesforce | Software Engineering MTS | California - San Francisco | 2026-11-02 | 1to3d | Salesforce | unreviewed | official_canonical | [open](https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Software-Engineering-MTS_JR354592) |
