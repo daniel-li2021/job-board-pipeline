@@ -397,7 +397,7 @@
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-11-01T20:01:28.498066+00:00"
+    "jd_recovery_at": "2026-11-03T02:49:15.699638+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -9822,7 +9822,7 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-10-31T04:20:40.454352+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_cooldown"
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4475058390",
@@ -18663,7 +18663,7 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-10-31T04:20:40.454352+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_cooldown"
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4408940437",
@@ -23291,7 +23291,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/backend-engineer-billing-systems-at-brivo-4471944050",
       "official_url": "",
-      "description": "",
+      "description": "Location: Austin Compensation: $130,000 - $150,000 / year Description About the Role Are you ready to build and scale the engine that powers our business growth? We’re looking for a sharp, passionate Backend / Database Engineer to join our close-knit Billing Engineering team in Austin, TX! In this role, you won't just be pushing code; instead, you’ll be a core architect behind our mission-critical recurring billing platform, e-commerce store, and order fulfillment systems. Working side-by-side with our Engineering Lead, you’ll dive into high-impact challenges, tackle complex data architectures, and build slick, rock-solid APIs that keep our entire ecosystem running at peak performance. If you love solving meaty technical problems, optimizing databases, and seeing your work directly drive revenue and customer satisfaction, this is the launchpad for you! Key Responsibilities Design, build, and maintain robust, scalable backend systems, database schemas, and APIs powering our recurring subscription billing platform, sales quoting/ordering engines, and the Brivo Store. Develop backend solutions to support ordering and fulfillment for Sales Orders across external and internal order systems. Lead database schema design, data modeling, and SQL query optimization to ensure high availability, data integrity, and performance. Maintain and enhance workflows for connected business systems, including Shipping, Finished Goods Inventory, Billing Reports, and Finance operations. Take full ownership of the development lifecycle, including requirements gathering, development, rigorous QA testing, and ongoing system maintenance. Participate in code reviews, system troubleshooting, and continuous architecture improvements. Qualifications & Requirements 5+ years of hands-on database experience with relational databases (PostgreSQL preferred), including schema design, query optimization, and performance tuning. Strong proficiency in Python for backend engineering and API development. Excellent written and verbal communication skills to effectively collaborate across technical and non-technical teams. Proven track record building, maintaining, and troubleshooting real-world production systems. Must be based in (or relocating to) Austin, TX for full-time, on-site work. Job Benefits Brivo is a Great Place to Work-Certified™ company and the global leader in cloud-based access control and video surveillance. Following our merger with Eagle Eye Networks, we are building the only platform powerful enough to support the future of AI-driven security. Why Your Work Matters Innovation drives our vibe, but purpose drives our mission. You will work on essential systems that protect the health, safety, and welfare of people and property worldwide. At Brivo, your voice is heard, your talent is respected, and your contributions have a global impact. The Brivo Experience: We thrive on in-person collaboration and a \"one-team\" atmosphere. We embrace our international presence, leveraging diverse ideas and backgrounds to improve our culture and our products. To keep our global teams connected and inspired, we provide a premium onsite experience featuring communal meals, recurring social events, and fully stocked workspaces—ensuring you have everything you need to stay focused while building the future of security. Total Rewards: We support our people with competitive medical, vision, and dental plans (including company-offset premiums), a 401k with company match, and an unlimited Paid Time Off (PTO) policy that empowers you to take the time you need to maintain a healthy work-life balance. The compensation for this full time salaried role ranges between $130,000-$150,000. Individual compensation packages are based on job-related skills, experience, qualifications, work location, training, and market conditions. In addition, Brivonians enjoy a robust benefits and perks package tailored to their work location. About Brivo Brivo and Eagle Eye Networks have come together to create a category-defining, cloud-first platform at the intersection of AI and the physical world. Our mission is simple and ambitious: to make physical spaces safer, smarter, and more autonomous—from single-site businesses to global enterprises. As the unified global leaders in cloud-based access control and video surveillance, we provide a comprehensive digital foundation for the built environment. By combining Brivo’s pioneering building access platform with Eagle Eye’s AI-powered video management system (VMS), we have created a system of intelligence that protects over 600 million square feet across 90+ countries. Every door, camera, and credential in our ecosystem acts as a real-time sensor, leveraging AI to prevent incidents, improve operations, and enable entirely new workflows across sectors, including commercial real estate, retail, healthcare, education, and critical infrastructure. With a global footprint spanning headquarters in Bethesda, Maryland, and Austin, Texas, and international offices in Amsterdam, London, Bangalore, and Tokyo, we are leveraging our open APIs and cyber-secure cloud infrastructure to reshape the future of physical security. Join us as we build the world’s most robust platform for video intelligence and smart space automation. Learn more at www.brivo.com. Brivo is an equal employment opportunity employer and values diversity. Qualified candidates are considered for employment without regard to race, religion, gender, gender identity, sexual orientation, national origin, age, military or veteran status, disability, or any other characteristic protected by applicable law. If you require reasonable accommodations during the application or interview process, please inform us.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-01T20:00:46.767463+00:00",
@@ -23317,10 +23317,13 @@
       },
       "linkedin_detail_triage_hash": "f834889252a15902ea76",
       "linkedin_detail_deferred_at": "2026-11-01T20:00:46.767463+00:00",
-      "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-11-01T20:00:46.767463+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "linkedin_detail_attempted_at": "2026-11-03T02:49:28.299207+00:00",
+      "linkedin_detail_fetched_at": "2026-11-03T02:49:28.299207+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4421255219",
@@ -41144,9 +41147,9 @@
       "linkedin_detail_triage_hash": "0c49fdf8427efa75ea56",
       "linkedin_detail_deferred_at": "2026-11-01T20:00:46.767463+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-11-01T20:00:46.767463+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4478075241",
@@ -54652,7 +54655,7 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-10-31T04:20:40.454352+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_cooldown"
+      "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
       "job_id": "4463687644",
