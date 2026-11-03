@@ -397,7 +397,7 @@
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-11-03T02:49:15.699638+00:00"
+    "jd_recovery_at": "2026-11-03T02:59:37.784533+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -9822,7 +9822,7 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-10-31T04:20:40.454352+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "recovery_detail_budget"
     },
     {
       "job_id": "4475058390",
@@ -18663,7 +18663,7 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-10-31T04:20:40.454352+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "recovery_detail_budget"
     },
     {
       "job_id": "4408940437",
@@ -41120,7 +41120,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/backend-python-developer-at-enexus-global-inc-4485947899",
       "official_url": "",
-      "description": "",
+      "description": "Senior Software Engineer Bureau Composer Required Qualifications Bachelor's degree in Computer Science, Engineering, or related field. 8+ years of professional software engineering experience. Advanced Python programming expertise. Strong experience with distributed systems and microservice architectures. Deep knowledge of AWS cloud-native services. Experience designing REST APIs and event-driven systems. Strong database design and performance tuning skills. Hands-on experience with CI/CD, Infrastructure as Code, and DevOps practices. Proven experience troubleshooting complex production environments. Preferred Qualifications Experience leading technical initiatives across multiple teams. Experience in credit bureau, financial services, fraud, identity, or decisioning domains. Familiarity with SageMaker, machine learning model serving, and decision engines. Experience operating high-volume transaction processing systems. Knowledge of security, compliance, disaster recovery, and resiliency frameworks. Leadership Expectations Serve as a technical leader within the Bureau Composer organization. Influence architectural direction and engineering best practices. Mentor and develop junior engineers. Proactively identify risks and drive resolution. Collaborate effectively across product, architecture, infrastructure, and client-facing teams. Skills Design knowledge Problem statement - Design perspective - Diagram - Translate thoughts to Diagram How good they are asking questions Python Development Coding and problem solving DSA AWS",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-01T20:00:46.767463+00:00",
@@ -41146,10 +41146,13 @@
       },
       "linkedin_detail_triage_hash": "0c49fdf8427efa75ea56",
       "linkedin_detail_deferred_at": "2026-11-01T20:00:46.767463+00:00",
-      "enrichment_status": "deferred",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-11-01T20:00:46.767463+00:00",
       "verified_this_run": true,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "linkedin_detail_attempted_at": "2026-11-03T02:59:41.367289+00:00",
+      "linkedin_detail_fetched_at": "2026-11-03T02:59:41.367289+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4478075241",
@@ -54655,7 +54658,7 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-10-31T04:20:40.454352+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "recovery_detail_budget"
     },
     {
       "job_id": "4463687644",
