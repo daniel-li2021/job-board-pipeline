@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-11-02 17:21 PST
-- Snapshot (UTC): 2026-11-03T01:21:48.161074+00:00
-- Jobs: 69 (Tier A/B only)
+- Updated (PT): 2026-11-02 18:50 PST
+- Snapshot (UTC): 2026-11-03T02:50:05.673211+00:00
+- Jobs: 68 (Tier A/B only)
 - Last 24 hours: 49
-- Last 3 days: 69
+- Last 3 days: 68
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -61,7 +61,6 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed | PIONEER CONSULTING SERVICES | Junior JAVA Developer | Dallas, TX, US | 2026-11-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=65dfd070a234f2ce) |
 | B | 83 | indeed | DuCharme, McMillen & Associates, Inc. | Data Engineer | Fort Wayne, IN, US | 2026-11-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=37744ad8166892a4) |
 | B | 75 | linkedin | Humana | Software Engineer | Georgia, United States | 2026-10-30 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-humana-4483922008) |
-| B | 75 | linkedin | Brivo | Backend Engineer - Billing Systems | Austin, TX | 2026-11-01 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-billing-systems-at-brivo-4471944050) |
 | B | 75 | linkedin | State Farm | GenAI Engineer (LLM) | Atlanta, GA | 2026-10-30 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/genai-engineer-llm-at-state-farm-4485113207) |
 | B | 75 | linkedin | Enexus Global Inc. | Backend Python Developer | Austin, TX | 2026-11-01 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-python-developer-at-enexus-global-inc-4485947899) |
 | B | 75 | linkedin | Bear Claw | Middle Backend Developer (PHP · AWS Lambda · AI) | Evanston, IL | 2026-10-30 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/middle-backend-developer-php-%C2%B7-aws-lambda-%C2%B7-ai-at-bear-claw-4484868228) |

@@ -2,6 +2,155 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-11-03T02:50:05.673211+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 1,
+      "cache_reused": 318,
+      "peer_reused": 0,
+      "same_content_reused": 4,
+      "non_material_change_reused": 0,
+      "new_or_changed": 1,
+      "new_or_changed_reasons": {
+        "prior_rule_result_now_eligible_for_llm": 1
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1496,
+      "requests": 1,
+      "input_tokens": 2973,
+      "cached_input_tokens": 0,
+      "output_tokens": 234,
+      "reasoning_tokens": 159,
+      "estimated_usd": 0.000414,
+      "latency_seconds": 5.2,
+      "latency_measured": true,
+      "effective_rpm": 11.54,
+      "effective_tpm": 37003.85,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 1,
+      "funnel": {
+        "after_dedup": 7992,
+        "after_company": 7524,
+        "after_hard_filter": 6939,
+        "after_prefilter": 2223,
+        "official_duplicates_suppressed": 408,
+        "retry_only_carried": 0,
+        "dropped": 5573
+      },
+      "output": {
+        "tier_a": 45,
+        "tier_b": 146,
+        "ab_before_cap": 191,
+        "shown": 191,
+        "new_jobs": 4,
+        "new_jobs_added": 0,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 4,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 0,
+            "added": 0
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 3065,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 18,
+          "identity_needed": 18,
+          "http_requests": 18,
+          "identities_resolved": 16,
+          "remaining_no_jd": 3065,
+          "failure_reasons": {}
+        },
+        "remaining_no_jd": 3026,
+        "failure_reasons": {
+          "no_enrichment_path": 2486,
+          "linkedin_rate_limited": 109,
+          "linkedin_http_429": 6,
+          "official_detail_deferred": 45,
+          "linkedin_http_network_error": 2,
+          "indeed_detail_missing_or_thin": 1,
+          "glassdoor_detail_http_403_static_card_only": 377
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4471944050",
+              "company": "Brivo",
+              "title": "Backend Engineer - Billing Systems"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 5.2,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2973,
+            "cached_input_tokens": 0,
+            "output_tokens": 234,
+            "reasoning_tokens": 159,
+            "estimated_usd": 0.000414
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4471944050",
+              "match_score": 54.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python backend APIs",
+                "Production systems"
+              ],
+              "main_gaps": [
+                "5+ years database experience",
+                "Billing and order systems"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-11-03T01:21:48.161074+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -32439,334 +32588,6 @@
               ],
               "main_gaps": [
                 "Automation equipment applications"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-10-28T06:02:10.054908+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 9,
-      "cache_reused": 335,
-      "peer_reused": 0,
-      "same_content_reused": 7,
-      "non_material_change_reused": 0,
-      "new_or_changed": 10,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 5,
-        "prior_rule_result_now_eligible_for_llm": 5
-      },
-      "rescored_within_24h": 1,
-      "fallback_count": 0,
-      "rule_count": 1420,
-      "requests": 2,
-      "input_tokens": 12494,
-      "cached_input_tokens": 0,
-      "output_tokens": 2815,
-      "reasoning_tokens": 2127,
-      "estimated_usd": 0.002657,
-      "latency_seconds": 28.386,
-      "latency_measured": true,
-      "effective_rpm": 4.23,
-      "effective_tpm": 32358.91,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "primary_batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 9,
-      "funnel": {
-        "after_dedup": 7857,
-        "after_company": 7410,
-        "after_hard_filter": 6846,
-        "after_prefilter": 2174,
-        "official_duplicates_suppressed": 410,
-        "retry_only_carried": 0,
-        "dropped": 5475
-      },
-      "output": {
-        "tier_a": 52,
-        "tier_b": 162,
-        "ab_before_cap": 214,
-        "shown": 214,
-        "new_jobs": 65,
-        "new_jobs_added": 17,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 3,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 62,
-            "added": 17
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 2937,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 50,
-          "http_requests": 36,
-          "scrapling_requests": 1,
-          "identity_needed": 36,
-          "identities_resolved": 25,
-          "cache_reused": 1,
-          "jds_resolved": 1,
-          "direct_http_resolved": 1,
-          "remaining_no_jd": 2937,
-          "failure_reasons": {
-            "no_direct_or_official_url": 13,
-            "structured_jd_not_found": 1
-          }
-        },
-        "remaining_no_jd": 2892,
-        "failure_reasons": {
-          "no_enrichment_path": 2349,
-          "linkedin_rate_limited": 102,
-          "linkedin_http_429": 5,
-          "no_direct_or_official_url": 13,
-          "official_detail_deferred": 45,
-          "structured_jd_not_found": 1,
-          "linkedin_http_network_error": 2,
-          "glassdoor_detail_http_403_static_card_only": 375
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4483768694",
-              "company": "DHL Express",
-              "title": "Software Engineer II"
-            },
-            {
-              "key": "id::linkedin::4483223269",
-              "company": "Flywire",
-              "title": "Software Engineer II"
-            },
-            {
-              "key": "id::linkedin::4483703175",
-              "company": "Wellabe",
-              "title": "Software Engineer 1/2/3-Hybrid, Des Moines, Iowa"
-            },
-            {
-              "key": "id::indeed::in-7dbddf56ff1e0079",
-              "company": "ArmgaSys, Inc.",
-              "title": "Software Developer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 11.6,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 4,
-            "input_tokens": 5918,
-            "cached_input_tokens": 0,
-            "output_tokens": 1328,
-            "reasoning_tokens": 986,
-            "estimated_usd": 0.001256
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4483768694",
-              "match_score": 58.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Node.js application development",
-                "Production cloud delivery"
-              ],
-              "main_gaps": [
-                "5+ years experience",
-                "Technical leadership"
-              ]
-            },
-            {
-              "key": "id::linkedin::4483223269",
-              "match_score": 65.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack product delivery",
-                "API and test development"
-              ],
-              "main_gaps": [
-                "Professional Java experience",
-                "3-6 years experience"
-              ]
-            },
-            {
-              "key": "id::linkedin::4483703175",
-              "match_score": 78.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Software lifecycle delivery",
-                "API and testing experience"
-              ],
-              "main_gaps": [
-                "NET/C# experience"
-              ]
-            },
-            {
-              "key": "id::indeed::in-7dbddf56ff1e0079",
-              "match_score": 88.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Application development",
-                "APIs, databases, and testing"
-              ],
-              "main_gaps": []
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4482697252",
-              "company": "Evlo AI",
-              "title": "Software Engineer - Full Stack"
-            },
-            {
-              "key": "id::linkedin::4483636389",
-              "company": "AbilityLinks",
-              "title": "AI Engineer"
-            },
-            {
-              "key": "id::linkedin::4484285313",
-              "company": "Alaffia Health",
-              "title": "AI Engineer"
-            },
-            {
-              "key": "id::linkedin::4483680493",
-              "company": "Evlo AI",
-              "title": "LLM / GenAI Engineer"
-            },
-            {
-              "key": "id::linkedin::4483688288",
-              "company": "Evlo AI",
-              "title": "Machine Learning Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 16.786,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 5,
-            "input_tokens": 6576,
-            "cached_input_tokens": 0,
-            "output_tokens": 1487,
-            "reasoning_tokens": 1141,
-            "estimated_usd": 0.001401
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4482697252",
-              "match_score": 66.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "End-to-end full-stack delivery",
-                "React, TypeScript, Python services"
-              ],
-              "main_gaps": [
-                "4–8 years production experience",
-                "Large-scale database operations"
-              ]
-            },
-            {
-              "key": "id::linkedin::4483636389",
-              "match_score": 82.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production agents and RAG",
-                "Evaluation, guardrails, Databricks"
-              ],
-              "main_gaps": [
-                "Enterprise AI governance"
-              ]
-            },
-            {
-              "key": "id::linkedin::4484285313",
-              "match_score": 73.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Agentic systems and production RAG",
-                "QLoRA, vLLM, evaluation"
-              ],
-              "main_gaps": [
-                "RLHF or DPO experience",
-                "3+ years applied AI"
-              ]
-            },
-            {
-              "key": "id::linkedin::4483680493",
-              "match_score": 76.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production RAG and agent workflows",
-                "Fine-tuning, evaluation, model serving"
-              ],
-              "main_gaps": [
-                "2+ years shipping LLM systems"
-              ]
-            },
-            {
-              "key": "id::linkedin::4483688288",
-              "match_score": 63.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python production systems",
-                "ML pipeline and model evaluation"
-              ],
-              "main_gaps": [
-                "Production classical ML deployments",
-                "Major cloud ML platform experience"
               ]
             }
           ]
