@@ -2,6 +2,910 @@
   "runs": [
     {
       "pipeline": "syncareer",
+      "run_at": "2026-11-04T15:54:33.933432+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 38,
+      "cache_reused": 61,
+      "peer_reused": 8,
+      "same_content_reused": 1,
+      "non_material_change_reused": 0,
+      "new_or_changed": 39,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 35,
+        "material_jd_change": 1,
+        "prior_rule_result_now_eligible_for_llm": 3
+      },
+      "rescored_within_24h": 2,
+      "fallback_count": 0,
+      "rule_count": 1,
+      "requests": 6,
+      "input_tokens": 48790,
+      "cached_input_tokens": 6426,
+      "output_tokens": 11372,
+      "reasoning_tokens": 5819,
+      "estimated_usd": 0.009986,
+      "latency_seconds": 117.394,
+      "latency_measured": true,
+      "effective_rpm": 3.07,
+      "effective_tpm": 30748.76,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 6,
+      "primary_batches_total": 6,
+      "batches_attempted": 6,
+      "batches_succeeded": 6,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 38,
+      "funnel": {
+        "scoring_candidates": 91
+      },
+      "output": {
+        "tier_a": 4,
+        "tier_b": 10,
+        "tier_c": 77,
+        "shown": 14,
+        "new_jobs": 85,
+        "new_jobs_added": 6
+      },
+      "enrichment": {
+        "needed": 10,
+        "detail_api_resolved": 157,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 10
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://careers.intuitive.com/en/jobs/744000159276636/JOB218179/software-engineer",
+              "company": "Intuitive",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://careers.newscorp.com/austin-tx/software-engineer-customer-data-platform-cdp-personalization/3088519EC03A45B2BC1D0DA3F73CF074/job",
+              "company": "News Corp",
+              "title": "Software Engineer, Customer Data Platform (CDP) & Personalization"
+            },
+            {
+              "key": "url::https://careers.tsmc.com/en_US/careers/JobDetail?jobId=23003",
+              "company": "TSMC",
+              "title": "TSMC Arizona - Fab Automation and Software Engineer"
+            },
+            {
+              "key": "url::https://jci.wd5.myworkdayjobs.com/en-US/JCI/job/New-Freedom-Pennsylvania-United-States-of-America/Embedded-Software-Engineer_WD30282226?jobFamilyGroup=e6c5fb966d2f103b0676ea35ecdd6a20&jobFamilyGroup=e6c5fb966d2f103b0676e336f0ad6a1a&jobFamilyGroup=e6c5fb966d2f103b0676e7a7eefd6a1e&jobFamilyGroup=e6c5fb966d2f103b06770cb6335d6a3e&jobFamilyGroup=e6c5fb966d2f103b0677107b9fcd6a42&jobFamilyGroup=e6c5fb966d2f103b0676ec44ac856a22&jobFamilyGroup=e6c5fb966d2f103b0676ee7734556a24&jobFamilyGroup=e6c5fb966d2f103b0676f1a5f28d6a26&jobFamilyGroup=e6c5fb966d2f103b0676f3ba5b6d6a28&jobFamilyGroup=e6c5fb966d2f103b0676f6adfcd56a2a&jobFamilyGroup=e6c5fb966d2f103b0676f8a408456a2c&jobFamilyGroup=e6c5fb966d2f103b0676fa985e356a2e&jobFamilyGroup=e6c5fb966d2f103b0676fd67dd9d6a30&jobFamilyGroup=e6c5fb966d2f103b0676ff335a856a32&jobFamilyGroup=e6c5fb966d2f103b067701c115fd6a34&jobFamilyGroup=180b6fafb2db1001509c6fcc34600000&jobFamilyGroup=f115db8178541001505791f32cb20000&jobFamilyGroup=180b6fafb2db100150b9ef4352020000&jobFamilyGroup=e9a1a8d9fc11100150c68ccebb9b0000&jobFamilyGroup=e6c5fb966d2f103b067703d125956a36&jobFamilyGroup=e6c5fb966d2f103b0677059a876d6a38&jobFamilyGroup=e6c5fb966d2f103b067708368f0d6a3a&jobFamilyGroup=e6c5fb966d2f103b06770ead9e5d6a40",
+              "company": "Johnson Controls",
+              "title": "Embedded Software Engineer"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210806006",
+              "company": "JPMorgan Chase",
+              "title": "Mobile Automation Testing Software Engineer III"
+            },
+            {
+              "key": "url::https://careers.hrblock.com/corporate-opportunities/jobs/76987?lang=en-us",
+              "company": "H&R Block",
+              "title": "Embark Software Engineering Intern - S"
+            },
+            {
+              "key": "url::https://www.disneycareers.com/en/job/new-york/product-software-engineer-ii/391/102789520416",
+              "company": "The Walt Disney Company",
+              "title": "Product Software Engineer II"
+            },
+            {
+              "key": "url::https://relx.wd3.myworkdayjobs.com/en-US/relx/job/Alpharetta-GA/Tech-Accelerate-Graduate-Program_R120836-1?Country___Territory=bc33aa3152ec42d4995f4791a106ed09&Country___Territory=29247e57dbaf46fb855b224e03170bc7&Country___Territory=6cb77610a8a543aea2d6bc10457e35d4&Country___Territory=d903bb3fedad45039383f6de334ad4db&Country___Territory=80938777cac5440fab50d729f9634969&Country___Territory=a30a87ed25634629aa6c3958aa2b91ea&Country___Territory=d4afdeb461d446e4babd204bd102dba8&Country___Territory=a4e08b475d6a4176853c9d1cb9854e02&Country___Territory=55273a1b49934d97ae15342ef51f6b95",
+              "company": "RELX",
+              "title": "Tech Accelerate Graduate Program - Software Engineer I"
+            },
+            {
+              "key": "url::https://crowdstrike.wd5.myworkdayjobs.com/en-US/crowdstrikecareers/job/USA---Remote-CA/Software-Engineer-3---Sensor--macOS--Remote-_R30689?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+              "company": "CrowdStrike",
+              "title": "Software Engineer 3 - Sensor, macOS (Remote)"
+            },
+            {
+              "key": "url::https://cdw.wd5.myworkdayjobs.com/en-US/Careers/job/Remote--USA/Software-Engineer-II-Data_R26_00003240?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=29247e57dbaf46fb855b224e03170bc7",
+              "company": "CDW",
+              "title": "Software Engineer II Data"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 28.775,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 11771,
+            "cached_input_tokens": 0,
+            "output_tokens": 2833,
+            "reasoning_tokens": 1024,
+            "estimated_usd": 0.002594
+          },
+          "decisions": [
+            {
+              "key": "url::https://careers.intuitive.com/en/jobs/744000159276636/JOB218179/software-engineer",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "CI/CD release deployment",
+                "Python/Linux production engineering"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://careers.newscorp.com/austin-tx/software-engineer-customer-data-platform-cdp-personalization/3088519EC03A45B2BC1D0DA3F73CF074/job",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "TypeScript/Node full stack",
+                "Production APIs and caching"
+              ],
+              "main_gaps": [
+                "GraphQL resolvers",
+                "Server-side rendering"
+              ]
+            },
+            {
+              "key": "url::https://careers.tsmc.com/en_US/careers/JobDetail?jobId=23003",
+              "match_score": 62.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python data pipelines",
+                "API and performance work"
+              ],
+              "main_gaps": [
+                "Optimization or scheduling algorithms"
+              ]
+            },
+            {
+              "key": "url::https://jci.wd5.myworkdayjobs.com/en-US/JCI/job/New-Freedom-Pennsylvania-United-States-of-America/Embedded-Software-Engineer_WD30282226?jobFamilyGroup=e6c5fb966d2f103b0676ea35ecdd6a20&jobFamilyGroup=e6c5fb966d2f103b0676e336f0ad6a1a&jobFamilyGroup=e6c5fb966d2f103b0676e7a7eefd6a1e&jobFamilyGroup=e6c5fb966d2f103b06770cb6335d6a3e&jobFamilyGroup=e6c5fb966d2f103b0677107b9fcd6a42&jobFamilyGroup=e6c5fb966d2f103b0676ec44ac856a22&jobFamilyGroup=e6c5fb966d2f103b0676ee7734556a24&jobFamilyGroup=e6c5fb966d2f103b0676f1a5f28d6a26&jobFamilyGroup=e6c5fb966d2f103b0676f3ba5b6d6a28&jobFamilyGroup=e6c5fb966d2f103b0676f6adfcd56a2a&jobFamilyGroup=e6c5fb966d2f103b0676f8a408456a2c&jobFamilyGroup=e6c5fb966d2f103b0676fa985e356a2e&jobFamilyGroup=e6c5fb966d2f103b0676fd67dd9d6a30&jobFamilyGroup=e6c5fb966d2f103b0676ff335a856a32&jobFamilyGroup=e6c5fb966d2f103b067701c115fd6a34&jobFamilyGroup=180b6fafb2db1001509c6fcc34600000&jobFamilyGroup=f115db8178541001505791f32cb20000&jobFamilyGroup=180b6fafb2db100150b9ef4352020000&jobFamilyGroup=e9a1a8d9fc11100150c68ccebb9b0000&jobFamilyGroup=e6c5fb966d2f103b067703d125956a36&jobFamilyGroup=e6c5fb966d2f103b0677059a876d6a38&jobFamilyGroup=e6c5fb966d2f103b067708368f0d6a3a&jobFamilyGroup=e6c5fb966d2f103b06770ead9e5d6a40",
+              "match_score": 63.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming foundation",
+                "Software testing and debugging"
+              ],
+              "main_gaps": [
+                "Embedded software development"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210806006",
+              "match_score": 39.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Automated testing experience",
+                "CI/CD and test reliability"
+              ],
+              "main_gaps": [
+                "iOS and Android QA",
+                "Mobile automation frameworks"
+              ]
+            },
+            {
+              "key": "url::https://careers.hrblock.com/corporate-opportunities/jobs/76987?lang=en-us",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack software development",
+                "Production code and testing"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.disneycareers.com/en/job/new-york/product-software-engineer-ii/391/102789520416",
+              "match_score": 73.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React and Node.js development",
+                "Production user-facing applications"
+              ],
+              "main_gaps": [
+                "Three years production experience"
+              ]
+            },
+            {
+              "key": "url::https://relx.wd3.myworkdayjobs.com/en-US/relx/job/Alpharetta-GA/Tech-Accelerate-Graduate-Program_R120836-1?Country___Territory=bc33aa3152ec42d4995f4791a106ed09&Country___Territory=29247e57dbaf46fb855b224e03170bc7&Country___Territory=6cb77610a8a543aea2d6bc10457e35d4&Country___Territory=d903bb3fedad45039383f6de334ad4db&Country___Territory=80938777cac5440fab50d729f9634969&Country___Territory=a30a87ed25634629aa6c3958aa2b91ea&Country___Territory=d4afdeb461d446e4babd204bd102dba8&Country___Territory=a4e08b475d6a4176853c9d1cb9854e02&Country___Territory=55273a1b49934d97ae15342ef51f6b95",
+              "match_score": 68.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Entry-level software engineering",
+                "Relevant languages and testing"
+              ],
+              "main_gaps": [
+                "2027 graduation eligibility"
+              ]
+            },
+            {
+              "key": "url::https://crowdstrike.wd5.myworkdayjobs.com/en-US/crowdstrikecareers/job/USA---Remote-CA/Software-Engineer-3---Sensor--macOS--Remote-_R30689?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+              "match_score": 29.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming foundation",
+                "Production software troubleshooting"
+              ],
+              "main_gaps": [
+                "macOS sensor development",
+                "Concurrent low-level systems"
+              ]
+            },
+            {
+              "key": "url::https://cdw.wd5.myworkdayjobs.com/en-US/Careers/job/Remote--USA/Software-Engineer-II-Data_R26_00003240?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=29247e57dbaf46fb855b224e03170bc7",
+              "match_score": 65.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production data pipelines",
+                "SQL and Spark workflows"
+              ],
+              "main_gaps": [
+                "Microsoft Fabric and ADF",
+                "Dimensional data modeling"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "company": "Kforce",
+              "title": "Infrastructure Data Analyst"
+            },
+            {
+              "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26015969?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
+              "company": "American Express",
+              "title": "Infrastructure Engineer II"
+            },
+            {
+              "key": "url::https://jll.wd1.myworkdayjobs.com/en-US/jllcareers/job/Chicago-IL/Platform-Engineer---Omnea_REQ541409?locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db&jobFamilyGroup=c608fc06410f01039a89da7aba538850&jobFamilyGroup=c608fc06410f01f02f37117bba53ab50&jobFamilyGroup=c608fc06410f014722bb047bba53a350&jobFamilyGroup=c608fc06410f01a94fbfc67aba537c50&jobFamilyGroup=c608fc06410f01002d6c017bba53a150&jobFamilyGroup=c608fc06410f01484a9fec7aba539450&jobFamilyGroup=45ddfa36f2261001377c164c6f390000&jobFamilyGroup=c608fc06410f01237f48d07aba538250&jobFamilyGroup=c608fc06410f01330b11c37aba537a50&jobFamilyGroup=c608fc06410f013922bedd7aba538a50&jobFamilyGroup=c608fc06410f01eb53ccc97aba537e50&jobFamilyGroup=c608fc06410f01cf39dbd37aba538450&jobFamilyGroup=c608fc06410f010f9f90077bba53a550&jobFamilyGroup=c608fc06410f01b4c050fc7aba539f50&jobFamilyGroup=c608fc06410f01b0970af97aba539d50&jobFamilyGroup=5ea022f100d301b30f6939e30b01a14c&jobFamilyGroup=191bf29d19f71001fe706d09015e0000&jobFamilyGroup=f134f8e1c0811001fe9e2695d0c80000&jobFamilyGroup=c608fc06410f010643160b7bba53a750&jobFamilyGroup=f6231e73ce871001101cbbad97570000&jobFamilyGroup=c608fc06410f017bc784e97aba539250&jobFamilyGroup=c608fc06410f010452c5ef7aba539650&jobFamilyGroup=b433b91436a91001fe918431478f0000&jobFamilyGroup=ee1ccf9903501001feb0e7ffc6680000&jobFamilyGroup=191bf29d19f71001fea323affd1c0000&jobFamilyGroup=c608fc06410f019d04cbf57aba539b50",
+              "company": "Jones Lang LaSalle",
+              "title": "Platform Engineer - Omnea"
+            },
+            {
+              "key": "url::https://relx.wd3.myworkdayjobs.com/en-US/relx/job/Alpharetta-GA/Site-Reliability-Engineer-III_R118721-1?Country___Territory=bc33aa3152ec42d4995f4791a106ed09&Country___Territory=29247e57dbaf46fb855b224e03170bc7&Country___Territory=6cb77610a8a543aea2d6bc10457e35d4&Country___Territory=d903bb3fedad45039383f6de334ad4db&Country___Territory=80938777cac5440fab50d729f9634969&Country___Territory=a30a87ed25634629aa6c3958aa2b91ea&Country___Territory=d4afdeb461d446e4babd204bd102dba8&Country___Territory=a4e08b475d6a4176853c9d1cb9854e02&Country___Territory=55273a1b49934d97ae15342ef51f6b95",
+              "company": "RELX",
+              "title": "Site Reliability Engineer III"
+            },
+            {
+              "key": "url::https://jobs.dayforcehcm.com/en-US/ibgllc/CANDIDATEPORTAL/jobs/2768",
+              "company": "Interactive Brokers",
+              "title": "Software Engineer - Compliance Tech"
+            },
+            {
+              "key": "url::https://careers.t-mobile.com/data-engineer/job/80F8155D39C406CCAF883DF02AA824F2",
+              "company": "T-Mobile",
+              "title": "Data Engineer"
+            },
+            {
+              "key": "url::https://avanadecareers.dejobs.org/chicago-il/azure-data-engineer/87E0795AE63746CB8BD370FD4DBDEAD4/job",
+              "company": "Avanade",
+              "title": "Azure Data Engineer"
+            },
+            {
+              "key": "url::https://www.tesla.com/careers/search/job/288596",
+              "company": "Tesla",
+              "title": "University Recruiter, Vehicle Software"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/104260438807454406-financial-analyst-data-center-infrastructure-design",
+              "company": "Google",
+              "title": "Financial Analyst, Data Center Infrastructure Design"
+            },
+            {
+              "key": "url::https://aecom.jobs/houston-tx/campus-fiber-infrastructure-construction-monitor-data-centers/DF91821CBD07484C85958E680651719D/job",
+              "company": "AECOM",
+              "title": "Campus Fiber Infrastructure Construction Monitor, Data Centers"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 37.717,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 10246,
+            "cached_input_tokens": 1851,
+            "output_tokens": 3492,
+            "reasoning_tokens": 1542,
+            "estimated_usd": 0.002604
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "match_score": 49.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python automation",
+                "REST API integrations"
+              ],
+              "main_gaps": [
+                "NetBox/IPAM/DCIM",
+                "Network diagrams and BOMs"
+              ]
+            },
+            {
+              "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26015969?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud infrastructure",
+                "Production troubleshooting"
+              ],
+              "main_gaps": [
+                "Routing and switching",
+                "Cisco/Arista platforms"
+              ]
+            },
+            {
+              "key": "url::https://jll.wd1.myworkdayjobs.com/en-US/jllcareers/job/Chicago-IL/Platform-Engineer---Omnea_REQ541409?locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db&jobFamilyGroup=c608fc06410f01039a89da7aba538850&jobFamilyGroup=c608fc06410f01f02f37117bba53ab50&jobFamilyGroup=c608fc06410f014722bb047bba53a350&jobFamilyGroup=c608fc06410f01a94fbfc67aba537c50&jobFamilyGroup=c608fc06410f01002d6c017bba53a150&jobFamilyGroup=c608fc06410f01484a9fec7aba539450&jobFamilyGroup=45ddfa36f2261001377c164c6f390000&jobFamilyGroup=c608fc06410f01237f48d07aba538250&jobFamilyGroup=c608fc06410f01330b11c37aba537a50&jobFamilyGroup=c608fc06410f013922bedd7aba538a50&jobFamilyGroup=c608fc06410f01eb53ccc97aba537e50&jobFamilyGroup=c608fc06410f01cf39dbd37aba538450&jobFamilyGroup=c608fc06410f010f9f90077bba53a550&jobFamilyGroup=c608fc06410f01b4c050fc7aba539f50&jobFamilyGroup=c608fc06410f01b0970af97aba539d50&jobFamilyGroup=5ea022f100d301b30f6939e30b01a14c&jobFamilyGroup=191bf29d19f71001fe706d09015e0000&jobFamilyGroup=f134f8e1c0811001fe9e2695d0c80000&jobFamilyGroup=c608fc06410f010643160b7bba53a750&jobFamilyGroup=f6231e73ce871001101cbbad97570000&jobFamilyGroup=c608fc06410f017bc784e97aba539250&jobFamilyGroup=c608fc06410f010452c5ef7aba539650&jobFamilyGroup=b433b91436a91001fe918431478f0000&jobFamilyGroup=ee1ccf9903501001feb0e7ffc6680000&jobFamilyGroup=191bf29d19f71001fea323affd1c0000&jobFamilyGroup=c608fc06410f019d04cbf57aba539b50",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "System integrations",
+                "Data validation and APIs"
+              ],
+              "main_gaps": [
+                "Procurement platform experience",
+                "Enterprise change management"
+              ]
+            },
+            {
+              "key": "url::https://relx.wd3.myworkdayjobs.com/en-US/relx/job/Alpharetta-GA/Site-Reliability-Engineer-III_R118721-1?Country___Territory=bc33aa3152ec42d4995f4791a106ed09&Country___Territory=29247e57dbaf46fb855b224e03170bc7&Country___Territory=6cb77610a8a543aea2d6bc10457e35d4&Country___Territory=d903bb3fedad45039383f6de334ad4db&Country___Territory=80938777cac5440fab50d729f9634969&Country___Territory=a30a87ed25634629aa6c3958aa2b91ea&Country___Territory=d4afdeb461d446e4babd204bd102dba8&Country___Territory=a4e08b475d6a4176853c9d1cb9854e02&Country___Territory=55273a1b49934d97ae15342ef51f6b95",
+              "match_score": 69.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS ECS/Fargate deployment",
+                "CI/CD and observability"
+              ],
+              "main_gaps": [
+                "Incident response and RCA",
+                "Container security operations"
+              ]
+            },
+            {
+              "key": "url::https://jobs.dayforcehcm.com/en-US/ibgllc/CANDIDATEPORTAL/jobs/2768",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python backend development",
+                "Testing and API delivery"
+              ],
+              "main_gaps": [
+                "Agentic coding tool experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.t-mobile.com/data-engineer/job/80F8155D39C406CCAF883DF02AA824F2",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python/SQL data pipelines",
+                "Spark and Databricks"
+              ],
+              "main_gaps": [
+                "Snowflake and ADLS",
+                "2+ years data engineering"
+              ]
+            },
+            {
+              "key": "url::https://avanadecareers.dejobs.org/chicago-il/azure-data-engineer/87E0795AE63746CB8BD370FD4DBDEAD4/job",
+              "match_score": 69.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Data pipelines and transformation",
+                "Spark/Databricks experience"
+              ],
+              "main_gaps": [
+                "Azure data platform experience"
+              ]
+            },
+            {
+              "key": "url::https://www.tesla.com/careers/search/job/288596",
+              "match_score": 5.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "Technical recruiting experience",
+                "Campus recruiting"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/104260438807454406-financial-analyst-data-center-infrastructure-design",
+              "match_score": 12.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Quantitative education"
+              ],
+              "main_gaps": [
+                "FP&A experience",
+                "Financial modeling"
+              ]
+            },
+            {
+              "key": "url::https://aecom.jobs/houston-tx/campus-fiber-infrastructure-construction-monitor-data-centers/DF91821CBD07484C85958E680651719D/job",
+              "match_score": 7.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "Field construction experience",
+                "Telecom construction drawings"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://careers.wipro.com/job/SRE-DEVOPS-ENGINEER/211848-en_US",
+              "company": "Wipro",
+              "title": "SRE DEVOPS ENGINEER"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/planetlabs/jobs/8302899",
+              "company": "Planet Labs",
+              "title": "Site Reliability Engineer"
+            },
+            {
+              "key": "url::https://sec.wd3.myworkdayjobs.com/en-US/Samsung_Careers/job/12100-Samsung-Blvd-Austin-TX-USA/Experienced-Buyer--Procurement-Infrastructure---Indirect_R121832?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=d903bb3fedad45039383f6de334ad4db",
+              "company": "Samsung Electronics",
+              "title": "Buyer, Procurement Infrastructure & Indirect"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 8.575,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 4053,
+            "cached_input_tokens": 1851,
+            "output_tokens": 685,
+            "reasoning_tokens": 327,
+            "estimated_usd": 0.000581
+          },
+          "decisions": [
+            {
+              "key": "url::https://careers.wipro.com/job/SRE-DEVOPS-ENGINEER/211848-en_US",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS CI/CD deployments",
+                "Terraform and Docker"
+              ],
+              "main_gaps": [
+                "3–5 years DevOps experience",
+                "SLO and incident management"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/planetlabs/jobs/8302899",
+              "match_score": 57.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud service deployment",
+                "Kubernetes and Terraform"
+              ],
+              "main_gaps": [
+                "4+ years cloud-native services",
+                "Bare-metal Kubernetes operations"
+              ]
+            },
+            {
+              "key": "url::https://sec.wd3.myworkdayjobs.com/en-US/Samsung_Careers/job/12100-Samsung-Blvd-Austin-TX-USA/Experienced-Buyer--Procurement-Infrastructure---Indirect_R121832?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=d903bb3fedad45039383f6de334ad4db",
+              "match_score": 5.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "Procurement experience",
+                "Supply-chain or business degree"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155565BR",
+              "company": "Infosys",
+              "title": "Gen AI Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 6.269,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3384,
+            "cached_input_tokens": 0,
+            "output_tokens": 586,
+            "reasoning_tokens": 490,
+            "estimated_usd": 0.000631
+          },
+          "decisions": [
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155565BR",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production GenAI and RAG",
+                "LLMOps and deployment"
+              ],
+              "main_gaps": [
+                "AI coding assistants",
+                "Code reviews and technical decisions"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 5,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://crowdstrike.wd5.myworkdayjobs.com/en-US/crowdstrikecareers/job/USA---Redmond-WA/Software-Engineer-II--SoM--Sensor-Quality-MatriX--Hybrid-_R30742?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+              "company": "CrowdStrike",
+              "title": "Software Engineer II -SoM, Sensor Quality MatriX (Hybrid)"
+            },
+            {
+              "key": "url::https://jobs.lever.co/shieldai/ac38d092-f435-4301-880b-48d0e92679a4",
+              "company": "Shield AI",
+              "title": "Summer 2027 Intern - Embedded Firmware - 5810"
+            },
+            {
+              "key": "url::https://careers.tsmc.com/en_US/careers/JobDetail?jobId=23009",
+              "company": "TSMC",
+              "title": "TSMC Arizona - HR Systems Forward Deployed Engineer"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210804441",
+              "company": "JPMorgan Chase",
+              "title": "iOS Software Engineer III"
+            },
+            {
+              "key": "url::https://www.tesla.com/careers/search/job/246760",
+              "company": "Tesla",
+              "title": "Embedded Software Engineer, Body Controls Firmware"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210804766",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer III - Java/AWS/Kubernetes"
+            },
+            {
+              "key": "url::https://careers.freddiemac.com/us/en/job/JR17779/Software-Engineering-Professional",
+              "company": "Freddie Mac",
+              "title": "Software Engineering Professional"
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155379BR",
+              "company": "Infosys",
+              "title": "Java Full stack Consultant"
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155375BR",
+              "company": "Infosys",
+              "title": "Java Full stack Consultant"
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155372BR",
+              "company": "Infosys",
+              "title": "Java Full Stack Consultant"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 23.253,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 12640,
+            "cached_input_tokens": 0,
+            "output_tokens": 2501,
+            "reasoning_tokens": 1536,
+            "estimated_usd": 0.002514
+          },
+          "decisions": [
+            {
+              "key": "url::https://crowdstrike.wd5.myworkdayjobs.com/en-US/crowdstrikecareers/job/USA---Redmond-WA/Software-Engineer-II--SoM--Sensor-Quality-MatriX--Hybrid-_R30742?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production Python systems",
+                "React dashboards and AI workflows"
+              ],
+              "main_gaps": [
+                "3+ years production systems",
+                "Django experience"
+              ]
+            },
+            {
+              "key": "url::https://jobs.lever.co/shieldai/ac38d092-f435-4301-880b-48d0e92679a4",
+              "match_score": 38.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming background",
+                "Collaborative software development"
+              ],
+              "main_gaps": [
+                "Bare-metal firmware development"
+              ]
+            },
+            {
+              "key": "url::https://careers.tsmc.com/en_US/careers/JobDetail?jobId=23009",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production LLM and RAG systems",
+                "Python prototypes and APIs"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210804441",
+              "match_score": 30.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Frontend application experience",
+                "Automated testing experience"
+              ],
+              "main_gaps": [
+                "Native iOS and Swift",
+                "XCTest and XCUITest"
+              ]
+            },
+            {
+              "key": "url::https://www.tesla.com/careers/search/job/246760",
+              "match_score": 23.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming background",
+                "Software testing experience"
+              ],
+              "main_gaps": [
+                "Embedded firmware development",
+                "Electrical engineering fundamentals"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210804766",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend APIs and distributed systems",
+                "Docker, AWS, and CI/CD"
+              ],
+              "main_gaps": [
+                "Production Java and Spring Boot",
+                "Enterprise AI coding tools"
+              ]
+            },
+            {
+              "key": "url::https://careers.freddiemac.com/us/en/job/JR17779/Software-Engineering-Professional",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend APIs and data applications",
+                "Python, ML, and automated testing"
+              ],
+              "main_gaps": [
+                "Spring and Hibernate experience"
+              ]
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155379BR",
+              "match_score": 31.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "REST API and backend experience",
+                "Java and SQL skills"
+              ],
+              "main_gaps": [
+                "Enterprise Java and Kafka",
+                "Telecom OSS integration"
+              ]
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155375BR",
+              "match_score": 27.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java and REST API skills",
+                "Distributed systems experience"
+              ],
+              "main_gaps": [
+                "Telecom OSS experience",
+                "Java Swing and C++ development"
+              ]
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155372BR",
+              "match_score": 38.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend and REST API development",
+                "Docker, Kubernetes, and CI/CD"
+              ],
+              "main_gaps": [
+                "Kafka event streaming",
+                "Production Java and Spring Boot"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 6,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26016065?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
+              "company": "American Express",
+              "title": "Campus Undergraduate Summer Internship Program - 2027 Cybersecurity AI Engineer, Enterprise Technology Services- Phoenix, AZ"
+            },
+            {
+              "key": "url::https://trimble.wd1.myworkdayjobs.com/en-US/TrimbleCareers/job/US---OH-Dayton/AI-Developer-Intern_R58195",
+              "company": "Trimble",
+              "title": "AI Developer Intern"
+            },
+            {
+              "key": "url::https://trimble.wd1.myworkdayjobs.com/en-US/TrimbleCareers/job/US---CO-Westminster/AI-Developer-Intern_R58194",
+              "company": "Trimble",
+              "title": "AI Developer Intern"
+            },
+            {
+              "key": "url::https://tempus.wd5.myworkdayjobs.com/en-US/Tempus_Careers/job/New-York-City/Solution-Architect_JR202601177",
+              "company": "Tempus AI",
+              "title": "Solution Architect"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 12.805,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 4,
+            "input_tokens": 6696,
+            "cached_input_tokens": 2724,
+            "output_tokens": 1275,
+            "reasoning_tokens": 900,
+            "estimated_usd": 0.001062
+          },
+          "decisions": [
+            {
+              "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26016065?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production LLM systems",
+                "Model evaluation and deployment"
+              ],
+              "main_gaps": [
+                "Cybersecurity engineering"
+              ]
+            },
+            {
+              "key": "url::https://trimble.wd1.myworkdayjobs.com/en-US/TrimbleCareers/job/US---OH-Dayton/AI-Developer-Intern_R58195",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Agentic AI workflows",
+                "LLM integrations and APIs"
+              ],
+              "main_gaps": [
+                "Active degree pursuit"
+              ]
+            },
+            {
+              "key": "url::https://trimble.wd1.myworkdayjobs.com/en-US/TrimbleCareers/job/US---CO-Westminster/AI-Developer-Intern_R58194",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Agentic AI workflows",
+                "LLM integrations and APIs"
+              ],
+              "main_gaps": [
+                "Active degree pursuit"
+              ]
+            },
+            {
+              "key": "url::https://tempus.wd5.myworkdayjobs.com/en-US/Tempus_Careers/job/New-York-City/Solution-Architect_JR202601177",
+              "match_score": 63.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud software development",
+                "ML and data science"
+              ],
+              "main_gaps": [
+                "Genomic and clinical data",
+                "Customer post-sales delivery"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
       "run_at": "2026-11-04T00:53:19.784395+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -11354,115 +12258,6 @@
               "main_gaps": [
                 "Build infrastructure experience",
                 "Linux systems fundamentals"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "syncareer",
-      "run_at": "2026-10-25T14:52:13.801890+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 1,
-      "cache_reused": 50,
-      "peer_reused": 3,
-      "same_content_reused": 0,
-      "non_material_change_reused": 0,
-      "new_or_changed": 1,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 0,
-      "requests": 1,
-      "input_tokens": 2333,
-      "cached_input_tokens": 1851,
-      "output_tokens": 260,
-      "reasoning_tokens": 144,
-      "estimated_usd": 0.000197,
-      "latency_seconds": 3.719,
-      "latency_measured": true,
-      "effective_rpm": 16.13,
-      "effective_tpm": 41833.83,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 1,
-      "primary_batches_total": 1,
-      "batches_attempted": 1,
-      "batches_succeeded": 1,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 1,
-      "funnel": {
-        "scoring_candidates": 48
-      },
-      "output": {
-        "tier_a": 2,
-        "tier_b": 6,
-        "tier_c": 40,
-        "shown": 8,
-        "new_jobs": 13,
-        "new_jobs_added": 0
-      },
-      "enrichment": {
-        "needed": 10,
-        "detail_api_resolved": 78,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 10
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://hntb.jobs/tallahassee-fl/new-grad-gis-analyst-i-for-currentprevious-hntb-interns-only/709FBEE6CE744AA69E0DBAC8194C8603/job",
-              "company": "HNTB",
-              "title": "New Grad GIS Analyst I (For Current/Previous HNTB Interns ONLY)"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 3.719,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 2333,
-            "cached_input_tokens": 1851,
-            "output_tokens": 260,
-            "reasoning_tokens": 144,
-            "estimated_usd": 0.000197
-          },
-          "decisions": [
-            {
-              "key": "url::https://hntb.jobs/tallahassee-fl/new-grad-gis-analyst-i-for-currentprevious-hntb-interns-only/709FBEE6CE744AA69E0DBAC8194C8603/job",
-              "match_score": 38.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [
-                "Computer science degree",
-                "Entry-level role"
-              ],
-              "main_gaps": [
-                "GIS/ArcGIS experience",
-                "HNTB intern eligibility"
               ]
             }
           ]
