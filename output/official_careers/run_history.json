@@ -2,6 +2,673 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-11-05T15:46:34.987958+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 26,
+      "cache_reused": 400,
+      "peer_reused": 0,
+      "same_content_reused": 10,
+      "non_material_change_reused": 0,
+      "new_or_changed": 31,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 26,
+        "material_jd_change": 2,
+        "prior_rule_result_now_eligible_for_llm": 1,
+        "prior_rule_result_recency_gated": 2
+      },
+      "rescored_within_24h": 2,
+      "fallback_count": 0,
+      "rule_count": 2533,
+      "requests": 5,
+      "input_tokens": 33604,
+      "cached_input_tokens": 4575,
+      "output_tokens": 6881,
+      "reasoning_tokens": 4312,
+      "estimated_usd": 0.006388,
+      "latency_seconds": 79.632,
+      "latency_measured": true,
+      "effective_rpm": 3.77,
+      "effective_tpm": 30504.07,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 5,
+      "primary_batches_total": 5,
+      "batches_attempted": 5,
+      "batches_succeeded": 5,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 26,
+      "funnel": {
+        "after_dedup": 17477,
+        "after_company": 17477,
+        "after_hard_filter": 14096,
+        "after_prefilter": 2959,
+        "dropped": 14518
+      },
+      "output": {
+        "tier_a": 6,
+        "tier_b": 41,
+        "shown": 47,
+        "new_jobs": 234,
+        "new_jobs_added": 3
+      },
+      "enrichment": {
+        "discovered": 17521,
+        "needed": 1038,
+        "source_jds_available": 16483,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 1038
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4--Python--AWS-_R1005246-1",
+              "company": "Capital One",
+              "title": "Full-stack Engineer 4 (Python, AWS)"
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/349765",
+              "company": "Oracle",
+              "title": "Software Developer 3"
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/349764",
+              "company": "Oracle",
+              "title": "Software Developer 4"
+            },
+            {
+              "key": "url::https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/AMHS-Intelligent-Systems-Engineer_JR0288539",
+              "company": "Intel",
+              "title": "AMHS Intelligent Systems Engineer"
+            },
+            {
+              "key": "url::https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/IRVING-TX/Automation-Software-Engineer---Power-BI-and-Automation_R-583663",
+              "company": "Wells Fargo",
+              "title": "Automation Software Engineer - Power BI and Automation"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Cupertino-California-United-States-of-America/Software-Engineer-2---Wireless-Access-Point-Development_1217741-2",
+              "company": "HPE",
+              "title": "Software Engineer 2 – Wireless Access Point Development"
+            },
+            {
+              "key": "url::https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-Software-Engineer/14404",
+              "company": "Two Sigma",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/126277729656939206-partner-solutions-engineer-gtech-ads-sellside-global-exchange-platforms",
+              "company": "Google",
+              "title": "Partner Solutions Engineer, gTech Ads Sellside, Global Exchange Platforms"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10597316/software-dev-engineer",
+              "company": "Amazon",
+              "title": "Software Dev Engineer"
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200691596/cpu-implementation-engineer",
+              "company": "Apple",
+              "title": "CPU Implementation Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 26.679,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 10312,
+            "cached_input_tokens": 0,
+            "output_tokens": 2766,
+            "reasoning_tokens": 1689,
+            "estimated_usd": 0.002414
+          },
+          "decisions": [
+            {
+              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4--Python--AWS-_R1005246-1",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack systems",
+                "AWS and Python"
+              ],
+              "main_gaps": [
+                "4 years non-internship experience",
+                "Technical leadership"
+              ]
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/349765",
+              "match_score": 73.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "REST and distributed systems",
+                "Containers and concurrency"
+              ],
+              "main_gaps": [
+                "4 years software experience"
+              ]
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/349764",
+              "match_score": 46.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java and CI/CD",
+                "Docker and Kubernetes"
+              ],
+              "main_gaps": [
+                "Spring Boot, WebLogic, Kafka",
+                "7 years software experience"
+              ]
+            },
+            {
+              "key": "url::https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/AMHS-Intelligent-Systems-Engineer_JR0288539",
+              "match_score": 53.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Distributed systems",
+                "Python and SQL analytics"
+              ],
+              "main_gaps": [
+                "Factory automation experience",
+                "Equipment troubleshooting"
+              ]
+            },
+            {
+              "key": "url::https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/IRVING-TX/Automation-Software-Engineer---Power-BI-and-Automation_R-583663",
+              "match_score": 46.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "SQL and data workflows",
+                "REST API integration"
+              ],
+              "main_gaps": [
+                "Power BI and DAX",
+                "SharePoint and Power Platform"
+              ]
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Cupertino-California-United-States-of-America/Software-Engineer-2---Wireless-Access-Point-Development_1217741-2",
+              "match_score": 32.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ and systems fundamentals",
+                "Networking software exposure"
+              ],
+              "main_gaps": [
+                "Linux kernel and device drivers",
+                "Wi-Fi and ARM architecture"
+              ]
+            },
+            {
+              "key": "url::https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-Software-Engineer/14404",
+              "match_score": 78.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Scalable distributed systems",
+                "Performance and test frameworks"
+              ],
+              "main_gaps": [
+                "Financial engineering"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/126277729656939206-partner-solutions-engineer-gtech-ads-sellside-global-exchange-platforms",
+              "match_score": 68.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "API troubleshooting",
+                "Python and automation"
+              ],
+              "main_gaps": [
+                "Customer-facing technical experience"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10597316/software-dev-engineer",
+              "match_score": 51.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production software delivery",
+                "Reliability and performance"
+              ],
+              "main_gaps": [
+                "Telecommunications experience",
+                "3 years non-internship experience"
+              ]
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200691596/cpu-implementation-engineer",
+              "match_score": 23.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Computer science education",
+                "C++ experience"
+              ],
+              "main_gaps": [
+                "CPU implementation expertise"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200693256/exploratory-device-scientist-platform-architecture",
+              "company": "Apple",
+              "title": "Exploratory Device Scientist - Platform Architecture"
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200625835/embedded-real-time-critical-control-firmware-engineer",
+              "company": "Apple",
+              "title": "Embedded Real Time Critical Control Firmware Engineer"
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200691492/platform-specialist",
+              "company": "Apple",
+              "title": "Platform Specialist"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 6.672,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 2637,
+            "cached_input_tokens": 1851,
+            "output_tokens": 576,
+            "reasoning_tokens": 368,
+            "estimated_usd": 0.000385
+          },
+          "decisions": [
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200693256/exploratory-device-scientist-platform-architecture",
+              "match_score": 12.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "device physics and fabrication",
+                "nano-manufacturing design"
+              ]
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200625835/embedded-real-time-critical-control-firmware-engineer",
+              "match_score": 38.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming",
+                "software engineering experience"
+              ],
+              "main_gaps": [
+                "real-time embedded firmware",
+                "cellular SoC control"
+              ]
+            },
+            {
+              "key": "url::https://jobs.apple.com/en-us/details/200691492/platform-specialist",
+              "match_score": 25.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/80321648309215942-research-scientist-quantum-error-correction-quantum-ai",
+              "company": "Google",
+              "title": "Research Scientist, Quantum Error Correction, Quantum AI"
+            },
+            {
+              "key": "url::https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CHARLOTTE-NC/Quantitative-Model-Validator--NLP-and-Gen-AI--Agentic-AI_R-582033",
+              "company": "Wells Fargo",
+              "title": "Quantitative Model Validator, NLP and Gen AI/ Agentic AI"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 7.638,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 3635,
+            "cached_input_tokens": 0,
+            "output_tokens": 550,
+            "reasoning_tokens": 350,
+            "estimated_usd": 0.000638
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/80321648309215942-research-scientist-quantum-error-correction-quantum-ai",
+              "match_score": 12.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Computer science background"
+              ],
+              "main_gaps": [
+                "Quantum error correction research",
+                "PhD and publications"
+              ]
+            },
+            {
+              "key": "url::https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CHARLOTTE-NC/Quantitative-Model-Validator--NLP-and-Gen-AI--Agentic-AI_R-582033",
+              "match_score": 65.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM evaluation systems",
+                "Python and ML experience"
+              ],
+              "main_gaps": [
+                "Model risk validation",
+                "2+ years quantitative analytics"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557045509",
+              "company": "Microsoft",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://www.mathworks.com/company/jobs/opportunities/37275-software-engineer-in-test-matlab-editor?keywords=ai+engineer",
+              "company": "MathWorks",
+              "title": "Software Engineer in Test - MATLAB Editor"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/144094559670805190-software-engineer-iii-ai-ml-genai",
+              "company": "Google",
+              "title": "Software Engineer III, AI/ML GenAI"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10597277/software-development-engineer-ii-security-products",
+              "company": "Amazon",
+              "title": "Software Development Engineer II, Security Products"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/doordashusa/jobs/8355717",
+              "company": "DoorDash",
+              "title": "Full Stack Engineer, Applied AI"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/143629723950293702-software-engineer-iii-search-ai-ml",
+              "company": "Google",
+              "title": "Software Engineer III, Search, AI/ML"
+            },
+            {
+              "key": "url::https://ffive.wd5.myworkdayjobs.com/f5jobs/job/Seattle/Mgr--Software-Development-Engineering_RP1037604",
+              "company": "F5",
+              "title": "Mgr, Software Development Engineering"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/74304021170397894-forward-deployed-engineer-iii-data-cloud-google-cloud",
+              "company": "Google",
+              "title": "Forward Deployed Engineer III, Data Cloud, Google Cloud"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/gitlab/jobs/8922249002",
+              "company": "GitLab",
+              "title": "Intermediate Fullstack Engineer, Subscription Lifecycle"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/74637791668904646-ai-search-engineering-analyst-safety-risk-and-platform",
+              "company": "Google",
+              "title": "AI Search Engineering Analyst, Safety Risk and Platform"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 36.462,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 13765,
+            "cached_input_tokens": 0,
+            "output_tokens": 2899,
+            "reasoning_tokens": 1905,
+            "estimated_usd": 0.002826
+          },
+          "decisions": [
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557045509",
+              "match_score": 67.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Distributed systems",
+                "Production reliability"
+              ],
+              "main_gaps": [
+                "2 years engineering experience",
+                "Network datapath development"
+              ]
+            },
+            {
+              "key": "url::https://www.mathworks.com/company/jobs/opportunities/37275-software-engineer-in-test-matlab-editor?keywords=ai+engineer",
+              "match_score": 72.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Automated testing",
+                "JavaScript applications"
+              ],
+              "main_gaps": [
+                "JavaScript UI test automation"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/144094559670805190-software-engineer-iii-ai-ml-genai",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "ML model serving",
+                "LLM evaluation"
+              ],
+              "main_gaps": [
+                "Multimodal behavior modeling"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10597277/software-development-engineer-ii-security-products",
+              "match_score": 52.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production systems",
+                "AI-driven applications"
+              ],
+              "main_gaps": [
+                "3 years non-internship experience",
+                "Architecture ownership"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/doordashusa/jobs/8355717",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack AI products",
+                "Production LLM systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/143629723950293702-software-engineer-iii-search-ai-ml",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Distributed systems",
+                "Production engineering"
+              ],
+              "main_gaps": [
+                "2 years C++ development"
+              ]
+            },
+            {
+              "key": "url::https://ffive.wd5.myworkdayjobs.com/f5jobs/job/Seattle/Mgr--Software-Development-Engineering_RP1037604",
+              "match_score": 20.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud-native systems"
+              ],
+              "main_gaps": [
+                "8 years engineering experience",
+                "Engineering team management"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/74304021170397894-forward-deployed-engineer-iii-data-cloud-google-cloud",
+              "match_score": 54.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark data pipelines",
+                "Production AI systems"
+              ],
+              "main_gaps": [
+                "5 years relevant experience",
+                "Production data-cloud architecture"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/gitlab/jobs/8922249002",
+              "match_score": 64.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack development",
+                "Tested production services"
+              ],
+              "main_gaps": [
+                "Ruby on Rails",
+                "Billing workflow experience"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/74637791668904646-ai-search-engineering-analyst-safety-risk-and-platform",
+              "match_score": 59.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Quantitative data analysis",
+                "Search and AI systems"
+              ],
+              "main_gaps": [
+                "Project management experience",
+                "Abuse investigation"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 5,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/110685761421877958-cpu-performance-architect",
+              "company": "Google",
+              "title": "CPU Performance Architect"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 2.181,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3255,
+            "cached_input_tokens": 2724,
+            "output_tokens": 90,
+            "reasoning_tokens": 0,
+            "estimated_usd": 0.000125
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/110685761421877958-cpu-performance-architect",
+              "match_score": 18.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ and Python",
+                "Computer Science education"
+              ],
+              "main_gaps": [
+                "8 years performance analysis",
+                "CPU microarchitecture and silicon"
+              ]
+            }
+          ]
+        }
+      ],
+      "scrape_failure_sources": [],
+      "scrape_failure_causes": {}
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-11-05T00:46:15.448268+00:00",
       "mode": "pipeline",
       "health": "limited",
@@ -18326,360 +18993,6 @@
       ],
       "scrape_failure_sources": [],
       "scrape_failure_causes": {}
-    },
-    {
-      "pipeline": "official",
-      "run_at": "2026-10-26T14:48:04.163419+00:00",
-      "mode": "pipeline",
-      "health": "limited",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 11,
-      "cache_reused": 416,
-      "peer_reused": 0,
-      "same_content_reused": 8,
-      "non_material_change_reused": 0,
-      "new_or_changed": 11,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 9,
-        "material_jd_change": 2
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 2478,
-      "requests": 3,
-      "input_tokens": 21041,
-      "cached_input_tokens": 0,
-      "output_tokens": 2720,
-      "reasoning_tokens": 1715,
-      "estimated_usd": 0.003465,
-      "latency_seconds": 37.476,
-      "latency_measured": true,
-      "effective_rpm": 4.8,
-      "effective_tpm": 38041.95,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 3,
-      "primary_batches_total": 3,
-      "batches_attempted": 3,
-      "batches_succeeded": 3,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 11,
-      "funnel": {
-        "after_dedup": 17331,
-        "after_company": 17331,
-        "after_hard_filter": 13998,
-        "after_prefilter": 2905,
-        "dropped": 14426
-      },
-      "output": {
-        "tier_a": 1,
-        "tier_b": 22,
-        "shown": 23,
-        "new_jobs": 71,
-        "new_jobs_added": 0
-      },
-      "enrichment": {
-        "discovered": 17383,
-        "needed": 932,
-        "source_jds_available": 16451,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 932
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1004308-1",
-              "company": "Capital One",
-              "title": "Full-stack Engineer 4"
-            },
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Riverwoods-IL/Full-stack-Engineer-4_R1004398-1",
-              "company": "Capital One",
-              "title": "Full-stack Engineer 4"
-            },
-            {
-              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210803012",
-              "company": "JPMorgan Chase",
-              "title": "Software Engineer [Multiple Positions Available]"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 11.39,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 3,
-            "input_tokens": 5857,
-            "cached_input_tokens": 0,
-            "output_tokens": 670,
-            "reasoning_tokens": 397,
-            "estimated_usd": 0.000921
-          },
-          "decisions": [
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1004308-1",
-              "match_score": 43.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack cloud engineering",
-                "Distributed systems experience"
-              ],
-              "main_gaps": [
-                "4+ years software engineering",
-                "Technical leadership"
-              ]
-            },
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Riverwoods-IL/Full-stack-Engineer-4_R1004398-1",
-              "match_score": 42.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack cloud engineering",
-                "Distributed systems experience"
-              ],
-              "main_gaps": [
-                "4+ years software engineering",
-                "Technical leadership"
-              ]
-            },
-            {
-              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210803012",
-              "match_score": 34.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "CI/CD and containerization",
-                "Cloud platform experience"
-              ],
-              "main_gaps": [
-                "5–7 years experience",
-                "Performance engineering/JMeter"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10588351/applied-scientist-ii-advertising-incrementality-measurement",
-              "company": "Amazon",
-              "title": "Applied Scientist II, Advertising Incrementality Measurement"
-            },
-            {
-              "key": "url::https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/TX---Dallas/AI-Engineer---GenAI_R1074805",
-              "company": "CVS Health",
-              "title": "AI Engineer - GenAI"
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5461863008",
-              "company": "Anthropic",
-              "title": "Research Scientist, Life Sciences (Computational Chemistry)"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 7.583,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 3,
-            "input_tokens": 6137,
-            "cached_input_tokens": 0,
-            "output_tokens": 592,
-            "reasoning_tokens": 326,
-            "estimated_usd": 0.00091
-          },
-          "decisions": [
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10588351/applied-scientist-ii-advertising-incrementality-measurement",
-              "match_score": 46.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "ML model development",
-                "Python and large-scale data"
-              ],
-              "main_gaps": [
-                "Causal inference modeling",
-                "4+ years or PhD qualification"
-              ]
-            },
-            {
-              "key": "url::https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/TX---Dallas/AI-Engineer---GenAI_R1074805",
-              "match_score": 74.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production RAG and agents",
-                "Python APIs and cloud deployment"
-              ],
-              "main_gaps": [
-                "2+ years AI/ML experience",
-                "Deep learning framework experience"
-              ]
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5461863008",
-              "match_score": 25.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python and model evaluation",
-                "Dataset and benchmark development"
-              ],
-              "main_gaps": [
-                "Chemistry PhD",
-                "Organic and medicinal chemistry"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 3,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Data-Engineer-4--Python--Pyspark--AWS-_R1003211-1",
-              "company": "Capital One",
-              "title": "Data Engineer 4 (Python, Pyspark, AWS)"
-            },
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1003961",
-              "company": "Capital One",
-              "title": "Full-stack Engineer 4"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/92213377664721606-software-engineer-iii-device-driver-platforms-and-devices",
-              "company": "Google",
-              "title": "Software Engineer III, Device Driver, Platforms and Devices"
-            },
-            {
-              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Data-Engineer-I--Databricks--MLOps-_R-53249",
-              "company": "Travelers",
-              "title": "Data Engineer I (Databricks, MLOps)"
-            },
-            {
-              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Data-Engineer-I--AWS--Python--GenAI-_R-53217-1",
-              "company": "Travelers",
-              "title": "Data Engineer I (AWS, Python, GenAI)"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 18.503,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 5,
-            "input_tokens": 9047,
-            "cached_input_tokens": 0,
-            "output_tokens": 1458,
-            "reasoning_tokens": 992,
-            "estimated_usd": 0.001634
-          },
-          "decisions": [
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Data-Engineer-4--Python--Pyspark--AWS-_R1003211-1",
-              "match_score": 52.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python and Spark pipelines",
-                "Cloud data engineering"
-              ],
-              "main_gaps": [
-                "4+ years application development",
-                "Senior-level data platform leadership"
-              ]
-            },
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1003961",
-              "match_score": 54.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack product development",
-                "Cloud services and CI/CD"
-              ],
-              "main_gaps": [
-                "4+ years software engineering",
-                "Technical leadership across teams"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/92213377664721606-software-engineer-iii-device-driver-platforms-and-devices",
-              "match_score": 36.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "C++ programming experience",
-                "Debugging and testing"
-              ],
-              "main_gaps": [
-                "Low-level device-driver development"
-              ]
-            },
-            {
-              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Data-Engineer-I--Databricks--MLOps-_R-53249",
-              "match_score": 75.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Data pipelines and transformations",
-                "Databricks and Spark experience"
-              ],
-              "main_gaps": [
-                "2 additional years engineering experience"
-              ]
-            },
-            {
-              "key": "url::https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Data-Engineer-I--AWS--Python--GenAI-_R-53217-1",
-              "match_score": 78.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production LLM applications",
-                "AWS and Python pipelines"
-              ],
-              "main_gaps": [
-                "2 additional years engineering experience"
-              ]
-            }
-          ]
-        }
-      ],
-      "scrape_failure_sources": [
-        "yahoo"
-      ],
-      "scrape_failure_causes": {
-        "yahoo": "403"
-      }
     }
   ]
 }

@@ -1,18 +1,21 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-11-04 16:46 PST
-- Snapshot (UTC): 2026-11-05T00:46:15.448268+00:00
-- Jobs: 38 (Tier A/B only)
-- Last 24 hours: 0
-- Last 3 days: 38
+- Updated (PT): 2026-11-05 07:46 PST
+- Snapshot (UTC): 2026-11-05T15:46:34.987958+00:00
+- Jobs: 40 (Tier A/B only)
+- Last 24 hours: 4
+- Last 3 days: 40
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 94 | official | DoorDash | Full Stack Engineer, Applied AI | San Francisco, CA; Sunnyvale, CA; San Francisco, CA | 2026-11-05 | 3to24h | DoorDash | unreviewed | official_canonical | [open](https://job-boards.greenhouse.io/doordashusa/jobs/8355717) |
 | A | 93 | official | Cisco | Software Engineer Full Stack / Backend I (Full Time) - United States | Austin, Texas, US; Houston, Texas, US; Charleston, West Virginia, US; Denver, Colorado, US; Irvine, California, US; Knoxville, Tennessee, US; Nashville, Tennessee, US; Chicago, Illinois, US; Philadelphia, Pennsylvania, US; Phoenix, Arizona, US; Boise, Idaho, US; Carlsbad, California, US; San Diego, California, US; RTP, North Carolina, US; Dallas, Texas, US; Atlanta, Georgia, US; Costa Mesa, California, US; Boca Raton, Florida, US; Miami, Florida, US; Tampa, Florida, US; Plano, Texas, US; Coral Gables, Florida, US; Colorado Springs, Colorado, US | 2026-11-04 | 1to3d | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Austin-Texas-US/Software-Engineer-Full-Stack---Backend-I--Full-Time----United-States_2028784) |
 | A | 86 | official | Apple | Software Engineer, Triage Services | Cupertino, United States of America | 2026-11-04 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200693271/software-engineer-triage-services) |
 | A | 92 | official | Amazon | Software Development Engineer, Eva Development Team | Bellevue, Washington, USA | 2026-11-03 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10594998/software-development-engineer-eva-development-team) |
+| B | 75 | official | Capital One | Full-stack Engineer 4 (Bank Tech) | Richmond, VA; McLean, VA | 2026-11-05 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Full-stack-Engineer-4--Bank-Tech-_R1003643) |
+| B | 72 | official | MathWorks | Software Engineer in Test - MATLAB Editor | US-MA-Natick | 2026-11-05 | 3to24h | - | unreviewed | official_canonical | [open](https://www.mathworks.com/company/jobs/opportunities/37275-software-engineer-in-test-matlab-editor?keywords=ai+engineer) |
 | B | 88 | official | Amazon | Software Dev Engineer I, Security Platform | San Francisco, California, USA | 2026-11-04 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10597112/software-dev-engineer-i-security-platform) |
 | B | 88 | official | Microsoft | Software Engineer | United States, Washington, Redmond | 2026-11-04 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556982635) |
 | B | 84 | official | Apple | Forward Deployed Software Engineer - Platforms Engineering, Enterprise | Austin, United States of America | 2026-11-04 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200693427/forward-deployed-software-engineer-platforms-engineering-enterprise-technology-services) |
@@ -37,7 +40,6 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | B | 75 | official | Capital One | Full-Stack Engineer 4 (Golang, AWS) | McLean, VA; Chicago, IL | 2026-11-04 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-Stack-Engineer-4--Golang--AWS-_R1001284-1) |
 | B | 79 | official | Apple | Software Automation Engineer, Test Platforms - Media, Graphics & Compu | San Diego Metro Area, United States of America | 2026-11-04 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200692542/software-automation-engineer-test-platforms-media-graphics-compute-tech) |
 | B | 83 | official | Apple | Software Engineer - VE | Cupertino, United States of America | 2026-11-03 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200693002/software-engineer-ve) |
-| B | 82 | official | Apple | Frontend Engineer (AI Experiences), Retail and Marcom Engineering | Austin, United States of America | 2026-11-03 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200692940/frontend-engineer-ai-experiences-retail-and-marcom-engineering) |
 | B | 81 | official | Google | Ads Solutions Engineer, gTech Agency and Partner Engineering | Chicago, IL, USA; New York, NY, USA; Sunnyvale, CA, USA | 2026-11-03 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/118330442431505094-ads-solutions-engineer-gtech-agency-and-partner-engineering) |
 | B | 82 | official | Amazon | Software Development Engineer (Embedded Systems) Early Career - 2027 ( | Seattle, Washington, USA | 2026-11-03 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10595839/software-development-engineer-embedded-systems-early-career-2027-us) |
 | B | 75 | official | Microsoft | Software Engineer II - Perception Red Agent Team | United States, Washington, Redmond | 2026-11-03 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557047398) |
@@ -45,6 +47,6 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | B | 75 | official | Capital One | Full-stack Engineer 4 | New York, NY; Richmond, VA | 2026-11-03 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/Full-stack-Engineer-4_R1002785-1) |
 | B | 75 | official | Capital One | Full-stack Engineer 5, Marketing and Messaging | Plano, TX; McLean, VA; Chicago, IL; Riverwoods, IL | 2026-11-03 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-stack-Engineer-5--Marketing-and-Messaging-Experimentation_R1002180-1) |
 | B | 75 | official | Capital One | Full-stack Engineer 4 | Richmond, VA; McLean, VA; New York, NY; Boston, MA | 2026-11-03 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Full-stack-Engineer-4_R1002212-1) |
-| B | 75 | official | Capital One | Full-stack Engineer 4 | McLean, VA; Wilmington, DE | 2026-11-03 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1002521-1) |
 | B | 75 | official | Capital One | Machine Learning Engineer 5 | New York, NY; San Francisco, CA; McLean, VA; Richmond, VA; Plano, TX | 2026-11-03 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/Machine-Learning-Engineer-5_R1001829-1) |
 | B | 78 | official | JPMorgan Chase | Software Engineer II - Electronic Trading Services - Automation Softwa | Jersey City, NJ, United States | 2026-11-03 | 1to3d | J.P. Morgan | unreviewed | official_canonical | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210791376) |
+| B | 78 | official | Two Sigma | Software Engineer | United States - NY New York | - | newly_discovered | - | unreviewed | official_canonical | [open](https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-Software-Engineer/14404) |
