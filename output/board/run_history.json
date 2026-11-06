@@ -2,6 +2,159 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-11-06T01:01:15.075658+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 1,
+      "cache_reused": 524,
+      "peer_reused": 0,
+      "same_content_reused": 5,
+      "non_material_change_reused": 0,
+      "new_or_changed": 3,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 1,
+        "material_jd_change": 1,
+        "prior_rule_result_recency_gated": 1
+      },
+      "rescored_within_24h": 1,
+      "fallback_count": 0,
+      "rule_count": 1564,
+      "requests": 1,
+      "input_tokens": 2784,
+      "cached_input_tokens": 0,
+      "output_tokens": 305,
+      "reasoning_tokens": 228,
+      "estimated_usd": 0.000431,
+      "latency_seconds": 4.475,
+      "latency_measured": true,
+      "effective_rpm": 13.41,
+      "effective_tpm": 41416.76,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 1,
+      "funnel": {
+        "after_dedup": 8621,
+        "after_company": 8009,
+        "after_hard_filter": 7406,
+        "after_prefilter": 2496,
+        "official_duplicates_suppressed": 407,
+        "retry_only_carried": 0,
+        "dropped": 5916
+      },
+      "output": {
+        "tier_a": 78,
+        "tier_b": 187,
+        "ab_before_cap": 265,
+        "shown": 265,
+        "new_jobs": 32,
+        "new_jobs_added": 2,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 26,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 6,
+            "added": 2
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 3234,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 95,
+          "identity_needed": 69,
+          "identities_resolved": 60,
+          "cache_reused": 1,
+          "http_requests": 68,
+          "jds_resolved": 2,
+          "direct_http_resolved": 2,
+          "remaining_no_jd": 3234,
+          "failure_reasons": {
+            "no_direct_or_official_url": 26
+          }
+        },
+        "remaining_no_jd": 3186,
+        "failure_reasons": {
+          "no_enrichment_path": 2623,
+          "linkedin_rate_limited": 108,
+          "linkedin_http_429": 6,
+          "no_direct_or_official_url": 26,
+          "official_detail_deferred": 44,
+          "linkedin_http_network_error": 2,
+          "glassdoor_detail_http_403_static_card_only": 377
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/icapitalnetwork/jobs/8802717002",
+              "company": "iCapital",
+              "title": "Artificial Intelligence / Machine Learning Engineer - Associate"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.475,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2784,
+            "cached_input_tokens": 0,
+            "output_tokens": 305,
+            "reasoning_tokens": 228,
+            "estimated_usd": 0.000431
+          },
+          "decisions": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/icapitalnetwork/jobs/8802717002",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production LLM systems",
+                "AI evaluation pipelines"
+              ],
+              "main_gaps": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-11-05T20:07:05.325424+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -27917,157 +28070,6 @@
                 "Professional WordPress and Elementor",
                 "PHP development"
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-10-31T19:04:33.938378+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 1,
-      "cache_reused": 414,
-      "peer_reused": 0,
-      "same_content_reused": 4,
-      "non_material_change_reused": 0,
-      "new_or_changed": 1,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1461,
-      "requests": 1,
-      "input_tokens": 2848,
-      "cached_input_tokens": 0,
-      "output_tokens": 782,
-      "reasoning_tokens": 143,
-      "estimated_usd": 0.000676,
-      "latency_seconds": 6.158,
-      "latency_measured": true,
-      "effective_rpm": 9.74,
-      "effective_tpm": 35368.63,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 1,
-      "primary_batches_total": 1,
-      "batches_attempted": 1,
-      "batches_succeeded": 1,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 1,
-      "funnel": {
-        "after_dedup": 8153,
-        "after_company": 7677,
-        "after_hard_filter": 7090,
-        "after_prefilter": 2306,
-        "official_duplicates_suppressed": 430,
-        "retry_only_carried": 0,
-        "dropped": 5624
-      },
-      "output": {
-        "tier_a": 39,
-        "tier_b": 163,
-        "ab_before_cap": 202,
-        "shown": 202,
-        "new_jobs": 10,
-        "new_jobs_added": 2,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 4,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 6,
-            "added": 2
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 3059,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 44,
-          "identity_needed": 28,
-          "identities_resolved": 18,
-          "cache_reused": 3,
-          "http_requests": 25,
-          "jds_resolved": 1,
-          "direct_http_resolved": 1,
-          "remaining_no_jd": 3059,
-          "failure_reasons": {
-            "linkedin_rate_limited": 16
-          }
-        },
-        "remaining_no_jd": 3014,
-        "failure_reasons": {
-          "no_enrichment_path": 2463,
-          "linkedin_rate_limited": 120,
-          "linkedin_http_429": 5,
-          "official_detail_deferred": 45,
-          "linkedin_http_network_error": 2,
-          "indeed_detail_missing_or_thin": 1,
-          "glassdoor_detail_http_403_static_card_only": 378
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/job/US-FL-JAX-347/Artificial-Intelligence-Machine-Learning-Engineers_JR0310785-1?jobFamilyGroup=0e1af0e1ee1d1001836c3bbdc7940000&jobFamilyGroup=fea3e38a3564100183196e657c1e0000&jobFamilyGroup=d26eff0fee761001831d2319121c0000&jobFamilyGroup=041bdfd5e4d01001834c7fdbd0320000&jobFamilyGroup=67bfefe10eff1001833a9e2885240000&jobFamilyGroup=494eed1c8de601ea5300eb07a76f5e16&jobFamilyGroup=0e1af0e1ee1d1001836c8b8a29230000&jobFamilyGroup=041bdfd5e4d01001834cb559a5f10000&jobFamilyGroup=d26eff0fee761001831d7e66edfa0000&jobFamilyGroup=a2088ec533f410263c62091ebad3509e&jobFamilyGroup=7f383875dd521001834598af68560000&jobFamilyGroup=d26eff0fee761001831d97a4a9120000&jobFamilyGroup=7f383875dd5210018345b02252560000&jobFamilyGroup=a0b9127138f4100183637a54f3710000&jobFamilyGroup=041bdfd5e4d01001834cfa78ccf10000&jobFamilyGroup=d26eff0fee761001831dc4bc6eee0000&jobFamilyGroup=a0b9127138f4100183639e55ae1b0000&jobFamilyGroup=67bfefe10eff1001833b3277b0650000&jobFamilyGroup=a2088ec533f410263c621eb9a6a450a8&jobFamilyGroup=67bfefe10eff1001833b4349ae3b0000&jobFamilyGroup=972f8275a36e1001836b7a7c77eb0000&jobFamilyGroup=041bdfd5e4d01001834d46d1949c0000&jobFamilyGroup=a0b9127138f410018363dcbf33160000&jobFamilyGroup=972f8275a36e1001836ba4a98f990000&jobFamilyGroup=7f383875dd52100183463a63dbc20000",
-              "company": "FIS",
-              "title": "Artificial Intelligence/Machine Learning Engineers"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 6.158,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 2848,
-            "cached_input_tokens": 0,
-            "output_tokens": 782,
-            "reasoning_tokens": 143,
-            "estimated_usd": 0.000676
-          },
-          "decisions": [
-            {
-              "key": "url::https://fis.wd5.myworkdayjobs.com/en-US/SearchJobs/job/US-FL-JAX-347/Artificial-Intelligence-Machine-Learning-Engineers_JR0310785-1?jobFamilyGroup=0e1af0e1ee1d1001836c3bbdc7940000&jobFamilyGroup=fea3e38a3564100183196e657c1e0000&jobFamilyGroup=d26eff0fee761001831d2319121c0000&jobFamilyGroup=041bdfd5e4d01001834c7fdbd0320000&jobFamilyGroup=67bfefe10eff1001833a9e2885240000&jobFamilyGroup=494eed1c8de601ea5300eb07a76f5e16&jobFamilyGroup=0e1af0e1ee1d1001836c8b8a29230000&jobFamilyGroup=041bdfd5e4d01001834cb559a5f10000&jobFamilyGroup=d26eff0fee761001831d7e66edfa0000&jobFamilyGroup=a2088ec533f410263c62091ebad3509e&jobFamilyGroup=7f383875dd521001834598af68560000&jobFamilyGroup=d26eff0fee761001831d97a4a9120000&jobFamilyGroup=7f383875dd5210018345b02252560000&jobFamilyGroup=a0b9127138f4100183637a54f3710000&jobFamilyGroup=041bdfd5e4d01001834cfa78ccf10000&jobFamilyGroup=d26eff0fee761001831dc4bc6eee0000&jobFamilyGroup=a0b9127138f4100183639e55ae1b0000&jobFamilyGroup=67bfefe10eff1001833b3277b0650000&jobFamilyGroup=a2088ec533f410263c621eb9a6a450a8&jobFamilyGroup=67bfefe10eff1001833b4349ae3b0000&jobFamilyGroup=972f8275a36e1001836b7a7c77eb0000&jobFamilyGroup=041bdfd5e4d01001834d46d1949c0000&jobFamilyGroup=a0b9127138f410018363dcbf33160000&jobFamilyGroup=972f8275a36e1001836ba4a98f990000&jobFamilyGroup=7f383875dd52100183463a63dbc20000",
-              "match_score": 87.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production LLM agents",
-                "Evaluation and safety systems"
-              ],
-              "main_gaps": []
             }
           ]
         }
