@@ -2,6 +2,156 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-11-07T20:01:41.377143+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 1,
+      "cache_reused": 447,
+      "peer_reused": 0,
+      "same_content_reused": 4,
+      "non_material_change_reused": 0,
+      "new_or_changed": 1,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 1
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1610,
+      "requests": 1,
+      "input_tokens": 2178,
+      "cached_input_tokens": 0,
+      "output_tokens": 265,
+      "reasoning_tokens": 108,
+      "estimated_usd": 0.00035,
+      "latency_seconds": 4.338,
+      "latency_measured": true,
+      "effective_rpm": 13.83,
+      "effective_tpm": 33789.76,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 1,
+      "funnel": {
+        "after_dedup": 8549,
+        "after_company": 8037,
+        "after_hard_filter": 7438,
+        "after_prefilter": 2499,
+        "official_duplicates_suppressed": 441,
+        "retry_only_carried": 0,
+        "dropped": 5829
+      },
+      "output": {
+        "tier_a": 55,
+        "tier_b": 201,
+        "ab_before_cap": 256,
+        "shown": 256,
+        "new_jobs": 8,
+        "new_jobs_added": 1,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 3,
+            "added": 1
+          },
+          "linkedin": {
+            "found": 5,
+            "added": 0
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 3255,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 42,
+          "identity_needed": 36,
+          "identities_resolved": 27,
+          "cache_reused": 1,
+          "http_requests": 35,
+          "jds_resolved": 2,
+          "direct_http_resolved": 2,
+          "remaining_no_jd": 3255,
+          "failure_reasons": {
+            "linkedin_rate_limited": 6
+          }
+        },
+        "remaining_no_jd": 3206,
+        "failure_reasons": {
+          "no_enrichment_path": 2641,
+          "linkedin_rate_limited": 135,
+          "linkedin_http_429": 6,
+          "official_detail_deferred": 45,
+          "linkedin_http_network_error": 2,
+          "glassdoor_detail_http_403_static_card_only": 377
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://uhaul.wd1.myworkdayjobs.com/en-US/UhaulJobs/job/Phoenix-Arizona/Software-Developer_R259053?jobFamilyGroup=81586da719a0012db7c8e8630633bf1f&jobFamilyGroup=2a5762831a2b0106f511965ca101a8d9&jobFamilyGroup=81586da719a001e988e2ca630633ab1f",
+              "company": "U-Haul",
+              "title": "Software Developer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.338,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2178,
+            "cached_input_tokens": 0,
+            "output_tokens": 265,
+            "reasoning_tokens": 108,
+            "estimated_usd": 0.00035
+          },
+          "decisions": [
+            {
+              "key": "url::https://uhaul.wd1.myworkdayjobs.com/en-US/UhaulJobs/job/Phoenix-Arizona/Software-Developer_R259053?jobFamilyGroup=81586da719a0012db7c8e8630633bf1f&jobFamilyGroup=2a5762831a2b0106f511965ca101a8d9&jobFamilyGroup=81586da719a001e988e2ca630633ab1f",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack customer applications",
+                "Production backend performance"
+              ],
+              "main_gaps": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-11-07T16:21:17.411694+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -33279,155 +33429,6 @@
       },
       "comparison": {},
       "batches": []
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-11-03T02:50:05.673211+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 1,
-      "cache_reused": 318,
-      "peer_reused": 0,
-      "same_content_reused": 4,
-      "non_material_change_reused": 0,
-      "new_or_changed": 1,
-      "new_or_changed_reasons": {
-        "prior_rule_result_now_eligible_for_llm": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1496,
-      "requests": 1,
-      "input_tokens": 2973,
-      "cached_input_tokens": 0,
-      "output_tokens": 234,
-      "reasoning_tokens": 159,
-      "estimated_usd": 0.000414,
-      "latency_seconds": 5.2,
-      "latency_measured": true,
-      "effective_rpm": 11.54,
-      "effective_tpm": 37003.85,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 1,
-      "primary_batches_total": 1,
-      "batches_attempted": 1,
-      "batches_succeeded": 1,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 1,
-      "funnel": {
-        "after_dedup": 7992,
-        "after_company": 7524,
-        "after_hard_filter": 6939,
-        "after_prefilter": 2223,
-        "official_duplicates_suppressed": 408,
-        "retry_only_carried": 0,
-        "dropped": 5573
-      },
-      "output": {
-        "tier_a": 45,
-        "tier_b": 146,
-        "ab_before_cap": 191,
-        "shown": 191,
-        "new_jobs": 4,
-        "new_jobs_added": 0,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 4,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 0,
-            "added": 0
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 3065,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 18,
-          "identity_needed": 18,
-          "http_requests": 18,
-          "identities_resolved": 16,
-          "remaining_no_jd": 3065,
-          "failure_reasons": {}
-        },
-        "remaining_no_jd": 3026,
-        "failure_reasons": {
-          "no_enrichment_path": 2486,
-          "linkedin_rate_limited": 109,
-          "linkedin_http_429": 6,
-          "official_detail_deferred": 45,
-          "linkedin_http_network_error": 2,
-          "indeed_detail_missing_or_thin": 1,
-          "glassdoor_detail_http_403_static_card_only": 377
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4471944050",
-              "company": "Brivo",
-              "title": "Backend Engineer - Billing Systems"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 5.2,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 2973,
-            "cached_input_tokens": 0,
-            "output_tokens": 234,
-            "reasoning_tokens": 159,
-            "estimated_usd": 0.000414
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4471944050",
-              "match_score": 54.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python backend APIs",
-                "Production systems"
-              ],
-              "main_gaps": [
-                "5+ years database experience",
-                "Billing and order systems"
-              ]
-            }
-          ]
-        }
-      ]
     }
   ]
 }

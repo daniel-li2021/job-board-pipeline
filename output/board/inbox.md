@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-11-07 08:21 PST
-- Snapshot (UTC): 2026-11-07T16:21:17.411694+00:00
-- Jobs: 137 (Tier A/B only)
-- Last 24 hours: 80
-- Last 3 days: 137
+- Updated (PT): 2026-11-07 12:01 PST
+- Snapshot (UTC): 2026-11-07T20:01:41.377143+00:00
+- Jobs: 135 (Tier A/B only)
+- Last 24 hours: 81
+- Last 3 days: 135
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -29,7 +29,6 @@ The 7-day dump is `latest.md`.
 | A | 91 | indeed | Hilton | AI Software Engineer | Dallas, TX, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a737b373a717b2b4) |
 | A | 91 | indeed | stable/kernel | AI Software Engineer | Atlanta, GA, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a9b8ae84ce07e6d9) |
 | A | 91 | indeed | Cisive | Associate Software Developer | Easton, MD, US | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=140f5e2c2df38efa) |
-| A | 91 | linkedin | Empower Pharmacy | Associate Software Engineer – Full Stack | Houston, TX | 2026-11-04 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-software-engineer-%E2%80%93-full-stack-at-empower-pharmacy-4487512695) |
 | A | 90 | indeed | Digital Dynamics | Software Engineer I | Scotts Valley, CA, US | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2fc2ced056e0d64b) |
 | A | 89 | indeed | Affirm | Software Engineer II, Backend | San Francisco, CA, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=8446746dd6a6b5fb) |
 | A | 88 | indeed | Chewy | Software Engineer I | Plantation, FL, US | 2026-11-05 | newly_discovered | - | unreviewed | pending_official_refresh | [open](https://www.indeed.com/viewjob?jk=898578dbd83a334b) |
@@ -75,6 +74,7 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed | LexisNexis Legal & Professional | Software Engineer | Raleigh, NC, US | 2026-11-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5639b435392fc072) |
 | B | 83 | indeed | fullstory | Software Developer | Atlanta, GA, US | 2026-11-06 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c7a7401fecbe484a) |
 | B | 81 | indeed | University of Texas at Dallas | Cloud Engineer I | Richardson, TX, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=4ff22ea517a0f40d) |
+| B | 84 | syncareer | U-Haul | Software Developer | Phoenix, Arizona, United States | - | newly_discovered | - | unreviewed | not_dedicated | [open](https://uhaul.wd1.myworkdayjobs.com/en-US/UhaulJobs/job/Phoenix-Arizona/Software-Developer_R259053?jobFamilyGroup=81586da719a0012db7c8e8630633bf1f&jobFamilyGroup=2a5762831a2b0106f511965ca101a8d9&jobFamilyGroup=81586da719a001e988e2ca630633ab1f) |
 | B | 84 | indeed | Epsilon | Software Engineer | Chicago, IL, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6261f3c9d8f5c6f7) |
 | B | 84 | indeed | Epsilon | Software Engineer | Westminster, CO, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ad4a404a5ed619d9) |
 | B | 84 | indeed | 3CI | Software Engineer | Atlanta, GA, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=023e3b31339348b7) |
@@ -95,7 +95,6 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed | Walmart | Software Engineer II / Bentonville, Arkansas | Bentonville, AR, US | 2026-11-06 | 1to3d | - | unreviewed | official_gap | [open](https://www.indeed.com/viewjob?jk=68fa3384d0f629db) |
 | B | 82 | indeed | National Radio Astronomy Observatory | Software Engineer - Test and Quality | Socorro, NM, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=aeef5eb13a3a733d) |
 | B | 84 | linkedin | Optum | AI/ML Engineer | Eden Prairie, MN | 2026-11-04 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-at-optum-4487557708) |
-| B | 82 | linkedin | Lowe's Companies, Inc. | Software Engineer - Full Stack | Charlotte, NC | 2026-11-04 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-lowe-s-companies-inc-4487244736) |
 | B | 83 | indeed | Brown Brothers Harriman | AI Product Engineer | New York, NY, US | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=7c05b8df02bb6efb) |
 | B | 82 | indeed | Eversource Energy | IT Associate Engineer, Cloud | Berlin, CT, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=cdd2dacf222319f8) |
 | B | 84 | indeed | Assurity Life Insurance Company | Software Engineer II | Lincoln, NE, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=7441762794e9321d) |
@@ -138,7 +137,6 @@ The 7-day dump is `latest.md`.
 | B | 78 | indeed | Tesla | Software Engineer, Design Technology, Simulation Technology | Palo Alto, CA, US | 2026-11-05 | 1to3d | Tesla | unreviewed | official_unsupported | [open](https://www.indeed.com/viewjob?jk=8063f1e9a4ba4b68) |
 | B | 78 | indeed | Charles Schwab | Jr. Software Developer | Omaha, NE, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=75affc7c74831fbc) |
 | B | 75 | indeed | Optum | Associate Software Engineer | Minneapolis, MN, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ddf558005b461d6a) |
-| B | 76 | linkedin | Avathon | Associate AI Engineer, Physical AI | Pleasanton, CA | 2026-11-04 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-ai-engineer-physical-ai-at-avathon-4470650098) |
 | B | 77 | indeed | Intercontinental Exchange | Junior Software Development Engineer in Test | Atlanta, GA, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ff20b835bbb01675) |
 | B | 78 | indeed | Brock Solutions | Software Deployment Engineer | Dallas, TX, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=dc7fc52504dd4f5e) |
 | B | 77 | indeed | Serrala | Junior Site Reliability Engineer | Remote, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=9ea67d53cde1c55a) |
