@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-11-06 17:21 PST
-- Snapshot (UTC): 2026-11-07T01:21:54.601327+00:00
-- Jobs: 118 (Tier A/B only)
+- Updated (PT): 2026-11-06 23:04 PST
+- Snapshot (UTC): 2026-11-07T07:04:54.433709+00:00
+- Jobs: 119 (Tier A/B only)
 - Last 24 hours: 66
-- Last 3 days: 118
+- Last 3 days: 119
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -73,8 +73,8 @@ The 7-day dump is `latest.md`.
 | B | 83 | indeed | Infosys | Java Backend Developer | Irving, TX, US | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=f081e278312af72c) |
 | B | 80 | linkedin | Garmin | Software Engineer 2 - C++ Maps Platform | Cary, NC | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-2-c%2B%2B-maps-platform-at-garmin-4487590667) |
 | B | 80 | linkedin | Global Payments Inc. | Full Stack Software Engineer II (Angular, Java) | Atlanta, GA | 2026-11-04 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-ii-angular-java-at-global-payments-inc-4487542608) |
-| B | 80 | linkedin | U.S. Bank | Software Engineer 2 (.NET / Java Spring Boot / AWS) | Atlanta, GA | 2026-11-04 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-2-net-java-spring-boot-aws-at-u-s-bank-4479599095) |
-| B | 80 | linkedin | Rippling | Software Engineer II, Backend - Platform Team | New York, NY | 2026-11-05 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-platform-team-at-rippling-4487744540) |
+| B | 80 | linkedin | Rippling | Software Engineer II, Backend - HR Product | Seattle, WA | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-hr-product-at-rippling-4488142498) |
+| B | 80 | linkedin | Rippling | Software Engineer II, Backend - Platform Team | New York, NY | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-platform-team-at-rippling-4487744540) |
 | B | 80 | linkedin | Rippling | Software Engineer II, Backend - IT Product | Seattle, WA | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-it-product-at-rippling-4487749143) |
 | B | 80 | linkedin | Rippling | Software Engineer II, Backend - Platform Team | Seattle, WA | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-platform-team-at-rippling-4487744537) |
 | B | 83 | indeed | OmniRogue Inc. | AI Software Developer (Hybrid) | Windermere, FL, US | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=495482a5ddaa299c) |
@@ -96,12 +96,12 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed | American Oncology Network | Junior Web Developer | Fort Myers, FL, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=27f53d2d0bc2e9ad) |
 | B | 75 | linkedin | Audible | Software Development Engineer | Newark, NJ | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-development-engineer-at-audible-4471120690) |
 | B | 75 | linkedin | Global Payments Inc. | Software Engineer - Full Stack | Denver, CO | 2026-11-04 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-global-payments-inc-4487548382) |
+| B | 75 | linkedin | HP | Software Engineer, Cloud Services | San Francisco, CA | 2026-11-07 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-cloud-services-at-hp-4488486882) |
 | B | 75 | linkedin | OPENLANE | Full Stack Engineer (Java/React) | Carmel, IN | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-java-react-at-openlane-4486768944) |
 | B | 75 | linkedin | FIS | Artificial Intelligence / Machine Learning Engineer | Jacksonville, FL | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/artificial-intelligence-machine-learning-engineer-at-fis-4479885494) |
-| B | 75 | linkedin | Evlo AI | Backend Engineer | San Francisco, CA | 2026-11-05 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-at-evlo-ai-4486799285) |
-| B | 75 | linkedin | Phantom | Software Engineer, Backend (Trading) | United States | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-backend-trading-at-phantom-4486948069) |
+| B | 75 | linkedin | Evlo AI | Backend Engineer | San Francisco, CA | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/backend-engineer-at-evlo-ai-4486799285) |
+| B | 75 | linkedin | Phantom | Software Engineer, Backend (Trading) | United States | 2026-11-06 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-backend-trading-at-phantom-4486948069) |
 | B | 75 | linkedin | Frontier Energy, Inc. | Full Stack Software Engineer | Austin, TX | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-frontier-energy-inc-4486901203) |
-| B | 75 | linkedin | Miami Jewish Health | Full Stack Software Engineer | Miami, FL | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-miami-jewish-health-4486776056) |
 | B | 75 | linkedin | Sira Consulting, an Inc 5000 company | .NET Full Stack Developer | Arlington, VA | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/net-full-stack-developer-at-sira-consulting-an-inc-5000-company-4485591612) |
 | B | 75 | linkedin | Emonics LLC | Generative AI Engineer | Phoenix, AZ | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/generative-ai-engineer-at-emonics-llc-4486756418) |
 | B | 75 | linkedin | Goodwin Recruiting | Full Stack Developer JN -112026-183325 | Orlando, FL | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-developer-jn-112026-183325-at-goodwin-recruiting-4486597702) |
@@ -111,6 +111,7 @@ The 7-day dump is `latest.md`.
 | B | 79 | indeed | University of Illinois | Software Developer - SATech | Urbana, IL, US | 2026-11-04 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=0ec05cf797dc08a6) |
 | B | 78 | indeed | California Institute of Technology | Software Developer | Pasadena, CA, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=4bafa0a85142f858) |
 | B | 77 | indeed | Globant | Full Stack Developer | TX, US | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c55ecee976e18f66) |
+| B | 78 | linkedin | Stronghold Investment Management | Software Engineer I | Dallas, TX | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-i-at-stronghold-investment-management-4452683045) |
 | B | 78 | indeed | Priceline.com | Associate Software Engineer | New York, NY, US | 2026-11-05 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=b8bdbd6d513c262d) |
 | B | 78 | indeed | JPS Tech Solutions | Forward Deployed Engineer | Remote, US | 2026-11-05 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=97cc7f097bfe0c19) |
 | B | 77 | indeed |  | Backend Software Engineer | Atlanta, GA, US | 2026-11-06 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c78cbac1696025dc) |
